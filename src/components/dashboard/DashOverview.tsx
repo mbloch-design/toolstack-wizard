@@ -15,25 +15,36 @@ interface Props {
 }
 
 function buildSparringLine(result: DiagnosticResult, t: Props["t"]): string {
-  const { firstName, persona } = result.sessionState;
+  const { firstName } = result.sessionState;
+  const name = firstName?.trim();
+  const subjectFr = name || "Ta stack";
+  const subjectEn = name || "Your stack";
   const allP = [...result.prescriptions.phase1, ...result.prescriptions.phase3];
   const doublons = allP.filter((p) => p.type === "doublon" || p.type === "doublon-ia");
 
   if (result.healthScore >= 80) {
     return t(
-      `${firstName}, ta stack est solide. Quelques ajustements et tu es au top.`,
-      `${firstName}, your stack is solid. A few tweaks and you're at the top.`
+      name
+        ? `${name}, ta stack est solide. Quelques ajustements et tu es au top.`
+        : "Ta stack est solide. Quelques ajustements et elle sera encore plus nette.",
+      name
+        ? `${name}, your stack is solid. A few tweaks and you're at the top.`
+        : "Your stack is solid. A few tweaks will make it even sharper."
     );
   }
   if (doublons.length >= 2) {
     return t(
-      `${firstName}, ${doublons.length} doublons dans ta stack. On commence par là.`,
-      `${firstName}, ${doublons.length} duplicates in your stack. Let's start there.`
+      `${subjectFr} montre ${doublons.length} doublons. On commence par là.`,
+      `${subjectEn} shows ${doublons.length} duplicates. Let's start there.`
     );
   }
   return t(
-    `${firstName}, il y a du potentiel. Voici par où commencer.`,
-    `${firstName}, there's potential here. Here's where to start.`
+    name
+      ? `${name}, il y a du potentiel. Voici par où commencer.`
+      : "Il y a du potentiel. Voici par où commencer.",
+    name
+      ? `${name}, there's potential here. Here's where to start.`
+      : "There is potential here. Here's where to start."
   );
 }
 
@@ -137,26 +148,54 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
 
   return (
     <div className="space-y-8">
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">
+          {t("Lecture en 30 secondes", "30-second read")}
+        </p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Voici ce que ton diagnostic raconte.", "Here is what your diagnostic says.")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Je commence par la décision la plus utile, puis tu peux explorer les détails si tu veux comprendre le pourquoi.",
+            "I start with the most useful decision, then you can explore details if you want the why."
+          )}
+        </p>
+      </div>
+
       {/* ─── 1. HERO — Full width dark section ─── */}
-      <div className="bg-[hsl(var(--navy,222_44%_17%))] rounded-2xl p-6 md:p-10 text-white space-y-4">
+      <div className="rounded-2xl bg-[hsl(var(--navy,222_44%_17%))] p-6 text-white md:p-8">
+        <div className="space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-white/50">
+            {result.estimatedWaste > 0
+              ? t("Potentiel récupérable", "Recoverable potential")
+              : t("Stack plutôt saine", "Mostly healthy stack")}
+          </p>
         <p className="text-4xl md:text-6xl font-bold font-['DM_Mono'] tracking-tight">
           {Math.round(result.estimatedWaste)}€
           <span className="text-lg md:text-xl font-normal text-white/60 ml-1">/{t("mois", "mo")}</span>
         </p>
         <p className="text-sm md:text-base text-white/70">
-          {t("Soit", "That's")} <strong className="text-white font-['DM_Mono']">{Math.round(result.annualSavings)}€/{t("an", "yr")}</strong>
-          {" — "}{t("voilà comment les récupérer", "here's how to get them back")}
+          {result.estimatedWaste > 0 ? (
+            <>
+              {t("Soit", "That's")} <strong className="text-white font-['DM_Mono']">{Math.round(result.annualSavings)}€/{t("an", "yr")}</strong>
+              {" · "}{t("on priorise les actions les plus simples d’abord", "we prioritize the simplest actions first")}
+            </>
+          ) : (
+            t("Pas de gaspillage évident. Le plan sert surtout à sécuriser et simplifier.", "No obvious waste. The plan mostly helps secure and simplify.")
+          )}
         </p>
         <p className="text-sm text-white/50 leading-relaxed max-w-xl">
-          {sparringLine} <span className="italic">— {t("Ton sparring partner", "Your sparring partner")}</span>
+          {sparringLine}
         </p>
         <button
           onClick={() => onNavigate?.("actions")}
           className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-[hsl(222,44%,17%)] text-sm font-semibold hover:bg-white/90 transition-colors"
         >
-          {t("Voir mon plan d'action", "View my action plan")}
+          {t("Commencer par mes actions", "Start with my actions")}
           <ArrowRight className="w-4 h-4" />
         </button>
+        </div>
       </div>
 
       {/* ─── 1b. GO7 INTELLIGENCE READ ─── */}

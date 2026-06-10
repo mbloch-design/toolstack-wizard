@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { CheckCircle2, Layers3, ShieldCheck, Sparkles } from "lucide-react";
 
 interface Props {
   toolCount: number;
@@ -14,36 +15,40 @@ export default function DiagResultsLoading({ toolCount, t, onComplete }: Props) 
   }, [onComplete]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6 text-center">
+    <div className="mx-auto flex min-h-[60vh] max-w-lg flex-col items-center justify-center gap-7 text-center">
       <div className="relative">
-        <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center animate-pulse">
-          <span className="text-4xl">⚡</span>
+        <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+          <Sparkles className="h-9 w-9 animate-pulse" />
         </div>
-        <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary animate-spin
-                        border-2 border-primary-foreground" />
+        <div className="absolute -bottom-1 -right-1 h-6 w-6 animate-spin rounded-full border-2 border-primary border-t-transparent bg-background" />
       </div>
 
       <div className="space-y-2">
         <h2 className="text-xl font-bold text-foreground">
-          {t("Calcul en cours…", "Calculating…")}
+          {t("Je prépare ton dashboard.", "Preparing your dashboard.")}
         </h2>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-sm leading-relaxed text-muted-foreground">
           {t(
-            `On analyse tes ${toolCount} outils pour trouver les économies.`,
-            `Analyzing your ${toolCount} tools to find savings.`
+            `J’analyse tes ${toolCount} outils, les doublons, les risques et les actions à prioriser.`,
+            `Analyzing your ${toolCount} tools, duplicates, risks and priority actions.`
           )}
         </p>
       </div>
 
-      <div className="flex gap-1">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="w-2.5 h-2.5 rounded-full bg-primary animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
+      <div className="grid w-full gap-2 text-left">
+        <LoadingLine Icon={Layers3} label={t("Regroupement des outils", "Grouping tools")} />
+        <LoadingLine Icon={ShieldCheck} label={t("Détection des angles morts", "Detecting blind spots")} />
+        <LoadingLine Icon={CheckCircle2} label={t("Préparation du plan d’action", "Preparing action plan")} />
       </div>
+    </div>
+  );
+}
+
+function LoadingLine({ Icon, label }: { Icon: typeof Layers3; label: string }) {
+  return (
+    <div className="flex items-center gap-3 rounded-lg border border-border bg-card px-3 py-2">
+      <Icon className="h-4 w-4 shrink-0 text-primary" />
+      <span className="text-sm font-medium text-foreground">{label}</span>
     </div>
   );
 }

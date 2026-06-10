@@ -18,6 +18,7 @@ function getToolName(result: DiagnosticResult, toolId: string) {
 export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, onPrev, t }: Props) {
   const [email, setEmail] = useState(session.email || "");
   const [emailError, setEmailError] = useState("");
+  const [wantsEmail, setWantsEmail] = useState(Boolean(session.email?.trim()));
   const allPrescriptions = [
     ...result.prescriptions.phase1,
     ...result.prescriptions.phase2,
@@ -31,24 +32,15 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   const emailValue = email.trim();
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-  const continueWithoutEmail = () => {
-    onUpdate({
-      emailPreferences: session.emailPreferences
-        ? { ...session.emailPreferences, summary: false }
-        : { summary: false, actions: false, checkIn: false },
-    });
-    onNext();
-  };
-
-  const continueWithEmail = () => {
-    if (!isValidEmail(emailValue)) {
+  const openDashboard = () => {
+    if (wantsEmail && !isValidEmail(emailValue)) {
       setEmailError(t("Email invalide", "Invalid email"));
       return;
     }
     onUpdate({
-      email: emailValue,
+      email: wantsEmail && emailValue ? emailValue : session.email,
       emailPreferences: {
-        summary: true,
+        summary: wantsEmail && Boolean(emailValue),
         actions: session.emailPreferences?.actions ?? false,
         checkIn: session.emailPreferences?.checkIn ?? false,
       },
@@ -68,8 +60,8 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
             {t(
-              "Voici la lecture rapide. Tu peux ouvrir le dashboard maintenant, ou recevoir aussi le rapport par email.",
-              "Here is the quick read. You can open the dashboard now, or also receive the report by email."
+              "Voici la lecture rapide avant le dashboard. L’objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
+              "Here is the quick read before the dashboard. The goal now is to give you a clear plan, not a list of numbers."
             )}
           </p>
         </div>
@@ -167,13 +159,32 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
             <div className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
-                <p className="text-sm font-semibold text-foreground">
-                  {t("Rapport email optionnel", "Optional email report")}
-                </p>
+                <label className="flex cursor-pointer items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={wantsEmail}
+                    onChange={(event) => {
+                      setWantsEmail(event.target.checked);
+                      setEmailError("");
+                    }}
+                    className="mt-0.5 h-4 w-4 rounded border-border text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                  />
+                  <span>
+                    <span className="block text-sm font-semibold text-foreground">
+                      {t("M’envoyer une copie du rapport", "Send me a copy of the report")}
+                    </span>
+                    <span className="mt-1 block text-xs text-muted-foreground">
+                      {t(
+                        "Optionnel. Le dashboard s’ouvre dans tous les cas.",
+                        "Optional. The dashboard opens either way."
+                      )}
+                    </span>
+                  </span>
+                </label>
                 <p className="mt-1 text-xs text-muted-foreground">
                   {t(
-                    "Le dashboard s'ouvre dans tous les cas. L'email sert juste à garder une trace.",
-                    "The dashboard opens either way. Email is only useful to keep a copy."
+                    "Tu pourras revenir au plan d’action et exporter le PDF depuis le dashboard.",
+                    "You can come back to the action plan and export the PDF from the dashboard."
                   )}
                 </p>
                 <input
@@ -183,12 +194,14 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
                   value={email}
                   onChange={(event) => {
                     setEmail(event.target.value);
+                    if (event.target.value.trim()) setWantsEmail(true);
                     setEmailError("");
                   }}
-                  onKeyDown={(event) => event.key === "Enter" && emailValue && continueWithEmail()}
+                  onKeyDown={(event) => event.key === "Enter" && openDashboard()}
                   placeholder={hasEmail ? session.email : "sofia@exemple.com"}
                   maxLength={255}
-                  className="mt-3 h-10 w-full rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="mt-3 h-10 w-full rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  disabled={!wantsEmail}
                 />
                 {emailError && <p className="mt-2 text-xs text-destructive">{emailError}</p>}
               </div>
@@ -205,25 +218,14 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         >
           {t("Retour", "Back")}
         </button>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <button
-            type="button"
-            onClick={continueWithoutEmail}
-            className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
-          >
-            {t("Voir le dashboard", "View dashboard")}
-          </button>
-          <button
-            type="button"
-            onClick={continueWithEmail}
-            disabled={!emailValue}
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-40"
-          >
-            <Mail className="h-4 w-4" />
-            {t("Envoyer et voir", "Send and view")}
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={openDashboard}
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
+        >
+          {wantsEmail && emailValue ? t("Envoyer le rapport et ouvrir", "Send report and open") : t("Ouvrir mon dashboard", "Open my dashboard")}
+          <ArrowRight className="h-4 w-4" />
+        </button>
       </div>
     </div>
   );

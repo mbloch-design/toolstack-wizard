@@ -758,7 +758,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               onClick={skipActiveMoment}
               className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
             >
-              {t("Pas concerné", "Not relevant")}
+              {t("Je n’utilise rien ici", "I do not use anything here")}
             </button>
             <div className="flex flex-col gap-2 sm:flex-row">
               {selectedTools.length > 0 && missingMoments.length === 0 && (
@@ -775,7 +775,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 onClick={moveToNextMoment}
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-foreground px-5 text-sm font-semibold text-background"
               >
-                {selectedInActiveMoment > 0 ? t("Continuer", "Continue") : t("Passer", "Skip")}
+                {selectedInActiveMoment > 0 ? t("Zone suivante", "Next area") : t("Passer cette zone", "Skip this area")}
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
