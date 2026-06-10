@@ -29,7 +29,7 @@ import DiagTopBar from "@/components/diagnostic/DiagTopBar";
 import DiagSaveIndicator from "@/components/diagnostic/DiagSaveIndicator";
 import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay";
 
-// V2 steps: 0=Stack scan, 1=Profile/goal, 2=Dynamic questions,
+// V2 steps: 0=Profile/goal, 1=Stack scan, 2=Dynamic questions,
 // 3=Verdict + optional email, 4=legacy email step, 5=Loading, 12=Dashboard.
 type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 12;
 
@@ -260,8 +260,8 @@ export default function DiagnosticRouter() {
         saved_at: recovered.savedAt,
       },
       source: "web",
-      lang: session.language,
-      persona: session.persona,
+        lang: session.language,
+        persona: session.persona,
     });
   }, [dbSessionId, dbSessionToken, recovered, session.language, session.persona, step]);
 
@@ -566,28 +566,29 @@ export default function DiagnosticRouter() {
         {/* Main content */}
         <div className="flex-1 min-w-0">
           {step === 0 && (
+            <DiagStepProfileGoal
+              session={session}
+              onUpdate={updateSession}
+              onNext={() => nextFrom(0)}
+              variant="intro"
+              t={t}
+            />
+          )}
+          {step === 1 && (
             <DiagStepStackScan
               session={session}
               tools={tools}
               onUpdate={updateSession}
-              onNext={() => nextFrom(0)}
+              onNext={() => nextFrom(1)}
+              onPrev={() => prevFrom(1)}
               onTrack={(eventName, eventPayload = {}) => {
-                logEvent(0, eventName, {
+                logEvent(1, eventName, {
                   ...eventPayload,
                   funnel_version: FUNNEL_VERSION,
                 });
               }}
               t={t}
               fromTool={fromTool}
-            />
-          )}
-          {step === 1 && (
-            <DiagStepProfileGoal
-              session={session}
-              onUpdate={updateSession}
-              onNext={() => nextFrom(1)}
-              onPrev={() => prevFrom(1)}
-              t={t}
             />
           )}
           {step === 2 && (

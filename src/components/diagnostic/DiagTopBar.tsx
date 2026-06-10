@@ -19,8 +19,8 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
 
   const progressPercent = Math.round((step / Math.max(totalSteps - 1, 1)) * 100);
   const stageLabel = useMemo(() => {
-    if (step <= 0) return t("1. Stack", "1. Stack");
-    if (step === 1) return t("2. Contexte", "2. Context");
+    if (step <= 0) return t("1. Profil", "1. Profile");
+    if (step === 1) return t("2. Outils", "2. Tools");
     if (step === 2) return t("3. Vérification", "3. Check");
     if (step === 3) return t("4. Verdict", "4. Verdict");
     return t("5. Dashboard", "5. Dashboard");

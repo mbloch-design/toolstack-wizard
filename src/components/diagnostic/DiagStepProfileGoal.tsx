@@ -6,7 +6,8 @@ interface Props {
   session: SessionState;
   onUpdate: (patch: Partial<SessionState>) => void;
   onNext: () => void;
-  onPrev: () => void;
+  onPrev?: () => void;
+  variant?: "intro" | "confirm";
   t: (fr: string, en: string) => string;
 }
 
@@ -79,9 +80,11 @@ function inferPersona(tools: Tool[]) {
   return { persona: primary as Persona, confidence, ranked };
 }
 
-export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev, t }: Props) {
+export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev, variant = "confirm", t }: Props) {
   const inferred = useMemo(() => inferPersona(session.selectedTools), [session.selectedTools]);
   const [firstName, setFirstName] = useState(session.firstName || "");
+  const [email, setEmail] = useState(session.email || "");
+  const [emailError, setEmailError] = useState("");
   const [persona, setPersona] = useState<Persona>(session.persona || inferred.persona);
   const [stackGoal, setStackGoal] = useState<NonNullable<SessionState["stackGoal"]>>(session.stackGoal || "reduce_costs");
   const [tjm, setTjm] = useState<number>(session.tjm || 0);
@@ -89,8 +92,16 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
   const inferredMeta = PERSONAS.find((item) => item.id === inferred.persona) || PERSONAS[0];
   const selectedMeta = PERSONAS.find((item) => item.id === persona) || inferredMeta;
   const selectedLabel = t(selectedMeta.labelFr, selectedMeta.labelEn);
+  const isIntro = variant === "intro";
+  const hasSelectedTools = session.selectedTools.length > 0;
+  const emailValue = email.trim();
+  const isValidEmail = (value: string) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   const handleNext = () => {
+    if (!isValidEmail(emailValue)) {
+      setEmailError(t("Email invalide", "Invalid email"));
+      return;
+    }
     const complementarySkills = inferred.ranked
       .filter(([id]) => id !== persona)
       .slice(0, inferred.confidence === "hybrid" ? 1 : 0)
@@ -98,8 +109,9 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
 
     onUpdate({
       firstName: firstName.trim(),
+      email: emailValue || undefined,
       persona,
-      personaConfidence: persona === inferred.persona ? inferred.confidence : "hybrid",
+      personaConfidence: isIntro ? "clear" : persona === inferred.persona ? inferred.confidence : "hybrid",
       stackGoal,
       tjm,
       complementarySkills,
@@ -112,28 +124,39 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
       <div className="grid gap-5 lg:grid-cols-[1fr_340px] lg:items-end">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-            {t("Je confirme le bon angle de lecture.", "I confirm the right reading angle.")}
+            {isIntro
+              ? t("D’abord, je calibre le diagnostic.", "First, I calibrate the diagnostic.")
+              : t("Je confirme le bon angle de lecture.", "I confirm the right reading angle.")}
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
-            {t(
-              `Tu as renseigné ${session.selectedTools.length} outil(s). Maintenant je calibre le diagnostic sur ton activité et ton objectif.`,
-              `You listed ${session.selectedTools.length} tool(s). Now I calibrate the diagnostic around your work and goal.`
-            )}
+            {isIntro
+              ? t(
+                  "Ton profil sert à proposer les bons outils dès le départ. Sinon le sélecteur devient trop généraliste.",
+                  "Your profile helps suggest the right tools from the start. Otherwise the selector becomes too generic."
+                )
+              : t(
+                  `Tu as renseigné ${session.selectedTools.length} outil(s). Maintenant je calibre le diagnostic sur ton activité et ton objectif.`,
+                  `You listed ${session.selectedTools.length} tool(s). Now I calibrate the diagnostic around your work and goal.`
+                )}
           </p>
         </div>
 
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
           <p className="text-xs font-semibold uppercase text-primary">
-            {t("Profil détecté", "Detected profile")}
+            {isIntro ? t("Pourquoi maintenant", "Why now") : t("Profil détecté", "Detected profile")}
           </p>
           <div className="mt-2 flex items-center gap-3">
-            <inferredMeta.Icon className="h-6 w-6 text-primary" />
+            {isIntro ? <selectedMeta.Icon className="h-6 w-6 text-primary" /> : <inferredMeta.Icon className="h-6 w-6 text-primary" />}
             <div>
-              <p className="font-semibold text-foreground">{t(inferredMeta.labelFr, inferredMeta.labelEn)}</p>
+              <p className="font-semibold text-foreground">
+                {isIntro ? selectedLabel : t(inferredMeta.labelFr, inferredMeta.labelEn)}
+              </p>
               <p className="text-xs text-muted-foreground">
-                {inferred.confidence === "clear"
-                  ? t("Signal assez clair", "Fairly clear signal")
-                  : t("Profil probablement hybride", "Probably a hybrid profile")}
+                {isIntro
+                  ? t("Les suggestions seront orientées pour ce métier.", "Suggestions will be oriented around this role.")
+                  : inferred.confidence === "clear"
+                    ? t("Signal assez clair", "Fairly clear signal")
+                    : t("Profil probablement hybride", "Probably a hybrid profile")}
               </p>
             </div>
           </div>
@@ -189,20 +212,35 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
         </div>
 
         <div className="rounded-xl border border-border bg-card p-4">
-          <p className="text-sm font-semibold text-foreground">{t("Deux détails optionnels", "Two optional details")}</p>
+          <p className="text-sm font-semibold text-foreground">{t("Détails utiles", "Useful details")}</p>
           <p className="mt-1 text-xs text-muted-foreground">
-            {t("Le prénom personnalise le rapport. Le TJM sert seulement à estimer le temps récupérable.", "The first name personalizes the report. The day rate only estimates recoverable time.")}
+            {t("Le prénom personnalise le rapport. L'email reste optionnel. Le TJM sert seulement à estimer le temps récupérable.", "The first name personalizes the report. Email remains optional. The day rate only estimates recoverable time.")}
           </p>
           <div className="mt-3 grid gap-2">
-            <input
-              id="diagnostic-first-name-compact"
-              name="first-name"
-              type="text"
-              value={firstName}
-              onChange={(event) => setFirstName(event.target.value)}
-              placeholder={t("Prénom, optionnel", "First name, optional")}
-              className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            />
+            <div className="grid gap-2 sm:grid-cols-2">
+              <input
+                id="diagnostic-first-name-compact"
+                name="first-name"
+                type="text"
+                value={firstName}
+                onChange={(event) => setFirstName(event.target.value)}
+                placeholder={t("Prénom", "First name")}
+                className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
+              <input
+                id="diagnostic-email-early"
+                name="email"
+                type="email"
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                  setEmailError("");
+                }}
+                placeholder={t("Email optionnel", "Optional email")}
+                className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
+            </div>
+            {emailError && <p className="text-xs text-destructive">{emailError}</p>}
             <div className="grid grid-cols-2 gap-2">
               {TJM_OPTIONS.map((option) => (
                 <button
@@ -231,19 +269,21 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
       </section>
 
       <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="button"
-          onClick={onPrev}
-          className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
-        >
-          {t("Retour à la stack", "Back to stack")}
-        </button>
+        {onPrev ? (
+          <button
+            type="button"
+            onClick={onPrev}
+            className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
+          >
+            {hasSelectedTools ? t("Retour à la stack", "Back to stack") : t("Retour", "Back")}
+          </button>
+        ) : <span />}
         <button
           type="button"
           onClick={handleNext}
           className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
         >
-          {t("Continuer avec ce contexte", "Continue with this context")}
+          {isIntro ? t("Trouver mes outils", "Find my tools") : t("Continuer avec ce contexte", "Continue with this context")}
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>

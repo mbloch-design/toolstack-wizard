@@ -25,6 +25,7 @@ interface Props {
   tools: Tool[];
   onUpdate: (patch: Partial<SessionState>) => void;
   onNext: () => void;
+  onPrev?: () => void;
   onTrack?: (eventName: string, eventPayload?: Record<string, unknown>) => void;
   t: (fr: string, en: string) => string;
   fromTool?: string;
@@ -204,7 +205,7 @@ function nextMomentId(coveredIds: Set<string>, skippedIds: Set<string>, currentI
   return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || null;
 }
 
-export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onTrack, t, fromTool }: Props) {
+export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onPrev, onTrack, t, fromTool }: Props) {
   const [search, setSearch] = useState("");
   const initialSelectedTools = useMemo(() => {
     if (session.selectedTools.length > 0 || !fromTool) return session.selectedTools || [];
@@ -399,7 +400,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const next = !showCatalog;
     setShowCatalog(next);
     if (next) {
-      onTrack?.("selector_search_opened", {
+      onTrack?.("selector_manual_tool_opened", {
         moment_id: activeMoment.id,
         selected_count: selectedTools.length,
       });
@@ -542,15 +543,24 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             {t(`On part de ${toolName}`, `Starting from ${toolName}`)}
           </p>
         )}
-        <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-          {t("On retrouve tes outils, étape par étape.", "Let's find your tools, step by step.")}
+          <h1 className="text-3xl font-bold text-foreground md:text-4xl">
+          {t("On retrouve tes outils, avec ton profil en tête.", "Let's find your tools with your profile in mind.")}
         </h1>
         <p className="mx-auto max-w-xl text-sm text-muted-foreground md:text-base">
           {t(
-            "Réponds simplement aux questions. À la fin, je te montre ce que j’ai compris avant de lancer le diagnostic.",
-            "Just answer the questions. At the end, I show what I understood before running the diagnostic."
+            "Cherche l’outil que tu utilises vraiment. Les suggestions sont seulement des repères, pas une liste à cocher.",
+            "Search for the tool you actually use. Suggestions are only pointers, not a checklist."
           )}
         </p>
+        {onPrev && (
+          <button
+            type="button"
+            onClick={onPrev}
+            className="text-xs font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          >
+            {t("Modifier mon profil", "Edit my profile")}
+          </button>
+        )}
       </div>
 
       <section className="space-y-4">
@@ -586,21 +596,73 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </p>
           </div>
 
-          <div className="mt-6 grid gap-2 sm:grid-cols-2">
-            {activeMomentSuggestions.length > 0 ? activeMomentSuggestions.map((tool) => (
-              <ToolChoiceButton
-                key={tool.id}
-                tool={tool}
-                selected={selectedIds.has(tool.id)}
-                onToggle={() => toggleTool(tool)}
+          <div className="mt-6 space-y-3">
+            <label htmlFor="diagnostic-stack-search" className="text-xs font-semibold uppercase text-muted-foreground">
+              {t("Chercher dans le catalogue", "Search the catalog")}
+            </label>
+            <div className="relative">
+              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                id="diagnostic-stack-search"
+                name="stack-search"
+                type="text"
+                value={search}
+                onChange={(event) => {
+                  if (!search.trim()) {
+                    onTrack?.("selector_search_opened", {
+                      moment_id: activeMoment.id,
+                      selected_count: selectedTools.length,
+                    });
+                  }
+                  setSearch(event.target.value);
+                }}
+                placeholder={t("Tape le nom d’un outil : Notion, Slack, Stripe...", "Type a tool name: Notion, Slack, Stripe...")}
+                className="h-12 w-full rounded-lg border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
+              {search && (
+                <button
+                  type="button"
+                  onClick={() => setSearch("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground hover:text-foreground"
+                  aria-label={t("Effacer", "Clear")}
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+            {search.trim() && (
+              <ToolGrid
+                title={t("Résultats", "Results")}
+                tools={filteredTools.slice(0, 8)}
+                selectedIds={selectedIds}
+                onToggle={toggleTool}
                 t={t}
               />
-            )) : (
-              <div className="rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground sm:col-span-2">
-                {t("Je n'ai pas de suggestion forte ici. Ajoute ton outil manuellement si besoin.", "No strong suggestion here. Add your tool manually if needed.")}
-              </div>
             )}
           </div>
+
+          {!search.trim() && (
+            <div className="mt-6 space-y-3">
+              <p className="text-xs font-semibold uppercase text-muted-foreground">
+                {t("Suggestions fréquentes", "Common suggestions")}
+              </p>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {activeMomentSuggestions.length > 0 ? activeMomentSuggestions.map((tool) => (
+                  <ToolChoiceButton
+                    key={tool.id}
+                    tool={tool}
+                    selected={selectedIds.has(tool.id)}
+                    onToggle={() => toggleTool(tool)}
+                    t={t}
+                  />
+                )) : (
+                  <div className="rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground sm:col-span-2">
+                    {t("Je n'ai pas de suggestion forte ici. Recherche ton outil ou ajoute-le manuellement.", "No strong suggestion here. Search your tool or add it manually.")}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           <div className="mt-6 rounded-lg bg-muted/40 p-3">
             <button
@@ -608,45 +670,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               onClick={toggleSearchPanel}
               className="inline-flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-foreground"
             >
-              <span>{t("Je cherche un autre outil", "I’m looking for another tool")}</span>
-              <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
+              <span>{t("Je ne trouve pas mon outil", "I can’t find my tool")}</span>
+              <Plus className="h-4 w-4 shrink-0 text-muted-foreground" />
             </button>
 
             {showCatalog && (
               <div className="mt-4 space-y-4">
-                <div className="relative">
-                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <input
-                    id="diagnostic-stack-search"
-                    name="stack-search"
-                    type="text"
-                    value={search}
-                    onChange={(event) => setSearch(event.target.value)}
-                    placeholder={t("Rechercher un outil...", "Search a tool...")}
-                    className="h-11 w-full rounded-lg border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  />
-                  {search && (
-                    <button
-                      type="button"
-                      onClick={() => setSearch("")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground hover:text-foreground"
-                      aria-label={t("Effacer", "Clear")}
-                    >
-                      <X className="h-4 w-4" />
-                    </button>
-                  )}
-                </div>
-
-                {search.trim() && (
-                  <ToolGrid
-                    title={t("Résultats", "Results")}
-                    tools={filteredTools.slice(0, 8)}
-                    selectedIds={selectedIds}
-                    onToggle={toggleTool}
-                    t={t}
-                  />
-                )}
-
                 <div className="grid gap-2 sm:grid-cols-[1fr_110px_auto]">
                   <input
                     id="diagnostic-custom-tool"
@@ -710,30 +739,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           </div>
         </div>
       </section>
-
-      {selectedTools.length > 0 && (
-        <div className="fixed inset-x-4 bottom-4 z-30 mx-auto max-w-3xl rounded-xl border border-border bg-background/95 p-3 shadow-lg backdrop-blur">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground">
-                {selectedTools.length} {t("outil(s) ajoutés", "tool(s) added")}
-              </p>
-              <p className="truncate text-xs text-muted-foreground">
-                {selectedTools.slice(-4).map((tool) => tool.name).join(", ")}
-                {selectedTools.length > 4 ? ` +${selectedTools.length - 4}` : ""}
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => openReview("floating_bar")}
-              className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground"
-            >
-              {t("Vérifier", "Review")}
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
