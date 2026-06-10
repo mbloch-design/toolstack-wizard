@@ -173,7 +173,7 @@ const OFFER_OPTIONS: Array<{
   { value: "free", fr: "Gratuit", en: "Free" },
   { value: "paid", fr: "Payant", en: "Paid" },
   { value: "team", fr: "Équipe", en: "Team" },
-  { value: "unknown", fr: "Je ne sais pas", en: "Not sure" },
+  { value: "unknown", fr: "Pas sûr", en: "Unsure" },
 ];
 
 function makeCustomTool(name: string, price: number, moment?: StackMoment): Tool {
@@ -962,16 +962,16 @@ function ActiveOfferCheck({
   t: (fr: string, en: string) => string;
 }) {
   return (
-    <div className="rounded-lg border border-primary/20 bg-primary/[0.03] p-3" role="status">
+    <div className="rounded-lg border border-border bg-muted/20 p-3">
       <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase text-primary">
-            {t("À préciser maintenant", "Clarify now")}
+            {t("Plan utilisé", "Plan used")}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             {t(
-              "Le prix catalogue peut être faux pour toi. Indique le plan utilisé pour éviter un mauvais calcul.",
-              "Catalog pricing may be wrong for you. Set the plan used to avoid a bad estimate."
+              "Ajuste seulement si le prix affiché ne correspond pas à ton abonnement réel.",
+              "Adjust only if the displayed price does not match your real subscription."
             )}
           </p>
         </div>
@@ -1009,9 +1009,12 @@ function ToolOfferRow({
   onPriceChange: (price: number) => void;
   t: (fr: string, en: string) => string;
 }) {
+  const selectedOffer = tool.selectedOffer || (tool.price > 0 ? "paid" : "free");
+  const showPriceInput = selectedOffer === "paid" || selectedOffer === "team";
+
   return (
     <div className="rounded-lg border border-border bg-background p-3">
-      <div className="flex flex-col gap-3 md:flex-row md:items-center">
+      <div className="grid gap-3 lg:grid-cols-[minmax(150px,1fr)_minmax(260px,auto)_92px] lg:items-center">
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <ToolLogo tool={tool} size={28} className="rounded-md" />
           <div className="min-w-0">
@@ -1022,18 +1025,24 @@ function ToolOfferRow({
           </div>
         </div>
         <OfferSelector tool={tool} onChange={onOfferChange} t={t} />
-        <label className="flex h-9 w-full items-center gap-1 rounded-md border border-input bg-background px-2 text-xs md:w-24">
-          <input
-            type="number"
-            min={0}
-            value={tool.price || ""}
-            onChange={(event) => onPriceChange(Math.max(0, Number(event.target.value) || 0))}
-            placeholder="€/mois"
-            className="min-w-0 flex-1 bg-transparent outline-none"
-            aria-label={t(`Prix mensuel de ${tool.name}`, `Monthly price for ${tool.name}`)}
-          />
-          <span className="text-muted-foreground">€</span>
-        </label>
+        {showPriceInput ? (
+          <label className="flex h-9 w-full items-center gap-1 rounded-md border border-input bg-background px-2 text-xs lg:w-[92px]">
+            <input
+              type="text"
+              inputMode="decimal"
+              value={tool.price || ""}
+              onChange={(event) => onPriceChange(Math.max(0, Number(event.target.value.replace(",", ".")) || 0))}
+              placeholder="Prix"
+              className="min-w-0 flex-1 bg-transparent text-right outline-none"
+              aria-label={t(`Prix mensuel de ${tool.name}`, `Monthly price for ${tool.name}`)}
+            />
+            <span className="text-muted-foreground">€</span>
+          </label>
+        ) : (
+          <span className="inline-flex h-9 items-center justify-center rounded-md border border-border bg-muted/30 px-2 text-xs font-semibold text-muted-foreground lg:w-[92px]">
+            {selectedOffer === "free" ? "0€" : t("À vérifier", "Check")}
+          </span>
+        )}
       </div>
     </div>
   );
@@ -1050,13 +1059,13 @@ function OfferSelector({
 }) {
   const currentOffer = tool.selectedOffer || (tool.price > 0 ? "paid" : "free");
   return (
-    <div className="grid grid-cols-2 gap-1 rounded-md border border-border bg-muted/30 p-1 sm:grid-cols-4 md:w-[310px]">
+    <div className="grid w-full grid-cols-4 gap-1 rounded-md border border-border bg-muted/30 p-1 lg:w-[280px]">
       {OFFER_OPTIONS.map((option) => (
         <button
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
-          className={`h-8 rounded-[5px] px-2 text-[11px] font-semibold transition-colors ${
+          className={`h-8 whitespace-nowrap rounded-[5px] px-2 text-xs font-semibold transition-colors ${
             currentOffer === option.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-background hover:text-foreground"
