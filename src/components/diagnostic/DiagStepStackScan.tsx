@@ -266,11 +266,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
-  const [selectionFeedback, setSelectionFeedback] = useState<{
-    id: string;
-    toolName: string;
-    action: "added" | "removed";
-  } | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
   const selectedToolsById = useMemo(
@@ -341,26 +336,14 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     setShowCatalog(false);
     setCustomName("");
     setCustomPrice("");
-    setSelectionFeedback(null);
     const focusTimer = window.setTimeout(() => questionRef.current?.focus(), 0);
     return () => window.clearTimeout(focusTimer);
   }, [activeMomentId]);
-
-  useEffect(() => {
-    if (!selectionFeedback) return undefined;
-    const timeout = window.setTimeout(() => setSelectionFeedback(null), 2600);
-    return () => window.clearTimeout(timeout);
-  }, [selectionFeedback]);
 
   const toggleTool = (tool: Tool, source: "suggestion" | "search" | "review" | "companion" = "suggestion") => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
       if (alreadySelected) {
-        setSelectionFeedback({
-          id: `${tool.id}-removed-${Date.now()}`,
-          toolName: tool.name,
-          action: "removed",
-        });
         onTrack?.("selector_tool_removed", {
           tool_id: tool.id,
           tool_name: tool.name,
@@ -382,11 +365,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         moment_id: activeMoment.id,
         source,
         selected_count: prev.length + 1,
-      });
-      setSelectionFeedback({
-        id: `${tool.id}-added-${Date.now()}`,
-        toolName: tool.name,
-        action: "added",
       });
       return [...prev, withDefaultOffer(tool)];
     });
@@ -419,11 +397,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const price = Math.max(0, Number(customPrice) || 0);
     const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment));
     setSelectedTools((prev) => [...prev, customTool]);
-    setSelectionFeedback({
-      id: `${customTool.id}-added-${Date.now()}`,
-      toolName: customTool.name,
-      action: "added",
-    });
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -766,14 +739,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 />
               )
             )}
-            {selectionFeedback && (
-              <SelectionFeedbackMessage
-                key={selectionFeedback.id}
-                toolName={selectionFeedback.toolName}
-                action={selectionFeedback.action}
-                t={t}
-              />
-            )}
           </div>
 
           {!search.trim() && (
@@ -994,40 +959,6 @@ function OfferSelector({
           {t(option.fr, option.en)}
         </button>
       ))}
-    </div>
-  );
-}
-
-function SelectionFeedbackMessage({
-  toolName,
-  action,
-  t,
-}: {
-  toolName: string;
-  action: "added" | "removed";
-  t: (fr: string, en: string) => string;
-}) {
-  const added = action === "added";
-  return (
-    <div
-      role="status"
-      aria-live="polite"
-      className={`flex items-center gap-3 rounded-lg border px-3 py-2 text-sm font-medium ${
-        added
-          ? "border-primary/20 bg-primary/5 text-primary"
-          : "border-border bg-muted/50 text-muted-foreground"
-      }`}
-    >
-      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${
-        added ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"
-      }`}>
-        {added ? <Check className="h-3.5 w-3.5" /> : <X className="h-3.5 w-3.5" />}
-      </span>
-      <span>
-        {added
-          ? t(`${toolName} a été ajouté à ta sélection.`, `${toolName} was added to your selection.`)
-          : t(`${toolName} a été retiré.`, `${toolName} was removed.`)}
-      </span>
     </div>
   );
 }
