@@ -76,6 +76,12 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
     const next = new Map(answers);
     next.set(current.id, idx);
     setAnswers(next);
+    onUpdate({ discoveryAnswers: next });
+    if (questionIdx < activeQuestions.length - 1) {
+      window.setTimeout(() => {
+        setQuestionIdx((i) => i === questionIdx ? Math.min(i + 1, activeQuestions.length - 1) : i);
+      }, 220);
+    }
   };
 
   const handleNext = () => {
@@ -143,10 +149,10 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
       </div>
 
       {/* Navigation */}
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row">
         <button
           onClick={handlePrev}
-          className="rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground
+          className="rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground
                      hover:bg-muted transition-colors"
         >
           ← {t("Précédent", "Previous")}
@@ -154,12 +160,12 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
         <button
           onClick={handleNext}
           disabled={currentAnswer === undefined}
-          className="rounded-xl bg-primary px-6 py-3 text-primary-foreground text-sm font-semibold
+          className="rounded-md bg-primary px-6 py-3 text-primary-foreground text-sm font-semibold
                      disabled:opacity-40 hover:opacity-90 transition-opacity"
         >
           {questionIdx < activeQuestions.length - 1
-            ? t("Suivant →", "Next →")
-            : t("Terminer →", "Finish →")}
+            ? t("Question suivante", "Next question")
+            : t("Voir le premier verdict", "See first verdict")}
         </button>
       </div>
     </div>

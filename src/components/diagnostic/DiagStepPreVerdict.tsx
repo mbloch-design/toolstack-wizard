@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail, RotateCcw, ShieldAlert, TrendingDown } from "lucide-react";
 import type { DiagnosticResult, SessionState } from "@/types/diagnostic";
 
 interface Props {
   session: SessionState;
   result: DiagnosticResult;
+  onUpdate: (patch: Partial<SessionState>) => void;
   onNext: () => void;
   onPrev: () => void;
   t: (fr: string, en: string) => string;
@@ -13,7 +15,9 @@ function getToolName(result: DiagnosticResult, toolId: string) {
   return result.sessionState.selectedTools.find((tool) => tool.id === toolId)?.name || toolId;
 }
 
-export default function DiagStepPreVerdict({ session, result, onNext, onPrev, t }: Props) {
+export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, onPrev, t }: Props) {
+  const [email, setEmail] = useState(session.email || "");
+  const [emailError, setEmailError] = useState("");
   const allPrescriptions = [
     ...result.prescriptions.phase1,
     ...result.prescriptions.phase2,
@@ -24,21 +28,48 @@ export default function DiagStepPreVerdict({ session, result, onNext, onPrev, t 
   const dormantCount = result.insights.metrics.dormantCount;
   const reviewCount = result.insights.metrics.reviewCount;
   const hasEmail = Boolean(session.email?.trim());
+  const emailValue = email.trim();
+  const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+  const continueWithoutEmail = () => {
+    onUpdate({
+      emailPreferences: session.emailPreferences
+        ? { ...session.emailPreferences, summary: false }
+        : { summary: false, actions: false, checkIn: false },
+    });
+    onNext();
+  };
+
+  const continueWithEmail = () => {
+    if (!isValidEmail(emailValue)) {
+      setEmailError(t("Email invalide", "Invalid email"));
+      return;
+    }
+    onUpdate({
+      email: emailValue,
+      emailPreferences: {
+        summary: true,
+        actions: session.emailPreferences?.actions ?? false,
+        checkIn: session.emailPreferences?.checkIn ?? false,
+      },
+    });
+    onNext();
+  };
 
   return (
     <div className="mx-auto max-w-5xl space-y-7">
       <div className="grid gap-5 lg:grid-cols-[1fr_360px] lg:items-end">
         <div className="space-y-3">
           <p className="inline-flex rounded-md border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase text-primary">
-            {t("Pré-verdict", "Pre-verdict")}
+            {t("Diagnostic prêt", "Diagnostic ready")}
           </p>
           <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-            {t("On a déjà trouvé les vrais signaux.", "We already found the real signals.")}
+            {t("On a trouvé les signaux importants.", "We found the important signals.")}
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
             {t(
-              "Avant de demander ton email, voilà ce que ToolTrim voit dans ta stack.",
-              "Before asking for your email, here is what ToolTrim sees in your stack."
+              "Voici la lecture rapide. Tu peux ouvrir le dashboard maintenant, ou recevoir aussi le rapport par email.",
+              "Here is the quick read. You can open the dashboard now, or also receive the report by email."
             )}
           </p>
         </div>
@@ -132,12 +163,36 @@ export default function DiagStepPreVerdict({ session, result, onNext, onPrev, t 
               value={`${reviewCount + dormantCount} ${t("signal(aux)", "signal(s)")}`}
             />
           </div>
-          <div className="mt-5 rounded-lg bg-primary/5 p-4 text-sm text-foreground">
-            {hasEmail ? (
-              <p>{t("Ton email est déjà prêt pour recevoir le rapport.", "Your email is already ready for the report.")}</p>
-            ) : (
-              <p>{t("Prochaine étape : recevoir ou non ton rapport par email. Tu verras le dashboard dans tous les cas.", "Next step: decide whether to receive the report by email. You will see the dashboard either way.")}</p>
-            )}
+          <div className="mt-5 rounded-lg border border-primary/20 bg-primary/5 p-4">
+            <div className="flex items-start gap-3">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold text-foreground">
+                  {t("Rapport email optionnel", "Optional email report")}
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {t(
+                    "Le dashboard s'ouvre dans tous les cas. L'email sert juste à garder une trace.",
+                    "The dashboard opens either way. Email is only useful to keep a copy."
+                  )}
+                </p>
+                <input
+                  id="diagnostic-report-email-inline"
+                  name="report-email"
+                  type="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                    setEmailError("");
+                  }}
+                  onKeyDown={(event) => event.key === "Enter" && emailValue && continueWithEmail()}
+                  placeholder={hasEmail ? session.email : "sofia@exemple.com"}
+                  maxLength={255}
+                  className="mt-3 h-10 w-full rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                />
+                {emailError && <p className="mt-2 text-xs text-destructive">{emailError}</p>}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -150,15 +205,25 @@ export default function DiagStepPreVerdict({ session, result, onNext, onPrev, t 
         >
           {t("Retour", "Back")}
         </button>
-        <button
-          type="button"
-          onClick={onNext}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
-        >
-          <Mail className="h-4 w-4" />
-          {t("Recevoir / voir le rapport", "Receive / see report")}
-          <ArrowRight className="h-4 w-4" />
-        </button>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <button
+            type="button"
+            onClick={continueWithoutEmail}
+            className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
+          >
+            {t("Voir le dashboard", "View dashboard")}
+          </button>
+          <button
+            type="button"
+            onClick={continueWithEmail}
+            disabled={!emailValue}
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-40"
+          >
+            <Mail className="h-4 w-4" />
+            {t("Envoyer et voir", "Send and view")}
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -22,7 +22,6 @@ import {
 import DiagStepStackScan from "@/components/diagnostic/DiagStepStackScan";
 import DiagStepProfileGoal from "@/components/diagnostic/DiagStepProfileGoal";
 import DiagStep6Discovery from "@/components/diagnostic/DiagStep6Discovery";
-import DiagStep6bEmailRecap from "@/components/diagnostic/DiagStep6bEmailRecap";
 import DiagStepPreVerdict from "@/components/diagnostic/DiagStepPreVerdict";
 import DiagResultsLoading from "@/components/diagnostic/DiagResultsLoading";
 import DiagDashboard from "@/components/dashboard/DiagDashboard";
@@ -31,19 +30,19 @@ import DiagSaveIndicator from "@/components/diagnostic/DiagSaveIndicator";
 import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay";
 
 // V2 steps: 0=Stack scan, 1=Profile/goal, 2=Dynamic questions,
-// 3=Pre-verdict, 4=Email recap, 5=Loading, 12=Dashboard.
+// 3=Verdict + optional email, 4=legacy email step, 5=Loading, 12=Dashboard.
 type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 12;
 
-const TOTAL_VISIBLE_STEPS = 6;
+const TOTAL_VISIBLE_STEPS = 5;
 const FUNNEL_VERSION = "v2";
 const PROGRESS_MAP: Record<StepId, number> = {
   0: 0,
   1: 1,
   2: 2,
   3: 3,
-  4: 4,
-  5: 5,
-  12: 6,
+  4: 3,
+  5: 4,
+  12: 5,
 };
 
 function createInitialSession(language: "fr" | "en"): SessionState {
@@ -198,11 +197,11 @@ export default function DiagnosticRouter() {
       templateKey: "diagnostic_report_ready",
       locale: session.language,
       metadata: {
-        trigger_step: 4,
+        trigger_step: 3,
         funnel_version: FUNNEL_VERSION,
       },
     });
-    logEvent(4, "report_requested", { template_key: "diagnostic_report_ready" });
+    logEvent(3, "report_requested", { template_key: "diagnostic_report_ready" });
   }, [dbSessionId, dbSessionToken, logEvent, persistRecovery, session.email, session.emailPreferences, session.language]);
 
   // Transition helper
@@ -273,8 +272,8 @@ export default function DiagnosticRouter() {
     if (previous === step) return;
     previousStepRef.current = step;
 
-    // Queue report email only on explicit transition from email recap -> loading/results.
-    if (previous === 4 && step === 5) {
+    // Queue report email only on explicit transition from verdict -> loading/results.
+    if ((previous === 3 || previous === 4) && step === 5) {
       maybeQueueReportEmail();
     }
 
@@ -459,7 +458,11 @@ export default function DiagnosticRouter() {
       case 0: return goTo(1);
       case 1: return goTo(2);
       case 2: return goTo(3);
-      case 3: return goTo(4);
+      case 3:
+        return goToWithTransition(5, t(
+          session.firstName ? `C'est parti ${session.firstName} ! Calcul en cours…` : "Calcul de ton diagnostic…",
+          session.firstName ? `Here we go ${session.firstName}! Calculating…` : "Calculating your diagnostic…"
+        ));
       case 4:
         return goToWithTransition(5, t(
           session.firstName ? `C'est parti ${session.firstName} ! Calcul en cours…` : "Calcul de ton diagnostic…",
@@ -477,7 +480,7 @@ export default function DiagnosticRouter() {
       case 2: return goTo(1);
       case 3: return goTo(2);
       case 4: return goTo(3);
-      case 5: return goTo(4);
+      case 5: return goTo(3);
       default: return;
     }
   }, [goTo, logEvent]);
@@ -597,21 +600,13 @@ export default function DiagnosticRouter() {
               t={t}
             />
           )}
-          {step === 3 && previewDiagnosticResult && (
+          {(step === 3 || step === 4) && previewDiagnosticResult && (
             <DiagStepPreVerdict
               session={session}
               result={previewDiagnosticResult}
-              onNext={() => nextFrom(3)}
-              onPrev={() => prevFrom(3)}
-              t={t}
-            />
-          )}
-          {step === 4 && (
-            <DiagStep6bEmailRecap
-              session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(4)}
-              onPrev={() => prevFrom(4)}
+              onNext={() => nextFrom(step === 4 ? 4 : 3)}
+              onPrev={() => prevFrom(step === 4 ? 4 : 3)}
               t={t}
             />
           )}

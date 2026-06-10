@@ -88,6 +88,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
 
   const inferredMeta = PERSONAS.find((item) => item.id === inferred.persona) || PERSONAS[0];
   const selectedMeta = PERSONAS.find((item) => item.id === persona) || inferredMeta;
+  const selectedLabel = t(selectedMeta.labelFr, selectedMeta.labelEn);
 
   const handleNext = () => {
     const complementarySkills = inferred.ranked
@@ -111,12 +112,12 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
       <div className="grid gap-5 lg:grid-cols-[1fr_340px] lg:items-end">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-            {t("Je pense avoir compris ton contexte.", "I think I understand your context.")}
+            {t("Je confirme le bon angle de lecture.", "I confirm the right reading angle.")}
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
             {t(
-              "On confirme l'angle de lecture avant de calculer. Tu peux corriger en un clic.",
-              "Let's confirm the lens before calculating. You can correct it in one click."
+              `Tu as renseigné ${session.selectedTools.length} outil(s). Maintenant je calibre le diagnostic sur ton activité et ton objectif.`,
+              `You listed ${session.selectedTools.length} tool(s). Now I calibrate the diagnostic around your work and goal.`
             )}
           </p>
         </div>
@@ -163,6 +164,9 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
       <section className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="rounded-xl border border-border bg-card p-4">
           <p className="text-sm font-semibold text-foreground">{t("Ton objectif principal", "Your main goal")}</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {t("C'est ce qui priorise les recommandations finales.", "This prioritizes the final recommendations.")}
+          </p>
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
             {GOALS.map((goal) => {
               const Icon = goal.Icon;
@@ -185,7 +189,10 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
         </div>
 
         <div className="rounded-xl border border-border bg-card p-4">
-          <p className="text-sm font-semibold text-foreground">{t("Affiner le calcul", "Refine the calculation")}</p>
+          <p className="text-sm font-semibold text-foreground">{t("Deux détails optionnels", "Two optional details")}</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {t("Le prénom personnalise le rapport. Le TJM sert seulement à estimer le temps récupérable.", "The first name personalizes the report. The day rate only estimates recoverable time.")}
+          </p>
           <div className="mt-3 grid gap-2">
             <input
               id="diagnostic-first-name-compact"
@@ -236,10 +243,13 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           onClick={handleNext}
           className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
         >
-          {t(`Analyser comme ${t(selectedMeta.labelFr, selectedMeta.labelEn)}`, `Analyze as ${t(selectedMeta.labelFr, selectedMeta.labelEn)}`)}
+          {t("Continuer avec ce contexte", "Continue with this context")}
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>
+      <p className="text-center text-xs text-muted-foreground">
+        {t(`Lecture retenue : ${selectedLabel}.`, `Selected lens: ${selectedLabel}.`)}
+      </p>
     </div>
   );
 }
