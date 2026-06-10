@@ -125,20 +125,20 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
 
 const URGENCY_CONFIG = {
   now: {
-    labelFr: "MAINTENANT", labelEn: "NOW",
-    subtitleFr: "Moins de 5 min par action", subtitleEn: "Less than 5 min per action",
+    labelFr: "À faire d’abord", labelEn: "Do first",
+    subtitleFr: "Les décisions les plus simples à traiter", subtitleEn: "The simplest decisions to handle",
     pillCls: "bg-destructive text-white",
     borderCls: "border-l-destructive",
   },
   week: {
-    labelFr: "CETTE SEMAINE", labelEn: "THIS WEEK",
-    subtitleFr: "À traiter dans les 7 jours", subtitleEn: "Handle within 7 days",
+    labelFr: "À vérifier", labelEn: "Check",
+    subtitleFr: "À clarifier quand tu as un peu de temps", subtitleEn: "Clarify when you have a little time",
     pillCls: "bg-orange-500 text-white",
     borderCls: "border-l-orange-500",
   },
   month: {
-    labelFr: "CE MOIS", labelEn: "THIS MONTH",
-    subtitleFr: "Non-urgent mais impactant", subtitleEn: "Non-urgent but impactful",
+    labelFr: "Plus tard", labelEn: "Later",
+    subtitleFr: "Pas urgent, mais utile pour progresser", subtitleEn: "Not urgent, but useful to improve",
     pillCls: "bg-primary text-primary-foreground",
     borderCls: "border-l-primary",
   },
@@ -211,45 +211,59 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
   // Progress-aware sparring message
   const sparringMessage = useMemo(() => {
-    const { firstName } = result.sessionState;
+    const firstName = result.sessionState.firstName?.trim();
+    const nameFr = firstName ? `${firstName}, ` : "";
+    const nameEn = firstName ? `${firstName}, ` : "";
     if (completedCount === 0 && grouped.now.length > 0) {
       return t(
-        `Commence par MAINTENANT ${firstName} — ça prend 5 min et tu récupères tout de suite.`,
-        `Start with NOW ${firstName} — it takes 5 min and you save immediately.`
+        `${nameFr}commence par la première section. Elle rassemble les décisions les plus faciles à prendre.`,
+        `${nameEn}start with the first section. It contains the easiest decisions to make.`
       );
     }
     if (progressPct < 50) {
       return t(
-        `Bon début ${firstName} ! Continue avec les actions restantes.`,
-        `Good start ${firstName}! Keep going with the remaining actions.`
+        `${nameFr}bon début. Continue avec les actions qui ont le plus d’impact.`,
+        `${nameEn}good start. Continue with the highest-impact actions.`
       );
     }
     if (progressPct < 100) {
       return t(
-        `Plus que quelques actions ${firstName}. Tu y es presque.`,
-        `Just a few more actions ${firstName}. You're almost there.`
+        `${nameFr}il reste seulement quelques points à verrouiller.`,
+        `${nameEn}only a few points left to lock in.`
       );
     }
     return t(
-      `Bravo ${firstName} ! Ta stack est optimisée. Reviens dans 3 mois pour un nouveau check.`,
-      `Well done ${firstName}! Your stack is optimized. Come back in 3 months for a new check.`
+      `${nameFr}ta première passe est terminée. Reviens quand ta stack évolue.`,
+      `${nameEn}your first pass is complete. Come back when your stack evolves.`
     );
   }, [result.sessionState, completedCount, progressPct, grouped.now.length, t]);
 
   return (
     <div className="space-y-6">
-      {/* ─── 1. MOTIVATING COUNTER ─── */}
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Plan guidé", "Guided plan")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Les décisions à prendre, dans le bon ordre.", "The decisions to make, in the right order.")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Le but n’est pas de tout faire maintenant. Commence par les actions les plus évidentes, puis garde le reste comme checklist.",
+            "The goal is not to do everything now. Start with the clearest actions, then keep the rest as a checklist."
+          )}
+        </p>
+      </header>
+
       <div className="bg-[hsl(var(--navy,222_44%_17%))] rounded-2xl p-6 text-white space-y-4">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-sm text-white/60">{t("Tu as récupéré", "You've recovered")}</p>
+            <p className="text-sm text-white/60">{t("Potentiel sécurisé", "Secured potential")}</p>
             <p className="text-3xl md:text-4xl font-bold font-['DM_Mono']">
               {recoveredSavings}€ <span className="text-lg text-white/40">/ {totalSavings}€</span>
             </p>
           </div>
           {lastChecked && (
             <span className="text-sm font-['DM_Mono'] text-[hsl(var(--keep))] animate-in fade-in duration-300">
-              ✓ {lastChecked} {t("récupérés", "recovered")} !
+              {lastChecked} {t("traités", "handled")}
             </span>
           )}
         </div>
@@ -261,7 +275,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         </div>
         {completedCount === 0 && grouped.now.length > 0 && (
           <p className="text-xs text-white/50">
-            {t("Commence par MAINTENANT — ça prend 5 min", "Start with NOW — it takes 5 min")}
+            {t("Commence par la première section. Elle contient les arbitrages les plus rapides.", "Start with the first section. It contains the fastest decisions.")}
           </p>
         )}
         {completedCount > 0 && (
@@ -275,7 +289,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         <div className="border border-border rounded-xl bg-card p-4 space-y-3">
           <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
             <Target className="w-4 h-4" />
-            {t("Ordre de bataille", "Battle order")}
+            {t("Pourquoi cet ordre ?", "Why this order?")}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {result.insights.focusAreas.slice(0, 4).map((focus) => (
@@ -302,7 +316,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
             {/* Section header */}
             <div className="flex items-center gap-2">
               <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${cfg.pillCls}`}>
-                ● {t(cfg.labelFr, cfg.labelEn)}
+                {t(cfg.labelFr, cfg.labelEn)}
               </span>
               <span className="text-xs text-muted-foreground">{t(cfg.subtitleFr, cfg.subtitleEn)}</span>
             </div>
@@ -390,7 +404,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
       {/* ─── 5. SPARRING PARTNER ─── */}
       <div className="bg-card border border-border rounded-xl p-5">
         <p className="text-sm text-foreground leading-relaxed">{sparringMessage}</p>
-        <p className="text-xs text-muted-foreground mt-2 italic">— {t("Ton sparring partner", "Your sparring partner")}</p>
+        <p className="text-xs text-muted-foreground mt-2">{t("Lecture ToolTrim", "ToolTrim read")}</p>
       </div>
 
       {/* Export */}

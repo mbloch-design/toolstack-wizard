@@ -127,16 +127,26 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
 
   return (
     <div className="space-y-8">
-      <div>
-        <h2 className="text-xl font-bold text-foreground">{t("Ce que je ferais à ta place", "What I'd do in your shoes")}</h2>
-        <p className="text-sm text-muted-foreground mt-1">— {t("Ton sparring partner", "Your sparring partner")}</p>
-      </div>
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Options prudentes", "Careful options")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Seulement si tu veux aller plus loin.", "Only if you want to go further.")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Cette page n’est pas une invitation à empiler des outils. Elle liste les remplacements possibles et les pistes à tester après les actions prioritaires.",
+            "This page is not an invitation to pile up tools. It lists possible replacements and ideas to test after priority actions."
+          )}
+        </p>
+      </header>
 
-      {/* ─── 1. SWAPS FIRST ─── */}
       {swaps.length > 0 && (
         <div className="space-y-3">
           <div>
-            <h3 className="text-sm font-semibold text-foreground">🔄 {t("Remplace, ne dépense pas plus", "Replace, don't spend more")}</h3>
+            <h2 className="text-sm font-semibold text-foreground">{t("Remplacer avant d’ajouter", "Replace before adding")}</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t("Ces pistes ont du sens seulement si elles simplifient vraiment ton usage.", "These options make sense only if they truly simplify your usage.")}
+            </p>
           </div>
           <div className="space-y-3">
             {swaps.map((swap) => (
@@ -152,12 +162,11 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
         </div>
       )}
 
-      {/* ─── 2. NEW TOOLS (optional, max 3) ─── */}
       {result.recommendations.length > 0 && (
         <div className="space-y-3">
           <div>
-            <h3 className="text-sm font-semibold text-foreground">💡 {t("Si tu veux aller plus loin", "If you want to go further")}</h3>
-            <p className="text-xs text-muted-foreground">{t("Optionnel — ces outils pourraient t'intéresser", "Optional — these tools might interest you")}</p>
+            <h2 className="text-sm font-semibold text-foreground">{t("Pistes optionnelles", "Optional ideas")}</h2>
+            <p className="text-xs text-muted-foreground">{t("À tester seulement si le besoin est réel.", "Test only if the need is real.")}</p>
           </div>
           <div className="space-y-2">
             {result.recommendations.slice(0, 3).map((tool) => (
@@ -178,8 +187,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
 
       {result.recommendations.length === 0 && swaps.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          <p className="text-4xl mb-3">✨</p>
-          <p className="text-sm">{t("Ta stack est déjà bien optimisée !", "Your stack is already well optimized!")}</p>
+          <p className="text-sm">{t("Aucune piste optionnelle forte. C’est plutôt bon signe.", "No strong optional idea. That is a good sign.")}</p>
         </div>
       )}
     </div>

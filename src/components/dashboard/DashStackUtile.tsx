@@ -136,13 +136,25 @@ export default function DashStackUtile({ result, t }: Props) {
 
   const tabs: { key: FilterTab; label: string; count: number }[] = [
     { key: "all", label: t("Tous", "All"), count: toolsWithScores.length },
-    { key: "keep", label: `✓ ${t("À garder", "Keep")}`, count: keepCount },
-    { key: "review", label: `⚠ ${t("À revoir", "Review")}`, count: reviewCount },
+    { key: "keep", label: t("Socle utile", "Useful core"), count: keepCount },
+    { key: "review", label: t("À clarifier", "To clarify"), count: reviewCount },
   ];
 
   return (
     <div className="space-y-5">
-      {/* ─── Filter tabs ─── */}
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Carte de stack", "Stack map")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Quels outils portent vraiment ton activité ?", "Which tools really support your work?")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Cette vue sépare le socle utile des outils à clarifier. Le score n’est pas une note morale : c’est un indice pour décider quoi vérifier.",
+            "This view separates useful core tools from tools to clarify. The score is not a moral grade: it is a signal to decide what to check."
+          )}
+        </p>
+      </header>
+
       <div className="flex gap-1 border-b border-border">
         {tabs.map((tab) => (
           <button
@@ -159,7 +171,6 @@ export default function DashStackUtile({ result, t }: Props) {
         ))}
       </div>
 
-      {/* ─── Tool cards ─── */}
       <div className="space-y-2">
         {filtered.map(({ tool, score }) => (
           <ToolCard key={tool.id} tool={tool} score={score} result={result} t={t} />
@@ -172,13 +183,12 @@ export default function DashStackUtile({ result, t }: Props) {
         </p>
       )}
 
-      {/* ─── Total footer ─── */}
       <div className="flex items-center justify-between bg-muted/50 rounded-xl px-4 py-3 border border-border">
         <p className="text-sm text-foreground">
-          {t("Stack optimisée", "Optimized stack")}: <strong className="font-['DM_Mono']">{result.optimizedCost}€/{t("mois", "mo")}</strong>
+          {t("Budget après arbitrage", "Budget after decisions")}: <strong className="font-['DM_Mono']">{result.optimizedCost}€/{t("mois", "mo")}</strong>
         </p>
         <p className="text-xs text-muted-foreground">
-          {t("Tu gardes", "You keep")} <strong>{toolsWithScores.length}</strong> {t("outils", "tools")}
+          {t("Socle conservé", "Kept core")} : <strong>{toolsWithScores.length}</strong> {t("outils", "tools")}
         </p>
       </div>
     </div>
