@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -208,6 +208,7 @@ function nextMomentId(coveredIds: Set<string>, skippedIds: Set<string>, currentI
 
 export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onPrev, onTrack, t, fromTool }: Props) {
   const [search, setSearch] = useState("");
+  const questionRef = useRef<HTMLHeadingElement | null>(null);
   const initialSelectedTools = useMemo(() => {
     if (session.selectedTools.length > 0 || !fromTool) return session.selectedTools || [];
     const normalizedFromTool = normalize(fromTool);
@@ -295,6 +296,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const selectedMonthlyCost = selectedTools.reduce((sum, tool) => sum + (Number(tool.price) || 0), 0);
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
+
+  useEffect(() => {
+    setSearch("");
+    setShowCatalog(false);
+    setCustomName("");
+    setCustomPrice("");
+    setSelectionFeedback(null);
+    const focusTimer = window.setTimeout(() => questionRef.current?.focus(), 0);
+    return () => window.clearTimeout(focusTimer);
+  }, [activeMomentId]);
 
   useEffect(() => {
     if (!selectionFeedback) return undefined;
@@ -643,8 +654,18 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </div>
           )}
 
-          <div className="mt-7 space-y-2">
-            <h2 className="text-2xl font-bold text-foreground md:text-3xl">
+          <div
+            key={activeMoment.id}
+            className="mt-7 space-y-2 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
+          >
+            <p className="text-xs font-semibold uppercase text-muted-foreground">
+              {t("Nouvelle zone à vérifier", "New area to check")} · {t(activeMoment.fr, activeMoment.en)}
+            </p>
+            <h2
+              ref={questionRef}
+              tabIndex={-1}
+              className="text-2xl font-bold text-foreground outline-none md:text-3xl"
+            >
               {t(activeMoment.questionFr, activeMoment.questionEn)}
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -672,7 +693,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   }
                   setSearch(event.target.value);
                 }}
-                placeholder={t("Tape le nom d’un outil : Notion, Slack, Stripe...", "Type a tool name: Notion, Slack, Stripe...")}
+                placeholder={t(
+                  `Cherche un outil pour ${activeMoment.fr.toLowerCase()}...`,
+                  `Search a tool for ${activeMoment.en.toLowerCase()}...`
+                )}
                 className="h-12 w-full rounded-lg border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
               {search && (
