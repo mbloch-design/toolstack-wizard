@@ -165,6 +165,17 @@ function normalize(value: string) {
     .trim();
 }
 
+const OFFER_OPTIONS: Array<{
+  value: NonNullable<Tool["selectedOffer"]>;
+  fr: string;
+  en: string;
+}> = [
+  { value: "free", fr: "Gratuit", en: "Free" },
+  { value: "paid", fr: "Payant", en: "Paid" },
+  { value: "team", fr: "Équipe", en: "Team" },
+  { value: "unknown", fr: "Je ne sais pas", en: "Not sure" },
+];
+
 function makeCustomTool(name: string, price: number, moment?: StackMoment): Tool {
   const slug = normalize(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   return {
@@ -178,6 +189,28 @@ function makeCustomTool(name: string, price: number, moment?: StackMoment): Tool
     prescription_quality: "oui",
     force_silence: false,
   };
+}
+
+function withDefaultOffer(tool: Tool): Tool {
+  const catalogMonthlyPrice = tool.catalogMonthlyPrice ?? Number(tool.price || 0);
+  return {
+    ...tool,
+    catalogMonthlyPrice,
+    selectedOffer: tool.selectedOffer || (catalogMonthlyPrice > 0 ? "paid" : "free"),
+    selectedPriceIsEstimate: tool.selectedPriceIsEstimate ?? true,
+  };
+}
+
+function offerPrice(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) {
+  if (offer === "free") return 0;
+  return Number(tool.catalogMonthlyPrice ?? tool.price ?? 0);
+}
+
+function offerLabel(tool: Tool, t: (fr: string, en: string) => string) {
+  if (tool.selectedOffer === "free") return t("Gratuit", "Free");
+  if (tool.selectedOffer === "team") return t("Équipe", "Team");
+  if (tool.selectedOffer === "unknown") return t("À vérifier", "To check");
+  return t("Payant", "Paid");
 }
 
 function toolText(tool: Tool) {
@@ -210,13 +243,15 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [search, setSearch] = useState("");
   const questionRef = useRef<HTMLHeadingElement | null>(null);
   const initialSelectedTools = useMemo(() => {
-    if (session.selectedTools.length > 0 || !fromTool) return session.selectedTools || [];
+    if (session.selectedTools.length > 0 || !fromTool) {
+      return (session.selectedTools || []).map(withDefaultOffer);
+    }
     const normalizedFromTool = normalize(fromTool);
     const entryTool = tools.find((tool) =>
       normalize(tool.id) === normalizedFromTool ||
       normalize(tool.name) === normalizedFromTool
     );
-    return entryTool ? [entryTool] : [];
+    return entryTool ? [withDefaultOffer(entryTool)] : [];
   }, [fromTool, session.selectedTools, tools]);
   const [selectedTools, setSelectedTools] = useState<Tool[]>(initialSelectedTools);
   const [activeMomentId, setActiveMomentId] = useState<string>(() => {
@@ -293,6 +328,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
   const missingMoments = momentCoverage.filter((moment) => !moment.covered && !moment.skipped);
   const selectedInActiveMoment = activeMoment.selected.length;
+  const selectedToolsInActiveMoment = activeMoment.selected;
   const selectedMonthlyCost = selectedTools.reduce((sum, tool) => sum + (Number(tool.price) || 0), 0);
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
@@ -349,7 +385,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         toolName: tool.name,
         action: "added",
       });
-      return [...prev, tool];
+      return [...prev, withDefaultOffer(tool)];
     });
   };
 
@@ -357,11 +393,28 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     setSelectedTools((prev) => prev.map((tool) => tool.id === toolId ? { ...tool, ...patch } : tool));
   };
 
+  const updateSelectedToolOffer = (toolId: string, offer: NonNullable<Tool["selectedOffer"]>) => {
+    setSelectedTools((prev) => prev.map((tool) => {
+      if (tool.id !== toolId) return tool;
+      return {
+        ...tool,
+        selectedOffer: offer,
+        price: offerPrice(tool, offer),
+        selectedPriceIsEstimate: offer !== "free",
+      };
+    }));
+    onTrack?.("selector_tool_offer_selected", {
+      tool_id: toolId,
+      offer,
+      moment_id: activeMoment.id,
+    });
+  };
+
   const addCustomTool = () => {
     const name = customName.trim();
     if (name.length < 2) return;
     const price = Math.max(0, Number(customPrice) || 0);
-    const customTool = makeCustomTool(name, price, activeMoment);
+    const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment));
     setSelectedTools((prev) => [...prev, customTool]);
     setSelectionFeedback({
       id: `${customTool.id}-added-${Date.now()}`,
@@ -585,13 +638,13 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             {t(`On part de ${toolName}`, `Starting from ${toolName}`)}
           </p>
         )}
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-          {t("On retrouve tes outils, avec ton profil en tête.", "Let's find your tools with your profile in mind.")}
+        <h1 className="text-3xl font-bold text-foreground md:text-4xl">
+          {t("Ajoute ce que tu utilises vraiment.", "Add what you actually use.")}
         </h1>
         <p className="mx-auto max-w-xl text-sm text-muted-foreground md:text-base">
           {t(
-            "Cherche l’outil que tu utilises vraiment. Les suggestions sont seulement des repères, pas une liste à cocher.",
-            "Search for the tool you actually use. Suggestions are only pointers, not a checklist."
+            "Je te guide zone par zone pour limiter les oublis. Les suggestions sont des repères, pas une liste obligatoire.",
+            "I guide you area by area to limit omissions. Suggestions are pointers, not a mandatory list."
           )}
         </p>
         {onPrev && (
@@ -628,31 +681,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               style={{ width: `${Math.max(8, Math.round((coverageCount / STACK_MOMENTS.length) * 100))}%` }}
             />
           </div>
-
-          {selectedTools.length > 0 && (
-            <div className="mt-4 rounded-lg border border-primary/15 bg-primary/[0.03] p-3">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div className="min-w-0">
-                  <p className="text-xs font-semibold uppercase text-primary">
-                    {t("Ta stack se construit", "Your stack is building")}
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {selectedTools.length} {t("outil(s) retenu(s)", "tool(s) selected")} · {selectedMonthlyCost}€/{t("mois", "mo")}
-                  </p>
-                </div>
-                <div className="flex -space-x-2">
-                  {selectedTools.slice(-6).reverse().map((tool) => (
-                    <ToolLogo
-                      key={tool.id}
-                      tool={tool}
-                      size={32}
-                      className="rounded-lg border-2 border-card bg-background"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
 
           <div
             key={activeMoment.id}
@@ -764,13 +792,17 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   </div>
                 )}
               </div>
-              {selectedInActiveMoment > 0 && (
-                <p className="rounded-lg bg-primary/5 px-3 py-2 text-sm font-medium text-primary" role="status">
-                  {selectedInActiveMoment === 1
-                    ? t("1 outil retenu pour cette zone.", "1 tool selected for this area.")
-                    : t(`${selectedInActiveMoment} outils retenus pour cette zone.`, `${selectedInActiveMoment} tools selected for this area.`)}
-                </p>
-              )}
+            </div>
+          )}
+
+          {selectedInActiveMoment > 0 && (
+            <div className="mt-6">
+              <ActiveOfferCheck
+                tools={selectedToolsInActiveMoment}
+                onOfferChange={updateSelectedToolOffer}
+                onUpdateTool={(toolId, patch) => updateSelectedTool(toolId, patch)}
+                t={t}
+              />
             </div>
           )}
 
@@ -899,7 +931,9 @@ function ToolChoiceButton({
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
         <p className="text-xs text-muted-foreground">
-          {tool.price > 0 ? `${tool.price}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
+          {tool.price > 0
+            ? t(`≈ ${tool.price}€/mois catalogue`, `≈ €${tool.price}/mo catalog`)
+            : t("Gratuit possible", "Free possible")}
         </p>
       </div>
       {selected ? (
@@ -913,6 +947,125 @@ function ToolChoiceButton({
         </span>
       )}
     </button>
+  );
+}
+
+function ActiveOfferCheck({
+  tools,
+  onOfferChange,
+  onUpdateTool,
+  t,
+}: {
+  tools: Tool[];
+  onOfferChange: (toolId: string, offer: NonNullable<Tool["selectedOffer"]>) => void;
+  onUpdateTool: (toolId: string, patch: Partial<Tool>) => void;
+  t: (fr: string, en: string) => string;
+}) {
+  return (
+    <div className="rounded-lg border border-primary/20 bg-primary/[0.03] p-3" role="status">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase text-primary">
+            {t("À préciser maintenant", "Clarify now")}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {t(
+              "Le prix catalogue peut être faux pour toi. Indique le plan utilisé pour éviter un mauvais calcul.",
+              "Catalog pricing may be wrong for you. Set the plan used to avoid a bad estimate."
+            )}
+          </p>
+        </div>
+        <span className="text-xs font-semibold text-primary">
+          {tools.length} {tools.length > 1 ? t("outils", "tools") : t("outil", "tool")}
+        </span>
+      </div>
+      <div className="mt-3 space-y-2">
+        {tools.map((tool) => (
+          <ToolOfferRow
+            key={tool.id}
+            tool={tool}
+            onOfferChange={(offer) => onOfferChange(tool.id, offer)}
+            onPriceChange={(price) => onUpdateTool(tool.id, {
+              price,
+              selectedOffer: price <= 0 ? "free" : tool.selectedOffer === "free" ? "paid" : tool.selectedOffer,
+              selectedPriceIsEstimate: false,
+            })}
+            t={t}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ToolOfferRow({
+  tool,
+  onOfferChange,
+  onPriceChange,
+  t,
+}: {
+  tool: Tool;
+  onOfferChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
+  onPriceChange: (price: number) => void;
+  t: (fr: string, en: string) => string;
+}) {
+  return (
+    <div className="rounded-lg border border-border bg-background p-3">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center">
+        <div className="flex min-w-0 flex-1 items-center gap-2">
+          <ToolLogo tool={tool} size={28} className="rounded-md" />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
+            <p className="text-xs text-muted-foreground">
+              {offerLabel(tool, t)} · {tool.price > 0 ? `${tool.price}€/${t("mois", "mo")}` : t("0€ estimé", "Estimated €0")}
+            </p>
+          </div>
+        </div>
+        <OfferSelector tool={tool} onChange={onOfferChange} t={t} />
+        <label className="flex h-9 w-full items-center gap-1 rounded-md border border-input bg-background px-2 text-xs md:w-24">
+          <input
+            type="number"
+            min={0}
+            value={tool.price || ""}
+            onChange={(event) => onPriceChange(Math.max(0, Number(event.target.value) || 0))}
+            placeholder="€/mois"
+            className="min-w-0 flex-1 bg-transparent outline-none"
+            aria-label={t(`Prix mensuel de ${tool.name}`, `Monthly price for ${tool.name}`)}
+          />
+          <span className="text-muted-foreground">€</span>
+        </label>
+      </div>
+    </div>
+  );
+}
+
+function OfferSelector({
+  tool,
+  onChange,
+  t,
+}: {
+  tool: Tool;
+  onChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
+  t: (fr: string, en: string) => string;
+}) {
+  const currentOffer = tool.selectedOffer || (tool.price > 0 ? "paid" : "free");
+  return (
+    <div className="grid grid-cols-2 gap-1 rounded-md border border-border bg-muted/30 p-1 sm:grid-cols-4 md:w-[310px]">
+      {OFFER_OPTIONS.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => onChange(option.value)}
+          className={`h-8 rounded-[5px] px-2 text-[11px] font-semibold transition-colors ${
+            currentOffer === option.value
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:bg-background hover:text-foreground"
+          }`}
+        >
+          {t(option.fr, option.en)}
+        </button>
+      ))}
+    </div>
   );
 }
 
@@ -979,12 +1132,12 @@ function StackCompanion({
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase text-primary">
-                {t("Ta stack en direct", "Your live stack")}
+                {t("Sélection en direct", "Live selection")}
               </p>
               <h3 className="mt-1 text-lg font-bold text-foreground">
                 {selectedTools.length === 0
-                  ? t("Elle va se construire ici", "It will build here")
-                  : t("Elle prend forme", "It is taking shape")}
+                  ? t("Rien ajouté pour l’instant", "Nothing added yet")
+                  : t("Ce que j’ai capté", "What I captured")}
               </h3>
             </div>
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -994,12 +1147,12 @@ function StackCompanion({
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {selectedTools.length === 0
               ? t(
-                  "À chaque outil ajouté, tu verras ta stack apparaître ici. C’est ton fil rouge.",
-                  "Each added tool appears here. This is your thread."
+                  "Ajoute uniquement les outils que tu utilises vraiment.",
+                  "Only add tools you actually use."
                 )
               : t(
-                  "On garde la vue complète pendant que tu avances, pour éviter les oublis.",
-                  "We keep the full view while you move forward, to avoid omissions."
+                  "Je garde le récapitulatif visible pendant que tu avances.",
+                  "I keep the recap visible while you move forward."
                 )}
           </p>
         </div>
@@ -1072,6 +1225,9 @@ function StackCompanion({
                   <div key={tool.id} className="flex items-center gap-2 rounded-lg bg-muted/40 px-2 py-1.5">
                     <ToolLogo tool={tool} size={24} className="rounded-md" />
                     <span className="min-w-0 flex-1 truncate text-xs font-medium text-foreground">{tool.name}</span>
+                    <span className="rounded bg-background px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">
+                      {offerLabel(tool, t)}
+                    </span>
                     <span className="font-mono text-xs text-muted-foreground">{tool.price || 0}€</span>
                   </div>
                 ))}
@@ -1225,7 +1381,9 @@ function ToolGrid({
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
                 <p className="text-xs text-muted-foreground">
-                  {tool.price > 0 ? `${tool.price}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
+                  {tool.price > 0
+                    ? t(`≈ ${tool.price}€/mois catalogue`, `≈ €${tool.price}/mo catalog`)
+                    : t("Gratuit possible", "Free possible")}
                 </p>
               </div>
               {selected ? (
@@ -1280,7 +1438,14 @@ function SelectedToolRow({
         <input
           type="number"
           value={tool.price || ""}
-          onChange={(event) => onUpdate({ price: Math.max(0, Number(event.target.value) || 0) })}
+          onChange={(event) => {
+            const price = Math.max(0, Number(event.target.value) || 0);
+            onUpdate({
+              price,
+              selectedOffer: price <= 0 ? "free" : tool.selectedOffer === "free" ? "paid" : tool.selectedOffer,
+              selectedPriceIsEstimate: false,
+            });
+          }}
           placeholder="€/mois"
           className="h-9 rounded-md border border-input bg-background px-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
         />
@@ -1300,6 +1465,17 @@ function SelectedToolRow({
             </button>
           ))}
         </div>
+      </div>
+      <div className="mt-2">
+        <OfferSelector
+          tool={tool}
+          onChange={(offer) => onUpdate({
+            selectedOffer: offer,
+            price: offerPrice(tool, offer),
+            selectedPriceIsEstimate: offer !== "free",
+          })}
+          t={t}
+        />
       </div>
     </div>
   );

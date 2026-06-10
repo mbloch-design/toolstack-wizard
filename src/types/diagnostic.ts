@@ -73,6 +73,9 @@ export interface Tool {
     official_source_url?: string;
     verification_status?: string;
   } | null;
+  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  catalogMonthlyPrice?: number;
+  selectedPriceIsEstimate?: boolean;
   force_silence: boolean;
   bundle_parent?: string;
   /** Runtime flag: true when this tool is included via a selected bundle parent */
