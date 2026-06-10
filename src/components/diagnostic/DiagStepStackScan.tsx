@@ -618,6 +618,31 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             />
           </div>
 
+          {selectedTools.length > 0 && (
+            <div className="mt-4 rounded-lg border border-primary/15 bg-primary/[0.03] p-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold uppercase text-primary">
+                    {t("Ta stack se construit", "Your stack is building")}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {selectedTools.length} {t("outil(s) retenu(s)", "tool(s) selected")} · {selectedMonthlyCost}€/{t("mois", "mo")}
+                  </p>
+                </div>
+                <div className="flex -space-x-2">
+                  {selectedTools.slice(-6).reverse().map((tool) => (
+                    <ToolLogo
+                      key={tool.id}
+                      tool={tool}
+                      size={32}
+                      className="rounded-lg border-2 border-card bg-background"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="mt-7 space-y-2">
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               {t(activeMoment.questionFr, activeMoment.questionEn)}
@@ -662,13 +687,28 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               )}
             </div>
             {search.trim() && (
-              <ToolGrid
-                title={t("Résultats", "Results")}
-                tools={filteredTools.slice(0, 8)}
-                selectedIds={selectedIds}
-                onToggle={(tool) => toggleTool(tool, "search")}
-                t={t}
-              />
+              filteredTools.length > 0 ? (
+                <ToolGrid
+                  title={t("Résultats", "Results")}
+                  tools={filteredTools.slice(0, 8)}
+                  selectedIds={selectedIds}
+                  onToggle={(tool) => toggleTool(tool, "search")}
+                  t={t}
+                />
+              ) : (
+                <NoSearchResult
+                  query={search}
+                  onOpenManual={() => {
+                    setCustomName(search.trim());
+                    setShowCatalog(true);
+                    onTrack?.("selector_manual_tool_prefilled", {
+                      moment_id: activeMoment.id,
+                      query: search.trim(),
+                    });
+                  }}
+                  t={t}
+                />
+              )
             )}
             {selectionFeedback && (
               <SelectionFeedbackMessage
@@ -1089,6 +1129,38 @@ function ReviewMetric({ label, value }: { label: string; value: string }) {
     <div className="rounded-xl border border-border bg-card p-4 text-center">
       <p className="font-mono text-3xl font-bold text-foreground">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{label}</p>
+    </div>
+  );
+}
+
+function NoSearchResult({
+  query,
+  onOpenManual,
+  t,
+}: {
+  query: string;
+  onOpenManual: () => void;
+  t: (fr: string, en: string) => string;
+}) {
+  return (
+    <div className="rounded-lg border border-dashed border-border bg-muted/30 p-4">
+      <p className="text-sm font-semibold text-foreground">
+        {t(`Je ne trouve pas “${query}”.`, `I cannot find “${query}”.`)}
+      </p>
+      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+        {t(
+          "Ce n’est pas bloquant : ajoute-le avec son budget approximatif, et je le prendrai dans l’analyse.",
+          "That is not blocking: add it with an approximate budget, and I will include it in the analysis."
+        )}
+      </p>
+      <button
+        type="button"
+        onClick={onOpenManual}
+        className="mt-3 inline-flex h-9 items-center gap-2 rounded-md bg-foreground px-3 text-xs font-semibold text-background"
+      >
+        <Plus className="h-3.5 w-3.5" />
+        {t("Ajouter cet outil", "Add this tool")}
+      </button>
     </div>
   );
 }

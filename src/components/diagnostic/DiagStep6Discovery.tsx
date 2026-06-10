@@ -73,6 +73,9 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
 
   const current = activeQuestions[questionIdx];
   const currentAnswer = answers.get(current?.id);
+  const reasonTools = session.selectedTools
+    .filter((tool) => current?.condition_tool_ids.includes(tool.id))
+    .slice(0, 3);
 
   const handleAnswer = (idx: number) => {
     const next = new Map(answers);
@@ -141,6 +144,14 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
               "Pick the closest answer. There is no wrong answer."
             )}
           </p>
+          {reasonTools.length > 0 && (
+            <p className="mx-auto max-w-lg rounded-lg border border-primary/15 bg-primary/5 px-3 py-2 text-sm leading-relaxed text-primary">
+              {t(
+                `Je te pose ça parce que tu as sélectionné ${reasonTools.map((tool) => tool.name).join(", ")}.`,
+                `I ask because you selected ${reasonTools.map((tool) => tool.name).join(", ")}.`
+              )}
+            </p>
+          )}
         </div>
       </header>
 

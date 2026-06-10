@@ -192,6 +192,10 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
   const maturity = result.insights.maturity;
   const healthLabel = translateHealthLabel(result.healthLabel, t);
   const hasWaste = result.estimatedWaste > 0;
+  const selectedTools = result.sessionState.selectedTools;
+  const coverage = result.sessionState.selectionCoverage;
+  const coveredCount = coverage?.covered.length || result.insights.functionalCoverage.filter((item) => item.status === "covered").length;
+  const totalCoverage = Math.max(coverage ? coverage.covered.length + coverage.skipped.length : result.insights.functionalCoverage.length, 1);
 
   return (
     <div className="space-y-10">
@@ -205,8 +209,8 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
           </h1>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {t(
-              "Je ne te montre pas tout d’un coup. On commence par la décision à prendre, puis les preuves qui expliquent le verdict.",
-              "I am not showing everything at once. We start with the decision to make, then the evidence behind the verdict."
+              "Tu peux lire cette restitution en 3 minutes : ce que j’ai compris, ce qui compte vraiment, puis quoi faire dans l’ordre.",
+              "You can read this restitution in 3 minutes: what I understood, what really matters, then what to do in order."
             )}
           </p>
         </div>
@@ -256,6 +260,28 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
             </button>
           </div>
         </div>
+      </section>
+
+      <section className="grid gap-3 md:grid-cols-3">
+        <ContextCard
+          label={t("Profil retenu", "Detected profile")}
+          value={t(result.insights.personaContext.labelFr, result.insights.personaContext.labelEn)}
+          detail={t(result.insights.personaContext.angleFr, result.insights.personaContext.angleEn)}
+        />
+        <ContextCard
+          label={t("Stack captée", "Captured stack")}
+          value={`${selectedTools.length} ${t("outil(s)", "tool(s)")}`}
+          detail={t(`${coveredCount}/${totalCoverage} zones de travail vérifiées.`, `${coveredCount}/${totalCoverage} work areas checked.`)}
+          tools={selectedTools.slice(0, 8)}
+        />
+        <ContextCard
+          label={t("Lecture utile", "Useful read")}
+          value={t("Verdict + plan", "Verdict + plan")}
+          detail={t(
+            "Les annexes servent à vérifier, pas à refaire tout le diagnostic.",
+            "Appendices help verify, not redo the whole diagnostic."
+          )}
+        />
       </section>
 
       <section className="space-y-3">
@@ -413,6 +439,38 @@ function SectionHeader({
       <p className="text-xs font-semibold uppercase text-primary">{eyebrow}</p>
       <h2 className="text-xl font-bold text-foreground md:text-2xl">{title}</h2>
       <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+function ContextCard({
+  label,
+  value,
+  detail,
+  tools,
+}: {
+  label: string;
+  value: string;
+  detail: string;
+  tools?: Tool[];
+}) {
+  return (
+    <div className="rounded-lg border border-border bg-card p-4">
+      <p className="text-xs font-semibold uppercase text-muted-foreground">{label}</p>
+      <p className="mt-1 text-lg font-bold text-foreground">{value}</p>
+      {tools && tools.length > 0 && (
+        <div className="mt-3 flex -space-x-2">
+          {tools.map((tool) => (
+            <ToolLogo
+              key={tool.id}
+              tool={tool}
+              size={30}
+              className="rounded-md border-2 border-card bg-background"
+            />
+          ))}
+        </div>
+      )}
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{detail}</p>
     </div>
   );
 }

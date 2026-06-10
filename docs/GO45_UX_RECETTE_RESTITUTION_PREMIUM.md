@@ -52,7 +52,9 @@ Score cible : 4/5 minimum sur chaque critere.
 - L'utilisateur doit voir sa stack se construire.
 - Le feedback `Ajoute` doit etre immediat.
 - Le companion stack doit donner envie de continuer.
+- La carte principale doit rappeler la stack en cours, meme si le panneau lateral n'est pas regarde.
 - La recherche doit rassurer si les suggestions ne suffisent pas.
+- Une recherche sans resultat doit proposer l'ajout manuel sans faire sentir que l'utilisateur est hors catalogue.
 - Le bouton `Je n'utilise rien ici` doit etre compris comme une reponse valide.
 - La revue finale doit ressembler a une verification, pas a une correction d'erreur.
 
@@ -60,6 +62,7 @@ Score cible : 4/5 minimum sur chaque critere.
 
 - L'utilisateur doit comprendre que ces questions servent a ameliorer le verdict.
 - Le nombre de questions doit sembler court.
+- Une question conditionnee par un outil doit expliquer pourquoi elle est posee.
 - La reponse doit etre confirmee visuellement.
 - Le passage au pre-verdict doit etre naturel.
 
@@ -72,6 +75,7 @@ Score cible : 4/5 minimum sur chaque critere.
 ### 5. Restitution
 
 - La premiere phrase doit raconter le vrai sujet.
+- Le debut de restitution doit rappeler ce que ToolTrim a capte : profil, stack, zones verifiees.
 - Le verdict doit etre comprehensible sans lire toute la page.
 - Les preuves doivent expliquer pourquoi.
 - Le plan doit donner une premiere action evidente.
@@ -101,4 +105,3 @@ Lecture produit :
 - Il identifie une premiere action concrete.
 - Il comprend que les details sont optionnels.
 - La session est captee en base avec la selection, les evenements et la restitution.
-
