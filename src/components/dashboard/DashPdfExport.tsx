@@ -66,7 +66,8 @@ export default function DashPdfExport({ result, t, variant = "outline" }: Props)
       const blob = await res.blob();
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `tooltrim-diagnostic-${result.sessionState.firstName.toLowerCase()}.pdf`;
+      const name = result.sessionState.firstName?.trim().toLowerCase();
+      a.download = `tooltrim-restitution-${name || "stack"}.pdf`;
       a.click();
       URL.revokeObjectURL(a.href);
     } catch (e) {
@@ -87,7 +88,7 @@ export default function DashPdfExport({ result, t, variant = "outline" }: Props)
       className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${cls} disabled:opacity-50`}
     >
       {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
-      {loading ? t("Génération…", "Generating…") : t("Télécharger rapport", "Download report")}
+      {loading ? t("Préparation…", "Preparing…") : t("Exporter la restitution", "Export restitution")}
     </button>
   );
 }
