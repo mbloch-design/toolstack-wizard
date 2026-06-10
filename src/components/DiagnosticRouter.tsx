@@ -562,9 +562,15 @@ export default function DiagnosticRouter() {
         />
       )}
 
-      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+      <div
+        className="min-h-[calc(100vh-var(--navbar-h)-72px)]"
+        style={{
+          background: "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.45) 100%)",
+        }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-7 md:py-10">
         {/* Main content */}
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0">
           {step === 0 && (
             <DiagStepProfileGoal
               session={session}
@@ -618,6 +624,7 @@ export default function DiagnosticRouter() {
               onComplete={() => goTo(12)}
             />
           )}
+        </div>
         </div>
       </div>
 
