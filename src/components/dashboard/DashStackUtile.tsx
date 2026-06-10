@@ -69,7 +69,31 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
           )}
 
           {/* Downgrade */}
-          {tool.downgrade_plan?.available && (
+          {prescription?.pricingContext && (
+            <div className="flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 dark:border-blue-900/60 dark:bg-blue-900/20">
+              <div className="flex-1">
+                <p className="text-xs text-blue-800 dark:text-blue-200">
+                  {prescription.pricingContext.targetPlan
+                    ? t("Palier à tester", "Tier to test")
+                    : t("Plan à vérifier", "Plan to review")}
+                  {": "}
+                  <strong>{prescription.pricingContext.targetPlan || prescription.pricingContext.currentPlan || t("plan inférieur", "lower tier")}</strong>
+                  {prescription.savingsEstimate > 0 && (
+                    <span className="ml-1 font-['DM_Mono']">
+                      ({t("potentiel", "potential")} {Math.round(prescription.savingsEstimate)}€)
+                    </span>
+                  )}
+                </p>
+                {prescription.pricingContext.sourceDomain && (
+                  <p className="mt-0.5 text-[11px] text-blue-700/80 dark:text-blue-200/75">
+                    {t("Source", "Source")}: {prescription.pricingContext.sourceDomain}
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {tool.downgrade_plan?.available && !prescription?.pricingContext && (
             <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-3 py-2">
               <div className="flex-1">
                 <p className="text-xs text-blue-700 dark:text-blue-300">
@@ -86,7 +110,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
           )}
 
           {/* Free alternative */}
-          {tool.freeAlternative && !tool.downgrade_plan?.available && (
+          {tool.freeAlternative && !tool.downgrade_plan?.available && !prescription?.pricingContext && (
             <div className="flex items-center gap-2 bg-[hsl(var(--keep))]/5 border border-[hsl(var(--keep))]/20 rounded-lg px-3 py-2">
               <p className="flex-1 text-xs text-foreground">
                 <strong>{tool.freeAlternative}</strong> {t("fait la même chose gratuitement", "does the same thing for free")}

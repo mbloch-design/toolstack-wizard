@@ -19,6 +19,8 @@ function mapTool(t: any): Tool {
     ia_use_case: typeof t.ia_use_case === "object" && t.ia_use_case ? JSON.stringify(t.ia_use_case) : t.ia_use_case || undefined,
     usage: "medium",
     prescription_quality: (t.prescription_quality as Tool["prescription_quality"]) || "oui",
+    pricing: t.pricing && typeof t.pricing === "object" ? t.pricing : undefined,
+    pricingEn: t.pricing_en && typeof t.pricing_en === "object" ? t.pricing_en : undefined,
     freeAlternative: t.free_alternative || undefined,
     downgrade_plan: t.downgrade_plan && typeof t.downgrade_plan === "object"
       ? {
@@ -26,6 +28,7 @@ function mapTool(t: any): Tool {
           fromPrice: t.downgrade_plan.fromPrice ?? 0,
           toPrice: t.downgrade_plan.toPrice ?? 0,
           plan: t.downgrade_plan.plan ?? "",
+          freeTier: t.downgrade_plan.freeTier ?? null,
         }
       : undefined,
     better_alternative: t.better_alternative && typeof t.better_alternative === "object"

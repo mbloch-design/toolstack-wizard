@@ -101,7 +101,9 @@ function getPriorityItems(result: DiagnosticResult, t: Props["t"]): PriorityItem
   const items = prescriptions.slice(0, 3).map((item, index) => {
     const tool = toolMap.get(item.toolId);
     const label =
-      item.verdict === "cancel"
+      item.type === "pricing-tier"
+        ? t(`Vérifier le plan de ${tool?.name ?? item.toolId}`, `Review ${tool?.name ?? item.toolId} plan`)
+        : item.verdict === "cancel"
         ? t(`Décider si ${tool?.name ?? item.toolId} doit rester`, `Decide whether ${tool?.name ?? item.toolId} should stay`)
         : item.verdict === "downgrade"
           ? t(`Vérifier le plan de ${tool?.name ?? item.toolId}`, `Review ${tool?.name ?? item.toolId} plan`)

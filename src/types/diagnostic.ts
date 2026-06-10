@@ -43,16 +43,35 @@ export interface Tool {
   ia_use_case?: string;
   usage: "high" | "medium" | "low" | "dormant";
   prescription_quality: "ferme" | "question" | "oui";
+  pricing?: {
+    free?: string;
+    paid?: string;
+  } | null;
+  pricingEn?: {
+    free?: string;
+    paid?: string;
+  } | null;
   freeAlternative?: string;
   downgrade_plan?: {
     available: boolean;
     fromPrice: number;
     toPrice: number;
     plan: string;
+    freeTier?: string | null;
   };
   better_alternative?: string;
   pricing_v5?: {
+    compare_price_monthly_eur?: number;
+    compare_plan_name?: string;
+    compare_plan_kind?: string;
+    price_reliability?: string;
+    usage_sensitive?: boolean;
+    location_sensitive?: boolean;
+    cautions?: string[];
     source_domain?: string;
+    verified_on?: string;
+    official_source_url?: string;
+    verification_status?: string;
   } | null;
   force_silence: boolean;
   bundle_parent?: string;
@@ -109,10 +128,18 @@ export interface DiagnosticResult {
 
 export interface Prescription {
   toolId: string;
-  type: "doublon" | "doublon-ia" | "dormant" | "inadapté";
+  type: "doublon" | "doublon-ia" | "dormant" | "inadapté" | "pricing-tier";
   verdict: "cancel" | "review" | "downgrade";
   message: string;
   savingsEstimate: number;
+  pricingContext?: {
+    currentPlan?: string;
+    targetPlan?: string;
+    hasFreeTier?: boolean;
+    reliability?: string;
+    sourceDomain?: string;
+    reason: "free_tier" | "downgrade_plan" | "usage_sensitive_price" | "free_alternative";
+  };
 }
 
 export type DiagnosticSeverity = "low" | "medium" | "high";
@@ -244,6 +271,7 @@ export interface DiagnosticInsights {
     duplicateCount: number;
     dormantCount: number;
     reviewCount: number;
+    pricingTierCount: number;
     highCostToolCount: number;
     activeDiscoveryCount: number;
     answeredDiscoveryCount: number;

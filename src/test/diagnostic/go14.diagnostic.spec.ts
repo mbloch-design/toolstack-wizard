@@ -67,4 +67,53 @@ describe("GO14 - Banc de recette metier", () => {
       }
     });
   }
+
+  it("prend en compte les plans gratuits et paliers d'offre avant de recommander une coupure", () => {
+    const baseTool = GO14_DIAGNOSTIC_DATA.allTools.find((tool) => tool.id === "notion");
+    expect(baseTool).toBeTruthy();
+    const paidToolWithFreeTier = {
+      ...baseTool!,
+      price: 12,
+      usage: "low" as const,
+      pricing: {
+        free: "Plan gratuit disponible",
+        paid: "Plus 12€/mois",
+      },
+      pricing_v5: {
+        compare_plan_name: "Plus",
+        compare_price_monthly_eur: 12,
+        price_reliability: "high",
+        source_domain: "notion.so",
+      },
+    };
+
+    const result = runDiagnostic({
+      firstName: "Plan",
+      tjm: 400,
+      language: "fr",
+      persona: "CLAIRE",
+      complementarySkills: [],
+      selectedTools: [paidToolWithFreeTier],
+      discoveryAnswers: new Map(),
+      closingAnswers: ["", "", ""],
+    }, {
+      ...GO14_DIAGNOSTIC_DATA,
+      allTools: [paidToolWithFreeTier],
+      doublonRules: [],
+      discoveryQuestions: [],
+    });
+
+    const prescriptions = [
+      ...result.prescriptions.phase1,
+      ...result.prescriptions.phase2,
+      ...result.prescriptions.phase3,
+    ];
+    const pricingPrescription = prescriptions.find((item) => item.toolId === "notion");
+
+    expect(pricingPrescription?.type).toBe("pricing-tier");
+    expect(pricingPrescription?.verdict).toBe("downgrade");
+    expect(pricingPrescription?.pricingContext?.hasFreeTier).toBe(true);
+    expect(result.insights.metrics.pricingTierCount).toBe(1);
+    expect(result.insights.riskFlags.map((flag) => flag.id)).toContain("pricing_tier_mismatch");
+  });
 });

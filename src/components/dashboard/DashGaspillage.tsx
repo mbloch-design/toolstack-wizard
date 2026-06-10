@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import type { DiagnosticResult, Tool, Prescription } from "@/types/diagnostic";
-import { AlertTriangle, CheckCircle2, ChevronRight, CircleDot, LayoutGrid, List, X } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ChevronRight, CircleDollarSign, CircleDot, LayoutGrid, List, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 
 
@@ -10,9 +10,9 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
-type BubbleStatus = "doublon" | "dormant" | "ok" | "neutral";
+type BubbleStatus = "doublon" | "dormant" | "pricing" | "ok" | "neutral";
 type ViewMode = "bubbles" | "list";
-type FilterStatus = "all" | "doublon" | "dormant" | "ok";
+type FilterStatus = "all" | "doublon" | "dormant" | "pricing" | "ok";
 
 interface BubbleData {
   tool: Tool;
@@ -27,6 +27,7 @@ function getStatus(tool: Tool, allPrescriptions: Prescription[]): { status: Bubb
   const p = allPrescriptions.find((pr) => pr.toolId === tool.id);
   if (p && (p.type === "doublon" || p.type === "doublon-ia")) return { status: "doublon", prescription: p };
   if (p && p.type === "dormant") return { status: "dormant", prescription: p };
+  if (p && p.type === "pricing-tier") return { status: "pricing", prescription: p };
   if (tool.price === 0 || tool.force_silence) return { status: "neutral" };
   return { status: "ok" };
 }
@@ -34,6 +35,7 @@ function getStatus(tool: Tool, allPrescriptions: Prescription[]): { status: Bubb
 const STATUS_COLORS: Record<BubbleStatus, string> = {
   doublon: "hsl(var(--destructive))",
   dormant: "hsl(25 95% 53%)",
+  pricing: "hsl(217 91% 60%)",
   ok: "hsl(var(--keep))",
   neutral: "hsl(var(--muted-foreground) / 0.3)",
 };
@@ -106,10 +108,12 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
           <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
             status === "doublon" ? "bg-destructive/10 text-destructive" :
             status === "dormant" ? "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400" :
+            status === "pricing" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300" :
             "bg-[hsl(var(--keep))]/10 text-[hsl(var(--keep))]"
           }`}>
             {status === "doublon" ? t("Chevauchement", "Overlap") :
              status === "dormant" ? t("Peu utilisé", "Low usage") :
+             status === "pricing" ? t("Plan à vérifier", "Plan to review") :
              t("RAS", "Looks fine")}
           </span>
         </div>
@@ -135,6 +139,25 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
             <p className="text-blue-700 dark:text-blue-300">
               {t("Plan alternatif", "Alternative plan")}: <strong>{tool.downgrade_plan.plan}</strong> → {tool.downgrade_plan.toPrice}€
             </p>
+          </div>
+        )}
+
+        {prescription?.pricingContext && (
+          <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-xs text-blue-800 dark:border-blue-900/60 dark:bg-blue-900/20 dark:text-blue-200">
+            <p className="font-semibold">{t("Variable pricing", "Pricing variable")}</p>
+            <p className="mt-1">
+              {prescription.pricingContext.currentPlan && (
+                <span>{t("Plan actuel", "Current plan")}: <strong>{prescription.pricingContext.currentPlan}</strong>. </span>
+              )}
+              {prescription.pricingContext.targetPlan && (
+                <span>{t("À tester", "To test")}: <strong>{prescription.pricingContext.targetPlan}</strong>.</span>
+              )}
+            </p>
+            {prescription.pricingContext.sourceDomain && (
+              <p className="mt-1 text-blue-700/80 dark:text-blue-200/80">
+                {t("Source prix", "Pricing source")}: {prescription.pricingContext.sourceDomain}
+              </p>
+            )}
           </div>
         )}
 
@@ -182,12 +205,15 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
   const counts = useMemo(() => {
     const doublons = items.filter((i) => i.status === "doublon");
     const dormants = items.filter((i) => i.status === "dormant");
+    const pricing = items.filter((i) => i.status === "pricing");
     const oks = items.filter((i) => i.status === "ok");
     return {
       doublons: doublons.length,
       doublonsSavings: doublons.reduce((s, i) => s + (i.prescription?.savingsEstimate ?? 0), 0),
       dormants: dormants.length,
       dormantsSavings: dormants.reduce((s, i) => s + (i.prescription?.savingsEstimate ?? 0), 0),
+      pricing: pricing.length,
+      pricingSavings: pricing.reduce((s, i) => s + (i.prescription?.savingsEstimate ?? 0), 0),
       oks: oks.length,
     };
   }, [items]);
@@ -213,6 +239,13 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
       count: counts.dormants, savings: counts.dormantsSavings,
       cls: "border-orange-300 text-orange-600 dark:border-orange-700 dark:text-orange-400",
       activeCls: "bg-orange-100 border-orange-500 text-orange-700 dark:bg-orange-900/30 dark:border-orange-600 dark:text-orange-400",
+    },
+    {
+      key: "pricing", Icon: CircleDollarSign,
+      label: `${counts.pricing} ${t("plan(s) à vérifier", "plan(s) to review")}`,
+      count: counts.pricing, savings: counts.pricingSavings,
+      cls: "border-blue-300 text-blue-600 dark:border-blue-700 dark:text-blue-300",
+      activeCls: "bg-blue-100 border-blue-500 text-blue-700 dark:bg-blue-900/30 dark:border-blue-600 dark:text-blue-300",
     },
     {
       key: "ok", Icon: CheckCircle2,
@@ -333,6 +366,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border text-left transition-colors ${
                   item.status === "doublon" ? "border-l-4 border-l-destructive border-border" :
                   item.status === "dormant" ? "border-l-4 border-l-orange-500 border-border" :
+                  item.status === "pricing" ? "border-l-4 border-l-blue-500 border-border" :
                   "border-border"
                 } hover:bg-muted/50`}
               >

@@ -22,6 +22,58 @@ export function canPrescribe(tool: Tool): boolean {
   return true;
 }
 
+function normalizeText(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function hasUsableFreeTier(tool: Tool): boolean {
+  if (tool.price <= 0 || tool.includedInBundle) return false;
+  if (tool.downgrade_plan?.available && tool.downgrade_plan.toPrice === 0) return true;
+  const freeCopy = normalizeText([
+    tool.pricing?.free,
+    tool.pricingEn?.free,
+    tool.freeAlternative,
+    ...(tool.pricing_v5?.cautions || []),
+  ].filter(Boolean).join(" "));
+  const freeAlternativeSameTool = Boolean(
+    tool.freeAlternative &&
+    (normalizeText(tool.freeAlternative) === normalizeText(tool.id) ||
+      normalizeText(tool.freeAlternative) === normalizeText(tool.name))
+  );
+  return freeAlternativeSameTool || /\bfree\b|gratuit|forfait de base|plan gratuit/.test(freeCopy);
+}
+
+function pricingPlanName(tool: Tool) {
+  return tool.pricing_v5?.compare_plan_name || tool.downgrade_plan?.plan || undefined;
+}
+
+function buildPricingContext(tool: Tool, reason: NonNullable<Prescription["pricingContext"]>["reason"]) {
+  return {
+    currentPlan: pricingPlanName(tool),
+    targetPlan: tool.downgrade_plan?.available
+      ? tool.downgrade_plan.freeTier || tool.downgrade_plan.plan || "Plan inférieur"
+      : hasUsableFreeTier(tool)
+        ? "Plan gratuit"
+        : undefined,
+    hasFreeTier: hasUsableFreeTier(tool),
+    reliability: tool.pricing_v5?.price_reliability,
+    sourceDomain: tool.pricing_v5?.source_domain,
+    reason,
+  } satisfies NonNullable<Prescription["pricingContext"]>;
+}
+
+function getDowngradeSavings(tool: Tool) {
+  if (tool.downgrade_plan?.available) {
+    const from = tool.downgrade_plan.fromPrice || tool.price;
+    return Math.max(0, from - tool.downgrade_plan.toPrice);
+  }
+  if (hasUsableFreeTier(tool)) return Math.max(0, tool.price);
+  return 0;
+}
+
 // ─── 1. Pertinence ────────────────────────────────────────────────
 export function computePertinence(
   tool: Tool,
@@ -85,17 +137,22 @@ function phase1Certified(tools: Tool[]): Prescription[] {
   const out: Prescription[] = [];
   for (const t of tools) {
     if (t.prescription_quality !== "ferme") continue;
-    const hasDowngrade = t.downgrade_plan?.available;
+    const hasDowngrade = t.downgrade_plan?.available || hasUsableFreeTier(t);
+    const downgradeSavings = getDowngradeSavings(t);
+    const targetPlan = t.downgrade_plan?.plan || (hasUsableFreeTier(t) ? "gratuit" : "");
     const p: Prescription = {
       toolId: t.id,
-      type: "dormant",
+      type: hasDowngrade ? "pricing-tier" : "dormant",
       verdict: hasDowngrade ? "downgrade" : "cancel",
       message: hasDowngrade
-        ? `Passe au plan ${t.downgrade_plan!.plan} (${t.downgrade_plan!.toPrice}€/mois)`
+        ? `Vérifie si le plan ${targetPlan} de ${t.name} suffit à ton usage`
         : `${t.name} peut être annulé`,
       savingsEstimate: hasDowngrade
-        ? t.downgrade_plan!.fromPrice - t.downgrade_plan!.toPrice
+        ? downgradeSavings
         : t.price,
+      pricingContext: hasDowngrade
+        ? buildPricingContext(t, t.downgrade_plan?.available ? "downgrade_plan" : "free_tier")
+        : undefined,
     };
     out.push(p);
   }
@@ -106,16 +163,51 @@ function phase2Questions(tools: Tool[]): Prescription[] {
   const out: Prescription[] = [];
   for (const t of tools) {
     if (t.prescription_quality !== "question") continue;
-    if (t.freeAlternative && t.price > 5) {
+    if (t.freeAlternative && t.price > 5 && !hasUsableFreeTier(t)) {
       const p: Prescription = {
         toolId: t.id,
         type: "doublon",
         verdict: "review",
         message: `Alternative gratuite disponible : ${t.freeAlternative}`,
         savingsEstimate: t.price,
+        pricingContext: buildPricingContext(t, "free_alternative"),
       };
       out.push(p);
     }
+  }
+  return out;
+}
+
+function detectPricingTierReviews(tools: Tool[]): Prescription[] {
+  const out: Prescription[] = [];
+  for (const t of tools) {
+    if (!canPrescribe(t)) continue;
+    if (t.price <= 5) continue;
+    const hasFreeTier = hasUsableFreeTier(t);
+    const hasDowngrade = t.downgrade_plan?.available;
+    const usageSensitive = t.pricing_v5?.usage_sensitive === true;
+    if (!hasFreeTier && !hasDowngrade && !usageSensitive) continue;
+    if (t.usage === "high" && !usageSensitive) continue;
+
+    const savings = getDowngradeSavings(t);
+    const reason: NonNullable<Prescription["pricingContext"]>["reason"] = hasDowngrade
+      ? "downgrade_plan"
+      : hasFreeTier
+        ? "free_tier"
+        : "usage_sensitive_price";
+
+    out.push({
+      toolId: t.id,
+      type: "pricing-tier",
+      verdict: "downgrade",
+      message: hasFreeTier
+        ? `${t.name}: tester si le plan gratuit suffit avant de garder le plan payant`
+        : hasDowngrade
+          ? `${t.name}: vérifier si un palier inférieur couvre l'usage réel`
+          : `${t.name}: prix dépendant de l'usage, vérifier le palier payé`,
+      savingsEstimate: savings,
+      pricingContext: buildPricingContext(t, reason),
+    });
   }
   return out;
 }
@@ -241,14 +333,16 @@ export function computePrescriptions(
   _persona: Persona
 ): { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] } {
   const p1 = phase1Certified(selectedTools);
-  const p2 = phase2Questions(selectedTools);
+  const p1ToolIds = new Set(p1.map((p) => p.toolId));
+  const p2 = [...phase2Questions(selectedTools), ...detectPricingTierReviews(selectedTools)]
+    .filter((p) => !p1ToolIds.has(p.toolId));
 
   const p3doublons = detectDoublons(selectedTools, doublonRules);
   const p3ia = detectDoublonsIA(selectedTools);
   const p3dormants = detectDormants(selectedTools);
   const p3inadapted = detectInadapted(selectedTools, toolScores);
 
-  const seenIds = new Set<string>();
+  const seenIds = new Set<string>([...p1, ...p2].map((p) => p.toolId));
   const phase3: Prescription[] = [];
   for (const p of [...p3doublons, ...p3ia, ...p3dormants, ...p3inadapted]) {
     if (seenIds.has(p.toolId)) continue;

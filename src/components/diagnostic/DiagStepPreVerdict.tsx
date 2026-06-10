@@ -26,7 +26,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   ];
   const topActions = allPrescriptions.slice(0, 3);
   const duplicateCount = result.insights.metrics.duplicateCount;
-  const dormantCount = result.insights.metrics.dormantCount;
+  const pricingTierCount = result.insights.metrics.pricingTierCount;
   const reviewCount = result.insights.metrics.reviewCount;
   const hasEmail = Boolean(session.email?.trim());
   const emailValue = email.trim();
@@ -102,9 +102,9 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         />
         <MetricCard
           Icon={ShieldAlert}
-          label={t("Risques", "Risks")}
-          value={String(result.insights.riskFlags.length)}
-          detail={t("dans la stack", "in the stack")}
+          label={t("Plans", "Plans")}
+          value={String(pricingTierCount)}
+          detail={t("à vérifier", "to review")}
         />
       </section>
 
@@ -152,7 +152,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
             />
             <VerdictLine
               label={t("À revoir", "To review")}
-              value={`${reviewCount + dormantCount} ${t("signal(aux)", "signal(s)")}`}
+              value={`${reviewCount} ${t("signal(aux)", "signal(s)")}`}
             />
           </div>
           <div className="mt-5 rounded-lg border border-primary/20 bg-primary/5 p-4">

@@ -244,8 +244,10 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
   const duplicateItems = prescriptions.filter((p) => p.type === "doublon" || p.type === "doublon-ia");
   const dormantItems = prescriptions.filter((p) => p.type === "dormant");
   const inadaptedItems = prescriptions.filter((p) => p.type === "inadapté");
+  const pricingTierItems = prescriptions.filter((p) => p.type === "pricing-tier");
   const duplicateSavings = sumSavings(duplicateItems);
   const dormantSavings = sumSavings(dormantItems);
+  const pricingTierSavings = sumSavings(pricingTierItems);
   const wasteRatio = input.stackTotalCost > 0 ? input.estimatedWaste / input.stackTotalCost : 0;
   const flags: DiagnosticRiskFlag[] = [];
 
@@ -274,6 +276,20 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
       actionFr: "Vérifier l'usage réel avant renouvellement.",
       actionEn: "Check real usage before renewal.",
       impactMonthly: Math.round(dormantSavings),
+    });
+  }
+
+  if (pricingTierItems.length > 0) {
+    flags.push({
+      id: "pricing_tier_mismatch",
+      severity: pricingTierItems.length >= 3 || pricingTierSavings >= 40 ? "high" : "medium",
+      labelFr: "Plans payants à challenger",
+      labelEn: "Paid plans to challenge",
+      detailFr: `${pricingTierItems.length} outil(s) ont un plan gratuit, un palier inférieur ou un prix dépendant de l'usage.`,
+      detailEn: `${pricingTierItems.length} tool(s) have a free plan, lower tier, or usage-sensitive pricing.`,
+      actionFr: "Vérifier le palier payé avant de supprimer l'outil.",
+      actionEn: "Review the paid tier before removing the tool.",
+      impactMonthly: Math.round(pricingTierSavings),
     });
   }
 
@@ -753,6 +769,7 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
       duplicateCount: prescriptions.filter((p) => p.type === "doublon" || p.type === "doublon-ia").length,
       dormantCount: prescriptions.filter((p) => p.type === "dormant").length,
       reviewCount: prescriptions.filter((p) => p.verdict === "review" || p.verdict === "downgrade").length,
+      pricingTierCount: prescriptions.filter((p) => p.type === "pricing-tier").length,
       highCostToolCount: paidTools.filter((tool) => Number(tool.price || 0) >= 60).length,
       activeDiscoveryCount: input.signalSummary?.activeDiscoveryCount || 0,
       answeredDiscoveryCount: input.signalSummary?.answeredDiscoveryCount || 0,

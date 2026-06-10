@@ -64,8 +64,10 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `now-${p.toolId}`,
       prescription: p, tool,
-      label: p.verdict === "downgrade"
-        ? t(`Downgrade ${tool?.name ?? p.toolId}`, `Downgrade ${tool?.name ?? p.toolId}`)
+      label: p.type === "pricing-tier"
+        ? t(`Vérifier le plan de ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId} plan`)
+        : p.verdict === "downgrade"
+        ? t(`Passer ${tool?.name ?? p.toolId} sur un plan inférieur`, `Move ${tool?.name ?? p.toolId} to a lower plan`)
         : t(`Annuler ${tool?.name ?? p.toolId}`, `Cancel ${tool?.name ?? p.toolId}`),
       savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
     });
@@ -86,7 +88,9 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `week-${p.toolId}`,
       prescription: p, tool,
-      label: t(`Vérifier ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId}`),
+      label: p.type === "pricing-tier"
+        ? t(`Tester le bon palier pour ${tool?.name ?? p.toolId}`, `Test the right tier for ${tool?.name ?? p.toolId}`)
+        : t(`Vérifier ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId}`),
       savings: p.savingsEstimate, timeMinutes: 30, urgency: "week",
     });
   }
