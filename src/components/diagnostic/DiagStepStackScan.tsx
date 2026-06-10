@@ -302,7 +302,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     return () => window.clearTimeout(timeout);
   }, [selectionFeedback]);
 
-  const toggleTool = (tool: Tool) => {
+  const toggleTool = (tool: Tool, source: "suggestion" | "search" | "review" | "companion" = "suggestion") => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
       if (alreadySelected) {
@@ -315,6 +315,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           tool_id: tool.id,
           tool_name: tool.name,
           moment_id: activeMoment.id,
+          source,
           selected_count: Math.max(prev.length - 1, 0),
         });
         return prev.filter((item) => item.id !== tool.id);
@@ -329,7 +330,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         tool_id: tool.id,
         tool_name: tool.name,
         moment_id: activeMoment.id,
-        source: "suggestion",
+        source,
         selected_count: prev.length + 1,
       });
       setSelectionFeedback({
@@ -516,7 +517,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   <SelectedToolRow
                     key={tool.id}
                     tool={tool}
-                    onRemove={() => toggleTool(tool)}
+                    onRemove={() => toggleTool(tool, "review")}
                     onUpdate={(patch) => updateSelectedTool(tool.id, patch)}
                     t={t}
                   />
@@ -665,7 +666,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 title={t("Résultats", "Results")}
                 tools={filteredTools.slice(0, 8)}
                 selectedIds={selectedIds}
-                onToggle={toggleTool}
+                onToggle={(tool) => toggleTool(tool, "search")}
                 t={t}
               />
             )}
@@ -690,7 +691,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     key={tool.id}
                     tool={tool}
                     selected={selectedIds.has(tool.id)}
-                    onToggle={() => toggleTool(tool)}
+                    onToggle={() => toggleTool(tool, "suggestion")}
                     t={t}
                   />
                 )) : (
@@ -791,7 +792,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           monthlyCost={selectedMonthlyCost}
           activeMomentLabel={t(activeMoment.fr, activeMoment.en)}
           onReview={() => openReview("stack_companion")}
-          onRemove={toggleTool}
+          onRemove={(tool) => toggleTool(tool, "companion")}
           t={t}
         />
       </section>

@@ -6,9 +6,10 @@ interface Props {
   result: DiagnosticResult;
   t: (fr: string, en: string) => string;
   onClose: () => void;
+  onTrack?: (eventName: string, eventPayload?: Record<string, unknown>) => void;
 }
 
-export default function DashShareModal({ result, t, onClose }: Props) {
+export default function DashShareModal({ result, t, onClose, onTrack }: Props) {
   const [copied, setCopied] = useState(false);
 
   // Simple share URL with session ID
@@ -18,6 +19,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
+      onTrack?.("restitution_share_link_copied", { channel: "copy" });
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // fallback
@@ -74,6 +76,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
             href={linkedInUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => onTrack?.("restitution_share_channel_clicked", { channel: "linkedin" })}
             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-border text-foreground text-xs font-medium hover:bg-muted transition-colors"
           >
             <Linkedin className="w-3.5 h-3.5" />
@@ -83,6 +86,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
             href={twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => onTrack?.("restitution_share_channel_clicked", { channel: "twitter" })}
             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-border text-foreground text-xs font-medium hover:bg-muted transition-colors"
           >
             <Twitter className="w-3.5 h-3.5" />
@@ -90,6 +94,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
           </a>
           <a
             href={mailUrl}
+            onClick={() => onTrack?.("restitution_share_channel_clicked", { channel: "email" })}
             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-border text-foreground text-xs font-medium hover:bg-muted transition-colors"
           >
             <Mail className="w-3.5 h-3.5" />

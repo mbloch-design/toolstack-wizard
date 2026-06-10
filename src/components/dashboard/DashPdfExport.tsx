@@ -7,6 +7,7 @@ interface Props {
   result: DiagnosticResult;
   t: (fr: string, en: string) => string;
   variant?: "primary" | "outline";
+  onExport?: () => void;
 }
 
 function serializeResult(result: DiagnosticResult) {
@@ -37,10 +38,11 @@ function serializeResult(result: DiagnosticResult) {
   };
 }
 
-export default function DashPdfExport({ result, t, variant = "outline" }: Props) {
+export default function DashPdfExport({ result, t, variant = "outline", onExport }: Props) {
   const [loading, setLoading] = useState(false);
 
   const handleExport = useCallback(async () => {
+    onExport?.();
     setLoading(true);
     try {
       const payload = serializeResult(result);
@@ -75,7 +77,7 @@ export default function DashPdfExport({ result, t, variant = "outline" }: Props)
     } finally {
       setLoading(false);
     }
-  }, [result]);
+  }, [onExport, result]);
 
   const cls = variant === "primary"
     ? "bg-primary text-primary-foreground hover:opacity-90"

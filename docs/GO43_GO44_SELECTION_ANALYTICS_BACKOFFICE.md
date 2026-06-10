@@ -21,7 +21,7 @@ Les evenements suivants sont enregistres dans `diagnostic_step_events` sur l'eta
 
 Ces signaux permettent de comprendre :
 
-- si les utilisateurs ajoutent surtout via suggestions ou via recherche ;
+- si les utilisateurs ajoutent surtout via suggestions, recherche, revue finale ou companion stack ;
 - quelles zones sont souvent ignorees ;
 - si la revue finale est utilisee ;
 - si les utilisateurs reviennent corriger leur stack avant le scoring.
@@ -86,6 +86,10 @@ npm run validate:go28
 Si beaucoup de sessions ont une couverture faible, le probleme vient du selecteur.
 
 Si beaucoup de sessions ouvrent la recherche, les suggestions ne sont pas assez bonnes.
+
+Si les ajouts viennent surtout de `source=search`, les suggestions par zone doivent etre enrichies.
+
+Si les retraits viennent surtout de `source=review` ou `source=companion`, cela veut dire que la selection immediate est plaisante mais que l'utilisateur corrige ensuite son inventaire.
 
 Si peu de sessions ouvrent la revue finale, le CTA de verification n'est pas assez clair.
 

@@ -6,6 +6,7 @@ import DashStackUtile from "./DashStackUtile";
 import DashOptimisations from "./DashOptimisations";
 import DashActions from "./DashActions";
 import DashShareModal from "./DashShareModal";
+import { insertDiagnosticStepEvent } from "@/lib/diagnosticPersistence";
 import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, Rocket, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -73,10 +74,42 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showShare, setShowShare] = useState(false);
 
+  const trackRestitution = useCallback((eventName: string, eventPayload: Record<string, unknown> = {}) => {
+    if (!dbSessionId || !dbSessionToken) return;
+    void insertDiagnosticStepEvent(dbSessionId, dbSessionToken, {
+      stepId: 12,
+      eventName,
+      eventPayload: {
+        ...eventPayload,
+        active_tab: activeTab,
+        health_score: result.healthScore,
+        selected_tool_count: result.sessionState.selectedTools.length,
+      },
+      source: "web",
+      lang: result.sessionState.language,
+      persona: result.sessionState.persona,
+    });
+  }, [activeTab, dbSessionId, dbSessionToken, result.healthScore, result.sessionState.language, result.sessionState.persona, result.sessionState.selectedTools.length]);
+
   const navigate = useCallback((tab: Tab) => {
     setActiveTab(tab);
+    if (dbSessionId && dbSessionToken) {
+      void insertDiagnosticStepEvent(dbSessionId, dbSessionToken, {
+        stepId: 12,
+        eventName: "restitution_tab_viewed",
+        eventPayload: {
+          from_tab: activeTab,
+          to_tab: tab,
+          health_score: result.healthScore,
+          selected_tool_count: result.sessionState.selectedTools.length,
+        },
+        source: "web",
+        lang: result.sessionState.language,
+        persona: result.sessionState.persona,
+      });
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [activeTab, dbSessionId, dbSessionToken, result.healthScore, result.sessionState.language, result.sessionState.persona, result.sessionState.selectedTools.length]);
 
   const renderPage = () => {
     switch (activeTab) {
@@ -85,8 +118,12 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
           <DashOverview
             result={result}
             t={t}
-            onShare={() => setShowShare(true)}
+            onShare={() => {
+              trackRestitution("restitution_share_opened", { trigger: "overview" });
+              setShowShare(true);
+            }}
             onNavigate={navigate}
+            onTrack={trackRestitution}
           />
         );
       case "gaspillage":
@@ -257,7 +294,14 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
       </main>
 
       {/* Share modal */}
-      {showShare && <DashShareModal result={result} t={t} onClose={() => setShowShare(false)} />}
+      {showShare && (
+        <DashShareModal
+          result={result}
+          t={t}
+          onClose={() => setShowShare(false)}
+          onTrack={trackRestitution}
+        />
+      )}
     </div>
   );
 }

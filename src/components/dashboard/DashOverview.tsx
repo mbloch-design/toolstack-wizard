@@ -23,6 +23,7 @@ interface Props {
   t: (fr: string, en: string) => string;
   onShare?: () => void;
   onNavigate?: (tab: Tab) => void;
+  onTrack?: (eventName: string, eventPayload?: Record<string, unknown>) => void;
 }
 
 type PriorityItem = {
@@ -182,7 +183,7 @@ function getEvidence(result: DiagnosticResult, t: Props["t"]) {
   ];
 }
 
-export default function DashOverview({ result, t, onShare, onNavigate }: Props) {
+export default function DashOverview({ result, t, onShare, onNavigate, onTrack }: Props) {
   const thesis = useMemo(() => buildThesis(result, t), [result, t]);
   const priorityItems = useMemo(() => getPriorityItems(result, t), [result, t]);
   const evidence = useMemo(() => getEvidence(result, t), [result, t]);
@@ -377,7 +378,12 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
           <Share2 className="h-4 w-4" />
           {t("Partager la restitution", "Share restitution")}
         </button>
-        <DashPdfExport result={result} t={t} variant="outline" />
+        <DashPdfExport
+          result={result}
+          t={t}
+          variant="outline"
+          onExport={() => onTrack?.("restitution_pdf_export_clicked", { trigger: "overview" })}
+        />
         {hasWaste && (
           <button
             type="button"
