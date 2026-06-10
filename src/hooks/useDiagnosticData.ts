@@ -5,8 +5,12 @@ import type { Tool, Cluster, DoubleRule, DiscoveryQuestion, Persona } from "@/ty
 function mapTool(t: any): Tool {
   return {
     id: t.id,
+    slug: t.slug || undefined,
     name: t.name,
     name_en: t.short_description_en ? t.name : undefined,
+    logo: t.logo || undefined,
+    websiteUrl: t.website_url || undefined,
+    affiliateLink: t.affiliate_link || undefined,
     price: Number(t.default_monthly_price) || 0,
     category: t.category || "",
     functional_needs: Array.isArray(t.functional_needs) ? t.functional_needs : [],
@@ -27,6 +31,7 @@ function mapTool(t: any): Tool {
     better_alternative: t.better_alternative && typeof t.better_alternative === "object"
       ? JSON.stringify(t.better_alternative)
       : t.better_alternative || undefined,
+    pricing_v5: t.pricing_v5 && typeof t.pricing_v5 === "object" ? t.pricing_v5 : undefined,
     force_silence: t.force_silence === true || t.prescription_quality === "silence",
     bundle_parent: t.bundle_parent || undefined,
   };

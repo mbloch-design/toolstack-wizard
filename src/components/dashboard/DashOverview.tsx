@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import type { DiagnosticResult, Prescription } from "@/types/diagnostic";
 import { ArrowRight, Share2, ChevronRight, CheckCircle2, Gauge, Layers3, ShieldAlert } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
+import ToolLogo from "@/components/ToolLogo";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -220,7 +221,7 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
               <div key={i} className="flex items-center gap-4 bg-card border border-border rounded-xl px-4 py-3 hover:border-destructive/30 transition-colors">
                 <div className="shrink-0">
                   {tool ? (
-                    <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+                    <ToolLogo tool={tool} size={32} className="rounded-lg" />
                   ) : (
                     <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center text-xs font-bold text-destructive">!</div>
                   )}

@@ -4,6 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -39,9 +40,9 @@ function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]
       <div className="p-4 space-y-3">
         {/* A → B */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center text-xs font-bold text-destructive">{swap.current.name.charAt(0)}</div>
+          <ToolLogo tool={swap.current} size={32} className="rounded-lg ring-destructive/20" />
           <ArrowRight className="w-4 h-4 text-muted-foreground shrink-0" />
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">{swap.alternative.name.charAt(0)}</div>
+          <ToolLogo tool={swap.alternative} size={32} className="rounded-lg ring-primary/20" />
           <div className="flex-1 min-w-0">
             <p className="text-sm text-foreground">
               <Link to={`${prefix}/tool/${swap.current.id}`} className="text-muted-foreground line-through hover:text-foreground transition-colors">{swap.current.name}</Link>
@@ -161,7 +162,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
           <div className="space-y-2">
             {result.recommendations.slice(0, 3).map((tool) => (
               <div key={tool.id} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3">
-                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+                <ToolLogo tool={tool} size={32} className="rounded-lg" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground">{tool.name}</p>
                   <p className="text-xs text-muted-foreground">{t(personaReason.fr, personaReason.en)}</p>

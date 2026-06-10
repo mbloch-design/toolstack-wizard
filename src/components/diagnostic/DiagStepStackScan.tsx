@@ -17,6 +17,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
 import type { SessionState, Tool } from "@/types/diagnostic";
 
 interface Props {
@@ -200,7 +201,7 @@ function nextMomentId(coveredIds: Set<string>, skippedIds: Set<string>, currentI
     ...STACK_MOMENTS.slice(currentIndex + 1),
     ...STACK_MOMENTS.slice(0, currentIndex + 1),
   ];
-  return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || currentId;
+  return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || null;
 }
 
 export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onTrack, t, fromTool }: Props) {
@@ -359,7 +360,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       selected_count: selectedTools.length,
       covered_count: coveredCount,
     });
-    setActiveMomentId(nextMomentId(coveredMomentIds, skippedMomentIds, activeMoment.id));
+    const next = nextMomentId(coveredMomentIds, skippedMomentIds, activeMoment.id);
+    if (next) {
+      setActiveMomentId(next);
+    } else {
+      openReview("all_moments_checked");
+    }
   };
 
   const skipActiveMoment = () => {
@@ -371,7 +377,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       skipped_count: nextSkipped.size,
     });
     setSkippedMomentIds(nextSkipped);
-    setActiveMomentId(nextMomentId(coveredMomentIds, nextSkipped, activeMoment.id));
+    const next = nextMomentId(coveredMomentIds, nextSkipped, activeMoment.id);
+    if (next) {
+      setActiveMomentId(next);
+    } else {
+      openReview("all_moments_checked");
+    }
   };
 
   const openReview = (reason: string) => {
@@ -746,9 +757,7 @@ function ToolChoiceButton({
         selected ? "border-primary bg-primary/5" : "border-border bg-background hover:border-primary/40"
       }`}
     >
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary text-sm font-bold text-foreground">
-        {tool.name.charAt(0).toUpperCase()}
-      </div>
+      <ToolLogo tool={tool} size={36} className="rounded-md" />
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
         <p className="text-xs text-muted-foreground">
@@ -804,9 +813,7 @@ function ToolGrid({
                   : "border-border bg-card hover:border-primary/40"
               }`}
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary text-sm font-bold text-foreground">
-                {tool.name.charAt(0).toUpperCase()}
-              </div>
+              <ToolLogo tool={tool} size={36} className="rounded-md" />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
                 <p className="text-xs text-muted-foreground">
@@ -840,9 +847,12 @@ function SelectedToolRow({
   return (
     <div className="rounded-lg border border-border bg-background p-3">
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
-          <p className="text-xs text-muted-foreground capitalize">{tool.category || t("Autre", "Other")}</p>
+        <div className="flex min-w-0 items-start gap-3">
+          <ToolLogo tool={tool} size={34} className="rounded-md" />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
+            <p className="text-xs text-muted-foreground capitalize">{tool.category || t("Autre", "Other")}</p>
+          </div>
         </div>
         <button
           type="button"

@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import type { DiagnosticResult, Tool, Prescription } from "@/types/diagnostic";
 import { X, LayoutGrid, List, ChevronRight } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
 
 
 interface Props {
@@ -91,7 +92,7 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
     <div className="fixed inset-y-0 right-0 w-80 max-w-[90vw] bg-card border-l border-border shadow-2xl z-50 flex flex-col animate-in slide-in-from-right duration-200">
       <div className="flex items-center justify-between p-4 border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+          <ToolLogo tool={tool} size={32} className="rounded-lg" />
           <div>
             <p className="font-semibold text-sm text-foreground">{tool.name}</p>
             <p className="text-xs font-['DM_Mono'] text-muted-foreground">{tool.price}€/{t("mois", "mo")}</p>
@@ -323,7 +324,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                   "border-border"
                 } hover:bg-muted/50`}
               >
-                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{item.tool.name.charAt(0)}</div>
+                <ToolLogo tool={item.tool} size={32} className="rounded-lg" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground truncate">{item.tool.name}</p>
                   {item.prescription && (

@@ -5,6 +5,7 @@ import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";
 import { Check, ChevronRight, ExternalLink, Target } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
+import ToolLogo from "@/components/ToolLogo";
 
 
 
@@ -331,7 +332,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
                     {/* Logo */}
                     {action.tool && (
-                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{action.tool.name.charAt(0)}</div>
+                      <ToolLogo tool={action.tool} size={32} className="rounded-lg" />
                     )}
 
                     {/* Label */}

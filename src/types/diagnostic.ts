@@ -29,8 +29,12 @@ export interface SessionState {
 
 export interface Tool {
   id: string;
+  slug?: string;
   name: string;
   name_en?: string;
+  logo?: string;
+  websiteUrl?: string;
+  affiliateLink?: string;
   price: number;
   category: string;
   functional_needs: string[];
@@ -47,6 +51,9 @@ export interface Tool {
     plan: string;
   };
   better_alternative?: string;
+  pricing_v5?: {
+    source_domain?: string;
+  } | null;
   force_silence: boolean;
   bundle_parent?: string;
   /** Runtime flag: true when this tool is included via a selected bundle parent */
