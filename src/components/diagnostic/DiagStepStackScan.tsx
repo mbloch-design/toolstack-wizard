@@ -7,6 +7,7 @@ import {
   ChevronRight,
   FileText,
   FolderKanban,
+  Layers3,
   MessageSquare,
   Palette,
   Plus,
@@ -291,6 +292,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
   const missingMoments = momentCoverage.filter((moment) => !moment.covered && !moment.skipped);
   const selectedInActiveMoment = activeMoment.selected.length;
+  const selectedMonthlyCost = selectedTools.reduce((sum, tool) => sum + (Number(tool.price) || 0), 0);
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
 
@@ -564,8 +566,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 pb-24">
-      <div className="space-y-3 text-center">
+    <div className="mx-auto max-w-6xl space-y-6 pb-32">
+      <div className="mx-auto max-w-3xl space-y-3 text-center">
         {toolName && (
           <p className="inline-flex rounded-md border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             {t(`On part de ${toolName}`, `Starting from ${toolName}`)}
@@ -591,7 +593,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         )}
       </div>
 
-      <section className="space-y-4">
+      <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         <div className="rounded-xl border border-border bg-card p-5 md:p-6">
           <div className="flex items-center justify-between gap-3">
             <p className="text-xs font-semibold uppercase text-primary">
@@ -781,7 +783,27 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </div>
           </div>
         </div>
+
+        <StackCompanion
+          selectedTools={selectedTools}
+          coveredCount={coveredCount}
+          totalMoments={STACK_MOMENTS.length}
+          monthlyCost={selectedMonthlyCost}
+          activeMomentLabel={t(activeMoment.fr, activeMoment.en)}
+          onReview={() => openReview("stack_companion")}
+          onRemove={toggleTool}
+          t={t}
+        />
       </section>
+
+      <MobileStackBar
+        selectedTools={selectedTools}
+        coveredCount={coveredCount}
+        totalMoments={STACK_MOMENTS.length}
+        monthlyCost={selectedMonthlyCost}
+        onReview={() => openReview("mobile_stack_bar")}
+        t={t}
+      />
     </div>
   );
 }
@@ -859,6 +881,204 @@ function SelectionFeedbackMessage({
           ? t(`${toolName} a été ajouté à ta sélection.`, `${toolName} was added to your selection.`)
           : t(`${toolName} a été retiré.`, `${toolName} was removed.`)}
       </span>
+    </div>
+  );
+}
+
+function StackCompanion({
+  selectedTools,
+  coveredCount,
+  totalMoments,
+  monthlyCost,
+  activeMomentLabel,
+  onReview,
+  onRemove,
+  t,
+}: {
+  selectedTools: Tool[];
+  coveredCount: number;
+  totalMoments: number;
+  monthlyCost: number;
+  activeMomentLabel: string;
+  onReview: () => void;
+  onRemove: (tool: Tool) => void;
+  t: (fr: string, en: string) => string;
+}) {
+  const visibleTools = selectedTools.slice(-8).reverse();
+  const coveragePct = Math.round((coveredCount / totalMoments) * 100);
+
+  return (
+    <aside className="hidden lg:sticky lg:top-24 lg:block">
+      <div className="overflow-hidden rounded-xl border border-primary/20 bg-card shadow-sm">
+        <div className="border-b border-border bg-primary/5 p-4">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase text-primary">
+                {t("Ta stack en direct", "Your live stack")}
+              </p>
+              <h3 className="mt-1 text-lg font-bold text-foreground">
+                {selectedTools.length === 0
+                  ? t("Elle va se construire ici", "It will build here")
+                  : t("Elle prend forme", "It is taking shape")}
+              </h3>
+            </div>
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <Layers3 className="h-5 w-5" />
+            </span>
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            {selectedTools.length === 0
+              ? t(
+                  "À chaque outil ajouté, tu verras ta stack apparaître ici. C’est ton fil rouge.",
+                  "Each added tool appears here. This is your thread."
+                )
+              : t(
+                  "On garde la vue complète pendant que tu avances, pour éviter les oublis.",
+                  "We keep the full view while you move forward, to avoid omissions."
+                )}
+          </p>
+        </div>
+
+        <div className="space-y-4 p-4">
+          <div className="grid grid-cols-2 gap-2">
+            <StackStat label={t("Outils", "Tools")} value={String(selectedTools.length)} />
+            <StackStat label={t("Budget", "Budget")} value={`${monthlyCost}€`} suffix={t("/mois", "/mo")} />
+          </div>
+
+          <div className="rounded-lg border border-border bg-background p-3">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold uppercase text-muted-foreground">
+                {t("Couverture", "Coverage")}
+              </p>
+              <p className="font-mono text-xs font-semibold text-foreground">{coveredCount}/{totalMoments}</p>
+            </div>
+            <div className="mt-2 h-2 overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full rounded-full bg-primary transition-all duration-500"
+                style={{ width: `${Math.max(8, coveragePct)}%` }}
+              />
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              {t("Zone en cours", "Current area")} : <span className="font-medium text-foreground">{activeMomentLabel}</span>
+            </p>
+          </div>
+
+          {selectedTools.length === 0 ? (
+            <div className="rounded-lg border border-dashed border-border bg-background p-4 text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-muted">
+                <Plus className="h-5 w-5 text-muted-foreground" />
+              </div>
+              <p className="mt-3 text-sm font-medium text-foreground">
+                {t("Ajoute ton premier outil", "Add your first tool")}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                {t("Le diagnostic devient plus précis à chaque ajout.", "The diagnostic gets sharper with every add.")}
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-2">
+                {visibleTools.map((tool) => (
+                  <div
+                    key={tool.id}
+                    className="group relative animate-in zoom-in-95 duration-200"
+                    title={tool.name}
+                  >
+                    <ToolLogo tool={tool} size={38} className="rounded-lg border border-border bg-background shadow-sm" />
+                    <button
+                      type="button"
+                      onClick={() => onRemove(tool)}
+                      aria-label={t(`Retirer ${tool.name}`, `Remove ${tool.name}`)}
+                      className="absolute -right-1.5 -top-1.5 hidden h-5 w-5 items-center justify-center rounded-full bg-foreground text-background shadow-sm group-hover:flex"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </div>
+                ))}
+                {selectedTools.length > visibleTools.length && (
+                  <span className="flex h-[38px] items-center rounded-lg border border-border bg-background px-3 text-xs font-semibold text-muted-foreground">
+                    +{selectedTools.length - visibleTools.length}
+                  </span>
+                )}
+              </div>
+
+              <div className="max-h-[260px] space-y-1.5 overflow-y-auto pr-1">
+                {selectedTools.slice(-5).reverse().map((tool) => (
+                  <div key={tool.id} className="flex items-center gap-2 rounded-lg bg-muted/40 px-2 py-1.5">
+                    <ToolLogo tool={tool} size={24} className="rounded-md" />
+                    <span className="min-w-0 flex-1 truncate text-xs font-medium text-foreground">{tool.name}</span>
+                    <span className="font-mono text-xs text-muted-foreground">{tool.price || 0}€</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={onReview}
+            disabled={selectedTools.length === 0}
+            className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-foreground px-4 text-sm font-semibold text-background disabled:opacity-40"
+          >
+            {t("Voir ma stack complète", "View full stack")}
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+function MobileStackBar({
+  selectedTools,
+  coveredCount,
+  totalMoments,
+  monthlyCost,
+  onReview,
+  t,
+}: {
+  selectedTools: Tool[];
+  coveredCount: number;
+  totalMoments: number;
+  monthlyCost: number;
+  onReview: () => void;
+  t: (fr: string, en: string) => string;
+}) {
+  if (selectedTools.length === 0) return null;
+  const logos = selectedTools.slice(-4).reverse();
+
+  return (
+    <button
+      type="button"
+      onClick={onReview}
+      className="fixed inset-x-3 bottom-3 z-40 flex items-center gap-3 rounded-xl border border-primary/20 bg-background/95 p-3 text-left shadow-lg backdrop-blur lg:hidden"
+    >
+      <div className="flex -space-x-2">
+        {logos.map((tool) => (
+          <ToolLogo key={tool.id} tool={tool} size={32} className="rounded-lg border-2 border-background bg-background" />
+        ))}
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-semibold text-foreground">
+          {selectedTools.length} {t("outil(s) dans ta stack", "tool(s) in your stack")}
+        </p>
+        <p className="text-xs text-muted-foreground">
+          {coveredCount}/{totalMoments} {t("zones", "areas")} · {monthlyCost}€/{t("mois", "mo")}
+        </p>
+      </div>
+      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+    </button>
+  );
+}
+
+function StackStat({ label, value, suffix = "" }: { label: string; value: string; suffix?: string }) {
+  return (
+    <div className="rounded-lg border border-border bg-background p-3">
+      <p className="font-mono text-2xl font-bold text-foreground">
+        {value}
+        {suffix && <span className="ml-1 text-xs font-medium text-muted-foreground">{suffix}</span>}
+      </p>
+      <p className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{label}</p>
     </div>
   );
 }
