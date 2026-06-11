@@ -200,25 +200,22 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
             {t("Lis d’abord le rapport. Les autres vues servent de preuves.", "Read the report first. The other views are evidence.")}
           </p>
         </div>
-        {TABS.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => navigate(tab.id)}
-            className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors text-left ${
-              activeTab === tab.id
-                ? "bg-primary/10 text-primary font-medium"
-                : "text-muted-foreground hover:bg-muted hover:text-foreground"
-            }`}
-          >
-            <tab.icon className="w-4 h-4 shrink-0" />
-            <span className="min-w-0">
-              <span className="block">{t(tab.labelFr, tab.labelEn)}</span>
-              <span className="mt-0.5 block truncate text-[11px] font-normal opacity-70">
-                {t(tab.descriptionFr, tab.descriptionEn)}
-              </span>
-            </span>
-          </button>
-        ))}
+        <div className="space-y-1">
+          <p className="px-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            {t("À lire", "Read first")}
+          </p>
+          {TABS.filter((tab) => tab.id === "overview").map((tab) => (
+            <SidebarTab key={tab.id} tab={tab} activeTab={activeTab} navigate={navigate} t={t} />
+          ))}
+        </div>
+        <div className="mt-3 space-y-1 border-t border-border pt-3">
+          <p className="px-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            {t("Annexes", "Appendices")}
+          </p>
+          {TABS.filter((tab) => tab.id !== "overview").map((tab) => (
+            <SidebarTab key={tab.id} tab={tab} activeTab={activeTab} navigate={navigate} t={t} />
+          ))}
+        </div>
 
         {/* Mini health donut + summary */}
         <div className="mt-auto pt-4 px-2 border-t border-border space-y-3">
@@ -305,5 +302,36 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
         />
       )}
     </div>
+  );
+}
+
+function SidebarTab({
+  tab,
+  activeTab,
+  navigate,
+  t,
+}: {
+  tab: (typeof TABS)[number];
+  activeTab: Tab;
+  navigate: (tab: Tab) => void;
+  t: Props["t"];
+}) {
+  return (
+    <button
+      onClick={() => navigate(tab.id)}
+      className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors text-left ${
+        activeTab === tab.id
+          ? "bg-primary/10 text-primary font-medium"
+          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+      }`}
+    >
+      <tab.icon className="w-4 h-4 shrink-0" />
+      <span className="min-w-0">
+        <span className="block">{t(tab.labelFr, tab.labelEn)}</span>
+        <span className="mt-0.5 block truncate text-[11px] font-normal opacity-70">
+          {t(tab.descriptionFr, tab.descriptionEn)}
+        </span>
+      </span>
+    </button>
   );
 }

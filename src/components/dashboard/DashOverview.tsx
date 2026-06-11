@@ -15,7 +15,12 @@ import {
 } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
-import { formatMoney, formatMonthlyTotal } from "@/utils/diagnosticPricing";
+import {
+  formatMoney,
+  formatMonthlyTotal,
+  getPricingAudit,
+  getPricingCaptureSummary,
+} from "@/utils/diagnosticPricing";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -212,6 +217,11 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
   const hasWaste = result.estimatedWaste > 0;
   const selectedTools = result.sessionState.selectedTools;
   const monthlyCostLabel = useMemo(() => formatMonthlyTotal(selectedTools, t), [selectedTools, t]);
+  const pricingSummary = useMemo(() => getPricingCaptureSummary(selectedTools), [selectedTools]);
+  const pricingToolsToCheck = useMemo(
+    () => selectedTools.filter((tool) => getPricingAudit(tool, t).needsVerification).slice(0, 4),
+    [selectedTools, t]
+  );
   const evidence = useMemo(() => getEvidence(result, t, monthlyCostLabel), [result, t, monthlyCostLabel]);
   const goalLabel = getGoalLabel(result.sessionState.stackGoal, t);
   const coverage = result.sessionState.selectionCoverage;
@@ -235,6 +245,15 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
             )}
           </p>
         </div>
+
+        <ReadingPath
+          steps={[
+            t("Ce que j’ai compris", "What I understood"),
+            t("La première décision", "The first decision"),
+            t("Les preuves utiles", "Useful evidence"),
+          ]}
+          t={t}
+        />
 
         <div className="grid gap-3 md:grid-cols-[1fr_0.8fr]">
           <div className="rounded-lg border border-border bg-card p-5">
@@ -324,6 +343,42 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
           detail={t(maturity.summaryFr, maturity.summaryEn)}
         />
       </section>
+
+      {pricingSummary.needsVerificationCount > 0 && (
+        <section className="rounded-lg border border-amber-200 bg-amber-50 p-5">
+          <div className="grid gap-4 lg:grid-cols-[0.9fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-semibold uppercase text-amber-900">
+                {t("Prix à confirmer", "Prices to confirm")}
+              </p>
+              <h2 className="mt-2 text-xl font-bold text-foreground">
+                {t("Je sépare le verdict du budget incertain.", "I separate the verdict from uncertain budget.")}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-amber-900/80">
+                {t(
+                  `${pricingSummary.needsVerificationCount} outil(s) ont encore un plan, un prix catalogue ou une devise à confirmer. Les décisions restent valables, mais les gains doivent être vérifiés plan par plan.`,
+                  `${pricingSummary.needsVerificationCount} tool(s) still have a plan, catalog price or currency to confirm. Decisions still stand, but gains should be checked plan by plan.`
+                )}
+              </p>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {pricingToolsToCheck.map((tool) => {
+                const audit = getPricingAudit(tool, t);
+                return (
+                  <div key={tool.id} className="rounded-md border border-amber-200 bg-background/70 px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <ToolLogo tool={tool} size={26} className="rounded-md" />
+                      <span className="min-w-0 flex-1 truncate text-sm font-semibold text-foreground">{tool.name}</span>
+                    </div>
+                    <p className="mt-1 text-xs font-medium text-amber-900">{audit.label}</p>
+                    <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">{audit.detail}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="space-y-3">
         <SectionHeader
@@ -480,6 +535,34 @@ function SectionHeader({
       <p className="text-xs font-semibold uppercase text-primary">{eyebrow}</p>
       <h2 className="text-xl font-bold text-foreground md:text-2xl">{title}</h2>
       <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+function ReadingPath({
+  steps,
+  t,
+}: {
+  steps: string[];
+  t: Props["t"];
+}) {
+  return (
+    <div className="rounded-lg border border-border bg-card px-4 py-3">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <p className="text-xs font-semibold uppercase text-muted-foreground">
+          {t("Lecture en 3 minutes", "3-minute read")}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {steps.map((step, index) => (
+            <span key={step} className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-background font-mono text-[10px] text-muted-foreground">
+                {index + 1}
+              </span>
+              {step}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
