@@ -20,7 +20,13 @@ import {
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import type { SessionState, Tool } from "@/types/diagnostic";
-import { formatMonthlyTotal, formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
+import {
+  formatMonthlyTotal,
+  formatMoney,
+  formatToolMonthlyPrice,
+  getPricingAudit,
+  getPricingCaptureSummary,
+} from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
@@ -177,17 +183,22 @@ const OFFER_OPTIONS: Array<{
   { value: "unknown", fr: "Pas sûr", en: "Unsure" },
 ];
 
-function makeCustomTool(name: string, price: number, moment?: StackMoment): Tool {
+function makeCustomTool(name: string, price: number, moment?: StackMoment, currency?: string): Tool {
   const slug = normalize(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   return {
     id: `custom-${slug || "tool"}-${Date.now()}`,
     name,
     price,
+    priceCurrency: currency || undefined,
     category: moment?.id || "custom",
     functional_needs: moment ? [moment.fr] : [],
     tool_type: "satellite",
     usage: "medium",
     prescription_quality: "oui",
+    catalogMonthlyPrice: price,
+    catalogMonthlyPriceCurrency: currency || undefined,
+    selectedOffer: price > 0 ? "paid" : "free",
+    selectedPriceIsEstimate: false,
     force_silence: false,
   };
 }
@@ -270,6 +281,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
+  const [customCurrency, setCustomCurrency] = useState("");
   const [recentlyAddedToolId, setRecentlyAddedToolId] = useState<string | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
@@ -333,6 +345,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const missingMoments = momentCoverage.filter((moment) => !moment.covered && !moment.skipped);
   const selectedInActiveMoment = activeMoment.selected.length;
   const selectedMonthlyCostLabel = formatMonthlyTotal(selectedTools, t);
+  const pricingSummary = useMemo(() => getPricingCaptureSummary(selectedTools), [selectedTools]);
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
 
@@ -341,6 +354,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     setShowCatalog(false);
     setCustomName("");
     setCustomPrice("");
+    setCustomCurrency("");
     setRecentlyAddedToolId(null);
     const focusTimer = window.setTimeout(() => questionRef.current?.focus(), 0);
     return () => window.clearTimeout(focusTimer);
@@ -411,16 +425,18 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const name = customName.trim();
     if (name.length < 2) return;
     const price = Math.max(0, Number(customPrice) || 0);
-    const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment));
+    const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, customCurrency || undefined));
     setSelectedTools((prev) => [...prev, customTool]);
     setRecentlyAddedToolId(customTool.id);
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
       price,
+      currency: customCurrency || null,
     });
     setCustomName("");
     setCustomPrice("");
+    setCustomCurrency("");
     setSearch("");
   };
 
@@ -430,6 +446,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       covered_count: coveredCount,
       skipped_count: skippedMomentIds.size,
       confidence: coverageConfidence,
+      pricing_unknown_count: pricingSummary.unknownPlanCount,
+      pricing_estimate_count: pricingSummary.estimateCount,
+      pricing_missing_currency_count: pricingSummary.missingCurrencyCount,
     });
     onUpdate({
       selectedTools,
@@ -517,12 +536,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           </p>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-4">
           <ReviewMetric label={t("Outils retenus", "Selected tools")} value={String(selectedTools.length)} />
           <ReviewMetric label={t("Zones couvertes", "Covered areas")} value={`${coveredCount}/${STACK_MOMENTS.length}`} />
           <ReviewMetric
             label={t("Confiance", "Confidence")}
             value={coverageConfidence === "high" ? t("Forte", "High") : coverageConfidence === "medium" ? t("Moyenne", "Medium") : t("À affiner", "Low")}
+          />
+          <ReviewMetric
+            label={t("Prix à vérifier", "Prices to check")}
+            value={String(pricingSummary.needsVerificationCount)}
           />
         </div>
 
@@ -704,7 +727,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           <div className="mt-6 space-y-3">
             <label htmlFor="diagnostic-stack-search" className="text-xs font-semibold uppercase text-muted-foreground">
-              {t("Chercher dans le catalogue", "Search the catalog")}
+              {t(`Chercher pour ${activeMoment.fr.toLowerCase()}`, `Search for ${activeMoment.en.toLowerCase()}`)}
             </label>
             <div className="relative">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -802,7 +825,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
             {showCatalog && (
               <div className="mt-4 space-y-4">
-                <div className="grid gap-2 sm:grid-cols-[1fr_110px_auto]">
+                <div className="grid gap-2 sm:grid-cols-[1fr_110px_92px_auto]">
                   <input
                     id="diagnostic-custom-tool"
                     name="custom-tool"
@@ -821,6 +844,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     placeholder={t("prix/mois", "price/mo")}
                     className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   />
+                  <select
+                    value={customCurrency}
+                    onChange={(event) => setCustomCurrency(event.target.value)}
+                    className="h-10 rounded-md border border-input bg-background px-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    aria-label={t("Devise", "Currency")}
+                  >
+                    <option value="">{t("Devise ?", "Currency?")}</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </select>
                   <button
                     type="button"
                     onClick={addCustomTool}
@@ -870,6 +903,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           coveredCount={coveredCount}
           totalMoments={STACK_MOMENTS.length}
           monthlyCostLabel={selectedMonthlyCostLabel}
+          pricingSummary={pricingSummary}
           activeMomentLabel={t(activeMoment.fr, activeMoment.en)}
           onReview={() => openReview("stack_companion")}
           onRemove={(tool) => toggleTool(tool, "companion")}
@@ -904,9 +938,11 @@ function ToolChoiceButton({
 }) {
   const selected = Boolean(selectedTool);
   const displayTool = selectedTool || withDefaultOffer(tool);
+  const pricingAudit = getPricingAudit(displayTool, t);
 
   return (
     <div
+      title={pricingAudit.detail}
       className={`h-[118px] rounded-lg border p-3 shadow-sm transition-all duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
@@ -946,7 +982,7 @@ function ToolChoiceButton({
           <OfferSelector tool={displayTool} onChange={onOfferChange} compact t={t} />
         ) : (
           <p className="flex h-8 items-center rounded-md bg-muted/30 px-2 text-xs font-medium text-muted-foreground">
-            {t("Ajoute pour choisir le plan", "Add to choose plan")}
+            {t("Ajoute, puis choisis le plan", "Add, then choose the plan")}
           </p>
         )}
       </div>
@@ -1071,6 +1107,7 @@ function StackCompanion({
   coveredCount,
   totalMoments,
   monthlyCostLabel,
+  pricingSummary,
   activeMomentLabel,
   onReview,
   onRemove,
@@ -1080,6 +1117,7 @@ function StackCompanion({
   coveredCount: number;
   totalMoments: number;
   monthlyCostLabel: string;
+  pricingSummary: ReturnType<typeof getPricingCaptureSummary>;
   activeMomentLabel: string;
   onReview: () => void;
   onRemove: (tool: Tool) => void;
@@ -1125,6 +1163,14 @@ function StackCompanion({
             <StackStat label={t("Outils", "Tools")} value={String(selectedTools.length)} />
             <StackStat label={t("Budget", "Budget")} value={monthlyCostLabel} suffix={t("/mois", "/mo")} />
           </div>
+          {pricingSummary.needsVerificationCount > 0 && (
+            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900">
+              {t(
+                `${pricingSummary.needsVerificationCount} prix ou plan reste à vérifier.`,
+                `${pricingSummary.needsVerificationCount} price or plan still needs checking.`
+              )}
+            </div>
+          )}
 
           <div className="rounded-lg border border-border bg-background p-3">
             <div className="flex items-center justify-between gap-3">
@@ -1184,18 +1230,21 @@ function StackCompanion({
               </div>
 
               <div className="max-h-[260px] space-y-1.5 overflow-y-auto pr-1">
-                {selectedTools.slice(-5).reverse().map((tool) => (
-                  <div key={tool.id} className="flex items-center gap-2 rounded-lg bg-muted/40 px-2 py-1.5">
-                    <ToolLogo tool={tool} size={24} className="rounded-md" />
-                    <span className="min-w-0 flex-1 truncate text-xs font-medium text-foreground">{tool.name}</span>
-                    <span className="rounded bg-background px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">
-                      {offerLabel(tool, t)}
-                    </span>
-                    <span className="font-mono text-xs text-muted-foreground">
-                      {formatMoney(tool.price || 0, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}
-                    </span>
-                  </div>
-                ))}
+                {selectedTools.slice(-5).reverse().map((tool) => {
+                  const pricingAudit = getPricingAudit(tool, t);
+                  return (
+                    <div key={tool.id} className="flex items-center gap-2 rounded-lg bg-muted/40 px-2 py-1.5" title={pricingAudit.detail}>
+                      <ToolLogo tool={tool} size={24} className="rounded-md" />
+                      <span className="min-w-0 flex-1 truncate text-xs font-medium text-foreground">{tool.name}</span>
+                      <span className="rounded bg-background px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">
+                        {offerLabel(tool, t)}
+                      </span>
+                      <span className="font-mono text-xs text-muted-foreground">
+                        {formatMoney(tool.price || 0, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -1358,6 +1407,14 @@ function SelectedToolRow({
   onUpdate: (patch: Partial<Tool>) => void;
   t: (fr: string, en: string) => string;
 }) {
+  const pricingAudit = getPricingAudit(tool, t);
+  const pricingToneClass =
+    pricingAudit.tone === "warning"
+      ? "text-amber-700"
+      : pricingAudit.tone === "ok"
+        ? "text-emerald-700"
+        : "text-muted-foreground";
+
   return (
     <div className="rounded-lg border border-border bg-background p-3">
       <div className="flex items-start justify-between gap-3">
@@ -1377,7 +1434,7 @@ function SelectedToolRow({
           <X className="h-4 w-4" />
         </button>
       </div>
-      <div className="mt-3 grid grid-cols-[88px_1fr] gap-2">
+      <div className="mt-3 grid grid-cols-[88px_88px_1fr] gap-2">
         <input
           type="number"
           value={tool.price || ""}
@@ -1392,6 +1449,23 @@ function SelectedToolRow({
           placeholder={t("prix/mois", "price/mo")}
           className="h-9 rounded-md border border-input bg-background px-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
         />
+        <select
+          value={tool.priceCurrency || tool.catalogMonthlyPriceCurrency || ""}
+          onChange={(event) => {
+            const currency = event.target.value || undefined;
+            onUpdate({
+              priceCurrency: currency,
+              catalogMonthlyPriceCurrency: currency,
+              selectedPriceIsEstimate: false,
+            });
+          }}
+          className="h-9 rounded-md border border-input bg-background px-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          aria-label={t("Devise", "Currency")}
+        >
+          <option value="">{t("Devise", "Currency")}</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
         <div className="grid grid-cols-3 rounded-md border border-border p-0.5">
           {(["high", "medium", "low"] as const).map((usage) => (
             <button
@@ -1415,11 +1489,15 @@ function SelectedToolRow({
           onChange={(offer) => onUpdate({
             selectedOffer: offer,
             price: offerPrice(tool, offer),
+            priceCurrency: tool.catalogMonthlyPriceCurrency || tool.priceCurrency,
             selectedPriceIsEstimate: offer !== "free",
           })}
           t={t}
         />
       </div>
+      <p className={`mt-2 min-h-4 text-[11px] font-medium ${pricingToneClass}`}>
+        {pricingAudit.detail}
+      </p>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Check } from "lucide-react";
 
 interface Props {
   session: Record<string, unknown>;
@@ -39,8 +40,8 @@ export default function DiagSaveIndicator({ session, t }: Props) {
   return (
     <div className="fixed bottom-4 right-4 z-50 animate-in fade-in slide-in-from-bottom-2 duration-300">
       <div className="rounded-lg bg-card border border-border shadow-lg px-3 py-1.5 text-xs text-muted-foreground flex items-center gap-1.5">
-        <span className="text-green-500">✓</span>
-        {t("Auto-saved", "Auto-saved")}
+        <Check className="h-3.5 w-3.5 text-emerald-600" />
+        {t("Enregistré", "Saved")}
       </div>
     </div>
   );

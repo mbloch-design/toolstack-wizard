@@ -4,6 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
 import { runDiagnostic } from "@/utils/scoring";
+import { getPricingCaptureSummary } from "@/utils/diagnosticPricing";
 import {
   clearDiagnosticRecovery,
   loadDiagnosticRecovery,
@@ -103,6 +104,7 @@ function serializeSessionSnapshot(session: SessionState) {
       selectedOffer: t.selectedOffer || null,
       catalogMonthlyPrice: t.catalogMonthlyPrice ?? null,
       catalogMonthlyPriceCurrency: t.catalogMonthlyPriceCurrency || null,
+      selectedPriceIsEstimate: t.selectedPriceIsEstimate ?? null,
       category: t.category,
     })),
     discoveryAnswers: serializeDiscoveryAnswers(session.discoveryAnswers),
@@ -118,6 +120,7 @@ function buildDiagnosticContext(session: SessionState) {
     primary_specialty: session.primarySpecialty || null,
     complementary_specialties: session.complementarySpecialties || [],
     selection_coverage: session.selectionCoverage || null,
+    pricing_capture: getPricingCaptureSummary(session.selectedTools),
   };
 }
 
@@ -338,6 +341,7 @@ export default function DiagnosticRouter() {
       phase2: diagnosticResult.prescriptions.phase2,
       phase3: diagnosticResult.prescriptions.phase3,
     };
+    const pricingCapture = getPricingCaptureSummary(session.selectedTools);
 
     void (async () => {
       await updateDiagnosticSession(dbSessionId, dbSessionToken, {
@@ -356,6 +360,7 @@ export default function DiagnosticRouter() {
           selectedOffer: tool.selectedOffer || null,
           catalogMonthlyPrice: tool.catalogMonthlyPrice ?? null,
           catalogMonthlyPriceCurrency: tool.catalogMonthlyPriceCurrency || null,
+          selectedPriceIsEstimate: tool.selectedPriceIsEstimate ?? null,
           category: tool.category,
         })),
         discovery_answers: discoveryObj,
@@ -399,6 +404,7 @@ export default function DiagnosticRouter() {
             covered_zone_count: session.selectionCoverage?.covered.length || 0,
             skipped_zone_count: session.selectionCoverage?.skipped.length || 0,
           },
+          pricing_capture: pricingCapture,
           profile: diagnosticResult.insights.profile,
           maturity: diagnosticResult.insights.maturity,
           primary_risk: diagnosticResult.insights.primaryRisk,
@@ -407,6 +413,7 @@ export default function DiagnosticRouter() {
         details: {
           report_pattern: "guided_report",
           currency_policy: "source_currency_or_verify",
+          pricing_capture: pricingCapture,
           insights: diagnosticResult.insights,
           prescriptions: prescriptionsObj,
           recommendations: diagnosticResult.recommendations.map((r) => ({ id: r.id, name: r.name })),

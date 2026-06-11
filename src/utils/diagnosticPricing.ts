@@ -20,6 +20,24 @@ type ToolPriceLike = {
   catalogMonthlyPriceCurrency?: PriceCurrency;
 };
 
+type PricingAuditToolLike = ToolPriceLike & {
+  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  selectedPriceIsEstimate?: boolean;
+  pricing_v5?: {
+    price_reliability?: string | null;
+    verification_status?: string | null;
+    source_domain?: string | null;
+  } | null;
+};
+
+export type PricingAudit = {
+  status: "free" | "confirmed" | "catalog" | "missing_currency" | "unknown";
+  tone: "ok" | "info" | "warning";
+  label: string;
+  detail: string;
+  needsVerification: boolean;
+};
+
 function toNumber(value: unknown): number | null {
   if (typeof value === "number" && Number.isFinite(value)) return value;
   if (typeof value === "string") {
@@ -153,4 +171,100 @@ export function formatMonthlyTotal(
   if (unknown > 0) parts.push(`${formatMoney(unknown)} ${t("à vérifier", "to check")}`);
   if (parts.length === 0) return formatMoney(0);
   return parts.join(" + ");
+}
+
+export function getPricingAudit(
+  tool: PricingAuditToolLike,
+  t: (fr: string, en: string) => string
+): PricingAudit {
+  const amount = Number(tool.price ?? 0);
+  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const sourceDomain = tool.pricing_v5?.source_domain;
+  const sourceLabel = sourceDomain
+    ? t(`Source : ${sourceDomain}`, `Source: ${sourceDomain}`)
+    : t("Source catalogue ToolTrim", "ToolTrim catalog source");
+
+  if (tool.selectedOffer === "free" || amount <= 0) {
+    return {
+      status: "free",
+      tone: "ok",
+      label: t("Gratuit déclaré", "Declared free"),
+      detail: t("Aucun coût mensuel retenu pour cet outil.", "No monthly cost kept for this tool."),
+      needsVerification: false,
+    };
+  }
+
+  if (tool.selectedOffer === "unknown") {
+    return {
+      status: "unknown",
+      tone: "warning",
+      label: t("Plan à vérifier", "Plan to check"),
+      detail: t(
+        "Je garde ce montant comme repère, mais le plan exact reste à confirmer.",
+        "I keep this amount as a guide, but the exact plan still needs confirmation."
+      ),
+      needsVerification: true,
+    };
+  }
+
+  if (!currency) {
+    return {
+      status: "missing_currency",
+      tone: "warning",
+      label: t("Devise à vérifier", "Currency to check"),
+      detail: t(
+        "Le montant est utile pour l'ordre de grandeur, mais la devise n'est pas confirmée.",
+        "The amount is useful as an order of magnitude, but the currency is not confirmed."
+      ),
+      needsVerification: true,
+    };
+  }
+
+  if (tool.selectedPriceIsEstimate) {
+    return {
+      status: "catalog",
+      tone: "info",
+      label: t("Prix catalogue", "Catalog price"),
+      detail: `${sourceLabel} · ${formatMoney(amount, currency)}/${t("mois", "mo")}`,
+      needsVerification: true,
+    };
+  }
+
+  return {
+    status: "confirmed",
+    tone: "ok",
+    label: t("Plan confirmé", "Confirmed plan"),
+    detail: `${formatMoney(amount, currency)}/${t("mois", "mo")}`,
+    needsVerification: false,
+  };
+}
+
+export function getPricingCaptureSummary(tools: PricingAuditToolLike[]) {
+  const summary = {
+    freeCount: 0,
+    paidCount: 0,
+    teamCount: 0,
+    unknownPlanCount: 0,
+    estimateCount: 0,
+    missingCurrencyCount: 0,
+    needsVerificationCount: 0,
+  };
+
+  for (const tool of tools) {
+    const amount = Number(tool.price ?? 0);
+    if (tool.selectedOffer === "free" || amount <= 0) summary.freeCount += 1;
+    else if (tool.selectedOffer === "team") summary.teamCount += 1;
+    else if (tool.selectedOffer === "unknown") summary.unknownPlanCount += 1;
+    else summary.paidCount += 1;
+
+    if (tool.selectedPriceIsEstimate && amount > 0) summary.estimateCount += 1;
+    if (amount > 0 && !(tool.priceCurrency || tool.catalogMonthlyPriceCurrency)) {
+      summary.missingCurrencyCount += 1;
+    }
+  }
+
+  summary.needsVerificationCount =
+    summary.unknownPlanCount + summary.estimateCount + summary.missingCurrencyCount;
+
+  return summary;
 }

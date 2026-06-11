@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Search } from "lucide-react";
 
 interface Props {
   message: string;
@@ -29,7 +30,7 @@ export default function DiagTransitionOverlay({ message, toolCount, onComplete }
       <div className="text-center space-y-6 max-w-sm px-4">
         <div className="animate-pulse">
           <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-            <span className="text-3xl">🔍</span>
+            <Search className="h-7 w-7 text-primary" />
           </div>
         </div>
         <p className="text-lg font-semibold text-foreground">{message}</p>
@@ -41,7 +42,7 @@ export default function DiagTransitionOverlay({ message, toolCount, onComplete }
         </div>
         {toolCount > 0 && (
           <p className="text-sm text-muted-foreground">
-            {toolCount} outils à analyser…
+            {toolCount} outils à analyser...
           </p>
         )}
       </div>

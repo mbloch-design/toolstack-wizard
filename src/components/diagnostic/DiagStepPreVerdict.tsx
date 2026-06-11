@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail, RotateCcw, ShieldAlert, TrendingDown } from "lucide-react";
 import type { DiagnosticResult, SessionState } from "@/types/diagnostic";
+import { formatMonthlyTotal, getPricingCaptureSummary } from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
@@ -28,6 +29,8 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   const duplicateCount = result.insights.metrics.duplicateCount;
   const pricingTierCount = result.insights.metrics.pricingTierCount;
   const reviewCount = result.insights.metrics.reviewCount;
+  const monthlyCostLabel = formatMonthlyTotal(session.selectedTools, t);
+  const pricingSummary = getPricingCaptureSummary(session.selectedTools);
   const hasEmail = Boolean(session.email?.trim());
   const emailValue = email.trim();
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -90,9 +93,9 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         />
         <MetricCard
           Icon={TrendingDown}
-          label={t("Économie annuelle", "Annual saving")}
-          value={`${Math.round(result.annualSavings)}€`}
-          detail={t("potentiel estimé", "estimated potential")}
+          label={t("Budget capté", "Captured budget")}
+          value={`${monthlyCostLabel}/${t("mois", "mo")}`}
+          detail={t("devise source ou à vérifier", "source currency or to check")}
         />
         <MetricCard
           Icon={RotateCcw}
@@ -102,9 +105,9 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         />
         <MetricCard
           Icon={ShieldAlert}
-          label={t("Plans", "Plans")}
-          value={String(pricingTierCount)}
-          detail={t("à vérifier", "to review")}
+          label={t("Prix et plans", "Prices and plans")}
+          value={String(Math.max(pricingTierCount, pricingSummary.needsVerificationCount))}
+          detail={t("à confirmer", "to confirm")}
         />
       </section>
 
@@ -121,8 +124,10 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
                       <p className="mt-1 text-xs text-muted-foreground">{item.message}</p>
                     </div>
                     {item.savingsEstimate > 0 && (
-                      <span className="rounded-md bg-green-100 px-2 py-1 text-xs font-semibold text-green-800">
-                        {Math.round(item.savingsEstimate)}€/{t("mois", "mo")}
+                      <span className="rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-800">
+                        {item.type === "pricing-tier"
+                          ? t("plan à vérifier", "plan to check")
+                          : t("impact à vérifier", "impact to check")}
                       </span>
                     )}
                   </div>
@@ -245,7 +250,7 @@ function MetricCard({
   return (
     <div className="rounded-xl border border-border bg-card p-4">
       <Icon className="h-5 w-5 text-primary" />
-      <p className="mt-3 font-mono text-2xl font-bold text-foreground">{value}</p>
+      <p className="mt-3 break-words font-mono text-xl font-bold text-foreground md:text-2xl">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{label}</p>
       <p className="text-xs text-muted-foreground">{detail}</p>
     </div>
