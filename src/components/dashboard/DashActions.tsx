@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";
-import { Check, ChevronRight, ExternalLink, Target } from "lucide-react";
+import { Check, CheckCircle2, ChevronRight, ExternalLink, Target } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
-import { formatMoney } from "@/utils/diagnosticPricing";
+import { formatMoney, getPricingAudit } from "@/utils/diagnosticPricing";
 
 
 
@@ -26,6 +26,8 @@ interface ActionItem {
   prescription?: Prescription;
   tool?: Tool;
   label: string;
+  detail: string;
+  evidenceTab?: Tab;
   savings: number;
   timeMinutes: number;
   urgency: "now" | "week" | "month";
@@ -56,6 +58,8 @@ function writeStoredActionIds(sessionId: string | null | undefined, ids: string[
 
 function formatActionSavings(action: ActionItem, t: Props["t"]) {
   if (action.savings <= 0) return null;
+  const audit = action.tool ? getPricingAudit(action.tool, t) : null;
+  if (!action.tool || audit?.needsVerification) return t("gain à vérifier", "gain to verify");
   const currency = action.tool?.priceCurrency || action.tool?.catalogMonthlyPriceCurrency;
   const label = formatMoney(action.savings, currency);
   return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
@@ -77,6 +81,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
         : p.verdict === "downgrade"
         ? t(`Passer ${tool?.name ?? p.toolId} sur un plan inférieur`, `Move ${tool?.name ?? p.toolId} to a lower plan`)
         : t(`Annuler ${tool?.name ?? p.toolId}`, `Cancel ${tool?.name ?? p.toolId}`),
+      detail: p.message,
+      evidenceTab: p.type === "pricing-tier" ? "stack" : "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
     });
   }
@@ -86,6 +92,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       id: `now-dbl-${p.toolId}`,
       prescription: p, tool,
       label: t(`Résoudre doublon : ${tool?.name ?? p.toolId}`, `Fix duplicate: ${tool?.name ?? p.toolId}`),
+      detail: p.message,
+      evidenceTab: "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
     });
   }
@@ -99,6 +107,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       label: p.type === "pricing-tier"
         ? t(`Tester le bon palier pour ${tool?.name ?? p.toolId}`, `Test the right tier for ${tool?.name ?? p.toolId}`)
         : t(`Vérifier ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId}`),
+      detail: p.message,
+      evidenceTab: p.type === "pricing-tier" ? "stack" : "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 30, urgency: "week",
     });
   }
@@ -108,6 +118,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       id: `week-dorm-${p.toolId}`,
       prescription: p, tool,
       label: t(`Auditer ${tool?.name ?? p.toolId} (peu utilisé)`, `Audit ${tool?.name ?? p.toolId} (low usage)`),
+      detail: p.message,
+      evidenceTab: "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 15, urgency: "week",
     });
   }
@@ -116,6 +128,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `signal-${signal.id}`,
       label: t(signal.actionFr, signal.actionEn),
+      detail: t(signal.detailFr, signal.detailEn),
+      evidenceTab: "overview",
       savings: 0,
       timeMinutes: signal.severity === "high" ? 20 : 30,
       urgency: signal.severity === "low" ? "month" : "week",
@@ -128,6 +142,11 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       id: `month-rec-${rec.id}`,
       tool: rec,
       label: t(`Explorer ${rec.name}`, `Explore ${rec.name}`),
+      detail: t(
+        "À considérer seulement si cela répond à un besoin réel identifié dans le diagnostic.",
+        "Consider only if it answers a real need identified in the diagnostic."
+      ),
+      evidenceTab: "optimiser",
       savings: 0, timeMinutes: 120, urgency: "month",
     });
   }
@@ -175,23 +194,22 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
   const persistActions = useCallback((next: Set<string>) => {
     const completedIds = Array.from(next);
+    const completedActions = actions.filter((action) => next.has(action.id));
     writeStoredActionIds(dbSessionId, completedIds);
     if (!dbSessionId || !dbSessionToken) return;
     if (updateTimer.current) clearTimeout(updateTimer.current);
-    const recoveredSavings = actions
-      .filter((action) => next.has(action.id))
-      .reduce((sum, action) => sum + action.savings, 0);
-    const totalSavings = actions.reduce((sum, action) => sum + action.savings, 0);
     updateTimer.current = setTimeout(async () => {
       try {
         await updateDiagnosticSession(dbSessionId, dbSessionToken, {
           actions_completed: completedIds.length,
           action_state: {
             completed_action_ids: completedIds,
-            recovered_savings: recoveredSavings,
-            total_savings: totalSavings,
+            completed_action_count: completedIds.length,
+            total_action_count: actions.length,
+            completed_action_labels: completedActions.map((action) => action.label),
+            pricing_policy: "source_currency_or_verify",
             updated_at: new Date().toISOString(),
-            version: "v1",
+            version: "v2",
           },
         });
       } catch (err) {
@@ -204,16 +222,15 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
     setChecked((prev) => {
       const next = new Set(prev);
       if (next.has(action.id)) { next.delete(action.id); setLastChecked(null); }
-      else { next.add(action.id); setLastChecked(formatActionSavings(action, t) || t("Action", "Action")); }
+      else { next.add(action.id); setLastChecked(action.label); }
       persistActions(next);
       return next;
     });
   }, [persistActions, t]);
 
-  const totalSavings = actions.reduce((s, a) => s + a.savings, 0);
-  const recoveredSavings = actions.filter((a) => checked.has(a.id)).reduce((s, a) => s + a.savings, 0);
-  const progressPct = totalSavings > 0 ? Math.round((recoveredSavings / totalSavings) * 100) : 0;
   const completedCount = checked.size;
+  const progressPct = actions.length > 0 ? Math.round((completedCount / actions.length) * 100) : 0;
+  const nextAction = actions.find((action) => !checked.has(action.id)) || actions[0] || null;
 
   const grouped = {
     now: actions.filter((a) => a.urgency === "now"),
@@ -265,17 +282,28 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         </p>
       </header>
 
+      {nextAction && (
+        <NextActionCard
+          action={nextAction}
+          isDone={checked.has(nextAction.id)}
+          onToggle={() => toggle(nextAction)}
+          onNavigate={onNavigate}
+          prefix={prefix}
+          t={t}
+        />
+      )}
+
       <div className="bg-[hsl(var(--navy,222_44%_17%))] rounded-2xl p-6 text-white space-y-4">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-sm text-white/60">{t("Potentiel sécurisé", "Secured potential")}</p>
+            <p className="text-sm text-white/60">{t("Avancement du plan", "Plan progress")}</p>
             <p className="text-3xl md:text-4xl font-bold font-['DM_Mono']">
               {completedCount}<span className="text-lg text-white/40"> / {actions.length}</span>
             </p>
           </div>
           {lastChecked && (
             <span className="text-sm font-['DM_Mono'] text-[hsl(var(--keep))] animate-in fade-in duration-300">
-              {lastChecked} {t("traité", "handled")}
+              {t("Action traitée", "Action handled")}
             </span>
           )}
         </div>
@@ -362,9 +390,14 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                     )}
 
                     {/* Label */}
-                    <p className={`flex-1 text-sm text-foreground min-w-0 ${isDone ? "line-through text-muted-foreground" : ""}`}>
-                      {action.label}
-                    </p>
+                    <div className="min-w-0 flex-1">
+                      <p className={`text-sm font-medium text-foreground ${isDone ? "line-through text-muted-foreground" : ""}`}>
+                        {action.label}
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                        {action.detail}
+                      </p>
+                    </div>
 
                     {/* Savings & time */}
                     <div className="flex items-center gap-3 shrink-0">
@@ -388,9 +421,9 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                         </Link>
                       )}
                       {/* Link to waste detail */}
-                      {action.prescription && !action.tool && (
+                      {action.evidenceTab && (
                         <button
-                          onClick={() => onNavigate?.("gaspillage")}
+                          onClick={() => onNavigate?.(action.evidenceTab)}
                           className="p-1 rounded hover:bg-muted"
                           title={t("Voir pourquoi", "See why")}
                         >
@@ -421,5 +454,83 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
       {/* Export */}
       <DashPdfExport result={result} t={t} variant="outline" />
     </div>
+  );
+}
+
+interface NextActionCardProps {
+  action: ActionItem;
+  isDone: boolean;
+  onToggle: () => void;
+  onNavigate?: (tab: Tab) => void;
+  prefix: string;
+  t: Props["t"];
+}
+
+function NextActionCard({ action, isDone, onToggle, onNavigate, prefix, t }: NextActionCardProps) {
+  const savingsLabel = formatActionSavings(action, t);
+
+  return (
+    <section className="rounded-xl border border-primary/20 bg-primary/5 p-4 md:p-5">
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <div className="flex min-w-0 gap-3">
+          {action.tool ? (
+            <ToolLogo tool={action.tool} size={40} className="rounded-lg" />
+          ) : (
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Target className="h-4 w-4" />
+            </span>
+          )}
+          <div className="min-w-0">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary">
+              {t("Prochaine action utile", "Next useful action")}
+            </p>
+            <h2 className="mt-1 text-lg font-semibold leading-tight text-foreground">{action.label}</h2>
+            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">{action.detail}</p>
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+              <span className="rounded-full border border-border bg-background px-2.5 py-1">
+                {action.timeMinutes < 60 ? `${action.timeMinutes}min` : `${Math.round(action.timeMinutes / 60)}h`}
+              </span>
+              {savingsLabel && (
+                <span className="rounded-full border border-border bg-background px-2.5 py-1 font-['DM_Mono']">
+                  {savingsLabel}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex shrink-0 flex-wrap gap-2 md:justify-end">
+          <button
+            onClick={onToggle}
+            className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
+              isDone
+                ? "bg-[hsl(var(--keep))] text-white"
+                : "bg-foreground text-background hover:bg-foreground/90"
+            }`}
+          >
+            {isDone ? <CheckCircle2 className="h-4 w-4" /> : <Check className="h-4 w-4" />}
+            {isDone ? t("Déjà fait", "Done") : t("Marquer comme fait", "Mark as done")}
+          </button>
+          {action.evidenceTab && (
+            <button
+              onClick={() => onNavigate?.(action.evidenceTab)}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+            >
+              {t("Voir la preuve", "See evidence")}
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          )}
+          {action.tool && (
+            <Link
+              to={`${prefix}/tool/${action.tool.id}`}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+            >
+              {t("Fiche outil", "Tool page")}
+              <ExternalLink className="h-4 w-4" />
+            </Link>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }

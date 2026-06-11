@@ -37,6 +37,7 @@
     "validate:go49": "node scripts/validate-go49-pricing.mjs",
     "validate:go50": "node scripts/validate-go50-funnel-fluidity.mjs",
     "validate:go51": "node scripts/validate-go51-guided-dashboard.mjs",
+    "validate:go54": "node scripts/validate-go54-action-plan.mjs",
     "setup:go30-admin-auth": "node scripts/setup-go30-admin-auth.mjs",
     "rotate:go30-admin-password": "node scripts/setup-go30-admin-auth.mjs --rotate",
     "validate:go30": "node scripts/validate-go30-admin-auth.mjs",
