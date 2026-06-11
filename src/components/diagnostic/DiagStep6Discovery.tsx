@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { Check, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
 import type { SessionState, DiscoveryQuestion, Tool } from "@/types/diagnostic";
 
@@ -212,6 +212,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
   const [questionIdx, setQuestionIdx] = useState(0);
   const [answers, setAnswers] = useState<Map<string, number>>(() => new Map(session.discoveryAnswers));
   const [autoAdvanced, setAutoAdvanced] = useState(false);
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const answeredCount = activeQuestions.filter((question) => answers.has(question.id)).length;
   const activeAdaptiveQuestions = activeQuestions.filter((question) => question.id.startsWith("adaptive_"));
 
@@ -261,6 +262,10 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
   const reasonTools = session.selectedTools
     .filter((tool) => current?.condition_tool_ids.includes(tool.id))
     .slice(0, 3);
+
+  useEffect(() => {
+    headingRef.current?.focus();
+  }, [current?.id]);
 
   const handleAnswer = (idx: number) => {
     const next = new Map(answers);
@@ -320,7 +325,11 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
               {t("Seulement les questions qui changent le verdict", "Only questions that change the verdict")}
             </p>
           )}
-          <h2 className="mx-auto max-w-xl text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          <h2
+            ref={headingRef}
+            tabIndex={-1}
+            className="mx-auto max-w-xl text-2xl font-bold leading-tight text-foreground outline-none md:text-3xl"
+          >
             {current.question}
           </h2>
           <p className="mx-auto max-w-lg text-sm leading-relaxed text-muted-foreground">

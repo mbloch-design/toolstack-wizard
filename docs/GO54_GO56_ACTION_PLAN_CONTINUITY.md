@@ -37,3 +37,17 @@ Elle vérifie que :
 - la progression ne promet pas un potentiel financier sécurisé ;
 - la persistance ne stocke plus de totaux mixtes comme vérité ;
 - les prix incertains sont traités comme un point à vérifier.
+
+## Recette préprod
+
+Une recette navigateur sur `https://preprod.tooltrim.com/fr/selector` a aussi fait ressortir trois ajustements UX :
+
+- le CTA `Passer cette zone` pouvait faire croire à une boucle, car il avançait sans marquer la zone comme volontairement vide ;
+- dans les questions utiles, le focus navigateur pouvait rester sur une option et ressembler à une réponse déjà choisie ;
+- le libellé `Voir la preuve` était trop fort pour une piste optionnelle.
+
+Corrections apportées :
+
+- une zone vide utilise maintenant le même chemin explicite que `Je n’utilise rien ici` ;
+- les questions utiles replacent le focus sur le titre de la nouvelle question ;
+- les pistes optionnelles parlent de `contexte`, pas de preuve.

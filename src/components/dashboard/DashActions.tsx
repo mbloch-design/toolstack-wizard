@@ -143,8 +143,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       tool: rec,
       label: t(`Explorer ${rec.name}`, `Explore ${rec.name}`),
       detail: t(
-        "À considérer seulement si cela répond à un besoin réel identifié dans le diagnostic.",
-        "Consider only if it answers a real need identified in the diagnostic."
+        "Piste à garder pour plus tard, seulement si ce besoin existe vraiment dans ton activité.",
+        "Keep this as a later option, only if this need truly exists in your work."
       ),
       evidenceTab: "optimiser",
       savings: 0, timeMinutes: 120, urgency: "month",
@@ -425,7 +425,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                         <button
                           onClick={() => onNavigate?.(action.evidenceTab)}
                           className="p-1 rounded hover:bg-muted"
-                          title={t("Voir pourquoi", "See why")}
+                          title={action.prescription ? t("Voir pourquoi", "See why") : t("Voir le contexte", "See context")}
                         >
                           <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" />
                         </button>
@@ -468,6 +468,7 @@ interface NextActionCardProps {
 
 function NextActionCard({ action, isDone, onToggle, onNavigate, prefix, t }: NextActionCardProps) {
   const savingsLabel = formatActionSavings(action, t);
+  const isOptional = action.urgency === "month" && !action.prescription;
 
   return (
     <section className="rounded-xl border border-primary/20 bg-primary/5 p-4 md:p-5">
@@ -482,7 +483,7 @@ function NextActionCard({ action, isDone, onToggle, onNavigate, prefix, t }: Nex
           )}
           <div className="min-w-0">
             <p className="text-xs font-bold uppercase tracking-wide text-primary">
-              {t("Prochaine action utile", "Next useful action")}
+              {isOptional ? t("Piste optionnelle", "Optional lead") : t("Prochaine action utile", "Next useful action")}
             </p>
             <h2 className="mt-1 text-lg font-semibold leading-tight text-foreground">{action.label}</h2>
             <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">{action.detail}</p>
@@ -516,7 +517,7 @@ function NextActionCard({ action, isDone, onToggle, onNavigate, prefix, t }: Nex
               onClick={() => onNavigate?.(action.evidenceTab)}
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
             >
-              {t("Voir la preuve", "See evidence")}
+              {action.prescription ? t("Voir la preuve", "See evidence") : t("Voir le contexte", "See context")}
               <ChevronRight className="h-4 w-4" />
             </button>
           )}

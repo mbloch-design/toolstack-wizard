@@ -1,10 +1,12 @@
 import { readFileSync } from "node:fs";
 
 const STACK_SCAN = "src/components/diagnostic/DiagStepStackScan.tsx";
+const DISCOVERY = "src/components/diagnostic/DiagStep6Discovery.tsx";
 const SAVE_INDICATOR = "src/components/diagnostic/DiagSaveIndicator.tsx";
 const TRANSITION = "src/components/diagnostic/DiagTransitionOverlay.tsx";
 
 const stackScan = readFileSync(STACK_SCAN, "utf8");
+const discovery = readFileSync(DISCOVERY, "utf8");
 const saveIndicator = readFileSync(SAVE_INDICATOR, "utf8");
 const transition = readFileSync(TRANSITION, "utf8");
 
@@ -38,6 +40,19 @@ ok(
   "new question receives focus",
   stackScan.includes("questionRef.current?.focus()"),
   "new zone heading should receive focus for continuity"
+);
+ok(
+  "skip path is explicit and records the empty zone",
+  stackScan.includes("selectedInActiveMoment > 0 ? moveToNextMoment : skipActiveMoment") &&
+    !stackScan.includes("Passer cette zone"),
+  "empty zone CTA should mark the area as intentionally empty, not just move on"
+);
+ok(
+  "useful questions focus the heading, not an answer option",
+  discovery.includes("headingRef.current?.focus()") &&
+    discovery.includes("tabIndex={-1}") &&
+    discovery.includes("outline-none"),
+  "question changes should not leave focus on an answer that looks selected"
 );
 ok(
   "autosave copy is localized",
