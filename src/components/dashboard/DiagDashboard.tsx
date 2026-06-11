@@ -169,21 +169,21 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden border-b border-border bg-card px-2 py-2 space-y-0.5">
+        <div className="md:hidden border-b border-border bg-background px-3 py-3 space-y-1">
         {TABS.map((tab) => (
           <button
             key={tab.id}
             onClick={() => { navigate(tab.id); setMobileOpen(false); }}
-              className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+              className={`w-full grid grid-cols-[24px_1fr] items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm transition-colors ${
                 activeTab === tab.id
-                  ? "bg-primary/10 text-primary font-medium"
+                  ? "bg-card text-foreground shadow-sm ring-1 ring-border"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               }`}
             >
-              <tab.icon className="w-4 h-4" />
-              <span className="min-w-0">
-                <span className="block">{t(tab.labelFr, tab.labelEn)}</span>
-                <span className="block truncate text-xs opacity-70">{t(tab.descriptionFr, tab.descriptionEn)}</span>
+              <tab.icon className={`h-4 w-4 ${activeTab === tab.id ? "text-primary" : ""}`} />
+              <span className="min-w-0 overflow-hidden">
+                <span className="block truncate font-semibold">{t(tab.labelFr, tab.labelEn)}</span>
+                <span className="block truncate text-xs font-normal text-muted-foreground">{t(tab.descriptionFr, tab.descriptionEn)}</span>
               </span>
             </button>
           ))}
@@ -191,34 +191,40 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex flex-col w-[220px] min-h-screen border-r border-border bg-card p-3 gap-1 shrink-0 sticky top-0 h-screen">
-        <div className="mb-4 px-2">
-          <p className="text-sm font-bold text-foreground">
-            {t("Restitution", "Restitution")}
+      <aside className="hidden md:flex w-[288px] shrink-0 flex-col border-r border-border bg-background px-4 py-5 sticky top-0 h-screen overflow-hidden">
+        <div className="border-b border-border pb-5">
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+            tooltrim
           </p>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            {t("Lis d’abord le rapport. Les autres vues servent de preuves.", "Read the report first. The other views are evidence.")}
+          <p className="mt-2 text-xl font-bold leading-tight text-foreground">
+            {t("Rapport d’audit", "Audit report")}
+          </p>
+          <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-muted-foreground">
+            {t("Lis le rapport, puis ouvre les annexes seulement quand tu veux vérifier.", "Read the report, then open appendices only when you want to verify.")}
           </p>
         </div>
-        <div className="space-y-1">
-          <p className="px-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+
+        <nav className="mt-5 space-y-5" aria-label={t("Navigation de restitution", "Restitution navigation")}>
+          <div className="space-y-1.5">
+          <p className="px-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
             {t("À lire", "Read first")}
           </p>
           {TABS.filter((tab) => tab.id === "overview").map((tab) => (
             <SidebarTab key={tab.id} tab={tab} activeTab={activeTab} navigate={navigate} t={t} />
           ))}
-        </div>
-        <div className="mt-3 space-y-1 border-t border-border pt-3">
-          <p className="px-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+          </div>
+          <div className="space-y-1.5">
+          <p className="px-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
             {t("Annexes", "Appendices")}
           </p>
           {TABS.filter((tab) => tab.id !== "overview").map((tab) => (
             <SidebarTab key={tab.id} tab={tab} activeTab={activeTab} navigate={navigate} t={t} />
           ))}
-        </div>
+          </div>
+        </nav>
 
         {/* Mini health donut + summary */}
-        <div className="mt-auto pt-4 px-2 border-t border-border space-y-3">
+        <div className="mt-auto border-t border-border pt-4">
           <div className="flex items-center gap-2.5">
             <svg width="40" height="40" viewBox="0 0 40 40">
               <circle cx="20" cy="20" r="16" fill="none" stroke="hsl(var(--border))" strokeWidth="3" />
@@ -232,15 +238,18 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
                 {result.healthScore}
               </text>
             </svg>
-            <div className="text-xs">
-              <p className="font-medium text-foreground">{result.healthLabel}</p>
+            <div className="min-w-0 text-xs">
+              <p className="truncate font-semibold text-foreground">{result.healthLabel}</p>
               <p className="text-muted-foreground">{result.sessionState.selectedTools.length} {t("outils", "tools")}</p>
             </div>
           </div>
-          <div className="text-xs space-y-0.5 text-muted-foreground">
-            <p className="font-['DM_Mono']">{monthlyCostLabel}/{t("mois", "mo")}</p>
+          <div className="mt-3 space-y-1 text-xs text-muted-foreground">
+            <div className="flex items-center justify-between gap-3 border-t border-border pt-3">
+              <span>{t("Budget capté", "Captured budget")}</span>
+              <span className="shrink-0 font-['DM_Mono'] text-foreground">{monthlyCostLabel}/{t("mois", "mo")}</span>
+            </div>
             {result.estimatedWaste > 0 && (
-              <p className="text-destructive font-medium">
+              <p className="font-medium text-destructive">
                 {t("gains possibles à vérifier", "possible gains to verify")}
               </p>
             )}
@@ -319,16 +328,22 @@ function SidebarTab({
   return (
     <button
       onClick={() => navigate(tab.id)}
-      className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors text-left ${
+      className={`group grid w-full grid-cols-[28px_1fr] items-start gap-3 rounded-md border px-2.5 py-3 text-left text-sm transition-colors ${
         activeTab === tab.id
-          ? "bg-primary/10 text-primary font-medium"
-          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+          ? "border-border bg-card text-foreground shadow-sm"
+          : "border-transparent text-muted-foreground hover:border-border hover:bg-card/60 hover:text-foreground"
       }`}
     >
-      <tab.icon className="w-4 h-4 shrink-0" />
-      <span className="min-w-0">
-        <span className="block">{t(tab.labelFr, tab.labelEn)}</span>
-        <span className="mt-0.5 block truncate text-[11px] font-normal opacity-70">
+      <span className={`mt-0.5 flex h-7 w-7 items-center justify-center rounded-md border ${
+        activeTab === tab.id ? "border-primary/20 bg-primary/10 text-primary" : "border-border bg-background text-muted-foreground"
+      }`}>
+        <tab.icon className="h-4 w-4" />
+      </span>
+      <span className="min-w-0 overflow-hidden">
+        <span className={`block truncate ${activeTab === tab.id ? "font-bold" : "font-semibold"}`}>
+          {t(tab.labelFr, tab.labelEn)}
+        </span>
+        <span className="mt-0.5 block max-h-[2.6em] overflow-hidden text-[12px] font-normal leading-snug text-muted-foreground">
           {t(tab.descriptionFr, tab.descriptionEn)}
         </span>
       </span>
