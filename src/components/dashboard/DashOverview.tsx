@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
+import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import {
   ArrowRight,
   CheckCircle2,
@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatMonthlyTotal } from "@/utils/diagnosticPricing";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -44,6 +45,14 @@ function translateHealthLabel(label: DiagnosticResult["healthLabel"], t: Props["
   if (label === "Correcte") return t("Correcte", "Good");
   if (label === "À revoir") return t("À revoir", "Needs review");
   return t("Critique", "Critical");
+}
+
+function getGoalLabel(goal: DiagnosticResult["sessionState"]["stackGoal"], t: Props["t"]) {
+  if (goal === "reduce_costs") return t("Réduire les coûts", "Reduce costs");
+  if (goal === "save_time") return t("Gagner du temps", "Save time");
+  if (goal === "simplify") return t("Simplifier", "Simplify");
+  if (goal === "quality") return t("Mieux choisir", "Choose better");
+  return t("Clarifier la stack", "Clarify the stack");
 }
 
 function buildThesis(result: DiagnosticResult, t: Props["t"]) {
@@ -149,17 +158,17 @@ function getToolGroups(result: DiagnosticResult) {
   };
 }
 
-function getEvidence(result: DiagnosticResult, t: Props["t"]) {
+function getEvidence(result: DiagnosticResult, t: Props["t"], monthlyCostLabel: string) {
   const risk = result.insights.primaryRisk;
   return [
     {
       id: "budget",
       Icon: CircleDollarSign,
-      label: t("Budget lisible", "Budget read"),
-      value: `${result.stackTotalCost}€/${t("mois", "mo")}`,
+      label: t("Budget capté", "Captured budget"),
+      value: `${monthlyCostLabel}/${t("mois", "mo")}`,
       detail: result.estimatedWaste > 0
-        ? t(`${Math.round(result.estimatedWaste)}€ récupérables par mois.`, `${Math.round(result.estimatedWaste)}€ recoverable per month.`)
-        : t("Pas de gaspillage évident détecté.", "No obvious waste detected."),
+        ? t("Des gains semblent possibles, mais les montants doivent rester liés aux vrais plans déclarés.", "Potential gains exist, but amounts must stay tied to the real declared plans.")
+        : t("Pas de gaspillage évident détecté dans les plans déclarés.", "No obvious waste detected in the declared plans."),
     },
     {
       id: "coverage",
@@ -182,19 +191,29 @@ function getEvidence(result: DiagnosticResult, t: Props["t"]) {
       value: risk ? t(risk.labelFr, risk.labelEn) : t("Aucun signal rouge", "No red flag"),
       detail: risk ? t(risk.detailFr, risk.detailEn) : t("Rien de bloquant dans les réponses captées.", "Nothing blocking in the captured answers."),
     },
-  ];
+];
+}
+
+function formatEstimatedSavings(item: PriorityItem, t: Props["t"]) {
+  if (item.savings <= 0) return null;
+  const currency = item.tool?.priceCurrency || item.tool?.catalogMonthlyPriceCurrency;
+  const label = `${formatMoney(Math.round(item.savings), currency)}/${t("mois", "mo")}`;
+  if (currency) return label;
+  return `${label} · ${t("devise à vérifier", "currency to verify")}`;
 }
 
 export default function DashOverview({ result, t, onShare, onNavigate, onTrack }: Props) {
   const thesis = useMemo(() => buildThesis(result, t), [result, t]);
   const priorityItems = useMemo(() => getPriorityItems(result, t), [result, t]);
-  const evidence = useMemo(() => getEvidence(result, t), [result, t]);
   const toolGroups = useMemo(() => getToolGroups(result), [result]);
   const profile = result.insights.profile;
   const maturity = result.insights.maturity;
   const healthLabel = translateHealthLabel(result.healthLabel, t);
   const hasWaste = result.estimatedWaste > 0;
   const selectedTools = result.sessionState.selectedTools;
+  const monthlyCostLabel = useMemo(() => formatMonthlyTotal(selectedTools, t), [selectedTools, t]);
+  const evidence = useMemo(() => getEvidence(result, t, monthlyCostLabel), [result, t, monthlyCostLabel]);
+  const goalLabel = getGoalLabel(result.sessionState.stackGoal, t);
   const coverage = result.sessionState.selectionCoverage;
   const coveredCount = coverage?.covered.length || result.insights.functionalCoverage.filter((item) => item.status === "covered").length;
   const totalCoverage = Math.max(coverage ? coverage.covered.length + coverage.skipped.length : result.insights.functionalCoverage.length, 1);
@@ -204,54 +223,77 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
       <section className="space-y-5">
         <div className="space-y-3">
           <p className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
-            {t("Restitution ToolTrim", "ToolTrim restitution")}
+            {t("Rapport d’audit", "Audit report")}
           </p>
           <h1 className="max-w-3xl text-3xl font-bold leading-tight text-foreground md:text-5xl">
             {thesis}
           </h1>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {t(
-              "Tu peux lire cette restitution en 3 minutes : ce que j’ai compris, ce qui compte vraiment, puis quoi faire dans l’ordre.",
-              "You can read this restitution in 3 minutes: what I understood, what really matters, then what to do in order."
+              "Je te donne d’abord la lecture utile, puis les preuves. L’objectif n’est pas de tout regarder, mais de savoir quoi décider.",
+              "I give you the useful read first, then the evidence. The goal is not to inspect everything, but to know what to decide."
             )}
           </p>
         </div>
 
         <div className="grid gap-3 md:grid-cols-[1fr_0.8fr]">
           <div className="rounded-lg border border-border bg-card p-5">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase text-muted-foreground">
-                  {t("Verdict", "Verdict")}
-                </p>
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-mono text-5xl font-bold text-foreground">{result.healthScore}</span>
-                  <div>
-                    <p className="text-lg font-bold text-foreground">{healthLabel}</p>
-                    <p className="text-sm text-muted-foreground">{t(profile.labelFr, profile.labelEn)}</p>
-                  </div>
-                </div>
-                <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-                  {t(profile.summaryFr, profile.summaryEn)}
-                </p>
-              </div>
-              <div className="rounded-lg bg-muted/40 p-3 text-sm">
-                <p className="font-semibold text-foreground">{t("Maturité", "Maturity")}</p>
-                <p className="mt-1 text-muted-foreground">{t(maturity.labelFr, maturity.labelEn)}</p>
-              </div>
+            <p className="text-xs font-semibold uppercase text-muted-foreground">
+              {t("Ce que j’ai compris", "What I understood")}
+            </p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              <ReportLine
+                label={t("Profil", "Profile")}
+                value={t(result.insights.personaContext.labelFr, result.insights.personaContext.labelEn)}
+              />
+              <ReportLine
+                label={t("Priorité", "Priority")}
+                value={goalLabel}
+              />
+              <ReportLine
+                label={t("Stack captée", "Captured stack")}
+                value={`${selectedTools.length} ${t("outil(s)", "tool(s)")}`}
+              />
+              <ReportLine
+                label={t("Budget déclaré", "Declared budget")}
+                value={`${monthlyCostLabel}/${t("mois", "mo")}`}
+              />
+            </div>
+            <div className="mt-4 rounded-md bg-muted/35 p-3 text-sm leading-relaxed text-muted-foreground">
+              {t(
+                `${coveredCount}/${totalCoverage} zones de travail ont été vérifiées. La suite du rapport s’appuie sur cette lecture, pas sur une moyenne générique.`,
+                `${coveredCount}/${totalCoverage} work areas were checked. The rest of the report uses that read, not a generic average.`
+              )}
             </div>
           </div>
 
           <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
-            <p className="text-xs font-semibold uppercase text-primary">
-              {t("Action naturelle", "Natural next step")}
-            </p>
-            <h2 className="mt-2 text-xl font-bold text-foreground">
-              {priorityItems[0]?.label || t("Lire le plan d’action", "Read the action plan")}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {priorityItems[0]?.detail || t("Le diagnostic n’a pas trouvé de correction urgente.", "The diagnostic found no urgent fix.")}
-            </p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase text-primary">
+                  {t("Verdict", "Verdict")}
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-foreground">{healthLabel}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {t(profile.summaryFr, profile.summaryEn)}
+                </p>
+              </div>
+              <div className="rounded-lg bg-background/80 px-3 py-2 text-right">
+                <p className="font-mono text-3xl font-bold text-foreground">{result.healthScore}</p>
+                <p className="text-[11px] font-semibold uppercase text-muted-foreground">/100</p>
+              </div>
+            </div>
+            <div className="mt-4 rounded-md bg-background/65 p-3">
+              <p className="text-xs font-semibold uppercase text-muted-foreground">
+                {t("Première décision", "First decision")}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-foreground">
+                {priorityItems[0]?.label || t("Lire le plan d’action", "Read the action plan")}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {priorityItems[0]?.detail || t("Le diagnostic n’a pas trouvé de correction urgente.", "The diagnostic found no urgent fix.")}
+              </p>
+            </div>
             <button
               type="button"
               onClick={() => onNavigate?.("actions")}
@@ -266,23 +308,20 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
 
       <section className="grid gap-3 md:grid-cols-3">
         <ContextCard
-          label={t("Profil retenu", "Detected profile")}
+          label={t("Angle retenu", "Selected angle")}
           value={t(result.insights.personaContext.labelFr, result.insights.personaContext.labelEn)}
           detail={t(result.insights.personaContext.angleFr, result.insights.personaContext.angleEn)}
         />
         <ContextCard
-          label={t("Stack captée", "Captured stack")}
-          value={`${selectedTools.length} ${t("outil(s)", "tool(s)")}`}
+          label={t("Couverture vérifiée", "Checked coverage")}
+          value={`${coveredCount}/${totalCoverage}`}
           detail={t(`${coveredCount}/${totalCoverage} zones de travail vérifiées.`, `${coveredCount}/${totalCoverage} work areas checked.`)}
           tools={selectedTools.slice(0, 8)}
         />
         <ContextCard
-          label={t("Lecture utile", "Useful read")}
-          value={t("Verdict + plan", "Verdict + plan")}
-          detail={t(
-            "Les annexes servent à vérifier, pas à refaire tout le diagnostic.",
-            "Appendices help verify, not redo the whole diagnostic."
-          )}
+          label={t("Maturité", "Maturity")}
+          value={t(maturity.labelFr, maturity.labelEn)}
+          detail={t(maturity.summaryFr, maturity.summaryEn)}
         />
       </section>
 
@@ -445,6 +484,15 @@ function SectionHeader({
   );
 }
 
+function ReportLine({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-md border border-border/70 bg-muted/25 px-3 py-2">
+      <p className="text-[11px] font-semibold uppercase text-muted-foreground">{label}</p>
+      <p className="mt-1 truncate text-sm font-semibold text-foreground">{value}</p>
+    </div>
+  );
+}
+
 function ContextCard({
   label,
   value,
@@ -484,6 +532,7 @@ function PriorityRow({ item, index, t }: { item: PriorityItem; index: number; t:
       : item.kind === "check"
         ? t("Cette semaine", "This week")
         : t("Ensuite", "Later");
+  const savingsLabel = formatEstimatedSavings(item, t);
 
   return (
     <div className="rounded-lg border border-border bg-card p-4">
@@ -494,9 +543,9 @@ function PriorityRow({ item, index, t }: { item: PriorityItem; index: number; t:
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-muted px-2 py-1 text-xs font-semibold text-muted-foreground">{label}</span>
-            {item.savings > 0 && (
+            {savingsLabel && (
               <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-800">
-                {Math.round(item.savings)}€/{t("mois", "mo")}
+                {savingsLabel}
               </span>
             )}
           </div>

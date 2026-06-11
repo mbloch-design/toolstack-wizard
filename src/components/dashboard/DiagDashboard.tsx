@@ -7,6 +7,7 @@ import DashOptimisations from "./DashOptimisations";
 import DashActions from "./DashActions";
 import DashShareModal from "./DashShareModal";
 import { insertDiagnosticStepEvent } from "@/lib/diagnosticPersistence";
+import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
 import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, Rocket, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -30,40 +31,40 @@ const TABS: {
   {
     id: "overview",
     icon: BookOpenText,
-    labelFr: "Synthèse",
-    labelEn: "Summary",
-    descriptionFr: "La lecture courte : verdict, preuves, priorités.",
-    descriptionEn: "The short read: verdict, evidence, priorities.",
+    labelFr: "Rapport",
+    labelEn: "Report",
+    descriptionFr: "La lecture guidée : contexte, verdict, priorités.",
+    descriptionEn: "The guided read: context, verdict, priorities.",
   },
   {
     id: "actions",
     icon: ListChecks,
-    labelFr: "Plan",
-    labelEn: "Plan",
+    labelFr: "Plan d’action",
+    labelEn: "Action plan",
     descriptionFr: "Les décisions à prendre dans le bon ordre.",
     descriptionEn: "The decisions to make in the right order.",
   },
   {
     id: "stack",
     icon: CheckCircle,
-    labelFr: "Carte stack",
-    labelEn: "Stack map",
-    descriptionFr: "Ce qui compose ton socle utile et ce qui mérite d’être clarifié.",
-    descriptionEn: "What makes up your useful core and what deserves clarification.",
+    labelFr: "Preuves stack",
+    labelEn: "Stack evidence",
+    descriptionFr: "Ce qui compose le socle utile et ce qui mérite d’être clarifié.",
+    descriptionEn: "What makes up the useful core and what deserves clarification.",
   },
   {
     id: "gaspillage",
     icon: Flame,
-    labelFr: "À revoir",
-    labelEn: "Review",
+    labelFr: "Points à revoir",
+    labelEn: "Review points",
     descriptionFr: "Les chevauchements, abonnements peu utilisés et signaux faibles.",
     descriptionEn: "Overlaps, low-usage subscriptions and weak signals.",
   },
   {
     id: "optimiser",
     icon: Rocket,
-    labelFr: "Options",
-    labelEn: "Options",
+    labelFr: "Options prudentes",
+    labelEn: "Careful options",
     descriptionFr: "Des pistes prudentes, seulement après les priorités.",
     descriptionEn: "Careful options, only after priorities.",
   },
@@ -149,6 +150,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const activeTabIndex = TABS.findIndex((tab) => tab.id === activeTab);
   const nextTab = activeTabIndex >= 0 && activeTabIndex < TABS.length - 1 ? TABS[activeTabIndex + 1] : null;
   const ActiveIcon = activeTabMeta.icon;
+  const monthlyCostLabel = formatMonthlyTotal(result.sessionState.selectedTools, t);
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-background">
@@ -195,7 +197,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
             {t("Restitution", "Restitution")}
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            {t("Lis d’abord la synthèse, creuse seulement si besoin.", "Read the summary first, then dig in if needed.")}
+            {t("Lis d’abord le rapport. Les autres vues servent de preuves.", "Read the report first. The other views are evidence.")}
           </p>
         </div>
         {TABS.map((tab) => (
@@ -239,10 +241,10 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
             </div>
           </div>
           <div className="text-xs space-y-0.5 text-muted-foreground">
-            <p className="font-['DM_Mono']">{result.stackTotalCost}€/{t("mois", "mo")}</p>
+            <p className="font-['DM_Mono']">{monthlyCostLabel}/{t("mois", "mo")}</p>
             {result.estimatedWaste > 0 && (
-              <p className="text-destructive font-medium font-['DM_Mono']">
-                -{result.estimatedWaste}€ {t("gaspillé", "wasted")}
+              <p className="text-destructive font-medium">
+                {t("gains possibles à vérifier", "possible gains to verify")}
               </p>
             )}
           </div>
@@ -262,7 +264,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground"
                   >
                     <ArrowLeft className="h-3.5 w-3.5" />
-                    {t("Retour à la synthèse", "Back to summary")}
+                    {t("Retour au rapport", "Back to report")}
                   </button>
                   <div className="mt-3 flex items-start gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">

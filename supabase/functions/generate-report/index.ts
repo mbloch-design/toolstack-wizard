@@ -9,6 +9,9 @@ interface Tool {
   id: string;
   name: string;
   price: number;
+  priceCurrency?: string;
+  catalogMonthlyPrice?: number;
+  catalogMonthlyPriceCurrency?: string;
   category: string;
   tool_type: string;
   usage: string;
@@ -67,7 +70,7 @@ interface ReportPayload {
   toolScores: Record<string, { pertinence: number; valueIndex: number; scoreFinal: number }>;
   prescriptions: { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] };
   insights?: DiagnosticInsights;
-  recommendations: { id: string; name: string; price: number; category: string }[];
+  recommendations: { id: string; name: string; price: number; priceCurrency?: string; catalogMonthlyPrice?: number; catalogMonthlyPriceCurrency?: string; category: string }[];
 }
 
 function humanizeId(value: string | null | undefined) {
@@ -92,6 +95,75 @@ function localizedField(
   return typeof value === "string" ? value : "";
 }
 
+function formatNumber(value: number) {
+  return Number.isInteger(value) ? String(value) : String(Math.round(value * 100) / 100).replace(".", ",");
+}
+
+function formatMoney(value: number, currency?: string) {
+  const formatted = formatNumber(value);
+  if (currency === "USD") return `${formatted}$`;
+  if (currency === "EUR") return `${formatted}€`;
+  if (currency) return `${formatted} ${currency}`;
+  return formatted;
+}
+
+function toolCurrency(tool: Pick<Tool, "priceCurrency" | "catalogMonthlyPriceCurrency">) {
+  return tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+}
+
+function formatToolMonthlyPrice(tool: Pick<Tool, "price" | "priceCurrency" | "catalogMonthlyPriceCurrency">, t: (fr: string, en: string) => string) {
+  if (tool.price <= 0) return t("Gratuit", "Free");
+  const currency = toolCurrency(tool);
+  const suffix = currency ? "" : ` · ${t("devise à vérifier", "currency to verify")}`;
+  return `${formatMoney(tool.price, currency)}/${t("mois", "mo")}${suffix}`;
+}
+
+function formatMonthlyTotal(tools: Pick<Tool, "price" | "priceCurrency" | "catalogMonthlyPriceCurrency">[], t: (fr: string, en: string) => string) {
+  const totals = new Map<string, number>();
+  let unknown = 0;
+
+  for (const tool of tools) {
+    if (tool.price <= 0) continue;
+    const currency = toolCurrency(tool);
+    if (!currency) {
+      unknown += tool.price;
+      continue;
+    }
+    totals.set(currency, (totals.get(currency) || 0) + tool.price);
+  }
+
+  const parts = Array.from(totals.entries()).map(([currency, amount]) => formatMoney(amount, currency));
+  if (unknown > 0) parts.push(`${formatMoney(unknown)} ${t("à vérifier", "to verify")}`);
+  return parts.length > 0 ? parts.join(" + ") : formatMoney(0);
+}
+
+function formatPrescriptionTotal(
+  prescriptions: Prescription[],
+  tools: Tool[],
+  t: (fr: string, en: string) => string,
+  multiplier = 1
+) {
+  const toolMap = new Map(tools.map((tool) => [tool.id, tool]));
+  const totals = new Map<string, number>();
+  let unknown = 0;
+
+  for (const prescription of prescriptions) {
+    if (prescription.savingsEstimate <= 0) continue;
+    const tool = toolMap.get(prescription.toolId);
+    const currency = tool ? toolCurrency(tool) : undefined;
+    const amount = prescription.savingsEstimate * multiplier;
+    if (!currency) {
+      unknown += amount;
+      continue;
+    }
+    totals.set(currency, (totals.get(currency) || 0) + amount);
+  }
+
+  const parts = Array.from(totals.entries()).map(([currency, amount]) => formatMoney(Math.round(amount), currency));
+  if (unknown > 0) parts.push(`${formatMoney(Math.round(unknown))} ${t("à vérifier", "to verify")}`);
+  return parts.length > 0 ? parts.join(" + ") : formatMoney(0);
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
@@ -101,6 +173,14 @@ Deno.serve(async (req) => {
     const payload: ReportPayload = await req.json();
     const { lang } = payload;
     const t = (fr: string, en: string) => lang === "fr" ? fr : en;
+    const allPrescriptions = [
+      ...payload.prescriptions.phase1,
+      ...payload.prescriptions.phase2,
+      ...payload.prescriptions.phase3,
+    ];
+    const capturedBudgetLabel = formatMonthlyTotal(payload.selectedTools, t);
+    const possibleSavingsLabel = formatPrescriptionTotal(allPrescriptions, payload.selectedTools, t);
+    const annualSavingsLabel = formatPrescriptionTotal(allPrescriptions, payload.selectedTools, t, 12);
 
     const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
     const W = 210;
@@ -189,14 +269,14 @@ Deno.serve(async (req) => {
     doc.text(t("Coût total stack", "Total stack cost"), W / 2, metricsY, { align: "center" });
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(16);
-    doc.text(`${payload.stackTotalCost}€/${t("mois", "mo")}`, W / 2, metricsY + 8, { align: "center" });
+    doc.text(`${capturedBudgetLabel}/${t("mois", "mo")}`, W / 2, metricsY + 8, { align: "center" });
 
     doc.setFontSize(11);
     doc.setTextColor(200, 200, 210);
     doc.text(t("Économies possibles", "Potential savings"), W / 2, metricsY + 22, { align: "center" });
     doc.setTextColor(...ORANGE);
     doc.setFontSize(16);
-    doc.text(`${Math.round(payload.estimatedWaste)}€/${t("mois", "mo")}`, W / 2, metricsY + 30, { align: "center" });
+    doc.text(`${possibleSavingsLabel}/${t("mois", "mo")}`, W / 2, metricsY + 30, { align: "center" });
 
     // Date
     doc.setFontSize(9);
@@ -220,9 +300,9 @@ Deno.serve(async (req) => {
     // Summary boxes
     const boxes = [
       { label: t("Score de santé", "Health Score"), value: `${payload.healthScore}/100`, color: hColor },
-      { label: t("Coût actuel", "Current Cost"), value: `${payload.stackTotalCost}€/${t("mois", "mo")}`, color: NAVY },
-      { label: t("Coût optimisé", "Optimized Cost"), value: `${payload.optimizedCost}€/${t("mois", "mo")}`, color: GREEN },
-      { label: t("Économies annuelles", "Annual Savings"), value: `${Math.round(payload.annualSavings)}€`, color: ORANGE },
+      { label: t("Coût actuel", "Current Cost"), value: `${capturedBudgetLabel}/${t("mois", "mo")}`, color: NAVY },
+      { label: t("Gains possibles", "Potential gains"), value: `${possibleSavingsLabel}/${t("mois", "mo")}`, color: GREEN },
+      { label: t("Projection annuelle", "Annual projection"), value: annualSavingsLabel, color: ORANGE },
     ];
 
     const boxW = (CW - 15) / 4;
@@ -340,11 +420,6 @@ Deno.serve(async (req) => {
     }
 
     // Prescriptions summary
-    const allPrescriptions = [
-      ...payload.prescriptions.phase1,
-      ...payload.prescriptions.phase2,
-      ...payload.prescriptions.phase3,
-    ];
     const cancels = allPrescriptions.filter(p => p.verdict === "cancel").length;
     const reviews = allPrescriptions.filter(p => p.verdict === "review").length;
     const downgrades = allPrescriptions.filter(p => p.verdict === "downgrade").length;
@@ -369,12 +444,13 @@ Deno.serve(async (req) => {
     doc.text(t("Répartition par catégorie", "Category Breakdown"), M, y);
     y += 8;
 
-    const catMap = new Map<string, { count: number; cost: number }>();
+    const catMap = new Map<string, { count: number; cost: number; tools: Tool[] }>();
     for (const tool of payload.selectedTools) {
       const cat = tool.category || "other";
-      const e = catMap.get(cat) || { count: 0, cost: 0 };
+      const e = catMap.get(cat) || { count: 0, cost: 0, tools: [] };
       e.count++;
       e.cost += tool.price;
+      e.tools.push(tool);
       catMap.set(cat, e);
     }
     const cats = Array.from(catMap.entries()).sort((a, b) => b[1].cost - a[1].cost);
@@ -394,7 +470,7 @@ Deno.serve(async (req) => {
       doc.roundedRect(barX, y, barW * (data.cost / maxCost), 5, 2, 2, "F");
       doc.setTextColor(...NAVY);
       doc.setFont("helvetica", "bold");
-      doc.text(`${Math.round(data.cost)}€`, M + CW - 25, y + 4, { align: "right" });
+      doc.text(formatMonthlyTotal(data.tools, t), M + CW - 25, y + 4, { align: "right", maxWidth: 44 });
       doc.setFont("helvetica", "normal");
       doc.setTextColor(...GRAY);
       doc.text(`(${data.count})`, M + CW, y + 4, { align: "right" });
@@ -445,7 +521,7 @@ Deno.serve(async (req) => {
       doc.setFontSize(8);
       doc.setTextColor(...GRAY);
       doc.setFont("helvetica", "normal");
-      doc.text(`${tool.category || "—"} • ${tool.tool_type} • ${tool.price}€/${t("mois", "mo")}`, M + 25, y + 17);
+      doc.text(`${tool.category || "—"} • ${tool.tool_type} • ${formatToolMonthlyPrice(tool, t)}`, M + 25, y + 17);
 
       // Prescription if any
       const pres = allPrescriptions.find(p => p.toolId === tool.id);
@@ -459,7 +535,7 @@ Deno.serve(async (req) => {
         doc.text(`${verdictLabel} — ${pres.message}`, M + CW - 5, y + 10, { align: "right", maxWidth: 70 });
         doc.setFont("helvetica", "normal");
         doc.setTextColor(...GRAY);
-        doc.text(`-${pres.savingsEstimate}€/${t("mois", "mo")}`, M + CW - 5, y + 17, { align: "right" });
+        doc.text(`-${formatPrescriptionTotal([pres], payload.selectedTools, t)}/${t("mois", "mo")}`, M + CW - 5, y + 17, { align: "right" });
       }
 
       y += 30;
@@ -505,7 +581,7 @@ Deno.serve(async (req) => {
         doc.setTextColor(...GRAY);
         doc.setFontSize(8);
         doc.setFont("helvetica", "normal");
-        doc.text(`${rec.category || "—"} • ${rec.price > 0 ? rec.price + "€/" + t("mois", "mo") : t("Gratuit", "Free")}`, M + 16 + doc.getTextWidth(rec.name) + 4, y + 9);
+        doc.text(`${rec.category || "—"} • ${formatToolMonthlyPrice(rec, t)}`, M + 16 + doc.getTextWidth(rec.name) + 4, y + 9);
         y += 18;
       }
 
@@ -560,7 +636,7 @@ Deno.serve(async (req) => {
           item.verdict === "downgrade" ? "Downgrade" : t("Vérifier", "Review");
         doc.text(`${verdictTag} ${toolName}`, M + 7, y);
         doc.setTextColor(...GRAY);
-        doc.text(`-${item.savingsEstimate}€/${t("mois", "mo")}`, M + CW, y, { align: "right" });
+        doc.text(`-${formatPrescriptionTotal([item], payload.selectedTools, t)}/${t("mois", "mo")}`, M + CW, y, { align: "right" });
         y += 8;
       }
       y += 5;

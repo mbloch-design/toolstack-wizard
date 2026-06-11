@@ -26,14 +26,17 @@ function serializeResult(result: DiagnosticResult) {
     annualSavings: result.annualSavings,
     hoursRecoverable: result.hoursRecoverable,
     selectedTools: result.sessionState.selectedTools.map((t) => ({
-      id: t.id, name: t.name, price: t.price,
+      id: t.id, name: t.name, price: t.price, priceCurrency: t.priceCurrency,
+      catalogMonthlyPrice: t.catalogMonthlyPrice, catalogMonthlyPriceCurrency: t.catalogMonthlyPriceCurrency,
       category: t.category, tool_type: t.tool_type, usage: t.usage,
     })),
     toolScores: toolScoresObj,
     prescriptions: result.prescriptions,
     insights: result.insights,
     recommendations: result.recommendations.slice(0, 6).map((r) => ({
-      id: r.id, name: r.name, price: r.price, category: r.category,
+      id: r.id, name: r.name, price: r.price, priceCurrency: r.priceCurrency,
+      catalogMonthlyPrice: r.catalogMonthlyPrice, catalogMonthlyPriceCurrency: r.catalogMonthlyPriceCurrency,
+      category: r.category,
     })),
   };
 }

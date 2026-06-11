@@ -2,6 +2,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import type { DiagnosticResult, Tool, Prescription } from "@/types/diagnostic";
 import { AlertTriangle, CheckCircle2, ChevronRight, CircleDollarSign, CircleDot, LayoutGrid, List, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 
 interface Props {
@@ -30,6 +31,16 @@ function getStatus(tool: Tool, allPrescriptions: Prescription[]): { status: Bubb
   if (p && p.type === "pricing-tier") return { status: "pricing", prescription: p };
   if (tool.price === 0 || tool.force_silence) return { status: "neutral" };
   return { status: "ok" };
+}
+
+function formatToolAmount(tool: Tool) {
+  return tool.price > 0 ? formatMoney(tool.price, tool.priceCurrency || tool.catalogMonthlyPriceCurrency) : "0";
+}
+
+function formatSavings(value: number, tool: Tool, t: Props["t"]) {
+  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const label = formatMoney(value, currency);
+  return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
 }
 
 const STATUS_COLORS: Record<BubbleStatus, string> = {
@@ -97,7 +108,7 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
           <ToolLogo tool={tool} size={32} className="rounded-lg" />
           <div>
             <p className="font-semibold text-sm text-foreground">{tool.name}</p>
-            <p className="text-xs font-['DM_Mono'] text-muted-foreground">{tool.price}€/{t("mois", "mo")}</p>
+            <p className="text-xs font-['DM_Mono'] text-muted-foreground">{formatToolMonthlyPrice(tool, t)}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-muted"><X className="w-4 h-4" /></button>
@@ -128,7 +139,7 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
           <div className="bg-[hsl(var(--keep))]/5 border border-[hsl(var(--keep))]/20 rounded-lg p-3">
             <p className="text-xs text-muted-foreground">{t("Potentiel récupérable", "Recoverable potential")}</p>
             <p className="text-xl font-bold font-['DM_Mono'] text-[hsl(var(--keep))]">
-              {prescription.savingsEstimate}€<span className="text-sm font-normal text-muted-foreground">/{t("mois", "mo")}</span>
+              {formatSavings(prescription.savingsEstimate, tool, t)}<span className="text-sm font-normal text-muted-foreground">/{t("mois", "mo")}</span>
             </p>
           </div>
         )}
@@ -137,7 +148,7 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
         {tool.downgrade_plan?.available && (
           <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 text-xs">
             <p className="text-blue-700 dark:text-blue-300">
-              {t("Plan alternatif", "Alternative plan")}: <strong>{tool.downgrade_plan.plan}</strong> → {tool.downgrade_plan.toPrice}€
+              {t("Plan alternatif", "Alternative plan")}: <strong>{tool.downgrade_plan.plan}</strong> → {formatMoney(tool.downgrade_plan.toPrice, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}
             </p>
           </div>
         )}
@@ -283,7 +294,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
             <pill.Icon className="h-3.5 w-3.5" />
             <span>{pill.label}</span>
             {pill.savings != null && pill.savings > 0 && (
-              <span className="font-['DM_Mono']">· {pill.savings}€</span>
+              <span>· {t("gain possible", "possible gain")}</span>
             )}
           </button>
         ))}
@@ -332,7 +343,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                       {b.tool.name.length > 9 ? b.tool.name.slice(0, 8) + "…" : b.tool.name}
                     </text>
                     <text x={b.x} y={b.y + 10} textAnchor="middle" className="fill-white/70 text-[9px] font-['DM_Mono'] pointer-events-none select-none" fontSize="9">
-                      {b.tool.price > 0 ? `${b.tool.price}€` : t("Gratuit", "Free")}
+                      {b.tool.price > 0 ? formatToolAmount(b.tool) : t("Gratuit", "Free")}
                     </text>
                   </>
                 )}
@@ -347,7 +358,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
             return (
               <div className="absolute z-10 bg-card border border-border rounded-lg shadow px-3 py-1.5 pointer-events-none text-xs" style={{ left: Math.min(b.x + b.r + 8, dims.w - 120), top: b.y - 16 }}>
                 <span className="font-medium text-foreground">{b.tool.name}</span>
-                <span className="text-muted-foreground ml-1.5 font-['DM_Mono']">{b.tool.price}€</span>
+                <span className="text-muted-foreground ml-1.5 font-['DM_Mono']">{formatToolAmount(b.tool)}</span>
               </div>
             );
           })()}
@@ -377,10 +388,10 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                     <p className="text-xs text-muted-foreground truncate">{item.prescription.message}</p>
                   )}
                 </div>
-                <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">{item.tool.price}€</span>
+                <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">{formatToolAmount(item.tool)}</span>
                 {item.prescription && item.prescription.savingsEstimate > 0 && (
                   <span className="text-xs font-bold font-['DM_Mono'] text-[hsl(var(--keep))] shrink-0">
-                    +{item.prescription.savingsEstimate}€
+                    +{formatSavings(item.prescription.savingsEstimate, item.tool, t)}
                   </span>
                 )}
                 <ChevronRight className="w-3.5 h-3.5 text-muted-foreground shrink-0" />

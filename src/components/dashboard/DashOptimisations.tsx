@@ -5,6 +5,7 @@ import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -22,6 +23,12 @@ interface SwapData {
   savings: number;
   currentScore: number;
   altScore: number;
+}
+
+function formatSwapSavings(swap: SwapData, t: Props["t"]) {
+  const currency = swap.current.priceCurrency || swap.current.catalogMonthlyPriceCurrency;
+  const label = `${formatMoney(swap.savings, currency)}/${t("mois", "mo")}`;
+  return currency ? label : `${label} · ${t("devise à vérifier", "currency to verify")}`;
 }
 
 const PERSONA_REASONS: Record<string, { fr: string; en: string }> = {
@@ -55,7 +62,7 @@ function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]
         {/* Stats row */}
         <div className="flex gap-3 text-xs">
           {swap.savings > 0 && (
-            <span className="font-['DM_Mono'] font-bold text-[hsl(var(--keep))]">+{swap.savings}€/{t("mois", "mo")}</span>
+            <span className="font-['DM_Mono'] font-bold text-[hsl(var(--keep))]">+{formatSwapSavings(swap, t)}</span>
           )}
           <span className="text-muted-foreground">
             {t("Score", "Score")}: {swap.currentScore} → <span className="text-[hsl(var(--keep))] font-medium">{swap.altScore}</span>
@@ -177,7 +184,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
                   <p className="text-xs text-muted-foreground">{t(personaReason.fr, personaReason.en)}</p>
                 </div>
                 <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">
-                  {tool.price > 0 ? `${tool.price}€` : t("Gratuit", "Free")}
+                  {formatToolMonthlyPrice(tool, t)}
                 </span>
               </div>
             ))}

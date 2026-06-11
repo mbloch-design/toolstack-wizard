@@ -6,6 +6,7 @@ const FUNCTIONS = [
   "backoffice-diagnostic",
   "send-backoffice-alerts",
   "process-diagnostic-email-jobs",
+  "generate-report",
 ];
 const SUPABASE_BIN = process.env.SUPABASE_CLI || "supabase";
 

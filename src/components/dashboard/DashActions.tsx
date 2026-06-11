@@ -6,6 +6,7 @@ import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";
 import { Check, ChevronRight, ExternalLink, Target } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
+import { formatMoney } from "@/utils/diagnosticPricing";
 
 
 
@@ -51,6 +52,13 @@ function writeStoredActionIds(sessionId: string | null | undefined, ids: string[
   const key = getActionStorageKey(sessionId);
   if (!key || typeof window === "undefined") return;
   window.localStorage.setItem(key, JSON.stringify(ids));
+}
+
+function formatActionSavings(action: ActionItem, t: Props["t"]) {
+  if (action.savings <= 0) return null;
+  const currency = action.tool?.priceCurrency || action.tool?.catalogMonthlyPriceCurrency;
+  const label = formatMoney(action.savings, currency);
+  return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
 }
 
 function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"]): ActionItem[] {
@@ -99,7 +107,7 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `week-dorm-${p.toolId}`,
       prescription: p, tool,
-      label: t(`Auditer ${tool?.name ?? p.toolId} (fantôme)`, `Audit ${tool?.name ?? p.toolId} (ghost)`),
+      label: t(`Auditer ${tool?.name ?? p.toolId} (peu utilisé)`, `Audit ${tool?.name ?? p.toolId} (low usage)`),
       savings: p.savingsEstimate, timeMinutes: 15, urgency: "week",
     });
   }
@@ -192,15 +200,15 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
     }, 1000);
   }, [actions, dbSessionId, dbSessionToken]);
 
-  const toggle = useCallback((id: string, savings: number) => {
+  const toggle = useCallback((action: ActionItem) => {
     setChecked((prev) => {
       const next = new Set(prev);
-      if (next.has(id)) { next.delete(id); setLastChecked(null); }
-      else { next.add(id); setLastChecked(`${savings}€`); }
+      if (next.has(action.id)) { next.delete(action.id); setLastChecked(null); }
+      else { next.add(action.id); setLastChecked(formatActionSavings(action, t) || t("Action", "Action")); }
       persistActions(next);
       return next;
     });
-  }, [persistActions]);
+  }, [persistActions, t]);
 
   const totalSavings = actions.reduce((s, a) => s + a.savings, 0);
   const recoveredSavings = actions.filter((a) => checked.has(a.id)).reduce((s, a) => s + a.savings, 0);
@@ -262,12 +270,12 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
           <div>
             <p className="text-sm text-white/60">{t("Potentiel sécurisé", "Secured potential")}</p>
             <p className="text-3xl md:text-4xl font-bold font-['DM_Mono']">
-              {recoveredSavings}€ <span className="text-lg text-white/40">/ {totalSavings}€</span>
+              {completedCount}<span className="text-lg text-white/40"> / {actions.length}</span>
             </p>
           </div>
           {lastChecked && (
             <span className="text-sm font-['DM_Mono'] text-[hsl(var(--keep))] animate-in fade-in duration-300">
-              {lastChecked} {t("traités", "handled")}
+              {lastChecked} {t("traité", "handled")}
             </span>
           )}
         </div>
@@ -338,7 +346,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                   >
                     {/* Checkbox */}
                     <button
-                      onClick={() => toggle(action.id, action.savings)}
+                      onClick={() => toggle(action)}
                       className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center shrink-0 transition-all ${
                         isDone
                           ? "bg-[hsl(var(--keep))] border-[hsl(var(--keep))] scale-105"
@@ -362,7 +370,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                     <div className="flex items-center gap-3 shrink-0">
                       {action.savings > 0 && (
                         <span className={`text-sm font-bold font-['DM_Mono'] ${isDone ? "text-[hsl(var(--keep))]" : "text-[hsl(var(--keep))]"}`}>
-                          {action.savings}€
+                          {formatActionSavings(action, t)}
                         </span>
                       )}
                       <span className="text-xs text-muted-foreground">
@@ -400,7 +408,6 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
       {actions.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          <p className="text-4xl mb-3">🎉</p>
           <p className="text-sm">{t("Aucune action requise — ta stack est clean !", "No actions required — your stack is clean!")}</p>
         </div>
       )}

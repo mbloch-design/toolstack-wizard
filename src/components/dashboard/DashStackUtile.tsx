@@ -3,6 +3,7 @@ import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import type { ToolScore } from "@/utils/scoring";
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatMonthlyTotal, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 
 interface Props {
@@ -11,6 +12,12 @@ interface Props {
 }
 
 type FilterTab = "all" | "keep" | "review";
+
+function formatPotential(value: number, tool: Tool, t: Props["t"]) {
+  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const label = formatMoney(Math.round(value), currency);
+  return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
+}
 
 function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; result: DiagnosticResult; t: Props["t"] }) {
   const [expanded, setExpanded] = useState(false);
@@ -47,7 +54,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
           <span className="text-xs font-['DM_Mono'] text-muted-foreground w-8 text-right">{score.scoreFinal}</span>
         </div>
         <span className="text-xs font-['DM_Mono'] text-foreground shrink-0">
-          {tool.price > 0 ? `${tool.price}€` : t("Gratuit", "Free")}
+          {formatToolMonthlyPrice(tool, t)}
         </span>
         <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${verdictCls}`}>
           {verdictLabel}
@@ -80,7 +87,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
                   <strong>{prescription.pricingContext.targetPlan || prescription.pricingContext.currentPlan || t("plan inférieur", "lower tier")}</strong>
                   {prescription.savingsEstimate > 0 && (
                     <span className="ml-1 font-['DM_Mono']">
-                      ({t("potentiel", "potential")} {Math.round(prescription.savingsEstimate)}€)
+                      ({t("potentiel", "potential")} {formatPotential(prescription.savingsEstimate, tool, t)})
                     </span>
                   )}
                 </p>
@@ -97,9 +104,9 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
             <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-3 py-2">
               <div className="flex-1">
                 <p className="text-xs text-blue-700 dark:text-blue-300">
-                  {t("Plan", "Plan")} <strong>{tool.downgrade_plan.plan}</strong> → {tool.downgrade_plan.toPrice}€/{t("mois", "mo")}
+                  {t("Plan", "Plan")} <strong>{tool.downgrade_plan.plan}</strong> → {formatMoney(tool.downgrade_plan.toPrice, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}/{t("mois", "mo")}
                   <span className="ml-1 font-['DM_Mono']">
-                    ({t("économie", "saves")} {tool.downgrade_plan.fromPrice - tool.downgrade_plan.toPrice}€)
+                    ({t("économie", "saves")} {formatPotential(tool.downgrade_plan.fromPrice - tool.downgrade_plan.toPrice, tool, t)})
                   </span>
                 </p>
               </div>
@@ -128,6 +135,10 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
 
 export default function DashStackUtile({ result, t }: Props) {
   const [activeFilter, setActiveFilter] = useState<FilterTab>("all");
+  const monthlyCostLabel = useMemo(
+    () => formatMonthlyTotal(result.sessionState.selectedTools, t),
+    [result.sessionState.selectedTools, t]
+  );
 
   const allP = useMemo(
     () => [...result.prescriptions.phase1, ...result.prescriptions.phase2, ...result.prescriptions.phase3],
@@ -209,7 +220,7 @@ export default function DashStackUtile({ result, t }: Props) {
 
       <div className="flex items-center justify-between bg-muted/50 rounded-xl px-4 py-3 border border-border">
         <p className="text-sm text-foreground">
-          {t("Budget après arbitrage", "Budget after decisions")}: <strong className="font-['DM_Mono']">{result.optimizedCost}€/{t("mois", "mo")}</strong>
+          {t("Budget capté", "Captured budget")}: <strong className="font-['DM_Mono']">{monthlyCostLabel}/{t("mois", "mo")}</strong>
         </p>
         <p className="text-xs text-muted-foreground">
           {t("Socle conservé", "Kept core")} : <strong>{toolsWithScores.length}</strong> {t("outils", "tools")}
