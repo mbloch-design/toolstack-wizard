@@ -270,6 +270,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
+  const [recentlyAddedToolId, setRecentlyAddedToolId] = useState<string | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
   const selectedToolsById = useMemo(
@@ -340,14 +341,22 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     setShowCatalog(false);
     setCustomName("");
     setCustomPrice("");
+    setRecentlyAddedToolId(null);
     const focusTimer = window.setTimeout(() => questionRef.current?.focus(), 0);
     return () => window.clearTimeout(focusTimer);
   }, [activeMomentId]);
+
+  useEffect(() => {
+    if (!recentlyAddedToolId) return;
+    const timer = window.setTimeout(() => setRecentlyAddedToolId(null), 1600);
+    return () => window.clearTimeout(timer);
+  }, [recentlyAddedToolId]);
 
   const toggleTool = (tool: Tool, source: "suggestion" | "search" | "review" | "companion" = "suggestion") => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
       if (alreadySelected) {
+        if (recentlyAddedToolId === tool.id) setRecentlyAddedToolId(null);
         onTrack?.("selector_tool_removed", {
           tool_id: tool.id,
           tool_name: tool.name,
@@ -370,7 +379,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         source,
         selected_count: prev.length + 1,
       });
-      return [...prev, withDefaultOffer(tool)];
+      const selectedTool = withDefaultOffer(tool);
+      setRecentlyAddedToolId(selectedTool.id);
+      return [...prev, selectedTool];
     });
   };
 
@@ -402,6 +413,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const price = Math.max(0, Number(customPrice) || 0);
     const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment));
     setSelectedTools((prev) => [...prev, customTool]);
+    setRecentlyAddedToolId(customTool.id);
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -662,6 +674,14 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               style={{ width: `${Math.max(8, Math.round((coverageCount / STACK_MOMENTS.length) * 100))}%` }}
             />
           </div>
+
+          <LiveStackStrip
+            selectedTools={selectedTools}
+            activeMoment={activeMoment}
+            recentToolId={recentlyAddedToolId}
+            monthlyCostLabel={selectedMonthlyCostLabel}
+            t={t}
+          />
 
           <div
             key={activeMoment.id}
@@ -929,6 +949,84 @@ function ToolChoiceButton({
             {t("Ajoute pour choisir le plan", "Add to choose plan")}
           </p>
         )}
+      </div>
+    </div>
+  );
+}
+
+function LiveStackStrip({
+  selectedTools,
+  activeMoment,
+  recentToolId,
+  monthlyCostLabel,
+  t,
+}: {
+  selectedTools: Tool[];
+  activeMoment: StackMoment;
+  recentToolId: string | null;
+  monthlyCostLabel: string;
+  t: (fr: string, en: string) => string;
+}) {
+  const recentTool = selectedTools.find((tool) => tool.id === recentToolId);
+  const visibleTools = selectedTools.slice(-7).reverse();
+
+  return (
+    <div
+      className="mt-5 min-h-[76px] rounded-lg border border-primary/15 bg-primary/5 px-4 py-3"
+      aria-live="polite"
+    >
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold uppercase text-primary">
+            {t("Stack captée en direct", "Live captured stack")}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {recentTool
+              ? t(
+                  `${recentTool.name} est dans ta stack. Ajuste son plan si besoin.`,
+                  `${recentTool.name} is in your stack. Adjust its plan if needed.`
+                )
+              : selectedTools.length > 0
+                ? t(
+                    `${selectedTools.length} outil(s) retenu(s). Zone en cours : ${activeMoment.fr}.`,
+                    `${selectedTools.length} tool(s) captured. Current area: ${activeMoment.en}.`
+                  )
+                : t(
+                    "Ajoute seulement les outils que tu utilises vraiment. Je garde la trace ici.",
+                    "Only add tools you actually use. I keep track here."
+                  )}
+          </p>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-3">
+          <div className="flex -space-x-2">
+            {visibleTools.length === 0 ? (
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-dashed border-primary/30 bg-background text-primary">
+                <Plus className="h-4 w-4" />
+              </span>
+            ) : (
+              visibleTools.map((tool) => (
+                <span
+                  key={tool.id}
+                  className={`rounded-lg border-2 border-background bg-background transition-transform duration-200 ${
+                    tool.id === recentToolId ? "scale-110 ring-2 ring-primary/25" : ""
+                  }`}
+                  title={tool.name}
+                >
+                  <ToolLogo tool={tool} size={34} className="rounded-md" />
+                </span>
+              ))
+            )}
+          </div>
+          <div className="text-right">
+            <p className="font-mono text-sm font-semibold text-foreground">
+              {monthlyCostLabel}/{t("mois", "mo")}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {selectedTools.length} {t("outil(s)", "tool(s)")}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

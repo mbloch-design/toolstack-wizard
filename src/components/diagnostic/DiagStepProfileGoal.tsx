@@ -140,10 +140,10 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
   const stepIndex = profileStep === "persona" ? 0 : profileStep === "goal" ? 1 : 2;
   const stepTitle =
     profileStep === "persona"
-      ? t("Pour commencer, tu fais surtout quoi ?", "First, what do you mostly do?")
+      ? t("Je calibre d'abord ton audit.", "First, I calibrate your audit.")
       : profileStep === "goal"
-        ? t("Qu’est-ce que tu veux améliorer en priorité ?", "What do you want to improve first?")
-        : t("Deux détails, seulement si tu veux.", "Two details, only if you want.");
+        ? t("Qu'est-ce qui compte le plus dans la lecture ?", "What matters most in the read?")
+        : t("Deux détails utiles, rien d'obligatoire.", "Two useful details, nothing required.");
   const stepSubtitle =
     profileStep === "persona"
       ? t(
@@ -222,7 +222,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           <header className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
-                <span>{t("Diagnostic guidé", "Guided diagnostic")}</span>
+                <span>{t("Audit guidé", "Guided audit")}</span>
                 <span className="text-primary/40">·</span>
                 <span>{stepIndex + 1}/3</span>
               </div>
@@ -522,8 +522,8 @@ function ProfileContextPanel({
           </p>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {t(
-              "On calibre d’abord le regard. Ensuite seulement, on te demande tes outils.",
-              "We calibrate the lens first. Only then do we ask for your tools."
+              "On calibre le regard avant de regarder les outils. C'est ce qui evite les recommandations hors sujet.",
+              "We calibrate the lens before looking at tools. That is what avoids irrelevant recommendations."
             )}
           </p>
         </div>

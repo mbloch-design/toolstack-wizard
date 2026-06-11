@@ -32,7 +32,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   const emailValue = email.trim();
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-  const openDashboard = () => {
+  const openRestitution = () => {
     if (wantsEmail && !isValidEmail(emailValue)) {
       setEmailError(t("Email invalide", "Invalid email"));
       return;
@@ -60,8 +60,8 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
             {t(
-              "Voici la lecture rapide avant le dashboard. L’objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
-              "Here is the quick read before the dashboard. The goal now is to give you a clear plan, not a list of numbers."
+              "Voici la lecture rapide avant la restitution. L'objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
+              "Here is the quick read before the restitution. The goal now is to give you a clear plan, not a list of numbers."
             )}
           </p>
         </div>
@@ -175,16 +175,16 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
                     </span>
                     <span className="mt-1 block text-xs text-muted-foreground">
                       {t(
-                        "Optionnel. Le dashboard s’ouvre dans tous les cas.",
-                        "Optional. The dashboard opens either way."
+                        "Optionnel. La restitution s'ouvre dans tous les cas.",
+                        "Optional. The restitution opens either way."
                       )}
                     </span>
                   </span>
                 </label>
                 <p className="mt-1 text-xs text-muted-foreground">
                   {t(
-                    "Tu pourras revenir au plan d’action et exporter le PDF depuis le dashboard.",
-                    "You can come back to the action plan and export the PDF from the dashboard."
+                    "Tu pourras revenir au plan d'action et exporter le PDF depuis la restitution.",
+                    "You can come back to the action plan and export the PDF from the restitution."
                   )}
                 </p>
                 <input
@@ -197,7 +197,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
                     if (event.target.value.trim()) setWantsEmail(true);
                     setEmailError("");
                   }}
-                  onKeyDown={(event) => event.key === "Enter" && openDashboard()}
+                  onKeyDown={(event) => event.key === "Enter" && openRestitution()}
                   placeholder={hasEmail ? session.email : "sofia@exemple.com"}
                   maxLength={255}
                   className="mt-3 h-10 w-full rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
@@ -220,10 +220,10 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         </button>
         <button
           type="button"
-          onClick={openDashboard}
+          onClick={openRestitution}
           className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
         >
-          {wantsEmail && emailValue ? t("Envoyer le rapport et ouvrir", "Send report and open") : t("Ouvrir mon dashboard", "Open my dashboard")}
+          {wantsEmail && emailValue ? t("Envoyer le rapport et ouvrir", "Send report and open") : t("Ouvrir ma restitution", "Open my restitution")}
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>

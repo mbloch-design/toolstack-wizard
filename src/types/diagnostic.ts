@@ -23,6 +23,7 @@ export interface SessionState {
     skipped: string[];
     confidence: "low" | "medium" | "high";
   };
+  adaptiveDiscoveryQuestions?: DiscoveryQuestion[];
   discoveryAnswers: Map<string, number>;
   closingAnswers: [string, string, string];
 }

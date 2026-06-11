@@ -25,7 +25,7 @@ export default function DiagResultsLoading({ toolCount, t, onComplete }: Props) 
 
       <div className="space-y-2">
         <h2 className="text-xl font-bold text-foreground">
-          {t("Je prépare ton dashboard.", "Preparing your dashboard.")}
+          {t("Je prépare ta restitution.", "Preparing your restitution.")}
         </h2>
         <p className="text-sm leading-relaxed text-muted-foreground">
           {t(

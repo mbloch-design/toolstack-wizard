@@ -20,18 +20,18 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
 
   const progressPercent = Math.round((step / Math.max(totalSteps - 1, 1)) * 100);
   const stages = [
-    t("Profil", "Profile"),
-    t("Outils", "Tools"),
-    t("Vérification", "Check"),
-    t("Verdict", "Verdict"),
+    t("Calibrage", "Calibration"),
+    t("Stack", "Stack"),
+    t("Questions utiles", "Useful questions"),
+    t("Lecture", "Read"),
     t("Restitution", "Restitution"),
   ];
   const stageLabel = useMemo(() => {
-    if (step <= 0) return t("1. Profil", "1. Profile");
-    if (step === 1) return t("2. Outils", "2. Tools");
-    if (step === 2) return t("3. Vérification", "3. Check");
-    if (step === 3) return t("4. Verdict", "4. Verdict");
-    return t("5. Dashboard", "5. Dashboard");
+    if (step <= 0) return t("1. Calibrage", "1. Calibration");
+    if (step === 1) return t("2. Capture de stack", "2. Stack capture");
+    if (step === 2) return t("3. Questions utiles", "3. Useful questions");
+    if (step === 3) return t("4. Lecture", "4. Read");
+    return t("5. Restitution", "5. Restitution");
   }, [step, t]);
 
   return (
@@ -41,11 +41,11 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
           <div className="flex items-center gap-2">
             <span className="font-bold text-foreground text-sm">tooltrim</span>
             <span className="text-muted-foreground text-xs">
-              {t("Diagnostic guidé", "Guided diagnostic")}
+              {t("Audit guidé", "Guided audit")}
             </span>
           </div>
           <p className="mt-0.5 hidden text-xs text-muted-foreground md:block">
-            {t("On calibre, on capte ta stack, puis on restitue.", "We calibrate, capture your stack, then restitute.")}
+            {t("On calibre, on capte, on vérifie, puis on raconte quoi faire.", "We calibrate, capture, check, then explain what to do.")}
           </p>
         </div>
 

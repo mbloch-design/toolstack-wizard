@@ -94,6 +94,7 @@ function serializeSessionSnapshot(session: SessionState) {
     emailPreferences: session.emailPreferences || null,
     apiSpendTranche: session.apiSpendTranche || null,
     selectionCoverage: session.selectionCoverage || null,
+    adaptiveDiscoveryQuestions: session.adaptiveDiscoveryQuestions || [],
     selectedTools: session.selectedTools.map((t) => ({
       id: t.id,
       name: t.name,
@@ -146,17 +147,25 @@ export default function DiagnosticRouter() {
   const reportEmailQueuedRef = useRef(recovered?.reportEmailQueued === true);
   const previousStepRef = useRef<StepId | null>(null);
   const resumeLoggedRef = useRef(false);
+  const effectiveDiscoveryQuestions = useMemo(() => {
+    const seen = new Set<string>();
+    return [...(session.adaptiveDiscoveryQuestions || []), ...discoveryQuestions].filter((question) => {
+      if (seen.has(question.id)) return false;
+      seen.add(question.id);
+      return true;
+    });
+  }, [discoveryQuestions, session.adaptiveDiscoveryQuestions]);
 
   const previewDiagnosticResult = useMemo<DiagnosticResult | null>(() => {
     if (step < 3 || session.selectedTools.length === 0) return null;
-    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions });
-  }, [discoveryQuestions, doublonRules, session, step, tools]);
+    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions: effectiveDiscoveryQuestions });
+  }, [doublonRules, effectiveDiscoveryQuestions, session, step, tools]);
 
   // Compute final diagnostic result when reaching dashboard.
   const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
     if (step !== 12) return null;
-    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions });
-  }, [step, session, tools, doublonRules, discoveryQuestions]);
+    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions: effectiveDiscoveryQuestions });
+  }, [step, session, tools, doublonRules, effectiveDiscoveryQuestions]);
 
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
@@ -468,13 +477,13 @@ export default function DiagnosticRouter() {
       case 2: return goTo(3);
       case 3:
         return goToWithTransition(5, t(
-          session.firstName ? `C'est parti ${session.firstName} ! Calcul en cours…` : "Calcul de ton diagnostic…",
-          session.firstName ? `Here we go ${session.firstName}! Calculating…` : "Calculating your diagnostic…"
+          session.firstName ? `${session.firstName}, je transforme ta stack en plan d'action...` : "Je transforme ta stack en plan d'action...",
+          session.firstName ? `${session.firstName}, turning your stack into an action plan...` : "Turning your stack into an action plan..."
         ));
       case 4:
         return goToWithTransition(5, t(
-          session.firstName ? `C'est parti ${session.firstName} ! Calcul en cours…` : "Calcul de ton diagnostic…",
-          session.firstName ? `Here we go ${session.firstName}! Calculating…` : "Calculating your diagnostic…"
+          session.firstName ? `${session.firstName}, je transforme ta stack en plan d'action...` : "Je transforme ta stack en plan d'action...",
+          session.firstName ? `${session.firstName}, turning your stack into an action plan...` : "Turning your stack into an action plan..."
         ));
       case 5: return goTo(12);
       case 12: return;
