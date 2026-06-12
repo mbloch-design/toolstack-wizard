@@ -33,10 +33,11 @@ ok(
 ok(
   "stack zones use visual stepper",
   stackScan.includes("StackMomentStepper") &&
-    stackScan.includes("Parcours de vérification") &&
     stackScan.includes("Étapes de capture de stack") &&
+    stackScan.includes("h-11 w-11 shrink-0") &&
+    stackScan.includes("overflow-x-auto") &&
     stackScan.includes("selector_moment_stepper_clicked"),
-  "the 10 stack areas should be visible as icon steps, not only a progress bar"
+  "the 10 stack areas should be a compact icon rail, not text-heavy cards"
 );
 ok(
   "search label is contextual",

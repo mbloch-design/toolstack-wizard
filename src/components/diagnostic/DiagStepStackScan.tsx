@@ -1046,33 +1046,34 @@ function StackMomentStepper({
   const coveredOrSkippedCount = moments.filter((moment) => moment.covered || moment.skipped).length;
 
   return (
-    <div className="rounded-lg border border-border bg-background p-3">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase text-muted-foreground">
-            {t("Parcours de vérification", "Verification path")}
+    <div className="rounded-lg border border-border bg-background px-3 py-3">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-foreground">
+            {activeIndex + 1}/{moments.length} · {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
           </p>
-          <p className="mt-1 text-sm font-semibold text-foreground">
-            {t("Zone", "Area")} {activeIndex + 1}/{moments.length} · {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {t("Choisis les outils, puis précise le plan.", "Choose tools, then confirm the plan.")}
           </p>
         </div>
+
         <div className="flex items-center gap-2">
-          <span className="rounded-md bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground">
+          <span className="rounded-full bg-muted px-2.5 py-1 font-mono text-xs font-semibold text-muted-foreground">
             {coveredOrSkippedCount}/{moments.length}
           </span>
           {selectedCount > 0 && (
             <button
               type="button"
               onClick={onReview}
-              className="rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
+              className="rounded-full border border-border px-2.5 py-1 font-mono text-xs font-semibold text-foreground hover:bg-muted"
             >
-              {selectedCount} {t("outil(s)", "tool(s)")}
+              {selectedCount}
             </button>
           )}
         </div>
       </div>
 
-      <div className="mt-3 grid grid-cols-5 gap-1.5 md:grid-cols-10" aria-label={t("Étapes de capture de stack", "Stack capture steps")}>
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-1" aria-label={t("Étapes de capture de stack", "Stack capture steps")}>
         {moments.map((moment, index) => {
           const Icon = moment.Icon;
           const active = moment.id === activeMomentId;
@@ -1085,31 +1086,30 @@ function StackMomentStepper({
               onClick={() => onSelect(moment)}
               title={t(moment.fr, moment.en)}
               aria-current={active ? "step" : undefined}
-              className={`group flex min-h-[74px] flex-col items-center justify-center gap-1.5 rounded-md border px-1.5 text-center transition-colors ${
+              aria-label={`${index + 1}. ${t(moment.fr, moment.en)}`}
+              className={`group relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${
                 active
                   ? "border-foreground bg-foreground text-background"
                   : done
-                    ? "border-primary/25 bg-primary/5 text-primary"
+                    ? "border-primary/30 bg-primary/5 text-primary"
                     : skipped
-                      ? "border-border bg-muted/40 text-muted-foreground"
+                      ? "border-border bg-muted/50 text-muted-foreground"
                       : "border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground"
               }`}
             >
-              <span className="relative flex h-8 w-8 items-center justify-center rounded-md bg-background/80 text-current">
-                <Icon className="h-4 w-4" />
-                {done && !active && (
-                  <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                    <Check className="h-2.5 w-2.5" />
-                  </span>
-                )}
-                {skipped && !done && !active && (
-                  <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-muted-foreground text-background">
-                    <X className="h-2.5 w-2.5" />
-                  </span>
-                )}
-              </span>
-              <span className="line-clamp-2 text-[10px] font-semibold leading-tight">
-                {index + 1}. {t(moment.fr, moment.en)}
+              <Icon className="h-4 w-4" />
+              {done && !active && (
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Check className="h-2.5 w-2.5" />
+                </span>
+              )}
+              {skipped && !done && !active && (
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-muted-foreground text-background">
+                  <X className="h-2.5 w-2.5" />
+                </span>
+              )}
+              <span className="absolute -bottom-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full border border-background bg-background px-1 font-mono text-[9px] font-bold text-muted-foreground">
+                {index + 1}
               </span>
             </button>
           );
