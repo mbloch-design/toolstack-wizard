@@ -646,7 +646,7 @@ function BusinessObjectivesSection() {
             <button
               type="button"
               onClick={() => scrollCards("left")}
-              className="hidden md:inline-flex"
+              className="home-rail-arrow hidden md:inline-flex"
               aria-label={t("Objectif précédent", "Previous goal")}
               style={{
                 width: 40, height: 40,
@@ -666,7 +666,7 @@ function BusinessObjectivesSection() {
             <button
               type="button"
               onClick={() => scrollCards("right")}
-              className="hidden md:inline-flex"
+              className="home-rail-arrow hidden md:inline-flex"
               aria-label={t("Objectif suivant", "Next goal")}
               style={{
                 width: 40, height: 40,
@@ -686,7 +686,9 @@ function BusinessObjectivesSection() {
           </div>
         </div>
 
-        {/* Scroll rail */}
+        {/* Scroll rail — wrapper carries the right bleed so the edge fade
+            (scroll affordance) can sit at the true viewport edge */}
+        <div className="home-rail-wrap" style={{ position: "relative", marginRight: "calc(50% - 50vw)" }}>
         <div
           ref={scrollRef}
           className="no-scrollbar"
@@ -699,7 +701,6 @@ function BusinessObjectivesSection() {
             scrollSnapType: "x mandatory",
             scrollBehavior: "smooth",
             paddingBottom: 4,
-            marginRight: "calc(50% - 50vw)",
           }}
         >
           {objectiveCards.map((objective) => {
@@ -744,6 +745,8 @@ function BusinessObjectivesSection() {
               </Link>
             );
           })}
+        </div>
+        <div className="home-rail-fade" aria-hidden="true" />
         </div>
       </div>
     </section>

@@ -9913,6 +9913,24 @@
     outline-offset: 3px;
   }
 
+  /* Stacks-by-role rail: right-edge fade = scroll affordance (more to the right) */
+  .home-rail-fade {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 4px;
+    width: 72px;
+    background: linear-gradient(to right, transparent, var(--color-bg));
+    pointer-events: none;
+  }
+
+  /* Keyboard focus for the rail cards + carousel arrows */
+  .home-stack-card:focus-visible,
+  .home-rail-arrow:focus-visible {
+    outline: 2px solid var(--color-border-strong);
+    outline-offset: 3px;
+  }
+
   /* Scroll-driven section reveal — JS toggles .is-revealed as each section
      enters. Hidden start state only applies once JS adds .home-reveal-ready,
      so content stays visible without JS. Disabled under reduced motion. */
