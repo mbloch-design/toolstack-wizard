@@ -31,6 +31,14 @@ ok(
   "active zone should visually feel like a new request"
 );
 ok(
+  "stack zones use visual stepper",
+  stackScan.includes("StackMomentStepper") &&
+    stackScan.includes("Parcours de vérification") &&
+    stackScan.includes("Étapes de capture de stack") &&
+    stackScan.includes("selector_moment_stepper_clicked"),
+  "the 10 stack areas should be visible as icon steps, not only a progress bar"
+);
+ok(
   "search label is contextual",
   stackScan.includes("Chercher pour ${activeMoment.fr.toLowerCase()}") &&
     stackScan.includes("Search for ${activeMoment.en.toLowerCase()}"),

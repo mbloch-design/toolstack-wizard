@@ -715,27 +715,22 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
       <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         <div className="rounded-xl border border-border bg-card p-5 md:p-6">
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-xs font-semibold uppercase text-primary">
-              {t("Question", "Question")} {Math.max(activeMomentIndex + 1, 1)}/{STACK_MOMENTS.length}
-            </p>
-            {selectedTools.length > 0 && (
-              <button
-                type="button"
-                onClick={() => openReview("top_count")}
-                className="rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
-              >
-                {selectedTools.length} {t("outil(s)", "tool(s)")}
-              </button>
-            )}
-          </div>
-
-          <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-muted">
-            <div
-              className="h-full rounded-full bg-primary transition-all duration-500"
-              style={{ width: `${Math.max(8, Math.round((coverageCount / STACK_MOMENTS.length) * 100))}%` }}
-            />
-          </div>
+          <StackMomentStepper
+            moments={momentCoverage}
+            activeMomentId={activeMoment.id}
+            selectedCount={selectedTools.length}
+            onSelect={(moment) => {
+              setActiveMomentId(moment.id);
+              onTrack?.("selector_moment_stepper_clicked", {
+                moment_id: moment.id,
+                covered: moment.covered,
+                skipped: moment.skipped,
+                selected_count: selectedTools.length,
+              });
+            }}
+            onReview={() => openReview("top_count")}
+            t={t}
+          />
 
           <div
             key={activeMoment.id}
@@ -1027,6 +1022,98 @@ function ToolChoiceButton({
             {t("Clique pour choisir le plan", "Click to choose the plan")}
           </p>
         )}
+      </div>
+    </div>
+  );
+}
+
+function StackMomentStepper({
+  moments,
+  activeMomentId,
+  selectedCount,
+  onSelect,
+  onReview,
+  t,
+}: {
+  moments: Array<StackMoment & { selected: Tool[]; covered: boolean; skipped: boolean }>;
+  activeMomentId: string;
+  selectedCount: number;
+  onSelect: (moment: StackMoment & { selected: Tool[]; covered: boolean; skipped: boolean }) => void;
+  onReview: () => void;
+  t: (fr: string, en: string) => string;
+}) {
+  const activeIndex = Math.max(0, moments.findIndex((moment) => moment.id === activeMomentId));
+  const coveredOrSkippedCount = moments.filter((moment) => moment.covered || moment.skipped).length;
+
+  return (
+    <div className="rounded-lg border border-border bg-background p-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase text-muted-foreground">
+            {t("Parcours de vérification", "Verification path")}
+          </p>
+          <p className="mt-1 text-sm font-semibold text-foreground">
+            {t("Zone", "Area")} {activeIndex + 1}/{moments.length} · {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="rounded-md bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground">
+            {coveredOrSkippedCount}/{moments.length}
+          </span>
+          {selectedCount > 0 && (
+            <button
+              type="button"
+              onClick={onReview}
+              className="rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
+            >
+              {selectedCount} {t("outil(s)", "tool(s)")}
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className="mt-3 grid grid-cols-5 gap-1.5 md:grid-cols-10" aria-label={t("Étapes de capture de stack", "Stack capture steps")}>
+        {moments.map((moment, index) => {
+          const Icon = moment.Icon;
+          const active = moment.id === activeMomentId;
+          const done = moment.covered;
+          const skipped = moment.skipped;
+          return (
+            <button
+              key={moment.id}
+              type="button"
+              onClick={() => onSelect(moment)}
+              title={t(moment.fr, moment.en)}
+              aria-current={active ? "step" : undefined}
+              className={`group flex min-h-[74px] flex-col items-center justify-center gap-1.5 rounded-md border px-1.5 text-center transition-colors ${
+                active
+                  ? "border-foreground bg-foreground text-background"
+                  : done
+                    ? "border-primary/25 bg-primary/5 text-primary"
+                    : skipped
+                      ? "border-border bg-muted/40 text-muted-foreground"
+                      : "border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground"
+              }`}
+            >
+              <span className="relative flex h-8 w-8 items-center justify-center rounded-md bg-background/80 text-current">
+                <Icon className="h-4 w-4" />
+                {done && !active && (
+                  <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <Check className="h-2.5 w-2.5" />
+                  </span>
+                )}
+                {skipped && !done && !active && (
+                  <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-muted-foreground text-background">
+                    <X className="h-2.5 w-2.5" />
+                  </span>
+                )}
+              </span>
+              <span className="line-clamp-2 text-[10px] font-semibold leading-tight">
+                {index + 1}. {t(moment.fr, moment.en)}
+              </span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
