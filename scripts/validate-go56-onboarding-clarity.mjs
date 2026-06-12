@@ -39,26 +39,28 @@ ok(
 );
 
 ok(
-  "onboarding keeps a small local progress affordance",
-  profile.includes("[0, 1, 2].map") && profile.includes("stepIndex + 1}/3"),
-  "the user should know this calibration has only three short parts"
+  "onboarding keeps only a textual local step marker",
+  profile.includes("stepIndex + 1}/3") && !profile.includes("[0, 1, 2].map"),
+  "the content should not duplicate the global progress bar"
 );
 
 ok(
-  "audit topbar is not a second navigation",
+  "audit topbar is branded but not a second navigation",
   !topbar.includes("stages.map") &&
     !topbar.includes("On calibre, on capte, on vérifie") &&
-    !topbar.includes("font-bold text-foreground text-sm\">tooltrim"),
-  "global navigation already exists; the audit bar should stay quiet"
+    topbar.includes("logoToolTrim") &&
+    topbar.includes("Retour à l’accueil ToolTrim"),
+  "focused audit shell should keep brand recognition without restoring the full site nav"
 );
 
 ok(
-  "audit topbar preserves progress and stack context",
+  "audit topbar preserves progress, exit, and stack context",
   topbar.includes("stageLabel") &&
     topbar.includes("progressPercent") &&
+    topbar.includes("Quitter") &&
     topbar.includes("session.selectedTools.length") &&
     topbar.includes("totalCostLabel"),
-  "simplifying the bar must not remove orientation or stack context"
+  "simplifying the bar must not remove orientation, escape, or stack context"
 );
 
 ok(

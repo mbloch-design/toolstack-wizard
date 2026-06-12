@@ -219,14 +219,6 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
               {stepSubtitle}
             </p>
           </div>
-          <div className="mx-auto flex max-w-xs gap-2" aria-hidden="true">
-            {[0, 1, 2].map((item) => (
-              <span
-                key={item}
-                className={`h-1 flex-1 rounded-full transition-colors ${item <= stepIndex ? "bg-foreground" : "bg-muted"}`}
-              />
-            ))}
-          </div>
           <p className="mx-auto max-w-xl rounded-md bg-muted/60 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
             {stepHelp}
           </p>
