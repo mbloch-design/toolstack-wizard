@@ -284,6 +284,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [customCurrency, setCustomCurrency] = useState("");
   const [pendingToolId, setPendingToolId] = useState<string | null>(null);
   const [pendingSource, setPendingSource] = useState<"suggestion" | "search">("suggestion");
+  const [lastConfirmedToolId, setLastConfirmedToolId] = useState<string | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
   const selectedToolsById = useMemo(
@@ -330,16 +331,13 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     return tools
       .filter((tool) => matchesMoment(tool, activeMoment))
       .sort((a, b) => {
-        const aSelected = selectedIds.has(a.id);
-        const bSelected = selectedIds.has(b.id);
-        if (aSelected !== bSelected) return aSelected ? -1 : 1;
         const aKnown = activeMoment.ids.includes(a.id);
         const bKnown = activeMoment.ids.includes(b.id);
         if (aKnown !== bKnown) return aKnown ? -1 : 1;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
       .slice(0, 6);
-  }, [activeMoment, selectedIds, session.persona, tools]);
+  }, [activeMoment, session.persona, tools]);
 
   const coverageCount = momentCoverage.filter((moment) => moment.covered || moment.skipped).length;
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
@@ -361,6 +359,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     return () => window.clearTimeout(focusTimer);
   }, [activeMomentId]);
 
+  useEffect(() => {
+    if (!lastConfirmedToolId) return undefined;
+    const timer = window.setTimeout(() => setLastConfirmedToolId(null), 1400);
+    return () => window.clearTimeout(timer);
+  }, [lastConfirmedToolId]);
+
   const toggleTool = (tool: Tool, source: "suggestion" | "search" | "review" | "companion" = "suggestion") => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
@@ -374,6 +378,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           selected_count: Math.max(prev.length - 1, 0),
         });
         return prev.filter((item) => item.id !== tool.id);
+      }
+
+      if (pendingToolId === tool.id) {
+        setPendingToolId(null);
+        return prev;
       }
 
       setPendingToolId(tool.id);
@@ -429,6 +438,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         selectedPriceIsEstimate: offer !== "free",
       };
       setPendingToolId(null);
+      setLastConfirmedToolId(tool.id);
       return [...prev, selectedTool];
     });
     onTrack?.("selector_tool_offer_selected", {
@@ -467,6 +477,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const price = Math.max(0, Number(customPrice) || 0);
     const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, customCurrency || undefined));
     setSelectedTools((prev) => [...prev, customTool]);
+    setLastConfirmedToolId(customTool.id);
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -923,6 +934,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           selectedTools={selectedTools}
           monthlyCostLabel={selectedMonthlyCostLabel}
           pricingSummary={pricingSummary}
+          highlightToolId={lastConfirmedToolId}
           onReview={() => openReview("stack_companion")}
           onRemove={(tool) => toggleTool(tool, "companion")}
           t={t}
@@ -965,7 +977,7 @@ function ToolChoiceButton({
   return (
     <div
       title={pricingAudit.detail}
-      className={`h-[118px] rounded-lg border p-3 shadow-sm transition-colors duration-200 ${
+      className={`group h-[118px] rounded-lg border p-3 shadow-sm transition-colors duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
           : pending
@@ -986,7 +998,7 @@ function ToolChoiceButton({
             {selected
               ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
               : pending
-                ? t("Choisis ton plan pour l’ajouter", "Choose your plan to add it")
+                ? t("Plan utilisé ?", "Which plan?")
               : displayTool.price > 0
                 ? formatToolMonthlyPrice(displayTool, t, { approximate: true, catalog: true })
                 : t("Gratuit possible", "Free possible")}
@@ -1013,9 +1025,10 @@ function ToolChoiceButton({
         ) : pending ? (
           <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
         ) : (
-          <p className="flex h-8 items-center rounded-md bg-muted/30 px-2 text-xs font-medium text-muted-foreground">
-            {t("Clique pour choisir le plan", "Click to choose the plan")}
-          </p>
+          <span className="flex h-8 items-center justify-between rounded-md bg-muted/35 px-2 text-xs font-semibold text-foreground transition-colors group-hover:bg-muted/60">
+            <span>{t("Choisir le plan", "Choose plan")}</span>
+            <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
+          </span>
         )}
       </div>
     </div>
@@ -1129,6 +1142,7 @@ function StackCompanion({
   selectedTools,
   monthlyCostLabel,
   pricingSummary,
+  highlightToolId,
   onReview,
   onRemove,
   t,
@@ -1136,11 +1150,12 @@ function StackCompanion({
   selectedTools: Tool[];
   monthlyCostLabel: string;
   pricingSummary: ReturnType<typeof getPricingCaptureSummary>;
+  highlightToolId?: string | null;
   onReview: () => void;
   onRemove: (tool: Tool) => void;
   t: (fr: string, en: string) => string;
 }) {
-  const visibleTools = selectedTools.slice(-8).reverse();
+  const visibleTools = selectedTools.slice(-8);
 
   return (
     <aside className="hidden lg:sticky lg:top-24 lg:block">
@@ -1204,15 +1219,25 @@ function StackCompanion({
               </p>
             </div>
           ) : (
-            <div className="space-y-3">
+            <div className="space-y-3" aria-live="polite">
               <div className="flex flex-wrap gap-2">
-                {visibleTools.map((tool) => (
+                {visibleTools.map((tool) => {
+                  const highlighted = tool.id === highlightToolId;
+                  return (
                   <div
                     key={tool.id}
-                    className="group relative animate-in zoom-in-95 duration-200"
+                    className={`group relative animate-in zoom-in-95 duration-200 ${
+                      highlighted ? "scale-[1.03] rounded-lg ring-2 ring-primary/40 ring-offset-2 ring-offset-background" : ""
+                    }`}
                     title={tool.name}
                   >
-                    <ToolLogo tool={tool} size={38} className="rounded-lg border border-border bg-background shadow-sm" />
+                    <ToolLogo
+                      tool={tool}
+                      size={38}
+                      className={`rounded-lg border bg-background shadow-sm transition-colors ${
+                        highlighted ? "border-primary/40 bg-primary/10" : "border-border"
+                      }`}
+                    />
                     <button
                       type="button"
                       onClick={() => onRemove(tool)}
@@ -1222,7 +1247,8 @@ function StackCompanion({
                       <X className="h-3 w-3" />
                     </button>
                   </div>
-                ))}
+                  );
+                })}
                 {selectedTools.length > visibleTools.length && (
                   <span className="flex h-[38px] items-center rounded-lg border border-border bg-background px-3 text-xs font-semibold text-muted-foreground">
                     +{selectedTools.length - visibleTools.length}
@@ -1231,10 +1257,17 @@ function StackCompanion({
               </div>
 
               <div className="max-h-[260px] space-y-1.5 overflow-y-auto pr-1">
-                {selectedTools.slice(-5).reverse().map((tool) => {
+                {selectedTools.slice(-5).map((tool) => {
                   const pricingAudit = getPricingAudit(tool, t);
+                  const highlighted = tool.id === highlightToolId;
                   return (
-                    <div key={tool.id} className="flex items-center gap-2 rounded-lg bg-muted/40 px-2 py-1.5" title={pricingAudit.detail}>
+                    <div
+                      key={tool.id}
+                      className={`flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors ${
+                        highlighted ? "bg-primary/10 ring-1 ring-primary/30" : "bg-muted/40"
+                      }`}
+                      title={pricingAudit.detail}
+                    >
                       <ToolLogo tool={tool} size={24} className="rounded-md" />
                       <span className="min-w-0 flex-1 truncate text-xs font-medium text-foreground">{tool.name}</span>
                       <span className="rounded bg-background px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">

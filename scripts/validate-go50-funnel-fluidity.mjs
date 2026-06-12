@@ -69,9 +69,30 @@ ok(
   stackScan.includes("pendingToolId") &&
     stackScan.includes("selector_tool_plan_opened") &&
     stackScan.includes("confirmToolWithOffer") &&
-    stackScan.includes("Choisis ton plan pour l’ajouter") &&
-    stackScan.includes("Clique pour choisir le plan"),
+    stackScan.includes("Plan utilisé ?") &&
+    stackScan.includes("Choisir le plan"),
   "clicking a suggestion should not immediately count it in the stack"
+);
+ok(
+  "selected suggestion keeps its visual position",
+  !stackScan.includes("aSelected") &&
+    !stackScan.includes("bSelected") &&
+    !stackScan.includes("return aSelected ? -1 : 1"),
+  "confirming a tool should not reorder the suggestion grid"
+);
+ok(
+  "confirmed tool has side recap micro-feedback",
+  stackScan.includes("lastConfirmedToolId") &&
+    stackScan.includes("aria-live=\"polite\"") &&
+    stackScan.includes("ring-primary/40"),
+  "confirming a plan should create a visible but non-layout-shifting recap feedback"
+);
+ok(
+  "tool cards expose clear plan CTA",
+  stackScan.includes("Choisir le plan") &&
+    stackScan.includes("Plan utilisé ?") &&
+    !stackScan.includes("Clique pour choisir le plan"),
+  "user should see the next action without guessing where to click"
 );
 ok(
   "central stack strip removed to avoid duplicate summary",
