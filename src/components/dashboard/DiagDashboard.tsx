@@ -8,7 +8,7 @@ import DashActions from "./DashActions";
 import DashShareModal from "./DashShareModal";
 import { insertDiagnosticStepEvent } from "@/lib/diagnosticPersistence";
 import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
-import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, Rocket, X } from "lucide-react";
+import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, Rocket, Search, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -74,6 +74,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showShare, setShowShare] = useState(false);
+  const [sidebarQuery, setSidebarQuery] = useState("");
 
   const trackRestitution = useCallback((eventName: string, eventPayload: Record<string, unknown> = {}) => {
     if (!dbSessionId || !dbSessionToken) return;
@@ -138,9 +139,6 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
     }
   };
 
-  // Mini donut for sidebar
-  const miniDonutProgress = (result.healthScore / 100) * (2 * Math.PI * 16);
-  const miniDonutCirc = 2 * Math.PI * 16;
   const donutColor =
     result.healthScore >= 80 ? "hsl(var(--keep))" :
     result.healthScore >= 60 ? "hsl(45 93% 47%)" :
@@ -151,6 +149,16 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const nextTab = activeTabIndex >= 0 && activeTabIndex < TABS.length - 1 ? TABS[activeTabIndex + 1] : null;
   const ActiveIcon = activeTabMeta.icon;
   const monthlyCostLabel = formatMonthlyTotal(result.sessionState.selectedTools, t);
+  const normalizedSidebarQuery = sidebarQuery.trim().toLowerCase();
+  const sidebarTabs = normalizedSidebarQuery
+    ? TABS.filter((tab) =>
+        `${t(tab.labelFr, tab.labelEn)} ${t(tab.descriptionFr, tab.descriptionEn)}`
+          .toLowerCase()
+          .includes(normalizedSidebarQuery)
+      )
+    : TABS;
+  const primarySidebarTabs = sidebarTabs.filter((tab) => tab.id === "overview" || tab.id === "actions" || tab.id === "stack");
+  const reviewSidebarTabs = sidebarTabs.filter((tab) => tab.id === "gaspillage" || tab.id === "optimiser");
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-background">
@@ -174,85 +182,89 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
           <button
             key={tab.id}
             onClick={() => { navigate(tab.id); setMobileOpen(false); }}
-              className={`w-full grid grid-cols-[24px_1fr] items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm transition-colors ${
+              className={`w-full grid grid-cols-[22px_1fr] items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm transition-colors ${
                 activeTab === tab.id
-                  ? "bg-card text-foreground shadow-sm ring-1 ring-border"
+                  ? "bg-muted text-foreground"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               }`}
             >
-              <tab.icon className={`h-4 w-4 ${activeTab === tab.id ? "text-primary" : ""}`} />
-              <span className="min-w-0 overflow-hidden">
-                <span className="block truncate font-semibold">{t(tab.labelFr, tab.labelEn)}</span>
-                <span className="block truncate text-xs font-normal text-muted-foreground">{t(tab.descriptionFr, tab.descriptionEn)}</span>
-              </span>
+              <tab.icon className="h-4 w-4" />
+              <span className="block min-w-0 truncate font-semibold">{t(tab.labelFr, tab.labelEn)}</span>
             </button>
           ))}
         </div>
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex w-[288px] shrink-0 flex-col border-r border-border bg-background px-4 py-5 sticky top-0 h-screen overflow-hidden">
-        <div className="border-b border-border pb-5">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
-            tooltrim
-          </p>
-          <p className="mt-2 text-xl font-bold leading-tight text-foreground">
-            {t("Rapport d’audit", "Audit report")}
-          </p>
-          <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-muted-foreground">
-            {t("Lis le rapport, puis ouvre les annexes seulement quand tu veux vérifier.", "Read the report, then open appendices only when you want to verify.")}
-          </p>
+      <aside className="hidden md:flex w-[304px] shrink-0 flex-col border-r border-border bg-card/45 sticky top-0 h-screen overflow-y-auto px-1.5 py-4">
+        <div className="px-3">
+          <div className="flex items-center gap-3 rounded-md px-2 py-2">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-background text-sm font-bold text-foreground">
+              tt
+            </div>
+            <div className="min-w-0">
+              <p className="truncate text-base font-semibold leading-tight text-foreground">tooltrim</p>
+              <p className="truncate text-xs text-muted-foreground">{t("Restitution d’audit", "Audit restitution")}</p>
+            </div>
+          </div>
+
+          <label className="mt-4 flex h-10 items-center gap-2 rounded-md border border-border bg-background px-3 text-muted-foreground focus-within:border-foreground/30 focus-within:text-foreground">
+            <Search className="h-4 w-4 shrink-0" />
+            <input
+              value={sidebarQuery}
+              onChange={(event) => setSidebarQuery(event.target.value)}
+              placeholder={t("Trouver une vue...", "Find a view...")}
+              className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+            />
+          </label>
         </div>
 
-        <nav className="mt-5 space-y-5" aria-label={t("Navigation de restitution", "Restitution navigation")}>
-          <div className="space-y-1.5">
-          <p className="px-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
-            {t("À lire", "Read first")}
-          </p>
-          {TABS.filter((tab) => tab.id === "overview").map((tab) => (
+        <nav className="mt-5 space-y-1 px-1.5" aria-label={t("Navigation de restitution", "Restitution navigation")}>
+          {primarySidebarTabs.map((tab) => (
             <SidebarTab key={tab.id} tab={tab} activeTab={activeTab} navigate={navigate} t={t} />
           ))}
-          </div>
-          <div className="space-y-1.5">
-          <p className="px-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
-            {t("Annexes", "Appendices")}
-          </p>
-          {TABS.filter((tab) => tab.id !== "overview").map((tab) => (
+
+          {reviewSidebarTabs.length > 0 && primarySidebarTabs.length > 0 && (
+            <div className="mx-3 my-3 h-px bg-border" />
+          )}
+
+          {reviewSidebarTabs.map((tab) => (
             <SidebarTab key={tab.id} tab={tab} activeTab={activeTab} navigate={navigate} t={t} />
           ))}
-          </div>
+
+          {sidebarTabs.length === 0 && (
+            <div className="mx-2 rounded-md border border-border bg-background px-3 py-4 text-sm text-muted-foreground">
+              {t("Aucune vue trouvée.", "No view found.")}
+            </div>
+          )}
         </nav>
 
-        {/* Mini health donut + summary */}
-        <div className="mt-auto border-t border-border pt-4">
-          <div className="flex items-center gap-2.5">
-            <svg width="40" height="40" viewBox="0 0 40 40">
-              <circle cx="20" cy="20" r="16" fill="none" stroke="hsl(var(--border))" strokeWidth="3" />
-              <circle
-                cx="20" cy="20" r="16" fill="none"
-                stroke={donutColor} strokeWidth="3" strokeLinecap="round"
-                strokeDasharray={`${miniDonutProgress} ${miniDonutCirc}`}
-                transform="rotate(-90 20 20)"
-              />
-              <text x="20" y="23" textAnchor="middle" className="fill-foreground text-[10px] font-bold font-['DM_Mono']" fontSize="10">
-                {result.healthScore}
-              </text>
-            </svg>
-            <div className="min-w-0 text-xs">
-              <p className="truncate font-semibold text-foreground">{result.healthLabel}</p>
-              <p className="text-muted-foreground">{result.sessionState.selectedTools.length} {t("outils", "tools")}</p>
+        <div className="mx-3 mt-auto border-t border-border pt-4">
+          <div className="rounded-md bg-background p-3">
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+                {t("Score", "Score")}
+              </span>
+              <span className="font-['DM_Mono'] text-sm font-semibold text-foreground">{result.healthScore}/100</span>
             </div>
+            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full rounded-full"
+                style={{ width: `${Math.max(4, result.healthScore)}%`, backgroundColor: donutColor }}
+              />
+            </div>
+            <p className="mt-2 truncate text-sm font-semibold text-foreground">{result.healthLabel}</p>
           </div>
-          <div className="mt-3 space-y-1 text-xs text-muted-foreground">
-            <div className="flex items-center justify-between gap-3 border-t border-border pt-3">
-              <span>{t("Budget capté", "Captured budget")}</span>
+
+          <div className="mt-3 space-y-2 px-1 text-xs text-muted-foreground">
+            <div className="flex items-center justify-between gap-3">
+              <span>{t("Stack captée", "Captured stack")}</span>
+              <span className="shrink-0 text-foreground">{result.sessionState.selectedTools.length} {t("outils", "tools")}</span>
+            </div>
+            <div className="flex items-center justify-between gap-3">
+              <span>{t("Budget", "Budget")}</span>
               <span className="shrink-0 font-['DM_Mono'] text-foreground">{monthlyCostLabel}/{t("mois", "mo")}</span>
             </div>
-            {result.estimatedWaste > 0 && (
-              <p className="font-medium text-destructive">
-                {t("gains possibles à vérifier", "possible gains to verify")}
-              </p>
-            )}
           </div>
         </div>
       </aside>
@@ -328,23 +340,18 @@ function SidebarTab({
   return (
     <button
       onClick={() => navigate(tab.id)}
-      className={`group grid w-full grid-cols-[28px_1fr] items-start gap-3 rounded-md border px-2.5 py-3 text-left text-sm transition-colors ${
+      className={`group grid h-11 w-full grid-cols-[22px_1fr] items-center gap-3 rounded-md px-3 text-left text-sm transition-colors ${
         activeTab === tab.id
-          ? "border-border bg-card text-foreground shadow-sm"
-          : "border-transparent text-muted-foreground hover:border-border hover:bg-card/60 hover:text-foreground"
+          ? "bg-muted text-foreground"
+          : "text-muted-foreground hover:bg-muted/70 hover:text-foreground"
       }`}
     >
-      <span className={`mt-0.5 flex h-7 w-7 items-center justify-center rounded-md border ${
-        activeTab === tab.id ? "border-primary/20 bg-primary/10 text-primary" : "border-border bg-background text-muted-foreground"
-      }`}>
-        <tab.icon className="h-4 w-4" />
+      <span className="flex h-5 w-5 items-center justify-center">
+        <tab.icon className="h-[18px] w-[18px]" />
       </span>
-      <span className="min-w-0 overflow-hidden">
-        <span className={`block truncate ${activeTab === tab.id ? "font-bold" : "font-semibold"}`}>
+      <span className="min-w-0 overflow-hidden text-[15px]">
+        <span className={`block truncate ${activeTab === tab.id ? "font-semibold" : "font-medium"}`}>
           {t(tab.labelFr, tab.labelEn)}
-        </span>
-        <span className="mt-0.5 block max-h-[2.6em] overflow-hidden text-[12px] font-normal leading-snug text-muted-foreground">
-          {t(tab.descriptionFr, tab.descriptionEn)}
         </span>
       </span>
     </button>

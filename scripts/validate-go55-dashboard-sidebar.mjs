@@ -11,36 +11,45 @@ function ok(name, condition, details = "") {
 }
 
 ok(
-  "desktop sidebar follows editorial rail dimensions",
-  dashboard.includes("w-[288px]") &&
-    dashboard.includes("bg-background") &&
-    dashboard.includes("overflow-hidden"),
-  "sidebar should be compact, background-aligned, and prevent overflow"
+  "desktop sidebar follows product rail dimensions",
+  dashboard.includes("w-[304px]") &&
+    dashboard.includes("bg-card/45") &&
+    dashboard.includes("overflow-y-auto"),
+  "sidebar should feel like a dense product navigation rail"
 );
 ok(
-  "sidebar has semantic restitution navigation",
+  "sidebar has semantic restitution navigation and product header",
   dashboard.includes('aria-label={t("Navigation de restitution"') &&
     dashboard.includes("<nav") &&
-    dashboard.includes("Rapport d’audit"),
-  "sidebar should expose a clear navigation landmark and audit label"
+    dashboard.includes("Restitution d’audit") &&
+    dashboard.includes("text-sm font-bold text-foreground"),
+  "sidebar should expose a clear navigation landmark and compact product identity"
 );
 ok(
-  "sidebar tab labels cannot bleed into content",
-  dashboard.includes("grid w-full grid-cols-[28px_1fr]") &&
-    dashboard.includes("min-w-0 overflow-hidden") &&
-    dashboard.includes("max-h-[2.6em] overflow-hidden"),
-  "tab content should be constrained inside the rail"
+  "sidebar uses Vercel-like compact rows",
+  dashboard.includes("grid h-11 w-full grid-cols-[22px_1fr]") &&
+    dashboard.includes("text-[15px]") &&
+    dashboard.includes("block truncate") &&
+    !dashboard.includes("descriptionFr, tab.descriptionEn)}</span>"),
+  "tab labels should be compact rows without long descriptions"
 );
 ok(
-  "active state is restrained, not a large blue block",
-  dashboard.includes("border-border bg-card text-foreground shadow-sm") &&
+  "active state is neutral and restrained",
+  dashboard.includes("? \"bg-muted text-foreground\"") &&
     !dashboard.includes("bg-primary/10 text-primary font-medium"),
-  "active tab should use a sober editorial card state"
+  "active tab should use a neutral product-nav state"
+);
+ok(
+  "sidebar includes useful search affordance",
+  dashboard.includes("sidebarQuery") &&
+    dashboard.includes("Trouver une vue...") &&
+    dashboard.includes("Aucune vue trouvée."),
+  "left rail should support quick navigation when the report grows"
 );
 ok(
   "mobile drawer uses the same compact item pattern",
-  dashboard.includes("grid grid-cols-[24px_1fr]") &&
-    dashboard.includes("block truncate font-semibold"),
+  dashboard.includes("grid grid-cols-[22px_1fr]") &&
+    dashboard.includes("block min-w-0 truncate font-semibold"),
   "mobile navigation should match the compact sidebar rhythm"
 );
 

@@ -30,9 +30,12 @@ ok(
   "missing pricing capture summary in report"
 );
 ok(
-  "dashboard navigation frames details as appendices",
-  dashboard.includes("À lire") && dashboard.includes("Annexes") && dashboard.includes("SidebarTab"),
-  "dashboard sidebar should separate report from appendices"
+  "dashboard navigation is a compact product rail",
+  dashboard.includes("SidebarTab") &&
+    dashboard.includes("primarySidebarTabs") &&
+    dashboard.includes("reviewSidebarTabs") &&
+    dashboard.includes("Trouver une vue..."),
+  "dashboard sidebar should organize restitution views without verbose appendices copy"
 );
 ok(
   "guided report avoids forced annual euro savings",
