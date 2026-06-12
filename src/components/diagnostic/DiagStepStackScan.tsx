@@ -282,7 +282,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
   const [customCurrency, setCustomCurrency] = useState("");
-  const [recentlyAddedToolId, setRecentlyAddedToolId] = useState<string | null>(null);
+  const [pendingToolId, setPendingToolId] = useState<string | null>(null);
+  const [pendingSource, setPendingSource] = useState<"suggestion" | "search">("suggestion");
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
   const selectedToolsById = useMemo(
@@ -355,22 +356,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     setCustomName("");
     setCustomPrice("");
     setCustomCurrency("");
-    setRecentlyAddedToolId(null);
+    setPendingToolId(null);
     const focusTimer = window.setTimeout(() => questionRef.current?.focus(), 0);
     return () => window.clearTimeout(focusTimer);
   }, [activeMomentId]);
-
-  useEffect(() => {
-    if (!recentlyAddedToolId) return;
-    const timer = window.setTimeout(() => setRecentlyAddedToolId(null), 1600);
-    return () => window.clearTimeout(timer);
-  }, [recentlyAddedToolId]);
 
   const toggleTool = (tool: Tool, source: "suggestion" | "search" | "review" | "companion" = "suggestion") => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
       if (alreadySelected) {
-        if (recentlyAddedToolId === tool.id) setRecentlyAddedToolId(null);
+        if (pendingToolId === tool.id) setPendingToolId(null);
         onTrack?.("selector_tool_removed", {
           tool_id: tool.id,
           tool_name: tool.name,
@@ -379,6 +374,38 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           selected_count: Math.max(prev.length - 1, 0),
         });
         return prev.filter((item) => item.id !== tool.id);
+      }
+
+      setPendingToolId(tool.id);
+      setPendingSource(source === "search" ? "search" : "suggestion");
+      onTrack?.("selector_tool_plan_opened", {
+        tool_id: tool.id,
+        tool_name: tool.name,
+        moment_id: activeMoment.id,
+        source,
+        selected_count: prev.length,
+      });
+      return prev;
+    });
+  };
+
+  const confirmToolWithOffer = (
+    tool: Tool,
+    offer: NonNullable<Tool["selectedOffer"]>,
+    source: "suggestion" | "search" = pendingSource
+  ) => {
+    setSelectedTools((prev) => {
+      if (prev.some((item) => item.id === tool.id)) {
+        return prev.map((item) => {
+          if (item.id !== tool.id) return item;
+          return {
+            ...item,
+            selectedOffer: offer,
+            price: offerPrice(item, offer),
+            priceCurrency: item.catalogMonthlyPriceCurrency || item.priceCurrency,
+            selectedPriceIsEstimate: offer !== "free",
+          };
+        });
       }
 
       const nextSkipped = new Set(skippedMomentIds);
@@ -393,9 +420,22 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         source,
         selected_count: prev.length + 1,
       });
-      const selectedTool = withDefaultOffer(tool);
-      setRecentlyAddedToolId(selectedTool.id);
+      const baseTool = withDefaultOffer(tool);
+      const selectedTool = {
+        ...baseTool,
+        selectedOffer: offer,
+        price: offerPrice(baseTool, offer),
+        priceCurrency: baseTool.catalogMonthlyPriceCurrency || baseTool.priceCurrency,
+        selectedPriceIsEstimate: offer !== "free",
+      };
+      setPendingToolId(null);
       return [...prev, selectedTool];
+    });
+    onTrack?.("selector_tool_offer_selected", {
+      tool_id: tool.id,
+      offer,
+      moment_id: activeMoment.id,
+      source,
     });
   };
 
@@ -427,7 +467,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const price = Math.max(0, Number(customPrice) || 0);
     const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, customCurrency || undefined));
     setSelectedTools((prev) => [...prev, customTool]);
-    setRecentlyAddedToolId(customTool.id);
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -655,12 +694,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           </p>
         )}
         <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-          {t("Ajoute ce que tu utilises vraiment.", "Add what you actually use.")}
+          {t("Construis ta stack réelle.", "Build your real stack.")}
         </h1>
         <p className="mx-auto max-w-xl text-sm text-muted-foreground md:text-base">
           {t(
-            "Je te guide zone par zone pour limiter les oublis. Les suggestions sont des repères, pas une liste obligatoire.",
-            "I guide you area by area to limit omissions. Suggestions are pointers, not a mandatory list."
+            "Une zone à la fois. Clique un outil, choisis son plan, puis il rejoint ta stack.",
+            "One area at a time. Click a tool, choose its plan, then it joins your stack."
           )}
         </p>
         {onPrev && (
@@ -698,17 +737,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             />
           </div>
 
-          <LiveStackStrip
-            selectedTools={selectedTools}
-            activeMoment={activeMoment}
-            recentToolId={recentlyAddedToolId}
-            monthlyCostLabel={selectedMonthlyCostLabel}
-            t={t}
-          />
-
           <div
             key={activeMoment.id}
-            className="mt-7 space-y-2 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
+            className="mt-6 space-y-2 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
           >
             <p className="text-xs font-semibold uppercase text-muted-foreground">
               {t("Nouvelle zone à vérifier", "New area to check")} · {t(activeMoment.fr, activeMoment.en)}
@@ -768,8 +799,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   title={t("Résultats", "Results")}
                   tools={filteredTools.slice(0, 8)}
                   selectedToolsById={selectedToolsById}
+                  pendingToolId={pendingToolId}
                   onToggle={(tool) => toggleTool(tool, "search")}
                   onOfferChange={updateSelectedToolOffer}
+                  onConfirmOffer={(tool, offer) => confirmToolWithOffer(tool, offer, "search")}
                   t={t}
                 />
               ) : (
@@ -800,8 +833,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     key={tool.id}
                     tool={tool}
                     selectedTool={selectedToolsById.get(tool.id)}
+                    pending={pendingToolId === tool.id}
                     onToggle={() => toggleTool(tool, "suggestion")}
                     onOfferChange={(offer) => updateSelectedToolOffer(tool.id, offer)}
+                    onConfirmOffer={(offer) => confirmToolWithOffer(tool, offer, "suggestion")}
                     t={t}
                   />
                 )) : (
@@ -919,14 +954,18 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 function ToolChoiceButton({
   tool,
   selectedTool,
+  pending = false,
   onToggle,
   onOfferChange,
+  onConfirmOffer,
   t,
 }: {
   tool: Tool;
   selectedTool?: Tool;
+  pending?: boolean;
   onToggle: () => void;
   onOfferChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
+  onConfirmOffer: (offer: NonNullable<Tool["selectedOffer"]>) => void;
   t: (fr: string, en: string) => string;
 }) {
   const selected = Boolean(selectedTool);
@@ -936,16 +975,18 @@ function ToolChoiceButton({
   return (
     <div
       title={pricingAudit.detail}
-      className={`h-[118px] rounded-lg border p-3 shadow-sm transition-all duration-200 ${
+      className={`h-[118px] rounded-lg border p-3 shadow-sm transition-colors duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
+          : pending
+            ? "border-foreground bg-card"
           : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
       }`}
     >
       <button
         type="button"
         onClick={onToggle}
-        aria-pressed={selected}
+        aria-pressed={selected || pending}
         className="flex h-[54px] w-full items-center gap-3 text-left"
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
@@ -954,6 +995,8 @@ function ToolChoiceButton({
           <p className="truncate text-xs text-muted-foreground">
             {selected
               ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
+              : pending
+                ? t("Choisis ton plan pour l’ajouter", "Choose your plan to add it")
               : displayTool.price > 0
                 ? formatToolMonthlyPrice(displayTool, t, { approximate: true, catalog: true })
                 : t("Gratuit possible", "Free possible")}
@@ -962,6 +1005,10 @@ function ToolChoiceButton({
         {selected ? (
           <span className="inline-flex shrink-0 items-center justify-center rounded-full bg-primary p-1.5 text-primary-foreground">
             <Check className="h-3.5 w-3.5" />
+          </span>
+        ) : pending ? (
+          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-foreground text-foreground">
+            <ChevronRight className="h-4 w-4" />
           </span>
         ) : (
           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
@@ -973,89 +1020,13 @@ function ToolChoiceButton({
       <div className="mt-2 h-8">
         {selected ? (
           <OfferSelector tool={displayTool} onChange={onOfferChange} compact t={t} />
+        ) : pending ? (
+          <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
         ) : (
           <p className="flex h-8 items-center rounded-md bg-muted/30 px-2 text-xs font-medium text-muted-foreground">
-            {t("Ajoute, puis choisis le plan", "Add, then choose the plan")}
+            {t("Clique pour choisir le plan", "Click to choose the plan")}
           </p>
         )}
-      </div>
-    </div>
-  );
-}
-
-function LiveStackStrip({
-  selectedTools,
-  activeMoment,
-  recentToolId,
-  monthlyCostLabel,
-  t,
-}: {
-  selectedTools: Tool[];
-  activeMoment: StackMoment;
-  recentToolId: string | null;
-  monthlyCostLabel: string;
-  t: (fr: string, en: string) => string;
-}) {
-  const recentTool = selectedTools.find((tool) => tool.id === recentToolId);
-  const visibleTools = selectedTools.slice(-7).reverse();
-
-  return (
-    <div
-      className="mt-5 min-h-[76px] rounded-lg border border-primary/15 bg-primary/5 px-4 py-3"
-      aria-live="polite"
-    >
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase text-primary">
-            {t("Stack captée en direct", "Live captured stack")}
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {recentTool
-              ? t(
-                  `${recentTool.name} est dans ta stack. Ajuste son plan si besoin.`,
-                  `${recentTool.name} is in your stack. Adjust its plan if needed.`
-                )
-              : selectedTools.length > 0
-                ? t(
-                    `${selectedTools.length} outil(s) retenu(s). Zone en cours : ${activeMoment.fr}.`,
-                    `${selectedTools.length} tool(s) captured. Current area: ${activeMoment.en}.`
-                  )
-                : t(
-                    "Ajoute seulement les outils que tu utilises vraiment. Je garde la trace ici.",
-                    "Only add tools you actually use. I keep track here."
-                  )}
-          </p>
-        </div>
-
-        <div className="flex shrink-0 items-center gap-3">
-          <div className="flex -space-x-2">
-            {visibleTools.length === 0 ? (
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-dashed border-primary/30 bg-background text-primary">
-                <Plus className="h-4 w-4" />
-              </span>
-            ) : (
-              visibleTools.map((tool) => (
-                <span
-                  key={tool.id}
-                  className={`rounded-lg border-2 border-background bg-background transition-transform duration-200 ${
-                    tool.id === recentToolId ? "scale-110 ring-2 ring-primary/25" : ""
-                  }`}
-                  title={tool.name}
-                >
-                  <ToolLogo tool={tool} size={34} className="rounded-md" />
-                </span>
-              ))
-            )}
-          </div>
-          <div className="text-right">
-            <p className="font-mono text-sm font-semibold text-foreground">
-              {monthlyCostLabel}/{t("mois", "mo")}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {selectedTools.length} {t("outil(s)", "tool(s)")}
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -1065,14 +1036,18 @@ function OfferSelector({
   tool,
   onChange,
   compact = false,
+  currentOffer,
   t,
 }: {
   tool: Tool;
   onChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
   compact?: boolean;
+  currentOffer?: NonNullable<Tool["selectedOffer"]> | null;
   t: (fr: string, en: string) => string;
 }) {
-  const currentOffer = tool.selectedOffer || (tool.price > 0 ? "paid" : "free");
+  const activeOffer = currentOffer === undefined
+    ? tool.selectedOffer || (tool.price > 0 ? "paid" : "free")
+    : currentOffer;
   return (
     <div className={`grid w-full grid-cols-4 gap-1 rounded-md border border-border bg-muted/30 p-1 ${
       compact ? "" : "lg:w-[280px]"
@@ -1083,7 +1058,7 @@ function OfferSelector({
           type="button"
           onClick={() => onChange(option.value)}
           className={`${compact ? "h-6 px-1 text-[10px]" : "h-8 px-2 text-xs"} whitespace-nowrap rounded-[5px] font-semibold transition-colors ${
-            currentOffer === option.value
+            activeOffer === option.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-background hover:text-foreground"
           }`}
@@ -1126,12 +1101,12 @@ function StackCompanion({
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase text-primary">
-                {t("Sélection en direct", "Live selection")}
+                {t("Ta stack", "Your stack")}
               </p>
               <h3 className="mt-1 text-lg font-bold text-foreground">
                 {selectedTools.length === 0
                   ? t("Rien ajouté pour l’instant", "Nothing added yet")
-                  : t("Ce que j’ai capté", "What I captured")}
+                  : t("Sélection confirmée", "Confirmed selection")}
               </h3>
             </div>
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -1141,12 +1116,12 @@ function StackCompanion({
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {selectedTools.length === 0
               ? t(
-                  "Ajoute uniquement les outils que tu utilises vraiment.",
-                  "Only add tools you actually use."
+                  "Choisis un outil puis son plan.",
+                  "Choose a tool, then its plan."
                 )
               : t(
-                  "Je garde le récapitulatif visible pendant que tu avances.",
-                  "I keep the recap visible while you move forward."
+                  "Ce récapitulatif se met à jour après confirmation du plan.",
+                  "This recap updates after plan confirmation."
                 )}
           </p>
         </div>
@@ -1356,15 +1331,19 @@ function ToolGrid({
   title,
   tools,
   selectedToolsById,
+  pendingToolId,
   onToggle,
   onOfferChange,
+  onConfirmOffer,
   t,
 }: {
   title: string;
   tools: Tool[];
   selectedToolsById: Map<string, Tool>;
+  pendingToolId: string | null;
   onToggle: (tool: Tool) => void;
   onOfferChange: (toolId: string, offer: NonNullable<Tool["selectedOffer"]>) => void;
+  onConfirmOffer: (tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) => void;
   t: (fr: string, en: string) => string;
 }) {
   if (tools.length === 0) return null;
@@ -1378,8 +1357,10 @@ function ToolGrid({
               key={tool.id}
               tool={tool}
               selectedTool={selectedToolsById.get(tool.id)}
+              pending={pendingToolId === tool.id}
               onToggle={() => onToggle(tool)}
               onOfferChange={(offer) => onOfferChange(tool.id, offer)}
+              onConfirmOffer={(offer) => onConfirmOffer(tool, offer)}
               t={t}
             />
           );

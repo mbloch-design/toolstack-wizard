@@ -48,6 +48,21 @@ ok(
   "empty zone CTA should mark the area as intentionally empty, not just move on"
 );
 ok(
+  "tool click opens plan choice before adding",
+  stackScan.includes("pendingToolId") &&
+    stackScan.includes("selector_tool_plan_opened") &&
+    stackScan.includes("confirmToolWithOffer") &&
+    stackScan.includes("Choisis ton plan pour l’ajouter") &&
+    stackScan.includes("Clique pour choisir le plan"),
+  "clicking a suggestion should not immediately count it in the stack"
+);
+ok(
+  "central stack strip removed to avoid duplicate summary",
+  !stackScan.includes("LiveStackStrip") &&
+    !stackScan.includes("Stack captée en direct"),
+  "the right companion should be the only persistent stack recap on desktop"
+);
+ok(
   "useful questions focus the heading, not an answer option",
   discovery.includes("headingRef.current?.focus()") &&
     discovery.includes("tabIndex={-1}") &&
