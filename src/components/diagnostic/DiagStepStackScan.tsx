@@ -718,7 +718,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           <StackMomentStepper
             moments={momentCoverage}
             activeMomentId={activeMoment.id}
-            selectedCount={selectedTools.length}
             onSelect={(moment) => {
               setActiveMomentId(moment.id);
               onTrack?.("selector_moment_stepper_clicked", {
@@ -728,7 +727,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 selected_count: selectedTools.length,
               });
             }}
-            onReview={() => openReview("top_count")}
             t={t}
           />
 
@@ -923,11 +921,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
         <StackCompanion
           selectedTools={selectedTools}
-          coveredCount={coveredCount}
-          totalMoments={STACK_MOMENTS.length}
           monthlyCostLabel={selectedMonthlyCostLabel}
           pricingSummary={pricingSummary}
-          activeMomentLabel={t(activeMoment.fr, activeMoment.en)}
           onReview={() => openReview("stack_companion")}
           onRemove={(tool) => toggleTool(tool, "companion")}
           t={t}
@@ -1030,48 +1025,21 @@ function ToolChoiceButton({
 function StackMomentStepper({
   moments,
   activeMomentId,
-  selectedCount,
   onSelect,
-  onReview,
   t,
 }: {
   moments: Array<StackMoment & { selected: Tool[]; covered: boolean; skipped: boolean }>;
   activeMomentId: string;
-  selectedCount: number;
   onSelect: (moment: StackMoment & { selected: Tool[]; covered: boolean; skipped: boolean }) => void;
-  onReview: () => void;
   t: (fr: string, en: string) => string;
 }) {
   const activeIndex = Math.max(0, moments.findIndex((moment) => moment.id === activeMomentId));
-  const coveredOrSkippedCount = moments.filter((moment) => moment.covered || moment.skipped).length;
 
   return (
     <div className="rounded-lg border border-border bg-background px-3 py-3">
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="min-w-0">
-          <p className="text-sm font-semibold text-foreground">
-            {activeIndex + 1}/{moments.length} · {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
-          </p>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            {t("Choisis les outils, puis précise le plan.", "Choose tools, then confirm the plan.")}
-          </p>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span className="rounded-full bg-muted px-2.5 py-1 font-mono text-xs font-semibold text-muted-foreground">
-            {coveredOrSkippedCount}/{moments.length}
-          </span>
-          {selectedCount > 0 && (
-            <button
-              type="button"
-              onClick={onReview}
-              className="rounded-full border border-border px-2.5 py-1 font-mono text-xs font-semibold text-foreground hover:bg-muted"
-            >
-              {selectedCount}
-            </button>
-          )}
-        </div>
-      </div>
+      <p className="text-sm font-semibold text-foreground">
+        {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
+      </p>
 
       <div className="mt-3 flex gap-2 overflow-x-auto pb-1" aria-label={t("Étapes de capture de stack", "Stack capture steps")}>
         {moments.map((moment, index) => {
@@ -1159,27 +1127,20 @@ function OfferSelector({
 
 function StackCompanion({
   selectedTools,
-  coveredCount,
-  totalMoments,
   monthlyCostLabel,
   pricingSummary,
-  activeMomentLabel,
   onReview,
   onRemove,
   t,
 }: {
   selectedTools: Tool[];
-  coveredCount: number;
-  totalMoments: number;
   monthlyCostLabel: string;
   pricingSummary: ReturnType<typeof getPricingCaptureSummary>;
-  activeMomentLabel: string;
   onReview: () => void;
   onRemove: (tool: Tool) => void;
   t: (fr: string, en: string) => string;
 }) {
   const visibleTools = selectedTools.slice(-8).reverse();
-  const coveragePct = Math.round((coveredCount / totalMoments) * 100);
 
   return (
     <aside className="hidden lg:sticky lg:top-24 lg:block">
@@ -1214,9 +1175,12 @@ function StackCompanion({
         </div>
 
         <div className="space-y-4 p-4">
-          <div className="grid grid-cols-2 gap-2">
-            <StackStat label={t("Outils", "Tools")} value={String(selectedTools.length)} />
-            <StackStat label={t("Budget", "Budget")} value={monthlyCostLabel} suffix={t("/mois", "/mo")} />
+          <div className="rounded-lg border border-border bg-background p-3">
+            <p className="text-xs font-semibold uppercase text-muted-foreground">{t("Budget", "Budget")}</p>
+            <p className="mt-1 font-mono text-2xl font-bold text-foreground">
+              {monthlyCostLabel}
+              <span className="ml-1 text-xs font-medium text-muted-foreground">{t("/mois", "/mo")}</span>
+            </p>
           </div>
           {pricingSummary.needsVerificationCount > 0 && (
             <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900">
@@ -1226,24 +1190,6 @@ function StackCompanion({
               )}
             </div>
           )}
-
-          <div className="rounded-lg border border-border bg-background p-3">
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-xs font-semibold uppercase text-muted-foreground">
-                {t("Couverture", "Coverage")}
-              </p>
-              <p className="font-mono text-xs font-semibold text-foreground">{coveredCount}/{totalMoments}</p>
-            </div>
-            <div className="mt-2 h-2 overflow-hidden rounded-full bg-muted">
-              <div
-                className="h-full rounded-full bg-primary transition-all duration-500"
-                style={{ width: `${Math.max(8, coveragePct)}%` }}
-              />
-            </div>
-            <p className="mt-2 text-xs text-muted-foreground">
-              {t("Zone en cours", "Current area")} : <span className="font-medium text-foreground">{activeMomentLabel}</span>
-            </p>
-          </div>
 
           {selectedTools.length === 0 ? (
             <div className="rounded-lg border border-dashed border-border bg-background p-4 text-center">
@@ -1358,18 +1304,6 @@ function MobileStackBar({
       </div>
       <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
     </button>
-  );
-}
-
-function StackStat({ label, value, suffix = "" }: { label: string; value: string; suffix?: string }) {
-  return (
-    <div className="rounded-lg border border-border bg-background p-3">
-      <p className="font-mono text-2xl font-bold text-foreground">
-        {value}
-        {suffix && <span className="ml-1 text-xs font-medium text-muted-foreground">{suffix}</span>}
-      </p>
-      <p className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{label}</p>
-    </div>
   );
 }
 

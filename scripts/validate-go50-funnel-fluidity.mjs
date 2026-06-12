@@ -40,6 +40,14 @@ ok(
   "the 10 stack areas should be a compact icon rail, not text-heavy cards"
 );
 ok(
+  "stack progress and stack count are not duplicated",
+  !stackScan.includes("coveredOrSkippedCount") &&
+    !stackScan.includes("StackStat") &&
+    !stackScan.includes("Couverture") &&
+    !stackScan.includes("Zone en cours"),
+  "zone progress belongs to the icon rail; confirmed stack belongs to the side recap"
+);
+ok(
   "search label is contextual",
   stackScan.includes("Chercher pour ${activeMoment.fr.toLowerCase()}") &&
     stackScan.includes("Search for ${activeMoment.en.toLowerCase()}"),
