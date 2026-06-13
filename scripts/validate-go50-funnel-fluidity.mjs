@@ -4,11 +4,13 @@ const STACK_SCAN = "src/components/diagnostic/DiagStepStackScan.tsx";
 const DISCOVERY = "src/components/diagnostic/DiagStep6Discovery.tsx";
 const SAVE_INDICATOR = "src/components/diagnostic/DiagSaveIndicator.tsx";
 const TRANSITION = "src/components/diagnostic/DiagTransitionOverlay.tsx";
+const LOGOS = "src/lib/toolLogos.ts";
 
 const stackScan = readFileSync(STACK_SCAN, "utf8");
 const discovery = readFileSync(DISCOVERY, "utf8");
 const saveIndicator = readFileSync(SAVE_INDICATOR, "utf8");
 const transition = readFileSync(TRANSITION, "utf8");
+const logos = readFileSync(LOGOS, "utf8");
 
 const checks = [];
 
@@ -21,8 +23,7 @@ ok(
   stackScan.includes("setSearch(\"\")") &&
     stackScan.includes("setShowCatalog(false)") &&
     stackScan.includes("setCustomName(\"\")") &&
-    stackScan.includes("setCustomPrice(\"\")") &&
-    stackScan.includes("setCustomCurrency(\"\")"),
+    stackScan.includes("setCustomPrice(\"\")"),
   "zone change should reset search/manual add state"
 );
 ok(
@@ -48,10 +49,11 @@ ok(
   "zone progress belongs to the icon rail; confirmed stack belongs to the side recap"
 );
 ok(
-  "search label is contextual",
-  stackScan.includes("Chercher pour ${activeMoment.fr.toLowerCase()}") &&
-    stackScan.includes("Search for ${activeMoment.en.toLowerCase()}"),
-  "search label should be tied to the current area"
+  "search field is not redundant with the active zone",
+  stackScan.includes("Chercher un outil…") &&
+    !stackScan.includes("Chercher pour ${activeMoment.fr.toLowerCase()}") &&
+    !stackScan.includes("Search for ${activeMoment.en.toLowerCase()}"),
+  "the question and stepper already carry the current area"
 );
 ok(
   "new question receives focus",
@@ -60,9 +62,10 @@ ok(
 );
 ok(
   "skip path is explicit and records the empty zone",
-  stackScan.includes("selectedInActiveMoment > 0 ? moveToNextMoment : skipActiveMoment") &&
+  stackScan.includes("Je n’utilise rien pour ça") &&
+    stackScan.includes("onClick={skipActiveMoment}") &&
     !stackScan.includes("Passer cette zone"),
-  "empty zone CTA should mark the area as intentionally empty, not just move on"
+  "empty zone CTA should mark the area as intentionally empty"
 );
 ok(
   "tool click opens plan choice before adding",
@@ -88,6 +91,15 @@ ok(
   "confirming a plan should create a visible but non-layout-shifting recap feedback"
 );
 ok(
+  "confirmed tool feeds the sidebar and leaves left suggestions",
+  stackScan.includes("StackFeedMotion") &&
+    stackScan.includes("tooltrim-stack-feed") &&
+    stackScan.includes("stackDropRef") &&
+    stackScan.includes("data-stack-tool-card-id") &&
+    stackScan.includes("!selectedIds.has(tool.id)"),
+  "confirmed tools should visibly transfer to the right recap, then disappear from left-side choices"
+);
+ok(
   "tool cards expose clear plan CTA",
   stackScan.includes("Choisir le plan") &&
     stackScan.includes("Plan utilisé ?") &&
@@ -99,6 +111,42 @@ ok(
   !stackScan.includes("LiveStackStrip") &&
     !stackScan.includes("Stack captée en direct"),
   "the right companion should be the only persistent stack recap on desktop"
+);
+ok(
+  "budget hierarchy separates confirmed and to-clarify amounts",
+  stackScan.includes("getMonthlyBudgetBreakdown") &&
+    stackScan.includes("budgetBreakdown.confirmedEur") &&
+    stackScan.includes("budgetBreakdown.toVerifyEur") &&
+    stackScan.includes("à préciser"),
+  "budget number should not mix prose and amount in the same line"
+);
+ok(
+  "stack capture has no visible USD selector",
+  !stackScan.includes("USD") &&
+    !stackScan.includes("Devise ?") &&
+    !stackScan.includes("devise à vérifier"),
+  "user-facing stack capture should stay in EUR"
+);
+ok(
+  "Claude and Copilot logo fallbacks exist",
+  logos.includes('claude: "claude"') &&
+    logos.includes('"github-copilot": "githubcopilot"') &&
+    logos.includes('"github-copilot": { label: "Co"') &&
+    logos.includes('claude: { label: "C"'),
+  "broken remote logos should fall back to local brand badges"
+);
+ok(
+  "plan selector uses real plan labels when possible",
+  stackScan.includes("getPlanLabel") &&
+    stackScan.includes("compare_plan_name") &&
+    stackScan.includes("Je ne sais pas"),
+  "offer selector should avoid generic paid/team labels when plan names exist"
+);
+ok(
+  "zone copy avoids repeated kicker labels",
+  !stackScan.includes("Nouvelle zone à vérifier") &&
+    !stackScan.includes("New area to check"),
+  "the stepper and H1 already explain the current zone"
 );
 ok(
   "useful questions focus the heading, not an answer option",

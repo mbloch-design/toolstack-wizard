@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { RefObject } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -21,9 +22,11 @@ import {
 import ToolLogo from "@/components/ToolLogo";
 import type { SessionState, Tool } from "@/types/diagnostic";
 import {
+  formatMonthlyEur,
   formatMonthlyTotal,
-  formatMoney,
+  formatToolMonthlyBudget,
   formatToolMonthlyPrice,
+  getMonthlyBudgetBreakdown,
   getPricingAudit,
   getPricingCaptureSummary,
 } from "@/utils/diagnosticPricing";
@@ -163,6 +166,14 @@ const STACK_MOMENTS = [
 ] as const;
 
 type StackMoment = (typeof STACK_MOMENTS)[number];
+type StackFeedAnimation = {
+  id: string;
+  tool: Tool;
+  fromX: number;
+  fromY: number;
+  toX: number;
+  toY: number;
+};
 
 function normalize(value: string) {
   return value
@@ -182,6 +193,15 @@ const OFFER_OPTIONS: Array<{
   { value: "team", fr: "Équipe", en: "Team" },
   { value: "unknown", fr: "Pas sûr", en: "Unsure" },
 ];
+
+function getPlanLabel(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>, t: (fr: string, en: string) => string) {
+  if (offer === "free") return t("Gratuit", "Free");
+  if (offer === "team") return tool.pricing_v5?.compare_plan_kind === "team"
+    ? tool.pricing_v5?.compare_plan_name || "Team"
+    : "Team";
+  if (offer === "unknown") return t("Je ne sais pas", "I don’t know");
+  return tool.pricing_v5?.compare_plan_name || "Pro";
+}
 
 function makeCustomTool(name: string, price: number, moment?: StackMoment, currency?: string): Tool {
   const slug = normalize(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -204,8 +224,10 @@ function makeCustomTool(name: string, price: number, moment?: StackMoment, curre
 }
 
 function withDefaultOffer(tool: Tool): Tool {
-  const catalogMonthlyPrice = tool.catalogMonthlyPrice ?? Number(tool.price || 0);
-  const catalogMonthlyPriceCurrency = tool.catalogMonthlyPriceCurrency || tool.priceCurrency;
+  const catalogMonthlyPrice = tool.pricing_v5?.compare_price_monthly_eur ?? tool.catalogMonthlyPrice ?? Number(tool.price || 0);
+  const catalogMonthlyPriceCurrency = tool.pricing_v5?.compare_price_monthly_eur != null
+    ? "EUR"
+    : tool.catalogMonthlyPriceCurrency || tool.priceCurrency;
   return {
     ...tool,
     catalogMonthlyPrice,
@@ -223,9 +245,9 @@ function offerPrice(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) {
 
 function offerLabel(tool: Tool, t: (fr: string, en: string) => string) {
   if (tool.selectedOffer === "free") return t("Gratuit", "Free");
-  if (tool.selectedOffer === "team") return t("Équipe", "Team");
-  if (tool.selectedOffer === "unknown") return t("À vérifier", "To check");
-  return t("Payant", "Paid");
+  if (tool.selectedOffer === "team") return getPlanLabel(tool, "team", t);
+  if (tool.selectedOffer === "unknown") return t("À préciser", "To clarify");
+  return getPlanLabel(tool, "paid", t);
 }
 
 function toolText(tool: Tool) {
@@ -257,6 +279,7 @@ function nextMomentId(coveredIds: Set<string>, skippedIds: Set<string>, currentI
 export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onPrev, onTrack, t, fromTool }: Props) {
   const [search, setSearch] = useState("");
   const questionRef = useRef<HTMLHeadingElement | null>(null);
+  const stackDropRef = useRef<HTMLDivElement | null>(null);
   const initialSelectedTools = useMemo(() => {
     if (session.selectedTools.length > 0 || !fromTool) {
       return (session.selectedTools || []).map(withDefaultOffer);
@@ -281,10 +304,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
-  const [customCurrency, setCustomCurrency] = useState("");
   const [pendingToolId, setPendingToolId] = useState<string | null>(null);
   const [pendingSource, setPendingSource] = useState<"suggestion" | "search">("suggestion");
   const [lastConfirmedToolId, setLastConfirmedToolId] = useState<string | null>(null);
+  const [feedAnimation, setFeedAnimation] = useState<StackFeedAnimation | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
   const selectedToolsById = useMemo(
@@ -302,6 +325,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const q = normalize(search);
     return allKnownTools
       .filter((tool) => {
+        if (selectedIds.has(tool.id)) return false;
         if (!q) return true;
         return normalize(tool.name).includes(q) || normalize(tool.category || "").includes(q);
       })
@@ -329,7 +353,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const activeMomentIndex = STACK_MOMENTS.findIndex((moment) => moment.id === activeMoment.id);
   const activeMomentSuggestions = useMemo(() => {
     return tools
-      .filter((tool) => matchesMoment(tool, activeMoment))
+      .filter((tool) => matchesMoment(tool, activeMoment) && !selectedIds.has(tool.id))
       .sort((a, b) => {
         const aKnown = activeMoment.ids.includes(a.id);
         const bKnown = activeMoment.ids.includes(b.id);
@@ -337,7 +361,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
       .slice(0, 6);
-  }, [activeMoment, session.persona, tools]);
+  }, [activeMoment, selectedIds, session.persona, tools]);
 
   const coverageCount = momentCoverage.filter((moment) => moment.covered || moment.skipped).length;
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
@@ -345,6 +369,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const selectedInActiveMoment = activeMoment.selected.length;
   const selectedMonthlyCostLabel = formatMonthlyTotal(selectedTools, t);
   const pricingSummary = useMemo(() => getPricingCaptureSummary(selectedTools), [selectedTools]);
+  const budgetBreakdown = useMemo(() => getMonthlyBudgetBreakdown(selectedTools), [selectedTools]);
+  const firstPricingIssueTool = useMemo(
+    () => selectedTools.find((tool) => getPricingAudit(tool, t).needsVerification) || null,
+    [selectedTools, t]
+  );
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
 
@@ -353,7 +382,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     setShowCatalog(false);
     setCustomName("");
     setCustomPrice("");
-    setCustomCurrency("");
     setPendingToolId(null);
     const focusTimer = window.setTimeout(() => questionRef.current?.focus(), 0);
     return () => window.clearTimeout(focusTimer);
@@ -364,6 +392,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const timer = window.setTimeout(() => setLastConfirmedToolId(null), 1400);
     return () => window.clearTimeout(timer);
   }, [lastConfirmedToolId]);
+
+  useEffect(() => {
+    if (!feedAnimation) return undefined;
+    const timer = window.setTimeout(() => setFeedAnimation(null), 760);
+    return () => window.clearTimeout(timer);
+  }, [feedAnimation]);
 
   const toggleTool = (tool: Tool, source: "suggestion" | "search" | "review" | "companion" = "suggestion") => {
     setSelectedTools((prev) => {
@@ -403,6 +437,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     offer: NonNullable<Tool["selectedOffer"]>,
     source: "suggestion" | "search" = pendingSource
   ) => {
+    const sourceElement = document.querySelector<HTMLElement>(`[data-stack-tool-card-id="${tool.id}"]`);
+    const targetElement = stackDropRef.current;
+    const sourceRect = sourceElement?.getBoundingClientRect();
+    const targetRect = targetElement?.getBoundingClientRect();
+
     setSelectedTools((prev) => {
       if (prev.some((item) => item.id === tool.id)) {
         return prev.map((item) => {
@@ -439,6 +478,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       };
       setPendingToolId(null);
       setLastConfirmedToolId(tool.id);
+      if (sourceRect && targetRect) {
+        setFeedAnimation({
+          id: `${tool.id}-${Date.now()}`,
+          tool: selectedTool,
+          fromX: sourceRect.left + sourceRect.width / 2,
+          fromY: sourceRect.top + 34,
+          toX: targetRect.left + targetRect.width / 2,
+          toY: targetRect.top + targetRect.height / 2,
+        });
+      }
       return [...prev, selectedTool];
     });
     onTrack?.("selector_tool_offer_selected", {
@@ -475,18 +524,17 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const name = customName.trim();
     if (name.length < 2) return;
     const price = Math.max(0, Number(customPrice) || 0);
-    const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, customCurrency || undefined));
+    const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, "EUR"));
     setSelectedTools((prev) => [...prev, customTool]);
     setLastConfirmedToolId(customTool.id);
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
       price,
-      currency: customCurrency || null,
+      currency: "EUR",
     });
     setCustomName("");
     setCustomPrice("");
-    setCustomCurrency("");
     setSearch("");
   };
 
@@ -541,6 +589,26 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     } else {
       openReview("all_moments_checked");
     }
+  };
+
+  const scrollToPricingTool = (toolId: string) => {
+    window.setTimeout(() => {
+      const target = document.querySelector<HTMLElement>(`[data-pricing-tool-id="${toolId}"]`);
+      target?.scrollIntoView({ behavior: "smooth", block: "center" });
+      target?.focus?.();
+    }, 80);
+  };
+
+  const scrollToFirstPricingIssue = () => {
+    if (!firstPricingIssueTool) return;
+    const targetMoment = momentCoverage.find((moment) =>
+      moment.selected.some((tool) => tool.id === firstPricingIssueTool.id)
+    );
+
+    if (targetMoment && targetMoment.id !== activeMoment.id) {
+      setActiveMomentId(targetMoment.id);
+    }
+    scrollToPricingTool(firstPricingIssueTool.id);
   };
 
   const openReview = (reason: string) => {
@@ -745,9 +813,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             key={activeMoment.id}
             className="mt-6 space-y-2 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
           >
-            <p className="text-xs font-semibold uppercase text-muted-foreground">
-              {t("Nouvelle zone à vérifier", "New area to check")} · {t(activeMoment.fr, activeMoment.en)}
-            </p>
             <h2
               ref={questionRef}
               tabIndex={-1}
@@ -761,9 +826,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           </div>
 
           <div className="mt-6 space-y-3">
-            <label htmlFor="diagnostic-stack-search" className="text-xs font-semibold uppercase text-muted-foreground">
-              {t(`Chercher pour ${activeMoment.fr.toLowerCase()}`, `Search for ${activeMoment.en.toLowerCase()}`)}
-            </label>
             <div className="relative">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
@@ -781,8 +843,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   setSearch(event.target.value);
                 }}
                 placeholder={t(
-                  `Cherche un outil pour ${activeMoment.fr.toLowerCase()}...`,
-                  `Search a tool for ${activeMoment.en.toLowerCase()}...`
+                  "Chercher un outil…",
+                  "Search a tool…"
                 )}
                 className="h-12 w-full rounded-lg border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
@@ -849,6 +911,15 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   </div>
                 )}
               </div>
+              {selectedInActiveMoment === 0 && (
+                <button
+                  type="button"
+                  onClick={skipActiveMoment}
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-border px-4 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {t("Je n’utilise rien pour ça", "I don’t use anything for this")}
+                </button>
+              )}
             </div>
           )}
 
@@ -864,7 +935,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
             {showCatalog && (
               <div className="mt-4 space-y-4">
-                <div className="grid gap-2 sm:grid-cols-[1fr_110px_92px_auto]">
+                <div className="grid gap-2 sm:grid-cols-[1fr_120px_auto]">
                   <input
                     id="diagnostic-custom-tool"
                     name="custom-tool"
@@ -880,19 +951,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     type="number"
                     value={customPrice}
                     onChange={(event) => setCustomPrice(event.target.value)}
-                    placeholder={t("prix/mois", "price/mo")}
+                    placeholder={t("€/mois", "€/mo")}
                     className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   />
-                  <select
-                    value={customCurrency}
-                    onChange={(event) => setCustomCurrency(event.target.value)}
-                    className="h-10 rounded-md border border-input bg-background px-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    aria-label={t("Devise", "Currency")}
-                  >
-                    <option value="">{t("Devise ?", "Currency?")}</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                  </select>
                   <button
                     type="button"
                     onClick={addCustomTool}
@@ -907,6 +968,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             )}
           </div>
 
+          {(selectedInActiveMoment > 0 || (selectedTools.length > 0 && missingMoments.length === 0)) && (
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
             <div className="flex flex-col gap-2 sm:flex-row">
               {selectedTools.length > 0 && missingMoments.length === 0 && (
@@ -920,26 +982,33 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               )}
               <button
                 type="button"
-                onClick={selectedInActiveMoment > 0 ? moveToNextMoment : skipActiveMoment}
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-foreground px-5 text-sm font-semibold text-background"
+                onClick={moveToNextMoment}
+                disabled={selectedInActiveMoment === 0}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-foreground px-5 text-sm font-semibold text-background disabled:opacity-40"
               >
-                {selectedInActiveMoment > 0 ? t("Zone suivante", "Next area") : t("Je n’utilise rien ici", "I do not use anything here")}
+                {t("Zone suivante", "Next area")}
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
           </div>
+          )}
         </div>
 
         <StackCompanion
           selectedTools={selectedTools}
-          monthlyCostLabel={selectedMonthlyCostLabel}
+          budgetBreakdown={budgetBreakdown}
           pricingSummary={pricingSummary}
+          coverageComplete={coverageCount >= STACK_MOMENTS.length}
           highlightToolId={lastConfirmedToolId}
+          stackDropRef={stackDropRef}
+          onPricingReview={scrollToFirstPricingIssue}
           onReview={() => openReview("stack_companion")}
           onRemove={(tool) => toggleTool(tool, "companion")}
           t={t}
         />
       </section>
+
+      <StackFeedMotion animation={feedAnimation} />
 
       <MobileStackBar
         selectedTools={selectedTools}
@@ -977,6 +1046,9 @@ function ToolChoiceButton({
   return (
     <div
       title={pricingAudit.detail}
+      data-stack-tool-card-id={tool.id}
+      data-pricing-tool-id={tool.id}
+      tabIndex={-1}
       className={`group h-[118px] rounded-lg border p-3 shadow-sm transition-colors duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
@@ -989,7 +1061,7 @@ function ToolChoiceButton({
         type="button"
         onClick={onToggle}
         aria-pressed={selected || pending}
-        className="flex h-[54px] w-full items-center gap-3 text-left"
+        className="flex h-[54px] w-full items-center gap-3 rounded-md text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
         <div className="min-w-0 flex-1">
@@ -1060,15 +1132,21 @@ function StackMomentStepper({
           const active = moment.id === activeMomentId;
           const done = moment.covered;
           const skipped = moment.skipped;
+          const statusLabel = done
+            ? t("remplie", "filled")
+            : skipped
+              ? t("marquée vide", "marked empty")
+              : t("à vérifier", "to check");
+          const stepLabel = `${index + 1}. ${t(moment.fr, moment.en)} · ${statusLabel}`;
           return (
             <button
               key={moment.id}
               type="button"
               onClick={() => onSelect(moment)}
-              title={t(moment.fr, moment.en)}
+              title={stepLabel}
               aria-current={active ? "step" : undefined}
-              aria-label={`${index + 1}. ${t(moment.fr, moment.en)}`}
-              className={`group relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${
+              aria-label={stepLabel}
+              className={`group relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                 active
                   ? "border-foreground bg-foreground text-background"
                   : done
@@ -1125,13 +1203,13 @@ function OfferSelector({
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
-          className={`${compact ? "h-6 px-1 text-[10px]" : "h-8 px-2 text-xs"} whitespace-nowrap rounded-[5px] font-semibold transition-colors ${
+          className={`${compact ? "h-6 px-1 text-[10px]" : "h-8 px-2 text-xs"} whitespace-nowrap rounded-[5px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
             activeOffer === option.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-background hover:text-foreground"
           }`}
         >
-          {t(option.fr, option.en)}
+          {getPlanLabel(tool, option.value, t)}
         </button>
       ))}
     </div>
@@ -1140,17 +1218,23 @@ function OfferSelector({
 
 function StackCompanion({
   selectedTools,
-  monthlyCostLabel,
+  budgetBreakdown,
   pricingSummary,
+  coverageComplete,
   highlightToolId,
+  stackDropRef,
+  onPricingReview,
   onReview,
   onRemove,
   t,
 }: {
   selectedTools: Tool[];
-  monthlyCostLabel: string;
+  budgetBreakdown: ReturnType<typeof getMonthlyBudgetBreakdown>;
   pricingSummary: ReturnType<typeof getPricingCaptureSummary>;
+  coverageComplete: boolean;
   highlightToolId?: string | null;
+  stackDropRef: RefObject<HTMLDivElement>;
+  onPricingReview: () => void;
   onReview: () => void;
   onRemove: (tool: Tool) => void;
   t: (fr: string, en: string) => string;
@@ -1169,7 +1253,7 @@ function StackCompanion({
               <h3 className="mt-1 text-lg font-bold text-foreground">
                 {selectedTools.length === 0
                   ? t("Rien ajouté pour l’instant", "Nothing added yet")
-                  : t("Sélection confirmée", "Confirmed selection")}
+                  : t("Ta sélection", "Your selection")}
               </h3>
             </div>
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -1193,17 +1277,25 @@ function StackCompanion({
           <div className="rounded-lg border border-border bg-background p-3">
             <p className="text-xs font-semibold uppercase text-muted-foreground">{t("Budget", "Budget")}</p>
             <p className="mt-1 font-mono text-2xl font-bold text-foreground">
-              {monthlyCostLabel}
-              <span className="ml-1 text-xs font-medium text-muted-foreground">{t("/mois", "/mo")}</span>
+              ≈ {formatMonthlyEur(budgetBreakdown.confirmedEur)}
             </p>
+            {budgetBreakdown.hasToVerify && (
+              <p className="mt-1 text-xs font-medium text-muted-foreground">
+                + {formatMonthlyEur(budgetBreakdown.toVerifyEur).replace("/mois", "")} {t("à préciser", "to clarify")}
+              </p>
+            )}
           </div>
           {pricingSummary.needsVerificationCount > 0 && (
-            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900">
+            <button
+              type="button"
+              onClick={onPricingReview}
+              className="w-full rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-left text-xs font-semibold text-amber-900 transition-colors hover:bg-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
               {t(
-                `${pricingSummary.needsVerificationCount} prix ou plan reste à vérifier.`,
-                `${pricingSummary.needsVerificationCount} price or plan still needs checking.`
+                `${pricingSummary.needsVerificationCount} plan${pricingSummary.needsVerificationCount > 1 ? "s" : ""} à préciser`,
+                `${pricingSummary.needsVerificationCount} plan${pricingSummary.needsVerificationCount > 1 ? "s" : ""} to clarify`
               )}
-            </div>
+            </button>
           )}
 
           {selectedTools.length === 0 ? (
@@ -1220,7 +1312,7 @@ function StackCompanion({
             </div>
           ) : (
             <div className="space-y-3" aria-live="polite">
-              <div className="flex flex-wrap gap-2">
+              <div ref={stackDropRef} className="flex min-h-[38px] flex-wrap gap-2">
                 {visibleTools.map((tool) => {
                   const highlighted = tool.id === highlightToolId;
                   return (
@@ -1274,7 +1366,7 @@ function StackCompanion({
                         {offerLabel(tool, t)}
                       </span>
                       <span className="font-mono text-xs text-muted-foreground">
-                        {formatMoney(tool.price || 0, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}
+                        {formatToolMonthlyBudget(tool, t)}
                       </span>
                     </div>
                   );
@@ -1287,7 +1379,11 @@ function StackCompanion({
             type="button"
             onClick={onReview}
             disabled={selectedTools.length === 0}
-            className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-foreground px-4 text-sm font-semibold text-background disabled:opacity-40"
+            className={`inline-flex h-10 w-full items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold transition-colors disabled:opacity-40 ${
+              coverageComplete
+                ? "bg-foreground text-background"
+                : "border border-border bg-background text-foreground hover:bg-muted"
+            }`}
           >
             {t("Voir ma stack complète", "View full stack")}
             <ChevronRight className="h-4 w-4" />
@@ -1295,6 +1391,50 @@ function StackCompanion({
         </div>
       </div>
     </aside>
+  );
+}
+
+function StackFeedMotion({ animation }: { animation: StackFeedAnimation | null }) {
+  if (!animation) return null;
+
+  const translateX = animation.toX - animation.fromX;
+  const translateY = animation.toY - animation.fromY;
+
+  return (
+    <div
+      key={animation.id}
+      aria-hidden="true"
+      className="pointer-events-none fixed z-[80] hidden h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-background shadow-2xl ring-4 ring-primary/15 lg:flex"
+      style={{
+        left: animation.fromX - 24,
+        top: animation.fromY - 24,
+        animation: "tooltrim-stack-feed 720ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards",
+        ["--stack-feed-x" as string]: `${translateX}px`,
+        ["--stack-feed-y" as string]: `${translateY}px`,
+      }}
+    >
+      <ToolLogo tool={animation.tool} size={34} className="rounded-lg" />
+      <style>{`
+        @keyframes tooltrim-stack-feed {
+          0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0) scale(0.82);
+          }
+          14% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          72% {
+            opacity: 1;
+            transform: translate3d(calc(var(--stack-feed-x) * 0.88), calc(var(--stack-feed-y) * 0.88), 0) scale(0.72);
+          }
+          100% {
+            opacity: 0;
+            transform: translate3d(var(--stack-feed-x), var(--stack-feed-y), 0) scale(0.42);
+          }
+        }
+      `}</style>
+    </div>
   );
 }
 
@@ -1462,7 +1602,7 @@ function SelectedToolRow({
           <X className="h-4 w-4" />
         </button>
       </div>
-      <div className="mt-3 grid grid-cols-[88px_88px_1fr] gap-2">
+      <div className="mt-3 grid grid-cols-[96px_1fr] gap-2">
         <input
           type="number"
           value={tool.price || ""}
@@ -1470,30 +1610,15 @@ function SelectedToolRow({
             const price = Math.max(0, Number(event.target.value) || 0);
             onUpdate({
               price,
+              priceCurrency: "EUR",
+              catalogMonthlyPriceCurrency: "EUR",
               selectedOffer: price <= 0 ? "free" : tool.selectedOffer === "free" ? "paid" : tool.selectedOffer,
               selectedPriceIsEstimate: false,
             });
           }}
-          placeholder={t("prix/mois", "price/mo")}
+          placeholder={t("€/mois", "€/mo")}
           className="h-9 rounded-md border border-input bg-background px-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
         />
-        <select
-          value={tool.priceCurrency || tool.catalogMonthlyPriceCurrency || ""}
-          onChange={(event) => {
-            const currency = event.target.value || undefined;
-            onUpdate({
-              priceCurrency: currency,
-              catalogMonthlyPriceCurrency: currency,
-              selectedPriceIsEstimate: false,
-            });
-          }}
-          className="h-9 rounded-md border border-input bg-background px-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          aria-label={t("Devise", "Currency")}
-        >
-          <option value="">{t("Devise", "Currency")}</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-        </select>
         <div className="grid grid-cols-3 rounded-md border border-border p-0.5">
           {(["high", "medium", "low"] as const).map((usage) => (
             <button

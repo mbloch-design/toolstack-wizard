@@ -11,6 +11,8 @@ type PricingV5Like = {
   monthly_public_price_original?: number | string | null;
   currency?: string | null;
   compare_price_monthly_eur?: number | string | null;
+  compare_plan_name?: string | null;
+  compare_plan_kind?: string | null;
 } | null | undefined;
 
 type ToolPriceLike = {
@@ -18,12 +20,18 @@ type ToolPriceLike = {
   priceCurrency?: PriceCurrency;
   catalogMonthlyPrice?: number;
   catalogMonthlyPriceCurrency?: PriceCurrency;
+  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  selectedPriceIsEstimate?: boolean;
+  pricing_v5?: PricingV5Like;
 };
 
 type PricingAuditToolLike = ToolPriceLike & {
   selectedOffer?: "free" | "paid" | "team" | "unknown";
   selectedPriceIsEstimate?: boolean;
   pricing_v5?: {
+    compare_price_monthly_eur?: number | string | null;
+    compare_plan_name?: string | null;
+    compare_plan_kind?: string | null;
     price_reliability?: string | null;
     verification_status?: string | null;
     source_domain?: string | null;
@@ -37,6 +45,8 @@ export type PricingAudit = {
   detail: string;
   needsVerification: boolean;
 };
+
+export const USD_TO_EUR_RATE = 0.92;
 
 function toNumber(value: unknown): number | null {
   if (typeof value === "number" && Number.isFinite(value)) return value;
@@ -84,6 +94,16 @@ export function inferCatalogMonthlyPrice(input: {
   pricing_v5?: PricingV5Like;
 }) {
   const pricingV5 = input.pricing_v5;
+  const comparePrice = toNumber(pricingV5?.compare_price_monthly_eur);
+
+  if (comparePrice != null) {
+    return {
+      amount: comparePrice,
+      currency: "EUR" as const,
+      source: "pricing_v5_eur" as const,
+    };
+  }
+
   const explicitOriginal = toNumber(
     pricingV5?.monthly_public_price_original ?? pricingV5?.price_original
   );
@@ -104,7 +124,6 @@ export function inferCatalogMonthlyPrice(input: {
     input.pricingEn?.paid,
   ].filter(Boolean).join(" ");
   const parsed = paidTexts ? parsePriceFromText(paidTexts) : null;
-  const comparePrice = toNumber(pricingV5?.compare_price_monthly_eur);
 
   if (parsed && !(input.defaultMonthlyPrice === 0 && comparePrice === 0)) {
     return {
@@ -125,12 +144,40 @@ function formatNumber(value: number) {
   return Number.isInteger(value) ? String(value) : String(Math.round(value * 100) / 100).replace(".", ",");
 }
 
+function toEur(value: number, currency?: PriceCurrency) {
+  if (!Number.isFinite(value)) return 0;
+  if (currency === "USD") return value * USD_TO_EUR_RATE;
+  return value;
+}
+
+function getDisplayAmountEur(tool: ToolPriceLike) {
+  const comparePrice = toNumber(tool.pricing_v5?.compare_price_monthly_eur);
+  if (
+    comparePrice != null &&
+    tool.selectedPriceIsEstimate !== false &&
+    (tool.selectedOffer === undefined || tool.selectedOffer !== "free")
+  ) {
+    return comparePrice;
+  }
+
+  const amount = Number(tool.price ?? tool.catalogMonthlyPrice ?? 0);
+  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  return toEur(amount, currency);
+}
+
 export function formatMoney(value: number, currency?: PriceCurrency) {
-  const formatted = formatNumber(value);
-  if (currency === "USD") return `${formatted}$`;
-  if (currency === "EUR") return `${formatted}€`;
-  if (currency) return `${formatted} ${currency}`;
-  return formatted;
+  const formatted = formatNumber(toEur(value, currency));
+  return `${formatted} €`;
+}
+
+export function formatMonthlyEur(value: number) {
+  return `${formatNumber(value)} €/mois`;
+}
+
+export function formatToolMonthlyBudget(tool: ToolPriceLike, t: (fr: string, en: string) => string) {
+  const amount = getDisplayAmountEur(tool);
+  if (tool.selectedOffer === "free" || amount <= 0) return t("Gratuit", "Free");
+  return formatMonthlyEur(amount);
 }
 
 export function formatToolMonthlyPrice(
@@ -138,47 +185,55 @@ export function formatToolMonthlyPrice(
   t: (fr: string, en: string) => string,
   options: { approximate?: boolean; catalog?: boolean } = {}
 ) {
-  const amount = Number(tool.price ?? 0);
-  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const amount = getDisplayAmountEur(tool);
   if (amount <= 0) return t("Gratuit", "Free");
 
   const prefix = options.approximate ? "≈ " : "";
   const suffix = options.catalog ? ` ${t("catalogue", "catalog")}` : "";
-  const monthly = `${prefix}${formatMoney(amount, currency)}/${t("mois", "mo")}${suffix}`;
-  if (currency) return monthly;
-  return `${monthly} · ${t("devise à vérifier", "currency to check")}`;
+  return `${prefix}${formatMonthlyEur(amount)}${suffix}`;
 }
 
 export function formatMonthlyTotal(
   tools: ToolPriceLike[],
-  t: (fr: string, en: string) => string
+  _t: (fr: string, en: string) => string
 ) {
-  const totals = new Map<string, number>();
-  let unknown = 0;
+  let total = 0;
 
   for (const tool of tools) {
-    const amount = Number(tool.price ?? 0);
+    const amount = getDisplayAmountEur(tool);
     if (amount <= 0) continue;
-    const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
-    if (!currency) {
-      unknown += amount;
-      continue;
-    }
-    totals.set(currency, (totals.get(currency) || 0) + amount);
+    total += amount;
   }
 
-  const parts = Array.from(totals.entries()).map(([currency, amount]) => formatMoney(amount, currency));
-  if (unknown > 0) parts.push(`${formatMoney(unknown)} ${t("à vérifier", "to check")}`);
-  if (parts.length === 0) return formatMoney(0);
-  return parts.join(" + ");
+  return formatMoney(total, "EUR");
+}
+
+export function getMonthlyBudgetBreakdown(
+  tools: ToolPriceLike[]
+) {
+  let confirmedEur = 0;
+  let toVerifyEur = 0;
+
+  for (const tool of tools) {
+    const amount = getDisplayAmountEur(tool);
+    if (amount <= 0 || tool.selectedOffer === "free") continue;
+    const hasReliablePrice = tool.selectedOffer !== "unknown" && !tool.selectedPriceIsEstimate;
+    if (hasReliablePrice) confirmedEur += amount;
+    else toVerifyEur += amount;
+  }
+
+  return {
+    confirmedEur,
+    toVerifyEur,
+    hasToVerify: toVerifyEur > 0,
+  };
 }
 
 export function getPricingAudit(
   tool: PricingAuditToolLike,
   t: (fr: string, en: string) => string
 ): PricingAudit {
-  const amount = Number(tool.price ?? 0);
-  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const amount = getDisplayAmountEur(tool);
   const sourceDomain = tool.pricing_v5?.source_domain;
   const sourceLabel = sourceDomain
     ? t(`Source : ${sourceDomain}`, `Source: ${sourceDomain}`)
@@ -207,25 +262,12 @@ export function getPricingAudit(
     };
   }
 
-  if (!currency) {
-    return {
-      status: "missing_currency",
-      tone: "warning",
-      label: t("Devise à vérifier", "Currency to check"),
-      detail: t(
-        "Le montant est utile pour l'ordre de grandeur, mais la devise n'est pas confirmée.",
-        "The amount is useful as an order of magnitude, but the currency is not confirmed."
-      ),
-      needsVerification: true,
-    };
-  }
-
   if (tool.selectedPriceIsEstimate) {
     return {
       status: "catalog",
       tone: "info",
       label: t("Prix catalogue", "Catalog price"),
-      detail: `${sourceLabel} · ${formatMoney(amount, currency)}/${t("mois", "mo")}`,
+      detail: `${sourceLabel} · ${formatMonthlyEur(amount)}`,
       needsVerification: true,
     };
   }
@@ -234,7 +276,7 @@ export function getPricingAudit(
     status: "confirmed",
     tone: "ok",
     label: t("Plan confirmé", "Confirmed plan"),
-    detail: `${formatMoney(amount, currency)}/${t("mois", "mo")}`,
+    detail: formatMonthlyEur(amount),
     needsVerification: false,
   };
 }
@@ -251,16 +293,13 @@ export function getPricingCaptureSummary(tools: PricingAuditToolLike[]) {
   };
 
   for (const tool of tools) {
-    const amount = Number(tool.price ?? 0);
+    const amount = getDisplayAmountEur(tool);
     if (tool.selectedOffer === "free" || amount <= 0) summary.freeCount += 1;
     else if (tool.selectedOffer === "team") summary.teamCount += 1;
     else if (tool.selectedOffer === "unknown") summary.unknownPlanCount += 1;
     else summary.paidCount += 1;
 
     if (tool.selectedPriceIsEstimate && amount > 0) summary.estimateCount += 1;
-    if (amount > 0 && !(tool.priceCurrency || tool.catalogMonthlyPriceCurrency)) {
-      summary.missingCurrencyCount += 1;
-    }
   }
 
   summary.needsVerificationCount =

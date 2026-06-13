@@ -27,29 +27,36 @@ ok(
   "missing pricing capture summary"
 );
 ok(
-  "custom tool captures currency",
-  stackScan.includes("customCurrency") && stackScan.includes("Devise ?") && stackScan.includes("currency: customCurrency || null"),
-  "custom tool manual add should capture currency"
+  "custom tool captures monthly budget in EUR",
+  stackScan.includes('currency: "EUR"') &&
+    stackScan.includes('makeCustomTool(name, price, activeMoment, "EUR")') &&
+    !stackScan.includes("customCurrency") &&
+    !stackScan.includes("Devise ?"),
+  "custom tool manual add should keep the capture flow in EUR"
 );
 ok(
   "tool cards keep plan selector in-place",
-  stackScan.includes("h-[118px]") && stackScan.includes("OfferSelector") && stackScan.includes("Ajoute, puis choisis le plan"),
+  stackScan.includes("h-[118px]") && stackScan.includes("OfferSelector") && stackScan.includes("Choisir le plan"),
   "selected tool cards should keep stable height and in-card offer selector"
 );
 ok(
-  "review rows allow currency correction",
-  stackScan.includes("priceCurrency") && stackScan.includes("<option value=\"USD\">USD</option>") && stackScan.includes("<option value=\"EUR\">EUR</option>"),
-  "review row should allow USD/EUR correction"
+  "review rows avoid visible currency switching",
+  stackScan.includes('priceCurrency: "EUR"') &&
+    !stackScan.includes('<option value="USD">USD</option>') &&
+    !stackScan.includes('<option value="EUR">EUR</option>'),
+  "review row should keep user-facing amounts in EUR"
 );
 ok(
-  "pre-verdict does not force euro savings",
-  !preVerdict.includes("result.annualSavings)}€") && !preVerdict.includes("item.savingsEstimate)}€"),
-  "pre-verdict still displays forced euro savings"
+  "pricing formatter uses pricing_v5 EUR first",
+  pricing.includes("source: \"pricing_v5_eur\"") &&
+    pricing.includes("compare_price_monthly_eur") &&
+    pricing.includes("USD_TO_EUR_RATE"),
+  "pricing display should use pricing_v5 EUR when available, then fixed conversion"
 );
 ok(
-  "pre-verdict uses source-currency monthly total",
+  "pre-verdict uses captured monthly total",
   preVerdict.includes("formatMonthlyTotal(session.selectedTools") && preVerdict.includes("Budget capté"),
-  "pre-verdict should display captured budget in source currencies"
+  "pre-verdict should display captured budget"
 );
 ok(
   "pricing reliability is persisted",

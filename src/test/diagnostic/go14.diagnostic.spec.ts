@@ -15,15 +15,15 @@ function expectNumberBetween(value: number, min?: number, max?: number) {
 }
 
 describe("GO14 - Banc de recette metier", () => {
-  it("conserve la devise source des prix catalogue au lieu d'inventer une conversion euro", () => {
+  it("affiche les prix catalogue en EUR avec pricing_v5 prioritaire", () => {
     expect(inferCatalogMonthlyPrice({
       defaultMonthlyPrice: 17.32,
       pricing: { paid: "USD 20/month (Plus)" },
       pricing_v5: { compare_price_monthly_eur: 17.32 },
     })).toMatchObject({
-      amount: 20,
-      currency: "USD",
-      source: "pricing_text",
+      amount: 17.32,
+      currency: "EUR",
+      source: "pricing_v5_eur",
     });
 
     expect(inferCatalogMonthlyPrice({
@@ -33,7 +33,7 @@ describe("GO14 - Banc de recette metier", () => {
     })).toMatchObject({
       amount: 11.5,
       currency: "EUR",
-      source: "pricing_text",
+      source: "pricing_v5_eur",
     });
 
     expect(inferCatalogMonthlyPrice({
@@ -42,15 +42,15 @@ describe("GO14 - Banc de recette metier", () => {
       pricing_v5: { compare_price_monthly_eur: 0 },
     })).toMatchObject({
       amount: 0,
-      currency: undefined,
-      source: "unknown",
+      currency: "EUR",
+      source: "pricing_v5_eur",
     });
 
     expect(formatMonthlyTotal([
       { price: 20, priceCurrency: "USD" },
       { price: 10, priceCurrency: "EUR" },
       { price: 7 },
-    ], (fr) => fr)).toBe("20$ + 10€ + 7 à vérifier");
+    ], (fr) => fr)).toBe("35,4 €");
   });
 
   it("verifie que le jeu de scenarios est coherent", () => {
