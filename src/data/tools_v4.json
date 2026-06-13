@@ -7289,11 +7289,11 @@
     "longDescriptionEn": "Affinity Photo is a professional photo editing application for photographers and designers. It covers layers, masks, RAW processing, color correction, and multi-image compositing. A serious Photoshop competitor for years, it became free in 2024 after Canva acquired Serif. For anyone looking to avoid an Adobe subscription, the pricing question is settled.",
     "pricing": {
       "free": "Gratuit depuis 2024 (rachat par Canva)",
-      "paid": null
+      "paid": ""
     },
     "pricingEn": {
       "free": "Free since 2024 (Canva acquisition)",
-      "paid": null
+      "paid": ""
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
