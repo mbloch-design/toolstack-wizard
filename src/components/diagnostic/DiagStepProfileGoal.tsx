@@ -206,7 +206,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
     <div className="mx-auto max-w-4xl px-4 pb-10">
       <main className="space-y-6">
         <header className="mx-auto max-w-3xl space-y-5 text-center">
-          <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-muted-foreground">
+          <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-muted-foreground shadow-sm">
             <span>{stepEyebrow}</span>
             <span className="text-muted-foreground/50">·</span>
             <span>{stepIndex + 1}/3</span>
@@ -219,7 +219,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
               {stepSubtitle}
             </p>
           </div>
-          <p className="mx-auto max-w-xl rounded-md bg-muted/60 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+          <p className="mx-auto max-w-xl rounded-2xl bg-muted/60 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
             {stepHelp}
           </p>
         </header>
@@ -234,11 +234,11 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                   key={item.id}
                   type="button"
                   onClick={() => setPersona(item.id)}
-                  className={`group grid min-h-[72px] w-full grid-cols-[40px_1fr_24px] items-center gap-4 rounded-lg border px-4 text-left transition-all ${
-                    selected ? "border-foreground bg-card text-foreground shadow-sm" : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
+                  className={`group grid min-h-[76px] w-full grid-cols-[42px_1fr_24px] items-center gap-4 rounded-2xl border px-4 text-left transition-all ${
+                    selected ? "border-foreground bg-card text-foreground shadow-md" : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
                   }`}
                 >
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${selected ? "bg-foreground text-background" : "bg-muted text-muted-foreground group-hover:text-foreground"}`}>
+                  <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${selected ? "bg-foreground text-background" : "bg-muted text-muted-foreground group-hover:text-foreground"}`}>
                     <Icon className="h-5 w-5" />
                   </span>
                   <span className="min-w-0 flex-1">
@@ -266,8 +266,8 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                   key={goal.value}
                   type="button"
                   onClick={() => setStackGoal(goal.value)}
-                  className={`group flex min-h-[112px] items-start gap-3 rounded-lg border p-4 text-left transition-colors ${
-                    selected ? "border-foreground bg-card shadow-sm" : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
+                  className={`group flex min-h-[112px] items-start gap-3 rounded-2xl border p-4 text-left transition-colors ${
+                    selected ? "border-foreground bg-card shadow-md" : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
                   }`}
                 >
                   <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${
@@ -290,7 +290,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
         )}
 
         {profileStep === "details" && (
-          <section className="mx-auto max-w-3xl space-y-5 rounded-lg border border-border bg-card p-5">
+          <section className="diagnostic-card mx-auto max-w-3xl space-y-5 p-5">
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="space-y-2">
                 <span className="text-sm font-medium text-foreground">{t("Ton prénom", "Your first name")}</span>
@@ -335,7 +335,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                     key={option.value}
                     type="button"
                     onClick={() => setTjm(option.value)}
-                    className={`h-11 rounded-md border px-2 text-sm font-medium ${
+                    className={`h-11 rounded-xl border px-2 text-sm font-medium ${
                       tjm === option.value ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
                     }`}
                   >
@@ -345,7 +345,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                 <button
                   type="button"
                   onClick={() => setTjm(0)}
-                  className={`h-11 rounded-md border px-2 text-sm font-medium ${
+                  className={`h-11 rounded-xl border px-2 text-sm font-medium ${
                     tjm === 0 ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -365,7 +365,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
               <button
                 type="button"
                 onClick={goBackWithinIntro}
-                className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
+                className="h-11 rounded-full border border-border bg-card px-5 text-sm font-medium text-foreground shadow-sm hover:bg-muted"
               >
                 {t("Retour", "Back")}
               </button>
@@ -373,7 +373,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
             <button
               type="button"
               onClick={handlePrimary}
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-foreground px-6 text-sm font-semibold text-background hover:bg-foreground/90"
+              className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold"
             >
               {profileStep === "details" ? t("Trouver mes outils", "Find my tools") : t("Continuer", "Continue")}
               <ArrowRight className="h-4 w-4" />

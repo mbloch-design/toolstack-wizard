@@ -234,7 +234,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
   // Stable fallback state when there is no discovery question for this profile/tools set.
   if (activeQuestions.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[50vh] gap-6 text-center">
+      <div className="mx-auto flex min-h-[50vh] max-w-lg flex-col items-center justify-center gap-6 text-center">
         <h2 className="text-xl md:text-2xl font-bold text-foreground">
           {t("Pas besoin de question en plus", "No extra question needed")}
         </h2>
@@ -249,7 +249,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
             onUpdate({ discoveryAnswers: answers, adaptiveDiscoveryQuestions: activeAdaptiveQuestions });
             onNext();
           }}
-          className="rounded-xl bg-primary px-6 py-3 text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+          className="diagnostic-primary-action rounded-full px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
         >
           {t("Continuer", "Continue")}
         </button>
@@ -297,7 +297,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
   };
 
   return (
-    <div className="mx-auto flex min-h-[54vh] max-w-2xl flex-col justify-center gap-7">
+    <div className="diagnostic-card mx-auto flex min-h-[54vh] max-w-2xl flex-col justify-center gap-7 p-5 md:p-7">
       <header className="space-y-4 text-center">
         <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
           <HelpCircle className="h-3.5 w-3.5" />
@@ -355,7 +355,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
             key={idx}
             onClick={() => handleAnswer(idx)}
             aria-pressed={currentAnswer === idx}
-            className={`flex min-h-[58px] items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all
+            className={`flex min-h-[58px] items-center gap-3 rounded-2xl border px-4 py-3 text-left text-sm font-medium transition-all
               ${currentAnswer === idx
                 ? "border-primary bg-primary/10 text-foreground ring-2 ring-primary/15"
                 : "border-border bg-card text-foreground hover:border-primary/40 hover:bg-muted/30"
@@ -373,7 +373,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
       </div>
 
       {currentAnswer !== undefined && (
-        <p className="rounded-lg bg-primary/5 px-3 py-2 text-center text-sm font-medium text-primary" role="status">
+        <p className="rounded-2xl bg-primary/5 px-3 py-2 text-center text-sm font-medium text-primary" role="status">
           {questionIdx < activeQuestions.length - 1
             ? t("Réponse prise en compte. On passe à la suivante.", "Answer saved. Moving to the next one.")
             : t("Réponse prise en compte. Ton premier verdict est prêt.", "Answer saved. Your first verdict is ready.")}
@@ -383,7 +383,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
       <footer className="flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
         <button
           onClick={handlePrev}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border px-5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
         >
           <ChevronLeft className="h-4 w-4" />
           {t("Retour", "Back")}
@@ -395,7 +395,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
         <button
           onClick={handleNext}
           disabled={currentAnswer === undefined}
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-40"
+            className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-40"
         >
           {questionIdx < activeQuestions.length - 1
             ? t("Question suivante", "Next question")

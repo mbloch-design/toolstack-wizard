@@ -524,23 +524,27 @@ export default function DiagnosticRouter() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+      <div className="diagnostic-mood p-3 md:p-4">
+        <div className="diagnostic-shell flex items-center justify-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground" />
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh] px-4">
-        <div className="max-w-lg w-full rounded-lg border border-destructive/30 bg-destructive/5 p-4 text-center">
+      <div className="diagnostic-mood p-3 md:p-4">
+        <div className="diagnostic-shell flex items-center justify-center px-4">
+        <div className="max-w-lg w-full rounded-2xl border border-destructive/30 bg-destructive/5 p-4 text-center">
           <p className="text-destructive text-sm">{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-3 h-9 px-4 rounded-md bg-primary text-primary-foreground text-sm font-medium"
+            className="diagnostic-primary-action mt-3 h-9 px-4 rounded-md text-sm font-medium"
           >
             {t("Réessayer", "Retry")}
           </button>
+        </div>
         </div>
       </div>
     );
@@ -551,10 +555,17 @@ export default function DiagnosticRouter() {
 
   // If on dashboard step, render full dashboard
   if (step === 12 && diagnosticResult) {
-    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />;
+    return (
+      <div className="diagnostic-mood p-3 md:p-4">
+        <div className="diagnostic-shell">
+          <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />
+        </div>
+      </div>
+    );
   }
   return (
-    <>
+    <div className="diagnostic-mood p-3 md:p-4">
+      <div className="diagnostic-shell">
       {/* Top bar */}
       <DiagTopBar
         session={session}
@@ -575,7 +586,7 @@ export default function DiagnosticRouter() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowRecoveryBanner(false)}
-                className="h-8 px-3 rounded-md bg-primary text-primary-foreground text-xs font-medium"
+                className="diagnostic-primary-action h-8 px-3 rounded-md text-xs font-medium"
               >
                 {t("Continuer", "Continue")}
               </button>
@@ -601,9 +612,6 @@ export default function DiagnosticRouter() {
 
       <div
         className="min-h-[calc(100vh-var(--navbar-h)-72px)]"
-        style={{
-          background: "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.45) 100%)",
-        }}
       >
         <div className="mx-auto max-w-7xl px-4 py-7 md:py-10">
         {/* Main content */}
@@ -667,6 +675,7 @@ export default function DiagnosticRouter() {
 
       {/* Auto-save indicator */}
       <DiagSaveIndicator session={session as unknown as Record<string, unknown>} t={t} />
-    </>
+      </div>
+    </div>
   );
 }

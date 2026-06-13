@@ -768,7 +768,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     <div className="mx-auto max-w-6xl space-y-6 pb-32">
       <div className="mx-auto max-w-3xl space-y-3 text-center">
         {toolName && (
-          <p className="inline-flex rounded-md border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+          <p className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             {t(`On part de ${toolName}`, `Starting from ${toolName}`)}
           </p>
         )}
@@ -792,8 +792,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         )}
       </div>
 
-      <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-        <div className="rounded-xl border border-border bg-card p-5 md:p-6">
+      <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+        <div className="diagnostic-card p-5 md:p-6">
           <StackMomentStepper
             moments={momentCoverage}
             activeMomentId={activeMoment.id}
@@ -846,7 +846,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   "Chercher un outil…",
                   "Search a tool…"
                 )}
-                className="h-12 w-full rounded-lg border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="h-12 w-full rounded-2xl border border-input bg-background pl-10 pr-10 text-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-ring"
               />
               {search && (
                 <button
@@ -915,7 +915,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 <button
                   type="button"
                   onClick={skipActiveMoment}
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-border px-4 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="inline-flex h-10 items-center justify-center rounded-full border border-border bg-card px-4 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   {t("Je n’utilise rien pour ça", "I don’t use anything for this")}
                 </button>
@@ -923,7 +923,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </div>
           )}
 
-          <div className="mt-6 rounded-lg bg-muted/40 p-3">
+          <div className="mt-6 rounded-2xl bg-muted/50 p-3">
             <button
               type="button"
               onClick={toggleSearchPanel}
@@ -958,7 +958,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     type="button"
                     onClick={addCustomTool}
                     disabled={customName.trim().length < 2}
-                    className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground disabled:opacity-40"
+                    className="diagnostic-primary-action inline-flex h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold disabled:opacity-40"
                   >
                     <Plus className="h-4 w-4" />
                     {t("Ajouter", "Add")}
@@ -975,7 +975,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 <button
                   type="button"
                   onClick={() => openReview("all_moments_checked")}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border px-5 text-sm font-semibold text-foreground hover:bg-muted"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-semibold text-foreground hover:bg-muted"
                 >
                   {t("Vérifier ma stack", "Check my stack")}
                 </button>
@@ -984,7 +984,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 type="button"
                 onClick={moveToNextMoment}
                 disabled={selectedInActiveMoment === 0}
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-foreground px-5 text-sm font-semibold text-background disabled:opacity-40"
+                className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold disabled:opacity-40"
               >
                 {t("Zone suivante", "Next area")}
                 <ChevronRight className="h-4 w-4" />
@@ -1049,7 +1049,7 @@ function ToolChoiceButton({
       data-stack-tool-card-id={tool.id}
       data-pricing-tool-id={tool.id}
       tabIndex={-1}
-      className={`group h-[118px] rounded-lg border p-3 shadow-sm transition-colors duration-200 ${
+      className={`group h-[118px] rounded-2xl border p-3 shadow-sm transition-colors duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
           : pending
@@ -1061,7 +1061,7 @@ function ToolChoiceButton({
         type="button"
         onClick={onToggle}
         aria-pressed={selected || pending}
-        className="flex h-[54px] w-full items-center gap-3 rounded-md text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="flex h-[54px] w-full items-center gap-3 rounded-xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
         <div className="min-w-0 flex-1">
@@ -1097,7 +1097,7 @@ function ToolChoiceButton({
         ) : pending ? (
           <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
         ) : (
-          <span className="flex h-8 items-center justify-between rounded-md bg-muted/35 px-2 text-xs font-semibold text-foreground transition-colors group-hover:bg-muted/60">
+          <span className="flex h-8 items-center justify-between rounded-xl bg-muted/35 px-2 text-xs font-semibold text-foreground transition-colors group-hover:bg-muted/60">
             <span>{t("Choisir le plan", "Choose plan")}</span>
             <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
           </span>
@@ -1121,7 +1121,7 @@ function StackMomentStepper({
   const activeIndex = Math.max(0, moments.findIndex((moment) => moment.id === activeMomentId));
 
   return (
-    <div className="rounded-lg border border-border bg-background px-3 py-3">
+    <div className="diagnostic-soft-card px-3 py-3">
       <p className="text-sm font-semibold text-foreground">
         {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
       </p>
@@ -1195,7 +1195,7 @@ function OfferSelector({
     ? tool.selectedOffer || (tool.price > 0 ? "paid" : "free")
     : currentOffer;
   return (
-    <div className={`grid w-full grid-cols-4 gap-1 rounded-md border border-border bg-muted/30 p-1 ${
+    <div className={`grid w-full grid-cols-4 gap-1 rounded-xl border border-border bg-muted/30 p-1 ${
       compact ? "" : "lg:w-[280px]"
     }`}>
       {OFFER_OPTIONS.map((option) => (
@@ -1243,8 +1243,8 @@ function StackCompanion({
 
   return (
     <aside className="hidden lg:sticky lg:top-24 lg:block">
-      <div className="overflow-hidden rounded-xl border border-primary/20 bg-card shadow-sm">
-        <div className="border-b border-border bg-primary/5 p-4">
+      <div className="diagnostic-dark-panel overflow-hidden">
+        <div className="border-b border-border p-4">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase text-primary">
@@ -1256,7 +1256,7 @@ function StackCompanion({
                   : t("Ta sélection", "Your selection")}
               </h3>
             </div>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--diag-yellow))] text-[hsl(var(--diag-ink))]">
               <Layers3 className="h-5 w-5" />
             </span>
           </div>
@@ -1274,7 +1274,7 @@ function StackCompanion({
         </div>
 
         <div className="space-y-4 p-4">
-          <div className="rounded-lg border border-border bg-background p-3">
+          <div className="rounded-2xl border border-border bg-background p-3">
             <p className="text-xs font-semibold uppercase text-muted-foreground">{t("Budget", "Budget")}</p>
             <p className="mt-1 font-mono text-2xl font-bold text-foreground">
               ≈ {formatMonthlyEur(budgetBreakdown.confirmedEur)}
@@ -1289,7 +1289,7 @@ function StackCompanion({
             <button
               type="button"
               onClick={onPricingReview}
-              className="w-full rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-left text-xs font-semibold text-amber-900 transition-colors hover:bg-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="w-full rounded-2xl border border-[hsl(var(--diag-yellow))] bg-[hsl(var(--diag-yellow)/0.14)] px-3 py-2 text-left text-xs font-semibold text-[hsl(var(--diag-yellow))] transition-colors hover:bg-[hsl(var(--diag-yellow)/0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {t(
                 `${pricingSummary.needsVerificationCount} plan${pricingSummary.needsVerificationCount > 1 ? "s" : ""} à préciser`,
@@ -1299,7 +1299,7 @@ function StackCompanion({
           )}
 
           {selectedTools.length === 0 ? (
-            <div className="rounded-lg border border-dashed border-border bg-background p-4 text-center">
+            <div className="rounded-2xl border border-dashed border-border bg-background p-4 text-center">
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-muted">
                 <Plus className="h-5 w-5 text-muted-foreground" />
               </div>
@@ -1379,9 +1379,9 @@ function StackCompanion({
             type="button"
             onClick={onReview}
             disabled={selectedTools.length === 0}
-            className={`inline-flex h-10 w-full items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold transition-colors disabled:opacity-40 ${
+            className={`inline-flex h-10 w-full items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors disabled:opacity-40 ${
               coverageComplete
-                ? "bg-foreground text-background"
+                ? "bg-[hsl(var(--diag-yellow))] text-[hsl(var(--diag-ink))]"
                 : "border border-border bg-background text-foreground hover:bg-muted"
             }`}
           >

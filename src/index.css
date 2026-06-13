@@ -339,6 +339,142 @@
   --color-hover-text:    #FFFFFF;
 }
 
+/* ─────────────────────────────────────────────
+   Diagnostic mood — scoped product shell
+   Inspired by premium dashboard interfaces:
+   warm neutral base, soft shell, charcoal panels,
+   yellow micro-accent, ToolTrim blue for state.
+───────────────────────────────────────────── */
+.diagnostic-mood {
+  color-scheme: light;
+  --diag-bg: 35 15% 82%;
+  --diag-shell: 45 24% 96%;
+  --diag-surface: 45 22% 98%;
+  --diag-card: 38 20% 93%;
+  --diag-card-strong: 34 18% 84%;
+  --diag-border: 36 10% 75%;
+  --diag-border-soft: 40 12% 86%;
+  --diag-ink: 220 13% 11%;
+  --diag-ink-soft: 220 10% 17%;
+  --diag-muted: 38 6% 42%;
+  --diag-yellow: 54 100% 58%;
+  --diag-coral: 9 96% 67%;
+
+  --background: 45 24% 96%;
+  --foreground: var(--diag-ink);
+  --card: var(--diag-surface);
+  --card-foreground: var(--diag-ink);
+  --popover: var(--diag-surface);
+  --popover-foreground: var(--diag-ink);
+  --muted: 42 17% 90%;
+  --muted-foreground: var(--diag-muted);
+  --secondary: 42 17% 90%;
+  --secondary-foreground: var(--diag-ink);
+  --border: var(--diag-border-soft);
+  --input: var(--diag-border-soft);
+  --ring: 224 76% 50%;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 12%, hsl(var(--diag-yellow) / 0.20), transparent 23rem),
+    radial-gradient(circle at 86% 12%, hsl(var(--diag-coral) / 0.10), transparent 21rem),
+    linear-gradient(135deg, hsl(var(--diag-bg)), hsl(38 16% 88%) 48%, hsl(45 24% 94%));
+  color: hsl(var(--diag-ink));
+}
+
+.diagnostic-shell {
+  min-height: calc(100vh - 32px);
+  overflow: hidden;
+  border: 1px solid hsl(var(--diag-border-soft));
+  border-radius: 28px;
+  background: hsl(var(--diag-shell) / 0.96);
+  box-shadow: 0 28px 80px hsl(220 18% 12% / 0.14);
+}
+
+.diagnostic-topbar {
+  border-color: hsl(var(--diag-border-soft));
+  background: hsl(var(--diag-shell) / 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.diagnostic-card {
+  border: 1px solid hsl(var(--diag-border-soft));
+  border-radius: 24px;
+  background: hsl(var(--diag-surface));
+  box-shadow: 0 18px 48px hsl(220 18% 12% / 0.08);
+}
+
+.diagnostic-soft-card {
+  border: 1px solid hsl(var(--diag-border-soft));
+  border-radius: 18px;
+  background: hsl(var(--diag-card));
+}
+
+.diagnostic-dark-panel {
+  border: 1px solid hsl(220 10% 28%);
+  border-radius: 24px;
+  background: linear-gradient(180deg, hsl(var(--diag-ink-soft)), hsl(var(--diag-ink)));
+  color: hsl(45 24% 94%);
+  box-shadow: 0 22px 54px hsl(220 18% 12% / 0.20);
+}
+
+.diagnostic-primary-action {
+  background: hsl(var(--diag-ink));
+  color: hsl(45 24% 96%);
+  box-shadow: 0 8px 20px hsl(220 18% 12% / 0.16);
+}
+
+.diagnostic-primary-action:hover {
+  background: hsl(220 13% 16%);
+}
+
+.diagnostic-yellow-action {
+  background: hsl(var(--diag-yellow));
+  color: hsl(var(--diag-ink));
+  box-shadow: 0 10px 24px hsl(54 100% 38% / 0.22);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .text-foreground,
+.diagnostic-mood .diagnostic-dark-panel h1,
+.diagnostic-mood .diagnostic-dark-panel h2,
+.diagnostic-mood .diagnostic-dark-panel h3 {
+  color: hsl(45 24% 96%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .text-muted-foreground {
+  color: hsl(45 10% 72%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .bg-background {
+  background-color: hsl(220 13% 10%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .border-border {
+  border-color: hsl(220 10% 28%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .bg-muted\/40,
+.diagnostic-mood .diagnostic-dark-panel .bg-muted\/30 {
+  background-color: hsl(220 12% 14% / 0.92);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .text-background {
+  color: hsl(var(--diag-ink));
+}
+
+@media (max-width: 767px) {
+  .diagnostic-mood {
+    background: hsl(var(--diag-shell));
+  }
+
+  .diagnostic-shell {
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
 @layer components {
   /* Full-width shell — hero backgrounds, CTA bands (max 1440px) */
   .layout-shell {
@@ -17398,4 +17534,3 @@ section[id] {
     }
   }
 }
-

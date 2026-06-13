@@ -161,9 +161,9 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const reviewSidebarTabs = sidebarTabs.filter((tab) => tab.id === "gaspillage" || tab.id === "optimiser");
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-background">
+    <div className="flex min-h-[calc(100vh-32px)] flex-col bg-transparent md:flex-row">
       {/* Mobile header */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-card">
+      <div className="flex items-center justify-between border-b border-border bg-card px-4 py-3 md:hidden">
         <div>
           <span className="block text-sm font-semibold text-foreground">
             {t("Restitution", "Restitution")}
@@ -177,7 +177,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden border-b border-border bg-background px-3 py-3 space-y-1">
+        <div className="space-y-1 border-b border-border bg-background px-3 py-3 md:hidden">
         {TABS.map((tab) => (
           <button
             key={tab.id}
@@ -196,10 +196,10 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex w-[304px] shrink-0 flex-col border-r border-border bg-card/45 sticky top-0 h-screen overflow-y-auto px-1.5 py-4">
+      <aside className="sticky top-0 hidden h-[calc(100vh-32px)] w-[312px] shrink-0 flex-col overflow-y-auto border-r border-border bg-card/70 px-2 py-4 md:flex">
         <div className="px-3">
-          <div className="flex items-center gap-3 rounded-md px-2 py-2">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-background text-sm font-bold text-foreground">
+          <div className="flex items-center gap-3 rounded-2xl px-2 py-2">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-sm font-bold text-foreground shadow-sm">
               tt
             </div>
             <div className="min-w-0">
@@ -208,7 +208,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
             </div>
           </div>
 
-          <label className="mt-4 flex h-10 items-center gap-2 rounded-md border border-border bg-background px-3 text-muted-foreground focus-within:border-foreground/30 focus-within:text-foreground">
+          <label className="mt-4 flex h-11 items-center gap-2 rounded-2xl border border-border bg-background px-3 text-muted-foreground shadow-sm focus-within:border-foreground/30 focus-within:text-foreground">
             <Search className="h-4 w-4 shrink-0" />
             <input
               value={sidebarQuery}
@@ -233,14 +233,14 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
           ))}
 
           {sidebarTabs.length === 0 && (
-            <div className="mx-2 rounded-md border border-border bg-background px-3 py-4 text-sm text-muted-foreground">
+            <div className="mx-2 rounded-2xl border border-border bg-background px-3 py-4 text-sm text-muted-foreground">
               {t("Aucune vue trouvée.", "No view found.")}
             </div>
           )}
         </nav>
 
         <div className="mx-3 mt-auto border-t border-border pt-4">
-          <div className="rounded-md bg-background p-3">
+          <div className="rounded-2xl bg-background p-3 shadow-sm">
             <div className="flex items-center justify-between gap-3">
               <span className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
                 {t("Score", "Score")}
@@ -273,7 +273,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
       <main className="flex-1 overflow-y-auto">
         <div className="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10">
           {activeTab !== "overview" && (
-            <div className="mb-6 rounded-xl border border-border bg-card p-4">
+            <div className="diagnostic-card mb-6 p-4">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="min-w-0">
                   <button
@@ -285,7 +285,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
                     {t("Retour au rapport", "Back to report")}
                   </button>
                   <div className="mt-3 flex items-start gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       <ActiveIcon className="h-5 w-5" />
                     </span>
                     <div>
@@ -300,7 +300,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
                   <button
                     type="button"
                     onClick={() => navigate(nextTab.id)}
-                    className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-foreground hover:bg-muted"
+                    className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-full border border-border bg-card px-4 text-sm font-medium text-foreground hover:bg-muted"
                   >
                     {t("Suite", "Next")} : {t(nextTab.labelFr, nextTab.labelEn)}
                     <ChevronRight className="h-4 w-4" />
@@ -340,7 +340,7 @@ function SidebarTab({
   return (
     <button
       onClick={() => navigate(tab.id)}
-      className={`group grid h-11 w-full grid-cols-[22px_1fr] items-center gap-3 rounded-md px-3 text-left text-sm transition-colors ${
+      className={`group grid h-11 w-full grid-cols-[22px_1fr] items-center gap-3 rounded-2xl px-3 text-left text-sm transition-colors ${
         activeTab === tab.id
           ? "bg-muted text-foreground"
           : "text-muted-foreground hover:bg-muted/70 hover:text-foreground"

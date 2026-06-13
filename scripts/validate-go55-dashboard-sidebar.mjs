@@ -12,8 +12,8 @@ function ok(name, condition, details = "") {
 
 ok(
   "desktop sidebar follows product rail dimensions",
-  dashboard.includes("w-[304px]") &&
-    dashboard.includes("bg-card/45") &&
+  dashboard.includes("w-[312px]") &&
+    dashboard.includes("bg-card/70") &&
     dashboard.includes("overflow-y-auto"),
   "sidebar should feel like a dense product navigation rail"
 );

@@ -25,8 +25,8 @@ ok(
 ok(
   "profile choices are compact single-column rows",
   profile.includes("max-w-3xl gap-2") &&
-    profile.includes("grid-cols-[40px_1fr_24px]") &&
-    profile.includes("min-h-[72px]"),
+    profile.includes("grid-cols-[42px_1fr_24px]") &&
+    profile.includes("min-h-[76px]"),
   "persona selection should be scan-friendly and avoid oversized cards"
 );
 

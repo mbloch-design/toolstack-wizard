@@ -55,7 +55,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
     <div className="mx-auto max-w-5xl space-y-7">
       <div className="grid gap-5 lg:grid-cols-[1fr_360px] lg:items-end">
         <div className="space-y-3">
-          <p className="inline-flex rounded-md border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase text-primary">
+          <p className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase text-primary">
             {t("Diagnostic prêt", "Diagnostic ready")}
           </p>
           <h1 className="text-3xl font-bold text-foreground md:text-4xl">
@@ -69,7 +69,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-5">
+        <div className="diagnostic-dark-panel p-5">
           <p className="text-xs font-semibold uppercase text-muted-foreground">
             {t("Score provisoire", "Provisional score")}
           </p>
@@ -112,12 +112,12 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
       </section>
 
       <section className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-        <div className="rounded-xl border border-border bg-card p-5">
+        <div className="diagnostic-card p-5">
           <p className="text-sm font-semibold text-foreground">{t("Ce qui mérite attention", "What deserves attention")}</p>
           <div className="mt-4 space-y-3">
             {topActions.length > 0 ? (
               topActions.map((item) => (
-                <div key={`${item.toolId}-${item.type}`} className="rounded-lg border border-border bg-background p-3">
+                <div key={`${item.toolId}-${item.type}`} className="rounded-2xl border border-border bg-background p-3">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="text-sm font-semibold text-foreground">{getToolName(result, item.toolId)}</p>
@@ -134,7 +134,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
                 </div>
               ))
             ) : (
-              <div className="rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
+              <div className="rounded-2xl bg-muted/50 p-4 text-sm text-muted-foreground">
                 {t(
                   "Pas de suppression évidente. Le rapport va surtout clarifier ce qu'il faut garder et surveiller.",
                   "No obvious removal. The report will mostly clarify what to keep and watch."
@@ -144,7 +144,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-5">
+        <div className="diagnostic-card p-5">
           <p className="text-sm font-semibold text-foreground">{t("Lecture ToolTrim", "ToolTrim read")}</p>
           <div className="mt-4 space-y-3 text-sm">
             <VerdictLine
@@ -160,7 +160,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
               value={`${reviewCount} ${t("signal(aux)", "signal(s)")}`}
             />
           </div>
-          <div className="mt-5 rounded-lg border border-primary/20 bg-primary/5 p-4">
+          <div className="mt-5 rounded-2xl border border-primary/20 bg-primary/5 p-4">
             <div className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
@@ -219,14 +219,14 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         <button
           type="button"
           onClick={onPrev}
-          className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
+          className="h-11 rounded-full border border-border bg-card px-5 text-sm font-medium text-foreground hover:bg-muted"
         >
           {t("Retour", "Back")}
         </button>
         <button
           type="button"
           onClick={openRestitution}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
+          className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold"
         >
           {wantsEmail && emailValue ? t("Envoyer le rapport et ouvrir", "Send report and open") : t("Ouvrir ma restitution", "Open my restitution")}
           <ArrowRight className="h-4 w-4" />
@@ -248,7 +248,7 @@ function MetricCard({
   detail: string;
 }) {
   return (
-    <div className="rounded-xl border border-border bg-card p-4">
+    <div className="diagnostic-soft-card p-4">
       <Icon className="h-5 w-5 text-primary" />
       <p className="mt-3 break-words font-mono text-xl font-bold text-foreground md:text-2xl">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{label}</p>

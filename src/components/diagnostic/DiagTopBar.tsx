@@ -32,7 +32,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
   const homeHref = `/${session.language === "en" ? "en" : "fr"}`;
 
   return (
-    <div className="border-b border-border bg-background/92 backdrop-blur">
+    <div className="diagnostic-topbar border-b">
       <div className="mx-auto grid max-w-7xl grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-4 py-3">
         <Link
           to={homeHref}
@@ -51,7 +51,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
           </div>
           <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
             <div
-              className="h-full rounded-full bg-foreground transition-all duration-500"
+              className="h-full rounded-full bg-[hsl(var(--diag-yellow))] transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
@@ -60,7 +60,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
 
         <div className="flex min-w-0 items-center justify-end gap-3">
           {showCounter && session.selectedTools.length > 0 && (
-            <div className="hidden items-center gap-3 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-mono shrink-0 lg:flex">
+            <div className="hidden items-center gap-3 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-mono shrink-0 shadow-sm lg:flex">
               <span className="text-foreground">{session.selectedTools.length} {t("outils", "tools")}</span>
               <span className="text-muted-foreground">·</span>
               <span className="text-foreground">{totalCostLabel}/{t("mois", "mo")}</span>
@@ -75,7 +75,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
 
           <Link
             to={homeHref}
-            className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-border bg-card px-3 text-sm font-medium text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex h-9 items-center justify-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <X className="h-4 w-4" />
             <span className="hidden sm:inline">{t("Quitter", "Exit")}</span>
