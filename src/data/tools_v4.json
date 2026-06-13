@@ -92374,18 +92374,18 @@
     "slug": "remix",
     "name": "Remix",
     "category": "nocode-web",
-    "shortDescription": "Framework web full-stack orienté routes, loaders et expérience utilisateur rapide.",
-    "shortDescriptionEn": "Full-stack web framework focused on routes, loaders, and fast UX.",
-    "description": "Framework web full-stack orienté routes, loaders et expérience utilisateur rapide. À intégrer dans une stack dev seulement si son rôle est clair dans la chaîne de livraison.",
-    "longDescription": "Framework web full-stack orienté routes, loaders et expérience utilisateur rapide.",
-    "longDescriptionEn": "Full-stack web framework focused on routes, loaders, and fast UX.",
+    "shortDescription": "Framework React full-stack (routes, loaders, rendu serveur), aujourd'hui fusionné dans React Router v7.",
+    "shortDescriptionEn": "Full-stack React framework (routes, loaders, server rendering), now merged into React Router v7.",
+    "description": "Remix organise une application React autour des routes : chaque route gère son propre chargement de données (loader), ses écritures (action) et son rendu, avec du rendu serveur par défaut. Plutôt que d'empiler des hooks et des appels useEffect pour récupérer des données, on écrit du code proche des standards du web (Request, Response, formulaires HTML natifs). Cette approche a fait des adeptes vers 2021-2022, à une époque où beaucoup de développeurs cherchaient une alternative plus simple à Next.js.\n\nDepuis fin 2024, Remix n'existe plus vraiment comme projet à part. Shopify, qui avait racheté l'équipe de Remix en 2022 pour construire Hydrogen (son framework e-commerce headless), a fusionné Remix dans React Router. Le mode \"framework\" de React Router v7 reprend l'architecture de Remix (routes, loaders, actions, rendu serveur via Vite), porté par la même équipe (Ryan Florence et Michael Jackson). Pour démarrer un nouveau projet, la commande recommandée est create-react-router, pas create-remix.\n\nEn pratique, qu'est-ce que ça change pour un freelance en 2026 ? Si vous reprenez un projet Remix existant ou si vous travaillez sur une boutique Shopify Hydrogen, les compétences restent directement utiles : les loaders, les actions et la structure de routes n'ont presque pas changé. Mais pour un projet qui démarre de zéro, autant partir sur React Router v7 (ou Next.js selon le contexte) : même architecture, communauté plus large, et un nom qui ne va pas disparaître des offres d'emploi dans deux ans.",
+    "longDescription": "Remix organise une application React autour des routes : chaque route gère son propre chargement de données (loader), ses écritures (action) et son rendu, avec du rendu serveur par défaut. Plutôt que d'empiler des hooks et des appels useEffect pour récupérer des données, on écrit du code proche des standards du web (Request, Response, formulaires HTML natifs). Cette approche a fait des adeptes vers 2021-2022, à une époque où beaucoup de développeurs cherchaient une alternative plus simple à Next.js.\n\nDepuis fin 2024, Remix n'existe plus vraiment comme projet à part. Shopify, qui avait racheté l'équipe de Remix en 2022 pour construire Hydrogen (son framework e-commerce headless), a fusionné Remix dans React Router. Le mode \"framework\" de React Router v7 reprend l'architecture de Remix (routes, loaders, actions, rendu serveur via Vite), porté par la même équipe (Ryan Florence et Michael Jackson). Pour démarrer un nouveau projet, la commande recommandée est create-react-router, pas create-remix.\n\nEn pratique, qu'est-ce que ça change pour un freelance en 2026 ? Si vous reprenez un projet Remix existant ou si vous travaillez sur une boutique Shopify Hydrogen, les compétences restent directement utiles : les loaders, les actions et la structure de routes n'ont presque pas changé. Mais pour un projet qui démarre de zéro, autant partir sur React Router v7 (ou Next.js selon le contexte) : même architecture, communauté plus large, et un nom qui ne va pas disparaître des offres d'emploi dans deux ans.",
+    "longDescriptionEn": "Remix builds a React app around routes: each route owns its own data loading (loader), mutations (action), and rendering, with server rendering on by default. Instead of stacking hooks and useEffect calls to fetch data, you write code close to web standards (Request, Response, native HTML forms). That approach won over a lot of developers around 2021-2022, back when plenty of people were looking for something simpler than Next.js.\n\nSince late 2024, Remix doesn't really exist as a separate project anymore. Shopify, which had acquired the Remix team in 2022 to build Hydrogen (its headless commerce framework), folded Remix into React Router. React Router v7's \"framework mode\" is Remix's architecture (routes, loaders, actions, Vite-based server rendering), built by the same team (Ryan Florence and Michael Jackson). For a new project, the recommended starting command is create-react-router, not create-remix.\n\nSo what does this actually change for a freelancer in 2026? If you're maintaining an existing Remix codebase or working on a Shopify Hydrogen store, the skills carry over directly: loaders, actions, and route structure barely changed. But for a project starting from zero, you might as well go with React Router v7 (or Next.js, depending on the context): same architecture, a bigger community, and a name that won't quietly vanish from job listings in two years.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Gratuit et open source (licence MIT)",
+      "paid": ""
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Free and open source (MIT license)",
+      "paid": ""
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
@@ -92393,37 +92393,43 @@
     "websiteUrl": "https://remix.run",
     "logo": "",
     "seo": {
-      "metaDescription": "Remix sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Remix sur ToolTrim : ce qui reste pertinent en 2026 après la fusion dans React Router v7, et quand s'en servir encore."
     },
     "pros": [
-      "Rôle clair dans une stack métier",
-      "Écosystème reconnu",
-      "Pertinent pour livrer plus proprement"
+      "Architecture claire dès le départ : routes, loaders et actions imposent une structure cohérente",
+      "S'appuie sur les standards du web (fetch, FormData, Request/Response) plutôt que sur une couche maison",
+      "Migration vers React Router v7 annoncée comme simple pour les apps Remix v2 existantes",
+      "Reste la base technique de Shopify Hydrogen pour l'e-commerce headless"
     ],
     "prosEn": [
-      "Clear role in a professional stack",
-      "Recognized ecosystem",
-      "Useful for cleaner delivery"
+      "Clear architecture from day one: routes, loaders, and actions enforce a consistent structure",
+      "Built on web standards (fetch, FormData, Request/Response) instead of a custom abstraction layer",
+      "Migration to React Router v7 is described as straightforward for existing Remix v2 apps",
+      "Still the technical foundation behind Shopify Hydrogen for headless commerce"
     ],
     "cons": [
-      "Peut devenir inutile si le besoin est ponctuel",
-      "À éviter sans usage récurrent",
-      "Prix ou complexité à vérifier selon contexte"
+      "N'existe plus comme projet indépendant depuis sa fusion dans React Router (fin 2024)",
+      "Pour un nouveau projet, autant démarrer directement avec React Router v7",
+      "Documentation et tutoriels publiés sous le nom Remix deviennent peu à peu obsolètes",
+      "Peu pertinent si vous n'avez pas déjà une base Remix ou un projet Hydrogen"
     ],
     "consEn": [
-      "Can be unnecessary for occasional use",
-      "Avoid without recurring usage",
-      "Pricing or complexity depends on context"
+      "No longer exists as an independent project since merging into React Router (late 2024)",
+      "For a new project, you might as well start directly with React Router v7",
+      "Docs and tutorials published under the Remix name are gradually becoming outdated",
+      "Not very relevant if you don't already have a Remix codebase or a Hydrogen project"
     ],
     "useCases": [
-      "Stack développeur freelance",
-      "Production client",
-      "Maintenance et documentation"
+      "Maintenance d'une application Remix v2 existante pour un client",
+      "Développement ou personnalisation d'une boutique Shopify Hydrogen",
+      "Migration progressive d'un projet Remix vers React Router v7",
+      "Compréhension de l'architecture full-stack reprise par React Router v7"
     ],
     "useCasesEn": [
-      "Freelance developer stack",
-      "Client delivery",
-      "Maintenance and documentation"
+      "Maintaining an existing Remix v2 application for a client",
+      "Building or customizing a Shopify Hydrogen storefront",
+      "Gradually migrating a Remix project to React Router v7",
+      "Understanding the full-stack architecture now carried forward by React Router v7"
     ],
     "covers": [
       "nocode-web"
@@ -92434,25 +92440,38 @@
     "personas": [
       "THEO"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "react-router",
+      "tanstack-router",
+      "next-js"
+    ],
     "verdict": {
       "keepIf": [
-        "Usage récurrent",
-        "Impact direct sur le livrable",
-        "Rôle documenté dans la stack"
+        "Vous maintenez déjà une application Remix v2 pour un client",
+        "Vous développez sur Shopify Hydrogen"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Double emploi avec un outil déjà en place"
+        "Vous démarrez un nouveau projet : partez directement sur React Router v7",
+        "Vous cherchez un framework encore commercialisé activement sous ce nom"
       ],
-      "threshold": "À garder si l’outil réduit un risque, accélère une livraison ou clarifie la maintenance."
+      "threshold": "À garder uniquement si vous travaillez déjà sur une base Remix ou sur Hydrogen. Pour tout nouveau projet, passez par React Router v7, qui en reprend l'architecture."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You're already maintaining a Remix v2 app for a client",
+        "You're building on Shopify Hydrogen"
+      ],
+      "avoidIf": [
+        "You're starting a new project: go straight to React Router v7",
+        "You're looking for a framework still actively marketed under this name"
+      ],
+      "threshold": "Worth keeping only if you're already working on a Remix codebase or on Hydrogen. For any new project, go through React Router v7, which carries the same architecture forward."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "pertinent si le rôle est clair dans la mission",
-    "teamRelevance": "à structurer avec conventions et droits",
+    "soloRelevance": "Pertinent si vous maintenez déjà un projet Remix pour un client ou si vous travaillez sur une boutique Shopify Hydrogen. Pour un nouveau projet solo, partez sur React Router v7.",
+    "teamRelevance": "Une équipe qui démarre un projet aujourd'hui n'a aucune raison de choisir Remix plutôt que React Router v7, sauf contrainte spécifique (Hydrogen, dépendances historiques).",
     "tool_type": "metier",
     "substitutable": false,
     "host_app": null,
@@ -92464,7 +92483,12 @@
       "nocode-web"
     ],
     "ia_use_case": null,
-    "betterAlternative": null,
+    "betterAlternative": {
+      "tool": "react-router",
+      "reason": "Successeur direct de Remix depuis la fusion Shopify de 2024 (même équipe, même architecture). C'est la base à utiliser pour tout nouveau projet.",
+      "saving": 0,
+      "performanceGain": null
+    },
     "migrationGuide": null,
     "downgradePlan": null,
     "prescription_quality": "contextual",
