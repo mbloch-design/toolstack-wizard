@@ -6966,11 +6966,11 @@
     "bundle_parent": "adobe-cc",
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité.",
+    "shortDescription": "Nettoyage audio par IA : supprime le bruit et donne une voix de studio, gratuitement.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Gratuit (beta)",
-      "bundle": "Inclus dans Adobe CC"
+      "free": "Gratuit : 1h d'audio par jour, fichiers de 30 minutes",
+      "paid": "Premium à environ 10$/mois (fichiers 2h, vidéo, traitement par lots)"
     },
     "covers": [
       "montage-audio",
@@ -7001,38 +7001,68 @@
     "affiliateLink": "https://podcast.adobe.com",
     "verdict": {
       "keepIf": [
-        "Podcasts ou voix-off avec problèmes de bruit ambiant"
+        "Tu enregistres des voix dans des conditions non maîtrisées (bruit, écho)",
+        "Tu veux un débruitage de qualité sans payer ni abonnement Adobe"
       ],
       "avoidIf": [
-        "Descript couvre déjà ce besoin"
+        "Ton outil de montage (Descript) intègre déjà un bon débruitage",
+        "Tu as besoin de traiter de la vidéo ou de gros volumes : le gratuit est trop limité"
       ],
-      "threshold": "Gratuit — toujours pertinent si vous avez des problèmes audio."
+      "threshold": "Un filet de sécurité gratuit qui sauve des prises audio difficiles. Si ton outil de montage débruite déjà correctement, Adobe Podcast fait souvent double emploi."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Résultat bluffant sur des enregistrements bruités ou avec de l'écho",
+      "Version de base gratuite, sans abonnement Adobe",
+      "Utilisation simple : tu déposes un fichier, tu récupères une voix nette",
+      "Sauve des prises qu'on aurait sinon dû réenregistrer"
+    ],
+    "cons": [
+      "Version gratuite limitée à une heure d'audio par jour, fichiers de 30 minutes",
+      "Peut sur-traiter et donner un rendu artificiel sur certaines voix",
+      "Fonctions avancées (vidéo, lots, fichiers 2h) réservées au Premium à environ 10$/mois",
+      "Fait double emploi si ton outil de montage (Descript) débruite déjà"
+    ],
+    "useCases": [
+      "Nettoyer une interview ou un podcast enregistré dans une pièce qui résonne",
+      "Sauver une voix-off captée avec un micro d'ordinateur",
+      "Rattraper une prise avec du bruit de fond sans réenregistrer",
+      "Améliorer rapidement la voix avant montage"
+    ],
+    "seo": {
+      "metaDescription": "Adobe Podcast (Enhance Speech) en 2026 : vraiment gratuit ?, ses limites et ses alternatives pour nettoyer une voix par IA. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "creator"
+    ],
     "pricingTiers": {
-      "free": "Gratuit (beta)",
-      "bundle": "Inclus dans Adobe CC"
+      "free": "Gratuit : 1h d'audio par jour, fichiers de 30 minutes",
+      "paid": "Premium à environ 10$/mois (fichiers 2h, vidéo, traitement par lots)"
     },
-    "longDescription": "Adobe Podcast AI, c'est amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité. Entièrement gratuit. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : podcasts ou voix-off avec problèmes de bruit ambiant. À éviter si : descript couvre déjà ce besoin. Gratuit — toujours pertinent si vous avez des problèmes audio.",
-    "alternatives": [],
+    "longDescription": "Adobe Podcast (Enhance Speech), c'est un nettoyeur de voix par IA. Tu déposes un enregistrement avec de l'écho, du bruit de fond ou un micro moyen, et l'outil te renvoie une voix nette, comme enregistrée en studio. Le résultat est bluffant sur des conditions difficiles (chambre qui résonne, bruit de clim, micro d'ordinateur portable), au point d'être devenu un réflexe pour beaucoup de podcasteurs et de créateurs vidéo.\n\nLe gros argument, c'est que la version de base est gratuite, sans abonnement Adobe : tu peux traiter jusqu'à une heure d'audio par jour, par fichiers de 30 minutes. Pour aller plus loin (fichiers de 2 heures, traitement vidéo, traitement par lots, curseur d'intensité), il y a une formule Premium autour de 10$/mois.\n\nÀ qui ça sert vraiment : si tu enregistres des voix-off, des interviews ou des podcasts dans des conditions non maîtrisées, c'est un filet de sécurité gratuit qui sauve des prises. Si tu utilises déjà Descript ou une suite de montage complète, le débruitage y est souvent intégré, et Adobe Podcast fait alors double emploi. Mais comme point d'entrée gratuit, difficile de faire mieux.",
+    "alternatives": [
+      "descript",
+      "audacity",
+      "riverside"
+    ],
     "slug": "adobe-podcast-ai",
-    "shortDescriptionEn": "AI audio enhancement: noise removal, automatic EQ, studio quality.",
-    "description": "Adobe Podcast AI, c'est amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité. Entièrement gratuit. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : podcasts ou voix-off avec problèmes de bruit ambiant. À éviter si : descript couvre déjà ce besoin. Gratuit — toujours pertinent si vous avez des problèmes audio.",
-    "longDescriptionEn": "Adobe Podcast AI is aI audio enhancement: noise removal, automatic EQ, studio quality. Completely free. Built for podcasters and content creators.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI audio cleanup: removes noise and gives a studio-quality voice, for free.",
+    "description": "Adobe Podcast (Enhance Speech), c'est un nettoyeur de voix par IA. Tu déposes un enregistrement avec de l'écho, du bruit de fond ou un micro moyen, et l'outil te renvoie une voix nette, comme enregistrée en studio. Le résultat est bluffant sur des conditions difficiles (chambre qui résonne, bruit de clim, micro d'ordinateur portable), au point d'être devenu un réflexe pour beaucoup de podcasteurs et de créateurs vidéo.\n\nLe gros argument, c'est que la version de base est gratuite, sans abonnement Adobe : tu peux traiter jusqu'à une heure d'audio par jour, par fichiers de 30 minutes. Pour aller plus loin (fichiers de 2 heures, traitement vidéo, traitement par lots, curseur d'intensité), il y a une formule Premium autour de 10$/mois.\n\nÀ qui ça sert vraiment : si tu enregistres des voix-off, des interviews ou des podcasts dans des conditions non maîtrisées, c'est un filet de sécurité gratuit qui sauve des prises. Si tu utilises déjà Descript ou une suite de montage complète, le débruitage y est souvent intégré, et Adobe Podcast fait alors double emploi. Mais comme point d'entrée gratuit, difficile de faire mieux.",
+    "longDescriptionEn": "Adobe Podcast (Enhance Speech) is an AI voice cleaner. You drop in a recording with echo, background noise or a mediocre mic, and the tool hands back a clean voice, as if recorded in a studio. The result is striking in difficult conditions (a room that echoes, AC hum, a laptop mic), to the point of becoming a reflex for many podcasters and video creators.\n\nThe big argument is that the basic version is free, with no Adobe subscription: you can process up to one hour of audio per day, in 30-minute files. To go further (2-hour files, video processing, batch processing, an intensity slider), there's a Premium plan around $10/month.\n\nWho it's really for: if you record voiceovers, interviews or podcasts in uncontrolled conditions, it's a free safety net that saves takes. If you already use Descript or a full editing suite, denoising is often built in, and Adobe Podcast then duplicates it. But as a free entry point, it's hard to beat.",
+    "pricingEn": {
+      "free": "Free: 1h of audio per day, 30-minute files",
+      "paid": "Premium around $10/month (2h files, video, batch processing)"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Version de base gratuite : 1h d'audio par jour, fichiers de 30 minutes",
+        "Premium à environ 10$/mois pour la vidéo, les lots et les fichiers de 2h"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "podcast.adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -7045,10 +7075,35 @@
     },
     "websiteUrl": "https://podcast.adobe.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You record voices in uncontrolled conditions (noise, echo)",
+        "You want quality denoising without paying or an Adobe subscription"
+      ],
+      "avoidIf": [
+        "Your editing tool (Descript) already has good denoising built in",
+        "You need to process video or large volumes: the free tier is too limited"
+      ],
+      "threshold": "A free safety net that saves difficult audio takes. If your editing tool already denoises well, Adobe Podcast often duplicates it."
+    },
+    "prosEn": [
+      "Striking results on noisy recordings or ones with echo",
+      "Free basic version, no Adobe subscription",
+      "Simple to use: you drop a file, you get a clean voice back",
+      "Saves takes you'd otherwise have to re-record"
+    ],
+    "consEn": [
+      "Free version limited to one hour of audio per day, 30-minute files",
+      "Can over-process and sound artificial on some voices",
+      "Advanced features (video, batch, 2h files) reserved for Premium at around $10/month",
+      "Redundant if your editing tool (Descript) already denoises"
+    ],
+    "useCasesEn": [
+      "Clean an interview or podcast recorded in an echoey room",
+      "Save a voiceover captured on a laptop mic",
+      "Rescue a take with background noise without re-recording",
+      "Quickly improve the voice before editing"
+    ],
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
@@ -10418,21 +10473,26 @@
   {
     "id": "basecamp",
     "name": "Basecamp",
-    "shortDescription": "Logiciel de gestion de projet et de collaboration d’équipe.",
-    "description": "Basecamp, c'est logiciel de gestion de projet et de collaboration d’équipe. À partir de 12.99€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+    "description": "Basecamp, c'est l'un des plus anciens outils de gestion de projet, et il assume une philosophie à contre-courant : faire simple. Pas de diagrammes de Gantt, pas de mille options, juste des projets organisés en messages, to-dos, documents et un chat d'équipe (le Campfire). L'idée, c'est de remplacer l'éparpillement entre mails, Slack et fichiers par un seul endroit calme. Pour une équipe qui se noie dans la complexité de Jira ou ClickUp, c'est rafraîchissant.\n\nLa particularité, c'est le prix. À côté d'un plan Plus à 15$/utilisateur/mois, Basecamp propose un forfait Pro Unlimited à 299$/mois, utilisateurs illimités. Ce modèle change tout selon ta taille : pour une équipe de 5, payer 299$ n'a aucun sens ; pour une agence de 30 personnes, c'est imbattable. Un plan gratuit limité existe pour les petits projets.\n\nÀ qui ça convient : aux équipes qui veulent de la clarté plutôt que de la puissance, et aux structures de bonne taille qui profitent du forfait illimité. Si tu cherches un suivi fin de tâches techniques, des automatisations poussées ou des vues multiples, Notion, Asana ou ClickUp seront plus flexibles. Basecamp, c'est le choix de la simplicité assumée.",
     "category": "organization",
     "pricing": {
-      "free": "Free forever (1 project, up to 20 users)",
-      "paid": "USD 15/user/month (Basecamp Plus) or USD 299/month billed annually (Pro Unlimited)"
+      "free": "Plan gratuit limité (1 projet, jusqu'à 20 personnes)",
+      "paid": "Plus à 15$/utilisateur/mois, ou Pro Unlimited à 299$/mois (utilisateurs illimités)"
     },
     "website": "https://basecamp.com",
     "affiliateLink": "https://basecamp.com",
     "pros": [
-      "Spécialisé en project management",
-      "Interface professionnelle"
+      "Simplicité radicale : tout est rangé, rien ne déborde sur mille options",
+      "Forfait Pro Unlimited à prix fixe (299$/mois), imbattable pour une grande équipe",
+      "Remplace l'éparpillement entre mails, chat et fichiers par un seul endroit",
+      "Outil mûr et stable, sans course permanente aux fonctionnalités"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Trop basique pour un suivi de tâches technique ou un backlog produit",
+      "Le forfait à 299$/mois n'a de sens qu'à partir d'une vingtaine d'utilisateurs",
+      "Peu d'automatisations et de vues (pas de Gantt, pas de Kanban riche)",
+      "Notion, Asana ou ClickUp sont plus flexibles pour des besoins complexes"
     ],
     "bestFor": [
       "all"
@@ -10441,30 +10501,36 @@
       "project management"
     ],
     "freeAlternative": null,
-    "soloRelevance": "high",
+    "soloRelevance": "Surdimensionné pour un solo : Basecamp prend tout son sens en équipe ou en agence.",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 12.99,
+    "defaultMonthlyPrice": 15,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Plan gratuit limité (1 projet, jusqu'à 20 personnes)",
+      "paid": "Plus à 15$/utilisateur/mois, ou Pro Unlimited à 299$/mois (utilisateurs illimités)"
     },
     "relevantFor": [
-      "all"
+      "agence",
+      "pme",
+      "manager-dsi"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Ton équipe veut de la clarté et de la simplicité plutôt que de la puissance",
+        "Tu es une structure de bonne taille qui profite du forfait illimité à 299$"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'un suivi de tâches fin, d'automatisations ou de vues multiples",
+        "Tu es une petite équipe : le forfait illimité n'est pas rentable et le gratuit est limité"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Le bon choix pour une équipe qui veut de la simplicité, surtout au-dessus d'une vingtaine de personnes grâce au forfait illimité. Pour du suivi technique ou flexible, Notion, Asana ou ClickUp sont plus adaptés."
     },
-    "alternatives": [],
+    "alternatives": [
+      "trello",
+      "notion",
+      "asana"
+    ],
     "seo": {
-      "metaDescription": "Basecamp : Logiciel de gestion de projet et de collaboration d’équipe. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Basecamp en 2026 : prix réel (Plus 15$/user, Pro Unlimited 299$/mois) et alternatives. Pour quelle taille d'équipe c'est rentable, par ToolTrim."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -10483,17 +10549,18 @@
     "ia_use_case": null,
     "slug": "basecamp",
     "shortDescriptionEn": "Project management and team collaboration software.",
-    "longDescription": "Basecamp, c'est logiciel de gestion de projet et de collaboration d’équipe. À partir de 12.99€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Basecamp is project management and team collaboration software. Starting at €12.99/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: prices to check depending on usage. As soon as the tool saves you more than €15/month.",
+    "longDescription": "Basecamp, c'est l'un des plus anciens outils de gestion de projet, et il assume une philosophie à contre-courant : faire simple. Pas de diagrammes de Gantt, pas de mille options, juste des projets organisés en messages, to-dos, documents et un chat d'équipe (le Campfire). L'idée, c'est de remplacer l'éparpillement entre mails, Slack et fichiers par un seul endroit calme. Pour une équipe qui se noie dans la complexité de Jira ou ClickUp, c'est rafraîchissant.\n\nLa particularité, c'est le prix. À côté d'un plan Plus à 15$/utilisateur/mois, Basecamp propose un forfait Pro Unlimited à 299$/mois, utilisateurs illimités. Ce modèle change tout selon ta taille : pour une équipe de 5, payer 299$ n'a aucun sens ; pour une agence de 30 personnes, c'est imbattable. Un plan gratuit limité existe pour les petits projets.\n\nÀ qui ça convient : aux équipes qui veulent de la clarté plutôt que de la puissance, et aux structures de bonne taille qui profitent du forfait illimité. Si tu cherches un suivi fin de tâches techniques, des automatisations poussées ou des vues multiples, Notion, Asana ou ClickUp seront plus flexibles. Basecamp, c'est le choix de la simplicité assumée.",
+    "longDescriptionEn": "Basecamp is one of the oldest project management tools, and it embraces a contrarian philosophy: keep it simple. No Gantt charts, no thousand options, just projects organized into messages, to-dos, documents and a team chat (Campfire). The idea is to replace the scatter between email, Slack and files with one calm place. For a team drowning in the complexity of Jira or ClickUp, it's refreshing.\n\nThe distinctive part is the pricing. Alongside a Plus plan at $15/user/month, Basecamp offers a Pro Unlimited plan at $299/month, unlimited users. That model changes everything depending on your size: for a team of 5, paying $299 makes no sense; for a 30-person agency, it's unbeatable. A limited free plan exists for small projects.\n\nWho it suits: teams that want clarity over power, and good-sized organizations that benefit from the unlimited plan. If you want fine-grained technical task tracking, deep automations or multiple views, Notion, Asana or ClickUp will be more flexible. Basecamp is the deliberate choice of simplicity.",
     "pricingEn": {
-      "free": "Free forever (1 project, up to 20 users)",
-      "paid": "USD 15/user/month (Basecamp Plus) or USD 299/month billed annually (Pro Unlimited)"
+      "free": "Limited free plan (1 project, up to 20 people)",
+      "paid": "Plus at $15/user/month, or Pro Unlimited at $299/month (unlimited users)"
     },
     "pricing_v5": {
       "cautions": [
-        "compare_only_after_usage_or_scope_question"
+        "Plan gratuit limité à 1 projet et 20 personnes",
+        "Plus à 15$/utilisateur/mois, Pro Unlimited à 299$/mois (utilisateurs illimités)"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "basecamp.com",
       "usage_sensitive": true,
       "compare_plan_kind": "hybrid",
@@ -10502,34 +10569,49 @@
       "location_sensitive": false,
       "official_source_url": "https://basecamp.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12.99
+      "compare_price_monthly_eur": 15
     },
     "websiteUrl": "https://basecamp.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your team wants clarity and simplicity over power",
+        "You're a good-sized organization that benefits from the $299 unlimited plan"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need fine-grained task tracking, automations or multiple views",
+        "You're a small team: the unlimited plan isn't worth it and the free one is limited"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "The right call for a team that wants simplicity, especially above twenty people thanks to the unlimited plan. For technical or flexible tracking, Notion, Asana or ClickUp fit better."
     },
     "prosEn": [
-      "Specialized in project management",
-      "Professional interface"
+      "Radical simplicity: everything tidy, no spillover into a thousand options",
+      "Flat-rate Pro Unlimited ($299/month), unbeatable for a large team",
+      "Replaces the scatter of email, chat and files with a single place",
+      "Mature, stable tool with no constant feature race"
     ],
     "consEn": [
-      "Prices to check depending on usage"
+      "Too basic for technical task tracking or a product backlog",
+      "The $299/month plan only makes sense from around twenty users",
+      "Few automations and views (no Gantt, no rich Kanban)",
+      "Notion, Asana or ClickUp are more flexible for complex needs"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser les projets d'une équipe ou d'une agence en un seul endroit",
+      "Remplacer le mélange mails + Slack + fichiers par un espace unique",
+      "Suivre des projets clients avec messages, to-dos et documents",
+      "Collaborer simplement sans former l'équipe à un outil complexe"
+    ],
+    "useCasesEn": [
+      "Centralize a team's or agency's projects in one place",
+      "Replace the email + Slack + files mix with a single space",
+      "Track client projects with messages, to-dos and documents",
+      "Collaborate simply without training the team on a complex tool"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "prix-non-vérifié",
