@@ -27085,10 +27085,10 @@
     "host_app": null,
     "category": "analytics",
     "shortDescription": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
-    "defaultMonthlyPrice": 27.71,
+    "defaultMonthlyPrice": 32,
     "pricing": {
-      "free": "35 sessions/jour",
-      "paid": "32$/mois (Plus)"
+      "free": "Offre gratuite limitée (longtemps 35 sessions par jour)",
+      "paid": "Plus à environ 32$/mois, Business au-delà"
     },
     "covers": [
       "tests-utilisateurs",
@@ -27114,10 +27114,10 @@
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
     "betterAlternative": {
-      "tool": "posthog",
-      "reason": "tout-en-un",
-      "saving": 0,
-      "performanceGain": "PostHog combine replays + analytics produit + feature flags en open source"
+      "tool": "microsoft-clarity",
+      "reason": "Microsoft Clarity propose heatmaps et replays de sessions gratuitement, sans limite de sessions.",
+      "saving": 32,
+      "performanceGain": null
     },
     "migrationGuide": null,
     "downgradePlan": {
@@ -27127,64 +27127,112 @@
     "affiliateLink": "https://hotjar.com",
     "verdict": {
       "keepIf": [
-        "Site existant avec besoin de comprendre les parcours utilisateurs"
+        "Tu veux comprendre le comportement réel des visiteurs (heatmaps, replays)",
+        "Tu apprécies les sondages intégrés et une prise en main simple"
       ],
       "avoidIf": [
-        "PostHog déjà en place — doublon replays"
+        "Le budget compte : Microsoft Clarity fait heatmaps et replays gratuitement",
+        "Tu es une équipe tech : PostHog combine replays, analytics produit et feature flags"
       ],
-      "threshold": "Free tier suffisant pour la plupart des projets."
+      "threshold": "Bon pour comprendre le comportement utilisateur simplement. Mais Microsoft Clarity offre heatmaps et replays gratuitement, et PostHog va plus loin pour une équipe tech : compare avant de payer."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Heatmaps et replays de sessions pour voir ce que font vraiment les visiteurs",
+      "Sondages et retours utilisateurs intégrés au même outil",
+      "Complément concret à Google Analytics : le pourquoi, pas juste le quoi",
+      "Simple à installer et à comprendre, même sans profil data"
+    ],
+    "cons": [
+      "L'offre gratuite est limitée, là où Microsoft Clarity est gratuit et sans plafond",
+      "Gamme réorganisée depuis le rachat par Contentsquare, tarifs moins lisibles",
+      "Fait doublon si tu utilises déjà PostHog ou Clarity pour les replays",
+      "Les plans payants grimpent vite avec le volume de sessions"
+    ],
+    "useCases": [
+      "Comprendre pourquoi une page convertit mal en rejouant des sessions",
+      "Repérer les zones ignorées ou les blocages via les heatmaps",
+      "Recueillir des retours utilisateurs avec des sondages sur le site",
+      "Prioriser des améliorations UX à partir d'observations réelles"
+    ],
+    "seo": {
+      "metaDescription": "Hotjar en 2026 : prix, limites de l'offre gratuite et alternatives gratuites (Microsoft Clarity, PostHog). Le verdict ToolTrim sur l'analyse comportementale."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "designer",
+      "product-manager",
+      "ecommercant"
+    ],
     "pricingTiers": {
-      "free": "35 sessions/jour",
-      "paid": "32$/mois (Plus)"
+      "free": "Offre gratuite limitée (longtemps 35 sessions par jour)",
+      "paid": "Plus à environ 32$/mois, Business au-delà"
     },
-    "longDescription": "Hotjar, c'est heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur. À partir de 27.71€/mois. Pensé pour les designers UX/UI et les product managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : site existant avec besoin de comprendre les parcours utilisateurs. À éviter si : postHog déjà en place — doublon replays. Free tier suffisant pour la plupart des projets. Si le budget le permet, posthog va plus loin.",
-    "alternatives": [],
+    "longDescription": "Hotjar, c'est l'outil qui te montre ce que tes visiteurs font vraiment sur ton site. Heatmaps (où ils cliquent et s'arrêtent), replays de sessions (rejouer le parcours d'un vrai utilisateur), sondages et retours en direct : au lieu de deviner pourquoi une page convertit mal, tu observes. Pour un designer, un PM ou un e-commerçant, c'est un complément concret aux chiffres de Google Analytics, qui disent le quoi mais pas le pourquoi.\n\nCôté prix, il y a une offre gratuite (longtemps limitée à 35 sessions par jour), puis des plans Plus autour de 32$/mois et Business au-delà. À noter : Hotjar appartient désormais à Contentsquare, et la gamme se réorganise progressivement entre plusieurs produits (Observe pour le comportement, Ask pour les sondages), ce qui peut compliquer la lecture des tarifs.\n\nLa vraie question, c'est l'alternative. Microsoft Clarity fait des heatmaps et des replays gratuitement et sans limite, ce qui en fait un concurrent redoutable si le budget compte. PostHog va plus loin en combinant replays, analytics produit et feature flags, intéressant si tu es une équipe tech. Hotjar reste un bon choix pour sa simplicité et ses sondages intégrés, mais ce n'est plus l'évidence gratuite qu'on croit.",
+    "alternatives": [
+      "microsoft-clarity",
+      "posthog"
+    ],
     "slug": "hotjar",
     "shortDescriptionEn": "Heatmaps, session replays, and surveys to understand user behaviour.",
-    "description": "Hotjar, c'est heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur. À partir de 27.71€/mois. Pensé pour les designers UX/UI et les product managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : site existant avec besoin de comprendre les parcours utilisateurs. À éviter si : postHog déjà en place — doublon replays. Free tier suffisant pour la plupart des projets. Si le budget le permet, posthog va plus loin.",
-    "longDescriptionEn": "Hotjar is heatmaps, session replays, and surveys to understand user behaviour. Starting at €27.71/month. Built for UX/UI designers and product managers.\n\nEstimated time saving: 4h/month.\n\nIf budget allows, posthog goes further.",
-    "pricingEn": null,
+    "description": "Hotjar, c'est l'outil qui te montre ce que tes visiteurs font vraiment sur ton site. Heatmaps (où ils cliquent et s'arrêtent), replays de sessions (rejouer le parcours d'un vrai utilisateur), sondages et retours en direct : au lieu de deviner pourquoi une page convertit mal, tu observes. Pour un designer, un PM ou un e-commerçant, c'est un complément concret aux chiffres de Google Analytics, qui disent le quoi mais pas le pourquoi.\n\nCôté prix, il y a une offre gratuite (longtemps limitée à 35 sessions par jour), puis des plans Plus autour de 32$/mois et Business au-delà. À noter : Hotjar appartient désormais à Contentsquare, et la gamme se réorganise progressivement entre plusieurs produits (Observe pour le comportement, Ask pour les sondages), ce qui peut compliquer la lecture des tarifs.\n\nLa vraie question, c'est l'alternative. Microsoft Clarity fait des heatmaps et des replays gratuitement et sans limite, ce qui en fait un concurrent redoutable si le budget compte. PostHog va plus loin en combinant replays, analytics produit et feature flags, intéressant si tu es une équipe tech. Hotjar reste un bon choix pour sa simplicité et ses sondages intégrés, mais ce n'est plus l'évidence gratuite qu'on croit.",
+    "longDescriptionEn": "Hotjar is the tool that shows you what your visitors actually do on your site. Heatmaps (where they click and stop), session replays (replay a real user's journey), surveys and live feedback: instead of guessing why a page converts poorly, you observe. For a designer, a PM or an e-commerce owner, it's a concrete complement to Google Analytics figures, which tell the what but not the why.\n\nOn pricing, there's a free tier (long limited to 35 sessions per day), then Plus plans around $32/month and Business above. Note: Hotjar now belongs to Contentsquare, and the lineup is gradually reorganizing across several products (Observe for behavior, Ask for surveys), which can make pricing harder to read.\n\nThe real question is the alternative. Microsoft Clarity does heatmaps and replays for free with no limit, making it a formidable competitor if budget matters. PostHog goes further by combining replays, product analytics and feature flags, interesting if you're a tech team. Hotjar remains a good choice for its simplicity and built-in surveys, but it's no longer the free no-brainer people assume.",
+    "pricingEn": {
+      "free": "Limited free tier (long capped at 35 sessions per day)",
+      "paid": "Plus at around $32/month, Business above"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Offre gratuite limitée (longtemps 35 sessions par jour)",
+        "Plus à environ 32$/mois, Business au-delà",
+        "Hotjar appartient à Contentsquare : gamme et tarifs en réorganisation"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "support.contentsquare.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Plus",
       "price_reliability": "medium",
       "location_sensitive": false,
       "official_source_url": "https://support.contentsquare.com/hc/en-us/articles/37271913608721-Hotjar-is-now-part-of-Contentsquare-Plans-and-Pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 27.71
+      "compare_price_monthly_eur": 32
     },
     "websiteUrl": "https://hotjar.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "ferme",
-    "prescription_output": {
-      "mode": "replace_for_cost",
-      "action": "replace",
-      "confidence": "medium",
-      "verified_on": "2026-03-13",
-      "price_alt_eur": 0,
-      "price_tool_eur": 27.71,
-      "gain_annual_eur": 332.52,
-      "gain_monthly_eur": 27.71,
-      "replacement_tool": "datadog"
+    "verdictEn": {
+      "keepIf": [
+        "You want to understand real visitor behavior (heatmaps, replays)",
+        "You value built-in surveys and a simple setup"
+      ],
+      "avoidIf": [
+        "Budget matters: Microsoft Clarity does heatmaps and replays for free",
+        "You're a tech team: PostHog combines replays, product analytics and feature flags"
+      ],
+      "threshold": "Good for understanding user behavior simply. But Microsoft Clarity offers heatmaps and replays for free, and PostHog goes further for a tech team: compare before paying."
     },
+    "prosEn": [
+      "Heatmaps and session replays to see what visitors actually do",
+      "Surveys and user feedback built into the same tool",
+      "A concrete complement to Google Analytics: the why, not just the what",
+      "Simple to install and understand, even without a data background"
+    ],
+    "consEn": [
+      "The free tier is limited, whereas Microsoft Clarity is free with no cap",
+      "Lineup reorganized since the Contentsquare acquisition, pricing less readable",
+      "Redundant if you already use PostHog or Clarity for replays",
+      "Paid plans climb fast with session volume"
+    ],
+    "useCasesEn": [
+      "Understand why a page converts poorly by replaying sessions",
+      "Spot ignored areas or blockers via heatmaps",
+      "Collect user feedback with on-site surveys",
+      "Prioritize UX improvements from real observations"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": "analytics",
@@ -52496,11 +52544,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "analytics",
-    "shortDescription": "Monitoring des erreurs et performance applicative. Le standard des devs.",
-    "defaultMonthlyPrice": 22.52,
+    "shortDescription": "Suivi des erreurs et de la performance des applications, le standard des développeurs.",
+    "defaultMonthlyPrice": 26,
     "pricing": {
-      "free": "5k erreurs/mois",
-      "paid": "26$/mois (Team)"
+      "free": "Plan Developer gratuit (jusqu'à 5 000 erreurs/mois, 1 utilisateur)",
+      "paid": "Team à 26$/mois, Business à 80$, facturation à l'événement"
     },
     "covers": [
       "bug-tracking",
@@ -52534,64 +52582,109 @@
     "affiliateLink": "https://sentry.io",
     "verdict": {
       "keepIf": [
-        "Toute application en production — incontournable"
+        "Tu mets du code en production et tu veux être alerté des erreurs en temps réel",
+        "Tu suis la stabilité et la performance de ton app au quotidien"
       ],
       "avoidIf": [
-        "Jamais — free tier généreux pour démarrer"
+        "Tu n'as encore rien en production",
+        "Tu utilises déjà une suite de monitoring complète comme Datadog"
       ],
-      "threshold": "Free tier suffisant pour la plupart des projets solo."
+      "threshold": "Quasi incontournable dès qu'une app est en production. Le plan gratuit suffit pour un projet solo ; surveille la facture à l'usage quand le volume d'erreurs grimpe."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Alerte en temps réel sur les erreurs, avec stack trace et contexte complet",
+      "Plan gratuit généreux, suffisant pour un side-project ou un petit site",
+      "Couvre erreurs, performance et suivi des releases au même endroit",
+      "Standard des devs : intégrations partout et documentation solide"
+    ],
+    "cons": [
+      "Facturation à l'événement : la note grimpe vite avec le volume",
+      "Le plan gratuit est limité à un utilisateur",
+      "Peut faire doublon avec une suite de monitoring plus large (Datadog)",
+      "Configuration fine nécessaire pour éviter le bruit d'alertes"
+    ],
+    "useCases": [
+      "Être alerté en temps réel quand une app de production plante",
+      "Diagnostiquer un bug avec la stack trace et le contexte utilisateur",
+      "Suivre les erreurs introduites par une nouvelle release",
+      "Repérer les requêtes lentes et les problèmes de performance"
+    ],
+    "seo": {
+      "metaDescription": "Sentry en 2026 : plan gratuit, prix réels (Team 26$/mois) et alternatives. L'outil de suivi des erreurs pour développeurs, analysé par ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "dev-freelance",
+      "dev-fullstack",
+      "cto-lead-tech"
+    ],
     "pricingTiers": {
-      "free": "5k erreurs/mois",
-      "paid": "26$/mois (Team)"
+      "free": "Plan Developer gratuit (jusqu'à 5 000 erreurs/mois, 1 utilisateur)",
+      "paid": "Team à 26$/mois, Business à 80$, facturation à l'événement"
     },
-    "longDescription": "Sentry, c'est monitoring des erreurs et performance applicative. Le standard des devs. À partir de 22.52€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : toute application en production — incontournable. À éviter si : jamais — free tier généreux pour démarrer. Free tier suffisant pour la plupart des projets solo.",
-    "alternatives": [],
+    "longDescription": "Sentry, c'est l'outil qui te prévient quand ton application plante, avant que tes utilisateurs ne t'écrivent. Au lieu de découvrir un bug dans les retours clients, tu reçois l'erreur en temps réel, avec la stack trace, le contexte (navigateur, version, utilisateur concerné) et souvent la ligne de code fautive. Il couvre aussi la performance (requêtes lentes, transactions) et le suivi des releases. Pour quasiment toute app en production, c'est devenu un réflexe.\n\nLe modèle est généreux pour démarrer : un plan Developer gratuit (jusqu'à 5 000 erreurs par mois, un utilisateur) suffit pour un side-project ou un petit site. Au-delà, le plan Team démarre à 26$/mois et Business à 80$, avec une facturation à l'événement : plus tu envoies d'erreurs, de transactions et de session replays, plus ça monte. C'est le piège classique des outils à l'usage, à surveiller quand le trafic grimpe.\n\nÀ qui ça s'adresse : à tout dev ou équipe qui met du code en production et veut dormir tranquille. Pour un projet solo, le gratuit couvre largement. Pour une équipe, Sentry se justifie vite, même si une suite de monitoring plus large comme Datadog peut faire double emploi si tu l'as déjà.",
+    "alternatives": [
+      "datadog"
+    ],
     "slug": "sentry",
-    "shortDescriptionEn": "Error monitoring and application performance. The developer standard.",
-    "description": "Sentry, c'est monitoring des erreurs et performance applicative. Le standard des devs. À partir de 22.52€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : toute application en production — incontournable. À éviter si : jamais — free tier généreux pour démarrer. Free tier suffisant pour la plupart des projets solo.",
-    "longDescriptionEn": "Sentry is error monitoring and application performance. The developer standard. Starting at €22.52/month. Built for solo developers and CTOs and tech leads.\n\nEstimated time saving: 4h/month.\n\nKeep it if: any application in production — essential. Skip it if: jamais — free tier généreux pour démarrer. The free tier is sufficient for most solo projects.",
+    "shortDescriptionEn": "Error and performance monitoring for apps, the developer standard.",
+    "description": "Sentry, c'est l'outil qui te prévient quand ton application plante, avant que tes utilisateurs ne t'écrivent. Au lieu de découvrir un bug dans les retours clients, tu reçois l'erreur en temps réel, avec la stack trace, le contexte (navigateur, version, utilisateur concerné) et souvent la ligne de code fautive. Il couvre aussi la performance (requêtes lentes, transactions) et le suivi des releases. Pour quasiment toute app en production, c'est devenu un réflexe.\n\nLe modèle est généreux pour démarrer : un plan Developer gratuit (jusqu'à 5 000 erreurs par mois, un utilisateur) suffit pour un side-project ou un petit site. Au-delà, le plan Team démarre à 26$/mois et Business à 80$, avec une facturation à l'événement : plus tu envoies d'erreurs, de transactions et de session replays, plus ça monte. C'est le piège classique des outils à l'usage, à surveiller quand le trafic grimpe.\n\nÀ qui ça s'adresse : à tout dev ou équipe qui met du code en production et veut dormir tranquille. Pour un projet solo, le gratuit couvre largement. Pour une équipe, Sentry se justifie vite, même si une suite de monitoring plus large comme Datadog peut faire double emploi si tu l'as déjà.",
+    "longDescriptionEn": "Sentry is the tool that warns you when your application crashes, before your users email you. Instead of finding a bug in client feedback, you get the error in real time, with the stack trace, the context (browser, version, affected user) and often the offending line of code. It also covers performance (slow queries, transactions) and release tracking. For nearly any app in production, it's become a reflex.\n\nThe model is generous to start: a free Developer plan (up to 5,000 errors per month, one user) is enough for a side-project or a small site. Beyond that, the Team plan starts at $26/month and Business at $80, with event-based billing: the more errors, transactions and session replays you send, the higher it climbs. It's the classic usage-based trap, worth watching as traffic grows.\n\nWho it's for: any developer or team shipping code to production who wants to sleep soundly. For a solo project, the free tier covers plenty. For a team, Sentry quickly pays off, even if a broader monitoring suite like Datadog may overlap if you already have it.",
     "pricingEn": {
-      "free": "5k errors/month",
-      "paid": "$26/month (Team)"
+      "free": "Free Developer plan (up to 5,000 errors/month, 1 user)",
+      "paid": "Team at $26/month, Business at $80, event-based billing"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Plan Developer gratuit jusqu'à 5 000 erreurs/mois et 1 utilisateur",
+        "Team à 26$/mois, Business à 80$, facturation à l'événement"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "sentry.io",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Team",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://sentry.io/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 22.52
+      "compare_price_monthly_eur": 26
     },
     "websiteUrl": "https://sentry.io",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Any application in production — essential"
+        "You ship code to production and want real-time error alerts",
+        "You track your app's stability and performance daily"
       ],
       "avoidIf": [
-        "Jamais — free tier généreux pour démarrer"
+        "You don't have anything in production yet",
+        "You already use a full monitoring suite like Datadog"
       ],
-      "threshold": "The free tier is sufficient for most solo projects."
+      "threshold": "Near-essential once an app is in production. The free tier is enough for a solo project; watch the usage-based bill as error volume grows."
     },
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "prosEn": [
+      "Real-time alerts on errors, with stack trace and full context",
+      "Generous free plan, enough for a side-project or a small site",
+      "Covers errors, performance and release tracking in one place",
+      "Developer standard: integrations everywhere and solid documentation"
+    ],
+    "consEn": [
+      "Event-based billing: the bill climbs fast with volume",
+      "The free plan is limited to one user",
+      "Can overlap with a broader monitoring suite (Datadog)",
+      "Careful configuration needed to avoid alert noise"
+    ],
+    "useCasesEn": [
+      "Get real-time alerts when a production app crashes",
+      "Diagnose a bug with the stack trace and user context",
+      "Track errors introduced by a new release",
+      "Spot slow queries and performance issues"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
