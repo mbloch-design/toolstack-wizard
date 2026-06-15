@@ -18184,8 +18184,8 @@
     "shortDescription": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "5 hosts, 1 jour rétention",
-      "paid": "15$/host/mois"
+      "free": "Gratuit jusqu'à 5 hosts, 1 jour de rétention",
+      "paid": "Pro à 15$/host/mois, plus facturation à l'usage (logs, APM, etc.)"
     },
     "covers": [
       "observabilite",
@@ -18209,7 +18209,7 @@
       "marc"
     ],
     "timeGainedHoursPerMonth": 5,
-    "freeAlternative": "sentry",
+    "freeAlternative": "Sentry",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": {
@@ -18219,38 +18219,68 @@
     "affiliateLink": "https://datadoghq.com",
     "verdict": {
       "keepIf": [
-        "Infrastructure cloud complexe avec besoin d'alerting"
+        "Tu exploites une infrastructure cloud complexe avec plusieurs services",
+        "Tu veux tout voir au même endroit : logs, métriques, traces, alertes"
       ],
       "avoidIf": [
-        "Stack simple — Sentry gratuit suffit pour les erreurs"
+        "Ta stack est simple : Sentry gratuit suffit pour les erreurs",
+        "Tu veux une facture prévisible : Datadog à l'usage peut exploser"
       ],
-      "threshold": "Pertinent à partir de 3+ services en production."
+      "threshold": "Pertinent dès que tu pilotes plusieurs services en production et que l'observabilité unifiée compte. Pour une petite stack, Sentry (erreurs) ou des outils open source coûtent bien moins."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Observabilité unifiée : logs, métriques, APM, traces et alertes au même endroit",
+      "Plus de 700 intégrations, branché sur quasiment toute infrastructure",
+      "Dashboards et alerting très puissants pour les équipes ops",
+      "Offre gratuite jusqu'à 5 hosts pour démarrer"
+    ],
+    "cons": [
+      "Facturation à l'usage réputée imprévisible : les factures surprennent souvent",
+      "Coût qui explose vite avec le volume de logs et le nombre de hosts",
+      "Surdimensionné pour une petite stack : Sentry suffit pour les erreurs",
+      "Configuration et prise en main exigeantes"
+    ],
+    "useCases": [
+      "Surveiller une infrastructure cloud multi-services en temps réel",
+      "Centraliser logs, métriques et traces d'une application distribuée",
+      "Mettre en place des alertes sur la santé et la performance",
+      "Diagnostiquer un incident de production de bout en bout"
+    ],
+    "seo": {
+      "metaDescription": "Datadog en 2026 : offre gratuite, prix à l'usage (pourquoi la facture surprend) et alternatives (Sentry). Le verdict ToolTrim sur l'observabilité."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "dev-fullstack",
+      "cto-lead-tech",
+      "fondateur-saas"
+    ],
     "pricingTiers": {
-      "free": "5 hosts, 1 jour rétention",
-      "paid": "15$/host/mois"
+      "free": "Gratuit jusqu'à 5 hosts, 1 jour de rétention",
+      "paid": "Pro à 15$/host/mois, plus facturation à l'usage (logs, APM, etc.)"
     },
-    "longDescription": "Datadog, c'est observabilité complète : logs, métriques, APM, alertes en temps réel. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les CTOs et leads tech et les développeurs solo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : infrastructure cloud complexe avec besoin d'alerting. À éviter si : stack simple — Sentry gratuit suffit pour les erreurs. Pertinent à partir de 3+ services en production. Alternative gratuite : sentry.",
-    "alternatives": [],
+    "longDescription": "Datadog, c'est la plateforme d'observabilité de référence pour les équipes qui font tourner de l'infrastructure cloud. Logs, métriques serveur, APM (traces applicatives), monitoring réseau, alertes : tout est centralisé dans une seule interface, avec plus de 700 intégrations. Pour une équipe ops ou un CTO qui veut tout voir d'un coup d'œil quand un service ralentit, c'est extrêmement puissant.\n\nLe vrai sujet, c'est le prix. L'offre gratuite (jusqu'à 5 hosts) permet de tester, mais dès qu'on passe en payant, la facturation est à l'usage : par host, par Go de logs, par fonction activée. C'est connu pour produire des factures qui surprennent, parfois violemment, quand le volume grimpe. Beaucoup d'équipes se font piéger en activant tout sans surveiller la note.\n\nÀ qui ça s'adresse : aux équipes avec une vraie infrastructure distribuée, plusieurs services en production, où l'observabilité unifiée fait gagner un temps précieux en incident. Pour une petite stack ou un side-project, c'est surdimensionné : Sentry couvre les erreurs pour bien moins cher, et des outils open source comme Prometheus font le monitoring gratuitement.",
+    "alternatives": [
+      "sentry",
+      "prometheus"
+    ],
     "slug": "datadog",
     "shortDescriptionEn": "Full observability: logs, metrics, APM, real-time alerts.",
-    "description": "Datadog, c'est observabilité complète : logs, métriques, APM, alertes en temps réel. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les CTOs et leads tech et les développeurs solo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : infrastructure cloud complexe avec besoin d'alerting. À éviter si : stack simple — Sentry gratuit suffit pour les erreurs. Pertinent à partir de 3+ services en production. Alternative gratuite : sentry.",
-    "longDescriptionEn": "Datadog is full observability: logs, metrics, APM, real-time alerts. Free to start, paid plans for more. Built for CTOs and tech leads and solo developers.\n\nEstimated time saving: 5h/month.\n\nFree alternative: sentry.",
-    "pricingEn": null,
+    "description": "Datadog, c'est la plateforme d'observabilité de référence pour les équipes qui font tourner de l'infrastructure cloud. Logs, métriques serveur, APM (traces applicatives), monitoring réseau, alertes : tout est centralisé dans une seule interface, avec plus de 700 intégrations. Pour une équipe ops ou un CTO qui veut tout voir d'un coup d'œil quand un service ralentit, c'est extrêmement puissant.\n\nLe vrai sujet, c'est le prix. L'offre gratuite (jusqu'à 5 hosts) permet de tester, mais dès qu'on passe en payant, la facturation est à l'usage : par host, par Go de logs, par fonction activée. C'est connu pour produire des factures qui surprennent, parfois violemment, quand le volume grimpe. Beaucoup d'équipes se font piéger en activant tout sans surveiller la note.\n\nÀ qui ça s'adresse : aux équipes avec une vraie infrastructure distribuée, plusieurs services en production, où l'observabilité unifiée fait gagner un temps précieux en incident. Pour une petite stack ou un side-project, c'est surdimensionné : Sentry couvre les erreurs pour bien moins cher, et des outils open source comme Prometheus font le monitoring gratuitement.",
+    "longDescriptionEn": "Datadog is the reference observability platform for teams running cloud infrastructure. Logs, server metrics, APM (application traces), network monitoring, alerts: everything is centralized in one interface, with over 700 integrations. For an ops team or a CTO who wants to see everything at a glance when a service slows down, it's extremely powerful.\n\nThe real issue is the price. The free tier (up to 5 hosts) lets you test, but once you go paid, billing is usage-based: per host, per GB of logs, per enabled feature. It's known for producing bills that surprise, sometimes harshly, as volume grows. Many teams get caught enabling everything without watching the meter.\n\nWho it's for: teams with real distributed infrastructure, several services in production, where unified observability saves precious time during incidents. For a small stack or a side-project, it's overkill: Sentry covers errors for far less, and open-source tools like Prometheus handle monitoring for free.",
+    "pricingEn": {
+      "free": "Free up to 5 hosts, 1-day retention",
+      "paid": "Pro at $15/host/month, plus usage-based billing (logs, APM, etc.)"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Offre gratuite jusqu'à 5 hosts, 1 jour de rétention",
+        "Facturation à l'usage : la note grimpe vite avec les hosts et le volume de logs"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "datadoghq.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -18263,11 +18293,36 @@
     },
     "websiteUrl": "https://datadoghq.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You run complex cloud infrastructure with several services",
+        "You want everything in one place: logs, metrics, traces, alerts"
+      ],
+      "avoidIf": [
+        "Your stack is simple: free Sentry is enough for errors",
+        "You want a predictable bill: usage-based Datadog can explode"
+      ],
+      "threshold": "Relevant once you run several services in production and unified observability matters. For a small stack, Sentry (errors) or open-source tools cost far less."
+    },
+    "prosEn": [
+      "Unified observability: logs, metrics, APM, traces and alerts in one place",
+      "Over 700 integrations, plugged into almost any infrastructure",
+      "Very powerful dashboards and alerting for ops teams",
+      "Free tier up to 5 hosts to start"
+    ],
+    "consEn": [
+      "Usage-based billing known to be unpredictable: bills often surprise",
+      "Cost explodes fast with log volume and host count",
+      "Overkill for a small stack: Sentry is enough for errors",
+      "Demanding setup and learning curve"
+    ],
+    "useCasesEn": [
+      "Monitor a multi-service cloud infrastructure in real time",
+      "Centralize logs, metrics and traces of a distributed application",
+      "Set up alerts on health and performance",
+      "Diagnose a production incident end to end"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
