@@ -362,6 +362,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       })
       .slice(0, 6);
   }, [activeMoment, selectedIds, session.persona, tools]);
+  const pendingTool = useMemo(() => {
+    if (!pendingToolId) return null;
+    return allKnownTools.find((tool) => tool.id === pendingToolId) || null;
+  }, [allKnownTools, pendingToolId]);
 
   const coverageCount = momentCoverage.filter((moment) => moment.covered || moment.skipped).length;
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
@@ -430,6 +434,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       });
       return prev;
     });
+  };
+
+  const cancelPendingTool = () => {
+    if (!pendingToolId) return;
+    onTrack?.("selector_tool_plan_cancelled", {
+      tool_id: pendingToolId,
+      moment_id: activeMoment.id,
+      selected_count: selectedTools.length,
+    });
+    setPendingToolId(null);
   };
 
   const confirmToolWithOffer = (
@@ -825,6 +839,14 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </p>
           </div>
 
+          {pendingTool && (
+            <PlanFocusBanner
+              tool={pendingTool}
+              onCancel={cancelPendingTool}
+              t={t}
+            />
+          )}
+
           <div className="mt-6 space-y-3">
             <div className="relative">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -900,6 +922,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     tool={tool}
                     selectedTool={selectedToolsById.get(tool.id)}
                     pending={pendingToolId === tool.id}
+                    muted={Boolean(pendingToolId && pendingToolId !== tool.id)}
                     onToggle={() => toggleTool(tool, "suggestion")}
                     onOfferChange={(offer) => updateSelectedToolOffer(tool.id, offer)}
                     onConfirmOffer={(offer) => confirmToolWithOffer(tool, offer, "suggestion")}
@@ -1026,6 +1049,7 @@ function ToolChoiceButton({
   tool,
   selectedTool,
   pending = false,
+  muted = false,
   onToggle,
   onOfferChange,
   onConfirmOffer,
@@ -1034,6 +1058,7 @@ function ToolChoiceButton({
   tool: Tool;
   selectedTool?: Tool;
   pending?: boolean;
+  muted?: boolean;
   onToggle: () => void;
   onOfferChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
   onConfirmOffer: (offer: NonNullable<Tool["selectedOffer"]>) => void;
@@ -1049,12 +1074,14 @@ function ToolChoiceButton({
       data-stack-tool-card-id={tool.id}
       data-pricing-tool-id={tool.id}
       tabIndex={-1}
-      className={`group h-[146px] rounded-2xl border p-3 shadow-sm transition-colors duration-200 ${
+      className={`group h-[146px] rounded-2xl border p-3 shadow-sm transition-all duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
           : pending
-            ? "border-foreground bg-card ring-2 ring-[hsl(var(--diag-yellow)/0.32)]"
-          : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
+            ? "border-foreground bg-card ring-4 ring-[hsl(var(--diag-yellow)/0.34)] shadow-lg"
+          : muted
+            ? "border-border bg-background opacity-45 hover:opacity-80"
+            : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
       }`}
     >
       <button
@@ -1086,8 +1113,8 @@ function ToolChoiceButton({
             <Check className="h-3.5 w-3.5" />
           </span>
         ) : pending ? (
-          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-foreground text-foreground">
-            <ChevronRight className="h-4 w-4" />
+          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--diag-yellow))] font-mono text-xs font-bold text-[hsl(var(--diag-ink))]">
+            2
           </span>
         ) : (
           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
@@ -1101,7 +1128,8 @@ function ToolChoiceButton({
           <OfferSelector tool={displayTool} onChange={onOfferChange} compact t={t} />
         ) : pending ? (
           <div className="space-y-1">
-            <p className="truncate text-[11px] font-semibold text-foreground">
+            <p className="flex items-center gap-1 truncate text-[11px] font-semibold text-foreground">
+              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-foreground font-mono text-[9px] text-background">2</span>
               {t("Choisis un plan pour l’ajouter", "Choose a plan to add it")}
             </p>
             <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
@@ -1123,6 +1151,60 @@ function ToolChoiceButton({
             <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
           </button>
         )}
+      </div>
+    </div>
+  );
+}
+
+function PlanFocusBanner({
+  tool,
+  onCancel,
+  t,
+}: {
+  tool: Tool;
+  onCancel: () => void;
+  t: (fr: string, en: string) => string;
+}) {
+  return (
+    <div
+      className="mt-5 rounded-2xl border border-foreground bg-foreground p-3 text-background shadow-lg"
+      role="status"
+      aria-live="polite"
+    >
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex min-w-0 items-center gap-3">
+          <ToolLogo tool={tool} size={38} className="rounded-xl border border-background/15 bg-background" />
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase text-background/65">
+              {t("Action en cours", "Current action")}
+            </p>
+            <p className="truncate text-sm font-bold">
+              {t(
+                `${tool.name} est prêt. Choisis son plan pour l’ajouter.`,
+                `${tool.name} is ready. Choose its plan to add it.`
+              )}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2">
+          <span className="inline-flex h-8 items-center gap-2 rounded-full bg-background/10 px-3 text-xs font-semibold">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-background text-[10px] text-foreground">1</span>
+            {t("outil", "tool")}
+          </span>
+          <ArrowRight className="h-4 w-4 text-background/45" />
+          <span className="inline-flex h-8 items-center gap-2 rounded-full bg-[hsl(var(--diag-yellow))] px-3 text-xs font-bold text-[hsl(var(--diag-ink))]">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--diag-ink))] text-[10px] text-background">2</span>
+            {t("plan", "plan")}
+          </span>
+          <button
+            type="button"
+            onClick={onCancel}
+            className="ml-1 h-8 rounded-full border border-background/20 px-3 text-xs font-semibold text-background/80 transition-colors hover:bg-background/10 hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background"
+          >
+            {t("Annuler", "Cancel")}
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -1577,6 +1659,7 @@ function ToolGrid({
               tool={tool}
               selectedTool={selectedToolsById.get(tool.id)}
               pending={pendingToolId === tool.id}
+              muted={Boolean(pendingToolId && pendingToolId !== tool.id)}
               onToggle={() => onToggle(tool)}
               onOfferChange={(offer) => onOfferChange(tool.id, offer)}
               onConfirmOffer={(offer) => onConfirmOffer(tool, offer)}

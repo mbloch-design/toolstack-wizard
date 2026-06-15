@@ -106,6 +106,10 @@ ok(
     stackScan.includes("Choisis un plan pour l’ajouter") &&
     stackScan.includes("puis ajout automatique") &&
     stackScan.includes("h-[146px]") &&
+    stackScan.includes("PlanFocusBanner") &&
+    stackScan.includes("Action en cours") &&
+    stackScan.includes("opacity-45") &&
+    stackScan.includes("selector_tool_plan_cancelled") &&
     stackScan.includes("aria-label={t(") &&
     !stackScan.includes("Clique pour choisir le plan"),
   "user should see the next action without guessing where to click"
