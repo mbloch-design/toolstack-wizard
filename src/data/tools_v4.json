@@ -6207,7 +6207,35 @@
       "location_sensitive": false,
       "official_source_url": "https://www.adobe.com/fr/creativecloud/plans.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 26.21
+      "compare_price_monthly_eur": 26.21,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "single_app",
+          "label_fr": "After Effects seul",
+          "label_en": "After Effects only",
+          "price_monthly_eur": 26.21,
+          "currency": "EUR"
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Creative Cloud",
+          "label_en": "Included in Creative Cloud",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://adobe.com/products/aftereffects",
     "logo": "",
@@ -6371,7 +6399,35 @@
       "location_sensitive": false,
       "official_source_url": "https://helpx.adobe.com/fr/creative-cloud/apps/manage-plans/changes-to-individual-plan.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 78.65
+      "compare_price_monthly_eur": 78.65,
+      "billing_model": "bundle",
+      "billing_options": [
+        {
+          "value": "bundle",
+          "label_fr": "Creative Cloud All Apps",
+          "label_en": "Creative Cloud All Apps",
+          "price_monthly_eur": 78.65,
+          "currency": "EUR"
+        },
+        {
+          "value": "included",
+          "label_fr": "Licence entreprise",
+          "label_en": "Company license",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://adobe.com/creativecloud",
     "logo": "",
@@ -6428,11 +6484,15 @@
     "covers": [
       "generation-image",
       "retouche-photo",
-      "design-visuel"
+      "design-visuel",
+      "generative-fill",
+      "creative-cloud-ai"
     ],
     "functional_needs": [
       "generation-image",
-      "retouche-photo"
+      "generative-fill",
+      "retouche-photo",
+      "creative-cloud-ai"
     ],
     "ia_use_case": [
       "generation-image"
@@ -6467,19 +6527,49 @@
     "longDescriptionEn": "Adobe Firefly is aI image generation integrated in Adobe CC. Completely free. Built for graphic designers and photographers.\n\nEstimated time saving: 4h/month.",
     "pricingEn": null,
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
-      ],
-      "verified_on": "2026-03-13",
-      "source_domain": "firefly.adobe.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
+      "compare_price_monthly_eur": 0,
       "compare_plan_name": "Free",
-      "price_reliability": "low",
+      "compare_plan_kind": "free",
+      "billing_model": "credits",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free / crédits inclus",
+          "label_en": "Free / included credits",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Creative Cloud",
+          "label_en": "Included in Creative Cloud",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "credits",
+          "label_fr": "Crédits Firefly",
+          "label_en": "Firefly credits",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "currency": "EUR",
+      "price_reliability": "high",
+      "usage_sensitive": false,
       "location_sensitive": false,
-      "official_source_url": "https://firefly.adobe.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 0
+      "cautions": [
+        "Les crédits génératifs et plans Firefly peuvent dépendre de Creative Cloud."
+      ],
+      "source_domain": "adobe.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.adobe.com/products/firefly.html",
+      "verification_status": "official_explicit"
     },
     "websiteUrl": "https://firefly.adobe.com",
     "logo": "",
@@ -6536,11 +6626,16 @@
       "illustration-vectorielle",
       "identite-visuelle",
       "typographie",
-      "print"
+      "print",
+      "logo",
+      "iconographie",
+      "design-visuel"
     ],
     "functional_needs": [
       "illustration-vectorielle",
+      "logo",
       "identite-visuelle",
+      "iconographie",
       "design-visuel"
     ],
     "verticals": [
@@ -6593,7 +6688,35 @@
       "location_sensitive": false,
       "official_source_url": "https://www.adobe.com/fr/products/illustrator.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 26.21
+      "compare_price_monthly_eur": 26.21,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "single_app",
+          "label_fr": "Illustrator seul",
+          "label_en": "Illustrator only",
+          "price_monthly_eur": 26.21,
+          "currency": "EUR"
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Creative Cloud",
+          "label_en": "Included in Creative Cloud",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://adobe.com/products/illustrator",
     "logo": "",
@@ -6702,7 +6825,12 @@
     "logo": "",
     "seo": null,
     "articles": [],
-    "covers": [],
+    "covers": [
+      "mise-en-page",
+      "print-design",
+      "pdf-client",
+      "brand-documents"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -6717,12 +6845,17 @@
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "mise-en-page",
+      "print-design",
+      "pdf-client",
+      "brand-documents"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -6743,7 +6876,7 @@
     "bundle_parent": "adobe-cc",
     "category": "design-tools",
     "shortDescription": "Le standard de la gestion et retouche photo RAW.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 11.03,
     "pricing": {
       "bundle": "Inclus dans Adobe Creative Cloud",
       "standalone": "12€/mois"
@@ -6752,12 +6885,14 @@
       "retouche-photo",
       "gestion-raw",
       "catalogage",
-      "color-grading"
+      "color-grading",
+      "exports-photo"
     ],
     "functional_needs": [
       "retouche-photo",
       "gestion-raw",
-      "catalogage"
+      "catalogage",
+      "exports-photo"
     ],
     "verticals": [
       "photographe",
@@ -6795,19 +6930,61 @@
     "longDescriptionEn": "Adobe Lightroom is the standard for RAW photo management and editing. Completely free. Built for photographers and graphic designers.\n\nEstimated time saving: 5h/month.\n\nIf budget allows, capture-one goes further.",
     "pricingEn": null,
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
-      ],
-      "verified_on": "2026-03-13",
-      "source_domain": "adobe.com",
-      "usage_sensitive": false,
+      "compare_price_monthly_eur": 11.03,
+      "compare_plan_name": "Lightroom",
       "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "single_app",
+          "label_fr": "Lightroom seul",
+          "label_en": "Lightroom only",
+          "price_monthly_eur": 11.03,
+          "price_original": 11.99,
+          "currency": "USD"
+        },
+        {
+          "value": "bundle",
+          "label_fr": "Photography plan",
+          "label_en": "Photography plan",
+          "price_monthly_eur": 18.39,
+          "price_original": 19.99,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Creative Cloud",
+          "label_en": "Included in Creative Cloud",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 11.99,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "conversion_rate_to_eur": 0.92,
       "price_reliability": "high",
-      "location_sensitive": false,
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Vérifier si l'utilisateur paye Lightroom seul ou le plan Photography.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "source_domain": "adobe.com",
+      "verified_on": "2026-06-15",
       "official_source_url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "verification_status": "official_explicit"
     },
     "websiteUrl": "https://adobe.com/products/lightroom",
     "logo": "",
@@ -6866,11 +7043,16 @@
       "retouche-photo",
       "design-visuel",
       "compositing",
-      "photo-manipulation"
+      "photo-manipulation",
+      "photomontage",
+      "mockups",
+      "assets-client"
     ],
     "functional_needs": [
       "retouche-photo",
-      "gestion-assets",
+      "photomontage",
+      "mockups",
+      "assets-client",
       "design-visuel"
     ],
     "verticals": [
@@ -6917,7 +7099,41 @@
       "location_sensitive": false,
       "official_source_url": "https://www.adobe.com/fr/products/photoshop/plans.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 26.21
+      "compare_price_monthly_eur": 26.21,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "single_app",
+          "label_fr": "Photoshop seul",
+          "label_en": "Photoshop only",
+          "price_monthly_eur": 26.21,
+          "currency": "EUR"
+        },
+        {
+          "value": "bundle",
+          "label_fr": "Photography / Creative Cloud",
+          "label_en": "Photography / Creative Cloud",
+          "needs_verification": true
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Creative Cloud",
+          "label_en": "Included in Creative Cloud",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://adobe.com/products/photoshop",
     "logo": "",
@@ -7190,7 +7406,35 @@
       "location_sensitive": false,
       "official_source_url": "https://www.adobe.com/fr/creativecloud/plans.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 26.21
+      "compare_price_monthly_eur": 26.21,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "single_app",
+          "label_fr": "Premiere Pro seul",
+          "label_en": "Premiere Pro only",
+          "price_monthly_eur": 26.21,
+          "currency": "EUR"
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Creative Cloud",
+          "label_en": "Included in Creative Cloud",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://adobe.com/products/premiere",
     "logo": "",
@@ -7466,15 +7710,44 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Gratuit",
-      "verified_on": "2026-05-01",
-      "source_domain": "affinity.serif.com",
-      "official_source_url": "https://affinity.serif.com/fr-fr/photo/",
+      "compare_plan_name": "Universal / one-time license",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 69.99,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 69.99,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
+      "usage_sensitive": false,
+      "location_sensitive": true,
       "cautions": [
-        "Gratuit depuis le rachat de Serif par Canva en 2024",
-        "Affinity Photo 1 nécessitait un achat unique. la version 2 est désormais sans frais",
-        "L'application iPad est incluse sans frais supplémentaire"
-      ]
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "affinity.serif.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://affinity.serif.com/",
+      "verification_status": "official_contextual"
     },
     "affiliateLink": "",
     "websiteUrl": "https://affinity.serif.com/fr-fr/photo/",
@@ -7483,7 +7756,11 @@
       "metaDescription": "Affinity Photo est un logiciel de retouche photo professionnel, gratuit depuis 2024. Verdict ToolTrim : pour qui ça vaut le coup, et quand Photoshop reste la meilleure option."
     },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "retouche-photo",
+      "photomontage",
+      "design-visuel"
+    ],
     "freeAlternative": null,
     "soloRelevance": "Adapté aux photographes et graphistes indépendants qui veulent un outil avancé sans abonnement.",
     "teamRelevance": "Moins pratique en équipe si le reste du flux est sur Adobe.",
@@ -7564,7 +7841,11 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "retouche-photo",
+      "photomontage",
+      "design-visuel"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -8699,11 +8980,13 @@
     "covers": [
       "handoff-dev",
       "export-code",
-      "collaboration-dev"
+      "collaboration-dev",
+      "prototype-to-code"
     ],
     "functional_needs": [
       "handoff-dev",
-      "export-code"
+      "export-code",
+      "prototype-to-code"
     ],
     "ia_use_case": null,
     "verticals": [
@@ -13990,8 +14273,8 @@
   {
     "id": "canva",
     "name": "Canva",
-    "category": "creation",
-    "shortDescription": "Le design pour les non-designers.",
+    "category": "design-tools",
+    "shortDescription": "Design en ligne pour non-designers : visuels sociaux, présentations et templates.",
     "verdict": {
       "keepIf": [
         "Création régulière de visuels réseaux sociaux",
@@ -14005,8 +14288,8 @@
       "threshold": "Dès que vous avez besoin du détourage automatique ou de la banque d'images premium."
     },
     "pricing": {
-      "free": "Accès limité aux assets",
-      "paid": "12$/mois (Pro) pour tout illimité et outils IA"
+      "free": "Gratuit avec accès limité aux templates premium",
+      "paid": "Pro à 15$/mois (tout illimité, outils IA), Teams au-delà"
     },
     "affiliateLink": "https://canva.com",
     "seo": {
@@ -14022,19 +14305,23 @@
     "covers": [
       "design-visuel",
       "redaction",
-      "presentations"
+      "presentations",
+      "brand-kit",
+      "templates",
+      "social-assets",
+      "export-client"
     ],
-    "freeAlternative": "canva",
+    "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "bestFor": [
       "designer",
       "content-creator"
     ],
-    "defaultMonthlyPrice": 11.26,
+    "defaultMonthlyPrice": 13.8,
     "pricingTiers": {
-      "free": "Accès limité aux assets",
-      "paid": "12$/mois (Pro) pour tout illimité et outils IA"
+      "free": "Gratuit avec accès limité aux templates premium",
+      "paid": "Pro à 15$/mois (tout illimité, outils IA), Teams au-delà"
     },
     "relevantFor": [
       "designer",
@@ -14042,8 +14329,11 @@
       "consultant",
       "other"
     ],
-    "alternatives": [],
-    "longDescription": "Canva, c'est le design pour les non-designers. À partir de 11.26€/mois. Pensé pour les community managers et les créateurs de contenu.\n\nBibliothèque massive de templates pour tous les formats. interface ultra-intuitive, aucune compétence en design requise, collaboration en temps réel (partage et commentaires). Intégration directe avec les réseaux sociaux pour publier. Concrètement : content marketing : créer des visuels pour vos posts LinkedIn, Instagram, Twitter. Ou encore : présentations clients : designer des slides professionnelles rapidement. Gain de temps estimé : 5h/mois.\n\nÀ garder si : création régulière de visuels réseaux sociaux ou besoin de templates pros. À éviter si : vous êtes designer pro (Figma/Adobe) ou usage très ponctuel. Limite principale : designs parfois 'trop Canva' (reconnaissables entre mille). Dès que vous avez besoin du détourage automatique ou de la banque d'images premium.",
+    "alternatives": [
+      "figma",
+      "sketch"
+    ],
+    "longDescription": "Canva, c'est l'outil qui a démocratisé le design. Tu pars d'un template, tu glisses tes textes et tes images, et tu sors un visuel propre pour LinkedIn, une présentation client ou un carrousel Instagram, sans aucune compétence en design. Sa bibliothèque de modèles, sa simplicité et sa collaboration en temps réel en ont fait l'outil par défaut des créateurs de contenu, community managers et indépendants.\n\nL'offre gratuite couvre déjà beaucoup. Le plan Pro, autour de 15$/mois, débloque l'essentiel pour un usage pro : suppression d'arrière-plan, Magic Resize, banque d'images premium, kit de marque et outils IA. C'est l'un des rares abonnements payants que ToolTrim recommande presque sans hésiter, parce que le temps gagné est immédiat.\n\nLa limite à connaître : on reconnaît souvent un visuel Canva entre mille, et tu as moins de contrôle créatif qu'avec Figma ou la suite Adobe. Si tu es designer pro ou que tu construis des interfaces, Canva ne remplace pas ces outils. Mais pour produire vite des visuels corrects sans être designer, il n'a pas d'équivalent.",
     "pros": [
       "Bibliothèque massive de templates pour tous les formats",
       "Interface ultra-intuitive, aucune compétence en design requise",
@@ -14063,7 +14353,7 @@
       "Branding : concevoir un logo, des cartes de visite, une charte graphique basique",
       "Supports de formation : créer des slides, workbooks, certificats"
     ],
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "verticals": [
       "community-manager",
@@ -14073,8 +14363,11 @@
     ],
     "functional_needs": [
       "design-visuel",
-      "redaction",
-      "presentations"
+      "brand-kit",
+      "templates",
+      "presentations",
+      "social-assets",
+      "export-client"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -14083,27 +14376,66 @@
     "ia_use_case": null,
     "slug": "canva",
     "shortDescriptionEn": "Design for non-designers.",
-    "description": "Canva, c'est le design pour les non-designers. À partir de 11.26€/mois. Pensé pour les community managers et les créateurs de contenu.\n\nBibliothèque massive de templates pour tous les formats. interface ultra-intuitive, aucune compétence en design requise, collaboration en temps réel (partage et commentaires). Intégration directe avec les réseaux sociaux pour publier. Concrètement : content marketing : créer des visuels pour vos posts LinkedIn, Instagram, Twitter. Ou encore : présentations clients : designer des slides professionnelles rapidement. Gain de temps estimé : 5h/mois.\n\nÀ garder si : création régulière de visuels réseaux sociaux ou besoin de templates pros. À éviter si : vous êtes designer pro (Figma/Adobe) ou usage très ponctuel. Limite principale : designs parfois 'trop Canva' (reconnaissables entre mille). Dès que vous avez besoin du détourage automatique ou de la banque d'images premium.",
-    "longDescriptionEn": "Canva is design for non-designers. Starting at €11.26/month. Built for community managers and content creators.\n\nMassive library of templates for all formats. ultra-intuitive interface, no design skills required, real-time collaboration (sharing and comments). Direct integration with social media for publishing. In practice: content marketing: creating visuals for your LinkedIn, Instagram, and Twitter posts. Also: client presentations: designing professional slides quickly. Estimated time saving: 5h/month.\n\nKeep it if: regular creation of social media visuals or need for professional templates. Skip it if: you are a professional designer (Figma/Adobe) or very occasional use. Main limit: designs sometimes 'too Canva' (instantly recognizable). As soon as you need automatic background removal or the premium image library.",
+    "description": "Canva, c'est l'outil qui a démocratisé le design. Tu pars d'un template, tu glisses tes textes et tes images, et tu sors un visuel propre pour LinkedIn, une présentation client ou un carrousel Instagram, sans aucune compétence en design. Sa bibliothèque de modèles, sa simplicité et sa collaboration en temps réel en ont fait l'outil par défaut des créateurs de contenu, community managers et indépendants.\n\nL'offre gratuite couvre déjà beaucoup. Le plan Pro, autour de 15$/mois, débloque l'essentiel pour un usage pro : suppression d'arrière-plan, Magic Resize, banque d'images premium, kit de marque et outils IA. C'est l'un des rares abonnements payants que ToolTrim recommande presque sans hésiter, parce que le temps gagné est immédiat.\n\nLa limite à connaître : on reconnaît souvent un visuel Canva entre mille, et tu as moins de contrôle créatif qu'avec Figma ou la suite Adobe. Si tu es designer pro ou que tu construis des interfaces, Canva ne remplace pas ces outils. Mais pour produire vite des visuels corrects sans être designer, il n'a pas d'équivalent.",
+    "longDescriptionEn": "Canva is the tool that democratized design. You start from a template, drop in your text and images, and produce a clean visual for LinkedIn, a client presentation or an Instagram carousel, with no design skills. Its template library, simplicity and real-time collaboration made it the default tool for content creators, community managers and freelancers.\n\nThe free tier already covers a lot. The Pro plan, around $15/month, unlocks the essentials for professional use: background removal, Magic Resize, premium image library, brand kit and AI tools. It's one of the rare paid subscriptions ToolTrim recommends almost without hesitation, because the time saved is immediate.\n\nThe limit to know: a Canva visual is often recognizable a mile off, and you have less creative control than with Figma or the Adobe suite. If you're a pro designer or building interfaces, Canva doesn't replace those tools. But to quickly produce decent visuals without being a designer, it has no equal.",
     "pricingEn": {
-      "free": "Limited access to assets",
-      "paid": "$12/month (Pro) for unlimited everything and AI tools"
+      "free": "Free with limited access to premium templates",
+      "paid": "Pro at $15/month (unlimited everything, AI tools), Teams above"
     },
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used",
-        "official_price_depends_on_context_or_ui_state"
-      ],
-      "verified_on": "2026-03-13",
-      "source_domain": "canva.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 13.8,
       "compare_plan_name": "Canva Pro",
-      "price_reliability": "medium",
-      "location_sensitive": false,
-      "official_source_url": "https://www.canva.com/en/pricing/",
-      "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 11.26
+      "compare_plan_kind": "individual",
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Canva Pro",
+          "label_en": "Canva Pro",
+          "price_monthly_eur": 13.8,
+          "price_original": 15,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Canva Teams",
+          "label_en": "Canva Teams",
+          "needs_verification": true
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus équipe",
+          "label_en": "Team included",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 15,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "conversion_rate_to_eur": 0.92,
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Vérifier si l'utilisateur est sur Free, Pro ou Teams.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "source_domain": "canva.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.canva.com/pricing/",
+      "verification_status": "official_explicit"
     },
     "websiteUrl": "https://canva.com",
     "logo": "",
@@ -14220,7 +14552,7 @@
     "id": "canva-pro",
     "slug": "canva-pro",
     "name": "Canva Pro",
-    "category": "creation",
+    "category": "design-tools",
     "shortDescription": null,
     "shortDescriptionEn": "Professional design suite with premium templates and brand kit.",
     "description": null,
@@ -14235,7 +14567,12 @@
     "logo": "",
     "seo": null,
     "articles": [],
-    "covers": [],
+    "covers": [
+      "design-visuel",
+      "brand-kit",
+      "templates",
+      "social-assets"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -14250,12 +14587,17 @@
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
-    "tool_type": "core",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "canva",
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "design-visuel",
+      "brand-kit",
+      "templates",
+      "social-assets"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -14266,7 +14608,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": true
   },
   {
     "id": "capcut",
@@ -21722,7 +22064,7 @@
     "id": "figma",
     "name": "Figma",
     "category": "design-tools",
-    "shortDescription": "L'outil de design d'interfaces pour créer maquettes et prototypes.",
+    "shortDescription": "Outil de design d'interfaces (UI/UX) collaboratif : maquettes, prototypes et design systems.",
     "verdict": {
       "keepIf": [
         "Vous créez des sites web ou apps",
@@ -21738,8 +22080,8 @@
       "threshold": "Dès que vous créez des interfaces web/app et que Canva ne suffit plus."
     },
     "pricing": {
-      "free": "Forfait de base gratuit",
-      "paid": "Professionnel 16€/mois annuel ou 20€/mois mensuel (full seat)"
+      "free": "Forfait gratuit (1 utilisateur, 3 projets)",
+      "paid": "Siège Full ~16$/mois, Dev ~12$, Collab 3$ (par utilisateur)"
     },
     "affiliateLink": "https://figma.com",
     "articles": [],
@@ -21748,25 +22090,29 @@
       "prototypage",
       "logos"
     ],
-    "freeAlternative": "figma",
+    "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
     "bestFor": [
       "designer",
       "tech"
     ],
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 16,
     "pricingTiers": {
-      "free": "Illimité pour 1 utilisateur (3 projets)",
-      "paid": "12$/mois par éditeur (Professional)"
+      "free": "Forfait gratuit (1 utilisateur, 3 projets)",
+      "paid": "Siège Full ~16$/mois, Dev ~12$, Collab 3$ (par utilisateur)"
     },
     "relevantFor": [
       "designer",
       "tech"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "canva",
+      "sketch",
+      "adobe-xd"
+    ],
     "seo": {
-      "metaDescription": "Figma : L'outil de design d'interfaces pour créer maquettes et prototypes. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Figma en 2026 : prix par siège (Full ~16$), offre gratuite et alternatives. L'outil de design d'interface, analysé par ToolTrim pour les designers et freelances."
     },
     "tool_type": "metier",
     "substitutable": false,
@@ -21789,18 +22135,19 @@
     "ia_use_case": null,
     "slug": "figma",
     "shortDescriptionEn": "The interface design tool for creating mockups and prototypes.",
-    "description": "Figma, c'est l'outil de design d'interfaces pour créer maquettes et prototypes. À partir de 15€/mois. Pensé pour les designers UX/UI et les graphistes.\n\nGain de temps estimé : 7h/mois.\n\nÀ garder si : vous créez des sites web ou apps ou vous voulez maquetter avant de développer. À éviter si : vous faites juste des visuels simples (prenez Canva) ou vous n'avez jamais besoin de maquetter. Dès que vous créez des interfaces web/app et que Canva ne suffit plus.",
-    "longDescription": "Figma, c'est l'outil de design d'interfaces pour créer maquettes et prototypes. À partir de 15€/mois. Pensé pour les designers UX/UI et les graphistes.\n\nGain de temps estimé : 7h/mois.\n\nÀ garder si : vous créez des sites web ou apps ou vous voulez maquetter avant de développer. À éviter si : vous faites juste des visuels simples (prenez Canva) ou vous n'avez jamais besoin de maquetter. Dès que vous créez des interfaces web/app et que Canva ne suffit plus.",
-    "longDescriptionEn": "Figma is the interface design tool for creating mockups and prototypes. Starting at €15/month. Built for UX/UI designers and graphic designers.\n\nEstimated time saving: 7h/month.\n\nKeep it if: you create websites or apps or you want to prototype before developing. Skip it if: you only create simple visuals (choose Canva instead) or you never need to build mockups. As soon as you start creating web or app interfaces and Canva is no longer enough.",
+    "description": "Figma, c'est devenu le standard du design d'interface. Tu y conçois des maquettes de sites et d'apps, tu les rends cliquables en prototypes, tu construis des design systems réutilisables, et surtout tout est collaboratif en temps réel dans le navigateur : plusieurs personnes sur le même fichier, comme un Google Docs du design. C'est ce qui lui a fait écraser Sketch et Adobe XD.\n\nLe modèle de prix a changé en 2024 et se fait maintenant par type de siège : un siège Full (création complète) coûte environ 16$/mois, un siège Dev (lecture et inspection de code) autour de 12$, et un siège Collab à 3$. L'offre gratuite, généreuse, suffit pour un projet perso ou un freelance qui travaille seul ; on paie surtout dès qu'on collabore et qu'on a besoin de plus de projets ou de bibliothèques partagées.\n\nÀ qui ça s'adresse : à tout designer UI/UX, mais aussi aux développeurs (mode Dev) et aux PM qui veulent suivre les maquettes. Si tu fais juste des visuels simples (posts, présentations), Canva est plus rapide et moins cher. Mais pour de l'interface produit sérieuse, Figma n'a pas vraiment de rival.",
+    "longDescription": "Figma, c'est devenu le standard du design d'interface. Tu y conçois des maquettes de sites et d'apps, tu les rends cliquables en prototypes, tu construis des design systems réutilisables, et surtout tout est collaboratif en temps réel dans le navigateur : plusieurs personnes sur le même fichier, comme un Google Docs du design. C'est ce qui lui a fait écraser Sketch et Adobe XD.\n\nLe modèle de prix a changé en 2024 et se fait maintenant par type de siège : un siège Full (création complète) coûte environ 16$/mois, un siège Dev (lecture et inspection de code) autour de 12$, et un siège Collab à 3$. L'offre gratuite, généreuse, suffit pour un projet perso ou un freelance qui travaille seul ; on paie surtout dès qu'on collabore et qu'on a besoin de plus de projets ou de bibliothèques partagées.\n\nÀ qui ça s'adresse : à tout designer UI/UX, mais aussi aux développeurs (mode Dev) et aux PM qui veulent suivre les maquettes. Si tu fais juste des visuels simples (posts, présentations), Canva est plus rapide et moins cher. Mais pour de l'interface produit sérieuse, Figma n'a pas vraiment de rival.",
+    "longDescriptionEn": "Figma has become the standard for interface design. You build website and app mockups, turn them into clickable prototypes, create reusable design systems, and above all everything is collaborative in real time in the browser: several people on the same file, like a Google Docs for design. That's what let it crush Sketch and Adobe XD.\n\nThe pricing model changed in 2024 and is now per seat type: a Full seat (full creation) costs around $16/month, a Dev seat (read and code inspection) around $12, and a Collab seat $3. The generous free tier is enough for a personal project or a freelancer working solo; you mostly pay once you collaborate and need more projects or shared libraries.\n\nWho it's for: any UI/UX designer, but also developers (Dev mode) and PMs who want to follow the mockups. If you only make simple visuals (posts, presentations), Canva is faster and cheaper. But for serious product interface work, Figma has no real rival.",
     "pricingEn": {
-      "free": "Free basic plan",
-      "paid": "Professional €16/month billed annually or €20/month billed monthly (full seat)"
+      "free": "Free plan (1 user, 3 projects)",
+      "paid": "Full seat ~$16/month, Dev ~$12, Collab $3 (per user)"
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Offre gratuite : 1 utilisateur, 3 projets",
+        "Prix par type de siège : Full ~16$, Dev ~12$, Collab 3$ par utilisateur"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "help.figma.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -21809,7 +22156,35 @@
       "location_sensitive": false,
       "official_source_url": "https://help.figma.com/hc/en-us/articles/27468498501527-Updates-to-Figma-s-pricing-seats-and-billing-experience",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 16
+      "compare_price_monthly_eur": 16,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Starter",
+          "label_en": "Starter",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Professional seat",
+          "label_en": "Professional seat",
+          "price_monthly_eur": 16,
+          "currency": "EUR"
+        },
+        {
+          "value": "team",
+          "label_fr": "Organization / équipe",
+          "label_en": "Organization / team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://figma.com",
     "logo": "",
@@ -21827,12 +22202,42 @@
       ],
       "threshold": "As soon as you start creating web or app interfaces and Canva is no longer enough."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Collaboration en temps réel dans le navigateur, plusieurs personnes sur un même fichier",
+      "Standard du marché : tous les designers et la plupart des devs le connaissent",
+      "Design systems, composants et bibliothèques partagées puissants",
+      "Offre gratuite suffisante pour un projet perso ou un freelance solo"
+    ],
+    "prosEn": [
+      "Real-time collaboration in the browser, several people on one file",
+      "Market standard: every designer and most devs know it",
+      "Powerful design systems, components and shared libraries",
+      "Free tier enough for a personal project or a solo freelancer"
+    ],
+    "cons": [
+      "Modèle de sièges (Full/Dev/Collab) qui complique le calcul du coût en équipe",
+      "Surdimensionné pour de simples visuels : Canva est plus direct",
+      "Dépend d'une connexion : l'usage hors-ligne reste limité",
+      "Le prix grimpe vite dès qu'on multiplie les sièges Full"
+    ],
+    "consEn": [
+      "Seat model (Full/Dev/Collab) that complicates cost math for a team",
+      "Overkill for simple visuals: Canva is more direct",
+      "Depends on a connection: offline use stays limited",
+      "Cost climbs fast as you add Full seats"
+    ],
+    "useCases": [
+      "Maquetter un site ou une application avant de développer",
+      "Créer des prototypes cliquables pour tester un parcours",
+      "Construire et maintenir un design system d'équipe",
+      "Transmettre les maquettes aux développeurs via le mode Dev"
+    ],
+    "useCasesEn": [
+      "Mock up a website or app before development",
+      "Create clickable prototypes to test a flow",
+      "Build and maintain a team design system",
+      "Hand mockups to developers via Dev mode"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 7,
     "downgradePlan": null,
@@ -21877,10 +22282,14 @@
     "covers": [
       "design-system",
       "tokens",
-      "collaboration-dev"
+      "collaboration-dev",
+      "tokens-design",
+      "handoff-dev",
+      "composants-ui"
     ],
     "functional_needs": [
       "design-system",
+      "tokens-design",
       "handoff-dev",
       "composants-ui"
     ],
@@ -22498,119 +22907,6 @@
     "force_silence": false
   },
   {
-    "id": "flux",
-    "name": "Flux (Black Forest Labs)",
-    "tool_type": "ia",
-    "substitutable": true,
-    "bundle_parent": null,
-    "host_app": null,
-    "category": "ai-general",
-    "shortDescription": "Modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion.",
-    "defaultMonthlyPrice": 0,
-    "pricing": {
-      "free": "Open source",
-      "paid": "Via API Replicate ou fal.ai : pay-as-you-go"
-    },
-    "covers": [
-      "generation-image",
-      "concept-art",
-      "design-visuel"
-    ],
-    "functional_needs": [
-      "generation-image",
-      "concept-art"
-    ],
-    "ia_use_case": [
-      "generation-image"
-    ],
-    "verticals": [
-      "graphiste-da",
-      "illustrateur",
-      "ai-builder"
-    ],
-    "personas": [
-      "alix",
-      "theo"
-    ],
-    "timeGainedHoursPerMonth": 5,
-    "freeAlternative": null,
-    "betterAlternative": null,
-    "migrationGuide": null,
-    "downgradePlan": null,
-    "affiliateLink": "https://blackforestlabs.ai",
-    "verdict": {
-      "keepIf": [
-        "Génération haute qualité via API, fine-tuning possible"
-      ],
-      "avoidIf": [
-        "Midjourney ou Leonardo suffisent pour les usages standards"
-      ],
-      "threshold": "Pertinent si vous construisez des pipelines IA custom."
-    },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
-    "articles": [],
-    "soloRelevance": "medium",
-    "teamRelevance": "low",
-    "bestFor": [],
-    "relevantFor": [],
-    "pricingTiers": {
-      "free": "Open source",
-      "paid": "Via API Replicate ou fal.ai : pay-as-you-go"
-    },
-    "longDescription": "Flux (Black Forest Labs), c'est modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : génération haute qualité via API, fine-tuning possible. À éviter si : midjourney ou Leonardo suffisent pour les usages standards. Pertinent si vous construisez des pipelines IA custom.",
-    "alternatives": [],
-    "slug": "flux",
-    "shortDescriptionEn": "Open-source AI image generation model — higher quality than Stable Diffusion.",
-    "description": "Flux (Black Forest Labs), c'est modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : génération haute qualité via API, fine-tuning possible. À éviter si : midjourney ou Leonardo suffisent pour les usages standards. Pertinent si vous construisez des pipelines IA custom.",
-    "longDescriptionEn": "Flux (Black Forest Labs) is open-source AI image generation model — higher quality than Stable Diffusion. Free to start, paid plans for more. Built for graphic designers and illustrators.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
-    "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
-      ],
-      "verified_on": "2026-03-13",
-      "source_domain": "bfl.ai",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
-      "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://bfl.ai/pricing",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
-    },
-    "websiteUrl": "https://blackforestlabs.ai",
-    "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "question",
-    "prescription_output": null,
-    "prescription_block_reasons": [
-      "pas-de-remplacement-valide"
-    ],
-    "prescription_context_questions": [
-      "primary_ai_tasks",
-      "daily_usage_intensity",
-      "team_requirement",
-      "privacy_requirement"
-    ],
-    "substitution_cluster_v2": "ai-image-generation",
-    "decision_policy_v3": {
-      "auto_cancel_allowed": false,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
-    },
-    "force_silence": false
-  },
-  {
     "id": "fly-io",
     "slug": "fly-io",
     "name": "Fly.io",
@@ -22966,58 +23262,6 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
-  },
-  {
-    "id": "framer",
-    "slug": "framer",
-    "name": "Framer",
-    "category": "design-tools",
-    "shortDescription": "Design et publication de sites web interactifs",
-    "shortDescriptionEn": "Interactive website design and publishing.",
-    "description": "Framer, c'est design et publication de sites web interactifs. À partir de 5€/mois.",
-    "longDescription": "Framer, c'est design et publication de sites web interactifs. À partir de 5€/mois.",
-    "longDescriptionEn": "Framer is interactive website design and publishing. Starting at €5/month.",
-    "pricing": null,
-    "pricingEn": null,
-    "defaultMonthlyPrice": 5,
-    "pricing_v5": null,
-    "affiliateLink": "",
-    "websiteUrl": "https://framer.com",
-    "logo": "",
-    "seo": null,
-    "articles": [],
-    "covers": [],
-    "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
-    "tool_type": "satellite",
-    "substitutable": true,
-    "host_app": null,
-    "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
-    "ia_use_case": null,
-    "betterAlternative": null,
-    "migrationGuide": null,
-    "downgradePlan": null,
-    "prescription_quality": "silence",
-    "prescription_output": null,
-    "prescription_block_reasons": [],
-    "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
     "force_silence": false
   },
   {
@@ -24022,19 +24266,45 @@
     "longDescriptionEn": "GifGun is export GIFs directly from After Effects in one click. Free to start, paid plans for more. Built for video creators and community managers.\n\nEstimated time saving: 2h/month.",
     "pricingEn": null,
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "License",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 39.99,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
       ],
-      "verified_on": "2026-03-13",
-      "source_domain": "gifgun.io",
+      "price_original": 39.99,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
       "usage_sensitive": false,
-      "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
-      "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://gifgun.io/",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "location_sensitive": true,
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "aescripts.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://aescripts.com/gifgun/",
+      "verification_status": "official_contextual"
     },
     "websiteUrl": "https://aescripts.com/gifgun",
     "logo": "",
@@ -24465,7 +24735,12 @@
     "logo": "",
     "seo": null,
     "articles": [],
-    "covers": [],
+    "covers": [
+      "web-analytics",
+      "conversion-tracking",
+      "portfolio-measurement",
+      "campaign-measurement"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -24485,7 +24760,12 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "web-analytics",
+      "conversion-tracking",
+      "portfolio-measurement",
+      "campaign-measurement"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -27846,11 +28126,14 @@
     "covers": [
       "design-visuel",
       "composants-ui",
-      "icones"
+      "icones",
+      "iconographie",
+      "design-system"
     ],
     "functional_needs": [
-      "design-visuel",
-      "composants-ui"
+      "iconographie",
+      "composants-ui",
+      "design-system"
     ],
     "ia_use_case": null,
     "verticals": [
@@ -31303,12 +31586,17 @@
       "generation-image",
       "upscaling",
       "design-visuel",
-      "concept-art"
+      "concept-art",
+      "moodboard",
+      "real-time-ai-visual",
+      "image-enhancement"
     ],
     "functional_needs": [
       "generation-image",
-      "concept-art",
-      "moodboard"
+      "moodboard",
+      "real-time-ai-visual",
+      "image-enhancement",
+      "concept-art"
     ],
     "ia_use_case": [
       "generation-image",
@@ -39568,11 +39856,16 @@
     "covers": [
       "retouche-photo",
       "effets-photo",
-      "noir-blanc"
+      "noir-blanc",
+      "color-grading",
+      "photo-plugin",
+      "creative-effects"
     ],
     "functional_needs": [
       "retouche-photo",
-      "color-grading"
+      "color-grading",
+      "photo-plugin",
+      "creative-effects"
     ],
     "ia_use_case": null,
     "verticals": [
@@ -39616,19 +39909,45 @@
     "longDescriptionEn": "Nik Collection is professional photo filter suite: Analog Efex, Color Efex, Silver Efex. Free to start, paid plans for more. Built for photographers.\n\nEstimated time saving: 3h/month.",
     "pricingEn": null,
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "License",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 149,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
       ],
-      "verified_on": "2026-03-13",
-      "source_domain": "nikcollection.dxo.com",
+      "price_original": 149,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
       "usage_sensitive": false,
-      "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://nikcollection.dxo.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 0
+      "location_sensitive": true,
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "nikcollection.dxo.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://nikcollection.dxo.com/",
+      "verification_status": "official_contextual"
     },
     "websiteUrl": "https://nikcollection.dxo.com",
     "logo": "",
@@ -39715,9 +40034,9 @@
     "id": "notion",
     "name": "Notion",
     "category": "organization",
-    "shortDescription": "Le cerveau externe tout-en-un.",
+    "shortDescription": "Espace de travail tout-en-un : notes, docs, bases de données et gestion de projet.",
     "seo": {
-      "metaDescription": "Notion gratuit suffit-il ? Découvrez quand passer à Notion Plus (10€/mois) et économisez sur les outils inutiles. Guide décisionnel freelance."
+      "metaDescription": "Notion en 2026 : l'offre gratuite suffit-elle ?, prix des plans Plus et Business, et alternatives. Le verdict ToolTrim pour les freelances et petites équipes."
     },
     "verdict": {
       "keepIf": [
@@ -39732,8 +40051,8 @@
       "threshold": "Dès que vous avez besoin de lier vos notes à vos tâches ou vos clients."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "EUR 11.5/month (Plus)"
+      "free": "Gratuit et très généreux pour un usage individuel",
+      "paid": "Plus à 10$/utilisateur/mois, Business à 15$ (IA incluse)"
     },
     "affiliateLink": "https://notion.so",
     "articles": [
@@ -39749,7 +40068,7 @@
       "wiki",
       "bases-de-donnees"
     ],
-    "freeAlternative": "notion",
+    "freeAlternative": "Obsidian",
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "bestFor": [
@@ -39758,10 +40077,10 @@
       "designer",
       "tech"
     ],
-    "defaultMonthlyPrice": 9.5,
+    "defaultMonthlyPrice": 10,
     "pricingTiers": {
-      "free": "Illimité pour individus",
-      "paid": "10$/mois (Plus) pour historique illimité et uploads > 5Mo"
+      "free": "Gratuit et très généreux pour un usage individuel",
+      "paid": "Plus à 10$/utilisateur/mois, Business à 15$ (IA incluse)"
     },
     "relevantFor": [
       "writer",
@@ -39771,8 +40090,11 @@
       "content-creator",
       "other"
     ],
-    "alternatives": [],
-    "longDescription": "Notion, c'est le cerveau externe tout-en-un. À partir de 9.5€/mois. Pensé pour les consultants B2B et les développeurs solo.\n\nInterface intuitive et visuellement agréable. flexibilité totale : s'adapte à n'importe quel workflow, version gratuite très généreuse (illimitée pour usage solo). Bases de données relationnelles puissantes. Concrètement : cRM freelance : gérer vos clients, projets et factures dans une base de données. Ou encore : documentation technique : créer un wiki interne pour vos processus et connaissances. Gain de temps estimé : 3h/mois.\n\nÀ garder si : gestion de +3 projets simultanés ou besoin de bases de données relationnelles. À éviter si : simple to-do list (préférez Todoist) ou besoin de rapidité extrême (Notion peut être lent). Limite principale : courbe d'apprentissage pour maîtriser les fonctionnalités avancées. Dès que vous avez besoin de lier vos notes à vos tâches ou vos clients.",
+    "alternatives": [
+      "obsidian",
+      "trello"
+    ],
+    "longDescription": "Notion, c'est l'espace de travail qui essaie de tout remplacer : notes, documents, wikis, tâches, et surtout des bases de données qu'on relie entre elles. Sa force, c'est la flexibilité : tu construis exactement l'outil dont tu as besoin, un CRM freelance, un calendrier éditorial, une base de connaissances, sans coder. C'est devenu le couteau suisse par défaut de beaucoup d'indépendants et de petites équipes.\n\nL'offre gratuite est l'une des plus généreuses du marché : pour un usage individuel, elle suffit largement, ce qui rend la question du prix presque secondaire en solo. Les plans payants commencent au Plus (environ 10$/utilisateur/mois) et au Business (15$, avec l'IA désormais incluse), surtout utiles dès qu'on collabore à plusieurs avec des permissions et un historique étendu.\n\nLe revers de la flexibilité, c'est la courbe d'apprentissage et des performances parfois molles sur de grosses bases. Si tu ne veux qu'une simple to-do list, Todoist est plus direct ; pour de la prise de notes pure et privée, Obsidian va plus loin. Mais pour centraliser docs, tâches et données reliées au même endroit, Notion reste difficile à battre.",
     "pros": [
       "Interface intuitive et visuellement agréable",
       "Flexibilité totale : s'adapte à n'importe quel workflow",
@@ -39822,26 +40144,27 @@
     "ia_use_case": null,
     "slug": "notion",
     "shortDescriptionEn": "The all-in-one external brain.",
-    "description": "Notion, c'est le cerveau externe tout-en-un. À partir de 9.5€/mois. Pensé pour les consultants B2B et les développeurs solo.\n\nInterface intuitive et visuellement agréable. flexibilité totale : s'adapte à n'importe quel workflow, version gratuite très généreuse (illimitée pour usage solo). Bases de données relationnelles puissantes. Concrètement : cRM freelance : gérer vos clients, projets et factures dans une base de données. Ou encore : documentation technique : créer un wiki interne pour vos processus et connaissances. Gain de temps estimé : 3h/mois.\n\nÀ garder si : gestion de +3 projets simultanés ou besoin de bases de données relationnelles. À éviter si : simple to-do list (préférez Todoist) ou besoin de rapidité extrême (Notion peut être lent). Limite principale : courbe d'apprentissage pour maîtriser les fonctionnalités avancées. Dès que vous avez besoin de lier vos notes à vos tâches ou vos clients.",
-    "longDescriptionEn": "Notion is the all-in-one external brain. Starting at €9.5/month. Built for B2B consultants and solo developers.\n\nInterface intuitive et visuellement agréable. flexibilité totale : s'adapte à n'importe quel workflow, version gratuite très généreuse (illimitée pour usage solo). Bases de données relationnelles puissantes. In practice: cRM freelance : gérer vos clients, projets et factures dans une base de données. Also: documentation technique : créer un wiki interne pour vos processus et connaissances. Estimated time saving: 3h/month.\n\nKeep it if: managing 3+ simultaneous projects or need for relational databases. Skip it if: simple to-do list (prefer Todoist) or need for extreme speed (Notion can be slow). Main limit: courbe d'apprentissage pour maîtriser les fonctionnalités avancées. As soon as you need to link your notes to your tasks or your clients.",
+    "description": "Notion, c'est l'espace de travail qui essaie de tout remplacer : notes, documents, wikis, tâches, et surtout des bases de données qu'on relie entre elles. Sa force, c'est la flexibilité : tu construis exactement l'outil dont tu as besoin, un CRM freelance, un calendrier éditorial, une base de connaissances, sans coder. C'est devenu le couteau suisse par défaut de beaucoup d'indépendants et de petites équipes.\n\nL'offre gratuite est l'une des plus généreuses du marché : pour un usage individuel, elle suffit largement, ce qui rend la question du prix presque secondaire en solo. Les plans payants commencent au Plus (environ 10$/utilisateur/mois) et au Business (15$, avec l'IA désormais incluse), surtout utiles dès qu'on collabore à plusieurs avec des permissions et un historique étendu.\n\nLe revers de la flexibilité, c'est la courbe d'apprentissage et des performances parfois molles sur de grosses bases. Si tu ne veux qu'une simple to-do list, Todoist est plus direct ; pour de la prise de notes pure et privée, Obsidian va plus loin. Mais pour centraliser docs, tâches et données reliées au même endroit, Notion reste difficile à battre.",
+    "longDescriptionEn": "Notion is the workspace that tries to replace everything: notes, documents, wikis, tasks, and above all databases you link together. Its strength is flexibility: you build exactly the tool you need, a freelance CRM, an editorial calendar, a knowledge base, without coding. It's become the default Swiss army knife for many freelancers and small teams.\n\nThe free tier is one of the most generous on the market: for individual use, it's plenty, which makes the price question almost secondary when solo. Paid plans start at Plus (around $10/user/month) and Business ($15, with AI now included), mostly useful once you collaborate with permissions and extended history.\n\nThe flip side of flexibility is the learning curve and sometimes sluggish performance on large databases. If you only want a simple to-do list, Todoist is more direct; for pure private note-taking, Obsidian goes further. But to centralize docs, tasks and linked data in one place, Notion remains hard to beat.",
     "pricingEn": {
-      "free": "Free plan available",
-      "paid": "€11.5/month (Plus)"
+      "free": "Free and very generous for individual use",
+      "paid": "Plus at $10/user/month, Business at $15 (AI included)"
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Offre gratuite très généreuse pour un usage individuel",
+        "Plus à 10$/utilisateur/mois, Business à 15$ avec IA incluse"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "notion.so",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Plus",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.notion.so/releases/2024-06-26",
+      "official_source_url": "https://www.notion.so/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 9.5
+      "compare_price_monthly_eur": 10
     },
     "websiteUrl": "https://notion.so",
     "logo": "",
@@ -41767,19 +42090,45 @@
     "longDescriptionEn": "Overlord is direct vector transfer Illustrator → After Effects in one click. Massive time saving. Free to start, paid plans for more. Built for video creators and graphic designers.\n\nEstimated time saving: 5h/month.",
     "pricingEn": null,
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "License",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 45,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
       ],
-      "verified_on": "2026-03-13",
-      "source_domain": "battleaxe.co",
+      "price_original": 45,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
       "usage_sensitive": false,
-      "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
-      "price_reliability": "low",
-      "location_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "battleaxe.co",
+      "verified_on": "2026-06-15",
       "official_source_url": "https://battleaxe.co/overlord",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 0
+      "verification_status": "official_contextual"
     },
     "websiteUrl": "https://battleaxe.co/overlord",
     "logo": "",
@@ -42942,7 +43291,11 @@
     "logo": "",
     "seo": null,
     "articles": [],
-    "covers": [],
+    "covers": [
+      "paiement-client",
+      "facturation",
+      "encaissement"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -42957,12 +43310,16 @@
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
-    "tool_type": "satellite",
+    "tool_type": "gestion",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "paiement-client",
+      "facturation",
+      "encaissement"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -44567,12 +44924,14 @@
       "galerie-client",
       "vente-prints",
       "livraison-client",
-      "watermark"
+      "watermark",
+      "photo-proofing"
     ],
     "functional_needs": [
       "galerie-client",
+      "livraison-client",
       "vente-prints",
-      "livraison-client"
+      "photo-proofing"
     ],
     "verticals": [
       "photographe"
@@ -47830,7 +48189,7 @@
     "host_app": "after-effects",
     "category": "design-tools",
     "shortDescription": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
-    "defaultMonthlyPrice": 8.66,
+    "defaultMonthlyPrice": 0,
     "pricing": {
       "paid": "10$/mois ou 99$ achat unique"
     },
@@ -47887,17 +48246,19 @@
     "longDescriptionEn": "Red Giant Magic Bullet Suite is colour grading and cinematic look suite: Looks, Colorista, Denoiser. Starting at €8.66/month. Built for video creators and photographers.\n\nEstimated time saving: 4h/month.",
     "pricingEn": null,
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Maxon subscription",
+      "compare_plan_kind": "subscription",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "cautions": [
+        "Tarif Maxon variable selon suite et bundle ; vérifier le plan exact avant calcul mensuel."
+      ],
       "source_domain": "maxon.net",
-      "usage_sensitive": false,
-      "compare_plan_kind": "individual",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://maxon.net/red-giant",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 8.66
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "needs_official_quote"
     },
     "websiteUrl": "https://maxon.net/red-giant",
     "logo": "",
@@ -48023,13 +48384,56 @@
     "pricing": null,
     "pricingEn": null,
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "billing_model": "credits",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free limité",
+          "label_en": "Limited free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "credits",
+          "label_fr": "Crédits",
+          "label_en": "Credits",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "currency": "EUR",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Usage gratuit limité ; vérifier crédits ou abonnement si volume élevé."
+      ],
+      "source_domain": "remove.bg",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.remove.bg/pricing",
+      "verification_status": "official_explicit"
+    },
     "affiliateLink": "",
     "websiteUrl": "https://www.remove.bg/",
     "logo": "",
     "seo": null,
     "articles": [],
-    "covers": [],
+    "covers": [
+      "background-removal",
+      "photo-cleanup",
+      "ecommerce-assets",
+      "visual-production"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -48049,7 +48453,12 @@
     "host_app": null,
     "bundle_parent": "adobe-photoshop",
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "background-removal",
+      "photo-cleanup",
+      "ecommerce-assets",
+      "visual-production"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -53936,7 +54345,11 @@
     "logo": "",
     "seo": null,
     "articles": [],
-    "covers": [],
+    "covers": [
+      "ui-design",
+      "prototypage",
+      "design-system"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -53951,12 +54364,16 @@
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "ui-design",
+      "prototypage",
+      "design-system"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -55859,11 +56276,16 @@
     "covers": [
       "accessibilite",
       "design-visuel",
-      "ux-ui"
+      "ux-ui",
+      "contraste",
+      "design-system",
+      "audit-ui"
     ],
     "functional_needs": [
       "accessibilite",
-      "design-system"
+      "contraste",
+      "design-system",
+      "audit-ui"
     ],
     "ia_use_case": null,
     "verticals": [
@@ -58813,10 +59235,10 @@
   {
     "id": "topaz-video-ai",
     "name": "Topaz Video AI",
-    "tool_type": "ia",
+    "tool_type": "satellite",
     "substitutable": true,
     "bundle_parent": null,
-    "category": "ai-general",
+    "category": "creation",
     "shortDescription": "Upscaling et amélioration vidéo par IA.",
     "defaultMonthlyPrice": 0,
     "pricing": {
@@ -58825,11 +59247,17 @@
     "covers": [
       "montage-video",
       "upscaling",
-      "debruitage-video"
+      "debruitage-video",
+      "video-upscaling",
+      "denoise-video",
+      "slow-motion",
+      "post-production"
     ],
     "functional_needs": [
-      "montage-video",
-      "upscaling"
+      "video-upscaling",
+      "denoise-video",
+      "slow-motion",
+      "post-production"
     ],
     "ia_use_case": [
       "upscaling-video"
@@ -58866,19 +59294,45 @@
       "paid": "$299 one-time purchase or $99/year"
     },
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "License",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 299,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
       ],
-      "verified_on": "2026-03-13",
-      "source_domain": "topazlabs.com",
+      "price_original": 299,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://topazlabs.com/topaz-video-ai",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 0
+      "location_sensitive": true,
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "topazlabs.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.topazlabs.com/topaz-video-ai",
+      "verification_status": "official_contextual"
     },
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
     "logo": "",
@@ -61698,7 +62152,11 @@
       "metaDescription": "WeTransfer en 2026 : prix, limites de l'offre gratuite (3 Go, 10 transferts/mois) et meilleures alternatives gratuites pour envoyer des fichiers volumineux. Le verdict ToolTrim."
     },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "file-transfer",
+      "client-delivery",
+      "creative-review"
+    ],
     "freeAlternative": "Google Drive",
     "soloRelevance": "Pratique pour un freelance qui envoie un gros fichier de temps en temps. En livraison hebdomadaire, le plafond gratuit de 10 transferts par mois devient vite un frein.",
     "teamRelevance": "En équipe, le partage par lien WeTransfer manque de traçabilité et de gestion des accès. Un Drive partagé ou Dropbox est plus adapté au travail à plusieurs.",
@@ -61775,7 +62233,11 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [],
-    "functional_needs": [],
+    "functional_needs": [
+      "file-transfer",
+      "client-delivery",
+      "creative-review"
+    ],
     "ia_use_case": null,
     "betterAlternative": {
       "tool": "google-drive",
@@ -65854,13 +66316,21 @@
       "placeit"
     ],
     "functional_needs": [
-      "design-automation",
       "mockup-generation",
-      "visual-content"
+      "design-automation",
+      "product-visuals",
+      "batch-export"
     ],
     "seo": {
       "metaDescription": "Dynamic Mockups avis 2026 : génère des mockups produit en batch avec API. Prix 13,80€/mois, alternatives et verdict."
-    }
+    },
+    "tool_type": "satellite",
+    "covers": [
+      "mockup-generation",
+      "design-automation",
+      "product-visuals",
+      "batch-export"
+    ]
   },
   {
     "id": "motion-app",
@@ -71802,19 +72272,55 @@
     "shortDescriptionEn": "Browser-based interactive 3D design for immersive web experiences.",
     "longDescription": "Spline est un outil de design 3D basé navigateur pour créer des scènes 3D interactives et les exporter vers React, HTML ou iframe sans coder Three.js.",
     "longDescriptionEn": "Spline is a browser-based 3D design tool to create interactive 3D scenes and export them to React, HTML or iframe without coding Three.js.",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 11.04,
     "pricing_v5": {
-      "verified_on": "2026-05-08",
-      "source_url": "https://spline.design/pricing",
-      "plan_name": "Pro",
-      "monthly_eur": 10,
-      "annual_monthly_eur": 8,
-      "currency_original": "USD",
+      "compare_price_monthly_eur": 11.04,
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Gratuit",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Pro",
+          "label_en": "Pro",
+          "price_monthly_eur": 11.04,
+          "price_original": 12,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Équipe",
+          "label_en": "Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
       "price_original": 12,
-      "billing_note": "Pro 12$/mois sans watermark",
-      "free_tier": true,
-      "free_tier_note": "Plan gratuit avec watermark",
-      "reliability": "high"
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "conversion_rate_to_eur": 0.92,
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Le plan gratuit peut suffire si le watermark et les limites ne posent pas problème.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "source_domain": "spline.design",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://spline.design/pricing",
+      "verification_status": "official_explicit"
     },
     "pricingTiers": {
       "free": "Plan gratuit avec watermark",
@@ -71846,7 +72352,8 @@
     "functional_needs": [
       "3d-design",
       "web-animation",
-      "interactive-design"
+      "interactive-design",
+      "prototype-3d"
     ],
     "verticals": [],
     "ia_use_case": null,
@@ -71901,7 +72408,10 @@
       "Immersive designer portfolio"
     ],
     "covers": [
-      "3d-design"
+      "3d-design",
+      "web-animation",
+      "interactive-design",
+      "prototype-3d"
     ],
     "alternatives": [
       "blender",
@@ -71935,19 +72445,55 @@
     "shortDescriptionEn": "Simple screen and camera recording with editing for demos, tutorials and courses.",
     "longDescription": "Tella enregistre écran et caméra simultanément avec un montage léger intégré. Idéal pour vidéos démo, tutoriels et cours sans logiciel lourd. Partage via lien instantané.",
     "longDescriptionEn": "Tella records screen and camera simultaneously with lightweight built-in editing. Ideal for demo videos, tutorials and courses without heavy software. Instant link sharing.",
-    "defaultMonthlyPrice": 11,
+    "defaultMonthlyPrice": 11.04,
     "pricing_v5": {
-      "verified_on": "2026-05-08",
-      "source_url": "https://www.tella.tv/pricing",
-      "plan_name": "Pro",
-      "monthly_eur": 11,
-      "annual_monthly_eur": 9,
-      "currency_original": "USD",
+      "compare_price_monthly_eur": 11.04,
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Gratuit",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Pro",
+          "label_en": "Pro",
+          "price_monthly_eur": 11.04,
+          "price_original": 12,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Équipe",
+          "label_en": "Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
       "price_original": 12,
-      "billing_note": "Pro 12$/mois ou 108$/an",
-      "free_tier": true,
-      "free_tier_note": "Plan gratuit limité",
-      "reliability": "medium"
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "conversion_rate_to_eur": 0.92,
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Vérifier si le plan gratuit suffit ou si les limites imposent Pro.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "source_domain": "tella.tv",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.tella.tv/pricing",
+      "verification_status": "official_explicit"
     },
     "pricingTiers": {
       "free": "Plan gratuit limité",
@@ -71980,6 +72526,7 @@
     "functional_needs": [
       "screen-recording",
       "video-editing",
+      "client-demo",
       "video-sharing"
     ],
     "verticals": [
@@ -72038,7 +72585,10 @@
       "Lightweight online courses"
     ],
     "covers": [
-      "screen-recording"
+      "screen-recording",
+      "video-editing",
+      "client-demo",
+      "video-sharing"
     ],
     "alternatives": [
       "loom",
@@ -75817,7 +76367,11 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "font-management",
+      "typography",
+      "creative-assets"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -75834,7 +76388,11 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "font-management",
+      "typography",
+      "creative-assets"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -75843,7 +76401,46 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "substitution_cluster_v2": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "billing_model": "free",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Gratuit",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Équipe",
+          "label_en": "Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "currency": "EUR",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Vérifier si l'utilisateur paie un compte Awesome ou une alternative font manager."
+      ],
+      "source_domain": "fontba.se",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://fontba.se/",
+      "verification_status": "official_explicit"
+    }
   },
   {
     "id": "adobe-acrobat",
@@ -75883,7 +76480,12 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "pdf-review",
+      "signature",
+      "client-validation",
+      "document-delivery"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -75900,7 +76502,12 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "pdf-review",
+      "signature",
+      "client-validation",
+      "document-delivery"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -75949,7 +76556,13 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "social-assets",
+      "templates",
+      "quick-design",
+      "brand-kit",
+      "video-short-form"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -75966,7 +76579,13 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "social-assets",
+      "templates",
+      "quick-design",
+      "brand-kit",
+      "video-short-form"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -76384,11 +77003,11 @@
       "free": "Essai ou plan gratuit selon usage",
       "paid": "À partir de 20€/mois environ"
     },
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://lottiefiles.com",
     "logo": "",
-    "category": "creation",
+    "category": "design-tools",
     "longDescription": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
     "verdict": {
       "keepIf": [
@@ -76411,7 +77030,12 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "animation-web",
+      "lottie-export",
+      "handoff-dev",
+      "motion-assets"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -76428,7 +77052,12 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "animation-web",
+      "lottie-export",
+      "handoff-dev",
+      "motion-assets"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -76437,7 +77066,46 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "substitution_cluster_v2": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "billing_model": "free",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Gratuit",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Équipe",
+          "label_en": "Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "currency": "EUR",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Vérifier si un espace équipe ou une librairie privée est utilisée."
+      ],
+      "source_domain": "lottiefiles.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://lottiefiles.com/pricing",
+      "verification_status": "official_explicit"
+    }
   },
   {
     "id": "gsap",
@@ -76807,7 +77475,12 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "music-licensing",
+      "stock-video",
+      "sfx",
+      "creative-licensing"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -76824,7 +77497,12 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "music-licensing",
+      "stock-video",
+      "sfx",
+      "creative-licensing"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -76873,7 +77551,11 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "music-licensing",
+      "sfx",
+      "video-production"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -76890,7 +77572,11 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "music-licensing",
+      "sfx",
+      "video-production"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -77137,7 +77823,12 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "brand-guidelines",
+      "brand-portal",
+      "client-handoff",
+      "asset-library"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -77154,7 +77845,12 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "brand-guidelines",
+      "brand-portal",
+      "client-handoff",
+      "asset-library"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -77368,7 +78064,7 @@
       "free": "Essai ou plan gratuit selon usage",
       "paid": "À partir de 5€/mois environ"
     },
-    "defaultMonthlyPrice": 5,
+    "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://rightfontapp.com",
     "logo": "",
@@ -77395,7 +78091,11 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "font-management",
+      "typography",
+      "creative-assets"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -77412,7 +78112,11 @@
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "font-management",
+      "typography",
+      "creative-assets"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -77421,7 +78125,48 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "substitution_cluster_v2": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "License",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 59,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 59,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "rightfontapp.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://rightfontapp.com/",
+      "verification_status": "official_contextual"
+    }
   },
   {
     "id": "languagetool",
@@ -81354,7 +82099,12 @@
       "Illustration",
       "Concept art"
     ],
-    "covers": [],
+    "covers": [
+      "illustration",
+      "sketching",
+      "ipad-drawing",
+      "concept-art"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -81364,14 +82114,19 @@
     "alternatives": [],
     "articles": [],
     "freeAlternative": null,
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "illustration",
+      "sketching",
+      "ipad-drawing",
+      "concept-art"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -81380,7 +82135,48 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "substitution_cluster_v2": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "iPad app",
+      "compare_plan_kind": "one_time",
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "value": "one_time",
+          "label_fr": "Achat unique",
+          "label_en": "One-time",
+          "price_monthly_eur": 0,
+          "price_original": 12.99,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Déjà acheté",
+          "label_en": "Already bought",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 12.99,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "price_reliability": "medium",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "source_domain": "procreate.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://procreate.com/",
+      "verification_status": "official_contextual"
+    }
   },
   {
     "id": "acf",
@@ -95200,7 +95996,7 @@
   {
     "id": "stark",
     "slug": "stark",
-    "name": "Stark",
+    "name": "Stark standalone",
     "category": "design-tools",
     "shortDescription": "Outil accessibilité design pour contrastes, annotations et conformité.",
     "shortDescriptionEn": "Design accessibility tool for contrast, annotations, and compliance.",
@@ -95254,7 +96050,10 @@
       "Maintenance and documentation"
     ],
     "covers": [
-      "design-tools"
+      "design-tools",
+      "accessibilite",
+      "contraste",
+      "audit-ui"
     ],
     "relevantFor": [
       "dev-freelance"
@@ -95284,12 +96083,14 @@
     "tool_type": "satellite",
     "substitutable": false,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma-stark",
     "verticals": [
       "dev-freelance"
     ],
     "functional_needs": [
-      "design-tools"
+      "accessibilite",
+      "contraste",
+      "audit-ui"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -95304,7 +96105,8 @@
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
-    }
+    },
+    "force_silence": true
   },
   {
     "id": "steamworks",
@@ -98521,8 +99323,8 @@
   {
     "id": "adobe-creative-cloud",
     "slug": "adobe-creative-cloud",
-    "name": "Adobe Creative Cloud",
-    "category": "organization",
+    "name": "Adobe Creative Cloud All Apps",
+    "category": "design-tools",
     "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
     "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
@@ -98536,24 +99338,58 @@
       "free": "Not disclosed",
       "paid": "Custom / usage based"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 64.39,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+      "compare_price_monthly_eur": 64.39,
+      "compare_plan_name": "Creative Cloud All Apps",
+      "compare_plan_kind": "bundle",
+      "billing_model": "bundle",
+      "billing_options": [
+        {
+          "value": "bundle",
+          "label_fr": "Creative Cloud All Apps",
+          "label_en": "Creative Cloud All Apps",
+          "price_monthly_eur": 64.39,
+          "price_original": 69.99,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Licence entreprise",
+          "label_en": "Company license",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Licence équipe",
+          "label_en": "Team license",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
       ],
-      "source_domain": "adobecreativecloud.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://adobecreativecloud.com",
-      "verification_status": "needs_official_quote"
+      "price_original": 69.99,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "conversion_rate_to_eur": 0.92,
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "Peut être déjà couvert par une licence équipe ou entreprise.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "source_domain": "adobe.com",
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://www.adobe.com/creativecloud/plans.html",
+      "verification_status": "official_explicit"
     },
     "affiliateLink": "https://adobecreativecloud.com",
-    "websiteUrl": "https://adobecreativecloud.com",
+    "websiteUrl": "https://www.adobe.com/creativecloud/plans.html",
     "logo": "https://logo.clearbit.com/adobecreativecloud.com",
     "seo": {},
     "pros": [],
@@ -98563,7 +99399,13 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "consulting-workflow"
+      "consulting-workflow",
+      "suite-creative",
+      "retouche-photo",
+      "illustration-vectorielle",
+      "motion-design",
+      "montage-video",
+      "licences-creative-cloud"
     ],
     "relevantFor": [
       "consultant"
@@ -98595,7 +99437,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -98603,7 +99445,12 @@
       "consulting"
     ],
     "functional_needs": [
-      "consulting-workflow"
+      "suite-creative",
+      "retouche-photo",
+      "illustration-vectorielle",
+      "motion-design",
+      "montage-video",
+      "licences-creative-cloud"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -101895,7 +102742,12 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "video-templates",
+      "stock-video",
+      "music-sfx",
+      "motion-assets",
+      "creative-licensing"
     ],
     "relevantFor": [
       "content-creator"
@@ -101927,7 +102779,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -101935,7 +102787,11 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "video-templates",
+      "stock-video",
+      "music-sfx",
+      "motion-assets",
+      "creative-licensing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -101952,7 +102808,7 @@
     "id": "envato-elements",
     "slug": "envato-elements",
     "name": "Envato Elements",
-    "category": "creation",
+    "category": "design-tools",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
     "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
@@ -101966,21 +102822,55 @@
       "free": "Not disclosed",
       "paid": "Custom / usage based"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 15.18,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
+      "compare_price_monthly_eur": 15.18,
+      "compare_plan_name": "Core annual monthly equivalent",
+      "compare_plan_kind": "individual",
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "paid",
+          "label_fr": "Core annuel",
+          "label_en": "Core annual",
+          "price_monthly_eur": 15.18,
+          "price_original": 16.5,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Teams",
+          "label_en": "Teams",
+          "needs_verification": true
+        },
+        {
+          "value": "marketplace",
+          "label_fr": "Achat ponctuel",
+          "label_en": "One-off marketplace",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 16.5,
+      "price_original_currency": "USD",
+      "currency": "USD",
+      "conversion_rate_to_eur": 0.92,
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": true,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Le prix mensuel sans annuel est plus élevé ; vérifier le mode de facturation.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
       ],
       "source_domain": "elements.envato.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://elements.envato.com",
-      "verification_status": "needs_official_quote"
+      "verified_on": "2026-06-15",
+      "official_source_url": "https://elements.envato.com/pricing",
+      "verification_status": "official_explicit"
     },
     "affiliateLink": "https://elements.envato.com",
     "websiteUrl": "https://elements.envato.com",
@@ -101993,7 +102883,14 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "asset-library",
+      "templates",
+      "stock-photos",
+      "video-templates",
+      "fonts",
+      "music-sfx",
+      "creative-licensing"
     ],
     "relevantFor": [
       "content-creator"
@@ -102025,7 +102922,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -102033,7 +102930,13 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "asset-library",
+      "templates",
+      "stock-photos",
+      "video-templates",
+      "fonts",
+      "music-sfx",
+      "creative-licensing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -102540,7 +103443,7 @@
     "id": "envato",
     "slug": "envato",
     "name": "Envato",
-    "category": "creation",
+    "category": "design-tools",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
     "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
@@ -102581,7 +103484,10 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "asset-marketplace",
+      "templates",
+      "creative-licensing"
     ],
     "relevantFor": [
       "content-creator"
@@ -102613,15 +103519,17 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "envato-elements",
     "verticals": [
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "asset-marketplace",
+      "templates",
+      "creative-licensing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -102632,7 +103540,8 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "force_silence": true
   },
   {
     "id": "storyblocks",
@@ -102679,7 +103588,11 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "stock-video",
+      "stock-audio",
+      "templates",
+      "creative-licensing"
     ],
     "relevantFor": [
       "content-creator"
@@ -102711,7 +103624,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -102719,7 +103632,10 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "stock-video",
+      "stock-audio",
+      "templates",
+      "creative-licensing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -102834,7 +103750,7 @@
     "id": "adobe-enhance-speech",
     "slug": "adobe-enhance-speech",
     "name": "Adobe Enhance Speech",
-    "category": "creation",
+    "category": "ai-general",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
     "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
@@ -102851,18 +103767,42 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "billing_model": "free",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Gratuit",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "team",
+          "label_fr": "Équipe",
+          "label_en": "Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ],
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "currency": "EUR",
+      "price_reliability": "high",
+      "usage_sensitive": false,
       "location_sensitive": false,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Vérifier si l'usage passe par Adobe Express Premium ou Creative Cloud."
       ],
       "source_domain": "podcast.adobe.com",
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-06-15",
       "official_source_url": "https://podcast.adobe.com/enhance",
-      "verification_status": "needs_official_quote"
+      "verification_status": "official_explicit"
     },
     "affiliateLink": "https://podcast.adobe.com/enhance",
     "websiteUrl": "https://podcast.adobe.com/enhance",
@@ -102875,7 +103815,10 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "audio-cleanup",
+      "voice-enhancement",
+      "video-post-production"
     ],
     "relevantFor": [
       "content-creator"
@@ -102907,7 +103850,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "ia",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -102915,7 +103858,9 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "audio-cleanup",
+      "voice-enhancement",
+      "video-post-production"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -103713,104 +104658,6 @@
     "decision_policy_v3": null
   },
   {
-    "id": "convertkit",
-    "slug": "convertkit",
-    "name": "Convertkit",
-    "category": "email-productivity",
-    "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
-    "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
-    "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
-    "longDescription": "Convertkit est référencé pour couvrir un besoin précis dans les stacks créateurs de contenu ToolTrim.",
-    "longDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
-    "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
-    },
-    "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
-    },
-    "defaultMonthlyPrice": 0,
-    "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "source_domain": "convertkit.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://convertkit.com",
-      "verification_status": "needs_official_quote"
-    },
-    "affiliateLink": "https://convertkit.com",
-    "websiteUrl": "https://convertkit.com",
-    "logo": "https://logo.clearbit.com/convertkit.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
-    "useCases": [],
-    "useCasesEn": [],
-    "covers": [
-      "creator-workflow"
-    ],
-    "relevantFor": [
-      "content-creator"
-    ],
-    "personas": [
-      "lina"
-    ],
-    "alternatives": [],
-    "verdict": {
-      "keepIf": [
-        "Le besoin revient dans plusieurs contenus ou campagnes."
-      ],
-      "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
-      ],
-      "threshold": "À ajouter seulement si le rôle est central dans la production ou la monétisation."
-    },
-    "verdictEn": {
-      "keepIf": [
-        "The need repeats across content or campaigns."
-      ],
-      "avoidIf": [
-        "An existing paid tool already covers the role."
-      ],
-      "threshold": "Add only if the role is central to production or monetization."
-    },
-    "articles": [],
-    "timeGainedHoursPerMonth": 3,
-    "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
-    "tool_type": "specialise",
-    "substitutable": true,
-    "host_app": null,
-    "bundle_parent": null,
-    "verticals": [
-      "creator-economy"
-    ],
-    "functional_needs": [
-      "creator-workflow"
-    ],
-    "ia_use_case": null,
-    "betterAlternative": null,
-    "migrationGuide": null,
-    "downgradePlan": null,
-    "prescription_quality": "medium",
-    "prescription_output": null,
-    "prescription_block_reasons": [],
-    "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
-    "decision_policy_v3": null
-  },
-  {
     "id": "mailerlite",
     "slug": "mailerlite",
     "name": "Mailerlite",
@@ -104401,7 +105248,7 @@
   {
     "id": "presets-lightroom",
     "slug": "presets-lightroom",
-    "name": "Presets Lightroom",
+    "name": "Lightroom presets génériques",
     "category": "creation",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
@@ -104417,21 +105264,7 @@
       "paid": "Custom / usage based"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "source_domain": "presetslightroom.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://presetslightroom.com",
-      "verification_status": "needs_official_quote"
-    },
+    "pricing_v5": null,
     "affiliateLink": "https://presetslightroom.com",
     "websiteUrl": "https://presetslightroom.com",
     "logo": "https://logo.clearbit.com/presetslightroom.com",
@@ -104443,7 +105276,9 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "photo-presets",
+      "plugin-placeholder"
     ],
     "relevantFor": [
       "content-creator"
@@ -104483,7 +105318,8 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "photo-presets",
+      "plugin-placeholder"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -104494,7 +105330,8 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "force_silence": true
   },
   {
     "id": "canva-kits",
@@ -104989,8 +105826,8 @@
   {
     "id": "krea",
     "slug": "krea",
-    "name": "Krea",
-    "category": "creation",
+    "name": "Krea AI duplicate",
+    "category": "ai-general",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
     "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
@@ -105031,7 +105868,10 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "generation-image",
+      "real-time-ai-visual",
+      "image-enhancement"
     ],
     "relevantFor": [
       "content-creator"
@@ -105063,15 +105903,17 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "ia",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "krea-ai",
     "verticals": [
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "generation-image",
+      "real-time-ai-visual",
+      "image-enhancement"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -105082,7 +105924,8 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "force_silence": true
   },
   {
     "id": "billo",
@@ -106362,7 +107205,7 @@
     "id": "icons8",
     "slug": "icons8",
     "name": "Icons8",
-    "category": "creation",
+    "category": "design-tools",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
     "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
@@ -106403,7 +107246,11 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "icons",
+      "illustrations",
+      "stock-assets",
+      "design-resources"
     ],
     "relevantFor": [
       "content-creator"
@@ -106435,7 +107282,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -106443,7 +107290,10 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "icons",
+      "illustrations",
+      "stock-assets",
+      "design-resources"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -106460,7 +107310,7 @@
     "id": "noun-project",
     "slug": "noun-project",
     "name": "Noun Project",
-    "category": "creation",
+    "category": "design-tools",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
     "description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
@@ -106501,7 +107351,10 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "icons",
+      "iconographie",
+      "design-resources"
     ],
     "relevantFor": [
       "content-creator"
@@ -106533,7 +107386,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -106541,7 +107394,9 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "icons",
+      "iconographie",
+      "design-resources"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -110575,7 +111430,7 @@
   {
     "id": "lightroom-presets",
     "slug": "lightroom-presets",
-    "name": "Lightroom Presets",
+    "name": "Lightroom presets génériques",
     "category": "creation",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
@@ -110591,21 +111446,7 @@
       "paid": "Custom / usage based"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "source_domain": "lightroompresets.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://lightroompresets.com",
-      "verification_status": "needs_official_quote"
-    },
+    "pricing_v5": null,
     "affiliateLink": "https://lightroompresets.com",
     "websiteUrl": "https://lightroompresets.com",
     "logo": "https://logo.clearbit.com/lightroompresets.com",
@@ -110617,7 +111458,9 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "photo-presets",
+      "plugin-placeholder"
     ],
     "relevantFor": [
       "content-creator"
@@ -110657,7 +111500,8 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "photo-presets",
+      "plugin-placeholder"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -110668,7 +111512,8 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "force_silence": true
   },
   {
     "id": "ltk",
@@ -112535,7 +113380,7 @@
   {
     "id": "mockup-plugins",
     "slug": "mockup-plugins",
-    "name": "Mockup Plugins",
+    "name": "Mockup plugins génériques",
     "category": "creation",
     "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
     "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
@@ -112551,21 +113396,7 @@
       "paid": "Custom / usage based"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "source_domain": "mockupplugins.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://mockupplugins.com",
-      "verification_status": "needs_official_quote"
-    },
+    "pricing_v5": null,
     "affiliateLink": "https://mockupplugins.com",
     "websiteUrl": "https://mockupplugins.com",
     "logo": "https://logo.clearbit.com/mockupplugins.com",
@@ -112577,7 +113408,9 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "mockup-generation",
+      "plugin-placeholder"
     ],
     "relevantFor": [
       "content-creator"
@@ -112617,7 +113450,8 @@
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "mockup-generation",
+      "plugin-placeholder"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -112628,7 +113462,8 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "force_silence": true
   },
   {
     "id": "product-hunt",
@@ -114439,7 +115274,10 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "creator-workflow"
+      "creator-workflow",
+      "retouche-photo-mobile",
+      "exports-photo",
+      "photo-presets"
     ],
     "relevantFor": [
       "content-creator"
@@ -114471,15 +115309,17 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "adobe-lightroom",
     "verticals": [
       "creator-economy"
     ],
     "functional_needs": [
-      "creator-workflow"
+      "retouche-photo-mobile",
+      "exports-photo",
+      "photo-presets"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
