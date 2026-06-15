@@ -23,16 +23,52 @@
 
 import { createClient } from "@supabase/supabase-js";
 import { readFile } from "node:fs/promises";
+import { existsSync, readFileSync } from "node:fs";
 
 const APPLY = process.argv.includes("--apply");
 
+// Charge les variables depuis un fichier .env local (comme le fait
+// scripts/deploy-preprod-supabase.mjs) pour ne pas avoir à coller de clé.
+function loadEnvFile(path) {
+  if (!existsSync(path)) return {};
+  const env = {};
+  for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const m = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (!m) continue;
+    env[m[1]] = m[2].replace(/^['"]|['"]$/g, "");
+  }
+  return env;
+}
+
+const fileEnv = {
+  ...loadEnvFile(".env"),
+  ...loadEnvFile(".env.local"),
+  ...loadEnvFile(".env.preprod"),
+  ...loadEnvFile(".env.production"),
+};
+const pick = (...names) =>
+  names.map((n) => process.env[n] || fileEnv[n]).find(Boolean);
+
 const SUPABASE_URL =
-  process.env.SUPABASE_URL || "https://rtfyfuwfdpnsogovkwai.supabase.co";
-const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  pick("SUPABASE_URL", "VITE_SUPABASE_URL") ||
+  "https://rtfyfuwfdpnsogovkwai.supabase.co";
+
+// Cherche la clé service_role sous les noms de variable les plus courants.
+const SERVICE_KEY = pick(
+  "SUPABASE_SERVICE_ROLE_KEY",
+  "SUPABASE_SERVICE_KEY",
+  "SERVICE_ROLE_KEY",
+  "SUPABASE_SECRET_KEY",
+  "SUPABASE_SERVICE_ROLE"
+);
 
 if (!SERVICE_KEY) {
   console.error(
-    "Manque la clé : exporte SUPABASE_SERVICE_ROLE_KEY (clé service_role Supabase) avant de lancer le script."
+    "Clé service_role introuvable.\n" +
+      "Ajoute-la dans .env.preprod sous le nom SUPABASE_SERVICE_ROLE_KEY=...,\n" +
+      "ou exporte-la avant de lancer : SUPABASE_SERVICE_ROLE_KEY=xxx node scripts/sync-json-to-supabase.mjs"
   );
   process.exit(1);
 }
