@@ -21626,11 +21626,11 @@
     "bundle_parent": null,
     "host_app": "figma",
     "category": "design-tools",
-    "shortDescription": "Gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems.",
-    "defaultMonthlyPrice": 7.79,
+    "shortDescription": "Plugin Figma pour gérer les design tokens et les synchroniser avec le code via Git.",
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Tokens locaux gratuits",
-      "paid": "9$/mois (Pro, sync Git)"
+      "free": "Plugin gratuit pour un usage local (plan Starter)",
+      "paid": "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
     },
     "covers": [
       "design-system",
@@ -21662,55 +21662,108 @@
     "affiliateLink": "https://tokens.studio",
     "verdict": {
       "keepIf": [
-        "Design system avec sync code — indispensable"
+        "Tu maintiens un design system synchronisé avec le code",
+        "Ton équipe gère thèmes et déclinaisons de marque à grande échelle"
       ],
       "avoidIf": [
-        "Pas de design system — inutile"
+        "Tu n'as pas de design system structuré : les variables natives de Figma suffisent",
+        "Le budget est serré : la synchronisation Git démarre désormais à 39€/mois"
       ],
-      "threshold": "Rentable dès le premier design system en production."
+      "threshold": "Indispensable dès que tu maintiens un vrai design system synchronisé avec le code. Pour de la maquette simple, les variables natives de Figma font le travail gratuitement."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Structure les design tokens (couleurs, espacements, typo) bien au-delà des variables natives de Figma",
+      "Synchronisation Git : les mêmes valeurs côté design et côté code, sans ressaisie",
+      "Plugin gratuit pour un usage local, suffisant pour explorer ou prototyper",
+      "Standard de fait pour les design systems sérieux maintenus dans Figma"
+    ],
+    "cons": [
+      "Grille tarifaire revue à la hausse : la sync Git démarre maintenant à 39€/mois (Starter Plus)",
+      "Inutile sans design system structuré : les variables natives de Figma suffisent",
+      "Courbe d'apprentissage réelle sur la logique de tokens et la configuration Git",
+      "Dépendant de Figma : tu hérites aussi de ses limites et de ses changements"
+    ],
+    "useCases": [
+      "Maintenir un design system synchronisé entre Figma et le code",
+      "Gérer thèmes clairs/sombres et déclinaisons de marque par tokens",
+      "Industrialiser la cohérence couleurs et espacements sur un gros produit",
+      "Transmettre les valeurs de design aux développeurs sans ressaisie manuelle"
+    ],
+    "seo": {
+      "metaDescription": "Tokens Studio (Figma Tokens) en 2026 : prix réels, plan gratuit et alternatives pour gérer vos design tokens. Le verdict ToolTrim pour les designers et design systems."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "designer",
+      "dev-frontend"
+    ],
     "pricingTiers": {
-      "free": "Tokens locaux gratuits",
-      "paid": "9$/mois (Pro, sync Git)"
+      "free": "Plugin gratuit pour un usage local (plan Starter)",
+      "paid": "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
     },
-    "longDescription": "Figma Tokens (Tokens Studio), c'est gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems. À partir de 7.79€/mois. Pensé pour les designers UX/UI et les développeurs solo.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : design system avec sync code — indispensable. À éviter si : pas de design system — inutile. Rentable dès le premier design system en production.",
-    "alternatives": [],
+    "longDescription": "Tokens Studio (anciennement Figma Tokens) est le plugin de référence pour gérer des design tokens dans Figma : couleurs, espacements, typographies, le tout structuré, versionné et synchronisable avec ton code via Git. C'est l'outil qui fait le pont entre la maquette et le design system en production, là où les variables natives de Figma montrent leurs limites.\n\nPour un designer qui maintient un vrai design system, c'est un gain de temps concret : tu changes un token, il se propage partout, et les développeurs récupèrent les mêmes valeurs côté code. Sans design system en revanche, c'est de la sur-ingénierie : les variables natives de Figma suffisent largement.\n\nLe point à connaître en 2026 : la grille tarifaire a changé. Le plugin reste gratuit pour un usage local (plan Starter), mais la synchronisation Git et l'automatisation sont passées sur des formules nettement plus chères, à partir de 39€/mois (Starter Plus). L'époque du petit plan Pro à 9$ est révolue. À évaluer selon la taille du système que tu maintiens.",
+    "alternatives": [
+      "specify"
+    ],
     "slug": "figma-tokens",
-    "shortDescriptionEn": "Design token management in Figma with Git sync. Essential for design systems.",
-    "description": "Figma Tokens (Tokens Studio), c'est gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems. À partir de 7.79€/mois. Pensé pour les designers UX/UI et les développeurs solo.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : design system avec sync code — indispensable. À éviter si : pas de design system — inutile. Rentable dès le premier design system en production.",
-    "longDescriptionEn": "Figma Tokens (Tokens Studio) is design token management in Figma with Git sync. Essential for design systems. Starting at €7.79/month. Built for UX/UI designers and solo developers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Figma plugin to manage design tokens and sync them to code via Git.",
+    "description": "Tokens Studio (anciennement Figma Tokens) est le plugin de référence pour gérer des design tokens dans Figma : couleurs, espacements, typographies, le tout structuré, versionné et synchronisable avec ton code via Git. C'est l'outil qui fait le pont entre la maquette et le design system en production, là où les variables natives de Figma montrent leurs limites.\n\nPour un designer qui maintient un vrai design system, c'est un gain de temps concret : tu changes un token, il se propage partout, et les développeurs récupèrent les mêmes valeurs côté code. Sans design system en revanche, c'est de la sur-ingénierie : les variables natives de Figma suffisent largement.\n\nLe point à connaître en 2026 : la grille tarifaire a changé. Le plugin reste gratuit pour un usage local (plan Starter), mais la synchronisation Git et l'automatisation sont passées sur des formules nettement plus chères, à partir de 39€/mois (Starter Plus). L'époque du petit plan Pro à 9$ est révolue. À évaluer selon la taille du système que tu maintiens.",
+    "longDescriptionEn": "Tokens Studio (formerly Figma Tokens) is the go-to plugin for managing design tokens in Figma: colors, spacing, typography, all structured, versioned and syncable to your code via Git. It's the tool that bridges the mockup and the production design system, where Figma's native variables hit their limits.\n\nFor a designer maintaining a real design system, it's a concrete time saver: change one token and it propagates everywhere, and developers get the same values in code. Without a design system, though, it's over-engineering: Figma's native variables are plenty.\n\nThe thing to know in 2026: the pricing changed. The plugin stays free for local use (Starter plan), but Git sync and automation moved to noticeably pricier tiers, starting at €39/month (Starter Plus). The days of the small $9 Pro plan are over. Weigh it against the size of the system you maintain.",
+    "pricingEn": {
+      "free": "Free plugin for local use (Starter plan)",
+      "paid": "Git sync and automation from €39/month (Starter Plus)"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Plugin gratuit pour un usage local",
+        "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "tokens.studio",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Starter (gratuit)",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://tokens.studio/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 7.79
+      "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://tokens.studio",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You maintain a design system synced with code",
+        "Your team manages themes and brand variants at scale"
+      ],
+      "avoidIf": [
+        "You don't have a structured design system: Figma's native variables are enough",
+        "Budget is tight: Git sync now starts at €39/month"
+      ],
+      "threshold": "Essential once you maintain a real design system synced with code. For simple mockups, Figma's native variables do the job for free."
+    },
+    "prosEn": [
+      "Structures design tokens (colors, spacing, type) well beyond Figma's native variables",
+      "Git sync: the same values on the design and code sides, no re-entry",
+      "Free plugin for local use, enough to explore or prototype",
+      "De facto standard for serious design systems maintained in Figma"
+    ],
+    "consEn": [
+      "Pricing moved up: Git sync now starts at €39/month (Starter Plus)",
+      "Pointless without a structured design system: Figma's native variables suffice",
+      "Real learning curve on token logic and Git setup",
+      "Tied to Figma: you also inherit its limits and changes"
+    ],
+    "useCasesEn": [
+      "Maintain a design system synced between Figma and code",
+      "Manage light/dark themes and brand variants through tokens",
+      "Industrialize color and spacing consistency across a large product",
+      "Hand design values to developers without manual re-entry"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
@@ -33149,7 +33202,7 @@
     "id": "linear",
     "name": "Linear",
     "category": "organization",
-    "shortDescription": "La gestion de projet pour les équipes tech exigeantes.",
+    "shortDescription": "Gestion de projet ultra-rapide pour les équipes tech, alternative moderne à Jira.",
     "verdict": {
       "keepIf": [
         "Vous développez du logiciel",
@@ -33163,8 +33216,8 @@
       "threshold": "Dès que vous avez un side-project tech ou travaillez avec des devs."
     },
     "pricing": {
-      "free": "Illimité pour 1 personne",
-      "paid": "8$/mois par utilisateur"
+      "free": "Illimité pour une petite équipe, jusqu'à 250 issues actives",
+      "paid": "Standard à 8$/utilisateur/mois, Business à 14$, Enterprise sur devis"
     },
     "affiliateLink": "https://linear.app",
     "articles": [],
@@ -33173,24 +33226,28 @@
       "suivi-issues",
       "roadmap-tech"
     ],
-    "freeAlternative": "linear",
+    "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "bestFor": [],
     "defaultMonthlyPrice": 8.66,
     "pricingTiers": {
-      "free": "Illimité pour 1 personne",
-      "paid": "8$/mois par utilisateur"
+      "free": "Illimité pour une petite équipe, jusqu'à 250 issues actives",
+      "paid": "Standard à 8$/utilisateur/mois, Business à 14$, Enterprise sur devis"
     },
     "relevantFor": [
       "tech",
       "designer"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "jira",
+      "notion",
+      "asana"
+    ],
     "seo": {
-      "metaDescription": "Linear : La gestion de projet pour les équipes tech exigeantes. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Linear : gestion de projet ultra-rapide pour les équipes tech. Prix, plan gratuit et alternatives. Le verdict ToolTrim pour les freelances et petites équipes."
     },
-    "longDescription": "Linear, c'est la gestion de projet pour les équipes tech exigeantes. À partir de 8.66€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nInterface ultra-rapide et minimaliste. raccourcis clavier pour tout faire sans souris, intégration native GitHub/GitLab. Cycles (sprints) simples et efficaces. Concrètement : développement : gérer vos features, bugs, et sprints. Ou encore : roadmap produit : planifier les prochaines versions. Gain de temps estimé : 3h/mois.\n\nÀ garder si : vous développez du logiciel ou vous détestez la lenteur de Jira. À éviter si : vous n'êtes pas dans la tech ou vous voulez des vues Gantt complexes (Notion est mieux). Limite principale : moins de fonctionnalités que Jira (pas de Gantt, roadmaps limitées). Dès que vous avez un side-project tech ou travaillez avec des devs.",
+    "longDescription": "Linear, c'est l'outil de suivi de projet qui a séduit les équipes produit lassées de la lenteur de Jira. Tout est pensé pour la vitesse : raccourcis clavier partout, interface qui répond au quart de tour, cycles (sprints) simples, et une intégration GitHub/GitLab native qui relie tes issues à ton code sans friction.\n\nLe positionnement est net : Linear vise les équipes tech et les développeurs, pas la gestion de projet généraliste. Pas de diagramme de Gantt complexe, pas de vues marketing à la Monday. Si ton besoin c'est un backlog propre, des priorités claires et un suivi de bugs rapide, c'est difficile à battre. Si tu pilotes des projets non-tech ou que tu veux des roadmaps très visuelles, Notion ou Asana resteront plus souples.\n\nCôté prix : gratuit jusqu'à 250 issues pour une petite équipe, puis environ 8$/utilisateur/mois sur le plan Standard et 14$ sur Business. Pour un dev freelance ou un side-project, le plan gratuit suffit largement à démarrer.",
     "pros": [
       "Interface ultra-rapide et minimaliste",
       "Raccourcis clavier pour tout faire sans souris",
@@ -33229,18 +33286,19 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "linear",
-    "shortDescriptionEn": "Project management for high-performance product teams.",
-    "description": "Linear, c'est la gestion de projet pour les équipes tech exigeantes. À partir de 8.66€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nInterface ultra-rapide et minimaliste. raccourcis clavier pour tout faire sans souris, intégration native GitHub/GitLab. Cycles (sprints) simples et efficaces. Concrètement : développement : gérer vos features, bugs, et sprints. Ou encore : roadmap produit : planifier les prochaines versions. Gain de temps estimé : 3h/mois.\n\nÀ garder si : vous développez du logiciel ou vous détestez la lenteur de Jira. À éviter si : vous n'êtes pas dans la tech ou vous voulez des vues Gantt complexes (Notion est mieux). Limite principale : moins de fonctionnalités que Jira (pas de Gantt, roadmaps limitées). Dès que vous avez un side-project tech ou travaillez avec des devs.",
-    "longDescriptionEn": "Linear is project management for high-performance product teams. Starting at €8.66/month. Built for solo developers and CTOs and tech leads.\n\nUltra-fast and minimalist interface. keyboard shortcuts to do everything without a mouse, native GitHub/GitLab integration. Simple and efficient Cycles (sprints). In practice: development: manage your features, bugs, and sprints. Also: product roadmap: plan upcoming releases. Estimated time saving: 3h/month.\n\nKeep it if: you develop software or you hate Jira's slowness. Skip it if: you are not in tech or you want complex Gantt views (Notion is better). Main limit: fewer features than Jira (no Gantt charts, limited roadmaps). As soon as you have a tech side-project or work with developers.",
+    "shortDescriptionEn": "Fast project management for software teams, a modern alternative to Jira.",
+    "description": "Linear, c'est l'outil de suivi de projet qui a séduit les équipes produit lassées de la lenteur de Jira. Tout est pensé pour la vitesse : raccourcis clavier partout, interface qui répond au quart de tour, cycles (sprints) simples, et une intégration GitHub/GitLab native qui relie tes issues à ton code sans friction.\n\nLe positionnement est net : Linear vise les équipes tech et les développeurs, pas la gestion de projet généraliste. Pas de diagramme de Gantt complexe, pas de vues marketing à la Monday. Si ton besoin c'est un backlog propre, des priorités claires et un suivi de bugs rapide, c'est difficile à battre. Si tu pilotes des projets non-tech ou que tu veux des roadmaps très visuelles, Notion ou Asana resteront plus souples.\n\nCôté prix : gratuit jusqu'à 250 issues pour une petite équipe, puis environ 8$/utilisateur/mois sur le plan Standard et 14$ sur Business. Pour un dev freelance ou un side-project, le plan gratuit suffit largement à démarrer.",
+    "longDescriptionEn": "Linear is the issue tracker that won over product teams tired of Jira's sluggishness. Everything is built for speed: keyboard shortcuts everywhere, an interface that responds instantly, simple cycles (sprints), and native GitHub/GitLab integration that links your issues to your code without friction.\n\nThe positioning is clear: Linear targets engineering teams and developers, not general-purpose project management. No complex Gantt charts, no Monday-style marketing views. If what you need is a clean backlog, sharp priorities and fast bug tracking, it's hard to beat. If you run non-tech projects or want highly visual roadmaps, Notion or Asana will stay more flexible.\n\nOn price: free up to 250 issues for a small team, then around $8/user/month on the Standard plan and $14 on Business. For a freelance developer or a side-project, the free plan is more than enough to start.",
     "pricingEn": {
-      "free": "Unlimited for 1 person",
-      "paid": "$8/month per user"
+      "free": "Unlimited for a small team, up to 250 active issues",
+      "paid": "Standard at $8/user/month, Business at $14, Enterprise on request"
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Plan gratuit jusqu'à 250 issues actives",
+        "Standard à 8$/utilisateur/mois, facturation annuelle"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "linear.app",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -48548,11 +48606,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes.",
-    "defaultMonthlyPrice": 12.12,
+    "shortDescription": "Animation interactive pour le web et le mobile, alternative avancée à Lottie.",
+    "defaultMonthlyPrice": 9,
     "pricing": {
-      "free": "Projets publics gratuits",
-      "paid": "14$/mois (Pro)"
+      "free": "Conception gratuite dans l'éditeur, projets publics illimités",
+      "paid": "Plan Cadet à 9$/mois, Voyager à 32$/mois pour les équipes"
     },
     "covers": [
       "animation-web",
@@ -48587,54 +48645,109 @@
     "affiliateLink": "https://rive.app",
     "verdict": {
       "keepIf": [
-        "Animations interactives pour apps ou sites — state machines"
+        "Tu crées des animations interactives pour une app ou un site (state machines)",
+        "Tu veux des fichiers légers lus nativement sur mobile et web"
       ],
       "avoidIf": [
-        "Animations simples — Bodymovin/Lottie depuis After Effects suffit"
+        "Ton animation est simple et joue en boucle : Lottie via Bodymovin suffit",
+        "Tu n'as pas de besoin d'interactivité, juste un visuel animé"
       ],
-      "threshold": "Gratuit pour les projets publics — toujours pertinent."
+      "threshold": "Le bon choix dès que l'animation doit être interactive ou pilotée par la logique de l'app. Pour du décoratif simple qui joue en boucle, Lottie reste plus léger à mettre en place et gratuit."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "State machines : les animations réagissent aux actions de l'utilisateur, pas juste une lecture en boucle",
+      "Fichiers légers lus nativement sur web, iOS, Android, Flutter et React Native",
+      "Éditeur gratuit pour concevoir, plan d'entrée Cadet abordable à 9$/mois",
+      "Sans équivalent réel pour l'animation interactive complexe"
+    ],
+    "cons": [
+      "Surdimensionné pour une animation simple : Lottie via Bodymovin suffit et reste gratuit",
+      "Intégration via runtime à prévoir côté développement, ce n'est pas un simple GIF",
+      "Courbe d'apprentissage sur les state machines et la logique d'animation",
+      "Écosystème plus jeune que celui d'After Effects et Lottie"
+    ],
+    "useCases": [
+      "Micro-interactions et boutons animés réactifs dans une app mobile",
+      "Mascottes et illustrations animées pilotées par l'état de l'interface",
+      "Onboarding interactif ou écrans de chargement vivants",
+      "Animations de produit légères et performantes pour le web"
+    ],
+    "seo": {
+      "metaDescription": "Rive en 2026 : prix, plan gratuit et alternatives pour l'animation interactive web et mobile. Quand Rive bat Lottie, et quand l'inverse. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "designer",
+      "dev-frontend",
+      "dev-mobile"
+    ],
     "pricingTiers": {
-      "free": "Projets publics gratuits",
-      "paid": "14$/mois (Pro)"
+      "free": "Conception gratuite dans l'éditeur, projets publics illimités",
+      "paid": "Plan Cadet à 9$/mois, Voyager à 32$/mois pour les équipes"
     },
-    "longDescription": "Rive, c'est animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes. À partir de 12.12€/mois. Pensé pour les designers UX/UI et les créateurs vidéo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : animations interactives pour apps ou sites — state machines. À éviter si : animations simples — Bodymovin/Lottie depuis After Effects suffit. Gratuit pour les projets publics — toujours pertinent.",
-    "alternatives": [],
+    "longDescription": "Rive sert à créer des animations interactives qui tournent vraiment dans une app ou un site, pas juste une vidéo qui joue en boucle. Tu dessines, tu animes, et surtout tu définis des state machines : l'animation réagit aux actions de l'utilisateur (survol, clic, chargement, état d'un bouton). Le fichier exporté est léger et se lit nativement via les runtimes Rive pour le web, iOS, Android, Flutter ou React Native.\n\nLa comparaison naturelle, c'est Lottie. Pour une animation simple qui joue en boucle, Lottie (export Bodymovin depuis After Effects) suffit largement et reste gratuit. Rive prend l'avantage dès que l'animation doit être interactive ou pilotée par la logique de l'app : c'est là qu'il n'a pas vraiment d'équivalent.\n\nCôté prix : tu peux concevoir gratuitement dans l'éditeur, l'offre payante démarre au plan Cadet à 9$/mois (un palier d'entrée plus abordable qu'avant), puis Voyager à 32$/mois pour les équipes. Pour un freelance qui livre une micro-interaction de temps en temps, le gratuit couvre déjà beaucoup.",
+    "alternatives": [
+      "ae-bodymovin",
+      "spline"
+    ],
     "slug": "rive",
-    "shortDescriptionEn": "Native interactive animation for web and mobile. Replaces Lottie for complex projects.",
-    "description": "Rive, c'est animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes. À partir de 12.12€/mois. Pensé pour les designers UX/UI et les créateurs vidéo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : animations interactives pour apps ou sites — state machines. À éviter si : animations simples — Bodymovin/Lottie depuis After Effects suffit. Gratuit pour les projets publics — toujours pertinent.",
-    "longDescriptionEn": "Rive is native interactive animation for web and mobile. Replaces Lottie for complex projects. Starting at €12.12/month. Built for UX/UI designers and video creators.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Interactive animation for web and mobile, an advanced alternative to Lottie.",
+    "description": "Rive sert à créer des animations interactives qui tournent vraiment dans une app ou un site, pas juste une vidéo qui joue en boucle. Tu dessines, tu animes, et surtout tu définis des state machines : l'animation réagit aux actions de l'utilisateur (survol, clic, chargement, état d'un bouton). Le fichier exporté est léger et se lit nativement via les runtimes Rive pour le web, iOS, Android, Flutter ou React Native.\n\nLa comparaison naturelle, c'est Lottie. Pour une animation simple qui joue en boucle, Lottie (export Bodymovin depuis After Effects) suffit largement et reste gratuit. Rive prend l'avantage dès que l'animation doit être interactive ou pilotée par la logique de l'app : c'est là qu'il n'a pas vraiment d'équivalent.\n\nCôté prix : tu peux concevoir gratuitement dans l'éditeur, l'offre payante démarre au plan Cadet à 9$/mois (un palier d'entrée plus abordable qu'avant), puis Voyager à 32$/mois pour les équipes. Pour un freelance qui livre une micro-interaction de temps en temps, le gratuit couvre déjà beaucoup.",
+    "longDescriptionEn": "Rive is for building interactive animations that actually run inside an app or a site, not just a video looping on screen. You draw, you animate, and above all you define state machines: the animation reacts to user actions (hover, click, loading, a button's state). The exported file is light and plays natively through Rive runtimes for web, iOS, Android, Flutter or React Native.\n\nThe natural comparison is Lottie. For a simple animation that loops, Lottie (Bodymovin export from After Effects) is plenty and stays free. Rive pulls ahead the moment the animation needs to be interactive or driven by the app's logic: that's where it has no real equivalent.\n\nOn price: you can design for free in the editor, the paid tier starts at the Cadet plan at $9/month (a more affordable entry point than before), then Voyager at $32/month for teams. For a freelancer shipping the occasional micro-interaction, the free tier already covers a lot.",
+    "pricingEn": {
+      "free": "Free design in the editor, unlimited public projects",
+      "paid": "Cadet plan at $9/month, Voyager at $32/month for teams"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Conception gratuite dans l'éditeur",
+        "Plan d'entrée Cadet à 9$/mois, Voyager à 32$/mois"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "rive.app",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Cadet",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://rive.app/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12.12
+      "compare_price_monthly_eur": 9
     },
     "websiteUrl": "https://rive.app",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You build interactive animations for an app or a site (state machines)",
+        "You want light files that play natively on mobile and web"
+      ],
+      "avoidIf": [
+        "Your animation is simple and loops: Lottie via Bodymovin is enough",
+        "You don't need interactivity, just an animated visual"
+      ],
+      "threshold": "The right call once the animation needs to be interactive or driven by app logic. For simple decorative loops, Lottie stays lighter to set up and free."
+    },
+    "prosEn": [
+      "State machines: animations react to user actions, not just a loop",
+      "Light files that play natively on web, iOS, Android, Flutter and React Native",
+      "Free editor to design, affordable Cadet entry plan at $9/month",
+      "No real equivalent for complex interactive animation"
+    ],
+    "consEn": [
+      "Overkill for a simple animation: Lottie via Bodymovin is enough and free",
+      "Runtime integration needed on the dev side, it's not just a GIF",
+      "Learning curve on state machines and animation logic",
+      "Younger ecosystem than After Effects and Lottie"
+    ],
+    "useCasesEn": [
+      "Reactive micro-interactions and animated buttons in a mobile app",
+      "Mascots and animated illustrations driven by interface state",
+      "Interactive onboarding or lively loading screens",
+      "Light, performant product animations for the web"
+    ],
     "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [
@@ -60927,34 +61040,110 @@
     "slug": "wetransfer",
     "name": "WeTransfer",
     "category": "storage",
-    "shortDescription": "Transfert de fichiers volumineux",
-    "shortDescriptionEn": "Large file transfer.",
-    "description": "WeTransfer, c'est transfert de fichiers volumineux. Entièrement gratuit.",
-    "longDescription": "WeTransfer, c'est transfert de fichiers volumineux. Entièrement gratuit.",
-    "longDescriptionEn": "WeTransfer is large file transfer. Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024.",
+    "shortDescriptionEn": "Send large files by link, no account needed. Free tier capped since 2024.",
+    "description": "WeTransfer fait une seule chose : envoyer des fichiers trop lourds pour un mail, via un lien. Pas de compte, pas d'installation, tu déposes jusqu'à 3 Go et tu partages le lien. Cette simplicité en a fait l'outil par défaut d'une bonne partie des créatifs et des freelances pendant dix ans.\n\nLe problème, c'est ce qui a changé depuis le rachat par Bending Spoons en 2024. L'offre gratuite, longtemps généreuse, est désormais plafonnée à 10 transferts par mois et les liens expirent au bout de 3 jours. Pour un envoi de temps en temps, ça passe. Mais si tu livres des fichiers clients chaque semaine, tu touches le mur vite, et l'outil te pousse vers l'abonnement Starter (6,99 $/mois, 300 Go par envoi) ou une formule supérieure.\n\nIl y a aussi eu l'épisode de 2025 : une mise à jour des conditions d'utilisation laissait entendre que WeTransfer pouvait exploiter les fichiers envoyés pour entraîner de l'IA. L'entreprise a fait machine arrière après la levée de boucliers, mais pour quiconque transfère des documents clients sensibles, le doute reste posé. Concrètement : WeTransfer dépanne bien pour un envoi ponctuel et léger. Dès que c'est récurrent ou confidentiel, un lien Google Drive ou Dropbox fait le même travail sans compteur.",
+    "longDescription": "WeTransfer fait une seule chose : envoyer des fichiers trop lourds pour un mail, via un lien. Pas de compte, pas d'installation, tu déposes jusqu'à 3 Go et tu partages le lien. Cette simplicité en a fait l'outil par défaut d'une bonne partie des créatifs et des freelances pendant dix ans.\n\nLe problème, c'est ce qui a changé depuis le rachat par Bending Spoons en 2024. L'offre gratuite, longtemps généreuse, est désormais plafonnée à 10 transferts par mois et les liens expirent au bout de 3 jours. Pour un envoi de temps en temps, ça passe. Mais si tu livres des fichiers clients chaque semaine, tu touches le mur vite, et l'outil te pousse vers l'abonnement Starter (6,99 $/mois, 300 Go par envoi) ou une formule supérieure.\n\nIl y a aussi eu l'épisode de 2025 : une mise à jour des conditions d'utilisation laissait entendre que WeTransfer pouvait exploiter les fichiers envoyés pour entraîner de l'IA. L'entreprise a fait machine arrière après la levée de boucliers, mais pour quiconque transfère des documents clients sensibles, le doute reste posé. Concrètement : WeTransfer dépanne bien pour un envoi ponctuel et léger. Dès que c'est récurrent ou confidentiel, un lien Google Drive ou Dropbox fait le même travail sans compteur.",
+    "longDescriptionEn": "WeTransfer does one thing: send files too big for email, through a link. No account, no install, you drop up to 3 GB and share the link. That simplicity made it the default tool for a big chunk of the creative and freelance world for a decade.\n\nThe problem is what changed after Bending Spoons acquired it in 2024. The free tier, long generous, is now capped at 10 transfers per month and links expire after 3 days. For the occasional send, fine. But if you deliver client files every week, you hit the wall fast, and the tool nudges you toward the Starter plan (6.99$/month, 300 GB per transfer) or a higher tier.\n\nThere was also the 2025 episode: a terms-of-service update suggested WeTransfer could use uploaded files to train AI. The company reversed course after the backlash, but for anyone transferring sensitive client documents, the doubt lingers. Bottom line: WeTransfer is handy for a one-off, lightweight send. The moment it becomes recurring or confidential, a Google Drive or Dropbox link does the same job without the counter.",
+    "pricing": {
+      "free": "3 Go par envoi, 10 transferts par mois, liens valables 3 jours",
+      "paid": "Starter à 6,99 $/mois (300 Go par envoi), formules supérieures au-delà"
+    },
+    "pricingEn": {
+      "free": "3 GB per transfer, 10 transfers per month, links valid for 3 days",
+      "paid": "Starter at 6.99$/month (300 GB per transfer), higher tiers above"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Gratuit",
+      "verified_on": "2026-06-15",
+      "source_domain": "wetransfer.com",
+      "official_source_url": "https://wetransfer.com/pricing",
+      "cautions": [
+        "Offre gratuite plafonnée à 10 transferts par mois depuis fin 2024",
+        "Liens valables 3 jours seulement sur le plan gratuit",
+        "Plan payant Starter à 6,99 $/mois (300 Go par envoi)"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://wetransfer.com",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "WeTransfer en 2026 : prix, limites de l'offre gratuite (3 Go, 10 transferts/mois) et meilleures alternatives gratuites pour envoyer des fichiers volumineux. Le verdict ToolTrim."
+    },
     "articles": [],
     "covers": [],
-    "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "freeAlternative": "Google Drive",
+    "soloRelevance": "Pratique pour un freelance qui envoie un gros fichier de temps en temps. En livraison hebdomadaire, le plafond gratuit de 10 transferts par mois devient vite un frein.",
+    "teamRelevance": "En équipe, le partage par lien WeTransfer manque de traçabilité et de gestion des accès. Un Drive partagé ou Dropbox est plus adapté au travail à plusieurs.",
+    "relevantFor": [
+      "freelance",
+      "designer",
+      "createur-contenu"
+    ],
+    "alternatives": [
+      "google-drive",
+      "dropbox"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu envoies des fichiers volumineux de façon occasionnelle et sans enjeu de confidentialité",
+        "Tu veux un partage immédiat sans demander à ton client de créer un compte"
+      ],
+      "avoidIf": [
+        "Tu livres des fichiers clients chaque semaine : le plafond de 10 transferts par mois te bloquera",
+        "Tu transfères des documents sensibles et la confidentialité compte"
+      ],
+      "threshold": "Pratique pour un envoi ponctuel et léger. Dès que l'usage devient récurrent ou confidentiel, un lien Google Drive ou Dropbox fait le même travail gratuitement, sans plafond ni expiration à 3 jours."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You send large files occasionally and confidentiality isn't a concern",
+        "You want instant sharing without asking your client to create an account"
+      ],
+      "avoidIf": [
+        "You deliver client files every week: the 10-transfers-per-month cap will block you",
+        "You transfer sensitive documents and confidentiality matters"
+      ],
+      "threshold": "Handy for a one-off, lightweight send. The moment it becomes recurring or confidential, a Google Drive or Dropbox link does the same job for free, with no cap and no 3-day expiry."
+    },
+    "pros": [
+      "Aucun compte ni installation : tu déposes un fichier et tu envoies le lien en trente secondes",
+      "Interface épurée, comprise par n'importe quel client sans explication",
+      "Jusqu'à 3 Go par envoi sur l'offre gratuite, suffisant pour la plupart des livrables",
+      "Protection par mot de passe et liens de suivi disponibles même sur les petits plans"
+    ],
+    "prosEn": [
+      "No account, no install: you drop a file and send the link in thirty seconds",
+      "Clean interface any client understands without explanation",
+      "Up to 3 GB per transfer on the free tier, enough for most deliverables",
+      "Password protection and tracking links available even on the smaller plans"
+    ],
+    "cons": [
+      "Offre gratuite plafonnée à 10 transferts par mois depuis 2024, vite atteinte en usage pro",
+      "Liens valables seulement 3 jours : un client qui répond tard ne récupère plus le fichier",
+      "Confiance abîmée depuis le rachat par Bending Spoons et l'épisode IA de 2025",
+      "Un simple lien Google Drive ou Dropbox rend le même service gratuitement et sans compteur"
+    ],
+    "consEn": [
+      "Free tier capped at 10 transfers per month since 2024, hit fast in professional use",
+      "Links valid for only 3 days: a client who replies late can no longer grab the file",
+      "Trust eroded since the Bending Spoons acquisition and the 2025 AI episode",
+      "A plain Google Drive or Dropbox link does the same job for free, with no counter"
+    ],
+    "useCases": [
+      "Envoyer un livrable lourd (vidéo, maquette, photos HD) à un client ponctuel",
+      "Partager un fichier unique sans créer de compte des deux côtés",
+      "Transmettre un export trop volumineux pour la pièce jointe d'un mail",
+      "Protéger un envoi par mot de passe pour un partage externe rapide"
+    ],
+    "useCasesEn": [
+      "Send a heavy deliverable (video, mockup, HD photos) to a one-off client",
+      "Share a single file without either side creating an account",
+      "Pass along an export too big for an email attachment",
+      "Password-protect a quick external share"
+    ],
     "personas": [],
     "tool_type": "satellite",
     "substitutable": true,
@@ -60963,10 +61152,15 @@
     "verticals": [],
     "functional_needs": [],
     "ia_use_case": null,
-    "betterAlternative": null,
+    "betterAlternative": {
+      "tool": "google-drive",
+      "reason": "Un lien de partage Google Drive envoie les mêmes fichiers gratuitement, sans plafond de 10 transferts ni expiration à 3 jours.",
+      "saving": 0,
+      "performanceGain": null
+    },
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -85398,62 +85592,81 @@
     "slug": "gitlens",
     "name": "GitLens",
     "category": "nocode-web",
-    "shortDescription": "Extension VS Code pour comprendre historique Git, auteurs et contexte de changement.",
-    "shortDescriptionEn": "VS Code extension to understand Git history, authors, and change context.",
-    "description": "Extension VS Code pour comprendre historique Git, auteurs et contexte de changement. À intégrer dans une stack dev seulement si son rôle est clair dans la chaîne de livraison.",
-    "longDescription": "Extension VS Code pour comprendre historique Git, auteurs et contexte de changement.",
-    "longDescriptionEn": "VS Code extension to understand Git history, authors, and change context.",
+    "shortDescription": "Extension VS Code pour Git : blame inline, historique, auteurs et contexte de code.",
+    "shortDescriptionEn": "VS Code extension for Git: inline blame, history, authors, and code context.",
+    "description": "GitLens est l'extension qui transforme la gestion de Git dans VS Code. Son apport le plus visible, c'est le blame inline : à côté de chaque ligne, tu vois qui l'a écrite, quand et dans quel commit. S'y ajoutent un historique de fichier et de ligne détaillé, un Commit Graph pour visualiser les branches, et des liens vers les pull requests. Pour comprendre une base de code qu'on n'a pas écrite, c'est un accélérateur réel.\n\nL'extension est devenue quasi incontournable pour les développeurs sous VS Code, installée des dizaines de millions de fois. La majorité des fonctions restent gratuites. GitLens appartient à GitKraken, qui a placé certaines fonctionnalités avancées (vues cloud, intégrations PR poussées, Commit Graph enrichi) derrière GitLens Pro, autour de 10$/mois, ou via l'abonnement GitKraken.\n\nLe point à connaître : en 2023, GitKraken a fait passer derrière Pro des fonctions auparavant gratuites, ce qui a agacé une partie des utilisateurs. En pratique pour un freelance, le gratuit couvre l'essentiel du quotidien. Pro ne se justifie que si tu utilises vraiment les intégrations et les vues cloud tous les jours.",
+    "longDescription": "GitLens est l'extension qui transforme la gestion de Git dans VS Code. Son apport le plus visible, c'est le blame inline : à côté de chaque ligne, tu vois qui l'a écrite, quand et dans quel commit. S'y ajoutent un historique de fichier et de ligne détaillé, un Commit Graph pour visualiser les branches, et des liens vers les pull requests. Pour comprendre une base de code qu'on n'a pas écrite, c'est un accélérateur réel.\n\nL'extension est devenue quasi incontournable pour les développeurs sous VS Code, installée des dizaines de millions de fois. La majorité des fonctions restent gratuites. GitLens appartient à GitKraken, qui a placé certaines fonctionnalités avancées (vues cloud, intégrations PR poussées, Commit Graph enrichi) derrière GitLens Pro, autour de 10$/mois, ou via l'abonnement GitKraken.\n\nLe point à connaître : en 2023, GitKraken a fait passer derrière Pro des fonctions auparavant gratuites, ce qui a agacé une partie des utilisateurs. En pratique pour un freelance, le gratuit couvre l'essentiel du quotidien. Pro ne se justifie que si tu utilises vraiment les intégrations et les vues cloud tous les jours.",
+    "longDescriptionEn": "GitLens is the extension that transforms working with Git inside VS Code. Its most visible feature is inline blame: next to each line, you see who wrote it, when, and in which commit. Add detailed file and line history, a Commit Graph to visualize branches, and links to pull requests. To understand a codebase you didn't write, it's a real accelerator.\n\nThe extension has become near-essential for developers on VS Code, installed tens of millions of times. Most features stay free. GitLens is owned by GitKraken, which put some advanced features (cloud views, deeper PR integrations, enhanced Commit Graph) behind GitLens Pro, around $10/month, or via the GitKraken subscription.\n\nThe thing to know: in 2023, GitKraken moved some previously free features behind Pro, which annoyed part of the user base. In practice for a freelancer, the free tier covers the daily essentials. Pro only makes sense if you genuinely use the integrations and cloud views every day.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Fonctionnalités principales gratuites dans VS Code",
+      "paid": "GitLens Pro autour de 10$/mois (intégrations, vues cloud), inclus dans GitKraken"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Core features free inside VS Code",
+      "paid": "GitLens Pro around $10/month (integrations, cloud views), included in GitKraken"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Gratuit",
+      "verified_on": "2026-06-15",
+      "source_domain": "gitkraken.com",
+      "official_source_url": "https://www.gitkraken.com/gitlens/pricing",
+      "cautions": [
+        "Fonctionnalités principales gratuites dans VS Code",
+        "GitLens Pro autour de 10$/mois pour les intégrations et vues cloud",
+        "Certaines fonctions autrefois gratuites sont passées derrière Pro depuis 2023"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://www.gitkraken.com/gitlens",
     "logo": "",
     "seo": {
-      "metaDescription": "GitLens sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "GitLens en 2026 : ce qui est gratuit, ce que coûte GitLens Pro et ses alternatives. Le guide ToolTrim de l'extension Git pour VS Code."
     },
     "pros": [
-      "Rôle clair dans une stack métier",
-      "Écosystème reconnu",
-      "Pertinent pour livrer plus proprement"
+      "Blame inline : qui a écrit chaque ligne, quand et pourquoi, sans quitter l'éditeur",
+      "Historique de fichier et de ligne détaillé, idéal pour reprendre du code existant",
+      "Commit Graph clair pour visualiser branches et fusions",
+      "Le gros des fonctionnalités reste gratuit, installation en un clic dans VS Code"
     ],
     "prosEn": [
-      "Clear role in a professional stack",
-      "Recognized ecosystem",
-      "Useful for cleaner delivery"
+      "Inline blame: who wrote each line, when and why, without leaving the editor",
+      "Detailed file and line history, ideal for taking over existing code",
+      "Clear Commit Graph to visualize branches and merges",
+      "Most features stay free, one-click install in VS Code"
     ],
     "cons": [
-      "Peut devenir inutile si le besoin est ponctuel",
-      "À éviter sans usage récurrent",
-      "Prix ou complexité à vérifier selon contexte"
+      "Certaines fonctions autrefois gratuites sont passées derrière GitLens Pro depuis 2023",
+      "Pro (~10$/mois) ne se justifie que pour un usage intensif des intégrations et du cloud",
+      "Peut surcharger l'interface si on n'en configure pas l'affichage",
+      "Spécifique à VS Code : aucun intérêt sur un autre éditeur"
     ],
     "consEn": [
-      "Can be unnecessary for occasional use",
-      "Avoid without recurring usage",
-      "Pricing or complexity depends on context"
+      "Some previously free features moved behind GitLens Pro in 2023",
+      "Pro (~$10/month) only makes sense for heavy use of integrations and cloud",
+      "Can clutter the interface if you don't tune what it displays",
+      "VS Code only: no value on another editor"
     ],
     "useCases": [
-      "Stack développeur freelance",
-      "Production client",
-      "Maintenance et documentation"
+      "Comprendre rapidement une base de code reprise d'un autre développeur",
+      "Retrouver qui et quand a introduit un bug via le blame et l'historique de ligne",
+      "Visualiser l'état des branches avant une fusion avec le Commit Graph",
+      "Suivre le contexte d'un changement (commit, PR) sans quitter l'éditeur"
     ],
     "useCasesEn": [
-      "Freelance developer stack",
-      "Client delivery",
-      "Maintenance and documentation"
+      "Quickly understand a codebase inherited from another developer",
+      "Find who introduced a bug and when via blame and line history",
+      "Visualize branch state before a merge with the Commit Graph",
+      "Track the context of a change (commit, PR) without leaving the editor"
     ],
     "covers": [
       "nocode-web"
     ],
     "relevantFor": [
-      "dev-freelance"
+      "dev-freelance",
+      "dev-frontend",
+      "dev-fullstack"
     ],
     "personas": [
       "THEO"
@@ -85461,22 +85674,31 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Usage récurrent",
-        "Impact direct sur le livrable",
-        "Rôle documenté dans la stack"
+        "Tu travailles dans VS Code et tu lis souvent du code que tu n'as pas écrit",
+        "Comprendre l'historique et les auteurs d'un fichier fait partie de ton quotidien"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Double emploi avec un outil déjà en place"
+        "Tu n'utilises pas VS Code",
+        "Le blame inline et le Commit Graph gratuits te suffisent : Pro n'apporte rien de plus"
       ],
-      "threshold": "À garder si l’outil réduit un risque, accélère une livraison ou clarifie la maintenance."
+      "threshold": "L'extension gratuite est un quasi-réflexe pour tout développeur sous VS Code. GitLens Pro ne vaut le coût que si tu exploites vraiment les intégrations PR et les vues cloud."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You work in VS Code and often read code you didn't write",
+        "Understanding a file's history and authors is part of your daily work"
+      ],
+      "avoidIf": [
+        "You don't use VS Code",
+        "Free inline blame and Commit Graph are enough: Pro adds nothing for you"
+      ],
+      "threshold": "The free extension is a near-reflex for any developer on VS Code. GitLens Pro is only worth it if you genuinely use the PR integrations and cloud views."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
-    "freeAlternative": null,
-    "soloRelevance": "pertinent si le rôle est clair dans la mission",
-    "teamRelevance": "à structurer avec conventions et droits",
+    "freeAlternative": "Git natif dans VS Code",
+    "soloRelevance": "Quasi indispensable pour un dev freelance sous VS Code. La version gratuite couvre l'essentiel, Pro ne se justifie qu'en usage intensif des intégrations.",
+    "teamRelevance": "En équipe, GitLens aide à comprendre le code des autres, mais la valeur ajoutée de Pro dépend de l'usage réel des fonctions cloud et PR.",
     "tool_type": "metier",
     "substitutable": false,
     "host_app": null,
