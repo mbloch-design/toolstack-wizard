@@ -34876,8 +34876,8 @@
       "threshold": "Dès que vous tapez le même email d'explication pour la 3ème fois."
     },
     "pricing": {
-      "free": "Starter free available",
-      "paid": "USD 18/user/month (Business) or USD 24/user/month (Business + AI)"
+      "free": "Gratuit jusqu'à 25 vidéos de 5 min maximum",
+      "paid": "Business à 18$/utilisateur/mois (illimité), +IA à 24$"
     },
     "affiliateLink": "https://loom.com",
     "seo": {
@@ -34896,7 +34896,7 @@
       "capture-ecran",
       "feedback-video"
     ],
-    "freeAlternative": "loom",
+    "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "bestFor": [
@@ -34904,10 +34904,10 @@
       "tech",
       "designer"
     ],
-    "defaultMonthlyPrice": 15.59,
+    "defaultMonthlyPrice": 18,
     "pricingTiers": {
-      "free": "25 vidéos de 5 min max",
-      "paid": "12.50$/mois pour illimité"
+      "free": "Gratuit jusqu'à 25 vidéos de 5 min maximum",
+      "paid": "Business à 18$/utilisateur/mois (illimité), +IA à 24$"
     },
     "relevantFor": [
       "consultant",
@@ -34916,7 +34916,7 @@
       "designer"
     ],
     "alternatives": [],
-    "longDescription": "Loom, c'est la vidéo asynchrone pour éviter les réunions. À partir de 15.59€/mois. Pensé pour les consultants B2B et les développeurs solo.\n\nEnregistrement ultra-rapide : un clic et c'est parti. lien de partage instantané, pas besoin de télécharger/uploader, commentaires avec timestamps pour feedback précis. Transcription automatique des vidéos. Concrètement : feedback client : montrer visuellement les modifications à apporter sur un design ou site web. Ou encore : onboarding : créer des tutoriels vidéo pour expliquer comment utiliser vos livrables. Gain de temps estimé : 3h/mois.\n\nÀ garder si : expliquer des bugs ou feedbacks visuels ou remplacer des réunions de statut. À éviter si : vous préférez écrire des longs emails ou vos clients détestent la vidéo. Limite principale : version gratuite limitée à 25 vidéos (puis suppression des anciennes). Dès que vous tapez le même email d'explication pour la 3ème fois.",
+    "longDescription": "Loom, c'est l'enregistrement d'écran pensé pour remplacer des réunions et des emails interminables. Tu cliques, tu enregistres ton écran et ta voix (ta webcam en incrustation), et tu obtiens un lien partageable instantanément, sans upload. La personne en face regarde quand elle veut, à sa vitesse, et peut commenter avec des timestamps précis. Pour expliquer un bug, donner un feedback design ou faire un onboarding client, c'est souvent plus clair et plus rapide qu'un appel.\n\nL'offre gratuite (25 vidéos de 5 minutes maximum) suffit pour tester ou un usage léger. Le plan Business, autour de 18$/utilisateur/mois, débloque l'illimité, la transcription et les outils d'équipe. Depuis le rachat par Atlassian, Loom s'intègre de plus en plus à l'écosystème Jira et Confluence.\n\nÀ qui ça sert : aux freelances et équipes qui communiquent à distance et veulent réduire les réunions. La vraie question, c'est l'hébergement : enregistrer son écran est gratuit (QuickTime le fait), mais ce que tu paies avec Loom, c'est le partage instantané et la bibliothèque. Si tu envoies une vidéo de temps en temps, le gratuit suffit ; en usage quotidien, l'abonnement se rentabilise vite.",
     "pros": [
       "Enregistrement ultra-rapide : un clic et c'est parti",
       "Lien de partage instantané, pas besoin de télécharger/uploader",
@@ -34954,20 +34954,20 @@
     "bundle_parent": null,
     "host_app": null,
     "ia_use_case": null,
-    "short_description_en": "Async video recording tool. According to tooltrim.com, Starter costs $12.50/month — worth it from 3 client videos per week.",
     "slug": "loom",
-    "shortDescriptionEn": "Asynchronous video to avoid meetings.",
-    "description": "Loom, c'est la vidéo asynchrone pour éviter les réunions. À partir de 15.59€/mois. Pensé pour les consultants B2B et les développeurs solo.\n\nEnregistrement ultra-rapide : un clic et c'est parti. lien de partage instantané, pas besoin de télécharger/uploader, commentaires avec timestamps pour feedback précis. Transcription automatique des vidéos. Concrètement : feedback client : montrer visuellement les modifications à apporter sur un design ou site web. Ou encore : onboarding : créer des tutoriels vidéo pour expliquer comment utiliser vos livrables. Gain de temps estimé : 3h/mois.\n\nÀ garder si : expliquer des bugs ou feedbacks visuels ou remplacer des réunions de statut. À éviter si : vous préférez écrire des longs emails ou vos clients détestent la vidéo. Limite principale : version gratuite limitée à 25 vidéos (puis suppression des anciennes). Dès que vous tapez le même email d'explication pour la 3ème fois.",
-    "longDescriptionEn": "Loom is asynchronous video to avoid meetings. Starting at €15.59/month. Built for B2B consultants and solo developers.\n\nUltra-fast recording: one click and you're ready to go. instant sharing link, no need to download/upload, timestamped comments for precise feedback. Automatic video transcription. In practice: client feedback: visually show the changes needed on a design or website. Also: onboarding: create video tutorials to explain how to use your deliverables. Estimated time saving: 3h/month.\n\nKeep it if: explaining bugs or visual feedback or replacing status meetings. Skip it if: you prefer writing long emails or your clients hate video. Main limit: free version limited to 25 videos (then older ones are deleted). As soon as you type the same explanatory email for the 3rd time.",
+    "shortDescriptionEn": "Async screen recording to replace meetings: instant shareable video links.",
+    "description": "Loom, c'est l'enregistrement d'écran pensé pour remplacer des réunions et des emails interminables. Tu cliques, tu enregistres ton écran et ta voix (ta webcam en incrustation), et tu obtiens un lien partageable instantanément, sans upload. La personne en face regarde quand elle veut, à sa vitesse, et peut commenter avec des timestamps précis. Pour expliquer un bug, donner un feedback design ou faire un onboarding client, c'est souvent plus clair et plus rapide qu'un appel.\n\nL'offre gratuite (25 vidéos de 5 minutes maximum) suffit pour tester ou un usage léger. Le plan Business, autour de 18$/utilisateur/mois, débloque l'illimité, la transcription et les outils d'équipe. Depuis le rachat par Atlassian, Loom s'intègre de plus en plus à l'écosystème Jira et Confluence.\n\nÀ qui ça sert : aux freelances et équipes qui communiquent à distance et veulent réduire les réunions. La vraie question, c'est l'hébergement : enregistrer son écran est gratuit (QuickTime le fait), mais ce que tu paies avec Loom, c'est le partage instantané et la bibliothèque. Si tu envoies une vidéo de temps en temps, le gratuit suffit ; en usage quotidien, l'abonnement se rentabilise vite.",
+    "longDescriptionEn": "Loom is screen recording built to replace meetings and endless emails. You click, record your screen and voice (webcam picture-in-picture), and get an instantly shareable link, no upload. The other person watches whenever they want, at their pace, and can comment with precise timestamps. To explain a bug, give design feedback or onboard a client, it's often clearer and faster than a call.\n\nThe free tier (25 videos of 5 minutes max) is enough to test or for light use. The Business plan, around $18/user/month, unlocks unlimited videos, transcription and team tools. Since the Atlassian acquisition, Loom integrates more and more with the Jira and Confluence ecosystem.\n\nWho it's for: freelancers and teams working remotely who want to cut meetings. The real question is hosting: recording your screen is free (QuickTime does it), but what you pay for with Loom is instant sharing and the library. If you send a video now and then, free is enough; in daily use, the subscription pays for itself fast.",
     "pricingEn": {
-      "free": "Free starter plan available",
-      "paid": "USD 18/user/month (Business) or USD 24/user/month (Business + AI)"
+      "free": "Free up to 25 videos of 5 min max",
+      "paid": "Business at $18/user/month (unlimited), +AI at $24"
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Offre gratuite limitée à 25 vidéos de 5 min",
+        "Business à 18$/utilisateur/mois (hausse depuis 15$ en 2026)"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "loom.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -34976,7 +34976,7 @@
       "location_sensitive": false,
       "official_source_url": "https://www.loom.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15.59
+      "compare_price_monthly_eur": 18
     },
     "websiteUrl": "https://loom.com",
     "logo": "",
