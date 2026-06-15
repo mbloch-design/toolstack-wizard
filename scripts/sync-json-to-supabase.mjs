@@ -124,8 +124,8 @@ const FIELD_MAP = {
   seo: ["seo"],
   alternatives: ["alternatives"],
   relevantFor: ["relevantFor", "relevant_for"],
-  soloRelevance: ["soloRelevance", "solo_relevance"],
-  teamRelevance: ["teamRelevance", "team_relevance"],
+  // solo_relevance / team_relevance volontairement exclus : ces colonnes
+  // sont en varchar(50) dans Supabase et n'acceptent pas le texte long.
   freeAlternative: ["freeAlternative", "free_alternative"],
   betterAlternative: ["betterAlternative", "better_alternative"],
   prescription_quality: ["prescription_quality"],
