@@ -6142,11 +6142,11 @@
     "substitutable": false,
     "bundle_parent": "adobe-cc",
     "category": "design-tools",
-    "shortDescription": "Le standard du motion design et des effets visuels.",
+    "shortDescription": "Le standard du motion design, des effets visuels et du compositing vidéo.",
     "defaultMonthlyPrice": 26.21,
     "pricing": {
-      "free": "No free plan",
-      "paid": "EUR 26.21/month (After Effects single app)"
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 26€/mois (After Effects seul), ou via l'offre Creative Cloud complète"
     },
     "covers": [
       "motion-design",
@@ -6169,28 +6169,36 @@
     "affiliateLink": "https://adobe.com/products/aftereffects",
     "verdict": {
       "keepIf": [
-        "Motion design, génériques, animations complexes"
+        "Le motion design, le compositing ou les effets sont ton quotidien",
+        "Tu travailles avec d'autres créatifs qui attendent des fichiers After Effects"
       ],
       "avoidIf": [
-        "Animation simple — Rive ou Lottie suffisent"
+        "Tu fais de l'animation simple ou web : Rive ou Lottie suffisent et coûtent moins",
+        "Tu veux juste du montage avec un peu d'effets : DaVinci Resolve est gratuit"
       ],
-      "threshold": "Dès que vous créez des animations frame par frame."
+      "threshold": "Incontournable dès que l'animation frame par frame et le compositing deviennent ton métier. Pour de l'animation simple ou occasionnelle, l'abonnement Adobe est difficile à justifier."
     },
     "timeGainedHoursPerMonth": 10,
-    "freeAlternative": null,
+    "freeAlternative": "DaVinci Resolve",
     "betterAlternative": null,
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "adobe-after-effects",
     "shortDescriptionEn": "The standard for motion design and visual effects.",
-    "description": "Adobe After Effects, c'est le standard du motion design et des effets visuels. À partir de 26.21€/mois. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : motion design, génériques, animations complexes. À éviter si : animation simple — Rive ou Lottie suffisent. Dès que vous créez des animations frame par frame.",
-    "longDescription": "Adobe After Effects, c'est le standard du motion design et des effets visuels. À partir de 26.21€/mois. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : motion design, génériques, animations complexes. À éviter si : animation simple — Rive ou Lottie suffisent. Dès que vous créez des animations frame par frame.",
-    "longDescriptionEn": "Adobe After Effects is the standard for motion design and visual effects. Starting at €26.21/month. Built for video creators.\n\nEstimated time saving: 10h/month.",
-    "pricingEn": null,
+    "description": "After Effects, c'est la référence du motion design et des effets visuels depuis vingt ans. Génériques, habillages graphiques, animations de logo, compositing, intégration d'effets : si tu fais de la vidéo qui demande autre chose qu'un montage cut, tu finis tôt ou tard dessus. C'est puissant, profond, et toute la filière le connaît, ce qui compte quand tu collabores avec d'autres créatifs.\n\nLe revers, c'est le modèle Adobe : pas de version gratuite, uniquement un essai, puis l'abonnement. Compte autour de 26€/mois pour After Effects seul, ou l'offre Creative Cloud complète si tu utilises aussi Premiere, Photoshop et le reste. Pour un freelance motion, c'est un coût fixe assumé ; pour un usage occasionnel, ça pique.\n\nAvant de payer, pose-toi la vraie question du besoin. Pour de l'animation simple ou des micro-interactions web, Rive ou Lottie suffisent et coûtent bien moins. Pour du montage avec un peu d'effets, DaVinci Resolve est gratuit et très capable. After Effects se justifie quand l'animation frame par frame, le compositing et les expressions deviennent ton quotidien.",
+    "longDescription": "After Effects, c'est la référence du motion design et des effets visuels depuis vingt ans. Génériques, habillages graphiques, animations de logo, compositing, intégration d'effets : si tu fais de la vidéo qui demande autre chose qu'un montage cut, tu finis tôt ou tard dessus. C'est puissant, profond, et toute la filière le connaît, ce qui compte quand tu collabores avec d'autres créatifs.\n\nLe revers, c'est le modèle Adobe : pas de version gratuite, uniquement un essai, puis l'abonnement. Compte autour de 26€/mois pour After Effects seul, ou l'offre Creative Cloud complète si tu utilises aussi Premiere, Photoshop et le reste. Pour un freelance motion, c'est un coût fixe assumé ; pour un usage occasionnel, ça pique.\n\nAvant de payer, pose-toi la vraie question du besoin. Pour de l'animation simple ou des micro-interactions web, Rive ou Lottie suffisent et coûtent bien moins. Pour du montage avec un peu d'effets, DaVinci Resolve est gratuit et très capable. After Effects se justifie quand l'animation frame par frame, le compositing et les expressions deviennent ton quotidien.",
+    "longDescriptionEn": "After Effects has been the reference for motion design and visual effects for twenty years. Title sequences, graphic packages, logo animation, compositing, effects integration: if you do video that needs more than a straight cut, you end up here sooner or later. It's powerful, deep, and the whole industry knows it, which matters when you collaborate with other creatives.\n\nThe downside is the Adobe model: no free version, only a trial, then the subscription. Budget around €26/month for After Effects alone, or the full Creative Cloud plan if you also use Premiere, Photoshop and the rest. For a motion freelancer it's an accepted fixed cost; for occasional use, it stings.\n\nBefore paying, ask the real question about your needs. For simple animation or web micro-interactions, Rive or Lottie are enough and cost far less. For editing with a few effects, DaVinci Resolve is free and very capable. After Effects earns its place when frame-by-frame animation, compositing and expressions become your daily work.",
+    "pricingEn": {
+      "free": "No free version, trial only",
+      "paid": "Around €26/month (After Effects alone), or via the full Creative Cloud plan"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 26€/mois pour After Effects seul, plus dans l'offre Creative Cloud complète"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -6203,21 +6211,70 @@
     },
     "websiteUrl": "https://adobe.com/products/aftereffects",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Adobe After Effects en 2026 : prix réel, pas de version gratuite, et quand une alternative (DaVinci, Rive) suffit. Le verdict ToolTrim pour les motion designers."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Coût fixe assumé pour un freelance motion qui en vit. Pour un usage occasionnel, l'abonnement Adobe est difficile à rentabiliser.",
+    "teamRelevance": "Standard de la filière : pratique quand toute l'équipe et les prestataires travaillent déjà sur des fichiers After Effects.",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "davinci-resolve",
+      "blender",
+      "rive"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "Motion design, compositing or effects are your daily work",
+        "You work with other creatives who expect After Effects files"
+      ],
+      "avoidIf": [
+        "You do simple or web animation: Rive or Lottie are enough and cost less",
+        "You just want editing with a few effects: DaVinci Resolve is free"
+      ],
+      "threshold": "Essential once frame-by-frame animation and compositing become your craft. For simple or occasional animation, the Adobe subscription is hard to justify."
+    },
+    "pros": [
+      "Le standard de la filière : compatibilité, plugins et ressources pédagogiques partout",
+      "Profondeur inégalée pour le motion design, le compositing et les effets",
+      "Intégration fluide avec Premiere Pro et le reste de Creative Cloud",
+      "Écosystème de scripts et plugins très riche (Red Giant, Bodymovin, etc.)"
+    ],
+    "prosEn": [
+      "Industry standard: compatibility, plugins and learning resources everywhere",
+      "Unmatched depth for motion design, compositing and effects",
+      "Smooth integration with Premiere Pro and the rest of Creative Cloud",
+      "Very rich ecosystem of scripts and plugins (Red Giant, Bodymovin, etc.)"
+    ],
+    "cons": [
+      "Aucune version gratuite : uniquement un essai, puis l'abonnement",
+      "Coût récurrent d'environ 26€/mois, plus cher dans l'offre complète",
+      "Gourmand en ressources machine et courbe d'apprentissage abrupte",
+      "Surdimensionné pour de l'animation simple : Rive, Lottie ou DaVinci suffisent"
+    ],
+    "consEn": [
+      "No free version: only a trial, then the subscription",
+      "Recurring cost of around €26/month, pricier in the full plan",
+      "Heavy on machine resources and a steep learning curve",
+      "Overkill for simple animation: Rive, Lottie or DaVinci are enough"
+    ],
+    "useCases": [
+      "Génériques, habillages et animations graphiques pour la vidéo",
+      "Compositing et intégration d'effets visuels",
+      "Animation de logo et motion design pour les marques",
+      "Export d'animations légères vers le web via Bodymovin/Lottie"
+    ],
+    "useCasesEn": [
+      "Title sequences, graphic packages and animated graphics for video",
+      "Compositing and visual effects integration",
+      "Logo animation and motion design for brands",
+      "Exporting light animations to the web via Bodymovin/Lottie"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
@@ -6469,11 +6526,11 @@
     "substitutable": false,
     "bundle_parent": "adobe-cc",
     "category": "design-tools",
-    "shortDescription": "Le standard du design vectoriel et de l'illustration.",
+    "shortDescription": "Le standard du dessin vectoriel : logos, illustrations, identité visuelle et print.",
     "defaultMonthlyPrice": 26.21,
     "pricing": {
-      "free": "No free plan",
-      "paid": "EUR 26.21/month (Illustrator single app)"
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 26€/mois (Illustrator seul), ou via l'offre Creative Cloud complète"
     },
     "covers": [
       "illustration-vectorielle",
@@ -6498,29 +6555,36 @@
     "affiliateLink": "https://adobe.com/products/illustrator",
     "verdict": {
       "keepIf": [
-        "Création de logos, chartes graphiques",
-        "Print et identité visuelle"
+        "Tu crées des logos, des chartes ou des fichiers print régulièrement",
+        "Tes clients ou imprimeurs attendent des fichiers Illustrator"
       ],
       "avoidIf": [
-        "UI/UX uniquement — Figma est plus adapté"
+        "Tu veux éviter l'abonnement Adobe : Affinity Designer est gratuit depuis 2024",
+        "Tu fais surtout de l'UI/UX : Figma est plus adapté"
       ],
-      "threshold": "Dès que vous créez des éléments vectoriels pour du print ou branding."
+      "threshold": "Le bon choix si le vectoriel et le print sont ton métier et que la compatibilité Adobe compte. Pour un usage occasionnel ou un budget serré, Affinity Designer (gratuit) couvre l'essentiel."
     },
     "timeGainedHoursPerMonth": 5,
-    "freeAlternative": "affinity-designer",
+    "freeAlternative": "Affinity Designer",
     "betterAlternative": null,
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "adobe-illustrator",
     "shortDescriptionEn": "The standard for vector design and illustration.",
-    "description": "Adobe Illustrator, c'est le standard du design vectoriel et de l'illustration. À partir de 26.21€/mois. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : création de logos, chartes graphiques ou print et identité visuelle. À éviter si : uI/UX uniquement — Figma est plus adapté. Dès que vous créez des éléments vectoriels pour du print ou branding. Alternative gratuite : affinity-designer.",
-    "longDescription": "Adobe Illustrator, c'est le standard du design vectoriel et de l'illustration. À partir de 26.21€/mois. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : création de logos, chartes graphiques ou print et identité visuelle. À éviter si : uI/UX uniquement — Figma est plus adapté. Dès que vous créez des éléments vectoriels pour du print ou branding. Alternative gratuite : affinity-designer.",
-    "longDescriptionEn": "Adobe Illustrator is the standard for vector design and illustration. Starting at €26.21/month. Built for graphic designers and illustrators.\n\nEstimated time saving: 5h/month.\n\nFree alternative: affinity-designer.",
-    "pricingEn": null,
+    "description": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud.",
+    "longDescription": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud.",
+    "longDescriptionEn": "Illustrator is the reference tool for everything vector: logos, icons, illustrations, brand guidelines, print layout. Vector means files that scale without loss, essential for a logo that has to go from a business card to a storefront. Like After Effects or Photoshop, it's a standard the whole industry shares, which makes collaboration and client file delivery easier.\n\nThe constraint is always Adobe: no free version, a trial then the subscription, around €26/month for Illustrator alone, more in the full Creative Cloud plan. For a graphic designer who makes a living from it, it's a work tool, so an accepted cost. For an occasional need, it's expensive.\n\nThe real alternative changed in 2024: Affinity Designer, long the paid one-time-purchase competitor, became free after the Canva acquisition. For a freelancer who wants to avoid the Adobe subscription, it's now a serious option. For free and open-source vector drawing, Inkscape also exists. Illustrator keeps the edge on finish, compatibility and Creative Cloud integration.",
+    "pricingEn": {
+      "free": "No free version, trial only",
+      "paid": "Around €26/month (Illustrator alone), or via the full Creative Cloud plan"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -6533,21 +6597,70 @@
     },
     "websiteUrl": "https://adobe.com/products/illustrator",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Adobe Illustrator en 2026 : prix réel, pas de version gratuite, et la meilleure alternative gratuite (Affinity Designer). Le verdict ToolTrim pour les graphistes."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Outil de travail assumé pour un graphiste qui en vit. Pour un usage occasionnel ou un budget serré, Affinity Designer (gratuit) couvre l'essentiel.",
+    "teamRelevance": "Standard de la filière : pratique quand l'équipe et les imprimeurs attendent des fichiers Illustrator.",
+    "relevantFor": [
+      "designer",
+      "createur-contenu"
+    ],
+    "alternatives": [
+      "canva",
+      "figma",
+      "sketch"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You regularly create logos, brand guidelines or print files",
+        "Your clients or printers expect Illustrator files"
+      ],
+      "avoidIf": [
+        "You want to avoid the Adobe subscription: Affinity Designer is free since 2024",
+        "You mostly do UI/UX: Figma is better suited"
+      ],
+      "threshold": "The right call if vector and print are your craft and Adobe compatibility matters. For occasional use or a tight budget, Affinity Designer (free) covers the essentials."
+    },
+    "pros": [
+      "Le standard du vectoriel : fichiers compatibles partout, attendus par les imprimeurs et les clients",
+      "Outils de dessin et de typographie d'une précision inégalée",
+      "Intégration fluide avec Photoshop, InDesign et Creative Cloud",
+      "Ressources, tutos et plugins en quantité grâce à sa position dominante"
+    ],
+    "prosEn": [
+      "The vector standard: files compatible everywhere, expected by printers and clients",
+      "Unmatched precision in drawing and typography tools",
+      "Smooth integration with Photoshop, InDesign and Creative Cloud",
+      "Plenty of resources, tutorials and plugins thanks to its dominant position"
+    ],
+    "cons": [
+      "Aucune version gratuite : essai puis abonnement à environ 26€/mois",
+      "Affinity Designer fait une grande partie du travail, et il est gratuit depuis 2024",
+      "Courbe d'apprentissage réelle pour exploiter la puissance de l'outil",
+      "Surdimensionné pour de l'UI : Figma est plus adapté à l'interface"
+    ],
+    "consEn": [
+      "No free version: trial then subscription at around €26/month",
+      "Affinity Designer does much of the job, and it's free since 2024",
+      "Real learning curve to harness the tool's power",
+      "Overkill for UI: Figma is better suited to interface work"
+    ],
+    "useCases": [
+      "Créer un logo et une identité visuelle déclinables sans perte",
+      "Dessiner des illustrations et des pictogrammes vectoriels",
+      "Préparer des fichiers print (affiches, packaging, cartes)",
+      "Produire des éléments graphiques pour le web et les marques"
+    ],
+    "useCasesEn": [
+      "Create a logo and brand identity that scale without loss",
+      "Draw vector illustrations and icons",
+      "Prepare print files (posters, packaging, cards)",
+      "Produce graphic elements for the web and brands"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
