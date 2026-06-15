@@ -6905,12 +6905,14 @@
     "affiliateLink": "https://adobe.com/products/lightroom",
     "verdict": {
       "keepIf": [
-        "Volume important de photos RAW à traiter"
+        "Tu traites un volume important de photos RAW",
+        "Tu veux des retouches non destructives synchronisées entre ordinateur et mobile"
       ],
       "avoidIf": [
-        "Peu de photos — iPhone Photos + VSCO suffisent"
+        "Tu n'édites que quelques photos : les apps du téléphone suffisent",
+        "Tu veux le meilleur rendu couleur et de la vitesse sur gros catalogues : vois Capture One"
       ],
-      "threshold": "Dès que vous traitez plus de 100 photos par mois en RAW."
+      "threshold": "Le meilleur compromis entre puissance, catalogage et simplicité pour traiter de la photo en volume. Pour un usage léger, les apps du téléphone suffisent."
     },
     "timeGainedHoursPerMonth": 5,
     "freeAlternative": null,
