@@ -77,8 +77,10 @@ const supabase = createClient(SUPABASE_URL, SERVICE_KEY, {
   auth: { persistSession: false },
 });
 
-// Les 20 fiches déjà réécrites (Remix + lot 1 + lot 2).
-const SLUGS = [
+// Slugs passés en argument (ex: node ... --apply figma canva) sinon la
+// liste par défaut ci-dessous (Remix + lot 1 + lot 2).
+const slugArgs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const DEFAULT_SLUGS = [
   "remix",
   "wetransfer",
   "linear",
@@ -100,6 +102,7 @@ const SLUGS = [
   "sentry",
   "hotjar",
 ];
+const SLUGS = slugArgs.length ? slugArgs : DEFAULT_SLUGS;
 
 // Champ JSON -> noms de colonne possibles (on prend le premier qui existe
 // réellement dans la ligne Supabase).
