@@ -6811,19 +6811,37 @@
     "slug": "indesign",
     "name": "Adobe InDesign",
     "category": "design-tools",
-    "shortDescription": "Mise en page et PAO professionnelle",
-    "shortDescriptionEn": "Professional layout and desktop publishing.",
-    "description": "Adobe InDesign, c'est mise en page et PAO professionnelle. À partir de 26.21€/mois.",
-    "longDescription": "Adobe InDesign, c'est mise en page et PAO professionnelle. À partir de 26.21€/mois.",
-    "longDescriptionEn": "Adobe InDesign is professional layout and desktop publishing. Starting at €26.21/month.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Mise en page et PAO professionnelle : magazines, brochures, livres et documents print.",
+    "shortDescriptionEn": "Professional layout and desktop publishing: magazines, brochures, books, print.",
+    "description": "InDesign, c'est l'outil de référence de la mise en page professionnelle. Magazines, brochures, livres, rapports annuels, PDF interactifs : dès qu'un document mêle beaucoup de texte, d'images et de pages à structurer proprement, c'est lui qu'on utilise. Là où Word atteint vite ses limites et où Photoshop n'est pas fait pour ça, InDesign gère les gabarits, les styles, la typographie fine et la sortie print sans accroc.\n\nComme tout Adobe : pas de version gratuite, un essai puis l'abonnement à environ 26€/mois pour InDesign seul, ou l'offre Creative Cloud complète. Pour un graphiste édition ou un studio, c'est un outil de production assumé.\n\nL'alternative qui compte en 2024 : Affinity Publisher, devenu gratuit après le rachat par Canva, fait une grande partie du travail de mise en page sans abonnement. Pour du libre, Scribus existe aussi. InDesign garde l'avantage sur la finition typographique, la gestion de gros documents et la compatibilité avec les imprimeurs, mais ce n'est plus le passage obligé.",
+    "longDescription": "InDesign, c'est l'outil de référence de la mise en page professionnelle. Magazines, brochures, livres, rapports annuels, PDF interactifs : dès qu'un document mêle beaucoup de texte, d'images et de pages à structurer proprement, c'est lui qu'on utilise. Là où Word atteint vite ses limites et où Photoshop n'est pas fait pour ça, InDesign gère les gabarits, les styles, la typographie fine et la sortie print sans accroc.\n\nComme tout Adobe : pas de version gratuite, un essai puis l'abonnement à environ 26€/mois pour InDesign seul, ou l'offre Creative Cloud complète. Pour un graphiste édition ou un studio, c'est un outil de production assumé.\n\nL'alternative qui compte en 2024 : Affinity Publisher, devenu gratuit après le rachat par Canva, fait une grande partie du travail de mise en page sans abonnement. Pour du libre, Scribus existe aussi. InDesign garde l'avantage sur la finition typographique, la gestion de gros documents et la compatibilité avec les imprimeurs, mais ce n'est plus le passage obligé.",
+    "longDescriptionEn": "InDesign is the reference tool for professional layout. Magazines, brochures, books, annual reports, interactive PDFs: whenever a document mixes lots of text, images and pages to structure cleanly, it's the one you use. Where Word hits its limits fast and Photoshop isn't built for it, InDesign handles master pages, styles, fine typography and print output without a hitch.\n\nLike all Adobe: no free version, a trial then the subscription at around €26/month for InDesign alone, or the full Creative Cloud plan. For a publishing designer or a studio, it's an accepted production tool.\n\nThe alternative that matters in 2024: Affinity Publisher, now free after the Canva acquisition, does a large part of the layout work with no subscription. For something open, Scribus also exists. InDesign keeps the edge on typographic finish, handling large documents and printer compatibility, but it's no longer the obligatory path.",
+    "pricing": {
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 26€/mois (InDesign seul), ou via l'offre Creative Cloud complète"
+    },
+    "pricingEn": {
+      "free": "No free version, trial only",
+      "paid": "Around €26/month (InDesign alone), or via the full Creative Cloud plan"
+    },
     "defaultMonthlyPrice": 26.21,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 26.21,
+      "compare_plan_name": "InDesign single app",
+      "verified_on": "2026-06-15",
+      "source_domain": "adobe.com",
+      "official_source_url": "https://www.adobe.com/products/indesign.html",
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 26€/mois pour InDesign seul, plus dans l'offre Creative Cloud complète"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://adobe.com/products/indesign",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Adobe InDesign en 2026 : prix réel, pas de version gratuite, et alternative gratuite (Affinity Publisher). Le verdict ToolTrim pour la mise en page."
+    },
     "articles": [],
     "covers": [
       "mise-en-page",
@@ -6831,19 +6849,74 @@
       "pdf-client",
       "brand-documents"
     ],
-    "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "freeAlternative": "Affinity Publisher",
+    "soloRelevance": "Outil de production assumé pour un graphiste édition. Pour un document simple ou occasionnel, Affinity Publisher (gratuit) ou Canva suffisent.",
+    "teamRelevance": "Standard de l'édition : pratique quand le studio et les imprimeurs échangent des fichiers InDesign.",
+    "relevantFor": [
+      "designer",
+      "createur-contenu"
+    ],
+    "alternatives": [
+      "canva"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu mets en page des documents riches (magazines, brochures, livres)",
+        "Tes fichiers doivent partir proprement chez un imprimeur"
+      ],
+      "avoidIf": [
+        "Ton document est simple : Canva ou Word suffisent",
+        "Tu veux éviter l'abonnement : Affinity Publisher est gratuit depuis 2024"
+      ],
+      "threshold": "Incontournable pour de la vraie mise en page print. Pour un document simple ou un budget serré, Affinity Publisher (gratuit) ou Canva couvrent l'essentiel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You lay out rich documents (magazines, brochures, books)",
+        "Your files must go cleanly to a printer"
+      ],
+      "avoidIf": [
+        "Your document is simple: Canva or Word are enough",
+        "You want to avoid the subscription: Affinity Publisher is free since 2024"
+      ],
+      "threshold": "Essential for real print layout. For a simple document or a tight budget, Affinity Publisher (free) or Canva cover the essentials."
+    },
+    "pros": [
+      "Référence de la mise en page : gabarits, styles et typographie fine",
+      "Gère sans accroc les gros documents et la sortie print",
+      "Intégration avec Photoshop, Illustrator et Creative Cloud",
+      "Fichiers attendus par les imprimeurs et la filière édition"
+    ],
+    "prosEn": [
+      "Layout reference: master pages, styles and fine typography",
+      "Handles large documents and print output without a hitch",
+      "Integration with Photoshop, Illustrator and Creative Cloud",
+      "Files expected by printers and the publishing industry"
+    ],
+    "cons": [
+      "Aucune version gratuite : essai puis abonnement à environ 26€/mois",
+      "Affinity Publisher, gratuit depuis 2024, couvre une grande partie des besoins",
+      "Surdimensionné pour un document simple : Canva ou Word suffisent",
+      "Courbe d'apprentissage réelle sur les fonctions avancées"
+    ],
+    "consEn": [
+      "No free version: trial then subscription at around €26/month",
+      "Affinity Publisher, free since 2024, covers a large part of the needs",
+      "Overkill for a simple document: Canva or Word are enough",
+      "Real learning curve on advanced features"
+    ],
+    "useCases": [
+      "Mettre en page un magazine, une brochure ou un livre",
+      "Créer un rapport annuel ou un document de marque",
+      "Préparer des fichiers print pour l'imprimeur",
+      "Produire un PDF interactif structuré"
+    ],
+    "useCasesEn": [
+      "Lay out a magazine, brochure or book",
+      "Create an annual report or brand document",
+      "Prepare print files for the printer",
+      "Produce a structured interactive PDF"
+    ],
     "personas": [],
     "tool_type": "metier",
     "substitutable": true,
@@ -7460,8 +7533,8 @@
     "shortDescription": "Le logiciel de montage vidéo professionnel de référence.",
     "defaultMonthlyPrice": 26.21,
     "pricing": {
-      "free": "No free plan",
-      "paid": "EUR 26.21/month (Premiere Pro single app)"
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 26€/mois (Premiere Pro seul), ou via l'offre Creative Cloud complète"
     },
     "covers": [
       "montage-video",
@@ -7484,28 +7557,36 @@
     "affiliateLink": "https://adobe.com/products/premiere",
     "verdict": {
       "keepIf": [
-        "Montage long format ou production d'entreprise"
+        "Tu montes des vidéos longues ou des productions client régulièrement",
+        "Tu travailles avec After Effects et la filière qui échange en fichiers Premiere"
       ],
       "avoidIf": [
-        "Contenu court — CapCut ou DaVinci free suffisent"
+        "Tu fais du contenu court et social : CapCut est plus rapide",
+        "Tu veux éviter l'abonnement : DaVinci Resolve est gratuit et très capable"
       ],
-      "threshold": "Dès que vous montez des vidéos de plus de 5 minutes régulièrement."
+      "threshold": "Incontournable pour un flux de montage pro intégré à Adobe. Pour du contenu court ou un budget serré, DaVinci Resolve (gratuit) ou CapCut couvrent une grande partie des besoins."
     },
     "timeGainedHoursPerMonth": 8,
-    "freeAlternative": "davinci-resolve",
+    "freeAlternative": "DaVinci Resolve",
     "betterAlternative": null,
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "adobe-premiere-pro",
     "shortDescriptionEn": "The reference professional video editing software.",
-    "description": "Adobe Premiere Pro, c'est le logiciel de montage vidéo professionnel de référence. À partir de 26.21€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : montage long format ou production d'entreprise. À éviter si : contenu court — CapCut ou DaVinci free suffisent. Dès que vous montez des vidéos de plus de 5 minutes régulièrement. Alternative gratuite : davinci-resolve.",
-    "longDescription": "Adobe Premiere Pro, c'est le logiciel de montage vidéo professionnel de référence. À partir de 26.21€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : montage long format ou production d'entreprise. À éviter si : contenu court — CapCut ou DaVinci free suffisent. Dès que vous montez des vidéos de plus de 5 minutes régulièrement. Alternative gratuite : davinci-resolve.",
-    "longDescriptionEn": "Adobe Premiere Pro is the reference professional video editing software. Starting at €26.21/month. Built for video creators and content creators.\n\nEstimated time saving: 8h/month.\n\nFree alternative: davinci-resolve.",
-    "pricingEn": null,
+    "description": "Premiere Pro, c'est le logiciel de montage vidéo le plus répandu dans le monde pro. Montage multicam, étalonnage, audio, effets, export dans tous les formats : c'est l'outil complet qui équipe la majorité des monteurs, des agences et des chaînes YouTube sérieuses. Son gros avantage, c'est l'intégration avec After Effects et le reste de Creative Cloud, et le fait que toute la filière échange en fichiers Premiere.\n\nLe modèle Adobe s'applique : pas de gratuit, juste un essai, puis l'abonnement à environ 26€/mois pour Premiere seul, ou l'offre Creative Cloud complète. Pour un monteur qui en vit, c'est un coût de travail assumé.\n\nLa vraie alternative, c'est DaVinci Resolve : gratuit, redoutable en étalonnage, et largement suffisant pour beaucoup de productions. Pour du contenu court et social, CapCut est plus rapide. Premiere garde l'avantage sur les flux pro complexes, la collaboration et l'écosystème Adobe, mais ce n'est plus le seul choix sérieux.",
+    "longDescription": "Premiere Pro, c'est le logiciel de montage vidéo le plus répandu dans le monde pro. Montage multicam, étalonnage, audio, effets, export dans tous les formats : c'est l'outil complet qui équipe la majorité des monteurs, des agences et des chaînes YouTube sérieuses. Son gros avantage, c'est l'intégration avec After Effects et le reste de Creative Cloud, et le fait que toute la filière échange en fichiers Premiere.\n\nLe modèle Adobe s'applique : pas de gratuit, juste un essai, puis l'abonnement à environ 26€/mois pour Premiere seul, ou l'offre Creative Cloud complète. Pour un monteur qui en vit, c'est un coût de travail assumé.\n\nLa vraie alternative, c'est DaVinci Resolve : gratuit, redoutable en étalonnage, et largement suffisant pour beaucoup de productions. Pour du contenu court et social, CapCut est plus rapide. Premiere garde l'avantage sur les flux pro complexes, la collaboration et l'écosystème Adobe, mais ce n'est plus le seul choix sérieux.",
+    "longDescriptionEn": "Premiere Pro is the most widely used video editing software in the professional world. Multicam editing, color grading, audio, effects, export in every format: it's the complete tool used by most editors, agencies and serious YouTube channels. Its big advantage is integration with After Effects and the rest of Creative Cloud, and the fact that the whole industry exchanges Premiere files.\n\nThe Adobe model applies: no free version, just a trial, then the subscription at around €26/month for Premiere alone, or the full Creative Cloud plan. For an editor who makes a living from it, it's an accepted work cost.\n\nThe real alternative is DaVinci Resolve: free, formidable at color grading, and more than enough for many productions. For short, social content, CapCut is faster. Premiere keeps the edge on complex pro workflows, collaboration and the Adobe ecosystem, but it's no longer the only serious choice.",
+    "pricingEn": {
+      "free": "No free version, trial only",
+      "paid": "Around €26/month (Premiere Pro alone), or via the full Creative Cloud plan"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 26€/mois pour Premiere Pro seul, plus dans l'offre Creative Cloud complète"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -7546,21 +7627,69 @@
     },
     "websiteUrl": "https://adobe.com/products/premiere",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Adobe Premiere Pro en 2026 : prix réel, pas de version gratuite, et alternatives (DaVinci Resolve gratuit). Le verdict ToolTrim pour le montage vidéo."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Coût de travail assumé pour un monteur qui en vit. Pour du contenu court ou occasionnel, DaVinci Resolve (gratuit) ou CapCut suffisent.",
+    "teamRelevance": "Standard de la filière : pratique quand l'équipe et les prestataires échangent en fichiers Premiere.",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "davinci-resolve",
+      "capcut"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You edit long videos or client productions regularly",
+        "You work with After Effects and an industry that exchanges Premiere files"
+      ],
+      "avoidIf": [
+        "You make short, social content: CapCut is faster",
+        "You want to avoid the subscription: DaVinci Resolve is free and very capable"
+      ],
+      "threshold": "Essential for a pro editing workflow integrated with Adobe. For short content or a tight budget, DaVinci Resolve (free) or CapCut cover a large part of the needs."
+    },
+    "pros": [
+      "Standard du montage pro : compatibilité et fichiers attendus par la filière",
+      "Flux complet : multicam, étalonnage, audio, effets, export tous formats",
+      "Intégration fluide avec After Effects et Creative Cloud",
+      "Énorme base de tutos, presets et plugins"
+    ],
+    "prosEn": [
+      "Pro editing standard: compatibility and files the industry expects",
+      "Complete workflow: multicam, grading, audio, effects, export to all formats",
+      "Smooth integration with After Effects and Creative Cloud",
+      "Huge base of tutorials, presets and plugins"
+    ],
+    "cons": [
+      "Aucune version gratuite : essai puis abonnement à environ 26€/mois",
+      "DaVinci Resolve fait l'essentiel gratuitement, surtout en étalonnage",
+      "Gourmand en ressources machine",
+      "Surdimensionné pour du contenu court : CapCut est plus rapide"
+    ],
+    "consEn": [
+      "No free version: trial then subscription at around €26/month",
+      "DaVinci Resolve does the essentials for free, especially color grading",
+      "Resource-heavy on the machine",
+      "Overkill for short content: CapCut is faster"
+    ],
+    "useCases": [
+      "Montage long format pour le web, la TV ou le client",
+      "Étalonnage et mixage audio d'une production",
+      "Allers-retours avec After Effects pour les effets",
+      "Export multi-formats pour différentes plateformes"
+    ],
+    "useCasesEn": [
+      "Long-form editing for web, TV or clients",
+      "Color grading and audio mixing of a production",
+      "Round-trips with After Effects for effects",
+      "Multi-format export for different platforms"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
