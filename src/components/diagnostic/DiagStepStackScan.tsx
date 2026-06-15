@@ -1049,11 +1049,11 @@ function ToolChoiceButton({
       data-stack-tool-card-id={tool.id}
       data-pricing-tool-id={tool.id}
       tabIndex={-1}
-      className={`group h-[118px] rounded-2xl border p-3 shadow-sm transition-colors duration-200 ${
+      className={`group h-[146px] rounded-2xl border p-3 shadow-sm transition-colors duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
           : pending
-            ? "border-foreground bg-card"
+            ? "border-foreground bg-card ring-2 ring-[hsl(var(--diag-yellow)/0.32)]"
           : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
       }`}
     >
@@ -1061,6 +1061,11 @@ function ToolChoiceButton({
         type="button"
         onClick={onToggle}
         aria-pressed={selected || pending}
+        aria-label={
+          pending
+            ? t(`Choix du plan ouvert pour ${displayTool.name}`, `Plan choice open for ${displayTool.name}`)
+            : t(`Choisir le plan de ${displayTool.name}`, `Choose ${displayTool.name} plan`)
+        }
         className="flex h-[54px] w-full items-center gap-3 rounded-xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
@@ -1091,16 +1096,32 @@ function ToolChoiceButton({
         )}
       </button>
 
-      <div className="mt-2 h-8">
+      <div className="mt-2 h-14">
         {selected ? (
           <OfferSelector tool={displayTool} onChange={onOfferChange} compact t={t} />
         ) : pending ? (
-          <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
+          <div className="space-y-1">
+            <p className="truncate text-[11px] font-semibold text-foreground">
+              {t("Choisis un plan pour l’ajouter", "Choose a plan to add it")}
+            </p>
+            <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
+          </div>
         ) : (
-          <span className="flex h-8 items-center justify-between rounded-xl bg-muted/35 px-2 text-xs font-semibold text-foreground transition-colors group-hover:bg-muted/60">
-            <span>{t("Choisir le plan", "Choose plan")}</span>
+          <button
+            type="button"
+            onClick={onToggle}
+            className="flex h-12 w-full items-center justify-between rounded-xl bg-muted/35 px-3 text-left transition-colors group-hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <span className="min-w-0">
+              <span className="block truncate text-xs font-semibold text-foreground">
+                {t("Choisir le plan", "Choose plan")}
+              </span>
+              <span className="block truncate text-[11px] font-medium text-muted-foreground">
+                {t("puis ajout automatique", "then auto-add")}
+              </span>
+            </span>
             <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
-          </span>
+          </button>
         )}
       </div>
     </div>
@@ -1203,13 +1224,17 @@ function OfferSelector({
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
-          className={`${compact ? "h-6 px-1 text-[10px]" : "h-8 px-2 text-xs"} whitespace-nowrap rounded-[5px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+          aria-label={t(
+            `Choisir le plan ${getPlanLabel(tool, option.value, t)} pour ${tool.name}`,
+            `Choose the ${getPlanLabel(tool, option.value, t)} plan for ${tool.name}`
+          )}
+          className={`${compact ? "h-8 min-w-0 px-1.5 text-[11px]" : "h-8 px-2 text-xs"} rounded-[7px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
             activeOffer === option.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-background hover:text-foreground"
           }`}
         >
-          {getPlanLabel(tool, option.value, t)}
+          <span className="block truncate">{getPlanLabel(tool, option.value, t)}</span>
         </button>
       ))}
     </div>

@@ -103,6 +103,10 @@ ok(
   "tool cards expose clear plan CTA",
   stackScan.includes("Choisir le plan") &&
     stackScan.includes("Plan utilisé ?") &&
+    stackScan.includes("Choisis un plan pour l’ajouter") &&
+    stackScan.includes("puis ajout automatique") &&
+    stackScan.includes("h-[146px]") &&
+    stackScan.includes("aria-label={t(") &&
     !stackScan.includes("Clique pour choisir le plan"),
   "user should see the next action without guessing where to click"
 );

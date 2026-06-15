@@ -36,7 +36,7 @@ ok(
 );
 ok(
   "tool cards keep plan selector in-place",
-  stackScan.includes("h-[118px]") && stackScan.includes("OfferSelector") && stackScan.includes("Choisir le plan"),
+  stackScan.includes("h-[146px]") && stackScan.includes("OfferSelector") && stackScan.includes("Choisir le plan"),
   "selected tool cards should keep stable height and in-card offer selector"
 );
 ok(
