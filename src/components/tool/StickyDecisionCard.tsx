@@ -75,32 +75,66 @@ export default function StickyDecisionCard({
       ? "Alternative moins chère pour des usages similaires."
       : "Cheaper alternative for similar needs.");
 
+  /* ── Labels ── */
+  const priceLabel = isFree
+    ? t("Gratuit", "Free")
+    : isFreemium
+    ? "Freemium"
+    : displayPrice > 0
+    ? `${displayPrice}€/${t("mois", "mo")}`
+    : t("Sur devis", "On request");
+
+  const modelLabel = isFree
+    ? t("Gratuit", "Free")
+    : isFreemium
+    ? "Freemium"
+    : t("Payant", "Paid");
+
+  /* ── Key facts: 4 rows ── */
+  const metaRows = [
+    { label: t("Plan gratuit", "Free plan"), value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
+    { label: t("Modèle",       "Model"),     value: modelLabel },
+    {
+      label: displayPrice > 0
+        ? t("Prix à partir de", "From")
+        : t("Prix", "Price"),
+      value: priceLabel,
+    },
+    { label: t("Vérifié le",   "Verified"),  value: verifiedOn },
+  ];
+
   return (
     <div style={{
       background: "var(--color-surface)",
       border: "1px solid var(--color-border)",
-      borderRadius: 14,
+      borderRadius: 10,
       overflow: "hidden",
-      boxShadow: "0 1px 2px rgba(20,20,18,0.04), 0 20px 44px -24px rgba(20,20,18,0.22)",
     }}>
 
-      {/* ── 1. Header — distinct band for presence ── */}
-      <div style={{ padding: "22px 24px 20px", background: "var(--color-surface-soft)", borderBottom: "1px solid var(--color-border)" }}>
+      {/* ── 1. Header ── */}
+      <div style={{ padding: "24px 24px 20px" }}>
         <span style={{
           display: "block",
           fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
           letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-          marginBottom: 16,
+          marginBottom: 14,
         }}>
           {t("Verdict ToolTrim", "ToolTrim Verdict")}
         </span>
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <ToolLogo tool={tool as any} size={48} />
-          <div style={{ minWidth: 0 }}>
-            <p style={{ fontFamily: "var(--font-brand)", fontSize: 18, fontWeight: 600, letterSpacing: "-0.035em", color: "var(--color-text)", lineHeight: 1.15 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{
+            width: 40, height: 40, borderRadius: 8,
+            border: "1px solid var(--color-border)", background: "var(--color-bg)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexShrink: 0,
+          }}>
+            <ToolLogo tool={tool as any} size={26} />
+          </div>
+          <div>
+            <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
               {tool.name}
             </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted)", marginTop: 3 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted)", marginTop: 2 }}>
               {t(catName, catNameEn)}
             </p>
           </div>
@@ -136,11 +170,6 @@ export default function StickyDecisionCard({
           </div>
         </div>
 
-        {/* Score bar — visual read of the score on the /5 scale */}
-        <div className="td-scorebar" role="presentation">
-          <div className="td-scorebar-fill" style={{ width: `${Math.max(0, Math.min(1, ts.score / 5)) * 100}%` }} />
-        </div>
-
         {/* ── 3. Decision sentence — sits tight under the score ── */}
         {verdictText && (
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, lineHeight: 1.55, color: "var(--color-text)", marginTop: 16 }}>
@@ -155,7 +184,6 @@ export default function StickyDecisionCard({
           href={primaryCtaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="td-cta-primary"
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             width: "100%", height: 48,
@@ -175,6 +203,40 @@ export default function StickyDecisionCard({
             : t("Visiter le site", "Visit website")}
           <ExternalLink style={{ width: 14, height: 14 }} />
         </a>
+
+        <Link
+          to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            width: "100%", height: 44,
+            background: "transparent", color: "var(--color-text)",
+            borderRadius: 8, border: "1px solid var(--color-border)",
+            fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
+            textDecoration: "none", marginTop: 10,
+            transition: "all 160ms ease-out",
+          }}
+          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; }}
+          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; }}
+        >
+          {t("Comparer les alternatives", "Compare alternatives")}
+        </Link>
+      </div>
+
+      {/* ── 5. Key facts (4 rows) ── */}
+      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "12px 24px 16px" }}>
+        {metaRows.map(({ label, value }, i) => (
+          <div
+            key={label}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              padding: "8px 0",
+              borderBottom: i < metaRows.length - 1 ? "1px solid var(--color-border-soft)" : "none",
+            }}
+          >
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>{label}</span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>{value}</span>
+          </div>
+        ))}
       </div>
 
       {/* ── 6. Alternative recommandée ── */}

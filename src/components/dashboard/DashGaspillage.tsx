@@ -1,6 +1,8 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import type { DiagnosticResult, Tool, Prescription } from "@/types/diagnostic";
-import { X, LayoutGrid, List, ChevronRight } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ChevronRight, CircleDollarSign, CircleDot, LayoutGrid, List, X } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 
 interface Props {
@@ -9,9 +11,9 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
-type BubbleStatus = "doublon" | "dormant" | "ok" | "neutral";
+type BubbleStatus = "doublon" | "dormant" | "pricing" | "ok" | "neutral";
 type ViewMode = "bubbles" | "list";
-type FilterStatus = "all" | "doublon" | "dormant" | "ok";
+type FilterStatus = "all" | "doublon" | "dormant" | "pricing" | "ok";
 
 interface BubbleData {
   tool: Tool;
@@ -26,13 +28,25 @@ function getStatus(tool: Tool, allPrescriptions: Prescription[]): { status: Bubb
   const p = allPrescriptions.find((pr) => pr.toolId === tool.id);
   if (p && (p.type === "doublon" || p.type === "doublon-ia")) return { status: "doublon", prescription: p };
   if (p && p.type === "dormant") return { status: "dormant", prescription: p };
+  if (p && p.type === "pricing-tier") return { status: "pricing", prescription: p };
   if (tool.price === 0 || tool.force_silence) return { status: "neutral" };
   return { status: "ok" };
+}
+
+function formatToolAmount(tool: Tool) {
+  return tool.price > 0 ? formatMoney(tool.price, tool.priceCurrency || tool.catalogMonthlyPriceCurrency) : "0";
+}
+
+function formatSavings(value: number, tool: Tool, t: Props["t"]) {
+  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const label = formatMoney(value, currency);
+  return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
 }
 
 const STATUS_COLORS: Record<BubbleStatus, string> = {
   doublon: "hsl(var(--destructive))",
   dormant: "hsl(25 95% 53%)",
+  pricing: "hsl(217 91% 60%)",
   ok: "hsl(var(--keep))",
   neutral: "hsl(var(--muted-foreground) / 0.3)",
 };
@@ -76,10 +90,10 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
   const { tool, status, prescription } = bubble;
 
   const actionLabel = prescription?.verdict === "cancel"
-    ? t("Annuler", "Cancel")
+    ? t("Décider", "Decide")
     : prescription?.verdict === "downgrade"
-    ? t("Downgrader", "Downgrade")
-    : t("À vérifier", "Review");
+    ? t("Vérifier le plan", "Review plan")
+    : t("Clarifier", "Clarify");
 
   const actionColor = prescription?.verdict === "cancel"
     ? "bg-destructive text-white"
@@ -91,10 +105,10 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
     <div className="fixed inset-y-0 right-0 w-80 max-w-[90vw] bg-card border-l border-border shadow-2xl z-50 flex flex-col animate-in slide-in-from-right duration-200">
       <div className="flex items-center justify-between p-4 border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+          <ToolLogo tool={tool} size={32} className="rounded-lg" />
           <div>
             <p className="font-semibold text-sm text-foreground">{tool.name}</p>
-            <p className="text-xs font-['DM_Mono'] text-muted-foreground">{tool.price}€/{t("mois", "mo")}</p>
+            <p className="text-xs font-['DM_Mono'] text-muted-foreground">{formatToolMonthlyPrice(tool, t)}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-muted"><X className="w-4 h-4" /></button>
@@ -105,11 +119,13 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
           <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
             status === "doublon" ? "bg-destructive/10 text-destructive" :
             status === "dormant" ? "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400" :
+            status === "pricing" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300" :
             "bg-[hsl(var(--keep))]/10 text-[hsl(var(--keep))]"
           }`}>
-            {status === "doublon" ? t("Doublon", "Duplicate") :
-             status === "dormant" ? t("Fantôme", "Ghost") :
-             t("Optimisé", "Optimized")}
+            {status === "doublon" ? t("Chevauchement", "Overlap") :
+             status === "dormant" ? t("Peu utilisé", "Low usage") :
+             status === "pricing" ? t("Plan à vérifier", "Plan to review") :
+             t("RAS", "Looks fine")}
           </span>
         </div>
 
@@ -121,9 +137,9 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
         {/* Savings */}
         {prescription && prescription.savingsEstimate > 0 && (
           <div className="bg-[hsl(var(--keep))]/5 border border-[hsl(var(--keep))]/20 rounded-lg p-3">
-            <p className="text-xs text-muted-foreground">{t("Économies potentielles", "Potential savings")}</p>
+            <p className="text-xs text-muted-foreground">{t("Potentiel récupérable", "Recoverable potential")}</p>
             <p className="text-xl font-bold font-['DM_Mono'] text-[hsl(var(--keep))]">
-              {prescription.savingsEstimate}€<span className="text-sm font-normal text-muted-foreground">/{t("mois", "mo")}</span>
+              {formatSavings(prescription.savingsEstimate, tool, t)}<span className="text-sm font-normal text-muted-foreground">/{t("mois", "mo")}</span>
             </p>
           </div>
         )}
@@ -132,8 +148,27 @@ function SlidePanel({ bubble, result, t, onClose }: { bubble: BubbleData; result
         {tool.downgrade_plan?.available && (
           <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 text-xs">
             <p className="text-blue-700 dark:text-blue-300">
-              {t("Plan alternatif", "Alternative plan")}: <strong>{tool.downgrade_plan.plan}</strong> → {tool.downgrade_plan.toPrice}€
+              {t("Plan alternatif", "Alternative plan")}: <strong>{tool.downgrade_plan.plan}</strong> → {formatMoney(tool.downgrade_plan.toPrice, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}
             </p>
+          </div>
+        )}
+
+        {prescription?.pricingContext && (
+          <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-xs text-blue-800 dark:border-blue-900/60 dark:bg-blue-900/20 dark:text-blue-200">
+            <p className="font-semibold">{t("Variable pricing", "Pricing variable")}</p>
+            <p className="mt-1">
+              {prescription.pricingContext.currentPlan && (
+                <span>{t("Plan actuel", "Current plan")}: <strong>{prescription.pricingContext.currentPlan}</strong>. </span>
+              )}
+              {prescription.pricingContext.targetPlan && (
+                <span>{t("À tester", "To test")}: <strong>{prescription.pricingContext.targetPlan}</strong>.</span>
+              )}
+            </p>
+            {prescription.pricingContext.sourceDomain && (
+              <p className="mt-1 text-blue-700/80 dark:text-blue-200/80">
+                {t("Source prix", "Pricing source")}: {prescription.pricingContext.sourceDomain}
+              </p>
+            )}
           </div>
         )}
 
@@ -181,12 +216,15 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
   const counts = useMemo(() => {
     const doublons = items.filter((i) => i.status === "doublon");
     const dormants = items.filter((i) => i.status === "dormant");
+    const pricing = items.filter((i) => i.status === "pricing");
     const oks = items.filter((i) => i.status === "ok");
     return {
       doublons: doublons.length,
       doublonsSavings: doublons.reduce((s, i) => s + (i.prescription?.savingsEstimate ?? 0), 0),
       dormants: dormants.length,
       dormantsSavings: dormants.reduce((s, i) => s + (i.prescription?.savingsEstimate ?? 0), 0),
+      pricing: pricing.length,
+      pricingSavings: pricing.reduce((s, i) => s + (i.prescription?.savingsEstimate ?? 0), 0),
       oks: oks.length,
     };
   }, [items]);
@@ -198,24 +236,31 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
 
   const bubbles = useMemo(() => packCircles(filteredItems, dims.w, dims.h), [filteredItems, dims]);
 
-  const pills: { key: FilterStatus; emoji: string; label: string; count: number; savings?: number; cls: string; activeCls: string }[] = [
+  const pills: { key: FilterStatus; Icon: typeof AlertTriangle; label: string; count: number; savings?: number; cls: string; activeCls: string }[] = [
     {
-      key: "doublon", emoji: "🔴",
-      label: `${counts.doublons} ${t("Doublons", "Duplicates")}`,
+      key: "doublon", Icon: AlertTriangle,
+      label: `${counts.doublons} ${t("chevauchement(s)", "overlap(s)")}`,
       count: counts.doublons, savings: counts.doublonsSavings,
       cls: "border-destructive/30 text-destructive",
       activeCls: "bg-destructive/10 border-destructive text-destructive",
     },
     {
-      key: "dormant", emoji: "🟠",
-      label: `${counts.dormants} ${t("Fantômes", "Ghosts")}`,
+      key: "dormant", Icon: CircleDot,
+      label: `${counts.dormants} ${t("peu utilisé(s)", "low-usage")}`,
       count: counts.dormants, savings: counts.dormantsSavings,
       cls: "border-orange-300 text-orange-600 dark:border-orange-700 dark:text-orange-400",
       activeCls: "bg-orange-100 border-orange-500 text-orange-700 dark:bg-orange-900/30 dark:border-orange-600 dark:text-orange-400",
     },
     {
-      key: "ok", emoji: "🟢",
-      label: `${counts.oks} ${t("Optimisés", "Optimized")}`,
+      key: "pricing", Icon: CircleDollarSign,
+      label: `${counts.pricing} ${t("plan(s) à vérifier", "plan(s) to review")}`,
+      count: counts.pricing, savings: counts.pricingSavings,
+      cls: "border-blue-300 text-blue-600 dark:border-blue-700 dark:text-blue-300",
+      activeCls: "bg-blue-100 border-blue-500 text-blue-700 dark:bg-blue-900/30 dark:border-blue-600 dark:text-blue-300",
+    },
+    {
+      key: "ok", Icon: CheckCircle2,
+      label: `${counts.oks} ${t("sans signal", "clear")}`,
       count: counts.oks,
       cls: "border-[hsl(var(--keep))]/30 text-[hsl(var(--keep))]",
       activeCls: "bg-[hsl(var(--keep))]/10 border-[hsl(var(--keep))] text-[hsl(var(--keep))]",
@@ -224,7 +269,19 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
 
   return (
     <div className="space-y-5">
-      {/* ─── Summary pills ─── */}
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Points à revoir", "Points to review")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Où la stack demande un arbitrage ?", "Where does the stack need a decision?")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Cette vue ne dit pas que tes choix sont mauvais. Elle met en lumière les endroits où deux outils font peut-être le même travail, ou où un abonnement dort.",
+            "This view does not say your choices are bad. It highlights where two tools may do the same job, or where a subscription is idle."
+          )}
+        </p>
+      </header>
+
       <div className="flex flex-wrap gap-2">
         {pills.map((pill) => (
           <button
@@ -234,10 +291,10 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
               filter === pill.key ? pill.activeCls : `${pill.cls} hover:opacity-80`
             }`}
           >
-            <span>{pill.emoji}</span>
+            <pill.Icon className="h-3.5 w-3.5" />
             <span>{pill.label}</span>
             {pill.savings != null && pill.savings > 0 && (
-              <span className="font-['DM_Mono']">· {pill.savings}€</span>
+              <span>· {t("gain possible", "possible gain")}</span>
             )}
           </button>
         ))}
@@ -286,7 +343,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                       {b.tool.name.length > 9 ? b.tool.name.slice(0, 8) + "…" : b.tool.name}
                     </text>
                     <text x={b.x} y={b.y + 10} textAnchor="middle" className="fill-white/70 text-[9px] font-['DM_Mono'] pointer-events-none select-none" fontSize="9">
-                      {b.tool.price > 0 ? `${b.tool.price}€` : t("Gratuit", "Free")}
+                      {b.tool.price > 0 ? formatToolAmount(b.tool) : t("Gratuit", "Free")}
                     </text>
                   </>
                 )}
@@ -301,7 +358,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
             return (
               <div className="absolute z-10 bg-card border border-border rounded-lg shadow px-3 py-1.5 pointer-events-none text-xs" style={{ left: Math.min(b.x + b.r + 8, dims.w - 120), top: b.y - 16 }}>
                 <span className="font-medium text-foreground">{b.tool.name}</span>
-                <span className="text-muted-foreground ml-1.5 font-['DM_Mono']">{b.tool.price}€</span>
+                <span className="text-muted-foreground ml-1.5 font-['DM_Mono']">{formatToolAmount(b.tool)}</span>
               </div>
             );
           })()}
@@ -320,20 +377,21 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border text-left transition-colors ${
                   item.status === "doublon" ? "border-l-4 border-l-destructive border-border" :
                   item.status === "dormant" ? "border-l-4 border-l-orange-500 border-border" :
+                  item.status === "pricing" ? "border-l-4 border-l-blue-500 border-border" :
                   "border-border"
                 } hover:bg-muted/50`}
               >
-                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{item.tool.name.charAt(0)}</div>
+                <ToolLogo tool={item.tool} size={32} className="rounded-lg" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground truncate">{item.tool.name}</p>
                   {item.prescription && (
                     <p className="text-xs text-muted-foreground truncate">{item.prescription.message}</p>
                   )}
                 </div>
-                <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">{item.tool.price}€</span>
+                <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">{formatToolAmount(item.tool)}</span>
                 {item.prescription && item.prescription.savingsEstimate > 0 && (
                   <span className="text-xs font-bold font-['DM_Mono'] text-[hsl(var(--keep))] shrink-0">
-                    +{item.prescription.savingsEstimate}€
+                    +{formatSavings(item.prescription.savingsEstimate, item.tool, t)}
                   </span>
                 )}
                 <ChevronRight className="w-3.5 h-3.5 text-muted-foreground shrink-0" />

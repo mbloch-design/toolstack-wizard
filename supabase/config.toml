@@ -32,3 +32,6 @@ verify_jwt = false
 
 [functions.backoffice-diagnostic]
 verify_jwt = false
+
+[functions.send-backoffice-alerts]
+verify_jwt = false

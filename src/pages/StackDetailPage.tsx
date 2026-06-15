@@ -1230,21 +1230,25 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
     core: {
       fr: "Outil central de cette stack. Inutile de chercher une alternative : c'est lui qui tient tout.",
       en: "Core tool in this stack. No need to look for an alternative: it holds everything together.",
-      textClass: "text-foreground", borderClass: "border-border bg-secondary/40", dotClass: "bg-foreground",
+      textClass: "text-keep", borderClass: "border-keep/25 bg-keep/[0.05]", dotClass: "bg-keep",
     },
     conditional: {
       fr: "Utile selon les contextes. Vérifie que tu l'utilises vraiment chaque mois avant de renouveler.",
       en: "Useful in some contexts. Check you actually use it every month before renewing.",
-      textClass: "text-foreground", borderClass: "border-border", dotClass: "bg-muted-foreground",
+      textClass: "text-primary", borderClass: "border-primary/25 bg-primary/[0.04]", dotClass: "bg-primary",
     },
     challenge: {
       fr: "Candidat au downgrade. Cet outil doit prouver sa valeur par un résultat concret et mesurable.",
       en: "Downgrade candidate. This tool needs to prove its value through concrete, measurable results.",
-      textClass: "text-muted-foreground", borderClass: "border-border", dotClass: "bg-muted-foreground",
+      textClass: "text-destructive", borderClass: "border-destructive/25 bg-destructive/[0.04]", dotClass: "bg-destructive",
     },
   }[status.key];
 
-  const headerTint = "from-secondary/40";
+  const headerTint = {
+    core: "from-keep/[0.06]",
+    conditional: "from-primary/[0.06]",
+    challenge: "from-destructive/[0.06]",
+  }[status.key];
 
   return (
     <>
@@ -1281,8 +1285,8 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
           <p className="text-sm leading-6 text-foreground/80">{t(slot.reason, slot.reasonEn ?? slot.reason)}</p>
           {slot.tip && (
             <div className="flex items-start gap-2.5 pt-3 border-t border-border/60">
-              <Lightbulb className="h-3.5 w-3.5 shrink-0 mt-0.5 text-muted-foreground" />
-              <p className="text-xs font-medium text-foreground leading-5">
+              <Lightbulb className="h-3.5 w-3.5 shrink-0 mt-0.5 text-primary" />
+              <p className="text-xs font-medium text-primary leading-5">
                 {t(slot.tip, slot.tipEn ?? slot.tip)}
               </p>
             </div>
@@ -1306,8 +1310,8 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
           </p>
           <div className="grid grid-cols-2 gap-2.5">
             {tool?.pricing?.free ? (
-              <div className="rounded-xl border border-foreground/25 bg-secondary/40 p-3.5">
-                <p className="text-[10px] font-bold uppercase tracking-wide text-foreground mb-2">{t("Gratuit", "Free")}</p>
+              <div className="rounded-xl border border-keep/25 bg-keep/[0.05] p-3.5">
+                <p className="text-[10px] font-bold uppercase tracking-wide text-keep mb-2">{t("Gratuit", "Free")}</p>
                 <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.free}</p>
               </div>
             ) : (
@@ -1335,12 +1339,12 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
             href={tool.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-all hover:border-foreground group"
+            className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-all hover:border-primary/40 hover:bg-primary/[0.02] group"
           >
             <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate pr-3">
               {tool.websiteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
             </span>
-            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground group-hover:text-foreground transition-colors" />
+            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
           </a>
         )}
       </div>
@@ -2109,24 +2113,16 @@ function getStackMetaDescription(stack: StackGuide, locale: "fr" | "en"): string
     : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month.`;
 }
 
-// Achromatic, differentiated badges: Socle = solid dark, Conditionnel = neutral
-// outline, À challenger = muted outline. Meaning carried by fill/weight, not hue.
-const DECISION_CLASS = {
-  core:        "border-transparent bg-foreground text-background",
-  conditional: "border-border bg-transparent text-foreground",
-  challenge:   "border-border bg-transparent text-muted-foreground",
-} as const;
-
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
-  if (slot.decision === "challenge")   return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: DECISION_CLASS.challenge };
-  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: DECISION_CLASS.conditional };
-  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Socle",         labelEn: "Core",        className: DECISION_CLASS.core };
+  if (slot.decision === "challenge")   return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
+  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
+  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Socle",         labelEn: "Core",        className: "border-keep/25 bg-keep/10 text-keep" };
   const norm = slot.role.toLowerCase();
   const challengeKw = ["avancé", "advanced", "suite", "backlinks", "connecteurs", "connectors", "handoff", "vectoriel", "photo", "crm agence"];
   const optionalKw  = ["plugin", "feedback", "prospection", "social", "seo", "ux", "workshop", "atelier", "prototype", "ia"];
-  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: DECISION_CLASS.challenge };
-  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: DECISION_CLASS.conditional };
-  return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: DECISION_CLASS.core };
+  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
+  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
+  return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
 }
 
 export default StackDetailPage;

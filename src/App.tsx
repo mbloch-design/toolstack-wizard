@@ -105,6 +105,7 @@ const LangLayout = () => {
   // Also derive lang from pathname to stay in sync on internal navigations
   const pathLang = location.pathname.split("/")[1];
   const effectiveLang: Lang = pathLang === "en" ? "en" : validLang;
+  const isDiagnosticFocusRoute = /^\/(fr|en)\/selector\/?$/.test(location.pathname);
 
   return (
     <LangContext.Provider
@@ -118,11 +119,11 @@ const LangLayout = () => {
         <a href="#main-content" className="skip-to-content">
           {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
         </a>
-        <Navbar />
-        <main id="main-content" className="flex-1 pt-[68px]">
+        {!isDiagnosticFocusRoute && <Navbar />}
+        <main id="main-content" className={`flex-1 ${isDiagnosticFocusRoute ? "" : "pt-[68px]"}`}>
           <Outlet key={effectiveLang} />
         </main>
-        <Footer />
+        {!isDiagnosticFocusRoute && <Footer />}
       </div>
     </LangContext.Provider>
   );
@@ -162,8 +163,8 @@ const App = () => (
               <Route path="selector/results" element={<ResultsPage />} />
               <Route path="tools" element={<ToolsPage />} />
               <Route path="tool/:slug" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/prix" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/pricing" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
+              <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
               <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
               <Route path="tool/:slug/avis" element={<ToolDetailPage />} />
               <Route path="tool/:slug/reviews" element={<ToolDetailPage />} />
@@ -225,6 +226,17 @@ function RedirectOutils() {
   return <Navigate to={`/${lang || "fr"}/tool/${slug}`} replace />;
 }
 
+/** Keep localized tool sub-pages canonical: FR=/prix, EN=/pricing */
+function LocalizedToolSubpage({ subpage }: { subpage: "prix" | "pricing" }) {
+  const { slug, lang } = useParams();
+  if (lang === "en" && subpage === "prix") {
+    return <Navigate to={`/en/tool/${slug}/pricing`} replace />;
+  }
+  if (lang !== "en" && subpage === "pricing") {
+    return <Navigate to={`/${lang || "fr"}/tool/${slug}/prix`} replace />;
+  }
+  return <ToolDetailPage />;
+}
 
 /** Keep guide slugs canonical per language and avoid mixed-language duplicates */
 function LocalizedGuidePage() {

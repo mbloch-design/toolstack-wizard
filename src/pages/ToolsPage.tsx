@@ -8,7 +8,8 @@ import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { ToolRowEditorial } from "@/components/ToolRowEditorial";
+import { ToolCard } from "@/components/ToolCard";
+import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import type { Tool } from "@/data/types";
 
 const TOOLS_PER_PAGE = 40;
@@ -157,10 +158,7 @@ const ToolsPage = () => {
       </section>
 
       {/* ══════════════ BODY ══════════════ */}
-      <div
-        className="mx-auto grid max-w-7xl gap-10 py-10 lg:grid-cols-[200px_1fr]"
-        style={{ paddingLeft: "var(--layout-gutter, 48px)", paddingRight: "var(--layout-gutter, 48px)" }}
-      >
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-10 lg:grid-cols-[200px_1fr]">
 
         {/* ── SIDEBAR ── */}
         <aside className="hidden lg:block">
@@ -238,18 +236,18 @@ const ToolsPage = () => {
               <h2 className="mb-5 font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                 {t("Les outils qu'on recommande vraiment", "Tools we actually recommend")}
               </h2>
-              <div className="tcr-list">
+              <div className="tc-grid tc-grid--featured-first">
                 {noteworthy.map((tool, i) => {
                   const catObj = categories.find(c => c.id === tool.categoryId);
                   const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
                   return (
-                    <ToolRowEditorial
+                    <ToolCard
                       key={tool.id}
                       tool={tool}
                       prefix={prefix}
                       t={t}
                       lang={lang}
-                      rank={i + 1}
+                      variant={i === 0 ? "featured" : "default"}
                       categoryLabel={catLabel}
                     />
                   );
@@ -315,18 +313,17 @@ const ToolsPage = () => {
               </div>
             ) : (
               <>
-                <div className="tcr-list">
-                  {visible.map((tool, i) => {
+                <div className="tc-grid">
+                  {visible.map(tool => {
                     const catObj = categories.find(c => c.id === tool.categoryId);
                     const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
                     return (
-                      <ToolRowEditorial
+                      <ToolCardEditorial
                         key={tool.id}
                         tool={tool}
                         prefix={prefix}
                         t={t}
                         lang={lang}
-                        rank={i + 1}
                         categoryLabel={catLabel}
                       />
                     );

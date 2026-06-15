@@ -1,22 +1,24 @@
 import { useState, useMemo } from "react";
 import type { SessionState } from "@/types/diagnostic";
+import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
   onUpdate: (patch: Partial<SessionState>) => void;
   onNext: () => void;
+  onPrev: () => void;
   t: (fr: string, en: string) => string;
 }
 
-export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, t }: Props) {
+export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, onPrev, t }: Props) {
   const [email, setEmail] = useState(session.email || "");
   const [error, setError] = useState("");
 
   const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
-  const totalCost = useMemo(
-    () => session.selectedTools.reduce((sum, tool) => sum + tool.price, 0),
-    [session.selectedTools]
+  const totalCostLabel = useMemo(
+    () => formatMonthlyTotal(session.selectedTools, t),
+    [session.selectedTools, t]
   );
 
   const handleSend = () => {
@@ -55,7 +57,7 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, t }: P
           </p>
         </div>
         <div className="space-y-1">
-          <p className="text-3xl font-bold font-mono text-foreground">{totalCost}€</p>
+          <p className="text-3xl font-bold font-mono text-foreground">{totalCostLabel}</p>
           <p className="text-xs text-muted-foreground uppercase tracking-wide">
             /{t("mois", "mo")}
           </p>
@@ -87,6 +89,13 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, t }: P
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3">
+        <button
+          onClick={onPrev}
+          className="rounded-xl border border-border px-6 py-3 text-muted-foreground font-medium
+                     hover:bg-muted transition-colors"
+        >
+          ← {t("Précédent", "Previous")}
+        </button>
         <button
           onClick={handleSend}
           disabled={!email.trim()}

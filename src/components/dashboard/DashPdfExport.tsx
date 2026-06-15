@@ -7,6 +7,7 @@ interface Props {
   result: DiagnosticResult;
   t: (fr: string, en: string) => string;
   variant?: "primary" | "outline";
+  onExport?: () => void;
 }
 
 function serializeResult(result: DiagnosticResult) {
@@ -25,21 +26,26 @@ function serializeResult(result: DiagnosticResult) {
     annualSavings: result.annualSavings,
     hoursRecoverable: result.hoursRecoverable,
     selectedTools: result.sessionState.selectedTools.map((t) => ({
-      id: t.id, name: t.name, price: t.price,
+      id: t.id, name: t.name, price: t.price, priceCurrency: t.priceCurrency,
+      catalogMonthlyPrice: t.catalogMonthlyPrice, catalogMonthlyPriceCurrency: t.catalogMonthlyPriceCurrency,
       category: t.category, tool_type: t.tool_type, usage: t.usage,
     })),
     toolScores: toolScoresObj,
     prescriptions: result.prescriptions,
+    insights: result.insights,
     recommendations: result.recommendations.slice(0, 6).map((r) => ({
-      id: r.id, name: r.name, price: r.price, category: r.category,
+      id: r.id, name: r.name, price: r.price, priceCurrency: r.priceCurrency,
+      catalogMonthlyPrice: r.catalogMonthlyPrice, catalogMonthlyPriceCurrency: r.catalogMonthlyPriceCurrency,
+      category: r.category,
     })),
   };
 }
 
-export default function DashPdfExport({ result, t, variant = "outline" }: Props) {
+export default function DashPdfExport({ result, t, variant = "outline", onExport }: Props) {
   const [loading, setLoading] = useState(false);
 
   const handleExport = useCallback(async () => {
+    onExport?.();
     setLoading(true);
     try {
       const payload = serializeResult(result);
@@ -65,7 +71,8 @@ export default function DashPdfExport({ result, t, variant = "outline" }: Props)
       const blob = await res.blob();
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `tooltrim-diagnostic-${result.sessionState.firstName.toLowerCase()}.pdf`;
+      const name = result.sessionState.firstName?.trim().toLowerCase();
+      a.download = `tooltrim-restitution-${name || "stack"}.pdf`;
       a.click();
       URL.revokeObjectURL(a.href);
     } catch (e) {
@@ -73,7 +80,7 @@ export default function DashPdfExport({ result, t, variant = "outline" }: Props)
     } finally {
       setLoading(false);
     }
-  }, [result]);
+  }, [onExport, result]);
 
   const cls = variant === "primary"
     ? "bg-primary text-primary-foreground hover:opacity-90"
@@ -86,7 +93,7 @@ export default function DashPdfExport({ result, t, variant = "outline" }: Props)
       className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${cls} disabled:opacity-50`}
     >
       {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
-      {loading ? t("Génération…", "Generating…") : t("Télécharger rapport", "Download report")}
+      {loading ? t("Préparation…", "Preparing…") : t("Exporter la restitution", "Export restitution")}
     </button>
   );
 }

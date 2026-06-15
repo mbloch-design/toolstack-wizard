@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Cluster, DoubleRule, DiscoveryQuestion, Persona } from "@/types/diagnostic";
+import { inferCatalogMonthlyPrice } from "@/utils/diagnosticPricing";
 
 function mapTool(t: any): Tool {
+  const catalogPrice = inferCatalogMonthlyPrice({
+    defaultMonthlyPrice: Number(t.default_monthly_price) || 0,
+    pricing: t.pricing && typeof t.pricing === "object" ? t.pricing : undefined,
+    pricingEn: t.pricing_en && typeof t.pricing_en === "object" ? t.pricing_en : undefined,
+    pricing_v5: t.pricing_v5 && typeof t.pricing_v5 === "object" ? t.pricing_v5 : undefined,
+  });
+
   return {
     id: t.id,
+    slug: t.slug || undefined,
     name: t.name,
     name_en: t.short_description_en ? t.name : undefined,
-    price: Number(t.default_monthly_price) || 0,
+    logo: t.logo || undefined,
+    websiteUrl: t.website_url || undefined,
+    affiliateLink: t.affiliate_link || undefined,
+    price: catalogPrice.amount,
+    priceCurrency: catalogPrice.currency,
     category: t.category || "",
     functional_needs: Array.isArray(t.functional_needs) ? t.functional_needs : [],
     pertinence_by_persona: t.pertinence_by_persona || undefined,
@@ -15,6 +28,8 @@ function mapTool(t: any): Tool {
     ia_use_case: typeof t.ia_use_case === "object" && t.ia_use_case ? JSON.stringify(t.ia_use_case) : t.ia_use_case || undefined,
     usage: "medium",
     prescription_quality: (t.prescription_quality as Tool["prescription_quality"]) || "oui",
+    pricing: t.pricing && typeof t.pricing === "object" ? t.pricing : undefined,
+    pricingEn: t.pricing_en && typeof t.pricing_en === "object" ? t.pricing_en : undefined,
     freeAlternative: t.free_alternative || undefined,
     downgrade_plan: t.downgrade_plan && typeof t.downgrade_plan === "object"
       ? {
@@ -22,11 +37,15 @@ function mapTool(t: any): Tool {
           fromPrice: t.downgrade_plan.fromPrice ?? 0,
           toPrice: t.downgrade_plan.toPrice ?? 0,
           plan: t.downgrade_plan.plan ?? "",
+          freeTier: t.downgrade_plan.freeTier ?? null,
         }
       : undefined,
     better_alternative: t.better_alternative && typeof t.better_alternative === "object"
       ? JSON.stringify(t.better_alternative)
       : t.better_alternative || undefined,
+    pricing_v5: t.pricing_v5 && typeof t.pricing_v5 === "object" ? t.pricing_v5 : undefined,
+    catalogMonthlyPrice: catalogPrice.amount,
+    catalogMonthlyPriceCurrency: catalogPrice.currency,
     force_silence: t.force_silence === true || t.prescription_quality === "silence",
     bundle_parent: t.bundle_parent || undefined,
   };

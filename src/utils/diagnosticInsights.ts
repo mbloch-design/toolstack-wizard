@@ -1,4 +1,8 @@
 import type {
+  DiagnosticAnswerSignal,
+  DiagnosticCalibration,
+  DiagnosticCalibrationFlag,
+  DiagnosticConfidence,
   DiagnosticFocusArea,
   DiagnosticInsights,
   DiagnosticRiskFlag,
@@ -24,6 +28,14 @@ type BuildInsightsInput = {
   estimatedWaste: number;
   optimizedCost: number;
   annualSavings: number;
+  answerSignals?: DiagnosticAnswerSignal[];
+  signalSummary?: {
+    activeDiscoveryCount: number;
+    answeredDiscoveryCount: number;
+    answeredClosingCount: number;
+    protectedToolCount: number;
+    challengedToolCount: number;
+  };
 };
 
 const PERSONA_COPY: Record<Persona, { labelFr: string; labelEn: string; angleFr: string; angleEn: string }> = {
@@ -232,8 +244,10 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
   const duplicateItems = prescriptions.filter((p) => p.type === "doublon" || p.type === "doublon-ia");
   const dormantItems = prescriptions.filter((p) => p.type === "dormant");
   const inadaptedItems = prescriptions.filter((p) => p.type === "inadapté");
+  const pricingTierItems = prescriptions.filter((p) => p.type === "pricing-tier");
   const duplicateSavings = sumSavings(duplicateItems);
   const dormantSavings = sumSavings(dormantItems);
+  const pricingTierSavings = sumSavings(pricingTierItems);
   const wasteRatio = input.stackTotalCost > 0 ? input.estimatedWaste / input.stackTotalCost : 0;
   const flags: DiagnosticRiskFlag[] = [];
 
@@ -262,6 +276,20 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
       actionFr: "Vérifier l'usage réel avant renouvellement.",
       actionEn: "Check real usage before renewal.",
       impactMonthly: Math.round(dormantSavings),
+    });
+  }
+
+  if (pricingTierItems.length > 0) {
+    flags.push({
+      id: "pricing_tier_mismatch",
+      severity: pricingTierItems.length >= 3 || pricingTierSavings >= 40 ? "high" : "medium",
+      labelFr: "Plans payants à challenger",
+      labelEn: "Paid plans to challenge",
+      detailFr: `${pricingTierItems.length} outil(s) ont un plan gratuit, un palier inférieur ou un prix dépendant de l'usage.`,
+      detailEn: `${pricingTierItems.length} tool(s) have a free plan, lower tier, or usage-sensitive pricing.`,
+      actionFr: "Vérifier le palier payé avant de supprimer l'outil.",
+      actionEn: "Review the paid tier before removing the tool.",
+      impactMonthly: Math.round(pricingTierSavings),
     });
   }
 
@@ -351,6 +379,20 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
     });
   }
 
+  for (const signal of input.answerSignals || []) {
+    if (signal.source !== "closing" || signal.severity === "low") continue;
+    flags.push({
+      id: signal.id,
+      severity: signal.severity,
+      labelFr: signal.labelFr,
+      labelEn: signal.labelEn,
+      detailFr: signal.detailFr,
+      detailEn: signal.detailEn,
+      actionFr: signal.actionFr,
+      actionEn: signal.actionEn,
+    });
+  }
+
   return flags
     .sort((a, b) => severityRank(b) - severityRank(a) || Number(b.impactMonthly || 0) - Number(a.impactMonthly || 0))
     .slice(0, 6);
@@ -393,6 +435,22 @@ function buildFocusAreas(input: BuildInsightsInput, riskFlags: DiagnosticRiskFla
       labelEn: primary.labelEn,
       actionFr: primary.actionFr,
       actionEn: primary.actionEn,
+    });
+  }
+
+  const answerFocus = (input.answerSignals || []).find((signal) =>
+    signal.severity !== "low" &&
+    signal.impact !== "keep" &&
+    !focus.some((item) => item.id.includes(signal.id))
+  );
+  if (answerFocus) {
+    focus.push({
+      id: `answer_${answerFocus.id}`,
+      priority: answerFocus.severity,
+      labelFr: answerFocus.labelFr,
+      labelEn: answerFocus.labelEn,
+      actionFr: answerFocus.actionFr,
+      actionEn: answerFocus.actionEn,
     });
   }
 
@@ -445,6 +503,232 @@ function buildFocusAreas(input: BuildInsightsInput, riskFlags: DiagnosticRiskFla
   return focus.slice(0, 4);
 }
 
+function buildConfidence(input: BuildInsightsInput): DiagnosticConfidence {
+  const summary = input.signalSummary || {
+    activeDiscoveryCount: 0,
+    answeredDiscoveryCount: 0,
+    answeredClosingCount: 0,
+    protectedToolCount: 0,
+    challengedToolCount: 0,
+  };
+  const discoveryRatio = summary.activeDiscoveryCount > 0
+    ? summary.answeredDiscoveryCount / summary.activeDiscoveryCount
+    : 1;
+  const closingRatio = summary.answeredClosingCount / 3;
+  const toolDepth = Math.min(1, input.sessionState.selectedTools.length / 8);
+  const explicitSignalDepth = Math.min(1, (summary.protectedToolCount + summary.challengedToolCount) / 4);
+  const score = Math.round(
+    35 +
+    toolDepth * 25 +
+    discoveryRatio * 20 +
+    closingRatio * 12 +
+    explicitSignalDepth * 8
+  );
+  const clamped = Math.max(0, Math.min(100, score));
+
+  if (clamped >= 80) {
+    return {
+      score: clamped,
+      labelFr: "Diagnostic solide",
+      labelEn: "Solid diagnostic",
+      summaryFr: "Les arbitrages combinent sélection d'outils, réponses métier et signaux de fin de tunnel.",
+      summaryEn: "Tradeoffs combine tool selection, business answers, and end-of-funnel signals.",
+    };
+  }
+  if (clamped >= 60) {
+    return {
+      score: clamped,
+      labelFr: "Diagnostic fiable",
+      labelEn: "Reliable diagnostic",
+      summaryFr: "La lecture est exploitable, avec quelques zones à confirmer à l'usage.",
+      summaryEn: "The read is usable, with a few areas to confirm through actual usage.",
+    };
+  }
+  return {
+    score: clamped,
+    labelFr: "Diagnostic prudent",
+    labelEn: "Cautious diagnostic",
+    summaryFr: "La stack manque encore de signaux déclarés: les recommandations restent volontairement conservatrices.",
+    summaryEn: "The stack still lacks declared signals: recommendations stay intentionally conservative.",
+  };
+}
+
+function calibrationSeverityRank(flag: DiagnosticCalibrationFlag) {
+  if (flag.severity === "high") return 3;
+  if (flag.severity === "medium") return 2;
+  return 1;
+}
+
+function buildCalibration(
+  input: BuildInsightsInput,
+  riskFlags: DiagnosticRiskFlag[],
+  coverage: FunctionalCoverageItem[],
+  confidence: DiagnosticConfidence
+): DiagnosticCalibration {
+  const prescriptions = allPrescriptions(input.prescriptions);
+  const flags: DiagnosticCalibrationFlag[] = [];
+  const summary = input.signalSummary || {
+    activeDiscoveryCount: 0,
+    answeredDiscoveryCount: 0,
+    answeredClosingCount: 0,
+    protectedToolCount: 0,
+    challengedToolCount: 0,
+  };
+  const directActionCount = prescriptions.filter((p) => p.verdict === "cancel" || p.verdict === "downgrade").length;
+  const reviewCount = prescriptions.filter((p) => p.verdict === "review").length;
+  const wasteRatio = input.stackTotalCost > 0 ? input.estimatedWaste / input.stackTotalCost : 0;
+  const missingCoverage = coverage.filter((item) => item.status === "missing").length;
+  const highRiskCount = riskFlags.filter((flag) => flag.severity === "high").length;
+  const personaUncertainty = (input.answerSignals || []).find((signal) =>
+    signal.id === "onboarding_persona_uncertain" || signal.id === "onboarding_persona_hybrid"
+  );
+
+  if (personaUncertainty) {
+    flags.push({
+      id: personaUncertainty.id,
+      dimension: "data",
+      severity: personaUncertainty.severity === "high" ? "high" : "medium",
+      labelFr: personaUncertainty.labelFr,
+      labelEn: personaUncertainty.labelEn,
+      detailFr: personaUncertainty.detailFr,
+      detailEn: personaUncertainty.detailEn,
+      actionFr: personaUncertainty.actionFr,
+      actionEn: personaUncertainty.actionEn,
+    });
+  }
+
+  if (confidence.score < 60) {
+    flags.push({
+      id: "low_confidence",
+      dimension: "confidence",
+      severity: "high",
+      labelFr: "Confiance faible",
+      labelEn: "Low confidence",
+      detailFr: "Le diagnostic manque de signaux déclarés pour trancher fortement.",
+      detailEn: "The diagnostic lacks declared signals to make strong calls.",
+      actionFr: "Compléter les réponses métier avant d'utiliser ce score comme vérité opérationnelle.",
+      actionEn: "Complete business answers before using this score as an operational truth.",
+    });
+  }
+
+  if (summary.activeDiscoveryCount > 0 && summary.answeredDiscoveryCount < summary.activeDiscoveryCount) {
+    flags.push({
+      id: "partial_discovery",
+      dimension: "data",
+      severity: "medium",
+      labelFr: "Discovery incomplète",
+      labelEn: "Incomplete discovery",
+      detailFr: `${summary.answeredDiscoveryCount}/${summary.activeDiscoveryCount} question(s) complémentaire(s) répondues.`,
+      detailEn: `${summary.answeredDiscoveryCount}/${summary.activeDiscoveryCount} follow-up question(s) answered.`,
+      actionFr: "Relancer les questions complémentaires avant de durcir les recommandations.",
+      actionEn: "Resume follow-up questions before making recommendations stricter.",
+    });
+  }
+
+  if (input.healthScore >= 80 && wasteRatio >= 0.25) {
+    flags.push({
+      id: "healthy_but_wasteful",
+      dimension: "score",
+      severity: "medium",
+      labelFr: "Score haut mais gaspillage élevé",
+      labelEn: "High score but high waste",
+      detailFr: "La santé globale semble bonne, mais le coût récupérable reste significatif.",
+      detailEn: "Overall health looks good, but recoverable cost is still meaningful.",
+      actionFr: "Revoir la pondération entre score santé et économies avant restitution commerciale.",
+      actionEn: "Review the balance between health score and savings before commercial restitution.",
+    });
+  }
+
+  if (input.healthScore < 45 && input.estimatedWaste <= 0 && reviewCount === 0) {
+    flags.push({
+      id: "low_score_without_actions",
+      dimension: "actions",
+      severity: "high",
+      labelFr: "Score faible sans action claire",
+      labelEn: "Low score without clear action",
+      detailFr: "Le diagnostic pénalise la stack mais ne donne pas assez de leviers actionnables.",
+      detailEn: "The diagnostic penalizes the stack but does not provide enough actionable levers.",
+      actionFr: "Inspecter les règles de scoring et enrichir les prescriptions possibles.",
+      actionEn: "Inspect scoring rules and enrich possible prescriptions.",
+    });
+  }
+
+  if (directActionCount >= 4 && confidence.score < 75) {
+    flags.push({
+      id: "hard_actions_low_confidence",
+      dimension: "actions",
+      severity: "high",
+      labelFr: "Actions fortes avec confiance moyenne",
+      labelEn: "Strong actions with medium confidence",
+      detailFr: `${directActionCount} actions directes sont proposées alors que la confiance reste limitée.`,
+      detailEn: `${directActionCount} direct actions are proposed while confidence remains limited.`,
+      actionFr: "Passer ces actions en revue avant de les présenter comme certaines.",
+      actionEn: "Review these actions before presenting them as certain.",
+    });
+  }
+
+  if (missingCoverage >= 3 && input.recommendations.length === 0) {
+    flags.push({
+      id: "coverage_gap_without_recos",
+      dimension: "coverage",
+      severity: "medium",
+      labelFr: "Manques fonctionnels sans alternatives",
+      labelEn: "Functional gaps without alternatives",
+      detailFr: `${missingCoverage} besoins attendus semblent manquants, sans recommandation utile.`,
+      detailEn: `${missingCoverage} expected needs look missing, without useful recommendation.`,
+      actionFr: "Vérifier le catalogue outils et les mappings persona/besoins.",
+      actionEn: "Check the tool catalog and persona/need mappings.",
+    });
+  }
+
+  if (highRiskCount >= 3) {
+    flags.push({
+      id: "many_high_risks",
+      dimension: "score",
+      severity: "medium",
+      labelFr: "Trop de risques hauts",
+      labelEn: "Too many high risks",
+      detailFr: "Plusieurs risques forts coexistent: le risque principal peut devenir moins lisible.",
+      detailEn: "Several strong risks coexist: the primary risk may become less legible.",
+      actionFr: "Contrôler l'ordre de priorité et la formulation du risque principal.",
+      actionEn: "Check priority order and wording of the primary risk.",
+    });
+  }
+
+  const sortedFlags = flags
+    .sort((a, b) => calibrationSeverityRank(b) - calibrationSeverityRank(a))
+    .slice(0, 6);
+  const penalty = sortedFlags.reduce((sum, flag) => {
+    if (flag.severity === "high") return sum + 18;
+    if (flag.severity === "medium") return sum + 9;
+    return sum + 4;
+  }, 0);
+  const score = Math.max(0, Math.min(100, 100 - penalty));
+  const reviewRequired = sortedFlags.some((flag) => flag.severity === "high") || score < 75;
+
+  if (!reviewRequired) {
+    return {
+      score,
+      reviewRequired,
+      labelFr: "Calibration saine",
+      labelEn: "Healthy calibration",
+      summaryFr: "Aucun conflit majeur détecté entre score, signaux et actions.",
+      summaryEn: "No major conflict detected between score, signals, and actions.",
+      flags: sortedFlags,
+    };
+  }
+
+  return {
+    score,
+    reviewRequired,
+    labelFr: "Revue conseillée",
+    labelEn: "Review advised",
+    summaryFr: "Le diagnostic contient au moins un signal à vérifier avant de figer les règles.",
+    summaryEn: "The diagnostic contains at least one signal to check before freezing rules.",
+    flags: sortedFlags,
+  };
+}
+
 export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticInsights {
   const prescriptions = allPrescriptions(input.prescriptions);
   const coverage = buildCoverage(input.sessionState.selectedTools, input.sessionState.persona);
@@ -453,6 +737,8 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
   const maturityId = chooseMaturity(input, riskFlags);
   const paidTools = input.sessionState.selectedTools.filter((tool) => !tool.includedInBundle && Number(tool.price || 0) > 0);
   const wasteRatio = input.stackTotalCost > 0 ? input.estimatedWaste / input.stackTotalCost : 0;
+  const confidence = buildConfidence(input);
+  const calibration = buildCalibration(input, riskFlags, coverage, confidence);
 
   return {
     profile: {
@@ -471,6 +757,9 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
     riskFlags,
     functionalCoverage: coverage,
     focusAreas: buildFocusAreas(input, riskFlags, coverage),
+    answerSignals: input.answerSignals || [],
+    confidence,
+    calibration,
     metrics: {
       toolCount: input.sessionState.selectedTools.length,
       paidToolCount: paidTools.length,
@@ -480,7 +769,13 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
       duplicateCount: prescriptions.filter((p) => p.type === "doublon" || p.type === "doublon-ia").length,
       dormantCount: prescriptions.filter((p) => p.type === "dormant").length,
       reviewCount: prescriptions.filter((p) => p.verdict === "review" || p.verdict === "downgrade").length,
+      pricingTierCount: prescriptions.filter((p) => p.type === "pricing-tier").length,
       highCostToolCount: paidTools.filter((tool) => Number(tool.price || 0) >= 60).length,
+      activeDiscoveryCount: input.signalSummary?.activeDiscoveryCount || 0,
+      answeredDiscoveryCount: input.signalSummary?.answeredDiscoveryCount || 0,
+      answeredClosingCount: input.signalSummary?.answeredClosingCount || 0,
+      protectedToolCount: input.signalSummary?.protectedToolCount || 0,
+      challengedToolCount: input.signalSummary?.challengedToolCount || 0,
     },
     generatedAt: new Date().toISOString(),
   };

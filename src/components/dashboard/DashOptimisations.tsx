@@ -4,6 +4,8 @@ import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -23,6 +25,12 @@ interface SwapData {
   altScore: number;
 }
 
+function formatSwapSavings(swap: SwapData, t: Props["t"]) {
+  const currency = swap.current.priceCurrency || swap.current.catalogMonthlyPriceCurrency;
+  const label = `${formatMoney(swap.savings, currency)}/${t("mois", "mo")}`;
+  return currency ? label : `${label} · ${t("devise à vérifier", "currency to verify")}`;
+}
+
 const PERSONA_REASONS: Record<string, { fr: string; en: string }> = {
   THEO: { fr: "Idéal pour les devs qui veulent automatiser", en: "Ideal for devs who want to automate" },
   SOFIA: { fr: "Conçu pour les workflows créatifs", en: "Built for creative workflows" },
@@ -39,9 +47,9 @@ function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]
       <div className="p-4 space-y-3">
         {/* A → B */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center text-xs font-bold text-destructive">{swap.current.name.charAt(0)}</div>
+          <ToolLogo tool={swap.current} size={32} className="rounded-lg ring-destructive/20" />
           <ArrowRight className="w-4 h-4 text-muted-foreground shrink-0" />
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">{swap.alternative.name.charAt(0)}</div>
+          <ToolLogo tool={swap.alternative} size={32} className="rounded-lg ring-primary/20" />
           <div className="flex-1 min-w-0">
             <p className="text-sm text-foreground">
               <Link to={`${prefix}/tool/${swap.current.id}`} className="text-muted-foreground line-through hover:text-foreground transition-colors">{swap.current.name}</Link>
@@ -54,7 +62,7 @@ function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]
         {/* Stats row */}
         <div className="flex gap-3 text-xs">
           {swap.savings > 0 && (
-            <span className="font-['DM_Mono'] font-bold text-[hsl(var(--keep))]">+{swap.savings}€/{t("mois", "mo")}</span>
+            <span className="font-['DM_Mono'] font-bold text-[hsl(var(--keep))]">+{formatSwapSavings(swap, t)}</span>
           )}
           <span className="text-muted-foreground">
             {t("Score", "Score")}: {swap.currentScore} → <span className="text-[hsl(var(--keep))] font-medium">{swap.altScore}</span>
@@ -126,16 +134,26 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
 
   return (
     <div className="space-y-8">
-      <div>
-        <h2 className="text-xl font-bold text-foreground">{t("Ce que je ferais à ta place", "What I'd do in your shoes")}</h2>
-        <p className="text-sm text-muted-foreground mt-1">— {t("Ton sparring partner", "Your sparring partner")}</p>
-      </div>
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Options prudentes", "Careful options")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Seulement si tu veux aller plus loin.", "Only if you want to go further.")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Cette page n’est pas une invitation à empiler des outils. Elle liste les remplacements possibles et les pistes à tester après les actions prioritaires.",
+            "This page is not an invitation to pile up tools. It lists possible replacements and ideas to test after priority actions."
+          )}
+        </p>
+      </header>
 
-      {/* ─── 1. SWAPS FIRST ─── */}
       {swaps.length > 0 && (
         <div className="space-y-3">
           <div>
-            <h3 className="text-sm font-semibold text-foreground">🔄 {t("Remplace, ne dépense pas plus", "Replace, don't spend more")}</h3>
+            <h2 className="text-sm font-semibold text-foreground">{t("Remplacer avant d’ajouter", "Replace before adding")}</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t("Ces pistes ont du sens seulement si elles simplifient vraiment ton usage.", "These options make sense only if they truly simplify your usage.")}
+            </p>
           </div>
           <div className="space-y-3">
             {swaps.map((swap) => (
@@ -151,23 +169,22 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
         </div>
       )}
 
-      {/* ─── 2. NEW TOOLS (optional, max 3) ─── */}
       {result.recommendations.length > 0 && (
         <div className="space-y-3">
           <div>
-            <h3 className="text-sm font-semibold text-foreground">💡 {t("Si tu veux aller plus loin", "If you want to go further")}</h3>
-            <p className="text-xs text-muted-foreground">{t("Optionnel — ces outils pourraient t'intéresser", "Optional — these tools might interest you")}</p>
+            <h2 className="text-sm font-semibold text-foreground">{t("Pistes optionnelles", "Optional ideas")}</h2>
+            <p className="text-xs text-muted-foreground">{t("À tester seulement si le besoin est réel.", "Test only if the need is real.")}</p>
           </div>
           <div className="space-y-2">
             {result.recommendations.slice(0, 3).map((tool) => (
               <div key={tool.id} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3">
-                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+                <ToolLogo tool={tool} size={32} className="rounded-lg" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground">{tool.name}</p>
                   <p className="text-xs text-muted-foreground">{t(personaReason.fr, personaReason.en)}</p>
                 </div>
                 <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">
-                  {tool.price > 0 ? `${tool.price}€` : t("Gratuit", "Free")}
+                  {formatToolMonthlyPrice(tool, t)}
                 </span>
               </div>
             ))}
@@ -177,8 +194,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
 
       {result.recommendations.length === 0 && swaps.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          <p className="text-4xl mb-3">✨</p>
-          <p className="text-sm">{t("Ta stack est déjà bien optimisée !", "Your stack is already well optimized!")}</p>
+          <p className="text-sm">{t("Aucune piste optionnelle forte. C’est plutôt bon signe.", "No strong optional idea. That is a good sign.")}</p>
         </div>
       )}
     </div>

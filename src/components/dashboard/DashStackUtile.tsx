@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import type { ToolScore } from "@/utils/scoring";
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, formatMonthlyTotal, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 
 interface Props {
@@ -10,6 +12,12 @@ interface Props {
 }
 
 type FilterTab = "all" | "keep" | "review";
+
+function formatPotential(value: number, tool: Tool, t: Props["t"]) {
+  const currency = tool.priceCurrency || tool.catalogMonthlyPriceCurrency;
+  const label = formatMoney(Math.round(value), currency);
+  return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
+}
 
 function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; result: DiagnosticResult; t: Props["t"] }) {
   const [expanded, setExpanded] = useState(false);
@@ -33,7 +41,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
         onClick={() => setExpanded(!expanded)}
         className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-muted/30 transition-colors"
       >
-        <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+        <ToolLogo tool={tool} size={32} className="rounded-lg" />
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-foreground truncate">{tool.name}</p>
           <p className="text-xs text-muted-foreground capitalize truncate">{tool.category}</p>
@@ -46,7 +54,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
           <span className="text-xs font-['DM_Mono'] text-muted-foreground w-8 text-right">{score.scoreFinal}</span>
         </div>
         <span className="text-xs font-['DM_Mono'] text-foreground shrink-0">
-          {tool.price > 0 ? `${tool.price}€` : t("Gratuit", "Free")}
+          {formatToolMonthlyPrice(tool, t)}
         </span>
         <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${verdictCls}`}>
           {verdictLabel}
@@ -68,13 +76,37 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
           )}
 
           {/* Downgrade */}
-          {tool.downgrade_plan?.available && (
+          {prescription?.pricingContext && (
+            <div className="flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 dark:border-blue-900/60 dark:bg-blue-900/20">
+              <div className="flex-1">
+                <p className="text-xs text-blue-800 dark:text-blue-200">
+                  {prescription.pricingContext.targetPlan
+                    ? t("Palier à tester", "Tier to test")
+                    : t("Plan à vérifier", "Plan to review")}
+                  {": "}
+                  <strong>{prescription.pricingContext.targetPlan || prescription.pricingContext.currentPlan || t("plan inférieur", "lower tier")}</strong>
+                  {prescription.savingsEstimate > 0 && (
+                    <span className="ml-1 font-['DM_Mono']">
+                      ({t("potentiel", "potential")} {formatPotential(prescription.savingsEstimate, tool, t)})
+                    </span>
+                  )}
+                </p>
+                {prescription.pricingContext.sourceDomain && (
+                  <p className="mt-0.5 text-[11px] text-blue-700/80 dark:text-blue-200/75">
+                    {t("Source", "Source")}: {prescription.pricingContext.sourceDomain}
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {tool.downgrade_plan?.available && !prescription?.pricingContext && (
             <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-3 py-2">
               <div className="flex-1">
                 <p className="text-xs text-blue-700 dark:text-blue-300">
-                  {t("Plan", "Plan")} <strong>{tool.downgrade_plan.plan}</strong> → {tool.downgrade_plan.toPrice}€/{t("mois", "mo")}
+                  {t("Plan", "Plan")} <strong>{tool.downgrade_plan.plan}</strong> → {formatMoney(tool.downgrade_plan.toPrice, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}/{t("mois", "mo")}
                   <span className="ml-1 font-['DM_Mono']">
-                    ({t("économie", "saves")} {tool.downgrade_plan.fromPrice - tool.downgrade_plan.toPrice}€)
+                    ({t("économie", "saves")} {formatPotential(tool.downgrade_plan.fromPrice - tool.downgrade_plan.toPrice, tool, t)})
                   </span>
                 </p>
               </div>
@@ -85,7 +117,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
           )}
 
           {/* Free alternative */}
-          {tool.freeAlternative && !tool.downgrade_plan?.available && (
+          {tool.freeAlternative && !tool.downgrade_plan?.available && !prescription?.pricingContext && (
             <div className="flex items-center gap-2 bg-[hsl(var(--keep))]/5 border border-[hsl(var(--keep))]/20 rounded-lg px-3 py-2">
               <p className="flex-1 text-xs text-foreground">
                 <strong>{tool.freeAlternative}</strong> {t("fait la même chose gratuitement", "does the same thing for free")}
@@ -103,6 +135,10 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
 
 export default function DashStackUtile({ result, t }: Props) {
   const [activeFilter, setActiveFilter] = useState<FilterTab>("all");
+  const monthlyCostLabel = useMemo(
+    () => formatMonthlyTotal(result.sessionState.selectedTools, t),
+    [result.sessionState.selectedTools, t]
+  );
 
   const allP = useMemo(
     () => [...result.prescriptions.phase1, ...result.prescriptions.phase2, ...result.prescriptions.phase3],
@@ -135,13 +171,25 @@ export default function DashStackUtile({ result, t }: Props) {
 
   const tabs: { key: FilterTab; label: string; count: number }[] = [
     { key: "all", label: t("Tous", "All"), count: toolsWithScores.length },
-    { key: "keep", label: `✓ ${t("À garder", "Keep")}`, count: keepCount },
-    { key: "review", label: `⚠ ${t("À revoir", "Review")}`, count: reviewCount },
+    { key: "keep", label: t("Socle utile", "Useful core"), count: keepCount },
+    { key: "review", label: t("À clarifier", "To clarify"), count: reviewCount },
   ];
 
   return (
     <div className="space-y-5">
-      {/* ─── Filter tabs ─── */}
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Carte de stack", "Stack map")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Quels outils portent vraiment ton activité ?", "Which tools really support your work?")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Cette vue sépare le socle utile des outils à clarifier. Le score n’est pas une note morale : c’est un indice pour décider quoi vérifier.",
+            "This view separates useful core tools from tools to clarify. The score is not a moral grade: it is a signal to decide what to check."
+          )}
+        </p>
+      </header>
+
       <div className="flex gap-1 border-b border-border">
         {tabs.map((tab) => (
           <button
@@ -158,7 +206,6 @@ export default function DashStackUtile({ result, t }: Props) {
         ))}
       </div>
 
-      {/* ─── Tool cards ─── */}
       <div className="space-y-2">
         {filtered.map(({ tool, score }) => (
           <ToolCard key={tool.id} tool={tool} score={score} result={result} t={t} />
@@ -171,13 +218,12 @@ export default function DashStackUtile({ result, t }: Props) {
         </p>
       )}
 
-      {/* ─── Total footer ─── */}
       <div className="flex items-center justify-between bg-muted/50 rounded-xl px-4 py-3 border border-border">
         <p className="text-sm text-foreground">
-          {t("Stack optimisée", "Optimized stack")}: <strong className="font-['DM_Mono']">{result.optimizedCost}€/{t("mois", "mo")}</strong>
+          {t("Budget capté", "Captured budget")}: <strong className="font-['DM_Mono']">{monthlyCostLabel}/{t("mois", "mo")}</strong>
         </p>
         <p className="text-xs text-muted-foreground">
-          {t("Tu gardes", "You keep")} <strong>{toolsWithScores.length}</strong> {t("outils", "tools")}
+          {t("Socle conservé", "Kept core")} : <strong>{toolsWithScores.length}</strong> {t("outils", "tools")}
         </p>
       </div>
     </div>

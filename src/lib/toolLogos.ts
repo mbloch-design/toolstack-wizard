@@ -57,7 +57,7 @@ const SIMPLE_ICON_SLUGS: Record<string, string> = {
   chatgpt: "openai",
   chargebee: "chargebee",
   chrome: "googlechrome",
-  claude: "anthropic",
+  claude: "claude",
   clickup: "clickup",
   cloudflare: "cloudflare",
   contentful: "contentful",
@@ -92,6 +92,7 @@ const SIMPLE_ICON_SLUGS: Record<string, string> = {
   ghost: "ghost",
   gitbook: "gitbook",
   github: "github",
+  "github-copilot": "githubcopilot",
   gitlab: "gitlab",
   google: "google",
   grafana: "grafana",
@@ -224,6 +225,8 @@ const PRODUCT_BADGES: Record<string, { label: string; bg: string; fg: string; bo
   "adobe-premiere-pro": { label: "Pr", bg: "1F1148", fg: "D8B5FF", border: "9A6DFF" },
   "adobe-xd": { label: "Xd", bg: "470137", fg: "FF61F6", border: "FF61F6" },
   firefly: { label: "Ff", bg: "231F20", fg: "FFB000", border: "FFB000" },
+  claude: { label: "C", bg: "F8F5F0", fg: "D97757", border: "D8C7BA" },
+  "github-copilot": { label: "Co", bg: "F6F8FA", fg: "24292F", border: "D0D7DE" },
 };
 
 function makeBadgeSvg({ label, bg, fg, border }: { label: string; bg: string; fg: string; border: string }) {

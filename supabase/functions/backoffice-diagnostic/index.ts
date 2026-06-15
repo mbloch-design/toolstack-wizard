@@ -50,13 +50,43 @@ function getBearerToken(req: Request) {
   return auth.slice("Bearer ".length).trim();
 }
 
-function assertAdminAccess(req: Request) {
+function getAdminSecret() {
   const expected = Deno.env.get("BACKOFFICE_ADMIN_KEY");
   if (!expected) {
     throw new Error("Missing BACKOFFICE_ADMIN_KEY secret");
   }
-  const provided = req.headers.get("x-admin-key") || getBearerToken(req);
-  return provided === expected;
+  return expected;
+}
+
+function getAllowedAdminEmails() {
+  const raw = Deno.env.get("BACKOFFICE_ADMIN_EMAILS") || "";
+  return new Set(
+    raw
+      .split(",")
+      .map((email) => email.trim().toLowerCase())
+      .filter(Boolean)
+  );
+}
+
+async function assertAdminAccess(
+  req: Request,
+  supabase: ReturnType<typeof createClient>
+) {
+  const expected = getAdminSecret();
+  const providedKey = req.headers.get("x-admin-key");
+  if (providedKey && providedKey === expected) return true;
+
+  const token = getBearerToken(req);
+  if (!token || token === expected) return false;
+
+  const allowedEmails = getAllowedAdminEmails();
+  if (allowedEmails.size === 0) {
+    throw new Error("Missing BACKOFFICE_ADMIN_EMAILS secret");
+  }
+
+  const { data, error } = await supabase.auth.getUser(token);
+  const email = data.user?.email?.trim().toLowerCase();
+  return !error && Boolean(email && allowedEmails.has(email));
 }
 
 function sanitizePersona(persona: string | null | undefined) {
@@ -137,7 +167,7 @@ async function fetchDashboard(
   const { data: recentEmailJobs, error: jobsError } = await supabase
     .from("diagnostic_email_jobs")
     .select(
-      "id, session_id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, created_at, updated_at"
+      "id, session_id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, metadata, created_at, updated_at"
     )
     .gte("created_at", sinceIso)
     .order("created_at", { ascending: false })
@@ -145,6 +175,17 @@ async function fetchDashboard(
 
   if (jobsError) {
     throw new Error(`Failed to fetch recent email jobs: ${jobsError.message}`);
+  }
+
+  const { data: recentRestitutions, error: restitutionsError } = await supabase
+    .from("diagnostic_restitutions")
+    .select("id, session_id, channel, version, summary, details, score_snapshot, generated_at")
+    .gte("generated_at", sinceIso)
+    .order("generated_at", { ascending: false })
+    .limit(200);
+
+  if (restitutionsError) {
+    throw new Error(`Failed to fetch recent restitutions: ${restitutionsError.message}`);
   }
 
   return {
@@ -158,6 +199,7 @@ async function fetchDashboard(
     sessions: sessions || [],
     emailHealth: emailHealth || [],
     recentEmailJobs: recentEmailJobs || [],
+    recentRestitutions: recentRestitutions || [],
   };
 }
 
@@ -215,7 +257,7 @@ async function fetchSessionDetail(
   const { data: emailJobs, error: emailJobsError } = await supabase
     .from("diagnostic_email_jobs")
     .select(
-      "id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, metadata, created_at, updated_at"
+      "id, session_id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, metadata, created_at, updated_at"
     )
     .eq("session_id", sessionId)
     .order("created_at", { ascending: false })
@@ -432,21 +474,21 @@ Deno.serve(async (req) => {
   }
 
   try {
-    if (!assertAdminAccess(req)) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
+    const payload = (await req.json().catch(() => ({}))) as Payload;
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     if (!supabaseUrl || !serviceRoleKey) {
       throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
     }
 
-    const payload = (await req.json().catch(() => ({}))) as Payload;
     const supabase = createClient(supabaseUrl, serviceRoleKey);
+
+    if (!(await assertAdminAccess(req, supabase))) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     if (payload.mode === "session_detail") {
       const detail = await fetchSessionDetail(supabase, payload);

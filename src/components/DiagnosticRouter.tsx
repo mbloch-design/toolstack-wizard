@@ -4,42 +4,46 @@ import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
 import { runDiagnostic } from "@/utils/scoring";
+import { getPricingCaptureSummary } from "@/utils/diagnosticPricing";
+import {
+  clearDiagnosticRecovery,
+  loadDiagnosticRecovery,
+  saveDiagnosticRecovery,
+} from "@/lib/diagnosticRecovery";
 import {
   createDiagnosticSession,
   insertDiagnosticRestitution,
   insertDiagnosticSessionSnapshot,
   insertDiagnosticStepEvent,
+  markDiagnosticSessionAbandoned,
   queueDiagnosticEmailJob,
   updateDiagnosticSession,
 } from "@/lib/diagnosticPersistence";
 
-import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
-import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
-import DiagStep2Persona from "@/components/diagnostic/DiagStep2Persona";
-import DiagStep2bEmail from "@/components/diagnostic/DiagStep2bEmail";
-import DiagStep2cComplementary from "@/components/diagnostic/DiagStep2cComplementary";
-import DiagStep3SofiaSpecialties from "@/components/diagnostic/DiagStep3SofiaSpecialties";
-import DiagStep4Clusters from "@/components/diagnostic/DiagStep4Clusters";
-import DiagStep5ApiCosts from "@/components/diagnostic/DiagStep5ApiCosts";
+import DiagStepStackScan from "@/components/diagnostic/DiagStepStackScan";
+import DiagStepProfileGoal from "@/components/diagnostic/DiagStepProfileGoal";
 import DiagStep6Discovery from "@/components/diagnostic/DiagStep6Discovery";
-import DiagStep6bEmailRecap from "@/components/diagnostic/DiagStep6bEmailRecap";
-import DiagStep7Closing from "@/components/diagnostic/DiagStep7Closing";
+import DiagStepPreVerdict from "@/components/diagnostic/DiagStepPreVerdict";
 import DiagResultsLoading from "@/components/diagnostic/DiagResultsLoading";
 import DiagDashboard from "@/components/dashboard/DiagDashboard";
 import DiagTopBar from "@/components/diagnostic/DiagTopBar";
-import DiagRightPanel from "@/components/diagnostic/DiagRightPanel";
 import DiagSaveIndicator from "@/components/diagnostic/DiagSaveIndicator";
 import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay";
 
-// Steps: 0=Prenom, 1=TJM, 2=Persona, 3=Email, 4=Complementary,
-// 5=SofiaSpecialties(conditional), 6=Clusters, 7=ApiCosts(conditional),
-// 8=Discovery, 9=EmailRecap, 10=Closing, 11=ResultsLoading, 12=Dashboard
-type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+// V2 steps: 0=Profile/goal, 1=Stack scan, 2=Dynamic questions,
+// 3=Verdict + optional email, 4=legacy email step, 5=Loading, 12=Dashboard.
+type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 12;
 
-const TOTAL_VISIBLE_STEPS = 10;
-const FUNNEL_VERSION = "v1";
+const TOTAL_VISIBLE_STEPS = 5;
+const FUNNEL_VERSION = "v2";
 const PROGRESS_MAP: Record<StepId, number> = {
-  0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9, 12: 10,
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 3,
+  5: 4,
+  12: 5,
 };
 
 function createInitialSession(language: "fr" | "en"): SessionState {
@@ -48,11 +52,20 @@ function createInitialSession(language: "fr" | "en"): SessionState {
     tjm: 0,
     language,
     persona: "THEO" as Persona,
+    personaConfidence: "clear",
+    stackGoal: "reduce_costs",
     complementarySkills: [],
     selectedTools: [],
     discoveryAnswers: new Map(),
     closingAnswers: ["", "", ""],
   };
+}
+
+function toStepId(value: unknown): StepId {
+  const parsed = Number(value);
+  return parsed === 0 || parsed === 1 || parsed === 2 || parsed === 3 || parsed === 4 || parsed === 5 || parsed === 12
+    ? (parsed as StepId)
+    : 0;
 }
 
 function serializeDiscoveryAnswers(answers: Map<string, number>) {
@@ -73,16 +86,25 @@ function serializeSessionSnapshot(session: SessionState) {
     tjm: session.tjm,
     language: session.language,
     persona: session.persona,
+    personaConfidence: session.personaConfidence || null,
+    stackGoal: session.stackGoal || null,
     complementarySkills: session.complementarySkills,
     primarySpecialty: session.primarySpecialty || null,
     complementarySpecialties: session.complementarySpecialties || [],
     email: session.email || null,
     emailPreferences: session.emailPreferences || null,
     apiSpendTranche: session.apiSpendTranche || null,
+    selectionCoverage: session.selectionCoverage || null,
+    adaptiveDiscoveryQuestions: session.adaptiveDiscoveryQuestions || [],
     selectedTools: session.selectedTools.map((t) => ({
       id: t.id,
       name: t.name,
       price: t.price,
+      priceCurrency: t.priceCurrency || null,
+      selectedOffer: t.selectedOffer || null,
+      catalogMonthlyPrice: t.catalogMonthlyPrice ?? null,
+      catalogMonthlyPriceCurrency: t.catalogMonthlyPriceCurrency || null,
+      selectedPriceIsEstimate: t.selectedPriceIsEstimate ?? null,
       category: t.category,
     })),
     discoveryAnswers: serializeDiscoveryAnswers(session.discoveryAnswers),
@@ -90,34 +112,81 @@ function serializeSessionSnapshot(session: SessionState) {
   };
 }
 
+function buildDiagnosticContext(session: SessionState) {
+  return {
+    persona_confidence: session.personaConfidence || null,
+    stack_goal: session.stackGoal || null,
+    complementary_skills: session.complementarySkills,
+    primary_specialty: session.primarySpecialty || null,
+    complementary_specialties: session.complementarySpecialties || [],
+    selection_coverage: session.selectionCoverage || null,
+    pricing_capture: getPricingCaptureSummary(session.selectedTools),
+  };
+}
+
 export default function DiagnosticRouter() {
   const { lang, t } = useLang();
+  const language = lang === "en" ? "en" : "fr";
   const [searchParams] = useSearchParams();
   const fromTool = searchParams.get("from") || undefined;
-  const { tools, clusters, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
-  const [step, setStep] = useState<StepId>(0);
+  const { tools, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
+  const recoveryRef = useRef<ReturnType<typeof loadDiagnosticRecovery> | undefined>(undefined);
+  if (recoveryRef.current === undefined) {
+    recoveryRef.current = loadDiagnosticRecovery(language, FUNNEL_VERSION);
+  }
+  const recovered = recoveryRef.current;
+  const [step, setStep] = useState<StepId>(() => toStepId(recovered?.step));
   const [showTransition, setShowTransition] = useState<string | null>(null);
-  const [session, setSession] = useState<SessionState>(() =>
-    createInitialSession(lang === "en" ? "en" : "fr")
+  const [showRecoveryBanner, setShowRecoveryBanner] = useState(
+    () => !!recovered && toStepId(recovered.step) > 0 && toStepId(recovered.step) < 12
   );
-  const [dbSessionId, setDbSessionId] = useState<string | null>(null);
-  const [dbSessionToken, setDbSessionToken] = useState<string | null>(null);
-  const bootstrapAttemptedRef = useRef(false);
-  const finalSaveDoneRef = useRef(false);
-  const reportEmailQueuedRef = useRef(false);
+  const [session, setSession] = useState<SessionState>(() =>
+    recovered?.session || createInitialSession(language)
+  );
+  const [dbSessionId, setDbSessionId] = useState<string | null>(recovered?.dbSessionId || null);
+  const [dbSessionToken, setDbSessionToken] = useState<string | null>(recovered?.dbSessionToken || null);
+  const bootstrapAttemptedRef = useRef(!!(recovered?.dbSessionId && recovered?.dbSessionToken));
+  const finalSaveDoneRef = useRef(recovered?.finalSaveDone === true);
+  const reportEmailQueuedRef = useRef(recovered?.reportEmailQueued === true);
   const previousStepRef = useRef<StepId | null>(null);
+  const resumeLoggedRef = useRef(false);
+  const effectiveDiscoveryQuestions = useMemo(() => {
+    const seen = new Set<string>();
+    return [...(session.adaptiveDiscoveryQuestions || []), ...discoveryQuestions].filter((question) => {
+      if (seen.has(question.id)) return false;
+      seen.add(question.id);
+      return true;
+    });
+  }, [discoveryQuestions, session.adaptiveDiscoveryQuestions]);
 
-  // Compute diagnostic result when reaching dashboard
+  const previewDiagnosticResult = useMemo<DiagnosticResult | null>(() => {
+    if (step < 3 || session.selectedTools.length === 0) return null;
+    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions: effectiveDiscoveryQuestions });
+  }, [doublonRules, effectiveDiscoveryQuestions, session, step, tools]);
+
+  // Compute final diagnostic result when reaching dashboard.
   const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
-    if (step < 11) return null;
-    return runDiagnostic(session, { allTools: tools, doublonRules });
-  }, [step, session, tools, doublonRules]);
+    if (step !== 12) return null;
+    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions: effectiveDiscoveryQuestions });
+  }, [step, session, tools, doublonRules, effectiveDiscoveryQuestions]);
 
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
   }, []);
 
   const goTo = useCallback((s: StepId) => setStep(s), []);
+
+  const persistRecovery = useCallback(() => {
+    saveDiagnosticRecovery({
+      funnelVersion: FUNNEL_VERSION,
+      step,
+      session,
+      dbSessionId,
+      dbSessionToken,
+      finalSaveDone: finalSaveDoneRef.current,
+      reportEmailQueued: reportEmailQueuedRef.current,
+    });
+  }, [dbSessionId, dbSessionToken, session, step]);
 
   const logEvent = useCallback((stepId: StepId, eventName: string, eventPayload: Record<string, unknown> = {}) => {
     if (!dbSessionId || !dbSessionToken) return;
@@ -138,17 +207,18 @@ export default function DiagnosticRouter() {
     if (!wantsSummary || !email) return;
 
     reportEmailQueuedRef.current = true;
+    persistRecovery();
     void queueDiagnosticEmailJob(dbSessionId, dbSessionToken, {
       email,
       templateKey: "diagnostic_report_ready",
       locale: session.language,
       metadata: {
-        trigger_step: 9,
+        trigger_step: 3,
         funnel_version: FUNNEL_VERSION,
       },
     });
-    logEvent(9, "report_requested", { template_key: "diagnostic_report_ready" });
-  }, [dbSessionId, dbSessionToken, logEvent, session.email, session.emailPreferences, session.language]);
+    logEvent(3, "report_requested", { template_key: "diagnostic_report_ready" });
+  }, [dbSessionId, dbSessionToken, logEvent, persistRecovery, session.email, session.emailPreferences, session.language]);
 
   // Transition helper
   const goToWithTransition = useCallback((s: StepId, message: string) => {
@@ -180,6 +250,37 @@ export default function DiagnosticRouter() {
     })();
   }, [loading, error, session.language, session.persona, session.firstName, session.email, step]);
 
+  useEffect(() => {
+    persistRecovery();
+  }, [persistRecovery]);
+
+  useEffect(() => {
+    if (!recovered || !dbSessionId || !dbSessionToken || resumeLoggedRef.current) return;
+    resumeLoggedRef.current = true;
+    const resumedAt = new Date().toISOString();
+    void updateDiagnosticSession(dbSessionId, dbSessionToken, {
+      resumed_at: resumedAt,
+      last_client_seen_at: resumedAt,
+      abandoned_at: null,
+      recovery_state: {
+        status: "resumed",
+        resumed_at: resumedAt,
+        restored_step_id: step,
+      },
+    });
+    void insertDiagnosticStepEvent(dbSessionId, dbSessionToken, {
+      stepId: step,
+      eventName: "session_resumed",
+      eventPayload: {
+        restored_step: step,
+        saved_at: recovered.savedAt,
+      },
+      source: "web",
+        lang: session.language,
+        persona: session.persona,
+    });
+  }, [dbSessionId, dbSessionToken, recovered, session.language, session.persona, step]);
+
   // Persist step viewed + snapshots when navigating through the funnel.
   useEffect(() => {
     if (!dbSessionId || !dbSessionToken) return;
@@ -187,8 +288,8 @@ export default function DiagnosticRouter() {
     if (previous === step) return;
     previousStepRef.current = step;
 
-    // Queue report email only on explicit transition from recap step -> closing step.
-    if (previous === 9 && step === 10) {
+    // Queue report email only on explicit transition from verdict -> loading/results.
+    if ((previous === 3 || previous === 4) && step === 5) {
       maybeQueueReportEmail();
     }
 
@@ -205,6 +306,7 @@ export default function DiagnosticRouter() {
       first_name: session.firstName || null,
       persona: session.persona,
       language: session.language,
+      diagnostic_context: buildDiagnosticContext(session),
       email: session.email || null,
       tjm: session.tjm || 0,
       api_spend_tranche: session.apiSpendTranche || null,
@@ -215,6 +317,7 @@ export default function DiagnosticRouter() {
       last_step_id: step,
       source: "web",
       funnel_version: FUNNEL_VERSION,
+      last_client_seen_at: new Date().toISOString(),
       abandoned_at: null,
     });
 
@@ -238,12 +341,14 @@ export default function DiagnosticRouter() {
       phase2: diagnosticResult.prescriptions.phase2,
       phase3: diagnosticResult.prescriptions.phase3,
     };
+    const pricingCapture = getPricingCaptureSummary(session.selectedTools);
 
     void (async () => {
       await updateDiagnosticSession(dbSessionId, dbSessionToken, {
         first_name: session.firstName || null,
         persona: session.persona,
         language: session.language,
+        diagnostic_context: buildDiagnosticContext(session),
         email: session.email || null,
         tjm: session.tjm || 0,
         api_spend_tranche: session.apiSpendTranche || null,
@@ -251,6 +356,11 @@ export default function DiagnosticRouter() {
           id: tool.id,
           name: tool.name,
           price: tool.price,
+          priceCurrency: tool.priceCurrency || null,
+          selectedOffer: tool.selectedOffer || null,
+          catalogMonthlyPrice: tool.catalogMonthlyPrice ?? null,
+          catalogMonthlyPriceCurrency: tool.catalogMonthlyPriceCurrency || null,
+          selectedPriceIsEstimate: tool.selectedPriceIsEstimate ?? null,
           category: tool.category,
         })),
         discovery_answers: discoveryObj,
@@ -273,20 +383,37 @@ export default function DiagnosticRouter() {
         diagnostic_insights: diagnosticResult.insights,
         email_preferences: session.emailPreferences || {},
         last_step_id: 12,
+        last_client_seen_at: new Date().toISOString(),
         completed_at: new Date().toISOString(),
         abandoned_at: null,
       });
+      persistRecovery();
 
       void insertDiagnosticRestitution(dbSessionId, dbSessionToken, {
         channel: "dashboard",
         version: FUNNEL_VERSION,
         summary: {
+          report_pattern: "guided_report",
+          report_sections: ["understood_context", "verdict", "first_decision", "evidence", "appendices"],
+          currency_policy: "source_currency_or_verify",
+          understood_context: {
+            persona: session.persona,
+            persona_confidence: session.personaConfidence,
+            stack_goal: session.stackGoal,
+            selected_tool_count: session.selectedTools.length,
+            covered_zone_count: session.selectionCoverage?.covered.length || 0,
+            skipped_zone_count: session.selectionCoverage?.skipped.length || 0,
+          },
+          pricing_capture: pricingCapture,
           profile: diagnosticResult.insights.profile,
           maturity: diagnosticResult.insights.maturity,
           primary_risk: diagnosticResult.insights.primaryRisk,
           focus_areas: diagnosticResult.insights.focusAreas,
         },
         details: {
+          report_pattern: "guided_report",
+          currency_policy: "source_currency_or_verify",
+          pricing_capture: pricingCapture,
           insights: diagnosticResult.insights,
           prescriptions: prescriptionsObj,
           recommendations: diagnosticResult.recommendations.map((r) => ({ id: r.id, name: r.name })),
@@ -314,17 +441,52 @@ export default function DiagnosticRouter() {
         isFinal: true,
       });
     })();
-  }, [dbSessionId, dbSessionToken, diagnosticResult, logEvent, session]);
+  }, [dbSessionId, dbSessionToken, diagnosticResult, logEvent, persistRecovery, session]);
 
   useEffect(() => {
     if (!dbSessionId || !dbSessionToken) return;
     if (step >= 11) {
       void updateDiagnosticSession(dbSessionId, dbSessionToken, {
         last_step_id: step,
+        last_client_seen_at: new Date().toISOString(),
         abandoned_at: null,
       });
     }
   }, [dbSessionId, dbSessionToken, step]);
+
+  useEffect(() => {
+    if (!dbSessionId || !dbSessionToken || step <= 0 || step >= 12) return;
+    const markHidden = (reason: string) => {
+      markDiagnosticSessionAbandoned(dbSessionId, dbSessionToken, {
+        stepId: step,
+        reason,
+      });
+    };
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "hidden") markHidden("visibility_hidden");
+    };
+    const onPageHide = () => markHidden("page_hide");
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pagehide", onPageHide);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("pagehide", onPageHide);
+    };
+  }, [dbSessionId, dbSessionToken, step]);
+
+  const restartDiagnostic = useCallback(() => {
+    clearDiagnosticRecovery();
+    recoveryRef.current = null;
+    setSession(createInitialSession(language));
+    setStep(0);
+    setShowRecoveryBanner(false);
+    setDbSessionId(null);
+    setDbSessionToken(null);
+    bootstrapAttemptedRef.current = false;
+    finalSaveDoneRef.current = false;
+    reportEmailQueuedRef.current = false;
+    previousStepRef.current = null;
+  }, [language]);
 
   // Step navigation logic
   const nextFrom = useCallback((current: StepId) => {
@@ -333,32 +495,20 @@ export default function DiagnosticRouter() {
       case 0: return goTo(1);
       case 1: return goTo(2);
       case 2: return goTo(3);
-      case 3: return goTo(4);
-      case 4: return session.persona === "SOFIA" ? goTo(5) : goTo(6);
-      case 5: return goTo(6);
-      case 6: // after clusters → transition → api costs (Theo) or discovery
-        if (session.persona === "THEO") {
-          return goToWithTransition(7, t(
-            `Merci ${session.firstName} ! On affine ton diagnostic…`,
-            `Thanks ${session.firstName}! Refining your diagnostic…`
-          ));
-        }
-        return goToWithTransition(8, t(
-          `Merci ${session.firstName} ! On analyse ta stack…`,
-          `Thanks ${session.firstName}! Analyzing your stack…`
+      case 3:
+        return goToWithTransition(5, t(
+          session.firstName ? `${session.firstName}, je transforme ta stack en plan d'action...` : "Je transforme ta stack en plan d'action...",
+          session.firstName ? `${session.firstName}, turning your stack into an action plan...` : "Turning your stack into an action plan..."
         ));
-      case 7: return goTo(8); // api costs → discovery
-      case 8: return goTo(9); // discovery → email recap
-      case 9: return goTo(10); // email recap → closing
-      case 10: // closing → results loading with transition
-        return goToWithTransition(11, t(
-          `C'est parti ${session.firstName} ! Calcul en cours…`,
-          `Here we go ${session.firstName}! Calculating…`
+      case 4:
+        return goToWithTransition(5, t(
+          session.firstName ? `${session.firstName}, je transforme ta stack en plan d'action...` : "Je transforme ta stack en plan d'action...",
+          session.firstName ? `${session.firstName}, turning your stack into an action plan...` : "Turning your stack into an action plan..."
         ));
-      case 11: return goTo(12); // results loading → dashboard
+      case 5: return goTo(12);
       case 12: return;
     }
-  }, [goTo, goToWithTransition, logEvent, session.firstName, session.persona, t]);
+  }, [goTo, goToWithTransition, logEvent, session.firstName, t]);
 
   const prevFrom = useCallback((current: StepId) => {
     logEvent(current, "step_back", { direction: "prev" });
@@ -367,28 +517,35 @@ export default function DiagnosticRouter() {
       case 2: return goTo(1);
       case 3: return goTo(2);
       case 4: return goTo(3);
-      case 5: return goTo(4);
-      case 6: return session.persona === "SOFIA" ? goTo(5) : goTo(4);
-      case 7: return goTo(6);
-      case 8: return session.persona === "THEO" ? goTo(7) : goTo(6);
-      case 9: return goTo(8);
-      case 10: return goTo(9);
+      case 5: return goTo(3);
       default: return;
     }
-  }, [goTo, logEvent, session.persona]);
+  }, [goTo, logEvent]);
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+      <div className="diagnostic-mood p-3 md:p-4">
+        <div className="diagnostic-shell flex items-center justify-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground" />
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh] text-destructive">
-        <p>{error}</p>
+      <div className="diagnostic-mood p-3 md:p-4">
+        <div className="diagnostic-shell flex items-center justify-center px-4">
+        <div className="max-w-lg w-full rounded-2xl border border-destructive/30 bg-destructive/5 p-4 text-center">
+          <p className="text-destructive text-sm">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="diagnostic-primary-action mt-3 h-9 px-4 rounded-md text-sm font-medium"
+          >
+            {t("Réessayer", "Retry")}
+          </button>
+        </div>
+        </div>
       </div>
     );
   }
@@ -396,21 +553,53 @@ export default function DiagnosticRouter() {
   // Map internal step to visible progress (0-9)
   const progressIndex = PROGRESS_MAP[step];
 
-  const showRightPanel = step >= 7 && step <= 10;
-
   // If on dashboard step, render full dashboard
   if (step === 12 && diagnosticResult) {
-    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />;
+    return (
+      <div className="diagnostic-mood p-3 md:p-4">
+        <div className="diagnostic-shell">
+          <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />
+        </div>
+      </div>
+    );
   }
   return (
-    <>
+    <div className="diagnostic-mood p-3 md:p-4">
+      <div className="diagnostic-shell">
       {/* Top bar */}
       <DiagTopBar
         session={session}
         step={progressIndex}
-        totalSteps={TOTAL_VISIBLE_STEPS}
+        totalSteps={TOTAL_VISIBLE_STEPS + 1}
         t={t}
       />
+
+      {showRecoveryBanner && (
+        <div className="border-b border-border bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p className="text-sm text-foreground">
+              {t(
+                "On a repris ton diagnostic là où tu l'avais laissé.",
+                "We picked up your diagnostic where you left off."
+              )}
+            </p>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowRecoveryBanner(false)}
+                className="diagnostic-primary-action h-8 px-3 rounded-md text-xs font-medium"
+              >
+                {t("Continuer", "Continue")}
+              </button>
+              <button
+                onClick={restartDiagnostic}
+                className="h-8 px-3 rounded-md border border-border text-xs font-medium text-foreground"
+              >
+                {t("Recommencer", "Restart")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Transition overlay */}
       {showTransition && (
@@ -421,65 +610,59 @@ export default function DiagnosticRouter() {
         />
       )}
 
-      <div className={`max-w-7xl mx-auto px-4 py-8 md:py-12 ${showRightPanel ? "flex gap-6" : ""}`}>
+      <div
+        className="min-h-[calc(100vh-var(--navbar-h)-72px)]"
+      >
+        <div className="mx-auto max-w-7xl px-4 py-7 md:py-10">
         {/* Main content */}
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0">
           {step === 0 && (
-            <DiagStep0Prenom session={session} onUpdate={updateSession} onNext={() => nextFrom(0)} t={t} fromTool={fromTool} />
-          )}
-          {step === 1 && (
-            <DiagStep1Tjm session={session} onUpdate={updateSession} onNext={() => nextFrom(1)} t={t} />
-          )}
-          {step === 2 && (
-            <DiagStep2Persona session={session} onUpdate={updateSession} onNext={() => nextFrom(2)} t={t} />
-          )}
-          {step === 3 && (
-            <DiagStep2bEmail session={session} onUpdate={updateSession} onNext={() => nextFrom(3)} t={t} />
-          )}
-          {step === 4 && (
-            <DiagStep2cComplementary session={session} onUpdate={updateSession} onNext={() => nextFrom(4)} t={t} />
-          )}
-          {step === 5 && (
-            <DiagStep3SofiaSpecialties session={session} onUpdate={updateSession} onNext={() => nextFrom(5)} t={t} />
-          )}
-          {step === 6 && (
-            <DiagStep4Clusters
+            <DiagStepProfileGoal
               session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(6)}
-              onPrev={() => prevFrom(6)}
-              clusters={clusters}
-              tools={tools}
-              doublonRules={doublonRules}
+              onNext={() => nextFrom(0)}
+              variant="intro"
               t={t}
             />
           )}
-          {step === 7 && (
-            <DiagStep5ApiCosts session={session} onUpdate={updateSession} onNext={() => nextFrom(7)} t={t} />
+          {step === 1 && (
+            <DiagStepStackScan
+              session={session}
+              tools={tools}
+              onUpdate={updateSession}
+              onNext={() => nextFrom(1)}
+              onPrev={() => prevFrom(1)}
+              onTrack={(eventName, eventPayload = {}) => {
+                logEvent(1, eventName, {
+                  ...eventPayload,
+                  funnel_version: FUNNEL_VERSION,
+                });
+              }}
+              t={t}
+              fromTool={fromTool}
+            />
           )}
-          {step === 8 && (
+          {step === 2 && (
             <DiagStep6Discovery
               session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(8)}
-              onPrev={() => prevFrom(8)}
+              onNext={() => nextFrom(2)}
+              onPrev={() => prevFrom(2)}
               discoveryQuestions={discoveryQuestions}
               t={t}
             />
           )}
-          {step === 9 && (
-            <DiagStep6bEmailRecap session={session} onUpdate={updateSession} onNext={() => nextFrom(9)} t={t} />
-          )}
-          {step === 10 && (
-            <DiagStep7Closing
+          {(step === 3 || step === 4) && previewDiagnosticResult && (
+            <DiagStepPreVerdict
               session={session}
+              result={previewDiagnosticResult}
               onUpdate={updateSession}
-              onNext={() => nextFrom(10)}
-              onPrev={() => prevFrom(10)}
+              onNext={() => nextFrom(step === 4 ? 4 : 3)}
+              onPrev={() => prevFrom(step === 4 ? 4 : 3)}
               t={t}
             />
           )}
-          {step === 11 && (
+          {step === 5 && (
             <DiagResultsLoading
               toolCount={session.selectedTools.length}
               t={t}
@@ -487,15 +670,12 @@ export default function DiagnosticRouter() {
             />
           )}
         </div>
-
-        {/* Right panel — desktop only, steps 6-10 */}
-        {showRightPanel && (
-          <DiagRightPanel session={session} doublonRules={doublonRules} t={t} />
-        )}
+        </div>
       </div>
 
       {/* Auto-save indicator */}
       <DiagSaveIndicator session={session as unknown as Record<string, unknown>} t={t} />
-    </>
+      </div>
+    </div>
   );
 }

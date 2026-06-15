@@ -1,7 +1,7 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
 } from "lucide-react";
@@ -73,7 +73,7 @@ const ToolDetailPage = () => {
     const planSuffixEn = planName ? ` (${planName} plan)` : "";
     const rawExcerpt = (tool.shortDescription || "").split(/[.!?]/)[0].trim();
     const shortExcerpt = rawExcerpt.length > 90 ? rawExcerpt.slice(0, 87) + "…" : rawExcerpt;
-    const cat = categories.find((c: any) => c.id === (tool.categoryId || (tool as any).category) || c.slug === (tool.categoryId || (tool as any).category));
+    const cat = categories.find((c: any) => c.id === tool.categoryId);
     const catLabel = cat
       ? stripLeadingEmoji(cat.name, cat.id || "")
       : lang === "fr" ? "outil SaaS" : "SaaS tool";
@@ -213,63 +213,6 @@ const ToolDetailPage = () => {
     });
   }, [subPage, slug]);
 
-  /* Keep the pricing sub-route canonical per locale: FR=/prix, EN=/pricing.
-     Only fires on a mismatched direct URL, never on normal in-page nav. */
-  useEffect(() => {
-    const end = location.pathname.split("/").pop();
-    if (lang === "en" && end === "prix") {
-      navigate(`${prefix}/tool/${slug}/pricing`, { replace: true });
-    } else if (lang !== "en" && end === "pricing") {
-      navigate(`${prefix}/tool/${slug}/prix`, { replace: true });
-    }
-  }, [lang, location.pathname, slug, prefix, navigate]);
-
-  /* Scroll-driven section reveal (cross-browser via IntersectionObserver).
-     Content stays visible if JS or IO is unavailable, and the animation is
-     skipped entirely under prefers-reduced-motion. */
-  useEffect(() => {
-    if (!tool) return;
-    if (typeof IntersectionObserver === "undefined") return;
-    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
-
-    const root = document.querySelector(".td-page-grid");
-    if (!root) return;
-    const sections = Array.from(root.querySelectorAll<HTMLElement>(".td-subpage-content > .td-section"));
-    if (sections.length === 0) return;
-
-    root.classList.add("td-reveal-ready");
-
-    // Reveal anything already in (or above) the viewport synchronously so
-    // above-the-fold sections never flash hidden, then observe the rest.
-    const vh = window.innerHeight;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("td-in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
-    );
-    sections.forEach((s) => {
-      if (s.getBoundingClientRect().top < vh * 0.92) {
-        s.classList.add("td-in"); // already visible on load — no entry animation
-      } else {
-        io.observe(s);
-      }
-    });
-    return () => io.disconnect();
-  }, [tool, slug]);
-
-  /* Pill nav sections — memoized. MUST stay above the early returns so the
-     hook order is stable (React error #310 otherwise). */
-  const pillSections = useMemo(() => TABS.map((tab) => ({
-    id: tab.id === "presentation" ? "analyse" : tab.id,
-    label: lang === "fr" ? tab.labelFr : tab.labelEn,
-  })), [lang]);
-
   /* ── Loading / not found ── */
   if (loading) {
     return (
@@ -282,16 +225,10 @@ const ToolDetailPage = () => {
   if (!tool) return null;
 
   /* ── Derived values ── */
-  // Most tools store the category as a `category` slug/id, not `categoryId`.
-  // Resolve from either so the category never silently disappears.
-  const catKey = tool.categoryId || (tool as any).category || null;
-  const category   = categories.find((c: any) => c.id === catKey || c.slug === catKey);
+  const category   = categories.find((c: any) => c.id === tool.categoryId);
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const alternatives = tools
-    .filter((tt: any) => {
-      const ttKey = tt.categoryId || tt.category || null;
-      return catKey != null && ttKey === catKey && tt.id !== tool.id;
-    })
+    .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id)
     .slice(0, 6);
   const relatedPosts = posts
     .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
@@ -332,6 +269,11 @@ const ToolDetailPage = () => {
     alternatives, catName, catNameEn,
   };
 
+  const pillSections = TABS.map((tab) => ({
+    id: tab.id === "presentation" ? "analyse" : tab.id,
+    label: lang === "fr" ? tab.labelFr : tab.labelEn,
+  }));
+
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
       <ToolJsonLd
@@ -367,30 +309,47 @@ const ToolDetailPage = () => {
               { label: tool.name },
             ]} />
 
-            {/* Category eyebrow — above the lockup so the logo aligns to the title */}
-            {category && (
-              <Link to={`${prefix}/category/${category.slug}`} className="td-hero-cat">
-                {CategoryIcon && <CategoryIcon />}
-                {t(catName, catNameEn)}
-              </Link>
-            )}
-
-            {/* Identity lockup — logo aligned with the name */}
-            <div className="td-hero-lockup">
-              <ToolLogo tool={tool} size={96} className="td-hero-logo" eager />
-              {/* H1 — clamp réduit pour les noms courts (≤5 chars) */}
-              <h1 style={{
-                fontFamily: "var(--font-brand)",
-                fontSize: tool.name.length <= 5
-                  ? "clamp(4rem, 7vw, 6rem)"      /* max 96px — Box, Slack, Zoom… */
-                  : "clamp(4rem, 7.5vw, 7rem)",   /* max 112px — noms longs */
-                fontWeight: 600, lineHeight: 0.9,
-                letterSpacing: "-0.07em", color: "var(--color-text)",
-                margin: 0, minWidth: 0, overflowWrap: "break-word", hyphens: "auto",
+            {/* Logo + category badge */}
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
+              <div style={{
+                width: 56, height: 56, borderRadius: 10,
+                border: "1px solid var(--color-border)", background: "var(--color-surface)",
+                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
-                {tool.name}
-              </h1>
+                <ToolLogo tool={tool} size={36} />
+              </div>
+              {category && (
+                <Link
+                  to={`${prefix}/category/${category.slug}`}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: 6,
+                    height: 32, padding: "0 14px",
+                    background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 999,
+                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
+                    color: "var(--color-text)", textDecoration: "none",
+                    transition: "border-color 140ms",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
+                >
+                  {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "var(--color-muted)" }} />}
+                  {t(catName, catNameEn)}
+                </Link>
+              )}
             </div>
+
+            {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion */}
+            <h1 style={{
+              fontFamily: "var(--font-brand)",
+              fontSize: tool.name.length <= 5
+                ? "clamp(4.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
+                : "clamp(4.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
+              fontWeight: 600, lineHeight: 0.9,
+              letterSpacing: "-0.07em", color: "var(--color-text)",
+              margin: 0,
+            }}>
+              {tool.name}
+            </h1>
 
             {/* Short description */}
             {tool.shortDescription && (
@@ -459,9 +418,6 @@ const ToolDetailPage = () => {
                     { label: t("Limite principale", "Main limitation"), text: limitText },
                   ].filter((b): b is { label: string; text: string } => !!b.text);
 
-                  // Nothing to say → no section (avoids an empty title-only block)
-                  if (!vd?.threshold && blocks.length === 0) return null;
-
                   return (
                     <div className="td-section">
                       <span className="td-eyebrow">{t("Décision rapide", "Quick decision")}</span>
@@ -493,14 +449,22 @@ const ToolDetailPage = () => {
                   );
                 })()}
 
-                {/* 3 · Pour qui — self-wraps .td-section, renders nothing when empty */}
-                <ToolAudienceBlock
-                  relevantFor={(tool as any).relevantFor || []}
-                  soloRelevance={tool.soloRelevance}
-                  teamRelevance={tool.teamRelevance}
-                  toolName={tool.name}
-                  t={t}
-                />
+                {/* 3 · Pour qui */}
+                {(tool as any).relevantFor?.length > 0 && (
+                  <div className="td-section">
+                    <span className="td-eyebrow">{t("Audience", "Audience")}</span>
+                    <h2 className="td-title">
+                      {t(`Pour qui est ${tool.name} ?`, `Who is ${tool.name} for?`)}
+                    </h2>
+                    <ToolAudienceBlock
+                      relevantFor={(tool as any).relevantFor || []}
+                      soloRelevance={tool.soloRelevance}
+                      teamRelevance={tool.teamRelevance}
+                      toolName={tool.name}
+                      t={t}
+                    />
+                  </div>
+                )}
 
                 {/* 4 · Points forts — pros */}
                 {(tool.pros?.length ?? 0) > 0 && (
@@ -561,14 +525,22 @@ const ToolDetailPage = () => {
                     <h2 className="td-title">
                       {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
                     </h2>
-                    <ul className="td-uselist">
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
                       {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                        <li key={i} className="td-use">
-                          <span className="td-use-marker" aria-hidden="true"><ArrowRight /></span>
-                          <span className="td-use-text">{uc}</span>
-                        </li>
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex", alignItems: "flex-start", gap: 10,
+                            padding: "12px 16px",
+                            background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                            fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", lineHeight: 1.45,
+                          }}
+                        >
+                          <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "var(--color-text-strong)" }} />
+                          {uc}
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
 
@@ -596,8 +568,10 @@ const ToolDetailPage = () => {
                   );
                 })()}
 
-                {/* 9 · Intégrations / Plugins — self-wraps .td-section, renders nothing when empty */}
-                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                {/* 9 · Intégrations / Plugins */}
+                <div className="td-section">
+                  <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                </div>
 
                 {/* SEO/LLM summary — visually quiet, useful for crawlers */}
                 <ToolSummaryBlock

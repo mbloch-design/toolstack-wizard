@@ -6,9 +6,10 @@ interface Props {
   result: DiagnosticResult;
   t: (fr: string, en: string) => string;
   onClose: () => void;
+  onTrack?: (eventName: string, eventPayload?: Record<string, unknown>) => void;
 }
 
-export default function DashShareModal({ result, t, onClose }: Props) {
+export default function DashShareModal({ result, t, onClose, onTrack }: Props) {
   const [copied, setCopied] = useState(false);
 
   // Simple share URL with session ID
@@ -18,6 +19,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
+      onTrack?.("restitution_share_link_copied", { channel: "copy" });
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // fallback
@@ -25,13 +27,13 @@ export default function DashShareModal({ result, t, onClose }: Props) {
   };
 
   const shareText = t(
-    `J'ai fait mon diagnostic stack sur tooltrim.com — score ${result.healthScore}/100, ${Math.round(result.estimatedWaste)}€ d'économies identifiées !`,
-    `I ran my stack diagnostic on tooltrim.com — score ${result.healthScore}/100, ${Math.round(result.estimatedWaste)}€ savings identified!`
+    `J'ai fait ma restitution stack avec ToolTrim : score ${result.healthScore}/100 et un plan d'action priorisé.`,
+    `I ran my stack restitution with ToolTrim: score ${result.healthScore}/100 and a prioritized action plan.`
   );
 
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-  const mailUrl = `mailto:?subject=${encodeURIComponent(t("Mon diagnostic stack tooltrim", "My tooltrim stack diagnostic"))}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
+  const mailUrl = `mailto:?subject=${encodeURIComponent(t("Ma restitution ToolTrim", "My ToolTrim restitution"))}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -41,7 +43,12 @@ export default function DashShareModal({ result, t, onClose }: Props) {
       {/* Modal */}
       <div className="relative z-10 w-full max-w-md bg-card border border-border rounded-2xl shadow-2xl p-6 space-y-5">
         <div className="flex items-start justify-between">
-          <h3 className="text-lg font-bold text-foreground">{t("Partage ton diagnostic", "Share your diagnostic")}</h3>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">{t("Partager la restitution", "Share restitution")}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {t("À utiliser si tu veux l’envoyer à un associé, un client ou ton équipe.", "Use this if you want to send it to a partner, client or team.")}
+            </p>
+          </div>
           <button onClick={onClose} className="p-1 hover:bg-muted rounded-lg"><X className="w-4 h-4" /></button>
         </div>
 
@@ -69,6 +76,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
             href={linkedInUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => onTrack?.("restitution_share_channel_clicked", { channel: "linkedin" })}
             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-border text-foreground text-xs font-medium hover:bg-muted transition-colors"
           >
             <Linkedin className="w-3.5 h-3.5" />
@@ -78,6 +86,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
             href={twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => onTrack?.("restitution_share_channel_clicked", { channel: "twitter" })}
             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-border text-foreground text-xs font-medium hover:bg-muted transition-colors"
           >
             <Twitter className="w-3.5 h-3.5" />
@@ -85,6 +94,7 @@ export default function DashShareModal({ result, t, onClose }: Props) {
           </a>
           <a
             href={mailUrl}
+            onClick={() => onTrack?.("restitution_share_channel_clicked", { channel: "email" })}
             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-border text-foreground text-xs font-medium hover:bg-muted transition-colors"
           >
             <Mail className="w-3.5 h-3.5" />
@@ -97,8 +107,8 @@ export default function DashShareModal({ result, t, onClose }: Props) {
           <p className="text-xs text-muted-foreground leading-relaxed">
             <strong>{t("Qui verra :", "Who will see:")}</strong>{" "}
             {t(
-              "Ton résumé (pas les détails), score global, 3 actions prioritaires, invitation diagnostic gratuit.",
-              "Your summary (not details), overall score, 3 priority actions, free diagnostic invitation."
+              "La synthèse partageable, le score global et les priorités. Les détails sensibles restent limités.",
+              "The shareable summary, overall score and priorities. Sensitive details stay limited."
             )}
           </p>
         </div>

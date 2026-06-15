@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { SessionState, DoubleRule } from "@/types/diagnostic";
+import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
@@ -13,9 +14,9 @@ export default function DiagRightPanel({ session, doublonRules, t }: Props) {
     [session.selectedTools]
   );
 
-  const totalCost = useMemo(
-    () => session.selectedTools.reduce((sum, tool) => sum + tool.price, 0),
-    [session.selectedTools]
+  const totalCostLabel = useMemo(
+    () => formatMonthlyTotal(session.selectedTools, t),
+    [session.selectedTools, t]
   );
 
   const activeDoublons = useMemo(
@@ -44,7 +45,7 @@ export default function DiagRightPanel({ session, doublonRules, t }: Props) {
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">{t("Coût mensuel", "Monthly cost")}</span>
-            <span className="font-mono font-semibold text-foreground">{totalCost}€</span>
+            <span className="font-mono font-semibold text-foreground">{totalCostLabel}</span>
           </div>
           {doublonSavings > 0 && (
             <div className="flex justify-between text-destructive">

@@ -339,6 +339,142 @@
   --color-hover-text:    #FFFFFF;
 }
 
+/* ─────────────────────────────────────────────
+   Diagnostic mood — scoped product shell
+   Inspired by premium dashboard interfaces:
+   warm neutral base, soft shell, charcoal panels,
+   yellow micro-accent, ToolTrim blue for state.
+───────────────────────────────────────────── */
+.diagnostic-mood {
+  color-scheme: light;
+  --diag-bg: 35 15% 82%;
+  --diag-shell: 45 24% 96%;
+  --diag-surface: 45 22% 98%;
+  --diag-card: 38 20% 93%;
+  --diag-card-strong: 34 18% 84%;
+  --diag-border: 36 10% 75%;
+  --diag-border-soft: 40 12% 86%;
+  --diag-ink: 220 13% 11%;
+  --diag-ink-soft: 220 10% 17%;
+  --diag-muted: 38 6% 42%;
+  --diag-yellow: 54 100% 58%;
+  --diag-coral: 9 96% 67%;
+
+  --background: 45 24% 96%;
+  --foreground: var(--diag-ink);
+  --card: var(--diag-surface);
+  --card-foreground: var(--diag-ink);
+  --popover: var(--diag-surface);
+  --popover-foreground: var(--diag-ink);
+  --muted: 42 17% 90%;
+  --muted-foreground: var(--diag-muted);
+  --secondary: 42 17% 90%;
+  --secondary-foreground: var(--diag-ink);
+  --border: var(--diag-border-soft);
+  --input: var(--diag-border-soft);
+  --ring: 224 76% 50%;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 12%, hsl(var(--diag-yellow) / 0.20), transparent 23rem),
+    radial-gradient(circle at 86% 12%, hsl(var(--diag-coral) / 0.10), transparent 21rem),
+    linear-gradient(135deg, hsl(var(--diag-bg)), hsl(38 16% 88%) 48%, hsl(45 24% 94%));
+  color: hsl(var(--diag-ink));
+}
+
+.diagnostic-shell {
+  min-height: calc(100vh - 32px);
+  overflow: hidden;
+  border: 1px solid hsl(var(--diag-border-soft));
+  border-radius: 28px;
+  background: hsl(var(--diag-shell) / 0.96);
+  box-shadow: 0 28px 80px hsl(220 18% 12% / 0.14);
+}
+
+.diagnostic-topbar {
+  border-color: hsl(var(--diag-border-soft));
+  background: hsl(var(--diag-shell) / 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.diagnostic-card {
+  border: 1px solid hsl(var(--diag-border-soft));
+  border-radius: 24px;
+  background: hsl(var(--diag-surface));
+  box-shadow: 0 18px 48px hsl(220 18% 12% / 0.08);
+}
+
+.diagnostic-soft-card {
+  border: 1px solid hsl(var(--diag-border-soft));
+  border-radius: 18px;
+  background: hsl(var(--diag-card));
+}
+
+.diagnostic-dark-panel {
+  border: 1px solid hsl(220 10% 28%);
+  border-radius: 24px;
+  background: linear-gradient(180deg, hsl(var(--diag-ink-soft)), hsl(var(--diag-ink)));
+  color: hsl(45 24% 94%);
+  box-shadow: 0 22px 54px hsl(220 18% 12% / 0.20);
+}
+
+.diagnostic-primary-action {
+  background: hsl(var(--diag-ink));
+  color: hsl(45 24% 96%);
+  box-shadow: 0 8px 20px hsl(220 18% 12% / 0.16);
+}
+
+.diagnostic-primary-action:hover {
+  background: hsl(220 13% 16%);
+}
+
+.diagnostic-yellow-action {
+  background: hsl(var(--diag-yellow));
+  color: hsl(var(--diag-ink));
+  box-shadow: 0 10px 24px hsl(54 100% 38% / 0.22);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .text-foreground,
+.diagnostic-mood .diagnostic-dark-panel h1,
+.diagnostic-mood .diagnostic-dark-panel h2,
+.diagnostic-mood .diagnostic-dark-panel h3 {
+  color: hsl(45 24% 96%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .text-muted-foreground {
+  color: hsl(45 10% 72%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .bg-background {
+  background-color: hsl(220 13% 10%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .border-border {
+  border-color: hsl(220 10% 28%);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .bg-muted\/40,
+.diagnostic-mood .diagnostic-dark-panel .bg-muted\/30 {
+  background-color: hsl(220 12% 14% / 0.92);
+}
+
+.diagnostic-mood .diagnostic-dark-panel .text-background {
+  color: hsl(var(--diag-ink));
+}
+
+@media (max-width: 767px) {
+  .diagnostic-mood {
+    background: hsl(var(--diag-shell));
+  }
+
+  .diagnostic-shell {
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
 @layer components {
   /* Full-width shell — hero backgrounds, CTA bands (max 1440px) */
   .layout-shell {
@@ -3354,7 +3490,7 @@
     .es-section { padding: 56px 0; }
   }
   .es-container {
-    max-width: var(--layout-content, 1280px);
+    max-width: 1440px;
     padding: 0 48px;
     margin: 0 auto;
   }
@@ -3538,6 +3674,7 @@
   }
   @media (max-width: 768px) {
     .td-container { padding-left: var(--layout-gutter-mobile); padding-right: var(--layout-gutter-mobile); }
+    .td-tab-nav { margin-left: -20px !important; margin-right: -20px !important; padding-left: 20px !important; padding-right: 20px !important; }
   }
 
   /* Two-column body grid: content | sidebar */
@@ -3575,6 +3712,13 @@
   /* td-sidebar is now just a semantic wrapper — no position override */
   .td-sidebar { /* intentionally empty */ }
 
+  /* Hero — single column: identity + positioning only (legacy, unused) */
+  .td-hero-layout {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    max-width: 860px;
+  }
+
   /* Hero identity — now the head of the main column in the unified page grid.
      Sits beside the decision card so the verdict starts at the very top. */
   .td-page-grid .td-hero {
@@ -3588,43 +3732,6 @@
       margin-bottom: 16px;
     }
   }
-
-  /* Hero identity lockup — single logo box aligned with the name */
-  .td-hero-lockup {
-    display: flex;
-    align-items: center;
-    gap: clamp(16px, 2vw, 28px);
-    margin-top: 28px;
-  }
-  /* Override ToolLogo's inline frame so the mark fills one clean rounded box
-     (no box-in-box-in-box). */
-  .td-hero-logo.td-hero-logo {
-    width: clamp(64px, 8vw, 96px) !important;
-    height: clamp(64px, 8vw, 96px) !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    border-radius: 18px !important;
-    flex-shrink: 0;
-  }
-  .td-hero-cat {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    text-decoration: none;
-    margin-top: 28px;
-    transition: color 140ms ease-out;
-  }
-  .td-hero-cat:hover { color: var(--color-text); }
-  .td-hero-cat svg { width: 12px; height: 12px; color: var(--color-muted-light); }
-  /* When the eyebrow precedes the lockup, tighten the gap above the lockup */
-  .td-hero-cat + .td-hero-lockup { margin-top: 14px; }
 
   /* Section wrapper */
   .td-section {
@@ -3866,53 +3973,48 @@
   .td-feature svg { width: 12px; height: 12px; flex-shrink: 0; color: var(--color-text-strong); }
   .td-feature span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  /* Verdict card — score bar (achromatic, reads the X.X/5 at a glance) */
-  .td-scorebar {
-    height: 3px;
-    margin-top: 16px;
-    background: var(--color-border-soft);
-    border-radius: 999px;
-    overflow: hidden;
+  /* Tab nav — strong editorial subnav */
+  .td-tab-nav {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 72px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+    scrollbar-width: none;
   }
-  .td-scorebar-fill {
-    height: 100%;
-    background: var(--color-text-strong);
-    border-radius: 999px;
-    transform-origin: left center;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .td-scorebar-fill { animation: tdScoreFill 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-    @keyframes tdScoreFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  }
+  .td-tab-nav::-webkit-scrollbar { display: none; }
 
-  /* Use-case ruled list — replaces the repetitive bordered card grid */
-  .td-uselist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
-  .td-use {
-    display: grid;
-    grid-template-columns: 18px 1fr;
-    column-gap: 14px;
-    align-items: baseline;
-    padding: 14px 2px;
-    border-bottom: 1px solid var(--color-border-soft);
+  .td-tab {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: 72px;
+    padding: 0;
+    font-family: var(--font-ui);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color 120ms ease-out;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
   }
-  .td-use-marker { display: flex; color: var(--color-muted-light); }
-  .td-use-marker svg { width: 13px; height: 13px; }
-  .td-use-text { font-family: var(--font-ui); font-size: 15px; line-height: 1.5; letter-spacing: -0.01em; color: var(--color-text); }
-
-  /* Focus-visible for editorial interactive primitives (a11y) */
-  a.td-chip:focus-visible,
-  .td-tile:focus-visible,
-  .td-synth-link:focus-visible,
-  .td-cardlink:focus-visible,
-  .td-hero-cat:focus-visible,
-  .td-cta-primary:focus-visible {
-    outline: 2px solid var(--color-border-strong);
-    outline-offset: 2px;
-    border-radius: 6px;
-  }
-  /* Mobile: lift chip touch targets toward 44px */
-  @media (max-width: 640px) {
-    .td-chip { padding-top: 10px; padding-bottom: 10px; }
+  .td-tab:hover { color: var(--color-text); }
+  .td-tab--active { color: var(--color-text); }
+  .td-tab--active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-text);
   }
 
   /* Section anchor — scroll-margin compensates the fixed header only.
@@ -9736,7 +9838,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted);
+    color: var(--color-muted-light);
     margin-bottom: 20px;
   }
 
@@ -9890,64 +9992,6 @@
     border-bottom: none;
   }
 
-  /* Load-in: rows fade + lift once on arrival (per-row delay set inline).
-     Disabled under reduced motion. */
-  @media (prefers-reduced-motion: no-preference) {
-    .hp-audit-row {
-      animation: hpAuditRowIn 540ms cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-    @keyframes hpAuditRowIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  }
-
-  /* Consistent keyboard focus ring for the home's interactive elements (a11y) */
-  .hac-card:focus-visible,
-  .home-guide-card:focus-visible,
-  .eh-cta-primary:focus-visible,
-  .eh-cta-secondary:focus-visible,
-  .hp-cuts-cta:focus-visible,
-  .hp-audit-mini-cta:focus-visible {
-    outline: 2px solid var(--color-border-strong);
-    outline-offset: 3px;
-  }
-
-  /* Stacks-by-role rail: right-edge fade = scroll affordance (more to the right) */
-  .home-rail-fade {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 4px;
-    width: 72px;
-    background: linear-gradient(to right, transparent, var(--color-bg));
-    pointer-events: none;
-  }
-
-  /* Keyboard focus for the rail cards + carousel arrows */
-  .home-stack-card:focus-visible,
-  .home-rail-arrow:focus-visible {
-    outline: 2px solid var(--color-border-strong);
-    outline-offset: 3px;
-  }
-
-  /* Scroll-driven section reveal — JS toggles .is-revealed as each section
-     enters. Hidden start state only applies once JS adds .home-reveal-ready,
-     so content stays visible without JS. Disabled under reduced motion. */
-  @media (prefers-reduced-motion: no-preference) {
-    .home-reveal-ready > section {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 640ms cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 640ms cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .home-reveal-ready > section.is-revealed {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
   .hp-audit-logo {
     width: 28px;
     height: 28px;
@@ -9994,28 +10038,24 @@
     flex-shrink: 0;
   }
 
-  /* Achromatic, differentiated (no green/amber/red) — consistent with the
-     stack decision badges. Meaning carried by fill/weight, not hue. */
   .hp-audit-badge--keep {
-    background: var(--color-text-strong);
-    color: var(--color-surface);
+    background: #ECFDF0;
+    color: #166534;
   }
 
   .hp-audit-badge--challenge {
-    background: transparent;
-    color: var(--color-text);
-    border: 1px solid var(--color-border-strong);
+    background: #FFFBEB;
+    color: #92400E;
   }
 
   .hp-audit-badge--duplicate {
-    background: transparent;
-    color: var(--color-muted);
-    border: 1px solid var(--color-border);
+    background: #FEF2F2;
+    color: #991B1B;
   }
 
   .hp-audit-badge--soon {
     background: var(--color-surface-soft);
-    color: var(--color-muted-light);
+    color: var(--color-muted);
   }
 
   .hp-audit-price {
@@ -10093,8 +10133,8 @@
     font-family: var(--font-ui);
     font-size: 11px;
     font-weight: 600;
-    color: var(--color-surface);
-    background: var(--color-text-strong);
+    color: #166534;
+    background: #ECFDF0;
     padding: 4px 10px;
     border-radius: 99px;
   }
@@ -10323,7 +10363,7 @@
   }
 
   .hp-aa-item--kept {
-    color: var(--color-text-strong);
+    color: #166534;
   }
 
   .hp-aa-item--cut {
@@ -11043,19 +11083,19 @@
   .home-actions-eyebrow {
     font-family: var(--font-ui);
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted);
+    color: var(--color-muted-light);
     margin-bottom: 14px;
     display: block;
   }
 
   .home-actions-title {
     font-family: var(--font-brand);
-    font-size: clamp(2.25rem, 4vw, 4rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
     font-weight: 600;
     color: var(--color-text);
     margin: 0;
@@ -12577,26 +12617,26 @@
     display: flex;
     flex-direction: column;
     padding: 28px;
-    border: 1.5px solid var(--color-border-strong);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
-    background: var(--color-bg);
+    background: var(--color-surface);
     color: var(--color-text);
     text-decoration: none;
-    transition: background 160ms ease-out, transform 160ms ease-out;
+    transition: border-color 160ms ease-out, transform 160ms ease-out;
   }
 
   .home-guide-card:hover {
-    background: var(--color-surface);
+    border-color: var(--color-text);
     transform: translateY(-1px);
   }
 
   .home-guide-label {
     font-family: var(--font-ui);
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted);
+    color: var(--color-muted-light);
     line-height: 1;
   }
 
@@ -17034,18 +17074,55 @@ section[id] {
    editorial list. Sidebar logic and tool-list rendering are untouched —
    only the surrounding chrome is brand-aligned.
    ───────────────────────────────────────────────────────────────────────── */
-/* Category body shares the shared hero's width/gutter (hero now uses
-   .tt-page-hero; the old .cat-hero* shell classes were removed). */
+.cat-hero {
+  background: var(--color-bg);
+  padding: 80px 0 56px;
+}
+.cat-hero-inner,
 .cat-body {
   max-width: var(--layout-content, 1280px);
   margin: 0 auto;
-  padding: 40px var(--layout-gutter, 48px);
+  padding: 0 var(--layout-gutter, 48px);
+}
+.cat-body {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 @media (max-width: 1023px) {
+  .cat-hero-inner,
   .cat-body { padding-left: var(--layout-gutter-tablet, 32px); padding-right: var(--layout-gutter-tablet, 32px); }
 }
 @media (max-width: 639px) {
+  .cat-hero-inner,
   .cat-body { padding-left: var(--layout-gutter-mobile, 20px); padding-right: var(--layout-gutter-mobile, 20px); }
+}
+.cat-hero-eyebrow {
+  display: block;
+  margin-top: 24px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.cat-hero-title {
+  margin: 14px 0 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  color: var(--color-text-strong);
+}
+.cat-hero-desc {
+  margin: 20px 0 0;
+  max-width: 56ch;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
 }
 .cat-hero-stats {
   margin: 24px 0 0;
@@ -17179,7 +17256,7 @@ section[id] {
   .cp-methodology-note,
   .cp-hero-verdict-jump,
   .cp-faq-nav,
-  .tt-pillnav,
+  .td-tab-nav,
   .td-sidebar-desktop,
   .td-sidebar-mobile,
   .gi-cta-band,
@@ -17444,20 +17521,16 @@ section[id] {
 .td-cardlink-arrow { transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1); }
 .td-cardlink:hover .td-cardlink-arrow { transform: translateX(3px); }
 
-/* Cross-browser reveal: JS (IntersectionObserver) toggles .td-in. The hidden
-   start state only applies once JS has added .td-reveal-ready, so content stays
-   visible if JS is unavailable. Skipped under reduced motion. */
 @media (prefers-reduced-motion: no-preference) {
-  .td-reveal-ready .td-subpage-content > .td-section {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-                transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-  }
-  .td-reveal-ready .td-subpage-content > .td-section.td-in {
-    opacity: 1;
-    transform: none;
+  @supports (animation-timeline: view()) {
+    .td-subpage-content > .td-section {
+      animation: tdSectionReveal both cubic-bezier(0.16, 1, 0.3, 1);
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    @keyframes tdSectionReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
   }
 }
-

@@ -1,5 +1,9 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.4";
 import { Resend } from "npm:resend@6.12.3";
+import {
+  summarizeDiagnosticEmailQuality,
+  validateDiagnosticEmailContent,
+} from "../_shared/email-quality.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -29,6 +33,60 @@ type SessionSnapshot = {
   annual_savings: number | null;
   hours_recoverable: number | null;
   email_preferences: Record<string, boolean> | null;
+  stack_profile: string | null;
+  stack_maturity: string | null;
+  primary_risk: string | null;
+  risk_flags: DiagnosticRiskFlag[] | null;
+  diagnostic_insights: DiagnosticInsights | null;
+  action_state: ActionState | null;
+};
+
+type LocalizedDiagnosticItem = {
+  id?: string;
+  labelFr?: string;
+  labelEn?: string;
+  summaryFr?: string;
+  summaryEn?: string;
+  actionFr?: string;
+  actionEn?: string;
+};
+
+type DiagnosticRiskFlag = LocalizedDiagnosticItem & {
+  severity?: "low" | "medium" | "high";
+  detailFr?: string;
+  detailEn?: string;
+  impactMonthly?: number;
+};
+
+type DiagnosticFocusArea = LocalizedDiagnosticItem & {
+  priority?: "low" | "medium" | "high";
+};
+
+type DiagnosticInsights = {
+  profile?: LocalizedDiagnosticItem | null;
+  maturity?: LocalizedDiagnosticItem | null;
+  primaryRisk?: DiagnosticRiskFlag | null;
+  riskFlags?: DiagnosticRiskFlag[] | null;
+  focusAreas?: DiagnosticFocusArea[] | null;
+  metrics?: Record<string, number> | null;
+};
+
+type ActionState = {
+  completed_action_ids?: string[];
+  recovered_savings?: number;
+  total_savings?: number;
+  updated_at?: string;
+  version?: string;
+};
+
+type TemplateContent = {
+  subject: string;
+  html: string;
+  text: string;
+  ctaUrl: string;
+  locale: "fr" | "en";
+  templateVersion: string;
+  summary: Record<string, unknown>;
 };
 
 function getBearerToken(req: Request) {
@@ -66,17 +124,137 @@ function escapeHtml(input: string) {
     .replaceAll("'", "&#39;");
 }
 
-function money(value: number | null | undefined) {
-  if (value == null || Number.isNaN(Number(value))) return "0€";
-  return `${Math.round(Number(value))}€`;
-}
-
 function numberValue(value: number | null | undefined) {
   if (value == null || Number.isNaN(Number(value))) return 0;
   return Math.round(Number(value));
 }
 
-function buildTemplateContent(job: ClaimedJob, session: SessionSnapshot, appBaseUrl: string) {
+function potentialLabel(value: number | null | undefined, locale: "fr" | "en") {
+  const amount = numberValue(value);
+  if (amount <= 0) return t(locale, "Pas de gain evident", "No obvious gain");
+  if (amount >= 100) return t(locale, "Potentiel fort a verifier", "Strong potential to verify");
+  if (amount >= 30) return t(locale, "Potentiel a verifier", "Potential to verify");
+  return t(locale, "Petit ajustement possible", "Small adjustment possible");
+}
+
+function budgetLabel(value: number | null | undefined, locale: "fr" | "en") {
+  return numberValue(value) > 0
+    ? t(locale, "Plans captes, devises a verifier dans le rapport", "Plans captured, currencies to verify in the report")
+    : t(locale, "Aucun budget payant evident", "No obvious paid budget");
+}
+
+function humanizeId(value: string | null | undefined) {
+  if (!value) return "";
+  return value
+    .replaceAll("_", " ")
+    .replaceAll("-", " ")
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function localizedField(
+  item: LocalizedDiagnosticItem | DiagnosticRiskFlag | null | undefined,
+  field: "label" | "summary" | "action" | "detail",
+  locale: "fr" | "en"
+) {
+  if (!item) return "";
+  const suffix = locale === "en" ? "En" : "Fr";
+  const key = `${field}${suffix}` as keyof (LocalizedDiagnosticItem & DiagnosticRiskFlag);
+  const fallbackKey = `${field}${locale === "en" ? "Fr" : "En"}` as keyof (LocalizedDiagnosticItem & DiagnosticRiskFlag);
+  const value = item[key] || item[fallbackKey];
+  return typeof value === "string" ? value : "";
+}
+
+function itemLabel(item: LocalizedDiagnosticItem | DiagnosticRiskFlag | null | undefined, locale: "fr" | "en", fallback?: string | null) {
+  return localizedField(item, "label", locale) || humanizeId(item?.id || fallback);
+}
+
+function getRiskFlags(session: SessionSnapshot) {
+  const fromInsights = session.diagnostic_insights?.riskFlags;
+  if (Array.isArray(fromInsights)) return fromInsights;
+  if (Array.isArray(session.risk_flags)) return session.risk_flags;
+  return [];
+}
+
+function getPrimaryRisk(session: SessionSnapshot) {
+  const fromInsights = session.diagnostic_insights?.primaryRisk;
+  if (fromInsights) return fromInsights;
+  const flags = getRiskFlags(session);
+  return flags.find((flag) => flag.id === session.primary_risk) || flags[0] || null;
+}
+
+function getFocusAreas(session: SessionSnapshot) {
+  const focusAreas = session.diagnostic_insights?.focusAreas;
+  return Array.isArray(focusAreas) ? focusAreas : [];
+}
+
+function getCompletedActionCount(actionState: ActionState | null) {
+  return Array.isArray(actionState?.completed_action_ids) ? actionState.completed_action_ids.length : 0;
+}
+
+function renderMetricCards(cards: Array<{ label: string; value: string }>) {
+  const rows: Array<Array<{ label: string; value: string }>> = [];
+  for (let i = 0; i < cards.length; i += 2) {
+    rows.push(cards.slice(i, i + 2));
+  }
+
+  return `
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:18px 0;border-collapse:separate;border-spacing:0;">
+      ${rows.map((row) => `
+        <tr>
+          ${row.map((card) => `
+            <td width="50%" style="padding:5px;vertical-align:top;">
+              <div style="border:1px solid #e5e7eb;border-radius:12px;padding:12px;background:#f9fafb;">
+                <div style="font-size:12px;color:#6b7280;margin-bottom:4px;">${escapeHtml(card.label)}</div>
+                <div style="font-size:18px;font-weight:700;color:#111827;">${escapeHtml(card.value)}</div>
+              </div>
+            </td>
+          `).join("")}
+          ${row.length === 1 ? `<td width="50%" style="padding:5px;"></td>` : ""}
+        </tr>
+      `).join("")}
+    </table>
+  `;
+}
+
+function renderFocusList(focusAreas: DiagnosticFocusArea[], locale: "fr" | "en") {
+  if (focusAreas.length === 0) return "";
+  return `
+    <div style="margin:18px 0;">
+      <h2 style="font-size:16px;margin:0 0 8px;color:#111827;">${t(locale, "Ordre de bataille", "Action order")}</h2>
+      <ol style="margin:0;padding-left:20px;color:#374151;">
+        ${focusAreas.slice(0, 3).map((focus) => `
+          <li style="margin:0 0 8px;">
+            <strong>${escapeHtml(itemLabel(focus, locale, focus.id))}</strong><br/>
+            <span>${escapeHtml(localizedField(focus, "action", locale))}</span>
+          </li>
+        `).join("")}
+      </ol>
+    </div>
+  `;
+}
+
+function buildShell(params: {
+  title: string;
+  intro: string;
+  body: string;
+  ctaLabel: string;
+  ctaUrl: string;
+}) {
+  const safeCtaUrl = escapeHtml(params.ctaUrl);
+  return `
+    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;line-height:1.5;color:#111827;">
+      <h1 style="font-size:24px;margin:0 0 12px;color:#111827;">${escapeHtml(params.title)}</h1>
+      <p style="margin:0 0 14px;color:#374151;">${params.intro}</p>
+      ${params.body}
+      <p style="margin:22px 0 0;">
+        <a href="${safeCtaUrl}" style="display:inline-block;background:#111827;color:white;text-decoration:none;padding:11px 16px;border-radius:8px;font-weight:700;">${escapeHtml(params.ctaLabel)}</a>
+      </p>
+    </div>
+  `;
+}
+
+function buildTemplateContent(job: ClaimedJob, session: SessionSnapshot, appBaseUrl: string): TemplateContent {
   const locale = toLocale(job.locale || session.language);
   const firstName = session.first_name?.trim() || t(locale, "là", "there");
   const safeName = escapeHtml(firstName);
@@ -89,99 +267,220 @@ function buildTemplateContent(job: ClaimedJob, session: SessionSnapshot, appBase
   const annualSavings = numberValue(session.annual_savings);
   const monthlyWaste = numberValue(session.estimated_waste);
   const monthlyCost = numberValue(session.stack_total_cost);
-  const optimizedCost = numberValue(session.optimized_cost);
   const hoursRecoverable = numberValue(session.hours_recoverable);
+  const profile = session.diagnostic_insights?.profile || null;
+  const maturity = session.diagnostic_insights?.maturity || null;
+  const primaryRisk = getPrimaryRisk(session);
+  const focusAreas = getFocusAreas(session);
+  const profileLabel = itemLabel(profile, locale, session.stack_profile);
+  const maturityLabel = itemLabel(maturity, locale, session.stack_maturity);
+  const primaryRiskLabel = itemLabel(primaryRisk, locale, session.primary_risk);
+  const primaryRiskAction = localizedField(primaryRisk, "action", locale);
+  const completedActionCount = getCompletedActionCount(session.action_state);
+  const recoveredSavings = numberValue(session.action_state?.recovered_savings);
+  const totalSavings = numberValue(session.action_state?.total_savings);
+  const templateVersion = "go48-guided-email-v2";
+  const summary = {
+    template_key: job.template_key,
+    template_version: templateVersion,
+    narrative_pattern: "guided_report_email",
+    currency_policy: "no_forced_currency",
+    profile: session.stack_profile,
+    profile_label: profileLabel,
+    maturity: session.stack_maturity,
+    maturity_label: maturityLabel,
+    primary_risk: session.primary_risk,
+    primary_risk_label: primaryRiskLabel,
+    focus_area_count: focusAreas.length,
+    completed_action_count: completedActionCount,
+    recovered_savings: recoveredSavings,
+    total_savings: totalSavings,
+  };
 
   if (job.template_key === "diagnostic_followup_24h") {
+    const firstFocus = focusAreas[0];
+    const firstFocusAction = firstFocus ? localizedField(firstFocus, "action", locale) : "";
+    const progressLine = completedActionCount > 0
+      ? t(
+        locale,
+        `Tu as déjà coché ${completedActionCount} action(s). Garde les gains comme une estimation à vérifier plan par plan.`,
+        `You already checked ${completedActionCount} action(s). Keep gains as an estimate to verify plan by plan.`
+      )
+      : t(
+        locale,
+        "Le meilleur prochain pas est de traiter une action courte avant d'ajouter un nouvel outil.",
+        "The best next step is to handle one short action before adding another tool."
+      );
+    const body = `
+      ${renderMetricCards([
+        { label: t(locale, "Score santé", "Health score"), value: `${healthScore}/100` },
+        { label: t(locale, "Gains possibles", "Potential gains"), value: potentialLabel(monthlyWaste, locale) },
+      ])}
+      <div style="border-left:4px solid #d4581a;background:#fff7ed;padding:12px 14px;margin:16px 0;border-radius:8px;">
+        <strong>${escapeHtml(firstFocus ? itemLabel(firstFocus, locale, firstFocus.id) : t(locale, "Première action", "First action"))}</strong>
+        <p style="margin:6px 0 0;color:#374151;">${escapeHtml(firstFocusAction || primaryRiskAction || t(locale, "Reprendre le plan et valider une première action.", "Resume the plan and validate a first action."))}</p>
+      </div>
+      <p style="color:#374151;">${escapeHtml(progressLine)}</p>
+    `;
     return {
       subject: t(locale, "Ton plan d'actions ToolTrim (24h)", "Your ToolTrim action plan (24h)"),
-      html: `
-        <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;line-height:1.5;color:#111827;">
-          <h1 style="font-size:24px;margin:0 0 12px;">${t(locale, "On passe à l'action", "Time to take action")}</h1>
-          <p>${t(locale, `Salut ${safeName}, voici le rappel 24h de ton diagnostic ToolTrim.`, `Hi ${safeName}, here is your 24h reminder from your ToolTrim diagnostic.`)}</p>
-          <ul>
-            <li>${t(locale, "Score santé", "Health score")}: <strong>${healthScore}/100</strong> (${escapeHtml(healthLabel)})</li>
-            <li>${t(locale, "Gaspillage estimé", "Estimated waste")}: <strong>${money(monthlyWaste)}/${t(locale, "mois", "month")}</strong></li>
-            <li>${t(locale, "Économies annuelles potentielles", "Potential annual savings")}: <strong>${money(annualSavings)}</strong></li>
-          </ul>
-          <p><a href="${ctaUrl}" style="display:inline-block;background:#111827;color:white;text-decoration:none;padding:10px 16px;border-radius:8px;">${t(locale, "Reprendre mon plan", "Resume my plan")}</a></p>
-        </div>
-      `,
+      html: buildShell({
+        title: t(locale, "On passe à l'action", "Time to take action"),
+        intro: t(locale, `Salut ${safeName}, voici le rappel utile de ton diagnostic ToolTrim.`, `Hi ${safeName}, here is the useful reminder from your ToolTrim diagnostic.`),
+        body,
+        ctaLabel: t(locale, "Reprendre mon plan", "Resume my plan"),
+        ctaUrl,
+      }),
       text: [
         t(locale, "On passe à l'action.", "Time to take action."),
         t(locale, `Salut ${firstName}, voici ton rappel 24h ToolTrim.`, `Hi ${firstName}, here is your ToolTrim 24h reminder.`),
         `${t(locale, "Score santé", "Health score")}: ${healthScore}/100 (${healthLabel})`,
-        `${t(locale, "Gaspillage estimé", "Estimated waste")}: ${money(monthlyWaste)}/${t(locale, "mois", "month")}`,
-        `${t(locale, "Économies annuelles", "Annual savings")}: ${money(annualSavings)}`,
+        `${t(locale, "Gains possibles", "Potential gains")}: ${potentialLabel(monthlyWaste, locale)}`,
+        firstFocusAction || primaryRiskAction,
+        progressLine,
         ctaUrl,
-      ].join("\n"),
+      ].filter(Boolean).join("\n"),
+      ctaUrl,
+      locale,
+      templateVersion,
+      summary,
     };
   }
 
   if (job.template_key === "diagnostic_followup_7d") {
+    const body = `
+      <div style="border:1px solid #e5e7eb;border-radius:12px;padding:14px;background:#f9fafb;margin:16px 0;">
+        <div style="font-size:12px;color:#6b7280;">${t(locale, "Lecture actuelle", "Current read")}</div>
+        <div style="font-size:18px;font-weight:700;color:#111827;">${escapeHtml(profileLabel || healthLabel)}</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:4px;">${escapeHtml(primaryRiskLabel ? `${t(locale, "Risque principal", "Primary risk")}: ${primaryRiskLabel}` : healthLabel)}</div>
+      </div>
+      <p style="color:#374151;">${escapeHtml(t(
+        locale,
+        "Si tu as supprimé ou downgradé un outil, mets la stack à jour: le score et les économies restantes deviendront plus fiables.",
+        "If you removed or downgraded a tool, update the stack: the score and remaining savings will become more reliable."
+      ))}</p>
+    `;
     return {
       subject: t(locale, "On refait un point ToolTrim ?", "Ready for a ToolTrim check-in?"),
-      html: `
-        <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;line-height:1.5;color:#111827;">
-          <h1 style="font-size:24px;margin:0 0 12px;">${t(locale, "Point d'étape à 7 jours", "7-day check-in")}</h1>
-          <p>${t(locale, `Salut ${safeName}, ton diagnostic est prêt à être mis à jour.`, `Hi ${safeName}, your diagnostic is ready for an update.`)}</p>
-          <p>${t(locale, "Relance un passage rapide pour vérifier ce qui a bougé.", "Run a quick pass to see what changed.")}</p>
-          <p><a href="${ctaUrl}" style="display:inline-block;background:#111827;color:white;text-decoration:none;padding:10px 16px;border-radius:8px;">${t(locale, "Mettre à jour ma stack", "Update my stack")}</a></p>
-        </div>
-      `,
+      html: buildShell({
+        title: t(locale, "Point d'étape à 7 jours", "7-day check-in"),
+        intro: t(locale, `Salut ${safeName}, ton diagnostic est prêt à être comparé avec la réalité de la semaine.`, `Hi ${safeName}, your diagnostic is ready to be compared with the reality of the week.`),
+        body,
+        ctaLabel: t(locale, "Mettre à jour ma stack", "Update my stack"),
+        ctaUrl,
+      }),
       text: [
         t(locale, "Point d'étape à 7 jours.", "7-day check-in."),
         t(locale, `Salut ${firstName}, ton diagnostic est prêt à être mis à jour.`, `Hi ${firstName}, your diagnostic is ready for an update.`),
+        `${t(locale, "Profil", "Profile")}: ${profileLabel || healthLabel}`,
+        primaryRiskLabel ? `${t(locale, "Risque principal", "Primary risk")}: ${primaryRiskLabel}` : "",
         ctaUrl,
-      ].join("\n"),
+      ].filter(Boolean).join("\n"),
+      ctaUrl,
+      locale,
+      templateVersion,
+      summary,
     };
   }
 
   if (job.template_key === "diagnostic_reactivation_30d") {
+    const body = `
+      ${renderMetricCards([
+        { label: t(locale, "Ancien potentiel", "Previous potential"), value: potentialLabel(annualSavings, locale) },
+        { label: t(locale, "Actions faites", "Actions done"), value: `${completedActionCount}` },
+      ])}
+      <p style="color:#374151;">${escapeHtml(t(
+        locale,
+        "Une stack dérive vite: nouveaux essais, essais gratuits oubliés, doublons IA. Un repassage rapide suffit pour remettre les chiffres au propre.",
+        "A stack drifts quickly: new trials, forgotten free trials, AI overlaps. A quick rerun is enough to clean the numbers."
+      ))}</p>
+    `;
     return {
       subject: t(locale, "Ta stack a-t-elle changé ce mois-ci ?", "Has your stack changed this month?"),
-      html: `
-        <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;line-height:1.5;color:#111827;">
-          <h1 style="font-size:24px;margin:0 0 12px;">${t(locale, "Réactivation à 30 jours", "30-day reactivation")}</h1>
-          <p>${t(locale, `Salut ${safeName}, en 5 minutes tu peux recalculer tes gains potentiels.`, `Hi ${safeName}, in 5 minutes you can recalculate your potential gains.`)}</p>
-          <p><a href="${ctaUrl}" style="display:inline-block;background:#111827;color:white;text-decoration:none;padding:10px 16px;border-radius:8px;">${t(locale, "Relancer le diagnostic", "Run the diagnostic again")}</a></p>
-        </div>
-      `,
+      html: buildShell({
+        title: t(locale, "Réactivation à 30 jours", "30-day reactivation"),
+        intro: t(locale, `Salut ${safeName}, en 5 minutes tu peux recalculer tes gains potentiels.`, `Hi ${safeName}, in 5 minutes you can recalculate your potential gains.`),
+        body,
+        ctaLabel: t(locale, "Relancer le diagnostic", "Run the diagnostic again"),
+        ctaUrl,
+      }),
       text: [
         t(locale, "Réactivation à 30 jours.", "30-day reactivation."),
         t(locale, `Salut ${firstName}, relance le diagnostic en 5 minutes.`, `Hi ${firstName}, run the diagnostic again in 5 minutes.`),
+        `${t(locale, "Ancien potentiel", "Previous potential")}: ${potentialLabel(annualSavings, locale)}`,
         ctaUrl,
       ].join("\n"),
+      ctaUrl,
+      locale,
+      templateVersion,
+      summary,
     };
   }
 
-  return {
-    subject: t(locale, "Ton diagnostic ToolTrim est prêt", "Your ToolTrim diagnostic is ready"),
-    html: `
-      <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;line-height:1.5;color:#111827;">
-        <h1 style="font-size:24px;margin:0 0 12px;">${t(locale, "Ton rapport est prêt", "Your report is ready")}</h1>
-        <p>${t(locale, `Salut ${safeName}, voici ton diagnostic ToolTrim.`, `Hi ${safeName}, here is your ToolTrim diagnostic.`)}</p>
-        <ul>
-          <li>${t(locale, "Score santé", "Health score")}: <strong>${healthScore}/100</strong> (${escapeHtml(healthLabel)})</li>
-          <li>${t(locale, "Coût stack actuel", "Current stack cost")}: <strong>${money(monthlyCost)}/${t(locale, "mois", "month")}</strong></li>
-          <li>${t(locale, "Coût optimisé", "Optimized cost")}: <strong>${money(optimizedCost)}/${t(locale, "mois", "month")}</strong></li>
-          <li>${t(locale, "Gaspillage estimé", "Estimated waste")}: <strong>${money(monthlyWaste)}/${t(locale, "mois", "month")}</strong></li>
-          <li>${t(locale, "Économies annuelles potentielles", "Potential annual savings")}: <strong>${money(annualSavings)}</strong></li>
-          <li>${t(locale, "Temps récupérable", "Recoverable time")}: <strong>${hoursRecoverable}h/${t(locale, "mois", "month")}</strong></li>
-        </ul>
-        <p><a href="${ctaUrl}" style="display:inline-block;background:#111827;color:white;text-decoration:none;padding:10px 16px;border-radius:8px;">${t(locale, "Voir / relancer le diagnostic", "View / rerun the diagnostic")}</a></p>
+  const profileSummary = localizedField(profile, "summary", locale);
+  const firstFocus = focusAreas[0];
+  const firstFocusLabel = firstFocus ? itemLabel(firstFocus, locale, firstFocus.id) : "";
+  const firstFocusAction = firstFocus ? localizedField(firstFocus, "action", locale) : "";
+  const body = `
+    ${renderMetricCards([
+      { label: t(locale, "Score santé", "Health score"), value: `${healthScore}/100` },
+      { label: t(locale, "Budget capte", "Captured budget"), value: budgetLabel(monthlyCost, locale) },
+      { label: t(locale, "Gains possibles", "Potential gains"), value: potentialLabel(monthlyWaste, locale) },
+      { label: t(locale, "Temps recuperable", "Recoverable time"), value: hoursRecoverable > 0 ? `${hoursRecoverable}h/${t(locale, "mois", "month")}` : t(locale, "A verifier", "To verify") },
+    ])}
+    <div style="border:1px solid #e5e7eb;border-radius:12px;padding:14px;background:#f9fafb;margin:16px 0;">
+      <div style="font-size:12px;color:#6b7280;">${t(locale, "Ce que j'ai compris", "What I understood")}</div>
+      <div style="font-size:18px;font-weight:700;color:#111827;">${escapeHtml(profileLabel || healthLabel)}</div>
+      <div style="font-size:13px;color:#6b7280;margin-top:4px;">${escapeHtml(maturityLabel ? `${t(locale, "Maturité", "Maturity")}: ${maturityLabel}` : "")}</div>
+      ${profileSummary ? `<p style="margin:8px 0 0;color:#374151;">${escapeHtml(profileSummary)}</p>` : ""}
+    </div>
+    ${(firstFocusLabel || firstFocusAction || primaryRiskAction) ? `
+      <div style="border-left:4px solid #111827;background:#f9fafb;padding:12px 14px;margin:16px 0;border-radius:8px;">
+        <div style="font-size:12px;color:#6b7280;">${escapeHtml(t(locale, "Premiere decision", "First decision"))}</div>
+        <strong>${escapeHtml(firstFocusLabel || primaryRiskLabel || t(locale, "Lire le plan d'action", "Read the action plan"))}</strong>
+        <p style="margin:6px 0 0;color:#374151;">${escapeHtml(firstFocusAction || primaryRiskAction || t(locale, "Ouvre le rapport et traite la premiere action proposee.", "Open the report and handle the first suggested action."))}</p>
       </div>
-    `,
+    ` : ""}
+    ${primaryRiskLabel ? `
+      <div style="border-left:4px solid #d4581a;background:#fff7ed;padding:12px 14px;margin:16px 0;border-radius:8px;">
+        <strong>${escapeHtml(t(locale, "Risque principal", "Primary risk"))}: ${escapeHtml(primaryRiskLabel)}</strong>
+        ${primaryRiskAction ? `<p style="margin:6px 0 0;color:#374151;">${escapeHtml(primaryRiskAction)}</p>` : ""}
+      </div>
+    ` : ""}
+    ${renderFocusList(focusAreas, locale)}
+    <p style="color:#374151;">${escapeHtml(t(
+      locale,
+      `Temps récupérable estimé: ${hoursRecoverable}h/mois. Le rapport complet garde le détail outil par outil.`,
+      `Estimated recoverable time: ${hoursRecoverable}h/month. The full report keeps the tool-by-tool detail.`
+    ))}</p>
+  `;
+  return {
+    subject: t(locale, "Ton rapport ToolTrim: verdict et premiere decision", "Your ToolTrim report: verdict and first decision"),
+    html: buildShell({
+      title: t(locale, "Ton rapport est prêt", "Your report is ready"),
+      intro: t(locale, `Salut ${safeName}, j'ai gardé l'essentiel: ce que j'ai compris, le verdict et la première décision.`, `Hi ${safeName}, I kept the essentials: what I understood, the verdict, and the first decision.`),
+      body,
+      ctaLabel: t(locale, "Lire mon rapport", "Read my report"),
+      ctaUrl,
+    }),
     text: [
       t(locale, "Ton rapport ToolTrim est prêt.", "Your ToolTrim report is ready."),
       `${t(locale, "Score santé", "Health score")}: ${healthScore}/100 (${healthLabel})`,
-      `${t(locale, "Coût stack actuel", "Current stack cost")}: ${money(monthlyCost)}/${t(locale, "mois", "month")}`,
-      `${t(locale, "Coût optimisé", "Optimized cost")}: ${money(optimizedCost)}/${t(locale, "mois", "month")}`,
-      `${t(locale, "Gaspillage estimé", "Estimated waste")}: ${money(monthlyWaste)}/${t(locale, "mois", "month")}`,
-      `${t(locale, "Économies annuelles", "Annual savings")}: ${money(annualSavings)}`,
+      profileLabel ? `${t(locale, "Profil", "Profile")}: ${profileLabel}` : "",
+      maturityLabel ? `${t(locale, "Maturité", "Maturity")}: ${maturityLabel}` : "",
+      firstFocusLabel ? `${t(locale, "Première décision", "First decision")}: ${firstFocusLabel}` : "",
+      firstFocusAction,
+      primaryRiskLabel ? `${t(locale, "Risque principal", "Primary risk")}: ${primaryRiskLabel}` : "",
+      primaryRiskAction,
+      `${t(locale, "Budget capte", "Captured budget")}: ${budgetLabel(monthlyCost, locale)}`,
+      `${t(locale, "Gains possibles", "Potential gains")}: ${potentialLabel(monthlyWaste, locale)}`,
       `${t(locale, "Temps récupérable", "Recoverable time")}: ${hoursRecoverable}h/${t(locale, "mois", "month")}`,
       ctaUrl,
-    ].join("\n"),
+    ].filter(Boolean).join("\n"),
+    ctaUrl,
+    locale,
+    templateVersion,
+    summary,
   };
 }
 
@@ -191,7 +490,8 @@ async function queueFollowupIfMissing(
   email: string,
   locale: "fr" | "en",
   templateKey: string,
-  delayHours: number
+  delayHours: number,
+  parentTemplateKey: string
 ) {
   const { data: existing } = await supabase
     .from("diagnostic_email_jobs")
@@ -210,7 +510,12 @@ async function queueFollowupIfMissing(
     locale,
     status: "queued",
     scheduled_for: scheduledFor,
-    metadata: { trigger: "go4_followup" },
+    metadata: {
+      trigger: "go48_followup",
+      parent_template_key: parentTemplateKey,
+      template_version: "go48-guided-email-v2",
+      narrative_pattern: "guided_report_email",
+    },
   });
 }
 
@@ -275,7 +580,7 @@ Deno.serve(async (req) => {
         const { data: session, error: sessionError } = await supabase
           .from("diagnostic_sessions")
           .select(
-            "first_name, language, persona, health_score, health_label, stack_total_cost, estimated_waste, optimized_cost, annual_savings, hours_recoverable, email_preferences"
+            "first_name, language, persona, health_score, health_label, stack_total_cost, estimated_waste, optimized_cost, annual_savings, hours_recoverable, email_preferences, stack_profile, stack_maturity, primary_risk, risk_flags, diagnostic_insights, action_state"
           )
           .eq("id", job.session_id)
           .single();
@@ -285,6 +590,38 @@ Deno.serve(async (req) => {
         }
 
         const content = buildTemplateContent(job, session as SessionSnapshot, appBaseUrl);
+        const emailQuality = validateDiagnosticEmailContent(content);
+        const emailQualitySummary = summarizeDiagnosticEmailQuality(emailQuality);
+        const qualityMetadata = {
+          ...(job.metadata || {}),
+          template_key: job.template_key,
+          template_version: content.templateVersion,
+          cta_url: content.ctaUrl,
+          email_quality: emailQuality,
+          email_quality_summary: emailQualitySummary,
+        };
+
+        if (emailQuality.status === "failed") {
+          const message = `Email quality gate failed: ${emailQuality.flags
+            .filter((flag) => flag.severity === "error")
+            .map((flag) => flag.id)
+            .join(", ")}`;
+
+          await supabase
+            .from("diagnostic_email_jobs")
+            .update({
+              status: "failed",
+              failed_at: new Date().toISOString(),
+              last_error: message.slice(0, 2000),
+              metadata: qualityMetadata,
+            })
+            .eq("id", job.id)
+            .eq("status", "processing");
+
+          failed += 1;
+          continue;
+        }
+
         const sendResult = await resend.emails.send({
           from: emailFrom,
           to: [job.email],
@@ -309,9 +646,8 @@ Deno.serve(async (req) => {
             sent_at: nowIso,
             last_error: null,
             metadata: {
-              ...(job.metadata || {}),
+              ...qualityMetadata,
               provider_message_id: providerMessageId,
-              template_key: job.template_key,
             },
           })
           .eq("id", job.id)
@@ -324,20 +660,31 @@ Deno.serve(async (req) => {
         await supabase.from("diagnostic_restitutions").insert({
           session_id: job.session_id,
           channel: "email",
-          version: "v1",
+          version: content.templateVersion,
           summary: {
-            template_key: job.template_key,
+            ...content.summary,
+            email_quality: emailQualitySummary,
             subject: content.subject,
             recipient: job.email,
           },
           details: {
             provider: "resend",
             provider_message_id: providerMessageId,
+            cta_url: content.ctaUrl,
+            locale: content.locale,
+            email_quality: emailQuality,
           },
           score_snapshot: {
             health_score: session.health_score,
+            health_label: session.health_label,
+            stack_total_cost: session.stack_total_cost,
             estimated_waste: session.estimated_waste,
+            optimized_cost: session.optimized_cost,
             annual_savings: session.annual_savings,
+            stack_profile: session.stack_profile,
+            stack_maturity: session.stack_maturity,
+            primary_risk: session.primary_risk,
+            actions_completed: getCompletedActionCount(session.action_state),
           },
           generated_at: nowIso,
         });
@@ -351,7 +698,8 @@ Deno.serve(async (req) => {
               job.email,
               toLocale(job.locale || session.language),
               "diagnostic_followup_24h",
-              24
+              24,
+              job.template_key
             );
           }
           if (prefs.checkIn === true) {
@@ -361,7 +709,17 @@ Deno.serve(async (req) => {
               job.email,
               toLocale(job.locale || session.language),
               "diagnostic_followup_7d",
-              24 * 7
+              24 * 7,
+              job.template_key
+            );
+            await queueFollowupIfMissing(
+              supabase,
+              job.session_id,
+              job.email,
+              toLocale(job.locale || session.language),
+              "diagnostic_reactivation_30d",
+              24 * 30,
+              job.template_key
             );
           }
         }

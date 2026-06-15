@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Puzzle, Package, ArrowRight } from "lucide-react";
+import { Puzzle, Package, ArrowRight, Layers } from "lucide-react";
 
 interface Props {
   tool: Tool;
@@ -56,7 +56,7 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
   if (!hasAnyContent) return null;
 
   return (
-    <div className="td-section" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
 
       {/* ── Case 1: Plugin → show host app ── */}
       {hostApp && (

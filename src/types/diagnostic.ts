@@ -5,6 +5,8 @@ export interface SessionState {
   tjm: number;
   language: "fr" | "en";
   persona: Persona;
+  personaConfidence?: "clear" | "hybrid" | "unsure";
+  stackGoal?: "reduce_costs" | "save_time" | "simplify" | "quality";
   complementarySkills: Persona[];
   primarySpecialty?: string;
   complementarySpecialties?: string[];
@@ -16,15 +18,26 @@ export interface SessionState {
   };
   apiSpendTranche?: "low" | "mid" | "high" | "premium" | "unknown";
   selectedTools: Tool[];
+  selectionCoverage?: {
+    covered: string[];
+    skipped: string[];
+    confidence: "low" | "medium" | "high";
+  };
+  adaptiveDiscoveryQuestions?: DiscoveryQuestion[];
   discoveryAnswers: Map<string, number>;
   closingAnswers: [string, string, string];
 }
 
 export interface Tool {
   id: string;
+  slug?: string;
   name: string;
   name_en?: string;
+  logo?: string;
+  websiteUrl?: string;
+  affiliateLink?: string;
   price: number;
+  priceCurrency?: string;
   category: string;
   functional_needs: string[];
   pertinence_by_persona?: Record<Persona, number>;
@@ -32,14 +45,40 @@ export interface Tool {
   ia_use_case?: string;
   usage: "high" | "medium" | "low" | "dormant";
   prescription_quality: "ferme" | "question" | "oui";
+  pricing?: {
+    free?: string;
+    paid?: string;
+  } | null;
+  pricingEn?: {
+    free?: string;
+    paid?: string;
+  } | null;
   freeAlternative?: string;
   downgrade_plan?: {
     available: boolean;
     fromPrice: number;
     toPrice: number;
     plan: string;
+    freeTier?: string | null;
   };
   better_alternative?: string;
+  pricing_v5?: {
+    compare_price_monthly_eur?: number;
+    compare_plan_name?: string;
+    compare_plan_kind?: string;
+    price_reliability?: string;
+    usage_sensitive?: boolean;
+    location_sensitive?: boolean;
+    cautions?: string[];
+    source_domain?: string;
+    verified_on?: string;
+    official_source_url?: string;
+    verification_status?: string;
+  } | null;
+  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  catalogMonthlyPrice?: number;
+  catalogMonthlyPriceCurrency?: string;
+  selectedPriceIsEstimate?: boolean;
   force_silence: boolean;
   bundle_parent?: string;
   /** Runtime flag: true when this tool is included via a selected bundle parent */
@@ -95,10 +134,18 @@ export interface DiagnosticResult {
 
 export interface Prescription {
   toolId: string;
-  type: "doublon" | "doublon-ia" | "dormant" | "inadapté";
+  type: "doublon" | "doublon-ia" | "dormant" | "inadapté" | "pricing-tier";
   verdict: "cancel" | "review" | "downgrade";
   message: string;
   savingsEstimate: number;
+  pricingContext?: {
+    currentPlan?: string;
+    targetPlan?: string;
+    hasFreeTier?: boolean;
+    reliability?: string;
+    sourceDomain?: string;
+    reason: "free_tier" | "downgrade_plan" | "usage_sensitive_price" | "free_alternative";
+  };
 }
 
 export type DiagnosticSeverity = "low" | "medium" | "high";
@@ -140,6 +187,58 @@ export interface DiagnosticFocusArea {
   actionEn: string;
 }
 
+export interface DiagnosticAnswerSignal {
+  id: string;
+  source: "onboarding" | "discovery" | "closing";
+  severity: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  detailFr: string;
+  detailEn: string;
+  actionFr: string;
+  actionEn: string;
+  toolIds?: string[];
+  impact?: "keep" | "review" | "cancel";
+}
+
+export interface DiagnosticConfidence {
+  score: number;
+  labelFr: string;
+  labelEn: string;
+  summaryFr: string;
+  summaryEn: string;
+}
+
+export type DiagnosticCalibrationDimension =
+  | "confidence"
+  | "score"
+  | "savings"
+  | "coverage"
+  | "actions"
+  | "data";
+
+export interface DiagnosticCalibrationFlag {
+  id: string;
+  dimension: DiagnosticCalibrationDimension;
+  severity: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  detailFr: string;
+  detailEn: string;
+  actionFr: string;
+  actionEn: string;
+}
+
+export interface DiagnosticCalibration {
+  score: number;
+  reviewRequired: boolean;
+  labelFr: string;
+  labelEn: string;
+  summaryFr: string;
+  summaryEn: string;
+  flags: DiagnosticCalibrationFlag[];
+}
+
 export interface DiagnosticInsights {
   profile: {
     id: StackProfileId;
@@ -166,6 +265,9 @@ export interface DiagnosticInsights {
   riskFlags: DiagnosticRiskFlag[];
   functionalCoverage: FunctionalCoverageItem[];
   focusAreas: DiagnosticFocusArea[];
+  answerSignals: DiagnosticAnswerSignal[];
+  confidence: DiagnosticConfidence;
+  calibration: DiagnosticCalibration;
   metrics: {
     toolCount: number;
     paidToolCount: number;
@@ -175,7 +277,13 @@ export interface DiagnosticInsights {
     duplicateCount: number;
     dormantCount: number;
     reviewCount: number;
+    pricingTierCount: number;
     highCostToolCount: number;
+    activeDiscoveryCount: number;
+    answeredDiscoveryCount: number;
+    answeredClosingCount: number;
+    protectedToolCount: number;
+    challengedToolCount: number;
   };
   generatedAt: string;
 }

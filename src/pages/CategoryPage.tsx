@@ -214,19 +214,19 @@ const CategoryPage = () => {
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ══════════════ HERO — shared tt-page-hero pattern (same as /tools) ══════════════ */}
-      <section className="tt-page-hero">
-        <div className="tt-page-hero-inner">
+      {/* ══════════════ HERO — editorial, aligned with cp-hero pattern ══════════════ */}
+      <section className="cat-hero">
+        <div className="cat-hero-inner">
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             { label: displayName },
           ]} />
 
-          <span className="tt-page-hero-eyebrow">
+          <span className="cat-hero-eyebrow">
             {allCatTools.length} {t("outils analysés", "tools analyzed")}
           </span>
-          <h1 className="tt-page-hero-title">{displayName}</h1>
-          {catDesc && <p className="tt-page-hero-desc">{catDesc}</p>}
+          <h1 className="cat-hero-title">{displayName}</h1>
+          {catDesc && <p className="cat-hero-desc">{catDesc}</p>}
 
           {/* Stats line — editorial, monospace */}
           {(freeCount > 0 || avgPrice > 0) && (

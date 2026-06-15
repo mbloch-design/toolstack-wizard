@@ -3,6 +3,8 @@ import type {
   Persona,
   SessionState,
   DoubleRule,
+  DiscoveryQuestion,
+  DiagnosticAnswerSignal,
   Prescription,
   DiagnosticResult,
 } from "@/types/diagnostic";
@@ -18,6 +20,58 @@ export function canPrescribe(tool: Tool): boolean {
   if (tool.price > 0 && tool.price < 2) return false;
   if (tool.includedInBundle) return false; // Can't prescribe cancellation on bundled tools
   return true;
+}
+
+function normalizeText(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function hasUsableFreeTier(tool: Tool): boolean {
+  if (tool.price <= 0 || tool.includedInBundle) return false;
+  if (tool.downgrade_plan?.available && tool.downgrade_plan.toPrice === 0) return true;
+  const freeCopy = normalizeText([
+    tool.pricing?.free,
+    tool.pricingEn?.free,
+    tool.freeAlternative,
+    ...(tool.pricing_v5?.cautions || []),
+  ].filter(Boolean).join(" "));
+  const freeAlternativeSameTool = Boolean(
+    tool.freeAlternative &&
+    (normalizeText(tool.freeAlternative) === normalizeText(tool.id) ||
+      normalizeText(tool.freeAlternative) === normalizeText(tool.name))
+  );
+  return freeAlternativeSameTool || /\bfree\b|gratuit|forfait de base|plan gratuit/.test(freeCopy);
+}
+
+function pricingPlanName(tool: Tool) {
+  return tool.pricing_v5?.compare_plan_name || tool.downgrade_plan?.plan || undefined;
+}
+
+function buildPricingContext(tool: Tool, reason: NonNullable<Prescription["pricingContext"]>["reason"]) {
+  return {
+    currentPlan: pricingPlanName(tool),
+    targetPlan: tool.downgrade_plan?.available
+      ? tool.downgrade_plan.freeTier || tool.downgrade_plan.plan || "Plan inférieur"
+      : hasUsableFreeTier(tool)
+        ? "Plan gratuit"
+        : undefined,
+    hasFreeTier: hasUsableFreeTier(tool),
+    reliability: tool.pricing_v5?.price_reliability,
+    sourceDomain: tool.pricing_v5?.source_domain,
+    reason,
+  } satisfies NonNullable<Prescription["pricingContext"]>;
+}
+
+function getDowngradeSavings(tool: Tool) {
+  if (tool.downgrade_plan?.available) {
+    const from = tool.downgrade_plan.fromPrice || tool.price;
+    return Math.max(0, from - tool.downgrade_plan.toPrice);
+  }
+  if (hasUsableFreeTier(tool)) return Math.max(0, tool.price);
+  return 0;
 }
 
 // ─── 1. Pertinence ────────────────────────────────────────────────
@@ -83,17 +137,22 @@ function phase1Certified(tools: Tool[]): Prescription[] {
   const out: Prescription[] = [];
   for (const t of tools) {
     if (t.prescription_quality !== "ferme") continue;
-    const hasDowngrade = t.downgrade_plan?.available;
+    const hasDowngrade = t.downgrade_plan?.available || hasUsableFreeTier(t);
+    const downgradeSavings = getDowngradeSavings(t);
+    const targetPlan = t.downgrade_plan?.plan || (hasUsableFreeTier(t) ? "gratuit" : "");
     const p: Prescription = {
       toolId: t.id,
-      type: "dormant",
+      type: hasDowngrade ? "pricing-tier" : "dormant",
       verdict: hasDowngrade ? "downgrade" : "cancel",
       message: hasDowngrade
-        ? `Passe au plan ${t.downgrade_plan!.plan} (${t.downgrade_plan!.toPrice}€/mois)`
+        ? `Vérifie si le plan ${targetPlan} de ${t.name} suffit à ton usage`
         : `${t.name} peut être annulé`,
       savingsEstimate: hasDowngrade
-        ? t.downgrade_plan!.fromPrice - t.downgrade_plan!.toPrice
+        ? downgradeSavings
         : t.price,
+      pricingContext: hasDowngrade
+        ? buildPricingContext(t, t.downgrade_plan?.available ? "downgrade_plan" : "free_tier")
+        : undefined,
     };
     out.push(p);
   }
@@ -104,16 +163,51 @@ function phase2Questions(tools: Tool[]): Prescription[] {
   const out: Prescription[] = [];
   for (const t of tools) {
     if (t.prescription_quality !== "question") continue;
-    if (t.freeAlternative && t.price > 5) {
+    if (t.freeAlternative && t.price > 5 && !hasUsableFreeTier(t)) {
       const p: Prescription = {
         toolId: t.id,
         type: "doublon",
         verdict: "review",
         message: `Alternative gratuite disponible : ${t.freeAlternative}`,
         savingsEstimate: t.price,
+        pricingContext: buildPricingContext(t, "free_alternative"),
       };
       out.push(p);
     }
+  }
+  return out;
+}
+
+function detectPricingTierReviews(tools: Tool[]): Prescription[] {
+  const out: Prescription[] = [];
+  for (const t of tools) {
+    if (!canPrescribe(t)) continue;
+    if (t.price <= 5) continue;
+    const hasFreeTier = hasUsableFreeTier(t);
+    const hasDowngrade = t.downgrade_plan?.available;
+    const usageSensitive = t.pricing_v5?.usage_sensitive === true;
+    if (!hasFreeTier && !hasDowngrade && !usageSensitive) continue;
+    if (t.usage === "high" && !usageSensitive) continue;
+
+    const savings = getDowngradeSavings(t);
+    const reason: NonNullable<Prescription["pricingContext"]>["reason"] = hasDowngrade
+      ? "downgrade_plan"
+      : hasFreeTier
+        ? "free_tier"
+        : "usage_sensitive_price";
+
+    out.push({
+      toolId: t.id,
+      type: "pricing-tier",
+      verdict: "downgrade",
+      message: hasFreeTier
+        ? `${t.name}: tester si le plan gratuit suffit avant de garder le plan payant`
+        : hasDowngrade
+          ? `${t.name}: vérifier si un palier inférieur couvre l'usage réel`
+          : `${t.name}: prix dépendant de l'usage, vérifier le palier payé`,
+      savingsEstimate: savings,
+      pricingContext: buildPricingContext(t, reason),
+    });
   }
   return out;
 }
@@ -232,21 +326,78 @@ function detectInadapted(tools: Tool[], scores: Map<string, ToolScore>): Prescri
   return out;
 }
 
+function goalPriority(prescription: Prescription, goal: SessionState["stackGoal"]): number {
+  const savings = Number(prescription.savingsEstimate || 0);
+  const directness =
+    prescription.verdict === "cancel" ? 30 :
+    prescription.verdict === "downgrade" ? 24 :
+    12;
+
+  if (goal === "simplify") {
+    const typeScore =
+      prescription.type === "doublon" || prescription.type === "doublon-ia" ? 80 :
+      prescription.type === "dormant" ? 60 :
+      prescription.type === "pricing-tier" ? 35 :
+      25;
+    return typeScore + directness + Math.min(30, savings);
+  }
+
+  if (goal === "save_time") {
+    const typeScore =
+      prescription.type === "inadapté" ? 75 :
+      prescription.type === "doublon" || prescription.type === "doublon-ia" ? 55 :
+      prescription.type === "dormant" ? 40 :
+      prescription.type === "pricing-tier" ? 30 :
+      20;
+    return typeScore + directness + Math.min(16, savings / 2);
+  }
+
+  if (goal === "quality") {
+    const typeScore =
+      prescription.type === "inadapté" ? 85 :
+      prescription.type === "pricing-tier" ? 70 :
+      prescription.type === "doublon" || prescription.type === "doublon-ia" ? 55 :
+      prescription.type === "dormant" ? 35 :
+      20;
+    return typeScore + directness + Math.min(20, savings / 2);
+  }
+
+  const typeScore =
+    prescription.type === "pricing-tier" ? 65 :
+    prescription.type === "dormant" ? 60 :
+    prescription.type === "doublon" || prescription.type === "doublon-ia" ? 55 :
+    25;
+  return typeScore + directness + Math.min(80, savings * 2);
+}
+
+function prioritizePrescriptions(
+  prescriptions: Prescription[],
+  goal: SessionState["stackGoal"]
+): Prescription[] {
+  return [...prescriptions].sort((a, b) =>
+    goalPriority(b, goal) - goalPriority(a, goal) ||
+    Number(b.savingsEstimate || 0) - Number(a.savingsEstimate || 0)
+  );
+}
+
 export function computePrescriptions(
   selectedTools: Tool[],
   toolScores: Map<string, ToolScore>,
   doublonRules: DoubleRule[],
-  _persona: Persona
+  _persona: Persona,
+  stackGoal?: SessionState["stackGoal"]
 ): { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] } {
   const p1 = phase1Certified(selectedTools);
-  const p2 = phase2Questions(selectedTools);
+  const p1ToolIds = new Set(p1.map((p) => p.toolId));
+  const p2 = [...phase2Questions(selectedTools), ...detectPricingTierReviews(selectedTools)]
+    .filter((p) => !p1ToolIds.has(p.toolId));
 
   const p3doublons = detectDoublons(selectedTools, doublonRules);
   const p3ia = detectDoublonsIA(selectedTools);
   const p3dormants = detectDormants(selectedTools);
   const p3inadapted = detectInadapted(selectedTools, toolScores);
 
-  const seenIds = new Set<string>();
+  const seenIds = new Set<string>([...p1, ...p2].map((p) => p.toolId));
   const phase3: Prescription[] = [];
   for (const p of [...p3doublons, ...p3ia, ...p3dormants, ...p3inadapted]) {
     if (seenIds.has(p.toolId)) continue;
@@ -260,7 +411,11 @@ export function computePrescriptions(
       return tool ? canPrescribe(tool) : true;
     });
 
-  return { phase1: filterSilence(p1), phase2: filterSilence(p2), phase3: filterSilence(phase3) };
+  return {
+    phase1: prioritizePrescriptions(filterSilence(p1), stackGoal),
+    phase2: prioritizePrescriptions(filterSilence(p2), stackGoal),
+    phase3: prioritizePrescriptions(filterSilence(phase3), stackGoal),
+  };
 }
 
 // ─── 6. Stack Health Score ─────────────────────────────────────────
@@ -321,6 +476,292 @@ export function computeRecommendations(
 export interface DiagnosticData {
   allTools: Tool[];
   doublonRules: DoubleRule[];
+  discoveryQuestions?: DiscoveryQuestion[];
+}
+
+type DiscoveryToolSignal = DiagnosticAnswerSignal & {
+  source: "discovery";
+  impact: "keep" | "review" | "cancel";
+  toolIds: string[];
+};
+
+type SignalSummary = {
+  activeDiscoveryCount: number;
+  answeredDiscoveryCount: number;
+  answeredClosingCount: number;
+  protectedToolCount: number;
+  challengedToolCount: number;
+};
+
+function collectOnboardingSignals(sessionState: SessionState): DiagnosticAnswerSignal[] {
+  const signals: DiagnosticAnswerSignal[] = [];
+
+  if (sessionState.personaConfidence === "hybrid") {
+    signals.push({
+      id: "onboarding_persona_hybrid",
+      source: "onboarding",
+      severity: "medium",
+      labelFr: "Profil hybride",
+      labelEn: "Hybrid profile",
+      detailFr: "Le diagnostic doit tenir compte d'un métier principal et d'usages secondaires.",
+      detailEn: "The diagnostic should account for one main role and secondary use cases.",
+      actionFr: "Croiser le persona principal avec les compétences complémentaires avant de trancher.",
+      actionEn: "Cross-check the main persona with complementary skills before making hard calls.",
+    });
+  }
+
+  if (sessionState.personaConfidence === "unsure") {
+    signals.push({
+      id: "onboarding_persona_uncertain",
+      source: "onboarding",
+      severity: "high",
+      labelFr: "Profil à confirmer",
+      labelEn: "Profile to confirm",
+      detailFr: "L'utilisateur hésite sur son persona: les recommandations doivent rester prudentes.",
+      detailEn: "The user is unsure about their persona: recommendations should stay cautious.",
+      actionFr: "Utiliser les réponses stack et discovery pour confirmer le bon angle de restitution.",
+      actionEn: "Use stack and discovery answers to confirm the right restitution angle.",
+    });
+  }
+
+  if (sessionState.stackGoal) {
+    const copy = {
+      reduce_costs: {
+        labelFr: "Objectif économies",
+        labelEn: "Cost reduction goal",
+        actionFr: "Prioriser les doublons, outils dormants et renouvellements.",
+        actionEn: "Prioritize duplicates, dormant tools, and renewals.",
+      },
+      save_time: {
+        labelFr: "Objectif temps",
+        labelEn: "Time-saving goal",
+        actionFr: "Ne pas couper un outil utile uniquement pour une petite économie.",
+        actionEn: "Do not cut a useful tool only for a small saving.",
+      },
+      simplify: {
+        labelFr: "Objectif simplification",
+        labelEn: "Simplification goal",
+        actionFr: "Favoriser les arbitrages qui réduisent la dispersion.",
+        actionEn: "Favor decisions that reduce fragmentation.",
+      },
+      quality: {
+        labelFr: "Objectif meilleur choix",
+        labelEn: "Better-choice goal",
+        actionFr: "Comparer fit métier, coût et alternatives avant économie brute.",
+        actionEn: "Compare business fit, cost, and alternatives before raw savings.",
+      },
+    }[sessionState.stackGoal];
+
+    signals.push({
+      id: `onboarding_goal_${sessionState.stackGoal}`,
+      source: "onboarding",
+      severity: "low",
+      labelFr: copy.labelFr,
+      labelEn: copy.labelEn,
+      detailFr: "Objectif principal déclaré au début du tunnel.",
+      detailEn: "Main goal declared at the start of the funnel.",
+      actionFr: copy.actionFr,
+      actionEn: copy.actionEn,
+    });
+  }
+
+  return signals;
+}
+
+function isDiscoveryQuestionActive(question: DiscoveryQuestion, sessionState: SessionState) {
+  if (question.persona !== "ALL" && question.persona !== sessionState.persona) return false;
+  const selectedToolIds = new Set(sessionState.selectedTools.map((tool) => tool.id));
+  if (question.condition_tool_ids.length === 0) return true;
+  if (question.condition_type === "all") {
+    return question.condition_tool_ids.every((id) => selectedToolIds.has(id));
+  }
+  return question.condition_tool_ids.some((id) => selectedToolIds.has(id));
+}
+
+function collectDiscoverySignals(sessionState: SessionState, questions: DiscoveryQuestion[] = []): DiscoveryToolSignal[] {
+  const selectedToolIds = new Set(sessionState.selectedTools.map((tool) => tool.id));
+  const signals: DiscoveryToolSignal[] = [];
+
+  for (const question of questions) {
+    if (!isDiscoveryQuestionActive(question, sessionState)) continue;
+    const answerIndex = sessionState.discoveryAnswers.get(question.id);
+    if (answerIndex == null) continue;
+    const option = question.options[answerIndex];
+    if (!option) continue;
+
+    const affectedIds = (option.affectedTools?.length ? option.affectedTools : question.condition_tool_ids)
+      .filter((id) => selectedToolIds.has(id));
+    if (affectedIds.length === 0) continue;
+
+    const impact = option.impact;
+    const severity = impact === "cancel" ? "high" : impact === "review" ? "medium" : "low";
+    const toolNames = affectedIds
+      .map((id) => sessionState.selectedTools.find((tool) => tool.id === id)?.name || id)
+      .join(", ");
+
+    signals.push({
+      id: `discovery_${question.id}_${impact}`,
+      source: "discovery",
+      severity,
+      impact,
+      toolIds: affectedIds,
+      labelFr: impact === "keep" ? "Usage confirmé" : impact === "cancel" ? "Usage à couper" : "Usage à vérifier",
+      labelEn: impact === "keep" ? "Confirmed use" : impact === "cancel" ? "Use to cut" : "Use to review",
+      detailFr: `${option.label} · ${toolNames}`,
+      detailEn: `${option.label} · ${toolNames}`,
+      actionFr: impact === "keep"
+        ? "Ne pas prescrire de suppression sur ces outils sans autre signal fort."
+        : impact === "cancel"
+          ? "Traiter ces outils comme candidats directs à suppression ou downgrade."
+          : "Vérifier usage réel, propriétaire et coût avant de décider.",
+      actionEn: impact === "keep"
+        ? "Do not prescribe removal on these tools without another strong signal."
+        : impact === "cancel"
+          ? "Treat these tools as direct candidates for cancellation or downgrade."
+          : "Check real usage, owner, and cost before deciding.",
+    });
+  }
+
+  return signals;
+}
+
+function collectClosingSignals(sessionState: SessionState): DiagnosticAnswerSignal[] {
+  const [bankAnswer, annualAnswer, passwordAnswer] = sessionState.closingAnswers;
+  const normalized = (value: string) =>
+    value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  const signals: DiagnosticAnswerSignal[] = [];
+
+  if (["oui absolument", "maybe", "peut etre", "peut-être", "je ne regarde jamais", "i never check"].some((token) => normalized(bankAnswer).includes(token))) {
+    signals.push({
+      id: "closing_billing_blind_spot",
+      source: "closing",
+      severity: normalized(bankAnswer).includes("jamais") || normalized(bankAnswer).includes("never") ? "high" : "medium",
+      labelFr: "Angle mort facturation",
+      labelEn: "Billing blind spot",
+      detailFr: "Un prélèvement non reconnu ou non vérifié peut masquer un abonnement dormant.",
+      detailEn: "An unrecognized or unchecked charge can hide a dormant subscription.",
+      actionFr: "Faire une revue bancaire courte avant la prochaine date de renouvellement.",
+      actionEn: "Run a short bank statement review before the next renewal date.",
+    });
+  }
+
+  if (["oui", "probably", "probablement"].some((token) => normalized(annualAnswer).includes(token))) {
+    signals.push({
+      id: "closing_annual_lock_in",
+      source: "closing",
+      severity: "medium",
+      labelFr: "Renouvellement annuel à surveiller",
+      labelEn: "Annual renewal to watch",
+      detailFr: "Un abonnement annuel inutilisé crée un faux sentiment de coût déjà absorbé.",
+      detailEn: "An unused annual plan creates a false sense that the cost is already absorbed.",
+      actionFr: "Lister les dates de renouvellement et décider 30 jours avant chacune.",
+      actionEn: "List renewal dates and decide 30 days before each one.",
+    });
+  }
+
+  if (["gratuit", "je n'en ai pas", "free", "don't have", "dont have"].some((token) => normalized(passwordAnswer).includes(token))) {
+    signals.push({
+      id: "closing_password_foundation",
+      source: "closing",
+      severity: "low",
+      labelFr: "Socle sécurité léger",
+      labelEn: "Light security foundation",
+      detailFr: "Le gestionnaire de mots de passe n'est pas forcément un coût à optimiser, mais c'est un socle à clarifier.",
+      detailEn: "A password manager is not necessarily a cost optimization topic, but it is a foundation to clarify.",
+      actionFr: "Vérifier que le socle accès et mots de passe est volontaire, pas subi.",
+      actionEn: "Check that access and password management is intentional, not accidental.",
+    });
+  }
+
+  return signals;
+}
+
+function buildSignalSummary(
+  sessionState: SessionState,
+  discoveryQuestions: DiscoveryQuestion[] = [],
+  discoverySignals: DiscoveryToolSignal[]
+): SignalSummary {
+  const activeDiscoveryQuestions = discoveryQuestions.filter((question) => isDiscoveryQuestionActive(question, sessionState));
+  const answeredDiscoveryCount = activeDiscoveryQuestions.filter((question) => sessionState.discoveryAnswers.has(question.id)).length;
+  const answeredClosingCount = sessionState.closingAnswers.filter((answer) => answer.trim().length > 0).length;
+  const protectedToolCount = new Set(
+    discoverySignals
+      .filter((signal) => signal.impact === "keep")
+      .flatMap((signal) => signal.toolIds)
+  ).size;
+  const challengedToolCount = new Set(
+    discoverySignals
+      .filter((signal) => signal.impact === "review" || signal.impact === "cancel")
+      .flatMap((signal) => signal.toolIds)
+  ).size;
+
+  return {
+    activeDiscoveryCount: activeDiscoveryQuestions.length,
+    answeredDiscoveryCount,
+    answeredClosingCount,
+    protectedToolCount,
+    challengedToolCount,
+  };
+}
+
+function applyDiscoverySignalsToPrescriptions(
+  prescriptions: { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] },
+  selectedTools: Tool[],
+  discoverySignals: DiscoveryToolSignal[]
+) {
+  if (discoverySignals.length === 0) return prescriptions;
+
+  const selectedToolMap = new Map(selectedTools.map((tool) => [tool.id, tool]));
+  const dominant = new Map<string, DiscoveryToolSignal>();
+  const rank = { keep: 3, cancel: 2, review: 1 };
+
+  for (const signal of discoverySignals) {
+    for (const toolId of signal.toolIds) {
+      const current = dominant.get(toolId);
+      if (!current || rank[signal.impact] > rank[current.impact]) {
+        dominant.set(toolId, signal);
+      }
+    }
+  }
+
+  const shouldRemove = (prescription: Prescription) => {
+    const signal = dominant.get(prescription.toolId);
+    return signal?.impact === "keep" || signal?.impact === "cancel";
+  };
+
+  const next = {
+    phase1: prescriptions.phase1.filter((p) => !shouldRemove(p)),
+    phase2: prescriptions.phase2.filter((p) => !shouldRemove(p)),
+    phase3: prescriptions.phase3.filter((p) => !shouldRemove(p)),
+  };
+
+  const existingIds = new Set([
+    ...next.phase1,
+    ...next.phase2,
+    ...next.phase3,
+  ].map((prescription) => prescription.toolId));
+
+  for (const [toolId, signal] of dominant) {
+    if (signal.impact === "keep" || existingIds.has(toolId)) continue;
+    const tool = selectedToolMap.get(toolId);
+    if (!tool || !canPrescribe(tool)) continue;
+
+    next.phase3.push({
+      toolId,
+      type: signal.impact === "cancel" ? "dormant" : "inadapté",
+      verdict: signal.impact === "cancel" ? "cancel" : "review",
+      message: signal.impact === "cancel"
+        ? `${tool.name}: usage déclaré trop faible`
+        : `${tool.name}: usage à vérifier (${signal.detailFr})`,
+      savingsEstimate: signal.impact === "cancel" ? tool.price : 0,
+    });
+    existingIds.add(toolId);
+  }
+
+  return next;
 }
 
 export function runDiagnostic(
@@ -334,7 +775,21 @@ export function runDiagnostic(
     toolScores.set(tool.id, computeScoreFinal(tool, persona, complementarySkills, tjm));
   }
 
-  const prescriptions = computePrescriptions(selectedTools, toolScores, data.doublonRules, persona);
+  const discoverySignals = collectDiscoverySignals(sessionState, data.discoveryQuestions);
+  const answerSignals = [
+    ...collectOnboardingSignals(sessionState),
+    ...discoverySignals,
+    ...collectClosingSignals(sessionState),
+  ];
+  const signalSummary = buildSignalSummary(sessionState, data.discoveryQuestions, discoverySignals);
+  const basePrescriptions = computePrescriptions(
+    selectedTools,
+    toolScores,
+    data.doublonRules,
+    persona,
+    sessionState.stackGoal
+  );
+  const prescriptions = applyDiscoverySignalsToPrescriptions(basePrescriptions, selectedTools, discoverySignals);
   const { score: healthScore, label: healthLabel } = computeStackHealth(prescriptions);
   const recommendations = computeRecommendations(
     data.allTools, selectedTools, persona, complementarySkills, tjm
@@ -365,6 +820,8 @@ export function runDiagnostic(
     estimatedWaste: roundedEstimatedWaste,
     optimizedCost: roundedOptimizedCost,
     annualSavings: roundedAnnualSavings,
+    answerSignals,
+    signalSummary,
   });
 
   return {

@@ -11,13 +11,19 @@ function getAnonKey() {
   return import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || DEFAULT_SUPABASE_ANON_KEY;
 }
 
-function buildHeaders(adminKey: string): HeadersInit {
+function buildBaseHeaders(): HeadersInit {
   const anonKey = getAnonKey();
   return {
     "Content-Type": "application/json",
     apikey: anonKey,
     Authorization: `Bearer ${anonKey}`,
-    "x-admin-key": adminKey,
+  };
+}
+
+function buildHeaders(accessToken: string): HeadersInit {
+  return {
+    ...buildBaseHeaders(),
+    Authorization: `Bearer ${accessToken}`,
   };
 }
 
@@ -46,6 +52,11 @@ export type BackofficeSession = {
   updated_at: string | null;
   completed_at: string | null;
   abandoned_at: string | null;
+  last_client_seen_at: string | null;
+  resumed_at: string | null;
+  recovery_state: Record<string, unknown> | null;
+  action_state: Record<string, unknown> | null;
+  diagnostic_context: Record<string, unknown> | null;
   first_name: string | null;
   email: string | null;
   persona: string | null;
@@ -59,6 +70,7 @@ export type BackofficeSession = {
   estimated_waste: number | null;
   optimized_cost: number | null;
   annual_savings: number | null;
+  selected_tools?: Array<Record<string, unknown>> | null;
   actions_completed: number | null;
   stack_profile: string | null;
   stack_maturity: string | null;
@@ -108,8 +120,20 @@ export type BackofficeEmailJob = {
   clicked_at: string | null;
   failed_at: string | null;
   last_error: string | null;
+  metadata: Record<string, unknown>;
   created_at: string;
   updated_at: string;
+};
+
+export type BackofficeRestitution = {
+  id: string;
+  session_id: string;
+  channel: string;
+  version: string;
+  summary: Record<string, unknown>;
+  details: Record<string, unknown>;
+  score_snapshot: Record<string, unknown>;
+  generated_at: string;
 };
 
 export type BackofficeDashboardResponse = {
@@ -123,6 +147,7 @@ export type BackofficeDashboardResponse = {
   sessions: BackofficeSession[];
   emailHealth: BackofficeEmailHealth[];
   recentEmailJobs: BackofficeEmailJob[];
+  recentRestitutions: BackofficeRestitution[];
 };
 
 export type BackofficeSessionDetailResponse = {
@@ -146,26 +171,7 @@ export type BackofficeSessionDetailResponse = {
     snapshot: Record<string, unknown>;
     created_at: string;
   }>;
-  emailJobs: Array<{
-    id: string;
-    email: string;
-    template_key: string;
-    locale: string;
-    status: string;
-    attempts: number;
-    provider: string | null;
-    provider_message_id: string | null;
-    scheduled_for: string;
-    sent_at: string | null;
-    delivered_at: string | null;
-    opened_at: string | null;
-    clicked_at: string | null;
-    failed_at: string | null;
-    last_error: string | null;
-    metadata: Record<string, unknown>;
-    created_at: string;
-    updated_at: string;
-  }>;
+  emailJobs: BackofficeEmailJob[];
   emailJobEvents: Array<{
     id: string;
     job_id: string;
@@ -198,36 +204,16 @@ export type BackofficeUpdateSessionAdminResponse = {
 
 export type BackofficeUpdateEmailJobResponse = {
   mode: "update_email_job";
-  job: {
-    id: string;
-    session_id: string;
-    email: string;
-    template_key: string;
-    locale: string;
-    status: string;
-    attempts: number;
-    provider: string | null;
-    provider_message_id: string | null;
-    scheduled_for: string;
-    sent_at: string | null;
-    delivered_at: string | null;
-    opened_at: string | null;
-    clicked_at: string | null;
-    failed_at: string | null;
-    last_error: string | null;
-    metadata: Record<string, unknown>;
-    created_at: string;
-    updated_at: string;
-  };
+  job: BackofficeEmailJob;
 };
 
 export async function fetchBackofficeDashboard(
-  adminKey: string,
+  accessToken: string,
   params: { days: number; limit: number; persona?: string | null }
 ): Promise<BackofficeDashboardResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminKey),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "dashboard",
       days: params.days,
@@ -239,12 +225,12 @@ export async function fetchBackofficeDashboard(
 }
 
 export async function fetchBackofficeSessionDetail(
-  adminKey: string,
+  accessToken: string,
   sessionId: string
 ): Promise<BackofficeSessionDetailResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminKey),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "session_detail",
       sessionId,
@@ -254,12 +240,12 @@ export async function fetchBackofficeSessionDetail(
 }
 
 export async function updateBackofficeSessionAdmin(
-  adminKey: string,
+  accessToken: string,
   payload: { sessionId: string; tags?: string[]; note?: string | null }
 ): Promise<BackofficeUpdateSessionAdminResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminKey),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "update_session_admin",
       sessionId: payload.sessionId,
@@ -271,7 +257,7 @@ export async function updateBackofficeSessionAdmin(
 }
 
 export async function updateBackofficeEmailJob(
-  adminKey: string,
+  accessToken: string,
   payload: {
     jobId: string;
     action: "retry_now" | "cancel" | "schedule";
@@ -280,7 +266,7 @@ export async function updateBackofficeEmailJob(
 ): Promise<BackofficeUpdateEmailJobResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminKey),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "update_email_job",
       jobId: payload.jobId,

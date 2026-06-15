@@ -1,9 +1,12 @@
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
-import { Check, ChevronRight, ExternalLink, Target } from "lucide-react";
+import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";
+import { Check, CheckCircle2, ChevronRight, ExternalLink, Target } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
+import ToolLogo from "@/components/ToolLogo";
+import { formatMoney, getPricingAudit } from "@/utils/diagnosticPricing";
 
 
 
@@ -23,9 +26,43 @@ interface ActionItem {
   prescription?: Prescription;
   tool?: Tool;
   label: string;
+  detail: string;
+  evidenceTab?: Tab;
   savings: number;
   timeMinutes: number;
   urgency: "now" | "week" | "month";
+}
+
+const ACTIONS_STORAGE_PREFIX = "tooltrim.diagnostic.actions.";
+
+function getActionStorageKey(sessionId?: string | null) {
+  return sessionId ? `${ACTIONS_STORAGE_PREFIX}${sessionId}` : null;
+}
+
+function readStoredActionIds(sessionId?: string | null) {
+  const key = getActionStorageKey(sessionId);
+  if (!key || typeof window === "undefined") return new Set<string>();
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(key) || "[]");
+    return new Set(Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : []);
+  } catch {
+    return new Set<string>();
+  }
+}
+
+function writeStoredActionIds(sessionId: string | null | undefined, ids: string[]) {
+  const key = getActionStorageKey(sessionId);
+  if (!key || typeof window === "undefined") return;
+  window.localStorage.setItem(key, JSON.stringify(ids));
+}
+
+function formatActionSavings(action: ActionItem, t: Props["t"]) {
+  if (action.savings <= 0) return null;
+  const audit = action.tool ? getPricingAudit(action.tool, t) : null;
+  if (!action.tool || audit?.needsVerification) return t("gain à vérifier", "gain to verify");
+  const currency = action.tool?.priceCurrency || action.tool?.catalogMonthlyPriceCurrency;
+  const label = formatMoney(action.savings, currency);
+  return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
 }
 
 function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"]): ActionItem[] {
@@ -39,9 +76,13 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `now-${p.toolId}`,
       prescription: p, tool,
-      label: p.verdict === "downgrade"
-        ? t(`Downgrade ${tool?.name ?? p.toolId}`, `Downgrade ${tool?.name ?? p.toolId}`)
+      label: p.type === "pricing-tier"
+        ? t(`Vérifier le plan de ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId} plan`)
+        : p.verdict === "downgrade"
+        ? t(`Passer ${tool?.name ?? p.toolId} sur un plan inférieur`, `Move ${tool?.name ?? p.toolId} to a lower plan`)
         : t(`Annuler ${tool?.name ?? p.toolId}`, `Cancel ${tool?.name ?? p.toolId}`),
+      detail: p.message,
+      evidenceTab: p.type === "pricing-tier" ? "stack" : "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
     });
   }
@@ -51,6 +92,8 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       id: `now-dbl-${p.toolId}`,
       prescription: p, tool,
       label: t(`Résoudre doublon : ${tool?.name ?? p.toolId}`, `Fix duplicate: ${tool?.name ?? p.toolId}`),
+      detail: p.message,
+      evidenceTab: "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
     });
   }
@@ -61,7 +104,11 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `week-${p.toolId}`,
       prescription: p, tool,
-      label: t(`Vérifier ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId}`),
+      label: p.type === "pricing-tier"
+        ? t(`Tester le bon palier pour ${tool?.name ?? p.toolId}`, `Test the right tier for ${tool?.name ?? p.toolId}`)
+        : t(`Vérifier ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId}`),
+      detail: p.message,
+      evidenceTab: p.type === "pricing-tier" ? "stack" : "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 30, urgency: "week",
     });
   }
@@ -70,8 +117,22 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     items.push({
       id: `week-dorm-${p.toolId}`,
       prescription: p, tool,
-      label: t(`Auditer ${tool?.name ?? p.toolId} (fantôme)`, `Audit ${tool?.name ?? p.toolId} (ghost)`),
+      label: t(`Auditer ${tool?.name ?? p.toolId} (peu utilisé)`, `Audit ${tool?.name ?? p.toolId} (low usage)`),
+      detail: p.message,
+      evidenceTab: "gaspillage",
       savings: p.savingsEstimate, timeMinutes: 15, urgency: "week",
+    });
+  }
+
+  for (const signal of result.insights.answerSignals.filter((item) => item.source === "closing")) {
+    items.push({
+      id: `signal-${signal.id}`,
+      label: t(signal.actionFr, signal.actionEn),
+      detail: t(signal.detailFr, signal.detailEn),
+      evidenceTab: "overview",
+      savings: 0,
+      timeMinutes: signal.severity === "high" ? 20 : 30,
+      urgency: signal.severity === "low" ? "month" : "week",
     });
   }
 
@@ -81,6 +142,11 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       id: `month-rec-${rec.id}`,
       tool: rec,
       label: t(`Explorer ${rec.name}`, `Explore ${rec.name}`),
+      detail: t(
+        "Piste à garder pour plus tard, seulement si ce besoin existe vraiment dans ton activité.",
+        "Keep this as a later option, only if this need truly exists in your work."
+      ),
+      evidenceTab: "optimiser",
       savings: 0, timeMinutes: 120, urgency: "month",
     });
   }
@@ -90,20 +156,20 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
 
 const URGENCY_CONFIG = {
   now: {
-    labelFr: "MAINTENANT", labelEn: "NOW",
-    subtitleFr: "Moins de 5 min par action", subtitleEn: "Less than 5 min per action",
+    labelFr: "À faire d’abord", labelEn: "Do first",
+    subtitleFr: "Les décisions les plus simples à traiter", subtitleEn: "The simplest decisions to handle",
     pillCls: "bg-destructive text-white",
     borderCls: "border-l-destructive",
   },
   week: {
-    labelFr: "CETTE SEMAINE", labelEn: "THIS WEEK",
-    subtitleFr: "À traiter dans les 7 jours", subtitleEn: "Handle within 7 days",
+    labelFr: "À vérifier", labelEn: "Check",
+    subtitleFr: "À clarifier quand tu as un peu de temps", subtitleEn: "Clarify when you have a little time",
     pillCls: "bg-orange-500 text-white",
     borderCls: "border-l-orange-500",
   },
   month: {
-    labelFr: "CE MOIS", labelEn: "THIS MONTH",
-    subtitleFr: "Non-urgent mais impactant", subtitleEn: "Non-urgent but impactful",
+    labelFr: "Plus tard", labelEn: "Later",
+    subtitleFr: "Pas urgent, mais utile pour progresser", subtitleEn: "Not urgent, but useful to improve",
     pillCls: "bg-primary text-primary-foreground",
     borderCls: "border-l-primary",
   },
@@ -112,52 +178,59 @@ const URGENCY_CONFIG = {
 export default function DashActions({ result, allTools, t, onNavigate, dbSessionId, dbSessionToken }: Props) {
   const { prefix } = useLang();
   const actions = useMemo(() => buildActions(result, allTools, t), [result, allTools, t]);
-  const [checked, setChecked] = useState<Set<string>>(new Set());
+  const [checked, setChecked] = useState<Set<string>>(() => readStoredActionIds(dbSessionId));
   const [lastChecked, setLastChecked] = useState<string | null>(null);
   const updateTimer = useRef<ReturnType<typeof setTimeout>>();
 
-  const persistActions = useCallback((count: number) => {
+  useEffect(() => {
+    setChecked(readStoredActionIds(dbSessionId));
+  }, [dbSessionId]);
+
+  useEffect(() => {
+    return () => {
+      if (updateTimer.current) clearTimeout(updateTimer.current);
+    };
+  }, []);
+
+  const persistActions = useCallback((next: Set<string>) => {
+    const completedIds = Array.from(next);
+    const completedActions = actions.filter((action) => next.has(action.id));
+    writeStoredActionIds(dbSessionId, completedIds);
     if (!dbSessionId || !dbSessionToken) return;
     if (updateTimer.current) clearTimeout(updateTimer.current);
     updateTimer.current = setTimeout(async () => {
       try {
-        // Direct PostgREST call so we can pass the per-session token header (required by RLS)
-        const SUPABASE_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
-        const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
-        await fetch(
-          `${SUPABASE_URL}/rest/v1/diagnostic_sessions?id=eq.${encodeURIComponent(dbSessionId)}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-              apikey: ANON_KEY,
-              Authorization: `Bearer ${ANON_KEY}`,
-              "x-session-token": dbSessionToken,
-              Prefer: "return=minimal",
-            },
-            body: JSON.stringify({ actions_completed: count }),
-          }
-        );
+        await updateDiagnosticSession(dbSessionId, dbSessionToken, {
+          actions_completed: completedIds.length,
+          action_state: {
+            completed_action_ids: completedIds,
+            completed_action_count: completedIds.length,
+            total_action_count: actions.length,
+            completed_action_labels: completedActions.map((action) => action.label),
+            pricing_policy: "source_currency_or_verify",
+            updated_at: new Date().toISOString(),
+            version: "v2",
+          },
+        });
       } catch (err) {
         console.error("[DiagActions] Update failed:", err);
       }
     }, 1000);
-  }, [dbSessionId, dbSessionToken]);
+  }, [actions, dbSessionId, dbSessionToken]);
 
-  const toggle = useCallback((id: string, savings: number) => {
+  const toggle = useCallback((action: ActionItem) => {
     setChecked((prev) => {
       const next = new Set(prev);
-      if (next.has(id)) { next.delete(id); setLastChecked(null); }
-      else { next.add(id); setLastChecked(`${savings}€`); }
-      persistActions(next.size);
+      if (next.has(action.id)) { next.delete(action.id); setLastChecked(null); }
+      else { next.add(action.id); setLastChecked(action.label); }
+      persistActions(next);
       return next;
     });
-  }, [persistActions]);
+  }, [persistActions, t]);
 
-  const totalSavings = actions.reduce((s, a) => s + a.savings, 0);
-  const recoveredSavings = actions.filter((a) => checked.has(a.id)).reduce((s, a) => s + a.savings, 0);
-  const progressPct = totalSavings > 0 ? Math.round((recoveredSavings / totalSavings) * 100) : 0;
   const completedCount = checked.size;
+  const progressPct = actions.length > 0 ? Math.round((completedCount / actions.length) * 100) : 0;
+  const nextAction = actions.find((action) => !checked.has(action.id)) || actions[0] || null;
 
   const grouped = {
     now: actions.filter((a) => a.urgency === "now"),
@@ -167,45 +240,70 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
   // Progress-aware sparring message
   const sparringMessage = useMemo(() => {
-    const { firstName } = result.sessionState;
+    const firstName = result.sessionState.firstName?.trim();
+    const nameFr = firstName ? `${firstName}, ` : "";
+    const nameEn = firstName ? `${firstName}, ` : "";
     if (completedCount === 0 && grouped.now.length > 0) {
       return t(
-        `Commence par MAINTENANT ${firstName} — ça prend 5 min et tu récupères tout de suite.`,
-        `Start with NOW ${firstName} — it takes 5 min and you save immediately.`
+        `${nameFr}commence par la première section. Elle rassemble les décisions les plus faciles à prendre.`,
+        `${nameEn}start with the first section. It contains the easiest decisions to make.`
       );
     }
     if (progressPct < 50) {
       return t(
-        `Bon début ${firstName} ! Continue avec les actions restantes.`,
-        `Good start ${firstName}! Keep going with the remaining actions.`
+        `${nameFr}bon début. Continue avec les actions qui ont le plus d’impact.`,
+        `${nameEn}good start. Continue with the highest-impact actions.`
       );
     }
     if (progressPct < 100) {
       return t(
-        `Plus que quelques actions ${firstName}. Tu y es presque.`,
-        `Just a few more actions ${firstName}. You're almost there.`
+        `${nameFr}il reste seulement quelques points à verrouiller.`,
+        `${nameEn}only a few points left to lock in.`
       );
     }
     return t(
-      `Bravo ${firstName} ! Ta stack est optimisée. Reviens dans 3 mois pour un nouveau check.`,
-      `Well done ${firstName}! Your stack is optimized. Come back in 3 months for a new check.`
+      `${nameFr}ta première passe est terminée. Reviens quand ta stack évolue.`,
+      `${nameEn}your first pass is complete. Come back when your stack evolves.`
     );
   }, [result.sessionState, completedCount, progressPct, grouped.now.length, t]);
 
   return (
     <div className="space-y-6">
-      {/* ─── 1. MOTIVATING COUNTER ─── */}
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase text-primary">{t("Plan guidé", "Guided plan")}</p>
+        <h1 className="text-2xl font-bold leading-tight text-foreground md:text-3xl">
+          {t("Les décisions à prendre, dans le bon ordre.", "The decisions to make, in the right order.")}
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {t(
+            "Le but n’est pas de tout faire maintenant. Commence par les actions les plus évidentes, puis garde le reste comme checklist.",
+            "The goal is not to do everything now. Start with the clearest actions, then keep the rest as a checklist."
+          )}
+        </p>
+      </header>
+
+      {nextAction && (
+        <NextActionCard
+          action={nextAction}
+          isDone={checked.has(nextAction.id)}
+          onToggle={() => toggle(nextAction)}
+          onNavigate={onNavigate}
+          prefix={prefix}
+          t={t}
+        />
+      )}
+
       <div className="bg-[hsl(var(--navy,222_44%_17%))] rounded-2xl p-6 text-white space-y-4">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-sm text-white/60">{t("Tu as récupéré", "You've recovered")}</p>
+            <p className="text-sm text-white/60">{t("Avancement du plan", "Plan progress")}</p>
             <p className="text-3xl md:text-4xl font-bold font-['DM_Mono']">
-              {recoveredSavings}€ <span className="text-lg text-white/40">/ {totalSavings}€</span>
+              {completedCount}<span className="text-lg text-white/40"> / {actions.length}</span>
             </p>
           </div>
           {lastChecked && (
             <span className="text-sm font-['DM_Mono'] text-[hsl(var(--keep))] animate-in fade-in duration-300">
-              ✓ {lastChecked} {t("récupérés", "recovered")} !
+              {t("Action traitée", "Action handled")}
             </span>
           )}
         </div>
@@ -217,7 +315,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         </div>
         {completedCount === 0 && grouped.now.length > 0 && (
           <p className="text-xs text-white/50">
-            {t("Commence par MAINTENANT — ça prend 5 min", "Start with NOW — it takes 5 min")}
+            {t("Commence par la première section. Elle contient les arbitrages les plus rapides.", "Start with the first section. It contains the fastest decisions.")}
           </p>
         )}
         {completedCount > 0 && (
@@ -231,7 +329,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         <div className="border border-border rounded-xl bg-card p-4 space-y-3">
           <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
             <Target className="w-4 h-4" />
-            {t("Ordre de bataille", "Battle order")}
+            {t("Pourquoi cet ordre ?", "Why this order?")}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {result.insights.focusAreas.slice(0, 4).map((focus) => (
@@ -258,7 +356,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
             {/* Section header */}
             <div className="flex items-center gap-2">
               <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${cfg.pillCls}`}>
-                ● {t(cfg.labelFr, cfg.labelEn)}
+                {t(cfg.labelFr, cfg.labelEn)}
               </span>
               <span className="text-xs text-muted-foreground">{t(cfg.subtitleFr, cfg.subtitleEn)}</span>
             </div>
@@ -276,7 +374,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                   >
                     {/* Checkbox */}
                     <button
-                      onClick={() => toggle(action.id, action.savings)}
+                      onClick={() => toggle(action)}
                       className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center shrink-0 transition-all ${
                         isDone
                           ? "bg-[hsl(var(--keep))] border-[hsl(var(--keep))] scale-105"
@@ -288,19 +386,24 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
                     {/* Logo */}
                     {action.tool && (
-                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground"><div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{action.tool.name.charAt(0)}</div></div>
+                      <ToolLogo tool={action.tool} size={32} className="rounded-lg" />
                     )}
 
                     {/* Label */}
-                    <p className={`flex-1 text-sm text-foreground min-w-0 ${isDone ? "line-through text-muted-foreground" : ""}`}>
-                      {action.label}
-                    </p>
+                    <div className="min-w-0 flex-1">
+                      <p className={`text-sm font-medium text-foreground ${isDone ? "line-through text-muted-foreground" : ""}`}>
+                        {action.label}
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                        {action.detail}
+                      </p>
+                    </div>
 
                     {/* Savings & time */}
                     <div className="flex items-center gap-3 shrink-0">
                       {action.savings > 0 && (
                         <span className={`text-sm font-bold font-['DM_Mono'] ${isDone ? "text-[hsl(var(--keep))]" : "text-[hsl(var(--keep))]"}`}>
-                          {action.savings}€
+                          {formatActionSavings(action, t)}
                         </span>
                       )}
                       <span className="text-xs text-muted-foreground">
@@ -318,11 +421,11 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                         </Link>
                       )}
                       {/* Link to waste detail */}
-                      {action.prescription && !action.tool && (
+                      {action.evidenceTab && (
                         <button
-                          onClick={() => onNavigate?.("gaspillage")}
+                          onClick={() => onNavigate?.(action.evidenceTab)}
                           className="p-1 rounded hover:bg-muted"
-                          title={t("Voir pourquoi", "See why")}
+                          title={action.prescription ? t("Voir pourquoi", "See why") : t("Voir le contexte", "See context")}
                         >
                           <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" />
                         </button>
@@ -338,7 +441,6 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
       {actions.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          <p className="text-4xl mb-3">🎉</p>
           <p className="text-sm">{t("Aucune action requise — ta stack est clean !", "No actions required — your stack is clean!")}</p>
         </div>
       )}
@@ -346,11 +448,90 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
       {/* ─── 5. SPARRING PARTNER ─── */}
       <div className="bg-card border border-border rounded-xl p-5">
         <p className="text-sm text-foreground leading-relaxed">{sparringMessage}</p>
-        <p className="text-xs text-muted-foreground mt-2 italic">— {t("Ton sparring partner", "Your sparring partner")}</p>
+        <p className="text-xs text-muted-foreground mt-2">{t("Lecture ToolTrim", "ToolTrim read")}</p>
       </div>
 
       {/* Export */}
       <DashPdfExport result={result} t={t} variant="outline" />
     </div>
+  );
+}
+
+interface NextActionCardProps {
+  action: ActionItem;
+  isDone: boolean;
+  onToggle: () => void;
+  onNavigate?: (tab: Tab) => void;
+  prefix: string;
+  t: Props["t"];
+}
+
+function NextActionCard({ action, isDone, onToggle, onNavigate, prefix, t }: NextActionCardProps) {
+  const savingsLabel = formatActionSavings(action, t);
+  const isOptional = action.urgency === "month" && !action.prescription;
+
+  return (
+    <section className="rounded-xl border border-primary/20 bg-primary/5 p-4 md:p-5">
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <div className="flex min-w-0 gap-3">
+          {action.tool ? (
+            <ToolLogo tool={action.tool} size={40} className="rounded-lg" />
+          ) : (
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Target className="h-4 w-4" />
+            </span>
+          )}
+          <div className="min-w-0">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary">
+              {isOptional ? t("Piste optionnelle", "Optional lead") : t("Prochaine action utile", "Next useful action")}
+            </p>
+            <h2 className="mt-1 text-lg font-semibold leading-tight text-foreground">{action.label}</h2>
+            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">{action.detail}</p>
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+              <span className="rounded-full border border-border bg-background px-2.5 py-1">
+                {action.timeMinutes < 60 ? `${action.timeMinutes}min` : `${Math.round(action.timeMinutes / 60)}h`}
+              </span>
+              {savingsLabel && (
+                <span className="rounded-full border border-border bg-background px-2.5 py-1 font-['DM_Mono']">
+                  {savingsLabel}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex shrink-0 flex-wrap gap-2 md:justify-end">
+          <button
+            onClick={onToggle}
+            className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
+              isDone
+                ? "bg-[hsl(var(--keep))] text-white"
+                : "bg-foreground text-background hover:bg-foreground/90"
+            }`}
+          >
+            {isDone ? <CheckCircle2 className="h-4 w-4" /> : <Check className="h-4 w-4" />}
+            {isDone ? t("Déjà fait", "Done") : t("Marquer comme fait", "Mark as done")}
+          </button>
+          {action.evidenceTab && (
+            <button
+              onClick={() => onNavigate?.(action.evidenceTab)}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+            >
+              {action.prescription ? t("Voir la preuve", "See evidence") : t("Voir le contexte", "See context")}
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          )}
+          {action.tool && (
+            <Link
+              to={`${prefix}/tool/${action.tool.id}`}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+            >
+              {t("Fiche outil", "Tool page")}
+              <ExternalLink className="h-4 w-4" />
+            </Link>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
