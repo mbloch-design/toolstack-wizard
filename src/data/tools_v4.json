@@ -37618,36 +37618,113 @@
     "slug": "mongodb-atlas",
     "name": "MongoDB Atlas",
     "category": "nocode-web",
-    "shortDescription": "Base de données NoSQL cloud",
-    "shortDescriptionEn": "Cloud NoSQL database.",
-    "description": "MongoDB Atlas, c'est base de données NoSQL cloud. Entièrement gratuit.",
-    "longDescription": "MongoDB Atlas, c'est base de données NoSQL cloud. Entièrement gratuit.",
-    "longDescriptionEn": "MongoDB Atlas is cloud NoSQL database. Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Base de données NoSQL managée dans le cloud, avec une offre gratuite pour démarrer.",
+    "shortDescriptionEn": "Managed cloud NoSQL database, with a free tier to get started.",
+    "description": "MongoDB Atlas, c'est la version managée et hébergée de MongoDB, la base de données NoSQL la plus connue. Contrairement à une base relationnelle (Postgres, MySQL), MongoDB stocke des documents JSON souples : pas de schéma rigide, tu fais évoluer la structure de tes données au fil du projet. Atlas s'occupe de l'hébergement, des sauvegardes, de la montée en charge et de la sécurité, pour que tu n'aies pas à administrer de serveur de base.\n\nLe modèle est progressif : un cluster gratuit (M0, 512 Mo) suffit pour prototyper ou faire tourner un petit projet, des paliers Flex à l'usage existent entre les deux, puis les clusters dédiés démarrent autour de 57$/mois (M10). La facture devient vite difficile à prévoir quand le trafic grimpe, c'est le revers du modèle cloud à l'usage.\n\nQuand le choisir : MongoDB brille quand tes données sont peu structurées ou évoluent souvent (catalogues, contenus, événements). Si ton projet est naturellement relationnel (commandes, comptabilité, relations entre tables), une base Postgres comme Neon ou Supabase sera souvent plus adaptée et moins chère. Le choix se fait sur la nature des données, pas sur la hype.",
+    "longDescription": "MongoDB Atlas, c'est la version managée et hébergée de MongoDB, la base de données NoSQL la plus connue. Contrairement à une base relationnelle (Postgres, MySQL), MongoDB stocke des documents JSON souples : pas de schéma rigide, tu fais évoluer la structure de tes données au fil du projet. Atlas s'occupe de l'hébergement, des sauvegardes, de la montée en charge et de la sécurité, pour que tu n'aies pas à administrer de serveur de base.\n\nLe modèle est progressif : un cluster gratuit (M0, 512 Mo) suffit pour prototyper ou faire tourner un petit projet, des paliers Flex à l'usage existent entre les deux, puis les clusters dédiés démarrent autour de 57$/mois (M10). La facture devient vite difficile à prévoir quand le trafic grimpe, c'est le revers du modèle cloud à l'usage.\n\nQuand le choisir : MongoDB brille quand tes données sont peu structurées ou évoluent souvent (catalogues, contenus, événements). Si ton projet est naturellement relationnel (commandes, comptabilité, relations entre tables), une base Postgres comme Neon ou Supabase sera souvent plus adaptée et moins chère. Le choix se fait sur la nature des données, pas sur la hype.",
+    "longDescriptionEn": "MongoDB Atlas is the managed, hosted version of MongoDB, the best-known NoSQL database. Unlike a relational database (Postgres, MySQL), MongoDB stores flexible JSON documents: no rigid schema, you evolve your data structure as the project grows. Atlas handles hosting, backups, scaling and security, so you don't have to administer a database server.\n\nThe model is progressive: a free cluster (M0, 512 MB) is enough to prototype or run a small project, usage-based Flex tiers sit in between, then dedicated clusters start around $57/month (M10). The bill gets hard to predict as traffic grows, the downside of the usage-based cloud model.\n\nWhen to choose it: MongoDB shines when your data is loosely structured or changes often (catalogs, content, events). If your project is naturally relational (orders, accounting, relationships between tables), a Postgres database like Neon or Supabase will often fit better and cost less. The choice is about the nature of your data, not the hype.",
+    "pricing": {
+      "free": "Cluster gratuit M0 (512 Mo, partagé)",
+      "paid": "Paliers Flex à l'usage, clusters dédiés à partir de 57$/mois (M10)"
+    },
+    "pricingEn": {
+      "free": "Free M0 cluster (512 MB, shared)",
+      "paid": "Usage-based Flex tiers, dedicated clusters from $57/month (M10)"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free (M0)",
+      "verified_on": "2026-06-15",
+      "source_domain": "mongodb.com",
+      "official_source_url": "https://www.mongodb.com/pricing",
+      "cautions": [
+        "Cluster gratuit M0 limité à 512 Mo",
+        "Clusters dédiés à partir de 57$/mois (M10)",
+        "Facturation à l'usage : le coût varie avec le trafic et le stockage"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://mongodb.com/atlas",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "MongoDB Atlas en 2026 : prix, offre gratuite (M0) et comparaison avec Postgres (Neon, Supabase). Quand choisir le NoSQL, par ToolTrim."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "L'offre gratuite M0 suffit à un dev solo pour prototyper. Le choix dépend surtout de la nature de tes données, pas de la taille de l'équipe.",
+    "teamRelevance": "En équipe, Atlas gère hébergement et scaling sans administration. Surveiller la facture à l'usage qui peut vite grimper en production.",
+    "relevantFor": [
+      "dev-fullstack",
+      "indie",
+      "fondateur-saas"
+    ],
+    "alternatives": [
+      "neon",
+      "supabase",
+      "firebase"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tes données sont peu structurées ou évoluent souvent (NoSQL pertinent)",
+        "Tu veux une base managée sans administrer de serveur"
+      ],
+      "avoidIf": [
+        "Tes données sont naturellement relationnelles : Postgres (Neon, Supabase) est plus adapté",
+        "Tu veux une facture prévisible : l'usage peut vite grimper"
+      ],
+      "threshold": "Le bon choix quand tes données sont souples ou évolutives et que tu ne veux pas gérer de serveur. Pour des données relationnelles, une base Postgres comme Neon ou Supabase est souvent plus simple et moins chère."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your data is loosely structured or changes often (NoSQL fits)",
+        "You want a managed database without administering a server"
+      ],
+      "avoidIf": [
+        "Your data is naturally relational: Postgres (Neon, Supabase) fits better",
+        "You want a predictable bill: usage can climb fast"
+      ],
+      "threshold": "The right call when your data is flexible or evolving and you don't want to manage a server. For relational data, a Postgres database like Neon or Supabase is often simpler and cheaper."
+    },
+    "pros": [
+      "Schéma souple : tu fais évoluer la structure de tes données sans migration lourde",
+      "Offre gratuite (cluster M0) suffisante pour prototyper ou un petit projet",
+      "Hébergement, sauvegardes et montée en charge gérés à ta place",
+      "Très répandu : pilotes, documentation et recrutement faciles"
+    ],
+    "prosEn": [
+      "Flexible schema: evolve your data structure without heavy migrations",
+      "Free tier (M0 cluster) enough to prototype or for a small project",
+      "Hosting, backups and scaling managed for you",
+      "Very widespread: drivers, documentation and hiring are easy"
+    ],
+    "cons": [
+      "Facture à l'usage difficile à prévoir quand le trafic augmente",
+      "Le NoSQL est mal adapté aux données fortement relationnelles",
+      "Cluster dédié vite nécessaire (dès 57$/mois) pour de la vraie prod",
+      "Pour beaucoup de projets, une base Postgres serait plus simple et moins chère"
+    ],
+    "consEn": [
+      "Usage-based bill hard to predict as traffic grows",
+      "NoSQL is a poor fit for strongly relational data",
+      "Dedicated cluster needed quickly (from $57/month) for real production",
+      "For many projects, a Postgres database would be simpler and cheaper"
+    ],
+    "useCases": [
+      "Stocker des données souples ou évolutives (catalogues, contenus, événements)",
+      "Démarrer gratuitement la base d'un prototype ou d'un side-project",
+      "Base d'un SaaS qui a besoin de scaler sans gérer de serveur",
+      "Applications où la structure des données change souvent"
+    ],
+    "useCasesEn": [
+      "Store flexible or evolving data (catalogs, content, events)",
+      "Start a prototype or side-project database for free",
+      "Database for a SaaS that needs to scale without managing a server",
+      "Applications where the data structure changes often"
+    ],
     "personas": [],
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -37657,7 +37734,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -51885,21 +51962,26 @@
   {
     "id": "semrush",
     "name": "SEMrush",
-    "shortDescription": "Plateforme SaaS de marketing digital et SEO.",
-    "description": "SEMrush, c'est plateforme SaaS de marketing digital et SEO. À partir de 20€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en SEO, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "Plateforme SEO et marketing tout-en-un : mots-clés, backlinks, concurrents et audit de site.",
+    "description": "SEMrush, c'est l'un des poids lourds du SEO et du marketing digital. La plateforme couvre à peu près tout : recherche de mots-clés, analyse des backlinks, suivi de positions, audit technique de site, étude des concurrents, idées de contenu et même la partie publicité. Pour un consultant SEO ou une agence, c'est un couteau suisse qui remplace plusieurs outils.\n\nLe revers, c'est le prix, et il faut être clair : ce n'est pas un outil à 20€. Le plan Pro démarre à environ 140$/mois, Guru autour de 250$, Business au-delà de 500$. Chaque plan a ses limites de projets et de requêtes, et les options (suivi de positions supplémentaire, accès multi-utilisateurs) font vite grimper la note. Il n'y a pas de vraie offre gratuite, juste un compte très limité et un essai.\n\nÀ qui ça s'adresse : à ceux pour qui le SEO est un métier ou un canal d'acquisition central, où l'outil se rentabilise en clients gagnés. Pour un freelance qui fait du SEO de façon ponctuelle, c'est cher pour ce qu'il en tirera, et des alternatives plus ciblées (ou SimilarWeb pour l'analyse concurrentielle) suffisent souvent. Le bon réflexe : estimer ce que le SEO te rapporte avant de payer ce prix.",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de vraie offre gratuite, compte limité et essai de 7 jours",
+      "paid": "Pro à environ 140$/mois, Guru ~250$, Business ~500$"
     },
     "website": "https://semrush.com",
     "affiliateLink": "https://semrush.com",
     "pros": [
-      "Spécialisé en SEO",
-      "Interface professionnelle"
+      "Couvre tout le SEO : mots-clés, backlinks, positions, audit technique, concurrents",
+      "Remplace plusieurs outils par une seule plateforme",
+      "Base de données très large pour l'analyse concurrentielle et les mots-clés",
+      "Référence du marché, bien documentée et largement adoptée en agence"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Cher : Pro à environ 140$/mois, et les options font vite grimper la facture",
+      "Pas de vraie offre gratuite, seulement un compte très limité",
+      "Surdimensionné et coûteux pour un usage SEO ponctuel",
+      "Beaucoup de modules : on n'en exploite souvent qu'une partie"
     ],
     "bestFor": [
       "all"
@@ -51908,30 +51990,34 @@
       "SEO"
     ],
     "freeAlternative": null,
-    "soloRelevance": "high",
-    "teamRelevance": "medium",
-    "defaultMonthlyPrice": 20,
+    "soloRelevance": "Se justifie pour un freelance dont le SEO est le cœur de métier. Pour un usage ponctuel, le prix (140$/mois et plus) est difficile à rentabiliser.",
+    "teamRelevance": "Pertinent en agence SEO qui exploite vraiment la plateforme et mutualise le coût entre clients.",
+    "defaultMonthlyPrice": 140,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Pas de vraie offre gratuite, compte limité et essai de 7 jours",
+      "paid": "Pro à environ 140$/mois, Guru ~250$, Business ~500$"
     },
     "relevantFor": [
-      "all"
+      "marketing",
+      "ecommercant",
+      "fondateur-saas"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Le SEO est ton métier ou un canal d'acquisition central",
+        "Tu remplaces plusieurs outils par une seule plateforme et tu rentabilises le prix"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu fais du SEO de façon ponctuelle : c'est cher pour l'usage",
+        "Tu veux juste de l'analyse concurrentielle : SimilarWeb ou un outil plus ciblé suffit"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Se justifie quand le SEO rapporte des clients et que tu exploites vraiment la plateforme. Pour un usage occasionnel, le prix (140$/mois et plus) est difficile à rentabiliser."
     },
-    "alternatives": [],
+    "alternatives": [
+      "similarweb"
+    ],
     "seo": {
-      "metaDescription": "SEMrush : Plateforme SaaS de marketing digital et SEO. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "SEMrush en 2026 : prix réels (Pro ~140$/mois), pas de vraie offre gratuite, et alternatives. Pour qui ça vaut le coup, le verdict ToolTrim."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -51950,47 +52036,66 @@
     "ia_use_case": null,
     "slug": "semrush",
     "shortDescriptionEn": "Digital marketing and SEO SaaS platform.",
-    "longDescription": "SEMrush, c'est plateforme SaaS de marketing digital et SEO. À partir de 20€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en SEO, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "SEMrush is digital marketing and SEO SaaS platform. Starting at €20/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in SEO, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €20/month.",
+    "longDescription": "SEMrush, c'est l'un des poids lourds du SEO et du marketing digital. La plateforme couvre à peu près tout : recherche de mots-clés, analyse des backlinks, suivi de positions, audit technique de site, étude des concurrents, idées de contenu et même la partie publicité. Pour un consultant SEO ou une agence, c'est un couteau suisse qui remplace plusieurs outils.\n\nLe revers, c'est le prix, et il faut être clair : ce n'est pas un outil à 20€. Le plan Pro démarre à environ 140$/mois, Guru autour de 250$, Business au-delà de 500$. Chaque plan a ses limites de projets et de requêtes, et les options (suivi de positions supplémentaire, accès multi-utilisateurs) font vite grimper la note. Il n'y a pas de vraie offre gratuite, juste un compte très limité et un essai.\n\nÀ qui ça s'adresse : à ceux pour qui le SEO est un métier ou un canal d'acquisition central, où l'outil se rentabilise en clients gagnés. Pour un freelance qui fait du SEO de façon ponctuelle, c'est cher pour ce qu'il en tirera, et des alternatives plus ciblées (ou SimilarWeb pour l'analyse concurrentielle) suffisent souvent. Le bon réflexe : estimer ce que le SEO te rapporte avant de payer ce prix.",
+    "longDescriptionEn": "SEMrush is one of the heavyweights of SEO and digital marketing. The platform covers just about everything: keyword research, backlink analysis, rank tracking, technical site audits, competitor research, content ideas and even the advertising side. For an SEO consultant or an agency, it's a Swiss army knife that replaces several tools.\n\nThe downside is the price, and let's be clear: it's not a €20 tool. The Pro plan starts around $140/month, Guru around $250, Business above $500. Each plan has its project and query limits, and add-ons (extra rank tracking, multi-user access) push the bill up fast. There's no real free tier, just a very limited account and a trial.\n\nWho it's for: people for whom SEO is a profession or a core acquisition channel, where the tool pays for itself in clients won. For a freelancer doing SEO occasionally, it's expensive for what they'll get, and more targeted alternatives (or SimilarWeb for competitive analysis) are often enough. The right reflex: estimate what SEO brings you before paying this price.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
+      "free": "No real free tier, limited account and a 7-day trial",
+      "paid": "Pro around $140/month, Guru ~$250, Business ~$500"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Pas de vraie offre gratuite, compte limité et essai de 7 jours",
+        "Pro à environ 140$/mois, Guru ~250$, Business ~500$",
+        "Les options et utilisateurs supplémentaires font grimper la facture"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "semrush.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Pro",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.semrush.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "compare_price_monthly_eur": 140
     },
     "websiteUrl": "https://semrush.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "SEO is your profession or a core acquisition channel",
+        "You replace several tools with one platform and earn back the price"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You do SEO occasionally: it's expensive for the use",
+        "You just want competitive analysis: SimilarWeb or a more focused tool is enough"
       ],
-      "threshold": "As soon as the tool saves you more than €20/month"
+      "threshold": "Worth it when SEO brings in clients and you genuinely use the platform. For occasional use, the price ($140/month and up) is hard to justify."
     },
     "prosEn": [
-      "Specialized in SEO",
-      "Professional interface"
+      "Covers all of SEO: keywords, backlinks, rankings, technical audit, competitors",
+      "Replaces several tools with a single platform",
+      "Very large database for competitive and keyword analysis",
+      "Market reference, well documented and widely adopted in agencies"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Expensive: Pro around $140/month, and add-ons push the bill up fast",
+      "No real free tier, only a very limited account",
+      "Overkill and costly for occasional SEO use",
+      "Many modules: you often use only a fraction"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Recherche de mots-clés et planification de contenu SEO",
+      "Audit technique d'un site et suivi des positions",
+      "Analyse des backlinks et de la stratégie des concurrents",
+      "Suivi de la visibilité d'un site sur la durée"
+    ],
+    "useCasesEn": [
+      "Keyword research and SEO content planning",
+      "Technical site audit and rank tracking",
+      "Backlink and competitor strategy analysis",
+      "Tracking a site's visibility over time"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
