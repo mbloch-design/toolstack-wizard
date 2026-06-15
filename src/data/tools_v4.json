@@ -34103,10 +34103,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "analytics",
-    "shortDescription": "Outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery.",
+    "shortDescription": "Outil gratuit de reporting et dashboards de Google, connecté à GA4, Sheets et BigQuery.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Entièrement gratuit"
+      "free": "Entièrement gratuit, rapports et partage illimités",
+      "paid": "Looker Studio Pro à environ 9$/utilisateur/mois (collaboration, support)"
     },
     "covers": [
       "dashboards",
@@ -34139,37 +34140,67 @@
     "affiliateLink": "https://lookerstudio.google.com",
     "verdict": {
       "keepIf": [
-        "Reporting Google Ads/Analytics, dashboards clients"
+        "Tes données vivent dans l'écosystème Google (GA4, Ads, Sheets, BigQuery)",
+        "Tu veux un reporting client propre et gratuit"
       ],
       "avoidIf": [
-        "Données non-Google — Metabase plus flexible"
+        "Tes données sont surtout ailleurs (base SQL, produit) : Metabase est plus flexible",
+        "Tu as besoin d'un vrai outil BI pour des modèles de données complexes"
       ],
-      "threshold": "Gratuit — toujours pertinent si vous utilisez Google Analytics."
+      "threshold": "La référence gratuite pour du reporting sur des données Google. Si tes données vivent ailleurs, un outil comme Metabase sera plus flexible."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Gratuit, sans limite de rapports ni de partage",
+      "Connexion native aux outils Google (GA4, Ads, Sheets, BigQuery)",
+      "Rapports partageables d'un lien, parfaits pour un livrable client",
+      "Bibliothèque de modèles et de connecteurs pour démarrer vite"
+    ],
+    "cons": [
+      "Surtout pertinent dans l'écosystème Google : les autres sources passent par des connecteurs payants",
+      "Peut ramer sur de gros volumes ou des modèles de données complexes",
+      "Moins flexible qu'un vrai outil BI sur des données SQL",
+      "La version Pro (9$/user/mois) ajoute surtout collaboration et support, pas de la puissance"
+    ],
+    "useCases": [
+      "Reporting mensuel client sur Google Analytics et Google Ads",
+      "Tableau de bord d'acquisition et de trafic",
+      "Visualiser des données issues de Google Sheets",
+      "Partager un dashboard à jour via un simple lien"
+    ],
+    "seo": {
+      "metaDescription": "Looker Studio en 2026 : vraiment gratuit ?, ses limites hors écosystème Google et ses alternatives (Metabase). Le verdict ToolTrim pour le reporting."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "marketing",
+      "data-analyst",
+      "community-manager"
+    ],
     "pricingTiers": {
-      "free": "Entièrement gratuit"
+      "free": "Entièrement gratuit, rapports et partage illimités",
+      "paid": "Looker Studio Pro à environ 9$/utilisateur/mois (collaboration, support)"
     },
-    "longDescription": "Looker Studio, c'est outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery. Entièrement gratuit. Pensé pour les data analysts et les community managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : reporting Google Ads/Analytics, dashboards clients. À éviter si : données non-Google — Metabase plus flexible. Gratuit — toujours pertinent si vous utilisez Google Analytics.",
-    "alternatives": [],
+    "longDescription": "Looker Studio (l'ex Google Data Studio), c'est l'outil de dashboards gratuit de Google. Tu connectes tes sources, surtout celles de l'écosystème Google (GA4, Google Ads, Sheets, BigQuery), et tu construis des rapports visuels partageables d'un simple lien. Pour un reporting client mensuel ou un tableau de bord d'acquisition, c'est rapide à mettre en place et ça ne coûte rien.\n\nSon point fort est aussi sa limite : il est imbattable quand tes données vivent chez Google, mais dès que tu sors de cet écosystème, les connecteurs deviennent payants (via des tiers) ou bancals, et l'outil montre ses limites sur des modèles de données complexes. La version Pro, autour de 9$/utilisateur/mois, ajoute surtout de la collaboration et du support, pas de la puissance.\n\nÀ qui ça sert : aux marketeurs, community managers et freelances qui font du reporting sur des données Google et veulent un livrable propre sans payer. Si tes données sont ailleurs (base SQL, produit), un outil comme Metabase sera plus flexible. Mais pour du reporting Google gratuit, Looker Studio reste la référence.",
+    "alternatives": [
+      "metabase"
+    ],
     "slug": "looker-studio",
-    "shortDescriptionEn": "Google reporting and dashboard tool. Native connection to GA4, Sheets, BigQuery.",
-    "description": "Looker Studio, c'est outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery. Entièrement gratuit. Pensé pour les data analysts et les community managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : reporting Google Ads/Analytics, dashboards clients. À éviter si : données non-Google — Metabase plus flexible. Gratuit — toujours pertinent si vous utilisez Google Analytics.",
-    "longDescriptionEn": "Looker Studio is google reporting and dashboard tool. Native connection to GA4, Sheets, BigQuery. Completely free. Built for data analysts and community managers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Free Google reporting and dashboard tool, connected to GA4, Sheets and BigQuery.",
+    "description": "Looker Studio (l'ex Google Data Studio), c'est l'outil de dashboards gratuit de Google. Tu connectes tes sources, surtout celles de l'écosystème Google (GA4, Google Ads, Sheets, BigQuery), et tu construis des rapports visuels partageables d'un simple lien. Pour un reporting client mensuel ou un tableau de bord d'acquisition, c'est rapide à mettre en place et ça ne coûte rien.\n\nSon point fort est aussi sa limite : il est imbattable quand tes données vivent chez Google, mais dès que tu sors de cet écosystème, les connecteurs deviennent payants (via des tiers) ou bancals, et l'outil montre ses limites sur des modèles de données complexes. La version Pro, autour de 9$/utilisateur/mois, ajoute surtout de la collaboration et du support, pas de la puissance.\n\nÀ qui ça sert : aux marketeurs, community managers et freelances qui font du reporting sur des données Google et veulent un livrable propre sans payer. Si tes données sont ailleurs (base SQL, produit), un outil comme Metabase sera plus flexible. Mais pour du reporting Google gratuit, Looker Studio reste la référence.",
+    "longDescriptionEn": "Looker Studio (formerly Google Data Studio) is Google's free dashboard tool. You connect your sources, especially those in the Google ecosystem (GA4, Google Ads, Sheets, BigQuery), and build visual reports shareable with a single link. For a monthly client report or an acquisition dashboard, it's quick to set up and costs nothing.\n\nIts strength is also its limit: it's unbeatable when your data lives at Google, but the moment you step outside that ecosystem, connectors become paid (via third parties) or flaky, and the tool shows its limits on complex data models. The Pro version, around $9/user/month, mostly adds collaboration and support, not power.\n\nWho it's for: marketers, community managers and freelancers who report on Google data and want a clean deliverable without paying. If your data is elsewhere (SQL database, product), a tool like Metabase will be more flexible. But for free Google reporting, Looker Studio remains the reference.",
+    "pricingEn": {
+      "free": "Completely free, unlimited reports and sharing",
+      "paid": "Looker Studio Pro at around $9/user/month (collaboration, support)"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Entièrement gratuit pour le reporting et le partage",
+        "Looker Studio Pro à environ 9$/utilisateur/mois pour la collaboration et le support"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "lookerstudio.google.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -34182,11 +34213,36 @@
     },
     "websiteUrl": "https://lookerstudio.google.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "question",
+    "verdictEn": {
+      "keepIf": [
+        "Your data lives in the Google ecosystem (GA4, Ads, Sheets, BigQuery)",
+        "You want a clean, free client reporting deliverable"
+      ],
+      "avoidIf": [
+        "Your data is mostly elsewhere (SQL database, product): Metabase is more flexible",
+        "You need a real BI tool for complex data models"
+      ],
+      "threshold": "The free reference for reporting on Google data. If your data lives elsewhere, a tool like Metabase will be more flexible."
+    },
+    "prosEn": [
+      "Free, with no limit on reports or sharing",
+      "Native connection to Google tools (GA4, Ads, Sheets, BigQuery)",
+      "Reports shareable with a link, perfect for a client deliverable",
+      "Library of templates and connectors to start fast"
+    ],
+    "consEn": [
+      "Mostly relevant in the Google ecosystem: other sources need paid connectors",
+      "Can lag on large volumes or complex data models",
+      "Less flexible than a real BI tool on SQL data",
+      "The Pro version ($9/user/month) mostly adds collaboration and support, not power"
+    ],
+    "useCasesEn": [
+      "Monthly client reporting on Google Analytics and Google Ads",
+      "Acquisition and traffic dashboard",
+      "Visualize data from Google Sheets",
+      "Share an up-to-date dashboard via a single link"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide"
@@ -36288,11 +36344,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "analytics",
-    "shortDescription": "Outil de BI open source. Créez des dashboards depuis votre base de données sans SQL.",
-    "defaultMonthlyPrice": 433.01,
+    "shortDescription": "Outil de BI open source et gratuit : crée des dashboards depuis ta base de données sans SQL.",
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Self-hosted gratuit",
-      "paid": "500$/mois (Cloud)"
+      "free": "Gratuit en auto-hébergement (open source)",
+      "paid": "Cloud à partir de 100$/mois (Starter), 575$/mois sur le plan Pro"
     },
     "covers": [
       "data-warehouse",
@@ -36328,55 +36384,109 @@
     "affiliateLink": "https://metabase.com",
     "verdict": {
       "keepIf": [
-        "Dashboards SQL pour équipe non-technique"
+        "Tu veux donner accès aux données à des profils non techniques",
+        "Tes données vivent dans une vraie base et tu peux auto-héberger gratuitement"
       ],
       "avoidIf": [
-        "Looker ou Tableau déjà en place"
+        "Tu fais surtout du reporting Google (GA4, Ads) : Looker Studio gratuit suffit",
+        "Tu ne veux ni gérer d'hébergement ni payer la version Cloud"
       ],
-      "threshold": "Self-hosted gratuit — toujours pertinent pour les startups."
+      "threshold": "Excellent et gratuit en auto-hébergement pour donner accès aux données à une équipe. Si tu ne veux pas gérer d'infra ou que tout est sur Google, Looker Studio est plus simple."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Open source et gratuit en auto-hébergement",
+      "Construis des dashboards et pose des questions sans écrire de SQL",
+      "Donne accès aux données à des profils non techniques",
+      "Se branche sur la plupart des bases (Postgres, MySQL, BigQuery...)"
+    ],
+    "cons": [
+      "Le self-hosting gratuit demande du temps d'administration et un peu d'infra",
+      "La version Cloud est chère (dès 100$/mois, 575$ sur le plan Pro)",
+      "Moins puissant qu'un Looker ou Tableau sur des modèles très complexes",
+      "Pour du reporting purement Google, Looker Studio gratuit suffit"
+    ],
+    "useCases": [
+      "Dashboards internes pour suivre les indicateurs d'un produit ou d'un SaaS",
+      "Donner accès aux données à une équipe non technique",
+      "Explorer une base de données sans écrire de requêtes SQL",
+      "Reporting partagé à partir d'une base Postgres ou MySQL"
+    ],
+    "seo": {
+      "metaDescription": "Metabase en 2026 : gratuit en open source, prix de la version Cloud et alternatives. L'outil de BI sans SQL, analysé par ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "data-analyst",
+      "product-manager",
+      "fondateur-saas"
+    ],
     "pricingTiers": {
-      "free": "Self-hosted gratuit",
-      "paid": "500$/mois (Cloud)"
+      "free": "Gratuit en auto-hébergement (open source)",
+      "paid": "Cloud à partir de 100$/mois (Starter), 575$/mois sur le plan Pro"
     },
-    "longDescription": "Metabase, c'est outil de BI open source. Créez des dashboards depuis votre base de données sans SQL. À partir de 433.01€/mois. Pensé pour les data analysts et les product managers.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : dashboards SQL pour équipe non-technique. À éviter si : looker ou Tableau déjà en place. Self-hosted gratuit — toujours pertinent pour les startups.",
-    "alternatives": [],
+    "longDescription": "Metabase, c'est l'outil de business intelligence open source le plus accessible. Sa promesse : permettre à des gens non techniques d'interroger une base de données et de construire des dashboards sans écrire de SQL, grâce à un éditeur de questions visuel. Tu branches ta base (Postgres, MySQL, BigQuery...), et toute l'équipe peut explorer les données et suivre ses indicateurs.\n\nLe point clé pour le budget : Metabase est gratuit si tu l'héberges toi-même (open source). C'est l'option idéale pour une startup ou un dev à l'aise avec un peu d'infrastructure. Si tu ne veux pas gérer l'hébergement, la version Cloud commence autour de 100$/mois (plan Starter, jusqu'à 5 utilisateurs) et grimpe à 575$/mois sur le plan Pro. Le coût réel du self-hosting, c'est ton temps d'administration, pas une licence.\n\nÀ qui ça convient : aux équipes qui veulent donner accès aux données à des profils non techniques sans payer une licence BI lourde type Looker ou Tableau. Pour du reporting purement Google (GA4, Ads), Looker Studio gratuit suffit. Metabase brille dès que tes données vivent dans une vraie base et que plusieurs personnes doivent les explorer.",
+    "alternatives": [
+      "looker-studio"
+    ],
     "slug": "metabase",
-    "shortDescriptionEn": "Open-source BI tool. Create dashboards from your database without SQL.",
-    "description": "Metabase, c'est outil de BI open source. Créez des dashboards depuis votre base de données sans SQL. À partir de 433.01€/mois. Pensé pour les data analysts et les product managers.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : dashboards SQL pour équipe non-technique. À éviter si : looker ou Tableau déjà en place. Self-hosted gratuit — toujours pertinent pour les startups.",
-    "longDescriptionEn": "Metabase is open-source BI tool. Create dashboards from your database without SQL. Starting at €433.01/month. Built for data analysts and product managers.\n\nEstimated time saving: 6h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Free, open-source BI tool: build dashboards from your database without SQL.",
+    "description": "Metabase, c'est l'outil de business intelligence open source le plus accessible. Sa promesse : permettre à des gens non techniques d'interroger une base de données et de construire des dashboards sans écrire de SQL, grâce à un éditeur de questions visuel. Tu branches ta base (Postgres, MySQL, BigQuery...), et toute l'équipe peut explorer les données et suivre ses indicateurs.\n\nLe point clé pour le budget : Metabase est gratuit si tu l'héberges toi-même (open source). C'est l'option idéale pour une startup ou un dev à l'aise avec un peu d'infrastructure. Si tu ne veux pas gérer l'hébergement, la version Cloud commence autour de 100$/mois (plan Starter, jusqu'à 5 utilisateurs) et grimpe à 575$/mois sur le plan Pro. Le coût réel du self-hosting, c'est ton temps d'administration, pas une licence.\n\nÀ qui ça convient : aux équipes qui veulent donner accès aux données à des profils non techniques sans payer une licence BI lourde type Looker ou Tableau. Pour du reporting purement Google (GA4, Ads), Looker Studio gratuit suffit. Metabase brille dès que tes données vivent dans une vraie base et que plusieurs personnes doivent les explorer.",
+    "longDescriptionEn": "Metabase is the most accessible open-source business intelligence tool. Its promise: let non-technical people query a database and build dashboards without writing SQL, through a visual question editor. You connect your database (Postgres, MySQL, BigQuery...), and the whole team can explore the data and track its metrics.\n\nThe key budget point: Metabase is free if you host it yourself (open source). It's the ideal option for a startup or a developer comfortable with a bit of infrastructure. If you don't want to manage hosting, the Cloud version starts around $100/month (Starter plan, up to 5 users) and climbs to $575/month on the Pro plan. The real cost of self-hosting is your admin time, not a license.\n\nWho it suits: teams that want to give data access to non-technical profiles without paying for a heavy BI license like Looker or Tableau. For purely Google reporting (GA4, Ads), free Looker Studio is enough. Metabase shines once your data lives in a real database and several people need to explore it.",
+    "pricingEn": {
+      "free": "Free when self-hosted (open source)",
+      "paid": "Cloud from $100/month (Starter), $575/month on the Pro plan"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Gratuit en auto-hébergement (open source)",
+        "Cloud à partir de 100$/mois (Starter, 5 utilisateurs), 575$/mois sur le plan Pro"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "metabase.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Open source (gratuit)",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.metabase.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 433.01
+      "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://metabase.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You want to give data access to non-technical profiles",
+        "Your data lives in a real database and you can self-host for free"
+      ],
+      "avoidIf": [
+        "You mostly do Google reporting (GA4, Ads): free Looker Studio is enough",
+        "You want neither to manage hosting nor to pay for the Cloud version"
+      ],
+      "threshold": "Excellent and free when self-hosted to give a team access to data. If you don't want to manage infra or everything is on Google, Looker Studio is simpler."
+    },
+    "prosEn": [
+      "Open source and free when self-hosted",
+      "Build dashboards and ask questions without writing SQL",
+      "Gives data access to non-technical profiles",
+      "Connects to most databases (Postgres, MySQL, BigQuery...)"
+    ],
+    "consEn": [
+      "Free self-hosting requires admin time and a bit of infrastructure",
+      "The Cloud version is expensive (from $100/month, $575 on Pro)",
+      "Less powerful than Looker or Tableau on very complex models",
+      "For purely Google reporting, free Looker Studio is enough"
+    ],
+    "useCasesEn": [
+      "Internal dashboards to track a product's or SaaS's metrics",
+      "Give data access to a non-technical team",
+      "Explore a database without writing SQL queries",
+      "Shared reporting from a Postgres or MySQL database"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
