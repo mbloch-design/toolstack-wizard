@@ -14500,63 +14500,110 @@
     "slug": "cargo-site",
     "name": "Cargo Site",
     "category": "nocode-web",
-    "shortDescription": "Portfolios créatifs avec design expérimental.",
-    "shortDescriptionEn": "Creative portfolios with experimental design.",
-    "description": "Cargo Site, c'est portfolios créatifs avec design expérimental. À partir de 13€/mois.\n\nTemplates créatifs et expérimentaux. communauté de designers reconnue, typographie et animations avancées. Effet galerie d'art numérique. Concrètement : créer un portfolio artistique unique. Ou encore : présenter des projets créatifs avec impact visuel.\n\nÀ garder si : designer ou artiste cherchant un portfolio unique ou esthétique et originalité prioritaires. À éviter si : site business classique ou sEO et performance critiques. Limite principale : pas pour les sites fonctionnels/business. Le bon choix si votre portfolio EST votre produit et doit impressionner visuellement.",
-    "longDescription": "Cargo Site, c'est portfolios créatifs avec design expérimental. À partir de 13€/mois.\n\nTemplates créatifs et expérimentaux. communauté de designers reconnue, typographie et animations avancées. Effet galerie d'art numérique. Concrètement : créer un portfolio artistique unique. Ou encore : présenter des projets créatifs avec impact visuel.\n\nÀ garder si : designer ou artiste cherchant un portfolio unique ou esthétique et originalité prioritaires. À éviter si : site business classique ou sEO et performance critiques. Limite principale : pas pour les sites fonctionnels/business. Le bon choix si votre portfolio EST votre produit et doit impressionner visuellement.",
-    "longDescriptionEn": "Cargo Site is creative portfolios with experimental design. Starting at €13/month.",
+    "shortDescription": "Créateur de portfolios créatifs au design expérimental, pour artistes et designers.",
+    "shortDescriptionEn": "Builder for creative, experimental portfolios, made for artists and designers.",
+    "description": "Cargo, c'est un constructeur de sites pensé pour une chose : les portfolios créatifs qui sortent du moule. Là où Squarespace ou Webflow visent le site business propre, Cargo assume le côté galerie d'art numérique, avec une typographie soignée, des mises en page éditoriales et des templates qui ont une vraie identité. C'est l'outil de prédilection d'une partie de la communauté design, photo et direction artistique.\n\nLe modèle est clair : tu construis ton site gratuitement, mais en privé. Pour le publier et le rendre visible, il faut passer payant, autour de 14$/mois en facturation annuelle (19$ au mois), nom de domaine personnalisé inclus. Une boutique légère est possible via un module Commerce en supplément.\n\nÀ qui ça s'adresse vraiment : si ton portfolio EST ton produit et doit impressionner au premier coup d'œil, Cargo est taillé pour ça. Si tu veux un site business classique, optimisé SEO et performance, ou une vraie boutique, tu seras mieux servi ailleurs (Squarespace, Webflow). Cargo, c'est l'esthétique d'abord.",
+    "longDescription": "Cargo, c'est un constructeur de sites pensé pour une chose : les portfolios créatifs qui sortent du moule. Là où Squarespace ou Webflow visent le site business propre, Cargo assume le côté galerie d'art numérique, avec une typographie soignée, des mises en page éditoriales et des templates qui ont une vraie identité. C'est l'outil de prédilection d'une partie de la communauté design, photo et direction artistique.\n\nLe modèle est clair : tu construis ton site gratuitement, mais en privé. Pour le publier et le rendre visible, il faut passer payant, autour de 14$/mois en facturation annuelle (19$ au mois), nom de domaine personnalisé inclus. Une boutique légère est possible via un module Commerce en supplément.\n\nÀ qui ça s'adresse vraiment : si ton portfolio EST ton produit et doit impressionner au premier coup d'œil, Cargo est taillé pour ça. Si tu veux un site business classique, optimisé SEO et performance, ou une vraie boutique, tu seras mieux servi ailleurs (Squarespace, Webflow). Cargo, c'est l'esthétique d'abord.",
+    "longDescriptionEn": "Cargo is a site builder made for one thing: creative portfolios that break the mold. Where Squarespace or Webflow aim for the clean business site, Cargo leans into the digital art gallery feel, with careful typography, editorial layouts and templates that have a real identity. It's the go-to tool for part of the design, photo and art direction community.\n\nThe model is clear: you build your site for free, but privately. To publish it and make it visible, you go paid, around $14/month billed annually ($19 monthly), custom domain included. A light shop is possible via an add-on Commerce module.\n\nWho it's really for: if your portfolio IS your product and has to impress at first glance, Cargo is built for that. If you want a classic business site, SEO and performance optimized, or a real store, you'll be better served elsewhere (Squarespace, Webflow). Cargo is aesthetics first.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "À partir de 13$/mois"
+      "free": "Construction gratuite en privé, publication payante",
+      "paid": "Environ 14$/mois en annuel (19$ au mois) pour publier, domaine inclus"
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 13,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "Build for free in private, publishing is paid",
+      "paid": "Around $14/month annually ($19 monthly) to publish, domain included"
+    },
+    "defaultMonthlyPrice": 14,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 14,
+      "compare_plan_name": "Publication",
+      "verified_on": "2026-06-15",
+      "source_domain": "cargo.site",
+      "official_source_url": "https://cargo.site/information",
+      "cautions": [
+        "Construction gratuite mais en privé : la publication est payante",
+        "Environ 14$/mois en facturation annuelle (19$ au mois), domaine inclus",
+        "Module Commerce en supplément pour vendre"
+      ]
+    },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://cargo.site",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Cargo (cargo.site) en 2026 : prix, plan gratuit et alternatives pour un portfolio créatif. Pour qui c'est le bon choix, par ToolTrim."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
+    "soloRelevance": "Taillé pour un designer, photographe ou artiste solo dont le portfolio est l'outil de vente. Esthétique d'abord, business ensuite.",
+    "teamRelevance": "Peu pertinent en équipe ou pour un site d'entreprise : Cargo vise le portfolio individuel, pas le site collaboratif ou marchand.",
+    "relevantFor": [
+      "designer",
+      "creator"
+    ],
+    "alternatives": [
+      "squarespace",
+      "format",
+      "pixieset"
+    ],
     "verdict": {
       "keepIf": [
-        "Designer ou artiste cherchant un portfolio unique",
-        "Esthétique et originalité prioritaires",
-        "Communauté créative internationale"
+        "Tu es designer, photographe ou artiste et ton portfolio doit se démarquer visuellement",
+        "L'esthétique et l'originalité priment sur le SEO et la performance"
       ],
       "avoidIf": [
-        "Site business classique",
-        "SEO et performance critiques",
-        "Non-designer"
+        "Tu veux un site business classique, optimisé SEO et performance",
+        "Tu as besoin d'une vraie boutique en ligne ou de fonctions non-créatives"
       ],
-      "threshold": "Le bon choix si votre portfolio EST votre produit et doit impressionner visuellement."
+      "threshold": "Le bon choix si ton portfolio EST ton produit et doit impressionner au premier coup d'œil. Pour un site business ou une boutique, Squarespace ou Webflow sont plus adaptés."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You're a designer, photographer or artist and your portfolio has to stand out visually",
+        "Aesthetics and originality matter more than SEO and performance"
+      ],
+      "avoidIf": [
+        "You want a classic business site, SEO and performance optimized",
+        "You need a real online store or non-creative features"
+      ],
+      "threshold": "The right call if your portfolio IS your product and must impress at first glance. For a business site or a store, Squarespace or Webflow fit better."
+    },
     "pros": [
-      "Templates créatifs et expérimentaux",
-      "Communauté de designers reconnue",
-      "Typographie et animations avancées",
-      "Effet galerie d'art numérique"
+      "Templates au design éditorial et expérimental, loin des sites génériques",
+      "Typographie soignée et animations avancées par défaut",
+      "Communauté créative reconnue (design, photo, direction artistique)",
+      "Effet galerie qui met les visuels en valeur"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Editorial, experimental template design, far from generic sites",
+      "Careful typography and advanced animations by default",
+      "Recognized creative community (design, photo, art direction)",
+      "Gallery feel that puts visuals front and center"
+    ],
     "cons": [
-      "Pas pour les sites fonctionnels/business",
-      "Courbe d'apprentissage",
-      "Options e-commerce limitées",
-      "Performance variable selon le template"
+      "Pas taillé pour un site business : SEO et performance ne sont pas sa priorité",
+      "Il faut payer (environ 14$/mois) pour publier un site public",
+      "Options e-commerce limitées, via un module Commerce en supplément",
+      "Courbe d'apprentissage sur la mise en page libre"
     ],
-    "consEn": null,
+    "consEn": [
+      "Not built for a business site: SEO and performance aren't its priority",
+      "You have to pay (around $14/month) to publish a public site",
+      "Limited e-commerce, via an add-on Commerce module",
+      "Learning curve on the free-form layout"
+    ],
     "useCases": [
-      "Créer un portfolio artistique unique",
-      "Présenter des projets créatifs avec impact visuel",
+      "Créer un portfolio artistique unique qui se démarque",
+      "Présenter des projets de design ou de photo avec un fort impact visuel",
+      "Site vitrine pour une direction artistique ou un studio créatif",
       "Se démarquer dans la communauté design internationale"
     ],
-    "useCasesEn": null,
+    "useCasesEn": [
+      "Build a unique artistic portfolio that stands out",
+      "Showcase design or photo projects with strong visual impact",
+      "Showcase site for an art direction or creative studio",
+      "Stand out in the international design community"
+    ],
     "personas": [
       "SOFIA"
     ],
@@ -14570,7 +14617,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -38494,36 +38541,111 @@
     "slug": "neon",
     "name": "Neon",
     "category": "nocode-web",
-    "shortDescription": "Base de données Postgres serverless",
-    "shortDescriptionEn": "Serverless Postgres database.",
-    "description": "Neon, c'est base de données Postgres serverless. Entièrement gratuit.",
-    "longDescription": "Neon, c'est base de données Postgres serverless. Entièrement gratuit.",
-    "longDescriptionEn": "Neon is serverless Postgres database. Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Postgres serverless avec branching de base de données et scale-to-zero.",
+    "shortDescriptionEn": "Serverless Postgres with database branching and scale-to-zero.",
+    "description": "Neon, c'est du Postgres, mais en version serverless : la base se provisionne en quelques secondes, se met à l'échelle automatiquement et passe à zéro quand personne ne l'utilise (scale-to-zero), donc tu ne paies pas pour une base qui dort. Sa fonctionnalité signature, c'est le branching : tu crées une copie instantanée de ta base comme une branche Git, pour tester une migration ou faire tourner un environnement de preview, sans dupliquer manuellement les données.\n\nPour un indie hacker ou un dev qui lance un SaaS, c'est très pratique : l'offre gratuite suffit à faire tourner un vrai projet (jusqu'à 100 heures de calcul et 0,5 Go par mois), et les tarifs payants démarrent autour de 5$/mois en facturation à l'usage. En 2026, les prix de stockage et de calcul ont nettement baissé, ce qui le rend encore plus compétitif.\n\nLe comparatif naturel, c'est Supabase. Neon est une base Postgres pure, là où Supabase est une plateforme complète (auth, stockage, API, temps réel) construite autour de Postgres. Si tu veux juste une base managée propre, Neon est idéal. Si tu veux un backend tout-en-un, Supabase répond à plus de besoins d'un coup. À noter : Neon a été racheté par Databricks en 2025, ce qui ancre son avenir côté data.",
+    "longDescription": "Neon, c'est du Postgres, mais en version serverless : la base se provisionne en quelques secondes, se met à l'échelle automatiquement et passe à zéro quand personne ne l'utilise (scale-to-zero), donc tu ne paies pas pour une base qui dort. Sa fonctionnalité signature, c'est le branching : tu crées une copie instantanée de ta base comme une branche Git, pour tester une migration ou faire tourner un environnement de preview, sans dupliquer manuellement les données.\n\nPour un indie hacker ou un dev qui lance un SaaS, c'est très pratique : l'offre gratuite suffit à faire tourner un vrai projet (jusqu'à 100 heures de calcul et 0,5 Go par mois), et les tarifs payants démarrent autour de 5$/mois en facturation à l'usage. En 2026, les prix de stockage et de calcul ont nettement baissé, ce qui le rend encore plus compétitif.\n\nLe comparatif naturel, c'est Supabase. Neon est une base Postgres pure, là où Supabase est une plateforme complète (auth, stockage, API, temps réel) construite autour de Postgres. Si tu veux juste une base managée propre, Neon est idéal. Si tu veux un backend tout-en-un, Supabase répond à plus de besoins d'un coup. À noter : Neon a été racheté par Databricks en 2025, ce qui ancre son avenir côté data.",
+    "longDescriptionEn": "Neon is Postgres, but serverless: the database provisions in seconds, scales automatically, and drops to zero when nobody's using it (scale-to-zero), so you don't pay for an idle database. Its signature feature is branching: you create an instant copy of your database like a Git branch, to test a migration or run a preview environment, without manually duplicating data.\n\nFor an indie hacker or a developer launching a SaaS, it's very handy: the free tier is enough to run a real project (up to 100 compute hours and 0.5 GB per month), and paid pricing starts around $5/month on a usage basis. In 2026, storage and compute prices dropped sharply, making it even more competitive.\n\nThe natural comparison is Supabase. Neon is a pure Postgres database, while Supabase is a full platform (auth, storage, API, realtime) built around Postgres. If you just want a clean managed database, Neon is ideal. If you want an all-in-one backend, Supabase covers more needs at once. Worth noting: Neon was acquired by Databricks in 2025, which anchors its future on the data side.",
+    "pricing": {
+      "free": "100 heures de calcul et 0,5 Go par mois, scale-to-zero",
+      "paid": "Plan Launch à partir d'environ 5$/mois, facturation à l'usage"
+    },
+    "pricingEn": {
+      "free": "100 compute hours and 0.5 GB per month, scale-to-zero",
+      "paid": "Launch plan from around $5/month, usage-based billing"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "verified_on": "2026-06-15",
+      "source_domain": "neon.tech",
+      "official_source_url": "https://neon.tech/pricing",
+      "cautions": [
+        "Offre gratuite : 100 heures de calcul et 0,5 Go par mois",
+        "Plan Launch à partir d'environ 5$/mois en facturation à l'usage",
+        "Tarif à l'usage : la facture varie selon le calcul et le stockage consommés"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://neon.tech",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Neon en 2026 : prix, plan gratuit et comparaison avec Supabase. Le Postgres serverless avec branching, analysé par ToolTrim pour les devs et indie hackers."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Idéal pour un dev solo ou un indie hacker : l'offre gratuite fait tourner un vrai projet et le branching simplifie les tests.",
+    "teamRelevance": "En équipe, les branches de base par pull request fluidifient les previews. La facturation à l'usage demande un suivi pour rester prévisible.",
+    "relevantFor": [
+      "dev-fullstack",
+      "indie",
+      "fondateur-saas"
+    ],
+    "alternatives": [
+      "supabase"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux une base Postgres managée, moderne et gratuite pour démarrer",
+        "Le branching et les environnements de preview font partie de ton workflow"
+      ],
+      "avoidIf": [
+        "Tu veux un backend tout-en-un (auth, stockage, API) : Supabase est plus complet",
+        "Tu as besoin d'une facture parfaitement prévisible : l'usage peut varier"
+      ],
+      "threshold": "Excellent choix pour une base Postgres serverless gratuite à démarrer, surtout si le branching t'intéresse. Pour un backend complet avec auth et stockage, regarde Supabase."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a modern, managed Postgres database, free to start",
+        "Branching and preview environments are part of your workflow"
+      ],
+      "avoidIf": [
+        "You want an all-in-one backend (auth, storage, API): Supabase is more complete",
+        "You need a perfectly predictable bill: usage can vary"
+      ],
+      "threshold": "Excellent choice for a free serverless Postgres database to start with, especially if branching appeals to you. For a full backend with auth and storage, look at Supabase."
+    },
+    "pros": [
+      "Branching de base de données : une copie instantanée pour tester une migration ou une preview",
+      "Scale-to-zero : tu ne paies pas quand la base est inactive",
+      "Offre gratuite suffisante pour faire tourner un vrai projet",
+      "Postgres standard : pas de verrou propriétaire sur le moteur"
+    ],
+    "prosEn": [
+      "Database branching: an instant copy to test a migration or a preview",
+      "Scale-to-zero: you don't pay when the database is idle",
+      "Free tier generous enough to run a real project",
+      "Standard Postgres: no proprietary lock-in on the engine"
+    ],
+    "cons": [
+      "Tarif à l'usage : la facture peut grimper et devenir difficile à prédire sur un projet qui décolle",
+      "Base seule : pas d'auth ni de stockage intégrés comme chez Supabase",
+      "Le scale-to-zero ajoute une latence au premier appel après une mise en veille",
+      "Avenir lié à Databricks depuis le rachat de 2025, à surveiller"
+    ],
+    "consEn": [
+      "Usage-based pricing: the bill can climb and get hard to predict as a project grows",
+      "Database only: no built-in auth or storage like Supabase",
+      "Scale-to-zero adds latency on the first call after idling",
+      "Future tied to Databricks since the 2025 acquisition, worth watching"
+    ],
+    "useCases": [
+      "Base de données d'un SaaS ou d'un side-project en production",
+      "Environnements de preview avec une branche de base par pull request",
+      "Tester une migration sur une copie instantanée avant de la passer en prod",
+      "Démarrer gratuitement un projet Postgres sans gérer de serveur"
+    ],
+    "useCasesEn": [
+      "Database for a SaaS or a side-project in production",
+      "Preview environments with one database branch per pull request",
+      "Test a migration on an instant copy before shipping it to prod",
+      "Start a Postgres project for free without managing a server"
+    ],
     "personas": [],
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -38533,7 +38655,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -63610,34 +63732,109 @@
     "slug": "zoom-pro",
     "name": "Zoom Pro",
     "category": "communication",
-    "shortDescription": null,
-    "shortDescriptionEn": "Zoom paid plan with extended meeting duration and admin controls.",
-    "description": null,
-    "longDescription": null,
-    "longDescriptionEn": null,
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Plan payant de Zoom : réunions sans limite de 40 minutes, enregistrement cloud et IA.",
+    "shortDescriptionEn": "Zoom's paid plan: no 40-minute limit, cloud recording and AI Companion.",
+    "description": "Zoom Pro, c'est le premier palier payant de Zoom, et la vraie raison d'y passer tient en une phrase : faire sauter la limite de 40 minutes du plan gratuit. Sur la version gratuite, toute réunion se coupe au bout de 40 minutes, même en tête-à-tête. Avec Pro, tu montes jusqu'à 30 heures par réunion, 100 participants, et tu débloques l'enregistrement dans le cloud ainsi que l'AI Companion (résumés et notes automatiques).\n\nPour un consultant, un coach ou un freelance qui enchaîne les appels clients, c'est souvent l'abonnement qui se justifie le plus vite : un seul rendez-vous coupé en plein milieu suffit à comprendre pourquoi. Le prix tourne autour de 13,33$/utilisateur/mois en facturation annuelle (environ 17$ au mois).\n\nLa vraie question, c'est l'alternative. Google Meet fait l'essentiel gratuitement si tu vis déjà dans l'écosystème Google, avec ses propres limites de durée. Zoom garde l'avantage sur la qualité d'appel, la stabilité et les fonctions de webinaire. Si Zoom est déjà le standard chez tes clients, Pro est un achat sans douleur. Sinon, teste d'abord si le gratuit ou Meet te suffisent.",
+    "longDescription": "Zoom Pro, c'est le premier palier payant de Zoom, et la vraie raison d'y passer tient en une phrase : faire sauter la limite de 40 minutes du plan gratuit. Sur la version gratuite, toute réunion se coupe au bout de 40 minutes, même en tête-à-tête. Avec Pro, tu montes jusqu'à 30 heures par réunion, 100 participants, et tu débloques l'enregistrement dans le cloud ainsi que l'AI Companion (résumés et notes automatiques).\n\nPour un consultant, un coach ou un freelance qui enchaîne les appels clients, c'est souvent l'abonnement qui se justifie le plus vite : un seul rendez-vous coupé en plein milieu suffit à comprendre pourquoi. Le prix tourne autour de 13,33$/utilisateur/mois en facturation annuelle (environ 17$ au mois).\n\nLa vraie question, c'est l'alternative. Google Meet fait l'essentiel gratuitement si tu vis déjà dans l'écosystème Google, avec ses propres limites de durée. Zoom garde l'avantage sur la qualité d'appel, la stabilité et les fonctions de webinaire. Si Zoom est déjà le standard chez tes clients, Pro est un achat sans douleur. Sinon, teste d'abord si le gratuit ou Meet te suffisent.",
+    "longDescriptionEn": "Zoom Pro is Zoom's first paid tier, and the real reason to upgrade fits in one sentence: it removes the free plan's 40-minute limit. On the free version, every meeting cuts off after 40 minutes, even one-on-one. With Pro, you go up to 30 hours per meeting, 100 participants, and you unlock cloud recording plus the AI Companion (automatic summaries and notes).\n\nFor a consultant, a coach or a freelancer running back-to-back client calls, it's often the subscription that pays for itself fastest: one meeting cut off mid-conversation is enough to see why. The price is around $13.33/user/month billed annually (about $17 monthly).\n\nThe real question is the alternative. Google Meet does the essentials for free if you already live in Google's ecosystem, with its own duration limits. Zoom keeps the edge on call quality, stability and webinar features. If Zoom is already the standard with your clients, Pro is a painless buy. Otherwise, first test whether the free plan or Meet are enough.",
+    "pricing": {
+      "free": "Plan gratuit limité à 40 minutes par réunion",
+      "paid": "Pro à environ 13,33$/utilisateur/mois (facturation annuelle)"
+    },
+    "pricingEn": {
+      "free": "Free plan limited to 40 minutes per meeting",
+      "paid": "Pro at around $13.33/user/month (billed annually)"
+    },
     "defaultMonthlyPrice": 14,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 13.33,
+      "compare_plan_name": "Pro",
+      "verified_on": "2026-06-15",
+      "source_domain": "zoom.us",
+      "official_source_url": "https://zoom.us/pricing",
+      "cautions": [
+        "Plan gratuit limité à 40 minutes par réunion",
+        "Pro à environ 13,33$/utilisateur/mois en facturation annuelle (env. 17$ au mois)",
+        "Facturé par utilisateur : le coût grimpe avec la taille de l'équipe"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://zoom.us/pricing",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Zoom Pro en 2026 : prix réel, ce que le plan payant ajoute au gratuit (fin des 40 minutes, enregistrement, IA) et ses alternatives. Le verdict ToolTrim."
+    },
     "articles": [],
     "covers": [],
-    "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "freeAlternative": "Google Meet",
+    "soloRelevance": "Se justifie vite pour un freelance qui enchaîne les appels clients dépassant 40 minutes. Sinon, le plan gratuit ou Google Meet suffisent.",
+    "teamRelevance": "Facturé par utilisateur, le coût grimpe en équipe. Pertinent si Zoom est déjà le standard chez vos clients et partenaires.",
+    "relevantFor": [
+      "consultant-b2b",
+      "coach-formateur",
+      "freelance"
+    ],
+    "alternatives": [
+      "google-meet"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu enchaînes des appels clients qui dépassent 40 minutes",
+        "Zoom est déjà le standard chez tes clients et tu veux l'enregistrement cloud"
+      ],
+      "avoidIf": [
+        "Tes réunions sont courtes : le plan gratuit de Zoom suffit",
+        "Tu vis dans l'écosystème Google : Meet couvre l'essentiel gratuitement"
+      ],
+      "threshold": "L'abonnement se rentabilise dès le premier rendez-vous client coupé en plein milieu. Si tes appels restent courts ou que Google Meet te suffit, le gratuit fait le travail."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You run back-to-back client calls that go past 40 minutes",
+        "Zoom is already the standard with your clients and you want cloud recording"
+      ],
+      "avoidIf": [
+        "Your meetings are short: Zoom's free plan is enough",
+        "You live in Google's ecosystem: Meet covers the essentials for free"
+      ],
+      "threshold": "The subscription pays for itself the first time a client call gets cut off mid-conversation. If your calls stay short or Google Meet is enough, the free plan does the job."
+    },
+    "pros": [
+      "Fin de la limite de 40 minutes : réunions jusqu'à 30 heures",
+      "Enregistrement dans le cloud, pratique pour partager un appel client après coup",
+      "AI Companion inclus : résumés et notes de réunion automatiques",
+      "Standard de fait : tes clients ont déjà Zoom, aucun frein à l'usage"
+    ],
+    "prosEn": [
+      "No more 40-minute limit: meetings up to 30 hours",
+      "Cloud recording, handy to share a client call afterward",
+      "AI Companion included: automatic meeting summaries and notes",
+      "De facto standard: your clients already have Zoom, no friction"
+    ],
+    "cons": [
+      "Payant pour lever une limite que des concurrents n'imposent pas de la même façon",
+      "Facturé par utilisateur : le coût grimpe vite pour une petite équipe",
+      "Stockage cloud limité, vite saturé si tu enregistres beaucoup",
+      "Google Meet couvre une bonne partie du besoin gratuitement dans l'écosystème Google"
+    ],
+    "consEn": [
+      "Paid to lift a limit competitors don't impose the same way",
+      "Billed per user: the cost climbs fast for a small team",
+      "Limited cloud storage, filled quickly if you record a lot",
+      "Google Meet covers much of the need for free within Google's ecosystem"
+    ],
+    "useCases": [
+      "Rendez-vous clients longs sans coupure à 40 minutes",
+      "Ateliers, formations et coaching en visioconférence",
+      "Enregistrer un appel pour le repartager ou le retranscrire ensuite",
+      "Webinaires et réunions à plus de participants"
+    ],
+    "useCasesEn": [
+      "Long client meetings with no 40-minute cutoff",
+      "Workshops, training and coaching over video",
+      "Record a call to reshare or transcribe it later",
+      "Webinars and meetings with more participants"
+    ],
     "personas": [],
     "tool_type": "core",
     "substitutable": true,
@@ -63649,7 +63846,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -83848,85 +84045,114 @@
     "slug": "dart",
     "name": "Dart",
     "category": "nocode-web",
-    "shortDescription": "Langage de programmation utilisé par Flutter.",
-    "shortDescriptionEn": "Programming language used by Flutter.",
-    "description": "Langage de programmation utilisé par Flutter. À intégrer dans une stack dev seulement si son rôle est clair dans la chaîne de livraison.",
-    "longDescription": "Langage de programmation utilisé par Flutter.",
-    "longDescriptionEn": "Programming language used by Flutter.",
+    "shortDescription": "Langage de programmation open source de Google, utilisé par le framework Flutter.",
+    "shortDescriptionEn": "Google's open-source programming language, used by the Flutter framework.",
+    "description": "Dart est un langage de programmation open source créé par Google. Sa particularité, c'est qu'on le choisit rarement pour lui-même : on l'adopte parce qu'on développe avec Flutter, le framework de Google pour créer des apps mobiles, web et desktop à partir d'une seule base de code. Hors de l'écosystème Flutter, Dart reste assez confidentiel.\n\nLe langage est gratuit et open source, sans coût de licence. C'est moderne, typé, plutôt agréable à écrire, avec une compilation rapide et un rechargement à chaud pratique en développement mobile. Si tu fais du Flutter, Dart n'est pas une option : c'est le langage par défaut, et il fait bien le travail.\n\nLa question qui revient, c'est l'alternative. Si tu veux du multiplateforme sans passer par Dart, l'option la plus courante est React Native (en JavaScript ou TypeScript), suivie de Kotlin Multiplatform côté natif. Mais soyons clairs : choisir une alternative à Dart, ça revient presque toujours à choisir une alternative à Flutter. Le langage seul a peu de sens à remplacer si tu restes sur Flutter.",
+    "longDescription": "Dart est un langage de programmation open source créé par Google. Sa particularité, c'est qu'on le choisit rarement pour lui-même : on l'adopte parce qu'on développe avec Flutter, le framework de Google pour créer des apps mobiles, web et desktop à partir d'une seule base de code. Hors de l'écosystème Flutter, Dart reste assez confidentiel.\n\nLe langage est gratuit et open source, sans coût de licence. C'est moderne, typé, plutôt agréable à écrire, avec une compilation rapide et un rechargement à chaud pratique en développement mobile. Si tu fais du Flutter, Dart n'est pas une option : c'est le langage par défaut, et il fait bien le travail.\n\nLa question qui revient, c'est l'alternative. Si tu veux du multiplateforme sans passer par Dart, l'option la plus courante est React Native (en JavaScript ou TypeScript), suivie de Kotlin Multiplatform côté natif. Mais soyons clairs : choisir une alternative à Dart, ça revient presque toujours à choisir une alternative à Flutter. Le langage seul a peu de sens à remplacer si tu restes sur Flutter.",
+    "longDescriptionEn": "Dart is an open-source programming language created by Google. The thing about it is that you rarely pick it for its own sake: you adopt it because you build with Flutter, Google's framework for creating mobile, web and desktop apps from a single codebase. Outside the Flutter ecosystem, Dart stays fairly niche.\n\nThe language is free and open source, with no licensing cost. It's modern, typed, fairly pleasant to write, with fast compilation and convenient hot reload for mobile development. If you do Flutter, Dart isn't an option: it's the default language, and it does the job well.\n\nThe recurring question is the alternative. If you want cross-platform without going through Dart, the most common option is React Native (in JavaScript or TypeScript), followed by Kotlin Multiplatform on the native side. But let's be clear: choosing an alternative to Dart almost always means choosing an alternative to Flutter. Replacing the language alone makes little sense if you stay on Flutter.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Open source et gratuit (licence BSD)",
+      "paid": ""
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Free and open source (BSD license)",
+      "paid": ""
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Gratuit",
+      "verified_on": "2026-06-15",
+      "source_domain": "dart.dev",
+      "official_source_url": "https://dart.dev",
+      "cautions": [
+        "Langage open source et gratuit, sans coût de licence",
+        "Adopté avant tout pour développer avec Flutter"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://dart.dev",
     "logo": "",
     "seo": {
-      "metaDescription": "Dart sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Dart en 2026 : à quoi sert le langage de Flutter, ses alternatives (React Native, TypeScript) et quand il est pertinent. Le point ToolTrim pour les devs."
     },
     "pros": [
-      "Rôle clair dans une stack métier",
-      "Écosystème reconnu",
-      "Pertinent pour livrer plus proprement"
+      "Open source et gratuit, sans coût de licence",
+      "Langage moderne et typé, agréable à écrire",
+      "Compilation rapide et rechargement à chaud pour le développement mobile",
+      "Parfaitement intégré à Flutter, son terrain de jeu naturel"
     ],
     "prosEn": [
-      "Clear role in a professional stack",
-      "Recognized ecosystem",
-      "Useful for cleaner delivery"
+      "Open source and free, no licensing cost",
+      "Modern, typed language, pleasant to write",
+      "Fast compilation and hot reload for mobile development",
+      "Perfectly integrated with Flutter, its natural home"
     ],
     "cons": [
-      "Peut devenir inutile si le besoin est ponctuel",
-      "À éviter sans usage récurrent",
-      "Prix ou complexité à vérifier selon contexte"
+      "Très lié à Flutter : peu d'usage en dehors de cet écosystème",
+      "Communauté plus petite que JavaScript, TypeScript ou Python",
+      "Moins de débouchés et de librairies hors mobile",
+      "Remplacer Dart revient le plus souvent à quitter Flutter"
     ],
     "consEn": [
-      "Can be unnecessary for occasional use",
-      "Avoid without recurring usage",
-      "Pricing or complexity depends on context"
+      "Tightly tied to Flutter: little use outside that ecosystem",
+      "Smaller community than JavaScript, TypeScript or Python",
+      "Fewer jobs and libraries outside mobile",
+      "Replacing Dart usually means leaving Flutter"
     ],
     "useCases": [
-      "Stack développeur freelance",
-      "Production client",
-      "Maintenance et documentation"
+      "Développer une app mobile multiplateforme avec Flutter",
+      "Partager une seule base de code entre iOS et Android",
+      "Créer une app web ou desktop via Flutter",
+      "Apprendre un langage typé moderne pour le mobile"
     ],
     "useCasesEn": [
-      "Freelance developer stack",
-      "Client delivery",
-      "Maintenance and documentation"
+      "Build a cross-platform mobile app with Flutter",
+      "Share a single codebase between iOS and Android",
+      "Create a web or desktop app via Flutter",
+      "Learn a modern typed language for mobile"
     ],
     "covers": [
       "nocode-web"
     ],
     "relevantFor": [
+      "dev-mobile",
+      "dev-fullstack",
       "dev-freelance"
     ],
     "personas": [
       "THEO"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "react"
+    ],
     "verdict": {
       "keepIf": [
-        "Usage récurrent",
-        "Impact direct sur le livrable",
-        "Rôle documenté dans la stack"
+        "Tu développes avec Flutter : Dart est le choix par défaut et il fait le job",
+        "Tu veux une seule base de code pour iOS, Android, web et desktop"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Double emploi avec un outil déjà en place"
+        "Tu ne fais pas de Flutter : Dart a peu d'intérêt en dehors",
+        "Tu veux un langage à large écosystème généraliste : TypeScript est plus polyvalent"
       ],
-      "threshold": "À garder si l’outil réduit un risque, accélère une livraison ou clarifie la maintenance."
+      "threshold": "Pertinent si et seulement si tu es dans l'écosystème Flutter. Sinon, choisir une alternative à Dart revient à choisir une alternative à Flutter, comme React Native."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You build with Flutter: Dart is the default choice and it does the job",
+        "You want a single codebase for iOS, Android, web and desktop"
+      ],
+      "avoidIf": [
+        "You don't do Flutter: Dart has little value outside it",
+        "You want a broad general-purpose ecosystem: TypeScript is more versatile"
+      ],
+      "threshold": "Relevant if and only if you're in the Flutter ecosystem. Otherwise, choosing an alternative to Dart means choosing an alternative to Flutter, like React Native."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "pertinent si le rôle est clair dans la mission",
-    "teamRelevance": "à structurer avec conventions et droits",
+    "soloRelevance": "Pertinent pour un dev mobile solo qui fait du Flutter. En dehors de cet écosystème, Dart a peu d'intérêt face à TypeScript ou Kotlin.",
+    "teamRelevance": "En équipe, Dart se justifie par le choix de Flutter pour le multiplateforme. Hors de ce cadre, l'écosystème est plus étroit.",
     "tool_type": "metier",
     "substitutable": false,
     "host_app": null,
