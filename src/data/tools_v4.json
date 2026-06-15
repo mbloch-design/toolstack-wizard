@@ -6875,11 +6875,11 @@
     "substitutable": false,
     "bundle_parent": "adobe-cc",
     "category": "design-tools",
-    "shortDescription": "Le standard de la gestion et retouche photo RAW.",
+    "shortDescription": "Gestion et retouche photo RAW pour photographes : catalogage, color grading, exports.",
     "defaultMonthlyPrice": 11.03,
     "pricing": {
-      "bundle": "Inclus dans Adobe Creative Cloud",
-      "standalone": "12€/mois"
+      "free": "Pas de version gratuite complète (essai, et appli mobile limitée)",
+      "paid": "Formule Photography (avec Photoshop) dès ~10€/mois, Lightroom seul ~12€/mois"
     },
     "covers": [
       "retouche-photo",
@@ -6925,10 +6925,13 @@
     "ia_use_case": null,
     "slug": "adobe-lightroom",
     "shortDescriptionEn": "The standard for RAW photo management and editing.",
-    "description": "Adobe Lightroom, c'est le standard de la gestion et retouche photo RAW. Entièrement gratuit. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : volume important de photos RAW à traiter. À éviter si : peu de photos — iPhone Photos + VSCO suffisent. Dès que vous traitez plus de 100 photos par mois en RAW. Si le budget le permet, capture-one va plus loin.",
-    "longDescription": "Adobe Lightroom, c'est le standard de la gestion et retouche photo RAW. Entièrement gratuit. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : volume important de photos RAW à traiter. À éviter si : peu de photos — iPhone Photos + VSCO suffisent. Dès que vous traitez plus de 100 photos par mois en RAW. Si le budget le permet, capture-one va plus loin.",
-    "longDescriptionEn": "Adobe Lightroom is the standard for RAW photo management and editing. Completely free. Built for photographers and graphic designers.\n\nEstimated time saving: 5h/month.\n\nIf budget allows, capture-one goes further.",
-    "pricingEn": null,
+    "description": "Lightroom, c'est l'outil de référence des photographes pour gérer et développer leurs fichiers RAW. Là où Photoshop travaille un visuel pixel par pixel, Lightroom est pensé pour le volume : importer des centaines de photos, les cataloguer, appliquer un traitement, harmoniser les couleurs et exporter en lot. Les retouches sont non destructives et synchronisées entre ordinateur, mobile et cloud.\n\nContrairement à une idée reçue, Lightroom n'est pas gratuit : il n'y a qu'un essai et une appli mobile limitée. L'entrée se fait par la formule Photography (Lightroom + Photoshop) autour de 10 à 15€/mois selon le stockage, ou Lightroom seul à environ 12€/mois. Pour un photographe qui en vit, c'est un coût de production assumé.\n\nL'alternative sérieuse, c'est Capture One : meilleur rendu couleur selon beaucoup de photographes, plus rapide sur les gros catalogues, mais plus cher et plus exigeant. Pour un usage léger, les apps photo du téléphone suffisent. Lightroom reste le meilleur compromis entre puissance, catalogage et simplicité pour traiter de la photo en volume.",
+    "longDescription": "Lightroom, c'est l'outil de référence des photographes pour gérer et développer leurs fichiers RAW. Là où Photoshop travaille un visuel pixel par pixel, Lightroom est pensé pour le volume : importer des centaines de photos, les cataloguer, appliquer un traitement, harmoniser les couleurs et exporter en lot. Les retouches sont non destructives et synchronisées entre ordinateur, mobile et cloud.\n\nContrairement à une idée reçue, Lightroom n'est pas gratuit : il n'y a qu'un essai et une appli mobile limitée. L'entrée se fait par la formule Photography (Lightroom + Photoshop) autour de 10 à 15€/mois selon le stockage, ou Lightroom seul à environ 12€/mois. Pour un photographe qui en vit, c'est un coût de production assumé.\n\nL'alternative sérieuse, c'est Capture One : meilleur rendu couleur selon beaucoup de photographes, plus rapide sur les gros catalogues, mais plus cher et plus exigeant. Pour un usage léger, les apps photo du téléphone suffisent. Lightroom reste le meilleur compromis entre puissance, catalogage et simplicité pour traiter de la photo en volume.",
+    "longDescriptionEn": "Lightroom is photographers' go-to tool to manage and develop their RAW files. Where Photoshop works a visual pixel by pixel, Lightroom is built for volume: import hundreds of photos, catalog them, apply a treatment, harmonize colors and export in batches. Edits are non-destructive and synced across computer, mobile and cloud.\n\nContrary to a common belief, Lightroom isn't free: there's only a trial and a limited mobile app. The entry point is the Photography plan (Lightroom + Photoshop) around €10 to €15/month depending on storage, or Lightroom alone at about €12/month. For a photographer who makes a living from it, it's an accepted production cost.\n\nThe serious alternative is Capture One: better color rendering according to many photographers, faster on large catalogs, but pricier and more demanding. For light use, the phone's photo apps are enough. Lightroom remains the best balance of power, cataloging and simplicity for processing photos at volume.",
+    "pricingEn": {
+      "free": "No full free version (trial, and a limited mobile app)",
+      "paid": "Photography plan (with Photoshop) from ~€10/month, Lightroom alone ~€12/month"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 11.03,
       "compare_plan_name": "Lightroom",
@@ -6988,21 +6991,69 @@
     },
     "websiteUrl": "https://adobe.com/products/lightroom",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Adobe Lightroom en 2026 : prix réel (Lightroom n'est pas gratuit), formule Photography et alternative Capture One. Le verdict ToolTrim pour les photographes."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Coût de production assumé pour un photographe qui traite de la photo en volume. Pour un usage léger, les apps du téléphone suffisent.",
+    "teamRelevance": "Standard photo : pratique en studio ou en équipe pour un flux de catalogage et de traitement partagé.",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "capture-one",
+      "adobe-photoshop"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You process a large volume of RAW photos",
+        "You want non-destructive editing synced across computer, mobile and cloud"
+      ],
+      "avoidIf": [
+        "You only edit a few photos: your phone's photo apps are enough",
+        "You want the best color rendering and speed on big catalogs: look at Capture One"
+      ],
+      "threshold": "The best balance of power, cataloging and simplicity for processing photos at volume. For light use, phone apps suffice; for the best color, Capture One goes further."
+    },
+    "pros": [
+      "Pensé pour le volume : catalogage et traitement par lots de centaines de photos",
+      "Retouches non destructives synchronisées entre ordinateur, mobile et cloud",
+      "Gestion RAW et color grading de référence pour les photographes",
+      "Formule Photography (avec Photoshop) souvent plus avantageuse"
+    ],
+    "prosEn": [
+      "Built for volume: cataloging and batch processing hundreds of photos",
+      "Non-destructive edits synced across computer, mobile and cloud",
+      "Reference-grade RAW handling and color grading for photographers",
+      "Photography plan (with Photoshop) often the better deal"
+    ],
+    "cons": [
+      "Pas de version gratuite complète : essai puis abonnement",
+      "Capture One offre un meilleur rendu couleur selon beaucoup de photographes",
+      "Le stockage cloud Adobe gonfle vite la facture",
+      "Surdimensionné pour quelques photos : les apps du téléphone suffisent"
+    ],
+    "consEn": [
+      "No full free version: trial then subscription",
+      "Capture One offers better color rendering for many photographers",
+      "Adobe cloud storage inflates the bill quickly",
+      "Overkill for a few photos: phone apps are enough"
+    ],
+    "useCases": [
+      "Traiter et cataloguer un grand volume de photos RAW",
+      "Harmoniser les couleurs d'une série et exporter en lot",
+      "Synchroniser ses retouches entre ordinateur et mobile",
+      "Gérer la bibliothèque photo d'un shooting client"
+    ],
+    "useCasesEn": [
+      "Process and catalog a large volume of RAW photos",
+      "Harmonize a series' colors and export in batches",
+      "Sync edits across computer and mobile",
+      "Manage the photo library of a client shoot"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -7033,11 +7084,11 @@
     "substitutable": false,
     "bundle_parent": "adobe-cc",
     "category": "design-tools",
-    "shortDescription": "Le standard mondial de la retouche photo et du compositing.",
+    "shortDescription": "Le standard mondial de la retouche photo, du photomontage et du compositing.",
     "defaultMonthlyPrice": 26.21,
     "pricing": {
-      "free": "No free plan",
-      "paid": "EUR 26.21/month (Photoshop single app)"
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 26€/mois (Photoshop seul), ou formule Photography (avec Lightroom) dès ~10€/mois"
     },
     "covers": [
       "retouche-photo",
@@ -7068,29 +7119,36 @@
     "affiliateLink": "https://adobe.com/products/photoshop",
     "verdict": {
       "keepIf": [
-        "Usage photo ou compositing régulier",
-        "Workflows DAM avancés"
+        "Tu fais de la retouche photo ou du compositing de façon régulière",
+        "Tes clients ou ta filière attendent des fichiers Photoshop (PSD)"
       ],
       "avoidIf": [
-        "Usage basique — Canva ou Figma suffisent"
+        "Tu fais de la retouche simple : Canva ou Photopea suffisent",
+        "Tu veux éviter l'abonnement : Affinity Photo est gratuit depuis 2024"
       ],
-      "threshold": "Dès que vous faites de la retouche photo professionnelle."
+      "threshold": "Incontournable pour de la retouche photo pro. Pour un usage simple ou un budget serré, Affinity Photo (gratuit) couvre une grande partie des besoins, et la formule Photography est l'entrée la moins chère chez Adobe."
     },
     "timeGainedHoursPerMonth": 6,
-    "freeAlternative": "affinity-photo",
+    "freeAlternative": "Affinity Photo",
     "betterAlternative": null,
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "adobe-photoshop",
     "shortDescriptionEn": "The world standard for photo editing and compositing.",
-    "description": "Adobe Photoshop, c'est le standard mondial de la retouche photo et du compositing. À partir de 26.21€/mois. Pensé pour les graphistes et les photographes.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : usage photo ou compositing régulier ou workflows DAM avancés. À éviter si : usage basique — Canva ou Figma suffisent. Dès que vous faites de la retouche photo professionnelle. Alternative gratuite : affinity-photo.",
-    "longDescription": "Adobe Photoshop, c'est le standard mondial de la retouche photo et du compositing. À partir de 26.21€/mois. Pensé pour les graphistes et les photographes.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : usage photo ou compositing régulier ou workflows DAM avancés. À éviter si : usage basique — Canva ou Figma suffisent. Dès que vous faites de la retouche photo professionnelle. Alternative gratuite : affinity-photo.",
-    "longDescriptionEn": "Adobe Photoshop is the world standard for photo editing and compositing. Starting at €26.21/month. Built for graphic designers and photographers.\n\nEstimated time saving: 6h/month.\n\nFree alternative: affinity-photo.",
-    "pricingEn": null,
+    "description": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était.",
+    "longDescription": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était.",
+    "longDescriptionEn": "Photoshop is the most-used photo editing software in the world, to the point its name became a verb. Retouching, photomontage, cutouts, compositing, image manipulation: anything pixel-based goes through it, and the whole creative industry works with its files. It's an unavoidable standard once you do professional photo or visual work.\n\nThe Adobe model applies: no free version, just a trial, then the subscription. Budget around €26/month for Photoshop alone. But if you mostly do photography, the trick to know is the Photography plan (Photoshop + Lightroom), noticeably cheaper, around €10 to €15/month depending on storage. It's often the best entry point.\n\nThe alternative that changed things in 2024: Affinity Photo, now free after the Canva acquisition, covers a large part of retouching needs with no subscription. For something free in the browser, Photopea mirrors the interface. Photoshop keeps the edge on advanced features, generative AI (Generative Fill) and file compatibility, but it's no longer the obligatory path it once was.",
+    "pricingEn": {
+      "free": "No free version, trial only",
+      "paid": "Around €26/month (Photoshop alone), or the Photography plan (with Lightroom) from ~€10/month"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Formule Photography (avec Lightroom) dès ~10€/mois, moins chère que Photoshop seul"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -7137,21 +7195,69 @@
     },
     "websiteUrl": "https://adobe.com/products/photoshop",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Adobe Photoshop en 2026 : prix réel, formule Photography moins chère, et alternatives gratuites (Affinity Photo). Le verdict ToolTrim pour la retouche photo."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Outil de travail pour un photographe ou graphiste qui en vit. Pour un usage occasionnel, Affinity Photo (gratuit) ou la formule Photography suffisent.",
+    "teamRelevance": "Standard de la filière : pratique quand l'équipe et les clients échangent des fichiers PSD.",
+    "relevantFor": [
+      "designer",
+      "createur-contenu"
+    ],
+    "alternatives": [
+      "affinity-photo",
+      "canva"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You retouch photos or do compositing regularly",
+        "Your clients or industry expect Photoshop (PSD) files"
+      ],
+      "avoidIf": [
+        "You do simple edits: Canva or Photopea are enough",
+        "You want to avoid the subscription: Affinity Photo is free since 2024"
+      ],
+      "threshold": "Essential for professional photo work. For simple use or a tight budget, Affinity Photo (free) covers a large part, and the Photography plan is Adobe's cheapest entry point."
+    },
+    "pros": [
+      "Le standard de la filière : compatibilité PSD et fichiers attendus par les clients",
+      "Profondeur inégalée pour la retouche, le détourage et le compositing",
+      "IA générative intégrée (Generative Fill) très efficace",
+      "Écosystème de tutos, plugins et ressources énorme"
+    ],
+    "prosEn": [
+      "Industry standard: PSD compatibility and files clients expect",
+      "Unmatched depth for retouching, cutouts and compositing",
+      "Built-in generative AI (Generative Fill) that works well",
+      "Huge ecosystem of tutorials, plugins and resources"
+    ],
+    "cons": [
+      "Aucune version gratuite : essai puis abonnement à environ 26€/mois",
+      "Affinity Photo, gratuit depuis 2024, couvre une grande partie des besoins",
+      "Surdimensionné pour de la retouche simple : Canva ou Photopea suffisent",
+      "Gourmand en ressources et courbe d'apprentissage abrupte"
+    ],
+    "consEn": [
+      "No free version: trial then subscription at around €26/month",
+      "Affinity Photo, free since 2024, covers a large part of the needs",
+      "Overkill for simple edits: Canva or Photopea are enough",
+      "Resource-heavy with a steep learning curve"
+    ],
+    "useCases": [
+      "Retouche photo professionnelle et correction colorimétrique",
+      "Photomontage, détourage et compositing d'images",
+      "Création de mockups et de visuels clients",
+      "Manipulation d'images avec l'IA générative"
+    ],
+    "useCasesEn": [
+      "Professional photo retouching and color correction",
+      "Photomontage, cutouts and image compositing",
+      "Creating mockups and client visuals",
+      "Image manipulation with generative AI"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
