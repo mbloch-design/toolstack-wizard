@@ -23316,8 +23316,8 @@
     "shortDescription": "La plateforme de review et collaboration vidéo pour les équipes créatives.",
     "defaultMonthlyPrice": 15,
     "pricing": {
-      "free": "2GB stockage",
-      "paid": "15€/mois (Pro)"
+      "free": "Gratuit (2 utilisateurs, 2 Go de stockage)",
+      "paid": "Pro à 15$/utilisateur/mois, Team à 25$"
     },
     "covers": [
       "review-client-video",
@@ -23342,18 +23342,20 @@
     "affiliateLink": "https://frame.io",
     "verdict": {
       "keepIf": [
-        "Review vidéo en équipe ou avec des clients"
+        "Tu fais valider des vidéos par des clients ou en équipe régulièrement",
+        "Tu veux des retours précis horodatés plutôt que des mails confus"
       ],
       "avoidIf": [
-        "Inclus dans Adobe CC — vérifiez votre plan d'abord"
+        "Tu envoies une vidéo de temps en temps : un simple lien de partage suffit",
+        "C'est peut-être déjà inclus dans ton abonnement Adobe Creative Cloud : vérifie d'abord"
       ],
-      "threshold": "Rentable dès que vous envoyez plus de 3 vidéos par mois à des clients."
+      "threshold": "Gain de temps net dès que la review vidéo client devient fréquente. Pour un envoi ponctuel, un lien suffit, et pense à vérifier si Frame.io est déjà inclus dans ton plan Adobe CC."
     },
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
     "betterAlternative": {
       "tool": "dropbox-replay",
-      "reason": "moins-cher",
+      "reason": "Dropbox Replay propose la review vidéo à un tarif plus accessible pour un usage léger.",
       "saving": 15,
       "performanceGain": null
     },
@@ -23362,16 +23364,20 @@
     "ia_use_case": null,
     "slug": "frame-io",
     "shortDescriptionEn": "The video review and collaboration platform for creative teams.",
-    "description": "Frame.io, c'est la plateforme de review et collaboration vidéo pour les équipes créatives. À partir de 15€/mois. Pensé pour les créateurs vidéo et les photographes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : review vidéo en équipe ou avec des clients. À éviter si : inclus dans Adobe CC — vérifiez votre plan d'abord. Rentable dès que vous envoyez plus de 3 vidéos par mois à des clients. Si le budget le permet, dropbox-replay va plus loin.",
-    "longDescription": "Frame.io, c'est la plateforme de review et collaboration vidéo pour les équipes créatives. À partir de 15€/mois. Pensé pour les créateurs vidéo et les photographes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : review vidéo en équipe ou avec des clients. À éviter si : inclus dans Adobe CC — vérifiez votre plan d'abord. Rentable dès que vous envoyez plus de 3 vidéos par mois à des clients. Si le budget le permet, dropbox-replay va plus loin.",
-    "longDescriptionEn": "Frame.io is the video review and collaboration platform for creative teams. Starting at €15/month. Built for video creators and photographers.\n\nEstimated time saving: 3h/month.\n\nKeep it if: video review with team or clients. Skip it if: inclus dans Adobe CC — vérifiez votre plan d'abord. Profitable as soon as you send more than 3 videos per month to clients. If budget allows, dropbox-replay goes further.",
+    "description": "Frame.io, c'est l'outil qui a réglé le cauchemar de la review vidéo client. Au lieu d'échanger des liens WeTransfer et des retours par mail du genre « à 1:23 ça coince », tu déposes ta vidéo et le client commente directement sur la timeline, image par image, avec un horodatage précis. Tout est centralisé : versions, retours, validations. Pour un monteur ou un studio qui livre des vidéos à des clients, c'est un gain de temps net.\n\nL'offre gratuite (2 utilisateurs, 2 Go) permet de tester, puis le plan Pro est autour de 15$/utilisateur/mois et Team à 25$. Point important : Frame.io appartient à Adobe et est parfois inclus dans les abonnements Creative Cloud. Avant de payer un abonnement séparé, vérifie ton plan CC, tu y as peut-être déjà accès.\n\nÀ qui ça s'adresse : aux créateurs vidéo, monteurs et studios qui font de la validation client régulière. Pour un envoi ponctuel, un simple lien de partage suffit. Mais dès que les allers-retours de review deviennent fréquents, Frame.io fait gagner un temps précieux et donne une image pro à la livraison.",
+    "longDescription": "Frame.io, c'est l'outil qui a réglé le cauchemar de la review vidéo client. Au lieu d'échanger des liens WeTransfer et des retours par mail du genre « à 1:23 ça coince », tu déposes ta vidéo et le client commente directement sur la timeline, image par image, avec un horodatage précis. Tout est centralisé : versions, retours, validations. Pour un monteur ou un studio qui livre des vidéos à des clients, c'est un gain de temps net.\n\nL'offre gratuite (2 utilisateurs, 2 Go) permet de tester, puis le plan Pro est autour de 15$/utilisateur/mois et Team à 25$. Point important : Frame.io appartient à Adobe et est parfois inclus dans les abonnements Creative Cloud. Avant de payer un abonnement séparé, vérifie ton plan CC, tu y as peut-être déjà accès.\n\nÀ qui ça s'adresse : aux créateurs vidéo, monteurs et studios qui font de la validation client régulière. Pour un envoi ponctuel, un simple lien de partage suffit. Mais dès que les allers-retours de review deviennent fréquents, Frame.io fait gagner un temps précieux et donne une image pro à la livraison.",
+    "longDescriptionEn": "Frame.io is the tool that fixed the nightmare of client video review. Instead of swapping WeTransfer links and email feedback like 'at 1:23 it glitches', you drop your video and the client comments directly on the timeline, frame by frame, with precise timestamps. Everything is centralized: versions, feedback, approvals. For an editor or a studio delivering videos to clients, it's a clear time saver.\n\nThe free tier (2 users, 2 GB) lets you test, then the Pro plan is around $15/user/month and Team $25. Important: Frame.io belongs to Adobe and is sometimes included in Creative Cloud subscriptions. Before paying a separate subscription, check your CC plan, you may already have access.\n\nWho it's for: video creators, editors and studios doing regular client approval. For a one-off send, a simple share link is enough. But once review back-and-forth becomes frequent, Frame.io saves precious time and gives delivery a professional feel.",
     "pricingEn": {
-      "free": "2GB storage",
-      "paid": "€15/month (Pro)"
+      "free": "Free (2 users, 2 GB storage)",
+      "paid": "Pro at $15/user/month, Team at $25"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Offre gratuite : 2 utilisateurs, 2 Go",
+        "Pro à 15$/utilisateur/mois, Team à 25$",
+        "Souvent inclus dans un abonnement Adobe Creative Cloud : vérifier avant de payer"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "frame.io",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -23384,27 +23390,64 @@
     },
     "websiteUrl": "https://frame.io",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Frame.io en 2026 : prix, offre gratuite et alternatives pour la review vidéo client. Souvent inclus dans Adobe CC : vérifiez avant de payer. Le verdict ToolTrim."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
+    "soloRelevance": "Utile pour un monteur freelance qui fait valider ses vidéos par des clients. Pour un envoi ponctuel, un simple lien suffit.",
+    "teamRelevance": "Pratique pour un studio ou une équipe créative qui centralise versions et validations clients.",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "alternatives": [],
     "verdictEn": {
       "keepIf": [
-        "Video review with team or clients"
+        "You get videos approved by clients or your team regularly",
+        "You want precise timestamped feedback instead of confusing emails"
       ],
       "avoidIf": [
-        "Inclus dans Adobe CC — vérifiez votre plan d'abord"
+        "You send a video now and then: a simple share link is enough",
+        "It may already be included in your Adobe Creative Cloud plan: check first"
       ],
-      "threshold": "Profitable as soon as you send more than 3 videos per month to clients."
+      "threshold": "A clear time saver once client video review becomes frequent. For a one-off send, a link is enough, and check whether Frame.io is already included in your Adobe CC plan."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Commentaires horodatés image par image directement sur la vidéo",
+      "Centralise versions, retours clients et validations",
+      "Image pro pour la livraison et la review client",
+      "Souvent déjà inclus dans un abonnement Adobe Creative Cloud"
+    ],
+    "prosEn": [
+      "Timestamped frame-by-frame comments directly on the video",
+      "Centralizes versions, client feedback and approvals",
+      "Professional feel for delivery and client review",
+      "Often already included in an Adobe Creative Cloud subscription"
+    ],
+    "cons": [
+      "Payant par utilisateur dès qu'on dépasse le petit plan gratuit",
+      "Vérifie ton plan Adobe CC avant de payer un abonnement séparé",
+      "Surdimensionné pour un envoi de vidéo ponctuel : un lien suffit",
+      "Dépendant de l'écosystème Adobe depuis le rachat"
+    ],
+    "consEn": [
+      "Paid per user once you outgrow the small free plan",
+      "Check your Adobe CC plan before paying a separate subscription",
+      "Overkill for a one-off video send: a link is enough",
+      "Tied to the Adobe ecosystem since the acquisition"
+    ],
+    "useCases": [
+      "Faire valider une vidéo par un client avec des retours précis",
+      "Gérer les versions et les allers-retours d'un montage",
+      "Centraliser la review d'une équipe créative",
+      "Livrer proprement des vidéos à des clients"
+    ],
+    "useCasesEn": [
+      "Get a video approved by a client with precise feedback",
+      "Manage versions and back-and-forth on an edit",
+      "Centralize a creative team's review",
+      "Deliver videos to clients cleanly"
+    ],
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -54650,7 +54693,8 @@
     "shortDescription": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
     "defaultMonthlyPrice": 29.44,
     "pricing": {
-      "paid": "34$/mois ou 349$/an"
+      "free": "SketchUp Free (version web limitée) et essai",
+      "paid": "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
     },
     "covers": [
       "modelisation-3d",
@@ -54674,42 +54718,75 @@
       "marc"
     ],
     "timeGainedHoursPerMonth": 8,
-    "freeAlternative": "blender",
+    "freeAlternative": "Blender",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
     "affiliateLink": "https://sketchup.com",
     "verdict": {
       "keepIf": [
-        "Architecture intérieure, scénographie, modélisation rapide"
+        "Tu fais de l'architecture intérieure, de la scénographie ou de l'aménagement",
+        "Tu veux modéliser vite et présenter au client sans courbe d'apprentissage lourde"
       ],
       "avoidIf": [
-        "BIM — Revit est plus adapté aux projets complexes"
+        "Tu fais du BIM ou des projets de bâtiment complexes : Revit ou Archicad sont plus adaptés",
+        "Tu veux de la 3D gratuite et tu acceptes une grosse courbe : Blender va plus loin"
       ],
-      "threshold": "Incontournable pour la scénographie et l'archi intérieure."
+      "threshold": "Le meilleur compromis simplicité-vitesse pour la 3D d'espace. Pour du BIM lourd, vise Revit ou Archicad ; pour du gratuit, Blender, plus puissant mais bien plus exigeant."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Prise en main très rapide : modéliser un espace en quelques heures",
+      "Référence de l'archi intérieure et de la scénographie",
+      "LayOut pour les plans 2D et présentations client (plan Pro)",
+      "Énorme bibliothèque de modèles 3D (3D Warehouse)"
+    ],
+    "cons": [
+      "Abonnement annuel, plus de licence perpétuelle",
+      "Pas adapté au BIM lourd : Revit ou Archicad sont plus puissants",
+      "Moteur de rendu limité sans extensions payantes",
+      "Blender fait de la 3D gratuitement, au prix d'une courbe bien plus raide"
+    ],
+    "useCases": [
+      "Modéliser un aménagement intérieur ou un stand",
+      "Créer des plans 2D et des présentations client avec LayOut",
+      "Réaliser une maquette numérique rapide d'un projet",
+      "Présenter un concept 3D à un client non technique"
+    ],
+    "seo": {
+      "metaDescription": "SketchUp Pro en 2026 : prix (Go vs Pro), version gratuite et alternatives (Blender, Revit). Le verdict ToolTrim pour l'archi intérieure et la 3D."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "architecte-bim",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "34$/mois ou 349$/an"
+      "free": "SketchUp Free (version web limitée) et essai",
+      "paid": "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
     },
-    "longDescription": "SketchUp Pro, c'est modélisation 3D intuitive pour architectes, décorateurs et scénographes. À partir de 29.44€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : architecture intérieure, scénographie, modélisation rapide. À éviter si : bIM — Revit est plus adapté aux projets complexes. Incontournable pour la scénographie et l'archi intérieure. Alternative gratuite : blender.",
-    "alternatives": [],
+    "longDescription": "SketchUp, c'est le logiciel de modélisation 3D le plus accessible. Sa force, c'est la prise en main : pousser-tirer des volumes, dessiner un plan, monter une maquette de pièce ou de stand en quelques heures là où des outils comme Revit demandent des semaines d'apprentissage. C'est l'outil de référence de l'architecture d'intérieur, de la scénographie et de l'aménagement.\n\nLe modèle est par abonnement : SketchUp Go autour de 119$/an pour la version web, et SketchUp Pro à environ 349$/an (le palier vraiment utile, avec la version bureau, LayOut pour les plans et l'import/export pro). Une version SketchUp Free existe dans le navigateur pour s'initier, et il y a un essai.\n\nÀ qui ça s'adresse : aux architectes d'intérieur, décorateurs, scénographes et à tous ceux qui ont besoin de modéliser vite et de présenter au client. Pour du BIM lourd et des projets de bâtiment complexes, Revit ou Archicad sont plus adaptés. Pour de la 3D libre et gratuite, Blender va beaucoup plus loin mais avec une courbe d'apprentissage autrement plus raide. SketchUp reste le meilleur compromis simplicité-vitesse pour la 3D d'espace.",
+    "alternatives": [
+      "blender",
+      "revit",
+      "archicad"
+    ],
     "slug": "sketchup-pro",
     "shortDescriptionEn": "Intuitive 3D modelling for architects, interior designers, and set designers.",
-    "description": "SketchUp Pro, c'est modélisation 3D intuitive pour architectes, décorateurs et scénographes. À partir de 29.44€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : architecture intérieure, scénographie, modélisation rapide. À éviter si : bIM — Revit est plus adapté aux projets complexes. Incontournable pour la scénographie et l'archi intérieure. Alternative gratuite : blender.",
-    "longDescriptionEn": "SketchUp Pro is intuitive 3D modelling for architects, interior designers, and set designers. Starting at €29.44/month. Built for BIM architects and set designers.\n\nEstimated time saving: 8h/month.\n\nFree alternative: blender.",
-    "pricingEn": null,
+    "description": "SketchUp, c'est le logiciel de modélisation 3D le plus accessible. Sa force, c'est la prise en main : pousser-tirer des volumes, dessiner un plan, monter une maquette de pièce ou de stand en quelques heures là où des outils comme Revit demandent des semaines d'apprentissage. C'est l'outil de référence de l'architecture d'intérieur, de la scénographie et de l'aménagement.\n\nLe modèle est par abonnement : SketchUp Go autour de 119$/an pour la version web, et SketchUp Pro à environ 349$/an (le palier vraiment utile, avec la version bureau, LayOut pour les plans et l'import/export pro). Une version SketchUp Free existe dans le navigateur pour s'initier, et il y a un essai.\n\nÀ qui ça s'adresse : aux architectes d'intérieur, décorateurs, scénographes et à tous ceux qui ont besoin de modéliser vite et de présenter au client. Pour du BIM lourd et des projets de bâtiment complexes, Revit ou Archicad sont plus adaptés. Pour de la 3D libre et gratuite, Blender va beaucoup plus loin mais avec une courbe d'apprentissage autrement plus raide. SketchUp reste le meilleur compromis simplicité-vitesse pour la 3D d'espace.",
+    "longDescriptionEn": "SketchUp is the most accessible 3D modeling software. Its strength is how quick it is to pick up: push-pull volumes, draw a plan, build a room or booth mockup in a few hours where tools like Revit take weeks to learn. It's the reference tool for interior architecture, set design and space planning.\n\nThe model is subscription-based: SketchUp Go around $119/year for the web version, and SketchUp Pro at about $349/year (the genuinely useful tier, with the desktop app, LayOut for plans and pro import/export). A SketchUp Free version exists in the browser to get started, and there's a trial.\n\nWho it's for: interior architects, decorators, set designers and anyone who needs to model fast and present to a client. For heavy BIM and complex building projects, Revit or Archicad fit better. For free, open 3D, Blender goes much further but with a far steeper learning curve. SketchUp remains the best simplicity-speed balance for spatial 3D.",
+    "pricingEn": {
+      "free": "SketchUp Free (limited web version) and a trial",
+      "paid": "Go at ~$119/year, Pro at ~$349/year (desktop app, LayOut)"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Version SketchUp Free limitée (web) et essai",
+        "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "sketchup.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -54722,11 +54799,36 @@
     },
     "websiteUrl": "https://sketchup.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You do interior architecture, set design or space planning",
+        "You want to model fast and present to clients without a heavy learning curve"
+      ],
+      "avoidIf": [
+        "You do BIM or complex building projects: Revit or Archicad fit better",
+        "You want free 3D and accept a steep curve: Blender goes further"
+      ],
+      "threshold": "The best simplicity-speed balance for spatial 3D. For heavy BIM, aim for Revit or Archicad; for free, Blender, more powerful but far more demanding."
+    },
+    "prosEn": [
+      "Very fast to pick up: model a space in a few hours",
+      "Reference tool for interior architecture and set design",
+      "LayOut for 2D plans and client presentations (Pro plan)",
+      "Huge library of 3D models (3D Warehouse)"
+    ],
+    "consEn": [
+      "Annual subscription, no more perpetual license",
+      "Not suited to heavy BIM: Revit or Archicad are more powerful",
+      "Limited rendering engine without paid extensions",
+      "Blender does 3D for free, at the cost of a much steeper curve"
+    ],
+    "useCasesEn": [
+      "Model an interior layout or a booth",
+      "Create 2D plans and client presentations with LayOut",
+      "Build a quick digital mockup of a project",
+      "Present a 3D concept to a non-technical client"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
