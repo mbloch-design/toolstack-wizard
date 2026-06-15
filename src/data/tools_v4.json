@@ -29687,9 +29687,10 @@
     "bundle_parent": null,
     "category": "communication",
     "shortDescription": "La plateforme de support client et d'onboarding pour SaaS.",
-    "defaultMonthlyPrice": 64.09,
+    "defaultMonthlyPrice": 29,
     "pricing": {
-      "paid": "À partir de 74$/mois"
+      "free": "Pas d'offre gratuite, essai uniquement",
+      "paid": "Essential dès 29$/siège/mois, plus Fin AI à 0,99$ par résolution"
     },
     "covers": [
       "support-client",
@@ -29712,53 +29713,109 @@
     "affiliateLink": "https://intercom.com",
     "verdict": {
       "keepIf": [
-        "SaaS avec base utilisateurs active et besoin de support"
+        "Ton SaaS a une base d'utilisateurs active et le support est un enjeu",
+        "Tu veux automatiser une partie du support avec de l'IA"
       ],
       "avoidIf": [
-        "Early stage — Crisp ou Tawk.to gratuits suffisent"
+        "Tu es en early stage ou à petit volume : Crisp gratuit suffit souvent",
+        "Tu veux un coût prévisible : la facturation à la résolution Fin complique tout"
       ],
-      "threshold": "Rentable à partir de 500 utilisateurs actifs."
+      "threshold": "Se justifie quand le support devient un centre de coût à industrialiser, sur un SaaS avec du volume. En early stage, Crisp ou une alternative gratuite couvrent l'essentiel pour bien moins cher."
     },
     "timeGainedHoursPerMonth": 5,
-    "freeAlternative": "crisp",
+    "freeAlternative": "Crisp",
     "betterAlternative": null,
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "intercom",
     "shortDescriptionEn": "The customer support and onboarding platform for SaaS.",
-    "description": "Intercom, c'est la plateforme de support client et d'onboarding pour SaaS. À partir de 64.09€/mois. Pensé pour les fondateurs SaaS et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : saaS avec base utilisateurs active et besoin de support. À éviter si : early stage — Crisp ou Tawk.to gratuits suffisent. Rentable à partir de 500 utilisateurs actifs. Alternative gratuite : crisp.",
-    "longDescription": "Intercom, c'est la plateforme de support client et d'onboarding pour SaaS. À partir de 64.09€/mois. Pensé pour les fondateurs SaaS et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : saaS avec base utilisateurs active et besoin de support. À éviter si : early stage — Crisp ou Tawk.to gratuits suffisent. Rentable à partir de 500 utilisateurs actifs. Alternative gratuite : crisp.",
-    "longDescriptionEn": "Intercom is the customer support and onboarding platform for SaaS. Starting at €64.09/month. Built for SaaS founders and managers and IT directors.\n\nEstimated time saving: 5h/month.\n\nFree alternative: crisp.",
-    "pricingEn": null,
+    "description": "Intercom, c'est la plateforme de relation client pensée pour les SaaS : messagerie in-app, support par chat, base de connaissances, onboarding des nouveaux utilisateurs et, désormais, une grosse couche d'IA avec son agent Fin. L'idée, c'est de centraliser toutes les conversations clients au même endroit et d'en automatiser une partie. C'est puissant et bien fait, clairement haut de gamme.\n\nLe revers, c'est le prix et sa complexité. Il n'y a pas d'offre gratuite, juste un essai. Les plans démarrent autour de 29$ par siège et par mois (facturation annuelle), mais le vrai coût se cache ailleurs : Fin, l'agent IA, est facturé 0,99$ par résolution, et s'ajoutent des frais d'usage (SMS, e-mails, etc.). La facture réelle dépend donc de la taille de l'équipe et du volume de conversations, pas juste du prix affiché.\n\nÀ qui ça s'adresse : à un SaaS avec une base d'utilisateurs active, où le support est un enjeu et où l'outil se rentabilise. En early stage ou pour un petit volume, c'est cher pour ce que c'est : Crisp offre un chat support gratuit ou bien moins cher qui couvre l'essentiel. Intercom se justifie quand le support devient un centre de coût qu'il faut industrialiser.",
+    "longDescription": "Intercom, c'est la plateforme de relation client pensée pour les SaaS : messagerie in-app, support par chat, base de connaissances, onboarding des nouveaux utilisateurs et, désormais, une grosse couche d'IA avec son agent Fin. L'idée, c'est de centraliser toutes les conversations clients au même endroit et d'en automatiser une partie. C'est puissant et bien fait, clairement haut de gamme.\n\nLe revers, c'est le prix et sa complexité. Il n'y a pas d'offre gratuite, juste un essai. Les plans démarrent autour de 29$ par siège et par mois (facturation annuelle), mais le vrai coût se cache ailleurs : Fin, l'agent IA, est facturé 0,99$ par résolution, et s'ajoutent des frais d'usage (SMS, e-mails, etc.). La facture réelle dépend donc de la taille de l'équipe et du volume de conversations, pas juste du prix affiché.\n\nÀ qui ça s'adresse : à un SaaS avec une base d'utilisateurs active, où le support est un enjeu et où l'outil se rentabilise. En early stage ou pour un petit volume, c'est cher pour ce que c'est : Crisp offre un chat support gratuit ou bien moins cher qui couvre l'essentiel. Intercom se justifie quand le support devient un centre de coût qu'il faut industrialiser.",
+    "longDescriptionEn": "Intercom is the customer relationship platform built for SaaS: in-app messaging, chat support, knowledge base, onboarding of new users and, now, a heavy AI layer with its Fin agent. The idea is to centralize all customer conversations in one place and automate part of them. It's powerful and well made, clearly high-end.\n\nThe downside is the price and its complexity. There's no free tier, just a trial. Plans start around $29 per seat per month (billed annually), but the real cost hides elsewhere: Fin, the AI agent, is billed $0.99 per resolution, plus usage fees (SMS, emails, etc.). The real bill therefore depends on team size and conversation volume, not just the headline price.\n\nWho it's for: a SaaS with an active user base, where support is a real concern and the tool pays for itself. In early stage or for low volume, it's expensive for what it is: Crisp offers free or much cheaper support chat that covers the essentials. Intercom earns its place when support becomes a cost center you need to industrialize.",
+    "pricingEn": {
+      "free": "No free tier, trial only",
+      "paid": "Essential from $29/seat/month, plus Fin AI at $0.99 per resolution"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Pas d'offre gratuite, essai uniquement",
+        "Essential dès 29$/siège/mois (facturation annuelle)",
+        "Fin AI facturé 0,99$ par résolution, plus frais d'usage : coût réel variable"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "intercom.com",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Essential",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.intercom.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 64.09
+      "compare_price_monthly_eur": 29
     },
     "websiteUrl": "https://intercom.com",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Intercom en 2026 : prix réel (sièges + Fin AI à 0,99$/résolution), pas d'offre gratuite, et alternatives (Crisp). Le verdict ToolTrim pour les SaaS."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Surdimensionné en solo ou early stage : Crisp gratuit couvre l'essentiel. Intercom se justifie sur un SaaS avec du volume de support.",
+    "teamRelevance": "Pertinent pour une équipe support sur un SaaS actif, mais le coût réel (sièges + Fin) demande un suivi attentif.",
+    "relevantFor": [
+      "fondateur-saas",
+      "startup"
+    ],
+    "alternatives": [
+      "crisp"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "Your SaaS has an active user base and support is a real concern",
+        "You want to automate part of support with AI"
+      ],
+      "avoidIf": [
+        "You're early stage or low volume: free Crisp is often enough",
+        "You want a predictable cost: Fin's per-resolution billing complicates everything"
+      ],
+      "threshold": "Worth it when support becomes a cost center to industrialize, on a SaaS with volume. Early stage, Crisp or a free alternative covers the essentials for far less."
+    },
+    "pros": [
+      "Centralise messagerie in-app, chat, base de connaissances et onboarding",
+      "Agent IA Fin performant pour automatiser une partie du support",
+      "Référence du secteur, riche en intégrations et en automatisations",
+      "Bien adapté aux SaaS avec une base d'utilisateurs active"
+    ],
+    "prosEn": [
+      "Centralizes in-app messaging, chat, knowledge base and onboarding",
+      "Capable Fin AI agent to automate part of support",
+      "Industry reference, rich in integrations and automations",
+      "Well suited to SaaS with an active user base"
+    ],
+    "cons": [
+      "Cher et pas d'offre gratuite : essai puis abonnement par siège",
+      "Coût réel opaque : Fin facturé 0,99$ par résolution, plus les frais d'usage",
+      "Surdimensionné en early stage : Crisp gratuit suffit souvent",
+      "La facture grimpe avec l'équipe et le volume de conversations"
+    ],
+    "consEn": [
+      "Expensive and no free tier: trial then per-seat subscription",
+      "Opaque real cost: Fin billed $0.99 per resolution, plus usage fees",
+      "Overkill in early stage: free Crisp is often enough",
+      "The bill climbs with team size and conversation volume"
+    ],
+    "useCases": [
+      "Support client par chat in-app pour un SaaS",
+      "Onboarding et messages ciblés aux nouveaux utilisateurs",
+      "Automatiser une partie du support avec l'agent IA Fin",
+      "Centraliser base de connaissances et conversations clients"
+    ],
+    "useCasesEn": [
+      "In-app chat customer support for a SaaS",
+      "Onboarding and targeted messages to new users",
+      "Automate part of support with the Fin AI agent",
+      "Centralize knowledge base and customer conversations"
+    ],
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -35790,7 +35847,7 @@
       "marketing-email",
       "prospection"
     ],
-    "freeAlternative": "brevo",
+    "freeAlternative": "Brevo",
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "bestFor": [
@@ -35803,13 +35860,16 @@
       "paid": "13$/mois (Essentials) à 350$/mois (Premium)"
     },
     "relevantFor": [
-      "consultant",
+      "marketing",
       "content-creator",
-      "other"
+      "ecommercant"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "brevo",
+      "convertkit"
+    ],
     "seo": {
-      "metaDescription": "Mailchimp : L'incontournable de l'email marketing pour petites listes. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Mailchimp en 2026 : offre gratuite (500 contacts), prix qui grimpe avec la liste, et meilleures alternatives (Brevo, Kit). Le verdict ToolTrim."
     },
     "tool_type": "satellite",
     "substitutable": true,
@@ -35831,9 +35891,9 @@
     "ia_use_case": null,
     "slug": "mailchimp",
     "shortDescriptionEn": "The essential email marketing tool for small lists.",
-    "description": "Mailchimp, c'est l'incontournable de l'email marketing pour petites listes. À partir de 11.26€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : vous lancez votre première newsletter ou vous avez moins de 500 abonnés. À éviter si : vous avez +1000 abonnés (devient cher, prenez GetResponse) ou vous êtes créateur de contenu (prenez ConvertKit). Dès que vous voulez envoyer votre première newsletter et que vous avez moins de 500 contacts. Alternative gratuite : brevo.",
-    "longDescription": "Mailchimp, c'est l'incontournable de l'email marketing pour petites listes. À partir de 11.26€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : vous lancez votre première newsletter ou vous avez moins de 500 abonnés. À éviter si : vous avez +1000 abonnés (devient cher, prenez GetResponse) ou vous êtes créateur de contenu (prenez ConvertKit). Dès que vous voulez envoyer votre première newsletter et que vous avez moins de 500 contacts. Alternative gratuite : brevo.",
-    "longDescriptionEn": "Mailchimp is the essential email marketing tool for small lists. Starting at €11.26/month. Built for e-commerce sellers and SaaS founders.\n\nEstimated time saving: 3h/month.\n\nKeep it if: you are launching your first newsletter or you have fewer than 500 subscribers. Skip it if: you have +1000 subscribers (becomes expensive, choose GetResponse) or you are a content creator (choose ConvertKit). As soon as you want to send your first newsletter and you have fewer than 500 contacts. Free alternative: brevo.",
+    "description": "Mailchimp, c'est souvent le premier outil d'email marketing qu'on croise : interface visuelle, templates prêts à l'emploi, éditeur en glisser-déposer. Pour lancer une newsletter, envoyer une campagne ou automatiser quelques e-mails de bienvenue, c'est simple et rassurant. L'offre gratuite jusqu'à 500 contacts permet de démarrer sans rien payer.\n\nLe problème arrive avec la croissance. Le prix est indexé sur le nombre de contacts, et il grimpe vite : ce qui semblait abordable à 500 abonnés devient cher à quelques milliers, d'autant que Mailchimp compte aussi les contacts désabonnés selon les plans. Pour beaucoup, le rapport qualité-prix se dégrade au-delà de la petite liste.\n\nÀ qui ça convient : à quelqu'un qui débute et veut un outil simple pour une liste modeste. Dès que tu prends du volume ou que tu fais de l'automatisation sérieuse, des alternatives comme Brevo (gratuit plus généreux) ou Kit (ex-ConvertKit, pensé pour les créateurs) offrent souvent un meilleur rapport qualité-prix. Mailchimp reste un bon point de départ, rarement le point d'arrivée.",
+    "longDescription": "Mailchimp, c'est souvent le premier outil d'email marketing qu'on croise : interface visuelle, templates prêts à l'emploi, éditeur en glisser-déposer. Pour lancer une newsletter, envoyer une campagne ou automatiser quelques e-mails de bienvenue, c'est simple et rassurant. L'offre gratuite jusqu'à 500 contacts permet de démarrer sans rien payer.\n\nLe problème arrive avec la croissance. Le prix est indexé sur le nombre de contacts, et il grimpe vite : ce qui semblait abordable à 500 abonnés devient cher à quelques milliers, d'autant que Mailchimp compte aussi les contacts désabonnés selon les plans. Pour beaucoup, le rapport qualité-prix se dégrade au-delà de la petite liste.\n\nÀ qui ça convient : à quelqu'un qui débute et veut un outil simple pour une liste modeste. Dès que tu prends du volume ou que tu fais de l'automatisation sérieuse, des alternatives comme Brevo (gratuit plus généreux) ou Kit (ex-ConvertKit, pensé pour les créateurs) offrent souvent un meilleur rapport qualité-prix. Mailchimp reste un bon point de départ, rarement le point d'arrivée.",
+    "longDescriptionEn": "Mailchimp is often the first email marketing tool you come across: visual interface, ready-made templates, drag-and-drop editor. To launch a newsletter, send a campaign or automate a few welcome emails, it's simple and reassuring. The free tier up to 500 contacts lets you start without paying anything.\n\nThe problem comes with growth. Pricing is indexed on the number of contacts, and it climbs fast: what seemed affordable at 500 subscribers becomes expensive at a few thousand, especially since Mailchimp also counts unsubscribed contacts on some plans. For many, the value for money degrades beyond a small list.\n\nWho it suits: someone starting out who wants a simple tool for a modest list. Once you grow or do serious automation, alternatives like Brevo (more generous free tier) or Kit (formerly ConvertKit, built for creators) often offer better value. Mailchimp remains a good starting point, rarely the finish line.",
     "pricingEn": {
       "free": "Free up to 500 contacts (1 audience)",
       "paid": "$13/month (Essentials) to $350/month (Premium)"
@@ -35844,7 +35904,7 @@
         "compare_only_after_usage_or_scope_question",
         "official_price_depends_on_context_or_ui_state"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "mailchimp.com",
       "usage_sensitive": true,
       "compare_plan_kind": "contact_volume",
@@ -35871,12 +35931,42 @@
       ],
       "threshold": "As soon as you want to send your first newsletter and you have fewer than 500 contacts."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Très simple à prendre en main : éditeur visuel et templates prêts à l'emploi",
+      "Offre gratuite jusqu'à 500 contacts pour démarrer",
+      "Marque connue, beaucoup d'intégrations et de ressources",
+      "Suffisant pour une première newsletter ou une petite liste"
+    ],
+    "prosEn": [
+      "Very easy to pick up: visual editor and ready-made templates",
+      "Free tier up to 500 contacts to get started",
+      "Well-known brand, many integrations and resources",
+      "Enough for a first newsletter or a small list"
+    ],
+    "cons": [
+      "Le prix grimpe vite avec le nombre de contacts",
+      "Certains plans facturent aussi les contacts désabonnés",
+      "Automatisations limitées face à des outils plus spécialisés",
+      "Brevo ou Kit offrent souvent un meilleur rapport qualité-prix au-delà d'une petite liste"
+    ],
+    "consEn": [
+      "Pricing climbs fast with the number of contacts",
+      "Some plans also bill unsubscribed contacts",
+      "Limited automation compared to more specialized tools",
+      "Brevo or Kit often offer better value beyond a small list"
+    ],
+    "useCases": [
+      "Lancer et envoyer une première newsletter",
+      "Gérer une petite liste d'abonnés avec des templates",
+      "Automatiser quelques e-mails de bienvenue",
+      "Envoyer des campagnes simples à une audience modeste"
+    ],
+    "useCasesEn": [
+      "Launch and send a first newsletter",
+      "Manage a small subscriber list with templates",
+      "Automate a few welcome emails",
+      "Send simple campaigns to a modest audience"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
