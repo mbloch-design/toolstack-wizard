@@ -7,6 +7,8 @@ import {
   CircleDollarSign,
   ClipboardCheck,
   Layers3,
+  MessageSquare,
+  Palette,
   SearchCheck,
   Share2,
   ShieldAlert,
@@ -67,6 +69,20 @@ function buildThesis(result: DiagnosticResult, t: Props["t"]) {
   const duplicateCount = result.insights.metrics.duplicateCount;
   const dormantCount = result.insights.metrics.dormantCount;
   const risk = result.insights.primaryRisk;
+
+  if (result.sessionState.persona === "SOFIA") {
+    const satelliteCount = getCreativeWorkflowStages(result, t).find((stage) => stage.id === "accelerate")?.tools.length || 0;
+    if (satelliteCount > 0) {
+      return t(
+        `${introFr}le vrai sujet est la fluidité de ta chaîne créative, pas seulement le nombre d’outils.`,
+        `${introEn}the real topic is the flow of your creative chain, not just the number of tools.`
+      );
+    }
+    return t(
+      `${introFr}ta stack créative dépend surtout des outils principaux. Il faut vérifier les ressources, plugins et validations autour.`,
+      `${introEn}your creative stack mostly depends on core tools. We need to check resources, plugins and review workflows around them.`
+    );
+  }
 
   if (duplicateCount >= 2) {
     return t(
@@ -163,6 +179,89 @@ function getToolGroups(result: DiagnosticResult) {
   };
 }
 
+const CREATIVE_STAGE_DEFS = [
+  {
+    id: "produce",
+    Icon: Palette,
+    labelFr: "Produire",
+    labelEn: "Produce",
+    detailFr: "Outils qui fabriquent les livrables : design, image, vidéo, photo.",
+    detailEn: "Tools that create deliverables: design, image, video, photo.",
+    ids: [
+      "figma",
+      "canva",
+      "adobe-photoshop",
+      "adobe-illustrator",
+      "adobe-after-effects",
+      "adobe-premiere-pro",
+      "davinci-resolve",
+      "capcut",
+      "adobe-lightroom",
+      "capture-one",
+      "midjourney",
+      "krea-ai",
+      "firefly",
+      "runway",
+    ],
+  },
+  {
+    id: "accelerate",
+    Icon: Layers3,
+    labelFr: "Accélérer",
+    labelEn: "Accelerate",
+    detailFr: "Satellites qui font gagner du temps : plugins, presets, templates, assets.",
+    detailEn: "Satellites that save time: plugins, presets, templates, assets.",
+    ids: [
+      "figma-iconify",
+      "figma-tokens",
+      "figma-stark",
+      "figma-anima",
+      "ae-bodymovin",
+      "lottiefiles",
+      "ae-animation-composer",
+      "motion-bro",
+      "presets-lightroom",
+      "lightroom-presets",
+      "dynamic-mockups",
+      "mockup-plugins",
+      "envato-elements",
+      "fontbase",
+      "rightfont",
+      "canva-templates",
+      "figma-templates",
+    ],
+  },
+  {
+    id: "review",
+    Icon: MessageSquare,
+    labelFr: "Valider",
+    labelEn: "Review",
+    detailFr: "Feedback, livraison, preuve client et passage de relais.",
+    detailEn: "Feedback, delivery, client proof and handoff.",
+    ids: ["frame-io", "loom", "tella", "pixieset", "google-drive", "dropbox", "wetransfer", "adobe-acrobat", "adobe-acrobat-sign", "zeplin", "protopie", "framer"],
+  },
+  {
+    id: "secure",
+    Icon: ShieldAlert,
+    labelFr: "Sécuriser",
+    labelEn: "Secure",
+    detailFr: "Licences, droits d’usage, plans payés et coûts à préciser.",
+    detailEn: "Licenses, usage rights, paid plans and costs to clarify.",
+    ids: ["adobe-creative-cloud", "adobe-cc", "envato-elements", "brand-kits", "fontbase", "rightfont", "stripe", "indy", "paypal"],
+  },
+] as const;
+
+function getCreativeWorkflowStages(result: DiagnosticResult, _t: Props["t"]) {
+  const selected = result.sessionState.selectedTools;
+  return CREATIVE_STAGE_DEFS.map((stage) => {
+    const idSet = new Set(stage.ids);
+    return {
+      ...stage,
+      tools: selected.filter((tool) => idSet.has(tool.id)).slice(0, 8),
+    };
+  });
+}
+
 function getEvidence(result: DiagnosticResult, t: Props["t"], monthlyCostLabel: string) {
   const risk = result.insights.primaryRisk;
   return [
@@ -208,9 +307,11 @@ function formatEstimatedSavings(item: PriorityItem, t: Props["t"]) {
 }
 
 export default function DashOverview({ result, t, onShare, onNavigate, onTrack }: Props) {
+  const isCreative = result.sessionState.persona === "SOFIA";
   const thesis = useMemo(() => buildThesis(result, t), [result, t]);
   const priorityItems = useMemo(() => getPriorityItems(result, t), [result, t]);
   const toolGroups = useMemo(() => getToolGroups(result), [result]);
+  const creativeWorkflow = useMemo(() => getCreativeWorkflowStages(result, t), [result, t]);
   const profile = result.insights.profile;
   const maturity = result.insights.maturity;
   const healthLabel = translateHealthLabel(result.healthLabel, t);
@@ -227,6 +328,17 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
   const coverage = result.sessionState.selectionCoverage;
   const coveredCount = coverage?.covered.length || result.insights.functionalCoverage.filter((item) => item.status === "covered").length;
   const totalCoverage = Math.max(coverage ? coverage.covered.length + coverage.skipped.length : result.insights.functionalCoverage.length, 1);
+  const readingSteps = isCreative
+    ? [
+        t("Chaîne créative", "Creative chain"),
+        t("Arbitrages utiles", "Useful tradeoffs"),
+        t("Preuves et licences", "Evidence and licenses"),
+      ]
+    : [
+        t("Ce que j’ai compris", "What I understood"),
+        t("La première décision", "The first decision"),
+        t("Les preuves utiles", "Useful evidence"),
+      ];
 
   return (
     <div className="space-y-10">
@@ -247,11 +359,7 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
         </div>
 
         <ReadingPath
-          steps={[
-            t("Ce que j’ai compris", "What I understood"),
-            t("La première décision", "The first decision"),
-            t("Les preuves utiles", "Useful evidence"),
-          ]}
+          steps={readingSteps}
           t={t}
         />
 
@@ -324,6 +432,24 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
           </div>
         </div>
       </section>
+
+      {isCreative && (
+        <section className="space-y-3">
+          <SectionHeader
+            eyebrow={t("Lecture créative", "Creative read")}
+            title={t("Ta stack comme une chaîne de production", "Your stack as a production chain")}
+            description={t(
+              "Je sépare les gros outils évidents des éléments périphériques qui font vraiment la différence : plugins, assets, templates, presets, validation et licences.",
+              "I separate the obvious core tools from the peripheral pieces that really matter: plugins, assets, templates, presets, review and licenses."
+            )}
+          />
+          <div className="grid gap-3 md:grid-cols-2">
+            {creativeWorkflow.map((stage) => (
+              <CreativeWorkflowCard key={stage.id} stage={stage} t={t} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="grid gap-3 md:grid-cols-3">
         <ContextCard
@@ -604,6 +730,50 @@ function ContextCard({
         </div>
       )}
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{detail}</p>
+    </div>
+  );
+}
+
+function CreativeWorkflowCard({
+  stage,
+  t,
+}: {
+  stage: ReturnType<typeof getCreativeWorkflowStages>[number];
+  t: Props["t"];
+}) {
+  const Icon = stage.Icon;
+  return (
+    <div className="rounded-lg border border-border bg-card p-4">
+      <div className="flex items-start gap-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-muted text-primary">
+          <Icon className="h-5 w-5" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-bold text-foreground">{t(stage.labelFr, stage.labelEn)}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t(stage.detailFr, stage.detailEn)}</p>
+            </div>
+            <span className="rounded-md bg-muted px-2 py-1 font-mono text-xs font-bold text-foreground">
+              {stage.tools.length}
+            </span>
+          </div>
+          {stage.tools.length > 0 ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {stage.tools.map((tool) => (
+                <span key={tool.id} className="inline-flex max-w-full items-center gap-2 rounded-md border border-border bg-background px-2 py-1">
+                  <ToolLogo tool={tool} size={20} className="rounded" />
+                  <span className="truncate text-xs font-semibold text-foreground">{tool.name}</span>
+                </span>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-3 rounded-md bg-muted/35 px-3 py-2 text-xs font-medium text-muted-foreground">
+              {t("Aucun outil capté ici. À confirmer si cette étape existe dans ton activité.", "No tool captured here. Confirm whether this step exists in your work.")}
+            </p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

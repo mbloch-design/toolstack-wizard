@@ -165,7 +165,198 @@ const STACK_MOMENTS = [
   },
 ] as const;
 
-type StackMoment = (typeof STACK_MOMENTS)[number];
+const CREATIVE_STACK_MOMENTS = [
+  {
+    id: "creative-brief-assets",
+    Icon: FileText,
+    fr: "Brief et sources",
+    en: "Brief and sources",
+    questionFr: "Où poses-tu le brief, les références, les moodboards ou les sources client ?",
+    questionEn: "Where do you keep briefs, references, moodboards or client sources?",
+    hintFr: "Milanote, Notion, Drive, Figma, Canva...",
+    hintEn: "Milanote, Notion, Drive, Figma, Canva...",
+    pattern: /brief|source|moodboard|reference|inspiration|notion|drive|milanote|figma|canva|asset/i,
+    ids: ["milanote", "notion", "google-drive", "figma", "canva", "dropbox"],
+  },
+  {
+    id: "creative-design-core",
+    Icon: Palette,
+    fr: "Design principal",
+    en: "Core design",
+    questionFr: "Avec quoi crées-tu les visuels, maquettes, identités ou supports principaux ?",
+    questionEn: "What do you use to create visuals, mockups, identities or main deliverables?",
+    hintFr: "Figma, Canva, Photoshop, Illustrator, Affinity...",
+    hintEn: "Figma, Canva, Photoshop, Illustrator, Affinity...",
+    pattern: /figma|canva|photoshop|illustrator|affinity|adobe|design|identity|brand|visual|creative/i,
+    ids: ["figma", "canva", "adobe-photoshop", "adobe-illustrator", "affinity-photo", "adobe-express", "brandcrowd", "brandmark"],
+  },
+  {
+    id: "creative-plugins-resources",
+    Icon: Layers3,
+    fr: "Plugins et ressources",
+    en: "Plugins and resources",
+    questionFr: "Quels plugins, templates, fonts, icônes ou mockups accélèrent ton travail ?",
+    questionEn: "Which plugins, templates, fonts, icons or mockups speed up your work?",
+    hintFr: "Iconify, Tokens, Stark, Envato, mockups, fonts...",
+    hintEn: "Iconify, Tokens, Stark, Envato, mockups, fonts...",
+    pattern: /plugin|addon|template|mockup|font|icon|asset|envato|iconify|tokens|stark|mockups|rightfont|fontbase/i,
+    ids: [
+      "figma-iconify",
+      "figma-tokens",
+      "figma-stark",
+      "figma-anima",
+      "dynamic-mockups",
+      "mockup-plugins",
+      "envato-elements",
+      "icons8",
+      "hugeicons",
+      "fontbase",
+      "rightfont",
+      "canva-templates",
+      "figma-templates",
+    ],
+  },
+  {
+    id: "creative-ai-visual",
+    Icon: Brain,
+    fr: "IA visuelle",
+    en: "Visual AI",
+    questionFr: "Quelles IA t’aident à générer, retoucher ou explorer des pistes visuelles ?",
+    questionEn: "Which AI tools help you generate, retouch or explore visual directions?",
+    hintFr: "Midjourney, Krea, Firefly, Runway, Remove.bg...",
+    hintEn: "Midjourney, Krea, Firefly, Runway, Remove.bg...",
+    pattern: /midjourney|krea|firefly|stable|diffusion|flux|ideogram|leonardo|runway|remove|ai|ia|image/i,
+    ids: ["midjourney", "krea-ai", "krea", "firefly", "stable-diffusion", "flux", "ideogram", "leonardo-ai", "runway", "remove-bg"],
+  },
+  {
+    id: "creative-motion-video",
+    Icon: Video,
+    fr: "Motion et vidéo",
+    en: "Motion and video",
+    questionFr: "Quels outils ou extensions utilises-tu pour monter, animer ou produire de la vidéo ?",
+    questionEn: "Which tools or extensions do you use to edit, animate or produce video?",
+    hintFr: "After Effects, Premiere, DaVinci, CapCut, Lottie, plugins AE...",
+    hintEn: "After Effects, Premiere, DaVinci, CapCut, Lottie, AE plugins...",
+    pattern: /after effects|premiere|davinci|capcut|runway|lottie|motion|video|animation|subtitle|descript|topaz/i,
+    ids: [
+      "adobe-after-effects",
+      "adobe-premiere-pro",
+      "davinci-resolve",
+      "capcut",
+      "runway",
+      "ae-bodymovin",
+      "lottiefiles",
+      "ae-animation-composer",
+      "motion-bro",
+      "ae-overlord",
+      "ae-duik",
+      "ae-gifgun",
+      "ae-red-giant",
+      "topaz-video-ai",
+      "descript",
+    ],
+  },
+  {
+    id: "creative-photo-retouch",
+    Icon: Palette,
+    fr: "Photo et retouche",
+    en: "Photo and retouching",
+    questionFr: "Quels outils structurent ta retouche, tes presets, tes galeries ou tes exports photo ?",
+    questionEn: "Which tools structure retouching, presets, galleries or photo exports?",
+    hintFr: "Lightroom, Capture One, presets, Pixieset, Nik Collection...",
+    hintEn: "Lightroom, Capture One, presets, Pixieset, Nik Collection...",
+    pattern: /lightroom|capture one|photo|retouch|preset|raw|pixieset|nik|luminar/i,
+    ids: ["adobe-lightroom", "capture-one", "adobe-photoshop", "luminar-neo", "nik-collection", "presets-lightroom", "lightroom-presets", "lightroom-mobile", "pixieset"],
+  },
+  {
+    id: "creative-client-review",
+    Icon: MessageSquare,
+    fr: "Validation client",
+    en: "Client review",
+    questionFr: "Comment fais-tu valider, commenter ou livrer les créations aux clients ?",
+    questionEn: "How do clients review, comment on or receive creative work?",
+    hintFr: "Frame.io, Loom, Tella, Drive, Dropbox, WeTransfer...",
+    hintEn: "Frame.io, Loom, Tella, Drive, Dropbox, WeTransfer...",
+    pattern: /review|comment|feedback|client|delivery|livraison|frame|loom|tella|pixieset|drive|dropbox|wetransfer|acrobat/i,
+    ids: ["frame-io", "loom", "tella", "pixieset", "google-drive", "dropbox", "wetransfer", "adobe-acrobat-sign", "adobe-acrobat"],
+  },
+  {
+    id: "creative-handoff-web",
+    Icon: FolderKanban,
+    fr: "Handoff et prototype",
+    en: "Handoff and prototype",
+    questionFr: "Quels outils servent au prototype, au handoff ou à la mise en ligne ?",
+    questionEn: "Which tools handle prototypes, handoff or publishing?",
+    hintFr: "Figma, Zeplin, Tokens, Anima, ProtoPie, Rive, Spline, Framer...",
+    hintEn: "Figma, Zeplin, Tokens, Anima, ProtoPie, Rive, Spline, Framer...",
+    pattern: /handoff|prototype|framer|webflow|zeplin|anima|tokens|protopie|rive|spline|publish|website/i,
+    ids: ["figma", "zeplin", "figma-tokens", "figma-anima", "protopie", "rive", "spline", "framer", "webflow-framer"],
+  },
+  {
+    id: "creative-admin-rights",
+    Icon: Shield,
+    fr: "Droits et licences",
+    en: "Rights and licenses",
+    questionFr: "Où gères-tu licences, assets payants, polices, droits et facturation créative ?",
+    questionEn: "Where do you manage licenses, paid assets, fonts, rights and creative billing?",
+    hintFr: "Adobe CC, Envato, Brand kits, Font managers, Stripe, Indy...",
+    hintEn: "Adobe CC, Envato, Brand kits, font managers, Stripe, Indy...",
+    pattern: /license|licence|rights|droits|asset|font|adobe creative cloud|envato|brand kit|stripe|indy|paypal|billing/i,
+    ids: ["adobe-creative-cloud", "adobe-cc", "envato-elements", "brandpad", "brand-kits", "fontbase", "rightfont", "stripe", "indy", "paypal"],
+  },
+  {
+    id: "creative-measure-growth",
+    Icon: BarChart3,
+    fr: "Portfolio et mesure",
+    en: "Portfolio and measurement",
+    questionFr: "Mesures-tu ton site, tes campagnes, tes leads ou la performance des contenus ?",
+    questionEn: "Do you measure your site, campaigns, leads or content performance?",
+    hintFr: "GA4, PostHog, Hotjar, Brevo, HubSpot, MailerLite...",
+    hintEn: "GA4, PostHog, Hotjar, Brevo, HubSpot, MailerLite...",
+    pattern: /analytics|portfolio|campaign|newsletter|lead|crm|brevo|hubspot|mailerlite|hotjar|posthog|google analytics/i,
+    ids: ["google-analytics", "posthog", "hotjar", "brevo", "hubspot", "mailerlite", "looker-studio"],
+  },
+] as const;
+
+const CREATIVE_PARENT_RELATIONS = [
+  {
+    parentIds: ["figma"],
+    momentIds: ["creative-plugins-resources", "creative-handoff-web"],
+    toolIds: ["figma-iconify", "figma-tokens", "figma-stark", "figma-anima", "zeplin", "figma-slides"],
+  },
+  {
+    parentIds: ["adobe-after-effects"],
+    momentIds: ["creative-motion-video"],
+    toolIds: ["ae-bodymovin", "lottiefiles", "ae-animation-composer", "motion-bro", "ae-overlord", "ae-duik", "ae-gifgun", "ae-red-giant"],
+  },
+  {
+    parentIds: ["adobe-lightroom", "capture-one"],
+    momentIds: ["creative-photo-retouch", "creative-client-review"],
+    toolIds: ["presets-lightroom", "lightroom-presets", "luminar-neo", "nik-collection", "pixieset"],
+  },
+  {
+    parentIds: ["canva"],
+    momentIds: ["creative-plugins-resources", "creative-design-core"],
+    toolIds: ["canva-pro", "canva-templates", "canva-kits", "brand-kits", "envato-elements", "mockup-plugins"],
+  },
+  {
+    parentIds: ["adobe-photoshop", "adobe-illustrator"],
+    momentIds: ["creative-plugins-resources", "creative-design-core", "creative-admin-rights"],
+    toolIds: ["dynamic-mockups", "mockup-plugins", "envato-elements", "icons8", "hugeicons", "fontbase", "rightfont"],
+  },
+  {
+    parentIds: ["capcut", "adobe-premiere-pro", "davinci-resolve"],
+    momentIds: ["creative-motion-video", "creative-client-review"],
+    toolIds: ["capcut-templates", "capcut-ai", "topaz-video-ai", "descript", "adobe-enhance-speech", "frame-io"],
+  },
+  {
+    parentIds: ["midjourney", "krea-ai", "firefly", "runway"],
+    momentIds: ["creative-ai-visual", "creative-plugins-resources"],
+    toolIds: ["remove-bg", "topaz-video-ai", "envato-elements", "dynamic-mockups"],
+  },
+] as const;
+
+type StackMoment = (typeof STACK_MOMENTS)[number] | (typeof CREATIVE_STACK_MOMENTS)[number];
 type StackFeedAnimation = {
   id: string;
   tool: Tool;
@@ -263,15 +454,41 @@ function toolText(tool: Tool) {
 
 function matchesMoment(tool: Tool, moment: StackMoment) {
   const normalizedId = normalize(tool.id);
-  if (moment.ids.some((id) => normalize(id) === normalizedId)) return true;
+  if ((moment.ids as readonly string[]).some((id) => normalize(id) === normalizedId)) return true;
   return moment.pattern.test(toolText(tool));
 }
 
-function nextMomentId(coveredIds: Set<string>, skippedIds: Set<string>, currentId: string) {
-  const currentIndex = STACK_MOMENTS.findIndex((moment) => moment.id === currentId);
+function getStackMomentsForPersona(persona: SessionState["persona"]): readonly StackMoment[] {
+  return persona === "SOFIA" ? CREATIVE_STACK_MOMENTS : STACK_MOMENTS;
+}
+
+function getCreativeContextualToolIds(
+  selectedTools: Tool[],
+  activeMomentId: string,
+  persona: SessionState["persona"]
+) {
+  if (persona !== "SOFIA") return new Set<string>();
+  const selectedToolIds = new Set(selectedTools.map((tool) => tool.id));
+  const contextualIds = new Set<string>();
+  CREATIVE_PARENT_RELATIONS.forEach((relation) => {
+    if (!(relation.momentIds as readonly string[]).includes(activeMomentId)) return;
+    const hasParent = (relation.parentIds as readonly string[]).some((id) => selectedToolIds.has(id));
+    if (!hasParent) return;
+    (relation.toolIds as readonly string[]).forEach((id) => contextualIds.add(id));
+  });
+  return contextualIds;
+}
+
+function nextMomentId(
+  moments: readonly StackMoment[],
+  coveredIds: Set<string>,
+  skippedIds: Set<string>,
+  currentId: string
+) {
+  const currentIndex = moments.findIndex((moment) => moment.id === currentId);
   const ordered = [
-    ...STACK_MOMENTS.slice(currentIndex + 1),
-    ...STACK_MOMENTS.slice(0, currentIndex + 1),
+    ...moments.slice(currentIndex + 1),
+    ...moments.slice(0, currentIndex + 1),
   ];
   return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || null;
 }
@@ -291,11 +508,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     );
     return entryTool ? [withDefaultOffer(entryTool)] : [];
   }, [fromTool, session.selectedTools, tools]);
+  const stackMoments = useMemo(() => getStackMomentsForPersona(session.persona), [session.persona]);
   const [selectedTools, setSelectedTools] = useState<Tool[]>(initialSelectedTools);
   const [activeMomentId, setActiveMomentId] = useState<string>(() => {
     const covered = new Set((session.selectionCoverage?.covered || []));
     const skipped = new Set((session.selectionCoverage?.skipped || []));
-    return STACK_MOMENTS.find((moment) => !covered.has(moment.id) && !skipped.has(moment.id))?.id || STACK_MOMENTS[0].id;
+    return stackMoments.find((moment) => !covered.has(moment.id) && !skipped.has(moment.id))?.id || stackMoments[0].id;
   });
   const [skippedMomentIds, setSkippedMomentIds] = useState<Set<string>>(
     () => new Set(session.selectionCoverage?.skipped || [])
@@ -333,7 +551,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   }, [allKnownTools, search, selectedIds]);
 
   const momentCoverage = useMemo(() => {
-    return STACK_MOMENTS.map((moment) => {
+    return stackMoments.map((moment) => {
       const selected = selectedTools.filter((tool) => matchesMoment(tool, moment));
       return {
         ...moment,
@@ -342,7 +560,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         skipped: skippedMomentIds.has(moment.id),
       };
     });
-  }, [selectedTools, skippedMomentIds]);
+  }, [selectedTools, skippedMomentIds, stackMoments]);
 
   const coveredMomentIds = useMemo(
     () => new Set(momentCoverage.filter((moment) => moment.covered).map((moment) => moment.id)),
@@ -350,18 +568,22 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   );
 
   const activeMoment = momentCoverage.find((moment) => moment.id === activeMomentId) || momentCoverage[0];
-  const activeMomentIndex = STACK_MOMENTS.findIndex((moment) => moment.id === activeMoment.id);
   const activeMomentSuggestions = useMemo(() => {
+    const activeMomentIds = activeMoment.ids as readonly string[];
+    const contextualToolIds = getCreativeContextualToolIds(selectedTools, activeMoment.id, session.persona);
     return tools
-      .filter((tool) => matchesMoment(tool, activeMoment) && !selectedIds.has(tool.id))
+      .filter((tool) => !selectedIds.has(tool.id) && (matchesMoment(tool, activeMoment) || contextualToolIds.has(tool.id)))
       .sort((a, b) => {
-        const aKnown = activeMoment.ids.includes(a.id);
-        const bKnown = activeMoment.ids.includes(b.id);
+        const aContext = contextualToolIds.has(a.id);
+        const bContext = contextualToolIds.has(b.id);
+        if (aContext !== bContext) return aContext ? -1 : 1;
+        const aKnown = activeMomentIds.includes(a.id);
+        const bKnown = activeMomentIds.includes(b.id);
         if (aKnown !== bKnown) return aKnown ? -1 : 1;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
-      .slice(0, 6);
-  }, [activeMoment, selectedIds, session.persona, tools]);
+      .slice(0, session.persona === "SOFIA" ? 8 : 6);
+  }, [activeMoment, selectedIds, selectedTools, session.persona, tools]);
   const pendingTool = useMemo(() => {
     if (!pendingToolId) return null;
     return allKnownTools.find((tool) => tool.id === pendingToolId) || null;
@@ -380,6 +602,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   );
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
+
+  useEffect(() => {
+    if (stackMoments.some((moment) => moment.id === activeMomentId)) return;
+    setActiveMomentId(stackMoments[0].id);
+  }, [activeMomentId, stackMoments]);
 
   useEffect(() => {
     setSearch("");
@@ -471,7 +698,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       }
 
       const nextSkipped = new Set(skippedMomentIds);
-      STACK_MOMENTS.forEach((moment) => {
+      stackMoments.forEach((moment) => {
         if (matchesMoment(tool, moment)) nextSkipped.delete(moment.id);
       });
       setSkippedMomentIds(nextSkipped);
@@ -580,7 +807,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       selected_count: selectedTools.length,
       covered_count: coveredCount,
     });
-    const next = nextMomentId(coveredMomentIds, skippedMomentIds, activeMoment.id);
+    const next = nextMomentId(stackMoments, coveredMomentIds, skippedMomentIds, activeMoment.id);
     if (next) {
       setActiveMomentId(next);
     } else {
@@ -597,7 +824,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       skipped_count: nextSkipped.size,
     });
     setSkippedMomentIds(nextSkipped);
-    const next = nextMomentId(coveredMomentIds, nextSkipped, activeMoment.id);
+    const next = nextMomentId(stackMoments, coveredMomentIds, nextSkipped, activeMoment.id);
     if (next) {
       setActiveMomentId(next);
     } else {
@@ -670,7 +897,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
         <div className="grid gap-3 md:grid-cols-4">
           <ReviewMetric label={t("Outils retenus", "Selected tools")} value={String(selectedTools.length)} />
-          <ReviewMetric label={t("Zones couvertes", "Covered areas")} value={`${coveredCount}/${STACK_MOMENTS.length}`} />
+          <ReviewMetric label={t("Zones couvertes", "Covered areas")} value={`${coveredCount}/${stackMoments.length}`} />
           <ReviewMetric
             label={t("Confiance", "Confidence")}
             value={coverageConfidence === "high" ? t("Forte", "High") : coverageConfidence === "medium" ? t("Moyenne", "Medium") : t("À affiner", "Low")}
@@ -1021,7 +1248,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           selectedTools={selectedTools}
           budgetBreakdown={budgetBreakdown}
           pricingSummary={pricingSummary}
-          coverageComplete={coverageCount >= STACK_MOMENTS.length}
+          coverageComplete={coverageCount >= stackMoments.length}
           highlightToolId={lastConfirmedToolId}
           stackDropRef={stackDropRef}
           onPricingReview={scrollToFirstPricingIssue}
@@ -1036,7 +1263,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       <MobileStackBar
         selectedTools={selectedTools}
         coveredCount={coveredCount}
-        totalMoments={STACK_MOMENTS.length}
+        totalMoments={stackMoments.length}
         monthlyCostLabel={selectedMonthlyCostLabel}
         onReview={() => openReview("mobile_stack_bar")}
         t={t}

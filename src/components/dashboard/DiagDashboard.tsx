@@ -70,6 +70,37 @@ const TABS: {
   },
 ];
 
+function getPersonaSidebarCopy(result: DiagnosticResult, t: Props["t"]) {
+  if (result.sessionState.persona === "SOFIA") {
+    return {
+      label: t("Angle créatif", "Creative angle"),
+      detail: t("Production, plugins, ressources, validation, licences.", "Production, plugins, resources, review, licenses."),
+    };
+  }
+  if (result.sessionState.persona === "THEO") {
+    return {
+      label: t("Angle tech", "Tech angle"),
+      detail: t("Livraison, automatisation, fiabilité, coût.", "Shipping, automation, reliability, cost."),
+    };
+  }
+  if (result.sessionState.persona === "MARC") {
+    return {
+      label: t("Angle conseil", "Consulting angle"),
+      detail: t("Clients, vente, livrables, suivi.", "Clients, sales, deliverables, follow-up."),
+    };
+  }
+  if (result.sessionState.persona === "ALIX") {
+    return {
+      label: t("Angle contenu", "Content angle"),
+      detail: t("Idée, production, publication, mesure.", "Idea, production, publishing, measurement."),
+    };
+  }
+  return {
+    label: t("Angle ops", "Ops angle"),
+    detail: t("Process, pilotage, finance, transmission.", "Process, steering, finance, handoff."),
+  };
+}
+
 export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSessionToken }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -149,6 +180,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const nextTab = activeTabIndex >= 0 && activeTabIndex < TABS.length - 1 ? TABS[activeTabIndex + 1] : null;
   const ActiveIcon = activeTabMeta.icon;
   const monthlyCostLabel = formatMonthlyTotal(result.sessionState.selectedTools, t);
+  const sidebarPersona = getPersonaSidebarCopy(result, t);
   const normalizedSidebarQuery = sidebarQuery.trim().toLowerCase();
   const sidebarTabs = normalizedSidebarQuery
     ? TABS.filter((tab) =>
@@ -206,6 +238,15 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
               <p className="truncate text-base font-semibold leading-tight text-foreground">tooltrim</p>
               <p className="truncate text-xs text-muted-foreground">{t("Restitution d’audit", "Audit restitution")}</p>
             </div>
+          </div>
+
+          <div className="mt-3 rounded-2xl border border-border bg-background px-3 py-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+              {sidebarPersona.label}
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-foreground">
+              {sidebarPersona.detail}
+            </p>
           </div>
 
           <label className="mt-4 flex h-11 items-center gap-2 rounded-2xl border border-border bg-background px-3 text-muted-foreground shadow-sm focus-within:border-foreground/30 focus-within:text-foreground">

@@ -30,6 +30,296 @@ function toolList(tools: Tool[], max = 3) {
   return names.join(", ");
 }
 
+const CREATIVE_FIGMA_PLUGIN_IDS = [
+  "figma-iconify",
+  "figma-tokens",
+  "figma-stark",
+  "figma-anima",
+  "zeplin",
+  "figma-slides",
+];
+
+const CREATIVE_RESOURCE_IDS = [
+  "envato-elements",
+  "dynamic-mockups",
+  "mockup-plugins",
+  "icons8",
+  "hugeicons",
+  "fontbase",
+  "rightfont",
+  "canva-templates",
+  "figma-templates",
+  "brand-kits",
+];
+
+const CREATIVE_MOTION_CORE_IDS = [
+  "adobe-after-effects",
+  "adobe-premiere-pro",
+  "davinci-resolve",
+  "capcut",
+  "runway",
+];
+
+const CREATIVE_MOTION_PLUGIN_IDS = [
+  "ae-bodymovin",
+  "lottiefiles",
+  "ae-animation-composer",
+  "motion-bro",
+  "ae-overlord",
+  "ae-duik",
+  "ae-gifgun",
+  "ae-red-giant",
+  "topaz-video-ai",
+  "descript",
+  "frame-io",
+];
+
+const CREATIVE_PHOTO_CORE_IDS = [
+  "adobe-lightroom",
+  "capture-one",
+  "adobe-photoshop",
+];
+
+const CREATIVE_PHOTO_DELIVERY_IDS = [
+  "presets-lightroom",
+  "lightroom-presets",
+  "luminar-neo",
+  "nik-collection",
+  "pixieset",
+];
+
+const CREATIVE_VISUAL_AI_IDS = [
+  "midjourney",
+  "krea-ai",
+  "firefly",
+  "stable-diffusion",
+  "flux",
+  "ideogram",
+  "leonardo-ai",
+  "runway",
+];
+
+function selectedByIds(tools: Tool[], ids: readonly string[]) {
+  const idSet = new Set(ids);
+  return tools.filter((tool) => idSet.has(tool.id));
+}
+
+function hasAnyTool(tools: Tool[], ids: readonly string[]) {
+  return selectedByIds(tools, ids).length > 0;
+}
+
+function buildCreativeQuestions(
+  session: SessionState,
+  t: (fr: string, en: string) => string
+): DiscoveryQuestion[] {
+  if (session.persona !== "SOFIA") return [];
+
+  const selectedTools = session.selectedTools;
+  const questions: DiscoveryQuestion[] = [];
+  const selectedCreativeAiTools = selectedByIds(selectedTools, CREATIVE_VISUAL_AI_IDS);
+  const selectedMotionTools = selectedByIds(selectedTools, CREATIVE_MOTION_CORE_IDS);
+  const selectedPhotoTools = selectedByIds(selectedTools, CREATIVE_PHOTO_CORE_IDS);
+  const selectedDesignCoreTools = selectedByIds(selectedTools, [
+    "figma",
+    "canva",
+    "adobe-photoshop",
+    "adobe-illustrator",
+    "adobe-creative-cloud",
+  ]);
+
+  if (hasAnyTool(selectedTools, ["figma"]) && !hasAnyTool(selectedTools, CREATIVE_FIGMA_PLUGIN_IDS)) {
+    questions.push({
+      id: "adaptive_creative_figma_plugins",
+      persona: "SOFIA",
+      question: t(
+        "Tu as Figma. Tu gères comment icônes, tokens, accessibilité ou handoff ?",
+        "You selected Figma. How do you handle icons, tokens, accessibility or handoff?"
+      ),
+      subtitle: t(
+        "Chez un créatif, la valeur est souvent dans les plugins et la méthode autour de Figma, pas seulement dans Figma.",
+        "For a creative profile, value often sits in the plugins and workflow around Figma, not only in Figma itself."
+      ),
+      options: [
+        {
+          label: t("J’ai déjà une bibliothèque/plugins clairs", "I already have clear libraries/plugins"),
+          impact: "keep",
+          affectedTools: ["figma"],
+        },
+        {
+          label: t("J’utilise surtout Figma seul", "I mostly use Figma alone"),
+          impact: "review",
+          affectedTools: ["figma"],
+        },
+        {
+          label: t("Je dois vérifier tokens, icônes ou accessibilité", "I need to check tokens, icons or accessibility"),
+          impact: "review",
+          affectedTools: ["figma"],
+        },
+        {
+          label: t("Pas utile pour mes livrables", "Not useful for my deliverables"),
+          impact: "keep",
+          affectedTools: ["figma"],
+        },
+      ],
+      condition_tool_ids: ["figma"],
+      condition_type: "any",
+    });
+  }
+
+  if (selectedCreativeAiTools.length >= 2) {
+    questions.push({
+      id: "adaptive_creative_ai_visual_overlap",
+      persona: "SOFIA",
+      question: t(
+        `Tu as plusieurs IA visuelles (${toolList(selectedCreativeAiTools)}). Elles ont chacune un rôle ?`,
+        `You have several visual AI tools (${toolList(selectedCreativeAiTools)}). Does each one have a clear role?`
+      ),
+      subtitle: t(
+        "Je distingue exploration, production client, retouche, vidéo et veille pour éviter les faux doublons.",
+        "I separate exploration, client production, retouching, video and research to avoid false duplicates."
+      ),
+      options: [
+        {
+          label: t("Oui, chaque IA a un usage précis", "Yes, each AI tool has a precise use"),
+          impact: "keep",
+          affectedTools: selectedCreativeAiTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Une seule sert vraiment en production", "Only one is really used in production"),
+          impact: "review",
+          affectedTools: selectedCreativeAiTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je teste beaucoup, je dois trier", "I test a lot and need to sort them out"),
+          impact: "review",
+          affectedTools: selectedCreativeAiTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je peux en couper au moins une", "I can cut at least one"),
+          impact: "cancel",
+          affectedTools: selectedCreativeAiTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedCreativeAiTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (selectedDesignCoreTools.length > 0 && !hasAnyTool(selectedTools, CREATIVE_RESOURCE_IDS)) {
+    questions.push({
+      id: "adaptive_creative_resources_rights",
+      persona: "SOFIA",
+      question: t(
+        "Pour templates, fonts, icônes, mockups et droits d’usage, tu as déjà une source fiable ?",
+        "For templates, fonts, icons, mockups and usage rights, do you already have a reliable source?"
+      ),
+      subtitle: t(
+        "C’est une zone souvent invisible dans l’audit, alors qu’elle évite les achats dispersés et les risques de licence.",
+        "This area is often invisible in audits, yet it avoids scattered purchases and licensing risk."
+      ),
+      options: [
+        {
+          label: t("Oui, c’est déjà cadré", "Yes, it is already covered"),
+          impact: "keep",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("J’achète au cas par cas", "I buy case by case"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois clarifier les licences", "I need to clarify licenses"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Pas important dans mon activité", "Not important for my work"),
+          impact: "keep",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedDesignCoreTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (selectedMotionTools.length > 0 && !hasAnyTool(selectedTools, CREATIVE_MOTION_PLUGIN_IDS)) {
+    questions.push({
+      id: "adaptive_creative_motion_plugins",
+      persona: "SOFIA",
+      question: t(
+        `Autour de ${toolList(selectedMotionTools)}, tu utilises des templates, plugins, sous-titres ou validation vidéo ?`,
+        `Around ${toolList(selectedMotionTools)}, do you use templates, plugins, subtitles or video review tools?`
+      ),
+      subtitle: t(
+        "En motion/vidéo, les extensions et outils de review changent souvent plus le flux que le logiciel principal.",
+        "In motion/video, extensions and review tools often change the workflow more than the main app."
+      ),
+      options: [
+        {
+          label: t("Oui, c’est structuré", "Yes, it is structured"),
+          impact: "keep",
+          affectedTools: selectedMotionTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je fais surtout tout à la main", "I mostly do it manually"),
+          impact: "review",
+          affectedTools: selectedMotionTools.map((tool) => tool.id),
+        },
+        {
+          label: t("J’ai des plugins dormants à vérifier", "I have dormant plugins to check"),
+          impact: "review",
+          affectedTools: selectedMotionTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Pas besoin sur mes livrables", "Not needed for my deliverables"),
+          impact: "keep",
+          affectedTools: selectedMotionTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedMotionTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (selectedPhotoTools.length > 0 && !hasAnyTool(selectedTools, CREATIVE_PHOTO_DELIVERY_IDS)) {
+    questions.push({
+      id: "adaptive_creative_photo_delivery",
+      persona: "SOFIA",
+      question: t(
+        `Avec ${toolList(selectedPhotoTools)}, comment gères-tu presets, galeries client ou exports ?`,
+        `With ${toolList(selectedPhotoTools)}, how do you handle presets, client galleries or exports?`
+      ),
+      subtitle: t(
+        "Je vérifie le workflow complet : retouche, livraison, sauvegarde et expérience client.",
+        "I check the full workflow: retouching, delivery, backup and client experience."
+      ),
+      options: [
+        {
+          label: t("Tout est clair et utile", "Everything is clear and useful"),
+          impact: "keep",
+          affectedTools: selectedPhotoTools.map((tool) => tool.id),
+        },
+        {
+          label: t("J’ai surtout l’outil principal", "I mostly have the main tool"),
+          impact: "review",
+          affectedTools: selectedPhotoTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois vérifier presets ou galeries", "I need to check presets or galleries"),
+          impact: "review",
+          affectedTools: selectedPhotoTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedPhotoTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  return questions;
+}
+
 function buildAdaptiveQuestions(
   session: SessionState,
   t: (fr: string, en: string) => string
@@ -45,6 +335,8 @@ function buildAdaptiveQuestions(
     hasRealFreeTier(tool) && tool.selectedOffer !== "free"
   );
   const skippedCount = session.selectionCoverage?.skipped.length || 0;
+
+  questions.push(...buildCreativeQuestions(session, t));
 
   if (aiTools.length >= 2) {
     questions.push({

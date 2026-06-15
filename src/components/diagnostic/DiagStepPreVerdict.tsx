@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Mail, RotateCcw, ShieldAlert, TrendingDown } from "lucide-react";
-import type { DiagnosticResult, SessionState } from "@/types/diagnostic";
+import { ArrowRight, CheckCircle2, Layers3, Mail, MessageSquare, Palette, RotateCcw, ShieldAlert, TrendingDown } from "lucide-react";
+import type { DiagnosticResult, SessionState, Tool } from "@/types/diagnostic";
 import { formatMonthlyTotal, getPricingCaptureSummary } from "@/utils/diagnosticPricing";
 
 interface Props {
@@ -14,6 +14,54 @@ interface Props {
 
 function getToolName(result: DiagnosticResult, toolId: string) {
   return result.sessionState.selectedTools.find((tool) => tool.id === toolId)?.name || toolId;
+}
+
+const CREATIVE_PRODUCTION_IDS = [
+  "figma",
+  "canva",
+  "adobe-photoshop",
+  "adobe-illustrator",
+  "adobe-after-effects",
+  "adobe-premiere-pro",
+  "davinci-resolve",
+  "capcut",
+  "adobe-lightroom",
+  "capture-one",
+];
+
+const CREATIVE_SATELLITE_IDS = [
+  "figma-iconify",
+  "figma-tokens",
+  "figma-stark",
+  "figma-anima",
+  "ae-bodymovin",
+  "lottiefiles",
+  "ae-animation-composer",
+  "motion-bro",
+  "presets-lightroom",
+  "lightroom-presets",
+  "dynamic-mockups",
+  "mockup-plugins",
+  "envato-elements",
+  "fontbase",
+  "rightfont",
+];
+
+const CREATIVE_DELIVERY_IDS = [
+  "frame-io",
+  "loom",
+  "tella",
+  "pixieset",
+  "google-drive",
+  "dropbox",
+  "wetransfer",
+  "adobe-acrobat",
+  "adobe-acrobat-sign",
+];
+
+function countTools(tools: Tool[], ids: readonly string[]) {
+  const idSet = new Set(ids);
+  return tools.filter((tool) => idSet.has(tool.id)).length;
 }
 
 export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, onPrev, t }: Props) {
@@ -34,6 +82,10 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   const hasEmail = Boolean(session.email?.trim());
   const emailValue = email.trim();
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const isCreative = session.persona === "SOFIA";
+  const creativeProductionCount = countTools(session.selectedTools, CREATIVE_PRODUCTION_IDS);
+  const creativeSatelliteCount = countTools(session.selectedTools, CREATIVE_SATELLITE_IDS);
+  const creativeDeliveryCount = countTools(session.selectedTools, CREATIVE_DELIVERY_IDS);
 
   const openRestitution = () => {
     if (wantsEmail && !isValidEmail(emailValue)) {
@@ -59,13 +111,20 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
             {t("Diagnostic prêt", "Diagnostic ready")}
           </p>
           <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-            {t("On a trouvé les signaux importants.", "We found the important signals.")}
+            {isCreative
+              ? t("Ta chaîne créative est prête à lire.", "Your creative chain is ready to read.")
+              : t("On a trouvé les signaux importants.", "We found the important signals.")}
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
-            {t(
-              "Voici la lecture rapide avant la restitution. L'objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
-              "Here is the quick read before the restitution. The goal now is to give you a clear plan, not a list of numbers."
-            )}
+            {isCreative
+              ? t(
+                  "Je vais lire le flux complet : production, plugins, ressources, droits, validation client et plans payés. Le but n’est pas de couper vite, mais de comprendre ce qui soutient réellement tes livrables.",
+                  "I will read the full flow: production, plugins, resources, rights, client review and paid plans. The goal is not to cut fast, but to understand what truly supports your deliverables."
+                )
+              : t(
+                  "Voici la lecture rapide avant la restitution. L'objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
+                  "Here is the quick read before the restitution. The goal now is to give you a clear plan, not a list of numbers."
+                )}
           </p>
         </div>
 
@@ -85,31 +144,84 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
       </div>
 
       <section className="grid gap-3 md:grid-cols-4">
-        <MetricCard
-          Icon={CheckCircle2}
-          label={t("Outils analysés", "Tools analyzed")}
-          value={String(session.selectedTools.length)}
-          detail={t("stack actuelle", "current stack")}
-        />
-        <MetricCard
-          Icon={TrendingDown}
-          label={t("Budget capté", "Captured budget")}
-          value={`${monthlyCostLabel}/${t("mois", "mo")}`}
-          detail={t("devise source ou à vérifier", "source currency or to check")}
-        />
-        <MetricCard
-          Icon={RotateCcw}
-          label={t("Doublons", "Duplicates")}
-          value={String(duplicateCount)}
-          detail={t("à arbitrer", "to decide")}
-        />
-        <MetricCard
-          Icon={ShieldAlert}
-          label={t("Prix et plans", "Prices and plans")}
-          value={String(Math.max(pricingTierCount, pricingSummary.needsVerificationCount))}
-          detail={t("à confirmer", "to confirm")}
-        />
+        {isCreative ? (
+          <>
+            <MetricCard
+              Icon={Palette}
+              label={t("Production", "Production")}
+              value={String(creativeProductionCount)}
+              detail={t("outils métier captés", "core creative tools")}
+            />
+            <MetricCard
+              Icon={Layers3}
+              label={t("Satellites", "Satellites")}
+              value={String(creativeSatelliteCount)}
+              detail={t("plugins, assets, presets", "plugins, assets, presets")}
+            />
+            <MetricCard
+              Icon={MessageSquare}
+              label={t("Validation", "Review")}
+              value={String(creativeDeliveryCount)}
+              detail={t("client, livraison, preuves", "client, delivery, proof")}
+            />
+            <MetricCard
+              Icon={ShieldAlert}
+              label={t("Plans à préciser", "Plans to clarify")}
+              value={String(Math.max(pricingTierCount, pricingSummary.needsVerificationCount))}
+              detail={t("prix et licences", "pricing and licenses")}
+            />
+          </>
+        ) : (
+          <>
+            <MetricCard
+              Icon={CheckCircle2}
+              label={t("Outils analysés", "Tools analyzed")}
+              value={String(session.selectedTools.length)}
+              detail={t("stack actuelle", "current stack")}
+            />
+            <MetricCard
+              Icon={TrendingDown}
+              label={t("Budget capté", "Captured budget")}
+              value={`${monthlyCostLabel}/${t("mois", "mo")}`}
+              detail={t("montants déclarés", "declared amounts")}
+            />
+            <MetricCard
+              Icon={RotateCcw}
+              label={t("Doublons", "Duplicates")}
+              value={String(duplicateCount)}
+              detail={t("à arbitrer", "to decide")}
+            />
+            <MetricCard
+              Icon={ShieldAlert}
+              label={t("Prix et plans", "Prices and plans")}
+              value={String(Math.max(pricingTierCount, pricingSummary.needsVerificationCount))}
+              detail={t("à confirmer", "to confirm")}
+            />
+          </>
+        )}
       </section>
+
+      {isCreative && (
+        <section className="diagnostic-card p-5">
+          <p className="text-sm font-semibold text-foreground">
+            {t("Lecture créative retenue", "Creative read")}
+          </p>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <CreativeReadCard
+              label={t("1. Produire", "1. Produce")}
+              detail={t("Les outils qui fabriquent vraiment tes livrables.", "The tools that actually produce your deliverables.")}
+            />
+            <CreativeReadCard
+              label={t("2. Accélérer", "2. Accelerate")}
+              detail={t("Plugins, templates, presets et assets qui évitent le travail répétitif.", "Plugins, templates, presets and assets that remove repetitive work.")}
+            />
+            <CreativeReadCard
+              label={t("3. Sécuriser", "3. Secure")}
+              detail={t("Validation client, droits d’usage, prix réels et licences.", "Client review, usage rights, real pricing and licenses.")}
+            />
+          </div>
+        </section>
+      )}
 
       <section className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
         <div className="diagnostic-card p-5">
@@ -262,6 +374,15 @@ function VerdictLine({ label, value }: { label: string; value: string }) {
     <div className="flex items-start justify-between gap-3 border-b border-border pb-2 last:border-0 last:pb-0">
       <span className="text-muted-foreground">{label}</span>
       <span className="max-w-[60%] text-right font-semibold text-foreground">{value}</span>
+    </div>
+  );
+}
+
+function CreativeReadCard({ label, detail }: { label: string; detail: string }) {
+  return (
+    <div className="rounded-2xl border border-border bg-background p-4">
+      <p className="text-sm font-bold text-foreground">{label}</p>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{detail}</p>
     </div>
   );
 }
