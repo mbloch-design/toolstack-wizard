@@ -38364,8 +38364,8 @@
       "threshold": "Dès que vous avez besoin d'illustrations originales pour votre marque."
     },
     "pricing": {
-      "free": "No free plan",
-      "paid": "USD 10/month (Basic)"
+      "free": "Aucune offre gratuite",
+      "paid": "Basic 10$/mois, Standard 30$, Pro 60$, Mega 120$"
     },
     "affiliateLink": "https://midjourney.com",
     "articles": [],
@@ -38374,36 +38374,39 @@
       "concept-art",
       "direction-visuelle"
     ],
-    "freeAlternative": "midjourney",
+    "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "bestFor": [],
-    "defaultMonthlyPrice": 8.66,
+    "defaultMonthlyPrice": 10,
     "pricingTiers": {
-      "free": "Essai très limité",
-      "paid": "10$/mois pour commencer"
+      "free": "Aucune offre gratuite",
+      "paid": "Basic 10$/mois, Standard 30$, Pro 60$, Mega 120$"
     },
     "relevantFor": [
       "designer",
-      "content-creator"
+      "createur-contenu",
+      "marketing"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "flux",
+      "firefly"
+    ],
     "seo": {
-      "metaDescription": "Midjourney : L'IA génératrice d'images pour les pros. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Midjourney en 2026 : prix (Basic à Mega), pas d'offre gratuite, et alternatives (Flux, Firefly). Le générateur d'images IA, analysé par ToolTrim."
     },
-    "longDescription": "Midjourney, c'est l'IA génératrice d'images pour les pros. À partir de 8.66€/mois. Pensé pour les graphistes et les créateurs vidéo.\n\nQualité artistique exceptionnelle. styles variés : réaliste, artistique, 3D, anime, etc, communauté active qui partage prompts et techniques. Itérations rapides : 4 variations en 60 secondes. Concrètement : visuels marketing : créer des images uniques pour vos campagnes. Ou encore : moodboards : générer des concepts visuels pour présenter à vos clients. Gain de temps estimé : 6h/mois.\n\nÀ garder si : vous voulez des visuels artistiques uniques ou le style 'Canva' vous ennuie. À éviter si : vous voulez juste faire des montages rapides (Canva est mieux) ou discord vous fait peur. Limite principale : fonctionne uniquement via Discord (interface déroutante). Dès que vous avez besoin d'illustrations originales pour votre marque.",
+    "longDescription": "Midjourney, c'est le générateur d'images par IA le plus réputé pour la qualité artistique. Tu décris une image en quelques mots (le prompt), et il produit des visuels souvent bluffants : illustrations, concept art, moodboards, visuels de marque. Là où des outils comme Canva restent génériques, Midjourney sort des images avec une vraie direction artistique, à condition d'apprendre à bien prompter.\n\nLongtemps réservé à Discord (ce qui en déroutait plus d'un), il dispose désormais d'une application web plus accessible. Il n'y a pas d'offre gratuite : les plans vont de Basic (10$/mois) à Standard (30$), Pro (60$) et Mega (120$), selon le temps de génération 'fast' et l'accès au mode privé.\n\nÀ qui ça sert : aux designers, créateurs et marketeurs qui ont besoin de visuels originaux. Deux limites à connaître : il reste faible pour générer du texte dans les images, et l'usage commercial demande un plan adapté. Des alternatives comme Flux ou Adobe Firefly progressent vite, mais Midjourney garde une longueur d'avance sur le rendu purement esthétique.",
     "pros": [
-      "Qualité artistique exceptionnelle",
+      "Qualité artistique exceptionnelle, difficile à égaler sur l'esthétique",
       "Styles variés : réaliste, artistique, 3D, anime, etc.",
-      "Communauté active qui partage prompts et techniques",
-      "Itérations rapides : 4 variations en 60 secondes",
+      "Désormais accessible via une application web, en plus de Discord",
       "Contrôle avancé avec paramètres (aspect ratio, stylisation, chaos)"
     ],
     "cons": [
-      "Fonctionne uniquement via Discord (interface déroutante)",
-      "Pas de version gratuite (10€/mois minimum)",
-      "Difficulté à générer du texte dans les images",
-      "Droits d'utilisation commerciale nécessitent abonnement Pro"
+      "Aucune offre gratuite (10$/mois minimum)",
+      "Apprentissage du prompting nécessaire pour de bons résultats",
+      "Difficulté à générer du texte lisible dans les images",
+      "Usage commercial soumis à un plan adapté"
     ],
     "useCases": [
       "Visuels marketing : créer des images uniques pour vos campagnes",
@@ -38435,15 +38438,18 @@
     "host_app": null,
     "slug": "midjourney",
     "shortDescriptionEn": "The image generation AI for pros.",
-    "description": "Midjourney, c'est l'IA génératrice d'images pour les pros. À partir de 8.66€/mois. Pensé pour les graphistes et les créateurs vidéo.\n\nQualité artistique exceptionnelle. styles variés : réaliste, artistique, 3D, anime, etc, communauté active qui partage prompts et techniques. Itérations rapides : 4 variations en 60 secondes. Concrètement : visuels marketing : créer des images uniques pour vos campagnes. Ou encore : moodboards : générer des concepts visuels pour présenter à vos clients. Gain de temps estimé : 6h/mois.\n\nÀ garder si : vous voulez des visuels artistiques uniques ou le style 'Canva' vous ennuie. À éviter si : vous voulez juste faire des montages rapides (Canva est mieux) ou discord vous fait peur. Limite principale : fonctionne uniquement via Discord (interface déroutante). Dès que vous avez besoin d'illustrations originales pour votre marque.",
-    "longDescriptionEn": "Midjourney is the image generation AI for pros. Starting at €8.66/month. Built for graphic designers and video creators.\n\nExceptional artistic quality. varied styles: realistic, artistic, 3D, anime, etc, active community sharing prompts and techniques. Fast iterations: 4 variations in 60 seconds. In practice: marketing visuals: create unique images for your campaigns. Also: moodboards: generate visual concepts to present to your clients. Estimated time saving: 6h/month.\n\nKeep it if: you want unique artistic visuals or you are bored with the 'Canva' style. Skip it if: you just want to make quick edits (Canva is better) or discord intimidates you. Main limit: works exclusively via Discord (confusing interface). As soon as you need original illustrations for your brand.",
+    "description": "Midjourney, c'est le générateur d'images par IA le plus réputé pour la qualité artistique. Tu décris une image en quelques mots (le prompt), et il produit des visuels souvent bluffants : illustrations, concept art, moodboards, visuels de marque. Là où des outils comme Canva restent génériques, Midjourney sort des images avec une vraie direction artistique, à condition d'apprendre à bien prompter.\n\nLongtemps réservé à Discord (ce qui en déroutait plus d'un), il dispose désormais d'une application web plus accessible. Il n'y a pas d'offre gratuite : les plans vont de Basic (10$/mois) à Standard (30$), Pro (60$) et Mega (120$), selon le temps de génération 'fast' et l'accès au mode privé.\n\nÀ qui ça sert : aux designers, créateurs et marketeurs qui ont besoin de visuels originaux. Deux limites à connaître : il reste faible pour générer du texte dans les images, et l'usage commercial demande un plan adapté. Des alternatives comme Flux ou Adobe Firefly progressent vite, mais Midjourney garde une longueur d'avance sur le rendu purement esthétique.",
+    "longDescriptionEn": "Midjourney is the AI image generator most renowned for artistic quality. You describe an image in a few words (the prompt), and it produces often stunning visuals: illustrations, concept art, moodboards, brand visuals. Where tools like Canva stay generic, Midjourney outputs images with real art direction, provided you learn to prompt well.\n\nLong restricted to Discord (which put off more than a few people), it now has a more accessible web app. There's no free tier: plans range from Basic ($10/month) to Standard ($30), Pro ($60) and Mega ($120), depending on 'fast' generation time and access to stealth mode.\n\nWho it's for: designers, creators and marketers who need original visuals. Two limits to know: it's still weak at generating readable text in images, and commercial use requires a suitable plan. Alternatives like Flux or Adobe Firefly are catching up fast, but Midjourney keeps an edge on purely aesthetic rendering.",
     "pricingEn": {
-      "free": "No free plan",
-      "paid": "$10 USD/month (Basic)"
+      "free": "No free tier",
+      "paid": "Basic $10/month, Standard $30, Pro $60, Mega $120"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune offre gratuite",
+        "Basic 10$/mois, Standard 30$, Pro 60$, Mega 120$"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "docs.midjourney.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
