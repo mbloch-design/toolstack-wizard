@@ -49830,7 +49830,8 @@
     "shortDescription": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
     "defaultMonthlyPrice": 268.47,
     "pricing": {
-      "paid": "310$/mois ou 2 545$/an"
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
     },
     "covers": [
       "bim",
@@ -49860,35 +49861,67 @@
     "affiliateLink": "https://autodesk.com/products/revit",
     "verdict": {
       "keepIf": [
-        "Architecture, structure, MEP — outil de production central"
+        "Tu travailles en BIM sur des projets de bâtiment (architecture, structure, MEP)",
+        "Tes clients ou marchés exigent une maquette BIM"
       ],
       "avoidIf": [
-        "Jamais si vous faites du BIM"
+        "Tu fais de la 3D d'archi intérieure ou de la présentation : SketchUp est plus léger et moins cher",
+        "Tu n'as pas besoin de BIM collaboratif"
       ],
-      "threshold": "Incontournable en architecture professionnelle."
+      "threshold": "Incontournable dès que le BIM collaboratif est au cœur du métier. Pour de la 3D simple ou de l'archi intérieure, SketchUp suffit ; ArchiCAD est l'alternative directe sur le BIM."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Standard du BIM : maquette intelligente où tout est lié (plans, coupes, nomenclatures)",
+      "Collaboration sur un même modèle entre architectes, structure et MEP",
+      "Attendu par de nombreux clients et marchés publics",
+      "Écosystème Autodesk et interopérabilité (IFC, AEC Collection)"
+    ],
+    "cons": [
+      "Très cher : pas de version gratuite, environ 365$/mois ou 2 900$/an",
+      "Courbe d'apprentissage longue et exigeante",
+      "Lourd et gourmand en ressources machine",
+      "Surdimensionné hors BIM : SketchUp suffit pour de la 3D simple"
+    ],
+    "useCases": [
+      "Concevoir un bâtiment en maquette numérique BIM",
+      "Produire plans, coupes et nomenclatures liés au modèle",
+      "Collaborer entre architecture, structure et fluides (MEP)",
+      "Répondre à une exigence BIM client ou réglementaire"
+    ],
+    "seo": {
+      "metaDescription": "Revit en 2026 : prix réel (pas de version gratuite), et alternatives (ArchiCAD, SketchUp). Le logiciel BIM de référence, analysé par ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "architecte-bim",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "310$/mois ou 2 545$/an"
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
     },
-    "longDescription": "Revit, c'est le logiciel BIM de référence pour architectes et ingénieurs structure. À partir de 268.47€/mois. Pensé pour les architectes BIM.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : architecture, structure, MEP — outil de production central. À éviter si : jamais si vous faites du BIM. Incontournable en architecture professionnelle.",
-    "alternatives": [],
+    "longDescription": "Revit, c'est le logiciel de référence du BIM (Building Information Modeling), l'outil central des cabinets d'architecture et des bureaux d'études structure et fluides (MEP). Contrairement à un simple logiciel de dessin, Revit construit une maquette numérique intelligente : chaque mur, poteau ou gaine porte des informations, et toute modification se répercute automatiquement sur les plans, coupes et nomenclatures. C'est ce qui en a fait le standard de la conception de bâtiment en équipe.\n\nLe prix est à la hauteur de son positionnement : il n'y a pas de version gratuite, et l'abonnement Autodesk tourne autour de 365$/mois ou 2 900$/an, souvent pris via l'AEC Collection (qui regroupe Revit, AutoCAD et d'autres). C'est un investissement lourd, justifié seulement par un usage professionnel régulier.\n\nÀ qui ça s'adresse : aux architectes, ingénieurs et dessinateurs qui travaillent sur des projets de bâtiment en BIM, souvent parce que le client ou la réglementation l'exigent. Pour de la 3D d'architecture intérieure ou de la présentation rapide, SketchUp est bien plus léger et moins cher. ArchiCAD est le principal concurrent direct sur le BIM. Revit reste incontournable dès que le BIM collaboratif est au cœur du métier.",
+    "alternatives": [
+      "archicad",
+      "sketchup-pro"
+    ],
     "slug": "revit",
     "shortDescriptionEn": "The reference BIM software for architects and structural engineers.",
-    "description": "Revit, c'est le logiciel BIM de référence pour architectes et ingénieurs structure. À partir de 268.47€/mois. Pensé pour les architectes BIM.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : architecture, structure, MEP — outil de production central. À éviter si : jamais si vous faites du BIM. Incontournable en architecture professionnelle.",
-    "longDescriptionEn": "Revit is the reference BIM software for architects and structural engineers. Starting at €268.47/month. Built for BIM architects.\n\nEstimated time saving: 10h/month.",
-    "pricingEn": null,
+    "description": "Revit, c'est le logiciel de référence du BIM (Building Information Modeling), l'outil central des cabinets d'architecture et des bureaux d'études structure et fluides (MEP). Contrairement à un simple logiciel de dessin, Revit construit une maquette numérique intelligente : chaque mur, poteau ou gaine porte des informations, et toute modification se répercute automatiquement sur les plans, coupes et nomenclatures. C'est ce qui en a fait le standard de la conception de bâtiment en équipe.\n\nLe prix est à la hauteur de son positionnement : il n'y a pas de version gratuite, et l'abonnement Autodesk tourne autour de 365$/mois ou 2 900$/an, souvent pris via l'AEC Collection (qui regroupe Revit, AutoCAD et d'autres). C'est un investissement lourd, justifié seulement par un usage professionnel régulier.\n\nÀ qui ça s'adresse : aux architectes, ingénieurs et dessinateurs qui travaillent sur des projets de bâtiment en BIM, souvent parce que le client ou la réglementation l'exigent. Pour de la 3D d'architecture intérieure ou de la présentation rapide, SketchUp est bien plus léger et moins cher. ArchiCAD est le principal concurrent direct sur le BIM. Revit reste incontournable dès que le BIM collaboratif est au cœur du métier.",
+    "longDescriptionEn": "Revit is the reference BIM (Building Information Modeling) software, the central tool of architecture firms and structural and MEP engineering offices. Unlike a simple drawing tool, Revit builds an intelligent digital model: each wall, column or duct carries information, and any change propagates automatically to plans, sections and schedules. That's what made it the standard for team building design.\n\nThe price matches its positioning: there's no free version, and the Autodesk subscription runs around $365/month or $2,900/year, often bought via the AEC Collection (which bundles Revit, AutoCAD and others). It's a heavy investment, justified only by regular professional use.\n\nWho it's for: architects, engineers and drafters working on BIM building projects, often because the client or regulations require it. For interior architecture 3D or quick presentation, SketchUp is far lighter and cheaper. ArchiCAD is the main direct competitor on BIM. Revit remains essential once collaborative BIM is at the heart of the job.",
+    "pricingEn": {
+      "free": "No free version, trial only",
+      "paid": "Around $365/month or $2,900/year, often via the AEC Collection"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "autodesk.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -49901,11 +49934,36 @@
     },
     "websiteUrl": "https://autodesk.com/products/revit",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You work in BIM on building projects (architecture, structure, MEP)",
+        "Your clients or contracts require a BIM model"
+      ],
+      "avoidIf": [
+        "You do interior architecture 3D or presentation: SketchUp is lighter and cheaper",
+        "You don't need collaborative BIM"
+      ],
+      "threshold": "Essential once collaborative BIM is at the heart of the job. For simple 3D or interior architecture, SketchUp is enough; ArchiCAD is the direct BIM alternative."
+    },
+    "prosEn": [
+      "BIM standard: intelligent model where everything is linked (plans, sections, schedules)",
+      "Collaboration on a single model across architecture, structure and MEP",
+      "Expected by many clients and public contracts",
+      "Autodesk ecosystem and interoperability (IFC, AEC Collection)"
+    ],
+    "consEn": [
+      "Very expensive: no free version, around $365/month or $2,900/year",
+      "Long, demanding learning curve",
+      "Heavy and resource-hungry on the machine",
+      "Overkill outside BIM: SketchUp is enough for simple 3D"
+    ],
+    "useCasesEn": [
+      "Design a building as a BIM digital model",
+      "Produce plans, sections and schedules linked to the model",
+      "Collaborate across architecture, structure and MEP",
+      "Meet a client or regulatory BIM requirement"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
