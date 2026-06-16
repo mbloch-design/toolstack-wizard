@@ -9355,38 +9355,65 @@
     "affiliateLink": "https://misterhorse.com/animation-composer",
     "verdict": {
       "keepIf": [
-        "Volume important d'animations répétitives"
+        "Tu fais du motion dans After Effects et tu réutilises souvent les mêmes animations",
+        "Tu veux accélérer ton flux avec des presets et transitions prêts à l'emploi"
       ],
       "avoidIf": [
-        "Motion Bro déjà en place — chevauchement partiel"
+        "Tu utilises déjà Motion Bro : les deux se chevauchent",
+        "Tu fais peu de motion : la version gratuite suffit largement"
       ],
-      "threshold": "Gratuit pour la version de base — toujours pertinent."
+      "threshold": "La version gratuite est un quasi-réflexe pour gagner du temps dans After Effects. Les packs Pro ne valent le coup que si tu produis du motion en volume."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Version de base gratuite, utile dès le premier projet motion",
+      "Énorme bibliothèque de presets d'animation et de transitions",
+      "Glisser-déposer dans After Effects, gain de temps immédiat",
+      "Packs Pro thématiques pour étendre la bibliothèque"
+    ],
+    "cons": [
+      "Les packs Pro payants s'additionnent vite",
+      "Chevauchement avec Motion Bro si tu l'utilises déjà",
+      "Spécifique à After Effects",
+      "Risque d'uniformiser le rendu si tout le monde utilise les mêmes presets"
+    ],
+    "useCases": [
+      "Appliquer des transitions et animations prêtes à l'emploi",
+      "Accélérer un montage motion répétitif",
+      "Constituer une bibliothèque de presets réutilisables",
+      "Démarrer le motion design sans tout animer à la main"
+    ],
+    "seo": {
+      "metaDescription": "Animation Composer en 2026 : plugin gratuit de presets pour After Effects, packs Pro et alternative Motion Bro. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
       "free": "Version de base gratuite",
-      "paid": "49$ achat unique (Pro)"
+      "paid": "Packs Pro en achat unique (à partir de ~49$)"
     },
-    "longDescription": "Animation Composer 3, c'est bibliothèque de presets d'animation et de transitions pour After Effects. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : volume important d'animations répétitives. À éviter si : motion Bro déjà en place — chevauchement partiel. Gratuit pour la version de base — toujours pertinent.",
-    "alternatives": [],
+    "longDescription": "Animation Composer, c'est un plugin gratuit pour After Effects édité par Mister Horse, qui ajoute une énorme bibliothèque de presets d'animation, de transitions et de textes animés. Tu glisses un effet sur ta composition, et tu obtiens une animation propre en quelques secondes, là où il faudrait sinon poser les keyframes à la main. Pour un monteur ou un motion designer qui répète souvent les mêmes gestes, c'est un accélérateur.\n\nLe modèle est malin : le plugin et une base de presets sont gratuits, et tu achètes ensuite des packs Pro thématiques (transitions, formes, sons) en achat unique. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : à tous ceux qui font du motion dans After Effects et veulent gagner du temps. La seule vraie limite, c'est le chevauchement avec Motion Bro, qui fait un travail comparable. Comme la base est gratuite, ça reste un quasi-réflexe à installer.",
+    "alternatives": [
+      "motion-bro"
+    ],
     "slug": "ae-animation-composer",
     "shortDescriptionEn": "Library of animation presets and transitions for After Effects.",
-    "description": "Animation Composer 3, c'est bibliothèque de presets d'animation et de transitions pour After Effects. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : volume important d'animations répétitives. À éviter si : motion Bro déjà en place — chevauchement partiel. Gratuit pour la version de base — toujours pertinent.",
-    "longDescriptionEn": "Animation Composer 3 is library of animation presets and transitions for After Effects. Free to start, paid plans for more. Built for video creators.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "description": "Animation Composer, c'est un plugin gratuit pour After Effects édité par Mister Horse, qui ajoute une énorme bibliothèque de presets d'animation, de transitions et de textes animés. Tu glisses un effet sur ta composition, et tu obtiens une animation propre en quelques secondes, là où il faudrait sinon poser les keyframes à la main. Pour un monteur ou un motion designer qui répète souvent les mêmes gestes, c'est un accélérateur.\n\nLe modèle est malin : le plugin et une base de presets sont gratuits, et tu achètes ensuite des packs Pro thématiques (transitions, formes, sons) en achat unique. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : à tous ceux qui font du motion dans After Effects et veulent gagner du temps. La seule vraie limite, c'est le chevauchement avec Motion Bro, qui fait un travail comparable. Comme la base est gratuite, ça reste un quasi-réflexe à installer.",
+    "longDescriptionEn": "Animation Composer is a free After Effects plugin by Mister Horse that adds a huge library of animation presets, transitions and animated text. You drag an effect onto your composition and get a clean animation in seconds, where you'd otherwise set keyframes by hand. For an editor or motion designer who often repeats the same moves, it's an accelerator.\n\nThe model is clever: the plugin and a base of presets are free, and you then buy themed Pro packs (transitions, shapes, sounds) as one-time purchases. No mandatory subscription.\n\nWho it's for: anyone doing motion in After Effects who wants to save time. The only real limit is the overlap with Motion Bro, which does comparable work. Since the base is free, it stays a near-reflex to install.",
+    "pricingEn": {
+      "free": "Free base version",
+      "paid": "Pro packs as one-time purchases (from ~$49)"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Version de base gratuite, packs Pro en achat unique"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "misterhorse.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -9399,11 +9426,36 @@
     },
     "websiteUrl": "https://misterhorse.com/animation-composer",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You do motion in After Effects and often reuse the same animations",
+        "You want to speed up your flow with ready-made presets and transitions"
+      ],
+      "avoidIf": [
+        "You already use Motion Bro: the two overlap",
+        "You do little motion: the free version is plenty"
+      ],
+      "threshold": "The free version is a near-reflex to save time in After Effects. The Pro packs are only worth it if you produce motion at volume."
+    },
+    "prosEn": [
+      "Free base version, useful from your first motion project",
+      "Huge library of animation presets and transitions",
+      "Drag-and-drop in After Effects, immediate time savings",
+      "Themed Pro packs to extend the library"
+    ],
+    "consEn": [
+      "Paid Pro packs add up fast",
+      "Overlaps with Motion Bro if you already use it",
+      "After Effects specific",
+      "Risk of a samey look if everyone uses the same presets"
+    ],
+    "useCasesEn": [
+      "Apply ready-made transitions and animations",
+      "Speed up repetitive motion editing",
+      "Build a library of reusable presets",
+      "Start motion design without animating everything by hand"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -48814,7 +48866,8 @@
     "shortDescription": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "10$/mois ou 99$ achat unique"
+      "free": "",
+      "paid": "Environ 99$/an (suite Magic Bullet), ou via l'abonnement Maxon One"
     },
     "covers": [
       "color-grading",
@@ -48835,39 +48888,67 @@
       "alix"
     ],
     "timeGainedHoursPerMonth": 4,
-    "freeAlternative": null,
+    "freeAlternative": "DaVinci Resolve",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
     "affiliateLink": "https://maxon.net/red-giant",
     "verdict": {
       "keepIf": [
-        "Étalonnage cinématique professionnel, finitions haute gamme"
+        "Tu livres régulièrement des vidéos avec un look soigné dans After Effects/Premiere",
+        "Tu veux rester dans le flux Adobe plutôt que passer par DaVinci"
       ],
       "avoidIf": [
-        "DaVinci Resolve couvre déjà l'étalonnage — doublon si utilisé"
+        "Tu étalonnes déjà dans DaVinci Resolve (gratuit et complet)",
+        "Ton montage est simple et n'a pas d'exigence de look cinéma"
       ],
-      "threshold": "Rentable si vous livrez des vidéos avec look cinéma régulièrement."
+      "threshold": "Un confort haut de gamme pour le look cinéma dans le flux Adobe. Si tu étalonnes déjà dans DaVinci Resolve, c'est souvent un doublon."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Looks cinéma appliqués en quelques clics (Magic Bullet Looks)",
+      "Étalonnage fin et débruitage intégrés au flux After Effects/Premiere",
+      "Référence pro pour le look cinématique",
+      "Gros gain de temps face à un étalonnage 100% manuel"
+    ],
+    "cons": [
+      "Passé sur l'abonnement Maxon, plus de licence perpétuelle simple",
+      "Doublon si tu étalonnes déjà dans DaVinci Resolve (gratuit)",
+      "Tarif qui grimpe vite si tu prends tout l'écosystème Red Giant",
+      "Surdimensionné pour un montage simple sans exigence de look"
+    ],
+    "useCases": [
+      "Appliquer un look cinéma à une vidéo dans After Effects ou Premiere",
+      "Corriger les couleurs finement avec Colorista",
+      "Nettoyer le grain d'une vidéo avec Denoiser",
+      "Garder un étalonnage cohérent dans le flux Adobe"
+    ],
+    "seo": {
+      "metaDescription": "Red Giant Magic Bullet Suite en 2026 : prix (abonnement Maxon) et alternatives (DaVinci Resolve) pour l'étalonnage cinéma. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "10$/mois ou 99$ achat unique"
+      "free": "",
+      "paid": "Environ 99$/an (suite Magic Bullet), ou via l'abonnement Maxon One"
     },
-    "longDescription": "Red Giant Magic Bullet Suite, c'est suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser. À partir de 8.66€/mois. Pensé pour les créateurs vidéo et les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : étalonnage cinématique professionnel, finitions haute gamme. À éviter si : daVinci Resolve couvre déjà l'étalonnage — doublon si utilisé. Rentable si vous livrez des vidéos avec look cinéma régulièrement.",
-    "alternatives": [],
+    "longDescription": "Magic Bullet Suite, c'est l'ensemble de plugins d'étalonnage et de look cinématique de Red Giant (désormais Maxon), utilisé dans After Effects et Premiere. Les stars : Magic Bullet Looks pour appliquer des étalonnages cinéma en quelques clics, Colorista pour la correction colorimétrique fine, et Denoiser pour nettoyer le grain. Pour un monteur qui veut donner un rendu pro à ses vidéos sans passer des heures dans l'étalonnage manuel, c'est un gain de temps réel.\n\nLe modèle a basculé sur l'abonnement Maxon : compte autour de 99$/an pour la suite Magic Bullet, ou l'abonnement Maxon One si tu utilises aussi Trapcode, Universe et le reste de l'écosystème Red Giant. Il n'y a plus de licence perpétuelle simple.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui livrent régulièrement des vidéos avec un look soigné. La vraie question, c'est le doublon : si tu étalonnes déjà dans DaVinci Resolve (gratuit et très complet), Magic Bullet fait surtout sens pour rester dans le flux After Effects/Premiere. Sinon, c'est un confort haut de gamme dont tout le monde n'a pas besoin.",
+    "alternatives": [
+      "davinci-resolve"
+    ],
     "slug": "ae-red-giant",
     "shortDescriptionEn": "Colour grading and cinematic look suite: Looks, Colorista, Denoiser.",
-    "description": "Red Giant Magic Bullet Suite, c'est suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser. À partir de 8.66€/mois. Pensé pour les créateurs vidéo et les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : étalonnage cinématique professionnel, finitions haute gamme. À éviter si : daVinci Resolve couvre déjà l'étalonnage — doublon si utilisé. Rentable si vous livrez des vidéos avec look cinéma régulièrement.",
-    "longDescriptionEn": "Red Giant Magic Bullet Suite is colour grading and cinematic look suite: Looks, Colorista, Denoiser. Starting at €8.66/month. Built for video creators and photographers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "description": "Magic Bullet Suite, c'est l'ensemble de plugins d'étalonnage et de look cinématique de Red Giant (désormais Maxon), utilisé dans After Effects et Premiere. Les stars : Magic Bullet Looks pour appliquer des étalonnages cinéma en quelques clics, Colorista pour la correction colorimétrique fine, et Denoiser pour nettoyer le grain. Pour un monteur qui veut donner un rendu pro à ses vidéos sans passer des heures dans l'étalonnage manuel, c'est un gain de temps réel.\n\nLe modèle a basculé sur l'abonnement Maxon : compte autour de 99$/an pour la suite Magic Bullet, ou l'abonnement Maxon One si tu utilises aussi Trapcode, Universe et le reste de l'écosystème Red Giant. Il n'y a plus de licence perpétuelle simple.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui livrent régulièrement des vidéos avec un look soigné. La vraie question, c'est le doublon : si tu étalonnes déjà dans DaVinci Resolve (gratuit et très complet), Magic Bullet fait surtout sens pour rester dans le flux After Effects/Premiere. Sinon, c'est un confort haut de gamme dont tout le monde n'a pas besoin.",
+    "longDescriptionEn": "Magic Bullet Suite is Red Giant's (now Maxon) set of color grading and cinematic look plugins, used in After Effects and Premiere. The stars: Magic Bullet Looks to apply cinema grades in a few clicks, Colorista for fine color correction, and Denoiser to clean up grain. For an editor who wants a pro look without spending hours on manual grading, it's a real time saver.\n\nThe model moved to a Maxon subscription: budget around $99/year for the Magic Bullet suite, or the Maxon One subscription if you also use Trapcode, Universe and the rest of the Red Giant ecosystem. There's no longer a simple perpetual license.\n\nWho it's for: videographers and editors who regularly deliver videos with a polished look. The real question is overlap: if you already grade in DaVinci Resolve (free and very complete), Magic Bullet mostly makes sense to stay in the After Effects/Premiere flow. Otherwise, it's a high-end comfort not everyone needs.",
+    "pricingEn": {
+      "free": "",
+      "paid": "Around $99/year (Magic Bullet suite), or via the Maxon One subscription"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "compare_plan_name": "Maxon subscription",
@@ -48885,11 +48966,36 @@
     },
     "websiteUrl": "https://maxon.net/red-giant",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You regularly deliver polished-look videos in After Effects/Premiere",
+        "You want to stay in the Adobe flow rather than go through DaVinci"
+      ],
+      "avoidIf": [
+        "You already grade in DaVinci Resolve (free and complete)",
+        "Your edit is simple with no cinematic-look requirement"
+      ],
+      "threshold": "A high-end comfort for cinematic look in the Adobe flow. If you already grade in DaVinci Resolve, it's often redundant."
+    },
+    "prosEn": [
+      "Cinema looks applied in a few clicks (Magic Bullet Looks)",
+      "Fine grading and denoising built into the After Effects/Premiere flow",
+      "Pro reference for cinematic look",
+      "Big time saver versus fully manual grading"
+    ],
+    "consEn": [
+      "Moved to a Maxon subscription, no simple perpetual license",
+      "Redundant if you already grade in DaVinci Resolve (free)",
+      "Price climbs fast if you take the whole Red Giant ecosystem",
+      "Overkill for a simple edit with no look requirement"
+    ],
+    "useCasesEn": [
+      "Apply a cinema look to a video in After Effects or Premiere",
+      "Finely correct colors with Colorista",
+      "Clean up grain with Denoiser",
+      "Keep consistent grading within the Adobe flow"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
