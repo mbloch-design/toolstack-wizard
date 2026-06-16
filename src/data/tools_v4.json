@@ -44108,7 +44108,7 @@
         "Tu as besoin de cartes virtuelles pour cloisonner SaaS et abonnements"
       ],
       "avoidIf": [
-        "Tu n'as pas encore de structure (auto-entrepreneur sans CA — un compte courant dédié suffit la première année)",
+        "Tu n'as pas encore de structure (auto-entrepreneur sans CA, un compte courant dédié suffit la première année)",
         "Tu fais beaucoup de cash ou de chèques (Qonto ne les accepte pas)",
         "Ton activité est principalement hors zone SEPA"
       ],
@@ -44129,7 +44129,7 @@
       "threshold": "Profitable from €1,500/mo revenue."
     },
     "pros": [
-      "IBAN français FR76 — accepté partout en France pour prélèvements et virements",
+      "IBAN français FR76 accepté partout en France pour prélèvements et virements",
       "Onboarding 100% en ligne en 10 minutes (KBIS suffit)",
       "Synchro native avec Pennylane, Tiime, Indy, Cegid, Sage",
       "Cartes virtuelles illimitées pour cloisonner les abonnements SaaS",
@@ -44205,7 +44205,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": true,
       "requires_context_questions": false,
-      "never_auto_cancel_reason": "Outil bancaire critique — ne jamais résilier automatiquement.",
+      "never_auto_cancel_reason": "Outil bancaire critique, ne jamais résilier automatiquement.",
       "default_decision_lane": "prescribe"
     },
     "personas": [
