@@ -10,6 +10,7 @@ import type {
 } from "@/types/diagnostic";
 import { computePertinenceFallback } from "@/utils/pertinenceFallback";
 import { buildDiagnosticInsights } from "@/utils/diagnosticInsights";
+import { getCreativeSpecialtyCopy, getCreativeSpecialtyToolAffinity, isCreativeSpecialty } from "@/utils/creativeSpecialty";
 
 // ─── Force-silence list ───────────────────────────────────────────
 const FORCE_SILENCE = ["stripe", "google-drive", "paypal", "google-analytics"];
@@ -78,13 +79,19 @@ function getDowngradeSavings(tool: Tool) {
 export function computePertinence(
   tool: Tool,
   persona: Persona,
-  complementarySkills: Persona[]
+  complementarySkills: Persona[],
+  primarySpecialty?: SessionState["primarySpecialty"]
 ): number {
   let base = tool.pertinence_by_persona?.[persona] ?? computePertinenceFallback(tool, persona);
   for (const skill of complementarySkills) {
     const skillScore = tool.pertinence_by_persona?.[skill] ?? computePertinenceFallback(tool, skill);
     base += skillScore * 0.1;
   }
+
+  if (persona === "SOFIA" && isCreativeSpecialty(primarySpecialty)) {
+    base += getCreativeSpecialtyToolAffinity(tool, primarySpecialty);
+  }
+
   return Math.min(100, Math.round(base));
 }
 
@@ -112,9 +119,10 @@ export function computeScoreFinal(
   tool: Tool,
   persona: Persona,
   complementarySkills: Persona[],
-  tjm: number
+  tjm: number,
+  primarySpecialty?: SessionState["primarySpecialty"]
 ): ToolScore {
-  const pertinence = computePertinence(tool, persona, complementarySkills);
+  const pertinence = computePertinence(tool, persona, complementarySkills, primarySpecialty);
   const valueIndex = computeValueIndex(tool, tjm);
   const scoreFinal =
     tjm === 0 ? pertinence : Math.round(pertinence * 0.6 + valueIndex * 0.4);
@@ -452,18 +460,26 @@ export function computeRecommendations(
   selectedTools: Tool[],
   persona: Persona,
   complementarySkills: Persona[],
-  tjm: number
+  tjm: number,
+  primarySpecialty?: SessionState["primarySpecialty"]
 ): Tool[] {
   const selectedIds = new Set(selectedTools.map((t) => t.id));
-  const eligible = allTools.filter(
-    (t) =>
-      !selectedIds.has(t.id) &&
-      ["satellite", "gestion", "ia"].includes(t.tool_type)
-  );
+  const creativeSpecialtyActive = persona === "SOFIA" && isCreativeSpecialty(primarySpecialty);
+  const eligible = allTools.filter((t) => {
+    if (selectedIds.has(t.id)) return false;
+    if (["satellite", "gestion", "ia"].includes(t.tool_type)) return true;
+    if (!creativeSpecialtyActive) return false;
+    if (!["plugin", "specialise", "metier"].includes(t.tool_type)) return false;
+    return getCreativeSpecialtyToolAffinity(t, primarySpecialty) > 0;
+  });
 
   const scored = eligible
-    .map((t) => ({ tool: t, score: computeScoreFinal(t, persona, complementarySkills, tjm) }))
-    .sort((a, b) => b.score.scoreFinal - a.score.scoreFinal);
+    .map((t) => ({
+      tool: t,
+      affinity: getCreativeSpecialtyToolAffinity(t, primarySpecialty),
+      score: computeScoreFinal(t, persona, complementarySkills, tjm, primarySpecialty),
+    }))
+    .sort((a, b) => b.score.scoreFinal - a.score.scoreFinal || b.affinity - a.affinity);
 
   let results = scored.filter((s) => s.score.scoreFinal > 60).map((s) => s.tool);
   if (results.length < 3) {
@@ -521,6 +537,21 @@ function collectOnboardingSignals(sessionState: SessionState): DiagnosticAnswerS
       detailEn: "The user is unsure about their persona: recommendations should stay cautious.",
       actionFr: "Utiliser les réponses stack et discovery pour confirmer le bon angle de restitution.",
       actionEn: "Use stack and discovery answers to confirm the right restitution angle.",
+    });
+  }
+
+  if (sessionState.persona === "SOFIA" && isCreativeSpecialty(sessionState.primarySpecialty)) {
+    const specialty = getCreativeSpecialtyCopy(sessionState.primarySpecialty);
+    signals.push({
+      id: `onboarding_creative_specialty_${specialty.id}`,
+      source: "onboarding",
+      severity: "low",
+      labelFr: specialty.sidebarLabelFr,
+      labelEn: specialty.sidebarLabelEn,
+      detailFr: specialty.sidebarDetailFr,
+      detailEn: specialty.sidebarDetailEn,
+      actionFr: `Lire la stack avec l'angle ${specialty.labelFr}, pas comme une stack créative générique.`,
+      actionEn: `Read the stack through the ${specialty.labelEn} angle, not as a generic creative stack.`,
     });
   }
 
@@ -772,7 +803,7 @@ export function runDiagnostic(
 
   const toolScores = new Map<string, ToolScore>();
   for (const tool of selectedTools) {
-    toolScores.set(tool.id, computeScoreFinal(tool, persona, complementarySkills, tjm));
+    toolScores.set(tool.id, computeScoreFinal(tool, persona, complementarySkills, tjm, sessionState.primarySpecialty));
   }
 
   const discoverySignals = collectDiscoverySignals(sessionState, data.discoveryQuestions);
@@ -792,7 +823,7 @@ export function runDiagnostic(
   const prescriptions = applyDiscoverySignalsToPrescriptions(basePrescriptions, selectedTools, discoverySignals);
   const { score: healthScore, label: healthLabel } = computeStackHealth(prescriptions);
   const recommendations = computeRecommendations(
-    data.allTools, selectedTools, persona, complementarySkills, tjm
+    data.allTools, selectedTools, persona, complementarySkills, tjm, sessionState.primarySpecialty
   );
 
   // Bundle-aware cost: don't count tools marked as included in a bundle

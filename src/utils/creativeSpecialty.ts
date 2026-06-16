@@ -1,7 +1,9 @@
-import type { CreativeSpecialty } from "@/types/diagnostic";
+import type { CreativeSpecialty, Tool } from "@/types/diagnostic";
 
 export type CreativeSpecialtyRead = {
   id: CreativeSpecialty;
+  scoringToolIds: readonly string[];
+  scoringKeywords: readonly string[];
   labelFr: string;
   labelEn: string;
   sidebarLabelFr: string;
@@ -41,6 +43,24 @@ export const DEFAULT_CREATIVE_SPECIALTY: CreativeSpecialty = "brand_identity";
 export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecialtyRead> = {
   brand_identity: {
     id: "brand_identity",
+    scoringToolIds: [
+      "adobe-illustrator",
+      "adobe-photoshop",
+      "indesign",
+      "figma",
+      "canva",
+      "affinity-photo",
+      "fontbase",
+      "rightfont",
+      "envato-elements",
+      "icons8",
+      "noun-project",
+      "dynamic-mockups",
+      "hugeicons",
+      "brandpad",
+      "adobe-cc",
+    ],
+    scoringKeywords: ["brand", "identity", "identité", "font", "mockup", "asset", "icon", "template", "illustrator", "photoshop", "canva", "figma"],
     labelFr: "Identité / DA",
     labelEn: "Brand / art direction",
     sidebarLabelFr: "Angle marque",
@@ -80,6 +100,23 @@ export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecial
   },
   ui_product: {
     id: "ui_product",
+    scoringToolIds: [
+      "figma",
+      "figma-tokens",
+      "figma-iconify",
+      "figma-stark",
+      "figma-anima",
+      "figma-slides",
+      "zeplin",
+      "protopie",
+      "rive",
+      "spline",
+      "framer",
+      "webflow-framer",
+      "sketch",
+      "hugeicons",
+    ],
+    scoringKeywords: ["ui", "ux", "prototype", "handoff", "design system", "component", "token", "accessibility", "a11y", "framer", "webflow"],
     labelFr: "UI / Produit",
     labelEn: "UI / Product",
     sidebarLabelFr: "Angle produit",
@@ -119,6 +156,26 @@ export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecial
   },
   motion_video: {
     id: "motion_video",
+    scoringToolIds: [
+      "adobe-after-effects",
+      "adobe-premiere-pro",
+      "davinci-resolve",
+      "capcut",
+      "runway",
+      "ae-bodymovin",
+      "lottiefiles",
+      "ae-animation-composer",
+      "motion-bro",
+      "ae-overlord",
+      "ae-duik",
+      "ae-gifgun",
+      "ae-red-giant",
+      "topaz-video-ai",
+      "descript",
+      "frame-io",
+      "motion-array",
+    ],
+    scoringKeywords: ["motion", "video", "vidéo", "animation", "subtitle", "premiere", "after effects", "lottie", "template", "review", "export"],
     labelFr: "Motion / Vidéo",
     labelEn: "Motion / Video",
     sidebarLabelFr: "Angle motion",
@@ -158,6 +215,20 @@ export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecial
   },
   photo_retouch: {
     id: "photo_retouch",
+    scoringToolIds: [
+      "adobe-lightroom",
+      "capture-one",
+      "adobe-photoshop",
+      "luminar-neo",
+      "nik-collection",
+      "lightroom-mobile",
+      "pixieset",
+      "remove-bg",
+      "topaz-video-ai",
+      "dropbox",
+      "wetransfer",
+    ],
+    scoringKeywords: ["photo", "retouch", "retouche", "raw", "preset", "lightroom", "gallery", "galerie", "pixieset", "export"],
     labelFr: "Photo / Retouche",
     labelEn: "Photo / Retouching",
     sidebarLabelFr: "Angle photo",
@@ -197,6 +268,30 @@ export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecial
   },
   content_social: {
     id: "content_social",
+    scoringToolIds: [
+      "canva",
+      "canva-pro",
+      "canva-templates",
+      "adobe-express",
+      "figma",
+      "adobe-photoshop",
+      "midjourney",
+      "firefly",
+      "krea-ai",
+      "runway",
+      "ideogram",
+      "leonardo-ai",
+      "capcut",
+      "descript",
+      "tella",
+      "brevo",
+      "mailerlite",
+      "google-analytics",
+      "hubspot",
+      "posthog",
+      "hotjar",
+    ],
+    scoringKeywords: ["content", "contenu", "social", "newsletter", "campaign", "campagne", "publish", "publier", "calendar", "audience", "lead"],
     labelFr: "Contenu social",
     labelEn: "Social content",
     sidebarLabelFr: "Angle contenu",
@@ -236,6 +331,27 @@ export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecial
   },
   illustration_3d: {
     id: "illustration_3d",
+    scoringToolIds: [
+      "procreate",
+      "adobe-illustrator",
+      "adobe-photoshop",
+      "affinity-photo",
+      "figma",
+      "midjourney",
+      "krea-ai",
+      "stable-diffusion",
+      "leonardo-ai",
+      "flux",
+      "ideogram",
+      "spline",
+      "rive",
+      "framer",
+      "blender",
+      "adobe-substance-3d",
+      "lottiefiles",
+      "ae-bodymovin",
+    ],
+    scoringKeywords: ["illustration", "3d", "render", "rendu", "drawing", "procreate", "spline", "rive", "blender", "asset", "source"],
     labelFr: "Illustration / 3D",
     labelEn: "Illustration / 3D",
     sidebarLabelFr: "Angle image/3D",
@@ -275,6 +391,31 @@ export const CREATIVE_SPECIALTY_READS: Record<CreativeSpecialty, CreativeSpecial
   },
   creative_ops: {
     id: "creative_ops",
+    scoringToolIds: [
+      "stripe",
+      "indy",
+      "paypal",
+      "adobe-cc",
+      "adobe-creative-cloud",
+      "envato-elements",
+      "fontbase",
+      "rightfont",
+      "brandpad",
+      "frame-io",
+      "loom",
+      "tella",
+      "wetransfer",
+      "google-drive",
+      "dropbox",
+      "notion",
+      "milanote",
+      "airtable",
+      "hubspot",
+      "brevo",
+      "mailerlite",
+      "looker-studio",
+    ],
+    scoringKeywords: ["studio", "ops", "license", "licence", "rights", "droits", "client", "review", "storage", "stockage", "billing", "facturation"],
     labelFr: "Studio / Ops créa",
     labelEn: "Studio / Creative ops",
     sidebarLabelFr: "Angle studio",
@@ -320,4 +461,46 @@ export function isCreativeSpecialty(value?: string): value is CreativeSpecialty 
 
 export function getCreativeSpecialtyCopy(value?: string): CreativeSpecialtyRead {
   return CREATIVE_SPECIALTY_READS[isCreativeSpecialty(value) ? value : DEFAULT_CREATIVE_SPECIALTY];
+}
+
+function normalizeCreativeText(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function toolText(tool: Tool) {
+  return normalizeCreativeText([
+    tool.id,
+    tool.slug,
+    tool.name,
+    tool.name_en,
+    tool.category,
+    tool.ia_use_case,
+    tool.tool_type,
+    ...(tool.functional_needs || []),
+  ].filter(Boolean).join(" "));
+}
+
+export function getCreativeSpecialtyToolAffinity(tool: Tool, value?: string): number {
+  if (!isCreativeSpecialty(value)) return 0;
+
+  const specialty = getCreativeSpecialtyCopy(value);
+  const normalizedId = normalizeCreativeText(tool.id);
+  const exactMatch = specialty.scoringToolIds.some((id) => normalizeCreativeText(id) === normalizedId);
+  const text = toolText(tool);
+  const keywordMatch = specialty.scoringKeywords.some((keyword) => text.includes(normalizeCreativeText(keyword)));
+
+  let affinity = 0;
+  if (exactMatch) affinity += 18;
+  if (keywordMatch) affinity += 8;
+  if (affinity > 0 && (tool.tool_type === "plugin" || tool.tool_type === "specialise")) affinity += 4;
+  if (affinity > 0 && tool.tool_type === "bundle") affinity += 2;
+
+  return Math.min(24, affinity);
+}
+
+export function getCreativeSpecialtyProtectedToolIds(value?: string): readonly string[] {
+  return isCreativeSpecialty(value) ? getCreativeSpecialtyCopy(value).scoringToolIds : [];
 }

@@ -51,7 +51,8 @@
     "validate:go30": "node scripts/validate-go30-admin-auth.mjs",
     "login:vercel": "npx --yes vercel login",
     "validate:go62": "node scripts/validate-go62-creative-specialty-routing.mjs",
-    "validate:go63": "node scripts/validate-go63-creative-restitution-routing.mjs"
+    "validate:go63": "node scripts/validate-go63-creative-restitution-routing.mjs",
+    "validate:go64": "node scripts/validate-go64-creative-specialty-scoring.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

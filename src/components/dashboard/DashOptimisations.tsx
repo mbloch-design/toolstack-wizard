@@ -121,7 +121,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
       if (!alt) continue;
 
       const currentScore = result.toolScores.get(tool.id)?.scoreFinal ?? 50;
-      const altScore = computeScoreFinal(alt, sessionState.persona, sessionState.complementarySkills, sessionState.tjm).scoreFinal;
+      const altScore = computeScoreFinal(alt, sessionState.persona, sessionState.complementarySkills, sessionState.tjm, sessionState.primarySpecialty).scoreFinal;
 
       if (altScore > currentScore) {
         out.push({ current: tool, alternative: alt, savings: Math.round(tool.price - alt.price), currentScore, altScore });
