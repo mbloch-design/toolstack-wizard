@@ -20756,21 +20756,26 @@
   {
     "id": "dropbox",
     "name": "Dropbox",
-    "shortDescription": "Service de stockage cloud et synchronisation de fichiers.",
-    "description": "Dropbox, c'est service de stockage cloud et synchronisation de fichiers. À partir de 10€/mois. Pensé pour les graphistes et les photographes.\n\nSpécialisé en cloud storage, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois. Si le budget le permet, google-drive va plus loin.",
+    "shortDescription": "Stockage cloud et synchronisation de fichiers, avec partage et historique de versions.",
+    "description": "Dropbox, c'est le pionnier du stockage cloud et de la synchronisation de fichiers. Tu déposes un fichier dans ton dossier Dropbox, il est synchronisé sur tous tes appareils et accessible partout, avec un historique des versions et un partage par lien simple. Sa fiabilité de synchro, longtemps supérieure à la concurrence, en a fait l'outil de référence de beaucoup de créatifs et d'indépendants qui manipulent de gros fichiers.\n\nLe modèle : un plan gratuit famélique (2 Go), puis Plus à environ 12$/mois pour 2 To et Professional à 20$/mois pour 3 To. C'est plus cher que la concurrence, et c'est le vrai point faible aujourd'hui.\n\nÀ qui ça sert : à ceux qui veulent une synchro fiable et un partage simple, surtout avec de gros fichiers créatifs. Mais la question du rapport qualité-prix se pose : Google Drive offre 15 Go gratuits et un meilleur prix si tu vis dans l'écosystème Google, et pour du simple envoi ponctuel un lien suffit. Dropbox garde l'avantage de la robustesse de sa synchro et de son intégration multiplateforme, mais ce n'est plus le choix évident.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Basic gratuit, 2 Go de stockage",
+      "paid": "Plus à ~12$/mois (2 To), Professional à 20$/mois (3 To)"
     },
     "website": "https://dropbox.com",
     "affiliateLink": "https://dropbox.com",
     "pros": [
-      "Spécialisé en cloud storage",
-      "Interface professionnelle"
+      "Synchronisation fiable et rapide sur tous les appareils",
+      "Partage par lien et historique de versions intégrés",
+      "Excellent pour manipuler de gros fichiers créatifs",
+      "Intégration multiplateforme (Mac, Windows, mobile)"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Plus cher que la concurrence à stockage équivalent",
+      "Plan gratuit famélique (2 Go)",
+      "Google Drive offre 15 Go gratuits et un meilleur prix",
+      "Pour un envoi ponctuel, un simple lien suffit"
     ],
     "bestFor": [
       "all"
@@ -20778,31 +20783,36 @@
     "covers": [
       "cloud storage"
     ],
-    "freeAlternative": null,
+    "freeAlternative": "Google Drive",
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 12,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Basic gratuit, 2 Go de stockage",
+      "paid": "Plus à ~12$/mois (2 To), Professional à 20$/mois (3 To)"
     },
     "relevantFor": [
-      "all"
+      "designer",
+      "createur-contenu",
+      "consultant"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux une synchro fiable et un partage simple, surtout de gros fichiers",
+        "Tu travailles en multiplateforme et la robustesse de la synchro prime"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu vis dans l'écosystème Google : Drive est moins cher et offre 15 Go gratuits",
+        "Tu veux juste envoyer un fichier de temps en temps : un lien suffit"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Solide pour de la synchro fiable et le partage de gros fichiers. Mais à stockage égal, Google Drive est souvent moins cher, surtout dans l'écosystème Google."
     },
-    "alternatives": [],
+    "alternatives": [
+      "google-drive",
+      "wetransfer"
+    ],
     "seo": {
-      "metaDescription": "Dropbox : Service de stockage cloud et synchronisation de fichiers. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Dropbox en 2026 : prix (Plus/Professional), plan gratuit et alternatives (Google Drive). Le verdict ToolTrim sur le stockage cloud."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -20818,9 +20828,9 @@
     ],
     "betterAlternative": {
       "tool": "google-drive",
-      "reason": "moins-cher-mieux-integre",
+      "reason": "Moins cher à stockage égal (15 Go gratuits) et mieux intégré si tu utilises Docs, Sheets et Gmail.",
       "saving": 10,
-      "performanceGain": "Google Drive s'intègre nativement avec Docs, Sheets, Gmail"
+      "performanceGain": "Google Drive s'intègre nativement avec Docs, Sheets et Gmail."
     },
     "migrationGuide": {
       "steps": [
@@ -20837,15 +20847,18 @@
     "ia_use_case": null,
     "slug": "dropbox",
     "shortDescriptionEn": "Cloud storage and file synchronization service.",
-    "longDescription": "Dropbox, c'est service de stockage cloud et synchronisation de fichiers. À partir de 10€/mois. Pensé pour les graphistes et les photographes.\n\nSpécialisé en cloud storage, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois. Si le budget le permet, google-drive va plus loin.",
-    "longDescriptionEn": "Dropbox is cloud storage and file synchronization service. Starting at €10/month. Built for graphic designers and photographers.\n\nSpecialized in cloud storage, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €10/month. If budget allows, google-drive goes further.",
+    "longDescription": "Dropbox, c'est le pionnier du stockage cloud et de la synchronisation de fichiers. Tu déposes un fichier dans ton dossier Dropbox, il est synchronisé sur tous tes appareils et accessible partout, avec un historique des versions et un partage par lien simple. Sa fiabilité de synchro, longtemps supérieure à la concurrence, en a fait l'outil de référence de beaucoup de créatifs et d'indépendants qui manipulent de gros fichiers.\n\nLe modèle : un plan gratuit famélique (2 Go), puis Plus à environ 12$/mois pour 2 To et Professional à 20$/mois pour 3 To. C'est plus cher que la concurrence, et c'est le vrai point faible aujourd'hui.\n\nÀ qui ça sert : à ceux qui veulent une synchro fiable et un partage simple, surtout avec de gros fichiers créatifs. Mais la question du rapport qualité-prix se pose : Google Drive offre 15 Go gratuits et un meilleur prix si tu vis dans l'écosystème Google, et pour du simple envoi ponctuel un lien suffit. Dropbox garde l'avantage de la robustesse de sa synchro et de son intégration multiplateforme, mais ce n'est plus le choix évident.",
+    "longDescriptionEn": "Dropbox is the pioneer of cloud storage and file synchronization. You drop a file in your Dropbox folder, it syncs across all your devices and is accessible everywhere, with version history and simple link sharing. Its sync reliability, long superior to the competition, made it the reference tool for many creatives and freelancers handling large files.\n\nThe model: a meager free plan (2 GB), then Plus at around $12/month for 2 TB and Professional at $20/month for 3 TB. It's pricier than the competition, and that's the real weakness today.\n\nWho it's for: those who want reliable sync and simple sharing, especially with large creative files. But the value question stands: Google Drive offers 15 GB free and a better price if you live in the Google ecosystem, and for a simple one-off send a link is enough. Dropbox keeps the edge of its robust sync and cross-platform integration, but it's no longer the obvious choice.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": "Basic free, 2 GB of storage",
+      "paid": "Plus at ~$12/month (2 TB), Professional at $20/month (3 TB)"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Basic gratuit limité à 2 Go",
+        "Plus à ~12$/mois (2 To), Professional à 20$/mois (3 To), plus cher que la concurrence"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "dropbox.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -20854,30 +20867,45 @@
       "location_sensitive": false,
       "official_source_url": "https://www.dropbox.com/plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10
+      "compare_price_monthly_eur": 12
     },
     "websiteUrl": "https://dropbox.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You want reliable sync and simple sharing, especially of large files",
+        "You work cross-platform and sync robustness matters"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You live in the Google ecosystem: Drive is cheaper and offers 15 GB free",
+        "You just want to send a file occasionally: a link is enough"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Solid for reliable sync and large-file sharing. But at equal storage, Google Drive is often cheaper, especially in the Google ecosystem."
     },
     "prosEn": [
-      "Specialized in cloud storage",
-      "Professional interface"
+      "Reliable, fast sync across all devices",
+      "Built-in link sharing and version history",
+      "Excellent for handling large creative files",
+      "Cross-platform integration (Mac, Windows, mobile)"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Pricier than the competition at equal storage",
+      "Meager free plan (2 GB)",
+      "Google Drive offers 15 GB free and a better price",
+      "For a one-off send, a simple link is enough"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Synchroniser ses fichiers entre plusieurs appareils",
+      "Partager de gros fichiers créatifs avec des clients",
+      "Sauvegarder et retrouver des versions antérieures",
+      "Centraliser des dossiers de travail accessibles partout"
+    ],
+    "useCasesEn": [
+      "Sync files across multiple devices",
+      "Share large creative files with clients",
+      "Back up and restore earlier versions",
+      "Centralize work folders accessible everywhere"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
