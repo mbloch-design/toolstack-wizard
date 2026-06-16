@@ -24896,7 +24896,8 @@
     "shortDescription": "Export GIF directement depuis After Effects en un clic.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "29$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~40$), licence à vie, pas d'abonnement"
     },
     "covers": [
       "export-gif",
@@ -24924,32 +24925,58 @@
     "affiliateLink": "https://aescripts.com/gifgun",
     "verdict": {
       "keepIf": [
-        "Export GIF fréquent pour web, réseaux sociaux"
+        "Tu exportes souvent des GIF depuis After Effects pour le web ou les réseaux",
+        "Tu veux un export GIF propre en un clic, sans passer par Photoshop"
       ],
       "avoidIf": [
-        "Pas de besoin GIF — inutile"
+        "Tu n'as pas besoin de GIF",
+        "Tu n'utilises pas After Effects"
       ],
-      "threshold": "Achat unique minime — rentable dès le premier GIF livré."
+      "threshold": "Achat unique minime, rentabilisé dès le premier GIF si tu en exportes régulièrement. Sans besoin de GIF, c'est inutile."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Export GIF en un clic depuis After Effects",
+      "Contrôle de la qualité, des couleurs et de la taille du fichier",
+      "Achat unique à petit prix, sans abonnement",
+      "Évite l'aller-retour par Photoshop ou Media Encoder"
+    ],
+    "cons": [
+      "Utile uniquement si tu exportes des GIF",
+      "Spécifique à After Effects",
+      "Le format GIF lui-même est limité (couleurs, poids)",
+      "Inutile pour de la vidéo classique"
+    ],
+    "useCases": [
+      "Exporter un GIF animé pour un réseau social",
+      "Créer un GIF de démo produit ou d'interface",
+      "Livrer une micro-animation au format GIF",
+      "Partager un aperçu animé léger"
+    ],
+    "seo": {
+      "metaDescription": "GifGun en 2026 : exporter des GIF depuis After Effects en un clic, prix (achat unique) et à qui ça sert. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "community-manager"
+    ],
     "pricingTiers": {
-      "paid": "29$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~40$), licence à vie, pas d'abonnement"
     },
-    "longDescription": "GifGun, c'est export GIF directement depuis After Effects en un clic. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo et les community managers.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : export GIF fréquent pour web, réseaux sociaux. À éviter si : pas de besoin GIF — inutile. Achat unique minime — rentable dès le premier GIF livré.",
+    "longDescription": "GifGun, c'est un petit plugin qui fait une chose et la fait bien : exporter un GIF animé directement depuis After Effects, en un clic, sans passer par Photoshop ou Media Encoder. Tu cliques, tu règles la taille et la qualité, et tu obtiens ton GIF. Pour un motion designer ou un community manager qui livre souvent des animations courtes pour le web et les réseaux, c'est un gain de temps quotidien.\n\nC'est un achat unique à petit prix (~40$ chez aescripts), sans abonnement. Tu l'achètes une fois, tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : à ceux qui exportent régulièrement des GIF depuis After Effects. Si tu n'as pas ce besoin, GifGun ne sert à rien. Mais si tu en fais souvent, l'investissement est dérisoire face au temps gagné, et le contrôle qualité est meilleur que l'export GIF natif.",
     "alternatives": [],
     "slug": "ae-gifgun",
     "shortDescriptionEn": "Export GIFs directly from After Effects in one click.",
-    "description": "GifGun, c'est export GIF directement depuis After Effects en un clic. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo et les community managers.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : export GIF fréquent pour web, réseaux sociaux. À éviter si : pas de besoin GIF — inutile. Achat unique minime — rentable dès le premier GIF livré.",
-    "longDescriptionEn": "GifGun is export GIFs directly from After Effects in one click. Free to start, paid plans for more. Built for video creators and community managers.\n\nEstimated time saving: 2h/month.",
-    "pricingEn": null,
+    "description": "GifGun, c'est un petit plugin qui fait une chose et la fait bien : exporter un GIF animé directement depuis After Effects, en un clic, sans passer par Photoshop ou Media Encoder. Tu cliques, tu règles la taille et la qualité, et tu obtiens ton GIF. Pour un motion designer ou un community manager qui livre souvent des animations courtes pour le web et les réseaux, c'est un gain de temps quotidien.\n\nC'est un achat unique à petit prix (~40$ chez aescripts), sans abonnement. Tu l'achètes une fois, tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : à ceux qui exportent régulièrement des GIF depuis After Effects. Si tu n'as pas ce besoin, GifGun ne sert à rien. Mais si tu en fais souvent, l'investissement est dérisoire face au temps gagné, et le contrôle qualité est meilleur que l'export GIF natif.",
+    "longDescriptionEn": "GifGun is a small plugin that does one thing well: export an animated GIF directly from After Effects, in one click, without going through Photoshop or Media Encoder. You click, set size and quality, and get your GIF. For a motion designer or community manager who often delivers short animations for the web and social, it's a daily time saver.\n\nIt's a low-cost one-time purchase (~$40 at aescripts), no subscription. You buy it once, use it forever.\n\nWho it's for: those who regularly export GIFs from After Effects. If you don't have that need, GifGun is useless. But if you do it often, the investment is trivial versus the time saved, and the quality control beats the native GIF export.",
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase (~$40), lifetime license, no subscription"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "compare_plan_name": "License",
@@ -24993,11 +25020,36 @@
     },
     "websiteUrl": "https://aescripts.com/gifgun",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You often export GIFs from After Effects for the web or social",
+        "You want a clean one-click GIF export without going through Photoshop"
+      ],
+      "avoidIf": [
+        "You don't need GIFs",
+        "You don't use After Effects"
+      ],
+      "threshold": "A tiny one-time purchase, paid off from the first GIF if you export them regularly. Without a GIF need, it's useless."
+    },
+    "prosEn": [
+      "One-click GIF export from After Effects",
+      "Control over quality, colors and file size",
+      "Low-cost one-time purchase, no subscription",
+      "Avoids the round-trip through Photoshop or Media Encoder"
+    ],
+    "consEn": [
+      "Useful only if you export GIFs",
+      "After Effects specific",
+      "The GIF format itself is limited (colors, weight)",
+      "Useless for classic video"
+    ],
+    "useCasesEn": [
+      "Export an animated GIF for social media",
+      "Create a product or interface demo GIF",
+      "Deliver a micro-animation in GIF format",
+      "Share a lightweight animated preview"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
