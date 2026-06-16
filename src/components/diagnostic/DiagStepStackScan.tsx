@@ -20,7 +20,7 @@ import {
   X,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import type { SessionState, Tool } from "@/types/diagnostic";
+import type { CreativeSpecialty, SessionState, Tool } from "@/types/diagnostic";
 import {
   formatMonthlyEur,
   formatMonthlyTotal,
@@ -357,6 +357,168 @@ const CREATIVE_PARENT_RELATIONS = [
   },
 ] as const;
 
+const CREATIVE_SPECIALTY_CONFIG: Record<CreativeSpecialty, {
+  labelFr: string;
+  labelEn: string;
+  momentOrder: readonly StackMoment["id"][];
+  toolsByMoment: Partial<Record<StackMoment["id"], readonly string[]>>;
+}> = {
+  brand_identity: {
+    labelFr: "Identité / direction artistique",
+    labelEn: "Brand / art direction",
+    momentOrder: [
+      "creative-brief-assets",
+      "creative-design-core",
+      "creative-plugins-resources",
+      "creative-admin-rights",
+      "creative-client-review",
+      "creative-ai-visual",
+      "creative-handoff-web",
+      "creative-measure-growth",
+      "creative-motion-video",
+      "creative-photo-retouch",
+    ],
+    toolsByMoment: {
+      "creative-design-core": ["adobe-illustrator", "adobe-photoshop", "indesign", "figma", "canva", "affinity-photo"],
+      "creative-plugins-resources": ["fontbase", "rightfont", "envato-elements", "icons8", "noun-project", "dynamic-mockups", "hugeicons"],
+      "creative-admin-rights": ["adobe-cc", "envato-elements", "brandpad", "fontbase", "rightfont"],
+      "creative-client-review": ["google-drive", "dropbox", "wetransfer", "adobe-acrobat", "adobe-acrobat-sign"],
+    },
+  },
+  ui_product: {
+    labelFr: "UI / produit",
+    labelEn: "UI / product",
+    momentOrder: [
+      "creative-brief-assets",
+      "creative-design-core",
+      "creative-plugins-resources",
+      "creative-handoff-web",
+      "creative-client-review",
+      "creative-admin-rights",
+      "creative-measure-growth",
+      "creative-ai-visual",
+      "creative-motion-video",
+      "creative-photo-retouch",
+    ],
+    toolsByMoment: {
+      "creative-design-core": ["figma", "sketch", "framer", "webflow-framer", "canva"],
+      "creative-plugins-resources": ["figma-iconify", "figma-tokens", "figma-stark", "figma-anima", "figma-slides", "hugeicons"],
+      "creative-handoff-web": ["zeplin", "protopie", "rive", "spline", "framer", "figma-tokens", "figma-anima"],
+      "creative-client-review": ["loom", "tella", "google-drive", "notion"],
+    },
+  },
+  motion_video: {
+    labelFr: "Motion / vidéo",
+    labelEn: "Motion / video",
+    momentOrder: [
+      "creative-brief-assets",
+      "creative-motion-video",
+      "creative-ai-visual",
+      "creative-client-review",
+      "creative-plugins-resources",
+      "creative-admin-rights",
+      "creative-measure-growth",
+      "creative-design-core",
+      "creative-handoff-web",
+      "creative-photo-retouch",
+    ],
+    toolsByMoment: {
+      "creative-motion-video": ["adobe-after-effects", "adobe-premiere-pro", "davinci-resolve", "capcut", "ae-bodymovin", "ae-animation-composer", "motion-bro", "ae-overlord", "ae-duik", "ae-gifgun", "ae-red-giant", "topaz-video-ai"],
+      "creative-ai-visual": ["runway", "kling-ai", "midjourney", "firefly", "krea-ai", "topaz-video-ai"],
+      "creative-client-review": ["frame-io", "descript", "tella", "loom", "wetransfer"],
+      "creative-plugins-resources": ["motion-array", "lottiefiles", "ae-bodymovin", "envato-elements"],
+    },
+  },
+  photo_retouch: {
+    labelFr: "Photo / retouche",
+    labelEn: "Photo / retouching",
+    momentOrder: [
+      "creative-brief-assets",
+      "creative-photo-retouch",
+      "creative-client-review",
+      "creative-admin-rights",
+      "creative-ai-visual",
+      "creative-plugins-resources",
+      "creative-measure-growth",
+      "creative-design-core",
+      "creative-motion-video",
+      "creative-handoff-web",
+    ],
+    toolsByMoment: {
+      "creative-photo-retouch": ["adobe-lightroom", "capture-one", "adobe-photoshop", "luminar-neo", "nik-collection", "lightroom-mobile", "pixieset"],
+      "creative-ai-visual": ["remove-bg", "firefly", "krea-ai", "topaz-video-ai", "adobe-photoshop"],
+      "creative-client-review": ["pixieset", "dropbox", "google-drive", "wetransfer", "adobe-acrobat"],
+      "creative-admin-rights": ["adobe-cc", "fontbase", "rightfont", "envato-elements"],
+    },
+  },
+  content_social: {
+    labelFr: "Contenu social",
+    labelEn: "Social content",
+    momentOrder: [
+      "creative-brief-assets",
+      "creative-ai-visual",
+      "creative-motion-video",
+      "creative-design-core",
+      "creative-measure-growth",
+      "creative-client-review",
+      "creative-admin-rights",
+      "creative-plugins-resources",
+      "creative-handoff-web",
+      "creative-photo-retouch",
+    ],
+    toolsByMoment: {
+      "creative-design-core": ["canva", "adobe-express", "figma", "adobe-photoshop"],
+      "creative-ai-visual": ["midjourney", "firefly", "krea-ai", "runway", "ideogram", "leonardo-ai"],
+      "creative-motion-video": ["capcut", "descript", "tella", "runway", "adobe-premiere-pro"],
+      "creative-measure-growth": ["brevo", "mailerlite", "google-analytics", "hubspot", "posthog", "hotjar"],
+    },
+  },
+  illustration_3d: {
+    labelFr: "Illustration / 3D",
+    labelEn: "Illustration / 3D",
+    momentOrder: [
+      "creative-brief-assets",
+      "creative-design-core",
+      "creative-ai-visual",
+      "creative-motion-video",
+      "creative-handoff-web",
+      "creative-plugins-resources",
+      "creative-client-review",
+      "creative-admin-rights",
+      "creative-photo-retouch",
+      "creative-measure-growth",
+    ],
+    toolsByMoment: {
+      "creative-design-core": ["procreate", "adobe-illustrator", "adobe-photoshop", "affinity-photo", "figma"],
+      "creative-ai-visual": ["midjourney", "krea-ai", "stable-diffusion", "leonardo-ai", "flux", "ideogram"],
+      "creative-handoff-web": ["spline", "rive", "framer", "figma"],
+      "creative-motion-video": ["adobe-after-effects", "lottiefiles", "ae-bodymovin", "runway"],
+    },
+  },
+  creative_ops: {
+    labelFr: "Studio / ops créa",
+    labelEn: "Studio / creative ops",
+    momentOrder: [
+      "creative-admin-rights",
+      "creative-client-review",
+      "creative-brief-assets",
+      "creative-measure-growth",
+      "creative-design-core",
+      "creative-plugins-resources",
+      "creative-handoff-web",
+      "creative-motion-video",
+      "creative-ai-visual",
+      "creative-photo-retouch",
+    ],
+    toolsByMoment: {
+      "creative-admin-rights": ["stripe", "indy", "paypal", "adobe-cc", "envato-elements", "fontbase", "rightfont", "brandpad"],
+      "creative-client-review": ["frame-io", "loom", "tella", "wetransfer", "google-drive", "dropbox"],
+      "creative-brief-assets": ["notion", "milanote", "google-drive", "dropbox", "airtable"],
+      "creative-measure-growth": ["hubspot", "brevo", "mailerlite", "google-analytics", "looker-studio"],
+    },
+  },
+} as const;
+
 type StackMoment = (typeof STACK_MOMENTS)[number] | (typeof CREATIVE_STACK_MOMENTS)[number];
 type StackFeedAnimation = {
   id: string;
@@ -550,8 +712,34 @@ function matchesMoment(tool: Tool, moment: StackMoment) {
   return moment.pattern.test(toolText(tool));
 }
 
-function getStackMomentsForPersona(persona: SessionState["persona"]): readonly StackMoment[] {
-  return persona === "SOFIA" ? CREATIVE_STACK_MOMENTS : STACK_MOMENTS;
+function getCreativeSpecialty(value?: string): CreativeSpecialty | null {
+  if (!value) return null;
+  return Object.prototype.hasOwnProperty.call(CREATIVE_SPECIALTY_CONFIG, value) ? (value as CreativeSpecialty) : null;
+}
+
+function orderMomentsForCreativeSpecialty(
+  moments: readonly StackMoment[],
+  specialty: CreativeSpecialty | null
+): readonly StackMoment[] {
+  if (!specialty) return moments;
+  const order = CREATIVE_SPECIALTY_CONFIG[specialty].momentOrder;
+  const rank = new Map(order.map((id, index) => [id, index]));
+  return [...moments].sort((a, b) => (rank.get(a.id) ?? 99) - (rank.get(b.id) ?? 99));
+}
+
+function getCreativeSpecialtyToolIds(activeMomentId: string, primarySpecialty?: string) {
+  const specialty = getCreativeSpecialty(primarySpecialty);
+  if (!specialty) return new Set<string>();
+  const toolsByMoment = CREATIVE_SPECIALTY_CONFIG[specialty].toolsByMoment as Partial<Record<string, readonly string[]>>;
+  return new Set(toolsByMoment[activeMomentId] || []);
+}
+
+function getStackMomentsForPersona(
+  persona: SessionState["persona"],
+  primarySpecialty?: string
+): readonly StackMoment[] {
+  if (persona !== "SOFIA") return STACK_MOMENTS;
+  return orderMomentsForCreativeSpecialty(CREATIVE_STACK_MOMENTS, getCreativeSpecialty(primarySpecialty));
 }
 
 function getCreativeContextualToolIds(
@@ -600,7 +788,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     );
     return entryTool ? [withDefaultOffer(entryTool)] : [];
   }, [fromTool, session.selectedTools, tools]);
-  const stackMoments = useMemo(() => getStackMomentsForPersona(session.persona), [session.persona]);
+  const stackMoments = useMemo(() => getStackMomentsForPersona(session.persona, session.primarySpecialty), [session.persona, session.primarySpecialty]);
   const [selectedTools, setSelectedTools] = useState<Tool[]>(initialSelectedTools);
   const [activeMomentId, setActiveMomentId] = useState<string>(() => {
     const covered = new Set((session.selectionCoverage?.covered || []));
@@ -663,19 +851,26 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const activeMomentSuggestions = useMemo(() => {
     const activeMomentIds = activeMoment.ids as readonly string[];
     const contextualToolIds = getCreativeContextualToolIds(selectedTools, activeMoment.id, session.persona);
+    const specialtyToolIds = getCreativeSpecialtyToolIds(activeMoment.id, session.primarySpecialty);
     return tools
-      .filter((tool) => !selectedIds.has(tool.id) && (matchesMoment(tool, activeMoment) || contextualToolIds.has(tool.id)))
+      .filter((tool) =>
+        !selectedIds.has(tool.id) &&
+        (matchesMoment(tool, activeMoment) || contextualToolIds.has(tool.id) || specialtyToolIds.has(tool.id))
+      )
       .sort((a, b) => {
         const aContext = contextualToolIds.has(a.id);
         const bContext = contextualToolIds.has(b.id);
         if (aContext !== bContext) return aContext ? -1 : 1;
+        const aSpecialty = specialtyToolIds.has(a.id);
+        const bSpecialty = specialtyToolIds.has(b.id);
+        if (aSpecialty !== bSpecialty) return aSpecialty ? -1 : 1;
         const aKnown = activeMomentIds.includes(a.id);
         const bKnown = activeMomentIds.includes(b.id);
         if (aKnown !== bKnown) return aKnown ? -1 : 1;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
       .slice(0, session.persona === "SOFIA" ? 8 : 6);
-  }, [activeMoment, selectedIds, selectedTools, session.persona, tools]);
+  }, [activeMoment, selectedIds, selectedTools, session.persona, session.primarySpecialty, tools]);
   const pendingTool = useMemo(() => {
     if (!pendingToolId) return null;
     return allKnownTools.find((tool) => tool.id === pendingToolId) || null;

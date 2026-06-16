@@ -52,8 +52,9 @@ ok(
 ok(
   "persona switch drives selector moments",
   stackScan.includes("getStackMomentsForPersona") &&
-    stackScan.includes('persona === "SOFIA" ? CREATIVE_STACK_MOMENTS : STACK_MOMENTS') &&
-    stackScan.includes("getStackMomentsForPersona(session.persona)") &&
+    stackScan.includes('if (persona !== "SOFIA") return STACK_MOMENTS') &&
+    stackScan.includes("orderMomentsForCreativeSpecialty(CREATIVE_STACK_MOMENTS") &&
+    stackScan.includes("getStackMomentsForPersona(session.persona, session.primarySpecialty)") &&
     stackScan.includes('session.persona === "SOFIA" ? 8 : 6'),
   "creative profiles should see a richer but still bounded set of suggestions"
 );

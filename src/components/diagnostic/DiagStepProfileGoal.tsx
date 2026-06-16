@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
-import { ArrowRight, BriefcaseBusiness, Check, Code2, Compass, Gauge, Palette, PenLine, Scissors, Sparkles, Workflow } from "lucide-react";
-import type { Persona, SessionState, Tool } from "@/types/diagnostic";
+import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, BriefcaseBusiness, Camera, Check, Clapperboard, Code2, Compass, Cuboid, Gauge, Layers3, MonitorSmartphone, Palette, PenLine, Scissors, Sparkles, Workflow } from "lucide-react";
+import type { CreativeSpecialty, Persona, SessionState, Tool } from "@/types/diagnostic";
 
 interface Props {
   session: SessionState;
@@ -26,6 +26,25 @@ const PERSONAS: PersonaMeta[] = [
   { id: "MARC", Icon: BriefcaseBusiness, labelFr: "Conseil", labelEn: "Consulting", hintFr: "clients, vente, livrables", hintEn: "clients, sales, delivery" },
   { id: "ALIX", Icon: PenLine, labelFr: "Content", labelEn: "Content", hintFr: "contenu, audience, newsletter", hintEn: "content, audience, newsletter" },
   { id: "CLAIRE", Icon: Workflow, labelFr: "Ops / Business", labelEn: "Ops / Business", hintFr: "process, finance, pilotage", hintEn: "process, finance, operations" },
+];
+
+type CreativeSpecialtyMeta = {
+  id: CreativeSpecialty;
+  Icon: typeof Palette;
+  labelFr: string;
+  labelEn: string;
+  hintFr: string;
+  hintEn: string;
+};
+
+const CREATIVE_SPECIALTIES: CreativeSpecialtyMeta[] = [
+  { id: "brand_identity", Icon: Palette, labelFr: "Identité / DA", labelEn: "Brand / Art direction", hintFr: "logos, marques, supports", hintEn: "logos, brands, collateral" },
+  { id: "ui_product", Icon: MonitorSmartphone, labelFr: "UI / Produit", labelEn: "UI / Product", hintFr: "interfaces, design system, prototypes", hintEn: "interfaces, design systems, prototypes" },
+  { id: "motion_video", Icon: Clapperboard, labelFr: "Motion / Vidéo", labelEn: "Motion / Video", hintFr: "montage, animation, formats courts", hintEn: "editing, animation, short-form" },
+  { id: "photo_retouch", Icon: Camera, labelFr: "Photo / Retouche", labelEn: "Photo / Retouching", hintFr: "RAW, presets, galeries client", hintEn: "RAW, presets, client galleries" },
+  { id: "content_social", Icon: PenLine, labelFr: "Contenu social", labelEn: "Social content", hintFr: "posts, newsletters, ads, planning", hintEn: "posts, newsletters, ads, planning" },
+  { id: "illustration_3d", Icon: Cuboid, labelFr: "Illustration / 3D", labelEn: "Illustration / 3D", hintFr: "dessin, rendu, assets 3D", hintEn: "drawing, rendering, 3D assets" },
+  { id: "creative_ops", Icon: Layers3, labelFr: "Studio / Ops créa", labelEn: "Studio / Creative ops", hintFr: "droits, validation, licences, clients", hintEn: "rights, review, licenses, clients" },
 ];
 
 const GOALS: Array<{
@@ -122,60 +141,82 @@ function inferPersona(tools: Tool[]) {
 
 export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev, variant = "confirm", t }: Props) {
   const inferred = useMemo(() => inferPersona(session.selectedTools), [session.selectedTools]);
-  const [profileStep, setProfileStep] = useState<"persona" | "goal" | "details">("persona");
+  const [profileStep, setProfileStep] = useState<"persona" | "specialty" | "goal" | "details">("persona");
   const [firstName, setFirstName] = useState(session.firstName || "");
   const [email, setEmail] = useState(session.email || "");
   const [emailError, setEmailError] = useState("");
   const [persona, setPersona] = useState<Persona>(session.persona || inferred.persona);
+  const [primarySpecialty, setPrimarySpecialty] = useState<CreativeSpecialty>((session.primarySpecialty as CreativeSpecialty) || "brand_identity");
   const [stackGoal, setStackGoal] = useState<NonNullable<SessionState["stackGoal"]>>(session.stackGoal || "reduce_costs");
   const [tjm, setTjm] = useState<number>(session.tjm || 0);
 
   const isIntro = variant === "intro";
+  const isCreativePersona = persona === "SOFIA";
   const emailValue = email.trim();
   const isValidEmail = (value: string) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  const stepIndex = profileStep === "persona" ? 0 : profileStep === "goal" ? 1 : 2;
+  const stepOrder = isCreativePersona
+    ? (["persona", "specialty", "goal", "details"] as const)
+    : (["persona", "goal", "details"] as const);
+  const stepIndex = Math.max(0, (stepOrder as readonly string[]).indexOf(profileStep));
   const stepTitle =
     profileStep === "persona"
       ? t("Tu fais surtout quoi au quotidien ?", "What do you mostly do day to day?")
-      : profileStep === "goal"
-        ? t("Tu veux améliorer quoi en priorité ?", "What do you want to improve first?")
-        : t("Deux détails utiles, mais optionnels.", "Two useful details, but optional.");
+      : profileStep === "specialty"
+        ? t("Dans la création, tu fais surtout quoi ?", "What kind of creative work do you mostly do?")
+        : profileStep === "goal"
+          ? t("Tu veux améliorer quoi en priorité ?", "What do you want to improve first?")
+          : t("Deux détails utiles, mais optionnels.", "Two useful details, but optional.");
   const stepSubtitle =
     profileStep === "persona"
       ? t(
           "Choisis l’angle le plus proche. Ce n’est pas une étiquette définitive, c’est juste le point de départ du diagnostic.",
           "Pick the closest angle. It is not a permanent label, just the starting point for the diagnostic."
         )
-      : profileStep === "goal"
+      : profileStep === "specialty"
         ? t(
-            "Cette réponse change l’ordre des recommandations : économies, simplicité, temps gagné ou qualité de choix.",
-            "This answer changes the order of recommendations: savings, simplicity, saved time, or decision quality."
+            "Je m’en sers pour prioriser les bonnes zones : plugins Figma, photo, motion, droits, validation ou mesure.",
+            "I use it to prioritize the right areas: Figma plugins, photo, motion, rights, review or measurement."
           )
-        : t(
-            "Tu peux tout laisser vide. Le rapport restera utilisable, ces champs servent seulement à le rendre plus personnel.",
-            "You can leave everything blank. The report will still work; these fields only make it more personal."
-          );
+        : profileStep === "goal"
+          ? t(
+              "Cette réponse change l’ordre des recommandations : économies, simplicité, temps gagné ou qualité de choix.",
+              "This answer changes the order of recommendations: savings, simplicity, saved time, or decision quality."
+            )
+          : t(
+              "Tu peux tout laisser vide. Le rapport restera utilisable, ces champs servent seulement à le rendre plus personnel.",
+              "You can leave everything blank. The report will still work; these fields only make it more personal."
+            );
   const stepEyebrow =
     profileStep === "persona"
       ? t("Point de départ", "Starting point")
-      : profileStep === "goal"
-        ? t("Priorité", "Priority")
-        : t("Personnalisation", "Personalization");
+      : profileStep === "specialty"
+        ? t("Métier créatif", "Creative craft")
+        : profileStep === "goal"
+          ? t("Priorité", "Priority")
+          : t("Personnalisation", "Personalization");
   const stepHelp =
     profileStep === "persona"
       ? t("Si tu hésites, prends le rôle qui décrit le mieux tes missions récentes.", "If unsure, choose the role that best describes your recent work.")
-      : profileStep === "goal"
-        ? t("Un même outil peut être bon à garder, à réduire ou à remplacer selon ton intention.", "The same tool can be worth keeping, reducing, or replacing depending on your intent.")
-        : t("Ces infos restent privées au diagnostic et peuvent être ignorées.", "These details stay private to the diagnostic and can be skipped.");
+      : profileStep === "specialty"
+        ? t("Si tu fais plusieurs choses, choisis ce qui représente le plus tes missions récentes.", "If you do several things, pick what best represents your recent work.")
+        : profileStep === "goal"
+          ? t("Un même outil peut être bon à garder, à réduire ou à remplacer selon ton intention.", "The same tool can be worth keeping, reducing, or replacing depending on your intent.")
+          : t("Ces infos restent privées au diagnostic et peuvent être ignorées.", "These details stay private to the diagnostic and can be skipped.");
+
+  useEffect(() => {
+    if (profileStep === "specialty" && !isCreativePersona) setProfileStep("goal");
+  }, [isCreativePersona, profileStep]);
 
   const goBackWithinIntro = () => {
     if (profileStep === "details") return setProfileStep("goal");
-    if (profileStep === "goal") return setProfileStep("persona");
+    if (profileStep === "goal") return setProfileStep(isCreativePersona ? "specialty" : "persona");
+    if (profileStep === "specialty") return setProfileStep("persona");
     return onPrev?.();
   };
 
   const handlePrimary = () => {
-    if (profileStep === "persona") return setProfileStep("goal");
+    if (profileStep === "persona") return setProfileStep(isCreativePersona ? "specialty" : "goal");
+    if (profileStep === "specialty") return setProfileStep("goal");
     if (profileStep === "goal") return setProfileStep("details");
     return handleNext();
   };
@@ -197,6 +238,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
       personaConfidence: isIntro ? "clear" : persona === inferred.persona ? inferred.confidence : "hybrid",
       stackGoal,
       tjm,
+      primarySpecialty: persona === "SOFIA" ? primarySpecialty : undefined,
       complementarySkills,
     });
     onNext();
@@ -209,7 +251,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-muted-foreground shadow-sm">
             <span>{stepEyebrow}</span>
             <span className="text-muted-foreground/50">·</span>
-            <span>{stepIndex + 1}/3</span>
+            <span>{stepIndex + 1}/{stepOrder.length}</span>
           </div>
           <div className="space-y-3">
             <h1 className="text-4xl font-bold leading-[0.98] text-foreground md:text-5xl">
@@ -249,6 +291,36 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                     selected ? "border-foreground bg-foreground text-background" : "border-border text-transparent"
                   }`}>
                     <Check className="h-3.5 w-3.5" />
+                  </span>
+                </button>
+              );
+            })}
+          </section>
+        )}
+
+        {profileStep === "specialty" && (
+          <section className="mx-auto grid max-w-3xl gap-2 sm:grid-cols-2">
+            {CREATIVE_SPECIALTIES.map((item) => {
+              const Icon = item.Icon;
+              const selected = item.id === primarySpecialty;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setPrimarySpecialty(item.id)}
+                  className={`group flex min-h-[92px] items-start gap-3 rounded-2xl border p-4 text-left transition-colors ${
+                    selected ? "border-foreground bg-card shadow-md" : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
+                  }`}
+                >
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${selected ? "bg-foreground text-background" : "bg-muted text-muted-foreground group-hover:text-foreground"}`}>
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-center justify-between gap-3">
+                      <span className="text-base font-semibold text-foreground">{t(item.labelFr, item.labelEn)}</span>
+                      {selected && <Check className="h-4 w-4 shrink-0 text-foreground" />}
+                    </span>
+                    <span className="mt-1 block text-sm leading-snug text-muted-foreground">{t(item.hintFr, item.hintEn)}</span>
                   </span>
                 </button>
               );

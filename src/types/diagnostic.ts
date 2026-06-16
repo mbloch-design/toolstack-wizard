@@ -1,5 +1,14 @@
 export type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
 
+export type CreativeSpecialty =
+  | "brand_identity"
+  | "ui_product"
+  | "motion_video"
+  | "photo_retouch"
+  | "content_social"
+  | "illustration_3d"
+  | "creative_ops";
+
 export type ToolBillingChoice =
   | "free"
   | "paid"
@@ -47,7 +56,7 @@ export interface SessionState {
   personaConfidence?: "clear" | "hybrid" | "unsure";
   stackGoal?: "reduce_costs" | "save_time" | "simplify" | "quality";
   complementarySkills: Persona[];
-  primarySpecialty?: string;
+  primarySpecialty?: CreativeSpecialty | string;
   complementarySpecialties?: string[];
   email?: string;
   emailPreferences?: {
