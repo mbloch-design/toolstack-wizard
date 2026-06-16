@@ -9245,36 +9245,64 @@
     "affiliateLink": "https://animaapp.com",
     "verdict": {
       "keepIf": [
-        "Handoff fréquent vers des devs React/HTML"
+        "Tu fais souvent du handoff Figma vers du code React ou HTML",
+        "Tu veux générer une base de code à partir d'une maquette"
       ],
       "avoidIf": [
-        "Figma Dev Mode déjà utilisé par votre équipe"
+        "Ton équipe utilise déjà le Dev Mode natif de Figma",
+        "Tu attends un code propre prêt pour la prod : le code généré demande du nettoyage"
       ],
-      "threshold": "Rentable dès 5 handoffs développeur par mois."
+      "threshold": "Utile pour transformer rapidement une maquette Figma en code. Mais le Dev Mode natif de Figma couvre déjà l'inspection, et le code généré reste à retravailler avant la prod."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Transforme une maquette Figma en code React, HTML ou CSS",
+      "Automatise une partie du handoff designer vers développeur",
+      "Composants responsive et interactions exportés",
+      "Offre gratuite pour tester (quelques exports par mois)"
+    ],
+    "cons": [
+      "Le code généré demande souvent un nettoyage avant la prod",
+      "Le Dev Mode natif de Figma couvre déjà l'inspection",
+      "Abonnement vite cher (~31$/mois) pour un usage régulier",
+      "Dépendant de Figma et de la qualité de la maquette"
+    ],
+    "useCases": [
+      "Exporter une maquette Figma en code React ou HTML",
+      "Accélérer le handoff entre designers et développeurs",
+      "Générer une base de page responsive à partir d'un design",
+      "Prototyper une intégration sans tout coder à la main"
+    ],
+    "seo": {
+      "metaDescription": "Anima (Figma) en 2026 : prix et limites de l'export Figma vers code, face au Dev Mode natif. Le verdict ToolTrim pour le handoff dev."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "designer",
+      "dev-frontend"
+    ],
     "pricingTiers": {
-      "free": "3 exports/mois",
-      "paid": "31$/mois (Pro)"
+      "free": "Offre gratuite (quelques exports par mois)",
+      "paid": "Pro à ~31$/mois"
     },
-    "longDescription": "Anima, c'est export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé. À partir de 26.85€/mois. Pensé pour les designers UX/UI et les développeurs solo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : handoff fréquent vers des devs React/HTML. À éviter si : figma Dev Mode déjà utilisé par votre équipe. Rentable dès 5 handoffs développeur par mois.",
+    "longDescription": "Anima, c'est un plugin Figma qui transforme tes maquettes en code : React, HTML, CSS. L'idée, c'est d'automatiser le handoff entre le designer et le développeur, en générant une base de code responsive à partir du design, plutôt que de tout réintégrer à la main. Pour une petite équipe ou un freelance qui porte les deux casquettes, ça peut faire gagner du temps sur la mise en route.\n\nLe modèle est freemium : quelques exports gratuits par mois, puis un plan Pro autour de 31$/mois.\n\nLe point à connaître : depuis que Figma a sorti son Dev Mode natif (inspection, specs, variables), une partie de la valeur d'Anima s'est réduite. Et le code généré par ce type d'outil reste rarement prêt pour la production : il faut le relire et le nettoyer. Anima reste pertinent pour démarrer vite une intégration, à condition de ne pas en attendre du code final propre.",
     "alternatives": [],
     "slug": "figma-anima",
     "shortDescriptionEn": "Export Figma designs to React/HTML/CSS code. Automated developer handoff.",
-    "description": "Anima, c'est export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé. À partir de 26.85€/mois. Pensé pour les designers UX/UI et les développeurs solo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : handoff fréquent vers des devs React/HTML. À éviter si : figma Dev Mode déjà utilisé par votre équipe. Rentable dès 5 handoffs développeur par mois.",
-    "longDescriptionEn": "Anima is export Figma designs to React/HTML/CSS code. Automated developer handoff. Starting at €26.85/month. Built for UX/UI designers and solo developers.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
+    "description": "Anima, c'est un plugin Figma qui transforme tes maquettes en code : React, HTML, CSS. L'idée, c'est d'automatiser le handoff entre le designer et le développeur, en générant une base de code responsive à partir du design, plutôt que de tout réintégrer à la main. Pour une petite équipe ou un freelance qui porte les deux casquettes, ça peut faire gagner du temps sur la mise en route.\n\nLe modèle est freemium : quelques exports gratuits par mois, puis un plan Pro autour de 31$/mois.\n\nLe point à connaître : depuis que Figma a sorti son Dev Mode natif (inspection, specs, variables), une partie de la valeur d'Anima s'est réduite. Et le code généré par ce type d'outil reste rarement prêt pour la production : il faut le relire et le nettoyer. Anima reste pertinent pour démarrer vite une intégration, à condition de ne pas en attendre du code final propre.",
+    "longDescriptionEn": "Anima is a Figma plugin that turns your mockups into code: React, HTML, CSS. The idea is to automate handoff between designer and developer, generating a responsive code base from the design rather than re-integrating everything by hand. For a small team or a freelancer wearing both hats, it can save time on getting started.\n\nThe model is freemium: a few free exports per month, then a Pro plan around $31/month.\n\nThe thing to know: since Figma shipped its native Dev Mode (inspection, specs, variables), part of Anima's value has shrunk. And the code generated by this kind of tool is rarely production-ready: you have to review and clean it. Anima stays relevant to quickly start an integration, as long as you don't expect clean final code.",
+    "pricingEn": {
+      "free": "Free tier (a few exports per month)",
+      "paid": "Pro at ~$31/month"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Offre gratuite limitée à quelques exports par mois",
+        "Pro à ~31$/mois ; le code généré demande du nettoyage avant la prod"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "animaapp.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -9287,11 +9315,36 @@
     },
     "websiteUrl": "https://animaapp.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You often hand off Figma to React or HTML code",
+        "You want to generate a code base from a mockup"
+      ],
+      "avoidIf": [
+        "Your team already uses Figma's native Dev Mode",
+        "You expect production-ready code: the generated code needs cleanup"
+      ],
+      "threshold": "Useful to quickly turn a Figma mockup into code. But Figma's native Dev Mode already covers inspection, and the generated code still needs rework before production."
+    },
+    "prosEn": [
+      "Turns a Figma mockup into React, HTML or CSS code",
+      "Automates part of the designer-to-developer handoff",
+      "Responsive components and interactions exported",
+      "Free tier to test (a few exports per month)"
+    ],
+    "consEn": [
+      "Generated code often needs cleanup before production",
+      "Figma's native Dev Mode already covers inspection",
+      "Subscription gets pricey fast (~$31/month) for regular use",
+      "Dependent on Figma and the quality of the mockup"
+    ],
+    "useCasesEn": [
+      "Export a Figma mockup to React or HTML code",
+      "Speed up handoff between designers and developers",
+      "Generate a responsive page base from a design",
+      "Prototype an integration without coding everything by hand"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
@@ -23301,7 +23354,8 @@
     "shortDescription": "Le plugin d'animation de courbes le plus populaire pour After Effects.",
     "defaultMonthlyPrice": 8,
     "pricing": {
-      "paid": "8€/mois ou 69€ achat unique"
+      "free": "",
+      "paid": "Achat unique (~50€), licence à vie, pas d'abonnement"
     },
     "covers": [
       "motion-design",
@@ -23322,12 +23376,14 @@
     "affiliateLink": "https://aescripts.com/flow",
     "verdict": {
       "keepIf": [
-        "Motion design intensif sur After Effects"
+        "Tu fais du motion design intensif dans After Effects",
+        "Tu veux contrôler finement l'easing de tes animations en un clic"
       ],
       "avoidIf": [
-        "Usage occasionnel — courbes natives suffisent"
+        "Ton usage est occasionnel : l'éditeur de courbes natif d'After Effects suffit",
+        "Tu n'utilises pas After Effects"
       ],
-      "threshold": "Rentable dès 10h/mois sur After Effects."
+      "threshold": "Achat unique vite rentabilisé si tu animes beaucoup dans After Effects. Pour un usage occasionnel, les courbes natives suffisent."
     },
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
@@ -23335,13 +23391,18 @@
     "migrationGuide": null,
     "slug": "aescripts-flow",
     "shortDescriptionEn": "The most popular curve animation plugin for After Effects.",
-    "description": "Flow (aescripts), c'est le plugin d'animation de courbes le plus populaire pour After Effects. À partir de 8€/mois. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : motion design intensif sur After Effects. À éviter si : usage occasionnel — courbes natives suffisent. Rentable dès 10h/mois sur After Effects.",
-    "longDescription": "Flow (aescripts), c'est le plugin d'animation de courbes le plus populaire pour After Effects. À partir de 8€/mois. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : motion design intensif sur After Effects. À éviter si : usage occasionnel — courbes natives suffisent. Rentable dès 10h/mois sur After Effects.",
-    "longDescriptionEn": "Flow (aescripts) is the most popular curve animation plugin for After Effects. Starting at €8/month. Built for video creators.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "description": "Flow, c'est le plugin d'easing le plus utilisé dans After Effects. Son job : remplacer l'éditeur de courbes natif, peu pratique, par une interface visuelle où tu choisis ou dessines une courbe d'accélération et tu l'appliques à tes keyframes en un clic. Pour un motion designer, c'est un gain de temps quotidien et un meilleur contrôle du 'feeling' des animations.\n\nC'est un achat unique (aescripts), sans abonnement, ce qui en fait un investissement modeste et durable. Une fois installé, il devient vite un réflexe.\n\nÀ qui ça s'adresse : à tous ceux qui animent beaucoup dans After Effects et veulent un easing propre sans se battre avec le graph editor. Pour un usage occasionnel, les courbes natives font le travail, et l'achat ne se justifie pas. Mais en motion intensif, Flow se rentabilise très vite.",
+    "longDescription": "Flow, c'est le plugin d'easing le plus utilisé dans After Effects. Son job : remplacer l'éditeur de courbes natif, peu pratique, par une interface visuelle où tu choisis ou dessines une courbe d'accélération et tu l'appliques à tes keyframes en un clic. Pour un motion designer, c'est un gain de temps quotidien et un meilleur contrôle du 'feeling' des animations.\n\nC'est un achat unique (aescripts), sans abonnement, ce qui en fait un investissement modeste et durable. Une fois installé, il devient vite un réflexe.\n\nÀ qui ça s'adresse : à tous ceux qui animent beaucoup dans After Effects et veulent un easing propre sans se battre avec le graph editor. Pour un usage occasionnel, les courbes natives font le travail, et l'achat ne se justifie pas. Mais en motion intensif, Flow se rentabilise très vite.",
+    "longDescriptionEn": "Flow is the most-used easing plugin in After Effects. Its job: replace the clunky native curve editor with a visual interface where you pick or draw an easing curve and apply it to your keyframes in one click. For a motion designer, it's a daily time saver and better control over the 'feel' of animations.\n\nIt's a one-time purchase (aescripts), no subscription, making it a modest and lasting investment. Once installed, it quickly becomes a reflex.\n\nWho it's for: anyone animating a lot in After Effects who wants clean easing without fighting the graph editor. For occasional use, the native curves do the job and the purchase isn't justified. But for intensive motion, Flow pays for itself very fast.",
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase (~€50), lifetime license, no subscription"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Achat unique (~50€), pas d'abonnement"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -23354,21 +23415,66 @@
     },
     "websiteUrl": "https://aescripts.com/flow",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Flow (aescripts) en 2026 : le plugin d'easing pour After Effects, prix (achat unique) et quand il vaut le coup. Le verdict ToolTrim."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You do intensive motion design in After Effects",
+        "You want fine control over your animations' easing in one click"
+      ],
+      "avoidIf": [
+        "Your use is occasional: After Effects' native curve editor is enough",
+        "You don't use After Effects"
+      ],
+      "threshold": "A one-time purchase quickly paid off if you animate a lot in After Effects. For occasional use, the native curves are enough."
+    },
+    "pros": [
+      "Éditeur d'easing visuel et rapide, en un clic",
+      "Bibliothèque de courbes prédéfinies et personnalisables",
+      "Achat unique, pas d'abonnement",
+      "Standard de fait chez les motion designers"
+    ],
+    "prosEn": [
+      "Fast, visual easing editor in one click",
+      "Library of preset and customizable curves",
+      "One-time purchase, no subscription",
+      "De facto standard among motion designers"
+    ],
+    "cons": [
+      "Spécifique à After Effects",
+      "Surdimensionné pour un usage occasionnel (courbes natives suffisent)",
+      "Achat à prévoir, contrairement à des plugins gratuits",
+      "N'apporte rien hors du motion design"
+    ],
+    "consEn": [
+      "After Effects specific",
+      "Overkill for occasional use (native curves are enough)",
+      "A purchase to budget, unlike free plugins",
+      "Adds nothing outside motion design"
+    ],
+    "useCases": [
+      "Appliquer un easing précis à une animation",
+      "Réutiliser des courbes d'accélération cohérentes",
+      "Accélérer le réglage des keyframes dans After Effects",
+      "Harmoniser le feeling des animations d'un projet"
+    ],
+    "useCasesEn": [
+      "Apply precise easing to an animation",
+      "Reuse consistent acceleration curves",
+      "Speed up keyframe tuning in After Effects",
+      "Harmonize the feel of a project's animations"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
