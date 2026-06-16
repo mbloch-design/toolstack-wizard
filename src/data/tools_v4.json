@@ -26179,7 +26179,7 @@
     "id": "grammarly",
     "name": "Grammarly",
     "category": "creation",
-    "shortDescription": "Votre correcteur d'anglais personnel.",
+    "shortDescription": "Correcteur et assistant de rédaction en anglais : grammaire, style, ton et clarté.",
     "verdict": {
       "keepIf": [
         "Vous écrivez quotidiennement en anglais pro",
@@ -26192,8 +26192,8 @@
       "threshold": "Dès qu'une faute de grammaire peut vous coûter un contrat ou votre crédibilité."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "Pro 12€/membre/mois annuel ou 30€/membre/mois mensuel"
+      "free": "Gratuit (corrections de grammaire et orthographe de base)",
+      "paid": "Premium à ~12$/mois en annuel (30$ au mois), offres équipe au-delà"
     },
     "affiliateLink": "https://grammarly.com",
     "seo": {
@@ -26205,7 +26205,7 @@
       "anglais-professionnel",
       "amelioration-style"
     ],
-    "freeAlternative": "chatgpt",
+    "freeAlternative": "ChatGPT",
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "bestFor": [
@@ -26214,16 +26214,18 @@
     ],
     "defaultMonthlyPrice": 12,
     "pricingTiers": {
-      "free": "Correction orthographe/grammaire de base",
-      "paid": "12$/mois (Premium) pour style, ton et clarté"
+      "free": "Gratuit (corrections de grammaire et orthographe de base)",
+      "paid": "Premium à ~12$/mois en annuel (30$ au mois), offres équipe au-delà"
     },
     "relevantFor": [
       "writer",
       "consultant",
-      "other"
+      "marketing"
     ],
-    "alternatives": [],
-    "longDescription": "Grammarly, c'est votre correcteur d'anglais personnel. À partir de 12€/mois. Pensé pour les auteurs et newslettistes et les consultants B2B.\n\nFonctionne partout via l'extension navigateur. corrections contextuelles intelligentes (pas juste orthographe), suggestions de ton et de style pour adapter votre message. Détection de plagiat (version Premium). Concrètement : emails clients : éviter les fautes dans vos communications professionnelles. Ou encore : propositions commerciales : améliorer la clarté et le ton de vos pitchs. Gain de temps estimé : 6h/mois.\n\nÀ garder si : vous écrivez quotidiennement en anglais pro ou votre niveau est intermédiaire. À éviter si : vous n'écrivez qu'en français ou vous êtes bilingue natif. Limite principale : version gratuite limitée aux corrections basiques. Dès qu'une faute de grammaire peut vous coûter un contrat ou votre crédibilité. Alternative gratuite : chatgpt. Si le budget le permet, claude va plus loin.",
+    "alternatives": [
+      "chatgpt"
+    ],
+    "longDescription": "Grammarly, c'est l'assistant de rédaction en anglais le plus connu. Branché en extension dans ton navigateur, ton mail ou ton traitement de texte, il corrige en temps réel bien au-delà de l'orthographe : grammaire, tournures, ton, clarté. Pour quelqu'un qui écrit en anglais sans être bilingue natif, c'est un filet de sécurité qui évite les fautes qui font tache dans un email client ou une proposition commerciale.\n\nLa version gratuite couvre les corrections de base. Le plan Premium, autour de 12$/mois en annuel (30$ au mois), débloque les suggestions de style, de ton et de réécriture, plus des fonctions IA. Des offres équipe existent aussi.\n\nÀ qui ça sert : à ceux qui écrivent en anglais professionnel au quotidien. Deux limites à connaître : c'est surtout pertinent en anglais (le français est faible), et un assistant IA généraliste comme ChatGPT ou Claude fait désormais une grande partie de la relecture et de la réécriture, gratuitement ou pour moins cher. Grammarly garde l'avantage de la correction en temps réel intégrée partout, sans copier-coller.",
     "pros": [
       "Fonctionne partout via l'extension navigateur",
       "Corrections contextuelles intelligentes (pas juste orthographe)",
@@ -26256,9 +26258,9 @@
     ],
     "betterAlternative": {
       "tool": "claude",
-      "reason": "deja-dans-stack",
+      "reason": "Claude corrige et améliore le style, et il gère bien mieux le français que Grammarly.",
       "saving": 12,
-      "performanceGain": "Claude corrige ET améliore le style — bien supérieur pour le français"
+      "performanceGain": "Corrige et réécrit, nettement meilleur en français."
     },
     "migrationGuide": {
       "steps": [
@@ -26267,7 +26269,7 @@
         "Pour Chrome : utilise l'extension Claude officielle"
       ],
       "dataLoss": "Aucune",
-      "timeEstimate": "0 — même workflow"
+      "timeEstimate": "Aucun changement de workflow"
     },
     "functional_needs": [
       "correction-texte",
@@ -26278,17 +26280,18 @@
     "host_app": null,
     "slug": "grammarly",
     "shortDescriptionEn": "Your personal English writing assistant.",
-    "description": "Grammarly, c'est votre correcteur d'anglais personnel. À partir de 12€/mois. Pensé pour les auteurs et newslettistes et les consultants B2B.\n\nFonctionne partout via l'extension navigateur. corrections contextuelles intelligentes (pas juste orthographe), suggestions de ton et de style pour adapter votre message. Détection de plagiat (version Premium). Concrètement : emails clients : éviter les fautes dans vos communications professionnelles. Ou encore : propositions commerciales : améliorer la clarté et le ton de vos pitchs. Gain de temps estimé : 6h/mois.\n\nÀ garder si : vous écrivez quotidiennement en anglais pro ou votre niveau est intermédiaire. À éviter si : vous n'écrivez qu'en français ou vous êtes bilingue natif. Limite principale : version gratuite limitée aux corrections basiques. Dès qu'une faute de grammaire peut vous coûter un contrat ou votre crédibilité. Alternative gratuite : chatgpt. Si le budget le permet, claude va plus loin.",
-    "longDescriptionEn": "Grammarly is your personal English writing assistant. Starting at €12/month. Built for writers and newsletter creators and B2B consultants.\n\nWorks everywhere via the browser extension. intelligent contextual corrections (not just spelling), tone and style suggestions to adapt your message. Plagiarism detection (Premium version). In practice: customer emails: avoid mistakes in your professional communications. Also: sales proposals: improve the clarity and tone of your pitches. Estimated time saving: 6h/month.\n\nKeep it if: you write in professional English on a daily basis or your level is intermediate. Skip it if: vous n'écrivez qu'en français or vous êtes bilingue natif. Main limit: free version limited to basic corrections. As soon as a grammatical error could cost you a contract or your credibility. Free alternative: chatgpt. If budget allows, claude goes further.",
+    "description": "Grammarly, c'est l'assistant de rédaction en anglais le plus connu. Branché en extension dans ton navigateur, ton mail ou ton traitement de texte, il corrige en temps réel bien au-delà de l'orthographe : grammaire, tournures, ton, clarté. Pour quelqu'un qui écrit en anglais sans être bilingue natif, c'est un filet de sécurité qui évite les fautes qui font tache dans un email client ou une proposition commerciale.\n\nLa version gratuite couvre les corrections de base. Le plan Premium, autour de 12$/mois en annuel (30$ au mois), débloque les suggestions de style, de ton et de réécriture, plus des fonctions IA. Des offres équipe existent aussi.\n\nÀ qui ça sert : à ceux qui écrivent en anglais professionnel au quotidien. Deux limites à connaître : c'est surtout pertinent en anglais (le français est faible), et un assistant IA généraliste comme ChatGPT ou Claude fait désormais une grande partie de la relecture et de la réécriture, gratuitement ou pour moins cher. Grammarly garde l'avantage de la correction en temps réel intégrée partout, sans copier-coller.",
+    "longDescriptionEn": "Grammarly is the best-known English writing assistant. Plugged in as an extension in your browser, email or word processor, it corrects in real time well beyond spelling: grammar, phrasing, tone, clarity. For someone who writes in English without being a native, it's a safety net that prevents the kind of mistakes that stand out in a client email or a sales proposal.\n\nThe free version covers basic corrections. The Premium plan, around $12/month annually ($30 monthly), unlocks style, tone and rewrite suggestions, plus AI features. Team plans also exist.\n\nWho it's for: people writing professional English daily. Two limits to know: it's mainly relevant in English (French is weak), and a general AI assistant like ChatGPT or Claude now does a large part of the proofreading and rewriting, for free or cheaper. Grammarly keeps the edge of real-time correction built in everywhere, with no copy-paste.",
     "pricingEn": {
-      "free": "Free plan available",
-      "paid": "Pro €12/member/month billed annually or €30/member/month billed monthly"
+      "free": "Free (basic grammar and spelling corrections)",
+      "paid": "Premium at ~$12/month annually ($30 monthly), team plans above"
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Version gratuite : corrections de base",
+        "Premium à ~12$/mois en annuel (30$ au mois)"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "grammarly.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
