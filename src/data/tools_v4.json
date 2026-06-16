@@ -31984,10 +31984,10 @@
     "host_app": null,
     "category": "ai-general",
     "shortDescription": "Génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway.",
-    "defaultMonthlyPrice": 8.66,
+    "defaultMonthlyPrice": 7,
     "pricing": {
-      "free": "166 crédits/mois",
-      "paid": "10$/mois (Basic)"
+      "free": "Offre gratuite avec crédits limités par mois",
+      "paid": "Standard à ~7$/mois, Pro à ~30$, Ultra au-delà"
     },
     "covers": [
       "generation-video",
@@ -32025,36 +32025,67 @@
     "affiliateLink": "https://klingai.com",
     "verdict": {
       "keepIf": [
-        "Vidéos longues (>10s) avec réalisme cinématique"
+        "Tu veux expérimenter la vidéo générée par IA avec un bon réalisme",
+        "Tu testes plusieurs outils et Kling t'offre un bon rapport crédits/prix"
       ],
       "avoidIf": [
-        "Runway ou Pika déjà en place — triplon génération vidéo"
+        "Tu as déjà Runway ou Pika en place : ça ferait doublon",
+        "Tu as besoin d'un contrôle précis et fiable : la techno reste jeune"
       ],
-      "threshold": "À tester en gratuit avant de payer."
+      "threshold": "À tester en gratuit avant de payer. Bonne alternative à Runway sur le réalisme ; compare le nombre de crédits et le rendu selon ton besoin."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Rendu réaliste bluffant sur les mouvements et la cohérence",
+      "Texte-vers-vidéo et image-vers-vidéo, séquences relativement longues",
+      "Offre gratuite pour tester avant de payer",
+      "L'une des alternatives les plus sérieuses à Runway et Sora"
+    ],
+    "cons": [
+      "Fonctionne au crédit : la génération vidéo en consomme beaucoup",
+      "Résultats encore inégaux et contrôle limité (techno jeune)",
+      "Marché très concurrentiel et mouvant (Runway, Pika, Sora)",
+      "Éditeur chinois : à considérer selon ta sensibilité aux données"
+    ],
+    "useCases": [
+      "Générer des séquences vidéo à partir d'un texte ou d'une image",
+      "Prototyper des plans pour une vidéo ou une pub",
+      "Créer du contenu social court sans tournage",
+      "Tester la vidéo générative avant d'investir dans un outil"
+    ],
+    "seo": {
+      "metaDescription": "Kling AI en 2026 : prix (gratuit, Standard 7$, Pro 30$), et comparaison avec Runway. Le générateur vidéo IA, analysé par ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "marketing"
+    ],
     "pricingTiers": {
-      "free": "166 crédits/mois",
-      "paid": "10$/mois (Basic)"
+      "free": "Offre gratuite avec crédits limités par mois",
+      "paid": "Standard à ~7$/mois, Pro à ~30$, Ultra au-delà"
     },
-    "longDescription": "Kling AI, c'est génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway. À partir de 8.66€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : vidéos longues (>10s) avec réalisme cinématique. À éviter si : runway ou Pika déjà en place — triplon génération vidéo. À tester en gratuit avant de payer. Si le budget le permet, runway va plus loin.",
-    "alternatives": [],
+    "longDescription": "Kling AI, c'est un générateur de vidéo par IA : tu écris une description ou tu pars d'une image, et il produit une séquence vidéo réaliste, jusqu'à plusieurs secondes voire minutes. Développé par le chinois Kuaishou, il s'est imposé comme l'une des alternatives les plus sérieuses à Runway et Sora, avec un rendu souvent bluffant sur le réalisme et les mouvements.\n\nLe modèle marche au crédit : une offre gratuite donne quelques générations par mois pour tester, puis les plans payants démarrent autour de 7$/mois (Standard) et montent à 30$ (Pro) et au-delà, selon le volume de crédits et la priorité de génération. La génération vidéo IA consomme beaucoup, donc le nombre de crédits compte plus que le prix affiché.\n\nÀ qui ça s'adresse : aux créateurs, monteurs et marketeurs qui veulent expérimenter la vidéo générative sans matériel de tournage. C'est encore une techno jeune : résultats inégaux, contrôle limité, et plusieurs acteurs (Runway, Pika, Sora, Kling) se disputent la tête. Le bon réflexe : tester en gratuit avant de t'engager, et comparer avec Runway selon ton besoin.",
+    "alternatives": [
+      "runway"
+    ],
     "slug": "kling-ai",
     "shortDescriptionEn": "Realistic AI video generation up to 2 minutes. A serious Runway alternative.",
-    "description": "Kling AI, c'est génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway. À partir de 8.66€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : vidéos longues (>10s) avec réalisme cinématique. À éviter si : runway ou Pika déjà en place — triplon génération vidéo. À tester en gratuit avant de payer. Si le budget le permet, runway va plus loin.",
-    "longDescriptionEn": "Kling AI is realistic AI video generation up to 2 minutes. A serious Runway alternative. Starting at €8.66/month. Built for video creators and content creators.\n\nEstimated time saving: 6h/month.\n\nIf budget allows, runway goes further.",
-    "pricingEn": null,
+    "description": "Kling AI, c'est un générateur de vidéo par IA : tu écris une description ou tu pars d'une image, et il produit une séquence vidéo réaliste, jusqu'à plusieurs secondes voire minutes. Développé par le chinois Kuaishou, il s'est imposé comme l'une des alternatives les plus sérieuses à Runway et Sora, avec un rendu souvent bluffant sur le réalisme et les mouvements.\n\nLe modèle marche au crédit : une offre gratuite donne quelques générations par mois pour tester, puis les plans payants démarrent autour de 7$/mois (Standard) et montent à 30$ (Pro) et au-delà, selon le volume de crédits et la priorité de génération. La génération vidéo IA consomme beaucoup, donc le nombre de crédits compte plus que le prix affiché.\n\nÀ qui ça s'adresse : aux créateurs, monteurs et marketeurs qui veulent expérimenter la vidéo générative sans matériel de tournage. C'est encore une techno jeune : résultats inégaux, contrôle limité, et plusieurs acteurs (Runway, Pika, Sora, Kling) se disputent la tête. Le bon réflexe : tester en gratuit avant de t'engager, et comparer avec Runway selon ton besoin.",
+    "longDescriptionEn": "Kling AI is an AI video generator: you write a description or start from an image, and it produces a realistic video sequence, up to several seconds or even minutes. Developed by China's Kuaishou, it has become one of the most serious alternatives to Runway and Sora, with often stunning realism and motion.\n\nThe model runs on credits: a free tier gives a few generations per month to test, then paid plans start around $7/month (Standard) and climb to $30 (Pro) and beyond, depending on credit volume and generation priority. AI video generation consumes a lot, so the number of credits matters more than the headline price.\n\nWho it's for: creators, editors and marketers who want to experiment with generative video without filming gear. It's still young tech: uneven results, limited control, and several players (Runway, Pika, Sora, Kling) competing for the lead. The right reflex: test on the free tier before committing, and compare with Runway depending on your need.",
+    "pricingEn": {
+      "free": "Free tier with limited monthly credits",
+      "paid": "Standard at ~$7/month, Pro at ~$30, Ultra above"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Offre gratuite avec crédits limités",
+        "Standard à ~7$/mois, Pro à ~30$ : la génération vidéo consomme beaucoup de crédits"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "klingai.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -32067,11 +32098,36 @@
     },
     "websiteUrl": "https://klingai.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "ferme",
+    "verdictEn": {
+      "keepIf": [
+        "You want to experiment with AI-generated video with good realism",
+        "You're testing several tools and Kling offers good credits-per-price"
+      ],
+      "avoidIf": [
+        "You already have Runway or Pika: it would be redundant",
+        "You need precise, reliable control: the tech is still young"
+      ],
+      "threshold": "Test it free before paying. A good Runway alternative on realism; compare credits and output for your need."
+    },
+    "prosEn": [
+      "Stunning realism on motion and consistency",
+      "Text-to-video and image-to-video, relatively long sequences",
+      "Free tier to test before paying",
+      "One of the most serious alternatives to Runway and Sora"
+    ],
+    "consEn": [
+      "Credit-based: video generation consumes a lot",
+      "Still uneven results and limited control (young tech)",
+      "Very competitive, fast-moving market (Runway, Pika, Sora)",
+      "Chinese vendor: consider depending on your data sensitivity"
+    ],
+    "useCasesEn": [
+      "Generate video sequences from text or an image",
+      "Prototype shots for a video or ad",
+      "Create short social content without filming",
+      "Test generative video before investing in a tool"
+    ],
+    "prescription_quality": "question",
     "prescription_output": {
       "mode": "replace_for_cost",
       "action": "replace",
