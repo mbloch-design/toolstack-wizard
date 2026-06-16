@@ -8,6 +8,7 @@ import DashActions from "./DashActions";
 import DashShareModal from "./DashShareModal";
 import { insertDiagnosticStepEvent } from "@/lib/diagnosticPersistence";
 import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
+import { getCreativeSpecialtyCopy } from "@/utils/creativeSpecialty";
 import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, Rocket, Search, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -72,9 +73,10 @@ const TABS: {
 
 function getPersonaSidebarCopy(result: DiagnosticResult, t: Props["t"]) {
   if (result.sessionState.persona === "SOFIA") {
+    const specialty = getCreativeSpecialtyCopy(result.sessionState.primarySpecialty);
     return {
-      label: t("Angle créatif", "Creative angle"),
-      detail: t("Production, plugins, ressources, validation, licences.", "Production, plugins, resources, review, licenses."),
+      label: t(specialty.sidebarLabelFr, specialty.sidebarLabelEn),
+      detail: t(specialty.sidebarDetailFr, specialty.sidebarDetailEn),
     };
   }
   if (result.sessionState.persona === "THEO") {

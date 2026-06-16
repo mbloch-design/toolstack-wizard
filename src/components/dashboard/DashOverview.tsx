@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
+import { getCreativeSpecialtyCopy } from "@/utils/creativeSpecialty";
 import {
   formatMoney,
   formatMonthlyTotal,
@@ -71,16 +72,17 @@ function buildThesis(result: DiagnosticResult, t: Props["t"]) {
   const risk = result.insights.primaryRisk;
 
   if (result.sessionState.persona === "SOFIA") {
+    const specialty = getCreativeSpecialtyCopy(result.sessionState.primarySpecialty);
     const satelliteCount = getCreativeWorkflowStages(result, t).find((stage) => stage.id === "accelerate")?.tools.length || 0;
     if (satelliteCount > 0) {
       return t(
-        `${introFr}le vrai sujet est la fluidité de ta chaîne créative, pas seulement le nombre d’outils.`,
-        `${introEn}the real topic is the flow of your creative chain, not just the number of tools.`
+        `${introFr}${specialty.thesisFluidFr}`,
+        `${introEn}${specialty.thesisFluidEn}`
       );
     }
     return t(
-      `${introFr}ta stack créative dépend surtout des outils principaux. Il faut vérifier les ressources, plugins et validations autour.`,
-      `${introEn}your creative stack mostly depends on core tools. We need to check resources, plugins and review workflows around them.`
+      `${introFr}${specialty.thesisCoreFr}`,
+      `${introEn}${specialty.thesisCoreEn}`
     );
   }
 
@@ -311,6 +313,7 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
   const thesis = useMemo(() => buildThesis(result, t), [result, t]);
   const priorityItems = useMemo(() => getPriorityItems(result, t), [result, t]);
   const toolGroups = useMemo(() => getToolGroups(result), [result]);
+  const creativeSpecialty = useMemo(() => getCreativeSpecialtyCopy(result.sessionState.primarySpecialty), [result.sessionState.primarySpecialty]);
   const creativeWorkflow = useMemo(() => getCreativeWorkflowStages(result, t), [result, t]);
   const profile = result.insights.profile;
   const maturity = result.insights.maturity;
@@ -329,11 +332,7 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
   const coveredCount = coverage?.covered.length || result.insights.functionalCoverage.filter((item) => item.status === "covered").length;
   const totalCoverage = Math.max(coverage ? coverage.covered.length + coverage.skipped.length : result.insights.functionalCoverage.length, 1);
   const readingSteps = isCreative
-    ? [
-        t("Chaîne créative", "Creative chain"),
-        t("Arbitrages utiles", "Useful tradeoffs"),
-        t("Preuves et licences", "Evidence and licenses"),
-      ]
+    ? creativeSpecialty.readingSteps.map((step) => t(step.fr, step.en))
     : [
         t("Ce que j’ai compris", "What I understood"),
         t("La première décision", "The first decision"),
@@ -373,6 +372,12 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
                 label={t("Profil", "Profile")}
                 value={t(result.insights.personaContext.labelFr, result.insights.personaContext.labelEn)}
               />
+              {isCreative && (
+                <ReportLine
+                  label={t("Spécialité", "Specialty")}
+                  value={t(creativeSpecialty.labelFr, creativeSpecialty.labelEn)}
+                />
+              )}
               <ReportLine
                 label={t("Priorité", "Priority")}
                 value={goalLabel}
@@ -437,11 +442,8 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
         <section className="space-y-3">
           <SectionHeader
             eyebrow={t("Lecture créative", "Creative read")}
-            title={t("Ta stack comme une chaîne de production", "Your stack as a production chain")}
-            description={t(
-              "Je sépare les gros outils évidents des éléments périphériques qui font vraiment la différence : plugins, assets, templates, presets, validation et licences.",
-              "I separate the obvious core tools from the peripheral pieces that really matter: plugins, assets, templates, presets, review and licenses."
-            )}
+            title={t(creativeSpecialty.chainTitleFr, creativeSpecialty.chainTitleEn)}
+            description={t(creativeSpecialty.chainDescriptionFr, creativeSpecialty.chainDescriptionEn)}
           />
           <div className="grid gap-3 md:grid-cols-2">
             {creativeWorkflow.map((stage) => (

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2, Layers3, Mail, MessageSquare, Palette, RotateCcw, ShieldAlert, TrendingDown } from "lucide-react";
 import type { DiagnosticResult, SessionState, Tool } from "@/types/diagnostic";
 import { formatMonthlyTotal, getPricingCaptureSummary } from "@/utils/diagnosticPricing";
+import { getCreativeSpecialtyCopy } from "@/utils/creativeSpecialty";
 
 interface Props {
   session: SessionState;
@@ -83,6 +84,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   const emailValue = email.trim();
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   const isCreative = session.persona === "SOFIA";
+  const creativeSpecialty = getCreativeSpecialtyCopy(session.primarySpecialty);
   const creativeProductionCount = countTools(session.selectedTools, CREATIVE_PRODUCTION_IDS);
   const creativeSatelliteCount = countTools(session.selectedTools, CREATIVE_SATELLITE_IDS);
   const creativeDeliveryCount = countTools(session.selectedTools, CREATIVE_DELIVERY_IDS);
@@ -112,15 +114,12 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           </p>
           <h1 className="text-3xl font-bold text-foreground md:text-4xl">
             {isCreative
-              ? t("Ta chaîne créative est prête à lire.", "Your creative chain is ready to read.")
+              ? t(creativeSpecialty.preVerdictTitleFr, creativeSpecialty.preVerdictTitleEn)
               : t("On a trouvé les signaux importants.", "We found the important signals.")}
           </h1>
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
             {isCreative
-              ? t(
-                  "Je vais lire le flux complet : production, plugins, ressources, droits, validation client et plans payés. Le but n’est pas de couper vite, mais de comprendre ce qui soutient réellement tes livrables.",
-                  "I will read the full flow: production, plugins, resources, rights, client review and paid plans. The goal is not to cut fast, but to understand what truly supports your deliverables."
-                )
+              ? t(creativeSpecialty.preVerdictDescriptionFr, creativeSpecialty.preVerdictDescriptionEn)
               : t(
                   "Voici la lecture rapide avant la restitution. L'objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
                   "Here is the quick read before the restitution. The goal now is to give you a clear plan, not a list of numbers."
@@ -207,18 +206,13 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
             {t("Lecture créative retenue", "Creative read")}
           </p>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
-            <CreativeReadCard
-              label={t("1. Produire", "1. Produce")}
-              detail={t("Les outils qui fabriquent vraiment tes livrables.", "The tools that actually produce your deliverables.")}
-            />
-            <CreativeReadCard
-              label={t("2. Accélérer", "2. Accelerate")}
-              detail={t("Plugins, templates, presets et assets qui évitent le travail répétitif.", "Plugins, templates, presets and assets that remove repetitive work.")}
-            />
-            <CreativeReadCard
-              label={t("3. Sécuriser", "3. Secure")}
-              detail={t("Validation client, droits d’usage, prix réels et licences.", "Client review, usage rights, real pricing and licenses.")}
-            />
+            {creativeSpecialty.preVerdictCards.map((card) => (
+              <CreativeReadCard
+                key={card.labelFr}
+                label={t(card.labelFr, card.labelEn)}
+                detail={t(card.detailFr, card.detailEn)}
+              />
+            ))}
           </div>
         </section>
       )}

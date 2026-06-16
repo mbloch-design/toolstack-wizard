@@ -17,8 +17,10 @@ function ok(name, condition, details = "") {
 ok(
   "pre-verdict has a creative-specific final step",
   preVerdict.includes('session.persona === "SOFIA"') &&
-    preVerdict.includes("Ta chaîne créative est prête à lire") &&
-    preVerdict.includes("Lecture créative retenue") &&
+    preVerdict.includes("getCreativeSpecialtyCopy(session.primarySpecialty)") &&
+    preVerdict.includes("creativeSpecialty.preVerdictTitleFr") &&
+    preVerdict.includes("creativeSpecialty.preVerdictDescriptionFr") &&
+    preVerdict.includes("creativeSpecialty.preVerdictCards.map") &&
     preVerdict.includes("Production") &&
     preVerdict.includes("Satellites") &&
     preVerdict.includes("Validation"),
@@ -39,8 +41,9 @@ ok(
 ok(
   "overview thesis adapts to creative persona",
   overview.includes('result.sessionState.persona === "SOFIA"') &&
-    overview.includes("fluidité de ta chaîne créative") &&
-    overview.includes("plugins et validations autour"),
+    overview.includes("getCreativeSpecialtyCopy(result.sessionState.primarySpecialty)") &&
+    overview.includes("specialty.thesisFluidFr") &&
+    overview.includes("specialty.thesisCoreFr"),
   "the final report should not tell the same story to every persona"
 );
 
@@ -49,8 +52,8 @@ ok(
   overview.includes("CREATIVE_STAGE_DEFS") &&
     overview.includes("getCreativeWorkflowStages") &&
     overview.includes("CreativeWorkflowCard") &&
-    overview.includes("Ta stack comme une chaîne de production") &&
-    overview.includes("plugins, assets, templates, presets, validation et licences"),
+    overview.includes("creativeSpecialty.chainTitleFr") &&
+    overview.includes("creativeSpecialty.chainDescriptionFr"),
   "restitution should explain the creative stack as a production chain"
 );
 
@@ -69,8 +72,9 @@ ok(
 ok(
   "dashboard sidebar carries the persona angle",
   dashboard.includes("getPersonaSidebarCopy") &&
-    dashboard.includes("Angle créatif") &&
-    dashboard.includes("Production, plugins, ressources, validation, licences.") &&
+    dashboard.includes("getCreativeSpecialtyCopy(result.sessionState.primarySpecialty)") &&
+    dashboard.includes("specialty.sidebarLabelFr") &&
+    dashboard.includes("specialty.sidebarDetailFr") &&
     dashboard.includes("sidebarPersona.detail"),
   "the restitution shell should remind users which lens is applied"
 );

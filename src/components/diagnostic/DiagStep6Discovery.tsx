@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo, useRef } from "react";
 import { Check, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
 import type { SessionState, DiscoveryQuestion, Tool } from "@/types/diagnostic";
+import { getCreativeSpecialtyCopy } from "@/utils/creativeSpecialty";
 
 interface Props {
   session: SessionState;
@@ -126,6 +127,26 @@ function buildCreativeQuestions(
     "adobe-illustrator",
     "adobe-creative-cloud",
   ]);
+  const specialty = getCreativeSpecialtyCopy(session.primarySpecialty);
+
+  if (session.primarySpecialty && selectedTools.length > 0) {
+    questions.push({
+      id: `adaptive_creative_${specialty.id}_focus`,
+      persona: "SOFIA",
+      question: t(specialty.discoveryQuestionFr, specialty.discoveryQuestionEn),
+      subtitle: t(
+        "Cette réponse m’aide à lire ta stack avec le bon prisme métier, pas comme une simple liste d’abonnements.",
+        "This helps me read your stack through the right craft lens, not as a simple subscription list."
+      ),
+      options: specialty.discoveryOptions.map((option) => ({
+        label: t(option.labelFr, option.labelEn),
+        impact: option.impact,
+        affectedTools: selectedTools.map((tool) => tool.id),
+      })),
+      condition_tool_ids: selectedTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
 
   if (hasAnyTool(selectedTools, ["figma"]) && !hasAnyTool(selectedTools, CREATIVE_FIGMA_PLUGIN_IDS)) {
     questions.push({
