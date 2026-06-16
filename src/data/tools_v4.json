@@ -26583,27 +26583,49 @@
     "category": "security",
     "shortDescription": "Gestion de secrets et chiffrement enterprise.",
     "shortDescriptionEn": "Enterprise secret management and encryption.",
-    "description": "HashiCorp Vault, c'est gestion de secrets et chiffrement enterprise. Gratuit pour commencer, payant pour aller plus loin.\n\nSecrets dynamiques et rotation automatique. chiffrement as-a-service, politique d'accès granulaire. Open-source avec option enterprise. Concrètement : gérer les secrets dynamiques de base de données. Ou encore : chiffrer des données sensibles.\n\nÀ garder si : infrastructure complexe multi-cloud ou exigences de sécurité enterprise. À éviter si : petite équipe < 5 devs ou pas d'équipe DevOps. Limite principale : complexité de déploiement et maintenance. Justifié pour les organisations avec des exigences de sécurité strictes et une équipe DevOps.",
-    "longDescription": "HashiCorp Vault, c'est gestion de secrets et chiffrement enterprise. Gratuit pour commencer, payant pour aller plus loin.\n\nSecrets dynamiques et rotation automatique. chiffrement as-a-service, politique d'accès granulaire. Open-source avec option enterprise. Concrètement : gérer les secrets dynamiques de base de données. Ou encore : chiffrer des données sensibles.\n\nÀ garder si : infrastructure complexe multi-cloud ou exigences de sécurité enterprise. À éviter si : petite équipe < 5 devs ou pas d'équipe DevOps. Limite principale : complexité de déploiement et maintenance. Justifié pour les organisations avec des exigences de sécurité strictes et une équipe DevOps.",
-    "longDescriptionEn": "HashiCorp Vault is enterprise secret management and encryption. Free to start, paid plans for more.",
+    "description": "HashiCorp Vault, c'est l'outil de référence pour gérer les secrets d'une infrastructure : mots de passe, clés d'API, certificats, accès aux bases de données. Au lieu de laisser traîner ces secrets dans des fichiers de config ou des variables d'environnement, Vault les centralise, les chiffre, contrôle qui y accède et les fait tourner automatiquement (rotation). C'est un standard du monde DevOps et de la sécurité d'infrastructure.\n\nLe cœur est open source et gratuit en auto-hébergement. Au-delà, il y a HCP Vault (la version cloud managée par HashiCorp, facturée à l'usage) et Vault Enterprise (sur devis) pour les fonctions de gouvernance et de conformité. À noter : HashiCorp a été racheté par IBM en 2024.\n\nÀ qui ça s'adresse : aux équipes avec une vraie infrastructure et une fonction DevOps/SRE. La puissance a un coût : Vault est complexe à déployer et à maintenir. Pour une petite équipe ou un dev solo qui veut juste centraliser quelques secrets, des outils plus simples comme Doppler ou Infisical sont bien plus rapides à mettre en place. Vault se justifie quand la sécurité et la gouvernance deviennent des enjeux sérieux.",
+    "longDescription": "HashiCorp Vault, c'est l'outil de référence pour gérer les secrets d'une infrastructure : mots de passe, clés d'API, certificats, accès aux bases de données. Au lieu de laisser traîner ces secrets dans des fichiers de config ou des variables d'environnement, Vault les centralise, les chiffre, contrôle qui y accède et les fait tourner automatiquement (rotation). C'est un standard du monde DevOps et de la sécurité d'infrastructure.\n\nLe cœur est open source et gratuit en auto-hébergement. Au-delà, il y a HCP Vault (la version cloud managée par HashiCorp, facturée à l'usage) et Vault Enterprise (sur devis) pour les fonctions de gouvernance et de conformité. À noter : HashiCorp a été racheté par IBM en 2024.\n\nÀ qui ça s'adresse : aux équipes avec une vraie infrastructure et une fonction DevOps/SRE. La puissance a un coût : Vault est complexe à déployer et à maintenir. Pour une petite équipe ou un dev solo qui veut juste centraliser quelques secrets, des outils plus simples comme Doppler ou Infisical sont bien plus rapides à mettre en place. Vault se justifie quand la sécurité et la gouvernance deviennent des enjeux sérieux.",
+    "longDescriptionEn": "HashiCorp Vault is the reference tool for managing an infrastructure's secrets: passwords, API keys, certificates, database access. Instead of leaving secrets lying around in config files or environment variables, Vault centralizes them, encrypts them, controls who accesses them and rotates them automatically. It's a standard of the DevOps and infrastructure security world.\n\nThe core is open source and free when self-hosted. Beyond that, there's HCP Vault (the cloud version managed by HashiCorp, billed by usage) and Vault Enterprise (on quote) for governance and compliance features. Note: HashiCorp was acquired by IBM in 2024.\n\nWho it's for: teams with real infrastructure and a DevOps/SRE function. The power has a cost: Vault is complex to deploy and maintain. For a small team or a solo developer who just wants to centralize a few secrets, simpler tools like Doppler or Infisical are far faster to set up. Vault earns its place when security and governance become serious concerns.",
     "pricing": {
-      "free": "Open-source (self-hosted)",
-      "paid": "Enterprise sur devis"
+      "free": "Open source et gratuit en auto-hébergement",
+      "paid": "HCP Vault (cloud) facturé à l'usage, Vault Enterprise sur devis"
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Open source and free when self-hosted",
+      "paid": "HCP Vault (cloud) billed by usage, Vault Enterprise on quote"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Open source (gratuit)",
+      "verified_on": "2026-06-15",
+      "source_domain": "hashicorp.com",
+      "official_source_url": "https://www.hashicorp.com/products/vault/pricing",
+      "cautions": [
+        "Cœur open source gratuit en auto-hébergement",
+        "HCP Vault facturé à l'usage, Vault Enterprise sur devis",
+        "HashiCorp racheté par IBM en 2024"
+      ]
+    },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.hashicorp.com/products/vault",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "HashiCorp Vault en 2026 : gratuit en open source, prix HCP/Enterprise et alternatives (Doppler, Infisical). Le verdict ToolTrim sur la gestion de secrets."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
+    "soloRelevance": "Surdimensionné pour un solo : Doppler ou Infisical centralisent quelques secrets bien plus simplement. Vault vise les vraies infrastructures.",
+    "teamRelevance": "Pertinent pour une équipe avec une fonction DevOps/SRE et des exigences de sécurité, au prix d'une complexité de déploiement réelle.",
+    "relevantFor": [
+      "dev-fullstack",
+      "cto-lead-tech"
+    ],
+    "alternatives": [
+      "doppler",
+      "infisical"
+    ],
     "verdict": {
       "keepIf": [
         "Infrastructure complexe multi-cloud",
@@ -26615,29 +26637,55 @@
         "Pas d'équipe DevOps",
         "Préférence pour la simplicité"
       ],
-      "threshold": "Justifié pour les organisations avec des exigences de sécurité strictes et une équipe DevOps."
+      "threshold": "Justifié pour les organisations avec des exigences de sécurité strictes et une équipe DevOps. Pour centraliser quelques secrets sans infra dédiée, Doppler ou Infisical sont plus simples."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Complex multi-cloud infrastructure",
+        "Enterprise security requirements with a dedicated DevOps/SRE team"
+      ],
+      "avoidIf": [
+        "Small team with no DevOps function",
+        "You just want to centralize a few secrets: Doppler or Infisical are simpler"
+      ],
+      "threshold": "Justified for organizations with strict security requirements and a DevOps team. To centralize a few secrets without dedicated infra, Doppler or Infisical are simpler."
+    },
     "pros": [
       "Secrets dynamiques et rotation automatique",
       "Chiffrement as-a-service",
       "Politique d'accès granulaire",
-      "Open-source avec option enterprise"
+      "Open source avec option enterprise"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Dynamic secrets and automatic rotation",
+      "Encryption as a service",
+      "Granular access policies",
+      "Open source with an enterprise option"
+    ],
     "cons": [
       "Complexité de déploiement et maintenance",
       "Nécessite des compétences DevOps avancées",
-      "Overkill pour les petites équipes",
+      "Surdimensionné pour les petites équipes : Doppler ou Infisical suffisent",
       "Documentation dense"
     ],
-    "consEn": null,
+    "consEn": [
+      "Complex to deploy and maintain",
+      "Requires advanced DevOps skills",
+      "Overkill for small teams: Doppler or Infisical are enough",
+      "Dense documentation"
+    ],
     "useCases": [
       "Gérer les secrets dynamiques de base de données",
       "Chiffrer des données sensibles",
-      "Rotation automatique des clés API"
+      "Rotation automatique des clés API",
+      "Contrôler finement les accès aux secrets d'une infrastructure"
     ],
-    "useCasesEn": null,
+    "useCasesEn": [
+      "Manage dynamic database secrets",
+      "Encrypt sensitive data",
+      "Automatically rotate API keys",
+      "Finely control access to an infrastructure's secrets"
+    ],
     "personas": [
       "THEO"
     ],
