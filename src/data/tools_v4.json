@@ -12073,7 +12073,8 @@
     "shortDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Entièrement gratuit"
+      "free": "Entièrement gratuit et open source",
+      "paid": ""
     },
     "covers": [
       "export-lottie",
@@ -12104,37 +12105,66 @@
     "affiliateLink": "https://aescripts.com/bodymovin",
     "verdict": {
       "keepIf": [
-        "Animations web/mobile légères depuis After Effects"
+        "Tu animes dans After Effects et dois livrer des animations légères pour le web ou le mobile",
+        "Tu veux des animations vectorielles nettes et performantes (Lottie)"
       ],
       "avoidIf": [
-        "Rive.app si vous voulez un workflow natif sans AE"
+        "Tu veux des animations interactives pilotées par l'app : Rive est plus adapté",
+        "Tu n'utilises pas After Effects"
       ],
-      "threshold": "Gratuit — toujours pertinent si vous livrez des animations web."
+      "threshold": "Gratuit et incontournable pour exporter des animations After Effects vers le web en Lottie. Pour de l'interactif natif sans AE, Rive va plus loin."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Entièrement gratuit et open source",
+      "Exporte les animations After Effects en Lottie (JSON léger)",
+      "Animations vectorielles nettes et performantes sur web et mobile",
+      "Format Lottie devenu un standard, lu nativement partout"
+    ],
+    "cons": [
+      "Ne gère pas tous les effets After Effects (certaines features ne s'exportent pas)",
+      "Pas d'interactivité : pour ça, Rive est plus adapté",
+      "Dépend d'After Effects pour créer les animations",
+      "Quelques réglages techniques à comprendre pour un export propre"
+    ],
+    "useCases": [
+      "Exporter une animation After Effects en Lottie pour un site web",
+      "Intégrer des micro-animations légères dans une app mobile",
+      "Animer une icône ou un loader vectoriel performant",
+      "Livrer une animation au format JSON aux développeurs"
+    ],
+    "seo": {
+      "metaDescription": "Bodymovin / Lottie en 2026 : exporter des animations After Effects vers le web (gratuit), et quand préférer Rive. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "dev-frontend",
+      "designer"
+    ],
     "pricingTiers": {
-      "free": "Entièrement gratuit"
+      "free": "Entièrement gratuit et open source",
+      "paid": ""
     },
-    "longDescription": "Bodymovin / Lottie, c'est export d'animations After Effects en JSON Lottie pour le web et mobile. Entièrement gratuit. Pensé pour les créateurs vidéo et les développeurs solo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animations web/mobile légères depuis After Effects. À éviter si : rive.app si vous voulez un workflow natif sans AE. Gratuit — toujours pertinent si vous livrez des animations web.",
-    "alternatives": [],
+    "longDescription": "Bodymovin, c'est le plugin gratuit (open source) qui a popularisé le format Lottie. Il fait une chose précise : exporter une animation créée dans After Effects en un fichier JSON léger (Lottie), qui se lit ensuite nativement sur le web, iOS, Android ou React Native. Résultat : des animations vectorielles nettes, fluides et bien plus légères qu'un GIF ou une vidéo. C'est devenu le pont standard entre les motion designers et les développeurs.\n\nLe principe : le designer anime dans After Effects, exporte avec Bodymovin, et le développeur intègre le fichier Lottie. Tout le monde y gagne, et c'est gratuit.\n\nLa limite à connaître : Bodymovin n'exporte pas tout (certains effets After Effects ne passent pas), et le résultat reste une animation qui joue en boucle, sans interactivité. Si tu as besoin d'animations qui réagissent aux actions de l'utilisateur, c'est Rive qu'il faut regarder. Mais pour de l'animation web légère depuis After Effects, Bodymovin reste le réflexe.",
+    "alternatives": [
+      "rive"
+    ],
     "slug": "ae-bodymovin",
     "shortDescriptionEn": "Export After Effects animations to Lottie JSON for web and mobile.",
-    "description": "Bodymovin / Lottie, c'est export d'animations After Effects en JSON Lottie pour le web et mobile. Entièrement gratuit. Pensé pour les créateurs vidéo et les développeurs solo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animations web/mobile légères depuis After Effects. À éviter si : rive.app si vous voulez un workflow natif sans AE. Gratuit — toujours pertinent si vous livrez des animations web.",
-    "longDescriptionEn": "Bodymovin / Lottie is export After Effects animations to Lottie JSON for web and mobile. Completely free. Built for video creators and solo developers.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "description": "Bodymovin, c'est le plugin gratuit (open source) qui a popularisé le format Lottie. Il fait une chose précise : exporter une animation créée dans After Effects en un fichier JSON léger (Lottie), qui se lit ensuite nativement sur le web, iOS, Android ou React Native. Résultat : des animations vectorielles nettes, fluides et bien plus légères qu'un GIF ou une vidéo. C'est devenu le pont standard entre les motion designers et les développeurs.\n\nLe principe : le designer anime dans After Effects, exporte avec Bodymovin, et le développeur intègre le fichier Lottie. Tout le monde y gagne, et c'est gratuit.\n\nLa limite à connaître : Bodymovin n'exporte pas tout (certains effets After Effects ne passent pas), et le résultat reste une animation qui joue en boucle, sans interactivité. Si tu as besoin d'animations qui réagissent aux actions de l'utilisateur, c'est Rive qu'il faut regarder. Mais pour de l'animation web légère depuis After Effects, Bodymovin reste le réflexe.",
+    "longDescriptionEn": "Bodymovin is the free (open-source) plugin that popularized the Lottie format. It does one precise thing: export an animation created in After Effects as a lightweight JSON file (Lottie), which then plays natively on web, iOS, Android or React Native. The result: crisp, smooth vector animations far lighter than a GIF or video. It's become the standard bridge between motion designers and developers.\n\nThe principle: the designer animates in After Effects, exports with Bodymovin, and the developer integrates the Lottie file. Everyone wins, and it's free.\n\nThe limit to know: Bodymovin doesn't export everything (some After Effects effects don't carry over), and the result is an animation that loops, with no interactivity. If you need animations that react to user actions, look at Rive. But for lightweight web animation from After Effects, Bodymovin stays the reflex.",
+    "pricingEn": {
+      "free": "Completely free and open source",
+      "paid": ""
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Entièrement gratuit et open source"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -12147,11 +12177,36 @@
     },
     "websiteUrl": "https://aescripts.com/bodymovin",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You animate in After Effects and must deliver lightweight web or mobile animations",
+        "You want crisp, performant vector animations (Lottie)"
+      ],
+      "avoidIf": [
+        "You want interactive animations driven by the app: Rive fits better",
+        "You don't use After Effects"
+      ],
+      "threshold": "Free and essential to export After Effects animations to the web as Lottie. For native interactivity without AE, Rive goes further."
+    },
+    "prosEn": [
+      "Completely free and open source",
+      "Exports After Effects animations to Lottie (lightweight JSON)",
+      "Crisp, performant vector animations on web and mobile",
+      "Lottie format is now a standard, played natively everywhere"
+    ],
+    "consEn": [
+      "Doesn't handle all After Effects effects (some don't export)",
+      "No interactivity: for that, Rive fits better",
+      "Depends on After Effects to create the animations",
+      "A few technical settings to understand for a clean export"
+    ],
+    "useCasesEn": [
+      "Export an After Effects animation to Lottie for a website",
+      "Embed lightweight micro-animations in a mobile app",
+      "Animate a performant vector icon or loader",
+      "Deliver an animation in JSON format to developers"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
