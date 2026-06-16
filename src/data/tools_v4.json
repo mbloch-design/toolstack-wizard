@@ -9968,7 +9968,8 @@
     "shortDescription": "Logiciel de montage audio open source. Gratuit, puissant, universel.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Entièrement gratuit et open source"
+      "free": "Entièrement gratuit et open source",
+      "paid": ""
     },
     "covers": [
       "montage-audio",
@@ -9993,46 +9994,75 @@
     "freeAlternative": null,
     "betterAlternative": {
       "tool": "descript",
-      "reason": "montage-par-texte",
+      "reason": "Montage par texte (transcription incluse), bien plus rapide pour du volume.",
       "saving": -12,
-      "performanceGain": "Descript permet de monter en éditant le texte — 3x plus rapide"
+      "performanceGain": "Descript permet de monter en éditant le texte, environ 3x plus rapide."
     },
     "migrationGuide": null,
     "downgradePlan": null,
     "affiliateLink": "https://audacityteam.org",
     "verdict": {
       "keepIf": [
-        "Montage audio basique, pas besoin de transcription"
+        "Tu as un besoin audio ponctuel ou basique et tu ne veux rien payer",
+        "Tu enregistres et montes une voix de temps en temps"
       ],
       "avoidIf": [
-        "Volume important — Descript est bien plus rapide"
+        "Tu montes du podcast en volume : Descript (montage par texte) va bien plus vite",
+        "Tu veux juste nettoyer une prise : Adobe Podcast est gratuit et excellent en débruitage"
       ],
-      "threshold": "Gratuit — toujours pertinent pour les petits volumes."
+      "threshold": "La référence gratuite du montage audio polyvalent. Pour du volume ou du montage par transcription, Descript fait gagner un temps précieux mais c'est payant."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Entièrement gratuit et open source, sur Mac, Windows et Linux",
+      "Couvre l'essentiel : enregistrement, découpe, nettoyage, export",
+      "Léger et sans abonnement, idéal pour un usage ponctuel",
+      "Communauté ancienne et nombreux tutoriels"
+    ],
+    "cons": [
+      "Interface datée et peu intuitive",
+      "Pas de transcription ni d'IA intégrée",
+      "Lent pour du montage à la chaîne : Descript va beaucoup plus vite",
+      "Fonctions avancées limitées face aux suites payantes"
+    ],
+    "useCases": [
+      "Enregistrer et monter une voix ou un podcast simple",
+      "Nettoyer le bruit de fond d'une prise audio",
+      "Couper et assembler des pistes, exporter en MP3",
+      "Éditer ponctuellement de l'audio sans rien payer"
+    ],
+    "seo": {
+      "metaDescription": "Audacity en 2026 : le montage audio gratuit et open source. Ses limites et quand passer à Descript ou Adobe Podcast. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "creator"
+    ],
     "pricingTiers": {
-      "free": "Entièrement gratuit et open source"
+      "free": "Entièrement gratuit et open source",
+      "paid": ""
     },
-    "longDescription": "Audacity, c'est logiciel de montage audio open source. Gratuit, puissant, universel. Entièrement gratuit. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : montage audio basique, pas besoin de transcription. À éviter si : volume important — Descript est bien plus rapide. Gratuit — toujours pertinent pour les petits volumes. Si le budget le permet, descript va plus loin.",
-    "alternatives": [],
+    "longDescription": "Audacity, c'est le couteau suisse de l'audio, gratuit et open source depuis vingt ans. Enregistrer une voix, nettoyer un bruit de fond, couper et assembler des pistes, exporter en MP3 : pour tout ce qui est montage audio de base, il fait le travail sans rien coûter, sur Mac, Windows et Linux. C'est l'outil par défaut de beaucoup de podcasteurs débutants et de créateurs qui éditent une voix de temps en temps.\n\nSon interface est datée et un peu rustique, et il n'a pas d'IA ni de transcription intégrée. Pour du montage à la chaîne ou du podcast régulier, des outils comme Descript (qui permet de monter en éditant le texte, transcription incluse) font gagner un temps considérable, mais ils sont payants.\n\nÀ qui ça convient : à tous ceux qui ont un besoin audio ponctuel ou basique et ne veulent rien payer. Pour nettoyer une seule prise, Adobe Podcast (gratuit aussi) fait des merveilles en débruitage. Audacity reste la référence gratuite du montage audio polyvalent, à condition d'accepter une prise en main un peu old school.",
+    "alternatives": [
+      "descript",
+      "adobe-podcast-ai"
+    ],
     "slug": "audacity",
     "shortDescriptionEn": "Open-source audio editing software. Free, powerful, universal.",
-    "description": "Audacity, c'est logiciel de montage audio open source. Gratuit, puissant, universel. Entièrement gratuit. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : montage audio basique, pas besoin de transcription. À éviter si : volume important — Descript est bien plus rapide. Gratuit — toujours pertinent pour les petits volumes. Si le budget le permet, descript va plus loin.",
-    "longDescriptionEn": "Audacity is open-source audio editing software. Free, powerful, universal. Completely free. Built for podcasters and content creators.\n\nEstimated time saving: 4h/month.\n\nIf budget allows, descript goes further.",
-    "pricingEn": null,
+    "description": "Audacity, c'est le couteau suisse de l'audio, gratuit et open source depuis vingt ans. Enregistrer une voix, nettoyer un bruit de fond, couper et assembler des pistes, exporter en MP3 : pour tout ce qui est montage audio de base, il fait le travail sans rien coûter, sur Mac, Windows et Linux. C'est l'outil par défaut de beaucoup de podcasteurs débutants et de créateurs qui éditent une voix de temps en temps.\n\nSon interface est datée et un peu rustique, et il n'a pas d'IA ni de transcription intégrée. Pour du montage à la chaîne ou du podcast régulier, des outils comme Descript (qui permet de monter en éditant le texte, transcription incluse) font gagner un temps considérable, mais ils sont payants.\n\nÀ qui ça convient : à tous ceux qui ont un besoin audio ponctuel ou basique et ne veulent rien payer. Pour nettoyer une seule prise, Adobe Podcast (gratuit aussi) fait des merveilles en débruitage. Audacity reste la référence gratuite du montage audio polyvalent, à condition d'accepter une prise en main un peu old school.",
+    "longDescriptionEn": "Audacity is the audio Swiss army knife, free and open source for twenty years. Record a voice, clean up background noise, cut and assemble tracks, export to MP3: for anything basic audio editing, it does the job at no cost, on Mac, Windows and Linux. It's the default tool for many beginner podcasters and creators who edit a voice now and then.\n\nIts interface is dated and a bit rough, and it has no built-in AI or transcription. For high-volume editing or regular podcasting, tools like Descript (which lets you edit by editing the text, transcription included) save considerable time, but they're paid.\n\nWho it suits: anyone with an occasional or basic audio need who doesn't want to pay. To clean a single take, Adobe Podcast (also free) works wonders at denoising. Audacity remains the free reference for versatile audio editing, as long as you accept a slightly old-school interface.",
+    "pricingEn": {
+      "free": "Completely free and open source",
+      "paid": ""
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Entièrement gratuit et open source"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "audacityteam.org",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -10045,11 +10075,36 @@
     },
     "websiteUrl": "https://audacityteam.org",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You have an occasional or basic audio need and don't want to pay",
+        "You record and edit a voice now and then"
+      ],
+      "avoidIf": [
+        "You edit podcasts at volume: Descript (text-based editing) is much faster",
+        "You just want to clean a take: Adobe Podcast is free and excellent at denoising"
+      ],
+      "threshold": "The free reference for versatile audio editing. For volume or transcription-based editing, Descript saves precious time but it's paid."
+    },
+    "prosEn": [
+      "Completely free and open source, on Mac, Windows and Linux",
+      "Covers the essentials: recording, cutting, cleanup, export",
+      "Light and subscription-free, ideal for occasional use",
+      "Long-standing community and plenty of tutorials"
+    ],
+    "consEn": [
+      "Dated, unintuitive interface",
+      "No built-in transcription or AI",
+      "Slow for high-volume editing: Descript is much faster",
+      "Limited advanced features compared to paid suites"
+    ],
+    "useCasesEn": [
+      "Record and edit a voice or a simple podcast",
+      "Clean background noise from an audio take",
+      "Cut and assemble tracks, export to MP3",
+      "Occasionally edit audio without paying"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
