@@ -60067,8 +60067,8 @@
       "threshold": "Dès que vous avez +2 projets actifs et que Notion devient trop lourd pour la gestion de tâches."
     },
     "pricing": {
-      "free": "Illimité avec 10 tableaux",
-      "paid": "5$/mois par utilisateur (Standard)"
+      "free": "Gratuit, jusqu'à 10 tableaux par espace",
+      "paid": "Standard à 5$/utilisateur/mois, Premium à 10$"
     },
     "affiliateLink": "https://trello.com",
     "articles": [],
@@ -60077,17 +60077,17 @@
       "collaboration",
       "planning"
     ],
-    "freeAlternative": "notion",
+    "freeAlternative": "Notion",
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "bestFor": [
       "consultant",
       "designer"
     ],
-    "defaultMonthlyPrice": 8.66,
+    "defaultMonthlyPrice": 5,
     "pricingTiers": {
-      "free": "Illimité avec 10 tableaux",
-      "paid": "5$/mois par utilisateur (Standard)"
+      "free": "Gratuit, jusqu'à 10 tableaux par espace",
+      "paid": "Standard à 5$/utilisateur/mois, Premium à 10$"
     },
     "relevantFor": [
       "consultant",
@@ -60095,9 +60095,13 @@
       "designer",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "notion",
+      "asana",
+      "jira"
+    ],
     "seo": {
-      "metaDescription": "Trello : Le Kanban visuel pour organiser ses projets sans complexité. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Trello en 2026 : offre gratuite (10 tableaux), prix Standard/Premium et alternatives (Notion, Asana). Le verdict ToolTrim pour la gestion de tâches."
     },
     "tool_type": "satellite",
     "substitutable": true,
@@ -60118,27 +60122,28 @@
     "ia_use_case": null,
     "slug": "trello",
     "shortDescriptionEn": "Visual Kanban for organizing your projects without the complexity.",
-    "description": "Trello, c'est le Kanban visuel pour organiser ses projets sans complexité. À partir de 8.66€/mois. Pensé pour les consultants B2B et les graphistes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : vous aimez visualiser vos tâches en colonnes (To Do, Doing, Done) ou vous gérez 2-5 projets simultanément. À éviter si : vous avez besoin de fonctions avancées (Gantt, dépendances) ou vous gérez +10 projets complexes (prenez Asana ou ClickUp). Dès que vous avez +2 projets actifs et que Notion devient trop lourd pour la gestion de tâches. Alternative gratuite : notion.",
-    "longDescription": "Trello, c'est le Kanban visuel pour organiser ses projets sans complexité. À partir de 8.66€/mois. Pensé pour les consultants B2B et les graphistes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : vous aimez visualiser vos tâches en colonnes (To Do, Doing, Done) ou vous gérez 2-5 projets simultanément. À éviter si : vous avez besoin de fonctions avancées (Gantt, dépendances) ou vous gérez +10 projets complexes (prenez Asana ou ClickUp). Dès que vous avez +2 projets actifs et que Notion devient trop lourd pour la gestion de tâches. Alternative gratuite : notion.",
-    "longDescriptionEn": "Trello is visual Kanban for organizing your projects without the complexity. Starting at €8.66/month. Built for B2B consultants and graphic designers.\n\nEstimated time saving: 4h/month.\n\nKeep it if: you like to visualize your tasks in columns (To Do, Doing, Done) or you manage 2-5 projects simultaneously. Skip it if: you need advanced features (Gantt, dependencies) or you manage 10+ complex projects (choose Asana or ClickUp). As soon as you have more than 2 active projects and Notion becomes too cumbersome for task management. Free alternative: notion.",
+    "description": "Trello, c'est le tableau Kanban dans sa forme la plus simple : des colonnes (À faire, En cours, Fait), des cartes qu'on glisse de l'une à l'autre, et c'est tout. Cette simplicité est sa force : on comprend l'outil en trente secondes, sans formation. Pour suivre quelques projets, organiser un backlog léger ou coordonner une petite équipe, c'est rapide et visuel.\n\nL'offre gratuite est généreuse (jusqu'à 10 tableaux par espace), puis le plan Standard est à 5$/utilisateur/mois et Premium à 10$ (qui ajoute les vues Calendrier, Timeline, Tableau). Trello appartient à Atlassian, l'éditeur de Jira.\n\nLa limite, c'est l'autre face de sa simplicité : pas de vraies dépendances, pas de Gantt natif, peu d'automatisation au-delà des bases. Dès que tes projets se complexifient, Asana, ClickUp ou Notion offrent plus de structure. Mais pour du suivi de tâches visuel et sans prise de tête, Trello reste imbattable de légèreté.",
+    "longDescription": "Trello, c'est le tableau Kanban dans sa forme la plus simple : des colonnes (À faire, En cours, Fait), des cartes qu'on glisse de l'une à l'autre, et c'est tout. Cette simplicité est sa force : on comprend l'outil en trente secondes, sans formation. Pour suivre quelques projets, organiser un backlog léger ou coordonner une petite équipe, c'est rapide et visuel.\n\nL'offre gratuite est généreuse (jusqu'à 10 tableaux par espace), puis le plan Standard est à 5$/utilisateur/mois et Premium à 10$ (qui ajoute les vues Calendrier, Timeline, Tableau). Trello appartient à Atlassian, l'éditeur de Jira.\n\nLa limite, c'est l'autre face de sa simplicité : pas de vraies dépendances, pas de Gantt natif, peu d'automatisation au-delà des bases. Dès que tes projets se complexifient, Asana, ClickUp ou Notion offrent plus de structure. Mais pour du suivi de tâches visuel et sans prise de tête, Trello reste imbattable de légèreté.",
+    "longDescriptionEn": "Trello is the Kanban board in its simplest form: columns (To Do, Doing, Done), cards you drag from one to another, and that's it. That simplicity is its strength: you understand the tool in thirty seconds, no training. To track a few projects, organize a light backlog or coordinate a small team, it's fast and visual.\n\nThe free tier is generous (up to 10 boards per space), then the Standard plan is $5/user/month and Premium $10 (adding Calendar, Timeline and Table views). Trello belongs to Atlassian, the maker of Jira.\n\nThe limit is the flip side of its simplicity: no real dependencies, no native Gantt, little automation beyond the basics. Once your projects get more complex, Asana, ClickUp or Notion offer more structure. But for visual, no-fuss task tracking, Trello stays unbeatable for its lightness.",
     "pricingEn": {
-      "free": "Unlimited with 10 boards",
-      "paid": "$5/month per user (Standard)"
+      "free": "Free, up to 10 boards per space",
+      "paid": "Standard at $5/user/month, Premium at $10"
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Offre gratuite : jusqu'à 10 tableaux par espace",
+        "Standard à 5$/utilisateur/mois, Premium à 10$"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "trello.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Premium",
+      "compare_plan_name": "Standard",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://trello.com/premium",
+      "official_source_url": "https://trello.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 8.66
+      "compare_price_monthly_eur": 5
     },
     "websiteUrl": "https://trello.com",
     "logo": "",
@@ -60156,16 +60161,46 @@
       ],
       "threshold": "As soon as you have more than 2 active projects and Notion becomes too cumbersome for task management."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Simplicité immédiate : on comprend le Kanban en trente secondes",
+      "Offre gratuite généreuse, jusqu'à 10 tableaux par espace",
+      "Glisser-déposer fluide et interface visuelle agréable",
+      "Power-Ups pour ajouter des fonctions à la carte"
+    ],
+    "prosEn": [
+      "Immediate simplicity: you understand Kanban in thirty seconds",
+      "Generous free tier, up to 10 boards per space",
+      "Smooth drag-and-drop and pleasant visual interface",
+      "Power-Ups to add features as needed"
+    ],
+    "cons": [
+      "Pas de Gantt ni de vraies dépendances entre tâches",
+      "Devient vite limité pour des projets complexes : Asana ou ClickUp sont plus structurés",
+      "Automatisations basiques au-delà des règles simples",
+      "Le coût grimpe par utilisateur si l'équipe s'agrandit"
+    ],
+    "consEn": [
+      "No Gantt or real task dependencies",
+      "Quickly limited for complex projects: Asana or ClickUp are more structured",
+      "Basic automation beyond simple rules",
+      "Cost climbs per user as the team grows"
+    ],
+    "useCases": [
+      "Suivre quelques projets avec un tableau Kanban visuel",
+      "Organiser un backlog léger ou une liste de tâches d'équipe",
+      "Coordonner une petite équipe sans outil complexe",
+      "Gérer un pipeline simple (contenu, candidatures, clients)"
+    ],
+    "useCasesEn": [
+      "Track a few projects with a visual Kanban board",
+      "Organize a light backlog or a team task list",
+      "Coordinate a small team without a complex tool",
+      "Manage a simple pipeline (content, applications, clients)"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 4,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "prix-non-vérifié",
