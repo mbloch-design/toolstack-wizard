@@ -62066,21 +62066,26 @@
   {
     "id": "vimeo",
     "name": "Vimeo",
-    "shortDescription": "Plateforme d’hébergement et de partage vidéo professionnelle.",
-    "description": "Vimeo, c'est plateforme d’hébergement et de partage vidéo professionnelle. À partir de 15€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en video hosting, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Hébergement vidéo professionnel : lecteur sans pub et contrôle de la confidentialité.",
+    "description": "Vimeo, c'est l'hébergement vidéo pensé pour les pros, à l'opposé de YouTube. Pas de pub, pas de vidéos suggérées qui détournent l'attention, un lecteur personnalisable aux couleurs de ta marque, et un vrai contrôle de la confidentialité (vidéo privée, protégée par mot de passe, limitée à un domaine). Pour un freelance ou une boîte qui veut intégrer des vidéos propres sur son site, son portfolio ou une page de vente, c'est l'outil de référence.\n\nL'offre gratuite est très limitée. Les plans payants vont de Starter (environ 12$/mois) à Standard (25$) et Advanced (75$), selon le stockage, la bande passante et les fonctions (collecte de leads, analytics, live). Le prix grimpe vite avec le volume de vidéos.\n\nÀ qui ça sert : à ceux qui hébergent des vidéos dans un cadre professionnel et veulent maîtriser le rendu et la diffusion. Si ton but est la portée et la découverte gratuite, YouTube reste imbattable. Si tu veux juste partager une vidéo de temps en temps, un lien Loom ou un drive suffit. Vimeo se justifie quand l'image de marque et le contrôle priment sur l'audience.",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Offre gratuite très limitée",
+      "paid": "Starter ~12$/mois, Standard 25$, Advanced 75$"
     },
     "website": "https://vimeo.com",
     "affiliateLink": "https://vimeo.com",
     "pros": [
-      "Spécialisé en video hosting",
-      "Interface professionnelle"
+      "Lecteur sans pub ni vidéos suggérées, personnalisable à ta marque",
+      "Contrôle fin de la confidentialité (mot de passe, domaine, privé)",
+      "Qualité d'image et rendu pro pour intégrer sur un site",
+      "Outils business : collecte de leads, analytics, live"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Offre gratuite très limitée",
+      "Le prix grimpe vite avec le stockage et la bande passante",
+      "Aucune portée organique : YouTube est imbattable pour la découverte",
+      "Surdimensionné pour un simple partage ponctuel"
     ],
     "bestFor": [
       "all"
@@ -62091,28 +62096,31 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 12,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Offre gratuite très limitée",
+      "paid": "Starter ~12$/mois, Standard 25$, Advanced 75$"
     },
     "relevantFor": [
-      "all"
+      "createur-contenu",
+      "designer"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu héberges des vidéos dans un cadre pro et veux maîtriser le rendu",
+        "La confidentialité et l'image de marque comptent plus que l'audience"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton but est la portée et la découverte : YouTube reste imbattable et gratuit",
+        "Tu veux juste partager une vidéo de temps en temps : un lien Loom ou un drive suffit"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Le bon choix quand l'image de marque et le contrôle de la diffusion priment sur l'audience. Pour de la portée gratuite, YouTube ; pour un partage ponctuel, un simple lien suffit."
     },
-    "alternatives": [],
+    "alternatives": [
+      "loom"
+    ],
     "seo": {
-      "metaDescription": "Vimeo : Plateforme d’hébergement et de partage vidéo professionnelle. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Vimeo en 2026 : prix (Starter à Advanced), offre gratuite et alternatives. Hébergement vidéo pro vs YouTube. Le verdict ToolTrim."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -62131,15 +62139,18 @@
     "ia_use_case": null,
     "slug": "vimeo",
     "shortDescriptionEn": "Professional video hosting and sharing platform.",
-    "longDescription": "Vimeo, c'est plateforme d’hébergement et de partage vidéo professionnelle. À partir de 15€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en video hosting, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Vimeo is professional video hosting and sharing platform. Starting at €15/month. Built for graphic designers and community managers.\n\nSpecialized in video hosting, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage. As soon as the tool saves you more than €15/month.",
+    "longDescription": "Vimeo, c'est l'hébergement vidéo pensé pour les pros, à l'opposé de YouTube. Pas de pub, pas de vidéos suggérées qui détournent l'attention, un lecteur personnalisable aux couleurs de ta marque, et un vrai contrôle de la confidentialité (vidéo privée, protégée par mot de passe, limitée à un domaine). Pour un freelance ou une boîte qui veut intégrer des vidéos propres sur son site, son portfolio ou une page de vente, c'est l'outil de référence.\n\nL'offre gratuite est très limitée. Les plans payants vont de Starter (environ 12$/mois) à Standard (25$) et Advanced (75$), selon le stockage, la bande passante et les fonctions (collecte de leads, analytics, live). Le prix grimpe vite avec le volume de vidéos.\n\nÀ qui ça sert : à ceux qui hébergent des vidéos dans un cadre professionnel et veulent maîtriser le rendu et la diffusion. Si ton but est la portée et la découverte gratuite, YouTube reste imbattable. Si tu veux juste partager une vidéo de temps en temps, un lien Loom ou un drive suffit. Vimeo se justifie quand l'image de marque et le contrôle priment sur l'audience.",
+    "longDescriptionEn": "Vimeo is video hosting built for pros, the opposite of YouTube. No ads, no suggested videos pulling attention away, a player customizable to your brand, and real privacy control (private video, password-protected, domain-restricted). For a freelancer or a company that wants to embed clean videos on its site, portfolio or sales page, it's the reference tool.\n\nThe free tier is very limited. Paid plans range from Starter (around $12/month) to Standard ($25) and Advanced ($75), depending on storage, bandwidth and features (lead capture, analytics, live). The price climbs fast with video volume.\n\nWho it's for: those who host videos in a professional setting and want to control the look and distribution. If your goal is reach and free discovery, YouTube remains unbeatable. If you just want to share a video now and then, a Loom link or a drive is enough. Vimeo earns its place when brand image and control matter more than audience.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Very limited free tier",
+      "paid": "Starter ~$12/month, Standard $25, Advanced $75"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Offre gratuite très limitée",
+        "Starter ~12$/mois, Standard 25$, Advanced 75$ : le prix grimpe avec le volume"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "vimeo.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -62154,24 +62165,39 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You host videos in a professional setting and want to control the look",
+        "Privacy and brand image matter more than audience"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Your goal is reach and discovery: YouTube is unbeatable and free",
+        "You just want to share a video occasionally: a Loom link or a drive is enough"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "The right call when brand image and distribution control matter more than audience. For free reach, YouTube; for an occasional share, a simple link is enough."
     },
     "prosEn": [
-      "Specialized in video hosting",
-      "Professional interface"
+      "Ad-free player with no suggested videos, customizable to your brand",
+      "Fine privacy control (password, domain, private)",
+      "Pro-grade image quality to embed on a site",
+      "Business tools: lead capture, analytics, live"
     ],
     "consEn": [
-      "Price to be verified depending on usage"
+      "Very limited free tier",
+      "Price climbs fast with storage and bandwidth",
+      "No organic reach: YouTube is unbeatable for discovery",
+      "Overkill for a simple one-off share"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Héberger des vidéos propres sur son site ou son portfolio",
+      "Intégrer une vidéo de vente sans pub ni distractions",
+      "Diffuser des vidéos privées ou protégées par mot de passe",
+      "Présenter un showreel ou des projets clients"
+    ],
+    "useCasesEn": [
+      "Host clean videos on your site or portfolio",
+      "Embed a sales video with no ads or distractions",
+      "Share private or password-protected videos",
+      "Present a showreel or client projects"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 5,
     "downgradePlan": null,
