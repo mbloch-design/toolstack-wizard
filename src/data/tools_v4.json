@@ -21243,7 +21243,8 @@
     "shortDescription": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Entièrement gratuit et open source"
+      "free": "Entièrement gratuit et open source",
+      "paid": ""
     },
     "covers": [
       "motion-design",
@@ -21271,32 +21272,58 @@
     "affiliateLink": "https://rxlaboratoire.com/duik",
     "verdict": {
       "keepIf": [
-        "Animation de personnages, marionnettes 2D"
+        "Tu animes des personnages ou des marionnettes 2D dans After Effects",
+        "Tu veux du rigging (squelettes, contraintes) sans payer"
       ],
       "avoidIf": [
-        "Pas d'animation de personnages dans vos projets"
+        "Tes projets n'ont pas d'animation de personnages",
+        "Tu fais de la 3D : un outil dédié est plus adapté"
       ],
-      "threshold": "Gratuit — toujours pertinent pour l'animation de personnages."
+      "threshold": "Gratuit, open source et incontournable pour le rigging de personnages 2D dans After Effects. Sans animation de personnages, il ne sert à rien."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Entièrement gratuit et open source",
+      "Standard de l'animation et du rigging de personnages 2D dans After Effects",
+      "Squelettes, contraintes et outils d'animation complets",
+      "Communauté active et nombreux tutoriels"
+    ],
+    "cons": [
+      "Utile uniquement pour l'animation de personnages ou marionnettes 2D",
+      "Courbe d'apprentissage réelle sur le rigging",
+      "Spécifique à After Effects",
+      "N'apporte rien pour du motion design classique"
+    ],
+    "useCases": [
+      "Rigger un personnage 2D pour l'animer",
+      "Créer des marionnettes articulées dans After Effects",
+      "Automatiser des mouvements avec des contraintes (IK/FK)",
+      "Animer une illustration vectorielle"
+    ],
+    "seo": {
+      "metaDescription": "Duik Ángela en 2026 : le plugin gratuit de rigging de personnages pour After Effects. À qui ça sert vraiment. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "free": "Entièrement gratuit et open source"
+      "free": "Entièrement gratuit et open source",
+      "paid": ""
     },
-    "longDescription": "Duik Ángela, c'est le plugin de rigging de personnages de référence pour After Effects. Gratuit. Entièrement gratuit. Pensé pour les créateurs vidéo et les illustrateurs.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : animation de personnages, marionnettes 2D. À éviter si : pas d'animation de personnages dans vos projets. Gratuit — toujours pertinent pour l'animation de personnages.",
+    "longDescription": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable.",
     "alternatives": [],
     "slug": "ae-duik",
     "shortDescriptionEn": "The reference character rigging plugin for After Effects. Free.",
-    "description": "Duik Ángela, c'est le plugin de rigging de personnages de référence pour After Effects. Gratuit. Entièrement gratuit. Pensé pour les créateurs vidéo et les illustrateurs.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : animation de personnages, marionnettes 2D. À éviter si : pas d'animation de personnages dans vos projets. Gratuit — toujours pertinent pour l'animation de personnages.",
-    "longDescriptionEn": "Duik Ángela is the reference character rigging plugin for After Effects. Free. Completely free. Built for video creators and illustrators.\n\nEstimated time saving: 6h/month.",
-    "pricingEn": null,
+    "description": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable.",
+    "longDescriptionEn": "Duik (Ángela) is the reference free, open-source tool to rig and animate characters in After Effects. Rigging is the art of placing a 'skeleton' on an illustration so you can animate it like a puppet: arms, legs, constraints, inverse kinematics. For a motion designer or illustrator doing 2D character animation, it's almost a rite of passage, and it costs nothing.\n\nMaintained by RxLaboratory and funded by donations, Duik is complete and professional despite being free. The trade-off is a real learning curve: rigging is a discipline of its own.\n\nWho it's for: only those doing character animation in After Effects. If your projects don't include any, Duik will be useless to you. But the moment you animate an articulated illustration, it's the reference tool, and being free makes it essential.",
+    "pricingEn": {
+      "free": "Completely free and open source",
+      "paid": ""
+    },
     "pricing_v5": {
       "cautions": [
         "confirm_if_paid_plan_is_really_used"
@@ -21314,11 +21341,36 @@
     },
     "websiteUrl": "https://rxlaboratoire.com/duik",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You animate 2D characters or puppets in After Effects",
+        "You want rigging (skeletons, constraints) for free"
+      ],
+      "avoidIf": [
+        "Your projects have no character animation",
+        "You do 3D: a dedicated tool fits better"
+      ],
+      "threshold": "Free, open source and essential for 2D character rigging in After Effects. Without character animation, it's useless."
+    },
+    "prosEn": [
+      "Completely free and open source",
+      "Standard for 2D character animation and rigging in After Effects",
+      "Complete skeletons, constraints and animation tools",
+      "Active community and plenty of tutorials"
+    ],
+    "consEn": [
+      "Useful only for character or 2D puppet animation",
+      "Real learning curve on rigging",
+      "After Effects specific",
+      "Adds nothing for classic motion design"
+    ],
+    "useCasesEn": [
+      "Rig a 2D character to animate it",
+      "Create articulated puppets in After Effects",
+      "Automate movement with constraints (IK/FK)",
+      "Animate a vector illustration"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -39250,9 +39302,10 @@
     "host_app": "after-effects",
     "category": "design-tools",
     "shortDescription": "Gestionnaire de presets et extensions pour After Effects.",
-    "defaultMonthlyPrice": 9,
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "9€/mois"
+      "free": "Extension de base gratuite",
+      "paid": "Packs de presets vendus séparément (achat unique), certains gratuits"
     },
     "covers": [
       "motion-design",
@@ -39272,12 +39325,14 @@
     "affiliateLink": "https://motionbro.net",
     "verdict": {
       "keepIf": [
-        "Grande bibliothèque de presets After Effects"
+        "Tu gères une grande bibliothèque de packs de presets dans After Effects",
+        "Tu veux installer et parcourir tes presets via une interface, pas des dossiers"
       ],
       "avoidIf": [
-        "Peu de presets — dossier local suffit"
+        "Tu as peu de presets : un dossier local suffit",
+        "Tu utilises déjà Animation Composer : les deux se chevauchent"
       ],
-      "threshold": "Rentable si vous avez plus de 20 packs de presets à gérer."
+      "threshold": "Pratique pour organiser et appliquer une grosse bibliothèque de presets After Effects. Avec peu de packs, un dossier local suffit, et Animation Composer fait un travail comparable."
     },
     "timeGainedHoursPerMonth": 2,
     "freeAlternative": null,
@@ -39286,38 +39341,90 @@
     "ia_use_case": null,
     "slug": "motion-bro",
     "shortDescriptionEn": "Preset and extension manager for After Effects.",
-    "description": "Motion Bro, c'est gestionnaire de presets et extensions pour After Effects. À partir de 9€/mois. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : grande bibliothèque de presets After Effects. À éviter si : peu de presets — dossier local suffit. Rentable si vous avez plus de 20 packs de presets à gérer.",
-    "longDescription": "Motion Bro, c'est gestionnaire de presets et extensions pour After Effects. À partir de 9€/mois. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : grande bibliothèque de presets After Effects. À éviter si : peu de presets — dossier local suffit. Rentable si vous avez plus de 20 packs de presets à gérer.",
-    "longDescriptionEn": "Motion Bro is preset and extension manager for After Effects. Starting at €9/month. Built for video creators.\n\nEstimated time saving: 2h/month.",
-    "pricingEn": null,
+    "description": "Motion Bro, c'est une extension pour After Effects qui sert à organiser, parcourir et appliquer des packs de presets (transitions, effets, animations de texte) depuis une interface visuelle, au lieu de fouiller dans des dossiers. C'est un concurrent direct d'Animation Composer, avec la même promesse : gagner du temps quand on réutilise beaucoup de presets.\n\nLe modèle : l'extension de base est gratuite, et tu achètes ensuite des packs de presets (souvent en achat unique), certains gratuits. Tu ne paies donc que ce que tu utilises vraiment.\n\nÀ qui ça s'adresse : aux motion designers qui accumulent beaucoup de packs et veulent les gérer proprement. Si tu as peu de presets, un simple dossier local fait l'affaire. Et si tu utilises déjà Animation Composer, Motion Bro fait double emploi : choisis l'un ou l'autre selon les packs qui t'intéressent.",
+    "longDescription": "Motion Bro, c'est une extension pour After Effects qui sert à organiser, parcourir et appliquer des packs de presets (transitions, effets, animations de texte) depuis une interface visuelle, au lieu de fouiller dans des dossiers. C'est un concurrent direct d'Animation Composer, avec la même promesse : gagner du temps quand on réutilise beaucoup de presets.\n\nLe modèle : l'extension de base est gratuite, et tu achètes ensuite des packs de presets (souvent en achat unique), certains gratuits. Tu ne paies donc que ce que tu utilises vraiment.\n\nÀ qui ça s'adresse : aux motion designers qui accumulent beaucoup de packs et veulent les gérer proprement. Si tu as peu de presets, un simple dossier local fait l'affaire. Et si tu utilises déjà Animation Composer, Motion Bro fait double emploi : choisis l'un ou l'autre selon les packs qui t'intéressent.",
+    "longDescriptionEn": "Motion Bro is an After Effects extension to organize, browse and apply preset packs (transitions, effects, text animations) from a visual interface, instead of digging through folders. It's a direct competitor to Animation Composer, with the same promise: save time when you reuse a lot of presets.\n\nThe model: the base extension is free, and you then buy preset packs (often one-time), some free. So you only pay for what you actually use.\n\nWho it's for: motion designers who accumulate many packs and want to manage them cleanly. If you have few presets, a simple local folder does the job. And if you already use Animation Composer, Motion Bro is redundant: pick one or the other depending on the packs you want.",
+    "pricingEn": {
+      "free": "Free base extension",
+      "paid": "Preset packs sold separately (one-time), some free"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Extension de base gratuite, packs de presets vendus séparément"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "motionbro.net",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Gratuit (extension)",
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://motionbro.net",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 9
+      "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://motionbro.net",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Motion Bro en 2026 : gestionnaire de presets After Effects, prix et comparaison avec Animation Composer. Le verdict ToolTrim."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "ae-animation-composer"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You manage a large library of preset packs in After Effects",
+        "You want to install and browse presets via an interface, not folders"
+      ],
+      "avoidIf": [
+        "You have few presets: a local folder is enough",
+        "You already use Animation Composer: the two overlap"
+      ],
+      "threshold": "Handy to organize and apply a large After Effects preset library. With few packs, a local folder is enough, and Animation Composer does comparable work."
+    },
+    "pros": [
+      "Interface pour parcourir et appliquer des packs de presets",
+      "Extension de base gratuite",
+      "Gère de grosses bibliothèques de transitions et d'effets",
+      "Beaucoup de packs disponibles (gratuits et payants)"
+    ],
+    "prosEn": [
+      "Interface to browse and apply preset packs",
+      "Free base extension",
+      "Handles large libraries of transitions and effects",
+      "Many packs available (free and paid)"
+    ],
+    "cons": [
+      "Les packs de presets payants s'additionnent",
+      "Chevauchement avec Animation Composer",
+      "Spécifique à After Effects",
+      "Peu utile si tu as peu de presets"
+    ],
+    "consEn": [
+      "Paid preset packs add up",
+      "Overlaps with Animation Composer",
+      "After Effects specific",
+      "Of little use if you have few presets"
+    ],
+    "useCases": [
+      "Organiser et appliquer une bibliothèque de presets",
+      "Installer rapidement des packs de transitions",
+      "Parcourir visuellement ses effets dans After Effects",
+      "Accélérer un montage motion répétitif"
+    ],
+    "useCasesEn": [
+      "Organize and apply a preset library",
+      "Quickly install transition packs",
+      "Visually browse effects in After Effects",
+      "Speed up repetitive motion editing"
+    ],
     "downgradePlan": null,
     "prescription_quality": "silence",
     "prescription_output": null,
