@@ -40950,7 +40950,8 @@
     "shortDescription": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "149€ achat unique"
+      "free": "",
+      "paid": "Achat unique (~149€), licence à vie, mises à jour payantes"
     },
     "covers": [
       "retouche-photo",
@@ -40981,32 +40982,62 @@
     "affiliateLink": "https://nikcollection.dxo.com",
     "verdict": {
       "keepIf": [
-        "Photographie artistique avec besoins de looks spécifiques"
+        "Tu retouches des photos et tu veux des looks créatifs (noir et blanc, films, couleurs)",
+        "Tu travailles dans Lightroom ou Photoshop et veux étendre tes options de rendu"
       ],
       "avoidIf": [
-        "Capture One ou Lightroom couvrent vos besoins basiques"
+        "Lightroom ou Capture One couvrent déjà tes besoins de base",
+        "Tu retouches très peu de photos"
       ],
-      "threshold": "Achat unique — rentable si vous retouchez en volume."
+      "threshold": "Achat unique intéressant pour un photographe qui veut des looks créatifs au-delà des outils de base. Pour de la retouche simple, Lightroom ou Capture One suffisent."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Suite complète de filtres créatifs (Color Efex, Silver Efex, Analog Efex...)",
+      "Silver Efex, référence du noir et blanc",
+      "S'intègre comme plugin dans Lightroom, Photoshop et autres",
+      "Achat unique, sans abonnement"
+    ],
+    "cons": [
+      "Achat à prévoir (~149€), contrairement aux filtres intégrés",
+      "Surdimensionné si tu te contentes des réglages de base",
+      "Édition DxO : mise à jour payante pour les nouvelles versions",
+      "Plugin : dépend d'un logiciel hôte (Lightroom, Photoshop)"
+    ],
+    "useCases": [
+      "Appliquer des looks créatifs à des photos",
+      "Faire des conversions noir et blanc soignées (Silver Efex)",
+      "Étendre les options de rendu de Lightroom ou Photoshop",
+      "Donner une signature visuelle à une série photo"
+    ],
+    "seo": {
+      "metaDescription": "Nik Collection (DxO) en 2026 : la suite de filtres photo, prix (achat unique) et alternatives. Le verdict ToolTrim pour les photographes."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "149€ achat unique"
+      "free": "",
+      "paid": "Achat unique (~149€), licence à vie, mises à jour payantes"
     },
-    "longDescription": "Nik Collection, c'est suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les photographes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : photographie artistique avec besoins de looks spécifiques. À éviter si : capture One ou Lightroom couvrent vos besoins basiques. Achat unique — rentable si vous retouchez en volume.",
-    "alternatives": [],
+    "longDescription": "Nik Collection, c'est une suite de plugins de retouche créative pour la photo, éditée par DxO. Elle regroupe des modules cultes : Color Efex (effets et looks couleur), Silver Efex (la référence du noir et blanc), Analog Efex (rendus argentiques), Viveza, Dfine, HDR Efex... Tu travailles ta photo dans Lightroom ou Photoshop, tu envoies vers Nik, tu appliques un look, et tu reviens. Pour un photographe qui veut une signature visuelle, c'est un terrain de jeu énorme.\n\nC'est un achat unique (~149€), avec des mises à jour payantes pour les nouvelles versions. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : aux photographes qui veulent des looks créatifs au-delà des réglages de base de Lightroom ou Capture One. Si tu te contentes des outils intégrés, Nik fait double emploi. Mais pour du noir et blanc soigné ou des rendus créatifs, c'est l'une des suites les plus appréciées, et le modèle à achat unique reste rare et appréciable.",
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "luminar-neo"
+    ],
     "slug": "nik-collection",
     "shortDescriptionEn": "Professional photo filter suite: Analog Efex, Color Efex, Silver Efex.",
-    "description": "Nik Collection, c'est suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les photographes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : photographie artistique avec besoins de looks spécifiques. À éviter si : capture One ou Lightroom couvrent vos besoins basiques. Achat unique — rentable si vous retouchez en volume.",
-    "longDescriptionEn": "Nik Collection is professional photo filter suite: Analog Efex, Color Efex, Silver Efex. Free to start, paid plans for more. Built for photographers.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "description": "Nik Collection, c'est une suite de plugins de retouche créative pour la photo, éditée par DxO. Elle regroupe des modules cultes : Color Efex (effets et looks couleur), Silver Efex (la référence du noir et blanc), Analog Efex (rendus argentiques), Viveza, Dfine, HDR Efex... Tu travailles ta photo dans Lightroom ou Photoshop, tu envoies vers Nik, tu appliques un look, et tu reviens. Pour un photographe qui veut une signature visuelle, c'est un terrain de jeu énorme.\n\nC'est un achat unique (~149€), avec des mises à jour payantes pour les nouvelles versions. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : aux photographes qui veulent des looks créatifs au-delà des réglages de base de Lightroom ou Capture One. Si tu te contentes des outils intégrés, Nik fait double emploi. Mais pour du noir et blanc soigné ou des rendus créatifs, c'est l'une des suites les plus appréciées, et le modèle à achat unique reste rare et appréciable.",
+    "longDescriptionEn": "Nik Collection is a suite of creative photo-editing plugins by DxO. It bundles cult modules: Color Efex (color effects and looks), Silver Efex (the black-and-white reference), Analog Efex (film looks), Viveza, Dfine, HDR Efex... You work your photo in Lightroom or Photoshop, send it to Nik, apply a look, and come back. For a photographer who wants a visual signature, it's a huge playground.\n\nIt's a one-time purchase (~€149), with paid updates for new versions. No mandatory subscription.\n\nWho it's for: photographers who want creative looks beyond Lightroom's or Capture One's base settings. If you're happy with built-in tools, Nik is redundant. But for refined black-and-white or creative renders, it's one of the most loved suites, and the one-time-purchase model stays rare and welcome.",
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase (~€149), lifetime license, paid updates"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "compare_plan_name": "License",
@@ -41050,11 +41081,36 @@
     },
     "websiteUrl": "https://nikcollection.dxo.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You retouch photos and want creative looks (black and white, film, color)",
+        "You work in Lightroom or Photoshop and want to extend your rendering options"
+      ],
+      "avoidIf": [
+        "Lightroom or Capture One already cover your basic needs",
+        "You retouch very few photos"
+      ],
+      "threshold": "A worthwhile one-time purchase for a photographer who wants creative looks beyond the basics. For simple retouching, Lightroom or Capture One are enough."
+    },
+    "prosEn": [
+      "Complete suite of creative filters (Color Efex, Silver Efex, Analog Efex...)",
+      "Silver Efex, the black-and-white reference",
+      "Integrates as a plugin in Lightroom, Photoshop and others",
+      "One-time purchase, no subscription"
+    ],
+    "consEn": [
+      "A purchase to budget (~€149), unlike built-in filters",
+      "Overkill if you stick to base settings",
+      "DxO edition: paid update for new versions",
+      "Plugin: depends on a host app (Lightroom, Photoshop)"
+    ],
+    "useCasesEn": [
+      "Apply creative looks to photos",
+      "Do refined black-and-white conversions (Silver Efex)",
+      "Extend Lightroom's or Photoshop's rendering options",
+      "Give a visual signature to a photo series"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -60612,7 +60668,8 @@
     "shortDescription": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "99$/an ou 199$ achat unique"
+      "free": "",
+      "paid": "Environ 99$/an (modèle passé à l'abonnement en 2025), licences perpétuelles antérieures conservées"
     },
     "covers": [
       "upscaling",
@@ -60641,37 +60698,65 @@
     "affiliateLink": "https://topazlabs.com/gigapixel",
     "verdict": {
       "keepIf": [
-        "Tirages grand format, restauration photos anciennes"
+        "Tu agrandis des images pour de l'impression grand format ou de la restauration",
+        "Tu veux le meilleur upscaling IA avec préservation des détails"
       ],
       "avoidIf": [
-        "Magnific AI ou Firefly couvrent l'upscaling pour le web"
+        "Tu n'agrandis des images que pour le web : des outils gratuits suffisent",
+        "Tu fais peu d'upscaling"
       ],
-      "threshold": "Rentable dès 5 photos grand format par mois."
+      "threshold": "La référence de l'agrandissement d'images par IA, justifiée pour de l'impression grand format ou de la restauration. Pour du web, des solutions gratuites ou Magnific suffisent souvent."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Meilleur upscaling IA du marché, préservation des détails",
+      "Agrandit fortement une image sans la rendre floue ou pixelisée",
+      "Idéal pour l'impression grand format et la restauration",
+      "Traitement par lots"
+    ],
+    "cons": [
+      "Passé à l'abonnement en 2025, fin de l'achat unique simple pour les nouveaux",
+      "Surdimensionné pour du simple upscaling web",
+      "Gourmand en ressources machine (GPU)",
+      "Résultats parfois artificiels sur certains visuels"
+    ],
+    "useCases": [
+      "Agrandir une photo pour un tirage grand format",
+      "Restaurer et agrandir une photo ancienne ou basse résolution",
+      "Upscaler des images en lot",
+      "Récupérer du détail sur une image trop petite"
+    ],
+    "seo": {
+      "metaDescription": "Topaz Gigapixel AI en 2026 : le meilleur upscaling d'images par IA, prix (abonnement) et alternatives (Magnific). Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "99$/an ou 199$ achat unique"
+      "free": "",
+      "paid": "Environ 99$/an (abonnement depuis 2025)"
     },
-    "longDescription": "Topaz Gigapixel AI, c'est upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : tirages grand format, restauration photos anciennes. À éviter si : magnific AI ou Firefly couvrent l'upscaling pour le web. Rentable dès 5 photos grand format par mois.",
-    "alternatives": [],
+    "longDescription": "Topaz Gigapixel AI, c'est l'outil de référence pour agrandir des images par IA. Là où un agrandissement classique rend l'image floue et pixelisée, Gigapixel reconstruit les détails de façon bluffante : tu peux multiplier la résolution par 4 ou 6 et obtenir un résultat net, exploitable pour de l'impression grand format ou la restauration de vieilles photos. C'est devenu le standard chez les photographes et retoucheurs.\n\nLe modèle a évolué : longtemps en achat unique (~199$), Topaz est passé à l'abonnement en 2025 (autour de 99$/an). Les anciens acheteurs gardent leur licence, les nouveaux passent par l'abonnement.\n\nÀ qui ça s'adresse : à ceux qui ont besoin d'agrandir des images pour l'impression ou la restauration, où la qualité compte vraiment. Si tu n'agrandis que pour le web, des solutions gratuites ou Magnific AI suffisent souvent. Mais pour du haut de gamme, Gigapixel reste difficile à battre.",
+    "alternatives": [
+      "magnific-ai"
+    ],
     "slug": "topaz-gigapixel",
     "shortDescriptionEn": "AI image upscaling up to 6x with detail preservation. The market leader.",
-    "description": "Topaz Gigapixel AI, c'est upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : tirages grand format, restauration photos anciennes. À éviter si : magnific AI ou Firefly couvrent l'upscaling pour le web. Rentable dès 5 photos grand format par mois.",
-    "longDescriptionEn": "Topaz Gigapixel AI is aI image upscaling up to 6x with detail preservation. The market leader. Free to start, paid plans for more. Built for photographers and graphic designers.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "description": "Topaz Gigapixel AI, c'est l'outil de référence pour agrandir des images par IA. Là où un agrandissement classique rend l'image floue et pixelisée, Gigapixel reconstruit les détails de façon bluffante : tu peux multiplier la résolution par 4 ou 6 et obtenir un résultat net, exploitable pour de l'impression grand format ou la restauration de vieilles photos. C'est devenu le standard chez les photographes et retoucheurs.\n\nLe modèle a évolué : longtemps en achat unique (~199$), Topaz est passé à l'abonnement en 2025 (autour de 99$/an). Les anciens acheteurs gardent leur licence, les nouveaux passent par l'abonnement.\n\nÀ qui ça s'adresse : à ceux qui ont besoin d'agrandir des images pour l'impression ou la restauration, où la qualité compte vraiment. Si tu n'agrandis que pour le web, des solutions gratuites ou Magnific AI suffisent souvent. Mais pour du haut de gamme, Gigapixel reste difficile à battre.",
+    "longDescriptionEn": "Topaz Gigapixel AI is the reference tool for AI image upscaling. Where classic enlargement leaves an image blurry and pixelated, Gigapixel reconstructs detail strikingly: you can multiply resolution by 4 or 6 and get a clean result usable for large-format printing or restoring old photos. It's become the standard among photographers and retouchers.\n\nThe model changed: long sold as a one-time purchase (~$199), Topaz moved to a subscription in 2025 (around $99/year). Existing buyers keep their license, new users go through the subscription.\n\nWho it's for: those who need to enlarge images for printing or restoration, where quality really matters. If you only upscale for the web, free solutions or Magnific AI are often enough. But for high-end work, Gigapixel is still hard to beat.",
+    "pricingEn": {
+      "free": "",
+      "paid": "Around $99/year (subscription since 2025)"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Modèle passé à l'abonnement en 2025 (~99$/an)"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "topazlabs.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -60684,11 +60769,36 @@
     },
     "websiteUrl": "https://topazlabs.com/gigapixel",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You enlarge images for large-format printing or restoration",
+        "You want the best AI upscaling with detail preservation"
+      ],
+      "avoidIf": [
+        "You only enlarge images for the web: free tools are enough",
+        "You do little upscaling"
+      ],
+      "threshold": "The reference for AI image enlargement, justified for large-format printing or restoration. For the web, free solutions or Magnific are often enough."
+    },
+    "prosEn": [
+      "Best AI upscaling on the market, detail preservation",
+      "Strongly enlarges an image without making it blurry or pixelated",
+      "Ideal for large-format printing and restoration",
+      "Batch processing"
+    ],
+    "consEn": [
+      "Moved to subscription in 2025, end of the simple one-time purchase for new users",
+      "Overkill for simple web upscaling",
+      "Heavy on machine resources (GPU)",
+      "Sometimes artificial results on certain visuals"
+    ],
+    "useCasesEn": [
+      "Enlarge a photo for large-format printing",
+      "Restore and enlarge an old or low-resolution photo",
+      "Upscale images in batch",
+      "Recover detail on an image that's too small"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
