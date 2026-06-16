@@ -28,7 +28,7 @@ interface SwapData {
 function formatSwapSavings(swap: SwapData, t: Props["t"]) {
   const currency = swap.current.priceCurrency || swap.current.catalogMonthlyPriceCurrency;
   const label = `${formatMoney(swap.savings, currency)}/${t("mois", "mo")}`;
-  return currency ? label : `${label} · ${t("devise à vérifier", "currency to verify")}`;
+  return currency ? label : `${label} · ${t("montant à préciser", "amount to clarify")}`;
 }
 
 const PERSONA_REASONS: Record<string, { fr: string; en: string }> = {

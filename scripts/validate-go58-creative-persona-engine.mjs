@@ -31,9 +31,11 @@ ok(
     stackScan.includes("ae-bodymovin") &&
     stackScan.includes("lottiefiles") &&
     stackScan.includes("dynamic-mockups") &&
-    stackScan.includes("presets-lightroom") &&
-    stackScan.includes("envato-elements"),
-  "the creative audit must surface satellites, templates, plugins, presets and asset sources"
+    stackScan.includes("envato-elements") &&
+    stackScan.includes("fontbase") &&
+    stackScan.includes("rightfont") &&
+    stackScan.includes("noun-project"),
+  "the creative audit must surface satellites, templates, plugins, font managers, mockups and asset sources"
 );
 
 ok(

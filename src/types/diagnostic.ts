@@ -1,5 +1,44 @@
 export type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
 
+export type ToolBillingChoice =
+  | "free"
+  | "paid"
+  | "team"
+  | "single_app"
+  | "bundle"
+  | "included"
+  | "one_time"
+  | "usage"
+  | "credits"
+  | "marketplace"
+  | "custom_quote"
+  | "unknown";
+
+export type ToolBillingModel =
+  | "free"
+  | "subscription"
+  | "seat"
+  | "team"
+  | "bundle"
+  | "one_time"
+  | "usage_based"
+  | "credits"
+  | "marketplace"
+  | "custom_quote"
+  | "included";
+
+export interface ToolBillingOption {
+  value: ToolBillingChoice;
+  label_fr: string;
+  label_en: string;
+  price_monthly_eur?: number | null;
+  price_original?: number | null;
+  currency?: string | null;
+  note_fr?: string;
+  note_en?: string;
+  needs_verification?: boolean;
+}
+
 export interface SessionState {
   firstName: string;
   tjm: number;
@@ -41,7 +80,7 @@ export interface Tool {
   category: string;
   functional_needs: string[];
   pertinence_by_persona?: Record<Persona, number>;
-  tool_type: "core" | "satellite" | "gestion" | "ia";
+  tool_type: "core" | "metier" | "satellite" | "gestion" | "ia" | "plugin" | "specialise" | "bundle";
   ia_use_case?: string;
   usage: "high" | "medium" | "low" | "dormant";
   prescription_quality: "ferme" | "question" | "oui";
@@ -66,6 +105,12 @@ export interface Tool {
     compare_price_monthly_eur?: number;
     compare_plan_name?: string;
     compare_plan_kind?: string;
+    billing_model?: ToolBillingModel;
+    billing_options?: ToolBillingOption[];
+    price_original?: number;
+    price_original_currency?: string;
+    currency?: string;
+    conversion_rate_to_eur?: number;
     price_reliability?: string;
     usage_sensitive?: boolean;
     location_sensitive?: boolean;
@@ -75,7 +120,7 @@ export interface Tool {
     official_source_url?: string;
     verification_status?: string;
   } | null;
-  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  selectedOffer?: ToolBillingChoice;
   catalogMonthlyPrice?: number;
   catalogMonthlyPriceCurrency?: string;
   selectedPriceIsEstimate?: boolean;

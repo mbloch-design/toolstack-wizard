@@ -303,7 +303,7 @@ function formatEstimatedSavings(item: PriorityItem, t: Props["t"]) {
   const currency = item.tool?.priceCurrency || item.tool?.catalogMonthlyPriceCurrency;
   const label = `${formatMoney(Math.round(item.savings), currency)}/${t("mois", "mo")}`;
   if (currency) return label;
-  return `${label} · ${t("devise à vérifier", "currency to verify")}`;
+  return `${label} · ${t("montant à préciser", "amount to clarify")}`;
 }
 
 export default function DashOverview({ result, t, onShare, onNavigate, onTrack }: Props) {
@@ -482,8 +482,8 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-amber-900/80">
                 {t(
-                  `${pricingSummary.needsVerificationCount} outil(s) ont encore un plan, un prix catalogue ou une devise à confirmer. Les décisions restent valables, mais les gains doivent être vérifiés plan par plan.`,
-                  `${pricingSummary.needsVerificationCount} tool(s) still have a plan, catalog price or currency to confirm. Decisions still stand, but gains should be checked plan by plan.`
+                  `${pricingSummary.needsVerificationCount} outil(s) ont encore un mode d'usage ou un montant à préciser. Les décisions restent valables, mais les gains doivent être vérifiés outil par outil.`,
+                  `${pricingSummary.needsVerificationCount} tool(s) still have a usage mode or amount to clarify. Decisions still stand, but gains should be checked tool by tool.`
                 )}
               </p>
             </div>

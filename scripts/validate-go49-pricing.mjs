@@ -23,7 +23,7 @@ ok(
 );
 ok(
   "pricing capture summary exists",
-  pricing.includes("export function getPricingCaptureSummary") && pricing.includes("missingCurrencyCount"),
+  pricing.includes("export function getPricingCaptureSummary") && pricing.includes("unknownModeCount"),
   "missing pricing capture summary"
 );
 ok(
@@ -35,9 +35,9 @@ ok(
   "custom tool manual add should keep the capture flow in EUR"
 );
 ok(
-  "tool cards keep plan selector in-place",
-  stackScan.includes("h-[146px]") && stackScan.includes("OfferSelector") && stackScan.includes("Choisir le plan"),
-  "selected tool cards should keep stable height and in-card offer selector"
+  "tool cards keep billing selector in-place",
+  stackScan.includes("h-[146px]") && stackScan.includes("OfferSelector") && stackScan.includes("Préciser l’usage"),
+  "selected tool cards should keep stable height and in-card billing selector"
 );
 ok(
   "review rows avoid visible currency switching",
