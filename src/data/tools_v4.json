@@ -40685,7 +40685,8 @@
     "shortDescription": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "249$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~250$), licence à vie, pas d'abonnement"
     },
     "covers": [
       "motion-design",
@@ -40713,41 +40714,67 @@
     "affiliateLink": "https://aescripts.com/newton",
     "verdict": {
       "keepIf": [
-        "Animations avec physique réaliste, typographie animée"
+        "Tu as besoin de mouvements physiques réalistes dans After Effects (collisions, gravité, rebonds)",
+        "Tu animes de la typographie ou des objets qui interagissent"
       ],
       "avoidIf": [
-        "Animations simples — pas besoin de physique"
+        "Tes animations sont simples et n'ont pas besoin de physique",
+        "Tu n'utilises pas After Effects"
       ],
-      "threshold": "Achat unique — amortissable dès un projet avec typographie physique."
+      "threshold": "Achat unique vite amorti si tu fais des animations à base de physique. Pour de l'animation simple, c'est inutile."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Simule la physique 2D (gravité, collisions, ressorts) dans After Effects",
+      "Animations réalistes difficiles à faire à la main",
+      "Achat unique, sans abonnement",
+      "Référence pour la typographie et les objets animés par physique"
+    ],
+    "cons": [
+      "Cher pour un plugin (~250$)",
+      "Utile uniquement pour des animations à base de physique",
+      "Spécifique à After Effects",
+      "Courbe d'apprentissage sur les paramètres de simulation"
+    ],
+    "useCases": [
+      "Faire tomber et rebondir des objets ou du texte de façon réaliste",
+      "Animer une typographie avec de la physique",
+      "Simuler des collisions et des empilements",
+      "Créer des mouvements organiques difficiles à animer à la main"
+    ],
+    "seo": {
+      "metaDescription": "Newton 3 en 2026 : le moteur de physique 2D pour After Effects, prix (achat unique) et à qui ça sert. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "249$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~250$), licence à vie, pas d'abonnement"
     },
-    "longDescription": "Newton 3, c'est simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : animations avec physique réaliste, typographie animée. À éviter si : animations simples — pas besoin de physique. Achat unique — amortissable dès un projet avec typographie physique.",
+    "longDescription": "Newton, c'est un moteur de physique 2D pour After Effects. Au lieu d'animer chaque rebond et chaque collision à la main, tu donnes des propriétés physiques à tes calques (gravité, masse, rebond, friction) et Newton calcule le mouvement réaliste : objets qui tombent, s'empilent, se heurtent, typographie qui dégringole. Pour un motion designer, ça permet des animations organiques qui seraient très longues à faire en keyframes.\n\nC'est un achat unique (aescripts/Motionboutique) autour de 250$, sans abonnement. C'est cher pour un plugin, mais c'est un investissement durable si tu en as un usage régulier.\n\nÀ qui ça s'adresse : aux motion designers qui font des animations à base de physique. Si tes projets n'en contiennent pas, Newton ne te servira à rien. Mais dès qu'il faut du mouvement réaliste avec des interactions entre objets, il n'a pas vraiment d'équivalent dans After Effects.",
     "alternatives": [],
     "slug": "ae-newton3",
     "shortDescriptionEn": "2D physics simulator for After Effects. Realistic collisions, gravity, springs.",
-    "description": "Newton 3, c'est simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : animations avec physique réaliste, typographie animée. À éviter si : animations simples — pas besoin de physique. Achat unique — amortissable dès un projet avec typographie physique.",
-    "longDescriptionEn": "Newton 3 is 2D physics simulator for After Effects. Realistic collisions, gravity, springs. Free to start, paid plans for more. Built for video creators.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "description": "Newton, c'est un moteur de physique 2D pour After Effects. Au lieu d'animer chaque rebond et chaque collision à la main, tu donnes des propriétés physiques à tes calques (gravité, masse, rebond, friction) et Newton calcule le mouvement réaliste : objets qui tombent, s'empilent, se heurtent, typographie qui dégringole. Pour un motion designer, ça permet des animations organiques qui seraient très longues à faire en keyframes.\n\nC'est un achat unique (aescripts/Motionboutique) autour de 250$, sans abonnement. C'est cher pour un plugin, mais c'est un investissement durable si tu en as un usage régulier.\n\nÀ qui ça s'adresse : aux motion designers qui font des animations à base de physique. Si tes projets n'en contiennent pas, Newton ne te servira à rien. Mais dès qu'il faut du mouvement réaliste avec des interactions entre objets, il n'a pas vraiment d'équivalent dans After Effects.",
+    "longDescriptionEn": "Newton is a 2D physics engine for After Effects. Instead of animating each bounce and collision by hand, you give your layers physical properties (gravity, mass, bounce, friction) and Newton computes realistic motion: objects falling, stacking, colliding, type tumbling down. For a motion designer, it enables organic animations that would take ages to keyframe.\n\nIt's a one-time purchase (aescripts/Motionboutique) around $250, no subscription. It's pricey for a plugin, but a lasting investment if you use it regularly.\n\nWho it's for: motion designers who do physics-based animation. If your projects don't include any, Newton will be useless to you. But the moment you need realistic motion with interactions between objects, it has no real equivalent in After Effects.",
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase (~$250), lifetime license, no subscription"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Achat unique (~250$), pas d'abonnement"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
+      "compare_plan_name": "Achat unique",
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://aescripts.com/newton",
@@ -40756,11 +40783,36 @@
     },
     "websiteUrl": "https://aescripts.com/newton",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You need realistic physical motion in After Effects (collisions, gravity, bounces)",
+        "You animate typography or objects that interact"
+      ],
+      "avoidIf": [
+        "Your animations are simple and don't need physics",
+        "You don't use After Effects"
+      ],
+      "threshold": "A one-time purchase quickly paid off if you do physics-based animation. For simple animation, it's useless."
+    },
+    "prosEn": [
+      "Simulates 2D physics (gravity, collisions, springs) in After Effects",
+      "Realistic animations hard to do by hand",
+      "One-time purchase, no subscription",
+      "Reference for physics-driven typography and objects"
+    ],
+    "consEn": [
+      "Pricey for a plugin (~$250)",
+      "Useful only for physics-based animation",
+      "After Effects specific",
+      "Learning curve on simulation parameters"
+    ],
+    "useCasesEn": [
+      "Make objects or text fall and bounce realistically",
+      "Animate typography with physics",
+      "Simulate collisions and stacking",
+      "Create organic motion hard to keyframe by hand"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
