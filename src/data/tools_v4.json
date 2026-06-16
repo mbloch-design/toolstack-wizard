@@ -60060,7 +60060,8 @@
     "shortDescription": "Upscaling et amélioration vidéo par IA.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "299$ achat unique ou 99$/an"
+      "free": "",
+      "paid": "Historiquement achat unique ~299$ (1 an de MAJ, puis 99$/an). Abonnement pour les nouveaux depuis fin 2025"
     },
     "covers": [
       "montage-video",
@@ -60091,12 +60092,14 @@
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "verdict": {
       "keepIf": [
-        "Restauration ou upscaling vidéo régulier"
+        "Tu fais régulièrement de l'upscaling ou de la restauration vidéo",
+        "Tu veux un traitement IA de qualité en local, sans cloud"
       ],
       "avoidIf": [
-        "Usage occasionnel — Runway couvre ce besoin ponctuellement"
+        "Ton besoin est ponctuel : un outil en ligne ou ton logiciel de montage suffit",
+        "Tu n'as pas une machine assez puissante (GPU) pour le faire tourner"
       ],
-      "threshold": "Rentable si vous restaurez plus de 5 vidéos par mois."
+      "threshold": "La référence de l'upscaling vidéo IA en local pour un usage régulier. Pour du ponctuel, les fonctions de ton logiciel de montage ou un outil en ligne suffisent souvent."
     },
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
@@ -60105,11 +60108,12 @@
     "host_app": null,
     "slug": "topaz-video-ai",
     "shortDescriptionEn": "AI video upscaling and enhancement.",
-    "description": "Topaz Video AI, c'est upscaling et amélioration vidéo par IA. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo et les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : restauration ou upscaling vidéo régulier. À éviter si : usage occasionnel — Runway couvre ce besoin ponctuellement. Rentable si vous restaurez plus de 5 vidéos par mois.",
-    "longDescription": "Topaz Video AI, c'est upscaling et amélioration vidéo par IA. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo et les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : restauration ou upscaling vidéo régulier. À éviter si : usage occasionnel — Runway couvre ce besoin ponctuellement. Rentable si vous restaurez plus de 5 vidéos par mois.",
-    "longDescriptionEn": "Topaz Video AI is aI video upscaling and enhancement. Free to start, paid plans for more. Built for video creators and photographers.\n\nEstimated time saving: 4h/month.\n\nKeep it if: regular video restoration or upscaling. Skip it if: usage occasionnel — Runway couvre ce besoin ponctuellement. Cost-effective if you restore more than 5 videos per month.",
+    "description": "Topaz Video AI, c'est l'outil spécialisé dans l'amélioration de vidéo par IA : upscaling (passer une vidéo en 4K), débruitage, stabilisation, ralenti fluide, restauration de vieilles images. Là où un logiciel de montage classique se contente de couper, Topaz reconstruit les détails image par image avec ses modèles IA. Pour un monteur ou un vidéaste qui doit récupérer des rushes de mauvaise qualité ou livrer en haute définition, c'est redoutablement efficace.\n\nLe modèle de prix a longtemps été un achat unique autour de 299$ (avec un an de mises à jour, puis 99$/an pour continuer à les recevoir), ce qui en faisait une rareté appréciée dans un monde d'abonnements. Depuis fin 2025, Topaz est passé à un modèle par abonnement pour les nouveaux utilisateurs, vérifie l'offre en cours sur leur site.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui font régulièrement de l'upscaling ou de la restauration. C'est gourmand en puissance machine (GPU). Pour un besoin ponctuel, des outils en ligne ou les fonctions intégrées de ton logiciel de montage peuvent suffire. Mais pour de la qualité d'upscaling sérieuse en local, Topaz reste la référence.",
+    "longDescription": "Topaz Video AI, c'est l'outil spécialisé dans l'amélioration de vidéo par IA : upscaling (passer une vidéo en 4K), débruitage, stabilisation, ralenti fluide, restauration de vieilles images. Là où un logiciel de montage classique se contente de couper, Topaz reconstruit les détails image par image avec ses modèles IA. Pour un monteur ou un vidéaste qui doit récupérer des rushes de mauvaise qualité ou livrer en haute définition, c'est redoutablement efficace.\n\nLe modèle de prix a longtemps été un achat unique autour de 299$ (avec un an de mises à jour, puis 99$/an pour continuer à les recevoir), ce qui en faisait une rareté appréciée dans un monde d'abonnements. Depuis fin 2025, Topaz est passé à un modèle par abonnement pour les nouveaux utilisateurs, vérifie l'offre en cours sur leur site.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui font régulièrement de l'upscaling ou de la restauration. C'est gourmand en puissance machine (GPU). Pour un besoin ponctuel, des outils en ligne ou les fonctions intégrées de ton logiciel de montage peuvent suffire. Mais pour de la qualité d'upscaling sérieuse en local, Topaz reste la référence.",
+    "longDescriptionEn": "Topaz Video AI is the tool specialized in AI video enhancement: upscaling (taking a video to 4K), denoising, stabilization, smooth slow motion, restoration of old footage. Where a classic editing tool just cuts, Topaz reconstructs detail frame by frame with its AI models. For an editor or videographer who has to rescue low-quality footage or deliver in high definition, it's remarkably effective.\n\nThe pricing model was long a one-time purchase around $299 (with a year of updates, then $99/year to keep receiving them), which made it a welcome rarity in a world of subscriptions. Since late 2025, Topaz moved to a subscription model for new users, so check the current offer on their site.\n\nWho it's for: videographers and editors who regularly do upscaling or restoration. It's heavy on machine power (GPU). For an occasional need, online tools or your editing software's built-in functions may be enough. But for serious local upscaling quality, Topaz remains the reference.",
     "pricingEn": {
-      "paid": "$299 one-time purchase or $99/year"
+      "free": "",
+      "paid": "Historically a one-time purchase ~$299 (1 year of updates, then $99/year). Subscription for new users since late 2025"
     },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
@@ -60154,27 +60158,66 @@
     },
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Topaz Video AI en 2026 : prix (achat unique vs abonnement) et alternatives pour l'upscaling vidéo par IA. Le verdict ToolTrim pour les vidéastes."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
+    "soloRelevance": "Pertinent pour un vidéaste qui fait régulièrement de l'upscaling ou de la restauration. Pour du ponctuel, ton logiciel de montage suffit souvent.",
+    "teamRelevance": "Utile en studio post-production qui traite des rushes en volume, à condition d'avoir des machines puissantes.",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "runway"
+    ],
     "verdictEn": {
       "keepIf": [
-        "Regular video restoration or upscaling"
+        "You regularly do video upscaling or restoration",
+        "You want quality AI processing locally, without the cloud"
       ],
       "avoidIf": [
-        "Usage occasionnel — Runway couvre ce besoin ponctuellement"
+        "Your need is occasional: an online tool or your editing software is enough",
+        "You don't have a powerful enough machine (GPU) to run it"
       ],
-      "threshold": "Cost-effective if you restore more than 5 videos per month."
+      "threshold": "The reference for local AI video upscaling for regular use. For occasional needs, your editing software's functions or an online tool are often enough."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Upscaling, débruitage, stabilisation et ralenti par IA d'excellente qualité",
+      "Reconstruit les détails image par image, bien au-delà d'un simple agrandissement",
+      "Traitement en local, sans envoyer tes rushes dans le cloud",
+      "Modèle d'achat unique historiquement apprécié (à vérifier aujourd'hui)"
+    ],
+    "prosEn": [
+      "Excellent AI upscaling, denoising, stabilization and slow motion",
+      "Reconstructs detail frame by frame, well beyond simple enlargement",
+      "Local processing, no need to send footage to the cloud",
+      "Historically appreciated one-time purchase model (check current terms)"
+    ],
+    "cons": [
+      "Très gourmand en puissance machine (GPU)",
+      "Passage à l'abonnement pour les nouveaux utilisateurs depuis fin 2025",
+      "Surdimensionné pour un besoin d'upscaling ponctuel",
+      "Traitement lent sur de longues vidéos"
+    ],
+    "consEn": [
+      "Very heavy on machine power (GPU)",
+      "Moved to subscription for new users since late 2025",
+      "Oversized for an occasional upscaling need",
+      "Slow processing on long videos"
+    ],
+    "useCases": [
+      "Passer une vidéo en 4K (upscaling)",
+      "Débruiter et restaurer de vieux rushes",
+      "Créer un ralenti fluide par interpolation",
+      "Améliorer la netteté avant livraison client"
+    ],
+    "useCasesEn": [
+      "Upscale a video to 4K",
+      "Denoise and restore old footage",
+      "Create smooth slow motion via interpolation",
+      "Improve sharpness before client delivery"
+    ],
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
