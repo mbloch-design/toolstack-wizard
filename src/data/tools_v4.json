@@ -13726,8 +13726,8 @@
       "threshold": "Dès que vous perdez un prospect parce que l'échange d'emails a pris trop de temps."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 10/month (Standard)"
+      "free": "Gratuit (1 type de rendez-vous, 1 agenda connecté)",
+      "paid": "Standard à ~10$/mois, Teams à 16$/utilisateur"
     },
     "affiliateLink": "https://calendly.com",
     "seo": {
@@ -13745,7 +13745,7 @@
       "planification",
       "synchronisation-calendrier"
     ],
-    "freeAlternative": "cal-com",
+    "freeAlternative": "Cal.com",
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "bestFor": [
@@ -13754,16 +13754,18 @@
     ],
     "defaultMonthlyPrice": 8.66,
     "pricingTiers": {
-      "free": "1 type d'événement",
-      "paid": "10$/mois (Standard) pour types illimités et workflows"
+      "free": "Gratuit (1 type de rendez-vous, 1 agenda connecté)",
+      "paid": "Standard à ~10$/mois, Teams à 16$/utilisateur"
     },
     "relevantFor": [
       "consultant",
-      "content-creator",
-      "other"
+      "coach-formateur",
+      "freelance"
     ],
-    "alternatives": [],
-    "longDescription": "Calendly, c'est la fin des emails 'tu es dispo quand ?'. À partir de 8.66€/mois. Pensé pour les consultants B2B et les coachs et formateurs.\n\nÉlimine complètement les allers-retours d'emails pour planifier. synchronisation automatique avec Google Calendar, Outlook, iCloud, gestion automatique des fuseaux horaires. Rappels automatiques par email pour réduire les no-shows. Concrètement : consultants : permettre aux prospects de réserver directement un appel découverte de 30min. Ou encore : coachs : gérer les prises de rendez-vous pour vos sessions de coaching. Gain de temps estimé : 3h/mois.\n\nÀ garder si : +5 RDV clients par semaine ou besoin de workflows automatiques (rappels). À éviter si : moins de 5 RDV/mois ou pas besoin de synchroniser plusieurs calendriers. Limite principale : version gratuite limitée à 1 type de réunion. Dès que vous perdez un prospect parce que l'échange d'emails a pris trop de temps. Alternative gratuite : cal-com.",
+    "alternatives": [
+      "cal-com"
+    ],
+    "longDescription": "Calendly, c'est l'outil qui tue les emails 'tu es dispo quand ?'. Tu partages un lien, la personne voit tes créneaux libres (synchronisés avec ton agenda Google, Outlook ou iCloud), elle réserve, et le rendez-vous se cale automatiquement des deux côtés, avec gestion des fuseaux horaires et rappels pour limiter les no-shows. Pour un consultant, un coach ou un commercial, c'est un gain de temps quotidien évident.\n\nL'offre gratuite couvre l'essentiel : un type de rendez-vous, un agenda connecté. Dès que tu veux plusieurs types d'événements, des rappels automatisés ou du paiement à la réservation, il faut passer au plan Standard (environ 10$/mois) ou Teams (16$/utilisateur).\n\nÀ qui ça sert : à tous ceux qui prennent des rendez-vous régulièrement. La vraie question, c'est si tu en as besoin de payant : pour un usage simple, le gratuit suffit largement, et Cal.com (open source) offre une alternative gratuite plus complète. Calendly reste la référence pour sa simplicité et le fait que tout le monde sait déjà s'en servir.",
     "pros": [
       "Élimine complètement les allers-retours d'emails pour planifier",
       "Synchronisation automatique avec Google Calendar, Outlook, iCloud",
@@ -13812,7 +13814,7 @@
     "ia_use_case": null,
     "slug": "calendly",
     "shortDescriptionEn": "The end of \"when are you free?\" emails.",
-    "description": "Calendly, c'est la fin des emails 'tu es dispo quand ?'. À partir de 8.66€/mois. Pensé pour les consultants B2B et les coachs et formateurs.\n\nÉlimine complètement les allers-retours d'emails pour planifier. synchronisation automatique avec Google Calendar, Outlook, iCloud, gestion automatique des fuseaux horaires. Rappels automatiques par email pour réduire les no-shows. Concrètement : consultants : permettre aux prospects de réserver directement un appel découverte de 30min. Ou encore : coachs : gérer les prises de rendez-vous pour vos sessions de coaching. Gain de temps estimé : 3h/mois.\n\nÀ garder si : +5 RDV clients par semaine ou besoin de workflows automatiques (rappels). À éviter si : moins de 5 RDV/mois ou pas besoin de synchroniser plusieurs calendriers. Limite principale : version gratuite limitée à 1 type de réunion. Dès que vous perdez un prospect parce que l'échange d'emails a pris trop de temps. Alternative gratuite : cal-com.",
+    "description": "Calendly, c'est l'outil qui tue les emails 'tu es dispo quand ?'. Tu partages un lien, la personne voit tes créneaux libres (synchronisés avec ton agenda Google, Outlook ou iCloud), elle réserve, et le rendez-vous se cale automatiquement des deux côtés, avec gestion des fuseaux horaires et rappels pour limiter les no-shows. Pour un consultant, un coach ou un commercial, c'est un gain de temps quotidien évident.\n\nL'offre gratuite couvre l'essentiel : un type de rendez-vous, un agenda connecté. Dès que tu veux plusieurs types d'événements, des rappels automatisés ou du paiement à la réservation, il faut passer au plan Standard (environ 10$/mois) ou Teams (16$/utilisateur).\n\nÀ qui ça sert : à tous ceux qui prennent des rendez-vous régulièrement. La vraie question, c'est si tu en as besoin de payant : pour un usage simple, le gratuit suffit largement, et Cal.com (open source) offre une alternative gratuite plus complète. Calendly reste la référence pour sa simplicité et le fait que tout le monde sait déjà s'en servir.",
     "longDescriptionEn": "Calendly is the end of \"when are you free?\" emails. Starting at €8.66/month. Built for B2B consultants and coaches and trainers.\n\nCompletely eliminates back-and-forth emails for scheduling. automatic synchronization with Google Calendar, Outlook, iCloud, automatic time zone management. Automatic email reminders to reduce no-shows. In practice: consultants: allow prospects to book a 30-min discovery call directly. Also: coaches: manage appointment bookings for your coaching sessions. Estimated time saving: 3h/month.\n\nKeep it if: +5 client appointments per week or need for automated workflows (reminders). Skip it if: fewer than 5 meetings/month or no need to synchronize multiple calendars. Main limit: free version limited to 1 event type. As soon as you lose a prospect because the email exchange took too long. Free alternative: cal-com.",
     "pricingEn": {
       "free": "Free plan available",
