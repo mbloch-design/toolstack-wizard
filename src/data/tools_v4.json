@@ -99038,83 +99038,113 @@
     "category": "nocode-web",
     "shortDescription": "CMS dominant pour sites éditoriaux, vitrines, contenus et écosystème plugin.",
     "shortDescriptionEn": "Dominant CMS for editorial sites, business websites, content, and plugins.",
-    "description": "CMS dominant pour sites éditoriaux, vitrines, contenus et écosystème plugin. À intégrer dans une stack dev seulement si son rôle est clair dans la chaîne de livraison.",
-    "longDescription": "CMS dominant pour sites éditoriaux, vitrines, contenus et écosystème plugin.",
-    "longDescriptionEn": "Dominant CMS for editorial sites, business websites, content, and plugins.",
+    "description": "WordPress, c'est le système de gestion de contenu (CMS) le plus utilisé au monde : il fait tourner une énorme part du web, du blog perso au site de média en passant par les vitrines d'entreprise et les boutiques (avec WooCommerce). Sa force, c'est son écosystème : des dizaines de milliers de thèmes et de plugins permettent de construire à peu près n'importe quel site sans tout coder.\n\nIl faut distinguer deux choses. WordPress.org, c'est le logiciel open source et gratuit, que tu installes sur ton propre hébergement (OVH, un mutualisé, etc.) : flexibilité totale, mais tu gères les mises à jour, la sécurité et les sauvegardes. WordPress.com, c'est la version hébergée et gérée pour toi, avec une offre gratuite limitée et des plans payants. Le coût réel de WordPress.org, c'est l'hébergement et la maintenance, pas une licence.\n\nÀ qui ça s'adresse : à quasiment tout le monde, du freelance qui livre des sites clients à l'agence. La contrepartie de la flexibilité, c'est la maintenance : un WordPress mal entretenu vieillit mal et devient une cible. Pour un site vitrine simple sans envie de gérer la technique, Squarespace est plus clé en main ; pour un blog épuré, Ghost est plus moderne ; pour du no-code visuel, Webflow. Mais pour la liberté, l'écosystème et le contrôle, WordPress reste le standard.",
+    "longDescription": "WordPress, c'est le système de gestion de contenu (CMS) le plus utilisé au monde : il fait tourner une énorme part du web, du blog perso au site de média en passant par les vitrines d'entreprise et les boutiques (avec WooCommerce). Sa force, c'est son écosystème : des dizaines de milliers de thèmes et de plugins permettent de construire à peu près n'importe quel site sans tout coder.\n\nIl faut distinguer deux choses. WordPress.org, c'est le logiciel open source et gratuit, que tu installes sur ton propre hébergement (OVH, un mutualisé, etc.) : flexibilité totale, mais tu gères les mises à jour, la sécurité et les sauvegardes. WordPress.com, c'est la version hébergée et gérée pour toi, avec une offre gratuite limitée et des plans payants. Le coût réel de WordPress.org, c'est l'hébergement et la maintenance, pas une licence.\n\nÀ qui ça s'adresse : à quasiment tout le monde, du freelance qui livre des sites clients à l'agence. La contrepartie de la flexibilité, c'est la maintenance : un WordPress mal entretenu vieillit mal et devient une cible. Pour un site vitrine simple sans envie de gérer la technique, Squarespace est plus clé en main ; pour un blog épuré, Ghost est plus moderne ; pour du no-code visuel, Webflow. Mais pour la liberté, l'écosystème et le contrôle, WordPress reste le standard.",
+    "longDescriptionEn": "WordPress is the most-used content management system (CMS) in the world: it powers a huge share of the web, from personal blogs to media sites, business websites and stores (with WooCommerce). Its strength is its ecosystem: tens of thousands of themes and plugins let you build almost any site without coding everything.\n\nYou have to distinguish two things. WordPress.org is the free, open-source software you install on your own hosting (OVH, a shared host, etc.): total flexibility, but you handle updates, security and backups. WordPress.com is the hosted, managed version, with a limited free tier and paid plans. The real cost of WordPress.org is hosting and maintenance, not a license.\n\nWho it's for: almost everyone, from the freelancer delivering client sites to the agency. The flip side of flexibility is maintenance: a poorly maintained WordPress ages badly and becomes a target. For a simple business site with no desire to manage the tech, Squarespace is more turnkey; for a clean blog, Ghost is more modern; for visual no-code, Webflow. But for freedom, ecosystem and control, WordPress remains the standard.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "WordPress.org : logiciel open source gratuit (hébergement à prévoir). WordPress.com : offre gratuite limitée",
+      "paid": "WordPress.com : plans payants. WordPress.org : coût d'hébergement et de maintenance"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "WordPress.org: free open-source software (hosting needed). WordPress.com: limited free tier",
+      "paid": "WordPress.com: paid plans. WordPress.org: hosting and maintenance cost"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Open source / Gratuit",
+      "verified_on": "2026-06-15",
+      "source_domain": "wordpress.org",
+      "official_source_url": "https://wordpress.org",
+      "cautions": [
+        "WordPress.org : logiciel gratuit, mais hébergement et maintenance à ta charge",
+        "WordPress.com : offre gratuite limitée et plans payants"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://wordpress.org",
     "logo": "",
     "seo": {
-      "metaDescription": "WordPress sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "WordPress en 2026 : .org vs .com, prix réel et alternatives (Squarespace, Webflow, Ghost). Le CMS dominant, analysé par ToolTrim."
     },
     "pros": [
-      "Rôle clair dans une stack métier",
-      "Écosystème reconnu",
-      "Pertinent pour livrer plus proprement"
+      "Écosystème immense : milliers de thèmes et plugins pour tout faire",
+      "Open source et gratuit (WordPress.org), aucun verrou propriétaire",
+      "Adapté à presque tous les sites : blog, vitrine, média, e-commerce (WooCommerce)",
+      "Communauté et ressources énormes, compétences faciles à trouver"
     ],
     "prosEn": [
-      "Clear role in a professional stack",
-      "Recognized ecosystem",
-      "Useful for cleaner delivery"
+      "Huge ecosystem: thousands of themes and plugins for anything",
+      "Open source and free (WordPress.org), no proprietary lock-in",
+      "Suited to almost any site: blog, business, media, e-commerce (WooCommerce)",
+      "Enormous community and resources, skills easy to find"
     ],
     "cons": [
-      "Peut devenir inutile si le besoin est ponctuel",
-      "À éviter sans usage récurrent",
-      "Prix ou complexité à vérifier selon contexte"
+      "Maintenance à ta charge en auto-hébergement (mises à jour, sécurité, sauvegardes)",
+      "Un site mal entretenu vieillit mal et devient une cible",
+      "Peut devenir lourd et lent avec trop de plugins",
+      "Pour un site vitrine simple, Squarespace ou Webflow sont plus clé en main"
     ],
     "consEn": [
-      "Can be unnecessary for occasional use",
-      "Avoid without recurring usage",
-      "Pricing or complexity depends on context"
+      "Maintenance is on you when self-hosting (updates, security, backups)",
+      "A poorly maintained site ages badly and becomes a target",
+      "Can get heavy and slow with too many plugins",
+      "For a simple business site, Squarespace or Webflow are more turnkey"
     ],
     "useCases": [
-      "Stack développeur freelance",
-      "Production client",
-      "Maintenance et documentation"
+      "Créer un blog ou un site de contenu éditorial",
+      "Monter un site vitrine ou la présence web d'une entreprise",
+      "Lancer une boutique en ligne avec WooCommerce",
+      "Livrer des sites clients personnalisables en freelance"
     ],
     "useCasesEn": [
-      "Freelance developer stack",
-      "Client delivery",
-      "Maintenance and documentation"
+      "Create a blog or editorial content site",
+      "Build a business website or a company's web presence",
+      "Launch an online store with WooCommerce",
+      "Deliver customizable client sites as a freelancer"
     ],
     "covers": [
       "nocode-web"
     ],
     "relevantFor": [
-      "dev-freelance"
+      "dev-freelance",
+      "createur-contenu",
+      "agence"
     ],
     "personas": [
       "THEO"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "squarespace",
+      "ghost"
+    ],
     "verdict": {
       "keepIf": [
-        "Usage récurrent",
-        "Impact direct sur le livrable",
-        "Rôle documenté dans la stack"
+        "Tu veux un CMS flexible avec un écosystème de plugins immense",
+        "Tu construis des sites clients ou un site de contenu et tu acceptes la maintenance"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Double emploi avec un outil déjà en place"
+        "Tu veux un site vitrine simple sans gérer la technique : Squarespace est plus clé en main",
+        "Tu veux du no-code visuel pur : Webflow est plus adapté"
       ],
-      "threshold": "À garder si l’outil réduit un risque, accélère une livraison ou clarifie la maintenance."
+      "threshold": "Le standard du web pour la flexibilité et l'écosystème, à condition d'assumer la maintenance. Pour du simple et clé en main, Squarespace ; pour un blog moderne, Ghost ; pour du visuel no-code, Webflow."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You want a flexible CMS with a huge plugin ecosystem",
+        "You build client sites or a content site and accept the maintenance"
+      ],
+      "avoidIf": [
+        "You want a simple business site without managing the tech: Squarespace is more turnkey",
+        "You want pure visual no-code: Webflow fits better"
+      ],
+      "threshold": "The web standard for flexibility and ecosystem, as long as you take on the maintenance. For simple and turnkey, Squarespace; for a modern blog, Ghost; for visual no-code, Webflow."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "pertinent si le rôle est clair dans la mission",
-    "teamRelevance": "à structurer avec conventions et droits",
+    "soloRelevance": "Idéal pour un freelance qui livre des sites clients : flexibilité maximale, mais la maintenance (mises à jour, sécurité) fait partie du job.",
+    "teamRelevance": "Adapté à une agence ou une équipe contenu, avec des conventions de maintenance et de sécurité à structurer.",
     "tool_type": "metier",
     "substitutable": false,
     "host_app": null,
