@@ -57567,36 +57567,112 @@
     "slug": "supabase",
     "name": "Supabase",
     "category": "nocode-web",
-    "shortDescription": "Alternative open source à Firebase (Postgres, auth, storage)",
-    "shortDescriptionEn": "Open-source Firebase alternative (Postgres, auth, storage).",
-    "description": "Supabase, c'est alternative open source à Firebase (Postgres, auth, storage). Entièrement gratuit.",
-    "longDescription": "Supabase, c'est alternative open source à Firebase (Postgres, auth, storage). Entièrement gratuit.",
-    "longDescriptionEn": "Supabase is open-source Firebase alternative (Postgres, auth, storage). Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Backend tout-en-un open source (Postgres, auth, stockage, API) : l'alternative à Firebase.",
+    "shortDescriptionEn": "All-in-one open-source backend (Postgres, auth, storage, API): the Firebase alternative.",
+    "description": "Supabase, c'est un backend tout-en-un construit autour de PostgreSQL, présenté comme l'alternative open source à Firebase. En quelques minutes, tu obtiens une base de données Postgres, une API auto-générée, de l'authentification (email, OAuth, magic links), du stockage de fichiers, du temps réel et des edge functions. Pour un indie hacker ou un dev qui lance un SaaS, c'est de quoi monter tout le back d'une app sans assembler dix services.\n\nLe gros argument, c'est de partir sur du Postgres standard (pas une base propriétaire comme Firebase), donc sans verrou : tu peux exporter et partir quand tu veux. L'offre gratuite est généreuse pour démarrer (2 projets, 500 Mo de base), puis le plan Pro est à 25$/mois plus l'usage au-delà des quotas, et Team à 599$/mois.\n\nÀ qui ça s'adresse : aux développeurs et indie hackers qui veulent shipper vite avec un back solide. La comparaison clé : Firebase est plus mature sur le mobile et le temps réel mais enferme dans l'écosystème Google et le NoSQL ; Supabase mise sur le SQL ouvert. Si tu veux juste une base Postgres sans le reste, Neon est plus ciblé. Pour un backend complet open source, Supabase est aujourd'hui difficile à battre.",
+    "longDescription": "Supabase, c'est un backend tout-en-un construit autour de PostgreSQL, présenté comme l'alternative open source à Firebase. En quelques minutes, tu obtiens une base de données Postgres, une API auto-générée, de l'authentification (email, OAuth, magic links), du stockage de fichiers, du temps réel et des edge functions. Pour un indie hacker ou un dev qui lance un SaaS, c'est de quoi monter tout le back d'une app sans assembler dix services.\n\nLe gros argument, c'est de partir sur du Postgres standard (pas une base propriétaire comme Firebase), donc sans verrou : tu peux exporter et partir quand tu veux. L'offre gratuite est généreuse pour démarrer (2 projets, 500 Mo de base), puis le plan Pro est à 25$/mois plus l'usage au-delà des quotas, et Team à 599$/mois.\n\nÀ qui ça s'adresse : aux développeurs et indie hackers qui veulent shipper vite avec un back solide. La comparaison clé : Firebase est plus mature sur le mobile et le temps réel mais enferme dans l'écosystème Google et le NoSQL ; Supabase mise sur le SQL ouvert. Si tu veux juste une base Postgres sans le reste, Neon est plus ciblé. Pour un backend complet open source, Supabase est aujourd'hui difficile à battre.",
+    "longDescriptionEn": "Supabase is an all-in-one backend built around PostgreSQL, positioned as the open-source Firebase alternative. In minutes you get a Postgres database, an auto-generated API, authentication (email, OAuth, magic links), file storage, realtime and edge functions. For an indie hacker or a developer launching a SaaS, it's enough to build an app's entire backend without stitching together ten services.\n\nThe big argument is starting on standard Postgres (not a proprietary database like Firebase), so no lock-in: you can export and leave whenever you want. The free tier is generous to start (2 projects, 500 MB database), then the Pro plan is $25/month plus usage beyond quotas, and Team at $599/month.\n\nWho it's for: developers and indie hackers who want to ship fast with a solid backend. The key comparison: Firebase is more mature on mobile and realtime but locks you into Google's ecosystem and NoSQL; Supabase bets on open SQL. If you just want a Postgres database without the rest, Neon is more focused. For a full open-source backend, Supabase is hard to beat today.",
+    "pricing": {
+      "free": "Gratuit : 2 projets, 500 Mo de base, généreux pour démarrer",
+      "paid": "Pro à 25$/mois plus l'usage, Team à 599$/mois"
+    },
+    "pricingEn": {
+      "free": "Free: 2 projects, 500 MB database, generous to start",
+      "paid": "Pro at $25/month plus usage, Team at $599/month"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "verified_on": "2026-06-15",
+      "source_domain": "supabase.com",
+      "official_source_url": "https://supabase.com/pricing",
+      "cautions": [
+        "Offre gratuite : 2 projets, 500 Mo de base",
+        "Pro à 25$/mois plus facturation à l'usage au-delà des quotas",
+        "Team à 599$/mois"
+      ]
+    },
     "affiliateLink": "",
     "websiteUrl": "https://supabase.com",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Supabase en 2026 : prix (gratuit, Pro 25$), et comparaison avec Firebase et Neon. Le backend open source, analysé par ToolTrim pour les devs."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Idéal pour un dev solo ou indie hacker : tout le backend d'une app en quelques minutes, gratuit pour démarrer.",
+    "teamRelevance": "Adapté à une équipe qui lance un SaaS et veut un back complet open source, en gardant un œil sur la facture à l'usage.",
+    "relevantFor": [
+      "dev-fullstack",
+      "indie",
+      "fondateur-saas"
+    ],
+    "alternatives": [
+      "firebase",
+      "neon"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux un backend complet open source pour shipper vite",
+        "Tu préfères du Postgres standard à une base propriétaire (Firebase)"
+      ],
+      "avoidIf": [
+        "Tu veux juste une base Postgres sans le reste : Neon est plus ciblé",
+        "Ton app est très mobile/temps réel et Firebase est déjà en place"
+      ],
+      "threshold": "Excellent backend tout-en-un open source pour lancer une app sans assembler dix services. Pour une base Postgres seule, Neon ; pour du mobile et temps réel mature, Firebase reste une option."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a full open-source backend to ship fast",
+        "You prefer standard Postgres over a proprietary database (Firebase)"
+      ],
+      "avoidIf": [
+        "You just want a Postgres database without the rest: Neon is more focused",
+        "Your app is heavily mobile/realtime and Firebase is already in place"
+      ],
+      "threshold": "An excellent all-in-one open-source backend to launch an app without stitching ten services together. For a Postgres database alone, Neon; for mature mobile and realtime, Firebase remains an option."
+    },
+    "pros": [
+      "Backend complet en quelques minutes : base, auth, stockage, API, temps réel",
+      "Postgres standard et open source : pas de verrou propriétaire",
+      "Offre gratuite généreuse pour lancer un vrai projet",
+      "Excellente expérience développeur et documentation"
+    ],
+    "prosEn": [
+      "Full backend in minutes: database, auth, storage, API, realtime",
+      "Standard, open-source Postgres: no proprietary lock-in",
+      "Generous free tier to launch a real project",
+      "Excellent developer experience and documentation"
+    ],
+    "cons": [
+      "Facturation à l'usage au-delà du Pro : la note peut grimper",
+      "Moins mature que Firebase sur le mobile et certaines fonctions temps réel",
+      "Le self-hosting open source demande du travail d'infra",
+      "Pour une base Postgres seule, Neon est plus ciblé"
+    ],
+    "consEn": [
+      "Usage-based billing beyond Pro: the bill can climb",
+      "Less mature than Firebase on mobile and some realtime features",
+      "Open-source self-hosting requires infra work",
+      "For a Postgres database alone, Neon is more focused"
+    ],
+    "useCases": [
+      "Monter le backend complet d'un SaaS ou d'une app",
+      "Ajouter authentification et base de données à un projet web",
+      "Gérer stockage de fichiers et API auto-générée",
+      "Lancer un MVP rapidement avec un back solide"
+    ],
+    "useCasesEn": [
+      "Build the full backend of a SaaS or app",
+      "Add authentication and a database to a web project",
+      "Handle file storage and an auto-generated API",
+      "Launch an MVP quickly with a solid backend"
+    ],
     "personas": [],
-    "tool_type": "core",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
