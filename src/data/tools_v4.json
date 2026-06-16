@@ -10918,7 +10918,8 @@
     "shortDescription": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "49$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~49$), licence à vie, pas d'abonnement"
     },
     "covers": [
       "motion-design",
@@ -10945,37 +10946,63 @@
     "affiliateLink": "https://aescripts.com/boa",
     "verdict": {
       "keepIf": [
-        "Animations de tracés et lignes SVG fréquentes"
+        "Tu animes souvent des lignes, des tracés ou des graphiques dans After Effects",
+        "Tu veux des animations de lignes organiques difficiles à faire à la main"
       ],
       "avoidIf": [
-        "Peu d'animations linéaires dans vos projets"
+        "Tu fais peu d'animations linéaires",
+        "Tu n'utilises pas After Effects"
       ],
-      "threshold": "Achat unique — rentable si vous faites des animations de graphiques."
+      "threshold": "Achat unique rentabilisé si tu animes régulièrement des lignes et des tracés. Pour un usage ponctuel, les outils natifs d'After Effects suffisent."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Anime des lignes et tracés SVG de façon organique dans After Effects",
+      "Idéal pour les graphiques animés et les illustrations au trait",
+      "Achat unique, sans abonnement",
+      "Contrôle fin du tracé et de l'animation"
+    ],
+    "cons": [
+      "Utile surtout pour l'animation de lignes et de graphiques",
+      "Spécifique à After Effects",
+      "Achat à prévoir, contrairement à des plugins gratuits",
+      "Courbe d'apprentissage sur les paramètres"
+    ],
+    "useCases": [
+      "Animer le tracé d'une ligne ou d'un graphique",
+      "Créer des illustrations au trait animées",
+      "Réaliser des transitions à base de lignes",
+      "Donner un mouvement organique à des formes SVG"
+    ],
+    "seo": {
+      "metaDescription": "BAO Boa en 2026 : le plugin d'animation de lignes SVG pour After Effects, prix (achat unique) et à qui ça sert. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "49$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~49$), licence à vie, pas d'abonnement"
     },
-    "longDescription": "BAO Boa, c'est animation de lignes et formes SVG dans After Effects. Tracés organiques. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animations de tracés et lignes SVG fréquentes. À éviter si : peu d'animations linéaires dans vos projets. Achat unique — rentable si vous faites des animations de graphiques.",
+    "longDescription": "BAO Boa, c'est un plugin After Effects (aescripts) spécialisé dans l'animation de lignes et de tracés. Il permet de faire onduler, dessiner et déformer des lignes SVG de façon organique, avec un contrôle fin, là où les outils natifs d'After Effects sont vite limités. Pour un motion designer qui fait des graphiques animés, des illustrations au trait ou des transitions à base de lignes, c'est un outil précis et puissant.\n\nC'est un achat unique (~49$), sans abonnement.\n\nÀ qui ça s'adresse : aux motion designers qui animent souvent des lignes et des tracés. Si ce type d'animation n'est pas dans tes projets, BAO Boa ne te servira pas. Mais pour de l'animation de lignes organiques, il fait gagner un temps réel et permet des rendus difficiles à obtenir autrement.",
     "alternatives": [],
     "slug": "ae-bao-boa",
     "shortDescriptionEn": "SVG line and shape animation in After Effects. Organic strokes.",
-    "description": "BAO Boa, c'est animation de lignes et formes SVG dans After Effects. Tracés organiques. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animations de tracés et lignes SVG fréquentes. À éviter si : peu d'animations linéaires dans vos projets. Achat unique — rentable si vous faites des animations de graphiques.",
-    "longDescriptionEn": "BAO Boa is sVG line and shape animation in After Effects. Organic strokes. Free to start, paid plans for more. Built for video creators.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "description": "BAO Boa, c'est un plugin After Effects (aescripts) spécialisé dans l'animation de lignes et de tracés. Il permet de faire onduler, dessiner et déformer des lignes SVG de façon organique, avec un contrôle fin, là où les outils natifs d'After Effects sont vite limités. Pour un motion designer qui fait des graphiques animés, des illustrations au trait ou des transitions à base de lignes, c'est un outil précis et puissant.\n\nC'est un achat unique (~49$), sans abonnement.\n\nÀ qui ça s'adresse : aux motion designers qui animent souvent des lignes et des tracés. Si ce type d'animation n'est pas dans tes projets, BAO Boa ne te servira pas. Mais pour de l'animation de lignes organiques, il fait gagner un temps réel et permet des rendus difficiles à obtenir autrement.",
+    "longDescriptionEn": "BAO Boa is an After Effects plugin (aescripts) specialized in animating lines and strokes. It lets you wave, draw and deform SVG lines organically, with fine control, where After Effects' native tools quickly hit their limits. For a motion designer doing animated graphics, line illustrations or line-based transitions, it's a precise, powerful tool.\n\nIt's a one-time purchase (~$49), no subscription.\n\nWho it's for: motion designers who often animate lines and strokes. If that kind of animation isn't in your projects, BAO Boa won't help you. But for organic line animation, it saves real time and enables looks hard to get otherwise.",
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase (~$49), lifetime license, no subscription"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Achat unique (~49$), pas d'abonnement"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -10988,11 +11015,36 @@
     },
     "websiteUrl": "https://aescripts.com/boa",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You often animate lines, strokes or graphics in After Effects",
+        "You want organic line animations hard to do by hand"
+      ],
+      "avoidIf": [
+        "You do little line-based animation",
+        "You don't use After Effects"
+      ],
+      "threshold": "A one-time purchase paid off if you regularly animate lines and strokes. For occasional use, After Effects' native tools are enough."
+    },
+    "prosEn": [
+      "Animates SVG lines and strokes organically in After Effects",
+      "Ideal for animated graphics and line illustrations",
+      "One-time purchase, no subscription",
+      "Fine control over stroke and animation"
+    ],
+    "consEn": [
+      "Mostly useful for line and graphic animation",
+      "After Effects specific",
+      "A purchase to budget, unlike free plugins",
+      "Learning curve on the parameters"
+    ],
+    "useCasesEn": [
+      "Animate the drawing of a line or graphic",
+      "Create animated line illustrations",
+      "Build line-based transitions",
+      "Give organic motion to SVG shapes"
+    ],
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -43082,7 +43134,8 @@
     "shortDescription": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "45$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~45$), licence à vie, pas d'abonnement"
     },
     "covers": [
       "motion-design",
@@ -43110,32 +43163,58 @@
     "affiliateLink": "https://battleaxe.co/overlord",
     "verdict": {
       "keepIf": [
-        "Workflow Illustrator + After Effects quotidien"
+        "Tu fais des allers-retours quotidiens entre Illustrator et After Effects",
+        "Tu animes des illustrations vectorielles et veux les transférer sans perte"
       ],
       "avoidIf": [
-        "Pas de travail vectoriel dans AE"
+        "Tu ne fais pas de travail vectoriel dans After Effects",
+        "Tu n'utilises ni Illustrator ni After Effects"
       ],
-      "threshold": "Achat unique — rentable dès la première journée de motion design."
+      "threshold": "Achat unique rentabilisé dès la première journée si tu animes du vectoriel. Sans workflow Illustrator vers After Effects, c'est inutile."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Transfère des vecteurs d'Illustrator vers After Effects en un clic, sans copier-coller ni import",
+      "Garde les calques et les tracés éditables côté After Effects",
+      "Gros gain de temps pour l'animation d'illustrations vectorielles",
+      "Achat unique, sans abonnement"
+    ],
+    "cons": [
+      "Utile uniquement si tu fais du vectoriel Illustrator vers After Effects",
+      "Spécifique à l'écosystème Adobe",
+      "Achat à prévoir, contrairement à des plugins gratuits",
+      "N'apporte rien hors de ce workflow précis"
+    ],
+    "useCases": [
+      "Transférer une illustration vectorielle d'Illustrator vers After Effects",
+      "Animer des tracés en gardant leur éditabilité",
+      "Éviter les allers-retours d'import/export entre Illustrator et After Effects",
+      "Accélérer un workflow de motion design vectoriel"
+    ],
+    "seo": {
+      "metaDescription": "Overlord (battleaxe) en 2026 : le pont vectoriel Illustrator vers After Effects, prix (achat unique) et à qui ça sert. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "45$ achat unique"
+      "free": "",
+      "paid": "Achat unique (~45$), licence à vie, pas d'abonnement"
     },
-    "longDescription": "Overlord, c'est transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo et les graphistes.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : workflow Illustrator + After Effects quotidien. À éviter si : pas de travail vectoriel dans AE. Achat unique — rentable dès la première journée de motion design.",
+    "longDescription": "Overlord, c'est un pont entre Illustrator et After Effects, signé battleaxe. Son job : transférer des formes vectorielles d'un logiciel à l'autre en un clic, en gardant les tracés et les calques éditables, là où il faudrait sinon copier-coller, réimporter ou recréer les formes à la main. Pour un motion designer qui anime des illustrations vectorielles, c'est un gain de temps énorme au quotidien.\n\nC'est un achat unique (~45$), sans abonnement. Tu l'achètes une fois et tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : aux motion designers et graphistes qui font des allers-retours réguliers entre Illustrator et After Effects. Si tu ne travailles pas le vectoriel dans After Effects, Overlord ne te servira à rien. Mais dans ce workflow précis, il n'a pas vraiment d'équivalent, et il se rentabilise très vite.",
     "alternatives": [],
     "slug": "ae-overlord",
     "shortDescriptionEn": "Direct vector transfer Illustrator → After Effects in one click. Massive time saving.",
-    "description": "Overlord, c'est transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo et les graphistes.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : workflow Illustrator + After Effects quotidien. À éviter si : pas de travail vectoriel dans AE. Achat unique — rentable dès la première journée de motion design.",
-    "longDescriptionEn": "Overlord is direct vector transfer Illustrator → After Effects in one click. Massive time saving. Free to start, paid plans for more. Built for video creators and graphic designers.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
+    "description": "Overlord, c'est un pont entre Illustrator et After Effects, signé battleaxe. Son job : transférer des formes vectorielles d'un logiciel à l'autre en un clic, en gardant les tracés et les calques éditables, là où il faudrait sinon copier-coller, réimporter ou recréer les formes à la main. Pour un motion designer qui anime des illustrations vectorielles, c'est un gain de temps énorme au quotidien.\n\nC'est un achat unique (~45$), sans abonnement. Tu l'achètes une fois et tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : aux motion designers et graphistes qui font des allers-retours réguliers entre Illustrator et After Effects. Si tu ne travailles pas le vectoriel dans After Effects, Overlord ne te servira à rien. Mais dans ce workflow précis, il n'a pas vraiment d'équivalent, et il se rentabilise très vite.",
+    "longDescriptionEn": "Overlord is a bridge between Illustrator and After Effects, by battleaxe. Its job: transfer vector shapes from one app to the other in one click, keeping paths and layers editable, where you'd otherwise copy-paste, re-import or recreate shapes by hand. For a motion designer animating vector illustrations, it's a huge daily time saver.\n\nIt's a one-time purchase (~$45), no subscription. You buy it once and use it forever.\n\nWho it's for: motion designers and graphic designers who go back and forth between Illustrator and After Effects regularly. If you don't work with vectors in After Effects, Overlord will be useless to you. But in that specific workflow, it has no real equivalent, and it pays for itself fast.",
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase (~$45), lifetime license, no subscription"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "compare_plan_name": "License",
@@ -43179,11 +43258,36 @@
     },
     "websiteUrl": "https://battleaxe.co/overlord",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You go back and forth between Illustrator and After Effects daily",
+        "You animate vector illustrations and want lossless transfer"
+      ],
+      "avoidIf": [
+        "You don't work with vectors in After Effects",
+        "You use neither Illustrator nor After Effects"
+      ],
+      "threshold": "A one-time purchase paid off on day one if you animate vectors. Without an Illustrator-to-After Effects workflow, it's useless."
+    },
+    "prosEn": [
+      "Transfers vectors from Illustrator to After Effects in one click, no copy-paste or import",
+      "Keeps layers and paths editable on the After Effects side",
+      "Big time saver for animating vector illustrations",
+      "One-time purchase, no subscription"
+    ],
+    "consEn": [
+      "Useful only if you do Illustrator-to-After Effects vector work",
+      "Specific to the Adobe ecosystem",
+      "A purchase to budget, unlike free plugins",
+      "Adds nothing outside that precise workflow"
+    ],
+    "useCasesEn": [
+      "Transfer a vector illustration from Illustrator to After Effects",
+      "Animate paths while keeping them editable",
+      "Avoid import/export round-trips between Illustrator and After Effects",
+      "Speed up a vector motion design workflow"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -47483,21 +47587,26 @@
   {
     "id": "productioncrate",
     "name": "ProductionCrate",
-    "shortDescription": "Bibliothèques numériques pour la création vidéo.",
-    "description": "ProductionCrate, c'est bibliothèques numériques pour la création vidéo. À partir de 10€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en stock media, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "shortDescription": "Banque d'éléments VFX, sons et 3D prêts à l'emploi pour la création vidéo.",
+    "description": "ProductionCrate, c'est une banque d'assets pour la création vidéo : effets visuels (explosions, fumée, particules), sons, transitions, modèles 3D, le tout prêt à glisser dans After Effects, Premiere ou un autre logiciel de montage. Plutôt que de créer chaque effet à la main ou d'acheter des packs à l'unité, tu piocheras dans une bibliothèque qui s'enrichit en continu. Pour un monteur ou un motion designer qui livre régulièrement, c'est un gain de temps réel.\n\nLe modèle est l'abonnement : un aperçu gratuit limité, puis un accès complet autour de 20$/mois selon la formule. Tant que tu produis, ça se rentabilise ; en usage ponctuel, c'est moins évident.\n\nÀ qui ça s'adresse : aux créateurs vidéo qui ont besoin d'éléments visuels et sonores variés sans les produire eux-mêmes. Si tu n'utilises ce genre d'assets que rarement, des banques gratuites ou des achats ponctuels suffisent. Mais en production régulière, une bibliothèque illimitée comme ProductionCrate fait gagner beaucoup de temps.",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Aperçus gratuits, téléchargements limités",
+      "paid": "Abonnement à partir d'environ 20$/mois selon la formule"
     },
     "website": "https://productioncrate.com",
     "affiliateLink": "https://productioncrate.com",
     "pros": [
-      "Spécialisé en stock media",
-      "Interface professionnelle"
+      "Grande bibliothèque d'effets visuels, sons, transitions et modèles 3D",
+      "Assets prêts à glisser dans After Effects, Premiere et autres",
+      "Bibliothèque enrichie en continu",
+      "Gain de temps face à la création d'effets à la main"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Abonnement : rentable surtout en production régulière",
+      "Aperçu gratuit limité",
+      "Qualité variable selon les éléments",
+      "Des banques gratuites couvrent une partie des besoins"
     ],
     "bestFor": [
       "all"
@@ -47508,28 +47617,29 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 20,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Aperçus gratuits, téléchargements limités",
+      "paid": "Abonnement à partir d'environ 20$/mois selon la formule"
     },
     "relevantFor": [
-      "all"
+      "createur-contenu",
+      "designer"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu produis régulièrement de la vidéo et as besoin d'effets, sons et assets variés",
+        "Tu veux une bibliothèque illimitée plutôt que des achats à l'unité"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu n'utilises ce genre d'assets que rarement : des banques gratuites suffisent",
+        "Ton budget est serré et ta production occasionnelle"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Rentable pour une production vidéo régulière qui consomme beaucoup d'assets. En usage ponctuel, des banques gratuites ou des achats à l'unité suffisent."
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "ProductionCrate : Bibliothèques numériques pour la création vidéo. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "ProductionCrate en 2026 : banque d'assets VFX, sons et 3D pour la vidéo, prix et alternatives. Le verdict ToolTrim."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -47548,15 +47658,17 @@
     "ia_use_case": null,
     "slug": "productioncrate",
     "shortDescriptionEn": "Digital libraries for video creation.",
-    "longDescription": "ProductionCrate, c'est bibliothèques numériques pour la création vidéo. À partir de 10€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en stock media, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "ProductionCrate is digital libraries for video creation. Starting at €10/month. Built for graphic designers and community managers.\n\nSpecialized in stock media, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €10/month.",
+    "longDescription": "ProductionCrate, c'est une banque d'assets pour la création vidéo : effets visuels (explosions, fumée, particules), sons, transitions, modèles 3D, le tout prêt à glisser dans After Effects, Premiere ou un autre logiciel de montage. Plutôt que de créer chaque effet à la main ou d'acheter des packs à l'unité, tu piocheras dans une bibliothèque qui s'enrichit en continu. Pour un monteur ou un motion designer qui livre régulièrement, c'est un gain de temps réel.\n\nLe modèle est l'abonnement : un aperçu gratuit limité, puis un accès complet autour de 20$/mois selon la formule. Tant que tu produis, ça se rentabilise ; en usage ponctuel, c'est moins évident.\n\nÀ qui ça s'adresse : aux créateurs vidéo qui ont besoin d'éléments visuels et sonores variés sans les produire eux-mêmes. Si tu n'utilises ce genre d'assets que rarement, des banques gratuites ou des achats ponctuels suffisent. Mais en production régulière, une bibliothèque illimitée comme ProductionCrate fait gagner beaucoup de temps.",
+    "longDescriptionEn": "ProductionCrate is an asset library for video creation: visual effects (explosions, smoke, particles), sounds, transitions, 3D models, all ready to drop into After Effects, Premiere or another editing tool. Instead of creating each effect by hand or buying packs one by one, you draw from a library that keeps growing. For an editor or motion designer who delivers regularly, it's a real time saver.\n\nThe model is subscription-based: a limited free preview, then full access around $20/month depending on the plan. As long as you produce, it pays off; for occasional use, it's less obvious.\n\nWho it's for: video creators who need varied visual and audio elements without producing them themselves. If you only use this kind of asset rarely, free libraries or one-off purchases are enough. But in regular production, an unlimited library like ProductionCrate saves a lot of time.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": "Free previews, limited downloads",
+      "paid": "Subscription from around $20/month depending on the plan"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aperçu gratuit limité, abonnement à partir d'environ 20$/mois"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "productioncrate.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -47571,24 +47683,39 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You produce video regularly and need varied effects, sounds and assets",
+        "You want an unlimited library rather than one-off purchases"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You only use this kind of asset rarely: free libraries are enough",
+        "Your budget is tight and your production occasional"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Worth it for regular video production that consumes a lot of assets. For occasional use, free libraries or one-off purchases are enough."
     },
     "prosEn": [
-      "Specialized in stock media",
-      "Professional interface"
+      "Large library of visual effects, sounds, transitions and 3D models",
+      "Assets ready to drop into After Effects, Premiere and others",
+      "Library continuously updated",
+      "Time saver versus building effects by hand"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Subscription: worth it mainly for regular production",
+      "Limited free preview",
+      "Quality varies across elements",
+      "Free libraries cover part of the need"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Ajouter des effets visuels (fumée, particules, explosions) à une vidéo",
+      "Habiller un montage avec des transitions et des sons",
+      "Intégrer des modèles 3D dans une scène",
+      "Accélérer la post-production sans tout créer soi-même"
+    ],
+    "useCasesEn": [
+      "Add visual effects (smoke, particles, explosions) to a video",
+      "Dress up an edit with transitions and sounds",
+      "Integrate 3D models into a scene",
+      "Speed up post-production without building everything yourself"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 5,
     "downgradePlan": null,
