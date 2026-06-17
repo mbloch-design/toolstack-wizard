@@ -139,16 +139,86 @@ function buildToolMetaDesc(tool: any, lang: string): string {
   return (desc || short).substring(0, 160).trim();
 }
 
+// --- Source de données du build SEO (sitemap + prerender) : Supabase est la
+// source de vérité au runtime. On la fusionne PAR-DESSUS le JSON groupé
+// (Supabase gagne) pour que le build reflète le contenu live et couvre les
+// fiches retirées de tools_v4.json. Fallback : si le fetch échoue, on garde le
+// JSON seul (comportement historique), donc le build n'est jamais pire qu'avant.
+const SB_PRERENDER_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
+const SB_PRERENDER_ANON =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
+const SB_RENAME: Record<string, string> = {
+  short_description: "shortDescription",
+  short_description_en: "shortDescriptionEn",
+  long_description: "longDescription",
+  long_description_en: "longDescriptionEn",
+  default_monthly_price: "defaultMonthlyPrice",
+  pricing_en: "pricingEn",
+  verdict_en: "verdictEn",
+  pros_en: "prosEn",
+  cons_en: "consEn",
+  use_cases: "useCases",
+  use_cases_en: "useCasesEn",
+  relevant_for: "relevantFor",
+  better_alternative: "betterAlternative",
+  free_alternative: "freeAlternative",
+  website_url: "websiteUrl",
+  affiliate_link: "affiliateLink",
+  time_gained_hours_per_month: "timeGainedHoursPerMonth",
+  migration_guide: "migrationGuide",
+  downgrade_plan: "downgradePlan",
+  solo_relevance: "soloRelevance",
+  team_relevance: "teamRelevance",
+};
+function sbRowToTool(row: Record<string, any>): Record<string, any> {
+  const t: Record<string, any> = {};
+  for (const [col, val] of Object.entries(row)) {
+    if (col === "pertinence_by_persona") continue;
+    t[SB_RENAME[col] || col] = val;
+  }
+  if (t.description === undefined && t.longDescription != null) t.description = t.longDescription;
+  return t;
+}
+let _sbToolsCache: Record<string, any>[] | null = null;
+async function getMergedTools(jsonTools: any[]): Promise<any[]> {
+  try {
+    if (!_sbToolsCache) {
+      const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&limit=2000`, {
+        headers: { apikey: SB_PRERENDER_ANON, Authorization: `Bearer ${SB_PRERENDER_ANON}` },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const rows = await res.json();
+      if (!Array.isArray(rows) || rows.length === 0) throw new Error("empty response");
+      _sbToolsCache = rows as Record<string, any>[];
+    }
+    const bySlug = new Map<string, any>();
+    for (const t of jsonTools) bySlug.set(t.slug || t.id, t);
+    for (const row of _sbToolsCache) {
+      if (!row.slug) continue;
+      bySlug.set(row.slug, sbRowToTool(row));
+    }
+    console.log(
+      `✓ Build SEO source: ${jsonTools.length} JSON + ${_sbToolsCache.length} Supabase = ${bySlug.size} fiches`
+    );
+    return [...bySlug.values()];
+  } catch (e: any) {
+    console.warn(
+      `⚠️ Build SEO: fetch Supabase échoué (${e?.message}); fallback JSON seul (${jsonTools.length})`
+    );
+    return jsonTools;
+  }
+}
+
 function sitemapPlugin(): Plugin {
   return {
     name: "generate-sitemap",
-    closeBundle() {
+    async closeBundle() {
       try {
         const raw = fs.readFileSync(path.resolve(__dirname, "src/data/content.json"), "utf-8");
         const data = JSON.parse(raw);
         const toolsRaw = fs.readFileSync(path.resolve(__dirname, "src/data/tools_v4.json"), "utf-8");
         const categoriesRaw = fs.readFileSync(path.resolve(__dirname, "src/data/categories_index.json"), "utf-8");
-        const tools = JSON.parse(toolsRaw);
+        const tools = await getMergedTools(JSON.parse(toolsRaw));
         const categories = JSON.parse(categoriesRaw);
         const urls: string[] = [];
 
@@ -306,11 +376,11 @@ function staticPrerenderPlugin(): Plugin {
   return {
     name: "static-prerender-tools",
     apply: "build",
-    closeBundle() {
+    async closeBundle() {
       try {
         const toolsRaw = fs.readFileSync(path.resolve(__dirname, "src/data/tools_v4.json"), "utf-8");
         const categoriesRaw = fs.readFileSync(path.resolve(__dirname, "src/data/categories_index.json"), "utf-8");
-        const tools = JSON.parse(toolsRaw);
+        const tools = await getMergedTools(JSON.parse(toolsRaw));
         const categories = JSON.parse(categoriesRaw);
 
         const distDir = path.resolve(__dirname, "dist");
