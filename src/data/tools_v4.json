@@ -43094,10 +43094,10 @@
     "bundle_parent": null,
     "category": "ai-general",
     "shortDescription": "Génération et édition vidéo par IA. Le standard du genre.",
-    "defaultMonthlyPrice": 12.99,
+    "defaultMonthlyPrice": 15,
     "pricing": {
-      "free": "125 crédits/mois",
-      "paid": "15$/mois (Standard)"
+      "free": "Crédits gratuits limités",
+      "paid": "Standard à 15$/mois, Pro 35$, Unlimited 95$"
     },
     "covers": [
       "generation-video",
@@ -43125,12 +43125,14 @@
     "affiliateLink": "https://runwayml.com",
     "verdict": {
       "keepIf": [
-        "Génération vidéo IA intensive"
+        "Tu fais de la génération et de l'édition vidéo IA de façon régulière",
+        "Tu as besoin de plus que des clips : rotoscopie, suppression de fond, inpainting, motion"
       ],
       "avoidIf": [
-        "Usage occasionnel — crédits gratuits suffisent"
+        "Usage occasionnel : les crédits gratuits ou Kling AI suffisent et coûtent moins cher",
+        "Tu veux seulement de courts clips animés : Pika Labs fait l'essentiel pour moins cher"
       ],
-      "threshold": "Rentable dès 5 générations vidéo par semaine."
+      "threshold": "Pertinent dès que la vidéo IA devient un usage hebdomadaire. Pour de la génération ponctuelle, Kling AI offre un meilleur rapport prix/crédits."
     },
     "timeGainedHoursPerMonth": 8,
     "freeAlternative": null,
@@ -43139,13 +43141,18 @@
     "host_app": null,
     "slug": "runway",
     "shortDescriptionEn": "AI video generation and editing. The category standard.",
-    "description": "Runway, c'est génération et édition vidéo par IA. Le standard du genre. À partir de 12.99€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : génération vidéo IA intensive. À éviter si : usage occasionnel — crédits gratuits suffisent. Rentable dès 5 générations vidéo par semaine.",
-    "longDescription": "Runway, c'est génération et édition vidéo par IA. Le standard du genre. À partir de 12.99€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : génération vidéo IA intensive. À éviter si : usage occasionnel — crédits gratuits suffisent. Rentable dès 5 générations vidéo par semaine.",
-    "longDescriptionEn": "Runway is aI video generation and editing. The category standard. Starting at €12.99/month. Built for video creators and content creators.\n\nEstimated time saving: 8h/month.",
-    "pricingEn": null,
+    "description": "Runway, c'est le standard de la génération et de l'édition vidéo par IA. Là où la plupart des outils se contentent de produire un clip, Runway va plus loin : génération texte-vers-vidéo et image-vers-vidéo, mais aussi rotoscopie, suppression de fond, inpainting et outils de motion. C'est la boîte à outils complète du créateur vidéo IA.\n\nLe plan payant démarre à 15$/mois (Standard), puis 35$ (Pro) et 95$ (Unlimited). Le gratuit existe mais avec des crédits vite épuisés. Le vrai sujet, c'est l'intensité d'usage : si tu génères de la vidéo toutes les semaines, l'abonnement se rentabilise. Si c'est ponctuel, tu paies un abonnement complet pour peu de rendu.\n\nÀ qui ça s'adresse : aux créateurs et monteurs qui veulent un outil tout-en-un et acceptent d'y mettre le prix. Pour de la simple génération de clips courts, Pika Labs suffit et coûte moins cher. Et côté coût pur des crédits, Kling AI est souvent plus avantageux. Runway se justifie quand tu exploites l'ensemble de ses fonctions d'édition, pas juste la génération.",
+    "longDescription": "Runway, c'est le standard de la génération et de l'édition vidéo par IA. Là où la plupart des outils se contentent de produire un clip, Runway va plus loin : génération texte-vers-vidéo et image-vers-vidéo, mais aussi rotoscopie, suppression de fond, inpainting et outils de motion. C'est la boîte à outils complète du créateur vidéo IA.\n\nLe plan payant démarre à 15$/mois (Standard), puis 35$ (Pro) et 95$ (Unlimited). Le gratuit existe mais avec des crédits vite épuisés. Le vrai sujet, c'est l'intensité d'usage : si tu génères de la vidéo toutes les semaines, l'abonnement se rentabilise. Si c'est ponctuel, tu paies un abonnement complet pour peu de rendu.\n\nÀ qui ça s'adresse : aux créateurs et monteurs qui veulent un outil tout-en-un et acceptent d'y mettre le prix. Pour de la simple génération de clips courts, Pika Labs suffit et coûte moins cher. Et côté coût pur des crédits, Kling AI est souvent plus avantageux. Runway se justifie quand tu exploites l'ensemble de ses fonctions d'édition, pas juste la génération.",
+    "longDescriptionEn": "Runway is the standard for AI video generation and editing. Where most tools just produce a clip, Runway goes further: text-to-video and image-to-video generation, but also rotoscoping, background removal, inpainting, and motion tools. It's the full toolbox for the AI video creator.\n\nThe paid plan starts at $15/month (Standard), then $35 (Pro) and $95 (Unlimited). A free tier exists but its credits run out fast. The real question is usage intensity: if you generate video every week, the subscription pays off. If it's occasional, you're paying for a full plan to get little output.\n\nWho it's for: creators and editors who want an all-in-one tool and accept the price. For simple short-clip generation, Pika Labs is enough and cheaper. And on pure credit cost, Kling AI is often a better deal. Runway earns its place when you use the full set of editing features, not just generation.",
+    "pricingEn": {
+      "free": "Limited free credits",
+      "paid": "Standard at $15/month, Pro $35, Unlimited $95"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Système de crédits : le coût réel dépend du volume généré"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "runwayml.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -43154,23 +43161,71 @@
       "location_sensitive": false,
       "official_source_url": "https://runwayml.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12.99
+      "compare_price_monthly_eur": 15
     },
     "websiteUrl": "https://runwayml.com",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Runway en 2026 : le standard de la vidéo IA (génération + édition), prix réels et alternatives moins chères (Pika, Kling AI). Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": null,
     "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "relevantFor": [
+      "createur-contenu",
+      "motion-video"
+    ],
+    "alternatives": [
+      "pika-labs",
+      "kling-ai"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You do AI video generation and editing on a regular basis",
+        "You need more than clips: rotoscoping, background removal, inpainting, motion"
+      ],
+      "avoidIf": [
+        "Occasional use: free credits or Kling AI are enough and cost less",
+        "You only want short animated clips: Pika Labs covers the basics for less"
+      ],
+      "threshold": "Worth it once AI video becomes a weekly use. For one-off generation, Kling AI offers a better price/credit ratio."
+    },
+    "pros": [
+      "Outil tout-en-un : génération vidéo et édition avancée (rotoscopie, inpainting, fond)",
+      "Le standard du secteur, régulièrement à la pointe sur la qualité",
+      "Texte-vers-vidéo et image-vers-vidéo dans la même interface",
+      "Écosystème mûr, beaucoup de tutoriels et de ressources"
+    ],
+    "prosEn": [
+      "All-in-one: video generation and advanced editing (rotoscoping, inpainting, background)",
+      "The category standard, regularly at the cutting edge on quality",
+      "Text-to-video and image-to-video in the same interface",
+      "Mature ecosystem with plenty of tutorials and resources"
+    ],
+    "cons": [
+      "Plus cher que des alternatives ciblées (Pika pour les clips, Kling pour le coût crédits)",
+      "Système de crédits qui grimpe vite en usage intensif",
+      "Surdimensionné si tu ne fais que de la génération de clips courts",
+      "Courbe d'apprentissage pour exploiter toutes les fonctions"
+    ],
+    "consEn": [
+      "Pricier than focused alternatives (Pika for clips, Kling for credit cost)",
+      "Credit system that adds up fast under heavy use",
+      "Overkill if you only generate short clips",
+      "Learning curve to use the full feature set"
+    ],
+    "useCases": [
+      "Générer une vidéo IA à partir d'un texte ou d'une image",
+      "Retirer ou remplacer un arrière-plan vidéo sans fond vert",
+      "Faire de la rotoscopie ou de l'inpainting sur une séquence",
+      "Produire des effets visuels pour du contenu réseaux ou pro"
+    ],
+    "useCasesEn": [
+      "Generate an AI video from text or an image",
+      "Remove or replace a video background without a green screen",
+      "Do rotoscoping or inpainting on a clip",
+      "Produce visual effects for social or professional content"
+    ],
     "downgradePlan": null,
     "prescription_quality": "ferme",
     "prescription_output": {
