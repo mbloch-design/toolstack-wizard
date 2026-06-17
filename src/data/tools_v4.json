@@ -6288,8 +6288,8 @@
     "shortDescription": "La génération d'images IA intégrée dans Adobe CC.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "bundle": "Inclus dans Adobe CC (crédits mensuels)",
-      "standalone": "5€/mois"
+      "free": "Crédits gratuits inclus dans Adobe CC, et usage limité gratuit",
+      "paid": "Plans Firefly à partir d'environ 10$/mois pour plus de crédits"
     },
     "covers": [
       "generation-image",
@@ -6318,12 +6318,14 @@
     "affiliateLink": "https://firefly.adobe.com",
     "verdict": {
       "keepIf": [
-        "Déjà abonné Adobe CC — utilise tes crédits inclus"
+        "Tu es déjà abonné Adobe Creative Cloud (Generative Fill et crédits inclus)",
+        "Tu veux une IA d'image intégrée à Photoshop pour retoucher et compléter des images"
       ],
       "avoidIf": [
-        "Pas abonné Adobe — Midjourney ou Leonardo plus flexibles"
+        "Tu n'es pas dans l'écosystème Adobe : Midjourney ou d'autres sont plus flexibles",
+        "Tu cherches la meilleure qualité artistique pure : Midjourney garde l'avantage"
       ],
-      "threshold": "Gratuit si vous avez Adobe CC — toujours à utiliser."
+      "threshold": "Imbattable si tu es déjà sur Adobe : Generative Fill dans Photoshop est un vrai gain. Hors écosystème Adobe, des modèles comme Midjourney sont souvent plus puissants."
     },
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
@@ -6332,10 +6334,13 @@
     "host_app": null,
     "slug": "firefly",
     "shortDescriptionEn": "AI image generation integrated in Adobe CC.",
-    "description": "Adobe Firefly, c'est la génération d'images IA intégrée dans Adobe CC. Entièrement gratuit. Pensé pour les graphistes et les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : déjà abonné Adobe CC — utilise tes crédits inclus. À éviter si : pas abonné Adobe — Midjourney ou Leonardo plus flexibles. Gratuit si vous avez Adobe CC — toujours à utiliser.",
-    "longDescription": "Adobe Firefly, c'est la génération d'images IA intégrée dans Adobe CC. Entièrement gratuit. Pensé pour les graphistes et les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : déjà abonné Adobe CC — utilise tes crédits inclus. À éviter si : pas abonné Adobe — Midjourney ou Leonardo plus flexibles. Gratuit si vous avez Adobe CC — toujours à utiliser.",
-    "longDescriptionEn": "Adobe Firefly is aI image generation integrated in Adobe CC. Completely free. Built for graphic designers and photographers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "description": "Adobe Firefly, c'est la famille de modèles d'IA générative d'Adobe. On la connaît surtout via Generative Fill dans Photoshop : tu sélectionnes une zone, tu décris ce que tu veux, et l'IA complète ou remplace l'image de façon bluffante. Firefly existe aussi en version web autonome pour générer des images, du texte stylisé ou des vecteurs.\n\nSon argument fort, ce n'est pas la qualité artistique pure (où Midjourney reste devant), mais l'intégration et la sécurité juridique : Firefly est entraîné sur des contenus sous licence (Adobe Stock), ce qui le rend utilisable en contexte commercial sans crainte. Le modèle est à crédits : tu en as d'inclus dans ton abonnement Creative Cloud, et des plans payants (à partir d'environ 10$/mois) pour aller plus loin.\n\nÀ qui ça s'adresse : à tous ceux qui sont déjà dans l'écosystème Adobe. Generative Fill seul justifie de l'utiliser. Si tu n'es pas chez Adobe et que tu veux la meilleure qualité ou le plus de contrôle, Midjourney ou d'autres modèles seront plus pertinents.",
+    "longDescription": "Adobe Firefly, c'est la famille de modèles d'IA générative d'Adobe. On la connaît surtout via Generative Fill dans Photoshop : tu sélectionnes une zone, tu décris ce que tu veux, et l'IA complète ou remplace l'image de façon bluffante. Firefly existe aussi en version web autonome pour générer des images, du texte stylisé ou des vecteurs.\n\nSon argument fort, ce n'est pas la qualité artistique pure (où Midjourney reste devant), mais l'intégration et la sécurité juridique : Firefly est entraîné sur des contenus sous licence (Adobe Stock), ce qui le rend utilisable en contexte commercial sans crainte. Le modèle est à crédits : tu en as d'inclus dans ton abonnement Creative Cloud, et des plans payants (à partir d'environ 10$/mois) pour aller plus loin.\n\nÀ qui ça s'adresse : à tous ceux qui sont déjà dans l'écosystème Adobe. Generative Fill seul justifie de l'utiliser. Si tu n'es pas chez Adobe et que tu veux la meilleure qualité ou le plus de contrôle, Midjourney ou d'autres modèles seront plus pertinents.",
+    "longDescriptionEn": "Adobe Firefly is Adobe's family of generative AI models. It's best known through Generative Fill in Photoshop: you select an area, describe what you want, and the AI completes or replaces the image strikingly. Firefly also exists as a standalone web app to generate images, stylized text or vectors.\n\nIts strong argument isn't pure artistic quality (where Midjourney stays ahead), but integration and legal safety: Firefly is trained on licensed content (Adobe Stock), making it usable commercially without worry. The model is credit-based: you get some included in your Creative Cloud subscription, plus paid plans (from around $10/month) to go further.\n\nWho it's for: anyone already in the Adobe ecosystem. Generative Fill alone justifies using it. If you're not on Adobe and want the best quality or most control, Midjourney or other models will fit better.",
+    "pricingEn": {
+      "free": "Free credits included in Adobe CC, plus a limited free tier",
+      "paid": "Firefly plans from around $10/month for more credits"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "compare_plan_name": "Free",
@@ -6383,21 +6388,69 @@
     },
     "websiteUrl": "https://firefly.adobe.com",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Adobe Firefly en 2026 : l'IA d'image d'Adobe (Generative Fill), prix, droits commerciaux et vs Midjourney. Le verdict ToolTrim."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "midjourney",
+      "canva"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You're already an Adobe Creative Cloud subscriber (Generative Fill and credits included)",
+        "You want image AI integrated into Photoshop to retouch and complete images"
+      ],
+      "avoidIf": [
+        "You're not in the Adobe ecosystem: Midjourney or others are more flexible",
+        "You want the best pure artistic quality: Midjourney keeps the edge"
+      ],
+      "threshold": "Unbeatable if you're already on Adobe: Generative Fill in Photoshop is a real win. Outside the Adobe ecosystem, models like Midjourney are often more powerful."
+    },
+    "pros": [
+      "Intégré à Photoshop (Generative Fill) : retouche et extension d'image dans ton flux",
+      "Crédits inclus dans l'abonnement Creative Cloud",
+      "Conçu pour un usage commercial sans souci de droits (entraîné sur du contenu sous licence)",
+      "Génération de texte stylisé, vecteurs et effets"
+    ],
+    "prosEn": [
+      "Integrated into Photoshop (Generative Fill): retouch and extend images in your flow",
+      "Credits included in the Creative Cloud subscription",
+      "Built for commercial use without rights worries (trained on licensed content)",
+      "Stylized text, vectors and effects generation"
+    ],
+    "cons": [
+      "Qualité artistique pure souvent en deçà de Midjourney",
+      "Système de crédits qui peut limiter un usage intensif",
+      "Surtout intéressant si tu es déjà dans l'écosystème Adobe",
+      "Moins de contrôle et de communauté que les leaders de l'IA d'image"
+    ],
+    "consEn": [
+      "Pure artistic quality often below Midjourney",
+      "Credit system that can limit heavy use",
+      "Mostly worthwhile if you're already in the Adobe ecosystem",
+      "Less control and community than the image-AI leaders"
+    ],
+    "useCases": [
+      "Compléter ou étendre une image avec Generative Fill dans Photoshop",
+      "Générer des images pour un usage commercial sans risque de droits",
+      "Créer du texte stylisé et des effets rapides",
+      "Itérer sur des visuels dans le flux Adobe"
+    ],
+    "useCasesEn": [
+      "Complete or extend an image with Generative Fill in Photoshop",
+      "Generate images for commercial use without rights risk",
+      "Create stylized text and quick effects",
+      "Iterate on visuals within the Adobe flow"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "question",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide"
@@ -12746,7 +12799,8 @@
     "shortDescription": "Le logiciel de retouche RAW préféré des photographes professionnels.",
     "defaultMonthlyPrice": 24,
     "pricing": {
-      "paid": "24€/mois ou 180€/an"
+      "free": "",
+      "paid": "Abonnement Pro à environ 18-24$/mois, ou licence perpétuelle à partir de ~299$"
     },
     "covers": [
       "retouche-photo",
@@ -12768,12 +12822,14 @@
     "affiliateLink": "https://captureone.com",
     "verdict": {
       "keepIf": [
-        "Photographie studio, mode, portrait haut de gamme"
+        "Tu fais de la photo studio, mode ou portrait haut de gamme",
+        "Tu veux le meilleur rendu couleur et un workflow supérieur à Lightroom"
       ],
       "avoidIf": [
-        "Workflow déjà sur Lightroom — migration coûteuse"
+        "Ton flux est déjà bien rodé sur Lightroom : la migration coûte du temps",
+        "Tu fais de la photo occasionnelle : Lightroom ou les apps du téléphone suffisent"
       ],
-      "threshold": "Rentable si vous facturez des shootings à 500€+ régulièrement."
+      "threshold": "Le choix des photographes exigeants pour le rendu couleur et le tethering studio. Pour un usage standard ou déjà rodé sur Lightroom, le gain ne justifie pas toujours la migration."
     },
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
@@ -12783,13 +12839,18 @@
     "ia_use_case": null,
     "slug": "capture-one",
     "shortDescriptionEn": "The RAW editing software preferred by professional photographers.",
-    "description": "Capture One, c'est le logiciel de retouche RAW préféré des photographes professionnels. À partir de 24€/mois. Pensé pour les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : photographie studio, mode, portrait haut de gamme. À éviter si : workflow déjà sur Lightroom — migration coûteuse. Rentable si vous facturez des shootings à 500€+ régulièrement.",
-    "longDescription": "Capture One, c'est le logiciel de retouche RAW préféré des photographes professionnels. À partir de 24€/mois. Pensé pour les photographes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : photographie studio, mode, portrait haut de gamme. À éviter si : workflow déjà sur Lightroom — migration coûteuse. Rentable si vous facturez des shootings à 500€+ régulièrement.",
-    "longDescriptionEn": "Capture One is the RAW editing software preferred by professional photographers. Starting at €24/month. Built for photographers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "description": "Capture One, c'est le grand rival de Lightroom, et le logiciel préféré d'une bonne partie des photographes studio, mode et portrait. Sa réputation tient surtout à son rendu colorimétrique, considéré comme supérieur, et à son excellence en capture connectée (tethering), quand l'appareil est branché à l'ordinateur pendant le shooting. Pour de la photo haut de gamme, c'est une référence.\n\nCôté prix, c'est plus cher que Lightroom, et les tarifs ont augmenté récemment : compte un abonnement Pro autour de 18 à 24$/mois, ou une licence perpétuelle à partir d'environ 299$. L'option perpétuelle, rare aujourd'hui, reste un argument face à l'abonnement Adobe.\n\nÀ qui ça s'adresse : aux photographes exigeants sur la couleur et le studio. Le vrai frein, c'est la migration : si ton flux est déjà rodé sur Lightroom, changer coûte du temps pour un gain qui n'est pas toujours décisif. Mais pour qui démarre ou cherche le meilleur rendu, Capture One vaut le détour.",
+    "longDescription": "Capture One, c'est le grand rival de Lightroom, et le logiciel préféré d'une bonne partie des photographes studio, mode et portrait. Sa réputation tient surtout à son rendu colorimétrique, considéré comme supérieur, et à son excellence en capture connectée (tethering), quand l'appareil est branché à l'ordinateur pendant le shooting. Pour de la photo haut de gamme, c'est une référence.\n\nCôté prix, c'est plus cher que Lightroom, et les tarifs ont augmenté récemment : compte un abonnement Pro autour de 18 à 24$/mois, ou une licence perpétuelle à partir d'environ 299$. L'option perpétuelle, rare aujourd'hui, reste un argument face à l'abonnement Adobe.\n\nÀ qui ça s'adresse : aux photographes exigeants sur la couleur et le studio. Le vrai frein, c'est la migration : si ton flux est déjà rodé sur Lightroom, changer coûte du temps pour un gain qui n'est pas toujours décisif. Mais pour qui démarre ou cherche le meilleur rendu, Capture One vaut le détour.",
+    "longDescriptionEn": "Capture One is Lightroom's big rival, and the favorite of many studio, fashion and portrait photographers. Its reputation rests above all on its color rendering, considered superior, and its excellence at tethered capture, when the camera is connected to the computer during the shoot. For high-end photography, it's a reference.\n\nOn price, it's pricier than Lightroom, and rates rose recently: budget a Pro subscription around $18 to $24/month, or a perpetual license from about $299. The perpetual option, rare today, remains an argument against the Adobe subscription.\n\nWho it's for: photographers demanding on color and studio work. The real hurdle is migration: if your flow is already dialed in on Lightroom, switching costs time for a gain that isn't always decisive. But for someone starting out or chasing the best rendering, Capture One is worth a look.",
+    "pricingEn": {
+      "free": "",
+      "paid": "Pro subscription around $18-24/month, or perpetual license from ~$299"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Abonnement Pro ~18-24$/mois, ou licence perpétuelle dès ~299$ ; prix en hausse récente"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "captureone.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -12802,21 +12863,69 @@
     },
     "websiteUrl": "https://captureone.com",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Capture One en 2026 : prix (abonnement ou licence perpétuelle) et comparaison avec Lightroom. Le verdict ToolTrim pour les photographes pro."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
+    "alternatives": [
+      "adobe-lightroom",
+      "luminar-neo"
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You do studio, fashion or high-end portrait photography",
+        "You want the best color rendering and a workflow above Lightroom"
+      ],
+      "avoidIf": [
+        "Your flow is already dialed in on Lightroom: migration costs time",
+        "You shoot occasionally: Lightroom or phone apps are enough"
+      ],
+      "threshold": "The choice of demanding photographers for color rendering and studio tethering. For standard use or an established Lightroom flow, the gain doesn't always justify migrating."
+    },
+    "pros": [
+      "Rendu couleur réputé supérieur, notamment sur les portraits et la peau",
+      "Excellent pour le travail en studio (capture connectée / tethering)",
+      "Disponible en abonnement ou en licence perpétuelle",
+      "Outils de retouche locale et de calques puissants"
+    ],
+    "prosEn": [
+      "Color rendering considered superior, especially on portraits and skin",
+      "Excellent for studio work (tethered capture)",
+      "Available as a subscription or a perpetual license",
+      "Powerful local-adjustment and layer tools"
+    ],
+    "cons": [
+      "Plus cher que Lightroom, et les prix ont augmenté récemment",
+      "Migration depuis Lightroom coûteuse en temps",
+      "Courbe d'apprentissage et interface dense",
+      "Catalogage moins fluide que Lightroom pour de gros volumes"
+    ],
+    "consEn": [
+      "Pricier than Lightroom, and prices rose recently",
+      "Migrating from Lightroom is time-consuming",
+      "Learning curve and a dense interface",
+      "Cataloging less smooth than Lightroom for large volumes"
+    ],
+    "useCases": [
+      "Retoucher des photos studio, mode ou portrait haut de gamme",
+      "Travailler en capture connectée (tethering) lors d'un shooting",
+      "Obtenir un rendu couleur précis et personnalisé",
+      "Gérer et développer des fichiers RAW en qualité pro"
+    ],
+    "useCasesEn": [
+      "Retouch studio, fashion or high-end portrait photos",
+      "Work tethered during a shoot",
+      "Get precise, customized color rendering",
+      "Manage and develop RAW files at pro quality"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "auto-replace-bloqué",
