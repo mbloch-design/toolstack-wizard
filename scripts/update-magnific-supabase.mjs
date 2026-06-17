@@ -4,13 +4,19 @@
  * Mise à jour ciblée de la fiche `magnific-ai` directement dans Supabase
  * (elle a été retirée de tools_v4.json, la base est désormais la source).
  *
- * Contexte (recherche juin 2026) : Magnific n'est plus un simple upscaler.
- *  - Mai 2024 : Freepik rachète Magnific AI (upscaler viral).
- *  - Avril 2026 : Freepik abandonne son nom et rebaptise TOUTE l'entreprise
- *    "Magnific" : plateforme créative IA complète (image Mystic, vidéo,
- *    canvas nodal Spaces, 40+ modèles), ~230M$ ARR, 1M+ abonnés, bootstrapée.
- *  - Concurrence frontale avec Krea AI (Nodes) et Weavy (racheté par Figma
- *    fin 2025, relancé en "Figma Weave"). Tendance : le canvas nodal multi-modèles.
+ * Contexte (recherche vérifiée juin 2026, sources officielles + presse) :
+ *  - Mai 2024 : Freepik rachète l'upscaler viral Magnific AI.
+ *  - 28 avril 2026 : Freepik abandonne son nom et rebaptise TOUTE l'entreprise
+ *    "Magnific". Ce n'est plus un upscaler : c'est une plateforme créative IA
+ *    tout-en-un (image, vidéo 4K+audio, 3D, espace collaboratif temps réel,
+ *    assistant IA, 40+ modèles, bibliothèque 250M+ d'assets héritée de Freepik).
+ *    ~230M$ ARR, 1M+ abonnés payants, ~290 équipes enterprise (BBC, Guess, R/GA),
+ *    bootstrapée et rentable. CEO Joaquín Cuenca Abela.
+ *  - IMPORTANT : l'ancienne grille upscaler magnific.ai ($39/$99/$299) a été
+ *    RETIRÉE ; magnific.ai redirige vers la plateforme. Pricing réel désormais :
+ *    Gratuit (~20 images/jour), Premium 20$/mois (14,50$ annuel),
+ *    Premium+ 45$ (33,75$ annuel), Pro 280$, Business 55$/siège. Au crédit.
+ *  - Concurrents directs multi-modèles : Krea AI (Nodes) et Figma Weave (ex-Weavy).
  *
  * DRY-RUN par défaut. --apply pour écrire.
  */
@@ -58,121 +64,115 @@ const supabase = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSessio
 const SLUG = "magnific-ai";
 
 const longFr =
-  "Magnific a une histoire qui résume à elle seule la tendance IA du moment. Au départ, c'est un upscaler d'images devenu viral en 2024 : il n'agrandit pas seulement une image, il 'réinvente' du détail qui n'existait pas (détails 'hallucinés'), avec un rendu spectaculaire sur les visuels générés par IA. En mai 2024, l'outil est racheté par Freepik. Puis en avril 2026, coup de théâtre : Freepik abandonne son propre nom et rebaptise toute l'entreprise 'Magnific'.\n\n" +
-  "Résultat, Magnific n'est plus un simple upscaler, c'est devenu une plateforme créative IA complète : génération d'images (famille de modèles Mystic, photoréaliste en 2K), génération de vidéo (qui pèse déjà la moitié du chiffre d'affaires, via des modèles comme Veo et Seedance plus des outils de pré-production maison), un canvas nodal collaboratif (Spaces) pour enchaîner les modèles, des outils 3D, et l'accès à plus de 40 modèles d'IA dans une seule interface. L'entreprise est rentable et bootstrapée, autour de 230 millions de dollars de revenus annuels récurrents et plus d'un million d'abonnés payants. Un détail qui compte pour les pros : l'indemnisation juridique sur l'usage commercial des visuels générés (sur les plans haut de gamme).\n\n" +
-  "Concrètement, deux choses à retenir. D'abord, le produit upscaler historique reste vendu à part (Pro 39$/mois, Premium 99$, Business 299$), cher et sans offre gratuite, et il 'invente' du détail : pour un agrandissement fidèle à l'original, Topaz Gigapixel reste plus précis et moins cher. Ensuite, Magnific la plateforme se positionne désormais comme un agrégateur de modèles, en concurrence frontale avec Krea AI (et ses Nodes) ou Weavy, racheté fin 2025 par Figma et relancé sous le nom Figma Weave. C'est ça, la grande bascule : on ne paie plus un outil pour une tâche, on paie un canvas qui orchestre tous les modèles. Si tu veux juste de l'upscaling créatif ponctuel, Magnific reste une référence ; si tu cherches une plateforme tout-en-un, compare-la sérieusement à Krea avant de t'engager.";
+  "Magnific, c'est le nouveau nom de Freepik. En avril 2026, l'entreprise espagnole (fondée à Málaga en 2010) a abandonné la marque Freepik pour tout regrouper sous Magnific : une plateforme créative IA tout-en-un. L'upscaler viral racheté en 2024, qui a donné son nom à l'ensemble, n'est plus qu'une brique parmi d'autres.\n\n" +
+  "Concrètement, la plateforme couvre toute la chaîne de création : génération d'images, génération de vidéo (jusqu'en 4K avec audio), l'outil d'upscaling et d'amélioration d'origine, un espace de travail collaboratif en temps réel, des outils 3D et de scènes virtuelles, un assistant IA, et l'accès à plus de 40 modèles d'IA dans une seule interface. S'y ajoute l'héritage de Freepik : une bibliothèque de plus de 250 millions d'assets. L'entreprise est rentable et bootstrapée, autour de 230 millions de dollars de revenus annuels récurrents, plus d'un million d'abonnés payants et près de 290 équipes enterprise (BBC, Guess, R/GA).\n\n" +
+  "Côté prix : il y a un plan gratuit (environ 20 images par jour), puis Premium à 20$/mois (14,50$ en annuel), Premium+ à 45$ (33,75$ en annuel, avec de l'illimité sur une dizaine de modèles), Pro à 280$ et Business à 55$/siège. Tout fonctionne au crédit. Si tu cherches une plateforme multi-modèles, ses concurrents directs sont Krea AI et Figma Weave (ex-Weavy) : compare-les. Et si tout ce que tu veux, c'est l'upscaling fidèle qui a fait sa réputation, un outil dédié comme Topaz Gigapixel reste plus précis et moins cher qu'un abonnement plateforme.";
 
 const longEn =
-  "Magnific's story sums up the current AI trend on its own. It started as an image upscaler that went viral in 2024: it doesn't just enlarge an image, it 'reinvents' detail that wasn't there ('hallucinated' detail), with spectacular results on AI-generated visuals. In May 2024, Freepik acquired it. Then in April 2026, the twist: Freepik dropped its own name and rebranded the entire company as 'Magnific'.\n\n" +
-  "As a result, Magnific is no longer a simple upscaler, it has become a full AI creative platform: image generation (the Mystic model family, photorealistic 2K), video generation (already about half of revenue, via models like Veo and Seedance plus in-house pre-production tools), a collaborative node canvas (Spaces) to chain models, 3D tools, and access to 40+ AI models in a single interface. The company is profitable and bootstrapped, around $230 million in annual recurring revenue and over a million paying subscribers. One detail that matters for pros: legal indemnification on commercial use of generated visuals (on higher-tier plans).\n\n" +
-  "Two things to remember. First, the original upscaler product is still sold separately (Pro $39/month, Premium $99, Business $299), pricey and with no free tier, and it 'invents' detail: for enlargement faithful to the original, Topaz Gigapixel stays more precise and cheaper. Second, Magnific the platform now positions itself as a model aggregator, in direct competition with Krea AI (and its Nodes) or Weavy, which Figma acquired in late 2025 and relaunched as Figma Weave. That's the real shift: you no longer pay for a single-task tool, you pay for a canvas that orchestrates every model. If you just want occasional creative upscaling, Magnific is still a benchmark; if you want an all-in-one platform, seriously compare it to Krea before committing.";
+  "Magnific is the new name for Freepik. In April 2026, the Spanish company (founded in Málaga in 2010) dropped the Freepik brand to bring everything under Magnific: an all-in-one AI creative platform. The viral upscaler it acquired in 2024, which gave the whole thing its name, is now just one piece among many.\n\n" +
+  "In practice, the platform covers the full creation chain: image generation, video generation (up to 4K with audio), the original upscaling and enhancement tool, a real-time collaborative workspace, 3D and virtual-scene tools, an AI assistant, and access to 40+ AI models in a single interface. On top of that comes Freepik's legacy: a library of over 250 million assets. The company is profitable and bootstrapped, around $230 million in annual recurring revenue, over a million paying subscribers, and nearly 290 enterprise teams (BBC, Guess, R/GA).\n\n" +
+  "On price: there's a free plan (around 20 images per day), then Premium at $20/month ($14.50 annual), Premium+ at $45 ($33.75 annual, with unlimited use on about ten models), Pro at $280, and Business at $55/seat. Everything runs on credits. If you want a multi-model platform, its direct competitors are Krea AI and Figma Weave (ex-Weavy): compare them. And if all you want is the faithful upscaling that built its reputation, a dedicated tool like Topaz Gigapixel stays more precise and cheaper than a platform subscription.";
 
 const values = {
   short_description:
-    "Magnific : l'upscaler IA devenu une plateforme créative complète, ex-Freepik.",
+    "Magnific (ex-Freepik) : plateforme IA tout-en-un pour l'image, la vidéo et le design.",
   short_description_en:
-    "Magnific: the AI upscaler that became a full creative platform (ex-Freepik).",
+    "Magnific (ex-Freepik): an all-in-one AI platform for image, video, and design.",
   description: longFr,
   long_description: longFr,
   long_description_en: longEn,
-  default_monthly_price: 39,
+  default_monthly_price: 20,
   pricing: {
-    paid:
-      "Upscaler : Pro 39$/mois, Premium 99$, Business 299$ (pas d'offre gratuite). Plateforme Magnific (ex-Freepik) : plans séparés.",
+    free: "Gratuit (~20 images/jour)",
+    paid: "Premium 20$/mois (14,50$ annuel), Premium+ 45$, Pro 280$, Business 55$/siège",
   },
   pricing_en: {
-    paid:
-      "Upscaler: Pro $39/month, Premium $99, Business $299 (no free tier). Magnific platform (ex-Freepik): separate plans.",
+    free: "Free (~20 images/day)",
+    paid: "Premium $20/month ($14.50 annual), Premium+ $45, Pro $280, Business $55/seat",
   },
   pricing_v5: {
     cautions: [
-      "L'upscaler (39$/mois) et la plateforme Magnific ex-Freepik ont des plans distincts",
-      "Pas d'offre gratuite sur l'upscaler",
+      "Plateforme unifiée ex-Freepik : facturation au crédit, plans Premium à Business",
+      "L'ancienne grille upscaler magnific.ai (39$/99$/299$) a été retirée",
     ],
     verified_on: "2026-06-17",
-    source_domain: "magnific.ai",
+    source_domain: "magnific.com",
     usage_sensitive: true,
     compare_plan_kind: "seat",
-    compare_plan_name: "Pro",
+    compare_plan_name: "Premium",
     price_reliability: "high",
     location_sensitive: false,
-    official_source_url: "https://magnific.ai/pricing",
+    official_source_url: "https://magnific.com/pricing",
     verification_status: "official_explicit",
-    compare_price_monthly_eur: 39,
+    compare_price_monthly_eur: 20,
   },
   verdict: {
     keepIf: [
-      "Tu veux un upscaling créatif qui réinvente les détails (rendu artistique, pas fidèle)",
-      "Tu cherches une plateforme IA tout-en-un (image, vidéo, multi-modèles) avec indemnisation commerciale",
+      "Tu veux une plateforme IA tout-en-un : image, vidéo, 3D et 40+ modèles au même endroit",
+      "Tu produis beaucoup de visuels et l'accès illimité à certains modèles (Premium+) t'intéresse",
     ],
     avoidIf: [
-      "Tu veux un agrandissement fidèle et moins cher : Topaz Gigapixel est plus adapté",
-      "Tu compares les plateformes : teste aussi Krea AI et Figma Weave avant de t'engager",
+      "Tu veux juste de l'upscaling fidèle : Topaz Gigapixel est plus précis et moins cher",
+      "Tu compares les plateformes multi-modèles : teste aussi Krea AI et Figma Weave",
     ],
     threshold:
-      "Pertinent pour de l'upscaling créatif haut de gamme, ou comme plateforme IA tout-en-un si tu l'as comparée à Krea. Pour un simple agrandissement fidèle, Topaz Gigapixel suffit.",
+      "Pertinent comme plateforme créative IA complète si tu en exploites plusieurs briques (image, vidéo, modèles). Pour un seul usage ponctuel, un outil dédié revient moins cher.",
   },
   verdict_en: {
     keepIf: [
-      "You want creative upscaling that reinvents detail (artistic, not faithful)",
-      "You want an all-in-one AI platform (image, video, multi-model) with commercial indemnification",
+      "You want an all-in-one AI platform: image, video, 3D, and 40+ models in one place",
+      "You produce a lot of visuals and unlimited use of some models (Premium+) appeals to you",
     ],
     avoidIf: [
-      "You want faithful, cheaper enlargement: Topaz Gigapixel fits better",
-      "You're comparing platforms: also test Krea AI and Figma Weave before committing",
+      "You just want faithful upscaling: Topaz Gigapixel is more precise and cheaper",
+      "You're comparing multi-model platforms: also test Krea AI and Figma Weave",
     ],
     threshold:
-      "Worth it for high-end creative upscaling, or as an all-in-one AI platform once you've compared it to Krea. For plain faithful enlargement, Topaz Gigapixel is enough.",
+      "Worth it as a full AI creative platform if you use several of its pieces (image, video, models). For a single occasional task, a dedicated tool is cheaper.",
   },
   pros: [
-    "Upscaling créatif unique : ajoute du détail saisissant, au-delà d'un simple agrandissement",
-    "Devenu une plateforme complète : image (Mystic), vidéo, canvas nodal, 40+ modèles",
-    "Indemnisation juridique sur l'usage commercial (plans haut de gamme)",
-    "Entreprise rentable et solide (ex-Freepik, ~230M$ ARR), pas un produit fragile",
+    "Plateforme tout-en-un : image, vidéo (4K + audio), 3D, upscaling, 40+ modèles",
+    "Bibliothèque héritée de Freepik : plus de 250 millions d'assets",
+    "Plan gratuit (~20 images/jour) et entrée de gamme abordable (Premium dès 14,50$ en annuel)",
+    "Entreprise rentable et solide (~230M$ ARR, 1M+ abonnés), adoptée par des équipes enterprise",
   ],
   pros_en: [
-    "Unique creative upscaling: adds striking detail beyond a simple enlargement",
-    "Now a full platform: image (Mystic), video, node canvas, 40+ models",
-    "Legal indemnification on commercial use (higher-tier plans)",
-    "Profitable, solid company (ex-Freepik, ~$230M ARR), not a fragile product",
+    "All-in-one platform: image, video (4K + audio), 3D, upscaling, 40+ models",
+    "Library inherited from Freepik: over 250 million assets",
+    "Free plan (~20 images/day) and affordable entry tier (Premium from $14.50 annual)",
+    "Profitable, solid company (~$230M ARR, 1M+ subscribers), adopted by enterprise teams",
   ],
   cons: [
-    "L'upscaler reste cher : abonnement dès 39$/mois, sans offre gratuite",
-    "Réinvente les détails : pas fidèle à l'original (Topaz Gigapixel plus précis et moins cher)",
-    "Marque devenue confuse : 'Magnific' désigne à la fois l'upscaler et toute la plateforme ex-Freepik",
-    "Sur la partie plateforme, Krea AI et Figma Weave sont des concurrents sérieux à comparer",
+    "Facturation au crédit : le coût réel grimpe vite en usage intensif",
+    "Pour un seul besoin (ex : upscaling fidèle), un outil dédié comme Topaz est moins cher",
+    "Marque déroutante : 'Magnific' désigne maintenant toute la plateforme ex-Freepik, plus seulement l'upscaler",
+    "Concurrence frontale de Krea AI et Figma Weave sur le créneau multi-modèles",
   ],
   cons_en: [
-    "The upscaler stays pricey: subscription from $39/month, no free tier",
-    "Reinvents detail: not faithful to the original (Topaz Gigapixel is more precise and cheaper)",
-    "Brand is now confusing: 'Magnific' means both the upscaler and the whole ex-Freepik platform",
-    "On the platform side, Krea AI and Figma Weave are serious competitors to compare",
+    "Credit-based billing: real cost climbs fast under heavy use",
+    "For a single need (e.g. faithful upscaling), a dedicated tool like Topaz is cheaper",
+    "Confusing brand: 'Magnific' now means the whole ex-Freepik platform, not just the upscaler",
+    "Direct competition from Krea AI and Figma Weave in the multi-model space",
   ],
   use_cases: [
-    "Agrandir une image avec un rendu détaillé et créatif",
-    "Rehausser une image générée par IA pour le print ou un portfolio",
-    "Produire image et vidéo IA depuis une seule plateforme",
-    "Enchaîner plusieurs modèles d'IA dans un canvas (Spaces)",
+    "Générer images et vidéos IA depuis une seule plateforme",
+    "Améliorer et agrandir des visuels avec l'upscaler maison",
+    "Piocher dans 250M+ d'assets et 40+ modèles pour un projet",
+    "Collaborer en équipe sur un espace de travail créatif IA",
   ],
   use_cases_en: [
-    "Enlarge an image with a detailed, creative result",
-    "Boost an AI-generated image for print or a portfolio",
-    "Produce AI image and video from a single platform",
-    "Chain several AI models in a canvas (Spaces)",
+    "Generate AI images and videos from a single platform",
+    "Enhance and enlarge visuals with the in-house upscaler",
+    "Pull from 250M+ assets and 40+ models for a project",
+    "Collaborate as a team in an AI creative workspace",
   ],
   seo: {
     metaDescription:
-      "Magnific en 2026 : l'upscaler IA devenu plateforme créative complète (ex-Freepik), prix, pivot vidéo et concurrents (Krea, Figma Weave). Le verdict ToolTrim.",
+      "Magnific (ex-Freepik) en 2026 : la plateforme IA tout-en-un (image, vidéo, 3D, 40+ modèles). Prix réels, scope et concurrents (Krea, Figma Weave). Le verdict ToolTrim.",
   },
-  alternatives: ["topaz-gigapixel", "krea-ai", "leonardo-ai"],
-  relevant_for: ["createur-contenu", "designer"],
-  better_alternative: {
-    tool: "topaz-gigapixel",
-    reason:
-      "Pour un agrandissement fidèle à l'original (sans détails réinventés), Topaz Gigapixel est plus précis et revient moins cher en licence unique.",
-    saving: 30,
-    performanceGain: null,
-  },
+  alternatives: ["krea-ai", "figma-weave"],
+  relevant_for: ["createur-contenu", "designer", "motion-video"],
+  better_alternative: null,
   prescription_quality: "question",
 };
 
