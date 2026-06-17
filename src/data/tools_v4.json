@@ -37819,10 +37819,10 @@
     "host_app": null,
     "category": "ai-general",
     "shortDescription": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
-    "defaultMonthlyPrice": 6.93,
+    "defaultMonthlyPrice": 8,
     "pricing": {
-      "free": "150 crédits/mois",
-      "paid": "8$/mois (Basic)"
+      "free": "Crédits gratuits limités",
+      "paid": "Standard à 8$/mois, Pro 28$, Fancy 76$"
     },
     "covers": [
       "generation-video",
@@ -37849,7 +37849,7 @@
     "freeAlternative": null,
     "betterAlternative": {
       "tool": "runway",
-      "reason": "plus-polyvalent",
+      "reason": "Runway est plus polyvalent : il couvre la génération vidéo mais aussi la rotoscopie, la suppression de fond et l'inpainting.",
       "saving": -7,
       "performanceGain": "Runway couvre plus de cas (rotoscopie, suppression fond, inpainting)"
     },
@@ -37861,36 +37861,65 @@
     "affiliateLink": "https://pika.art",
     "verdict": {
       "keepIf": [
-        "Spécifiquement pour l'animation de personnages IA"
+        "Tu fais surtout de courtes animations stylisées (personnages, objets, effets) pour les réseaux",
+        "Tu veux un outil rapide et abordable pour générer des clips vidéo IA"
       ],
       "avoidIf": [
-        "Runway déjà dans le stack — fort doublon génération vidéo"
+        "Runway est déjà dans ton stack : fort doublon sur la génération vidéo",
+        "Tu as besoin d'édition vidéo poussée (rotoscopie, inpainting) : Runway est plus complet"
       ],
-      "threshold": "Rentable si vous animez plus de 10 personnages par mois."
+      "threshold": "Pertinent si la génération de clips IA courts est un usage régulier. Si tu as déjà Runway ou Sora, le doublon ne se justifie pas."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Abordable : plan payant dès 8$/mois",
+      "Rapide à prendre en main pour générer de courtes vidéos IA",
+      "Bon rendu sur l'animation de personnages et d'objets",
+      "Effets et transformations sympas pour le contenu réseaux sociaux"
+    ],
+    "cons": [
+      "Clips courts : pas fait pour de la vidéo longue",
+      "Moins polyvalent que Runway (pas de rotoscopie, inpainting avancé)",
+      "Fort doublon si tu as déjà un autre générateur vidéo IA",
+      "Système de crédits qui peut grimper avec l'usage"
+    ],
+    "useCases": [
+      "Générer un court clip animé pour Instagram ou TikTok",
+      "Animer un personnage ou un objet à partir d'une image",
+      "Créer des effets visuels rapides pour une vidéo",
+      "Tester des idées de motion sans logiciel lourd"
+    ],
+    "seo": {
+      "metaDescription": "Pika Labs en 2026 : générateur vidéo IA pour clips courts, prix réels et comparaison avec Runway. Le verdict ToolTrim pour les créateurs."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "motion-video"
+    ],
     "pricingTiers": {
-      "free": "150 crédits/mois",
-      "paid": "8$/mois (Basic)"
+      "free": "Crédits gratuits limités",
+      "paid": "Standard à 8$/mois, Pro 28$, Fancy 76$"
     },
-    "longDescription": "Pika Labs, c'est génération vidéo IA centrée sur l'animation de personnages et d'objets. À partir de 6.93€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : spécifiquement pour l'animation de personnages IA. À éviter si : runway déjà dans le stack — fort doublon génération vidéo. Rentable si vous animez plus de 10 personnages par mois. Si le budget le permet, runway va plus loin.",
-    "alternatives": [],
+    "longDescription": "Pika Labs, c'est un générateur de vidéo par IA pensé pour les clips courts : tu pars d'un texte ou d'une image, et l'outil anime des personnages, des objets ou applique des effets. Le rendu est souvent stylisé et accrocheur, ce qui en fait un bon allié pour du contenu réseaux sociaux où il faut sortir des visuels qui attirent l'oeil rapidement.\n\nL'atout, c'est le prix et la simplicité : un plan payant démarre à 8$/mois (puis 28$ et 76$), et la prise en main est rapide. Pas besoin d'un logiciel de montage lourd pour obtenir un petit clip animé. En revanche, on reste sur du format court, et l'outil est moins polyvalent qu'un Runway.\n\nLe vrai point d'attention, c'est le doublon. Si tu as déjà Runway, Sora ou un autre générateur vidéo IA dans ton stack, Pika fait largement la même chose et tu paies deux fois. Garde-le si la génération de clips courts est ton usage principal et que tu veux l'option la plus abordable. Pour de l'édition plus complète (rotoscopie, inpainting), Runway reste devant.",
+    "alternatives": [
+      "runway"
+    ],
     "slug": "pika-labs",
     "shortDescriptionEn": "AI video generation focused on character and object animation.",
-    "description": "Pika Labs, c'est génération vidéo IA centrée sur l'animation de personnages et d'objets. À partir de 6.93€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : spécifiquement pour l'animation de personnages IA. À éviter si : runway déjà dans le stack — fort doublon génération vidéo. Rentable si vous animez plus de 10 personnages par mois. Si le budget le permet, runway va plus loin.",
-    "longDescriptionEn": "Pika Labs is aI video generation focused on character and object animation. Starting at €6.93/month. Built for video creators and content creators.\n\nEstimated time saving: 5h/month.\n\nIf budget allows, runway goes further.",
-    "pricingEn": null,
+    "description": "Pika Labs, c'est un générateur de vidéo par IA pensé pour les clips courts : tu pars d'un texte ou d'une image, et l'outil anime des personnages, des objets ou applique des effets. Le rendu est souvent stylisé et accrocheur, ce qui en fait un bon allié pour du contenu réseaux sociaux où il faut sortir des visuels qui attirent l'oeil rapidement.\n\nL'atout, c'est le prix et la simplicité : un plan payant démarre à 8$/mois (puis 28$ et 76$), et la prise en main est rapide. Pas besoin d'un logiciel de montage lourd pour obtenir un petit clip animé. En revanche, on reste sur du format court, et l'outil est moins polyvalent qu'un Runway.\n\nLe vrai point d'attention, c'est le doublon. Si tu as déjà Runway, Sora ou un autre générateur vidéo IA dans ton stack, Pika fait largement la même chose et tu paies deux fois. Garde-le si la génération de clips courts est ton usage principal et que tu veux l'option la plus abordable. Pour de l'édition plus complète (rotoscopie, inpainting), Runway reste devant.",
+    "longDescriptionEn": "Pika Labs is an AI video generator built for short clips: you start from text or an image, and it animates characters, objects, or applies effects. The output is often stylized and eye-catching, which makes it a solid pick for social media content where you need attention-grabbing visuals fast.\n\nThe upside is price and simplicity: a paid plan starts at $8/month (then $28 and $76), and it's quick to learn. You don't need heavy editing software to get a short animated clip. The trade-off is the short format and less versatility than something like Runway.\n\nThe real thing to watch is overlap. If you already have Runway, Sora, or another AI video generator in your stack, Pika does largely the same job and you're paying twice. Keep it if short-clip generation is your main use and you want the most affordable option. For fuller editing (rotoscoping, inpainting), Runway stays ahead.",
+    "pricingEn": {
+      "free": "Limited free credits",
+      "paid": "Standard at $8/month, Pro $28, Fancy $76"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Système de crédits : le coût réel dépend du volume généré"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "pika.art",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -37899,14 +37928,39 @@
       "location_sensitive": false,
       "official_source_url": "https://pika.art/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 6.93
+      "compare_price_monthly_eur": 8
     },
     "websiteUrl": "https://pika.art",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You mostly make short stylized animations (characters, objects, effects) for social",
+        "You want a fast, affordable tool to generate AI video clips"
+      ],
+      "avoidIf": [
+        "Runway is already in your stack: heavy overlap on video generation",
+        "You need advanced video editing (rotoscoping, inpainting): Runway is more complete"
+      ],
+      "threshold": "Worth it if generating short AI clips is a regular use. If you already have Runway or Sora, the overlap isn't justified."
+    },
+    "prosEn": [
+      "Affordable: paid plan from $8/month",
+      "Quick to learn for generating short AI videos",
+      "Good results on character and object animation",
+      "Fun effects and transforms for social media content"
+    ],
+    "consEn": [
+      "Short clips: not built for long-form video",
+      "Less versatile than Runway (no rotoscoping, advanced inpainting)",
+      "Heavy overlap if you already have another AI video generator",
+      "Credit system that can add up with usage"
+    ],
+    "useCasesEn": [
+      "Generate a short animated clip for Instagram or TikTok",
+      "Animate a character or object from an image",
+      "Create quick visual effects for a video",
+      "Test motion ideas without heavy software"
+    ],
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
