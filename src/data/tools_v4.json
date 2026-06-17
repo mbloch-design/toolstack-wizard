@@ -30429,9 +30429,9 @@
     "host_app": "photoshop",
     "category": "design-tools",
     "shortDescription": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
-    "defaultMonthlyPrice": 12.12,
+    "defaultMonthlyPrice": 10,
     "pricing": {
-      "paid": "14$/mois ou 79$/an"
+      "paid": "Abonnement dès ~10$/mois (facturé à l'année), ou licence à vie ~149$"
     },
     "covers": [
       "retouche-photo",
@@ -30460,35 +30460,64 @@
     "affiliateLink": "https://skylum.com/luminar-neo",
     "verdict": {
       "keepIf": [
-        "Photographie paysage, portrait avec retouches IA fréquentes"
+        "Tu fais du paysage ou du portrait et tu retouches souvent ciel, peau ou atmosphère",
+        "Tu préfères payer une licence à vie plutôt qu'un abonnement mensuel"
       ],
       "avoidIf": [
-        "Firefly (Adobe CC) couvre de plus en plus ces usages"
+        "Tu as déjà l'abonnement Adobe : Lightroom et Firefly couvrent de plus en plus ces usages",
+        "Tu retouches peu : le coût ne se justifie pas pour un usage occasionnel"
       ],
-      "threshold": "Rentable dès 20 photos retouchées par mois avec ciel ou portrait."
+      "threshold": "Pertinent si la retouche IA (ciel, portrait, atmosphère) est un geste régulier. Si tu paies déjà la suite Adobe, le doublon est difficile à justifier."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Retouche IA rapide : remplacement de ciel, amélioration de portrait, atmosphère en un clic",
+      "Option licence à vie : pas d'abonnement obligatoire",
+      "Fonctionne en autonome ou en plugin Photoshop/Lightroom",
+      "Interface accessible aux photographes non experts en retouche"
+    ],
+    "cons": [
+      "Recoupe de plus en plus les fonctions IA de Lightroom et Firefly",
+      "Doublon coûteux si tu paies déjà l'abonnement Adobe",
+      "Moins complet qu'un éditeur pro pour la retouche fine",
+      "Effets IA parfois trop marqués si on ne dose pas"
+    ],
+    "useCases": [
+      "Remplacer un ciel terne par un ciel dramatique en un clic",
+      "Améliorer un portrait (peau, regard) sans retouche manuelle longue",
+      "Ajouter une atmosphère (brume, lumière) à une photo de paysage",
+      "Traiter par lot une série de photos avec un rendu cohérent"
+    ],
+    "seo": {
+      "metaDescription": "Luminar Neo en 2026 : retouche photo IA (ciel, portrait, atmosphère), prix et licence à vie. Vaut-il le coup face à Lightroom ? Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "photographe",
+      "createur-contenu"
+    ],
     "pricingTiers": {
-      "paid": "14$/mois ou 79$/an"
+      "paid": "Abonnement dès ~10$/mois (facturé à l'année), ou licence à vie ~149$"
     },
-    "longDescription": "Luminar Neo, c'est retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère. À partir de 12.12€/mois. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : photographie paysage, portrait avec retouches IA fréquentes. À éviter si : firefly (Adobe CC) couvre de plus en plus ces usages. Rentable dès 20 photos retouchées par mois avec ciel ou portrait.",
-    "alternatives": [],
+    "longDescription": "Luminar Neo, c'est un éditeur photo qui mise tout sur la retouche assistée par IA : remplacement de ciel, amélioration de portrait, ajout d'atmosphère, le tout en quelques clics. Tu peux l'utiliser en autonome ou comme plugin dans Photoshop et Lightroom. Pour un photographe qui veut des résultats rapides sans passer des heures sur des masques, c'est efficace.\n\nSon vrai argument face à Adobe, c'est le modèle de prix : en plus de l'abonnement (dès ~10$/mois facturé à l'année), Skylum propose une licence à vie autour de 149$. Si tu détestes les abonnements, c'est un point fort.\n\nLe bémol, c'est le recoupement. Lightroom et Firefly intègrent de plus en plus de retouches IA (suppression d'objets, masquage automatique, ciel). Si tu paies déjà la suite Adobe, Luminar fait souvent doublon. Il prend tout son sens si tu veux échapper à l'abonnement Adobe, ou si ses effets IA paysage/portrait collent précisément à ton style. Pour de la retouche fine et complète, un éditeur pro reste devant.",
+    "alternatives": [
+      "lightroom",
+      "firefly"
+    ],
     "slug": "luminar-neo",
     "shortDescriptionEn": "AI retouching for Photoshop/Lightroom: sky replacement, AI portrait, atmosphere.",
-    "description": "Luminar Neo, c'est retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère. À partir de 12.12€/mois. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : photographie paysage, portrait avec retouches IA fréquentes. À éviter si : firefly (Adobe CC) couvre de plus en plus ces usages. Rentable dès 20 photos retouchées par mois avec ciel ou portrait.",
-    "longDescriptionEn": "Luminar Neo is aI retouching for Photoshop/Lightroom: sky replacement, AI portrait, atmosphere. Starting at €12.12/month. Built for photographers and graphic designers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "description": "Luminar Neo, c'est un éditeur photo qui mise tout sur la retouche assistée par IA : remplacement de ciel, amélioration de portrait, ajout d'atmosphère, le tout en quelques clics. Tu peux l'utiliser en autonome ou comme plugin dans Photoshop et Lightroom. Pour un photographe qui veut des résultats rapides sans passer des heures sur des masques, c'est efficace.\n\nSon vrai argument face à Adobe, c'est le modèle de prix : en plus de l'abonnement (dès ~10$/mois facturé à l'année), Skylum propose une licence à vie autour de 149$. Si tu détestes les abonnements, c'est un point fort.\n\nLe bémol, c'est le recoupement. Lightroom et Firefly intègrent de plus en plus de retouches IA (suppression d'objets, masquage automatique, ciel). Si tu paies déjà la suite Adobe, Luminar fait souvent doublon. Il prend tout son sens si tu veux échapper à l'abonnement Adobe, ou si ses effets IA paysage/portrait collent précisément à ton style. Pour de la retouche fine et complète, un éditeur pro reste devant.",
+    "longDescriptionEn": "Luminar Neo is a photo editor built around AI-assisted retouching: sky replacement, portrait enhancement, atmosphere, all in a few clicks. You can use it standalone or as a plugin inside Photoshop and Lightroom. For a photographer who wants fast results without spending hours on masks, it's effective.\n\nIts real argument against Adobe is the pricing model: alongside the subscription (from ~$10/month billed annually), Skylum offers a lifetime license around $149. If you hate subscriptions, that's a strong point.\n\nThe catch is overlap. Lightroom and Firefly keep adding AI retouching (object removal, automatic masking, sky). If you already pay for the Adobe suite, Luminar often duplicates it. It makes sense if you want to escape the Adobe subscription, or if its landscape/portrait AI effects fit your style exactly. For fine, complete retouching, a pro editor stays ahead.",
+    "pricingEn": {
+      "paid": "Subscription from ~$10/month (billed annually), or lifetime license ~$149"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Deux modèles distincts : abonnement annuel ou licence à vie (~149$)"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "skylum.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -30497,14 +30526,39 @@
       "location_sensitive": false,
       "official_source_url": "https://skylum.com/luminar-neo",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 12.12
+      "compare_price_monthly_eur": 10
     },
     "websiteUrl": "https://skylum.com/luminar-neo",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You shoot landscape or portrait and often retouch sky, skin, or atmosphere",
+        "You'd rather pay a lifetime license than a monthly subscription"
+      ],
+      "avoidIf": [
+        "You already have Adobe: Lightroom and Firefly increasingly cover these uses",
+        "You retouch rarely: the cost isn't justified for occasional use"
+      ],
+      "threshold": "Worth it if AI retouching (sky, portrait, atmosphere) is a regular move. If you already pay for the Adobe suite, the overlap is hard to justify."
+    },
+    "prosEn": [
+      "Fast AI retouching: sky replacement, portrait enhancement, atmosphere in one click",
+      "Lifetime license option: no mandatory subscription",
+      "Works standalone or as a Photoshop/Lightroom plugin",
+      "Approachable interface for photographers who aren't retouching experts"
+    ],
+    "consEn": [
+      "Increasingly overlaps with Lightroom and Firefly AI features",
+      "Costly duplicate if you already pay for Adobe",
+      "Less complete than a pro editor for fine retouching",
+      "AI effects can look overdone if not dialed back"
+    ],
+    "useCasesEn": [
+      "Replace a dull sky with a dramatic one in one click",
+      "Enhance a portrait (skin, eyes) without long manual retouching",
+      "Add atmosphere (mist, light) to a landscape photo",
+      "Batch-process a series of photos with a consistent look"
+    ],
     "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [
@@ -38250,12 +38304,14 @@
     "affiliateLink": "https://pixieset.com",
     "verdict": {
       "keepIf": [
-        "Livraison de photos clients et vente de tirages"
+        "Tu livres des photos à des clients et tu veux une galerie pro à ta marque",
+        "Tu vends des tirages ou des fichiers directement depuis la galerie"
       ],
       "avoidIf": [
-        "Pas de vente — Wetransfer ou Google Drive suffisent"
+        "Tu ne fais que partager des fichiers sans vente : WeTransfer ou Google Drive suffisent",
+        "Tu shootes pour toi : une galerie client payante n'a pas d'intérêt"
       ],
-      "threshold": "Rentable dès votre premier shooting client payant."
+      "threshold": "Pertinent dès ton premier shooting client payant. Pour du simple partage de fichiers sans vente ni image de marque, des outils gratuits font l'affaire."
     },
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
@@ -38265,16 +38321,16 @@
     "ia_use_case": null,
     "slug": "pixieset",
     "shortDescriptionEn": "Professional online galleries for photographers with print sales.",
-    "description": "Pixieset, c'est galeries en ligne professionnelles pour photographes avec vente de tirages. À partir de 12€/mois. Pensé pour les photographes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : livraison de photos clients et vente de tirages. À éviter si : pas de vente — Wetransfer ou Google Drive suffisent. Rentable dès votre premier shooting client payant.",
-    "longDescription": "Pixieset, c'est galeries en ligne professionnelles pour photographes avec vente de tirages. À partir de 12€/mois. Pensé pour les photographes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : livraison de photos clients et vente de tirages. À éviter si : pas de vente — Wetransfer ou Google Drive suffisent. Rentable dès votre premier shooting client payant.",
-    "longDescriptionEn": "Pixieset is professional online galleries for photographers with print sales. Starting at €12/month. Built for photographers.\n\nEstimated time saving: 3h/month.\n\nKeep it if: client photo delivery and print sales. Skip it if: pas de vente — Wetransfer ou Google Drive suffisent. Profitable from your very first paid client shoot.",
+    "description": "Pixieset, c'est la galerie en ligne pensée pour les photographes qui livrent à des clients. Tu uploades ta sélection, tu envoies un lien propre à ta marque, et le client télécharge, choisit ses favoris (proofing) ou commande directement des tirages. Ça remplace le bricolage WeTransfer plus facture à la main par une expérience pro de bout en bout.\n\nIl y a un plan gratuit (stockage limité) pour tester, puis des plans payants qui débloquent plus d'espace, la vente de tirages et de fichiers, et la personnalisation. Le vrai déclencheur, c'est la vente : dès que tu encaisses tes premiers shootings clients, l'abonnement se rentabilise vite.\n\nÀ qui ça s'adresse : aux photographes (mariage, portrait, événementiel) qui veulent livrer proprement et vendre. Si tu ne fais que partager des fichiers sans vente ni image de marque, un Google Drive ou un WeTransfer gratuit suffit largement. Pixieset prend son sens quand la galerie devient un outil commercial, pas juste un tuyau de transfert.",
+    "longDescription": "Pixieset, c'est la galerie en ligne pensée pour les photographes qui livrent à des clients. Tu uploades ta sélection, tu envoies un lien propre à ta marque, et le client télécharge, choisit ses favoris (proofing) ou commande directement des tirages. Ça remplace le bricolage WeTransfer plus facture à la main par une expérience pro de bout en bout.\n\nIl y a un plan gratuit (stockage limité) pour tester, puis des plans payants qui débloquent plus d'espace, la vente de tirages et de fichiers, et la personnalisation. Le vrai déclencheur, c'est la vente : dès que tu encaisses tes premiers shootings clients, l'abonnement se rentabilise vite.\n\nÀ qui ça s'adresse : aux photographes (mariage, portrait, événementiel) qui veulent livrer proprement et vendre. Si tu ne fais que partager des fichiers sans vente ni image de marque, un Google Drive ou un WeTransfer gratuit suffit largement. Pixieset prend son sens quand la galerie devient un outil commercial, pas juste un tuyau de transfert.",
+    "longDescriptionEn": "Pixieset is the online gallery built for photographers who deliver to clients. You upload your selection, send a link branded as your own, and the client downloads, picks favorites (proofing), or orders prints directly. It replaces the WeTransfer-plus-manual-invoice hack with an end-to-end pro experience.\n\nThere's a free plan (limited storage) to try it, then paid plans that unlock more space, print and file sales, and customization. The real trigger is sales: as soon as you're charging for client shoots, the subscription pays off quickly.\n\nWho it's for: photographers (wedding, portrait, events) who want to deliver cleanly and sell. If you only share files with no sales or branding, a free Google Drive or WeTransfer is plenty. Pixieset earns its place when the gallery becomes a sales tool, not just a transfer pipe.",
     "pricingEn": {
       "free": "3GB storage",
       "paid": "€12/month (Pro)"
     },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-15",
       "source_domain": "pixieset.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -38287,27 +38343,63 @@
     },
     "websiteUrl": "https://pixieset.com",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Pixieset en 2026 : galerie client en ligne pour photographes (livraison + vente de tirages), prix et alternatives. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": null,
     "teamRelevance": null,
-    "relevantFor": [],
+    "relevantFor": [
+      "photographe"
+    ],
     "alternatives": [],
     "verdictEn": {
       "keepIf": [
-        "Client photo delivery and print sales"
+        "You deliver photos to clients and want a pro gallery branded as yours",
+        "You sell prints or files directly from the gallery"
       ],
       "avoidIf": [
-        "Pas de vente — Wetransfer ou Google Drive suffisent"
+        "You only share files with no sales: WeTransfer or Google Drive are enough",
+        "You shoot for yourself: a paid client gallery has no point"
       ],
-      "threshold": "Profitable from your very first paid client shoot."
+      "threshold": "Worth it from your first paid client shoot. For simple file sharing with no sales or branding, free tools do the job."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Galerie client pro à ta marque, expérience soignée pour le client",
+      "Vente de tirages et de fichiers directement depuis la galerie",
+      "Proofing : le client sélectionne ses favoris sans allers-retours",
+      "Plan gratuit pour démarrer, montée en gamme progressive"
+    ],
+    "prosEn": [
+      "Pro client gallery branded as yours, polished client experience",
+      "Sell prints and files directly from the gallery",
+      "Proofing: clients pick favorites without back-and-forth",
+      "Free plan to start, gradual upgrade path"
+    ],
+    "cons": [
+      "Surdimensionné si tu ne fais que partager des fichiers sans vente",
+      "Stockage du plan gratuit vite limité",
+      "Commission/coûts sur la vente de tirages à surveiller",
+      "Un abonnement de plus si tu as déjà un site qui gère la livraison"
+    ],
+    "consEn": [
+      "Overkill if you only share files with no sales",
+      "Free plan storage runs out fast",
+      "Watch fees/costs on print sales",
+      "One more subscription if your site already handles delivery"
+    ],
+    "useCases": [
+      "Livrer les photos d'un mariage dans une galerie à ta marque",
+      "Vendre des tirages à des clients sans gérer la logistique",
+      "Faire valider une sélection (proofing) avant retouche",
+      "Protéger les images par filigrane avant achat"
+    ],
+    "useCasesEn": [
+      "Deliver wedding photos in a gallery branded as yours",
+      "Sell prints to clients without handling logistics",
+      "Get a selection approved (proofing) before retouching",
+      "Watermark images before purchase"
+    ],
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -47228,34 +47320,109 @@
     "slug": "snapseed",
     "name": "Snapseed",
     "category": "design-tools",
-    "shortDescription": "Retouche photo mobile par Google",
-    "shortDescriptionEn": "Mobile photo editing by Google.",
-    "description": "Snapseed, c'est retouche photo mobile par Google. Entièrement gratuit.",
-    "longDescription": "Snapseed, c'est retouche photo mobile par Google. Entièrement gratuit.",
-    "longDescriptionEn": "Snapseed is mobile photo editing by Google. Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Retouche photo mobile gratuite et complète, signée Google.",
+    "shortDescriptionEn": "Free, full-featured mobile photo editing by Google.",
+    "description": "Snapseed, c'est l'appli de retouche photo mobile de Google, et elle est entièrement gratuite, sans pub ni achat intégré. Sur iOS comme sur Android, elle offre un niveau de contrôle qu'on n'attend pas d'une appli gratuite : courbes, retouche sélective au doigt (control points), correction de perspective, pinceau, et une vingtaine de filtres pro modifiables.\n\nLe gros atout, c'est l'édition non destructive et l'export en haute qualité (y compris en JPG sans perte visible). Pour un créateur qui retouche depuis son téléphone, c'est largement suffisant pour redresser, recadrer, ajuster lumière et couleurs, voire effacer un élément gênant.\n\nLa limite, c'est que ça reste mobile et ponctuel : pas de gestion de catalogue, pas de synchro desktop, pas de traitement par lot sérieux. Si tu gères un vrai flux photo, Lightroom mobile (avec son écosystème) ira plus loin. Mais pour de la retouche rapide et gratuite sur téléphone, Snapseed reste une référence difficile à battre. Aucune raison de payer pour ce qu'il fait déjà très bien.",
+    "longDescription": "Snapseed, c'est l'appli de retouche photo mobile de Google, et elle est entièrement gratuite, sans pub ni achat intégré. Sur iOS comme sur Android, elle offre un niveau de contrôle qu'on n'attend pas d'une appli gratuite : courbes, retouche sélective au doigt (control points), correction de perspective, pinceau, et une vingtaine de filtres pro modifiables.\n\nLe gros atout, c'est l'édition non destructive et l'export en haute qualité (y compris en JPG sans perte visible). Pour un créateur qui retouche depuis son téléphone, c'est largement suffisant pour redresser, recadrer, ajuster lumière et couleurs, voire effacer un élément gênant.\n\nLa limite, c'est que ça reste mobile et ponctuel : pas de gestion de catalogue, pas de synchro desktop, pas de traitement par lot sérieux. Si tu gères un vrai flux photo, Lightroom mobile (avec son écosystème) ira plus loin. Mais pour de la retouche rapide et gratuite sur téléphone, Snapseed reste une référence difficile à battre. Aucune raison de payer pour ce qu'il fait déjà très bien.",
+    "longDescriptionEn": "Snapseed is Google's mobile photo editing app, and it's completely free, with no ads or in-app purchases. On iOS and Android, it offers a level of control you don't expect from a free app: curves, finger-driven selective editing (control points), perspective correction, a brush, and around twenty editable pro filters.\n\nThe big upside is non-destructive editing and high-quality export (including visually lossless JPG). For a creator editing from their phone, it's more than enough to straighten, crop, adjust light and color, even erase a distracting element.\n\nThe limit is that it stays mobile and one-off: no catalog management, no desktop sync, no serious batch processing. If you run a real photo workflow, Lightroom mobile (with its ecosystem) goes further. But for fast, free editing on a phone, Snapseed is hard to beat. No reason to pay for what it already does very well.",
+    "pricing": {
+      "free": "Gratuit, toutes les fonctionnalités, sans pub"
+    },
+    "pricingEn": {
+      "free": "Free, all features, no ads"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "cautions": [],
+      "verified_on": "2026-06-15",
+      "source_domain": "google.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Gratuit",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://snapseed.online",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://snapseed.online",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Snapseed en 2026 : l'appli de retouche photo mobile gratuite de Google. Fonctions, limites et comparaison avec Lightroom mobile. Le verdict ToolTrim."
+    },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "retouche-photo"
+    ],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "relevantFor": [
+      "photographe",
+      "createur-contenu"
+    ],
+    "alternatives": [
+      "lightroom"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu retouches tes photos directement depuis ton téléphone",
+        "Tu veux un éditeur puissant et gratuit, sans abonnement"
+      ],
+      "avoidIf": [
+        "Tu gères un vrai catalogue photo : Lightroom et sa synchro desktop iront plus loin",
+        "Tu as besoin de traitement par lot ou d'un flux pro"
+      ],
+      "threshold": "C'est gratuit et complet : à garder dès que tu retouches sur mobile. Pour un flux pro avec catalogue, vise Lightroom."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You edit your photos straight from your phone",
+        "You want a powerful, free editor with no subscription"
+      ],
+      "avoidIf": [
+        "You manage a real photo catalog: Lightroom and its desktop sync go further",
+        "You need batch processing or a pro workflow"
+      ],
+      "threshold": "It's free and complete: keep it the moment you edit on mobile. For a pro catalog workflow, go with Lightroom."
+    },
+    "pros": [
+      "Entièrement gratuit, sans pub ni achat intégré",
+      "Outils pro : courbes, retouche sélective, correction de perspective",
+      "Édition non destructive et export haute qualité",
+      "Disponible sur iOS et Android"
+    ],
+    "prosEn": [
+      "Completely free, no ads or in-app purchases",
+      "Pro tools: curves, selective editing, perspective correction",
+      "Non-destructive editing and high-quality export",
+      "Available on iOS and Android"
+    ],
+    "cons": [
+      "Mobile uniquement : pas de version desktop ni de synchro",
+      "Pas de gestion de catalogue ni de traitement par lot sérieux",
+      "Plus mis à jour très souvent par Google",
+      "Moins adapté à un vrai flux de production photo"
+    ],
+    "consEn": [
+      "Mobile only: no desktop version or sync",
+      "No catalog management or serious batch processing",
+      "Not updated very often by Google anymore",
+      "Less suited to a real photo production workflow"
+    ],
+    "useCases": [
+      "Retoucher une photo rapidement avant de la poster",
+      "Redresser et recadrer une image prise au téléphone",
+      "Ajuster lumière et couleurs avec des outils précis",
+      "Effacer un élément gênant sans logiciel desktop"
+    ],
+    "useCasesEn": [
+      "Quickly edit a photo before posting it",
+      "Straighten and crop a phone shot",
+      "Adjust light and color with precise tools",
+      "Erase a distracting element without desktop software"
+    ],
     "personas": [],
     "tool_type": "satellite",
     "substitutable": true,
@@ -53063,10 +53230,10 @@
     "host_app": null,
     "category": "creation",
     "shortDescription": "Analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo.",
-    "defaultMonthlyPrice": 6.06,
+    "defaultMonthlyPrice": 7,
     "pricing": {
-      "free": "Analytics basiques",
-      "paid": "7$/mois (Basic)"
+      "free": "Analytics de base (extension navigateur)",
+      "paid": "Plans payants dès ~7$/mois, paliers Boost et Max au-dessus"
     },
     "covers": [
       "seo-video",
@@ -53098,36 +53265,64 @@
     "affiliateLink": "https://vidiq.com",
     "verdict": {
       "keepIf": [
-        "YouTube avec stratégie SEO active"
+        "YouTube est un canal sérieux pour toi et tu travailles tes titres, tags et miniatures",
+        "Tu veux des idées de sujets et de l'analyse de concurrence basées sur les données"
       ],
       "avoidIf": [
-        "TubeBuddy déjà en place — doublon SEO YouTube"
+        "TubeBuddy est déjà en place : fort doublon sur le SEO YouTube",
+        "Tu postes peu : l'extension gratuite couvre déjà l'essentiel"
       ],
-      "threshold": "Rentable dès que YouTube est votre canal d'acquisition principal."
+      "threshold": "Pertinent dès que YouTube devient un canal d'acquisition régulier. Pour quelques vidéos par an, le plan gratuit suffit."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Suggestions de mots-clés et de sujets basées sur les recherches YouTube",
+      "Analyse de la concurrence et des vidéos qui performent dans ta niche",
+      "Aide à l'optimisation des titres, tags et miniatures",
+      "Extension navigateur pratique, avec un plan gratuit utilisable"
+    ],
+    "cons": [
+      "Fort doublon avec TubeBuddy : inutile d'avoir les deux",
+      "Les paliers payants montent vite si tu veux les fonctions IA avancées",
+      "Beaucoup de notifications et d'incitations à passer au plan supérieur",
+      "Centré YouTube uniquement : pas utile pour les autres plateformes"
+    ],
+    "useCases": [
+      "Trouver des idées de vidéos avec un potentiel de recherche réel",
+      "Optimiser titre, tags et description avant publication",
+      "Analyser ce qui marche chez les concurrents de ta niche",
+      "Suivre les performances de ta chaîne au fil du temps"
+    ],
+    "seo": {
+      "metaDescription": "VidIQ en 2026 : outil SEO et analytics pour YouTube, prix réels et comparaison avec TubeBuddy. Le verdict ToolTrim pour les créateurs."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu"
+    ],
     "pricingTiers": {
-      "free": "Analytics basiques",
-      "paid": "7$/mois (Basic)"
+      "free": "Analytics de base (extension navigateur)",
+      "paid": "Plans payants dès ~7$/mois, paliers Boost et Max au-dessus"
     },
-    "longDescription": "VidIQ, c'est analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo. À partir de 6.06€/mois. Pensé pour les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : youTube avec stratégie SEO active. À éviter si : tubeBuddy déjà en place — doublon SEO YouTube. Rentable dès que YouTube est votre canal d'acquisition principal.",
-    "alternatives": [],
+    "longDescription": "VidIQ, c'est l'outil SEO et analytics pour les créateurs YouTube. Il s'installe en extension navigateur et vient se greffer sur l'interface YouTube pour t'aider à trouver des sujets qui ont un vrai potentiel de recherche, optimiser tes titres, tags et descriptions, et analyser ce que font les concurrents de ta niche. Depuis quelques années, il pousse aussi des fonctions IA (idées de vidéos, scripts, génération de miniatures).\n\nIl y a un plan gratuit honnête (extension + analytics de base), puis des paliers payants qui démarrent autour de 7$/mois et grimpent vite si tu veux le coaching IA et les quotas plus élevés. Le vrai point d'attention, c'est le doublon : VidIQ et TubeBuddy font globalement le même métier. Choisis-en un, pas les deux.\n\nÀ qui ça s'adresse : aux créateurs pour qui YouTube est un canal sérieux et qui veulent piloter leur contenu par la donnée plutôt qu'au feeling. Si tu postes quelques vidéos par an, l'extension gratuite suffit largement. VidIQ se rentabilise quand chaque vidéo compte et que gagner quelques points de CTR a un impact réel sur ton audience.",
+    "alternatives": [
+      "tubebuddy"
+    ],
     "slug": "vidiq",
     "shortDescriptionEn": "YouTube analytics and AI to find viral topics and optimise every video.",
-    "description": "VidIQ, c'est analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo. À partir de 6.06€/mois. Pensé pour les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : youTube avec stratégie SEO active. À éviter si : tubeBuddy déjà en place — doublon SEO YouTube. Rentable dès que YouTube est votre canal d'acquisition principal.",
-    "longDescriptionEn": "VidIQ is youTube analytics and AI to find viral topics and optimise every video. Starting at €6.06/month. Built for content creators.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "description": "VidIQ, c'est l'outil SEO et analytics pour les créateurs YouTube. Il s'installe en extension navigateur et vient se greffer sur l'interface YouTube pour t'aider à trouver des sujets qui ont un vrai potentiel de recherche, optimiser tes titres, tags et descriptions, et analyser ce que font les concurrents de ta niche. Depuis quelques années, il pousse aussi des fonctions IA (idées de vidéos, scripts, génération de miniatures).\n\nIl y a un plan gratuit honnête (extension + analytics de base), puis des paliers payants qui démarrent autour de 7$/mois et grimpent vite si tu veux le coaching IA et les quotas plus élevés. Le vrai point d'attention, c'est le doublon : VidIQ et TubeBuddy font globalement le même métier. Choisis-en un, pas les deux.\n\nÀ qui ça s'adresse : aux créateurs pour qui YouTube est un canal sérieux et qui veulent piloter leur contenu par la donnée plutôt qu'au feeling. Si tu postes quelques vidéos par an, l'extension gratuite suffit largement. VidIQ se rentabilise quand chaque vidéo compte et que gagner quelques points de CTR a un impact réel sur ton audience.",
+    "longDescriptionEn": "VidIQ is the SEO and analytics tool for YouTube creators. It installs as a browser extension that layers onto the YouTube interface to help you find topics with real search potential, optimize your titles, tags, and descriptions, and analyze what competitors in your niche are doing. In recent years it has also pushed AI features (video ideas, scripts, thumbnail generation).\n\nThere's an honest free plan (extension + basic analytics), then paid tiers starting around $7/month that climb fast if you want AI coaching and higher quotas. The real thing to watch is overlap: VidIQ and TubeBuddy do largely the same job. Pick one, not both.\n\nWho it's for: creators for whom YouTube is a serious channel and who want to drive their content with data rather than gut feel. If you post a few videos a year, the free extension is plenty. VidIQ pays off when every video matters and gaining a few CTR points has a real impact on your audience.",
+    "pricingEn": {
+      "free": "Basic analytics (browser extension)",
+      "paid": "Paid plans from ~$7/month, Boost and Max tiers above"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Paliers payants multiples : le prix réel dépend des fonctions IA voulues"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "vidiq.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -53136,14 +53331,39 @@
       "location_sensitive": false,
       "official_source_url": "https://vidiq.com",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 6.06
+      "compare_price_monthly_eur": 7
     },
     "websiteUrl": "https://vidiq.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "YouTube is a serious channel for you and you work on titles, tags, and thumbnails",
+        "You want data-based topic ideas and competitor analysis"
+      ],
+      "avoidIf": [
+        "TubeBuddy is already in place: heavy overlap on YouTube SEO",
+        "You post rarely: the free extension already covers the basics"
+      ],
+      "threshold": "Worth it once YouTube becomes a regular acquisition channel. For a few videos a year, the free plan is enough."
+    },
+    "prosEn": [
+      "Keyword and topic suggestions based on YouTube searches",
+      "Competitor analysis and top-performing videos in your niche",
+      "Helps optimize titles, tags, and thumbnails",
+      "Handy browser extension with a usable free plan"
+    ],
+    "consEn": [
+      "Heavy overlap with TubeBuddy: no need to have both",
+      "Paid tiers climb fast if you want advanced AI features",
+      "Lots of notifications and upgrade prompts",
+      "YouTube-only: not useful for other platforms"
+    ],
+    "useCasesEn": [
+      "Find video ideas with real search potential",
+      "Optimize title, tags, and description before publishing",
+      "Analyze what works for competitors in your niche",
+      "Track your channel's performance over time"
+    ],
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
@@ -66776,24 +66996,26 @@
     "slug": "cleanup3",
     "name": "CleanUp³",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour nettoyer les modèles, supprimer les éléments inutiles et garder des fichiers légers.",
-    "shortDescriptionEn": "SketchUp plugin to clean models, remove unused geometry and keep files light.",
+    "shortDescription": "Plugin SketchUp gratuit pour nettoyer un modèle 3D et alléger les fichiers.",
+    "shortDescriptionEn": "Free SketchUp plugin to clean a 3D model and keep files light.",
     "pricing": {
-      "free": "Gratuit",
-      "paid": "Don possible"
+      "free": "Gratuit (don possible à l'auteur)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
     "websiteUrl": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
     "logo": "",
     "category": "design-tools",
-    "description": "CleanUp³ aide les architectes d'intérieur à couvrir un besoin précis : plugin sketchup pour nettoyer les modèles, supprimer les éléments inutiles et garder des fichiers légers.",
-    "longDescription": "CleanUp³ aide les architectes d'intérieur à couvrir un besoin précis : plugin sketchup pour nettoyer les modèles, supprimer les éléments inutiles et garder des fichiers légers. À garder si ce besoin revient chaque semaine dans les projets client. À éviter si l'outil reste ponctuel ou doublonne avec le socle existant.",
-    "longDescriptionEn": "CleanUp³ helps interior designers cover a specific need: sketchup plugin to clean models, remove unused geometry and keep files light. Keep it if this need appears every week in client projects. Skip it if usage is occasional or duplicates the existing core stack.",
+    "description": "CleanUp³ est un plugin SketchUp gratuit qui fait le ménage dans tes modèles 3D : il fusionne les faces coplanaires, supprime les arêtes et la géométrie inutiles, efface les composants orphelins et purge les matériaux non utilisés. Résultat : un fichier plus léger, plus rapide à manipuler et plus propre à exporter.\n\nSur des modèles d'architecture d'intérieur qui grossissent vite (mobilier importé, composants 3D Warehouse), c'est le genre d'outil qui te fait gagner un temps fou et évite les fichiers qui rament. Il s'installe via l'Extension Warehouse de SketchUp et tourne en quelques clics.\n\nC'est gratuit (avec un don possible à l'auteur), donc aucune raison de s'en priver si tu travailles régulièrement sur SketchUp. Petit point d'attention : il modifie la géométrie, donc garde une sauvegarde avant un gros nettoyage. Pour vérifier l'intégrité des volumes après coup, Solid Inspector² est le complément naturel.",
+    "longDescription": "CleanUp³ est un plugin SketchUp gratuit qui fait le ménage dans tes modèles 3D : il fusionne les faces coplanaires, supprime les arêtes et la géométrie inutiles, efface les composants orphelins et purge les matériaux non utilisés. Résultat : un fichier plus léger, plus rapide à manipuler et plus propre à exporter.\n\nSur des modèles d'architecture d'intérieur qui grossissent vite (mobilier importé, composants 3D Warehouse), c'est le genre d'outil qui te fait gagner un temps fou et évite les fichiers qui rament. Il s'installe via l'Extension Warehouse de SketchUp et tourne en quelques clics.\n\nC'est gratuit (avec un don possible à l'auteur), donc aucune raison de s'en priver si tu travailles régulièrement sur SketchUp. Petit point d'attention : il modifie la géométrie, donc garde une sauvegarde avant un gros nettoyage. Pour vérifier l'intégrité des volumes après coup, Solid Inspector² est le complément naturel.",
+    "longDescriptionEn": "CleanUp³ is a free SketchUp plugin that tidies up your 3D models: it merges coplanar faces, removes unused edges and geometry, deletes orphaned components, and purges unused materials. The result is a lighter file that's faster to work with and cleaner to export.\n\nOn interior-design models that balloon fast (imported furniture, 3D Warehouse components), it's the kind of tool that saves a ton of time and avoids sluggish files. It installs via SketchUp's Extension Warehouse and runs in a few clicks.\n\nIt's free (with an optional donation to the author), so there's no reason to skip it if you work in SketchUp regularly. One thing to watch: it modifies geometry, so keep a backup before a big cleanup. To check solid integrity afterward, Solid Inspector² is the natural companion.",
+    "seo": {
+      "metaDescription": "CleanUp³ en 2026 : le plugin SketchUp gratuit pour nettoyer un modèle 3D et alléger les fichiers. À quoi il sert, ses limites. Le verdict ToolTrim."
+    },
     "pricing_v5": {
       "source_domain": "extensions.sketchup.com",
       "official_source_url": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
-      "verified_on": "2026-05-10",
+      "verified_on": "2026-06-15",
       "verification_status": "manual_reference",
       "compare_price_monthly_eur": 0
     },
@@ -66814,17 +67036,66 @@
     "substitutable": true,
     "verdict": {
       "keepIf": [
-        "Tu utilises CleanUp³ chaque semaine sur des projets client"
+        "Tu travailles régulièrement sur SketchUp et tes fichiers deviennent lourds",
+        "Tu veux nettoyer la géométrie avant un export ou un rendu"
       ],
       "avoidIf": [
-        "Usage ponctuel ou déjà couvert par un autre outil"
+        "Tu n'utilises pas SketchUp",
+        "Tes modèles restent petits et propres : le gain est marginal"
       ],
-      "threshold": "À garder seulement si le besoin est récurrent dans le workflow."
+      "threshold": "C'est gratuit : à installer dès que tu utilises SketchUp sérieusement. Garde juste une sauvegarde avant un gros nettoyage."
     },
-    "pros": [],
-    "cons": [],
+    "verdictEn": {
+      "keepIf": [
+        "You work in SketchUp regularly and your files get heavy",
+        "You want to clean geometry before an export or render"
+      ],
+      "avoidIf": [
+        "You don't use SketchUp",
+        "Your models stay small and clean: the gain is marginal"
+      ],
+      "threshold": "It's free: install it the moment you use SketchUp seriously. Just keep a backup before a big cleanup."
+    },
+    "pros": [
+      "Gratuit et efficace pour alléger des modèles SketchUp lourds",
+      "Fusionne les faces coplanaires et purge la géométrie inutile",
+      "Installation simple via l'Extension Warehouse",
+      "Fichiers plus rapides à manipuler et à exporter"
+    ],
+    "prosEn": [
+      "Free and effective for slimming down heavy SketchUp models",
+      "Merges coplanar faces and purges unused geometry",
+      "Simple install via the Extension Warehouse",
+      "Files faster to work with and export"
+    ],
+    "cons": [
+      "Utile uniquement dans l'écosystème SketchUp",
+      "Modifie la géométrie : garder une sauvegarde avant un gros nettoyage",
+      "Gain marginal sur des modèles déjà petits et propres",
+      "Ne vérifie pas l'intégrité des solides (voir Solid Inspector²)"
+    ],
+    "consEn": [
+      "Only useful inside the SketchUp ecosystem",
+      "Modifies geometry: keep a backup before a big cleanup",
+      "Marginal gain on models that are already small and clean",
+      "Doesn't check solid integrity (see Solid Inspector²)"
+    ],
+    "useCases": [
+      "Alléger un modèle SketchUp devenu lent avant un rendu",
+      "Nettoyer un fichier après import de composants 3D Warehouse",
+      "Préparer un modèle propre avant export vers un autre logiciel",
+      "Purger les matériaux et composants inutilisés d'un projet"
+    ],
+    "useCasesEn": [
+      "Slim down a SketchUp model gone slow before a render",
+      "Clean a file after importing 3D Warehouse components",
+      "Prepare a clean model before exporting to another tool",
+      "Purge unused materials and components from a project"
+    ],
     "articles": [],
-    "alternatives": []
+    "alternatives": [
+      "solid-inspector2"
+    ]
   },
   {
     "id": "solid-inspector2",
