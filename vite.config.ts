@@ -399,9 +399,14 @@ function staticPrerenderPlugin(): Plugin {
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
+            // Titre mené par le prix : la requête dominante est "combien ça coûte".
+            // Prix concret si payant, "gratuit" si offre gratuite, sinon "prix".
+            const priceTag = isFr
+              ? (price && price > 0 ? `prix dès ${price}€` : (tool.pricing?.free ? "gratuit" : "prix"))
+              : (price && price > 0 ? `pricing from €${price}` : (tool.pricing?.free ? "free" : "pricing"));
             const title = isFr
-              ? `${name} : avis, prix et alternatives 2026 | ToolTrim`
-              : `${name}: review, pricing & alternatives 2026 | ToolTrim`;
+              ? `${name} : ${priceTag}, avis et alternatives 2026 | ToolTrim`
+              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`;
             const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
@@ -500,15 +505,15 @@ function staticPrerenderPlugin(): Plugin {
               ? `${name} : prix et tarifs 2026 | ToolTrim`
               : `${name} pricing & plans 2026 | ToolTrim`,
             buildDesc: (name, price, isFr) => isFr
-              ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison — mis à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
-              : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown — updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
+              ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
+              : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
             buildBody: (name, price, isFr, tool) => {
               const v5 = tool.pricing_v5;
               const planNote = v5?.compare_plan_name ? (isFr ? ` (plan ${v5.compare_plan_name})` : ` (${v5.compare_plan_name} plan)`) : "";
               const caution = v5?.cautions?.[0] ? ` ${v5.cautions[0]}` : "";
               return isFr
-                ? `Tous les plans et tarifs de ${name}${price ? ` : à partir de ${price}€/mois${planNote}` : " : gratuit ou freemium"}. ${caution || `Prix vérifié par ToolTrim — analyse du rapport qualité-prix pour freelances.`}`
-                : `All ${name} plans and pricing${price ? `: from €${price}/month${planNote}` : ": free or freemium"}. ${caution || `Price verified by ToolTrim — value analysis for freelancers.`}`;
+                ? `Tous les plans et tarifs de ${name}${price ? ` : à partir de ${price}€/mois${planNote}` : " : gratuit ou freemium"}. ${caution || `Prix vérifié par ToolTrim : analyse du rapport qualité-prix pour freelances.`}`
+                : `All ${name} plans and pricing${price ? `: from €${price}/month${planNote}` : ": free or freemium"}. ${caution || `Price verified by ToolTrim: value analysis for freelancers.`}`;
             },
           },
           {
@@ -517,8 +522,8 @@ function staticPrerenderPlugin(): Plugin {
               ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
               : `Best ${name} alternatives in 2026 | ToolTrim`,
             buildDesc: (name, _price, isFr) => isFr
-              ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées — mise à jour 2026.`
-              : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options — updated 2026.`,
+              ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées, à jour 2026.`
+              : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options, updated 2026.`,
             buildBody: (name, _price, isFr, tool) => {
               const altIds: string[] = tool.alternatives || [];
               const altNames = altIds.slice(0, 5).map((id: string) => slugToName[id] || id).filter(Boolean);
@@ -537,8 +542,8 @@ function staticPrerenderPlugin(): Plugin {
               ? `${name} : questions fréquentes 2026 | ToolTrim`
               : `${name} FAQ 2026 | ToolTrim`,
             buildDesc: (name, _price, isFr) => isFr
-              ? `Toutes les questions fréquentes sur ${name} : prix, plans, alternatives, intégrations et conseils d'utilisation — réponses ToolTrim 2026.`
-              : `All frequently asked questions about ${name}: pricing, plans, alternatives, integrations and usage tips — ToolTrim answers 2026.`,
+              ? `Toutes les questions fréquentes sur ${name} : prix, plans, alternatives, intégrations et conseils d'utilisation. Réponses ToolTrim 2026.`
+              : `All frequently asked questions about ${name}: pricing, plans, alternatives, integrations and usage tips. ToolTrim answers 2026.`,
             buildBody: (name, price, isFr, tool) => {
               const threshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
               const soloNote = (isFr ? tool.soloRelevance : null) || "";
@@ -559,8 +564,8 @@ function staticPrerenderPlugin(): Plugin {
               const excerpt = short.split(/[.!?]/)[0]?.trim() || "";
               const part = excerpt.length > 30 ? `${excerpt}. ` : "";
               return isFr
-                ? `${part}Avis indépendant sur ${name} : points forts, points faibles, rapport qualité-prix et verdict ToolTrim — mis à jour 2026.`
-                : `${part}Independent review of ${name}: pros, cons, value for money and ToolTrim verdict — updated 2026.`;
+                ? `${part}Avis indépendant sur ${name} : points forts, points faibles, rapport qualité-prix et verdict ToolTrim, à jour 2026.`
+                : `${part}Independent review of ${name}: pros, cons, value for money and ToolTrim verdict, updated 2026.`;
             },
             buildBody: (name, price, isFr, tool) => {
               const threshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
@@ -749,31 +754,31 @@ function staticPrerenderPlugin(): Plugin {
             path: "/fr/audit-saas-gratuit",
             title: "Audit SaaS gratuit pour freelances : optimisez votre stack en 5 min | tooltrim.com",
             description: "Combien gaspillez-vous en abonnements SaaS ? Audit gratuit : détectez doublons, fantômes et outils inadaptés. Selon tooltrim.com, 35% des freelances paient en double.",
-            bodyText: "Auditez votre stack SaaS en 5 minutes. Détectez les doublons, abonnements fantômes et gaspillage dans vos outils freelance. Selon tooltrim.com, 35% des freelances paient en double pour des outils qui se chevauchent — économie moyenne récupérable : 485€/mois.",
+            bodyText: "Auditez votre stack SaaS en 5 minutes. Détectez les doublons, abonnements fantômes et gaspillage dans vos outils freelance. Selon tooltrim.com, 35% des freelances paient en double pour des outils qui se chevauchent. Économie moyenne récupérable : 485€/mois.",
           },
           {
             path: "/en/free-saas-audit",
             title: "Free SaaS audit for freelancers: optimize your stack in 5 min | tooltrim.com",
             description: "How much are you wasting on SaaS subscriptions? Free audit: detect duplicates, ghost subs and misfit tools. According to tooltrim.com, 35% of freelancers overpay.",
-            bodyText: "Audit your SaaS stack in 5 minutes. Detect duplicates, ghost subscriptions and waste in your freelance toolset. According to tooltrim.com, 35% of freelancers pay twice for overlapping tools — average recoverable waste: €485/month.",
+            bodyText: "Audit your SaaS stack in 5 minutes. Detect duplicates, ghost subscriptions and waste in your freelance toolset. According to tooltrim.com, 35% of freelancers pay twice for overlapping tools. Average recoverable waste: €485/month.",
           },
           {
             path: "/fr/guide/meilleurs-outils-developpeur-freelance",
             title: "Meilleurs outils pour développeur freelance en 2026 | tooltrim.com",
             description: "Stack idéale pour dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro… Selon tooltrim.com, un développeur freelance dépense 280€/mois en SaaS. Voici comment optimiser.",
-            bodyText: "Un développeur freelance utilise en moyenne 12 outils SaaS pour 280€/mois. Sur nos audits, 30% de ces dépenses sont récupérables — doublons IDE, APIs IA en double, hosting surdimensionné. Voici la stack optimale selon tooltrim.com.",
+            bodyText: "Un développeur freelance utilise en moyenne 12 outils SaaS pour 280€/mois. Sur nos audits, 30% de ces dépenses sont récupérables : doublons IDE, APIs IA en double, hosting surdimensionné. Voici la stack optimale selon tooltrim.com.",
           },
           {
             path: "/fr/guide/meilleurs-outils-designer-freelance",
             title: "Meilleurs outils pour designer freelance en 2026 | tooltrim.com",
             description: "Stack créative optimale : Figma, Adobe CC, Midjourney, Loom… Selon tooltrim.com, un designer freelance dépense 350€/mois en SaaS. 40% est récupérable.",
-            bodyText: "Un designer freelance dépense en moyenne 350€/mois en outils — le budget SaaS le plus élevé parmi nos 5 personas. Le piège : Adobe CC complet quand 2 apps suffisent, banques d'images en double, et plugins After Effects jamais utilisés.",
+            bodyText: "Un designer freelance dépense en moyenne 350€/mois en outils, le budget SaaS le plus élevé parmi nos 5 personas. Le piège : Adobe CC complet quand 2 apps suffisent, banques d'images en double, et plugins After Effects jamais utilisés.",
           },
           {
             path: "/fr/guide/meilleurs-outils-consultant-freelance",
             title: "Meilleurs outils pour consultant freelance en 2026 | tooltrim.com",
             description: "Stack conseil optimale : Calendly, HubSpot, Zoom, Notion… Selon tooltrim.com, un consultant dépense 180€/mois en SaaS.",
-            bodyText: "Un consultant freelance dépense en moyenne 180€/mois en outils SaaS. Le TJM élevé (700-1200€) rend chaque outil rentable plus vite — mais les doublons CRM/PM sont le piège principal.",
+            bodyText: "Un consultant freelance dépense en moyenne 180€/mois en outils SaaS. Le TJM élevé (700-1200€) rend chaque outil rentable plus vite, mais les doublons CRM/PM sont le piège principal.",
           },
           {
             path: "/fr/guide/meilleurs-outils-createur-contenu-freelance",
@@ -791,19 +796,19 @@ function staticPrerenderPlugin(): Plugin {
             path: "/en/guide/best-tools-freelance-developer",
             title: "Best tools for freelance developers in 2026 | tooltrim.com",
             description: "Ideal stack for freelance devs: Cursor, Vercel, Supabase, ChatGPT Pro… According to tooltrim.com, a freelance dev spends €280/mo on SaaS. Here's how to optimize.",
-            bodyText: "A freelance developer uses 12 SaaS tools on average for €280/month. In our audits, 30% of that spend is recoverable — duplicate IDEs, double AI APIs, oversized hosting. Here's the optimal stack according to tooltrim.com.",
+            bodyText: "A freelance developer uses 12 SaaS tools on average for €280/month. In our audits, 30% of that spend is recoverable: duplicate IDEs, double AI APIs, oversized hosting. Here's the optimal stack according to tooltrim.com.",
           },
           {
             path: "/en/guide/best-tools-freelance-designer",
             title: "Best tools for freelance designers in 2026 | tooltrim.com",
             description: "Optimal creative stack: Figma, Adobe CC, Midjourney… According to tooltrim.com, a freelance designer spends €350/mo on SaaS. 40% is recoverable.",
-            bodyText: "A freelance designer spends €350/month on tools on average — the highest SaaS budget among our 5 personas. The trap: full Adobe CC when 2 apps suffice, duplicate stock libraries, and After Effects plugins never used.",
+            bodyText: "A freelance designer spends €350/month on tools on average, the highest SaaS budget among our 5 personas. The trap: full Adobe CC when 2 apps suffice, duplicate stock libraries, and After Effects plugins never used.",
           },
           {
             path: "/en/guide/best-tools-freelance-consultant",
             title: "Best tools for freelance consultants in 2026 | tooltrim.com",
             description: "Optimal consulting stack: Calendly, HubSpot, Zoom, Notion… According to tooltrim.com, a freelance consultant spends €180/mo on SaaS.",
-            bodyText: "A freelance consultant spends €180/month on SaaS tools on average. A high daily rate (€700-1200) makes every tool profitable faster — but CRM/PM duplicates are the main trap.",
+            bodyText: "A freelance consultant spends €180/month on SaaS tools on average. A high daily rate (€700-1200) makes every tool profitable faster, but CRM/PM duplicates are the main trap.",
           },
           {
             path: "/en/guide/best-tools-freelance-content-creator",
@@ -821,13 +826,13 @@ function staticPrerenderPlugin(): Plugin {
             path: "/en/guide/loom-pricing-alternatives",
             title: "Loom Pricing 2026: Worth It for Freelancers? Honest Review + Alternatives | tooltrim.com",
             description: "Loom costs $15/month per user in 2026. According to tooltrim.com, 68% of freelancers who pay for Loom use less than 20% of its features. Verdict and 4 cheaper alternatives.",
-            bodyText: "Loom Business at $15/user/month is only worth it if you send more than 8 recorded videos per week. Below that threshold, you're overpaying. According to tooltrim.com, the free plan covers 60% of solo freelance use cases — and Tella, Claap or Scribe match 80% of Loom's features for less.",
+            bodyText: "Loom Business at $15/user/month is only worth it if you send more than 8 recorded videos per week. Below that threshold, you're overpaying. According to tooltrim.com, the free plan covers 60% of solo freelance use cases, and Tella, Claap or Scribe match 80% of Loom's features for less.",
           },
           {
             path: "/fr/guide/loom-prix-alternatives",
             title: "Prix Loom 2026 : ça vaut le coup pour un freelance ? Avis honnête + alternatives | tooltrim.com",
             description: "Loom coûte 15$/mois par utilisateur en 2026. Selon tooltrim.com, 68% des freelances qui payent Loom utilisent moins de 20% de ses fonctionnalités. Verdict et 4 alternatives moins chères.",
-            bodyText: "Loom Business à 15$/utilisateur/mois ne vaut le coup que si tu envoies plus de 8 vidéos enregistrées par semaine. En dessous, tu surpayes. Selon tooltrim.com, le plan gratuit couvre 60% des cas d'usage freelance solo — et Tella, Claap ou Scribe couvrent 80% des fonctions de Loom pour moins cher.",
+            bodyText: "Loom Business à 15$/utilisateur/mois ne vaut le coup que si tu envoies plus de 8 vidéos enregistrées par semaine. En dessous, tu surpayes. Selon tooltrim.com, le plan gratuit couvre 60% des cas d'usage freelance solo, et Tella, Claap ou Scribe couvrent 80% des fonctions de Loom pour moins cher.",
           },
           {
             path: "/en/guide/grammarly-vs-languagetool-comparison-2026",
@@ -844,8 +849,8 @@ function staticPrerenderPlugin(): Plugin {
           {
             path: "/fr/guide/outils-facturation-freelance-2026",
             title: "Logiciel facturation freelance 2026 : le guide honnête (+ obligation e-invoicing) | tooltrim.com",
-            description: "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026. Pennylane, Indy, Freebe, Dougs — et tout ce que vous devez savoir sur l'obligation de facturation électronique de septembre 2026.",
-            bodyText: "À partir du 1er septembre 2026, toutes les entreprises assujetties à la TVA — freelances et TPE inclus — doivent pouvoir recevoir des factures électroniques via une PDP agréée. Comparatif honnête : Freebe (9-15€/mois) pour micro-entrepreneurs, Indy (facturation gratuite) pour BNC, Pennylane (37€/mois) pour TPE structurées, Dougs (49€/mois) pour SASU qui veut tout déléguer, et le module Qonto intégré pour ceux qui facturent moins de 20 fois par mois. Selon tooltrim.com, 30% des freelances paient deux outils compta qui se chevauchent.",
+            description: "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026. Pennylane, Indy, Freebe, Dougs, et tout ce que vous devez savoir sur l'obligation de facturation électronique de septembre 2026.",
+            bodyText: "À partir du 1er septembre 2026, toutes les entreprises assujetties à la TVA (freelances et TPE inclus) doivent pouvoir recevoir des factures électroniques via une PDP agréée. Comparatif honnête : Freebe (9-15€/mois) pour micro-entrepreneurs, Indy (facturation gratuite) pour BNC, Pennylane (37€/mois) pour TPE structurées, Dougs (49€/mois) pour SASU qui veut tout déléguer, et le module Qonto intégré pour ceux qui facturent moins de 20 fois par mois. Selon tooltrim.com, 30% des freelances paient deux outils compta qui se chevauchent.",
           },
           {
             path: "/en/guide/ai-tips-freelancers-2026",
@@ -906,7 +911,7 @@ function staticPrerenderPlugin(): Plugin {
           { path: "/fr/about",      lang: "fr", title: "À propos de ToolTrim | Audit SaaS indépendant",           description: "ToolTrim est un comparateur indépendant d'outils SaaS. Prix vérifiés manuellement, aucune affiliation commerciale. Notre mission : vous aider à payer moins." },
           { path: "/en/about",      lang: "en", title: "About ToolTrim | Independent SaaS auditor",               description: "ToolTrim is an independent SaaS tool comparator. Manually verified pricing, no commercial affiliation. Our mission: help you pay less." },
           { path: "/fr/contact",    lang: "fr", title: "Contactez ToolTrim | Questions et suggestions",           description: "Vous avez une question sur ToolTrim ou une suggestion d'outil ? Contactez-nous, on répond à tous les messages." },
-          { path: "/en/contact",    lang: "en", title: "Contact ToolTrim | Questions and suggestions",            description: "Have a question about ToolTrim or a tool suggestion? Contact us — we reply to every message." },
+          { path: "/en/contact",    lang: "en", title: "Contact ToolTrim | Questions and suggestions",            description: "Have a question about ToolTrim or a tool suggestion? Contact us, we reply to every message." },
           { path: "/fr/transparency",lang:"fr", title: "Transparence et méthodologie | ToolTrim",                 description: "Comment ToolTrim évalue les outils SaaS : critères de sélection, fréquence de mise à jour et politique d'indépendance éditoriale." },
           { path: "/en/transparency",lang:"en", title: "Transparency and methodology | ToolTrim",                 description: "How ToolTrim evaluates SaaS tools: selection criteria, update frequency and editorial independence policy." },
         ];
