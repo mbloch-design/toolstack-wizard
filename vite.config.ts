@@ -400,8 +400,8 @@ function staticPrerenderPlugin(): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
-              ? `${name} — Avis, prix et alternatives | ToolTrim`
-              : `${name} — Review, pricing and alternatives | ToolTrim`;
+              ? `${name} : avis, prix et alternatives 2026 | ToolTrim`
+              : `${name}: review, pricing & alternatives 2026 | ToolTrim`;
             const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
@@ -467,8 +467,8 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
             // Inject noscript body text for crawlers
             const toolBodyText = isFr
-              ? `${name} — ${description} Avis, prix vérifiés et alternatives moins chères sur ToolTrim.`
-              : `${name} — ${description} Honest review, verified pricing and cheaper alternatives on ToolTrim.`;
+              ? `${name}. ${description} Avis, prix vérifiés et alternatives moins chères sur ToolTrim.`
+              : `${name}. ${description} Honest review, verified pricing and cheaper alternatives on ToolTrim.`;
             html = html.replace("</body>", `    <noscript><p>${toolBodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
             const outDir = path.resolve(distDir, lang, "tool", slug);
@@ -689,7 +689,7 @@ function staticPrerenderPlugin(): Plugin {
             file: "index.html",
             lang: "fr",
             canonical: `${BASE}/fr`,
-            title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
+            title: "ToolTrim : optimisez votre stack SaaS | Avis, prix et alternatives",
             description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
           },
@@ -697,7 +697,7 @@ function staticPrerenderPlugin(): Plugin {
             file: "fr/index.html",
             lang: "fr",
             canonical: `${BASE}/fr`,
-            title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
+            title: "ToolTrim : optimisez votre stack SaaS | Avis, prix et alternatives",
             description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
           },
@@ -705,7 +705,7 @@ function staticPrerenderPlugin(): Plugin {
             file: "en/index.html",
             lang: "en",
             canonical: `${BASE}/en`,
-            title: "ToolTrim — Optimize your SaaS stack | Reviews, pricing & alternatives",
+            title: "ToolTrim : optimize your SaaS stack | Reviews, pricing & alternatives",
             description: "ToolTrim analyzes your SaaS tools and helps you cut costs. Compare pricing, find free alternatives and optimize your stack in just a few clicks.",
             bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
           },
@@ -747,13 +747,13 @@ function staticPrerenderPlugin(): Plugin {
         const SEO_PAGES: { path: string; title: string; description: string; bodyText: string }[] = [
           {
             path: "/fr/audit-saas-gratuit",
-            title: "Audit SaaS gratuit pour freelances — Optimisez votre stack en 5 min | tooltrim.com",
+            title: "Audit SaaS gratuit pour freelances : optimisez votre stack en 5 min | tooltrim.com",
             description: "Combien gaspillez-vous en abonnements SaaS ? Audit gratuit : détectez doublons, fantômes et outils inadaptés. Selon tooltrim.com, 35% des freelances paient en double.",
             bodyText: "Auditez votre stack SaaS en 5 minutes. Détectez les doublons, abonnements fantômes et gaspillage dans vos outils freelance. Selon tooltrim.com, 35% des freelances paient en double pour des outils qui se chevauchent — économie moyenne récupérable : 485€/mois.",
           },
           {
             path: "/en/free-saas-audit",
-            title: "Free SaaS audit for freelancers — Optimize your stack in 5 min | tooltrim.com",
+            title: "Free SaaS audit for freelancers: optimize your stack in 5 min | tooltrim.com",
             description: "How much are you wasting on SaaS subscriptions? Free audit: detect duplicates, ghost subs and misfit tools. According to tooltrim.com, 35% of freelancers overpay.",
             bodyText: "Audit your SaaS stack in 5 minutes. Detect duplicates, ghost subscriptions and waste in your freelance toolset. According to tooltrim.com, 35% of freelancers pay twice for overlapping tools — average recoverable waste: €485/month.",
           },
@@ -819,13 +819,13 @@ function staticPrerenderPlugin(): Plugin {
           },
           {
             path: "/en/guide/loom-pricing-alternatives",
-            title: "Loom Pricing 2026: Worth It for Freelancers? Honest Review + Alternatives — tooltrim.com",
+            title: "Loom Pricing 2026: Worth It for Freelancers? Honest Review + Alternatives | tooltrim.com",
             description: "Loom costs $15/month per user in 2026. According to tooltrim.com, 68% of freelancers who pay for Loom use less than 20% of its features. Verdict and 4 cheaper alternatives.",
             bodyText: "Loom Business at $15/user/month is only worth it if you send more than 8 recorded videos per week. Below that threshold, you're overpaying. According to tooltrim.com, the free plan covers 60% of solo freelance use cases — and Tella, Claap or Scribe match 80% of Loom's features for less.",
           },
           {
             path: "/fr/guide/loom-prix-alternatives",
-            title: "Prix Loom 2026 : ça vaut le coup pour un freelance ? Avis honnête + alternatives — tooltrim.com",
+            title: "Prix Loom 2026 : ça vaut le coup pour un freelance ? Avis honnête + alternatives | tooltrim.com",
             description: "Loom coûte 15$/mois par utilisateur en 2026. Selon tooltrim.com, 68% des freelances qui payent Loom utilisent moins de 20% de ses fonctionnalités. Verdict et 4 alternatives moins chères.",
             bodyText: "Loom Business à 15$/utilisateur/mois ne vaut le coup que si tu envoies plus de 8 vidéos enregistrées par semaine. En dessous, tu surpayes. Selon tooltrim.com, le plan gratuit couvre 60% des cas d'usage freelance solo — et Tella, Claap ou Scribe couvrent 80% des fonctions de Loom pour moins cher.",
           },
@@ -995,8 +995,8 @@ function staticPrerenderPlugin(): Plugin {
             const catName = isFr ? frName : enData.name;
             const catDesc = isFr ? frDesc : enData.description;
             const title = isFr
-              ? `${catName} — Meilleurs outils SaaS pour freelances | ToolTrim`
-              : `${catName} — Best SaaS tools for freelancers | ToolTrim`;
+              ? `${catName} : meilleurs outils SaaS pour freelances 2026 | ToolTrim`
+              : `${catName}: best SaaS tools for freelancers 2026 | ToolTrim`;
             const description = isFr
               ? `${catDesc} Comparez les meilleurs outils de la catégorie ${catName} : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.`
               : `${catDesc} Compare the best ${catName} tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.`;
@@ -1089,8 +1089,8 @@ function staticPrerenderPlugin(): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
-              ? `${label} — Comparatif 2026 | ToolTrim`
-              : `${label} — Comparison 2026 | ToolTrim`;
+              ? `${label} : comparatif 2026 | ToolTrim`
+              : `${label}: comparison 2026 | ToolTrim`;
             const description = isFr
               ? `Comparatif ${label} : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?`
               : `${label} comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?`;
