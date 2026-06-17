@@ -30641,9 +30641,10 @@
     "host_app": null,
     "category": "ai-general",
     "shortDescription": "Upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques.",
-    "defaultMonthlyPrice": 33.78,
+    "defaultMonthlyPrice": 39,
     "pricing": {
-      "paid": "39$/mois (Pro)"
+      "free": "Essai limité (crédits gratuits)",
+      "paid": "Pro à 39$/mois, Premium 99$, Business 299$"
     },
     "covers": [
       "upscaling",
@@ -30671,9 +30672,9 @@
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
     "betterAlternative": {
-      "tool": "topaz-video-ai",
-      "reason": "moins-cher-pour-video",
-      "saving": 39,
+      "tool": "topaz-gigapixel",
+      "reason": "Topaz Gigapixel agrandit les images de façon fidèle et pour moins cher, si tu n'as pas besoin du côté créatif de Magnific.",
+      "saving": 30,
       "performanceGain": null
     },
     "migrationGuide": null,
@@ -30681,35 +30682,65 @@
     "affiliateLink": "https://magnific.ai",
     "verdict": {
       "keepIf": [
-        "Upscaling créatif haute résolution pour print ou portfolio"
+        "Tu veux un upscaling créatif qui réinvente les détails (rendu artistique, pas fidèle)",
+        "Tu travailles des visuels pour le print, le portfolio ou l'IA"
       ],
       "avoidIf": [
-        "Usage vidéo — Topaz Video AI est plus adapté et moins cher"
+        "Tu veux un agrandissement fidèle à l'original : Topaz Gigapixel est plus adapté et moins cher",
+        "Tu as un usage occasionnel : l'abonnement à 39$/mois est cher"
       ],
-      "threshold": "Rentable si vous vendez des tirages grand format régulièrement."
+      "threshold": "Pertinent pour de l'upscaling créatif haut de gamme où Magnific 'invente' du détail. Pour un agrandissement fidèle et moins cher, Topaz Gigapixel suffit."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Upscaling créatif qui ajoute du détail saisissant, au-delà d'un simple agrandissement",
+      "Résultats uniques, parfaits pour le print et les portfolios",
+      "Très apprécié pour rehausser des images générées par IA",
+      "Contrôle de l'intensité de la réinvention"
+    ],
+    "cons": [
+      "Cher : abonnement dès 39$/mois",
+      "Réinvente les détails : pas fidèle à l'original (à éviter si la précision compte)",
+      "Topaz Gigapixel agrandit pour moins cher si tu n'as pas besoin du créatif",
+      "Pas adapté à la vidéo"
+    ],
+    "useCases": [
+      "Agrandir une image avec un rendu détaillé et créatif",
+      "Rehausser une image générée par IA pour le print",
+      "Préparer un visuel haute résolution pour un portfolio",
+      "Ajouter du détail à une image trop lisse ou trop petite"
+    ],
+    "seo": {
+      "metaDescription": "Magnific AI en 2026 : l'upscaling créatif par IA, prix et différence avec Topaz Gigapixel (fidèle vs réinventé). Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "39$/mois (Pro)"
+      "free": "Essai limité (crédits gratuits)",
+      "paid": "Pro à 39$/mois, Premium 99$, Business 299$"
     },
-    "longDescription": "Magnific AI, c'est upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques. À partir de 33.78€/mois. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : upscaling créatif haute résolution pour print ou portfolio. À éviter si : usage vidéo — Topaz Video AI est plus adapté et moins cher. Rentable si vous vendez des tirages grand format régulièrement. Si le budget le permet, topaz-video-ai va plus loin.",
-    "alternatives": [],
+    "longDescription": "Magnific AI, c'est un upscaler d'images nouvelle génération, mais avec une particularité : il ne se contente pas d'agrandir, il 'réinvente' et ajoute du détail qui n'existait pas dans l'original (détails 'hallucinés'). Le résultat peut être spectaculaire, surtout sur des images générées par IA ou des visuels qu'on veut rendre plus riches et texturés. C'est devenu un chouchou des créateurs IA et des graphistes.\n\nLe revers, c'est le prix et la fidélité. C'est un abonnement qui démarre à 39$/mois (puis 99$ et 299$), donc cher pour un usage occasionnel. Et comme l'outil invente du détail, le rendu n'est pas fidèle à l'original : à proscrire si tu as besoin d'un agrandissement précis (photo de produit, restauration documentaire).\n\nÀ qui ça s'adresse : aux créatifs qui veulent un upscaling artistique, pas un agrandissement fidèle. Pour ce dernier cas, ou pour un budget serré, Topaz Gigapixel fait un meilleur travail de précision pour moins cher. Magnific brille quand tu cherches l'effet 'waouh', pas l'exactitude.",
+    "alternatives": [
+      "topaz-gigapixel"
+    ],
     "slug": "magnific-ai",
     "shortDescriptionEn": "AI image upscaling with hallucinated detail addition. Unique results.",
-    "description": "Magnific AI, c'est upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques. À partir de 33.78€/mois. Pensé pour les photographes et les graphistes.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : upscaling créatif haute résolution pour print ou portfolio. À éviter si : usage vidéo — Topaz Video AI est plus adapté et moins cher. Rentable si vous vendez des tirages grand format régulièrement. Si le budget le permet, topaz-video-ai va plus loin.",
-    "longDescriptionEn": "Magnific AI is aI image upscaling with hallucinated detail addition. Unique results. Starting at €33.78/month. Built for photographers and graphic designers.\n\nEstimated time saving: 4h/month.\n\nIf budget allows, topaz-video-ai goes further.",
-    "pricingEn": null,
+    "description": "Magnific AI, c'est un upscaler d'images nouvelle génération, mais avec une particularité : il ne se contente pas d'agrandir, il 'réinvente' et ajoute du détail qui n'existait pas dans l'original (détails 'hallucinés'). Le résultat peut être spectaculaire, surtout sur des images générées par IA ou des visuels qu'on veut rendre plus riches et texturés. C'est devenu un chouchou des créateurs IA et des graphistes.\n\nLe revers, c'est le prix et la fidélité. C'est un abonnement qui démarre à 39$/mois (puis 99$ et 299$), donc cher pour un usage occasionnel. Et comme l'outil invente du détail, le rendu n'est pas fidèle à l'original : à proscrire si tu as besoin d'un agrandissement précis (photo de produit, restauration documentaire).\n\nÀ qui ça s'adresse : aux créatifs qui veulent un upscaling artistique, pas un agrandissement fidèle. Pour ce dernier cas, ou pour un budget serré, Topaz Gigapixel fait un meilleur travail de précision pour moins cher. Magnific brille quand tu cherches l'effet 'waouh', pas l'exactitude.",
+    "longDescriptionEn": "Magnific AI is a new-generation image upscaler with a twist: it doesn't just enlarge, it 'reinvents' and adds detail that didn't exist in the original ('hallucinated' detail). The result can be spectacular, especially on AI-generated images or visuals you want richer and more textured. It's become a favorite of AI creators and designers.\n\nThe downside is price and fidelity. It's a subscription starting at $39/month (then $99 and $299), so pricey for occasional use. And since the tool invents detail, the result isn't faithful to the original: avoid it if you need precise enlargement (product photo, document restoration).\n\nWho it's for: creatives who want artistic upscaling, not faithful enlargement. For the latter, or a tight budget, Topaz Gigapixel does a better precision job for less. Magnific shines when you want the 'wow' effect, not accuracy.",
+    "pricingEn": {
+      "free": "Limited trial (free credits)",
+      "paid": "Pro at $39/month, Premium $99, Business $299"
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Abonnement dès 39$/mois (puis 99$ et 299$)"
+      ],
+      "verified_on": "2026-06-15",
       "source_domain": "magnific.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
