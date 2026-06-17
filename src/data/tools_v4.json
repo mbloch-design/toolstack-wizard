@@ -26317,6 +26317,165 @@
     "force_silence": false
   },
   {
+    "id": "figma-weave",
+    "name": "Figma Weave",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Figma Weave (ex-Weavy) : canvas nodal IA multi-modèles, racheté par Figma.",
+    "defaultMonthlyPrice": 24,
+    "pricing": {
+      "free": "150 crédits/mois, jusqu'à 5 workflows",
+      "paid": "Starter 24$/mois (1 500 crédits), Professional (4 000), Team 60$/utilisateur"
+    },
+    "covers": [
+      "generation-image",
+      "generation-video",
+      "design-visuel"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "generation-video"
+    ],
+    "ia_use_case": [
+      "generation-image",
+      "generation-video"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "motion-video",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://weave.figma.com",
+    "verdict": {
+      "keepIf": [
+        "Ton équipe est déjà sur Figma et veut un canvas IA multi-modèles intégré",
+        "Tu veux construire des workflows média reproductibles avec édition pro (calques, masques)"
+      ],
+      "avoidIf": [
+        "Tu veux juste générer quelques images : un outil simple suffit",
+        "Le temps réel et un prix d'entrée plus bas comptent : regarde Krea AI"
+      ],
+      "threshold": "Pertinent pour une équipe créative qui veut un canvas nodal multi-modèles dans l'univers Figma. Pour un usage solo ponctuel ou le meilleur prix, compare avec Krea AI."
+    },
+    "pros": [
+      "Canvas nodal qui orchestre tous les grands modèles IA (Google, OpenAI, Kling, Runway, Luma...)",
+      "Vrais outils d'édition pro : calques, compositing, masquage",
+      "Adossé à Figma : intégration prometteuse à l'écosystème design",
+      "Plan gratuit pour tester (150 crédits/mois, 5 workflows)"
+    ],
+    "cons": [
+      "Système de crédits : coût réel selon le volume, top-up à 10$ les 1 000 crédits",
+      "Concurrence frontale de Krea AI (temps réel, moins cher) et Magnific",
+      "Produit jeune, encore en cours d'intégration dans Figma",
+      "Pensé pour les équipes créatives : overkill pour un usage très ponctuel"
+    ],
+    "useCases": [
+      "Construire un workflow de génération média reproductible (image, vidéo)",
+      "Composer et masquer des éléments générés par IA dans un seul canvas",
+      "Comparer plusieurs modèles d'IA côte à côte sur un même brief",
+      "Rester dans l'écosystème Figma pour passer du design au média IA"
+    ],
+    "seo": {
+      "metaDescription": "Figma Weave (ex-Weavy) en 2026 : le canvas nodal IA multi-modèles de Figma. Prix, fonctionnement et comparaison avec Krea et Magnific. Le verdict ToolTrim."
+    },
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "bestFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "motion-video"
+    ],
+    "pricingTiers": {
+      "free": "150 crédits/mois, jusqu'à 5 workflows",
+      "paid": "Starter 24$/mois (1 500 crédits), Professional (4 000), Team 60$/utilisateur"
+    },
+    "longDescription": "Figma Weave, c'est l'ancien Weavy, une startup israélienne rachetée par Figma fin 2025 (autour de 150 à 200 millions de dollars) et relancée sous la marque Figma. Le principe : un canvas nodal où tu fais dialoguer tous les grands modèles d'IA (Google, OpenAI, Kling, Runway, Luma, Black Forest Labs, etc.) avec de vrais outils d'édition pro (calques, compositing, masquage). Au lieu de jongler entre dix applis et de prier pour que le prompt sorte la bonne image, tu construis un flux visuel reproductible.\n\nC'est la même bascule que Krea (Nodes) ou Magnific (Spaces), mais portée par Figma, donc avec la promesse d'une intégration au reste de l'écosystème design. Pour une équipe créative déjà sur Figma, c'est un argument fort : rester dans le même environnement pour passer du design à la génération de média.\n\nCôté prix : un plan gratuit (150 crédits/mois, jusqu'à 5 workflows), puis Starter à 24$/mois (1 500 crédits, workflows illimités), Professional (4 000 crédits) et Team (60$/utilisateur/mois, 4 500 crédits). Les crédits ne suffisent pas toujours, le top-up est à 10$ les 1 000 crédits. Si tu cherches une plateforme multi-modèles, c'est à mettre en concurrence directe avec Krea AI et Magnific. L'atout de Figma Weave, c'est l'intégration design ; ceux de Krea, le temps réel et le prix d'entrée plus bas.",
+    "alternatives": [
+      "krea-ai",
+      "magnific-ai"
+    ],
+    "slug": "figma-weave",
+    "shortDescriptionEn": "Figma Weave (ex-Weavy): a multi-model AI node canvas, acquired by Figma.",
+    "description": "Figma Weave, c'est l'ancien Weavy, une startup israélienne rachetée par Figma fin 2025 (autour de 150 à 200 millions de dollars) et relancée sous la marque Figma. Le principe : un canvas nodal où tu fais dialoguer tous les grands modèles d'IA (Google, OpenAI, Kling, Runway, Luma, Black Forest Labs, etc.) avec de vrais outils d'édition pro (calques, compositing, masquage). Au lieu de jongler entre dix applis et de prier pour que le prompt sorte la bonne image, tu construis un flux visuel reproductible.\n\nC'est la même bascule que Krea (Nodes) ou Magnific (Spaces), mais portée par Figma, donc avec la promesse d'une intégration au reste de l'écosystème design. Pour une équipe créative déjà sur Figma, c'est un argument fort : rester dans le même environnement pour passer du design à la génération de média.\n\nCôté prix : un plan gratuit (150 crédits/mois, jusqu'à 5 workflows), puis Starter à 24$/mois (1 500 crédits, workflows illimités), Professional (4 000 crédits) et Team (60$/utilisateur/mois, 4 500 crédits). Les crédits ne suffisent pas toujours, le top-up est à 10$ les 1 000 crédits. Si tu cherches une plateforme multi-modèles, c'est à mettre en concurrence directe avec Krea AI et Magnific. L'atout de Figma Weave, c'est l'intégration design ; ceux de Krea, le temps réel et le prix d'entrée plus bas.",
+    "longDescriptionEn": "Figma Weave is the former Weavy, an Israeli startup acquired by Figma in late 2025 (reportedly around $150 to $200 million) and relaunched under the Figma brand. The idea: a node canvas where you get all the major AI models talking to each other (Google, OpenAI, Kling, Runway, Luma, Black Forest Labs, and more) alongside real pro editing tools (layers, compositing, masking). Instead of juggling ten apps and praying the prompt outputs the right image, you build a reproducible visual workflow.\n\nIt's the same shift as Krea (Nodes) or Magnific (Spaces), but backed by Figma, so with the promise of integration into the rest of the design ecosystem. For a creative team already on Figma, that's a strong argument: stay in the same environment to go from design to media generation.\n\nOn price: a free plan (150 credits/month, up to 5 workflows), then Starter at $24/month (1,500 credits, unlimited workflows), Professional (4,000 credits), and Team ($60/user/month, 4,500 credits). Credits don't always last, with top-ups at $10 per 1,000 credits. If you want a multi-model platform, put it in direct competition with Krea AI and Magnific. Figma Weave's edge is design integration; Krea's are real time and a lower entry price.",
+    "pricingEn": {
+      "free": "150 credits/month, up to 5 workflows",
+      "paid": "Starter $24/month (1,500 credits), Professional (4,000), Team $60/user"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Système de crédits : top-up à 10$ les 1 000 crédits",
+        "Plans Professional et Team avec quotas plus élevés"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "weave.figma.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://weave.figma.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 24
+    },
+    "websiteUrl": "https://weave.figma.com",
+    "logo": "",
+    "verdictEn": {
+      "keepIf": [
+        "Your team is already on Figma and wants an integrated multi-model AI canvas",
+        "You want to build reproducible media workflows with pro editing (layers, masks)"
+      ],
+      "avoidIf": [
+        "You just want to generate a few images: a simple tool is enough",
+        "Real time and a lower entry price matter: look at Krea AI"
+      ],
+      "threshold": "Worth it for a creative team that wants a multi-model node canvas in the Figma world. For occasional solo use or the best price, compare with Krea AI."
+    },
+    "prosEn": [
+      "Node canvas that orchestrates all major AI models (Google, OpenAI, Kling, Runway, Luma...)",
+      "Real pro editing tools: layers, compositing, masking",
+      "Backed by Figma: promising integration into the design ecosystem",
+      "Free plan to test (150 credits/month, 5 workflows)"
+    ],
+    "consEn": [
+      "Credit system: real cost depends on volume, top-ups at $10 per 1,000 credits",
+      "Direct competition from Krea AI (real time, cheaper) and Magnific",
+      "Young product, still being integrated into Figma",
+      "Built for creative teams: overkill for very occasional use"
+    ],
+    "useCasesEn": [
+      "Build a reproducible media generation workflow (image, video)",
+      "Compose and mask AI-generated elements in a single canvas",
+      "Compare several AI models side by side on the same brief",
+      "Stay in the Figma ecosystem to go from design to AI media"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "ai-image-generation",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false
+    },
+    "force_silence": false
+  },
+  {
     "id": "krea-ai",
     "name": "Krea AI",
     "tool_type": "ia",
@@ -26324,11 +26483,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génération d'images IA en temps réel avec contrôle créatif avancé.",
-    "defaultMonthlyPrice": 8.66,
+    "shortDescription": "Krea AI : génération image/vidéo IA en temps réel et canvas multi-modèles (Nodes).",
+    "defaultMonthlyPrice": 9,
     "pricing": {
-      "free": "Accès limité",
-      "paid": "10$/mois (Standard)"
+      "free": "100 crédits/jour (gratuit)",
+      "paid": "Basic 9$/mois, Pro 35$, Max 70$, Business 200$"
     },
     "covers": [
       "generation-image",
@@ -26369,38 +26528,69 @@
     "affiliateLink": "https://krea.ai",
     "verdict": {
       "keepIf": [
-        "Génération en temps réel pour exploration créative rapide"
+        "Tu veux explorer des visuels en temps réel et tester plusieurs modèles au même endroit",
+        "Tu cherches un canvas nodal (Nodes) pour orchestrer image et vidéo IA"
       ],
       "avoidIf": [
-        "Midjourney ou Firefly déjà en place — doublon génération image"
+        "Tu as déjà Midjourney et tu ne fais que de la génération d'images simple",
+        "Tu compares les plateformes : regarde aussi Magnific et Figma Weave avant de choisir"
       ],
-      "threshold": "Complémentaire à Midjourney si besoin de contrôle en temps réel."
+      "threshold": "Pertinent dès que tu veux un atelier multi-modèles avec temps réel et workflows. Pour de la simple génération d'images, Midjourney suffit."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Temps réel : le Realtime Canvas redessine l'image en moins d'une seconde",
+      "Agrégateur de 60+ modèles (image, vidéo, 3D, lipsync) dans une seule interface",
+      "Canvas nodal (Nodes) pour enchaîner les modèles, façon ComfyUI mais accessible",
+      "Plan gratuit utilisable (100 crédits/jour) et upscaling jusqu'à 22K"
+    ],
+    "cons": [
+      "Doublon partiel si tu as déjà Midjourney pour la génération d'images",
+      "Le système de crédits grimpe vite en usage intensif",
+      "Nodes et les modèles vidéo complets sont réservés aux plans Pro et plus",
+      "Concurrence frontale de Magnific et Figma Weave : à comparer avant de s'engager"
+    ],
+    "useCases": [
+      "Explorer des concepts visuels en temps réel pendant qu'on tape le prompt",
+      "Générer image et vidéo IA depuis une seule plateforme",
+      "Construire un workflow multi-modèles dans le canvas Nodes",
+      "Upscaler une image jusqu'à 22K ou entraîner un LoRA maison"
+    ],
+    "seo": {
+      "metaDescription": "Krea AI en 2026 : génération image/vidéo IA en temps réel, canvas nodal (Nodes) et 60+ modèles. Prix et comparaison avec Magnific et Figma Weave. Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "motion-video"
+    ],
     "pricingTiers": {
-      "free": "Accès limité",
-      "paid": "10$/mois (Standard)"
+      "free": "100 crédits/jour (gratuit)",
+      "paid": "Basic 9$/mois, Pro 35$, Max 70$, Business 200$"
     },
-    "longDescription": "Krea AI, c'est génération d'images IA en temps réel avec contrôle créatif avancé. À partir de 8.66€/mois. Pensé pour les graphistes et les créateurs vidéo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : génération en temps réel pour exploration créative rapide. À éviter si : midjourney ou Firefly déjà en place — doublon génération image. Complémentaire à Midjourney si besoin de contrôle en temps réel.",
-    "alternatives": [],
+    "longDescription": "Krea AI est l'un des nouveaux poids lourds du média génératif. Sa marque de fabrique, c'est le temps réel : le Realtime Canvas affiche une image qui se redessine en moins d'une seconde pendant que tu tapes ton prompt ou esquisses au pinceau. Mais Krea est devenu bien plus qu'un générateur d'images : c'est un agrégateur qui réunit plus de 60 modèles (Flux, Veo, Runway, Kling, son modèle maison Krea 1, etc.) dans une seule interface, avec upscaling jusqu'à 22K, génération vidéo, 3D, lipsync et entraînement de LoRA.\n\nLa pièce maîtresse pour les pros, c'est Nodes : un canvas nodal où tu enchaînes les modèles et les étapes, un peu comme ComfyUI mais accessible. C'est exactement la tendance du moment : on ne paie plus un outil par tâche, on paie un atelier qui orchestre tous les modèles. Krea revendique plus de 30 millions d'utilisateurs et 83 millions de dollars levés.\n\nCôté budget : un plan gratuit honnête (100 crédits/jour), puis Basic à 9$/mois, Pro à 35$ (qui débloque Nodes et tous les modèles vidéo), Max à 70$ et Business à 200$. Si tu as déjà Midjourney pour la pure génération d'images, Krea fait en partie doublon, mais son temps réel et son canvas nodal le rendent complémentaire. Ses vrais concurrents directs, ce sont Magnific (ex-Freepik) et Figma Weave (ex-Weavy) : si tu cherches une plateforme multi-modèles, compare les trois avant de t'abonner.",
+    "alternatives": [
+      "midjourney",
+      "magnific-ai",
+      "leonardo-ai"
+    ],
     "slug": "krea-ai",
-    "shortDescriptionEn": "Real-time AI image generation with advanced creative control.",
-    "description": "Krea AI, c'est génération d'images IA en temps réel avec contrôle créatif avancé. À partir de 8.66€/mois. Pensé pour les graphistes et les créateurs vidéo.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : génération en temps réel pour exploration créative rapide. À éviter si : midjourney ou Firefly déjà en place — doublon génération image. Complémentaire à Midjourney si besoin de contrôle en temps réel.",
-    "longDescriptionEn": "Krea AI is real-time AI image generation with advanced creative control. Starting at €8.66/month. Built for graphic designers and video creators.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Real-time AI image/video generation with a multi-model node canvas.",
+    "description": "Krea AI est l'un des nouveaux poids lourds du média génératif. Sa marque de fabrique, c'est le temps réel : le Realtime Canvas affiche une image qui se redessine en moins d'une seconde pendant que tu tapes ton prompt ou esquisses au pinceau. Mais Krea est devenu bien plus qu'un générateur d'images : c'est un agrégateur qui réunit plus de 60 modèles (Flux, Veo, Runway, Kling, son modèle maison Krea 1, etc.) dans une seule interface, avec upscaling jusqu'à 22K, génération vidéo, 3D, lipsync et entraînement de LoRA.\n\nLa pièce maîtresse pour les pros, c'est Nodes : un canvas nodal où tu enchaînes les modèles et les étapes, un peu comme ComfyUI mais accessible. C'est exactement la tendance du moment : on ne paie plus un outil par tâche, on paie un atelier qui orchestre tous les modèles. Krea revendique plus de 30 millions d'utilisateurs et 83 millions de dollars levés.\n\nCôté budget : un plan gratuit honnête (100 crédits/jour), puis Basic à 9$/mois, Pro à 35$ (qui débloque Nodes et tous les modèles vidéo), Max à 70$ et Business à 200$. Si tu as déjà Midjourney pour la pure génération d'images, Krea fait en partie doublon, mais son temps réel et son canvas nodal le rendent complémentaire. Ses vrais concurrents directs, ce sont Magnific (ex-Freepik) et Figma Weave (ex-Weavy) : si tu cherches une plateforme multi-modèles, compare les trois avant de t'abonner.",
+    "longDescriptionEn": "Krea AI is one of the new heavyweights in generative media. Its signature is real time: the Realtime Canvas shows an image that redraws in under a second while you type your prompt or sketch with a brush. But Krea has become far more than an image generator: it's an aggregator bringing 60+ models (Flux, Veo, Runway, Kling, its in-house Krea 1, and more) into a single interface, with upscaling up to 22K, video generation, 3D, lipsync, and LoRA training.\n\nThe centerpiece for pros is Nodes: a node canvas where you chain models and steps, a bit like ComfyUI but accessible. That's exactly the current trend: you no longer pay for a single-task tool, you pay for a workshop that orchestrates every model. Krea claims over 30 million users and $83 million raised.\n\nOn budget: an honest free plan (100 credits/day), then Basic at $9/month, Pro at $35 (which unlocks Nodes and all video models), Max at $70, and Business at $200. If you already have Midjourney for pure image generation, Krea partly overlaps, but its real-time canvas and Nodes make it complementary. Its real direct competitors are Magnific (ex-Freepik) and Figma Weave (ex-Weavy): if you want a multi-model platform, compare the three before subscribing.",
+    "pricingEn": {
+      "free": "100 credits/day (free)",
+      "paid": "Basic $9/month, Pro $35, Max $70, Business $200"
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Système de crédits : le coût réel dépend du volume généré",
+        "Nodes et modèles vidéo complets à partir du plan Pro (35$/mois)"
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-17",
       "source_domain": "krea.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -26409,14 +26599,40 @@
       "location_sensitive": false,
       "official_source_url": "https://www.krea.ai/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 8.66
+      "compare_plan_name": "Basic",
+      "compare_price_monthly_eur": 9
     },
     "websiteUrl": "https://krea.ai",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You want to explore visuals in real time and test several models in one place",
+        "You're after a node canvas (Nodes) to orchestrate AI image and video"
+      ],
+      "avoidIf": [
+        "You already have Midjourney and only do simple image generation",
+        "You're comparing platforms: also look at Magnific and Figma Weave before choosing"
+      ],
+      "threshold": "Worth it once you want a multi-model workshop with real time and workflows. For plain image generation, Midjourney is enough."
+    },
+    "prosEn": [
+      "Real time: the Realtime Canvas redraws the image in under a second",
+      "Aggregates 60+ models (image, video, 3D, lipsync) in a single interface",
+      "Node canvas (Nodes) to chain models, like an accessible ComfyUI",
+      "Usable free plan (100 credits/day) and upscaling up to 22K"
+    ],
+    "consEn": [
+      "Partial overlap if you already have Midjourney for image generation",
+      "The credit system adds up fast under heavy use",
+      "Nodes and full video models are reserved for Pro plans and up",
+      "Direct competition from Magnific and Figma Weave: compare before committing"
+    ],
+    "useCasesEn": [
+      "Explore visual concepts in real time while typing the prompt",
+      "Generate AI image and video from a single platform",
+      "Build a multi-model workflow in the Nodes canvas",
+      "Upscale an image up to 22K or train an in-house LoRA"
+    ],
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
