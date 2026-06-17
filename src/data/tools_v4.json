@@ -4,58 +4,50 @@
     "slug": "invision",
     "name": "InVision",
     "category": "prototyping",
-    "shortDescription": "Plateforme de prototypage et collaboration pour les équipes design.",
-    "shortDescriptionEn": "Prototyping and collaboration platform for design teams.",
-    "description": "InVision est l'une des plateformes de prototypage les plus utilisées : elle permet de transformer des mockups statiques en prototypes cliquables et de collaborer avec les équipes produit et développement. Elle propose aussi des outils de design system (DSM) et de handoff. Freemium.\n\nAujourd'hui fortement concurrencée par Figma qui intègre prototypage et design dans un seul outil. InVision reste pertinent pour les équipes déjà investies dans son écosystème.",
-    "longDescription": "InVision transforme des mockups en prototypes cliquables et facilite la collaboration design/dev, mais est fortement concurrencée par Figma.",
-    "longDescriptionEn": "InVision turns mockups into clickable prototypes and facilitates design/dev collaboration, now heavily challenged by Figma.",
+    "shortDescription": "InVision, plateforme de prototypage fermée fin 2024 : migrez vers Figma.",
+    "shortDescriptionEn": "InVision, prototyping platform shut down in late 2024: move to Figma.",
+    "description": "Important : InVision a fermé son service de design le 31 décembre 2024. La plateforme qui transformait des mockups en prototypes cliquables et facilitait le handoff design/dev n'est plus accessible. Si tu cherches encore InVision, c'est pour une raison : trouver par quoi le remplacer.\n\nLa réponse courte, c'est Figma. Là où InVision séparait le design (souvent fait dans Sketch) et le prototypage, Figma réunit conception, prototypage, collaboration et handoff développeurs dans un seul outil collaboratif. C'est précisément cette intégration qui a fini par rendre InVision obsolète et a précipité sa fermeture.\n\nSi ton équipe utilisait encore InVision, le sujet n'est plus de comparer mais de migrer : exporte ce qui peut l'être et rebâtis ton flux dans Figma (ou Framer pour des prototypes plus avancés). On garde cette fiche en ligne pour orienter ceux qui tombent encore sur d'anciens liens InVision.",
+    "longDescription": "Important : InVision a fermé son service de design le 31 décembre 2024. La plateforme qui transformait des mockups en prototypes cliquables et facilitait le handoff design/dev n'est plus accessible. Si tu cherches encore InVision, c'est pour une raison : trouver par quoi le remplacer.\n\nLa réponse courte, c'est Figma. Là où InVision séparait le design (souvent fait dans Sketch) et le prototypage, Figma réunit conception, prototypage, collaboration et handoff développeurs dans un seul outil collaboratif. C'est précisément cette intégration qui a fini par rendre InVision obsolète et a précipité sa fermeture.\n\nSi ton équipe utilisait encore InVision, le sujet n'est plus de comparer mais de migrer : exporte ce qui peut l'être et rebâtis ton flux dans Figma (ou Framer pour des prototypes plus avancés). On garde cette fiche en ligne pour orienter ceux qui tombent encore sur d'anciens liens InVision.",
+    "longDescriptionEn": "Important: InVision shut down its design service on December 31, 2024. The platform that turned mockups into clickable prototypes and eased design/dev handoff is no longer available. If you're still looking up InVision, it's for one reason: to find what replaces it.\n\nThe short answer is Figma. Where InVision separated design (often done in Sketch) from prototyping, Figma brings design, prototyping, collaboration, and developer handoff into a single collaborative tool. That integration is exactly what made InVision obsolete and ultimately led to its shutdown.\n\nIf your team was still using InVision, the question isn't comparison anymore, it's migration: export what you can and rebuild your workflow in Figma (or Framer for more advanced prototypes). We keep this page live to point anyone landing on old InVision links in the right direction.",
     "pricing": {
-      "free": "Plan gratuit (1 prototype)",
-      "paid": "À partir de 15$/mois/utilisateur"
+      "free": "Service fermé depuis le 31 décembre 2024"
     },
     "pricingEn": {
-      "free": "Free plan (1 prototype)",
-      "paid": "From $15/month/user"
+      "free": "Service shut down since December 31, 2024"
     },
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
     "websiteUrl": "https://www.invisionapp.com",
     "logo": "",
     "seo": {
-      "metaDescription": "InVision sur ToolTrim : prototypage et collaboration design, quand migrer vers Figma et pourquoi."
+      "metaDescription": "InVision a fermé son service fin 2024. Par quoi le remplacer en 2026 (Figma, Framer) et comment migrer. Le verdict ToolTrim."
     },
     "pros": [
-      "Prototypes cliquables sans code",
-      "Collaboration design/dev facilitée",
-      "Handoff développeurs intégré",
-      "Design System Manager (DSM)"
+      "A popularisé le prototype cliquable et le handoff design/dev",
+      "Son héritage a inspiré les outils actuels comme Figma"
     ],
     "prosEn": [
-      "Clickable prototypes without code",
-      "Easy design/dev collaboration",
-      "Integrated developer handoff",
-      "Design System Manager (DSM)"
+      "Popularized clickable prototypes and design/dev handoff",
+      "Its legacy inspired today's tools like Figma"
     ],
     "cons": [
-      "Largement supplanté par Figma",
-      "Deux outils séparés (design + proto) vs tout-en-un Figma",
-      "Prix élevé pour les fonctionnalités offertes"
+      "Service fermé depuis le 31 décembre 2024 : plus utilisable",
+      "Remplacé par Figma, qui réunit design et prototypage",
+      "Aucune raison de démarrer un projet dessus aujourd'hui"
     ],
     "consEn": [
-      "Largely superseded by Figma",
-      "Two separate tools (design + proto) vs Figma all-in-one",
-      "High price for features offered"
+      "Service shut down since December 31, 2024: no longer usable",
+      "Replaced by Figma, which unifies design and prototyping",
+      "No reason to start a project on it today"
     ],
     "useCases": [
-      "Prototypes cliquables pour tests utilisateurs",
-      "Handoff design vers développeurs",
-      "Collaboration asynchrone sur des maquettes"
+      "Comprendre par quoi remplacer un ancien flux InVision",
+      "Migrer ses prototypes vers Figma ou Framer"
     ],
     "useCasesEn": [
-      "Clickable prototypes for user testing",
-      "Design to developer handoff",
-      "Async collaboration on mockups"
+      "Figure out what replaces an old InVision workflow",
+      "Migrate prototypes to Figma or Framer"
     ],
     "covers": [
       "prototyping",
@@ -69,25 +61,34 @@
       "SOFIA"
     ],
     "alternatives": [
+      "figma",
       "framer"
     ],
     "verdict": {
       "keepIf": [
-        "Ton équipe est déjà fortement investie dans InVision",
-        "Tu as des contrats annuels en cours"
+        "Tu cherches juste à comprendre par quoi remplacer InVision"
       ],
       "avoidIf": [
-        "Tu démarres un nouveau projet (Figma fait tout ça et mieux)",
-        "Tu cherches à réduire tes abonnements"
+        "Tu espères encore l'utiliser : le service est fermé depuis fin 2024",
+        "Tu démarres un projet : pars directement sur Figma"
       ],
-      "threshold": "Migrer vers Figma dès que l'occasion se présente — InVision perd du terrain chaque année."
+      "threshold": "Le service est fermé depuis le 31 décembre 2024. Migre vers Figma (ou Framer pour des prototypes avancés)."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You just want to understand what replaces InVision"
+      ],
+      "avoidIf": [
+        "You still hope to use it: the service shut down in late 2024",
+        "You're starting a project: go straight to Figma"
+      ],
+      "threshold": "The service shut down on December 31, 2024. Move to Figma (or Framer for advanced prototypes)."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": "figma",
-    "soloRelevance": "figma est plus adapté pour le solo",
-    "teamRelevance": "à migrer vers Figma",
+    "soloRelevance": "low",
+    "teamRelevance": "low",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
@@ -1398,8 +1399,8 @@
     "shortDescription": "Bibliothèque de composants React accessible, modulaire et stylisable.",
     "shortDescriptionEn": "Accessible, modular and styleable React component library.",
     "description": "Chakra UI est une bibliothèque de composants React centrée sur l'accessibilité et la simplicité de personnalisation. Elle propose un système de design tokens et un style props API qui rend le styling inline intuitif. Gratuite et open source.\n\nTrès appréciée pour sa simplicité et son accessibilité. Concurrencée par shadcn UI qui offre plus de contrôle sur le code.",
-    "longDescription": "Chakra UI propose des composants React accessibles avec un style props API et un système de design tokens intuitif.",
-    "longDescriptionEn": "Chakra UI provides accessible React components with a style props API and intuitive design token system.",
+    "longDescription": "Chakra UI, c'est la bibliothèque de composants React qui a mis l'accessibilité au centre, longtemps avant que ça devienne la norme. Ses composants respectent les standards WCAG par défaut, et son style props API te permet de styliser directement en props (par exemple bg, p, rounded) sans écrire de CSS ni de classes. Tu as aussi un système de design tokens et un dark mode intégré. Le tout est gratuit et open source.\n\nC'est un excellent choix quand l'accessibilité est non négociable et que tu ne veux pas brancher Tailwind. La prise en main est rapide, c'est parfait pour prototyper. Le revers, c'est la performance : le style inline est plus coûteux que des classes utilitaires, et le bundle est plus lourd qu'un shadcn UI.\n\nDepuis l'essor de shadcn UI, Chakra a perdu de sa centralité sur les nouveaux projets React + Tailwind, où l'on préfère posséder le code des composants. Chakra reste très pertinent si tu travailles sans Tailwind et que l'accessibilité prime. Sinon, sur une stack Tailwind, shadcn UI est souvent le meilleur réflexe.",
+    "longDescriptionEn": "Chakra UI is the React component library that put accessibility front and center, well before it became the norm. Its components meet WCAG standards by default, and its style props API lets you style directly via props (e.g. bg, p, rounded) without writing CSS or classes. You also get a design token system and built-in dark mode. It's all free and open source.\n\nIt's a great pick when accessibility is non-negotiable and you don't want to wire up Tailwind. It's quick to learn and perfect for prototyping. The downside is performance: inline styling is costlier than utility classes, and the bundle is heavier than shadcn UI.\n\nSince shadcn UI's rise, Chakra has lost some ground on new React + Tailwind projects, where owning the component code is preferred. Chakra stays very relevant if you work without Tailwind and accessibility comes first. Otherwise, on a Tailwind stack, shadcn UI is often the better instinct.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -1475,12 +1476,23 @@
       ],
       "threshold": "Bon choix pour l'accessibilité, mais shadcn UI est souvent préféré sur les nouveaux projets React + Tailwind."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Accessibility is an absolute priority",
+        "You don't use Tailwind CSS",
+        "You want dark mode with no configuration"
+      ],
+      "avoidIf": [
+        "You use Tailwind (shadcn UI fits better)",
+        "Render performance is critical"
+      ],
+      "threshold": "A solid choice for accessibility, but shadcn UI is often preferred on new React + Tailwind projects."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "rapide pour prototyper",
-    "teamRelevance": "bien pour équipes sans Tailwind",
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": "react",
@@ -2627,8 +2639,8 @@
     "shortDescription": "Bibliothèque de visualisation de données puissante et gratuite par Apache.",
     "shortDescriptionEn": "Powerful and free data visualization library by Apache.",
     "description": "Apache ECharts est une bibliothèque de graphiques JavaScript open source développée par Baidu et donnée à Apache. Elle offre 20+ types de graphiques avec d'excellentes performances sur de grands volumes de données grâce au rendu Canvas/WebGL. Gratuite et open source.\n\nTrès populaire en Asie, de plus en plus utilisée globalement. Excellente pour les grands datasets où Chart.js ou Recharts plafonnent.",
-    "longDescription": "Apache ECharts offre 20+ types de graphiques avec rendu Canvas/WebGL pour d'excellentes performances sur grands datasets.",
-    "longDescriptionEn": "Apache ECharts offers 20+ chart types with Canvas/WebGL rendering for excellent performance on large datasets.",
+    "longDescription": "Apache ECharts est la bibliothèque de visualisation à sortir quand les autres plafonnent. Développée à l'origine par Baidu puis donnée à la fondation Apache, elle propose plus de 20 types de graphiques et, surtout, un rendu Canvas et WebGL qui encaisse des milliers (voire des millions) de points sans s'effondrer. C'est gratuit et open source, sans la licence commerciale que réclame un Highcharts.\n\nC'est le bon choix pour des dashboards data-heavy, du monitoring temps réel ou toute dataviz un peu ambitieuse. Tu gagnes les capacités d'un outil premium sans la facture. Le revers : l'API est plus verbeuse que Chart.js, une partie de la documentation et des exemples penche encore vers le chinois, et il n'y a pas de wrapper React officiel (on passe par echarts-for-react).\n\nSi ton besoin se limite à quelques graphiques standards dans une app React, Recharts ou Chart.js seront plus directs. Mais dès que le volume de données ou la richesse des graphiques deviennent un enjeu, ECharts est l'alternative gratuite la plus sérieuse à Highcharts.",
+    "longDescriptionEn": "Apache ECharts is the visualization library to reach for when the others hit a ceiling. Originally built by Baidu and later donated to the Apache foundation, it offers 20+ chart types and, crucially, Canvas and WebGL rendering that handles thousands (even millions) of points without buckling. It's free and open source, without the commercial license a Highcharts demands.\n\nIt's the right pick for data-heavy dashboards, real-time monitoring, or any ambitious dataviz. You get premium-tool capabilities without the bill. The downside: the API is more verbose than Chart.js, part of the documentation and examples still lean toward Chinese, and there's no official React wrapper (you use echarts-for-react).\n\nIf your need is just a few standard charts in a React app, Recharts or Chart.js will be more direct. But once data volume or chart richness becomes a real concern, ECharts is the most serious free alternative to Highcharts.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -2703,14 +2715,25 @@
         "Chart.js ou Recharts suffisent pour ton volume de données",
         "Tu veux un wrapper React natif (Recharts est mieux adapté)"
       ],
-      "threshold": "Meilleur choix que Highcharts pour les grands datasets — gratuit et très performant."
+      "threshold": "Meilleur choix que Highcharts pour les grands datasets : gratuit et très performant."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You have large volumes of data to visualize",
+        "You want Highcharts-level capabilities for free",
+        "Render performance is critical"
+      ],
+      "avoidIf": [
+        "Chart.js or Recharts are enough for your data volume",
+        "You want a native React wrapper (Recharts fits better)"
+      ],
+      "threshold": "A better choice than Highcharts for large datasets: free and very performant."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "excellent pour dataviz intensive",
-    "teamRelevance": "bon pour projets data-heavy",
+    "soloRelevance": "high",
+    "teamRelevance": "high",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
@@ -2854,8 +2877,8 @@
     "shortDescription": "Composants React accessibles construits avec Radix UI et Tailwind CSS.",
     "shortDescriptionEn": "Accessible React components built with Radix UI and Tailwind CSS.",
     "description": "shadcn UI est une collection de composants React copiables-collables, non publiée comme package npm. Tu copies le code source directement dans ton projet, ce qui te donne un contrôle total. Basé sur Radix UI (accessibilité) et Tailwind CSS (styles). Gratuit et open source.\n\nDevenu le choix par défaut pour les projets React modernes grâce à sa flexibilité et son intégration parfaite avec Tailwind.",
-    "longDescription": "shadcn UI est une collection de composants React copiables-collables basée sur Radix UI et Tailwind CSS, que tu intègres directement dans ton codebase.",
-    "longDescriptionEn": "shadcn UI is a collection of copy-paste React components based on Radix UI and Tailwind CSS, integrated directly into your codebase.",
+    "longDescription": "shadcn UI a changé la façon dont on consomme une bibliothèque de composants. Au lieu d'installer un package npm que tu subis, tu copies le code des composants directement dans ton projet via une CLI (npx shadcn add). Le code t'appartient : tu le modifies comme tu veux, sans te battre contre les surcharges de styles d'une lib fermée. C'est construit sur Radix UI pour l'accessibilité et Tailwind CSS pour le style.\n\nEn quelques années, c'est devenu le choix par défaut des projets React modernes, et pour une bonne raison : tu gardes le contrôle total, tu n'as pas de dépendance qui casse à la prochaine mise à jour majeure, et le rendu est sobre et facile à personnaliser. C'est gratuit et open source.\n\nLe revers de la médaille : il faut Tailwind, c'est React uniquement, et comme tu possèdes le code, c'est à toi de maintenir les composants (pas de mises à jour automatiques). Pour un projet React + Tailwind neuf, c'est difficile à battre. Si tu veux des composants clés en main très opinionés, Material-UI ou Ant Design restent plus directs.",
+    "longDescriptionEn": "shadcn UI changed how you consume a component library. Instead of installing an npm package you're stuck with, you copy the component code straight into your project via a CLI (npx shadcn add). The code is yours: you edit it however you want, without fighting a closed library's style overrides. It's built on Radix UI for accessibility and Tailwind CSS for styling.\n\nIn a few years it has become the default choice for modern React projects, and for good reason: you keep full control, you don't have a dependency that breaks at the next major update, and the look is clean and easy to customize. It's free and open source.\n\nThe flip side: you need Tailwind, it's React only, and since you own the code, maintaining the components is on you (no automatic updates). For a fresh React + Tailwind project, it's hard to beat. If you want very opinionated, ready-made components, Material-UI or Ant Design are more turnkey.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -2929,14 +2952,25 @@
         "Tu n'utilises pas Tailwind CSS",
         "Tu veux des composants plus opinionés comme Material-UI"
       ],
-      "threshold": "Le meilleur choix pour les nouveaux projets React + Tailwind en 2025."
+      "threshold": "Le meilleur choix par défaut pour un nouveau projet React + Tailwind. Si tu n'utilises pas Tailwind, regarde ailleurs."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You use React + Tailwind CSS",
+        "You want accessible, customizable components",
+        "You'd rather own the code than depend on a package"
+      ],
+      "avoidIf": [
+        "You don't use Tailwind CSS",
+        "You want more opinionated, turnkey components like Material-UI"
+      ],
+      "threshold": "The best default choice for a new React + Tailwind project. If you don't use Tailwind, look elsewhere."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "excellent pour projets solo modernes",
-    "teamRelevance": "standard croissant en équipe",
+    "soloRelevance": "high",
+    "teamRelevance": "high",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": "react",
@@ -2950,7 +2984,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "strong",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -2969,8 +3003,8 @@
     "shortDescription": "Bibliothèque de graphiques React construite avec D3.js.",
     "shortDescriptionEn": "React charting library built on top of D3.js.",
     "description": "Recharts est la bibliothèque de graphiques React la plus populaire. Elle encapsule D3.js dans des composants React déclaratifs : Bar, Line, Pie, Area, etc. Gratuite et open source.\n\nParfaite pour des graphiques dans un projet React sans la complexité de D3.js direct. Pour des besoins très custom, D3.js reste nécessaire.",
-    "longDescription": "Recharts encapsule D3.js dans des composants React déclaratifs pour créer des graphiques facilement.",
-    "longDescriptionEn": "Recharts wraps D3.js in declarative React components for easy charting.",
+    "longDescription": "Recharts est sans doute la façon la plus simple d'ajouter des graphiques à un projet React. Il encapsule la puissance de D3.js dans des composants déclaratifs (BarChart, LineChart, PieChart, AreaChart) que tu composes comme n'importe quel JSX. Tooltips, légendes et responsive sont gérés out-of-the-box. C'est gratuit et open source.\n\nPour 90% des dashboards SaaS et des rapports de métriques, c'est exactement ce qu'il faut : tu obtiens un graphique propre en quelques lignes, sans plonger dans la mécanique bas niveau de D3. La documentation est correcte et la communauté large.\n\nLes limites apparaissent sur les cas extrêmes : visualisations très sur mesure (là où D3.js pur reste incontournable), très gros volumes de données, ou animations sophistiquées. Si tu n'es pas sur React, Chart.js est plus adapté. Mais pour des graphiques standards dans une app React, Recharts est le compromis le plus efficace entre simplicité et rendu.",
+    "longDescriptionEn": "Recharts is probably the simplest way to add charts to a React project. It wraps the power of D3.js in declarative components (BarChart, LineChart, PieChart, AreaChart) you compose like any JSX. Tooltips, legends, and responsiveness are handled out of the box. It's free and open source.\n\nFor 90% of SaaS dashboards and metrics reports, it's exactly what you need: you get a clean chart in a few lines, without diving into D3's low-level mechanics. The documentation is decent and the community large.\n\nLimits show up in edge cases: highly custom visualizations (where pure D3.js remains essential), very large datasets, or sophisticated animations. If you're not on React, Chart.js fits better. But for standard charts in a React app, Recharts is the most effective compromise between simplicity and output.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -3045,12 +3079,22 @@
       ],
       "threshold": "Le meilleur compromis pour les graphiques dans un projet React."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You use React and need standard charts",
+        "You want to avoid the complexity of D3.js"
+      ],
+      "avoidIf": [
+        "You need highly custom visualizations",
+        "You don't use React (prefer Chart.js)"
+      ],
+      "threshold": "The best compromise for charts in a React project."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "idéal pour dashboards React",
-    "teamRelevance": "facile à maintenir en équipe",
+    "soloRelevance": "high",
+    "teamRelevance": "high",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": "react",
@@ -3063,7 +3107,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "strong",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -3082,8 +3126,8 @@
     "shortDescription": "Système de composants React haut de gamme pour applications d'entreprise.",
     "shortDescriptionEn": "High-quality React component system for enterprise applications.",
     "description": "Ant Design (AntD) est un design system complet développé par Alibaba. Il fournit 60+ composants React couvrant tous les besoins d'une application d'entreprise : tables, formulaires, modales, navigation, etc. Gratuit et open source.\n\nTrès populaire dans les projets d'entreprise asiatiques et globaux. L'esthétique est distincte et moins personnalisable que shadcn UI ou Material-UI.",
-    "longDescription": "Ant Design est un design system complet par Alibaba avec 60+ composants React pour applications d'entreprise.",
-    "longDescriptionEn": "Ant Design is a complete design system by Alibaba with 60+ React components for enterprise applications.",
+    "longDescription": "Ant Design (AntD) est un design system complet, né chez Alibaba, taillé pour les applications d'entreprise. Là où d'autres librairies te donnent des briques de base, AntD livre plus de 60 composants déjà pensés pour le métier : tables avec tri/filtre/pagination, formulaires complexes avec validation, navigation, modales, et des composants avancés comme la table virtuelle. La documentation est solide et l'ensemble est gratuit et open source.\n\nC'est le choix logique pour un backoffice, un outil interne ou un dashboard riche en données, là où tu veux du fonctionnel et du cohérent sans réinventer chaque table. Le revers : le bundle est très lourd, l'esthétique AntD se reconnaît immédiatement, et personnaliser le thème en profondeur n'est pas trivial.\n\nPour un produit grand public au design distinctif, ce n'est pas le bon outil : shadcn UI te donnera plus de liberté et un poids bien moindre. Mais si ton terrain de jeu, c'est l'application métier dense en tableaux et formulaires, AntD t'évite des semaines de développement.",
+    "longDescriptionEn": "Ant Design (AntD) is a complete design system, born at Alibaba, built for enterprise applications. Where other libraries give you basic building blocks, AntD ships 60+ components already designed for business needs: tables with sorting/filtering/pagination, complex forms with validation, navigation, modals, and advanced components like the virtual table. The documentation is solid and it's all free and open source.\n\nIt's the logical pick for a back-office, an internal tool, or a data-heavy dashboard, where you want functional and consistent without reinventing every table. The downside: the bundle is very heavy, the AntD look is instantly recognizable, and deep theme customization isn't trivial.\n\nFor a consumer product with a distinctive design, it's not the right tool: shadcn UI gives you more freedom and far less weight. But if your playground is dense business apps full of tables and forms, AntD saves you weeks of development.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -3159,12 +3203,23 @@
       ],
       "threshold": "Excellent pour les outils internes enterprise, moins adapté aux produits grand public."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You're building a rich back-office or internal tool",
+        "You need very advanced tables and forms",
+        "The enterprise aesthetic works for you"
+      ],
+      "avoidIf": [
+        "You want a highly custom design",
+        "Bundle size is critical for you"
+      ],
+      "threshold": "Excellent for internal enterprise tools, less suited to consumer products."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": "shadcn-ui",
-    "soloRelevance": "trop lourd pour projets simples",
-    "teamRelevance": "idéal pour équipes enterprise",
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": "react",
@@ -4204,8 +4259,8 @@
     "shortDescription": "Bibliothèque de composants React implémentant le Material Design de Google.",
     "shortDescriptionEn": "React UI component library implementing Google's Material Design.",
     "description": "Material-UI (MUI) est la bibliothèque de composants React la plus populaire. Elle fournit des composants prêts à l'emploi conformes au Material Design de Google : boutons, formulaires, tables, modales, etc. Version de base gratuite, version Pro payante.\n\nIdéale pour des apps B2B/dashboards avec un look professionnel rapide à mettre en place. Moins adaptée si tu veux un design très personnalisé sans l'esthétique Material.",
-    "longDescription": "Material-UI (MUI) est la bibliothèque de composants React la plus populaire. Elle fournit des composants prêts à l'emploi conformes au Material Design de Google.",
-    "longDescriptionEn": "Material-UI (MUI) is the most popular React component library. It provides ready-to-use components conforming to Google's Material Design.",
+    "longDescription": "Material-UI (officiellement MUI) reste l'une des bibliothèques de composants React les plus installées au monde. Tu y trouves plus de 80 composants prêts à l'emploi (boutons, formulaires, tables, modales, navigation) qui suivent le Material Design de Google. L'accessibilité est intégrée, la documentation est excellente, et tu obtiens une interface cohérente et pro en très peu de temps. Le coeur est gratuit et open source.\n\nC'est le réflexe idéal pour un dashboard admin, une app interne ou un produit B2B où la cohérence et la rapidité comptent plus que l'originalité. Là où ça coince : l'esthétique Material se reconnaît au premier coup d'oeil, le bundle est lourd, et personnaliser en profondeur (sortir du look Google) demande du travail. Les composants avancés (data grid, date pickers complexes) passent par MUI X Pro, payant (à partir d'environ 180$/an par développeur).\n\nSi tu veux un produit au design distinctif ou une stack Tailwind moderne, shadcn UI te donnera plus de liberté pour moins de poids. Mais pour livrer vite une interface fonctionnelle et accessible en React, MUI fait toujours le travail.",
+    "longDescriptionEn": "Material-UI (officially MUI) is still one of the most installed React component libraries in the world. You get 80+ ready-to-use components (buttons, forms, tables, modals, navigation) that follow Google's Material Design. Accessibility is built in, the documentation is excellent, and you get a consistent, professional interface in very little time. The core is free and open source.\n\nIt's the ideal instinct for an admin dashboard, an internal app, or a B2B product where consistency and speed matter more than originality. Where it gets tricky: the Material look is recognizable at a glance, the bundle is heavy, and deep customization (escaping the Google look) takes work. Advanced components (data grid, complex date pickers) go through the paid MUI X Pro (from around $180/year per developer).\n\nIf you want a distinctively designed product or a modern Tailwind stack, shadcn UI gives you more freedom for less weight. But to ship a functional, accessible React interface fast, MUI still gets the job done.",
     "pricing": {
       "free": "Version de base gratuite",
       "paid": "MUI X Pro à partir de 180$/an/dev"
@@ -4282,12 +4337,23 @@
       ],
       "threshold": "Meilleur choix pour les apps internes ou B2B avec React."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You're building a dashboard or a B2B app",
+        "You want Material Design without coding it from scratch",
+        "You need built-in accessibility"
+      ],
+      "avoidIf": [
+        "You want a highly custom or distinctive design",
+        "You work with Vue or Svelte"
+      ],
+      "threshold": "Best choice for internal or B2B apps built with React."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": "shadcn-ui",
-    "soloRelevance": "gain de temps significatif",
-    "teamRelevance": "standard pour équipes React",
+    "soloRelevance": "high",
+    "teamRelevance": "high",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": "react",
@@ -4301,7 +4367,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "strong",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -4779,8 +4845,8 @@
     "shortDescription": "Outil pour développer, documenter et tester des composants UI en isolation.",
     "shortDescriptionEn": "Tool for developing, documenting and testing UI components in isolation.",
     "description": "Storybook est l'outil de référence pour développer des composants UI en isolation. Il permet de créer une bibliothèque de composants documentée et interactive, de les tester visuellement et de collaborer avec les designers. Compatible React, Vue, Angular, Svelte et plus. Gratuit et open source.\n\nIncontournable pour les équipes qui maintiennent un design system. En solo ou sur un petit projet, l'overhead de configuration peut ne pas valoir le coût.",
-    "longDescription": "Storybook est l'outil de référence pour développer des composants UI en isolation et créer une bibliothèque de composants documentée.",
-    "longDescriptionEn": "Storybook is the reference tool for developing UI components in isolation and creating a documented component library.",
+    "longDescription": "Storybook, c'est l'atelier où tu développes tes composants UI à part, isolés du reste de l'appli. Au lieu de naviguer dans ton produit pour atteindre un état précis d'un bouton ou d'une modale, tu écris des \"stories\" qui affichent chaque composant dans toutes ses variantes. Résultat : tu vois, documentes et testes ton UI sans dépendre du contexte applicatif. C'est compatible React, Vue, Angular, Svelte et la plupart des frameworks, et c'est gratuit et open source.\n\nPour une équipe qui maintient un design system, c'est quasi incontournable : la bibliothèque de composants devient une source de vérité vivante, partagée entre devs et designers. Couplé à Chromatic (le service cloud payant des mêmes auteurs), tu obtiens des tests de régression visuelle automatiques.\n\nLe revers, c'est l'investissement initial. Configurer Storybook et écrire les stories demande du temps, et sur un petit projet solo, l'overhead n'en vaut souvent pas la peine. La bonne question n'est pas \"est-ce bien\" (oui), mais \"est-ce que mon projet a assez de composants partagés pour le rentabiliser\". Pour un design system d'équipe, la réponse est presque toujours oui.",
+    "longDescriptionEn": "Storybook is the workshop where you build your UI components on the side, isolated from the rest of the app. Instead of navigating through your product to reach a specific state of a button or modal, you write \"stories\" that show each component in all its variants. The result: you see, document, and test your UI without depending on app context. It works with React, Vue, Angular, Svelte, and most frameworks, and it's free and open source.\n\nFor a team maintaining a design system, it's nearly essential: the component library becomes a living source of truth shared between devs and designers. Paired with Chromatic (the paid cloud service from the same authors), you get automatic visual regression testing.\n\nThe trade-off is the upfront investment. Setting up Storybook and writing stories takes time, and on a small solo project the overhead often isn't worth it. The real question isn't \"is it good\" (it is), but \"does my project have enough shared components to justify it\". For a team design system, the answer is almost always yes.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": "Chromatic (service cloud) à partir de 149$/mois"
@@ -4856,12 +4922,23 @@
       ],
       "threshold": "Essentiel pour les équipes avec un design system, optionnel sinon."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You maintain a shared design system",
+        "You work with designers who want to see the components",
+        "You need visual testing"
+      ],
+      "avoidIf": [
+        "You're solo on a project with no design system",
+        "Your project is small and fast-moving"
+      ],
+      "threshold": "Essential for teams with a design system, optional otherwise."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "overhead souvent non justifié",
-    "teamRelevance": "essentiel pour équipes avec design system",
+    "soloRelevance": "low",
+    "teamRelevance": "high",
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
