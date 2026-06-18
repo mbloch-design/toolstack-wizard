@@ -67103,70 +67103,288 @@
     "substitution_cluster_v2": null
   },
   {
-    "id": "cinema-4d",
-    "slug": "cinema-4d",
-    "name": "Cinema 4D",
-    "categoryId": "creation",
-    "shortDescription": "3D orientée motion design, visualisation produit et animation professionnelle.",
-    "shortDescriptionEn": "3D tool for motion design, product visualization, and professional animation.",
-    "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 95€/mois environ"
-    },
-    "defaultMonthlyPrice": 95,
-    "affiliateLink": "",
-    "websiteUrl": "https://www.maxon.net/cinema-4d",
-    "logo": "",
+    "id": "maxon-one",
+    "slug": "maxon-one",
+    "name": "Maxon One",
     "category": "creation",
-    "longDescription": "3D orientée motion design, visualisation produit et animation professionnelle.",
+    "shortDescription": "Le bundle Maxon : Cinema 4D, Redshift, ZBrush, Red Giant, Forger et Universe réunis.",
+    "shortDescriptionEn": "The Maxon bundle: Cinema 4D, Redshift, ZBrush, Red Giant, Forger and Universe together.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "~99,91$/mois (annuel, ~1199$/an). Tout l'écosystème Maxon."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "~$99.91/month (annual, ~$1,199/year). The full Maxon ecosystem."
+    },
+    "defaultMonthlyPrice": 100,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.maxon.net/maxon-one",
+    "logo": "",
+    "longDescription": "Maxon One, c'est l'abonnement tout-en-un qui débloque l'ensemble de l'écosystème Maxon : Cinema 4D (3D et motion), Redshift (moteur de rendu GPU), ZBrush (sculpture numérique), toute la suite Red Giant (Trapcode, Magic Bullet, VFX Suite, Universe), Forger (sculpture mobile) et Team Render. Le tout pour environ 99,91$/mois en annuel (~1199$/an).\n\nLe calcul est simple : pris séparément, Cinema 4D (~60$), ZBrush (~30$) et Red Giant (~50$) dépassent déjà les 140$/mois. Dès que tu utilises deux de ces outils ou plus, le bundle est rentable. Pour un motion designer ou un généraliste 3D qui vit dans cet écosystème, c'est clairement la meilleure formule.\n\nLe revers, c'est le prix absolu et le modèle 100% abonnement. Si tu n'as besoin que d'un seul outil (juste Cinema 4D, ou juste ZBrush), prends-le en standalone, ça coûte deux à trois fois moins cher. Et si le budget est vraiment serré, Blender réunit gratuitement la 3D, la sculpture et un moteur de rendu (Cycles) dans un seul logiciel. Maxon One se justifie pour qui exploite vraiment plusieurs briques de l'écosystème au quotidien.",
+    "longDescriptionEn": "Maxon One is the all-access subscription that unlocks the entire Maxon ecosystem: Cinema 4D (3D and motion), Redshift (GPU render engine), ZBrush (digital sculpting), the full Red Giant suite (Trapcode, Magic Bullet, VFX Suite, Universe), Forger (mobile sculpting) and Team Render. All for around $99.91/month annually (~$1,199/year).\n\nThe math is simple: bought separately, Cinema 4D (~$60), ZBrush (~$30) and Red Giant (~$50) already exceed $140/month. As soon as you use two or more of these tools, the bundle pays off. For a motion designer or 3D generalist who lives in this ecosystem, it's clearly the best deal.\n\nThe downside is the absolute price and the subscription-only model. If you only need a single tool (just Cinema 4D, or just ZBrush), buy it standalone, it costs two to three times less. And if budget is really tight, Blender bundles 3D, sculpting and a render engine (Cycles) for free in one app. Maxon One earns its place for those who genuinely use several pieces of the ecosystem day to day.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable régulier du métier."
+        "Tu utilises au moins deux outils Maxon (C4D, ZBrush, Red Giant, Redshift) au quotidien",
+        "Tu es un généraliste 3D/motion qui vit dans l'écosystème Maxon"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ponctuel dans la stack."
+        "Tu n'as besoin que d'un seul outil : prends-le en standalone, c'est bien moins cher",
+        "Ton budget est serré : Blender réunit 3D, sculpture et rendu gratuitement"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou facturé dans la prestation."
+      "threshold": "Rentable dès que tu exploites deux briques Maxon ou plus. Pour un seul outil ou un budget serré, le standalone ou Blender sont plus malins."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You use at least two Maxon tools (C4D, ZBrush, Red Giant, Redshift) day to day",
+        "You're a 3D/motion generalist living in the Maxon ecosystem"
+      ],
+      "avoidIf": [
+        "You only need one tool: buy it standalone, it's far cheaper",
+        "Your budget is tight: Blender bundles 3D, sculpting and rendering for free"
+      ],
+      "threshold": "Pays off as soon as you use two or more Maxon pieces. For a single tool or a tight budget, standalone or Blender are smarter."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Utile pour structurer une chaîne de production plus professionnelle."
+      "Tout l'écosystème Maxon dans un seul abonnement",
+      "Rentable dès deux outils utilisés (vs achats séparés)",
+      "Couvre 3D, motion, sculpture, rendu GPU et plugins VFX",
+      "Mises à jour incluses pendant l'abonnement"
+    ],
+    "prosEn": [
+      "The entire Maxon ecosystem in one subscription",
+      "Pays off from two tools used (vs separate purchases)",
+      "Covers 3D, motion, sculpting, GPU rendering and VFX plugins",
+      "Updates included during the subscription"
     ],
     "cons": [
-      "Peut devenir un coût dormant si le besoin n’est pas récurrent."
+      "Prix absolu élevé (~100$/mois)",
+      "Modèle 100% abonnement, plus de licence perpétuelle",
+      "Surdimensionné si tu n'utilises qu'un seul outil",
+      "Blender couvre une grande partie des besoins gratuitement"
+    ],
+    "consEn": [
+      "High absolute price (~$100/month)",
+      "Subscription-only, no perpetual license",
+      "Overkill if you only use a single tool",
+      "Blender covers a large part of the needs for free"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Couvrir toute une production 3D/motion avec un seul abonnement",
+      "Passer de la sculpture (ZBrush) au rendu (Redshift) dans le même écosystème",
+      "Combiner Cinema 4D et les plugins Red Giant pour le broadcast",
+      "Équiper un généraliste 3D sans multiplier les abonnements"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Cover a whole 3D/motion production with one subscription",
+      "Go from sculpting (ZBrush) to rendering (Redshift) in the same ecosystem",
+      "Combine Cinema 4D and Red Giant plugins for broadcast",
+      "Equip a 3D generalist without stacking subscriptions"
+    ],
+    "covers": [
+      "3d",
+      "motion-design",
+      "rendu-3d",
+      "sculpture-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video",
+      "createur-contenu"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Intéressant en studio quand il standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Maxon One en 2026 : le bundle Cinema 4D + Redshift + ZBrush + Red Giant. Prix réel, est-ce rentable et alternatives (Blender). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "cinema-4d",
+      "blender"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
-    "substitutable": true,
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": false,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "motion-video",
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "3d",
+      "motion-design",
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "~99,91$/mois en annuel (~1199$/an) ; rentable surtout à partir de 2 outils utilisés"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Maxon One (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 100
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "cinema-4d",
+    "slug": "cinema-4d",
+    "name": "Cinema 4D",
+    "categoryId": "creation",
+    "shortDescription": "Logiciel 3D de Maxon, référence du motion design et de la visualisation produit.",
+    "shortDescriptionEn": "Maxon's 3D software, a reference for motion design and product visualization.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "59,91$/mois (annuel) ou 94$/mois. Inclus dans Maxon One (~100$/mois)."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "$59.91/month (annual) or $94/month. Included in Maxon One (~$100/month)."
+    },
+    "defaultMonthlyPrice": 60,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.maxon.net/cinema-4d",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Cinema 4D, c'est le logiciel 3D de Maxon, et c'est le chouchou des motion designers. Sa réputation tient à deux choses : il est nettement plus accessible que Maya ou Houdini, et son module MoGraph est une référence pour créer des animations procédurales (textes qui se désagrègent, clones, effets de masse) en un temps record. Son intégration avec After Effects via Cineware en fait l'outil 3D par défaut de tout l'univers motion/broadcast.\n\nCôté prix, on est sur de l'abonnement Maxon : environ 59,91$/mois en annuel pour Cinema 4D seul (94$ en mensuel), ou l'abonnement Maxon One autour de 100$/mois qui ajoute Redshift (le moteur de rendu GPU), Red Giant, ZBrush, Forger et Universe. Le moteur Redshift est d'ailleurs inclus avec l'abonnement C4D, ce qui simplifie le rendu.\n\nÀ qui ça s'adresse : aux motion designers, graphistes 3D et studios broadcast qui veulent un outil puissant sans la courbe d'apprentissage abrupte de Maya/Houdini. Le vrai arbitrage, c'est le prix face à Blender, qui est gratuit et est devenu une alternative très sérieuse. Cinema 4D se justifie pour son confort, son MoGraph et son intégration Adobe ; si le budget est serré ou que tu débutes, Blender fait presque tout pour 0€.",
+    "longDescriptionEn": "Cinema 4D is Maxon's 3D software, and it's the darling of motion designers. Its reputation rests on two things: it's noticeably more approachable than Maya or Houdini, and its MoGraph module is a reference for creating procedural animation (text that shatters, cloners, mass effects) in record time. Its integration with After Effects via Cineware makes it the default 3D tool of the whole motion/broadcast world.\n\nOn price, it's a Maxon subscription: around $59.91/month annually for Cinema 4D alone ($94 monthly), or the Maxon One subscription around $100/month that adds Redshift (the GPU render engine), Red Giant, ZBrush, Forger and Universe. The Redshift engine is also included with the C4D subscription, which simplifies rendering.\n\nWho it's for: motion designers, 3D artists and broadcast studios who want a powerful tool without the steep learning curve of Maya/Houdini. The real trade-off is price against Blender, which is free and has become a very serious alternative. Cinema 4D earns its place for its comfort, MoGraph and Adobe integration; if budget is tight or you're starting out, Blender does almost everything for free.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais du motion design ou de la 3D broadcast et tu veux MoGraph + l'intégration After Effects",
+        "Tu veux un outil 3D puissant sans la courbe d'apprentissage de Maya ou Houdini"
+      ],
+      "avoidIf": [
+        "Ton budget est serré ou tu débutes : Blender fait presque tout pour 0€",
+        "Tu as besoin de simulation/FX très avancée : Houdini est plus adapté"
+      ],
+      "threshold": "Pertinent pour un usage motion/3D régulier où MoGraph et l'intégration Adobe font gagner du temps. Pour un usage occasionnel ou un budget serré, Blender suffit."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do motion design or broadcast 3D and want MoGraph + After Effects integration",
+        "You want a powerful 3D tool without the learning curve of Maya or Houdini"
+      ],
+      "avoidIf": [
+        "Your budget is tight or you're a beginner: Blender does almost everything for free",
+        "You need very advanced simulation/FX: Houdini fits better"
+      ],
+      "threshold": "Worth it for regular motion/3D work where MoGraph and Adobe integration save time. For occasional use or a tight budget, Blender is enough."
+    },
+    "pros": [
+      "MoGraph : référence du motion graphics procédural",
+      "Intégration After Effects (Cineware) au coeur du flux motion/broadcast",
+      "Plus accessible que Maya ou Houdini",
+      "Moteur de rendu Redshift inclus dans l'abonnement"
+    ],
+    "prosEn": [
+      "MoGraph: the reference for procedural motion graphics",
+      "After Effects integration (Cineware) at the heart of the motion/broadcast flow",
+      "More approachable than Maya or Houdini",
+      "Redshift render engine included in the subscription"
+    ],
+    "cons": [
+      "Cher face à Blender, qui est gratuit et très capable",
+      "Abonnement only : plus de licence perpétuelle",
+      "Moins adapté que Houdini pour la simulation/FX poussée",
+      "Le bundle Maxon One grimpe vite (~100$/mois)"
+    ],
+    "consEn": [
+      "Pricey next to Blender, which is free and very capable",
+      "Subscription only: no perpetual license",
+      "Less suited than Houdini for heavy simulation/FX",
+      "The Maxon One bundle climbs fast (~$100/month)"
+    ],
+    "useCases": [
+      "Créer des animations de motion graphics avec MoGraph",
+      "Faire de la visualisation produit et du rendu 3D",
+      "Intégrer de la 3D dans un flux After Effects (Cineware)",
+      "Produire des habillages broadcast et des génériques"
+    ],
+    "useCasesEn": [
+      "Create motion graphics animations with MoGraph",
+      "Do product visualization and 3D rendering",
+      "Bring 3D into an After Effects flow (Cineware)",
+      "Produce broadcast graphics and title sequences"
+    ],
+    "covers": [
+      "3d",
+      "motion-design",
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Cinema 4D (Maxon) en 2026 : le logiciel 3D du motion design, prix réels (abonnement, Maxon One) et alternatives (Blender, Maya). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender",
+      "maya",
+      "3ds-max"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "3d",
+      "motion-design"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Abonnement Maxon : C4D seul ~59,91$/mois (annuel) ; Maxon One ~100$/mois"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Cinema 4D (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 60
+    },
+    "substitution_cluster_v2": "3d-software"
   },
   {
     "id": "cavalry",
@@ -68564,66 +68782,139 @@
     "slug": "redshift",
     "name": "Redshift",
     "categoryId": "creation",
-    "shortDescription": "Moteur de rendu GPU orienté production, motion et 3D professionnelle.",
-    "shortDescriptionEn": "Production-focused GPU render engine for motion and professional 3D.",
+    "shortDescription": "Moteur de rendu GPU rapide de Maxon, standard du motion design et de la 3D.",
+    "shortDescriptionEn": "Maxon's fast GPU render engine, a standard in motion design and 3D.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 46€/mois environ"
+      "free": "Essai gratuit",
+      "paid": "~45$/mois (annuel). Inclus avec Cinema 4D et Maxon One."
     },
-    "defaultMonthlyPrice": 46,
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "~$45/month (annual). Included with Cinema 4D and Maxon One."
+    },
+    "defaultMonthlyPrice": 45,
     "affiliateLink": "",
     "websiteUrl": "https://www.maxon.net/redshift",
     "logo": "",
     "category": "creation",
-    "longDescription": "Moteur de rendu GPU orienté production, motion et 3D professionnelle.",
+    "longDescription": "Redshift, c'est le moteur de rendu GPU de Maxon, et son argument principal tient en un mot : la vitesse. C'est un moteur biaisé (biased) qui exploite à fond la carte graphique pour sortir des rendus de qualité production bien plus vite qu'un moteur CPU classique. C'est devenu un standard du motion design et du broadcast, là où les délais sont serrés.\n\nIl ne se limite pas à Cinema 4D : Redshift fonctionne aussi avec Maya, Houdini, 3ds Max et Blender, ce qui en fait un moteur transversal. Côté prix, il est inclus avec l'abonnement Cinema 4D et dans Maxon One, ou disponible en abonnement standalone autour de 45$/mois. Pour qui a déjà C4D ou Maxon One, il n'y a donc rien de plus à payer.\n\nLe vrai arbitrage se joue face aux autres moteurs GPU. Octane (OTOY) joue dans la même cour sur la vitesse et la qualité. V-Ray et Corona (Chaos) sont plus orientés archviz et photoréalisme. Arnold vise le cinéma. Et côté gratuit, Cycles (intégré à Blender) est devenu très bon. Redshift se justifie surtout si tu es dans l'écosystème Maxon ou si tu as besoin de sa vitesse sur de gros volumes de rendu.",
+    "longDescriptionEn": "Redshift is Maxon's GPU render engine, and its main argument fits in one word: speed. It's a biased renderer that pushes the graphics card hard to produce production-quality renders far faster than a classic CPU engine. It has become a standard in motion design and broadcast, where deadlines are tight.\n\nIt isn't limited to Cinema 4D: Redshift also works with Maya, Houdini, 3ds Max and Blender, making it a cross-tool engine. On price, it's included with the Cinema 4D subscription and in Maxon One, or available as a standalone subscription around $45/month. So if you already have C4D or Maxon One, there's nothing extra to pay.\n\nThe real trade-off is against other GPU engines. Octane (OTOY) plays in the same league on speed and quality. V-Ray and Corona (Chaos) lean more toward archviz and photorealism. Arnold targets film. And on the free side, Cycles (built into Blender) has become very good. Redshift earns its place mainly if you're in the Maxon ecosystem or need its speed on heavy render volumes.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu es dans l'écosystème Maxon (Cinema 4D, Maxon One) : il est déjà inclus",
+        "Tu as besoin de rendus GPU rapides sur de gros volumes (motion, broadcast)"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Ton budget est serré : Cycles (gratuit, dans Blender) est devenu très bon",
+        "Tu fais surtout de l'archviz photoréaliste : V-Ray ou Corona sont plus adaptés"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Pertinent dans l'écosystème Maxon ou pour sa vitesse sur de gros rendus. Pour un budget serré, Cycles dans Blender suffit souvent."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're in the Maxon ecosystem (Cinema 4D, Maxon One): it's already included",
+        "You need fast GPU renders on heavy volumes (motion, broadcast)"
+      ],
+      "avoidIf": [
+        "Your budget is tight: Cycles (free, in Blender) has become very good",
+        "You mostly do photorealistic archviz: V-Ray or Corona fit better"
+      ],
+      "threshold": "Worth it in the Maxon ecosystem or for its speed on heavy renders. On a tight budget, Cycles in Blender is often enough."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Très rapide : rendu GPU biaisé de qualité production",
+      "Transversal : C4D, Maya, Houdini, 3ds Max, Blender",
+      "Inclus avec Cinema 4D et Maxon One (rien de plus à payer)",
+      "Standard éprouvé du motion design et du broadcast"
+    ],
+    "prosEn": [
+      "Very fast: biased GPU rendering at production quality",
+      "Cross-tool: C4D, Maya, Houdini, 3ds Max, Blender",
+      "Included with Cinema 4D and Maxon One (nothing extra to pay)",
+      "Proven standard in motion design and broadcast"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Payant en standalone (~45$/mois) si tu n'as pas l'écosystème Maxon",
+      "Cycles (gratuit, Blender) couvre déjà beaucoup de besoins",
+      "Moins orienté archviz photoréaliste que V-Ray ou Corona",
+      "Dépend fortement d'un bon GPU"
+    ],
+    "consEn": [
+      "Paid standalone (~$45/month) if you don't have the Maxon ecosystem",
+      "Cycles (free, Blender) already covers a lot of needs",
+      "Less geared to photorealistic archviz than V-Ray or Corona",
+      "Heavily dependent on a good GPU"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Rendre rapidement des scènes motion design en qualité production",
+      "Sortir de gros volumes de frames sous contrainte de délai",
+      "Rendre depuis Maya, Houdini ou Blender avec un moteur unique",
+      "Profiter du rendu GPU déjà inclus dans Cinema 4D"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Quickly render motion design scenes at production quality",
+      "Output heavy frame volumes under deadline pressure",
+      "Render from Maya, Houdini or Blender with a single engine",
+      "Use the GPU rendering already included in Cinema 4D"
+    ],
+    "covers": [
+      "rendu-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Redshift (Maxon) en 2026 : le moteur de rendu GPU rapide, prix réels (inclus avec C4D/Maxon One) et alternatives (Octane, V-Ray, Cycles). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "octane-render",
+      "v-ray",
+      "corona-renderer"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "motion-video",
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "Inclus avec Cinema 4D et Maxon One ; standalone ~45$/mois (annuel)"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Redshift (standalone)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 45
+    },
+    "substitution_cluster_v2": "render-engine"
   },
   {
     "id": "pure-ref",
@@ -68960,66 +69251,135 @@
     "slug": "zbrush",
     "name": "ZBrush",
     "categoryId": "creation",
-    "shortDescription": "Sculpture numérique avancée pour personnages, props et concept 3D.",
-    "shortDescriptionEn": "Advanced digital sculpting for characters, props, and 3D concept.",
+    "shortDescription": "La référence de la sculpture numérique 3D (personnages, créatures, props), chez Maxon.",
+    "shortDescriptionEn": "The reference for digital 3D sculpting (characters, creatures, props), by Maxon.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 40€/mois environ"
+      "free": "ZBrushCoreMini gratuit (limité)",
+      "paid": "29,91$/mois (annuel). Inclus dans Maxon One."
     },
-    "defaultMonthlyPrice": 40,
+    "pricingEn": {
+      "free": "ZBrushCoreMini free (limited)",
+      "paid": "$29.91/month (annual). Included in Maxon One."
+    },
+    "defaultMonthlyPrice": 30,
     "affiliateLink": "",
     "websiteUrl": "https://www.maxon.net/zbrush",
     "logo": "",
     "category": "creation",
-    "longDescription": "Sculpture numérique avancée pour personnages, props et concept 3D.",
+    "longDescription": "ZBrush, c'est LE standard de la sculpture numérique. Créé par Pixologic puis racheté par Maxon en 2022, il permet de sculpter des modèles 3D à des dizaines de millions de polygones comme on travaillerait de l'argile. C'est l'outil incontournable pour créer des personnages, des créatures, des props et du concept 3D dans le jeu vidéo, le cinéma et l'impression 3D.\n\nSa force est aussi sa difficulté : l'interface est célèbre pour être déroutante et la courbe d'apprentissage est raide. Mais une fois maîtrisé, rien n'égale sa finesse de sculpture. Le modèle est passé à l'abonnement Maxon (29,91$/mois en annuel, ou inclus dans Maxon One avec Cinema 4D et Redshift) ; la licence perpétuelle historique n'est plus vendue. Il existe aussi une version iPad.\n\nÀ qui ça s'adresse : aux artistes 3D, character designers et sculpteurs pros. L'arbitrage se fait surtout sur le prix et l'usage. Blender intègre désormais un mode sculpture gratuit qui progresse vite, et sur iPad, Nomad Sculpt offre 90% de l'expérience pour quelques euros. ZBrush reste la référence pour le travail pro intensif ; pour un usage occasionnel ou débutant, les alternatives gratuites suffisent souvent.",
+    "longDescriptionEn": "ZBrush is THE standard for digital sculpting. Created by Pixologic and acquired by Maxon in 2022, it lets you sculpt 3D models at tens of millions of polygons as if working with clay. It's the go-to tool for creating characters, creatures, props and 3D concept work in games, film and 3D printing.\n\nIts strength is also its difficulty: the interface is famous for being disorienting and the learning curve is steep. But once mastered, nothing matches its sculpting finesse. The model moved to a Maxon subscription ($29.91/month annually, or included in Maxon One alongside Cinema 4D and Redshift); the historic perpetual license is no longer sold. There's also an iPad version.\n\nWho it's for: 3D artists, character designers and pro sculptors. The trade-off is mainly price and usage. Blender now includes a free sculpting mode that's improving fast, and on iPad, Nomad Sculpt offers 90% of the experience for a few euros. ZBrush stays the reference for intensive pro work; for occasional or beginner use, free alternatives are often enough.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu sculptes des personnages, créatures ou props en 3D de façon pro et régulière",
+        "Tu veux la finesse de sculpture la plus avancée du marché"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu débutes ou sculptes occasionnellement : Blender (gratuit) ou Nomad Sculpt suffisent",
+        "L'interface déroutante de ZBrush est un frein pour ton usage"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Pertinent pour de la sculpture 3D pro et intensive. Pour un usage occasionnel, Blender ou Nomad Sculpt couvrent l'essentiel gratuitement ou pour quelques euros."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You sculpt 3D characters, creatures or props professionally and regularly",
+        "You want the most advanced sculpting finesse on the market"
+      ],
+      "avoidIf": [
+        "You're a beginner or sculpt occasionally: Blender (free) or Nomad Sculpt are enough",
+        "ZBrush's disorienting interface is a blocker for your use"
+      ],
+      "threshold": "Worth it for pro, intensive 3D sculpting. For occasional use, Blender or Nomad Sculpt cover the basics for free or a few euros."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Référence absolue de la sculpture numérique haute densité",
+      "Finesse et outils inégalés pour personnages et créatures",
+      "Inclus dans Maxon One (avec Cinema 4D et Redshift)",
+      "Version iPad disponible"
+    ],
+    "prosEn": [
+      "The absolute reference for high-density digital sculpting",
+      "Unmatched finesse and tools for characters and creatures",
+      "Included in Maxon One (with Cinema 4D and Redshift)",
+      "iPad version available"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Interface déroutante et courbe d'apprentissage raide",
+      "Abonnement only : plus de licence perpétuelle",
+      "Blender (gratuit) et Nomad Sculpt grignotent son terrain",
+      "Surdimensionné pour un usage occasionnel ou débutant"
+    ],
+    "consEn": [
+      "Disorienting interface and steep learning curve",
+      "Subscription only: no perpetual license",
+      "Blender (free) and Nomad Sculpt are eating into its turf",
+      "Overkill for occasional or beginner use"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Sculpter un personnage ou une créature pour le jeu vidéo ou le cinéma",
+      "Créer des props et du concept 3D haute densité",
+      "Préparer un modèle pour l'impression 3D",
+      "Détailler un modèle avant retopologie et texturing"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Sculpt a character or creature for games or film",
+      "Create high-density props and 3D concept work",
+      "Prepare a model for 3D printing",
+      "Detail a model before retopology and texturing"
+    ],
+    "covers": [
+      "sculpture-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "ZBrush (Maxon) en 2026 : la référence de la sculpture numérique 3D, prix réels (abonnement, Maxon One) et alternatives (Blender, Nomad Sculpt). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "sculpture-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "Abonnement Maxon : 29,91$/mois (annuel) ; inclus dans Maxon One"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "ZBrush (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 30
+    },
+    "substitution_cluster_v2": "3d-software"
   },
   {
     "id": "unreal-engine",
