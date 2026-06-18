@@ -107,6 +107,7 @@ const SLUGS = slugArgs.length ? slugArgs : DEFAULT_SLUGS;
 // Champ JSON -> noms de colonne possibles (on prend le premier qui existe
 // réellement dans la ligne Supabase).
 const FIELD_MAP = {
+  name: ["name"],
   shortDescription: ["shortDescription", "short_description"],
   shortDescriptionEn: ["shortDescriptionEn", "short_description_en"],
   description: ["description"],
