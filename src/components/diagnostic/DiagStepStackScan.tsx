@@ -20,7 +20,7 @@ import {
   X,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import type { CreativeSpecialty, SessionState, Tool } from "@/types/diagnostic";
+import type { SessionState, Tool } from "@/types/diagnostic";
 import {
   formatMonthlyEur,
   formatMonthlyTotal,
@@ -357,168 +357,6 @@ const CREATIVE_PARENT_RELATIONS = [
   },
 ] as const;
 
-const CREATIVE_SPECIALTY_CONFIG: Record<CreativeSpecialty, {
-  labelFr: string;
-  labelEn: string;
-  momentOrder: readonly StackMoment["id"][];
-  toolsByMoment: Partial<Record<StackMoment["id"], readonly string[]>>;
-}> = {
-  brand_identity: {
-    labelFr: "Identité / direction artistique",
-    labelEn: "Brand / art direction",
-    momentOrder: [
-      "creative-brief-assets",
-      "creative-design-core",
-      "creative-plugins-resources",
-      "creative-admin-rights",
-      "creative-client-review",
-      "creative-ai-visual",
-      "creative-handoff-web",
-      "creative-measure-growth",
-      "creative-motion-video",
-      "creative-photo-retouch",
-    ],
-    toolsByMoment: {
-      "creative-design-core": ["adobe-illustrator", "adobe-photoshop", "indesign", "figma", "canva", "affinity-photo"],
-      "creative-plugins-resources": ["fontbase", "rightfont", "envato-elements", "icons8", "noun-project", "dynamic-mockups", "hugeicons"],
-      "creative-admin-rights": ["adobe-cc", "envato-elements", "brandpad", "fontbase", "rightfont"],
-      "creative-client-review": ["google-drive", "dropbox", "wetransfer", "adobe-acrobat", "adobe-acrobat-sign"],
-    },
-  },
-  ui_product: {
-    labelFr: "UI / produit",
-    labelEn: "UI / product",
-    momentOrder: [
-      "creative-brief-assets",
-      "creative-design-core",
-      "creative-plugins-resources",
-      "creative-handoff-web",
-      "creative-client-review",
-      "creative-admin-rights",
-      "creative-measure-growth",
-      "creative-ai-visual",
-      "creative-motion-video",
-      "creative-photo-retouch",
-    ],
-    toolsByMoment: {
-      "creative-design-core": ["figma", "sketch", "framer", "webflow-framer", "canva"],
-      "creative-plugins-resources": ["figma-iconify", "figma-tokens", "figma-stark", "figma-anima", "figma-slides", "hugeicons"],
-      "creative-handoff-web": ["zeplin", "protopie", "rive", "spline", "framer", "figma-tokens", "figma-anima"],
-      "creative-client-review": ["loom", "tella", "google-drive", "notion"],
-    },
-  },
-  motion_video: {
-    labelFr: "Motion / vidéo",
-    labelEn: "Motion / video",
-    momentOrder: [
-      "creative-brief-assets",
-      "creative-motion-video",
-      "creative-ai-visual",
-      "creative-client-review",
-      "creative-plugins-resources",
-      "creative-admin-rights",
-      "creative-measure-growth",
-      "creative-design-core",
-      "creative-handoff-web",
-      "creative-photo-retouch",
-    ],
-    toolsByMoment: {
-      "creative-motion-video": ["adobe-after-effects", "adobe-premiere-pro", "davinci-resolve", "capcut", "ae-bodymovin", "ae-animation-composer", "motion-bro", "ae-overlord", "ae-duik", "ae-gifgun", "ae-red-giant", "topaz-video-ai"],
-      "creative-ai-visual": ["runway", "kling-ai", "midjourney", "firefly", "krea-ai", "topaz-video-ai"],
-      "creative-client-review": ["frame-io", "descript", "tella", "loom", "wetransfer"],
-      "creative-plugins-resources": ["motion-array", "lottiefiles", "ae-bodymovin", "envato-elements"],
-    },
-  },
-  photo_retouch: {
-    labelFr: "Photo / retouche",
-    labelEn: "Photo / retouching",
-    momentOrder: [
-      "creative-brief-assets",
-      "creative-photo-retouch",
-      "creative-client-review",
-      "creative-admin-rights",
-      "creative-ai-visual",
-      "creative-plugins-resources",
-      "creative-measure-growth",
-      "creative-design-core",
-      "creative-motion-video",
-      "creative-handoff-web",
-    ],
-    toolsByMoment: {
-      "creative-photo-retouch": ["adobe-lightroom", "capture-one", "adobe-photoshop", "luminar-neo", "nik-collection", "lightroom-mobile", "pixieset"],
-      "creative-ai-visual": ["remove-bg", "firefly", "krea-ai", "topaz-video-ai", "adobe-photoshop"],
-      "creative-client-review": ["pixieset", "dropbox", "google-drive", "wetransfer", "adobe-acrobat"],
-      "creative-admin-rights": ["adobe-cc", "fontbase", "rightfont", "envato-elements"],
-    },
-  },
-  content_social: {
-    labelFr: "Contenu social",
-    labelEn: "Social content",
-    momentOrder: [
-      "creative-brief-assets",
-      "creative-ai-visual",
-      "creative-motion-video",
-      "creative-design-core",
-      "creative-measure-growth",
-      "creative-client-review",
-      "creative-admin-rights",
-      "creative-plugins-resources",
-      "creative-handoff-web",
-      "creative-photo-retouch",
-    ],
-    toolsByMoment: {
-      "creative-design-core": ["canva", "adobe-express", "figma", "adobe-photoshop"],
-      "creative-ai-visual": ["midjourney", "firefly", "krea-ai", "runway", "ideogram", "leonardo-ai"],
-      "creative-motion-video": ["capcut", "descript", "tella", "runway", "adobe-premiere-pro"],
-      "creative-measure-growth": ["brevo", "mailerlite", "google-analytics", "hubspot", "posthog", "hotjar"],
-    },
-  },
-  illustration_3d: {
-    labelFr: "Illustration / 3D",
-    labelEn: "Illustration / 3D",
-    momentOrder: [
-      "creative-brief-assets",
-      "creative-design-core",
-      "creative-ai-visual",
-      "creative-motion-video",
-      "creative-handoff-web",
-      "creative-plugins-resources",
-      "creative-client-review",
-      "creative-admin-rights",
-      "creative-photo-retouch",
-      "creative-measure-growth",
-    ],
-    toolsByMoment: {
-      "creative-design-core": ["procreate", "adobe-illustrator", "adobe-photoshop", "affinity-photo", "figma"],
-      "creative-ai-visual": ["midjourney", "krea-ai", "stable-diffusion", "leonardo-ai", "flux", "ideogram"],
-      "creative-handoff-web": ["spline", "rive", "framer", "figma"],
-      "creative-motion-video": ["adobe-after-effects", "lottiefiles", "ae-bodymovin", "runway"],
-    },
-  },
-  creative_ops: {
-    labelFr: "Studio / ops créa",
-    labelEn: "Studio / creative ops",
-    momentOrder: [
-      "creative-admin-rights",
-      "creative-client-review",
-      "creative-brief-assets",
-      "creative-measure-growth",
-      "creative-design-core",
-      "creative-plugins-resources",
-      "creative-handoff-web",
-      "creative-motion-video",
-      "creative-ai-visual",
-      "creative-photo-retouch",
-    ],
-    toolsByMoment: {
-      "creative-admin-rights": ["stripe", "indy", "paypal", "adobe-cc", "envato-elements", "fontbase", "rightfont", "brandpad"],
-      "creative-client-review": ["frame-io", "loom", "tella", "wetransfer", "google-drive", "dropbox"],
-      "creative-brief-assets": ["notion", "milanote", "google-drive", "dropbox", "airtable"],
-      "creative-measure-growth": ["hubspot", "brevo", "mailerlite", "google-analytics", "looker-studio"],
-    },
-  },
-} as const;
-
 type StackMoment = (typeof STACK_MOMENTS)[number] | (typeof CREATIVE_STACK_MOMENTS)[number];
 type StackFeedAnimation = {
   id: string;
@@ -527,12 +365,6 @@ type StackFeedAnimation = {
   fromY: number;
   toX: number;
   toY: number;
-};
-
-type RecentConfirmation = {
-  id: string;
-  tool: Tool;
-  source: "suggestion" | "search" | "manual";
 };
 
 type BillingOption = {
@@ -718,34 +550,8 @@ function matchesMoment(tool: Tool, moment: StackMoment) {
   return moment.pattern.test(toolText(tool));
 }
 
-function getCreativeSpecialty(value?: string): CreativeSpecialty | null {
-  if (!value) return null;
-  return Object.prototype.hasOwnProperty.call(CREATIVE_SPECIALTY_CONFIG, value) ? (value as CreativeSpecialty) : null;
-}
-
-function orderMomentsForCreativeSpecialty(
-  moments: readonly StackMoment[],
-  specialty: CreativeSpecialty | null
-): readonly StackMoment[] {
-  if (!specialty) return moments;
-  const order = CREATIVE_SPECIALTY_CONFIG[specialty].momentOrder;
-  const rank = new Map(order.map((id, index) => [id, index]));
-  return [...moments].sort((a, b) => (rank.get(a.id) ?? 99) - (rank.get(b.id) ?? 99));
-}
-
-function getCreativeSpecialtyToolIds(activeMomentId: string, primarySpecialty?: string) {
-  const specialty = getCreativeSpecialty(primarySpecialty);
-  if (!specialty) return new Set<string>();
-  const toolsByMoment = CREATIVE_SPECIALTY_CONFIG[specialty].toolsByMoment as Partial<Record<string, readonly string[]>>;
-  return new Set(toolsByMoment[activeMomentId] || []);
-}
-
-function getStackMomentsForPersona(
-  persona: SessionState["persona"],
-  primarySpecialty?: string
-): readonly StackMoment[] {
-  if (persona !== "SOFIA") return STACK_MOMENTS;
-  return orderMomentsForCreativeSpecialty(CREATIVE_STACK_MOMENTS, getCreativeSpecialty(primarySpecialty));
+function getStackMomentsForPersona(persona: SessionState["persona"]): readonly StackMoment[] {
+  return persona === "SOFIA" ? CREATIVE_STACK_MOMENTS : STACK_MOMENTS;
 }
 
 function getCreativeContextualToolIds(
@@ -779,13 +585,6 @@ function nextMomentId(
   return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || null;
 }
 
-function scrollCardIntoView(toolId: string) {
-  window.setTimeout(() => {
-    const target = document.querySelector<HTMLElement>(`[data-stack-tool-card-id="${toolId}"]`);
-    target?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-  }, 60);
-}
-
 export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onPrev, onTrack, t, fromTool }: Props) {
   const [search, setSearch] = useState("");
   const questionRef = useRef<HTMLHeadingElement | null>(null);
@@ -801,7 +600,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     );
     return entryTool ? [withDefaultOffer(entryTool)] : [];
   }, [fromTool, session.selectedTools, tools]);
-  const stackMoments = useMemo(() => getStackMomentsForPersona(session.persona, session.primarySpecialty), [session.persona, session.primarySpecialty]);
+  const stackMoments = useMemo(() => getStackMomentsForPersona(session.persona), [session.persona]);
   const [selectedTools, setSelectedTools] = useState<Tool[]>(initialSelectedTools);
   const [activeMomentId, setActiveMomentId] = useState<string>(() => {
     const covered = new Set((session.selectionCoverage?.covered || []));
@@ -811,6 +610,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [skippedMomentIds, setSkippedMomentIds] = useState<Set<string>>(
     () => new Set(session.selectionCoverage?.skipped || [])
   );
+  const [completedMomentIds, setCompletedMomentIds] = useState<Set<string>>(
+    () => new Set(session.selectionCoverage?.covered || [])
+  );
   const [showCatalog, setShowCatalog] = useState(false);
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
@@ -818,7 +620,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [pendingToolId, setPendingToolId] = useState<string | null>(null);
   const [pendingSource, setPendingSource] = useState<"suggestion" | "search">("suggestion");
   const [lastConfirmedToolId, setLastConfirmedToolId] = useState<string | null>(null);
-  const [recentConfirmation, setRecentConfirmation] = useState<RecentConfirmation | null>(null);
   const [feedAnimation, setFeedAnimation] = useState<StackFeedAnimation | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
@@ -844,27 +645,17 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [allKnownTools, search, selectedIds]);
 
-  useEffect(() => {
-    if (!recentConfirmation) return;
-    const timeout = window.setTimeout(() => {
-      setRecentConfirmation((current) =>
-        current?.id === recentConfirmation.id ? null : current
-      );
-    }, 1900);
-    return () => window.clearTimeout(timeout);
-  }, [recentConfirmation]);
-
   const momentCoverage = useMemo(() => {
     return stackMoments.map((moment) => {
       const selected = selectedTools.filter((tool) => matchesMoment(tool, moment));
       return {
         ...moment,
         selected,
-        covered: selected.length > 0,
+        covered: completedMomentIds.has(moment.id),
         skipped: skippedMomentIds.has(moment.id),
       };
     });
-  }, [selectedTools, skippedMomentIds, stackMoments]);
+  }, [completedMomentIds, selectedTools, skippedMomentIds, stackMoments]);
 
   const coveredMomentIds = useMemo(
     () => new Set(momentCoverage.filter((moment) => moment.covered).map((moment) => moment.id)),
@@ -875,26 +666,34 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const activeMomentSuggestions = useMemo(() => {
     const activeMomentIds = activeMoment.ids as readonly string[];
     const contextualToolIds = getCreativeContextualToolIds(selectedTools, activeMoment.id, session.persona);
-    const specialtyToolIds = getCreativeSpecialtyToolIds(activeMoment.id, session.primarySpecialty);
-    return tools
-      .filter((tool) =>
-        !selectedIds.has(tool.id) &&
-        (matchesMoment(tool, activeMoment) || contextualToolIds.has(tool.id) || specialtyToolIds.has(tool.id))
-      )
+    const explicitRank = new Map(activeMomentIds.map((id, index) => [normalize(id), index]));
+    const candidates = tools
+      .filter((tool) => !selectedIds.has(tool.id))
+      .filter((tool) => explicitRank.has(normalize(tool.id)) || contextualToolIds.has(tool.id));
+
+    // The curated IDs are the intent model for the question. Broad text matching is
+    // only a fallback when the catalogue is incomplete, otherwise generic terms
+    // such as “asset” or “design” make every question surface the same tools.
+    const fallback = candidates.length >= 4
+      ? []
+      : tools.filter((tool) =>
+          !selectedIds.has(tool.id) &&
+          !candidates.some((candidate) => candidate.id === tool.id) &&
+          matchesMoment(tool, activeMoment)
+        );
+
+    return [...candidates, ...fallback]
       .sort((a, b) => {
         const aContext = contextualToolIds.has(a.id);
         const bContext = contextualToolIds.has(b.id);
         if (aContext !== bContext) return aContext ? -1 : 1;
-        const aSpecialty = specialtyToolIds.has(a.id);
-        const bSpecialty = specialtyToolIds.has(b.id);
-        if (aSpecialty !== bSpecialty) return aSpecialty ? -1 : 1;
-        const aKnown = activeMomentIds.includes(a.id);
-        const bKnown = activeMomentIds.includes(b.id);
-        if (aKnown !== bKnown) return aKnown ? -1 : 1;
+        const aRank = explicitRank.get(normalize(a.id)) ?? Number.MAX_SAFE_INTEGER;
+        const bRank = explicitRank.get(normalize(b.id)) ?? Number.MAX_SAFE_INTEGER;
+        if (aRank !== bRank) return aRank - bRank;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
       .slice(0, session.persona === "SOFIA" ? 8 : 6);
-  }, [activeMoment, selectedIds, selectedTools, session.persona, session.primarySpecialty, tools]);
+  }, [activeMoment, selectedIds, selectedTools, session.persona, tools]);
   const pendingTool = useMemo(() => {
     if (!pendingToolId) return null;
     return allKnownTools.find((tool) => tool.id === pendingToolId) || null;
@@ -963,7 +762,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
       setPendingToolId(tool.id);
       setPendingSource(source === "search" ? "search" : "suggestion");
-      scrollCardIntoView(tool.id);
       onTrack?.("selector_tool_plan_opened", {
         tool_id: tool.id,
         tool_name: tool.name,
@@ -1031,11 +829,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       };
       setPendingToolId(null);
       setLastConfirmedToolId(tool.id);
-      setRecentConfirmation({
-        id: `${tool.id}-${Date.now()}`,
-        tool: selectedTool,
-        source,
-      });
       if (sourceRect && targetRect) {
         setFeedAnimation({
           id: `${tool.id}-${Date.now()}`,
@@ -1085,11 +878,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, "EUR"));
     setSelectedTools((prev) => [...prev, customTool]);
     setLastConfirmedToolId(customTool.id);
-    setRecentConfirmation({
-      id: `${customTool.id}-${Date.now()}`,
-      tool: customTool,
-      source: "manual",
-    });
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -1123,13 +911,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   };
 
   const moveToNextMoment = () => {
+    const nextCompleted = new Set(completedMomentIds);
+    nextCompleted.add(activeMoment.id);
+    setCompletedMomentIds(nextCompleted);
     onTrack?.("selector_moment_next", {
       moment_id: activeMoment.id,
       selected_in_moment: selectedInActiveMoment,
       selected_count: selectedTools.length,
       covered_count: coveredCount,
     });
-    const next = nextMomentId(stackMoments, coveredMomentIds, skippedMomentIds, activeMoment.id);
+    const next = nextMomentId(stackMoments, nextCompleted, skippedMomentIds, activeMoment.id);
     if (next) {
       setActiveMomentId(next);
     } else {
@@ -1140,13 +931,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const skipActiveMoment = () => {
     const nextSkipped = new Set(skippedMomentIds);
     nextSkipped.add(activeMoment.id);
+    const nextCompleted = new Set(completedMomentIds);
+    nextCompleted.delete(activeMoment.id);
+    setCompletedMomentIds(nextCompleted);
     onTrack?.("selector_moment_skipped", {
       moment_id: activeMoment.id,
       selected_count: selectedTools.length,
       skipped_count: nextSkipped.size,
     });
     setSkippedMomentIds(nextSkipped);
-    const next = nextMomentId(stackMoments, coveredMomentIds, nextSkipped, activeMoment.id);
+    const next = nextMomentId(stackMoments, nextCompleted, nextSkipped, activeMoment.id);
     if (next) {
       setActiveMomentId(next);
     } else {
@@ -1344,11 +1138,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             "One area at a time. Click a tool, clarify how you use it, then it joins your stack."
           )}
         </p>
-        <SelectionFlowCue
-          hasSelection={selectedTools.length > 0}
-          hasPendingTool={Boolean(pendingTool)}
-          t={t}
-        />
         {onPrev && (
           <button
             type="button"
@@ -1379,16 +1168,20 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           <div
             key={activeMoment.id}
-            className="mt-6 space-y-2 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
+            className="relative mt-5 overflow-hidden rounded-3xl bg-foreground px-5 py-6 text-background shadow-xl animate-in fade-in-0 slide-in-from-bottom-2 duration-300 md:px-7 md:py-8"
           >
+            <div className="absolute inset-y-0 left-0 w-1.5 bg-[hsl(var(--diag-yellow))]" />
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[hsl(var(--diag-yellow))]">
+              {t(`Question ${Math.max(1, momentCoverage.findIndex((moment) => moment.id === activeMoment.id) + 1)} sur ${stackMoments.length}`, `Question ${Math.max(1, momentCoverage.findIndex((moment) => moment.id === activeMoment.id) + 1)} of ${stackMoments.length}`)}
+            </p>
             <h2
               ref={questionRef}
               tabIndex={-1}
-              className="text-2xl font-bold text-foreground outline-none md:text-3xl"
+              className="max-w-3xl text-3xl font-bold leading-[1.08] text-background outline-none md:text-[2.35rem]"
             >
               {t(activeMoment.questionFr, activeMoment.questionEn)}
             </h2>
-            <p className="text-sm text-muted-foreground">
+            <p className="mt-3 text-sm text-background/65 md:text-base">
               {t(activeMoment.hintFr, activeMoment.hintEn)}
             </p>
           </div>
@@ -1397,20 +1190,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             <PlanFocusBanner
               tool={pendingTool}
               onCancel={cancelPendingTool}
-              t={t}
-            />
-          )}
-
-          {pendingTool && (
-            <PendingInlineHint
-              tool={pendingTool}
-              t={t}
-            />
-          )}
-
-          {!pendingTool && recentConfirmation && (
-            <SelectionConfirmedBanner
-              confirmation={recentConfirmation}
               t={t}
             />
           )}
@@ -1480,8 +1259,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           {!search.trim() && (
             <div className="mt-6 space-y-3">
-              <p className="text-xs font-semibold uppercase text-muted-foreground">
-                {t("Suggestions fréquentes", "Common suggestions")}
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                {t("Les plus adaptés à cette question", "Best matches for this question")}
               </p>
               <div className="grid gap-2 sm:grid-cols-2">
                 {activeMomentSuggestions.length > 0 ? activeMomentSuggestions.map((tool) => (
@@ -1574,12 +1353,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               <button
                 type="button"
                 onClick={moveToNextMoment}
-                disabled={selectedInActiveMoment === 0 || Boolean(pendingTool)}
+                disabled={selectedInActiveMoment === 0}
                 className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold disabled:opacity-40"
               >
-                {pendingTool
-                  ? t("Termine cet ajout d’abord", "Finish this add first")
-                  : t("Zone suivante", "Next area")}
+                {t("Zone suivante", "Next area")}
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
@@ -1593,7 +1370,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           pricingSummary={pricingSummary}
           coverageComplete={coverageCount >= stackMoments.length}
           highlightToolId={lastConfirmedToolId}
-          recentConfirmation={recentConfirmation}
           stackDropRef={stackDropRef}
           onPricingReview={scrollToFirstPricingIssue}
           onReview={() => openReview("stack_companion")}
@@ -1612,80 +1388,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         onReview={() => openReview("mobile_stack_bar")}
         t={t}
       />
-    </div>
-  );
-}
-
-function SelectionFlowCue({
-  hasSelection,
-  hasPendingTool,
-  t,
-}: {
-  hasSelection: boolean;
-  hasPendingTool: boolean;
-  t: (fr: string, en: string) => string;
-}) {
-  const activeStep = hasPendingTool ? 2 : hasSelection ? 3 : 1;
-  const steps = [
-    {
-      id: 1,
-      titleFr: "Choisis un outil",
-      titleEn: "Choose a tool",
-      detailFr: "Premier clic",
-      detailEn: "First click",
-    },
-    {
-      id: 2,
-      titleFr: "Précise le mode",
-      titleEn: "Choose the mode",
-      detailFr: "Plan ou usage",
-      detailEn: "Plan or usage",
-    },
-    {
-      id: 3,
-      titleFr: "Il rejoint ta stack",
-      titleEn: "It joins your stack",
-      detailFr: "Ajout confirmé",
-      detailEn: "Confirmed add",
-    },
-  ];
-
-  return (
-    <div className="mx-auto mt-4 grid max-w-2xl gap-2 sm:grid-cols-3">
-      {steps.map((step) => {
-        const isActive = step.id === activeStep;
-        const isPast = step.id < activeStep;
-        return (
-          <div
-            key={step.id}
-            className={`rounded-2xl border px-3 py-3 text-left transition-colors ${
-              isActive
-                ? "border-foreground bg-foreground text-background"
-                : isPast
-                  ? "border-primary/20 bg-primary/5 text-foreground"
-                  : "border-border bg-background text-foreground"
-            }`}
-          >
-            <div className="flex items-center gap-2">
-              <span
-                className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold ${
-                  isActive
-                    ? "bg-background text-foreground"
-                    : isPast
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground"
-                }`}
-              >
-                {step.id}
-              </span>
-              <p className="text-sm font-semibold">{t(step.titleFr, step.titleEn)}</p>
-            </div>
-            <p className={`mt-1 text-xs ${isActive ? "text-background/70" : "text-muted-foreground"}`}>
-              {t(step.detailFr, step.detailEn)}
-            </p>
-          </div>
-        );
-      })}
     </div>
   );
 }
@@ -1742,14 +1444,7 @@ function ToolChoiceButton({
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <p className="truncate text-sm font-semibold text-foreground">{displayTool.name}</p>
-            {selected && (
-              <span className="inline-flex h-5 shrink-0 items-center rounded-full bg-primary/12 px-2 text-[10px] font-bold uppercase tracking-[0.08em] text-primary">
-                {t("Ajouté", "Added")}
-              </span>
-            )}
-          </div>
+          <p className="truncate text-sm font-semibold text-foreground">{displayTool.name}</p>
           <p className="truncate text-xs text-muted-foreground">
             {selected
               ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
@@ -1782,7 +1477,7 @@ function ToolChoiceButton({
           <div className="space-y-1">
             <p className="flex items-center gap-1 truncate text-[11px] font-semibold text-foreground">
               <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-foreground font-mono text-[9px] text-background">2</span>
-              {t("Choisis maintenant le mode", "Choose the mode now")}
+              {t("Précise le mode pour l’ajouter", "Clarify the mode to add it")}
             </p>
             <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
           </div>
@@ -1794,69 +1489,15 @@ function ToolChoiceButton({
           >
             <span className="min-w-0">
               <span className="block truncate text-xs font-semibold text-foreground">
-                {t("1. Choisir cet outil", "1. Choose this tool")}
+                {t("Préciser l’usage", "Clarify usage")}
               </span>
               <span className="block truncate text-[11px] font-medium text-muted-foreground">
-                {t("le mode s’ouvre juste ici", "the mode opens right here")}
+                {t("puis ajout automatique", "then auto-add")}
               </span>
             </span>
             <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
           </button>
         )}
-      </div>
-    </div>
-  );
-}
-
-function PendingInlineHint({
-  tool,
-  t,
-}: {
-  tool: Tool;
-  t: (fr: string, en: string) => string;
-}) {
-  return (
-    <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-3" role="status" aria-live="polite">
-      <p className="text-sm font-semibold text-foreground">
-        {t(`Étape 2 en cours pour ${tool.name}`, `Step 2 in progress for ${tool.name}`)}
-      </p>
-      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-        {t(
-          "Choisis le mode dans la carte en surbrillance. Dès ce choix confirmé, l’outil rejoint la colonne de droite.",
-          "Choose the mode in the highlighted card. As soon as it is confirmed, the tool moves into the right column."
-        )}
-      </p>
-    </div>
-  );
-}
-
-function SelectionConfirmedBanner({
-  confirmation,
-  t,
-}: {
-  confirmation: RecentConfirmation;
-  t: (fr: string, en: string) => string;
-}) {
-  return (
-    <div className="mt-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/8 px-4 py-3" role="status" aria-live="polite">
-      <div className="flex items-center gap-3">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-          <Check className="h-4 w-4" />
-        </span>
-        <div className="min-w-0">
-          <p className="text-sm font-semibold text-foreground">
-            {t(
-              `${confirmation.tool.name} rejoint ta stack`,
-              `${confirmation.tool.name} just joined your stack`
-            )}
-          </p>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            {t(
-              `${offerLabel(confirmation.tool, t)} · ${formatToolMonthlyBudget(confirmation.tool, t)}`,
-              `${offerLabel(confirmation.tool, t)} · ${formatToolMonthlyBudget(confirmation.tool, t)}`
-            )}
-          </p>
-        </div>
       </div>
     </div>
   );
@@ -2039,7 +1680,6 @@ function StackCompanion({
   pricingSummary,
   coverageComplete,
   highlightToolId,
-  recentConfirmation,
   stackDropRef,
   onPricingReview,
   onReview,
@@ -2051,7 +1691,6 @@ function StackCompanion({
   pricingSummary: ReturnType<typeof getPricingCaptureSummary>;
   coverageComplete: boolean;
   highlightToolId?: string | null;
-  recentConfirmation?: RecentConfirmation | null;
   stackDropRef: RefObject<HTMLDivElement>;
   onPricingReview: () => void;
   onReview: () => void;
@@ -2115,25 +1754,6 @@ function StackCompanion({
                 `${pricingSummary.needsVerificationCount} mode${pricingSummary.needsVerificationCount > 1 ? "s" : ""} to clarify`
               )}
             </button>
-          )}
-
-          {recentConfirmation && (
-            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-primary">
-                {t("Dernier ajout", "Latest add")}
-              </p>
-              <div className="mt-2 flex items-center gap-2">
-                <ToolLogo tool={recentConfirmation.tool} size={28} className="rounded-md" />
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-semibold text-foreground">
-                    {recentConfirmation.tool.name}
-                  </p>
-                  <p className="truncate text-xs text-muted-foreground">
-                    {offerLabel(recentConfirmation.tool, t)} · {formatToolMonthlyBudget(recentConfirmation.tool, t)}
-                  </p>
-                </div>
-              </div>
-            </div>
           )}
 
           {selectedTools.length === 0 ? (
