@@ -692,7 +692,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         if (aRank !== bRank) return aRank - bRank;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
-      .slice(0, session.persona === "SOFIA" ? 8 : 6);
+      .slice(0, 5);
   }, [activeMoment, selectedIds, selectedTools, session.persona, tools]);
   const pendingTool = useMemo(() => {
     if (!pendingToolId) return null;
@@ -1123,21 +1123,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 pb-32">
-      <div className="mx-auto max-w-3xl space-y-3 text-center">
+      <div className="flex items-center justify-between gap-4">
         {toolName && (
           <p className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             {t(`On part de ${toolName}`, `Starting from ${toolName}`)}
           </p>
         )}
-        <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-          {t("Construis ta stack réelle.", "Build your real stack.")}
-        </h1>
-        <p className="mx-auto max-w-xl text-sm text-muted-foreground md:text-base">
-          {t(
-            "Une zone à la fois. Clique un outil, précise comment tu l’utilises, puis il rejoint ta stack.",
-            "One area at a time. Click a tool, clarify how you use it, then it joins your stack."
-          )}
-        </p>
         {onPrev && (
           <button
             type="button"
@@ -1149,8 +1140,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         )}
       </div>
 
-      <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
-        <div className="diagnostic-card p-5 md:p-6">
+      <section className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
+        <div className="min-w-0">
           <StackMomentStepper
             moments={momentCoverage}
             activeMomentId={activeMoment.id}
@@ -1168,20 +1159,19 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           <div
             key={activeMoment.id}
-            className="relative mt-5 overflow-hidden rounded-3xl bg-foreground px-5 py-6 text-background shadow-xl animate-in fade-in-0 slide-in-from-bottom-2 duration-300 md:px-7 md:py-8"
+            className="relative mt-7 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
           >
-            <div className="absolute inset-y-0 left-0 w-1.5 bg-[hsl(var(--diag-yellow))]" />
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[hsl(var(--diag-yellow))]">
-              {t(`Question ${Math.max(1, momentCoverage.findIndex((moment) => moment.id === activeMoment.id) + 1)} sur ${stackMoments.length}`, `Question ${Math.max(1, momentCoverage.findIndex((moment) => moment.id === activeMoment.id) + 1)} of ${stackMoments.length}`)}
+            <p className="mb-3 text-sm font-semibold text-primary">
+              {t("Une question pour mieux comprendre ton quotidien", "One question to understand your day-to-day work")}
             </p>
             <h2
               ref={questionRef}
               tabIndex={-1}
-              className="max-w-3xl text-3xl font-bold leading-[1.08] text-background outline-none md:text-[2.35rem]"
+              className="max-w-3xl text-3xl font-bold leading-[1.08] text-foreground outline-none md:text-[2.65rem]"
             >
               {t(activeMoment.questionFr, activeMoment.questionEn)}
             </h2>
-            <p className="mt-3 text-sm text-background/65 md:text-base">
+            <p className="mt-3 text-sm text-muted-foreground md:text-base">
               {t(activeMoment.hintFr, activeMoment.hintEn)}
             </p>
           </div>
@@ -1215,7 +1205,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   "Chercher un outil…",
                   "Search a tool…"
                 )}
-                className="h-12 w-full rounded-2xl border border-input bg-background pl-10 pr-10 text-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-ring"
+                className="h-12 w-full border-0 border-b border-border bg-transparent pl-10 pr-10 text-sm outline-none transition-colors focus:border-foreground"
               />
               {search && (
                 <button
@@ -1259,10 +1249,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           {!search.trim() && (
             <div className="mt-6 space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
-                {t("Les plus adaptés à cette question", "Best matches for this question")}
+              <p className="text-sm font-medium text-muted-foreground">
+                {t("Tu utilises peut-être l’un de ceux-là :", "You may use one of these:")}
               </p>
-              <div className="grid gap-2 sm:grid-cols-2">
+              <div className="divide-y divide-border border-y border-border">
                 {activeMomentSuggestions.length > 0 ? activeMomentSuggestions.map((tool) => (
                   <ToolChoiceButton
                     key={tool.id}
@@ -1293,11 +1283,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </div>
           )}
 
-          <div className="mt-6 rounded-2xl bg-muted/50 p-3">
+          <div className="mt-5">
             <button
               type="button"
               onClick={toggleSearchPanel}
-              className="inline-flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-foreground"
+              className="inline-flex items-center gap-2 text-left text-sm font-medium text-muted-foreground hover:text-foreground"
             >
               <span>{t("Je ne trouve pas mon outil", "I can’t find my tool")}</span>
               <Plus className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -1421,14 +1411,14 @@ function ToolChoiceButton({
       data-stack-tool-card-id={tool.id}
       data-pricing-tool-id={tool.id}
       tabIndex={-1}
-      className={`group h-[146px] rounded-2xl border p-3 shadow-sm transition-all duration-200 ${
+      className={`group py-3 transition-all duration-200 ${
         selected
-          ? "border-primary bg-primary/10 ring-2 ring-primary/20"
+          ? "bg-primary/5"
           : pending
-            ? "border-foreground bg-card ring-4 ring-[hsl(var(--diag-yellow)/0.34)] shadow-lg"
+            ? "bg-muted/50"
           : muted
-            ? "border-border bg-background opacity-45 hover:opacity-80"
-            : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
+            ? "opacity-45 hover:opacity-80"
+            : "hover:bg-muted/25"
       }`}
     >
       <button
@@ -1440,7 +1430,7 @@ function ToolChoiceButton({
             ? t(`Choix du mode ouvert pour ${displayTool.name}`, `Usage mode choice open for ${displayTool.name}`)
             : t(`Préciser l’usage de ${displayTool.name}`, `Clarify how you use ${displayTool.name}`)
         }
-        className="flex h-[54px] w-full items-center gap-3 rounded-xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="flex min-h-[54px] w-full items-center gap-3 px-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
         <div className="min-w-0 flex-1">
@@ -1450,9 +1440,7 @@ function ToolChoiceButton({
               ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
               : pending
                 ? t("Mode utilisé ?", "How used?")
-              : displayTool.price > 0
-                ? formatToolMonthlyPrice(displayTool, t, { approximate: true, catalog: true })
-                : t("Gratuit possible", "Free possible")}
+              : t("Proposé pour cette question", "Suggested for this question")}
           </p>
         </div>
         {selected ? (
@@ -1470,7 +1458,7 @@ function ToolChoiceButton({
         )}
       </button>
 
-      <div className="mt-2 h-14">
+      <div className={selected || pending ? "mt-2 min-h-14 px-2" : "hidden"}>
         {selected ? (
           <OfferSelector tool={displayTool} onChange={onOfferChange} compact t={t} />
         ) : pending ? (
@@ -1481,23 +1469,7 @@ function ToolChoiceButton({
             </p>
             <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
           </div>
-        ) : (
-          <button
-            type="button"
-            onClick={onToggle}
-            className="flex h-12 w-full items-center justify-between rounded-xl bg-muted/35 px-3 text-left transition-colors group-hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <span className="min-w-0">
-              <span className="block truncate text-xs font-semibold text-foreground">
-                {t("Préciser l’usage", "Clarify usage")}
-              </span>
-              <span className="block truncate text-[11px] font-medium text-muted-foreground">
-                {t("puis ajout automatique", "then auto-add")}
-              </span>
-            </span>
-            <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
-          </button>
-        )}
+        ) : null}
       </div>
     </div>
   );
@@ -1571,12 +1543,17 @@ function StackMomentStepper({
   const activeIndex = Math.max(0, moments.findIndex((moment) => moment.id === activeMomentId));
 
   return (
-    <div className="diagnostic-soft-card px-3 py-3">
-      <p className="text-sm font-semibold text-foreground">
-        {t(moments[activeIndex]?.fr || "", moments[activeIndex]?.en || "")}
-      </p>
-
-      <div className="mt-3 flex gap-2 overflow-x-auto pb-1" aria-label={t("Étapes de capture de stack", "Stack capture steps")}>
+    <div>
+      <div className="flex items-center gap-3">
+        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+          <div
+            className="h-full rounded-full bg-primary transition-all duration-300"
+            style={{ width: `${((activeIndex + 1) / moments.length) * 100}%` }}
+          />
+        </div>
+        <span className="text-xs font-medium text-muted-foreground">{activeIndex + 1}/{moments.length}</span>
+      </div>
+      <div className="sr-only" aria-label={t("Étapes de capture de stack", "Stack capture steps")}>
         {moments.map((moment, index) => {
           const Icon = moment.Icon;
           const active = moment.id === activeMomentId;
