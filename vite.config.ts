@@ -91,52 +91,44 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
 ]);
 
 function buildToolMetaDesc(tool: any, lang: string): string {
-  const short = lang === "fr"
-    ? tool.shortDescription || ""
-    : tool.shortDescriptionEn || tool.shortDescription || "";
-  const long = lang === "fr"
-    ? tool.longDescription || ""
-    : tool.longDescriptionEn || tool.longDescription || "";
-
-  // If short desc is already long enough, use it
-  if (short.length >= 110) return short.substring(0, 160);
-
-  // Try to enrich with pricing info
-  let desc = short;
-  const pricingFree: string = tool.pricing?.free || "";
-  const pricingPaid: string = tool.pricing?.paid || "";
+  // Snippet SERP orienté CTR : valeur (description courte) + signal PRIX
+  // (l'intention dominante) + crochet aligné sur le titre. Borné à 160c.
+  const isFr = lang === "fr";
+  const rawShort = isFr
+    ? (tool.shortDescription || "")
+    : (tool.shortDescriptionEn || tool.shortDescription || "");
+  const long = isFr
+    ? (tool.longDescription || "")
+    : (tool.longDescriptionEn || tool.longDescription || "");
   const price: number = tool.defaultMonthlyPrice || 0;
+  const hasFree = !!(tool.pricing && tool.pricing.free);
 
-  if (lang === "fr") {
-    if (pricingFree && desc.length + pricingFree.length + 12 < 155) {
-      desc = desc ? `${desc} Gratuit : ${pricingFree}.` : `Gratuit : ${pricingFree}.`;
-    } else if (price > 0 && desc.length + 25 < 155) {
-      desc = desc ? `${desc} À partir de ${price}€/mois.` : `À partir de ${price}€/mois.`;
-    } else if (pricingPaid && desc.length + pricingPaid.length + 8 < 155) {
-      desc = desc ? `${desc} Payant : ${pricingPaid}.` : pricingPaid;
-    }
-    // If still short, prepend first sentence of longDescription
-    if (desc.length < 110 && long) {
-      const sentence = long.split(/(?<=[.!?])\s/)[0] || "";
-      if (sentence.length > 30) desc = sentence.substring(0, 160).trim();
-    }
-    // Last resort: add a keepIf
-    if (desc.length < 80 && tool.verdict?.keepIf?.[0]) {
-      desc = `${desc} Idéal si : ${tool.verdict.keepIf[0]}.`;
-    }
-  } else {
-    if (price > 0 && desc.length + 20 < 155) {
-      desc = desc ? `${desc} From €${price}/month.` : `From €${price}/month.`;
-    } else if (pricingPaid && desc.length + pricingPaid.length + 9 < 155) {
-      desc = desc ? `${desc} Paid: ${pricingPaid}.` : pricingPaid;
-    }
-    if (desc.length < 110 && long) {
-      const sentence = long.split(/(?<=[.!?])\s/)[0] || "";
-      if (sentence.length > 30) desc = sentence.substring(0, 160).trim();
-    }
+  // Base = description courte (curatée, punchy) ; on ne bascule sur la 1re
+  // phrase de la longue que si la courte est vraiment trop maigre.
+  let base = (rawShort || "").replace(/\s+/g, " ").trim();
+  if (base.length < 45 && long) {
+    const sentence = (long.split(/(?<=[.!?])\s/)[0] || "").trim();
+    if (sentence.length > base.length) base = sentence;
   }
 
-  return (desc || short).substring(0, 160).trim();
+  const mentionsFree = /gratuit|free/i.test(base);
+  const priceClause = isFr
+    ? (price > 0 ? `Prix dès ${price}€/mois.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
+    : (price > 0 ? `From €${price}/mo.` : (hasFree && !mentionsFree ? "Free version." : ""));
+  const hook = isFr
+    ? "Avis ToolTrim et alternatives moins chères."
+    : "ToolTrim review and cheaper alternatives.";
+
+  const tail = [priceClause, hook].filter(Boolean).join(" ");
+  // Rogne la base pour réserver la place au prix + crochet (sans couper un mot).
+  const avail = 160 - tail.length - 1;
+  if (base.length > avail) {
+    base = base.substring(0, Math.max(40, avail)).replace(/\s+\S*$/, "");
+  }
+  base = base.replace(/[\s.,;:!?–—-]+$/, "").trim();
+  if (base) base += ".";
+
+  return `${base} ${tail}`.replace(/\s+/g, " ").trim().substring(0, 160);
 }
 
 // --- Source de données du build SEO (sitemap + prerender) : Supabase est la
