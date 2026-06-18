@@ -188,7 +188,7 @@ const CREATIVE_STACK_MOMENTS = [
     hintFr: "Figma, Canva, Photoshop, Illustrator, Affinity...",
     hintEn: "Figma, Canva, Photoshop, Illustrator, Affinity...",
     pattern: /figma|canva|photoshop|illustrator|affinity|adobe|design|identity|brand|visual|creative/i,
-    ids: ["figma", "canva", "adobe-photoshop", "adobe-illustrator", "affinity-photo", "adobe-express", "brandcrowd", "brandmark"],
+    ids: ["figma", "canva", "adobe-photoshop", "adobe-illustrator", "indesign", "affinity-photo", "sketch", "procreate", "adobe-express"],
   },
   {
     id: "creative-plugins-resources",
@@ -206,14 +206,15 @@ const CREATIVE_STACK_MOMENTS = [
       "figma-stark",
       "figma-anima",
       "dynamic-mockups",
-      "mockup-plugins",
       "envato-elements",
       "icons8",
+      "noun-project",
       "hugeicons",
       "fontbase",
       "rightfont",
       "canva-templates",
       "figma-templates",
+      "motion-array",
     ],
   },
   {
@@ -226,7 +227,7 @@ const CREATIVE_STACK_MOMENTS = [
     hintFr: "Midjourney, Krea, Firefly, Runway, Remove.bg...",
     hintEn: "Midjourney, Krea, Firefly, Runway, Remove.bg...",
     pattern: /midjourney|krea|firefly|stable|diffusion|flux|ideogram|leonardo|runway|remove|ai|ia|image/i,
-    ids: ["midjourney", "krea-ai", "krea", "firefly", "stable-diffusion", "flux", "ideogram", "leonardo-ai", "runway", "remove-bg"],
+    ids: ["midjourney", "krea-ai", "firefly", "stable-diffusion", "flux", "ideogram", "leonardo-ai", "runway", "remove-bg"],
   },
   {
     id: "creative-motion-video",
@@ -266,7 +267,7 @@ const CREATIVE_STACK_MOMENTS = [
     hintFr: "Lightroom, Capture One, presets, Pixieset, Nik Collection...",
     hintEn: "Lightroom, Capture One, presets, Pixieset, Nik Collection...",
     pattern: /lightroom|capture one|photo|retouch|preset|raw|pixieset|nik|luminar/i,
-    ids: ["adobe-lightroom", "capture-one", "adobe-photoshop", "luminar-neo", "nik-collection", "presets-lightroom", "lightroom-presets", "lightroom-mobile", "pixieset"],
+    ids: ["adobe-lightroom", "capture-one", "adobe-photoshop", "luminar-neo", "nik-collection", "lightroom-mobile", "pixieset"],
   },
   {
     id: "creative-client-review",
@@ -302,7 +303,7 @@ const CREATIVE_STACK_MOMENTS = [
     hintFr: "Adobe CC, Envato, Brand kits, Font managers, Stripe, Indy...",
     hintEn: "Adobe CC, Envato, Brand kits, font managers, Stripe, Indy...",
     pattern: /license|licence|rights|droits|asset|font|adobe creative cloud|envato|brand kit|stripe|indy|paypal|billing/i,
-    ids: ["adobe-creative-cloud", "adobe-cc", "envato-elements", "brandpad", "brand-kits", "fontbase", "rightfont", "stripe", "indy", "paypal"],
+    ids: ["adobe-cc", "envato-elements", "brandpad", "fontbase", "rightfont", "stripe", "indy", "paypal"],
   },
   {
     id: "creative-measure-growth",
@@ -332,17 +333,17 @@ const CREATIVE_PARENT_RELATIONS = [
   {
     parentIds: ["adobe-lightroom", "capture-one"],
     momentIds: ["creative-photo-retouch", "creative-client-review"],
-    toolIds: ["presets-lightroom", "lightroom-presets", "luminar-neo", "nik-collection", "pixieset"],
+    toolIds: ["luminar-neo", "nik-collection", "pixieset"],
   },
   {
     parentIds: ["canva"],
     momentIds: ["creative-plugins-resources", "creative-design-core"],
-    toolIds: ["canva-pro", "canva-templates", "canva-kits", "brand-kits", "envato-elements", "mockup-plugins"],
+    toolIds: ["canva-pro", "canva-templates", "envato-elements", "dynamic-mockups", "icons8", "noun-project"],
   },
   {
     parentIds: ["adobe-photoshop", "adobe-illustrator"],
     momentIds: ["creative-plugins-resources", "creative-design-core", "creative-admin-rights"],
-    toolIds: ["dynamic-mockups", "mockup-plugins", "envato-elements", "icons8", "hugeicons", "fontbase", "rightfont"],
+    toolIds: ["dynamic-mockups", "envato-elements", "icons8", "noun-project", "hugeicons", "fontbase", "rightfont"],
   },
   {
     parentIds: ["capcut", "adobe-premiere-pro", "davinci-resolve"],
@@ -366,6 +367,16 @@ type StackFeedAnimation = {
   toY: number;
 };
 
+type BillingOption = {
+  value: NonNullable<Tool["selectedOffer"]>;
+  fr: string;
+  en: string;
+  priceMonthlyEur?: number | null;
+  priceOriginal?: number | null;
+  currency?: string | null;
+  needsVerification?: boolean;
+};
+
 function normalize(value: string) {
   return value
     .normalize("NFD")
@@ -374,22 +385,89 @@ function normalize(value: string) {
     .trim();
 }
 
-const OFFER_OPTIONS: Array<{
-  value: NonNullable<Tool["selectedOffer"]>;
-  fr: string;
-  en: string;
-}> = [
-  { value: "free", fr: "Gratuit", en: "Free" },
-  { value: "paid", fr: "Payant", en: "Paid" },
-  { value: "team", fr: "Équipe", en: "Team" },
-  { value: "unknown", fr: "Pas sûr", en: "Unsure" },
-];
+function option(
+  value: NonNullable<Tool["selectedOffer"]>,
+  fr: string,
+  en: string,
+  extra: Partial<BillingOption> = {}
+): BillingOption {
+  return { value, fr, en, ...extra };
+}
+
+function getToolBillingOptions(tool: Tool): BillingOption[] {
+  const rawOptions = tool.pricing_v5?.billing_options;
+  if (Array.isArray(rawOptions) && rawOptions.length > 0) {
+    return rawOptions
+      .filter((item) => item?.value && item.label_fr && item.label_en)
+      .map((item) => ({
+        value: item.value,
+        fr: item.label_fr,
+        en: item.label_en,
+        priceMonthlyEur: item.price_monthly_eur,
+        priceOriginal: item.price_original,
+        currency: item.currency,
+        needsVerification: item.needs_verification,
+      }));
+  }
+
+  const model = tool.pricing_v5?.billing_model || tool.pricing_v5?.compare_plan_kind;
+  const planName = tool.pricing_v5?.compare_plan_name || "Pro";
+  if (model === "one_time") {
+    return [
+      option("one_time", "Achat unique", "One-time"),
+      option("included", "Déjà acheté", "Already bought"),
+      option("unknown", "Je ne sais pas", "I don’t know", { needsVerification: true }),
+    ];
+  }
+  if (model === "bundle") {
+    return [
+      option("bundle", planName, planName),
+      option("included", "Inclus ailleurs", "Included elsewhere"),
+      option("team", "Licence équipe", "Team license", { needsVerification: true }),
+      option("unknown", "Je ne sais pas", "I don’t know", { needsVerification: true }),
+    ];
+  }
+  if (model === "usage_based" || model === "credits") {
+    return [
+      option("free", "Free tier", "Free tier"),
+      option("usage", "Usage / crédits", "Usage / credits", { needsVerification: true }),
+      option("team", "Équipe", "Team", { needsVerification: true }),
+      option("unknown", "Je ne sais pas", "I don’t know", { needsVerification: true }),
+    ];
+  }
+  if (model === "free") {
+    return [
+      option("free", "Gratuit", "Free"),
+      option("team", "Équipe", "Team", { needsVerification: true }),
+      option("unknown", "Je ne sais pas", "I don’t know", { needsVerification: true }),
+    ];
+  }
+  return [
+    option("free", "Gratuit", "Free"),
+    option("paid", planName, planName),
+    option("team", "Équipe", "Team", { needsVerification: true }),
+    option("unknown", "Je ne sais pas", "I don’t know", { needsVerification: true }),
+  ];
+}
+
+function getBillingOption(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) {
+  return getToolBillingOptions(tool).find((item) => item.value === offer);
+}
+
+function getDefaultOffer(tool: Tool): NonNullable<Tool["selectedOffer"]> {
+  const options = getToolBillingOptions(tool);
+  return options.find((item) => item.value !== "unknown")?.value || (Number(tool.price || 0) > 0 ? "paid" : "free");
+}
 
 function getPlanLabel(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>, t: (fr: string, en: string) => string) {
+  const billingOption = getBillingOption(tool, offer);
+  if (billingOption) return t(billingOption.fr, billingOption.en);
   if (offer === "free") return t("Gratuit", "Free");
-  if (offer === "team") return tool.pricing_v5?.compare_plan_kind === "team"
-    ? tool.pricing_v5?.compare_plan_name || "Team"
-    : "Team";
+  if (offer === "included") return t("Inclus", "Included");
+  if (offer === "one_time") return t("Achat unique", "One-time");
+  if (offer === "usage" || offer === "credits") return t("Usage / crédits", "Usage / credits");
+  if (offer === "custom_quote") return t("Sur devis", "Custom quote");
+  if (offer === "team") return t("Équipe", "Team");
   if (offer === "unknown") return t("Je ne sais pas", "I don’t know");
   return tool.pricing_v5?.compare_plan_name || "Pro";
 }
@@ -423,22 +501,36 @@ function withDefaultOffer(tool: Tool): Tool {
     ...tool,
     catalogMonthlyPrice,
     catalogMonthlyPriceCurrency,
-    selectedOffer: tool.selectedOffer || (catalogMonthlyPrice > 0 ? "paid" : "free"),
+    selectedOffer: tool.selectedOffer || getDefaultOffer(tool),
     selectedPriceIsEstimate: tool.selectedPriceIsEstimate ?? true,
     priceCurrency: tool.priceCurrency || catalogMonthlyPriceCurrency,
   };
 }
 
+function getOfferOptionPrice(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) {
+  const billingOption = getBillingOption(tool, offer);
+  if (typeof billingOption?.priceMonthlyEur === "number") return billingOption.priceMonthlyEur;
+  if (typeof billingOption?.priceOriginal === "number" && billingOption.currency === "EUR") return billingOption.priceOriginal;
+  return null;
+}
+
 function offerPrice(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) {
-  if (offer === "free") return 0;
+  if (offer === "free" || offer === "included" || offer === "one_time") return 0;
+  const optionPrice = getOfferOptionPrice(tool, offer);
+  if (optionPrice != null) return optionPrice;
   return Number(tool.catalogMonthlyPrice ?? tool.price ?? 0);
 }
 
+function offerNeedsVerification(tool: Tool, offer: NonNullable<Tool["selectedOffer"]>) {
+  if (offer === "unknown" || offer === "usage" || offer === "credits" || offer === "marketplace" || offer === "custom_quote") {
+    return true;
+  }
+  const billingOption = getBillingOption(tool, offer);
+  return Boolean(billingOption?.needsVerification);
+}
+
 function offerLabel(tool: Tool, t: (fr: string, en: string) => string) {
-  if (tool.selectedOffer === "free") return t("Gratuit", "Free");
-  if (tool.selectedOffer === "team") return getPlanLabel(tool, "team", t);
-  if (tool.selectedOffer === "unknown") return t("À préciser", "To clarify");
-  return getPlanLabel(tool, "paid", t);
+  return getPlanLabel(tool, tool.selectedOffer || getDefaultOffer(tool), t);
 }
 
 function toolText(tool: Tool) {
@@ -518,6 +610,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [skippedMomentIds, setSkippedMomentIds] = useState<Set<string>>(
     () => new Set(session.selectionCoverage?.skipped || [])
   );
+  const [completedMomentIds, setCompletedMomentIds] = useState<Set<string>>(
+    () => new Set(session.selectionCoverage?.covered || [])
+  );
   const [showCatalog, setShowCatalog] = useState(false);
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
@@ -556,11 +651,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       return {
         ...moment,
         selected,
-        covered: selected.length > 0,
+        covered: completedMomentIds.has(moment.id),
         skipped: skippedMomentIds.has(moment.id),
       };
     });
-  }, [selectedTools, skippedMomentIds, stackMoments]);
+  }, [completedMomentIds, selectedTools, skippedMomentIds, stackMoments]);
 
   const coveredMomentIds = useMemo(
     () => new Set(momentCoverage.filter((moment) => moment.covered).map((moment) => moment.id)),
@@ -571,15 +666,30 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const activeMomentSuggestions = useMemo(() => {
     const activeMomentIds = activeMoment.ids as readonly string[];
     const contextualToolIds = getCreativeContextualToolIds(selectedTools, activeMoment.id, session.persona);
-    return tools
-      .filter((tool) => !selectedIds.has(tool.id) && (matchesMoment(tool, activeMoment) || contextualToolIds.has(tool.id)))
+    const explicitRank = new Map(activeMomentIds.map((id, index) => [normalize(id), index]));
+    const candidates = tools
+      .filter((tool) => !selectedIds.has(tool.id))
+      .filter((tool) => explicitRank.has(normalize(tool.id)) || contextualToolIds.has(tool.id));
+
+    // The curated IDs are the intent model for the question. Broad text matching is
+    // only a fallback when the catalogue is incomplete, otherwise generic terms
+    // such as “asset” or “design” make every question surface the same tools.
+    const fallback = candidates.length >= 4
+      ? []
+      : tools.filter((tool) =>
+          !selectedIds.has(tool.id) &&
+          !candidates.some((candidate) => candidate.id === tool.id) &&
+          matchesMoment(tool, activeMoment)
+        );
+
+    return [...candidates, ...fallback]
       .sort((a, b) => {
         const aContext = contextualToolIds.has(a.id);
         const bContext = contextualToolIds.has(b.id);
         if (aContext !== bContext) return aContext ? -1 : 1;
-        const aKnown = activeMomentIds.includes(a.id);
-        const bKnown = activeMomentIds.includes(b.id);
-        if (aKnown !== bKnown) return aKnown ? -1 : 1;
+        const aRank = explicitRank.get(normalize(a.id)) ?? Number.MAX_SAFE_INTEGER;
+        const bRank = explicitRank.get(normalize(b.id)) ?? Number.MAX_SAFE_INTEGER;
+        if (aRank !== bRank) return aRank - bRank;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
       .slice(0, session.persona === "SOFIA" ? 8 : 6);
@@ -692,7 +802,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             selectedOffer: offer,
             price: offerPrice(item, offer),
             priceCurrency: item.catalogMonthlyPriceCurrency || item.priceCurrency,
-            selectedPriceIsEstimate: offer !== "free",
+            selectedPriceIsEstimate: offerNeedsVerification(item, offer),
           };
         });
       }
@@ -715,7 +825,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         selectedOffer: offer,
         price: offerPrice(baseTool, offer),
         priceCurrency: baseTool.catalogMonthlyPriceCurrency || baseTool.priceCurrency,
-        selectedPriceIsEstimate: offer !== "free",
+        selectedPriceIsEstimate: offerNeedsVerification(baseTool, offer),
       };
       setPendingToolId(null);
       setLastConfirmedToolId(tool.id);
@@ -751,7 +861,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         selectedOffer: offer,
         price: offerPrice(tool, offer),
         priceCurrency: tool.catalogMonthlyPriceCurrency || tool.priceCurrency,
-        selectedPriceIsEstimate: offer !== "free",
+        selectedPriceIsEstimate: offerNeedsVerification(tool, offer),
       };
     }));
     onTrack?.("selector_tool_offer_selected", {
@@ -785,7 +895,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       covered_count: coveredCount,
       skipped_count: skippedMomentIds.size,
       confidence: coverageConfidence,
-      pricing_unknown_count: pricingSummary.unknownPlanCount,
+      pricing_unknown_count: pricingSummary.unknownModeCount,
       pricing_estimate_count: pricingSummary.estimateCount,
       pricing_missing_currency_count: pricingSummary.missingCurrencyCount,
     });
@@ -801,13 +911,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   };
 
   const moveToNextMoment = () => {
+    const nextCompleted = new Set(completedMomentIds);
+    nextCompleted.add(activeMoment.id);
+    setCompletedMomentIds(nextCompleted);
     onTrack?.("selector_moment_next", {
       moment_id: activeMoment.id,
       selected_in_moment: selectedInActiveMoment,
       selected_count: selectedTools.length,
       covered_count: coveredCount,
     });
-    const next = nextMomentId(stackMoments, coveredMomentIds, skippedMomentIds, activeMoment.id);
+    const next = nextMomentId(stackMoments, nextCompleted, skippedMomentIds, activeMoment.id);
     if (next) {
       setActiveMomentId(next);
     } else {
@@ -818,13 +931,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const skipActiveMoment = () => {
     const nextSkipped = new Set(skippedMomentIds);
     nextSkipped.add(activeMoment.id);
+    const nextCompleted = new Set(completedMomentIds);
+    nextCompleted.delete(activeMoment.id);
+    setCompletedMomentIds(nextCompleted);
     onTrack?.("selector_moment_skipped", {
       moment_id: activeMoment.id,
       selected_count: selectedTools.length,
       skipped_count: nextSkipped.size,
     });
     setSkippedMomentIds(nextSkipped);
-    const next = nextMomentId(stackMoments, coveredMomentIds, nextSkipped, activeMoment.id);
+    const next = nextMomentId(stackMoments, nextCompleted, nextSkipped, activeMoment.id);
     if (next) {
       setActiveMomentId(next);
     } else {
@@ -1018,8 +1134,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         </h1>
         <p className="mx-auto max-w-xl text-sm text-muted-foreground md:text-base">
           {t(
-            "Une zone à la fois. Clique un outil, choisis son plan, puis il rejoint ta stack.",
-            "One area at a time. Click a tool, choose its plan, then it joins your stack."
+            "Une zone à la fois. Clique un outil, précise comment tu l’utilises, puis il rejoint ta stack.",
+            "One area at a time. Click a tool, clarify how you use it, then it joins your stack."
           )}
         </p>
         {onPrev && (
@@ -1052,16 +1168,20 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           <div
             key={activeMoment.id}
-            className="mt-6 space-y-2 animate-in fade-in-0 slide-in-from-bottom-2 duration-300"
+            className="relative mt-5 overflow-hidden rounded-3xl bg-foreground px-5 py-6 text-background shadow-xl animate-in fade-in-0 slide-in-from-bottom-2 duration-300 md:px-7 md:py-8"
           >
+            <div className="absolute inset-y-0 left-0 w-1.5 bg-[hsl(var(--diag-yellow))]" />
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[hsl(var(--diag-yellow))]">
+              {t(`Question ${Math.max(1, momentCoverage.findIndex((moment) => moment.id === activeMoment.id) + 1)} sur ${stackMoments.length}`, `Question ${Math.max(1, momentCoverage.findIndex((moment) => moment.id === activeMoment.id) + 1)} of ${stackMoments.length}`)}
+            </p>
             <h2
               ref={questionRef}
               tabIndex={-1}
-              className="text-2xl font-bold text-foreground outline-none md:text-3xl"
+              className="max-w-3xl text-3xl font-bold leading-[1.08] text-background outline-none md:text-[2.35rem]"
             >
               {t(activeMoment.questionFr, activeMoment.questionEn)}
             </h2>
-            <p className="text-sm text-muted-foreground">
+            <p className="mt-3 text-sm text-background/65 md:text-base">
               {t(activeMoment.hintFr, activeMoment.hintEn)}
             </p>
           </div>
@@ -1139,8 +1259,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
           {!search.trim() && (
             <div className="mt-6 space-y-3">
-              <p className="text-xs font-semibold uppercase text-muted-foreground">
-                {t("Suggestions fréquentes", "Common suggestions")}
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                {t("Les plus adaptés à cette question", "Best matches for this question")}
               </p>
               <div className="grid gap-2 sm:grid-cols-2">
                 {activeMomentSuggestions.length > 0 ? activeMomentSuggestions.map((tool) => (
@@ -1317,8 +1437,8 @@ function ToolChoiceButton({
         aria-pressed={selected || pending}
         aria-label={
           pending
-            ? t(`Choix du plan ouvert pour ${displayTool.name}`, `Plan choice open for ${displayTool.name}`)
-            : t(`Choisir le plan de ${displayTool.name}`, `Choose ${displayTool.name} plan`)
+            ? t(`Choix du mode ouvert pour ${displayTool.name}`, `Usage mode choice open for ${displayTool.name}`)
+            : t(`Préciser l’usage de ${displayTool.name}`, `Clarify how you use ${displayTool.name}`)
         }
         className="flex h-[54px] w-full items-center gap-3 rounded-xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
@@ -1329,7 +1449,7 @@ function ToolChoiceButton({
             {selected
               ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
               : pending
-                ? t("Plan utilisé ?", "Which plan?")
+                ? t("Mode utilisé ?", "How used?")
               : displayTool.price > 0
                 ? formatToolMonthlyPrice(displayTool, t, { approximate: true, catalog: true })
                 : t("Gratuit possible", "Free possible")}
@@ -1357,7 +1477,7 @@ function ToolChoiceButton({
           <div className="space-y-1">
             <p className="flex items-center gap-1 truncate text-[11px] font-semibold text-foreground">
               <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-foreground font-mono text-[9px] text-background">2</span>
-              {t("Choisis un plan pour l’ajouter", "Choose a plan to add it")}
+              {t("Précise le mode pour l’ajouter", "Clarify the mode to add it")}
             </p>
             <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
           </div>
@@ -1369,7 +1489,7 @@ function ToolChoiceButton({
           >
             <span className="min-w-0">
               <span className="block truncate text-xs font-semibold text-foreground">
-                {t("Choisir le plan", "Choose plan")}
+                {t("Préciser l’usage", "Clarify usage")}
               </span>
               <span className="block truncate text-[11px] font-medium text-muted-foreground">
                 {t("puis ajout automatique", "then auto-add")}
@@ -1407,8 +1527,8 @@ function PlanFocusBanner({
             </p>
             <p className="truncate text-sm font-bold">
               {t(
-                `${tool.name} est prêt. Choisis son plan pour l’ajouter.`,
-                `${tool.name} is ready. Choose its plan to add it.`
+                `${tool.name} est prêt. Précise comment tu l’utilises pour l’ajouter.`,
+                `${tool.name} is ready. Clarify how you use it to add it.`
               )}
             </p>
           </div>
@@ -1521,23 +1641,27 @@ function OfferSelector({
   currentOffer?: NonNullable<Tool["selectedOffer"]> | null;
   t: (fr: string, en: string) => string;
 }) {
+  const options = getToolBillingOptions(tool);
   const activeOffer = currentOffer === undefined
-    ? tool.selectedOffer || (tool.price > 0 ? "paid" : "free")
+    ? tool.selectedOffer || getDefaultOffer(tool)
     : currentOffer;
   return (
-    <div className={`grid w-full grid-cols-4 gap-1 rounded-xl border border-border bg-muted/30 p-1 ${
-      compact ? "" : "lg:w-[280px]"
-    }`}>
-      {OFFER_OPTIONS.map((option) => (
+    <div
+      className={`grid w-full gap-1 rounded-xl border border-border bg-muted/30 p-1 ${
+        compact ? "" : "lg:w-[320px]"
+      }`}
+      style={{ gridTemplateColumns: `repeat(${Math.max(1, options.length)}, minmax(0, 1fr))` }}
+    >
+      {options.map((option) => (
         <button
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
           aria-label={t(
-            `Choisir le plan ${getPlanLabel(tool, option.value, t)} pour ${tool.name}`,
-            `Choose the ${getPlanLabel(tool, option.value, t)} plan for ${tool.name}`
+            `Choisir le mode ${getPlanLabel(tool, option.value, t)} pour ${tool.name}`,
+            `Choose the ${getPlanLabel(tool, option.value, t)} mode for ${tool.name}`
           )}
-          className={`${compact ? "h-8 min-w-0 px-1.5 text-[11px]" : "h-8 px-2 text-xs"} rounded-[7px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+          className={`${compact ? "h-8 min-w-0 px-1 text-[10px]" : "h-8 px-2 text-xs"} rounded-[7px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
             activeOffer === option.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-background hover:text-foreground"
@@ -1597,12 +1721,12 @@ function StackCompanion({
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {selectedTools.length === 0
               ? t(
-                  "Choisis un outil puis son plan.",
-                  "Choose a tool, then its plan."
+                  "Choisis un outil puis son mode d’usage.",
+                  "Choose a tool, then its usage mode."
                 )
               : t(
-                  "Ce récapitulatif se met à jour après confirmation du plan.",
-                  "This recap updates after plan confirmation."
+                  "Ce récapitulatif se met à jour après confirmation du mode.",
+                  "This recap updates after mode confirmation."
                 )}
           </p>
         </div>
@@ -1626,8 +1750,8 @@ function StackCompanion({
               className="w-full rounded-2xl border border-[hsl(var(--diag-yellow))] bg-[hsl(var(--diag-yellow)/0.14)] px-3 py-2 text-left text-xs font-semibold text-[hsl(var(--diag-yellow))] transition-colors hover:bg-[hsl(var(--diag-yellow)/0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {t(
-                `${pricingSummary.needsVerificationCount} plan${pricingSummary.needsVerificationCount > 1 ? "s" : ""} à préciser`,
-                `${pricingSummary.needsVerificationCount} plan${pricingSummary.needsVerificationCount > 1 ? "s" : ""} to clarify`
+                `${pricingSummary.needsVerificationCount} mode${pricingSummary.needsVerificationCount > 1 ? "s" : ""} à préciser`,
+                `${pricingSummary.needsVerificationCount} mode${pricingSummary.needsVerificationCount > 1 ? "s" : ""} to clarify`
               )}
             </button>
           )}
@@ -1947,7 +2071,7 @@ function SelectedToolRow({
               price,
               priceCurrency: "EUR",
               catalogMonthlyPriceCurrency: "EUR",
-              selectedOffer: price <= 0 ? "free" : tool.selectedOffer === "free" ? "paid" : tool.selectedOffer,
+              selectedOffer: price <= 0 ? "free" : tool.selectedOffer === "free" ? getDefaultOffer(tool) : tool.selectedOffer,
               selectedPriceIsEstimate: false,
             });
           }}
@@ -1978,7 +2102,7 @@ function SelectedToolRow({
             selectedOffer: offer,
             price: offerPrice(tool, offer),
             priceCurrency: tool.catalogMonthlyPriceCurrency || tool.priceCurrency,
-            selectedPriceIsEstimate: offer !== "free",
+            selectedPriceIsEstimate: offerNeedsVerification(tool, offer),
           })}
           t={t}
         />
