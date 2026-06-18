@@ -113,9 +113,12 @@ function buildToolMetaDesc(tool: any, lang: string): string {
   }
 
   const mentionsFree = /gratuit|free/i.test(base);
+  // Licence à vie / perpétuelle : pas de "/mois" dans le snippet.
+  const oneTime = /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
+  const per = isFr ? (oneTime ? "" : "/mois") : (oneTime ? "" : "/mo");
   const priceClause = isFr
-    ? (price > 0 ? `Prix dès ${price}€/mois.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
-    : (price > 0 ? `From €${price}/mo.` : (hasFree && !mentionsFree ? "Free version." : ""));
+    ? (price > 0 ? `Prix dès ${price}€${per}.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
+    : (price > 0 ? `From €${price}${per}.` : (hasFree && !mentionsFree ? "Free version." : ""));
   const hook = isFr
     ? "Avis ToolTrim et alternatives moins chères."
     : "ToolTrim review and cheaper alternatives.";

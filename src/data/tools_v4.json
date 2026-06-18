@@ -8550,12 +8550,14 @@
     "affiliateLink": "https://blender.org",
     "verdict": {
       "keepIf": [
-        "Modélisation 3D, animation, rendu sans budget"
+        "Tu fais de la 3D (modélisation, animation, rendu) et tu veux le meilleur rapport qualité-prix : gratuit",
+        "Tu débutes ou tu es freelance sans pipeline studio imposé"
       ],
       "avoidIf": [
-        "Workflow Cinema 4D déjà en place — cohérence plugins"
+        "Ton studio impose un pipeline Maya/Houdini ou l'intégration After Effects (Cinema 4D)",
+        "Tu as besoin d'un support commercial et d'une certification éditeur"
       ],
-      "threshold": "Gratuit donc toujours pertinent pour la 3D."
+      "threshold": "Gratuit et complet : le point de départ par défaut de toute la 3D. On ne paie un concurrent que si un besoin précis (pipeline studio, intégration Adobe) l'impose."
     },
     "timeGainedHoursPerMonth": 8,
     "freeAlternative": null,
@@ -8565,9 +8567,9 @@
     "ia_use_case": null,
     "slug": "blender",
     "shortDescriptionEn": "Complete open-source 3D suite: modeling, animation, rendering, and compositing.",
-    "description": "Blender, c'est suite 3D complète open source : modélisation, animation, rendu, compositing. Entièrement gratuit. Pensé pour les créateurs vidéo et les architectes BIM.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : modélisation 3D, animation, rendu sans budget. À éviter si : workflow Cinema 4D déjà en place — cohérence plugins. Gratuit donc toujours pertinent pour la 3D.",
-    "longDescription": "Blender, c'est suite 3D complète open source : modélisation, animation, rendu, compositing. Entièrement gratuit. Pensé pour les créateurs vidéo et les architectes BIM.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : modélisation 3D, animation, rendu sans budget. À éviter si : workflow Cinema 4D déjà en place — cohérence plugins. Gratuit donc toujours pertinent pour la 3D.",
-    "longDescriptionEn": "Blender is complete open-source 3D suite: modeling, animation, rendering, and compositing. Completely free. Built for video creators and BIM architects.\n\nEstimated time saving: 8h/month.\n\nKeep it if: 3D modeling, animation, and rendering without a budget. Skip it if: workflow Cinema 4D déjà en place — cohérence plugins. Free, and therefore always relevant for 3D.",
+    "description": "Blender, c'est la grande réussite de l'open source : une suite 3D complète et gratuite qui couvre toute la chaîne (modélisation, sculpture, animation, rigging, simulation, rendu avec Cycles et Eevee, compositing, et même du montage et du motion 2D avec Grease Pencil). Ce n'est plus l'outil bricolé d'il y a dix ans : Blender est devenu un logiciel pro, utilisé en studio, en pub et de plus en plus au cinéma.\n\nSon argument imbattable, c'est le prix : 0€, pour toujours, sans abonnement ni licence. Là où Maya ou Cinema 4D coûtent des centaines d'euros par an, Blender fait l'essentiel (et souvent plus) gratuitement. La communauté est immense, les tutos pléthoriques, les mises à jour très régulières.\n\nLes limites tiennent surtout à l'écosystème pro : certains studios ont bâti leurs pipelines autour de Maya/Houdini et en changer coûte cher, et Cinema 4D garde l'avantage sur l'intégration After Effects et son MoGraph. Mais pour un freelance ou quiconque démarre la 3D, la vraie question n'est plus pourquoi Blender, mais pourquoi payer un autre logiciel. Commence par Blender ; tu ne paieras un concurrent que si un besoin précis l'impose.",
+    "longDescription": "Blender, c'est la grande réussite de l'open source : une suite 3D complète et gratuite qui couvre toute la chaîne (modélisation, sculpture, animation, rigging, simulation, rendu avec Cycles et Eevee, compositing, et même du montage et du motion 2D avec Grease Pencil). Ce n'est plus l'outil bricolé d'il y a dix ans : Blender est devenu un logiciel pro, utilisé en studio, en pub et de plus en plus au cinéma.\n\nSon argument imbattable, c'est le prix : 0€, pour toujours, sans abonnement ni licence. Là où Maya ou Cinema 4D coûtent des centaines d'euros par an, Blender fait l'essentiel (et souvent plus) gratuitement. La communauté est immense, les tutos pléthoriques, les mises à jour très régulières.\n\nLes limites tiennent surtout à l'écosystème pro : certains studios ont bâti leurs pipelines autour de Maya/Houdini et en changer coûte cher, et Cinema 4D garde l'avantage sur l'intégration After Effects et son MoGraph. Mais pour un freelance ou quiconque démarre la 3D, la vraie question n'est plus pourquoi Blender, mais pourquoi payer un autre logiciel. Commence par Blender ; tu ne paieras un concurrent que si un besoin précis l'impose.",
+    "longDescriptionEn": "Blender is the great open-source success story: a complete, free 3D suite covering the whole chain (modeling, sculpting, animation, rigging, simulation, rendering with Cycles and Eevee, compositing, and even editing and 2D motion with Grease Pencil). It's no longer the patched-together tool of ten years ago: Blender has become a pro application, used in studios, advertising and increasingly in film.\n\nIts unbeatable argument is price: $0, forever, with no subscription or license. Where Maya or Cinema 4D cost hundreds of euros a year, Blender does the essentials (and often more) for free. The community is huge, tutorials are everywhere, and updates are very regular.\n\nThe limits are mostly about the pro ecosystem: some studios built their pipelines around Maya/Houdini and switching is costly, and Cinema 4D keeps the edge on After Effects integration and MoGraph. But for a freelancer or anyone starting 3D, the real question is no longer why Blender, but why pay for another tool. Start with Blender; you'll only pay for a competitor if a specific need demands it.",
     "pricingEn": {
       "free": "Completely free and open source"
     },
@@ -8588,29 +8590,69 @@
     },
     "websiteUrl": "https://blender.org",
     "logo": "",
-    "seo": {},
+    "seo": {
+      "metaDescription": "Blender en 2026 : la suite 3D complète, gratuite et open source (modélisation, animation, rendu). Vaut-il les payants (Maya, C4D) ? Le verdict ToolTrim."
+    },
     "articles": [],
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "alternatives": [
+      "cinema-4d",
+      "maya"
+    ],
     "verdictEn": {
       "keepIf": [
-        "3D modeling, animation, and rendering without a budget"
+        "You do 3D (modeling, animation, rendering) and want the best value: free",
+        "You're a beginner or freelancer with no imposed studio pipeline"
       ],
       "avoidIf": [
-        "Workflow Cinema 4D déjà en place — cohérence plugins"
+        "Your studio mandates a Maya/Houdini pipeline or After Effects integration (Cinema 4D)",
+        "You need commercial support and vendor certification"
       ],
-      "threshold": "Free, and therefore always relevant for 3D."
+      "threshold": "Free and complete: the default starting point for all 3D. You only pay for a competitor if a specific need (studio pipeline, Adobe integration) demands it."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "pros": [
+      "Gratuit et open source, pour toujours",
+      "Suite complète : modélisation, sculpture, animation, rendu (Cycles/Eevee), compositing",
+      "Communauté immense, tutos et add-ons en abondance",
+      "Niveau pro : utilisé en studio, pub et cinéma"
+    ],
+    "prosEn": [
+      "Free and open source, forever",
+      "Complete suite: modeling, sculpting, animation, rendering (Cycles/Eevee), compositing",
+      "Huge community, plenty of tutorials and add-ons",
+      "Pro level: used in studios, advertising and film"
+    ],
+    "cons": [
+      "Moins intégré aux pipelines studio Maya/Houdini",
+      "Pas le MoGraph ni l'intégration After Effects de Cinema 4D",
+      "Pas de support commercial officiel",
+      "Courbe d'apprentissage réelle (mais beaucoup de ressources)"
+    ],
+    "consEn": [
+      "Less integrated into Maya/Houdini studio pipelines",
+      "No MoGraph or After Effects integration like Cinema 4D",
+      "No official commercial support",
+      "Real learning curve (but plenty of resources)"
+    ],
+    "useCases": [
+      "Modéliser et animer en 3D sans budget logiciel",
+      "Rendre des images et des animations avec Cycles ou Eevee",
+      "Sculpter des modèles et faire du concept 3D",
+      "Faire du motion 2D avec Grease Pencil"
+    ],
+    "useCasesEn": [
+      "Model and animate in 3D with no software budget",
+      "Render images and animations with Cycles or Eevee",
+      "Sculpt models and do 3D concept work",
+      "Do 2D motion with Grease Pencil"
+    ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -64910,35 +64952,105 @@
     "slug": "rhino",
     "name": "Rhino",
     "categoryId": "design-tools",
-    "shortDescription": "Modélisation 3D précise pour formes complexes, mobilier sur mesure et volumes organiques.",
-    "shortDescriptionEn": "Precise 3D modelling for complex shapes, custom furniture and organic volumes.",
+    "shortDescription": "Modeleur 3D NURBS précis (Rhinoceros) pour design produit, archi et bijouterie.",
+    "shortDescriptionEn": "Precise NURBS 3D modeler (Rhinoceros) for product design, architecture and jewelry.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Licence perpétuelle"
+      "free": "Essai gratuit 90 jours ; licence éducation ~195$",
+      "paid": "Licence perpétuelle ~995$ (achat unique, pas d'abonnement)"
     },
-    "defaultMonthlyPrice": 0,
+    "pricingEn": {
+      "free": "90-day free trial; education license ~$195",
+      "paid": "Perpetual license ~$995 (one-time, no subscription)"
+    },
+    "defaultMonthlyPrice": 995,
     "affiliateLink": "https://www.rhino3d.com",
     "websiteUrl": "https://www.rhino3d.com",
     "logo": "",
     "category": "design-tools",
-    "description": "Rhino aide les architectes d'intérieur à couvrir un besoin précis : modélisation 3d précise pour formes complexes, mobilier sur mesure et volumes organiques.",
-    "longDescription": "Rhino aide les architectes d'intérieur à couvrir un besoin précis : modélisation 3d précise pour formes complexes, mobilier sur mesure et volumes organiques. À garder si ce besoin revient chaque semaine dans les projets client. À éviter si l'outil reste ponctuel ou doublonne avec le socle existant.",
-    "longDescriptionEn": "Rhino helps interior designers cover a specific need: precise 3d modelling for complex shapes, custom furniture and organic volumes. Keep it if this need appears every week in client projects. Skip it if usage is occasional or duplicates the existing core stack.",
+    "description": "Rhino (Rhinoceros), c'est le modeleur 3D NURBS de référence : là où Blender ou Cinema 4D travaillent en maillage (polygones), Rhino manipule des surfaces mathématiques précises au centième. C'est ce qui en fait le chouchou du design produit, de la bijouterie, de l'architecture et du design industriel ou naval, partout où la précision des courbes compte.\n\nSon arme secrète, c'est Grasshopper : un éditeur visuel de programmation paramétrique intégré, qui permet de générer des formes complexes et du design computationnel sans coder. C'est devenu un standard de l'archi paramétrique.\n\nMais l'argument qui fait mouche en 2026, c'est le modèle économique : Rhino se vend en licence perpétuelle (achat unique autour de 995$), sans abonnement. Dans un monde où tout est devenu mensuel (Autodesk, Adobe, Maxon), payer une fois et posséder son outil est rare et très apprécié. Disponible sur Windows et Mac. Pour de la modélisation maillage gratuite, Blender reste l'alternative ; mais pour la précision NURBS et la liberté de la licence perpétuelle, Rhino n'a pas vraiment d'équivalent abordable.",
+    "longDescription": "Rhino (Rhinoceros), c'est le modeleur 3D NURBS de référence : là où Blender ou Cinema 4D travaillent en maillage (polygones), Rhino manipule des surfaces mathématiques précises au centième. C'est ce qui en fait le chouchou du design produit, de la bijouterie, de l'architecture et du design industriel ou naval, partout où la précision des courbes compte.\n\nSon arme secrète, c'est Grasshopper : un éditeur visuel de programmation paramétrique intégré, qui permet de générer des formes complexes et du design computationnel sans coder. C'est devenu un standard de l'archi paramétrique.\n\nMais l'argument qui fait mouche en 2026, c'est le modèle économique : Rhino se vend en licence perpétuelle (achat unique autour de 995$), sans abonnement. Dans un monde où tout est devenu mensuel (Autodesk, Adobe, Maxon), payer une fois et posséder son outil est rare et très apprécié. Disponible sur Windows et Mac. Pour de la modélisation maillage gratuite, Blender reste l'alternative ; mais pour la précision NURBS et la liberté de la licence perpétuelle, Rhino n'a pas vraiment d'équivalent abordable.",
+    "longDescriptionEn": "Rhino (Rhinoceros) is the reference NURBS 3D modeler: where Blender or Cinema 4D work with meshes (polygons), Rhino handles precise mathematical surfaces accurate to a hundredth. That makes it the favorite of product design, jewelry, architecture and industrial or naval design, anywhere curve precision matters.\n\nIts secret weapon is Grasshopper: a built-in visual parametric programming editor that lets you generate complex shapes and computational design without coding. It has become a standard of parametric architecture.\n\nBut the argument that lands in 2026 is the business model: Rhino sells as a perpetual license (a one-time purchase around $995), with no subscription. In a world where everything went monthly (Autodesk, Adobe, Maxon), paying once and owning your tool is rare and much appreciated. Available on Windows and Mac. For free mesh modeling, Blender remains the alternative; but for NURBS precision and the freedom of a perpetual license, Rhino has no real affordable equivalent.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais du design produit, de la bijouterie ou de l'archi qui exige une précision NURBS",
+        "Tu veux une licence perpétuelle (achat unique) plutôt qu'un abonnement"
+      ],
+      "avoidIf": [
+        "Tu fais de la 3D maillage/artistique : Blender (gratuit) suffit",
+        "Tu n'as qu'un besoin occasionnel : 995$ ne se justifie pas"
+      ],
+      "threshold": "Pertinent pour la modélisation NURBS de précision, surtout si tu apprécies la licence perpétuelle. Pour de la 3D maillage, Blender suffit gratuitement."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do product design, jewelry or architecture that needs NURBS precision",
+        "You want a perpetual license (one-time purchase) rather than a subscription"
+      ],
+      "avoidIf": [
+        "You do mesh/artistic 3D: Blender (free) is enough",
+        "You only have occasional need: $995 isn't justified"
+      ],
+      "threshold": "Worth it for precise NURBS modeling, especially if you value the perpetual license. For mesh 3D, Blender is enough for free."
+    },
+    "pros": [
+      "Précision NURBS inégalée pour le design produit et l'archi",
+      "Grasshopper : design paramétrique sans coder",
+      "Licence perpétuelle (achat unique), pas d'abonnement",
+      "Disponible sur Windows et Mac"
+    ],
+    "prosEn": [
+      "Unmatched NURBS precision for product design and architecture",
+      "Grasshopper: parametric design without coding",
+      "Perpetual license (one-time purchase), no subscription",
+      "Available on Windows and Mac"
+    ],
+    "cons": [
+      "Achat initial conséquent (~995$)",
+      "Modélisation NURBS moins adaptée à la 3D artistique/organique de jeu",
+      "Rendu et animation moins poussés que les suites dédiées",
+      "Courbe d'apprentissage sur Grasshopper"
+    ],
+    "consEn": [
+      "Significant upfront cost (~$995)",
+      "NURBS modeling less suited to artistic/organic game 3D",
+      "Rendering and animation less advanced than dedicated suites",
+      "Learning curve on Grasshopper"
+    ],
+    "useCases": [
+      "Modéliser un produit ou un bijou avec une précision au centième",
+      "Créer des formes paramétriques avec Grasshopper",
+      "Concevoir des volumes d'architecture complexes",
+      "Préparer des modèles précis pour la fabrication ou l'impression"
+    ],
+    "useCasesEn": [
+      "Model a product or jewelry piece with hundredth precision",
+      "Create parametric shapes with Grasshopper",
+      "Design complex architectural volumes",
+      "Prepare precise models for manufacturing or printing"
+    ],
     "pricing_v5": {
+      "cautions": [
+        "Licence perpétuelle ~995$ (achat unique) ; licence éducation ~195$"
+      ],
       "source_domain": "rhino3d.com",
       "official_source_url": "https://www.rhino3d.com",
-      "verified_on": "2026-05-10",
-      "verification_status": "manual_reference",
-      "compare_price_monthly_eur": 0
+      "verified_on": "2026-06-17",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "perpetual",
+      "compare_plan_name": "Licence perpétuelle",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 995
     },
     "verticals": [
-      "interior-design"
+      "interior-design",
+      "creative"
     ],
     "functional_needs": [
-      "design-tools"
+      "modelisation-3d"
     ],
     "covers": [
-      "design-tools"
+      "modelisation-3d",
+      "3d"
     ],
     "relevantFor": [
       "architecte-bim",
@@ -64946,19 +65058,21 @@
     ],
     "tool_type": "metier",
     "substitutable": true,
-    "verdict": {
-      "keepIf": [
-        "Tu utilises Rhino chaque semaine sur des projets client"
-      ],
-      "avoidIf": [
-        "Usage ponctuel ou déjà couvert par un autre outil"
-      ],
-      "threshold": "À garder seulement si le besoin est récurrent dans le workflow."
+    "freeAlternative": "blender",
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Rhino (Rhinoceros) en 2026 : modeleur 3D NURBS de précision avec Grasshopper et licence perpétuelle (~995$). Alternatives (Blender). Le verdict ToolTrim."
     },
-    "pros": [],
-    "cons": [],
+    "prescription_quality": "oui",
+    "personas": [
+      "designer"
+    ],
     "articles": [],
-    "alternatives": []
+    "alternatives": [
+      "blender",
+      "sketchup-pro"
+    ]
   },
   {
     "id": "fredo6-bundle",
@@ -68987,66 +69101,142 @@
     "slug": "3ds-max",
     "name": "3ds Max",
     "categoryId": "creation",
-    "shortDescription": "Logiciel Autodesk pour modélisation, rendu et archviz professionnelle.",
-    "shortDescriptionEn": "Autodesk software for modeling, rendering, and professional archviz.",
+    "shortDescription": "Logiciel Autodesk de modélisation 3D et de rendu, roi de l'archviz et du jeu.",
+    "shortDescriptionEn": "Autodesk 3D modeling and rendering software, king of archviz and games.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 245€/mois environ"
+      "free": "Essai gratuit ; 3ds Max Indie pour <100k$ de CA",
+      "paid": "1 785$/an (~149$/mois) ou 225$/mois. Collection M&E avec Maya ~2 600$/an."
     },
-    "defaultMonthlyPrice": 245,
+    "pricingEn": {
+      "free": "Free trial; 3ds Max Indie for <$100k revenue",
+      "paid": "$1,785/year (~$149/month) or $225/month. M&E Collection with Maya ~$2,600/year."
+    },
+    "defaultMonthlyPrice": 149,
     "affiliateLink": "",
     "websiteUrl": "https://www.autodesk.com/products/3ds-max/overview",
     "logo": "",
     "category": "creation",
-    "longDescription": "Logiciel Autodesk pour modélisation, rendu et archviz professionnelle.",
+    "longDescription": "3ds Max, c'est l'autre logiciel 3D d'Autodesk, et son terrain de prédilection, c'est l'archviz (visualisation architecturale) et la modélisation d'assets pour le jeu vidéo. Sous Windows uniquement, il est réputé pour sa modélisation, sa stack de modifiers et surtout son écosystème de plugins gigantesque : V-Ray, Corona, Forest Pack, RailClone. Pour un archviz pro, le combo 3ds Max + V-Ray ou Corona est un quasi-standard.\n\nCôté prix, c'est l'alignement Autodesk : 1 785$/an (environ 149$/mois en annuel, 225$ en mensuel), avec une version 3ds Max Indie bien moins chère pour les indépendants sous 100 000$ de CA, et la collection Media & Entertainment qui le réunit à Maya autour de 2 600$/an.\n\nÀ qui ça s'adresse : aux archviz, aux modeleurs de jeux et aux studios déjà équipés Autodesk. L'arbitrage se fait face à Blender (gratuit, de plus en plus utilisé en archviz avec des add-ons), Cinema 4D (motion) et Maya (animation/film). 3ds Max se justifie surtout par son écosystème de plugins archviz et les pipelines existants.",
+    "longDescriptionEn": "3ds Max is Autodesk's other 3D app, and its home turf is archviz (architectural visualization) and game asset modeling. Windows-only, it's known for its modeling, its modifier stack and above all its huge plugin ecosystem: V-Ray, Corona, Forest Pack, RailClone. For a pro archviz artist, the 3ds Max + V-Ray or Corona combo is a near-standard.\n\nOn price, it follows Autodesk's line: $1,785/year (around $149/month annually, $225 monthly), with a much cheaper 3ds Max Indie version for freelancers under $100k revenue, and the Media & Entertainment Collection that bundles it with Maya for around $2,600/year.\n\nWho it's for: archviz artists, game modelers and studios already on Autodesk. The trade-off is against Blender (free, increasingly used in archviz with add-ons), Cinema 4D (motion) and Maya (animation/film). 3ds Max mainly earns its place through its archviz plugin ecosystem and existing pipelines.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais de l'archviz ou de la modélisation d'assets jeu et veux l'écosystème V-Ray/Corona/Forest Pack",
+        "Ton studio est déjà équipé Autodesk"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu débutes ou as un budget serré : Blender fait beaucoup gratuitement",
+        "Tu es sur Mac : 3ds Max est Windows uniquement"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Pertinent pour l'archviz pro et les pipelines Autodesk. Pour un usage indépendant, vise 3ds Max Indie ou Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz or game asset modeling and want the V-Ray/Corona/Forest Pack ecosystem",
+        "Your studio is already on Autodesk"
+      ],
+      "avoidIf": [
+        "You're a beginner or on a tight budget: Blender does a lot for free",
+        "You're on Mac: 3ds Max is Windows only"
+      ],
+      "threshold": "Worth it for pro archviz and Autodesk pipelines. For independent use, aim for 3ds Max Indie or Blender."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Roi de l'archviz et de la modélisation d'assets jeu",
+      "Écosystème de plugins gigantesque (V-Ray, Corona, Forest Pack)",
+      "Modélisation et stack de modifiers puissantes",
+      "3ds Max Indie disponible pour les indépendants (<100k$ de CA)"
+    ],
+    "prosEn": [
+      "King of archviz and game asset modeling",
+      "Huge plugin ecosystem (V-Ray, Corona, Forest Pack)",
+      "Powerful modeling and modifier stack",
+      "3ds Max Indie available for freelancers (<$100k revenue)"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Très cher : 1 785$/an (sauf 3ds Max Indie)",
+      "Windows uniquement (pas de version Mac)",
+      "Blender (gratuit) progresse vite en archviz",
+      "Interface vieillissante par endroits"
+    ],
+    "consEn": [
+      "Very expensive: $1,785/year (except 3ds Max Indie)",
+      "Windows only (no Mac version)",
+      "Blender (free) is advancing fast in archviz",
+      "Aging interface in places"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Produire des images d'architecture (archviz) avec V-Ray ou Corona",
+      "Modéliser des assets pour le jeu vidéo",
+      "Peupler des scènes avec Forest Pack/RailClone",
+      "Travailler dans un pipeline studio Autodesk"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Produce architecture images (archviz) with V-Ray or Corona",
+      "Model assets for games",
+      "Populate scenes with Forest Pack/RailClone",
+      "Work in an Autodesk studio pipeline"
+    ],
+    "covers": [
+      "3d",
+      "modelisation-3d",
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "architecte-bim"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "3ds Max (Autodesk) en 2026 : le logiciel 3D roi de l'archviz, prix réels (Indie inclus) et alternatives (Blender, Maya). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender",
+      "maya",
+      "cinema-4d"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "creative",
+      "architecte-bim"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "3d",
+      "modelisation-3d",
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "1 785$/an (~149$/mois) ou 225$/mois ; 3ds Max Indie moins cher pour <100k$ de CA ; Windows uniquement"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "autodesk.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "3ds Max (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.autodesk.com/products/3ds-max/overview",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 149
+    },
+    "substitution_cluster_v2": "3d-software"
   },
   {
     "id": "corona-renderer",
@@ -69185,66 +69375,139 @@
     "slug": "maya",
     "name": "Maya",
     "categoryId": "creation",
-    "shortDescription": "Standard 3D pour animation, personnages, rigging et production jeu/film.",
-    "shortDescriptionEn": "3D standard for animation, characters, rigging, and game/film production.",
+    "shortDescription": "Le standard 3D du cinéma et du jeu vidéo : animation, rigging, personnages (Autodesk).",
+    "shortDescriptionEn": "The 3D standard for film and games: animation, rigging, characters (Autodesk).",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 245€/mois environ"
+      "free": "Essai gratuit ; Maya Indie pour <100k$ de CA",
+      "paid": "1 785$/an (~149$/mois) ou 225$/mois. Collection M&E avec 3ds Max ~2 600$/an."
     },
-    "defaultMonthlyPrice": 245,
+    "pricingEn": {
+      "free": "Free trial; Maya Indie for <$100k revenue",
+      "paid": "$1,785/year (~$149/month) or $225/month. M&E Collection with 3ds Max ~$2,600/year."
+    },
+    "defaultMonthlyPrice": 149,
     "affiliateLink": "",
     "websiteUrl": "https://www.autodesk.com/products/maya/overview",
     "logo": "",
     "category": "creation",
-    "longDescription": "Standard 3D pour animation, personnages, rigging et production jeu/film.",
+    "longDescription": "Maya, c'est le standard de l'industrie pour l'animation, le rigging et le travail de personnages dans le cinéma et le jeu vidéo AAA. Là où Cinema 4D vise le motion design, Maya vise la production lourde : ses outils d'animation et de rigging sont les plus profonds du marché, et c'est la lingua franca des gros studios. Si tu vises un poste d'animateur ou de rigger en studio, c'est l'outil à connaître.\n\nLe revers, c'est le prix : 1 785$/an (environ 149$/mois en annuel, 225$ en mensuel), soit l'un des logiciels 3D les plus chers. Autodesk propose heureusement Maya Indie, bien moins cher pour les indépendants et petites structures réalisant moins de 100 000$ de CA. Et la collection Media & Entertainment regroupe Maya, 3ds Max et MotionBuilder autour de 2 600$/an.\n\nÀ qui ça s'adresse : aux artistes 3D orientés animation/personnage, et à ceux qui veulent travailler dans des pipelines studio. Pour tout le reste, l'arbitrage est rude face à Blender, devenu gratuitement très bon en animation, et à Cinema 4D pour le motion. Maya se justifie surtout par l'employabilité studio et la profondeur de son toolset d'animation.",
+    "longDescriptionEn": "Maya is the industry standard for animation, rigging and character work in film and AAA games. Where Cinema 4D targets motion design, Maya targets heavy production: its animation and rigging tools are the deepest on the market, and it's the lingua franca of large studios. If you're aiming for an animator or rigger role in a studio, it's the tool to know.\n\nThe downside is price: $1,785/year (around $149/month annually, $225 monthly), making it one of the most expensive 3D apps. Fortunately Autodesk offers Maya Indie, far cheaper for freelancers and small shops under $100k revenue. And the Media & Entertainment Collection bundles Maya, 3ds Max and MotionBuilder for around $2,600/year.\n\nWho it's for: 3D artists focused on animation/character work, and those who want to work in studio pipelines. For everything else, the trade-off is tough against Blender, now very good at animation for free, and Cinema 4D for motion. Maya mainly earns its place through studio employability and the depth of its animation toolset.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais de l'animation, du rigging ou du personnage pour le cinéma ou le jeu",
+        "Tu veux travailler dans des pipelines studio (Maya est le standard)"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu débutes ou as un budget serré : Blender fait beaucoup gratuitement",
+        "Tu fais surtout du motion design : Cinema 4D est plus direct"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Pertinent pour l'animation/personnage pro et l'employabilité studio. Pour un usage indépendant, vise Maya Indie ou Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do animation, rigging or character work for film or games",
+        "You want to work in studio pipelines (Maya is the standard)"
+      ],
+      "avoidIf": [
+        "You're a beginner or on a tight budget: Blender does a lot for free",
+        "You mostly do motion design: Cinema 4D is more direct"
+      ],
+      "threshold": "Worth it for pro animation/character work and studio employability. For independent use, aim for Maya Indie or Blender."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Standard de l'industrie pour l'animation et le rigging",
+      "Toolset d'animation/personnage le plus profond du marché",
+      "Lingua franca des gros studios (employabilité)",
+      "Maya Indie disponible pour les indépendants (<100k$ de CA)"
+    ],
+    "prosEn": [
+      "Industry standard for animation and rigging",
+      "Deepest animation/character toolset on the market",
+      "Lingua franca of large studios (employability)",
+      "Maya Indie available for freelancers (<$100k revenue)"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Très cher : 1 785$/an (sauf Maya Indie)",
+      "Courbe d'apprentissage raide",
+      "Blender (gratuit) rattrape vite sur l'animation",
+      "Moins direct que Cinema 4D pour le motion design"
+    ],
+    "consEn": [
+      "Very expensive: $1,785/year (except Maya Indie)",
+      "Steep learning curve",
+      "Blender (free) is catching up fast on animation",
+      "Less direct than Cinema 4D for motion design"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Animer et rigger des personnages pour le cinéma ou le jeu",
+      "Travailler dans un pipeline studio standardisé",
+      "Produire des VFX et des effets complexes",
+      "Modéliser et animer pour de la production AAA"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Animate and rig characters for film or games",
+      "Work in a standardized studio pipeline",
+      "Produce VFX and complex effects",
+      "Model and animate for AAA production"
+    ],
+    "covers": [
+      "3d",
+      "animation-2d-3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Maya (Autodesk) en 2026 : le standard 3D du cinéma et du jeu, prix réels (Maya Indie inclus) et alternatives (Blender, Cinema 4D). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender",
+      "cinema-4d",
+      "3ds-max"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "creative",
+      "motion-video"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "3d",
+      "animation-2d-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "1 785$/an (~149$/mois) ou 225$/mois ; Maya Indie moins cher pour <100k$ de CA"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "autodesk.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Maya (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.autodesk.com/products/maya/overview",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 149
+    },
+    "substitution_cluster_v2": "3d-software"
   },
   {
     "id": "zbrush",
