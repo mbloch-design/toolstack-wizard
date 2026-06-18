@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
+import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
@@ -418,6 +419,26 @@ function staticPrerenderPlugin(): Plugin {
                 "@type": "Offer",
                 price: price.toString(),
                 priceCurrency: "EUR",
+              };
+            }
+            // Note éditoriale ToolTrim (affichée sur la page) exposée en Review.
+            // C'est l'avis du média sur un outil tiers (légitime), PAS un
+            // aggregateRating à faux compteur d'avis utilisateurs.
+            const ts = computeToolTrimScore(tool);
+            if (ts && typeof ts.score === "number") {
+              jsonLd.review = {
+                "@type": "Review",
+                author: { "@type": "Organization", name: "ToolTrim" },
+                itemReviewed: { "@type": "SoftwareApplication", name, applicationCategory: "BusinessApplication" },
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: ts.score.toString(),
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+                ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
+                ...(tool.verdict?.threshold ? { reviewBody: String(tool.verdict.threshold).substring(0, 280) } : {}),
+                ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
               };
             }
 
