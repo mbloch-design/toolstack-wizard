@@ -423,6 +423,83 @@ function chooseMaturity(input: BuildInsightsInput, riskFlags: DiagnosticRiskFlag
   return "emerging";
 }
 
+function buildCreativeFocusArea(signal: DiagnosticAnswerSignal): DiagnosticFocusArea | null {
+  const map: Record<string, { labelFr: string; labelEn: string; actionFr: string; actionEn: string }> = {
+    adaptive_creative_figma_plugins: {
+      labelFr: "Structurer Figma autour des plugins",
+      labelEn: "Structure Figma around plugins",
+      actionFr: "Clarifier tokens, icones, accessibilite et handoff avant d'ajouter un autre outil design.",
+      actionEn: "Clarify tokens, icons, accessibility and handoff before adding another design tool.",
+    },
+    adaptive_creative_resources_rights: {
+      labelFr: "Securiser les ressources creatives",
+      labelEn: "Secure creative resources",
+      actionFr: "Centraliser templates, fonts, mockups et droits d'usage pour eviter les achats disperses.",
+      actionEn: "Centralize templates, fonts, mockups and usage rights to avoid scattered purchases.",
+    },
+    adaptive_creative_motion_plugins: {
+      labelFr: "Nettoyer la chaine motion",
+      labelEn: "Clean the motion chain",
+      actionFr: "Verifier plugins, sous-titres, review video et exports autour du logiciel principal.",
+      actionEn: "Review plugins, subtitles, video review and exports around the main tool.",
+    },
+    adaptive_creative_photo_delivery: {
+      labelFr: "Fermer la chaine photo",
+      labelEn: "Close the photo chain",
+      actionFr: "Clarifier presets, galeries client, sauvegarde et exports avant d'ajouter un autre outil photo.",
+      actionEn: "Clarify presets, client galleries, backup and exports before adding another photo tool.",
+    },
+    adaptive_creative_ui_handoff: {
+      labelFr: "Fiabiliser le handoff UI",
+      labelEn: "Stabilize UI handoff",
+      actionFr: "Mettre au clair composants, tokens, prototype et QA pour eviter la friction entre design et livraison.",
+      actionEn: "Clarify components, tokens, prototyping and QA to reduce design-to-delivery friction.",
+    },
+    adaptive_creative_content_distribution: {
+      labelFr: "Relier production et diffusion",
+      labelEn: "Connect production and distribution",
+      actionFr: "Verifier publication, analytics et CRM pour que la production de contenu ne reste pas isolee.",
+      actionEn: "Review publishing, analytics and CRM so content production does not stay isolated.",
+    },
+    adaptive_creative_studio_ops: {
+      labelFr: "Structurer l'operationnel creatif",
+      labelEn: "Structure creative operations",
+      actionFr: "Clarifier validation client, droits, stockage et facturation autour du studio.",
+      actionEn: "Clarify client review, rights, storage and billing around the studio.",
+    },
+    adaptive_creative_brand_system: {
+      labelFr: "Construire un socle de marque reutilisable",
+      labelEn: "Build a reusable brand foundation",
+      actionFr: "Verifier fonts, kits, mockups, assets et droits avant de multiplier les supports.",
+      actionEn: "Review fonts, kits, mockups, assets and rights before multiplying deliverables.",
+    },
+    adaptive_creative_illustration_pipeline: {
+      labelFr: "Securiser le pipeline illustration / 3D",
+      labelEn: "Secure the illustration / 3D pipeline",
+      actionFr: "Clarifier sources, rendus, exports et reutilisation des fichiers pour eviter la perte de continuité.",
+      actionEn: "Clarify sources, renders, exports and file reuse to avoid breaking the pipeline.",
+    },
+    adaptive_creative_ai_visual_overlap: {
+      labelFr: "Trier les IA visuelles",
+      labelEn: "Sort visual AI tools",
+      actionFr: "Distinguer exploration, production client et retouche pour eviter les faux doublons IA.",
+      actionEn: "Separate exploration, client production and retouching to avoid false AI duplicates.",
+    },
+  };
+
+  const matched = map[signal.id];
+  if (!matched) return null;
+
+  return {
+    id: `creative_${signal.id}`,
+    priority: signal.severity,
+    labelFr: matched.labelFr,
+    labelEn: matched.labelEn,
+    actionFr: matched.actionFr,
+    actionEn: matched.actionEn,
+  };
+}
+
 function buildFocusAreas(input: BuildInsightsInput, riskFlags: DiagnosticRiskFlag[], coverage: FunctionalCoverageItem[]): DiagnosticFocusArea[] {
   const focus: DiagnosticFocusArea[] = [];
   const primary = riskFlags[0];
@@ -436,6 +513,20 @@ function buildFocusAreas(input: BuildInsightsInput, riskFlags: DiagnosticRiskFla
       actionFr: primary.actionFr,
       actionEn: primary.actionEn,
     });
+  }
+
+  const creativeFocus = input.sessionState.persona === "SOFIA"
+    ? (input.answerSignals || [])
+        .filter((signal) =>
+          signal.source === "discovery" &&
+          signal.impact !== "keep" &&
+          signal.id.startsWith("adaptive_creative_")
+        )
+        .map(buildCreativeFocusArea)
+        .find((item): item is DiagnosticFocusArea => Boolean(item))
+    : null;
+  if (creativeFocus && !focus.some((item) => item.id === creativeFocus.id)) {
+    focus.push(creativeFocus);
   }
 
   const answerFocus = (input.answerSignals || []).find((signal) =>

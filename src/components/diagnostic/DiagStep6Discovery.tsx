@@ -53,6 +53,17 @@ const CREATIVE_RESOURCE_IDS = [
   "brand-kits",
 ];
 
+const CREATIVE_UI_HANDOFF_IDS = [
+  "figma-tokens",
+  "figma-anima",
+  "zeplin",
+  "protopie",
+  "rive",
+  "spline",
+  "framer",
+  "webflow-framer",
+];
+
 const CREATIVE_MOTION_CORE_IDS = [
   "adobe-after-effects",
   "adobe-premiere-pro",
@@ -98,6 +109,53 @@ const CREATIVE_VISUAL_AI_IDS = [
   "ideogram",
   "leonardo-ai",
   "runway",
+];
+
+const CREATIVE_CONTENT_DISTRIBUTION_IDS = [
+  "brevo",
+  "mailerlite",
+  "hubspot",
+  "buffer",
+  "later",
+  "metricool",
+  "looker-studio",
+  "google-analytics",
+  "posthog",
+  "hotjar",
+];
+
+const CREATIVE_STUDIO_OPS_IDS = [
+  "stripe",
+  "indy",
+  "paypal",
+  "notion",
+  "airtable",
+  "brandpad",
+  "frame-io",
+  "loom",
+  "google-drive",
+  "dropbox",
+];
+
+const CREATIVE_BRAND_SYSTEM_IDS = [
+  "brandpad",
+  "brand-kits",
+  "fontbase",
+  "rightfont",
+  "envato-elements",
+  "dynamic-mockups",
+  "icons8",
+  "hugeicons",
+];
+
+const CREATIVE_ILLUSTRATION_PIPELINE_IDS = [
+  "blender",
+  "spline",
+  "rive",
+  "adobe-substance-3d",
+  "dropbox",
+  "google-drive",
+  "wetransfer",
 ];
 
 function selectedByIds(tools: Tool[], ids: readonly string[]) {
@@ -334,6 +392,205 @@ function buildCreativeQuestions(
         },
       ],
       condition_tool_ids: selectedPhotoTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (
+    session.primarySpecialty === "ui_product" &&
+    selectedDesignCoreTools.length > 0 &&
+    !hasAnyTool(selectedTools, CREATIVE_UI_HANDOFF_IDS)
+  ) {
+    questions.push({
+      id: "adaptive_creative_ui_handoff",
+      persona: "SOFIA",
+      question: t(
+        `Avec ${toolList(selectedDesignCoreTools)}, comment tu gères composants, prototype et handoff ?`,
+        `With ${toolList(selectedDesignCoreTools)}, how do you handle components, prototyping and handoff?`
+      ),
+      subtitle: t(
+        "En UI produit, la vraie friction se cache souvent entre le design principal et la transmission vers les autres équipes.",
+        "In product design, the real friction often sits between the core design tool and the handoff to other teams."
+      ),
+      options: [
+        {
+          label: t("Le handoff et les composants sont déjà nets", "Handoff and components are already clear"),
+          impact: "keep",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je fais encore beaucoup sans système clair", "I still do a lot without a clear system"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois clarifier tokens, prototype ou QA", "I need to clarify tokens, prototyping or QA"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedDesignCoreTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (
+    session.primarySpecialty === "content_social" &&
+    (selectedCreativeAiTools.length > 0 || hasAnyTool(selectedTools, ["canva", "adobe-express", "capcut", "descript"])) &&
+    !hasAnyTool(selectedTools, CREATIVE_CONTENT_DISTRIBUTION_IDS)
+  ) {
+    const contentCoreTools = selectedByIds(selectedTools, [
+      "canva",
+      "adobe-express",
+      "capcut",
+      "descript",
+      "midjourney",
+      "runway",
+      "tella",
+    ]);
+    questions.push({
+      id: "adaptive_creative_content_distribution",
+      persona: "SOFIA",
+      question: t(
+        `Tu produis avec ${toolList(contentCoreTools)}. Comment tu gères publication, diffusion et mesure ?`,
+        `You create with ${toolList(contentCoreTools)}. How do you handle publishing, distribution and measurement?`
+      ),
+      subtitle: t(
+        "Pour le contenu social, la valeur ne se joue pas seulement à la production, mais dans la chaîne publication → mesure.",
+        "For social content, value does not stop at production. It lives in the publish-to-measure chain."
+      ),
+      options: [
+        {
+          label: t("La diffusion et la mesure sont déjà cadrées", "Distribution and measurement are already covered"),
+          impact: "keep",
+          affectedTools: contentCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je publie surtout à la main", "I mostly publish manually"),
+          impact: "review",
+          affectedTools: contentCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois clarifier analytics ou CRM", "I need to clarify analytics or CRM"),
+          impact: "review",
+          affectedTools: contentCoreTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: contentCoreTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (
+    session.primarySpecialty === "creative_ops" &&
+    selectedTools.length > 0 &&
+    !hasAnyTool(selectedTools, CREATIVE_STUDIO_OPS_IDS)
+  ) {
+    questions.push({
+      id: "adaptive_creative_studio_ops",
+      persona: "SOFIA",
+      question: t(
+        "Comment tu gères validation client, droits, suivi et facturation de ton studio ?",
+        "How do you handle client review, rights, follow-up and billing for your studio?"
+      ),
+      subtitle: t(
+        "Sur un profil studio/ops créa, le risque n’est pas l’outil principal mais l’opérationnel autour.",
+        "For a creative ops/studio profile, the risk is not the main app but the surrounding operations."
+      ),
+      options: [
+        {
+          label: t("Le pilotage est déjà structuré", "Operations are already structured"),
+          impact: "keep",
+          affectedTools: selectedTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je gère ça de manière dispersée", "I manage this in a fragmented way"),
+          impact: "review",
+          affectedTools: selectedTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois clarifier validation ou facturation", "I need to clarify review or billing"),
+          impact: "review",
+          affectedTools: selectedTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (
+    session.primarySpecialty === "brand_identity" &&
+    selectedDesignCoreTools.length > 0 &&
+    !hasAnyTool(selectedTools, CREATIVE_BRAND_SYSTEM_IDS)
+  ) {
+    questions.push({
+      id: "adaptive_creative_brand_system",
+      persona: "SOFIA",
+      question: t(
+        `Autour de ${toolList(selectedDesignCoreTools)}, tu as un vrai socle de marque réutilisable ?`,
+        `Around ${toolList(selectedDesignCoreTools)}, do you already have a reusable brand system?`
+      ),
+      subtitle: t(
+        "Je cherche le socle invisible : fonts, kits, mockups, assets, règles et droits d’usage.",
+        "I am looking for the invisible foundation: fonts, kits, mockups, assets, rules and usage rights."
+      ),
+      options: [
+        {
+          label: t("Oui, le socle est déjà en place", "Yes, the foundation is already in place"),
+          impact: "keep",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je compose encore au cas par cas", "I still assemble it case by case"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois clarifier assets, fonts ou droits", "I need to clarify assets, fonts or rights"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedDesignCoreTools.map((tool) => tool.id),
+      condition_type: "any",
+    });
+  }
+
+  if (
+    session.primarySpecialty === "illustration_3d" &&
+    selectedDesignCoreTools.length > 0 &&
+    !hasAnyTool(selectedTools, CREATIVE_ILLUSTRATION_PIPELINE_IDS)
+  ) {
+    questions.push({
+      id: "adaptive_creative_illustration_pipeline",
+      persona: "SOFIA",
+      question: t(
+        `Autour de ${toolList(selectedDesignCoreTools)}, comment tu sécurises exports, sources et pipeline 3D ?`,
+        `Around ${toolList(selectedDesignCoreTools)}, how do you secure exports, source files and the 3D pipeline?`
+      ),
+      subtitle: t(
+        "Je vérifie la continuité entre création, rendu, exports et réutilisation des sources.",
+        "I check continuity between creation, rendering, exports and source-file reuse."
+      ),
+      options: [
+        {
+          label: t("Le pipeline est cadré", "The pipeline is already framed"),
+          impact: "keep",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je gère encore ça à la main", "I still handle this manually"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+        {
+          label: t("Je dois clarifier sources, rendus ou exports", "I need to clarify sources, renders or exports"),
+          impact: "review",
+          affectedTools: selectedDesignCoreTools.map((tool) => tool.id),
+        },
+      ],
+      condition_tool_ids: selectedDesignCoreTools.map((tool) => tool.id),
       condition_type: "any",
     });
   }

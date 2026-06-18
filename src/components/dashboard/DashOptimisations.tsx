@@ -6,6 +6,7 @@ import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
+import { buildCreativeRecommendationNarrative } from "@/utils/creativeRecommendationNarrative";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -30,14 +31,6 @@ function formatSwapSavings(swap: SwapData, t: Props["t"]) {
   const label = `${formatMoney(swap.savings, currency)}/${t("mois", "mo")}`;
   return currency ? label : `${label} · ${t("montant à préciser", "amount to clarify")}`;
 }
-
-const PERSONA_REASONS: Record<string, { fr: string; en: string }> = {
-  THEO: { fr: "Idéal pour les devs qui veulent automatiser", en: "Ideal for devs who want to automate" },
-  SOFIA: { fr: "Conçu pour les workflows créatifs", en: "Built for creative workflows" },
-  MARC: { fr: "Parfait pour structurer ta prospection", en: "Perfect for structuring your pipeline" },
-  ALIX: { fr: "Booste ta création de contenu", en: "Boosts your content creation" },
-  CLAIRE: { fr: "Simplifie ta gestion quotidienne", en: "Simplifies your daily operations" },
-};
 
 function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]; onAccept: () => void; prefix: string }) {
   const [showSteps, setShowSteps] = useState(false);
@@ -129,9 +122,6 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
     }
     return out.sort((a, b) => b.savings - a.savings);
   }, [result, allTools, sessionState]);
-
-  const personaReason = PERSONA_REASONS[sessionState.persona] || PERSONA_REASONS.THEO;
-
   return (
     <div className="space-y-8">
       <header className="space-y-2">
@@ -178,14 +168,28 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
           <div className="space-y-2">
             {result.recommendations.slice(0, 3).map((tool) => (
               <div key={tool.id} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3">
-                <ToolLogo tool={tool} size={32} className="rounded-lg" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-foreground">{tool.name}</p>
-                  <p className="text-xs text-muted-foreground">{t(personaReason.fr, personaReason.en)}</p>
-                </div>
-                <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">
-                  {formatToolMonthlyPrice(tool, t)}
-                </span>
+                {(() => {
+                  const narrative = buildCreativeRecommendationNarrative(tool, sessionState);
+
+                  return (
+                    <>
+                      <ToolLogo tool={tool} size={32} className="rounded-lg" />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-sm font-medium text-foreground">{tool.name}</p>
+                          <span className="rounded-full border border-border bg-muted/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                            {t(narrative.badgeFr, narrative.badgeEn)}
+                          </span>
+                        </div>
+                        <p className="mt-1 text-xs text-foreground/80">{t(narrative.reasonFr, narrative.reasonEn)}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">{t(narrative.detailFr, narrative.detailEn)}</p>
+                      </div>
+                      <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">
+                        {formatToolMonthlyPrice(tool, t)}
+                      </span>
+                    </>
+                  );
+                })()}
               </div>
             ))}
           </div>

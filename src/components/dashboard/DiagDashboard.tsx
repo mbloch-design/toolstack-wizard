@@ -238,7 +238,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
             </div>
             <div className="min-w-0">
               <p className="truncate text-base font-semibold leading-tight text-foreground">tooltrim</p>
-              <p className="truncate text-xs text-muted-foreground">{t("Restitution d’audit", "Audit restitution")}</p>
+              <p className="truncate text-xs text-muted-foreground">{t("Lecture guidée · Restitution d’audit", "Guided read · Audit restitution")}</p>
             </div>
           </div>
 
@@ -249,6 +249,33 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
             <p className="mt-1 text-sm leading-relaxed text-foreground">
               {sidebarPersona.detail}
             </p>
+          </div>
+
+          <div className="mt-3 rounded-2xl border border-border bg-background px-3 py-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+              {t("Lis d’abord", "Read first")}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {primarySidebarTabs.slice(0, 3).map((tab, index) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => navigate(tab.id)}
+                  className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                    activeTab === tab.id
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-border bg-card text-foreground hover:bg-muted"
+                  }`}
+                >
+                  <span className={`flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold ${
+                    activeTab === tab.id ? "bg-background text-foreground" : "bg-background text-muted-foreground"
+                  }`}>
+                    {index + 1}
+                  </span>
+                  <span>{t(tab.labelFr, tab.labelEn)}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           <label className="mt-4 flex h-11 items-center gap-2 rounded-2xl border border-border bg-background px-3 text-muted-foreground shadow-sm focus-within:border-foreground/30 focus-within:text-foreground">

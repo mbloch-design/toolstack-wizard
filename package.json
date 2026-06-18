@@ -52,7 +52,15 @@
     "login:vercel": "npx --yes vercel login",
     "validate:go62": "node scripts/validate-go62-creative-specialty-routing.mjs",
     "validate:go63": "node scripts/validate-go63-creative-restitution-routing.mjs",
-    "validate:go64": "node scripts/validate-go64-creative-specialty-scoring.mjs"
+    "validate:go64": "node scripts/validate-go64-creative-specialty-scoring.mjs",
+    "validate:go65": "node scripts/validate-go65-creative-peripheral-workflow.mjs",
+    "validate:go66": "node scripts/validate-go66-creative-gap-recommendations.mjs",
+    "validate:go67": "node scripts/validate-go67-creative-recommendation-narrative.mjs",
+    "validate:go68": "node scripts/validate-go68-selection-clarity.mjs",
+    "validate:go69": "node scripts/validate-go69-selection-feedback.mjs",
+    "validate:go70": "node scripts/validate-go70-guided-report-shell.mjs",
+    "validate:go71": "node scripts/validate-go71-pricing-coverage.mjs",
+    "validate:go72": "node scripts/validate-go72-diagnostic-v2.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

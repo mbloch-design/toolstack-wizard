@@ -7,6 +7,7 @@ import { Check, CheckCircle2, ChevronRight, ExternalLink, Target } from "lucide-
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, getPricingAudit } from "@/utils/diagnosticPricing";
+import { buildCreativeRecommendationNarrative } from "@/utils/creativeRecommendationNarrative";
 
 
 
@@ -138,14 +139,12 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
 
   // MONTH — recommendations
   for (const rec of recommendations.slice(0, 3)) {
+    const narrative = buildCreativeRecommendationNarrative(rec, sessionState);
     items.push({
       id: `month-rec-${rec.id}`,
       tool: rec,
-      label: t(`Explorer ${rec.name}`, `Explore ${rec.name}`),
-      detail: t(
-        "Piste à garder pour plus tard, seulement si ce besoin existe vraiment dans ton activité.",
-        "Keep this as a later option, only if this need truly exists in your work."
-      ),
+      label: t(narrative.actionTitleFr, narrative.actionTitleEn),
+      detail: t(narrative.detailFr, narrative.detailEn),
       evidenceTab: "optimiser",
       savings: 0, timeMinutes: 120, urgency: "month",
     });

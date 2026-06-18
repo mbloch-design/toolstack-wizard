@@ -300,6 +300,58 @@ function getEvidence(result: DiagnosticResult, t: Props["t"], monthlyCostLabel: 
 ];
 }
 
+function getReportLens(result: DiagnosticResult, t: Props["t"]) {
+  if (result.sessionState.persona === "SOFIA") {
+    return [
+      {
+        label: t("Production", "Production"),
+        detail: t(
+          "Je regarde d’abord ce qui produit vraiment les livrables, pas la vitrine de la stack.",
+          "I first look at what truly produces deliverables, not the shop window of the stack."
+        ),
+      },
+      {
+        label: t("Accélération", "Acceleration"),
+        detail: t(
+          "Je distingue les satellites qui font gagner du temps des outils centraux qu’il faut préserver.",
+          "I separate time-saving satellites from the central tools that should be preserved."
+        ),
+      },
+      {
+        label: t("Livraison", "Delivery"),
+        detail: t(
+          "Je vérifie enfin ce qui fluidifie la review, la livraison et les droits d’usage.",
+          "I then check what smooths review, delivery and usage rights."
+        ),
+      },
+    ];
+  }
+
+  return [
+    {
+      label: t("Socle", "Core"),
+      detail: t(
+        "Je commence par ce qui porte vraiment l’activité au quotidien.",
+        "I start with what truly supports daily work."
+      ),
+    },
+    {
+      label: t("Friction", "Friction"),
+      detail: t(
+        "Je relève ensuite les chevauchements, zones floues et plans à confirmer.",
+        "I then surface overlaps, fuzzy areas and plans to confirm."
+      ),
+    },
+    {
+      label: t("Décision", "Decision"),
+      detail: t(
+        "Je termine par les quelques arbitrages qui changent réellement la stack.",
+        "I finish with the few tradeoffs that truly change the stack."
+      ),
+    },
+  ];
+}
+
 function formatEstimatedSavings(item: PriorityItem, t: Props["t"]) {
   if (item.savings <= 0) return null;
   const currency = item.tool?.priceCurrency || item.tool?.catalogMonthlyPriceCurrency;
@@ -326,6 +378,7 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
     () => selectedTools.filter((tool) => getPricingAudit(tool, t).needsVerification).slice(0, 4),
     [selectedTools, t]
   );
+  const reportLens = useMemo(() => getReportLens(result, t), [result, t]);
   const evidence = useMemo(() => getEvidence(result, t, monthlyCostLabel), [result, t, monthlyCostLabel]);
   const goalLabel = getGoalLabel(result.sessionState.stackGoal, t);
   const coverage = result.sessionState.selectionCoverage;
@@ -351,8 +404,8 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
           </h1>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {t(
-              "Je te donne d’abord la lecture utile, puis les preuves. L’objectif n’est pas de tout regarder, mais de savoir quoi décider.",
-              "I give you the useful read first, then the evidence. The goal is not to inspect everything, but to know what to decide."
+              "Je te raconte d’abord la logique métier de la stack, puis les preuves. Le but n’est pas de tout ouvrir, mais de savoir quoi décider ensuite.",
+              "I first tell you the business logic of the stack, then the evidence. The goal is not to open everything, but to know what to decide next."
             )}
           </p>
         </div>
@@ -435,6 +488,30 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <SectionHeader
+          eyebrow={t("Fil directeur", "Reading lens")}
+          title={t("Comment je lis cette stack", "How I read this stack")}
+          description={t(
+            "Je garde la même grille de lecture tout au long du rapport pour éviter les conclusions génériques.",
+            "I keep the same reading lens throughout the report to avoid generic conclusions."
+          )}
+        />
+        <div className="grid gap-3 md:grid-cols-3">
+          {reportLens.map((item, index) => (
+            <div key={item.label} className="rounded-lg border border-border bg-card p-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted font-mono text-xs font-bold text-muted-foreground">
+                  {index + 1}
+                </span>
+                <p className="text-sm font-semibold text-foreground">{item.label}</p>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -584,11 +661,11 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
 
       <section className="space-y-3">
         <SectionHeader
-          eyebrow={t("Explorer", "Explore")}
-          title={t("Si tu veux creuser", "If you want to go deeper")}
+          eyebrow={t("Annexes utiles", "Useful appendices")}
+          title={t("Si tu veux vérifier plus loin", "If you want to verify further")}
           description={t(
-            "Les anciennes vues deviennent des annexes : utiles, mais pas nécessaires pour comprendre l’essentiel.",
-            "The former views become appendices: useful, but not required to understand the essentials."
+            "Les autres vues restent disponibles comme annexes : utiles pour vérifier, pas nécessaires pour comprendre l’essentiel.",
+            "The other views stay available as appendices: useful for verification, not required to understand the essentials."
           )}
         />
         <div className="grid gap-2 md:grid-cols-2">

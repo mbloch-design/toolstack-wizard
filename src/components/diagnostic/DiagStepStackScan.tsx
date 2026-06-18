@@ -529,6 +529,12 @@ type StackFeedAnimation = {
   toY: number;
 };
 
+type RecentConfirmation = {
+  id: string;
+  tool: Tool;
+  source: "suggestion" | "search" | "manual";
+};
+
 type BillingOption = {
   value: NonNullable<Tool["selectedOffer"]>;
   fr: string;
@@ -773,6 +779,13 @@ function nextMomentId(
   return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || null;
 }
 
+function scrollCardIntoView(toolId: string) {
+  window.setTimeout(() => {
+    const target = document.querySelector<HTMLElement>(`[data-stack-tool-card-id="${toolId}"]`);
+    target?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+  }, 60);
+}
+
 export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onPrev, onTrack, t, fromTool }: Props) {
   const [search, setSearch] = useState("");
   const questionRef = useRef<HTMLHeadingElement | null>(null);
@@ -805,6 +818,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [pendingToolId, setPendingToolId] = useState<string | null>(null);
   const [pendingSource, setPendingSource] = useState<"suggestion" | "search">("suggestion");
   const [lastConfirmedToolId, setLastConfirmedToolId] = useState<string | null>(null);
+  const [recentConfirmation, setRecentConfirmation] = useState<RecentConfirmation | null>(null);
   const [feedAnimation, setFeedAnimation] = useState<StackFeedAnimation | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
@@ -829,6 +843,16 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       })
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [allKnownTools, search, selectedIds]);
+
+  useEffect(() => {
+    if (!recentConfirmation) return;
+    const timeout = window.setTimeout(() => {
+      setRecentConfirmation((current) =>
+        current?.id === recentConfirmation.id ? null : current
+      );
+    }, 1900);
+    return () => window.clearTimeout(timeout);
+  }, [recentConfirmation]);
 
   const momentCoverage = useMemo(() => {
     return stackMoments.map((moment) => {
@@ -939,6 +963,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
       setPendingToolId(tool.id);
       setPendingSource(source === "search" ? "search" : "suggestion");
+      scrollCardIntoView(tool.id);
       onTrack?.("selector_tool_plan_opened", {
         tool_id: tool.id,
         tool_name: tool.name,
@@ -1006,6 +1031,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       };
       setPendingToolId(null);
       setLastConfirmedToolId(tool.id);
+      setRecentConfirmation({
+        id: `${tool.id}-${Date.now()}`,
+        tool: selectedTool,
+        source,
+      });
       if (sourceRect && targetRect) {
         setFeedAnimation({
           id: `${tool.id}-${Date.now()}`,
@@ -1055,6 +1085,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const customTool = withDefaultOffer(makeCustomTool(name, price, activeMoment, "EUR"));
     setSelectedTools((prev) => [...prev, customTool]);
     setLastConfirmedToolId(customTool.id);
+    setRecentConfirmation({
+      id: `${customTool.id}-${Date.now()}`,
+      tool: customTool,
+      source: "manual",
+    });
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -1309,6 +1344,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             "One area at a time. Click a tool, clarify how you use it, then it joins your stack."
           )}
         </p>
+        <SelectionFlowCue
+          hasSelection={selectedTools.length > 0}
+          hasPendingTool={Boolean(pendingTool)}
+          t={t}
+        />
         {onPrev && (
           <button
             type="button"
@@ -1357,6 +1397,20 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             <PlanFocusBanner
               tool={pendingTool}
               onCancel={cancelPendingTool}
+              t={t}
+            />
+          )}
+
+          {pendingTool && (
+            <PendingInlineHint
+              tool={pendingTool}
+              t={t}
+            />
+          )}
+
+          {!pendingTool && recentConfirmation && (
+            <SelectionConfirmedBanner
+              confirmation={recentConfirmation}
               t={t}
             />
           )}
@@ -1520,10 +1574,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
               <button
                 type="button"
                 onClick={moveToNextMoment}
-                disabled={selectedInActiveMoment === 0}
+                disabled={selectedInActiveMoment === 0 || Boolean(pendingTool)}
                 className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold disabled:opacity-40"
               >
-                {t("Zone suivante", "Next area")}
+                {pendingTool
+                  ? t("Termine cet ajout d’abord", "Finish this add first")
+                  : t("Zone suivante", "Next area")}
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
@@ -1537,6 +1593,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           pricingSummary={pricingSummary}
           coverageComplete={coverageCount >= stackMoments.length}
           highlightToolId={lastConfirmedToolId}
+          recentConfirmation={recentConfirmation}
           stackDropRef={stackDropRef}
           onPricingReview={scrollToFirstPricingIssue}
           onReview={() => openReview("stack_companion")}
@@ -1555,6 +1612,80 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         onReview={() => openReview("mobile_stack_bar")}
         t={t}
       />
+    </div>
+  );
+}
+
+function SelectionFlowCue({
+  hasSelection,
+  hasPendingTool,
+  t,
+}: {
+  hasSelection: boolean;
+  hasPendingTool: boolean;
+  t: (fr: string, en: string) => string;
+}) {
+  const activeStep = hasPendingTool ? 2 : hasSelection ? 3 : 1;
+  const steps = [
+    {
+      id: 1,
+      titleFr: "Choisis un outil",
+      titleEn: "Choose a tool",
+      detailFr: "Premier clic",
+      detailEn: "First click",
+    },
+    {
+      id: 2,
+      titleFr: "Précise le mode",
+      titleEn: "Choose the mode",
+      detailFr: "Plan ou usage",
+      detailEn: "Plan or usage",
+    },
+    {
+      id: 3,
+      titleFr: "Il rejoint ta stack",
+      titleEn: "It joins your stack",
+      detailFr: "Ajout confirmé",
+      detailEn: "Confirmed add",
+    },
+  ];
+
+  return (
+    <div className="mx-auto mt-4 grid max-w-2xl gap-2 sm:grid-cols-3">
+      {steps.map((step) => {
+        const isActive = step.id === activeStep;
+        const isPast = step.id < activeStep;
+        return (
+          <div
+            key={step.id}
+            className={`rounded-2xl border px-3 py-3 text-left transition-colors ${
+              isActive
+                ? "border-foreground bg-foreground text-background"
+                : isPast
+                  ? "border-primary/20 bg-primary/5 text-foreground"
+                  : "border-border bg-background text-foreground"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <span
+                className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold ${
+                  isActive
+                    ? "bg-background text-foreground"
+                    : isPast
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground"
+                }`}
+              >
+                {step.id}
+              </span>
+              <p className="text-sm font-semibold">{t(step.titleFr, step.titleEn)}</p>
+            </div>
+            <p className={`mt-1 text-xs ${isActive ? "text-background/70" : "text-muted-foreground"}`}>
+              {t(step.detailFr, step.detailEn)}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -1611,7 +1742,14 @@ function ToolChoiceButton({
       >
         <ToolLogo tool={displayTool} size={36} className="rounded-md" />
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold text-foreground">{displayTool.name}</p>
+          <div className="flex items-center gap-2">
+            <p className="truncate text-sm font-semibold text-foreground">{displayTool.name}</p>
+            {selected && (
+              <span className="inline-flex h-5 shrink-0 items-center rounded-full bg-primary/12 px-2 text-[10px] font-bold uppercase tracking-[0.08em] text-primary">
+                {t("Ajouté", "Added")}
+              </span>
+            )}
+          </div>
           <p className="truncate text-xs text-muted-foreground">
             {selected
               ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
@@ -1644,7 +1782,7 @@ function ToolChoiceButton({
           <div className="space-y-1">
             <p className="flex items-center gap-1 truncate text-[11px] font-semibold text-foreground">
               <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-foreground font-mono text-[9px] text-background">2</span>
-              {t("Précise le mode pour l’ajouter", "Clarify the mode to add it")}
+              {t("Choisis maintenant le mode", "Choose the mode now")}
             </p>
             <OfferSelector tool={displayTool} onChange={onConfirmOffer} compact currentOffer={null} t={t} />
           </div>
@@ -1656,15 +1794,69 @@ function ToolChoiceButton({
           >
             <span className="min-w-0">
               <span className="block truncate text-xs font-semibold text-foreground">
-                {t("Préciser l’usage", "Clarify usage")}
+                {t("1. Choisir cet outil", "1. Choose this tool")}
               </span>
               <span className="block truncate text-[11px] font-medium text-muted-foreground">
-                {t("puis ajout automatique", "then auto-add")}
+                {t("le mode s’ouvre juste ici", "the mode opens right here")}
               </span>
             </span>
             <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
           </button>
         )}
+      </div>
+    </div>
+  );
+}
+
+function PendingInlineHint({
+  tool,
+  t,
+}: {
+  tool: Tool;
+  t: (fr: string, en: string) => string;
+}) {
+  return (
+    <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-3" role="status" aria-live="polite">
+      <p className="text-sm font-semibold text-foreground">
+        {t(`Étape 2 en cours pour ${tool.name}`, `Step 2 in progress for ${tool.name}`)}
+      </p>
+      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+        {t(
+          "Choisis le mode dans la carte en surbrillance. Dès ce choix confirmé, l’outil rejoint la colonne de droite.",
+          "Choose the mode in the highlighted card. As soon as it is confirmed, the tool moves into the right column."
+        )}
+      </p>
+    </div>
+  );
+}
+
+function SelectionConfirmedBanner({
+  confirmation,
+  t,
+}: {
+  confirmation: RecentConfirmation;
+  t: (fr: string, en: string) => string;
+}) {
+  return (
+    <div className="mt-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/8 px-4 py-3" role="status" aria-live="polite">
+      <div className="flex items-center gap-3">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
+          <Check className="h-4 w-4" />
+        </span>
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-foreground">
+            {t(
+              `${confirmation.tool.name} rejoint ta stack`,
+              `${confirmation.tool.name} just joined your stack`
+            )}
+          </p>
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {t(
+              `${offerLabel(confirmation.tool, t)} · ${formatToolMonthlyBudget(confirmation.tool, t)}`,
+              `${offerLabel(confirmation.tool, t)} · ${formatToolMonthlyBudget(confirmation.tool, t)}`
+            )}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -1847,6 +2039,7 @@ function StackCompanion({
   pricingSummary,
   coverageComplete,
   highlightToolId,
+  recentConfirmation,
   stackDropRef,
   onPricingReview,
   onReview,
@@ -1858,6 +2051,7 @@ function StackCompanion({
   pricingSummary: ReturnType<typeof getPricingCaptureSummary>;
   coverageComplete: boolean;
   highlightToolId?: string | null;
+  recentConfirmation?: RecentConfirmation | null;
   stackDropRef: RefObject<HTMLDivElement>;
   onPricingReview: () => void;
   onReview: () => void;
@@ -1921,6 +2115,25 @@ function StackCompanion({
                 `${pricingSummary.needsVerificationCount} mode${pricingSummary.needsVerificationCount > 1 ? "s" : ""} to clarify`
               )}
             </button>
+          )}
+
+          {recentConfirmation && (
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-primary">
+                {t("Dernier ajout", "Latest add")}
+              </p>
+              <div className="mt-2 flex items-center gap-2">
+                <ToolLogo tool={recentConfirmation.tool} size={28} className="rounded-md" />
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold text-foreground">
+                    {recentConfirmation.tool.name}
+                  </p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    {offerLabel(recentConfirmation.tool, t)} · {formatToolMonthlyBudget(recentConfirmation.tool, t)}
+                  </p>
+                </div>
+              </div>
+            </div>
           )}
 
           {selectedTools.length === 0 ? (

@@ -257,6 +257,34 @@
         "Le plan Mini (5€/mois) est limité à 1 page publiée et 1 collection CMS",
         "Le plan Basic (10€/mois) offre 30 pages et 1 collection CMS",
         "Les éditeurs supplémentaires sont facturés en supplément sur tous les plans"
+      ],
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Mini",
+          "label_en": "Mini",
+          "price_monthly_eur": 5,
+          "currency": "EUR"
+        },
+        {
+          "value": "team",
+          "label_fr": "Pro / Team",
+          "label_en": "Pro / Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
       ]
     },
     "affiliateLink": "",
@@ -9808,7 +9836,35 @@
       "source_domain": "brevo.com",
       "official_source_url": "https://www.brevo.com/pricing/",
       "verified_on": "2026-05-03",
-      "verification_status": "verified_public_pricing_page"
+      "verification_status": "verified_public_pricing_page",
+      "billing_model": "usage_based",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "usage",
+          "label_fr": "Starter email",
+          "label_en": "Starter email",
+          "price_monthly_eur": 9,
+          "currency": "EUR"
+        },
+        {
+          "value": "custom_quote",
+          "label_fr": "Business / Enterprise",
+          "label_en": "Business / Enterprise",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
     "websiteUrl": "https://www.brevo.com",
@@ -20622,7 +20678,35 @@
       "location_sensitive": false,
       "official_source_url": "https://one.google.com/about/plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 1.73
+      "compare_price_monthly_eur": 1.73,
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Google One 100 Go",
+          "label_en": "Google One 100 GB",
+          "price_monthly_eur": 1.73,
+          "currency": "EUR"
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus Google Workspace",
+          "label_en": "Included with Google Workspace",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://google.com/drive",
     "logo": "",
@@ -22669,7 +22753,34 @@
       "source_domain": "hubspot.com",
       "verified_on": "2026-05-02",
       "official_source_url": "https://www.hubspot.com",
-      "verification_status": "needs_official_quote"
+      "verification_status": "needs_official_quote",
+      "billing_model": "custom_quote",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free tools",
+          "label_en": "Free tools",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "custom_quote",
+          "label_fr": "Starter / Pro / Hub",
+          "label_en": "Starter / Pro / Hub",
+          "needs_verification": true
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus équipe",
+          "label_en": "Included by team",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "affiliateLink": "https://www.hubspot.com",
     "websiteUrl": "https://hubspot.com",
@@ -23860,7 +23971,29 @@
       "location_sensitive": false,
       "official_source_url": "https://www.indy.fr/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "compare_price_monthly_eur": 20,
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "paid",
+          "label_fr": "Indy",
+          "label_en": "Indy",
+          "price_monthly_eur": 20,
+          "currency": "EUR"
+        },
+        {
+          "value": "included",
+          "label_fr": "Payé pour moi",
+          "label_en": "Paid for me",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://indy.fr",
     "logo": "",
@@ -37767,7 +37900,34 @@
       "location_sensitive": false,
       "official_source_url": "https://posthog.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 0,
+      "billing_model": "usage_based",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "usage",
+          "label_fr": "Usage-based",
+          "label_en": "Usage-based",
+          "needs_verification": true
+        },
+        {
+          "value": "custom_quote",
+          "label_fr": "Enterprise",
+          "label_en": "Enterprise",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://posthog.com",
     "logo": "",
@@ -47306,7 +47466,31 @@
       "location_sensitive": false,
       "official_source_url": "https://stripe.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 0,
+      "billing_model": "usage_based",
+      "billing_options": [
+        {
+          "value": "usage",
+          "label_fr": "Commission Stripe",
+          "label_en": "Stripe fees",
+          "price_monthly_eur": 0,
+          "note_fr": "Commission variable selon le volume",
+          "note_en": "Variable fee based on volume",
+          "needs_verification": true
+        },
+        {
+          "value": "custom_quote",
+          "label_fr": "Contrat enterprise",
+          "label_en": "Enterprise contract",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "websiteUrl": "https://stripe.com",
     "logo": "",
@@ -59604,7 +59788,35 @@
       "verification_status": "official_explicit",
       "usage_sensitive": false,
       "location_sensitive": false,
-      "cautions": []
+      "cautions": [],
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Pro",
+          "label_en": "Pro",
+          "price_monthly_eur": 8,
+          "currency": "EUR"
+        },
+        {
+          "value": "team",
+          "label_fr": "Team",
+          "label_en": "Team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "pricingTiers": {
       "free": "Gratuit — 100 éléments maximum",
@@ -93860,7 +94072,34 @@
       "source_domain": "mailerlite.com",
       "verified_on": "2026-05-11",
       "official_source_url": "https://mailerlite.com",
-      "verification_status": "needs_official_quote"
+      "verification_status": "needs_official_quote",
+      "billing_model": "usage_based",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "usage",
+          "label_fr": "Growing Business",
+          "label_en": "Growing Business",
+          "needs_verification": true
+        },
+        {
+          "value": "custom_quote",
+          "label_fr": "Advanced / Enterprise",
+          "label_en": "Advanced / Enterprise",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "affiliateLink": "https://mailerlite.com",
     "websiteUrl": "https://mailerlite.com",
@@ -114404,7 +114643,36 @@
       "location_sensitive": false,
       "official_source_url": "https://frame.io/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 15,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Pro",
+          "label_en": "Pro",
+          "price_monthly_eur": 15,
+          "price_original": 15,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Team / Adobe inclus",
+          "label_en": "Team / Adobe included",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -114571,7 +114839,36 @@
       "location_sensitive": false,
       "official_source_url": "https://www.loom.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 18
+      "compare_price_monthly_eur": 18,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Starter",
+          "label_en": "Starter",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Business",
+          "label_en": "Business",
+          "price_monthly_eur": 18,
+          "price_original": 18,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Enterprise / équipe",
+          "label_en": "Enterprise / team",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -117746,7 +118043,36 @@
       "location_sensitive": false,
       "official_source_url": "https://support.contentsquare.com/hc/en-us/articles/37271913608721-Hotjar-is-now-part-of-Contentsquare-Plans-and-Pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 32
+      "compare_price_monthly_eur": 32,
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Basic",
+          "label_en": "Basic",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Plus",
+          "label_en": "Plus",
+          "price_monthly_eur": 32,
+          "price_original": 32,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Business",
+          "label_en": "Business",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -117897,7 +118223,36 @@
       "location_sensitive": false,
       "official_source_url": "https://pixieset.com/",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 12
+      "compare_price_monthly_eur": 12,
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Client Gallery / Studio",
+          "label_en": "Client Gallery / Studio",
+          "price_monthly_eur": 12,
+          "currency": "USD",
+          "needs_verification": true
+        },
+        {
+          "value": "team",
+          "label_fr": "Pack studio",
+          "label_en": "Studio bundle",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -119653,7 +120008,44 @@
       "location_sensitive": false,
       "official_source_url": "https://www.notion.so/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10
+      "compare_price_monthly_eur": 10,
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Free",
+          "label_en": "Free",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Plus",
+          "label_en": "Plus",
+          "price_monthly_eur": 10,
+          "price_original": 10,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Business",
+          "label_en": "Business",
+          "price_monthly_eur": 15,
+          "price_original": 15,
+          "currency": "USD"
+        },
+        {
+          "value": "included",
+          "label_fr": "Inclus équipe",
+          "label_en": "Included by team",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -120552,7 +120944,36 @@
       "location_sensitive": false,
       "official_source_url": "https://www.dropbox.com/plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12
+      "compare_price_monthly_eur": 12,
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "value": "free",
+          "label_fr": "Basic",
+          "label_en": "Basic",
+          "price_monthly_eur": 0
+        },
+        {
+          "value": "paid",
+          "label_fr": "Plus",
+          "label_en": "Plus",
+          "price_monthly_eur": 12,
+          "price_original": 12,
+          "currency": "USD"
+        },
+        {
+          "value": "team",
+          "label_fr": "Business",
+          "label_en": "Business",
+          "needs_verification": true
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "needs_verification": true
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,

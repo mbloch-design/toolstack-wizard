@@ -75,6 +75,57 @@ function getDowngradeSavings(tool: Tool) {
   return 0;
 }
 
+export const CREATIVE_RECOMMENDATION_FAMILIES = {
+  ui_product: {
+    triggerIds: ["figma", "sketch", "framer", "webflow-framer"],
+    missingIds: ["figma-tokens", "figma-iconify", "figma-stark", "figma-anima", "zeplin", "protopie", "rive", "spline"],
+  },
+  brand_identity: {
+    triggerIds: ["adobe-illustrator", "adobe-photoshop", "figma", "canva", "indesign"],
+    missingIds: ["brandpad", "brand-kits", "fontbase", "rightfont", "envato-elements", "dynamic-mockups", "icons8", "hugeicons"],
+  },
+  motion_video: {
+    triggerIds: ["adobe-after-effects", "adobe-premiere-pro", "davinci-resolve", "capcut", "runway"],
+    missingIds: ["frame-io", "descript", "ae-bodymovin", "lottiefiles", "ae-animation-composer", "motion-bro", "ae-overlord", "ae-duik", "ae-red-giant", "topaz-video-ai"],
+  },
+  photo_retouch: {
+    triggerIds: ["adobe-lightroom", "capture-one", "adobe-photoshop"],
+    missingIds: ["pixieset", "lightroom-presets", "luminar-neo", "nik-collection", "remove-bg", "dropbox", "wetransfer"],
+  },
+  content_social: {
+    triggerIds: ["canva", "adobe-express", "capcut", "descript", "midjourney", "runway", "tella"],
+    missingIds: ["buffer", "later", "metricool", "brevo", "mailerlite", "hubspot", "looker-studio", "google-analytics", "posthog", "hotjar"],
+  },
+  illustration_3d: {
+    triggerIds: ["procreate", "adobe-illustrator", "adobe-photoshop", "figma", "midjourney", "blender"],
+    missingIds: ["blender", "adobe-substance-3d", "spline", "rive", "google-drive", "dropbox", "wetransfer"],
+  },
+  creative_ops: {
+    triggerIds: ["notion", "airtable", "frame-io", "google-drive", "dropbox"],
+    missingIds: ["brandpad", "stripe", "indy", "brevo", "hubspot", "looker-studio", "loom", "frame-io"],
+  },
+} as const;
+
+function selectedByIds(tools: Tool[], ids: readonly string[]) {
+  const selectedIds = new Set(ids);
+  return tools.filter((tool) => selectedIds.has(tool.id));
+}
+
+function buildCreativeGapRecommendationIds(
+  selectedTools: Tool[],
+  primarySpecialty?: SessionState["primarySpecialty"]
+) {
+  if (!isCreativeSpecialty(primarySpecialty)) return new Set<string>();
+  const family = CREATIVE_RECOMMENDATION_FAMILIES[primarySpecialty];
+  if (!family) return new Set<string>();
+
+  const triggerTools = selectedByIds(selectedTools, family.triggerIds);
+  if (triggerTools.length === 0) return new Set<string>();
+
+  const selectedIds = new Set(selectedTools.map((tool) => tool.id));
+  return new Set(family.missingIds.filter((id) => !selectedIds.has(id)));
+}
+
 // ─── 1. Pertinence ────────────────────────────────────────────────
 export function computePertinence(
   tool: Tool,
@@ -465,8 +516,12 @@ export function computeRecommendations(
 ): Tool[] {
   const selectedIds = new Set(selectedTools.map((t) => t.id));
   const creativeSpecialtyActive = persona === "SOFIA" && isCreativeSpecialty(primarySpecialty);
+  const creativeGapRecommendationIds = creativeSpecialtyActive
+    ? buildCreativeGapRecommendationIds(selectedTools, primarySpecialty)
+    : new Set<string>();
   const eligible = allTools.filter((t) => {
     if (selectedIds.has(t.id)) return false;
+    if (creativeGapRecommendationIds.has(t.id)) return true;
     if (["satellite", "gestion", "ia"].includes(t.tool_type)) return true;
     if (!creativeSpecialtyActive) return false;
     if (!["plugin", "specialise", "metier"].includes(t.tool_type)) return false;
@@ -477,13 +532,18 @@ export function computeRecommendations(
     .map((t) => ({
       tool: t,
       affinity: getCreativeSpecialtyToolAffinity(t, primarySpecialty),
+      gapFit: creativeGapRecommendationIds.has(t.id) ? 1 : 0,
       score: computeScoreFinal(t, persona, complementarySkills, tjm, primarySpecialty),
     }))
-    .sort((a, b) => b.score.scoreFinal - a.score.scoreFinal || b.affinity - a.affinity);
+    .sort((a, b) => b.gapFit - a.gapFit || b.score.scoreFinal - a.score.scoreFinal || b.affinity - a.affinity);
 
-  let results = scored.filter((s) => s.score.scoreFinal > 60).map((s) => s.tool);
+  let results = scored
+    .filter((s) => s.gapFit === 1 || s.score.scoreFinal > 60)
+    .map((s) => s.tool);
   if (results.length < 3) {
-    results = scored.filter((s) => s.score.scoreFinal > 45).map((s) => s.tool);
+    results = scored
+      .filter((s) => s.gapFit === 1 || s.score.scoreFinal > 45)
+      .map((s) => s.tool);
   }
   return results.slice(0, 6);
 }
