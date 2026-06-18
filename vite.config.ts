@@ -671,6 +671,43 @@ function staticPrerenderPlugin(): Plugin {
                 ],
               } : null;
 
+              const subProductUrl = tool.websiteUrl || tool.affiliateLink || tool.website_url || tool.affiliate_link || "";
+              const subScore = computeToolTrimScore(tool);
+
+              // Review schema sur /avis (la page affiche déjà la note ToolTrim).
+              const reviewSchema = sub.path === "avis" && subScore && typeof subScore.score === "number" ? {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                name,
+                ...(subProductUrl ? { url: subProductUrl } : {}),
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Web",
+                review: {
+                  "@type": "Review",
+                  author: { "@type": "Organization", name: "ToolTrim" },
+                  reviewRating: { "@type": "Rating", ratingValue: subScore.score.toString(), bestRating: "5", worstRating: "1" },
+                  ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
+                  ...(verdictThreshold ? { reviewBody: String(verdictThreshold).substring(0, 280) } : {}),
+                  ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
+                },
+              } : null;
+
+              // Offer schema sur /prix (prix vérifié ToolTrim).
+              const offerSchema = sub.path === "prix" && price && price > 0 ? {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                name,
+                ...(subProductUrl ? { url: subProductUrl } : {}),
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Web",
+                offers: {
+                  "@type": "Offer",
+                  price: price.toString(),
+                  priceCurrency: "EUR",
+                  ...(subProductUrl ? { url: subProductUrl } : {}),
+                },
+              } : null;
+
               const metaTags = [
                 `<link rel="canonical" href="${url}" />`,
                 `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
@@ -684,6 +721,8 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta property="og:image" content="${BASE}/og-image.png" />`,
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
                 ...(faqSchema ? [`<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
+                ...(reviewSchema ? [`<script id="tool-avis-review-jsonld" type="application/ld+json">${JSON.stringify(reviewSchema)}</script>`] : []),
+                ...(offerSchema ? [`<script id="tool-prix-offer-jsonld" type="application/ld+json">${JSON.stringify(offerSchema)}</script>`] : []),
               ].join("\n    ");
 
               let html = baseHtml;
