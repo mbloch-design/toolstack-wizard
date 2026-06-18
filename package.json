@@ -64,7 +64,8 @@
     "validate:go73": "node scripts/validate-go73-tunnel-continuity.mjs",
     "validate:go74": "node scripts/validate-go74-creative-evidence.mjs",
     "validate:go75": "node scripts/validate-go75-backoffice-summary.mjs",
-    "validate:go76": "node scripts/validate-go76-production-routes.mjs"
+    "validate:go76": "node scripts/validate-go76-production-routes.mjs",
+    "validate:go77": "node scripts/validate-go77-onboarding-purpose.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

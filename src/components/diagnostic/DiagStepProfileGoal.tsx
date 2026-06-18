@@ -99,18 +99,6 @@ const GOALS: Array<{
   },
 ];
 
-const TJM_OPTIONS = [
-  { label: tLabel("< 300€", "< 300€"), value: 250 },
-  { label: tLabel("300€ - 500€", "300€ - 500€"), value: 400 },
-  { label: tLabel("500€ - 800€", "500€ - 800€"), value: 650 },
-  { label: tLabel("800€ - 1 200€", "800€ - 1,200€"), value: 1000 },
-  { label: tLabel("> 1 200€", "> 1,200€"), value: 1500 },
-] as const;
-
-function tLabel(fr: string, en: string) {
-  return { fr, en };
-}
-
 function inferPersona(tools: Tool[]) {
   const scores = new Map<Persona, number>();
   PERSONAS.forEach((persona) => scores.set(persona.id, 0));
@@ -141,31 +129,23 @@ function inferPersona(tools: Tool[]) {
 
 export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev, variant = "confirm", t }: Props) {
   const inferred = useMemo(() => inferPersona(session.selectedTools), [session.selectedTools]);
-  const [profileStep, setProfileStep] = useState<"persona" | "specialty" | "goal" | "details">("persona");
-  const [firstName, setFirstName] = useState(session.firstName || "");
-  const [email, setEmail] = useState(session.email || "");
-  const [emailError, setEmailError] = useState("");
+  const [profileStep, setProfileStep] = useState<"persona" | "specialty" | "goal">("persona");
   const [persona, setPersona] = useState<Persona>(session.persona || inferred.persona);
   const [primarySpecialty, setPrimarySpecialty] = useState<CreativeSpecialty>((session.primarySpecialty as CreativeSpecialty) || "brand_identity");
   const [stackGoal, setStackGoal] = useState<NonNullable<SessionState["stackGoal"]>>(session.stackGoal || "reduce_costs");
-  const [tjm, setTjm] = useState<number>(session.tjm || 0);
 
   const isIntro = variant === "intro";
   const isCreativePersona = persona === "SOFIA";
-  const emailValue = email.trim();
-  const isValidEmail = (value: string) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   const stepOrder = isCreativePersona
-    ? (["persona", "specialty", "goal", "details"] as const)
-    : (["persona", "goal", "details"] as const);
+    ? (["persona", "specialty", "goal"] as const)
+    : (["persona", "goal"] as const);
   const stepIndex = Math.max(0, (stepOrder as readonly string[]).indexOf(profileStep));
   const stepTitle =
     profileStep === "persona"
       ? t("Tu fais surtout quoi au quotidien ?", "What do you mostly do day to day?")
       : profileStep === "specialty"
         ? t("Dans la création, tu fais surtout quoi ?", "What kind of creative work do you mostly do?")
-        : profileStep === "goal"
-          ? t("Tu veux améliorer quoi en priorité ?", "What do you want to improve first?")
-          : t("Deux détails utiles, mais optionnels.", "Two useful details, but optional.");
+        : t("Tu veux améliorer quoi en priorité ?", "What do you want to improve first?");
   const stepSubtitle =
     profileStep === "persona"
       ? t(
@@ -177,38 +157,28 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
             "Je m’en sers pour prioriser les bonnes zones : plugins Figma, photo, motion, droits, validation ou mesure.",
             "I use it to prioritize the right areas: Figma plugins, photo, motion, rights, review or measurement."
           )
-        : profileStep === "goal"
-          ? t(
-              "Cette réponse change l’ordre des recommandations : économies, simplicité, temps gagné ou qualité de choix.",
-              "This answer changes the order of recommendations: savings, simplicity, saved time, or decision quality."
-            )
-          : t(
-              "Tu peux tout laisser vide. Le rapport restera utilisable, ces champs servent seulement à le rendre plus personnel.",
-              "You can leave everything blank. The report will still work; these fields only make it more personal."
-            );
+        : t(
+            "Cette réponse change l’ordre des recommandations. Ensuite, on passe directement aux outils que tu utilises.",
+            "This answer changes the recommendation order. Then we go straight to the tools you use."
+          );
   const stepEyebrow =
     profileStep === "persona"
       ? t("Point de départ", "Starting point")
       : profileStep === "specialty"
         ? t("Métier créatif", "Creative craft")
-        : profileStep === "goal"
-          ? t("Priorité", "Priority")
-          : t("Personnalisation", "Personalization");
+        : t("Priorité", "Priority");
   const stepHelp =
     profileStep === "persona"
       ? t("Si tu hésites, prends le rôle qui décrit le mieux tes missions récentes.", "If unsure, choose the role that best describes your recent work.")
       : profileStep === "specialty"
         ? t("Si tu fais plusieurs choses, choisis ce qui représente le plus tes missions récentes.", "If you do several things, pick what best represents your recent work.")
-        : profileStep === "goal"
-          ? t("Un même outil peut être bon à garder, à réduire ou à remplacer selon ton intention.", "The same tool can be worth keeping, reducing, or replacing depending on your intent.")
-          : t("Ces infos restent privées au diagnostic et peuvent être ignorées.", "These details stay private to the diagnostic and can be skipped.");
+        : t("Un même outil peut être bon à garder, à réduire ou à remplacer selon ton intention.", "The same tool can be worth keeping, reducing, or replacing depending on your intent.");
 
   useEffect(() => {
     if (profileStep === "specialty" && !isCreativePersona) setProfileStep("goal");
   }, [isCreativePersona, profileStep]);
 
   const goBackWithinIntro = () => {
-    if (profileStep === "details") return setProfileStep("goal");
     if (profileStep === "goal") return setProfileStep(isCreativePersona ? "specialty" : "persona");
     if (profileStep === "specialty") return setProfileStep("persona");
     return onPrev?.();
@@ -217,27 +187,19 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
   const handlePrimary = () => {
     if (profileStep === "persona") return setProfileStep(isCreativePersona ? "specialty" : "goal");
     if (profileStep === "specialty") return setProfileStep("goal");
-    if (profileStep === "goal") return setProfileStep("details");
     return handleNext();
   };
 
   const handleNext = () => {
-    if (!isValidEmail(emailValue)) {
-      setEmailError(t("Email invalide", "Invalid email"));
-      return;
-    }
     const complementarySkills = inferred.ranked
       .filter(([id]) => id !== persona)
       .slice(0, inferred.confidence === "hybrid" ? 1 : 0)
       .map(([id]) => id as Persona);
 
     onUpdate({
-      firstName: firstName.trim(),
-      email: emailValue || undefined,
       persona,
       personaConfidence: isIntro ? "clear" : persona === inferred.persona ? inferred.confidence : "hybrid",
       stackGoal,
-      tjm,
       primarySpecialty: persona === "SOFIA" ? primarySpecialty : undefined,
       complementarySkills,
     });
@@ -361,73 +323,6 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           </section>
         )}
 
-        {profileStep === "details" && (
-          <section className="diagnostic-card mx-auto max-w-3xl space-y-5 p-5">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <label className="space-y-2">
-                <span className="text-sm font-medium text-foreground">{t("Ton prénom", "Your first name")}</span>
-                <input
-                  id="diagnostic-first-name-compact"
-                  name="first-name"
-                  type="text"
-                  value={firstName}
-                  onChange={(event) => setFirstName(event.target.value)}
-                  placeholder={t("Ex. Sofia", "E.g. Sofia")}
-                  className="h-12 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                />
-              </label>
-              <label className="space-y-2">
-                <span className="text-sm font-medium text-foreground">{t("Email optionnel", "Optional email")}</span>
-                <input
-                  id="diagnostic-email-early"
-                  name="email"
-                  type="email"
-                  value={email}
-                  onChange={(event) => {
-                    setEmail(event.target.value);
-                    setEmailError("");
-                  }}
-                  placeholder={t("Pour recevoir le rapport", "To receive the report")}
-                  className="h-12 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                />
-              </label>
-            </div>
-            {emailError && <p className="text-sm text-destructive">{emailError}</p>}
-
-            <div className="space-y-3">
-              <div>
-                <p className="text-sm font-medium text-foreground">{t("Ton tarif jour, si tu veux affiner le calcul", "Your day rate, if you want a sharper estimate")}</p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {t("Tu peux choisir “Pas utile” sans pénaliser le diagnostic.", "You can choose “Not needed” without hurting the diagnostic.")}
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {TJM_OPTIONS.map((option) => (
-                  <button
-                    key={option.value}
-                    type="button"
-                    onClick={() => setTjm(option.value)}
-                    className={`h-11 rounded-xl border px-2 text-sm font-medium ${
-                      tjm === option.value ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {t(option.label.fr, option.label.en)}
-                  </button>
-                ))}
-                <button
-                  type="button"
-                  onClick={() => setTjm(0)}
-                  className={`h-11 rounded-xl border px-2 text-sm font-medium ${
-                    tjm === 0 ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {t("Pas utile", "Not needed")}
-                </button>
-              </div>
-            </div>
-          </section>
-        )}
-
           <footer className="mx-auto flex max-w-3xl flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
             {profileStep === "persona" && !onPrev ? (
               <p className="text-sm text-muted-foreground">
@@ -447,7 +342,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
               onClick={handlePrimary}
               className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold"
             >
-              {profileStep === "details" ? t("Trouver mes outils", "Find my tools") : t("Continuer", "Continue")}
+              {profileStep === "goal" ? t("Ajouter mes outils", "Add my tools") : t("Continuer", "Continue")}
               <ArrowRight className="h-4 w-4" />
             </button>
           </footer>

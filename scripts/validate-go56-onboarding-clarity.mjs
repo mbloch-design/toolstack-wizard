@@ -1,10 +1,12 @@
 import { readFileSync } from "node:fs";
 
 const PROFILE = "src/components/diagnostic/DiagStepProfileGoal.tsx";
+const PRE_VERDICT = "src/components/diagnostic/DiagStepPreVerdict.tsx";
 const TOPBAR = "src/components/diagnostic/DiagTopBar.tsx";
 const APP = "src/App.tsx";
 
 const profile = readFileSync(PROFILE, "utf8");
+const preVerdict = readFileSync(PRE_VERDICT, "utf8");
 const topbar = readFileSync(TOPBAR, "utf8");
 const app = readFileSync(APP, "utf8");
 
@@ -18,8 +20,22 @@ ok(
   "onboarding asks one plain question first",
   profile.includes("Tu fais surtout quoi au quotidien ?") &&
     profile.includes("Tu veux améliorer quoi en priorité ?") &&
-    profile.includes("Deux détails utiles, mais optionnels."),
+    !profile.includes("Deux détails utiles, mais optionnels."),
   "first screen should read like a guided conversation, not a setup dashboard"
+);
+
+ok(
+  "onboarding removes premature contact and day-rate collection",
+  !profile.includes("diagnostic-email-early") &&
+    !profile.includes("TJM_OPTIONS") &&
+    !profile.includes('profileStep === "details"'),
+  "the user should reach stack capture immediately after useful calibration"
+);
+
+ok(
+  "email stays at the report moment",
+  preVerdict.includes("diagnostic-report-email-inline"),
+  "contact capture should happen only when there is a report to send"
 );
 
 ok(
@@ -40,7 +56,9 @@ ok(
 
 ok(
   "onboarding keeps only a textual local step marker",
-  profile.includes("stepIndex + 1}/3") && !profile.includes("[0, 1, 2].map"),
+  profile.includes("stepIndex + 1") &&
+    profile.includes("stepOrder.length") &&
+    !profile.includes("[0, 1, 2].map"),
   "the content should not duplicate the global progress bar"
 );
 
