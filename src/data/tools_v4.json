@@ -67217,6 +67217,836 @@
     "substitution_cluster_v2": null
   },
   {
+    "id": "houdini",
+    "slug": "houdini",
+    "name": "Houdini",
+    "category": "creation",
+    "shortDescription": "Le logiciel de référence pour les FX et le procédural (simulations, VFX cinéma).",
+    "shortDescriptionEn": "The reference software for FX and procedural work (simulations, film VFX).",
+    "pricing": {
+      "free": "Apprentice gratuit (non-commercial, watermark)",
+      "paid": "Indie 299$/an (<100k$ de CA) ; Core ~1 995$/an ; FX ~4 495$ (perpétuel)."
+    },
+    "pricingEn": {
+      "free": "Apprentice free (non-commercial, watermark)",
+      "paid": "Indie $299/year (<$100k revenue); Core ~$1,995/year; FX ~$4,495 (perpetual)."
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "https://www.sidefx.com",
+    "websiteUrl": "https://www.sidefx.com",
+    "logo": "",
+    "longDescription": "Houdini, c'est l'arme lourde des effets spéciaux. Développé par SideFX, c'est le logiciel de référence pour tout ce qui est simulation et procédural : feu, fumée, eau, destruction, foules, systèmes de particules complexes. Sa particularité, c'est que tout y est non destructif et basé sur des noeuds : tu construis un effet comme une recette reproductible et ajustable à l'infini. C'est ce qui en fait le standard des studios VFX de cinéma.\n\nLe revers, c'est une courbe d'apprentissage parmi les plus raides du marché : Houdini pense différemment des autres logiciels 3D, et il faut du temps pour l'apprivoiser. Côté prix, il y a une vraie générosité : Houdini Apprentice est gratuit pour un usage non commercial (avec watermark), et Houdini Indie ne coûte que 299$/an pour les indépendants sous 100 000$ de CA. Les versions Core (~1 995$/an) et FX (~4 495$) visent les studios.\n\nÀ qui ça s'adresse : aux artistes FX, au motion design technique et à quiconque veut faire des simulations sérieuses. Pour de la 3D généraliste ou du motion plus simple, Cinema 4D ou Blender sont bien plus accessibles. Mais dès que tu touches à la simulation et au procédural avancé, Houdini n'a pas de vrai équivalent, et son tarif Indie le rend étonnamment abordable.",
+    "longDescriptionEn": "Houdini is the heavy artillery of visual effects. Developed by SideFX, it's the reference software for everything simulation and procedural: fire, smoke, water, destruction, crowds, complex particle systems. Its defining trait is that everything is non-destructive and node-based: you build an effect like a repeatable, infinitely adjustable recipe. That's what makes it the standard of film VFX studios.\n\nThe downside is one of the steepest learning curves on the market: Houdini thinks differently from other 3D apps, and it takes time to tame. On price, there's real generosity: Houdini Apprentice is free for non-commercial use (with watermark), and Houdini Indie is only $299/year for freelancers under $100k revenue. The Core (~$1,995/year) and FX (~$4,495) versions target studios.\n\nWho it's for: FX artists, technical motion design and anyone wanting serious simulations. For general 3D or simpler motion, Cinema 4D or Blender are far more approachable. But the moment you get into simulation and advanced procedural work, Houdini has no real equivalent, and its Indie tier makes it surprisingly affordable.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais de la simulation ou des VFX (feu, fumée, eau, destruction, foules)",
+        "Tu veux du procédural non destructif et tu acceptes la courbe d'apprentissage"
+      ],
+      "avoidIf": [
+        "Tu fais de la 3D généraliste ou du motion simple : Cinema 4D ou Blender sont plus directs",
+        "Tu débutes en 3D : Houdini est l'un des outils les plus exigeants"
+      ],
+      "threshold": "Incontournable pour la simulation et le procédural avancé, surtout via le tarif Indie (299$/an). Pour du motion généraliste, C4D ou Blender sont plus accessibles."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do simulation or VFX (fire, smoke, water, destruction, crowds)",
+        "You want non-destructive procedural work and accept the learning curve"
+      ],
+      "avoidIf": [
+        "You do general 3D or simple motion: Cinema 4D or Blender are more direct",
+        "You're a 3D beginner: Houdini is one of the most demanding tools"
+      ],
+      "threshold": "Essential for simulation and advanced procedural work, especially via the Indie tier ($299/year). For general motion, C4D or Blender are more approachable."
+    },
+    "pros": [
+      "La référence absolue de la simulation et du procédural",
+      "Tout est non destructif et basé sur des noeuds",
+      "Apprentice gratuit (non-commercial) et Indie à 299$/an",
+      "Standard des studios VFX de cinéma"
+    ],
+    "prosEn": [
+      "The absolute reference for simulation and procedural work",
+      "Everything is non-destructive and node-based",
+      "Free Apprentice (non-commercial) and Indie at $299/year",
+      "Standard of film VFX studios"
+    ],
+    "cons": [
+      "Courbe d'apprentissage parmi les plus raides du marché",
+      "Surdimensionné pour de la 3D généraliste ou du motion simple",
+      "Versions studio (Core/FX) très chères",
+      "Pense différemment des autres logiciels 3D"
+    ],
+    "consEn": [
+      "One of the steepest learning curves on the market",
+      "Overkill for general 3D or simple motion",
+      "Studio versions (Core/FX) are very expensive",
+      "Thinks differently from other 3D apps"
+    ],
+    "useCases": [
+      "Simuler du feu, de la fumée, de l'eau ou de la destruction",
+      "Créer des systèmes de particules et des foules",
+      "Construire des effets procéduraux réutilisables",
+      "Produire des VFX de niveau cinéma"
+    ],
+    "useCasesEn": [
+      "Simulate fire, smoke, water or destruction",
+      "Create particle systems and crowds",
+      "Build reusable procedural effects",
+      "Produce film-grade VFX"
+    ],
+    "covers": [
+      "3d",
+      "effets-visuels",
+      "simulation"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Houdini (SideFX) en 2026 : le logiciel de référence des FX et du procédural. Prix réels (Apprentice gratuit, Indie 299$/an) et alternatives. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender",
+      "cinema-4d",
+      "maya"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "3d",
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Apprentice gratuit (non-commercial) ; Indie 299$/an ; Core ~1 995$/an ; FX ~4 495$ perpétuel"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "sidefx.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Houdini Indie (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.sidefx.com/buy/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 25
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "nuke",
+    "slug": "nuke",
+    "name": "Nuke",
+    "category": "creation",
+    "shortDescription": "Le standard du compositing VFX node-based pour le cinéma (Foundry).",
+    "shortDescriptionEn": "The node-based VFX compositing standard for film (Foundry).",
+    "pricing": {
+      "free": "Nuke Non-commercial gratuit",
+      "paid": "Nuke Indie 499$/an (<100k$ de CA) ; commercial dès ~3 839$/an."
+    },
+    "pricingEn": {
+      "free": "Nuke Non-commercial free",
+      "paid": "Nuke Indie $499/year (<$100k revenue); commercial from ~$3,839/year."
+    },
+    "defaultMonthlyPrice": 42,
+    "affiliateLink": "https://www.foundry.com/products/nuke-family",
+    "websiteUrl": "https://www.foundry.com/products/nuke-family",
+    "logo": "",
+    "longDescription": "Nuke, c'est le standard du compositing pour le cinéma et la télévision. Là où After Effects travaille par calques et convient au motion design, Nuke travaille par noeuds et est conçu pour le compositing VFX haut de gamme : plans lourds, deep compositing, intégration 3D, gros volumes de passes. Quasiment tous les films à effets visuels passent par lui ou par un concurrent direct.\n\nFoundry a basculé Nuke en abonnement. La bonne nouvelle, c'est Nuke Indie à 499$/an pour les indépendants sous 100 000$ de CA, qui donne accès à quasiment tout le toolset. Les versions commerciales (Nuke, NukeX, Nuke Studio) démarrent autour de 3 839$/an. Et il existe une version Non-commercial gratuite pour apprendre.\n\nÀ qui ça s'adresse : aux compositeurs VFX et à ceux qui visent les pipelines de studio. Pour du motion design ou du compositing léger, After Effects suffit et coûte moins cher, et DaVinci Resolve intègre Fusion (compositing node-based) gratuitement. Nuke se justifie quand tu fais du compositing de niveau film, ou que tu veux te former à l'outil standard de l'industrie.",
+    "longDescriptionEn": "Nuke is the compositing standard for film and TV. Where After Effects works in layers and suits motion design, Nuke works in nodes and is built for high-end VFX compositing: heavy shots, deep compositing, 3D integration, large numbers of passes. Nearly every VFX film goes through it or a direct competitor.\n\nFoundry moved Nuke to subscription. The good news is Nuke Indie at $499/year for freelancers under $100k revenue, giving access to almost the full toolset. Commercial versions (Nuke, NukeX, Nuke Studio) start around $3,839/year. And there's a free Non-commercial version to learn.\n\nWho it's for: VFX compositors and those aiming for studio pipelines. For motion design or light compositing, After Effects is enough and cheaper, and DaVinci Resolve includes Fusion (node-based compositing) for free. Nuke earns its place when you do film-grade compositing, or want to train on the industry-standard tool.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais du compositing VFX de niveau cinéma/télé",
+        "Tu veux te former au standard de l'industrie (Nuke Indie à 499$/an)"
+      ],
+      "avoidIf": [
+        "Tu fais du motion design ou du compositing léger : After Effects suffit",
+        "Tu veux du compositing node-based gratuit : Fusion dans DaVinci Resolve"
+      ],
+      "threshold": "Le standard du compositing film. Pour du motion ou du léger, After Effects ou Fusion (gratuit dans Resolve) suffisent."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do film/TV-grade VFX compositing",
+        "You want to train on the industry standard (Nuke Indie at $499/year)"
+      ],
+      "avoidIf": [
+        "You do motion design or light compositing: After Effects is enough",
+        "You want free node-based compositing: Fusion in DaVinci Resolve"
+      ],
+      "threshold": "The film compositing standard. For motion or light work, After Effects or Fusion (free in Resolve) are enough."
+    },
+    "pros": [
+      "Standard du compositing VFX pour le cinéma",
+      "Compositing node-based puissant (deep, 3D, gros volumes)",
+      "Nuke Indie à 499$/an et version Non-commercial gratuite",
+      "Employabilité studio forte"
+    ],
+    "prosEn": [
+      "The VFX compositing standard for film",
+      "Powerful node-based compositing (deep, 3D, heavy volumes)",
+      "Nuke Indie at $499/year and free Non-commercial version",
+      "Strong studio employability"
+    ],
+    "cons": [
+      "Versions commerciales très chères (dès ~3 839$/an)",
+      "Surdimensionné pour du motion ou du compositing léger",
+      "Courbe d'apprentissage node-based",
+      "After Effects et Fusion couvrent les besoins plus simples"
+    ],
+    "consEn": [
+      "Commercial versions are very expensive (from ~$3,839/year)",
+      "Overkill for motion or light compositing",
+      "Node-based learning curve",
+      "After Effects and Fusion cover simpler needs"
+    ],
+    "useCases": [
+      "Compositer des plans VFX de niveau cinéma",
+      "Intégrer des éléments 3D dans des prises réelles",
+      "Faire du deep compositing et du keying avancé",
+      "Se former au compositing standard de l'industrie"
+    ],
+    "useCasesEn": [
+      "Composite film-grade VFX shots",
+      "Integrate 3D elements into live action",
+      "Do deep compositing and advanced keying",
+      "Train on the industry-standard compositing tool"
+    ],
+    "covers": [
+      "effets-visuels",
+      "compositing"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Nuke (Foundry) en 2026 : le standard du compositing VFX. Prix réels (Indie 499$/an, gratuit non-commercial) et alternatives (After Effects, Fusion). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "adobe-after-effects",
+      "davinci-resolve"
+    ],
+    "articles": [],
+    "freeAlternative": "davinci-resolve",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Nuke Indie 499$/an (<100k$) ; commercial dès ~3 839$/an ; Non-commercial gratuit"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "foundry.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Nuke Indie (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.foundry.com/products/nuke-indie",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 42
+    },
+    "substitution_cluster_v2": "plugin-after-effects"
+  },
+  {
+    "id": "mari",
+    "slug": "mari",
+    "name": "Mari",
+    "category": "creation",
+    "shortDescription": "Outil Foundry de texture painting 3D haute résolution pour le cinéma et le jeu.",
+    "shortDescriptionEn": "Foundry's high-resolution 3D texture painting tool for film and games.",
+    "pricing": {
+      "free": "Version non-commerciale",
+      "paid": "Mari Indie (tarif indé) ; version commerciale ~3 139€/an."
+    },
+    "pricingEn": {
+      "free": "Non-commercial version",
+      "paid": "Mari Indie (indie tier); commercial version ~€3,139/year."
+    },
+    "defaultMonthlyPrice": 32,
+    "affiliateLink": "https://www.foundry.com/products/mari",
+    "websiteUrl": "https://www.foundry.com/products/mari",
+    "logo": "",
+    "longDescription": "Mari, c'est l'outil de texture painting 3D haut de gamme de Foundry, taillé pour le cinéma. Sa spécialité, c'est de peindre des textures ultra-détaillées sur des modèles très lourds (créatures, personnages héros) en gérant d'énormes résolutions et un grand nombre d'UDIM sans broncher. C'est l'outil des studios VFX pour les assets de premier plan.\n\nLe revers, c'est qu'il est pointu et cher : la version commerciale tourne autour de 3 139€/an, avec une offre Mari Indie plus abordable pour les indépendants et une version non-commerciale pour apprendre. Foundry bascule par ailleurs tout son catalogue en abonnement d'ici 2027.\n\nÀ qui ça s'adresse : aux texture artists de cinéma et aux pipelines studio exigeants. Pour la plupart des besoins (jeu, freelance, projets courants), Substance 3D Painter est plus accessible, moins cher et largement dominant grâce à son flux PBR. Mari se justifie surtout sur les assets héros de production cinéma où la résolution et le nombre d'UDIM explosent.",
+    "longDescriptionEn": "Mari is Foundry's high-end 3D texture painting tool, built for film. Its specialty is painting ultra-detailed textures on very heavy models (creatures, hero characters), handling massive resolutions and large numbers of UDIMs without flinching. It's the VFX studios' tool for front-line assets.\n\nThe downside is that it's specialized and pricey: the commercial version runs around €3,139/year, with a more affordable Mari Indie offer for freelancers and a non-commercial version to learn. Foundry is also moving its whole catalog to subscription by 2027.\n\nWho it's for: film texture artists and demanding studio pipelines. For most needs (games, freelance, everyday projects), Substance 3D Painter is more accessible, cheaper and largely dominant thanks to its PBR flow. Mari mainly earns its place on hero film-production assets where resolution and UDIM counts explode.",
+    "verdict": {
+      "keepIf": [
+        "Tu peins des textures ultra-détaillées d'assets héros pour le cinéma",
+        "Tu travailles dans un pipeline studio VFX exigeant (UDIM, hautes résolutions)"
+      ],
+      "avoidIf": [
+        "Tu fais du jeu ou du freelance courant : Substance 3D Painter est plus accessible et moins cher",
+        "Tu débutes le texturing : Substance Painter a un meilleur flux PBR"
+      ],
+      "threshold": "Pertinent pour le texturing héros de cinéma. Pour la plupart des usages, Substance 3D Painter est plus accessible et économique."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You paint ultra-detailed textures for hero film assets",
+        "You work in a demanding VFX studio pipeline (UDIM, high resolutions)"
+      ],
+      "avoidIf": [
+        "You do games or everyday freelance: Substance 3D Painter is more accessible and cheaper",
+        "You're starting texturing: Substance Painter has a better PBR flow"
+      ],
+      "threshold": "Worth it for hero film texturing. For most uses, Substance 3D Painter is more accessible and economical."
+    },
+    "pros": [
+      "Texture painting de niveau cinéma, très haute résolution",
+      "Gère d'énormes UDIM et des modèles très lourds",
+      "Standard des studios VFX pour les assets héros",
+      "Version non-commerciale pour apprendre"
+    ],
+    "prosEn": [
+      "Film-grade texture painting, very high resolution",
+      "Handles huge UDIMs and very heavy models",
+      "VFX studio standard for hero assets",
+      "Non-commercial version to learn"
+    ],
+    "cons": [
+      "Cher en commercial (~3 139€/an)",
+      "Substance 3D Painter est plus accessible et dominant",
+      "Pointu et orienté cinéma haut de gamme",
+      "Bascule abonnement-only d'ici 2027"
+    ],
+    "consEn": [
+      "Expensive commercially (~€3,139/year)",
+      "Substance 3D Painter is more accessible and dominant",
+      "Specialized and geared to high-end film",
+      "Moving to subscription-only by 2027"
+    ],
+    "useCases": [
+      "Peindre des textures détaillées sur une créature ou un personnage héros",
+      "Gérer des assets cinéma avec de nombreux UDIM",
+      "Texturer en très haute résolution pour le VFX",
+      "Travailler dans un pipeline studio de texturing"
+    ],
+    "useCasesEn": [
+      "Paint detailed textures on a creature or hero character",
+      "Handle film assets with many UDIMs",
+      "Texture at very high resolution for VFX",
+      "Work in a studio texturing pipeline"
+    ],
+    "covers": [
+      "texturing-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "low",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Mari (Foundry) en 2026 : texture painting 3D haute résolution pour le cinéma. Prix réels et alternative (Substance 3D Painter). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "substance-3d-painter",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [
+      "texturing-3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": {
+      "tool": "substance-3d-painter",
+      "reason": "Pour la plupart des usages (jeu, freelance), Substance 3D Painter est plus accessible, moins cher et dominant grâce à son flux PBR.",
+      "saving": null,
+      "performanceGain": null
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Mari Indie (tarif indé) ; commercial ~3 139€/an ; bascule abonnement-only d'ici 2027"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "foundry.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Mari Indie",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://www.foundry.com/products/mari",
+      "verification_status": "official_site_only",
+      "compare_price_monthly_eur": 32
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "modo",
+    "slug": "modo",
+    "name": "Modo",
+    "category": "creation",
+    "shortDescription": "Logiciel 3D Foundry de modélisation et rendu, apprécié pour le design produit.",
+    "shortDescriptionEn": "Foundry's 3D modeling and rendering app, loved for product design.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "599$/an ou 59$/mois."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "$599/year or $59/month."
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://www.foundry.com/products/modo",
+    "websiteUrl": "https://www.foundry.com/products/modo",
+    "logo": "",
+    "longDescription": "Modo, c'est le logiciel 3D de Foundry, surtout réputé pour sa modélisation polygonale rapide et intuitive et pour son moteur de rendu intégré de qualité. Il a longtemps été un chouchou du design produit, de la pub et du game art, apprécié pour son confort de modélisation là où Maya ou 3ds Max peuvent sembler rigides.\n\nCôté prix, c'est un abonnement autour de 599$/an (ou 59$/mois), plus accessible que les gros Autodesk mais plus cher que la gratuité de Blender. Foundry a annoncé une bascule complète en abonnement d'ici 2027.\n\nLe vrai sujet pour Modo en 2026, c'est sa position face à Blender. Blender, gratuit, a énormément progressé en modélisation et en rendu (Cycles), au point de grignoter le terrain de Modo. Modo reste un excellent modeleur avec un flux agréable, mais il devient difficile à recommander en priorité face à un Blender gratuit ou à un Cinema 4D pour le motion. Il garde du sens pour qui aime spécifiquement son ergonomie de modélisation.",
+    "longDescriptionEn": "Modo is Foundry's 3D application, best known for its fast, intuitive polygon modeling and its quality built-in renderer. It was long a favorite for product design, advertising and game art, prized for its modeling comfort where Maya or 3ds Max can feel rigid.\n\nOn price, it's a subscription around $599/year (or $59/month), more accessible than the big Autodesk apps but pricier than Blender's free offering. Foundry has announced a full move to subscription by 2027.\n\nThe real question for Modo in 2026 is its position against Blender. Free Blender has improved enormously in modeling and rendering (Cycles), to the point of eating into Modo's turf. Modo remains an excellent modeler with a pleasant flow, but it's getting hard to recommend first over a free Blender or a Cinema 4D for motion. It still makes sense for those who specifically love its modeling ergonomics.",
+    "verdict": {
+      "keepIf": [
+        "Tu aimes spécifiquement l'ergonomie de modélisation de Modo",
+        "Tu fais du design produit ou du game art et tu es déjà sur Modo"
+      ],
+      "avoidIf": [
+        "Tu débutes ou as un budget serré : Blender modélise gratuitement et très bien",
+        "Tu fais du motion design : Cinema 4D est plus adapté"
+      ],
+      "threshold": "Bon modeleur, mais difficile à recommander en priorité face à Blender (gratuit). Pertinent surtout si tu apprécies son flux spécifique."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You specifically love Modo's modeling ergonomics",
+        "You do product design or game art and are already on Modo"
+      ],
+      "avoidIf": [
+        "You're a beginner or on a tight budget: Blender models very well for free",
+        "You do motion design: Cinema 4D fits better"
+      ],
+      "threshold": "A good modeler, but hard to recommend first over free Blender. Mainly worth it if you value its specific flow."
+    },
+    "pros": [
+      "Modélisation polygonale rapide et intuitive",
+      "Moteur de rendu intégré de qualité",
+      "Plus accessible que les gros Autodesk",
+      "Apprécié en design produit et game art"
+    ],
+    "prosEn": [
+      "Fast, intuitive polygon modeling",
+      "Quality built-in renderer",
+      "More accessible than the big Autodesk apps",
+      "Loved in product design and game art"
+    ],
+    "cons": [
+      "Blender (gratuit) grignote fortement son terrain",
+      "Abonnement ~599$/an, plus de perpétuel à terme (2027)",
+      "Communauté plus petite que Blender ou Maya",
+      "Moins central dans les pipelines studio"
+    ],
+    "consEn": [
+      "Blender (free) is heavily eating into its turf",
+      "Subscription ~$599/year, no perpetual eventually (2027)",
+      "Smaller community than Blender or Maya",
+      "Less central in studio pipelines"
+    ],
+    "useCases": [
+      "Modéliser des objets de design produit",
+      "Créer des assets pour le game art",
+      "Rendre des visuels avec le moteur intégré",
+      "Modéliser confortablement sans la rigidité de Maya/3ds Max"
+    ],
+    "useCasesEn": [
+      "Model product-design objects",
+      "Create game-art assets",
+      "Render visuals with the built-in engine",
+      "Model comfortably without the rigidity of Maya/3ds Max"
+    ],
+    "covers": [
+      "3d",
+      "modelisation-3d",
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "low",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Modo (Foundry) en 2026 : logiciel 3D de modélisation et rendu. Prix réels et pourquoi Blender (gratuit) le concurrence. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender",
+      "cinema-4d",
+      "maya"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [
+      "3d",
+      "modelisation-3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": {
+      "tool": "blender",
+      "reason": "Blender modélise et rend gratuitement à un niveau désormais comparable, ce qui rend Modo difficile à justifier pour la plupart des usages.",
+      "saving": null,
+      "performanceGain": null
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Abonnement ~599$/an (59$/mois) ; bascule abonnement-only d'ici 2027"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "foundry.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Modo (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.foundry.com/products/modo",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "marvelous-designer",
+    "slug": "marvelous-designer",
+    "name": "Marvelous Designer",
+    "category": "creation",
+    "shortDescription": "Création de vêtements et tissus 3D par simulation, pour la mode, le jeu et le ciné.",
+    "shortDescriptionEn": "3D clothing and fabric creation by simulation, for fashion, games and film.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Personal 39$/mois ou 280$/an ; offres indé."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Personal $39/month or $280/year; indie tiers."
+    },
+    "defaultMonthlyPrice": 23,
+    "affiliateLink": "https://www.marvelousdesigner.com",
+    "websiteUrl": "https://www.marvelousdesigner.com",
+    "logo": "",
+    "longDescription": "Marvelous Designer, c'est l'outil de référence pour créer des vêtements et des tissus en 3D par simulation. Le principe est génial : tu dessines des patrons comme un vrai tailleur (avec des coutures et des mesures), et le logiciel simule physiquement le tombé du tissu sur un corps 3D. Le résultat, c'est des vêtements réalistes avec des plis crédibles, impossibles à obtenir aussi vite en modélisation manuelle.\n\nC'est devenu un quasi-indispensable pour les personnages de jeu vidéo, de cinéma et pour la mode numérique. Les vêtements s'exportent ensuite vers Blender, Maya, ZBrush ou un moteur de jeu. Côté prix, c'est un abonnement Personal autour de 39$/mois (280$/an), avec des offres indé ajoutées récemment.\n\nÀ qui ça s'adresse : aux character artists, aux créateurs de mode numérique et à quiconque a besoin de vêtements 3D réalistes. Il n'a pas de vrai équivalent gratuit : Blender intègre bien une simulation de tissu, mais elle est plus manuelle et moins spécialisée. Pour du vêtement 3D sérieux, Marvelous Designer reste le meilleur de sa catégorie.",
+    "longDescriptionEn": "Marvelous Designer is the reference tool for creating 3D clothing and fabrics by simulation. The idea is brilliant: you draw patterns like a real tailor (with seams and measurements), and the software physically simulates how the fabric drapes on a 3D body. The result is realistic clothing with believable folds, impossible to get as fast through manual modeling.\n\nIt has become a near-essential for game and film characters and for digital fashion. The garments then export to Blender, Maya, ZBrush or a game engine. On price, it's a Personal subscription around $39/month ($280/year), with indie tiers added recently.\n\nWho it's for: character artists, digital fashion creators and anyone needing realistic 3D clothing. It has no real free equivalent: Blender does include cloth simulation, but it's more manual and less specialized. For serious 3D garments, Marvelous Designer remains best in class.",
+    "verdict": {
+      "keepIf": [
+        "Tu crées des vêtements 3D réalistes pour le jeu, le cinéma ou la mode numérique",
+        "Tu veux gagner un temps fou sur le tombé et les plis de tissu"
+      ],
+      "avoidIf": [
+        "Tu n'as qu'un besoin ponctuel de vêtement : la simulation de tissu de Blender peut suffire",
+        "Tu ne fais pas de personnage ou de mode"
+      ],
+      "threshold": "Le meilleur de sa catégorie pour le vêtement 3D. Pour un besoin ponctuel, la simulation de tissu de Blender (gratuite) peut dépanner."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You create realistic 3D clothing for games, film or digital fashion",
+        "You want to save huge time on fabric drape and folds"
+      ],
+      "avoidIf": [
+        "You only need clothing occasionally: Blender's cloth simulation may be enough",
+        "You don't do characters or fashion"
+      ],
+      "threshold": "Best in class for 3D garments. For occasional needs, Blender's free cloth simulation can do the job."
+    },
+    "pros": [
+      "Simulation physique réaliste du tissu (plis crédibles)",
+      "Création par patrons comme un vrai tailleur",
+      "Standard pour personnages de jeu, ciné et mode numérique",
+      "Exporte vers Blender, Maya, ZBrush, moteurs de jeu"
+    ],
+    "prosEn": [
+      "Realistic physical fabric simulation (believable folds)",
+      "Pattern-based creation like a real tailor",
+      "Standard for game/film characters and digital fashion",
+      "Exports to Blender, Maya, ZBrush, game engines"
+    ],
+    "cons": [
+      "Abonnement ~39$/mois (280$/an)",
+      "Très spécialisé : utile surtout si tu fais du vêtement",
+      "Courbe d'apprentissage sur les patrons",
+      "Pas de vrai équivalent, mais Blender dépanne pour le ponctuel"
+    ],
+    "consEn": [
+      "Subscription ~$39/month ($280/year)",
+      "Very specialized: mainly useful if you do clothing",
+      "Learning curve on patterns",
+      "No real equivalent, but Blender helps for occasional needs"
+    ],
+    "useCases": [
+      "Créer un vêtement 3D réaliste pour un personnage",
+      "Simuler le tombé d'un tissu sur un corps 3D",
+      "Concevoir de la mode numérique",
+      "Exporter des vêtements vers Blender, Maya ou un moteur de jeu"
+    ],
+    "useCasesEn": [
+      "Create realistic 3D clothing for a character",
+      "Simulate fabric drape on a 3D body",
+      "Design digital fashion",
+      "Export garments to Blender, Maya or a game engine"
+    ],
+    "covers": [
+      "3d",
+      "simulation"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Marvelous Designer en 2026 : création de vêtements 3D par simulation (jeu, ciné, mode). Prix réels et alternative (Blender). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [
+      "3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Personal ~39$/mois (280$/an) ; offres indé récentes"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "marvelousdesigner.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Personal (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.marvelousdesigner.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 23
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "nomad-sculpt",
+    "slug": "nomad-sculpt",
+    "name": "Nomad Sculpt",
+    "category": "creation",
+    "shortDescription": "App de sculpture 3D mobile (iPad/Android) puissante et abordable, alternative à ZBrush.",
+    "shortDescriptionEn": "Powerful, affordable mobile 3D sculpting app (iPad/Android), a ZBrush alternative.",
+    "pricing": {
+      "free": "",
+      "paid": "Achat unique ~15€ (one-time, iPad et Android)."
+    },
+    "pricingEn": {
+      "free": "",
+      "paid": "One-time purchase ~$15 (iPad and Android)."
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://nomadsculpt.com",
+    "websiteUrl": "https://nomadsculpt.com",
+    "logo": "",
+    "longDescription": "Nomad Sculpt, c'est la petite révolution de la sculpture 3D sur tablette. Pour un achat unique d'environ 15€ (sur iPad et Android), tu obtiens une application de sculpture étonnamment complète : topologie dynamique, calques, peinture PBR, rendu intégré, et un confort tactile qui rend la sculpture très intuitive. Pour le prix d'un sandwich, tu as 80 à 90% de l'expérience d'un ZBrush.\n\nÉvidemment, ce n'est pas un remplaçant total de ZBrush en production lourde : on reste sur mobile, sans certaines fonctions avancées, et pour un pipeline pro on exportera souvent vers ZBrush ou Blender pour la suite. Mais en termes de rapport qualité-prix, c'est imbattable.\n\nÀ qui ça s'adresse : aux hobbyistes, aux concept artists qui aiment crayonner des idées en 3D sur le canapé, aux débutants qui veulent apprendre la sculpture sans payer un abonnement, et même aux pros pour des esquisses rapides. Pour démarrer la sculpture 3D ou sculpter en mobilité, Nomad Sculpt est sans doute le meilleur point d'entrée du marché.",
+    "longDescriptionEn": "Nomad Sculpt is the little revolution of 3D sculpting on tablets. For a one-time purchase of around $15 (on iPad and Android), you get a surprisingly complete sculpting app: dynamic topology, layers, PBR painting, built-in rendering, and a touch comfort that makes sculpting very intuitive. For the price of a sandwich, you get 80 to 90% of a ZBrush experience.\n\nOf course, it's not a full replacement for ZBrush in heavy production: it's mobile, lacks some advanced features, and a pro pipeline will often export to ZBrush or Blender afterward. But in value terms, it's unbeatable.\n\nWho it's for: hobbyists, concept artists who like to sketch 3D ideas on the couch, beginners who want to learn sculpting without a subscription, and even pros for quick studies. To get into 3D sculpting or sculpt on the go, Nomad Sculpt is probably the best entry point on the market.",
+    "verdict": {
+      "keepIf": [
+        "Tu veux sculpter en 3D sur iPad ou Android pour un prix dérisoire",
+        "Tu débutes la sculpture ou tu aimes crayonner des idées en mobilité"
+      ],
+      "avoidIf": [
+        "Tu as besoin d'un pipeline desktop lourd : ZBrush ou Blender restent nécessaires",
+        "Tu n'utilises pas de tablette"
+      ],
+      "threshold": "Imbattable en rapport qualité-prix pour la sculpture mobile. Pour la production lourde desktop, ZBrush ou Blender prennent le relais."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to sculpt in 3D on iPad or Android for a tiny price",
+        "You're starting sculpting or like to sketch ideas on the go"
+      ],
+      "avoidIf": [
+        "You need a heavy desktop pipeline: ZBrush or Blender are still needed",
+        "You don't use a tablet"
+      ],
+      "threshold": "Unbeatable value for mobile sculpting. For heavy desktop production, ZBrush or Blender take over."
+    },
+    "pros": [
+      "Achat unique ~15€ : rapport qualité-prix imbattable",
+      "Sculpture complète sur iPad et Android (topologie dynamique, calques)",
+      "Peinture PBR et rendu intégré",
+      "Excellent point d'entrée pour apprendre la sculpture 3D"
+    ],
+    "prosEn": [
+      "One-time ~$15 purchase: unbeatable value",
+      "Full sculpting on iPad and Android (dynamic topology, layers)",
+      "PBR painting and built-in rendering",
+      "Excellent entry point to learn 3D sculpting"
+    ],
+    "cons": [
+      "Mobile uniquement (pas de version desktop)",
+      "Moins complet que ZBrush pour la production lourde",
+      "Export vers ZBrush/Blender souvent nécessaire en pipeline pro",
+      "Confort dépendant de la tablette et du stylet"
+    ],
+    "consEn": [
+      "Mobile only (no desktop version)",
+      "Less complete than ZBrush for heavy production",
+      "Export to ZBrush/Blender often needed in a pro pipeline",
+      "Comfort depends on the tablet and stylus"
+    ],
+    "useCases": [
+      "Sculpter un modèle 3D sur iPad ou Android",
+      "Crayonner des concepts 3D en mobilité",
+      "Apprendre la sculpture numérique à petit prix",
+      "Faire une esquisse rapide avant de finaliser sur desktop"
+    ],
+    "useCasesEn": [
+      "Sculpt a 3D model on iPad or Android",
+      "Sketch 3D concepts on the go",
+      "Learn digital sculpting cheaply",
+      "Make a quick study before finishing on desktop"
+    ],
+    "covers": [
+      "sculpture-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "createur-contenu"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "seo": {
+      "metaDescription": "Nomad Sculpt en 2026 : sculpture 3D sur iPad/Android pour ~15€ (achat unique). La meilleure alternative mobile à ZBrush ? Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "zbrush",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [
+      "sculpture-3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Achat unique ~15€ (one-time) sur iPad et Android ; pas d'abonnement"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "nomadsculpt.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "perpetual",
+      "compare_plan_name": "Achat unique",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://nomadsculpt.com",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 15
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
     "id": "maxon-one",
     "slug": "maxon-one",
     "name": "Maxon One",
