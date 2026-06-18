@@ -257,34 +257,6 @@
         "Le plan Mini (5€/mois) est limité à 1 page publiée et 1 collection CMS",
         "Le plan Basic (10€/mois) offre 30 pages et 1 collection CMS",
         "Les éditeurs supplémentaires sont facturés en supplément sur tous les plans"
-      ],
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Mini",
-          "label_en": "Mini",
-          "price_monthly_eur": 5,
-          "currency": "EUR"
-        },
-        {
-          "value": "team",
-          "label_fr": "Pro / Team",
-          "label_en": "Pro / Team",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
       ]
     },
     "affiliateLink": "",
@@ -9836,35 +9808,7 @@
       "source_domain": "brevo.com",
       "official_source_url": "https://www.brevo.com/pricing/",
       "verified_on": "2026-05-03",
-      "verification_status": "verified_public_pricing_page",
-      "billing_model": "usage_based",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "usage",
-          "label_fr": "Starter email",
-          "label_en": "Starter email",
-          "price_monthly_eur": 9,
-          "currency": "EUR"
-        },
-        {
-          "value": "custom_quote",
-          "label_fr": "Business / Enterprise",
-          "label_en": "Business / Enterprise",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "verification_status": "verified_public_pricing_page"
     },
     "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
     "websiteUrl": "https://www.brevo.com",
@@ -20678,35 +20622,7 @@
       "location_sensitive": false,
       "official_source_url": "https://one.google.com/about/plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 1.73,
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Google One 100 Go",
-          "label_en": "Google One 100 GB",
-          "price_monthly_eur": 1.73,
-          "currency": "EUR"
-        },
-        {
-          "value": "included",
-          "label_fr": "Inclus Google Workspace",
-          "label_en": "Included with Google Workspace",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 1.73
     },
     "websiteUrl": "https://google.com/drive",
     "logo": "",
@@ -22753,34 +22669,7 @@
       "source_domain": "hubspot.com",
       "verified_on": "2026-05-02",
       "official_source_url": "https://www.hubspot.com",
-      "verification_status": "needs_official_quote",
-      "billing_model": "custom_quote",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free tools",
-          "label_en": "Free tools",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "custom_quote",
-          "label_fr": "Starter / Pro / Hub",
-          "label_en": "Starter / Pro / Hub",
-          "needs_verification": true
-        },
-        {
-          "value": "included",
-          "label_fr": "Inclus équipe",
-          "label_en": "Included by team",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "verification_status": "needs_official_quote"
     },
     "affiliateLink": "https://www.hubspot.com",
     "websiteUrl": "https://hubspot.com",
@@ -23971,29 +23860,7 @@
       "location_sensitive": false,
       "official_source_url": "https://www.indy.fr/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20,
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "paid",
-          "label_fr": "Indy",
-          "label_en": "Indy",
-          "price_monthly_eur": 20,
-          "currency": "EUR"
-        },
-        {
-          "value": "included",
-          "label_fr": "Payé pour moi",
-          "label_en": "Paid for me",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 20
     },
     "websiteUrl": "https://indy.fr",
     "logo": "",
@@ -37900,34 +37767,7 @@
       "location_sensitive": false,
       "official_source_url": "https://posthog.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0,
-      "billing_model": "usage_based",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "usage",
-          "label_fr": "Usage-based",
-          "label_en": "Usage-based",
-          "needs_verification": true
-        },
-        {
-          "value": "custom_quote",
-          "label_fr": "Enterprise",
-          "label_en": "Enterprise",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://posthog.com",
     "logo": "",
@@ -47466,31 +47306,7 @@
       "location_sensitive": false,
       "official_source_url": "https://stripe.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0,
-      "billing_model": "usage_based",
-      "billing_options": [
-        {
-          "value": "usage",
-          "label_fr": "Commission Stripe",
-          "label_en": "Stripe fees",
-          "price_monthly_eur": 0,
-          "note_fr": "Commission variable selon le volume",
-          "note_en": "Variable fee based on volume",
-          "needs_verification": true
-        },
-        {
-          "value": "custom_quote",
-          "label_fr": "Contrat enterprise",
-          "label_en": "Enterprise contract",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://stripe.com",
     "logo": "",
@@ -59788,35 +59604,7 @@
       "verification_status": "official_explicit",
       "usage_sensitive": false,
       "location_sensitive": false,
-      "cautions": [],
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Pro",
-          "label_en": "Pro",
-          "price_monthly_eur": 8,
-          "currency": "EUR"
-        },
-        {
-          "value": "team",
-          "label_fr": "Team",
-          "label_en": "Team",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "cautions": []
     },
     "pricingTiers": {
       "free": "Gratuit — 100 éléments maximum",
@@ -94072,34 +93860,7 @@
       "source_domain": "mailerlite.com",
       "verified_on": "2026-05-11",
       "official_source_url": "https://mailerlite.com",
-      "verification_status": "needs_official_quote",
-      "billing_model": "usage_based",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "usage",
-          "label_fr": "Growing Business",
-          "label_en": "Growing Business",
-          "needs_verification": true
-        },
-        {
-          "value": "custom_quote",
-          "label_fr": "Advanced / Enterprise",
-          "label_en": "Advanced / Enterprise",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "verification_status": "needs_official_quote"
     },
     "affiliateLink": "https://mailerlite.com",
     "websiteUrl": "https://mailerlite.com",
@@ -114643,36 +114404,7 @@
       "location_sensitive": false,
       "official_source_url": "https://frame.io/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15,
-      "billing_model": "seat",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Pro",
-          "label_en": "Pro",
-          "price_monthly_eur": 15,
-          "price_original": 15,
-          "currency": "USD"
-        },
-        {
-          "value": "team",
-          "label_fr": "Team / Adobe inclus",
-          "label_en": "Team / Adobe included",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 15
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -114839,36 +114571,7 @@
       "location_sensitive": false,
       "official_source_url": "https://www.loom.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 18,
-      "billing_model": "seat",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Starter",
-          "label_en": "Starter",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Business",
-          "label_en": "Business",
-          "price_monthly_eur": 18,
-          "price_original": 18,
-          "currency": "USD"
-        },
-        {
-          "value": "team",
-          "label_fr": "Enterprise / équipe",
-          "label_en": "Enterprise / team",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 18
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -118043,36 +117746,7 @@
       "location_sensitive": false,
       "official_source_url": "https://support.contentsquare.com/hc/en-us/articles/37271913608721-Hotjar-is-now-part-of-Contentsquare-Plans-and-Pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 32,
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Basic",
-          "label_en": "Basic",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Plus",
-          "label_en": "Plus",
-          "price_monthly_eur": 32,
-          "price_original": 32,
-          "currency": "USD"
-        },
-        {
-          "value": "team",
-          "label_fr": "Business",
-          "label_en": "Business",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 32
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -118223,36 +117897,7 @@
       "location_sensitive": false,
       "official_source_url": "https://pixieset.com/",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 12,
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Client Gallery / Studio",
-          "label_en": "Client Gallery / Studio",
-          "price_monthly_eur": 12,
-          "currency": "USD",
-          "needs_verification": true
-        },
-        {
-          "value": "team",
-          "label_fr": "Pack studio",
-          "label_en": "Studio bundle",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 12
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -120008,44 +119653,7 @@
       "location_sensitive": false,
       "official_source_url": "https://www.notion.so/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10,
-      "billing_model": "seat",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Free",
-          "label_en": "Free",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Plus",
-          "label_en": "Plus",
-          "price_monthly_eur": 10,
-          "price_original": 10,
-          "currency": "USD"
-        },
-        {
-          "value": "team",
-          "label_fr": "Business",
-          "label_en": "Business",
-          "price_monthly_eur": 15,
-          "price_original": 15,
-          "currency": "USD"
-        },
-        {
-          "value": "included",
-          "label_fr": "Inclus équipe",
-          "label_en": "Included by team",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 10
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -120944,36 +120552,7 @@
       "location_sensitive": false,
       "official_source_url": "https://www.dropbox.com/plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12,
-      "billing_model": "subscription",
-      "billing_options": [
-        {
-          "value": "free",
-          "label_fr": "Basic",
-          "label_en": "Basic",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "paid",
-          "label_fr": "Plus",
-          "label_en": "Plus",
-          "price_monthly_eur": 12,
-          "price_original": 12,
-          "currency": "USD"
-        },
-        {
-          "value": "team",
-          "label_fr": "Business",
-          "label_en": "Business",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ]
+      "compare_price_monthly_eur": 12
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -122813,51 +122392,52 @@
   },
   {
     "id": "ae-red-giant",
-    "name": "Red Giant Magic Bullet Suite",
+    "name": "Red Giant",
     "slug": "ae-red-giant",
     "category": "design-tools",
-    "shortDescription": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
-    "longDescription": "Magic Bullet Suite, c'est l'ensemble de plugins d'étalonnage et de look cinématique de Red Giant (désormais Maxon), utilisé dans After Effects et Premiere. Les stars : Magic Bullet Looks pour appliquer des étalonnages cinéma en quelques clics, Colorista pour la correction colorimétrique fine, et Denoiser pour nettoyer le grain. Pour un monteur qui veut donner un rendu pro à ses vidéos sans passer des heures dans l'étalonnage manuel, c'est un gain de temps réel.\n\nLe modèle a basculé sur l'abonnement Maxon : compte autour de 99$/an pour la suite Magic Bullet, ou l'abonnement Maxon One si tu utilises aussi Trapcode, Universe et le reste de l'écosystème Red Giant. Il n'y a plus de licence perpétuelle simple.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui livrent régulièrement des vidéos avec un look soigné. La vraie question, c'est le doublon : si tu étalonnes déjà dans DaVinci Resolve (gratuit et très complet), Magic Bullet fait surtout sens pour rester dans le flux After Effects/Premiere. Sinon, c'est un confort haut de gamme dont tout le monde n'a pas besoin.",
+    "shortDescription": "Suite Maxon de plugins motion design, VFX et étalonnage pour After Effects et Premiere.",
+    "longDescription": "Red Giant, c'est la boîte à outils de Maxon pour le motion design, les VFX et l'étalonnage dans After Effects et Premiere Pro. Sous ce nom se cachent des suites devenues des références : Trapcode (particules, systèmes 3D, nébuleuses), Magic Bullet (étalonnage et look cinéma), VFX Suite (compositing, incrustation, lueurs) et Universe (transitions, effets et titres). Pour un motion designer ou un monteur qui travaille dans le flux Adobe, c'est un gain de temps considérable.\n\nDepuis le rachat par Maxon, le modèle a changé : plus de licence perpétuelle ni de suites vendues à l'unité. Tu prends l'abonnement Red Giant complet (environ 85$/mois ou 639$/an, qui inclut tout : Trapcode, Magic Bullet, VFX Suite, Universe), ou bien Universe seul (32$/mois, 214$/an) si tu ne veux que les transitions et les effets. Red Giant est aussi inclus dans l'abonnement Maxon One avec Cinema 4D.\n\nÀ qui ça s'adresse : aux pros du motion qui exploitent vraiment plusieurs de ces suites au quotidien. Le vrai point d'attention, c'est le prix et le doublon. Si tu ne fais que de l'étalonnage, DaVinci Resolve est gratuit et plus complet. Si tu veux juste des particules ou des transitions ponctuelles, l'abonnement complet est surdimensionné. Red Giant se justifie quand After Effects est ton outil central et que Trapcode, Magic Bullet ou VFX font partie de ton flux régulier.",
     "affiliateLink": "https://maxon.net/red-giant",
     "websiteUrl": "https://maxon.net/red-giant",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 53,
     "pricing": {
       "free": "",
-      "paid": "Environ 99$/an (suite Magic Bullet), ou via l'abonnement Maxon One"
+      "paid": "Red Giant complet : 85$/mois ou 639$/an. Universe seul : 32$/mois ou 214$/an. Inclus dans Maxon One."
     },
     "logo": "",
     "soloRelevance": "medium",
     "teamRelevance": "low",
     "verdict": {
       "keepIf": [
-        "Tu livres régulièrement des vidéos avec un look soigné dans After Effects/Premiere",
-        "Tu veux rester dans le flux Adobe plutôt que passer par DaVinci"
+        "After Effects est ton outil central et tu utilises régulièrement Trapcode, Magic Bullet ou VFX Suite",
+        "Tu veux particules, look cinéma et compositing réunis dans le flux Adobe"
       ],
       "avoidIf": [
-        "Tu étalonnes déjà dans DaVinci Resolve (gratuit et complet)",
-        "Ton montage est simple et n'a pas d'exigence de look cinéma"
+        "Tu ne fais que de l'étalonnage : DaVinci Resolve est gratuit et plus complet",
+        "Tu n'as besoin que de transitions ponctuelles : l'abonnement complet est surdimensionné (vise Universe seul)"
       ],
-      "threshold": "Un confort haut de gamme pour le look cinéma dans le flux Adobe. Si tu étalonnes déjà dans DaVinci Resolve, c'est souvent un doublon."
+      "threshold": "Pertinent si tu exploites plusieurs suites Red Giant au quotidien dans After Effects. Pour du seul étalonnage, DaVinci Resolve suffit ; pour quelques transitions, Universe seul suffit."
     },
     "pros": [
-      "Looks cinéma appliqués en quelques clics (Magic Bullet Looks)",
-      "Étalonnage fin et débruitage intégrés au flux After Effects/Premiere",
-      "Référence pro pour le look cinématique",
-      "Gros gain de temps face à un étalonnage 100% manuel"
+      "Suites de référence réunies : Trapcode (particules), Magic Bullet (look cinéma), VFX, Universe",
+      "Intégration native au flux After Effects et Premiere",
+      "Gros gain de temps pour le motion design et les VFX",
+      "Mises à jour régulières (versions 2026) et écosystème Maxon (Cinema 4D)"
     ],
     "cons": [
-      "Passé sur l'abonnement Maxon, plus de licence perpétuelle simple",
-      "Doublon si tu étalonnes déjà dans DaVinci Resolve (gratuit)",
-      "Tarif qui grimpe vite si tu prends tout l'écosystème Red Giant",
-      "Surdimensionné pour un montage simple sans exigence de look"
+      "Cher : abonnement Red Giant complet à 85$/mois (639$/an)",
+      "Plus de licence perpétuelle ni de suites vendues à l'unité (sauf Universe)",
+      "Doublon pour l'étalonnage si tu utilises DaVinci Resolve (gratuit)",
+      "Surdimensionné si tu n'as besoin que d'une petite partie"
     ],
     "useCases": [
-      "Appliquer un look cinéma à une vidéo dans After Effects ou Premiere",
-      "Corriger les couleurs finement avec Colorista",
-      "Nettoyer le grain d'une vidéo avec Denoiser",
-      "Garder un étalonnage cohérent dans le flux Adobe"
+      "Créer des particules et des effets 3D avec Trapcode dans After Effects",
+      "Appliquer un look cinéma et étalonner avec Magic Bullet",
+      "Faire du compositing et de l'incrustation avec VFX Suite",
+      "Ajouter transitions, effets et titres rapides avec Universe"
     ],
     "covers": [
+      "motion-design",
       "color-grading",
       "effets-visuels",
       "debruitage-video"
@@ -122870,7 +122450,7 @@
       "davinci-resolve"
     ],
     "seo": {
-      "metaDescription": "Red Giant Magic Bullet Suite en 2026 : prix (abonnement Maxon) et alternatives (DaVinci Resolve) pour l'étalonnage cinéma. Le verdict ToolTrim."
+      "metaDescription": "Red Giant (Maxon) en 2026 : suite de plugins motion design, VFX et étalonnage pour After Effects. Prix réels et alternatives (DaVinci). Le verdict ToolTrim."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 4,
@@ -122909,18 +122489,19 @@
     "substitution_cluster_v2": "plugin-after-effects",
     "pricing_v5": {
       "cautions": [
-        "Tarif Maxon variable selon suite et bundle ; vérifier le plan exact avant calcul mensuel."
+        "Red Giant complet : 85$/mois ou 639$/an. Universe seul : 32$/mois ou 214$/an.",
+        "Plus de licence perpétuelle ; Red Giant est aussi inclus dans Maxon One."
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-06-17",
       "source_domain": "maxon.net",
       "usage_sensitive": true,
       "compare_plan_kind": "subscription",
-      "compare_plan_name": "Maxon subscription",
-      "price_reliability": "official_context_required",
+      "compare_plan_name": "Red Giant (complet)",
+      "price_reliability": "high",
       "location_sensitive": true,
       "official_source_url": "https://www.maxon.net/en/buy",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 53
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -122930,40 +122511,40 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Colour grading and cinematic look suite: Looks, Colorista, Denoiser.",
-    "longDescriptionEn": "Magic Bullet Suite is Red Giant's (now Maxon) set of color grading and cinematic look plugins, used in After Effects and Premiere. The stars: Magic Bullet Looks to apply cinema grades in a few clicks, Colorista for fine color correction, and Denoiser to clean up grain. For an editor who wants a pro look without spending hours on manual grading, it's a real time saver.\n\nThe model moved to a Maxon subscription: budget around $99/year for the Magic Bullet suite, or the Maxon One subscription if you also use Trapcode, Universe and the rest of the Red Giant ecosystem. There's no longer a simple perpetual license.\n\nWho it's for: videographers and editors who regularly deliver videos with a polished look. The real question is overlap: if you already grade in DaVinci Resolve (free and very complete), Magic Bullet mostly makes sense to stay in the After Effects/Premiere flow. Otherwise, it's a high-end comfort not everyone needs.",
+    "shortDescriptionEn": "Maxon's plugin suite for motion design, VFX and color grading in After Effects.",
+    "longDescriptionEn": "Red Giant is Maxon's toolkit for motion design, VFX and color grading in After Effects and Premiere Pro. Under that name sit suites that became references: Trapcode (particles, 3D systems, nebulas), Magic Bullet (grading and cinematic look), VFX Suite (compositing, keying, glows) and Universe (transitions, effects and titles). For a motion designer or editor working in the Adobe flow, it's a major time saver.\n\nSince the Maxon acquisition, the model changed: no more perpetual license, and no more suites sold individually. You take the complete Red Giant subscription (around $85/month or $639/year, which includes everything: Trapcode, Magic Bullet, VFX Suite, Universe), or Universe alone ($32/month, $214/year) if you only want transitions and effects. Red Giant is also included in the Maxon One subscription alongside Cinema 4D.\n\nWho it's for: motion pros who genuinely use several of these suites day to day. The real thing to watch is price and overlap. If you only do color grading, DaVinci Resolve is free and more complete. If you just want occasional particles or transitions, the full subscription is overkill. Red Giant earns its place when After Effects is your central tool and Trapcode, Magic Bullet or VFX are part of your regular flow.",
     "prosEn": [
-      "Cinema looks applied in a few clicks (Magic Bullet Looks)",
-      "Fine grading and denoising built into the After Effects/Premiere flow",
-      "Pro reference for cinematic look",
-      "Big time saver versus fully manual grading"
+      "Reference suites in one bundle: Trapcode (particles), Magic Bullet (cinematic look), VFX, Universe",
+      "Native integration into the After Effects and Premiere flow",
+      "Major time saver for motion design and VFX",
+      "Regular updates (2026 versions) and the Maxon ecosystem (Cinema 4D)"
     ],
     "consEn": [
-      "Moved to a Maxon subscription, no simple perpetual license",
-      "Redundant if you already grade in DaVinci Resolve (free)",
-      "Price climbs fast if you take the whole Red Giant ecosystem",
-      "Overkill for a simple edit with no look requirement"
+      "Pricey: complete Red Giant subscription at $85/month ($639/year)",
+      "No more perpetual license or suites sold individually (except Universe)",
+      "Redundant for grading if you use DaVinci Resolve (free)",
+      "Overkill if you only need a small part of it"
     ],
     "useCasesEn": [
-      "Apply a cinema look to a video in After Effects or Premiere",
-      "Finely correct colors with Colorista",
-      "Clean up grain with Denoiser",
-      "Keep consistent grading within the Adobe flow"
+      "Create particles and 3D effects with Trapcode in After Effects",
+      "Apply a cinematic look and grade with Magic Bullet",
+      "Do compositing and keying with VFX Suite",
+      "Add quick transitions, effects and titles with Universe"
     ],
     "verdictEn": {
       "keepIf": [
-        "You regularly deliver polished-look videos in After Effects/Premiere",
-        "You want to stay in the Adobe flow rather than go through DaVinci"
+        "After Effects is your central tool and you regularly use Trapcode, Magic Bullet or VFX Suite",
+        "You want particles, cinematic look and compositing together in the Adobe flow"
       ],
       "avoidIf": [
-        "You already grade in DaVinci Resolve (free and complete)",
-        "Your edit is simple with no cinematic-look requirement"
+        "You only do color grading: DaVinci Resolve is free and more complete",
+        "You only need occasional transitions: the full subscription is overkill (look at Universe alone)"
       ],
-      "threshold": "A high-end comfort for cinematic look in the Adobe flow. If you already grade in DaVinci Resolve, it's often redundant."
+      "threshold": "Worth it if you use several Red Giant suites day to day in After Effects. For grading only, DaVinci Resolve is enough; for a few transitions, Universe alone is enough."
     },
     "pricingEn": {
       "free": "",
-      "paid": "Around $99/year (Magic Bullet suite), or via the Maxon One subscription"
+      "paid": "Complete Red Giant: $85/month or $639/year. Universe alone: $32/month or $214/year. Included in Maxon One."
     },
     "force_silence": false,
     "description": "Magic Bullet Suite, c'est l'ensemble de plugins d'étalonnage et de look cinématique de Red Giant (désormais Maxon), utilisé dans After Effects et Premiere. Les stars : Magic Bullet Looks pour appliquer des étalonnages cinéma en quelques clics, Colorista pour la correction colorimétrique fine, et Denoiser pour nettoyer le grain. Pour un monteur qui veut donner un rendu pro à ses vidéos sans passer des heures dans l'étalonnage manuel, c'est un gain de temps réel.\n\nLe modèle a basculé sur l'abonnement Maxon : compte autour de 99$/an pour la suite Magic Bullet, ou l'abonnement Maxon One si tu utilises aussi Trapcode, Universe et le reste de l'écosystème Red Giant. Il n'y a plus de licence perpétuelle simple.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui livrent régulièrement des vidéos avec un look soigné. La vraie question, c'est le doublon : si tu étalonnes déjà dans DaVinci Resolve (gratuit et très complet), Magic Bullet fait surtout sens pour rester dans le flux After Effects/Premiere. Sinon, c'est un confort haut de gamme dont tout le monde n'a pas besoin."
