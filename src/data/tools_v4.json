@@ -67225,11 +67225,11 @@
     "shortDescriptionEn": "The reference software for FX and procedural work (simulations, film VFX).",
     "pricing": {
       "free": "Apprentice gratuit (non-commercial, watermark)",
-      "paid": "Indie 299$/an (<100k$ de CA) ; Core ~1 995$/an ; FX ~4 495$ (perpétuel)."
+      "paid": "Indie 299$/an (<100k$ de CA) ; Core ~1 995$/an. Version FX studio plus chère."
     },
     "pricingEn": {
       "free": "Apprentice free (non-commercial, watermark)",
-      "paid": "Indie $299/year (<$100k revenue); Core ~$1,995/year; FX ~$4,495 (perpetual)."
+      "paid": "Indie $299/year (<$100k revenue); Core ~$1,995/year. Studio FX version pricier."
     },
     "defaultMonthlyPrice": 25,
     "affiliateLink": "https://www.sidefx.com",
