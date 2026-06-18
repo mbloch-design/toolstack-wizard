@@ -153,6 +153,9 @@ const App = () => (
             <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
             <Route path="/blog/:slug" element={<RedirectBlogToGuide />} />
             <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
+            <Route path="/selector" element={<Navigate to="/fr/selector" replace />} />
+            <Route path="/diagnostic" element={<Navigate to="/fr/selector" replace />} />
+            <Route path="/audit" element={<Navigate to="/fr/selector" replace />} />
             <Route path="/tool/:slug" element={<RedirectToolToFr />} />
             <Route path="/article/:slug" element={<RedirectArticleToFr />} />
             <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
@@ -160,6 +163,8 @@ const App = () => (
             <Route path="/:lang" element={<LangLayout />}>
               <Route index element={<HomePage />} />
               <Route path="selector" element={<SelectorPage />} />
+              <Route path="diagnostic" element={<RedirectLegacyDiagnostic />} />
+              <Route path="audit" element={<RedirectLegacyDiagnostic />} />
               <Route path="selector/results" element={<ResultsPage />} />
               <Route path="tools" element={<ToolsPage />} />
               <Route path="tool/:slug" element={<ToolDetailPage />} />
@@ -218,6 +223,11 @@ const App = () => (
 function RedirectToolToFr() {
   const { slug } = useParams();
   return <Navigate to={`/fr/tool/${slug}`} replace />;
+}
+
+function RedirectLegacyDiagnostic() {
+  const { lang } = useParams();
+  return <Navigate to={`/${lang === "en" ? "en" : "fr"}/selector`} replace />;
 }
 
 /** Redirect /fr/outils/:slug → /fr/tool/:slug */

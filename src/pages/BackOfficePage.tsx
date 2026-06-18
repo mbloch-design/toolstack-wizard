@@ -145,6 +145,25 @@ function getSessionDiagnosticContext(session: BackofficeSession) {
   return asRecord(session.diagnostic_context) || {};
 }
 
+function getSessionDecisionSummary(session: BackofficeSession) {
+  const context = getSessionDiagnosticContext(session);
+  const summary = asRecord(context.decision_summary);
+  const recommendationNames = Array.isArray(summary?.recommendation_names)
+    ? summary.recommendation_names.filter((item): item is string => typeof item === "string")
+    : [];
+
+  return {
+    firstDecision: textValue(summary, "first_decision"),
+    immediateCount: numberRecordValue(summary, "immediate_count") || 0,
+    reviewCount: numberRecordValue(summary, "review_count") || 0,
+    laterCount: numberRecordValue(summary, "later_count") || 0,
+    recommendationCount: numberRecordValue(summary, "recommendation_count") || 0,
+    recommendationNames,
+    pricingToVerifyCount: numberRecordValue(context, "pricing_to_verify_count") || 0,
+    selectedToolCount: numberRecordValue(context, "selected_tool_count") || 0,
+  };
+}
+
 function getSelectionCoverage(session: BackofficeSession) {
   const context = getSessionDiagnosticContext(session);
   const coverage = asRecord(context.selection_coverage);
@@ -2619,6 +2638,54 @@ export default function BackOfficePage() {
                     </div>
                   </div>
                 </div>
+
+                {(() => {
+                  const decision = getSessionDecisionSummary(detail.session);
+                  const hasDecisionSummary =
+                    Boolean(decision.firstDecision) ||
+                    decision.immediateCount > 0 ||
+                    decision.reviewCount > 0 ||
+                    decision.recommendationCount > 0;
+                  if (!hasDecisionSummary) return null;
+
+                  return (
+                    <section className="rounded-lg border border-primary/25 bg-primary/5 p-3 space-y-3">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium">
+                        <ClipboardCheck className="w-4 h-4" />
+                        {t("Résumé décisionnel", "Decision summary")}
+                      </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <div className="rounded-lg border border-border bg-background p-3">
+                          <div className="text-xs text-muted-foreground">{t("À faire", "Do now")}</div>
+                          <div className="mt-1 text-lg font-semibold">{decision.immediateCount}</div>
+                        </div>
+                        <div className="rounded-lg border border-border bg-background p-3">
+                          <div className="text-xs text-muted-foreground">{t("À vérifier", "Review")}</div>
+                          <div className="mt-1 text-lg font-semibold">{decision.reviewCount}</div>
+                        </div>
+                        <div className="rounded-lg border border-border bg-background p-3">
+                          <div className="text-xs text-muted-foreground">{t("Plans incertains", "Unclear plans")}</div>
+                          <div className="mt-1 text-lg font-semibold">{decision.pricingToVerifyCount}</div>
+                        </div>
+                        <div className="rounded-lg border border-border bg-background p-3">
+                          <div className="text-xs text-muted-foreground">{t("Pistes", "Ideas")}</div>
+                          <div className="mt-1 text-lg font-semibold">{decision.recommendationCount}</div>
+                        </div>
+                      </div>
+                      {decision.firstDecision && (
+                        <div className="rounded-lg border border-border bg-background p-3">
+                          <div className="text-xs text-muted-foreground">{t("Première décision proposée", "First proposed decision")}</div>
+                          <div className="mt-1 text-sm font-semibold">{decision.firstDecision}</div>
+                        </div>
+                      )}
+                      {decision.recommendationNames.length > 0 && (
+                        <p className="text-xs text-muted-foreground">
+                          {t("Pistes associées", "Related ideas")} : {decision.recommendationNames.join(", ")}
+                        </p>
+                      )}
+                    </section>
+                  );
+                })()}
 
                 {(() => {
                   const riskFlags = getRiskFlags(detail.session);

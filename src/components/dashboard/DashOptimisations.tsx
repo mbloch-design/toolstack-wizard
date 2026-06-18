@@ -183,6 +183,9 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
                         </div>
                         <p className="mt-1 text-xs text-foreground/80">{t(narrative.reasonFr, narrative.reasonEn)}</p>
                         <p className="mt-1 text-xs text-muted-foreground">{t(narrative.detailFr, narrative.detailEn)}</p>
+                        <p className="mt-2 text-[11px] font-medium text-primary">
+                          {t(narrative.evidenceFr, narrative.evidenceEn)}
+                        </p>
                       </div>
                       <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">
                         {formatToolMonthlyPrice(tool, t)}

@@ -75,6 +75,8 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
 
           <Link
             to={homeHref}
+            title={t("Quitter maintenant et reprendre plus tard", "Exit now and resume later")}
+            aria-label={t("Quitter le diagnostic, ta progression est conservée", "Exit the diagnostic, your progress is saved")}
             className="inline-flex h-9 items-center justify-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <X className="h-4 w-4" />

@@ -112,7 +112,16 @@ function serializeSessionSnapshot(session: SessionState) {
   };
 }
 
-function buildDiagnosticContext(session: SessionState) {
+function buildDiagnosticContext(session: SessionState, result?: DiagnosticResult | null) {
+  const pricingCapture = getPricingCaptureSummary(session.selectedTools);
+  const prescriptions = result
+    ? [
+        ...result.prescriptions.phase1,
+        ...result.prescriptions.phase2,
+        ...result.prescriptions.phase3,
+      ]
+    : [];
+
   return {
     persona_confidence: session.personaConfidence || null,
     stack_goal: session.stackGoal || null,
@@ -120,7 +129,21 @@ function buildDiagnosticContext(session: SessionState) {
     primary_specialty: session.primarySpecialty || null,
     complementary_specialties: session.complementarySpecialties || [],
     selection_coverage: session.selectionCoverage || null,
-    pricing_capture: getPricingCaptureSummary(session.selectedTools),
+    selected_tool_count: session.selectedTools.length,
+    pricing_capture: pricingCapture,
+    pricing_to_verify_count: pricingCapture.needsVerificationCount,
+    ...(result
+      ? {
+          decision_summary: {
+            immediate_count: result.prescriptions.phase1.length,
+            review_count: result.prescriptions.phase2.length,
+            later_count: result.prescriptions.phase3.length,
+            recommendation_count: result.recommendations.length,
+            first_decision: prescriptions[0]?.message || null,
+            recommendation_names: result.recommendations.slice(0, 3).map((tool) => tool.name),
+          },
+        }
+      : {}),
   };
 }
 
@@ -150,6 +173,7 @@ export default function DiagnosticRouter() {
   const reportEmailQueuedRef = useRef(recovered?.reportEmailQueued === true);
   const previousStepRef = useRef<StepId | null>(null);
   const resumeLoggedRef = useRef(false);
+  const stepContentRef = useRef<HTMLDivElement>(null);
   const effectiveDiscoveryQuestions = useMemo(() => {
     const seen = new Set<string>();
     return [...(session.adaptiveDiscoveryQuestions || []), ...discoveryQuestions].filter((question) => {
@@ -175,6 +199,24 @@ export default function DiagnosticRouter() {
   }, []);
 
   const goTo = useCallback((s: StepId) => setStep(s), []);
+
+  const currentStageLabel = useMemo(() => {
+    if (step === 0) return t("Calibrage du diagnostic", "Diagnostic calibration");
+    if (step === 1) return t("Capture de la stack", "Stack capture");
+    if (step === 2) return t("Questions adaptées", "Adaptive questions");
+    if (step === 3 || step === 4) return t("Préparation de la lecture", "Preparing the read");
+    if (step === 5) return t("Construction de la restitution", "Building the report");
+    return t("Restitution", "Report");
+  }, [step, t]);
+
+  useEffect(() => {
+    if (step === 12) return;
+    const frame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      stepContentRef.current?.focus({ preventScroll: true });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [step]);
 
   const persistRecovery = useCallback(() => {
     saveDiagnosticRecovery({
@@ -348,7 +390,7 @@ export default function DiagnosticRouter() {
         first_name: session.firstName || null,
         persona: session.persona,
         language: session.language,
-        diagnostic_context: buildDiagnosticContext(session),
+        diagnostic_context: buildDiagnosticContext(session, diagnosticResult),
         email: session.email || null,
         tjm: session.tjm || 0,
         api_spend_tranche: session.apiSpendTranche || null,
@@ -611,8 +653,14 @@ export default function DiagnosticRouter() {
       )}
 
       <div
+        ref={stepContentRef}
+        tabIndex={-1}
+        aria-label={currentStageLabel}
         className="min-h-[calc(100vh-var(--navbar-h)-72px)]"
       >
+        <p className="sr-only" aria-live="polite">
+          {currentStageLabel}
+        </p>
         <div className="mx-auto max-w-7xl px-4 py-7 md:py-10">
         {/* Main content */}
         <div className="min-w-0">

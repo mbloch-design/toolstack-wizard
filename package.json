@@ -60,7 +60,11 @@
     "validate:go69": "node scripts/validate-go69-selection-feedback.mjs",
     "validate:go70": "node scripts/validate-go70-guided-report-shell.mjs",
     "validate:go71": "node scripts/validate-go71-pricing-coverage.mjs",
-    "validate:go72": "node scripts/validate-go72-diagnostic-v2.mjs"
+    "validate:go72": "node scripts/validate-go72-diagnostic-v2.mjs",
+    "validate:go73": "node scripts/validate-go73-tunnel-continuity.mjs",
+    "validate:go74": "node scripts/validate-go74-creative-evidence.mjs",
+    "validate:go75": "node scripts/validate-go75-backoffice-summary.mjs",
+    "validate:go76": "node scripts/validate-go76-production-routes.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

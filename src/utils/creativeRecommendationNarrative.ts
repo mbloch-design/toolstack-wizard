@@ -9,6 +9,8 @@ type RecommendationNarrative = {
   reasonEn: string;
   detailFr: string;
   detailEn: string;
+  evidenceFr: string;
+  evidenceEn: string;
   actionTitleFr: string;
   actionTitleEn: string;
 };
@@ -259,6 +261,8 @@ export function buildCreativeRecommendationNarrative(
       reasonEn: personaReason.en,
       detailFr: "Cette piste reste optionnelle: elle sert seulement si le besoin existe vraiment dans ton activité.",
       detailEn: "This remains optional: it matters only if the need truly exists in your work.",
+      evidenceFr: "Signal : profil déclaré et fonctions encore peu couvertes.",
+      evidenceEn: "Signal: declared profile and functions that remain lightly covered.",
       actionTitleFr: `Évaluer ${tool.name} plus tard`,
       actionTitleEn: `Review ${tool.name} later`,
     };
@@ -277,6 +281,8 @@ export function buildCreativeRecommendationNarrative(
       reasonEn: `To reinforce your ${specialtyCopy.labelEn.toLowerCase()} flow.`,
       detailFr: specialtyCopy.chainDescriptionFr,
       detailEn: specialtyCopy.chainDescriptionEn,
+      evidenceFr: `Signal : spécialité ${specialtyCopy.labelFr}, sans maillon clairement identifié pour ce besoin.`,
+      evidenceEn: `Signal: ${specialtyCopy.labelEn} specialty, without a clearly identified link for this need.`,
       actionTitleFr: `Évaluer ${tool.name} pour renforcer le flux`,
       actionTitleEn: `Review ${tool.name} to strengthen the workflow`,
     };
@@ -292,6 +298,12 @@ export function buildCreativeRecommendationNarrative(
     reasonEn,
     detailFr: rule.detailFr,
     detailEn: rule.detailEn,
+    evidenceFr: triggerName
+      ? `Déclencheur : ${triggerName} est déjà dans la stack ; ${tool.name} complète son usage au lieu de le remplacer.`
+      : `Déclencheur : le diagnostic a détecté un maillon faible autour de ${rule.goalFr}.`,
+    evidenceEn: triggerName
+      ? `Trigger: ${triggerName} is already in the stack; ${tool.name} extends its use instead of replacing it.`
+      : `Trigger: the diagnostic found a weak link around the need to ${rule.goalEn}.`,
     actionTitleFr: `Ajouter ${tool.name} pour ${rule.goalFr}`,
     actionTitleEn: `Add ${tool.name} to ${rule.goalEn}`,
   };

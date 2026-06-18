@@ -144,7 +144,7 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
       id: `month-rec-${rec.id}`,
       tool: rec,
       label: t(narrative.actionTitleFr, narrative.actionTitleEn),
-      detail: t(narrative.detailFr, narrative.detailEn),
+      detail: `${t(narrative.detailFr, narrative.detailEn)} ${t(narrative.evidenceFr, narrative.evidenceEn)}`,
       evidenceTab: "optimiser",
       savings: 0, timeMinutes: 120, urgency: "month",
     });
