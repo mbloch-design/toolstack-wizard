@@ -67107,8 +67107,8 @@
     "slug": "maxon-one",
     "name": "Maxon One",
     "category": "creation",
-    "shortDescription": "Le bundle Maxon : Cinema 4D, Redshift, ZBrush, Red Giant, Forger et Universe réunis.",
-    "shortDescriptionEn": "The Maxon bundle: Cinema 4D, Redshift, ZBrush, Red Giant, Forger and Universe together.",
+    "shortDescription": "Le bundle Maxon : Cinema 4D, Redshift, ZBrush, Red Giant et Universe réunis.",
+    "shortDescriptionEn": "The Maxon bundle: Cinema 4D, Redshift, ZBrush, Red Giant and Universe together.",
     "pricing": {
       "free": "Essai gratuit",
       "paid": "~99,91$/mois (annuel, ~1199$/an). Tout l'écosystème Maxon."
@@ -67121,8 +67121,8 @@
     "affiliateLink": "",
     "websiteUrl": "https://www.maxon.net/maxon-one",
     "logo": "",
-    "longDescription": "Maxon One, c'est l'abonnement tout-en-un qui débloque l'ensemble de l'écosystème Maxon : Cinema 4D (3D et motion), Redshift (moteur de rendu GPU), ZBrush (sculpture numérique), toute la suite Red Giant (Trapcode, Magic Bullet, VFX Suite, Universe), Forger (sculpture mobile) et Team Render. Le tout pour environ 99,91$/mois en annuel (~1199$/an).\n\nLe calcul est simple : pris séparément, Cinema 4D (~60$), ZBrush (~30$) et Red Giant (~50$) dépassent déjà les 140$/mois. Dès que tu utilises deux de ces outils ou plus, le bundle est rentable. Pour un motion designer ou un généraliste 3D qui vit dans cet écosystème, c'est clairement la meilleure formule.\n\nLe revers, c'est le prix absolu et le modèle 100% abonnement. Si tu n'as besoin que d'un seul outil (juste Cinema 4D, ou juste ZBrush), prends-le en standalone, ça coûte deux à trois fois moins cher. Et si le budget est vraiment serré, Blender réunit gratuitement la 3D, la sculpture et un moteur de rendu (Cycles) dans un seul logiciel. Maxon One se justifie pour qui exploite vraiment plusieurs briques de l'écosystème au quotidien.",
-    "longDescriptionEn": "Maxon One is the all-access subscription that unlocks the entire Maxon ecosystem: Cinema 4D (3D and motion), Redshift (GPU render engine), ZBrush (digital sculpting), the full Red Giant suite (Trapcode, Magic Bullet, VFX Suite, Universe), Forger (mobile sculpting) and Team Render. All for around $99.91/month annually (~$1,199/year).\n\nThe math is simple: bought separately, Cinema 4D (~$60), ZBrush (~$30) and Red Giant (~$50) already exceed $140/month. As soon as you use two or more of these tools, the bundle pays off. For a motion designer or 3D generalist who lives in this ecosystem, it's clearly the best deal.\n\nThe downside is the absolute price and the subscription-only model. If you only need a single tool (just Cinema 4D, or just ZBrush), buy it standalone, it costs two to three times less. And if budget is really tight, Blender bundles 3D, sculpting and a render engine (Cycles) for free in one app. Maxon One earns its place for those who genuinely use several pieces of the ecosystem day to day.",
+    "longDescription": "Maxon One, c'est l'abonnement tout-en-un qui débloque l'ensemble de l'écosystème Maxon : Cinema 4D (3D et motion), Redshift (moteur de rendu GPU), ZBrush (sculpture numérique), toute la suite Red Giant (Trapcode, Magic Bullet, VFX Suite, Universe), ZBrush pour iPad (sculpture mobile) et Team Render. Le tout pour environ 99,91$/mois en annuel (~1199$/an).\n\nLe calcul est simple : pris séparément, Cinema 4D (~60$), ZBrush (~30$) et Red Giant (~50$) dépassent déjà les 140$/mois. Dès que tu utilises deux de ces outils ou plus, le bundle est rentable. Pour un motion designer ou un généraliste 3D qui vit dans cet écosystème, c'est clairement la meilleure formule.\n\nLe revers, c'est le prix absolu et le modèle 100% abonnement. Si tu n'as besoin que d'un seul outil (juste Cinema 4D, ou juste ZBrush), prends-le en standalone, ça coûte deux à trois fois moins cher. Et si le budget est vraiment serré, Blender réunit gratuitement la 3D, la sculpture et un moteur de rendu (Cycles) dans un seul logiciel. Maxon One se justifie pour qui exploite vraiment plusieurs briques de l'écosystème au quotidien.",
+    "longDescriptionEn": "Maxon One is the all-access subscription that unlocks the entire Maxon ecosystem: Cinema 4D (3D and motion), Redshift (GPU render engine), ZBrush (digital sculpting), the full Red Giant suite (Trapcode, Magic Bullet, VFX Suite, Universe), ZBrush for iPad (mobile sculpting) and Team Render. All for around $99.91/month annually (~$1,199/year).\n\nThe math is simple: bought separately, Cinema 4D (~$60), ZBrush (~$30) and Red Giant (~$50) already exceed $140/month. As soon as you use two or more of these tools, the bundle pays off. For a motion designer or 3D generalist who lives in this ecosystem, it's clearly the best deal.\n\nThe downside is the absolute price and the subscription-only model. If you only need a single tool (just Cinema 4D, or just ZBrush), buy it standalone, it costs two to three times less. And if budget is really tight, Blender bundles 3D, sculpting and a render engine (Cycles) for free in one app. Maxon One earns its place for those who genuinely use several pieces of the ecosystem day to day.",
     "verdict": {
       "keepIf": [
         "Tu utilises au moins deux outils Maxon (C4D, ZBrush, Red Giant, Redshift) au quotidien",
@@ -67264,8 +67264,8 @@
     "websiteUrl": "https://www.maxon.net/cinema-4d",
     "logo": "",
     "category": "creation",
-    "longDescription": "Cinema 4D, c'est le logiciel 3D de Maxon, et c'est le chouchou des motion designers. Sa réputation tient à deux choses : il est nettement plus accessible que Maya ou Houdini, et son module MoGraph est une référence pour créer des animations procédurales (textes qui se désagrègent, clones, effets de masse) en un temps record. Son intégration avec After Effects via Cineware en fait l'outil 3D par défaut de tout l'univers motion/broadcast.\n\nCôté prix, on est sur de l'abonnement Maxon : environ 59,91$/mois en annuel pour Cinema 4D seul (94$ en mensuel), ou l'abonnement Maxon One autour de 100$/mois qui ajoute Redshift (le moteur de rendu GPU), Red Giant, ZBrush, Forger et Universe. Le moteur Redshift est d'ailleurs inclus avec l'abonnement C4D, ce qui simplifie le rendu.\n\nÀ qui ça s'adresse : aux motion designers, graphistes 3D et studios broadcast qui veulent un outil puissant sans la courbe d'apprentissage abrupte de Maya/Houdini. Le vrai arbitrage, c'est le prix face à Blender, qui est gratuit et est devenu une alternative très sérieuse. Cinema 4D se justifie pour son confort, son MoGraph et son intégration Adobe ; si le budget est serré ou que tu débutes, Blender fait presque tout pour 0€.",
-    "longDescriptionEn": "Cinema 4D is Maxon's 3D software, and it's the darling of motion designers. Its reputation rests on two things: it's noticeably more approachable than Maya or Houdini, and its MoGraph module is a reference for creating procedural animation (text that shatters, cloners, mass effects) in record time. Its integration with After Effects via Cineware makes it the default 3D tool of the whole motion/broadcast world.\n\nOn price, it's a Maxon subscription: around $59.91/month annually for Cinema 4D alone ($94 monthly), or the Maxon One subscription around $100/month that adds Redshift (the GPU render engine), Red Giant, ZBrush, Forger and Universe. The Redshift engine is also included with the C4D subscription, which simplifies rendering.\n\nWho it's for: motion designers, 3D artists and broadcast studios who want a powerful tool without the steep learning curve of Maya/Houdini. The real trade-off is price against Blender, which is free and has become a very serious alternative. Cinema 4D earns its place for its comfort, MoGraph and Adobe integration; if budget is tight or you're starting out, Blender does almost everything for free.",
+    "longDescription": "Cinema 4D, c'est le logiciel 3D de Maxon, et c'est le chouchou des motion designers. Sa réputation tient à deux choses : il est nettement plus accessible que Maya ou Houdini, et son module MoGraph est une référence pour créer des animations procédurales (textes qui se désagrègent, clones, effets de masse) en un temps record. Son intégration avec After Effects via Cineware en fait l'outil 3D par défaut de tout l'univers motion/broadcast.\n\nCôté prix, on est sur de l'abonnement Maxon : environ 59,91$/mois en annuel pour Cinema 4D seul (94$ en mensuel), ou l'abonnement Maxon One autour de 100$/mois qui ajoute Redshift (le moteur de rendu GPU), Red Giant, ZBrush et Universe. Le moteur Redshift est d'ailleurs inclus avec l'abonnement C4D, ce qui simplifie le rendu.\n\nÀ qui ça s'adresse : aux motion designers, graphistes 3D et studios broadcast qui veulent un outil puissant sans la courbe d'apprentissage abrupte de Maya/Houdini. Le vrai arbitrage, c'est le prix face à Blender, qui est gratuit et est devenu une alternative très sérieuse. Cinema 4D se justifie pour son confort, son MoGraph et son intégration Adobe ; si le budget est serré ou que tu débutes, Blender fait presque tout pour 0€.",
+    "longDescriptionEn": "Cinema 4D is Maxon's 3D software, and it's the darling of motion designers. Its reputation rests on two things: it's noticeably more approachable than Maya or Houdini, and its MoGraph module is a reference for creating procedural animation (text that shatters, cloners, mass effects) in record time. Its integration with After Effects via Cineware makes it the default 3D tool of the whole motion/broadcast world.\n\nOn price, it's a Maxon subscription: around $59.91/month annually for Cinema 4D alone ($94 monthly), or the Maxon One subscription around $100/month that adds Redshift (the GPU render engine), Red Giant, ZBrush and Universe. The Redshift engine is also included with the C4D subscription, which simplifies rendering.\n\nWho it's for: motion designers, 3D artists and broadcast studios who want a powerful tool without the steep learning curve of Maya/Houdini. The real trade-off is price against Blender, which is free and has become a very serious alternative. Cinema 4D earns its place for its comfort, MoGraph and Adobe integration; if budget is tight or you're starting out, Blender does almost everything for free.",
     "verdict": {
       "keepIf": [
         "Tu fais du motion design ou de la 3D broadcast et tu veux MoGraph + l'intégration After Effects",
@@ -122749,6 +122749,681 @@
     },
     "force_silence": false,
     "description": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable."
+  },
+  {
+    "id": "trapcode",
+    "slug": "trapcode",
+    "name": "Trapcode",
+    "category": "design-tools",
+    "shortDescription": "Suite Red Giant de particules et d'effets 3D pour After Effects (Particular, Mir, Form).",
+    "shortDescriptionEn": "Red Giant's particle and 3D effects suite for After Effects (Particular, Mir, Form).",
+    "pricing": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+    },
+    "pricingEn": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One. No longer sold standalone."
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://www.maxon.net/red-giant/trapcode",
+    "websiteUrl": "https://www.maxon.net/red-giant/trapcode",
+    "logo": "",
+    "longDescription": "Trapcode, c'est la suite de particules et d'effets 3D la plus mythique d'After Effects. Son produit phare, Particular, est LA référence pour générer des particules, de la fumée, des nébuleuses ou des effets organiques. La suite ajoute Form (grilles de particules), Mir (surfaces 3D fluides), Tao, Shine, Starglow et d'autres. Pour un motion designer, c'est un gain de temps énorme face à un système de particules fait main.\n\nDepuis le passage chez Maxon, Trapcode n'est plus vendu seul : on y accède via l'abonnement Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. C'est le point d'attention principal. Si tu n'utilises que Trapcode, tu paies en réalité toute la suite Red Giant. Les alternatives restent limitées : les particules natives d'After Effects sont basiques, et un concurrent comme Stardust existe mais ne couvre pas tout. Trapcode se justifie si les particules et effets 3D sont un usage régulier de ton flux After Effects.",
+    "longDescriptionEn": "Trapcode is the most legendary particle and 3D effects suite for After Effects. Its flagship, Particular, is THE reference for generating particles, smoke, nebulas and organic effects. The suite adds Form (particle grids), Mir (fluid 3D surfaces), Tao, Shine, Starglow and more. For a motion designer, it's a huge time saver versus a hand-built particle system.\n\nSince moving to Maxon, Trapcode is no longer sold on its own: you access it via the Red Giant Complete subscription (~$50/month, $599/year) or Maxon One. That's the main thing to watch. If you only use Trapcode, you're really paying for the whole Red Giant suite. Alternatives stay limited: After Effects' native particles are basic, and a competitor like Stardust exists but doesn't cover everything. Trapcode earns its place if particles and 3D effects are a regular part of your After Effects flow.",
+    "verdict": {
+      "keepIf": [
+        "Les particules et effets 3D sont un usage régulier de ton flux After Effects",
+        "Tu utilises aussi d'autres suites Red Giant (le bundle devient rentable)"
+      ],
+      "avoidIf": [
+        "Tu ne ferais qu'un usage ponctuel : payer tout Red Giant Complete pour Trapcode seul est cher",
+        "Les particules natives d'After Effects suffisent à ton besoin"
+      ],
+      "threshold": "Pertinent si tu fais régulièrement des particules/effets 3D dans After Effects. Pour un usage rare, le bundle Red Giant complet est difficile à rentabiliser."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Particles and 3D effects are a regular part of your After Effects flow",
+        "You also use other Red Giant suites (the bundle becomes worth it)"
+      ],
+      "avoidIf": [
+        "You'd only use it occasionally: paying for all of Red Giant Complete just for Trapcode is pricey",
+        "After Effects' native particles are enough for your need"
+      ],
+      "threshold": "Worth it if you regularly do particles/3D effects in After Effects. For rare use, the full Red Giant bundle is hard to justify."
+    },
+    "pros": [
+      "Particular : la référence des particules dans After Effects",
+      "Suite complète (Form, Mir, Tao, Shine, Starglow)",
+      "Gros gain de temps pour les effets organiques et 3D",
+      "Inclus dans Red Giant Complete et Maxon One"
+    ],
+    "prosEn": [
+      "Particular: the reference for particles in After Effects",
+      "Complete suite (Form, Mir, Tao, Shine, Starglow)",
+      "Big time saver for organic and 3D effects",
+      "Included in Red Giant Complete and Maxon One"
+    ],
+    "cons": [
+      "Plus vendu seul : il faut tout Red Giant Complete (~50$/mois)",
+      "Cher si tu n'utilises que Trapcode",
+      "Peu d'alternatives équivalentes (particules natives AE basiques)",
+      "Abonnement only, plus de licence perpétuelle"
+    ],
+    "consEn": [
+      "No longer sold alone: you need all of Red Giant Complete (~$50/month)",
+      "Pricey if you only use Trapcode",
+      "Few equivalent alternatives (native AE particles are basic)",
+      "Subscription only, no perpetual license"
+    ],
+    "useCases": [
+      "Créer des systèmes de particules et de la fumée dans After Effects",
+      "Générer des nébuleuses et des effets organiques",
+      "Animer des surfaces 3D fluides avec Mir",
+      "Ajouter des effets lumineux (Shine, Starglow)"
+    ],
+    "useCasesEn": [
+      "Create particle systems and smoke in After Effects",
+      "Generate nebulas and organic effects",
+      "Animate fluid 3D surfaces with Mir",
+      "Add light effects (Shine, Starglow)"
+    ],
+    "covers": [
+      "motion-design",
+      "effets-visuels"
+    ],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Trapcode (Red Giant) en 2026 : la suite de particules pour After Effects (Particular, Mir). Prix réel (via Red Giant Complete) et alternatives. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "ae-red-giant"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "plugin",
+    "substitutable": false,
+    "host_app": "after-effects",
+    "bundle_parent": "ae-red-giant",
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Plus vendu à l'unité : uniquement via Red Giant Complete (~50$/mois) ou Maxon One"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
+    },
+    "substitution_cluster_v2": "plugin-after-effects"
+  },
+  {
+    "id": "magic-bullet",
+    "slug": "magic-bullet",
+    "name": "Magic Bullet",
+    "category": "design-tools",
+    "shortDescription": "Suite Red Giant d'étalonnage et de look cinéma pour After Effects et Premiere.",
+    "shortDescriptionEn": "Red Giant's color grading and cinematic look suite for After Effects and Premiere.",
+    "pricing": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+    },
+    "pricingEn": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One. No longer sold standalone."
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://www.maxon.net/red-giant/magic-bullet",
+    "websiteUrl": "https://www.maxon.net/red-giant/magic-bullet",
+    "logo": "",
+    "longDescription": "Magic Bullet, c'est la suite d'étalonnage et de look cinéma de Red Giant, pensée pour rester dans le flux Adobe. Son produit star, Looks, permet d'appliquer des étalonnages cinéma complets en quelques clics. La suite ajoute Colorista (correction colorimétrique fine), Denoiser (débruitage) et Cosmo (lissage de peau). Pour un monteur qui veut un rendu pro sans plonger dans un étalonnage manuel, c'est efficace et rapide.\n\nComme le reste de Red Giant, Magic Bullet n'est plus vendu seul : il passe par l'abonnement Red Giant Complete (~50$/mois) ou Maxon One. Le vrai arbitrage, c'est DaVinci Resolve : gratuit, c'est aujourd'hui l'outil d'étalonnage le plus complet du marché. Magic Bullet garde du sens surtout pour rester dans After Effects/Premiere sans changer de logiciel. Si tu acceptes d'étalonner dans Resolve, tu peux t'en passer entièrement.",
+    "longDescriptionEn": "Magic Bullet is Red Giant's color grading and cinematic look suite, designed to stay in the Adobe flow. Its star product, Looks, lets you apply full cinema grades in a few clicks. The suite adds Colorista (fine color correction), Denoiser (noise reduction) and Cosmo (skin smoothing). For an editor who wants a pro look without diving into manual grading, it's fast and effective.\n\nLike the rest of Red Giant, Magic Bullet is no longer sold alone: it comes via the Red Giant Complete subscription (~$50/month) or Maxon One. The real trade-off is DaVinci Resolve: free, it's now the most complete grading tool on the market. Magic Bullet mostly makes sense to stay in After Effects/Premiere without switching apps. If you're fine grading in Resolve, you can skip it entirely.",
+    "verdict": {
+      "keepIf": [
+        "Tu veux étalonner et appliquer un look cinéma sans quitter After Effects/Premiere",
+        "Tu utilises aussi d'autres suites Red Giant (le bundle devient rentable)"
+      ],
+      "avoidIf": [
+        "Tu acceptes d'étalonner dans DaVinci Resolve (gratuit et plus complet)",
+        "Ton montage n'a pas d'exigence de look cinéma"
+      ],
+      "threshold": "Pertinent pour rester dans le flux Adobe. Si tu étalonnes dans DaVinci Resolve, c'est un doublon évitable."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to grade and apply a cinematic look without leaving After Effects/Premiere",
+        "You also use other Red Giant suites (the bundle becomes worth it)"
+      ],
+      "avoidIf": [
+        "You're fine grading in DaVinci Resolve (free and more complete)",
+        "Your edit has no cinematic-look requirement"
+      ],
+      "threshold": "Worth it to stay in the Adobe flow. If you grade in DaVinci Resolve, it's an avoidable duplicate."
+    },
+    "pros": [
+      "Looks : étalonnages cinéma en quelques clics",
+      "Reste dans le flux After Effects/Premiere",
+      "Correction fine (Colorista) et débruitage (Denoiser) inclus",
+      "Inclus dans Red Giant Complete et Maxon One"
+    ],
+    "prosEn": [
+      "Looks: cinema grades in a few clicks",
+      "Stays in the After Effects/Premiere flow",
+      "Fine correction (Colorista) and denoising (Denoiser) included",
+      "Included in Red Giant Complete and Maxon One"
+    ],
+    "cons": [
+      "Plus vendu seul : il faut tout Red Giant Complete (~50$/mois)",
+      "DaVinci Resolve étalonne gratuitement et plus complètement",
+      "Abonnement only, plus de licence perpétuelle",
+      "Surdimensionné pour un montage sans exigence de look"
+    ],
+    "consEn": [
+      "No longer sold alone: you need all of Red Giant Complete (~$50/month)",
+      "DaVinci Resolve grades for free and more completely",
+      "Subscription only, no perpetual license",
+      "Overkill for an edit with no look requirement"
+    ],
+    "useCases": [
+      "Appliquer un look cinéma à une vidéo dans After Effects ou Premiere",
+      "Corriger les couleurs finement avec Colorista",
+      "Nettoyer le grain d'une vidéo avec Denoiser",
+      "Lisser la peau sur des portraits vidéo (Cosmo)"
+    ],
+    "useCasesEn": [
+      "Apply a cinema look to a video in After Effects or Premiere",
+      "Finely correct colors with Colorista",
+      "Clean up grain with Denoiser",
+      "Smooth skin on video portraits (Cosmo)"
+    ],
+    "covers": [
+      "color-grading",
+      "effets-visuels"
+    ],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "seo": {
+      "metaDescription": "Magic Bullet (Red Giant) en 2026 : étalonnage et look cinéma pour After Effects/Premiere. Prix réel et alternative gratuite (DaVinci). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "ae-red-giant",
+      "davinci-resolve"
+    ],
+    "articles": [],
+    "freeAlternative": "davinci-resolve",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "host_app": "after-effects",
+    "bundle_parent": "ae-red-giant",
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "color-grading"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Plus vendu à l'unité : uniquement via Red Giant Complete (~50$/mois) ou Maxon One"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
+    },
+    "substitution_cluster_v2": "plugin-after-effects"
+  },
+  {
+    "id": "vfx-suite",
+    "slug": "vfx-suite",
+    "name": "VFX Suite",
+    "category": "design-tools",
+    "shortDescription": "Suite Red Giant de compositing, incrustation et effets VFX pour After Effects.",
+    "shortDescriptionEn": "Red Giant's compositing, keying and VFX effects suite for After Effects.",
+    "pricing": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+    },
+    "pricingEn": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One. No longer sold standalone."
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://www.maxon.net/red-giant/vfx-suite",
+    "websiteUrl": "https://www.maxon.net/red-giant/vfx-suite",
+    "logo": "",
+    "longDescription": "VFX Suite, c'est l'ensemble d'outils de compositing et d'effets visuels de Red Giant, pensé pour faire des VFX directement dans After Effects sans passer par un logiciel de compositing dédié. On y trouve une incrustation fond vert de qualité, Supercomp (un environnement de compositing par calques lumineux), King Pin Tracker (suivi et corner pin), Optical Glow, Chromatic Displacement et les célèbres lens flares de Knoll Light Factory.\n\nComme tout Red Giant, VFX Suite passe désormais par l'abonnement Red Giant Complete (~50$/mois) ou Maxon One, fini la vente à l'unité. C'est un confort réel pour qui fait du compositing léger à moyen dans After Effects. En revanche, pour du compositing lourd et pro, un outil dédié comme Nuke reste la référence. VFX Suite se justifie surtout si After Effects est ton outil central et que tu veux y garder tes VFX.",
+    "longDescriptionEn": "VFX Suite is Red Giant's set of compositing and visual effects tools, designed to do VFX right inside After Effects without going through a dedicated compositing app. It includes quality green-screen keying, Supercomp (a layer-based light compositing environment), King Pin Tracker (tracking and corner pin), Optical Glow, Chromatic Displacement and the famous Knoll Light Factory lens flares.\n\nLike all of Red Giant, VFX Suite now comes via the Red Giant Complete subscription (~$50/month) or Maxon One, with no more standalone sales. It's a real comfort for anyone doing light to medium compositing in After Effects. For heavy, pro compositing, however, a dedicated tool like Nuke remains the reference. VFX Suite mostly makes sense if After Effects is your central tool and you want to keep your VFX there.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais du compositing et des VFX directement dans After Effects",
+        "Tu utilises aussi d'autres suites Red Giant (le bundle devient rentable)"
+      ],
+      "avoidIf": [
+        "Tu fais du compositing lourd et pro : Nuke est plus adapté",
+        "Tu n'as pas de besoin VFX récurrent dans After Effects"
+      ],
+      "threshold": "Pertinent pour du VFX léger à moyen dans After Effects. Pour du compositing lourd, Nuke reste la référence."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do compositing and VFX directly in After Effects",
+        "You also use other Red Giant suites (the bundle becomes worth it)"
+      ],
+      "avoidIf": [
+        "You do heavy, pro compositing: Nuke fits better",
+        "You have no recurring VFX need in After Effects"
+      ],
+      "threshold": "Worth it for light to medium VFX in After Effects. For heavy compositing, Nuke stays the reference."
+    },
+    "pros": [
+      "Compositing et VFX sans quitter After Effects",
+      "Incrustation fond vert de qualité et Supercomp",
+      "Tracking (King Pin) et lens flares (Knoll Light Factory)",
+      "Inclus dans Red Giant Complete et Maxon One"
+    ],
+    "prosEn": [
+      "Compositing and VFX without leaving After Effects",
+      "Quality green-screen keying and Supercomp",
+      "Tracking (King Pin) and lens flares (Knoll Light Factory)",
+      "Included in Red Giant Complete and Maxon One"
+    ],
+    "cons": [
+      "Plus vendu seul : il faut tout Red Giant Complete (~50$/mois)",
+      "Moins puissant que Nuke pour le compositing lourd",
+      "Abonnement only, plus de licence perpétuelle",
+      "Surdimensionné sans besoin VFX régulier"
+    ],
+    "consEn": [
+      "No longer sold alone: you need all of Red Giant Complete (~$50/month)",
+      "Less powerful than Nuke for heavy compositing",
+      "Subscription only, no perpetual license",
+      "Overkill without a regular VFX need"
+    ],
+    "useCases": [
+      "Incruster un fond vert dans After Effects",
+      "Composer plusieurs sources avec Supercomp",
+      "Suivre et fixer un élément avec King Pin Tracker",
+      "Ajouter des lens flares et des lueurs optiques"
+    ],
+    "useCasesEn": [
+      "Key a green screen in After Effects",
+      "Composite multiple sources with Supercomp",
+      "Track and pin an element with King Pin Tracker",
+      "Add lens flares and optical glows"
+    ],
+    "covers": [
+      "effets-visuels",
+      "compositing"
+    ],
+    "relevantFor": [
+      "createur-contenu",
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "VFX Suite (Red Giant) en 2026 : compositing et keying dans After Effects. Prix réel (via Red Giant Complete) et alternatives (Nuke). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "ae-red-giant"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "plugin",
+    "substitutable": false,
+    "host_app": "after-effects",
+    "bundle_parent": "ae-red-giant",
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Plus vendu à l'unité : uniquement via Red Giant Complete (~50$/mois) ou Maxon One"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
+    },
+    "substitution_cluster_v2": "plugin-after-effects"
+  },
+  {
+    "id": "red-giant-universe",
+    "slug": "red-giant-universe",
+    "name": "Red Giant Universe",
+    "category": "design-tools",
+    "shortDescription": "Bibliothèque Red Giant de transitions, effets et titres pour le montage vidéo.",
+    "shortDescriptionEn": "Red Giant's library of transitions, effects and titles for video editing.",
+    "pricing": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One."
+    },
+    "pricingEn": {
+      "free": "",
+      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One."
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://www.maxon.net/red-giant/universe",
+    "websiteUrl": "https://www.maxon.net/red-giant/universe",
+    "logo": "",
+    "longDescription": "Universe, c'est la bibliothèque d'effets et de transitions accélérés par GPU de Red Giant. Elle réunit des dizaines d'outils pour le montage : transitions stylées, effets glitch et rétro, générateurs de texte et de lignes, dégradés, holomatrix. Son intérêt, c'est la rapidité et le côté tendance : tu ajoutes en un clic des effets modernes que les monteurs aiment, sans les bricoler à la main.\n\nGros avantage par rapport aux autres suites Red Giant : Universe fonctionne dans beaucoup d'hôtes (After Effects, Premiere, DaVinci Resolve, Final Cut, Vegas). C'était historiquement le produit Red Giant le plus accessible, parfois vendu seul ; aujourd'hui Maxon pousse l'abonnement Red Giant Complete (~50$/mois) qui l'inclut. À mettre en balance avec les transitions natives de ton logiciel de montage et les packs de templates (Envato, MotionArray) si tu veux dépenser moins.",
+    "longDescriptionEn": "Universe is Red Giant's library of GPU-accelerated effects and transitions. It bundles dozens of editing tools: stylish transitions, glitch and retro effects, text and line generators, gradients, holomatrix. Its appeal is speed and trendiness: you add modern effects editors love in one click, without building them by hand.\n\nA big advantage over the other Red Giant suites: Universe works in many hosts (After Effects, Premiere, DaVinci Resolve, Final Cut, Vegas). It was historically Red Giant's most accessible product, sometimes sold alone; today Maxon pushes the Red Giant Complete subscription (~$50/month) that includes it. Weigh it against your editing app's native transitions and template packs (Envato, MotionArray) if you want to spend less.",
+    "verdict": {
+      "keepIf": [
+        "Tu montes régulièrement et veux des transitions/effets tendance en un clic",
+        "Tu travailles dans plusieurs logiciels (Premiere, Resolve, Final Cut)"
+      ],
+      "avoidIf": [
+        "Les transitions natives de ton montage te suffisent",
+        "Tu préfères des packs de templates ponctuels moins chers"
+      ],
+      "threshold": "Pertinent pour un monteur régulier qui veut un rendu moderne sans bricoler. Pour un usage léger, les effets natifs ou des templates suffisent."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You edit regularly and want trendy transitions/effects in one click",
+        "You work across several apps (Premiere, Resolve, Final Cut)"
+      ],
+      "avoidIf": [
+        "Your editing app's native transitions are enough",
+        "You'd rather buy cheaper one-off template packs"
+      ],
+      "threshold": "Worth it for a regular editor who wants a modern look without building it. For light use, native effects or templates are enough."
+    },
+    "pros": [
+      "Des dizaines de transitions et effets modernes en un clic",
+      "Compatible Premiere, After Effects, Resolve, Final Cut, Vegas",
+      "Accéléré par GPU, rapide à appliquer",
+      "Inclus dans Red Giant Complete et Maxon One"
+    ],
+    "prosEn": [
+      "Dozens of modern transitions and effects in one click",
+      "Works in Premiere, After Effects, Resolve, Final Cut, Vegas",
+      "GPU-accelerated, fast to apply",
+      "Included in Red Giant Complete and Maxon One"
+    ],
+    "cons": [
+      "Désormais surtout via Red Giant Complete (~50$/mois)",
+      "Les transitions natives couvrent déjà beaucoup",
+      "Des packs de templates peuvent revenir moins cher",
+      "Abonnement only, plus de licence perpétuelle"
+    ],
+    "consEn": [
+      "Now mostly via Red Giant Complete (~$50/month)",
+      "Native transitions already cover a lot",
+      "Template packs can be cheaper",
+      "Subscription only, no perpetual license"
+    ],
+    "useCases": [
+      "Ajouter des transitions stylées entre deux plans",
+      "Appliquer des effets glitch ou rétro à une vidéo",
+      "Générer des titres et des lignes animées",
+      "Garder une bibliothèque d'effets commune à Premiere et Resolve"
+    ],
+    "useCasesEn": [
+      "Add stylish transitions between two shots",
+      "Apply glitch or retro effects to a video",
+      "Generate animated titles and lines",
+      "Keep one effects library shared across Premiere and Resolve"
+    ],
+    "covers": [
+      "effets-visuels",
+      "montage-video"
+    ],
+    "relevantFor": [
+      "createur-contenu",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "seo": {
+      "metaDescription": "Red Giant Universe en 2026 : transitions et effets pour Premiere, After Effects et Resolve. Prix réel et alternatives. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "ae-red-giant"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "plugin",
+    "substitutable": false,
+    "host_app": "premiere-pro",
+    "bundle_parent": "ae-red-giant",
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "montage-video"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Désormais via Red Giant Complete (~50$/mois) ou Maxon One"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
+    },
+    "substitution_cluster_v2": "plugin-after-effects"
+  },
+  {
+    "id": "pluraleyes",
+    "slug": "pluraleyes",
+    "name": "PluralEyes",
+    "category": "design-tools",
+    "shortDescription": "Outil Red Giant de synchro audio/vidéo multicam, désormais en maintenance limitée.",
+    "shortDescriptionEn": "Red Giant's multicam audio/video sync tool, now in limited maintenance.",
+    "pricing": {
+      "free": "",
+      "paid": "Inclus dans Red Giant Complete ou Maxon One (produit legacy, plus mis à jour)."
+    },
+    "pricingEn": {
+      "free": "",
+      "paid": "Included in Red Giant Complete or Maxon One (legacy product, no longer updated)."
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://www.maxon.net/red-giant/pluraleyes",
+    "websiteUrl": "https://www.maxon.net/red-giant/pluraleyes",
+    "logo": "",
+    "longDescription": "PluralEyes a été un pionnier : il synchronise automatiquement l'audio et la vidéo de tournages multicaméra en analysant les formes d'onde, ce qui faisait gagner un temps fou sur les montages multicam et les prises avec enregistreur audio séparé. À son époque, c'était un quasi-indispensable des monteurs documentaires et événementiels.\n\nMais il faut être honnête sur son statut en 2026 : Maxon l'a placé en maintenance limitée depuis 2023, il n'est plus vraiment mis à jour, et il n'est accessible que via l'abonnement Red Giant Complete ou Maxon One. Surtout, les logiciels de montage ont rattrapé leur retard : Premiere Pro et DaVinci Resolve intègrent désormais une synchronisation par forme d'onde, gratuite et intégrée, qui fait le même travail. Concrètement, pour un nouveau projet, tu n'as plus besoin de PluralEyes : la synchro native de ton logiciel suffit. On garde cette fiche pour ceux qui le cherchent encore.",
+    "longDescriptionEn": "PluralEyes was a pioneer: it automatically syncs audio and video from multicamera shoots by analyzing waveforms, saving huge time on multicam edits and takes with a separate audio recorder. In its day, it was a near-essential for documentary and event editors.\n\nBut let's be honest about its status in 2026: Maxon put it in limited maintenance mode back in 2023, it's no longer really updated, and it's only available via the Red Giant Complete or Maxon One subscription. More importantly, editing apps have caught up: Premiere Pro and DaVinci Resolve now include free, built-in waveform sync that does the same job. In practice, for a new project, you no longer need PluralEyes: your app's native sync is enough. We keep this page for those still searching for it.",
+    "verdict": {
+      "keepIf": [
+        "Tu as déjà PluralEyes dans un flux existant et il te convient",
+        "Tu cherches juste à comprendre par quoi le remplacer"
+      ],
+      "avoidIf": [
+        "Tu démarres un nouveau projet : la synchro native de Premiere ou Resolve suffit (gratuite)",
+        "Tu n'as pas déjà Red Giant Complete : ça ne vaut pas l'abonnement pour ça seul"
+      ],
+      "threshold": "Produit legacy en maintenance limitée. Pour un nouveau projet, la synchronisation par forme d'onde de Premiere Pro ou DaVinci Resolve fait le même travail gratuitement."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already have PluralEyes in an existing flow and it works for you",
+        "You just want to understand what replaces it"
+      ],
+      "avoidIf": [
+        "You're starting a new project: native sync in Premiere or Resolve is enough (free)",
+        "You don't already have Red Giant Complete: it's not worth the subscription for this alone"
+      ],
+      "threshold": "Legacy product in limited maintenance. For a new project, waveform sync in Premiere Pro or DaVinci Resolve does the same job for free."
+    },
+    "pros": [
+      "Synchro audio/vidéo multicam automatique et fiable",
+      "Pionnier reconnu de la synchro par forme d'onde",
+      "Inclus si tu as déjà Red Giant Complete ou Maxon One"
+    ],
+    "prosEn": [
+      "Automatic, reliable multicam audio/video sync",
+      "Recognized pioneer of waveform-based sync",
+      "Included if you already have Red Giant Complete or Maxon One"
+    ],
+    "cons": [
+      "En maintenance limitée depuis 2023, plus vraiment mis à jour",
+      "Premiere Pro et DaVinci Resolve font la même synchro gratuitement",
+      "Plus de licence à l'unité : uniquement via abonnement Red Giant",
+      "Aucun intérêt à s'abonner juste pour cet outil"
+    ],
+    "consEn": [
+      "In limited maintenance since 2023, no longer really updated",
+      "Premiere Pro and DaVinci Resolve do the same sync for free",
+      "No standalone license: only via the Red Giant subscription",
+      "No point subscribing just for this tool"
+    ],
+    "useCases": [
+      "Synchroniser un tournage multicaméra automatiquement",
+      "Caler une piste d'enregistreur audio séparé sur la vidéo",
+      "Comprendre par quoi remplacer PluralEyes (synchro native Premiere/Resolve)"
+    ],
+    "useCasesEn": [
+      "Automatically sync a multicamera shoot",
+      "Align a separate audio recorder track to the video",
+      "Figure out what replaces PluralEyes (native Premiere/Resolve sync)"
+    ],
+    "covers": [
+      "montage-video"
+    ],
+    "relevantFor": [
+      "createur-contenu",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "low",
+    "teamRelevance": "low",
+    "seo": {
+      "metaDescription": "PluralEyes (Red Giant) en 2026 : synchro multicam, mais produit legacy. Par quoi le remplacer (synchro native Premiere/Resolve). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "ae-red-giant",
+      "davinci-resolve"
+    ],
+    "articles": [],
+    "freeAlternative": "davinci-resolve",
+    "tool_type": "plugin",
+    "substitutable": true,
+    "host_app": "premiere-pro",
+    "bundle_parent": "ae-red-giant",
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "montage-video"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "silence",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Produit legacy en maintenance limitée depuis 2023 ; uniquement via abonnement Red Giant"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
+    },
+    "substitution_cluster_v2": "plugin-after-effects"
   },
   {
     "id": "ae-red-giant",
