@@ -414,13 +414,14 @@ function staticPrerenderPlugin(): Plugin {
               applicationCategory: "BusinessApplication",
               operatingSystem: "Web",
             };
-            if (price && typeof price === "number" && price > 0) {
-              jsonLd.offers = {
-                "@type": "Offer",
-                price: price.toString(),
-                priceCurrency: "EUR",
-              };
-            }
+            // offers est requis par le rich result Software App (prix, ou "0"
+            // pour un outil gratuit) ; sans lui, pas d'étoiles même avec review.
+            jsonLd.offers = {
+              "@type": "Offer",
+              price: (price && typeof price === "number" && price > 0 ? price : 0).toString(),
+              priceCurrency: "EUR",
+              ...(productUrl ? { url: productUrl } : {}),
+            };
             // Note éditoriale ToolTrim (affichée sur la page) exposée en Review.
             // C'est l'avis du média sur un outil tiers (légitime), PAS un
             // aggregateRating à faux compteur d'avis utilisateurs.
@@ -674,26 +675,10 @@ function staticPrerenderPlugin(): Plugin {
               const subProductUrl = tool.websiteUrl || tool.affiliateLink || tool.website_url || tool.affiliate_link || "";
               const subScore = computeToolTrimScore(tool);
 
-              // Review schema sur /avis (la page affiche déjà la note ToolTrim).
-              const reviewSchema = sub.path === "avis" && subScore && typeof subScore.score === "number" ? {
-                "@context": "https://schema.org",
-                "@type": "SoftwareApplication",
-                name,
-                ...(subProductUrl ? { url: subProductUrl } : {}),
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "Web",
-                review: {
-                  "@type": "Review",
-                  author: { "@type": "Organization", name: "ToolTrim" },
-                  reviewRating: { "@type": "Rating", ratingValue: subScore.score.toString(), bestRating: "5", worstRating: "1" },
-                  ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
-                  ...(verdictThreshold ? { reviewBody: String(verdictThreshold).substring(0, 280) } : {}),
-                  ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
-                },
-              } : null;
-
-              // Offer schema sur /prix (prix vérifié ToolTrim).
-              const offerSchema = sub.path === "prix" && price && price > 0 ? {
+              // Nœud SoftwareApplication complet (name + offers + review) émis
+              // sur /avis et /prix : le rich result Google exige offers ET review
+              // ensemble. offers="0" pour un outil gratuit.
+              const appSchema = (sub.path === "avis" || sub.path === "prix") ? {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
                 name,
@@ -702,10 +687,20 @@ function staticPrerenderPlugin(): Plugin {
                 operatingSystem: "Web",
                 offers: {
                   "@type": "Offer",
-                  price: price.toString(),
+                  price: (price && price > 0 ? price : 0).toString(),
                   priceCurrency: "EUR",
                   ...(subProductUrl ? { url: subProductUrl } : {}),
                 },
+                ...(subScore && typeof subScore.score === "number" ? {
+                  review: {
+                    "@type": "Review",
+                    author: { "@type": "Organization", name: "ToolTrim" },
+                    reviewRating: { "@type": "Rating", ratingValue: subScore.score.toString(), bestRating: "5", worstRating: "1" },
+                    ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
+                    ...(verdictThreshold ? { reviewBody: String(verdictThreshold).substring(0, 280) } : {}),
+                    ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
+                  },
+                } : {}),
               } : null;
 
               const metaTags = [
@@ -721,8 +716,7 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta property="og:image" content="${BASE}/og-image.png" />`,
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
                 ...(faqSchema ? [`<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
-                ...(reviewSchema ? [`<script id="tool-avis-review-jsonld" type="application/ld+json">${JSON.stringify(reviewSchema)}</script>`] : []),
-                ...(offerSchema ? [`<script id="tool-prix-offer-jsonld" type="application/ld+json">${JSON.stringify(offerSchema)}</script>`] : []),
+                ...(appSchema ? [`<script id="tool-subpage-app-jsonld" type="application/ld+json">${JSON.stringify(appSchema)}</script>`] : []),
               ].join("\n    ");
 
               let html = baseHtml;
