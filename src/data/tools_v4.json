@@ -65798,11 +65798,11 @@
     "shortDescriptionEn": "Autodesk's CPU/GPU render engine, the film and animation standard.",
     "pricing": {
       "free": "Essai gratuit",
-      "paid": "~430$/an (~36$/mois). Inclus avec certaines licences Autodesk."
+      "paid": "~430$/an (~36$/mois). Souvent inclus avec Maya (Autodesk)."
     },
     "pricingEn": {
       "free": "Free trial",
-      "paid": "~$430/year (~$36/month). Included with some Autodesk licenses."
+      "paid": "~$430/year (~$36/month). Often included with Maya (Autodesk)."
     },
     "defaultMonthlyPrice": 36,
     "affiliateLink": "https://www.autodesk.com/products/arnold/overview",
@@ -69812,11 +69812,11 @@
     "shortDescriptionEn": "Ultra-simple, fast product rendering, the industrial-design standard (packshots, CMF).",
     "pricing": {
       "free": "Essai gratuit",
-      "paid": "Studio Professional 1 299$/an (~108$/mois). Perpétuel quasi disparu."
+      "paid": "Studio Professional 1 299$/an (~108$/mois) ; abonnement."
     },
     "pricingEn": {
       "free": "Free trial",
-      "paid": "Studio Professional $1,299/year (~$108/month). Perpetual mostly gone."
+      "paid": "Studio Professional $1,299/year (~$108/month); subscription."
     },
     "defaultMonthlyPrice": 108,
     "affiliateLink": "",
