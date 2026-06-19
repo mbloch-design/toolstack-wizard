@@ -17766,9 +17766,10 @@
     "host_app": "revit",
     "category": "design-tools",
     "shortDescription": "Rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives.",
-    "defaultMonthlyPrice": 72.75,
+    "defaultMonthlyPrice": 48,
     "pricing": {
-      "paid": "84$/mois ou 659$/an"
+      "free": "Essai gratuit",
+      "paid": "Solo 574,80$/an (~48$/mois). Abonnement Chaos."
     },
     "covers": [
       "rendu-3d",
@@ -17796,35 +17797,67 @@
     "affiliateLink": "https://enscape3d.com",
     "verdict": {
       "keepIf": [
-        "Présentations client avec rendus immersifs en temps réel"
+        "Tu fais de l'archviz et veux un live-sync ultra-intégré dans Revit, SketchUp ou Rhino",
+        "Tu fais des présentations client immersives et de la VR"
       ],
       "avoidIf": [
-        "V-Ray pour des rendus photoréalistes plus poussés"
+        "Tu veux le meilleur prix : D5 Render ou Twinmotion (gratuit sous 1M$) sont moins chers",
+        "Tu veux du photoréalisme offline poussé : V-Ray va plus loin"
       ],
-      "threshold": "Rentable dès 2 présentations client par mois."
+      "threshold": "Le standard du live-sync archviz, surtout dans l'écosystème Revit. Pour le budget, regarde D5 Render ou Twinmotion."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Live-sync ultra-intégré (Revit, SketchUp, Rhino, Archicad)",
+      "Rendu temps réel et VR pour présentations client",
+      "Standard établi et fiable de l'archviz",
+      "Appartient à Chaos (synergie avec V-Ray)"
+    ],
+    "cons": [
+      "Plus cher que D5 Render et Twinmotion",
+      "Twinmotion offre une qualité proche gratuitement (sous 1M$)",
+      "Moins photoréaliste que V-Ray en rendu offline",
+      "Abonnement, plus de licence perpétuelle"
+    ],
+    "useCases": [
+      "Présenter un projet d'archi en temps réel au client",
+      "Faire visiter un espace en réalité virtuelle",
+      "Synchroniser un modèle Revit ou SketchUp pour le rendu",
+      "Produire des vidéos de parcours immersives"
+    ],
+    "seo": {
+      "metaDescription": "Enscape (Chaos) en 2026 : rendu temps réel et VR pour Revit/SketchUp/Rhino. Prix réels et alternatives moins chères (D5, Twinmotion). Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
-    "teamRelevance": "low",
+    "teamRelevance": "high",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "architecte-bim",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "84$/mois ou 659$/an"
+      "free": "Essai gratuit",
+      "paid": "Solo 574,80$/an (~48$/mois)"
     },
-    "longDescription": "Enscape, c'est rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives. À partir de 72.75€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : présentations client avec rendus immersifs en temps réel. À éviter si : v-Ray pour des rendus photoréalistes plus poussés. Rentable dès 2 présentations client par mois.",
-    "alternatives": [],
+    "longDescription": "Enscape, c'est le moteur de rendu temps réel le plus intégré au flux des architectes. Sa marque de fabrique, c'est le live-sync : il tourne en plugin directement dans Revit, SketchUp, Rhino ou Archicad, et tu vois ton rendu se mettre à jour en temps réel pendant que tu modélises. Ajoute la réalité virtuelle pour faire visiter un espace à un client, et tu obtiens un outil de présentation redoutable.\n\nDepuis son rachat par Chaos (l'éditeur de V-Ray), Enscape s'inscrit dans un écosystème plus large. Côté prix, c'est un abonnement : Enscape Solo autour de 574,80$/an (environ 48$/mois). La licence perpétuelle a disparu.\n\nLe vrai sujet en 2026, c'est la concurrence. Twinmotion (Epic) offre une qualité comparable et est gratuit sous 1 million de dollars de CA, et D5 Render propose un excellent rapport prix-vitesse en dessous d'Enscape. Enscape garde l'avantage sur l'intégration live-sync, particulièrement dans Revit, et sur sa fiabilité éprouvée. Mais pour un freelance attentif au budget, il faut sérieusement comparer avec Twinmotion et D5 avant de s'abonner.",
+    "alternatives": [
+      "twinmotion",
+      "d5-render",
+      "lumion"
+    ],
     "slug": "enscape",
     "shortDescriptionEn": "Real-time rendering and VR for Revit, SketchUp, Rhino. Immersive client presentations.",
-    "description": "Enscape, c'est rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives. À partir de 72.75€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : présentations client avec rendus immersifs en temps réel. À éviter si : v-Ray pour des rendus photoréalistes plus poussés. Rentable dès 2 présentations client par mois.",
-    "longDescriptionEn": "Enscape is real-time rendering and VR for Revit, SketchUp, Rhino. Immersive client presentations. Starting at €72.75/month. Built for BIM architects and set designers.\n\nEstimated time saving: 6h/month.",
-    "pricingEn": null,
+    "description": "Enscape, c'est le moteur de rendu temps réel le plus intégré au flux des architectes. Sa marque de fabrique, c'est le live-sync : il tourne en plugin directement dans Revit, SketchUp, Rhino ou Archicad, et tu vois ton rendu se mettre à jour en temps réel pendant que tu modélises. Ajoute la réalité virtuelle pour faire visiter un espace à un client, et tu obtiens un outil de présentation redoutable.\n\nDepuis son rachat par Chaos (l'éditeur de V-Ray), Enscape s'inscrit dans un écosystème plus large. Côté prix, c'est un abonnement : Enscape Solo autour de 574,80$/an (environ 48$/mois). La licence perpétuelle a disparu.\n\nLe vrai sujet en 2026, c'est la concurrence. Twinmotion (Epic) offre une qualité comparable et est gratuit sous 1 million de dollars de CA, et D5 Render propose un excellent rapport prix-vitesse en dessous d'Enscape. Enscape garde l'avantage sur l'intégration live-sync, particulièrement dans Revit, et sur sa fiabilité éprouvée. Mais pour un freelance attentif au budget, il faut sérieusement comparer avec Twinmotion et D5 avant de s'abonner.",
+    "longDescriptionEn": "Enscape is the real-time render engine most integrated into the architect's workflow. Its trademark is live-sync: it runs as a plugin directly inside Revit, SketchUp, Rhino or Archicad, and you see your render update in real time as you model. Add virtual reality to walk a client through a space, and you get a formidable presentation tool.\n\nSince its acquisition by Chaos (the maker of V-Ray), Enscape fits into a broader ecosystem. On price, it's a subscription: Enscape Solo around $574.80/year (about $48/month). The perpetual license is gone.\n\nThe real question in 2026 is competition. Twinmotion (Epic) offers comparable quality and is free under $1 million revenue, and D5 Render offers an excellent price-speed ratio below Enscape. Enscape keeps the edge on live-sync integration, particularly in Revit, and on proven reliability. But for a budget-conscious freelancer, it's worth seriously comparing with Twinmotion and D5 before subscribing.",
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Solo $574.80/year (~$48/month). Chaos subscription."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Enscape Solo ~574,80$/an (~48$/mois) ; plus de licence perpétuelle"
+      ],
+      "verified_on": "2026-06-17",
       "source_domain": "enscape-3d.fr",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -17833,15 +17866,40 @@
       "location_sensitive": false,
       "official_source_url": "https://www.enscape-3d.fr/tarifs",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 72.75
+      "compare_price_monthly_eur": 48
     },
     "websiteUrl": "https://enscape3d.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "silence",
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz and want ultra-integrated live-sync in Revit, SketchUp or Rhino",
+        "You do immersive client presentations and VR"
+      ],
+      "avoidIf": [
+        "You want the best price: D5 Render or Twinmotion (free under $1M) are cheaper",
+        "You want advanced offline photorealism: V-Ray goes further"
+      ],
+      "threshold": "The archviz live-sync standard, especially in the Revit ecosystem. For budget, look at D5 Render or Twinmotion."
+    },
+    "prosEn": [
+      "Ultra-integrated live-sync (Revit, SketchUp, Rhino, Archicad)",
+      "Real-time rendering and VR for client presentations",
+      "Established, reliable archviz standard",
+      "Owned by Chaos (synergy with V-Ray)"
+    ],
+    "consEn": [
+      "Pricier than D5 Render and Twinmotion",
+      "Twinmotion offers near-comparable quality for free (under $1M)",
+      "Less photorealistic than V-Ray in offline rendering",
+      "Subscription, no perpetual license"
+    ],
+    "useCasesEn": [
+      "Present an architecture project to a client in real time",
+      "Walk a client through a space in virtual reality",
+      "Sync a Revit or SketchUp model for rendering",
+      "Produce immersive walkthrough videos"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -29429,10 +29487,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Rendu architectural 3D rapide avec bibliothèque massive d'assets.",
-    "defaultMonthlyPrice": 155.02,
+    "shortDescription": "Rendu architectural 3D ultra-rapide et cinématique, énorme bibliothèque d'assets.",
+    "defaultMonthlyPrice": 42,
     "pricing": {
-      "paid": "179$/mois ou 1 499$/an"
+      "free": "Essai gratuit",
+      "paid": "Standard ~499$/an (~42$/mois), Pro ~999$/an."
     },
     "covers": [
       "rendu-3d",
@@ -29460,35 +29519,67 @@
     "affiliateLink": "https://lumion.com",
     "verdict": {
       "keepIf": [
-        "Rendus architecturaux avec assets paysagers et ambiances"
+        "Tu fais de l'archviz et veux des rendus cinématiques avec ambiances, paysages et météo",
+        "Tu veux une énorme bibliothèque d'assets prête à l'emploi"
       ],
       "avoidIf": [
-        "Enscape déjà en place — doublon rendu archi"
+        "Tu as déjà Enscape ou D5 Render : fort doublon sur le rendu archi",
+        "Ton budget est serré : D5 Render et Twinmotion (gratuit sous 1M$) sont moins chers"
       ],
-      "threshold": "Rentable si vous livrez des rendus architecturaux régulièrement."
+      "threshold": "Excellent pour l'archviz cinématique et atmosphérique. Plus cher qu'Enscape/D5 ; à comparer si le budget compte."
     },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
-    "seo": {},
+    "pros": [
+      "Rendu archi rapide et très cinématique (ambiances, météo, paysages)",
+      "Énorme bibliothèque d'assets (végétation, personnages, effets)",
+      "Import depuis SketchUp, Revit, Rhino, ArchiCAD (LiveSync)",
+      "Belles images sans expertise technique du rendu"
+    ],
+    "cons": [
+      "Cher : Standard ~499$/an, Pro ~999$/an",
+      "Doublon si tu as déjà Enscape ou D5 Render",
+      "Twinmotion offre une qualité proche gratuitement (sous 1M$)",
+      "Demande un GPU costaud"
+    ],
+    "useCases": [
+      "Rendre un projet d'architecture avec une ambiance cinématique",
+      "Habiller une scène avec végétation, personnages et météo",
+      "Produire une vidéo de présentation immersive",
+      "Sortir des images client impressionnantes rapidement"
+    ],
+    "seo": {
+      "metaDescription": "Lumion en 2026 : rendu archi 3D rapide et cinématique avec une énorme bibliothèque d'assets. Prix réels et alternatives (Enscape, D5, Twinmotion). Le verdict ToolTrim."
+    },
     "articles": [],
     "soloRelevance": "medium",
-    "teamRelevance": "low",
+    "teamRelevance": "high",
     "bestFor": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "architecte-bim",
+      "designer"
+    ],
     "pricingTiers": {
-      "paid": "179$/mois ou 1 499$/an"
+      "free": "Essai gratuit",
+      "paid": "Standard ~499$/an (~42$/mois), Pro ~999$/an"
     },
-    "longDescription": "Lumion, c'est rendu architectural 3D rapide avec bibliothèque massive d'assets. À partir de 155.02€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : rendus architecturaux avec assets paysagers et ambiances. À éviter si : enscape déjà en place — doublon rendu archi. Rentable si vous livrez des rendus architecturaux régulièrement. Alternative gratuite : blender.",
-    "alternatives": [],
+    "longDescription": "Lumion, c'est le moteur de rendu archviz qui mise tout sur le spectaculaire et la rapidité. Sa force, c'est une énorme bibliothèque d'assets prête à l'emploi (végétation, personnages, voitures, météo, effets atmosphériques) et un rendu très cinématique : en quelques clics, tu transformes un modèle nu en une scène vivante avec une belle lumière et une ambiance. C'est l'outil de ceux qui veulent impressionner le client.\n\nIl fonctionne en standalone (tu importes ton modèle) avec un LiveSync depuis SketchUp, Revit, Rhino ou ArchiCAD. Côté prix, c'est plus haut de gamme : Lumion Standard autour de 499$/an (environ 42$/mois) et Lumion Pro autour de 999$/an, ce qui le place au-dessus d'Enscape et de D5 Render.\n\nLe vrai arbitrage, c'est le rapport qualité-prix. Lumion offre sans doute le rendu le plus atmosphérique et la plus grosse bibliothèque, mais il est cher. Enscape est plus intégré (live-sync), D5 Render plus abordable et rapide, et Twinmotion gratuit sous 1M$ de CA pour une qualité proche. Lumion se justifie si l'ambiance cinématique et la bibliothèque d'assets sont décisives pour tes livrables.",
+    "alternatives": [
+      "enscape",
+      "d5-render",
+      "twinmotion"
+    ],
     "slug": "lumion",
-    "shortDescriptionEn": "Fast architectural 3D rendering with a massive asset library.",
-    "description": "Lumion, c'est rendu architectural 3D rapide avec bibliothèque massive d'assets. À partir de 155.02€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : rendus architecturaux avec assets paysagers et ambiances. À éviter si : enscape déjà en place — doublon rendu archi. Rentable si vous livrez des rendus architecturaux régulièrement. Alternative gratuite : blender.",
-    "longDescriptionEn": "Lumion is fast architectural 3D rendering with a massive asset library. Starting at €155.02/month. Built for BIM architects and set designers.\n\nEstimated time saving: 6h/month.\n\nFree alternative: blender.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Fast, cinematic architectural 3D rendering with a massive asset library.",
+    "description": "Lumion, c'est le moteur de rendu archviz qui mise tout sur le spectaculaire et la rapidité. Sa force, c'est une énorme bibliothèque d'assets prête à l'emploi (végétation, personnages, voitures, météo, effets atmosphériques) et un rendu très cinématique : en quelques clics, tu transformes un modèle nu en une scène vivante avec une belle lumière et une ambiance. C'est l'outil de ceux qui veulent impressionner le client.\n\nIl fonctionne en standalone (tu importes ton modèle) avec un LiveSync depuis SketchUp, Revit, Rhino ou ArchiCAD. Côté prix, c'est plus haut de gamme : Lumion Standard autour de 499$/an (environ 42$/mois) et Lumion Pro autour de 999$/an, ce qui le place au-dessus d'Enscape et de D5 Render.\n\nLe vrai arbitrage, c'est le rapport qualité-prix. Lumion offre sans doute le rendu le plus atmosphérique et la plus grosse bibliothèque, mais il est cher. Enscape est plus intégré (live-sync), D5 Render plus abordable et rapide, et Twinmotion gratuit sous 1M$ de CA pour une qualité proche. Lumion se justifie si l'ambiance cinématique et la bibliothèque d'assets sont décisives pour tes livrables.",
+    "longDescriptionEn": "Lumion is the archviz render engine that bets everything on spectacle and speed. Its strength is a huge ready-to-use asset library (vegetation, people, cars, weather, atmospheric effects) and a very cinematic look: in a few clicks, you turn a bare model into a living scene with beautiful light and atmosphere. It's the tool for those who want to impress the client.\n\nIt runs standalone (you import your model) with LiveSync from SketchUp, Revit, Rhino or ArchiCAD. On price, it's higher-end: Lumion Standard around $499/year (about $42/month) and Lumion Pro around $999/year, placing it above Enscape and D5 Render.\n\nThe real trade-off is value for money. Lumion arguably offers the most atmospheric rendering and the biggest library, but it's expensive. Enscape is more integrated (live-sync), D5 Render more affordable and fast, and Twinmotion is free under $1M revenue for near-comparable quality. Lumion earns its place if cinematic atmosphere and the asset library are decisive for your deliverables.",
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Standard ~$499/year (~$42/month), Pro ~$999/year."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Standard ~499$/an (~42$/mois) ; Pro ~999$/an"
+      ],
+      "verified_on": "2026-06-17",
       "source_domain": "lumion.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -29497,15 +29588,40 @@
       "location_sensitive": false,
       "official_source_url": "https://lumion.com",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 155.02
+      "compare_price_monthly_eur": 42
     },
     "websiteUrl": "https://lumion.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
-    "prescription_quality": "question",
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz and want cinematic renders with atmosphere, landscapes and weather",
+        "You want a huge ready-to-use asset library"
+      ],
+      "avoidIf": [
+        "You already have Enscape or D5 Render: heavy overlap on archviz rendering",
+        "Your budget is tight: D5 Render and Twinmotion (free under $1M) are cheaper"
+      ],
+      "threshold": "Excellent for cinematic, atmospheric archviz. Pricier than Enscape/D5; compare if budget matters."
+    },
+    "prosEn": [
+      "Fast, very cinematic archviz rendering (atmosphere, weather, landscapes)",
+      "Huge asset library (vegetation, people, effects)",
+      "Imports from SketchUp, Revit, Rhino, ArchiCAD (LiveSync)",
+      "Beautiful images without technical render expertise"
+    ],
+    "consEn": [
+      "Expensive: Standard ~$499/year, Pro ~$999/year",
+      "Redundant if you already have Enscape or D5 Render",
+      "Twinmotion offers near-comparable quality for free (under $1M)",
+      "Requires a powerful GPU"
+    ],
+    "useCasesEn": [
+      "Render an architecture project with a cinematic atmosphere",
+      "Dress a scene with vegetation, people and weather",
+      "Produce an immersive presentation video",
+      "Output impressive client images quickly"
+    ],
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [
       "cluster-trop-large"
@@ -65684,35 +65800,106 @@
     "slug": "d5-render",
     "name": "D5 Render",
     "categoryId": "design-tools",
-    "shortDescription": "Rendu temps réel pour architecture intérieure, scènes immersives et exports rapides depuis SketchUp, Revit ou Rhino.",
-    "shortDescriptionEn": "Real-time rendering for interior design, immersive scenes and fast exports from SketchUp, Revit or Rhino.",
+    "shortDescription": "Moteur de rendu temps réel pour l'archviz, rapide et abordable (SketchUp, Revit, Rhino).",
+    "shortDescriptionEn": "Real-time render engine for archviz, fast and affordable (SketchUp, Revit, Rhino).",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "D5 Pro à partir de ~38€/mois"
+      "free": "Community gratuit (watermark, 1080p)",
+      "paid": "D5 Pro ~38€/mois (~456$/an)."
+    },
+    "pricingEn": {
+      "free": "Community free (watermark, 1080p)",
+      "paid": "D5 Pro ~€38/month (~$456/year)."
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://www.d5render.com",
     "websiteUrl": "https://www.d5render.com",
     "logo": "",
     "category": "design-tools",
-    "description": "D5 Render aide les architectes d'intérieur à couvrir un besoin précis : rendu temps réel pour architecture intérieure, scènes immersives et exports rapides depuis sketchup, revit ou rhino.",
-    "longDescription": "D5 Render aide les architectes d'intérieur à couvrir un besoin précis : rendu temps réel pour architecture intérieure, scènes immersives et exports rapides depuis sketchup, revit ou rhino. À garder si ce besoin revient chaque semaine dans les projets client. À éviter si l'outil reste ponctuel ou doublonne avec le socle existant.",
-    "longDescriptionEn": "D5 Render helps interior designers cover a specific need: real-time rendering for interior design, immersive scenes and fast exports from sketchup, revit or rhino. Keep it if this need appears every week in client projects. Skip it if usage is occasional or duplicates the existing core stack.",
+    "description": "D5 Render, c'est la nouvelle étoile montante du rendu temps réel pour l'archviz. Son pitch : la vitesse et l'accessibilité. Tu connectes ton modèle (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) en live-sync, et tu obtiens des rendus photoréalistes en temps réel, avec une grosse bibliothèque d'assets et des fonctions IA (génération de matériaux, d'environnements). C'est conçu pour les architectes et designers d'intérieur qui veulent de belles images vite, sans la complexité d'un V-Ray.\n\nCôté prix, D5 joue l'agressivité : une édition Community gratuite (avec watermark et limite 1080p) pour tester, et D5 Pro autour de 456$/an (environ 38$/mois), ce qui sous-cote Enscape et Lumion d'une bonne marge.\n\nL'arbitrage se joue face aux autres moteurs temps réel d'archviz. Enscape (Chaos) est le standard du live-sync, Lumion vise un rendu plus cinématique, et Twinmotion est gratuit sous 1M$ de CA. D5 Render se distingue par son rapport vitesse-prix et ses fonctions IA récentes. Pour un freelance archviz qui veut un excellent rendu sans exploser son budget, c'est devenu un choix très sérieux.",
+    "longDescription": "D5 Render, c'est la nouvelle étoile montante du rendu temps réel pour l'archviz. Son pitch : la vitesse et l'accessibilité. Tu connectes ton modèle (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) en live-sync, et tu obtiens des rendus photoréalistes en temps réel, avec une grosse bibliothèque d'assets et des fonctions IA (génération de matériaux, d'environnements). C'est conçu pour les architectes et designers d'intérieur qui veulent de belles images vite, sans la complexité d'un V-Ray.\n\nCôté prix, D5 joue l'agressivité : une édition Community gratuite (avec watermark et limite 1080p) pour tester, et D5 Pro autour de 456$/an (environ 38$/mois), ce qui sous-cote Enscape et Lumion d'une bonne marge.\n\nL'arbitrage se joue face aux autres moteurs temps réel d'archviz. Enscape (Chaos) est le standard du live-sync, Lumion vise un rendu plus cinématique, et Twinmotion est gratuit sous 1M$ de CA. D5 Render se distingue par son rapport vitesse-prix et ses fonctions IA récentes. Pour un freelance archviz qui veut un excellent rendu sans exploser son budget, c'est devenu un choix très sérieux.",
+    "longDescriptionEn": "D5 Render is the rising star of real-time archviz rendering. Its pitch: speed and accessibility. You connect your model (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) via live-sync and get photorealistic renders in real time, with a large asset library and AI features (material and environment generation). It's built for architects and interior designers who want great images fast, without the complexity of a V-Ray.\n\nOn price, D5 plays aggressive: a free Community edition (with watermark and 1080p cap) to try it, and D5 Pro around $456/year (about $38/month), undercutting Enscape and Lumion by a good margin.\n\nThe trade-off is against other real-time archviz engines. Enscape (Chaos) is the live-sync standard, Lumion aims for a more cinematic look, and Twinmotion is free under $1M revenue. D5 Render stands out for its speed-to-price ratio and recent AI features. For a freelance archviz artist who wants excellent rendering without blowing the budget, it's become a very serious option.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais de l'archviz et veux des rendus photoréalistes rapides à bon prix",
+        "Tu travailles depuis SketchUp, Revit, Rhino ou Blender (live-sync)"
+      ],
+      "avoidIf": [
+        "Tu es déjà investi dans Enscape ou Lumion et leur écosystème",
+        "Tu veux le rendu le plus cinématique : Lumion va plus loin sur ce point"
+      ],
+      "threshold": "Excellent rapport vitesse-prix pour l'archviz temps réel. Si tu qualifies pour le gratuit, compare aussi Twinmotion (gratuit sous 1M$)."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz and want fast photoreal renders at a good price",
+        "You work from SketchUp, Revit, Rhino or Blender (live-sync)"
+      ],
+      "avoidIf": [
+        "You're already invested in Enscape or Lumion and their ecosystem",
+        "You want the most cinematic look: Lumion goes further there"
+      ],
+      "threshold": "Excellent speed-to-price ratio for real-time archviz. If you qualify for free, also compare Twinmotion (free under $1M)."
+    },
+    "pros": [
+      "Rendu temps réel rapide et photoréaliste",
+      "Live-sync avec SketchUp, Revit, Rhino, 3ds Max, Blender",
+      "Moins cher qu'Enscape et Lumion (~38$/mois)",
+      "Fonctions IA et grosse bibliothèque d'assets"
+    ],
+    "prosEn": [
+      "Fast, photorealistic real-time rendering",
+      "Live-sync with SketchUp, Revit, Rhino, 3ds Max, Blender",
+      "Cheaper than Enscape and Lumion (~$38/month)",
+      "AI features and a large asset library"
+    ],
+    "cons": [
+      "Édition gratuite limitée (watermark, 1080p)",
+      "Moins cinématique que Lumion sur le haut de gamme",
+      "Plus jeune qu'Enscape/Lumion (écosystème en construction)",
+      "Demande un bon GPU"
+    ],
+    "consEn": [
+      "Free edition limited (watermark, 1080p)",
+      "Less cinematic than Lumion at the high end",
+      "Younger than Enscape/Lumion (ecosystem still building)",
+      "Requires a good GPU"
+    ],
+    "useCases": [
+      "Rendre un intérieur ou un projet d'archi en temps réel",
+      "Synchroniser un modèle SketchUp ou Revit pour le rendu",
+      "Produire des images client rapidement et à bas coût",
+      "Générer des matériaux et environnements avec l'IA"
+    ],
+    "useCasesEn": [
+      "Render an interior or architecture project in real time",
+      "Sync a SketchUp or Revit model for rendering",
+      "Produce client images quickly and cheaply",
+      "Generate materials and environments with AI"
+    ],
     "pricing_v5": {
+      "cautions": [
+        "Community gratuit (watermark, 1080p) ; D5 Pro ~456$/an (~38$/mois)"
+      ],
       "source_domain": "d5render.com",
       "official_source_url": "https://www.d5render.com",
-      "verified_on": "2026-05-10",
-      "verification_status": "manual_reference",
+      "verified_on": "2026-06-17",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "D5 Pro (annuel)",
+      "price_reliability": "high",
       "compare_price_monthly_eur": 38
     },
     "verticals": [
-      "interior-design"
+      "interior-design",
+      "creative"
     ],
     "functional_needs": [
-      "design-tools"
+      "rendu-3d",
+      "temps-reel"
     ],
     "covers": [
-      "design-tools"
+      "rendu-3d",
+      "temps-reel"
     ],
     "relevantFor": [
       "architecte-bim",
@@ -65720,54 +65907,128 @@
     ],
     "tool_type": "metier",
     "substitutable": true,
-    "verdict": {
-      "keepIf": [
-        "Tu utilises D5 Render chaque semaine sur des projets client"
-      ],
-      "avoidIf": [
-        "Usage ponctuel ou déjà couvert par un autre outil"
-      ],
-      "threshold": "À garder seulement si le besoin est récurrent dans le workflow."
+    "freeAlternative": "blender",
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "personas": [
+      "designer"
+    ],
+    "seo": {
+      "metaDescription": "D5 Render en 2026 : rendu temps réel pour l'archviz, rapide et moins cher qu'Enscape/Lumion. Prix réels et alternatives. Le verdict ToolTrim."
     },
-    "pros": [],
-    "cons": [],
-    "articles": [],
-    "alternatives": []
+    "prescription_quality": "oui",
+    "alternatives": [
+      "enscape",
+      "twinmotion",
+      "lumion"
+    ],
+    "articles": []
   },
   {
     "id": "twinmotion",
     "slug": "twinmotion",
     "name": "Twinmotion",
     "categoryId": "design-tools",
-    "shortDescription": "Visualisation 3D temps réel pour ambiances, parcours, vidéos et présentations immersives.",
-    "shortDescriptionEn": "Real-time 3D visualization for atmosphere, walkthroughs, videos and immersive presentations.",
+    "shortDescription": "Visualisation 3D temps réel d'Epic pour l'archviz, simple et gratuite sous 1M$ de CA.",
+    "shortDescriptionEn": "Epic's real-time 3D visualization for archviz, simple and free under $1M revenue.",
     "pricing": {
-      "free": "Gratuit selon usage / essai",
-      "paid": "Licence commerciale selon cas"
+      "free": "Gratuit pour les structures sous 1M$ de CA",
+      "paid": "445$/an au-delà (jusqu'à 1 850$/an avec Unreal et RealityCapture)."
+    },
+    "pricingEn": {
+      "free": "Free for firms/individuals under $1M revenue",
+      "paid": "$445/year above (up to $1,850/year with Unreal and RealityCapture)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.twinmotion.com",
     "websiteUrl": "https://www.twinmotion.com",
     "logo": "",
     "category": "design-tools",
-    "description": "Twinmotion aide les architectes d'intérieur à couvrir un besoin précis : visualisation 3d temps réel pour ambiances, parcours, vidéos et présentations immersives.",
-    "longDescription": "Twinmotion aide les architectes d'intérieur à couvrir un besoin précis : visualisation 3d temps réel pour ambiances, parcours, vidéos et présentations immersives. À garder si ce besoin revient chaque semaine dans les projets client. À éviter si l'outil reste ponctuel ou doublonne avec le socle existant.",
-    "longDescriptionEn": "Twinmotion helps interior designers cover a specific need: real-time 3d visualization for atmosphere, walkthroughs, videos and immersive presentations. Keep it if this need appears every week in client projects. Skip it if usage is occasional or duplicates the existing core stack.",
+    "description": "Twinmotion, c'est l'outil de visualisation temps réel d'Epic, et c'est un peu le secret le mieux gardé de l'archviz. Construit sur Unreal Engine, il en récupère la qualité de rendu temps réel, mais avec une interface ultra-simple, en glisser-déposer, accessible aux débutants. Tu importes ton modèle (SketchUp, Revit, Rhino, Archicad, ou via Datasmith), tu poses des matériaux, de la végétation, de la lumière, et tu sors des images, des vidéos de parcours et des présentations immersives sans rien connaître à Unreal.\n\nLe meilleur, c'est le prix : Twinmotion est gratuit pour les particuliers et les structures réalisant moins d'1 million de dollars de chiffre d'affaires, ce qui couvre l'immense majorité des freelances et petites agences. Au-delà, c'est 445$/an (jusqu'à 1 850$/an si tu veux le bundle avec Unreal Engine et RealityCapture).\n\nÀ qui ça s'adresse : aux architectes et designers d'intérieur qui veulent de la qualité Unreal sans la complexité. L'arbitrage se joue face à Enscape (live-sync très intégré), Lumion (rendu cinématique) et D5 Render (bon rapport prix). Mais soyons clairs : pour un freelance, un outil de cette qualité gratuit, c'est presque imbattable.",
+    "longDescription": "Twinmotion, c'est l'outil de visualisation temps réel d'Epic, et c'est un peu le secret le mieux gardé de l'archviz. Construit sur Unreal Engine, il en récupère la qualité de rendu temps réel, mais avec une interface ultra-simple, en glisser-déposer, accessible aux débutants. Tu importes ton modèle (SketchUp, Revit, Rhino, Archicad, ou via Datasmith), tu poses des matériaux, de la végétation, de la lumière, et tu sors des images, des vidéos de parcours et des présentations immersives sans rien connaître à Unreal.\n\nLe meilleur, c'est le prix : Twinmotion est gratuit pour les particuliers et les structures réalisant moins d'1 million de dollars de chiffre d'affaires, ce qui couvre l'immense majorité des freelances et petites agences. Au-delà, c'est 445$/an (jusqu'à 1 850$/an si tu veux le bundle avec Unreal Engine et RealityCapture).\n\nÀ qui ça s'adresse : aux architectes et designers d'intérieur qui veulent de la qualité Unreal sans la complexité. L'arbitrage se joue face à Enscape (live-sync très intégré), Lumion (rendu cinématique) et D5 Render (bon rapport prix). Mais soyons clairs : pour un freelance, un outil de cette qualité gratuit, c'est presque imbattable.",
+    "longDescriptionEn": "Twinmotion is Epic's real-time visualization tool, and it's something of archviz's best-kept secret. Built on Unreal Engine, it inherits its real-time render quality but with an ultra-simple, drag-and-drop interface accessible to beginners. You import your model (SketchUp, Revit, Rhino, Archicad, or via Datasmith), drop in materials, vegetation and light, and output images, walkthrough videos and immersive presentations without knowing anything about Unreal.\n\nThe best part is the price: Twinmotion is free for individuals and firms making under $1 million in revenue, which covers the vast majority of freelancers and small agencies. Above that, it's $445/year (up to $1,850/year if you want the bundle with Unreal Engine and RealityCapture).\n\nWho it's for: architects and interior designers who want Unreal quality without the complexity. The trade-off is against Enscape (tightly integrated live-sync), Lumion (cinematic look) and D5 Render (good value). But let's be clear: for a freelancer, a tool of this quality for free is almost unbeatable.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais de l'archviz et veux la qualité Unreal sans la complexité",
+        "Tu es freelance ou petite agence (sous 1M$ de CA, donc gratuit)"
+      ],
+      "avoidIf": [
+        "Tu veux un live-sync très intégré : Enscape est plus fort là-dessus",
+        "Tu veux le rendu le plus cinématique : Lumion va plus loin"
+      ],
+      "threshold": "Presque imbattable : qualité Unreal, gratuit sous 1M$ de CA. Pour le live-sync, vise Enscape ; pour le cinématique, Lumion."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz and want Unreal quality without the complexity",
+        "You're a freelancer or small agency (under $1M revenue, so free)"
+      ],
+      "avoidIf": [
+        "You want very integrated live-sync: Enscape is stronger there",
+        "You want the most cinematic look: Lumion goes further"
+      ],
+      "threshold": "Almost unbeatable: Unreal quality, free under $1M revenue. For live-sync, go Enscape; for cinematic, Lumion."
+    },
+    "pros": [
+      "Gratuit sous 1M$ de CA (couvre la plupart des freelances)",
+      "Qualité de rendu Unreal en temps réel",
+      "Interface simple, glisser-déposer, accessible aux débutants",
+      "Import SketchUp, Revit, Rhino, Archicad (Datasmith)"
+    ],
+    "prosEn": [
+      "Free under $1M revenue (covers most freelancers)",
+      "Unreal-quality real-time rendering",
+      "Simple drag-and-drop interface, beginner-friendly",
+      "Imports SketchUp, Revit, Rhino, Archicad (Datasmith)"
+    ],
+    "cons": [
+      "Live-sync moins intégré qu'Enscape",
+      "Moins cinématique que Lumion sur le haut de gamme",
+      "Payant au-delà d'1M$ de CA (445$/an)",
+      "Demande un bon GPU"
+    ],
+    "consEn": [
+      "Live-sync less integrated than Enscape",
+      "Less cinematic than Lumion at the high end",
+      "Paid above $1M revenue ($445/year)",
+      "Requires a good GPU"
+    ],
+    "useCases": [
+      "Créer une visualisation d'archi en temps réel",
+      "Produire une vidéo de parcours immersif",
+      "Présenter un projet à un client sans expertise 3D",
+      "Importer un modèle SketchUp ou Revit pour le rendu"
+    ],
+    "useCasesEn": [
+      "Create a real-time architecture visualization",
+      "Produce an immersive walkthrough video",
+      "Present a project to a client without 3D expertise",
+      "Import a SketchUp or Revit model for rendering"
+    ],
     "pricing_v5": {
+      "cautions": [
+        "Gratuit sous 1M$ de CA ; 445$/an au-delà (jusqu'à 1 850$/an avec Unreal/RealityCapture)"
+      ],
       "source_domain": "twinmotion.com",
       "official_source_url": "https://www.twinmotion.com",
-      "verified_on": "2026-05-10",
-      "verification_status": "manual_reference",
+      "verified_on": "2026-06-17",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "freemium",
+      "compare_plan_name": "Gratuit (sous 1M$)",
+      "price_reliability": "high",
       "compare_price_monthly_eur": 0
     },
     "verticals": [
-      "interior-design"
+      "interior-design",
+      "creative"
     ],
     "functional_needs": [
-      "design-tools"
+      "rendu-3d",
+      "temps-reel"
     ],
     "covers": [
-      "design-tools"
+      "rendu-3d",
+      "temps-reel"
     ],
     "relevantFor": [
       "architecte-bim",
@@ -65775,19 +66036,22 @@
     ],
     "tool_type": "metier",
     "substitutable": true,
-    "verdict": {
-      "keepIf": [
-        "Tu utilises Twinmotion chaque semaine sur des projets client"
-      ],
-      "avoidIf": [
-        "Usage ponctuel ou déjà couvert par un autre outil"
-      ],
-      "threshold": "À garder seulement si le besoin est récurrent dans le workflow."
+    "freeAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "personas": [
+      "designer"
+    ],
+    "seo": {
+      "metaDescription": "Twinmotion (Epic) en 2026 : visualisation 3D temps réel pour l'archviz, gratuite sous 1M$ de CA. Qualité Unreal sans la complexité. Le verdict ToolTrim."
     },
-    "pros": [],
-    "cons": [],
-    "articles": [],
-    "alternatives": []
+    "prescription_quality": "oui",
+    "alternatives": [
+      "enscape",
+      "lumion",
+      "d5-render"
+    ],
+    "articles": []
   },
   {
     "id": "arnold",
@@ -71039,66 +71303,126 @@
     "slug": "unreal-engine",
     "name": "Unreal Engine",
     "categoryId": "creation",
-    "shortDescription": "Moteur temps réel pour jeu, visualisation, animation et expériences immersives.",
-    "shortDescriptionEn": "Real-time engine for games, visualization, animation, and immersive experiences.",
+    "shortDescription": "Le moteur temps réel d'Epic, gratuit, du jeu vidéo à l'archviz et au virtual production.",
+    "shortDescriptionEn": "Epic's free real-time engine, from games to archviz and virtual production.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Gratuit pour les créateurs (royalties 5% au-delà d'1M$ sur les jeux)",
+      "paid": "Abonnement Unreal pour certains usages non-jeu/entreprise."
+    },
+    "pricingEn": {
+      "free": "Free for creators (5% royalty on games above $1M)",
+      "paid": "Unreal subscription for some non-game/enterprise uses."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://www.unrealengine.com",
     "logo": "",
     "category": "creation",
-    "longDescription": "Moteur temps réel pour jeu, visualisation, animation et expériences immersives.",
+    "longDescription": "Unreal Engine, c'est le moteur temps réel d'Epic Games, et c'est sans doute le logiciel 3D le plus puissant que tu peux utiliser gratuitement. Né pour le jeu vidéo, il est désormais partout : visualisation architecturale, virtual production de cinéma (les murs LED type The Mandalorian), motion design, configurateurs automobiles, simulation. Avec Lumen (éclairage global temps réel) et Nanite (géométrie massive), il produit du photoréalisme en temps réel, ce qui change la façon de travailler.\n\nLe modèle économique est très généreux : Unreal est gratuit pour les créateurs, avec seulement une redevance de 5% sur les jeux qui dépassent 1 million de dollars de revenus. Pour certains usages non-jeu en entreprise, un abonnement par siège existe. Pour l'écrasante majorité des freelances, c'est gratuit.\n\nLe revers, c'est la courbe d'apprentissage : Unreal est vaste et technique. Pour de l'archviz simple et rapide, Twinmotion (construit sur Unreal) est bien plus accessible, et Lumion ou D5 Render visent la même facilité. Mais dès que tu veux du temps réel poussé, de l'interactivité ou de la virtual production, Unreal est la référence, et son prix imbattable (gratuit) en fait un incontournable à connaître.",
+    "longDescriptionEn": "Unreal Engine is Epic Games' real-time engine, and it's probably the most powerful 3D software you can use for free. Born for games, it's now everywhere: architectural visualization, film virtual production (LED walls like The Mandalorian), motion design, car configurators, simulation. With Lumen (real-time global illumination) and Nanite (massive geometry), it produces real-time photorealism, changing how people work.\n\nThe business model is very generous: Unreal is free for creators, with only a 5% royalty on games that exceed $1 million in revenue. For some non-game enterprise uses, a per-seat subscription exists. For the vast majority of freelancers, it's free.\n\nThe downside is the learning curve: Unreal is vast and technical. For simple, fast archviz, Twinmotion (built on Unreal) is far more approachable, and Lumion or D5 Render aim for the same ease. But the moment you want advanced real time, interactivity or virtual production, Unreal is the reference, and its unbeatable price (free) makes it a must-know.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais du temps réel poussé, de la virtual production ou de l'interactivité",
+        "Tu veux le moteur 3D le plus puissant pour 0€ et tu acceptes la courbe d'apprentissage"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu veux juste de l'archviz simple et rapide : Twinmotion, Lumion ou D5 Render sont plus accessibles",
+        "Tu n'as pas le temps d'apprendre un moteur technique"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Gratuit et incontournable pour le temps réel avancé. Pour de l'archviz simple, vise Twinmotion, Lumion ou D5 Render."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do advanced real time, virtual production or interactivity",
+        "You want the most powerful 3D engine for free and accept the learning curve"
+      ],
+      "avoidIf": [
+        "You just want simple, fast archviz: Twinmotion, Lumion or D5 Render are more approachable",
+        "You don't have time to learn a technical engine"
+      ],
+      "threshold": "Free and essential for advanced real time. For simple archviz, go Twinmotion, Lumion or D5 Render."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Gratuit (royalties seulement sur les jeux >1M$)",
+      "Le moteur temps réel le plus puissant (Lumen, Nanite)",
+      "Du jeu à l'archviz, la virtual production et le motion",
+      "Photoréalisme en temps réel"
+    ],
+    "prosEn": [
+      "Free (royalties only on games >$1M)",
+      "The most powerful real-time engine (Lumen, Nanite)",
+      "From games to archviz, virtual production and motion",
+      "Real-time photorealism"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Courbe d'apprentissage vaste et technique",
+      "Surdimensionné pour de l'archviz simple (vise Twinmotion)",
+      "Demande une machine performante",
+      "Abonnement pour certains usages entreprise non-jeu"
+    ],
+    "consEn": [
+      "Vast, technical learning curve",
+      "Overkill for simple archviz (go Twinmotion)",
+      "Requires a powerful machine",
+      "Subscription for some non-game enterprise uses"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Créer un jeu vidéo ou une expérience interactive",
+      "Faire de la virtual production (murs LED, cinéma)",
+      "Produire de l'archviz temps réel haut de gamme",
+      "Réaliser du motion et des configurateurs 3D"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Create a game or interactive experience",
+      "Do virtual production (LED walls, film)",
+      "Produce high-end real-time archviz",
+      "Build motion and 3D configurators"
+    ],
+    "covers": [
+      "temps-reel",
+      "3d",
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "alternatives": [
+      "twinmotion",
+      "blender"
+    ],
     "articles": [],
     "freeAlternative": null,
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "motion-video",
+      "creative",
+      "interior-design"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "temps-reel",
+      "3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "seo": {
+      "metaDescription": "Unreal Engine en 2026 : le moteur temps réel d'Epic, gratuit (du jeu à l'archviz et la virtual production). Alternatives plus simples (Twinmotion). Le verdict ToolTrim."
+    },
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "substitution_cluster_v2": "real-time-3d"
   },
   {
     "id": "unity",
