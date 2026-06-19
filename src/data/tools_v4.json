@@ -68520,6 +68520,7 @@
         "replaceEn": "Replace Houdini with an AI? Very unlikely in the short term. Advanced physical simulation, fine procedural control and Houdini's flexibility have no AI equivalent. Real-time simulation tools (like EmberGen for fire/smoke) nibble at specific cases, but not the core of the job. Verdict: it's probably the 3D tool least threatened by AI in 2026.",
         "aiTools": [
           "meshy",
+          "tripo",
           "embergen"
         ]
       }
@@ -69506,7 +69507,8 @@
         "aiTools": [
           "meshy",
           "tripo",
-          "move-ai"
+          "move-ai",
+          "autodesk-flow-studio"
         ]
       }
     },
@@ -72277,7 +72279,8 @@
         "aiTools": [
           "move-ai",
           "autodesk-flow-studio",
-          "meshy"
+          "meshy",
+          "tripo"
         ]
       }
     },
@@ -117022,7 +117025,9 @@
         "aiTools": [
           "magnific-ai",
           "krea-ai",
-          "midjourney"
+          "midjourney",
+          "canva",
+          "remove-bg"
         ]
       }
     },
@@ -118905,7 +118910,10 @@
         "augmentEn": "Grammarly itself packed in generative AI: rewriting, tone adjustment, full-sentence suggestions. But the real issue is elsewhere: a general assistant like ChatGPT or Claude does everything Grammarly does and much more (rewrite, translate, summarize, adapt tone, explain a rule), often for free.",
         "replaceFr": "Soyons francs : pour la plupart des usages, une IA généraliste remplace Grammarly. Là où Grammarly garde un intérêt, c'est l'intégration transparente partout où tu écris (mail, navigateur, Word), en temps réel, sans copier-coller. Si cette friction ne te dérange pas, ChatGPT ou Claude rendent l'abonnement difficile à justifier. Verdict : sérieusement menacé, à garder surtout pour le confort de l'intégration en temps réel.",
         "replaceEn": "Let us be honest: for most uses, a general AI replaces Grammarly. Where Grammarly keeps an edge is seamless integration everywhere you write (email, browser, Word), in real time, with no copy-paste. If that friction does not bother you, ChatGPT or Claude make the subscription hard to justify. Verdict: seriously threatened, worth keeping mainly for the comfort of real-time integration.",
-        "aiTools": []
+        "aiTools": [
+          "chatgpt",
+          "claude"
+        ]
       }
     },
     "articles": [],
