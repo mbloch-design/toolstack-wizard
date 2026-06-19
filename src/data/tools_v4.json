@@ -68931,7 +68931,7 @@
     "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "maxon-one",
     "verticals": [
       "motion-video",
       "creative"
@@ -71084,7 +71084,7 @@
     "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "maxon-one",
     "verticals": [
       "motion-video",
       "creative"
@@ -71827,7 +71827,7 @@
     "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "maxon-one",
     "verticals": [
       "creative"
     ],
@@ -126090,7 +126090,7 @@
     "tool_type": "plugin",
     "substitutable": false,
     "host_app": "after-effects",
-    "bundle_parent": null,
+    "bundle_parent": "maxon-one",
     "verticals": [
       "motion-video",
       "photographe"

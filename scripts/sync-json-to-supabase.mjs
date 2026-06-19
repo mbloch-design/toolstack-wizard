@@ -132,6 +132,8 @@ const FIELD_MAP = {
   // sont en varchar(50) dans Supabase et n'acceptent pas le texte long.
   freeAlternative: ["freeAlternative", "free_alternative"],
   betterAlternative: ["betterAlternative", "better_alternative"],
+  bundle_parent: ["bundle_parent"],
+  host_app: ["host_app"],
   prescription_quality: ["prescription_quality"],
   prescription_output: ["prescription_output"],
   tool_type: ["tool_type"],

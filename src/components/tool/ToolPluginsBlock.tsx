@@ -52,11 +52,62 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
         .slice(0, 5)
     : [];
 
-  const hasAnyContent = hostApp || childPlugins.length > 0 || bundleParent;
+  // ── Case 4: this tool IS a bundle — list its member tools
+  const bundleMembers = allTools
+    .filter(t => {
+      const bp = (t as any).bundle_parent as string | undefined;
+      return !!bp && (bp === toolId || bp === tool.id);
+    })
+    .slice(0, 12);
+
+  const hasAnyContent = hostApp || childPlugins.length > 0 || bundleParent || bundleMembers.length > 0;
   if (!hasAnyContent) return null;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+
+      {/* ── Case 4: Bundle parent → show member tools ── */}
+      {bundleMembers.length > 0 && (
+        <div>
+          <span className="td-subhead">
+            <Layers />
+            {t("Outils inclus", "Tools included")}
+          </span>
+          <h2 className="td-subtitle">
+            {t(`Ce que comprend ${tool.name}`, `What ${tool.name} includes`)}
+          </h2>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
+            {bundleMembers.map(m => (
+              <Link
+                key={m.id}
+                to={`${prefix}/tool/${(m as any).slug || m.id}`}
+                className="td-tile"
+                style={{ alignItems: "flex-start" }}
+              >
+                <ToolLogo tool={m as any} size={32} className="rounded-lg shrink-0" />
+                <div className="td-tile-body">
+                  <p className="td-tile-title" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    {m.name}
+                  </p>
+                  <p className="td-tile-sub" style={{ whiteSpace: "normal", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
+                    {lang === "en" && (m as any).shortDescriptionEn ? (m as any).shortDescriptionEn : m.shortDescription}
+                  </p>
+                  {(m as any).defaultMonthlyPrice === 0 ? (
+                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-strong)" }}>
+                      {t("Gratuit", "Free")}
+                    </span>
+                  ) : (m as any).defaultMonthlyPrice > 0 ? (
+                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted)" }}>
+                      {Math.round((m as any).defaultMonthlyPrice)}€/{t("mois", "mo")}
+                    </span>
+                  ) : null}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* ── Case 1: Plugin → show host app ── */}
       {hostApp && (
