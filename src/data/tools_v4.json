@@ -8591,7 +8591,19 @@
     "websiteUrl": "https://blender.org",
     "logo": "",
     "seo": {
-      "metaDescription": "Blender en 2026 : la suite 3D complète, gratuite et open source (modélisation, animation, rendu). Vaut-il les payants (Maya, C4D) ? Le verdict ToolTrim."
+      "metaDescription": "Blender en 2026 : la suite 3D complète, gratuite et open source (modélisation, animation, rendu). Vaut-il les payants (Maya, C4D) ? Le verdict ToolTrim.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Blender est l'outil qui profite le plus de l'IA, parce qu'il est gratuit et ouvert : une nuée d'add-ons branche la 3D générative (Meshy, Tripo) directement dans l'interface, l'AI mocap (Move AI) y exporte ses animations, et des outils IA accélèrent le retopo, le texturing et le denoise au rendu (Cycles). Tu peux assembler un flux IA complet sans dépenser un centime de logiciel.",
+        "augmentEn": "Blender is the tool that benefits most from AI, because it's free and open: a swarm of add-ons plugs generative 3D (Meshy, Tripo) right into the interface, AI mocap (Move AI) exports its animations there, and AI tools speed up retopo, texturing and render denoising (Cycles). You can assemble a full AI flow without spending a cent on software.",
+        "replaceFr": "Remplacer Blender par une IA ? Non, et ce serait absurde : c'est justement l'atelier gratuit où tu rapatries et finalises tout ce que l'IA génère. L'IA crée des bases, capture du mouvement, texture vite, mais c'est dans Blender que tu mets en scène, animes finement et rends. Verdict : l'IA ne remplace pas Blender, elle le rend encore plus incontournable comme hub gratuit de production 3D.",
+        "replaceEn": "Replace Blender with an AI? No, and it would be absurd: it's precisely the free workshop where you bring in and finalize everything AI generates. AI creates bases, captures motion, textures fast, but it's in Blender that you stage, animate finely and render. Verdict: AI doesn't replace Blender, it makes it even more essential as the free hub of 3D production.",
+        "aiTools": [
+          "meshy",
+          "tripo",
+          "move-ai"
+        ]
+      }
     },
     "articles": [],
     "soloRelevance": "high",
@@ -28281,6 +28293,560 @@
       "requires_context_questions": true
     },
     "force_silence": false
+  },
+  {
+    "id": "meshy",
+    "slug": "meshy",
+    "name": "Meshy",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génère des modèles 3D texturés à partir d'un texte ou d'une image, en secondes.",
+    "shortDescriptionEn": "Generates textured 3D models from text or an image, in seconds.",
+    "pricing": {
+      "free": "Gratuit (100 crédits/mois)",
+      "paid": "Pro 20$/mois, Max 60$, API 90$."
+    },
+    "pricingEn": {
+      "free": "Free (100 credits/month)",
+      "paid": "Pro $20/month, Max $60, API $90."
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://www.meshy.ai",
+    "websiteUrl": "https://www.meshy.ai",
+    "logo": "",
+    "longDescription": "Meshy, c'est l'un des leaders de la 3D générative : tu écris un prompt ou tu déposes une image, et il sort un modèle 3D texturé en quelques secondes. Pour prototyper un asset de jeu, explorer un concept ou peupler une scène en props, c'est un accélérateur bluffant. Les modèles s'exportent vers Blender, Cinema 4D, Unreal et compagnie.\n\nLe bémol à connaître : la topologie générée reste brute (souvent à retravailler pour de la production sérieuse), et le résultat est un point de départ, pas un asset final. Mais ça progresse très vite. Côté prix, c'est accessible : un plan gratuit (100 crédits/mois) pour tester, puis Pro à 20$/mois.\n\nPour ToolTrim, Meshy est exactement le type d'IA qui augmente les logiciels 3D classiques (Cinema 4D, Blender, ZBrush) plutôt que de les remplacer : tu génères une base en IA, tu la nettoies et tu la mets en scène dans ton outil. Avec Tripo, c'est la référence du text-to-3D abordable.",
+    "longDescriptionEn": "Meshy is one of the leaders in generative 3D: you write a prompt or drop an image, and it outputs a textured 3D model in seconds. For prototyping a game asset, exploring a concept or populating a scene with props, it's a striking accelerator. Models export to Blender, Cinema 4D, Unreal and the rest.\n\nThe catch: the generated topology stays rough (often needs reworking for serious production), and the result is a starting point, not a final asset. But it's improving fast. On price, it's accessible: a free plan (100 credits/month) to test, then Pro at $20/month.\n\nFor ToolTrim, Meshy is exactly the kind of AI that augments classic 3D apps (Cinema 4D, Blender, ZBrush) rather than replacing them: you generate a base with AI, clean it up and stage it in your tool. With Tripo, it's the reference for affordable text-to-3D.",
+    "verdict": {
+      "keepIf": [
+        "Tu veux prototyper des assets 3D vite (jeu, concept, props)",
+        "Tu utilises un outil 3D (Blender, C4D) pour nettoyer ensuite le modèle généré"
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une topologie propre prête pour la production sans retouche",
+        "Tu ne fais pas de 3D"
+      ],
+      "threshold": "Excellent accélérateur de prototypage 3D. Le modèle généré est un point de départ à retravailler, pas un asset final."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to prototype 3D assets fast (games, concept, props)",
+        "You use a 3D tool (Blender, C4D) to clean up the generated model afterward"
+      ],
+      "avoidIf": [
+        "You need clean production-ready topology with no rework",
+        "You don't do 3D"
+      ],
+      "threshold": "A great 3D prototyping accelerator. The generated model is a starting point to rework, not a final asset."
+    },
+    "pros": [
+      "Génère un modèle 3D texturé en quelques secondes",
+      "Text-to-3D et image-to-3D",
+      "Plan gratuit (100 crédits/mois), Pro abordable à 20$/mois",
+      "Exporte vers Blender, Cinema 4D, Unreal"
+    ],
+    "prosEn": [
+      "Generates a textured 3D model in seconds",
+      "Text-to-3D and image-to-3D",
+      "Free plan (100 credits/month), affordable Pro at $20/month",
+      "Exports to Blender, Cinema 4D, Unreal"
+    ],
+    "cons": [
+      "Topologie brute, à retravailler pour la production",
+      "Résultat = point de départ, pas asset final",
+      "Système de crédits",
+      "Qualité variable selon le prompt"
+    ],
+    "consEn": [
+      "Rough topology, needs reworking for production",
+      "Result = starting point, not a final asset",
+      "Credit system",
+      "Quality varies with the prompt"
+    ],
+    "useCases": [
+      "Prototyper un asset de jeu à partir d'un texte",
+      "Transformer une image en modèle 3D",
+      "Peupler rapidement une scène en props",
+      "Générer une base à nettoyer dans Blender ou C4D"
+    ],
+    "useCasesEn": [
+      "Prototype a game asset from text",
+      "Turn an image into a 3D model",
+      "Quickly populate a scene with props",
+      "Generate a base to clean up in Blender or C4D"
+    ],
+    "covers": [
+      "generation-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Meshy en 2026 : la 3D générative par IA (texte/image vers modèle). Prix réels, qualité et alternatives (Tripo). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "tripo",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "ia_use_case": [
+      "generation-3d"
+    ],
+    "verticals": [
+      "creative",
+      "motion-video"
+    ],
+    "functional_needs": [
+      "generation-3d"
+    ],
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit 100 crédits/mois ; Pro 20$/mois, Max 60$, API 90$"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "meshy.ai",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Pro (mensuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.meshy.ai/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 20
+    },
+    "substitution_cluster_v2": "ai-3d-generation"
+  },
+  {
+    "id": "tripo",
+    "slug": "tripo",
+    "name": "Tripo",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Générateur 3D par IA (texte/image vers modèle), rapide et parmi les moins chers.",
+    "shortDescriptionEn": "AI 3D generator (text/image to model), fast and among the cheapest.",
+    "pricing": {
+      "free": "Gratuit (crédits limités, généreux)",
+      "paid": "Pro dès 10$/mois."
+    },
+    "pricingEn": {
+      "free": "Free (limited but generous credits)",
+      "paid": "Pro from $10/month."
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://www.tripo3d.ai",
+    "websiteUrl": "https://www.tripo3d.ai",
+    "logo": "",
+    "longDescription": "Tripo (Tripo AI), c'est le grand rival de Meshy dans la 3D générative : texte ou image vers modèle 3D texturé, en quelques secondes. Son atout principal, c'est le prix : un plan gratuit généreux pour expérimenter, et un Pro qui démarre à seulement 10$/mois, soit l'un des tickets d'entrée les plus bas du marché.\n\nLe niveau de qualité et les limites sont comparables à Meshy : génération rapide et impressionnante pour du prototypage, mais une topologie brute qui demande un nettoyage avant toute production sérieuse. C'est un point de départ, pas un asset final.\n\nPour ToolTrim, Tripo est l'autre référence du text-to-3D abordable, à mettre directement en balance avec Meshy. Les deux augmentent ton flux 3D (Blender, Cinema 4D, ZBrush) en te donnant une base à raffiner. Si le budget est le critère, Tripo prend l'avantage avec son entrée à 10$/mois.",
+    "longDescriptionEn": "Tripo (Tripo AI) is Meshy's main rival in generative 3D: text or image to textured 3D model, in seconds. Its main edge is price: a generous free plan to experiment, and a Pro that starts at just $10/month, one of the lowest entry tickets on the market.\n\nQuality and limits are comparable to Meshy: fast, impressive generation for prototyping, but rough topology that needs cleanup before any serious production. It's a starting point, not a final asset.\n\nFor ToolTrim, Tripo is the other reference for affordable text-to-3D, to weigh directly against Meshy. Both augment your 3D flow (Blender, Cinema 4D, ZBrush) by giving you a base to refine. If budget is the criterion, Tripo takes the edge with its $10/month entry.",
+    "verdict": {
+      "keepIf": [
+        "Tu veux générer des modèles 3D au meilleur prix",
+        "Tu prototypes des assets que tu nettoies ensuite dans ton outil 3D"
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une topologie de production sans retouche",
+        "Tu ne fais pas de 3D"
+      ],
+      "threshold": "L'entrée la moins chère du text-to-3D. À comparer directement avec Meshy ; modèle généré à retravailler."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to generate 3D models at the best price",
+        "You prototype assets you then clean up in your 3D tool"
+      ],
+      "avoidIf": [
+        "You need production topology with no rework",
+        "You don't do 3D"
+      ],
+      "threshold": "The cheapest entry to text-to-3D. Compare directly with Meshy; generated model needs rework."
+    },
+    "pros": [
+      "Un des prix d'entrée les plus bas (Pro dès 10$/mois)",
+      "Plan gratuit généreux",
+      "Text-to-3D et image-to-3D rapides",
+      "Export vers les outils 3D classiques"
+    ],
+    "prosEn": [
+      "One of the lowest entry prices (Pro from $10/month)",
+      "Generous free plan",
+      "Fast text-to-3D and image-to-3D",
+      "Exports to classic 3D tools"
+    ],
+    "cons": [
+      "Topologie brute à retravailler (comme Meshy)",
+      "Résultat = point de départ",
+      "Système de crédits",
+      "Qualité variable selon le prompt"
+    ],
+    "consEn": [
+      "Rough topology to rework (like Meshy)",
+      "Result = starting point",
+      "Credit system",
+      "Quality varies with the prompt"
+    ],
+    "useCases": [
+      "Générer un modèle 3D à petit budget",
+      "Transformer une image en 3D",
+      "Prototyper des assets de jeu",
+      "Créer une base à raffiner dans Blender"
+    ],
+    "useCasesEn": [
+      "Generate a 3D model on a small budget",
+      "Turn an image into 3D",
+      "Prototype game assets",
+      "Create a base to refine in Blender"
+    ],
+    "covers": [
+      "generation-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Tripo (Tripo AI) en 2026 : la 3D générative la moins chère (texte/image vers 3D). Prix réels et comparaison avec Meshy. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "meshy",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "ia_use_case": [
+      "generation-3d"
+    ],
+    "verticals": [
+      "creative",
+      "motion-video"
+    ],
+    "functional_needs": [
+      "generation-3d"
+    ],
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Plan gratuit généreux ; Pro dès 10$/mois"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "tripo3d.ai",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Pro (mensuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.tripo3d.ai",
+      "verification_status": "official_site_only",
+      "compare_price_monthly_eur": 10
+    },
+    "substitution_cluster_v2": "ai-3d-generation"
+  },
+  {
+    "id": "move-ai",
+    "slug": "move-ai",
+    "name": "Move AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Capture de mouvement sans marqueurs ni studio, depuis de simples vidéos (IA).",
+    "shortDescriptionEn": "Markerless motion capture from ordinary video, no studio needed (AI).",
+    "pricing": {
+      "free": "Freemium (tests limités)",
+      "paid": "Dès 15$/mois ; facturation à la durée pour le pro."
+    },
+    "pricingEn": {
+      "free": "Freemium (limited tests)",
+      "paid": "From $15/month; duration-based billing for pro."
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://www.move.ai",
+    "websiteUrl": "https://www.move.ai",
+    "logo": "",
+    "longDescription": "Move AI, c'est de la capture de mouvement sans marqueurs : tu filmes un acteur avec un ou plusieurs téléphones ou caméras, et l'IA en extrait une animation 3D exploitable. Plus de combinaison à pastilles, plus de studio de mocap à des milliers d'euros. L'animation s'exporte en FBX vers Maya, Blender ou Unreal.\n\nPour un indépendant ou un petit studio, c'est un vrai bouleversement : la qualité est impressionnante au regard du prix, même si la mocap optique haut de gamme garde l'avantage sur la précision pure. Le tarif démarre vers 15$/mois en freemium, avec une facturation à la durée des vidéos pour les usages plus intensifs.\n\nPour ToolTrim, Move AI fait partie des IA qui challengent sérieusement un pan de la production 3D : la capture de mouvement, longtemps réservée aux studios équipés. Elle ne remplace pas ton logiciel d'animation, mais elle remplace l'étape de captation, ce qui change beaucoup de choses pour les budgets serrés.",
+    "longDescriptionEn": "Move AI is markerless motion capture: you film an actor with one or several phones or cameras, and the AI extracts usable 3D animation. No marker suit, no thousand-euro mocap studio. The animation exports as FBX to Maya, Blender or Unreal.\n\nFor a freelancer or small studio, it's a real shake-up: quality is impressive for the price, even if high-end optical mocap keeps the edge on pure precision. Pricing starts around $15/month freemium, with duration-based billing for heavier use.\n\nFor ToolTrim, Move AI is one of the AIs seriously challenging a part of 3D production: motion capture, long reserved for equipped studios. It doesn't replace your animation software, but it replaces the capture step, which changes a lot for tight budgets.",
+    "verdict": {
+      "keepIf": [
+        "Tu as besoin de mocap sans studio ni combinaison (indé, petit studio)",
+        "Tu animes des personnages dans Maya, Blender ou Unreal"
+      ],
+      "avoidIf": [
+        "Tu as besoin de la précision d'une mocap optique haut de gamme",
+        "Tu ne fais pas d'animation de personnage"
+      ],
+      "threshold": "Bouleverse la mocap pour les budgets serrés. Pour la précision absolue, la mocap optique studio garde l'avantage."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need mocap without a studio or suit (indie, small studio)",
+        "You animate characters in Maya, Blender or Unreal"
+      ],
+      "avoidIf": [
+        "You need high-end optical mocap precision",
+        "You don't do character animation"
+      ],
+      "threshold": "Shakes up mocap for tight budgets. For absolute precision, studio optical mocap keeps the edge."
+    },
+    "pros": [
+      "Mocap sans marqueurs ni studio, depuis de simples vidéos",
+      "Export FBX vers Maya, Blender, Unreal",
+      "Coût dérisoire face à un studio de mocap",
+      "Accessible aux indépendants et petits studios"
+    ],
+    "prosEn": [
+      "Markerless mocap from ordinary video, no studio",
+      "FBX export to Maya, Blender, Unreal",
+      "Tiny cost versus a mocap studio",
+      "Accessible to freelancers and small studios"
+    ],
+    "cons": [
+      "Moins précis qu'une mocap optique haut de gamme",
+      "Facturation à la durée qui peut grimper",
+      "Dépend de la qualité de captation vidéo",
+      "Nettoyage de l'animation parfois nécessaire"
+    ],
+    "consEn": [
+      "Less precise than high-end optical mocap",
+      "Duration-based billing can add up",
+      "Depends on video capture quality",
+      "Animation cleanup sometimes needed"
+    ],
+    "useCases": [
+      "Capturer une animation de personnage sans studio",
+      "Filmer avec un téléphone et obtenir du mouvement 3D",
+      "Exporter une mocap vers Blender ou Maya",
+      "Animer un personnage à petit budget"
+    ],
+    "useCasesEn": [
+      "Capture character animation without a studio",
+      "Film with a phone and get 3D motion",
+      "Export mocap to Blender or Maya",
+      "Animate a character on a small budget"
+    ],
+    "covers": [
+      "ai-mocap"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Move AI en 2026 : capture de mouvement sans marqueurs ni studio, par IA. Prix réels et alternatives (Autodesk Flow Studio). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "autodesk-flow-studio",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "ia_use_case": [
+      "ai-mocap"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "ai-mocap"
+    ],
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Freemium ; dès 15$/mois, facturation à la durée pour le pro"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "move.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Entrée mensuelle",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://move.ai/products",
+      "verification_status": "official_site_only",
+      "compare_price_monthly_eur": 15
+    },
+    "substitution_cluster_v2": "ai-3d-generation"
+  },
+  {
+    "id": "autodesk-flow-studio",
+    "slug": "autodesk-flow-studio",
+    "name": "Autodesk Flow Studio",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "IA qui insère et anime des personnages CG dans des vidéos réelles (ex-Wonder Dynamics).",
+    "shortDescriptionEn": "AI that inserts and animates CG characters into live footage (ex-Wonder Dynamics).",
+    "pricing": {
+      "free": "Gratuit (300 crédits/mois, 720p)",
+      "paid": "Lite 10$/mois, Standard 45$ (360$/an), Pro 95$."
+    },
+    "pricingEn": {
+      "free": "Free (300 credits/month, 720p)",
+      "paid": "Lite $10/month, Standard $45 ($360/year), Pro $95."
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://wonderdynamics.com",
+    "websiteUrl": "https://wonderdynamics.com",
+    "logo": "",
+    "longDescription": "Autodesk Flow Studio (anciennement Wonder Dynamics / Wonder Studio), c'est une IA qui fait un travail qui prenait des semaines : elle détecte automatiquement un acteur dans une vidéo réelle et le remplace par un personnage 3D, en gérant l'animation, l'éclairage et le compositing. Tu filmes une personne, et tu obtiens ton personnage CG intégré dans le plan. Ça embarque aussi de l'AI mocap et Wonder 3D (génération de modèles 3D par IA).\n\nRacheté par Autodesk, l'outil est passé en freemium : un palier gratuit (300 crédits/mois, 720p), puis Lite à 10$/mois, Standard à 45$ et Pro à 95$. C'est un gain de temps spectaculaire pour les VFX et l'animation de personnage en indé.\n\nPour ToolTrim, Flow Studio est l'un des challengers IA les plus impressionnants de la 3D : il automatise toute une chaîne (captation, animation, intégration) qui mobilisait des équipes. Il ne remplace pas un Maya pour l'animation fine, mais il remplace énormément d'étapes manuelles pour qui veut intégrer des personnages CG vite et pour pas cher.",
+    "longDescriptionEn": "Autodesk Flow Studio (formerly Wonder Dynamics / Wonder Studio) is an AI that does work that used to take weeks: it automatically detects an actor in live footage and replaces them with a 3D character, handling animation, lighting and compositing. You film a person, and you get your CG character integrated into the shot. It also includes AI mocap and Wonder 3D (AI 3D model generation).\n\nAcquired by Autodesk, the tool went freemium: a free tier (300 credits/month, 720p), then Lite at $10/month, Standard at $45 and Pro at $95. It's a spectacular time saver for indie VFX and character animation.\n\nFor ToolTrim, Flow Studio is one of the most impressive AI challengers in 3D: it automates a whole chain (capture, animation, integration) that used to require teams. It doesn't replace a Maya for fine animation, but it replaces a huge amount of manual steps for anyone wanting to integrate CG characters fast and cheap.",
+    "verdict": {
+      "keepIf": [
+        "Tu intègres des personnages CG dans des vidéos réelles (VFX, court-métrage)",
+        "Tu veux automatiser captation, animation et compositing en indé"
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une animation de personnage fine et contrôlée : Maya reste devant",
+        "Tu ne fais pas de personnage CG"
+      ],
+      "threshold": "Automatise une chaîne VFX entière à bas coût. Pour l'animation fine et le contrôle total, un outil 3D classique reste nécessaire."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You integrate CG characters into live footage (VFX, short films)",
+        "You want to automate capture, animation and compositing as an indie"
+      ],
+      "avoidIf": [
+        "You need fine, controlled character animation: Maya stays ahead",
+        "You don't do CG characters"
+      ],
+      "threshold": "Automates a whole VFX chain at low cost. For fine animation and full control, a classic 3D tool is still needed."
+    },
+    "pros": [
+      "Remplace un acteur par un personnage CG automatiquement",
+      "Inclut AI mocap, éclairage et compositing",
+      "Wonder 3D (génération 3D par IA) intégré",
+      "Freemium puis tarifs accessibles (Lite 10$/mois)"
+    ],
+    "prosEn": [
+      "Replaces an actor with a CG character automatically",
+      "Includes AI mocap, lighting and compositing",
+      "Built-in Wonder 3D (AI 3D generation)",
+      "Freemium then accessible pricing (Lite $10/month)"
+    ],
+    "cons": [
+      "Animation moins fine et contrôlée qu'un Maya",
+      "Système de crédits (résolution et durée limitées au gratuit)",
+      "Dépend de la qualité de la captation",
+      "Écosystème Autodesk"
+    ],
+    "consEn": [
+      "Less fine and controlled animation than a Maya",
+      "Credit system (resolution and duration limited on free)",
+      "Depends on capture quality",
+      "Autodesk ecosystem"
+    ],
+    "useCases": [
+      "Remplacer un acteur par un personnage 3D dans un plan",
+      "Faire de la mocap et du compositing automatiquement",
+      "Intégrer un personnage CG en VFX sans grosse équipe",
+      "Générer un modèle 3D avec Wonder 3D"
+    ],
+    "useCasesEn": [
+      "Replace an actor with a 3D character in a shot",
+      "Do mocap and compositing automatically",
+      "Integrate a CG character in VFX without a big team",
+      "Generate a 3D model with Wonder 3D"
+    ],
+    "covers": [
+      "ai-vfx",
+      "ai-mocap"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Autodesk Flow Studio (ex-Wonder Dynamics) en 2026 : l'IA qui insère des personnages CG dans des vidéos réelles. Prix réels et alternatives. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "move-ai",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": null,
+    "ia_use_case": [
+      "ai-vfx",
+      "ai-mocap"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "ai-vfx"
+    ],
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit 300 crédits/mois (720p) ; Lite 10$, Standard 45$, Pro 95$/mois"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "wonderdynamics.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Lite (mensuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://wonderdynamics.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10
+    },
+    "substitution_cluster_v2": "ai-3d-generation"
   },
   {
     "id": "leonardo-ai",
@@ -67945,7 +68511,18 @@
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "seo": {
-      "metaDescription": "Houdini (SideFX) en 2026 : le logiciel de référence des FX et du procédural. Prix réels (Apprentice gratuit, Indie 299$/an) et alternatives. Le verdict ToolTrim."
+      "metaDescription": "Houdini (SideFX) en 2026 : le logiciel de référence des FX et du procédural. Prix réels (Apprentice gratuit, Indie 299$/an) et alternatives. Le verdict ToolTrim.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Houdini et l'IA se ressemblent dans l'esprit (tout est procédural et reproductible), et l'IA vient surtout l'accélérer : denoise IA au rendu, et des assets de base générés (Meshy, Tripo) à injecter dans tes systèmes procéduraux. Pour la simulation temps réel ponctuelle, un EmberGen sort du feu et de la fumée en secondes.",
+        "augmentEn": "Houdini and AI are alike in spirit (everything is procedural and reproducible), and AI mostly accelerates it: AI render denoising, and generated base assets (Meshy, Tripo) to inject into your procedural systems. For occasional real-time simulation, an EmberGen outputs fire and smoke in seconds.",
+        "replaceFr": "Remplacer Houdini par une IA ? Très peu probable à court terme. La simulation physique avancée, le contrôle procédural fin et la flexibilité de Houdini n'ont pas d'équivalent IA. Les outils de simulation temps réel (comme EmberGen pour le feu/fumée) grignotent certains cas précis, mais pas le coeur du métier. Verdict : c'est sans doute l'outil 3D le moins menacé par l'IA en 2026.",
+        "replaceEn": "Replace Houdini with an AI? Very unlikely in the short term. Advanced physical simulation, fine procedural control and Houdini's flexibility have no AI equivalent. Real-time simulation tools (like EmberGen for fire/smoke) nibble at specific cases, but not the core of the job. Verdict: it's probably the 3D tool least threatened by AI in 2026.",
+        "aiTools": [
+          "meshy",
+          "embergen"
+        ]
+      }
     },
     "alternatives": [
       "blender",
@@ -68922,11 +69499,15 @@
       "metaDescription": "Cinema 4D (Maxon) en 2026 : le logiciel 3D du motion design, prix réels (abonnement, Maxon One) et alternatives (Blender, Maya). Le verdict ToolTrim.",
       "aiAngle": {
         "stance": "augmente",
-        "augmentFr": "En 3D, l'IA s'installe surtout autour de Cinema 4D, pas à sa place. En amont, des générateurs 3D comme Meshy, Tripo ou Luma Genie sortent un modèle de base depuis un texte ou une image en quelques secondes, que tu importes ensuite dans C4D pour le nettoyer et le mettre en scène. Au rendu, le denoiser IA accélère énormément les calculs. Et pour l'animation, l'AI mocap (Move AI, Wonder Dynamics) capture du mouvement depuis une simple vidéo, sans combinaison ni studio.",
-        "augmentEn": "In 3D, AI is settling around Cinema 4D, not in its place. Upstream, 3D generators like Meshy, Tripo or Luma Genie output a base model from text or an image in seconds, which you import into C4D to clean up and stage. At render time, AI denoising speeds up computation a lot. And for animation, AI mocap (Move AI, Wonder Dynamics) captures motion from a simple video, with no suit or studio.",
+        "augmentFr": "En 3D, l'IA s'installe surtout autour de Cinema 4D, pas à sa place. En amont, des générateurs 3D comme Meshy ou Tripo sortent un modèle de base depuis un texte ou une image en quelques secondes, que tu importes ensuite dans C4D pour le nettoyer et le mettre en scène. Au rendu, le denoiser IA accélère énormément les calculs. Et pour l'animation, l'AI mocap (Move AI, Autodesk Flow Studio) capture du mouvement depuis une simple vidéo, sans combinaison ni studio.",
+        "augmentEn": "In 3D, AI is settling around Cinema 4D, not in its place. Upstream, 3D generators like Meshy or Tripo output a base model from text or an image in seconds, which you import into C4D to clean up and stage. At render time, AI denoising speeds up computation a lot. And for animation, AI mocap (Move AI, Autodesk Flow Studio) captures motion from a simple video, with no suit or studio.",
         "replaceFr": "Remplacer Cinema 4D par une IA ? Pas encore, et c'est net. La 3D générative crée des objets isolés, souvent à la topologie sale, mais elle ne gère ni la mise en scène, ni l'animation procédurale (MoGraph), ni le contrôle précis d'une production. En 2026, l'IA est un accélérateur d'étapes, pas un remplaçant. Le vrai signal à surveiller : le jour où la génération de scènes complètes deviendra crédible. On n'y est pas, mais ça avance vite.",
         "replaceEn": "Replace Cinema 4D with an AI? Not yet, clearly. Generative 3D creates isolated objects, often with messy topology, but handles neither staging, procedural animation (MoGraph), nor the precise control of a production. In 2026, AI is a step accelerator, not a replacement. The signal to watch: the day full-scene generation becomes credible. Not there yet, but moving fast.",
-        "aiTools": []
+        "aiTools": [
+          "meshy",
+          "tripo",
+          "move-ai"
+        ]
       }
     },
     "alternatives": [
@@ -71686,7 +72267,19 @@
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "seo": {
-      "metaDescription": "Maya (Autodesk) en 2026 : le standard 3D du cinéma et du jeu, prix réels (Maya Indie inclus) et alternatives (Blender, Cinema 4D). Le verdict ToolTrim."
+      "metaDescription": "Maya (Autodesk) en 2026 : le standard 3D du cinéma et du jeu, prix réels (Maya Indie inclus) et alternatives (Blender, Cinema 4D). Le verdict ToolTrim.",
+      "aiAngle": {
+        "stance": "challenge",
+        "augmentFr": "Autour de Maya, l'IA bouscule surtout l'animation : l'AI mocap (Move AI, Autodesk Flow Studio) capture du mouvement depuis une simple vidéo et l'exporte en FBX, ce qui remplace des setups de captation coûteux. En amont, la 3D générative (Meshy, Tripo) fournit des bases de modèles à raffiner.",
+        "augmentEn": "Around Maya, AI mostly shakes up animation: AI mocap (Move AI, Autodesk Flow Studio) captures motion from a simple video and exports it as FBX, replacing costly capture setups. Upstream, generative 3D (Meshy, Tripo) provides base models to refine.",
+        "replaceFr": "Remplacer Maya par une IA ? Pas pour l'animation et le rigging fins, qui restent son domaine et celui des studios. Mais l'IA remplace de plus en plus des étapes : la captation de mouvement (Move AI), l'intégration de personnages (Flow Studio), la génération de base. Verdict : Maya garde le contrôle artistique, mais l'IA absorbe la captation et le dégrossissage, ce qui réduit le temps passé dans le logiciel.",
+        "replaceEn": "Replace Maya with an AI? Not for fine animation and rigging, which remain its domain and that of studios. But AI increasingly replaces steps: motion capture (Move AI), character integration (Flow Studio), base generation. Verdict: Maya keeps artistic control, but AI absorbs capture and roughing-out, reducing time spent in the software.",
+        "aiTools": [
+          "move-ai",
+          "autodesk-flow-studio",
+          "meshy"
+        ]
+      }
     },
     "alternatives": [
       "blender",
@@ -71825,7 +72418,18 @@
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "seo": {
-      "metaDescription": "ZBrush (Maxon) en 2026 : la référence de la sculpture numérique 3D, prix réels (abonnement, Maxon One) et alternatives (Blender, Nomad Sculpt). Le verdict ToolTrim."
+      "metaDescription": "ZBrush (Maxon) en 2026 : la référence de la sculpture numérique 3D, prix réels (abonnement, Maxon One) et alternatives (Blender, Nomad Sculpt). Le verdict ToolTrim.",
+      "aiAngle": {
+        "stance": "challenge",
+        "augmentFr": "Pour ZBrush, l'IA arrive surtout par la génération de base : des outils comme Meshy ou Tripo sortent un modèle 3D dégrossi depuis un texte ou une image en quelques secondes, que tu importes ensuite dans ZBrush pour le sculpter en détail. Ça remplace l'étape de blockout, pas le travail d'artiste.",
+        "augmentEn": "For ZBrush, AI mostly arrives via base generation: tools like Meshy or Tripo output a rough 3D model from text or an image in seconds, which you import into ZBrush to sculpt in detail. It replaces the blockout step, not the artist's work.",
+        "replaceFr": "Remplacer ZBrush par une IA ? Pour la sculpture fine de personnages et de créatures, non : aucune IA ne te donne ce niveau de détail et de contrôle. Mais pour obtenir une base 3D rapide, la 3D générative (Meshy, Tripo) grignote sérieusement l'étape de blockout, et pour un usage non-pro elle peut suffire. Verdict : ZBrush reste roi du détail, mais l'IA banalise la création de formes de départ.",
+        "replaceEn": "Replace ZBrush with an AI? For fine sculpting of characters and creatures, no: no AI gives you that level of detail and control. But to get a quick 3D base, generative 3D (Meshy, Tripo) is seriously eating into the blockout step, and for non-pro use it can be enough. Verdict: ZBrush stays king of detail, but AI is commoditizing the creation of starting shapes.",
+        "aiTools": [
+          "meshy",
+          "tripo"
+        ]
+      }
     },
     "alternatives": [
       "blender"
