@@ -65790,39 +65790,382 @@
     "alternatives": []
   },
   {
+    "id": "arnold",
+    "slug": "arnold",
+    "name": "Arnold",
+    "category": "design-tools",
+    "shortDescription": "Moteur de rendu CPU/GPU d'Autodesk, standard du cinéma et de l'animation.",
+    "shortDescriptionEn": "Autodesk's CPU/GPU render engine, the film and animation standard.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "~430$/an (~36$/mois). Inclus avec certaines licences Autodesk."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "~$430/year (~$36/month). Included with some Autodesk licenses."
+    },
+    "defaultMonthlyPrice": 36,
+    "affiliateLink": "https://www.autodesk.com/products/arnold/overview",
+    "websiteUrl": "https://www.autodesk.com/products/arnold/overview",
+    "logo": "",
+    "longDescription": "Arnold, c'est le moteur de rendu d'Autodesk, et son terrain, c'est le cinéma et l'animation. Moteur physiquement réaliste (unbiased), il s'est imposé dans le long-métrage et les VFX pour sa capacité à encaisser des scènes énormes et du shading complexe sans broncher. Il est intégré à Maya, 3ds Max, Houdini et Cinema 4D, et il est devenu un quasi-standard des pipelines studio orientés animation/VFX.\n\nHistoriquement CPU, Arnold gère désormais aussi le GPU. Côté prix, c'est l'abonnement Autodesk autour de 430$/an (environ 36$/mois) pour un poste, et il est souvent inclus avec certaines licences Autodesk (Maya). C'est plutôt raisonnable pour un moteur de cette réputation.\n\nLe vrai arbitrage se joue selon ton métier. Pour l'archviz et le produit, V-Ray et Corona sont plus indiqués. Pour la vitesse GPU pure en motion, Redshift et Octane prennent l'avantage. Et côté gratuit, Cycles dans Blender est devenu très bon. Arnold reste la valeur sûre du rendu de cinéma et d'animation, surtout si tu es déjà dans l'écosystème Maya.",
+    "longDescriptionEn": "Arnold is Autodesk's render engine, and its home is film and animation. A physically based (unbiased) engine, it established itself in features and VFX for handling enormous scenes and complex shading without flinching. It's integrated into Maya, 3ds Max, Houdini and Cinema 4D, and has become a near-standard of animation/VFX studio pipelines.\n\nHistorically CPU, Arnold now also handles GPU. On price, it's the Autodesk subscription around $430/year (about $36/month) for one seat, and it's often included with some Autodesk licenses (Maya). That's fairly reasonable for an engine of this reputation.\n\nThe real trade-off depends on your work. For archviz and product, V-Ray and Corona are better suited. For pure GPU speed in motion, Redshift and Octane take the edge. And on the free side, Cycles in Blender has become very good. Arnold remains the safe bet for film and animation rendering, especially if you're already in the Maya ecosystem.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais du rendu de cinéma, de VFX ou d'animation, surtout dans Maya",
+        "Tu veux un moteur éprouvé sur les grosses scènes et le shading complexe"
+      ],
+      "avoidIf": [
+        "Tu fais de l'archviz ou du produit : V-Ray ou Corona sont plus adaptés",
+        "Tu veux de la vitesse GPU pure en motion : Redshift ou Octane"
+      ],
+      "threshold": "La valeur sûre du rendu cinéma/animation, surtout dans l'écosystème Maya. Pour l'archviz, V-Ray ; pour la vitesse GPU, Redshift ou Octane."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do film, VFX or animation rendering, especially in Maya",
+        "You want a proven engine on large scenes and complex shading"
+      ],
+      "avoidIf": [
+        "You do archviz or product: V-Ray or Corona fit better",
+        "You want pure GPU speed in motion: Redshift or Octane"
+      ],
+      "threshold": "The safe bet for film/animation rendering, especially in the Maya ecosystem. For archviz, V-Ray; for GPU speed, Redshift or Octane."
+    },
+    "pros": [
+      "Standard du rendu cinéma et animation",
+      "Encaisse des scènes énormes et du shading complexe",
+      "Intégré à Maya, 3ds Max, Houdini, Cinema 4D",
+      "Tarif raisonnable (~430$/an), souvent inclus avec Maya"
+    ],
+    "prosEn": [
+      "Standard for film and animation rendering",
+      "Handles enormous scenes and complex shading",
+      "Integrated into Maya, 3ds Max, Houdini, Cinema 4D",
+      "Reasonable price (~$430/year), often included with Maya"
+    ],
+    "cons": [
+      "Moins indiqué que V-Ray/Corona pour l'archviz et le produit",
+      "Redshift/Octane plus rapides en GPU pur",
+      "Cycles (gratuit, Blender) couvre beaucoup",
+      "Abonnement Autodesk"
+    ],
+    "consEn": [
+      "Less suited than V-Ray/Corona for archviz and product",
+      "Redshift/Octane faster on pure GPU",
+      "Cycles (free, Blender) covers a lot",
+      "Autodesk subscription"
+    ],
+    "useCases": [
+      "Rendre des plans de cinéma et de VFX",
+      "Rendre de l'animation de personnages depuis Maya",
+      "Gérer de grosses scènes avec un shading complexe",
+      "S'intégrer à un pipeline studio Autodesk"
+    ],
+    "useCasesEn": [
+      "Render film and VFX shots",
+      "Render character animation from Maya",
+      "Handle large scenes with complex shading",
+      "Fit into an Autodesk studio pipeline"
+    ],
+    "covers": [
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Arnold (Autodesk) en 2026 : le moteur de rendu standard du cinéma et de l'animation. Prix réels et alternatives (V-Ray, Redshift). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "v-ray",
+      "redshift",
+      "octane-render"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "rendu-3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "~430$/an (~36$/mois) ; souvent inclus avec certaines licences Autodesk"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "autodesk.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Arnold (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.autodesk.com/products/arnold/overview",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 36
+    },
+    "substitution_cluster_v2": "render-engine"
+  },
+  {
+    "id": "renderman",
+    "slug": "renderman",
+    "name": "RenderMan",
+    "category": "design-tools",
+    "shortDescription": "Le moteur de rendu de Pixar, gratuit en non-commercial, légende du cinéma d'animation.",
+    "shortDescriptionEn": "Pixar's render engine, free for non-commercial use, a film-animation legend.",
+    "pricing": {
+      "free": "Gratuit pour usage non-commercial (complet, sans watermark)",
+      "paid": "Licence commerciale 595$ + 250$/an de maintenance."
+    },
+    "pricingEn": {
+      "free": "Free for non-commercial use (full, no watermark)",
+      "paid": "Commercial license $595 + $250/year maintenance."
+    },
+    "defaultMonthlyPrice": 595,
+    "affiliateLink": "https://renderman.pixar.com",
+    "websiteUrl": "https://renderman.pixar.com",
+    "logo": "",
+    "longDescription": "RenderMan, c'est une légende : c'est le moteur de rendu de Pixar, celui qui a calculé tous ses films et des décennies de VFX hollywoodiens. Il a littéralement défini une partie des standards du rendu cinéma. Dire que c'est un outil de référence est un euphémisme.\n\nLa grande nouvelle pour les indépendants, c'est qu'il est gratuit pour tout usage non commercial : version complète, sans watermark ni limitation, pour apprendre, expérimenter ou faire des projets perso. Pour un usage commercial, la licence revient à 595$ (achat) plus 250$/an de maintenance. Il s'intègre à Maya, Houdini, Katana et Blender.\n\nÀ qui ça s'adresse : aux artistes orientés cinéma d'animation et VFX, et à quiconque veut apprendre le rendu de niveau studio sans payer. Pour la plupart des freelances (motion, archviz, produit), c'est surdimensionné face à un Redshift, un V-Ray ou un Octane plus simples à intégrer. Mais la gratuité en non-commercial en fait un terrain d'apprentissage exceptionnel, et un choix légitime si tu vises le pipeline de l'animation de long-métrage.",
+    "longDescriptionEn": "RenderMan is a legend: it's Pixar's render engine, the one that rendered all its films and decades of Hollywood VFX. It literally defined part of the standards of film rendering. Calling it a reference tool is an understatement.\n\nThe big news for freelancers is that it's free for any non-commercial use: full version, no watermark or limitation, to learn, experiment or do personal projects. For commercial use, the license is $595 (purchase) plus $250/year maintenance. It integrates with Maya, Houdini, Katana and Blender.\n\nWho it's for: artists oriented toward film animation and VFX, and anyone who wants to learn studio-grade rendering for free. For most freelancers (motion, archviz, product), it's overkill next to a simpler-to-integrate Redshift, V-Ray or Octane. But the free non-commercial tier makes it an exceptional learning ground, and a legitimate choice if you aim for the feature-animation pipeline.",
+    "verdict": {
+      "keepIf": [
+        "Tu vises le rendu de cinéma d'animation ou de VFX (Maya, Houdini, Katana)",
+        "Tu veux apprendre un moteur de niveau studio gratuitement (non-commercial)"
+      ],
+      "avoidIf": [
+        "Tu fais du motion, de l'archviz ou du produit : Redshift, V-Ray ou Octane sont plus directs",
+        "Tu veux un moteur simple à intégrer rapidement"
+      ],
+      "threshold": "Légende du rendu cinéma, gratuite en non-commercial : parfaite pour apprendre. Pour du freelance courant, des moteurs plus simples suffisent."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You aim for film-animation or VFX rendering (Maya, Houdini, Katana)",
+        "You want to learn a studio-grade engine for free (non-commercial)"
+      ],
+      "avoidIf": [
+        "You do motion, archviz or product: Redshift, V-Ray or Octane are more direct",
+        "You want an engine that's simple to integrate quickly"
+      ],
+      "threshold": "A film-rendering legend, free for non-commercial use: perfect to learn. For everyday freelance, simpler engines are enough."
+    },
+    "pros": [
+      "Légende du rendu cinéma (le moteur de Pixar)",
+      "Gratuit pour usage non-commercial, complet et sans watermark",
+      "Qualité et stabilité de niveau studio",
+      "Intégré à Maya, Houdini, Katana, Blender"
+    ],
+    "prosEn": [
+      "A film-rendering legend (Pixar's engine)",
+      "Free for non-commercial use, full and watermark-free",
+      "Studio-grade quality and stability",
+      "Integrated into Maya, Houdini, Katana, Blender"
+    ],
+    "cons": [
+      "Surdimensionné pour le motion, l'archviz ou le produit",
+      "Moins simple à intégrer que Redshift/Octane",
+      "Licence commerciale 595$ + 250$/an",
+      "Orienté pipeline cinéma d'animation"
+    ],
+    "consEn": [
+      "Overkill for motion, archviz or product",
+      "Less simple to integrate than Redshift/Octane",
+      "Commercial license $595 + $250/year",
+      "Geared to the film-animation pipeline"
+    ],
+    "useCases": [
+      "Apprendre le rendu de niveau studio gratuitement (non-commercial)",
+      "Rendre des plans de cinéma d'animation et de VFX",
+      "Travailler dans un pipeline Maya/Houdini/Katana",
+      "Obtenir une qualité de rendu de référence"
+    ],
+    "useCasesEn": [
+      "Learn studio-grade rendering for free (non-commercial)",
+      "Render film-animation and VFX shots",
+      "Work in a Maya/Houdini/Katana pipeline",
+      "Get reference-grade render quality"
+    ],
+    "covers": [
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "RenderMan (Pixar) en 2026 : le moteur de rendu de Pixar, gratuit en non-commercial. Prix commercial et alternatives (Arnold, V-Ray). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "arnold",
+      "v-ray",
+      "redshift"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "rendu-3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit en non-commercial ; licence commerciale 595$ + 250$/an de maintenance"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "renderman.pixar.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "perpetual",
+      "compare_plan_name": "Licence commerciale",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://renderman.pixar.com/store",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 595
+    },
+    "substitution_cluster_v2": "render-engine"
+  },
+  {
     "id": "v-ray",
     "slug": "v-ray",
     "name": "V-Ray",
     "categoryId": "design-tools",
-    "shortDescription": "Moteur de rendu photoréaliste pour images premium, architecture, produit et visualisation haut de gamme.",
-    "shortDescriptionEn": "Photorealistic render engine for premium images, architecture, product and high-end visualization.",
+    "shortDescription": "Moteur de rendu photoréaliste de référence (Chaos), roi de l'archviz et du produit.",
+    "shortDescriptionEn": "The reference photorealistic render engine (Chaos), king of archviz and product viz.",
     "pricing": {
       "free": "Essai gratuit",
-      "paid": "Abonnement Chaos"
+      "paid": "Solo 514,80$/an (~43$/mois) ou Premium 718,80$/an. Abonnement Chaos."
     },
-    "defaultMonthlyPrice": 55,
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Solo $514.80/year (~$43/month) or Premium $718.80/year. Chaos subscription."
+    },
+    "defaultMonthlyPrice": 43,
     "affiliateLink": "https://www.chaos.com/vray",
     "websiteUrl": "https://www.chaos.com/vray",
     "logo": "",
     "category": "design-tools",
-    "description": "V-Ray aide les architectes d'intérieur à couvrir un besoin précis : moteur de rendu photoréaliste pour images premium, architecture, produit et visualisation haut de gamme.",
-    "longDescription": "V-Ray aide les architectes d'intérieur à couvrir un besoin précis : moteur de rendu photoréaliste pour images premium, architecture, produit et visualisation haut de gamme. À garder si ce besoin revient chaque semaine dans les projets client. À éviter si l'outil reste ponctuel ou doublonne avec le socle existant.",
-    "longDescriptionEn": "V-Ray helps interior designers cover a specific need: photorealistic render engine for premium images, architecture, product and high-end visualization. Keep it if this need appears every week in client projects. Skip it if usage is occasional or duplicates the existing core stack.",
+    "description": "V-Ray, c'est la référence du rendu photoréaliste. Développé par Chaos, c'est le moteur le plus établi pour la visualisation architecturale, le rendu produit et les VFX, là où la qualité d'image prime. Sa force, c'est sa maturité : des matériaux et un éclairage extrêmement réalistes, une stabilité éprouvée, et des plugins pour à peu près tous les logiciels 3D (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). C'est un rendu hybride CPU/GPU.\n\nCôté prix, Chaos a unifié son offre en abonnement : V-Ray Solo à 514,80$/an (environ 43$/mois) pour un poste, et V-Ray Premium à 718,80$/an qui ajoute les autres produits Chaos et des noeuds de rendu. La licence perpétuelle a disparu.\n\nÀ qui ça s'adresse : aux archviz, designers produit et studios qui veulent le standard du photoréalisme. L'arbitrage se joue surtout face à Corona (du même éditeur Chaos, plus simple et apprécié en archviz), à Octane et Redshift (GPU, plus rapides), et à Cycles (gratuit dans Blender, désormais très bon). V-Ray reste la valeur sûre quand la qualité et la compatibilité multi-logiciels comptent.",
+    "longDescription": "V-Ray, c'est la référence du rendu photoréaliste. Développé par Chaos, c'est le moteur le plus établi pour la visualisation architecturale, le rendu produit et les VFX, là où la qualité d'image prime. Sa force, c'est sa maturité : des matériaux et un éclairage extrêmement réalistes, une stabilité éprouvée, et des plugins pour à peu près tous les logiciels 3D (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). C'est un rendu hybride CPU/GPU.\n\nCôté prix, Chaos a unifié son offre en abonnement : V-Ray Solo à 514,80$/an (environ 43$/mois) pour un poste, et V-Ray Premium à 718,80$/an qui ajoute les autres produits Chaos et des noeuds de rendu. La licence perpétuelle a disparu.\n\nÀ qui ça s'adresse : aux archviz, designers produit et studios qui veulent le standard du photoréalisme. L'arbitrage se joue surtout face à Corona (du même éditeur Chaos, plus simple et apprécié en archviz), à Octane et Redshift (GPU, plus rapides), et à Cycles (gratuit dans Blender, désormais très bon). V-Ray reste la valeur sûre quand la qualité et la compatibilité multi-logiciels comptent.",
+    "longDescriptionEn": "V-Ray is the reference for photorealistic rendering. Developed by Chaos, it's the most established engine for architectural visualization, product rendering and VFX, wherever image quality comes first. Its strength is maturity: extremely realistic materials and lighting, proven stability, and plugins for just about every 3D app (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). It's a hybrid CPU/GPU renderer.\n\nOn price, Chaos unified its offer into subscriptions: V-Ray Solo at $514.80/year (around $43/month) for one seat, and V-Ray Premium at $718.80/year, which adds the other Chaos products and render nodes. The perpetual license is gone.\n\nWho it's for: archviz artists, product designers and studios who want the photorealism standard. The trade-off is mainly against Corona (same maker, Chaos, simpler and loved in archviz), Octane and Redshift (GPU, faster), and Cycles (free in Blender, now very good). V-Ray remains the safe bet when quality and multi-app compatibility matter.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais de l'archviz, du rendu produit ou des VFX et tu veux le standard photoréaliste",
+        "Tu travailles dans plusieurs logiciels 3D (compatibilité large)"
+      ],
+      "avoidIf": [
+        "Tu débutes ou as un budget serré : Cycles (gratuit, Blender) est devenu très bon",
+        "Tu veux la simplicité en archviz : Corona (même éditeur) est plus accessible"
+      ],
+      "threshold": "La valeur sûre du photoréalisme multi-logiciels. Pour la simplicité archviz, vise Corona ; pour le gratuit, Cycles dans Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz, product rendering or VFX and want the photorealism standard",
+        "You work across several 3D apps (broad compatibility)"
+      ],
+      "avoidIf": [
+        "You're a beginner or on a tight budget: Cycles (free, Blender) has become very good",
+        "You want archviz simplicity: Corona (same maker) is more accessible"
+      ],
+      "threshold": "The safe bet for multi-app photorealism. For archviz simplicity, go Corona; for free, Cycles in Blender."
+    },
+    "pros": [
+      "Référence du rendu photoréaliste, matériaux et éclairage réalistes",
+      "Compatible avec presque tous les logiciels 3D",
+      "Rendu hybride CPU/GPU, très stable et éprouvé",
+      "Standard de l'archviz et du rendu produit"
+    ],
+    "prosEn": [
+      "The photorealism reference, realistic materials and lighting",
+      "Compatible with almost every 3D app",
+      "Hybrid CPU/GPU rendering, very stable and proven",
+      "Standard for archviz and product rendering"
+    ],
+    "cons": [
+      "Abonnement Solo 514,80$/an, plus de licence perpétuelle",
+      "Cycles (gratuit, Blender) couvre désormais beaucoup",
+      "Corona (même éditeur) est plus simple pour l'archviz",
+      "Octane/Redshift plus rapides sur GPU pur"
+    ],
+    "consEn": [
+      "Solo subscription $514.80/year, no perpetual license",
+      "Cycles (free, Blender) now covers a lot",
+      "Corona (same maker) is simpler for archviz",
+      "Octane/Redshift are faster on pure GPU"
+    ],
+    "useCases": [
+      "Produire des images d'architecture photoréalistes",
+      "Rendre des visuels produit haut de gamme",
+      "Rendre depuis 3ds Max, Maya, SketchUp ou Rhino",
+      "Faire des VFX et de la visualisation premium"
+    ],
+    "useCasesEn": [
+      "Produce photorealistic architecture images",
+      "Render high-end product visuals",
+      "Render from 3ds Max, Maya, SketchUp or Rhino",
+      "Do VFX and premium visualization"
+    ],
     "pricing_v5": {
+      "cautions": [
+        "Solo 514,80$/an (~43$/mois) ; Premium 718,80$/an ; plus de licence perpétuelle"
+      ],
       "source_domain": "chaos.com",
       "official_source_url": "https://www.chaos.com/vray",
-      "verified_on": "2026-05-10",
-      "verification_status": "manual_reference",
-      "compare_price_monthly_eur": 55
+      "verified_on": "2026-06-17",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "V-Ray Solo (annuel)",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 43
     },
     "verticals": [
-      "interior-design"
+      "interior-design",
+      "creative"
     ],
     "functional_needs": [
-      "design-tools"
+      "rendu-3d"
     ],
     "covers": [
-      "design-tools"
+      "rendu-3d"
     ],
     "relevantFor": [
       "architecte-bim",
@@ -65830,19 +66173,22 @@
     ],
     "tool_type": "metier",
     "substitutable": true,
-    "verdict": {
-      "keepIf": [
-        "Tu utilises V-Ray chaque semaine sur des projets client"
-      ],
-      "avoidIf": [
-        "Usage ponctuel ou déjà couvert par un autre outil"
-      ],
-      "threshold": "À garder seulement si le besoin est récurrent dans le workflow."
+    "freeAlternative": "blender",
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "personas": [
+      "designer"
+    ],
+    "seo": {
+      "metaDescription": "V-Ray (Chaos) en 2026 : le moteur de rendu photoréaliste de référence (archviz, produit). Prix réels et alternatives (Corona, Cycles). Le verdict ToolTrim."
     },
-    "pros": [],
-    "cons": [],
+    "prescription_quality": "oui",
     "articles": [],
-    "alternatives": []
+    "alternatives": [
+      "corona-renderer",
+      "octane-render",
+      "redshift"
+    ]
   },
   {
     "id": "programa",
@@ -69462,66 +69808,136 @@
     "slug": "keyshot",
     "name": "KeyShot",
     "categoryId": "creation",
-    "shortDescription": "Rendu produit rapide et premium pour design industriel et visualisation.",
-    "shortDescriptionEn": "Fast premium product rendering for industrial design and visualization.",
+    "shortDescription": "Rendu produit ultra-simple et rapide, standard du design industriel (packshots, CMF).",
+    "shortDescriptionEn": "Ultra-simple, fast product rendering, the industrial-design standard (packshots, CMF).",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 99€/mois environ"
+      "free": "Essai gratuit",
+      "paid": "Studio Professional 1 299$/an (~108$/mois). Perpétuel quasi disparu."
     },
-    "defaultMonthlyPrice": 99,
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Studio Professional $1,299/year (~$108/month). Perpetual mostly gone."
+    },
+    "defaultMonthlyPrice": 108,
     "affiliateLink": "",
     "websiteUrl": "https://www.keyshot.com",
     "logo": "",
     "category": "creation",
-    "longDescription": "Rendu produit rapide et premium pour design industriel et visualisation.",
+    "longDescription": "KeyShot, c'est le moteur de rendu produit qui a fait de la simplicité son obsession. Tu glisses-déposes des matériaux sur ton modèle, l'aperçu se met à jour en temps réel, et tu obtiens une image produit magnifique sans rien connaître au rendu. C'est devenu le standard du design industriel, du CMF (couleurs-matières-finitions) et des packshots marketing, justement parce qu'il s'adresse à des gens qui ne sont pas des experts 3D mais qui doivent livrer de belles images vite.\n\nIl importe la plupart des formats CAO (SolidWorks, Rhino, Fusion 360, Creo) et propose une énorme bibliothèque de matériaux réalistes. Côté prix, Luxion est passé à l'abonnement : KeyShot Studio Professional tourne autour de 1 299$/an (environ 108$/mois), et la licence perpétuelle historique a quasiment disparu, ce qui a fait grincer des dents les anciens utilisateurs.\n\nÀ qui ça s'adresse : aux designers produit et industriels qui veulent de la qualité sans la complexité d'un V-Ray. L'arbitrage se joue sur le prix et la facilité : Blender rend gratuitement (avec Cycles) mais demande un vrai apprentissage, et V-Ray ou Octane offrent plus de contrôle mais plus de réglages. KeyShot reste imbattable quand la priorité est d'aller vite et simple sur du rendu produit.",
+    "longDescriptionEn": "KeyShot is the product render engine that made simplicity its obsession. You drag and drop materials onto your model, the preview updates in real time, and you get a beautiful product image without knowing anything about rendering. It became the standard of industrial design, CMF (color-material-finish) and marketing packshots, precisely because it targets people who aren't 3D experts but must deliver great images fast.\n\nIt imports most CAD formats (SolidWorks, Rhino, Fusion 360, Creo) and offers a huge library of realistic materials. On price, Luxion moved to subscription: KeyShot Studio Professional runs around $1,299/year (about $108/month), and the historic perpetual license has mostly disappeared, which upset long-time users.\n\nWho it's for: product and industrial designers who want quality without the complexity of a V-Ray. The trade-off is price and ease: Blender renders for free (with Cycles) but takes real learning, and V-Ray or Octane offer more control but more settings. KeyShot stays unbeatable when the priority is fast and simple product rendering.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais du rendu produit ou du design industriel et tu veux la simplicité maximale",
+        "Tu importes des fichiers CAO (SolidWorks, Rhino, Fusion) et veux de belles images vite"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Ton budget est serré : Blender rend gratuitement (avec apprentissage)",
+        "Tu veux un contrôle fin du rendu : V-Ray ou Octane offrent plus"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Imbattable pour du rendu produit rapide et simple. Pour le gratuit, Blender ; pour plus de contrôle, V-Ray ou Octane."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do product rendering or industrial design and want maximum simplicity",
+        "You import CAD files (SolidWorks, Rhino, Fusion) and want great images fast"
+      ],
+      "avoidIf": [
+        "Your budget is tight: Blender renders for free (with a learning curve)",
+        "You want fine render control: V-Ray or Octane offer more"
+      ],
+      "threshold": "Unbeatable for fast, simple product rendering. For free, Blender; for more control, V-Ray or Octane."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Simplicité absolue : glisser-déposer de matériaux, aperçu temps réel",
+      "Standard du rendu produit et du design industriel",
+      "Importe la plupart des formats CAO",
+      "Énorme bibliothèque de matériaux réalistes"
+    ],
+    "prosEn": [
+      "Absolute simplicity: drag-and-drop materials, real-time preview",
+      "Standard for product rendering and industrial design",
+      "Imports most CAD formats",
+      "Huge library of realistic materials"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Cher : Studio Professional ~1 299$/an",
+      "Licence perpétuelle quasiment disparue",
+      "Moins de contrôle fin que V-Ray ou Octane",
+      "Blender rend gratuitement, au prix d'un apprentissage"
+    ],
+    "consEn": [
+      "Expensive: Studio Professional ~$1,299/year",
+      "Perpetual license mostly gone",
+      "Less fine control than V-Ray or Octane",
+      "Blender renders for free, at the cost of a learning curve"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Rendre un produit industriel pour un catalogue ou un packshot",
+      "Présenter des variantes de couleurs-matières-finitions (CMF)",
+      "Importer un fichier CAO et le rendre rapidement",
+      "Produire des images produit sans expertise 3D"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Render an industrial product for a catalog or packshot",
+      "Present color-material-finish (CMF) variants",
+      "Import a CAD file and render it quickly",
+      "Produce product images without 3D expertise"
+    ],
+    "covers": [
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "alternatives": [
+      "blender",
+      "v-ray",
+      "octane-render"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "seo": {
+      "metaDescription": "KeyShot en 2026 : le rendu produit le plus simple pour le design industriel. Prix réels et alternatives (Blender, V-Ray). Le verdict ToolTrim."
+    },
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "Studio Professional ~1 299$/an (~108$/mois) ; perpétuel quasi disparu"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "keyshot.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Studio Professional (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.keyshot.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 108
+    },
+    "substitution_cluster_v2": "render-engine"
   },
   {
     "id": "plasticity",
@@ -69660,66 +70076,138 @@
     "slug": "octane-render",
     "name": "Octane Render",
     "categoryId": "creation",
-    "shortDescription": "Moteur de rendu GPU photoréaliste pour 3D et motion design.",
-    "shortDescriptionEn": "Photorealistic GPU render engine for 3D and motion design.",
+    "shortDescription": "Moteur de rendu GPU photoréaliste (OTOY), réputé pour sa vitesse et son rendu spectral.",
+    "shortDescriptionEn": "Photorealistic GPU render engine (OTOY), known for speed and spectral rendering.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Essai gratuit",
+      "paid": "Studio+ ~16,65€/mois (annuel) à 23,95€/mois (OTOY)."
     },
-    "defaultMonthlyPrice": 20,
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Studio+ ~€16.65/month (annual) to €23.95/month (OTOY)."
+    },
+    "defaultMonthlyPrice": 17,
     "affiliateLink": "",
     "websiteUrl": "https://home.otoy.com/render/octane-render/",
     "logo": "",
     "category": "creation",
-    "longDescription": "Moteur de rendu GPU photoréaliste pour 3D et motion design.",
+    "longDescription": "Octane Render, c'est le moteur de rendu GPU d'OTOY, et sa réputation s'est bâtie sur deux choses : la vitesse et la beauté du rendu. C'est un moteur non biaisé (unbiased) qui exploite à fond la carte graphique et calcule la lumière de façon spectrale, ce qui donne des images souvent superbes, surtout en motion design. Beaucoup de motion designers l'ont adopté avec Cinema 4D pour son look et sa rapidité.\n\nIl s'intègre à de nombreux logiciels (Cinema 4D, Blender, Maya, Houdini, Unreal). Côté prix, OTOY est passé en abonnement : Octane Studio+ tourne autour de 16,65€/mois en annuel (jusqu'à 23,95€/mois), et les éditions 2026 incluent même des bundles d'assets (Greyscalegorilla, KitBash3D). C'est un tarif raisonnable pour un moteur de cette qualité.\n\nLe vrai arbitrage se joue face aux autres moteurs GPU. Redshift (Maxon) joue dans la même cour sur la vitesse et est inclus avec Cinema 4D. Cycles (gratuit dans Blender) est devenu très bon. V-Ray et Corona visent plutôt l'archviz. Octane se justifie surtout pour son rendu spectral et son look apprécié en motion design, à un prix d'abonnement contenu.",
+    "longDescriptionEn": "Octane Render is OTOY's GPU render engine, and its reputation was built on two things: speed and beauty. It's an unbiased engine that fully exploits the graphics card and computes light spectrally, producing often stunning images, especially in motion design. Many motion designers adopted it with Cinema 4D for its look and speed.\n\nIt integrates with many apps (Cinema 4D, Blender, Maya, Houdini, Unreal). On price, OTOY moved to subscription: Octane Studio+ runs around €16.65/month annually (up to €23.95/month), and the 2026 editions even include asset bundles (Greyscalegorilla, KitBash3D). That's a reasonable price for an engine of this quality.\n\nThe real trade-off is against other GPU engines. Redshift (Maxon) plays in the same league on speed and is included with Cinema 4D. Cycles (free in Blender) has become very good. V-Ray and Corona lean more toward archviz. Octane mainly earns its place for its spectral rendering and its look loved in motion design, at a contained subscription price.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais du motion design et tu veux un rendu GPU rapide et magnifique",
+        "Tu travailles dans Cinema 4D, Blender ou Houdini avec besoin de vitesse"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu as déjà Cinema 4D : Redshift est inclus et joue dans la même catégorie",
+        "Ton budget est nul : Cycles (gratuit, Blender) est devenu très bon"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Excellent moteur GPU pour le motion design. Si tu as déjà Redshift (avec C4D), le doublon est discutable ; pour le gratuit, Cycles suffit souvent."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do motion design and want fast, gorgeous GPU rendering",
+        "You work in Cinema 4D, Blender or Houdini and need speed"
+      ],
+      "avoidIf": [
+        "You already have Cinema 4D: Redshift is included and plays in the same category",
+        "Your budget is zero: Cycles (free, Blender) has become very good"
+      ],
+      "threshold": "An excellent GPU engine for motion design. If you already have Redshift (with C4D), the overlap is debatable; for free, Cycles is often enough."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Rendu GPU rapide et look spectral apprécié en motion design",
+      "Compatible Cinema 4D, Blender, Maya, Houdini, Unreal",
+      "Abonnement raisonnable (~16,65€/mois annuel)",
+      "Éditions 2026 avec bundles d'assets inclus"
+    ],
+    "prosEn": [
+      "Fast GPU rendering and spectral look loved in motion design",
+      "Works with Cinema 4D, Blender, Maya, Houdini, Unreal",
+      "Reasonable subscription (~€16.65/month annual)",
+      "2026 editions with included asset bundles"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Doublon avec Redshift si tu as déjà Cinema 4D",
+      "Cycles (gratuit, Blender) couvre beaucoup",
+      "Dépend fortement d'un bon GPU",
+      "Abonnement only"
+    ],
+    "consEn": [
+      "Overlaps with Redshift if you already have Cinema 4D",
+      "Cycles (free, Blender) covers a lot",
+      "Heavily dependent on a good GPU",
+      "Subscription only"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Rendre des scènes motion design avec un look spectral",
+      "Obtenir des rendus GPU rapides et photoréalistes",
+      "Rendre depuis Cinema 4D, Blender ou Houdini",
+      "Itérer vite avec le rendu interactif GPU"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Render motion design scenes with a spectral look",
+      "Get fast, photorealistic GPU renders",
+      "Render from Cinema 4D, Blender or Houdini",
+      "Iterate fast with interactive GPU rendering"
+    ],
+    "covers": [
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "alternatives": [
+      "redshift",
+      "v-ray",
+      "corona-renderer"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "motion-video",
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "seo": {
+      "metaDescription": "Octane Render (OTOY) en 2026 : moteur de rendu GPU rapide pour le motion design. Prix réels et alternatives (Redshift, Cycles). Le verdict ToolTrim."
+    },
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "Octane Studio+ ~16,65€/mois (annuel) à 23,95€/mois ; abonnement OTOY"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "otoy.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Octane Studio+ (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://home.otoy.com/render/octane-render/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17
+    },
+    "substitution_cluster_v2": "render-engine"
   },
   {
     "id": "redshift",
@@ -70073,66 +70561,138 @@
     "slug": "corona-renderer",
     "name": "Corona Renderer",
     "categoryId": "creation",
-    "shortDescription": "Moteur de rendu photoréaliste très utilisé en archviz.",
-    "shortDescriptionEn": "Photorealistic render engine widely used in archviz.",
+    "shortDescription": "Moteur de rendu photoréaliste de Chaos, chouchou de l'archviz pour sa simplicité.",
+    "shortDescriptionEn": "Chaos's photorealistic render engine, the archviz favorite for its simplicity.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 50€/mois environ"
+      "free": "Essai gratuit",
+      "paid": "Solo 394,80$/an (~33$/mois). Abonnement Chaos."
     },
-    "defaultMonthlyPrice": 50,
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Solo $394.80/year (~$33/month). Chaos subscription."
+    },
+    "defaultMonthlyPrice": 33,
     "affiliateLink": "",
     "websiteUrl": "https://www.chaos.com/corona",
     "logo": "",
     "category": "creation",
-    "longDescription": "Moteur de rendu photoréaliste très utilisé en archviz.",
+    "longDescription": "Corona Renderer, c'est le moteur de rendu photoréaliste édité par Chaos (le même que V-Ray), et son argument tient en un mot : la simplicité. Là où V-Ray est puissant mais riche en réglages, Corona vise des résultats quasi photoréalistes avec un minimum de paramètres. C'est ce qui en a fait le chouchou des archviz : on obtient vite une belle image sans se noyer dans les options.\n\nC'est un moteur principalement CPU, avec un rendu interactif très agréable. Il s'intègre surtout à 3ds Max et Cinema 4D. Côté prix, c'est l'abonnement Chaos : Corona Solo à 394,80$/an (environ 33$/mois), soit un peu moins cher que V-Ray Solo. La licence perpétuelle a disparu.\n\nLe point amusant, c'est que V-Ray et Corona viennent du même éditeur : Corona, c'est la facilité ; V-Ray, c'est la puissance et la compatibilité multi-logiciels. Pour de l'archviz pur où tu veux aller vite, Corona est souvent le meilleur choix. Si tu as besoin de polyvalence multi-logiciels ou de VFX, V-Ray reprend l'avantage. Et pour un budget nul, Cycles dans Blender est devenu une vraie option.",
+    "longDescriptionEn": "Corona Renderer is the photorealistic render engine made by Chaos (the same company as V-Ray), and its pitch fits in one word: simplicity. Where V-Ray is powerful but settings-heavy, Corona aims for near-photoreal results with minimal parameters. That's what made it the archviz favorite: you get a beautiful image fast without drowning in options.\n\nIt's mainly a CPU engine, with a very pleasant interactive render. It integrates mostly with 3ds Max and Cinema 4D. On price, it's the Chaos subscription: Corona Solo at $394.80/year (around $33/month), a bit cheaper than V-Ray Solo. The perpetual license is gone.\n\nThe funny part is that V-Ray and Corona come from the same maker: Corona is ease, V-Ray is power and multi-app compatibility. For pure archviz where you want to move fast, Corona is often the better pick. If you need multi-app versatility or VFX, V-Ray regains the edge. And for a zero budget, Cycles in Blender has become a real option.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais de l'archviz et tu veux des images photoréalistes vite, sans réglages complexes",
+        "Tu travailles dans 3ds Max ou Cinema 4D"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu as besoin de polyvalence multi-logiciels ou de VFX : V-Ray est plus adapté",
+        "Ton budget est nul : Cycles (gratuit, Blender) fait beaucoup"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Le meilleur choix pour l'archviz rapide et simple. Pour la polyvalence, vise V-Ray (même éditeur) ; pour le gratuit, Cycles dans Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz and want photoreal images fast, without complex settings",
+        "You work in 3ds Max or Cinema 4D"
+      ],
+      "avoidIf": [
+        "You need multi-app versatility or VFX: V-Ray fits better",
+        "Your budget is zero: Cycles (free, Blender) does a lot"
+      ],
+      "threshold": "The best pick for fast, simple archviz. For versatility, go V-Ray (same maker); for free, Cycles in Blender."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Simplicité : photoréalisme rapide avec peu de réglages",
+      "Chouchou de l'archviz, rendu interactif agréable",
+      "Un peu moins cher que V-Ray Solo (~33$/mois)",
+      "Même éditeur que V-Ray (Chaos), qualité éprouvée"
+    ],
+    "prosEn": [
+      "Simplicity: fast photorealism with few settings",
+      "Archviz favorite, pleasant interactive rendering",
+      "A bit cheaper than V-Ray Solo (~$33/month)",
+      "Same maker as V-Ray (Chaos), proven quality"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Surtout 3ds Max et Cinema 4D (moins multi-logiciels que V-Ray)",
+      "Principalement CPU (moins de rendu GPU pur)",
+      "Abonnement, plus de licence perpétuelle",
+      "Cycles (gratuit, Blender) couvre de plus en plus"
+    ],
+    "consEn": [
+      "Mostly 3ds Max and Cinema 4D (less multi-app than V-Ray)",
+      "Mainly CPU (less pure GPU rendering)",
+      "Subscription, no perpetual license",
+      "Cycles (free, Blender) covers more and more"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Produire des images d'archviz photoréalistes rapidement",
+      "Rendre des intérieurs et extérieurs d'architecture",
+      "Rendre depuis 3ds Max ou Cinema 4D",
+      "Itérer vite grâce au rendu interactif"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Quickly produce photoreal archviz images",
+      "Render architecture interiors and exteriors",
+      "Render from 3ds Max or Cinema 4D",
+      "Iterate fast with interactive rendering"
+    ],
+    "covers": [
+      "rendu-3d"
+    ],
+    "relevantFor": [
+      "architecte-bim",
+      "designer"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Corona Renderer (Chaos) en 2026 : le moteur de rendu archviz le plus simple. Prix réels et comparaison avec V-Ray. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "v-ray",
+      "octane-render",
+      "redshift"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "creative",
+      "interior-design"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "Corona Solo 394,80$/an (~33$/mois) ; plus de licence perpétuelle"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "chaos.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Corona Solo (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.chaos.com/corona/buy-online",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 33
+    },
+    "substitution_cluster_v2": "render-engine"
   },
   {
     "id": "quixel-megascans",
