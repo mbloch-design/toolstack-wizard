@@ -64922,13 +64922,36 @@
       "official_source_url": "https://www.sketchup.com/products/layout",
       "verified_on": "2026-05-10",
       "verification_status": "manual_reference",
+      "billing_model": "bundle",
+      "compare_plan_kind": "bundle",
+      "compare_plan_name": "Inclus avec SketchUp Pro",
+      "billing_options": [
+        {
+          "value": "included",
+          "label_fr": "Inclus avec SketchUp Pro",
+          "label_en": "Included with SketchUp Pro",
+          "price_monthly_eur": 0,
+          "needs_verification": false
+        },
+        {
+          "value": "unknown",
+          "label_fr": "Je ne sais pas",
+          "label_en": "I don’t know",
+          "price_monthly_eur": 0,
+          "needs_verification": true
+        }
+      ],
       "compare_price_monthly_eur": 0
     },
     "verticals": [
       "interior-design"
     ],
     "functional_needs": [
-      "plugin-sketchup"
+      "plugin-sketchup",
+      "plans-2d",
+      "plans-techniques",
+      "document-delivery",
+      "presentation-client"
     ],
     "covers": [
       "plugin-sketchup"
@@ -64937,8 +64960,10 @@
       "architecte-bim",
       "designer"
     ],
-    "tool_type": "metier",
-    "substitutable": true,
+    "tool_type": "satellite",
+    "host_app": "sketchup-pro",
+    "bundle_parent": "sketchup-pro",
+    "substitutable": false,
     "verdict": {
       "keepIf": [
         "Tu utilises LayOut chaque semaine sur des projets client"
@@ -70270,70 +70295,550 @@
     "substitution_cluster_v2": null
   },
   {
-    "id": "substance-3d-painter",
-    "slug": "substance-3d-painter",
-    "name": "Substance 3D Painter",
-    "categoryId": "creation",
-    "shortDescription": "Texturing 3D professionnel pour assets, produits et jeux vidéo.",
-    "shortDescriptionEn": "Professional 3D texturing for assets, products, and games.",
-    "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
-    },
-    "defaultMonthlyPrice": 20,
-    "affiliateLink": "",
-    "websiteUrl": "https://www.adobe.com/products/substance3d-painter.html",
-    "logo": "",
+    "id": "substance-3d-designer",
+    "slug": "substance-3d-designer",
+    "name": "Substance 3D Designer",
     "category": "creation",
-    "longDescription": "Texturing 3D professionnel pour assets, produits et jeux vidéo.",
+    "shortDescription": "Création de matériaux 3D procéduraux par noeuds (Adobe), pour textures réutilisables.",
+    "shortDescriptionEn": "Node-based procedural 3D material authoring (Adobe), for reusable textures.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Plan Texturing 24,99$/mois (249,88$/an, avec Painter) ou Collection 59,99$/mois."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Texturing plan $24.99/month ($249.88/year, with Painter) or Collection $59.99/month."
+    },
+    "defaultMonthlyPrice": 21,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/products/substance3d/apps/designer.html",
+    "logo": "",
+    "longDescription": "Substance 3D Designer, c'est l'outil de création de matériaux procéduraux par noeuds. Là où Painter peint des textures sur un modèle, Designer les fabrique de zéro : tu construis un matériau (brique, métal usé, tissu, sol) dans un graphe de noeuds, entièrement procédural. Le gros avantage, c'est la réutilisabilité et la flexibilité : ton matériau est paramétrique, modifiable à l'infini et indépendant de la résolution. C'est le moteur qui alimente tout l'écosystème de matériaux Substance.\n\nIl est plus technique et plus exigeant que Painter, mais c'est l'outil des material artists et environment artists qui veulent créer leurs propres textures plutôt que d'en consommer. Côté prix, c'est le même que Painter : inclus dans le plan Texturing à 24,99$/mois (249,88$/an), ou dans la Collection à 59,99$/mois.\n\nÀ qui ça s'adresse : à ceux qui créent des matériaux, pas seulement qui les appliquent. Pour la plupart des freelances, Painter suffit (on consomme des matériaux existants). Designer devient pertinent quand tu veux des matériaux sur mesure, réutilisables et paramétriques. Blender propose un système de noeuds gratuit, moins spécialisé mais utilisable pour qui veut éviter l'abonnement Adobe.",
+    "longDescriptionEn": "Substance 3D Designer is the node-based procedural material authoring tool. Where Painter paints textures onto a model, Designer builds them from scratch: you construct a material (brick, worn metal, fabric, ground) in a node graph, fully procedural. The big advantage is reusability and flexibility: your material is parametric, infinitely editable and resolution-independent. It's the engine behind the entire Substance material ecosystem.\n\nIt's more technical and demanding than Painter, but it's the tool of material and environment artists who want to create their own textures rather than consume them. On price, it's the same as Painter: included in the Texturing plan at $24.99/month ($249.88/year), or in the Collection at $59.99/month.\n\nWho it's for: those who create materials, not just apply them. For most freelancers, Painter is enough (you consume existing materials). Designer becomes relevant when you want custom, reusable, parametric materials. Blender offers a free node system, less specialized but usable for those avoiding the Adobe subscription.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu crées tes propres matériaux procéduraux, réutilisables et paramétriques",
+        "Tu es material artist ou environment artist"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu te contentes d'appliquer des matériaux existants : Painter suffit",
+        "Tu fuis l'abonnement Adobe : le système de noeuds de Blender est gratuit"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Pertinent pour créer des matériaux sur mesure. Pour juste les appliquer, Substance 3D Painter suffit ; pour le gratuit, les noeuds de Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You create your own procedural, reusable, parametric materials",
+        "You're a material or environment artist"
+      ],
+      "avoidIf": [
+        "You just apply existing materials: Painter is enough",
+        "You avoid the Adobe subscription: Blender's node system is free"
+      ],
+      "threshold": "Worth it to create custom materials. To just apply them, Substance 3D Painter is enough; for free, Blender's nodes."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Création de matériaux 100% procéduraux par noeuds",
+      "Matériaux paramétriques, réutilisables et indépendants de la résolution",
+      "Le moteur de l'écosystème de matériaux Substance",
+      "Inclus avec Painter dans le plan Texturing"
+    ],
+    "prosEn": [
+      "Fully procedural node-based material creation",
+      "Parametric, reusable, resolution-independent materials",
+      "The engine behind the Substance material ecosystem",
+      "Bundled with Painter in the Texturing plan"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Plus technique et exigeant que Painter",
+      "Surdimensionné si tu ne fais qu'appliquer des matériaux",
+      "Abonnement Adobe",
+      "Les noeuds de Blender couvrent une partie gratuitement"
+    ],
+    "consEn": [
+      "More technical and demanding than Painter",
+      "Overkill if you only apply materials",
+      "Adobe subscription",
+      "Blender's nodes cover part of it for free"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Créer un matériau procédural (brique, métal, tissu)",
+      "Construire une texture paramétrique réutilisable",
+      "Générer des variations de matériau à l'infini",
+      "Alimenter Substance Painter avec ses propres matériaux"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Create a procedural material (brick, metal, fabric)",
+      "Build a reusable parametric texture",
+      "Generate infinite material variations",
+      "Feed Substance Painter with your own materials"
+    ],
+    "covers": [
+      "texturing-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Substance 3D Designer (Adobe) en 2026 : création de matériaux procéduraux par noeuds. Prix réels et alternatives (Painter, Blender). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "substance-3d-painter",
+      "blender"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "texturing-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null
+    "pricing_v5": {
+      "cautions": [
+        "Plan Texturing 24,99$/mois (avec Painter) ou Collection 59,99$/mois"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Plan Texturing (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.adobe.com/products/substance3d/apps/designer.html",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 21
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "gaea",
+    "slug": "gaea",
+    "name": "Gaea",
+    "category": "creation",
+    "shortDescription": "Générateur de terrains 3D par noeuds (QuadSpinner), standard du paysage et de l'environnement.",
+    "shortDescriptionEn": "Node-based 3D terrain generator (QuadSpinner), a landscape and environment standard.",
+    "pricing": {
+      "free": "Community gratuit (non-commercial)",
+      "paid": "Indie 99$, Pro 199$, Enterprise 299$ (licence à vie)."
+    },
+    "pricingEn": {
+      "free": "Community free (non-commercial)",
+      "paid": "Indie $99, Pro $199, Enterprise $299 (lifetime license)."
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "https://quadspinner.com",
+    "websiteUrl": "https://quadspinner.com",
+    "logo": "",
+    "longDescription": "Gaea, c'est l'outil de référence pour créer des terrains 3D : montagnes, vallées, déserts, falaises. Édité par QuadSpinner, il fonctionne par noeuds et sa grande force, c'est sa simulation d'érosion, parmi les plus réalistes du marché. Tu génères un relief, tu appliques de l'érosion hydraulique et thermique, et tu obtiens des paysages crédibles que tu exportes ensuite (heightmaps ou meshes) vers Unreal, Blender, Cinema 4D ou Houdini.\n\nC'est devenu un standard pour les environment artists du jeu, du film et de l'archviz. Son modèle économique est très sympathique : une édition Community gratuite (non commerciale) pour apprendre, et des licences à vie (achat unique) abordables : Indie à 99$, Pro à 199$, Enterprise à 299$. Pas d'abonnement, ce qui est rare et apprécié.\n\nÀ qui ça s'adresse : à ceux qui créent des paysages et des environnements 3D. Blender peut sculpter du terrain à la main, et Houdini gère le procédural, mais Gaea offre le meilleur compromis entre qualité d'érosion, simplicité et prix. Pour du terrain de qualité sans se ruiner ni s'abonner, c'est difficile à battre.",
+    "longDescriptionEn": "Gaea is the reference tool for creating 3D terrains: mountains, valleys, deserts, cliffs. Made by QuadSpinner, it's node-based, and its great strength is its erosion simulation, among the most realistic on the market. You generate a relief, apply hydraulic and thermal erosion, and get believable landscapes that you then export (heightmaps or meshes) to Unreal, Blender, Cinema 4D or Houdini.\n\nIt's become a standard for environment artists in games, film and archviz. Its business model is very friendly: a free Community edition (non-commercial) to learn, and affordable lifetime licenses (one-time purchase): Indie at $99, Pro at $199, Enterprise at $299. No subscription, which is rare and appreciated.\n\nWho it's for: those who create 3D landscapes and environments. Blender can sculpt terrain by hand, and Houdini handles procedural, but Gaea offers the best compromise between erosion quality, simplicity and price. For quality terrain without breaking the bank or subscribing, it's hard to beat.",
+    "verdict": {
+      "keepIf": [
+        "Tu crées des terrains et paysages 3D pour le jeu, le film ou l'archviz",
+        "Tu veux la meilleure érosion et une licence à vie (pas d'abonnement)"
+      ],
+      "avoidIf": [
+        "Tu ne fais pas d'environnement ou de terrain",
+        "Un terrain sculpté à la main dans Blender suffit à ton besoin ponctuel"
+      ],
+      "threshold": "Le meilleur rapport qualité-prix pour le terrain 3D, avec licence à vie. Community gratuit pour apprendre."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You create 3D terrains and landscapes for games, film or archviz",
+        "You want the best erosion and a lifetime license (no subscription)"
+      ],
+      "avoidIf": [
+        "You don't do environments or terrain",
+        "Hand-sculpted terrain in Blender is enough for your occasional need"
+      ],
+      "threshold": "The best value for 3D terrain, with a lifetime license. Free Community to learn."
+    },
+    "pros": [
+      "Simulation d'érosion parmi les plus réalistes",
+      "Création de terrains par noeuds, puissante et accessible",
+      "Licence à vie abordable (Indie 99$), pas d'abonnement",
+      "Export vers Unreal, Blender, Cinema 4D, Houdini"
+    ],
+    "prosEn": [
+      "Among the most realistic erosion simulation",
+      "Powerful yet accessible node-based terrain creation",
+      "Affordable lifetime license (Indie $99), no subscription",
+      "Exports to Unreal, Blender, Cinema 4D, Houdini"
+    ],
+    "cons": [
+      "Très spécialisé (terrain et paysage uniquement)",
+      "Community limitée au non-commercial",
+      "Nécessite un outil 3D tiers pour finaliser la scène",
+      "Courbe d'apprentissage sur le système de noeuds"
+    ],
+    "consEn": [
+      "Very specialized (terrain and landscape only)",
+      "Community limited to non-commercial",
+      "Needs a third-party 3D tool to finish the scene",
+      "Learning curve on the node system"
+    ],
+    "useCases": [
+      "Créer une montagne ou un paysage 3D réaliste",
+      "Appliquer de l'érosion hydraulique et thermique",
+      "Exporter un heightmap vers Unreal ou Blender",
+      "Générer un environnement de jeu ou de film"
+    ],
+    "useCasesEn": [
+      "Create a realistic 3D mountain or landscape",
+      "Apply hydraulic and thermal erosion",
+      "Export a heightmap to Unreal or Blender",
+      "Generate a game or film environment"
+    ],
+    "covers": [
+      "terrain-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Gaea (QuadSpinner) en 2026 : générateur de terrains 3D par noeuds avec la meilleure érosion. Prix (licence à vie) et alternatives. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "blender",
+      "houdini"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative",
+      "motion-video"
+    ],
+    "functional_needs": [
+      "3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Community gratuit (non-commercial) ; Indie 99$, Pro 199$, Enterprise 299$ (licence à vie)"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "quadspinner.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "perpetual",
+      "compare_plan_name": "Indie (licence à vie)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://quadspinner.com/Compare",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 99
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "embergen",
+    "slug": "embergen",
+    "name": "EmberGen",
+    "category": "creation",
+    "shortDescription": "Simulation de fluides temps réel (feu, fumée, explosions) ultra-rapide (JangaFX).",
+    "shortDescriptionEn": "Ultra-fast real-time fluid simulation (fire, smoke, explosions) by JangaFX.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Indie 19,99$/mois ; achat direct 299,99$."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Indie $19.99/month; direct purchase $299.99."
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://jangafx.com/software/embergen",
+    "websiteUrl": "https://jangafx.com/software/embergen",
+    "logo": "",
+    "longDescription": "EmberGen, c'est une petite révolution dans la simulation de fluides. Édité par JangaFX, il calcule du feu, de la fumée, des explosions et des nuages en temps réel sur le GPU. Là où une simulation traditionnelle (dans Houdini par exemple) peut prendre des heures à calculer, EmberGen te donne un résultat en quelques secondes, ajustable en direct. Pour un artiste VFX ou motion, c'est un changement de rythme radical.\n\nTu exportes ensuite tes simulations en VDB ou en flipbooks vers Unreal, Blender, ou un moteur de jeu. Côté prix, JangaFX a une offre indé sympathique : 19,99$/mois pour les indépendants (sous 1M$ de CA), avec une licence acquise au bout de 18 mois, ou un achat direct à 299,99$.\n\nÀ qui ça s'adresse : aux artistes VFX, motion designers et créateurs de jeu qui ont besoin d'effets de feu et de fumée rapidement. Houdini reste plus puissant et flexible pour la simulation lourde, mais il est lent et cher ; Blender simule gratuitement mais lentement. EmberGen gagne sur la vitesse, la simplicité et le prix pour des effets temps réel de qualité. Si tu fais régulièrement du feu ou des explosions, c'est un accélérateur redoutable.",
+    "longDescriptionEn": "EmberGen is a small revolution in fluid simulation. Made by JangaFX, it computes fire, smoke, explosions and clouds in real time on the GPU. Where a traditional simulation (in Houdini, for example) can take hours to compute, EmberGen gives you a result in seconds, adjustable live. For a VFX or motion artist, it's a radical change of pace.\n\nYou then export your simulations as VDB or flipbooks to Unreal, Blender or a game engine. On price, JangaFX has a friendly indie offer: $19.99/month for freelancers (under $1M revenue), with a license earned after 18 months, or a direct purchase at $299.99.\n\nWho it's for: VFX artists, motion designers and game creators who need fire and smoke effects fast. Houdini is more powerful and flexible for heavy simulation, but it's slow and expensive; Blender simulates for free but slowly. EmberGen wins on speed, simplicity and price for quality real-time effects. If you regularly do fire or explosions, it's a formidable accelerator.",
+    "verdict": {
+      "keepIf": [
+        "Tu fais régulièrement du feu, de la fumée ou des explosions",
+        "Tu veux des simulations en temps réel plutôt qu'en heures de calcul"
+      ],
+      "avoidIf": [
+        "Tu fais de la simulation lourde et flexible : Houdini est plus puissant",
+        "Tu n'as qu'un besoin ponctuel : la simulation de Blender (gratuite) peut suffire"
+      ],
+      "threshold": "Imbattable en vitesse pour des effets de feu/fumée temps réel. Pour de la simulation lourde, Houdini ; pour le gratuit, Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly do fire, smoke or explosions",
+        "You want real-time simulations instead of hours of computing"
+      ],
+      "avoidIf": [
+        "You do heavy, flexible simulation: Houdini is more powerful",
+        "You only have an occasional need: Blender's free simulation may be enough"
+      ],
+      "threshold": "Unbeatable speed for real-time fire/smoke effects. For heavy simulation, Houdini; for free, Blender."
+    },
+    "pros": [
+      "Simulation de feu/fumée/explosions en temps réel (secondes vs heures)",
+      "Ajustement en direct, très rapide à itérer",
+      "Export VDB et flipbooks vers Unreal, Blender, moteurs de jeu",
+      "Offre indé abordable (19,99$/mois ou 299,99$ direct)"
+    ],
+    "prosEn": [
+      "Real-time fire/smoke/explosion simulation (seconds vs hours)",
+      "Live adjustment, very fast to iterate",
+      "VDB and flipbook export to Unreal, Blender, game engines",
+      "Affordable indie offer ($19.99/month or $299.99 direct)"
+    ],
+    "cons": [
+      "Moins puissant et flexible que Houdini en simulation lourde",
+      "Spécialisé dans les fluides (feu, fumée, explosions)",
+      "Demande un bon GPU",
+      "Pas un logiciel 3D complet (complémentaire)"
+    ],
+    "consEn": [
+      "Less powerful and flexible than Houdini for heavy simulation",
+      "Specialized in fluids (fire, smoke, explosions)",
+      "Requires a good GPU",
+      "Not a full 3D app (complementary)"
+    ],
+    "useCases": [
+      "Générer une explosion ou une boule de feu rapidement",
+      "Créer de la fumée et des nuages en temps réel",
+      "Exporter une simulation en VDB vers Unreal ou Blender",
+      "Itérer en direct sur un effet de feu pour un plan"
+    ],
+    "useCasesEn": [
+      "Generate an explosion or fireball quickly",
+      "Create smoke and clouds in real time",
+      "Export a simulation as VDB to Unreal or Blender",
+      "Iterate live on a fire effect for a shot"
+    ],
+    "covers": [
+      "effets-visuels",
+      "simulation"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "EmberGen (JangaFX) en 2026 : simulation de feu, fumée et explosions en temps réel. Prix réels et alternatives (Houdini, Blender). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "houdini",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "creative"
+    ],
+    "functional_needs": [
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Indie 19,99$/mois (sous 1M$, licence après 18 mois) ou achat direct 299,99$"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "jangafx.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Indie (mensuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://jangafx.com/software/embergen",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 20
+    },
+    "substitution_cluster_v2": "3d-software"
+  },
+  {
+    "id": "substance-3d-painter",
+    "slug": "substance-3d-painter",
+    "name": "Substance 3D Painter",
+    "categoryId": "creation",
+    "shortDescription": "Le standard du texturing 3D PBR (Adobe), pour le jeu vidéo, le produit et les VFX.",
+    "shortDescriptionEn": "The 3D PBR texturing standard (Adobe), for games, product and VFX.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Plan Texturing 24,99$/mois (249,88$/an) ou Collection 59,99$/mois."
+    },
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Texturing plan $24.99/month ($249.88/year) or Collection $59.99/month."
+    },
+    "defaultMonthlyPrice": 21,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/products/substance3d-painter.html",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Substance 3D Painter, c'est le standard du texturing 3D. Tu peins directement sur ton modèle 3D des matériaux physiquement réalistes (PBR), avec des smart materials et des masques intelligents qui s'adaptent à la géométrie (usure dans les creux, poussière sur les arêtes). L'aperçu PBR en temps réel te montre le résultat final immédiatement. C'est devenu incontournable dans le jeu vidéo, et largement utilisé pour le produit et les VFX.\n\nIl fait partie de la suite Adobe Substance 3D. Côté prix : le plan Texturing à 24,99$/mois (ou 249,88$/an, soit ~21$/mois) inclut Painter, Sampler et Designer, tandis que la Collection complète est à 59,99$/mois. Il existe aussi une version achetée définitivement sur Steam pour ceux qui fuient l'abonnement Adobe.\n\nÀ qui ça s'adresse : aux artistes 3D, texture artists et designers produit. L'arbitrage se joue surtout sur le prix : Blender intègre un mode texture paint gratuit mais bien plus basique, et Mari vise le très haut de gamme cinéma (plus cher et pointu). Pour l'écrasante majorité des besoins de texturing (jeu, produit, freelance), Substance 3D Painter est le choix par défaut.",
+    "longDescriptionEn": "Substance 3D Painter is the 3D texturing standard. You paint physically realistic (PBR) materials directly onto your 3D model, with smart materials and smart masks that adapt to the geometry (wear in crevices, dust on edges). The real-time PBR viewport shows the final result instantly. It's become essential in games, and widely used for product and VFX.\n\nIt's part of the Adobe Substance 3D suite. On price: the Texturing plan at $24.99/month (or $249.88/year, ~$21/month) includes Painter, Sampler and Designer, while the full Collection is $59.99/month. There's also a one-time purchase version on Steam for those avoiding the Adobe subscription.\n\nWho it's for: 3D artists, texture artists and product designers. The trade-off is mainly price: Blender includes a free texture paint mode but far more basic, and Mari targets high-end film (pricier and more specialized). For the vast majority of texturing needs (games, product, freelance), Substance 3D Painter is the default choice.",
+    "verdict": {
+      "keepIf": [
+        "Tu textures des assets 3D pour le jeu, le produit ou les VFX",
+        "Tu veux le standard du texturing PBR avec smart materials et masques"
+      ],
+      "avoidIf": [
+        "Tes besoins de texturing sont basiques : le mode texture paint de Blender (gratuit) peut suffire",
+        "Tu fuis l'abonnement Adobe : regarde la version Steam (achat unique)"
+      ],
+      "threshold": "Le choix par défaut du texturing 3D. Pour du basique, Blender ; pour le très haut de gamme cinéma, Mari."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You texture 3D assets for games, product or VFX",
+        "You want the PBR texturing standard with smart materials and masks"
+      ],
+      "avoidIf": [
+        "Your texturing needs are basic: Blender's free texture paint may be enough",
+        "You avoid the Adobe subscription: look at the Steam (one-time) version"
+      ],
+      "threshold": "The default choice for 3D texturing. For basic needs, Blender; for high-end film, Mari."
+    },
+    "pros": [
+      "Standard du texturing 3D PBR",
+      "Smart materials et masques qui s'adaptent à la géométrie",
+      "Aperçu PBR en temps réel",
+      "Inclus avec Designer et Sampler dans le plan Texturing"
+    ],
+    "prosEn": [
+      "The 3D PBR texturing standard",
+      "Smart materials and masks that adapt to geometry",
+      "Real-time PBR viewport",
+      "Bundled with Designer and Sampler in the Texturing plan"
+    ],
+    "cons": [
+      "Abonnement Adobe (sauf version Steam en achat unique)",
+      "Blender texture paint est gratuit (mais basique)",
+      "Mari va plus loin sur les assets héros de cinéma",
+      "Écosystème Adobe"
+    ],
+    "consEn": [
+      "Adobe subscription (except the one-time Steam version)",
+      "Blender texture paint is free (but basic)",
+      "Mari goes further for hero film assets",
+      "Adobe ecosystem"
+    ],
+    "useCases": [
+      "Texturer un asset de jeu vidéo en PBR",
+      "Appliquer des smart materials avec usure et salissures",
+      "Texturer un produit pour le rendu",
+      "Exporter des textures vers un moteur de jeu ou de rendu"
+    ],
+    "useCasesEn": [
+      "Texture a game asset in PBR",
+      "Apply smart materials with wear and grime",
+      "Texture a product for rendering",
+      "Export textures to a game or render engine"
+    ],
+    "covers": [
+      "texturing-3d",
+      "3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Substance 3D Painter (Adobe) en 2026 : le standard du texturing 3D PBR (jeu, produit, VFX). Prix réels et alternatives (Blender, Mari). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "substance-3d-designer",
+      "mari",
+      "blender"
+    ],
+    "articles": [],
+    "freeAlternative": "blender",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [
+      "texturing-3d"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "pricing_v5": {
+      "cautions": [
+        "Plan Texturing 24,99$/mois (249,88$/an) ; Collection 59,99$/mois ; version Steam en achat unique"
+      ],
+      "verified_on": "2026-06-17",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Plan Texturing (annuel)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.adobe.com/products/substance3d/apps/painter.html",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 21
+    },
+    "substitution_cluster_v2": "3d-software"
   },
   {
     "id": "octane-render",
@@ -70963,47 +71468,100 @@
     "slug": "quixel-megascans",
     "name": "Quixel Megascans",
     "categoryId": "creation",
-    "shortDescription": "Bibliothèque d’assets et surfaces 3D scannés pour rendu et temps réel.",
-    "shortDescriptionEn": "Library of scanned 3D assets and surfaces for rendering and real time.",
+    "shortDescription": "Bibliothèque d'assets 3D photoscannés (surfaces, props, végétation), via Fab (Epic).",
+    "shortDescriptionEn": "Library of photoscanned 3D assets (surfaces, props, plants), via Fab (Epic).",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Nombreux assets gratuits sur Fab (Epic)",
+      "paid": "Certains assets payants à l'unité sur Fab."
+    },
+    "pricingEn": {
+      "free": "Many free assets on Fab (Epic)",
+      "paid": "Some assets paid individually on Fab."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://quixel.com/megascans",
     "logo": "",
     "category": "creation",
-    "longDescription": "Bibliothèque d’assets et surfaces 3D scannés pour rendu et temps réel.",
+    "longDescription": "Quixel Megascans, c'est la plus grande bibliothèque d'assets 3D photoréalistes au monde, construite à partir de scans du monde réel : surfaces (roche, bois, sol), props 3D, et une collection de plantes 3D (Megaplants) d'un réalisme bluffant. Pour habiller une scène d'archviz, un environnement de jeu ou un décor de film, c'est un gain de temps colossal : tu poses des assets photoscannés au lieu de tout modéliser et texturer à la main.\n\nEpic Games a racheté Quixel et a migré Megascans vers Fab, sa marketplace unifiée. Historiquement, la bibliothèque était gratuite pour les utilisateurs d'Unreal, puis gratuite pour tous. Depuis 2025, sur Fab, une grande partie reste gratuite (notamment les Megaplants sous licence Fab Standard) tandis que certains assets sont devenus payants à l'unité. On y accède via des plugins vers Unreal, Blender, Maya, Cinema 4D.\n\nÀ qui ça s'adresse : aux artistes 3D, archviz et environment artists. Ce n'est pas un logiciel mais une source d'assets, donc complémentaire de ton outil 3D. Vu la qualité et la part encore gratuite, c'est quasiment incontournable pour qui peuple des scènes. Des alternatives gratuites existent (Poly Haven), mais l'ampleur et la qualité de Megascans restent une référence.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu peuples des scènes 3D (archviz, jeu, film) et veux des assets photoréalistes",
+        "Tu travailles dans Unreal, Blender, Maya ou Cinema 4D"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu modélises tout toi-même et n'utilises pas d'assets prêts à l'emploi",
+        "Tu veux 100% gratuit : vérifie le statut de l'asset sur Fab (certains sont payants)"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Quasi incontournable pour habiller des scènes 3D, avec une large part encore gratuite sur Fab. Alternative gratuite : Poly Haven."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You populate 3D scenes (archviz, games, film) and want photoreal assets",
+        "You work in Unreal, Blender, Maya or Cinema 4D"
+      ],
+      "avoidIf": [
+        "You model everything yourself and don't use ready-made assets",
+        "You want 100% free: check the asset's status on Fab (some are paid)"
+      ],
+      "threshold": "Near-essential for dressing 3D scenes, with a large free share still on Fab. Free alternative: Poly Haven."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "La plus grande bibliothèque d'assets photoscannés",
+      "Qualité photoréaliste (surfaces, props, Megaplants)",
+      "Grande part encore gratuite sur Fab",
+      "Plugins vers Unreal, Blender, Maya, Cinema 4D"
+    ],
+    "prosEn": [
+      "The largest library of photoscanned assets",
+      "Photorealistic quality (surfaces, props, Megaplants)",
+      "Large free share still on Fab",
+      "Plugins to Unreal, Blender, Maya, Cinema 4D"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Migré vers Fab : certains assets désormais payants à l'unité",
+      "Source d'assets, pas un logiciel (complémentaire)",
+      "Statut gratuit/payant à vérifier par asset",
+      "Écosystème lié à Epic/Fab"
+    ],
+    "consEn": [
+      "Migrated to Fab: some assets now paid individually",
+      "An asset source, not software (complementary)",
+      "Free/paid status to check per asset",
+      "Tied to the Epic/Fab ecosystem"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Habiller un environnement de jeu ou de film",
+      "Ajouter de la végétation photoréaliste à une scène (Megaplants)",
+      "Texturer un sol ou un mur avec une surface scannée",
+      "Importer des assets dans Unreal ou Blender via plugin"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Dress a game or film environment",
+      "Add photorealistic vegetation to a scene (Megaplants)",
+      "Texture a floor or wall with a scanned surface",
+      "Import assets into Unreal or Blender via plugin"
+    ],
+    "covers": [
+      "assets-3d",
+      "texturing-3d"
+    ],
+    "relevantFor": [
+      "designer",
+      "motion-video"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "seo": {
+      "metaDescription": "Quixel Megascans en 2026 : la plus grande bibliothèque d'assets 3D photoscannés, via Fab (Epic). Gratuit/payant et alternatives. Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "unreal-engine",
+      "blender"
+    ],
     "articles": [],
     "freeAlternative": null,
     "tool_type": "satellite",
@@ -71011,14 +71569,17 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "creative",
+      "motion-video"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "assets-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -71495,62 +72056,117 @@
     "slug": "marmoset-toolbag",
     "name": "Marmoset Toolbag",
     "categoryId": "creation",
-    "shortDescription": "Rendu temps réel, baking et présentation d’assets 3D.",
-    "shortDescriptionEn": "Real-time rendering, baking, and 3D asset presentation.",
+    "shortDescription": "Outil de baking, rendu temps réel et présentation d'assets 3D (jeu, portfolio).",
+    "shortDescriptionEn": "Baking, real-time rendering and 3D asset presentation tool (games, portfolio).",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 16€/mois environ"
+      "free": "Essai gratuit",
+      "paid": "Abonnement 14,99$/mois, ou achat unique 299$."
     },
-    "defaultMonthlyPrice": 16,
+    "pricingEn": {
+      "free": "Free trial",
+      "paid": "Subscription $14.99/month, or one-time $299."
+    },
+    "defaultMonthlyPrice": 15,
     "affiliateLink": "",
     "websiteUrl": "https://marmoset.co/toolbag/",
     "logo": "",
     "category": "creation",
-    "longDescription": "Rendu temps réel, baking et présentation d’assets 3D.",
+    "longDescription": "Marmoset Toolbag, c'est le couteau suisse des artistes 3D pour trois choses : le baking (cuisson des maps normal, AO, courbure), le rendu temps réel avec un éclairage magnifique, et surtout la présentation d'assets. C'est devenu un quasi-standard du game art : tu y peaufines l'éclairage de ton modèle et tu sors des turntables et des images de portfolio superbes, ou tu publies un Marmoset Viewer interactif (très utilisé sur ArtStation).\n\nSa qualité de baking est réputée, et son rendu est à la fois beau et rapide, sans la complexité d'un moteur de production. Côté prix, c'est très abordable et flexible : 14,99$/mois en abonnement, ou un achat unique à 299$ pour ceux qui préfèrent posséder leur licence.\n\nÀ qui ça s'adresse : aux artistes 3D, character/prop artists et à quiconque doit présenter ses assets sous leur meilleur jour. Ce n'est pas un outil de texturing (ça, c'est Substance Painter) ni un moteur de production : c'est l'étape finale de mise en valeur. Blender peut faire du baking et du rendu gratuitement, mais avec plus de manipulations ; Marmoset gagne par sa simplicité et la qualité immédiate de sa présentation.",
+    "longDescriptionEn": "Marmoset Toolbag is the 3D artist's Swiss army knife for three things: baking (normal, AO, curvature maps), real-time rendering with gorgeous lighting, and above all asset presentation. It's become a near-standard of game art: you fine-tune your model's lighting and output beautiful turntables and portfolio images, or publish an interactive Marmoset Viewer (widely used on ArtStation).\n\nIts baking quality is well regarded, and its rendering is both beautiful and fast, without the complexity of a production engine. On price, it's very affordable and flexible: $14.99/month subscription, or a one-time $299 for those who prefer to own their license.\n\nWho it's for: 3D artists, character/prop artists and anyone who needs to present assets at their best. It's not a texturing tool (that's Substance Painter) or a production renderer: it's the final showcase step. Blender can bake and render for free, but with more steps; Marmoset wins on simplicity and the immediate quality of its presentation.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable récurrent du métier."
+        "Tu fais du baking et tu veux présenter tes assets 3D sous leur meilleur jour",
+        "Tu publies des portfolios game art (turntables, Marmoset Viewer)"
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ou de test ponctuel."
+        "Tu cherches un outil de texturing : c'est Substance Painter qu'il te faut",
+        "Tu acceptes plus de manipulations : Blender bake et rend gratuitement"
       ],
-      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+      "threshold": "Excellent et abordable pour le baking et la présentation d'assets. Pour le texturing, vise Substance Painter ; pour le gratuit, Blender."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do baking and want to present 3D assets at their best",
+        "You publish game-art portfolios (turntables, Marmoset Viewer)"
+      ],
+      "avoidIf": [
+        "You're looking for a texturing tool: that's Substance Painter",
+        "You're fine with more steps: Blender bakes and renders for free"
+      ],
+      "threshold": "Excellent and affordable for baking and asset presentation. For texturing, go Substance Painter; for free, Blender."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Aide à professionnaliser la production ou la livraison."
+      "Baking de maps de qualité réputée",
+      "Rendu temps réel beau et rapide",
+      "Présentation d'assets et Marmoset Viewer (portfolio)",
+      "Abordable : 14,99$/mois ou 299$ en achat unique"
+    ],
+    "prosEn": [
+      "Well-regarded quality map baking",
+      "Beautiful, fast real-time rendering",
+      "Asset presentation and Marmoset Viewer (portfolio)",
+      "Affordable: $14.99/month or $299 one-time"
     ],
     "cons": [
-      "Peut devenir dormant si le besoin n’est pas récurrent."
+      "Pas un outil de texturing (c'est Substance Painter)",
+      "Pas un moteur de production (rôle de présentation)",
+      "Blender bake et rend gratuitement (avec plus de manipulations)",
+      "Niche : surtout utile au game art et aux portfolios"
+    ],
+    "consEn": [
+      "Not a texturing tool (that's Substance Painter)",
+      "Not a production renderer (presentation role)",
+      "Blender bakes and renders for free (with more steps)",
+      "Niche: mostly useful for game art and portfolios"
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Cuire des maps (normal, AO) pour un asset de jeu",
+      "Présenter un modèle 3D avec un bel éclairage",
+      "Créer un turntable pour un portfolio",
+      "Publier un Marmoset Viewer interactif sur ArtStation"
     ],
-    "covers": [],
-    "relevantFor": [],
+    "useCasesEn": [
+      "Bake maps (normal, AO) for a game asset",
+      "Present a 3D model with beautiful lighting",
+      "Create a turntable for a portfolio",
+      "Publish an interactive Marmoset Viewer on ArtStation"
+    ],
+    "covers": [
+      "rendu-3d",
+      "baking-3d"
+    ],
+    "relevantFor": [
+      "designer"
+    ],
     "personas": [
       "designer"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "seo": {
+      "metaDescription": "Marmoset Toolbag en 2026 : baking, rendu temps réel et présentation d'assets 3D pour le game art. Prix réels et alternatives (Blender). Le verdict ToolTrim."
+    },
+    "alternatives": [
+      "substance-3d-painter",
+      "blender"
+    ],
     "articles": [],
-    "freeAlternative": null,
-    "tool_type": "satellite",
+    "freeAlternative": "blender",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "rendu-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
