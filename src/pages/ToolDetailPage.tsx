@@ -20,6 +20,7 @@ import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
+import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
@@ -571,6 +572,11 @@ const ToolDetailPage = () => {
                 {/* 9 · Intégrations / Plugins */}
                 <div className="td-section">
                   <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                </div>
+
+                {/* 10 · L'angle IA : augmenter ou remplacer ? */}
+                <div className="td-section">
+                  <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
                 </div>
 
                 {/* SEO/LLM summary — visually quiet, useful for crawlers */}
