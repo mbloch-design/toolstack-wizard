@@ -338,8 +338,9 @@
       "SOFIA"
     ],
     "alternatives": [
-      "invision",
-      "balsamiq"
+      "webflow",
+      "wix",
+      "squarespace"
     ],
     "verdict": {
       "keepIf": [
@@ -10238,7 +10239,11 @@
       "paid": "6$/mois (Essentials)"
     },
     "longDescription": "Buffer, c'est planification de posts sur tous les réseaux. Simple, propre, efficace. À partir de 5.2€/mois. Pensé pour les community managers et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : planification multi-plateformes simple sans reporting client. À éviter si : later ou Hootsuite déjà en place — doublon. Free tier suffisant pour moins de 3 canaux.",
-    "alternatives": [],
+    "alternatives": [
+      "hootsuite",
+      "later",
+      "sprout-social"
+    ],
     "slug": "buffer",
     "shortDescriptionEn": "Schedule posts across all social networks. Simple, clean, effective.",
     "description": "Buffer, c'est planification de posts sur tous les réseaux. Simple, propre, efficace. À partir de 5.2€/mois. Pensé pour les community managers et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : planification multi-plateformes simple sans reporting client. À éviter si : later ou Hootsuite déjà en place — doublon. Free tier suffisant pour moins de 3 canaux.",
@@ -20436,7 +20441,11 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "plausible",
+      "fathom-analytics",
+      "mixpanel"
+    ],
     "verdict": null,
     "verdictEn": null,
     "pros": [],
@@ -22559,7 +22568,11 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "buffer",
+      "later",
+      "sprout-social"
+    ],
     "seo": {
       "metaDescription": "Hootsuite : Plateforme de gestion des réseaux sociaux. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -32347,7 +32360,9 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "figjam"
+    ],
     "verdict": null,
     "verdictEn": null,
     "pros": [],
@@ -40583,7 +40598,10 @@
       ],
       "threshold": "Gratuit, à garder si utile"
     },
-    "alternatives": [],
+    "alternatives": [
+      "xero",
+      "freshbooks"
+    ],
     "seo": {
       "metaDescription": "QuickBooks : Logiciel de comptabilité pour petites entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -43551,7 +43569,10 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "hubspot",
+      "pipedrive"
+    ],
     "seo": {
       "metaDescription": "Salesforce : Logiciel de gestion de la relation client et solutions cloud. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -46666,7 +46687,9 @@
       "designer",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "microsoft-teams"
+    ],
     "seo": {
       "metaDescription": "Slack : La messagerie pro pour échanger avec clients et partenaires. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -48343,7 +48366,9 @@
       "consultant",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "paypal"
+    ],
     "longDescription": "Stripe, c'est l'infrastructure de paiement d'internet. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les fondateurs SaaS et les e-commerçants.\n\nAPI ultra-flexible pour créer n'importe quelle expérience de paiement. liens de paiement sans code (Payment Links) pour facturer rapidement, gestion automatique des abonnements et facturation récurrente. 40+ méthodes de paiement (CB, SEPA, Apple Pay, Google Pay...). Concrètement : freelances : envoyer des liens de paiement pour facturer vos prestations. Ou encore : formateurs : vendre des formations en ligne avec paiements récurrents. Gain de temps estimé : 2h/mois.\n\nÀ garder si : vente de produits numériques ou besoin de liens de paiement simples. À éviter si : virement bancaire suffit ou clients uniquement locaux/chèques. Limite principale : frais de 1,5% + 0,25€ par transaction (plus élevés que certains concurrents). Dès le premier euro que vous voulez encaisser en ligne sans friction.",
     "pros": [
       "API ultra-flexible pour créer n'importe quelle expérience de paiement",
@@ -51539,7 +51564,9 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "jotform"
+    ],
     "seo": {
       "metaDescription": "Typeform : Outil en ligne de création de formulaires et enquêtes interactifs. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -55754,7 +55781,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "google-meet",
+      "microsoft-teams"
+    ],
     "verdict": null,
     "verdictEn": null,
     "pros": [],
@@ -92759,7 +92789,10 @@
     "personas": [
       "marc"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "amplitude",
+      "google-analytics"
+    ],
     "verdict": {
       "keepIf": [
         "Le besoin revient dans plusieurs missions."
