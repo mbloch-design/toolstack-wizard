@@ -228,9 +228,15 @@ const ToolDetailPage = () => {
   /* ── Derived values ── */
   const category   = categories.find((c: any) => c.id === tool.categoryId);
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
-  const alternatives = tools
-    .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id)
-    .slice(0, 6);
+  const sameCategoryAlts = tools
+    .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id);
+  const curatedAlts = ((tool as any).alternatives || [])
+    .map((slug: string) => tools.find((tt: any) => tt.id === slug || tt.slug === slug))
+    .filter(Boolean);
+  const alternatives = [
+    ...curatedAlts,
+    ...sameCategoryAlts.filter((tt: any) => !curatedAlts.some((a: any) => a.id === tt.id)),
+  ].slice(0, 6);
   const relatedPosts = posts
     .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
     .slice(0, 3);

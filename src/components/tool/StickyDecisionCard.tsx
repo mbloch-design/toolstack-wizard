@@ -259,7 +259,7 @@ export default function StickyDecisionCard({
               </div>
             )}
             <span style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)" }}>
-              {altName}
+              {altTool?.name || altName}
             </span>
           </div>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", lineHeight: 1.5, marginBottom: 10 }}>
