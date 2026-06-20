@@ -230,13 +230,30 @@ const ToolDetailPage = () => {
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const sameCategoryAlts = tools
     .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id);
+  const toolCovers = new Set((tool as any).covers || []);
+  const coverOverlapAlts = toolCovers.size
+    ? sameCategoryAlts
+        .filter((tt: any) => (tt.covers || []).some((c: string) => toolCovers.has(c)))
+        .sort((a: any, b: any) =>
+          (b.covers || []).filter((c: string) => toolCovers.has(c)).length -
+          (a.covers || []).filter((c: string) => toolCovers.has(c)).length
+        )
+    : [];
   const curatedAlts = ((tool as any).alternatives || [])
     .map((slug: string) => tools.find((tt: any) => tt.id === slug || tt.slug === slug))
     .filter(Boolean);
-  const alternatives = [
-    ...curatedAlts,
-    ...sameCategoryAlts.filter((tt: any) => !curatedAlts.some((a: any) => a.id === tt.id)),
-  ].slice(0, 6);
+  const seenAltIds = new Set(curatedAlts.map((a: any) => a.id));
+  const alternatives = [curatedAlts, coverOverlapAlts, sameCategoryAlts].reduce(
+    (acc: any[], list: any[]) => {
+      for (const tt of list) {
+        if (acc.length >= 6 || seenAltIds.has(tt.id)) continue;
+        seenAltIds.add(tt.id);
+        acc.push(tt);
+      }
+      return acc;
+    },
+    [] as any[]
+  );
   const relatedPosts = posts
     .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
     .slice(0, 3);
