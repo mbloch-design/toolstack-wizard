@@ -6101,7 +6101,10 @@
       "designer",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "smartsheet",
+      "notion"
+    ],
     "seo": {
       "metaDescription": "Airtable : La base de données flexible qui remplace 5 outils (CRM, projets, contenus). Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -7305,7 +7308,11 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "clickup",
+      "monday",
+      "trello"
+    ],
     "seo": {
       "metaDescription": "Asana : Plateforme de gestion du travail pour les équipes. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -12695,7 +12702,11 @@
       "tech",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "asana",
+      "monday",
+      "trello"
+    ],
     "seo": {
       "metaDescription": "ClickUp : La plateforme tout-en-un pour gérer projets, tâches et collaboration. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -14649,7 +14660,9 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "windsurf"
+    ],
     "verdictEn": null,
     "pros": [],
     "prosEn": null,
@@ -14987,7 +15000,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "adobe-premiere-pro",
+      "final-cut-pro"
+    ],
     "verdictEn": null,
     "pros": [],
     "prosEn": null,
@@ -20233,7 +20249,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "cursor",
+      "windsurf"
+    ],
     "verdictEn": null,
     "pros": [],
     "prosEn": null,
@@ -23013,7 +23032,10 @@
       "team",
       "business"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "salesforce",
+      "pipedrive"
+    ],
     "verdict": {
       "keepIf": [
         "L’outil est déjà une source de vérité dans l’organisation",
@@ -30630,7 +30652,10 @@
       "consultant",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "zapier",
+      "n8n"
+    ],
     "longDescription": "Make, c'est l'automatisation visuelle sans limite. À partir de 7.79€/mois. Pensé pour les consultants B2B et les développeurs solo.\n\nÉditeur visuel puissant avec conditions, boucles, gestion d'erreurs. 1000 opérations gratuites par mois (vs 100 chez Zapier), transformations de données avancées (JSON, XML, formules). 1000+ intégrations d'applications. Concrètement : lead management : automatiser l'ajout de leads depuis des formulaires vers votre CRM. Ou encore : content distribution : publier automatiquement vos articles sur LinkedIn, Twitter, Medium. Gain de temps estimé : 8h/mois.\n\nÀ garder si : vous voulez connecter vos outils entre eux ou zapier est devenu trop cher. À éviter si : vous avez peur des schémas logiques ou vous n'avez que des besoins très simples (Zapier suffit). Limite principale : courbe d'apprentissage plus raide que Zapier. Dès que vous faites la même tâche manuelle de copier-coller plus de 5 fois par semaine.",
     "pros": [
       "Éditeur visuel puissant avec conditions, boucles, gestion d'erreurs",
@@ -32961,7 +32986,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "zapier",
+      "make"
+    ],
     "verdict": null,
     "verdictEn": null,
     "pros": [],
@@ -33592,7 +33620,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "vercel",
+      "render"
+    ],
     "verdict": null,
     "verdictEn": null,
     "pros": [],
@@ -37728,7 +37759,10 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "hubspot",
+      "salesforce"
+    ],
     "seo": {
       "metaDescription": "Pipedrive : CRM simple d’utilisation pour les ventes. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -42107,7 +42141,10 @@
       "paid": "10$/mois/user"
     },
     "longDescription": "Retool, c'est construire des outils internes rapidement : dashboards, admin panels, CRUD. À partir de 8.66€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : outils internes : backoffice, admin panel, workflows. À éviter si : application client-facing — Bubble ou Webflow plus adaptés. Rentable dès 2 outils internes en production.",
-    "alternatives": [],
+    "alternatives": [
+      "appsmith",
+      "budibase"
+    ],
     "slug": "retool",
     "shortDescriptionEn": "Build internal tools fast: dashboards, admin panels, CRUD.",
     "description": "Retool, c'est construire des outils internes rapidement : dashboards, admin panels, CRUD. À partir de 8.66€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : outils internes : backoffice, admin panel, workflows. À éviter si : application client-facing — Bubble ou Webflow plus adaptés. Rentable dès 2 outils internes en production.",
@@ -47399,7 +47436,9 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "glide"
+    ],
     "seo": {
       "metaDescription": "Softr : Plateforme pour créer des outils internes et portails sans code. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -52855,7 +52894,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "netlify",
+      "render"
+    ],
     "verdictEn": null,
     "pros": [],
     "prosEn": null,
@@ -53287,7 +53329,10 @@
       "tech",
       "designer"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "wix",
+      "framer"
+    ],
     "seo": {
       "metaDescription": "Webflow : Créer des sites web pros sans coder, avec contrôle total du design. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -54983,7 +55028,10 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "make",
+      "n8n"
+    ],
     "seo": {
       "metaDescription": "Zapier : Outil d’automatisation pour connecter des applications et workflows. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -55393,7 +55441,9 @@
       ],
       "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
     },
-    "alternatives": [],
+    "alternatives": [
+      "intercom"
+    ],
     "seo": {
       "metaDescription": "Zendesk : Plateforme de service client et engagement client. Découvrez si cet outil vaut le coup pour votre activité freelance.",
       "aiAngle": {
@@ -65951,7 +66001,12 @@
           "chatgpt"
         ]
       }
-    }
+    },
+    "alternatives": [
+      "mailchimp",
+      "brevo",
+      "activecampaign"
+    ]
   },
   {
     "id": "layout-sketchup",
@@ -86509,7 +86564,9 @@
     "personas": [
       "THEO"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "insomnia"
+    ],
     "verdict": {
       "keepIf": [
         "Usage récurrent",
