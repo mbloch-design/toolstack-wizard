@@ -625,8 +625,13 @@ function staticPrerenderPlugin(): Plugin {
               const frUrl    = `${BASE}/fr/tool/${slug}/${sub.path}`;
               const enUrl    = `${BASE}/en/tool/${slug}/${EN_SUB_PATH[sub.path] ?? sub.path}`;
               const mainUrl  = `${BASE}/${lang}/tool/${slug}`;
-              const title    = sub.buildTitle(name, isFr, tool);
-              const desc     = sub.buildDesc(name, price, isFr, tool);
+              // tool.seo.<prefix>Title/MetaDescription override any subpage's
+              // generic template (prefix: "alt" for /alternatives, else sub.path).
+              const overridePrefix = sub.path === "alternatives" ? "alt" : sub.path;
+              const titleOverride = isFr ? tool.seo?.[`${overridePrefix}TitleFr`] : tool.seo?.[`${overridePrefix}TitleEn`];
+              const descOverride  = isFr ? tool.seo?.[`${overridePrefix}MetaDescriptionFr`] : tool.seo?.[`${overridePrefix}MetaDescriptionEn`];
+              const title    = titleOverride || sub.buildTitle(name, isFr, tool);
+              const desc     = descOverride  || sub.buildDesc(name, price, isFr, tool);
               const bodyText = sub.buildBody(name, price, isFr, tool);
 
               // BreadcrumbList for sub-page
