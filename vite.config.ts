@@ -400,9 +400,10 @@ function staticPrerenderPlugin(): Plugin {
             const priceTag = isFr
               ? (price && price > 0 ? `prix dès ${price}€` : (tool.pricing?.free ? "gratuit" : "prix"))
               : (price && price > 0 ? `pricing from €${price}` : (tool.pricing?.free ? "free" : "pricing"));
-            const title = isFr
+            const presentationOverride = isFr ? tool.seo?.presentationTitleFr : tool.seo?.presentationTitleEn;
+            const title = presentationOverride || (isFr
               ? `${name} : ${priceTag}, avis et alternatives 2026 | ToolTrim`
-              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`;
+              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`);
             const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
@@ -518,9 +519,13 @@ function staticPrerenderPlugin(): Plugin {
         const TOOL_SUB_PAGES: SubPageDef[] = [
           {
             path: "prix",
-            buildTitle: (name, isFr) => isFr
-              ? `${name} : prix et tarifs 2026 | ToolTrim`
-              : `${name} pricing & plans 2026 | ToolTrim`,
+            buildTitle: (name, isFr, tool) => {
+              const override = isFr ? tool?.seo?.prixTitleFr : tool?.seo?.prixTitleEn;
+              if (override) return override;
+              return isFr
+                ? `${name} : prix et tarifs 2026 | ToolTrim`
+                : `${name} pricing & plans 2026 | ToolTrim`;
+            },
             buildDesc: (name, price, isFr) => isFr
               ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
               : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),

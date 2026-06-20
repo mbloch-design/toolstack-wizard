@@ -154,16 +154,19 @@ const ToolDetailPage = () => {
     };
 
     const meta = SEO[subPage] ?? SEO.presentation;
-    // tool.seo.altTitle/altMetaDescription override the generic /alternatives
-    // template when there's a sharper, situational hook (e.g. "X merged into Y").
-    const altOverrideTitle = subPage === "alternatives"
-      ? (lang === "fr" ? (tool as any).seo?.altTitleFr : (tool as any).seo?.altTitleEn)
-      : null;
-    const altOverrideDesc = subPage === "alternatives"
-      ? (lang === "fr" ? (tool as any).seo?.altMetaDescriptionFr : (tool as any).seo?.altMetaDescriptionEn)
-      : null;
-    const seoTitle = altOverrideTitle || (lang === "fr" ? meta.titleFr : meta.titleEn);
-    const seoDesc  = altOverrideDesc  || (lang === "fr" ? meta.descFr  : meta.descEn);
+    // tool.seo.<prefix>Title/MetaDescription override the generic per-subpage
+    // template when there's a sharper, situational hook (e.g. "X merged into Y",
+    // a concrete plan detail, or a missing-localization angle).
+    const overridePrefix = subPage === "alternatives" ? "alt" : subPage;
+    const seoOverrides = (tool as any).seo || {};
+    const overrideTitle = lang === "fr"
+      ? seoOverrides[`${overridePrefix}TitleFr`]
+      : seoOverrides[`${overridePrefix}TitleEn`];
+    const overrideDesc = lang === "fr"
+      ? seoOverrides[`${overridePrefix}MetaDescriptionFr`]
+      : seoOverrides[`${overridePrefix}MetaDescriptionEn`];
+    const seoTitle = overrideTitle || (lang === "fr" ? meta.titleFr : meta.titleEn);
+    const seoDesc  = overrideDesc  || (lang === "fr" ? meta.descFr  : meta.descEn);
     const canonicalSuffix =
       subPage === "prix" && lang === "en" ? "/pricing" :
       subPage === "avis" && lang === "en" ? "/reviews" :
