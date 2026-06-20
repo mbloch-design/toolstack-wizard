@@ -11,7 +11,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
-import { getToolDomain, getDomainFromUrl } from "@/lib/toolUtils";
+import { getToolDomain, getDomainFromUrl, formatPriceLabel } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
@@ -264,7 +264,7 @@ const ToolDetailPage = () => {
     : isFreemium
     ? "Freemium"
     : displayPrice > 0
-    ? `${displayPrice}€/${t("mois", "mo")}`
+    ? formatPriceLabel(tool, displayPrice, t)
     : t("Sur devis", "On request");
 
   const toolType = (tool as any).tool_type as string;
@@ -376,7 +376,7 @@ const ToolDetailPage = () => {
               const pricePart = isFree
                 ? t("Gratuit.", "Free.")
                 : displayPrice > 0
-                ? `${t("À partir de", "From")} ${displayPrice}€/${t("mois", "mo")}.`
+                ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t)}.`
                 : null;
               const verdict = (tool as any).verdict;
               const threshold = lang === "en" && (tool as any).verdictEn?.threshold

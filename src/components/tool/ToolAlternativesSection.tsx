@@ -3,6 +3,7 @@ import type { Tool, Category } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
 import { Check, ArrowRightLeft } from "lucide-react";
 import { stripLeadingEmoji } from "@/lib/text";
+import { formatPriceLabel } from "@/lib/toolUtils";
 
 interface Props {
   tool: Tool;
@@ -75,7 +76,7 @@ export default function ToolAlternativesSection({ tool, category, alternatives, 
               <div className="flex-1 min-w-0">
                 <p className="font-semibold group-hover:text-primary truncate">{alt.name}</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  {alt.defaultMonthlyPrice > 0 ? `${Math.round(alt.defaultMonthlyPrice)}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
+                  {formatPriceLabel(alt, alt.defaultMonthlyPrice, t)}
                   {alt.defaultMonthlyPrice < tool.defaultMonthlyPrice && alt.defaultMonthlyPrice > 0 && (
                     <span className="ml-1 text-keep">
                       (−{Math.round(tool.defaultMonthlyPrice - alt.defaultMonthlyPrice)}€)

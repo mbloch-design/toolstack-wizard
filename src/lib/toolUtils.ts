@@ -3,6 +3,22 @@
  * Previously duplicated in ToolDetailPage, CategoryPage, GuidesPage, HomePage, HeroSection.
  */
 
+/** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
+export function isOneTimePrice(tool: { pricing?: { paid?: string } }): boolean {
+  return /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
+}
+
+/** Format a displayable price label ("995€" or "995€/mois"), free-aware and one-time-aware. */
+export function formatPriceLabel(
+  tool: { pricing?: { paid?: string } },
+  price: number,
+  t: (fr: string, en: string) => string
+): string {
+  if (price === 0) return t("Gratuit", "Free");
+  const rounded = Math.round(price);
+  return isOneTimePrice(tool) ? `${rounded}€` : `${rounded}€/${t("mois", "mo")}`;
+}
+
 /** Extract bare hostname from a tool's websiteUrl or affiliateLink */
 export function getToolDomain(tool: {
   websiteUrl?: string;

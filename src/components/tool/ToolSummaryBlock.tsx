@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
 import { stripLeadingEmoji } from "@/lib/text";
+import { formatPriceLabel } from "@/lib/toolUtils";
 
 interface Props {
   tool: Tool;
@@ -63,9 +64,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
         <div className="td-synth-row">
           <dt className="td-synth-dt">{t("Prix à partir de", "Price from")}</dt>
           <dd className="td-synth-dd">
-            {displayPrice === 0
-              ? t("Gratuit", "Free")
-              : `${displayPrice}€/${t("mois", "mo")}`}
+            {formatPriceLabel(tool, displayPrice, t)}
             {tool.pricing_v5?.compare_plan_name && ` (${tool.pricing_v5.compare_plan_name})`}.
           </dd>
         </div>

@@ -4,6 +4,7 @@ import { ExternalLink, Tag, DollarSign, Users, AlertTriangle, ArrowRightLeft, Ca
 import ToolLogo from "@/components/ToolLogo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { stripLeadingEmoji } from "@/lib/text";
+import { formatPriceLabel } from "@/lib/toolUtils";
 
 interface Props {
   tool: Tool;
@@ -62,7 +63,7 @@ export default function ToolFactsCard({ tool, category, alternatives, displayPri
       <dl className="divide-y divide-border/40 text-sm">
         <Fact icon={<DollarSign className="h-4 w-4 text-muted-foreground" />} label={t("Prix de départ", "Starting price")}>
           <span className="font-semibold text-foreground">
-            {displayPrice === 0 ? t("Gratuit", "Free") : `${Math.round(displayPrice)}€/${t("mois", "mo")}`}
+            {formatPriceLabel(tool, displayPrice, t)}
           </span>
         </Fact>
 

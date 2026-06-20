@@ -3,6 +3,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { asText } from "@/lib/text";
+import { formatPriceLabel } from "@/lib/toolUtils";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -81,7 +82,7 @@ export default function StickyDecisionCard({
     : isFreemium
     ? "Freemium"
     : displayPrice > 0
-    ? `${displayPrice}€/${t("mois", "mo")}`
+    ? formatPriceLabel(tool, displayPrice, t)
     : t("Sur devis", "On request");
 
   const modelLabel = isFree
