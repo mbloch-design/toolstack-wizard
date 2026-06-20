@@ -253,7 +253,9 @@ const ToolDetailPage = () => {
   const curatedAlts = ((tool as any).alternatives || [])
     .map((slug: string) => tools.find((tt: any) => tt.id === slug || tt.slug === slug))
     .filter(Boolean);
-  const seenAltIds = new Set(curatedAlts.map((a: any) => a.id));
+  // curatedAlts always wins its slots unconditionally; seenAltIds is only used to
+  // dedupe the lower-priority tiers (cover-overlap, then same-category) against it.
+  const seenAltIds = new Set<string>();
   const alternatives = [curatedAlts, coverOverlapAlts, sameCategoryAlts].reduce(
     (acc: any[], list: any[]) => {
       for (const tt of list) {
