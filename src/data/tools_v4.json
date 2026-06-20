@@ -121121,7 +121121,9 @@
     ],
     "alternatives": [],
     "seo": {
-      "metaDescription": "GitLens en 2026 : ce qui est gratuit, ce que coûte GitLens Pro et ses alternatives. Le guide ToolTrim de l'extension Git pour VS Code."
+      "metaDescription": "GitLens en 2026 : ce qui est gratuit, ce que coûte GitLens Pro et ses alternatives. Le guide ToolTrim de l'extension Git pour VS Code.",
+      "prixTitleFr": "GitLens : Gratuit pour Git, Pro à 10$/mois — Prix 2026 | ToolTrim",
+      "prixTitleEn": "GitLens: Free for Git, Pro at $10/mo — Pricing 2026 | ToolTrim"
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
