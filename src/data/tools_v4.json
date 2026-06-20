@@ -15598,7 +15598,11 @@
       "paid": "12$/mois (Creator)"
     },
     "longDescription": "Descript, c'est édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA. À partir de 10.39€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : podcast, interviews, cours en ligne — gain de temps massif. À éviter si : montage vidéo long format — Premiere ou DaVinci plus adaptés. Rentable dès 2 épisodes podcast ou vidéos par mois.",
-    "alternatives": [],
+    "alternatives": [
+      "riverside",
+      "captions",
+      "adobe-premiere-pro"
+    ],
     "slug": "descript",
     "shortDescriptionEn": "Text-based audio/video editing. Transcription, silence removal, AI overdub.",
     "description": "Descript, c'est édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA. À partir de 10.39€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : podcast, interviews, cours en ligne — gain de temps massif. À éviter si : montage vidéo long format — Premiere ou DaVinci plus adaptés. Rentable dès 2 épisodes podcast ou vidéos par mois.",
@@ -24809,7 +24813,10 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [],
-    "alternatives": [],
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
     "verdict": null,
     "verdictEn": null,
     "pros": [],
@@ -35339,7 +35346,10 @@
       "paid": "10$/mois (Pro)"
     },
     "longDescription": "Otter.ai, c'est transcription et résumé automatique de réunions en temps réel. À partir de 8.66€/mois. Pensé pour les consultants B2B et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : beaucoup de réunions clients à retranscrire. À éviter si : descript déjà en place — doublon transcription. Free tier généreux — rarement nécessaire de payer. Si le budget le permet, descript va plus loin.",
-    "alternatives": [],
+    "alternatives": [
+      "fathom",
+      "riverside"
+    ],
     "slug": "otter-ai",
     "shortDescriptionEn": "Real-time automatic meeting transcription and summarisation.",
     "description": "Otter.ai, c'est transcription et résumé automatique de réunions en temps réel. À partir de 8.66€/mois. Pensé pour les consultants B2B et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : beaucoup de réunions clients à retranscrire. À éviter si : descript déjà en place — doublon transcription. Free tier généreux — rarement nécessaire de payer. Si le budget le permet, descript va plus loin.",
@@ -65813,7 +65823,8 @@
     ],
     "articles": [],
     "alternatives": [
-      "blender",
+      "plasticity",
+      "fusion-360",
       "sketchup-pro"
     ]
   },
@@ -70855,9 +70866,9 @@
     "soloRelevance": "medium",
     "teamRelevance": "medium",
     "alternatives": [
-      "blender",
       "v-ray",
-      "octane-render"
+      "octane-render",
+      "corona-renderer"
     ],
     "articles": [],
     "freeAlternative": "blender",
@@ -71083,6 +71094,7 @@
     },
     "alternatives": [
       "substance-3d-painter",
+      "marmoset-toolbag",
       "blender"
     ],
     "articles": [],
@@ -72592,6 +72604,7 @@
       }
     },
     "alternatives": [
+      "nomad-sculpt",
       "blender"
     ],
     "articles": [],
@@ -117956,7 +117969,10 @@
       "startup"
     ],
     "alternatives": [
-      "crisp"
+      "zendesk",
+      "crisp",
+      "tidio",
+      "helpscout"
     ],
     "seo": {
       "metaDescription": "Intercom en 2026 : prix réel (sièges + Fin AI à 0,99$/résolution), pas d'offre gratuite, et alternatives (Crisp). Le verdict ToolTrim pour les SaaS.",
@@ -118292,7 +118308,11 @@
       "tech",
       "designer"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "screen-studio",
+      "vidyard",
+      "scribe"
+    ],
     "seo": {
       "metaTitle": "Loom en 2026 : prix, offre gratuite et alternatives. Vaut-il le coup ?",
       "metaDescription": "Loom en 2026 : offre gratuite (25 vidéos), prix Business (18$/user) et alternatives. Gratuit ou payant pour un freelance ? Le verdict ToolTrim.",
@@ -119101,7 +119121,8 @@
       "marketing"
     ],
     "alternatives": [
-      "chatgpt"
+      "chatgpt",
+      "claude"
     ],
     "seo": {
       "metaDescription": "Grammarly gratuit ou Premium (12€/mois) ? Analyse pour freelances français : quand payer vaut le coup (et quand éviter). Guide 2026.",
@@ -123391,7 +123412,8 @@
     ],
     "alternatives": [
       "obsidian",
-      "trello"
+      "coda",
+      "clickup"
     ],
     "seo": {
       "metaDescription": "Notion en 2026 : l'offre gratuite suffit-elle ?, prix des plans Plus et Business, et alternatives. Le verdict ToolTrim pour les freelances et petites équipes.",
@@ -123586,8 +123608,9 @@
       "other"
     ],
     "alternatives": [
-      "figma",
-      "sketch"
+      "adobe-express",
+      "visme",
+      "figma"
     ],
     "seo": {
       "metaDescription": "Canva gratuit ou Pro (12€/mois) ? Découvrez quand passer à la version payante vaut le coup pour votre activité freelance. Comparatif 2026.",
