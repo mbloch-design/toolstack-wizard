@@ -120966,7 +120966,11 @@
       "next-js"
     ],
     "seo": {
-      "metaDescription": "Remix sur ToolTrim : ce qui reste pertinent en 2026 après la fusion dans React Router v7, et quand s'en servir encore."
+      "metaDescription": "Remix sur ToolTrim : ce qui reste pertinent en 2026 après la fusion dans React Router v7, et quand s'en servir encore.",
+      "altTitleFr": "Remix a fusionné dans React Router v7 : alternatives 2026 | ToolTrim",
+      "altTitleEn": "Remix Merged Into React Router v7: Best Alternatives 2026 | ToolTrim",
+      "altMetaDescriptionFr": "Remix n'existe plus en tant que framework séparé : il a fusionné dans React Router v7 en 2025. ToolTrim explique quoi utiliser à la place (React Router v7, Next.js, Astro) selon ton projet.",
+      "altMetaDescriptionEn": "Remix is no longer a separate framework: it merged into React Router v7 in 2025. ToolTrim explains what to use instead (React Router v7, Next.js, Astro) depending on your project."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,

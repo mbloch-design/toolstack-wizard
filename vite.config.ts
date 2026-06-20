@@ -535,12 +535,22 @@ function staticPrerenderPlugin(): Plugin {
           },
           {
             path: "alternatives",
-            buildTitle: (name, isFr) => isFr
-              ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
-              : `Best ${name} alternatives in 2026 | ToolTrim`,
-            buildDesc: (name, _price, isFr) => isFr
-              ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées, à jour 2026.`
-              : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options, updated 2026.`,
+            // tool.seo.altTitle/altMetaDescription let a fiche override the generic
+            // template when there's a sharper, situational hook (e.g. "X merged into Y").
+            buildTitle: (name, isFr, tool) => {
+              const override = isFr ? tool?.seo?.altTitleFr : tool?.seo?.altTitleEn;
+              if (override) return override;
+              return isFr
+                ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
+                : `Best ${name} alternatives in 2026 | ToolTrim`;
+            },
+            buildDesc: (name, _price, isFr, tool) => {
+              const override = isFr ? tool?.seo?.altMetaDescriptionFr : tool?.seo?.altMetaDescriptionEn;
+              if (override) return override;
+              return isFr
+                ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées, à jour 2026.`
+                : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options, updated 2026.`;
+            },
             buildBody: (name, _price, isFr, tool) => {
               const altIds: string[] = tool.alternatives || [];
               const altNames = altIds.slice(0, 5).map((id: string) => slugToName[id] || id).filter(Boolean);
