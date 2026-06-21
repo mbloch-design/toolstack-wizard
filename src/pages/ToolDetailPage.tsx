@@ -284,8 +284,6 @@ const ToolDetailPage = () => {
     !tool.pricing.free.toLowerCase().includes("no free") &&
     !tool.pricing.free.toLowerCase().includes("aucun") &&
     !tool.pricing.free.toLowerCase().includes("pas de"));
-  const freeAlt       = (tool as any).freeAlternative as string | null;
-  const betterAlt     = (tool as any).betterAlternative as { tool: string; saving: number } | null;
   const catName       = stripLeadingEmoji(category?.name, category?.id || "");
   const catNameEn     = stripLeadingEmoji(category?.nameEn, catName);
 
@@ -486,6 +484,14 @@ const ToolDetailPage = () => {
                   );
                 })()}
 
+                {/* 2.5 · Résumé machine-readable — placé tôt (juste après le
+                     verdict) pour l'extraction LLM/RAG (GEO), avant les
+                     sections éditoriales plus longues qui suivent. */}
+                <ToolSummaryBlock
+                  tool={tool} category={category} alternatives={alternatives}
+                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
+                />
+
                 {/* 3 · Pour qui */}
                 {(tool as any).relevantFor?.length > 0 && (
                   <div className="td-section">
@@ -627,11 +633,6 @@ const ToolDetailPage = () => {
                 {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
                 <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
-                {/* SEO/LLM summary — visually quiet, useful for crawlers */}
-                <ToolSummaryBlock
-                  tool={tool} category={category} alternatives={alternatives}
-                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-                />
               </div>
             )}
 

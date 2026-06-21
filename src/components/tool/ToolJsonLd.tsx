@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import type { Tool, Category } from "@/data/types";
 import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { buildToolFaqs } from "@/lib/toolFaq";
 
 interface Props {
   tool: Tool;
@@ -134,85 +135,15 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       },
     });
 
-    // 3. FAQPage
+    // 3. FAQPage — mirrors the on-page FAQ (ToolFAQSection) exactly: both
+    // pull from buildToolFaqs, the single source of these questions/answers,
+    // so they can never drift out of sync (required by Google's FAQPage policy).
     if (includeFaq) {
-      const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0).slice(0, 3);
-      const topAlts = alternatives.slice(0, 5).map(a => a.name).join(", ");
-
-      // Mirrors the on-page FAQ (ToolFAQSection) exactly: same questions,
-      // same order, same answer text — required by Google's FAQPage policy.
-      const planFr = tool.pricing_v5?.compare_plan_name ? ` (plan ${tool.pricing_v5.compare_plan_name})` : "";
-      const planEn = tool.pricing_v5?.compare_plan_name ? ` (${tool.pricing_v5.compare_plan_name} plan)` : "";
-
-      const faqEntries = [
-        {
-          "@type": "Question",
-          name: lang === "fr" ? `À quoi sert ${tool.name} ?` : `What is ${tool.name} used for?`,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: (lang === "en" && (tool as any).shortDescriptionEn ? (tool as any).shortDescriptionEn : tool.shortDescription)
-              || (lang === "fr" ? `${tool.name} est un outil de productivité SaaS.` : `${tool.name} is a SaaS productivity tool.`),
-          },
-        },
-        {
-          "@type": "Question",
-          name: lang === "fr" ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: lang === "fr"
-              ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${planFr}. Prix vérifié le ${verifiedOn}.`
-              : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}${planEn}. Price verified on ${verifiedOn}.`,
-          },
-        },
-        {
-          "@type": "Question",
-          name: lang === "fr" ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: tool.soloRelevance
-              ? (lang === "fr"
-                ? `${tool.name} est particulièrement adapté aux freelances et indépendants. ${tool.soloRelevance}`
-                : `${tool.name} is particularly suited for freelancers and solopreneurs. ${tool.soloRelevance}`)
-              : (lang === "fr"
-                ? `${tool.name} convient à la plupart des professionnels. Consultez la section "Pour qui" pour plus de détails.`
-                : `${tool.name} suits most professionals. See the "Who is it for" section for details.`),
-          },
-        },
-        {
-          "@type": "Question",
-          name: lang === "fr" ? `${tool.name} vaut-il son prix ?` : `Is ${tool.name} worth the price?`,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: ((lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : tool.verdict?.threshold)
-              || (lang === "fr" ? "Cela dépend de votre usage. Consultez notre verdict ci-dessus." : "It depends on your usage. See our verdict above."),
-          },
-        },
-        {
-          "@type": "Question",
-          name: lang === "fr" ? `Quelles sont les meilleures alternatives à ${tool.name} ?` : `What are the best alternatives to ${tool.name}?`,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: topAlts
-              ? (lang === "fr"
-                ? `Les principales alternatives à ${tool.name} sont : ${topAlts}.${freeAlts.length > 0 ? ` Alternatives gratuites : ${freeAlts.map(a => a.name).join(", ")}.` : ""}`
-                : `The main alternatives to ${tool.name} are: ${topAlts}.${freeAlts.length > 0 ? ` Free alternatives: ${freeAlts.map(a => a.name).join(", ")}.` : ""}`)
-              : (lang === "fr" ? "Aucune alternative directe référencée." : "No direct alternative listed."),
-          },
-        },
-      ];
-
-      if (tool.freeAlternative) {
-        faqEntries.push({
-          "@type": "Question",
-          name: lang === "fr" ? `Existe-t-il une alternative gratuite à ${tool.name} ?` : `Is there a free alternative to ${tool.name}?`,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: lang === "fr"
-              ? `Oui, ${tool.freeAlternative} est une alternative gratuite à ${tool.name}.`
-              : `Yes, ${tool.freeAlternative} is a free alternative to ${tool.name}.`,
-          },
-        });
-      }
+      const faqEntries = buildToolFaqs(tool, lang, displayPrice, verifiedOn, alternatives).map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      }));
 
       setJsonLd("tool-faq-jsonld", {
         "@context": "https://schema.org",

@@ -31,8 +31,9 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
     ? t("équipes et startups", "teams and startups")
     : t("professionnels", "professionals");
 
-  const avoidCases = tool.verdict?.avoidIf?.length
-    ? (Array.isArray(tool.verdict.avoidIf) ? tool.verdict.avoidIf : [tool.verdict.avoidIf]).filter(Boolean).slice(0, 2).join("; ")
+  const avoidIfRaw = (lang === "en" && tool.verdictEn?.avoidIf?.length) ? tool.verdictEn.avoidIf : tool.verdict?.avoidIf;
+  const avoidCases = avoidIfRaw?.length
+    ? (Array.isArray(avoidIfRaw) ? avoidIfRaw : [avoidIfRaw]).filter(Boolean).slice(0, 2).join("; ")
     : null;
 
   const topAlts = alternatives.slice(0, 4).map(a => a.name).join(", ");
