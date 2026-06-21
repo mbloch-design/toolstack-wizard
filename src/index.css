@@ -6394,35 +6394,6 @@
     letter-spacing: -0.015em;
     color: var(--color-muted);
   }
-  .sd-budget-decision-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 40px;
-  }
-  .sd-budget-decision-card {
-    min-height: 240px;
-    padding: 24px;
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    background: var(--color-surface);
-  }
-  .sd-budget-card-label {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-  }
-  .sd-budget-decision-card p {
-    margin: 14px 0 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--color-text);
-  }
   .sd-budget-tool-list {
     display: flex;
     flex-wrap: wrap;
@@ -6492,46 +6463,6 @@
     font-size: 14px;
     line-height: 1.35;
     color: var(--color-muted);
-  }
-  .sd-budget-action {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin-top: 24px;
-  }
-  .sd-budget-action p {
-    max-width: 680px;
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--color-muted);
-  }
-  .sd-budget-action-link {
-    flex-shrink: 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--color-text);
-    text-decoration: none;
-  }
-  .sd-budget-action-link:hover,
-  .sd-budget-action-link:focus-visible {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-  @media (max-width: 980px) {
-    .sd-budget-decision-grid {
-      grid-template-columns: 1fr;
-    }
-    .sd-budget-decision-card {
-      min-height: 0;
-    }
-    .sd-budget-action {
-      align-items: flex-start;
-      flex-direction: column;
-    }
   }
   @media (max-width: 640px) {
     .sd-budget-thresholds {
