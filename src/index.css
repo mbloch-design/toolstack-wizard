@@ -6588,59 +6588,6 @@
      cp-decision-note: removed — never rendered in JSX. The active
      cp-decision-list/-item/-condition/-answer family lives further down.) */
 
-  /* ── Verdict section: 2-card layout (Sprint 67) ─────────── */
-  /* Header: 2-col — title left, intro phrase right */
-  .compare-verdict-header {
-    display: grid;
-    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.4fr);
-    gap: clamp(48px, 6vw, 96px);
-    align-items: start;
-    margin-bottom: clamp(40px, 5vw, 64px);
-  }
-  .compare-verdict-header-left { display: flex; flex-direction: column; gap: 0; }
-  .compare-verdict-header-left .cp-eyebrow { margin-bottom: 16px; }
-  .compare-verdict-header-left .cp-title { margin-bottom: 0; }
-  .compare-verdict-intro { margin: 0; }
-
-  /* Two choice cards side by side */
-  .compare-verdict-choice-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin-bottom: 32px;
-  }
-  .compare-verdict-choice {
-    border: 1px solid var(--color-border, #DADAD4);
-    border-radius: 8px;
-    padding: 28px 32px;
-    background: var(--color-surface);
-  }
-  /* Card head: logo + tool name in a flex row */
-  .compare-verdict-choice-head {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-  .compare-verdict-choice-logo { flex-shrink: 0; }
-  .compare-verdict-choice-head .tt-fact-label { margin-bottom: 0; }
-  .compare-verdict-choice-title { margin: 0 0 10px; font-family: var(--font-ui); font-size: var(--tt-size-body-large); font-weight: 600; letter-spacing: -0.02em; line-height: 1.28; }
-  .compare-verdict-choice-body { margin: 0; max-width: 480px; color: var(--color-muted); }
-
-  /* Mobile: stack everything */
-  @media (max-width: 900px) {
-    .compare-verdict-header {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    .compare-verdict-choice-grid { grid-template-columns: 1fr; }
-    .compare-verdict-choice-body { max-width: 100%; }
-  }
-  @media (max-width: 640px) {
-    .compare-verdict-choice { padding: 22px 20px; }
-  }
-
   /* ── Usage scores ────────────────────────────────────────── */
   /* (cp-tipping-panel span shared rule removed Sprint 75) */
 
