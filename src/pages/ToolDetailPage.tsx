@@ -503,39 +503,53 @@ const ToolDetailPage = () => {
                   </div>
                 )}
 
-                {/* 4 · Points forts — pros */}
-                {(tool.pros?.length ?? 0) > 0 && (
+                {/* 4-5 · Points forts / limites — side by side so + and − can be confronted directly */}
+                {((tool.pros?.length ?? 0) > 0 || (tool.cons?.length ?? 0) > 0) && (
                   <div className="td-section">
-                    <span className="td-eyebrow">{t("Points forts", "Strengths")}</span>
+                    <span className="td-eyebrow">{t("Forces et limites", "Strengths and limitations")}</span>
                     <h2 className="td-title">
-                      {t(`Ce que ${tool.name} fait bien.`, `What ${tool.name} does well.`)}
+                      {t(`${tool.name} en force et en limites.`, `${tool.name}, strengths and limitations.`)}
                     </h2>
-                    <ul className="td-judgment">
-                      {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
-                        <li key={pro} className="td-judgment-item td-judgment-item--pro">
-                          <span className="td-judgment-marker td-judgment-marker--pro" aria-hidden="true">+</span>
-                          <span className="td-judgment-text">{pro}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* 5 · Limites — cons */}
-                {(tool.cons?.length ?? 0) > 0 && (
-                  <div className="td-section">
-                    <span className="td-eyebrow">{t("Limites", "Limitations")}</span>
-                    <h2 className="td-title">
-                      {t(`Là où ${tool.name} montre ses limites.`, `Where ${tool.name} falls short.`)}
-                    </h2>
-                    <ul className="td-judgment">
-                      {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
-                        <li key={con} className="td-judgment-item td-judgment-item--con">
-                          <span className="td-judgment-marker td-judgment-marker--con" aria-hidden="true">−</span>
-                          <span className="td-judgment-text">{con}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: (tool.pros?.length ?? 0) > 0 && (tool.cons?.length ?? 0) > 0 ? "1fr 1fr" : "1fr",
+                        gap: 32,
+                        marginTop: 8,
+                      }}
+                      className="sm:grid-cols-2"
+                    >
+                      {(tool.pros?.length ?? 0) > 0 && (
+                        <div>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                            {t("Ce qu'il fait bien", "What it does well")}
+                          </p>
+                          <ul className="td-judgment">
+                            {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
+                              <li key={pro} className="td-judgment-item td-judgment-item--pro">
+                                <span className="td-judgment-marker td-judgment-marker--pro" aria-hidden="true">+</span>
+                                <span className="td-judgment-text">{pro}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {(tool.cons?.length ?? 0) > 0 && (
+                        <div>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                            {t("Là où il montre ses limites", "Where it falls short")}
+                          </p>
+                          <ul className="td-judgment">
+                            {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
+                              <li key={con} className="td-judgment-item td-judgment-item--con">
+                                <span className="td-judgment-marker td-judgment-marker--con" aria-hidden="true">−</span>
+                                <span className="td-judgment-text">{con}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
 
@@ -605,15 +619,13 @@ const ToolDetailPage = () => {
                   );
                 })()}
 
-                {/* 9 · Intégrations / Plugins */}
-                <div className="td-section">
-                  <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
-                </div>
+                {/* 9 · Intégrations / Plugins — the block owns its own
+                     td-section wrapper and returns null when there's
+                     nothing to show, so no empty divider renders. */}
+                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
-                {/* 10 · L'angle IA : augmenter ou remplacer ? */}
-                <div className="td-section">
-                  <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
-                </div>
+                {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
+                <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
                 {/* SEO/LLM summary — visually quiet, useful for crawlers */}
                 <ToolSummaryBlock
@@ -1048,7 +1060,7 @@ const ToolDetailPage = () => {
             const path = tab.id === "prix" && lang === "en" ? "/pricing"
               : tab.id === "avis" && lang === "en" ? "/reviews"
               : tab.path;
-            navigate(`${prefix}/tool/${slug}${path}`, { replace: false });
+            navigate(`${prefix}/tool/${slug}${path}`, { replace: false, state: { skipScrollReset: true } });
           }
           return false;
         }}

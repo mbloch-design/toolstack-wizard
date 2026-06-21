@@ -4023,19 +4023,16 @@
     scroll-margin-top: calc(var(--navbar-h, 68px) + 24px);
     padding-top: 8px;
   }
-  /* Mobile: the pill repositions to a top bar, so add its height. */
-  @media (max-width: 767px) {
-    .td-subpage-content {
-      scroll-margin-top: calc(var(--navbar-h, 68px) + 72px);
-    }
-  }
-  /* Single-scroll article: every section after the first gets a strong
-     editorial divider + generous space so the page reads as chapters,
-     not a flat dump. The first section (#analyse) follows the tab nav
-     directly with no extra rule. */
+  /* Single-scroll article: every section after the first gets an editorial
+     divider so the page reads as chapters, not a flat dump. Kept moderate
+     (was up to 128px of dead space) since some chapters — Reviews in
+     particular, which is just a "coming soon" placeholder — are short, and
+     a cavernous gap there reads as a layout bug rather than a transition.
+     The first section (#analyse) follows the tab nav directly with no
+     extra rule. */
   .td-subpage-content + .td-subpage-content {
-    margin-top: clamp(48px, 5vw, 72px);
-    padding-top: clamp(40px, 4vw, 56px);
+    margin-top: clamp(32px, 4vw, 48px);
+    padding-top: clamp(28px, 3vw, 40px);
     border-top: 2px solid var(--color-border-strong);
   }
 
@@ -15304,23 +15301,17 @@ section[id] {
   outline-offset: 2px;
 }
 
-/* Mobile: reposition capsule to a top bar */
+/* Mobile: keep the floating bottom capsule, just sized down — a full-width
+   top bar competed with the site header and felt out of place (2026-06-21). */
 @media (max-width: 767px) {
   .tt-pillnav {
-    bottom: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(0);
-    border-radius: 0;
-    max-width: 100%;
-    padding: 6px 12px;
+    bottom: 16px;
+    max-width: calc(100vw - 24px);
+    padding: 6px;
     gap: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
   .tt-pillnav--hidden {
-    transform: translateY(-100%);
+    transform: translateX(-50%) translateY(12px);
     opacity: 0;
   }
   .tt-pillnav-logo {

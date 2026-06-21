@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Check, ArrowRightLeft } from "lucide-react";
-import { stripLeadingEmoji } from "@/lib/text";
+import { Check } from "lucide-react";
 import { formatPriceLabel } from "@/lib/toolUtils";
 
 interface Props {
@@ -15,45 +14,21 @@ interface Props {
 }
 
 /**
- * Alternatives section with semantic internal linking:
- * - cheaper tools, free tools, same-category tools
- * - each alternative links to its own page for crawl depth
+ * Alternative cards: description + top pro + price, complementing the
+ * comparison table above (which owns the shared heading/intro/category
+ * link — this just adds the card grid for each alternative).
  */
-export default function ToolAlternativesSection({ tool, category, alternatives, prefix, lang, t }: Props) {
+export default function ToolAlternativesSection({ tool, alternatives, prefix, lang, t }: Props) {
   if (alternatives.length === 0) return null;
 
   const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0);
   const cheaperAlts = alternatives.filter(a => a.defaultMonthlyPrice > 0 && a.defaultMonthlyPrice < tool.defaultMonthlyPrice);
-  const categoryLabel = category
-    ? t(stripLeadingEmoji(category.name, category.id), stripLeadingEmoji(category.nameEn, stripLeadingEmoji(category.name, category.id)))
-    : "";
 
   return (
     <section className="space-y-4">
-      {/* Eyebrow */}
-      <p className="text-xs font-bold uppercase tracking-widest flex items-center gap-1.5" style={{ color: "hsl(var(--primary))" }}>
-        <ArrowRightLeft className="h-3.5 w-3.5" />
-        {t("Comparer", "Compare")}
-      </p>
-
-      <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
-        {t(`Alternatives à ${tool.name}`, `Alternatives to ${tool.name}`)}
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        {t(
-          `${alternatives.length} outils similaires dans la catégorie ${categoryLabel}`,
-          `${alternatives.length} similar tools in the ${categoryLabel} category`
-        )}
-        {category && (
-          <> — <Link to={`${prefix}/category/${category.slug}`} className="text-primary hover:underline">
-            {t("voir la catégorie", "see category")}
-          </Link></>
-        )}
-      </p>
-
       {/* Semantic sub-links for internal linking */}
       {(freeAlts.length > 0 || cheaperAlts.length > 0) && (
-        <div className="mt-3 flex flex-wrap gap-2 text-xs">
+        <div className="flex flex-wrap gap-2 text-xs">
           {freeAlts.length > 0 && (
             <span className="rounded-full bg-keep/10 text-keep px-3 py-1 font-medium">
               {freeAlts.length} {t("alternatives gratuites", "free alternatives")}
@@ -67,7 +42,7 @@ export default function ToolAlternativesSection({ tool, category, alternatives, 
         </div>
       )}
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {alternatives.map((alt) => (
           <Link key={alt.id} to={`${prefix}/tool/${alt.slug}`}
             className="group rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
