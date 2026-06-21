@@ -101,6 +101,12 @@ export type ToolSummary = Pick<
   | "affiliateLink"
   | "websiteUrl"
   | "logo"
+  | "covers"
+  | "pros"
+  | "prosEn"
+  | "tool_type"
+  | "host_app"
+  | "bundle_parent"
 >;
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
@@ -115,6 +121,12 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
   websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
   logo: asLocalizedText(t.logo, ""),
+  covers: t.covers || [],
+  pros: t.pros || [],
+  prosEn: t.prosEn || t.pros_en || null,
+  tool_type: t.tool_type || "satellite",
+  host_app: t.host_app || null,
+  bundle_parent: t.bundle_parent || null,
 }));
 
 function mapSupabaseCat(c: any): Category {
@@ -289,7 +301,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -303,6 +315,12 @@ export function useToolSummaries() {
           pricing: t.pricing || { free: "", paid: "" },
           defaultMonthlyPrice: t.default_monthly_price || 0,
           affiliateLink: asLocalizedText(t.affiliate_link, ""),
+          covers: t.covers || [],
+          pros: t.pros || [],
+          prosEn: t.pros_en || t.pros || null,
+          tool_type: t.tool_type || "satellite",
+          host_app: t.host_app || null,
+          bundle_parent: t.bundle_parent || null,
           websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, ""),
           logo: asLocalizedText(t.logo, ""),
         }));

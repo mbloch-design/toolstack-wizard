@@ -1,6 +1,6 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
+import { useToolBySlug, useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useRef } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
@@ -48,7 +48,7 @@ const ToolDetailPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { tool, loading } = useToolBySlug(slug);
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
 
