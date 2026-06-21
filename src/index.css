@@ -7982,166 +7982,6 @@
 ───────────────────────────────────────────── */
 @layer components {
 
-  /* ── Entry modules — 3 colonnes égales ── */
-  .hp-entries {
-    border-top: 1px solid var(--color-border);
-    background: var(--color-bg);
-  }
-
-  .hp-entries-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-  }
-
-  @media (max-width: 767px) {
-    .hp-entries-grid { grid-template-columns: 1fr; }
-    .hp-entry + .hp-entry {
-      border-top: 1px solid var(--color-border);
-      border-left: none !important;
-    }
-  }
-
-  .hp-entry {
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    min-height: 320px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 160ms ease-out;
-  }
-  .hp-entry + .hp-entry { border-left: 1px solid var(--color-border); }
-  .hp-entry:hover { background: var(--color-surface); }
-
-  .hp-entry-number {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    margin-bottom: 28px;
-    display: block;
-  }
-
-  .hp-entry-title {
-    font-family: var(--font-brand);
-    font-size: clamp(1.625rem, 2vw, 1.875rem);
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.035em;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  .hp-entry-desc {
-    font-family: var(--font-ui);
-    font-size: 17px;
-    line-height: 1.5;
-    color: var(--color-muted);
-    max-width: 360px;
-    margin: 0;
-  }
-
-  /* Example — inline label + text, no box, no italic */
-  .hp-entry-example {
-    margin-top: 28px;
-    font-family: var(--font-ui);
-    font-size: 14px;
-    line-height: 1.45;
-    color: var(--color-muted);
-    font-style: normal;
-  }
-
-  .hp-entry-example-lbl {
-    color: var(--color-muted-light);
-    font-weight: 500;
-  }
-
-  /* CTA — text link, hover underline + arrow nudge */
-  .hp-entry-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-text);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-    margin-top: 32px;
-  }
-  .hp-entry:hover .hp-entry-cta {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-  .hp-entry-cta-arrow {
-    transition: transform 160ms ease-out;
-    flex-shrink: 0;
-  }
-  .hp-entry:hover .hp-entry-cta-arrow {
-    transform: translateX(3px);
-  }
-
-  /* ── Manifesto — position + decision framework ── */
-  .hp-manifesto {
-    background: var(--color-surface-soft);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .hp-manifesto-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  @media (max-width: 899px) {
-    .hp-manifesto-inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-  }
-
-  .hp-manifesto-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    margin-bottom: 20px;
-  }
-
-  .hp-manifesto-heading {
-    font-family: var(--font-brand);
-    font-size: clamp(1.75rem, 3vw, 2.75rem);
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.04em;
-    line-height: 1.15;
-  }
-
-  .hp-manifesto-body {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .hp-manifesto-para {
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--color-muted);
-  }
-
-  .hp-manifesto-para strong {
-    color: var(--color-text);
-    font-weight: 600;
-  }
-
   /* ── What we cut — "Ce que ToolTrim coupe" ── */
   .hp-cuts {
     border-top: 1px solid var(--color-border);
@@ -8179,40 +8019,6 @@
     text-transform: uppercase;
     color: var(--color-muted-light);
     margin-bottom: 20px;
-  }
-
-  .hp-cuts-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .hp-cuts-item {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--color-border-soft);
-    font-family: var(--font-ui);
-    font-size: 15px;
-    color: var(--color-text);
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-  }
-  .hp-cuts-item:first-child {
-    border-top: 1px solid var(--color-border-soft);
-  }
-
-  .hp-cuts-item-dash {
-    flex-shrink: 0;
-    width: 18px;
-    height: 1px;
-    background: var(--color-muted-light);
-    position: relative;
-    top: -0.35em;
   }
 
   .hp-cuts-cta {
@@ -8377,26 +8183,6 @@
     flex-shrink: 0;
   }
 
-  .hp-audit-badge--keep {
-    background: #ECFDF0;
-    color: #166534;
-  }
-
-  .hp-audit-badge--challenge {
-    background: #FFFBEB;
-    color: #92400E;
-  }
-
-  .hp-audit-badge--duplicate {
-    background: #FEF2F2;
-    color: #991B1B;
-  }
-
-  .hp-audit-badge--soon {
-    background: var(--color-surface-soft);
-    color: var(--color-muted);
-  }
-
   .hp-audit-price {
     font-family: var(--font-ui);
     font-size: 12px;
@@ -8428,12 +8214,6 @@
 
   .hp-audit-row:hover .hp-audit-why {
     opacity: 1;
-  }
-
-  .hp-audit-divider {
-    height: 1px;
-    background: var(--color-border);
-    margin: 0;
   }
 
   .hp-audit-footer {
@@ -8512,46 +8292,6 @@
 
   /* hp-entry-example now defined in hp-entries block (Sprint 4c) */
 
-  /* ── Manifesto decisions ────────────────────────────────────────── */
-  .hp-decisions {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 28px;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .hp-decision {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 20px;
-    align-items: baseline;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--color-border-soft);
-  }
-
-  .hp-decision-key {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    padding-top: 2px;
-  }
-
-  .hp-decision-desc {
-    font-family: var(--font-ui);
-    font-size: 14px;
-    color: var(--color-muted);
-    line-height: 1.5;
-  }
-
-  .hp-decision-desc strong {
-    color: var(--color-text);
-    font-weight: 600;
-  }
-
   /* ── Cut rows — decision-style list ────────────────────────────── */
   .hp-cut-rows {
     display: flex;
@@ -8571,28 +8311,6 @@
     border-top: 1px solid var(--color-border-soft);
   }
 
-  .hp-cut-row-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .hp-cut-row-indicator {
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-muted-light);
-  }
-
-  .hp-cut-row-title {
-    font-family: var(--font-ui);
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--color-text);
-    letter-spacing: -0.01em;
-  }
-
   .hp-cut-row-example {
     font-family: var(--font-ui);
     font-size: 13px;
@@ -8600,148 +8318,6 @@
     font-style: italic;
     padding-left: 18px;
     line-height: 1.4;
-  }
-
-  /* ── Avant / Après section ─────────────────────────────────────── */
-  .hp-aa {
-    background: var(--color-bg);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .hp-aa-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-
-  @media (max-width: 899px) {
-    .hp-aa-inner {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-  }
-
-  .hp-aa-panel {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .hp-aa-panel--after {
-    border-color: var(--color-text);
-  }
-
-  .hp-aa-panel-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--color-border-soft);
-    background: var(--color-bg);
-  }
-
-  .hp-aa-panel--after .hp-aa-panel-header {
-    background: var(--color-text);
-  }
-
-  .hp-aa-panel-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-  }
-
-  .hp-aa-panel--after .hp-aa-panel-label {
-    color: rgba(255,255,255,0.6);
-  }
-
-  .hp-aa-panel-stat {
-    font-family: var(--font-brand);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.03em;
-  }
-
-  .hp-aa-panel--after .hp-aa-panel-stat {
-    color: var(--color-surface);
-  }
-
-  .hp-aa-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  .hp-aa-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 11px 20px;
-    border-bottom: 1px solid var(--color-border-soft);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: var(--color-muted);
-  }
-
-  .hp-aa-item:last-child {
-    border-bottom: none;
-  }
-
-  .hp-aa-item-price {
-    font-size: 12px;
-    color: var(--color-muted-light);
-    flex-shrink: 0;
-  }
-
-  .hp-aa-item--kept {
-    color: #166534;
-  }
-
-  .hp-aa-item--cut {
-    text-decoration: line-through;
-    color: var(--color-muted-light);
-  }
-
-  .hp-aa-item--cut .hp-aa-item-price {
-    text-decoration: line-through;
-  }
-
-  .hp-aa-saving {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 24px 20px;
-    border-top: 1px solid var(--color-border);
-    margin-top: 16px;
-  }
-
-  .hp-aa-saving-label {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: var(--color-muted);
-  }
-
-  .hp-aa-saving-amount {
-    font-family: var(--font-brand);
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.04em;
-  }
-
-  .hp-aa-saving-sub {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: var(--color-muted-light);
   }
 
   /* ── Méthode section ────────────────────────────────────────────── */
