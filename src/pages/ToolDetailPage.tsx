@@ -373,15 +373,20 @@ const ToolDetailPage = () => {
               )}
             </div>
 
-            {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion */}
+            {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion.
+                Le minimum doit rester bas (~2.5rem) : à 8vw, la valeur préférée ne dépasse
+                4.5rem qu'au-delà de ~900px de viewport, donc tout mobile/tablette se figeait
+                sur le plancher (72-104px) — largement assez pour faire déborder un nom de
+                10+ caractères ("Eventbrite", "Twitch"...) sans espace pour se replier.
+                overflowWrap en filet de sécurité quel que soit le nom. */}
             <h1 style={{
               fontFamily: "var(--font-brand)",
               fontSize: tool.name.length <= 5
-                ? "clamp(4.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
-                : "clamp(4.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
+                ? "clamp(2.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
+                : "clamp(2.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
               fontWeight: 600, lineHeight: 0.9,
               letterSpacing: "-0.07em", color: "var(--color-text)",
-              margin: 0,
+              margin: 0, overflowWrap: "break-word", wordBreak: "break-word",
             }}>
               {tool.name}
             </h1>
