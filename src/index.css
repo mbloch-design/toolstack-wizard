@@ -12593,70 +12593,12 @@
 
 /* Anchor nav redesign — editorial, typographic, no pill */
 
-/* Hide the "Sur cette page" label (also removed from JSX) */
-.sd-nav-label {
-  display: none;
-}
-
-/* Nav bar: subtle top+bottom border, light background */
-.sd-nav {
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  background: rgba(248, 248, 244, 0.96) !important;
-}
-
-/* Inner container: generous gap between items */
-.sd-nav-inner {
-  gap: 28px !important;
-}
-
-/* Nav links: no pill shape, underline-only affordance */
-.sd-nav-link {
-  height: auto !important;
-  padding: 0 0 3px !important;
-  border: none !important;
-  border-radius: 0 !important;
-  border-bottom: 2px solid transparent !important;
-  background: transparent !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  color: var(--color-muted) !important;
-  transition: color 120ms ease-out, border-color 120ms ease-out !important;
-}
-
-.sd-nav-link:hover {
-  color: var(--color-text) !important;
-  background: transparent !important;
-  border-bottom-color: rgba(34, 34, 34, 0.35) !important;
-}
-
-.sd-nav-link:focus-visible {
-  outline: 2px solid var(--color-border-strong);
-  outline-offset: 3px;
-}
-
-/* Active state: bold weight + solid underline — NO filled pill */
-.sd-nav-link--active,
-.sd-nav-link--active:hover {
-  color: var(--color-text) !important;
-  background: transparent !important;
-  font-weight: 700 !important;
-  border-bottom-color: var(--color-text) !important;
-}
-
 /* Sprint — Premium sticky bottom section nav (2026-05-18) */
 
 /* Ensure sections don't hide behind sticky elements when scrolled to */
 .sd-section[id],
 section[id] {
   scroll-margin-top: 80px;
-}
-
-/* Hide the inline subnav on desktop (sticky bottom nav takes over) */
-@media (min-width: 768px) {
-  .sd-subnav-wrapper {
-    display: none;
-  }
 }
 
 /* ── Shared floating capsule section nav (tool / stack / comparatif) ──────
@@ -12854,17 +12796,6 @@ section[id] {
   gap: 10px;
 }
 
-/* Count indicator: right-aligned, small, subtle */
-.sd-tools-count-indicator {
-  display: block;
-  text-align: right;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-muted);
-  line-height: 1;
-  letter-spacing: 0;
-}
 
 /* Expand / collapse button: discreet secondary link-style */
 .sd-expand-btn {
@@ -12894,13 +12825,6 @@ section[id] {
   outline: 2px solid var(--color-border-strong);
   outline-offset: 2px;
   border-radius: 2px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .sd-tools-count-indicator {
-    text-align: left;
-  }
 }
 
 /* Sprint — Hero fact sheet refinement (2026-05-18) */
@@ -12958,11 +12882,6 @@ section[id] {
   color: var(--color-muted);
 }
 
-/* Promise max-width */
-.sd-hero-promise {
-  max-width: 860px;
-}
-
 /* Sprint — Hero fact sheet overflow fix (2026-05-18) */
 /* Column order (matches JSX): PROFIL · BUDGET · OUTILS · NIVEAU · WORKFLOW · POINT D'ATTENTION */
 
@@ -13016,21 +12935,6 @@ section[id] {
   color: var(--color-muted);
   margin-bottom: 8px;
   display: block;
-}
-
-/* Budget value/unit split */
-.sd-fact-value--budget {
-  display: flex;
-  align-items: baseline;
-  gap: 3px;
-  flex-wrap: nowrap;
-}
-
-.sd-budget-amount {
-  font-size: clamp(1.375rem, 2vw, 1.875rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1;
 }
 
 .sd-budget-unit {
@@ -13089,59 +12993,11 @@ section[id] {
   margin-bottom: 0;
 }
 
-/* Group label: uppercase, small, bold */
-.sd-tool-group-label {
-  display: block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  margin-bottom: 10px;
-}
-
 /* Flex row of pills */
 .sd-tool-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-
-/* Individual tool pill: logo + name, no status badge */
-.sd-tool-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 36px;
-  padding: 0 12px 0 8px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
-  border-radius: 999px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: border-color 120ms ease;
-}
-.sd-tool-pill:hover {
-  border-color: var(--color-muted-light);
-}
-.sd-tool-pill img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  border-radius: 4px;
-}
-
-/* Discreet total at bottom of right column */
-.sd-tools-total {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--color-muted-light);
-  margin-top: 16px;
 }
 
 /* Mobile adjustments */
@@ -13288,11 +13144,6 @@ section[id] {
   margin-top: 28px;
 }
 
-/* ── Override any old pill styles */
-.sd-tool-pill {
-  all: unset;
-}
-
 /* ── Card container: lighter, no border */
 .sd-stack-map-family {
   border: none !important;
@@ -13300,16 +13151,6 @@ section[id] {
   border-radius: 28px;
   padding: 36px 40px;
   gap: 44px;
-}
-
-/* ── Remove floating count indicator */
-.sd-tools-count-indicator {
-  display: none !important;
-}
-
-/* ── Remove discreet total from right col (moved to micro-info in left col) */
-.sd-tools-total {
-  display: none !important;
 }
 
 /* ── Mobile */
