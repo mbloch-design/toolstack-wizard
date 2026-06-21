@@ -6690,23 +6690,6 @@
   .sd-section-title + .sd-risk-enhanced-row {
     margin-top: 40px;
   }
-  .sd-overview-col,
-  .sd-priority-col {
-    padding-top: 22px;
-  }
-  .sd-priority-col,
-  .sd-priority-col--essential,
-  .sd-priority-col--optional,
-  .sd-priority-col--challenge {
-    border-top: 1px solid var(--color-border);
-  }
-  .sd-priority-col--essential .sd-priority-label,
-  .sd-priority-col--optional .sd-priority-label,
-  .sd-priority-col--challenge .sd-priority-label {
-    color: var(--color-text);
-  }
-  .sd-priority-item,
-  .sd-decision-item,
   .sd-risk-problem-text,
   .sd-risk-problem,
   .sd-alt-title,
@@ -6715,70 +6698,19 @@
     line-height: 1.5;
     letter-spacing: -0.01em;
   }
-  .sd-tool-row {
-    padding: 22px 0;
-  }
-  .sd-tool-row-open {
-    grid-template-columns: 48px minmax(0, 1fr) minmax(220px, 1fr) 120px auto;
-    gap: 20px;
-  }
-  .sd-tool-logo-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-  }
   .sd-tool-name {
     font-size: 18px;
     line-height: 1.2;
     letter-spacing: -0.035em;
     font-weight: 600;
   }
-  .sd-tool-role,
-  .sd-tool-reason {
-    font-size: 15px;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-  }
-  .sd-tool-price {
-    font-size: 15px;
-    line-height: 1.35;
-    font-weight: 500;
-  }
-  .sd-tool-status {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 28px;
-    padding: 0 10px;
-    font-size: 11px;
-    line-height: 1;
-    letter-spacing: 0.08em;
-    font-weight: 700;
-    color: var(--color-text);
-    background: var(--color-surface);
-    border-color: var(--color-border);
-  }
-  .sd-tool-status--core,
-  .sd-tool-status--conditional,
-  .sd-tool-status--challenge {
-    color: var(--color-text);
-    background: var(--color-surface);
-    border-color: var(--color-border);
-  }
-  .sd-tool-detail-link {
-    font-size: 15px;
-    line-height: 1;
-    font-weight: 600;
-  }
   .sd-alt-title,
-  .sd-related-name,
-  .sd-expert-note-title {
+  .sd-related-name {
     font-size: 22px;
     line-height: 1.18;
     letter-spacing: -0.035em;
     font-weight: 600;
   }
-  .sd-budget-row,
   .sd-risk-enhanced-row {
     padding: 24px 0;
   }
@@ -6792,26 +6724,6 @@
     padding: 0;
   }
 
-  @media (max-width: 1100px) {
-    .sd-hero-grid {
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 56px;
-    }
-    .sd-tool-row-open {
-      grid-template-columns: 48px minmax(0, 1fr) minmax(180px, 0.9fr) 110px auto;
-      gap: 16px;
-    }
-  }
-  @media (max-width: 900px) {
-    .sd-hero-grid {
-      grid-template-columns: 1fr;
-      padding: 72px 0 64px;
-    }
-    .sd-snapshot {
-      max-width: none;
-      justify-self: stretch;
-    }
-  }
   @media (max-width: 767px) {
     #outils,
     #budget,
@@ -6821,30 +6733,11 @@
     #faq {
       scroll-margin-top: calc(var(--navbar-h, 68px) + 64px);
     }
-    .sd-nav,
-    .sd-nav-inner {
-      height: 52px;
-    }
-    .sd-nav-inner {
-      width: min(calc(100% - 32px), 1240px);
-    }
-    .sd-nav-label {
-      display: none;
-    }
-    .sd-nav-link {
-      height: 32px;
-      padding: 0 13px;
-      font-size: 13px;
-    }
     .sd-container,
-    .sd-hero-grid,
     .sd-hero-editorial,
     .sd-hero-fact-table,
     .sd-cta-inner {
       width: min(calc(100% - 32px), 1240px);
-    }
-    .sd-hero-grid {
-      padding: 64px 0 56px;
     }
     .sd-hero-h1 {
       font-size: clamp(48px, 13vw, 68px);
@@ -6862,13 +6755,9 @@
     .sd-section {
       padding: 64px 0;
     }
-    .sd-decision-summary-section,
     .sd-cta-band {
       padding: 56px 0;
     }
-    .sd-overview-grid,
-    .sd-priority-grid,
-    .sd-budget-list,
     .sd-alt-grid,
     .sd-calibration-grid,
     .sd-related-grid,
