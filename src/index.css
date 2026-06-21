@@ -12260,52 +12260,6 @@
   line-height: 1.45;
   color: var(--color-muted);
 }
-.sd-stack-map-count {
-  display: block;
-  margin-top: 18px;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  line-height: 1.35;
-  color: var(--color-text);
-}
-.sd-stack-map-watch {
-  width: fit-content;
-  min-height: 24px;
-  margin-top: 12px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 9px;
-  border: 1px dotted rgba(34, 34, 34, 0.35);
-  border-radius: 999px;
-  font-family: var(--font-ui);
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  background: rgba(255, 255, 255, 0.58);
-}
-.sd-stack-map-toggle {
-  margin-top: 18px;
-  min-height: 34px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font-family: var(--font-ui);
-  font-size: 14px;
-  line-height: 1;
-  font-weight: 700;
-  color: var(--color-text);
-  cursor: pointer;
-}
-.sd-stack-map-toggle:hover,
-.sd-stack-map-toggle:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 .sd-stack-map-tools {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -12324,33 +12278,6 @@
 .sd-stack-map-tool:focus-visible .sd-stack-map-tool-copy > span {
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-.sd-stack-map-logo {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  background: var(--color-surface);
-  overflow: hidden;
-}
-.sd-stack-map-tool-copy {
-  min-width: 0;
-  display: grid;
-  gap: 3px;
-  font-family: var(--font-ui);
-}
-.sd-stack-map-tool-copy > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 15px;
-  line-height: 1.2;
-  font-weight: 600;
-  color: var(--color-text);
 }
 .sd-stack-map-tool-copy small,
 .sd-stack-map-more,
@@ -12401,69 +12328,6 @@
     padding: 24px 18px;
   }
   .sd-stack-map-tools {
-    grid-template-columns: 1fr;
-  }
-  .sd-stack-map-tool-copy > span {
-    white-space: normal;
-  }
-}
-
-/* Sprint — Hero decision dashboard (2026-05-18) */
-/* Compact repères grid: replaces the 3 large fit cards in the hero */
-
-.sd-reperes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 36px;
-  max-width: 760px;
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--color-border); /* gap color via background */
-}
-
-.sd-repere-item {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 14px 16px 15px;
-  background: var(--color-surface);
-}
-
-.sd-repere-label {
-  font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  line-height: 1;
-}
-
-.sd-repere-value {
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-text);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-
-/* CTA spacing after repères */
-.sd-reperes-grid + .sd-hero-cta {
-  margin-top: 28px;
-}
-
-/* Mobile: 2 columns then 1 */
-@media (max-width: 768px) {
-  .sd-reperes-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 100%;
-  }
-}
-@media (max-width: 430px) {
-  .sd-reperes-grid {
     grid-template-columns: 1fr;
   }
 }
