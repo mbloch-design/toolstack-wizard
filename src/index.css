@@ -9478,6 +9478,14 @@
     color: var(--color-text);
   }
 
+  .hp-audit-badge--keep,
+  .hp-audit-badge--challenge,
+  .hp-audit-badge--duplicate,
+  .hp-audit-badge--soon {
+    background: transparent;
+    color: var(--color-text);
+  }
+
   .hp-audit-price {
     min-width: 44px;
     font-size: 15px;
