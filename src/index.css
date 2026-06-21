@@ -5034,25 +5034,6 @@
     transition: background 140ms ease-out;
   }
   .sk-profile-card:hover { background: var(--color-bg); }
-  .sk-profile-card--active {
-    background: var(--color-text);
-    color: var(--color-surface);
-  }
-  .sk-profile-card--active:hover { background: #000000; }
-
-  .sk-profile-eyebrow {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    margin-bottom: 8px;
-    line-height: 1;
-    display: block;
-    transition: color 140ms;
-  }
-  .sk-profile-card--active .sk-profile-eyebrow { color: rgba(255,255,255,0.5); }
 
   .sk-profile-name {
     font-family: var(--font-brand);
@@ -5076,8 +5057,6 @@
     overflow: hidden;
     transition: color 140ms;
   }
-  .sk-profile-card--active .sk-profile-desc { color: rgba(255,255,255,0.65); }
-
   .sk-profile-meta {
     display: flex;
     align-items: center;
@@ -5088,46 +5067,8 @@
     color: var(--color-muted-light);
     transition: color 140ms;
   }
-  .sk-profile-card--active .sk-profile-meta { color: rgba(255,255,255,0.5); }
-
-  .sk-profile-cta {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 500;
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .sk-profile-card:hover .sk-profile-cta-arrow,
-  .sk-profile-card--active .sk-profile-cta-arrow {
-    transform: translateX(3px);
-  }
-  .sk-profile-cta-arrow { display: inline-block; transition: transform 160ms ease-out; }
 
   /* ── How-to section ──────────────────────── */
-  .sk-howto-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--color-border);
-    gap: 0;
-    margin-top: 32px;
-  }
-  @media (max-width: 768px) {
-    .sk-howto-grid { grid-template-columns: 1fr; }
-  }
-  .sk-howto-item {
-    padding: 24px 28px 24px 0;
-  }
-  .sk-howto-item + .sk-howto-item {
-    padding-left: 28px;
-    border-left: 1px solid var(--color-border);
-  }
-  @media (max-width: 768px) {
-    .sk-howto-item { padding: 20px 0 0; border-left: none !important; }
-    .sk-howto-item + .sk-howto-item { padding-left: 0; border-left: none; border-top: 1px solid var(--color-border); }
-  }
-
   /* ── Stack card (row, editorial) ─────────── */
   .sk-card {
     background: var(--color-surface);
@@ -5149,22 +5090,6 @@
     justify-content: space-between;
     margin-bottom: 14px;
     gap: 16px;
-  }
-  .sk-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .sk-card-tag {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 2px 8px;
-  }
-  .sk-card-tag--base {
-    color: var(--color-text);
-    border-color: var(--color-text);
   }
   .sk-card-title {
     font-family: var(--font-brand);
@@ -5196,43 +5121,6 @@
     padding-top: 14px;
     margin-top: 4px;
   }
-  .sk-card-footer-left { display: flex; align-items: center; gap: 16px; }
-  .sk-card-budget {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.01em;
-  }
-  .sk-card-budget-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    display: block;
-    margin-bottom: 2px;
-  }
-  .sk-card-risk {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    color: var(--color-muted);
-    line-height: 1.4;
-    max-width: 380px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .sk-card-risk-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    display: block;
-    margin-bottom: 3px;
-  }
   .sk-card-cta {
     font-family: var(--font-ui);
     font-size: 14px;
@@ -5243,9 +5131,6 @@
     gap: 5px;
     flex-shrink: 0;
   }
-  .sk-card-cta-arrow { display: inline-block; transition: transform 160ms ease-out; }
-  .sk-card:hover .sk-card-cta-arrow { transform: translateX(3px); }
-
   @media (max-width: 640px) {
     .sk-card-footer { flex-direction: column; align-items: flex-start; }
     .sk-card-cta { order: -1; }
@@ -5382,12 +5267,6 @@
   .sk-facet-option--active { background: var(--color-text); color: var(--color-surface); }
   .sk-facet-option--active:hover { background: var(--color-text); }
   .sk-facet-option:focus-visible { outline: 2px solid var(--color-border-strong); outline-offset: 2px; }
-  .sk-facet-count {
-    font-size: 12px;
-    opacity: 0.6;
-    font-weight: 400;
-  }
-
   /* ── Sidebar reset ───────────────────────────────────── */
   .sk-sidebar-reset-row { padding: 16px 0 4px; }
   .sk-sidebar-reset {
@@ -5484,14 +5363,6 @@
     text-transform: uppercase;
     color: var(--color-muted-light);
   }
-  .sk-card-meta-persona {
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-  }
   .sk-card-badge-recommended {
     font-family: var(--font-ui);
     font-size: 9px;
@@ -5503,36 +5374,6 @@
     padding: 2px 6px;
     border-radius: 3px;
   }
-  .sk-card-budget {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-  }
-  .sk-card-tags-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin: 8px 0 0;
-  }
-  .sk-card-tag {
-    display: inline-flex;
-    align-items: center;
-    height: 22px;
-    padding: 0 8px;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    background: var(--color-bg);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--color-muted);
-    letter-spacing: -0.01em;
-  }
-
   /* ── Mobile panel ────────────────────────────────────── */
   .sk-mobile-panel {
     position: fixed;
@@ -5641,25 +5482,6 @@
 /* Sprint 34 — contextual stack selection page */
 @layer components {
   .sk-hero .eh-container { max-width: var(--layout-content); }
-  .sk-hero-title {
-    font-family: var(--font-brand);
-    font-size: clamp(3.25rem, 6vw, 6rem);
-    line-height: 0.96;
-    letter-spacing: -0.06em;
-    font-weight: 600;
-    color: var(--color-text);
-    max-width: 980px;
-    margin: 14px 0 24px;
-  }
-  .sk-hero-subtitle {
-    font-family: var(--font-ui);
-    font-size: 22px;
-    line-height: 1.35;
-    letter-spacing: -0.025em;
-    color: var(--color-muted);
-    max-width: 720px;
-    margin: 0 0 32px;
-  }
   .sk-section {
     padding: 72px 0;
     border-bottom: none;
@@ -5937,8 +5759,6 @@
   }
   @media (max-width: 767px) {
     .sk-section { padding: 56px 0; }
-    .sk-hero-title { font-size: clamp(2.8rem, 14vw, 4.2rem); }
-    .sk-hero-subtitle { font-size: 18px; }
     .sk-results-header { flex-direction: column; gap: 14px; }
     .sk-results-grid { grid-template-columns: 1fr; }
     .sk-card { padding: 22px; }
