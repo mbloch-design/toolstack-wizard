@@ -3,7 +3,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { asText } from "@/lib/text";
-import { formatPriceLabel } from "@/lib/toolUtils";
+import { formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -40,12 +40,9 @@ export default function StickyDecisionCard({
   const ts = computeToolTrimScore(tool);
 
   /* ── Verdict sentence ── */
-  const verdict = lang === "en" && (tool as any).verdictEn ? (tool as any).verdictEn : tool.verdict;
-  const keepItems: string[] = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
-  const avoidItems: string[] = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
+  const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
 
   const verdictText = (() => {
-    const threshold = verdict?.threshold as string | undefined;
     if (threshold && threshold.length > 0) return threshold;
     if (keepItems.length && avoidItems.length) {
       const k = keepItems[0];

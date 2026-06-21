@@ -19,6 +19,30 @@ export function formatPriceLabel(
   return isOneTimePrice(tool) ? `${rounded}€` : `${rounded}€/${t("mois", "mo")}`;
 }
 
+interface VerdictLike {
+  keepIf?: string[] | string;
+  avoidIf?: string[] | string;
+  threshold?: string;
+}
+
+/**
+ * Resolve the lang-aware verdict (verdictEn on English pages, falling back
+ * to verdict) into normalized keepItems/avoidItems/threshold. Previously
+ * duplicated verbatim in ToolDetailPage and StickyDecisionCard — each then
+ * formats the result differently (a 3-block "quick decision" vs a single
+ * sentence), so only this shared resolution step is extracted, not the
+ * downstream formatting.
+ */
+export function resolveVerdict(
+  tool: { verdict?: VerdictLike; verdictEn?: VerdictLike },
+  lang: string
+): { keepItems: string[]; avoidItems: string[]; threshold: string | undefined } {
+  const vd = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const keepItems = (Array.isArray(vd?.keepIf) ? vd.keepIf : [vd?.keepIf]).filter(Boolean) as string[];
+  const avoidItems = (Array.isArray(vd?.avoidIf) ? vd.avoidIf : [vd?.avoidIf]).filter(Boolean) as string[];
+  return { keepItems, avoidItems, threshold: vd?.threshold };
+}
+
 /** Extract bare hostname from a tool's websiteUrl or affiliateLink */
 export function getToolDomain(tool: {
   websiteUrl?: string;

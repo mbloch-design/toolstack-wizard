@@ -11,7 +11,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
-import { getToolDomain, getDomainFromUrl, formatPriceLabel } from "@/lib/toolUtils";
+import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
@@ -441,9 +441,7 @@ const ToolDetailPage = () => {
 
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
-                  const vd = lang === "en" && (tool as any).verdictEn ? (tool as any).verdictEn : tool.verdict;
-                  const keepItems: string[] = (Array.isArray(vd?.keepIf) ? vd.keepIf : [vd?.keepIf]).filter(Boolean);
-                  const avoidItems: string[] = (Array.isArray(vd?.avoidIf) ? vd.avoidIf : [vd?.avoidIf]).filter(Boolean);
+                  const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
                   const consArr = lang === "en" && (tool as any).consEn ? (tool as any).consEn : (tool.cons ?? []);
                   const limitText: string | null = consArr.length > 0 ? consArr[0] : (avoidItems[0] ?? null);
 
@@ -463,9 +461,9 @@ const ToolDetailPage = () => {
                       </h2>
 
                       {/* Verdict sentence */}
-                      {vd?.threshold && (
+                      {threshold && (
                         <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.55, color: "var(--color-text)", maxWidth: 760, marginBottom: 0 }}>
-                          {vd.threshold}
+                          {threshold}
                         </p>
                       )}
 
