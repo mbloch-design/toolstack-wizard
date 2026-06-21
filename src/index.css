@@ -6156,13 +6156,9 @@
   }
   .sd-hero-eyebrow,
   .sd-section-eyebrow,
-  .sd-snapshot-title,
-  .sd-decision-summary-label,
   .sd-calibration-label,
-  .sd-overview-label,
   .sd-risk-col-label,
-  .sd-alt-label,
-  .sd-priority-label {
+  .sd-alt-label {
     font-size: var(--tt-size-kicker);
     line-height: 1;
     font-weight: 500;
@@ -6239,13 +6235,6 @@
     font-size: 15px;
     line-height: 1.4;
   }
-  .sd-hero-decision-grid p,
-  .sd-decision-summary-card p,
-  .sd-overview-intro,
-  .sd-expert-note-text,
-  .sd-expert-note-tip,
-  .sd-budget-desc,
-  .sd-risk-detail,
   .sd-risk-consequence-text,
   .sd-risk-reco-text,
   .sd-alt-tools,
@@ -6261,8 +6250,7 @@
     padding: 96px 0;
     border-bottom: none;
   }
-  .sd-section-title,
-  .sd-decision-summary-title {
+  .sd-section-title {
     font-size: clamp(36px, 4vw, 64px);
     line-height: 0.98;
     letter-spacing: -0.055em;
@@ -6273,15 +6261,11 @@
   .sd-section-title {
     margin-bottom: 40px;
   }
-  .sd-decision-summary-grid,
-  .sd-priority-grid,
   .sd-alt-grid,
   .sd-calibration-grid,
   .sd-related-grid {
     gap: 16px;
   }
-  .sd-snapshot-value,
-  .sd-metric-hint,
   .sd-budget-note,
   .sd-related-sub,
   .sd-related-budget,
@@ -6291,13 +6275,9 @@
     font-weight: 500;
     color: var(--color-muted-light);
   }
-  .sd-snapshot-value,
   .sd-related-budget {
     color: var(--color-text);
   }
-  .sd-overview-grid,
-  .sd-priority-grid,
-  .sd-budget-list,
   .sd-alt-grid,
   .sd-calibration-grid,
   .sd-related-grid,
@@ -6308,7 +6288,6 @@
     margin-top: 40px;
   }
   .sd-risk-problem-text,
-  .sd-risk-problem,
   .sd-alt-title,
   .sd-related-name {
     font-size: 16px;
@@ -10295,19 +10274,6 @@
   }
 }
 
-/* Stack detail UI markers: dotted rhythm, usage chips, editorial decisions */
-.stack-dotted-divider,
-.sd-dotted-divider {
-  height: 1px;
-  border: 0;
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(34, 34, 34, 0.42) 0,
-    rgba(34, 34, 34, 0.42) 1px,
-    transparent 1px,
-    transparent 8px
-  );
-}
 /* ══════════════════════════════════════════════════════════════════════════
    Sprint P0+P1 — Stack detail corrections (2026-05-17)
    Fixes: section padding, decision-summary padding + grid, chips, hero CTA
