@@ -6537,84 +6537,6 @@
   .sd-hero-section {
     border-bottom: none;
   }
-  .sd-nav {
-    position: sticky;
-    top: var(--navbar-h, 68px);
-    z-index: 30;
-    height: 56px;
-    border-bottom: 1px solid var(--color-border);
-    background: rgba(248, 248, 244, 0.92);
-    backdrop-filter: blur(10px);
-  }
-  .sd-nav-inner {
-    width: min(calc(100% - 48px), 1240px);
-    max-width: 1240px;
-    height: 56px;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .sd-nav-inner::-webkit-scrollbar {
-    display: none;
-  }
-  .sd-nav-label {
-    flex: 0 0 auto;
-    margin-right: 10px;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    line-height: 1;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    white-space: nowrap;
-  }
-  .sd-nav-link {
-    height: 34px;
-    display: inline-flex;
-    align-items: center;
-    flex: 0 0 auto;
-    padding: 0 14px;
-    border: none;
-    border-radius: 999px;
-    font-family: var(--font-ui);
-    font-size: 14px;
-    line-height: 1;
-    font-weight: 600;
-    color: var(--color-muted);
-    white-space: nowrap;
-    text-decoration: none;
-    transition: color 140ms ease-out, background 140ms ease-out;
-  }
-  .sd-nav-link:hover {
-    color: var(--color-text);
-    background: var(--color-surface);
-  }
-  .sd-nav-link:focus-visible {
-    outline: 2px solid var(--color-border-strong);
-    outline-offset: 2px;
-  }
-  .sd-nav-link--active,
-  .sd-nav-link--active:hover {
-    color: var(--color-surface);
-    background: var(--color-text);
-  }
-  .sd-hero-grid {
-    grid-template-columns: minmax(0, 1fr) 380px;
-    gap: clamp(64px, 7vw, 112px);
-    width: min(calc(100% - 48px), 1240px);
-    max-width: 1240px;
-    padding: 88px 0 72px;
-  }
-  .sd-hero-copy {
-    min-width: 0;
-  }
   .sd-hero-eyebrow,
   .sd-section-eyebrow,
   .sd-snapshot-title,
@@ -6650,20 +6572,6 @@
     max-width: 760px;
     margin-top: 28px;
     margin-bottom: 0;
-  }
-  .sd-hero-context,
-  .sd-overview-text {
-    font-size: 18px;
-    line-height: 1.45;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    color: var(--color-text);
-  }
-  .sd-hero-context {
-    font-size: 17px;
-    line-height: 1.45;
-    max-width: 740px;
-    margin: 24px 0 0;
   }
   .stack-fit-grid {
     display: grid;
@@ -6748,13 +6656,6 @@
   .sd-section-title {
     margin-bottom: 40px;
   }
-  .sd-decision-summary-section {
-    padding: 64px 0;
-  }
-  .sd-decision-summary-inner {
-    grid-template-columns: 0.36fr 0.64fr;
-    gap: 48px;
-  }
   .sd-decision-summary-grid,
   .sd-priority-grid,
   .sd-alt-grid,
@@ -6762,15 +6663,6 @@
   .sd-related-grid {
     gap: 16px;
   }
-  .sd-snapshot {
-    width: 100%;
-    max-width: 380px;
-    justify-self: end;
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: none;
-  }
-  .sd-snapshot-item { border-bottom: none; }
   .sd-snapshot-value,
   .sd-metric-hint,
   .sd-budget-note,
@@ -6785,87 +6677,6 @@
   .sd-snapshot-value,
   .sd-related-budget {
     color: var(--color-text);
-  }
-  .sd-snapshot-budget-value {
-    margin: 8px 0 0;
-    font-family: var(--font-brand);
-    font-size: 40px;
-    line-height: 1;
-    letter-spacing: -0.055em;
-    font-weight: 600;
-    color: var(--color-text);
-  }
-  .sd-snapshot-budget-value span {
-    margin-left: 3px;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    font-weight: 500;
-    color: var(--color-muted);
-  }
-  .sd-snapshot-facts {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px 20px;
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid var(--color-border);
-  }
-  .sd-snapshot-facts p {
-    margin: 6px 0 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
-    font-weight: 600;
-    color: var(--color-text);
-    overflow-wrap: anywhere;
-  }
-  .sd-snapshot-watch,
-  .sd-snapshot-workflow,
-  .sd-snapshot-tools {
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid var(--color-border);
-  }
-  .sd-snapshot-watch p,
-  .sd-snapshot-workflow p {
-    margin: 8px 0 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    font-weight: 500;
-    color: var(--color-text);
-    text-align: left;
-  }
-  .sd-snapshot-tools .sd-logo-stack {
-    flex-wrap: wrap;
-    gap: 7px;
-  }
-  .sd-snapshot-tools .sd-logo-pill {
-    width: 32px;
-    height: 32px;
-    margin-left: 0;
-    background: var(--color-bg);
-    border-color: var(--color-border);
-  }
-  .sd-snapshot-tools .sd-logo-more {
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .sd-metric-value {
-    font-size: clamp(32px, 3vw, 48px);
-    line-height: 1;
-    letter-spacing: -0.055em;
-    font-weight: 600;
-  }
-  .sd-budget-amount {
-    font-size: 17px;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-    font-weight: 700;
   }
   .sd-overview-grid,
   .sd-priority-grid,
