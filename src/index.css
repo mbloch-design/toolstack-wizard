@@ -13751,7 +13751,6 @@ section[id] {
 
   /* Hide all chrome and non-editorial UI — applies across all pages */
   nav.cp-breadcrumb,
-  .cp-subnav,
   .cp-cta-band,
   .cp-tipping-cta,
   .cp-methodology-note,
@@ -13860,8 +13859,7 @@ section[id] {
     color: #555555 !important;
     margin-bottom: 2mm !important;
   }
-  .cp-matrix-intro,
-  .cp-section-intro {
+  .cp-matrix-intro {
     font-size: 10pt !important;
     color: #333333 !important;
     max-width: 100% !important;
@@ -13914,29 +13912,20 @@ section[id] {
     border-bottom: 1pt solid #000000 !important;
     page-break-after: avoid;
   }
-  .cp-compare-row,
-  .cp-table-row,
-  .cp-matrix-row {
+  .cp-compare-row {
     border-bottom: 0.5pt solid #BBBBBB !important;
     page-break-inside: avoid;
     background: none !important; /* kill hover wash */
   }
-  .cp-compare-row-title,
-  .cp-table-cell--criterion,
-  .cp-matrix-criterion {
+  .cp-compare-row-title {
     color: #000000 !important;
   }
-  .cp-compare-row-verdict,
-  .cp-matrix-text {
+  .cp-compare-row-verdict {
     color: #333333 !important;
   }
-  .cp-compare-row-tool--win .cp-compare-row-tool-val,
-  .cp-table-cell--win .cp-table-tool-title {
+  .cp-compare-row-tool--win .cp-compare-row-tool-val {
     color: #000000 !important;
     font-weight: 700 !important;
-  }
-  .cp-table-verdict {
-    color: #000000 !important;
   }
 
   /* Verdict logic — par défaut / bascule si — keep paired on same page */
