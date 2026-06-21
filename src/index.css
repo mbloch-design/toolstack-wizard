@@ -1258,35 +1258,6 @@
     outline-offset: 2px;
   }
 
-  /* Legacy — kept for any stray usage */
-  .nav-action-btn {
-    display: inline-flex;
-    align-items: center;
-    height: 38px;
-    padding: 0 14px;
-    border-radius: 6px;
-    border: 1px solid hsl(var(--foreground));
-    background: transparent;
-    color: hsl(var(--foreground));
-    font-family: var(--font-ui);
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 180ms ease-out, color 180ms ease-out;
-    white-space: nowrap;
-  }
-
-  .nav-action-btn:hover {
-    background: hsl(var(--foreground));
-    color: hsl(var(--background));
-  }
-
-  .nav-action-btn:focus-visible {
-    outline: 2px solid hsl(var(--primary));
-    outline-offset: 2px;
-  }
-
   /* ── Editorial exploration panel ──────────── */
 
   /* Panel shell — floats 8px below the header, no duplicated header inside */
@@ -2285,10 +2256,6 @@
     color: hsl(var(--foreground));
   }
 
-  .eh-title-accent {
-    color: hsl(var(--primary));
-  }
-
   @media (max-width: 639px) {
     .eh-title {
       font-size: clamp(2.75rem, 11vw, 3.5rem);
@@ -2344,16 +2311,6 @@
   .eh-cta-primary:hover {
     background: #000000;
     border-color: #000000;
-  }
-
-  /* Blue accent CTA — homepage only */
-  .eh-cta-primary--accent {
-    background: hsl(var(--primary));
-    border-color: hsl(var(--primary));
-  }
-  .eh-cta-primary--accent:hover {
-    background: hsl(var(--primary) / 0.88);
-    border-color: hsl(var(--primary) / 0.88);
   }
 
   .dark .eh-cta-primary {
@@ -3059,21 +3016,6 @@
   }
   .es-cta-link:hover { opacity: 0.65; }
 
-  .es-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .es-grid--2 { grid-template-columns: repeat(2, 1fr); }
-  .es-grid--4 { grid-template-columns: repeat(4, 1fr); }
-  @media (max-width: 1024px) {
-    .es-grid     { grid-template-columns: repeat(2, 1fr); }
-    .es-grid--4  { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .es-grid, .es-grid--2, .es-grid--4 { grid-template-columns: 1fr; gap: 12px; }
-  }
-
 /* ─────────────────────────────────────────────
    EDITORIAL CARD BASE (ec-*)
    All content cards: guides, stacks, comparisons, categories.
@@ -3114,7 +3056,6 @@
     letter-spacing: -0.045em;
     color: var(--color-text);
   }
-  .ec-title--lg { font-size: 30px; }
   .ec-text {
     font-family: var(--font-ui);
     font-size: 15px;
@@ -3128,28 +3069,6 @@
     border: none;
     border-top: 1px solid var(--color-border-soft);
     margin: 20px 0 0;
-  }
-  .ec-meta {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    padding-top: 16px;
-  }
-  .ec-meta-label {
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    display: block;
-    margin-bottom: 4px;
-  }
-  .ec-meta-value {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-text);
   }
   .ec-cta {
     font-family: var(--font-ui);
@@ -3705,11 +3624,6 @@
   }
 
   /* Featured section */
-  .gi-section {
-    padding: 72px 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .gi-section:last-of-type { border-bottom: none; }
   .gi-section-label {
     font-family: var(--font-ui);
     font-size: 11px;
@@ -7589,28 +7503,6 @@
 ───────────────────────────────────────────── */
 @layer components {
 
-  /* ── Section ─────────────────────────────── */
-  .hac-section {
-    background: var(--color-bg);
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    padding: 40px 0;
-  }
-
-  /* ── Grid 3 cols ─────────────────────────── */
-  .hac-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  @media (max-width: 767px) {
-    .hac-grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-  }
-
   /* ── Card ────────────────────────────────── */
   .hac-card {
     background: var(--color-bg);
@@ -8036,41 +7928,6 @@
    Sprint 8 — Homepage decision ticker with logos
 ───────────────────────────────────────────── */
 @layer components {
-  .home-decision-ticker {
-    height: 44px;
-    background: var(--color-bg);
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    overflow: hidden;
-    max-width: 100%;
-  }
-
-  .home-decision-ticker-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    height: 44px;
-    animation: ticker 34s linear infinite;
-    will-change: transform;
-  }
-
-  .home-decision-ticker:hover .home-decision-ticker-track {
-    animation-play-state: paused;
-  }
-
-  .home-decision-ticker-item {
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0 22px;
-    white-space: nowrap;
-    border-right: 1px solid var(--color-border);
-    font-size: 14px;
-    line-height: 1;
-    color: var(--color-muted);
-  }
-
   .ticker-tool-group,
   .ticker-tool {
     display: inline-flex;
@@ -8131,12 +7988,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .home-decision-ticker-track {
-    animation: none !important;
-    transform: translateX(0);
-  }
-}
 
 
 /* Sprint 8b — decision ticker animation + lighter separators */
@@ -9779,33 +9630,9 @@
     opacity: 0.82;
   }
 
-  .nav-submit-btn {
-    height: auto;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    color: var(--color-muted);
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  .nav-submit-btn:hover {
-    background: transparent;
-    color: var(--color-text);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-
   .dark .nav-audit-btn {
     background: hsl(var(--foreground));
     color: hsl(var(--background));
-  }
-
-  .dark .nav-submit-btn,
-  .dark .nav-submit-btn:hover {
-    background: transparent;
-    border-color: transparent;
   }
 
   .eh-cta-secondary {
@@ -12243,16 +12070,9 @@ section[id] {
     color: #000000 !important;
     page-break-after: avoid;
   }
-  .td-eyebrow,
-  .ga-eyebrow {
+  .td-eyebrow {
     font-size: 8pt !important;
     color: #555555 !important;
-  }
-  /* Tool/guide CTAs that aren't editorial: hide affiliate buttons etc. */
-  .td-cta-row,
-  .td-affiliate-cta,
-  .ga-cta-inline {
-    display: none !important;
   }
 
   /* Hero — keep the title, drop the giant logos */
