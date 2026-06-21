@@ -9453,11 +9453,6 @@
     border-top: none;
   }
 
-  .hp-cut-row-header,
-  .hp-cut-row-indicator {
-    display: none;
-  }
-
   .hp-cut-row-label {
     font-size: 11px;
     font-weight: 700;
@@ -9466,15 +9461,6 @@
     color: var(--color-muted-light);
     margin: 0;
     line-height: 1.2;
-  }
-
-  .hp-cut-row-title {
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    font-weight: 600;
-    color: var(--color-text);
-    margin: 0;
   }
 
   .hp-cut-row-example {
@@ -10463,14 +10449,6 @@
     color: var(--color-text);
   }
 
-  .hp-audit-badge--keep,
-  .hp-audit-badge--challenge,
-  .hp-audit-badge--duplicate,
-  .hp-audit-badge--soon {
-    background: transparent;
-    color: var(--color-text);
-  }
-
   .hp-audit-price {
     min-width: 44px;
     font-size: 15px;
@@ -10483,10 +10461,6 @@
     font-size: 13px;
     color: var(--color-text);
     border-bottom: 1px solid var(--color-border-soft);
-  }
-
-  .hp-audit-divider {
-    display: none;
   }
 
   .hp-audit-footer {
