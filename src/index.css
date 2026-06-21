@@ -6953,33 +6953,8 @@
     line-height: 0.95; color: var(--color-text, #222222);
     max-width: none; margin-bottom: 0;
   }
-  .cp-title--section-lead { margin-bottom: 28px; }
-  /* Intro paragraph beneath a full-width title (used in coût, etc.) */
-  /* TIER 1 — lede paragraph under section H2 */
-  .cp-section-intro {
-    max-width: 68ch;
-    margin: 32px 0 48px;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-body-large);
-    line-height: 1.5;
-    letter-spacing: -0.015em;
-    color: var(--color-text);
-  }
-  /* (cp-section-grid + cp-section-heading: removed — never rendered in JSX.
-     If a two-column header pattern is needed later, reintroduce intentionally.) */
   @media (max-width: 640px) {
     .cp-title { font-size: clamp(32px, 9vw, 44px); line-height: 0.97; }
-  }
-  /* ── Verdict: framing phrase — uses tt-section-intro scale ──── */
-  .cp-section-framing {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-section-intro);
-    line-height: 1.38;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: var(--color-muted);
-    max-width: 760px;
-    margin: 0 0 44px;
   }
   /* ── Verdict: editorial recommendation statement ────────────── */
   .cp-verdict-statement {
@@ -6989,13 +6964,6 @@
     padding: 0;
     margin-bottom: clamp(48px, 4.5vw, 64px);
     background: transparent;
-  }
-  .cp-verdict-statement-label {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-kicker); font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted); margin-bottom: 14px;
   }
   /* Statement is a pull-quote, NOT a competing headline.
      Must read smaller than the section H2 (40-56px).
