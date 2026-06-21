@@ -685,25 +685,6 @@
    REQUIRED  → align cp-* to tt-* values below
 ───────────────────────────────────────────── */
 @layer components {
-  /* ── Hero title — display, brand font ──────── */
-  .tt-hero-title {
-    font-family: var(--font-brand);
-    font-size: var(--tt-size-hero);
-    font-weight: 700;
-    line-height: 0.92;
-    letter-spacing: -0.07em;
-    color: var(--color-text);
-  }
-  /* ── Hero subtitle — intro below title ──────── */
-  .tt-hero-subtitle {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-hero-sub);
-    font-weight: 400;
-    line-height: 1.28;
-    letter-spacing: -0.035em;
-    color: var(--color-muted);
-    max-width: 820px;
-  }
   /* ── Section kicker / eyebrow ───────────────── */
   .tt-kicker {
     font-family: var(--font-ui);
@@ -714,26 +695,6 @@
     text-transform: uppercase;
     color: var(--color-muted);
     display: block;
-  }
-  /* ── Section title — brand font, editorial ──── */
-  .tt-section-title {
-    font-family: var(--font-brand);
-    font-size: var(--tt-size-section-h);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-    color: var(--color-text);
-    max-width: 760px;
-  }
-  /* ── Section intro paragraph ────────────────── */
-  .tt-section-intro {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-section-intro);
-    font-weight: 400;
-    line-height: 1.32;
-    letter-spacing: -0.035em;
-    color: var(--color-muted);
-    max-width: 780px;
   }
   /* ── Body text ───────────────────────────────── */
   .tt-body {
@@ -761,51 +722,6 @@
     color: var(--color-muted-light);
     display: block;
   }
-  /* ── Fact value — decisive data point ───────── */
-  .tt-fact-value {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-fact);
-    font-weight: 600;
-    line-height: 1.18;
-    letter-spacing: -0.03em;
-    color: var(--color-text);
-  }
-  /* ── Fact value compact — cell / table ──────── */
-  .tt-fact-value-compact {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-fact-compact);
-    font-weight: 600;
-    line-height: 1.38;
-    letter-spacing: -0.015em;
-    color: var(--color-text);
-  }
-  /* ── Card title ─────────────────────────────── */
-  .tt-card-title {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-title);
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-  }
-  /* ── Card body ──────────────────────────────── */
-  .tt-card-body {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body);
-    font-weight: 400;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    color: var(--color-muted);
-  }
-  /* ── Metric value — KPIs, numbers ───────────── */
-  .tt-metric-value {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-metric);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.045em;
-    color: var(--color-text);
-  }
   /* ── CTA band heading — medium-scale title ──── */
   .tt-cta-title {
     font-family: var(--font-brand);
@@ -817,22 +733,6 @@
     max-width: 720px;
     margin: 0 0 16px;
   }
-
-  /* ─────────────────────────────────────────────
-     TOOL LOGO SIZE UTILITIES
-     Reference sizes — ToolLogo component uses
-     inline `size` prop; these classes document
-     and can optionally override wrapper dims.
-     All rendering logic lives in ToolLogo.tsx.
-  ───────────────────────────────────────────── */
-  /* sm: 28×28 — ticker, inline mentions, recap strips */
-  .tt-tool-logo-sm  { width: 28px; height: 28px; min-width: 28px; min-height: 28px; flex-shrink: 0; }
-  /* md: 40×40 — card grids, table rows, sidebar */
-  .tt-tool-logo-md  { width: 40px; height: 40px; min-width: 40px; min-height: 40px; flex-shrink: 0; }
-  /* lg: 52×52 — hero sections, stack tool cards */
-  .tt-tool-logo-lg  { width: 52px; height: 52px; min-width: 52px; min-height: 52px; flex-shrink: 0; }
-  /* xl: 64×64 — compare duel, tool detail hero */
-  .tt-tool-logo-xl  { width: 64px; height: 64px; min-width: 64px; min-height: 64px; flex-shrink: 0; }
 
   /* ─────────────────────────────────────────────
      GLOBAL BUTTONS
@@ -878,109 +778,6 @@
   }
   .tt-button-secondary:hover { background: var(--color-text); color: var(--color-surface); }
 
-  /* ─────────────────────────────────────────────
-     LAYOUT PRIMITIVES — reusable containers
-     Use these instead of page-specific equivalents
-     to keep spacing & width consistent site-wide.
-  ───────────────────────────────────────────── */
-  /* Shared container — full editorial width */
-  .tt-container {
-    max-width: var(--layout-content, 1280px);
-    margin: 0 auto;
-    padding: 0 var(--layout-gutter, 48px);
-  }
-  /* Hero band */
-  .tt-hero {
-    background: var(--color-bg, #F8F8F4);
-    border-bottom: 1px solid var(--color-border, #DADAD4);
-    padding: var(--tt-hero-pt, 72px) 0 var(--tt-hero-pb, 64px);
-  }
-  /* Standard page section */
-  .tt-section {
-    padding: var(--tt-section-y) 0;
-    border-bottom: 1px solid var(--color-border, #DADAD4);
-  }
-  .tt-section--last { border-bottom: none; }
-  /* Section header block (kicker + title + optional intro) */
-  .tt-section-header { margin-bottom: 48px; }
-  /* Two-column section grid (heading + content) */
-  .tt-section-grid {
-    display: grid;
-    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.6fr);
-    gap: 80px;
-    align-items: start;
-  }
-  @media (max-width: 1023px) {
-    .tt-section-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-  @media (max-width: 640px) {
-    .tt-section-grid { gap: 20px; }
-  }
-  /* Constrained-width content column */
-  .tt-content-narrow { max-width: 760px; }
-  .tt-content-wide   { max-width: 980px; }
-
-  /* ─────────────────────────────────────────────
-     TABLE TYPOGRAPHY TOKENS — reusable table text
-     Use in decision tables on all pages.
-  ───────────────────────────────────────────── */
-  .tt-table-head-cell {
-    font-family: var(--font-ui);
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-label, #8D8D86);
-  }
-  .tt-table-criterion {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-fact-compact); font-weight: 600;
-    line-height: 1.3; letter-spacing: -0.02em;
-    color: var(--color-text, #222222);
-  }
-  .tt-table-value {
-    font-family: var(--font-ui);
-    font-size: 17px; line-height: 1.18;
-    font-weight: 650; letter-spacing: -0.03em;
-    color: var(--color-text, #222222);
-  }
-  .tt-table-note {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body); line-height: 1.38;
-    font-weight: 400; letter-spacing: -0.01em;
-    color: var(--color-muted, #6F6F68);
-    margin: 6px 0 0;
-  }
-  .tt-table-decision {
-    font-family: var(--font-ui);
-    font-size: 16px; line-height: 1.32;
-    font-weight: 600; letter-spacing: -0.025em;
-    color: var(--color-text, #222222);
-  }
-
-  /* ─────────────────────────────────────────────
-     STATEMENT PATTERN — editorial "take" block
-     Used in hero contract, verdict statements.
-  ───────────────────────────────────────────── */
-  .tt-statement {
-    padding: 20px 0;
-    border-top: 1px solid var(--color-border, #DADAD4);
-    border-bottom: 1px solid var(--color-border, #DADAD4);
-  }
-  .tt-statement-label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--font-ui);
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light, #9A9A92);
-  }
-  .tt-statement-text {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-body-large);
-    line-height: 1.42; letter-spacing: -0.02em;
-    font-weight: 500;
-    color: var(--color-text, #222222);
-  }
 }
 
 /* ─────────────────────────────────────────────
@@ -13055,7 +12852,6 @@ section[id] {
   /* Site-wide chrome */
   header[role="banner"],
   footer[role="contentinfo"],
-  .tt-navbar,
   .tt-footer {
     display: none !important;
   }
