@@ -160,14 +160,26 @@ async function loadLocalPosts(lang: string): Promise<Post[]> {
   return (module.default as unknown[]).map(mapPost);
 }
 
+// Module-level, session-lifetime caches. Every ToolDetailPage mount (i.e.
+// every tool-to-tool navigation) used to redo the full fetch + transform
+// from scratch — same ~1100-row JSON map and Supabase round-trip every
+// time. Content here doesn't change within a tab session, so cache once
+// and reuse; a hard reload naturally clears these like any module state.
+let _categoriesCache: Category[] | null = null;
+
 export function useCategories() {
-  const [categories, setCategories] = useState<Category[]>(staticCategories);
-  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState<Category[]>(_categoriesCache ?? staticCategories);
+  const [loading, setLoading] = useState(!_categoriesCache);
 
   useEffect(() => {
+    if (_categoriesCache) return;
     (async () => {
       const { data, error } = await supabase.from("categories").select("*");
-      if (!error && data && data.length > 0) setCategories(mergeById(staticCategories, data.map(mapSupabaseCat)));
+      if (!error && data && data.length > 0) {
+        const merged = mergeById(staticCategories, data.map(mapSupabaseCat));
+        _categoriesCache = merged;
+        setCategories(merged);
+      }
       setLoading(false);
     })();
   }, []);
@@ -234,11 +246,14 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
   return { toolA, toolB, loading };
 }
 
+let _toolsCache: Tool[] | null = null;
+
 export function useTools() {
-  const [tools, setTools] = useState<Tool[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [tools, setTools] = useState<Tool[]>(_toolsCache ?? []);
+  const [loading, setLoading] = useState(!_toolsCache);
 
   useEffect(() => {
+    if (_toolsCache) return;
     let cancelled = false;
 
     (async () => {
@@ -249,7 +264,9 @@ export function useTools() {
 
       const { data, error } = await supabase.from("tools").select("*").limit(5000);
       if (cancelled) return;
-      if (!error && data && data.length > 0) setTools(mergeById(localTools, data.map(mapToolFromJson)));
+      const merged = (!error && data && data.length > 0) ? mergeById(localTools, data.map(mapToolFromJson)) : localTools;
+      _toolsCache = merged;
+      setTools(merged);
       setLoading(false);
     })();
 
@@ -261,11 +278,14 @@ export function useTools() {
   return { tools, loading };
 }
 
+let _toolSummariesCache: ToolSummary[] | null = null;
+
 export function useToolSummaries() {
-  const [tools, setTools] = useState<ToolSummary[]>(staticToolSummaries);
-  const [loading, setLoading] = useState(true);
+  const [tools, setTools] = useState<ToolSummary[]>(_toolSummariesCache ?? staticToolSummaries);
+  const [loading, setLoading] = useState(!_toolSummariesCache);
 
   useEffect(() => {
+    if (_toolSummariesCache) return;
     (async () => {
       const { data, error } = await supabase
         .from("tools")
@@ -286,7 +306,9 @@ export function useToolSummaries() {
           websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, ""),
           logo: asLocalizedText(t.logo, ""),
         }));
-        setTools(mergeById(staticToolSummaries, remoteTools));
+        const merged = mergeById(staticToolSummaries, remoteTools);
+        _toolSummariesCache = merged;
+        setTools(merged);
       }
       setLoading(false);
     })();
