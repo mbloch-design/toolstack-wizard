@@ -12,18 +12,14 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
-// Critical: HomePage loaded eagerly for FCP
+// Critical: loaded eagerly (FCP for HomePage; SSR + no lazy-chunk waterfall for ToolDetailPage)
 import HomePage from "@/pages/HomePage";
+import ToolDetailPage from "@/pages/ToolDetailPage";
 
-// Lazy-loaded pages (below the fold / secondary routes). ToolDetailPage is
-// lazy here too — entry-server.tsx uses its own direct, eager import for
-// SSR (renderToString can't handle a Suspense boundary actually suspending,
-// it just renders the fallback) without forcing every other page's bundle
-// to carry its weight too.
+// Lazy-loaded pages (below the fold / secondary routes)
 const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
 const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
-const ToolDetailPage = lazy(() => import("@/pages/ToolDetailPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
@@ -101,7 +97,7 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
   "notion-gratuit-vs-payant-vrai-calcul",
 ]);
 
-export const LangLayout = () => {
+const LangLayout = () => {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
   const validLang: Lang = lang === "en" ? "en" : "fr";
