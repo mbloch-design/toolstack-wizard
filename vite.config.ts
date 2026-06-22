@@ -392,7 +392,7 @@ function staticPrerenderPlugin(): Plugin {
         // Real SSR for the main tool route only (Phase 1 — see plan
         // "linked-dazzling-thimble"). Sub-pages (/prix, /alternatives, /avis,
         // /faq) keep the previous meta-only prerender for now.
-        let renderToolPage: ((path: string, tool: any) => string) | null = null;
+        let renderToolPage: ((path: string, tool: any, lang: string) => Promise<{ html: string; relatedPosts: any[] }>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -513,10 +513,15 @@ function staticPrerenderPlugin(): Plugin {
 
             if (renderToolPage) {
               try {
-                const markup = renderToolPage(`/${lang}/tool/${slug}`, tool);
+                const { html: markup, relatedPosts } = await renderToolPage(`/${lang}/tool/${slug}`, tool, lang);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
                 const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
-                html = html.replace("</body>", `    <script id="__SSR_TOOL__" type="application/json">${ssrJson}</script>\n  </body>`);
+                const relatedPostsJson = JSON.stringify(relatedPosts).replace(/<\/script/gi, "<\\/script");
+                html = html.replace(
+                  "</body>",
+                  `    <script id="__SSR_TOOL__" type="application/json">${ssrJson}</script>\n` +
+                  `    <script id="__SSR_RELATED_POSTS__" type="application/json">${relatedPostsJson}</script>\n  </body>`
+                );
               } catch (e) {
                 console.warn(`⚠️ SSR render failed for ${lang}/tool/${slug}, falling back to meta-only:`, e);
               }

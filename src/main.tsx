@@ -6,7 +6,7 @@ if (typeof Object.hasOwn !== "function") {
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
-import { SsrToolContext } from "@/hooks/useSupabaseData";
+import { SsrToolContext, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
 import "./index.css";
 
 const container = document.getElementById("root")!;
@@ -18,11 +18,15 @@ if (ssrToolEl) {
   // scratch, and seed useToolBySlug with the same data so the first client
   // render matches the server markup exactly.
   const ssrTool = JSON.parse(ssrToolEl.textContent || "null");
+  const ssrRelatedPostsEl = document.getElementById("__SSR_RELATED_POSTS__");
+  const ssrRelatedPosts = ssrRelatedPostsEl ? JSON.parse(ssrRelatedPostsEl.textContent || "[]") : [];
   hydrateRoot(
     container,
     <HelmetProvider>
       <SsrToolContext.Provider value={ssrTool}>
-        <App />
+        <SsrRelatedPostsContext.Provider value={ssrRelatedPosts}>
+          <App />
+        </SsrRelatedPostsContext.Provider>
       </SsrToolContext.Provider>
     </HelmetProvider>
   );

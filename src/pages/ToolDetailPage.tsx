@@ -1,7 +1,7 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolBySlug, useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useRef } from "react";
+import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
+import { useContext, useEffect, useRef } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
 } from "lucide-react";
@@ -267,9 +267,12 @@ const ToolDetailPage = () => {
     },
     [] as any[]
   );
-  const relatedPosts = posts
-    .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
-    .slice(0, 3);
+  const ssrRelatedPosts = useContext(SsrRelatedPostsContext);
+  const relatedPosts = ssrRelatedPosts !== undefined
+    ? ssrRelatedPosts
+    : posts
+        .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
+        .slice(0, 3);
 
   const v5Price       = tool.pricing_v5?.compare_price_monthly_eur;
   const displayPrice  = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;

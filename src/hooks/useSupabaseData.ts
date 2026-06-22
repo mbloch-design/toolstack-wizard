@@ -10,6 +10,13 @@ import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
 // server-rendered for this exact slug — avoids a hydration-time spinner flash.
 export const SsrToolContext = createContext<Tool | undefined>(undefined);
 
+// Same idea, for the small "related guides" list ToolDetailPage shows in its
+// desktop sidebar: usePosts() below has no static fallback (posts start at
+// []), so that block goes from absent to present once its fetch resolves —
+// a guaranteed, deterministic layout shift on every load of an SSR'd tool
+// page. Pre-computed server-side and passed through here instead.
+export const SsrRelatedPostsContext = createContext<Pick<Post, "slug" | "title" | "readTime">[] | undefined>(undefined);
+
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
   id: c.id,
@@ -170,7 +177,7 @@ function mapPost(p: any): Post {
   };
 }
 
-async function loadLocalPosts(lang: string): Promise<Post[]> {
+export async function loadLocalPosts(lang: string): Promise<Post[]> {
   const module = lang === "en"
     ? await import("@/data/posts-en.json")
     : await import("@/data/posts-fr.json");
