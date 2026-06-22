@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import {
   BookOpen,
   ChevronDown,
@@ -332,12 +332,15 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("explorer");
   const [searchOpen, setSearchOpen] = useState(false);
 
-  /* Mobile detection — panel renders full-screen below 1024px */
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" ? window.innerWidth < 1024 : false
-  );
-  useEffect(() => {
+  /* Mobile detection — panel renders full-screen below 1024px.
+     Starts false on both server and client (SSR has no window) so the
+     first client render matches the server markup exactly — useLayoutEffect
+     corrects it synchronously before paint, avoiding both a hydration
+     mismatch and a visible flash on real mobile devices. */
+  const [isMobile, setIsMobile] = useState(false);
+  useLayoutEffect(() => {
     const update = () => setIsMobile(window.innerWidth < 1024);
+    update();
     window.addEventListener("resize", update, { passive: true });
     return () => window.removeEventListener("resize", update);
   }, []);
