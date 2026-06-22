@@ -117,14 +117,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- ContentSquare: chargé après le rendu initial pour ne pas bloquer LCP -->
-    <script>
-      window.addEventListener('load', function() {
-        var s = document.createElement('script');
-        s.src = 'https://t.contentsquare.net/uxa/5db061830ccab.js';
-        s.async = true;
-        document.body.appendChild(s);
-      });
-    </script>
   </body>
 </html>
