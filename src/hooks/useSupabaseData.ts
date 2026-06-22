@@ -390,10 +390,17 @@ export function useToolBySlug(slug: string | undefined) {
 }
 
 export function usePosts(lang: string) {
+  // On an SSR'd tool page, ToolDetailPage already has its relatedPosts
+  // pre-computed server-side (see SsrRelatedPostsContext) and never reads
+  // this hook's own `posts` value — so fetching the full posts dataset
+  // (a ~70KB chunk + a Supabase query, both sitting in the critical
+  // network chain) is pure waste there. Skip it entirely in that case.
+  const skip = useContext(SsrRelatedPostsContext) !== undefined;
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!skip);
 
   useEffect(() => {
+    if (skip) return;
     let cancelled = false;
 
     (async () => {
