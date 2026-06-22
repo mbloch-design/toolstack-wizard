@@ -1446,34 +1446,120 @@ function extractCriticalCss(): string {
 // Automatic and exhaustive instead of a manually maintained list; prefixed
 // variants (lg:, hover:, dark:) are skipped since they don't affect the
 // very first paint the same way an unstyled-vs-styled timing gap does.
-let compiledCssCache: string | null = null;
-function extractUsedUtilityCss(markup: string, compiledCssPath: string): string {
-  if (compiledCssCache === null) {
-    compiledCssCache = fs.existsSync(compiledCssPath) ? fs.readFileSync(compiledCssPath, "utf-8") : "";
-  }
-  if (!compiledCssCache) return "";
+// Tailwind escapes special characters in a compiled selector with a literal
+// backslash (e.g. class "pt-[68px]" -> selector ".pt-\[68px\]"). Extracts
+// each class token (unescaped) from one CSS selector — only meaningful for
+// "simple" selectors (just one or more chained classes, no combinators/
+// pseudo-classes); returns null for anything more complex so callers skip it
+// rather than risk a wrong match.
+function classesOfSimpleSelector(selector: string): string[] | null {
+  if (!/^(\.(?:[^.\s,]|\\.)+)+$/.test(selector)) return null;
+  const tokens = selector.match(/\.(?:[^.\s,]|\\.)+/g) || [];
+  return tokens.map((t) => t.slice(1).replace(/\\(.)/g, "$1"));
+}
 
-  const classes = new Set<string>();
-  for (const m of markup.matchAll(/class="([^"]*)"/g)) {
-    for (const cls of m[1].split(/\s+/)) {
-      if (cls && !cls.includes(":")) classes.add(cls);
+interface IndexedRule { required: string[]; text: string }
+
+// Walks the compiled CSS (top-level rules, plus one level inside @media/
+// @supports) and indexes every simple class selector under each class it
+// requires. A media-scoped match keeps its @media(...) {...} wrapper in
+// `text` instead of being flattened to an unconditional rule — learned the
+// hard way: an earlier version stripped @media content entirely, which
+// fixed one bug (`.td-sidebar-mobile{display:none}` only existing inside
+// a desktop-only media query, wrongly applied everywhere) but broke
+// another (the mobile override that collapses `.td-body-grid` to a single
+// column never arrived, so the *desktop* 2-column grid briefly applied on
+// mobile too, squeezing the sidebar to near-zero width — confirmed via a
+// CDP layout-shift trace against production: CLS ~0.9, mobile only).
+// Keeping the wrapper means the browser evaluates the real media query
+// itself, immediately, exactly as it would once the deferred stylesheet
+// loads — so both the always-hidden-on-desktop and the mobile-collapse
+// rules apply correctly from the very first paint.
+function buildClassRuleIndex(css: string): Map<string, IndexedRule[]> {
+  const index = new Map<string, IndexedRule[]>();
+  function addRule(selectors: string, body: string, wrapBefore: string, wrapAfter: string) {
+    for (const selector of selectors.split(",")) {
+      const required = classesOfSimpleSelector(selector.trim());
+      if (!required || required.length === 0) continue;
+      const text = `${wrapBefore}${selector.trim()}${body}${wrapAfter}`;
+      for (const c of required) {
+        const list = index.get(c) ?? [];
+        list.push({ required, text });
+        index.set(c, list);
+      }
     }
   }
 
+  let i = 0;
+  while (i < css.length) {
+    const brace = css.indexOf("{", i);
+    if (brace === -1) break;
+    const selectorsRaw = css.slice(i, brace).trim();
+    let depth = 1;
+    let j = brace + 1;
+    for (; j < css.length && depth > 0; j++) {
+      if (css[j] === "{") depth++;
+      else if (css[j] === "}") depth--;
+    }
+    const body = css.slice(brace, j); // includes braces
+    if (/^@(media|supports)\b/.test(selectorsRaw)) {
+      const inner = body.slice(1, -1);
+      let k = 0;
+      while (k < inner.length) {
+        const ibrace = inner.indexOf("{", k);
+        if (ibrace === -1) break;
+        const innerSelectors = inner.slice(k, ibrace).trim();
+        let idepth = 1;
+        let m = ibrace + 1;
+        for (; m < inner.length && idepth > 0; m++) {
+          if (inner[m] === "{") idepth++;
+          else if (inner[m] === "}") idepth--;
+        }
+        if (innerSelectors && !innerSelectors.startsWith("@")) {
+          addRule(innerSelectors, inner.slice(ibrace, m), `${selectorsRaw}{`, "}");
+        }
+        k = m;
+      }
+    } else if (selectorsRaw && !selectorsRaw.startsWith("@")) {
+      addRule(selectorsRaw, body, "", "");
+    }
+    i = j;
+  }
+  return index;
+}
+
+let classRuleIndex: Map<string, IndexedRule[]> | null = null;
+let compiledCssExists = false;
+function extractUsedUtilityCss(markup: string, compiledCssPath: string): string {
+  if (classRuleIndex === null) {
+    compiledCssExists = fs.existsSync(compiledCssPath);
+    classRuleIndex = compiledCssExists
+      ? buildClassRuleIndex(fs.readFileSync(compiledCssPath, "utf-8"))
+      : new Map();
+  }
+  if (!compiledCssExists) return "";
+
+  // Group by class ATTRIBUTE (not flattened across the whole page) — a
+  // compound selector like `.a.b` only matches an element carrying BOTH
+  // classes together, not two different elements that each have one.
+  const classGroups: Set<string>[] = [];
+  for (const m of markup.matchAll(/class="([^"]*)"/g)) {
+    const group = new Set(m[1].split(/\s+/).filter((c) => c && !c.includes(":")));
+    if (group.size) classGroups.push(group);
+  }
+
+  const seen = new Set<string>();
   const rules: string[] = [];
-  for (const cls of classes) {
-    // Tailwind escapes special characters in the compiled selector with a
-    // literal backslash (e.g. class "pt-[68px]" -> selector ".pt-\[68px\]").
-    // Searching for that literal substring directly avoids the double-
-    // escaping trap of building a matching regex (backslash needs escaping
-    // for regex AND is itself a literal character to find).
-    const cssEscaped = cls.replace(/([.:\[\]\/%,#()])/g, "\\$1");
-    const needle = `.${cssEscaped}{`;
-    const start = compiledCssCache.indexOf(needle);
-    if (start === -1) continue;
-    const end = compiledCssCache.indexOf("}", start + needle.length);
-    if (end === -1) continue;
-    rules.push(compiledCssCache.slice(start, end + 1));
+  for (const group of classGroups) {
+    for (const cls of group) {
+      for (const candidate of classRuleIndex.get(cls) ?? []) {
+        if (seen.has(candidate.text)) continue;
+        if (candidate.required.every((c) => group.has(c))) {
+          seen.add(candidate.text);
+          rules.push(candidate.text);
+        }
+      }
+    }
   }
   return rules.join("");
 }
