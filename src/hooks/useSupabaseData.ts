@@ -363,16 +363,22 @@ export function useToolBySlug(slug: string | undefined) {
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
+    // SSR data is already as fresh as the last deploy (the build re-fetches
+    // Supabase for every tool, see entry-server.tsx); re-fetching it again
+    // client-side just for a mid-session freshness guarantee was costing a
+    // full Supabase round-trip (~1.1s, confirmed in a real PageSpeed run)
+    // sitting in the LCP-relevant critical request chain for no visible
+    // benefit on a normal page view. Skip it when SSR already matches.
+    if (ssrMatches) return;
     let cancelled = false;
-    const hasInitialData = ssrMatches;
 
     (async () => {
-      if (!hasInitialData) setLoading(true);
+      setLoading(true);
       let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
       if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
       if (cancelled) return;
       if (data) setTool(mapToolFromJson(data));
-      else if (!hasInitialData) {
+      else {
         const localTools = await loadLocalTools();
         if (cancelled) return;
         const found = localTools.find((t) => t.slug === slug || t.id === slug);
