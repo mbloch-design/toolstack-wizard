@@ -405,6 +405,9 @@ function staticPrerenderPlugin(): Plugin {
           console.warn("⚠️ dist-ssr/entry-server.js not found — run `vite build --ssr` first. Falling back to meta-only prerender.");
         }
 
+        const cssHrefMatch = baseHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/);
+        const compiledCssPath = cssHrefMatch ? path.resolve(distDir, cssHrefMatch[1].replace(/^\//, "")) : "";
+
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
@@ -515,6 +518,12 @@ function staticPrerenderPlugin(): Plugin {
               try {
                 const { html: markup, relatedPosts } = await renderToolPage(`/${lang}/tool/${slug}`, tool, lang);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                if (compiledCssPath) {
+                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                  if (utilityCss) {
+                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                  }
+                }
                 const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
                 const relatedPostsJson = JSON.stringify(relatedPosts).replace(/<\/script/gi, "<\\/script");
                 html = html.replace(
@@ -1377,6 +1386,33 @@ function extractCriticalCss(): string {
   const root = postcss.parse(css);
   const critical: string[] = [];
 
+  // Measured via a local Lighthouse trace (LayoutShift event, score ~0.55 —
+  // basically the entire CLS on SSR'd tool pages): the raw `body { ... }`
+  // rule below contains `@apply ...`, which is meaningless outside Tailwind's
+  // build pipeline and gets silently dropped by the browser, so margin
+  // collapses to the browser's default ~8px until Tailwind's preflight
+  // (only in the deferred main stylesheet) resets it to 0. That reset is
+  // hardcoded here directly so it's present from the very first paint.
+  critical.push("html, body { margin: 0; }");
+  // Same trace also showed the remaining ~16px top offset surviving the fix
+  // above: Tailwind's preflight (deferred) also zeroes heading/paragraph
+  // margins, which the browser default stylesheet doesn't. Until that
+  // loads, the page's <h1>/<p> sit at their default UA margins, then jump
+  // up once it arrives. Mirror Tailwind's own preflight selector list here.
+  critical.push("blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0; }");
+  // Confirmed via a CDP-level layout-shift trace (PerformanceObserver with
+  // node references, not guessing from a Lighthouse summary): body's own
+  // margin is already 0, but its first DOM child — the Toaster's <ol>
+  // notification region, rendered before any route content — has the
+  // browser default ol margin (~1em) until Tailwind's preflight resets it.
+  // With no border/padding on body separating them, that margin collapses
+  // through and visually pushes body down by exactly that amount.
+  critical.push("ol, ul, menu { margin: 0; padding: 0; list-style: none; }");
+  // Tailwind utility classes (fixed, flex, pt-[68px], etc.) used by the
+  // shell/content can't be extracted here at all — they're generated from
+  // .tsx usage, not hand-written in this file. See extractUsedUtilityCss
+  // below, which pulls those straight from the compiled bundle per-page.
+
   root.walkAtRules("font-face", (rule) => {
     critical.push(rule.toString());
   });
@@ -1400,6 +1436,46 @@ function extractCriticalCss(): string {
   });
 
   return critical.join("\n\n");
+}
+
+// Pulls the compiled rule for every plain (no responsive/hover/dark-mode
+// prefix) utility class actually used in a piece of server-rendered HTML,
+// straight from the real compiled CSS bundle — found necessary after
+// chasing individual Tailwind utilities (fixed, flex-1, pt-[68px]...) by
+// hand turned out to be unbounded (every component uses more of them).
+// Automatic and exhaustive instead of a manually maintained list; prefixed
+// variants (lg:, hover:, dark:) are skipped since they don't affect the
+// very first paint the same way an unstyled-vs-styled timing gap does.
+let compiledCssCache: string | null = null;
+function extractUsedUtilityCss(markup: string, compiledCssPath: string): string {
+  if (compiledCssCache === null) {
+    compiledCssCache = fs.existsSync(compiledCssPath) ? fs.readFileSync(compiledCssPath, "utf-8") : "";
+  }
+  if (!compiledCssCache) return "";
+
+  const classes = new Set<string>();
+  for (const m of markup.matchAll(/class="([^"]*)"/g)) {
+    for (const cls of m[1].split(/\s+/)) {
+      if (cls && !cls.includes(":")) classes.add(cls);
+    }
+  }
+
+  const rules: string[] = [];
+  for (const cls of classes) {
+    // Tailwind escapes special characters in the compiled selector with a
+    // literal backslash (e.g. class "pt-[68px]" -> selector ".pt-\[68px\]").
+    // Searching for that literal substring directly avoids the double-
+    // escaping trap of building a matching regex (backslash needs escaping
+    // for regex AND is itself a literal character to find).
+    const cssEscaped = cls.replace(/([.:\[\]\/%,#()])/g, "\\$1");
+    const needle = `.${cssEscaped}{`;
+    const start = compiledCssCache.indexOf(needle);
+    if (start === -1) continue;
+    const end = compiledCssCache.indexOf("}", start + needle.length);
+    if (end === -1) continue;
+    rules.push(compiledCssCache.slice(start, end + 1));
+  }
+  return rules.join("");
 }
 
 function criticalCssPlugin(): Plugin {
