@@ -1429,7 +1429,7 @@ export default defineConfig(({ mode }) => ({
           if (id.includes("/src/data/content.json")) return "data-content";
           if (id.includes("/src/data/posts-fr.json")) return "data-posts-fr";
           if (id.includes("/src/data/posts-en.json")) return "data-posts-en";
-          if (id.includes("/src/data/")) return "data-stacks";
+          if (id.includes("/src/data/stacks.ts")) return "data-stacks";
           return undefined;
         },
       },
