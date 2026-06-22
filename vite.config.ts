@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
+import postcss from "postcss";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
@@ -1331,7 +1332,74 @@ function staticPrerenderPlugin(): Plugin {
   };
 }
 
+/**
+ * Extracts the small, foundational slice of index.css (CSS variables,
+ * @font-face, base resets) that the rest of the page depends on to avoid
+ * broken colors (unresolved var() falling back to transparent/black), then
+ * inlines it and defers the main stylesheet so it stops blocking render.
+ * Built from src/index.css directly (not a hand-maintained copy) so the two
+ * never drift apart.
+ */
+function extractCriticalCss(): string {
+  const css = fs.readFileSync(path.resolve(__dirname, "src/index.css"), "utf-8");
+  const root = postcss.parse(css);
+  const critical: string[] = [];
 
+  root.walkAtRules("font-face", (rule) => {
+    critical.push(rule.toString());
+  });
+
+  root.walkRules((rule) => {
+    const sel = rule.selector.trim();
+    if (sel === ":root" || sel === ".dark") {
+      let inMediaGutter = false;
+      let p = rule.parent;
+      while (p) {
+        if (p.type === "atrule" && p.name === "media" && /max-width:\s*(1023|767)px/.test(p.params)) {
+          inMediaGutter = true;
+        }
+        p = p.parent;
+      }
+      // Top-level :root/.dark (not the responsive --layout-gutter overrides,
+      // those are non-critical and can arrive with the deferred stylesheet)
+      if (!inMediaGutter) critical.push(rule.toString());
+    }
+    if (sel === "body") critical.push(rule.toString());
+  });
+
+  return critical.join("\n\n");
+}
+
+function criticalCssPlugin(): Plugin {
+  let criticalCss = "";
+  return {
+    name: "critical-css-inline",
+    apply: "build",
+    buildStart() {
+      criticalCss = extractCriticalCss();
+    },
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        // 1. Inline the critical slice right at the top of <head>, so it's
+        //    available before anything else in the document.
+        let out = html.replace(
+          "<head>",
+          `<head>\n    <style id="critical-css">${criticalCss}</style>`
+        );
+        // 2. Defer the main stylesheet Vite injected (same pattern already
+        //    used for Google Fonts below) so it no longer blocks render.
+        out = out.replace(
+          /<link rel="stylesheet" crossorigin href="([^"]+\.css)">/,
+          (_match, href) =>
+            `<link rel="stylesheet" crossorigin href="${href}" media="print" onload="this.media='all'">\n` +
+            `    <noscript><link rel="stylesheet" crossorigin href="${href}" /></noscript>`
+        );
+        return out;
+      },
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -1346,6 +1414,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     sitemapPlugin(),
+    criticalCssPlugin(),
     staticPrerenderPlugin(),
   ].filter(Boolean),
   build: {
