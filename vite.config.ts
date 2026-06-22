@@ -389,6 +389,22 @@ function staticPrerenderPlugin(): Plugin {
         const baseHtml = fs.readFileSync(indexPath, "utf-8");
         let count = 0;
 
+        // Real SSR for the main tool route only (Phase 1 — see plan
+        // "linked-dazzling-thimble"). Sub-pages (/prix, /alternatives, /avis,
+        // /faq) keep the previous meta-only prerender for now.
+        let renderToolPage: ((path: string, tool: any) => string) | null = null;
+        const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
+        if (fs.existsSync(ssrEntryPath)) {
+          try {
+            const ssrModule = await import(`file://${ssrEntryPath}?t=${Date.now()}`);
+            renderToolPage = ssrModule.renderToolPage;
+          } catch (e) {
+            console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
+          }
+        } else {
+          console.warn("⚠️ dist-ssr/entry-server.js not found — run `vite build --ssr` first. Falling back to meta-only prerender.");
+        }
+
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
@@ -494,6 +510,17 @@ function staticPrerenderPlugin(): Plugin {
               ? `${name}. ${description} Avis, prix vérifiés et alternatives moins chères sur ToolTrim.`
               : `${name}. ${description} Honest review, verified pricing and cheaper alternatives on ToolTrim.`;
             html = html.replace("</body>", `    <noscript><p>${toolBodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
+
+            if (renderToolPage) {
+              try {
+                const markup = renderToolPage(`/${lang}/tool/${slug}`, tool);
+                html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
+                html = html.replace("</body>", `    <script id="__SSR_TOOL__" type="application/json">${ssrJson}</script>\n  </body>`);
+              } catch (e) {
+                console.warn(`⚠️ SSR render failed for ${lang}/tool/${slug}, falling back to meta-only:`, e);
+              }
+            }
 
             const outDir = path.resolve(distDir, lang, "tool", slug);
             fs.mkdirSync(outDir, { recursive: true });
@@ -1402,7 +1429,7 @@ function criticalCssPlugin(): Plugin {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode, isSsrBuild }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -1413,13 +1440,16 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    sitemapPlugin(),
-    criticalCssPlugin(),
-    staticPrerenderPlugin(),
+    // These three only make sense for the client build — they write into
+    // dist/ (sitemap, prerendered HTML) or transform index.html, none of
+    // which exist/apply during the separate `vite build --ssr` pass.
+    !isSsrBuild && sitemapPlugin(),
+    !isSsrBuild && criticalCssPlugin(),
+    !isSsrBuild && staticPrerenderPlugin(),
   ].filter(Boolean),
   build: {
     rollupOptions: {
-      output: {
+      output: isSsrBuild ? undefined : {
         manualChunks(id) {
           // Data chunks only — vendor splitting is left to Vite's defaults
           // to avoid circular reference issues between React chunks

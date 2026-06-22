@@ -12,14 +12,14 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
-// Critical: HomePage loaded eagerly for FCP
+// Critical: loaded eagerly (FCP for HomePage; SSR + no lazy-chunk waterfall for ToolDetailPage)
 import HomePage from "@/pages/HomePage";
+import ToolDetailPage from "@/pages/ToolDetailPage";
 
 // Lazy-loaded pages (below the fold / secondary routes)
 const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
 const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
-const ToolDetailPage = lazy(() => import("@/pages/ToolDetailPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
@@ -135,6 +135,71 @@ const LazyFallback = () => (
   </div>
 );
 
+export const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Navigate to="/fr" replace />} />
+
+    {/* Legacy redirects */}
+    <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
+    <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
+    <Route path="/blog/:slug" element={<RedirectBlogToGuide />} />
+    <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
+    <Route path="/tool/:slug" element={<RedirectToolToFr />} />
+    <Route path="/article/:slug" element={<RedirectArticleToFr />} />
+    <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
+
+    <Route path="/:lang" element={<LangLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="selector" element={<SelectorPage />} />
+      <Route path="selector/results" element={<ResultsPage />} />
+      <Route path="tools" element={<ToolsPage />} />
+      <Route path="tool/:slug" element={<ToolDetailPage />} />
+      <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
+      <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
+      <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
+      <Route path="tool/:slug/avis" element={<ToolDetailPage />} />
+      <Route path="tool/:slug/reviews" element={<ToolDetailPage />} />
+      <Route path="tool/:slug/faq" element={<ToolDetailPage />} />
+      <Route path="outils/:slug" element={<RedirectOutils />} />
+      <Route path="category" element={<CategoriesIndexPage />} />
+      <Route path="category/:slug" element={<CategoryPage />} />
+      <Route path="guides" element={<GuidesPage />} />
+      <Route path="stacks" element={<StacksPage />} />
+      <Route path="stacks/:slug" element={<StackDetailPage />} />
+      {/* Persona pillar pages — declared BEFORE guide/:slug to take precedence */}
+      <Route path="guide/meilleurs-outils-developpeur-freelance" element={<PersonaPillarPage persona="THEO" lang="fr" />} />
+      <Route path="guide/best-tools-freelance-developer" element={<PersonaPillarPage persona="THEO" lang="en" />} />
+      <Route path="guide/meilleurs-outils-designer-freelance" element={<PersonaPillarPage persona="SOFIA" lang="fr" />} />
+      <Route path="guide/best-tools-freelance-designer" element={<PersonaPillarPage persona="SOFIA" lang="en" />} />
+      <Route path="guide/meilleurs-outils-consultant-freelance" element={<PersonaPillarPage persona="MARC" lang="fr" />} />
+      <Route path="guide/best-tools-freelance-consultant" element={<PersonaPillarPage persona="MARC" lang="en" />} />
+      <Route path="guide/meilleurs-outils-createur-contenu-freelance" element={<PersonaPillarPage persona="ALIX" lang="fr" />} />
+      <Route path="guide/best-tools-freelance-content-creator" element={<PersonaPillarPage persona="ALIX" lang="en" />} />
+      <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
+      <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
+      <Route path="guide/outils-facturation-freelance-2026" element={<ArticleFacturation />} />
+      <Route path="guide/:slug" element={<LocalizedGuidePage />} />
+      <Route path="article/:slug" element={<RedirectArticleToGuide />} />
+      <Route path="comparatifs" element={<ComparesIndexPage />} />
+      <Route path="comparatif/:slugPair" element={<ComparePage />} />
+      <Route path="about" element={<AboutPage />} />
+      <Route path="methodology" element={<MethodologyPage />} />
+      <Route path="methodologie" element={<MethodologyPage />} />
+      <Route path="transparency" element={<TransparencyPage />} />
+      <Route path="contact" element={<ContactPage />} />
+      <Route path="legal-notice" element={<LegalNoticePage />} />
+      <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="terms" element={<TermsPage />} />
+      {/* SEO landing — localized slugs (FR + EN) under same LangLayout */}
+      <Route path="search" element={<SearchPage />} />
+      <Route path="audit-saas-gratuit" element={<AuditLanding />} />
+      <Route path="free-saas-audit" element={<AuditLanding />} />
+      <Route path="back-office" element={<BackOfficePage />} />
+    </Route>
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -145,73 +210,7 @@ const App = () => (
         <DynamicCanonical />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
-          <Routes>
-            <Route path="/" element={<Navigate to="/fr" replace />} />
-
-            {/* Legacy redirects */}
-            <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
-            <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
-            <Route path="/blog/:slug" element={<RedirectBlogToGuide />} />
-            <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
-            <Route path="/selector" element={<Navigate to="/fr/selector" replace />} />
-            <Route path="/diagnostic" element={<Navigate to="/fr/selector" replace />} />
-            <Route path="/audit" element={<Navigate to="/fr/selector" replace />} />
-            <Route path="/tool/:slug" element={<RedirectToolToFr />} />
-            <Route path="/article/:slug" element={<RedirectArticleToFr />} />
-            <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
-
-            <Route path="/:lang" element={<LangLayout />}>
-              <Route index element={<HomePage />} />
-              <Route path="selector" element={<SelectorPage />} />
-              <Route path="diagnostic" element={<RedirectLegacyDiagnostic />} />
-              <Route path="audit" element={<RedirectLegacyDiagnostic />} />
-              <Route path="selector/results" element={<ResultsPage />} />
-              <Route path="tools" element={<ToolsPage />} />
-              <Route path="tool/:slug" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
-              <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
-              <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/avis" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/reviews" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/faq" element={<ToolDetailPage />} />
-              <Route path="outils/:slug" element={<RedirectOutils />} />
-              <Route path="category" element={<CategoriesIndexPage />} />
-              <Route path="category/:slug" element={<CategoryPage />} />
-              <Route path="guides" element={<GuidesPage />} />
-              <Route path="stacks" element={<StacksPage />} />
-              <Route path="stacks/:slug" element={<StackDetailPage />} />
-              {/* Persona pillar pages — declared BEFORE guide/:slug to take precedence */}
-              <Route path="guide/meilleurs-outils-developpeur-freelance" element={<PersonaPillarPage persona="THEO" lang="fr" />} />
-              <Route path="guide/best-tools-freelance-developer" element={<PersonaPillarPage persona="THEO" lang="en" />} />
-              <Route path="guide/meilleurs-outils-designer-freelance" element={<PersonaPillarPage persona="SOFIA" lang="fr" />} />
-              <Route path="guide/best-tools-freelance-designer" element={<PersonaPillarPage persona="SOFIA" lang="en" />} />
-              <Route path="guide/meilleurs-outils-consultant-freelance" element={<PersonaPillarPage persona="MARC" lang="fr" />} />
-              <Route path="guide/best-tools-freelance-consultant" element={<PersonaPillarPage persona="MARC" lang="en" />} />
-              <Route path="guide/meilleurs-outils-createur-contenu-freelance" element={<PersonaPillarPage persona="ALIX" lang="fr" />} />
-              <Route path="guide/best-tools-freelance-content-creator" element={<PersonaPillarPage persona="ALIX" lang="en" />} />
-              <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
-              <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
-              <Route path="guide/outils-facturation-freelance-2026" element={<ArticleFacturation />} />
-              <Route path="guide/:slug" element={<LocalizedGuidePage />} />
-              <Route path="article/:slug" element={<RedirectArticleToGuide />} />
-              <Route path="comparatifs" element={<ComparesIndexPage />} />
-              <Route path="comparatif/:slugPair" element={<ComparePage />} />
-              <Route path="about" element={<AboutPage />} />
-              <Route path="methodology" element={<MethodologyPage />} />
-              <Route path="methodologie" element={<MethodologyPage />} />
-              <Route path="transparency" element={<TransparencyPage />} />
-              <Route path="contact" element={<ContactPage />} />
-              <Route path="legal-notice" element={<LegalNoticePage />} />
-              <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
-              <Route path="terms" element={<TermsPage />} />
-              {/* SEO landing — localized slugs (FR + EN) under same LangLayout */}
-              <Route path="search" element={<SearchPage />} />
-              <Route path="audit-saas-gratuit" element={<AuditLanding />} />
-              <Route path="free-saas-audit" element={<AuditLanding />} />
-              <Route path="back-office" element={<BackOfficePage />} />
-            </Route>
-<Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppRoutes />
         </Suspense>
         </ErrorBoundary>
       </BrowserRouter>
@@ -223,11 +222,6 @@ const App = () => (
 function RedirectToolToFr() {
   const { slug } = useParams();
   return <Navigate to={`/fr/tool/${slug}`} replace />;
-}
-
-function RedirectLegacyDiagnostic() {
-  const { lang } = useParams();
-  return <Navigate to={`/${lang === "en" ? "en" : "fr"}/selector`} replace />;
 }
 
 /** Redirect /fr/outils/:slug → /fr/tool/:slug */

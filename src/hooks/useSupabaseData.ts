@@ -1,9 +1,14 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category } from "@/data/types";
 import categoriesIndexJson from "@/data/categories_index.json";
 import toolsIndexJson from "@/data/tools_index.json";
 import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
+
+// Pre-resolved tool data injected by the SSR build step (see entry-server.tsx),
+// so useToolBySlug can skip its loading state when the markup was already
+// server-rendered for this exact slug — avoids a hydration-time spinner flash.
+export const SsrToolContext = createContext<Tool | undefined>(undefined);
 
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
@@ -336,20 +341,23 @@ export function useToolSummaries() {
 }
 
 export function useToolBySlug(slug: string | undefined) {
-  const [tool, setTool] = useState<Tool | null>(null);
-  const [loading, setLoading] = useState(true);
+  const ssrTool = useContext(SsrToolContext);
+  const ssrMatches = !!ssrTool && (ssrTool.slug === slug || ssrTool.id === slug);
+  const [tool, setTool] = useState<Tool | null>(ssrMatches ? ssrTool! : null);
+  const [loading, setLoading] = useState(!ssrMatches);
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
     let cancelled = false;
+    const hasInitialData = ssrMatches;
 
     (async () => {
-      setLoading(true);
+      if (!hasInitialData) setLoading(true);
       let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
       if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
       if (cancelled) return;
       if (data) setTool(mapToolFromJson(data));
-      else {
+      else if (!hasInitialData) {
         const localTools = await loadLocalTools();
         if (cancelled) return;
         const found = localTools.find((t) => t.slug === slug || t.id === slug);
