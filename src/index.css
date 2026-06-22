@@ -8,7 +8,11 @@
   src: url("/fonts/UncutSans-Variable.woff2") format("woff2-variations");
   font-weight: 300 700;
   font-style: normal;
-  font-display: swap;
+  /* optional, not swap: the font is preloaded (index.html) so it's normally
+     ready in time, but if it isn't, never swap it in later — that swap is
+     what was causing a real, measured CLS on headings once SSR made text
+     visible from first paint instead of hiding it behind a loading spinner. */
+  font-display: optional;
 }
 
 @tailwind base;

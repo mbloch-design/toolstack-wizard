@@ -410,7 +410,7 @@ const Navbar = () => {
             aria-label="ToolTrim home"
             className="shrink-0 transition-opacity duration-150 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
           >
-            <img src={logoToolTrim} alt="ToolTrim" className="site-logo w-auto" style={{ height: 28 }} />
+            <img src={logoToolTrim} alt="ToolTrim" className="site-logo" width={127} height={28} style={{ height: 28, width: 127 }} />
           </Link>
 
           {/* ── Desktop center nav ── */}
