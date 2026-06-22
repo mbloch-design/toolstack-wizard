@@ -185,11 +185,16 @@ async function loadLocalPosts(lang: string): Promise<Post[]> {
 let _categoriesCache: Category[] | null = null;
 
 export function useCategories() {
+  // On an already-SSR'd tool page, the static data is from the same build
+  // as the page itself — refreshing it on mount only swaps content after
+  // it's already painted, causing a visible layout shift for no real
+  // freshness gain. Skip the refresh there; every other page keeps it.
+  const isSsrPage = useContext(SsrToolContext) !== undefined;
   const [categories, setCategories] = useState<Category[]>(_categoriesCache ?? staticCategories);
-  const [loading, setLoading] = useState(!_categoriesCache);
+  const [loading, setLoading] = useState(!_categoriesCache && !isSsrPage);
 
   useEffect(() => {
-    if (_categoriesCache) return;
+    if (_categoriesCache || isSsrPage) return;
     (async () => {
       const { data, error } = await supabase.from("categories").select("*");
       if (!error && data && data.length > 0) {
@@ -298,11 +303,14 @@ export function useTools() {
 let _toolSummariesCache: ToolSummary[] | null = null;
 
 export function useToolSummaries() {
+  // Same rationale as useCategories above: don't swap the alternatives/
+  // summaries list out from under an already-painted SSR'd tool page.
+  const isSsrPage = useContext(SsrToolContext) !== undefined;
   const [tools, setTools] = useState<ToolSummary[]>(_toolSummariesCache ?? staticToolSummaries);
-  const [loading, setLoading] = useState(!_toolSummariesCache);
+  const [loading, setLoading] = useState(!_toolSummariesCache && !isSsrPage);
 
   useEffect(() => {
-    if (_toolSummariesCache) return;
+    if (_toolSummariesCache || isSsrPage) return;
     (async () => {
       const { data, error } = await supabase
         .from("tools")
