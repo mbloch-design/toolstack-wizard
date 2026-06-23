@@ -19261,8 +19261,14 @@
     "description": "Firebase est la plateforme backend de Google : authentification, base de données temps réel (Firestore), hébergement, notifications push et stockage de fichiers, pensée pour développer une app sans monter sa propre infrastructure serveur.\n\nPour un développeur indépendant ou une petite équipe technique, Firebase permet de lancer un MVP rapidement avec un plan gratuit généreux (Spark) ; les coûts montent ensuite avec l'usage réel (lectures/écritures en base, bande passante), ce qui en fait un bon choix pour démarrer mais qui demande une vraie surveillance des coûts à l'échelle.",
     "longDescription": "Firebase est la plateforme backend de Google : authentification, base de données temps réel (Firestore), hébergement, notifications push et stockage de fichiers, pensée pour développer une app sans monter sa propre infrastructure serveur.\n\nPour un développeur indépendant ou une petite équipe technique, Firebase permet de lancer un MVP rapidement avec un plan gratuit généreux (Spark) ; les coûts montent ensuite avec l'usage réel (lectures/écritures en base, bande passante), ce qui en fait un bon choix pour démarrer mais qui demande une vraie surveillance des coûts à l'échelle.",
     "longDescriptionEn": "Firebase is Google's backend platform: authentication, real-time database (Firestore), hosting, push notifications, and file storage, built to develop an app without setting up your own server infrastructure.\n\nFor an independent developer or a small technical team, Firebase makes it possible to launch an MVP quickly with a generous free plan (Spark); costs then scale with actual usage (database reads/writes, bandwidth), making it a good choice to start but one that requires real cost monitoring at scale.",
-    "pricing": null,
-    "pricingEn": null,
+    "pricing": {
+      "free": "Plan Spark gratuit avec quotas généreux (auth, hosting, Firestore de base)",
+      "paid": "Plan Blaze à l'usage (paiement à la consommation au-delà des quotas gratuits, ex: ~0,18$/100k lectures Firestore)"
+    },
+    "pricingEn": {
+      "free": "Free Spark plan with generous quotas (auth, hosting, basic Firestore)",
+      "paid": "Pay-as-you-go Blaze plan (usage-based billing beyond free quotas, e.g. ~$0.18/100k Firestore reads)"
+    },
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
@@ -47859,9 +47865,15 @@
     "description": "Sketch est un éditeur de design d'interface né sur macOS, l'un des premiers outils à populariser le design de composants réutilisables (symbols) avant l'arrivée de Figma. Il reste utilisé par certaines équipes déjà installées sur l'écosystème, mais a perdu beaucoup de terrain face à Figma, qui a imposé la collaboration en temps réel comme standard.\n\nSketch fonctionne uniquement sur Mac (pas de version web ou Windows native), ce qui limite la collaboration avec des équipes mixtes — un point qui pèse de plus en plus dans le choix face à des alternatives multiplateformes.",
     "longDescription": "Sketch est un éditeur de design d'interface né sur macOS, l'un des premiers outils à populariser le design de composants réutilisables (symbols) avant l'arrivée de Figma. Il reste utilisé par certaines équipes déjà installées sur l'écosystème, mais a perdu beaucoup de terrain face à Figma, qui a imposé la collaboration en temps réel comme standard.\n\nSketch fonctionne uniquement sur Mac (pas de version web ou Windows native), ce qui limite la collaboration avec des équipes mixtes — un point qui pèse de plus en plus dans le choix face à des alternatives multiplateformes.",
     "longDescriptionEn": "Sketch is an interface design editor born on macOS, one of the first tools to popularize reusable component design (symbols) before Figma arrived. It's still used by some teams already invested in the ecosystem, but has lost significant ground to Figma, which made real-time collaboration the standard.\n\nSketch only runs on Mac (no web or native Windows version), which limits collaboration with mixed teams — a point that increasingly weighs against it compared to cross-platform alternatives.",
-    "pricing": null,
-    "pricingEn": null,
-    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "Aucune offre gratuite (licence Mac unique en option à 120$/an)",
+      "paid": "Standard à 12$/éditeur/mois (annuel) ; Business à 20$/éditeur/mois avec SSO"
+    },
+    "pricingEn": {
+      "free": "No free tier (optional one-time Mac license at $120/year)",
+      "paid": "Standard at $12/editor/month (annual); Business at $20/editor/month with SSO"
+    },
+    "defaultMonthlyPrice": 10.51,
     "pricing_v5": null,
     "affiliateLink": "",
     "websiteUrl": "https://sketch.com",
@@ -109671,12 +109683,12 @@
     "longDescription": "TikTok est la plateforme de vidéos courtes dont l'algorithme de recommandation reste la référence pour la portée organique : une vidéo sans aucun follower peut atteindre des centaines de milliers de vues si le contenu retient l'attention.\n\nPour un créateur de contenu ou une marque, c'est avant tout un canal de visibilité et d'acquisition d'audience, pas un outil de gestion — la production (montage, sous-titrage) passe généralement par des outils tiers (CapCut, Submagic) avant publication.",
     "longDescriptionEn": "TikTok is the short-video platform whose recommendation algorithm remains the reference for organic reach: a video with zero followers can reach hundreds of thousands of views if the content holds attention.\n\nFor a content creator or a brand, it's primarily a visibility and audience-acquisition channel, not a management tool — production (editing, captioning) usually goes through third-party tools (CapCut, Submagic) before publishing.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Application gratuite pour les utilisateurs et créateurs",
+      "paid": "Monétisation via le Creator Rewards Program (rémunération aux vues qualifiées, ~0,40-1$/1000 vues) ; budget publicitaire libre via TikTok Ads"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free app for users and creators",
+      "paid": "Monetization via the Creator Rewards Program (paid per qualified view, ~$0.40-1/1000 views); flexible ad budget via TikTok Ads"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
@@ -112927,8 +112939,8 @@
     "description": "X (anciennement Twitter) reste la référence pour la conversation publique en temps réel : actualité, débats, veille sectorielle et visibilité instantanée pour qui sait y être pertinent. L'algorithme favorise l'engagement et la viralité, ce qui en fait un canal puissant pour construire une audience ou une réputation d'expert sur un sujet précis.\n\nPour un indépendant ou un créateur, c'est surtout un outil de visibilité et de réseau professionnel — moins adapté à la vente directe qu'à la construction d'autorité et au développement de relations B2B.",
     "longDescription": "X (anciennement Twitter) reste la référence pour la conversation publique en temps réel : actualité, débats, veille sectorielle et visibilité instantanée pour qui sait y être pertinent. L'algorithme favorise l'engagement et la viralité, ce qui en fait un canal puissant pour construire une audience ou une réputation d'expert sur un sujet précis.\n\nPour un indépendant ou un créateur, c'est surtout un outil de visibilité et de réseau professionnel — moins adapté à la vente directe qu'à la construction d'autorité et au développement de relations B2B.",
     "longDescriptionEn": "X (formerly Twitter) remains the reference for real-time public conversation: news, debates, industry monitoring, and instant visibility for anyone who knows how to stay relevant. The algorithm favors engagement and virality, making it a powerful channel to build an audience or expert reputation on a specific topic.\n\nFor a freelancer or creator, it's mainly a visibility and professional networking tool — less suited to direct selling than to building authority and B2B relationships.",
-    "pricing": "Gratuit ; Premium à partir de ~8$/mois (badge, fonctionnalités, monétisation possible).",
-    "pricingEn": "Free; Premium from ~$8/month (badge, features, possible monetization).",
+    "pricing": "Gratuit ; Premium dès 3$/mois (Basic), 8$/mois (Premium), 40$/mois (Premium+, sans pub et accès Grok étendu).",
+    "pricingEn": "Free; Premium from $3/month (Basic), $8/month (Premium), $40/month (Premium+, ad-free with extended Grok access).",
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
