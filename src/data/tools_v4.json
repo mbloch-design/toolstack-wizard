@@ -12570,7 +12570,7 @@
       "consultant",
       "tech"
     ],
-    "defaultMonthlyPrice": 14.43,
+    "defaultMonthlyPrice": 17.52,
     "pricingTiers": {
       "free": "Claude 3.5 Sonnet (limité)",
       "paid": "20$/mois (Pro) pour usage illimité et modèles Opus"
@@ -20273,8 +20273,8 @@
       "threshold": "Dès que vous avez besoin de raisonnement logique avancé ou de creative coding."
     },
     "pricing": {
-      "free": "Gemini app free tier available",
-      "paid": "Google AI Pro available as subscription plan"
+      "free": "Application Gemini gratuite disponible",
+      "paid": "Google AI Pro à 19,99$/mois ; Google AI Ultra à 200$/mois"
     },
     "affiliateLink": "https://gemini.google.com",
     "seo": {
@@ -20306,7 +20306,7 @@
       "designer",
       "consultant"
     ],
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 17.51,
     "pricingTiers": {
       "free": "Gemini app (limité)",
       "paid": "$2/$12 par M tokens (API) ou Google AI Pro/Ultra"
@@ -20370,7 +20370,10 @@
     "shortDescriptionEn": "Google's AI that doubles its performance every 3 months.",
     "description": "Gemini, c'est l'IA de Google qui double ses performances tous les 3 mois. À partir de 20€/mois. Pensé pour les consultants B2B et les créateurs de contenu.\n\nRaisonnement avancé : 77.1% sur ARC-AGI-2 (double de Gemini 3 Pro). creative coding : génération de code complexe (3D, animations, SVG), pricing compétitif : $2/$12/M tokens (similaire à Claude). Intégration Google : Workspace, NotebookLM, Android Studio. Concrètement : creative coding : générer des animations SVG, interfaces 3D, designs interactifs. Ou encore : raisonnement complexe : résoudre des problèmes logiques, patterns nouveaux. Gain de temps estimé : 7h/mois.\n\nÀ garder si : besoin de raisonnement complexe (ARC-AGI-2 : 77.1%) ou creative coding et design génératif. À éviter si : préférence pour une IA plus mature (Claude/ChatGPT) ou besoin de stabilité (Gemini 3.1 Pro en preview). Limite principale : preview : pas encore en disponibilité générale (moins stable). Dès que vous avez besoin de raisonnement logique avancé ou de creative coding.",
     "longDescriptionEn": "Gemini is google's AI that doubles its performance every 3 months. Starting at €20/month. Built for B2B consultants and content creators.\n\nEstimated time saving: 7h/month.",
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Free Gemini app available",
+      "paid": "Google AI Pro at $19.99/month; Google AI Ultra at $200/month"
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -47118,7 +47121,7 @@
     "shortDescription": "Plateforme e-commerce tout-en-un pour vendre en ligne, en boutique et sur les marketplaces.",
     "description": "Shopify est la plateforme e-commerce la plus utilisée pour lancer et faire grandir une boutique en ligne : paiement intégré, gestion de stock, expédition, thèmes personnalisables et un écosystème d'applications immense pour tout ce qui manque nativement.\n\nPour un créateur indépendant ou une petite marque, Shopify permet de vendre dès le premier jour sans gérer l'infrastructure technique d'un site marchand — le compromis étant des frais de transaction et un abonnement mensuel qui montent vite si on multiplie les apps payantes de l'écosystème.",
     "category": "nocode-web",
-    "pricing": "À partir de 25€/mois (plan Basic), plus frais de transaction (~2% en plus si tu n'utilises pas Shopify Payments).",
+    "pricing": "À partir de 39$/mois (plan Basic), plus frais de transaction (2,9% + 0,30$ avec Shopify Payments).",
     "website": "https://shopify.com",
     "affiliateLink": "https://shopify.com",
     "pros": [
@@ -47140,7 +47143,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 25.11,
+    "defaultMonthlyPrice": 34.16,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -47189,7 +47192,7 @@
     "shortDescriptionEn": "All-in-one e-commerce platform to sell online, in-store, and on marketplaces.",
     "longDescription": "Shopify est la plateforme e-commerce la plus utilisée pour lancer et faire grandir une boutique en ligne : paiement intégré, gestion de stock, expédition, thèmes personnalisables et un écosystème d'applications immense pour tout ce qui manque nativement.\n\nPour un créateur indépendant ou une petite marque, Shopify permet de vendre dès le premier jour sans gérer l'infrastructure technique d'un site marchand — le compromis étant des frais de transaction et un abonnement mensuel qui montent vite si on multiplie les apps payantes de l'écosystème.",
     "longDescriptionEn": "Shopify is the most widely used e-commerce platform to launch and grow an online store: integrated payments, inventory management, shipping, customizable themes, and a huge app ecosystem for anything missing natively.\n\nFor an independent creator or small brand, Shopify lets you sell from day one without managing a store's technical infrastructure — the trade-off being transaction fees and a monthly subscription that add up quickly once you stack paid apps from the ecosystem.",
-    "pricingEn": "From $25/month (Basic plan), plus transaction fees (~2% extra if you don't use Shopify Payments).",
+    "pricingEn": "From $39/month (Basic plan), plus transaction fees (2.9% + $0.30 with Shopify Payments).",
     "pricing_v5": {
       "cautions": [
         "compare_only_after_usage_or_scope_question",
@@ -53906,7 +53909,7 @@
     "shortDescription": "La plus grande place de marché freelance au monde, pour trouver des missions ou des prestataires.",
     "description": "Upwork est la place de marché freelance la plus utilisée au monde, mettant en relation des entreprises avec des freelances sur des missions ponctuelles ou récurrentes, tous domaines confondus (développement, design, rédaction, marketing, support).\n\nPour un freelance qui débute, c'est souvent le moyen le plus rapide de trouver ses premières missions sans réseau préexistant — au prix d'une concurrence internationale forte sur les prix et d'une commission qui réduit la marge nette, surtout sur les petites missions.",
     "category": "organization",
-    "pricing": "Gratuit pour s'inscrire ; commission de 10% sur les revenus facturés (dégressive selon le volume avec un client).",
+    "pricing": "Gratuit pour s'inscrire ; frais de service variable de 0 à 15% par contrat selon le type de mission (le taux exact est affiché avant d'accepter le contrat).",
     "website": "https://upwork.com",
     "affiliateLink": "https://upwork.com",
     "pros": [
@@ -53916,7 +53919,7 @@
     ],
     "cons": [
       "Concurrence internationale très forte qui tire les prix vers le bas",
-      "Commission de 10% qui réduit la marge nette, surtout sur les petites missions",
+      "Frais de service variable (0 à 15%) qui réduit la marge nette, surtout sur les petites missions",
       "Démarrer sans avis clients est difficile, effet \"poule et œuf\""
     ],
     "bestFor": [
@@ -53978,7 +53981,7 @@
     "shortDescriptionEn": "The world's largest freelance marketplace, to find projects or service providers.",
     "longDescription": "Upwork est la place de marché freelance la plus utilisée au monde, mettant en relation des entreprises avec des freelances sur des missions ponctuelles ou récurrentes, tous domaines confondus (développement, design, rédaction, marketing, support).\n\nPour un freelance qui débute, c'est souvent le moyen le plus rapide de trouver ses premières missions sans réseau préexistant — au prix d'une concurrence internationale forte sur les prix et d'une commission qui réduit la marge nette, surtout sur les petites missions.",
     "longDescriptionEn": "Upwork is the most widely used freelance marketplace in the world, connecting businesses with freelancers for one-off or recurring projects across all fields (development, design, writing, marketing, support).\n\nFor a freelancer starting out, it's often the fastest way to land first projects without a pre-existing network — at the cost of strong international price competition and a commission that reduces net margin, especially on small projects.",
-    "pricingEn": "Free to sign up; 10% commission on billed earnings (decreasing with volume per client).",
+    "pricingEn": "Free to sign up; variable 0 to 15% service fee per contract depending on project type (the exact rate is shown before accepting the contract).",
     "pricing_v5": {
       "cautions": [
         "confirm_if_paid_plan_is_really_used"
@@ -54014,7 +54017,7 @@
     ],
     "consEn": [
       "Very strong international competition pulling prices down",
-      "10% commission that reduces net margin, especially on small projects",
+      "Variable service fee (0 to 15%) that reduces net margin, especially on small projects",
       "Starting with no client reviews is hard, a chicken-and-egg problem"
     ],
     "useCases": [
@@ -54904,8 +54907,8 @@
       "threshold": "Idéal pour un designer qui veut du contrôle ; pour un site simple et rapide, des outils plus accessibles suffisent."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 14/month (Basic Site plan)"
+      "free": "Plan gratuit disponible",
+      "paid": "15$/mois facturé annuellement (Basic, sans CMS) ; 25$/mois pour le plan Premium avec CMS"
     },
     "affiliateLink": "https://webflow.com",
     "articles": [],
@@ -54920,7 +54923,7 @@
       "designer",
       "tech"
     ],
-    "defaultMonthlyPrice": 12.12,
+    "defaultMonthlyPrice": 13.14,
     "pricingTiers": {
       "free": "2 projets (non publiables)",
       "paid": "14$/mois (Basic) à 39$/mois (CMS)"
@@ -54971,7 +54974,7 @@
     "longDescriptionEn": "Webflow is create professional websites without coding, with complete design control. Starting at €12.12/month. Built for graphic designers and UX/UI designers.\n\nEstimated time saving: 5h/month.\n\nKeep it if: you build websites for clients or you want total design control (exit WordPress). Skip it if: you just want a simple landing page (get Carrd) or you hate learning new tools. As soon as you create websites regularly and WordPress starts to limit you. Free alternative: carrd.",
     "pricingEn": {
       "free": "Free plan available",
-      "paid": "$14/month (Basic Site plan)"
+      "paid": "$15/month billed annually (Basic, no CMS); $25/month for the Premium plan with CMS"
     },
     "pricing_v5": {
       "cautions": [
@@ -60371,7 +60374,7 @@
     "shortDescriptionEn": "AI search engine with real-time citations — search reinvented.",
     "longDescription": "Perplexity est un moteur de recherche propulsé par l'IA qui répond directement à tes questions avec des sources citées et vérifiables, en temps réel. Contrairement à Google qui renvoie des liens, Perplexity synthétise l'information et indique précisément d'où elle vient.\n\nLe plan Pro à 20$/mois (≈18,40€) ou 200$/an (≈15,33€/mois) ajoute des modèles premium (GPT-4o, Claude, Gemini au choix), les recherches illimitées, 5$/mois de crédits API et le téléversement de fichiers illimité. La version gratuite donne déjà accès à 5 recherches Pro/jour.\n\nPour les freelances, consultants et chercheurs qui passent du temps à vérifier des informations, Perplexity remplace avantageusement les heures de recherche Google en fournissant des réponses sourcées directement. Particulièrement utile pour la veille concurrentielle, la recherche de prix et les questions techniques complexes.",
     "longDescriptionEn": "Perplexity is an AI-powered search engine that answers your questions directly with cited, verifiable sources in real time. Unlike Google which returns links, Perplexity synthesizes information and indicates precisely where it comes from.\n\nThe Pro plan at $20/month (≈€18.40) or $200/year (≈€15.33/month) adds premium models (GPT-4o, Claude, Gemini to choose from), unlimited searches, $5/month in API credits and unlimited file upload. The free version already gives access to 5 Pro searches/day.\n\nFor freelancers, consultants and researchers who spend time verifying information, Perplexity advantageously replaces hours of Google searches by providing sourced answers directly. Particularly useful for competitive intelligence, price research and complex technical questions.",
-    "defaultMonthlyPrice": 18.4,
+    "defaultMonthlyPrice": 17.52,
     "pricing_v5": {
       "verified_on": "2026-05-08",
       "source_domain": "perplexity.ai",
