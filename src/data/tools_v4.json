@@ -53421,21 +53421,21 @@
   {
     "id": "upwork",
     "name": "Upwork",
-    "shortDescription": "Place de marché freelance reliant entreprises et freelances.",
-    "description": "Upwork, c'est place de marché freelance reliant entreprises et freelances. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en freelance marketplace, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "La plus grande place de marché freelance au monde, pour trouver des missions ou des prestataires.",
+    "description": "Upwork est la place de marché freelance la plus utilisée au monde, mettant en relation des entreprises avec des freelances sur des missions ponctuelles ou récurrentes, tous domaines confondus (développement, design, rédaction, marketing, support).\n\nPour un freelance qui débute, c'est souvent le moyen le plus rapide de trouver ses premières missions sans réseau préexistant — au prix d'une concurrence internationale forte sur les prix et d'une commission qui réduit la marge nette, surtout sur les petites missions.",
     "category": "organization",
-    "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
-    },
+    "pricing": "Gratuit pour s'inscrire ; commission de 10% sur les revenus facturés (dégressive selon le volume avec un client).",
     "website": "https://upwork.com",
     "affiliateLink": "https://upwork.com",
     "pros": [
-      "Spécialisé en freelance marketplace",
-      "Interface professionnelle"
+      "Accès à un volume massif de missions, tous domaines et budgets confondus",
+      "Système de paiement sécurisé (Upwork garantit le paiement sur les contrats horaires suivis)",
+      "Profil et avis clients qui se construisent au fil des missions, utiles pour la crédibilité"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Concurrence internationale très forte qui tire les prix vers le bas",
+      "Commission de 10% qui réduit la marge nette, surtout sur les petites missions",
+      "Démarrer sans avis clients est difficile, effet \"poule et œuf\""
     ],
     "bestFor": [
       "all"
@@ -53456,14 +53456,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu débutes en freelance et as besoin de premières missions et avis clients",
+        "Tu veux diversifier tes sources de missions en complément du démarchage direct"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as déjà un réseau ou une clientèle directe suffisante — la commission n'est alors pas justifiée",
+        "Tu vises une clientèle premium peu présente sur ce type de plateforme"
       ],
-      "threshold": "Gratuit, à garder si utile"
+      "threshold": "Utile pour démarrer ou diversifier ; à mesure que ton réseau grandit, le démarchage direct devient plus rentable."
     },
     "alternatives": [],
     "seo": {
@@ -53485,13 +53485,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "upwork",
-    "shortDescriptionEn": "Freelance marketplace connecting businesses and freelancers.",
-    "longDescription": "Upwork, c'est place de marché freelance reliant entreprises et freelances. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en freelance marketplace, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Upwork is freelance marketplace connecting businesses and freelancers. Free to start, paid plans for more. Built for B2B consultants and SaaS founders.\n\nSpecialized in freelance marketplace, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to check based on usage. Free, keep it if it's useful.",
-    "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
-    },
+    "shortDescriptionEn": "The world's largest freelance marketplace, to find projects or service providers.",
+    "longDescription": "Upwork est la place de marché freelance la plus utilisée au monde, mettant en relation des entreprises avec des freelances sur des missions ponctuelles ou récurrentes, tous domaines confondus (développement, design, rédaction, marketing, support).\n\nPour un freelance qui débute, c'est souvent le moyen le plus rapide de trouver ses premières missions sans réseau préexistant — au prix d'une concurrence internationale forte sur les prix et d'une commission qui réduit la marge nette, surtout sur les petites missions.",
+    "longDescriptionEn": "Upwork is the most widely used freelance marketplace in the world, connecting businesses with freelancers for one-off or recurring projects across all fields (development, design, writing, marketing, support).\n\nFor a freelancer starting out, it's often the fastest way to land first projects without a pre-existing network — at the cost of strong international price competition and a commission that reduces net margin, especially on small projects.",
+    "pricingEn": "Free to sign up; 10% commission on billed earnings (decreasing with volume per client).",
     "pricing_v5": {
       "cautions": [
         "confirm_if_paid_plan_is_really_used"
@@ -53511,24 +53508,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're starting out as a freelancer and need first projects and client reviews",
+        "You want to diversify your project sources alongside direct outreach"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You already have a sufficient network or direct client base — the commission isn't justified then",
+        "You're targeting a premium clientele rarely found on this type of platform"
       ],
-      "threshold": "Free, keep it if it's useful."
+      "threshold": "Useful to start or diversify; as your network grows, direct outreach becomes more cost-effective."
     },
     "prosEn": [
-      "Specialized in freelance marketplace",
-      "Professional interface"
+      "Access to a massive volume of projects, all fields and budgets included",
+      "Secure payment system (Upwork guarantees payment on tracked hourly contracts)",
+      "Profile and client reviews that build up over projects, useful for credibility"
     ],
     "consEn": [
-      "Pricing to check based on usage"
+      "Very strong international competition pulling prices down",
+      "10% commission that reduces net margin, especially on small projects",
+      "Starting with no client reviews is hard, a chicken-and-egg problem"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Trouver ses premières missions freelance sans réseau professionnel existant",
+      "Diversifier ses sources de revenus en complément d'une clientèle directe",
+      "Tester une nouvelle compétence ou un nouveau marché avant de se spécialiser"
+    ],
+    "useCasesEn": [
+      "Find first freelance projects with no existing professional network",
+      "Diversify income sources alongside a direct client base",
+      "Test a new skill or market before specializing"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -80590,7 +80598,15 @@
     "websiteUrl": "https://www.contentful.com",
     "logo": "",
     "seo": {
-      "metaDescription": "Contentful sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Contentful sur ToolTrim : rôle, limites et place dans une stack freelance.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Contentful a intégré des outils IA pour générer et traduire du contenu dans son CMS d'entreprise, mais reste l'infrastructure de gestion de contenu structuré pour de grandes organisations multi-canal.",
+        "augmentEn": "Contentful integrated AI tools to generate and translate content in its enterprise CMS, but remains the structured content management infrastructure for large multi-channel organizations.",
+        "replaceFr": "Remplacer Contentful par une IA ? Non : gérer du contenu structuré à l'échelle d'une grande entreprise (gouvernance, permissions, multi-canal) reste un besoin d'infrastructure que l'IA n'adresse pas seule. Verdict : l'IA augmente la production de contenu, la gouvernance reste le vrai produit.",
+        "replaceEn": "Replace Contentful with an AI? No: managing structured content at large-enterprise scale (governance, permissions, multi-channel) remains an infrastructure need AI doesn't address alone. Verdict: AI augments content production, governance remains the real product.",
+        "aiTools": []
+      }
     },
     "pros": [
       "Rôle clair dans une stack métier",
@@ -81165,7 +81181,15 @@
     "websiteUrl": "https://directus.io",
     "logo": "",
     "seo": {
-      "metaDescription": "Directus sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Directus sur ToolTrim : rôle, limites et place dans une stack freelance.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Directus reste un CMS headless open source qui transforme n'importe quelle base de données SQL en API structurée, avec une interface d'administration auto-générée — un besoin d'infrastructure, pas de génération.",
+        "augmentEn": "Directus remains an open-source headless CMS that turns any SQL database into a structured API, with an auto-generated admin interface — an infrastructure need, not generation.",
+        "replaceFr": "Remplacer Directus par une IA ? Non : exposer une base de données existante via une API structurée avec une interface d'administration reste un besoin technique d'infrastructure. Verdict : l'IA n'a pas vraiment de rôle direct ici, le besoin reste structurel.",
+        "replaceEn": "Replace Directus with an AI? No: exposing an existing database via a structured API with an admin interface remains a technical infrastructure need. Verdict: AI doesn't really play a direct role here, the need remains structural.",
+        "aiTools": []
+      }
     },
     "pros": [
       "Rôle clair dans une stack métier",
@@ -87078,7 +87102,15 @@
     "websiteUrl": "https://payloadcms.com",
     "logo": "",
     "seo": {
-      "metaDescription": "Payload CMS sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Payload CMS sur ToolTrim : rôle, limites et place dans une stack freelance.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Payload CMS est un CMS headless open source pensé pour les développeurs (configuration en code TypeScript), avec des plugins IA tiers pour générer du contenu, mais reste fondamentalement une infrastructure de contenu structuré.",
+        "augmentEn": "Payload CMS is an open-source headless CMS built for developers (TypeScript code configuration), with third-party AI plugins to generate content, but remains fundamentally structured content infrastructure.",
+        "replaceFr": "Remplacer Payload CMS par une IA ? Non : configurer et structurer un modèle de contenu en code reste un besoin de développement, pas de génération. L'IA peut aider à remplir le contenu, pas à définir l'architecture. Verdict : l'IA augmente le remplissage de contenu, l'architecture reste un travail de développeur.",
+        "replaceEn": "Replace Payload CMS with an AI? No: configuring and structuring a content model in code remains a development need, not generation. AI can help fill in content, not define the architecture. Verdict: AI augments content filling, architecture remains a developer's job.",
+        "aiTools": []
+      }
     },
     "pros": [
       "Rôle clair dans une stack métier",
@@ -89924,7 +89956,15 @@
     "websiteUrl": "https://www.sanity.io",
     "logo": "",
     "seo": {
-      "metaDescription": "Sanity sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Sanity sur ToolTrim : rôle, limites et place dans une stack freelance.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Sanity a son assistant IA (Sanity AI) pour générer et traduire du contenu directement dans le CMS, mais reste l'infrastructure de contenu structuré qui alimente différents frontends.",
+        "augmentEn": "Sanity has its AI assistant (Sanity AI) to generate and translate content directly in the CMS, but remains the structured content infrastructure feeding different frontends.",
+        "replaceFr": "Remplacer Sanity par une IA ? Non : la structuration du contenu en blocs réutilisables sur plusieurs canaux reste un besoin d'architecture. L'IA aide à générer ou traduire le contenu, elle ne remplace pas le CMS headless. Verdict : l'IA augmente la production de contenu, la structure reste le produit.",
+        "replaceEn": "Replace Sanity with an AI? No: structuring content into reusable blocks across multiple channels remains an architecture need. AI helps generate or translate content, it doesn't replace the headless CMS. Verdict: AI augments content production, the structure remains the product.",
+        "aiTools": []
+      }
     },
     "pros": [
       "Rôle clair dans une stack métier",
@@ -91347,7 +91387,15 @@
     "websiteUrl": "https://strapi.io",
     "logo": "",
     "seo": {
-      "metaDescription": "Strapi sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Strapi sur ToolTrim : rôle, limites et place dans une stack freelance.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Strapi reste un CMS headless open source qui structure du contenu pour l'exposer via API à n'importe quel frontend — un besoin d'infrastructure de contenu, pas de génération de texte.",
+        "augmentEn": "Strapi remains an open-source headless CMS that structures content to expose via API to any frontend — a content infrastructure need, not text generation.",
+        "replaceFr": "Remplacer Strapi par une IA ? Non : structurer du contenu pour qu'il soit servi de façon cohérente à un site, une app et potentiellement plusieurs canaux reste un besoin d'architecture. L'IA peut générer le contenu à y mettre, elle ne remplace pas la structure. Verdict : l'IA augmente la création de contenu, le CMS reste l'infrastructure.",
+        "replaceEn": "Replace Strapi with an AI? No: structuring content to serve it consistently to a site, an app, and potentially multiple channels remains an architecture need. AI can generate the content to put in it, it doesn't replace the structure. Verdict: AI augments content creation, the CMS remains the infrastructure.",
+        "aiTools": []
+      }
     },
     "pros": [
       "Rôle clair dans une stack métier",
@@ -123572,7 +123620,15 @@
       "supabase"
     ],
     "seo": {
-      "metaDescription": "Neon en 2026 : prix, plan gratuit et comparaison avec Supabase. Le Postgres serverless avec branching, analysé par ToolTrim pour les devs et indie hackers."
+      "metaDescription": "Neon en 2026 : prix, plan gratuit et comparaison avec Supabase. Le Postgres serverless avec branching, analysé par ToolTrim pour les devs et indie hackers.",
+      "aiAngle": {
+        "stance": "augmente",
+        "augmentFr": "Neon (rachetée par Databricks) met en avant son intégration avec des workflows IA (branching de base pour tester du code généré par IA), mais reste fondamentalement une base de données PostgreSQL serverless — une infrastructure, pas un générateur.",
+        "augmentEn": "Neon (acquired by Databricks) highlights its integration with AI workflows (database branching to test AI-generated code), but remains fundamentally a serverless PostgreSQL database — infrastructure, not a generator.",
+        "replaceFr": "Remplacer Neon par une IA ? Non : stocker des données structurées de façon fiable reste un besoin d'infrastructure. Le branching de base facilite le test de code généré par IA, mais la base elle-même reste indispensable. Verdict : l'IA augmente le workflow de développement, la base de données reste le produit.",
+        "replaceEn": "Replace Neon with an AI? No: reliably storing structured data remains an infrastructure need. Database branching makes it easier to test AI-generated code, but the database itself remains essential. Verdict: AI augments the development workflow, the database remains the product.",
+        "aiTools": []
+      }
     },
     "articles": null,
     "timeGainedHoursPerMonth": null,
