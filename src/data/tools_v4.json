@@ -32572,12 +32572,12 @@
     "longDescription": "Microsoft 365 devient utile quand contrats, validations et preuves doivent être suivis proprement. Pour une petite activité, le risque est de payer un outil contractuel alors qu’un flux simple suffit encore.",
     "longDescriptionEn": "Microsoft 365 becomes useful when contracts, approvals, and evidence need to be tracked cleanly. For a small business, the risk is paying for a contract tool while a simpler workflow is still enough.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Aucune offre gratuite complète (Office en ligne limité)",
+      "paid": "Personal à 6,99$/mois (69,99$/an) ; Family (jusqu'à 6 personnes) à 129,99$/an"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom pricing / no public baseline"
+      "free": "No full free tier (limited online Office)",
+      "paid": "Personal at $6.99/month ($69.99/year); Family (up to 6 people) at $129.99/year"
     },
     "defaultMonthlyPrice": 7,
     "pricingTiers": {
@@ -37980,8 +37980,14 @@
     "description": "PayPal est un service de paiement en ligne qui permet d'envoyer et recevoir de l'argent, d'encaisser des clients ou de payer des fournisseurs sans partager ses coordonnées bancaires. Pour un freelance, c'est souvent le moyen de paiement le plus simple à proposer à des clients internationaux qui n'ont pas de RIB français.\n\nLe compte personnel est gratuit ; les frais s'appliquent surtout sur les encaissements professionnels (environ 2,9% + frais fixe par transaction en France) et sur la conversion de devises. Pour des virements réguliers en euros entre comptes français, Stripe ou un virement bancaire classique reviennent souvent moins cher.",
     "longDescription": "PayPal est un service de paiement en ligne qui permet d'envoyer et recevoir de l'argent, d'encaisser des clients ou de payer des fournisseurs sans partager ses coordonnées bancaires. Pour un freelance, c'est souvent le moyen de paiement le plus simple à proposer à des clients internationaux qui n'ont pas de RIB français.\n\nLe compte personnel est gratuit ; les frais s'appliquent surtout sur les encaissements professionnels (environ 2,9% + frais fixe par transaction en France) et sur la conversion de devises. Pour des virements réguliers en euros entre comptes français, Stripe ou un virement bancaire classique reviennent souvent moins cher.",
     "longDescriptionEn": "PayPal is an online payment service that lets you send and receive money, collect from clients, or pay suppliers without sharing your bank details. For a freelancer, it's often the simplest payment method to offer international clients who don't have a French bank account.\n\nThe personal account is free; fees mainly apply to professional payments received (around 2.9% + a fixed fee per transaction in France) and currency conversion. For regular euro transfers between French accounts, Stripe or a standard bank transfer often end up cheaper.",
-    "pricing": null,
-    "pricingEn": null,
+    "pricing": {
+      "free": "Compte personnel gratuit",
+      "paid": "Encaissement pro : 2,99% + 0,49$ par transaction domestique (+ 1,5% pour les paiements internationaux)"
+    },
+    "pricingEn": {
+      "free": "Free personal account",
+      "paid": "Business receiving: 2.99% + $0.49 per domestic transaction (+1.5% for international payments)"
+    },
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
@@ -38041,12 +38047,12 @@
       "Free personal account, instant setup"
     ],
     "cons": [
-      "Frais d'encaissement pro qui s'accumulent vite (≈2,9% + frais fixe par transaction)",
+      "Frais d'encaissement pro qui s'accumulent vite (2,99% + 0,49$ par transaction, +1,5% à l'international)",
       "Taux de conversion de devises moins avantageux qu'une carte ou Stripe",
       "Gel de compte possible en cas de litige, parfois difficile à débloquer rapidement"
     ],
     "consEn": [
-      "Professional payment fees add up quickly (~2.9% + fixed fee per transaction)",
+      "Professional payment fees add up quickly (2.99% + $0.49 per transaction, +1.5% internationally)",
       "Currency conversion rates less favorable than a card or Stripe",
       "Possible account freezes in case of a dispute, sometimes slow to resolve"
     ],
@@ -55570,8 +55576,8 @@
     "description": "WordPress.com, c'est constructeur de site web et plateforme de blog. À partir de 15€/mois. Pensé pour les créateurs de contenu et les auteurs et newslettistes.\n\nSpécialisé en website builder, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit limité avec sous-domaine WordPress.com",
+      "paid": "Personal 9$/mois, Premium 18$/mois, Business 40$/mois, Commerce 70$/mois (tarifs réduits jusqu'à 55% en facturation annuelle)"
     },
     "website": "https://wordpress.com",
     "affiliateLink": "https://wordpress.com",
@@ -55591,7 +55597,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 7.88,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -55635,8 +55641,8 @@
     "longDescription": "WordPress.com, c'est constructeur de site web et plateforme de blog. À partir de 15€/mois. Pensé pour les créateurs de contenu et les auteurs et newslettistes.\n\nSpécialisé en website builder, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "longDescriptionEn": "WordPress.com is website builder and blogging platform. Starting at €15/month. Built for content creators and writers and newsletter creators.\n\nSpecialized in website builder, and professional interface. Estimated time saving: 8h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Limited free plan with a WordPress.com subdomain",
+      "paid": "Personal $9/month, Premium $18/month, Business $40/month, Commerce $70/month (rates cut up to 55% with annual billing)"
     },
     "pricing_v5": {
       "cautions": [],
@@ -129368,7 +129374,7 @@
     "defaultMonthlyPrice": 10,
     "pricing": {
       "free": "Gratuit et très généreux pour un usage individuel",
-      "paid": "Plus à 10$/utilisateur/mois, Business à 15$ (IA incluse)"
+      "paid": "Plus à 10$/utilisateur/mois (annuel) ; Business à 24$/utilisateur/mois (IA Notion incluse)"
     },
     "logo": "",
     "soloRelevance": "high",
@@ -129551,7 +129557,7 @@
     },
     "pricingEn": {
       "free": "Free and very generous for individual use",
-      "paid": "Plus at $10/user/month, Business at $15 (AI included)"
+      "paid": "Plus at $10/user/month (annual); Business at $24/user/month (Notion AI included)"
     },
     "force_silence": false,
     "description": "Notion, c'est l'espace de travail qui essaie de tout remplacer : notes, documents, wikis, tâches, et surtout des bases de données qu'on relie entre elles. Sa force, c'est la flexibilité : tu construis exactement l'outil dont tu as besoin, un CRM freelance, un calendrier éditorial, une base de connaissances, sans coder. C'est devenu le couteau suisse par défaut de beaucoup d'indépendants et de petites équipes.\n\nL'offre gratuite est l'une des plus généreuses du marché : pour un usage individuel, elle suffit largement, ce qui rend la question du prix presque secondaire en solo. Les plans payants commencent au Plus (environ 10$/utilisateur/mois) et au Business (15$, avec l'IA désormais incluse), surtout utiles dès qu'on collabore à plusieurs avec des permissions et un historique étendu.\n\nLe revers de la flexibilité, c'est la courbe d'apprentissage et des performances parfois molles sur de grosses bases. Si tu ne veux qu'une simple to-do list, Todoist est plus direct ; pour de la prise de notes pure et privée, Obsidian va plus loin. Mais pour centraliser docs, tâches et données reliées au même endroit, Notion reste difficile à battre."
