@@ -58,7 +58,12 @@ export function buildToolFaqs(
     },
     {
       q: isFr ? `${tool.name} vaut-il son prix ?` : `Is ${tool.name} worth the price?`,
-      a: ((lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : tool.verdict?.threshold) ||
+      // Optional per-tool override so this FAQ answer isn't a verbatim
+      // repeat of the verdict text already shown higher on the page
+      // (hero, "Décision rapide"). Falls back to threshold for every tool
+      // without one, so this stays additive, not a behavior change.
+      a: ((lang === "en" && (tool.verdictEn as any)?.faqPriceAnswer) ? (tool.verdictEn as any).faqPriceAnswer : (tool.verdict as any)?.faqPriceAnswer) ||
+        ((lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : tool.verdict?.threshold) ||
         (isFr ? "Cela dépend de votre usage. Consultez notre verdict ci-dessus." : "It depends on your usage. See our verdict above."),
     },
     {

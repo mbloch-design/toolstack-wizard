@@ -20,10 +20,13 @@ export interface ToolVerdict {
   // Optional decision-page deepening (point in time: 2026-06, Asana pilot).
   // Distinct from keepIf/avoidIf: concrete usage thresholds rather than
   // the short "quick decision" reasoning, so the page doesn't repeat
-  // itself. Absent on most tools — every consumer must handle undefined.
+  // itself. Absent on most tools, every consumer must handle undefined.
   profitableIf?: string[];
   tooExpensiveIf?: string[];
   profileTable?: ToolProfileRecommendation[];
+  // Optional override for the "is it worth the price" FAQ answer, so it
+  // doesn't repeat threshold verbatim. Falls back to threshold if unset.
+  faqPriceAnswer?: string;
 }
 
 export interface ToolPricing {
@@ -91,7 +94,7 @@ export interface PricingV5 {
   official_source_url?: string;
   verification_status?: string;
   // Optional real-cost-by-team-size table (Asana pilot, 2026-06). Absent on
-  // most tools — every consumer must handle undefined.
+  // most tools, every consumer must handle undefined.
   costTable?: ToolCostRow[];
   costTableNoteFr?: string;
   costTableNoteEn?: string;
