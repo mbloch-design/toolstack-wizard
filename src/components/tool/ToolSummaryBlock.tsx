@@ -25,10 +25,15 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
       )
     : t("productivité", "productivity");
 
-  const idealFor = tool.soloRelevance
+  const idealForOverride = lang === "en" ? tool.idealForEn : tool.idealForFr;
+  const idealFor = idealForOverride
+    ? idealForOverride
+    : tool.soloRelevance === "high" && tool.teamRelevance !== "high"
     ? t("freelances et indépendants", "freelancers and solopreneurs")
-    : tool.teamRelevance
+    : tool.teamRelevance === "high"
     ? t("équipes et startups", "teams and startups")
+    : tool.soloRelevance === "high"
+    ? t("freelances et indépendants", "freelancers and solopreneurs")
     : t("professionnels", "professionals");
 
   const avoidIfRaw = (lang === "en" && tool.verdictEn?.avoidIf?.length) ? tool.verdictEn.avoidIf : tool.verdict?.avoidIf;
@@ -72,7 +77,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
 
         <div className="td-synth-row">
           <dt className="td-synth-dt">{t("Idéal pour", "Best for")}</dt>
-          <dd className="td-synth-dd">{idealFor}.</dd>
+          <dd className="td-synth-dd">{idealFor}{idealForOverride ? "" : "."}</dd>
         </div>
 
         {avoidCases && (
