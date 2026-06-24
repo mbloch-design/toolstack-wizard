@@ -5005,21 +5005,21 @@
   {
     "id": "adobe",
     "name": "Adobe",
-    "shortDescription": "Logiciels pour les professionnels de la création et le marketing numérique.",
-    "description": "Adobe, c'est logiciels pour les professionnels de la création et le marketing numérique. À partir de 15€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en graphic design, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Suite Creative Cloud complète (Photoshop, Illustrator, Premiere...) avec IA Firefly intégrée.",
+    "description": "Adobe Creative Cloud regroupe plus de 20 applications créatives (Photoshop, Illustrator, Premiere Pro, After Effects, InDesign...) dans un abonnement unique, plutôt que de payer chaque logiciel séparément. Depuis août 2025, l'offre \"All Apps\" est scindée en deux : Standard et Pro.",
     "category": "creation",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Creative Cloud Standard à 54,99$/mois ; Creative Cloud Pro à 69,99$/mois (accès complet + 4000 crédits Firefly).",
     "website": "https://adobe.com",
     "affiliateLink": "https://adobe.com",
     "pros": [
-      "Spécialisé en graphic design",
-      "Interface professionnelle"
+      "Plus rentable que cumuler plusieurs abonnements individuels si tu utilises 3+ apps",
+      "Accès à plus de 20 applications créatives professionnelles reconnues dans l'industrie",
+      "Crédits Firefly inclus pour de la génération IA directement dans les apps"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Le plan Standard, moins cher, retire l'accès web/mobile/iPad et limite l'IA à 25 crédits/mois",
+      "Coût élevé si tu n'utilises qu'une ou deux applications — un abonnement single-app est plus économique",
+      "Engagement annuel généralement nécessaire pour le meilleur tarif mensuel"
     ],
     "bestFor": [
       "designer"
@@ -5030,7 +5030,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 48.17,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -5040,14 +5040,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu utilises au moins 3 applications Adobe régulièrement dans ton activité",
+        "Tu veux des crédits Firefly inclus plutôt que de payer une IA générative séparée"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu n'utilises qu'un seul logiciel Adobe — l'abonnement single-app revient moins cher",
+        "Le budget mensuel de 55-70$ dépasse ce que justifie ton usage"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Rentable dès 3 applications Adobe utilisées régulièrement ; sinon reste sur un abonnement single-app."
     },
     "alternatives": [],
     "seo": {
@@ -5069,13 +5069,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "adobe",
-    "shortDescriptionEn": "Software for creative professionals and digital marketing.",
-    "longDescription": "Adobe, c'est logiciels pour les professionnels de la création et le marketing numérique. À partir de 15€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en graphic design, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Adobe is software for creative professionals and digital marketing. Starting at €15/month. Built for graphic designers and community managers.\n\nSpecialized in graphic design, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Full Creative Cloud suite (Photoshop, Illustrator, Premiere...) with built-in Firefly AI.",
+    "longDescription": "Adobe Creative Cloud regroupe plus de 20 applications créatives (Photoshop, Illustrator, Premiere Pro, After Effects, InDesign...) dans un abonnement unique, plutôt que de payer chaque logiciel séparément. Depuis août 2025, l'offre \"All Apps\" est scindée en deux : Standard (sans accès web/mobile/iPad, IA limitée) et Pro (accès complet, 4000 crédits Firefly).\n\nPour un freelance qui utilise plusieurs logiciels Adobe régulièrement, l'abonnement complet revient moins cher que cumuler les abonnements individuels (23,99 à 30,49€/mois chacun) ; pour qui n'utilise qu'un seul outil, l'abonnement single-app reste plus économique.",
+    "longDescriptionEn": "Adobe Creative Cloud bundles over 20 creative apps (Photoshop, Illustrator, Premiere Pro, After Effects, InDesign...) into a single subscription, rather than paying for each app separately. Since August 2025, the \"All Apps\" offer split into two: Standard (no web/mobile/iPad access, limited AI) and Pro (full access, 4,000 Firefly credits).\n\nFor a freelancer regularly using several Adobe apps, the full subscription costs less than stacking individual subscriptions (€23.99-30.49/month each); for someone using only one tool, the single-app subscription remains cheaper.",
+    "pricingEn": "Creative Cloud Standard at $54.99/month; Creative Cloud Pro at $69.99/month (full access + 4,000 Firefly credits).",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -5093,24 +5090,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You regularly use at least 3 Adobe apps in your business",
+        "You want included Firefly credits rather than paying for separate generative AI"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You only use one Adobe app — the single-app subscription is cheaper",
+        "The $55-70/month budget exceeds what your use justifies"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it from 3 regularly used Adobe apps; otherwise stick with a single-app subscription."
     },
     "prosEn": [
-      "Specialized in graphic design",
-      "Professional interface"
+      "More cost-effective than stacking several individual subscriptions if you use 3+ apps",
+      "Access to over 20 industry-recognized professional creative apps",
+      "Included Firefly credits for AI generation directly within the apps"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "The cheaper Standard plan removes web/mobile/iPad access and limits AI to 25 credits/month",
+      "High cost if you only use one or two apps — a single-app subscription is cheaper",
+      "Annual commitment generally required for the best monthly rate"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Utiliser plusieurs logiciels Adobe (Photoshop, Illustrator, Premiere) sans payer chaque abonnement séparément",
+      "Accéder aux crédits Firefly pour générer des visuels IA directement dans tes outils de création",
+      "Travailler sur des fichiers Adobe partout (desktop, web, mobile) avec le plan Pro"
+    ],
+    "useCasesEn": [
+      "Use several Adobe apps (Photoshop, Illustrator, Premiere) without paying for each subscription separately",
+      "Access Firefly credits to generate AI visuals directly in your creative tools",
+      "Work on Adobe files everywhere (desktop, web, mobile) with the Pro plan"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 5,
     "downgradePlan": null,
@@ -7942,21 +7950,21 @@
   {
     "id": "aweber",
     "name": "AWeber",
-    "shortDescription": "Plateforme d’email marketing et d’automatisation.",
-    "description": "AWeber, c'est plateforme d’email marketing et d’automatisation. À partir de 20€/mois. Pensé pour les coachs et formateurs et les créateurs de contenu.\n\nSpécialisé en email marketing, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "Email marketing avec générateur de pages de destination, pensé pour les débutants.",
+    "description": "AWeber combine envoi d'email marketing, création de pages de destination et un Workflow Builder pour automatiser le parcours des abonnés, avec un assistant IA qui génère objets et corps d'email.",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
+    "pricing": "Gratuit jusqu'à 500 contacts (3000 emails/mois) ; Lite à 15$/mois (12,50$ annuel) ; Plus à 30$/mois (20$ annuel).",
     "website": "https://aweber.com",
     "affiliateLink": "https://aweber.com",
     "pros": [
-      "Spécialisé en email marketing",
-      "Interface professionnelle"
+      "Réputation de délivrabilité solide, les emails arrivent en boîte de réception plutôt qu'en spam",
+      "Support client réactif 24/7 par téléphone et chat, souvent cité comme un point fort",
+      "Générateur de pages de destination avec templates responsive inclus"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Facture les contacts désabonnés s'ils ne sont pas supprimés manuellement, gonflant la facture",
+      "Automatisations plus basiques que des outils plus récents pour des workflows complexes à déclencheurs multiples",
+      "Interface jugée datée par certains avis comparée à des outils plus modernes"
     ],
     "bestFor": [
       "writer",
@@ -7969,7 +7977,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -7981,14 +7989,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu démarres une liste email et veux un outil simple avec bonne délivrabilité",
+        "Tu apprécies un support client réactif en cas de question"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'automatisations complexes à déclencheurs multiples — des outils plus récents sont plus adaptés",
+        "Ta liste contient beaucoup de désabonnés non nettoyés régulièrement"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Bon choix pour débuter ; nettoie régulièrement les désabonnés pour éviter de payer pour rien."
     },
     "alternatives": [],
     "seo": {
@@ -8010,13 +8018,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "aweber",
-    "shortDescriptionEn": "Email marketing and automation platform.",
-    "longDescription": "AWeber, c'est plateforme d’email marketing et d’automatisation. À partir de 20€/mois. Pensé pour les coachs et formateurs et les créateurs de contenu.\n\nSpécialisé en email marketing, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "AWeber is email marketing and automation platform. Starting at €20/month. Built for coaches and trainers and content creators.\n\nSpecialized in email marketing, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to check based on usage. As soon as the tool saves you more than €20/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
-    },
+    "shortDescriptionEn": "Email marketing with a landing page builder, designed for beginners.",
+    "longDescription": "AWeber combine envoi d'email marketing, création de pages de destination (avec templates responsive et boutons d'achat direct) et un Workflow Builder pour automatiser le parcours des abonnés, avec un assistant IA qui génère objets et corps d'email.\n\nSa réputation de délivrabilité solide et son support client réactif 24/7 en font un bon choix pour démarrer ; le compromis est une facturation basée sur le nombre de contacts qui inclut les désabonnés non supprimés, et des automatisations moins poussées que des outils plus récents pour des workflows complexes.",
+    "longDescriptionEn": "AWeber combines email marketing, landing page creation (with responsive templates and direct purchase buttons), and a Workflow Builder to automate the subscriber journey, with an AI assistant generating subject lines and email body copy.\n\nIts solid deliverability reputation and responsive 24/7 customer support make it a good choice to start; the trade-off is billing based on contact count that includes unremoved unsubscribes, and less advanced automation than newer tools for complex workflows.",
+    "pricingEn": "Free up to 500 contacts (3,000 emails/month); Lite at $15/month ($12.50 annual); Plus at $30/month ($20 annual).",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -8034,24 +8039,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're starting an email list and want a simple tool with good deliverability",
+        "You value responsive customer support when you have questions"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need complex multi-trigger automations — newer tools fit better",
+        "Your list has many unsubscribes not regularly cleaned up"
       ],
-      "threshold": "As soon as the tool saves you more than €20/month"
+      "threshold": "Good choice to start; clean up unsubscribes regularly to avoid paying for nothing."
     },
     "prosEn": [
-      "Specialized in email marketing",
-      "Professional interface"
+      "Solid deliverability reputation, emails land in the inbox rather than spam",
+      "Responsive 24/7 phone and chat support, often cited as a strength",
+      "Landing page builder with responsive templates included"
     ],
     "consEn": [
-      "Pricing to check based on usage"
+      "Bills unsubscribed contacts if not manually deleted, inflating the bill",
+      "More basic automation than newer tools for complex multi-trigger workflows",
+      "Interface seen as dated by some reviews compared to more modern tools"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Démarrer une newsletter ou une liste email avec un outil simple et fiable",
+      "Créer une page de destination avec bouton d'achat direct sans outil séparé",
+      "Automatiser une séquence de bienvenue simple pour de nouveaux abonnés"
+    ],
+    "useCasesEn": [
+      "Start a newsletter or email list with a simple, reliable tool",
+      "Create a landing page with a direct purchase button with no separate tool",
+      "Automate a simple welcome sequence for new subscribers"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -11865,21 +11881,21 @@
   {
     "id": "capsule",
     "name": "Capsule",
-    "shortDescription": "CRM pour gérer les ventes et relations client.",
-    "description": "Capsule, c'est cRM pour gérer les ventes et relations client. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "CRM simple pour petites entreprises, avec plan gratuit jusqu'à 250 contacts.",
+    "description": "Capsule organise contacts, pipeline de vente et projets dans une interface volontairement simple, sans la complexité d'un CRM enterprise, avec un plan gratuit qui couvre déjà 250 contacts et 2 utilisateurs.",
     "category": "communication",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
+    "pricing": "Gratuit jusqu'à 250 contacts (2 utilisateurs) ; Starter à 18$/utilisateur/mois ; Growth et Ultimate (jusqu'à 72$/mois) au-delà.",
     "website": "https://capsulecrm.com",
     "affiliateLink": "https://capsulecrm.com",
     "pros": [
-      "Spécialisé en CRM",
-      "Interface professionnelle"
+      "Interface simple, note de 9,5/10 pour la facilité d'usage — adapté aux petites équipes sans IT",
+      "Plan gratuit généreux (250 contacts, 2 utilisateurs) pour tester sans risque",
+      "Bonnes intégrations avec Google Workspace, Microsoft 365, Xero et Mailchimp"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Aucune synchronisation email bidirectionnelle sur aucun plan, même à 72$/mois",
+      "Support uniquement par email, pas de chat live ni de téléphone en urgence",
+      "Enrichissement de contacts et certains rapports verrouillés derrière les plans supérieurs"
     ],
     "bestFor": [
       "consultant",
@@ -11891,7 +11907,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -11902,14 +11918,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu es une petite équipe sans IT dédiée et veux un CRM simple à adopter",
+        "250 contacts et 2 utilisateurs suffisent à tes besoins actuels (plan gratuit)"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'une synchronisation email native — aucun plan Capsule ne l'offre",
+        "Tu as besoin de support téléphonique ou chat en cas d'urgence"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Bon choix gratuit pour démarrer ; vérifie si l'absence de sync email bidirectionnelle est bloquante pour toi."
     },
     "alternatives": [],
     "seo": {
@@ -11931,13 +11947,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "capsule",
-    "shortDescriptionEn": "CRM to manage sales and customer relationships.",
-    "longDescription": "Capsule, c'est cRM pour gérer les ventes et relations client. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "Capsule is cRM to manage sales and customer relationships. Starting at €20/month. Built for B2B consultants and SaaS founders.\n\nCRM specialized, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: prices to check based on usage. As soon as the tool saves you more than €20/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
-    },
+    "shortDescriptionEn": "Simple CRM for small businesses, with a free plan up to 250 contacts.",
+    "longDescription": "Capsule organise contacts, pipeline de vente et projets dans une interface volontairement simple, sans la complexité d'un CRM enterprise, avec un plan gratuit qui couvre déjà 250 contacts et 2 utilisateurs.\n\nSon vrai point faible : aucune synchronisation email bidirectionnelle sur aucun plan, même le plus cher à 72$/mois — il faut mettre une adresse en copie cachée pour faire remonter les emails dans le CRM, alors que la plupart des concurrents à ce prix gèrent ça nativement.",
+    "longDescriptionEn": "Capsule organizes contacts, sales pipeline, and projects in a deliberately simple interface, without enterprise CRM complexity, with a free plan already covering 250 contacts and 2 users.\n\nIts real weakness: no two-way email sync on any plan, even the most expensive at $72/month — you need to BCC an address to get emails into the CRM, while most competitors at this price handle it natively.",
+    "pricingEn": "Free up to 250 contacts (2 users); Starter at $18/user/month; Growth and Ultimate (up to $72/month) beyond that.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -11955,24 +11968,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're a small team with no dedicated IT and want a simple CRM to adopt",
+        "250 contacts and 2 users meet your current needs (free plan)"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need native email sync — no Capsule plan offers it",
+        "You need phone or chat support for emergencies"
       ],
-      "threshold": "As soon as the tool saves you more than €20/month"
+      "threshold": "Good free choice to start; check if the lack of two-way email sync is a blocker for you."
     },
     "prosEn": [
-      "CRM specialized",
-      "Professional interface"
+      "Simple interface, 9.5/10 ease-of-use rating — suited to small teams with no IT",
+      "Generous free plan (250 contacts, 2 users) to test risk-free",
+      "Good integrations with Google Workspace, Microsoft 365, Xero, and Mailchimp"
     ],
     "consEn": [
-      "Prices to check based on usage"
+      "No two-way email sync on any plan, even at $72/month",
+      "Email-only support, no live chat or phone for emergencies",
+      "Contact enrichment and certain reports gated behind higher plans"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser des contacts et un pipeline de vente simple pour une petite équipe",
+      "Suivre des projets liés à des clients directement dans le CRM",
+      "Démarrer avec un CRM gratuit avant de basculer vers un outil plus complet si besoin"
+    ],
+    "useCasesEn": [
+      "Centralize contacts and a simple sales pipeline for a small team",
+      "Track client-linked projects directly in the CRM",
+      "Start with a free CRM before moving to a more complete tool if needed"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -12826,21 +12850,21 @@
   {
     "id": "clearbit",
     "name": "Clearbit",
-    "shortDescription": "Outil d’enrichissement de données et insights pour marketing et ventes.",
-    "description": "Clearbit, c'est outil d’enrichissement de données et insights pour marketing et ventes. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en data enrichment, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Enrichissement de données B2B en temps réel, désormais intégré à HubSpot (Breeze Intelligence).",
+    "description": "Clearbit enrichit automatiquement un lead ou client avec plus de 100 points de données à partir d'un simple email ou domaine. Depuis le rachat par HubSpot, l'outil fonctionne uniquement comme module Breeze Intelligence à l'intérieur de HubSpot.",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Système à crédits dans HubSpot : 100 crédits ≈ 45-50$/mois ; ~1000 crédits ≈ 450$/mois. Pas d'essai gratuit.",
     "website": "https://clearbit.com",
     "affiliateLink": "https://clearbit.com",
     "pros": [
-      "Spécialisé en data enrichment",
-      "Interface professionnelle"
+      "Précision élevée des données firmographiques, particulièrement pour identifier les décideurs",
+      "Intégration fluide dans les workflows CRM et marketing automation existants",
+      "Plus de 100 points de données enrichis en quelques secondes depuis un email ou domaine"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Verrouillage total à HubSpot — plus d'usage avec Salesforce ou Pipedrive",
+      "Tarification à crédits imprévisible, coût réel pouvant atteindre 1000-5000$/mois pour une équipe mid-market",
+      "Précision en baisse pour les petites entreprises et les sociétés internationales"
     ],
     "bestFor": [
       "all"
@@ -12851,7 +12875,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 39.42,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -12861,14 +12885,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu es déjà sur HubSpot et acceptes le verrouillage à son écosystème",
+        "Le budget crédits (450$+/mois) est justifié par ton volume de leads à enrichir"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu utilises Salesforce ou Pipedrive — Clearbit n'est plus accessible en standalone",
+        "Tu cibles des petites entreprises ou internationales où la précision baisse"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent uniquement si tu es déjà engagé dans l'écosystème HubSpot ; sinon cherche une alternative standalone."
     },
     "alternatives": [],
     "seo": {
@@ -12890,13 +12914,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "clearbit",
-    "shortDescriptionEn": "Data enrichment and insights tool for marketing and sales.",
-    "longDescription": "Clearbit, c'est outil d’enrichissement de données et insights pour marketing et ventes. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en data enrichment, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Clearbit is data enrichment and insights tool for marketing and sales. Starting at €15/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in data enrichment, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Real-time B2B data enrichment, now integrated into HubSpot (Breeze Intelligence).",
+    "longDescription": "Clearbit enrichit automatiquement un lead ou client avec plus de 100 points de données (taille d'entreprise, secteur, stack technique, décideurs) à partir d'un simple email ou domaine. Depuis le rachat par HubSpot, l'outil standalone a disparu : Clearbit fonctionne désormais uniquement comme module \"Breeze Intelligence\" à l'intérieur de HubSpot.\n\nCe changement impose un verrouillage total à l'écosystème HubSpot (plus de Salesforce ou Pipedrive) et une tarification à crédits dont le coût réel grimpe vite (1000 crédits ≈ 450$/mois), avec des migrants rapportant 30-60% de hausse de coût pour une fonctionnalité équivalente.",
+    "longDescriptionEn": "Clearbit automatically enriches a lead or customer with over 100 data points (company size, industry, tech stack, decision-makers) from a simple email or domain. Since the HubSpot acquisition, the standalone tool disappeared: Clearbit now only works as a \"Breeze Intelligence\" module inside HubSpot.\n\nThis change imposes full lock-in to the HubSpot ecosystem (no more Salesforce or Pipedrive) and credit-based pricing whose real cost rises quickly (1,000 credits ≈ $450/month), with migrants reporting 30-60% cost increases for equivalent functionality.",
+    "pricingEn": "Credit-based system inside HubSpot: 100 credits ≈ $45-50/month; ~1,000 credits ≈ $450/month. No free trial.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -12914,24 +12935,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're already on HubSpot and accept the lock-in to its ecosystem",
+        "The credit budget ($450+/month) is justified by your lead enrichment volume"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You use Salesforce or Pipedrive — Clearbit is no longer available standalone",
+        "You target small or international companies where accuracy drops"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Only worth it if you're already committed to the HubSpot ecosystem; otherwise look for a standalone alternative."
     },
     "prosEn": [
-      "Specialized in data enrichment",
-      "Professional interface"
+      "High accuracy of firmographic data, particularly for identifying decision-makers",
+      "Smooth integration into existing CRM and marketing automation workflows",
+      "Over 100 data points enriched in seconds from an email or domain"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "Full HubSpot lock-in — no more use with Salesforce or Pipedrive",
+      "Unpredictable credit-based pricing, real cost potentially reaching $1,000-5,000/month for a mid-market team",
+      "Declining accuracy for small companies and international businesses"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Enrichir automatiquement des leads HubSpot avec des données firmographiques",
+      "Identifier les décideurs et prioriser les leads à fort potentiel",
+      "Optimiser des formulaires en réduisant les champs demandés grâce à l'enrichissement"
+    ],
+    "useCasesEn": [
+      "Automatically enrich HubSpot leads with firmographic data",
+      "Identify decision-makers and prioritize high-potential leads",
+      "Optimize forms by reducing required fields thanks to enrichment"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -13392,21 +13424,21 @@
   {
     "id": "close",
     "name": "Close",
-    "shortDescription": "CRM avec outils de communication intégrés pour les ventes.",
-    "description": "Close, c'est cRM avec outils de communication intégrés pour les ventes. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les e-commerçants.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "CRM commercial avec appels, SMS et email intégrés — sans outils externes.",
+    "description": "Close intègre les appels, emails et SMS directement dans le CRM, avec un Power Dialer qui permet d'enchaîner les appels plus vite, et un coaching en temps réel pour les managers.",
     "category": "communication",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Solo à 9$/mois ; Essentials à 35$/mois (appels, SMS et email illimités) ; Growth à 99$/mois (automatisation, Power Dialer, IA). Budgéter 150-250$/utilisateur avec les add-ons d'appel.",
     "website": "https://close.com",
     "affiliateLink": "https://close.com",
     "pros": [
-      "Spécialisé en CRM",
-      "Interface professionnelle"
+      "Appels, email et SMS dans le même outil, plus besoin de jongler entre 5 apps",
+      "Power Dialer qui accélère réellement le rythme d'appels des commerciaux",
+      "Note de 4,7/5 sur G2 avec 85% d'avis 5 étoiles sur plus de 2000 avis"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Coûts cachés réels : budget total de 150-250$/utilisateur/mois une fois les add-ons d'appel comptés",
+      "Gestion de boîte de réception insuffisante pour des équipes à fort volume",
+      "Fonctionnalités marketing minimales — c'est un outil purement commercial"
     ],
     "bestFor": [
       "consultant",
@@ -13418,7 +13450,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 30.66,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -13429,14 +13461,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Ton équipe fait beaucoup d'appels sortants et veut tout centraliser dans un outil",
+        "Tu budgètes le coût réel avec les add-ons d'appel avant de t'engager"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin de fonctionnalités marketing en plus du commercial",
+        "Le budget réel de 150-250$/utilisateur dépasse ce que tu peux investir"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent pour une équipe sales outbound qui budgète le coût réel avec les add-ons d'appel."
     },
     "alternatives": [],
     "seo": {
@@ -13458,13 +13490,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "close",
-    "shortDescriptionEn": "CRM with integrated communication tools for sales.",
-    "longDescription": "Close, c'est cRM avec outils de communication intégrés pour les ventes. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les e-commerçants.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Close is cRM with integrated communication tools for sales. Starting at €15/month. Built for SaaS founders and e-commerce sellers.\n\nSpecialized in CRM, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Sales CRM with built-in calling, SMS, and email — no external tools.",
+    "longDescription": "Close intègre les appels, emails et SMS directement dans le CRM, avec un Power Dialer qui permet d'enchaîner les appels 3-4 fois plus vite qu'en composant manuellement, et un coaching en temps réel pour les managers (écoute discrète, prise de relais sur un appel).\n\nC'est un outil purement commercial (peu de fonctionnalités marketing), avec des coûts cachés réels : une fois le dialer, les lignes téléphoniques premium et les minutes d'appel comptées, le budget réel grimpe à 150-250$/utilisateur/mois selon le volume.",
+    "longDescriptionEn": "Close integrates calling, email, and SMS directly into the CRM, with a Power Dialer letting reps burn through calls 3-4x faster than manual dialing, and real-time coaching for managers (silent listening, joining a call).\n\nIt's a purely sales-focused tool (few marketing features), with real hidden costs: once the dialer, premium phone lines, and call minutes are factored in, the real budget rises to $150-250/rep/month depending on volume.",
+    "pricingEn": "Solo at $9/month; Essentials at $35/month (unlimited calling, SMS, email); Growth at $99/month (automation, Power Dialer, AI). Budget $150-250/user with calling add-ons.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -13482,24 +13511,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your team makes a lot of outbound calls and wants to centralize everything in one tool",
+        "You budget the real cost with calling add-ons before committing"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need marketing features in addition to sales",
+        "The real $150-250/user budget exceeds what you can invest"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it for an outbound sales team that budgets the real cost with calling add-ons."
     },
     "prosEn": [
-      "Specialized in CRM",
-      "Professional interface"
+      "Calling, email, and SMS in one tool, no more juggling between 5 apps",
+      "Power Dialer that genuinely speeds up reps' calling pace",
+      "4.7/5 rating on G2 with 85% five-star reviews across over 2,000 reviews"
     ],
     "consEn": [
-      "Price to be verified depending on usage"
+      "Real hidden costs: total budget of $150-250/user/month once calling add-ons are counted",
+      "Inbox management insufficient for high-volume teams",
+      "Minimal marketing features — this is a purely sales tool"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser appels, emails et SMS pour une équipe commerciale outbound",
+      "Accélérer le rythme d'appels avec un Power Dialer plutôt que composer manuellement",
+      "Coacher les commerciaux en temps réel via l'écoute d'appels"
+    ],
+    "useCasesEn": [
+      "Centralize calls, emails, and SMS for an outbound sales team",
+      "Speed up call pace with a Power Dialer rather than manual dialing",
+      "Coach reps in real time via call listening"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -14366,21 +14406,21 @@
   {
     "id": "connecteam",
     "name": "Connecteam",
-    "shortDescription": "Application tout-en-un pour gérer les employés sans bureau.",
-    "description": "Connecteam, c'est application tout-en-un pour gérer les employés sans bureau. À partir de 15€/mois. Pensé pour les managers et DSI et les RH et recruteurs.\n\nSpécialisé en workforce management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "App tout-en-un pour gérer des équipes terrain : planning, communication et RH.",
+    "description": "Connecteam combine planning d'équipe, chat interne, pointage mobile et gestion RH dans une seule app pensée pour les employés sans bureau fixe.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Gratuit jusqu'à 10 utilisateurs ; Basic à 29$/mois (jusqu'à 30 utilisateurs) ; Advanced à 49$/mois ; Expert à 99$/mois.",
     "website": "https://connecteam.com",
     "affiliateLink": "https://connecteam.com",
     "pros": [
-      "Spécialisé en workforce management",
-      "Interface professionnelle"
+      "Solution tout-en-un pour gérer des équipes terrain sans bureau fixe",
+      "Support client 24/7 même sur le plan gratuit",
+      "Réductions de coûts opérationnels rapportées jusqu'à 80% après adoption"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Coût par utilisateur et par hub qui grimpe vite au-delà de 30 utilisateurs",
+      "Pas de dispatching automatique ni d'optimisation de tournées",
+      "Accès hors-ligne limité, interface jugée encombrée par certains avis"
     ],
     "bestFor": [
       "all"
@@ -14391,7 +14431,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 25.4,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -14401,14 +14441,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu gères une équipe terrain sans bureau fixe et veux tout centraliser",
+        "Ton équipe reste sous 30 utilisateurs pour profiter du meilleur rapport prix"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin de dispatching automatique ou d'optimisation de tournées — des outils spécialisés conviennent mieux",
+        "Ton équipe dépasse largement 30 utilisateurs avec plusieurs hubs activés"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent pour une équipe terrain jusqu'à 30 utilisateurs ; au-delà, calcule le coût réel par hub activé."
     },
     "alternatives": [],
     "seo": {
@@ -14430,13 +14470,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "connecteam",
-    "shortDescriptionEn": "All-in-one app to manage non-desk employees.",
-    "longDescription": "Connecteam, c'est application tout-en-un pour gérer les employés sans bureau. À partir de 15€/mois. Pensé pour les managers et DSI et les RH et recruteurs.\n\nSpécialisé en workforce management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Connecteam is all-in-one app to manage non-desk employees. Starting at €15/month. Built for managers and IT directors and HR and recruiters.\n\nSpecialized in workforce management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "All-in-one app to manage field teams: scheduling, communication, and HR.",
+    "longDescription": "Connecteam combine planning d'équipe, chat interne, pointage mobile et gestion RH dans une seule app pensée pour les employés sans bureau fixe (retail, santé, construction), avec un support client disponible 24/7 même sur le plan gratuit.\n\nAu-delà de 30 utilisateurs, le coût par fonctionnalité activée peut grimper vite si plusieurs hubs (Opérations, Communication, RH) sont utilisés simultanément. Pas de fonctionnalités de dispatching automatique ou d'optimisation de tournées.",
+    "longDescriptionEn": "Connecteam combines team scheduling, internal chat, mobile clock-in, and HR management into one app designed for employees without a fixed desk (retail, healthcare, construction), with 24/7 customer support even on the free plan.\n\nBeyond 30 users, the cost per activated feature can rise quickly if several hubs (Operations, Communication, HR) are used simultaneously. No automatic dispatching or route optimization features.",
+    "pricingEn": "Free up to 10 users; Basic at $29/month (up to 30 users); Advanced at $49/month; Expert at $99/month.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -14454,24 +14491,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You manage a field team without a fixed desk and want to centralize everything",
+        "Your team stays under 30 users to get the best price ratio"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need automatic dispatching or route optimization — specialized tools fit better",
+        "Your team significantly exceeds 30 users with several hubs activated"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it for a field team up to 30 users; beyond that, calculate the real cost per activated hub."
     },
     "prosEn": [
-      "Specialized in workforce management",
-      "Professional interface"
+      "All-in-one solution to manage field teams without a fixed desk",
+      "24/7 customer support even on the free plan",
+      "Reported operational cost reductions of up to 80% after adoption"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Per-user, per-hub cost rises quickly beyond 30 users",
+      "No automatic dispatching or route optimization",
+      "Limited offline access, interface seen as cluttered by some reviews"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Gérer le planning et le pointage d'une équipe terrain (retail, santé, construction)",
+      "Centraliser la communication interne pour des employés sans bureau fixe",
+      "Suivre les compétences et formations RH d'une équipe déskless"
+    ],
+    "useCasesEn": [
+      "Manage scheduling and clock-in for a field team (retail, healthcare, construction)",
+      "Centralize internal communication for employees without a fixed desk",
+      "Track skills and HR training for a deskless team"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -15945,21 +15993,21 @@
   {
     "id": "deputy",
     "name": "Deputy",
-    "shortDescription": "Simplifie la planification et réduit les coûts de main-d’œuvre.",
-    "description": "Deputy, c'est simplifie la planification et réduit les coûts de main-d’œuvre. À partir de 10€/mois. Pensé pour les managers et DSI et les RH et recruteurs.\n\nSpécialisé en workforce management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "shortDescription": "Planning d'équipe et pointage avec auto-scheduling et conformité légale intégrée.",
+    "description": "Deputy crée des plannings en quelques clics avec un auto-scheduler qui prend en compte disponibilités, qualifications et budget, plus la conformité au droit du travail intégrée.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
-    },
+    "pricing": "Lite à 5$/utilisateur/mois ; Core à 6,50$ (auto-scheduling, prévision de la demande) ; Pro à 9$ (SSO, add-ons inclus). Minimum 30$/mois.",
     "website": "https://deputy.com",
     "affiliateLink": "https://deputy.com",
     "pros": [
-      "Spécialisé en workforce management",
-      "Interface professionnelle"
+      "Auto-scheduling qui prend en compte disponibilités et budget automatiquement",
+      "Conformité au droit du travail intégrée, réduit le risque d'erreurs coûteuses",
+      "App mobile très appréciée pour le pointage et la gestion de shifts par les employés"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Fonctionnalités avancées (analytics, messagerie, SSO) en add-ons séparés qui font grimper le coût réel à ~22$/utilisateur",
+      "Profondeur de reporting limitée selon plusieurs avis",
+      "Support parfois plus lent que souhaité, quelques bugs logiciels rapportés"
     ],
     "bestFor": [
       "all"
@@ -15970,7 +16018,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 4.38,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -15980,14 +16028,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu gères une équipe avec des plannings complexes et veux automatiser leur création",
+        "La conformité légale sur les heures de travail est un enjeu réel pour ton secteur"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin de reporting très poussé — la profondeur est limitée selon les avis",
+        "Le budget add-ons (jusqu'à 22$/utilisateur) dépasse ce que tu avais prévu"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Calcule le coût réel avec les add-ons nécessaires avant de t'engager, surtout pour la conformité légale."
     },
     "alternatives": [],
     "seo": {
@@ -16009,13 +16057,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "deputy",
-    "shortDescriptionEn": "Simplifies scheduling and reduces labor costs.",
-    "longDescription": "Deputy, c'est simplifie la planification et réduit les coûts de main-d’œuvre. À partir de 10€/mois. Pensé pour les managers et DSI et les RH et recruteurs.\n\nSpécialisé en workforce management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "Deputy is simplifies scheduling and reduces labor costs. Starting at €10/month. Built for managers and IT directors and HR and recruiters.\n\nSpecialized in workforce management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: prices to check depending on usage. As soon as the tool saves you more than €10/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
-    },
+    "shortDescriptionEn": "Team scheduling and time clocking with auto-scheduling and built-in legal compliance.",
+    "longDescription": "Deputy crée des plannings en quelques clics avec un auto-scheduler qui prend en compte disponibilités, qualifications et budget, plus la conformité au droit du travail intégrée — utile pour éviter des erreurs coûteuses sur les heures supplémentaires ou les temps de repos.\n\nLe prix de base (5-9$/utilisateur) est compétitif, mais les fonctionnalités avancées (analytics poussés, messagerie, SSO) sont des add-ons séparés qui peuvent faire grimper le coût réel jusqu'à ~22$/utilisateur/mois.",
+    "longDescriptionEn": "Deputy creates schedules in a few clicks with an auto-scheduler accounting for availability, qualifications, and budget, plus built-in labor law compliance — useful to avoid costly mistakes on overtime or rest periods.\n\nThe base price ($5-9/user) is competitive, but advanced features (deep analytics, messaging, SSO) are separate add-ons that can push the real cost up to ~$22/user/month.",
+    "pricingEn": "Lite at $5/user/month; Core at $6.50 (auto-scheduling, demand forecasting); Pro at $9 (SSO, add-ons included). $30/month minimum.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -16033,24 +16078,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You manage a team with complex schedules and want to automate their creation",
+        "Legal compliance on working hours is a real concern in your sector"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need very deep reporting — depth is limited per reviews",
+        "The add-on budget (up to $22/user) exceeds what you planned"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Calculate the real cost with needed add-ons before committing, especially for legal compliance."
     },
     "prosEn": [
-      "Specialized in workforce management",
-      "Professional interface"
+      "Auto-scheduling that automatically accounts for availability and budget",
+      "Built-in labor law compliance, reduces the risk of costly mistakes",
+      "Mobile app highly praised for clocking in and shift management by employees"
     ],
     "consEn": [
-      "Prices to check depending on usage"
+      "Advanced features (analytics, messaging, SSO) as separate add-ons pushing the real cost to ~$22/user",
+      "Limited reporting depth per several reviews",
+      "Support sometimes slower than expected, some software bugs reported"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Créer des plannings d'équipe automatiquement selon disponibilités et budget",
+      "Respecter la conformité légale sur les heures de travail et temps de repos",
+      "Pointer et gérer les échanges de shifts directement depuis l'app mobile"
+    ],
+    "useCasesEn": [
+      "Automatically create team schedules based on availability and budget",
+      "Comply with legal requirements on working hours and rest periods",
+      "Clock in and manage shift swaps directly from the mobile app"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -17587,21 +17643,21 @@
   {
     "id": "dubsado",
     "name": "Dubsado",
-    "shortDescription": "Suite de gestion d’entreprise pour créatifs (contrats",
-    "description": "Dubsado, c'est suite de gestion d’entreprise pour créatifs (contrats. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en business management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "CRM et automatisation administrative pour freelances avec workflows conditionnels poussés.",
+    "description": "Dubsado automatise contrats, factures et prise de rendez-vous pour les entreprises de service, avec le système de workflows conditionnels le plus poussé de sa catégorie sur le plan Premier.",
     "category": "organization",
-    "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
-    },
+    "pricing": "Starter et Premier disponibles (tarifs 2026 après hausse de déc. 2025) ; 3 membres d'équipe inclus, 4-10 à 25$/mois, 11-20 à 45$/mois.",
     "website": " planning).",
     "affiliateLink": " planning).",
     "pros": [
-      "Spécialisé en business management",
-      "Interface professionnelle"
+      "Workflows conditionnels les plus poussés de la catégorie (logique si/alors, champs dynamiques)",
+      "Automatise contrats, factures et rendez-vous dans un seul outil pour les entreprises de service",
+      "Formulaires de capture de leads illimités sur le plan Premier"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Configuration initiale qui demande 15 à 25 heures, courbe d'apprentissage réputée difficile",
+      "Plan Starter à 35$ jugé décevant car il ne débloque pas les workflows, la fonctionnalité principale",
+      "Pas d'application mobile native, planification basique sans IA ni round-robin"
     ],
     "bestFor": [
       "all"
@@ -17612,7 +17668,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 35,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "0€/mois"
@@ -17622,14 +17678,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu es prêt à investir 15-25h de configuration pour automatiser ton activité en profondeur",
+        "Tu prends directement le plan Premier — le Starter ne débloque pas l'essentiel"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu veux un outil utilisable immédiatement sans configuration lourde — Dubsado n'est pas pour toi",
+        "Tu as besoin d'une app mobile native ou d'une planification avancée (IA, round-robin)"
       ],
-      "threshold": "Gratuit, à garder si utile"
+      "threshold": "Pertinent si tu acceptes l'investissement de configuration ; prends Premier directement, pas Starter."
     },
     "alternatives": [],
     "seo": {
@@ -17651,13 +17707,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "dubsado",
-    "shortDescriptionEn": "Business management suite for creatives (contracts, invoices, automation).",
-    "longDescription": "Dubsado, c'est suite de gestion d’entreprise pour créatifs (contrats. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en business management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Dubsado is business management suite for creatives (contracts, invoices, automation). Free to start, paid plans for more. Built for B2B consultants and SaaS founders.\n\nSpecialized in business management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. Free, to keep if useful.",
-    "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
-    },
+    "shortDescriptionEn": "CRM and administrative automation for freelancers with advanced conditional workflows.",
+    "longDescription": "Dubsado automatise contrats, factures et prise de rendez-vous pour les entreprises de service, avec le système de workflows conditionnels (logique \"si... alors\", champs dynamiques) le plus poussé de sa catégorie sur le plan Premier.\n\nLe vrai coût n'est pas le prix de l'abonnement mais le temps de configuration : compte 15 à 25 heures pour bien paramétrer l'outil, à tel point que des prestataires se spécialisent dans la configuration Dubsado. Le plan Starter à 35$/mois est jugé décevant par beaucoup car il ne débloque pas les workflows, la fonctionnalité phare.",
+    "longDescriptionEn": "Dubsado automates contracts, invoices, and appointment booking for service businesses, with the category's most advanced conditional workflow system (if/then logic, dynamic fields) on the Premier plan.\n\nThe real cost isn't the subscription price but the setup time: budget 15 to 25 hours to properly configure the tool, to the point that some providers specialize in Dubsado setup. The $35/month Starter plan is seen as disappointing by many since it doesn't unlock workflows, the flagship feature.",
+    "pricingEn": "Starter and Premier plans available (2026 pricing after Dec. 2025 increase); 3 team members included, 4-10 at $25/month, 11-20 at $45/month.",
     "pricing_v5": {
       "cautions": [
         "confirm_if_paid_plan_is_really_used"
@@ -17677,24 +17730,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're ready to invest 15-25h of setup to deeply automate your business",
+        "You go straight for Premier — Starter doesn't unlock the essentials"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You want a tool usable immediately with no heavy setup — Dubsado isn't for you",
+        "You need a native mobile app or advanced scheduling (AI, round-robin)"
       ],
-      "threshold": "Free, to keep if useful"
+      "threshold": "Worth it if you accept the setup investment; go straight for Premier, not Starter."
     },
     "prosEn": [
-      "Specialized in business management",
-      "Professional interface"
+      "Most advanced conditional workflows in the category (if/then logic, dynamic fields)",
+      "Automates contracts, invoices, and appointments in one tool for service businesses",
+      "Unlimited lead capture forms on the Premier plan"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Initial setup requires 15 to 25 hours, learning curve known to be steep",
+      "Starter plan at $35 seen as disappointing since it doesn't unlock workflows, the main feature",
+      "No native mobile app, basic scheduling with no AI or round-robin"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Automatiser le parcours client complet (contrat, facture, rendez-vous) pour une activité de service",
+      "Construire des workflows conditionnels complexes selon le type de client ou de projet",
+      "Centraliser la facturation et les paiements ACH pour plusieurs clients récurrents"
+    ],
+    "useCasesEn": [
+      "Automate the full client journey (contract, invoice, appointment) for a service business",
+      "Build complex conditional workflows based on client or project type",
+      "Centralize invoicing and ACH payments for several recurring clients"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
