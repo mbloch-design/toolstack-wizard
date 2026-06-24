@@ -242,6 +242,16 @@ export default function StickyDecisionCard({
             <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>{value}</span>
           </div>
         ))}
+        <Link
+          to={`${prefix}/methodology`}
+          style={{
+            display: "block", marginTop: 10,
+            fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)",
+            textDecoration: "underline",
+          }}
+        >
+          {t("Comment ce score est calculé", "How this score is calculated")}
+        </Link>
       </div>
 
       {/* ── 6. Alternative recommandée ── */}

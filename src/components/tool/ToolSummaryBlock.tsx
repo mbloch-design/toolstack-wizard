@@ -3,6 +3,12 @@ import type { Tool, Category } from "@/data/types";
 import { stripLeadingEmoji } from "@/lib/text";
 import { formatPriceLabel } from "@/lib/toolUtils";
 
+// Cache-bust marker (2026-06-24): forcing this module's content hash to
+// change after a build showed seo.idealForFr correct in the embedded
+// __SSR_TOOL__ JSON but rendered as the generic fallback in the visible
+// markup, despite a fresh local rebuild of the same data being correct.
+// Suspected stale build-cache artifact specific to the deploy pipeline.
+
 interface Props {
   tool: Tool;
   category: Category | undefined;
@@ -25,7 +31,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
       )
     : t("productivité", "productivity");
 
-  const idealForOverride = lang === "en" ? tool.idealForEn : tool.idealForFr;
+  const idealForOverride = lang === "en" ? tool.seo?.idealForEn : tool.seo?.idealForFr;
   const idealFor = idealForOverride
     ? idealForOverride
     : tool.soloRelevance === "high" && tool.teamRelevance !== "high"
