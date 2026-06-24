@@ -23866,11 +23866,11 @@
     "slug": "hubspot",
     "name": "HubSpot",
     "category": "organization",
-    "shortDescription": "CRM, marketing et ventes tout-en-un",
-    "shortDescriptionEn": "All-in-one CRM, marketing, and sales.",
-    "description": "HubSpot, c'est cRM, marketing et ventes tout-en-un. Entièrement gratuit.",
-    "longDescription": "HubSpot, c'est cRM, marketing et ventes tout-en-un. Entièrement gratuit.",
-    "longDescriptionEn": "HubSpot is all-in-one CRM, marketing, and sales. Completely free.",
+    "shortDescription": "CRM tout-en-un avec marketing, vente et service client, plan gratuit généreux pour démarrer.",
+    "shortDescriptionEn": "All-in-one CRM with marketing, sales, and customer service, generous free plan to start.",
+    "description": "HubSpot combine CRM, marketing automation, vente et support client dans une seule plateforme, avec un plan gratuit qui couvre déjà les besoins de base d'une petite équipe.\n\nSon principal atout est une prise en main rapide comparée à des CRM plus complexes comme Salesforce, avec un alignement marketing-vente fluide quand les deux équipes utilisent l'outil. Le compromis : la montée en gamme vers Professional est abrupte (jusqu'à 5x le prix) et s'accompagne souvent de frais d'onboarding obligatoires.",
+    "longDescription": "HubSpot combine CRM, marketing automation, vente et support client dans une seule plateforme, avec un plan gratuit qui couvre déjà les besoins de base d'une petite équipe.\n\nSon principal atout est une prise en main rapide comparée à des CRM plus complexes comme Salesforce, avec un alignement marketing-vente fluide quand les deux équipes utilisent l'outil. Le compromis : la montée en gamme vers Professional est abrupte (jusqu'à 5x le prix) et s'accompagne souvent de frais d'onboarding obligatoires.",
+    "longDescriptionEn": "HubSpot combines CRM, marketing automation, sales, and customer support in one platform, with a free plan that already covers a small team's basic needs.\n\nIts main strength is a faster learning curve compared to more complex CRMs like Salesforce, with smooth marketing-sales alignment when both teams use the tool. The trade-off: upgrading to Professional is steep (up to 5x the price) and often comes with mandatory onboarding fees.",
     "pricing": {
       "free": "CRM de base gratuit",
       "paid": "Starter à partir de 20$/siège/mois (promos fréquentes à 9-15$ la 1ère année) ; Professional et Enterprise sur devis selon les hubs"
@@ -23941,59 +23941,55 @@
     ],
     "verdict": {
       "keepIf": [
-        "L’outil est déjà une source de vérité dans l’organisation",
-        "Plusieurs équipes dépendent de la donnée synchronisée",
-        "Le coût de désalignement dépasse le coût de licence"
+        "Tu démarres et veux un CRM gratuit qui couvre les bases",
+        "Tes équipes marketing et vente travaillent ensemble sur les mêmes leads"
       ],
       "avoidIf": [
-        "Usage ponctuel ou simple curiosité",
-        "Process encore gérable avec un outil plus léger",
-        "Doublon avec un référentiel déjà en place"
+        "Tu prévois de monter en gamme vers Professional sans budget pour le saut de prix",
+        "Tu as besoin de personnalisation très poussée — Salesforce est plus flexible"
       ],
-      "threshold": "À garder si HubSpot a un rôle clair que tes autres outils ne couvrent pas déjà."
+      "threshold": "Excellent point de départ gratuit ; anticipe le saut de prix si tu prévois de passer en Professional."
     },
     "verdictEn": {
       "keepIf": [
-        "The tool is already a system of record in the organization",
-        "Several teams depend on synchronized data",
-        "The cost of misalignment is higher than the license cost"
+        "You're starting out and want a free CRM covering the basics",
+        "Your marketing and sales teams work together on the same leads"
       ],
       "avoidIf": [
-        "Occasional use or curiosity only",
-        "The process is still manageable with a lighter tool",
-        "It overlaps with an existing system of record"
+        "You plan to upgrade to Professional with no budget for the price jump",
+        "You need very deep customization — Salesforce is more flexible"
       ],
-      "threshold": "Keep HubSpot if it has a clear role that your other tools do not already cover."
+      "threshold": "Excellent free starting point; plan ahead for the price jump if you expect to move to Professional."
     },
     "pros": [
-      "Facile à adopter",
-      "Utile pour structurer le travail quotidien",
-      "S’intègre souvent au reste de la suite bureautique"
+      "Prise en main rapide, bien plus simple que Salesforce pour démarrer",
+      "Plan gratuit généreux qui couvre les besoins CRM de base",
+      "Alignement marketing-vente fluide quand les deux équipes sont sur HubSpot"
     ],
     "prosEn": [
-      "Easy to adopt",
-      "Useful to structure day-to-day work",
-      "Often integrates with the rest of the office suite"
+      "Fast learning curve, much simpler than Salesforce to get started",
+      "Generous free plan covering basic CRM needs",
+      "Smooth marketing-sales alignment when both teams are on HubSpot"
     ],
     "cons": [
-      "Doublons fréquents avec Notion, Drive ou Microsoft 365",
-      "Peut devenir un espace de stockage parallèle",
-      "Valeur faible sans règles d’usage claires"
+      "Montée en gamme abrupte vers Professional (jusqu'à 5x le prix, souvent avec frais d'onboarding de 4500$)",
+      "Fonctionnalités avancées agressivement verrouillées derrière les paliers supérieurs",
+      "Qualité des données dépendante de la discipline des commerciaux à bien renseigner le CRM"
     ],
     "consEn": [
-      "Frequent overlap with Notion, Drive, or Microsoft 365",
-      "Can become a parallel storage space",
-      "Low value without clear usage rules"
+      "Steep upgrade to Professional (up to 5x the price, often with a $4,500 onboarding fee)",
+      "Advanced features aggressively gated behind higher tiers",
+      "Data quality depends on sales reps consistently keeping the CRM updated"
     ],
     "useCases": [
-      "Centraliser documents et tableaux",
-      "Partager des informations d’équipe",
-      "Connecter fichiers et workflows métier"
+      "Centraliser CRM, marketing et support pour une petite équipe qui démarre",
+      "Aligner les équipes marketing et vente sur les mêmes données de leads",
+      "Automatiser des campagnes email et le scoring de prospects"
     ],
     "useCasesEn": [
-      "Centralize documents and spreadsheets",
-      "Share team information",
-      "Connect files and business workflows"
+      "Centralize CRM, marketing, and support for a small team starting out",
+      "Align marketing and sales teams on the same lead data",
+      "Automate email campaigns and lead scoring"
     ],
     "tool_type": "core",
     "substitutable": true,
@@ -57088,18 +57084,21 @@
   {
     "id": "zendesk",
     "name": "Zendesk",
-    "shortDescription": "Plateforme de service client et engagement client.",
-    "description": "Zendesk, c'est plateforme de service client et engagement client. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en customer support, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Plateforme de support client omnicanal (email, chat, social, téléphone) avec IA intégrée.",
+    "description": "Zendesk centralise toutes les conversations client (email, chat, réseaux sociaux, téléphone) dans un seul tableau de bord, avec des outils d'automatisation (triggers, macros, routage omnicanal) qui font gagner du temps aux équipes support.\n\nSon prix grimpe vite à mesure que l'équipe grandit, et le modèle tarifaire est l'un des plus complexes à anticiper du secteur — le prix affiché n'est rarement celui payé une fois les add-ons ajoutés.",
     "category": "organization",
     "pricing": "Suite Team à 55$/agent/mois (annuel) ; Suite Professional à 115$/agent/mois ; Enterprise sur devis.",
     "website": "https://zendesk.com",
     "affiliateLink": "https://zendesk.com",
     "pros": [
-      "Spécialisé en customer support",
-      "Interface professionnelle"
+      "Centralise tous les canaux client (email, chat, social, téléphone) dans un seul dashboard",
+      "Automatisations matures (triggers, macros, tri intelligent des tickets par IA)",
+      "Écosystème de plus de 1000 intégrations (Slack, Jira, Mailchimp...)"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Prix qui grimpe vite, modèle tarifaire difficile à anticiper avec les add-ons",
+      "Interface jugée datée par de nombreux utilisateurs",
+      "Configuration initiale qui demande un vrai investissement de temps, pas plug-and-play"
     ],
     "bestFor": [
       "all"
@@ -57120,14 +57119,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu as une équipe support qui grandit et gères plusieurs canaux client",
+        "Tu as les ressources pour bien configurer l'outil au départ"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu es une petite équipe avec un budget serré — le prix grimpe vite",
+        "Tu veux un outil plug-and-play sans configuration initiale"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent pour des équipes support de taille moyenne à grande avec des ressources dédiées à la configuration."
     },
     "alternatives": [
       "intercom"
@@ -57162,9 +57161,9 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "zendesk",
-    "shortDescriptionEn": "Customer service and customer engagement platform.",
-    "longDescription": "Zendesk, c'est plateforme de service client et engagement client. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en customer support, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Zendesk is customer service and customer engagement platform. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in customer support, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "Omnichannel customer support platform (email, chat, social, phone) with built-in AI.",
+    "longDescription": "Zendesk centralise toutes les conversations client (email, chat, réseaux sociaux, téléphone) dans un seul tableau de bord, avec des outils d'automatisation (triggers, macros, routage omnicanal) qui font gagner du temps aux équipes support.\n\nSon prix grimpe vite à mesure que l'équipe grandit, et le modèle tarifaire est l'un des plus complexes à anticiper du secteur — le prix affiché n'est rarement celui payé une fois les add-ons ajoutés.",
+    "longDescriptionEn": "Zendesk centralizes all customer conversations (email, chat, social media, phone) into a single dashboard, with automation tools (triggers, macros, omnichannel routing) that save support teams time.\n\nIts price climbs quickly as the team grows, and the pricing model is one of the hardest to budget for in the industry — the sticker price is rarely what you end up paying once add-ons are included.",
     "pricingEn": "Suite Team at $55/agent/month (annual); Suite Professional at $115/agent/month; Enterprise quoted.",
     "pricing_v5": {
       "cautions": [],
@@ -57183,24 +57182,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You have a growing support team managing several customer channels",
+        "You have the resources to properly configure the tool upfront"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You're a small team with a tight budget — the price climbs quickly",
+        "You want a plug-and-play tool with no initial setup"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it for mid-to-large support teams with resources dedicated to setup."
     },
     "prosEn": [
-      "Specialized in customer support",
-      "Professional interface"
+      "Centralizes all customer channels (email, chat, social, phone) in one dashboard",
+      "Mature automations (triggers, macros, AI-powered ticket triage)",
+      "Ecosystem of over 1,000 integrations (Slack, Jira, Mailchimp...)"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Price rises quickly, pricing model hard to budget for with add-ons",
+      "Interface seen as dated by many users",
+      "Initial setup requires real time investment, not plug-and-play"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser le support client multi-canal pour une équipe en croissance",
+      "Automatiser le tri et le routage des tickets avec des règles ou de l'IA",
+      "Intégrer le support à l'écosystème d'outils déjà utilisé (Slack, Jira)"
+    ],
+    "useCasesEn": [
+      "Centralize multi-channel customer support for a growing team",
+      "Automate ticket triage and routing with rules or AI",
+      "Integrate support into your existing tool ecosystem (Slack, Jira)"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
