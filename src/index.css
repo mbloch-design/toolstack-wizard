@@ -3552,6 +3552,19 @@
     background: var(--color-bg);
     padding: 56px 0;
   }
+  /* ── Same content, inline card variant — used when the band sits between
+       two prose sections inside the content column instead of at the page
+       end. No top/bottom rule (that reads as 2 extra dividers mid-page);
+       a contained card with its own background reads as a callout instead. */
+  .td-diag-band--inline {
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-surface);
+    padding: 32px;
+  }
+  .td-diag-band--inline .td-diag-inner {
+    gap: 32px;
+  }
   .td-diag-inner {
     display: grid;
     grid-template-columns: 1fr auto;

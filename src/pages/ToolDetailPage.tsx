@@ -318,9 +318,9 @@ const ToolDetailPage = () => {
   // l'objet JSON au build/au runtime — un champ data ne survivrait pas.
   // N'affecte aucune autre fiche.
   const auditCtaEarly = (tool.slug || tool.id) === "asana";
-  const auditBand = (
-    <div className="td-diag-band">
-      <div className="td-container">
+  const renderAuditBand = (variant: "full" | "inline" = "full") => (
+    <div className={variant === "inline" ? "td-diag-band td-diag-band--inline" : "td-diag-band"}>
+      <div className={variant === "inline" ? "" : "td-container"}>
         <div className="td-diag-inner">
           <div>
             <span style={{
@@ -559,8 +559,8 @@ const ToolDetailPage = () => {
                 })()}
 
                 {auditCtaEarly && (
-                  <div style={{ marginTop: 8, marginBottom: 8 }}>
-                    {auditBand}
+                  <div style={{ marginTop: 24, marginBottom: 24 }}>
+                    {renderAuditBand("inline")}
                   </div>
                 )}
 
@@ -1063,7 +1063,7 @@ const ToolDetailPage = () => {
         </div>
       </div>
 
-      {!auditCtaEarly && auditBand}
+      {!auditCtaEarly && renderAuditBand("full")}
 
       <SectionPillNav
         sections={pillSections}
