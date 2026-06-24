@@ -20,6 +20,9 @@ import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
+import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
+import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
+import ToolProfileRecommendationTable from "@/components/tool/ToolProfileRecommendationTable";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
@@ -337,19 +340,29 @@ const ToolDetailPage = () => {
               fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.045em",
               color: "var(--color-text)", margin: "0 0 16px",
             }}>
-              {t(
-                `${tool.name} fait partie de ta stack ?`,
-                `Is ${tool.name} part of your stack?`,
-              )}
+              {variant === "inline"
+                ? t(
+                    `Tu paies déjà ${tool.name} ?`,
+                    `Already paying for ${tool.name}?`,
+                  )
+                : t(
+                    `${tool.name} fait partie de ta stack ?`,
+                    `Is ${tool.name} part of your stack?`,
+                  )}
             </h2>
             <p style={{
               fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
               color: "var(--color-muted)", maxWidth: 560, margin: 0,
             }}>
-              {t(
-                "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
-                "Find out in a few minutes if you're actually using it, paying the right price, and which tools around it can be challenged.",
-              )}
+              {variant === "inline"
+                ? t(
+                    `Vérifie si tu dois le garder, le downgrader ou le remplacer.`,
+                    `Find out if you should keep it, downgrade it, or replace it.`,
+                  )
+                : t(
+                    "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
+                    "Find out in a few minutes if you're actually using it, paying the right price, and which tools around it can be challenged.",
+                  )}
             </p>
             <p style={{
               fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)",
@@ -372,7 +385,9 @@ const ToolDetailPage = () => {
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
           >
-            {t("Auditer ma stack", "Audit my stack")}
+            {variant === "inline"
+              ? t(`Auditer ${tool.name} dans ma stack`, `Audit ${tool.name} in my stack`)
+              : t("Auditer ma stack", "Audit my stack")}
             <ArrowRight style={{ width: 14, height: 14 }} />
           </Link>
         </div>
@@ -564,6 +579,12 @@ const ToolDetailPage = () => {
                   </div>
                 )}
 
+                {/* 1.5 · Rentable si / trop cher si — usage thresholds,
+                     distinct from the keepIf/avoidIf reasoning above so the
+                     page doesn't repeat the same argument twice. Renders
+                     nothing on tools without this data. */}
+                <ToolProfitabilityBlock tool={tool} lang={lang} t={t} />
+
                 {/* 2.5 · Résumé machine-readable — placé tôt (juste après le
                      verdict) pour l'extraction LLM/RAG (GEO), avant les
                      sections éditoriales plus longues qui suivent. */}
@@ -747,6 +768,7 @@ const ToolDetailPage = () => {
                     verifiedOn={verifiedOn} sourceDomain={sourceDomain}
                     prefix={prefix} lang={lang} t={t}
                   />
+                  <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
                 </div>
               </div>
             )}
@@ -774,6 +796,8 @@ const ToolDetailPage = () => {
                       prefix={prefix} lang={lang} t={t}
                     />
                   )}
+
+                  <ToolProfileRecommendationTable tool={tool} lang={lang} t={t} />
 
                   <ToolAlternativesSection
                     tool={tool} category={category} alternatives={alternatives}

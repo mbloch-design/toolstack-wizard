@@ -8,10 +8,22 @@ export interface Category {
   tools?: string[];
 }
 
+export interface ToolProfileRecommendation {
+  profile: string;
+  recommendation: string;
+}
+
 export interface ToolVerdict {
   keepIf: string[];
   avoidIf: string[];
   threshold: string;
+  // Optional decision-page deepening (point in time: 2026-06, Asana pilot).
+  // Distinct from keepIf/avoidIf: concrete usage thresholds rather than
+  // the short "quick decision" reasoning, so the page doesn't repeat
+  // itself. Absent on most tools — every consumer must handle undefined.
+  profitableIf?: string[];
+  tooExpensiveIf?: string[];
+  profileTable?: ToolProfileRecommendation[];
 }
 
 export interface ToolPricing {
@@ -29,6 +41,8 @@ export interface ToolSeo {
   metaDescription: string;
   idealForFr?: string;
   idealForEn?: string;
+  presentationTitleFr?: string;
+  presentationTitleEn?: string;
 }
 
 export interface BetterAlternative {
@@ -76,6 +90,20 @@ export interface PricingV5 {
   verified_on?: string;
   official_source_url?: string;
   verification_status?: string;
+  // Optional real-cost-by-team-size table (Asana pilot, 2026-06). Absent on
+  // most tools — every consumer must handle undefined.
+  costTable?: ToolCostRow[];
+  costTableNoteFr?: string;
+  costTableNoteEn?: string;
+}
+
+export interface ToolCostRow {
+  team: string;
+  plan: string;
+  monthlyUsd: string;
+  annualUsd: string;
+  verdictFr: string;
+  verdictEn: string;
 }
 
 export interface DecisionPolicyV3 {
@@ -116,11 +144,8 @@ export interface Tool {
   logo?: string;
   soloRelevance?: string;
   teamRelevance?: string;
-  idealForFr?: string;
-  idealForEn?: string;
   alternatives?: string[];
   seo?: ToolSeo;
-  auditCtaEarly?: boolean;
   articles?: ToolArticle[];
   timeGainedHoursPerMonth?: number;
   freeAlternative?: string | null;
