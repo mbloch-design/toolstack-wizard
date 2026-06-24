@@ -16679,11 +16679,11 @@
     "longDescriptionEn": "Discord has become the go-to messaging app for communities, well beyond gaming: content creators, freelance teams, professional communities. The core product (servers, text and voice channels, screen sharing) is completely free, with no member limit.\n\nNitro ($9.99/mo) adds personal comfort: animated avatars, custom emojis usable everywhere, files up to 500MB, 4K streaming. Server Boosts ($2.99/mo each, paid by members to support a server) unlock collective perks: better audio quality, more server-wide emojis, custom banner. For pro use (client community, freelance team), the free plan is more than enough; Nitro stays an optional individual comfort.",
     "pricing": {
       "free": "Gratuit, sans limite de membres ni de serveurs.",
-      "paid": "Nitro Basic 2,99$/mois ; Nitro 9,99$/mois (99,99$/an) : avatars animés, fichiers jusqu'à 500 Mo, streaming 4K. Boost de serveur séparé à 2,99$/mois."
+      "paid": "Nitro Basic 2,99$/mois ; Nitro 9,99$/mois (99,99$/an) : avatars animés, fichiers jusqu'à 500 Mo, streaming 4K. Boost de serveur à 4,99$/mois (3,49$ pour les abonnés Nitro)."
     },
     "pricingEn": {
       "free": "Free, no limit on members or servers.",
-      "paid": "Nitro Basic $2.99/mo; Nitro $9.99/mo ($99.99/yr): animated avatars, files up to 500MB, 4K streaming. Server boosts separately at $2.99/mo."
+      "paid": "Nitro Basic $2.99/month; Nitro $9.99/month ($99.99/year): animated avatars, files up to 500MB, 4K streaming. Server Boost at $4.99/month ($3.49 for Nitro subscribers)."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
@@ -57497,8 +57497,14 @@
     "description": "Zoom, c'est visioconférence et réunions en ligne. À partir de 13.33€/mois.",
     "longDescription": "Zoom, c'est visioconférence et réunions en ligne. À partir de 13.33€/mois.",
     "longDescriptionEn": "Zoom is video conferencing and online meetings. Starting at €13.33/month.",
-    "pricing": null,
-    "pricingEn": null,
+    "pricing": {
+      "free": "Gratuit avec limite de 40 minutes par réunion de groupe",
+      "paid": "Pro à 13,33$/mois (annuel) ou 16,99$/mois (mensuel) : réunions jusqu'à 30h, 5 Go de stockage cloud"
+    },
+    "pricingEn": {
+      "free": "Free with a 40-minute limit on group meetings",
+      "paid": "Pro at $13.33/month (annual) or $16.99/month (monthly): meetings up to 30h, 5GB cloud storage"
+    },
     "defaultMonthlyPrice": 13.33,
     "pricing_v5": null,
     "affiliateLink": "",
@@ -122372,10 +122378,10 @@
     "longDescription": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud.",
     "affiliateLink": "https://adobe.com/products/illustrator",
     "websiteUrl": "https://adobe.com/products/illustrator",
-    "defaultMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 23.99,
     "pricing": {
       "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 26€/mois (Illustrator seul), ou via l'offre Creative Cloud complète"
+      "paid": "23,99€/mois en engagement annuel (Illustrator seul), ou ~30,49€/mois sans engagement"
     },
     "logo": "",
     "soloRelevance": null,
@@ -122532,7 +122538,7 @@
     },
     "pricingEn": {
       "free": "No free version, trial only",
-      "paid": "Around €26/month (Illustrator alone), or via the full Creative Cloud plan"
+      "paid": "€23.99/month with annual commitment (Illustrator alone), or ~€30.49/month with no commitment"
     },
     "force_silence": false,
     "description": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud."
@@ -123011,10 +123017,10 @@
     "longDescription": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était.",
     "affiliateLink": "https://adobe.com/products/photoshop",
     "websiteUrl": "https://adobe.com/products/photoshop",
-    "defaultMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 23.99,
     "pricing": {
       "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 26€/mois (Photoshop seul), ou formule Photography (avec Lightroom) dès ~10€/mois"
+      "paid": "23,99€/mois en engagement annuel (Photoshop seul), ou ~30,49€/mois sans engagement ; formule Photo avec Lightroom dès ~12€/mois"
     },
     "logo": "",
     "soloRelevance": null,
@@ -123209,7 +123215,7 @@
     },
     "pricingEn": {
       "free": "No free version, trial only",
-      "paid": "Around €26/month (Photoshop alone), or the Photography plan (with Lightroom) from ~€10/month"
+      "paid": "€23.99/month with annual commitment (Photoshop alone), or ~€30.49/month with no commitment; Photography plan with Lightroom from ~€12/month"
     },
     "force_silence": false,
     "description": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était."
