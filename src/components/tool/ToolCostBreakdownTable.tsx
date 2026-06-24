@@ -6,18 +6,58 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
+type CostRow = { team: string; plan: string; monthlyUsd: string; annualUsd: string; verdictFr: string; verdictEn: string };
+
+const HEADCOUNTS = [1, 3, 10, 50];
+
+function verdictForMonthly(monthlyEur: number): { fr: string; en: string } {
+  if (monthlyEur < 50) return { fr: "Coût limité", en: "Limited cost" };
+  if (monthlyEur < 300) return { fr: "Budget à valider", en: "Worth a budget check" };
+  return { fr: "Décision budget sérieuse", en: "Serious budget decision" };
+}
+
 /**
  * Real cost by team size — same visual convention as ToolComparisonTable
  * (border-collapse table, var(--color-border)/var(--color-surface-soft)).
- * Returns null when the tool has no pricing_v5.costTable, so it's silently
- * absent everywhere except the tools it's written for.
+ *
+ * Uses pricing_v5.costTable when a tool has hand-curated rows (Starter vs
+ * Advanced tiers, real-world headcounts). When that's absent, auto-
+ * generates a simpler table from pricing_v5.compare_price_monthly_eur for
+ * any seat-priced tool (compare_plan_kind === "seat") - one tier, four
+ * headcounts (1/3/10/50), numeric cost-tier verdicts instead of curated
+ * ones. That covers ~250 seat-priced tools with zero per-tool authoring;
+ * returns null for everything else (flat-rate, usage-based, or unpriced
+ * tools, where multiplying by headcount wouldn't mean anything).
  */
 export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
-  const rows = (tool as any).pricing_v5?.costTable as
-    | { team: string; plan: string; monthlyUsd: string; annualUsd: string; verdictFr: string; verdictEn: string }[]
-    | undefined;
+  const pv5 = (tool as any).pricing_v5;
+  const curatedRows = pv5?.costTable as CostRow[] | undefined;
+
+  const rows: CostRow[] | undefined = curatedRows?.length
+    ? curatedRows
+    : pv5?.compare_plan_kind === "seat" && typeof pv5?.compare_price_monthly_eur === "number" && pv5.compare_price_monthly_eur > 0
+    ? HEADCOUNTS.map((n) => {
+        const monthly = pv5.compare_price_monthly_eur * n;
+        const annual = monthly * 12;
+        const v = verdictForMonthly(monthly);
+        return {
+          team: n === 1 ? t("Solo", "Solo") : t(`${n} personnes`, `${n} people`),
+          plan: pv5.compare_plan_name || t("Standard", "Standard"),
+          monthlyUsd: `~${Math.round(monthly)} €`,
+          annualUsd: `~${Math.round(annual)} €`,
+          verdictFr: v.fr,
+          verdictEn: v.en,
+        };
+      })
+    : undefined;
+
   if (!rows?.length) return null;
-  const note = lang === "en" ? (tool as any).pricing_v5?.costTableNoteEn : (tool as any).pricing_v5?.costTableNoteFr;
+  const note = curatedRows?.length
+    ? (lang === "en" ? pv5?.costTableNoteEn : pv5?.costTableNoteFr)
+    : t(
+        "Estimation calculée à partir du prix par utilisateur affiché, à vérifier sur la page officielle selon facturation mensuelle/annuelle et promotions éventuelles.",
+        "Estimate calculated from the displayed per-user price - check the official page for monthly/annual billing and any current promotions.",
+      );
   const deName = /^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`;
 
   return (

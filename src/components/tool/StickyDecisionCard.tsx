@@ -183,49 +183,70 @@ export default function StickyDecisionCard({
         )}
       </div>
 
-      {/* ── 4. CTAs ── */}
-      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "20px 24px" }}>
-        <a
-          href={primaryCtaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            width: "100%", height: 48,
-            background: "var(--color-text)", color: "var(--color-surface)",
-            borderRadius: 8, border: "none",
-            fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
-            textDecoration: "none", cursor: "pointer",
-            transition: "background 160ms ease-out",
-          }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
-        >
-          {hasAffiliateOffer
-            ? t("Voir l'offre", "View offer")
-            : isFree
-            ? t("Essayer gratuitement", "Try for free")
-            : t("Visiter le site", "Visit website")}
-          <ExternalLink style={{ width: 14, height: 14 }} />
-        </a>
-
-        <Link
-          to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            width: "100%", height: 44,
-            background: "transparent", color: "var(--color-text)",
-            borderRadius: 8, border: "1px solid var(--color-border)",
-            fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-            textDecoration: "none", marginTop: 10,
-            transition: "all 160ms ease-out",
-          }}
-          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; }}
-          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; }}
-        >
-          {t("Comparer les alternatives", "Compare alternatives")}
-        </Link>
-      </div>
+      {/* ── 4. CTAs — order is data-driven, not fixed. A tool with a mixed
+           score and real alternatives shouldn't lead with "go buy it";
+           the page just told the reader why it might be the wrong fit.
+           Applies to all 1109 tools automatically, no per-tool authoring. ── */}
+      {(() => {
+        const demoteOffer = ts.score < 3.5 && alternatives.length > 0;
+        const offerBtn = (
+          <a
+            key="offer"
+            href={primaryCtaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%",
+              height: demoteOffer ? 44 : 48,
+              background: demoteOffer ? "transparent" : "var(--color-text)",
+              color: demoteOffer ? "var(--color-text)" : "var(--color-surface)",
+              borderRadius: 8, border: demoteOffer ? "1px solid var(--color-border)" : "none",
+              fontFamily: "var(--font-ui)", fontSize: demoteOffer ? 14 : 15, fontWeight: 500,
+              textDecoration: "none", cursor: "pointer",
+              marginTop: demoteOffer ? 10 : 0,
+              transition: "all 160ms ease-out",
+            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; } else { el.style.background = "var(--color-hover, #1a1a18)"; } }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; } else { el.style.background = "var(--color-text)"; } }}
+          >
+            {hasAffiliateOffer
+              ? t("Voir l'offre", "View offer")
+              : isFree
+              ? t("Essayer gratuitement", "Try for free")
+              : t("Visiter le site", "Visit website")}
+            <ExternalLink style={{ width: 14, height: 14 }} />
+          </a>
+        );
+        const altBtn = (
+          <Link
+            key="alt"
+            to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%",
+              height: demoteOffer ? 48 : 44,
+              background: demoteOffer ? "var(--color-text)" : "transparent",
+              color: demoteOffer ? "var(--color-surface)" : "var(--color-text)",
+              borderRadius: 8, border: demoteOffer ? "none" : "1px solid var(--color-border)",
+              fontFamily: "var(--font-ui)", fontSize: demoteOffer ? 15 : 14, fontWeight: 500,
+              textDecoration: "none", marginTop: demoteOffer ? 0 : 10,
+              transition: "all 160ms ease-out",
+            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.background = "var(--color-hover, #1a1a18)"; } else { el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; } }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.background = "var(--color-text)"; } else { el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; } }}
+          >
+            {demoteOffer
+              ? t("Comparer les alternatives", "Compare alternatives")
+              : t("Comparer les alternatives", "Compare alternatives")}
+          </Link>
+        );
+        return (
+          <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "20px 24px" }}>
+            {demoteOffer ? [altBtn, offerBtn] : [offerBtn, altBtn]}
+          </div>
+        );
+      })()}
 
       {/* ── 5. Key facts (4 rows) ── */}
       <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "12px 24px 16px" }}>

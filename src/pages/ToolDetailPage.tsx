@@ -592,6 +592,179 @@ const ToolDetailPage = () => {
                   tool={tool} category={category} alternatives={alternatives}
                   displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
                 />
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: Prix — moved ahead of the audience/features/long-
+                analysis content (was after it). Prix and Alternatives are
+                the two sections most readers actually need to decide; the
+                "nice to know" content shouldn't sit between the verdict and
+                them. Site-wide change, all 1109 tool pages.
+            ════════════════════════════════ */}
+            {(
+              <div id="prix" className="td-subpage-content">
+                <div className="td-section">
+                  <span className="td-eyebrow">{t("Tarifs", "Pricing")}</span>
+                  <h2 className="td-title">
+                    {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
+                  </h2>
+                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                    {lang === "fr"
+                      ? (() => {
+                          if (displayPrice === 0)
+                            return `${tool.name} propose un plan gratuit${tool.shortDescription ? `, ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
+                          const plan = tool.pricing_v5?.compare_plan_name;
+                          return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
+                        })()
+                      : (() => {
+                          if (displayPrice === 0)
+                            return `${tool.name} offers a free plan. Here's the full breakdown of available plans for ${new Date().getFullYear()}.`;
+                          const plan = tool.pricing_v5?.compare_plan_name;
+                          return `${tool.name} is priced at €${displayPrice}/mo${plan ? ` (${plan} plan)` : ""}. Here's what each plan actually includes.`;
+                        })()
+                    }
+                  </p>
+                  <ToolPricingSection
+                    tool={tool} displayPrice={displayPrice}
+                    verifiedOn={verifiedOn} sourceDomain={sourceDomain}
+                    prefix={prefix} lang={lang} t={t}
+                  />
+                  <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
+                </div>
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: Alternatives — moved up alongside Prix, see comment
+                above.
+            ════════════════════════════════ */}
+            {(
+              <div id="alternatives" className="td-subpage-content">
+                <div className="td-section">
+                  <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
+                  <h2 className="td-title">
+                    {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
+                  </h2>
+                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                    {lang === "fr"
+                      ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""}, comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois ${/^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`}.` : ""}`
+                      : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""}, compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
+                    }
+                  </p>
+
+                  {alternatives.length > 0 && (
+                    <ToolComparisonTable
+                      tool={tool} alternatives={alternatives}
+                      prefix={prefix} lang={lang} t={t}
+                    />
+                  )}
+
+                  <ToolProfileRecommendationTable tool={tool} alternatives={alternatives} lang={lang} t={t} />
+
+                  <ToolAlternativesSection
+                    tool={tool} category={category} alternatives={alternatives}
+                    prefix={prefix} lang={lang} t={t}
+                  />
+
+                  {/* Substitution cluster */}
+                  {(tool as any).substitution_cluster_v2 && (() => {
+                    const clusterTools = tools
+                      .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)
+                      .slice(0, 6);
+                    if (!clusterTools.length) return null;
+                    return (
+                      <div style={{ marginTop: 40 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                          {t("Substituables directement", "Direct substitutes")}
+                        </p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                          {clusterTools.map((ct: any) => (
+                            <Link
+                              key={ct.id}
+                              to={`${prefix}/tool/${ct.slug || ct.id}`}
+                              style={{
+                                display: "inline-flex", alignItems: "center", gap: 8,
+                                padding: "8px 14px",
+                                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                                fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
+                                textDecoration: "none", transition: "border-color 140ms",
+                              }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
+                            >
+                              <ToolLogo tool={ct} size={18} />
+                              {ct.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Featured comparisons */}
+                  {(() => {
+                    const toolId = tool.slug || tool.id;
+                    const comparisons = FEATURED_COMPARISONS.filter(
+                      (c: any) => c.toolA === toolId || c.toolB === toolId
+                    );
+                    const seenOtherIds = new Set<string>();
+                    const compareTools = comparisons
+                      .map((c: any) => {
+                        const otherId = c.toolA === toolId ? c.toolB : c.toolA;
+                        const other = tools.find((tt: any) => tt.id === otherId || tt.slug === otherId);
+                        return other ? { slugPair: c.slugPair, other } : null;
+                      })
+                      .filter(Boolean)
+                      // comparisons.ts occasionally lists both directions of
+                      // the same pair (e.g. asana-vs-clickup AND clickup-vs-
+                      // asana) — keep only the first occurrence per target.
+                      .filter((c: any) => {
+                        if (seenOtherIds.has(c.other.id)) return false;
+                        seenOtherIds.add(c.other.id);
+                        return true;
+                      }) as { slugPair: string; other: any }[];
+                    if (!compareTools.length) return null;
+                    return (
+                      <div style={{ marginTop: 40 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                          {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
+                        </p>
+                        {compareTools.map(({ slugPair, other }) => (
+                          <Link
+                            key={slugPair}
+                            to={`${prefix}/comparatif/${slugPair}`}
+                            className="td-alt-row"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                          >
+                            <div style={{ width: 40, height: 40, borderRadius: 8, border: "1px solid var(--color-border)", background: "var(--color-bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                              <ToolLogo tool={other} size={24} />
+                            </div>
+                            <div>
+                              <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
+                                {tool.name} vs {other.name}
+                              </p>
+                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 2 }}>
+                                {t("Voir la comparaison complète", "See full comparison")}
+                              </p>
+                            </div>
+                            <ArrowRight style={{ width: 14, height: 14, color: "var(--color-muted-light)" }} />
+                          </Link>
+                        ))}
+                      </div>
+                    );
+                  })()}
+                </div>
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: Analyse (continued) — audience, pros/cons,
+                features, use cases, long-form analysis, plugins, AI angle.
+                Background context now that price/alternatives are answered.
+            ════════════════════════════════ */}
+            {(
+              <div className="td-subpage-content">
 
                 {/* 3 · Pour qui */}
                 {(tool as any).relevantFor?.length > 0 && (
@@ -736,165 +909,6 @@ const ToolDetailPage = () => {
 
               </div>
             )}
-
-            {/* ════════════════════════════════
-                SECTION: Prix
-            ════════════════════════════════ */}
-            {(
-              <div id="prix" className="td-subpage-content">
-                <div className="td-section">
-                  <span className="td-eyebrow">{t("Tarifs", "Pricing")}</span>
-                  <h2 className="td-title">
-                    {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
-                  </h2>
-                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
-                    {lang === "fr"
-                      ? (() => {
-                          if (displayPrice === 0)
-                            return `${tool.name} propose un plan gratuit${tool.shortDescription ? `, ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
-                          const plan = tool.pricing_v5?.compare_plan_name;
-                          return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
-                        })()
-                      : (() => {
-                          if (displayPrice === 0)
-                            return `${tool.name} offers a free plan. Here's the full breakdown of available plans for ${new Date().getFullYear()}.`;
-                          const plan = tool.pricing_v5?.compare_plan_name;
-                          return `${tool.name} is priced at €${displayPrice}/mo${plan ? ` (${plan} plan)` : ""}. Here's what each plan actually includes.`;
-                        })()
-                    }
-                  </p>
-                  <ToolPricingSection
-                    tool={tool} displayPrice={displayPrice}
-                    verifiedOn={verifiedOn} sourceDomain={sourceDomain}
-                    prefix={prefix} lang={lang} t={t}
-                  />
-                  <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
-                </div>
-              </div>
-            )}
-
-            {/* ════════════════════════════════
-                SECTION: Alternatives
-            ════════════════════════════════ */}
-            {(
-              <div id="alternatives" className="td-subpage-content">
-                <div className="td-section">
-                  <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
-                  <h2 className="td-title">
-                    {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
-                  </h2>
-                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
-                    {lang === "fr"
-                      ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""}, comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois ${/^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`}.` : ""}`
-                      : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""}, compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
-                    }
-                  </p>
-
-                  {alternatives.length > 0 && (
-                    <ToolComparisonTable
-                      tool={tool} alternatives={alternatives}
-                      prefix={prefix} lang={lang} t={t}
-                    />
-                  )}
-
-                  <ToolProfileRecommendationTable tool={tool} lang={lang} t={t} />
-
-                  <ToolAlternativesSection
-                    tool={tool} category={category} alternatives={alternatives}
-                    prefix={prefix} lang={lang} t={t}
-                  />
-
-                  {/* Substitution cluster */}
-                  {(tool as any).substitution_cluster_v2 && (() => {
-                    const clusterTools = tools
-                      .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)
-                      .slice(0, 6);
-                    if (!clusterTools.length) return null;
-                    return (
-                      <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
-                          {t("Substituables directement", "Direct substitutes")}
-                        </p>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                          {clusterTools.map((ct: any) => (
-                            <Link
-                              key={ct.id}
-                              to={`${prefix}/tool/${ct.slug || ct.id}`}
-                              style={{
-                                display: "inline-flex", alignItems: "center", gap: 8,
-                                padding: "8px 14px",
-                                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
-                                fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
-                                textDecoration: "none", transition: "border-color 140ms",
-                              }}
-                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
-                            >
-                              <ToolLogo tool={ct} size={18} />
-                              {ct.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })()}
-
-                  {/* Featured comparisons */}
-                  {(() => {
-                    const toolId = tool.slug || tool.id;
-                    const comparisons = FEATURED_COMPARISONS.filter(
-                      (c: any) => c.toolA === toolId || c.toolB === toolId
-                    );
-                    const seenOtherIds = new Set<string>();
-                    const compareTools = comparisons
-                      .map((c: any) => {
-                        const otherId = c.toolA === toolId ? c.toolB : c.toolA;
-                        const other = tools.find((tt: any) => tt.id === otherId || tt.slug === otherId);
-                        return other ? { slugPair: c.slugPair, other } : null;
-                      })
-                      .filter(Boolean)
-                      // comparisons.ts occasionally lists both directions of
-                      // the same pair (e.g. asana-vs-clickup AND clickup-vs-
-                      // asana) — keep only the first occurrence per target.
-                      .filter((c: any) => {
-                        if (seenOtherIds.has(c.other.id)) return false;
-                        seenOtherIds.add(c.other.id);
-                        return true;
-                      }) as { slugPair: string; other: any }[];
-                    if (!compareTools.length) return null;
-                    return (
-                      <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
-                          {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
-                        </p>
-                        {compareTools.map(({ slugPair, other }) => (
-                          <Link
-                            key={slugPair}
-                            to={`${prefix}/comparatif/${slugPair}`}
-                            className="td-alt-row"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                          >
-                            <div style={{ width: 40, height: 40, borderRadius: 8, border: "1px solid var(--color-border)", background: "var(--color-bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                              <ToolLogo tool={other} size={24} />
-                            </div>
-                            <div>
-                              <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
-                                {tool.name} vs {other.name}
-                              </p>
-                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 2 }}>
-                                {t("Voir la comparaison complète", "See full comparison")}
-                              </p>
-                            </div>
-                            <ArrowRight style={{ width: 14, height: 14, color: "var(--color-muted-light)" }} />
-                          </Link>
-                        ))}
-                      </div>
-                    );
-                  })()}
-                </div>
-              </div>
-            )}
-
             {/* ════════════════════════════════
                 SECTION: Avis
             ════════════════════════════════ */}
