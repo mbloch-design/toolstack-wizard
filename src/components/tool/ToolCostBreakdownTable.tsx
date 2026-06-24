@@ -18,11 +18,12 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
     | undefined;
   if (!rows?.length) return null;
   const note = lang === "en" ? (tool as any).pricing_v5?.costTableNoteEn : (tool as any).pricing_v5?.costTableNoteFr;
+  const deName = /^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`;
 
   return (
     <div style={{ marginTop: 32 }}>
       <p style={{ fontFamily: "var(--font-brand)", fontSize: 19, fontWeight: 600, letterSpacing: "-0.02em", color: "var(--color-text)", marginBottom: 16 }}>
-        {t(`Le vrai coût de ${tool.name} selon la taille d'équipe`, `${tool.name}'s real cost by team size`)}
+        {t(`Le vrai coût ${deName} selon la taille d'équipe`, `${tool.name}'s real cost by team size`)}
       </p>
       <div className="overflow-x-auto" style={{ borderRadius: 12, border: "1px solid var(--color-border)" }}>
         <table className="w-full min-w-[560px] border-collapse" style={{ fontFamily: "var(--font-ui)", fontSize: 14 }}>
