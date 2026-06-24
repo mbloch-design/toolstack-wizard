@@ -23872,14 +23872,14 @@
     "longDescription": "HubSpot, c'est cRM, marketing et ventes tout-en-un. Entièrement gratuit.",
     "longDescriptionEn": "HubSpot is all-in-one CRM, marketing, and sales. Completely free.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "CRM de base gratuit",
+      "paid": "Starter à partir de 20$/siège/mois (promos fréquentes à 9-15$ la 1ère année) ; Professional et Enterprise sur devis selon les hubs"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom pricing / no public baseline"
+      "free": "Free basic CRM",
+      "paid": "Starter from $20/seat/month (frequent promos at $9-15 for year one); Professional and Enterprise quoted per hub"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.52,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
@@ -38107,13 +38107,13 @@
     "longDescriptionEn": "Pennylane is real-time collaborative accounting. Starting at €35/month.",
     "pricing": {
       "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "paid": "Basique dès 14€/mois (indépendant) ; Essentiel dès 24€/mois ; Premium dès 79€/mois (selon nombre d'utilisateurs et de factures)"
     },
     "pricingEn": {
       "free": "Not disclosed",
-      "paid": "Custom pricing / no public baseline"
+      "paid": "Basic from €14/month (freelancer); Essential from €24/month; Premium from €79/month (depending on users and invoice volume)"
     },
-    "defaultMonthlyPrice": 35,
+    "defaultMonthlyPrice": 14,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
@@ -56517,14 +56517,14 @@
     "longDescription": "Xero, c'est logiciel de comptabilité cloud. À partir de 15€/mois.",
     "longDescriptionEn": "Xero is cloud accounting software. Starting at €15/month.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Essai gratuit 30 jours",
+      "paid": "Early à 25$/mois, Growing à 55$/mois, Established à 90$/mois (facturation mensuelle uniquement aux US depuis mars 2026)"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom pricing / no public baseline"
+      "free": "30-day free trial",
+      "paid": "Early at $25/month, Growing at $55/month, Established at $90/month (monthly billing only in the US since March 2026)"
     },
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 21.9,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
@@ -57091,10 +57091,7 @@
     "shortDescription": "Plateforme de service client et engagement client.",
     "description": "Zendesk, c'est plateforme de service client et engagement client. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en customer support, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Suite Team à 55$/agent/mois (annuel) ; Suite Professional à 115$/agent/mois ; Enterprise sur devis.",
     "website": "https://zendesk.com",
     "affiliateLink": "https://zendesk.com",
     "pros": [
@@ -57113,7 +57110,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 48.18,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -57168,10 +57165,7 @@
     "shortDescriptionEn": "Customer service and customer engagement platform.",
     "longDescription": "Zendesk, c'est plateforme de service client et engagement client. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en customer support, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "longDescriptionEn": "Zendesk is customer service and customer engagement platform. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in customer support, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "pricingEn": "Suite Team at $55/agent/month (annual); Suite Professional at $115/agent/month; Enterprise quoted.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -63164,7 +63158,7 @@
     "shortDescriptionEn": "Accounting and invoicing software for freelancers, SMBs and self-employed.",
     "longDescription": "QuickBooks Online est le logiciel de comptabilité le plus utilisé dans le monde anglophone. Il couvre la facturation, le suivi des dépenses, la TVA, la paie, les rapports financiers et la réconciliation bancaire — tout dans un seul outil cloud.\n\nLe plan Simple Start à environ 32€/mois (prix approximatif selon pays et offres) couvre les besoins d'un freelance ou d'une petite entreprise : facturation illimitée, connexion bancaire, déclaration TVA et rapports de base.\n\nPour les freelances français, QuickBooks est moins adapté que des alternatives localisées comme Pennylane ou Indy — la conformité française n'est pas native. Mais pour les freelances qui travaillent avec des clients anglophones ou internationaux, c'est souvent la référence attendue.",
     "longDescriptionEn": "QuickBooks Online is the most widely used accounting software in the English-speaking world. It covers invoicing, expense tracking, VAT, payroll, financial reports and bank reconciliation — all in one cloud tool.\n\nThe Simple Start plan at approximately €32/month covers freelancer or small business needs: unlimited invoicing, bank connection, VAT filing and basic reports.\n\nFor French freelancers, QuickBooks is less suitable than localized alternatives like Pennylane or Indy — French compliance isn't native. But for freelancers working with English-speaking or international clients, it's often the expected reference.",
-    "defaultMonthlyPrice": 32,
+    "defaultMonthlyPrice": 33.29,
     "pricing_v5": {
       "verified_on": "2026-05-08",
       "source_domain": "quickbooks.intuit.com",
@@ -63188,7 +63182,7 @@
     },
     "pricing": {
       "free": "Essai gratuit 30 jours",
-      "paid": "Simple Start ~32€/mois"
+      "paid": "Simple Start à 38$/mois (réductions de lancement fréquentes, ex: -50% les 3 premiers mois)"
     },
     "pricingEn": {
       "free": "30-day free trial",
