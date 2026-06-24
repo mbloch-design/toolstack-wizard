@@ -49,7 +49,11 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
 
   const topAlts = alternatives.slice(0, 4).map(a => a.name).join(", ");
 
-  const verdictText = (lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : (tool.verdict?.threshold || (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) || "");
+  const fullVerdictText = (lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : (tool.verdict?.threshold || (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) || "");
+  // First sentence only when it's the full multi-sentence threshold — this
+  // row sits right after "Décision rapide" already showed it in full, a
+  // few screens up at most. Site-wide, all 1109 tools.
+  const verdictText = fullVerdictText.split(/(?<=[.!?])\s+/)[0] || fullVerdictText;
 
   return (
     <section

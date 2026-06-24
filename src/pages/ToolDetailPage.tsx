@@ -498,9 +498,15 @@ const ToolDetailPage = () => {
                 ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t)}.`
                 : null;
               const verdict = (tool as any).verdict;
-              const threshold = lang === "en" && (tool as any).verdictEn?.threshold
+              const fullThreshold = lang === "en" && (tool as any).verdictEn?.threshold
                 ? (tool as any).verdictEn.threshold
                 : verdict?.threshold as string | undefined;
+              // First sentence only — the hero is a teaser, not the full
+              // reasoning. "Décision rapide" further down is the one place
+              // that shows the complete threshold; repeating all of it here
+              // meant the same two sentences appeared twice within the
+              // first screen of the page. Site-wide change, all 1109 tools.
+              const threshold = fullThreshold?.split(/(?<=[.!?])\s+/)[0];
               const text = [pricePart, threshold].filter(Boolean).join(" ");
               if (!text) return null;
               return (
