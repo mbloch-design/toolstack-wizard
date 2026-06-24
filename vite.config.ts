@@ -180,8 +180,16 @@ let _sbToolsCache: Record<string, any>[] | null = null;
 async function getMergedTools(jsonTools: any[]): Promise<any[]> {
   try {
     if (!_sbToolsCache) {
+      // Cache-Control: a content edit followed by a deploy showed stale data
+      // in prod (Asana's seo.idealForFr) while a local rebuild of the exact
+      // same commit was correct - consistent with an intermediary (CDN/edge)
+      // caching this GET on Vercel's network path but not on a local
+      // connection. PostgREST treats unknown query params as column filters
+      // (a "_cb" cache-busting param 400s), so this relies on the header
+      // alone to bypass any such cache.
       const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&limit=2000`, {
-        headers: { apikey: SB_PRERENDER_ANON, Authorization: `Bearer ${SB_PRERENDER_ANON}` },
+        headers: { apikey: SB_PRERENDER_ANON, Authorization: `Bearer ${SB_PRERENDER_ANON}`, "Cache-Control": "no-cache" },
+        cache: "no-store",
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const rows = await res.json();
