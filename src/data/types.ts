@@ -114,6 +114,8 @@ export interface Tool {
   logo?: string;
   soloRelevance?: string;
   teamRelevance?: string;
+  idealForFr?: string;
+  idealForEn?: string;
   alternatives?: string[];
   seo?: ToolSeo;
   articles?: ToolArticle[];
