@@ -7458,12 +7458,12 @@
     ],
     "verdict": {
       "keepIf": [
-        "Plusieurs personnes travaillent ensemble sur les mêmes projets",
-        "Tu as des deadlines, des responsables et des livrables à suivre"
+        "Tu as besoin de plusieurs vues sur le même projet (liste, Kanban, timeline) selon le contexte ou l'interlocuteur",
+        "Tes tâches dépendent les unes des autres et tu veux que les retards se répercutent automatiquement"
       ],
       "avoidIf": [
-        "Tu travailles seul, sans client ni sous-traitant à coordonner",
-        "Une simple liste de tâches te suffit déjà"
+        "Tes tâches sont indépendantes les unes des autres, sans suite ni dépendance à suivre",
+        "Tu cherches un outil avec chat ou documents intégrés, pas une todo-list à connecter à Slack et Notion"
       ],
       "threshold": "Asana est un bon choix pour une équipe qui gère plusieurs projets clients avec deadlines, responsabilités et reporting. Pour un freelance solo ou une simple to-do list, c'est souvent trop structuré : Trello, Notion ou ClickUp peuvent suffire.",
       "profitableIf": [
@@ -7627,12 +7627,12 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Several people work together on the same projects",
-        "You have deadlines, owners and deliverables to track"
+        "You need several views of the same project (list, Kanban, timeline) depending on context or audience",
+        "Your tasks depend on each other and you want delays to cascade automatically"
       ],
       "avoidIf": [
-        "You work alone, with no client or subcontractor to coordinate",
-        "A simple task list is already enough for you"
+        "Your tasks are independent of each other, with no sequence or dependency to track",
+        "You want built-in chat or docs, not a to-do list you connect to Slack and Notion"
       ],
       "threshold": "Asana is a good fit for a team running several client projects with deadlines, ownership and reporting. For a solo freelancer or a simple to-do list, it's often overengineered: Trello, Notion or ClickUp can be enough.",
       "profitableIf": [

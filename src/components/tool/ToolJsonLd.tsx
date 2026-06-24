@@ -28,7 +28,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
     setJsonLd("tool-webpage-jsonld", {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: `${tool.name} — ${lang === "fr" ? "Avis et alternatives" : "Review & alternatives"} | ToolTrim`,
+      name: lang === "fr" ? `${tool.name} : Avis et alternatives | ToolTrim` : `${tool.name}: Review & alternatives | ToolTrim`,
       description: tool.shortDescription,
       url: canonicalUrl,
       dateModified: verifiedOn,

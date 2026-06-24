@@ -40,13 +40,21 @@ export function buildToolFaqs(
     },
     {
       q: isFr ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,
-      a: tool.soloRelevance
-        ? (isFr
-          ? `${tool.name} est particulièrement adapté aux freelances et indépendants. ${tool.soloRelevance}`
-          : `${tool.name} is particularly suited for freelancers and solopreneurs. ${tool.soloRelevance}`)
-        : (isFr
+      a: (() => {
+        if (tool.soloRelevance === "high") {
+          return isFr
+            ? `${tool.name} est particulièrement adapté aux freelances et indépendants.`
+            : `${tool.name} is particularly suited for freelancers and solopreneurs.`;
+        }
+        if (tool.teamRelevance === "high" && tool.soloRelevance !== "high") {
+          return isFr
+            ? `${tool.name} est avant tout pensé pour les équipes plutôt que pour un usage en solo.`
+            : `${tool.name} is built mainly for teams rather than solo use.`;
+        }
+        return isFr
           ? `${tool.name} convient à la plupart des professionnels. Consultez la section "Pour qui" pour plus de détails.`
-          : `${tool.name} suits most professionals. See the "Who is it for" section for details.`),
+          : `${tool.name} suits most professionals. See the "Who is it for" section for details.`;
+      })(),
     },
     {
       q: isFr ? `${tool.name} vaut-il son prix ?` : `Is ${tool.name} worth the price?`,

@@ -154,7 +154,7 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
                         {t(verdictLabel, verdictLabel)}
                       </span>
                     ) : (
-                      <span style={{ fontSize: 12, color: "var(--color-muted-light)" }}>—</span>
+                      <span style={{ fontSize: 12, color: "var(--color-muted-light)" }}>n/a</span>
                     )}
                   </td>
                 </tr>

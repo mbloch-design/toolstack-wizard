@@ -91,44 +91,44 @@ const ToolDetailPage = () => {
           ? `${tool.name} ${year}: Worth €${priceRounded}/mo? Pricing & Verdict | ToolTrim`
           : `${tool.name} ${year}: Really Free? Plans & Honest Verdict | ToolTrim`,
         descFr: shortExcerpt
-          ? `${shortExcerpt}. ${hasPrice ? `Coûte ${price}€/mois${planSuffixFr} — vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
+          ? `${shortExcerpt}. ${hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
           : hasPrice
             ? `${tool.name} coûte ${price}€/mois${planSuffixFr}. Verdict ToolTrim : vaut-il le coût ? Meilleures alternatives moins chères en ${year}.`
-            : `${tool.name} est-il vraiment gratuit ? Plans, tarifs cachés et meilleures alternatives analysés — mis à jour ${year}.`,
+            : `${tool.name} est-il vraiment gratuit ? Plans, tarifs cachés et meilleures alternatives analysés, mis à jour ${year}.`,
         descEn: shortExcerpt
-          ? `${shortExcerpt}. ${hasPrice ? `Costs €${price}/mo${planSuffixEn} — is it worth it?` : "Free or freemium?"} Alternatives and ToolTrim verdict ${year}.`
+          ? `${shortExcerpt}. ${hasPrice ? `Costs €${price}/mo${planSuffixEn}, is it worth it?` : "Free or freemium?"} Alternatives and ToolTrim verdict ${year}.`
           : hasPrice
             ? `${tool.name} costs €${price}/mo${planSuffixEn}. ToolTrim verdict: is it worth it? Best cheaper alternatives for ${year}.`
-            : `Is ${tool.name} really free? Plans, hidden costs and best alternatives — updated ${year}.`,
+            : `Is ${tool.name} really free? Plans, hidden costs and best alternatives, updated ${year}.`,
         suffix: "",
       },
       prix: {
         titleFr: hasPrice
-          ? `${tool.name} Prix ${year} : ${priceRounded}€/mois — Tous les Plans & Tarifs | ToolTrim`
+          ? `${tool.name} Prix ${year} : ${priceRounded}€/mois, Tous les Plans & Tarifs | ToolTrim`
           : `${tool.name} Tarifs ${year} : Gratuit, Freemium ou Payant ? | ToolTrim`,
         titleEn: hasPrice
-          ? `${tool.name} Pricing ${year}: €${priceRounded}/mo — All Plans & Costs | ToolTrim`
+          ? `${tool.name} Pricing ${year}: €${priceRounded}/mo, All Plans & Costs | ToolTrim`
           : `${tool.name} Pricing ${year}: Free, Freemium or Paid? | ToolTrim`,
         descFr: hasPrice
-          ? `Combien coûte ${tool.name} en ${year} ? ${priceRounded}€/mois${planName ? ` (plan ${planName})` : ""}${shortExcerpt ? ` — ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} Détail des plans et alternatives moins chères.`
+          ? `Combien coûte ${tool.name} en ${year} ? ${priceRounded}€/mois${planName ? ` (plan ${planName})` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} Détail des plans et alternatives moins chères.`
           : `${tool.name} est-il gratuit en ${year} ?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Plans gratuits, freemium et payants comparés avec les meilleures alternatives.`,
         descEn: hasPrice
-          ? `How much does ${tool.name} cost in ${year}? €${priceRounded}/mo${planName ? ` (${planName} plan)` : ""}${shortExcerpt ? ` — ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} All plans and cheaper alternatives.`
+          ? `How much does ${tool.name} cost in ${year}? €${priceRounded}/mo${planName ? ` (${planName} plan)` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} All plans and cheaper alternatives.`
           : `Is ${tool.name} free in ${year}?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Free, freemium and paid plans compared with top alternatives.`,
         suffix: "/prix",
       },
       alternatives: {
         titleFr: hasPrice
           ? `Alternatives à ${tool.name} moins chères en ${year} | ToolTrim`
-          : `Meilleures alternatives à ${tool.name} — ${catLabel} | ToolTrim`,
+          : `Meilleures alternatives à ${tool.name}, ${catLabel} | ToolTrim`,
         titleEn: hasPrice
           ? `Cheaper ${tool.name} Alternatives in ${year} | ToolTrim`
-          : `Best ${tool.name} Alternatives — ${catLabel} | ToolTrim`,
+          : `Best ${tool.name} Alternatives, ${catLabel} | ToolTrim`,
         descFr: hasPrice
-          ? `Vous payez ${priceRounded}€/mois pour ${tool.name} (${catLabel}) ? Voici les meilleures alternatives moins chères ou gratuites — comparées par ToolTrim en ${year}.`
+          ? `Vous payez ${priceRounded}€/mois pour ${tool.name} (${catLabel}) ? Voici les meilleures alternatives moins chères ou gratuites, comparées par ToolTrim en ${year}.`
           : `Quelles sont les meilleures alternatives à ${tool.name} en ${catLabel} ? ToolTrim compare les options gratuites, freemium et payantes les plus adaptées en ${year}.`,
         descEn: hasPrice
-          ? `Paying €${priceRounded}/mo for ${tool.name} (${catLabel})? Best cheaper or free alternatives — compared by ToolTrim for ${year}.`
+          ? `Paying €${priceRounded}/mo for ${tool.name} (${catLabel})? Best cheaper or free alternatives, compared by ToolTrim for ${year}.`
           : `What are the best alternatives to ${tool.name} in ${catLabel}? ToolTrim compares the top free, freemium and paid options for ${year}.`,
         suffix: "/alternatives",
       },
@@ -147,11 +147,11 @@ const ToolDetailPage = () => {
         titleFr: `${tool.name} FAQ ${year} : Prix, Utilité & Alternatives | ToolTrim`,
         titleEn: `${tool.name} FAQ ${year}: Pricing, Use Cases & Alternatives | ToolTrim`,
         descFr: shortExcerpt
-          ? `${shortExcerpt}. Prix, plans, cas d'usage et alternatives à ${tool.name} — toutes les réponses clés en ${year}.`
-          : `Tout ce que vous devez savoir sur ${tool.name} : prix, plans, utilité et meilleures alternatives — mis à jour ${year}.`,
+          ? `${shortExcerpt}. Prix, plans, cas d'usage et alternatives à ${tool.name}, toutes les réponses clés en ${year}.`
+          : `Tout ce que vous devez savoir sur ${tool.name} : prix, plans, utilité et meilleures alternatives, mis à jour ${year}.`,
         descEn: shortExcerpt
-          ? `${shortExcerpt}. Pricing, plans, use cases and alternatives to ${tool.name} — all key answers for ${year}.`
-          : `Everything you need to know about ${tool.name}: pricing, plans, use cases and best alternatives — updated ${year}.`,
+          ? `${shortExcerpt}. Pricing, plans, use cases and alternatives to ${tool.name}, all key answers for ${year}.`
+          : `Everything you need to know about ${tool.name}: pricing, plans, use cases and best alternatives, updated ${year}.`,
         suffix: "/faq",
       },
     };
@@ -547,8 +547,8 @@ const ToolDetailPage = () => {
                       <span className="td-eyebrow">{t("Décision rapide", "Quick decision")}</span>
                       <h2 className="td-title">
                         {lang === "fr"
-                          ? `${tool.name} — quand ça a du sens.`
-                          : `${tool.name} — when it makes sense.`}
+                          ? `${tool.name} : quand ça a du sens.`
+                          : `${tool.name}: when it makes sense.`}
                       </h2>
 
                       {/* Verdict sentence */}
@@ -751,7 +751,7 @@ const ToolDetailPage = () => {
                     {lang === "fr"
                       ? (() => {
                           if (displayPrice === 0)
-                            return `${tool.name} propose un plan gratuit${tool.shortDescription ? ` — ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
+                            return `${tool.name} propose un plan gratuit${tool.shortDescription ? `, ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
                           const plan = tool.pricing_v5?.compare_plan_name;
                           return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
                         })()
@@ -785,8 +785,8 @@ const ToolDetailPage = () => {
                   </h2>
                   <p className="td-body td-muted" style={{ marginBottom: 32 }}>
                     {lang === "fr"
-                      ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""} — comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois de ${tool.name}.` : ""}`
-                      : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""} — compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
+                      ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""}, comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois ${/^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`}.` : ""}`
+                      : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""}, compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
                     }
                   </p>
 
@@ -845,13 +845,22 @@ const ToolDetailPage = () => {
                     const comparisons = FEATURED_COMPARISONS.filter(
                       (c: any) => c.toolA === toolId || c.toolB === toolId
                     );
+                    const seenOtherIds = new Set<string>();
                     const compareTools = comparisons
                       .map((c: any) => {
                         const otherId = c.toolA === toolId ? c.toolB : c.toolA;
                         const other = tools.find((tt: any) => tt.id === otherId || tt.slug === otherId);
                         return other ? { slugPair: c.slugPair, other } : null;
                       })
-                      .filter(Boolean) as { slugPair: string; other: any }[];
+                      .filter(Boolean)
+                      // comparisons.ts occasionally lists both directions of
+                      // the same pair (e.g. asana-vs-clickup AND clickup-vs-
+                      // asana) — keep only the first occurrence per target.
+                      .filter((c: any) => {
+                        if (seenOtherIds.has(c.other.id)) return false;
+                        seenOtherIds.add(c.other.id);
+                        return true;
+                      }) as { slugPair: string; other: any }[];
                     if (!compareTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
@@ -994,8 +1003,8 @@ const ToolDetailPage = () => {
                   </h2>
                   <p className="td-body td-muted" style={{ marginBottom: 32 }}>
                     {lang === "fr"
-                      ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""} — les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
-                      : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""} — key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
+                      ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""}, les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
+                      : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""}, key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
                     }
                   </p>
                   <ToolFAQSection
