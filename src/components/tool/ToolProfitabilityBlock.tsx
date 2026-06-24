@@ -20,14 +20,12 @@ export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
   const tooExpensiveIf = verdict?.tooExpensiveIf;
   if (!profitableIf?.length && !tooExpensiveIf?.length) return null;
 
+  const twoCols = !!profitableIf?.length && !!tooExpensiveIf?.length;
+
   return (
     <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: profitableIf?.length && tooExpensiveIf?.length ? "1fr 1fr" : "1fr",
-        gap: 24,
-      }}
-      className="sm:grid-cols-2"
+      className={twoCols ? "td-profit-grid td-profit-grid--two" : "td-profit-grid"}
+      style={{ gap: 24 }}
     >
       {profitableIf?.length ? (
         <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 24 }}>

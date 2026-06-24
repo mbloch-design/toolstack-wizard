@@ -43,7 +43,14 @@ export default function StickyDecisionCard({
   const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
 
   const verdictText = (() => {
-    if (threshold && threshold.length > 0) return threshold;
+    // Short synthesis only — the main content area already shows the full
+    // threshold verbatim in "Décision rapide", so repeating all of it here
+    // duplicates the same paragraph twice on the page. First sentence is
+    // enough for an at-a-glance sidebar card.
+    if (threshold && threshold.length > 0) {
+      const firstSentence = threshold.split(/(?<=[.!?])\s+/)[0];
+      return firstSentence || threshold;
+    }
     if (keepItems.length && avoidItems.length) {
       const k = keepItems[0];
       const a = avoidItems[0];

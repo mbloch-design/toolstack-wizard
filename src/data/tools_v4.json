@@ -7420,8 +7420,8 @@
   {
     "id": "asana",
     "name": "Asana",
-    "shortDescription": "Gestion de projet pour équipes avec plusieurs projets clients, deadlines et reporting — souvent trop structuré pour un freelance solo.",
-    "description": "Asana propose plusieurs vues de travail (listes, tableaux Kanban, timeline, calendrier) que chaque équipe peut adapter à son processus, avec Asana Intelligence qui résume les tâches et suggère des actions directement dans le flux de travail existant.\n\nSon vrai terrain, ce n'est pas le freelance solo qui gère sa propre to-do list — pour ça, Trello ou Notion suffisent largement et coûtent moins cher. Asana devient rentable à partir du moment où plusieurs personnes dépendent les unes des autres sur plusieurs projets actifs en même temps : une agence avec 5+ comptes clients, une équipe produit qui a besoin de dépendances entre tâches, ou une PME qui veut un reporting consolidé sans réunion de statut hebdomadaire.\n\nLe vrai point de friction, c'est le saut de prix entre Starter (10,99$/mois/utilisateur) et Advanced (24,99$/mois/utilisateur, 2,3x plus cher) — et c'est justement dans Advanced que se trouvent les dépendances, les règles d'automatisation, les formulaires et le reporting portfolio dont la plupart des équipes de plus de 10 personnes ont besoin. Pour 50 personnes, ça représente environ 15 000$/an. Si tu restes en Starter avec une équipe qui grandit, tu butes vite sur les limites sans réaliser que le vrai produit est dans le palier supérieur.\n\nCoût réel (Starter, annuel, 10,99$/utilisateur/mois, min. 2 utilisateurs) : 3 personnes ≈ 396$/an, 5 personnes ≈ 659$/an, 10 personnes ≈ 1 319$/an. En Advanced (24,99$/utilisateur/mois) : 5 personnes ≈ 1 499$/an, 10 personnes ≈ 2 999$/an, 50 personnes ≈ 14 994$/an.",
+    "shortDescription": "Gestion de projet pour équipes avec plusieurs projets clients, deadlines et reporting. Souvent trop structuré pour un freelance solo.",
+    "description": "Asana propose plusieurs vues de travail (listes, tableaux Kanban, timeline, calendrier) que chaque équipe peut adapter à son processus, avec Asana Intelligence qui résume les tâches et suggère des actions directement dans le flux de travail existant.\n\nSon vrai terrain, ce n'est pas le freelance solo qui gère sa propre to-do list : Trello ou Notion suffisent largement et coûtent moins cher. Asana devient rentable à partir du moment où plusieurs personnes dépendent les unes des autres sur plusieurs projets actifs en même temps : une agence avec 5+ comptes clients, une équipe produit qui a besoin de dépendances entre tâches, ou une PME qui veut un reporting consolidé sans réunion de statut hebdomadaire.\n\nLe vrai point de friction, c'est le saut de prix entre Starter (10,99$/mois/utilisateur) et Advanced (24,99$/mois/utilisateur, 2,3x plus cher), et c'est justement dans Advanced que se trouvent les dépendances, les règles d'automatisation, les formulaires et le reporting portfolio dont la plupart des équipes de plus de 10 personnes ont besoin. Pour 50 personnes, ça représente environ 15 000$/an. Si tu restes en Starter avec une équipe qui grandit, tu butes vite sur les limites sans réaliser que le vrai produit est dans le palier supérieur.\n\nCoût réel (Starter, annuel, 10,99$/utilisateur/mois, min. 2 utilisateurs) : 3 personnes ≈ 396$/an, 5 personnes ≈ 659$/an, 10 personnes ≈ 1 319$/an. En Advanced (24,99$/utilisateur/mois) : 5 personnes ≈ 1 499$/an, 10 personnes ≈ 2 999$/an, 50 personnes ≈ 14 994$/an.",
     "category": "organization",
     "pricing": {
       "free": "Fonctionnalités de base",
@@ -7437,7 +7437,7 @@
     "cons": [
       "Saut de prix abrupt entre Starter et Advanced (jusqu'à 2,3x, ~15000$/an pour 50 personnes en Advanced)",
       "Courbe d'apprentissage réelle pour maîtriser sous-tâches et personnalisation avancée",
-      "Pas de chat ou de docs intégrés — tu auras toujours besoin de Slack et Notion/Google Docs en complément"
+      "Pas de chat ou de docs intégrés : tu auras toujours besoin de Slack et Notion/Google Docs en complément"
     ],
     "bestFor": [
       "all"
@@ -7458,12 +7458,12 @@
     ],
     "verdict": {
       "keepIf": [
-        "Ton équipe coordonne plusieurs projets clients avec deadlines et responsables clairs",
-        "Tu utilises (ou as besoin) de la timeline, des dépendances ou des formulaires de demande"
+        "Plusieurs personnes travaillent ensemble sur les mêmes projets",
+        "Tu as des deadlines, des responsables et des livrables à suivre"
       ],
       "avoidIf": [
-        "Tu es solo sans sous-traitants ni clients multiples — Trello ou Notion suffisent",
-        "Tu n'utilises jamais les vues avancées, seulement une liste de tâches"
+        "Tu travailles seul, sans client ni sous-traitant à coordonner",
+        "Une simple liste de tâches te suffit déjà"
       ],
       "threshold": "Asana est un bon choix pour une équipe qui gère plusieurs projets clients avec deadlines, responsabilités et reporting. Pour un freelance solo ou une simple to-do list, c'est souvent trop structuré : Trello, Notion ou ClickUp peuvent suffire.",
       "profitableIf": [
@@ -7521,10 +7521,10 @@
           "chatgpt"
         ]
       },
-      "idealForFr": "Idéal pour les petites équipes projet, agences et studios qui gèrent plusieurs projets clients en parallèle. Surdimensionné pour un freelance solo qui gère surtout ses propres tâches — Trello, Notion ou Todoist suffisent dans ce cas.",
-      "idealForEn": "Ideal for small project teams, agencies and studios running several client projects in parallel. Overkill for a solo freelancer managing mostly their own tasks — Trello, Notion or Todoist cover that case.",
-      "presentationTitleFr": "Asana : avis, prix et alternatives — faut-il vraiment le payer ?",
-      "presentationTitleEn": "Asana: reviews, pricing and alternatives — is it worth paying for?"
+      "idealForFr": "Idéal pour les petites équipes projet, agences et studios qui gèrent plusieurs projets clients en parallèle. Surdimensionné pour un freelance solo qui gère surtout ses propres tâches : Trello, Notion ou Todoist suffisent dans ce cas.",
+      "idealForEn": "Ideal for small project teams, agencies and studios running several client projects in parallel. Overkill for a solo freelancer managing mostly their own tasks: Trello, Notion or Todoist cover that case.",
+      "presentationTitleFr": "Asana : avis, prix et alternatives. Faut-il vraiment le payer ?",
+      "presentationTitleEn": "Asana: reviews, pricing and alternatives. Is it worth paying for?"
     },
     "articles": [],
     "tool_type": "satellite",
@@ -7557,9 +7557,9 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "asana",
-    "shortDescriptionEn": "Project management for teams running several client projects, deadlines and reporting — often overkill for a solo freelancer.",
-    "longDescription": "Asana propose plusieurs vues de travail (listes, tableaux Kanban, timeline, calendrier) que chaque équipe peut adapter à son processus, avec Asana Intelligence qui résume les tâches et suggère des actions directement dans le flux de travail existant.\n\nSon vrai terrain, ce n'est pas le freelance solo qui gère sa propre to-do list — pour ça, Trello ou Notion suffisent largement et coûtent moins cher. Asana devient rentable à partir du moment où plusieurs personnes dépendent les unes des autres sur plusieurs projets actifs en même temps : une agence avec 5+ comptes clients, une équipe produit qui a besoin de dépendances entre tâches, ou une PME qui veut un reporting consolidé sans réunion de statut hebdomadaire.\n\nLe vrai point de friction, c'est le saut de prix entre Starter (10,99$/mois/utilisateur) et Advanced (24,99$/mois/utilisateur, 2,3x plus cher) — et c'est justement dans Advanced que se trouvent les dépendances, les règles d'automatisation, les formulaires et le reporting portfolio dont la plupart des équipes de plus de 10 personnes ont besoin. Pour 50 personnes, ça représente environ 15 000$/an. Si tu restes en Starter avec une équipe qui grandit, tu butes vite sur les limites sans réaliser que le vrai produit est dans le palier supérieur.\n\nCoût réel (Starter, annuel, 10,99$/utilisateur/mois, min. 2 utilisateurs) : 3 personnes ≈ 396$/an, 5 personnes ≈ 659$/an, 10 personnes ≈ 1 319$/an. En Advanced (24,99$/utilisateur/mois) : 5 personnes ≈ 1 499$/an, 10 personnes ≈ 2 999$/an, 50 personnes ≈ 14 994$/an.",
-    "longDescriptionEn": "Asana offers several work views (lists, Kanban boards, timeline, calendar) that each team can adapt to its process, with Asana Intelligence summarizing tasks and suggesting actions directly within the existing workflow.\n\nIts real territory isn't the solo freelancer managing their own to-do list — Trello or Notion cover that just fine for less money. Asana earns its price once several people depend on each other across several active projects at once: an agency running 5+ client accounts, a product team that needs task dependencies, or an SMB that wants consolidated reporting without a weekly status meeting.\n\nThe real friction point is the price jump from Starter ($10.99/user/month) to Advanced ($24.99/user/month, 2.3x more) — and Advanced is exactly where dependencies, automation rules, forms and portfolio reporting live, the features most teams above 10 people actually need. For 50 people, that's roughly $15,000/year. Stay on Starter while the team grows and you hit its limits without realizing the real product is one tier up.\n\nReal cost (Starter, annual, $10.99/user/month, min. 2 users): 3 people ≈ $396/year, 5 people ≈ $659/year, 10 people ≈ $1,319/year. On Advanced ($24.99/user/month): 5 people ≈ $1,499/year, 10 people ≈ $2,999/year, 50 people ≈ $14,994/year.",
+    "shortDescriptionEn": "Project management for teams running several client projects, deadlines and reporting. Often overkill for a solo freelancer.",
+    "longDescription": "Asana propose plusieurs vues de travail (listes, tableaux Kanban, timeline, calendrier) que chaque équipe peut adapter à son processus, avec Asana Intelligence qui résume les tâches et suggère des actions directement dans le flux de travail existant.\n\nSon vrai terrain, ce n'est pas le freelance solo qui gère sa propre to-do list : Trello ou Notion suffisent largement et coûtent moins cher. Asana devient rentable à partir du moment où plusieurs personnes dépendent les unes des autres sur plusieurs projets actifs en même temps : une agence avec 5+ comptes clients, une équipe produit qui a besoin de dépendances entre tâches, ou une PME qui veut un reporting consolidé sans réunion de statut hebdomadaire.\n\nLe vrai point de friction, c'est le saut de prix entre Starter (10,99$/mois/utilisateur) et Advanced (24,99$/mois/utilisateur, 2,3x plus cher), et c'est justement dans Advanced que se trouvent les dépendances, les règles d'automatisation, les formulaires et le reporting portfolio dont la plupart des équipes de plus de 10 personnes ont besoin. Pour 50 personnes, ça représente environ 15 000$/an. Si tu restes en Starter avec une équipe qui grandit, tu butes vite sur les limites sans réaliser que le vrai produit est dans le palier supérieur.\n\nCoût réel (Starter, annuel, 10,99$/utilisateur/mois, min. 2 utilisateurs) : 3 personnes ≈ 396$/an, 5 personnes ≈ 659$/an, 10 personnes ≈ 1 319$/an. En Advanced (24,99$/utilisateur/mois) : 5 personnes ≈ 1 499$/an, 10 personnes ≈ 2 999$/an, 50 personnes ≈ 14 994$/an.",
+    "longDescriptionEn": "Asana offers several work views (lists, Kanban boards, timeline, calendar) that each team can adapt to its process, with Asana Intelligence summarizing tasks and suggesting actions directly within the existing workflow.\n\nIts real territory isn't the solo freelancer managing their own to-do list: Trello or Notion cover that just fine for less money. Asana earns its price once several people depend on each other across several active projects at once: an agency running 5+ client accounts, a product team that needs task dependencies, or an SMB that wants consolidated reporting without a weekly status meeting.\n\nThe real friction point is the price jump from Starter ($10.99/user/month) to Advanced ($24.99/user/month, 2.3x more), and Advanced is exactly where dependencies, automation rules, forms and portfolio reporting live, the features most teams above 10 people actually need. For 50 people, that's roughly $15,000/year. Stay on Starter while the team grows and you hit its limits without realizing the real product is one tier up.\n\nReal cost (Starter, annual, $10.99/user/month, min. 2 users): 3 people ≈ $396/year, 5 people ≈ $659/year, 10 people ≈ $1,319/year. On Advanced ($24.99/user/month): 5 people ≈ $1,499/year, 10 people ≈ $2,999/year, 50 people ≈ $14,994/year.",
     "pricingEn": {
       "free": "Core features",
       "paid": "$10.99/user/month (Starter, annual); Advanced at $24.99/month (min. 2 users)"
@@ -7621,18 +7621,18 @@
         }
       ],
       "costTableNoteFr": "Prix indicatifs, à vérifier sur la page officielle Asana selon devise, facturation mensuelle/annuelle et promotions éventuelles. Source : asana.com/pricing.",
-      "costTableNoteEn": "Indicative prices — check the official Asana page for your currency, monthly/annual billing and any current promotions. Source: asana.com/pricing."
+      "costTableNoteEn": "Indicative prices. Check the official Asana page for your currency, monthly/annual billing and any current promotions. Source: asana.com/pricing."
     },
     "websiteUrl": "https://asana.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Your team coordinates several client projects with deadlines and clear ownership",
-        "You use (or need) timeline, dependencies or request forms"
+        "Several people work together on the same projects",
+        "You have deadlines, owners and deliverables to track"
       ],
       "avoidIf": [
-        "You're solo with no subcontractors or multiple clients — Trello or Notion are enough",
-        "You never use the advanced views, just a task list"
+        "You work alone, with no client or subcontractor to coordinate",
+        "A simple task list is already enough for you"
       ],
       "threshold": "Asana is a good fit for a team running several client projects with deadlines, ownership and reporting. For a solo freelancer or a simple to-do list, it's often overengineered: Trello, Notion or ClickUp can be enough.",
       "profitableIf": [
@@ -7680,27 +7680,17 @@
     "consEn": [
       "Steep price jump from Starter to Advanced (up to 2.3x, ~$15,000/year for 50 people on Advanced)",
       "Real learning curve to master subtasks and advanced customization",
-      "No built-in chat or docs — you'll still need Slack and Notion/Google Docs alongside it"
+      "No built-in chat or docs: you'll still need Slack and Notion/Google Docs alongside it"
     ],
     "useCases": [
       "Gérer des projets avec plusieurs vues (liste, Kanban, timeline) selon les préférences de l'équipe",
       "Centraliser les statuts et fichiers de projet pour réduire les échanges Slack",
-      "Automatiser des workflows répétitifs sans coder (règles, formulaires)",
-      "Profil freelance solo : reste sur le plan gratuit, ou Trello/Notion suffisent — Asana est surdimensionné",
-      "Profil studio créatif 2-5 personnes : Asana peut valoir le coup si tu gères plusieurs projets clients en parallèle",
-      "Profil équipe produit/dev : Linear ou ClickUp sont souvent plus adaptés (cycles, suivi technique plus rapide)",
-      "Profil PME avec reporting régulier : Asana Advanced (dépendances, portfolio) peut se justifier",
-      "Profil budget serré : challenge avec ClickUp, Trello ou Notion avant de payer Advanced"
+      "Automatiser des workflows répétitifs sans coder (règles, formulaires)"
     ],
     "useCasesEn": [
       "Manage projects with multiple views (list, Kanban, timeline) based on team preference",
       "Centralize project statuses and files to reduce Slack back-and-forth",
-      "Automate repetitive workflows with no coding (rules, forms)",
-      "Solo freelancer profile: stay on the free plan, or Trello/Notion are enough — Asana is overkill",
-      "2-5 person creative studio profile: Asana can be worth it if you run several client projects in parallel",
-      "Product/dev team profile: Linear or ClickUp are often a better fit (cycles, faster technical tracking)",
-      "SMB with regular reporting profile: Asana Advanced (dependencies, portfolio) can be justified",
-      "Tight budget profile: challenge it with ClickUp, Trello or Notion before paying for Advanced"
+      "Automate repetitive workflows with no coding (rules, forms)"
     ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
@@ -7727,7 +7717,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "descriptionEn": "Asana offers several work views (lists, Kanban boards, timeline, calendar) that each team can adapt to its process, with Asana Intelligence summarizing tasks and suggesting actions directly within the existing workflow.\n\nIts real territory isn't the solo freelancer managing their own to-do list — Trello or Notion cover that just fine for less money. Asana earns its price once several people depend on each other across several active projects at once: an agency running 5+ client accounts, a product team that needs task dependencies, or an SMB that wants consolidated reporting without a weekly status meeting.\n\nThe real friction point is the price jump from Starter ($10.99/user/month) to Advanced ($24.99/user/month, 2.3x more) — and Advanced is exactly where dependencies, automation rules, forms and portfolio reporting live, the features most teams above 10 people actually need. For 50 people, that's roughly $15,000/year. Stay on Starter while the team grows and you hit its limits without realizing the real product is one tier up.\n\nReal cost (Starter, annual, $10.99/user/month, min. 2 users): 3 people ≈ $396/year, 5 people ≈ $659/year, 10 people ≈ $1,319/year. On Advanced ($24.99/user/month): 5 people ≈ $1,499/year, 10 people ≈ $2,999/year, 50 people ≈ $14,994/year."
+    "descriptionEn": "Asana offers several work views (lists, Kanban boards, timeline, calendar) that each team can adapt to its process, with Asana Intelligence summarizing tasks and suggesting actions directly within the existing workflow.\n\nIts real territory isn't the solo freelancer managing their own to-do list: Trello or Notion cover that just fine for less money. Asana earns its price once several people depend on each other across several active projects at once: an agency running 5+ client accounts, a product team that needs task dependencies, or an SMB that wants consolidated reporting without a weekly status meeting.\n\nThe real friction point is the price jump from Starter ($10.99/user/month) to Advanced ($24.99/user/month, 2.3x more), and Advanced is exactly where dependencies, automation rules, forms and portfolio reporting live, the features most teams above 10 people actually need. For 50 people, that's roughly $15,000/year. Stay on Starter while the team grows and you hit its limits without realizing the real product is one tier up.\n\nReal cost (Starter, annual, $10.99/user/month, min. 2 users): 3 people ≈ $396/year, 5 people ≈ $659/year, 10 people ≈ $1,319/year. On Advanced ($24.99/user/month): 5 people ≈ $1,499/year, 10 people ≈ $2,999/year, 50 people ≈ $14,994/year."
   },
   {
     "id": "autocad",

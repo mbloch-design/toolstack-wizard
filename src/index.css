@@ -3565,6 +3565,17 @@
   .td-diag-band--inline .td-diag-inner {
     gap: 32px;
   }
+
+  /* ── Profitable-if / too-expensive-if twin cards ── */
+  .td-profit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) {
+    .td-profit-grid.td-profit-grid--two {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
   .td-diag-inner {
     display: grid;
     grid-template-columns: 1fr auto;
