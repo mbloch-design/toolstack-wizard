@@ -312,6 +312,74 @@ const ToolDetailPage = () => {
     label: lang === "fr" ? tab.labelFr : tab.labelEn,
   }));
 
+  // Test ponctuel (Asana) : remonter le bloc CTA "Audit de stack" juste après
+  // le verdict au lieu d'attendre la fin de page. Gated par slug en dur (pas
+  // par un champ JSON) car Asana a une ligne Supabase qui remplace tout
+  // l'objet JSON au build/au runtime — un champ data ne survivrait pas.
+  // N'affecte aucune autre fiche.
+  const auditCtaEarly = (tool.slug || tool.id) === "asana";
+  const auditBand = (
+    <div className="td-diag-band">
+      <div className="td-container">
+        <div className="td-diag-inner">
+          <div>
+            <span style={{
+              display: "block",
+              fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600,
+              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
+              marginBottom: 14,
+            }}>
+              {t("AUDIT DE STACK", "STACK AUDIT")}
+            </span>
+            <h2 style={{
+              fontFamily: "var(--font-brand)",
+              fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+              fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.045em",
+              color: "var(--color-text)", margin: "0 0 16px",
+            }}>
+              {t(
+                `${tool.name} fait partie de ta stack ?`,
+                `Is ${tool.name} part of your stack?`,
+              )}
+            </h2>
+            <p style={{
+              fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
+              color: "var(--color-muted)", maxWidth: 560, margin: 0,
+            }}>
+              {t(
+                "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
+                "Find out in a few minutes if you're actually using it, paying the right price, and which tools around it can be challenged.",
+              )}
+            </p>
+            <p style={{
+              fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)",
+              marginTop: 14, letterSpacing: "-0.01em",
+            }}>
+              {t("Gratuit · 5 minutes · Résultat personnalisé", "Free · 5 minutes · Personalised result")}
+            </p>
+          </div>
+          <Link
+            to={`${prefix}/selector?from=${tool.slug || tool.id}`}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              height: 48, padding: "0 22px",
+              background: "var(--color-text)", color: "var(--color-surface)",
+              borderRadius: 8, border: "none",
+              fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
+              textDecoration: "none", letterSpacing: "-0.01em",
+              transition: "background 160ms ease-out", flexShrink: 0, whiteSpace: "nowrap",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
+          >
+            {t("Auditer ma stack", "Audit my stack")}
+            <ArrowRight style={{ width: 14, height: 14 }} />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
       <ToolJsonLd
@@ -489,6 +557,12 @@ const ToolDetailPage = () => {
                     </div>
                   );
                 })()}
+
+                {auditCtaEarly && (
+                  <div style={{ marginTop: 8, marginBottom: 8 }}>
+                    {auditBand}
+                  </div>
+                )}
 
                 {/* 2.5 · Résumé machine-readable — placé tôt (juste après le
                      verdict) pour l'extraction LLM/RAG (GEO), avant les
@@ -989,68 +1063,7 @@ const ToolDetailPage = () => {
         </div>
       </div>
 
-      {/* ══════════════════════════════════════════════════════════
-          AUDIT DE STACK — editorial band, full-width
-      ══════════════════════════════════════════════════════════ */}
-      <div className="td-diag-band">
-        <div className="td-container">
-          <div className="td-diag-inner">
-            <div>
-              <span style={{
-                display: "block",
-                fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600,
-                letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-                marginBottom: 14,
-              }}>
-                {t("AUDIT DE STACK", "STACK AUDIT")}
-              </span>
-              <h2 style={{
-                fontFamily: "var(--font-brand)",
-                fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.045em",
-                color: "var(--color-text)", margin: "0 0 16px",
-              }}>
-                {t(
-                  `${tool.name} fait partie de ta stack ?`,
-                  `Is ${tool.name} part of your stack?`,
-                )}
-              </h2>
-              <p style={{
-                fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
-                color: "var(--color-muted)", maxWidth: 560, margin: 0,
-              }}>
-                {t(
-                  "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
-                  "Find out in a few minutes if you're actually using it, paying the right price, and which tools around it can be challenged.",
-                )}
-              </p>
-              <p style={{
-                fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)",
-                marginTop: 14, letterSpacing: "-0.01em",
-              }}>
-                {t("Gratuit · 5 minutes · Résultat personnalisé", "Free · 5 minutes · Personalised result")}
-              </p>
-            </div>
-            <Link
-              to={`${prefix}/selector?from=${tool.slug || tool.id}`}
-              style={{
-                display: "inline-flex", alignItems: "center", gap: 8,
-                height: 48, padding: "0 22px",
-                background: "var(--color-text)", color: "var(--color-surface)",
-                borderRadius: 8, border: "none",
-                fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
-                textDecoration: "none", letterSpacing: "-0.01em",
-                transition: "background 160ms ease-out", flexShrink: 0, whiteSpace: "nowrap",
-              }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
-            >
-              {t("Auditer ma stack", "Audit my stack")}
-              <ArrowRight style={{ width: 14, height: 14 }} />
-            </Link>
-          </div>
-        </div>
-      </div>
+      {!auditCtaEarly && auditBand}
 
       <SectionPillNav
         sections={pillSections}

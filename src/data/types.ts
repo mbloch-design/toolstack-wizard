@@ -27,6 +27,8 @@ export interface ToolArticle {
 
 export interface ToolSeo {
   metaDescription: string;
+  idealForFr?: string;
+  idealForEn?: string;
 }
 
 export interface BetterAlternative {
@@ -118,6 +120,7 @@ export interface Tool {
   idealForEn?: string;
   alternatives?: string[];
   seo?: ToolSeo;
+  auditCtaEarly?: boolean;
   articles?: ToolArticle[];
   timeGainedHoursPerMonth?: number;
   freeAlternative?: string | null;
