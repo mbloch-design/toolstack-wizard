@@ -7393,7 +7393,7 @@
     "category": "organization",
     "pricing": {
       "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "paid": "10,99$/mois par utilisateur (Starter, annuel) ; Advanced à 24,99$/mois (min. 2 utilisateurs)"
     },
     "website": "https://asana.com",
     "affiliateLink": "https://asana.com",
@@ -7413,7 +7413,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 9.52,
+    "defaultMonthlyPrice": 9.63,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -7486,7 +7486,7 @@
     "longDescriptionEn": "Asana is work management platform for teams. Starting at €9.52/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage. As soon as the tool saves you more than €15/month. If budget allows, linear goes further.",
     "pricingEn": {
       "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "paid": "$10.99/user/month (Starter, annual); Advanced at $24.99/month (min. 2 users)"
     },
     "pricing_v5": {
       "cautions": [
@@ -124147,10 +124147,10 @@
     "longDescription": "Loom, c'est l'enregistrement d'écran pensé pour remplacer des réunions et des emails interminables. Tu cliques, tu enregistres ton écran et ta voix (ta webcam en incrustation), et tu obtiens un lien partageable instantanément, sans upload. La personne en face regarde quand elle veut, à sa vitesse, et peut commenter avec des timestamps précis. Pour expliquer un bug, donner un feedback design ou faire un onboarding client, c'est souvent plus clair et plus rapide qu'un appel.\n\nL'offre gratuite (25 vidéos de 5 minutes maximum) suffit pour tester ou un usage léger. Le plan Business, autour de 18$/utilisateur/mois, débloque l'illimité, la transcription et les outils d'équipe. Depuis le rachat par Atlassian, Loom s'intègre de plus en plus à l'écosystème Jira et Confluence.\n\nÀ qui ça sert : aux freelances et équipes qui communiquent à distance et veulent réduire les réunions. La vraie question, c'est l'hébergement : enregistrer son écran est gratuit (QuickTime le fait), mais ce que tu paies avec Loom, c'est le partage instantané et la bibliothèque. Si tu envoies une vidéo de temps en temps, le gratuit suffit ; en usage quotidien, l'abonnement se rentabilise vite.",
     "affiliateLink": "https://loom.com",
     "websiteUrl": "https://loom.com",
-    "defaultMonthlyPrice": 18,
+    "defaultMonthlyPrice": 13.14,
     "pricing": {
       "free": "Gratuit jusqu'à 25 vidéos de 5 min maximum",
-      "paid": "Business à 18$/utilisateur/mois (illimité), +IA à 24$"
+      "paid": "Business à 15$/utilisateur/mois (illimité, 4K) ; Business + IA à 20-24$/utilisateur/mois (transcription, résumés auto)"
     },
     "logo": "",
     "soloRelevance": "high",
@@ -124317,7 +124317,7 @@
     },
     "pricingEn": {
       "free": "Free up to 25 videos of 5 min max",
-      "paid": "Business at $18/user/month (unlimited), +AI at $24"
+      "paid": "Business at $15/user/month (unlimited, 4K); Business + AI at $20-24/user/month (transcription, auto-summaries)"
     },
     "force_silence": false,
     "description": "Loom, c'est l'enregistrement d'écran pensé pour remplacer des réunions et des emails interminables. Tu cliques, tu enregistres ton écran et ta voix (ta webcam en incrustation), et tu obtiens un lien partageable instantanément, sans upload. La personne en face regarde quand elle veut, à sa vitesse, et peut commenter avec des timestamps précis. Pour expliquer un bug, donner un feedback design ou faire un onboarding client, c'est souvent plus clair et plus rapide qu'un appel.\n\nL'offre gratuite (25 vidéos de 5 minutes maximum) suffit pour tester ou un usage léger. Le plan Business, autour de 18$/utilisateur/mois, débloque l'illimité, la transcription et les outils d'équipe. Depuis le rachat par Atlassian, Loom s'intègre de plus en plus à l'écosystème Jira et Confluence.\n\nÀ qui ça sert : aux freelances et équipes qui communiquent à distance et veulent réduire les réunions. La vraie question, c'est l'hébergement : enregistrer son écran est gratuit (QuickTime le fait), mais ce que tu paies avec Loom, c'est le partage instantané et la bibliothèque. Si tu envoies une vidéo de temps en temps, le gratuit suffit ; en usage quotidien, l'abonnement se rentabilise vite."
