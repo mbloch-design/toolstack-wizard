@@ -6464,21 +6464,21 @@
   {
     "id": "allstate",
     "name": "Allstate",
-    "shortDescription": "Fournit des plans de santé pour petites entreprises aux États-Unis.",
-    "description": "Allstate, c'est fournit des plans de santé pour petites entreprises aux États-Unis. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en insurance, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "Plans de santé collectifs pour petites et moyennes entreprises américaines, via Allstate Benefits.",
+    "description": "Allstate Benefits propose des plans de santé collectifs pour les entreprises de 2 à 500 employés aux États-Unis, avec un programme autofinancé souvent plus économique qu'une assurance traditionnelle.",
     "category": "organization",
-    "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
-    },
+    "pricing": "Tarification sur devis selon la taille de l'entreprise et le niveau de couverture choisi.",
     "website": "https://allstate.com",
     "affiliateLink": "https://allstate.com",
     "pros": [
-      "Spécialisé en insurance",
-      "Interface professionnelle"
+      "Programme autofinancé souvent plus économique qu'une assurance entièrement assurée",
+      "Possibilité de remboursement les années à faible sinistralité (~60% des groupes en bénéficient)",
+      "Administration quotidienne externalisée à un tiers, moins de charge pour l'entreprise"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Tarification non publique, nécessite un devis personnalisé",
+      "Programme autofinancé qui implique un risque résiduel malgré l'assurance stop-loss",
+      "Pertinent uniquement pour les entreprises basées aux États-Unis"
     ],
     "bestFor": [
       "all"
@@ -6499,14 +6499,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu es une entreprise américaine de 2 à 500 employés cherchant à réduire le coût de la couverture santé",
+        "Tu es à l'aise avec le risque résiduel d'un programme autofinancé malgré le stop-loss"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton entreprise n'est pas basée aux États-Unis",
+        "Tu préfères la prévisibilité totale d'une assurance entièrement assurée"
       ],
-      "threshold": "Gratuit, à garder si utile"
+      "threshold": "Pertinent pour des PME américaines qui acceptent un compromis risque/coût ; compare avec un courtier indépendant."
     },
     "alternatives": [],
     "seo": {
@@ -6528,13 +6528,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "allstate",
-    "shortDescriptionEn": "Provides small business health insurance plans in the United States.",
-    "longDescription": "Allstate, c'est fournit des plans de santé pour petites entreprises aux États-Unis. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en insurance, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Allstate is provides small business health insurance plans in the United States. Free to start, paid plans for more. Built for B2B consultants and SaaS founders.\n\nSpecialized in insurance, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: prices to be verified based on usage. Free, keep it if it's useful.",
-    "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
-    },
+    "shortDescriptionEn": "Group health plans for small and mid-sized American businesses, via Allstate Benefits.",
+    "longDescription": "Allstate Benefits propose des plans de santé collectifs pour les entreprises de 2 à 500 employés aux États-Unis, avec un programme autofinancé (Self-Funded) souvent plus économique qu'une assurance traditionnelle entièrement assurée. L'administration quotidienne (service client, traitement des sinistres) est gérée par un tiers administrateur.\n\nUne assurance stop-loss protège l'entreprise en cas de sinistres plus élevés que prévu, et environ 60% des groupes reçoivent un remboursement les années où les sinistres sont inférieurs aux prévisions. Ce n'est pas un logiciel SaaS mais un service d'assurance — la comparaison se fait avec d'autres assureurs, pas d'autres outils.",
+    "longDescriptionEn": "Allstate Benefits offers group health plans for businesses with 2 to 500 employees in the US, with a Self-Funded program often more affordable than traditional fully-insured coverage. Day-to-day administration (customer service, claims processing) is handled by a third-party administrator.\n\nStop-loss insurance protects the business against higher-than-expected claims, and about 60% of groups receive a refund in years when claims are lower than projected. This isn't SaaS software but an insurance service — the comparison is with other insurers, not other tools.",
+    "pricingEn": "Custom pricing depending on company size and chosen coverage level.",
     "pricing_v5": {
       "cautions": [
         "confirm_if_paid_plan_is_really_used"
@@ -6554,24 +6551,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're a US business of 2 to 500 employees looking to reduce health coverage costs",
+        "You're comfortable with the residual risk of a self-funded program despite stop-loss"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Your business isn't US-based",
+        "You prefer the full predictability of fully-insured coverage"
       ],
-      "threshold": "Free, keep it if it's useful"
+      "threshold": "Worth it for US SMBs accepting a risk/cost trade-off; compare with an independent broker."
     },
     "prosEn": [
-      "Specialized in insurance",
-      "Professional interface"
+      "Self-funded program often more affordable than fully-insured coverage",
+      "Possible refund in low-claims years (~60% of groups benefit)",
+      "Day-to-day administration outsourced to a third party, less burden on the business"
     ],
     "consEn": [
-      "Prices to be verified based on usage"
+      "Pricing not public, requires a custom quote",
+      "Self-funded program carries residual risk despite stop-loss insurance",
+      "Only relevant for US-based businesses"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Offrir une couverture santé collective à une petite équipe de 2 à 500 employés",
+      "Réduire le coût de la couverture santé via un programme autofinancé",
+      "Externaliser l'administration des sinistres santé à un tiers"
+    ],
+    "useCasesEn": [
+      "Offer group health coverage to a small team of 2 to 500 employees",
+      "Reduce health coverage costs via a self-funded program",
+      "Outsource health claims administration to a third party"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -7817,21 +7825,21 @@
   {
     "id": "auvik",
     "name": "Auvik",
-    "shortDescription": "Plateforme de gestion IT pour les réseaux et infrastructures.",
-    "description": "Auvik, c'est plateforme de gestion IT pour les réseaux et infrastructures. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en IT management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "shortDescription": "Monitoring réseau automatisé avec cartographie en temps réel, pour équipes IT.",
+    "description": "Auvik cartographie automatiquement l'infrastructure réseau et la met à jour en temps réel, avec plus de 64 alertes préconfigurées et un accès distant directement intégré.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
-    },
+    "pricing": "Tarification par appareil facturable (firewalls, switches, routeurs) ; utilisateurs et sites illimités inclus. Essai gratuit 14 jours sans carte bancaire.",
     "website": "https://auvik.com",
     "affiliateLink": "https://auvik.com",
     "pros": [
-      "Spécialisé en IT management",
-      "Interface professionnelle"
+      "Cartographie réseau automatique qui se met à jour en temps réel",
+      "Interface intuitive qui demande peu de formation pour démarrer",
+      "Tarification prévisible par appareil avec utilisateurs et sites illimités"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Coût qui grimpe pour des réseaux avec beaucoup d'équipements facturables",
+      "Interface parfois restrictive pour des scénarios de monitoring très spécifiques",
+      "Aucune application mobile, monitoring limité en déplacement"
     ],
     "bestFor": [
       "all"
@@ -7842,7 +7850,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -7852,14 +7860,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu gères l'infrastructure réseau d'une PME ou de clients en tant que MSP",
+        "Ton réseau a un nombre raisonnable d'appareils facturables"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin de monitoring mobile pour des interventions en déplacement",
+        "Ton réseau compte énormément d'équipements facturables, rendant le coût élevé"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Solide pour la majorité des PME ; calcule le coût avec le nombre réel d'appareils facturables."
     },
     "alternatives": [],
     "seo": {
@@ -7881,13 +7889,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "auvik",
-    "shortDescriptionEn": "IT management platform for networks and infrastructure.",
-    "longDescription": "Auvik, c'est plateforme de gestion IT pour les réseaux et infrastructures. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en IT management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "Auvik is iT management platform for networks and infrastructure. Starting at €10/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in IT management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €10/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
-    },
+    "shortDescriptionEn": "Automated network monitoring with real-time mapping, for IT teams.",
+    "longDescription": "Auvik cartographie automatiquement l'infrastructure réseau et la met à jour en temps réel à chaque connexion ou déconnexion d'appareil, avec plus de 64 alertes préconfigurées et un accès distant (terminal, navigateur, tunnel) directement intégré.\n\nLa tarification au nombre d'appareils facturables (firewall, switches, routeurs — pas les postes de travail) reste prévisible pour un réseau standard, mais grimpe pour des environnements avec beaucoup d'équipements réseau. Pas d'application mobile pour le monitoring en déplacement.",
+    "longDescriptionEn": "Auvik automatically maps network infrastructure and updates it in real time with every device connection or disconnection, with over 64 preconfigured alerts and remote access (terminal, browser, tunnel) directly built in.\n\nPricing by billable device count (firewall, switches, routers — not workstations) remains predictable for a standard network, but rises for environments with many network devices. No mobile app for on-the-go monitoring.",
+    "pricingEn": "Billed per device count (firewalls, switches, routers); unlimited users and sites included. 14-day free trial with no credit card.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -7905,24 +7910,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You manage network infrastructure for an SMB or as an MSP for clients",
+        "Your network has a reasonable number of billable devices"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need mobile monitoring for on-site interventions",
+        "Your network has very many billable devices, making cost high"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Solid for most SMBs; calculate the cost with your real billable device count."
     },
     "prosEn": [
-      "Specialized in IT management",
-      "Professional interface"
+      "Automatic network mapping that updates in real time",
+      "Intuitive interface requiring little training to start",
+      "Predictable per-device pricing with unlimited users and sites"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "Cost rises for networks with many billable devices",
+      "Interface sometimes restrictive for very specific monitoring scenarios",
+      "No mobile app, limited monitoring on the go"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Cartographier et surveiller l'infrastructure réseau d'une PME ou d'un client MSP",
+      "Sauvegarder automatiquement les configurations réseau et détecter les changements non autorisés",
+      "Accéder à distance aux équipements réseau via terminal ou tunnel sécurisé"
+    ],
+    "useCasesEn": [
+      "Map and monitor the network infrastructure of an SMB or MSP client",
+      "Automatically back up network configs and detect unauthorized changes",
+      "Remotely access network devices via terminal or secure tunnel"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -9847,21 +9863,21 @@
   {
     "id": "brand24",
     "name": "Brand24",
-    "shortDescription": "Outil de veille médiatique pour suivre les mentions de marque en ligne.",
-    "description": "Brand24, c'est outil de veille médiatique pour suivre les mentions de marque en ligne. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en brand monitoring, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Veille de marque en temps réel sur réseaux sociaux, presse et forums, avec analyse de sentiment.",
+    "description": "Brand24 surveille les mentions de marque en temps réel sur plus de 25 millions de sources (réseaux sociaux, presse, forums), avec une analyse de sentiment automatique.",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "À partir de 119$/mois. Essai gratuit de 14 jours sans carte bancaire.",
     "website": "https://brand24.com",
     "affiliateLink": "https://brand24.com",
     "pros": [
-      "Spécialisé en brand monitoring",
-      "Interface professionnelle"
+      "Mise en route rapide, opérationnel en quelques minutes sans formation",
+      "Prix nettement inférieur aux solutions de veille enterprise",
+      "Détection vocale des mentions dans les vidéos YouTube, fonctionnalité rare"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Pas d'identification d'influenceurs au-delà de métriques basiques",
+      "Analyse de sentiment qui peut mal interpréter le sarcasme ou un contexte complexe",
+      "Aucune fonctionnalité de publication ou planification — uniquement de la veille"
     ],
     "bestFor": [
       "all"
@@ -9872,7 +9888,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 104.24,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -9882,14 +9898,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux surveiller ta réputation en ligne sans le coût d'une solution enterprise",
+        "Tu n'as pas besoin de fonctionnalités de publication dans le même outil"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'identifier des influenceurs en profondeur — d'autres outils sont plus complets",
+        "Tu veux un outil tout-en-un avec publication et planification incluses"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Bon rapport qualité/prix pour la veille de marque seule ; combine avec un outil de publication séparé si besoin."
     },
     "alternatives": [],
     "seo": {
@@ -9911,13 +9927,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "brand24",
-    "shortDescriptionEn": "Media monitoring tool to track brand mentions online.",
-    "longDescription": "Brand24, c'est outil de veille médiatique pour suivre les mentions de marque en ligne. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en brand monitoring, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Brand24 is media monitoring tool to track brand mentions online. Starting at €15/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in brand monitoring, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Real-time brand monitoring across social media, news, and forums, with sentiment analysis.",
+    "longDescription": "Brand24 surveille les mentions de marque en temps réel sur plus de 25 millions de sources (réseaux sociaux, presse, forums), avec une analyse de sentiment automatique et, depuis 2026, une détection des mentions vocales dans des vidéos YouTube avec horodatage.\n\nSon prix d'entrée (119$/mois) reste nettement inférieur aux solutions enterprise, et la mise en route est rapide. Ce n'est pas un outil tout-en-un : aucune fonctionnalité de publication, planification ou gestion de commentaires — uniquement de la veille.",
+    "longDescriptionEn": "Brand24 monitors brand mentions in real time across over 25 million sources (social media, news, forums), with automatic sentiment analysis and, since 2026, voice mention detection in YouTube videos with timestamps.\n\nIts entry price ($119/month) remains notably lower than enterprise solutions, and setup is fast. It's not an all-in-one tool: no publishing, scheduling, or comment management features — monitoring only.",
+    "pricingEn": "From $119/month. 14-day free trial with no credit card.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -9935,24 +9948,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You want to monitor your online reputation without enterprise solution costs",
+        "You don't need publishing features in the same tool"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need deep influencer identification — other tools are more complete",
+        "You want an all-in-one tool with publishing and scheduling included"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Good value for monitoring alone; combine with a separate publishing tool if needed."
     },
     "prosEn": [
-      "Specialized in brand monitoring",
-      "Professional interface"
+      "Fast setup, operational in minutes with no training",
+      "Notably lower price than enterprise monitoring solutions",
+      "Voice mention detection in YouTube videos, a rare feature"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "No influencer identification beyond basic metrics",
+      "Sentiment analysis can misinterpret sarcasm or complex context",
+      "No publishing or scheduling features — monitoring only"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Surveiller les mentions de marque en temps réel pour réagir rapidement",
+      "Suivre le sentiment des conversations autour d'un lancement de produit",
+      "Détecter des mentions vocales de marque dans des vidéos YouTube"
+    ],
+    "useCasesEn": [
+      "Monitor brand mentions in real time to react quickly",
+      "Track sentiment of conversations around a product launch",
+      "Detect spoken brand mentions in YouTube videos"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -9980,21 +10004,21 @@
   {
     "id": "breezy-hr",
     "name": "Breezy HR",
-    "shortDescription": "Logiciel de recrutement de bout en bout pour attirer et embaucher des talents.",
-    "description": "Breezy HR, c'est logiciel de recrutement de bout en bout pour attirer et embaucher des talents. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en recruiting, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Logiciel de recrutement (ATS) avec pipelines personnalisables et diffusion multi-jobboards.",
+    "description": "Breezy HR suit les candidats à travers des pipelines de recrutement personnalisables, diffuse les offres sur plusieurs jobboards et réseaux sociaux simultanément, et propose des entretiens vidéo intégrés.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Gratuit (Bootstrap) ; Startup 157$/mois ; Growth 273$/mois ; Business 439$/mois (annuel ; facturation mensuelle plus chère). Utilisateurs et postes illimités sur tous les plans payants.",
     "website": "https://breezy.hr",
     "affiliateLink": "https://breezy.hr",
     "pros": [
-      "Spécialisé en recruiting",
-      "Interface professionnelle"
+      "UX saluée, mise en place rapide même pour des équipes RH sans expertise technique",
+      "Diffusion automatique des offres sur plusieurs jobboards en un clic",
+      "Utilisateurs et postes illimités sur tous les plans payants"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Intégrations HRIS et gestion d'offres réservées au plan Business le plus cher (439$/mois)",
+      "Profondeur de reporting limitée comparée aux ATS plus complets",
+      "Quelques avis rapportent des bugs et des ralentissements"
     ],
     "bestFor": [
       "all"
@@ -10005,7 +10029,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 137.53,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -10015,14 +10039,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu recrutes régulièrement et veux un ATS simple à mettre en place",
+        "Tu n'as pas besoin d'intégrations HRIS poussées (sinon prévois le plan Business)"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'un reporting de recrutement très poussé",
+        "Le budget pour le plan Business (439$/mois) dépasse ce que justifie ton volume de recrutement"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Bon choix pour un recrutement régulier sans besoins HRIS complexes ; vérifie le coût du plan Business si nécessaire."
     },
     "alternatives": [],
     "seo": {
@@ -10044,13 +10068,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "breezy-hr",
-    "shortDescriptionEn": "End-to-end recruitment software to attract and hire talent.",
-    "longDescription": "Breezy HR, c'est logiciel de recrutement de bout en bout pour attirer et embaucher des talents. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en recruiting, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Breezy HR is end-to-end recruitment software to attract and hire talent. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in recruiting, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Recruiting software (ATS) with customizable pipelines and multi-job-board distribution.",
+    "longDescription": "Breezy HR suit les candidats à travers des pipelines de recrutement personnalisables, diffuse les offres sur plusieurs jobboards et réseaux sociaux simultanément, et propose des entretiens vidéo intégrés avec planification automatique pour éviter les allers-retours.\n\nLa simplicité d'usage est son principal atout (UX saluée, mise en place rapide), mais les fonctionnalités avancées (intégrations HRIS, gestion d'offres) sont réservées au plan Business le plus cher, et le reporting reste moins poussé que des ATS plus complets.",
+    "longDescriptionEn": "Breezy HR tracks candidates through customizable recruiting pipelines, distributes job postings across multiple job boards and social media simultaneously, and offers built-in video interviews with automatic scheduling to avoid back-and-forth.\n\nEase of use is its main strength (praised UX, quick setup), but advanced features (HRIS integrations, offer management) are reserved for the more expensive Business plan, and reporting remains less advanced than fuller ATS platforms.",
+    "pricingEn": "Free (Bootstrap); Startup $157/month; Growth $273/month; Business $439/month (annual; monthly billing more expensive). Unlimited users and positions on all paid plans.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -10068,24 +10089,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You recruit regularly and want an ATS that's simple to set up",
+        "You don't need deep HRIS integrations (otherwise plan for the Business tier)"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need very advanced recruiting reporting",
+        "The Business plan budget ($439/month) exceeds what your hiring volume justifies"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Good choice for regular hiring with no complex HRIS needs; check Business plan cost if needed."
     },
     "prosEn": [
-      "Specialized in recruiting",
-      "Professional interface"
+      "Praised UX, quick setup even for HR teams with no technical expertise",
+      "Automatic job posting distribution across multiple boards in one click",
+      "Unlimited users and positions on all paid plans"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "HRIS integrations and offer management reserved for the more expensive Business plan ($439/month)",
+      "Limited reporting depth compared to fuller ATS platforms",
+      "Some reviews report bugs and slowdowns"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Diffuser une offre d'emploi sur plusieurs jobboards simultanément depuis un seul outil",
+      "Suivre des candidats à travers un pipeline de recrutement personnalisé",
+      "Mener des entretiens vidéo intégrés sans outil de visio séparé"
+    ],
+    "useCasesEn": [
+      "Distribute a job posting across multiple job boards simultaneously from one tool",
+      "Track candidates through a customized recruiting pipeline",
+      "Conduct built-in video interviews with no separate video tool"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -13703,21 +13735,21 @@
   {
     "id": "coast",
     "name": "Coast",
-    "shortDescription": "Carte carburant intelligente et gestion des dépenses pour entreprises.",
-    "description": "Coast, c'est carte carburant intelligente et gestion des dépenses pour entreprises. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les DAF et responsables finance.\n\nSpécialisé en expense management, et interface professionnelle. Gain de temps estimé : 2h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "Carte carburant et carte d'entreprise avec contrôle des dépenses pour flottes de véhicules.",
+    "description": "Coast combine carte carburant et carte d'entreprise pour les sociétés avec des flottes de véhicules, avec des limites de dépense personnalisables et un blocage des transactions suspectes basé sur la géolocalisation.",
     "category": "finance",
-    "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
-    },
+    "pricing": "4$/utilisateur/mois. Cashback de 1% sur les dépenses (carburant, maintenance, logiciels).",
     "website": "https://coastpay.com",
     "affiliateLink": "https://coastpay.com",
     "pros": [
-      "Spécialisé en expense management",
-      "Interface professionnelle"
+      "Prix très bas (4$/utilisateur/mois) pour une carte carburant + entreprise avec contrôles",
+      "Blocage de transactions suspectes basé sur la géolocalisation et le niveau du réservoir",
+      "Synchronisation comptable directe (QuickBooks, NetSuite, Sage Intacct), zéro note de frais manuelle"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Pensé spécifiquement pour des flottes de véhicules — moins pertinent sans véhicules d'entreprise",
+      "Fonctionnalités de contrôle des dépenses générales moins poussées que des outils comme Ramp ou Brex",
+      "Marché principalement nord-américain"
     ],
     "bestFor": [
       "all"
@@ -13728,7 +13760,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 3.5,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "0€/mois"
@@ -13738,14 +13770,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Ton entreprise gère une flotte de véhicules avec des dépenses carburant et terrain régulières",
+        "Tu veux éliminer les notes de frais manuelles via une synchronisation comptable directe"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton entreprise n'a pas de flotte de véhicules — des outils plus généralistes comme Ramp conviennent mieux",
+        "Tu es hors d'Amérique du Nord"
       ],
-      "threshold": "Gratuit, à garder si utile"
+      "threshold": "Excellent rapport qualité/prix spécifiquement pour les flottes de véhicules en Amérique du Nord."
     },
     "alternatives": [],
     "seo": {
@@ -13767,13 +13799,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "coast",
-    "shortDescriptionEn": "Smart fuel card and expense management for businesses.",
-    "longDescription": "Coast, c'est carte carburant intelligente et gestion des dépenses pour entreprises. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les DAF et responsables finance.\n\nSpécialisé en expense management, et interface professionnelle. Gain de temps estimé : 2h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Coast is smart fuel card and expense management for businesses. Free to start, paid plans for more. Built for B2B consultants and CFOs and finance managers.\n\nSpecialized in expense management, and professional interface. Estimated time saving: 2h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. Free, worth keeping if found useful.",
-    "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
-    },
+    "shortDescriptionEn": "Fuel card and corporate card with spend control for vehicle fleets.",
+    "longDescription": "Coast combine carte carburant et carte d'entreprise pour les sociétés avec des flottes de véhicules, avec des limites de dépense personnalisables par conducteur, véhicule ou catégorie de commerçant, et un blocage des transactions suspectes basé sur la géolocalisation GPS et le niveau du réservoir.\n\nÀ seulement 4$/utilisateur/mois, c'est l'une des solutions les moins chères de la catégorie, avec une synchronisation comptable directe vers QuickBooks, NetSuite ou Sage Intacct qui élimine les notes de frais manuelles.",
+    "longDescriptionEn": "Coast combines a fuel card and corporate card for companies with vehicle fleets, with customizable spend limits by driver, vehicle, or merchant category, and suspicious transaction blocking based on GPS location and fuel tank level.\n\nAt just $4/user/month, it's one of the cheapest solutions in the category, with direct accounting sync to QuickBooks, NetSuite, or Sage Intacct that eliminates manual expense reports.",
+    "pricingEn": "$4/user/month. 1% cashback on spend (fuel, maintenance, software).",
     "pricing_v5": {
       "cautions": [
         "confirm_if_paid_plan_is_really_used"
@@ -13793,24 +13822,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your business manages a vehicle fleet with regular fuel and field expenses",
+        "You want to eliminate manual expense reports via direct accounting sync"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Your business has no vehicle fleet — more general tools like Ramp fit better",
+        "You're outside North America"
       ],
-      "threshold": "Free, worth keeping if found useful"
+      "threshold": "Excellent value specifically for vehicle fleets in North America."
     },
     "prosEn": [
-      "Specialized in expense management",
-      "Professional interface"
+      "Very low price ($4/user/month) for a fuel + corporate card with controls",
+      "Suspicious transaction blocking based on geolocation and fuel tank level",
+      "Direct accounting sync (QuickBooks, NetSuite, Sage Intacct), zero manual expense reports"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Specifically designed for vehicle fleets — less relevant without company vehicles",
+      "General spend control features less advanced than tools like Ramp or Brex",
+      "Mainly North American market"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Contrôler les dépenses carburant et terrain d'une flotte de véhicules d'entreprise",
+      "Bloquer automatiquement des transactions suspectes via la géolocalisation",
+      "Synchroniser les dépenses directement avec son logiciel comptable sans saisie manuelle"
+    ],
+    "useCasesEn": [
+      "Control fuel and field spending for a company vehicle fleet",
+      "Automatically block suspicious transactions via geolocation",
+      "Sync spending directly with accounting software with no manual entry"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 2,
     "downgradePlan": null,
@@ -13935,21 +13975,21 @@
   {
     "id": "cognism",
     "name": "Cognism",
-    "shortDescription": "Plateforme d’intelligence commerciale B2B (contacts et données entreprises).",
-    "description": "Cognism, c'est plateforme d’intelligence commerciale B2B (contacts et données entreprises). À partir de 10€/mois. Pensé pour les fondateurs SaaS et les consultants B2B.\n\nSpécialisé en lead generation, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "shortDescription": "Base de données B2B avec numéros mobiles vérifiés, orientée conformité RGPD pour l'Europe.",
+    "description": "Cognism se différencie par ses numéros mobiles vérifiés par téléphone, particulièrement fort sur le Royaume-Uni et l'Europe — un vrai atout pour des équipes qui font du cold calling intensif.",
     "category": "communication",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
-    },
+    "pricing": "Sur devis uniquement. Grow (5 utilisateurs) ≈ 22500$/an ; Elevate ≈ 37500$/an+. Onboarding 500-1500$, +10-15% à chaque renouvellement. Négocie : des remises de 28-52% sont courantes.",
     "website": "https://cognism.com",
     "affiliateLink": "https://cognism.com",
     "pros": [
-      "Spécialisé en lead generation",
-      "Interface professionnelle"
+      "Numéros mobiles vérifiés par téléphone avec précision revendiquée de 98%",
+      "Amélioration de taux de connexion revendiquée de 3x pour le cold calling",
+      "Forte conformité RGPD/CCPA, populaire chez les équipes sales européennes"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Aucun prix public, négociation commerciale obligatoire pour connaître le coût réel",
+      "Coût final souvent 40-60% au-dessus du devis initial avec onboarding et add-ons",
+      "Couverture plus faible hors Europe ; limite d'usage à ~2000 fiches/utilisateur/mois"
     ],
     "bestFor": [
       "consultant",
@@ -13961,7 +14001,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 1642.5,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -13972,14 +14012,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Ton équipe fait du cold calling intensif sur un marché européen ou UK",
+        "Tu négocies activement le devis initial (28-52% de remise possible)"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu cibles principalement un marché hors Europe où la couverture est plus faible",
+        "Le budget annuel à 5 chiffres ne se justifie pas pour ton volume de prospection"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Pertinent pour du cold calling B2B intensif en Europe ; négocie toujours le premier devis."
     },
     "alternatives": [],
     "seo": {
@@ -14001,13 +14041,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "cognism",
-    "shortDescriptionEn": "B2B sales intelligence platform (contact and company data).",
-    "longDescription": "Cognism, c'est plateforme d’intelligence commerciale B2B (contacts et données entreprises). À partir de 10€/mois. Pensé pour les fondateurs SaaS et les consultants B2B.\n\nSpécialisé en lead generation, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "Cognism is b2B sales intelligence platform (contact and company data). Starting at €10/month. Built for SaaS founders and B2B consultants.\n\nSpecialized in lead generation, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €10/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
-    },
+    "shortDescriptionEn": "B2B database with verified mobile numbers, GDPR-compliance-oriented for Europe.",
+    "longDescription": "Cognism se différencie par ses numéros mobiles vérifiés par téléphone (\"Diamond Data\") avec un taux de précision revendiqué de 98%, particulièrement fort sur le Royaume-Uni et l'Europe — un vrai atout pour des équipes qui font du cold calling intensif, avec une amélioration de taux de connexion revendiquée de 3x.\n\nLe point faible : aucun prix public, il faut passer par une démo commerciale, et le coût réel grimpe souvent de 40-60% au-dessus du devis initial une fois onboarding et add-ons comptés (un plan Grow à 5 utilisateurs tourne autour de 22500$/an). La couverture hors Europe reste plus faible.",
+    "longDescriptionEn": "Cognism differentiates itself with phone-verified mobile numbers (\"Diamond Data\") with a claimed 98% accuracy rate, particularly strong in the UK and Europe — a real asset for teams doing intensive cold calling, with a claimed 3x connect rate improvement.\n\nThe weak point: no public pricing, you need to go through a sales demo, and the real cost often rises 40-60% above the initial quote once onboarding and add-ons are counted (a 5-user Grow plan runs around $22,500/year). Coverage outside Europe remains weaker.",
+    "pricingEn": "Custom quote only. Grow (5 users) ≈ $22,500/year; Elevate ≈ $37,500+/year. Onboarding $500-1,500, +10-15% at each renewal. Negotiate: 28-52% discounts are common.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -14025,24 +14062,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your team does intensive cold calling in a European or UK market",
+        "You actively negotiate the initial quote (28-52% discount possible)"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You mainly target a non-European market with weaker coverage",
+        "The five-figure annual budget isn't justified by your prospecting volume"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Worth it for intensive B2B cold calling in Europe; always negotiate the first quote."
     },
     "prosEn": [
-      "Specialized in lead generation",
-      "Professional interface"
+      "Phone-verified mobile numbers with claimed 98% accuracy",
+      "Claimed 3x connect rate improvement for cold calling",
+      "Strong GDPR/CCPA compliance, popular among European sales teams"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "No public pricing, mandatory sales negotiation to know the real cost",
+      "Final cost often 40-60% above the initial quote with onboarding and add-ons",
+      "Weaker coverage outside Europe; usage cap of ~2,000 records/user/month"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Faire du cold calling B2B avec des numéros mobiles vérifiés en Europe",
+      "Enrichir automatiquement des leads dans le CRM lors de leur entrée",
+      "Prospecter en restant conforme RGPD pour un marché européen"
+    ],
+    "useCasesEn": [
+      "Do B2B cold calling with verified mobile numbers in Europe",
+      "Automatically enrich leads in the CRM as they enter",
+      "Prospect while staying GDPR-compliant for a European market"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -21152,21 +21200,21 @@
   {
     "id": "glide",
     "name": "Glide",
-    "shortDescription": "Plateforme pour créer des applications métier personnalisées sans code.",
-    "description": "Glide, c'est plateforme pour créer des applications métier personnalisées sans code. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les builders IA.\n\nSpécialisé en app builder, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Transforme un Google Sheets ou Airtable en application mobile sans coder.",
+    "description": "Glide connecte une feuille de calcul (Google Sheets, Excel, Airtable) à un éditeur visuel pour produire une app avec une interface mobile soignée, avec une IA qui génère une première version à partir d'une simple description.",
     "category": "automation",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Plan gratuit pour usage personnel ; Explorer avec workflows et IA ; Maker pour MVP (utilisateurs personnels illimités) ; Business à tarification par utilisateur.",
     "website": "https://glideapps.com",
     "affiliateLink": "https://glideapps.com",
     "pros": [
-      "Spécialisé en app builder",
-      "Interface professionnelle"
+      "Apps fonctionnelles construites en quelques heures ou semaines sans coder",
+      "Intégration native avec Google Sheets, pratique pour des données déjà existantes",
+      "Communauté active qui partage templates et conseils"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Plus cher que beaucoup de plateformes no-code similaires",
+      "Pas de publication directe sur l'App Store ou Google Play",
+      "Notifications push, bouton annuler et certaines fonctions de base manquantes ; lock-in fort si la plateforme change"
     ],
     "bestFor": [
       "all"
@@ -21177,7 +21225,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 25,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -21187,14 +21235,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux un outil interne ou portail léger basé sur une feuille de calcul existante",
+        "Tu n'as pas besoin de publication native sur les stores d'applications"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu veux publier une vraie app sur l'App Store ou Google Play",
+        "Tu gères de gros volumes de données ou des automatisations complexes"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent pour des outils internes et portails légers ; pas pour une app grand public sur les stores."
     },
     "alternatives": [],
     "seo": {
@@ -21216,13 +21264,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "glide",
-    "shortDescriptionEn": "Platform for creating custom business applications without code.",
-    "longDescription": "Glide, c'est plateforme pour créer des applications métier personnalisées sans code. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les builders IA.\n\nSpécialisé en app builder, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Glide is platform for creating custom business applications without code. Starting at €15/month. Built for SaaS founders and AI builders.\n\nSpecialized in app builder, and professional interface. Estimated time saving: 8h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to check based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Turns a Google Sheets or Airtable into a mobile app with no coding.",
+    "longDescription": "Glide connecte une feuille de calcul (Google Sheets, Excel, Airtable) à un éditeur visuel pour produire une app avec une interface mobile soignée, avec une IA qui génère une première version à partir d'une simple description.\n\nC'est excellent pour des outils internes, tableaux de bord et portails clients légers, mais ne publie pas directement sur l'App Store ou Google Play, et rencontre des limites de performance sur de gros volumes de données ou des automatisations complexes. Si Glide change ses prix ou ferme, ton app disparaît avec — il faudrait tout reconstruire ailleurs.",
+    "longDescriptionEn": "Glide connects a spreadsheet (Google Sheets, Excel, Airtable) to a visual editor to produce an app with a polished mobile interface, with AI generating a first version from a simple description.\n\nIt's excellent for internal tools, dashboards, and lightweight client portals, but doesn't publish directly to the App Store or Google Play, and hits performance limits on large data volumes or complex automations. If Glide changes pricing or shuts down, your app goes with it — you'd have to rebuild elsewhere.",
+    "pricingEn": "Free plan for personal use; Explorer with workflows and AI; Maker for MVPs (unlimited personal users); Business with per-user pricing.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -21240,24 +21285,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You want an internal tool or lightweight portal based on an existing spreadsheet",
+        "You don't need native publishing on app stores"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You want to publish a real app on the App Store or Google Play",
+        "You manage large data volumes or complex automations"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it for internal tools and lightweight portals; not for a consumer app on the stores."
     },
     "prosEn": [
-      "Specialized in app builder",
-      "Professional interface"
+      "Functional apps built in hours or a few weeks with no coding",
+      "Native Google Sheets integration, handy for already existing data",
+      "Active community sharing templates and advice"
     ],
     "consEn": [
-      "Price to check based on usage"
+      "More expensive than many similar no-code platforms",
+      "No direct publishing to the App Store or Google Play",
+      "Push notifications, undo button, and some basic features missing; strong lock-in if the platform changes"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Créer un outil interne ou tableau de bord d'équipe sans développeur",
+      "Construire un portail client léger connecté à une base de données existante",
+      "Transformer une feuille Google Sheets en app utilisable sur mobile pour une petite équipe"
+    ],
+    "useCasesEn": [
+      "Create an internal tool or team dashboard with no developer",
+      "Build a lightweight client portal connected to an existing database",
+      "Turn a Google Sheets into a mobile-usable app for a small team"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 8,
     "downgradePlan": null,
@@ -22267,21 +22323,21 @@
   {
     "id": "gorgias",
     "name": "Gorgias",
-    "shortDescription": "Service client e-commerce transformant le support en centre de profit.",
-    "description": "Gorgias, c'est service client e-commerce transformant le support en centre de profit. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les développeurs solo.\n\nSpécialisé en helpdesk, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Helpdesk e-commerce avec intégration Shopify profonde et IA de résolution automatique.",
+    "description": "Gorgias centralise les conversations client (email, chat, social, SMS) avec une intégration Shopify si profonde que les agents peuvent rembourser, modifier une commande ou gérer un abonnement directement depuis le helpdesk.",
     "category": "nocode-web",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Plans payants à partir de ~50$/mois ; chaque résolution IA coûte 0,90-1$ EN PLUS du ticket helpdesk facturé séparément. Tickets supplémentaires de 0,32 à 0,40$ selon le plan.",
     "website": "https://gorgias.com",
     "affiliateLink": "https://gorgias.com",
     "pros": [
-      "Spécialisé en helpdesk",
-      "Interface professionnelle"
+      "Intégration Shopify la plus profonde de la catégorie (remboursement, modif de commande sans changer d'outil)",
+      "Suivi du revenu généré par le support (conversions, upsells) directement dans l'outil",
+      "Couvre email, chat, social, SMS et voix dans une seule boîte de réception rapide"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Tarification double facturation pour l'IA (charge IA + ticket helpdesk séparé) qui surprend beaucoup d'équipes",
+      "Facturation au volume de tickets, pas par utilisateur — coûteux pour les boutiques à fort volume",
+      "Agent IA réservé exclusivement à Shopify malgré un helpdesk multi-plateforme"
     ],
     "bestFor": [
       "consultant",
@@ -22293,7 +22349,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 43.8,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -22304,14 +22360,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu es sur Shopify et veux que tes agents agissent sur les commandes sans changer d'outil",
+        "Tu comprends et budgètes la double facturation IA + ticket avant de t'engager"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu n'es pas sur Shopify — l'agent IA principal ne fonctionne que sur cette plateforme",
+        "Ton volume de tickets est très élevé et imprévisible, rendant le coût difficile à anticiper"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Excellent pour Shopify spécifiquement ; calcule le coût réel avec la double facturation IA avant de t'engager."
     },
     "alternatives": [],
     "seo": {
@@ -22333,13 +22389,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "gorgias",
-    "shortDescriptionEn": "E-commerce customer service transforming support into a profit center.",
-    "longDescription": "Gorgias, c'est service client e-commerce transformant le support en centre de profit. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les développeurs solo.\n\nSpécialisé en helpdesk, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Gorgias is e-commerce customer service transforming support into a profit center. Starting at €15/month. Built for SaaS founders and solo developers.\n\nSpecialized helpdesk, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "E-commerce helpdesk with deep Shopify integration and automatic resolution AI.",
+    "longDescription": "Gorgias centralise les conversations client (email, chat, social, SMS) avec une intégration Shopify si profonde que les agents peuvent rembourser, modifier une commande ou gérer un abonnement directement depuis le helpdesk, sans changer d'onglet.\n\nSa tarification est notoirement complexe : chaque interaction IA est facturée à la fois comme charge IA (0,90-1$) ET comme ticket helpdesk — un double comptage qui peut surprendre. L'agent IA reste aussi exclusivement réservé à Shopify, même si le helpdesk classique supporte d'autres plateformes.",
+    "longDescriptionEn": "Gorgias centralizes customer conversations (email, chat, social, SMS) with Shopify integration so deep that agents can refund, edit an order, or manage a subscription directly from the helpdesk, with no tab switching.\n\nIts pricing is notoriously complex: each AI interaction is billed both as an AI charge ($0.90-1) AND as a helpdesk ticket — double billing that can catch teams off guard. The AI agent also remains exclusively Shopify-only, even though the classic helpdesk supports other platforms.",
+    "pricingEn": "Paid plans from ~$50/month; each AI resolution costs $0.90-1 ON TOP OF the separately billed helpdesk ticket. Extra tickets at $0.32-0.40 depending on plan.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -22357,24 +22410,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're on Shopify and want agents to act on orders without switching tools",
+        "You understand and budget for the AI + ticket double billing before committing"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You're not on Shopify — the main AI agent only works on that platform",
+        "Your ticket volume is very high and unpredictable, making cost hard to anticipate"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Excellent for Shopify specifically; calculate the real cost with AI double billing before committing."
     },
     "prosEn": [
-      "Specialized helpdesk",
-      "Professional interface"
+      "Deepest Shopify integration in the category (refunds, order edits with no tool switching)",
+      "Tracks revenue generated by support (conversions, upsells) directly in the tool",
+      "Covers email, chat, social, SMS, and voice in one fast inbox"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "Double-billing for AI (AI charge + separate helpdesk ticket) surprises many teams",
+      "Billed by ticket volume, not per user — costly for high-volume stores",
+      "AI agent exclusively Shopify-only despite a multi-platform helpdesk"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser le support client e-commerce avec accès direct aux commandes Shopify",
+      "Automatiser des réponses fréquentes via des macros et règles de mots-clés",
+      "Mesurer le revenu généré par l'équipe support via upsells et conversions"
+    ],
+    "useCasesEn": [
+      "Centralize e-commerce customer support with direct access to Shopify orders",
+      "Automate frequent replies via macros and keyword rules",
+      "Measure revenue generated by the support team via upsells and conversions"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 5,
     "downgradePlan": null,
