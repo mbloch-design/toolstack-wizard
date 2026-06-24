@@ -172,6 +172,17 @@ export default function StickyDecisionCard({
             <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 4, letterSpacing: "0.03em" }}>
               {t("Score éditorial", "Editorial score")}
             </span>
+            {/* computeToolTrimScore is a generic heuristic (tool type,
+                substitutability, pros/cons count...) - it doesn't read the
+                verdict text. A tool can score "Mitigé" from that formula
+                while the verdict says it's genuinely good for a specific
+                profile, which reads as a contradiction. Qualify it instead
+                of changing the scoring formula for all 1109 tools. */}
+            {ts.score < 3.5 && keepItems.length > 0 && (
+              <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 2, letterSpacing: "0.01em", maxWidth: 140 }}>
+                {t("pour un usage générique, voir le verdict", "for generic use, see verdict")}
+              </span>
+            )}
           </div>
         </div>
 

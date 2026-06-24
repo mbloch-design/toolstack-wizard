@@ -41,6 +41,14 @@ export function buildToolFaqs(
     {
       q: isFr ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,
       a: (() => {
+        // Curated idealForFr/idealForEn (when present) is more specific
+        // than the generic high/medium/low branches below - use it so
+        // this answer adds nuance instead of restating "team good, solo
+        // bad" a second time in different words right after the audience
+        // section already said it. Falls back to the generic logic for
+        // every tool without it.
+        const curated = isFr ? tool.seo?.idealForFr : tool.seo?.idealForEn;
+        if (curated) return curated;
         if (tool.soloRelevance === "high") {
           return isFr
             ? `${tool.name} est particulièrement adapté aux freelances et indépendants.`

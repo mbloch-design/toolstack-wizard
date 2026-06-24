@@ -10,14 +10,47 @@ interface Props {
  * Twin "profitable if / too expensive if" card grid. Distinct from the
  * "Décision rapide" keepIf/avoidIf block above it on the page — concrete
  * usage thresholds rather than the short quick-decision reasoning, so the
- * page doesn't repeat the same argument twice. Returns null (renders
- * nothing) when the tool has no profitableIf/tooExpensiveIf data, so it's
- * silently absent on every tool besides the ones it's written for.
+ * page doesn't repeat the same argument twice.
+ *
+ * Uses verdict.profitableIf/tooExpensiveIf when curated (Asana-style,
+ * feature-fit specific). When absent, auto-generates a usage-frequency /
+ * cost-vs-time angle from defaultMonthlyPrice + betterAlternative/
+ * freeAlternative - deliberately a different axis from keepIf/avoidIf
+ * (which is about feature fit), so the auto-generated fallback doesn't
+ * duplicate "Décision rapide" either. Renders for any priced tool;
+ * returns null only for free tools with nothing to compare against.
  */
 export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
   const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
-  const profitableIf = verdict?.profitableIf;
-  const tooExpensiveIf = verdict?.tooExpensiveIf;
+  const curatedProfitable = verdict?.profitableIf;
+  const curatedTooExpensive = verdict?.tooExpensiveIf;
+
+  const price = tool.defaultMonthlyPrice || 0;
+  const altReason = (tool as any).betterAlternative?.performanceGain || (tool as any).betterAlternative?.reason;
+  const freeAlt = tool.freeAlternative;
+
+  const profitableIf = curatedProfitable?.length
+    ? curatedProfitable
+    : price > 0
+    ? [
+        t("Tu l'utilises au moins une fois par semaine", "You use it at least once a week"),
+        t(`Le coût mensuel (${Math.round(price)}€) reste minime comparé au temps que ça te fait gagner`, `The monthly cost (€${Math.round(price)}) is small next to the time it saves you`),
+      ]
+    : undefined;
+
+  const tooExpensiveIf = curatedTooExpensive?.length
+    ? curatedTooExpensive
+    : price > 0
+    ? [
+        t("Tu l'utilises moins d'une fois par mois", "You use it less than once a month"),
+        altReason
+          ? t(`Une alternative moins chère couvre déjà l'essentiel : ${altReason}`, `A cheaper alternative already covers the essentials: ${altReason}`)
+          : freeAlt
+          ? t(`${freeAlt} (gratuit) couvre déjà l'essentiel pour un usage occasionnel`, `${freeAlt} (free) already covers the essentials for occasional use`)
+          : t("Une simple version gratuite ou un outil déjà dans ta stack ferait l'affaire", "A simple free version or a tool already in your stack would do"),
+      ]
+    : undefined;
+
   if (!profitableIf?.length && !tooExpensiveIf?.length) return null;
 
   const twoCols = !!profitableIf?.length && !!tooExpensiveIf?.length;

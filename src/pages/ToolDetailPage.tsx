@@ -955,6 +955,11 @@ const ToolDetailPage = () => {
                             <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 6 }}>
                               {t("Score éditorial ToolTrim · Analyse indépendante", "ToolTrim editorial score · Independent analysis")}
                             </p>
+                            {ts.score < 3.5 && resolveVerdict(tool, lang).keepItems.length > 0 && (
+                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)", marginTop: 4 }}>
+                                {t("Score pour un usage générique : la fiche détaille les profils où c'est un bon choix.", "Score for generic use: the fiche details the profiles where it's a good fit.")}
+                              </p>
+                            )}
                           </div>
                         </div>
                         <div style={{ padding: "24px 32px" }}>
