@@ -7388,8 +7388,8 @@
   {
     "id": "asana",
     "name": "Asana",
-    "shortDescription": "Plateforme de gestion du travail pour les équipes.",
-    "description": "Asana, c'est plateforme de gestion du travail pour les équipes. À partir de 9.52€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois. Si le budget le permet, linear va plus loin.",
+    "shortDescription": "Outil de gestion de projet flexible (listes, tableaux, timeline) avec IA intégrée.",
+    "description": "Asana propose plusieurs vues de travail (listes, tableaux Kanban, timeline, calendrier) que chaque équipe peut adapter à son processus, avec Asana Intelligence qui résume les tâches et suggère des actions directement dans le flux de travail existant.\n\nSon point fort est l'équilibre entre simplicité de prise en main et richesse de personnalisation pour des workflows complexes. Le compromis : le saut de prix entre Starter et Advanced est important (jusqu'à 2,3x), et les fonctionnalités dont la plupart des équipes moyennes ont besoin se trouvent justement dans Advanced.",
     "category": "organization",
     "pricing": {
       "free": "Fonctionnalités de base",
@@ -7398,11 +7398,14 @@
     "website": "https://asana.com",
     "affiliateLink": "https://asana.com",
     "pros": [
-      "Spécialisé en project management",
-      "Interface professionnelle"
+      "Interface intuitive qui reste personnalisable pour des workflows complexes",
+      "Apps mobiles solides pour gérer ses tâches en déplacement",
+      "Collaboration centralisée : commentaires, fichiers et statuts au même endroit, moins d'allers-retours sur Slack"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Saut de prix abrupt entre Starter et Advanced (jusqu'à 2,3x, ~15000$/an pour 50 personnes en Advanced)",
+      "Courbe d'apprentissage réelle pour maîtriser sous-tâches et personnalisation avancée",
+      "Pas de chat ou de docs intégrés — tu auras toujours besoin de Slack et Notion/Google Docs en complément"
     ],
     "bestFor": [
       "all"
@@ -7423,14 +7426,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux un outil flexible qui s'adapte à plusieurs styles de travail dans l'équipe",
+        "Tu es prêt à passer en Advanced si l'équipe grandit, en anticipant le coût"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton budget ne permet pas le saut vers Advanced une fois la limite de Starter atteinte",
+        "Tu cherches un outil avec chat et docs intégrés plutôt qu'à connecter à Slack/Notion"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Excellent choix si tu anticipes le saut de prix vers Advanced ; sinon évalue ClickUp ou Monday qui regroupent plus nativement."
     },
     "alternatives": [
       "clickup",
@@ -7481,9 +7484,9 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "asana",
-    "shortDescriptionEn": "Work management platform for teams.",
-    "longDescription": "Asana, c'est plateforme de gestion du travail pour les équipes. À partir de 9.52€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois. Si le budget le permet, linear va plus loin.",
-    "longDescriptionEn": "Asana is work management platform for teams. Starting at €9.52/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage. As soon as the tool saves you more than €15/month. If budget allows, linear goes further.",
+    "shortDescriptionEn": "Flexible project management tool (lists, boards, timeline) with built-in AI.",
+    "longDescription": "Asana propose plusieurs vues de travail (listes, tableaux Kanban, timeline, calendrier) que chaque équipe peut adapter à son processus, avec Asana Intelligence qui résume les tâches et suggère des actions directement dans le flux de travail existant.\n\nSon point fort est l'équilibre entre simplicité de prise en main et richesse de personnalisation pour des workflows complexes. Le compromis : le saut de prix entre Starter et Advanced est important (jusqu'à 2,3x), et les fonctionnalités dont la plupart des équipes moyennes ont besoin se trouvent justement dans Advanced.",
+    "longDescriptionEn": "Asana offers several work views (lists, Kanban boards, timeline, calendar) that each team can adapt to its process, with Asana Intelligence summarizing tasks and suggesting actions directly within the existing workflow.\n\nIts strength is balancing ease of onboarding with rich customization for complex workflows. The trade-off: the price jump from Starter to Advanced is significant (up to 2.3x), and the features most mid-size teams need are precisely in Advanced.",
     "pricingEn": {
       "free": "Core features",
       "paid": "$10.99/user/month (Starter, annual); Advanced at $24.99/month (min. 2 users)"
@@ -7508,24 +7511,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You want a flexible tool adapting to several work styles within the team",
+        "You're ready to upgrade to Advanced as the team grows, budgeting for the cost"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Your budget doesn't allow for the jump to Advanced once Starter's limits are hit",
+        "You want built-in chat and docs rather than connecting to Slack/Notion"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Excellent choice if you plan for the Advanced price jump; otherwise consider ClickUp or Monday which bundle more natively."
     },
     "prosEn": [
-      "Specialized in project management",
-      "Professional interface"
+      "Intuitive interface that remains customizable for complex workflows",
+      "Solid mobile apps to manage tasks on the go",
+      "Centralized collaboration: comments, files, and statuses in one place, fewer Slack back-and-forths"
     ],
     "consEn": [
-      "Price to be verified depending on usage"
+      "Steep price jump from Starter to Advanced (up to 2.3x, ~$15,000/year for 50 people on Advanced)",
+      "Real learning curve to master subtasks and advanced customization",
+      "No built-in chat or docs — you'll still need Slack and Notion/Google Docs alongside it"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Gérer des projets avec plusieurs vues (liste, Kanban, timeline) selon les préférences de l'équipe",
+      "Centraliser les statuts et fichiers de projet pour réduire les échanges Slack",
+      "Automatiser des workflows répétitifs sans coder (règles, formulaires)"
+    ],
+    "useCasesEn": [
+      "Manage projects with multiple views (list, Kanban, timeline) based on team preference",
+      "Centralize project statuses and files to reduce Slack back-and-forth",
+      "Automate repetitive workflows with no coding (rules, forms)"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -9664,21 +9678,21 @@
   {
     "id": "box",
     "name": "Box",
-    "shortDescription": "Service cloud de gestion de contenu et partage de fichiers.",
-    "description": "Box, c'est service cloud de gestion de contenu et partage de fichiers. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en cloud storage, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "shortDescription": "Stockage et gestion de contenu d'entreprise avec sécurité et conformité poussées.",
+    "description": "Box se positionne comme une plateforme de gestion de contenu d'entreprise plutôt qu'un simple stockage cloud : contrôles de permissions granulaires, chiffrement, certifications de conformité, et intégrations profondes avec Microsoft 365 et Salesforce.\n\nC'est un choix pertinent pour une organisation qui manipule des documents sensibles et a besoin de contrôles de sécurité poussés ; pour un usage personnel ou une petite équipe sans ces contraintes, c'est souvent plus complexe que nécessaire face à Dropbox ou Google Drive.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
-    },
+    "pricing": "10 Go gratuits ; Business à 20$/utilisateur/mois (15$ en annuel, minimum 3 utilisateurs) ; Business Plus 33$, Enterprise 47$, Enterprise Plus 50$.",
     "website": "https://box.com",
     "affiliateLink": "https://box.com",
     "pros": [
-      "Spécialisé en cloud storage",
-      "Interface professionnelle"
+      "Contrôles de sécurité et de conformité parmi les plus poussés de la catégorie",
+      "Gestion documentaire centralisée qui réduit la confusion de versions et les fichiers dispersés",
+      "Intégration profonde avec Microsoft 365 pour éditer sans quitter Box"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Interface qui peut sembler encombrée avec autant de fonctionnalités entreprise",
+      "Performance qui peut ralentir sur des dossiers très volumineux",
+      "Coût qui s'accumule vite avec les fonctionnalités de sécurité avancées"
     ],
     "bestFor": [
       "all"
@@ -9689,7 +9703,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 17.52,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -9699,14 +9713,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Ton organisation manipule des documents sensibles nécessitant des contrôles de sécurité poussés",
+        "Tu es déjà dans l'écosystème Microsoft 365 ou Salesforce"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu cherches un stockage simple pour un usage personnel ou une petite équipe — Dropbox est plus simple",
+        "Le budget ne justifie pas des fonctionnalités de conformité que tu n'utiliseras pas"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Pertinent pour une organisation de 5 à 5000 personnes avec de vrais besoins de conformité."
     },
     "alternatives": [],
     "seo": {
@@ -9736,13 +9750,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "box",
-    "shortDescriptionEn": "Cloud content management and file sharing service.",
-    "longDescription": "Box, c'est service cloud de gestion de contenu et partage de fichiers. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en cloud storage, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "Box is cloud content management and file sharing service. Starting at €10/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in cloud storage, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €10/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
-    },
+    "shortDescriptionEn": "Enterprise content storage and management with advanced security and compliance.",
+    "longDescription": "Box se positionne comme une plateforme de gestion de contenu d'entreprise plutôt qu'un simple stockage cloud : contrôles de permissions granulaires, chiffrement, certifications de conformité, et intégrations profondes avec Microsoft 365 et Salesforce.\n\nC'est un choix pertinent pour une organisation qui manipule des documents sensibles et a besoin de contrôles de sécurité poussés ; pour un usage personnel ou une petite équipe sans ces contraintes, c'est souvent plus complexe que nécessaire face à Dropbox ou Google Drive.",
+    "longDescriptionEn": "Box positions itself as an enterprise content management platform rather than simple cloud storage: granular permission controls, encryption, compliance certifications, and deep integrations with Microsoft 365 and Salesforce.\n\nIt's a relevant choice for an organization handling sensitive documents that needs advanced security controls; for personal use or a small team without these constraints, it's often more complex than necessary compared to Dropbox or Google Drive.",
+    "pricingEn": "10GB free; Business at $20/user/month ($15 annual, 3-user minimum); Business Plus $33, Enterprise $47, Enterprise Plus $50.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -9760,24 +9771,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your organization handles sensitive documents requiring advanced security controls",
+        "You're already in the Microsoft 365 or Salesforce ecosystem"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You want simple storage for personal or small-team use — Dropbox is simpler",
+        "Budget doesn't justify compliance features you won't use"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Worth it for an organization of 5 to 5,000 people with real compliance needs."
     },
     "prosEn": [
-      "Specialized in cloud storage",
-      "Professional interface"
+      "Among the most advanced security and compliance controls in the category",
+      "Centralized document management that reduces version confusion and scattered files",
+      "Deep Microsoft 365 integration to edit without leaving Box"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "Interface that can feel cluttered with so many enterprise features",
+      "Performance can slow down on very large folders",
+      "Cost adds up quickly with advanced security features"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser des documents sensibles avec des contrôles de permission précis",
+      "Collaborer sur des fichiers avec historique de version et commentaires intégrés",
+      "Répondre à des exigences de conformité (HIPAA, RGPD) pour le stockage documentaire"
+    ],
+    "useCasesEn": [
+      "Centralize sensitive documents with precise permission controls",
+      "Collaborate on files with built-in version history and comments",
+      "Meet compliance requirements (HIPAA, GDPR) for document storage"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -13093,21 +13115,21 @@
   {
     "id": "clockify",
     "name": "Clockify",
-    "shortDescription": "Logiciel de suivi du temps (gratuit) pour équipes et projets.",
-    "description": "Clockify, c'est logiciel de suivi du temps (gratuit) pour équipes et projets. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "Suivi du temps gratuit et illimité en utilisateurs, avec montée en gamme progressive vers la facturation.",
+    "description": "Clockify propose un plan gratuit réellement illimité en utilisateurs et projets — rare dans la catégorie — avec suivi manuel ou par chronomètre, rapports de base et mode kiosque. Les fonctionnalités de facturation, approbation de feuilles de temps et géolocalisation nécessitent les plans payants.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
+    "pricing": "Gratuit (illimité en utilisateurs et projets) ; Basic 3,99$/utilisateur, Standard 5,49$, Pro 7,99$, Enterprise 14,99$ (par utilisateur/mois).",
     "website": "https://clockify.com",
     "affiliateLink": "https://clockify.com",
     "pros": [
-      "Spécialisé en time tracking",
-      "Interface professionnelle"
+      "Plan gratuit réellement illimité en utilisateurs, rare dans la catégorie",
+      "Interface simple et intuitive, prise en main rapide même pour des non-techniques",
+      "Plans payants nettement moins chers que Toggl Track ou Timely à fonctionnalités égales"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Coût qui grimpe vite à l'échelle (20 utilisateurs en Pro ≈ 160$/mois)",
+      "Pas de géofencing, auto clock-out ou photo de pointage — accountability terrain limitée",
+      "Fonctionnalités avancées (paie, personnalisation poussée) manquantes pour les grandes équipes"
     ],
     "bestFor": [
       "all"
@@ -13118,7 +13140,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -13128,14 +13150,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux un suivi du temps gratuit et illimité en utilisateurs pour démarrer",
+        "Tu n'as pas besoin de géofencing ou de contrôle terrain poussé"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu gères une équipe terrain nécessitant géolocalisation et photo de pointage",
+        "Ton équipe est grande et le coût par utilisateur des plans payants devient significatif"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Excellent choix gratuit pour démarrer ; au-delà de quelques dizaines d'utilisateurs, compare le coût total avec Toggl."
     },
     "alternatives": [],
     "seo": {
@@ -13157,10 +13179,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "clockify",
-    "shortDescriptionEn": "Free time tracking software for teams and projects.",
-    "longDescription": "Clockify, c'est logiciel de suivi du temps (gratuit) pour équipes et projets. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "Clockify is free time tracking software for teams and projects. Starting at €20/month. Built for B2B consultants and SaaS founders.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Free, unlimited-user time tracking, with a gradual upgrade path toward invoicing.",
+    "longDescription": "Clockify propose un plan gratuit réellement illimité en utilisateurs et projets — rare dans la catégorie — avec suivi manuel ou par chronomètre, rapports de base et mode kiosque. Les fonctionnalités de facturation, approbation de feuilles de temps et géolocalisation nécessitent les plans payants (3,99 à 14,99$/utilisateur/mois selon le niveau).\n\nLe compromis : le coût grimpe vite à l'échelle (20 utilisateurs en Pro = ~160$/mois), et certaines fonctions d'accountability terrain (géofencing, photo à la pointeuse) manquent même sur les plans hauts.",
+    "longDescriptionEn": "Clockify offers a genuinely unlimited free plan for users and projects — rare in the category — with manual or stopwatch tracking, basic reports, and kiosk mode. Invoicing, timesheet approval, and GPS features require paid plans ($3.99 to $14.99/user/month depending on tier).\n\nThe trade-off: cost rises quickly at scale (20 users on Pro = ~$160/month), and some field accountability features (geofencing, clock-in photos) are missing even on higher tiers.",
+    "pricingEn": "Free (unlimited users and projects); Basic $3.99/user, Standard $5.49, Pro $7.99, Enterprise $14.99 (per user/month).",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -13176,11 +13198,37 @@
     },
     "websiteUrl": "https://clockify.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You want free, unlimited-user time tracking to start",
+        "You don't need geofencing or advanced field control"
+      ],
+      "avoidIf": [
+        "You manage a field team needing geolocation and clock-in photos",
+        "Your team is large and the per-user cost of paid plans becomes significant"
+      ],
+      "threshold": "Excellent free choice to start; beyond a few dozen users, compare total cost with Toggl."
+    },
+    "prosEn": [
+      "Genuinely unlimited free plan for users, rare in the category",
+      "Simple, intuitive interface, quick to learn even for non-technical staff",
+      "Paid plans notably cheaper than Toggl Track or Timely for equivalent features"
+    ],
+    "consEn": [
+      "Cost rises quickly at scale (20 users on Pro ≈ $160/month)",
+      "No geofencing, auto clock-out, or clock-in photo — limited field accountability",
+      "Advanced features (payroll, deep customization) missing for large teams"
+    ],
+    "useCases": [
+      "Suivre le temps de plusieurs freelances ou employés gratuitement sans limite",
+      "Facturer des clients au temps passé avec rapports et factures intégrées (plans payants)",
+      "Suivre les congés et approuver des feuilles de temps pour une petite équipe"
+    ],
+    "useCasesEn": [
+      "Track time for several freelancers or employees for free with no limit",
+      "Bill clients by time spent with built-in reports and invoices (paid plans)",
+      "Track leave and approve timesheets for a small team"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -19935,21 +19983,21 @@
   {
     "id": "front",
     "name": "Front",
-    "shortDescription": "Hub de communication client pour les équipes.",
-    "description": "Front, c'est hub de communication client pour les équipes. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en shared inbox, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Boîte de réception partagée multicanal (email, SMS, chat) pour équipes support et commerciales.",
+    "description": "Front centralise les messages entrants (email, SMS, WhatsApp, chat, réseaux sociaux) dans une boîte de réception partagée où toute l'équipe voit qui répond à quoi en temps réel, avec assignation et commentaires internes pour éviter les doublons de réponse.\n\nDepuis janvier 2026, Front a supprimé la synchronisation bidirectionnelle avec Outlook, un point important à vérifier avant de s'engager si ton équipe utilise Outlook.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Starter à 25$/siège/mois (1 canal, max 10 sièges) ; Professional 65$/siège (omnicanal, jusqu'à 50 sièges) ; Enterprise 105$/siège. Fonctionnalités IA en option payante (+20-50$/siège).",
     "website": "https://front.com",
     "affiliateLink": "https://front.com",
     "pros": [
-      "Spécialisé en shared inbox",
-      "Interface professionnelle"
+      "Boîte partagée transparente, facile à adopter avec peu de formation",
+      "Activité en temps réel (qui regarde, qui répond) qui évite les doublons",
+      "Couvre plusieurs canaux (email, SMS, chat, social) dans une seule interface"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Synchronisation bidirectionnelle Outlook supprimée en janvier 2026 — vérifie si ton équipe utilise Outlook",
+      "Tarification par siège qui grimpe vite (25 à 105$/siège/mois)",
+      "Fonctionnalités IA facturées en supplément (+20-50$/siège)"
     ],
     "bestFor": [
       "all"
@@ -19960,7 +20008,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 21.9,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -19970,14 +20018,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Ton équipe est sur Gmail ou n'a pas besoin de synchronisation bidirectionnelle avec Outlook",
+        "Tu veux une boîte partagée multicanal simple à adopter"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton équipe dépend d'Outlook et a besoin que les emails restent synchronisés dans les deux sens",
+        "Le budget par siège (25-105$) dépasse ce que justifie la taille de ton équipe"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Vérifie la compatibilité Outlook avant de t'engager ; sinon solide pour une boîte partagée multicanal."
     },
     "alternatives": [],
     "seo": {
@@ -20007,13 +20055,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "front",
-    "shortDescriptionEn": "Customer communication hub for teams.",
-    "longDescription": "Front, c'est hub de communication client pour les équipes. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en shared inbox, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Front is customer communication hub for teams. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in shared inbox, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Multi-channel shared inbox (email, SMS, chat) for support and sales teams.",
+    "longDescription": "Front centralise les messages entrants (email, SMS, WhatsApp, chat, réseaux sociaux) dans une boîte de réception partagée où toute l'équipe voit qui répond à quoi en temps réel, avec assignation et commentaires internes pour éviter les doublons de réponse.\n\nDepuis janvier 2026, Front a supprimé la synchronisation bidirectionnelle avec Outlook : un email lu ou archivé dans Front ne se met plus à jour dans la boîte Outlook d'origine, ce qui casse la promesse de boîte partagée pour les équipes mixtes Gmail/Outlook — un point important à vérifier avant de s'engager si ton équipe utilise Outlook.",
+    "longDescriptionEn": "Front centralizes incoming messages (email, SMS, WhatsApp, chat, social media) into a shared inbox where the whole team sees who's responding to what in real time, with assignment and internal comments to avoid duplicate replies.\n\nSince January 2026, Front removed two-way Outlook sync: an email read or archived in Front no longer updates in the original Outlook inbox, which breaks the shared-inbox promise for mixed Gmail/Outlook teams — an important point to check before committing if your team uses Outlook.",
+    "pricingEn": "Starter at $25/seat/month (1 channel, max 10 seats); Professional $65/seat (omnichannel, up to 50 seats); Enterprise $105/seat. AI features as a paid add-on (+$20-50/seat).",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -20031,24 +20076,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your team is on Gmail or doesn't need two-way Outlook sync",
+        "You want a multi-channel shared inbox that's easy to adopt"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Your team depends on Outlook and needs emails to stay synced both ways",
+        "The per-seat budget ($25-105) exceeds what your team size justifies"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Check Outlook compatibility before committing; otherwise solid for a multi-channel shared inbox."
     },
     "prosEn": [
-      "Specialized in shared inbox",
-      "Professional interface"
+      "Transparent shared inbox, easy to adopt with little training",
+      "Real-time activity (who's viewing, who's replying) that avoids duplicates",
+      "Covers several channels (email, SMS, chat, social) in one interface"
     ],
     "consEn": [
-      "Price to be verified depending on usage"
+      "Two-way Outlook sync removed in January 2026 — check if your team uses Outlook",
+      "Per-seat pricing that rises quickly ($25 to $105/seat/month)",
+      "AI features billed as an extra (+$20-50/seat)"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Centraliser le support client multicanal pour une équipe qui se répartit les réponses",
+      "Éviter les réponses en double sur une boîte mail partagée avec assignation claire",
+      "Suivre des SLA et automatiser le routage de tickets selon des règles"
+    ],
+    "useCasesEn": [
+      "Centralize multi-channel customer support for a team splitting replies",
+      "Avoid duplicate replies on a shared inbox with clear assignment",
+      "Track SLAs and automate ticket routing via rules"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -23152,21 +23208,21 @@
   {
     "id": "hive",
     "name": "Hive",
-    "shortDescription": "Plateforme de productivité pour équipes performantes.",
-    "description": "Hive, c'est plateforme de productivité pour équipes performantes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Gestion de projet avec vues multiples (Gantt, Kanban) et assistant IA Buzz intégré.",
+    "description": "Hive combine plusieurs vues de projet (Gantt, Kanban, calendrier), un chat intégré et un assistant IA (Buzz) qui répond aux questions en utilisant les données réelles de l'espace de travail, avec un stockage de fichiers illimité même sur les plans payants d'entrée.",
     "category": "organization",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Starter à 5$/utilisateur/mois (annuel, 7$ mensuel) ; Teams à 12$/utilisateur (18$ mensuel) ; Enterprise sur devis.",
     "website": "https://hive.com",
     "affiliateLink": "https://hive.com",
     "pros": [
-      "Spécialisé en project management",
-      "Interface professionnelle"
+      "Configuration rapide avec des tableaux de bord personnalisables selon le style de travail",
+      "Chat et collaboration en temps réel intégrés, pas besoin d'outil tiers",
+      "Stockage de fichiers illimité même sur les plans d'entrée"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Plusieurs fonctionnalités clés (validation, ressources, suivi du temps avancé) sont des add-ons payants séparés",
+      "Gestionnaire de fichiers sans aperçus miniatures, retrouver des pièces jointes peut être laborieux",
+      "Courbe d'apprentissage pour les débutants, avis mentionnant des bugs ou ralentissements"
     ],
     "bestFor": [
       "all"
@@ -23177,7 +23233,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 4.38,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -23187,14 +23243,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux un chat et une gestion de projet dans le même outil",
+        "Tu es prêt à anticiper le coût des add-ons pour les fonctionnalités avancées"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'un gestionnaire de fichiers très organisé visuellement",
+        "Le budget total avec add-ons dépasse ce que tu avais prévu"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Bon rapport qualité/prix de base ; calcule le coût réel avec les add-ons dont tu as besoin avant de t'engager."
     },
     "alternatives": [],
     "seo": {
@@ -23216,13 +23272,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "hive",
-    "shortDescriptionEn": "Productivity platform for high-performing teams.",
-    "longDescription": "Hive, c'est plateforme de productivité pour équipes performantes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Hive is productivity platform for high-performing teams. Starting at €15/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: prices to be verified based on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Project management with multiple views (Gantt, Kanban) and built-in AI assistant Buzz.",
+    "longDescription": "Hive combine plusieurs vues de projet (Gantt, Kanban, calendrier), un chat intégré et un assistant IA (Buzz) qui répond aux questions en utilisant les données réelles de l'espace de travail, avec un stockage de fichiers illimité même sur les plans payants d'entrée.\n\nLe compromis classique des outils tout-en-un : plusieurs fonctionnalités utiles (validation, gestion de ressources, suivi du temps avancé) sont des add-ons payants séparés, ce qui rend le budget final difficile à anticiper précisément.",
+    "longDescriptionEn": "Hive combines several project views (Gantt, Kanban, calendar), built-in chat, and an AI assistant (Buzz) that answers questions using real workspace data, with unlimited file storage even on entry-level paid plans.\n\nThe classic trade-off of all-in-one tools: several useful features (approvals, resource management, advanced time tracking) are separate paid add-ons, making the final budget hard to predict precisely.",
+    "pricingEn": "Starter at $5/user/month (annual, $7 monthly); Teams at $12/user ($18 monthly); Enterprise quoted.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -23240,24 +23293,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You want chat and project management in the same tool",
+        "You're ready to budget for add-ons for advanced features"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need a very visually organized file manager",
+        "Total budget with add-ons exceeds what you planned"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Good base value; calculate the real cost with the add-ons you need before committing."
     },
     "prosEn": [
-      "Specialized in project management",
-      "Professional interface"
+      "Quick setup with customizable dashboards based on work style",
+      "Built-in real-time chat and collaboration, no third-party tool needed",
+      "Unlimited file storage even on entry-level plans"
     ],
     "consEn": [
-      "Prices to be verified based on usage"
+      "Several key features (approvals, resourcing, advanced time tracking) are separate paid add-ons",
+      "File manager has no thumbnail previews, finding attachments can be tedious",
+      "Learning curve for beginners, reviews mention bugs or slowdowns"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Gérer des projets avec plusieurs vues selon les préférences de chaque membre d'équipe",
+      "Centraliser chat et gestion de tâches sans outil de messagerie séparé",
+      "Utiliser l'assistant IA pour répondre à des questions sur l'état réel des projets"
+    ],
+    "useCasesEn": [
+      "Manage projects with multiple views based on each team member's preference",
+      "Centralize chat and task management with no separate messaging tool",
+      "Use the AI assistant to answer questions about real project status"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -23444,21 +23508,21 @@
   {
     "id": "hootsuite",
     "name": "Hootsuite",
-    "shortDescription": "Plateforme de gestion des réseaux sociaux.",
-    "description": "Hootsuite, c'est plateforme de gestion des réseaux sociaux. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Plateforme de gestion de réseaux sociaux établie, avec veille concurrentielle et reporting agence.",
+    "description": "Hootsuite centralise la planification, l'engagement et l'analytics sur Facebook, Instagram, LinkedIn, TikTok, X et plus depuis un seul tableau de bord, avec des fonctionnalités de veille concurrentielle (benchmark contre 5 concurrents dès le plan Professional) que des outils plus légers comme Buffer n'offrent pas.\n\nSon plan d'entrée à ~99$/mois (sans plan gratuit) en fait un choix coûteux pour une petite équipe qui n'a besoin que de planifier des posts ; il se justifie surtout pour des agences ou équipes qui ont besoin du reporting client et de la veille concurrentielle.",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
+    "pricing": "Professional ~99$/mois (1 utilisateur, 10 comptes) ; Team ~249$/mois (3 utilisateurs, 20 comptes) ; Business et Enterprise sur devis. Pas de plan gratuit.",
     "website": "https://hootsuite.com",
     "affiliateLink": "https://hootsuite.com",
     "pros": [
-      "Spécialisé en social media management",
-      "Interface professionnelle"
+      "Reconnaissance de marque utile pour les agences qui pitchent des clients enterprise",
+      "Rapports PDF personnalisables, plus poussés que Buffer ou Later pour le reporting client",
+      "Veille concurrentielle (benchmark vs 5 concurrents) incluse dès le plan Professional"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Pas de plan gratuit, démarrage à ~99$/mois minimum",
+      "Interface jugée encombrée par de nombreux avis 2026, vraie courbe d'apprentissage",
+      "Prix difficile à justifier pour une petite équipe qui a juste besoin de planifier — Buffer coûte une fraction du prix"
     ],
     "bestFor": [
       "creator",
@@ -23470,7 +23534,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 86.72,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -23481,14 +23545,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu es une agence qui a besoin de reporting client et de veille concurrentielle",
+        "Tu gères plusieurs comptes sociaux pour plusieurs clients ou marques"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as juste besoin de planifier des posts pour un compte ou deux — Buffer est bien moins cher",
+        "Ton budget ne permet pas de démarrer à 99$/mois"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent pour les agences et équipes mid-market ; pour un usage simple, Buffer ou Later coûtent une fraction du prix."
     },
     "alternatives": [
       "buffer",
@@ -23524,13 +23588,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "hootsuite",
-    "shortDescriptionEn": "Social media management platform.",
-    "longDescription": "Hootsuite, c'est plateforme de gestion des réseaux sociaux. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Hootsuite is social media management platform. Starting at €15/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in social media management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage. As soon as the tool saves you more than €15/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
+    "shortDescriptionEn": "Established social media management platform, with competitive monitoring and agency reporting.",
+    "longDescription": "Hootsuite centralise la planification, l'engagement et l'analytics sur Facebook, Instagram, LinkedIn, TikTok, X et plus depuis un seul tableau de bord, avec des fonctionnalités de veille concurrentielle (benchmark contre 5 concurrents dès le plan Professional) que des outils plus légers comme Buffer n'offrent pas.\n\nSon plan d'entrée à ~99$/mois (sans plan gratuit) en fait un choix coûteux pour une petite équipe qui n'a besoin que de planifier des posts ; il se justifie surtout pour des agences ou équipes qui ont besoin du reporting client et de la veille concurrentielle.",
+    "longDescriptionEn": "Hootsuite centralizes scheduling, engagement, and analytics across Facebook, Instagram, LinkedIn, TikTok, X, and more from one dashboard, with competitive monitoring features (benchmarking against 5 competitors from the Professional plan) that lighter tools like Buffer don't offer.\n\nIts entry plan at ~$99/month (no free plan) makes it a costly choice for a small team that just needs to schedule posts; it's mainly justified for agencies or teams needing client reporting and competitive monitoring.",
+    "pricingEn": "Professional ~$99/month (1 user, 10 accounts); Team ~$249/month (3 users, 20 accounts); Business and Enterprise quoted. No free plan.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -23548,24 +23609,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're an agency needing client reporting and competitive monitoring",
+        "You manage several social accounts for multiple clients or brands"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You just need to schedule posts for one or two accounts — Buffer is much cheaper",
+        "Your budget doesn't allow starting at $99/month"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it for agencies and mid-market teams; for simple use, Buffer or Later cost a fraction of the price."
     },
     "prosEn": [
-      "Specialized in social media management",
-      "Professional interface"
+      "Brand recognition useful for agencies pitching enterprise clients",
+      "Customizable PDF reports, more advanced than Buffer or Later for client reporting",
+      "Competitive monitoring (benchmark vs 5 competitors) included from the Professional plan"
     ],
     "consEn": [
-      "Price to be verified depending on usage"
+      "No free plan, starts at ~$99/month minimum",
+      "Interface seen as cluttered by many 2026 reviews, real learning curve",
+      "Price hard to justify for a small team that just needs scheduling — Buffer costs a fraction of the price"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Gérer plusieurs comptes sociaux clients pour une agence avec reporting PDF",
+      "Suivre les mentions de marque et la concurrence via la veille sociale",
+      "Planifier en masse des publications via import CSV sur plusieurs plateformes"
+    ],
+    "useCasesEn": [
+      "Manage multiple client social accounts for an agency with PDF reporting",
+      "Track brand mentions and competitors via social monitoring",
+      "Bulk schedule posts via CSV import across multiple platforms"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
@@ -30770,21 +30842,21 @@
   {
     "id": "looka",
     "name": "Looka",
-    "shortDescription": "Plateforme de création de logos par IA.",
-    "description": "Looka, c'est plateforme de création de logos par IA. À partir de 20€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en logo maker, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "Générateur de logo par IA avec kit de marque complet, achat unique ou abonnement.",
+    "description": "Looka génère plusieurs propositions de logo à partir du nom de l'entreprise et de préférences de style, couleurs et symboles, avec un catalogue de plus de 550000 symboles et 470 polices premium.",
     "category": "creation",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
+    "pricing": "Conception gratuite ; Logo Basic 20$ (achat unique, PNG fond coloré uniquement) ; Premium 65$ (fichiers vectoriels) ; Brand Kit 96$/an ; formule avec site web 129$/an.",
     "website": "https://looka.com",
     "affiliateLink": "https://looka.com",
     "pros": [
-      "Spécialisé en logo maker",
-      "Interface professionnelle"
+      "Génération rapide par IA sans compétence design nécessaire",
+      "Fichiers de qualité pro sur le plan Premium, à une fraction du coût d'un designer",
+      "Plus de 20 millions d'entreprises ont déjà utilisé l'outil — support réactif selon les avis"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Le plan Basic à 20$ ne livre qu'un PNG inutilisable pour l'impression — il faut Premium à 65$ pour du vectoriel",
+      "Répétition visible des icônes au sein d'une même catégorie d'activité",
+      "Modifications majeures limitées après achat — changer d'icône ou de police nécessite souvent de tout regénérer"
     ],
     "bestFor": [
       "all"
@@ -30795,7 +30867,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -30805,14 +30877,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu démarres une activité et veux un logo pro sans budget designer",
+        "Tu prends directement le plan Premium pour avoir des fichiers vectoriels exploitables"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu as besoin d'une identité très distinctive dans un secteur où les icônes se répètent (tech, services pro)",
+        "Tu prévois de faire évoluer significativement le logo après achat"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Prends directement Premium (65$) pour des fichiers utilisables ; évite le plan Basic à 20$, trop limité."
     },
     "alternatives": [],
     "seo": {
@@ -30834,13 +30906,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "looka",
-    "shortDescriptionEn": "AI-powered logo design platform.",
-    "longDescription": "Looka, c'est plateforme de création de logos par IA. À partir de 20€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en logo maker, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "Looka is aI-powered logo design platform. Starting at €20/month. Built for graphic designers and community managers.\n\nSpecialized logo maker, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €20/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
-    },
+    "shortDescriptionEn": "AI logo generator with full brand kit, one-time purchase or subscription.",
+    "longDescription": "Looka génère plusieurs propositions de logo à partir du nom de l'entreprise et de préférences de style, couleurs et symboles, avec un catalogue de plus de 550000 symboles et 470 polices premium. Le Brand Kit ajoute des templates de supports de marque (réseaux sociaux, cartes de visite) pour rester cohérent partout.\n\nLe piège classique : le plan Basic à 20$ ne livre qu'un PNG avec fond coloré — pas de vectoriel, pas de fond transparent, inutilisable pour de l'impression ou du merchandising. Le plan Premium à 65$ est nécessaire pour des fichiers professionnels exploitables.",
+    "longDescriptionEn": "Looka generates several logo proposals from the company name and style, color, and symbol preferences, with a catalog of over 550,000 symbols and 470 premium fonts. The Brand Kit adds brand asset templates (social media, business cards) to stay consistent everywhere.\n\nThe classic trap: the $20 Basic plan only delivers a PNG with a colored background — no vector file, no transparent background, unusable for printing or merchandise. The $65 Premium plan is needed for usable professional files.",
+    "pricingEn": "Free to design; Basic Logo $20 (one-time, colored-background PNG only); Premium $65 (vector files); Brand Kit $96/year; website-included plan $129/year.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -30858,24 +30927,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You're starting a business and want a pro logo with no designer budget",
+        "You go straight for Premium to get usable vector files"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You need a very distinctive identity in a sector where icons repeat (tech, professional services)",
+        "You plan to significantly evolve the logo after purchase"
       ],
-      "threshold": "As soon as the tool saves you more than €20/month"
+      "threshold": "Go straight for Premium ($65) for usable files; avoid the $20 Basic plan, too limited."
     },
     "prosEn": [
-      "Specialized logo maker",
-      "Professional interface"
+      "Fast AI generation with no design skills needed",
+      "Pro-quality files on the Premium plan, at a fraction of a designer's cost",
+      "Over 20 million businesses have used the tool — responsive support per reviews"
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "The $20 Basic plan only delivers a PNG unusable for printing — you need Premium at $65 for vector files",
+      "Noticeable icon repetition within the same industry category",
+      "Limited major edits after purchase — changing icon or font often requires regenerating from scratch"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Créer un logo professionnel rapidement sans budget pour un designer",
+      "Obtenir un kit de marque cohérent (réseaux sociaux, cartes de visite) en complément du logo",
+      "Tester rapidement plusieurs directions visuelles avant de valider une identité"
+    ],
+    "useCasesEn": [
+      "Create a professional logo quickly with no budget for a designer",
+      "Get a consistent brand kit (social media, business cards) alongside the logo",
+      "Quickly test several visual directions before settling on an identity"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 5,
     "downgradePlan": null,
@@ -31570,21 +31650,21 @@
   {
     "id": "mailgun",
     "name": "Mailgun",
-    "shortDescription": "Service d’envoi d’emails pour développeurs.",
-    "description": "Mailgun, c'est service d’envoi d’emails pour développeurs. À partir de 10€/mois. Pensé pour les développeurs solo et les fondateurs SaaS.\n\nSpécialisé en email delivery, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "shortDescription": "API d'envoi d'emails transactionnels pour développeurs, avec validation et tracking intégrés.",
+    "description": "Mailgun est une API d'envoi d'emails pensée pour les développeurs : emails transactionnels (confirmations, resets de mot de passe), validation d'adresses, tracking en temps réel et gestion SPF/DKIM/DMARC intégrée.\n\nDepuis le rachat par Sinch, plusieurs utilisateurs rapportent des hausses de prix de 20-40% et une baisse mesurée du taux de délivrabilité — un point à surveiller avant de s'engager. Mailgun ne propose pas de templates email ni de relances automatiques : pour des campagnes marketing, mieux vaut SendGrid, Mailchimp ou Brevo.",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
-    },
+    "pricing": "Basic à 15$/mois (10000 emails) ; Foundation 35$ (50000 emails) ; Scale 90$ (100000 emails). Essai gratuit 5000 emails/mois pendant 3 mois.",
     "website": "https://mailgun.com",
     "affiliateLink": "https://mailgun.com",
     "pros": [
-      "Spécialisé en email delivery",
-      "Interface professionnelle"
+      "Envoi d'emails fiable et scalable pour des volumes transactionnels",
+      "Plans d'entrée généreux avec tracking, analytics et webhooks inclus",
+      "Gestion SPF/DKIM/DMARC intégrée, IP partagées bien maintenues"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Hausses de prix de 20-40% rapportées depuis le rachat par Sinch",
+      "Taux de délivrabilité en baisse mesurée (-27,75% en un an selon GlockApps)",
+      "Pas de templates email ni de relances automatiques — inadapté aux campagnes marketing"
     ],
     "bestFor": [
       "all"
@@ -31595,7 +31675,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 13.14,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -31605,14 +31685,14 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu envoies des emails transactionnels depuis une app et as besoin d'une API développeur fiable",
+        "Tu surveilles activement ta délivrabilité et ajustes en conséquence"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu veux envoyer des campagnes marketing avec templates — SendGrid ou Brevo sont plus adaptés",
+        "La baisse de délivrabilité récente t'inquiète pour des emails critiques"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 10€/mois"
+      "threshold": "Solide pour du transactionnel pur ; surveille la délivrabilité et compare régulièrement avec SendGrid ou Postmark."
     },
     "alternatives": [],
     "seo": {
@@ -31634,13 +31714,10 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "mailgun",
-    "shortDescriptionEn": "Email sending service for developers.",
-    "longDescription": "Mailgun, c'est service d’envoi d’emails pour développeurs. À partir de 10€/mois. Pensé pour les développeurs solo et les fondateurs SaaS.\n\nSpécialisé en email delivery, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "Mailgun is email sending service for developers. Starting at €10/month. Built for solo developers and SaaS founders.\n\nSpecialized in email delivery, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to check based on usage. As soon as the tool saves you more than €10/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
-    },
+    "shortDescriptionEn": "Transactional email API for developers, with built-in validation and tracking.",
+    "longDescription": "Mailgun est une API d'envoi d'emails pensée pour les développeurs : emails transactionnels (confirmations, resets de mot de passe), validation d'adresses, tracking en temps réel et gestion SPF/DKIM/DMARC intégrée.\n\nDepuis le rachat par Sinch, plusieurs utilisateurs rapportent des hausses de prix de 20-40% et une baisse mesurée du taux de délivrabilité (de 53,8% à 26,05% entre Q1 2024 et Q1 2025 selon GlockApps) — un point à surveiller avant de s'engager. Mailgun ne propose pas de templates email ni de relances automatiques : pour des campagnes marketing, mieux vaut SendGrid, Mailchimp ou Brevo.",
+    "longDescriptionEn": "Mailgun is an email-sending API built for developers: transactional emails (confirmations, password resets), address validation, real-time tracking, and built-in SPF/DKIM/DMARC management.\n\nSince the Sinch acquisition, several users report 20-40% price increases and a measured drop in deliverability (from 53.8% to 26.05% between Q1 2024 and Q1 2025 per GlockApps) — a point worth watching before committing. Mailgun offers no email templates or automated follow-ups: for marketing campaigns, SendGrid, Mailchimp, or Brevo are better suited.",
+    "pricingEn": "Basic at $15/month (10,000 emails); Foundation $35 (50,000 emails); Scale $90 (100,000 emails). Free trial of 5,000 emails/month for 3 months.",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -31658,24 +31735,35 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You send transactional emails from an app and need a reliable developer API",
+        "You actively monitor your deliverability and adjust accordingly"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You want to send marketing campaigns with templates — SendGrid or Brevo fit better",
+        "The recent deliverability drop concerns you for critical emails"
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Solid for pure transactional use; monitor deliverability and regularly compare with SendGrid or Postmark."
     },
     "prosEn": [
-      "Specialized in email delivery",
-      "Professional interface"
+      "Reliable, scalable email sending for transactional volumes",
+      "Generous entry plans with tracking, analytics, and webhooks included",
+      "Built-in SPF/DKIM/DMARC management, well-maintained shared IPs"
     ],
     "consEn": [
-      "Pricing to check based on usage"
+      "20-40% price increases reported since the Sinch acquisition",
+      "Measured deliverability drop (-27.75% in one year per GlockApps)",
+      "No email templates or automated follow-ups — unsuited for marketing campaigns"
     ],
-    "useCases": [],
-    "useCasesEn": null,
+    "useCases": [
+      "Envoyer des emails transactionnels (confirmations, resets) depuis une application",
+      "Valider des adresses email avant envoi pour réduire les bounces",
+      "Suivre la délivrabilité et les événements email via webhooks en temps réel"
+    ],
+    "useCasesEn": [
+      "Send transactional emails (confirmations, resets) from an application",
+      "Validate email addresses before sending to reduce bounces",
+      "Track email deliverability and events via real-time webhooks"
+    ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
