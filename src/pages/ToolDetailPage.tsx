@@ -1179,7 +1179,11 @@ const ToolDetailPage = () => {
             const path = tab.id === "prix" && lang === "en" ? "/pricing"
               : tab.id === "avis" && lang === "en" ? "/reviews"
               : tab.path;
-            navigate(`${prefix}/tool/${slug}${path}`, { replace: false, state: { skipScrollReset: true } });
+            // replace: true — this is in-page anchor navigation, not a real
+            // page change. With replace: false every pill click pushed a
+            // history entry, so the back button stepped through tabs
+            // instead of leaving the tool page.
+            navigate(`${prefix}/tool/${slug}${path}`, { replace: true, state: { skipScrollReset: true } });
           }
           return false;
         }}

@@ -10224,9 +10224,13 @@ section[id] {
   background: transparent;
 }
 
-.tt-pillnav-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.9);
+/* Scoped to real pointer devices — without this, a tap on touch screens
+   leaves the item visually "stuck" hovered until the user taps elsewhere. */
+@media (hover: hover) and (pointer: fine) {
+  .tt-pillnav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+  }
 }
 
 .tt-pillnav-item--active {
