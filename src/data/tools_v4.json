@@ -6261,7 +6261,7 @@
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Plan gratuit limité à 1 000 lignes par base et 5 éditeurs ; 100 automatisations/mois partagées pour tout l'espace."
       ],
       "verified_on": "2026-03-13",
       "source_domain": "support.airtable.com",
@@ -13366,7 +13366,7 @@
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Plan gratuit limité à 100 automatisations/mois et 100 Mo de stockage partagé pour tout l'espace."
       ],
       "verified_on": "2026-03-13",
       "source_domain": "clickup.com",
@@ -52758,7 +52758,7 @@
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Plan gratuit limité à 5 projets actifs, sans rappels ni pièces jointes."
       ],
       "verified_on": "2026-03-13",
       "source_domain": "todoist.com",
@@ -56845,7 +56845,7 @@
     "description": "Wrike, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "organization",
     "pricing": {
-      "free": "Plan gratuit limité à 5 utilisateurs, 200 tâches actives et 2 Go de stockage",
+      "free": "Plan gratuit avec utilisateurs illimités, mais limité à 200 tâches actives et 2 Go de stockage",
       "paid": "Team à 10$/mois/utilisateur ; Business à 25$/mois/utilisateur (minimum 5 sièges, facturation annuelle)"
     },
     "website": "https://wrike.com",
@@ -56890,8 +56890,8 @@
       "threshold": "Wrike se justifie pour une équipe qui gère des validations créatives ou des workflows multi-équipes avec des dépendances complexes. Pour une simple liste de tâches, Trello ou Todoist suffisent largement.",
       "billingTraps": [
         {
-          "title": "Le minimum de 5 sièges sur Business",
-          "text": "Le plan Business (25$/mois/utilisateur) impose un minimum de 5 sièges, soit 125$/mois minimum même pour une équipe de 3 personnes."
+          "title": "Le minimum de 5 sièges sur Business, 30 sur Apex",
+          "text": "Le plan Business (25$/mois/utilisateur) impose un minimum de 5 sièges, soit 125$/mois minimum même pour une équipe de 3 personnes. Apex (le palier le plus haut) impose lui un minimum de 30 sièges."
         },
         {
           "title": "Les paliers d'achat imposés au-delà de 5 sièges",
@@ -56930,13 +56930,12 @@
     "longDescription": "Wrike, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "longDescriptionEn": "Wrike is project management software for teams. Starting at €15/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
     "pricingEn": {
-      "free": "Free plan capped at 5 users, 200 active tasks, and 2GB storage",
+      "free": "Free plan with unlimited users, but capped at 200 active tasks and 2GB storage",
       "paid": "Team at $10/month/user; Business at $25/month/user (5-seat minimum, annual billing)"
     },
     "pricing_v5": {
       "cautions": [
-        "minimum_5_seats_on_business",
-        "annual_billing_above_team"
+        "Plan Business : minimum de 5 sièges imposé (125$/mois minimum), facturation annuelle uniquement."
       ],
       "verified_on": "2026-06-25",
       "source_domain": "wrike.com",
@@ -56966,8 +56965,8 @@
       "threshold": "Wrike earns its place for a team running creative approvals or multi-team workflows with complex dependencies. For a simple task list, Trello or Todoist are plenty.",
       "billingTraps": [
         {
-          "title": "The 5-seat minimum on Business",
-          "text": "The Business plan ($25/month/user) enforces a 5-seat minimum — $125/month minimum even for a 3-person team."
+          "title": "The 5-seat minimum on Business, 30 on Apex",
+          "text": "The Business plan ($25/month/user) enforces a 5-seat minimum — $125/month minimum even for a 3-person team. Apex, the top tier, enforces a 30-seat minimum."
         },
         {
           "title": "Forced purchase banding above 5 seats",
@@ -61201,9 +61200,7 @@
       "usage_sensitive": false,
       "location_sensitive": false,
       "cautions": [
-        "minimum_3_seats",
-        "annual_billing",
-        "usd_pricing"
+        "Minimum de 3 sièges imposé sur tous les plans payants ; facturation annuelle pour le tarif affiché."
       ],
       "tcoExampleFr": "Exemple concret : une équipe de 3 personnes facturant en moyenne 50$/h qui perd chacune 1h/mois à chercher le statut d'une tâche par e-mail perd 150$/mois en temps masqué. Le minimum de 3 sièges sur Basic (27$/mois) est largement rentabilisé dès que l'outil évite cette perte — mais payer pour 5 sièges quand l'équipe n'en compte que 4 (palier imposé) doit être intégré au calcul réel.",
       "tcoExampleEn": "Concrete example: a 3-person team billing $50/h on average, each losing 1h/month chasing task status by email, is losing $150/month in hidden time. The 3-seat minimum on Basic ($27/month) is easily worth it once the tool prevents that loss — but paying for 5 seats when the team only has 4 (forced banding) has to be part of the real math."
