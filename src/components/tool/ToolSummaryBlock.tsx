@@ -55,19 +55,28 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
   // few screens up at most. Site-wide, all 1109 tools.
   const verdictText = fullVerdictText.split(/(?<=[.!?])\s+/)[0] || fullVerdictText;
 
+  // This block restates category/price/idealFor/avoidIf/alternatives/
+  // verdict — all of which the page already says, in more detail, in
+  // dedicated sections just before or after it. Useful as a single
+  // consolidated block for LLM extraction and SEO snippets (its original
+  // purpose), but reading it as a normal visible section means a human
+  // hits the same facts a second time right where they just read them.
+  // <details collapsed> keeps it in the DOM (crawlers and AI scrapers read
+  // collapsed <details> content same as visible text) without it
+  // competing for a human reader's attention as another full section.
   return (
-    <section
-      aria-label={t("Résumé", "Summary")}
+    <details
       className="td-synthesis"
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
+      <summary className="td-synth-eyebrow" style={{ cursor: "pointer" }}>
+        {t("En bref (résumé condensé)", "Quick summary (condensed)")}
+      </summary>
       <h2 className="sr-only">{t(`Résumé de ${tool.name}`, `${tool.name} Summary`)}</h2>
       <meta itemProp="name" content={tool.name} />
       <meta itemProp="applicationCategory" content="BusinessApplication" />
       <meta itemProp="operatingSystem" content="Web" />
-
-      <span className="td-synth-eyebrow">{t("En bref", "In short")}</span>
 
       <dl className="td-synth-dl">
         <div className="td-synth-row">
@@ -116,6 +125,6 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
           <dd className="td-synth-dd">{verdictText}</dd>
         </div>
       </dl>
-    </section>
+    </details>
   );
 }

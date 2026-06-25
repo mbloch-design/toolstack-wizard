@@ -80,26 +80,42 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
                   className="last:border-0"
                   style={{ borderBottom: "1px solid var(--color-border-soft)", background: isCurrentTool ? "var(--color-surface-soft)" : "transparent" }}
                 >
-                  {/* Tool name */}
+                  {/* Tool name + one-line description — folds in what used
+                      to be a separate card grid below (ToolAlternativesSection),
+                      so the same info doesn't appear in two visual formats. */}
                   <td className="py-3 px-4">
-                    <div className="flex items-center gap-2.5">
-                      <ToolLogo tool={row as any} size={24} className="rounded-md shrink-0" />
-                      {isCurrentTool ? (
-                        <span style={{ fontWeight: 600, color: "var(--color-text)" }} className="truncate max-w-[100px]">
-                          {row.name}
-                          <span style={{ marginLeft: 6, border: "1px solid var(--color-border-strong)", borderRadius: 999, padding: "1px 6px", fontSize: 9, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-text-strong)", verticalAlign: "middle" }}>
-                            {t("Actuel", "Current")}
+                    <div className="flex items-start gap-2.5">
+                      <ToolLogo tool={row as any} size={24} className="rounded-md shrink-0" style={{ marginTop: 1 }} />
+                      <div className="min-w-0">
+                        {isCurrentTool ? (
+                          <span style={{ fontWeight: 600, color: "var(--color-text)" }} className="truncate block max-w-[160px]">
+                            {row.name}
+                            <span style={{ marginLeft: 6, border: "1px solid var(--color-border-strong)", borderRadius: 999, padding: "1px 6px", fontSize: 9, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-text-strong)", verticalAlign: "middle" }}>
+                              {t("Actuel", "Current")}
+                            </span>
                           </span>
-                        </span>
-                      ) : (
-                        <Link
-                          to={`${prefix}/tool/${(row as any).slug || row.id}`}
-                          className="td-synth-link truncate max-w-[100px]"
-                          style={{ fontWeight: 500 }}
-                        >
-                          {row.name}
-                        </Link>
-                      )}
+                        ) : (
+                          <Link
+                            to={`${prefix}/tool/${(row as any).slug || row.id}`}
+                            className="td-synth-link truncate block max-w-[160px]"
+                            style={{ fontWeight: 500 }}
+                          >
+                            {row.name}
+                          </Link>
+                        )}
+                        {(() => {
+                          const desc = lang === "en" && (row as any).shortDescriptionEn ? (row as any).shortDescriptionEn : row.shortDescription;
+                          if (!desc) return null;
+                          return (
+                            <p
+                              className="truncate max-w-[200px]"
+                              style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 2 }}
+                            >
+                              {desc}
+                            </p>
+                          );
+                        })()}
+                      </div>
                     </div>
                   </td>
 

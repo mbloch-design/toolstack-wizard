@@ -3,7 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
 import { useContext, useEffect, useRef } from "react";
 import {
-  ExternalLink, Check, X, ArrowRight, CalendarCheck,
+  ExternalLink, ArrowRight, CalendarCheck,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import SectionPillNav from "@/components/SectionPillNav";
@@ -922,16 +922,24 @@ const ToolDetailPage = () => {
               <div id="avis" className="td-subpage-content">
                 {(() => {
                   const ts = computeToolTrimScore(tool);
-                  const signals = [
-                    { labelFr: "Outil de référence dans sa catégorie",  labelEn: "Category reference tool",         active: toolType === "metier" || toolType === "core" || toolType === "ia" },
-                    { labelFr: "Non substituable à court terme",         labelEn: "Hard to replace short-term",      active: (tool as any).substitutable === false },
-                    { labelFr: "Usages clairs et documentés",            labelEn: "Clear and documented use cases",  active: ((tool as any).verdict?.keepIf?.length || 0) >= 2 },
-                    { labelFr: "Plan gratuit ou freemium disponible",    labelEn: "Free or freemium plan available", active: isFree || isFreemium },
-                    { labelFr: "Fonctionnalités IA intégrées",           labelEn: "Built-in AI features",           active: !!(tool as any).ia_use_case },
-                    { labelFr: "Prix accessible (< 20€/mois)",           labelEn: "Accessible pricing (< €20/mo)",  active: displayPrice > 0 && displayPrice < 20 },
-                  ];
-                  const activeSignals = signals.filter(s => s.active);
-                  const inactiveSignals = signals.filter(s => !s.active);
+                  // One synthesized sentence instead of a 6-item checklist
+                  // with half the items greyed out — a list of "things that
+                  // are NOT true about this tool" reads as padding, not
+                  // analysis. Same underlying signals, phrased as the 2-3
+                  // most decision-relevant clauses joined into prose.
+                  const hardToReplace = (tool as any).substitutable === false;
+                  const clearUseCases = ((tool as any).verdict?.keepIf?.length || 0) >= 2;
+                  const hasFreeTier = isFree || isFreemium;
+                  const scoreReasonFr = [
+                    hardToReplace ? "difficile à remplacer à court terme" : "remplaçable assez facilement par une alternative",
+                    hasFreeTier ? "un plan gratuit accessible pour tester avant de payer" : "aucun palier gratuit pour tester avant de payer",
+                    clearUseCases ? "des cas d'usage clairement documentés" : "des cas d'usage encore à préciser selon ton contexte",
+                  ].join(", ");
+                  const scoreReasonEn = [
+                    hardToReplace ? "hard to replace short-term" : "fairly easy to replace with an alternative",
+                    hasFreeTier ? "a free tier to test before paying" : "no free tier to test before paying",
+                    clearUseCases ? "clearly documented use cases" : "use cases that still depend on your specific context",
+                  ].join(", ");
                   return (
                     <div className="td-section">
                       <span className="td-eyebrow">{t("Évaluation", "Rating")}</span>
@@ -963,27 +971,15 @@ const ToolDetailPage = () => {
                           </div>
                         </div>
                         <div style={{ padding: "24px 32px" }}>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 16 }}>
-                            {t("Signaux analysés", "Analysed signals")}
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                            {t("Pourquoi ce score", "Why this score")}
                           </p>
-                          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                            {activeSignals.map((s) => (
-                              <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                                <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-surface-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                                  <Check style={{ width: 11, height: 11, color: "var(--color-text-strong)" }} />
-                                </div>
-                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)" }}>{t(s.labelFr, s.labelEn)}</span>
-                              </div>
-                            ))}
-                            {inactiveSignals.map((s) => (
-                              <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12, opacity: 0.4 }}>
-                                <div style={{ width: 20, height: 20, borderRadius: "50%", border: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                                  <X style={{ width: 11, height: 11, color: "var(--color-muted-light)" }} />
-                                </div>
-                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-muted)" }}>{t(s.labelFr, s.labelEn)}</span>
-                              </div>
-                            ))}
-                          </div>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.6, color: "var(--color-text)" }}>
+                            {t(
+                              `${tool.name} est ${scoreReasonFr}.`,
+                              `${tool.name} is ${scoreReasonEn}.`,
+                            )}
+                          </p>
                         </div>
                       </div>
 
