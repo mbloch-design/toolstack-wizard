@@ -9962,7 +9962,17 @@
         "Tu cherches un stockage simple pour un usage personnel ou une petite équipe — Dropbox est plus simple",
         "Le budget ne justifie pas des fonctionnalités de conformité que tu n'utiliseras pas"
       ],
-      "threshold": "Pertinent pour une organisation de 5 à 5000 personnes avec de vrais besoins de conformité."
+      "threshold": "Pertinent pour une organisation de 5 à 5000 personnes avec de vrais besoins de conformité.",
+      "billingTraps": [
+        {
+          "title": "Le minimum de 3 utilisateurs sur tous les plans Business",
+          "text": "Business Starter (7$/utilisateur/mois) et Business (15$/utilisateur/mois en annuel) imposent tous deux un minimum de 3 utilisateurs — un solo ou un duo paie pour un siège vide."
+        },
+        {
+          "title": "La facturation mensuelle coûte 30 à 35% plus cher",
+          "text": "Les tarifs affichés supposent un engagement annuel ; payer au mois renchérit chaque palier de 30 à 35%."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
@@ -10007,7 +10017,9 @@
       "location_sensitive": false,
       "official_source_url": "https://www.box.com/fr-fr/pricing/individual",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10
+      "compare_price_monthly_eur": 10,
+      "tcoExampleFr": "Exemple concret : un cabinet de 3 personnes manipulant des documents sensibles, facturant 50$/h, qui évite une fuite de données coûteuse grâce aux contrôles de conformité de Box, justifie largement les 45$/mois du plan Business (3 sièges minimum) — mais ce minimum doit être budgétisé même si l'équipe ne grandit pas tout de suite.",
+      "tcoExampleEn": "Concrete example: a 3-person firm handling sensitive documents, billing $50/h, that avoids one costly data leak thanks to Box's compliance controls easily justifies the $45/month Business plan (3-seat minimum) — but that minimum has to be budgeted for even if the team doesn't grow right away."
     },
     "websiteUrl": "https://box.com",
     "logo": "",
@@ -10020,7 +10032,17 @@
         "You want simple storage for personal or small-team use — Dropbox is simpler",
         "Budget doesn't justify compliance features you won't use"
       ],
-      "threshold": "Worth it for an organization of 5 to 5,000 people with real compliance needs."
+      "threshold": "Worth it for an organization of 5 to 5,000 people with real compliance needs.",
+      "billingTraps": [
+        {
+          "title": "The 3-user minimum across every Business plan",
+          "text": "Business Starter ($7/user/month) and Business ($15/user/month annual) both enforce a 3-user minimum — a solo user or duo pays for an empty seat."
+        },
+        {
+          "title": "Monthly billing costs 30-35% more",
+          "text": "The advertised rates assume an annual commitment; paying monthly raises every tier by 30-35%."
+        }
+      ]
     },
     "prosEn": [
       "Among the most advanced security and compliance controls in the category",
@@ -20501,7 +20523,17 @@
         "Ton équipe dépend d'Outlook et a besoin que les emails restent synchronisés dans les deux sens",
         "Le budget par siège (25-105$) dépasse ce que justifie la taille de ton équipe"
       ],
-      "threshold": "Vérifie la compatibilité Outlook avant de t'engager ; sinon solide pour une boîte partagée multicanal."
+      "threshold": "Vérifie la compatibilité Outlook avant de t'engager ; sinon solide pour une boîte partagée multicanal.",
+      "billingTraps": [
+        {
+          "title": "Le minimum de 2 sièges, dès le plan d'entrée",
+          "text": "Front n'offre aucun plan solo : même Starter (25$/siège/mois) impose un minimum de 2 sièges, soit 50$/mois pour démarrer."
+        },
+        {
+          "title": "Starter plafonné à 10 sièges et 1 seul canal",
+          "text": "Au-delà de 10 personnes ou pour gérer plusieurs canaux (email + chat + SMS), il faut passer à Professional (65$/siège/mois), un saut de 2,6x."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
@@ -20546,7 +20578,9 @@
       "location_sensitive": false,
       "official_source_url": "https://front.com/pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 15,
+      "tcoExampleFr": "Exemple concret : une équipe support de 2 personnes facturant 50$/h qui perd collectivement 2h/mois à se marcher dessus sur une boîte mail partagée mal organisée perd 100$/mois en temps masqué. Front Starter à 50$/mois (2 sièges minimum) règle ce problème et se rentabilise largement — mais au-delà de 10 sièges ou pour gérer plusieurs canaux, le saut vers Professional (65$/siège) doit être anticipé.",
+      "tcoExampleEn": "Concrete example: a 2-person support team billing $50/h that collectively loses 2h/month stepping on each other in a poorly organized shared inbox is losing $100/month in hidden time. Front Starter at $50/month (2-seat minimum) solves that and easily pays for itself — but past 10 seats or to handle multiple channels, the jump to Professional ($65/seat) needs to be planned for."
     },
     "websiteUrl": "https://front.com",
     "logo": "",
@@ -20559,7 +20593,17 @@
         "Your team depends on Outlook and needs emails to stay synced both ways",
         "The per-seat budget ($25-105) exceeds what your team size justifies"
       ],
-      "threshold": "Check Outlook compatibility before committing; otherwise solid for a multi-channel shared inbox."
+      "threshold": "Check Outlook compatibility before committing; otherwise solid for a multi-channel shared inbox.",
+      "billingTraps": [
+        {
+          "title": "The 2-seat minimum, even on the entry plan",
+          "text": "Front has no solo plan: even Starter ($25/seat/month) enforces a 2-seat minimum — $50/month just to get started."
+        },
+        {
+          "title": "Starter caps at 10 seats and a single channel",
+          "text": "Past 10 people, or to manage multiple channels (email + chat + SMS), you need Professional ($65/seat/month) — a 2.6x jump."
+        }
+      ]
     },
     "prosEn": [
       "Transparent shared inbox, easy to adopt with little training",
@@ -24526,7 +24570,9 @@
       "source_domain": "hubspot.com",
       "verified_on": "2026-05-02",
       "official_source_url": "https://www.hubspot.com",
-      "verification_status": "needs_official_quote"
+      "verification_status": "needs_official_quote",
+      "tcoExampleFr": "Exemple concret : une petite équipe marketing-vente facturant 50$/h qui perd collectivement 2h/mois à ressaisir des leads entre deux outils séparés perd 100$/mois en temps masqué. Le CRM gratuit HubSpot (2 sièges) absorbe ce coût pour une toute petite équipe — mais au 3e utilisateur ou au passage à Professional, il faut budgétiser le tarif plein et les frais d'onboarding, pas le prix promotionnel affiché.",
+      "tcoExampleEn": "Concrete example: a small marketing-sales team billing $50/h that collectively loses 2h/month re-entering leads between two separate tools is losing $100/month in hidden time. HubSpot's free CRM (2 seats) absorbs that cost for a very small team — but at the 3rd user or the jump to Professional, budget for the full price and onboarding fees, not the advertised promotional rate."
     },
     "affiliateLink": "https://www.hubspot.com",
     "websiteUrl": "https://hubspot.com",
@@ -24577,7 +24623,21 @@
         "Tu prévois de monter en gamme vers Professional sans budget pour le saut de prix",
         "Tu as besoin de personnalisation très poussée — Salesforce est plus flexible"
       ],
-      "threshold": "Excellent point de départ gratuit ; anticipe le saut de prix si tu prévois de passer en Professional."
+      "threshold": "Excellent point de départ gratuit ; anticipe le saut de prix si tu prévois de passer en Professional.",
+      "billingTraps": [
+        {
+          "title": "Le CRM gratuit verrouillé à 2 sièges",
+          "text": "Le CRM de base est gratuit mais limité à 2 utilisateurs payants gratuits ; au-delà, il faut un plan payant même pour des fonctions basiques d'équipe."
+        },
+        {
+          "title": "Le prix promotionnel d'appel redevient plein tarif après un an",
+          "text": "Les remises de lancement (7-15$/siège la première année) reviennent au tarif plein (20$/siège minimum) ensuite — le coût réel se révèle à la deuxième année."
+        },
+        {
+          "title": "Le saut vers Professional inclut des frais d'onboarding obligatoires",
+          "text": "Passer à Professional s'accompagne souvent de 3 000 à 4 500$ de frais de mise en place facturés une fois, en plus de l'abonnement mensuel."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -24588,7 +24648,21 @@
         "You plan to upgrade to Professional with no budget for the price jump",
         "You need very deep customization — Salesforce is more flexible"
       ],
-      "threshold": "Excellent free starting point; plan ahead for the price jump if you expect to move to Professional."
+      "threshold": "Excellent free starting point; plan ahead for the price jump if you expect to move to Professional.",
+      "billingTraps": [
+        {
+          "title": "The free CRM is locked to 2 seats",
+          "text": "The base CRM is free but limited to 2 free paying users; beyond that, you need a paid plan even for basic team features."
+        },
+        {
+          "title": "The promotional intro price reverts to full price after year one",
+          "text": "Launch discounts ($7-15/seat in year one) return to full price (at least $20/seat) afterward — the real cost shows up in year two."
+        },
+        {
+          "title": "The jump to Professional includes mandatory onboarding fees",
+          "text": "Upgrading to Professional often comes with a $3,000-$4,500 one-time setup fee, on top of the monthly subscription."
+        }
+      ]
     },
     "pros": [
       "Prise en main rapide, bien plus simple que Salesforce pour démarrer",
@@ -58040,7 +58114,21 @@
         "Tu es une petite équipe avec un budget serré — le prix grimpe vite",
         "Tu veux un outil plug-and-play sans configuration initiale"
       ],
-      "threshold": "Pertinent pour des équipes support de taille moyenne à grande avec des ressources dédiées à la configuration."
+      "threshold": "Pertinent pour des équipes support de taille moyenne à grande avec des ressources dédiées à la configuration.",
+      "billingTraps": [
+        {
+          "title": "Aucun plan gratuit permanent",
+          "text": "Zendesk n'offre qu'un essai de 14 jours du plan Suite Professional ; il n'existe aucun palier gratuit pour un usage continu, contrairement à des concurrents comme Freshdesk."
+        },
+        {
+          "title": "Facturation annuelle uniquement pour les prix affichés",
+          "text": "Les tarifs annoncés (à partir de 19$/agent/mois) supposent un engagement annuel ; il n'y a pas d'option mensuelle au même tarif."
+        },
+        {
+          "title": "Le prix d'appel à 19$ ne couvre que le ticketing par e-mail",
+          "text": "Le tarif le plus bas affiché (Support Team) exclut le chat, le téléphone et l'IA — l'offre réellement utilisable (Suite Team) démarre à 55$/agent/mois."
+        }
+      ]
     },
     "alternatives": [
       "intercom"
@@ -58090,7 +58178,9 @@
       "location_sensitive": false,
       "official_source_url": "https://www.zendesk.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 15,
+      "tcoExampleFr": "Exemple concret : une équipe support de 5 agents facturant 50$/h qui perd collectivement 3h/mois à jongler entre plusieurs outils pour répondre sur différents canaux perd 150$/mois en temps masqué. Zendesk Suite Team à 55$/mois/agent (275$/mois pour 5 agents) centralise ces canaux et se rentabilise par ce gain — mais c'est ce palier-là qu'il faut budgétiser, pas le prix d'appel à 19$.",
+      "tcoExampleEn": "Concrete example: a 5-agent support team billing $50/h that collectively loses 3h/month juggling tools to answer across channels is losing $150/month in hidden time. Zendesk Suite Team at $55/month/agent ($275/month for 5 agents) centralizes those channels and pays for itself through that gain — but that's the tier to budget for, not the $19 entry price."
     },
     "websiteUrl": "https://zendesk.com",
     "logo": "",
@@ -58103,7 +58193,21 @@
         "You're a small team with a tight budget — the price climbs quickly",
         "You want a plug-and-play tool with no initial setup"
       ],
-      "threshold": "Worth it for mid-to-large support teams with resources dedicated to setup."
+      "threshold": "Worth it for mid-to-large support teams with resources dedicated to setup.",
+      "billingTraps": [
+        {
+          "title": "No permanent free plan",
+          "text": "Zendesk only offers a 14-day trial of Suite Professional; there's no free tier for ongoing use, unlike competitors such as Freshdesk."
+        },
+        {
+          "title": "Annual billing only for the listed prices",
+          "text": "The advertised rates (from $19/agent/month) assume an annual commitment — there's no monthly option at the same price."
+        },
+        {
+          "title": "The $19 entry price only covers email ticketing",
+          "text": "The lowest advertised tier (Support Team) excludes chat, phone, and AI — the actually usable offering (Suite Team) starts at $55/agent/month."
+        }
+      ]
     },
     "prosEn": [
       "Centralizes all customer channels (email, chat, social, phone) in one dashboard",
@@ -131663,7 +131767,17 @@
         "Tu vis dans l'écosystème Google : Drive est moins cher et offre 15 Go gratuits",
         "Tu veux juste envoyer un fichier de temps en temps : un lien suffit"
       ],
-      "threshold": "Solide pour de la synchro fiable et le partage de gros fichiers. Mais à stockage égal, Google Drive est souvent moins cher, surtout dans l'écosystème Google."
+      "threshold": "Solide pour de la synchro fiable et le partage de gros fichiers. Mais à stockage égal, Google Drive est souvent moins cher, surtout dans l'écosystème Google.",
+      "billingTraps": [
+        {
+          "title": "Le plan Business impose un minimum de 3 sièges",
+          "text": "Au-delà des plans individuels (Plus, Professional), Dropbox Standard pour les équipes (18$/utilisateur/mois annuel) impose un minimum de 3 utilisateurs, soit 54$/mois même pour 2 personnes."
+        },
+        {
+          "title": "Le plan gratuit famélique pousse vers le payant dès le premier gros fichier",
+          "text": "2 Go de stockage gratuit se remplissent vite avec des fichiers créatifs ou des sauvegardes — bien moins que les 15 Go gratuits de Google Drive."
+        }
+      ]
     },
     "pros": [
       "Synchronisation fiable et rapide sur tous les appareils",
@@ -131770,7 +131884,9 @@
       "location_sensitive": false,
       "official_source_url": "https://www.dropbox.com/plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12
+      "compare_price_monthly_eur": 12,
+      "tcoExampleFr": "Exemple concret : un freelance créatif facturant 50$/h qui perd 30 min/mois à gérer des erreurs de synchronisation ou des versions de fichiers perdues perd 25$/mois en temps masqué. Dropbox Plus à 12$/mois est rentabilisé dès cette demi-heure récupérée — mais pour une équipe de 2 personnes passant en Business, le minimum de 3 sièges impose de payer 54$/mois, pas 36$.",
+      "tcoExampleEn": "Concrete example: a freelance creative billing $50/h who loses 30 min/month dealing with sync errors or lost file versions is losing $25/month in hidden time. Dropbox Plus at $12/month pays for itself from that half hour alone — but for a 2-person team moving to Business, the 3-seat minimum means paying $54/month, not $36."
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
@@ -131809,7 +131925,17 @@
         "You live in the Google ecosystem: Drive is cheaper and offers 15 GB free",
         "You just want to send a file occasionally: a link is enough"
       ],
-      "threshold": "Solid for reliable sync and large-file sharing. But at equal storage, Google Drive is often cheaper, especially in the Google ecosystem."
+      "threshold": "Solid for reliable sync and large-file sharing. But at equal storage, Google Drive is often cheaper, especially in the Google ecosystem.",
+      "billingTraps": [
+        {
+          "title": "The Business plan enforces a 3-seat minimum",
+          "text": "Beyond the individual plans (Plus, Professional), Dropbox Standard for teams ($18/user/month annual) enforces a 3-user minimum — $54/month even for 2 people."
+        },
+        {
+          "title": "The thin free plan pushes you to paid at the first large file",
+          "text": "2GB of free storage fills up fast with creative files or backups — far less than Google Drive's 15GB free tier."
+        }
+      ]
     },
     "pricingEn": {
       "free": "Basic free, 2 GB of storage",
