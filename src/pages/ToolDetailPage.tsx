@@ -1,7 +1,7 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useMemo, useRef } from "react";
 import {
   ExternalLink, ArrowRight, CalendarCheck,
 } from "lucide-react";
@@ -217,7 +217,13 @@ const ToolDetailPage = () => {
 
     // Only auto-scroll on a fresh deep-link landing (direct entry to a
     // sub-route URL). In-page navigation is owned by the floating pill nav,
-    // which scrolls itself — re-scrolling here would double-fire.
+    // which scrolls itself — re-scrolling here would double-fire and race
+    // it (the pill nav's smooth scrollIntoView starts first, then this
+    // effect's instant window.scrollTo would jump on top of it mid-flight).
+    // skipScrollReset is the explicit signal the pill nav sets on every
+    // navigate() it triggers, so check it directly instead of relying only
+    // on the isFirst/toolChanged heuristic.
+    if ((location.state as { skipScrollReset?: boolean } | null)?.skipScrollReset) return;
     if (!isFirst && !toolChanged) return;
     if (subPage === "presentation") return; // bare route never auto-scrolls
 
@@ -278,6 +284,16 @@ const ToolDetailPage = () => {
     },
     [] as any[]
   );
+  // Whether the "Alternatives" section/pill has anything to show at all —
+  // curated/cover-overlap alternatives above, OR a same-cluster substitute
+  // that clears the similarity gate, OR a featured head-to-head comparison.
+  // Drives both the pill nav (hide the tab) and the section itself (don't
+  // render a heading + intro paragraph above nothing).
+  const hasAlternativesContent = alternatives.length > 0
+    || ((tool as any).substitution_cluster_v2
+      ? findSimilarTools(tool, tools.filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)).length > 0
+      : false)
+    || FEATURED_COMPARISONS.some((c: any) => c.toolA === (tool.slug || tool.id) || c.toolB === (tool.slug || tool.id));
   const ssrRelatedPosts = useContext(SsrRelatedPostsContext);
   const relatedPosts = ssrRelatedPosts !== undefined
     ? ssrRelatedPosts
@@ -318,10 +334,21 @@ const ToolDetailPage = () => {
     alternatives, catName, catNameEn,
   };
 
-  const pillSections = TABS.map((tab) => ({
-    id: tab.id === "presentation" ? "analyse" : tab.id,
-    label: lang === "fr" ? tab.labelFr : tab.labelEn,
-  }));
+  // Memoized: a fresh array on every render would tear down and recreate
+  // SectionPillNav's IntersectionObserver/keyboard listener on every
+  // unrelated state update (e.g. activeProfile), causing visible jank.
+  // "Alternatives" is dropped when there's nothing to show there (see the
+  // alternatives computation above — no curated/cover-overlap data, an
+  // honest empty result rather than a tab that leads to a half-empty page).
+  const pillSections = useMemo(
+    () => TABS
+      .filter((tab) => tab.id !== "alternatives" || hasAlternativesContent)
+      .map((tab) => ({
+        id: tab.id === "presentation" ? "analyse" : tab.id,
+        label: lang === "fr" ? tab.labelFr : tab.labelEn,
+      })),
+    [lang, hasAlternativesContent]
+  );
 
   // Test ponctuel (Asana) : remonter le bloc CTA "Audit de stack" juste après
   // le verdict au lieu d'attendre la fin de page. Gated par slug en dur (pas
@@ -654,7 +681,7 @@ const ToolDetailPage = () => {
                 SECTION: Alternatives — moved up alongside Prix, see comment
                 above.
             ════════════════════════════════ */}
-            {(
+            {hasAlternativesContent && (
               <div id="alternatives" className="td-subpage-content">
                 <div className="td-section">
                   <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
