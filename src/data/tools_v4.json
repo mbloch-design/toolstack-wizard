@@ -8249,7 +8249,7 @@
     "id": "bamboohr",
     "slug": "bamboohr",
     "name": "BambooHR",
-    "category": "organization",
+    "category": "hris-payroll",
     "shortDescription": "Logiciel RH et gestion des talents",
     "shortDescriptionEn": "HR software and talent management.",
     "description": "BambooHR, c'est logiciel RH et gestion des talents. Entièrement gratuit.",
@@ -28622,7 +28622,7 @@
     "name": "Lano",
     "shortDescription": "Solution globale d’employeur de référence et gestion de paie.",
     "description": "Lano, c'est solution globale d’employeur de référence et gestion de paie. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en global payroll, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "category": "organization",
+    "category": "hris-payroll",
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
@@ -29550,7 +29550,7 @@
     "id": "legalstart",
     "slug": "legalstart",
     "name": "Legalstart",
-    "category": "organization",
+    "category": "legal-contracts",
     "shortDescription": "Création et gestion juridique d'entreprise en ligne.",
     "shortDescriptionEn": "Online company creation and legal management.",
     "description": "Legalstart, c'est création et gestion juridique d'entreprise en ligne. À partir de 15€/mois.\n\nFormulaires guidés pas à pas. documents juridiques conformes, prix transparent et fixe. Support juridique par chat. Concrètement : créer une SASU ou EURL en ligne. Ou encore : rédiger des CGV ou contrats de prestation.\n\nÀ garder si : création ou modification de structure juridique ou rédaction de contrats standards. À éviter si : cas juridiques complexes nécessitant un avocat ou grande entreprise avec service juridique. Limite principale : documents standardisés (pas sur-mesure). Rentable dès le premier acte juridique (vs honoraires avocat).",
@@ -29641,7 +29641,7 @@
     "id": "legifrance-pro",
     "slug": "legifrance-pro",
     "name": "Legifrance Pro",
-    "category": "organization",
+    "category": "legal-contracts",
     "shortDescription": "Accès aux textes juridiques français officiels.",
     "shortDescriptionEn": "Access to official French legal texts.",
     "description": "Legifrance Pro, c'est accès aux textes juridiques français officiels. Gratuit pour commencer, payant pour aller plus loin.\n\nGratuit et officiel. base de données juridique exhaustive, mise à jour en temps réel. Recherche avancée par thème et date. Concrètement : vérifier une clause contractuelle. Ou encore : rechercher une convention collective.\n\nÀ garder si : besoin de vérifier des textes de loi ou veille juridique régulière. À éviter si : besoin de conseil juridique personnalisé ou aucune connaissance juridique. Limite principale : interface austère et technique. Gratuit — à bookmarker pour toute vérification juridique ponctuelle.",
@@ -34418,7 +34418,7 @@
     "name": "MyCase",
     "shortDescription": "Solution de gestion de dossiers juridiques pour cabinets B2C.",
     "description": "MyCase, c'est solution de gestion de dossiers juridiques pour cabinets B2C. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en legal case management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "category": "organization",
+    "category": "legal-contracts",
     "pricing": {
       "free": "Fonctionnalités de base",
       "paid": "10€/mois pour version Pro"
@@ -35049,7 +35049,7 @@
     "name": "Netchex",
     "shortDescription": "Solution de gestion RH et paie.",
     "description": "Netchex, c'est solution de gestion RH et paie. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en payroll, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "category": "organization",
+    "category": "hris-payroll",
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
@@ -37446,7 +37446,7 @@
     "name": "Oyster®",
     "shortDescription": "Plateforme RH pour entreprises distribuées mondialement.",
     "description": "Oyster®, c'est plateforme RH pour entreprises distribuées mondialement. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en global HR, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "category": "organization",
+    "category": "hris-payroll",
     "pricing": {
       "free": "Fonctionnalités de base",
       "paid": "15€/mois pour version Pro"
@@ -38910,7 +38910,7 @@
     "substitutable": true,
     "bundle_parent": null,
     "host_app": null,
-    "category": "organization",
+    "category": "hris-payroll",
     "shortDescription": "SIRH complet pour PME : recrutement, onboarding, paie, congés.",
     "defaultMonthlyPrice": 0,
     "pricing": {
@@ -43916,7 +43916,7 @@
     "id": "rippling",
     "slug": "rippling",
     "name": "Rippling",
-    "category": "organization",
+    "category": "hris-payroll",
     "shortDescription": "RH, paie et gestion IT unifiée",
     "shortDescriptionEn": "Unified HR, payroll, and IT management.",
     "description": "Rippling, c'est rH, paie et gestion IT unifiée. À partir de 8€/mois.",
@@ -55812,7 +55812,7 @@
     "id": "wolters-kluwer",
     "slug": "wolters-kluwer",
     "name": "Wolters Kluwer",
-    "category": "organization",
+    "category": "legal-contracts",
     "shortDescription": "Solutions de conformité et veille juridique.",
     "shortDescriptionEn": "Compliance and legal monitoring solutions.",
     "description": "Wolters Kluwer, c'est solutions de conformité et veille juridique. À partir de 49€/mois.\n\nBases documentaires très complètes. analyses et commentaires d'experts, outils de conformité réglementaire. Mise à jour continue. Concrètement : veille fiscale et sociale. Ou encore : conformité RGPD et réglementaire.\n\nÀ garder si : gestion de conformité réglementaire ou cabinet comptable ou juridique. À éviter si : freelance sans obligation réglementaire complexe ou budget limité. Limite principale : prix élevé (abonnement professionnel). Justifié pour les professionnels avec des obligations réglementaires continues.",
