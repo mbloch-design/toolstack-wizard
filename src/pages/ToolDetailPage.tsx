@@ -257,10 +257,16 @@ const ToolDetailPage = () => {
   const curatedAlts = ((tool as any).alternatives || [])
     .map((slug: string) => tools.find((tt: any) => tt.id === slug || tt.slug === slug))
     .filter(Boolean);
-  // curatedAlts always wins its slots unconditionally; seenAltIds is only used to
-  // dedupe the lower-priority tiers (cover-overlap, then same-category) against it.
+  // curatedAlts always wins its slots unconditionally; seenAltIds dedupes
+  // the lower-priority tier (cover-overlap) against it. Deliberately NOT
+  // falling back to sameCategoryAlts (every tool sharing the same broad
+  // categoryId, unfiltered) when curated/cover-overlap are empty — that
+  // tier has no relevance signal at all (categories like "organization"
+  // hold 100+ unrelated tools, e.g. Allstate/Auvik next to Asana) and
+  // produced the same generic 6-tool list for any tool lacking real data.
+  // An empty alternatives list is the honest result in that case.
   const seenAltIds = new Set<string>();
-  const alternatives = [curatedAlts, coverOverlapAlts, sameCategoryAlts].reduce(
+  const alternatives = [curatedAlts, coverOverlapAlts].reduce(
     (acc: any[], list: any[]) => {
       for (const tt of list) {
         if (acc.length >= 6 || seenAltIds.has(tt.id)) continue;
