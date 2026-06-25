@@ -10160,6 +10160,13 @@ section[id] {
   border: 1px solid var(--color-ink-border);
   opacity: 1;
   transition: opacity 220ms ease, transform 220ms ease;
+  /* A fixed + rounded + shadowed element whose transform/opacity animates
+     during an active scroll (the hero-visibility observer can flip mid
+     smooth-scroll) is a known trigger for a brief black compositor flash
+     on Chrome/Android. Promoting it to its own stable GPU layer up front
+     avoids the mid-scroll re-rasterization that causes it. */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .tt-pillnav--hidden {
