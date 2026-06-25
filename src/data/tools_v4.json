@@ -6174,7 +6174,17 @@
         "Tu veux juste un tableur simple — Google Sheets suffit largement",
         "Ton équipe a besoin d'un vrai CRM avec pipeline de vente avancé"
       ],
-      "threshold": "Pertinent dès que tu veux structurer des données au-delà d'un simple tableur."
+      "threshold": "Pertinent dès que tu veux structurer des données au-delà d'un simple tableur.",
+      "billingTraps": [
+        {
+          "title": "Le plafond de 1 000 lignes partagé sur le gratuit",
+          "text": "Le plan gratuit limite chaque base à 1 000 lignes et 5 éditeurs, avec un quota de 100 automatisations partagé pour tout l'espace — pas par utilisateur."
+        },
+        {
+          "title": "Le saut de prix entre Team et Business",
+          "text": "Passer de Team (20$/mois/éditeur) à Business (45$/mois/éditeur) pour débloquer plus de lignes par base (125 000 contre 50 000) coûte plus du double par siège."
+        }
+      ]
     },
     "pricing": {
       "free": "Plan gratuit disponible",
@@ -6262,7 +6272,9 @@
       "location_sensitive": false,
       "official_source_url": "https://support.airtable.com/docs/changes-to-airtable-plans",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 17.32
+      "compare_price_monthly_eur": 17.32,
+      "tcoExampleFr": "Exemple concret : une freelance qui facture 50$/h et passe 1h/mois à fusionner des fichiers Excel éparpillés perd 50$/mois en temps masqué. Airtable Team à 20$/mois/éditeur (pas de minimum de sièges) est rentabilisé dès cette heure récupérée — mais le plafond de 1 000 lignes du plan gratuit est souvent atteint avant même de valider l'usage.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month merging scattered spreadsheets is losing $50/month in hidden time. Airtable Team at $20/month/editor (no seat minimum) pays for itself from that one recovered hour — but the free plan's 1,000-row cap is often hit before you even validate the use case."
     },
     "websiteUrl": "https://airtable.com",
     "logo": "",
@@ -6275,7 +6287,17 @@
         "You just want a simple spreadsheet — Google Sheets is plenty",
         "Your team needs a real CRM with an advanced sales pipeline"
       ],
-      "threshold": "Worth it once you need to structure data beyond a simple spreadsheet."
+      "threshold": "Worth it once you need to structure data beyond a simple spreadsheet.",
+      "billingTraps": [
+        {
+          "title": "The shared 1,000-row cap on free",
+          "text": "The free plan caps each base at 1,000 rows and 5 editors, with a 100-automation quota shared across the whole workspace — not per user."
+        },
+        {
+          "title": "The price jump from Team to Business",
+          "text": "Moving from Team ($20/month/editor) to Business ($45/month/editor) to unlock more rows per base (125,000 vs 50,000) costs more than double per seat."
+        }
+      ]
     },
     "pros": [
       "Flexibilité extrême : remplace un CRM, un suivi de projet, une base de contenus",
@@ -14432,7 +14454,17 @@
         "Tu démarres une base de connaissances de zéro sans utiliser Jira — Notion est plus simple",
         "Tu cherches une expérience d'écriture plus moderne et fluide"
       ],
-      "threshold": "Pertinent surtout dans l'écosystème Atlassian ; hors de ce contexte, d'autres outils sont plus agréables à utiliser."
+      "threshold": "Pertinent surtout dans l'écosystème Atlassian ; hors de ce contexte, d'autres outils sont plus agréables à utiliser.",
+      "billingTraps": [
+        {
+          "title": "Le plan gratuit verrouillé à 10 utilisateurs",
+          "text": "Au-delà de 10 utilisateurs, il faut obligatoirement passer à un plan payant (à partir de 5,75$/utilisateur/mois) — aucun palier intermédiaire gratuit."
+        },
+        {
+          "title": "La valeur réelle dépend de l'écosystème Atlassian",
+          "text": "Confluence est surtout justifié si l'équipe utilise déjà Jira : sans ça, le lien documentation-tickets qui fait sa valeur n'existe pas."
+        }
+      ]
     },
     "pros": [
       "Intégration native parfaite avec Jira pour lier doc et tickets",
@@ -14488,7 +14520,9 @@
       "location_sensitive": false,
       "official_source_url": "https://www.atlassian.com/software/confluence/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 4.98
+      "compare_price_monthly_eur": 4.98,
+      "tcoExampleFr": "Exemple concret : une équipe de 8 personnes déjà sur Jira qui facture 50$/h et perd collectivement 2h/mois à chercher une spec produit dans des fichiers épars perd 100$/mois en temps masqué. Confluence à 5,75$/mois/utilisateur (46$/mois pour 8 personnes) est largement rentabilisé — mais sans Jira en parallèle, ce calcul ne tient pas.",
+      "tcoExampleEn": "Concrete example: an 8-person team already on Jira, billing $50/h, that collectively loses 2h/month hunting for a product spec across scattered files is losing $100/month in hidden time. Confluence at $5.75/month/user ($46/month for 8 people) easily pays for itself — but without Jira alongside it, that math doesn't hold."
     },
     "websiteUrl": "https://atlassian.com/software/confluence",
     "logo": "",
@@ -14501,7 +14535,17 @@
         "You're starting a knowledge base from scratch without using Jira — Notion is simpler",
         "You want a more modern, smoother writing experience"
       ],
-      "threshold": "Mainly relevant within the Atlassian ecosystem; outside it, other tools are more pleasant to use."
+      "threshold": "Mainly relevant within the Atlassian ecosystem; outside it, other tools are more pleasant to use.",
+      "billingTraps": [
+        {
+          "title": "The free plan locked to 10 users",
+          "text": "Past 10 users, you must move to a paid plan (from $5.75/user/month) — there's no free intermediate tier."
+        },
+        {
+          "title": "Real value depends on already being in the Atlassian ecosystem",
+          "text": "Confluence mostly earns its place if the team already uses Jira — without that, the docs-to-tickets link that makes it valuable doesn't exist."
+        }
+      ]
     },
     "prosEn": [
       "Perfect native integration with Jira to link docs and tickets",
@@ -52615,7 +52659,17 @@
         "Vous voulez gérer des projets complexes",
         "Vous avez besoin de documentation liée"
       ],
-      "threshold": "Dès que votre cerveau sature de petites tâches à ne pas oublier."
+      "threshold": "Dès que votre cerveau sature de petites tâches à ne pas oublier.",
+      "billingTraps": [
+        {
+          "title": "Le plafond de 5 projets actifs sur le gratuit",
+          "text": "Le plan gratuit limite à 5 projets actifs, sans rappels ni pièces jointes. Pro (5$/mois annuel) débloque 300 projets et les rappels."
+        },
+        {
+          "title": "La facturation mensuelle coûte 40% plus cher",
+          "text": "Pro passe de 5$/mois en annuel à 7$/mois en mensuel — un surcoût de 40% pour la flexibilité de ne pas s'engager."
+        }
+      ]
     },
     "pricing": {
       "free": "Plan gratuit disponible",
@@ -52715,7 +52769,9 @@
       "location_sensitive": false,
       "official_source_url": "https://www.todoist.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 5
+      "compare_price_monthly_eur": 5,
+      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et oublie une relance client par mois sans rappels perd au moins 50$/mois en opportunité manquée. Todoist Pro à 5$/mois (annuel) est rentabilisé dès ce seul oubli évité — mais le plafond de 5 projets actifs du plan gratuit est atteint dès qu'on gère plus de 2-3 clients en parallèle.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who misses one client follow-up a month without reminders loses at least $50/month in missed opportunity. Todoist Pro at $5/month (annual) pays for itself from that one avoided miss — but the free plan's 5-active-project cap is hit as soon as you're juggling more than 2-3 clients at once."
     },
     "websiteUrl": "https://todoist.com",
     "logo": "",
@@ -52729,7 +52785,17 @@
         "You want to manage complex projects",
         "You need linked documentation"
       ],
-      "threshold": "As soon as your brain becomes overwhelmed by small tasks you shouldn't forget."
+      "threshold": "As soon as your brain becomes overwhelmed by small tasks you shouldn't forget.",
+      "billingTraps": [
+        {
+          "title": "The 5-active-project cap on free",
+          "text": "The free plan caps active projects at 5, with no reminders or attachments. Pro ($5/month annual) unlocks 300 projects and reminders."
+        },
+        {
+          "title": "Monthly billing costs 40% more",
+          "text": "Pro goes from $5/month annual to $7/month monthly — a 40% premium for not committing."
+        }
+      ]
     },
     "prosEn": [
       "Minimalist and ultra-fast interface",
@@ -56779,17 +56845,20 @@
     "description": "Wrike, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit limité à 5 utilisateurs, 200 tâches actives et 2 Go de stockage",
+      "paid": "Team à 10$/mois/utilisateur ; Business à 25$/mois/utilisateur (minimum 5 sièges, facturation annuelle)"
     },
     "website": "https://wrike.com",
     "affiliateLink": "https://wrike.com",
     "pros": [
-      "Spécialisé en project management",
-      "Interface professionnelle"
+      "La validation visuelle (proofing) intégrée permet de commenter directement sur une image, une vidéo ou un PDF avec horodatage précis, remplaçant les allers-retours par e-mail pour les validations créatives.",
+      "Workflows et formulaires de demande personnalisables selon le type de projet.",
+      "Intégration native avec Adobe Creative Cloud pour les équipes créatives."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "L'interface est régulièrement critiquée comme plus dense et moins intuitive que ses concurrents : la prise en main demande plusieurs semaines.",
+      "Le saut de prix entre Team (10$/mois) et Business (25$/mois, minimum 5 sièges) est abrupt pour accéder aux fonctions d'approbation avancées.",
+      "Moins adapté à une équipe de moins de 5 personnes à cause du minimum de sièges sur Business."
     ],
     "bestFor": [
       "all"
@@ -56800,7 +56869,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 10,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -56810,14 +56879,29 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu gères des validations créatives (visuels, vidéos, PDF) avec des allers-retours de commentaires fréquents",
+        "Ton équipe a besoin de workflows et formulaires de demande personnalisés selon le type de projet",
+        "Tu coordonnes plusieurs équipes (marketing, design, IT) sur des projets avec des dépendances croisées"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu n'as besoin que d'une liste de tâches simple, sans validation ni approbation formelle",
+        "Ton équipe fait moins de 5 personnes : le minimum de sièges sur Business fait payer pour des licences inutilisées"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Wrike se justifie pour une équipe qui gère des validations créatives ou des workflows multi-équipes avec des dépendances complexes. Pour une simple liste de tâches, Trello ou Todoist suffisent largement.",
+      "billingTraps": [
+        {
+          "title": "Le minimum de 5 sièges sur Business",
+          "text": "Le plan Business (25$/mois/utilisateur) impose un minimum de 5 sièges, soit 125$/mois minimum même pour une équipe de 3 personnes."
+        },
+        {
+          "title": "Les paliers d'achat imposés au-delà de 5 sièges",
+          "text": "Jusqu'à 30 sièges, les licences s'achètent par paliers de 5 ; de 30 à 100, par paliers de 10 ; au-delà, par paliers de 25."
+        },
+        {
+          "title": "Business facturé uniquement à l'année",
+          "text": "Contrairement à Team (mensuel ou annuel), Business et les paliers supérieurs n'acceptent que la facturation annuelle."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
@@ -56846,41 +56930,64 @@
     "longDescription": "Wrike, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "longDescriptionEn": "Wrike is project management software for teams. Starting at €15/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free plan capped at 5 users, 200 active tasks, and 2GB storage",
+      "paid": "Team at $10/month/user; Business at $25/month/user (5-seat minimum, annual billing)"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "minimum_5_seats_on_business",
+        "annual_billing_above_team"
+      ],
+      "verified_on": "2026-06-25",
       "source_domain": "wrike.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Team",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.wrike.com/price/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 10,
+      "tcoExampleFr": "Exemple concret : une équipe créative de 4 personnes facturant 50$/h qui perd collectivement 3h/mois en allers-retours e-mail pour valider des visuels perd 150$/mois en temps masqué. Le proofing intégré de Wrike absorbe largement ce coût — mais le plan Business impose 5 sièges minimum (125$/mois) même si l'équipe n'en compte que 4, un siège payé sans utilisateur.",
+      "tcoExampleEn": "Concrete example: a 4-person creative team billing $50/h that collectively loses 3h/month on email back-and-forth to approve visuals is losing $150/month in hidden time. Wrike's built-in proofing easily absorbs that cost — but the Business plan enforces a 5-seat minimum ($125/month) even with only 4 people, one seat paid for with no user."
     },
     "websiteUrl": "https://wrike.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You handle creative approvals (visuals, video, PDF) with frequent back-and-forth comments",
+        "Your team needs custom workflows and request forms depending on project type",
+        "You coordinate several teams (marketing, design, IT) on projects with cross-dependencies"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You only need a simple task list, with no formal approval step",
+        "Your team is under 5 people: the Business seat minimum means paying for unused licenses"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Wrike earns its place for a team running creative approvals or multi-team workflows with complex dependencies. For a simple task list, Trello or Todoist are plenty.",
+      "billingTraps": [
+        {
+          "title": "The 5-seat minimum on Business",
+          "text": "The Business plan ($25/month/user) enforces a 5-seat minimum — $125/month minimum even for a 3-person team."
+        },
+        {
+          "title": "Forced purchase banding above 5 seats",
+          "text": "Up to 30 seats, licenses are sold in increments of 5; from 30 to 100, increments of 10; beyond that, increments of 25."
+        },
+        {
+          "title": "Business is annual-billing only",
+          "text": "Unlike Team (monthly or annual), Business and the tiers above it only accept annual billing."
+        }
+      ]
     },
     "prosEn": [
-      "Specialized in project management",
-      "Professional interface"
+      "Built-in visual proofing lets you comment directly on an image, video, or PDF with precise timestamps, replacing email back-and-forth for creative approvals.",
+      "Customizable workflows and request forms depending on project type.",
+      "Native Adobe Creative Cloud integration for creative teams."
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "The interface is regularly criticized as denser and less intuitive than competitors: ramping up takes several weeks.",
+      "The price jump from Team ($10/month) to Business ($25/month, 5-seat minimum) is steep just to reach advanced approval features.",
+      "A poor fit for teams under 5 people because of the Business seat minimum."
     ],
     "useCases": [],
     "useCasesEn": null,
@@ -123410,7 +123517,17 @@
         "Tu as besoin d'un suivi de tâches fin, d'automatisations ou de vues multiples",
         "Tu es une petite équipe : le forfait illimité n'est pas rentable et le gratuit est limité"
       ],
-      "threshold": "Le bon choix pour une équipe qui veut de la simplicité, surtout au-dessus d'une vingtaine de personnes grâce au forfait illimité. Pour du suivi technique ou flexible, Notion, Asana ou ClickUp sont plus adaptés."
+      "threshold": "Le bon choix pour une équipe qui veut de la simplicité, surtout au-dessus d'une vingtaine de personnes grâce au forfait illimité. Pour du suivi technique ou flexible, Notion, Asana ou ClickUp sont plus adaptés.",
+      "billingTraps": [
+        {
+          "title": "Le seuil de rentabilité du forfait Pro Unlimited",
+          "text": "Le forfait à prix fixe (299$/mois, utilisateurs illimités) ne devient avantageux qu'à partir d'une vingtaine d'utilisateurs payés sur Plus (15$/mois chacun) ; en dessous, Plus reste moins cher."
+        },
+        {
+          "title": "Le plan gratuit limité à 1 projet et 20 personnes",
+          "text": "Le plan gratuit permet jusqu'à 20 personnes mais sur un seul projet actif — inadapté dès qu'il faut suivre plusieurs dossiers clients en parallèle."
+        }
+      ]
     },
     "pros": [
       "Simplicité radicale : tout est rangé, rien ne déborde sur mille options",
@@ -123505,7 +123622,9 @@
       "location_sensitive": false,
       "official_source_url": "https://basecamp.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 15,
+      "tcoExampleFr": "Exemple concret : une équipe de 15 personnes facturant 50$/h qui perd collectivement 2h/mois à chercher des fichiers éparpillés entre e-mails et Slack perd 100$/mois en temps masqué. À 15 personnes, Plus (225$/mois) reste moins cher que Pro Unlimited (299$/mois) — le calcul s'inverse seulement au-delà d'environ 20 utilisateurs.",
+      "tcoExampleEn": "Concrete example: a 15-person team billing $50/h that collectively loses 2h/month hunting for files scattered between email and Slack is losing $100/month in hidden time. At 15 people, Plus ($225/month) still costs less than Pro Unlimited ($299/month) — the math only flips past roughly 20 users."
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -123544,7 +123663,17 @@
         "You need fine-grained task tracking, automations or multiple views",
         "You're a small team: the unlimited plan isn't worth it and the free one is limited"
       ],
-      "threshold": "The right call for a team that wants simplicity, especially above twenty people thanks to the unlimited plan. For technical or flexible tracking, Notion, Asana or ClickUp fit better."
+      "threshold": "The right call for a team that wants simplicity, especially above twenty people thanks to the unlimited plan. For technical or flexible tracking, Notion, Asana or ClickUp fit better.",
+      "billingTraps": [
+        {
+          "title": "The Pro Unlimited break-even point",
+          "text": "The flat-rate plan ($299/month, unlimited users) only pays off past roughly twenty people paying for Plus ($15/month each); below that, Plus stays cheaper."
+        },
+        {
+          "title": "The free plan's 1-project cap",
+          "text": "The free plan allows up to 20 people but on a single active project — a poor fit as soon as you need to track several client files in parallel."
+        }
+      ]
     },
     "pricingEn": {
       "free": "Limited free plan (1 project, up to 20 people)",
