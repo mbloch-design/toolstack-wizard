@@ -6602,7 +6602,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -8087,7 +8087,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -9589,7 +9589,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -9839,7 +9839,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -16755,7 +16755,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -27545,7 +27545,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -34900,7 +34900,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -44660,7 +44660,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -49587,7 +49587,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -51220,7 +51220,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": null,
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
