@@ -9923,7 +9923,10 @@
     "shortDescription": "Stockage et gestion de contenu d'entreprise avec sécurité et conformité poussées.",
     "description": "Box se positionne comme une plateforme de gestion de contenu d'entreprise plutôt qu'un simple stockage cloud : contrôles de permissions granulaires, chiffrement, certifications de conformité, et intégrations profondes avec Microsoft 365 et Salesforce.\n\nC'est un choix pertinent pour une organisation qui manipule des documents sensibles et a besoin de contrôles de sécurité poussés ; pour un usage personnel ou une petite équipe sans ces contraintes, c'est souvent plus complexe que nécessaire face à Dropbox ou Google Drive.",
     "category": "organization",
-    "pricing": "10 Go gratuits ; Business à 20$/utilisateur/mois (15$ en annuel, minimum 3 utilisateurs) ; Business Plus 33$, Enterprise 47$, Enterprise Plus 50$.",
+    "pricing": {
+      "free": "Plan Individual gratuit avec 10 Go de stockage",
+      "paid": "Business Starter à 7$/utilisateur/mois (minimum 3 utilisateurs, 100 Go/utilisateur) ; Business à 15$/mois en annuel (stockage illimité, minimum 3 utilisateurs) ; Business Plus 33$, Enterprise 47$, Enterprise Plus 50$."
+    },
     "website": "https://box.com",
     "affiliateLink": "https://box.com",
     "pros": [
@@ -9945,7 +9948,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 17.52,
+    "defaultMonthlyPrice": 7,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -10005,19 +10008,22 @@
     "shortDescriptionEn": "Enterprise content storage and management with advanced security and compliance.",
     "longDescription": "Box se positionne comme une plateforme de gestion de contenu d'entreprise plutôt qu'un simple stockage cloud : contrôles de permissions granulaires, chiffrement, certifications de conformité, et intégrations profondes avec Microsoft 365 et Salesforce.\n\nC'est un choix pertinent pour une organisation qui manipule des documents sensibles et a besoin de contrôles de sécurité poussés ; pour un usage personnel ou une petite équipe sans ces contraintes, c'est souvent plus complexe que nécessaire face à Dropbox ou Google Drive.",
     "longDescriptionEn": "Box positions itself as an enterprise content management platform rather than simple cloud storage: granular permission controls, encryption, compliance certifications, and deep integrations with Microsoft 365 and Salesforce.\n\nIt's a relevant choice for an organization handling sensitive documents that needs advanced security controls; for personal use or a small team without these constraints, it's often more complex than necessary compared to Dropbox or Google Drive.",
-    "pricingEn": "10GB free; Business at $20/user/month ($15 annual, 3-user minimum); Business Plus $33, Enterprise $47, Enterprise Plus $50.",
+    "pricingEn": {
+      "free": "Free Individual plan with 10GB storage",
+      "paid": "Business Starter at $7/user/month (3-user minimum, 100GB/user); Business at $15/month annual (unlimited storage, 3-user minimum); Business Plus $33, Enterprise $47, Enterprise Plus $50."
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
       "source_domain": "box.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Business Starter",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.box.com/fr-fr/pricing/individual",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10,
+      "compare_price_monthly_eur": 7,
       "tcoExampleFr": "Exemple concret : un cabinet de 3 personnes manipulant des documents sensibles, facturant 50$/h, qui évite une fuite de données coûteuse grâce aux contrôles de conformité de Box, justifie largement les 45$/mois du plan Business (3 sièges minimum) — mais ce minimum doit être budgétisé même si l'équipe ne grandit pas tout de suite.",
       "tcoExampleEn": "Concrete example: a 3-person firm handling sensitive documents, billing $50/h, that avoids one costly data leak thanks to Box's compliance controls easily justifies the $45/month Business plan (3-seat minimum) — but that minimum has to be budgeted for even if the team doesn't grow right away."
     },
@@ -18034,7 +18040,10 @@
     "shortDescription": "CRM et automatisation administrative pour freelances avec workflows conditionnels poussés.",
     "description": "Dubsado automatise contrats, factures et prise de rendez-vous pour les entreprises de service, avec le système de workflows conditionnels le plus poussé de sa catégorie sur le plan Premier.",
     "category": "organization",
-    "pricing": "Starter et Premier disponibles (tarifs 2026 après hausse de déc. 2025) ; 3 membres d'équipe inclus, 4-10 à 25$/mois, 11-20 à 45$/mois.",
+    "pricing": {
+      "free": "Essai gratuit illimité dans le temps, limité à 3 clients (fonctionnalités Premier complètes)",
+      "paid": "Starter à 20$/mois (sans les workflows automatisés) ; Premier à 40$/mois (avec workflows). 3 membres d'équipe inclus, puis paliers : 4-10 à +25$/mois, 11-20 à +45$/mois, 21-30 à +60$/mois."
+    },
     "website": " planning).",
     "affiliateLink": " planning).",
     "pros": [
@@ -18056,7 +18065,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 35,
+    "defaultMonthlyPrice": 20,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "0€/mois"
@@ -18112,7 +18121,10 @@
     "shortDescriptionEn": "CRM and administrative automation for freelancers with advanced conditional workflows.",
     "longDescription": "Dubsado automatise contrats, factures et prise de rendez-vous pour les entreprises de service, avec le système de workflows conditionnels (logique \"si... alors\", champs dynamiques) le plus poussé de sa catégorie sur le plan Premier.\n\nLe vrai coût n'est pas le prix de l'abonnement mais le temps de configuration : compte 15 à 25 heures pour bien paramétrer l'outil, à tel point que des prestataires se spécialisent dans la configuration Dubsado. Le plan Starter à 35$/mois est jugé décevant par beaucoup car il ne débloque pas les workflows, la fonctionnalité phare.",
     "longDescriptionEn": "Dubsado automates contracts, invoices, and appointment booking for service businesses, with the category's most advanced conditional workflow system (if/then logic, dynamic fields) on the Premier plan.\n\nThe real cost isn't the subscription price but the setup time: budget 15 to 25 hours to properly configure the tool, to the point that some providers specialize in Dubsado setup. The $35/month Starter plan is seen as disappointing by many since it doesn't unlock workflows, the flagship feature.",
-    "pricingEn": "Starter and Premier plans available (2026 pricing after Dec. 2025 increase); 3 team members included, 4-10 at $25/month, 11-20 at $45/month.",
+    "pricingEn": {
+      "free": "Time-unlimited free trial, capped at 3 clients (full Premier features)",
+      "paid": "Starter at $20/month (no automated workflows); Premier at $40/month (with workflows). 3 team members included, then tiers: 4-10 at +$25/month, 11-20 at +$45/month, 21-30 at +$60/month."
+    },
     "pricing_v5": {
       "cautions": [
         "Le plan Starter (20$/mois) n'inclut pas les workflows automatisés, la fonctionnalité qui justifie l'outil — il faut Premier (40$/mois)."
@@ -18121,12 +18133,12 @@
       "source_domain": "dubsado.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
+      "compare_plan_name": "Starter",
       "price_reliability": "medium",
       "location_sensitive": false,
       "official_source_url": "https://www.dubsado.com/pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 0,
+      "compare_price_monthly_eur": 20,
       "tcoExampleFr": "Exemple concret : un photographe indépendant qui facture 50$/h et passe 3h/mois à envoyer manuellement contrats, factures et rappels de rendez-vous perd 150$/mois en temps masqué. Dubsado Premier à 40$/mois automatise ce flux et se rentabilise largement — mais la configuration initiale de 15 à 25h doit être comptée dans le calcul avant le premier mois rentable.",
       "tcoExampleEn": "Concrete example: a freelance photographer billing $50/h who spends 3h/month manually sending contracts, invoices, and appointment reminders is losing $150/month in hidden time. Dubsado Premier at $40/month automates that flow and easily pays for itself — but the 15-25h initial setup has to be counted before the first profitable month."
     },
@@ -20484,7 +20496,10 @@
     "shortDescription": "Boîte de réception partagée multicanal (email, SMS, chat) pour équipes support et commerciales.",
     "description": "Front centralise les messages entrants (email, SMS, WhatsApp, chat, réseaux sociaux) dans une boîte de réception partagée où toute l'équipe voit qui répond à quoi en temps réel, avec assignation et commentaires internes pour éviter les doublons de réponse.\n\nDepuis janvier 2026, Front a supprimé la synchronisation bidirectionnelle avec Outlook, un point important à vérifier avant de s'engager si ton équipe utilise Outlook.",
     "category": "organization",
-    "pricing": "Starter à 25$/siège/mois (1 canal, max 10 sièges) ; Professional 65$/siège (omnicanal, jusqu'à 50 sièges) ; Enterprise 105$/siège. Fonctionnalités IA en option payante (+20-50$/siège).",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours",
+      "paid": "Starter à 25$/siège/mois (1 canal, max 10 sièges, minimum 2 sièges) ; Professional 65$/siège (omnicanal, jusqu'à 50 sièges) ; Enterprise 105$/siège. Fonctionnalités IA en option payante (+20-50$/siège)."
+    },
     "website": "https://front.com",
     "affiliateLink": "https://front.com",
     "pros": [
@@ -20506,7 +20521,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 21.9,
+    "defaultMonthlyPrice": 25,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -20566,19 +20581,22 @@
     "shortDescriptionEn": "Multi-channel shared inbox (email, SMS, chat) for support and sales teams.",
     "longDescription": "Front centralise les messages entrants (email, SMS, WhatsApp, chat, réseaux sociaux) dans une boîte de réception partagée où toute l'équipe voit qui répond à quoi en temps réel, avec assignation et commentaires internes pour éviter les doublons de réponse.\n\nDepuis janvier 2026, Front a supprimé la synchronisation bidirectionnelle avec Outlook : un email lu ou archivé dans Front ne se met plus à jour dans la boîte Outlook d'origine, ce qui casse la promesse de boîte partagée pour les équipes mixtes Gmail/Outlook — un point important à vérifier avant de s'engager si ton équipe utilise Outlook.",
     "longDescriptionEn": "Front centralizes incoming messages (email, SMS, WhatsApp, chat, social media) into a shared inbox where the whole team sees who's responding to what in real time, with assignment and internal comments to avoid duplicate replies.\n\nSince January 2026, Front removed two-way Outlook sync: an email read or archived in Front no longer updates in the original Outlook inbox, which breaks the shared-inbox promise for mixed Gmail/Outlook teams — an important point to check before committing if your team uses Outlook.",
-    "pricingEn": "Starter at $25/seat/month (1 channel, max 10 seats); Professional $65/seat (omnichannel, up to 50 seats); Enterprise $105/seat. AI features as a paid add-on (+$20-50/seat).",
+    "pricingEn": {
+      "free": "No permanent free plan: 14-day trial",
+      "paid": "Starter at $25/seat/month (1 channel, max 10 seats, 2-seat minimum); Professional $65/seat (omnichannel, up to 50 seats); Enterprise $105/seat. AI features as a paid add-on (+$20-50/seat)."
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
       "source_domain": "front.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Starter",
       "price_reliability": "medium",
       "location_sensitive": false,
       "official_source_url": "https://front.com/pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 15,
+      "compare_price_monthly_eur": 25,
       "tcoExampleFr": "Exemple concret : une équipe support de 2 personnes facturant 50$/h qui perd collectivement 2h/mois à se marcher dessus sur une boîte mail partagée mal organisée perd 100$/mois en temps masqué. Front Starter à 50$/mois (2 sièges minimum) règle ce problème et se rentabilise largement — mais au-delà de 10 sièges ou pour gérer plusieurs canaux, le saut vers Professional (65$/siège) doit être anticipé.",
       "tcoExampleEn": "Concrete example: a 2-person support team billing $50/h that collectively loses 2h/month stepping on each other in a poorly organized shared inbox is losing $100/month in hidden time. Front Starter at $50/month (2-seat minimum) solves that and easily pays for itself — but past 10 seats or to handle multiple channels, the jump to Professional ($65/seat) needs to be planned for."
     },
@@ -24029,12 +24047,14 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Creative or consultant with a recurring client flow",
+        "Need contracts and payments built in",
+        "English-speaking or international clients"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Exclusively French-speaking market",
+        "Need a powerful CRM",
+        "Very tight budget"
       ],
       "threshold": "Free, keep it if it's useful",
       "billingTraps": [
@@ -40226,7 +40246,7 @@
     "id": "plutio",
     "name": "Plutio",
     "shortDescription": "Plateforme de gestion tout-en-un pour freelances (projets",
-    "description": "Plutio, c'est plateforme de gestion tout-en-un pour freelances (projets. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en freelancer tools, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "description": "Plutio cherche à remplacer le combo CRM + facturation + propositions + gestion de projet par un seul outil, avec des crédits IA inclus pour générer du contenu client. C'est pensé pour un freelance ou une petite équipe qui veut éviter de payer pour 4 ou 5 abonnements séparés.\n\nIl n'existe aucun plan gratuit permanent, seulement un essai de 7 jours sans carte bancaire. Le plan Core (19$/mois) plafonne strictement à 9 clients actifs : au 10e client, il faut sauter directement à Pro (49$/mois, clients illimités, 30 contributeurs), un saut de prix de 2,6x sans palier intermédiaire.\n\nPour une activité qui grandit progressivement, ce saut doit être anticipé dès le départ. Si l'activité dépasse déjà 9 clients actifs, autant commencer directement sur Pro plutôt que de buter rapidement sur le plafond de Core.",
     "category": "organization",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 7 jours sans carte bancaire",
@@ -40305,8 +40325,8 @@
     "ia_use_case": null,
     "slug": "plutio",
     "shortDescriptionEn": "All-in-one management platform for freelancers (projects, tasks, invoicing, and CRM).",
-    "longDescription": "Plutio, c'est plateforme de gestion tout-en-un pour freelances (projets. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en freelancer tools, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Plutio is all-in-one management platform for freelancers (projects, tasks, invoicing, and CRM). Free to start, paid plans for more. Built for B2B consultants and SaaS founders.\n\nSpecialized in freelancer tools, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to check based on usage. Free, keep if useful.",
+    "longDescription": "Plutio cherche à remplacer le combo CRM + facturation + propositions + gestion de projet par un seul outil, avec des crédits IA inclus pour générer du contenu client. C'est pensé pour un freelance ou une petite équipe qui veut éviter de payer pour 4 ou 5 abonnements séparés.\n\nIl n'existe aucun plan gratuit permanent, seulement un essai de 7 jours sans carte bancaire. Le plan Core (19$/mois) plafonne strictement à 9 clients actifs : au 10e client, il faut sauter directement à Pro (49$/mois, clients illimités, 30 contributeurs), un saut de prix de 2,6x sans palier intermédiaire.\n\nPour une activité qui grandit progressivement, ce saut doit être anticipé dès le départ. Si l'activité dépasse déjà 9 clients actifs, autant commencer directement sur Pro plutôt que de buter rapidement sur le plafond de Core.",
+    "longDescriptionEn": "Plutio aims to replace the CRM + billing + proposals + project management combo with a single tool, with included AI credits to generate client content. It's built for a freelancer or small team wanting to avoid paying for 4 or 5 separate subscriptions.\n\nThere's no permanent free plan, only a 7-day trial with no credit card required. The Core plan ($19/month) strictly caps at 9 active clients: at the 10th client, you must jump straight to Pro ($49/month, unlimited clients, 30 contributors), a 2.6x price jump with no intermediate tier.\n\nFor a business growing gradually, that jump needs to be planned for from the start. If the business already has more than 9 active clients, it's worth starting directly on Pro rather than quickly hitting Core's ceiling.",
     "pricingEn": {
       "free": "No permanent free plan: 7-day trial, no credit card required",
       "paid": "Core at $19/month (up to 9 active clients); Pro at $49/month (unlimited clients, 30 contributors); Max at $199/month (everything unlimited)"
@@ -40388,7 +40408,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "Plutio aims to replace the CRM + billing + proposals + project management combo with a single tool, with included AI credits to generate client content. It's built for a freelancer or small team wanting to avoid paying for 4 or 5 separate subscriptions.\n\nThere's no permanent free plan, only a 7-day trial with no credit card required. The Core plan ($19/month) strictly caps at 9 active clients: at the 10th client, you must jump straight to Pro ($49/month, unlimited clients, 30 contributors), a 2.6x price jump with no intermediate tier.\n\nFor a business growing gradually, that jump needs to be planned for from the start. If the business already has more than 9 active clients, it's worth starting directly on Pro rather than quickly hitting Core's ceiling."
   },
   {
     "id": "podbean",
@@ -41237,7 +41258,7 @@
     "id": "process-street",
     "name": "Process Street",
     "shortDescription": "Plateforme de gestion de processus pour équipes.",
-    "description": "Process Street, c'est plateforme de gestion de processus pour équipes. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en process management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
+    "description": "Process Street sert à documenter des procédures répétitives, comme l'onboarding ou des contrôles de conformité, et à prouver qu'elles ont bien été suivies à l'identique par chaque personne : suivi natif de la complétion et historique d'audit, utile pour des certifications comme ISO ou SOC2. Ce n'est pas un outil de gestion de tâches classique : pour ça, Asana ou ClickUp sont plus adaptés.\n\nLa tarification est atypique : ce n'est pas un prix par utilisateur, mais un forfait par palier d'organisation, à partir de 100$/mois (forfait Startup), réservé aux structures de moins de 15 employés et moins de 2M$ de revenu annuel. Au-delà, les paliers montent jusqu'à 1 500$/mois. Pour toute organisation créée à partir d'août 2025, les rôles Admin, Builder et User sont tous facturables, les organisations plus anciennes ne payaient que pour Admin et Builder.\n\nLe forfait Startup limite à 5 000 enregistrements, 5 membres, 10 invités et 100 automatisations par mois. Au-delà de ces seuils, ou si l'organisation dépasse les critères d'éligibilité, le coût grimpe vite.",
     "category": "organization",
     "pricing": {
       "free": "Essai gratuit complet, sans carte bancaire",
@@ -41315,8 +41336,8 @@
     "ia_use_case": null,
     "slug": "process-street",
     "shortDescriptionEn": "Process management platform for teams.",
-    "longDescription": "Process Street, c'est plateforme de gestion de processus pour équipes. À partir de 10€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en process management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "Process Street is process management platform for teams. Starting at €10/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in process management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to check depending on usage. As soon as the tool saves you more than €10/month.",
+    "longDescription": "Process Street sert à documenter des procédures répétitives, comme l'onboarding ou des contrôles de conformité, et à prouver qu'elles ont bien été suivies à l'identique par chaque personne : suivi natif de la complétion et historique d'audit, utile pour des certifications comme ISO ou SOC2. Ce n'est pas un outil de gestion de tâches classique : pour ça, Asana ou ClickUp sont plus adaptés.\n\nLa tarification est atypique : ce n'est pas un prix par utilisateur, mais un forfait par palier d'organisation, à partir de 100$/mois (forfait Startup), réservé aux structures de moins de 15 employés et moins de 2M$ de revenu annuel. Au-delà, les paliers montent jusqu'à 1 500$/mois. Pour toute organisation créée à partir d'août 2025, les rôles Admin, Builder et User sont tous facturables, les organisations plus anciennes ne payaient que pour Admin et Builder.\n\nLe forfait Startup limite à 5 000 enregistrements, 5 membres, 10 invités et 100 automatisations par mois. Au-delà de ces seuils, ou si l'organisation dépasse les critères d'éligibilité, le coût grimpe vite.",
+    "longDescriptionEn": "Process Street is for documenting repetitive procedures, like onboarding or compliance checks, and proving everyone followed them identically: native completion tracking and audit history, useful for certifications like ISO or SOC2. It's not a regular task-management tool, for that, Asana or ClickUp fit better.\n\nPricing is unusual: not per-user, but a flat fee per organization tier, starting at $100/month (Startup tier), reserved for organizations under 15 employees and under $2M annual revenue. Beyond that, tiers climb to $1,500/month. For any organization created on or after August 2025, Admin, Builder, and User roles are all billable, older organizations only paid for Admin and Builder.\n\nThe Startup tier caps at 5,000 records, 5 members, 10 guests, and 100 automations per month. Past those limits, or if the organization exceeds the eligibility criteria, cost climbs fast.",
     "pricingEn": {
       "free": "Full free trial, no credit card required",
       "paid": "From $100/month (Startup tier, limited to organizations under 15 employees and $2M revenue) up to $1,500/month depending on tier, annual billing"
@@ -41396,7 +41417,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "Process Street is for documenting repetitive procedures, like onboarding or compliance checks, and proving everyone followed them identically: native completion tracking and audit history, useful for certifications like ISO or SOC2. It's not a regular task-management tool, for that, Asana or ClickUp fit better.\n\nPricing is unusual: not per-user, but a flat fee per organization tier, starting at $100/month (Startup tier), reserved for organizations under 15 employees and under $2M annual revenue. Beyond that, tiers climb to $1,500/month. For any organization created on or after August 2025, Admin, Builder, and User roles are all billable, older organizations only paid for Admin and Builder.\n\nThe Startup tier caps at 5,000 records, 5 members, 10 guests, and 100 automations per month. Past those limits, or if the organization exceeds the eligibility criteria, cost climbs fast."
   },
   {
     "id": "productboard",
@@ -49017,7 +49039,7 @@
     "id": "smartsuite",
     "name": "SmartSuite",
     "shortDescription": "Plateforme collaborative de gestion du travail pour équipes.",
-    "description": "SmartSuite, c'est plateforme collaborative de gestion du travail pour équipes. À partir de 20€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en work management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "description": "SmartSuite combine une base de données relationnelle complète, façon Airtable, avec une couche de gestion de projet native par-dessus : vues, automatisations entre enregistrements liés, et tableaux de bord personnalisés sans add-on payant séparé. C'est utile pour une équipe qui veut une base flexible sans avoir à connecter deux outils différents.\n\nIl n'existe aucun plan gratuit permanent, seulement un essai de 14 jours du plan Professional. Team démarre à 15$/mois/utilisateur avec un minimum de 3 sièges, Professional à 30$/mois, et Enterprise à 50$/mois avec un minimum de 10 sièges. Une fois le quota d'enregistrements du plan atteint, SmartSuite bloque purement la création de nouvelles lignes : impossible de payer pour en débloquer plus sans changer de plan.\n\nPour une équipe de moins de 3 personnes ou qui veut juste tester sur la durée sans payer, Airtable ou Notion sont moins chers à l'entrée et offrent un vrai palier gratuit permanent.",
     "category": "organization",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours du plan Professional, sans carte bancaire",
@@ -49096,8 +49118,8 @@
     "ia_use_case": null,
     "slug": "smartsuite",
     "shortDescriptionEn": "Collaborative work management platform for teams.",
-    "longDescription": "SmartSuite, c'est plateforme collaborative de gestion du travail pour équipes. À partir de 20€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en work management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "SmartSuite is collaborative work management platform for teams. Starting at €20/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in work management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €20/month.",
+    "longDescription": "SmartSuite combine une base de données relationnelle complète, façon Airtable, avec une couche de gestion de projet native par-dessus : vues, automatisations entre enregistrements liés, et tableaux de bord personnalisés sans add-on payant séparé. C'est utile pour une équipe qui veut une base flexible sans avoir à connecter deux outils différents.\n\nIl n'existe aucun plan gratuit permanent, seulement un essai de 14 jours du plan Professional. Team démarre à 15$/mois/utilisateur avec un minimum de 3 sièges, Professional à 30$/mois, et Enterprise à 50$/mois avec un minimum de 10 sièges. Une fois le quota d'enregistrements du plan atteint, SmartSuite bloque purement la création de nouvelles lignes : impossible de payer pour en débloquer plus sans changer de plan.\n\nPour une équipe de moins de 3 personnes ou qui veut juste tester sur la durée sans payer, Airtable ou Notion sont moins chers à l'entrée et offrent un vrai palier gratuit permanent.",
+    "longDescriptionEn": "SmartSuite combines a full relational database, Airtable-style, with a native project-management layer on top: views, automations across linked records, and custom dashboards with no separate paid add-on. That's useful for a team wanting a flexible database without connecting two separate tools.\n\nThere's no permanent free plan, only a 14-day trial of the Professional plan. Team starts at $15/month/user with a 3-seat minimum, Professional at $30/month, and Enterprise at $50/month with a 10-seat minimum. Once a plan's record quota is hit, SmartSuite simply blocks creating new rows, with no way to pay to unlock more without changing plans.\n\nFor a team under 3 people, or one that just wants to test long-term without paying, Airtable or Notion are cheaper to start with and offer a real permanent free tier.",
     "pricingEn": {
       "free": "No permanent free plan: 14-day trial of the Professional plan, no credit card required",
       "paid": "Team at $15/month/user (3-seat minimum); Professional at $30/month/user (annual); Enterprise at $50/month/user (10-seat minimum)"
@@ -49178,7 +49200,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "SmartSuite combines a full relational database, Airtable-style, with a native project-management layer on top: views, automations across linked records, and custom dashboards with no separate paid add-on. That's useful for a team wanting a flexible database without connecting two separate tools.\n\nThere's no permanent free plan, only a 14-day trial of the Professional plan. Team starts at $15/month/user with a 3-seat minimum, Professional at $30/month, and Enterprise at $50/month with a 10-seat minimum. Once a plan's record quota is hit, SmartSuite simply blocks creating new rows, with no way to pay to unlock more without changing plans.\n\nFor a team under 3 people, or one that just wants to test long-term without paying, Airtable or Notion are cheaper to start with and offer a real permanent free tier."
   },
   {
     "id": "smtp-com",
@@ -52148,7 +52171,7 @@
     "id": "teamwork",
     "name": "Teamwork",
     "shortDescription": "Logiciel de gestion de projet pour équipes.",
-    "description": "Teamwork, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les consultants B2B.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "description": "Teamwork est un outil de gestion de projet pensé pour les agences et studios qui facturent du temps à leurs clients : le suivi du temps est natif et lié directement aux tâches, ce qui permet de transformer des heures loggées en factures sans passer par un outil tiers. Il sert aussi à inviter des clients ou sous-traitants externes sur un projet sans payer de siège supplémentaire pour eux.\n\nLe plan gratuit (Free Forever) couvre jusqu'à 5 utilisateurs, 5 projets et 100 automatisations par mois. Les plans payants imposent des minimums de sièges structurels : Deliver (10,99$/mois/utilisateur) exige 3 utilisateurs minimum, Grow (19,99$/mois) en exige 5, impossible de payer pour une seule personne au-delà du gratuit.\n\nCes minimums rendent Teamwork structurellement plus cher qu'un concurrent facturé à l'utilisateur unique comme ClickUp. Pour une équipe interne sans facturation client, ClickUp ou Asana offrent plus de flexibilité au même budget.",
     "category": "organization",
     "pricing": {
       "free": "Plan Free Forever limité à 5 utilisateurs, 5 projets et 100 automatisations par mois",
@@ -52222,8 +52245,8 @@
     "ia_use_case": null,
     "slug": "teamwork",
     "shortDescriptionEn": "Project management software for teams.",
-    "longDescription": "Teamwork, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les consultants B2B.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Teamwork is project management software for teams. Starting at €15/month. Built for managers and IT directors and B2B consultants.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "longDescription": "Teamwork est un outil de gestion de projet pensé pour les agences et studios qui facturent du temps à leurs clients : le suivi du temps est natif et lié directement aux tâches, ce qui permet de transformer des heures loggées en factures sans passer par un outil tiers. Il sert aussi à inviter des clients ou sous-traitants externes sur un projet sans payer de siège supplémentaire pour eux.\n\nLe plan gratuit (Free Forever) couvre jusqu'à 5 utilisateurs, 5 projets et 100 automatisations par mois. Les plans payants imposent des minimums de sièges structurels : Deliver (10,99$/mois/utilisateur) exige 3 utilisateurs minimum, Grow (19,99$/mois) en exige 5, impossible de payer pour une seule personne au-delà du gratuit.\n\nCes minimums rendent Teamwork structurellement plus cher qu'un concurrent facturé à l'utilisateur unique comme ClickUp. Pour une équipe interne sans facturation client, ClickUp ou Asana offrent plus de flexibilité au même budget.",
+    "longDescriptionEn": "Teamwork is a project management tool built for agencies and studios that bill clients for time: time tracking is native and tied directly to tasks, turning logged hours into invoices with no third-party tool. It also lets you invite external clients or contractors to a project without paying for an extra seat for them.\n\nThe free plan (Free Forever) covers up to 5 users, 5 projects, and 100 automations per month. Paid plans enforce structural seat minimums: Deliver ($10.99/month/user) requires at least 3 users, Grow ($19.99/month) requires at least 5, with no way to pay for a single person past the free plan.\n\nThose minimums make Teamwork structurally more expensive than a competitor billed per single user, like ClickUp. For an internal team with no client billing, ClickUp or Asana offer more flexibility at the same budget.",
     "pricingEn": {
       "free": "Free Forever plan capped at 5 users, 5 projects, and 100 automations/month",
       "paid": "Deliver at $10.99/month/user (3-user minimum); Grow at $19.99/month/user (5-user minimum)"
@@ -52299,7 +52322,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "Teamwork is a project management tool built for agencies and studios that bill clients for time: time tracking is native and tied directly to tasks, turning logged hours into invoices with no third-party tool. It also lets you invite external clients or contractors to a project without paying for an extra seat for them.\n\nThe free plan (Free Forever) covers up to 5 users, 5 projects, and 100 automations per month. Paid plans enforce structural seat minimums: Deliver ($10.99/month/user) requires at least 3 users, Grow ($19.99/month) requires at least 5, with no way to pay for a single person past the free plan.\n\nThose minimums make Teamwork structurally more expensive than a competitor billed per single user, like ClickUp. For an internal team with no client billing, ClickUp or Asana offer more flexibility at the same budget."
   },
   {
     "id": "thinkific",
@@ -57183,7 +57207,7 @@
     "id": "wrike",
     "name": "Wrike",
     "shortDescription": "Logiciel de gestion de projet pour équipes.",
-    "description": "Wrike, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "description": "Wrike est un outil de gestion de projet et de travail pensé pour les équipes qui ont besoin de validations créatives formalisées : on peut commenter directement sur une image, une vidéo ou un PDF avec horodatage précis, ce qui remplace les allers-retours par e-mail pour approuver un visuel. Wrike sert aussi à construire des workflows et formulaires de demande personnalisés selon le type de projet, utiles dès qu'une agence ou une équipe marketing gère plusieurs types de campagnes en parallèle.\n\nLa tarification a été restructurée en janvier 2026 : le plan Team démarre à 10$/mois/utilisateur, et Business (25$/mois/utilisateur) impose un minimum de 5 sièges, soit 125$/mois minimum même pour une petite équipe. Le plan gratuit, lui, a récemment supprimé sa limite de 5 utilisateurs et est désormais illimité, mais reste plafonné à 200 tâches actives.\n\nLe revers : l'interface est régulièrement jugée plus dense et moins intuitive que ses concurrents, et la prise en main demande plusieurs semaines pour exploiter les workflows personnalisés. Pour une simple liste de tâches sans validation formelle, Trello ou Todoist sont plus directs et moins chers.",
     "category": "organization",
     "pricing": {
       "free": "Plan gratuit avec utilisateurs illimités, mais limité à 200 tâches actives et 2 Go de stockage",
@@ -57268,8 +57292,8 @@
     "ia_use_case": null,
     "slug": "wrike",
     "shortDescriptionEn": "Project management software for teams.",
-    "longDescription": "Wrike, c'est logiciel de gestion de projet pour équipes. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en project management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Wrike is project management software for teams. Starting at €15/month. Built for managers and IT directors and SaaS founders.\n\nSpecialized in project management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "longDescription": "Wrike est un outil de gestion de projet et de travail pensé pour les équipes qui ont besoin de validations créatives formalisées : on peut commenter directement sur une image, une vidéo ou un PDF avec horodatage précis, ce qui remplace les allers-retours par e-mail pour approuver un visuel. Wrike sert aussi à construire des workflows et formulaires de demande personnalisés selon le type de projet, utiles dès qu'une agence ou une équipe marketing gère plusieurs types de campagnes en parallèle.\n\nLa tarification a été restructurée en janvier 2026 : le plan Team démarre à 10$/mois/utilisateur, et Business (25$/mois/utilisateur) impose un minimum de 5 sièges, soit 125$/mois minimum même pour une petite équipe. Le plan gratuit, lui, a récemment supprimé sa limite de 5 utilisateurs et est désormais illimité, mais reste plafonné à 200 tâches actives.\n\nLe revers : l'interface est régulièrement jugée plus dense et moins intuitive que ses concurrents, et la prise en main demande plusieurs semaines pour exploiter les workflows personnalisés. Pour une simple liste de tâches sans validation formelle, Trello ou Todoist sont plus directs et moins chers.",
+    "longDescriptionEn": "Wrike is a project and work management tool built for teams that need formal creative approvals: you can comment directly on an image, video, or PDF with precise timestamps, replacing email back-and-forth to approve a visual. Wrike also lets you build custom workflows and request forms depending on project type, useful once an agency or marketing team runs several types of campaigns in parallel.\n\nPricing was restructured in January 2026: the Team plan starts at $10/month/user, and Business ($25/month/user) enforces a 5-seat minimum, $125/month minimum even for a small team. The free plan recently dropped its 5-user cap and is now unlimited, but stays capped at 200 active tasks.\n\nThe trade-off: the interface is regularly judged denser and less intuitive than competitors, and ramping up takes several weeks to make use of custom workflows. For a simple task list with no formal approval step, Trello or Todoist are more direct and cheaper.",
     "pricingEn": {
       "free": "Free plan with unlimited users, but capped at 200 active tasks and 2GB storage",
       "paid": "Team at $10/month/user; Business at $25/month/user (5-seat minimum, annual billing)"
@@ -57355,7 +57379,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "Wrike is a project and work management tool built for teams that need formal creative approvals: you can comment directly on an image, video, or PDF with precise timestamps, replacing email back-and-forth to approve a visual. Wrike also lets you build custom workflows and request forms depending on project type, useful once an agency or marketing team runs several types of campaigns in parallel.\n\nPricing was restructured in January 2026: the Team plan starts at $10/month/user, and Business ($25/month/user) enforces a 5-seat minimum, $125/month minimum even for a small team. The free plan recently dropped its 5-user cap and is now unlimited, but stays capped at 200 active tasks.\n\nThe trade-off: the interface is regularly judged denser and less intuitive than competitors, and ramping up takes several weeks to make use of custom workflows. For a simple task list with no formal approval step, Trello or Todoist are more direct and cheaper."
   },
   {
     "id": "wunderlist",
@@ -58075,7 +58100,10 @@
     "shortDescription": "Plateforme de support client omnicanal (email, chat, social, téléphone) avec IA intégrée.",
     "description": "Zendesk centralise toutes les conversations client (email, chat, réseaux sociaux, téléphone) dans un seul tableau de bord, avec des outils d'automatisation (triggers, macros, routage omnicanal) qui font gagner du temps aux équipes support.\n\nSon prix grimpe vite à mesure que l'équipe grandit, et le modèle tarifaire est l'un des plus complexes à anticiper du secteur — le prix affiché n'est rarement celui payé une fois les add-ons ajoutés.",
     "category": "organization",
-    "pricing": "Suite Team à 55$/agent/mois (annuel) ; Suite Professional à 115$/agent/mois ; Enterprise sur devis.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours du plan Suite Professional",
+      "paid": "Support Team à 19$/agent/mois (ticketing e-mail seul) ; Suite Team à 55$/agent/mois ; Suite Professional à 115$/agent/mois ; Enterprise sur devis."
+    },
     "website": "https://zendesk.com",
     "affiliateLink": "https://zendesk.com",
     "pros": [
@@ -58097,7 +58125,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 48.18,
+    "defaultMonthlyPrice": 19,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -58166,19 +58194,22 @@
     "shortDescriptionEn": "Omnichannel customer support platform (email, chat, social, phone) with built-in AI.",
     "longDescription": "Zendesk centralise toutes les conversations client (email, chat, réseaux sociaux, téléphone) dans un seul tableau de bord, avec des outils d'automatisation (triggers, macros, routage omnicanal) qui font gagner du temps aux équipes support.\n\nSon prix grimpe vite à mesure que l'équipe grandit, et le modèle tarifaire est l'un des plus complexes à anticiper du secteur — le prix affiché n'est rarement celui payé une fois les add-ons ajoutés.",
     "longDescriptionEn": "Zendesk centralizes all customer conversations (email, chat, social media, phone) into a single dashboard, with automation tools (triggers, macros, omnichannel routing) that save support teams time.\n\nIts price climbs quickly as the team grows, and the pricing model is one of the hardest to budget for in the industry — the sticker price is rarely what you end up paying once add-ons are included.",
-    "pricingEn": "Suite Team at $55/agent/month (annual); Suite Professional at $115/agent/month; Enterprise quoted.",
+    "pricingEn": {
+      "free": "No permanent free plan: 14-day trial of Suite Professional",
+      "paid": "Support Team at $19/agent/month (email ticketing only); Suite Team at $55/agent/month; Suite Professional at $115/agent/month; Enterprise quoted."
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
       "source_domain": "zendesk.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Support Team",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.zendesk.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15,
+      "compare_price_monthly_eur": 19,
       "tcoExampleFr": "Exemple concret : une équipe support de 5 agents facturant 50$/h qui perd collectivement 3h/mois à jongler entre plusieurs outils pour répondre sur différents canaux perd 150$/mois en temps masqué. Zendesk Suite Team à 55$/mois/agent (275$/mois pour 5 agents) centralise ces canaux et se rentabilise par ce gain — mais c'est ce palier-là qu'il faut budgétiser, pas le prix d'appel à 19$.",
       "tcoExampleEn": "Concrete example: a 5-agent support team billing $50/h that collectively loses 3h/month juggling tools to answer across channels is losing $150/month in hidden time. Zendesk Suite Team at $55/month/agent ($275/month for 5 agents) centralizes those channels and pays for itself through that gain — but that's the tier to budget for, not the $19 entry price."
     },
