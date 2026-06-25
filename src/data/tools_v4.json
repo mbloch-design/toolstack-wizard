@@ -13257,7 +13257,17 @@
         "Vous détestez les interfaces complexes",
         "Vous voulez juste une todo-list basique"
       ],
-      "threshold": "Dès que vous avez +3 projets actifs ou que vous collaborez avec une équipe régulièrement."
+      "threshold": "Dès que vous avez +3 projets actifs ou que vous collaborez avec une équipe régulièrement.",
+      "billingTraps": [
+        {
+          "title": "Le plafond invisible d'automatisations gratuites",
+          "text": "Le plan Free Forever limite les automatisations à 100 exécutions par mois pour tout l'espace de travail. Une équipe active épuise ce quota en quelques jours, ce qui force un passage anticipé à Unlimited."
+        },
+        {
+          "title": "Le stockage partagé minuscule du plan gratuit",
+          "text": "Le plan gratuit limite le stockage à 100 Mo pour l'ensemble de l'espace de travail, pas par utilisateur : les pièces jointes et fichiers volumineux le saturent vite."
+        }
+      ]
     },
     "pricing": {
       "free": "Illimité avec 100 MB de stockage",
@@ -13345,7 +13355,9 @@
       "location_sensitive": false,
       "official_source_url": "https://clickup.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 6.06
+      "compare_price_monthly_eur": 6.06,
+      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et passe 1h/mois à chercher des fichiers éparpillés entre plusieurs outils perd 50$/mois en temps masqué. ClickUp Unlimited à 7$/mois (aucun minimum de sièges) est rentabilisé dès la première recherche évitée — mais le vrai coût caché est le temps de configuration initiale pour fusionner les outils remplacés.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month hunting for files scattered across several tools is losing $50/month in hidden time. ClickUp Unlimited at $7/month (no seat minimum) pays for itself from the first search avoided — but the real hidden cost is the setup time needed to merge the tools it replaces."
     },
     "websiteUrl": "https://clickup.com",
     "logo": "",
@@ -13361,12 +13373,30 @@
         "You hate complex interfaces",
         "You just want a basic todo-list"
       ],
-      "threshold": "As soon as you have 3+ active projects or collaborate with a team on a regular basis."
+      "threshold": "As soon as you have 3+ active projects or collaborate with a team on a regular basis.",
+      "billingTraps": [
+        {
+          "title": "The invisible free-tier automation cap",
+          "text": "The Free Forever plan caps automations at 100 runs per month for the entire workspace. An active team burns through that quota in days, forcing an early upgrade to Unlimited."
+        },
+        {
+          "title": "The tiny shared storage on the free plan",
+          "text": "The free plan caps total storage at 100MB for the whole workspace, not per user — attachments and large files fill it fast."
+        }
+      ]
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
+    "pros": [
+      "ClickUp réunit tâches, docs, chat, tableaux blancs et automatisations dans un seul outil : il remplace souvent 4-5 apps séparées, à condition d'accepter sa complexité de configuration."
+    ],
+    "prosEn": [
+      "ClickUp combines tasks, docs, chat, whiteboards, and automations in one tool: it often replaces 4-5 separate apps, provided you accept its setup complexity."
+    ],
+    "cons": [
+      "Le plan gratuit reste utilisable en solo mais ses plafonds (100 automatisations/mois, 100 Mo de stockage partagé) le rendent vite inadapté en équipe."
+    ],
+    "consEn": [
+      "The free plan stays usable solo, but its caps (100 automations/month, 100MB shared storage) make it impractical for a team fast."
+    ],
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
@@ -61067,7 +61097,9 @@
         "minimum_3_seats",
         "annual_billing",
         "usd_pricing"
-      ]
+      ],
+      "tcoExampleFr": "Exemple concret : une équipe de 3 personnes facturant en moyenne 50$/h qui perd chacune 1h/mois à chercher le statut d'une tâche par e-mail perd 150$/mois en temps masqué. Le minimum de 3 sièges sur Basic (27$/mois) est largement rentabilisé dès que l'outil évite cette perte — mais payer pour 5 sièges quand l'équipe n'en compte que 4 (palier imposé) doit être intégré au calcul réel.",
+      "tcoExampleEn": "Concrete example: a 3-person team billing $50/h on average, each losing 1h/month chasing task status by email, is losing $150/month in hidden time. The 3-seat minimum on Basic ($27/month) is easily worth it once the tool prevents that loss — but paying for 5 seats when the team only has 4 (forced banding) has to be part of the real math."
     },
     "pricingTiers": {
       "free": "Gratuit — 2 sièges max, fonctions limitées",
@@ -61130,7 +61162,21 @@
         "Tu cherches un outil de notes ou de PKM — Notion est mieux",
         "Tu as un budget serré — ClickUp ou Trello offrent plus de valeur à moindre coût"
       ],
-      "threshold": "Le bon choix pour une équipe de 3-15 personnes qui veut une visibilité claire sur les projets sans complexité technique."
+      "threshold": "Le bon choix pour une équipe de 3-15 personnes qui veut une visibilité claire sur les projets sans complexité technique.",
+      "billingTraps": [
+        {
+          "title": "Le minimum de 3 sièges et les paliers imposés",
+          "text": "Monday impose un minimum de 3 sièges sur tous les plans payants (Basic dès 9$/siège/mois, soit 27$/mois minimum même à deux). Au-delà, les sièges s'achètent par paliers de 5 : une équipe de 4 ou 6 personnes paie pour 5 ou 10 sièges."
+        },
+        {
+          "title": "Le plan gratuit verrouillé à 2 sièges et 3 tableaux",
+          "text": "Le plan Individual gratuit est limité à 2 utilisateurs et 3 tableaux pour tout le compte (pas par utilisateur), sans automatisations ni invités."
+        },
+        {
+          "title": "La facturation mensuelle coûte 18 à 33% plus cher",
+          "text": "Payer au mois plutôt qu'à l'année renchérit chaque plan de 18 à 33% selon le palier (ex: Pro passe de 19$ à 24$/siège/mois)."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -61143,7 +61189,21 @@
         "You're looking for a notes or PKM tool — Notion is better",
         "You're on a tight budget — ClickUp or Trello offer more value at lower cost"
       ],
-      "threshold": "The right choice for a team of 3-15 people wanting clear visibility on projects without technical complexity."
+      "threshold": "The right choice for a team of 3-15 people wanting clear visibility on projects without technical complexity.",
+      "billingTraps": [
+        {
+          "title": "The 3-seat minimum and forced increments",
+          "text": "Monday enforces a 3-seat minimum on every paid plan (Basic from $9/seat/month, so $27/month minimum for as few as two people). Beyond that, seats are sold in increments of 5 — a 4- or 6-person team pays for 5 or 10 seats."
+        },
+        {
+          "title": "The free plan locked to 2 seats and 3 boards",
+          "text": "The free Individual plan is capped at 2 users and 3 boards for the whole account (not per user), with no automations and no guests."
+        },
+        {
+          "title": "Monthly billing costs 18-33% more",
+          "text": "Paying monthly instead of annually raises every tier by 18-33% depending on the plan (e.g. Pro goes from $19 to $24/seat/month)."
+        }
+      ]
     },
     "useCases": [
       "Coordonner un projet client de 5 personnes avec kanban + Gantt + deadlines",
@@ -121476,7 +121536,21 @@
         "Vous gérez +10 projets complexes (prenez Asana ou ClickUp)",
         "Vous préférez les listes linéaires aux tableaux Kanban"
       ],
-      "threshold": "Dès que vous avez +2 projets actifs et que Notion devient trop lourd pour la gestion de tâches."
+      "threshold": "Dès que vous avez +2 projets actifs et que Notion devient trop lourd pour la gestion de tâches.",
+      "billingTraps": [
+        {
+          "title": "Le plafond invisible d'automatisations gratuites (Butler)",
+          "text": "Le plan gratuit limite Butler, son moteur d'automatisation, à 250 exécutions par mois pour tout l'espace — le même plafond qu'Asana Starter, mais sur l'offre gratuite cette fois. Une équipe active l'atteint vite."
+        },
+        {
+          "title": "Le plan gratuit verrouillé à 10 tableaux et 10 collaborateurs",
+          "text": "Au-delà de 10 tableaux par espace ou 10 collaborateurs, il faut passer à Standard (5$/utilisateur/mois)."
+        },
+        {
+          "title": "Le minimum de 50 sièges imposé sur Enterprise",
+          "text": "Le plan Enterprise impose un minimum de 50 sièges (à partir de 17,50$/utilisateur/mois) : inadapté à toute structure de moins de 50 personnes qui aurait besoin de ses fonctions."
+        }
+      ]
     },
     "pros": [
       "Simplicité immédiate : on comprend le Kanban en trente secondes",
@@ -121574,7 +121648,9 @@
       "location_sensitive": false,
       "official_source_url": "https://trello.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 5
+      "compare_price_monthly_eur": 5,
+      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et passe 30 min/mois à relancer des collaborateurs sur l'avancement d'une tâche perd 25$/mois en temps masqué. Trello Standard à 5$/mois est rentabilisé dès le premier mois — mais au-delà de 250 automatisations Butler par mois (le plafond du plan gratuit), il faut basculer sur ce même plan payant plus tôt que prévu.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 30 min/month chasing collaborators for a task update is losing $25/month in hidden time. Trello Standard at $5/month pays for itself from month one — but past 250 Butler automation runs per month (the free plan's cap), you'll need that same paid plan sooner than expected."
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -121616,7 +121692,21 @@
         "You manage 10+ complex projects (choose Asana or ClickUp)",
         "You prefer linear lists over Kanban boards"
       ],
-      "threshold": "As soon as you have more than 2 active projects and Notion becomes too cumbersome for task management."
+      "threshold": "As soon as you have more than 2 active projects and Notion becomes too cumbersome for task management.",
+      "billingTraps": [
+        {
+          "title": "The invisible free-tier automation cap (Butler)",
+          "text": "The free plan caps Butler, its automation engine, at 250 runs per month for the whole workspace — the same cap as Asana Starter, but on the free tier this time. An active team hits it fast."
+        },
+        {
+          "title": "The free plan locked to 10 boards and 10 collaborators",
+          "text": "Beyond 10 boards per workspace or 10 collaborators, you need Standard ($5/user/month)."
+        },
+        {
+          "title": "The 50-seat minimum on Enterprise",
+          "text": "The Enterprise plan enforces a 50-seat minimum (from $17.50/user/month) — a poor fit for any team under 50 people that would need its features."
+        }
+      ]
     },
     "pricingEn": {
       "free": "Free, up to 10 boards per space",
@@ -130161,7 +130251,21 @@
         "Simple to-do list (préférez Todoist)",
         "Besoin de rapidité extrême (Notion peut être lent)"
       ],
-      "threshold": "Dès que vous avez besoin de lier vos notes à vos tâches ou vos clients."
+      "threshold": "Dès que vous avez besoin de lier vos notes à vos tâches ou vos clients.",
+      "billingTraps": [
+        {
+          "title": "La limite de blocs collaboratifs en équipe",
+          "text": "Le plan gratuit est illimité pour un usage solo, mais un espace de travail en équipe (2+ personnes) se heurte à un plafond de blocs collaboratifs : la limite réelle apparaît dès qu'on collabore, pas quand on est seul."
+        },
+        {
+          "title": "L'historique de pages limité à 7 jours sur le gratuit",
+          "text": "Impossible de revenir sur une modification de plus de 7 jours sur le plan gratuit ; il faut Plus (10$/mois) pour 30 jours, ou Business pour un historique illimité."
+        },
+        {
+          "title": "L'IA complète réservée au plan Business",
+          "text": "Notion AI complet (agents, accès multi-modèles) n'est disponible qu'à partir de Business (24$/mois/utilisateur) ; Free et Plus n'ont qu'un essai limité."
+        }
+      ]
     },
     "pros": [
       "Interface intuitive et visuellement agréable",
@@ -130173,7 +130277,8 @@
     "cons": [
       "Courbe d'apprentissage pour maîtriser les fonctionnalités avancées",
       "Performance parfois lente sur les grosses bases de données",
-      "Pas de mode hors-ligne complet (cache limité)"
+      "Pas de mode hors-ligne complet (cache limité)",
+      "Notion n'a pas de vraies dépendances entre tâches ni de diagramme de Gantt natif : la gestion de projet structurée façon Asana demande des bricolages avec des bases de données liées."
     ],
     "useCases": [
       "CRM freelance : gérer vos clients, projets et factures dans une base de données",
@@ -130286,7 +130391,9 @@
       "location_sensitive": false,
       "official_source_url": "https://www.notion.so/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10
+      "compare_price_monthly_eur": 10,
+      "tcoExampleFr": "Exemple concret : un consultant qui facture 50$/h et passe 1h/mois à reconstituer ses notes éparpillées entre plusieurs apps perd 50$/mois en temps masqué. Notion Plus à 10$/mois est rentabilisé dès cette seule heure récupérée — mais le vrai coût caché est le temps de structuration initiale des bases de données pour remplacer ces apps.",
+      "tcoExampleEn": "Concrete example: a consultant billing $50/h who spends 1h/month piecing together notes scattered across several apps is losing $50/month in hidden time. Notion Plus at $10/month pays for itself from that one recovered hour alone — but the real hidden cost is the setup time needed to structure databases that replace those apps."
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -130308,7 +130415,8 @@
     "consEn": [
       "Courbe d'apprentissage pour maîtriser les fonctionnalités avancées",
       "Performance parfois lente sur les grosses bases de données",
-      "Pas de mode hors-ligne complet (cache limité)"
+      "Pas de mode hors-ligne complet (cache limité)",
+      "Notion has no real task dependencies or native Gantt chart: Asana-style structured project management requires workarounds with linked databases."
     ],
     "useCasesEn": [
       "CRM freelance : gérer vos clients, projets et factures dans une base de données",
@@ -130327,7 +130435,21 @@
         "Simple to-do list (prefer Todoist)",
         "Need for extreme speed (Notion can be slow)"
       ],
-      "threshold": "As soon as you need to link your notes to your tasks or your clients."
+      "threshold": "As soon as you need to link your notes to your tasks or your clients.",
+      "billingTraps": [
+        {
+          "title": "The collaborative block limit once you add teammates",
+          "text": "The free plan is unlimited for solo use, but a team workspace (2+ people) hits a collaborative block cap — the real limit shows up once you collaborate, not when you're alone."
+        },
+        {
+          "title": "Page history capped at 7 days on free",
+          "text": "You can't roll back an edit older than 7 days on the free plan; Plus ($10/month) extends that to 30 days, Business removes the cap entirely."
+        },
+        {
+          "title": "Full AI is Business-only",
+          "text": "Full Notion AI (agents, multi-model access) is only available from Business ($24/month/user); Free and Plus only get a limited trial."
+        }
+      ]
     },
     "pricingEn": {
       "free": "Free and very generous for individual use",
@@ -130772,7 +130894,17 @@
         "Vous n'êtes pas dans la tech",
         "Vous voulez des vues Gantt complexes (Notion est mieux)"
       ],
-      "threshold": "Dès que vous avez un side-project tech ou travaillez avec des devs."
+      "threshold": "Dès que vous avez un side-project tech ou travaillez avec des devs.",
+      "billingTraps": [
+        {
+          "title": "Aucune facturation mensuelle : engagement annuel obligatoire",
+          "text": "Les plans payants de Linear (Basic 8$/mois, Business 14$/mois) ne sont disponibles qu'en facturation annuelle, sans option mensuelle du tout — contrairement à la quasi-totalité de ses concurrents."
+        },
+        {
+          "title": "Le plafond strict de 250 issues actives sur le gratuit",
+          "text": "Le plan gratuit limite les issues actives à 250 et les équipes à 2. Une équipe de développement active dépasse ce seuil en quelques semaines."
+        }
+      ]
     },
     "pros": [
       "Interface ultra-rapide et minimaliste",
@@ -130871,7 +131003,9 @@
       "location_sensitive": false,
       "official_source_url": "https://linear.app/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 8.66
+      "compare_price_monthly_eur": 8.66,
+      "tcoExampleFr": "Exemple concret : une petite équipe dev facturant 50$/h qui perd collectivement 2h/mois à trier des tickets dans un outil plus lent perd 100$/mois en temps masqué. Linear Basic à 8$/mois/utilisateur est rentabilisé dès que le gain de vitesse dépasse ce seuil — mais l'absence de facturation mensuelle impose de s'engager un an avant même de valider l'usage réel.",
+      "tcoExampleEn": "Concrete example: a small dev team billing $50/h that collectively loses 2h/month sorting tickets in a slower tool is losing $100/month in hidden time. Linear Basic at $8/month/user pays for itself once the speed gain clears that threshold — but the lack of monthly billing means committing for a year before even validating real usage."
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -130912,7 +131046,17 @@
         "You are not in tech",
         "You want complex Gantt views (Notion is better)"
       ],
-      "threshold": "As soon as you have a tech side-project or work with developers."
+      "threshold": "As soon as you have a tech side-project or work with developers.",
+      "billingTraps": [
+        {
+          "title": "No monthly billing — annual commitment only",
+          "text": "Linear's paid plans (Basic $8/month, Business $14/month) are only available with annual billing, with no monthly option at all — unlike nearly every competitor."
+        },
+        {
+          "title": "The strict 250 active-issue cap on free",
+          "text": "The free plan caps active issues at 250 and teams at 2. An active dev team blows past that ceiling within weeks."
+        }
+      ]
     },
     "pricingEn": {
       "free": "Unlimited for a small team, up to 250 active issues",
