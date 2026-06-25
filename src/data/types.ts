@@ -98,6 +98,10 @@ export interface PricingV5 {
   location_sensitive?: boolean;
   usage_sensitive?: boolean;
   cautions?: string[];
+  // English version of cautions[0], shown on the English page when
+  // present. Optional and absent on most of the catalog — ToolPricingSection
+  // falls back to the French caution rather than rendering nothing.
+  cautionsEn?: string[];
   source_domain?: string;
   verified_on?: string;
   official_source_url?: string;

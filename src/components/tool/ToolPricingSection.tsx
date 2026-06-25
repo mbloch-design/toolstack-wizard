@@ -73,15 +73,22 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
         )}
       </div>
 
-      {/* Cautions */}
-      {(tool.pricing_v5?.cautions?.length ?? 0) > 0 && (
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 10, border: "1px solid var(--color-border)", borderRadius: 8, padding: "12px 16px", background: "var(--color-surface-soft)" }}>
-          <Check style={{ marginTop: 2, width: 14, height: 14, flexShrink: 0, color: "var(--color-muted)" }} />
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, color: "var(--color-muted)" }}>
-            {tool.pricing_v5!.cautions![0]}
-          </p>
-        </div>
-      )}
+      {/* Cautions — cautionsEn used on the English page when present; falls
+          back to the French caution rather than rendering nothing, since
+          most of the catalog has no English version of this field yet. */}
+      {(() => {
+        const pv5 = tool.pricing_v5 as any;
+        const caution = lang === "en" ? (pv5?.cautionsEn?.[0] ?? pv5?.cautions?.[0]) : pv5?.cautions?.[0];
+        if (!caution) return null;
+        return (
+          <div style={{ display: "flex", alignItems: "flex-start", gap: 10, border: "1px solid var(--color-border)", borderRadius: 8, padding: "12px 16px", background: "var(--color-surface-soft)" }}>
+            <Check style={{ marginTop: 2, width: 14, height: 14, flexShrink: 0, color: "var(--color-muted)" }} />
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, color: "var(--color-muted)" }}>
+              {caution}
+            </p>
+          </div>
+        );
+      })()}
 
       {/* Trust footer */}
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, borderTop: "1px solid var(--color-border-soft)", paddingTop: 16 }}>

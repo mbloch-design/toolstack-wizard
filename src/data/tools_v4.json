@@ -6274,7 +6274,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 17.32,
       "tcoExampleFr": "Exemple concret : une freelance qui facture 50$/h et passe 1h/mois à fusionner des fichiers Excel éparpillés perd 50$/mois en temps masqué. Airtable Team à 20$/mois/éditeur (pas de minimum de sièges) est rentabilisé dès cette heure récupérée — mais le plafond de 1 000 lignes du plan gratuit est souvent atteint avant même de valider l'usage.",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month merging scattered spreadsheets is losing $50/month in hidden time. Airtable Team at $20/month/editor (no seat minimum) pays for itself from that one recovered hour — but the free plan's 1,000-row cap is often hit before you even validate the use case."
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month merging scattered spreadsheets is losing $50/month in hidden time. Airtable Team at $20/month/editor (no seat minimum) pays for itself from that one recovered hour — but the free plan's 1,000-row cap is often hit before you even validate the use case.",
+      "cautionsEn": [
+        "Free plan limited to 1,000 rows per base and 5 editors; 100 automations/month shared across the whole workspace."
+      ]
     },
     "websiteUrl": "https://airtable.com",
     "logo": "",
@@ -13407,7 +13410,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 6.06,
       "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et passe 1h/mois à chercher des fichiers éparpillés entre plusieurs outils perd 50$/mois en temps masqué. ClickUp Unlimited à 7$/mois (aucun minimum de sièges) est rentabilisé dès la première recherche évitée — mais le vrai coût caché est le temps de configuration initiale pour fusionner les outils remplacés.",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month hunting for files scattered across several tools is losing $50/month in hidden time. ClickUp Unlimited at $7/month (no seat minimum) pays for itself from the first search avoided — but the real hidden cost is the setup time needed to merge the tools it replaces."
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month hunting for files scattered across several tools is losing $50/month in hidden time. ClickUp Unlimited at $7/month (no seat minimum) pays for itself from the first search avoided — but the real hidden cost is the setup time needed to merge the tools it replaces.",
+      "cautionsEn": [
+        "Free plan limited to 100 automations/month and 100MB of shared workspace storage."
+      ]
     },
     "websiteUrl": "https://clickup.com",
     "logo": "",
@@ -14536,7 +14542,10 @@
     "shortDescriptionEn": "Atlassian enterprise wiki. Technical documentation and knowledge base.",
     "description": "Confluence, c'est wiki d'entreprise Atlassian. Documentation technique et knowledge base. À partir de 4.98€/mois. Pensé pour les CTOs et leads tech et les managers et DSI.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : jira déjà en place — intégration native précieuse. À éviter si : sans Jira — Notion est meilleur sur tous les points. Pertinent uniquement si vous avez déjà l'écosystème Atlassian. Si le budget le permet, notion va plus loin.",
     "longDescriptionEn": "Confluence is atlassian enterprise wiki. Technical documentation and knowledge base. Starting at €4.98/month. Built for CTOs and tech leads and managers and IT directors.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, notion goes further.",
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Up to 10 users",
+      "paid": "$5.75/user/month"
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
@@ -18140,7 +18149,10 @@
       "verification_status": "official_contextual",
       "compare_price_monthly_eur": 20,
       "tcoExampleFr": "Exemple concret : un photographe indépendant qui facture 50$/h et passe 3h/mois à envoyer manuellement contrats, factures et rappels de rendez-vous perd 150$/mois en temps masqué. Dubsado Premier à 40$/mois automatise ce flux et se rentabilise largement — mais la configuration initiale de 15 à 25h doit être comptée dans le calcul avant le premier mois rentable.",
-      "tcoExampleEn": "Concrete example: a freelance photographer billing $50/h who spends 3h/month manually sending contracts, invoices, and appointment reminders is losing $150/month in hidden time. Dubsado Premier at $40/month automates that flow and easily pays for itself — but the 15-25h initial setup has to be counted before the first profitable month."
+      "tcoExampleEn": "Concrete example: a freelance photographer billing $50/h who spends 3h/month manually sending contracts, invoices, and appointment reminders is losing $150/month in hidden time. Dubsado Premier at $40/month automates that flow and easily pays for itself — but the 15-25h initial setup has to be counted before the first profitable month.",
+      "cautionsEn": [
+        "The Starter plan ($20/month) doesn't include automated workflows, the feature that justifies the tool — you need Premier ($40/month)."
+      ]
     },
     "websiteUrl": " planning).",
     "logo": "",
@@ -24047,7 +24059,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0,
       "tcoExampleFr": "Exemple concret : un créatif facturant 50$/h qui passe 2h/mois à relancer manuellement des clients pour signer un contrat ou payer une facture perd 100$/mois en temps masqué. HoneyBook Essentials à 49$/mois (annuel) automatise ce suivi et se rentabilise dès ce gain de temps — sans compter les frais de transaction prélevés en plus sur chaque paiement encaissé.",
-      "tcoExampleEn": "Concrete example: a creative billing $50/h who spends 2h/month manually chasing clients to sign a contract or pay an invoice is losing $100/month in hidden time. HoneyBook Essentials at $49/month (annual) automates that follow-up and pays for itself from that time saved alone — on top of the transaction fees charged on every payment collected."
+      "tcoExampleEn": "Concrete example: a creative billing $50/h who spends 2h/month manually chasing clients to sign a contract or pay an invoice is losing $100/month in hidden time. HoneyBook Essentials at $49/month (annual) automates that follow-up and pays for itself from that time saved alone — on top of the transaction fees charged on every payment collected.",
+      "cautionsEn": [
+        "Transaction fees charged on every client payment, on top of the monthly subscription."
+      ]
     },
     "websiteUrl": " facturation).",
     "logo": "",
@@ -24598,7 +24613,10 @@
       "official_source_url": "https://www.hubspot.com",
       "verification_status": "needs_official_quote",
       "tcoExampleFr": "Exemple concret : une petite équipe marketing-vente facturant 50$/h qui perd collectivement 2h/mois à ressaisir des leads entre deux outils séparés perd 100$/mois en temps masqué. Le CRM gratuit HubSpot (2 sièges) absorbe ce coût pour une toute petite équipe — mais au 3e utilisateur ou au passage à Professional, il faut budgétiser le tarif plein et les frais d'onboarding, pas le prix promotionnel affiché.",
-      "tcoExampleEn": "Concrete example: a small marketing-sales team billing $50/h that collectively loses 2h/month re-entering leads between two separate tools is losing $100/month in hidden time. HubSpot's free CRM (2 seats) absorbs that cost for a very small team — but at the 3rd user or the jump to Professional, budget for the full price and onboarding fees, not the advertised promotional rate."
+      "tcoExampleEn": "Concrete example: a small marketing-sales team billing $50/h that collectively loses 2h/month re-entering leads between two separate tools is losing $100/month in hidden time. HubSpot's free CRM (2 seats) absorbs that cost for a very small team — but at the 3rd user or the jump to Professional, budget for the full price and onboarding fees, not the advertised promotional rate.",
+      "cautionsEn": [
+        "Price depends on plan, country, volume, or contract. Check the official page before deciding."
+      ]
     },
     "affiliateLink": "https://www.hubspot.com",
     "websiteUrl": "https://hubspot.com",
@@ -40352,7 +40370,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 19,
       "tcoExampleFr": "Exemple concret : un freelance facturant 50$/h qui passe 1h30/mois à jongler entre un CRM, un outil de facturation et un gestionnaire de tâches séparés perd 75$/mois en temps masqué. Plutio Core à 19$/mois (jusqu'à 9 clients) est largement rentabilisé par cette seule consolidation — mais le 10e client force un saut direct à 49$/mois.",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1.5h/month juggling a separate CRM, billing tool, and task manager is losing $75/month in hidden time. Plutio Core at $19/month (up to 9 clients) easily pays for itself through that consolidation alone — but the 10th client forces a direct jump to $49/month."
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1.5h/month juggling a separate CRM, billing tool, and task manager is losing $75/month in hidden time. Plutio Core at $19/month (up to 9 clients) easily pays for itself through that consolidation alone — but the 10th client forces a direct jump to $49/month.",
+      "cautionsEn": [
+        "Strict cap of 9 active clients on the entry plan — beyond that, a direct jump to $49/month."
+      ]
     },
     "websiteUrl": " finances).",
     "logo": "",
@@ -41363,7 +41384,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 100,
       "tcoExampleFr": "Exemple concret : une équipe de conformité de 5 personnes facturant 50$/h qui perd collectivement 3h/mois à vérifier manuellement qu'une procédure a bien été suivie par tous perd 150$/mois en temps masqué. Le forfait Startup à 100$/mois est largement rentabilisé par ce seul contrôle automatisé — à condition que l'organisation reste éligible au seuil de moins de 15 employés.",
-      "tcoExampleEn": "Concrete example: a 5-person compliance team billing $50/h that collectively loses 3h/month manually verifying that everyone followed a procedure is losing $150/month in hidden time. The Startup tier at $100/month easily pays for itself through that one automated check alone — as long as the organization stays under the 15-employee eligibility threshold."
+      "tcoExampleEn": "Concrete example: a 5-person compliance team billing $50/h that collectively loses 3h/month manually verifying that everyone followed a procedure is losing $150/month in hidden time. The Startup tier at $100/month easily pays for itself through that one automated check alone — as long as the organization stays under the 15-employee eligibility threshold.",
+      "cautionsEn": [
+        "Per-organization tier pricing, not per-user — entry-tier eligibility depends on company size."
+      ]
     },
     "websiteUrl": "https://process.st",
     "logo": "",
@@ -49145,7 +49169,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 15,
       "tcoExampleFr": "Exemple concret : une petite équipe de 3 personnes facturant 50$/h qui perd collectivement 1h30/mois à synchroniser manuellement des données entre un tableur et un outil de tâches séparés perd 75$/mois en temps masqué. SmartSuite Team à 15$/mois/utilisateur (45$/mois pour les 3 sièges minimum imposés) est rentabilisé par cette seule perte évitée.",
-      "tcoExampleEn": "Concrete example: a small 3-person team billing $50/h that collectively loses 1.5h/month manually syncing data between a spreadsheet and a separate task tool is losing $75/month in hidden time. SmartSuite Team at $15/month/user ($45/month for the enforced 3-seat minimum) pays for itself through that avoided loss alone."
+      "tcoExampleEn": "Concrete example: a small 3-person team billing $50/h that collectively loses 1.5h/month manually syncing data between a spreadsheet and a separate task tool is losing $75/month in hidden time. SmartSuite Team at $15/month/user ($45/month for the enforced 3-seat minimum) pays for itself through that avoided loss alone.",
+      "cautionsEn": [
+        "Blocks creating new records once the plan's quota is hit, with no pay-as-you-go option."
+      ]
     },
     "websiteUrl": "https://smartsuite.com",
     "logo": "",
@@ -50999,7 +51026,10 @@
       "free": "Essai gratuit 14 jours",
       "paid": "À partir de 19$/mois (pas par utilisateur)"
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "14-day free trial",
+      "paid": "From $19/month (not per user)"
+    },
     "defaultMonthlyPrice": 19,
     "pricing_v5": {
       "compare_price_monthly_eur": 19,
@@ -51016,7 +51046,10 @@
         "L'essai gratuit de 14 jours place automatiquement sur le plan Pinnacle (le plus cher) — vérifier le plan réellement choisi à la conversion."
       ],
       "tcoExampleFr": "Exemple concret : un consultant facturant 50$/h qui passe 1h/mois à reconstituer un dossier client éparpillé entre CRM, facturation et partage de fichiers séparés perd 50$/mois en temps masqué. SuiteDash Start à 19$/mois (prix fixe, pas par utilisateur) est rentabilisé dès cette heure récupérée.",
-      "tcoExampleEn": "Concrete example: a consultant billing $50/h who spends 1h/month piecing together a client file scattered across a separate CRM, billing tool, and file-sharing app is losing $50/month in hidden time. SuiteDash Start at $19/month (flat rate, not per user) pays for itself from that one recovered hour."
+      "tcoExampleEn": "Concrete example: a consultant billing $50/h who spends 1h/month piecing together a client file scattered across a separate CRM, billing tool, and file-sharing app is losing $50/month in hidden time. SuiteDash Start at $19/month (flat rate, not per user) pays for itself from that one recovered hour.",
+      "cautionsEn": [
+        "The 14-day free trial automatically places you on the Pinnacle plan (the most expensive) — check which plan you actually select at conversion."
+      ]
     },
     "affiliateLink": "",
     "websiteUrl": "",
@@ -52272,7 +52305,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10.99,
       "tcoExampleFr": "Exemple concret : une agence de 3 personnes facturant 50$/h qui perd collectivement 2h/mois à reconstituer le temps passé par projet pour facturer ses clients perd 100$/mois en temps masqué. Teamwork Deliver à 10,99$/mois/utilisateur (33$/mois pour les 3 sièges minimum imposés) est largement rentabilisé par ce suivi du temps natif.",
-      "tcoExampleEn": "Concrete example: a 3-person agency billing $50/h that collectively loses 2h/month reconstructing per-project time to bill clients is losing $100/month in hidden time. Teamwork Deliver at $10.99/month/user ($33/month for the enforced 3-seat minimum) easily pays for itself through this native time tracking."
+      "tcoExampleEn": "Concrete example: a 3-person agency billing $50/h that collectively loses 2h/month reconstructing per-project time to bill clients is losing $100/month in hidden time. Teamwork Deliver at $10.99/month/user ($33/month for the enforced 3-seat minimum) easily pays for itself through this native time tracking.",
+      "cautionsEn": [
+        "3-seat minimum on Deliver, 5 on Grow — no way to pay for 1 or 2 users past the free plan."
+      ]
     },
     "websiteUrl": "https://teamwork.com",
     "logo": "",
@@ -53142,7 +53178,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 5,
       "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et oublie une relance client par mois sans rappels perd au moins 50$/mois en opportunité manquée. Todoist Pro à 5$/mois (annuel) est rentabilisé dès ce seul oubli évité — mais le plafond de 5 projets actifs du plan gratuit est atteint dès qu'on gère plus de 2-3 clients en parallèle.",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who misses one client follow-up a month without reminders loses at least $50/month in missed opportunity. Todoist Pro at $5/month (annual) pays for itself from that one avoided miss — but the free plan's 5-active-project cap is hit as soon as you're juggling more than 2-3 clients at once."
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who misses one client follow-up a month without reminders loses at least $50/month in missed opportunity. Todoist Pro at $5/month (annual) pays for itself from that one avoided miss — but the free plan's 5-active-project cap is hit as soon as you're juggling more than 2-3 clients at once.",
+      "cautionsEn": [
+        "Free plan limited to 5 active projects, no reminders or attachments."
+      ]
     },
     "websiteUrl": "https://todoist.com",
     "logo": "",
@@ -57319,7 +57358,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10,
       "tcoExampleFr": "Exemple concret : une équipe créative de 4 personnes facturant 50$/h qui perd collectivement 3h/mois en allers-retours e-mail pour valider des visuels perd 150$/mois en temps masqué. Le proofing intégré de Wrike absorbe largement ce coût — mais le plan Business impose 5 sièges minimum (125$/mois) même si l'équipe n'en compte que 4, un siège payé sans utilisateur.",
-      "tcoExampleEn": "Concrete example: a 4-person creative team billing $50/h that collectively loses 3h/month on email back-and-forth to approve visuals is losing $150/month in hidden time. Wrike's built-in proofing easily absorbs that cost — but the Business plan enforces a 5-seat minimum ($125/month) even with only 4 people, one seat paid for with no user."
+      "tcoExampleEn": "Concrete example: a 4-person creative team billing $50/h that collectively loses 3h/month on email back-and-forth to approve visuals is losing $150/month in hidden time. Wrike's built-in proofing easily absorbs that cost — but the Business plan enforces a 5-seat minimum ($125/month) even with only 4 people, one seat paid for with no user.",
+      "cautionsEn": [
+        "Business plan: 5-seat minimum enforced ($125/month minimum), annual billing only."
+      ]
     },
     "websiteUrl": "https://wrike.com",
     "logo": "",
@@ -61611,7 +61653,10 @@
         "Minimum de 3 sièges imposé sur tous les plans payants ; facturation annuelle pour le tarif affiché."
       ],
       "tcoExampleFr": "Exemple concret : une équipe de 3 personnes facturant en moyenne 50$/h qui perd chacune 1h/mois à chercher le statut d'une tâche par e-mail perd 150$/mois en temps masqué. Le minimum de 3 sièges sur Basic (27$/mois) est largement rentabilisé dès que l'outil évite cette perte — mais payer pour 5 sièges quand l'équipe n'en compte que 4 (palier imposé) doit être intégré au calcul réel.",
-      "tcoExampleEn": "Concrete example: a 3-person team billing $50/h on average, each losing 1h/month chasing task status by email, is losing $150/month in hidden time. The 3-seat minimum on Basic ($27/month) is easily worth it once the tool prevents that loss — but paying for 5 seats when the team only has 4 (forced banding) has to be part of the real math."
+      "tcoExampleEn": "Concrete example: a 3-person team billing $50/h on average, each losing 1h/month chasing task status by email, is losing $150/month in hidden time. The 3-seat minimum on Basic ($27/month) is easily worth it once the tool prevents that loss — but paying for 5 seats when the team only has 4 (forced banding) has to be part of the real math.",
+      "cautionsEn": [
+        "3-seat minimum enforced on all paid plans; annual billing for the listed price."
+      ]
     },
     "pricingTiers": {
       "free": "Gratuit — 2 sièges max, fonctions limitées",
@@ -122162,7 +122207,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 5,
       "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et passe 30 min/mois à relancer des collaborateurs sur l'avancement d'une tâche perd 25$/mois en temps masqué. Trello Standard à 5$/mois est rentabilisé dès le premier mois — mais au-delà de 250 automatisations Butler par mois (le plafond du plan gratuit), il faut basculer sur ce même plan payant plus tôt que prévu.",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 30 min/month chasing collaborators for a task update is losing $25/month in hidden time. Trello Standard at $5/month pays for itself from month one — but past 250 Butler automation runs per month (the free plan's cap), you'll need that same paid plan sooner than expected."
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 30 min/month chasing collaborators for a task update is losing $25/month in hidden time. Trello Standard at $5/month pays for itself from month one — but past 250 Butler automation runs per month (the free plan's cap), you'll need that same paid plan sooner than expected.",
+      "cautionsEn": [
+        "Free plan: up to 10 boards per workspace"
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -124029,7 +124077,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 15,
       "tcoExampleFr": "Exemple concret : une équipe de 15 personnes facturant 50$/h qui perd collectivement 2h/mois à chercher des fichiers éparpillés entre e-mails et Slack perd 100$/mois en temps masqué. À 15 personnes, Plus (225$/mois) reste moins cher que Pro Unlimited (299$/mois) — le calcul s'inverse seulement au-delà d'environ 20 utilisateurs.",
-      "tcoExampleEn": "Concrete example: a 15-person team billing $50/h that collectively loses 2h/month hunting for files scattered between email and Slack is losing $100/month in hidden time. At 15 people, Plus ($225/month) still costs less than Pro Unlimited ($299/month) — the math only flips past roughly 20 users."
+      "tcoExampleEn": "Concrete example: a 15-person team billing $50/h that collectively loses 2h/month hunting for files scattered between email and Slack is losing $100/month in hidden time. At 15 people, Plus ($225/month) still costs less than Pro Unlimited ($299/month) — the math only flips past roughly 20 users.",
+      "cautionsEn": [
+        "Free plan limited to 1 project and 20 people"
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -130927,7 +130978,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10,
       "tcoExampleFr": "Exemple concret : un consultant qui facture 50$/h et passe 1h/mois à reconstituer ses notes éparpillées entre plusieurs apps perd 50$/mois en temps masqué. Notion Plus à 10$/mois est rentabilisé dès cette seule heure récupérée — mais le vrai coût caché est le temps de structuration initiale des bases de données pour remplacer ces apps.",
-      "tcoExampleEn": "Concrete example: a consultant billing $50/h who spends 1h/month piecing together notes scattered across several apps is losing $50/month in hidden time. Notion Plus at $10/month pays for itself from that one recovered hour alone — but the real hidden cost is the setup time needed to structure databases that replace those apps."
+      "tcoExampleEn": "Concrete example: a consultant billing $50/h who spends 1h/month piecing together notes scattered across several apps is losing $50/month in hidden time. Notion Plus at $10/month pays for itself from that one recovered hour alone — but the real hidden cost is the setup time needed to structure databases that replace those apps.",
+      "cautionsEn": [
+        "Very generous free plan for individual use"
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -131539,7 +131593,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 8.66,
       "tcoExampleFr": "Exemple concret : une petite équipe dev facturant 50$/h qui perd collectivement 2h/mois à trier des tickets dans un outil plus lent perd 100$/mois en temps masqué. Linear Basic à 8$/mois/utilisateur est rentabilisé dès que le gain de vitesse dépasse ce seuil — mais l'absence de facturation mensuelle impose de s'engager un an avant même de valider l'usage réel.",
-      "tcoExampleEn": "Concrete example: a small dev team billing $50/h that collectively loses 2h/month sorting tickets in a slower tool is losing $100/month in hidden time. Linear Basic at $8/month/user pays for itself once the speed gain clears that threshold — but the lack of monthly billing means committing for a year before even validating real usage."
+      "tcoExampleEn": "Concrete example: a small dev team billing $50/h that collectively loses 2h/month sorting tickets in a slower tool is losing $100/month in hidden time. Linear Basic at $8/month/user pays for itself once the speed gain clears that threshold — but the lack of monthly billing means committing for a year before even validating real usage.",
+      "cautionsEn": [
+        "Free plan up to 250 active issues"
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -131923,7 +131980,10 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 12,
       "tcoExampleFr": "Exemple concret : un freelance créatif facturant 50$/h qui perd 30 min/mois à gérer des erreurs de synchronisation ou des versions de fichiers perdues perd 25$/mois en temps masqué. Dropbox Plus à 12$/mois est rentabilisé dès cette demi-heure récupérée — mais pour une équipe de 2 personnes passant en Business, le minimum de 3 sièges impose de payer 54$/mois, pas 36$.",
-      "tcoExampleEn": "Concrete example: a freelance creative billing $50/h who loses 30 min/month dealing with sync errors or lost file versions is losing $25/month in hidden time. Dropbox Plus at $12/month pays for itself from that half hour alone — but for a 2-person team moving to Business, the 3-seat minimum means paying $54/month, not $36."
+      "tcoExampleEn": "Concrete example: a freelance creative billing $50/h who loses 30 min/month dealing with sync errors or lost file versions is losing $25/month in hidden time. Dropbox Plus at $12/month pays for itself from that half hour alone — but for a 2-person team moving to Business, the 3-seat minimum means paying $54/month, not $36.",
+      "cautionsEn": [
+        "Free Basic limited to 2GB"
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
