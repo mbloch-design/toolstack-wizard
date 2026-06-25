@@ -6230,9 +6230,10 @@
       "data-analyst"
     ],
     "functional_needs": [
-      "gestion-taches",
+      "project-management",
+      "task-management",
       "collaboration",
-      "planning"
+      "database"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -7534,7 +7535,9 @@
       "consultant-b2b"
     ],
     "functional_needs": [
-      "project management"
+      "project-management",
+      "task-management",
+      "collaboration"
     ],
     "betterAlternative": {
       "tool": "clickup",
@@ -13269,9 +13272,9 @@
       "consultant-b2b"
     ],
     "functional_needs": [
-      "gestion-taches",
-      "collaboration",
-      "planning"
+      "project-management",
+      "task-management",
+      "collaboration"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -56753,10 +56756,13 @@
     "substitutable": true,
     "verticals": [
       "manager-dsi",
-      "fondateur-saas"
+      "fondateur-saas",
+      "consultant-b2b"
     ],
     "functional_needs": [
-      "project management"
+      "project-management",
+      "task-management",
+      "collaboration"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -61114,7 +61120,8 @@
     ],
     "functional_needs": [
       "project-management",
-      "team-collaboration",
+      "task-management",
+      "collaboration",
       "crm"
     ],
     "seo": {
@@ -61129,7 +61136,12 @@
           "chatgpt"
         ]
       }
-    }
+    },
+    "verticals": [
+      "manager-dsi",
+      "fondateur-saas",
+      "consultant-b2b"
+    ]
   },
   {
     "id": "windsurf",
@@ -121485,9 +121497,9 @@
       "motion-video"
     ],
     "functional_needs": [
-      "gestion-taches",
-      "collaboration",
-      "planning"
+      "project-management",
+      "task-management",
+      "collaboration"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -123320,10 +123332,13 @@
     "bundle_parent": null,
     "verticals": [
       "manager-dsi",
-      "fondateur-saas"
+      "fondateur-saas",
+      "consultant-b2b"
     ],
     "functional_needs": [
-      "project management"
+      "project-management",
+      "task-management",
+      "collaboration"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -130181,10 +130196,12 @@
       "createur-contenu"
     ],
     "functional_needs": [
-      "gestion-projet",
+      "project-management",
+      "task-management",
+      "collaboration",
       "notes",
       "wiki",
-      "bases-de-donnees"
+      "database"
     ],
     "ia_use_case": null,
     "betterAlternative": null,

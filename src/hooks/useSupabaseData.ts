@@ -124,6 +124,9 @@ export type ToolSummary = Pick<
   | "tool_type"
   | "host_app"
   | "bundle_parent"
+  | "substitution_cluster_v2"
+  | "functional_needs"
+  | "verticals"
 >;
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
@@ -144,6 +147,9 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   tool_type: t.tool_type || "satellite",
   host_app: t.host_app || null,
   bundle_parent: t.bundle_parent || null,
+  substitution_cluster_v2: t.substitution_cluster_v2 || null,
+  functional_needs: t.functional_needs || [],
+  verticals: t.verticals || [],
 }));
 
 function mapSupabaseCat(c: any): Category {
@@ -331,7 +337,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -353,6 +359,9 @@ export function useToolSummaries() {
           bundle_parent: t.bundle_parent || null,
           websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, ""),
           logo: asLocalizedText(t.logo, ""),
+          substitution_cluster_v2: t.substitution_cluster_v2 || null,
+          functional_needs: t.functional_needs || [],
+          verticals: t.verticals || [],
         }));
         const merged = mergeById(staticToolSummaries, remoteTools);
         _toolSummariesCache = merged;
