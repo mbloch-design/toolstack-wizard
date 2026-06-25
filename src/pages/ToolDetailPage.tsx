@@ -25,6 +25,7 @@ import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
 import ToolProfileRecommendationTable from "@/components/tool/ToolProfileRecommendationTable";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
+import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
@@ -673,11 +674,20 @@ const ToolDetailPage = () => {
                     prefix={prefix} lang={lang} t={t}
                   />
 
-                  {/* Substitution cluster */}
+                  {/* Substitution cluster — substitution_cluster_v2 groups
+                       candidates roughly, but sharing a cluster tag (or a
+                       broad category) doesn't guarantee the tools actually
+                       do the same job (an external audit found health
+                       insurance and network-monitoring tools surfacing as
+                       "direct substitutes" for Asana this way). The
+                       similarity score is a second, independent gate:
+                       cluster membership generates candidates, the score
+                       decides which of them are actually relevant enough
+                       to show. */}
                   {(tool as any).substitution_cluster_v2 && (() => {
-                    const clusterTools = tools
-                      .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)
-                      .slice(0, 6);
+                    const clusterCandidates = tools
+                      .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id);
+                    const clusterTools = findSimilarTools(tool, clusterCandidates).slice(0, 6);
                     if (!clusterTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
