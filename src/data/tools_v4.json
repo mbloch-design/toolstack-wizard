@@ -4335,7 +4335,7 @@
       "threshold": "Dès que vous avez +15 comptes et que vous réutilisez des mots de passe."
     },
     "pricing": {
-      "free": "No free plan",
+      "free": "Aucun plan gratuit",
       "paid": "Individual à partir de 48$/an (~3,46€/mois équiv.)"
     },
     "affiliateLink": "https://1password.com",
@@ -5324,7 +5324,7 @@
     "shortDescription": "La suite complète : Photoshop, Illustrator, Premiere, After Effects, Lightroom et +20 apps.",
     "defaultMonthlyPrice": 78.65,
     "pricing": {
-      "free": "No free plan",
+      "free": "Aucun plan gratuit",
       "paid": "Creative Cloud Pro 78,65€/mois après promo de 3 mois à 39,31€"
     },
     "covers": [
@@ -6177,8 +6177,8 @@
       "threshold": "Pertinent dès que tu veux structurer des données au-delà d'un simple tableur."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 24/month (Team)"
+      "free": "Plan gratuit disponible",
+      "paid": "24$/mois (Team)"
     },
     "affiliateLink": "https://airtable.com",
     "articles": [],
@@ -11729,7 +11729,7 @@
     "shortDescription": "Collecte et vote de feedback utilisateurs. Roadmap publique ou privée.",
     "defaultMonthlyPrice": 85.74,
     "pricing": {
-      "free": "Jusqu'à 100 tracked users",
+      "free": "Jusqu'à 100 utilisateurs suivis",
       "paid": "99$/mois (Growth)"
     },
     "covers": [
@@ -12475,8 +12475,8 @@
       "threshold": "Dès que l'attente ou les erreurs de la version gratuite vous font perdre 1h/semaine."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 20/month (Plus)"
+      "free": "Plan gratuit disponible",
+      "paid": "20$/mois (Plus)"
     },
     "affiliateLink": "https://chat.openai.com",
     "seo": {
@@ -12794,8 +12794,8 @@
       "threshold": "Dès que vous passez plus de temps à réécrire les réponses de ChatGPT qu'à les utiliser."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 20/month (Pro)"
+      "free": "Plan gratuit disponible",
+      "paid": "20$/mois (Pro)"
     },
     "affiliateLink": "https://anthropic.com",
     "seo": {
@@ -14304,8 +14304,8 @@
     "shortDescription": "Wiki d'entreprise Atlassian. Documentation technique et knowledge base.",
     "defaultMonthlyPrice": 4.98,
     "pricing": {
-      "free": "Jusqu'à 10 users",
-      "paid": "5.75$/user/mois"
+      "free": "Jusqu'à 10 utilisateurs",
+      "paid": "5,75$/utilisateur/mois"
     },
     "covers": [
       "documentation",
@@ -15240,8 +15240,8 @@
     "shortDescription": "L'IDE IA qui code avec vous en temps réel.",
     "defaultMonthlyPrice": 20,
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 20/month (Pro)"
+      "free": "Plan gratuit disponible",
+      "paid": "20$/mois (Pro)"
     },
     "covers": [
       "coding",
@@ -18512,8 +18512,8 @@
       "threshold": "Dès que vous produisez +2 vidéos/podcasts par mois ou que vous voulez internationaliser votre contenu."
     },
     "pricing": {
-      "free": "Free tier available",
-      "paid": "From $5/month (Starter)"
+      "free": "Plan gratuit disponible",
+      "paid": "À partir de 5$/mois (Starter)"
     },
     "affiliateLink": "https://elevenlabs.io",
     "articles": [],
@@ -21283,8 +21283,8 @@
     "shortDescription": "L'assistant de code IA intégré dans votre éditeur.",
     "defaultMonthlyPrice": 8.66,
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 10/month (Copilot Pro)"
+      "free": "Plan gratuit disponible",
+      "paid": "10$/mois (Copilot Pro)"
     },
     "covers": [
       "coding",
@@ -26423,8 +26423,8 @@
     "shortDescription": "La référence de la gestion de projet Agile pour équipes tech.",
     "defaultMonthlyPrice": 6.71,
     "pricing": {
-      "free": "Jusqu'à 10 users",
-      "paid": "7.75$/user/mois"
+      "free": "Jusqu'à 10 utilisateurs",
+      "paid": "7,75$/utilisateur/mois"
     },
     "covers": [
       "gestion-projet",
@@ -32184,8 +32184,8 @@
       "threshold": "Dès que vous faites la même tâche manuelle de copier-coller plus de 5 fois par semaine."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 9/month (Core)"
+      "free": "Plan gratuit disponible",
+      "paid": "9$/mois (Core)"
     },
     "affiliateLink": "https://make.com",
     "seo": {
@@ -37939,8 +37939,8 @@
     "shortDescription": "Gestion des incidents en temps réel avec astreintes et escalade automatique.",
     "defaultMonthlyPrice": 18.19,
     "pricing": {
-      "free": "5 users",
-      "paid": "21$/user/mois (Professional)"
+      "free": "5 utilisateurs",
+      "paid": "21$/utilisateur/mois"
     },
     "covers": [
       "gestion-incidents",
@@ -42492,8 +42492,8 @@
       "threshold": "Immédiatement si vous avez un Mac. C'est un game changer absolu."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 10/month (Pro)"
+      "free": "Plan gratuit disponible",
+      "paid": "10$/mois (Pro)"
     },
     "affiliateLink": "https://raycast.com",
     "articles": [],
@@ -43797,7 +43797,7 @@
     "defaultMonthlyPrice": 8.66,
     "pricing": {
       "free": "5 apps en cloud",
-      "paid": "10$/mois/user"
+      "paid": "10$/utilisateur/mois"
     },
     "covers": [
       "app-builder",
@@ -48541,8 +48541,8 @@
       "threshold": "Dès que vous collaborez régulièrement avec une équipe ou des clients qui utilisent Slack."
     },
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 8.75/month (Pro)"
+      "free": "Plan gratuit disponible",
+      "paid": "8,75$/mois (Pro)"
     },
     "affiliateLink": "https://slack.com",
     "articles": [],
@@ -50812,7 +50812,7 @@
       "threshold": "Dès que l'email devient votre goulot d'étranglement principal."
     },
     "pricing": {
-      "free": "No permanent free plan",
+      "free": "Pas de plan gratuit permanent",
       "paid": "Starter 30$/mois ou 300$/an; Business 40$/mois ou 396$/an"
     },
     "affiliateLink": "https://superhuman.com",
@@ -52546,7 +52546,7 @@
       "threshold": "Dès que votre cerveau sature de petites tâches à ne pas oublier."
     },
     "pricing": {
-      "free": "Free plan available",
+      "free": "Plan gratuit disponible",
       "paid": "Pro 7€/mois ou 60€/an (5€/mois équivalent)"
     },
     "affiliateLink": "https://todoist.com",
@@ -57144,8 +57144,8 @@
     "description": "Zapier, c'est outil d’automatisation pour connecter des applications et workflows. À partir de 17.31€/mois. Pensé pour les consultants B2B et les e-commerçants.\n\nSpécialisé en workflow automation, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois. Si le budget le permet, make va plus loin.",
     "category": "automation",
     "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 19.99/month (Professional)"
+      "free": "Plan gratuit disponible",
+      "paid": "19,99$/mois (Professional)"
     },
     "website": "https://zapier.com",
     "affiliateLink": "https://zapier.com",
@@ -58113,8 +58113,8 @@
       "paid": "Starter 5,52€/mois · Pro 14,73€ · Business 36,84€"
     },
     "pricing": {
-      "free": "Free plan with 3,000 one-time credits",
-      "paid": "Starter $6/mo, Pro $16/mo, Business $40/mo"
+      "free": "Plan gratuit avec 3 000 crédits ponctuels",
+      "paid": "Starter 6$/mois, Pro 16$/mois, Business 40$/mois"
     },
     "pricingEn": {
       "free": "Free plan available",
@@ -58249,8 +58249,8 @@
       "paid": "Pro 7,82€/mois · Annual 78,14€/an · Lifetime ~230€ unique"
     },
     "pricing": {
-      "free": "Free tier with small AI models",
-      "paid": "Pro $8.49/mo or $79/yr, Lifetime $249"
+      "free": "Plan gratuit avec modèles IA légers",
+      "paid": "Pro 8,49$/mois ou 79$/an, Lifetime 249$"
     },
     "pricingEn": {
       "free": "Free with small AI models",
@@ -58384,8 +58384,8 @@
       "paid": "Starter 13,80€/mois · Pro 36,84€ · Business 69,07€"
     },
     "pricing": {
-      "free": "Free — 1,000 responses/month, unlimited forms",
-      "paid": "Starter $15/mo · Pro $40 · Business $75"
+      "free": "Gratuit — 1 000 réponses/mois, formulaires illimités",
+      "paid": "Starter 15$/mois · Pro 40$ · Business 75$"
     },
     "pricingEn": {
       "free": "Free with 1,000 responses/month",
@@ -58511,8 +58511,8 @@
       "paid": "Hobby 14,74€/mois (5k crédits) · Standard 76,44€ (100k) · Growth 306,94€ (500k)"
     },
     "pricing": {
-      "free": "Free — 1,000 credits/month",
-      "paid": "Hobby $16/mo · Standard $83 · Growth $333"
+      "free": "Gratuit — 1 000 crédits/mois",
+      "paid": "Hobby 16$/mois · Standard 83$ · Growth 333$"
     },
     "pricingEn": {
       "free": "Free with 1,000 credits/month",
@@ -58634,8 +58634,8 @@
       "paid": "Team 27,60€/utilisateur/mois (30$ crédits + collaboration)"
     },
     "pricing": {
-      "free": "Free with $5/mo credits, 7 messages/day",
-      "paid": "Team $30/user/mo · Business $100/user/mo"
+      "free": "Gratuit avec 5$/mois de crédits, 7 messages/jour",
+      "paid": "Team 30$/utilisateur/mois · Business 100$/utilisateur/mois"
     },
     "pricingEn": {
       "free": "Free with $5/mo credits, 7 messages/day",
@@ -58767,8 +58767,8 @@
       "paid": "Starter 9,22€/siège/mois · Business 13,82€ · Enterprise 20,26€"
     },
     "pricing": {
-      "free": "Free with 1-week range, 1 habit",
-      "paid": "Starter $10/seat/mo · Business $15 · Enterprise $22"
+      "free": "Gratuit avec plage d'1 semaine, 1 habitude",
+      "paid": "Starter 10$/siège/mois · Business 15$ · Enterprise 22$"
     },
     "pricingEn": {
       "free": "Free with limited range",
@@ -58896,8 +58896,8 @@
       "paid": "SuperGrok Lite 9,21€/mois · SuperGrok 27,60€ · SuperGrok Heavy 276€"
     },
     "pricing": {
-      "free": "Free with 10 requests/2h",
-      "paid": "SuperGrok Lite $10/mo · SuperGrok $30/mo · SuperGrok Heavy $300/mo"
+      "free": "Gratuit avec 10 requêtes/2h",
+      "paid": "SuperGrok Lite 10$/mois · SuperGrok 30$/mois · SuperGrok Heavy 300$/mois"
     },
     "pricingEn": {
       "free": "Free with 10 requests per 2 hours",
@@ -59032,8 +59032,8 @@
       "paid": "API pay-as-you-go : Gemini 2.5 Flash à 0,28$/M tokens input"
     },
     "pricing": {
-      "free": "Free interface + free API tier",
-      "paid": "Pay-as-you-go API: from $0.30/M tokens (Flash)"
+      "free": "Interface gratuite + palier API gratuit",
+      "paid": "API à l'usage : à partir de 0,30$/M tokens (Flash)"
     },
     "pricingEn": {
       "free": "Free web interface + generous free API tier",
@@ -59165,8 +59165,8 @@
       "paid": "Contra Pro 26,71€/mois · Annuel 183,90€/an"
     },
     "pricing": {
-      "free": "Free — profile, proposals, payments, 0% commission",
-      "paid": "Pro $29/mo or $199/yr"
+      "free": "Gratuit — profil, propositions, paiements, 0% de commission",
+      "paid": "Pro 29$/mois ou 199$/an"
     },
     "pricingEn": {
       "free": "Free — 0% commission on earnings",
@@ -59302,8 +59302,8 @@
       "paid": "Mensuel 6,97€/mois · Annuel 4,64€/mois (£4/mois)"
     },
     "pricing": {
-      "free": "Free with basic features",
-      "paid": "Monthly £6/mo or Annual £4/mo billed yearly"
+      "free": "Gratuit avec fonctionnalités de base",
+      "paid": "6£/mois ou 4£/mois facturé annuellement"
     },
     "pricingEn": {
       "free": "Free with basic AI features",
@@ -66420,7 +66420,7 @@
     },
     "pricing": {
       "free": "Non disponible",
-      "paid": "30$/user/mois en complément de M365"
+      "paid": "30$/utilisateur/mois en complément de M365"
     },
     "pricingEn": {
       "free": "Not available",
@@ -122092,7 +122092,7 @@
     "defaultMonthlyPrice": 300,
     "pricing": {
       "free": "Démo sur demande",
-      "paid": "Startup 300$/mois/user (2 users min, annuel) — Growth sur devis — Elite sur devis"
+      "paid": "Startup 300$/mois/utilisateur (2 utilisateurs min, annuel) — Growth sur devis — Elite sur devis"
     },
     "logo": "",
     "soloRelevance": null,
@@ -122244,7 +122244,7 @@
     "defaultMonthlyPrice": 147,
     "pricing": {
       "free": "Plan Free (50 crédits/mois)",
-      "paid": "Basic 147$/user/mois (annuel) — Pro sur devis — Enterprise sur devis"
+      "paid": "Basic 147$/utilisateur/mois (annuel) — Pro sur devis — Enterprise sur devis"
     },
     "logo": "",
     "soloRelevance": null,
