@@ -68,6 +68,15 @@ export default function SectionPillNav({
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // Callers (ToolDetailPage included) can't always memoize `sections` —
+  // it's computed after an early `if (!tool) return null` guard, where a
+  // useMemo would violate the rules of hooks (different hook count between
+  // the loading and loaded render). So depend on a content-derived key
+  // instead of the array reference: same ids in the same order means the
+  // observer setup doesn't need to change, even if the array is a fresh
+  // object every render.
+  const sectionsKey = sections.map((s) => s.id).join("|");
+
   useEffect(() => {
     if (sections.length === 0) return;
     const nodes = sections
@@ -114,7 +123,9 @@ export default function SectionPillNav({
       heroObserver?.disconnect();
       document.removeEventListener("keydown", handleKey);
     };
-  }, [sections, heroSelector]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentionally
+    // keyed on sectionsKey (content), not the sections array reference.
+  }, [sectionsKey, heroSelector]);
 
   useEffect(() => () => { if (pendingTimeoutRef.current) clearTimeout(pendingTimeoutRef.current); }, []);
 

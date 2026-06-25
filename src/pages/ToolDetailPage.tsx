@@ -1,7 +1,7 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
-import { useContext, useEffect, useMemo, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import {
   ExternalLink, ArrowRight, CalendarCheck,
 } from "lucide-react";
@@ -56,6 +56,12 @@ const ToolDetailPage = () => {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
+  // Hooks must run unconditionally on every render — this was previously
+  // called after the `if (!tool) return null` guard below, so it was
+  // skipped during the loading render but called once `tool` resolved,
+  // changing the hook count between renders (React error #310, "Rendered
+  // more hooks than during the previous render").
+  const ssrRelatedPosts = useContext(SsrRelatedPostsContext);
 
   const pathEnd = location.pathname.split("/").pop() || "";
   const subPage: "presentation" | "prix" | "alternatives" | "faq" | "avis" =
@@ -294,7 +300,6 @@ const ToolDetailPage = () => {
       ? findSimilarTools(tool, tools.filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)).length > 0
       : false)
     || FEATURED_COMPARISONS.some((c: any) => c.toolA === (tool.slug || tool.id) || c.toolB === (tool.slug || tool.id));
-  const ssrRelatedPosts = useContext(SsrRelatedPostsContext);
   const relatedPosts = ssrRelatedPosts !== undefined
     ? ssrRelatedPosts
     : posts
@@ -340,15 +345,19 @@ const ToolDetailPage = () => {
   // "Alternatives" is dropped when there's nothing to show there (see the
   // alternatives computation above — no curated/cover-overlap data, an
   // honest empty result rather than a tab that leads to a half-empty page).
-  const pillSections = useMemo(
-    () => TABS
-      .filter((tab) => tab.id !== "alternatives" || hasAlternativesContent)
-      .map((tab) => ({
-        id: tab.id === "presentation" ? "analyse" : tab.id,
-        label: lang === "fr" ? tab.labelFr : tab.labelEn,
-      })),
-    [lang, hasAlternativesContent]
-  );
+  // Not memoized: this must stay a plain computation (no hook) since it's
+  // reached after the `if (!tool) return null` guard above — a useMemo
+  // here would only run once tool resolves, changing the hook count
+  // between the loading and loaded renders (React error #310). The
+  // array-identity churn this produces on every render is handled inside
+  // SectionPillNav itself (keyed off a content-derived string, not the
+  // array reference), not here.
+  const pillSections = TABS
+    .filter((tab) => tab.id !== "alternatives" || hasAlternativesContent)
+    .map((tab) => ({
+      id: tab.id === "presentation" ? "analyse" : tab.id,
+      label: lang === "fr" ? tab.labelFr : tab.labelEn,
+    }));
 
   // Test ponctuel (Asana) : remonter le bloc CTA "Audit de stack" juste après
   // le verdict au lieu d'attendre la fin de page. Gated par slug en dur (pas
