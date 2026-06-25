@@ -1632,11 +1632,11 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     toolADesc: toolA.shortDescription || `${toolA.name} est un outil conçu pour ${(toolA.verdict?.keepIf?.[0] || "optimiser votre productivité").toLowerCase()}.`,
     toolADescEn: toolA.shortDescriptionEn || `${toolA.name} is a tool designed for ${(toolA.verdictEn?.keepIf?.[0] || "boosting your productivity").toLowerCase()}.`,
     toolAUseCases: (toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
-    toolAUseCasesEn: (toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
+    toolAUseCasesEn: (toolA.useCasesEn || toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
     toolBDesc: toolB.shortDescription || `${toolB.name} est un outil conçu pour ${(toolB.verdict?.keepIf?.[0] || "optimiser votre productivité").toLowerCase()}.`,
     toolBDescEn: toolB.shortDescriptionEn || `${toolB.name} is a tool designed for ${(toolB.verdictEn?.keepIf?.[0] || "boosting your productivity").toLowerCase()}.`,
     toolBUseCases: (toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
-    toolBUseCasesEn: (toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
+    toolBUseCasesEn: (toolB.useCasesEn || toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
 
     tableRows: [
       { criterion: "Prise en main", criterionEn: "Ease of use",
@@ -1656,13 +1656,13 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     ],
 
     prosA: (toolA.pros || []).slice(0, 4).map(String),
-    prosAEn: (toolA.pros || []).slice(0, 4).map(String),
+    prosAEn: (toolA.prosEn || toolA.pros || []).slice(0, 4).map(String),
     limitsA: (toolA.cons || []).slice(0, 4).map(String),
-    limitsAEn: (toolA.cons || []).slice(0, 4).map(String),
+    limitsAEn: (toolA.consEn || toolA.cons || []).slice(0, 4).map(String),
     prosB: (toolB.pros || []).slice(0, 4).map(String),
-    prosBEn: (toolB.pros || []).slice(0, 4).map(String),
+    prosBEn: (toolB.prosEn || toolB.pros || []).slice(0, 4).map(String),
     limitsB: (toolB.cons || []).slice(0, 4).map(String),
-    limitsBEn: (toolB.cons || []).slice(0, 4).map(String),
+    limitsBEn: (toolB.consEn || toolB.cons || []).slice(0, 4).map(String),
 
     decisionRows: [
       {
