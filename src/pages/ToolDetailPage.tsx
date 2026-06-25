@@ -22,6 +22,7 @@ import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
 import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
 import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
+import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolProfileRecommendationTable from "@/components/tool/ToolProfileRecommendationTable";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
@@ -644,6 +645,7 @@ const ToolDetailPage = () => {
                     prefix={prefix} lang={lang} t={t}
                   />
                   <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
+                  <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                 </div>
               </div>
             )}

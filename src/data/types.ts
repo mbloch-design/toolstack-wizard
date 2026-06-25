@@ -27,6 +27,15 @@ export interface ToolVerdict {
   // Optional override for the "is it worth the price" FAQ answer, so it
   // doesn't repeat threshold verbatim. Falls back to threshold if unset.
   faqPriceAnswer?: string;
+  // Optional contractual/billing gotchas (seat minimums, purchase banding,
+  // usage caps...) distinct from tooExpensiveIf: concrete mechanics rather
+  // than a budget judgment call. Absent on most tools.
+  billingTraps?: ToolBillingTrap[];
+}
+
+export interface ToolBillingTrap {
+  title: string;
+  text: string;
 }
 
 export interface ToolPricing {
@@ -98,6 +107,10 @@ export interface PricingV5 {
   costTable?: ToolCostRow[];
   costTableNoteFr?: string;
   costTableNoteEn?: string;
+  // Optional worked TCO example (config time + monthly admin overhead
+  // converted to an hourly rate). Absent on most tools.
+  tcoExampleFr?: string;
+  tcoExampleEn?: string;
 }
 
 export interface ToolCostRow {

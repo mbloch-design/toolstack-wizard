@@ -94,6 +94,23 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
           {note}
         </p>
       )}
+      {(() => {
+        const tcoExample = lang === "en" ? pv5?.tcoExampleEn : pv5?.tcoExampleFr;
+        if (!tcoExample) return null;
+        return (
+          <div style={{ marginTop: 16, padding: "14px 18px", border: "1px solid var(--color-border)", borderRadius: 10, background: "var(--color-surface-soft)" }}>
+            <p style={{ fontFamily: "var(--font-mono, ui-monospace)", fontSize: 12, color: "var(--color-muted)", marginBottom: 8 }}>
+              {t(
+                "Coût total = Coût SaaS + (Temps de configuration × Taux horaire) / 12 + Maintenance mensuelle × Taux horaire",
+                "Total cost = SaaS cost + (Setup time × Hourly rate) / 12 + Monthly maintenance × Hourly rate",
+              )}
+            </p>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, lineHeight: 1.55, color: "var(--color-text)" }}>
+              {tcoExample}
+            </p>
+          </div>
+        );
+      })()}
     </div>
   );
 }

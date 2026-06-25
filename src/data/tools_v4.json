@@ -7433,12 +7433,14 @@
     "pros": [
       "Interface intuitive qui reste personnalisable pour des workflows complexes",
       "Apps mobiles solides pour gérer ses tâches en déplacement",
-      "Collaboration centralisée : commentaires, fichiers et statuts au même endroit, moins d'allers-retours sur Slack"
+      "Collaboration centralisée : commentaires, fichiers et statuts au même endroit, moins d'allers-retours sur Slack",
+      "Le multihoming permet de rattacher une même tâche à plusieurs projets sans la dupliquer : commentaires et statut se synchronisent instantanément partout où elle apparaît."
     ],
     "cons": [
       "Saut de prix abrupt entre Starter et Advanced (jusqu'à 2,3x, ~15000$/an pour 50 personnes en Advanced)",
       "Courbe d'apprentissage réelle pour maîtriser sous-tâches et personnalisation avancée",
-      "Pas de chat ou de docs intégrés : tu auras toujours besoin de Slack et Notion/Google Docs en complément"
+      "Pas de chat ou de docs intégrés : tu auras toujours besoin de Slack et Notion/Google Docs en complément",
+      "Une tâche ne peut avoir qu'un seul assigné à la fois : pour une responsabilité partagée, il faut multiplier les sous-tâches ou créer des doublons artificiels."
     ],
     "bestFor": [
       "all"
@@ -7501,7 +7503,25 @@
           "recommendation": "Challenger avec ClickUp, Trello ou Notion"
         }
       ],
-      "faqPriceAnswer": "Oui si ton équipe a plusieurs personnes et plusieurs projets à coordonner : la timeline et les dépendances justifient le prix. Pour un usage solo ou une simple liste de tâches, le rapport qualité-prix est moins bon que Trello ou Notion."
+      "faqPriceAnswer": "Oui si ton équipe a plusieurs personnes et plusieurs projets à coordonner : la timeline et les dépendances justifient le prix. Pour un usage solo ou une simple liste de tâches, le rapport qualité-prix est moins bon que Trello ou Notion.",
+      "billingTraps": [
+        {
+          "title": "Le piège du minimum de 2 sièges",
+          "text": "Asana ne propose aucun plan payant pour 1 utilisateur solo. Le plan Starter (10,99$/mois/utilisateur) impose l'achat de 2 licences minimum, soit 21,98$/mois réels pour démarrer, même seul."
+        },
+        {
+          "title": "La règle des paliers d'achat (banding)",
+          "text": "Les licences ne s'achètent pas une par une au-delà de 5 utilisateurs : Asana impose des paliers de 5 jusqu'à 30 utilisateurs, puis de 10 jusqu'à 100. Une équipe de 6 personnes paie donc d'office 10 licences."
+        },
+        {
+          "title": "La limite invisible d'automatisation (rule actions)",
+          "text": "Le plan Starter permet de créer des règles illimitées, mais bride leur exécution à 250 actions par mois pour tout l'espace de travail. Une petite équipe épuise ce quota en quelques jours, ce qui force une migration précoce vers Advanced (24,99$/mois/utilisateur, 25 000 actions)."
+        },
+        {
+          "title": "La restriction du plan gratuit (Personal)",
+          "text": "Depuis le 12 novembre 2025, le plan gratuit Personal est limité à 2 utilisateurs (contre 10 auparavant) pour tout nouveau compte. Seuls les comptes créés avant cette date gardent leur ancien plafond de 10 collaborateurs (legacy)."
+        }
+      ]
     },
     "alternatives": [
       "clickup",
@@ -7623,7 +7643,9 @@
         }
       ],
       "costTableNoteFr": "Prix convertis en euros (taux indicatif, ~0,876$ pour 1€) à partir des tarifs officiels en dollars. Engagement annuel : la facturation mensuelle coûte environ 20% plus cher. Source : asana.com/pricing.",
-      "costTableNoteEn": "Prices converted to euros (indicative rate, ~$0.876 per €1) from the official dollar pricing. Annual commitment: monthly billing costs roughly 20% more. Source: asana.com/pricing."
+      "costTableNoteEn": "Prices converted to euros (indicative rate, ~$0.876 per €1) from the official dollar pricing. Annual commitment: monthly billing costs roughly 20% more. Source: asana.com/pricing.",
+      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et passe 2h/mois à trier ses demandes clients et relancer ses projets par e-mail perd en réalité 100$/mois en temps masqué. Investir dans Asana Starter à 21,98$/mois (2 sièges minimum imposés) est rentabilisé dès le premier mois s'il fait gagner seulement 15 minutes d'administration.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 2h/month manually sorting client requests and chasing projects by email is really losing $100/month in hidden time. Investing in Asana Starter at $21.98/month (2-seat minimum) pays for itself from month one if it saves just 15 minutes of admin."
     },
     "websiteUrl": "https://asana.com",
     "logo": "",
@@ -7671,17 +7693,37 @@
           "recommendation": "Challenge it with ClickUp, Trello or Notion"
         }
       ],
-      "faqPriceAnswer": "Yes, if your team is coordinating several people across several projects: timeline and dependencies justify the price. For solo use or a simple task list, Trello or Notion give you better value."
+      "faqPriceAnswer": "Yes, if your team is coordinating several people across several projects: timeline and dependencies justify the price. For solo use or a simple task list, Trello or Notion give you better value.",
+      "billingTraps": [
+        {
+          "title": "The 2-seat minimum trap",
+          "text": "Asana offers no paid plan for a single solo user. The Starter plan ($10.99/user/month) requires a 2-seat minimum purchase — $21.98/month in real terms to get started, even alone."
+        },
+        {
+          "title": "The purchase banding rule",
+          "text": "Above 5 users, seats aren't sold individually: Asana enforces 5-seat increments up to 30 users, then 10-seat increments up to 100. A 6-person team is therefore billed for 10 seats by default."
+        },
+        {
+          "title": "The invisible automation cap (rule actions)",
+          "text": "The Starter plan lets you create unlimited rules, but caps their execution at 250 actions per month for the entire workspace. A small team burns through that quota in days, forcing an early upgrade to Advanced ($24.99/user/month, 25,000 actions)."
+        },
+        {
+          "title": "The free plan restriction (Personal)",
+          "text": "Since November 12, 2025, the free Personal plan is capped at 2 users (down from 10) for any new account. Only accounts created before that date keep the old 10-collaborator ceiling (legacy)."
+        }
+      ]
     },
     "prosEn": [
       "Intuitive interface that remains customizable for complex workflows",
       "Solid mobile apps to manage tasks on the go",
-      "Centralized collaboration: comments, files, and statuses in one place, fewer Slack back-and-forths"
+      "Centralized collaboration: comments, files, and statuses in one place, fewer Slack back-and-forths",
+      "Multi-homing lets a single task live in several projects without duplicating it: comments and status sync instantly everywhere it appears."
     ],
     "consEn": [
       "Steep price jump from Starter to Advanced (up to 2.3x, ~$15,000/year for 50 people on Advanced)",
       "Real learning curve to master subtasks and advanced customization",
-      "No built-in chat or docs: you'll still need Slack and Notion/Google Docs alongside it"
+      "No built-in chat or docs: you'll still need Slack and Notion/Google Docs alongside it",
+      "A task can only have one assignee at a time: shared ownership means multiplying subtasks or creating artificial duplicates."
     ],
     "useCases": [
       "Gérer des projets avec plusieurs vues (liste, Kanban, timeline) selon les préférences de l'équipe",
