@@ -23765,7 +23765,10 @@
     "shortDescription": "Gestion de projet avec vues multiples (Gantt, Kanban) et assistant IA Buzz intégré.",
     "description": "Hive combine plusieurs vues de projet (Gantt, Kanban, calendrier), un chat intégré et un assistant IA (Buzz) qui répond aux questions en utilisant les données réelles de l'espace de travail, avec un stockage de fichiers illimité même sur les plans payants d'entrée.",
     "category": "organization",
-    "pricing": "Starter à 5$/utilisateur/mois (annuel, 7$ mensuel) ; Teams à 12$/utilisateur (18$ mensuel) ; Enterprise sur devis.",
+    "pricing": {
+      "free": "Plan gratuit jusqu'à 10 membres, 200 Mo de stockage",
+      "paid": "Starter à 5$/mois/utilisateur (annuel, 7$ mensuel) ; Teams à 12$/utilisateur (18$ mensuel) ; Enterprise sur devis."
+    },
     "website": "https://hive.com",
     "affiliateLink": "https://hive.com",
     "pros": [
@@ -23787,7 +23790,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 4.38,
+    "defaultMonthlyPrice": 5,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -23839,19 +23842,22 @@
     "shortDescriptionEn": "Project management with multiple views (Gantt, Kanban) and built-in AI assistant Buzz.",
     "longDescription": "Hive combine plusieurs vues de projet (Gantt, Kanban, calendrier), un chat intégré et un assistant IA (Buzz) qui répond aux questions en utilisant les données réelles de l'espace de travail, avec un stockage de fichiers illimité même sur les plans payants d'entrée.\n\nLe compromis classique des outils tout-en-un : plusieurs fonctionnalités utiles (validation, gestion de ressources, suivi du temps avancé) sont des add-ons payants séparés, ce qui rend le budget final difficile à anticiper précisément.",
     "longDescriptionEn": "Hive combines several project views (Gantt, Kanban, calendar), built-in chat, and an AI assistant (Buzz) that answers questions using real workspace data, with unlimited file storage even on entry-level paid plans.\n\nThe classic trade-off of all-in-one tools: several useful features (approvals, resource management, advanced time tracking) are separate paid add-ons, making the final budget hard to predict precisely.",
-    "pricingEn": "Starter at $5/user/month (annual, $7 monthly); Teams at $12/user ($18 monthly); Enterprise quoted.",
+    "pricingEn": {
+      "free": "Free plan for up to 10 members, 200MB storage",
+      "paid": "Starter at $5/month/user (annual, $7 monthly); Teams at $12/user ($18 monthly); Enterprise quoted."
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
       "source_domain": "hive.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Starter",
       "price_reliability": "medium",
       "location_sensitive": false,
       "official_source_url": "https://hive.com/pricing/",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 15,
+      "compare_price_monthly_eur": 5,
       "tcoExampleFr": "Exemple concret : une équipe de 8 personnes facturant 50$/h qui perd collectivement 1h/mois à chercher une pièce jointe dans un gestionnaire de fichiers mal organisé perd 50$/mois en temps masqué. Hive Starter à 5$/mois/utilisateur (40$/mois pour 8 personnes) est rentabilisé dès cette perte évitée — mais les add-ons (validation, ressources) peuvent rapidement doubler ce montant.",
       "tcoExampleEn": "Concrete example: an 8-person team billing $50/h that collectively loses 1h/month hunting for an attachment in a poorly organized file manager is losing $50/month in hidden time. Hive Starter at $5/month/user ($40/month for 8 people) pays for itself from that avoided loss alone — but the add-ons (proofing, resourcing) can quickly double that amount."
     },
