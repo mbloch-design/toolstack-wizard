@@ -10,7 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { AppRoutes } from "@/App";
-import { SsrToolContext, SsrRelatedPostsContext, loadLocalPosts } from "@/hooks/useSupabaseData";
+import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, loadLocalPosts } from "@/hooks/useSupabaseData";
 import type { Tool } from "@/data/types";
 
 export interface RenderedToolPage {
@@ -61,4 +61,34 @@ export async function renderToolPage(path: string, tool: Tool, lang: string): Pr
   );
 
   return { html, relatedPosts };
+}
+
+// Same idea as renderToolPage, for /comparatif/:slugPair. ComparePage was
+// lazy-loaded (see App.tsx), which silently defeats SSR — renderToString
+// can't resolve a lazy() chunk, so it just renders the Suspense fallback.
+// Made it an eager import for the same reason ToolDetailPage already is.
+export async function renderComparePage(path: string, toolA: Tool, toolB: Tool): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <SsrComparePairContext.Provider value={{ toolA, toolB }}>
+                  <AppRoutes />
+                </SsrComparePairContext.Provider>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
 }

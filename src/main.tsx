@@ -1,11 +1,12 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
-import { SsrToolContext, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
+import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext } from "@/hooks/useSupabaseData";
 import "./index.css";
 
 const container = document.getElementById("root")!;
 const ssrToolEl = document.getElementById("__SSR_TOOL__");
+const ssrCompareEl = document.getElementById("__SSR_COMPARE__");
 
 if (ssrToolEl) {
   // Server-rendered tool page (see entry-server.tsx / staticPrerenderPlugin):
@@ -23,6 +24,19 @@ if (ssrToolEl) {
           <App />
         </SsrRelatedPostsContext.Provider>
       </SsrToolContext.Provider>
+    </HelmetProvider>
+  );
+} else if (ssrCompareEl) {
+  // Server-rendered comparison page (see entry-server.tsx's
+  // renderComparePage) — same idea, seeds useToolPair so client hydration
+  // matches the server markup instead of refetching and flashing a loader.
+  const ssrCompare = JSON.parse(ssrCompareEl.textContent || "null");
+  hydrateRoot(
+    container,
+    <HelmetProvider>
+      <SsrComparePairContext.Provider value={ssrCompare}>
+        <App />
+      </SsrComparePairContext.Provider>
     </HelmetProvider>
   );
 } else {

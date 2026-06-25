@@ -17,6 +17,11 @@ export const SsrToolContext = createContext<Tool | undefined>(undefined);
 // page. Pre-computed server-side and passed through here instead.
 export const SsrRelatedPostsContext = createContext<Pick<Post, "slug" | "title" | "readTime">[] | undefined>(undefined);
 
+// Same idea, for ComparePage (see entry-server.tsx's renderComparePage) - so
+// useToolPair can skip its loading state when the pair was already
+// server-rendered for this exact slugA/slugB.
+export const SsrComparePairContext = createContext<{ toolA: Tool; toolB: Tool } | undefined>(undefined);
+
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
   id: c.id,
@@ -228,12 +233,17 @@ export function useCategories() {
  *     so consumers get exactly the same Tool shape as useTools().
  */
 export function useToolPair(slugA: string | undefined | null, slugB: string | undefined | null) {
-  const [toolA, setToolA] = useState<Tool | undefined>(undefined);
-  const [toolB, setToolB] = useState<Tool | undefined>(undefined);
-  const [loading, setLoading] = useState(true);
+  const ssrPair = useContext(SsrComparePairContext);
+  const ssrMatches = !!ssrPair &&
+    (ssrPair.toolA.slug === slugA || ssrPair.toolA.id === slugA) &&
+    (ssrPair.toolB.slug === slugB || ssrPair.toolB.id === slugB);
+  const [toolA, setToolA] = useState<Tool | undefined>(ssrMatches ? ssrPair!.toolA : undefined);
+  const [toolB, setToolB] = useState<Tool | undefined>(ssrMatches ? ssrPair!.toolB : undefined);
+  const [loading, setLoading] = useState(!ssrMatches);
 
   useEffect(() => {
     if (!slugA || !slugB) { setLoading(false); return; }
+    if (ssrMatches) return;
     let cancelled = false;
     setLoading(true);
 

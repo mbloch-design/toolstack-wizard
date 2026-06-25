@@ -1606,6 +1606,11 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
 
   const keepsA = toolA.verdict?.keepIf || [];
   const keepsB = toolB.verdict?.keepIf || [];
+  // Separate English-sourced arrays — verdictShortEn/finalRecommendationEn
+  // used to read keepsA/keepsB (the French arrays) directly, so the English
+  // version of a comparison page could show French text mid-sentence.
+  const keepsAEn = toolA.verdictEn?.keepIf || keepsA;
+  const keepsBEn = toolB.verdictEn?.keepIf || keepsB;
 
   return {
     framing: `${toolA.name} et ${toolB.name} : deux approches différentes pour des besoins proches.`,
@@ -1613,14 +1618,14 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     verdictShort: keepsA[0] && keepsB[0]
       ? `Choisis ${toolA.name} si ${keepsA[0].toLowerCase()}. Choisis ${toolB.name} si ${keepsB[0].toLowerCase()}.`
       : `Le choix dépend de ton usage principal.`,
-    verdictShortEn: keepsA[0] && keepsB[0]
-      ? `Choose ${toolA.name} if ${keepsA[0].toLowerCase()}. Choose ${toolB.name} if ${keepsB[0].toLowerCase()}.`
+    verdictShortEn: keepsAEn[0] && keepsBEn[0]
+      ? `Choose ${toolA.name} if ${keepsAEn[0].toLowerCase()}. Choose ${toolB.name} if ${keepsBEn[0].toLowerCase()}.`
       : `The choice depends on your primary use case.`,
     finalRecommendation: keepsA[0] && keepsB[0]
       ? `ToolTrim recommande ${toolA.name} si ${keepsA[0].toLowerCase()}. ${toolB.name} devient meilleur si ${keepsB[0].toLowerCase()}.`
       : `ToolTrim recommande de choisir selon ton usage principal, ton budget réel et le niveau de structure nécessaire.`,
-    finalRecommendationEn: keepsA[0] && keepsB[0]
-      ? `ToolTrim recommends ${toolA.name} if ${keepsA[0].toLowerCase()}. ${toolB.name} becomes better if ${keepsB[0].toLowerCase()}.`
+    finalRecommendationEn: keepsAEn[0] && keepsBEn[0]
+      ? `ToolTrim recommends ${toolA.name} if ${keepsAEn[0].toLowerCase()}. ${toolB.name} becomes better if ${keepsBEn[0].toLowerCase()}.`
       : `ToolTrim recommends choosing by primary use case, real budget, and required structure level.`,
     quickVerdictA: keepsA.slice(0, 2).join(". ") || `Tu veux utiliser ${toolA.name} comme outil principal.`,
     quickVerdictAEn: (toolA.verdictEn?.keepIf || keepsA).slice(0, 2).join(". ") || `You want to use ${toolA.name} as your main tool.`,
@@ -1840,7 +1845,7 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       { q: `${toolA.name} vs ${toolB.name} — lequel choisir ?`,
         qEn: `${toolA.name} vs ${toolB.name} — which to choose?`,
         a: `${keepsA[0] ? `Prends ${toolA.name} si ${keepsA[0].toLowerCase()}. ` : ""}${keepsB[0] ? `Prends ${toolB.name} si ${keepsB[0].toLowerCase()}.` : ""}`,
-        aEn: `${keepsA[0] ? `Choose ${toolA.name} if ${keepsA[0].toLowerCase()}. ` : ""}${keepsB[0] ? `Choose ${toolB.name} if ${keepsB[0].toLowerCase()}.` : ""}` },
+        aEn: `${keepsAEn[0] ? `Choose ${toolA.name} if ${keepsAEn[0].toLowerCase()}. ` : ""}${keepsBEn[0] ? `Choose ${toolB.name} if ${keepsBEn[0].toLowerCase()}.` : ""}` },
     ],
   };
 }

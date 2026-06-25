@@ -5,6 +5,7 @@ import fs from "fs";
 import postcss from "postcss";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
+import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 
 const BASE = "https://tooltrim.com";
@@ -397,15 +398,19 @@ function staticPrerenderPlugin(): Plugin {
         const baseHtml = fs.readFileSync(indexPath, "utf-8");
         let count = 0;
 
-        // Real SSR for the main tool route only (Phase 1 — see plan
-        // "linked-dazzling-thimble"). Sub-pages (/prix, /alternatives, /avis,
-        // /faq) keep the previous meta-only prerender for now.
+        // Real SSR for the main tool route (Phase 1 — see plan
+        // "linked-dazzling-thimble") and comparison pages (Phase 2, added
+        // after an external audit flagged /comparatif/* as having no real
+        // content for non-JS crawlers). Tool sub-pages (/prix, /alternatives,
+        // /avis, /faq) keep the previous meta-only prerender for now.
         let renderToolPage: ((path: string, tool: any, lang: string) => Promise<{ html: string; relatedPosts: any[] }>) | null = null;
+        let renderComparePage: ((path: string, toolA: any, toolB: any) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
             const ssrModule = await import(`file://${ssrEntryPath}?t=${Date.now()}`);
             renderToolPage = ssrModule.renderToolPage;
+            renderComparePage = ssrModule.renderComparePage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1182,34 +1187,21 @@ function staticPrerenderPlugin(): Plugin {
         }
 
         // --- Prerender comparison pages ---
-        const BRAND_NAMES: Record<string, string> = {
-          chatgpt: "ChatGPT", claude: "Claude", github: "GitHub", google: "Google",
-          hubspot: "HubSpot", typeform: "Typeform", languagetool: "LanguageTool",
-          airtable: "Airtable", midjourney: "Midjourney", semrush: "SEMrush",
-          dropbox: "Dropbox", notion: "Notion", zapier: "Zapier", figma: "Figma",
-          canva: "Canva", linear: "Linear", jira: "Jira", obsidian: "Obsidian",
-          firefly: "Firefly", cursor: "Cursor", grammarly: "Grammarly",
-          similarweb: "Similarweb", stripe: "Stripe", razorpay: "Razorpay",
-          slack: "Slack", front: "Front", coda: "Coda", vercel: "Vercel",
-          replit: "Replit", drive: "Drive", copilot: "Copilot", make: "Make",
-          tally: "Tally", loom: "Loom",
-        };
-        const toBrandName = (slug: string) =>
-          slug.split("-").map(w => BRAND_NAMES[w.toLowerCase()] ?? (w.charAt(0).toUpperCase() + w.slice(1))).join(" ");
-
-        const COMPARISONS_PRERENDER = [
-          "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
-          "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
-          "github-copilot-vs-cursor", "grammarly-vs-claude",
-          "figma-vs-canva", "linear-vs-jira", "notion-vs-airtable",
-          "vercel-vs-replit", "semrush-vs-similarweb", "stripe-vs-razorpay",
-          "slack-vs-front", "notion-vs-coda",
-        ];
-        for (const comp of COMPARISONS_PRERENDER) {
-          const parts = comp.split("-vs-");
-          const toolA = toBrandName(parts[0]);
-          const toolB = parts[1] ? toBrandName(parts[1]) : "";
-          const label = `${toolA} vs ${toolB}`;
+        // Real SSR for every featured pair (was: 16 hardcoded slugs with
+        // meta tags only, guessing tool names from the slug — an external
+        // audit found /comparatif/* pages had no real content for non-JS
+        // crawlers at all, just an empty <div id="root">). Now resolves the
+        // actual Tool objects and renders the real ComparePage markup via
+        // renderComparePage, same pattern as the tool-page SSR above.
+        let comparisonsRendered = 0;
+        for (const comp of FEATURED_COMPARISONS) {
+          const toolA = tools.find((t: any) => (t.slug || t.id) === comp.toolA);
+          const toolB = tools.find((t: any) => (t.slug || t.id) === comp.toolB);
+          if (!toolA || !toolB) {
+            console.warn(`⚠️ Comparatif ${comp.slugPair}: outil(s) introuvable(s), ignoré.`);
+            continue;
+          }
+          const label = `${toolA.name} vs ${toolB.name}`;
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
@@ -1218,9 +1210,9 @@ function staticPrerenderPlugin(): Plugin {
             const description = isFr
               ? `Comparatif ${label} : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?`
               : `${label} comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?`;
-            const url = `${BASE}/${lang}/comparatif/${comp}`;
-            const frUrl = `${BASE}/fr/comparatif/${comp}`;
-            const enUrl = `${BASE}/en/comparatif/${comp}`;
+            const url = `${BASE}/${lang}/comparatif/${comp.slugPair}`;
+            const frUrl = `${BASE}/fr/comparatif/${comp.slugPair}`;
+            const enUrl = `${BASE}/en/comparatif/${comp.slugPair}`;
 
             const compBreadcrumb = {
               "@context": "https://schema.org",
@@ -1253,7 +1245,22 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
             html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
-            const outDir = path.resolve(distDir, lang, "comparatif", comp);
+            if (renderComparePage) {
+              try {
+                const markup = await renderComparePage(`/${lang}/comparatif/${comp.slugPair}`, toolA, toolB);
+                html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                const ssrJson = JSON.stringify({ toolA, toolB }).replace(/<\/script/gi, "<\\/script");
+                html = html.replace(
+                  "</body>",
+                  `    <script id="__SSR_COMPARE__" type="application/json">${ssrJson}</script>\n  </body>`
+                );
+                comparisonsRendered++;
+              } catch (e) {
+                console.warn(`⚠️ SSR render failed for ${lang}/comparatif/${comp.slugPair}, falling back to meta-only:`, e);
+              }
+            }
+
+            const outDir = path.resolve(distDir, lang, "comparatif", comp.slugPair);
             fs.mkdirSync(outDir, { recursive: true });
             fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
           }
@@ -1373,7 +1380,7 @@ function staticPrerenderPlugin(): Plugin {
 
         const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${COMPARISONS_PRERENDER.length * 2} comparisons + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }

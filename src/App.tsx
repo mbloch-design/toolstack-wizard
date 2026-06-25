@@ -12,9 +12,13 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
-// Critical: loaded eagerly (FCP for HomePage; SSR + no lazy-chunk waterfall for ToolDetailPage)
+// Critical: loaded eagerly (FCP for HomePage; SSR + no lazy-chunk waterfall
+// for ToolDetailPage and ComparePage — React can't resolve a lazy() chunk
+// during renderToString, so SSR silently falls through to the Suspense
+// fallback for any route still lazy-loaded here).
 import HomePage from "@/pages/HomePage";
 import ToolDetailPage from "@/pages/ToolDetailPage";
+import ComparePage from "@/pages/ComparePage";
 
 // Lazy-loaded pages (below the fold / secondary routes)
 const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
@@ -33,7 +37,6 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const LegalNoticePage = lazy(() => import("@/pages/LegalNoticePage"));
 const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
-const ComparePage = lazy(() => import("@/pages/ComparePage"));
 const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
