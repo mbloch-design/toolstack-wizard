@@ -7614,9 +7614,7 @@
       "paid": "$10.99/user/month (Starter, annual); Advanced at $24.99/month (min. 2 users)"
     },
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
-      ],
+      "cautions": [],
       "verified_on": "2026-06-24",
       "source_domain": "asana.com",
       "usage_sensitive": false,
