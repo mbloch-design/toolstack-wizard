@@ -33,15 +33,27 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
   const pv5 = (tool as any).pricing_v5;
   const curatedRows = pv5?.costTable as CostRow[] | undefined;
 
+  const minSeats = typeof pv5?.minSeats === "number" && pv5.minSeats > 1 ? pv5.minSeats : undefined;
+  // The catalog uses several synonyms for "billed per seat" that were
+  // never recognized here (only the literal "seat" was), silently
+  // dropping the cost-by-team-size table for every tool tagged with one
+  // of these instead — e.g. Monday is "per_user".
+  const isSeatBased = ["seat", "per_user", "paid_per_seat"].includes(pv5?.compare_plan_kind);
+
   const rows: CostRow[] | undefined = curatedRows?.length
     ? curatedRows
-    : pv5?.compare_plan_kind === "seat" && typeof pv5?.compare_price_monthly_eur === "number" && pv5.compare_price_monthly_eur > 0
+    : isSeatBased && typeof pv5?.compare_price_monthly_eur === "number" && pv5.compare_price_monthly_eur > 0
     ? HEADCOUNTS.map((n) => {
-        const monthly = pv5.compare_price_monthly_eur * n;
+        // Clamp to the seat minimum: a "Solo" row priced at 1x the unit
+        // price would contradict a billing trap saying the plan can't
+        // actually be bought below N seats.
+        const billedSeats = minSeats ? Math.max(n, minSeats) : n;
+        const monthly = pv5.compare_price_monthly_eur * billedSeats;
         const annual = monthly * 12;
         const v = verdictForMonthly(monthly);
+        const seatNote = minSeats && billedSeats > n ? ` (${minSeats} min.)` : "";
         return {
-          team: n === 1 ? t("Solo", "Solo") : t(`${n} personnes`, `${n} people`),
+          team: (n === 1 ? t("Solo", "Solo") : t(`${n} personnes`, `${n} people`)) + seatNote,
           plan: pv5.compare_plan_name || t("Standard", "Standard"),
           monthlyUsd: `~${Math.round(monthly)} €`,
           annualUsd: `~${Math.round(annual)} €`,

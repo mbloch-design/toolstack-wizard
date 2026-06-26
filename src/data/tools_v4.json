@@ -10042,7 +10042,8 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 7,
       "tcoExampleFr": "Exemple concret : un cabinet de 3 personnes manipulant des documents sensibles, facturant 50$/h, qui évite une fuite de données coûteuse grâce aux contrôles de conformité de Box, justifie largement les 45$/mois du plan Business (3 sièges minimum) — mais ce minimum doit être budgétisé même si l'équipe ne grandit pas tout de suite.",
-      "tcoExampleEn": "Concrete example: a 3-person firm handling sensitive documents, billing $50/h, that avoids one costly data leak thanks to Box's compliance controls easily justifies the $45/month Business plan (3-seat minimum) — but that minimum has to be budgeted for even if the team doesn't grow right away."
+      "tcoExampleEn": "Concrete example: a 3-person firm handling sensitive documents, billing $50/h, that avoids one costly data leak thanks to Box's compliance controls easily justifies the $45/month Business plan (3-seat minimum) — but that minimum has to be budgeted for even if the team doesn't grow right away.",
+      "minSeats": 3
     },
     "websiteUrl": "https://box.com",
     "logo": "",
@@ -20634,7 +20635,8 @@
       "verification_status": "official_contextual",
       "compare_price_monthly_eur": 25,
       "tcoExampleFr": "Exemple concret : une équipe support de 2 personnes facturant 50$/h qui perd collectivement 2h/mois à se marcher dessus sur une boîte mail partagée mal organisée perd 100$/mois en temps masqué. Front Starter à 50$/mois (2 sièges minimum) règle ce problème et se rentabilise largement — mais au-delà de 10 sièges ou pour gérer plusieurs canaux, le saut vers Professional (65$/siège) doit être anticipé.",
-      "tcoExampleEn": "Concrete example: a 2-person support team billing $50/h that collectively loses 2h/month stepping on each other in a poorly organized shared inbox is losing $100/month in hidden time. Front Starter at $50/month (2-seat minimum) solves that and easily pays for itself — but past 10 seats or to handle multiple channels, the jump to Professional ($65/seat) needs to be planned for."
+      "tcoExampleEn": "Concrete example: a 2-person support team billing $50/h that collectively loses 2h/month stepping on each other in a poorly organized shared inbox is losing $100/month in hidden time. Front Starter at $50/month (2-seat minimum) solves that and easily pays for itself — but past 10 seats or to handle multiple channels, the jump to Professional ($65/seat) needs to be planned for.",
+      "minSeats": 2
     },
     "websiteUrl": "https://front.com",
     "logo": "",
@@ -49208,7 +49210,8 @@
       "tcoExampleEn": "Concrete example: a small 3-person team billing $50/h that collectively loses 1.5h/month manually syncing data between a spreadsheet and a separate task tool is losing $75/month in hidden time. SmartSuite Team at $15/month/user ($45/month for the enforced 3-seat minimum) pays for itself through that avoided loss alone.",
       "cautionsEn": [
         "Blocks creating new records once the plan's quota is hit, with no pay-as-you-go option."
-      ]
+      ],
+      "minSeats": 3
     },
     "websiteUrl": "https://smartsuite.com",
     "logo": "",
@@ -52348,7 +52351,8 @@
       "tcoExampleEn": "Concrete example: a 3-person agency billing $50/h that collectively loses 2h/month reconstructing per-project time to bill clients is losing $100/month in hidden time. Teamwork Deliver at $10.99/month/user ($33/month for the enforced 3-seat minimum) easily pays for itself through this native time tracking.",
       "cautionsEn": [
         "3-seat minimum on Deliver, 5 on Grow — no way to pay for 1 or 2 users past the free plan."
-      ]
+      ],
+      "minSeats": 3
     },
     "websiteUrl": "https://teamwork.com",
     "logo": "",
@@ -61702,7 +61706,8 @@
       "tcoExampleEn": "Concrete example: a 3-person team billing $50/h on average, each losing 1h/month chasing task status by email, is losing $150/month in hidden time. The 3-seat minimum on Basic ($27/month) is easily worth it once the tool prevents that loss — but paying for 5 seats when the team only has 4 (forced banding) has to be part of the real math.",
       "cautionsEn": [
         "3-seat minimum enforced on all paid plans; annual billing for the listed price."
-      ]
+      ],
+      "minSeats": 3
     },
     "pricingTiers": {
       "free": "Gratuit — 2 sièges max, fonctions limitées",

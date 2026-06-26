@@ -120,6 +120,14 @@ export interface PricingV5 {
   // converted to an hourly rate). Absent on most tools.
   tcoExampleFr?: string;
   tcoExampleEn?: string;
+  // Optional seat minimum enforced on the compare_plan_name tier. When
+  // set, the auto-generated cost-by-team-size table (ToolCostBreakdownTable,
+  // used when costTable isn't curated) clamps each headcount up to this
+  // floor instead of pricing a "Solo" row the vendor wouldn't actually
+  // sell — e.g. Box Business Starter has a 3-seat minimum, so a 1-person
+  // row priced at compare_price_monthly_eur x 1 would contradict the
+  // billing-traps section on the same page.
+  minSeats?: number;
 }
 
 export interface ToolCostRow {
