@@ -7588,7 +7588,9 @@
       "tool": "clickup",
       "reason": "ClickUp regroupe tâches, docs, chat et automatisations dans un seul outil. Pour une couverture fonctionnelle comparable, ClickUp Business (12$/mois/utilisateur, annuel) coûte environ moitié moins qu'Asana Advanced (24,99$/mois/utilisateur).",
       "saving": 13,
-      "performanceGain": "ClickUp Business (12$/mois/utilisateur) couvre l'essentiel d'Asana Advanced (24,99$/mois/utilisateur) pour environ moitié moins cher, avec docs et chat en plus."
+      "performanceGain": "ClickUp Business (12$/mois/utilisateur) couvre l'essentiel d'Asana Advanced (24,99$/mois/utilisateur) pour environ moitié moins cher, avec docs et chat en plus.",
+      "reasonEn": "ClickUp bundles tasks, docs, chat, and automations into one tool. For comparable functional coverage, ClickUp Business ($12/month/user, annual) costs roughly half as much as Asana Advanced ($24.99/month/user).",
+      "performanceGainEn": "ClickUp Business ($12/month/user) covers most of what Asana Advanced ($24.99/month/user) offers for roughly half the price, with docs and chat included."
     },
     "migrationGuide": {
       "steps": [
@@ -7632,7 +7634,9 @@
           "monthlyUsd": "0-9,6 €",
           "annualUsd": "0-116 €",
           "verdictFr": "OK si usage réel",
-          "verdictEn": "OK if actually used"
+          "verdictEn": "OK if actually used",
+          "teamEn": "Solo",
+          "planEn": "Free / Starter"
         },
         {
           "team": "3 personnes",
@@ -7640,7 +7644,9 @@
           "monthlyUsd": "~29 €",
           "annualUsd": "~347 €",
           "verdictFr": "Raisonnable",
-          "verdictEn": "Reasonable"
+          "verdictEn": "Reasonable",
+          "teamEn": "3 people",
+          "planEn": "Starter"
         },
         {
           "team": "10 personnes",
@@ -7648,7 +7654,9 @@
           "monthlyUsd": "~96 €",
           "annualUsd": "~1 156 €",
           "verdictFr": "À challenger",
-          "verdictEn": "Worth challenging"
+          "verdictEn": "Worth challenging",
+          "teamEn": "10 people",
+          "planEn": "Starter"
         },
         {
           "team": "10 personnes",
@@ -7656,7 +7664,9 @@
           "monthlyUsd": "~219 €",
           "annualUsd": "~2 627 €",
           "verdictFr": "Justifié seulement si reporting/automatisations",
-          "verdictEn": "Justified only with reporting/automation"
+          "verdictEn": "Justified only with reporting/automation",
+          "teamEn": "10 people",
+          "planEn": "Advanced"
         },
         {
           "team": "50 personnes",
@@ -7664,7 +7674,9 @@
           "monthlyUsd": "~1 095 €",
           "annualUsd": "~13 134 €",
           "verdictFr": "Décision budget sérieuse",
-          "verdictEn": "Serious budget decision"
+          "verdictEn": "Serious budget decision",
+          "teamEn": "50 people",
+          "planEn": "Advanced"
         }
       ],
       "costTableNoteFr": "Prix convertis en euros (taux indicatif, ~0,876$ pour 1€) à partir des tarifs officiels en dollars. Engagement annuel : la facturation mensuelle coûte environ 20% plus cher. Source : asana.com/pricing.",
@@ -14462,7 +14474,9 @@
       "tool": "notion",
       "reason": "Notion combine wiki + projet + base de données — bien plus flexible",
       "saving": 0,
-      "performanceGain": "Notion combine wiki + projet + base de données — bien plus flexible"
+      "performanceGain": "Notion combine wiki + projet + base de données — bien plus flexible",
+      "reasonEn": "Notion combines wiki + project + database — far more flexible.",
+      "performanceGainEn": "Notion combines wiki + project + database — far more flexible."
     },
     "migrationGuide": {
       "steps": [
@@ -131936,7 +131950,9 @@
       "tool": "google-drive",
       "reason": "Moins cher à stockage égal (15 Go gratuits) et mieux intégré si tu utilises Docs, Sheets et Gmail.",
       "saving": 10,
-      "performanceGain": "Google Drive s'intègre nativement avec Docs, Sheets et Gmail."
+      "performanceGain": "Google Drive s'intègre nativement avec Docs, Sheets et Gmail.",
+      "reasonEn": "Cheaper at equal storage (15GB free) and better integrated if you use Docs, Sheets, and Gmail.",
+      "performanceGainEn": "Google Drive integrates natively with Docs, Sheets, and Gmail."
     },
     "migrationGuide": {
       "steps": [

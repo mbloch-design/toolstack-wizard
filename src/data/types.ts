@@ -62,6 +62,11 @@ export interface BetterAlternative {
   reason: string;
   saving: number;
   performanceGain: string | null;
+  // English versions — optional and absent on most of the catalog;
+  // StickyDecisionCard/ToolProfitabilityBlock fall back to the French
+  // text rather than rendering nothing.
+  reasonEn?: string;
+  performanceGainEn?: string | null;
 }
 
 export interface MigrationGuide {
@@ -124,6 +129,10 @@ export interface ToolCostRow {
   annualUsd: string;
   verdictFr: string;
   verdictEn: string;
+  // Optional English versions of team/plan — ToolCostBreakdownTable falls
+  // back to the French label rather than rendering nothing.
+  teamEn?: string;
+  planEn?: string;
 }
 
 export interface DecisionPolicyV3 {

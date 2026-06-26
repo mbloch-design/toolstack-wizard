@@ -26,7 +26,10 @@ export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
   const curatedTooExpensive = verdict?.tooExpensiveIf;
 
   const price = tool.defaultMonthlyPrice || 0;
-  const altReason = (tool as any).betterAlternative?.performanceGain || (tool as any).betterAlternative?.reason;
+  const ba = (tool as any).betterAlternative;
+  const altReason = lang === "en"
+    ? (ba?.performanceGainEn || ba?.reasonEn || ba?.performanceGain || ba?.reason)
+    : (ba?.performanceGain || ba?.reason);
   const freeAlt = tool.freeAlternative;
 
   const profitableIf = curatedProfitable?.length

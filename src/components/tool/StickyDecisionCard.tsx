@@ -69,13 +69,13 @@ export default function StickyDecisionCard({
 
   /* ── Alternative ── */
   const freeAlt = (tool as any).freeAlternative as string | null;
-  const betterAlt = (tool as any).betterAlternative as { tool: string; saving?: number; reason?: string } | null;
+  const betterAlt = (tool as any).betterAlternative as { tool: string; saving?: number; reason?: string; reasonEn?: string } | null;
   const rawAltId = betterAlt?.tool || freeAlt;
   const altName = rawAltId ? asText(rawAltId).split(/[\s([/]/)[0] : null;
   const altTool = rawAltId
     ? alternatives.find(a => a.id === rawAltId || a.slug === rawAltId || (a.name ?? "").toLowerCase() === (altName ?? "").toLowerCase())
     : null;
-  const altReason = betterAlt?.reason
+  const altReason = (lang === "en" ? betterAlt?.reasonEn : undefined) || betterAlt?.reason
     || (lang === "fr"
       ? "Alternative moins chère pour des usages similaires."
       : "Cheaper alternative for similar needs.");

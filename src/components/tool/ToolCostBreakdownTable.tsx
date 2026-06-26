@@ -79,8 +79,8 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
           <tbody>
             {rows.map((row, i) => (
               <tr key={i} className="last:border-0" style={{ borderBottom: "1px solid var(--color-border-soft)" }}>
-                <td className="py-3 px-4" style={{ fontWeight: 500, color: "var(--color-text)" }}>{row.team}</td>
-                <td className="py-3 px-4" style={{ color: "var(--color-muted)" }}>{row.plan}</td>
+                <td className="py-3 px-4" style={{ fontWeight: 500, color: "var(--color-text)" }}>{lang === "en" ? (row.teamEn || row.team) : row.team}</td>
+                <td className="py-3 px-4" style={{ color: "var(--color-muted)" }}>{lang === "en" ? (row.planEn || row.plan) : row.plan}</td>
                 <td className="py-3 px-4 text-right tabular-nums" style={{ color: "var(--color-text)" }}>{row.monthlyUsd}</td>
                 <td className="py-3 px-4 text-right tabular-nums" style={{ fontWeight: 600, color: "var(--color-text-strong)" }}>{row.annualUsd}</td>
                 <td className="py-3 px-4" style={{ color: "var(--color-muted)" }}>{lang === "en" ? row.verdictEn : row.verdictFr}</td>
