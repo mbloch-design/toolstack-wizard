@@ -314,11 +314,16 @@ const ToolDetailPage = () => {
   const primaryCtaUrl = tool.affiliateLink || tool.websiteUrl || "#";
   const hasAffiliateOffer = Boolean(tool.affiliateLink);
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
-  const isFreemium    = !!(tool.pricing?.free && tool.pricing?.paid);
   const hasFreeplan   = !!(tool.pricing?.free &&
     !tool.pricing.free.toLowerCase().includes("no free") &&
     !tool.pricing.free.toLowerCase().includes("aucun") &&
     !tool.pricing.free.toLowerCase().includes("pas de"));
+  // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
+  // so a free field describing the ABSENCE of a free plan ("Pas de plan
+  // gratuit permanent : essai de 14 jours") still counted as "Freemium"
+  // since the string itself is non-empty. Reuse hasFreeplan's semantic
+  // check instead.
+  const isFreemium    = hasFreeplan && !!tool.pricing?.paid;
   const catName       = stripLeadingEmoji(category?.name, category?.id || "");
   const catNameEn     = stripLeadingEmoji(category?.nameEn, catName);
 
