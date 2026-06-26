@@ -10263,7 +10263,10 @@
     "shortDescription": "Logiciel de recrutement (ATS) avec pipelines personnalisables et diffusion multi-jobboards.",
     "description": "Breezy HR suit les candidats à travers des pipelines de recrutement personnalisables, diffuse les offres sur plusieurs jobboards et réseaux sociaux simultanément, et propose des entretiens vidéo intégrés.",
     "category": "organization",
-    "pricing": "Gratuit (Bootstrap) ; Startup 157$/mois ; Growth 273$/mois ; Business 439$/mois (annuel ; facturation mensuelle plus chère). Utilisateurs et postes illimités sur tous les plans payants.",
+    "pricing": {
+      "free": "Plan Bootstrap gratuit : 1 poste actif, candidats et utilisateurs illimités",
+      "paid": "Startup à 157$/mois (annuel) ; Growth à 273$/mois ; Business à 439$/mois. Utilisateurs et postes illimités sur tous les plans payants — facturation mensuelle environ 20% plus chère."
+    },
     "website": "https://breezy.hr",
     "affiliateLink": "https://breezy.hr",
     "pros": [
@@ -10285,7 +10288,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 137.53,
+    "defaultMonthlyPrice": 157,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -10302,11 +10305,23 @@
         "Tu as besoin d'un reporting de recrutement très poussé",
         "Le budget pour le plan Business (439$/mois) dépasse ce que justifie ton volume de recrutement"
       ],
-      "threshold": "Bon choix pour un recrutement régulier sans besoins HRIS complexes ; vérifie le coût du plan Business si nécessaire."
+      "threshold": "Bon choix pour un recrutement régulier sans besoins HRIS complexes ; vérifie le coût du plan Business si nécessaire.",
+      "billingTraps": [
+        {
+          "title": "Le plan gratuit limité à 1 seul poste actif à la fois",
+          "text": "Bootstrap autorise des utilisateurs et candidats illimités, mais un seul poste ouvert en parallèle — inadapté dès qu'on recrute pour plusieurs rôles à la fois."
+        },
+        {
+          "title": "Les intégrations HRIS réservées au plan le plus cher",
+          "text": "Les intégrations RH, la gestion d'offres et les campagnes de nurturing n'existent que sur Business (439$/mois), un saut de 2,8x depuis Growth."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Breezy HR : Logiciel de recrutement de bout en bout pour attirer et embaucher des talents. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Breezy HR : Logiciel de recrutement de bout en bout pour attirer et embaucher des talents. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Idéal pour une petite équipe RH qui veut un ATS simple à utilisateurs illimités sans coût par siège. Le plan gratuit ne couvre qu'un seul poste ouvert à la fois.",
+      "idealForEn": "Ideal for a small HR team wanting a simple ATS with unlimited users and no per-seat cost. The free plan only covers one open position at a time."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -10327,19 +10342,24 @@
     "shortDescriptionEn": "Recruiting software (ATS) with customizable pipelines and multi-job-board distribution.",
     "longDescription": "Breezy HR suit les candidats à travers des pipelines de recrutement personnalisables, diffuse les offres sur plusieurs jobboards et réseaux sociaux simultanément, et propose des entretiens vidéo intégrés avec planification automatique pour éviter les allers-retours.\n\nLa simplicité d'usage est son principal atout (UX saluée, mise en place rapide), mais les fonctionnalités avancées (intégrations HRIS, gestion d'offres) sont réservées au plan Business le plus cher, et le reporting reste moins poussé que des ATS plus complets.",
     "longDescriptionEn": "Breezy HR tracks candidates through customizable recruiting pipelines, distributes job postings across multiple job boards and social media simultaneously, and offers built-in video interviews with automatic scheduling to avoid back-and-forth.\n\nEase of use is its main strength (praised UX, quick setup), but advanced features (HRIS integrations, offer management) are reserved for the more expensive Business plan, and reporting remains less advanced than fuller ATS platforms.",
-    "pricingEn": "Free (Bootstrap); Startup $157/month; Growth $273/month; Business $439/month (annual; monthly billing more expensive). Unlimited users and positions on all paid plans.",
+    "pricingEn": {
+      "free": "Free Bootstrap plan: 1 active position, unlimited candidates and users",
+      "paid": "Startup at $157/month (annual); Growth at $273/month; Business at $439/month. Unlimited users and positions on every paid plan — monthly billing costs roughly 20% more."
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-26",
       "source_domain": "breezy.hr",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Startup",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://breezy.hr/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 157,
+      "tcoExampleFr": "Exemple concret : une équipe RH qui facture 50$/h et perd collectivement 2h/mois à relancer manuellement des candidats sans pipeline structuré perd 100$/mois en temps masqué. Breezy Startup à 157$/mois (utilisateurs illimités) absorbe largement ce coût — mais limiter le recrutement à 1 poste actif sur Bootstrap force un passage rapide au payant dès le deuxième rôle ouvert.",
+      "tcoExampleEn": "Concrete example: an HR team billing $50/h that collectively loses 2h/month manually following up with candidates with no structured pipeline is losing $100/month in hidden time. Breezy Startup at $157/month (unlimited users) easily absorbs that cost — but Bootstrap's 1-active-position cap forces an early upgrade as soon as a second role opens."
     },
     "websiteUrl": "https://breezy.hr",
     "logo": "",
@@ -10352,7 +10372,17 @@
         "You need very advanced recruiting reporting",
         "The Business plan budget ($439/month) exceeds what your hiring volume justifies"
       ],
-      "threshold": "Good choice for regular hiring with no complex HRIS needs; check Business plan cost if needed."
+      "threshold": "Good choice for regular hiring with no complex HRIS needs; check Business plan cost if needed.",
+      "billingTraps": [
+        {
+          "title": "The free plan capped at 1 active position at a time",
+          "text": "Bootstrap allows unlimited users and candidates, but only one open position at once — a poor fit as soon as you're hiring for several roles in parallel."
+        },
+        {
+          "title": "HRIS integrations gated to the most expensive plan",
+          "text": "HR integrations, offer management, and nurture campaigns only exist on Business ($439/month) — a 2.8x jump from Growth."
+        }
+      ]
     },
     "prosEn": [
       "Praised UX, quick setup even for HR teams with no technical expertise",
@@ -14809,7 +14839,10 @@
     "shortDescription": "App tout-en-un pour gérer des équipes terrain : planning, communication et RH.",
     "description": "Connecteam combine planning d'équipe, chat interne, pointage mobile et gestion RH dans une seule app pensée pour les employés sans bureau fixe.",
     "category": "organization",
-    "pricing": "Gratuit jusqu'à 10 utilisateurs ; Basic à 29$/mois (jusqu'à 30 utilisateurs) ; Advanced à 49$/mois ; Expert à 99$/mois.",
+    "pricing": {
+      "free": "Plan Small Business gratuit jusqu'à 10 utilisateurs",
+      "paid": "Basic à 29$/mois par hub (jusqu'à 30 utilisateurs inclus, puis 0,6 à 1$/utilisateur/mois en plus) ; Advanced à 49$/mois ; Expert à 99$/mois."
+    },
     "website": "https://connecteam.com",
     "affiliateLink": "https://connecteam.com",
     "pros": [
@@ -14831,7 +14864,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 25.4,
+    "defaultMonthlyPrice": 29,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -14848,11 +14881,23 @@
         "Tu as besoin de dispatching automatique ou d'optimisation de tournées — des outils spécialisés conviennent mieux",
         "Ton équipe dépasse largement 30 utilisateurs avec plusieurs hubs activés"
       ],
-      "threshold": "Pertinent pour une équipe terrain jusqu'à 30 utilisateurs ; au-delà, calcule le coût réel par hub activé."
+      "threshold": "Pertinent pour une équipe terrain jusqu'à 30 utilisateurs ; au-delà, calcule le coût réel par hub activé.",
+      "billingTraps": [
+        {
+          "title": "Chaque hub (Opérations, Communication, RH) se facture séparément",
+          "text": "Le prix affiché (29$/mois) ne couvre qu'un seul hub. Activer les trois hubs pour une couverture complète peut tripler la facture mensuelle."
+        },
+        {
+          "title": "Le coût par utilisateur grimpe au-delà de 30 personnes",
+          "text": "Chaque plan inclut 30 utilisateurs ; au-delà, chaque utilisateur supplémentaire ajoute 0,6 à 1$/mois par hub actif."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Connecteam : Application tout-en-un pour gérer les employés sans bureau. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Connecteam : Application tout-en-un pour gérer les employés sans bureau. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Idéal pour une équipe terrain sans bureau fixe qui reste sous 30 personnes et n'a besoin que d'un seul hub. Le coût triple si les trois hubs (Opérations, Communication, RH) sont tous activés.",
+      "idealForEn": "Ideal for a field team with no fixed office staying under 30 people and needing only one hub. Cost triples if all three hubs (Operations, Communications, HR) are turned on."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -14873,19 +14918,24 @@
     "shortDescriptionEn": "All-in-one app to manage field teams: scheduling, communication, and HR.",
     "longDescription": "Connecteam combine planning d'équipe, chat interne, pointage mobile et gestion RH dans une seule app pensée pour les employés sans bureau fixe (retail, santé, construction), avec un support client disponible 24/7 même sur le plan gratuit.\n\nAu-delà de 30 utilisateurs, le coût par fonctionnalité activée peut grimper vite si plusieurs hubs (Opérations, Communication, RH) sont utilisés simultanément. Pas de fonctionnalités de dispatching automatique ou d'optimisation de tournées.",
     "longDescriptionEn": "Connecteam combines team scheduling, internal chat, mobile clock-in, and HR management into one app designed for employees without a fixed desk (retail, healthcare, construction), with 24/7 customer support even on the free plan.\n\nBeyond 30 users, the cost per activated feature can rise quickly if several hubs (Operations, Communication, HR) are used simultaneously. No automatic dispatching or route optimization features.",
-    "pricingEn": "Free up to 10 users; Basic at $29/month (up to 30 users); Advanced at $49/month; Expert at $99/month.",
+    "pricingEn": {
+      "free": "Free Small Business plan for up to 10 users",
+      "paid": "Basic at $29/month per hub (up to 30 users included, then $0.6-1/user/month beyond); Advanced at $49/month; Expert at $99/month."
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-26",
       "source_domain": "connecteam.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Basic",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://connecteam.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 29,
+      "tcoExampleFr": "Exemple concret : une équipe terrain de 25 personnes facturant 50$/h qui perd collectivement 2h/mois à coordonner les plannings par SMS et appels perd 100$/mois en temps masqué. Connecteam Basic à 29$/mois (30 utilisateurs inclus dans un hub) absorbe largement ce coût — mais activer les trois hubs pour une couverture complète peut tripler la facture.",
+      "tcoExampleEn": "Concrete example: a 25-person field team billing $50/h that collectively loses 2h/month coordinating schedules by text and phone calls is losing $100/month in hidden time. Connecteam Basic at $29/month (30 users included in one hub) easily absorbs that cost — but turning on all three hubs for full coverage can triple the bill."
     },
     "websiteUrl": "https://connecteam.com",
     "logo": "",
@@ -14898,7 +14948,17 @@
         "You need automatic dispatching or route optimization — specialized tools fit better",
         "Your team significantly exceeds 30 users with several hubs activated"
       ],
-      "threshold": "Worth it for a field team up to 30 users; beyond that, calculate the real cost per activated hub."
+      "threshold": "Worth it for a field team up to 30 users; beyond that, calculate the real cost per activated hub.",
+      "billingTraps": [
+        {
+          "title": "Each hub (Operations, Communications, HR) is billed separately",
+          "text": "The advertised price ($29/month) only covers one hub. Turning on all three hubs for full coverage can triple the monthly bill."
+        },
+        {
+          "title": "Per-user cost climbs past 30 people",
+          "text": "Each plan includes 30 users; beyond that, every extra user adds $0.6-1/month per active hub."
+        }
+      ]
     },
     "prosEn": [
       "All-in-one solution to manage field teams without a fixed desk",
@@ -16396,7 +16456,10 @@
     "shortDescription": "Planning d'équipe et pointage avec auto-scheduling et conformité légale intégrée.",
     "description": "Deputy crée des plannings en quelques clics avec un auto-scheduler qui prend en compte disponibilités, qualifications et budget, plus la conformité au droit du travail intégrée.",
     "category": "organization",
-    "pricing": "Lite à 5$/utilisateur/mois ; Core à 6,50$ (auto-scheduling, prévision de la demande) ; Pro à 9$ (SSO, add-ons inclus). Minimum 30$/mois.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 30 jours sans carte bancaire",
+      "paid": "Lite à 5$/utilisateur/mois ; Core à 6,50$ (auto-scheduling, prévision de la demande) ; Pro à 9$ (SSO, add-ons inclus). Minimum de facturation de 30$/mois par facture, quel que soit le nombre d'utilisateurs."
+    },
     "website": "https://deputy.com",
     "affiliateLink": "https://deputy.com",
     "pros": [
@@ -16418,7 +16481,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 4.38,
+    "defaultMonthlyPrice": 5,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -16435,11 +16498,23 @@
         "Tu as besoin de reporting très poussé — la profondeur est limitée selon les avis",
         "Le budget add-ons (jusqu'à 22$/utilisateur) dépasse ce que tu avais prévu"
       ],
-      "threshold": "Calcule le coût réel avec les add-ons nécessaires avant de t'engager, surtout pour la conformité légale."
+      "threshold": "Calcule le coût réel avec les add-ons nécessaires avant de t'engager, surtout pour la conformité légale.",
+      "billingTraps": [
+        {
+          "title": "Le minimum de facturation de 30$/mois équivaut à 6 sièges sur Lite",
+          "text": "Même avec 1 ou 2 utilisateurs actifs, la facture minimale de 30$/mois par facture (en vigueur depuis septembre 2025) revient à payer comme pour 6 utilisateurs sur le plan Lite (5$/utilisateur)."
+        },
+        {
+          "title": "Les fonctions avancées sont des add-ons qui font grimper le coût réel à ~22$/utilisateur",
+          "text": "Analytics, messagerie avancée et SSO ne sont pas inclus dans Lite ou Core : ces add-ons séparés peuvent porter le coût réel par utilisateur jusqu'à 22$/mois."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Deputy : Simplifie la planification et réduit les coûts de main-d’œuvre. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Deputy : Simplifie la planification et réduit les coûts de main-d’œuvre. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Idéal pour une équipe avec des plannings complexes et des enjeux de conformité légale sur les heures travaillées. Le minimum de facturation de 30$/mois pénalise les très petites équipes.",
+      "idealForEn": "Ideal for a team with complex schedules and real legal-compliance stakes around worked hours. The $30/month billing minimum penalizes very small teams."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -16460,19 +16535,25 @@
     "shortDescriptionEn": "Team scheduling and time clocking with auto-scheduling and built-in legal compliance.",
     "longDescription": "Deputy crée des plannings en quelques clics avec un auto-scheduler qui prend en compte disponibilités, qualifications et budget, plus la conformité au droit du travail intégrée — utile pour éviter des erreurs coûteuses sur les heures supplémentaires ou les temps de repos.\n\nLe prix de base (5-9$/utilisateur) est compétitif, mais les fonctionnalités avancées (analytics poussés, messagerie, SSO) sont des add-ons séparés qui peuvent faire grimper le coût réel jusqu'à ~22$/utilisateur/mois.",
     "longDescriptionEn": "Deputy creates schedules in a few clicks with an auto-scheduler accounting for availability, qualifications, and budget, plus built-in labor law compliance — useful to avoid costly mistakes on overtime or rest periods.\n\nThe base price ($5-9/user) is competitive, but advanced features (deep analytics, messaging, SSO) are separate add-ons that can push the real cost up to ~$22/user/month.",
-    "pricingEn": "Lite at $5/user/month; Core at $6.50 (auto-scheduling, demand forecasting); Pro at $9 (SSO, add-ons included). $30/month minimum.",
+    "pricingEn": {
+      "free": "No permanent free plan: 30-day trial, no credit card required",
+      "paid": "Lite at $5/user/month; Core at $6.50 (auto-scheduling, demand forecasting); Pro at $9 (SSO, add-ons included). $30/month minimum billed per invoice, regardless of user count."
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-26",
       "source_domain": "deputy.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Lite",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.deputy.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10
+      "compare_price_monthly_eur": 5,
+      "minSeats": 6,
+      "tcoExampleFr": "Exemple concret : une équipe de 8 personnes facturant 50$/h qui perd collectivement 2h/mois à corriger des erreurs de planning manuel perd 100$/mois en temps masqué. Deputy Lite à 5$/utilisateur/mois (40$/mois pour 8 personnes) est largement rentabilisé par l'auto-scheduling — mais une équipe de 2 personnes paiera quand même le minimum de 30$/mois, pas 10$.",
+      "tcoExampleEn": "Concrete example: an 8-person team billing $50/h that collectively loses 2h/month fixing manual scheduling errors is losing $100/month in hidden time. Deputy Lite at $5/month/user ($40/month for 8 people) easily pays for itself through auto-scheduling — but a 2-person team will still pay the $30/month minimum, not $10."
     },
     "websiteUrl": "https://deputy.com",
     "logo": "",
@@ -16485,7 +16566,17 @@
         "You need very deep reporting — depth is limited per reviews",
         "The add-on budget (up to $22/user) exceeds what you planned"
       ],
-      "threshold": "Calculate the real cost with needed add-ons before committing, especially for legal compliance."
+      "threshold": "Calculate the real cost with needed add-ons before committing, especially for legal compliance.",
+      "billingTraps": [
+        {
+          "title": "The $30/month minimum invoice equals 6 seats on Lite",
+          "text": "Even with just 1 or 2 active users, the $30/month minimum per invoice (in effect since September 2025) works out to paying as if for 6 users on the Lite plan ($5/user)."
+        },
+        {
+          "title": "Advanced features are add-ons that push the real cost to ~$22/user",
+          "text": "Analytics, advanced messaging, and SSO aren't included in Lite or Core — these separate add-ons can push the real per-user cost up to $22/month."
+        }
+      ]
     },
     "prosEn": [
       "Auto-scheduling that automatically accounts for availability and budget",
@@ -31109,9 +31200,10 @@
     "host_app": null,
     "category": "organization",
     "shortDescription": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 500,
     "pricing": {
-      "paid": "Sur devis (environ 200$/mois pour petites équipes)"
+      "free": "Aucun plan gratuit, aucun essai",
+      "paid": "Sur devis uniquement, basé sur l'effectif total de l'entreprise (pas sur le nombre de recruteurs) ; environ 6-8$/employé/mois, soit ~6 000-12 000$/an pour une petite équipe jusqu'à 63 000-144 000$+/an pour une grande entreprise."
     },
     "covers": [
       "ats",
@@ -31143,14 +31235,34 @@
         "Volume de recrutement régulier, équipe RH dédiée"
       ],
       "avoidIf": [
-        "Moins de 10 recrutements/an — Notion + Airtable suffisent"
+        "Moins de 10 recrutements/an — Notion + Airtable suffisent",
+        "Tu veux tester l'outil avant de t'engager : aucun essai gratuit n'existe"
       ],
-      "threshold": "Rentable à partir de 20 recrutements par an."
+      "threshold": "Rentable à partir de 20 recrutements par an.",
+      "billingTraps": [
+        {
+          "title": "Le tarif suit l'effectif total, pas les recruteurs actifs",
+          "text": "Lever facture en fonction du nombre total d'employés de l'entreprise, pas du nombre de personnes qui utilisent réellement l'outil — une entreprise de 200 salariés paie pour 200, même si seuls 5 recrutent."
+        },
+        {
+          "title": "Aucun essai gratuit, contrat annuel obligatoire",
+          "text": "Impossible de tester Lever avant de signer : c'est un contrat annuel payant dès le départ, sans palier d'entrée à bas coût."
+        }
+      ]
     },
-    "pros": [],
-    "cons": [],
+    "pros": [
+      "Pipeline de recrutement visuel et personnalisable, pensé pour les équipes RH qui recrutent en volume.",
+      "Reporting et analytics de recrutement plus poussés que la plupart des ATS d'entrée de gamme."
+    ],
+    "cons": [
+      "Tarif sur devis uniquement, indexé sur l'effectif total de l'entreprise et non sur l'usage réel de l'outil.",
+      "Aucun essai gratuit : impossible de tester avant de s'engager sur un contrat annuel."
+    ],
     "useCases": [],
-    "seo": {},
+    "seo": {
+      "idealForFr": "Idéal pour une équipe RH qui recrute en volume et a besoin d'un pipeline visuel avancé. Surdimensionné et cher pour moins de 10 recrutements par an.",
+      "idealForEn": "Ideal for an HR team hiring at volume that needs an advanced visual pipeline. Overkill and expensive for under 10 hires a year."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
@@ -31165,27 +31277,59 @@
     "shortDescriptionEn": "Modern ATS (Applicant Tracking System) for recruitment teams.",
     "description": "Lever, c'est aTS (Applicant Tracking System) moderne pour équipes de recrutement. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les RH et recruteurs et les managers et DSI.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : volume de recrutement régulier, équipe RH dédiée. À éviter si : moins de 10 recrutements/an — Notion + Airtable suffisent. Rentable à partir de 20 recrutements par an.",
     "longDescriptionEn": "Lever is modern ATS (Applicant Tracking System) for recruitment teams. Free to start, paid plans for more. Built for HR and recruiters and managers and IT directors.\n\nEstimated time saving: 6h/month.",
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "No free plan, no trial",
+      "paid": "Quote-only, based on total company headcount (not recruiter seats); roughly $6-8/employee/month, from ~$6,000-12,000/year for a small team up to $63,000-144,000+/year for a large enterprise."
+    },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Tarif indexé sur l'effectif total de l'entreprise, pas sur le nombre de comptes utilisateurs réellement actifs."
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-26",
       "source_domain": "lever.co",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Prix non public",
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://lever.co",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 0
+      "verification_status": "needs_official_quote",
+      "compare_price_monthly_eur": 0,
+      "cautionsEn": [
+        "Pricing is indexed to total company headcount, not the number of accounts actually active."
+      ],
+      "tcoExampleFr": "Exemple concret : une équipe RH de 3 personnes facturant 50$/h qui perd collectivement 4h/mois à trier des CV manuellement dans des boîtes mail perd 200$/mois en temps masqué. Un contrat Lever à environ 500$/mois pour une petite structure peut se justifier — mais sans essai gratuit, ce calcul doit être fait avant de signer, pas après.",
+      "tcoExampleEn": "Concrete example: a 3-person HR team billing $50/h that collectively loses 4h/month manually sorting resumes in email inboxes is losing $200/month in hidden time. A Lever contract around $500/month for a small org can be worth it — but with no free trial, that math has to happen before signing, not after."
     },
     "websiteUrl": "https://lever.co",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
+    "verdictEn": {
+      "avoidIf": [
+        "Under 10 hires/year — Notion + Airtable are enough",
+        "You want to test the tool before committing: no free trial exists at all"
+      ],
+      "billingTraps": [
+        {
+          "title": "Pricing follows total headcount, not active recruiters",
+          "text": "Lever bills based on the company's total employee count, not how many people actually use the tool — a 200-person company pays for 200, even if only 5 people recruit."
+        },
+        {
+          "title": "No free trial, annual contract required",
+          "text": "There's no way to test Lever before signing: it's a paid annual contract from day one, with no low-cost entry tier."
+        }
+      ],
+      "keepIf": [
+        "Regular hiring volume, dedicated HR team"
+      ]
+    },
+    "prosEn": [
+      "Visual, customizable recruiting pipeline built for HR teams hiring at volume.",
+      "More advanced recruiting reporting and analytics than most entry-level ATS tools."
+    ],
+    "consEn": [
+      "Quote-only pricing, indexed to total company headcount rather than actual tool usage.",
+      "No free trial: impossible to test before committing to an annual contract."
+    ],
     "useCasesEn": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -56781,9 +56925,10 @@
     "host_app": null,
     "category": "organization",
     "shortDescription": "ATS tout-en-un avec sourcing IA, job boards et onboarding.",
-    "defaultMonthlyPrice": 163.68,
+    "defaultMonthlyPrice": 149,
     "pricing": {
-      "paid": "189$/mois (Starter)"
+      "free": "Pas de plan gratuit permanent : essai de 15 jours sans carte bancaire",
+      "paid": "Starter à 149$/mois ; Standard à 299$/mois (jusqu'à 20 employés, ~500$/mois au-delà) ; Premier à 599$/mois ; Enterprise à 719$/mois. Tarif basé sur l'effectif total de l'entreprise, pas sur le nombre de sièges."
     },
     "covers": [
       "ats",
@@ -56815,14 +56960,34 @@
         "RH avec sourcing actif et onboarding structuré"
       ],
       "avoidIf": [
-        "Lever déjà en place — doublon ATS"
+        "Lever déjà en place — doublon ATS",
+        "Ton entreprise est proche d'un seuil d'effectif (20 ou 50 employés) : le palier suivant coûte beaucoup plus cher pour une seule embauche"
       ],
-      "threshold": "Rentable à partir de 5 postes ouverts simultanément."
+      "threshold": "Rentable à partir de 5 postes ouverts simultanément.",
+      "billingTraps": [
+        {
+          "title": "Le palier de prix dépend de l'effectif total, pas du recrutement",
+          "text": "Passer de 20 à 21 employés peut faire bondir Standard de 299$ à environ 500$/mois — l'embauche d'une seule personne hors RH déclenche le palier supérieur."
+        },
+        {
+          "title": "Les vidéos d'entretien et SMS sont des add-ons séparés",
+          "text": "Le coût réel du plan Standard grimpe à environ 477$/mois avec les entretiens vidéo (99$/mois) et SMS (79$/mois) en plus de l'abonnement de base."
+        }
+      ]
     },
-    "pros": [],
-    "cons": [],
+    "pros": [
+      "Diffusion automatique sur plus de 200 jobboards en un clic, gain de temps réel sur le sourcing.",
+      "Utilisateurs illimités sur tous les plans : recruteurs, managers et RH n'ont pas de coût par siège."
+    ],
+    "cons": [
+      "Le tarif par palier d'effectif peut bondir de 67% pour une seule embauche qui franchit un seuil.",
+      "Entretiens vidéo et SMS facturés en supplément, hors de l'abonnement affiché."
+    ],
     "useCases": [],
-    "seo": {},
+    "seo": {
+      "idealForFr": "Idéal pour une équipe RH qui veut un ATS tout-en-un avec sourcing IA et utilisateurs illimités. À surveiller : les seuils d'effectif qui font grimper le prix d'un coup.",
+      "idealForEn": "Ideal for an HR team wanting an all-in-one ATS with AI sourcing and unlimited users. Watch the headcount thresholds that spike the price all at once."
+    },
     "articles": [],
     "soloRelevance": "medium",
     "teamRelevance": "low",
@@ -56837,25 +57002,59 @@
     "shortDescriptionEn": "All-in-one ATS with AI sourcing, job boards, and onboarding.",
     "description": "Workable, c'est aTS tout-en-un avec sourcing IA, job boards et onboarding. À partir de 163.68€/mois. Pensé pour les RH et recruteurs et les managers et DSI.\n\nGain de temps estimé : 7h/mois.\n\nÀ garder si : rH avec sourcing actif et onboarding structuré. À éviter si : lever déjà en place — doublon ATS. Rentable à partir de 5 postes ouverts simultanément.",
     "longDescriptionEn": "Workable is all-in-one ATS with AI sourcing, job boards, and onboarding. Starting at €163.68/month. Built for HR and recruiters and managers and IT directors.\n\nEstimated time saving: 7h/month.",
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "No permanent free plan: 15-day trial, no credit card required",
+      "paid": "Starter at $149/month; Standard at $299/month (up to 20 employees, ~$500/month beyond); Premier at $599/month; Enterprise at $719/month. Priced on total company headcount, not seats."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Le passage de 20 à 21 employés peut faire bondir Standard de 299$ à environ 500$/mois — un seul recrutement déclenche le palier supérieur."
+      ],
+      "verified_on": "2026-06-26",
       "source_domain": "workable.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://workable.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 163.68
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 149,
+      "cautionsEn": [
+        "Crossing from 20 to 21 employees can spike Standard from $299 to roughly $500/month — a single hire triggers the next tier."
+      ],
+      "tcoExampleFr": "Exemple concret : une équipe RH qui facture 50$/h et perd collectivement 3h/mois à publier manuellement des offres sur plusieurs jobboards perd 150$/mois en temps masqué. Workable Starter à 149$/mois automatise cette diffusion et se rentabilise largement — mais surveiller le seuil des 20 employés évite une facture qui double sans prévenir.",
+      "tcoExampleEn": "Concrete example: an HR team billing $50/h that collectively loses 3h/month manually posting jobs across boards is losing $150/month in hidden time. Workable Starter at $149/month automates that distribution and easily pays for itself — but watching the 20-employee threshold avoids a bill that doubles without warning."
     },
     "websiteUrl": "https://workable.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
+    "verdictEn": {
+      "avoidIf": [
+        "Lever is already in place — duplicate ATS",
+        "Your company is near a headcount threshold (20 or 50 employees): the next tier costs much more for a single hire"
+      ],
+      "billingTraps": [
+        {
+          "title": "The price tier depends on total headcount, not hiring volume",
+          "text": "Going from 20 to 21 employees can spike Standard from $299 to roughly $500/month — hiring a single non-recruiting person triggers the next tier."
+        },
+        {
+          "title": "Video interviews and SMS are separate add-ons",
+          "text": "The real cost of the Standard plan climbs to around $477/month with video interviews ($99/month) and SMS ($79/month) on top of the base subscription."
+        }
+      ],
+      "keepIf": [
+        "HR with active sourcing and structured onboarding"
+      ]
+    },
+    "prosEn": [
+      "One-click distribution to 200+ job boards, real time savings on sourcing.",
+      "Unlimited users on every plan: recruiters, managers, and HR have no per-seat cost."
+    ],
+    "consEn": [
+      "The headcount-tier pricing can jump 67% for a single hire that crosses a threshold.",
+      "Video interviews and SMS are billed separately, outside the advertised subscription."
+    ],
     "useCasesEn": null,
     "prescription_quality": "question",
     "prescription_output": null,
