@@ -4231,15 +4231,37 @@
     "shortDescription": "CRM all-in-one pour freelances créatifs.",
     "shortDescriptionEn": "All-in-one CRM for creative freelancers.",
     "description": "17hats, c'est cRM all-in-one pour freelances créatifs. À partir de 15€/mois.\n\nTout-en-un (CRM + facturation + contrats). conçu pour les freelances créatifs, automatisation des workflows clients. Templates de contrats et devis. Concrètement : automatiser le workflow client (devis → contrat → facture). Ou encore : planifier des rendez-vous clients.\n\nÀ garder si : freelance créatif avec 5+ clients actifs ou besoin de consolider CRM + facturation. À éviter si : photographe (préférer Bloom ou Táve) ou besoin d'un CRM puissant. Limite principale : interface datée par rapport aux concurrents. Utile si vous jonglez entre 3+ outils pour gérer vos clients.",
-    "longDescription": "17hats, c'est cRM all-in-one pour freelances créatifs. À partir de 15€/mois.\n\nTout-en-un (CRM + facturation + contrats). conçu pour les freelances créatifs, automatisation des workflows clients. Templates de contrats et devis. Concrètement : automatiser le workflow client (devis → contrat → facture). Ou encore : planifier des rendez-vous clients.\n\nÀ garder si : freelance créatif avec 5+ clients actifs ou besoin de consolider CRM + facturation. À éviter si : photographe (préférer Bloom ou Táve) ou besoin d'un CRM puissant. Limite principale : interface datée par rapport aux concurrents. Utile si vous jonglez entre 3+ outils pour gérer vos clients.",
-    "longDescriptionEn": "17hats is all-in-one CRM for creative freelancers. Starting at €15/month.",
+    "longDescription": "17hats combine CRM, devis, contrats et facturation pour les freelances créatifs dans un seul plan à 60$/mois couvrant 3 utilisateurs et 2 marques. Des modules comme la sync bancaire, le suivi du temps et les utilisateurs sup. coûtent chacun 5-10$/mois en plus, ce qui fait grimper le coût réel mensuel au-dessus du prix d'appel pour tout utilisateur actif.",
+    "longDescriptionEn": "17hats combines CRM, quotes, contracts and invoicing for creative freelancers in a single $60/month plan covering 3 users and 2 brands. Add-ons like bank sync, time tracking and extra users each cost $5-10/month on top, which pushes the realistic monthly cost above the headline price for any active user.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "À partir de 15$/mois"
+      "free": "Pas de plan gratuit permanent : essai de 7 jours.",
+      "paid": "Un seul plan à 60$/mois (600$/an, 800$/2 ans), incluant 3 utilisateurs et 2 marques. Modules en plus à 5-10$/mois chacun (utilisateurs sup., sync bancaire, suivi du temps, marque sup.)."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 15,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No permanent free plan: 7-day trial.",
+      "paid": "Single plan at $60/month ($600/year, $800/2 years), including 3 users and 2 brands. Add-ons at $5-10/month each (extra users, bank sync, time tracking, extra brand)."
+    },
+    "defaultMonthlyPrice": 60,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 55,
+      "compare_plan_name": "Plan unique (mensuel)",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Le prix affiché de 60$/mois grimpe vite avec les modules en plus : un usage réaliste (sync bancaire, suivi du temps, facturation récurrente) atteint souvent 85$/mois."
+      ],
+      "cautionsEn": [
+        "The listed $60/month price climbs quickly with add-ons: realistic usage (bank sync, time tracking, recurring billing) often reaches $85/month."
+      ],
+      "source_domain": "17hats.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://www.17hats.com/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un freelance créatif actif (plan de base + sync bancaire + suivi du temps) : coût SaaS ≈ 70$/mois (~64€). Configuration initiale (templates de contrats, workflows clients) ≈ 4h à 50€/h = 200€, amorti sur 12 mois ≈ 17€/mois. Maintenance (mise à jour des modèles) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 106€/mois, bien au-dessus du prix d'appel affiché.",
+      "tcoExampleEn": "For an active creative freelancer (base plan + bank sync + time tracking): SaaS cost ≈ $70/month (~€64). Initial setup (contract templates, client workflows) ≈ 4h at $50/h = $200, amortized over 12 months ≈ $17/month. Maintenance (template updates) ≈ 30 min/month ≈ $25/month. Real total cost ≈ €106/month, well above the listed headline price."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
@@ -4251,13 +4273,15 @@
         "replaceFr": "Remplacer 17hats par une IA ? Non : centraliser le parcours client complet (devis, contrat, facturation) reste un besoin structurel d'organisation, pas de génération de contenu. Verdict : l'IA n'a pas de rôle central ici, la structuration du parcours client reste le produit.",
         "replaceEn": "Replace 17hats with an AI? No: centralizing the full client journey (quote, contract, invoicing) remains a structural organization need, not content generation. Verdict: AI has no central role here, client journey structuring remains the product.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Freelance créatif avec plusieurs clients actifs qui veut consolider CRM, devis et facturation, en budgétant les modules en plus dès le départ.",
+      "idealForEn": "Creative freelancer with several active clients wanting to consolidate CRM, quotes and invoicing, budgeting for add-ons from the start."
     },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -4271,23 +4295,65 @@
         "Besoin d'un CRM puissant",
         "Interface moderne importante"
       ],
-      "threshold": "Utile si vous jonglez entre 3+ outils pour gérer vos clients."
+      "threshold": "Utile si vous jonglez entre 3+ outils pour gérer vos clients.",
+      "billingTraps": [
+        {
+          "title": "Le prix de 60$/mois n'inclut pas l'usage réel",
+          "text": "Sync bancaire, suivi du temps, marque supplémentaire ou utilisateur sup. sont tous des modules séparés à 5-10$/mois. Un usage actif typique atteint ~85$/mois, pas 60$."
+        },
+        {
+          "title": "3 utilisateurs inclus seulement, pas illimité",
+          "text": "Au-delà des 3 utilisateurs inclus dans le plan unique, chaque utilisateur supplémentaire coûte 5$/mois en plus — à anticiper si tu prévois de faire grandir ton équipe."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Creative freelancer with 5+ active clients",
+        "Need to consolidate CRM + invoicing",
+        "Recurring client workflow"
+      ],
+      "avoidIf": [
+        "Photographer (prefer Bloom or Táve)",
+        "Need a powerful CRM",
+        "Modern interface matters to you"
+      ],
+      "threshold": "Useful if you're juggling 3+ tools to manage your clients.",
+      "billingTraps": [
+        {
+          "title": "The $60/month price doesn't cover real usage",
+          "text": "Bank sync, time tracking, extra brand or extra user are all separate add-ons at $5-10/month. Typical active usage reaches ~$85/month, not $60."
+        },
+        {
+          "title": "Only 3 users included, not unlimited",
+          "text": "Beyond the 3 users included in the single plan, each extra user costs $5/month more — plan ahead if you expect your team to grow."
+        }
+      ]
+    },
     "pros": [
       "Tout-en-un (CRM + facturation + contrats)",
       "Conçu pour les freelances créatifs",
       "Automatisation des workflows clients",
       "Templates de contrats et devis"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "All-in-one (CRM + invoicing + contracts)",
+      "Built for creative freelancers",
+      "Client workflow automation",
+      "Contract and quote templates"
+    ],
     "cons": [
       "Interface datée par rapport aux concurrents",
       "Principalement anglophone",
       "Pas de galeries clients (vs Bloom)",
       "Prix pour un freelance débutant"
     ],
-    "consEn": null,
+    "consEn": [
+      "Dated interface compared to competitors",
+      "Mostly English-only",
+      "No client galleries (vs Bloom)",
+      "Pricey for a starting freelancer"
+    ],
     "useCases": [
       "Automatiser le workflow client (devis → contrat → facture)",
       "Planifier des rendez-vous clients",
@@ -6024,7 +6090,10 @@
     "shortDescription": "Automatisation de workflows documentaires no-code avec signature électronique intégrée.",
     "description": "airSlate combine édition PDF, signature électronique et des bots qui automatisent le transfert de données entre systèmes, avec des documents dynamiques qui s'adaptent selon les données du destinataire.",
     "category": "organization",
-    "pricing": "À partir de 19$/mois ; plans Pro et Business+ pour les PME en croissance, Enterprise pour du marque blanche.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai disponible.",
+      "paid": "À partir de 19$/mois ; plans Pro et Business+ pour les PME en croissance, Enterprise pour du marque blanche sur devis."
+    },
     "website": "https://airslate.com",
     "affiliateLink": "https://airslate.com",
     "pros": [
@@ -6063,11 +6132,23 @@
         "Tu veux un outil de signature simple sans complexité de bots",
         "Tu es seul et le coût des workflows d'équipe avancés ne se justifie pas"
       ],
-      "threshold": "Pertinent pour qui veut automatiser des workflows documentaires complets, pas juste signer un PDF."
+      "threshold": "Pertinent pour qui veut automatiser des workflows documentaires complets, pas juste signer un PDF.",
+      "billingTraps": [
+        {
+          "title": "Le tarif d'entrée ne couvre pas les bots avancés",
+          "text": "Le plan à 19$/mois couvre l'édition de documents et la signature de base. Les bots d'automatisation complexes et les workflows d'équipe poussent souvent vers Business+ ou Enterprise, facturés sur devis."
+        },
+        {
+          "title": "Coût qui grimpe pour un seul praticien avec des besoins avancés",
+          "text": "Même sans équipe, un usage avancé (intégrations multiples, bots personnalisés) peut nécessiter un palier supérieur au prix d'appel affiché."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "airSlate : Plateforme d’automatisation de workflows documentaires. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "airSlate : Plateforme d’automatisation de workflows documentaires. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Qui veut remplacer DocuSign par un outil d'automatisation documentaire plus flexible et moins cher, prêt à investir du temps dans la configuration des bots.",
+      "idealForEn": "Anyone wanting to replace DocuSign with a more flexible, cheaper document automation tool, ready to invest time configuring bots."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -6089,10 +6170,15 @@
     "shortDescriptionEn": "No-code document workflow automation with built-in e-signature.",
     "longDescription": "airSlate combine édition PDF, signature électronique (via pdfFiller/SignNow) et des \"bots\" qui automatisent le transfert de données entre systèmes, avec des documents dynamiques qui s'adaptent selon les données du destinataire ou l'étape du processus.\n\nSon moteur d'édition de documents est plus flexible que celui de DocuSign à un prix inférieur, mais la configuration des bots prend du temps et le tableau de bord, riche en outils, peut sembler écrasant pour un nouvel utilisateur.",
     "longDescriptionEn": "airSlate combines PDF editing, e-signature (via pdfFiller/SignNow), and \"bots\" that automate data transfer between systems, with dynamic documents adapting based on recipient data or process stage.\n\nIts document editing engine is more flexible than DocuSign's at a lower price, but configuring bots takes time and the tool-rich dashboard can feel overwhelming for a new user.",
-    "pricingEn": "From $19/month; Pro and Business+ plans for growing SMBs, Enterprise for white-label needs.",
+    "pricingEn": {
+      "free": "No permanent free plan: trial available.",
+      "paid": "From $19/month; Pro and Business+ plans for growing SMBs, Enterprise for white-label needs, quoted on request."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "La configuration des bots d'automatisation prend du temps réel ; le coût peut grimper pour des workflows d'équipe avancés même en usage solo."
+      ],
+      "verified_on": "2026-06-27",
       "source_domain": "airslate.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -6101,7 +6187,12 @@
       "location_sensitive": false,
       "official_source_url": "https://www.airslate.com/pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 10
+      "compare_price_monthly_eur": 10,
+      "cautionsEn": [
+        "Setting up automation bots takes real time; cost can rise for advanced team workflows even in solo use."
+      ],
+      "tcoExampleFr": "Pour un praticien seul automatisant 3 workflows documentaires (plan Business, ~36$/mois) : coût SaaS ≈ 36$/mois (~33€). Configuration des bots ≈ 8h à 50€/h = 400€, amorti sur 12 mois ≈ 33€/mois. Maintenance (ajustement des bots, intégrations) ≈ 1h/mois = 50€/mois. Coût total réel ≈ 116€/mois.",
+      "tcoExampleEn": "For a solo practitioner automating 3 document workflows (Business plan, ~$36/month): SaaS cost ≈ $36/month (~€33). Bot setup ≈ 8h at $50/h = $400, amortized over 12 months ≈ $33/month. Maintenance (bot tweaks, integrations) ≈ 1h/month = $50/month. Real total cost ≈ €116/month."
     },
     "websiteUrl": "https://airslate.com",
     "logo": "",
@@ -6114,7 +6205,17 @@
         "You want a simple signing tool with no bot complexity",
         "You're solo and advanced team workflow costs aren't justified"
       ],
-      "threshold": "Worth it for those automating complete document workflows, not just signing a PDF."
+      "threshold": "Worth it for those automating complete document workflows, not just signing a PDF.",
+      "billingTraps": [
+        {
+          "title": "The entry rate doesn't cover advanced bots",
+          "text": "The $19/month plan covers document editing and basic signing. Complex automation bots and team workflows often push toward Business+ or Enterprise, quoted on request."
+        },
+        {
+          "title": "Cost climbs for a solo practitioner with advanced needs",
+          "text": "Even without a team, advanced usage (multiple integrations, custom bots) can require a tier above the listed headline price."
+        }
+      ]
     },
     "prosEn": [
       "More flexible document editing engine than DocuSign at a lower price",
@@ -8832,15 +8933,37 @@
     "shortDescription": "Propositions commerciales avec suivi et signatures.",
     "shortDescriptionEn": "Commercial proposals with tracking and signatures.",
     "description": "Better Proposals, c'est propositions commerciales avec suivi et signatures. À partir de 19€/mois.\n\nPropositions web (pas PDF) — meilleure expérience. paiement intégré (Stripe, PayPal), templates modernes et responsive. Prix plus accessible que Proposify. Concrètement : envoyer des propositions web interactives. Ou encore : collecter les paiements à la signature.\n\nÀ garder si : propositions clients régulières ou besoin de paiement intégré. À éviter si : besoin de propositions PDF traditionnelles ou 1-2 devis par mois. Limite principale : moins de personnalisation que Proposify. Bon choix dès 3+ propositions par mois avec des clients modernes.",
-    "longDescription": "Better Proposals, c'est propositions commerciales avec suivi et signatures. À partir de 19€/mois.\n\nPropositions web (pas PDF) — meilleure expérience. paiement intégré (Stripe, PayPal), templates modernes et responsive. Prix plus accessible que Proposify. Concrètement : envoyer des propositions web interactives. Ou encore : collecter les paiements à la signature.\n\nÀ garder si : propositions clients régulières ou besoin de paiement intégré. À éviter si : besoin de propositions PDF traditionnelles ou 1-2 devis par mois. Limite principale : moins de personnalisation que Proposify. Bon choix dès 3+ propositions par mois avec des clients modernes.",
-    "longDescriptionEn": "Better Proposals is commercial proposals with tracking and signatures. Starting at €19/month.",
+    "longDescription": "Better Proposals est un outil de propositions commerciales avec suivi de lecture et signatures électroniques intégrées, à partir de 13$/mois en annuel pour un utilisateur unique plafonné à 10 documents/mois. Un usage régulier pousse vite vers le palier Premium (21$/mois annuel, 5 utilisateurs, 50 docs/mois) pour éviter d'atteindre le plafond de documents du Starter.",
+    "longDescriptionEn": "Better Proposals is a sales proposal tool with read tracking and integrated e-signatures, starting at $13/month annual for a single user capped at 10 documents/month. Regular use quickly pushes you to the Premium tier ($21/month annual, 5 users, 50 docs/month) to avoid hitting the Starter document cap.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 19$/mois"
+      "free": "Pas de plan gratuit permanent : essai de 14 jours sans carte bancaire.",
+      "paid": "Starter 19$/mois (13$/mois en annuel, 1 utilisateur, 10 docs/mois) ; Premium 29$/mois (21$/mois en annuel, 5 utilisateurs, 50 docs/mois) ; Enterprise 42$/mois (5 utilisateurs, documents illimités). Utilisateur sup. facturé en plus au-delà du quota inclus."
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "No permanent free plan: 14-day trial, no credit card.",
+      "paid": "Starter $19/month ($13/month annual, 1 user, 10 docs/month); Premium $29/month ($21/month annual, 5 users, 50 docs/month); Enterprise $42/month (5 users, unlimited documents). Extra users billed beyond the included quota."
+    },
     "defaultMonthlyPrice": 19,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 17,
+      "compare_plan_name": "Starter (mensuel)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Le Starter est limité à 10 documents par mois et 1 utilisateur : une activité régulière dépasse vite ce quota et oblige à passer en Premium."
+      ],
+      "cautionsEn": [
+        "Starter is capped at 10 documents per month and 1 user: regular activity quickly exceeds this quota and forces an upgrade to Premium."
+      ],
+      "source_domain": "betterproposals.io",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://betterproposals.io/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un freelance envoyant 15 propositions/mois sur Premium (21$/mois annuel) : coût SaaS ≈ 21$/mois (~19€). Configuration (templates, intégration paiement) ≈ 3h à 50€/h = 150€, amorti sur 12 mois ≈ 13€/mois. Maintenance (mise à jour des templates) ≈ 20 min/mois ≈ 17€/mois. Coût total réel ≈ 49€/mois.",
+      "tcoExampleEn": "For a freelancer sending 15 proposals/month on Premium ($21/month annual): SaaS cost ≈ $21/month (~€19). Setup (templates, payment integration) ≈ 3h at $50/h = $150, amortized over 12 months ≈ $13/month. Maintenance (template updates) ≈ 20 min/month ≈ $17/month. Real total cost ≈ €49/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
@@ -8852,13 +8975,15 @@
         "replaceFr": "Remplacer Better Proposals par une IA ? Non : suivre quand un prospect consulte une proposition et sécuriser sa signature reste un besoin d'infrastructure de suivi. L'IA aide à rédiger, elle ne remplace pas le suivi. Verdict : l'IA augmente la rédaction, le suivi documentaire reste le produit.",
         "replaceEn": "Replace Better Proposals with an AI? No: tracking when a prospect views a proposal and securing its signature remains a tracking infrastructure need. AI helps write, it doesn't replace tracking. Verdict: AI augments writing, document tracking remains the product.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Freelance ou petite équipe envoyant 3+ propositions par mois à des clients qui consultent sur mobile, prêt à calculer son volume réel avant de choisir un palier.",
+      "idealForEn": "Freelancer or small team sending 3+ proposals a month to clients who review on mobile, ready to calculate real volume before picking a tier."
     },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -8872,22 +8997,63 @@
         "1-2 devis par mois",
         "Grands comptes exigeants"
       ],
-      "threshold": "Bon choix dès 3+ propositions par mois avec des clients modernes."
+      "threshold": "Bon choix dès 3+ propositions par mois avec des clients modernes.",
+      "billingTraps": [
+        {
+          "title": "Le Starter plafonne à 10 documents/mois",
+          "text": "Dès que ton volume de propositions dépasse 10/mois, le Starter à 19$ ne suffit plus et il faut passer à Premium (29$/mois, ou 21$ en annuel) — calcule ton volume réel avant de choisir l'entrée de gamme."
+        },
+        {
+          "title": "Facturation annuelle nécessaire pour le prix le plus bas",
+          "text": "Le tarif le plus avantageux (13$/mois Starter, 21$/mois Premium) suppose un engagement annuel ; en mensuel, le coût réel est 30 à 40% plus élevé."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Regular client proposals",
+        "Need integrated payment",
+        "Clients who review on mobile"
+      ],
+      "avoidIf": [
+        "Need traditional PDF proposals",
+        "1-2 quotes per month",
+        "Demanding large accounts"
+      ],
+      "threshold": "Good fit from 3+ proposals per month with modern clients.",
+      "billingTraps": [
+        {
+          "title": "Starter caps at 10 documents/month",
+          "text": "Once your proposal volume passes 10/month, the $19 Starter plan no longer covers you and you need Premium ($29/month, or $21 annual) — calculate your real volume before picking the entry tier."
+        },
+        {
+          "title": "Annual billing needed for the lowest price",
+          "text": "The best rates ($13/month Starter, $21/month Premium) assume an annual commitment; billed monthly, the real cost is 30-40% higher."
+        }
+      ]
+    },
     "pros": [
       "Propositions web (pas PDF) — meilleure expérience",
       "Paiement intégré (Stripe, PayPal)",
       "Templates modernes et responsive",
       "Prix plus accessible que Proposify"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Web proposals (not PDF) — better experience",
+      "Integrated payment (Stripe, PayPal)",
+      "Modern, responsive templates",
+      "More affordable than Proposify"
+    ],
     "cons": [
       "Moins de personnalisation que Proposify",
       "Pas de mode hors-ligne",
       "Bibliothèque de templates plus petite"
     ],
-    "consEn": null,
+    "consEn": [
+      "Less customization than Proposify",
+      "No offline mode",
+      "Smaller template library"
+    ],
     "useCases": [
       "Envoyer des propositions web interactives",
       "Collecter les paiements à la signature",
@@ -9193,24 +9359,50 @@
     "shortDescription": "CRM et portail client pour créatifs et photographes.",
     "shortDescriptionEn": "CRM and client portal for creatives and photographers.",
     "description": "Bloom, c'est cRM et portail client pour créatifs et photographes. À partir de 13€/mois.\n\nConçu spécifiquement pour les créatifs. galeries clients intégrées, prix accessible. Interface propre et moderne. Concrètement : envoyer des propositions à des clients potentiels. Ou encore : partager des galeries photos avec les clients.\n\nÀ garder si : photographe ou vidéaste freelance ou besoin de galeries clients. À éviter si : consultant non-créatif ou besoin d'un CRM complet. Limite principale : fonctionnalités limitées vs HoneyBook. Bon choix pour les créatifs visuels avec 2-10 clients actifs.",
-    "longDescription": "Bloom, c'est cRM et portail client pour créatifs et photographes. À partir de 13€/mois.\n\nConçu spécifiquement pour les créatifs. galeries clients intégrées, prix accessible. Interface propre et moderne. Concrètement : envoyer des propositions à des clients potentiels. Ou encore : partager des galeries photos avec les clients.\n\nÀ garder si : photographe ou vidéaste freelance ou besoin de galeries clients. À éviter si : consultant non-créatif ou besoin d'un CRM complet. Limite principale : fonctionnalités limitées vs HoneyBook. Bon choix pour les créatifs visuels avec 2-10 clients actifs.",
-    "longDescriptionEn": "Bloom is cRM and client portal for creatives and photographers. Starting at €13/month.",
+    "longDescription": "Bloom est un CRM et portail client conçu pour les créatifs et photographes, à partir de 7$/mois en annuel sur le palier d'entrée. Les noms de palier ont été récemment renommés (Side Jobs/Solo Business/Small Teams vs Starter/Standard/Plus selon la source) — vérifie le nom actuel sur la page officielle avant de comparer un devis.",
+    "longDescriptionEn": "Bloom is a CRM and client portal built for creatives and photographers, starting at $7/month annual on the entry tier. Pricing tiers were recently renamed (Side Jobs/Solo Business/Small Teams vs Starter/Standard/Plus depending on the source) — check the official page for the current names before comparing a quote.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "À partir de 13$/mois"
+      "free": "Pas de plan gratuit permanent : essai disponible sur chaque palier.",
+      "paid": "Starter (Side Jobs) 14$/mois (7$/mois en annuel) ; Standard (Solo Business) 34$/mois (17$/mois en annuel) ; Plus (Small Teams) 66$/mois (33$/mois en annuel)."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 13,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No permanent free plan: trial available on each tier.",
+      "paid": "Starter (Side Jobs) $14/month ($7/month annual); Standard (Solo Business) $34/month ($17/month annual); Plus (Small Teams) $66/month ($33/month annual)."
+    },
+    "defaultMonthlyPrice": 14,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 13,
+      "compare_plan_name": "Starter / Side Jobs (mensuel)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Les noms de palier ont changé récemment (Side Jobs/Solo Business/Small Teams renommés Starter/Standard/Plus selon la source) : vérifie le nom exact sur la page officielle avant de comparer un devis."
+      ],
+      "cautionsEn": [
+        "Tier names changed recently (Side Jobs/Solo Business/Small Teams renamed Starter/Standard/Plus depending on the source): check the exact name on the official page before comparing a quote."
+      ],
+      "source_domain": "bloom.io",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://bloom.io/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un photographe freelance sur Standard (17$/mois annuel) : coût SaaS ≈ 17$/mois (~16€). Configuration (galeries clients, contrats) ≈ 3h à 50€/h = 150€, amorti sur 12 mois ≈ 13€/mois. Maintenance (mise à jour des galeries) ≈ 20 min/mois ≈ 17€/mois. Coût total réel ≈ 46€/mois.",
+      "tcoExampleEn": "For a freelance photographer on Standard ($17/month annual): SaaS cost ≈ $17/month (~€16). Setup (client galleries, contracts) ≈ 3h at $50/h = $150, amortized over 12 months ≈ $13/month. Maintenance (gallery updates) ≈ 20 min/month ≈ $17/month. Real total cost ≈ €46/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Bloom : CRM et portail client pour créatifs et photographes. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Photographe ou créatif freelance avec 2-10 clients actifs qui veut des galeries clients intégrées à petit budget.",
+      "idealForEn": "Freelance photographer or creative with 2-10 active clients wanting built-in client galleries on a small budget."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -9224,23 +9416,65 @@
         "Besoin d'un CRM complet",
         "Volume élevé de clients"
       ],
-      "threshold": "Bon choix pour les créatifs visuels avec 2-10 clients actifs."
+      "threshold": "Bon choix pour les créatifs visuels avec 2-10 clients actifs.",
+      "billingTraps": [
+        {
+          "title": "Le prix annuel \"50% off\" cache le vrai tarif mensuel",
+          "text": "L'offre \"6 mois gratuits\" en annuel équivaut à payer la moitié du tarif mensuel affiché sur 12 mois — compare toujours le coût annuel total, pas le chiffre mensuel mis en avant."
+        },
+        {
+          "title": "Pas de plan gratuit permanent malgré ce qui circule en ligne",
+          "text": "Certaines sources tierces mentionnent un plan gratuit pour un projet ; la page officielle ne propose qu'un essai sur chaque palier payant, à vérifier avant de t'engager."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Freelance photographer or videographer",
+        "Need client galleries",
+        "Limited budget"
+      ],
+      "avoidIf": [
+        "Non-creative consultant",
+        "Need a full-featured CRM",
+        "High client volume"
+      ],
+      "threshold": "Good fit for visual creatives with 2-10 active clients.",
+      "billingTraps": [
+        {
+          "title": "The \"50% off\" annual price hides the real monthly rate",
+          "text": "The \"6 months free\" annual offer is equivalent to paying half the listed monthly rate over 12 months — always compare the total annual cost, not the highlighted monthly figure."
+        },
+        {
+          "title": "No permanent free plan despite what circulates online",
+          "text": "Some third-party sources mention a free plan for one project; the official page only offers a trial on each paid tier — check before committing."
+        }
+      ]
+    },
     "pros": [
       "Conçu spécifiquement pour les créatifs",
       "Galeries clients intégrées",
       "Prix accessible",
       "Interface propre et moderne"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Built specifically for creatives",
+      "Built-in client galleries",
+      "Affordable pricing",
+      "Clean, modern interface"
+    ],
     "cons": [
       "Fonctionnalités limitées vs HoneyBook",
       "Écosystème d'intégrations restreint",
       "Communauté plus petite",
       "Principalement anglophone"
     ],
-    "consEn": null,
+    "consEn": [
+      "Limited features vs HoneyBook",
+      "Smaller integration ecosystem",
+      "Smaller community",
+      "Mostly English-only"
+    ],
     "useCases": [
       "Envoyer des propositions à des clients potentiels",
       "Partager des galeries photos avec les clients",
@@ -9275,7 +9509,10 @@
     "shortDescription": "Signature électronique avec SMS, à moitié du prix de DocuSign.",
     "description": "BlueInk envoie des documents à signer par email ou SMS, avec un taux d'ouverture revendiqué de 94% en moins de 9 minutes pour les SMS.",
     "category": "organization",
-    "pricing": "Standard à 15$/utilisateur/mois ; Business Pro à 30$ ; Unlimited à 40$ ; Enterprise sur devis (dès 2,95$/enveloppe).",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai disponible.",
+      "paid": "Standard 15$/utilisateur/mois ; Business Pro 30$ ; Unlimited 40$ ; Enterprise sur devis (à partir de 2,95$/enveloppe)."
+    },
     "website": "https://blueink.com",
     "affiliateLink": "https://blueink.com",
     "pros": [
@@ -9314,11 +9551,23 @@
         "Tu as besoin d'une vraie vérification d'identité du signataire (juridique, notariat sensible)",
         "Tu veux être notifié automatiquement une fois toutes les signatures obtenues"
       ],
-      "threshold": "Bon rapport qualité/prix pour de la signature standard ; évite si tu as besoin de vérification d'identité réelle."
+      "threshold": "Bon rapport qualité/prix pour de la signature standard ; évite si tu as besoin de vérification d'identité réelle.",
+      "billingTraps": [
+        {
+          "title": "\"ID Verification\" ne vérifie pas vraiment l'identité",
+          "text": "Malgré le nom de la fonctionnalité, BlueInk ne fait pas de vérification d'identité réelle (pas de pièce d'identité officielle scannée) — à éviter pour du juridique sensible malgré le prix attractif."
+        },
+        {
+          "title": "Enterprise sur devis dès 2,95$/enveloppe",
+          "text": "Au-delà des plans par utilisateur, le palier Enterprise facture à l'enveloppe à partir de 2,95$ — à calculer si ton volume de documents est élevé mais le nombre d'utilisateurs faible."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Blueink eSignatures : Plateforme de signatures électroniques et suivi de documents. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Blueink eSignatures : Plateforme de signatures électroniques et suivi de documents. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Qui veut un coût de signature électronique inférieur à DocuSign avec signature SMS à fort taux d'ouverture, sans besoin de vérification d'identité réelle.",
+      "idealForEn": "Anyone wanting a lower e-signature cost than DocuSign with high-open-rate SMS signing, without needing real identity verification."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -9339,10 +9588,16 @@
     "shortDescriptionEn": "E-signature with SMS delivery, at half the price of DocuSign.",
     "longDescription": "BlueInk envoie des documents à signer par email ou SMS, avec un taux d'ouverture revendiqué de 94% en moins de 9 minutes pour les SMS — 45% de hausse de réponse comparé à l'email seul. L'intégration avec Google Drive et Salesforce est directe.\n\nLe vrai point faible : la \"vérification d'identité\" du signataire ne vérifie en réalité rien — n'importe quelle photo peut être uploadée. L'outil ne notifie pas non plus quand toutes les signatures sont obtenues, ce qui demande de vérifier manuellement.",
     "longDescriptionEn": "BlueInk sends documents for signature via email or SMS, with a claimed 94% open rate within 9 minutes for SMS — a 45% response increase compared to email alone. Integration with Google Drive and Salesforce is direct.\n\nThe real weak point: signer \"identity verification\" doesn't actually verify anything — any photo can be uploaded. The tool also doesn't notify when all signatures are obtained, requiring manual checking.",
-    "pricingEn": "Standard at $15/user/month; Business Pro at $30; Unlimited at $40; Enterprise quoted (from $2.95/envelope).",
+    "pricingEn": {
+      "free": "No permanent free plan: trial available.",
+      "paid": "Standard $15/user/month; Business Pro $30; Unlimited $40; Enterprise quoted (from $2.95/envelope)."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucune vérification d'identité réelle du signataire malgré le nom de la fonctionnalité \"ID Verification\".",
+        "Pas de notification automatique une fois toutes les signatures obtenues — vérification manuelle nécessaire."
+      ],
+      "verified_on": "2026-06-27",
       "source_domain": "blueink.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -9351,7 +9606,13 @@
       "location_sensitive": false,
       "official_source_url": "https://www.blueink.com/pricing",
       "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 15,
+      "cautionsEn": [
+        "No real signer identity verification despite the \"ID Verification\" feature name.",
+        "No automatic notification once all signatures are obtained — manual checking required."
+      ],
+      "tcoExampleFr": "Pour un cabinet de 5 utilisateurs sur Business Pro (30$/utilisateur/mois) : coût SaaS ≈ 150$/mois (~138€). Configuration (modèles de documents, intégrations) ≈ 4h à 50€/h = 200€, amorti sur 12 mois ≈ 17€/mois. Vérification manuelle des signatures (pas de notification automatique) ≈ 1h/mois = 50€/mois. Coût total réel ≈ 205€/mois.",
+      "tcoExampleEn": "For a 5-user firm on Business Pro ($30/user/month): SaaS cost ≈ $150/month (~€138). Setup (document templates, integrations) ≈ 4h at $50/h = $200, amortized over 12 months ≈ $17/month. Manual signature checking (no automatic notification) ≈ 1h/month = $50/month. Real total cost ≈ €205/month."
     },
     "websiteUrl": "https://blueink.com",
     "logo": "",
@@ -9364,7 +9625,17 @@
         "You need real signer identity verification (legal, sensitive notary work)",
         "You want to be automatically notified once all signatures are obtained"
       ],
-      "threshold": "Good value for standard signing; avoid if you need real identity verification."
+      "threshold": "Good value for standard signing; avoid if you need real identity verification.",
+      "billingTraps": [
+        {
+          "title": "\"ID Verification\" doesn't really verify identity",
+          "text": "Despite the feature's name, BlueInk doesn't perform real identity verification (no official ID scan) — avoid for sensitive legal use despite the attractive price."
+        },
+        {
+          "title": "Enterprise quoted from $2.95/envelope",
+          "text": "Beyond the per-user plans, the Enterprise tier bills per envelope starting at $2.95 — worth calculating if your document volume is high but user count is low."
+        }
+      ]
     },
     "prosEn": [
       "SMS signing with claimed 94% open rate within 9 minutes",
