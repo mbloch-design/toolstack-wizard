@@ -22674,7 +22674,9 @@
         "aiTools": [
           "gemini"
         ]
-      }
+      },
+      "idealForFr": "Freelance ou petite équipe qui collabore en temps réel sur des documents simples, sans besoin de mise en page poussée ni de travail hors-ligne intensif.",
+      "idealForEn": "Freelancer or small team collaborating in real time on simple documents, without needing advanced layout or heavy offline work."
     },
     "articles": [],
     "covers": [
@@ -22705,7 +22707,17 @@
         "Tu as besoin de mise en page poussée (livre, rapport long, publication)",
         "Tu travailles surtout hors-ligne sans connexion fiable"
       ],
-      "threshold": "Le bon choix par défaut pour la rédaction collaborative ; bascule vers Word si la mise en page devient critique."
+      "threshold": "Le bon choix par défaut pour la rédaction collaborative ; bascule vers Word si la mise en page devient critique.",
+      "billingTraps": [
+        {
+          "title": "Le \"gratuit\" partage son quota avec tout ton compte Google",
+          "text": "Les 15 Go gratuits sont partagés entre Gmail, Drive et Photos — un usage intensif de documents avec beaucoup d'images ou de pièces jointes peut épuiser ce quota plus vite que prévu."
+        },
+        {
+          "title": "Google Workspace facture par utilisateur, pas par usage",
+          "text": "Passer à Workspace pour plus de stockage ou des fonctions admin coûte à partir de 6,90€/mois par utilisateur — un coût qui grimpe vite pour une équipe alors que l'usage de Docs lui-même reste basique."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -22716,7 +22728,17 @@
         "You need advanced layout (book, long report, publication)",
         "You mostly work offline without reliable connectivity"
       ],
-      "threshold": "The right default for collaborative writing; switch to Word if layout becomes critical."
+      "threshold": "The right default for collaborative writing; switch to Word if layout becomes critical.",
+      "billingTraps": [
+        {
+          "title": "The \"free\" tier shares its quota with your whole Google account",
+          "text": "The free 15 GB is shared across Gmail, Drive and Photos — heavy document use with lots of images or attachments can exhaust it faster than expected."
+        },
+        {
+          "title": "Google Workspace bills per user, not per usage",
+          "text": "Upgrading to Workspace for more storage or admin features costs from €6.90/month per user — a cost that climbs fast for a team even when actual Docs usage stays basic."
+        }
+      ]
     },
     "pros": [
       "Collaboration en temps réel fluide, sans conflit de versions",
@@ -23024,7 +23046,9 @@
         "aiTools": [
           "gemini"
         ]
-      }
+      },
+      "idealForFr": "Freelance ou petite équipe qui partage des fichiers de suivi (budget, facturation) avec des volumes de données raisonnables, sans besoin des fonctions avancées d'Excel.",
+      "idealForEn": "Freelancer or small team sharing tracking files (budget, invoicing) with reasonable data volumes, without needing Excel's advanced functions."
     },
     "articles": [],
     "covers": [
@@ -23055,7 +23079,17 @@
         "Tu manipules des données très volumineuses ou des modèles financiers complexes",
         "Tu as besoin de macros VBA avancées propres à Excel"
       ],
-      "threshold": "Solide par défaut pour le suivi partagé ; bascule vers Excel si le volume ou la complexité des calculs explose."
+      "threshold": "Solide par défaut pour le suivi partagé ; bascule vers Excel si le volume ou la complexité des calculs explose.",
+      "billingTraps": [
+        {
+          "title": "Performance qui chute sur les gros volumes",
+          "text": "Au-delà de quelques centaines de milliers de lignes ou de formules complexes imbriquées, Sheets ralentit nettement par rapport à Excel — un facteur à tester avant de migrer un fichier de suivi volumineux."
+        },
+        {
+          "title": "Workspace facture par utilisateur même pour un usage Sheets minime",
+          "text": "Si la seule raison de passer à Workspace est plus de stockage Drive, le coût (à partir de 6,90€/mois/utilisateur) s'applique à toute la suite, pas juste à Sheets."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -23066,7 +23100,17 @@
         "You handle very large datasets or complex financial models",
         "You need Excel-specific advanced VBA macros"
       ],
-      "threshold": "Solid default for shared tracking; switch to Excel if data volume or calculation complexity explodes."
+      "threshold": "Solid default for shared tracking; switch to Excel if data volume or calculation complexity explodes.",
+      "billingTraps": [
+        {
+          "title": "Performance drops on large volumes",
+          "text": "Beyond a few hundred thousand rows or deeply nested complex formulas, Sheets slows down noticeably compared to Excel — worth testing before migrating a large tracking file."
+        },
+        {
+          "title": "Workspace bills per user even for minimal Sheets use",
+          "text": "If the only reason to upgrade to Workspace is more Drive storage, the cost (from €6.90/month/user) applies to the whole suite, not just Sheets."
+        }
+      ]
     },
     "pros": [
       "Collaboration en temps réel, plusieurs personnes sur le même fichier",
@@ -51227,21 +51271,24 @@
   {
     "id": "spaceiq",
     "name": "SpaceIQ",
-    "shortDescription": "Logiciel de gestion des espaces de travail et des actifs.",
+    "shortDescription": "Plateforme IWMS de gestion des espaces de travail (réservation de bureaux, plans d'étage, actifs immobiliers) pour entreprises, sur devis.",
     "description": "SpaceIQ, c'est logiciel de gestion des espaces de travail et des actifs. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en workplace management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas de plan gratuit : démo sur demande.",
+      "paid": "Sur devis, généralement 3 à 10$/utilisateur/mois selon les sources. Pour une PME de 10 utilisateurs, attendre 500 à 1500$/mois selon les fonctionnalités."
     },
     "website": "https://spaceiq.com",
     "affiliateLink": "https://spaceiq.com",
     "pros": [
-      "Spécialisé en workplace management",
-      "Interface professionnelle"
+      "Couvre l'ensemble du cycle workplace (booking, plans d'étage, actifs, occupation)",
+      "Adapté aux entreprises multi-sites avec des besoins complexes",
+      "Suivi des actifs immobiliers intégré, pas un module séparé"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Aucun tarif public, devis obligatoire pour toute estimation",
+      "Surdimensionné pour une petite équipe ou un seul site",
+      "Coût d'implémentation significatif en plus de l'abonnement"
     ],
     "bestFor": [
       "all"
@@ -51250,9 +51297,9 @@
       "workplace management"
     ],
     "freeAlternative": null,
-    "soloRelevance": "high",
+    "soloRelevance": "low",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -51262,18 +51309,30 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu gères plusieurs sites/bureaux et as besoin de réservation de bureaux à grande échelle",
+        "Tu as un budget enterprise et veux des plans d'étage interactifs avec suivi d'actifs"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu es une petite équipe sur un seul site — un outil de booking simple type Skedda suffit largement",
+        "Le manque de tarif public est un blocage pour ton processus d'achat"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Pertinent pour des entreprises multi-sites avec un budget enterprise ; demande plusieurs devis comparatifs avant de t'engager.",
+      "billingTraps": [
+        {
+          "title": "Aucun tarif public, devis obligatoire pour toute estimation",
+          "text": "Impossible de budgéter sans contacter l'équipe commerciale. Les estimations tierces (3-10$/utilisateur/mois) varient fortement — demande un devis détaillé incluant l'implémentation avant de comparer à un concurrent."
+        },
+        {
+          "title": "Coût d'implémentation souvent sous-estimé",
+          "text": "Le TCO sur 3 ans pour 100 utilisateurs peut atteindre ≈100 000$ une fois l'implémentation et le support inclus — un coût largement supérieur au seul abonnement mensuel affiché par les comparateurs tiers."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "SpaceIQ : Logiciel de gestion des espaces de travail et des actifs. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "SpaceIQ : plateforme IWMS de gestion des espaces de travail pour entreprises. Découvrez si cet outil vaut le coup pour votre activité.",
+      "idealForFr": "Entreprises multi-sites avec un budget enterprise qui ont besoin de réservation de bureaux à grande échelle et de suivi d'actifs immobiliers.",
+      "idealForEn": "Multi-site enterprises with an enterprise budget needing desk booking at scale and real estate asset tracking."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -51291,45 +51350,65 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "spaceiq",
-    "shortDescriptionEn": "Workspace and asset management software.",
-    "longDescription": "SpaceIQ, c'est logiciel de gestion des espaces de travail et des actifs. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en workplace management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "SpaceIQ is workspace and asset management software. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in workplace management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "IWMS workplace management platform (desk booking, floor plans, real estate assets) for enterprises, quote-based.",
+    "longDescription": "SpaceIQ est un IWMS (Integrated Workplace Management System) qui couvre la réservation de bureaux et salles, les plans d'étage interactifs, le suivi des actifs et l'optimisation de l'occupation immobilière. Le tarif est fixé sur devis selon le nombre d'utilisateurs, le nombre de sites et les fonctionnalités activées — il n'existe pas de tarif public en libre accès comme pour un outil SaaS classique.",
+    "longDescriptionEn": "SpaceIQ is an IWMS (Integrated Workplace Management System) covering desk and room booking, interactive floor plans, asset tracking and real estate occupancy optimization. Pricing is quote-based depending on user count, number of sites and enabled features — there's no public self-serve rate like a typical SaaS tool.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No free plan: demo on request.",
+      "paid": "Quote-based, generally $3-10/user/month per available sources. For a 10-user SMB, expect $500-1,500/month depending on features."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Sur devis",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "cautions": [
+        "Aucun tarif public : le coût dépend du nombre de sites, d'utilisateurs et de fonctionnalités. Demande un devis détaillé avant toute comparaison."
+      ],
+      "cautionsEn": [
+        "No public pricing: cost depends on number of sites, users and features. Request a detailed quote before any comparison."
+      ],
       "source_domain": "spaceiq.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://spaceiq.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 15
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://spaceiq.com/pricing",
+      "verification_status": "needs_official_quote",
+      "tcoExampleFr": "Pour une PME de 50 employés sur un site (≈5$/utilisateur/mois estimé) : coût SaaS ≈ 250$/mois (~230€). Implémentation (cartographie des plans d'étage, configuration des règles de réservation) ≈ 3000$, amorti sur 12 mois ≈ 250€/mois. Maintenance (mise à jour des plans, support utilisateurs) ≈ 4h/mois à 50€/h = 200€/mois. Coût total réel ≈ 680€/mois — une estimation enterprise sur 3 ans pour 100 utilisateurs avoisine 100 000$ tout compris.",
+      "tcoExampleEn": "For a 50-employee SMB on one site (≈$5/user/month estimated): SaaS cost ≈ $250/month (~€230). Implementation (floor plan mapping, booking rule setup) ≈ $3,000, amortized over 12 months ≈ €250/month. Maintenance (plan updates, user support) ≈ 4h/month at $50/h = $200/month. Real total cost ≈ €680/month — an enterprise 3-year estimate for 100 users runs around $100,000 all-in."
     },
     "websiteUrl": "https://spaceiq.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You manage multiple sites/offices and need desk booking at scale",
+        "You have an enterprise budget and want interactive floor plans with asset tracking"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You're a small team on a single site — a simple booking tool like Skedda is plenty",
+        "The lack of public pricing is a blocker for your procurement process"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Worth it for multi-site enterprises with an enterprise budget; request several comparative quotes before committing.",
+      "billingTraps": [
+        {
+          "title": "No public pricing, a quote is mandatory for any estimate",
+          "text": "Impossible to budget without contacting sales. Third-party estimates ($3-10/user/month) vary widely — request a detailed quote including implementation before comparing to a competitor."
+        },
+        {
+          "title": "Implementation cost is often underestimated",
+          "text": "The 3-year TCO for 100 users can reach ≈$100,000 once implementation and support are included — a cost well above the monthly subscription figure alone shown by third-party comparison sites."
+        }
+      ]
     },
     "prosEn": [
-      "Specialized in workplace management",
-      "Professional interface"
+      "Covers the full workplace cycle (booking, floor plans, assets, occupancy)",
+      "Suited to multi-site enterprises with complex needs",
+      "Built-in real estate asset tracking, not a separate module"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "No public pricing, a quote is mandatory for any estimate",
+      "Overkill for a small team or single site",
+      "Significant implementation cost on top of the subscription"
     ],
     "useCases": [],
     "useCasesEn": null,
@@ -58962,21 +59041,20 @@
   {
     "id": "wunderlist",
     "name": "Wunderlist",
-    "shortDescription": "Application de gestion de tâches et de listes.",
+    "shortDescription": "Application disparue : Microsoft a fermé définitivement les serveurs de Wunderlist le 6 mai 2020.",
     "description": "Wunderlist, c'est application de gestion de tâches et de listes. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en to-do list, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Aucun plan : l'application n'existe plus depuis le 6 mai 2020.",
+      "paid": "Sans objet : aucun abonnement n'est possible, les serveurs sont fermés."
     },
     "website": "https://wunderlist.com",
     "affiliateLink": "https://wunderlist.com",
-    "pros": [
-      "Spécialisé en to-do list",
-      "Interface professionnelle"
-    ],
+    "pros": [],
     "cons": [
-      "Prix à vérifier selon usage"
+      "L'application n'existe plus : serveurs fermés depuis le 6 mai 2020",
+      "Aucune récupération de données possible",
+      "Remplacée officiellement par Microsoft To Do"
     ],
     "bestFor": [
       "all"
@@ -58985,9 +59063,9 @@
       "to-do list"
     ],
     "freeAlternative": null,
-    "soloRelevance": "high",
-    "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "soloRelevance": null,
+    "teamRelevance": null,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -58996,19 +59074,29 @@
       "all"
     ],
     "verdict": {
-      "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
-      ],
+      "keepIf": [],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu cherches une app de tâches active à utiliser aujourd'hui — Wunderlist ne fonctionne plus"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Sans objet : ce service n'existe plus depuis 2020. Va directement vers Microsoft To Do ou Superlist.",
+      "billingTraps": [
+        {
+          "title": "Aucun abonnement n'est possible",
+          "text": "Si un site tiers te propose encore de \"t'abonner\" à Wunderlist ou de télécharger l'app, c'est soit obsolète soit une arnaque — les serveurs officiels sont fermés depuis 2020."
+        },
+        {
+          "title": "Pas de récupération de données possible",
+          "text": "Microsoft n'a fourni aucun service d'archive officiel après la fermeture ; si tu avais des listes Wunderlist non migrées avant mai 2020, elles sont perdues."
+        }
+      ]
     },
-    "alternatives": [],
+    "alternatives": [
+      "superlist"
+    ],
     "seo": {
-      "metaDescription": "Wunderlist : Application de gestion de tâches et de listes. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Wunderlist : ce service a fermé en 2020. Découvrez ce qui s'est passé et vers quelles alternatives te tourner.",
+      "idealForFr": "Personne : ce service n'existe plus. Si tu cherchais Wunderlist, regarde Microsoft To Do ou Superlist.",
+      "idealForEn": "No one: this service no longer exists. If you were looking for Wunderlist, check out Microsoft To Do or Superlist."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -59020,51 +59108,68 @@
     "functional_needs": [
       "to-do list"
     ],
-    "betterAlternative": null,
+    "betterAlternative": {
+      "tool": "superlist",
+      "reason": "Créé par les fondateurs originaux de Wunderlist, avec le même esprit visuel et simple.",
+      "reasonEn": "Built by Wunderlist's original founders, with the same simple, visual spirit.",
+      "saving": 0,
+      "performanceGain": "Service actif et maintenu, contrairement à Wunderlist fermé depuis 2020.",
+      "performanceGainEn": "Active, maintained service, unlike Wunderlist which shut down in 2020."
+    },
     "migrationGuide": null,
     "bundle_parent": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "wunderlist",
-    "shortDescriptionEn": "Task and list management application.",
-    "longDescription": "Wunderlist, c'est application de gestion de tâches et de listes. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en to-do list, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Wunderlist is task and list management application. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in to-do lists, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "Discontinued app: Microsoft permanently shut down Wunderlist's servers on May 6, 2020.",
+    "longDescription": "Wunderlist n'existe plus. Racheté par Microsoft en 2015 pour 200 millions de dollars (13 millions d'utilisateurs, 1 milliard de tâches à l'époque), l'app a été définitivement fermée le 6 mai 2020 au profit de Microsoft To Do. Les serveurs sont éteints, la synchronisation ne fonctionne plus, et il n'existe aucune archive officielle pour récupérer ses listes. Si tu cherches \"Wunderlist\" parce que tu en as entendu parler ou utilisé l'app il y a plusieurs années, les options sont : Microsoft To Do (le remplaçant officiel désigné par Microsoft) ou Superlist (créé par les fondateurs originaux de Wunderlist, dans le même esprit visuel et simple).",
+    "longDescriptionEn": "Wunderlist no longer exists. Acquired by Microsoft in 2015 for $200 million (13 million users, 1 billion tasks at the time), the app was permanently shut down on May 6, 2020 in favor of Microsoft To Do. The servers are off, sync no longer works, and there's no official archive to recover your lists. If you're searching for \"Wunderlist\" because you heard about it or used the app years ago, your options are: Microsoft To Do (Microsoft's officially designated replacement) or Superlist (built by Wunderlist's original founders, in the same simple, visual spirit).",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No plan: the app has not existed since May 6, 2020.",
+      "paid": "Not applicable: no subscription is possible, the servers are shut down."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "wunderlist.com",
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Service fermé",
+      "compare_plan_kind": "custom",
+      "price_reliability": "high",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
       "location_sensitive": false,
-      "official_source_url": "https://wunderlist.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 15
+      "cautions": [
+        "Wunderlist est définitivement fermé depuis le 6 mai 2020 : aucune inscription, aucun paiement, aucune synchronisation n'est possible."
+      ],
+      "cautionsEn": [
+        "Wunderlist has been permanently shut down since May 6, 2020: no signup, payment, or sync is possible."
+      ],
+      "source_domain": "techradar.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://blog.wunderlist.com",
+      "verification_status": "official_explicit"
     },
     "websiteUrl": "https://wunderlist.com",
     "logo": "",
     "verdictEn": {
-      "keepIf": [
-        "Regular use",
-        "Essential features"
-      ],
+      "keepIf": [],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You're looking for an active task app to use today — Wunderlist no longer works"
       ],
-      "threshold": "As soon as the tool saves you more than €15/month"
+      "threshold": "Not applicable: this service hasn't existed since 2020. Go directly to Microsoft To Do or Superlist.",
+      "billingTraps": [
+        {
+          "title": "No subscription is possible",
+          "text": "If a third-party site still offers to \"subscribe\" to Wunderlist or download the app, it's either outdated or a scam — the official servers have been shut down since 2020."
+        },
+        {
+          "title": "No data recovery is possible",
+          "text": "Microsoft provided no official archive service after shutdown; any unmigrated Wunderlist lists from before May 2020 are gone."
+        }
+      ]
     },
-    "prosEn": [
-      "Specialized in to-do lists",
-      "Professional interface"
-    ],
+    "prosEn": [],
     "consEn": [
-      "Price to be verified based on usage"
+      "The app no longer exists: servers shut down on May 6, 2020",
+      "No data recovery possible",
+      "Officially replaced by Microsoft To Do"
     ],
     "useCases": [],
     "useCasesEn": null,
@@ -65064,7 +65169,17 @@
         "Tu as besoin de gestion de projets complexe avec dépendances — ClickUp est mieux",
         "Tu veux des intégrations natives avancées — Todoist ou Asana sont plus matures"
       ],
-      "threshold": "Gratuit = risque zéro. À tester en remplacement de Todoist ou Things 3 pour les tâches personnelles."
+      "threshold": "Gratuit = risque zéro. À tester en remplacement de Todoist ou Things 3 pour les tâches personnelles.",
+      "billingTraps": [
+        {
+          "title": "\"Gratuit\" mais les plans équipe sont sur devis, pas affichés",
+          "text": "L'usage individuel est réellement gratuit sans limite cachée, mais dès que tu veux des fonctions d'équipe avancées, le tarif n'est pas public — il faut contacter Superlist pour un devis, impossible de budgéter à l'avance."
+        },
+        {
+          "title": "Outil encore jeune, risque de pivot produit",
+          "text": "Comme pour beaucoup de startups en phase de croissance, la stabilité du modèle économique (actuellement gratuit) n'est pas garantie sur plusieurs années — à garder en tête pour un usage professionnel critique."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -65076,7 +65191,17 @@
         "You need complex project management with dependencies — ClickUp is better",
         "You want advanced native integrations — Todoist or Asana are more mature"
       ],
-      "threshold": "Free = zero risk. Try it as a replacement for Todoist or Things 3 for personal tasks."
+      "threshold": "Free = zero risk. Try it as a replacement for Todoist or Things 3 for personal tasks.",
+      "billingTraps": [
+        {
+          "title": "\"Free\" but team plans are quote-only, not listed",
+          "text": "Individual use is genuinely free with no hidden limit, but once you want advanced team features, pricing isn't public — you need to contact Superlist for a quote, making it impossible to budget ahead."
+        },
+        {
+          "title": "Still a young tool, risk of product pivot",
+          "text": "As with many growth-stage startups, the stability of the current business model (free) isn't guaranteed over several years — worth keeping in mind for critical professional use."
+        }
+      ]
     },
     "useCases": [
       "Gérer ses tâches quotidiennes freelance avec inbox + projets organisés",
@@ -65108,7 +65233,9 @@
         "replaceFr": "Remplacer Superlist par une IA ? Non : organiser des tâches partagées avec une équipe reste un besoin structurel que l'IA assiste sans remplacer. Verdict : l'IA n'a pas de rôle central ici, l'organisation de tâches reste le produit.",
         "replaceEn": "Replace Superlist with an AI? No: organizing shared tasks with a team remains a structural need AI assists without replacing. Verdict: AI has no central role here, task organization remains the product.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Qui cherche une app de tâches personnelles gratuite, moderne et rapide, en gardant en tête que les plans équipe ne sont pas publics.",
+      "idealForEn": "Anyone wanting a free, modern, fast personal task app, keeping in mind that team plans aren't publicly priced."
     }
   },
   {
