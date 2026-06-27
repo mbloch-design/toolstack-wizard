@@ -13535,7 +13535,10 @@
     "shortDescription": "Suivi du temps gratuit et illimité en utilisateurs, avec montée en gamme progressive vers la facturation.",
     "description": "Clockify propose un plan gratuit réellement illimité en utilisateurs et projets — rare dans la catégorie — avec suivi manuel ou par chronomètre, rapports de base et mode kiosque. Les fonctionnalités de facturation, approbation de feuilles de temps et géolocalisation nécessitent les plans payants.",
     "category": "organization",
-    "pricing": "Gratuit (illimité en utilisateurs et projets) ; Basic 3,99$/utilisateur, Standard 5,49$, Pro 7,99$, Enterprise 14,99$ (par utilisateur/mois).",
+    "pricing": {
+      "free": "Gratuit, illimité en utilisateurs et projets",
+      "paid": "Basic à 3,99$/utilisateur/mois (annuel) ; Standard 5,49$ ; Pro 7,99$ ; Enterprise 14,99$."
+    },
     "website": "https://clockify.com",
     "affiliateLink": "https://clockify.com",
     "pros": [
@@ -13557,7 +13560,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 3.99,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -13574,11 +13577,23 @@
         "Tu gères une équipe terrain nécessitant géolocalisation et photo de pointage",
         "Ton équipe est grande et le coût par utilisateur des plans payants devient significatif"
       ],
-      "threshold": "Excellent choix gratuit pour démarrer ; au-delà de quelques dizaines d'utilisateurs, compare le coût total avec Toggl."
+      "threshold": "Excellent choix gratuit pour démarrer ; au-delà de quelques dizaines d'utilisateurs, compare le coût total avec Toggl.",
+      "billingTraps": [
+        {
+          "title": "Pas de verrouillage des feuilles de temps sur le plan gratuit",
+          "text": "N'importe qui peut modifier une entrée de temps vieille de plusieurs mois sur le plan gratuit — un risque pour la conformité ou la facturation client sans piste d'audit fiable."
+        },
+        {
+          "title": "Le coût grimpe vite à l'échelle malgré le plan gratuit généreux",
+          "text": "20 utilisateurs sur Pro (7,99$/mois) reviennent à environ 160$/mois — le plan gratuit illimité ne couvre que les fonctions de base, pas la facturation ou l'approbation de temps."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Clockify : Logiciel de suivi du temps (gratuit) pour équipes et projets. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Clockify : Logiciel de suivi du temps (gratuit) pour équipes et projets. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Idéal pour démarrer le suivi du temps gratuitement, sans limite d'utilisateurs. Dès qu'il faut verrouiller des feuilles de temps ou facturer des taux horaires, un plan payant devient nécessaire.",
+      "idealForEn": "Ideal for starting time tracking for free, with no user limit. Once timesheets need locking or hourly rates need billing, a paid plan becomes necessary."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -13599,19 +13614,24 @@
     "shortDescriptionEn": "Free, unlimited-user time tracking, with a gradual upgrade path toward invoicing.",
     "longDescription": "Clockify propose un plan gratuit réellement illimité en utilisateurs et projets — rare dans la catégorie — avec suivi manuel ou par chronomètre, rapports de base et mode kiosque. Les fonctionnalités de facturation, approbation de feuilles de temps et géolocalisation nécessitent les plans payants (3,99 à 14,99$/utilisateur/mois selon le niveau).\n\nLe compromis : le coût grimpe vite à l'échelle (20 utilisateurs en Pro = ~160$/mois), et certaines fonctions d'accountability terrain (géofencing, photo à la pointeuse) manquent même sur les plans hauts.",
     "longDescriptionEn": "Clockify offers a genuinely unlimited free plan for users and projects — rare in the category — with manual or stopwatch tracking, basic reports, and kiosk mode. Invoicing, timesheet approval, and GPS features require paid plans ($3.99 to $14.99/user/month depending on tier).\n\nThe trade-off: cost rises quickly at scale (20 users on Pro = ~$160/month), and some field accountability features (geofencing, clock-in photos) are missing even on higher tiers.",
-    "pricingEn": "Free (unlimited users and projects); Basic $3.99/user, Standard $5.49, Pro $7.99, Enterprise $14.99 (per user/month).",
+    "pricingEn": {
+      "free": "Free, unlimited users and projects",
+      "paid": "Basic at $3.99/user/month (annual); Standard $5.49; Pro $7.99; Enterprise $14.99."
+    },
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-03-13",
       "source_domain": "clockify.me",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Basic",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://clockify.me/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "compare_price_monthly_eur": 3.99,
+      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et perd 1h/mois à reconstituer son temps passé sans suivi structuré perd 50$/mois en temps masqué. Le plan gratuit de Clockify (illimité en utilisateurs) absorbe ce coût à zéro — mais dès qu'il faut verrouiller les feuilles de temps pour facturer un client en toute sécurité, Basic à 3,99$/mois devient nécessaire.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who loses 1h/month reconstructing time spent with no structured tracking is losing $50/month in hidden time. Clockify's free plan (unlimited users) absorbs that cost at zero — but once timesheets need locking to bill a client securely, Basic at $3.99/month becomes necessary."
     },
     "websiteUrl": "https://clockify.com",
     "logo": "",
@@ -13624,7 +13644,17 @@
         "You manage a field team needing geolocation and clock-in photos",
         "Your team is large and the per-user cost of paid plans becomes significant"
       ],
-      "threshold": "Excellent free choice to start; beyond a few dozen users, compare total cost with Toggl."
+      "threshold": "Excellent free choice to start; beyond a few dozen users, compare total cost with Toggl.",
+      "billingTraps": [
+        {
+          "title": "No timesheet locking on the free plan",
+          "text": "Anyone can edit a months-old time entry on the free plan — a real risk for compliance or client billing with no reliable audit trail."
+        },
+        {
+          "title": "Cost climbs fast at scale despite the generous free plan",
+          "text": "20 users on Pro ($7.99/month) works out to roughly $160/month — the unlimited free plan only covers basic features, not billing or time approval."
+        }
+      ]
     },
     "prosEn": [
       "Genuinely unlimited free plan for users, rare in the category",
@@ -52994,21 +53024,22 @@
   {
     "id": "time-doctor",
     "name": "Time Doctor",
-    "shortDescription": "Logiciel de suivi du temps et productivité des employés.",
-    "description": "Time Doctor, c'est logiciel de suivi du temps et productivité des employés. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "Suivi du temps et de la productivité avec captures d'écran, pour équipes distribuées.",
+    "description": "Time Doctor suit le temps et l'activité des employés avec des captures d'écran et un suivi d'application, pensé pour des managers qui dirigent des équipes distribuées et veulent une preuve d'activité concrète, pas juste un chiffre de temps déclaré.\n\nIl n'existe aucun plan gratuit permanent, seulement un essai de 14 jours débloquant toutes les fonctions Premium. Les plans payants démarrent à 6,70$/mois/utilisateur (Basic) et montent à 16,70$ (Premium, avec enregistrement vidéo des écrans et benchmarks IA).\n\nLe revers : le suivi d'écran peut être perçu comme intrusif et nuire à la confiance de l'équipe si mal communiqué. Pour un suivi de temps simple par tâche sans surveillance, Clockify ou TimeCamp sont moins chers et moins intrusifs.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de plan gratuit permanent : essai de 14 jours avec toutes les fonctions Premium",
+      "paid": "Basic à 6,70$/mois/utilisateur (annuel) ; Standard à 11,70$ ; Premium à 16,70$ (enregistrement vidéo, IA, SSO, rétention des données 2 ans contre 6 mois)."
     },
     "website": "https://timedoctor.com",
     "affiliateLink": "https://timedoctor.com",
     "pros": [
-      "Spécialisé en time tracking",
-      "Interface professionnelle"
+      "Captures d'écran et suivi d'application donnent une preuve d'activité concrète pour des équipes distribuées.",
+      "Rapports de productivité détaillés par employé et par projet."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Le suivi d'écran peut être perçu comme intrusif et nuire à la confiance de l'équipe.",
+      "Aucun plan gratuit permanent, seulement un essai de 14 jours."
     ],
     "bestFor": [
       "all"
@@ -53019,7 +53050,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 6.7,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -53029,18 +53060,30 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu gères une équipe distribuée et as besoin de preuves d'activité (captures d'écran, suivi d'appli)",
+        "Tu veux des rapports de productivité détaillés par employé"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton équipe perçoit le suivi d'écran comme intrusif — ça peut nuire à la confiance",
+        "Tu veux juste chronométrer le temps par tâche sans surveillance — Clockify ou TimeCamp suffisent"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Time Doctor se justifie pour une équipe distribuée où la direction a besoin de preuves d'activité concrètes. Pour un simple suivi de temps par tâche, c'est plus de surveillance que nécessaire.",
+      "billingTraps": [
+        {
+          "title": "Aucun plan gratuit permanent",
+          "text": "Seul un essai de 14 jours est disponible, avec toutes les fonctions Premium débloquées — qui disparaissent ensuite si tu choisis Basic ou Standard."
+        },
+        {
+          "title": "L'enregistrement vidéo et l'IA réservés à Premium",
+          "text": "Basic (6,70$) et Standard (11,70$) n'incluent pas l'enregistrement vidéo des écrans ni les benchmarks IA : il faut Premium (16,70$) pour y accéder."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Time Doctor : Logiciel de suivi du temps et productivité des employés. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Time Doctor : Logiciel de suivi du temps et productivité des employés. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Idéal pour une équipe distribuée où la direction a besoin de preuves d'activité concrètes (captures d'écran, suivi d'appli). Pour un simple suivi de temps par tâche, Clockify ou TimeCamp suffisent et sont moins intrusifs.",
+      "idealForEn": "Ideal for a distributed team where management needs concrete proof of activity (screenshots, app tracking). For simple per-task time tracking, Clockify or TimeCamp are enough and less intrusive."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -53058,45 +53101,58 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "time-doctor",
-    "shortDescriptionEn": "Employee time tracking and productivity software.",
-    "longDescription": "Time Doctor, c'est logiciel de suivi du temps et productivité des employés. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "Time Doctor is employee time tracking and productivity software. Starting at €20/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in time tracking, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €20/month.",
+    "shortDescriptionEn": "Time and productivity tracking with screenshots, for distributed teams.",
+    "longDescription": "Time Doctor suit le temps et l'activité des employés avec des captures d'écran et un suivi d'application, pensé pour des managers qui dirigent des équipes distribuées et veulent une preuve d'activité concrète, pas juste un chiffre de temps déclaré.\n\nIl n'existe aucun plan gratuit permanent, seulement un essai de 14 jours débloquant toutes les fonctions Premium. Les plans payants démarrent à 6,70$/mois/utilisateur (Basic) et montent à 16,70$ (Premium, avec enregistrement vidéo des écrans et benchmarks IA).\n\nLe revers : le suivi d'écran peut être perçu comme intrusif et nuire à la confiance de l'équipe si mal communiqué. Pour un suivi de temps simple par tâche sans surveillance, Clockify ou TimeCamp sont moins chers et moins intrusifs.",
+    "longDescriptionEn": "Time Doctor tracks employee time and activity with screenshots and app monitoring, built for managers running distributed teams who want concrete proof of activity, not just a self-reported time figure.\n\nThere's no permanent free plan, only a 14-day trial unlocking all Premium features. Paid plans start at $6.70/month/user (Basic) and go up to $16.70 (Premium, with screen video recording and AI benchmarks).\n\nThe trade-off: screen monitoring can feel intrusive and damage team trust if poorly communicated. For simple per-task time tracking with no surveillance, Clockify or TimeCamp are cheaper and less intrusive.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan: 14-day trial with all Premium features unlocked",
+      "paid": "Basic at $6.70/month/user (annual); Standard at $11.70; Premium at $16.70 (screen recording, AI, SSO, 2-year data retention vs 6 months)."
     },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-26",
       "source_domain": "timedoctor.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://timedoctor.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 20
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 6.7,
+      "tcoExampleFr": "Exemple concret : une équipe distribuée de 10 personnes facturant 50$/h où le manager perd collectivement 3h/mois à vérifier manuellement l'activité de chacun perd 150$/mois en temps masqué. Time Doctor Basic à 6,70$/mois/utilisateur (67$/mois pour 10 personnes) automatise cette vérification — mais sans essai gratuit permanent, ce calcul doit se faire pendant les 14 jours d'essai.",
+      "tcoExampleEn": "Concrete example: a 10-person distributed team billing $50/h where the manager collectively loses 3h/month manually checking everyone's activity is losing $150/month in hidden time. Time Doctor Basic at $6.70/month/user ($67/month for 10 people) automates that check — but with no permanent free plan, that math has to happen during the 14-day trial."
     },
     "websiteUrl": "https://timedoctor.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "You run a distributed team and need proof of activity (screenshots, app tracking)",
+        "You want detailed per-employee productivity reports"
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "Your team sees screen monitoring as intrusive — it can damage trust",
+        "You just want to time tasks with no surveillance — Clockify or TimeCamp are enough"
       ],
-      "threshold": "As soon as the tool saves you more than €20/month"
+      "threshold": "Time Doctor earns its place for a distributed team where management needs concrete proof of activity. For simple per-task time tracking, it's more surveillance than necessary.",
+      "billingTraps": [
+        {
+          "title": "No permanent free plan",
+          "text": "Only a 14-day trial is available, with all Premium features unlocked — features that disappear afterward if you pick Basic or Standard."
+        },
+        {
+          "title": "Video recording and AI are Premium-only",
+          "text": "Basic ($6.70) and Standard ($11.70) don't include screen video recording or AI benchmarks — you need Premium ($16.70) for those."
+        }
+      ]
     },
     "prosEn": [
-      "Specialized in time tracking",
-      "Professional interface"
+      "Screenshots and app tracking give concrete proof of activity for distributed teams.",
+      "Detailed productivity reports per employee and per project."
     ],
     "consEn": [
-      "Price to be verified based on usage"
+      "Screen monitoring can be seen as intrusive and damage team trust.",
+      "No permanent free plan, only a 14-day trial."
     ],
     "useCases": [],
     "useCasesEn": null,
@@ -53122,26 +53178,28 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "Time Doctor tracks employee time and activity with screenshots and app monitoring, built for managers running distributed teams who want concrete proof of activity, not just a self-reported time figure.\n\nThere's no permanent free plan, only a 14-day trial unlocking all Premium features. Paid plans start at $6.70/month/user (Basic) and go up to $16.70 (Premium, with screen video recording and AI benchmarks).\n\nThe trade-off: screen monitoring can feel intrusive and damage team trust if poorly communicated. For simple per-task time tracking with no surveillance, Clockify or TimeCamp are cheaper and less intrusive."
   },
   {
     "id": "timecamp",
     "name": "TimeCamp",
-    "shortDescription": "Outil de suivi du temps et rapports pour la productivité.",
-    "description": "TimeCamp, c'est outil de suivi du temps et rapports pour la productivité. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "shortDescription": "Suivi du temps gratuit et illimité en utilisateurs, limité à 1 projet actif sur le plan gratuit.",
+    "description": "TimeCamp est un outil de suivi du temps qui combine un plan gratuit avec utilisateurs illimités et des plans payants parmi les moins chers de la catégorie. Il sert à suivre le temps passé par projet ou par tâche, avec des rapports et une intégration de facturation pour relier le temps suivi au chiffre d'affaires généré.\n\nLe plan gratuit autorise un nombre illimité d'utilisateurs, mais limite à un seul projet actif à la fois — une vraie contrainte dès qu'on gère plusieurs clients en parallèle. Les plans payants démarrent à 3,99$/mois/utilisateur (Starter) et montent à 9,99$ (Ultimate), des tarifs nettement inférieurs à la plupart des concurrents.\n\nLe revers : TimeCamp reste moins riche en fonctionnalités terrain (géolocalisation, photo de pointage) que des outils spécialisés comme Connecteam ou Deputy. Pour un suivi de temps simple par projet, c'est l'un des choix les moins chers du marché.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan gratuit avec utilisateurs illimités, mais limité à 1 projet actif",
+      "paid": "Starter à 3,99$/mois/utilisateur (annuel) ; Premium à 6,99$ ; Ultimate à 9,99$."
     },
     "website": "https://timecamp.com",
     "affiliateLink": "https://timecamp.com",
     "pros": [
-      "Spécialisé en time tracking",
-      "Interface professionnelle"
+      "Plan gratuit avec utilisateurs illimités, rare dans la catégorie, à condition de rester sur un seul projet actif.",
+      "Tarifs payants parmi les plus bas du suivi du temps (3,99$ à 9,99$/utilisateur)."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Le plan gratuit limité à 1 projet actif force vite un passage au payant pour qui gère plusieurs clients.",
+      "Moins riche en fonctionnalités terrain (géolocalisation) que des concurrents spécialisés."
     ],
     "bestFor": [
       "all"
@@ -53152,7 +53210,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 3.99,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -53162,18 +53220,30 @@
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu veux suivre le temps passé par projet sans payer pour des utilisateurs supplémentaires (gratuit illimité)",
+        "Tu as besoin d'une intégration de facturation ou de suivi de rentabilité par projet"
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu gères plus d'un projet actif en parallèle : le plan gratuit ne suffit plus",
+        "Tu cherches un suivi terrain avec géolocalisation poussée — des outils spécialisés conviennent mieux"
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "TimeCamp se justifie pour suivre le temps passé par projet à coût quasi nul tant qu'un seul projet actif suffit. Au-delà, les plans payants restent parmi les moins chers de la catégorie.",
+      "billingTraps": [
+        {
+          "title": "Le plan gratuit limité à 1 seul projet actif",
+          "text": "Utilisateurs illimités, mais un seul projet actif à la fois sur le plan gratuit — inadapté dès qu'on gère plusieurs clients ou projets en parallèle."
+        },
+        {
+          "title": "Remise de volume seulement sur demande au-delà de 50 sièges",
+          "text": "Aucune remise standard affichée au-delà de 50 utilisateurs : il faut contacter le support pour négocier."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "TimeCamp : Outil de suivi du temps et rapports pour la productivité. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "TimeCamp : Outil de suivi du temps et rapports pour la productivité. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Idéal pour suivre le temps sur un seul projet actif sans payer, ou pour une équipe qui veut le suivi du temps le moins cher du marché. Le plan gratuit ne couvre qu'un seul projet à la fois.",
+      "idealForEn": "Ideal for tracking time on one active project for free, or for a team wanting the cheapest time tracking on the market. The free plan only covers one project at a time."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -53191,28 +53261,59 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "timecamp",
-    "shortDescriptionEn": "Time tracking and reporting tool for productivity.",
-    "longDescription": "TimeCamp, c'est outil de suivi du temps et rapports pour la productivité. À partir de 20€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "TimeCamp is time tracking and reporting tool for productivity. Starting at €20/month. Built for B2B consultants and SaaS founders.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Free, unlimited-user time tracking, capped at 1 active project on the free plan.",
+    "longDescription": "TimeCamp est un outil de suivi du temps qui combine un plan gratuit avec utilisateurs illimités et des plans payants parmi les moins chers de la catégorie. Il sert à suivre le temps passé par projet ou par tâche, avec des rapports et une intégration de facturation pour relier le temps suivi au chiffre d'affaires généré.\n\nLe plan gratuit autorise un nombre illimité d'utilisateurs, mais limite à un seul projet actif à la fois — une vraie contrainte dès qu'on gère plusieurs clients en parallèle. Les plans payants démarrent à 3,99$/mois/utilisateur (Starter) et montent à 9,99$ (Ultimate), des tarifs nettement inférieurs à la plupart des concurrents.\n\nLe revers : TimeCamp reste moins riche en fonctionnalités terrain (géolocalisation, photo de pointage) que des outils spécialisés comme Connecteam ou Deputy. Pour un suivi de temps simple par projet, c'est l'un des choix les moins chers du marché.",
+    "longDescriptionEn": "TimeCamp is a time tracking tool combining a free plan with unlimited users and some of the cheapest paid plans in the category. It's used to track time by project or task, with reports and billing integration to link tracked time to revenue.\n\nThe free plan allows unlimited users, but limits you to one active project at a time — a real constraint as soon as you're managing several clients in parallel. Paid plans start at $3.99/month/user (Starter) and go up to $9.99 (Ultimate), notably cheaper than most competitors.\n\nThe trade-off: TimeCamp stays lighter on field features (geolocation, clock-in photos) than specialized tools like Connecteam or Deputy. For simple per-project time tracking, it's one of the cheapest options on the market.",
+    "pricingEn": {
+      "free": "Free plan with unlimited users, but capped at 1 active project",
+      "paid": "Starter at $3.99/month/user (annual); Premium at $6.99; Ultimate at $9.99."
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-26",
       "source_domain": "timecamp.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://timecamp.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 20
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 3.99,
+      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et perd 1h/mois à reconstituer manuellement son temps faute de suivi perd 50$/mois en temps masqué. Le plan gratuit de TimeCamp (1 projet) absorbe ce coût à zéro tant qu'un seul projet est actif — au second projet, Starter à 3,99$/mois reste l'un des moins chers du marché.",
+      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who loses 1h/month manually reconstructing time with no tracking is losing $50/month in hidden time. TimeCamp's free plan (1 project) absorbs that cost at zero as long as one project is active — at the second project, Starter at $3.99/month stays one of the cheapest on the market."
     },
     "websiteUrl": "https://timecamp.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You want to track time per project without paying for extra users (free, unlimited)",
+        "You need billing integration or per-project profitability tracking"
+      ],
+      "avoidIf": [
+        "You manage more than one active project in parallel: the free plan isn't enough anymore",
+        "You want field tracking with strong geolocation — specialized tools fit better"
+      ],
+      "threshold": "TimeCamp earns its place for tracking time per project at near-zero cost as long as one active project is enough. Beyond that, its paid plans stay among the cheapest in the category.",
+      "billingTraps": [
+        {
+          "title": "The free plan caps at 1 active project",
+          "text": "Unlimited users, but only one active project at a time on the free plan — a poor fit as soon as you're managing several clients or projects in parallel."
+        },
+        {
+          "title": "Volume discounts only on request past 50 seats",
+          "text": "No standard discount is published past 50 users — you have to contact support to negotiate."
+        }
+      ]
+    },
+    "prosEn": [
+      "Free plan with unlimited users, rare in the category, as long as you stay on one active project.",
+      "Paid rates among the lowest in time tracking ($3.99 to $9.99/user)."
+    ],
+    "consEn": [
+      "The free plan's 1-active-project cap forces an early upgrade for anyone managing several clients.",
+      "Lighter on field features (geolocation) than specialized competitors."
+    ],
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
@@ -53237,7 +53338,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "TimeCamp is a time tracking tool combining a free plan with unlimited users and some of the cheapest paid plans in the category. It's used to track time by project or task, with reports and billing integration to link tracked time to revenue.\n\nThe free plan allows unlimited users, but limits you to one active project at a time — a real constraint as soon as you're managing several clients in parallel. Paid plans start at $3.99/month/user (Starter) and go up to $9.99 (Ultimate), notably cheaper than most competitors.\n\nThe trade-off: TimeCamp stays lighter on field features (geolocation, clock-in photos) than specialized tools like Connecteam or Deputy. For simple per-project time tracking, it's one of the cheapest options on the market."
   },
   {
     "id": "todoist",
@@ -96850,12 +96952,17 @@
       "location_sensitive": false,
       "official_source_url": "https://www.smartsheet.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 7.88
+      "compare_price_monthly_eur": 7.88,
+      "tcoExampleFr": "Exemple concret : une équipe de 5 personnes facturant 50$/h qui perd collectivement 2h/mois à mettre à jour manuellement un planning Gantt dans un tableur basique perd 100$/mois en temps masqué. Smartsheet Pro à 7,88€/mois/utilisateur (39€/mois pour 5 personnes) automatise ce travail et se rentabilise largement.",
+      "tcoExampleEn": "Concrete example: a 5-person team billing $50/h that collectively loses 2h/month manually updating a Gantt schedule in a basic spreadsheet is losing $100/month in hidden time. Smartsheet Pro at €7.88/month/user (€39/month for 5 people) automates that work and easily pays for itself."
     },
     "affiliateLink": "https://smartsheet.com",
     "websiteUrl": "https://smartsheet.com",
     "logo": "https://logo.clearbit.com/smartsheet.com",
-    "seo": {},
+    "seo": {
+      "idealForFr": "Idéal pour une équipe à l'aise avec une logique de tableur qui veut des vues Gantt et des automatisations sans module séparé. Le plan gratuit (1 utilisateur, 2 feuilles) ne couvre qu'un test très basique.",
+      "idealForEn": "Ideal for a team comfortable with a spreadsheet logic wanting Gantt views and automations with no separate module. The free plan (1 user, 2 sheets) only covers a very basic test."
+    },
     "pros": [
       "250 automatisations mensuelles incluses dès le plan Pro",
       "Vues multiples (Gantt, Kanban, calendrier) sur les mêmes données",
@@ -96905,7 +97012,21 @@
         "Tu préfères une interface visuelle (cartes, board) à un tableur",
         "Tu n'as besoin ni de portails clients ni d'import de données externes (Business serait du gaspillage)"
       ],
-      "threshold": "Smartsheet Pro vaut le coût si tu es à l'aise avec une logique de tableur et as besoin de vues Gantt avec automatisations. Passe à Business seulement si tu as vraiment besoin de portails clients ou d'import de données externes."
+      "threshold": "Smartsheet Pro vaut le coût si tu es à l'aise avec une logique de tableur et as besoin de vues Gantt avec automatisations. Passe à Business seulement si tu as vraiment besoin de portails clients ou d'import de données externes.",
+      "billingTraps": [
+        {
+          "title": "Le minimum de 3 utilisateurs sur Business",
+          "text": "Business (28,03€/mois/utilisateur) impose un minimum de 3 utilisateurs, soit environ 84€/mois minimum même pour 2 personnes."
+        },
+        {
+          "title": "Le plafond de 250 automatisations/mois sur Pro",
+          "text": "Pro inclut 250 exécutions d'automatisation par mois ; au-delà, il faut passer à Business pour des automatisations illimitées."
+        },
+        {
+          "title": "Aucun plan gratuit permanent",
+          "text": "Smartsheet n'offre qu'un essai de 30 jours du plan Business, pas de palier gratuit pour un usage continu."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -96916,7 +97037,21 @@
         "You prefer a visual interface (cards, board) over a spreadsheet",
         "You don't need client portals or external data import (Business would be overkill)"
       ],
-      "threshold": "Smartsheet Pro is worth it if you're comfortable with spreadsheet logic and need Gantt views with automation. Only move to Business if you genuinely need client portals or external data import."
+      "threshold": "Smartsheet Pro is worth it if you're comfortable with spreadsheet logic and need Gantt views with automation. Only move to Business if you genuinely need client portals or external data import.",
+      "billingTraps": [
+        {
+          "title": "The 3-user minimum on Business",
+          "text": "Business (€28.03/month/user) enforces a 3-user minimum — roughly €84/month minimum even for 2 people."
+        },
+        {
+          "title": "The 250-automation/month cap on Pro",
+          "text": "Pro includes 250 automation runs per month; beyond that, you need Business for unlimited automations."
+        },
+        {
+          "title": "No permanent free plan",
+          "text": "Smartsheet only offers a 30-day trial of the Business plan — no free tier for ongoing use."
+        }
+      ]
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -97871,43 +98006,58 @@
     "slug": "apollo",
     "name": "Apollo",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Apollo est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Prospection commerciale B2B : sourcing de leads, séquences d'e-mails et CRM léger.",
+    "shortDescriptionEn": "B2B sales prospecting: lead sourcing, email sequences, and a light CRM.",
+    "description": "Apollo combine une base de contacts B2B, des séquences d'e-mails automatisées et un CRM léger dans un seul outil, pensé pour une activité de prospection commerciale régulière qui veut éviter de payer pour plusieurs abonnements séparés (base de données, outil d'envoi, CRM).\n\nLe plan gratuit inclut des crédits e-mail illimités (usage raisonnable, environ 250/jour), mais seulement 5 crédits mobile et 10 crédits export par mois, et se limite à 2 séquences actives en parallèle. Les plans payants démarrent à environ 49$/mois/utilisateur (Basic) et montent à 119$ (Organization).\n\nLe revers : les crédits ne se reportent pas d'un mois à l'autre, et pour une prospection intensive (cold calling, gros volumes), le coût réel peut grimper à 2-3 fois le tarif affiché une fois les dépassements et add-ons comptés.",
+    "longDescription": "Apollo combine une base de contacts B2B, des séquences d'e-mails automatisées et un CRM léger dans un seul outil, pensé pour une activité de prospection commerciale régulière qui veut éviter de payer pour plusieurs abonnements séparés (base de données, outil d'envoi, CRM).\n\nLe plan gratuit inclut des crédits e-mail illimités (usage raisonnable, environ 250/jour), mais seulement 5 crédits mobile et 10 crédits export par mois, et se limite à 2 séquences actives en parallèle. Les plans payants démarrent à environ 49$/mois/utilisateur (Basic) et montent à 119$ (Organization).\n\nLe revers : les crédits ne se reportent pas d'un mois à l'autre, et pour une prospection intensive (cold calling, gros volumes), le coût réel peut grimper à 2-3 fois le tarif affiché une fois les dépassements et add-ons comptés.",
+    "longDescriptionEn": "Apollo combines a B2B contact database, automated email sequences, and a light CRM in one tool, built for regular sales prospecting activity wanting to avoid paying for several separate subscriptions (database, sending tool, CRM).\n\nThe free plan includes unlimited email credits (fair use, roughly 250/day), but only 5 mobile credits and 10 export credits per month, and caps at 2 active sequences in parallel. Paid plans start around $49/month/user (Basic) and go up to $119 (Organization).\n\nThe trade-off: credits don't roll over month to month, and for intensive prospecting (cold calling, high volumes), the real cost can climb to 2-3x the advertised rate once overages and add-ons are factored in.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit avec crédits e-mail illimités (usage raisonnable, ~250/jour), 5 crédits mobile et 10 crédits export par mois, limité à 2 séquences actives",
+      "paid": "Basic à environ 49$/mois/utilisateur ; Professional à 79$/mois ; Organization à 119$/mois (facturation annuelle)."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free plan with unlimited email credits (fair use, ~250/day), 5 mobile credits and 10 export credits/month, capped at 2 active sequences",
+      "paid": "Basic at roughly $49/month/user; Professional at $79/month; Organization at $119/month (annual billing)."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 49,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
+      "compare_price_monthly_eur": 49,
+      "compare_plan_name": "Basic",
+      "compare_plan_kind": "seat",
+      "price_reliability": "medium",
       "usage_sensitive": true,
       "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "cautions": [],
       "source_domain": "apollo.com",
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-06-26",
       "official_source_url": "https://apollo.com",
-      "verification_status": "needs_official_quote"
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Exemple concret : un consultant qui facture 50$/h et passe 2h/mois à chercher manuellement des contacts B2B sur LinkedIn perd 100$/mois en temps masqué. Apollo Basic à 49$/mois automatise ce sourcing et se rentabilise largement — mais pour une prospection intensive, il faut budgétiser bien plus que ce tarif d'appel à cause des crédits et add-ons.",
+      "tcoExampleEn": "Concrete example: a consultant billing $50/h who spends 2h/month manually hunting for B2B contacts on LinkedIn is losing $100/month in hidden time. Apollo Basic at $49/month automates that sourcing and easily pays for itself — but for intensive prospecting, budget for much more than this entry rate because of credits and add-ons."
     },
     "affiliateLink": "https://apollo.com",
     "websiteUrl": "https://apollo.com",
     "logo": "https://logo.clearbit.com/apollo.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Idéal pour une activité de prospection commerciale régulière qui a besoin d'une base de contacts B2B et de séquences automatisées. Pour un usage occasionnel, le plan gratuit (2 séquences actives) peut suffire.",
+      "idealForEn": "Ideal for regular sales prospecting needing a B2B contact database and automated sequences. For occasional use, the free plan (2 active sequences) may be enough."
+    },
+    "pros": [
+      "Combine sourcing de leads B2B, séquences d'e-mails et CRM léger dans un seul outil, évitant de payer pour 2-3 abonnements séparés.",
+      "Crédits e-mail illimités (usage raisonnable) même sur le plan gratuit."
+    ],
+    "prosEn": [
+      "Combines B2B lead sourcing, email sequences, and a light CRM in one tool, avoiding paying for 2-3 separate subscriptions.",
+      "Unlimited email credits (fair use) even on the free plan."
+    ],
+    "cons": [
+      "Les crédits mobile et export ne se reportent pas et peuvent limiter un usage intensif ponctuel.",
+      "Le coût réel pour une prospection intensive grimpe bien au-delà du tarif affiché avec les dépassements et add-ons."
+    ],
+    "consEn": [
+      "Mobile and export credits don't roll over and can limit an occasional intensive use.",
+      "The real cost for intensive prospecting climbs well past the advertised rate with overages and add-ons."
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -97922,21 +98072,53 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Tu fais de la prospection commerciale régulière et as besoin d'une base de contacts B2B intégrée",
+        "Tu veux combiner sourcing de leads, séquences d'e-mails et CRM léger dans un seul outil"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Tu fais de la prospection occasionnelle : le plan gratuit (2 séquences actives) peut suffire",
+        "Tu as un usage intensif de l'export de numéros mobiles : les crédits s'épuisent vite et ne se reportent pas"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Apollo se justifie pour une activité de prospection commerciale régulière qui a besoin d'une base de contacts B2B et de séquences automatisées. Le coût réel grimpe vite avec les crédits et add-ons au-delà de l'usage de base.",
+      "billingTraps": [
+        {
+          "title": "Les crédits ne se reportent pas d'un mois à l'autre",
+          "text": "Les crédits mobile et export inutilisés à la fin du cycle de facturation sont perdus, pas reportés — impossible de les économiser pour un pic d'activité."
+        },
+        {
+          "title": "Le coût réel peut grimper à 2-3x le tarif affiché",
+          "text": "Pour une prospection intensive (cold calling, gros volumes), les dépassements de crédits et add-ons portent le coût réel à 150-400$/mois/utilisateur selon les estimations du secteur."
+        },
+        {
+          "title": "Le plan gratuit limité à 2 séquences actives et pas de CRM",
+          "text": "Au-delà de 2 séquences d'e-mails actives en parallèle, ou pour connecter un CRM, il faut passer à un plan payant."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
-        "The need repeats across engagements."
+        "You do regular sales prospecting and need a built-in B2B contact database",
+        "You want to combine lead sourcing, email sequences, and a light CRM in one tool"
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "You prospect occasionally: the free plan (2 active sequences) may be enough",
+        "You make heavy use of mobile number exports: credits run out fast and don't roll over"
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Apollo earns its place for regular sales prospecting activity needing a B2B contact database and automated sequences. The real cost climbs fast with credits and add-ons beyond basic use.",
+      "billingTraps": [
+        {
+          "title": "Credits don't roll over month to month",
+          "text": "Unused mobile and export credits at the end of the billing cycle are lost, not carried over — there's no way to save them up for a busy period."
+        },
+        {
+          "title": "Real cost can climb to 2-3x the advertised rate",
+          "text": "For intensive prospecting (cold calling, high volumes), credit overages and add-ons push the real cost to $150-400/month/user per industry estimates."
+        },
+        {
+          "title": "The free plan caps at 2 active sequences with no CRM",
+          "text": "Beyond 2 active email sequences in parallel, or to connect a CRM, you need a paid plan."
+        }
+      ]
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -97962,7 +98144,8 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "descriptionEn": "Apollo combines a B2B contact database, automated email sequences, and a light CRM in one tool, built for regular sales prospecting activity wanting to avoid paying for several separate subscriptions (database, sending tool, CRM).\n\nThe free plan includes unlimited email credits (fair use, roughly 250/day), but only 5 mobile credits and 10 export credits per month, and caps at 2 active sequences in parallel. Paid plans start around $49/month/user (Basic) and go up to $119 (Organization).\n\nThe trade-off: credits don't roll over month to month, and for intensive prospecting (cold calling, high volumes), the real cost can climb to 2-3x the advertised rate once overages and add-ons are factored in."
   },
   {
     "id": "greenhouse",
