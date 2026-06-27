@@ -23796,21 +23796,47 @@
     "longDescription": "Heptabase, c'est tableau blanc visuel pour la gestion des connaissances. À partir de 12€/mois.\n\nOrganisation visuelle intuitive. cartes et tableaux blancs connectés, idéal pour la pensée spatiale. Notes Markdown complètes. Concrètement : structurer un projet complexe visuellement. Ou encore : organiser des notes de recherche spatiales.\n\nÀ garder si : pensée visuelle et spatiale ou organisation de projets complexes. À éviter si : besoin de collaboration d'équipe ou notes simples linéaires. Limite principale : moins adapté au travail collaboratif. Utile si la pensée visuelle est votre mode de réflexion principal.",
     "longDescriptionEn": "Heptabase is visual whiteboard for knowledge management. Starting at €12/month.",
     "pricing": {
-      "free": "Essai gratuit 7 jours",
-      "paid": "12$/mois"
+      "free": "Pas de plan gratuit permanent : essai de 7 jours sans carte bancaire.",
+      "paid": "13,99$/mois en mensuel, 8,99$/mois en annuel (107,88$/an). Lifetime à 659$ (≈6 ans d'annuel)."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 12,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No permanent free plan: 7-day trial, no credit card.",
+      "paid": "$13.99/month monthly, $8.99/month annual ($107.88/year). Lifetime at $659 (≈6 years of annual billing)."
+    },
+    "defaultMonthlyPrice": 8.99,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 8,
+      "compare_plan_name": "Annuel",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Pas de plan gratuit permanent malgré l'essai sans carte bancaire ; la version mensuelle coûte 56% plus cher que l'annuel."
+      ],
+      "cautionsEn": [
+        "No permanent free plan despite the no-card trial; the monthly version costs 56% more than annual."
+      ],
+      "source_domain": "heptabase.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://heptabase.com/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un chercheur solo en annuel (8,99$/mois) : coût SaaS ≈ 9$/mois (~8€). Configuration (structuration des premiers tableaux blancs) ≈ 4h à 50€/h = 200€, amorti sur 12 mois ≈ 17€/mois. Maintenance (réorganisation des cartes) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 50€/mois.",
+      "tcoExampleEn": "For a solo researcher on annual ($8.99/month): SaaS cost ≈ $9/month (~€8). Setup (structuring the first whiteboards) ≈ 4h at $50/h = $200, amortized over 12 months ≈ $17/month. Maintenance (reorganizing cards) ≈ 30 min/month ≈ $25/month. Real total cost ≈ €50/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Heptabase : tableau blanc visuel pour la gestion des connaissances. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Chercheur, étudiant ou consultant en pensée visuelle qui organise des projets complexes sur des tableaux blancs connectés, sur abonnement annuel pour le meilleur tarif.",
+      "idealForEn": "Researcher, student or consultant doing visual thinking who organizes complex projects on connected whiteboards, on annual billing for the best rate."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -23824,23 +23850,65 @@
         "Notes simples linéaires",
         "Mobile-first"
       ],
-      "threshold": "Utile si la pensée visuelle est votre mode de réflexion principal."
+      "threshold": "Utile si la pensée visuelle est votre mode de réflexion principal.",
+      "billingTraps": [
+        {
+          "title": "Le mensuel coûte 56% plus cher que l'annuel",
+          "text": "13,99$/mois en mensuel contre 8,99$/mois en annuel : sans engagement annuel, le coût réel grimpe nettement par rapport au prix souvent affiché en avant (l'annuel)."
+        },
+        {
+          "title": "Lifetime rentable seulement sur le long terme",
+          "text": "Le forfait lifetime à 659$ ne devient avantageux qu'après ≈6 ans d'usage continu en annuel — un mauvais calcul si tu n'es pas sûr de garder l'outil aussi longtemps."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Visual and spatial thinking",
+        "Organizing complex projects",
+        "Learning and research"
+      ],
+      "avoidIf": [
+        "Need team collaboration",
+        "Simple linear notes",
+        "Mobile-first usage"
+      ],
+      "threshold": "Useful if visual thinking is your main mode of reasoning.",
+      "billingTraps": [
+        {
+          "title": "Monthly costs 56% more than annual",
+          "text": "$13.99/month monthly vs $8.99/month annual: without an annual commitment, the real cost climbs significantly above the rate usually advertised (the annual one)."
+        },
+        {
+          "title": "Lifetime only pays off long-term",
+          "text": "The $659 lifetime plan only becomes worthwhile after ≈6 years of continuous annual usage — a bad bet if you're not sure you'll keep the tool that long."
+        }
+      ]
+    },
     "pros": [
       "Organisation visuelle intuitive",
       "Cartes et tableaux blancs connectés",
       "Idéal pour la pensée spatiale",
       "Notes Markdown complètes"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Intuitive visual organization",
+      "Connected cards and whiteboards",
+      "Ideal for spatial thinking",
+      "Full Markdown notes"
+    ],
     "cons": [
       "Moins adapté au travail collaboratif",
       "Communauté encore petite",
       "Pas d'API publique",
       "Mobile limité"
     ],
-    "consEn": null,
+    "consEn": [
+      "Less suited to collaborative work",
+      "Still a small community",
+      "No public API",
+      "Limited mobile"
+    ],
     "useCases": [
       "Structurer un projet complexe visuellement",
       "Organiser des notes de recherche spatiales",
@@ -32155,12 +32223,34 @@
     "longDescription": "Logseq, c'est pKM open-source avec graphe de connaissances. Gratuit pour commencer, payant pour aller plus loin.\n\nGratuit et open-source. stockage local en Markdown, liens bidirectionnels et graphe. Plugins communautaires riches. Concrètement : construire un second cerveau local. Ou encore : prendre des notes de réunion liées entre elles.\n\nÀ garder si : besoin de notes en réseau sans abonnement ou souveraineté des données importante. À éviter si : besoin de collaboration d'équipe ou préférence pour le cloud natif. Limite principale : performance parfois lente sur les gros graphes. Gratuit — à essayer si Roam Research vous intéresse mais pas son prix.",
     "longDescriptionEn": "Logseq is open-source PKM with knowledge graph. Free to start, paid plans for more.",
     "pricing": {
-      "free": "Entièrement gratuit (open-source)",
-      "paid": "Sync cloud optionnel à 5$/mois"
+      "free": "Entièrement gratuit et open-source pour l'usage local, sans limite ni essai — c'est le produit complet.",
+      "paid": "Sync cloud optionnel à 5$/mois (4,17$/mois annuel) ; palier Sponsor à 15$/mois (accès anticipé aux fonctionnalités expérimentales)."
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Fully free and open-source for local use, no limits or trial — it's the complete product.",
+      "paid": "Optional cloud sync at $5/month ($4.17/month annual); Sponsor tier at $15/month (early access to experimental features)."
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 5,
+      "compare_plan_name": "Sync (mensuel)",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "L'app de base est réellement gratuite et complète sans plafond ; seule la sync cloud multi-appareils est payante."
+      ],
+      "cautionsEn": [
+        "The core app is genuinely free and complete with no caps; only multi-device cloud sync is paid."
+      ],
+      "source_domain": "logseq.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://logseq.com",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un usage local seul (gratuit) avec sync occasionnelle via un service tiers : coût SaaS = 0$. Configuration (structuration du graphe, plugins) ≈ 5h à 50€/h = 250€, amorti sur 12 mois ≈ 21€/mois. Maintenance (gestion des plugins) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 46€/mois, entièrement en temps, pas en abonnement.",
+      "tcoExampleEn": "For local-only use (free) with occasional sync via a third-party service: SaaS cost = $0. Setup (graph structuring, plugins) ≈ 5h at $50/h = $250, amortized over 12 months ≈ $21/month. Maintenance (plugin management) ≈ 30 min/month ≈ $25/month. Real total cost ≈ €46/month, entirely in time, not subscription."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
@@ -32172,13 +32262,15 @@
         "replaceFr": "Remplacer Logseq par une IA ? Non : la valeur de Logseq est de garder ses notes en local, structurées par soi-même au fil du temps — un système de pensée personnel que l'IA n'a pas vocation à remplacer. Verdict : l'IA augmente l'exploitation des notes, le système de pensée reste personnel.",
         "replaceEn": "Replace Logseq with an AI? No: Logseq's value is keeping notes local, self-structured over time — a personal thinking system AI isn't meant to replace. Verdict: AI augments note usage, the thinking system remains personal.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Profil technique qui veut des notes en réseau sans abonnement obligatoire, prêt à configurer la sync soi-même ou à payer 5$/mois pour la version officielle.",
+      "idealForEn": "Technical profile wanting networked notes without a mandatory subscription, ready to set up sync themselves or pay $5/month for the official version."
     },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -32192,9 +32284,41 @@
         "Préférence pour le cloud natif",
         "Interface visuelle requise"
       ],
-      "threshold": "Gratuit — à essayer si Roam Research vous intéresse mais pas son prix."
+      "threshold": "Gratuit — à essayer si Roam Research vous intéresse mais pas son prix.",
+      "billingTraps": [
+        {
+          "title": "\"Gratuit\" suppose de gérer soi-même la sync",
+          "text": "Sans payer les 5$/mois de sync officielle, faire fonctionner Logseq sur plusieurs appareils demande de configurer soi-même un service tiers (Git, iCloud, Syncthing) — un coût en temps, pas en argent."
+        },
+        {
+          "title": "Performance qui se dégrade sur les gros graphes",
+          "text": "Au-delà de plusieurs milliers de notes, des ralentissements sont rapportés — un facteur à anticiper si tu prévois un usage intensif sur plusieurs années."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Need networked notes without a subscription",
+        "Data sovereignty matters to you",
+        "Technical profile comfortable with Markdown"
+      ],
+      "avoidIf": [
+        "Need team collaboration",
+        "Prefer native cloud",
+        "Need a visual interface"
+      ],
+      "threshold": "Free — worth trying if Roam Research interests you but not its price.",
+      "billingTraps": [
+        {
+          "title": "\"Free\" assumes you handle sync yourself",
+          "text": "Without paying the $5/month official sync, running Logseq across multiple devices requires setting up a third-party service yourself (Git, iCloud, Syncthing) — a cost in time, not money."
+        },
+        {
+          "title": "Performance degrades on large graphs",
+          "text": "Beyond several thousand notes, slowdowns are reported — a factor to anticipate if you expect heavy multi-year usage."
+        }
+      ]
+    },
     "pros": [
       "Gratuit et open-source",
       "Stockage local en Markdown",
@@ -32202,14 +32326,25 @@
       "Plugins communautaires riches",
       "Contrôle total des données"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Free and open-source",
+      "Local Markdown storage",
+      "Bidirectional links and graph",
+      "Rich community plugins",
+      "Full control over your data"
+    ],
     "cons": [
       "Performance parfois lente sur les gros graphes",
       "Synchronisation multi-device à configurer",
       "Interface moins polie que Notion",
       "Courbe d'apprentissage"
     ],
-    "consEn": null,
+    "consEn": [
+      "Performance sometimes slow on large graphs",
+      "Multi-device sync needs setup",
+      "Less polished interface than Notion",
+      "Learning curve"
+    ],
     "useCases": [
       "Construire un second cerveau local",
       "Prendre des notes de réunion liées entre elles",
@@ -36931,7 +37066,17 @@
         "Vous avez besoin de collaborer en équipe",
         "Vous détestez configurer des plugins"
       ],
-      "threshold": "Dès que vous commencez à écrire des articles ou des livres longs."
+      "threshold": "Dès que vous commencez à écrire des articles ou des livres longs.",
+      "billingTraps": [
+        {
+          "title": "Gratuit en usage perso, payant pour la sync multi-appareils",
+          "text": "L'app de base n'a aucune limite, mais synchroniser tes notes entre ordinateur et mobile nécessite Sync à 5$/mois (4$ annuel) — sans ça, il faut un service tiers (iCloud, Dropbox) avec ses propres risques de conflits de fichiers."
+        },
+        {
+          "title": "Publish est un module séparé, pas inclus dans Sync",
+          "text": "Publier ses notes en ligne (10$/mois ou 8$/mois annuel) est un abonnement distinct de Sync — les deux ensemble coûtent 12-15$/mois pour un usage complet."
+        }
+      ]
     },
     "pricing": {
       "free": "Core app gratuite sans limites",
@@ -36969,7 +37114,9 @@
         "replaceFr": "Remplacer Obsidian par une IA ? Non : la valeur d'Obsidian est de garder ses notes en local, sous son contrôle, avec des liens bidirectionnels construits au fil du temps — un système de pensée personnel que l'IA ne remplace pas. Elle peut aider à résumer ou relier des notes. Verdict : l'IA augmente l'exploitation des notes, le système de pensée reste personnel.",
         "replaceEn": "Replace Obsidian with an AI? No: Obsidian's value is keeping notes local, under your control, with bidirectional links built over time — a personal thinking system AI doesn't replace. It can help summarize or link notes. Verdict: AI augments note usage, the thinking system remains personal.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Écrivain, chercheur ou consultant qui veut posséder ses notes en local sur Markdown, prêt à payer Sync pour le multi-appareils si besoin.",
+      "idealForEn": "Writer, researcher or consultant wanting to own their notes locally in Markdown, ready to pay for Sync if multi-device access is needed."
     },
     "longDescription": "Obsidian, c'est votre second cerveau, en local. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les auteurs et newslettistes.\n\nVos données restent en local (fichiers Markdown), pas de dépendance à un service cloud. gratuit pour usage personnel, pas de limite, graphe de connaissances pour visualiser les connexions entre notes. Écosystème de plugins communautaires très riche. Concrètement : recherche et veille : connecter vos notes de lecture, articles et idées dans un graphe de connaissances. Ou encore : écriture longue : rédiger un livre, mémoire ou série d'articles avec des notes interconnectées. Gain de temps estimé : 3h/mois.\n\nÀ garder si : vous êtes écrivain/chercheur ou vous voulez posséder vos données (fichiers Markdown). À éviter si : vous avez besoin de collaborer en équipe ou vous détestez configurer des plugins. Limite principale : interface moins intuitive que Notion pour les débutants. Dès que vous commencez à écrire des articles ou des livres longs.",
     "pros": [
@@ -37018,19 +37165,23 @@
     },
     "pricing_v5": {
       "cautions": [
-        "confirm_if_paid_plan_is_really_used",
-        "compare_only_after_usage_or_scope_question"
+        "L'app de base est gratuite et sans limite pour un usage personnel ; Sync et Publish sont des modules payants séparés."
       ],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-06-27",
       "source_domain": "obsidian.md",
       "usage_sensitive": true,
-      "compare_plan_kind": "individual_plus_addons",
-      "compare_plan_name": "Free core",
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Core (gratuit)",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://obsidian.md/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 0,
+      "cautionsEn": [
+        "The core app is free and unlimited for personal use; Sync and Publish are separate paid add-ons."
+      ],
+      "tcoExampleFr": "Pour un usage personnel gratuit avec Sync (5$/mois, ou 4$/mois annuel) : coût SaaS ≈ 4$/mois (~4€). Configuration (plugins, structure de notes) ≈ 5h à 50€/h = 250€, amorti sur 12 mois ≈ 21€/mois. Maintenance (mise à jour des plugins) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 50€/mois.",
+      "tcoExampleEn": "For free personal use with Sync ($5/month, or $4/month annual): SaaS cost ≈ $4/month (~€4). Setup (plugins, note structure) ≈ 5h at $50/h = $250, amortized over 12 months ≈ $21/month. Maintenance (plugin updates) ≈ 30 min/month ≈ $25/month. Real total cost ≈ €50/month."
     },
     "websiteUrl": "https://obsidian.md",
     "logo": "",
@@ -37044,7 +37195,17 @@
         "You need to collaborate as a team",
         "You hate configuring plugins"
       ],
-      "threshold": "As soon as you start writing long-form articles or books."
+      "threshold": "As soon as you start writing long-form articles or books.",
+      "billingTraps": [
+        {
+          "title": "Free for personal use, paid for multi-device sync",
+          "text": "The core app has no limits, but syncing notes between desktop and mobile requires Sync at $5/month ($4 annual) — without it, you need a third-party service (iCloud, Dropbox) with its own file-conflict risks."
+        },
+        {
+          "title": "Publish is a separate add-on, not included in Sync",
+          "text": "Publishing notes online ($10/month or $8/month annual) is a subscription separate from Sync — both together cost $12-15/month for full usage."
+        }
+      ]
     },
     "prosEn": [
       "Your data stay local (Markdown files), no dependency on a cloud service",
@@ -44181,12 +44342,34 @@
     "longDescription": "Reflect, c'est notes networked avec IA intégrée et backlinks. À partir de 10€/mois.\n\nIA intégrée pour résumer et connecter. transcription vocale, interface moderne et épurée. Synchronisation rapide multi-device. Concrètement : prendre des notes vocales transcrites automatiquement. Ou encore : retrouver des idées grâce à l'IA.\n\nÀ garder si : besoin d'IA dans la prise de notes ou notes vocales fréquentes. À éviter si : souveraineté des données requise ou budget serré. Limite principale : prix pour un outil de notes. Intéressant si l'IA et la voix changent votre workflow de prise de notes.",
     "longDescriptionEn": "Reflect is networked notes with built-in AI and backlinks. Starting at €10/month.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "10$/mois"
+      "free": "Pas de plan gratuit permanent : essai de 14 jours.",
+      "paid": "10$/mois (100$/an en annuel, 120$/an en mensuel)."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 10,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No permanent free plan: 14-day trial.",
+      "paid": "$10/month ($100/year annual, $120/year monthly)."
+    },
+    "defaultMonthlyPrice": 8.33,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 9,
+      "compare_plan_name": "Annuel",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Pas de palier gratuit permanent ni de version locale gratuite (contrairement à Logseq ou Obsidian) : l'usage continu suppose l'abonnement."
+      ],
+      "cautionsEn": [
+        "No permanent free tier or free local version (unlike Logseq or Obsidian): continued use requires the subscription."
+      ],
+      "source_domain": "reflect.app",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://reflect.app/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un usage solo en annuel (8,33$/mois) : coût SaaS ≈ 8$/mois (~8€). Configuration (import de notes existantes, structuration) ≈ 3h à 50€/h = 150€, amorti sur 12 mois ≈ 13€/mois. Maintenance (tri des notes vocales transcrites) ≈ 20 min/mois ≈ 17€/mois. Coût total réel ≈ 38€/mois.",
+      "tcoExampleEn": "For solo annual use ($8.33/month): SaaS cost ≈ $8/month (~€8). Setup (importing existing notes, structuring) ≈ 3h at $50/h = $150, amortized over 12 months ≈ $13/month. Maintenance (sorting transcribed voice notes) ≈ 20 min/month ≈ $17/month. Real total cost ≈ €38/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
@@ -44198,13 +44381,15 @@
         "replaceFr": "Remplacer Reflect par une IA ? Non : construire un système de pensée personnel en réseau au fil du temps reste un besoin de réflexion humaine que l'IA assiste sans remplacer. Verdict : l'IA augmente l'exploitation des notes, le système de pensée reste personnel.",
         "replaceEn": "Replace Reflect with an AI? No: building a personal networked thinking system over time remains a human thinking need AI assists without replacing. Verdict: AI augments note usage, the thinking system remains personal.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Qui veut de l'IA et la transcription vocale intégrées à sa prise de notes en réseau, sans avoir besoin de souveraineté des données ou d'open-source.",
+      "idealForEn": "Anyone wanting AI and voice transcription built into networked note-taking, without needing data sovereignty or open-source."
     },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -44218,23 +44403,65 @@
         "Budget serré",
         "Préférence pour l'open-source"
       ],
-      "threshold": "Intéressant si l'IA et la voix changent votre workflow de prise de notes."
+      "threshold": "Intéressant si l'IA et la voix changent votre workflow de prise de notes.",
+      "billingTraps": [
+        {
+          "title": "Pas de version locale gratuite contrairement à ses concurrents directs",
+          "text": "Logseq et Obsidian offrent une app de base gratuite sans limite ; Reflect n'a qu'un essai de 14 jours, ensuite l'abonnement est obligatoire pour continuer à utiliser tes propres notes."
+        },
+        {
+          "title": "Le tarif mensuel coûte 20% plus cher que l'annuel",
+          "text": "120$/an en mensuel contre 100$/an en facturation annuelle — un écart à connaître avant de t'engager au mois par défaut."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Need AI in note-taking",
+        "Frequent voice notes",
+        "Modern interface matters to you"
+      ],
+      "avoidIf": [
+        "Need data sovereignty",
+        "Tight budget",
+        "Prefer open-source"
+      ],
+      "threshold": "Worth it if AI and voice change your note-taking workflow.",
+      "billingTraps": [
+        {
+          "title": "No free local version unlike its direct competitors",
+          "text": "Logseq and Obsidian offer a free, unlimited core app; Reflect only has a 14-day trial, after which the subscription is mandatory to keep using your own notes."
+        },
+        {
+          "title": "Monthly billing costs 20% more than annual",
+          "text": "$120/year billed monthly vs $100/year billed annually — a gap worth knowing before defaulting to monthly."
+        }
+      ]
+    },
     "pros": [
       "IA intégrée pour résumer et connecter",
       "Transcription vocale",
       "Interface moderne et épurée",
       "Synchronisation rapide multi-device"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Built-in AI for summarizing and connecting notes",
+      "Voice transcription",
+      "Modern, clean interface",
+      "Fast multi-device sync"
+    ],
     "cons": [
       "Prix pour un outil de notes",
       "Moins de personnalisation que Roam/Logseq",
       "Écosystème de plugins limité",
       "Dépendance au cloud"
     ],
-    "consEn": null,
+    "consEn": [
+      "Price for a notes tool",
+      "Less customization than Roam/Logseq",
+      "Limited plugin ecosystem",
+      "Cloud dependency"
+    ],
     "useCases": [
       "Prendre des notes vocales transcrites automatiquement",
       "Retrouver des idées grâce à l'IA",
@@ -45506,12 +45733,34 @@
     "longDescription": "Roam Research, c'est prise de notes en réseau avec liens bidirectionnels. À partir de 15€/mois.\n\nLiens bidirectionnels natifs. graphe de connaissances visuel, outliner puissant. Communauté intellectuelle active. Concrètement : construire une base de connaissances personnelle. Ou encore : connecter des idées entre projets et clients.\n\nÀ garder si : prise de notes intensive (recherche, consulting) ou besoin de connecter des idées entre projets. À éviter si : notes simples et linéaires ou besoin d'une interface visuelle. Limite principale : courbe d'apprentissage significative. Justifié si vous prenez 30+ notes par semaine et avez besoin de les relier.",
     "longDescriptionEn": "Roam Research is networked note-taking with bidirectional links. Starting at €15/month.",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "15$/mois"
+      "free": "Pas de plan gratuit : essai de 31 jours.",
+      "paid": "Pro 15$/mois (165$/an) ; Believer 500$ pour 5 ans (≈8,33$/mois)."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 15,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No free plan: 31-day trial.",
+      "paid": "Pro $15/month ($165/year); Believer $500 for 5 years (≈$8.33/month)."
+    },
+    "defaultMonthlyPrice": 13.75,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 13,
+      "compare_plan_name": "Pro (annuel)",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "Aucun plan gratuit, même limité : l'essai de 31 jours est la seule façon de tester sans payer."
+      ],
+      "cautionsEn": [
+        "No free plan, not even a limited one: the 31-day trial is the only way to test without paying."
+      ],
+      "source_domain": "roamresearch.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://roamresearch.com/#/app/help/page/Vu1MmjinS",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un chercheur prenant 30+ notes/semaine sur Pro (165$/an ≈13,75$/mois) : coût SaaS ≈ 14$/mois (~13€). Configuration (structuration de l'outliner, daily notes) ≈ 5h à 50€/h = 250€, amorti sur 12 mois ≈ 21€/mois. Maintenance (liaison des notes existantes) ≈ 1h/mois = 50€/mois. Coût total réel ≈ 84€/mois.",
+      "tcoExampleEn": "For a researcher taking 30+ notes/week on Pro ($165/year ≈$13.75/month): SaaS cost ≈ $14/month (~€13). Setup (outliner structuring, daily notes) ≈ 5h at $50/h = $250, amortized over 12 months ≈ $21/month. Maintenance (linking existing notes) ≈ 1h/month = $50/month. Real total cost ≈ €84/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
@@ -45523,13 +45772,15 @@
         "replaceFr": "Remplacer Roam Research par une IA ? Non : la valeur de Roam est de construire un système de pensée personnel en réseau au fil du temps, pas un contenu généré. L'IA peut aider à résumer ou relier des notes existantes. Verdict : l'IA augmente l'exploitation des notes, le système de pensée reste personnel.",
         "replaceEn": "Replace Roam Research with an AI? No: Roam's value is building a personal networked thinking system over time, not generated content. AI can help summarize or link existing notes. Verdict: AI augments note usage, the thinking system remains personal.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Chercheur ou consultant qui prend 30+ notes par semaine et a besoin de les relier entre projets, prêt à payer le tarif le plus élevé de la catégorie.",
+      "idealForEn": "Researcher or consultant taking 30+ notes a week needing to link them across projects, ready to pay the category's highest rate."
     },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -45543,23 +45794,65 @@
         "Besoin d'une interface visuelle",
         "Budget limité"
       ],
-      "threshold": "Justifié si vous prenez 30+ notes par semaine et avez besoin de les relier."
+      "threshold": "Justifié si vous prenez 30+ notes par semaine et avez besoin de les relier.",
+      "billingTraps": [
+        {
+          "title": "Le Believer Plan est un pari sur 5 ans",
+          "text": "500$ pour 5 ans (≈8,33$/mois) n'est avantageux que si tu es sûr de rester sur Roam pendant toute la période — sans remboursement proportionnel si tu changes d'outil en cours de route."
+        },
+        {
+          "title": "Pas d'application mobile native malgré le prix premium",
+          "text": "Au tarif le plus élevé de sa catégorie (15$/mois), Roam n'offre toujours pas d'app mobile native — un point à vérifier si tu prends des notes en déplacement."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Intensive note-taking (research, consulting)",
+        "Need to connect ideas across projects",
+        "Non-linear thinking"
+      ],
+      "avoidIf": [
+        "Simple, linear notes",
+        "Need a visual interface",
+        "Limited budget"
+      ],
+      "threshold": "Worth it if you take 30+ notes a week and need to link them.",
+      "billingTraps": [
+        {
+          "title": "The Believer Plan is a 5-year bet",
+          "text": "$500 for 5 years (≈$8.33/month) only pays off if you're sure you'll stay on Roam for the whole period — with no prorated refund if you switch tools partway through."
+        },
+        {
+          "title": "No native mobile app despite the premium price",
+          "text": "At the category's highest rate ($15/month), Roam still has no native mobile app — worth checking if you take notes on the go."
+        }
+      ]
+    },
     "pros": [
       "Liens bidirectionnels natifs",
       "Graphe de connaissances visuel",
       "Outliner puissant",
       "Communauté intellectuelle active"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Native bidirectional links",
+      "Visual knowledge graph",
+      "Powerful outliner",
+      "Active intellectual community"
+    ],
     "cons": [
       "Courbe d'apprentissage significative",
       "Interface minimaliste (pas pour tous)",
       "Prix élevé pour un outil de notes",
       "Pas d'application mobile native"
     ],
-    "consEn": null,
+    "consEn": [
+      "Significant learning curve",
+      "Minimalist interface (not for everyone)",
+      "High price for a notes tool",
+      "No native mobile app"
+    ],
     "useCases": [
       "Construire une base de connaissances personnelle",
       "Connecter des idées entre projets et clients",
