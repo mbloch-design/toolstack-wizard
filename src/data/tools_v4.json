@@ -16794,7 +16794,10 @@
     "shortDescription": "Helpdesk omnicanal avec déploiement cloud ou on-premise au choix.",
     "description": "Deskpro centralise email, chat, téléphone, réseaux sociaux et formulaires web dans un helpdesk unique, avec le choix entre hébergement cloud ou on-premise.",
     "category": "organization",
-    "pricing": "Cloud Team à 39$/utilisateur/mois ; Cloud Professional à 59$ ; Cloud Enterprise à 99$/utilisateur/an.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai disponible.",
+      "paid": "Team 39$/agent/mois (facturation annuelle) ; Professional 59$/agent/mois ; Enterprise 99$/agent/mois. Déploiement on-premise disponible en alternative au cloud."
+    },
     "website": "https://deskpro.com",
     "affiliateLink": "https://deskpro.com",
     "pros": [
@@ -16817,7 +16820,7 @@
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 34.16,
+    "defaultMonthlyPrice": 39,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -16835,11 +16838,23 @@
         "Tu veux une interface simple sans courbe d'apprentissage",
         "Le budget ne permet pas les coûts cachés potentiels (logo, transfert)"
       ],
-      "threshold": "Pertinent surtout pour le choix cloud/on-premise ; vérifie les coûts additionnels avant de t'engager."
+      "threshold": "Pertinent surtout pour le choix cloud/on-premise ; vérifie les coûts additionnels avant de t'engager.",
+      "billingTraps": [
+        {
+          "title": "Facturation annuelle pour atteindre le prix d'entrée",
+          "text": "Le tarif Team de 39$/agent/mois suppose un engagement annuel ; en mensuel, le prix réel est plus élevé. Vérifie le mode de facturation avant de comparer à un concurrent facturé au mois."
+        },
+        {
+          "title": "Coûts cachés rapportés au-delà du prix de plan",
+          "text": "Des utilisateurs rapportent des frais additionnels pour retirer le logo Deskpro ou transférer une instance entre cloud et on-premise — à demander explicitement avant signature."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Deskpro : Logiciel de helpdesk pour offrir une expérience client de qualité. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Deskpro : Logiciel de helpdesk pour offrir une expérience client de qualité. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Équipes support qui ont une contrainte de conformité on-premise ou veulent un helpdesk omnicanal personnalisable, prêtes à vérifier les coûts additionnels.",
+      "idealForEn": "Support teams with an on-premise compliance constraint or wanting a customizable omnichannel helpdesk, ready to check for additional costs."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -16860,19 +16875,29 @@
     "shortDescriptionEn": "Omnichannel helpdesk with cloud or on-premise deployment of your choice.",
     "longDescription": "Deskpro centralise email, chat, téléphone, réseaux sociaux et formulaires web dans un helpdesk unique, avec une particularité rare dans la catégorie : le choix entre hébergement cloud ou on-premise selon les contraintes d'infrastructure de l'entreprise.\n\nL'interface peut sembler encombrée avec autant de fonctionnalités, et certains avis mentionnent des coûts cachés (suppression du logo, transfert cloud) qui s'ajoutent au prix affiché.",
     "longDescriptionEn": "Deskpro centralizes email, chat, phone, social media, and web forms into a single helpdesk, with a rare specificity in the category: the choice between cloud hosting or on-premise depending on the company's infrastructure constraints.\n\nThe interface can feel cluttered with so many features, and some reviews mention hidden costs (logo removal, cloud transfer) added to the sticker price.",
-    "pricingEn": "Cloud Team at $39/user/month; Cloud Professional at $59; Cloud Enterprise at $99/user/year.",
+    "pricingEn": {
+      "free": "No permanent free plan: trial available.",
+      "paid": "Team $39/agent/month (annual billing); Professional $59/agent/month; Enterprise $99/agent/month. On-premise deployment available as an alternative to cloud."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Des coûts additionnels (suppression du logo, transfert cloud) sont rapportés en plus du prix de plan affiché."
+      ],
+      "verified_on": "2026-06-27",
       "source_domain": "deskpro.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Team (annuel)",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.deskpro.com/pricing/cloud",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "compare_price_monthly_eur": 36,
+      "cautionsEn": [
+        "Additional costs (logo removal, cloud transfer) are reported on top of the listed plan price."
+      ],
+      "tcoExampleFr": "Pour une équipe de 5 agents sur Team (39$/agent/mois, annuel) : coût SaaS ≈ 195$/mois (~180€). Configuration (SLA, routage, canaux) ≈ 6h à 50€/h = 300€, amorti sur 12 mois ≈ 25€/mois. Maintenance et coûts additionnels rapportés (transfert, personnalisation) ≈ 30€/mois. Coût total réel ≈ 235€/mois.",
+      "tcoExampleEn": "For a 5-agent team on Team ($39/agent/month, annual): SaaS cost ≈ $195/month (~€180). Setup (SLAs, routing, channels) ≈ 6h at $50/h = $300, amortized over 12 months ≈ $25/month. Maintenance and reported additional costs (transfer, customization) ≈ $30/month. Real total cost ≈ $235/month."
     },
     "websiteUrl": "https://deskpro.com",
     "logo": "",
@@ -16885,7 +16910,17 @@
         "You want a simple interface with no learning curve",
         "Budget doesn't allow for potential hidden costs (logo, transfer)"
       ],
-      "threshold": "Mainly worth it for the cloud/on-premise choice; check additional costs before committing."
+      "threshold": "Mainly worth it for the cloud/on-premise choice; check additional costs before committing.",
+      "billingTraps": [
+        {
+          "title": "Annual billing needed to hit the entry price",
+          "text": "The $39/agent/month Team rate assumes an annual commitment; billed monthly, the real price is higher. Check the billing cadence before comparing to a monthly-billed competitor."
+        },
+        {
+          "title": "Hidden costs reported beyond the plan price",
+          "text": "Users report additional fees to remove the Deskpro logo or transfer an instance between cloud and on-premise — ask explicitly before signing."
+        }
+      ]
     },
     "prosEn": [
       "Rare choice between cloud and on-premise deployment based on infrastructure needs",
@@ -20305,32 +20340,117 @@
     "slug": "folk",
     "name": "Folk",
     "category": "organization",
-    "shortDescription": "CRM léger et collaboratif",
-    "shortDescriptionEn": "Lightweight, collaborative CRM.",
+    "shortDescription": "CRM léger et collaboratif pour relations (recrutement, ventes, partenariats), avec enrichissement de contacts intégré.",
+    "shortDescriptionEn": "Lightweight, collaborative CRM for relationships (recruiting, sales, partnerships), with built-in contact enrichment.",
     "description": "Folk, c'est cRM léger et collaboratif. À partir de 19€/mois.",
-    "longDescription": "Folk, c'est cRM léger et collaboratif. À partir de 19€/mois.",
-    "longDescriptionEn": "Folk is lightweight, collaborative CRM. Starting at €19/month.",
-    "pricing": null,
-    "pricingEn": null,
-    "defaultMonthlyPrice": 19,
-    "pricing_v5": null,
+    "longDescription": "Folk, c'est un CRM léger et collaboratif. Sans plan gratuit permanent (essai de 14 jours sur les fonctionnalités Premium), il facture par utilisateur/mois avec des crédits d'enrichissement et de messages mutualisés au niveau de l'espace de travail, pas par siège individuel : une petite équipe peut épuiser son quota mensuel plus vite que prévu si plusieurs personnes enrichissent des contacts en parallèle.",
+    "longDescriptionEn": "Folk is a lightweight, collaborative CRM. With no permanent free plan (14-day trial of Premium features), it bills per user/month with enrichment and message credits pooled at the workspace level, not per individual seat: a small team can burn through its monthly quota faster than expected if several people enrich contacts in parallel.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours avec fonctionnalités Premium.",
+      "paid": "Standard 30$/utilisateur/mois (24$ en annuel) ; Premium 60$ (48$ annuel) ; Custom à partir de 100$ (80$ annuel)."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan: 14-day trial with Premium features.",
+      "paid": "Standard $30/user/month ($24 annual); Premium $60 ($48 annual); Custom from $100 ($80 annual)."
+    },
+    "defaultMonthlyPrice": 30,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 27,
+      "compare_plan_name": "Standard (annuel)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Les crédits d'enrichissement et de messages sont mutualisés par espace de travail, pas par utilisateur : une équipe active peut les épuiser avant la fin du mois."
+      ],
+      "cautionsEn": [
+        "Enrichment and message credits are pooled per workspace, not per user: an active team can burn through them before month's end."
+      ],
+      "source_domain": "folk.app",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://www.folk.app/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour une équipe de 3 personnes sur Standard (24$/utilisateur/mois annuel) : coût SaaS ≈ 72$/mois (~66€). Configuration (import de contacts, pipelines) ≈ 3h à 50€/h = 150€, amorti sur 12 mois ≈ 13€/mois. Maintenance (nettoyage de doublons, ajustement des pipelines) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 104€/mois.",
+      "tcoExampleEn": "For a 3-person team on Standard ($24/user/month annual): SaaS cost ≈ $72/month (~€66). Setup (contact import, pipelines) ≈ 3h at $50/h = $150, amortized over 12 months ≈ $13/month. Maintenance (deduping, pipeline tweaks) ≈ 30 min/month ≈ $25/month. Real total cost ≈ $104/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "https://folk.app",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Folk : CRM léger et collaboratif avec enrichissement de contacts intégré. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Solo ou petite équipe gérant des relations (recrutement, ventes, partenariats) qui veut un CRM léger avec enrichissement intégré, en surveillant la consommation de crédits.",
+      "idealForEn": "Solo or small team managing relationships (recruiting, sales, partnerships) wanting a lightweight CRM with built-in enrichment, while watching credit consumption."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "relevantFor": [],
     "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
+    "verdict": {
+      "keepIf": [
+        "Tu veux un CRM léger pour gérer des relations (recrutement, ventes, partenariats) sans la lourdeur d'un Salesforce",
+        "Tu utilises l'enrichissement de contacts régulièrement mais en volume modéré"
+      ],
+      "avoidIf": [
+        "Ton équipe enrichit des contacts en gros volume : les crédits mutualisés s'épuisent vite",
+        "Tu as besoin d'un plan gratuit permanent pour tester sans engagement"
+      ],
+      "threshold": "Pertinent en solo ou petite équipe pour de la gestion de relations légère ; surveille la consommation de crédits dès 3+ utilisateurs actifs.",
+      "billingTraps": [
+        {
+          "title": "Pas de plan gratuit, seulement un essai Premium",
+          "text": "L'essai de 14 jours donne accès aux fonctionnalités Premium, ce qui peut fausser ta perception du tarif réel une fois l'essai terminé et le plan Standard moins riche en place."
+        },
+        {
+          "title": "Crédits mutualisés, pas individuels",
+          "text": "Les crédits d'enrichissement et de messages sont comptés au niveau de l'espace de travail entier, pas par utilisateur. Plusieurs personnes actives en simultané épuisent le quota plus vite qu'un calcul \"par siège\" ne le suggère."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a lightweight CRM for relationships (recruiting, sales, partnerships) without Salesforce-level overhead",
+        "You use contact enrichment regularly but at moderate volume"
+      ],
+      "avoidIf": [
+        "Your team enriches contacts at high volume: pooled credits run out fast",
+        "You need a permanent free plan to test without commitment"
+      ],
+      "threshold": "Worth it solo or in a small team for lightweight relationship management; watch credit consumption from 3+ active users up.",
+      "billingTraps": [
+        {
+          "title": "No free plan, only a Premium trial",
+          "text": "The 14-day trial gives access to Premium features, which can skew your sense of the real price once the trial ends and the leaner Standard plan kicks in."
+        },
+        {
+          "title": "Pooled credits, not individual ones",
+          "text": "Enrichment and message credits are counted at the whole-workspace level, not per user. Several people active at once burn through the quota faster than a \"per seat\" calculation would suggest."
+        }
+      ]
+    },
+    "pros": [
+      "Interface légère et rapide, courbe d'apprentissage minimale",
+      "Enrichissement de contacts intégré sans outil tiers",
+      "Collaboratif par design : pipelines partagés sans configuration lourde"
+    ],
+    "prosEn": [
+      "Light, fast interface, minimal learning curve",
+      "Built-in contact enrichment without a third-party tool",
+      "Collaborative by design: shared pipelines without heavy setup"
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent, seulement un essai de 14 jours",
+      "Crédits d'enrichissement et de messages mutualisés par espace, pas par utilisateur",
+      "Moins de profondeur fonctionnelle qu'un CRM de vente complet (pas de forecasting avancé)"
+    ],
+    "consEn": [
+      "No permanent free plan, only a 14-day trial",
+      "Enrichment and message credits pooled per workspace, not per user",
+      "Less functional depth than a full sales CRM (no advanced forecasting)"
+    ],
     "useCases": [],
     "useCasesEn": null,
     "personas": [],
@@ -27054,7 +27174,10 @@
     "shortDescription": "Gestion de service terrain (devis, planning, facturation) avec app mobile très bien notée.",
     "description": "Jobber couvre devis, planification avec calendrier drag-and-drop, suivi de job et facturation pour les métiers de service terrain, avec une app mobile très bien notée.",
     "category": "organization",
-    "pricing": "Solo : Core 29$/mois, Connect 99$/mois, Grow 149$/mois. Équipe : 149$/mois (5 utilisateurs) à 529$/mois (15 utilisateurs) ; +29$/utilisateur additionnel.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours sur le plan Grow.",
+      "paid": "Core 39$/mois (1 utilisateur) ; Connect 119$/mois (5 utilisateurs inclus, +29$/utilisateur sup.) ; Grow 199$/mois (10 utilisateurs inclus, +29$/sup.) ; Plus 599$/mois (15 utilisateurs inclus, +29$/sup.). Jusqu'à -40% en facturation annuelle."
+    },
     "website": "https://getjobber.com",
     "affiliateLink": "https://getjobber.com",
     "pros": [
@@ -27076,7 +27199,7 @@
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 25.4,
+    "defaultMonthlyPrice": 39,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
@@ -27093,11 +27216,23 @@
         "Tu as besoin de gestion fine des heures travaillées et pauses employé",
         "Ton équipe est grande et le coût par utilisateur devient significatif"
       ],
-      "threshold": "Référence pour le service terrain solo ou petite équipe ; calcule le coût réel avec add-ons à l'échelle."
+      "threshold": "Référence pour le service terrain solo ou petite équipe ; calcule le coût réel avec add-ons à l'échelle.",
+      "billingTraps": [
+        {
+          "title": "Le palier \"par utilisateurs inclus\" cache le vrai coût d'équipe",
+          "text": "Connect inclut 5 utilisateurs pour 119$, mais une 6e personne ajoute 29$/mois immédiatement. Pour 8 personnes, il faut soit Grow (10 inclus, 199$) soit Connect + 3×29$ = 206$ — calcule les deux avant de choisir."
+        },
+        {
+          "title": "Add-ons facturés en plus du plan",
+          "text": "Des fonctionnalités comme la facturation récurrente avancée ou certaines intégrations sont des add-ons payants séparés du prix de plan affiché, ce qui explique l'écart entre le tarif catalogue et le coût réel observé par les utilisateurs (≈655$/mois pour 5 personnes avec add-ons)."
+        }
+      ]
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Jobber : Logiciel pour gérer et développer les entreprises de services. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Jobber : Logiciel pour gérer et développer les entreprises de services. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Métiers de service terrain (plomberie, paysagisme, nettoyage) qui veulent la meilleure app mobile de la catégorie et budgètent le coût réel par utilisateur supplémentaire.",
+      "idealForEn": "Field service trades (plumbing, landscaping, cleaning) wanting the category's best mobile app, who budget the real per-extra-user cost."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -27118,19 +27253,29 @@
     "shortDescriptionEn": "Field service management (quotes, scheduling, invoicing) with a highly rated mobile app.",
     "longDescription": "Jobber couvre devis, planification avec calendrier drag-and-drop, suivi de job et facturation pour les métiers de service terrain (paysagisme, climatisation, nettoyage résidentiel), avec une app mobile notée 4,8/5 sur iOS — la meilleure de la catégorie selon les avis.\n\nLe vrai coût grimpe vite : pour une équipe terrain de 5 personnes, le coût réaliste mensuel tourne autour de 655$ une fois les add-ons comptés, et le planning reste centré sur le job sans prendre en compte les heures totales travaillées ou les pauses d'un employé.",
     "longDescriptionEn": "Jobber covers quoting, drag-and-drop calendar scheduling, job tracking, and invoicing for field service trades (landscaping, HVAC, residential cleaning), with a mobile app rated 4.8/5 on iOS — the best in the category per reviews.\n\nThe real cost rises quickly: for a 5-person field team, the realistic monthly cost runs around $655 once add-ons are counted, and scheduling remains job-centric without accounting for total hours worked or an employee's breaks.",
-    "pricingEn": "Solo: Core $29/month, Connect $99/month, Grow $149/month. Team: $149/month (5 users) to $529/month (15 users); +$29/additional user.",
+    "pricingEn": {
+      "free": "No permanent free plan: 14-day trial of the Grow plan.",
+      "paid": "Core $39/month (1 user); Connect $119/month (5 users included, +$29/extra user); Grow $199/month (10 users included, +$29/extra); Plus $599/month (15 users included, +$29/extra). Up to 40% off with annual billing."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Au-delà des utilisateurs inclus dans chaque palier, chaque utilisateur sup. coûte 29$/mois — le coût réel pour une équipe grimpe vite."
+      ],
+      "verified_on": "2026-06-27",
       "source_domain": "getjobber.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Core",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.getjobber.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "compare_price_monthly_eur": 36,
+      "cautionsEn": [
+        "Beyond the users included in each tier, each extra user costs $29/month — the real cost for a team climbs fast."
+      ],
+      "tcoExampleFr": "Pour une équipe de 5 personnes sur Connect (119$/mois, 5 utilisateurs inclus) : coût SaaS ≈ 119$/mois (~110€). Configuration initiale (services, modèles de devis, intégration comptable) ≈ 5h à 50€/h = 250€, amorti sur 12 mois ≈ 21€/mois. Maintenance (mise à jour des tarifs, gestion des plannings) ≈ 1h/mois = 50€/mois. Coût total réel ≈ 181€/mois.",
+      "tcoExampleEn": "For a 5-person team on Connect ($119/month, 5 users included): SaaS cost ≈ $119/month (~€110). Initial setup (services, quote templates, accounting integration) ≈ 5h at $50/h = $250, amortized over 12 months ≈ $21/month. Maintenance (rate updates, schedule management) ≈ 1h/month = $50/month. Real total cost ≈ $181/month."
     },
     "websiteUrl": "https://getjobber.com",
     "logo": "",
@@ -27143,7 +27288,17 @@
         "You need fine-grained tracking of hours worked and employee breaks",
         "Your team is large and the per-user cost becomes significant"
       ],
-      "threshold": "Reference for solo or small-team field service; calculate the real cost with add-ons at scale."
+      "threshold": "Reference for solo or small-team field service; calculate the real cost with add-ons at scale.",
+      "billingTraps": [
+        {
+          "title": "The \"users included\" tier hides the real team cost",
+          "text": "Connect includes 5 users for $119, but a 6th person adds $29/month immediately. For 8 people, it's either Grow (10 included, $199) or Connect + 3×$29 = $206 — calculate both before choosing."
+        },
+        {
+          "title": "Add-ons billed on top of the plan",
+          "text": "Features like advanced recurring billing or certain integrations are paid add-ons separate from the listed plan price, which explains the gap between the catalog rate and the real cost users report (≈$655/month for 5 people with add-ons)."
+        }
+      ]
     },
     "prosEn": [
       "Best-rated mobile app in the category (4.8/5 iOS, 4.7/5 Android)",
@@ -99166,43 +99321,69 @@
     "slug": "snipe-it",
     "name": "Snipe IT",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Gestion d'actifs IT open source : suivi du matériel, licences et consommables, auto-hébergeable gratuitement ou en cloud payant.",
+    "shortDescriptionEn": "Open-source IT asset management: hardware, license and consumable tracking, free self-hosted or paid cloud.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Snipe IT est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "longDescription": "Snipe-IT suit les actifs matériels, licences logicielles et consommables (qui a quoi, depuis quand, garantie, valeur de dépréciation). La version auto-hébergée est gratuite et open source, sans limite d'utilisateurs ni d'actifs ; il faut gérer soi-même le serveur, les mises à jour et les sauvegardes. Le cloud géré par l'éditeur facture au forfait selon le volume d'actifs, pas par utilisateur.",
+    "longDescriptionEn": "Snipe-IT tracks hardware assets, software licenses and consumables (who has what, since when, warranty, depreciation value). The self-hosted version is free and open source, with no limit on users or assets; you handle the server, updates and backups yourself. The vendor-managed cloud bills a flat fee by asset volume, not per user.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Version auto-hébergée gratuite et open source, utilisateurs et actifs illimités.",
+      "paid": "Cloud géré : Self-Hosted Hosting 39,99$/mois, Basic Hosting 99,99$/mois, Small Business Hosting 249,99$/mois (forfaits selon volume d'actifs, pas par utilisateur)."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Self-hosted version free and open source, unlimited users and assets.",
+      "paid": "Managed cloud: Self-Hosted Hosting $39.99/month, Basic Hosting $99.99/month, Small Business Hosting $249.99/month (flat tiers by asset volume, not per user)."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
+      "compare_price_monthly_eur": 37,
+      "compare_plan_name": "Self-Hosted Hosting (cloud géré)",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
       "usage_sensitive": true,
       "location_sensitive": false,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "La version gratuite est auto-hébergée : tu gères toi-même serveur, mises à jour et sauvegardes.",
+        "Le cloud géré facture par volume d'actifs, pas par utilisateur : vérifie le palier réel pour ton parc."
+      ],
+      "cautionsEn": [
+        "The free version is self-hosted: you manage the server, updates and backups yourself.",
+        "Managed cloud bills by asset volume, not by user: check the real tier for your fleet size."
       ],
       "source_domain": "snipeitapp.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://snipeitapp.com",
-      "verification_status": "needs_official_quote"
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://snipeitapp.com/pricing",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un parc de 200 appareils en auto-hébergé : coût SaaS = 0€. Installation et configuration du serveur ≈ 8h à 50€/h = 400€, amorti sur 12 mois ≈ 33€/mois. Maintenance (mises à jour, sauvegardes, supervision) ≈ 2h/mois = 100€/mois. Coût total réel ≈ 133€/mois — souvent plus cher en temps humain que le palier cloud Basic Hosting (≈92€/mois) pour ce volume.",
+      "tcoExampleEn": "For a 200-device fleet self-hosted: SaaS cost = $0. Server setup and configuration ≈ 8h at $50/h = $400, amortized over 12 months ≈ $33/month. Maintenance (updates, backups, monitoring) ≈ 2h/month = $100/month. Real total cost ≈ $133/month — often pricier in human time than the Basic Hosting cloud tier (≈$100/month) at this volume."
     },
     "affiliateLink": "https://snipeitapp.com",
     "websiteUrl": "https://snipeitapp.com",
     "logo": "https://logo.clearbit.com/snipeitapp.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Équipes IT ou parcs matériels qui veulent un inventaire d'actifs sérieux sans facturation par utilisateur, en auto-hébergé ou via le cloud géré par paliers.",
+      "idealForEn": "IT teams or hardware fleets wanting serious asset inventory without per-user billing, either self-hosted or via the tiered managed cloud."
+    },
+    "pros": [
+      "Version auto-hébergée gratuite et open source, sans limite d'utilisateurs ni d'actifs",
+      "Suivi complet : matériel, licences, consommables, dépréciation, garanties",
+      "Cloud géré facturé par volume d'actifs plutôt que par utilisateur"
+    ],
+    "prosEn": [
+      "Free, open-source self-hosted version, no limit on users or assets",
+      "Full tracking: hardware, licenses, consumables, depreciation, warranties",
+      "Managed cloud billed by asset volume rather than per user"
+    ],
+    "cons": [
+      "Version gratuite = responsabilité serveur entière (mises à jour, sécurité, sauvegardes)",
+      "Interface datée comparée aux ITSM modernes",
+      "Cloud géré sans plan gratuit, paliers à choisir selon le volume d'actifs réel"
+    ],
+    "consEn": [
+      "Free version = full server responsibility (updates, security, backups)",
+      "Interface feels dated next to modern ITSM tools",
+      "Managed cloud has no free plan, tiers need picking based on real asset volume"
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -99217,27 +99398,51 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Tu as la capacité technique (ou le budget) pour auto-héberger et maintenir un serveur",
+        "Tu gères un parc matériel et veux éviter une facturation par utilisateur"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Tu n'as ni équipe technique ni budget pour la maintenance serveur (auto-hébergé) ou pour le cloud géré",
+        "Tu cherches un outil de ticketing/support plutôt qu'un inventaire d'actifs"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Gratuit et puissant si tu peux auto-héberger ; sinon le cloud géré reste un forfait correct par volume d'actifs, à vérifier selon la taille du parc.",
+      "billingTraps": [
+        {
+          "title": "\"Gratuit\" suppose une compétence serveur",
+          "text": "La version gratuite n'a aucun coût de licence, mais elle n'est pas \"sans coût\" : installation, mises à jour de sécurité et sauvegardes restent à ta charge, en temps ou en prestataire."
+        },
+        {
+          "title": "Les paliers cloud sont par volume d'actifs",
+          "text": "Contrairement à la plupart des outils SaaS, le cloud géré ne facture pas par utilisateur mais par taille de parc : un palier mal choisi peut soit limiter ton inventaire, soit te faire payer pour une capacité inutilisée."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
-        "The need repeats across engagements."
+        "You have the technical capacity (or budget) to self-host and maintain a server",
+        "You manage a hardware fleet and want to avoid per-user billing"
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "You have neither a technical team nor budget for server maintenance (self-hosted) or managed cloud",
+        "You're looking for a ticketing/support tool rather than an asset inventory"
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Free and capable if you can self-host; otherwise the managed cloud remains a fair flat fee by asset volume, worth checking against your fleet size.",
+      "billingTraps": [
+        {
+          "title": "\"Free\" assumes server skills",
+          "text": "The free version has no license cost, but it isn't \"costless\": installation, security updates and backups remain on you, in time or contractor fees."
+        },
+        {
+          "title": "Cloud tiers are by asset volume",
+          "text": "Unlike most SaaS tools, the managed cloud doesn't bill per user but by fleet size: picking the wrong tier can either cap your inventory or have you paying for unused capacity."
+        }
+      ]
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
     "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -99264,43 +99469,69 @@
     "slug": "freshservice",
     "name": "Freshservice",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Helpdesk IT et ITSM avec gestion d'actifs, conforme ITIL, pour équipes support qui dépassent le ticketing basique.",
+    "shortDescriptionEn": "IT helpdesk and ITSM with asset management, ITIL-aligned, for support teams outgrowing basic ticketing.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Freshservice est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "longDescription": "Freshservice couvre le ticketing IT, la gestion d'actifs (CMDB), la gestion des changements et un catalogue de services, avec un alignement ITIL prêt à l'emploi. Le plan d'entrée (Starter) couvre le ticketing et la base de connaissances ; la gestion d'actifs et les workflows d'automatisation n'arrivent qu'à partir de Growth. Les plans inférieurs plafonnent les appels API par heure et par jour, ce qui peut bloquer des intégrations lourdes.",
+    "longDescriptionEn": "Freshservice covers IT ticketing, asset management (CMDB), change management and a service catalog, with ITIL alignment out of the box. The entry Starter plan covers ticketing and the knowledge base; asset management and automation workflows only arrive from Growth up. Lower tiers cap API calls per hour and per day, which can block heavier integrations.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan gratuit permanent : essai de 14 jours.",
+      "paid": "Starter à partir de 19€/agent/mois (facturation annuelle, 29€ en mensuel) ; Growth 49€/59€ ; Pro 95€ ; Enterprise 119€/agent/mois."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "No permanent free plan: 14-day trial only.",
+      "paid": "Starter from $19/agent/month (annual billing, $29 monthly); Growth $49/$59; Pro $95; Enterprise $119/agent/month."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 19,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
+      "compare_price_monthly_eur": 18,
+      "compare_plan_name": "Starter (annuel)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
       "usage_sensitive": true,
       "location_sensitive": false,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "La gestion d'actifs (CMDB) et l'automatisation n'existent qu'à partir du plan Growth.",
+        "Les appels API sont plafonnés par heure et par jour sur les plans Starter et Growth."
+      ],
+      "cautionsEn": [
+        "Asset management (CMDB) and automation only exist from the Growth plan up.",
+        "API calls are capped per hour and per day on the Starter and Growth plans."
       ],
       "source_domain": "freshworks.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://freshworks.com/freshservice",
-      "verification_status": "needs_official_quote"
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://www.freshworks.com/freshservice/pricing/",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour une équipe support de 5 agents sur Growth (59€/agent/mois en mensuel) : coût SaaS ≈ 295€/mois. Configuration du catalogue de services et des workflows d'automatisation ≈ 6h à 50€/h = 300€, amorti sur 12 mois ≈ 25€/mois. Maintenance (ajustement des règles, mise à jour de la CMDB) ≈ 1h/mois = 50€/mois. Coût total réel ≈ 370€/mois, soit ~25% au-dessus du prix catalogue affiché.",
+      "tcoExampleEn": "For a 5-agent support team on Growth ($59/agent/month, monthly billing): SaaS cost ≈ $295/month. Setting up the service catalog and automation workflows ≈ 6h at $50/h = $300, amortized over 12 months ≈ $25/month. Maintenance (rule tweaks, CMDB upkeep) ≈ 1h/month = $50/month. Real total cost ≈ $370/month, about 25% above the listed catalog price."
     },
     "affiliateLink": "https://freshworks.com/freshservice",
     "websiteUrl": "https://freshworks.com/freshservice",
     "logo": "https://logo.clearbit.com/freshworks.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Équipes IT internes structurées ayant besoin d'un alignement ITIL et d'une gestion d'actifs, pas un outil pour freelance ou très petite équipe.",
+      "idealForEn": "Structured internal IT teams needing ITIL alignment and asset management, not a tool for freelancers or very small teams."
+    },
+    "pros": [
+      "Alignement ITIL prêt à l'emploi (incidents, problèmes, changements, catalogue de services)",
+      "Gestion d'actifs (CMDB) intégrée à partir du plan Growth",
+      "Interface moderne, courbe d'apprentissage plus douce que les ITSM legacy"
+    ],
+    "prosEn": [
+      "ITIL alignment out of the box (incidents, problems, changes, service catalog)",
+      "Built-in asset management (CMDB) from the Growth plan up",
+      "Modern interface, gentler learning curve than legacy ITSM tools"
+    ],
+    "cons": [
+      "CMDB et automatisation absentes du plan d'entrée Starter",
+      "Appels API plafonnés par heure/jour sur les plans inférieurs",
+      "Tarif par agent qui monte vite avec une équipe support en croissance"
+    ],
+    "consEn": [
+      "CMDB and automation missing from the entry Starter plan",
+      "API calls capped per hour/day on lower tiers",
+      "Per-agent pricing that climbs quickly with a growing support team"
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -99315,27 +99546,51 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Tu gères un support IT interne avec plusieurs agents et veux un alignement ITIL prêt à l'emploi",
+        "Tu as besoin d'une CMDB pour suivre les actifs matériels et logiciels"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Tu es seul ou en très petite équipe sans besoin de gestion d'actifs",
+        "Tes intégrations nécessitent un volume d'appels API élevé sur un plan d'entrée"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Pertinent à partir d'une équipe IT structurée ; vérifie le plan minimum réellement nécessaire pour la CMDB et l'automatisation.",
+      "billingTraps": [
+        {
+          "title": "La CMDB n'est pas dans le plan d'entrée",
+          "text": "Le Starter ne couvre que le ticketing. La gestion d'actifs (CMDB), souvent la raison de choisir Freshservice plutôt qu'un helpdesk générique, n'arrive qu'à partir de Growth."
+        },
+        {
+          "title": "Plafonds d'API qui bloquent les intégrations",
+          "text": "Starter et Growth limitent les appels API par heure et par jour. Une intégration avec un CRM ou un outil de monitoring peut dépasser ce plafond sans prévenir."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
-        "The need repeats across engagements."
+        "You run internal IT support with several agents and want ITIL alignment out of the box",
+        "You need a CMDB to track hardware and software assets"
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "You're solo or a very small team with no need for asset management",
+        "Your integrations need a high volume of API calls on an entry plan"
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Worth it from a structured IT team upward; check the real minimum plan needed for CMDB and automation.",
+      "billingTraps": [
+        {
+          "title": "The CMDB isn't in the entry plan",
+          "text": "Starter only covers ticketing. Asset management (CMDB), often the reason to pick Freshservice over a generic helpdesk, only arrives from Growth up."
+        },
+        {
+          "title": "API caps that block integrations",
+          "text": "Starter and Growth limit API calls per hour and per day. A CRM or monitoring integration can silently exceed that cap."
+        }
+      ]
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "low",
+    "teamRelevance": "high",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
