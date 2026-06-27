@@ -49344,24 +49344,43 @@
     "longDescription": "SignRequest, c'est signature électronique simple et rapide. À partir de 7€/mois.\n\nInterface très simple. prix compétitif, aPI disponible. Intégration Box native. Concrètement : signer des contrats de prestation. Ou encore : faire signer des devis clients.\n\nÀ garder si : volume modéré de signatures (5-20/mois) ou budget limité. À éviter si : volume élevé de signatures ou besoin de signature qualifiée eIDAS. Limite principale : fonctionnalités limitées vs DocuSign. Économique dès 3+ signatures par mois vs envoyer des PDF manuellement.",
     "longDescriptionEn": "SignRequest is simple and fast electronic signature. Starting at €7/month.",
     "pricing": {
-      "free": "Plan gratuit (1 expéditeur)",
-      "paid": "À partir de 7€/mois"
+      "free": "Plan gratuit : 10 documents signés par mois.",
+      "paid": "Professional 9€/utilisateur/mois (jusqu'à 5 utilisateurs) ; Business 15€/utilisateur/mois (utilisateurs illimités)."
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Free plan: 10 signed documents per month.",
+      "paid": "Professional €9/user/month (up to 5 users); Business €15/user/month (unlimited users)."
+    },
     "defaultMonthlyPrice": 7,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 9,
+      "compare_plan_name": "Professional",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Le plan gratuit plafonne à 10 documents/mois : une activité régulière dépasse vite ce volume.",
+        "Racheté par Box en 2019 : roadmap produit dépendante des priorités de Box, pas d'évolution indépendante."
+      ],
+      "cautionsEn": [
+        "The free plan caps at 10 documents/month: regular activity quickly exceeds this volume.",
+        "Acquired by Box in 2019: product roadmap depends on Box's priorities, no independent evolution."
+      ],
+      "source_domain": "signrequest.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://signrequest.com/en/plans",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un freelance envoyant 15 documents/mois sur Professional (9€/mois) : coût SaaS ≈ 9€/mois. Configuration (modèles, intégration Box/Drive) ≈ 2h à 50€/h = 100€, amorti sur 12 mois ≈ 8€/mois. Maintenance (suivi des signatures en attente) ≈ 20 min/mois ≈ 17€/mois. Coût total réel ≈ 34€/mois.",
+      "tcoExampleEn": "For a freelancer sending 15 documents/month on Professional (€9/month): SaaS cost ≈ €9/month. Setup (templates, Box/Drive integration) ≈ 2h at $50/h = $100, amortized over 12 months ≈ €8/month. Maintenance (tracking pending signatures) ≈ 20 min/month ≈ €17/month. Real total cost ≈ €34/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "augmentFr": "SignRequest reste un outil de signature électronique simple et économique, sans IA générative native — sa valeur est la conformité légale de la signature, pas la génération de contenu.",
-        "augmentEn": "SignRequest remains a simple, affordable e-signature tool, with no native generative AI — its value is the legal compliance of the signature, not content generation.",
-        "replaceFr": "Remplacer SignRequest par une IA ? Non : faire signer un document avec une valeur légale reconnue reste un besoin de conformité réglementée que l'IA ne peut pas remplacer. Verdict : l'IA n'a pas de rôle direct ici, la signature légale reste le produit.",
-        "replaceEn": "Replace SignRequest with an AI? No: getting a document signed with legally recognized value remains a regulated compliance need AI can't replace. Verdict: AI has no direct role here, legal signature remains the product.",
-        "aiTools": []
-      }
+      "metaDescription": "SignRequest : signature électronique simple et rapide. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Freelance ou petite équipe avec un volume modéré de signatures (5-20/mois) qui veut un outil simple sans signature qualifiée eIDAS.",
+      "idealForEn": "Freelancer or small team with moderate signature volume (5-20/month) wanting a simple tool without eIDAS qualified signing."
     },
     "articles": [],
     "covers": [],
@@ -49380,22 +49399,62 @@
         "Volume élevé de signatures",
         "Besoin de signature qualifiée eIDAS"
       ],
-      "threshold": "Économique dès 3+ signatures par mois vs envoyer des PDF manuellement."
+      "threshold": "Économique dès 3+ signatures par mois vs envoyer des PDF manuellement.",
+      "billingTraps": [
+        {
+          "title": "Le plan gratuit plafonne vite à 10 documents/mois",
+          "text": "Dès que ton volume dépasse 10 envois mensuels, le gratuit ne suffit plus et il faut passer à Professional (9€/utilisateur/mois) — calcule ton volume réel avant de compter sur la gratuité."
+        },
+        {
+          "title": "Rachat par Box : dépendance à une roadmap externe",
+          "text": "SignRequest appartient à Box depuis 2019. Les évolutions produit suivent les priorités de Box, pas une feuille de route indépendante — un facteur à considérer pour un engagement long terme."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Moderate signature volume (5-20/month)",
+        "Limited budget",
+        "Need for simplicity"
+      ],
+      "avoidIf": [
+        "High signature volume",
+        "Need eIDAS qualified signature"
+      ],
+      "threshold": "Cost-effective from 3+ signatures a month vs sending PDFs manually.",
+      "billingTraps": [
+        {
+          "title": "The free plan caps fast at 10 documents/month",
+          "text": "Once your volume passes 10 monthly sends, free no longer covers you and you need Professional (€9/user/month) — calculate your real volume before relying on the free tier."
+        },
+        {
+          "title": "Box acquisition: dependent on an external roadmap",
+          "text": "SignRequest has belonged to Box since 2019. Product evolution follows Box's priorities, not an independent roadmap — a factor to weigh for a long-term commitment."
+        }
+      ]
+    },
     "pros": [
       "Interface très simple",
       "Prix compétitif",
       "API disponible",
       "Intégration Box native"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Very simple interface",
+      "Competitive pricing",
+      "API available",
+      "Native Box integration"
+    ],
     "cons": [
       "Fonctionnalités limitées vs DocuSign",
       "Signature qualifiée non disponible partout",
       "Racheté par Box (évolution incertaine)"
     ],
-    "consEn": null,
+    "consEn": [
+      "Limited features vs DocuSign",
+      "Qualified signature not available everywhere",
+      "Acquired by Box (uncertain evolution)"
+    ],
     "useCases": [
       "Signer des contrats de prestation",
       "Faire signer des devis clients",
@@ -50039,16 +50098,42 @@
     "longDescription": "Skribble, c'est signature électronique qualifiée européenne. À partir de 12€/mois.\n\n3 niveaux de signature (SES, AES, QES). conformité suisse et européenne, interface moderne et simple. Intégrations API et no-code. Concrètement : signer des contrats transfrontaliers CH/UE. Ou encore : obtenir des signatures qualifiées sans déplacement.\n\nÀ garder si : activité en Suisse ou avec des clients suisses ou besoin de signature qualifiée. À éviter si : marché uniquement français ou volume faible. Limite principale : prix élevé pour la signature qualifiée. Pertinent si vous traitez avec la Suisse ou avez besoin de QES.",
     "longDescriptionEn": "Skribble is qualified European electronic signature. Starting at €12/month.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "À partir de 12€/mois"
+      "free": "Essai de 14 jours, 20 signatures gratuites, utilisateurs illimités, sans carte bancaire.",
+      "paid": "À partir de 9 CHF/mois (forfait Fair) + facturation séparée par signature (1,80 CHF/QES, 1,00 CHF/AES)."
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "14-day trial, 20 free signatures, unlimited users, no credit card.",
+      "paid": "From CHF 9/month (Fair plan) + separate per-signature billing (CHF 1.80/QES, CHF 1.00/AES)."
+    },
     "defaultMonthlyPrice": 12,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 9,
+      "compare_plan_name": "Fair",
+      "compare_plan_kind": "custom",
+      "price_reliability": "medium",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "cautions": [
+        "Le forfait mensuel ne couvre pas les signatures : chaque signature qualifiée (QES) coûte 1,80 CHF en plus, chaque signature avancée (AES) 1,00 CHF — le coût réel dépend entièrement du volume."
+      ],
+      "cautionsEn": [
+        "The monthly plan doesn't cover signatures: each qualified signature (QES) costs an extra CHF 1.80, each advanced signature (AES) CHF 1.00 — the real cost entirely depends on volume."
+      ],
+      "source_domain": "skribble.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://www.skribble.com/en-eu/pricing/",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un cabinet suisse signant 20 QES/mois sur Fair (9 CHF + 20×1,80 CHF = 45 CHF/mois) : coût SaaS ≈ 45 CHF/mois (~46€). Configuration (intégration, vérification d'identité) ≈ 3h à 50€/h = 150€, amorti sur 12 mois ≈ 13€/mois. Maintenance ≈ 20 min/mois ≈ 17€/mois. Coût total réel ≈ 76€/mois.",
+      "tcoExampleEn": "For a Swiss firm signing 20 QES/month on Fair (CHF 9 + 20×CHF 1.80 = CHF 45/month): SaaS cost ≈ CHF 45/month (~€46). Setup (integration, identity verification) ≈ 3h at $50/h = $150, amortized over 12 months ≈ €13/month. Maintenance ≈ 20 min/month ≈ €17/month. Real total cost ≈ €76/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Skribble : signature électronique qualifiée européenne. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Activité en Suisse ou avec des clients suisses ayant besoin de signature qualifiée, en budgétant le coût par signature en plus de l'abonnement.",
+      "idealForEn": "Business in Switzerland or with Swiss clients needing qualified signing, budgeting the per-signature cost on top of the subscription."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
@@ -50067,22 +50152,63 @@
         "Volume faible",
         "Budget serré"
       ],
-      "threshold": "Pertinent si vous traitez avec la Suisse ou avez besoin de QES."
+      "threshold": "Pertinent si vous traitez avec la Suisse ou avez besoin de QES.",
+      "billingTraps": [
+        {
+          "title": "Le prix d'abonnement n'inclut pas les signatures",
+          "text": "Le forfait à 9 CHF/mois est un coût de base ; chaque signature qualifiée ajoute 1,80 CHF et chaque signature avancée 1,00 CHF. Un usage régulier (20 QES/mois) coûte en réalité ≈45 CHF/mois, pas 9."
+        },
+        {
+          "title": "Pertinence concentrée sur la Suisse et la zone DACH",
+          "text": "La valeur de Skribble (conformité ZertES suisse, QES reconnue) ne s'applique pleinement qu'en Suisse ou avec des clients suisses/allemands — moins justifié pour un marché purement français."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Business in Switzerland or with Swiss clients",
+        "Need qualified signature",
+        "European compliance required"
+      ],
+      "avoidIf": [
+        "French-only market",
+        "Low volume",
+        "Tight budget"
+      ],
+      "threshold": "Worth it if you deal with Switzerland or need QES.",
+      "billingTraps": [
+        {
+          "title": "The subscription price doesn't include signatures",
+          "text": "The CHF 9/month plan is just a base cost; each qualified signature adds CHF 1.80 and each advanced signature CHF 1.00. Regular use (20 QES/month) really costs ≈CHF 45/month, not 9."
+        },
+        {
+          "title": "Relevance concentrated on Switzerland and the DACH region",
+          "text": "Skribble's value (Swiss ZertES compliance, recognized QES) only fully applies in Switzerland or with Swiss/German clients — less justified for a purely French market."
+        }
+      ]
+    },
     "pros": [
       "3 niveaux de signature (SES, AES, QES)",
       "Conformité suisse et européenne",
       "Interface moderne et simple",
       "Intégrations API et no-code"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "3 signature levels (SES, AES, QES)",
+      "Swiss and European compliance",
+      "Modern, simple interface",
+      "API and no-code integrations"
+    ],
     "cons": [
       "Prix élevé pour la signature qualifiée",
       "Moins d'intégrations que DocuSign",
       "Marché principal Suisse/DACH"
     ],
-    "consEn": null,
+    "consEn": [
+      "High price for qualified signature",
+      "Fewer integrations than DocuSign",
+      "Main market is Switzerland/DACH"
+    ],
     "useCases": [
       "Signer des contrats transfrontaliers CH/UE",
       "Obtenir des signatures qualifiées sans déplacement",
@@ -53194,27 +53320,53 @@
     "slug": "tave",
     "name": "Táve",
     "category": "organization",
-    "shortDescription": "Studio manager pour photographes et vidéastes.",
-    "shortDescriptionEn": "Studio manager for photographers and videographers.",
+    "shortDescription": "Studio manager pour photographes et vidéastes, racheté par VSCO en 2025 et renommé VSCO Workspace.",
+    "shortDescriptionEn": "Studio manager for photographers and videographers, acquired by VSCO in 2025 and rebranded VSCO Workspace.",
     "description": "Táve, c'est studio manager pour photographes et vidéastes. À partir de 22€/mois.\n\nConçu pour photographes et vidéastes. pipeline complet du lead à la livraison, reporting financier par type de prestation. Automatisation des workflows de booking. Concrètement : gérer les demandes et les bookings photo. Ou encore : automatiser les contrats et factures.\n\nÀ garder si : photographe ou vidéaste professionnel ou 10+ bookings par mois. À éviter si : designer ou illustrateur (préférer Bloom) ou volume faible de clients. Limite principale : niche très spécifique (photo/vidéo). Rentable pour les photographes avec 5+ bookings par mois.",
-    "longDescription": "Táve, c'est studio manager pour photographes et vidéastes. À partir de 22€/mois.\n\nConçu pour photographes et vidéastes. pipeline complet du lead à la livraison, reporting financier par type de prestation. Automatisation des workflows de booking. Concrètement : gérer les demandes et les bookings photo. Ou encore : automatiser les contrats et factures.\n\nÀ garder si : photographe ou vidéaste professionnel ou 10+ bookings par mois. À éviter si : designer ou illustrateur (préférer Bloom) ou volume faible de clients. Limite principale : niche très spécifique (photo/vidéo). Rentable pour les photographes avec 5+ bookings par mois.",
-    "longDescriptionEn": "Táve is studio manager for photographers and videographers. Starting at €22/month.",
+    "longDescription": "Táve a été racheté par VSCO en mai 2025 et relancé sous le nom VSCO Workspace en août 2025 ; les clients existants n'ont pas vu d'augmentation de prix suite au rachat. L'outil couvre le pipeline complet du lead à la livraison pour les studios photo/vidéo : devis, contrats, planification de séances, facturation et reporting financier par type de prestation.",
+    "longDescriptionEn": "Táve was acquired by VSCO in May 2025 and relaunched as VSCO Workspace in August 2025; existing customers saw no price increase following the acquisition. The tool covers the full pipeline from lead to delivery for photo/video studios: quotes, contracts, session scheduling, invoicing and financial reporting by service type.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "À partir de 22$/mois"
+      "free": "Pas de plan gratuit permanent : essai de 30 jours.",
+      "paid": "Solo 24,99$/mois (2 utilisateurs, 1 marque) ; Boutique 34,99$/mois (6 utilisateurs, 4 marques) ; Studio 49,99$/mois (10 utilisateurs, marques illimitées)."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 22,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No permanent free plan: 30-day trial.",
+      "paid": "Solo $24.99/month (2 users, 1 brand); Boutique $34.99/month (6 users, 4 brands); Studio $49.99/month (10 users, unlimited brands)."
+    },
+    "defaultMonthlyPrice": 24.99,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 23,
+      "compare_plan_name": "Solo",
+      "compare_plan_kind": "flat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "L'outil a été renommé VSCO Workspace en août 2025 : le nom \"Táve\" peut encore circuler dans des recherches ou comparatifs datés."
+      ],
+      "cautionsEn": [
+        "The tool was renamed VSCO Workspace in August 2025: the \"Táve\" name may still circulate in older searches or comparisons."
+      ],
+      "source_domain": "tave.com",
+      "verified_on": "2026-06-27",
+      "official_source_url": "https://hello.tave.com/tave-plans",
+      "verification_status": "official_explicit",
+      "tcoExampleFr": "Pour un photographe solo avec 8 bookings/mois sur Solo (24,99$/mois) : coût SaaS ≈ 25$/mois (~23€). Configuration (workflows de booking, templates de contrats) ≈ 5h à 50€/h = 250€, amorti sur 12 mois ≈ 21€/mois. Maintenance (suivi des paiements) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 69€/mois.",
+      "tcoExampleEn": "For a solo photographer with 8 bookings/month on Solo ($24.99/month): SaaS cost ≈ $25/month (~€23). Setup (booking workflows, contract templates) ≈ 5h at $50/h = $250, amortized over 12 months ≈ $21/month. Maintenance (payment tracking) ≈ 30 min/month ≈ $25/month. Real total cost ≈ €69/month."
+    },
     "affiliateLink": "",
     "websiteUrl": "",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Táve (VSCO Workspace) : studio manager pour photographes et vidéastes. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "Photographe ou vidéaste professionnel avec 5+ bookings par mois qui a besoin d'un reporting financier détaillé par prestation.",
+      "idealForEn": "Professional photographer or videographer with 5+ bookings a month needing detailed financial reporting by service type."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "relevantFor": [],
     "alternatives": [],
     "verdict": {
@@ -53228,23 +53380,65 @@
         "Volume faible de clients",
         "Besoin d'un outil généraliste"
       ],
-      "threshold": "Rentable pour les photographes avec 5+ bookings par mois."
+      "threshold": "Rentable pour les photographes avec 5+ bookings par mois.",
+      "billingTraps": [
+        {
+          "title": "Le rachat VSCO n'a pas changé le prix, mais change le nom",
+          "text": "Depuis août 2025, l'outil s'appelle officiellement VSCO Workspace. Les clients existants gardent leur tarif Táve sans augmentation, mais une recherche sous l'ancien nom peut mener à des informations obsolètes."
+        },
+        {
+          "title": "Le plan Solo limite à 2 utilisateurs et 1 marque",
+          "text": "Au-delà d'un studio individuel avec un assistant, il faut passer à Boutique (34,99$/mois, 6 utilisateurs) pour gérer plusieurs marques ou une équipe plus large."
+        }
+      ]
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Professional photographer or videographer",
+        "10+ bookings per month",
+        "Need detailed financial reporting"
+      ],
+      "avoidIf": [
+        "Designer or illustrator (prefer Bloom)",
+        "Low client volume",
+        "Need a general-purpose tool"
+      ],
+      "threshold": "Worth it for photographers with 5+ bookings per month.",
+      "billingTraps": [
+        {
+          "title": "The VSCO acquisition didn't change the price, but changed the name",
+          "text": "Since August 2025, the tool is officially called VSCO Workspace. Existing customers keep their Táve rate with no increase, but searching under the old name can lead to outdated information."
+        },
+        {
+          "title": "The Solo plan caps at 2 users and 1 brand",
+          "text": "Beyond a solo studio with one assistant, you need Boutique ($34.99/month, 6 users) to manage multiple brands or a larger team."
+        }
+      ]
+    },
     "pros": [
       "Conçu pour photographes et vidéastes",
       "Pipeline complet du lead à la livraison",
       "Reporting financier par type de prestation",
       "Automatisation des workflows de booking"
     ],
-    "prosEn": null,
+    "prosEn": [
+      "Built for photographers and videographers",
+      "Full pipeline from lead to delivery",
+      "Financial reporting by service type",
+      "Booking workflow automation"
+    ],
     "cons": [
       "Niche très spécifique (photo/vidéo)",
       "Interface à prendre en main",
       "Prix plus élevé que Bloom",
       "Principalement anglophone"
     ],
-    "consEn": null,
+    "consEn": [
+      "Very specific niche (photo/video)",
+      "Interface takes time to learn",
+      "Pricier than Bloom",
+      "Mostly English-only"
+    ],
     "useCases": [
       "Gérer les demandes et les bookings photo",
       "Automatiser les contrats et factures",
@@ -61651,7 +61845,7 @@
     "longDescriptionEn": "Motion is an AI-powered smart calendar that analyzes your workload, deadlines and free slots to automatically schedule your tasks at the best possible time. You enter a task with a deadline — Motion decides when to do it.\n\nThe Pro AI plan at $19/month (≈€17.48) includes unlimited automatic scheduling, meeting management, smart reminders and 7,500 AI credits/month. In practice: if a meeting gets added, Motion reorganizes your entire schedule without you having to.\n\nDifference from Notion or Todoist: Motion is a real AI scheduler — it doesn't ask you to plan yourself, it does it for you. For freelancers and consultants juggling multiple projects simultaneously, it's a real time saver.",
     "defaultMonthlyPrice": 17.48,
     "pricing_v5": {
-      "verified_on": "2026-05-08",
+      "verified_on": "2026-06-27",
       "source_domain": "usemotion.com",
       "official_source_url": "https://www.usemotion.com/pricing",
       "compare_plan_name": "Pro AI",
@@ -61662,9 +61856,15 @@
       "usage_sensitive": false,
       "location_sensitive": false,
       "cautions": [
-        "usd_pricing",
-        "pricing_changes_frequently"
-      ]
+        "Tarification en dollars, sujette à changements fréquents selon l'éditeur.",
+        "Pas de version gratuite : l'essai de 7 jours demande une carte bancaire dès l'inscription."
+      ],
+      "cautionsEn": [
+        "USD-based pricing, subject to frequent changes per the vendor.",
+        "No free version: the 7-day trial requires a credit card at signup."
+      ],
+      "tcoExampleFr": "Pour un consultant solo sur Pro AI (19$/mois) : coût SaaS ≈ 19$/mois (~17€). Configuration (import des tâches existantes, règles de priorité) ≈ 3h à 50€/h = 150€, amorti sur 12 mois ≈ 13€/mois. Maintenance (ajustement des règles IA) ≈ 20 min/mois ≈ 17€/mois. Coût total réel ≈ 47€/mois.",
+      "tcoExampleEn": "For a solo consultant on Pro AI ($19/month): SaaS cost ≈ $19/month (~€17). Setup (importing existing tasks, priority rules) ≈ 3h at $50/h = $150, amortized over 12 months ≈ $13/month. Maintenance (AI rule tweaks) ≈ 20 min/month ≈ $17/month. Real total cost ≈ €47/month."
     },
     "pricingTiers": {
       "free": "Essai 7 jours gratuit — accès complet",
@@ -61730,7 +61930,17 @@
         "Tu veux contrôler ton planning manuellement heure par heure",
         "Tu es dans une phase de découverte sans deadlines fixes — pas assez de structure à optimiser"
       ],
-      "threshold": "Rentable si tu passes plus de 30 min/jour à réorganiser ton planning ou à choisir sur quoi travailler ensuite."
+      "threshold": "Rentable si tu passes plus de 30 min/jour à réorganiser ton planning ou à choisir sur quoi travailler ensuite.",
+      "billingTraps": [
+        {
+          "title": "Pas d'essai sans carte bancaire",
+          "text": "Contrairement à beaucoup d'outils de productivité, Motion exige une carte bancaire dès le début de l'essai de 7 jours — vérifie la date de fin d'essai pour éviter un prélèvement surprise."
+        },
+        {
+          "title": "Business AI facturé par siège, pas par équipe",
+          "text": "Au-delà d'un usage solo, le palier Business AI à 29$/siège/mois facture chaque membre individuellement — le coût grimpe vite pour une équipe de plusieurs personnes."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -61743,7 +61953,17 @@
         "You want to control your schedule manually hour by hour",
         "You're in an exploratory phase without fixed deadlines — not enough structure to optimize"
       ],
-      "threshold": "Worth it if you spend 30+ min/day reorganizing your schedule or deciding what to work on next."
+      "threshold": "Worth it if you spend 30+ min/day reorganizing your schedule or deciding what to work on next.",
+      "billingTraps": [
+        {
+          "title": "No trial without a credit card",
+          "text": "Unlike many productivity tools, Motion requires a credit card from the start of the 7-day trial — check the trial end date to avoid a surprise charge."
+        },
+        {
+          "title": "Business AI billed per seat, not per team",
+          "text": "Beyond solo use, the Business AI tier at $29/seat/month bills each member individually — the cost climbs fast for a multi-person team."
+        }
+      ]
     },
     "useCases": [
       "Planifier automatiquement 10 tâches client avec deadlines différentes",
@@ -61766,7 +61986,9 @@
       "ai-scheduling"
     ],
     "seo": {
-      "metaDescription": "Motion avis 2026 : calendrier IA qui planifie tes tâches automatiquement. Prix 17,48€/mois, alternatives Notion, Todoist."
+      "metaDescription": "Motion avis 2026 : calendrier IA qui planifie tes tâches automatiquement. Prix 17,48€/mois, alternatives Notion, Todoist.",
+      "idealForFr": "Qui jongle avec 3+ projets en parallèle et perd du temps à planifier manuellement, prêt à payer pour déléguer cette décision à l'IA.",
+      "idealForEn": "Anyone juggling 3+ projects in parallel losing time to manual scheduling, ready to pay to delegate that decision to AI."
     }
   },
   {
@@ -64610,7 +64832,7 @@
     "longDescriptionEn": "Scribe captures your screen actions and automatically generates a step-by-step guide with annotated screenshots and explanatory text. In 5 minutes you create documentation that would have taken 2h to write manually.\n\nThe Pro plan at €20/month unlocks PDF export, branded guides, unlimited shares and team features. The free version allows creating basic guides.\n\nIdeal for consultants and ops who document client processes, train teams on tools, or create SOPs. The time savings on documentation are immediate and measurable.",
     "defaultMonthlyPrice": 20,
     "pricing_v5": {
-      "verified_on": "2026-05-08",
+      "verified_on": "2026-06-27",
       "source_domain": "scribehow.com",
       "official_source_url": "https://scribehow.com/pricing",
       "compare_plan_name": "Pro",
@@ -64620,7 +64842,14 @@
       "verification_status": "official_explicit",
       "usage_sensitive": false,
       "location_sensitive": false,
-      "cautions": []
+      "cautions": [
+        "L'extension de capture est limitée hors de Chrome (Safari et autres navigateurs moins supportés)."
+      ],
+      "cautionsEn": [
+        "The capture extension is limited outside Chrome (Safari and other browsers less supported)."
+      ],
+      "tcoExampleFr": "Pour un consultant documentant 4 process/mois sur Pro (20€/mois) : coût SaaS ≈ 20€/mois. Configuration (premiers guides, branding) ≈ 2h à 50€/h = 100€, amorti sur 12 mois ≈ 8€/mois. Maintenance (mise à jour des guides après changement d'outil) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 53€/mois — largement compensé par le temps gagné vs rédaction manuelle (2h → 15 min par guide).",
+      "tcoExampleEn": "For a consultant documenting 4 processes/month on Pro (€20/month): SaaS cost ≈ €20/month. Setup (first guides, branding) ≈ 2h at $50/h = $100, amortized over 12 months ≈ €8/month. Maintenance (updating guides after a tool change) ≈ 30 min/month ≈ €25/month. Real total cost ≈ €53/month — largely offset by time saved vs manual writing (2h → 15 min per guide)."
     },
     "pricingTiers": {
       "free": "Gratuit — guides basiques, partage limité",
@@ -64683,7 +64912,17 @@
         "Tu as besoin de documentation de code — mieux vaut Notion ou Confluence",
         "Tu ne travailles que sur Mac avec Safari — extension Chrome limitée"
       ],
-      "threshold": "Rentable si tu passes plus de 2h/mois sur la documentation de processus — Scribe te ramène ça à 15 minutes."
+      "threshold": "Rentable si tu passes plus de 2h/mois sur la documentation de processus — Scribe te ramène ça à 15 minutes.",
+      "billingTraps": [
+        {
+          "title": "Dépendance forte à l'extension Chrome",
+          "text": "La capture automatique repose sur l'extension Chrome ; un usage sur Safari ou un autre navigateur perd une grande partie de la valeur de l'outil — vérifie ta config navigateur avant de t'abonner."
+        },
+        {
+          "title": "Les guides générés demandent souvent une relecture",
+          "text": "Le gain de temps annoncé (2h → 15 min) suppose peu d'ajustements manuels ; en pratique, relire et corriger les captures automatiques ajoute un temps non négligeable selon la complexité du process."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
@@ -64696,7 +64935,17 @@
         "You need code documentation — Notion or Confluence are better",
         "You only work on Mac with Safari — limited Chrome extension"
       ],
-      "threshold": "Worth it if you spend more than 2h/month on process documentation — Scribe brings that to 15 minutes."
+      "threshold": "Worth it if you spend more than 2h/month on process documentation — Scribe brings that to 15 minutes.",
+      "billingTraps": [
+        {
+          "title": "Strong dependency on the Chrome extension",
+          "text": "Automatic capture relies on the Chrome extension; using Safari or another browser loses much of the tool's value — check your browser setup before subscribing."
+        },
+        {
+          "title": "Generated guides often need a review pass",
+          "text": "The advertised time saving (2h → 15 min) assumes few manual adjustments; in practice, reviewing and correcting automatic captures adds non-trivial time depending on process complexity."
+        }
+      ]
     },
     "useCases": [
       "Créer un guide d'onboarding client pour HubSpot en 10 minutes",
@@ -64727,7 +64976,9 @@
         "replaceFr": "Scribe remplace-t-il la rédaction de documentation manuelle ? Largement oui pour des guides de procédure répétitifs (onboarding, processus internes). Pour une documentation technique plus complexe nécessitant du contexte métier, une rédaction humaine reste utile. Verdict : l'IA augmente fortement la création de guides simples, la documentation complexe reste un travail de rédaction humaine.",
         "replaceEn": "Does Scribe replace manual documentation writing? Largely yes for repetitive procedure guides (onboarding, internal processes). For more complex technical documentation requiring business context, human writing remains useful. Verdict: AI strongly augments simple guide creation, complex documentation remains human writing work.",
         "aiTools": []
-      }
+      },
+      "idealForFr": "Qui documente régulièrement des processus ou forme des clients à des outils, sur Chrome, et veut réduire drastiquement le temps de rédaction.",
+      "idealForEn": "Anyone regularly documenting processes or training clients on tools, on Chrome, wanting to drastically cut down writing time."
     }
   },
   {
