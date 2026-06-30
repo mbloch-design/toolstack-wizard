@@ -136,8 +136,12 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
 export default function DashStackUtile({ result, t }: Props) {
   const [activeFilter, setActiveFilter] = useState<FilterTab>("all");
   const monthlyCostLabel = useMemo(
-    () => formatMonthlyTotal(result.sessionState.selectedTools, t),
-    [result.sessionState.selectedTools, t]
+    () => formatMonthlyTotal(
+      result.sessionState.selectedTools,
+      t,
+      result.sessionState.commercialContracts
+    ),
+    [result.sessionState.commercialContracts, result.sessionState.selectedTools, t]
   );
 
   const allP = useMemo(

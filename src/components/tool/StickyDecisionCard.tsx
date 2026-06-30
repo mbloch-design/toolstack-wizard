@@ -3,6 +3,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { asText } from "@/lib/text";
+import { formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -39,13 +40,17 @@ export default function StickyDecisionCard({
   const ts = computeToolTrimScore(tool);
 
   /* ── Verdict sentence ── */
-  const verdict = lang === "en" && (tool as any).verdictEn ? (tool as any).verdictEn : tool.verdict;
-  const keepItems: string[] = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
-  const avoidItems: string[] = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
+  const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
 
   const verdictText = (() => {
-    const threshold = verdict?.threshold as string | undefined;
-    if (threshold && threshold.length > 0) return threshold;
+    // Short synthesis only — the main content area already shows the full
+    // threshold verbatim in "Décision rapide", so repeating all of it here
+    // duplicates the same paragraph twice on the page. First sentence is
+    // enough for an at-a-glance sidebar card.
+    if (threshold && threshold.length > 0) {
+      const firstSentence = threshold.split(/(?<=[.!?])\s+/)[0];
+      return firstSentence || threshold;
+    }
     if (keepItems.length && avoidItems.length) {
       const k = keepItems[0];
       const a = avoidItems[0];
@@ -64,13 +69,13 @@ export default function StickyDecisionCard({
 
   /* ── Alternative ── */
   const freeAlt = (tool as any).freeAlternative as string | null;
-  const betterAlt = (tool as any).betterAlternative as { tool: string; saving?: number; reason?: string } | null;
+  const betterAlt = (tool as any).betterAlternative as { tool: string; saving?: number; reason?: string; reasonEn?: string } | null;
   const rawAltId = betterAlt?.tool || freeAlt;
   const altName = rawAltId ? asText(rawAltId).split(/[\s([/]/)[0] : null;
   const altTool = rawAltId
     ? alternatives.find(a => a.id === rawAltId || a.slug === rawAltId || (a.name ?? "").toLowerCase() === (altName ?? "").toLowerCase())
     : null;
-  const altReason = betterAlt?.reason
+  const altReason = (lang === "en" ? betterAlt?.reasonEn : undefined) || betterAlt?.reason
     || (lang === "fr"
       ? "Alternative moins chère pour des usages similaires."
       : "Cheaper alternative for similar needs.");
@@ -81,7 +86,7 @@ export default function StickyDecisionCard({
     : isFreemium
     ? "Freemium"
     : displayPrice > 0
-    ? `${displayPrice}€/${t("mois", "mo")}`
+    ? formatPriceLabel(tool, displayPrice, t)
     : t("Sur devis", "On request");
 
   const modelLabel = isFree
@@ -167,6 +172,17 @@ export default function StickyDecisionCard({
             <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 4, letterSpacing: "0.03em" }}>
               {t("Score éditorial", "Editorial score")}
             </span>
+            {/* computeToolTrimScore is a generic heuristic (tool type,
+                substitutability, pros/cons count...) - it doesn't read the
+                verdict text. A tool can score "Mitigé" from that formula
+                while the verdict says it's genuinely good for a specific
+                profile, which reads as a contradiction. Qualify it instead
+                of changing the scoring formula for all 1109 tools. */}
+            {ts.score < 3.5 && keepItems.length > 0 && (
+              <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 2, letterSpacing: "0.01em", maxWidth: 140 }}>
+                {t("pour un usage générique, voir le verdict", "for generic use, see verdict")}
+              </span>
+            )}
           </div>
         </div>
 
@@ -178,49 +194,70 @@ export default function StickyDecisionCard({
         )}
       </div>
 
-      {/* ── 4. CTAs ── */}
-      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "20px 24px" }}>
-        <a
-          href={primaryCtaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            width: "100%", height: 48,
-            background: "var(--color-text)", color: "var(--color-surface)",
-            borderRadius: 8, border: "none",
-            fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
-            textDecoration: "none", cursor: "pointer",
-            transition: "background 160ms ease-out",
-          }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
-        >
-          {hasAffiliateOffer
-            ? t("Voir l'offre", "View offer")
-            : isFree
-            ? t("Essayer gratuitement", "Try for free")
-            : t("Visiter le site", "Visit website")}
-          <ExternalLink style={{ width: 14, height: 14 }} />
-        </a>
-
-        <Link
-          to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            width: "100%", height: 44,
-            background: "transparent", color: "var(--color-text)",
-            borderRadius: 8, border: "1px solid var(--color-border)",
-            fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-            textDecoration: "none", marginTop: 10,
-            transition: "all 160ms ease-out",
-          }}
-          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; }}
-          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; }}
-        >
-          {t("Comparer les alternatives", "Compare alternatives")}
-        </Link>
-      </div>
+      {/* ── 4. CTAs — order is data-driven, not fixed. A tool with a mixed
+           score and real alternatives shouldn't lead with "go buy it";
+           the page just told the reader why it might be the wrong fit.
+           Applies to all 1109 tools automatically, no per-tool authoring. ── */}
+      {(() => {
+        const demoteOffer = ts.score < 3.5 && alternatives.length > 0;
+        const offerBtn = (
+          <a
+            key="offer"
+            href={primaryCtaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%",
+              height: demoteOffer ? 44 : 48,
+              background: demoteOffer ? "transparent" : "var(--color-text)",
+              color: demoteOffer ? "var(--color-text)" : "var(--color-surface)",
+              borderRadius: 8, border: demoteOffer ? "1px solid var(--color-border)" : "none",
+              fontFamily: "var(--font-ui)", fontSize: demoteOffer ? 14 : 15, fontWeight: 500,
+              textDecoration: "none", cursor: "pointer",
+              marginTop: demoteOffer ? 10 : 0,
+              transition: "all 160ms ease-out",
+            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; } else { el.style.background = "var(--color-hover, #1a1a18)"; } }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; } else { el.style.background = "var(--color-text)"; } }}
+          >
+            {hasAffiliateOffer
+              ? t("Voir l'offre", "View offer")
+              : isFree
+              ? t("Essayer gratuitement", "Try for free")
+              : t("Visiter le site", "Visit website")}
+            <ExternalLink style={{ width: 14, height: 14 }} />
+          </a>
+        );
+        const altBtn = (
+          <Link
+            key="alt"
+            to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%",
+              height: demoteOffer ? 48 : 44,
+              background: demoteOffer ? "var(--color-text)" : "transparent",
+              color: demoteOffer ? "var(--color-surface)" : "var(--color-text)",
+              borderRadius: 8, border: demoteOffer ? "none" : "1px solid var(--color-border)",
+              fontFamily: "var(--font-ui)", fontSize: demoteOffer ? 15 : 14, fontWeight: 500,
+              textDecoration: "none", marginTop: demoteOffer ? 0 : 10,
+              transition: "all 160ms ease-out",
+            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.background = "var(--color-hover, #1a1a18)"; } else { el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; } }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; if (demoteOffer) { el.style.background = "var(--color-text)"; } else { el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; } }}
+          >
+            {demoteOffer
+              ? t("Comparer les alternatives", "Compare alternatives")
+              : t("Comparer les alternatives", "Compare alternatives")}
+          </Link>
+        );
+        return (
+          <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "20px 24px" }}>
+            {demoteOffer ? [altBtn, offerBtn] : [offerBtn, altBtn]}
+          </div>
+        );
+      })()}
 
       {/* ── 5. Key facts (4 rows) ── */}
       <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "12px 24px 16px" }}>
@@ -237,6 +274,16 @@ export default function StickyDecisionCard({
             <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>{value}</span>
           </div>
         ))}
+        <Link
+          to={`${prefix}/methodology`}
+          style={{
+            display: "block", marginTop: 10,
+            fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)",
+            textDecoration: "underline",
+          }}
+        >
+          {t("Comment ce score est calculé", "How this score is calculated")}
+        </Link>
       </div>
 
       {/* ── 6. Alternative recommandée ── */}
@@ -259,7 +306,7 @@ export default function StickyDecisionCard({
               </div>
             )}
             <span style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)" }}>
-              {altName}
+              {altTool?.name || altName}
             </span>
           </div>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", lineHeight: 1.5, marginBottom: 10 }}>

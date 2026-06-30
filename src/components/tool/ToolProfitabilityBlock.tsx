@@ -1,0 +1,98 @@
+import type { Tool } from "@/data/types";
+
+interface Props {
+  tool: Tool;
+  lang: string;
+  t: (fr: string, en: string) => string;
+}
+
+/**
+ * Twin "profitable if / too expensive if" card grid. Distinct from the
+ * "Décision rapide" keepIf/avoidIf block above it on the page — concrete
+ * usage thresholds rather than the short quick-decision reasoning, so the
+ * page doesn't repeat the same argument twice.
+ *
+ * Uses verdict.profitableIf/tooExpensiveIf when curated (Asana-style,
+ * feature-fit specific). When absent, auto-generates a usage-frequency /
+ * cost-vs-time angle from defaultMonthlyPrice + betterAlternative/
+ * freeAlternative - deliberately a different axis from keepIf/avoidIf
+ * (which is about feature fit), so the auto-generated fallback doesn't
+ * duplicate "Décision rapide" either. Renders for any priced tool;
+ * returns null only for free tools with nothing to compare against.
+ */
+export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
+  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const curatedProfitable = verdict?.profitableIf;
+  const curatedTooExpensive = verdict?.tooExpensiveIf;
+
+  const price = tool.defaultMonthlyPrice || 0;
+  const ba = (tool as any).betterAlternative;
+  const altReason = lang === "en"
+    ? (ba?.performanceGainEn || ba?.reasonEn || ba?.performanceGain || ba?.reason)
+    : (ba?.performanceGain || ba?.reason);
+  const freeAlt = tool.freeAlternative;
+
+  const profitableIf = curatedProfitable?.length
+    ? curatedProfitable
+    : price > 0
+    ? [
+        t("Tu l'utilises au moins une fois par semaine", "You use it at least once a week"),
+        t(`Le coût mensuel (${Math.round(price)}€) reste minime comparé au temps que ça te fait gagner`, `The monthly cost (€${Math.round(price)}) is small next to the time it saves you`),
+      ]
+    : undefined;
+
+  const tooExpensiveIf = curatedTooExpensive?.length
+    ? curatedTooExpensive
+    : price > 0
+    ? [
+        t("Tu l'utilises moins d'une fois par mois", "You use it less than once a month"),
+        altReason
+          ? t(`Une alternative moins chère couvre déjà l'essentiel : ${altReason}`, `A cheaper alternative already covers the essentials: ${altReason}`)
+          : freeAlt
+          ? t(`${freeAlt} (gratuit) couvre déjà l'essentiel pour un usage occasionnel`, `${freeAlt} (free) already covers the essentials for occasional use`)
+          : t("Une simple version gratuite ou un outil déjà dans ta stack ferait l'affaire", "A simple free version or a tool already in your stack would do"),
+      ]
+    : undefined;
+
+  if (!profitableIf?.length && !tooExpensiveIf?.length) return null;
+
+  const twoCols = !!profitableIf?.length && !!tooExpensiveIf?.length;
+
+  return (
+    <div
+      className={twoCols ? "td-profit-grid td-profit-grid--two" : "td-profit-grid"}
+      style={{ gap: 24 }}
+    >
+      {profitableIf?.length ? (
+        <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 24 }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-text-strong)", marginBottom: 14 }}>
+            {t(`${tool.name} est rentable si…`, `${tool.name} is worth it if…`)}
+          </p>
+          <ul className="td-judgment">
+            {profitableIf.map((item) => (
+              <li key={item} className="td-judgment-item td-judgment-item--pro">
+                <span className="td-judgment-marker td-judgment-marker--pro" aria-hidden="true">+</span>
+                <span className="td-judgment-text">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      {tooExpensiveIf?.length ? (
+        <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 24 }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 14 }}>
+            {t(`${tool.name} est probablement trop cher si…`, `${tool.name} is probably too expensive if…`)}
+          </p>
+          <ul className="td-judgment">
+            {tooExpensiveIf.map((item) => (
+              <li key={item} className="td-judgment-item td-judgment-item--con">
+                <span className="td-judgment-marker td-judgment-marker--con" aria-hidden="true">−</span>
+                <span className="td-judgment-text">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  );
+}

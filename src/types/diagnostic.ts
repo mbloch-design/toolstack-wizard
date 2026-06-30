@@ -1,5 +1,164 @@
 export type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
 
+export type ToolBillingChoice =
+  | "free"
+  | "paid"
+  | "team"
+  | "single_app"
+  | "bundle"
+  | "included"
+  | "one_time"
+  | "usage"
+  | "credits"
+  | "marketplace"
+  | "custom_quote"
+  | "unknown";
+
+export type ToolBillingModel =
+  | "free"
+  | "subscription"
+  | "seat"
+  | "team"
+  | "bundle"
+  | "one_time"
+  | "usage_based"
+  | "credits"
+  | "marketplace"
+  | "custom_quote"
+  | "included";
+
+export interface ToolBillingOption {
+  value: ToolBillingChoice;
+  label_fr: string;
+  label_en: string;
+  price_monthly_eur?: number | null;
+  price_original?: number | null;
+  currency?: string | null;
+  note_fr?: string;
+  note_en?: string;
+  needs_verification?: boolean;
+}
+
+export type ToolRelationKind =
+  | "plugin_of"
+  | "included_in"
+  | "complements"
+  | "alternative_to"
+  | "integrates_with";
+
+export interface ToolRelation {
+  kind: ToolRelationKind;
+  targetToolId: string;
+  needKeys?: string[];
+  confidence?: "catalog" | "curated" | "inferred";
+}
+
+export type WorkflowMethod = "tool" | "manual" | "mixed" | "outsourced" | "unknown";
+
+export type AiContributionMode =
+  | "none"
+  | "integrated"
+  | "external"
+  | "mixed"
+  | "automated"
+  | "unknown";
+
+export type AiCapabilityId =
+  | "research_ideation"
+  | "generate_text"
+  | "generate_visual"
+  | "generate_layout"
+  | "generate_code"
+  | "generate_3d"
+  | "organize_classify"
+  | "transcribe_translate"
+  | "edit_enhance"
+  | "remove_extend"
+  | "animate"
+  | "render_upscale"
+  | "analyze_validate"
+  | "automate_workflow"
+  | "other";
+
+export type AiActorSource = "integrated" | "external" | "automation";
+export type AiUsageFrequency = "occasional" | "regular" | "systematic";
+export type AiUsageConstraint =
+  | "none"
+  | "credits"
+  | "quota"
+  | "reliability"
+  | "privacy"
+  | "rights"
+  | "unknown";
+
+export interface AiWorkflowActor {
+  id: string;
+  source: AiActorSource;
+  toolId?: string;
+  /** Optional named AI capability used inside the host application (for example Firefly in Photoshop). */
+  featureToolId?: string;
+  featureName?: string;
+  capabilityIds: AiCapabilityId[];
+  frequency?: AiUsageFrequency;
+  constraints?: AiUsageConstraint[];
+  handlesSensitiveData?: boolean;
+  notes?: string;
+}
+
+export interface WorkflowUsage {
+  id: string;
+  objectiveId: string;
+  objectiveLabelFr: string;
+  objectiveLabelEn: string;
+  method: WorkflowMethod;
+  toolIds: string[];
+  customMethod?: string;
+  aiMode: AiContributionMode;
+  aiToolIds: string[];
+  aiActors?: AiWorkflowActor[];
+  aiNotes?: string;
+  importance?: "low" | "medium" | "high" | "critical";
+  frequency?: "rare" | "monthly" | "weekly" | "daily";
+  satisfaction?: "good" | "acceptable" | "friction" | "blocked";
+}
+
+export type CommercialAccessMode =
+  | "suite"
+  | "mixed"
+  | "single_products"
+  | "team_employer"
+  | "client_paid"
+  | "included_elsewhere"
+  | "free"
+  | "usage_based"
+  | "one_time"
+  | "unknown";
+
+export type CommercialPayer = "self" | "employer" | "client" | "shared" | "unknown";
+
+export type AiAllowanceStatus =
+  | "enough"
+  | "sometimes_limited"
+  | "frequently_limited"
+  | "extra_purchases"
+  | "unknown";
+
+export interface CommercialContract {
+  id: string;
+  familyId: string;
+  familyName: string;
+  accessMode: CommercialAccessMode;
+  planId?: string;
+  planLabel?: string;
+  payer: CommercialPayer;
+  productIds: string[];
+  monthlyPrice?: number;
+  aiAllowanceStatus?: AiAllowanceStatus;
+  variableMonthlyPrice?: number;
+  currency?: string;
+  confirmed: boolean;
+}
+
 export interface SessionState {
   firstName: string;
   tjm: number;
@@ -10,6 +169,9 @@ export interface SessionState {
   complementarySkills: Persona[];
   primarySpecialty?: string;
   complementarySpecialties?: string[];
+  toolUsageMap?: Record<string, string[]>;
+  workflowUsages?: WorkflowUsage[];
+  commercialContracts?: CommercialContract[];
   email?: string;
   emailPreferences?: {
     summary: boolean;
@@ -40,8 +202,17 @@ export interface Tool {
   priceCurrency?: string;
   category: string;
   functional_needs: string[];
+  verticals?: string[];
+  host_app?: string | null;
+  alternatives?: string[];
+  complements?: string[];
+  integrates_with?: string[];
+  relations?: ToolRelation[];
+  provider_id?: string;
+  commercial_family?: string;
+  substitution_cluster_v2?: string | null;
   pertinence_by_persona?: Record<Persona, number>;
-  tool_type: "core" | "satellite" | "gestion" | "ia";
+  tool_type: "core" | "metier" | "satellite" | "gestion" | "ia" | "plugin" | "specialise" | "bundle";
   ia_use_case?: string;
   usage: "high" | "medium" | "low" | "dormant";
   prescription_quality: "ferme" | "question" | "oui";
@@ -66,6 +237,12 @@ export interface Tool {
     compare_price_monthly_eur?: number;
     compare_plan_name?: string;
     compare_plan_kind?: string;
+    billing_model?: ToolBillingModel;
+    billing_options?: ToolBillingOption[];
+    price_original?: number;
+    price_original_currency?: string;
+    currency?: string;
+    conversion_rate_to_eur?: number;
     price_reliability?: string;
     usage_sensitive?: boolean;
     location_sensitive?: boolean;
@@ -75,7 +252,7 @@ export interface Tool {
     official_source_url?: string;
     verification_status?: string;
   } | null;
-  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  selectedOffer?: ToolBillingChoice;
   catalogMonthlyPrice?: number;
   catalogMonthlyPriceCurrency?: string;
   selectedPriceIsEstimate?: boolean;
@@ -85,6 +262,8 @@ export interface Tool {
   includedInBundle?: boolean;
   /** Runtime: name of the bundle parent that includes this tool */
   includedVia?: string;
+  /** Runtime: commercial contract carrying this product's cost */
+  commercialContractId?: string;
 }
 
 export interface Cluster {
@@ -108,8 +287,10 @@ export interface DiscoveryQuestion {
   id: string;
   persona: Persona | "ALL";
   question: string;
+  questionEn?: string;
   subtitle: string;
-  options: { label: string; impact: "keep" | "review" | "cancel"; affectedTools?: string[] }[];
+  subtitleEn?: string;
+  options: { label: string; labelEn?: string; impact: "keep" | "review" | "cancel"; affectedTools?: string[] }[];
   condition_tool_ids: string[];
   condition_type: "any" | "all";
 }
@@ -122,6 +303,14 @@ export interface DiagnosticResult {
   doublons: DoubleRule[];
   prescriptions: { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] };
   recommendations: Tool[];
+  recommendationEvidence?: Record<string, {
+    needId?: string;
+    labelFr: string;
+    labelEn: string;
+    reasonFr: string;
+    reasonEn: string;
+    confidence: "low" | "medium" | "high";
+  }>;
   insights: DiagnosticInsights;
   healthScore: number;
   healthLabel: "Optimisée" | "Correcte" | "À revoir" | "Critique";
@@ -189,7 +378,7 @@ export interface DiagnosticFocusArea {
 
 export interface DiagnosticAnswerSignal {
   id: string;
-  source: "onboarding" | "discovery" | "closing";
+  source: "onboarding" | "workflow" | "discovery" | "closing";
   severity: DiagnosticSeverity;
   labelFr: string;
   labelEn: string;
@@ -239,6 +428,122 @@ export interface DiagnosticCalibration {
   flags: DiagnosticCalibrationFlag[];
 }
 
+export type AiDiagnosticFindingKind =
+  | "overlap"
+  | "risk"
+  | "access_gap"
+  | "usage_pressure"
+  | "mapping_gap"
+  | "automation_opportunity";
+
+export type AiAccessStatus =
+  | "included"
+  | "included_limited"
+  | "separate_subscription"
+  | "usage_based"
+  | "sponsored"
+  | "free"
+  | "unresolved";
+
+export interface AiDiagnosticActorSummary {
+  id: string;
+  actorKey: string;
+  source: AiActorSource;
+  sourceLabelFr: string;
+  sourceLabelEn: string;
+  toolId?: string;
+  toolName: string;
+  hostToolName?: string;
+  featureToolId?: string;
+  featureName?: string;
+  accessStatus: AiAccessStatus;
+  accessLabelFr: string;
+  accessLabelEn: string;
+  commercialContractId?: string;
+  commercialContractName?: string;
+  allowanceStatus?: AiAllowanceStatus;
+  allowanceLabelFr?: string;
+  allowanceLabelEn?: string;
+  variableMonthlyCost?: number;
+  capabilityIds: AiCapabilityId[];
+  capabilityLabelsFr: string[];
+  capabilityLabelsEn: string[];
+  frequency?: AiUsageFrequency;
+  frequencyLabelFr?: string;
+  frequencyLabelEn?: string;
+  constraints: AiUsageConstraint[];
+  handlesSensitiveData: boolean;
+}
+
+export interface AiDiagnosticActorRole {
+  objectiveId: string;
+  objectiveLabelFr: string;
+  objectiveLabelEn: string;
+  source: AiActorSource;
+  sourceLabelFr: string;
+  sourceLabelEn: string;
+  capabilityIds: AiCapabilityId[];
+  capabilityLabelsFr: string[];
+  capabilityLabelsEn: string[];
+  frequency?: AiUsageFrequency;
+  frequencyLabelFr?: string;
+  frequencyLabelEn?: string;
+}
+
+export interface AiDiagnosticGlobalActorSummary
+  extends AiDiagnosticActorSummary {
+  sources: AiActorSource[];
+  objectiveCount: number;
+  roles: AiDiagnosticActorRole[];
+}
+
+export interface AiDiagnosticWorkflowSummary {
+  objectiveId: string;
+  objectiveLabelFr: string;
+  objectiveLabelEn: string;
+  mode: AiContributionMode;
+  actors: AiDiagnosticActorSummary[];
+}
+
+export interface AiDiagnosticFinding {
+  id: string;
+  kind: AiDiagnosticFindingKind;
+  severity: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  detailFr: string;
+  detailEn: string;
+  actionFr: string;
+  actionEn: string;
+  objectiveId: string;
+  objectiveIds?: string[];
+  objectiveLabelsFr?: string[];
+  objectiveLabelsEn?: string[];
+  occurrenceCount?: number;
+  toolIds: string[];
+  actorIds?: string[];
+  actorKeys?: string[];
+  capabilityId?: AiCapabilityId;
+  reviewRecommended: boolean;
+}
+
+export interface DiagnosticAiAnalysis {
+  objectiveCount: number;
+  actorCount: number;
+  actorOccurrenceCount: number;
+  capabilityCount: number;
+  integratedActorCount: number;
+  externalActorCount: number;
+  automationActorCount: number;
+  systematicActorCount: number;
+  constrainedActorCount: number;
+  resolvedAccessCount: number;
+  unresolvedAccessCount: number;
+  globalActors: AiDiagnosticGlobalActorSummary[];
+  workflows: AiDiagnosticWorkflowSummary[];
+  findings: AiDiagnosticFinding[];
+}
+
 export interface DiagnosticInsights {
   profile: {
     id: StackProfileId;
@@ -266,6 +571,7 @@ export interface DiagnosticInsights {
   functionalCoverage: FunctionalCoverageItem[];
   focusAreas: DiagnosticFocusArea[];
   answerSignals: DiagnosticAnswerSignal[];
+  aiAnalysis: DiagnosticAiAnalysis;
   confidence: DiagnosticConfidence;
   calibration: DiagnosticCalibration;
   metrics: {
@@ -284,6 +590,11 @@ export interface DiagnosticInsights {
     answeredClosingCount: number;
     protectedToolCount: number;
     challengedToolCount: number;
+    aiObjectiveCount: number;
+    aiActorCount: number;
+    aiCapabilityCount: number;
+    aiRiskCount: number;
+    aiOverlapCount: number;
   };
   generatedAt: string;
 }

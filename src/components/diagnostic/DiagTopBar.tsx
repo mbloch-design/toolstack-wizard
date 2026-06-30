@@ -2,7 +2,10 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 import type { SessionState } from "@/types/diagnostic";
-import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
+import {
+  formatMonthlyTotal,
+  getPricingCaptureSummary,
+} from "@/utils/diagnosticPricing";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 
 interface Props {
@@ -15,9 +18,21 @@ interface Props {
 
 export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }: Props) {
   const totalCostLabel = useMemo(
-    () => formatMonthlyTotal(session.selectedTools, t),
-    [session.selectedTools, t]
+    () => formatMonthlyTotal(
+      session.selectedTools,
+      t,
+      session.commercialContracts
+    ),
+    [session.commercialContracts, session.selectedTools, t]
   );
+  const pricingSummary = useMemo(
+    () => getPricingCaptureSummary(
+      session.selectedTools,
+      session.commercialContracts
+    ),
+    [session.commercialContracts, session.selectedTools]
+  );
+  const hasCommercialAccessToClarify = pricingSummary.needsVerificationCount > 0;
 
   const showCounter = session.selectedTools.length > 0;
 
@@ -63,7 +78,11 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
             <div className="hidden items-center gap-3 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-mono shrink-0 shadow-sm lg:flex">
               <span className="text-foreground">{session.selectedTools.length} {t("outils", "tools")}</span>
               <span className="text-muted-foreground">·</span>
-              <span className="text-foreground">{totalCostLabel}/{t("mois", "mo")}</span>
+              <span className={hasCommercialAccessToClarify ? "text-muted-foreground" : "text-foreground"}>
+                {hasCommercialAccessToClarify
+                  ? t("accès à préciser", "access to clarify")
+                  : `${totalCostLabel}/${t("mois", "mo")}`}
+              </span>
             </div>
           )}
 

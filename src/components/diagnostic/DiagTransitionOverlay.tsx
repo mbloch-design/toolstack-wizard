@@ -5,9 +5,10 @@ interface Props {
   message: string;
   toolCount: number;
   onComplete: () => void;
+  t: (fr: string, en: string) => string;
 }
 
-export default function DiagTransitionOverlay({ message, toolCount, onComplete }: Props) {
+export default function DiagTransitionOverlay({ message, toolCount, onComplete, t }: Props) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -42,7 +43,10 @@ export default function DiagTransitionOverlay({ message, toolCount, onComplete }
         </div>
         {toolCount > 0 && (
           <p className="text-sm text-muted-foreground">
-            {toolCount} outils à analyser...
+            {t(
+              `${toolCount} outil${toolCount > 1 ? "s" : ""} à analyser...`,
+              `${toolCount} tool${toolCount > 1 ? "s" : ""} to analyze...`
+            )}
           </p>
         )}
       </div>

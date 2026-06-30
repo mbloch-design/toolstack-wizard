@@ -13,25 +13,52 @@ type PricingV5Like = {
   compare_price_monthly_eur?: number | string | null;
   compare_plan_name?: string | null;
   compare_plan_kind?: string | null;
+  billing_model?: string | null;
+  billing_options?: BillingOptionLike[] | null;
 } | null | undefined;
 
+type BillingChoice =
+  | "free"
+  | "paid"
+  | "team"
+  | "single_app"
+  | "bundle"
+  | "included"
+  | "one_time"
+  | "usage"
+  | "credits"
+  | "marketplace"
+  | "custom_quote"
+  | "unknown";
+
+type BillingOptionLike = {
+  value?: BillingChoice | string | null;
+  price_monthly_eur?: number | string | null;
+  price_original?: number | string | null;
+  currency?: string | null;
+  needs_verification?: boolean | null;
+} | null;
+
 type ToolPriceLike = {
+  id?: string;
   price?: number;
   priceCurrency?: PriceCurrency;
   catalogMonthlyPrice?: number;
   catalogMonthlyPriceCurrency?: PriceCurrency;
-  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  selectedOffer?: BillingChoice;
   selectedPriceIsEstimate?: boolean;
   pricing_v5?: PricingV5Like;
 };
 
 type PricingAuditToolLike = ToolPriceLike & {
-  selectedOffer?: "free" | "paid" | "team" | "unknown";
+  selectedOffer?: BillingChoice;
   selectedPriceIsEstimate?: boolean;
   pricing_v5?: {
     compare_price_monthly_eur?: number | string | null;
     compare_plan_name?: string | null;
     compare_plan_kind?: string | null;
+    billing_model?: string | null;
+    billing_options?: BillingOptionLike[] | null;
     price_reliability?: string | null;
     verification_status?: string | null;
     source_domain?: string | null;
@@ -47,6 +74,8 @@ export type PricingAudit = {
 };
 
 export const USD_TO_EUR_RATE = 0.92;
+const ZERO_MONTHLY_OFFERS = new Set<BillingChoice>(["free", "included", "one_time"]);
+const VARIABLE_OFFERS = new Set<BillingChoice>(["usage", "credits", "marketplace", "custom_quote", "unknown"]);
 
 function toNumber(value: unknown): number | null {
   if (typeof value === "number" && Number.isFinite(value)) return value;
@@ -150,12 +179,35 @@ function toEur(value: number, currency?: PriceCurrency) {
   return value;
 }
 
+function findBillingOption(tool: ToolPriceLike, offer?: BillingChoice) {
+  if (!offer) return null;
+  const options = tool.pricing_v5?.billing_options;
+  if (!Array.isArray(options)) return null;
+  return options.find((option) => option?.value === offer) || null;
+}
+
+function getBillingOptionAmountEur(option: BillingOptionLike) {
+  if (!option) return null;
+  const monthly = toNumber(option.price_monthly_eur);
+  if (monthly != null) return monthly;
+  const original = toNumber(option.price_original);
+  const currency = normalizeCurrency(option.currency);
+  if (original != null && currency) return toEur(original, currency);
+  return null;
+}
+
 function getDisplayAmountEur(tool: ToolPriceLike) {
+  if (tool.selectedOffer && ZERO_MONTHLY_OFFERS.has(tool.selectedOffer)) return 0;
+
+  const option = findBillingOption(tool, tool.selectedOffer);
+  const optionAmount = getBillingOptionAmountEur(option);
+  if (optionAmount != null) return optionAmount;
+
   const comparePrice = toNumber(tool.pricing_v5?.compare_price_monthly_eur);
   if (
     comparePrice != null &&
     tool.selectedPriceIsEstimate !== false &&
-    (tool.selectedOffer === undefined || tool.selectedOffer !== "free")
+    (tool.selectedOffer === undefined || !ZERO_MONTHLY_OFFERS.has(tool.selectedOffer))
   ) {
     return comparePrice;
   }
@@ -170,14 +222,19 @@ export function formatMoney(value: number, currency?: PriceCurrency) {
   return `${formatted} €`;
 }
 
-export function formatMonthlyEur(value: number) {
-  return `${formatNumber(value)} €/mois`;
+export function formatMonthlyEur(
+  value: number,
+  t?: (fr: string, en: string) => string
+) {
+  return `${formatNumber(value)} €/${t ? t("mois", "mo") : "mois"}`;
 }
 
 export function formatToolMonthlyBudget(tool: ToolPriceLike, t: (fr: string, en: string) => string) {
   const amount = getDisplayAmountEur(tool);
+  if (tool.selectedOffer === "one_time") return t("Achat unique", "One-time");
+  if (tool.selectedOffer === "included") return t("Déjà inclus", "Already included");
   if (tool.selectedOffer === "free" || amount <= 0) return t("Gratuit", "Free");
-  return formatMonthlyEur(amount);
+  return formatMonthlyEur(amount, t);
 }
 
 export function formatToolMonthlyPrice(
@@ -186,20 +243,25 @@ export function formatToolMonthlyPrice(
   options: { approximate?: boolean; catalog?: boolean } = {}
 ) {
   const amount = getDisplayAmountEur(tool);
+  if (tool.selectedOffer === "one_time") return t("Achat unique", "One-time");
+  if (tool.selectedOffer === "included") return t("Déjà inclus", "Already included");
   if (amount <= 0) return t("Gratuit", "Free");
 
   const prefix = options.approximate ? "≈ " : "";
   const suffix = options.catalog ? ` ${t("catalogue", "catalog")}` : "";
-  return `${prefix}${formatMonthlyEur(amount)}${suffix}`;
+  return `${prefix}${formatMonthlyEur(amount, t)}${suffix}`;
 }
 
 export function formatMonthlyTotal(
   tools: ToolPriceLike[],
-  _t: (fr: string, en: string) => string
+  _t: (fr: string, en: string) => string,
+  contracts: CommercialContract[] = []
 ) {
-  let total = 0;
+  let total = contractMonthlyTotal(contracts);
+  const coveredIds = contractCoveredProductIds(contracts);
 
   for (const tool of tools) {
+    if ("id" in tool && typeof tool.id === "string" && coveredIds.has(tool.id)) continue;
     const amount = getDisplayAmountEur(tool);
     if (amount <= 0) continue;
     total += amount;
@@ -209,15 +271,19 @@ export function formatMonthlyTotal(
 }
 
 export function getMonthlyBudgetBreakdown(
-  tools: ToolPriceLike[]
+  tools: ToolPriceLike[],
+  contracts: CommercialContract[] = []
 ) {
-  let confirmedEur = 0;
+  let confirmedEur = contractMonthlyTotal(contracts);
   let toVerifyEur = 0;
+  const coveredIds = contractCoveredProductIds(contracts);
 
   for (const tool of tools) {
+    if ("id" in tool && typeof tool.id === "string" && coveredIds.has(tool.id)) continue;
     const amount = getDisplayAmountEur(tool);
-    if (amount <= 0 || tool.selectedOffer === "free") continue;
-    const hasReliablePrice = tool.selectedOffer !== "unknown" && !tool.selectedPriceIsEstimate;
+    if (tool.selectedOffer && ZERO_MONTHLY_OFFERS.has(tool.selectedOffer)) continue;
+    if (amount <= 0) continue;
+    const hasReliablePrice = !tool.selectedOffer || (!VARIABLE_OFFERS.has(tool.selectedOffer) && !tool.selectedPriceIsEstimate);
     if (hasReliablePrice) confirmedEur += amount;
     else toVerifyEur += amount;
   }
@@ -239,6 +305,26 @@ export function getPricingAudit(
     ? t(`Source : ${sourceDomain}`, `Source: ${sourceDomain}`)
     : t("Source catalogue ToolTrim", "ToolTrim catalog source");
 
+  if (tool.selectedOffer === "one_time") {
+    return {
+      status: "confirmed",
+      tone: "ok",
+      label: t("Achat unique", "One-time purchase"),
+      detail: t("Licence ou achat ponctuel : aucun coût mensuel retenu.", "One-time license or purchase: no monthly cost kept."),
+      needsVerification: false,
+    };
+  }
+
+  if (tool.selectedOffer === "included") {
+    return {
+      status: "confirmed",
+      tone: "ok",
+      label: t("Déjà inclus", "Already included"),
+      detail: t("L'outil est retenu comme inclus dans une suite, une équipe ou une licence existante.", "The tool is kept as included in an existing suite, team or license."),
+      needsVerification: false,
+    };
+  }
+
   if (tool.selectedOffer === "free" || amount <= 0) {
     return {
       status: "free",
@@ -249,14 +335,14 @@ export function getPricingAudit(
     };
   }
 
-  if (tool.selectedOffer === "unknown") {
+  if (tool.selectedOffer && VARIABLE_OFFERS.has(tool.selectedOffer)) {
     return {
       status: "unknown",
       tone: "warning",
-      label: t("Plan à vérifier", "Plan to check"),
+      label: t("Mode à vérifier", "Mode to check"),
       detail: t(
-        "Je garde ce montant comme repère, mais le plan exact reste à confirmer.",
-        "I keep this amount as a guide, but the exact plan still needs confirmation."
+        "Je garde ce montant comme repère, mais le mode exact reste à confirmer.",
+        "I keep this amount as a guide, but the exact mode still needs confirmation."
       ),
       needsVerification: true,
     };
@@ -267,7 +353,7 @@ export function getPricingAudit(
       status: "catalog",
       tone: "info",
       label: t("Prix catalogue", "Catalog price"),
-      detail: `${sourceLabel} · ${formatMonthlyEur(amount)}`,
+      detail: `${sourceLabel} · ${formatMonthlyEur(amount, t)}`,
       needsVerification: true,
     };
   }
@@ -275,35 +361,76 @@ export function getPricingAudit(
   return {
     status: "confirmed",
     tone: "ok",
-    label: t("Plan confirmé", "Confirmed plan"),
-    detail: formatMonthlyEur(amount),
+    label: t("Mode confirmé", "Confirmed mode"),
+    detail: formatMonthlyEur(amount, t),
     needsVerification: false,
   };
 }
 
-export function getPricingCaptureSummary(tools: PricingAuditToolLike[]) {
+export function getPricingCaptureSummary(
+  tools: PricingAuditToolLike[],
+  contracts: CommercialContract[] = []
+) {
   const summary = {
     freeCount: 0,
     paidCount: 0,
     teamCount: 0,
-    unknownPlanCount: 0,
+    includedCount: 0,
+    oneTimeCount: 0,
+    variableCount: 0,
+    unknownModeCount: 0,
     estimateCount: 0,
     missingCurrencyCount: 0,
     needsVerificationCount: 0,
   };
 
-  for (const tool of tools) {
+  const coveredIds = contractCoveredProductIds(contracts);
+  const contractScopedIds = new Set(
+    contracts.flatMap((contract) => contract.productIds || [])
+  );
+  const verificationKeys = new Set<string>();
+  for (const [index, tool] of tools.entries()) {
+    const verificationKey =
+      "id" in tool && typeof tool.id === "string"
+        ? `tool:${tool.id}`
+        : `tool-index:${index}`;
+    if ("id" in tool && typeof tool.id === "string" && coveredIds.has(tool.id)) {
+      summary.includedCount += 1;
+      continue;
+    }
+    if ("id" in tool && typeof tool.id === "string" && contractScopedIds.has(tool.id)) {
+      summary.includedCount += 1;
+      continue;
+    }
     const amount = getDisplayAmountEur(tool);
-    if (tool.selectedOffer === "free" || amount <= 0) summary.freeCount += 1;
+    if (tool.selectedOffer === "included") summary.includedCount += 1;
+    else if (tool.selectedOffer === "one_time") summary.oneTimeCount += 1;
+    else if (tool.selectedOffer === "unknown") {
+      summary.unknownModeCount += 1;
+      verificationKeys.add(verificationKey);
+    } else if (tool.selectedOffer && VARIABLE_OFFERS.has(tool.selectedOffer)) {
+      summary.variableCount += 1;
+      verificationKeys.add(verificationKey);
+    }
+    else if (tool.selectedOffer === "free" || amount <= 0) summary.freeCount += 1;
     else if (tool.selectedOffer === "team") summary.teamCount += 1;
-    else if (tool.selectedOffer === "unknown") summary.unknownPlanCount += 1;
     else summary.paidCount += 1;
 
-    if (tool.selectedPriceIsEstimate && amount > 0) summary.estimateCount += 1;
+    if (tool.selectedPriceIsEstimate && amount > 0) {
+      summary.estimateCount += 1;
+      verificationKeys.add(verificationKey);
+    }
   }
 
-  summary.needsVerificationCount =
-    summary.unknownPlanCount + summary.estimateCount + summary.missingCurrencyCount;
+  contracts
+    .filter((contract) => !contract.confirmed)
+    .forEach((contract) => verificationKeys.add(`contract:${contract.id}`));
+  summary.needsVerificationCount = verificationKeys.size;
 
   return summary;
 }
+import type { CommercialContract } from "@/types/diagnostic";
+import {
+  contractCoveredProductIds,
+  contractMonthlyTotal,
+} from "@/lib/commercialAccess";

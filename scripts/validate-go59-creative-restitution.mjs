@@ -27,12 +27,12 @@ ok(
 
 ok(
   "pre-verdict counts creative production, satellites and delivery",
-  preVerdict.includes("CREATIVE_PRODUCTION_IDS") &&
-    preVerdict.includes("CREATIVE_SATELLITE_IDS") &&
-    preVerdict.includes("CREATIVE_DELIVERY_IDS") &&
-    preVerdict.includes("creativeProductionCount") &&
-    preVerdict.includes("creativeSatelliteCount") &&
-    preVerdict.includes("creativeDeliveryCount"),
+  preVerdict.includes("classifyCreativeWorkflowTools") &&
+    preVerdict.includes("creativeWorkflow.produce.length") &&
+    preVerdict.includes("creativeWorkflow.accelerate.length") &&
+    preVerdict.includes("creativeWorkflow.publish.length") &&
+    preVerdict.includes("creativeWorkflow.review.length") &&
+    preVerdict.includes("aiAnalysis.capabilityCount"),
   "creative pre-verdict should surface the key workflow dimensions"
 );
 
@@ -40,7 +40,7 @@ ok(
   "overview thesis adapts to creative persona",
   overview.includes('result.sessionState.persona === "SOFIA"') &&
     overview.includes("fluidité de ta chaîne créative") &&
-    overview.includes("plugins et validations autour"),
+    overview.includes("ressources, la diffusion, les validations"),
   "the final report should not tell the same story to every persona"
 );
 
@@ -50,7 +50,7 @@ ok(
     overview.includes("getCreativeWorkflowStages") &&
     overview.includes("CreativeWorkflowCard") &&
     overview.includes("Ta stack comme une chaîne de production") &&
-    overview.includes("plugins, assets, templates, presets, validation et licences"),
+    overview.includes("plugins, assets, diffusion, archives, validation et licences"),
   "restitution should explain the creative stack as a production chain"
 );
 
@@ -59,10 +59,10 @@ ok(
   overview.includes('id: "produce"') &&
     overview.includes('id: "accelerate"') &&
     overview.includes('id: "review"') &&
+    overview.includes('id: "publish"') &&
     overview.includes('id: "secure"') &&
-    overview.includes("figma-iconify") &&
-    overview.includes("frame-io") &&
-    overview.includes("envato-elements"),
+    overview.includes("classifyCreativeWorkflowTools") &&
+    overview.includes("Licences, droits d’usage, plans payés et coûts à préciser"),
   "workflow stages should include obvious tools and hidden peripheral tools"
 );
 

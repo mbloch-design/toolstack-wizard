@@ -15,6 +15,7 @@ import type {
   StackProfileId,
   Tool,
 } from "@/types/diagnostic";
+import { buildAiDiagnosticAnalysis } from "@/lib/aiDiagnostic";
 
 type ToolScoreMap = Map<string, { pertinence: number; valueIndex: number; scoreFinal: number }>;
 
@@ -36,6 +37,7 @@ type BuildInsightsInput = {
     protectedToolCount: number;
     challengedToolCount: number;
   };
+  recommendationEvidence?: DiagnosticResult["recommendationEvidence"];
 };
 
 const PERSONA_COPY: Record<Persona, { labelFr: string; labelEn: string; angleFr: string; angleEn: string }> = {
@@ -380,7 +382,9 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
   }
 
   for (const signal of input.answerSignals || []) {
-    if (signal.source !== "closing" || signal.severity === "low") continue;
+    const isClosingRisk = signal.source === "closing";
+    const isAiRisk = signal.source === "workflow" && signal.id.startsWith("ai-");
+    if ((!isClosingRisk && !isAiRisk) || signal.severity === "low") continue;
     flags.push({
       id: signal.id,
       severity: signal.severity,
@@ -394,7 +398,15 @@ function buildRiskFlags(input: BuildInsightsInput, coverage: FunctionalCoverageI
   }
 
   return flags
-    .sort((a, b) => severityRank(b) - severityRank(a) || Number(b.impactMonthly || 0) - Number(a.impactMonthly || 0))
+    .sort((a, b) => {
+      const aiCriticality = (flag: DiagnosticRiskFlag) =>
+        flag.id.startsWith("ai-risk-") && flag.severity === "high" ? 1 : 0;
+      return (
+        severityRank(b) - severityRank(a) ||
+        aiCriticality(b) - aiCriticality(a) ||
+        Number(b.impactMonthly || 0) - Number(a.impactMonthly || 0)
+      );
+    })
     .slice(0, 6);
 }
 
@@ -417,6 +429,7 @@ function chooseMaturity(input: BuildInsightsInput, riskFlags: DiagnosticRiskFlag
   const toolCount = input.sessionState.selectedTools.length;
   const wasteRatio = input.stackTotalCost > 0 ? input.estimatedWaste / input.stackTotalCost : 0;
 
+  if (toolCount <= 3) return "emerging";
   if (input.healthScore >= 80 && !hasHighRisk) return "optimized";
   if (wasteRatio >= 0.35 || toolCount >= 14) return "overbuilt";
   if (toolCount >= 6 && input.healthScore >= 55) return "structured";
@@ -582,6 +595,15 @@ function buildCalibration(
   const personaUncertainty = (input.answerSignals || []).find((signal) =>
     signal.id === "onboarding_persona_uncertain" || signal.id === "onboarding_persona_hybrid"
   );
+  const recommendationsWithoutEvidence = input.recommendations.filter((tool) => {
+    const evidence = input.recommendationEvidence?.[tool.id];
+    return !(
+      evidence?.labelFr?.trim() &&
+      evidence.labelEn?.trim() &&
+      evidence.reasonFr?.trim() &&
+      evidence.reasonEn?.trim()
+    );
+  });
 
   if (personaUncertainty) {
     flags.push({
@@ -681,6 +703,20 @@ function buildCalibration(
     });
   }
 
+  if (recommendationsWithoutEvidence.length > 0) {
+    flags.push({
+      id: "recommendation_without_evidence",
+      dimension: "actions",
+      severity: "high",
+      labelFr: "Recommandation sans preuve",
+      labelEn: "Recommendation without evidence",
+      detailFr: `${recommendationsWithoutEvidence.length} piste(s) outil n'ont pas de raison lisible.`,
+      detailEn: `${recommendationsWithoutEvidence.length} tool suggestion(s) have no readable reason.`,
+      actionFr: "Retirer ces pistes de la restitution principale tant qu'une preuve n'est pas disponible.",
+      actionEn: "Remove these ideas from the main restitution until evidence is available.",
+    });
+  }
+
   if (highRiskCount >= 3) {
     flags.push({
       id: "many_high_risks",
@@ -739,6 +775,9 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
   const wasteRatio = input.stackTotalCost > 0 ? input.estimatedWaste / input.stackTotalCost : 0;
   const confidence = buildConfidence(input);
   const calibration = buildCalibration(input, riskFlags, coverage, confidence);
+  const aiAnalysis = buildAiDiagnosticAnalysis(input.sessionState);
+  const uniquePrescriptionToolCount = (predicate: (prescription: Prescription) => boolean) =>
+    new Set(prescriptions.filter(predicate).map((prescription) => prescription.toolId)).size;
 
   return {
     profile: {
@@ -758,6 +797,7 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
     functionalCoverage: coverage,
     focusAreas: buildFocusAreas(input, riskFlags, coverage),
     answerSignals: input.answerSignals || [],
+    aiAnalysis,
     confidence,
     calibration,
     metrics: {
@@ -768,14 +808,25 @@ export function buildDiagnosticInsights(input: BuildInsightsInput): DiagnosticIn
       wasteRatio: Math.round(wasteRatio * 100) / 100,
       duplicateCount: prescriptions.filter((p) => p.type === "doublon" || p.type === "doublon-ia").length,
       dormantCount: prescriptions.filter((p) => p.type === "dormant").length,
-      reviewCount: prescriptions.filter((p) => p.verdict === "review" || p.verdict === "downgrade").length,
-      pricingTierCount: prescriptions.filter((p) => p.type === "pricing-tier").length,
+      reviewCount: uniquePrescriptionToolCount(
+        (prescription) =>
+          prescription.verdict === "review" ||
+          prescription.verdict === "downgrade"
+      ),
+      pricingTierCount: uniquePrescriptionToolCount(
+        (prescription) => prescription.type === "pricing-tier"
+      ),
       highCostToolCount: paidTools.filter((tool) => Number(tool.price || 0) >= 60).length,
       activeDiscoveryCount: input.signalSummary?.activeDiscoveryCount || 0,
       answeredDiscoveryCount: input.signalSummary?.answeredDiscoveryCount || 0,
       answeredClosingCount: input.signalSummary?.answeredClosingCount || 0,
       protectedToolCount: input.signalSummary?.protectedToolCount || 0,
       challengedToolCount: input.signalSummary?.challengedToolCount || 0,
+      aiObjectiveCount: aiAnalysis.objectiveCount,
+      aiActorCount: aiAnalysis.actorCount,
+      aiCapabilityCount: aiAnalysis.capabilityCount,
+      aiRiskCount: aiAnalysis.findings.filter((finding) => finding.kind === "risk").length,
+      aiOverlapCount: aiAnalysis.findings.filter((finding) => finding.kind === "overlap").length,
     },
     generatedAt: new Date().toISOString(),
   };

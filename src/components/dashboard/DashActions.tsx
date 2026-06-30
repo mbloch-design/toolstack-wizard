@@ -7,6 +7,10 @@ import { Check, CheckCircle2, ChevronRight, ExternalLink, Target } from "lucide-
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, getPricingAudit } from "@/utils/diagnosticPricing";
+import {
+  buildDiagnosticDecisionPlan,
+  type DiagnosticDecision,
+} from "@/utils/diagnosticDecisionPlan";
 
 
 
@@ -25,6 +29,7 @@ interface ActionItem {
   id: string;
   prescription?: Prescription;
   tool?: Tool;
+  decision?: DiagnosticDecision;
   label: string;
   detail: string;
   evidenceTab?: Tab;
@@ -65,93 +70,20 @@ function formatActionSavings(action: ActionItem, t: Props["t"]) {
   return currency ? label : `${label} ${t("à vérifier", "to verify")}`;
 }
 
-function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"]): ActionItem[] {
-  const { prescriptions, recommendations, sessionState } = result;
-  const toolMap = new Map(sessionState.selectedTools.map((tl) => [tl.id, tl]));
-  const items: ActionItem[] = [];
-
-  // NOW — phase 1 certified + phase 3 doublons
-  for (const p of prescriptions.phase1) {
-    const tool = toolMap.get(p.toolId);
-    items.push({
-      id: `now-${p.toolId}`,
-      prescription: p, tool,
-      label: p.type === "pricing-tier"
-        ? t(`Vérifier le plan de ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId} plan`)
-        : p.verdict === "downgrade"
-        ? t(`Passer ${tool?.name ?? p.toolId} sur un plan inférieur`, `Move ${tool?.name ?? p.toolId} to a lower plan`)
-        : t(`Annuler ${tool?.name ?? p.toolId}`, `Cancel ${tool?.name ?? p.toolId}`),
-      detail: p.message,
-      evidenceTab: p.type === "pricing-tier" ? "stack" : "gaspillage",
-      savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
-    });
-  }
-  for (const p of prescriptions.phase3.filter((pr) => pr.type === "doublon" || pr.type === "doublon-ia")) {
-    const tool = toolMap.get(p.toolId);
-    items.push({
-      id: `now-dbl-${p.toolId}`,
-      prescription: p, tool,
-      label: t(`Résoudre doublon : ${tool?.name ?? p.toolId}`, `Fix duplicate: ${tool?.name ?? p.toolId}`),
-      detail: p.message,
-      evidenceTab: "gaspillage",
-      savings: p.savingsEstimate, timeMinutes: 5, urgency: "now",
-    });
-  }
-
-  // WEEK — phase 2 reviews + dormants
-  for (const p of prescriptions.phase2) {
-    const tool = toolMap.get(p.toolId);
-    items.push({
-      id: `week-${p.toolId}`,
-      prescription: p, tool,
-      label: p.type === "pricing-tier"
-        ? t(`Tester le bon palier pour ${tool?.name ?? p.toolId}`, `Test the right tier for ${tool?.name ?? p.toolId}`)
-        : t(`Vérifier ${tool?.name ?? p.toolId}`, `Review ${tool?.name ?? p.toolId}`),
-      detail: p.message,
-      evidenceTab: p.type === "pricing-tier" ? "stack" : "gaspillage",
-      savings: p.savingsEstimate, timeMinutes: 30, urgency: "week",
-    });
-  }
-  for (const p of prescriptions.phase3.filter((pr) => pr.type === "dormant")) {
-    const tool = toolMap.get(p.toolId);
-    items.push({
-      id: `week-dorm-${p.toolId}`,
-      prescription: p, tool,
-      label: t(`Auditer ${tool?.name ?? p.toolId} (peu utilisé)`, `Audit ${tool?.name ?? p.toolId} (low usage)`),
-      detail: p.message,
-      evidenceTab: "gaspillage",
-      savings: p.savingsEstimate, timeMinutes: 15, urgency: "week",
-    });
-  }
-
-  for (const signal of result.insights.answerSignals.filter((item) => item.source === "closing")) {
-    items.push({
-      id: `signal-${signal.id}`,
-      label: t(signal.actionFr, signal.actionEn),
-      detail: t(signal.detailFr, signal.detailEn),
-      evidenceTab: "overview",
-      savings: 0,
-      timeMinutes: signal.severity === "high" ? 20 : 30,
-      urgency: signal.severity === "low" ? "month" : "week",
-    });
-  }
-
-  // MONTH — recommendations
-  for (const rec of recommendations.slice(0, 3)) {
-    items.push({
-      id: `month-rec-${rec.id}`,
-      tool: rec,
-      label: t(`Explorer ${rec.name}`, `Explore ${rec.name}`),
-      detail: t(
-        "Piste à garder pour plus tard, seulement si ce besoin existe vraiment dans ton activité.",
-        "Keep this as a later option, only if this need truly exists in your work."
-      ),
-      evidenceTab: "optimiser",
-      savings: 0, timeMinutes: 120, urgency: "month",
-    });
-  }
-
-  return items;
+export function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"]): ActionItem[] {
+  void allTools;
+  return buildDiagnosticDecisionPlan(result).map((decision) => ({
+    id: decision.id,
+    prescription: decision.prescription,
+    tool: decision.tool,
+    decision,
+    label: t(decision.labelFr, decision.labelEn),
+    detail: t(decision.detailFr, decision.detailEn),
+    evidenceTab: decision.evidenceTab,
+    savings: decision.savings,
+    timeMinutes: decision.timeMinutes,
+    urgency: decision.urgency,
+  }));
 }
 
 const URGENCY_CONFIG = {
@@ -276,8 +208,8 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           {t(
-            "Le but n’est pas de tout faire maintenant. Commence par les actions les plus évidentes, puis garde le reste comme checklist.",
-            "The goal is not to do everything now. Start with the clearest actions, then keep the rest as a checklist."
+            "Je limite volontairement le plan aux trois décisions les plus utiles. Les autres signaux restent dans les preuves, pas dans ta charge mentale.",
+            "I intentionally limit the plan to the three most useful decisions. Other signals stay in the evidence, not in your mental load."
           )}
         </p>
       </header>
@@ -315,7 +247,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
         </div>
         {completedCount === 0 && grouped.now.length > 0 && (
           <p className="text-xs text-white/50">
-            {t("Commence par la première section. Elle contient les arbitrages les plus rapides.", "Start with the first section. It contains the fastest decisions.")}
+            {t("Commence par la première section. Elle contient l’arbitrage le plus net.", "Start with the first section. It contains the clearest decision.")}
           </p>
         )}
         {completedCount > 0 && (

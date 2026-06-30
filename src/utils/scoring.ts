@@ -10,6 +10,20 @@ import type {
 } from "@/types/diagnostic";
 import { computePertinenceFallback } from "@/utils/pertinenceFallback";
 import { buildDiagnosticInsights } from "@/utils/diagnosticInsights";
+import {
+  buildCreativeQuestions,
+  rankToolsForCreativeQuestion,
+} from "@/lib/creativeAdaptiveEngine";
+import { areToolsDirectlyRelated } from "@/lib/toolRelations";
+import {
+  contractCoveredProductIds,
+  contractMonthlyTotal,
+} from "@/lib/commercialAccess";
+import { getPricingCaptureSummary } from "@/utils/diagnosticPricing";
+import {
+  buildAiDiagnosticAnalysis,
+  buildPreciseAiOverlapPrescriptions,
+} from "@/lib/aiDiagnostic";
 
 // ─── Force-silence list ───────────────────────────────────────────
 const FORCE_SILENCE = ["stripe", "google-drive", "paypal", "google-analytics"];
@@ -212,13 +226,53 @@ function detectPricingTierReviews(tools: Tool[]): Prescription[] {
   return out;
 }
 
-function detectDoublons(tools: Tool[], rules: DoubleRule[]): Prescription[] {
+function areStructurallyComplementary(a: Tool, b: Tool) {
+  const normalizeId = (value: string | null | undefined) => (value || "").toLowerCase().trim();
+  const aId = normalizeId(a.id);
+  const bId = normalizeId(b.id);
+  const aHost = normalizeId(a.host_app);
+  const bHost = normalizeId(b.host_app);
+  const aBundle = normalizeId(a.bundle_parent);
+  const bBundle = normalizeId(b.bundle_parent);
+
+  if (areToolsDirectlyRelated(a, b)) return true;
+  if (aHost === bId || bHost === aId || aBundle === bId || bBundle === aId) return true;
+  if (normalizeId(a.includedVia) === bId || normalizeId(b.includedVia) === aId) return true;
+  return false;
+}
+
+function toolsShareDeclaredUsage(
+  a: Tool,
+  b: Tool,
+  toolUsageMap: SessionState["toolUsageMap"]
+) {
+  const aUsages = new Set(toolUsageMap?.[a.id] || []);
+  const bUsages = toolUsageMap?.[b.id] || [];
+  if (aUsages.size === 0 || bUsages.length === 0) return true;
+  return bUsages.some((usage) => aUsages.has(usage));
+}
+
+function detectDoublons(
+  tools: Tool[],
+  rules: DoubleRule[],
+  toolUsageMap?: SessionState["toolUsageMap"]
+): Prescription[] {
   const out: Prescription[] = [];
   const seen = new Set<string>();
 
   for (const rule of rules) {
     const matchIds = rule.ids.filter((id) => tools.some((t) => t.id === id));
     if (matchIds.length >= 2) {
+      const matchedTools = matchIds
+        .map((id) => tools.find((tool) => tool.id === id))
+        .filter((tool): tool is Tool => Boolean(tool));
+      const hasRelevantOverlap = matchedTools.some((tool, index) =>
+        matchedTools.slice(index + 1).some((other) =>
+          !areStructurallyComplementary(tool, other) &&
+          toolsShareDeclaredUsage(tool, other, toolUsageMap)
+        )
+      );
+      if (!hasRelevantOverlap) continue;
       const key = matchIds.sort().join("+");
       if (seen.has(key)) continue;
       seen.add(key);
@@ -238,6 +292,8 @@ function detectDoublons(tools: Tool[], rules: DoubleRule[]): Prescription[] {
       const a = tools[i], b = tools[j];
       const key = [a.id, b.id].sort().join("+");
       if (seen.has(key)) continue;
+      if (areStructurallyComplementary(a, b)) continue;
+      if (!toolsShareDeclaredUsage(a, b, toolUsageMap)) continue;
       if (a.functional_needs.length === 0 || b.functional_needs.length === 0) continue;
       if (jaccard(a.functional_needs, b.functional_needs) >= 0.7) {
         seen.add(key);
@@ -257,8 +313,17 @@ function detectDoublons(tools: Tool[], rules: DoubleRule[]): Prescription[] {
   return out;
 }
 
-function detectDoublonsIA(tools: Tool[]): Prescription[] {
+function detectDoublonsIA(
+  tools: Tool[],
+  toolUsageMap?: SessionState["toolUsageMap"]
+): Prescription[] {
   const out: Prescription[] = [];
+  const usagePriority: Record<Tool["usage"], number> = {
+    high: 4,
+    medium: 3,
+    low: 2,
+    dormant: 1,
+  };
   const byUseCase = new Map<string, Tool[]>();
   for (const t of tools) {
     if (t.tool_type !== "ia" || !t.ia_use_case) continue;
@@ -268,8 +333,12 @@ function detectDoublonsIA(tools: Tool[]): Prescription[] {
   }
   for (const [useCase, group] of byUseCase) {
     if (group.length < 2) continue;
-    group.sort((a, b) => b.price - a.price);
+    group.sort((a, b) =>
+      usagePriority[b.usage] - usagePriority[a.usage] ||
+      a.price - b.price
+    );
     for (let i = 1; i < group.length; i++) {
+      if (!toolsShareDeclaredUsage(group[0], group[i], toolUsageMap)) continue;
       const p: Prescription = {
         toolId: group[i].id,
         type: "doublon-ia",
@@ -385,15 +454,35 @@ export function computePrescriptions(
   toolScores: Map<string, ToolScore>,
   doublonRules: DoubleRule[],
   _persona: Persona,
-  stackGoal?: SessionState["stackGoal"]
+  stackGoal?: SessionState["stackGoal"],
+  toolUsageMap?: SessionState["toolUsageMap"],
+  workflowUsages?: SessionState["workflowUsages"]
 ): { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] } {
   const p1 = phase1Certified(selectedTools);
   const p1ToolIds = new Set(p1.map((p) => p.toolId));
-  const p2 = [...phase2Questions(selectedTools), ...detectPricingTierReviews(selectedTools)]
-    .filter((p) => !p1ToolIds.has(p.toolId));
+  const p2ByTool = new Map<string, Prescription>();
+  [
+    ...detectPricingTierReviews(selectedTools),
+    ...phase2Questions(selectedTools),
+  ]
+    .filter((p) => !p1ToolIds.has(p.toolId))
+    .forEach((prescription) => {
+      if (!p2ByTool.has(prescription.toolId)) {
+        p2ByTool.set(prescription.toolId, prescription);
+      }
+    });
+  const p2 = Array.from(p2ByTool.values());
 
-  const p3doublons = detectDoublons(selectedTools, doublonRules);
-  const p3ia = detectDoublonsIA(selectedTools);
+  const p3doublons = detectDoublons(selectedTools, doublonRules, toolUsageMap);
+  const hasPreciseAiMapping = (workflowUsages || []).some((usage) =>
+    (usage.aiActors || []).some((actor) => actor.capabilityIds.length > 0)
+  );
+  const p3ia = hasPreciseAiMapping
+    ? buildPreciseAiOverlapPrescriptions({
+        selectedTools,
+        workflowUsages,
+      })
+    : detectDoublonsIA(selectedTools, toolUsageMap);
   const p3dormants = detectDormants(selectedTools);
   const p3inadapted = detectInadapted(selectedTools, toolScores);
 
@@ -421,6 +510,16 @@ export function computePrescriptions(
 // ─── 6. Stack Health Score ─────────────────────────────────────────
 type HealthLabel = "Optimisée" | "Correcte" | "À revoir" | "Critique";
 
+function healthLabelForScore(score: number): HealthLabel {
+  return score >= 80
+    ? "Optimisée"
+    : score >= 60
+      ? "Correcte"
+      : score >= 40
+        ? "À revoir"
+        : "Critique";
+}
+
 export function computeStackHealth(prescriptions: {
   phase1: Prescription[];
   phase2: Prescription[];
@@ -440,10 +539,7 @@ export function computeStackHealth(prescriptions: {
   score -= Math.min(14, inadapted * 2);
   score = Math.max(0, Math.min(100, score));
 
-  const label: HealthLabel =
-    score >= 80 ? "Optimisée" : score >= 60 ? "Correcte" : score >= 40 ? "À revoir" : "Critique";
-
-  return { score, label };
+  return { score, label: healthLabelForScore(score) };
 }
 
 // ─── 7. Recommendations ───────────────────────────────────────────
@@ -470,6 +566,131 @@ export function computeRecommendations(
     results = scored.filter((s) => s.score.scoreFinal > 45).map((s) => s.tool);
   }
   return results.slice(0, 6);
+}
+
+type RecommendationEvidence = NonNullable<DiagnosticResult["recommendationEvidence"]>;
+
+function computeCreativeRecommendationResult(
+  allTools: Tool[],
+  sessionState: SessionState
+): { tools: Tool[]; evidence: RecommendationEvidence } {
+  const skippedIds = new Set(sessionState.selectionCoverage?.skipped || []);
+  const frictionIds = new Set(
+    (sessionState.workflowUsages || [])
+      .filter((usage) => usage.satisfaction === "friction" || usage.satisfaction === "blocked")
+      .map((usage) => usage.objectiveId)
+  );
+  const skippedAreasAnswer = sessionState.discoveryAnswers.get("adaptive_skipped_areas");
+
+  // The user either said those areas do not apply, or indicated the capture is
+  // incomplete. In both cases, recommending a tool would be premature.
+  if (
+    frictionIds.size === 0 &&
+    (skippedAreasAnswer === 1 || skippedAreasAnswer === 2 || skippedIds.size === 0)
+  ) {
+    return { tools: [], evidence: {} };
+  }
+
+  const outputIds = [
+    sessionState.primarySpecialty,
+    ...(sessionState.complementarySpecialties || []),
+  ].filter((id): id is string => Boolean(id));
+  const selectedIds = new Set(sessionState.selectedTools.map((tool) => tool.id));
+  const missingQuestions = buildCreativeQuestions(
+    outputIds,
+    sessionState.selectedTools,
+    allTools
+  ).filter(
+    (question) =>
+      (skippedIds.has(question.id) || frictionIds.has(question.id)) &&
+      question.kind !== "ecosystem" &&
+      question.priority >= 80
+  );
+
+  const recommendations: Tool[] = [];
+  const needsByTool = new Map<string, typeof missingQuestions>();
+
+  for (const question of missingQuestions) {
+    const existingCoverage = rankToolsForCreativeQuestion(
+      question,
+      sessionState.selectedTools,
+      outputIds,
+      selectedIds
+    );
+    if (existingCoverage.length > 0 && !frictionIds.has(question.id)) continue;
+
+    const candidate = rankToolsForCreativeQuestion(
+      question,
+      allTools,
+      outputIds,
+      selectedIds
+    ).find(
+      ({ tool }) =>
+        !selectedIds.has(tool.id) &&
+        !tool.force_silence &&
+        tool.tool_type !== "bundle" &&
+        !(tool.bundle_parent && selectedIds.has(tool.bundle_parent))
+    )?.tool;
+    if (!candidate) continue;
+    if (!needsByTool.has(candidate.id)) {
+      needsByTool.set(candidate.id, []);
+      recommendations.push(candidate);
+    }
+    needsByTool.get(candidate.id)!.push(question);
+  }
+
+  const evidence: RecommendationEvidence = {};
+  for (const tool of recommendations) {
+    const needs = needsByTool.get(tool.id) || [];
+    const labelsFr = needs.map((question) => question.labelFr);
+    const labelsEn = needs.map((question) => question.labelEn);
+    const confidence = skippedAreasAnswer === 0 ? "high" : "medium";
+    const hasDeclaredFriction = needs.some((question) => frictionIds.has(question.id));
+    evidence[tool.id] = {
+      needId: needs.map((question) => question.id).join(","),
+      labelFr: labelsFr.join(" + "),
+      labelEn: labelsEn.join(" + "),
+      reasonFr: hasDeclaredFriction
+        ? `Tu as signalé une friction sur : ${labelsFr.join(", ")}. ${tool.name} est une piste à tester, pas un remplacement automatique.`
+        : `Tu as déclaré cette zone sans outil : ${labelsFr.join(", ")}. ${tool.name} correspond directement à ce besoin.`,
+      reasonEn: hasDeclaredFriction
+        ? `You reported friction with: ${labelsEn.join(", ")}. ${tool.name} is an option to test, not an automatic replacement.`
+        : `You declared this area without a tool: ${labelsEn.join(", ")}. ${tool.name} directly matches this need.`,
+      confidence,
+    };
+  }
+
+  return { tools: recommendations.slice(0, 3), evidence };
+}
+
+function computeRecommendationResult(
+  allTools: Tool[],
+  sessionState: SessionState
+): { tools: Tool[]; evidence: RecommendationEvidence } {
+  if (sessionState.persona === "SOFIA") {
+    return computeCreativeRecommendationResult(allTools, sessionState);
+  }
+
+  const tools = computeRecommendations(
+    allTools,
+    sessionState.selectedTools,
+    sessionState.persona,
+    sessionState.complementarySkills,
+    sessionState.tjm
+  );
+  const evidence = Object.fromEntries(
+    tools.map((tool) => [
+      tool.id,
+      {
+        labelFr: "Compatibilité avec ton profil",
+        labelEn: "Fit with your profile",
+        reasonFr: `${tool.name} couvre des besoins fréquents de ton profil et n’est pas déjà dans ta stack.`,
+        reasonEn: `${tool.name} covers common needs for your profile and is not already in your stack.`,
+        confidence: "low" as const,
+      },
+    ])
+  );
+  return { tools, evidence };
 }
 
 // ─── 8. Main entry point ──────────────────────────────────────────
@@ -608,7 +829,7 @@ function collectDiscoverySignals(sessionState: SessionState, questions: Discover
       labelFr: impact === "keep" ? "Usage confirmé" : impact === "cancel" ? "Usage à couper" : "Usage à vérifier",
       labelEn: impact === "keep" ? "Confirmed use" : impact === "cancel" ? "Use to cut" : "Use to review",
       detailFr: `${option.label} · ${toolNames}`,
-      detailEn: `${option.label} · ${toolNames}`,
+      detailEn: `${option.labelEn || option.label} · ${toolNames}`,
       actionFr: impact === "keep"
         ? "Ne pas prescrire de suppression sur ces outils sans autre signal fort."
         : impact === "cancel"
@@ -677,6 +898,72 @@ function collectClosingSignals(sessionState: SessionState): DiagnosticAnswerSign
   }
 
   return signals;
+}
+
+function collectWorkflowSignals(sessionState: SessionState): DiagnosticAnswerSignal[] {
+  const usageSignals = (sessionState.workflowUsages || []).flatMap((usage) => {
+    const signals: DiagnosticAnswerSignal[] = [];
+    if (usage.satisfaction === "friction" || usage.satisfaction === "blocked") {
+      signals.push({
+        id: `workflow_friction_${usage.objectiveId}`,
+        source: "workflow",
+        severity: usage.satisfaction === "blocked" ? "high" : "medium",
+        labelFr: "Friction déclarée dans le workflow",
+        labelEn: "Declared workflow friction",
+        detailFr: `${usage.objectiveLabelFr} : ${usage.customMethod || "méthode actuelle à améliorer"}`,
+        detailEn: `${usage.objectiveLabelEn}: ${usage.customMethod || "current method needs improvement"}`,
+        actionFr: "Tester une amélioration sur cette étape sans supprimer automatiquement l’outil actuel.",
+        actionEn: "Test an improvement on this step without automatically removing the current tool.",
+        toolIds: usage.toolIds,
+        impact: "review",
+      });
+    }
+    if (usage.aiMode !== "unknown" && usage.aiMode !== "none") {
+      const capabilityCount = (usage.aiActors || []).reduce(
+        (count, actor) => count + actor.capabilityIds.length,
+        0
+      );
+      signals.push({
+        id: `workflow_ai_${usage.objectiveId}`,
+        source: "workflow",
+        severity: "low",
+        labelFr: "IA intégrée au workflow",
+        labelEn: "AI mapped in the workflow",
+        detailFr: `${usage.objectiveLabelFr} : ${capabilityCount || "fonction"} IA cartographiée${capabilityCount > 1 ? "s" : ""}`,
+        detailEn: `${usage.objectiveLabelEn}: ${
+          capabilityCount > 0
+            ? `${capabilityCount} mapped AI ${capabilityCount === 1 ? "capability" : "capabilities"}`
+            : "AI contribution mapped"
+        }`,
+        actionFr: "Vérifier que cette capacité IA est utile, correctement financée et non redondante.",
+        actionEn: "Check that this AI capability is useful, correctly funded, and not redundant.",
+        toolIds: [
+          ...new Set([
+            ...usage.aiToolIds,
+            ...(usage.aiActors || []).flatMap((actor) => actor.toolId ? [actor.toolId] : []),
+          ]),
+        ],
+        impact: "keep",
+      });
+    }
+    return signals;
+  });
+  const aiFindingSignals = buildAiDiagnosticAnalysis(sessionState).findings.map(
+    (finding): DiagnosticAnswerSignal => ({
+      id: finding.id,
+      source: "workflow",
+      severity: finding.severity,
+      labelFr: finding.labelFr,
+      labelEn: finding.labelEn,
+      detailFr: finding.detailFr,
+      detailEn: finding.detailEn,
+      actionFr: finding.actionFr,
+      actionEn: finding.actionEn,
+      toolIds: finding.toolIds,
+      impact: finding.reviewRecommended ? "review" : "keep",
+    })
+  );
+  return [...usageSignals, ...aiFindingSignals];
 }
 
 function buildSignalSummary(
@@ -768,35 +1055,97 @@ export function runDiagnostic(
   sessionState: SessionState,
   data: DiagnosticData
 ): DiagnosticResult {
-  const { persona, complementarySkills, tjm, selectedTools } = sessionState;
+  const { persona, complementarySkills, tjm } = sessionState;
+  const contractsByProductId = new Map<string, NonNullable<SessionState["commercialContracts"]>[number]>();
+  (sessionState.commercialContracts || [])
+    .filter((contract) => contract.confirmed)
+    .forEach((contract) => {
+      contract.productIds.forEach((productId) => contractsByProductId.set(productId, contract));
+    });
+  const selectedTools = sessionState.selectedTools.map((tool) => {
+    const contract = contractsByProductId.get(tool.id);
+    if (!contract) return tool;
+    return {
+      ...tool,
+      selectedOffer: "included" as const,
+      price: 0,
+      selectedPriceIsEstimate: false,
+      includedInBundle: true,
+      includedVia: contract.familyName,
+      commercialContractId: contract.id,
+    };
+  });
+  const effectiveSessionState = {
+    ...sessionState,
+    selectedTools,
+  };
 
   const toolScores = new Map<string, ToolScore>();
   for (const tool of selectedTools) {
     toolScores.set(tool.id, computeScoreFinal(tool, persona, complementarySkills, tjm));
   }
 
-  const discoverySignals = collectDiscoverySignals(sessionState, data.discoveryQuestions);
+  const discoverySignals = collectDiscoverySignals(effectiveSessionState, data.discoveryQuestions);
   const answerSignals = [
-    ...collectOnboardingSignals(sessionState),
+    ...collectOnboardingSignals(effectiveSessionState),
+    ...collectWorkflowSignals(effectiveSessionState),
     ...discoverySignals,
-    ...collectClosingSignals(sessionState),
+    ...collectClosingSignals(effectiveSessionState),
   ];
-  const signalSummary = buildSignalSummary(sessionState, data.discoveryQuestions, discoverySignals);
+  const signalSummary = buildSignalSummary(effectiveSessionState, data.discoveryQuestions, discoverySignals);
   const basePrescriptions = computePrescriptions(
     selectedTools,
     toolScores,
     data.doublonRules,
     persona,
-    sessionState.stackGoal
+    effectiveSessionState.stackGoal,
+    effectiveSessionState.toolUsageMap,
+    effectiveSessionState.workflowUsages
   );
   const prescriptions = applyDiscoverySignalsToPrescriptions(basePrescriptions, selectedTools, discoverySignals);
-  const { score: healthScore, label: healthLabel } = computeStackHealth(prescriptions);
-  const recommendations = computeRecommendations(
-    data.allTools, selectedTools, persona, complementarySkills, tjm
+  const baseHealth = computeStackHealth(prescriptions);
+  const aiAnalysis = buildAiDiagnosticAnalysis(effectiveSessionState);
+  const highAiRiskCount = aiAnalysis.findings.filter(
+    (finding) => finding.kind === "risk" && finding.severity === "high"
+  ).length;
+  const mediumAiRiskCount = aiAnalysis.findings.filter(
+    (finding) => finding.kind === "risk" && finding.severity === "medium"
+  ).length;
+  const riskAdjustedScore = Math.max(
+    0,
+    baseHealth.score - highAiRiskCount * 15 - mediumAiRiskCount * 5
   );
+  const foundationAdjustedScore = selectedTools.length <= 3
+    ? Math.min(74, riskAdjustedScore)
+    : riskAdjustedScore;
+  const aiAdjustedScore = highAiRiskCount > 0
+    ? Math.min(69, foundationAdjustedScore)
+    : mediumAiRiskCount > 0
+      ? Math.min(79, foundationAdjustedScore)
+      : foundationAdjustedScore;
+  const pricingSummary = getPricingCaptureSummary(
+    selectedTools,
+    effectiveSessionState.commercialContracts
+  );
+  const healthScore = pricingSummary.needsVerificationCount > 0
+    ? Math.min(79, aiAdjustedScore)
+    : aiAdjustedScore;
+  const healthLabel = healthLabelForScore(healthScore);
+  const recommendationResult = computeRecommendationResult(data.allTools, effectiveSessionState);
+  const recommendations = recommendationResult.tools;
 
-  // Bundle-aware cost: don't count tools marked as included in a bundle
-  const stackTotalCost = selectedTools.reduce((sum, t) => sum + (t.includedInBundle ? 0 : t.price), 0);
+  const contractCoveredIds = contractCoveredProductIds(effectiveSessionState.commercialContracts);
+  const stackTotalCost =
+    contractMonthlyTotal(effectiveSessionState.commercialContracts) +
+    selectedTools.reduce(
+      (sum, tool) =>
+        sum + (
+          tool.includedInBundle || contractCoveredIds.has(tool.id)
+            ? 0
+            : tool.price
+        ),
+      0
+    );
   const allPrescriptions = [...prescriptions.phase1, ...prescriptions.phase2, ...prescriptions.phase3];
   const estimatedWaste = allPrescriptions.reduce((sum, p) => sum + p.savingsEstimate, 0);
   const optimizedCost = Math.max(0, stackTotalCost - estimatedWaste);
@@ -811,7 +1160,7 @@ export function runDiagnostic(
   const roundedOptimizedCost = Math.round(optimizedCost * 100) / 100;
   const roundedAnnualSavings = Math.round(annualSavings * 100) / 100;
   const insights = buildDiagnosticInsights({
-    sessionState,
+    sessionState: effectiveSessionState,
     toolScores,
     prescriptions,
     recommendations,
@@ -822,17 +1171,19 @@ export function runDiagnostic(
     annualSavings: roundedAnnualSavings,
     answerSignals,
     signalSummary,
+    recommendationEvidence: recommendationResult.evidence,
   });
 
   return {
     sessionId: crypto.randomUUID(),
-    sessionState,
+    sessionState: effectiveSessionState,
     toolScores,
     doublons: data.doublonRules.filter((r) =>
       r.ids.filter((id) => selectedTools.some((t) => t.id === id)).length >= 2
     ),
     prescriptions,
     recommendations,
+    recommendationEvidence: recommendationResult.evidence,
     insights,
     healthScore,
     healthLabel,

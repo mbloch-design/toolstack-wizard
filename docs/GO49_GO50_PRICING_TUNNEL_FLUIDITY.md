@@ -4,11 +4,11 @@
 
 Le diagnostic ne doit pas faire semblant de connaître le vrai abonnement d'un utilisateur. Il doit capter ce qui est sûr, signaler ce qui est encore approximatif, puis raconter les recommandations sans additionner des devises différentes comme si tout était homogène.
 
-## GO49 — Prix, offres et devises
+## GO49 — Prix, modes d'usage et fiabilite
 
-- Chaque outil sélectionné porte maintenant un statut de prix : gratuit déclaré, plan confirmé, prix catalogue, devise à vérifier ou plan à vérifier.
-- Les outils ajoutés manuellement peuvent recevoir une devise au moment de l'ajout.
-- La vérification finale permet de corriger le prix et la devise d'un outil.
+- Chaque outil sélectionné porte maintenant un statut de prix : montant confirmé, mode d'usage connu, achat unique, inclus dans une suite, prix catalogue ou montant à préciser.
+- Les outils ajoutés manuellement peuvent recevoir un prix mensuel estimé au moment de l'ajout.
+- La vérification finale permet de corriger le prix et le mode d'usage d'un outil.
 - Le pré-verdict n'affiche plus une économie annuelle forcée en euros.
 - Le back-office reçoit aussi `selectedPriceIsEstimate` et `pricing_capture` pour relire les incertitudes.
 
@@ -27,8 +27,9 @@ Le diagnostic ne doit pas faire semblant de connaître le vrai abonnement d'un u
 3. Lancer `npx tsc --noEmit`.
 4. Lancer `npm run build`.
 5. Déployer sur préprod, ouvrir un nouveau diagnostic et vérifier :
-   - sélection d'un outil payant USD ;
+   - sélection d'un outil à abonnement ;
    - sélection d'un outil gratuit ;
-   - ajout manuel avec prix + devise ;
+   - sélection d'un outil inclus ou en achat unique ;
+   - ajout manuel avec prix estimé ;
    - passage d'une zone à l'autre sans ancienne recherche persistante ;
    - pré-verdict sans euro arbitraire.

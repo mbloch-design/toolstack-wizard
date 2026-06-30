@@ -6,6 +6,7 @@ import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
+import { getProvenRecommendations } from "@/utils/diagnosticDecisionPlan";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -28,16 +29,8 @@ interface SwapData {
 function formatSwapSavings(swap: SwapData, t: Props["t"]) {
   const currency = swap.current.priceCurrency || swap.current.catalogMonthlyPriceCurrency;
   const label = `${formatMoney(swap.savings, currency)}/${t("mois", "mo")}`;
-  return currency ? label : `${label} · ${t("devise à vérifier", "currency to verify")}`;
+  return currency ? label : `${label} · ${t("montant à préciser", "amount to clarify")}`;
 }
-
-const PERSONA_REASONS: Record<string, { fr: string; en: string }> = {
-  THEO: { fr: "Idéal pour les devs qui veulent automatiser", en: "Ideal for devs who want to automate" },
-  SOFIA: { fr: "Conçu pour les workflows créatifs", en: "Built for creative workflows" },
-  MARC: { fr: "Parfait pour structurer ta prospection", en: "Perfect for structuring your pipeline" },
-  ALIX: { fr: "Booste ta création de contenu", en: "Boosts your content creation" },
-  CLAIRE: { fr: "Simplifie ta gestion quotidienne", en: "Simplifies your daily operations" },
-};
 
 function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]; onAccept: () => void; prefix: string }) {
   const [showSteps, setShowSteps] = useState(false);
@@ -130,7 +123,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
     return out.sort((a, b) => b.savings - a.savings);
   }, [result, allTools, sessionState]);
 
-  const personaReason = PERSONA_REASONS[sessionState.persona] || PERSONA_REASONS.THEO;
+  const provenRecommendations = useMemo(() => getProvenRecommendations(result), [result]);
 
   return (
     <div className="space-y-8">
@@ -169,19 +162,21 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
         </div>
       )}
 
-      {result.recommendations.length > 0 && (
+      {provenRecommendations.length > 0 && (
         <div className="space-y-3">
           <div>
             <h2 className="text-sm font-semibold text-foreground">{t("Pistes optionnelles", "Optional ideas")}</h2>
             <p className="text-xs text-muted-foreground">{t("À tester seulement si le besoin est réel.", "Test only if the need is real.")}</p>
           </div>
           <div className="space-y-2">
-            {result.recommendations.slice(0, 3).map((tool) => (
+            {provenRecommendations.map(({ tool, evidence }) => (
               <div key={tool.id} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3">
                 <ToolLogo tool={tool} size={32} className="rounded-lg" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground">{tool.name}</p>
-                  <p className="text-xs text-muted-foreground">{t(personaReason.fr, personaReason.en)}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t(evidence.reasonFr, evidence.reasonEn)}
+                  </p>
                 </div>
                 <span className="text-xs font-['DM_Mono'] text-muted-foreground shrink-0">
                   {formatToolMonthlyPrice(tool, t)}
@@ -192,7 +187,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
         </div>
       )}
 
-      {result.recommendations.length === 0 && swaps.length === 0 && (
+      {provenRecommendations.length === 0 && swaps.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
           <p className="text-sm">{t("Aucune piste optionnelle forte. C’est plutôt bon signe.", "No strong optional idea. That is a good sign.")}</p>
         </div>

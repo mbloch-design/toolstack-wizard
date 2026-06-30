@@ -36,7 +36,7 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
     : [];
 
   return (
-    <div>
+    <div className="td-section">
       <span className="td-subhead">
         <Sparkles />
         {t("L'angle IA", "The AI angle")}
@@ -73,7 +73,7 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
               <ArrowUpRight />
               {t("Aller plus loin avec l'IA", "Go further with AI")}
             </span>
-            <p style={{ color: "var(--color-muted)", margin: 0 }}>{augment}</p>
+            <p style={{ color: "var(--color-text)", lineHeight: 1.55, margin: 0 }}>{augment}</p>
           </div>
         )}
         {replace && (
@@ -82,7 +82,7 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
               <Swords />
               {t("L'IA peut-elle le remplacer ?", "Can AI replace it?")}
             </span>
-            <p style={{ color: "var(--color-muted)", margin: 0 }}>{replace}</p>
+            <p style={{ color: "var(--color-text)", lineHeight: 1.55, margin: 0 }}>{replace}</p>
           </div>
         )}
       </div>

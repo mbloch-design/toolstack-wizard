@@ -15,8 +15,8 @@ export default function DiagRightPanel({ session, doublonRules, t }: Props) {
   );
 
   const totalCostLabel = useMemo(
-    () => formatMonthlyTotal(session.selectedTools, t),
-    [session.selectedTools, t]
+    () => formatMonthlyTotal(session.selectedTools, t, session.commercialContracts),
+    [session.commercialContracts, session.selectedTools, t]
   );
 
   const activeDoublons = useMemo(

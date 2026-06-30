@@ -1,3 +1,18 @@
-.env
-.env.*
-!.env.preprod.example
+.build-trash/
+.go*-apply.sh
+.go*-staging/
+.go*-work/
+dist/
+dist-ssr/
+dist-ssr 2/
+AI_HANDOFF 2.md
+AI_HANDOFF 3.md
+AI_HANDOFF 4.md
+.claude/
+scripts/_*.mjs
+scripts/add-ai-angle-*.mjs
+scripts/add-content-batch-*.mjs
+scripts/curate-alternatives*.mjs
+scripts/fill-*.mjs
+scripts/fix-asana-*.mjs
+scripts/rewrite-*.mjs

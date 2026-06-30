@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Layers3, Mail, MessageSquare, Palette, RotateCcw, ShieldAlert, TrendingDown } from "lucide-react";
-import type { DiagnosticResult, SessionState, Tool } from "@/types/diagnostic";
+import { ArrowRight, CheckCircle2, Layers3, Mail, MessageSquare, Palette, RotateCcw, Share2, ShieldAlert, Sparkles, TrendingDown } from "lucide-react";
+import type { DiagnosticResult, SessionState } from "@/types/diagnostic";
 import { formatMonthlyTotal, getPricingCaptureSummary } from "@/utils/diagnosticPricing";
+import { classifyCreativeWorkflowTools } from "@/lib/creativeAdaptiveEngine";
+import { translateHealthLabel } from "@/utils/diagnosticLabels";
 
 interface Props {
   session: SessionState;
@@ -16,52 +18,13 @@ function getToolName(result: DiagnosticResult, toolId: string) {
   return result.sessionState.selectedTools.find((tool) => tool.id === toolId)?.name || toolId;
 }
 
-const CREATIVE_PRODUCTION_IDS = [
-  "figma",
-  "canva",
-  "adobe-photoshop",
-  "adobe-illustrator",
-  "adobe-after-effects",
-  "adobe-premiere-pro",
-  "davinci-resolve",
-  "capcut",
-  "adobe-lightroom",
-  "capture-one",
-];
+export function isValidReportEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
-const CREATIVE_SATELLITE_IDS = [
-  "figma-iconify",
-  "figma-tokens",
-  "figma-stark",
-  "figma-anima",
-  "ae-bodymovin",
-  "lottiefiles",
-  "ae-animation-composer",
-  "motion-bro",
-  "presets-lightroom",
-  "lightroom-presets",
-  "dynamic-mockups",
-  "mockup-plugins",
-  "envato-elements",
-  "fontbase",
-  "rightfont",
-];
-
-const CREATIVE_DELIVERY_IDS = [
-  "frame-io",
-  "loom",
-  "tella",
-  "pixieset",
-  "google-drive",
-  "dropbox",
-  "wetransfer",
-  "adobe-acrobat",
-  "adobe-acrobat-sign",
-];
-
-function countTools(tools: Tool[], ids: readonly string[]) {
-  const idSet = new Set(ids);
-  return tools.filter((tool) => idSet.has(tool.id)).length;
+export function shouldBlockOptionalReportEmail(wantsEmail: boolean, value: string) {
+  const emailValue = value.trim();
+  return wantsEmail && Boolean(emailValue) && !isValidReportEmail(emailValue);
 }
 
 export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, onPrev, t }: Props) {
@@ -75,27 +38,58 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
   ];
   const topActions = allPrescriptions.slice(0, 3);
   const duplicateCount = result.insights.metrics.duplicateCount;
-  const pricingTierCount = result.insights.metrics.pricingTierCount;
   const reviewCount = result.insights.metrics.reviewCount;
-  const monthlyCostLabel = formatMonthlyTotal(session.selectedTools, t);
-  const pricingSummary = getPricingCaptureSummary(session.selectedTools);
+  const monthlyCostLabel = formatMonthlyTotal(session.selectedTools, t, session.commercialContracts);
+  const pricingSummary = getPricingCaptureSummary(session.selectedTools, session.commercialContracts);
   const hasEmail = Boolean(session.email?.trim());
   const emailValue = email.trim();
-  const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   const isCreative = session.persona === "SOFIA";
-  const creativeProductionCount = countTools(session.selectedTools, CREATIVE_PRODUCTION_IDS);
-  const creativeSatelliteCount = countTools(session.selectedTools, CREATIVE_SATELLITE_IDS);
-  const creativeDeliveryCount = countTools(session.selectedTools, CREATIVE_DELIVERY_IDS);
+  const creativeWorkflow = classifyCreativeWorkflowTools(session.selectedTools, session.toolUsageMap);
+  const aiAnalysis = result.insights.aiAnalysis;
+  const healthLabel = translateHealthLabel(result.healthLabel, t);
+  const profileLabel = session.language === "en"
+    ? result.insights.profile.labelEn
+    : result.insights.profile.labelFr;
+  const attentionItems = [
+    ...result.insights.answerSignals
+      .filter((signal) =>
+        signal.source === "workflow" &&
+        signal.impact === "review" &&
+        signal.severity !== "low"
+      )
+      .map((signal) => ({
+        id: signal.id,
+        title: t(signal.labelFr, signal.labelEn),
+        detail: t(signal.detailFr, signal.detailEn),
+        badge: signal.severity === "high"
+          ? t("à sécuriser", "secure now")
+          : t("à cadrer", "needs framing"),
+      })),
+    ...topActions.map((item) => ({
+      id: `${item.toolId}-${item.type}`,
+      title: getToolName(result, item.toolId),
+      detail: item.message,
+      badge: item.savingsEstimate > 0
+        ? item.type === "pricing-tier"
+          ? t("plan à vérifier", "plan to check")
+          : t("impact à vérifier", "impact to check")
+        : "",
+    })),
+  ].filter(
+    (item, index, list) =>
+      list.findIndex((candidate) => candidate.id === item.id) === index
+  ).slice(0, 3);
 
   const openRestitution = () => {
-    if (wantsEmail && !isValidEmail(emailValue)) {
+    const shouldSendEmail = wantsEmail && Boolean(emailValue);
+    if (shouldBlockOptionalReportEmail(wantsEmail, emailValue)) {
       setEmailError(t("Email invalide", "Invalid email"));
       return;
     }
     onUpdate({
-      email: wantsEmail && emailValue ? emailValue : session.email,
+      email: shouldSendEmail ? emailValue : session.email,
       emailPreferences: {
-        summary: wantsEmail && Boolean(emailValue),
+        summary: shouldSendEmail,
         actions: session.emailPreferences?.actions ?? false,
         checkIn: session.emailPreferences?.checkIn ?? false,
       },
@@ -118,8 +112,8 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
             {isCreative
               ? t(
-                  "Je vais lire le flux complet : production, plugins, ressources, droits, validation client et plans payés. Le but n’est pas de couper vite, mais de comprendre ce qui soutient réellement tes livrables.",
-                  "I will read the full flow: production, plugins, resources, rights, client review and paid plans. The goal is not to cut fast, but to understand what truly supports your deliverables."
+                  "Je vais lire le flux complet : production, plugins, ressources, diffusion, archives, droits, validation client et plans payés. Le but n’est pas de couper vite, mais de comprendre ce qui soutient réellement tes livrables.",
+                  "I will read the full flow: production, plugins, resources, publishing, archives, rights, client review and paid plans. The goal is not to cut fast, but to understand what truly supports your deliverables."
                 )
               : t(
                   "Voici la lecture rapide avant la restitution. L'objectif maintenant : te donner un plan clair, pas une liste de chiffres.",
@@ -136,39 +130,54 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
             <span className="font-mono text-5xl font-bold text-foreground">{result.healthScore}</span>
             <span className="pb-2 text-sm text-muted-foreground">/100</span>
           </div>
-          <p className="mt-2 text-sm font-semibold text-foreground">{result.healthLabel}</p>
+          <p className="mt-2 text-sm font-semibold text-foreground">{healthLabel}</p>
           <p className="mt-1 text-xs text-muted-foreground">
-            {result.insights.profile.labelFr}
+            {profileLabel}
           </p>
         </div>
       </div>
 
-      <section className="grid gap-3 md:grid-cols-4">
+      <section className={`grid gap-3 ${isCreative ? "md:grid-cols-6" : "md:grid-cols-4"}`}>
         {isCreative ? (
           <>
             <MetricCard
               Icon={Palette}
               label={t("Production", "Production")}
-              value={String(creativeProductionCount)}
+              value={String(creativeWorkflow.produce.length)}
               detail={t("outils métier captés", "core creative tools")}
             />
             <MetricCard
               Icon={Layers3}
               label={t("Satellites", "Satellites")}
-              value={String(creativeSatelliteCount)}
+              value={String(creativeWorkflow.accelerate.length)}
               detail={t("plugins, assets, presets", "plugins, assets, presets")}
+            />
+            <MetricCard
+              Icon={Share2}
+              label={t("Diffusion", "Publishing")}
+              value={String(creativeWorkflow.publish.length)}
+              detail={t("publication et distribution", "publishing and distribution")}
             />
             <MetricCard
               Icon={MessageSquare}
               label={t("Validation", "Review")}
-              value={String(creativeDeliveryCount)}
+              value={String(creativeWorkflow.review.length)}
               detail={t("client, livraison, preuves", "client, delivery, proof")}
             />
             <MetricCard
+              Icon={Sparkles}
+              label={t("Capacités IA", "AI capabilities")}
+              value={String(aiAnalysis.capabilityCount)}
+              detail={t(
+                `${aiAnalysis.objectiveCount} étape(s) concernée(s)`,
+                `${aiAnalysis.objectiveCount} step(s) involved`
+              )}
+            />
+            <MetricCard
               Icon={ShieldAlert}
-              label={t("Plans à préciser", "Plans to clarify")}
-              value={String(Math.max(pricingTierCount, pricingSummary.needsVerificationCount))}
-              detail={t("prix et licences", "pricing and licenses")}
+              label={t("Accès/prix à préciser", "Access/pricing to clarify")}
+              value={String(pricingSummary.needsVerificationCount)}
+              detail={t("contrats, prix et licences", "contracts, pricing and licenses")}
             />
           </>
         ) : (
@@ -194,7 +203,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
             <MetricCard
               Icon={ShieldAlert}
               label={t("Prix et plans", "Prices and plans")}
-              value={String(Math.max(pricingTierCount, pricingSummary.needsVerificationCount))}
+              value={String(pricingSummary.needsVerificationCount)}
               detail={t("à confirmer", "to confirm")}
             />
           </>
@@ -206,7 +215,7 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
           <p className="text-sm font-semibold text-foreground">
             {t("Lecture créative retenue", "Creative read")}
           </p>
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <div className="mt-4 grid gap-3 md:grid-cols-4">
             <CreativeReadCard
               label={t("1. Produire", "1. Produce")}
               detail={t("Les outils qui fabriquent vraiment tes livrables.", "The tools that actually produce your deliverables.")}
@@ -216,7 +225,11 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
               detail={t("Plugins, templates, presets et assets qui évitent le travail répétitif.", "Plugins, templates, presets and assets that remove repetitive work.")}
             />
             <CreativeReadCard
-              label={t("3. Sécuriser", "3. Secure")}
+              label={t("3. Diffuser", "3. Publish")}
+              detail={t("Publication, hébergement, distribution et mesure des contenus.", "Publishing, hosting, distribution and content measurement.")}
+            />
+            <CreativeReadCard
+              label={t("4. Sécuriser", "4. Secure")}
               detail={t("Validation client, droits d’usage, prix réels et licences.", "Client review, usage rights, real pricing and licenses.")}
             />
           </div>
@@ -227,19 +240,17 @@ export default function DiagStepPreVerdict({ session, result, onUpdate, onNext, 
         <div className="diagnostic-card p-5">
           <p className="text-sm font-semibold text-foreground">{t("Ce qui mérite attention", "What deserves attention")}</p>
           <div className="mt-4 space-y-3">
-            {topActions.length > 0 ? (
-              topActions.map((item) => (
-                <div key={`${item.toolId}-${item.type}`} className="rounded-2xl border border-border bg-background p-3">
+            {attentionItems.length > 0 ? (
+              attentionItems.map((item) => (
+                <div key={item.id} className="rounded-2xl border border-border bg-background p-3">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <p className="text-sm font-semibold text-foreground">{getToolName(result, item.toolId)}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">{item.message}</p>
+                      <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">{item.detail}</p>
                     </div>
-                    {item.savingsEstimate > 0 && (
+                    {item.badge && (
                       <span className="rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-800">
-                        {item.type === "pricing-tier"
-                          ? t("plan à vérifier", "plan to check")
-                          : t("impact à vérifier", "impact to check")}
+                        {item.badge}
                       </span>
                     )}
                   </div>

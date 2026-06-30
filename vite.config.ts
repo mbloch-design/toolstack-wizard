@@ -2,8 +2,10 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
+import postcss from "postcss";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
+import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 
 const BASE = "https://tooltrim.com";
@@ -179,8 +181,16 @@ let _sbToolsCache: Record<string, any>[] | null = null;
 async function getMergedTools(jsonTools: any[]): Promise<any[]> {
   try {
     if (!_sbToolsCache) {
+      // Cache-Control: a content edit followed by a deploy showed stale data
+      // in prod (Asana's seo.idealForFr) while a local rebuild of the exact
+      // same commit was correct - consistent with an intermediary (CDN/edge)
+      // caching this GET on Vercel's network path but not on a local
+      // connection. PostgREST treats unknown query params as column filters
+      // (a "_cb" cache-busting param 400s), so this relies on the header
+      // alone to bypass any such cache.
       const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&limit=2000`, {
-        headers: { apikey: SB_PRERENDER_ANON, Authorization: `Bearer ${SB_PRERENDER_ANON}` },
+        headers: { apikey: SB_PRERENDER_ANON, Authorization: `Bearer ${SB_PRERENDER_ANON}`, "Cache-Control": "no-cache" },
+        cache: "no-store",
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const rows = await res.json();
@@ -388,6 +398,29 @@ function staticPrerenderPlugin(): Plugin {
         const baseHtml = fs.readFileSync(indexPath, "utf-8");
         let count = 0;
 
+        // Real SSR for the main tool route (Phase 1 — see plan
+        // "linked-dazzling-thimble") and comparison pages (Phase 2, added
+        // after an external audit flagged /comparatif/* as having no real
+        // content for non-JS crawlers). Tool sub-pages (/prix, /alternatives,
+        // /avis, /faq) keep the previous meta-only prerender for now.
+        let renderToolPage: ((path: string, tool: any, lang: string) => Promise<{ html: string; relatedPosts: any[] }>) | null = null;
+        let renderComparePage: ((path: string, toolA: any, toolB: any) => Promise<string>) | null = null;
+        const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
+        if (fs.existsSync(ssrEntryPath)) {
+          try {
+            const ssrModule = await import(`file://${ssrEntryPath}?t=${Date.now()}`);
+            renderToolPage = ssrModule.renderToolPage;
+            renderComparePage = ssrModule.renderComparePage;
+          } catch (e) {
+            console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
+          }
+        } else {
+          console.warn("⚠️ dist-ssr/entry-server.js not found — run `vite build --ssr` first. Falling back to meta-only prerender.");
+        }
+
+        const cssHrefMatch = baseHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/);
+        const compiledCssPath = cssHrefMatch ? path.resolve(distDir, cssHrefMatch[1].replace(/^\//, "")) : "";
+
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
@@ -400,9 +433,10 @@ function staticPrerenderPlugin(): Plugin {
             const priceTag = isFr
               ? (price && price > 0 ? `prix dès ${price}€` : (tool.pricing?.free ? "gratuit" : "prix"))
               : (price && price > 0 ? `pricing from €${price}` : (tool.pricing?.free ? "free" : "pricing"));
-            const title = isFr
+            const presentationOverride = isFr ? tool.seo?.presentationTitleFr : tool.seo?.presentationTitleEn;
+            const title = presentationOverride || (isFr
               ? `${name} : ${priceTag}, avis et alternatives 2026 | ToolTrim`
-              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`;
+              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`);
             const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
@@ -493,6 +527,28 @@ function staticPrerenderPlugin(): Plugin {
               : `${name}. ${description} Honest review, verified pricing and cheaper alternatives on ToolTrim.`;
             html = html.replace("</body>", `    <noscript><p>${toolBodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
+            if (renderToolPage) {
+              try {
+                const { html: markup, relatedPosts } = await renderToolPage(`/${lang}/tool/${slug}`, tool, lang);
+                html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                if (compiledCssPath) {
+                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                  if (utilityCss) {
+                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                  }
+                }
+                const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
+                const relatedPostsJson = JSON.stringify(relatedPosts).replace(/<\/script/gi, "<\\/script");
+                html = html.replace(
+                  "</body>",
+                  `    <script id="__SSR_TOOL__" type="application/json">${ssrJson}</script>\n` +
+                  `    <script id="__SSR_RELATED_POSTS__" type="application/json">${relatedPostsJson}</script>\n  </body>`
+                );
+              } catch (e) {
+                console.warn(`⚠️ SSR render failed for ${lang}/tool/${slug}, falling back to meta-only:`, e);
+              }
+            }
+
             const outDir = path.resolve(distDir, lang, "tool", slug);
             fs.mkdirSync(outDir, { recursive: true });
             fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
@@ -518,9 +574,13 @@ function staticPrerenderPlugin(): Plugin {
         const TOOL_SUB_PAGES: SubPageDef[] = [
           {
             path: "prix",
-            buildTitle: (name, isFr) => isFr
-              ? `${name} : prix et tarifs 2026 | ToolTrim`
-              : `${name} pricing & plans 2026 | ToolTrim`,
+            buildTitle: (name, isFr, tool) => {
+              const override = isFr ? tool?.seo?.prixTitleFr : tool?.seo?.prixTitleEn;
+              if (override) return override;
+              return isFr
+                ? `${name} : prix et tarifs 2026 | ToolTrim`
+                : `${name} pricing & plans 2026 | ToolTrim`;
+            },
             buildDesc: (name, price, isFr) => isFr
               ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
               : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
@@ -535,12 +595,22 @@ function staticPrerenderPlugin(): Plugin {
           },
           {
             path: "alternatives",
-            buildTitle: (name, isFr) => isFr
-              ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
-              : `Best ${name} alternatives in 2026 | ToolTrim`,
-            buildDesc: (name, _price, isFr) => isFr
-              ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées, à jour 2026.`
-              : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options, updated 2026.`,
+            // tool.seo.altTitle/altMetaDescription let a fiche override the generic
+            // template when there's a sharper, situational hook (e.g. "X merged into Y").
+            buildTitle: (name, isFr, tool) => {
+              const override = isFr ? tool?.seo?.altTitleFr : tool?.seo?.altTitleEn;
+              if (override) return override;
+              return isFr
+                ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
+                : `Best ${name} alternatives in 2026 | ToolTrim`;
+            },
+            buildDesc: (name, _price, isFr, tool) => {
+              const override = isFr ? tool?.seo?.altMetaDescriptionFr : tool?.seo?.altMetaDescriptionEn;
+              if (override) return override;
+              return isFr
+                ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées, à jour 2026.`
+                : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options, updated 2026.`;
+            },
             buildBody: (name, _price, isFr, tool) => {
               const altIds: string[] = tool.alternatives || [];
               const altNames = altIds.slice(0, 5).map((id: string) => slugToName[id] || id).filter(Boolean);
@@ -610,8 +680,13 @@ function staticPrerenderPlugin(): Plugin {
               const frUrl    = `${BASE}/fr/tool/${slug}/${sub.path}`;
               const enUrl    = `${BASE}/en/tool/${slug}/${EN_SUB_PATH[sub.path] ?? sub.path}`;
               const mainUrl  = `${BASE}/${lang}/tool/${slug}`;
-              const title    = sub.buildTitle(name, isFr, tool);
-              const desc     = sub.buildDesc(name, price, isFr, tool);
+              // tool.seo.<prefix>Title/MetaDescription override any subpage's
+              // generic template (prefix: "alt" for /alternatives, else sub.path).
+              const overridePrefix = sub.path === "alternatives" ? "alt" : sub.path;
+              const titleOverride = isFr ? tool.seo?.[`${overridePrefix}TitleFr`] : tool.seo?.[`${overridePrefix}TitleEn`];
+              const descOverride  = isFr ? tool.seo?.[`${overridePrefix}MetaDescriptionFr`] : tool.seo?.[`${overridePrefix}MetaDescriptionEn`];
+              const title    = titleOverride || sub.buildTitle(name, isFr, tool);
+              const desc     = descOverride  || sub.buildDesc(name, price, isFr, tool);
               const bodyText = sub.buildBody(name, price, isFr, tool);
 
               // BreadcrumbList for sub-page
@@ -1112,34 +1187,21 @@ function staticPrerenderPlugin(): Plugin {
         }
 
         // --- Prerender comparison pages ---
-        const BRAND_NAMES: Record<string, string> = {
-          chatgpt: "ChatGPT", claude: "Claude", github: "GitHub", google: "Google",
-          hubspot: "HubSpot", typeform: "Typeform", languagetool: "LanguageTool",
-          airtable: "Airtable", midjourney: "Midjourney", semrush: "SEMrush",
-          dropbox: "Dropbox", notion: "Notion", zapier: "Zapier", figma: "Figma",
-          canva: "Canva", linear: "Linear", jira: "Jira", obsidian: "Obsidian",
-          firefly: "Firefly", cursor: "Cursor", grammarly: "Grammarly",
-          similarweb: "Similarweb", stripe: "Stripe", razorpay: "Razorpay",
-          slack: "Slack", front: "Front", coda: "Coda", vercel: "Vercel",
-          replit: "Replit", drive: "Drive", copilot: "Copilot", make: "Make",
-          tally: "Tally", loom: "Loom",
-        };
-        const toBrandName = (slug: string) =>
-          slug.split("-").map(w => BRAND_NAMES[w.toLowerCase()] ?? (w.charAt(0).toUpperCase() + w.slice(1))).join(" ");
-
-        const COMPARISONS_PRERENDER = [
-          "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
-          "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
-          "github-copilot-vs-cursor", "grammarly-vs-claude",
-          "figma-vs-canva", "linear-vs-jira", "notion-vs-airtable",
-          "vercel-vs-replit", "semrush-vs-similarweb", "stripe-vs-razorpay",
-          "slack-vs-front", "notion-vs-coda",
-        ];
-        for (const comp of COMPARISONS_PRERENDER) {
-          const parts = comp.split("-vs-");
-          const toolA = toBrandName(parts[0]);
-          const toolB = parts[1] ? toBrandName(parts[1]) : "";
-          const label = `${toolA} vs ${toolB}`;
+        // Real SSR for every featured pair (was: 16 hardcoded slugs with
+        // meta tags only, guessing tool names from the slug — an external
+        // audit found /comparatif/* pages had no real content for non-JS
+        // crawlers at all, just an empty <div id="root">). Now resolves the
+        // actual Tool objects and renders the real ComparePage markup via
+        // renderComparePage, same pattern as the tool-page SSR above.
+        let comparisonsRendered = 0;
+        for (const comp of FEATURED_COMPARISONS) {
+          const toolA = tools.find((t: any) => (t.slug || t.id) === comp.toolA);
+          const toolB = tools.find((t: any) => (t.slug || t.id) === comp.toolB);
+          if (!toolA || !toolB) {
+            console.warn(`⚠️ Comparatif ${comp.slugPair}: outil(s) introuvable(s), ignoré.`);
+            continue;
+          }
+          const label = `${toolA.name} vs ${toolB.name}`;
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
@@ -1148,9 +1210,9 @@ function staticPrerenderPlugin(): Plugin {
             const description = isFr
               ? `Comparatif ${label} : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?`
               : `${label} comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?`;
-            const url = `${BASE}/${lang}/comparatif/${comp}`;
-            const frUrl = `${BASE}/fr/comparatif/${comp}`;
-            const enUrl = `${BASE}/en/comparatif/${comp}`;
+            const url = `${BASE}/${lang}/comparatif/${comp.slugPair}`;
+            const frUrl = `${BASE}/fr/comparatif/${comp.slugPair}`;
+            const enUrl = `${BASE}/en/comparatif/${comp.slugPair}`;
 
             const compBreadcrumb = {
               "@context": "https://schema.org",
@@ -1183,7 +1245,22 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
             html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
-            const outDir = path.resolve(distDir, lang, "comparatif", comp);
+            if (renderComparePage) {
+              try {
+                const markup = await renderComparePage(`/${lang}/comparatif/${comp.slugPair}`, toolA, toolB);
+                html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                const ssrJson = JSON.stringify({ toolA, toolB }).replace(/<\/script/gi, "<\\/script");
+                html = html.replace(
+                  "</body>",
+                  `    <script id="__SSR_COMPARE__" type="application/json">${ssrJson}</script>\n  </body>`
+                );
+                comparisonsRendered++;
+              } catch (e) {
+                console.warn(`⚠️ SSR render failed for ${lang}/comparatif/${comp.slugPair}, falling back to meta-only:`, e);
+              }
+            }
+
+            const outDir = path.resolve(distDir, lang, "comparatif", comp.slugPair);
             fs.mkdirSync(outDir, { recursive: true });
             fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
           }
@@ -1303,7 +1380,7 @@ function staticPrerenderPlugin(): Plugin {
 
         const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${COMPARISONS_PRERENDER.length * 2} comparisons + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
@@ -1311,10 +1388,230 @@ function staticPrerenderPlugin(): Plugin {
   };
 }
 
+/**
+ * Extracts the small, foundational slice of index.css (CSS variables,
+ * @font-face, base resets) that the rest of the page depends on to avoid
+ * broken colors (unresolved var() falling back to transparent/black), then
+ * inlines it and defers the main stylesheet so it stops blocking render.
+ * Built from src/index.css directly (not a hand-maintained copy) so the two
+ * never drift apart.
+ */
+function extractCriticalCss(): string {
+  const css = fs.readFileSync(path.resolve(__dirname, "src/index.css"), "utf-8");
+  const root = postcss.parse(css);
+  const critical: string[] = [];
 
+  // Measured via a local Lighthouse trace (LayoutShift event, score ~0.55 —
+  // basically the entire CLS on SSR'd tool pages): the raw `body { ... }`
+  // rule below contains `@apply ...`, which is meaningless outside Tailwind's
+  // build pipeline and gets silently dropped by the browser, so margin
+  // collapses to the browser's default ~8px until Tailwind's preflight
+  // (only in the deferred main stylesheet) resets it to 0. That reset is
+  // hardcoded here directly so it's present from the very first paint.
+  critical.push("html, body { margin: 0; }");
+  // Same trace also showed the remaining ~16px top offset surviving the fix
+  // above: Tailwind's preflight (deferred) also zeroes heading/paragraph
+  // margins, which the browser default stylesheet doesn't. Until that
+  // loads, the page's <h1>/<p> sit at their default UA margins, then jump
+  // up once it arrives. Mirror Tailwind's own preflight selector list here.
+  critical.push("blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0; }");
+  // Confirmed via a CDP-level layout-shift trace (PerformanceObserver with
+  // node references, not guessing from a Lighthouse summary): body's own
+  // margin is already 0, but its first DOM child — the Toaster's <ol>
+  // notification region, rendered before any route content — has the
+  // browser default ol margin (~1em) until Tailwind's preflight resets it.
+  // With no border/padding on body separating them, that margin collapses
+  // through and visually pushes body down by exactly that amount.
+  critical.push("ol, ul, menu { margin: 0; padding: 0; list-style: none; }");
+  // Tailwind utility classes (fixed, flex, pt-[68px], etc.) used by the
+  // shell/content can't be extracted here at all — they're generated from
+  // .tsx usage, not hand-written in this file. See extractUsedUtilityCss
+  // below, which pulls those straight from the compiled bundle per-page.
+
+  root.walkAtRules("font-face", (rule) => {
+    critical.push(rule.toString());
+  });
+
+  root.walkRules((rule) => {
+    const sel = rule.selector.trim();
+    if (sel === ":root" || sel === ".dark") {
+      let inMediaGutter = false;
+      let p = rule.parent;
+      while (p) {
+        if (p.type === "atrule" && p.name === "media" && /max-width:\s*(1023|767)px/.test(p.params)) {
+          inMediaGutter = true;
+        }
+        p = p.parent;
+      }
+      // Top-level :root/.dark (not the responsive --layout-gutter overrides,
+      // those are non-critical and can arrive with the deferred stylesheet)
+      if (!inMediaGutter) critical.push(rule.toString());
+    }
+    if (sel === "body") critical.push(rule.toString());
+  });
+
+  return critical.join("\n\n");
+}
+
+// Pulls the compiled rule for every plain (no responsive/hover/dark-mode
+// prefix) utility class actually used in a piece of server-rendered HTML,
+// straight from the real compiled CSS bundle — found necessary after
+// chasing individual Tailwind utilities (fixed, flex-1, pt-[68px]...) by
+// hand turned out to be unbounded (every component uses more of them).
+// Automatic and exhaustive instead of a manually maintained list; prefixed
+// variants (lg:, hover:, dark:) are skipped since they don't affect the
+// very first paint the same way an unstyled-vs-styled timing gap does.
+// Tailwind escapes special characters in a compiled selector with a literal
+// backslash (e.g. class "pt-[68px]" -> selector ".pt-\[68px\]"). Extracts
+// each class token (unescaped) from one CSS selector — only meaningful for
+// "simple" selectors (just one or more chained classes, no combinators/
+// pseudo-classes); returns null for anything more complex so callers skip it
+// rather than risk a wrong match.
+function classesOfSimpleSelector(selector: string): string[] | null {
+  if (!/^(\.(?:[^.\s,]|\\.)+)+$/.test(selector)) return null;
+  const tokens = selector.match(/\.(?:[^.\s,]|\\.)+/g) || [];
+  return tokens.map((t) => t.slice(1).replace(/\\(.)/g, "$1"));
+}
+
+interface IndexedRule { required: string[]; text: string }
+
+// Walks the compiled CSS (top-level rules, plus one level inside @media/
+// @supports) and indexes every simple class selector under each class it
+// requires. A media-scoped match keeps its @media(...) {...} wrapper in
+// `text` instead of being flattened to an unconditional rule — learned the
+// hard way: an earlier version stripped @media content entirely, which
+// fixed one bug (`.td-sidebar-mobile{display:none}` only existing inside
+// a desktop-only media query, wrongly applied everywhere) but broke
+// another (the mobile override that collapses `.td-body-grid` to a single
+// column never arrived, so the *desktop* 2-column grid briefly applied on
+// mobile too, squeezing the sidebar to near-zero width — confirmed via a
+// CDP layout-shift trace against production: CLS ~0.9, mobile only).
+// Keeping the wrapper means the browser evaluates the real media query
+// itself, immediately, exactly as it would once the deferred stylesheet
+// loads — so both the always-hidden-on-desktop and the mobile-collapse
+// rules apply correctly from the very first paint.
+function buildClassRuleIndex(css: string): Map<string, IndexedRule[]> {
+  const index = new Map<string, IndexedRule[]>();
+  function addRule(selectors: string, body: string, wrapBefore: string, wrapAfter: string) {
+    for (const selector of selectors.split(",")) {
+      const required = classesOfSimpleSelector(selector.trim());
+      if (!required || required.length === 0) continue;
+      const text = `${wrapBefore}${selector.trim()}${body}${wrapAfter}`;
+      for (const c of required) {
+        const list = index.get(c) ?? [];
+        list.push({ required, text });
+        index.set(c, list);
+      }
+    }
+  }
+
+  let i = 0;
+  while (i < css.length) {
+    const brace = css.indexOf("{", i);
+    if (brace === -1) break;
+    const selectorsRaw = css.slice(i, brace).trim();
+    let depth = 1;
+    let j = brace + 1;
+    for (; j < css.length && depth > 0; j++) {
+      if (css[j] === "{") depth++;
+      else if (css[j] === "}") depth--;
+    }
+    const body = css.slice(brace, j); // includes braces
+    if (/^@(media|supports)\b/.test(selectorsRaw)) {
+      const inner = body.slice(1, -1);
+      let k = 0;
+      while (k < inner.length) {
+        const ibrace = inner.indexOf("{", k);
+        if (ibrace === -1) break;
+        const innerSelectors = inner.slice(k, ibrace).trim();
+        let idepth = 1;
+        let m = ibrace + 1;
+        for (; m < inner.length && idepth > 0; m++) {
+          if (inner[m] === "{") idepth++;
+          else if (inner[m] === "}") idepth--;
+        }
+        if (innerSelectors && !innerSelectors.startsWith("@")) {
+          addRule(innerSelectors, inner.slice(ibrace, m), `${selectorsRaw}{`, "}");
+        }
+        k = m;
+      }
+    } else if (selectorsRaw && !selectorsRaw.startsWith("@")) {
+      addRule(selectorsRaw, body, "", "");
+    }
+    i = j;
+  }
+  return index;
+}
+
+let classRuleIndex: Map<string, IndexedRule[]> | null = null;
+let compiledCssExists = false;
+function extractUsedUtilityCss(markup: string, compiledCssPath: string): string {
+  if (classRuleIndex === null) {
+    compiledCssExists = fs.existsSync(compiledCssPath);
+    classRuleIndex = compiledCssExists
+      ? buildClassRuleIndex(fs.readFileSync(compiledCssPath, "utf-8"))
+      : new Map();
+  }
+  if (!compiledCssExists) return "";
+
+  // Group by class ATTRIBUTE (not flattened across the whole page) — a
+  // compound selector like `.a.b` only matches an element carrying BOTH
+  // classes together, not two different elements that each have one.
+  const classGroups: Set<string>[] = [];
+  for (const m of markup.matchAll(/class="([^"]*)"/g)) {
+    const group = new Set(m[1].split(/\s+/).filter((c) => c && !c.includes(":")));
+    if (group.size) classGroups.push(group);
+  }
+
+  const seen = new Set<string>();
+  const rules: string[] = [];
+  for (const group of classGroups) {
+    for (const cls of group) {
+      for (const candidate of classRuleIndex.get(cls) ?? []) {
+        if (seen.has(candidate.text)) continue;
+        if (candidate.required.every((c) => group.has(c))) {
+          seen.add(candidate.text);
+          rules.push(candidate.text);
+        }
+      }
+    }
+  }
+  return rules.join("");
+}
+
+function criticalCssPlugin(): Plugin {
+  let criticalCss = "";
+  return {
+    name: "critical-css-inline",
+    apply: "build",
+    buildStart() {
+      criticalCss = extractCriticalCss();
+    },
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        // 1. Inline the critical slice right at the top of <head>, so it's
+        //    available before anything else in the document.
+        let out = html.replace(
+          "<head>",
+          `<head>\n    <style id="critical-css">${criticalCss}</style>`
+        );
+        // 2. Defer the main stylesheet Vite injected (same pattern already
+        //    used for Google Fonts below) so it no longer blocks render.
+        out = out.replace(
+          /<link rel="stylesheet" crossorigin href="([^"]+\.css)">/,
+          (_match, href) =>
+            `<link rel="stylesheet" crossorigin href="${href}" media="print" onload="this.media='all'">\n` +
+            `    <noscript><link rel="stylesheet" crossorigin href="${href}" /></noscript>`
+        );
+        return out;
+      },
+    },
+  };
+}
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode, isSsrBuild }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -1325,12 +1622,16 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    sitemapPlugin(),
-    staticPrerenderPlugin(),
+    // These three only make sense for the client build — they write into
+    // dist/ (sitemap, prerendered HTML) or transform index.html, none of
+    // which exist/apply during the separate `vite build --ssr` pass.
+    !isSsrBuild && sitemapPlugin(),
+    !isSsrBuild && criticalCssPlugin(),
+    !isSsrBuild && staticPrerenderPlugin(),
   ].filter(Boolean),
   build: {
     rollupOptions: {
-      output: {
+      output: isSsrBuild ? undefined : {
         manualChunks(id) {
           // Data chunks only — vendor splitting is left to Vite's defaults
           // to avoid circular reference issues between React chunks
@@ -1340,7 +1641,7 @@ export default defineConfig(({ mode }) => ({
           if (id.includes("/src/data/content.json")) return "data-content";
           if (id.includes("/src/data/posts-fr.json")) return "data-posts-fr";
           if (id.includes("/src/data/posts-en.json")) return "data-posts-en";
-          if (id.includes("/src/data/")) return "data-stacks";
+          if (id.includes("/src/data/stacks.ts")) return "data-stacks";
           return undefined;
         },
       },

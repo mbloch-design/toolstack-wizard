@@ -17,12 +17,16 @@ import {
 } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
+import { classifyCreativeWorkflowTools } from "@/lib/creativeAdaptiveEngine";
 import {
   formatMoney,
   formatMonthlyTotal,
+  getMonthlyBudgetBreakdown,
   getPricingAudit,
   getPricingCaptureSummary,
 } from "@/utils/diagnosticPricing";
+import { translateHealthLabel } from "@/utils/diagnosticLabels";
+import { buildDiagnosticDecisionPlan } from "@/utils/diagnosticDecisionPlan";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -47,13 +51,6 @@ function getName(result: DiagnosticResult) {
   return result.sessionState.firstName?.trim();
 }
 
-function translateHealthLabel(label: DiagnosticResult["healthLabel"], t: Props["t"]) {
-  if (label === "Optimisée") return t("Optimisée", "Optimized");
-  if (label === "Correcte") return t("Correcte", "Good");
-  if (label === "À revoir") return t("À revoir", "Needs review");
-  return t("Critique", "Critical");
-}
-
 function getGoalLabel(goal: DiagnosticResult["sessionState"]["stackGoal"], t: Props["t"]) {
   if (goal === "reduce_costs") return t("Réduire les coûts", "Reduce costs");
   if (goal === "save_time") return t("Gagner du temps", "Save time");
@@ -71,6 +68,15 @@ function buildThesis(result: DiagnosticResult, t: Props["t"]) {
   const risk = result.insights.primaryRisk;
 
   if (result.sessionState.persona === "SOFIA") {
+    const highAiFinding = result.insights.aiAnalysis.findings.find(
+      (finding) => finding.severity === "high"
+    );
+    if (highAiFinding) {
+      return t(
+        `${introFr}le point prioritaire est de sécuriser la place de l’IA dans ta chaîne créative avant de chercher un nouvel outil.`,
+        `${introEn}the priority is to secure AI's role in your creative chain before looking for another tool.`
+      );
+    }
     const satelliteCount = getCreativeWorkflowStages(result, t).find((stage) => stage.id === "accelerate")?.tools.length || 0;
     if (satelliteCount > 0) {
       return t(
@@ -79,8 +85,8 @@ function buildThesis(result: DiagnosticResult, t: Props["t"]) {
       );
     }
     return t(
-      `${introFr}ta stack créative dépend surtout des outils principaux. Il faut vérifier les ressources, plugins et validations autour.`,
-      `${introEn}your creative stack mostly depends on core tools. We need to check resources, plugins and review workflows around them.`
+      `${introFr}ta stack créative dépend surtout des outils principaux. Il faut vérifier les ressources, la diffusion, les validations et les archives autour.`,
+      `${introEn}your creative stack mostly depends on core tools. We need to check resources, publishing, review workflows and archives around them.`
     );
   }
 
@@ -123,45 +129,14 @@ function allPrescriptions(result: DiagnosticResult) {
 }
 
 function getPriorityItems(result: DiagnosticResult, t: Props["t"]): PriorityItem[] {
-  const toolMap = new Map(result.sessionState.selectedTools.map((tool) => [tool.id, tool]));
-  const prescriptions = allPrescriptions(result)
-    .slice()
-    .sort((a, b) => b.savingsEstimate - a.savingsEstimate);
-
-  const items = prescriptions.slice(0, 3).map((item, index) => {
-    const tool = toolMap.get(item.toolId);
-    const label =
-      item.type === "pricing-tier"
-        ? t(`Vérifier le plan de ${tool?.name ?? item.toolId}`, `Review ${tool?.name ?? item.toolId} plan`)
-        : item.verdict === "cancel"
-        ? t(`Décider si ${tool?.name ?? item.toolId} doit rester`, `Decide whether ${tool?.name ?? item.toolId} should stay`)
-        : item.verdict === "downgrade"
-          ? t(`Vérifier le plan de ${tool?.name ?? item.toolId}`, `Review ${tool?.name ?? item.toolId} plan`)
-          : t(`Clarifier l’usage de ${tool?.name ?? item.toolId}`, `Clarify ${tool?.name ?? item.toolId} usage`);
-
-    return {
-      id: `${item.toolId}-${item.type}-${index}`,
-      label,
-      detail: item.message,
-      tool,
-      savings: item.savingsEstimate,
-      kind: index === 0 ? "now" : index === 1 ? "check" : "later",
-    } satisfies PriorityItem;
-  });
-
-  if (items.length >= 3) return items;
-
-  result.insights.focusAreas.slice(0, 3 - items.length).forEach((focus) => {
-    items.push({
-      id: focus.id,
-      label: t(focus.labelFr, focus.labelEn),
-      detail: t(focus.actionFr, focus.actionEn),
-      savings: 0,
-      kind: items.length === 0 ? "now" : items.length === 1 ? "check" : "later",
-    });
-  });
-
-  return items;
+  return buildDiagnosticDecisionPlan(result).map((decision, index) => ({
+    id: decision.id,
+    label: t(decision.labelFr, decision.labelEn),
+    detail: t(decision.detailFr, decision.detailEn),
+    tool: decision.tool,
+    savings: decision.savings,
+    kind: index === 0 ? "now" : index === 1 ? "check" : "later",
+  }));
 }
 
 function getToolGroups(result: DiagnosticResult) {
@@ -185,24 +160,8 @@ const CREATIVE_STAGE_DEFS = [
     Icon: Palette,
     labelFr: "Produire",
     labelEn: "Produce",
-    detailFr: "Outils qui fabriquent les livrables : design, image, vidéo, photo.",
-    detailEn: "Tools that create deliverables: design, image, video, photo.",
-    ids: [
-      "figma",
-      "canva",
-      "adobe-photoshop",
-      "adobe-illustrator",
-      "adobe-after-effects",
-      "adobe-premiere-pro",
-      "davinci-resolve",
-      "capcut",
-      "adobe-lightroom",
-      "capture-one",
-      "midjourney",
-      "krea-ai",
-      "firefly",
-      "runway",
-    ],
+    detailFr: "Outils qui fabriquent les livrables : design, image, vidéo, photo, 3D, espaces ou audio.",
+    detailEn: "Tools that create deliverables: design, image, video, photo, 3D, spaces or audio.",
   },
   {
     id: "accelerate",
@@ -211,34 +170,22 @@ const CREATIVE_STAGE_DEFS = [
     labelEn: "Accelerate",
     detailFr: "Satellites qui font gagner du temps : plugins, presets, templates, assets.",
     detailEn: "Satellites that save time: plugins, presets, templates, assets.",
-    ids: [
-      "figma-iconify",
-      "figma-tokens",
-      "figma-stark",
-      "figma-anima",
-      "ae-bodymovin",
-      "lottiefiles",
-      "ae-animation-composer",
-      "motion-bro",
-      "presets-lightroom",
-      "lightroom-presets",
-      "dynamic-mockups",
-      "mockup-plugins",
-      "envato-elements",
-      "fontbase",
-      "rightfont",
-      "canva-templates",
-      "figma-templates",
-    ],
   },
   {
     id: "review",
     Icon: MessageSquare,
     labelFr: "Valider",
     labelEn: "Review",
-    detailFr: "Feedback, livraison, preuve client et passage de relais.",
-    detailEn: "Feedback, delivery, client proof and handoff.",
-    ids: ["frame-io", "loom", "tella", "pixieset", "google-drive", "dropbox", "wetransfer", "adobe-acrobat", "adobe-acrobat-sign", "zeplin", "protopie", "framer"],
+    detailFr: "Brief, feedback, livraison, archives et passage de relais.",
+    detailEn: "Briefs, feedback, delivery, archives and handoff.",
+  },
+  {
+    id: "publish",
+    Icon: Share2,
+    labelFr: "Diffuser",
+    labelEn: "Publish",
+    detailFr: "Planification, hébergement, distribution et mesure des contenus.",
+    detailEn: "Scheduling, hosting, distribution and content measurement.",
   },
   {
     id: "secure",
@@ -247,32 +194,66 @@ const CREATIVE_STAGE_DEFS = [
     labelEn: "Secure",
     detailFr: "Licences, droits d’usage, plans payés et coûts à préciser.",
     detailEn: "Licenses, usage rights, paid plans and costs to clarify.",
-    ids: ["adobe-creative-cloud", "adobe-cc", "envato-elements", "brand-kits", "fontbase", "rightfont", "stripe", "indy", "paypal"],
   },
 ] as const;
 
 function getCreativeWorkflowStages(result: DiagnosticResult, _t: Props["t"]) {
-  const selected = result.sessionState.selectedTools;
+  const classified = classifyCreativeWorkflowTools(
+    result.sessionState.selectedTools,
+    result.sessionState.toolUsageMap
+  );
   return CREATIVE_STAGE_DEFS.map((stage) => {
-    const idSet = new Set(stage.ids);
     return {
       ...stage,
-      tools: selected.filter((tool) => idSet.has(tool.id)).slice(0, 8),
+      tools: classified[stage.id].slice(0, 8),
     };
   });
 }
 
-function getEvidence(result: DiagnosticResult, t: Props["t"], monthlyCostLabel: string) {
+function getBudgetRead(
+  selectedTools: Tool[],
+  contracts: DiagnosticResult["sessionState"]["commercialContracts"],
+  t: Props["t"]
+) {
+  const breakdown = getMonthlyBudgetBreakdown(selectedTools, contracts);
+  const hasUnconfirmedAmount = breakdown.hasToVerify;
+  const label = hasUnconfirmedAmount
+    ? breakdown.confirmedEur > 0
+      ? t("Budget déclaré + estimé", "Declared + estimated budget")
+      : t("Budget à confirmer", "Budget to confirm")
+    : t("Budget déclaré", "Declared budget");
+
+  return {
+    breakdown,
+    label,
+    evidenceLabel: hasUnconfirmedAmount
+      ? t("Budget à confirmer", "Budget to confirm")
+      : t("Budget capté", "Captured budget"),
+    stableDetail: hasUnconfirmedAmount
+      ? t(
+          "Ce montant mélange des prix catalogue ou modes à vérifier : il sert de repère, pas de dépense déclarée.",
+          "This amount mixes catalog prices or modes to check: use it as a guide, not as declared spend."
+        )
+      : t("Pas de gaspillage évident détecté dans les plans déclarés.", "No obvious waste detected in the declared plans."),
+  };
+}
+
+function getEvidence(
+  result: DiagnosticResult,
+  t: Props["t"],
+  monthlyCostLabel: string,
+  budgetRead: ReturnType<typeof getBudgetRead>
+) {
   const risk = result.insights.primaryRisk;
   return [
     {
       id: "budget",
       Icon: CircleDollarSign,
-      label: t("Budget capté", "Captured budget"),
+      label: budgetRead.evidenceLabel,
       value: `${monthlyCostLabel}/${t("mois", "mo")}`,
       detail: result.estimatedWaste > 0
         ? t("Des gains semblent possibles, mais les montants doivent rester liés aux vrais plans déclarés.", "Potential gains exist, but amounts must stay tied to the real declared plans.")
-        : t("Pas de gaspillage évident détecté dans les plans déclarés.", "No obvious waste detected in the declared plans."),
+        : budgetRead.stableDetail,
     },
     {
       id: "coverage",
@@ -303,7 +284,7 @@ function formatEstimatedSavings(item: PriorityItem, t: Props["t"]) {
   const currency = item.tool?.priceCurrency || item.tool?.catalogMonthlyPriceCurrency;
   const label = `${formatMoney(Math.round(item.savings), currency)}/${t("mois", "mo")}`;
   if (currency) return label;
-  return `${label} · ${t("devise à vérifier", "currency to verify")}`;
+  return `${label} · ${t("montant à préciser", "amount to clarify")}`;
 }
 
 export default function DashOverview({ result, t, onShare, onNavigate, onTrack }: Props) {
@@ -312,18 +293,32 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
   const priorityItems = useMemo(() => getPriorityItems(result, t), [result, t]);
   const toolGroups = useMemo(() => getToolGroups(result), [result]);
   const creativeWorkflow = useMemo(() => getCreativeWorkflowStages(result, t), [result, t]);
+  const aiAnalysis = result.insights.aiAnalysis;
   const profile = result.insights.profile;
   const maturity = result.insights.maturity;
   const healthLabel = translateHealthLabel(result.healthLabel, t);
   const hasWaste = result.estimatedWaste > 0;
   const selectedTools = result.sessionState.selectedTools;
-  const monthlyCostLabel = useMemo(() => formatMonthlyTotal(selectedTools, t), [selectedTools, t]);
-  const pricingSummary = useMemo(() => getPricingCaptureSummary(selectedTools), [selectedTools]);
+  const monthlyCostLabel = useMemo(
+    () => formatMonthlyTotal(selectedTools, t, result.sessionState.commercialContracts),
+    [result.sessionState.commercialContracts, selectedTools, t]
+  );
+  const budgetRead = useMemo(
+    () => getBudgetRead(selectedTools, result.sessionState.commercialContracts, t),
+    [result.sessionState.commercialContracts, selectedTools, t]
+  );
+  const pricingSummary = useMemo(
+    () => getPricingCaptureSummary(selectedTools, result.sessionState.commercialContracts),
+    [result.sessionState.commercialContracts, selectedTools]
+  );
   const pricingToolsToCheck = useMemo(
     () => selectedTools.filter((tool) => getPricingAudit(tool, t).needsVerification).slice(0, 4),
     [selectedTools, t]
   );
-  const evidence = useMemo(() => getEvidence(result, t, monthlyCostLabel), [result, t, monthlyCostLabel]);
+  const evidence = useMemo(
+    () => getEvidence(result, t, monthlyCostLabel, budgetRead),
+    [budgetRead, result, t, monthlyCostLabel]
+  );
   const goalLabel = getGoalLabel(result.sessionState.stackGoal, t);
   const coverage = result.sessionState.selectionCoverage;
   const coveredCount = coverage?.covered.length || result.insights.functionalCoverage.filter((item) => item.status === "covered").length;
@@ -382,7 +377,7 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
                 value={`${selectedTools.length} ${t("outil(s)", "tool(s)")}`}
               />
               <ReportLine
-                label={t("Budget déclaré", "Declared budget")}
+                label={budgetRead.label}
                 value={`${monthlyCostLabel}/${t("mois", "mo")}`}
               />
             </div>
@@ -439,8 +434,8 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
             eyebrow={t("Lecture créative", "Creative read")}
             title={t("Ta stack comme une chaîne de production", "Your stack as a production chain")}
             description={t(
-              "Je sépare les gros outils évidents des éléments périphériques qui font vraiment la différence : plugins, assets, templates, presets, validation et licences.",
-              "I separate the obvious core tools from the peripheral pieces that really matter: plugins, assets, templates, presets, review and licenses."
+              "Je sépare les outils de production des maillons qui font vraiment la différence : plugins, assets, diffusion, archives, validation et licences.",
+              "I separate the obvious core tools from the peripheral pieces that really matter: plugins, assets, publishing, archives, review and licenses."
             )}
           />
           <div className="grid gap-3 md:grid-cols-2">
@@ -449,6 +444,10 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
             ))}
           </div>
         </section>
+      )}
+
+      {(aiAnalysis.actorCount > 0 || aiAnalysis.findings.length > 0) && (
+        <AiWorkflowRead analysis={aiAnalysis} t={t} />
       )}
 
       <section className="grid gap-3 md:grid-cols-3">
@@ -482,8 +481,8 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-amber-900/80">
                 {t(
-                  `${pricingSummary.needsVerificationCount} outil(s) ont encore un plan, un prix catalogue ou une devise à confirmer. Les décisions restent valables, mais les gains doivent être vérifiés plan par plan.`,
-                  `${pricingSummary.needsVerificationCount} tool(s) still have a plan, catalog price or currency to confirm. Decisions still stand, but gains should be checked plan by plan.`
+                  `${pricingSummary.needsVerificationCount} point(s) de prix ou d'accès restent à préciser. Les décisions restent valables, mais les gains doivent être vérifiés avec les vrais contrats.`,
+                  `${pricingSummary.needsVerificationCount} pricing or access point(s) still need clarification. Decisions still stand, but gains should be checked against the real contracts.`
                 )}
               </p>
             </div>
@@ -644,6 +643,184 @@ export default function DashOverview({ result, t, onShare, onNavigate, onTrack }
         )}
       </section>
     </div>
+  );
+}
+
+function AiWorkflowRead({
+  analysis,
+  t,
+}: {
+  analysis: DiagnosticResult["insights"]["aiAnalysis"];
+  t: Props["t"];
+}) {
+  const reviewFindings = analysis.findings.filter(
+    (finding) => finding.reviewRecommended
+  );
+
+  return (
+    <section className="space-y-3">
+      <SectionHeader
+        eyebrow={t("Lecture IA", "AI read")}
+        title={t(
+          "Ce que l’IA fait réellement dans ta chaîne",
+          "What AI actually does in your workflow"
+        )}
+        description={t(
+          "Je sépare les capacités utilisées, leurs fournisseurs et les points à cadrer. L’objectif n’est pas de compter les logos IA.",
+          "I separate used capabilities, their providers, and what needs framing. The goal is not to count AI logos."
+        )}
+      />
+
+      <div className="grid gap-3 sm:grid-cols-3">
+        <ContextCard
+          label={t("Étapes concernées", "AI-enabled steps")}
+          value={String(analysis.objectiveCount)}
+          detail={t(
+            `${analysis.capabilityCount} capacité(s) précise(s) cartographiée(s).`,
+            `${analysis.capabilityCount} precise capability or capabilities mapped.`
+          )}
+        />
+        <ContextCard
+          label={t("Acteurs IA", "AI actors")}
+          value={String(analysis.actorCount)}
+          detail={t(
+            `${analysis.actorOccurrenceCount} intervention(s) répartie(s) dans la chaîne.`,
+            `${analysis.actorOccurrenceCount} intervention or interventions across the workflow.`
+          )}
+        />
+        <ContextCard
+          label={t("À cadrer", "Needs framing")}
+          value={String(reviewFindings.length)}
+          detail={t(
+            "Risques, chevauchements ou étapes fragiles déclarés par l’utilisateur.",
+            "Risks, overlaps, or fragile steps declared by the user."
+          )}
+        />
+      </div>
+
+      {analysis.globalActors.length > 0 && (
+        <div className="grid gap-3 lg:grid-cols-2">
+          {analysis.globalActors.slice(0, 6).map((actor) => (
+            <div
+              key={actor.actorKey}
+              className="rounded-lg border border-border bg-card p-4"
+            >
+              <div className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                  <Sparkles className="h-5 w-5" />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-bold text-foreground">
+                        {actor.toolName}
+                      </p>
+                      <p className="mt-0.5 text-[11px] font-medium text-muted-foreground">
+                        {t(actor.sourceLabelFr, actor.sourceLabelEn)}
+                        {actor.hostToolName && actor.hostToolName !== actor.toolName
+                          ? ` · ${t("dans", "in")} ${actor.hostToolName}`
+                          : ""}
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                      {actor.objectiveCount} {t(
+                        actor.objectiveCount > 1 ? "étapes" : "étape",
+                        actor.objectiveCount > 1 ? "steps" : "step"
+                      )}
+                    </span>
+                  </div>
+
+                  <p className="mt-2 text-[11px] font-medium text-primary">
+                    {t(actor.accessLabelFr, actor.accessLabelEn)}
+                    {actor.commercialContractName
+                      ? ` · ${actor.commercialContractName}`
+                      : ""}
+                    {actor.allowanceLabelFr
+                      ? ` · ${t(
+                          actor.allowanceLabelFr,
+                          actor.allowanceLabelEn || actor.allowanceLabelFr
+                        )}`
+                      : ""}
+                    {Number(actor.variableMonthlyCost || 0) > 0
+                      ? ` · +${actor.variableMonthlyCost} €/mois`
+                      : ""}
+                  </p>
+
+                  <div className="mt-3 space-y-2">
+                    {actor.roles.map((role) => (
+                      <div
+                        key={`${actor.actorKey}-${role.objectiveId}`}
+                        className="rounded-md border border-border bg-muted/20 px-3 py-2"
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-sm font-semibold text-foreground">
+                            {t(role.objectiveLabelFr, role.objectiveLabelEn)}
+                          </p>
+                          <span className="text-[11px] font-medium text-muted-foreground">
+                            {t(role.sourceLabelFr, role.sourceLabelEn)}
+                            {role.frequencyLabelFr
+                              ? ` · ${t(
+                                  role.frequencyLabelFr,
+                                  role.frequencyLabelEn || role.frequencyLabelFr
+                                )}`
+                              : ""}
+                          </span>
+                        </div>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          {(role.capabilityLabelsFr.length > 0
+                            ? role.capabilityLabelsFr
+                            : [t("Rôle à préciser", "Role to clarify")]
+                          ).map((label, index) => (
+                            <span
+                              key={`${actor.actorKey}-${role.objectiveId}-${index}`}
+                              className="rounded-full bg-background px-2 py-1 text-[11px] font-medium text-muted-foreground"
+                            >
+                              {role.capabilityLabelsEn[index]
+                                ? t(label, role.capabilityLabelsEn[index])
+                                : label}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {reviewFindings.length > 0 && (
+        <div className="space-y-2">
+          {reviewFindings.slice(0, 4).map((finding) => (
+            <div
+              key={finding.id}
+              className={`rounded-lg border p-4 ${
+                finding.severity === "high"
+                  ? "border-red-200 bg-red-50"
+                  : "border-amber-200 bg-amber-50"
+              }`}
+            >
+              <div className="flex items-start gap-3">
+                <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-orange-700" />
+                <div>
+                  <p className="text-sm font-bold text-foreground">
+                    {t(finding.labelFr, finding.labelEn)}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {t(finding.detailFr, finding.detailEn)}
+                  </p>
+                  <p className="mt-2 text-sm font-medium leading-relaxed text-foreground">
+                    {t(finding.actionFr, finding.actionEn)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
 

@@ -1,8 +1,4 @@
-import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
-import ToolLogo from "@/components/ToolLogo";
-import { Check, ArrowRightLeft } from "lucide-react";
-import { stripLeadingEmoji } from "@/lib/text";
 
 interface Props {
   tool: Tool;
@@ -14,87 +10,31 @@ interface Props {
 }
 
 /**
- * Alternatives section with semantic internal linking:
- * - cheaper tools, free tools, same-category tools
- * - each alternative links to its own page for crawl depth
+ * Free/cheaper tally line only. Used to be a full card grid (description +
+ * top pro + price per alternative), but ToolComparisonTable's "Tool name"
+ * column now carries the one-line description too, so the same info was
+ * showing up in two visual formats back to back. Cut to the one thing the
+ * table doesn't already say: how many alternatives are free or cheaper.
  */
-export default function ToolAlternativesSection({ tool, category, alternatives, prefix, lang, t }: Props) {
+export default function ToolAlternativesSection({ tool, alternatives, t }: Props) {
   if (alternatives.length === 0) return null;
 
   const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0);
   const cheaperAlts = alternatives.filter(a => a.defaultMonthlyPrice > 0 && a.defaultMonthlyPrice < tool.defaultMonthlyPrice);
-  const categoryLabel = category
-    ? t(stripLeadingEmoji(category.name, category.id), stripLeadingEmoji(category.nameEn, stripLeadingEmoji(category.name, category.id)))
-    : "";
+  if (freeAlts.length === 0 && cheaperAlts.length === 0) return null;
 
   return (
-    <section className="space-y-4">
-      {/* Eyebrow */}
-      <p className="text-xs font-bold uppercase tracking-widest flex items-center gap-1.5" style={{ color: "hsl(var(--primary))" }}>
-        <ArrowRightLeft className="h-3.5 w-3.5" />
-        {t("Comparer", "Compare")}
-      </p>
-
-      <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
-        {t(`Alternatives à ${tool.name}`, `Alternatives to ${tool.name}`)}
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        {t(
-          `${alternatives.length} outils similaires dans la catégorie ${categoryLabel}`,
-          `${alternatives.length} similar tools in the ${categoryLabel} category`
-        )}
-        {category && (
-          <> — <Link to={`${prefix}/category/${category.slug}`} className="text-primary hover:underline">
-            {t("voir la catégorie", "see category")}
-          </Link></>
-        )}
-      </p>
-
-      {/* Semantic sub-links for internal linking */}
-      {(freeAlts.length > 0 || cheaperAlts.length > 0) && (
-        <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          {freeAlts.length > 0 && (
-            <span className="rounded-full bg-keep/10 text-keep px-3 py-1 font-medium">
-              {freeAlts.length} {t("alternatives gratuites", "free alternatives")}
-            </span>
-          )}
-          {cheaperAlts.length > 0 && (
-            <span className="rounded-full bg-optimize/10 text-optimize px-3 py-1 font-medium">
-              {cheaperAlts.length} {t("alternatives moins chères", "cheaper alternatives")}
-            </span>
-          )}
-        </div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+      {freeAlts.length > 0 && (
+        <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>
+          <strong style={{ color: "hsl(var(--keep))" }}>{freeAlts.length}</strong> {t("alternatives gratuites", "free alternatives")}
+        </span>
       )}
-
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {alternatives.map((alt) => (
-          <Link key={alt.id} to={`${prefix}/tool/${alt.slug}`}
-            className="group rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
-            <div className="flex items-start gap-3">
-              <ToolLogo tool={alt} size={32} />
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold group-hover:text-primary truncate">{alt.name}</p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  {alt.defaultMonthlyPrice > 0 ? `${Math.round(alt.defaultMonthlyPrice)}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
-                  {alt.defaultMonthlyPrice < tool.defaultMonthlyPrice && alt.defaultMonthlyPrice > 0 && (
-                    <span className="ml-1 text-keep">
-                      (−{Math.round(tool.defaultMonthlyPrice - alt.defaultMonthlyPrice)}€)
-                    </span>
-                  )}
-                </p>
-              </div>
-            </div>
-            <p className="mt-2 text-xs text-muted-foreground line-clamp-2">
-              {lang === "en" && alt.shortDescriptionEn ? alt.shortDescriptionEn : alt.shortDescription}
-            </p>
-            {alt.pros?.length > 0 && (
-              <div className="mt-2 flex items-center gap-1 text-xs text-keep">
-                <Check className="h-3 w-3" /> {lang === "en" && alt.prosEn?.[0] ? alt.prosEn[0] : alt.pros[0]}
-              </div>
-            )}
-          </Link>
-        ))}
-      </div>
-    </section>
+      {cheaperAlts.length > 0 && (
+        <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>
+          <strong style={{ color: "hsl(var(--optimize))" }}>{cheaperAlts.length}</strong> {t("alternatives moins chères", "cheaper alternatives")}
+        </span>
+      )}
+    </div>
   );
 }

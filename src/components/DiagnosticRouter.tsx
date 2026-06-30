@@ -55,6 +55,8 @@ function createInitialSession(language: "fr" | "en"): SessionState {
     personaConfidence: "clear",
     stackGoal: "reduce_costs",
     complementarySkills: [],
+    workflowUsages: [],
+    commercialContracts: [],
     selectedTools: [],
     discoveryAnswers: new Map(),
     closingAnswers: ["", "", ""],
@@ -91,6 +93,9 @@ function serializeSessionSnapshot(session: SessionState) {
     complementarySkills: session.complementarySkills,
     primarySpecialty: session.primarySpecialty || null,
     complementarySpecialties: session.complementarySpecialties || [],
+    toolUsageMap: session.toolUsageMap || {},
+    workflowUsages: session.workflowUsages || [],
+    commercialContracts: session.commercialContracts || [],
     email: session.email || null,
     emailPreferences: session.emailPreferences || null,
     apiSpendTranche: session.apiSpendTranche || null,
@@ -105,6 +110,9 @@ function serializeSessionSnapshot(session: SessionState) {
       catalogMonthlyPrice: t.catalogMonthlyPrice ?? null,
       catalogMonthlyPriceCurrency: t.catalogMonthlyPriceCurrency || null,
       selectedPriceIsEstimate: t.selectedPriceIsEstimate ?? null,
+      includedInBundle: t.includedInBundle ?? null,
+      includedVia: t.includedVia || null,
+      commercialContractId: t.commercialContractId || null,
       category: t.category,
     })),
     discoveryAnswers: serializeDiscoveryAnswers(session.discoveryAnswers),
@@ -119,8 +127,11 @@ function buildDiagnosticContext(session: SessionState) {
     complementary_skills: session.complementarySkills,
     primary_specialty: session.primarySpecialty || null,
     complementary_specialties: session.complementarySpecialties || [],
+    tool_usage_map: session.toolUsageMap || {},
+    workflow_usages: session.workflowUsages || [],
+    commercial_contracts: session.commercialContracts || [],
     selection_coverage: session.selectionCoverage || null,
-    pricing_capture: getPricingCaptureSummary(session.selectedTools),
+    pricing_capture: getPricingCaptureSummary(session.selectedTools, session.commercialContracts),
   };
 }
 
@@ -140,6 +151,7 @@ export default function DiagnosticRouter() {
   const [showRecoveryBanner, setShowRecoveryBanner] = useState(
     () => !!recovered && toStepId(recovered.step) > 0 && toStepId(recovered.step) < 12
   );
+  const [profileEditMode, setProfileEditMode] = useState(false);
   const [session, setSession] = useState<SessionState>(() =>
     recovered?.session || createInitialSession(language)
   );
@@ -341,7 +353,7 @@ export default function DiagnosticRouter() {
       phase2: diagnosticResult.prescriptions.phase2,
       phase3: diagnosticResult.prescriptions.phase3,
     };
-    const pricingCapture = getPricingCaptureSummary(session.selectedTools);
+    const pricingCapture = getPricingCaptureSummary(session.selectedTools, session.commercialContracts);
 
     void (async () => {
       await updateDiagnosticSession(dbSessionId, dbSessionToken, {
@@ -479,6 +491,7 @@ export default function DiagnosticRouter() {
     recoveryRef.current = null;
     setSession(createInitialSession(language));
     setStep(0);
+    setProfileEditMode(false);
     setShowRecoveryBanner(false);
     setDbSessionId(null);
     setDbSessionToken(null);
@@ -522,6 +535,21 @@ export default function DiagnosticRouter() {
     }
   }, [goTo, logEvent]);
 
+  const openProfileEditor = useCallback(() => {
+    logEvent(1, "creative_output_editor_opened", {
+      primary_specialty: session.primarySpecialty || null,
+      complementary_specialties: session.complementarySpecialties || [],
+    });
+    setProfileEditMode(session.persona === "SOFIA");
+    goTo(0);
+  }, [
+    goTo,
+    logEvent,
+    session.complementarySpecialties,
+    session.persona,
+    session.primarySpecialty,
+  ]);
+
   if (loading) {
     return (
       <div className="diagnostic-mood p-3 md:p-4">
@@ -558,7 +586,14 @@ export default function DiagnosticRouter() {
     return (
       <div className="diagnostic-mood p-3 md:p-4">
         <div className="diagnostic-shell">
-          <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />
+          <DiagDashboard
+            result={diagnosticResult}
+            allTools={tools}
+            t={t}
+            dbSessionId={dbSessionId}
+            dbSessionToken={dbSessionToken}
+            onRestart={restartDiagnostic}
+          />
         </div>
       </div>
     );
@@ -607,6 +642,7 @@ export default function DiagnosticRouter() {
           message={showTransition}
           toolCount={session.selectedTools.length}
           onComplete={() => {}}
+          t={t}
         />
       )}
 
@@ -620,8 +656,17 @@ export default function DiagnosticRouter() {
             <DiagStepProfileGoal
               session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(0)}
-              variant="intro"
+              onNext={() => {
+                setProfileEditMode(false);
+                nextFrom(0);
+              }}
+              onPrev={profileEditMode
+                ? () => {
+                    setProfileEditMode(false);
+                    goTo(1);
+                  }
+                : undefined}
+              variant={profileEditMode ? "creative-edit" : "intro"}
               t={t}
             />
           )}
@@ -631,7 +676,7 @@ export default function DiagnosticRouter() {
               tools={tools}
               onUpdate={updateSession}
               onNext={() => nextFrom(1)}
-              onPrev={() => prevFrom(1)}
+              onPrev={openProfileEditor}
               onTrack={(eventName, eventPayload = {}) => {
                 logEvent(1, eventName, {
                   ...eventPayload,

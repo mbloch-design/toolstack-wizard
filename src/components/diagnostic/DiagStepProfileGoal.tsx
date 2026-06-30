@@ -1,13 +1,17 @@
 import { useMemo, useState } from "react";
-import { ArrowRight, BriefcaseBusiness, Check, Code2, Compass, Gauge, Palette, PenLine, Scissors, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Check, Code2, Compass, Gauge, Palette, PenLine, Plus, Scissors, Sparkles, Workflow } from "lucide-react";
 import type { Persona, SessionState, Tool } from "@/types/diagnostic";
+import {
+  buildCreativeQuestions,
+  CREATIVE_OUTPUTS,
+} from "@/lib/creativeAdaptiveEngine";
 
 interface Props {
   session: SessionState;
   onUpdate: (patch: Partial<SessionState>) => void;
   onNext: () => void;
   onPrev?: () => void;
-  variant?: "intro" | "confirm";
+  variant?: "intro" | "confirm" | "creative-edit";
   t: (fr: string, en: string) => string;
 }
 
@@ -122,21 +126,40 @@ function inferPersona(tools: Tool[]) {
 
 export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev, variant = "confirm", t }: Props) {
   const inferred = useMemo(() => inferPersona(session.selectedTools), [session.selectedTools]);
-  const [profileStep, setProfileStep] = useState<"persona" | "goal" | "details">("persona");
+  const isCreativeEdit = variant === "creative-edit" && session.persona === "SOFIA";
+  const [profileStep, setProfileStep] = useState<"persona" | "creative-output" | "goal" | "details">(
+    isCreativeEdit ? "creative-output" : "persona"
+  );
   const [firstName, setFirstName] = useState(session.firstName || "");
   const [email, setEmail] = useState(session.email || "");
   const [emailError, setEmailError] = useState("");
   const [persona, setPersona] = useState<Persona>(session.persona || inferred.persona);
+  const [primaryCreativeOutput, setPrimaryCreativeOutput] = useState(session.primarySpecialty || "");
+  const [secondaryCreativeOutputs, setSecondaryCreativeOutputs] = useState<string[]>(session.complementarySpecialties || []);
+  const [showSecondaryCreativeOutputs, setShowSecondaryCreativeOutputs] = useState(
+    (session.complementarySpecialties || []).length > 0
+  );
   const [stackGoal, setStackGoal] = useState<NonNullable<SessionState["stackGoal"]>>(session.stackGoal || "reduce_costs");
   const [tjm, setTjm] = useState<number>(session.tjm || 0);
 
   const isIntro = variant === "intro";
   const emailValue = email.trim();
   const isValidEmail = (value: string) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  const stepIndex = profileStep === "persona" ? 0 : profileStep === "goal" ? 1 : 2;
+  const isCreative = persona === "SOFIA";
+  const stepIndex = profileStep === "persona"
+    ? 0
+    : profileStep === "creative-output"
+      ? 1
+      : profileStep === "goal"
+        ? isCreative ? 2 : 1
+        : isCreative ? 3 : 2;
+  const totalProfileSteps = isCreativeEdit ? 1 : 3;
+  const displayedStepIndex = isCreativeEdit ? 0 : stepIndex;
   const stepTitle =
     profileStep === "persona"
       ? t("Tu fais surtout quoi au quotidien ?", "What do you mostly do day to day?")
+      : profileStep === "creative-output"
+        ? t("Qu’est-ce que tu produis le plus souvent ?", "What do you produce most often?")
       : profileStep === "goal"
         ? t("Tu veux améliorer quoi en priorité ?", "What do you want to improve first?")
         : t("Deux détails utiles, mais optionnels.", "Two useful details, but optional.");
@@ -146,6 +169,11 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           "Choisis l’angle le plus proche. Ce n’est pas une étiquette définitive, c’est juste le point de départ du diagnostic.",
           "Pick the closest angle. It is not a permanent label, just the starting point for the diagnostic."
         )
+      : profileStep === "creative-output"
+        ? t(
+            "On part de ton travail réel, puis on cherchera les outils qui couvrent chaque besoin — sans imposer Figma, Adobe, Canva ou Blender.",
+            "We start from your real work, then find the tools covering each need — without assuming Figma, Adobe, Canva or Blender."
+          )
       : profileStep === "goal"
         ? t(
             "Cette réponse change l’ordre des recommandations : économies, simplicité, temps gagné ou qualité de choix.",
@@ -156,27 +184,48 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
             "You can leave everything blank. The report will still work; these fields only make it more personal."
           );
   const stepEyebrow =
-    profileStep === "persona"
+    isCreativeEdit
+      ? t("Production créative", "Creative output")
+      : profileStep === "persona"
       ? t("Point de départ", "Starting point")
+      : profileStep === "creative-output"
+        ? t("Production créative", "Creative output")
       : profileStep === "goal"
         ? t("Priorité", "Priority")
         : t("Personnalisation", "Personalization");
   const stepHelp =
-    profileStep === "persona"
+    isCreativeEdit
+      ? t(
+          "Change seulement ce qui a évolué. Les outils liés uniquement à une production retirée sortiront du diagnostic actuel.",
+          "Only change what has evolved. Tools tied only to a removed output will leave the current diagnostic."
+        )
+      : profileStep === "persona"
       ? t("Si tu hésites, prends le rôle qui décrit le mieux tes missions récentes.", "If unsure, choose the role that best describes your recent work.")
+      : profileStep === "creative-output"
+        ? t("Choisis une production principale. Tu peux ajouter les autres qui occupent réellement une place dans ton quotidien.", "Choose one primary output. Add others that genuinely matter in your day-to-day work.")
       : profileStep === "goal"
         ? t("Un même outil peut être bon à garder, à réduire ou à remplacer selon ton intention.", "The same tool can be worth keeping, reducing, or replacing depending on your intent.")
         : t("Ces infos restent privées au diagnostic et peuvent être ignorées.", "These details stay private to the diagnostic and can be skipped.");
 
   const goBackWithinIntro = () => {
+    if (isCreativeEdit) return onPrev?.();
     if (profileStep === "details") return setProfileStep("goal");
-    if (profileStep === "goal") return setProfileStep("persona");
+    if (profileStep === "goal") return setProfileStep(isCreative ? "creative-output" : "persona");
+    if (profileStep === "creative-output") return setProfileStep("persona");
     return onPrev?.();
   };
 
   const handlePrimary = () => {
-    if (profileStep === "persona") return setProfileStep("goal");
-    if (profileStep === "goal") return setProfileStep("details");
+    if (profileStep === "persona") return setProfileStep(persona === "SOFIA" ? "creative-output" : "goal");
+    if (profileStep === "creative-output") {
+      if (!primaryCreativeOutput) return;
+      if (isCreativeEdit) return handleNext();
+      return setProfileStep("goal");
+    }
+    if (profileStep === "goal") {
+      if (isCreative) return handleNext();
+      return setProfileStep("details");
+    }
     return handleNext();
   };
 
@@ -189,15 +238,94 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
       .filter(([id]) => id !== persona)
       .slice(0, inferred.confidence === "hybrid" ? 1 : 0)
       .map(([id]) => id as Persona);
+    const creativeOutputIds = [
+      primaryCreativeOutput,
+      ...secondaryCreativeOutputs.filter((id) => id !== primaryCreativeOutput),
+    ].filter(Boolean);
+    let selectedTools = session.selectedTools;
+    let toolUsageMap = session.toolUsageMap;
+    let workflowUsages = session.workflowUsages;
+    let commercialContracts = session.commercialContracts;
+    let selectionCoverage = session.selectionCoverage;
+
+    if (isCreativeEdit) {
+      const baseQuestions = buildCreativeQuestions(
+        creativeOutputIds,
+        [],
+        session.selectedTools
+      );
+      const baseQuestionIds = new Set(baseQuestions.map((question) => question.id));
+      const activeHosts = session.selectedTools.filter((tool) =>
+        (session.toolUsageMap?.[tool.id] || []).some((objectiveId) =>
+          baseQuestionIds.has(objectiveId)
+        )
+      );
+      const activeQuestionIds = new Set(
+        buildCreativeQuestions(
+          creativeOutputIds,
+          activeHosts,
+          session.selectedTools
+        ).map((question) => question.id)
+      );
+      const nextToolUsageMap = Object.fromEntries(
+        Object.entries(session.toolUsageMap || {}).flatMap(([toolId, objectiveIds]) => {
+          const keptObjectiveIds = objectiveIds.filter((objectiveId) =>
+            activeQuestionIds.has(objectiveId)
+          );
+          return keptObjectiveIds.length > 0 ? [[toolId, keptObjectiveIds]] : [];
+        })
+      );
+      const toolsWithDeclaredUsage = new Set(Object.keys(session.toolUsageMap || {}));
+      const keptToolIds = new Set(
+        session.selectedTools
+          .filter((tool) =>
+            !toolsWithDeclaredUsage.has(tool.id) ||
+            (nextToolUsageMap[tool.id] || []).length > 0
+          )
+          .map((tool) => tool.id)
+      );
+
+      selectedTools = session.selectedTools.filter((tool) => keptToolIds.has(tool.id));
+      toolUsageMap = nextToolUsageMap;
+      workflowUsages = (session.workflowUsages || []).filter((usage) =>
+        activeQuestionIds.has(usage.objectiveId)
+      );
+      commercialContracts = (session.commercialContracts || []).flatMap((contract) => {
+        const productIds = contract.productIds.filter((toolId) => keptToolIds.has(toolId));
+        return productIds.length > 0 ? [{ ...contract, productIds }] : [];
+      });
+      selectionCoverage = session.selectionCoverage
+        ? {
+            ...session.selectionCoverage,
+            covered: session.selectionCoverage.covered.filter((id) => activeQuestionIds.has(id)),
+            skipped: session.selectionCoverage.skipped.filter((id) => activeQuestionIds.has(id)),
+          }
+        : undefined;
+    }
 
     onUpdate({
       firstName: firstName.trim(),
       email: emailValue || undefined,
       persona,
-      personaConfidence: isIntro ? "clear" : persona === inferred.persona ? inferred.confidence : "hybrid",
+      personaConfidence: isCreativeEdit
+        ? session.personaConfidence || "clear"
+        : isIntro
+          ? "clear"
+          : persona === inferred.persona
+            ? inferred.confidence
+            : "hybrid",
       stackGoal,
       tjm,
-      complementarySkills,
+      complementarySkills: isCreativeEdit ? session.complementarySkills : complementarySkills,
+      primarySpecialty: persona === "SOFIA" ? primaryCreativeOutput || undefined : session.primarySpecialty,
+      complementarySpecialties: persona === "SOFIA"
+        ? secondaryCreativeOutputs.filter((id) => id !== primaryCreativeOutput)
+        : session.complementarySpecialties,
+      selectedTools,
+      toolUsageMap,
+      workflowUsages,
+      commercialContracts,
+      selectionCoverage,
     });
     onNext();
   };
@@ -209,7 +337,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-muted-foreground shadow-sm">
             <span>{stepEyebrow}</span>
             <span className="text-muted-foreground/50">·</span>
-            <span>{stepIndex + 1}/3</span>
+            <span>{displayedStepIndex + 1}/{totalProfileSteps}</span>
           </div>
           <div className="space-y-3">
             <h1 className="text-4xl font-bold leading-[0.98] text-foreground md:text-5xl">
@@ -286,6 +414,89 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                 </button>
               );
             })}
+          </section>
+        )}
+
+        {profileStep === "creative-output" && (
+          <section className="mx-auto max-w-3xl space-y-5">
+            <div className="grid grid-cols-2 gap-2">
+              {CREATIVE_OUTPUTS.map((output) => {
+                const selected = output.id === primaryCreativeOutput;
+                return (
+                  <button
+                    key={output.id}
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() => {
+                      setPrimaryCreativeOutput(output.id);
+                      setSecondaryCreativeOutputs((current) => current.filter((id) => id !== output.id));
+                    }}
+                    className={`flex min-h-[76px] items-center gap-3 rounded-2xl border p-3 text-left transition-all sm:min-h-[92px] sm:p-4 ${
+                      selected
+                        ? "border-foreground bg-card shadow-md"
+                        : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
+                    }`}
+                  >
+                    <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
+                      selected ? "border-foreground bg-foreground text-background" : "border-border text-transparent"
+                    }`}>
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-semibold text-foreground">
+                        {t(output.labelFr, output.labelEn)}
+                      </span>
+                      <span className="mt-1 hidden text-xs leading-relaxed text-muted-foreground sm:block">
+                        {t(output.detailFr, output.detailEn)}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {primaryCreativeOutput && !showSecondaryCreativeOutputs && (
+              <button
+                type="button"
+                onClick={() => setShowSecondaryCreativeOutputs(true)}
+                className="inline-flex h-10 items-center justify-center rounded-full border border-border bg-card px-4 text-sm font-medium text-foreground hover:bg-muted"
+              >
+                <Plus className="mr-2 h-4 w-4" />
+                {t("J’ai aussi d’autres productions", "I also produce other things")}
+              </button>
+            )}
+
+            {primaryCreativeOutput && showSecondaryCreativeOutputs && (
+              <div className="border-t border-border pt-4">
+                <p className="text-sm font-medium text-foreground">
+                  {t("Tu produis aussi régulièrement :", "You also regularly produce:")}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {CREATIVE_OUTPUTS.filter((output) => output.id !== primaryCreativeOutput).map((output) => {
+                    const selected = secondaryCreativeOutputs.includes(output.id);
+                    return (
+                      <button
+                        key={output.id}
+                        type="button"
+                        aria-pressed={selected}
+                        onClick={() => setSecondaryCreativeOutputs((current) =>
+                          current.includes(output.id)
+                            ? current.filter((id) => id !== output.id)
+                            : [...current, output.id]
+                        )}
+                        className={`rounded-full border px-3 py-2 text-xs font-medium ${
+                          selected
+                            ? "border-primary bg-primary/10 text-foreground"
+                            : "border-border text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        {selected ? "✓ " : ""}{t(output.labelFr, output.labelEn)}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </section>
         )}
 
@@ -373,9 +584,16 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
             <button
               type="button"
               onClick={handlePrimary}
-              className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold"
+              disabled={profileStep === "creative-output" && !primaryCreativeOutput}
+              className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold disabled:opacity-40"
             >
-              {profileStep === "details" ? t("Trouver mes outils", "Find my tools") : t("Continuer", "Continue")}
+              {isCreativeEdit
+                ? t("Mettre à jour mon parcours", "Update my workflow")
+                : profileStep === "goal" && isCreative
+                  ? t("Cartographier ma façon de travailler", "Map how I work")
+                  : profileStep === "details"
+                    ? t("Commencer la cartographie", "Start mapping")
+                    : t("Continuer", "Continue")}
               <ArrowRight className="h-4 w-4" />
             </button>
           </footer>

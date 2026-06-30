@@ -3,6 +3,46 @@
  * Previously duplicated in ToolDetailPage, CategoryPage, GuidesPage, HomePage, HeroSection.
  */
 
+/** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
+export function isOneTimePrice(tool: { pricing?: { paid?: string } }): boolean {
+  return /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
+}
+
+/** Format a displayable price label ("995€" or "995€/mois"), free-aware and one-time-aware. */
+export function formatPriceLabel(
+  tool: { pricing?: { paid?: string } },
+  price: number,
+  t: (fr: string, en: string) => string
+): string {
+  if (price === 0) return t("Gratuit", "Free");
+  const rounded = Math.round(price);
+  return isOneTimePrice(tool) ? `${rounded}€` : `${rounded}€/${t("mois", "mo")}`;
+}
+
+interface VerdictLike {
+  keepIf?: string[] | string;
+  avoidIf?: string[] | string;
+  threshold?: string;
+}
+
+/**
+ * Resolve the lang-aware verdict (verdictEn on English pages, falling back
+ * to verdict) into normalized keepItems/avoidItems/threshold. Previously
+ * duplicated verbatim in ToolDetailPage and StickyDecisionCard — each then
+ * formats the result differently (a 3-block "quick decision" vs a single
+ * sentence), so only this shared resolution step is extracted, not the
+ * downstream formatting.
+ */
+export function resolveVerdict(
+  tool: { verdict?: VerdictLike; verdictEn?: VerdictLike },
+  lang: string
+): { keepItems: string[]; avoidItems: string[]; threshold: string | undefined } {
+  const vd = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const keepItems = (Array.isArray(vd?.keepIf) ? vd.keepIf : [vd?.keepIf]).filter(Boolean) as string[];
+  const avoidItems = (Array.isArray(vd?.avoidIf) ? vd.avoidIf : [vd?.avoidIf]).filter(Boolean) as string[];
+  return { keepItems, avoidItems, threshold: vd?.threshold };
+}
+
 /** Extract bare hostname from a tool's websiteUrl or affiliateLink */
 export function getToolDomain(tool: {
   websiteUrl?: string;

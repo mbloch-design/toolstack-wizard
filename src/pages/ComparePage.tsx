@@ -1597,6 +1597,98 @@ const EDITORIAL_CONTENT: Record<string, CompareEditorialContent> = {
   "github-copilot-vs-cursor": GITHUB_COPILOT_VS_CURSOR,
 };
 
+// Generic, non-distinguishing keepIf/avoidIf phrases ("Usage régulier",
+// "Budget serré"...) found across many fiches — too short/generic to ever
+// be a real reason to pick one tool over its direct competitor.
+const GENERIC_CRITERION_RE = /^(usage (régulier|ponctuel|fréquent|occasionnel)|fonctionnalités? (essentielles?|de base|basiques?)|budget (serré|limité)|regular usage|occasional use|frequent use|essential features|basic features|tight budget|limited budget)$/i;
+
+function isGenericCriterion(text: string | undefined): boolean {
+  if (!text) return true;
+  const normalized = text.trim().toLowerCase();
+  if (!normalized) return true;
+  if (GENERIC_CRITERION_RE.test(normalized)) return true;
+  return normalized.split(/\s+/).length <= 3;
+}
+
+// Picks the index of the first entry in `list` that is neither a literal
+// duplicate of an entry in `otherList` nor a generic, non-distinguishing
+// phrase — i.e. an actual reason to prefer this tool over the other.
+function pickDistinctIndex(list: string[], otherList: string[]): number {
+  const normalize = (s: string) => s.trim().toLowerCase();
+  const otherSet = new Set(otherList.filter(Boolean).map(normalize));
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+    if (!item || otherSet.has(normalize(item)) || isGenericCriterion(item)) continue;
+    return i;
+  }
+  return -1;
+}
+
+function dedupeAgainst(list: string[], otherList: string[]): string[] {
+  const normalize = (s: string) => s.trim().toLowerCase();
+  const otherSet = new Set(otherList.filter(Boolean).map(normalize));
+  return list.filter((item) => item && !otherSet.has(normalize(item)));
+}
+
+function capitalize(s: string): string {
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+
+function isPerSeatPricing(tool: Tool): boolean {
+  const text = `${tool.pricing?.paid || ""} ${tool.pricing?.free || ""}`.toLowerCase();
+  return /par utilisateur|\/\s*utilisateur|per[\s-]?user|\/\s*user|per[\s-]?seat|\/\s*seat/.test(text);
+}
+
+function hasAutomationFocus(tool: Tool): boolean {
+  const needs = (tool.functional_needs || []).map((n) => n.toLowerCase());
+  return needs.some((n) => /automat|api|int[ée]gration|integration|workflow/.test(n));
+}
+
+// Asymmetric fallback when neither tool's keepIf list has anything
+// distinguishing left after dedup/generic filtering — derives a reason
+// from real catalog signals instead of repeating the same generic line
+// for both tools.
+// Returns a bare condition clause (no tool name, no leading "si"/"if") —
+// callers embed it after "Choisis X si <clause>." / "X fits if <clause>",
+// matching the shape of a real verdict.keepIf entry.
+function fallbackStrength(tool: Tool, lang: "fr" | "en"): string {
+  if (hasAutomationFocus(tool)) {
+    return lang === "fr"
+      ? "tu as besoin d'automatisations, d'intégrations API ou de flux de travail personnalisés"
+      : "you need automations, API integrations, or custom workflows";
+  }
+  if (!isPerSeatPricing(tool)) {
+    return lang === "fr"
+      ? "tu veux centraliser les échanges d'équipe à coût mensuel fixe"
+      : "you want to centralize team communication at a fixed monthly cost";
+  }
+  return lang === "fr"
+    ? "son usage couvre ton besoin principal"
+    : "its use case covers your main need";
+}
+
+function whenToPayCopy(price: number, perSeat: boolean, lang: "fr" | "en"): string {
+  if (lang === "fr") {
+    return perSeat
+      ? `Passe au payant quand le coût par utilisateur (dès ${price}€/mois/personne) dépasse ce que l'équipe veut payer.`
+      : `Passe au payant quand le plan gratuit bloque un usage régulier (à partir de ${price}€/mois, sans coût par siège).`;
+  }
+  return perSeat
+    ? `Move to paid when the per-user cost (from €${price}/month/user) exceeds what the team is willing to pay.`
+    : `Move to paid when the free plan blocks regular usage (from €${price}/month, no per-seat cost).`;
+}
+
+function hiddenCostCopy(perSeat: boolean, lang: "fr" | "en"): string {
+  if (lang === "fr") {
+    return perSeat
+      ? "Le coût grimpe à chaque utilisateur ajouté, surtout si l'équipe grandit."
+      : "Le tarif fixe peut cacher des limites de volume, de stockage ou de fonctionnalités avancées.";
+  }
+  return perSeat
+    ? "Cost rises with every added user, especially as the team grows."
+    : "The flat price can hide limits on volume, storage, or advanced features.";
+}
+
 /* ─── Auto-generate fallback content from tool data ─────────────────────── */
 function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): CompareEditorialContent {
   const priceA = getPriceNum(toolA);
@@ -1606,37 +1698,73 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
 
   const keepsA = toolA.verdict?.keepIf || [];
   const keepsB = toolB.verdict?.keepIf || [];
+  // Separate English-sourced arrays — verdictShortEn/finalRecommendationEn
+  // used to read keepsA/keepsB (the French arrays) directly, so the English
+  // version of a comparison page could show French text mid-sentence.
+  const keepsAEn = toolA.verdictEn?.keepIf || keepsA;
+  const keepsBEn = toolB.verdictEn?.keepIf || keepsB;
+
+  // Mutual-exclusion: each tool's "primary reason" must not be a literal
+  // duplicate of the other tool's, and must not be a generic placeholder
+  // phrase ("Usage régulier" etc). Falls back to a data-derived asymmetric
+  // reason (pricing model / automation focus) when nothing distinguishing
+  // survives the filter.
+  const idxA = pickDistinctIndex(keepsA, keepsB);
+  const idxB = pickDistinctIndex(keepsB, keepsA);
+  const primaryKeepA = idxA >= 0 ? keepsA[idxA] : undefined;
+  const primaryKeepB = idxB >= 0 ? keepsB[idxB] : undefined;
+  const primaryKeepAEn = idxA >= 0 ? (keepsAEn[idxA] || keepsA[idxA]) : undefined;
+  const primaryKeepBEn = idxB >= 0 ? (keepsBEn[idxB] || keepsB[idxB]) : undefined;
+
+  // Bare clause form — for embedding after "Choisis X si <clause>." / "X fits if <clause>".
+  const effectiveKeepA = primaryKeepA || fallbackStrength(toolA, "fr");
+  const effectiveKeepB = primaryKeepB || fallbackStrength(toolB, "fr");
+  const effectiveKeepAEn = primaryKeepAEn || fallbackStrength(toolA, "en");
+  const effectiveKeepBEn = primaryKeepBEn || fallbackStrength(toolB, "en");
+  // Standalone sentence form — for table cells (decisiveCriteria, profiles)
+  // shown on their own, not embedded after "si"/"if".
+  const standaloneKeepA = primaryKeepA || `${toolA.name} convient si ${effectiveKeepA}.`;
+  const standaloneKeepB = primaryKeepB || `${toolB.name} convient si ${effectiveKeepB}.`;
+  const standaloneKeepAEn = primaryKeepAEn || `${toolA.name} fits if ${effectiveKeepAEn}.`;
+  const standaloneKeepBEn = primaryKeepBEn || `${toolB.name} fits if ${effectiveKeepBEn}.`;
+
+  // Same mutual-exclusion treatment for avoidIf ("Risque de surdimensionnement").
+  const avoidsA = toolA.verdict?.avoidIf || [];
+  const avoidsB = toolB.verdict?.avoidIf || [];
+  const avoidsAEn = toolA.verdictEn?.avoidIf || avoidsA;
+  const avoidsBEn = toolB.verdictEn?.avoidIf || avoidsB;
+  const avoidIdxA = pickDistinctIndex(avoidsA, avoidsB);
+  const avoidIdxB = pickDistinctIndex(avoidsB, avoidsA);
+  const effectiveAvoidA = avoidIdxA >= 0 ? avoidsA[avoidIdxA] : `À éviter si tu n'utilises qu'une petite partie de ${toolA.name}.`;
+  const effectiveAvoidB = avoidIdxB >= 0 ? avoidsB[avoidIdxB] : `À éviter si tu n'utilises qu'une petite partie de ${toolB.name}.`;
+  const effectiveAvoidAEn = avoidIdxA >= 0 ? (avoidsAEn[avoidIdxA] || avoidsA[avoidIdxA]) : `Avoid if you only use a small part of ${toolA.name}.`;
+  const effectiveAvoidBEn = avoidIdxB >= 0 ? (avoidsBEn[avoidIdxB] || avoidsB[avoidIdxB]) : `Avoid if you only use a small part of ${toolB.name}.`;
+
+  const aPerSeat = isPerSeatPricing(toolA);
+  const bPerSeat = isPerSeatPricing(toolB);
 
   return {
     framing: `${toolA.name} et ${toolB.name} : deux approches différentes pour des besoins proches.`,
     framingEn: `${toolA.name} and ${toolB.name}: two different approaches for similar needs.`,
-    verdictShort: keepsA[0] && keepsB[0]
-      ? `Choisis ${toolA.name} si ${keepsA[0].toLowerCase()}. Choisis ${toolB.name} si ${keepsB[0].toLowerCase()}.`
-      : `Le choix dépend de ton usage principal.`,
-    verdictShortEn: keepsA[0] && keepsB[0]
-      ? `Choose ${toolA.name} if ${keepsA[0].toLowerCase()}. Choose ${toolB.name} if ${keepsB[0].toLowerCase()}.`
-      : `The choice depends on your primary use case.`,
-    finalRecommendation: keepsA[0] && keepsB[0]
-      ? `ToolTrim recommande ${toolA.name} si ${keepsA[0].toLowerCase()}. ${toolB.name} devient meilleur si ${keepsB[0].toLowerCase()}.`
-      : `ToolTrim recommande de choisir selon ton usage principal, ton budget réel et le niveau de structure nécessaire.`,
-    finalRecommendationEn: keepsA[0] && keepsB[0]
-      ? `ToolTrim recommends ${toolA.name} if ${keepsA[0].toLowerCase()}. ${toolB.name} becomes better if ${keepsB[0].toLowerCase()}.`
-      : `ToolTrim recommends choosing by primary use case, real budget, and required structure level.`,
-    quickVerdictA: keepsA.slice(0, 2).join(". ") || `Tu veux utiliser ${toolA.name} comme outil principal.`,
-    quickVerdictAEn: (toolA.verdictEn?.keepIf || keepsA).slice(0, 2).join(". ") || `You want to use ${toolA.name} as your main tool.`,
-    quickVerdictB: keepsB.slice(0, 2).join(". ") || `Tu veux utiliser ${toolB.name} comme outil principal.`,
-    quickVerdictBEn: (toolB.verdictEn?.keepIf || keepsB).slice(0, 2).join(". ") || `You want to use ${toolB.name} as your main tool.`,
+    verdictShort: `Choisis ${toolA.name} si ${effectiveKeepA.toLowerCase()}. Choisis ${toolB.name} si ${effectiveKeepB.toLowerCase()}.`,
+    verdictShortEn: `Choose ${toolA.name} if ${effectiveKeepAEn.toLowerCase()}. Choose ${toolB.name} if ${effectiveKeepBEn.toLowerCase()}.`,
+    finalRecommendation: `ToolTrim recommande ${toolA.name} si ${effectiveKeepA.toLowerCase()}. ${toolB.name} devient meilleur si ${effectiveKeepB.toLowerCase()}.`,
+    finalRecommendationEn: `ToolTrim recommends ${toolA.name} if ${effectiveKeepAEn.toLowerCase()}. ${toolB.name} becomes better if ${effectiveKeepBEn.toLowerCase()}.`,
+    quickVerdictA: dedupeAgainst(keepsA, keepsB).slice(0, 2).join(". ") || effectiveKeepA,
+    quickVerdictAEn: dedupeAgainst(keepsAEn, keepsBEn).slice(0, 2).join(". ") || effectiveKeepAEn,
+    quickVerdictB: dedupeAgainst(keepsB, keepsA).slice(0, 2).join(". ") || effectiveKeepB,
+    quickVerdictBEn: dedupeAgainst(keepsBEn, keepsAEn).slice(0, 2).join(". ") || effectiveKeepBEn,
     quickVerdictAvoid: `Les deux outils ont des limites — choisis selon ton usage, pas selon les features.`,
     quickVerdictAvoidEn: `Both tools have limitations — choose based on your use case, not feature lists.`,
 
-    toolADesc: toolA.shortDescription || `${toolA.name} est un outil conçu pour ${(toolA.verdict?.keepIf?.[0] || "optimiser votre productivité").toLowerCase()}.`,
-    toolADescEn: toolA.shortDescriptionEn || `${toolA.name} is a tool designed for ${(toolA.verdictEn?.keepIf?.[0] || "boosting your productivity").toLowerCase()}.`,
+    toolADesc: toolA.shortDescription || `${toolA.name} est un outil conçu pour ${effectiveKeepA.toLowerCase()}.`,
+    toolADescEn: toolA.shortDescriptionEn || `${toolA.name} is a tool designed for ${effectiveKeepAEn.toLowerCase()}.`,
     toolAUseCases: (toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
-    toolAUseCasesEn: (toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
-    toolBDesc: toolB.shortDescription || `${toolB.name} est un outil conçu pour ${(toolB.verdict?.keepIf?.[0] || "optimiser votre productivité").toLowerCase()}.`,
-    toolBDescEn: toolB.shortDescriptionEn || `${toolB.name} is a tool designed for ${(toolB.verdictEn?.keepIf?.[0] || "boosting your productivity").toLowerCase()}.`,
+    toolAUseCasesEn: (toolA.useCasesEn || toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
+    toolBDesc: toolB.shortDescription || `${toolB.name} est un outil conçu pour ${effectiveKeepB.toLowerCase()}.`,
+    toolBDescEn: toolB.shortDescriptionEn || `${toolB.name} is a tool designed for ${effectiveKeepBEn.toLowerCase()}.`,
     toolBUseCases: (toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
-    toolBUseCasesEn: (toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
+    toolBUseCasesEn: (toolB.useCasesEn || toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
 
     tableRows: [
       { criterion: "Prise en main", criterionEn: "Ease of use",
@@ -1656,13 +1784,13 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     ],
 
     prosA: (toolA.pros || []).slice(0, 4).map(String),
-    prosAEn: (toolA.pros || []).slice(0, 4).map(String),
+    prosAEn: (toolA.prosEn || toolA.pros || []).slice(0, 4).map(String),
     limitsA: (toolA.cons || []).slice(0, 4).map(String),
-    limitsAEn: (toolA.cons || []).slice(0, 4).map(String),
+    limitsAEn: (toolA.consEn || toolA.cons || []).slice(0, 4).map(String),
     prosB: (toolB.pros || []).slice(0, 4).map(String),
-    prosBEn: (toolB.pros || []).slice(0, 4).map(String),
+    prosBEn: (toolB.prosEn || toolB.pros || []).slice(0, 4).map(String),
     limitsB: (toolB.cons || []).slice(0, 4).map(String),
-    limitsBEn: (toolB.cons || []).slice(0, 4).map(String),
+    limitsBEn: (toolB.consEn || toolB.cons || []).slice(0, 4).map(String),
 
     decisionRows: [
       {
@@ -1687,10 +1815,10 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       {
         title: "Usage principal",
         titleEn: "Primary use case",
-        toolA: keepsA[0] || `${toolA.name} convient si son usage couvre ton besoin principal.`,
-        toolAEn: (toolA.verdictEn?.keepIf?.[0]) || `${toolA.name} fits if its use case covers your main need.`,
-        toolB: keepsB[0] || `${toolB.name} convient si son usage couvre ton besoin principal.`,
-        toolBEn: (toolB.verdictEn?.keepIf?.[0]) || `${toolB.name} fits if its use case covers your main need.`,
+        toolA: standaloneKeepA,
+        toolAEn: standaloneKeepAEn,
+        toolB: standaloneKeepB,
+        toolBEn: standaloneKeepBEn,
         decision: "Choisir l'outil qui couvre le flux le plus fréquent, pas celui qui a le plus de fonctions.",
         decisionEn: "Choose the tool that covers the most frequent workflow, not the one with the most features.",
       },
@@ -1707,10 +1835,10 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       {
         title: "Risque de surdimensionnement",
         titleEn: "Overbuilding risk",
-        toolA: (toolA.verdict?.avoidIf?.[0]) || "À éviter si tu n'utilises qu'une petite partie de l'outil.",
-        toolAEn: (toolA.verdictEn?.avoidIf?.[0]) || "Avoid if you only use a small part of the tool.",
-        toolB: (toolB.verdict?.avoidIf?.[0]) || "À éviter si tu n'utilises qu'une petite partie de l'outil.",
-        toolBEn: (toolB.verdictEn?.avoidIf?.[0]) || "Avoid if you only use a small part of the tool.",
+        toolA: effectiveAvoidA,
+        toolAEn: effectiveAvoidAEn,
+        toolB: effectiveAvoidB,
+        toolBEn: effectiveAvoidBEn,
         decision: "Le meilleur choix est souvent le plus petit outil qui couvre le besoin réel.",
         decisionEn: "The best choice is often the smallest tool that covers the real need.",
       },
@@ -1751,20 +1879,20 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       {
         label: "Quand payer",
         labelEn: "When to pay",
-        toolA: "Quand le plan gratuit bloque un usage fréquent.",
-        toolAEn: "When the free plan blocks frequent usage.",
-        toolB: "Quand le plan gratuit bloque un usage fréquent.",
-        toolBEn: "When the free plan blocks frequent usage.",
+        toolA: whenToPayCopy(priceA, aPerSeat, "fr"),
+        toolAEn: whenToPayCopy(priceA, aPerSeat, "en"),
+        toolB: whenToPayCopy(priceB, bPerSeat, "fr"),
+        toolBEn: whenToPayCopy(priceB, bPerSeat, "en"),
         recommendation: "Ne paie pas pour une fonctionnalité que tu n'utilises pas chaque semaine.",
         recommendationEn: "Do not pay for a feature you do not use weekly.",
       },
       {
         label: "Coût caché",
         labelEn: "Hidden cost",
-        toolA: "Setup, migration, formation ou maintenance du workspace.",
-        toolAEn: "Setup, migration, training, or workspace maintenance.",
-        toolB: "Setup, migration, formation ou maintenance du workspace.",
-        toolBEn: "Setup, migration, training, or workspace maintenance.",
+        toolA: hiddenCostCopy(aPerSeat, "fr"),
+        toolAEn: hiddenCostCopy(aPerSeat, "en"),
+        toolB: hiddenCostCopy(bPerSeat, "fr"),
+        toolBEn: hiddenCostCopy(bPerSeat, "en"),
         recommendation: "Le coût réel inclut le temps passé à maintenir l'outil.",
         recommendationEn: "Real cost includes time spent maintaining the tool.",
       },
@@ -1800,10 +1928,10 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     profiles: [
       { persona: "Solo / Freelance", personaEn: "Solo / Freelancer",
         choice: aFerme ? toolA.name : toolB.name,
-        reason: keepsA[0] || `${toolA.name} convient mieux pour un usage solo.`,
-        reasonEn: (toolA.verdictEn?.keepIf?.[0]) || `${toolA.name} suits solo use better.`,
-        limit: (toolA.verdict?.avoidIf?.[0]) || "À vérifier selon ton usage exact.",
-        limitEn: (toolA.verdictEn?.avoidIf?.[0]) || "Check based on your exact use case." },
+        reason: aFerme ? standaloneKeepA : standaloneKeepB,
+        reasonEn: aFerme ? standaloneKeepAEn : standaloneKeepBEn,
+        limit: aFerme ? effectiveAvoidA : effectiveAvoidB,
+        limitEn: aFerme ? effectiveAvoidAEn : effectiveAvoidBEn },
     ],
 
     pricingFraming: `${toolA.name} et ${toolB.name} ont des modèles de prix différents. Vérifiez les plans officiels avant de décider.`,
@@ -1814,11 +1942,12 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     pricingToolBNotesEn: priceB === 0 ? "Free plan available." : `From **€${priceB}/month**.`,
     pricingReco: `Comparer les plans payants selon vos besoins réels.`,
     pricingRecoEn: `Compare paid plans based on your actual needs.`,
-    /* ── Structured verdict bullet lists (fallback: derive from keepsA/B) ── */
-    chooseAIfList: (toolA.verdict?.keepIf || keepsA).slice(0, 3).map(String),
-    chooseBIfList: (toolB.verdict?.keepIf || keepsB).slice(0, 3).map(String),
-    avoidAIfList: (toolA.verdict?.avoidIf || []).slice(0, 2).map(String),
-    avoidBIfList: (toolB.verdict?.avoidIf || []).slice(0, 2).map(String),
+    /* ── Structured verdict bullet lists (fallback: derive from keepsA/B,
+       deduplicated against the other tool's list — see pickDistinctIndex) ── */
+    chooseAIfList: (dedupeAgainst(keepsA, keepsB).length ? dedupeAgainst(keepsA, keepsB) : [capitalize(effectiveKeepA)]).slice(0, 3).map(String),
+    chooseBIfList: (dedupeAgainst(keepsB, keepsA).length ? dedupeAgainst(keepsB, keepsA) : [capitalize(effectiveKeepB)]).slice(0, 3).map(String),
+    avoidAIfList: (dedupeAgainst(avoidsA, avoidsB).length ? dedupeAgainst(avoidsA, avoidsB) : [effectiveAvoidA]).slice(0, 2).map(String),
+    avoidBIfList: (dedupeAgainst(avoidsB, avoidsA).length ? dedupeAgainst(avoidsB, avoidsA) : [effectiveAvoidB]).slice(0, 2).map(String),
     avoidBothIfList: [],
     /* ── Hero signal overrides (none for fallback) ── */
     aglanceBestForA: undefined,
@@ -1839,8 +1968,8 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         aEn: `${toolA.name} costs ${getPrice(toolA)} and ${toolB.name} costs ${getPrice(toolB)}.` },
       { q: `${toolA.name} vs ${toolB.name} — lequel choisir ?`,
         qEn: `${toolA.name} vs ${toolB.name} — which to choose?`,
-        a: `${keepsA[0] ? `Prends ${toolA.name} si ${keepsA[0].toLowerCase()}. ` : ""}${keepsB[0] ? `Prends ${toolB.name} si ${keepsB[0].toLowerCase()}.` : ""}`,
-        aEn: `${keepsA[0] ? `Choose ${toolA.name} if ${keepsA[0].toLowerCase()}. ` : ""}${keepsB[0] ? `Choose ${toolB.name} if ${keepsB[0].toLowerCase()}.` : ""}` },
+        a: `Prends ${toolA.name} si ${effectiveKeepA.toLowerCase()}. Prends ${toolB.name} si ${effectiveKeepB.toLowerCase()}.`,
+        aEn: `Choose ${toolA.name} if ${effectiveKeepAEn.toLowerCase()}. Choose ${toolB.name} if ${effectiveKeepBEn.toLowerCase()}.` },
     ],
   };
 }

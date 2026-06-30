@@ -68,12 +68,12 @@ ok(
   "empty zone CTA should mark the area as intentionally empty"
 );
 ok(
-  "tool click opens plan choice before adding",
+  "tool click opens billing choice before adding",
   stackScan.includes("pendingToolId") &&
     stackScan.includes("selector_tool_plan_opened") &&
     stackScan.includes("confirmToolWithOffer") &&
-    stackScan.includes("Plan utilisé ?") &&
-    stackScan.includes("Choisir le plan"),
+    stackScan.includes("Mode utilisé ?") &&
+    stackScan.includes("Préciser l’usage"),
   "clicking a suggestion should not immediately count it in the stack"
 );
 ok(
@@ -88,7 +88,7 @@ ok(
   stackScan.includes("lastConfirmedToolId") &&
     stackScan.includes("aria-live=\"polite\"") &&
     stackScan.includes("ring-primary/40"),
-  "confirming a plan should create a visible but non-layout-shifting recap feedback"
+  "confirming a billing mode should create a visible but non-layout-shifting recap feedback"
 );
 ok(
   "confirmed tool feeds the sidebar and leaves left suggestions",
@@ -100,10 +100,10 @@ ok(
   "confirmed tools should visibly transfer to the right recap, then disappear from left-side choices"
 );
 ok(
-  "tool cards expose clear plan CTA",
-  stackScan.includes("Choisir le plan") &&
-    stackScan.includes("Plan utilisé ?") &&
-    stackScan.includes("Choisis un plan pour l’ajouter") &&
+  "tool cards expose clear billing CTA",
+  stackScan.includes("Préciser l’usage") &&
+    stackScan.includes("Mode utilisé ?") &&
+    stackScan.includes("Précise le mode pour l’ajouter") &&
     stackScan.includes("puis ajout automatique") &&
     stackScan.includes("h-[146px]") &&
     stackScan.includes("PlanFocusBanner") &&
@@ -144,11 +144,11 @@ ok(
   "broken remote logos should fall back to local brand badges"
 );
 ok(
-  "plan selector uses real plan labels when possible",
+  "billing selector uses real usage labels when possible",
   stackScan.includes("getPlanLabel") &&
     stackScan.includes("compare_plan_name") &&
     stackScan.includes("Je ne sais pas"),
-  "offer selector should avoid generic paid/team labels when plan names exist"
+  "offer selector should avoid generic paid/team labels when billing labels exist"
 );
 ok(
   "zone copy avoids repeated kicker labels",

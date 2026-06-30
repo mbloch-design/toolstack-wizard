@@ -2,6 +2,9 @@
 
 État d'avancement et prochaines phases.
 
+> Ce document conserve l’historique général du site.
+> Pour le diagnostic adaptatif, la roadmap active et décisionnelle est désormais [`ROADMAP_DIAGNOSTIC.md`](../ROADMAP_DIAGNOSTIC.md).
+
 ---
 
 ## Phase 1 — Composants éditoriaux ✅ (Sessions 1–3)

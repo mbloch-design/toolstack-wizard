@@ -2,9 +2,13 @@ import { readFileSync } from "node:fs";
 
 const STACK_SCAN = "src/components/diagnostic/DiagStepStackScan.tsx";
 const DISCOVERY = "src/components/diagnostic/DiagStep6Discovery.tsx";
+const ENGINE = "src/lib/creativeAdaptiveEngine.ts";
+const SCORING = "src/utils/scoring.ts";
 
 const stackScan = readFileSync(STACK_SCAN, "utf8");
 const discovery = readFileSync(DISCOVERY, "utf8");
+const engine = readFileSync(ENGINE, "utf8");
+const scoring = readFileSync(SCORING, "utf8");
 
 const checks = [];
 
@@ -31,9 +35,11 @@ ok(
     stackScan.includes("ae-bodymovin") &&
     stackScan.includes("lottiefiles") &&
     stackScan.includes("dynamic-mockups") &&
-    stackScan.includes("presets-lightroom") &&
-    stackScan.includes("envato-elements"),
-  "the creative audit must surface satellites, templates, plugins, presets and asset sources"
+    stackScan.includes("envato-elements") &&
+    stackScan.includes("fontbase") &&
+    stackScan.includes("rightfont") &&
+    stackScan.includes("noun-project"),
+  "the creative audit must surface satellites, templates, plugins, font managers, mockups and asset sources"
 );
 
 ok(
@@ -48,35 +54,32 @@ ok(
 );
 
 ok(
-  "persona switch drives selector moments",
+  "creative selector is adaptive and fatigue-bounded",
   stackScan.includes("getStackMomentsForPersona") &&
-    stackScan.includes('persona === "SOFIA" ? CREATIVE_STACK_MOMENTS : STACK_MOMENTS') &&
-    stackScan.includes("getStackMomentsForPersona(session.persona)") &&
-    stackScan.includes('session.persona === "SOFIA" ? 8 : 6'),
-  "creative profiles should see a richer but still bounded set of suggestions"
+    stackScan.includes("planCreativeQuestions") &&
+    stackScan.includes("DEFAULT_CREATIVE_QUESTION_BUDGET") &&
+    stackScan.includes("deferredMoments") &&
+    engine.includes("scoreCreativeQuestion"),
+  "creative profiles should get the highest-impact questions first, with secondary areas deferred"
 );
 
 ok(
-  "creative adaptive questions exist",
-  discovery.includes("buildCreativeQuestions") &&
-    discovery.includes('session.persona !== "SOFIA"') &&
-    discovery.includes("adaptive_creative_figma_plugins") &&
-    discovery.includes("adaptive_creative_ai_visual_overlap") &&
-    discovery.includes("adaptive_creative_resources_rights") &&
-    discovery.includes("adaptive_creative_motion_plugins") &&
-    discovery.includes("adaptive_creative_photo_delivery"),
-  "the verification step must ask creative-specific questions when the stack implies them"
+  "capture and recommendation are separate",
+  !discovery.includes("questions.push(...buildCreativeQuestions(session, t))") &&
+    stackScan.includes("Cartographie de l’existant") &&
+    scoring.includes("computeCreativeRecommendationResult") &&
+    scoring.includes("recommendationEvidence"),
+  "creative ecosystem capture should not be repeated in discovery, and recommendations need evidence"
 );
 
 ok(
-  "creative questions reason about workflow satellites",
-  discovery.includes("CREATIVE_FIGMA_PLUGIN_IDS") &&
-    discovery.includes("CREATIVE_RESOURCE_IDS") &&
-    discovery.includes("CREATIVE_MOTION_PLUGIN_IDS") &&
-    discovery.includes("CREATIVE_PHOTO_DELIVERY_IDS") &&
-    discovery.includes("tokens, icônes ou accessibilité") &&
-    discovery.includes("templates, fonts, icônes, mockups et droits"),
-  "questions should inspect the hidden workflow around the obvious tools"
+  "creative ecosystems follow normalized host relations",
+  engine.includes("getToolRelations") &&
+    engine.includes("relationToHost") &&
+    engine.includes("getEcosystemToolIds") &&
+    stackScan.includes("ToolRelationKind") &&
+    stackScan.includes("customRelationKind"),
+  "plugins, bundles, complements and unknown tools should attach to the actual selected host"
 );
 
 for (const item of checks) {

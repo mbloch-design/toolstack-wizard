@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
+    <!-- Theme is set synchronously, before first paint, to match
+         useTheme.ts's logic exactly — without this, the static "dark"
+         default below briefly paints (now showing real SSR'd content,
+         not just a loading spinner) before React mounts and the
+         useEffect in useTheme.ts corrects it, causing a visible flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme = stored === "dark" || stored === "light"
+            ? stored
+            : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(theme);
+        } catch (e) {}
+      })();
+    </script>
+
     <title>ToolTrim — Auditez et optimisez votre stack SaaS</title>
     <meta
       name="description"
@@ -110,21 +128,10 @@
         };
       });
     </script>
-
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="obHd8pckb9GKYDFLB62+OQ" async></script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- ContentSquare: chargé après le rendu initial pour ne pas bloquer LCP -->
-    <script>
-      window.addEventListener('load', function() {
-        var s = document.createElement('script');
-        s.src = 'https://t.contentsquare.net/uxa/5db061830ccab.js';
-        s.async = true;
-        document.body.appendChild(s);
-      });
-    </script>
   </body>
 </html>

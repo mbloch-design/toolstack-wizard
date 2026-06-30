@@ -8,10 +8,34 @@ export interface Category {
   tools?: string[];
 }
 
+export interface ToolProfileRecommendation {
+  profile: string;
+  recommendation: string;
+}
+
 export interface ToolVerdict {
   keepIf: string[];
   avoidIf: string[];
   threshold: string;
+  // Optional decision-page deepening (point in time: 2026-06, Asana pilot).
+  // Distinct from keepIf/avoidIf: concrete usage thresholds rather than
+  // the short "quick decision" reasoning, so the page doesn't repeat
+  // itself. Absent on most tools, every consumer must handle undefined.
+  profitableIf?: string[];
+  tooExpensiveIf?: string[];
+  profileTable?: ToolProfileRecommendation[];
+  // Optional override for the "is it worth the price" FAQ answer, so it
+  // doesn't repeat threshold verbatim. Falls back to threshold if unset.
+  faqPriceAnswer?: string;
+  // Optional contractual/billing gotchas (seat minimums, purchase banding,
+  // usage caps...) distinct from tooExpensiveIf: concrete mechanics rather
+  // than a budget judgment call. Absent on most tools.
+  billingTraps?: ToolBillingTrap[];
+}
+
+export interface ToolBillingTrap {
+  title: string;
+  text: string;
 }
 
 export interface ToolPricing {
@@ -27,6 +51,10 @@ export interface ToolArticle {
 
 export interface ToolSeo {
   metaDescription: string;
+  idealForFr?: string;
+  idealForEn?: string;
+  presentationTitleFr?: string;
+  presentationTitleEn?: string;
 }
 
 export interface BetterAlternative {
@@ -34,6 +62,11 @@ export interface BetterAlternative {
   reason: string;
   saving: number;
   performanceGain: string | null;
+  // English versions — optional and absent on most of the catalog;
+  // StickyDecisionCard/ToolProfitabilityBlock fall back to the French
+  // text rather than rendering nothing.
+  reasonEn?: string;
+  performanceGainEn?: string | null;
 }
 
 export interface MigrationGuide {
@@ -70,10 +103,44 @@ export interface PricingV5 {
   location_sensitive?: boolean;
   usage_sensitive?: boolean;
   cautions?: string[];
+  // English version of cautions[0], shown on the English page when
+  // present. Optional and absent on most of the catalog — ToolPricingSection
+  // falls back to the French caution rather than rendering nothing.
+  cautionsEn?: string[];
   source_domain?: string;
   verified_on?: string;
   official_source_url?: string;
   verification_status?: string;
+  // Optional real-cost-by-team-size table (Asana pilot, 2026-06). Absent on
+  // most tools, every consumer must handle undefined.
+  costTable?: ToolCostRow[];
+  costTableNoteFr?: string;
+  costTableNoteEn?: string;
+  // Optional worked TCO example (config time + monthly admin overhead
+  // converted to an hourly rate). Absent on most tools.
+  tcoExampleFr?: string;
+  tcoExampleEn?: string;
+  // Optional seat minimum enforced on the compare_plan_name tier. When
+  // set, the auto-generated cost-by-team-size table (ToolCostBreakdownTable,
+  // used when costTable isn't curated) clamps each headcount up to this
+  // floor instead of pricing a "Solo" row the vendor wouldn't actually
+  // sell — e.g. Box Business Starter has a 3-seat minimum, so a 1-person
+  // row priced at compare_price_monthly_eur x 1 would contradict the
+  // billing-traps section on the same page.
+  minSeats?: number;
+}
+
+export interface ToolCostRow {
+  team: string;
+  plan: string;
+  monthlyUsd: string;
+  annualUsd: string;
+  verdictFr: string;
+  verdictEn: string;
+  // Optional English versions of team/plan — ToolCostBreakdownTable falls
+  // back to the French label rather than rendering nothing.
+  teamEn?: string;
+  planEn?: string;
 }
 
 export interface DecisionPolicyV3 {

@@ -1,0 +1,83 @@
+{
+  "phase": "4C",
+  "scope": "creative",
+  "updatedAt": "2026-06-30",
+  "status": "ready_empty_no_real_candidates_recorded",
+  "decision": "Pipeline prêt, aucun candidat réel enregistré dans le dépôt",
+  "privacy": {
+    "noPersonalDataInRepository": true,
+    "contactDetailsStorage": "outil privé de recrutement ou calendrier, hors dépôt",
+    "recordingLinksStorage": "outil privé, hors dépôt"
+  },
+  "allowedStatuses": [
+    "sourced",
+    "screened",
+    "invited",
+    "scheduled",
+    "completed",
+    "logged",
+    "excluded",
+    "declined",
+    "no_show"
+  ],
+  "wave1TargetSlots": [
+    {
+      "slotId": "B4-01",
+      "segment": "Social / audio / contenu court",
+      "priority": "angle mort Phase 1",
+      "targetSignals": ["mobile si possible", "IA transcription ou sous-titres", "publication ou planification"],
+      "status": "open"
+    },
+    {
+      "slotId": "B4-02",
+      "segment": "UI / produit numérique",
+      "priority": "outil multi-usage",
+      "targetSignals": ["Figma ou Sketch", "prototype", "handoff ou validation"],
+      "status": "open"
+    },
+    {
+      "slotId": "B4-03",
+      "segment": "Identité / illustration / édition",
+      "priority": "Adobe, usages atypiques et contrats",
+      "targetSignals": ["Illustrator ou InDesign", "devis, moodboard ou présentation", "contrat flou si possible"],
+      "status": "open"
+    },
+    {
+      "slotId": "B4-04",
+      "segment": "3D / espaces",
+      "priority": "écosystème hôte et moteurs de rendu",
+      "targetSignals": ["Blender ou Cinema 4D", "Redshift, Octane ou autre rendu", "assets ou plugins"],
+      "status": "open"
+    },
+    {
+      "slotId": "B4-05",
+      "segment": "Vidéo / motion",
+      "priority": "chaîne IA et livraison",
+      "targetSignals": ["Premiere, After Effects, DaVinci ou CapCut", "sous-titres ou transcription IA", "plugins motion"],
+      "status": "open"
+    },
+    {
+      "slotId": "B4-06",
+      "segment": "Photo / retouche",
+      "priority": "presets, livraison et coûts inclus",
+      "targetSignals": ["Lightroom, Photoshop ou Capture One", "presets", "galerie client ou livraison"],
+      "status": "open"
+    }
+  ],
+  "quotaTargets": {
+    "participants": 6,
+    "segmentsCovered": 4,
+    "adobeStrongOrPartial": 2,
+    "nonAdobe": 2,
+    "regularOrIntensiveAi": 2,
+    "unclearContracts": 2,
+    "atypicalUsage": 1,
+    "mobileOrSmallScreen": 1
+  },
+  "candidates": [],
+  "notes": [
+    "Ne pas créer de faux candidats pour satisfaire les quotas.",
+    "Un candidat planifié ne devient une session réelle qu'après parcours observé, consentement et log rempli.",
+    "Les données personnelles restent hors dépôt."
+  ]
+}

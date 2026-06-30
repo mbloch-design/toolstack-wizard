@@ -141,6 +141,9 @@ const toolSummaries = tools.map((tool) => ({
   affiliateLink: tool.affiliateLink || "",
   websiteUrl: tool.websiteUrl || tool.affiliateLink || "",
   logo: tool.logo || "",
+  substitution_cluster_v2: tool.substitution_cluster_v2 || null,
+  functional_needs: tool.functional_needs || [],
+  verticals: tool.verticals || [],
 }));
 
 await Promise.all([

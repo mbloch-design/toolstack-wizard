@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo, useRef } from "react";
 import { Check, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
 import type { SessionState, DiscoveryQuestion, Tool } from "@/types/diagnostic";
+import { contractCoveredProductIds } from "@/lib/commercialAccess";
 
 interface Props {
   session: SessionState;
@@ -327,16 +328,19 @@ function buildAdaptiveQuestions(
   const selectedTools = session.selectedTools;
   const questions: DiscoveryQuestion[] = [];
   const aiTools = selectedTools.filter(isAiTool);
+  const contractCoveredIds = contractCoveredProductIds(session.commercialContracts);
   const uncertainPlanTools = selectedTools.filter((tool) => {
+    if (contractCoveredIds.has(tool.id)) return false;
+    if (tool.selectedOffer && tool.selectedOffer !== "unknown") return false;
     const catalogPrice = Number(tool.catalogMonthlyPrice ?? tool.price ?? 0);
     return catalogPrice > 0 && (tool.selectedOffer === "unknown" || tool.selectedPriceIsEstimate === true);
   });
   const paidFreeTierTools = selectedTools.filter((tool) =>
-    hasRealFreeTier(tool) && tool.selectedOffer !== "free"
+    !contractCoveredIds.has(tool.id) &&
+    hasRealFreeTier(tool) &&
+    (!tool.selectedOffer || tool.selectedOffer === "unknown")
   );
   const skippedCount = session.selectionCoverage?.skipped.length || 0;
-
-  questions.push(...buildCreativeQuestions(session, t));
 
   if (aiTools.length >= 2) {
     questions.push({
@@ -473,10 +477,38 @@ function buildAdaptiveQuestions(
   return questions;
 }
 
+function isQuestionObsoleteForConfirmedContracts(
+  question: DiscoveryQuestion,
+  contractCoveredIds: Set<string>,
+  contracts: SessionState["commercialContracts"] = []
+) {
+  if (
+    question.id === "dq-adobe-usage" &&
+    contracts.some((contract) => contract.familyId === "adobe" && contract.confirmed)
+  ) {
+    return true;
+  }
+  if (
+    question.id !== "adaptive_plan_reality" &&
+    question.id !== "adaptive_free_tier_check"
+  ) {
+    return false;
+  }
+  const toolIds = new Set([
+    ...question.condition_tool_ids,
+    ...question.options.flatMap((option) => option.affectedTools || []),
+  ]);
+  return toolIds.size > 0 && [...toolIds].every((toolId) => contractCoveredIds.has(toolId));
+}
+
 export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, discoveryQuestions, maxQuestions = 3, t }: Props) {
   const selectedToolIds = useMemo(
     () => new Set(session.selectedTools.map((t) => t.id)),
     [session.selectedTools]
+  );
+  const confirmedContractCoveredIds = useMemo(
+    () => contractCoveredProductIds(session.commercialContracts),
+    [session.commercialContracts]
   );
   const adaptiveQuestions = useMemo(
     () => buildAdaptiveQuestions(session, t),
@@ -488,6 +520,9 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
     const candidateQuestions = [...adaptiveQuestions, ...discoveryQuestions];
     const seen = new Set<string>();
     return candidateQuestions.filter((q) => {
+      if (isQuestionObsoleteForConfirmedContracts(q, confirmedContractCoveredIds, session.commercialContracts)) {
+        return false;
+      }
       if (seen.has(q.id)) return false;
       seen.add(q.id);
       // Persona filter
@@ -499,7 +534,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
       }
       return q.condition_tool_ids.some((id) => selectedToolIds.has(id));
     }).slice(0, maxQuestions);
-  }, [adaptiveQuestions, discoveryQuestions, maxQuestions, session.persona, selectedToolIds]);
+  }, [adaptiveQuestions, confirmedContractCoveredIds, discoveryQuestions, maxQuestions, session.commercialContracts, session.persona, selectedToolIds]);
 
   const [questionIdx, setQuestionIdx] = useState(0);
   const [answers, setAnswers] = useState<Map<string, number>>(() => new Map(session.discoveryAnswers));
@@ -549,8 +584,15 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
     );
   }
 
-  const current = activeQuestions[questionIdx];
+  const currentIndex = Math.min(questionIdx, activeQuestions.length - 1);
+  const current = activeQuestions[currentIndex];
   const currentAnswer = answers.get(current?.id);
+  const questionText = session.language === "en" && current?.questionEn
+    ? current.questionEn
+    : current?.question;
+  const subtitleText = session.language === "en" && current?.subtitleEn
+    ? current.subtitleEn
+    : current?.subtitle;
   const reasonTools = session.selectedTools
     .filter((tool) => current?.condition_tool_ids.includes(tool.id))
     .slice(0, 3);
@@ -564,16 +606,16 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
     next.set(current.id, idx);
     setAnswers(next);
     onUpdate({ discoveryAnswers: next, adaptiveDiscoveryQuestions: activeAdaptiveQuestions });
-    if (questionIdx < activeQuestions.length - 1) {
+    if (currentIndex < activeQuestions.length - 1) {
       window.setTimeout(() => {
-        setQuestionIdx((i) => i === questionIdx ? Math.min(i + 1, activeQuestions.length - 1) : i);
+        setQuestionIdx((i) => i === currentIndex ? Math.min(i + 1, activeQuestions.length - 1) : i);
       }, 220);
     }
   };
 
   const handleNext = () => {
     onUpdate({ discoveryAnswers: answers, adaptiveDiscoveryQuestions: activeAdaptiveQuestions });
-    if (questionIdx < activeQuestions.length - 1) {
+    if (currentIndex < activeQuestions.length - 1) {
       setQuestionIdx((i) => i + 1);
     } else {
       onNext();
@@ -595,16 +637,16 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
           <HelpCircle className="h-3.5 w-3.5" />
           <span>{t("Vérification courte", "Short check")}</span>
           <span className="text-primary/40">·</span>
-          <span>{questionIdx + 1}/{activeQuestions.length}</span>
+          <span>{currentIndex + 1}/{activeQuestions.length}</span>
         </div>
         <div className="mx-auto flex max-w-sm gap-1.5" aria-hidden="true">
           {activeQuestions.map((question, i) => (
             <div
               key={question.id}
               className={`h-1.5 flex-1 rounded-full transition-colors ${
-                i < questionIdx || answers.has(question.id)
+                i < currentIndex || answers.has(question.id)
                   ? "bg-primary"
-                  : i === questionIdx
+                  : i === currentIndex
                     ? "bg-primary/50"
                     : "bg-muted"
               }`}
@@ -612,7 +654,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
           ))}
         </div>
         <div className="space-y-2">
-          {questionIdx === 0 && (
+          {currentIndex === 0 && (
             <p className="text-xs font-semibold uppercase text-primary">
               {t("Seulement les questions qui changent le verdict", "Only questions that change the verdict")}
             </p>
@@ -622,10 +664,10 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
             tabIndex={-1}
             className="mx-auto max-w-xl text-2xl font-bold leading-tight text-foreground outline-none md:text-3xl"
           >
-            {current.question}
+            {questionText}
           </h2>
           <p className="mx-auto max-w-lg text-sm leading-relaxed text-muted-foreground">
-            {current.subtitle || t(
+            {subtitleText || t(
               "Réponds au plus proche de ta réalité. Il n’y a pas de mauvaise réponse.",
               "Pick the closest answer. There is no wrong answer."
             )}
@@ -653,7 +695,9 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
                 : "border-border bg-card text-foreground hover:border-primary/40 hover:bg-muted/30"
               }`}
           >
-            <span className="flex-1">{opt.label}</span>
+            <span className="flex-1">
+              {session.language === "en" && opt.labelEn ? opt.labelEn : opt.label}
+            </span>
             {currentAnswer === idx && (
               <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
                 <Check className="h-3.5 w-3.5" />
@@ -666,7 +710,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
 
       {currentAnswer !== undefined && (
         <p className="rounded-2xl bg-primary/5 px-3 py-2 text-center text-sm font-medium text-primary" role="status">
-          {questionIdx < activeQuestions.length - 1
+          {currentIndex < activeQuestions.length - 1
             ? t("Réponse prise en compte. On passe à la suivante.", "Answer saved. Moving to the next one.")
             : t("Réponse prise en compte. Ton premier verdict est prêt.", "Answer saved. Your first verdict is ready.")}
         </p>
@@ -689,7 +733,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
           disabled={currentAnswer === undefined}
             className="diagnostic-primary-action inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-40"
         >
-          {questionIdx < activeQuestions.length - 1
+          {currentIndex < activeQuestions.length - 1
             ? t("Question suivante", "Next question")
             : t("Voir le premier verdict", "See first verdict")}
             <ChevronRight className="h-4 w-4" />

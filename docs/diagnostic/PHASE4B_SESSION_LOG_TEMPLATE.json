@@ -1,0 +1,41 @@
+{
+  "id": "B4-01",
+  "date": "YYYY-MM-DD",
+  "segment": "Social / audio / contenu court",
+  "participantType": "solo | small_team",
+  "stackType": "adobe_strong | non_adobe | mixed",
+  "aiUsage": "none | occasional | regular | intensive",
+  "contractKnowledge": "known | partial | unknown",
+  "hasAtypicalUsage": false,
+  "device": "desktop | laptop | tablet | mobile",
+  "language": "fr | en",
+  "completed": false,
+  "preVerdictMinutes": null,
+  "totalProductMinutes": null,
+  "mappingFidelityScore": null,
+  "trustScore": null,
+  "actionableDiagnostic": false,
+  "firstDecisionQuoted": "",
+  "repetitiveQuestionReported": false,
+  "recommendationPerceivedDuringCapture": false,
+  "manualVerification": {
+    "toolsCorrect": null,
+    "usagesCorrect": null,
+    "aiCorrect": null,
+    "contractsCorrect": null,
+    "costsCorrect": null,
+    "decisionsReasonable": null
+  },
+  "issues": [
+    {
+      "id": "B4-01-P1-01",
+      "severity": "P1",
+      "status": "open",
+      "description": "",
+      "reproducible": false,
+      "candidateFix": ""
+    }
+  ],
+  "notes": "",
+  "includeInG4Score": true
+}

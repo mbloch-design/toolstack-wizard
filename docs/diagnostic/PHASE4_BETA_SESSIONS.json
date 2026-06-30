@@ -1,0 +1,49 @@
+{
+  "phase": "4",
+  "scope": "creative",
+  "updatedAt": "2026-06-30",
+  "status": "real_beta_not_started",
+  "decision": "G4 non accepté",
+  "realSessions": [],
+  "internalDryRuns": [
+    {
+      "id": "D4-SOCIAL-AUDIO",
+      "segment": "Social / audio / contenu court",
+      "artifact": "src/test/diagnostic/phase4BetaReadiness.spec.tsx",
+      "status": "covered",
+      "notes": "Vérifie restitution Social/Audio, IA, friction Descript/CapCut et trois décisions maximum."
+    },
+    {
+      "id": "D4-RESTORED-RENDER",
+      "segment": "Mobile / reprise proxy",
+      "artifact": "src/test/diagnostic/phase4BetaReadiness.spec.tsx",
+      "status": "covered",
+      "notes": "Vérifie qu’une session Social/Audio restaurée rend overview et plan d’action sans crash serveur."
+    },
+    {
+      "id": "D4-PDF-PAYLOAD",
+      "segment": "Restitution / export",
+      "artifact": "src/test/diagnostic/phase4BetaReadiness.spec.tsx",
+      "status": "covered",
+      "notes": "Vérifie que le PDF reçoit trois décisions prouvées maximum et filtre les recommandations sans preuve."
+    }
+  ],
+  "openReserves": [
+    "12 sessions réelles minimum non jouées",
+    "6 familles créatives non couvertes par utilisateurs réels",
+    "Social/Audio non validé terrain",
+    "Mobile/petit écran non validé terrain",
+    "Revue experte métier G3 non réalisée",
+    "Métriques G4 non mesurées"
+  ],
+  "metrics": {
+    "actionableDiagnosticRate": null,
+    "perceivedMappingFidelityRate": null,
+    "completionRate": null,
+    "medianPreVerdictMinutes": null,
+    "repetitiveQuestionRate": null,
+    "captureRecommendationConfusionCount": null,
+    "openP0Count": null,
+    "openP1Count": null
+  }
+}

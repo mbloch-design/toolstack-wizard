@@ -46,12 +46,64 @@ interface DiagnosticFocusArea extends LocalizedDiagnosticItem {
   priority?: "low" | "medium" | "high";
 }
 
+interface AiDiagnosticActorSummary {
+  toolName?: string;
+  hostToolName?: string;
+  sourceLabelFr?: string;
+  sourceLabelEn?: string;
+  accessLabelFr?: string;
+  accessLabelEn?: string;
+  commercialContractName?: string;
+  allowanceLabelFr?: string;
+  allowanceLabelEn?: string;
+  variableMonthlyCost?: number;
+  capabilityLabelsFr?: string[];
+  capabilityLabelsEn?: string[];
+  frequencyLabelFr?: string;
+  frequencyLabelEn?: string;
+}
+
+interface AiDiagnosticActorRole {
+  objectiveLabelFr?: string;
+  objectiveLabelEn?: string;
+  sourceLabelFr?: string;
+  sourceLabelEn?: string;
+  capabilityLabelsFr?: string[];
+  capabilityLabelsEn?: string[];
+}
+
+interface AiDiagnosticGlobalActorSummary extends AiDiagnosticActorSummary {
+  objectiveCount?: number;
+  roles?: AiDiagnosticActorRole[];
+}
+
+interface AiDiagnosticWorkflowSummary {
+  objectiveLabelFr?: string;
+  objectiveLabelEn?: string;
+  actors?: AiDiagnosticActorSummary[];
+}
+
+interface AiDiagnosticFinding extends DiagnosticRiskFlag {
+  reviewRecommended?: boolean;
+}
+
+interface DiagnosticAiAnalysis {
+  objectiveCount?: number;
+  actorCount?: number;
+  actorOccurrenceCount?: number;
+  capabilityCount?: number;
+  globalActors?: AiDiagnosticGlobalActorSummary[];
+  workflows?: AiDiagnosticWorkflowSummary[];
+  findings?: AiDiagnosticFinding[];
+}
+
 interface DiagnosticInsights {
   profile?: LocalizedDiagnosticItem | null;
   maturity?: LocalizedDiagnosticItem | null;
   primaryRisk?: DiagnosticRiskFlag | null;
   riskFlags?: DiagnosticRiskFlag[] | null;
   focusAreas?: DiagnosticFocusArea[] | null;
+  aiAnalysis?: DiagnosticAiAnalysis | null;
   metrics?: Record<string, number> | null;
 }
 
@@ -417,6 +469,119 @@ Deno.serve(async (req) => {
       }
 
       y += insightBoxH + 10;
+    }
+
+    const aiAnalysis = payload.insights?.aiAnalysis;
+    if (
+      aiAnalysis &&
+      (Number(aiAnalysis.actorCount || 0) > 0 || (aiAnalysis.findings || []).length > 0)
+    ) {
+      const globalActors = (aiAnalysis.globalActors || []).slice(0, 5);
+      const aiFindings = (aiAnalysis.findings || [])
+        .filter((finding) => finding.reviewRecommended)
+        .slice(0, 3);
+      const actorLines = globalActors.length > 0
+        ? globalActors.map((actor) => {
+          const source = lang === "en"
+            ? actor.sourceLabelEn || actor.sourceLabelFr || ""
+            : actor.sourceLabelFr || actor.sourceLabelEn || "";
+          const access = lang === "en"
+            ? actor.accessLabelEn || actor.accessLabelFr || ""
+            : actor.accessLabelFr || actor.accessLabelEn || "";
+          const host = actor.hostToolName && actor.hostToolName !== actor.toolName
+            ? ` ${t("dans", "in")} ${actor.hostToolName}`
+            : "";
+          const contract = actor.commercialContractName
+            ? ` · ${actor.commercialContractName}`
+            : "";
+          const allowance = lang === "en"
+            ? actor.allowanceLabelEn || actor.allowanceLabelFr || ""
+            : actor.allowanceLabelFr || actor.allowanceLabelEn || "";
+          const variableCost = Number(actor.variableMonthlyCost || 0) > 0
+            ? ` · +${actor.variableMonthlyCost} €/mois`
+            : "";
+          const roles = (actor.roles || []).map((role) => {
+            const objective = lang === "en"
+              ? role.objectiveLabelEn || role.objectiveLabelFr || ""
+              : role.objectiveLabelFr || role.objectiveLabelEn || "";
+            const capabilities = lang === "en"
+              ? role.capabilityLabelsEn || role.capabilityLabelsFr || []
+              : role.capabilityLabelsFr || role.capabilityLabelsEn || [];
+            const roleSource = lang === "en"
+              ? role.sourceLabelEn || role.sourceLabelFr || ""
+              : role.sourceLabelFr || role.sourceLabelEn || "";
+            return `${objective}${roleSource ? ` (${roleSource})` : ""}: ${capabilities.join(", ") || t("rôle à préciser", "role to clarify")}`;
+          }).join(" • ");
+          return doc.splitTextToSize(
+            `• ${actor.toolName || t("IA", "AI")}${host} (${source}${access ? ` · ${access}` : ""}${contract}${allowance ? ` · ${allowance}` : ""}${variableCost}) — ${roles}`,
+            CW - 14
+          ) as string[];
+        })
+        : (aiAnalysis.workflows || []).slice(0, 4).map((workflow) => {
+            const objective = lang === "en"
+              ? workflow.objectiveLabelEn || workflow.objectiveLabelFr || ""
+              : workflow.objectiveLabelFr || workflow.objectiveLabelEn || "";
+            const actors = (workflow.actors || [])
+              .map((actor) => actor.toolName || t("IA", "AI"))
+              .join(", ");
+            return doc.splitTextToSize(`• ${objective} — ${actors}`, CW - 14) as string[];
+          });
+      const findingLines = aiFindings.map((finding) => {
+        const label = localizedField(finding, "label", lang) || humanizeId(finding.id);
+        const action = localizedField(finding, "action", lang);
+        return doc.splitTextToSize(`• ${label}${action ? ` — ${action}` : ""}`, CW - 14) as string[];
+      });
+      const aiBoxH =
+        24 +
+        actorLines.reduce((sum, lines) => sum + Math.max(lines.length, 1) * 4 + 3, 0) +
+        (findingLines.length > 0
+          ? 10 + findingLines.reduce((sum, lines) => sum + Math.max(lines.length, 1) * 4 + 3, 0)
+          : 0);
+
+      y = checkPageBreak(y, aiBoxH + 8);
+      doc.setFillColor(244, 241, 255);
+      doc.roundedRect(M, y, CW, aiBoxH, 3, 3, "F");
+      let ay = y + 8;
+      doc.setFontSize(8);
+      doc.setTextColor(...GRAY);
+      doc.setFont("helvetica", "normal");
+      doc.text(t("Lecture IA", "AI read"), M + 5, ay);
+      ay += 7;
+      doc.setFontSize(11);
+      doc.setTextColor(...NAVY);
+      doc.setFont("helvetica", "bold");
+      doc.text(
+        `${Number(aiAnalysis.objectiveCount || 0)} ${t("étape(s)", "step(s)")} • ${Number(aiAnalysis.actorCount || 0)} ${t("acteur(s)", "actor(s)")} • ${Number(aiAnalysis.capabilityCount || 0)} ${t("capacité(s)", "capability or capabilities")}`,
+        M + 5,
+        ay
+      );
+      ay += 7;
+
+      for (const lines of actorLines) {
+        doc.setFontSize(8);
+        doc.setTextColor(...GRAY);
+        doc.setFont("helvetica", "normal");
+        doc.text(lines, M + 7, ay);
+        ay += Math.max(lines.length, 1) * 4 + 3;
+      }
+
+      if (findingLines.length > 0) {
+        ay += 2;
+        doc.setFontSize(9);
+        doc.setTextColor(...ORANGE);
+        doc.setFont("helvetica", "bold");
+        doc.text(t("Points à cadrer", "Points to frame"), M + 5, ay);
+        ay += 6;
+        for (const lines of findingLines) {
+          doc.setFontSize(8);
+          doc.setTextColor(...GRAY);
+          doc.setFont("helvetica", "normal");
+          doc.text(lines, M + 7, ay);
+          ay += Math.max(lines.length, 1) * 4 + 3;
+        }
+      }
+
+      y += aiBoxH + 10;
     }
 
     // Prescriptions summary

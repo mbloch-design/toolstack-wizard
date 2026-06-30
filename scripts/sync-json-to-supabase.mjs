@@ -128,8 +128,13 @@ const FIELD_MAP = {
   seo: ["seo"],
   alternatives: ["alternatives"],
   relevantFor: ["relevantFor", "relevant_for"],
-  // solo_relevance / team_relevance volontairement exclus : ces colonnes
-  // sont en varchar(50) dans Supabase et n'acceptent pas le texte long.
+  // solo_relevance / team_relevance : valeurs courtes ("high"/"medium"/"low")
+  // uniquement — le texte descriptif va dans idealForFr/idealForEn, pas ici,
+  // car ces colonnes sont en varchar(50) côté Supabase.
+  soloRelevance: ["soloRelevance", "solo_relevance"],
+  teamRelevance: ["teamRelevance", "team_relevance"],
+  idealForFr: ["idealForFr", "ideal_for_fr"],
+  idealForEn: ["idealForEn", "ideal_for_en"],
   freeAlternative: ["freeAlternative", "free_alternative"],
   betterAlternative: ["betterAlternative", "better_alternative"],
   bundle_parent: ["bundle_parent"],

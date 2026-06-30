@@ -49,6 +49,33 @@ export default function SectionPillNav({
   activeIdRef.current = activeId;
   const onSelectRef = useRef(onSelect);
   onSelectRef.current = onSelect;
+  // While a click/keyboard nav is scrolling toward a target section, the
+  // IntersectionObserver still fires for every section the viewport passes
+  // over mid-scroll — without this lock, the active pill would flicker
+  // through unrelated sections during the animation instead of jumping
+  // straight to the clicked one. Cleared once the observer confirms we've
+  // actually arrived, with a timeout fallback in case a short/last section
+  // never reports an exact match (e.g. the page doesn't scroll that far).
+  const pendingIdRef = useRef<string | null>(null);
+  const pendingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const goToSection = (id: string) => {
+    setActiveId(id);
+    pendingIdRef.current = id;
+    if (pendingTimeoutRef.current) clearTimeout(pendingTimeoutRef.current);
+    pendingTimeoutRef.current = setTimeout(() => { pendingIdRef.current = null; }, 1000);
+    if (onSelectRef.current?.(id)) return;
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Callers (ToolDetailPage included) can't always memoize `sections` —
+  // it's computed after an early `if (!tool) return null` guard, where a
+  // useMemo would violate the rules of hooks (different hook count between
+  // the loading and loaded render). So depend on a content-derived key
+  // instead of the array reference: same ids in the same order means the
+  // observer setup doesn't need to change, even if the array is a fresh
+  // object every render.
+  const sectionsKey = sections.map((s) => s.id).join("|");
 
   useEffect(() => {
     if (sections.length === 0) return;
@@ -62,6 +89,8 @@ export default function SectionPillNav({
       nodes.forEach((node) => {
         if (node.getBoundingClientRect().top <= 180) current = node.id;
       });
+      if (pendingIdRef.current && pendingIdRef.current !== current) return;
+      pendingIdRef.current = null;
       setActiveId(current);
     };
 
@@ -85,9 +114,7 @@ export default function SectionPillNav({
         ? sections[Math.min(currentIdx + 1, sections.length - 1)]
         : sections[Math.max(currentIdx - 1, 0)];
       if (!next || next.id === activeIdRef.current) return;
-      setActiveId(next.id);
-      if (onSelectRef.current?.(next.id)) return;
-      document.getElementById(next.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      goToSection(next.id);
     };
     document.addEventListener("keydown", handleKey);
 
@@ -96,13 +123,15 @@ export default function SectionPillNav({
       heroObserver?.disconnect();
       document.removeEventListener("keydown", handleKey);
     };
-  }, [sections, heroSelector]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentionally
+    // keyed on sectionsKey (content), not the sections array reference.
+  }, [sectionsKey, heroSelector]);
+
+  useEffect(() => () => { if (pendingTimeoutRef.current) clearTimeout(pendingTimeoutRef.current); }, []);
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
     event.preventDefault();
-    setActiveId(id);
-    if (onSelect?.(id)) return;
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    goToSection(id);
   };
 
   if (sections.length === 0) return null;

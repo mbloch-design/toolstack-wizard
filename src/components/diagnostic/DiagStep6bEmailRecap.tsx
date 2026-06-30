@@ -17,8 +17,8 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, onPrev
   const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
   const totalCostLabel = useMemo(
-    () => formatMonthlyTotal(session.selectedTools, t),
-    [session.selectedTools, t]
+    () => formatMonthlyTotal(session.selectedTools, t, session.commercialContracts),
+    [session.commercialContracts, session.selectedTools, t]
   );
 
   const handleSend = () => {

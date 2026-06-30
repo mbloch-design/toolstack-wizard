@@ -1,9 +1,26 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category } from "@/data/types";
 import categoriesIndexJson from "@/data/categories_index.json";
 import toolsIndexJson from "@/data/tools_index.json";
 import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
+
+// Pre-resolved tool data injected by the SSR build step (see entry-server.tsx),
+// so useToolBySlug can skip its loading state when the markup was already
+// server-rendered for this exact slug — avoids a hydration-time spinner flash.
+export const SsrToolContext = createContext<Tool | undefined>(undefined);
+
+// Same idea, for the small "related guides" list ToolDetailPage shows in its
+// desktop sidebar: usePosts() below has no static fallback (posts start at
+// []), so that block goes from absent to present once its fetch resolves —
+// a guaranteed, deterministic layout shift on every load of an SSR'd tool
+// page. Pre-computed server-side and passed through here instead.
+export const SsrRelatedPostsContext = createContext<Pick<Post, "slug" | "title" | "readTime">[] | undefined>(undefined);
+
+// Same idea, for ComparePage (see entry-server.tsx's renderComparePage) - so
+// useToolPair can skip its loading state when the pair was already
+// server-rendered for this exact slugA/slugB.
+export const SsrComparePairContext = createContext<{ toolA: Tool; toolB: Tool } | undefined>(undefined);
 
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
@@ -101,6 +118,15 @@ export type ToolSummary = Pick<
   | "affiliateLink"
   | "websiteUrl"
   | "logo"
+  | "covers"
+  | "pros"
+  | "prosEn"
+  | "tool_type"
+  | "host_app"
+  | "bundle_parent"
+  | "substitution_cluster_v2"
+  | "functional_needs"
+  | "verticals"
 >;
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
@@ -115,6 +141,15 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
   websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
   logo: asLocalizedText(t.logo, ""),
+  covers: t.covers || [],
+  pros: t.pros || [],
+  prosEn: t.prosEn || t.pros_en || null,
+  tool_type: t.tool_type || "satellite",
+  host_app: t.host_app || null,
+  bundle_parent: t.bundle_parent || null,
+  substitution_cluster_v2: t.substitution_cluster_v2 || null,
+  functional_needs: t.functional_needs || [],
+  verticals: t.verticals || [],
 }));
 
 function mapSupabaseCat(c: any): Category {
@@ -153,21 +188,38 @@ function mapPost(p: any): Post {
   };
 }
 
-async function loadLocalPosts(lang: string): Promise<Post[]> {
+export async function loadLocalPosts(lang: string): Promise<Post[]> {
   const module = lang === "en"
     ? await import("@/data/posts-en.json")
     : await import("@/data/posts-fr.json");
   return (module.default as unknown[]).map(mapPost);
 }
 
+// Module-level, session-lifetime caches. Every ToolDetailPage mount (i.e.
+// every tool-to-tool navigation) used to redo the full fetch + transform
+// from scratch — same ~1100-row JSON map and Supabase round-trip every
+// time. Content here doesn't change within a tab session, so cache once
+// and reuse; a hard reload naturally clears these like any module state.
+let _categoriesCache: Category[] | null = null;
+
 export function useCategories() {
-  const [categories, setCategories] = useState<Category[]>(staticCategories);
-  const [loading, setLoading] = useState(true);
+  // On an already-SSR'd tool page, the static data is from the same build
+  // as the page itself — refreshing it on mount only swaps content after
+  // it's already painted, causing a visible layout shift for no real
+  // freshness gain. Skip the refresh there; every other page keeps it.
+  const isSsrPage = useContext(SsrToolContext) !== undefined;
+  const [categories, setCategories] = useState<Category[]>(_categoriesCache ?? staticCategories);
+  const [loading, setLoading] = useState(!_categoriesCache && !isSsrPage);
 
   useEffect(() => {
+    if (_categoriesCache || isSsrPage) return;
     (async () => {
       const { data, error } = await supabase.from("categories").select("*");
-      if (!error && data && data.length > 0) setCategories(mergeById(staticCategories, data.map(mapSupabaseCat)));
+      if (!error && data && data.length > 0) {
+        const merged = mergeById(staticCategories, data.map(mapSupabaseCat));
+        _categoriesCache = merged;
+        setCategories(merged);
+      }
       setLoading(false);
     })();
   }, []);
@@ -187,12 +239,17 @@ export function useCategories() {
  *     so consumers get exactly the same Tool shape as useTools().
  */
 export function useToolPair(slugA: string | undefined | null, slugB: string | undefined | null) {
-  const [toolA, setToolA] = useState<Tool | undefined>(undefined);
-  const [toolB, setToolB] = useState<Tool | undefined>(undefined);
-  const [loading, setLoading] = useState(true);
+  const ssrPair = useContext(SsrComparePairContext);
+  const ssrMatches = !!ssrPair &&
+    (ssrPair.toolA.slug === slugA || ssrPair.toolA.id === slugA) &&
+    (ssrPair.toolB.slug === slugB || ssrPair.toolB.id === slugB);
+  const [toolA, setToolA] = useState<Tool | undefined>(ssrMatches ? ssrPair!.toolA : undefined);
+  const [toolB, setToolB] = useState<Tool | undefined>(ssrMatches ? ssrPair!.toolB : undefined);
+  const [loading, setLoading] = useState(!ssrMatches);
 
   useEffect(() => {
     if (!slugA || !slugB) { setLoading(false); return; }
+    if (ssrMatches) return;
     let cancelled = false;
     setLoading(true);
 
@@ -234,11 +291,14 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
   return { toolA, toolB, loading };
 }
 
+let _toolsCache: Tool[] | null = null;
+
 export function useTools() {
-  const [tools, setTools] = useState<Tool[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [tools, setTools] = useState<Tool[]>(_toolsCache ?? []);
+  const [loading, setLoading] = useState(!_toolsCache);
 
   useEffect(() => {
+    if (_toolsCache) return;
     let cancelled = false;
 
     (async () => {
@@ -247,9 +307,11 @@ export function useTools() {
       if (cancelled) return;
       setTools(localTools);
 
-      const { data, error } = await supabase.from("tools").select("*").limit(1000);
+      const { data, error } = await supabase.from("tools").select("*").limit(5000);
       if (cancelled) return;
-      if (!error && data && data.length > 0) setTools(mergeById(localTools, data.map(mapToolFromJson)));
+      const merged = (!error && data && data.length > 0) ? mergeById(localTools, data.map(mapToolFromJson)) : localTools;
+      _toolsCache = merged;
+      setTools(merged);
       setLoading(false);
     })();
 
@@ -261,16 +323,22 @@ export function useTools() {
   return { tools, loading };
 }
 
+let _toolSummariesCache: ToolSummary[] | null = null;
+
 export function useToolSummaries() {
-  const [tools, setTools] = useState<ToolSummary[]>(staticToolSummaries);
-  const [loading, setLoading] = useState(true);
+  // Same rationale as useCategories above: don't swap the alternatives/
+  // summaries list out from under an already-painted SSR'd tool page.
+  const isSsrPage = useContext(SsrToolContext) !== undefined;
+  const [tools, setTools] = useState<ToolSummary[]>(_toolSummariesCache ?? staticToolSummaries);
+  const [loading, setLoading] = useState(!_toolSummariesCache && !isSsrPage);
 
   useEffect(() => {
+    if (_toolSummariesCache || isSsrPage) return;
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo")
-        .limit(1000);
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals")
+        .limit(5000);
 
       if (!error && data && data.length > 0) {
         const remoteTools = data.map((t: any) => ({
@@ -283,10 +351,21 @@ export function useToolSummaries() {
           pricing: t.pricing || { free: "", paid: "" },
           defaultMonthlyPrice: t.default_monthly_price || 0,
           affiliateLink: asLocalizedText(t.affiliate_link, ""),
+          covers: t.covers || [],
+          pros: t.pros || [],
+          prosEn: t.pros_en || t.pros || null,
+          tool_type: t.tool_type || "satellite",
+          host_app: t.host_app || null,
+          bundle_parent: t.bundle_parent || null,
           websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, ""),
           logo: asLocalizedText(t.logo, ""),
+          substitution_cluster_v2: t.substitution_cluster_v2 || null,
+          functional_needs: t.functional_needs || [],
+          verticals: t.verticals || [],
         }));
-        setTools(mergeById(staticToolSummaries, remoteTools));
+        const merged = mergeById(staticToolSummaries, remoteTools);
+        _toolSummariesCache = merged;
+        setTools(merged);
       }
       setLoading(false);
     })();
@@ -296,11 +375,20 @@ export function useToolSummaries() {
 }
 
 export function useToolBySlug(slug: string | undefined) {
-  const [tool, setTool] = useState<Tool | null>(null);
-  const [loading, setLoading] = useState(true);
+  const ssrTool = useContext(SsrToolContext);
+  const ssrMatches = !!ssrTool && (ssrTool.slug === slug || ssrTool.id === slug);
+  const [tool, setTool] = useState<Tool | null>(ssrMatches ? ssrTool! : null);
+  const [loading, setLoading] = useState(!ssrMatches);
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
+    // SSR data is already as fresh as the last deploy (the build re-fetches
+    // Supabase for every tool, see entry-server.tsx); re-fetching it again
+    // client-side just for a mid-session freshness guarantee was costing a
+    // full Supabase round-trip (~1.1s, confirmed in a real PageSpeed run)
+    // sitting in the LCP-relevant critical request chain for no visible
+    // benefit on a normal page view. Skip it when SSR already matches.
+    if (ssrMatches) return;
     let cancelled = false;
 
     (async () => {
@@ -327,10 +415,17 @@ export function useToolBySlug(slug: string | undefined) {
 }
 
 export function usePosts(lang: string) {
+  // On an SSR'd tool page, ToolDetailPage already has its relatedPosts
+  // pre-computed server-side (see SsrRelatedPostsContext) and never reads
+  // this hook's own `posts` value — so fetching the full posts dataset
+  // (a ~70KB chunk + a Supabase query, both sitting in the critical
+  // network chain) is pure waste there. Skip it entirely in that case.
+  const skip = useContext(SsrRelatedPostsContext) !== undefined;
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!skip);
 
   useEffect(() => {
+    if (skip) return;
     let cancelled = false;
 
     (async () => {

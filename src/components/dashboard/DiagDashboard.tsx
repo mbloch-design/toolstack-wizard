@@ -8,7 +8,8 @@ import DashActions from "./DashActions";
 import DashShareModal from "./DashShareModal";
 import { insertDiagnosticStepEvent } from "@/lib/diagnosticPersistence";
 import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
-import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, Rocket, Search, X } from "lucide-react";
+import { translateHealthLabel } from "@/utils/diagnosticLabels";
+import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, RefreshCcw, Rocket, Search, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -18,6 +19,7 @@ interface Props {
   t: (fr: string, en: string) => string;
   dbSessionId?: string | null;
   dbSessionToken?: string | null;
+  onRestart: () => void;
 }
 
 const TABS: {
@@ -101,7 +103,7 @@ function getPersonaSidebarCopy(result: DiagnosticResult, t: Props["t"]) {
   };
 }
 
-export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSessionToken }: Props) {
+export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSessionToken, onRestart }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showShare, setShowShare] = useState(false);
@@ -179,7 +181,12 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
   const activeTabIndex = TABS.findIndex((tab) => tab.id === activeTab);
   const nextTab = activeTabIndex >= 0 && activeTabIndex < TABS.length - 1 ? TABS[activeTabIndex + 1] : null;
   const ActiveIcon = activeTabMeta.icon;
-  const monthlyCostLabel = formatMonthlyTotal(result.sessionState.selectedTools, t);
+  const monthlyCostLabel = formatMonthlyTotal(
+    result.sessionState.selectedTools,
+    t,
+    result.sessionState.commercialContracts
+  );
+  const healthLabel = translateHealthLabel(result.healthLabel, t);
   const sidebarPersona = getPersonaSidebarCopy(result, t);
   const normalizedSidebarQuery = sidebarQuery.trim().toLowerCase();
   const sidebarTabs = normalizedSidebarQuery
@@ -224,6 +231,16 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
               <span className="block min-w-0 truncate font-semibold">{t(tab.labelFr, tab.labelEn)}</span>
             </button>
           ))}
+          <div className="mt-2 border-t border-border pt-2">
+            <button
+              type="button"
+              onClick={onRestart}
+              className="grid w-full grid-cols-[22px_1fr] items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <RefreshCcw className="h-4 w-4" />
+              <span className="font-semibold">{t("Nouveau diagnostic", "Start a new audit")}</span>
+            </button>
+          </div>
         </div>
       )}
 
@@ -294,7 +311,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
                 style={{ width: `${Math.max(4, result.healthScore)}%`, backgroundColor: donutColor }}
               />
             </div>
-            <p className="mt-2 truncate text-sm font-semibold text-foreground">{result.healthLabel}</p>
+            <p className="mt-2 truncate text-sm font-semibold text-foreground">{healthLabel}</p>
           </div>
 
           <div className="mt-3 space-y-2 px-1 text-xs text-muted-foreground">
@@ -307,6 +324,15 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
               <span className="shrink-0 font-['DM_Mono'] text-foreground">{monthlyCostLabel}/{t("mois", "mo")}</span>
             </div>
           </div>
+
+          <button
+            type="button"
+            onClick={onRestart}
+            className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+          >
+            <RefreshCcw className="h-4 w-4" />
+            {t("Nouveau diagnostic", "Start a new audit")}
+          </button>
         </div>
       </aside>
 
