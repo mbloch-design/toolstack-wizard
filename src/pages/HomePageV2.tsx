@@ -4,7 +4,6 @@ import { ArrowRight, ChevronLeft, ChevronRight, Bookmark } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { setSeoTags, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { getCategoryIcon } from "@/lib/categoryIcons";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
@@ -26,7 +25,6 @@ const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
 const STACK_PAGE_SIZE = 3; // 1 row × 3 cols — stacks carousel
 const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
-const MAX_CATEGORIES = 12;
 const FEATURED_POSTS = 4;
 
 /* Fetch og_image_url for featured slugs */
@@ -164,17 +162,6 @@ export default function HomePageV2() {
   const visibleAi = aiTools.slice(aiPage * AI_PAGE_SIZE, (aiPage + 1) * AI_PAGE_SIZE);
   const prevAiPage = useCallback(() => setAiPage((p) => Math.max(0, p - 1)), []);
   const nextAiPage = useCallback(() => setAiPage((p) => Math.min(aiTotalPages - 1, p + 1)), [aiTotalPages]);
-
-  /* ── Category cards ── */
-  const catCards = useMemo(() => {
-    const countMap = new Map<string, number>();
-    for (const tool of tools) { const key = tool.categoryId; if (key) countMap.set(key, (countMap.get(key) ?? 0) + 1); }
-    return categories
-      .map((cat) => ({ ...cat, count: countMap.get(cat.id) ?? countMap.get(cat.slug) ?? 0, displayName: stripLeadingEmoji(lang === "en" ? (cat.nameEn || cat.name) : cat.name) }))
-      .filter((c) => c.count > 0)
-      .sort((a, b) => b.count - a.count)
-      .slice(0, MAX_CATEGORIES);
-  }, [tools, categories, lang]);
 
   /* ── Stacks pagination (capped to STACK_MAX_PAGES screens) ── */
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
@@ -333,27 +320,6 @@ export default function HomePageV2() {
               )}
             </div>
           )}
-
-          {/* ══ 4. Catégories ══ */}
-          <div style={{ marginTop: 56 }}>
-            <SectionHead
-              label={t("Catégories", "Categories")}
-              to={`${prefix}/category`}
-              linkLabel={t("Toutes", "All")}
-            />
-            <div className="v2-cat-grid">
-              {catCards.map((cat) => {
-                const Icon = getCategoryIcon(cat.id);
-                return (
-                  <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="v2-cat-card">
-                    <span className="v2-cat-icon"><Icon style={{ width: 15, height: 15 }} /></span>
-                    <span className="v2-cat-name">{cat.displayName}</span>
-                    <span className="v2-cat-count">{cat.count}</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
 
           {/* ══ 5. Stacks — carousel 1×3 ══ */}
           <div style={{ marginTop: 56 }}>
