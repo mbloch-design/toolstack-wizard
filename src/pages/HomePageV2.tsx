@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Search } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
@@ -11,6 +11,44 @@ import HeroSection from "@/components/home/HeroSection";
 
 const FEATURED_PER_CATEGORY = 8;
 const MAX_CATEGORIES = 12;
+const OG_PREVIEW_COUNT = 8;
+
+/* Fetches the og:image of a tool's website via Microlink (free tier). */
+function OgToolPanel({ tool }: { tool: { id: string; websiteUrl?: string; affiliateLink?: string } }) {
+  const [imgUrl, setImgUrl] = useState<string | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  const siteUrl = (tool as any).websiteUrl || (tool as any).affiliateLink;
+
+  useEffect(() => {
+    if (!siteUrl) { setFailed(true); return; }
+    let cancelled = false;
+    fetch(`https://api.microlink.io/?url=${encodeURIComponent(siteUrl)}&embed=image.url`)
+      .then((r) => r.json())
+      .then((json) => {
+        if (cancelled) return;
+        const url = json?.data?.image?.url as string | undefined;
+        if (url) setImgUrl(url);
+        else setFailed(true);
+      })
+      .catch(() => { if (!cancelled) setFailed(true); });
+    return () => { cancelled = true; };
+  }, [siteUrl]);
+
+  if (!failed && imgUrl) {
+    return (
+      <img
+        src={imgUrl}
+        alt=""
+        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+
+  /* Fallback: logo centered on surface */
+  return <ToolLogo tool={tool as any} size={52} />;
+}
 
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
@@ -129,14 +167,17 @@ export default function HomePageV2() {
           </div>
 
           <div className="v2-tool-grid">
-            {featured.map((tool) => (
+            {featured.map((tool, i) => (
               <Link
                 key={tool.id}
                 to={`${prefix}/tool/${tool.slug}`}
                 className="v2-tool-card"
               >
                 <div className="v2-tool-panel">
-                  <ToolLogo tool={tool as any} size={52} />
+                  {i < OG_PREVIEW_COUNT
+                    ? <OgToolPanel tool={tool as any} />
+                    : <ToolLogo tool={tool as any} size={52} />
+                  }
                 </div>
                 <div className="v2-tool-body">
                   <div className="v2-tool-row">
