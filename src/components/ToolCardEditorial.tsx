@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
+import PinToolButton from "@/components/PinToolButton";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -110,10 +111,12 @@ export function ToolCardEditorial({
   ) as string;
 
   return (
-    <Link
-      to={`${prefix}/tool/${tool.slug ?? tool.id}`}
-      className="tce-card"
-    >
+    <div className="tool-pin-wrap">
+      <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />
+      <Link
+        to={`${prefix}/tool/${tool.slug ?? tool.id}`}
+        className="tce-card"
+      >
       {/* ── Top row: logo + type + pick ── */}
       <div className="tce-header">
         <div className="tce-logo">
@@ -173,7 +176,8 @@ export function ToolCardEditorial({
         {t("Voir l'outil", "View tool")}
         <span className="tce-cta-arrow" aria-hidden>→</span>
       </span>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

@@ -35,7 +35,10 @@ import type {
 } from "@/types/diagnostic";
 import {
   buildCreativeQuestions,
+  CREATIVE_MAX_SUGGESTION_COUNT,
+  CREATIVE_VISIBLE_SUGGESTION_COUNT,
   DEFAULT_CREATIVE_QUESTION_BUDGET,
+  diversifyRankedCreativeTools,
   isCreativeCommercialContainer,
   planCreativeQuestions,
   rankToolsForCreativeQuestion,
@@ -269,7 +272,7 @@ const CREATIVE_STACK_MOMENTS = [
     hintFr: "Midjourney, Krea, Firefly, Runway, Remove.bg...",
     hintEn: "Midjourney, Krea, Firefly, Runway, Remove.bg...",
     pattern: /midjourney|krea|firefly|stable|diffusion|flux|ideogram|leonardo|runway|remove|ai|ia|image/i,
-    ids: ["midjourney", "krea-ai", "firefly", "stable-diffusion", "flux", "ideogram", "leonardo-ai", "runway", "remove-bg"],
+    ids: ["midjourney", "krea-ai", "firefly", "stable-diffusion", "flux-ai", "ideogram", "leonardo-ai", "runway", "remove-bg"],
   },
   {
     id: "creative-motion-video",
@@ -360,6 +363,171 @@ const CREATIVE_STACK_MOMENTS = [
     ids: ["google-analytics", "posthog", "hotjar", "brevo", "hubspot", "mailerlite", "looker-studio"],
   },
 ] as const;
+
+const CREATIVE_AI_SUGGESTION_IDS_BY_MOMENT: Record<string, string[]> = {
+  "creative-brief-input": [
+    "chatgpt",
+    "claude",
+    "perplexity",
+    "notion-ai",
+    "milanote",
+  ],
+  "visual-identity": [
+    "firefly",
+    "midjourney",
+    "krea-ai",
+    "ideogram",
+    "canva-ai",
+    "figma-weave",
+  ],
+  "layout-publishing": [
+    "chatgpt",
+    "canva-ai",
+    "beautiful-ai",
+    "firefly",
+  ],
+  "ui-design": [
+    "figma-weave",
+    "relume-ai",
+    "v0-vercel",
+    "chatgpt",
+    "claude",
+  ],
+  "prototype-handoff": [
+    "figma-weave",
+    "v0-vercel",
+    "relume-ai",
+    "figma-anima",
+    "chatgpt",
+  ],
+  "photo-development": [
+    "topaz-photo-ai",
+    "topaz-gigapixel",
+    "luminar-neo",
+    "firefly",
+  ],
+  "photo-retouch": [
+    "topaz-photo-ai",
+    "remove-bg",
+    "firefly",
+    "luminar-neo",
+    "topaz-gigapixel",
+  ],
+  "video-edit": [
+    "descript",
+    "descript-ai",
+    "opus-clip",
+    "capcut-ai",
+    "runway",
+    "whisper",
+    "adobe-enhance-speech",
+  ],
+  "video-finish": [
+    "runway",
+    "pika-labs",
+    "kling-ai",
+    "topaz-video-ai",
+    "descript",
+    "adobe-enhance-speech",
+  ],
+  "motion-compositing": [
+    "runway",
+    "pika-labs",
+    "kling-ai",
+    "lottie",
+    "ae-animation-composer",
+  ],
+  "illustration-drawing": [
+    "midjourney",
+    "stable-diffusion",
+    "leonardo-ai",
+    "firefly",
+    "krea-ai",
+  ],
+  "three-d-creation": [
+    "midjourney",
+    "leonardo-ai",
+    "stable-diffusion",
+    "runway",
+    "gaea",
+  ],
+  "three-d-render": [
+    "runway",
+    "krea-ai",
+    "midjourney",
+    "topaz-gigapixel",
+  ],
+  "space-design": [
+    "midjourney",
+    "krea-ai",
+    "runway",
+    "relume-ai",
+  ],
+  "space-documentation": [
+    "chatgpt",
+    "claude",
+    "adobe-acrobat",
+    "perplexity",
+    "notion-ai",
+  ],
+  "audio-production": [
+    "descript",
+    "descript-ai",
+    "podcastle",
+    "cleanvoice",
+    "auphonic",
+    "whisper",
+    "adobe-enhance-speech",
+    "riverside",
+  ],
+  "audio-publishing": [
+    "castmagic",
+    "headliner",
+    "opus-clip",
+    "auphonic",
+    "chatgpt",
+    "claude",
+  ],
+  "social-visuals": [
+    "canva-ai",
+    "midjourney",
+    "krea-ai",
+    "firefly",
+    "capcut-ai",
+  ],
+  "social-publishing": [
+    "chatgpt",
+    "claude",
+    "typefully",
+    "taplio",
+    "publer",
+  ],
+  "creative-ai": [
+    "midjourney",
+    "firefly",
+    "krea-ai",
+    "runway",
+    "pika-labs",
+    "kling-ai",
+    "figma-weave",
+    "canva-ai",
+    "v0-vercel",
+    "descript-ai",
+  ],
+  "creative-assets": [
+    "firefly",
+    "midjourney",
+    "krea-ai",
+    "figma-weave",
+    "canva-ai",
+  ],
+  "creative-review-delivery": [
+    "chatgpt",
+    "claude",
+    "adobe-acrobat",
+    "loom",
+  ],
+};
 
 const CREATIVE_PARENT_RELATIONS = [
   {
@@ -975,12 +1143,15 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       const outputIds = [session.primarySpecialty, ...(session.complementarySpecialties || [])].filter(
         (id): id is string => Boolean(id)
       );
-      return rankToolsForCreativeQuestion(
+      return diversifyRankedCreativeTools(
         activeMoment.creativeQuestion,
-        tools,
-        outputIds,
-        selectedIds
-      ).slice(0, 6);
+        rankToolsForCreativeQuestion(
+          activeMoment.creativeQuestion,
+          tools,
+          outputIds,
+          selectedIds
+        )
+      ).slice(0, CREATIVE_MAX_SUGGESTION_COUNT);
     }
     const activeMomentIds = activeMoment.ids as readonly string[];
     const contextualToolIds = getCreativeContextualToolIds(selectedTools, activeMoment.id, session.persona);
@@ -1010,7 +1181,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         if (aRank !== bRank) return aRank - bRank;
         return (b.pertinence_by_persona?.[session.persona] || 0) - (a.pertinence_by_persona?.[session.persona] || 0);
       })
-      .slice(0, 5)
+      .slice(0, CREATIVE_VISIBLE_SUGGESTION_COUNT)
       .map((tool) => ({
         tool,
         score: 0,
@@ -1032,7 +1203,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   );
   const visibleMomentSuggestions = expandedSuggestionMomentIds.includes(activeMoment.id)
     ? activeMomentSuggestions
-    : activeMomentSuggestions.slice(0, 4);
+    : activeMomentSuggestions.slice(0, CREATIVE_VISIBLE_SUGGESTION_COUNT);
   const hiddenSuggestionCount = Math.max(
     0,
     activeMomentSuggestions.length - visibleMomentSuggestions.length
@@ -1051,26 +1222,46 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
       "runway",
       "adobe-enhance-speech",
     ];
+    const contextualIds =
+      CREATIVE_AI_SUGGESTION_IDS_BY_MOMENT[
+        activeMoment.creativeQuestion?.id || activeMoment.id
+      ] || [];
+    const contextualRank = new Map(contextualIds.map((id, index) => [id, index]));
     const needKeys = new Set(
       (activeMoment.creativeQuestion?.needKeys || []).map(normalize)
     );
     return tools
-      .filter((tool) => tool.tool_type === "ia" || Boolean(tool.ia_use_case))
+      .filter((tool) =>
+        contextualRank.has(tool.id) ||
+        tool.tool_type === "ia" ||
+        Boolean(tool.ia_use_case)
+      )
       .filter((tool) => !activeWorkflowUsage.aiToolIds.includes(tool.id))
       .map((tool) => {
         const sharedNeeds = (tool.functional_needs || [])
           .map(normalize)
           .filter((need) => needKeys.has(need)).length;
         const preferredRank = preferredIds.indexOf(tool.id);
+        const contextRank = contextualRank.get(tool.id);
         return {
           tool,
-          score: sharedNeeds * 30 + (preferredRank >= 0 ? 20 - preferredRank : 0),
+          score:
+            sharedNeeds * 35 +
+            (contextRank != null ? 90 - contextRank * 5 : 0) +
+            (preferredRank >= 0 ? 18 - preferredRank : 0),
         };
       })
+      .filter((item) => item.score > 0)
       .sort((a, b) => b.score - a.score || a.tool.name.localeCompare(b.tool.name))
-      .slice(0, 5)
+      .slice(0, 8)
       .map((item) => item.tool);
-  }, [activeMoment.creativeQuestion?.needKeys, activeWorkflowUsage.aiToolIds, tools]);
+  }, [
+    activeMoment.creativeQuestion?.id,
+    activeMoment.creativeQuestion?.needKeys,
+    activeMoment.id,
+    activeWorkflowUsage.aiToolIds,
+    tools,
+  ]);
   const activeAiCapabilityOptions = useMemo(
     () => aiCapabilityOptionsForObjective(
       activeMoment.id,
@@ -1960,12 +2151,12 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
             </div>
             {search.trim() && (
               filteredTools.length > 0 ? (
-                <ToolGrid
-                  title={t("Résultats", "Results")}
-                  tools={filteredTools.slice(0, 8)}
-                  selectedToolsById={selectedToolsById}
-                  activeSelectedToolsById={activeSelectedToolsById}
-                  onToggle={(tool) => toggleTool(tool, "search")}
+	                <ToolGrid
+	                  title={t("Résultats", "Results")}
+	                  tools={filteredTools.slice(0, session.persona === "SOFIA" ? CREATIVE_MAX_SUGGESTION_COUNT : 8)}
+	                  selectedToolsById={selectedToolsById}
+	                  activeSelectedToolsById={activeSelectedToolsById}
+	                  onToggle={(tool) => toggleTool(tool, "search")}
                   t={t}
                 />
               ) : (

@@ -7,6 +7,7 @@ import {
   Moon,
   Scale,
   Search,
+  Bookmark,
   Sun,
   Tag,
   User,
@@ -14,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
+import { useStackPins } from "@/hooks/useStackPins";
 import { useTheme } from "@/hooks/useTheme";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { SearchModal } from "@/components/SearchModal";
@@ -326,6 +328,11 @@ const Navbar = () => {
   const location = useLocation();
   const otherLang = lang === "fr" ? "en" : "fr";
   const { theme, toggle: toggleTheme } = useTheme();
+  const { state: cartState } = useStackPins();
+  const cartCount = cartState.pinnedToolSlugs.length;
+  const cartLabel = cartCount > 0
+    ? `${t("Ma stack", "My stack")} · ${cartCount}`
+    : t("Ma stack", "My stack");
   const [panelOpen, setPanelOpen] = useState(false);
   const [panelMounted, setPanelMounted] = useState(false);
   const [panelClosing, setPanelClosing] = useState(false);
@@ -465,8 +472,9 @@ const Navbar = () => {
             <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
 
             {/* Primary CTA sits last — anchored to the right edge */}
-            <Link to={`${prefix}/selector`} className="nav-audit-btn">
-              {t("Auditer ma stack", "Audit my stack")}
+            <Link to={`${prefix}/ma-stack`} className="nav-audit-btn" aria-label={cartLabel}>
+              <Bookmark className="h-4 w-4" aria-hidden />
+              <span>{cartLabel}</span>
             </Link>
           </div>
 

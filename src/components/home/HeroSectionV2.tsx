@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import { Bookmark } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
+import { useStackPins } from "@/hooks/useStackPins";
 
 const HeroSectionV2 = () => {
   const { t, lang, prefix } = useLang();
+  const { state: cartState } = useStackPins();
+  const cartCount = cartState.pinnedToolSlugs.length;
+  const cartLabel = cartCount > 0
+    ? `${t("Ma stack", "My stack")} · ${cartCount}`
+    : t("Ma stack", "My stack");
 
   return (
     <section className="hv2-root">
@@ -24,8 +31,9 @@ const HeroSectionV2 = () => {
                 : <>You pay for tools you no longer use.<br />It’s time to find out.</>}
             </h1>
 
-            <Link to={`${prefix}/selector`} className="hv2-cta">
-              {t("Auditer ma stack", "Audit my stack")}
+            <Link to={`${prefix}/ma-stack`} className="hv2-cta" aria-label={cartLabel}>
+              <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+              <span>{cartLabel}</span>
             </Link>
           </div>
         </div>

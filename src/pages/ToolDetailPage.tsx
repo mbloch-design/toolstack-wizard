@@ -6,6 +6,7 @@ import {
   ExternalLink, ArrowRight, CalendarCheck,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import PinToolButton from "@/components/PinToolButton";
 import SectionPillNav from "@/components/SectionPillNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -481,7 +482,7 @@ const ToolDetailPage = () => {
             ]} />
 
             {/* Logo + category badge */}
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
+            <div className="td-identity-row">
               <div style={{
                 width: 56, height: 56, borderRadius: 10,
                 border: "1px solid var(--color-border)", background: "var(--color-surface)",
@@ -507,6 +508,15 @@ const ToolDetailPage = () => {
                   {t(catName, catNameEn)}
                 </Link>
               )}
+              <div className="td-selection-action">
+                <PinToolButton
+                  slug={tool.slug || tool.id}
+                  label={tool.name}
+                  t={t}
+                  inline
+                  labelMode="full"
+                />
+              </div>
             </div>
 
             {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion.

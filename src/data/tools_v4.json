@@ -392,6 +392,8 @@
     "verticals": [],
     "functional_needs": [
       "website-builder",
+      "ui-design",
+      "ui-components",
       "prototyping",
       "animation",
       "landing-page",
@@ -2635,6 +2637,125 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     }
+  },
+  {
+    "id": "flux-ai",
+    "slug": "flux-ai",
+    "name": "FLUX AI",
+    "category": "creation",
+    "shortDescription": "Modèle et écosystème de génération d’images utilisé pour l’exploration visuelle et la production créative.",
+    "shortDescriptionEn": "Image generation model and ecosystem used for visual exploration and creative production.",
+    "description": "FLUX AI désigne l’écosystème de génération d’images basé sur les modèles Black Forest Labs. Dans Tooltrim, il sert à cartographier les usages de génération visuelle, concept art, variations et exploration de direction artistique, sans le confondre avec l’ancien Flux React.",
+    "longDescription": "FLUX AI couvre la génération d’images, les variations visuelles et l’exploration de direction artistique dans les workflows créatifs.",
+    "longDescriptionEn": "FLUX AI covers image generation, visual variations and art-direction exploration in creative workflows.",
+    "pricing": {
+      "free": "Variable selon l’interface ou le fournisseur utilisé",
+      "paid": "Crédits ou abonnement selon plateforme"
+    },
+    "pricingEn": {
+      "free": "Varies depending on the interface or provider",
+      "paid": "Credits or subscription depending on platform"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": null,
+    "affiliateLink": "",
+    "websiteUrl": "https://blackforestlabs.ai",
+    "logo": "",
+    "seo": {},
+    "pros": [
+      "Très pertinent pour l’exploration visuelle rapide",
+      "Utile pour concept art, variations et moodboards",
+      "Présent dans plusieurs plateformes créatives"
+    ],
+    "prosEn": [
+      "Very relevant for fast visual exploration",
+      "Useful for concept art, variations and moodboards",
+      "Available through several creative platforms"
+    ],
+    "cons": [
+      "Dépend souvent d’une interface ou d’un fournisseur tiers",
+      "Les droits, crédits et limites varient selon la plateforme",
+      "Nécessite une validation humaine avant production finale"
+    ],
+    "consEn": [
+      "Often depends on a third-party interface or provider",
+      "Rights, credits and limits vary by platform",
+      "Requires human validation before final production"
+    ],
+    "useCases": [
+      "Explorer des directions visuelles",
+      "Générer des concepts et variations d’image",
+      "Produire des bases de moodboard ou d’illustration à retravailler"
+    ],
+    "useCasesEn": [
+      "Explore visual directions",
+      "Generate image concepts and variations",
+      "Produce moodboard or illustration bases to refine"
+    ],
+    "covers": [
+      "generation-image",
+      "concept-art",
+      "direction-visuelle",
+      "moodboard",
+      "creative-ai"
+    ],
+    "relevantFor": [
+      "designer",
+      "content-creator"
+    ],
+    "personas": [
+      "SOFIA"
+    ],
+    "alternatives": [
+      "midjourney",
+      "stable-diffusion",
+      "leonardo-ai",
+      "firefly",
+      "krea-ai"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu l’utilises réellement pour générer ou explorer des visuels",
+        "Tu vérifies les droits et la qualité avant livraison"
+      ],
+      "avoidIf": [
+        "Tu ne sais pas par quelle plateforme tu y accèdes",
+        "Tu as besoin d’un outil avec contrat, droits et crédits déjà clarifiés"
+      ],
+      "threshold": "À cartographier comme capacité IA visuelle, puis rattacher au fournisseur ou à la plateforme réellement utilisée."
+    },
+    "verdictEn": null,
+    "freeAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "illustrateur",
+      "motion-video",
+      "createur-contenu",
+      "ux-ui"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "concept-art",
+      "direction-visuelle",
+      "moodboard",
+      "creative-ai"
+    ],
+    "ia_use_case": "image-generation",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "ai-image-generation",
+    "decision_policy_v3": null
   },
   {
     "id": "angular-universal",
@@ -5561,8 +5682,17 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "ux-ui"
+    ],
+    "functional_needs": [
+      "ui-design",
+      "design-system",
+      "wireframing",
+      "prototyping",
+      "prototype",
+      "handoff-dev"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -12313,9 +12443,20 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": "canva-pro",
-    "verticals": [],
-    "functional_needs": [],
-    "ia_use_case": null,
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu",
+      "community-manager"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "templates",
+      "social-media",
+      "design-visuel",
+      "creator-workflow",
+      "ai-general"
+    ],
+    "ia_use_case": "creative-assistance",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
@@ -12406,7 +12547,10 @@
     ],
     "functional_needs": [
       "montage-video-court",
-      "sous-titrage"
+      "sous-titrage",
+      "social-media",
+      "design-visuel",
+      "creator-workflow"
     ],
     "verticals": [
       "createur-contenu"
@@ -12791,7 +12935,7 @@
       "writer"
     ],
     "covers": [
-      "content repurposing"
+      "content-repurposing"
     ],
     "freeAlternative": null,
     "soloRelevance": "medium",
@@ -12825,16 +12969,21 @@
     "substitutable": true,
     "verticals": [
       "graphiste-da",
+      "createur-contenu",
       "community-manager"
     ],
     "functional_needs": [
-      "content repurposing"
+      "content-repurposing",
+      "transcription",
+      "podcast-promotion",
+      "social-media",
+      "creator-workflow"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
     "bundle_parent": null,
     "host_app": null,
-    "ia_use_case": null,
+    "ia_use_case": "content-repurposing",
     "slug": "castmagic",
     "shortDescriptionEn": "A tool for quickly transforming any audio format into content.",
     "longDescription": "Castmagic, c'est outil de transformation rapide de tout format audio en contenu. À partir de 20€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en content repurposing, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
@@ -13442,7 +13591,12 @@
       }
     },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "audio-cleanup",
+      "voice-enhancement",
+      "qualite-podcast",
+      "transcription"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -13489,13 +13643,23 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
-    "ia_use_case": null,
+    "verticals": [
+      "createur-contenu",
+      "podcasteur",
+      "motion-video"
+    ],
+    "functional_needs": [
+      "audio-cleanup",
+      "voice-enhancement",
+      "qualite-podcast",
+      "transcription",
+      "creator-workflow"
+    ],
+    "ia_use_case": "audio-cleanup",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -16304,7 +16468,7 @@
       "Combine editing, visual effects, and audio without juggling multiple software"
     ],
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -17014,7 +17178,10 @@
     "functional_needs": [
       "montage-audio",
       "transcription",
-      "enregistrement-multipistes"
+      "enregistrement-multipistes",
+      "montage-video-court",
+      "video-editing",
+      "sous-titrage"
     ],
     "ia_use_case": [
       "transcription",
@@ -20184,13 +20351,20 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "motion-video",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "montage-video",
+      "video-editing",
+      "creator-workflow"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -23222,8 +23396,18 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "graphiste-da",
+      "ux-ui",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "presentations",
+      "presentation-client",
+      "mise-en-page",
+      "publication",
+      "collaboration"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -34282,13 +34466,22 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "createur-contenu",
+      "community-manager"
+    ],
+    "functional_needs": [
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux",
+      "social-media-management",
+      "reporting-client"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -35267,8 +35460,19 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "brief",
+      "moodboard",
+      "references",
+      "wireframing",
+      "documentation",
+      "collaboration"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -40977,7 +41181,10 @@
     "functional_needs": [
       "ui-design",
       "prototypage",
-      "logos"
+      "logos",
+      "presentations",
+      "presentation-client",
+      "templates"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -41031,7 +41238,7 @@
     "personas": [],
     "timeGainedHoursPerMonth": 5,
     "downgradePlan": null,
-    "prescription_quality": "question",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [
       "cluster-trop-large"
@@ -41140,7 +41347,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -41500,10 +41707,15 @@
     ],
     "functional_needs": [
       "hebergement-audio",
+      "distribution-podcast",
+      "analytics-podcast",
+      "creator-workflow",
       "monetisation-podcast"
     ],
     "ia_use_case": null,
     "verticals": [
+      "createur-contenu",
+      "motion-video",
       "podcasteur"
     ],
     "personas": [
@@ -41616,7 +41828,13 @@
       }
     },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "transcription",
+      "audio-cleanup",
+      "qualite-podcast"
+    ],
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -41664,13 +41882,23 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
-    "ia_use_case": null,
+    "verticals": [
+      "podcasteur",
+      "createur-contenu",
+      "motion-video"
+    ],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "transcription",
+      "audio-cleanup",
+      "qualite-podcast"
+    ],
+    "ia_use_case": "podcast-production",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -42920,7 +43148,9 @@
     ],
     "functional_needs": [
       "prototypage-interactif",
-      "micro-interactions"
+      "micro-interactions",
+      "prototyping",
+      "prototype"
     ],
     "ia_use_case": null,
     "verticals": [
@@ -43178,8 +43408,17 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "createur-contenu",
+      "community-manager"
+    ],
+    "functional_needs": [
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux",
+      "social-media-management",
+      "reporting-client"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -44361,8 +44600,17 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "publication",
+      "presentation-client",
+      "templates",
+      "design-visuel",
+      "creator-workflow"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -44619,7 +44867,10 @@
       "background-removal",
       "photo-cleanup",
       "ecommerce-assets",
-      "visual-production"
+      "visual-production",
+      "detourage",
+      "retouche-photo",
+      "photo-enhancement"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -48501,11 +48752,17 @@
     "tool_type": "satellite",
     "substitutable": true,
     "verticals": [
+      "createur-contenu",
+      "community-manager",
       "ecommercant",
       "fondateur-saas"
     ],
     "functional_needs": [
-      "social media management"
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux",
+      "social-media-management",
+      "reporting-client"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -48522,13 +48779,13 @@
         "confirm_if_paid_plan_is_really_used"
       ],
       "verified_on": "2026-03-13",
-      "source_domain": "",
+      "source_domain": "sendible.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Free",
       "price_reliability": "low",
       "location_sensitive": false,
-      "official_source_url": " rapports).",
+      "official_source_url": "https://www.sendible.com/pricing",
       "verification_status": "official_site_only",
       "compare_price_monthly_eur": 0
     },
@@ -50123,7 +50380,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -53005,21 +53262,26 @@
   {
     "id": "sysaid",
     "name": "SysAid",
-    "shortDescription": "Logiciel de gestion des services IT (ITSM).",
+    "shortDescription": "Logiciel ITSM (IT Service Management) avec helpdesk, gestion des actifs et workflows ITIL — prix sur devis uniquement.",
     "description": "SysAid, c'est logiciel de gestion des services IT (ITSM). À partir de 10€/mois. Pensé pour les managers et DSI et les CTOs et leads tech.\n\nSpécialisé en IT service management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Aucun plan gratuit : SysAid propose uniquement un essai de 30 jours. Aucun accès permanent sans contrat.",
+      "paid": "Tarification sur devis. Tier Help Desk : environ 1 200–1 500 $/an pour 3 agents et 250 actifs (estimation marché). Tier ITSM et ITSM+ : à partir de ~3 000–6 000 $/an selon agents et modules. Déploiement on-premise et cloud disponibles à des tarifs différents."
     },
     "website": "https://sysaid.com",
     "affiliateLink": "https://sysaid.com",
     "pros": [
-      "Spécialisé en IT service management",
-      "Interface professionnelle"
+      "ITSM complet et ITIL-ready sans complexité ServiceNow",
+      "Gestion des actifs (CMDB) incluse dans tous les tiers",
+      "Option on-premise pour les contraintes de souveraineté des données",
+      "Portail self-service configurable sans code"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Aucun tarif public — impossible de budgéter sans contact commercial",
+      "Interface datée comparée à Freshservice ou Jira SM",
+      "Montée en charge coûteuse sur les tiers ITSM/ITSM+",
+      "Intégrations tierces limitées sur les tiers bas de gamme"
     ],
     "bestFor": [
       "all"
@@ -53051,7 +53313,9 @@
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "SysAid : Logiciel de gestion des services IT (ITSM). Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "SysAid : Logiciel de gestion des services IT (ITSM). Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "DSI de PME (50–500 salariés) cherchant un ITSM complet avec ticketing ITIL, CMDB intégrée et option on-premise, sans la complexité de ServiceNow.",
+      "idealForEn": "SME IT departments (50–500 employees) seeking a full ITSM with ITIL ticketing, integrated CMDB, and on-premise option, without ServiceNow's complexity."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -53069,45 +53333,60 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "sysaid",
-    "shortDescriptionEn": "IT service management (ITSM) software.",
-    "longDescription": "SysAid, c'est logiciel de gestion des services IT (ITSM). À partir de 10€/mois. Pensé pour les managers et DSI et les CTOs et leads tech.\n\nSpécialisé en IT service management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "SysAid is iT service management (ITSM) software. Starting at €10/month. Built for managers and IT directors and CTOs and tech leads.\n\nSpecialized in IT service management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €10/month.",
+    "shortDescriptionEn": "ITSM platform with help desk, asset management, and ITIL workflows — quote-only pricing.",
+    "longDescription": "SysAid est une plateforme ITSM complète qui couvre le cycle de vie des tickets (incidents, demandes, problèmes, changements), la gestion des actifs IT (CMDB), un portail self-service pour les utilisateurs finaux et des automatisations basées sur des règles métier. Compatible ITIL, il s'adresse aux DSI de PME et ETI qui veulent structurer leur support sans recourir à ServiceNow ou Jira Service Management. Disponible en SaaS cloud et en déploiement on-premise, SysAid n'affiche aucun tarif public — tout passe par un devis commercial.",
+    "longDescriptionEn": "SysAid is a full ITSM platform covering the complete ticket lifecycle (incidents, requests, problems, changes), IT asset management (CMDB), an end-user self-service portal, and rule-based automation. ITIL-compatible and aimed at SME and mid-market IT departments that want structured service management without the complexity of ServiceNow or Jira Service Management. Available as cloud SaaS or on-premise. SysAid publishes no public pricing — all tiers require a sales quote.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": "No free plan: SysAid offers a 30-day trial only. No permanent access without a paid contract.",
+      "paid": "Quote-based pricing only. Help Desk tier: ~$1,200–1,500/year for 3 agents and 250 assets (market estimate). ITSM and ITSM+ tiers: from ~$3,000–6,000/year depending on agents and modules. On-premise and cloud deployments priced differently."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "sysaid.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://sysaid.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 10
+      "compare_plan_kind": "custom",
+      "compare_price_monthly_eur": 0,
+      "cautions": [
+        "Tarification sur devis — demander un chiffrage avant toute comparaison.",
+        "Le coût on-premise inclut des frais d'infrastructure supplémentaires."
+      ],
+      "cautionsEn": [
+        "Quote-only pricing — request a quote before any comparison.",
+        "On-premise cost includes additional infrastructure fees."
+      ]
     },
     "websiteUrl": "https://sysaid.com",
     "logo": "",
     "verdictEn": {
+      "score": 68,
+      "label": "Mixed",
+      "summary": "SysAid is a solid, ITIL-complete ITSM for SME IT teams, but the lack of public pricing and an ageing interface are real disadvantages against Freshservice.",
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your IT department manages 100+ endpoints and needs a CMDB integrated with ticketing.",
+        "On-premise deployment is required for regulatory reasons.",
+        "Your team follows ITIL processes (incidents, problems, changes)."
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You're already on Jira SM or Freshservice with a working CMDB.",
+        "You need a quick pricing estimate — SysAid requires a sales call.",
+        "Your IT team has fewer than 5 agents (functional overkill)."
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Cost-effective from ~5 IT agents managing 300+ assets, provided you negotiate the annual rate.",
+      "billingTraps": [
+        "The 30-day trial only surfaces a subset of modules — some ITSM+ features only appear post-contract.",
+        "On-premise pricing is consistently higher than SaaS for the same capacity.",
+        "Add-on modules (advanced asset discovery, BI reporting) are billed separately from the base fee."
+      ],
+      "tcoExampleEn": "For an IT team of 8 agents managing 500 endpoints: expect ~$4,000–6,000/year on the ITSM tier (estimate). Add 10–15% for Active Directory integration and initial training."
     },
     "prosEn": [
-      "Specialized in IT service management",
-      "Professional interface"
+      "Full ITSM and ITIL-ready without ServiceNow complexity",
+      "Asset management (CMDB) included across all tiers",
+      "On-premise option for data sovereignty requirements",
+      "Configurable self-service portal, no coding needed"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "No public pricing — impossible to budget without a sales call",
+      "Dated UI compared to Freshservice or Jira SM",
+      "Significant cost jump when scaling to ITSM/ITSM+ tiers",
+      "Third-party integrations limited on lower tiers"
     ],
     "useCases": [],
     "useCasesEn": null,
@@ -53133,7 +53412,29 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "verdictFr": {
+      "score": 68,
+      "label": "Mitigé",
+      "summary": "SysAid est un ITSM solide et ITIL-complet pour les PME IT, mais l'absence de tarification publique et une interface vieillissante pèsent face à Freshservice.",
+      "keepIf": [
+        "Votre DSI gère 100+ postes et a besoin d'un CMDB intégré au ticketing.",
+        "Un déploiement on-premise est requis pour des raisons réglementaires.",
+        "Votre équipe suit les processus ITIL (incidents, problèmes, changements)."
+      ],
+      "avoidIf": [
+        "Votre stack est déjà sur Jira ou Freshservice avec une CMDB fonctionnelle.",
+        "Vous avez besoin d'une estimation tarifaire rapide — SysAid exige un contact commercial.",
+        "Votre équipe IT compte moins de 5 agents (surcapacité fonctionnelle)."
+      ],
+      "threshold": "Rentable dès ~5 agents IT gérant 300+ actifs, à condition de négocier le tarif annuel.",
+      "billingTraps": [
+        "L'essai 30 jours ne donne accès qu'à une partie des modules — certaines fonctionnalités ITSM+ apparaissent seulement après signature.",
+        "Le pricing on-premise est systématiquement plus élevé que le SaaS pour une même capacité.",
+        "Les modules add-on (discovery d'assets avancé, BI reporting) se facturent séparément du tarif de base."
+      ],
+      "tcoExampleFr": "Pour une DSI de 8 agents gérant 500 postes : comptez environ 4 000–6 000 $/an sur le tier ITSM (estimation). Ajoutez 10–15 % pour l'intégration Active Directory et la formation initiale."
+    }
   },
   {
     "id": "tabnine",
@@ -60984,10 +61285,26 @@
     ],
     "functional_needs": [
       "ui-generation",
+      "ui-design",
+      "wireframing",
       "prototyping",
+      "prototype",
       "design-to-code",
-      "developer-tools"
+      "handoff-dev",
+      "developer-tools",
+      "ai-general",
+      "creator-workflow"
     ],
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ux-ui",
+      "product-manager",
+      "developpeur-solo"
+    ],
+    "ia_use_case": "ui-generation",
     "seo": {
       "metaDescription": "v0 by Vercel gratuit ou 27,60€/mois : générez des composants React + Tailwind en langage naturel. Verdict ToolTrim pour devs et designers.",
       "aiAngle": {
@@ -63001,8 +63318,21 @@
     "functional_needs": [
       "ui-icons",
       "design-resources",
-      "design-system"
+      "design-system",
+      "assets",
+      "creative-assets",
+      "ui-components"
     ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ux-ui",
+      "graphiste-da",
+      "createur-contenu"
+    ],
+    "ia_use_case": null,
     "seo": {
       "metaDescription": "Hugeicons avis 2026 : bibliothèque de 51 000+ icônes UI. Prix 7,59€/mois (plan annuel), alternatives Lucide, FontAwesome.",
       "aiAngle": {
@@ -63719,8 +64049,20 @@
     "functional_needs": [
       "video-repurposing",
       "content-creation",
-      "short-form-video"
+      "short-form-video",
+      "montage-video-court",
+      "sous-titrage"
     ],
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "createur-contenu",
+      "motion-video",
+      "podcasteur"
+    ],
+    "ia_use_case": "video-repurposing",
     "seo": {
       "metaDescription": "Opus Clip avis 2026 : repurpose tes longues vidéos en clips viraux avec l'IA. Prix 13,80€/mois, alternatives Descript."
     }
@@ -63979,8 +64321,23 @@
     "functional_needs": [
       "wireframing",
       "flowcharts",
-      "visual-collaboration"
+      "visual-collaboration",
+      "moodboard",
+      "references",
+      "documentation",
+      "collaboration"
     ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ux-ui",
+      "product-manager",
+      "graphiste-da",
+      "creative"
+    ],
+    "ia_use_case": "visual-collaboration",
     "seo": {
       "metaDescription": "Whimsical avis 2026 : wireframes, flowcharts et mind maps avec IA. Prix 9,20€/mois, alternatives Miro, Figma.",
       "aiAngle": {
@@ -64113,8 +64470,21 @@
     "functional_needs": [
       "ui-design",
       "prototyping",
+      "prototype",
+      "design-system",
+      "wireframing",
+      "ui-components",
+      "handoff-dev",
+      "collaboration",
       "vector-design"
     ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "substitution_cluster_v2": "design-interface",
     "seo": {
       "metaDescription": "Penpot avis 2026 : alternative open-source gratuite à Figma. Design vectoriel, prototypage, collaboration. Verdict honnête.",
       "aiAngle": {
@@ -64249,7 +64619,14 @@
     "functional_needs": [
       "screen-recording",
       "demo-creation",
-      "video-tutorial"
+      "video-tutorial",
+      "video-editing"
+    ],
+    "tool_type": "satellite",
+    "verticals": [
+      "motion-video",
+      "createur-contenu",
+      "ux-ui"
     ],
     "seo": {
       "metaDescription": "Screen Studio avis 2026 : enregistreur d'écran Mac avec effets pros automatiques. Prix 8,28€/mois, alternatives Loom.",
@@ -64910,8 +65287,23 @@
     "functional_needs": [
       "whiteboard",
       "diagramming",
-      "wireframing"
+      "wireframing",
+      "moodboard",
+      "references",
+      "documentation",
+      "visual-collaboration"
     ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ux-ui",
+      "product-manager",
+      "graphiste-da",
+      "creative"
+    ],
+    "ia_use_case": null,
     "freeAlternative": "Excalidraw",
     "seo": {
       "metaDescription": "Excalidraw avis 2026 : tableau blanc collaboratif open-source gratuit. Style hand-drawn. Alternatives Miro, Whimsical.",
@@ -65743,8 +66135,23 @@
     "functional_needs": [
       "moodboard",
       "visual-organization",
-      "creative-brief"
+      "creative-brief",
+      "brief",
+      "references",
+      "documentation",
+      "notes"
     ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "creative",
+      "createur-contenu",
+      "ux-ui"
+    ],
+    "ia_use_case": null,
     "seo": {
       "metaDescription": "Milanote avis 2026 : tableau visuel pour créatifs, moodboards et briefs. Prix 8€/mois, alternatives Notion, Figma.",
       "aiAngle": {
@@ -68355,6 +68762,8 @@
     ],
     "functional_needs": [
       "3d-design",
+      "3d",
+      "modelisation-3d",
       "web-animation",
       "interactive-design",
       "prototype-3d"
@@ -68543,7 +68952,9 @@
     ],
     "verticals": [
       "education",
-      "creator-economy"
+      "creator-economy",
+      "createur-contenu",
+      "motion-video"
     ],
     "ia_use_case": null,
     "pros": [
@@ -71045,7 +71456,10 @@
       "interior-design"
     ],
     "functional_needs": [
-      "design-tools"
+      "plans-2d",
+      "plans-techniques",
+      "dessin-technique",
+      "documentation"
     ],
     "covers": [
       "design-tools"
@@ -71100,7 +71514,11 @@
       "interior-design"
     ],
     "functional_needs": [
-      "design-tools"
+      "architecture",
+      "bim",
+      "plans-techniques",
+      "modelisation-3d",
+      "documentation"
     ],
     "covers": [
       "design-tools"
@@ -71224,7 +71642,9 @@
       "creative"
     ],
     "functional_needs": [
-      "modelisation-3d"
+      "modelisation-3d",
+      "plans-techniques",
+      "documentation"
     ],
     "covers": [
       "modelisation-3d",
@@ -73035,9 +73455,18 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "scenographe",
+      "graphiste-da"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "architecture",
+      "bim",
+      "interior-design",
+      "scenography",
+      "plans-2d",
+      "plans-techniques",
+      "modelisation-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -73110,7 +73539,9 @@
     "functional_needs": [
       "font-management",
       "typography",
-      "creative-assets"
+      "creative-assets",
+      "fonts",
+      "assets"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -73280,7 +73711,11 @@
       "templates",
       "quick-design",
       "brand-kit",
-      "video-short-form"
+      "video-short-form",
+      "design-visuel",
+      "branding",
+      "social-media",
+      "creation"
     ],
     "relevantFor": [],
     "personas": [
@@ -73303,7 +73738,11 @@
       "templates",
       "quick-design",
       "brand-kit",
-      "video-short-form"
+      "video-short-form",
+      "design-visuel",
+      "branding",
+      "social-media",
+      "creation"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -73368,9 +73807,15 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "graphiste-da",
+      "createur-contenu"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "presentations",
+      "presentation-client",
+      "mise-en-page",
+      "publication"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -73434,9 +73879,18 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "motion-video",
+      "photographe",
+      "graphiste-da",
       "creative"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "references-visuelles",
+      "moodboard",
+      "direction-artistique",
+      "storyboard",
+      "color-grading"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -73500,9 +73954,17 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "ux-ui",
+      "graphiste-da"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "brief",
+      "moodboard",
+      "references",
+      "wireframing",
+      "documentation",
+      "collaboration"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -75271,9 +75733,15 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "motion-video",
+      "graphiste-da"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "motion-design",
+      "animation",
+      "animation-2d-3d",
+      "effets-visuels"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -75487,9 +75955,17 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "motion-video",
+      "createur-contenu"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "audio",
+      "sound-design",
+      "mixing",
+      "audio-cleanup"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -76004,7 +76480,9 @@
     "functional_needs": [
       "font-management",
       "typography",
-      "creative-assets"
+      "creative-assets",
+      "fonts",
+      "assets"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -76587,9 +77065,16 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "graphiste-da",
+      "motion-video",
+      "scenographe"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "modelisation-3d",
+      "3d",
+      "sculpture-3d",
+      "design-visuel"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -77521,9 +78006,18 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "graphiste-da",
+      "illustrateur",
+      "motion-video",
+      "scenographe"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "brief",
+      "moodboard",
+      "references",
+      "concept-art",
+      "modelisation-3d"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -78791,9 +79285,16 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "scenographe",
+      "graphiste-da"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "modelisation-3d",
+      "3d",
+      "plans-2d",
+      "plans-techniques",
+      "dessin-technique"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -79614,9 +80115,18 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "graphiste-da",
+      "createur-contenu",
+      "ux-ui"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "presentations",
+      "presentation-client",
+      "templates",
+      "mise-en-page",
+      "publication",
+      "ai-general"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -80538,9 +81048,16 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "motion-video",
+      "createur-contenu"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "audio",
+      "sound-design",
+      "mixing"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -80604,9 +81121,16 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "motion-video",
+      "createur-contenu"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "audio",
+      "sound-design",
+      "mixing"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -80670,9 +81194,16 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "motion-video",
+      "createur-contenu"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "audio",
+      "sound-design",
+      "mixing"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -80721,7 +81252,13 @@
       "Livraison client",
       "Organisation métier"
     ],
-    "covers": [],
+    "covers": [
+      "audio-cleanup",
+      "audio-mastering",
+      "qualite-podcast",
+      "loudness-normalization",
+      "creator-workflow"
+    ],
     "relevantFor": [],
     "personas": [
       "designer"
@@ -80736,14 +81273,22 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "podcasteur",
+      "createur-contenu",
+      "motion-video"
     ],
-    "functional_needs": [],
-    "ia_use_case": null,
+    "functional_needs": [
+      "audio-cleanup",
+      "audio-mastering",
+      "qualite-podcast",
+      "loudness-normalization",
+      "creator-workflow"
+    ],
+    "ia_use_case": "audio-mastering",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "contextual",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -80802,9 +81347,15 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "createur-contenu",
+      "motion-video"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "analytics-podcast",
+      "creator-workflow"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -80868,9 +81419,15 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creative"
+      "createur-contenu",
+      "motion-video"
     ],
-    "functional_needs": [],
+    "functional_needs": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "analytics-podcast",
+      "creator-workflow"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -81478,7 +82035,9 @@
       "illustration",
       "sketching",
       "ipad-drawing",
-      "concept-art"
+      "concept-art",
+      "design-visuel",
+      "creation"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -101708,43 +102267,63 @@
     "slug": "safetyculture",
     "name": "Safetyculture",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Plateforme d'opérations terrain : checklists d'inspection, audits sécurité, observations et formations — plan gratuit disponible, Premium à 24 $/siège/mois.",
+    "shortDescriptionEn": "Frontline operations platform: inspection checklists, safety audits, observations and training — free plan available, Premium at $24/seat/month.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Safetyculture est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "longDescription": "SafetyCulture (anciennement iAuditor) digitalise les opérations terrain des secteurs industriels, de la construction, de la logistique et de la restauration. L'outil permet de créer des checklists d'inspection personnalisées, de capturer des observations et incidents en temps réel depuis un mobile, de gérer des actions correctives et de déployer des modules de formation (SafetyCulture Training). Sa force : une adoption terrain très rapide grâce à une application mobile soignée, même hors connexion. Le plan gratuit couvre les inspections de base pour des petites équipes ; le Premium ($24/siège/mois) débloque l'analytique avancée, l'historique de données illimité et les intégrations métier.",
+    "longDescriptionEn": "SafetyCulture (formerly iAuditor) digitalises frontline operations in industrial, construction, logistics, and food service sectors. It enables custom inspection checklists, real-time mobile incident capture, corrective action management, and training module deployment (SafetyCulture Training). Its strength is rapid field adoption thanks to a polished mobile app that works offline. The free plan covers basic inspections for small teams; Premium ($24/seat/month) unlocks advanced analytics, unlimited data history, and business integrations.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit : utilisateurs illimités, inspections de base, historique de données limité à 6 mois. Suffisant pour tester avec une petite équipe terrain.",
+      "paid": "Premium : 24 $/siège/mois (facturation mensuelle) ou ~19 $/siège/mois en annuel. Inclut analytique avancée, historique illimité, intégrations (Power BI, Salesforce, SAP). Enterprise : sur devis avec SSO, API étendue et support dédié."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free plan: unlimited users, basic inspections, 6-month data history limit. Enough to test with a small field team.",
+      "paid": "Premium: $24/seat/month (monthly billing) or ~$19/seat/month annually. Includes advanced analytics, unlimited history, integrations (Power BI, Salesforce, SAP). Enterprise: custom quote with SSO, extended API, and dedicated support."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_price_monthly_eur": 22,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Le plan gratuit limite l'historique à 6 mois — les anciennes inspections deviennent inaccessibles.",
+        "Vérifier le nombre de sièges réels nécessaires : chaque inspecteur terrain compte comme un siège."
       ],
-      "source_domain": "safetyculture.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://safetyculture.com",
-      "verification_status": "needs_official_quote"
+      "cautionsEn": [
+        "Free plan caps data history at 6 months — older inspections become inaccessible.",
+        "Verify actual seat count needed: every field inspector counts as a seat."
+      ]
     },
     "affiliateLink": "https://safetyculture.com",
     "websiteUrl": "https://safetyculture.com",
     "logo": "https://logo.clearbit.com/safetyculture.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Responsables HSE, qualité et opérations terrain dans l'industrie, la construction ou la restauration qui veulent digitaliser leurs checklists d'inspection et audits sécurité depuis un mobile.",
+      "idealForEn": "HSE, quality, and field operations managers in industrial, construction, or food service who want to digitise inspection checklists and safety audits from a mobile device."
+    },
+    "pros": [
+      "Application mobile très rapide à adopter sur le terrain, fonctionne hors ligne",
+      "Bibliothèque de templates d'inspection prête à l'emploi (HACCP, ISO 45001, etc.)",
+      "Module formation intégré (SafetyCulture Training) dans le même outil",
+      "Plan gratuit réel pour petites équipes (pas un simple essai)"
+    ],
+    "prosEn": [
+      "Mobile app with fast field adoption, works offline",
+      "Ready-to-use inspection template library (HACCP, ISO 45001, etc.)",
+      "Built-in training module (SafetyCulture Training) in the same platform",
+      "Genuine free plan for small teams (not just a trial)"
+    ],
+    "cons": [
+      "Historique limité à 6 mois en plan gratuit — bloquant pour les audits réglementaires",
+      "Tarification par siège peut surprendre lors du passage à l'échelle sur toute une équipe terrain",
+      "Analytique et intégrations (Power BI, SAP) réservées au Premium",
+      "Gestion des non-conformités complexe sans formation initiale"
+    ],
+    "consEn": [
+      "6-month data history cap on free plan — blocking for regulatory audits",
+      "Per-seat pricing can surprise when scaling to a full field team",
+      "Analytics and integrations (Power BI, SAP) locked to Premium",
+      "Non-conformance management has a learning curve without initial training"
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -101767,13 +102346,26 @@
       "threshold": "À ajouter seulement si le rôle est central."
     },
     "verdictEn": {
+      "score": 78,
+      "label": "Recommended",
+      "summary": "SafetyCulture is the benchmark for digitised field operations: fast mobile adoption, ready-to-use templates, and a built-in training module. The free plan is genuine but the 6-month history cap is a real blocker for regulatory audits.",
       "keepIf": [
-        "The need repeats across engagements."
+        "Your field teams run recurring inspections (safety, quality, hygiene) and still use paper forms.",
+        "You need a traceable audit trail for a certification (ISO, HACCP, SOC).",
+        "Inspectors work on-site with intermittent connectivity."
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "Your inspection process is purely office-based — a general-purpose tool (Notion, Google Forms) is enough.",
+        "Your team exceeds 20 people and the Premium cost ($19–24/seat) is prohibitive vs sector-specific alternatives.",
+        "You need audit history beyond 6 months on the free plan."
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Positive ROI from 2–3 field inspectors replacing paper forms and needing traceable PDF reports.",
+      "billingTraps": [
+        "Free plan cuts off access to inspections older than 6 months — critical issue for annual compliance audits.",
+        "Power BI, Salesforce, and SAP integrations are Premium/Enterprise only — not available on free.",
+        "Every active user account counts as a billable seat, including managers who only view reports."
+      ],
+      "tcoExampleEn": "For 15 field inspectors on annual Premium: 15 × $19 × 12 = $3,420/year. Add ~$500 for initial setup and template customisation training."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -101799,7 +102391,29 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "verdictFr": {
+      "score": 78,
+      "label": "Recommandé",
+      "summary": "SafetyCulture est la référence des opérations terrain digitalisées : adoption mobile rapide, templates prêts à l'emploi et module formation intégré. Le plan gratuit est réel mais la limite 6 mois d'historique est un vrai frein pour les audits réglementaires.",
+      "keepIf": [
+        "Vos équipes terrain réalisent des inspections récurrentes (sécurité, qualité, hygiène) et utilisent encore des formulaires papier.",
+        "Vous avez besoin d'un historique d'audit traçable pour une certification (ISO, HACCP, SOC).",
+        "Vos inspecteurs travaillent sur site avec connectivité intermittente."
+      ],
+      "avoidIf": [
+        "Votre processus d'inspection est purement bureautique — un outil généraliste (Notion, Google Forms) suffit.",
+        "Votre équipe dépasse 20 personnes et le budget Premium (19–24 $/siège) est prohibitif par rapport à vos concurrents sectoriels.",
+        "Vous avez besoin d'un historique d'audit sur plus de 6 mois en version gratuite."
+      ],
+      "threshold": "ROI positif dès 2–3 inspecteurs terrain qui remplacent leurs formulaires papier et doivent produire des rapports PDF traçables.",
+      "billingTraps": [
+        "Le plan gratuit coupe l'accès aux inspections de plus de 6 mois — problème critique pour les audits de conformité annuels.",
+        "Les intégrations Power BI, Salesforce et SAP sont réservées au Premium ou Enterprise — pas disponibles en gratuit.",
+        "Chaque compte utilisateur actif compte comme un siège facturé, y compris les managers qui ne font que consulter les rapports."
+      ],
+      "tcoExampleFr": "Pour 15 inspecteurs terrain en Premium annuel : 15 × 19 $ × 12 = 3 420 $/an (~3 100 €). Ajoutez ~500 € de mise en place et formation initiale sur les templates sectoriels."
+    }
   },
   {
     "id": "pandadoc",
@@ -101926,43 +102540,63 @@
     "slug": "condeco",
     "name": "Condeco",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Plateforme de réservation de bureaux et salles de réunion pour le travail hybride — intégrée à Microsoft 365 et Teams, tarification sur devis. Rachetée par Eptura en 2023.",
+    "shortDescriptionEn": "Desk and meeting room booking platform for hybrid work — integrates with Microsoft 365 and Teams, quote-based pricing. Acquired by Eptura in 2023.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Condeco est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "longDescription": "Condeco est une solution de gestion des espaces de travail hybrides : réservation de bureaux, salles de réunion, espaces de stationnement et visiteurs depuis un portail web, une application mobile ou directement dans Microsoft Teams et Outlook. Racheté par Eptura en 2023 (groupe qui détient aussi Archibus et Serraview), Condeco s'intègre nativement à Microsoft 365, Exchange et Google Workspace. Il cible les entreprises de 500+ salariés ayant adopté le flex-office et cherchant à optimiser leur taux d'occupation réel. Pas de tarif public — exclusivement sur devis commercial.",
+    "longDescriptionEn": "Condeco is a hybrid workspace management solution: desk, meeting room, parking space, and visitor booking via a web portal, mobile app, or directly inside Microsoft Teams and Outlook. Acquired by Eptura in 2023 (which also owns Archibus and Serraview), Condeco integrates natively with Microsoft 365, Exchange, and Google Workspace. It targets companies with 500+ employees that have adopted flex-office and want to optimise actual space utilisation. No public pricing — exclusively quote-based.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Aucun plan gratuit ni essai public. L'accès passe obligatoirement par un contact commercial Eptura/Condeco.",
+      "paid": "Tarification sur devis. Les estimations du marché situent le prix entre 3 et 8 $/bureau/mois selon le volume et les modules (réservation seule vs analytique d'occupation + gestion visiteurs). Engagement annuel minimum généralement requis."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "No free plan or public trial. Access requires a commercial contact with Eptura/Condeco.",
+      "paid": "Quote-based pricing. Market estimates range from $3 to $8/desk/month depending on volume and modules (booking-only vs occupancy analytics + visitor management). Annual minimum commitment typically required."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
       "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
+      "compare_price_monthly_eur": 0,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Tarification sur devis uniquement — demander un chiffrage complet modules inclus avant tout engagement.",
+        "Acquisition par Eptura en 2023 : la roadmap et la structure tarifaire peuvent évoluer."
       ],
-      "source_domain": "condecosoftware.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://condecosoftware.com",
-      "verification_status": "needs_official_quote"
+      "cautionsEn": [
+        "Quote-only pricing — request a full quote including all modules before committing.",
+        "Acquired by Eptura in 2023: roadmap and pricing structure may change."
+      ]
     },
     "affiliateLink": "https://condecosoftware.com",
     "websiteUrl": "https://condecosoftware.com",
     "logo": "https://logo.clearbit.com/condecosoftware.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Directeurs des ressources humaines et de l'immobilier d'entreprises 500+ salariés ayant adopté le flex-office et souhaitant une réservation de bureaux intégrée nativement à Microsoft 365 et Teams.",
+      "idealForEn": "HR and real-estate directors at 500+ employee companies with flex-office who want desk booking integrated natively into Microsoft 365 and Teams."
+    },
+    "pros": [
+      "Intégration native Microsoft 365 / Teams / Outlook sans plugin tiers",
+      "Gestion unifiée bureaux, salles, visiteurs et parking dans un seul outil",
+      "Analytique d'occupation en temps réel pour optimiser les surfaces",
+      "Application mobile soignée pour la réservation à la volée"
+    ],
+    "prosEn": [
+      "Native Microsoft 365 / Teams / Outlook integration without third-party plugin",
+      "Unified management of desks, rooms, visitors, and parking in one tool",
+      "Real-time occupancy analytics to optimise office space",
+      "Polished mobile app for on-the-go booking"
+    ],
+    "cons": [
+      "Aucun tarif public — processus de vente long avant de connaître le coût réel",
+      "Taille minimale cible : 500+ salariés — surdimensionné pour les PME",
+      "Rachat par Eptura crée une incertitude sur la roadmap à moyen terme",
+      "Implémentation complexe avec Active Directory et Exchange dans les SI anciens"
+    ],
+    "consEn": [
+      "No public pricing — long sales process before knowing real cost",
+      "Minimum target size: 500+ employees — overkill for SMEs",
+      "Eptura acquisition creates medium-term roadmap uncertainty",
+      "Complex implementation with Active Directory and Exchange in legacy IT environments"
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -101985,13 +102619,26 @@
       "threshold": "À ajouter seulement si le rôle est central."
     },
     "verdictEn": {
+      "score": 65,
+      "label": "Mixed",
+      "summary": "Condeco is a safe bet for large Microsoft-first companies with flex-office, but the Eptura acquisition, absence of public pricing, and 500+ employee target make it unsuitable for smaller organisations.",
       "keepIf": [
-        "The need repeats across engagements."
+        "Your company has 500+ employees and has adopted flex-office with hot-desking.",
+        "Your IT stack is Microsoft 365 and you need booking directly inside Teams/Outlook.",
+        "You need to justify real occupancy rates to your real-estate team."
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "Your team is under 200 people — alternatives (Robin, Skedda, Nexudus) are more accessible.",
+        "You use Google Workspace and Microsoft-first integration is a friction point.",
+        "Your real-estate budget does not justify a multi-year quote-based contract."
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Cost-effective from ~300 flex-office desks where occupancy analytics can reduce leased space by 10–15%.",
+      "billingTraps": [
+        "The 2023 Eptura acquisition changed the contractual structure — verify renewal terms are locked before signing.",
+        "Advanced analytics and visitor management modules are typically add-ons beyond the base booking fee.",
+        "IT integration costs (Active Directory, Exchange On-Premise) can exceed the software cost in year one."
+      ],
+      "tcoExampleEn": "For a company with 800 employees and 400 flex desks: 400 × ~$5 × 12 = $24,000/year in licence fees (estimate). Add $8,000–15,000 for integration and deployment in year one."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -102017,7 +102664,29 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "verdictFr": {
+      "score": 65,
+      "label": "Mitigé",
+      "summary": "Condeco est une valeur sûre pour les grandes entreprises Microsoft-first en flex-office, mais le rachat par Eptura, l'absence de tarif public et la cible 500+ salariés le rendent inadapté aux structures plus légères.",
+      "keepIf": [
+        "Votre entreprise dépasse 500 salariés et a adopté le flex-office avec des bureaux non-attitrés.",
+        "Votre stack IT est Microsoft 365 et vous avez besoin d'une réservation directement dans Teams/Outlook.",
+        "Vous devez justifier le taux d'occupation réel de vos surfaces à votre direction immobilière."
+      ],
+      "avoidIf": [
+        "Votre équipe compte moins de 200 personnes — des alternatives (Robin, Skedda, Nexudus) sont plus accessibles.",
+        "Vous utilisez Google Workspace et l'intégration Microsoft-first est un frein.",
+        "Votre budget immobilier ne justifie pas un contrat pluriannuel sur devis."
+      ],
+      "threshold": "Rentable à partir de ~300 bureaux flex-office où l'analytique d'occupation permet de réduire la surface louée de 10–15 %.",
+      "billingTraps": [
+        "L'acquisition par Eptura en 2023 a modifié la structure contractuelle — vérifier que les conditions de renouvellement sont figées avant signature.",
+        "Les modules analytique avancée et gestion visiteurs sont souvent en supplément du tarif de réservation de base.",
+        "Les coûts d'intégration SI (Active Directory, Exchange On-Premise) peuvent dépasser le coût logiciel la première année."
+      ],
+      "tcoExampleFr": "Pour une entreprise de 800 employés avec 400 bureaux flex : 400 × ~5 $ × 12 = 24 000 $/an de licence (estimation). Ajoutez 8 000–15 000 € d'intégration et déploiement pour la première année."
+    }
   },
   {
     "id": "tiktok-studio",
@@ -102091,6 +102760,9 @@
       "Schedule posts in advance to stay consistent"
     ],
     "covers": [
+      "short-form-video",
+      "social-publishing",
+      "social-analytics",
       "creator-workflow"
     ],
     "relevantFor": [
@@ -102132,16 +102804,24 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "createur-contenu",
+      "motion-video",
       "creator-economy"
     ],
     "functional_needs": [
+      "short-form-video",
+      "social-publishing",
+      "social-analytics",
+      "social-media",
+      "podcast-promotion",
+      "content-repurposing",
       "creator-workflow"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102226,6 +102906,11 @@
       "Reach monetization thresholds (subscribers, watch hours)"
     ],
     "covers": [
+      "video-publishing",
+      "video-analytics",
+      "monetisation-video",
+      "podcast-promotion",
+      "social-publishing",
       "creator-workflow"
     ],
     "relevantFor": [
@@ -102268,16 +102953,23 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "createur-contenu",
+      "community-manager",
       "creator-economy"
     ],
     "functional_needs": [
+      "video-publishing",
+      "video-analytics",
+      "monetisation-video",
+      "podcast-promotion",
+      "social-publishing",
       "creator-workflow"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -103619,6 +104311,10 @@
       "Access an ad network with no need to prospect advertisers yourself"
     ],
     "covers": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "monetisation-podcast",
+      "analytics-podcast",
       "creator-workflow"
     ],
     "relevantFor": [
@@ -103660,16 +104356,22 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "podcasteur",
+      "createur-contenu",
       "creator-economy"
     ],
     "functional_needs": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "monetisation-podcast",
+      "analytics-podcast",
       "creator-workflow"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -103866,6 +104568,10 @@
       "Improve a podcast's visibility on primarily visual platforms"
     ],
     "covers": [
+      "podcast-promotion",
+      "content-repurposing",
+      "sous-titrage",
+      "social-media",
       "creator-workflow"
     ],
     "relevantFor": [
@@ -103907,16 +104613,22 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "creator-economy"
+      "podcasteur",
+      "createur-contenu",
+      "community-manager"
     ],
     "functional_needs": [
+      "podcast-promotion",
+      "content-repurposing",
+      "sous-titrage",
+      "social-media",
       "creator-workflow"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -104124,6 +104836,11 @@
       "Identify which post formats generate the most engagement"
     ],
     "covers": [
+      "planification-posts",
+      "social-media-management",
+      "analytics-reseaux",
+      "reporting-client",
+      "content-generation",
       "creator-workflow"
     ],
     "relevantFor": [
@@ -104165,12 +104882,19 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "createur-contenu",
+      "community-manager",
       "creator-economy"
     ],
     "functional_needs": [
+      "planification-posts",
+      "social-media-management",
+      "analytics-reseaux",
+      "reporting-client",
+      "content-generation",
       "creator-workflow"
     ],
-    "ia_use_case": null,
+    "ia_use_case": "social-content-generation",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
@@ -105165,6 +105889,11 @@
       "Manage publishing across multiple social networks from one tool"
     ],
     "covers": [
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux",
+      "social-media-management",
+      "social-media",
       "creator-workflow"
     ],
     "relevantFor": [
@@ -105206,9 +105935,16 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
+      "createur-contenu",
+      "community-manager",
       "creator-economy"
     ],
     "functional_needs": [
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux",
+      "social-media-management",
+      "social-media",
       "creator-workflow"
     ],
     "ia_use_case": null,
@@ -122195,7 +122931,11 @@
     "useCases": [],
     "useCasesEn": [],
     "covers": [
-      "operations-workflow"
+      "ui-generation",
+      "wireframing",
+      "sitemap",
+      "website-structure",
+      "ui-design"
     ],
     "relevantFor": [
       "ops",
@@ -122233,12 +122973,19 @@
     "host_app": null,
     "bundle_parent": null,
     "verticals": [
-      "operations"
+      "ux-ui",
+      "product-manager",
+      "createur-contenu"
     ],
     "functional_needs": [
-      "operations-workflow"
+      "ui-generation",
+      "ui-design",
+      "wireframing",
+      "sitemap",
+      "website-structure",
+      "prototyping"
     ],
-    "ia_use_case": null,
+    "ia_use_case": "ui-generation",
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
@@ -123850,13 +124597,24 @@
     "functional_needs": [
       "ui-design",
       "prototypage",
-      "logos"
+      "prototyping",
+      "prototype",
+      "design-system",
+      "wireframing",
+      "ui-components",
+      "handoff-dev",
+      "collaboration",
+      "logos",
+      "design-visuel",
+      "templates",
+      "presentations",
+      "moodboard"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "pas-de-remplacement-valide",
@@ -127919,7 +128677,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -129051,7 +129809,10 @@
     ],
     "functional_needs": [
       "montage-video",
-      "upscaling"
+      "upscaling",
+      "upscaling-video",
+      "debruitage-video",
+      "video-post-production"
     ],
     "ia_use_case": [
       "upscaling-video"
@@ -133654,7 +134415,9 @@
     "functional_needs": [
       "generation-image",
       "concept-art",
-      "direction-visuelle"
+      "direction-visuelle",
+      "design-visuel",
+      "social-media"
     ],
     "ia_use_case": [
       "generation-image"
@@ -135055,7 +135818,9 @@
       "dashboards",
       "reporting",
       "visualisation-donnees",
-      "analytics-produit"
+      "analytics-produit",
+      "analytics-reseaux",
+      "reporting-client"
     ],
     "relevantFor": [
       "marketing",
@@ -135097,7 +135862,10 @@
     "functional_needs": [
       "dashboards",
       "reporting",
-      "visualisation-donnees"
+      "visualisation-donnees",
+      "analytics-reseaux",
+      "reporting-client",
+      "social-media-management"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -137991,5 +138759,883 @@
       "compare_price_monthly_eur": 0
     },
     "substitution_cluster_v2": "analytics"
+  },
+  {
+    "id": "affinity-designer",
+    "slug": "affinity-designer",
+    "name": "Affinity Designer",
+    "category": "design",
+    "shortDescription": "Alternative vectorielle pour logos, identités, illustrations et visuels de marque.",
+    "shortDescriptionEn": "Vector design alternative for logos, identities, illustrations and brand visuals.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence à vérifier selon plateforme et offre."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://affinity.serif.com/designer/",
+    "websiteUrl": "https://affinity.serif.com/designer/",
+    "logo": "",
+    "covers": [
+      "design-visuel",
+      "illustration-vectorielle",
+      "logos",
+      "branding"
+    ],
+    "relevantFor": [
+      "graphiste-da",
+      "illustrateur"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "illustrateur",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "design-visuel",
+      "illustration-vectorielle",
+      "logos",
+      "branding",
+      "creation"
+    ],
+    "alternatives": [
+      "adobe-illustrator",
+      "coreldraw",
+      "figma"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "vector-design"
+  },
+  {
+    "id": "coreldraw",
+    "slug": "coreldraw",
+    "name": "CorelDRAW",
+    "category": "design",
+    "shortDescription": "Suite de dessin vectoriel et de mise en production graphique, fréquente en print, signalétique et illustration.",
+    "shortDescriptionEn": "Vector illustration and production suite often used for print, signage and illustration workflows.",
+    "pricing": {
+      "free": "",
+      "paid": "Abonnement ou licence à vérifier selon offre."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.coreldraw.com/",
+    "websiteUrl": "https://www.coreldraw.com/",
+    "logo": "",
+    "covers": [
+      "design-visuel",
+      "illustration-vectorielle",
+      "logos",
+      "print"
+    ],
+    "relevantFor": [
+      "graphiste-da",
+      "illustrateur"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "illustrateur"
+    ],
+    "functional_needs": [
+      "design-visuel",
+      "illustration-vectorielle",
+      "logos",
+      "branding",
+      "print",
+      "publication"
+    ],
+    "alternatives": [
+      "adobe-illustrator",
+      "affinity-designer"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "vector-design"
+  },
+  {
+    "id": "clip-studio-paint",
+    "slug": "clip-studio-paint",
+    "name": "Clip Studio Paint",
+    "category": "illustration",
+    "shortDescription": "Outil de dessin, illustration, BD et concept art pour workflows tablette ou desktop.",
+    "shortDescriptionEn": "Drawing, illustration, comics and concept art tool for tablet or desktop workflows.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence ou abonnement à vérifier selon plateforme."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.clipstudio.net/",
+    "websiteUrl": "https://www.clipstudio.net/",
+    "logo": "",
+    "covers": [
+      "illustration",
+      "digital-painting",
+      "concept-art"
+    ],
+    "relevantFor": [
+      "illustrateur",
+      "graphiste-da"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "illustrateur",
+      "graphiste-da"
+    ],
+    "functional_needs": [
+      "illustration",
+      "digital-painting",
+      "concept-art",
+      "creation"
+    ],
+    "alternatives": [
+      "procreate",
+      "krita",
+      "adobe-fresco",
+      "adobe-photoshop"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "digital-illustration"
+  },
+  {
+    "id": "krita",
+    "slug": "krita",
+    "name": "Krita",
+    "category": "illustration",
+    "shortDescription": "Application open source pour peinture numérique, illustration et concept art.",
+    "shortDescriptionEn": "Open-source application for digital painting, illustration and concept art.",
+    "pricing": {
+      "free": "Open source.",
+      "paid": ""
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://krita.org/",
+    "websiteUrl": "https://krita.org/",
+    "logo": "",
+    "covers": [
+      "illustration",
+      "digital-painting",
+      "concept-art"
+    ],
+    "relevantFor": [
+      "illustrateur",
+      "graphiste-da"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "illustrateur",
+      "graphiste-da"
+    ],
+    "functional_needs": [
+      "illustration",
+      "digital-painting",
+      "concept-art",
+      "creation"
+    ],
+    "alternatives": [
+      "clip-studio-paint",
+      "procreate",
+      "adobe-fresco"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "digital-illustration"
+  },
+  {
+    "id": "adobe-fresco",
+    "slug": "adobe-fresco",
+    "name": "Adobe Fresco",
+    "category": "illustration",
+    "shortDescription": "Application Adobe pour dessin et peinture numérique, souvent utilisée sur tablette.",
+    "shortDescriptionEn": "Adobe drawing and digital painting app, often used on tablets.",
+    "pricing": {
+      "free": "Plan gratuit possible selon plateforme.",
+      "paid": "Fonctions premium ou inclusion Adobe à vérifier."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.adobe.com/products/fresco.html",
+    "websiteUrl": "https://www.adobe.com/products/fresco.html",
+    "logo": "",
+    "covers": [
+      "illustration",
+      "digital-painting",
+      "concept-art"
+    ],
+    "relevantFor": [
+      "illustrateur",
+      "graphiste-da"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": "adobe-creative-cloud",
+    "verticals": [
+      "illustrateur",
+      "graphiste-da"
+    ],
+    "functional_needs": [
+      "illustration",
+      "digital-painting",
+      "concept-art",
+      "creation"
+    ],
+    "alternatives": [
+      "procreate",
+      "clip-studio-paint",
+      "krita"
+    ],
+    "relations": [
+      {
+        "kind": "included_in",
+        "targetToolId": "adobe-creative-cloud",
+        "needKeys": [
+          "illustration",
+          "digital-painting"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "digital-illustration"
+  },
+  {
+    "id": "affinity-publisher",
+    "slug": "affinity-publisher",
+    "name": "Affinity Publisher",
+    "category": "publishing",
+    "shortDescription": "Outil de mise en page pour brochures, éditions, dossiers imprimés et supports PDF.",
+    "shortDescriptionEn": "Layout tool for brochures, publications, print documents and PDFs.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence à vérifier selon plateforme et offre."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://affinity.serif.com/publisher/",
+    "websiteUrl": "https://affinity.serif.com/publisher/",
+    "logo": "",
+    "covers": [
+      "mise-en-page",
+      "print",
+      "publication"
+    ],
+    "relevantFor": [
+      "graphiste-da"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "mise-en-page",
+      "print",
+      "publication",
+      "presentation-client"
+    ],
+    "alternatives": [
+      "indesign",
+      "quarkxpress",
+      "canva"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "layout-publishing"
+  },
+  {
+    "id": "quarkxpress",
+    "slug": "quarkxpress",
+    "name": "QuarkXPress",
+    "category": "publishing",
+    "shortDescription": "Solution historique de mise en page et publication, encore présente dans certains workflows print.",
+    "shortDescriptionEn": "Long-standing layout and publishing solution still found in some print workflows.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence ou abonnement à vérifier."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.quark.com/products/quarkxpress",
+    "websiteUrl": "https://www.quark.com/products/quarkxpress",
+    "logo": "",
+    "covers": [
+      "mise-en-page",
+      "print",
+      "publication"
+    ],
+    "relevantFor": [
+      "graphiste-da"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da"
+    ],
+    "functional_needs": [
+      "mise-en-page",
+      "print",
+      "publication"
+    ],
+    "alternatives": [
+      "indesign",
+      "affinity-publisher"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "layout-publishing"
+  },
+  {
+    "id": "darktable",
+    "slug": "darktable",
+    "name": "darktable",
+    "category": "photo",
+    "shortDescription": "Workflow photo open source pour développement RAW, classement et ajustements colorimétriques.",
+    "shortDescriptionEn": "Open-source photography workflow for RAW development, organization and color adjustments.",
+    "pricing": {
+      "free": "Open source.",
+      "paid": ""
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.darktable.org/",
+    "websiteUrl": "https://www.darktable.org/",
+    "logo": "",
+    "covers": [
+      "retouche-photo",
+      "raw",
+      "catalogue-photo",
+      "color-grading"
+    ],
+    "relevantFor": [
+      "photographe"
+    ],
+    "personas": [
+      "photographe"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "photographe"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "photo",
+      "raw",
+      "catalogue-photo",
+      "color-grading"
+    ],
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "dxo-photolab"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "photo-raw-workflow"
+  },
+  {
+    "id": "dxo-photolab",
+    "slug": "dxo-photolab",
+    "name": "DxO PhotoLab",
+    "category": "photo",
+    "shortDescription": "Développement RAW et corrections photo avancées, souvent utilisé en alternative ou complément à Lightroom.",
+    "shortDescriptionEn": "RAW development and advanced photo corrections, often used as a Lightroom alternative or complement.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence à vérifier selon édition."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.dxo.com/dxo-photolab/",
+    "websiteUrl": "https://www.dxo.com/dxo-photolab/",
+    "logo": "",
+    "covers": [
+      "retouche-photo",
+      "raw",
+      "catalogue-photo",
+      "photo-enhancement"
+    ],
+    "relevantFor": [
+      "photographe"
+    ],
+    "personas": [
+      "photographe"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "photographe"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "photo",
+      "raw",
+      "catalogue-photo",
+      "color-grading",
+      "photo-enhancement"
+    ],
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "darktable"
+    ],
+    "complements": [
+      "nik-collection"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "photo-raw-workflow"
+  },
+  {
+    "id": "photopea",
+    "slug": "photopea",
+    "name": "Photopea",
+    "category": "photo",
+    "shortDescription": "Éditeur image dans le navigateur pour retouche, PSD, compositions rapides et dépannages.",
+    "shortDescriptionEn": "Browser-based image editor for retouching, PSD files, quick compositions and fallback workflows.",
+    "pricing": {
+      "free": "Version gratuite avec limites possibles.",
+      "paid": "Plan premium à vérifier."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.photopea.com/",
+    "websiteUrl": "https://www.photopea.com/",
+    "logo": "",
+    "covers": [
+      "retouche-photo",
+      "compositing",
+      "detourage"
+    ],
+    "relevantFor": [
+      "graphiste-da",
+      "photographe",
+      "createur-contenu"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "photographe",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "compositing",
+      "detourage",
+      "photo-enhancement",
+      "creator-workflow"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "affinity-photo",
+      "pixelmator-pro"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "photo-editor"
+  },
+  {
+    "id": "pixelmator-pro",
+    "slug": "pixelmator-pro",
+    "name": "Pixelmator Pro",
+    "category": "photo",
+    "shortDescription": "Éditeur photo et composition pour Mac, utile pour retouche, détourage et visuels rapides.",
+    "shortDescriptionEn": "Mac photo editing and composition app for retouching, cutouts and quick visuals.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence à vérifier."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.pixelmator.com/pro/",
+    "websiteUrl": "https://www.pixelmator.com/pro/",
+    "logo": "",
+    "covers": [
+      "retouche-photo",
+      "compositing",
+      "photo-enhancement"
+    ],
+    "relevantFor": [
+      "photographe",
+      "graphiste-da",
+      "createur-contenu"
+    ],
+    "personas": [
+      "photographe"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "photographe",
+      "graphiste-da",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "compositing",
+      "detourage",
+      "photo-enhancement",
+      "creator-workflow"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "affinity-photo",
+      "photopea"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "photo-editor"
+  },
+  {
+    "id": "topaz-photo-ai",
+    "slug": "topaz-photo-ai",
+    "name": "Topaz Photo AI",
+    "category": "photo",
+    "shortDescription": "Amélioration photo assistée par IA : netteté, débruitage, agrandissement et corrections de qualité.",
+    "shortDescriptionEn": "AI-assisted photo enhancement: sharpening, denoise, upscaling and quality corrections.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence à vérifier."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.topazlabs.com/topaz-photo-ai",
+    "websiteUrl": "https://www.topazlabs.com/topaz-photo-ai",
+    "logo": "",
+    "covers": [
+      "retouche-photo",
+      "photo-enhancement",
+      "upscaling"
+    ],
+    "relevantFor": [
+      "photographe",
+      "graphiste-da"
+    ],
+    "personas": [
+      "photographe"
+    ],
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "photographe",
+      "graphiste-da"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "photo-enhancement",
+      "upscaling",
+      "ai-general"
+    ],
+    "alternatives": [
+      "topaz-gigapixel",
+      "luminar-neo",
+      "nik-collection"
+    ],
+    "ia_use_case": "photo-enhancement",
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "photo-enhancement"
+  },
+  {
+    "id": "fusion",
+    "slug": "fusion",
+    "name": "Blackmagic Fusion",
+    "category": "video",
+    "shortDescription": "Compositing, effets visuels et motion avancé, souvent relié aux workflows DaVinci Resolve.",
+    "shortDescriptionEn": "Compositing, visual effects and advanced motion, often connected to DaVinci Resolve workflows.",
+    "pricing": {
+      "free": "Version incluse ou accessible selon workflow DaVinci Resolve.",
+      "paid": "Fonctions Studio à vérifier selon offre."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.blackmagicdesign.com/products/fusion",
+    "websiteUrl": "https://www.blackmagicdesign.com/products/fusion",
+    "logo": "",
+    "covers": [
+      "motion-design",
+      "effets-visuels",
+      "compositing"
+    ],
+    "relevantFor": [
+      "motion-video"
+    ],
+    "personas": [
+      "motion-video"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": "davinci-resolve",
+    "bundle_parent": "davinci-resolve",
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation",
+      "effets-visuels",
+      "compositing",
+      "color-grading"
+    ],
+    "alternatives": [
+      "adobe-after-effects",
+      "nuke",
+      "cavalry"
+    ],
+    "relations": [
+      {
+        "kind": "included_in",
+        "targetToolId": "davinci-resolve",
+        "needKeys": [
+          "effets-visuels",
+          "compositing"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "motion-compositing"
+  },
+  {
+    "id": "cycles",
+    "slug": "cycles",
+    "name": "Cycles",
+    "category": "3d",
+    "shortDescription": "Moteur de rendu intégré à Blender pour rendus 3D physiquement réalistes.",
+    "shortDescriptionEn": "Blender-integrated render engine for physically based 3D rendering.",
+    "pricing": {
+      "free": "Inclus avec Blender.",
+      "paid": ""
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.blender.org/",
+    "websiteUrl": "https://www.blender.org/",
+    "logo": "",
+    "covers": [
+      "rendu-3d",
+      "render-engine",
+      "rendering"
+    ],
+    "relevantFor": [
+      "motion-video",
+      "scenographe"
+    ],
+    "personas": [
+      "motion-video"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": "blender",
+    "bundle_parent": "blender",
+    "verticals": [
+      "motion-video",
+      "scenographe",
+      "graphiste-da"
+    ],
+    "functional_needs": [
+      "rendu-3d",
+      "render-engine",
+      "rendering",
+      "modelisation-3d"
+    ],
+    "alternatives": [
+      "redshift",
+      "octane-render",
+      "v-ray",
+      "arnold"
+    ],
+    "relations": [
+      {
+        "kind": "included_in",
+        "targetToolId": "blender",
+        "needKeys": [
+          "rendu-3d",
+          "render-engine"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "3d-render-engine"
+  },
+  {
+    "id": "reaper",
+    "slug": "reaper",
+    "name": "REAPER",
+    "category": "audio",
+    "shortDescription": "Station audio légère et flexible pour montage, enregistrement multipiste, podcast, mixage et sound design.",
+    "shortDescriptionEn": "Lightweight and flexible DAW for editing, multitrack recording, podcasting, mixing and sound design.",
+    "pricing": {
+      "free": "",
+      "paid": "Licence à vérifier selon usage."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.reaper.fm/",
+    "websiteUrl": "https://www.reaper.fm/",
+    "logo": "",
+    "covers": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "mixing",
+      "sound-design"
+    ],
+    "relevantFor": [
+      "motion-video",
+      "createur-contenu"
+    ],
+    "personas": [
+      "motion-video"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes",
+      "audio",
+      "sound-design",
+      "mixing"
+    ],
+    "alternatives": [
+      "pro-tools",
+      "logic-pro",
+      "ableton-live",
+      "adobe-audition",
+      "audacity"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "audio-daw"
+  },
+  {
+    "id": "adobe-stock",
+    "slug": "adobe-stock",
+    "name": "Adobe Stock",
+    "category": "assets",
+    "shortDescription": "Bibliothèque d’images, vidéos, templates et assets créatifs liée à l’écosystème Adobe.",
+    "shortDescriptionEn": "Library of images, video, templates and creative assets connected to the Adobe ecosystem.",
+    "pricing": {
+      "free": "",
+      "paid": "Crédits ou abonnement à vérifier selon usage."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://stock.adobe.com/",
+    "websiteUrl": "https://stock.adobe.com/",
+    "logo": "",
+    "covers": [
+      "stock",
+      "assets",
+      "creative-licensing",
+      "templates"
+    ],
+    "relevantFor": [
+      "graphiste-da",
+      "photographe",
+      "motion-video",
+      "createur-contenu"
+    ],
+    "personas": [
+      "graphiste-da"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "graphiste-da",
+      "photographe",
+      "motion-video",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "templates",
+      "creative-licensing",
+      "assets",
+      "stock",
+      "creator-workflow"
+    ],
+    "alternatives": [
+      "envato-elements",
+      "motion-array",
+      "icons8",
+      "noun-project"
+    ],
+    "integrates_with": [
+      "adobe-creative-cloud",
+      "adobe-photoshop",
+      "adobe-illustrator",
+      "adobe-premiere-pro"
+    ],
+    "ia_use_case": null,
+    "prescription_quality": "question",
+    "force_silence": false,
+    "substitution_cluster_v2": "creative-assets"
   }
 ]

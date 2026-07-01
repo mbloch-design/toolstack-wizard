@@ -206,6 +206,8 @@ export const AppRoutes = () => (
       <Route path="category" element={<CategoriesIndexPage />} />
       <Route path="category/:slug" element={<CategoryPage />} />
       <Route path="guides" element={<GuidesPage />} />
+      <Route path="ma-stack" element={<CartPage />} />
+      <Route path="my-stack" element={<CartPage />} />
       <Route path="panier" element={<CartPage />} />
       <Route path="cart" element={<CartPage />} />
       <Route path="stacks" element={<StacksPage />} />

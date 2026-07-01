@@ -628,6 +628,7 @@ function computeCreativeRecommendationResult(
       ({ tool }) =>
         !selectedIds.has(tool.id) &&
         !tool.force_silence &&
+        tool.prescription_quality !== "silence" &&
         tool.tool_type !== "bundle" &&
         !(tool.bundle_parent && selectedIds.has(tool.bundle_parent))
     )?.tool;

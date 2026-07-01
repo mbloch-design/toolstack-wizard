@@ -3,6 +3,7 @@ import toolsData from "@/data/tools_v4.json";
 import {
   CREATIVE_OUTPUTS,
   buildCreativeQuestions,
+  diversifyRankedCreativeTools,
   planCreativeQuestions,
   rankToolsForCreativeQuestion,
 } from "@/lib/creativeAdaptiveEngine";
@@ -23,14 +24,25 @@ function mapCatalogTool(raw: Record<string, unknown>): Tool {
     substitution_cluster_v2: typeof raw.substitution_cluster_v2 === "string" ? raw.substitution_cluster_v2 : undefined,
     tool_type: (raw.tool_type as Tool["tool_type"]) || "satellite",
     usage: "medium",
-    prescription_quality: "oui",
-    force_silence: false,
+    prescription_quality: (raw.prescription_quality === "question" || raw.prescription_quality === "ferme"
+      ? raw.prescription_quality
+      : "oui") as Tool["prescription_quality"],
+    force_silence: raw.force_silence === true || raw.prescription_quality === "silence",
   };
 }
 
 const catalog = (toolsData as Array<Record<string, unknown>>)
   .map(mapCatalogTool)
   .filter((tool) => tool.id && tool.name);
+
+function normalizeNeed(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
 const expectedQuestions: Record<string, string[]> = {
   "brand-visual": ["visual-identity", "layout-publishing"],
@@ -199,6 +211,117 @@ describe("complete creative journey matrix", () => {
 
     expect(sketchIds).toContain("zeplin");
     expect(sketchIds.some((id) => id.startsWith("figma-"))).toBe(false);
+  });
+
+  it("keeps legacy UI tools selectable without making them primary examples", () => {
+    const uiQuestion = buildCreativeQuestions(["ui-product"], [], catalog)
+      .find((question) => question.id === "ui-design")!;
+    const visibleIds = diversifyRankedCreativeTools(
+      uiQuestion,
+      rankToolsForCreativeQuestion(uiQuestion, catalog, ["ui-product"])
+    )
+      .slice(0, 6)
+      .map((item) => item.tool.id);
+
+    expect(visibleIds).toEqual(expect.arrayContaining(["figma", "penpot", "sketch"]));
+    expect(visibleIds).not.toContain("adobe-xd");
+  });
+
+  it("keeps audio publishing suggestions inside the podcast distribution workflow", () => {
+    const audioPublishingQuestion = buildCreativeQuestions(["audio"], [], catalog)
+      .find((question) => question.id === "audio-publishing")!;
+    const ids = diversifyRankedCreativeTools(
+      audioPublishingQuestion,
+      rankToolsForCreativeQuestion(audioPublishingQuestion, catalog, ["audio"])
+    )
+      .slice(0, 12)
+      .map((item) => item.tool.id);
+
+    expect(ids).toEqual(expect.arrayContaining([
+      "spotify-for-podcasters",
+      "buzzsprout",
+      "ausha",
+      "podbean",
+      "acast",
+      "headliner",
+    ]));
+    expect(ids).not.toEqual(expect.arrayContaining([
+      "affiliate-tools",
+      "photopea",
+      "pixelmator-pro",
+      "shotdeck",
+      "capcut-templates",
+      "riverside",
+    ]));
+  });
+
+  it("keeps video editing suggestions focused on editing, short-form and repurposing tools", () => {
+    const videoEditQuestion = buildCreativeQuestions(["video"], [], catalog)
+      .find((question) => question.id === "video-edit")!;
+    const ids = diversifyRankedCreativeTools(
+      videoEditQuestion,
+      rankToolsForCreativeQuestion(videoEditQuestion, catalog, ["video"])
+    )
+      .slice(0, 12)
+      .map((item) => item.tool.id);
+
+    expect(ids).toEqual(expect.arrayContaining([
+      "adobe-premiere-pro",
+      "davinci-resolve",
+      "final-cut-pro",
+      "capcut",
+      "descript",
+      "opus-clip",
+      "screen-studio",
+    ]));
+    expect(ids).not.toEqual(expect.arrayContaining([
+      "photopea",
+      "pixelmator-pro",
+      "adobe-stock",
+      "frame-io",
+      "riverside",
+    ]));
+  });
+
+  it("gives every explicit creative option a type and functional reason for its question", () => {
+    const questions = buildCreativeQuestions(
+      CREATIVE_OUTPUTS.map((output) => output.id),
+      [],
+      catalog
+    );
+    const byId = new Map(catalog.map((tool) => [tool.id, tool]));
+
+    for (const question of questions) {
+      for (const toolId of question.explicitToolIds) {
+        const tool = byId.get(toolId);
+        expect(tool, `${question.id}:${toolId} should exist`).toBeDefined();
+        expect(
+          question.allowedToolTypes,
+          `${question.id}:${toolId} should allow ${tool?.tool_type}`
+        ).toContain(tool?.tool_type);
+
+        const toolNeeds = new Set((tool?.functional_needs || []).map(normalizeNeed));
+        const sharedNeeds = question.needKeys
+          .map(normalizeNeed)
+          .filter((need) => toolNeeds.has(need));
+        expect(
+          sharedNeeds.length,
+          `${question.id}:${toolId} should share at least one need`
+        ).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("keeps React Flux separate from FLUX AI in the creative catalog", () => {
+    const rawTools = toolsData as Array<Record<string, unknown>>;
+    const legacyFlux = rawTools.find((tool) => tool.id === "flux");
+    const fluxAi = rawTools.find((tool) => tool.id === "flux-ai");
+
+    expect(legacyFlux?.tool_type).toBe("satellite");
+    expect(legacyFlux?.functional_needs).toContain("state-management");
+    expect(fluxAi?.tool_type).toBe("ia");
+    expect(fluxAi?.functional_needs).toContain("generation-image");
+    expect(fluxAi?.functional_needs).toContain("concept-art");
   });
 
   it("does not suggest Canva Pro as a workflow complement", () => {

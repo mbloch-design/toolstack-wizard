@@ -55,7 +55,7 @@ export function aiCapabilityOptionsForObjective(
   if (/brief|reference|moodboard|research|identity|visual|illustration|social/.test(text)) {
     ids.push("research_ideation", "generate_visual", "generate_text");
   }
-  if (/ui|interface|prototype|design-system|handoff/.test(text)) {
+  if (/(^|[^a-z0-9])ui([^a-z0-9]|$)|interface|prototype|design-system|handoff/.test(text)) {
     ids.push("generate_layout", "generate_text", "generate_code", "analyze_validate");
   }
   if (/photo|raw|retouch|image|color|asset/.test(text)) {

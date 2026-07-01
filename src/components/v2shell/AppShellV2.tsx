@@ -7,8 +7,10 @@ import {
   Scale,
   BookOpen,
   Search,
+  Bookmark,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
+import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { SearchModal } from "@/components/SearchModal";
 import Footer from "@/components/Footer";
@@ -35,6 +37,11 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix } = useLang();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
+  const { state: cartState } = useStackPins();
+  const cartCount = cartState.pinnedToolSlugs.length;
+  const cartLabel = cartCount > 0
+    ? `${t("Ma stack", "My stack")} · ${cartCount}`
+    : t("Ma stack", "My stack");
 
   // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
   const relPath = location.pathname.startsWith(prefix)
@@ -56,8 +63,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         </button>
 
         <div className="asv2-topbar-right">
-          <Link to={`${prefix}/selector`} className="asv2-topbar-cta">
-            {t("Auditer ma stack", "Audit my stack")}
+          <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
+            <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+            <span>{cartLabel}</span>
           </Link>
         </div>
       </header>

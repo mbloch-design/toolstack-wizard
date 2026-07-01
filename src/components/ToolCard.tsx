@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
+import PinToolButton from "@/components/PinToolButton";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -84,10 +85,12 @@ function DefaultCard({ tool, prefix, t, categoryLabel, lang = "fr" }: Omit<ToolC
   }
 
   return (
-    <Link
-      to={`${prefix}/tool/${tool.slug || tool.id}`}
-      className={`tc-card${featured ? " tc-card--featured" : ""}`}
-    >
+    <div className="tool-pin-wrap">
+      <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} compact labelMode="short" />
+      <Link
+        to={`${prefix}/tool/${tool.slug || tool.id}`}
+        className={`tc-card${featured ? " tc-card--featured" : ""}`}
+      >
       {/* Header: logo + type label */}
       <div className="tc-card-header">
         <div className="tc-logo">
@@ -132,7 +135,8 @@ function DefaultCard({ tool, prefix, t, categoryLabel, lang = "fr" }: Omit<ToolC
           {t("Voir l'outil", "View tool")} <span aria-hidden>→</span>
         </span>
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 
@@ -146,10 +150,12 @@ function FeaturedCard({ tool, prefix, t, categoryLabel, lang = "fr" }: Omit<Tool
   const verdictText = tool.verdict?.threshold;
 
   return (
-    <Link
-      to={`${prefix}/tool/${tool.slug || tool.id}`}
-      className="tc-card tc-card--featured"
-    >
+    <div className="tool-pin-wrap">
+      <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} compact labelMode="short" />
+      <Link
+        to={`${prefix}/tool/${tool.slug || tool.id}`}
+        className="tc-card tc-card--featured"
+      >
       {/* Header */}
       <div className="tc-card-header">
         <div className="tc-logo tc-logo--lg">
@@ -192,7 +198,8 @@ function FeaturedCard({ tool, prefix, t, categoryLabel, lang = "fr" }: Omit<Tool
           {t("Voir l'outil", "View tool")} <span aria-hidden>→</span>
         </span>
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 
@@ -206,10 +213,12 @@ function ListRow({ tool, prefix, t, categoryLabel, rank, lang = "fr" }: Omit<Too
   const description = t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription) as string;
 
   return (
-    <Link
-      to={`${prefix}/tool/${tool.slug || tool.id}`}
-      className="tc-list-row"
-    >
+    <div className="tool-pin-wrap tool-pin-wrap--row">
+      <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} compact />
+      <Link
+        to={`${prefix}/tool/${tool.slug || tool.id}`}
+        className="tc-list-row"
+      >
       {/* Rank */}
       {rank !== undefined && (
         <span className="tc-list-rank">{rank}</span>
@@ -246,7 +255,8 @@ function ListRow({ tool, prefix, t, categoryLabel, rank, lang = "fr" }: Omit<Too
           {t("Voir", "View")} <span aria-hidden>→</span>
         </span>
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

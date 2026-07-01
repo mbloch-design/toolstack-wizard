@@ -1,6 +1,6 @@
 # Tooltrim — Diagnostic handoff
 
-> Mise à jour : 30 juin 2026 — Phase 4C bêta privée Créatif prête côté opérations, G4 non accepté.
+> Mise à jour : 1 juillet 2026 — Repasse catalogue/parcours Créatif branche par branche, validations vertes, G4 toujours non accepté.
 >
 > Mémoire de référence unique : ce fichier. `AI_HANDOFF 2.md` est une ancienne version incomplète.
 
@@ -245,6 +245,86 @@ Prochain travail autorisé :
 6. ne corriger que les P0/P1 reproductibles ;
 7. maintenir `validate:phase4`, `validate:diagnostic` et `validate:g0` verts ;
 8. ne pas ouvrir Tech, Conseil, Content ou Ops.
+
+## Lot catalogue créatif et diversité UX — 30 juin 2026
+
+Déclencheur utilisateur : l’écran donnait une impression de catalogue trop court et répétitif, avec les mêmes outils qui revenaient dans plusieurs sections. Le problème produit identifié n’était pas seulement le volume du catalogue, mais la **profondeur perçue par moment de travail** : chaque question doit montrer des options crédibles pour ce besoin précis, sans recycler automatiquement Figma / Adobe / Canva / Blender / IA génériques.
+
+Correctifs appliqués :
+
+- ajout de 16 fiches manquantes réellement référencées par le moteur Créatif : `affinity-designer`, `coreldraw`, `clip-studio-paint`, `krita`, `adobe-fresco`, `affinity-publisher`, `quarkxpress`, `darktable`, `dxo-photolab`, `photopea`, `pixelmator-pro`, `topaz-photo-ai`, `fusion`, `cycles`, `reaper`, `adobe-stock` ;
+- enrichissement des métadonnées fonctionnelles de fiches existantes qui apparaissaient dans les parcours mais n’avaient pas de `functional_needs` exploitables : PureRef, Miro, FigJam, Keynote, Google Slides, Beautiful.ai, Readymag, Final Cut Pro, Cavalry, Plasticity, Vectorworks, Fusion 360, Pro Tools, Logic Pro, Adobe Audition, Ableton Live, Spotify for Podcasters, Ausha, Metricool, Publer, Canva AI, Sendible ;
+- requalification de Figma : reste non remplaçable automatiquement, mais devient recommandable en mode `question` pour un besoin UI explicitement non couvert ; ses besoins couvrent désormais UI, prototype, design system, wireframing, composants, handoff et collaboration ;
+- séparation renforcée entre capture et recommandation : les outils marqués silencieux restent sélectionnables si l’utilisateur les utilise, mais ne sont plus proposés comme recommandation ;
+- diversification des suggestions hors écosystème : maximum affiché porté à 12, 6 visibles par défaut, avec limitation de la domination d’une même famille commerciale ou technique ;
+- suggestions IA contextualisées par moment de travail : photo, UI, motion, 3D, social, audio, livraison, etc. ne recyclent plus la même liste globale d’IA ;
+- recherche Créatif portée à 12 résultats pour éviter l’impression de catalogue étriqué ;
+- garde-fou GO60 renforcé : les IDs explicites du moteur, les suggestions contextuelles IA, la densité minimale par question et les constantes de diversité sont vérifiés.
+
+Repasse critique demandée ensuite par l’utilisateur :
+
+- simulation des 22 questions Créatif sur les 6 exemples visibles et les 12 options dépliées ;
+- défaut trouvé : Adobe XD, bien que cartographiable, remontait encore trop haut dans les exemples UI à cause de ses métadonnées enrichies ;
+- correction : les outils `force_silence` ou `prescription_quality: silence` non confirmés par l’utilisateur sont fortement descendus dans le ranking de capture ;
+- correction : Sketch est requalifié en `question`, car c’est encore un outil vivant dans certains workflows Mac et ne doit pas être assimilé à Adobe XD ;
+- correction : Penpot est requalifié comme outil métier UI avec verticale et besoins réels (`ui-design`, prototype, design system, wireframing, handoff, collaboration), afin qu’il soit traité comme vraie réponse au besoin et pas comme simple outil gratuit ;
+- correction : la question “Plans et dossier technique” reçoit plus d’options IA contextuelles (`Perplexity`, `Notion AI`) ;
+- test ajouté : les exemples UI visibles doivent contenir Figma, Penpot et Sketch, mais pas Adobe XD ;
+- garde-fou GO60 ajouté : un outil legacy/silencieux reste cartographiable, mais ne doit pas redevenir exemple principal sans confirmation.
+
+Règles produit clarifiées :
+
+- un outil atypique ou ancien peut être cartographié si l’utilisateur l’utilise réellement ;
+- être cartographiable ne veut pas dire être recommandable ;
+- un outil inclus dans une suite peut être proposé comme possible, mais jamais considéré comme utilisé sans confirmation ;
+- les questions doivent partir de l’objectif métier et afficher des réponses possibles variées, pas présumer un logiciel ;
+- l’IA doit être proposée au niveau du moment de production, pas comme une rubrique générique.
+
+Validation observée après ce lot :
+
+- `node scripts/validate-go60-creative-tool-catalog.mjs` : PASS, 197 outils référencés, 172 outils explicites moteur, 38 suggestions IA contextuelles, 0 ID fantôme ;
+- `npm run validate:diagnostic` : PASS, 135 tests métier ciblés + garde-fous ;
+- `npm run validate:g0` : PASS, build production inclus ;
+- `git diff --check` : PASS.
+
+Repasse exhaustive demandée le 1 juillet 2026 :
+
+- audit de contrôle joué sur les 22 questions Créatif, en regardant pour chaque branche les 6 suggestions visibles et les 12 options dépliées ;
+- défaut réel trouvé dans `audio-publishing` : la clé trop vague `creator-workflow` faisait entrer des outils génériques ou hors contexte dans “voir plus” ;
+- défaut réel trouvé dans `video-edit` : la même clé trop vague faisait remonter des éditeurs photo ou ressources génériques dans une question de montage vidéo ;
+- défaut de patch détecté et corrigé : des métadonnées audio/podcast avaient contaminé des fiches hors sujet (`ShotDeck`, `17hats`, `capcut-templates`, TikTok/YouTube mal qualifiés). Les fiches ont été réparées et les patchs suivants ont été faits uniquement avec ancrage par `id` ;
+- `audio-publishing` ne s’appuie plus sur `creator-workflow` et expose désormais 12 options explicites orientées hébergement, distribution, analytics, monétisation, mastering et promotion podcast : Spotify/Anchor, Spotify for Podcasters, Buzzsprout, Ausha, Acast, Podbean, Auphonic, Headliner, Castmagic, YouTube Studio, TikTok Studio et Google Analytics. `Riverside` reste dans la production audio, pas dans la diffusion ;
+- `audio-production` couvre mieux le réel : DAW classiques, podcast tout-en-un, nettoyage IA, transcription, mastering, génération musicale et bibliothèques sonores ;
+- `video-edit` ne s’appuie plus sur `creator-workflow` et couvre montage classique, short-form, repurposing, sous-titres et screen recording ; Opus Clip, Tella et Whisper ont été ajoutés au moment vidéo ;
+- `Opus Clip` a reçu son type `ia`, ses verticales Créatif et ses besoins `video-repurposing`, `short-form-video`, `montage-video-court`, `sous-titrage` ;
+- `Descript` est relié au montage vidéo court, à l’édition vidéo et aux sous-titres, pas seulement à l’audio ;
+- `Podcastle`, `Cleanvoice`, `Auphonic`, `Acast`, `Headliner` et `Castmagic` ont maintenant des `functional_needs` exploitables, rattachés à leurs vrais usages ;
+- `InDesign`, `Final Cut Pro`, `DaVinci Resolve` et `Metricool` sont requalifiés en `question` : ce sont des outils réels à cartographier dans la capture, pas des entrées silencieuses cachées ;
+- les suggestions IA contextuelles sont enrichies sur vidéo/audio : `Opus Clip`, `Whisper`, `Podcastle`, `Cleanvoice`, `Auphonic`, `Castmagic`, `Headliner` apparaissent au bon moment ;
+- tests ajoutés : audio publishing doit rester dans l’écosystème podcast ; video edit doit rester centré sur montage, short-form et repurposing ;
+- garde-fou GO60 renforcé : audio publishing et video edit doivent chacun exposer au moins 12 options explicites sans fuite hors contexte.
+
+Résultat de la repasse du 1 juillet 2026 :
+
+- matrice locale des 22 questions : aucune fuite critique restante dans les top 6 / top 12 ;
+- `node scripts/validate-go60-creative-tool-catalog.mjs` : PASS, 209 outils référencés, 184 outils explicites moteur, 45 suggestions IA contextuelles, 15 checks ;
+- `npm run validate:diagnostic` : PASS, 138 tests métier ciblés + garde-fous ;
+- `npm run validate:g0` : PASS, 138 tests + build production inclus ;
+- `git diff --check` : PASS.
+
+Sur-audit demandé après “pas le droit à l’erreur” — 1 juillet 2026 :
+
+- défaut réel trouvé : `flux` désignait encore dans le catalogue l’ancien pattern React, alors que le parcours créatif devait proposer l’écosystème d’image générative FLUX AI. Correction : création d’une fiche séparée `flux-ai`, remplacement dans le moteur Créatif et dans la capture IA visuelle, et garde-fou dédié pour empêcher la confusion ;
+- défaut réel trouvé : certains outils explicites du moteur Créatif n’avaient pas de `tool_type` ou de besoins fonctionnels suffisamment exploitables (`v0-vercel`, `hugeicons`, `whimsical`, `excalidraw`, `milanote`, puis plusieurs outils UI, social, 3D, photo, fonts et IA). Correction : typage et rattachement aux besoins réels ;
+- défaut réel trouvé : `Riverside` était encore trop proche des branches d’édition/diffusion alors que son rôle principal est l’enregistrement/production. Correction : il reste dans `audio-production`, pas dans `video-edit` ni `audio-publishing` ;
+- défaut réel trouvé : le garde-fou GO60 initial sur FLUX était lui-même trop strict, car il exigeait `flux-ai` dans une zone contextuelle non obligatoire. Correction : le test vérifie maintenant la règle utile, à savoir `flux-ai` présent dans les suggestions créatives et `flux` React absent des suggestions créatives ;
+- vérification finale : `node scripts/validate-go60-creative-tool-catalog.mjs` PASS, `npm run validate:diagnostic` PASS, `npm run validate:g0` PASS, `git diff --check` PASS.
+
+Attention :
+
+- les prix des nouvelles fiches ajoutées ne sont pas revendiqués comme vérifiés ; elles servent d’abord à la cartographie et au diagnostic ;
+- plusieurs fichiers temporaires/untracked existent dans le workspace et ne doivent pas être nettoyés sans demande explicite ;
+- le push GitHub reste volontairement reporté par l’utilisateur.
 
 Décision de pilotage technique héritée de G0 :
 
