@@ -10,8 +10,9 @@ import {
   Search,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
-import logoPicto from "@/assets/picto-logo.svg";
+import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { SearchModal } from "@/components/SearchModal";
+import Footer from "@/components/Footer";
 
 type NavItem = {
   id: string;
@@ -41,7 +42,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       {/* ── Top bar (spans full width, flush with sidebar below) ── */}
       <header className="asv2-topbar">
         <Link to={`${prefix}/v2`} className="asv2-logo">
-          <img src={logoPicto} alt="ToolTrim" width={28} height={28} />
+          <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} style={{ height: 28, width: 127 }} />
         </Link>
 
         <button className="asv2-search" onClick={() => setSearchOpen(true)}>
@@ -84,6 +85,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
         <div className="asv2-content">
           {children}
+          <Footer />
         </div>
       </div>
 
