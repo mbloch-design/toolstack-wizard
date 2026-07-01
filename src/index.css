@@ -633,6 +633,45 @@
   .stack-board-card--create .stack-board-footer > span {
     color: var(--color-muted);
   }
+  .stack-empty-overview {
+    align-items: center;
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    grid-column: 1 / -1;
+    justify-content: center;
+    min-height: 360px;
+    padding: 48px 28px;
+    text-align: center;
+  }
+  .stack-empty-overview > span {
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .stack-empty-overview h2 {
+    color: var(--color-text);
+    font-family: var(--font-brand);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 650;
+    letter-spacing: 0;
+    line-height: 1;
+    margin: 0;
+  }
+  .stack-empty-overview p {
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 520px;
+  }
 
   .stack-objective-detail {
     animation: stack-zoom-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
