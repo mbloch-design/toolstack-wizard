@@ -10,8 +10,16 @@ import ToolLogo from "@/components/ToolLogo";
 import HeroSection from "@/components/home/HeroSection";
 import { supabase } from "@/integrations/supabase/client";
 
-const FEATURED_PER_CATEGORY = 8;
 const MAX_CATEGORIES = 12;
+
+const FEATURED_SLUGS = [
+  "invision","framer","chakra-ui","echarts","shadcn-ui","recharts","ant-design",
+  "material-ui","storybook","17hats","adcreative","adobe","adobe-after-effects",
+  "adobe-cc","adobe-illustrator","indesign","adobe-lightroom","adobe-photoshop",
+  "adobe-premiere-pro","adobe-xd","affinity-photo","airslate","figma-anima",
+  "ae-animation-composer","asana","audacity","autocad","ae-bao-boa",
+  "basecamp","better-proposals","blender","bloom-crm",
+];
 
 /* Fetches og_image_url for a set of slugs from Supabase (one query). */
 function useOgImages(slugs: string[]): Record<string, string> {
@@ -70,26 +78,14 @@ export default function HomePageV2() {
       .slice(0, MAX_CATEGORIES);
   }, [tools, categories, lang]);
 
-  /* ── Featured tools: spread across top 4 categories ── */
+  /* ── Featured tools: curated list ── */
   const featured = useMemo(() => {
-    const topCatIds = new Set(catCards.slice(0, 4).map((c) => c.id));
-    const topCatSlugs = new Set(catCards.slice(0, 4).map((c) => c.slug));
-    const bucket = tools.filter(
-      (t) => topCatIds.has(t.categoryId) || topCatSlugs.has(t.categoryId)
-    );
-    const seen = new Set<string>();
-    const result = [];
-    for (const tool of bucket) {
-      const key = tool.categoryId;
-      const existing = [...seen].filter((s) => s === key).length;
-      if (existing >= FEATURED_PER_CATEGORY) continue;
-      if (!tool.slug || !tool.name) continue;
-      seen.add(key);
-      result.push(tool);
-      if (result.length >= 32) break;
-    }
-    return result;
-  }, [tools, catCards]);
+    const bySlug = new Map(tools.map((t) => [t.slug, t]));
+    return FEATURED_SLUGS.flatMap((slug) => {
+      const t = bySlug.get(slug);
+      return t ? [t] : [];
+    });
+  }, [tools]);
 
   const ogImages = useOgImages(featured.map((t) => t.slug));
 
