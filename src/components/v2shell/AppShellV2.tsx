@@ -6,7 +6,6 @@ import {
   Layers,
   Scale,
   BookOpen,
-  Tag,
   Search,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
@@ -27,7 +26,6 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "",             match: [""] },
   { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/"] },
-  { id: "categories", labelFr: "Catégories",  labelEn: "Categories", Icon: Tag,      to: "/category",    match: ["/category"] },
   { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
   { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
