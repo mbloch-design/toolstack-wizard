@@ -8,10 +8,9 @@ import {
   BookOpen,
   Tag,
   Search,
-  ArrowRight,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
-import logoToolTrim from "@/assets/logo-tooltrim.svg";
+import logoPicto from "@/assets/picto-logo.svg";
 import { SearchModal } from "@/components/SearchModal";
 
 type NavItem = {
@@ -39,54 +38,49 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <div className="asv2-root">
-      {/* ── Sidebar ── */}
-      <aside className="asv2-sidebar">
+      {/* ── Top bar (spans full width, flush with sidebar below) ── */}
+      <header className="asv2-topbar">
         <Link to={`${prefix}/v2`} className="asv2-logo">
-          <img src={logoToolTrim} alt="ToolTrim" width={110} height={24} />
+          <img src={logoPicto} alt="ToolTrim" width={28} height={28} />
         </Link>
 
-        <nav className="asv2-nav">
-          {NAV_ITEMS.map((item) => {
-            const href = `${prefix}${item.to}`;
-            const isActive = item.matchV2
-              ? /\/v2\/?$/.test(location.pathname)
-              : location.pathname.startsWith(href);
-            return (
-              <Link
-                key={item.id}
-                to={href}
-                className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
-              >
-                <item.Icon style={{ width: 19, height: 19 }} />
-                <span>{t(item.labelFr, item.labelEn)}</span>
-              </Link>
-            );
-          })}
-        </nav>
+        <button className="asv2-search" onClick={() => setSearchOpen(true)}>
+          <Search style={{ width: 15, height: 15 }} />
+          <span>{t("Rechercher un outil...", "Search a tool...")}</span>
+          <kbd className="asv2-kbd">⌘K</kbd>
+        </button>
 
-        <div className="asv2-sidebar-footer">
-          <Link to={`${prefix}/selector`} className="asv2-audit-cta">
+        <div className="asv2-topbar-right">
+          <Link to={`${prefix}/selector`} className="asv2-topbar-cta">
             {t("Auditer ma stack", "Audit my stack")}
-            <ArrowRight style={{ width: 14, height: 14 }} />
           </Link>
         </div>
-      </aside>
+      </header>
 
-      {/* ── Main column ── */}
-      <div className="asv2-main">
-        <header className="asv2-topbar">
-          <button className="asv2-search" onClick={() => setSearchOpen(true)}>
-            <Search style={{ width: 15, height: 15 }} />
-            <span>{t("Rechercher un outil...", "Search a tool...")}</span>
-            <kbd className="asv2-kbd">⌘K</kbd>
-          </button>
-
-          <div className="asv2-topbar-right">
-            <Link to={`${prefix}/selector`} className="asv2-topbar-cta">
-              {t("Auditer ma stack", "Audit my stack")}
-            </Link>
-          </div>
-        </header>
+      {/* ── Body: sidebar + content ── */}
+      <div className="asv2-body">
+        <aside className="asv2-sidebar">
+          <nav className="asv2-nav">
+            {NAV_ITEMS.map((item) => {
+              const href = `${prefix}${item.to}`;
+              const isActive = item.matchV2
+                ? /\/v2\/?$/.test(location.pathname)
+                : location.pathname.startsWith(href);
+              return (
+                <Link
+                  key={item.id}
+                  to={href}
+                  className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
+                >
+                  <span className="asv2-nav-icon">
+                    <item.Icon style={{ width: 22, height: 22 }} />
+                  </span>
+                  <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </aside>
 
         <div className="asv2-content">
           {children}
