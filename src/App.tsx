@@ -121,7 +121,15 @@ const LangLayout = () => {
   const isBackOffice = /^\/(fr|en)\/back-office\/?$/.test(location.pathname);
   const isLegacyChrome = (isSelectorFamily && !isDiagnosticFocusRoute) || isBackOffice;
 
-  const content = <Outlet key={effectiveLang} />;
+  // Suspense lives here (inside the shell) rather than only at the app root,
+  // so a lazy page's chunk-load fallback only ever replaces the inner content
+  // area — the sidebar/top bar (or legacy Navbar/Footer) stay mounted and
+  // don't flash away on every navigation.
+  const content = (
+    <Suspense fallback={<LazyFallback />}>
+      <Outlet key={effectiveLang} />
+    </Suspense>
+  );
 
   return (
     <LangContext.Provider
