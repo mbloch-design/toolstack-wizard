@@ -179,6 +179,7 @@ export interface Tool {
   websiteUrl?: string;
   affiliateLink: string;
   logo?: string;
+  ogImageUrl?: string | null;
   soloRelevance?: string;
   teamRelevance?: string;
   alternatives?: string[];

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -91,16 +91,12 @@ function DefaultCard({ tool, prefix, t, categoryLabel, lang = "fr" }: Omit<ToolC
         to={`${prefix}/tool/${tool.slug || tool.id}`}
         className={`tc-card${featured ? " tc-card--featured" : ""}`}
       >
-      {/* Header: logo + type label */}
-      <div className="tc-card-header">
-        <div className="tc-logo">
-          <ToolLogo tool={tool} size={44} />
-        </div>
-        <span className="tc-type-label">{typeLabel.toUpperCase()}</span>
-      </div>
+      {/* Cover: OG image, falls back to centered logo */}
+      <ToolCardImage tool={tool} />
 
       {/* Body */}
       <div className="tc-card-body">
+        <span className="tc-type-label">{typeLabel.toUpperCase()}</span>
         <h3 className="tc-name">{tool.name}</h3>
         {categoryLabel && <p className="tc-category">{categoryLabel}</p>}
         {description && <p className="tc-description">{description}</p>}
@@ -156,19 +152,15 @@ function FeaturedCard({ tool, prefix, t, categoryLabel, lang = "fr" }: Omit<Tool
         to={`${prefix}/tool/${tool.slug || tool.id}`}
         className="tc-card tc-card--featured"
       >
-      {/* Header */}
-      <div className="tc-card-header">
-        <div className="tc-logo tc-logo--lg">
-          <ToolLogo tool={tool} size={56} />
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
-          <span className="tc-type-label">{typeLabel.toUpperCase()}</span>
-          <span className="tc-badge tc-badge--pick">ToolTrim Pick</span>
-        </div>
-      </div>
+      {/* Cover: OG image, falls back to centered logo */}
+      <ToolCardImage tool={tool} logoSize={48} />
 
       {/* Body */}
       <div className="tc-card-body">
+        <div className="tc-body-top">
+          <span className="tc-type-label">{typeLabel.toUpperCase()}</span>
+          <span className="tc-badge tc-badge--pick">ToolTrim Pick</span>
+        </div>
         <h3 className="tc-name">{tool.name}</h3>
         {categoryLabel && <p className="tc-category">{categoryLabel}</p>}
         {description && (
@@ -224,10 +216,8 @@ function ListRow({ tool, prefix, t, categoryLabel, rank, lang = "fr" }: Omit<Too
         <span className="tc-list-rank">{rank}</span>
       )}
 
-      {/* Logo */}
-      <div className="tc-logo" style={{ flexShrink: 0 }}>
-        <ToolLogo tool={tool} size={44} />
-      </div>
+      {/* Cover thumbnail: OG image, falls back to centered logo */}
+      <ToolCardImage tool={tool} logoSize={26} className="tc-image--row" />
 
       {/* Name + category */}
       <div className="tc-list-info" style={{ minWidth: 140, maxWidth: 200 }}>

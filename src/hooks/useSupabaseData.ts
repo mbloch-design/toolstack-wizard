@@ -73,6 +73,7 @@ function mapToolFromJson(t: any): Tool {
     affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
     websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
     logo: asLocalizedText(t.logo, ""),
+    ogImageUrl: t.ogImageUrl || t.og_image_url || null,
     soloRelevance: t.soloRelevance || t.solo_relevance || "",
     teamRelevance: t.teamRelevance || t.team_relevance || "",
     alternatives: t.alternatives || [],

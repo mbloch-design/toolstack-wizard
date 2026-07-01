@@ -3829,41 +3829,55 @@
     background: hsl(0 0% 16%);
   }
 
-  /* ── CARD HEADER ────────────────────────────────────────────────────────── */
-  .tc-card-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-
-  /* ── LOGO ───────────────────────────────────────────────────────────────── */
-  .tc-logo {
-    width: 46px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
+  /* ── COVER IMAGE (ToolCardImage) ───────────────────────────────────────────
+     Shared by .tc-card and .tce-card — same shape whether a real OG
+     screenshot exists or it falls back to a centered logo, so every tool
+     card on the site (homepage carousels included) reads as one system.
+     Bleeds out of the card's own 24px padding via negative margin. */
+  .tc-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    margin: -24px -24px 20px -24px;
+    border-radius: 8px 8px 0 0;
     overflow: hidden;
+    background: var(--color-surface-soft);
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+  .tc-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .tc-image-fallback {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .dark .tc-image { background: hsl(0 0% 14%); border-color: hsl(0 0% 22%); }
 
-  .dark .tc-logo {
-    background: hsl(0 0% 16%);
-    border-color: hsl(0 0% 22%);
+  /* Compact row variant (ListRow / tc-list-row) — small fixed thumbnail
+     instead of a full-bleed panel, row height stays unchanged. */
+  .tc-image--row {
+    width: 64px;
+    height: 44px;
+    aspect-ratio: auto;
+    margin: 0;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-soft);
+    flex-shrink: 0;
   }
 
-  .tc-logo--lg {
-    width: 56px;
-    height: 56px;
-    border-radius: 8px;
+  .tc-body-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 
-  /* ── TYPE LABEL (top-right) ─────────────────────────────────────────────── */
+  /* ── TYPE LABEL ─────────────────────────────────────────────────────────── */
   .tc-type-label {
     font-family: var(--font-ui);
     font-size: 10px;
@@ -4611,37 +4625,12 @@
     background: hsl(var(--secondary));
   }
 
-  /* ── Header row ─────────────────────────────── */
-  .tce-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  .tce-logo {
-    width: 46px;
-    height: 46px;
-    border-radius: 6px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-
-  .dark .tce-logo {
-    background: hsl(0 0% 14%);
-    border-color: hsl(0 0% 22%);
-  }
-
+  /* ── Header row (type label + pick badge, above the name) ──────────────── */
   .tce-header-right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 
   .tce-type-label {

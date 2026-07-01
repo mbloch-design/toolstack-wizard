@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -117,19 +117,15 @@ export function ToolCardEditorial({
         to={`${prefix}/tool/${tool.slug ?? tool.id}`}
         className="tce-card"
       >
-      {/* ── Top row: logo + type + pick ── */}
-      <div className="tce-header">
-        <div className="tce-logo">
-          <ToolLogo tool={tool} size={28} />
-        </div>
+      {/* Cover: OG image, falls back to centered logo */}
+      <ToolCardImage tool={tool} logoSize={36} />
+
+      {/* ── Name + category + description ── */}
+      <div className="tce-body">
         <div className="tce-header-right">
           <span className="tce-type-label">{typeLabel}</span>
           {isPick && <span className="tce-pick-badge">Pick</span>}
         </div>
-      </div>
-
-      {/* ── Name + category + description ── */}
-      <div className="tce-body">
         <h3 className="tce-name">{tool.name}</h3>
         {categoryLabel && (
           <p className="tce-category">{categoryLabel}</p>
