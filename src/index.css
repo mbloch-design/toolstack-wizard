@@ -12667,6 +12667,40 @@ section[id] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* ── V2 AI tools — single row of 4, taller cards ── */
+.v2-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.v2-ai-card {
+  border: 1px solid var(--color-border-soft);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-surface);
+  text-decoration: none;
+  transition: border-color 130ms ease-out, box-shadow 130ms ease-out, transform 130ms ease-out;
+}
+.v2-ai-card:hover {
+  border-color: var(--color-border);
+  box-shadow: 0 6px 20px color-mix(in oklch, var(--color-text) 8%, transparent);
+  transform: translateY(-1px);
+}
+
+.v2-ai-img {
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-soft);
+  overflow: hidden;
+  position: relative;
+}
+.v2-ai-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .v2-feat-cat {
   font-family: var(--font-ui);
   font-size: 11px;
@@ -12916,12 +12950,14 @@ section[id] {
 @media (max-width: 860px) {
   .v2-feat-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-new-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2-ai-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .v2-container { padding: 0 20px; }
   .v2-cat-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .v2-feat-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-new-grid { grid-template-columns: repeat(1, 1fr); }
+  .v2-ai-grid { grid-template-columns: repeat(1, 1fr); }
   .v2-stack-grid { grid-template-columns: 1fr; }
   .v2-post-grid { grid-template-columns: 1fr; }
 }

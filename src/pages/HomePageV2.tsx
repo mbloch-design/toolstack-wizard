@@ -53,6 +53,13 @@ const NEW_SLUGS = [
   "amplitude","activecampaign","apollo-io","looka","pika-labs","frame-io","phantombuster","brand24",
 ];
 
+/* Curated AI tools — single-row carousel (4 per page) */
+const AI_SLUGS = [
+  "claude","cursor","deepseek","descript","elevenlabs","gemini","github-copilot",
+  "heygen","jasper","lovable","notion-ai","replit","stable-diffusion","suno","grok","windsurf",
+];
+const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
+
 /* ── Generic section header ── */
 function SectionHead({ label, to, linkLabel }: { label: string; to: string; linkLabel: string }) {
   return (
@@ -105,11 +112,12 @@ export default function HomePageV2() {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
-  const ogImages = useOgImages(FEATURED_SLUGS);
+  const ogImages = useOgImages(useMemo(() => [...FEATURED_SLUGS, ...AI_SLUGS], []));
 
   const [featuredPage, setFeaturedPage] = useState(0);
   const [newPage, setNewPage] = useState(0);
   const [stackPage, setStackPage] = useState(0);
+  const [aiPage, setAiPage] = useState(0);
 
   useEffect(() => {
     setSeoTags({
@@ -144,6 +152,17 @@ export default function HomePageV2() {
   const visibleNew = latestTools.slice(newPage * NEW_PAGE_SIZE, (newPage + 1) * NEW_PAGE_SIZE);
   const prevNewPage = useCallback(() => setNewPage((p) => Math.max(0, p - 1)), []);
   const nextNewPage = useCallback(() => setNewPage((p) => Math.min(newTotalPages - 1, p + 1)), [newTotalPages]);
+
+  /* ── AI tools — single row of 4 ── */
+  const aiTools = useMemo(() => {
+    const bySlug = new Map(tools.map((t) => [t.slug, t]));
+    return AI_SLUGS.flatMap((slug) => { const t = bySlug.get(slug); return t ? [t] : []; });
+  }, [tools]);
+
+  const aiTotalPages = Math.ceil(aiTools.length / AI_PAGE_SIZE);
+  const visibleAi = aiTools.slice(aiPage * AI_PAGE_SIZE, (aiPage + 1) * AI_PAGE_SIZE);
+  const prevAiPage = useCallback(() => setAiPage((p) => Math.max(0, p - 1)), []);
+  const nextAiPage = useCallback(() => setAiPage((p) => Math.min(aiTotalPages - 1, p + 1)), [aiTotalPages]);
 
   /* ── Category cards ── */
   const catCards = useMemo(() => {
@@ -223,7 +242,54 @@ export default function HomePageV2() {
             </div>
           )}
 
-          {/* ══ 2. Nouveautés — logo list 3×4 ══ */}
+          {/* ══ 2. Outils IA — single row of 4 ══ */}
+          {aiTools.length > 0 && (
+            <div style={{ marginTop: 56 }}>
+              <FeaturedHead
+                label={t("Outils IA", "AI Design Tools")}
+                to={`${prefix}/category/ai-general`}
+                linkLabel={t("Voir tout", "See all")}
+                page={aiPage}
+                total={aiTotalPages}
+                onPrev={prevAiPage}
+                onNext={nextAiPage}
+              />
+              <div className="v2-ai-grid">
+                {visibleAi.map((tool) => {
+                  const catName = stripLeadingEmoji(
+                    lang === "en"
+                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                  );
+                  return (
+                    <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-ai-card">
+                      <div className="v2-ai-img">
+                        {ogImages[tool.slug]
+                          ? <img src={ogImages[tool.slug]} alt="" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                          : <div className="v2-feat-logo"><ToolLogo tool={tool as any} size={44} /></div>
+                        }
+                      </div>
+                      <div className="v2-feat-body">
+                        <span className="v2-feat-name">{tool.name}</span>
+                        {catName && <span className="v2-feat-cat">{catName}</span>}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+              {aiTotalPages > 1 && (
+                <div className="v2-feat-dots">
+                  {Array.from({ length: aiTotalPages }).map((_, i) => (
+                    <button key={i} className={`v2-feat-dot${i === aiPage ? " v2-feat-dot--active" : ""}`}
+                      onClick={() => setAiPage(i)} aria-label={`Page ${i + 1}`} />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ══ 3. Nouveautés — logo list 3×4 ══ */}
           {latestTools.length > 0 && (
             <div style={{ marginTop: 56 }}>
               <FeaturedHead
