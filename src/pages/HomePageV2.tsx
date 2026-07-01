@@ -8,6 +8,7 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
+import AppShellV2 from "@/components/v2shell/AppShellV2";
 import { STACKS } from "@/data/stacks";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -187,7 +188,7 @@ export default function HomePageV2() {
   const featuredPosts = posts.slice(0, FEATURED_POSTS);
 
   return (
-    <div>
+    <AppShellV2>
       <HeroSectionV2 />
 
       <div className="v2-catalog">
@@ -427,6 +428,6 @@ export default function HomePageV2() {
 
         </div>
       </div>
-    </div>
+    </AppShellV2>
   );
 }

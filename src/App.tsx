@@ -110,6 +110,8 @@ const LangLayout = () => {
   const pathLang = location.pathname.split("/")[1];
   const effectiveLang: Lang = pathLang === "en" ? "en" : validLang;
   const isDiagnosticFocusRoute = /^\/(fr|en)\/selector\/?$/.test(location.pathname);
+  const isV2Route = /^\/(fr|en)\/v2\/?$/.test(location.pathname);
+  const hideChrome = isDiagnosticFocusRoute || isV2Route;
 
   return (
     <LangContext.Provider
@@ -123,11 +125,11 @@ const LangLayout = () => {
         <a href="#main-content" className="skip-to-content">
           {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
         </a>
-        {!isDiagnosticFocusRoute && <Navbar />}
-        <main id="main-content" className={`flex-1 ${isDiagnosticFocusRoute ? "" : "pt-[68px]"}`}>
+        {!hideChrome && <Navbar />}
+        <main id="main-content" className={`flex-1 ${hideChrome ? "" : "pt-[68px]"}`}>
           <Outlet key={effectiveLang} />
         </main>
-        {!isDiagnosticFocusRoute && <Footer />}
+        {!hideChrome && <Footer />}
       </div>
     </LangContext.Provider>
   );
