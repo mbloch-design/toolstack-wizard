@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo } from "react";
-import { ArrowRight } from "lucide-react";
+import { useEffect, useMemo, useState, useCallback } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { setSeoTags, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -10,7 +10,6 @@ import ToolLogo from "@/components/ToolLogo";
 import HeroSection from "@/components/home/HeroSection";
 import { STACKS } from "@/data/stacks";
 import { supabase } from "@/integrations/supabase/client";
-import { useState } from "react";
 
 /* ── Curated featured tools ── */
 const FEATURED_SLUGS = [
@@ -22,11 +21,12 @@ const FEATURED_SLUGS = [
   "basecamp","better-proposals","blender","bloom-crm",
 ];
 
+const PAGE_SIZE = 8; // 2 rows × 4 cols
 const MAX_CATEGORIES = 12;
 const FEATURED_STACKS = 4;
 const FEATURED_POSTS = 4;
 
-/* Fetch og_image_url for featured slugs — single Supabase query */
+/* Fetch og_image_url for featured slugs */
 function useOgImages(slugs: string[]): Record<string, string> {
   const [map, setMap] = useState<Record<string, string>>({});
   const key = slugs.join(",");
@@ -44,7 +44,7 @@ function useOgImages(slugs: string[]): Record<string, string> {
   return map;
 }
 
-/* ── Section header ── */
+/* ── Generic section header ── */
 function SectionHead({ label, to, linkLabel }: { label: string; to: string; linkLabel: string }) {
   return (
     <div className="v2-section-head">
@@ -56,12 +56,49 @@ function SectionHead({ label, to, linkLabel }: { label: string; to: string; link
   );
 }
 
+/* ── Featured carousel header with arrows ── */
+function FeaturedHead({
+  label, to, linkLabel, page, total, onPrev, onNext,
+}: {
+  label: string; to: string; linkLabel: string;
+  page: number; total: number; onPrev: () => void; onNext: () => void;
+}) {
+  return (
+    <div className="v2-section-head">
+      <h2 className="v2-section-title">{label}</h2>
+      <div className="v2-featured-nav">
+        <button
+          className="v2-feat-arrow"
+          onClick={onPrev}
+          disabled={page === 0}
+          aria-label="Page précédente"
+        >
+          <ChevronLeft style={{ width: 16, height: 16 }} />
+        </button>
+        <button
+          className="v2-feat-arrow"
+          onClick={onNext}
+          disabled={page >= total - 1}
+          aria-label="Page suivante"
+        >
+          <ChevronRight style={{ width: 16, height: 16 }} />
+        </button>
+        <Link to={to} className="v2-section-link" style={{ marginLeft: 8 }}>
+          {linkLabel} <ArrowRight style={{ width: 13, height: 13 }} />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
   const ogImages = useOgImages(FEATURED_SLUGS);
+
+  const [featuredPage, setFeaturedPage] = useState(0);
 
   useEffect(() => {
     setSeoTags({
@@ -79,6 +116,12 @@ export default function HomePageV2() {
     const bySlug = new Map(tools.map((t) => [t.slug, t]));
     return FEATURED_SLUGS.flatMap((slug) => { const t = bySlug.get(slug); return t ? [t] : []; });
   }, [tools]);
+
+  const totalPages = Math.ceil(featured.length / PAGE_SIZE);
+  const visibleFeatured = featured.slice(featuredPage * PAGE_SIZE, (featuredPage + 1) * PAGE_SIZE);
+
+  const prevPage = useCallback(() => setFeaturedPage((p) => Math.max(0, p - 1)), []);
+  const nextPage = useCallback(() => setFeaturedPage((p) => Math.min(totalPages - 1, p + 1)), [totalPages]);
 
   /* ── Category cards ── */
   const catCards = useMemo(() => {
@@ -105,35 +148,54 @@ export default function HomePageV2() {
       <div className="v2-catalog">
         <div className="v2-container">
 
-          {/* ══ 1. Outils en vedette ══ */}
-          <SectionHead
+          {/* ══ 1. Outils en vedette — carousel 2×4 ══ */}
+          <FeaturedHead
             label={t("Outils en vedette", "Featured tools")}
             to={`${prefix}/tools`}
             linkLabel={t("Voir tout", "See all")}
+            page={featuredPage}
+            total={totalPages}
+            onPrev={prevPage}
+            onNext={nextPage}
           />
-          <div className="v2-tool-grid">
-            {featured.map((tool) => (
-              <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-tool-card">
-                <div className="v2-tool-panel">
-                  {ogImages[tool.slug]
-                    ? <img src={ogImages[tool.slug]} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                    : <ToolLogo tool={tool as any} size={44} />
-                  }
-                </div>
-                <div className="v2-tool-body">
-                  <div className="v2-tool-row">
-                    <span className="v2-tool-name">{tool.name}</span>
-                    {tool.defaultMonthlyPrice > 0 && <span className="v2-tool-price">{tool.defaultMonthlyPrice}€</span>}
+          <div className="v2-feat-grid">
+            {visibleFeatured.map((tool) => {
+              const catName = stripLeadingEmoji(
+                lang === "en"
+                  ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                    || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                  : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+              );
+              return (
+                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-feat-card">
+                  <div className="v2-feat-img">
+                    {ogImages[tool.slug]
+                      ? <img src={ogImages[tool.slug]} alt="" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                      : <div className="v2-feat-logo"><ToolLogo tool={tool as any} size={40} /></div>
+                    }
                   </div>
-                  <span className="v2-tool-cat">
-                    {stripLeadingEmoji(lang === "en"
-                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)}
-                  </span>
-                </div>
-              </Link>
-            ))}
+                  <div className="v2-feat-body">
+                    <span className="v2-feat-name">{tool.name}</span>
+                    {catName && <span className="v2-feat-cat">{catName}</span>}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
+
+          {/* Page dots */}
+          {totalPages > 1 && (
+            <div className="v2-feat-dots">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  className={`v2-feat-dot${i === featuredPage ? " v2-feat-dot--active" : ""}`}
+                  onClick={() => setFeaturedPage(i)}
+                  aria-label={`Page ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
 
           {/* ══ 2. Catégories ══ */}
           <div style={{ marginTop: 56 }}>
@@ -168,7 +230,6 @@ export default function HomePageV2() {
                 const stackTools = stack.tools.slice(0, 5).map((s) => bySlug.get(s.slug)).filter(Boolean);
                 return (
                   <Link key={stack.slug} to={`${prefix}/stacks/${stack.slug}`} className="v2-stack-card">
-                    {/* Logo cluster */}
                     <div className="v2-stack-logos">
                       {stackTools.map((st) => (
                         <div key={st!.id} className="v2-stack-logo">
