@@ -20,16 +20,17 @@ type NavItem = {
   labelEn: string;
   Icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
   to: string;
-  matchV2?: boolean;
+  /** Path segments (relative to /:lang) that mark this item active — covers index + detail routes. */
+  match: string[];
 };
 
 const NAV_ITEMS: NavItem[] = [
-  { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "/v2", matchV2: true },
-  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools" },
-  { id: "categories", labelFr: "Catégories",  labelEn: "Categories", Icon: Tag,      to: "/category" },
-  { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks" },
-  { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs" },
-  { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides" },
+  { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "",             match: [""] },
+  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/"] },
+  { id: "categories", labelFr: "Catégories",  labelEn: "Categories", Icon: Tag,      to: "/category",    match: ["/category"] },
+  { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
+  { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
+  { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
 ];
 
 export default function AppShellV2({ children }: { children: ReactNode }) {
@@ -37,11 +38,16 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
 
+  // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
+  const relPath = location.pathname.startsWith(prefix)
+    ? location.pathname.slice(prefix.length).replace(/\/$/, "")
+    : location.pathname;
+
   return (
     <div className="asv2-root">
       {/* ── Top bar (spans full width, flush with sidebar below) ── */}
       <header className="asv2-topbar">
-        <Link to={`${prefix}/v2`} className="asv2-logo">
+        <Link to={prefix} className="asv2-logo">
           <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} style={{ height: 28, width: 127 }} />
         </Link>
 
@@ -63,14 +69,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         <aside className="asv2-sidebar">
           <nav className="asv2-nav">
             {NAV_ITEMS.map((item) => {
-              const href = `${prefix}${item.to}`;
-              const isActive = item.matchV2
-                ? /\/v2\/?$/.test(location.pathname)
-                : location.pathname.startsWith(href);
+              const isActive = item.id === "home"
+                ? relPath === ""
+                : item.match.some((m) => relPath === m || relPath.startsWith(m));
               return (
                 <Link
                   key={item.id}
-                  to={href}
+                  to={`${prefix}${item.to}`}
                   className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
                 >
                   <span className="asv2-nav-icon">
@@ -83,7 +88,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </nav>
         </aside>
 
-        <div className="asv2-content">
+        <div id="main-content" className="asv2-content">
           {children}
           <Footer />
         </div>

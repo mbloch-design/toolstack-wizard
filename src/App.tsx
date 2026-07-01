@@ -8,6 +8,7 @@ import { LangContext } from "@/hooks/useLang";
 import { Lang } from "@/data/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AppShellV2 from "@/components/v2shell/AppShellV2";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -30,6 +31,7 @@ const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const GuideDetailPage = lazy(() => import("@/pages/GuideDetailPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
 const StackDetailPage = lazy(() => import("@/pages/StackDetailPage"));
+const CartPage = lazy(() => import("@/pages/CartPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
 const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
@@ -109,9 +111,18 @@ const LangLayout = () => {
   // Also derive lang from pathname to stay in sync on internal navigations
   const pathLang = location.pathname.split("/")[1];
   const effectiveLang: Lang = pathLang === "en" ? "en" : validLang;
+
+  // Diagnostic flow (Codex-owned): exact /selector is a focused, chromeless
+  // step-by-step screen. /selector and its subroutes (e.g. /selector/results)
+  // keep the legacy Navbar/Footer chrome untouched — never wrapped in the
+  // new webapp shell, so we never alter diagnostic-adjacent presentation.
   const isDiagnosticFocusRoute = /^\/(fr|en)\/selector\/?$/.test(location.pathname);
-  const isV2Route = /^\/(fr|en)\/v2\/?$/.test(location.pathname);
-  const hideChrome = isDiagnosticFocusRoute || isV2Route;
+  const isSelectorFamily = /^\/(fr|en)\/selector(\/.*)?$/.test(location.pathname);
+  // Back-office (Codex-owned): same rule, legacy chrome only.
+  const isBackOffice = /^\/(fr|en)\/back-office\/?$/.test(location.pathname);
+  const isLegacyChrome = (isSelectorFamily && !isDiagnosticFocusRoute) || isBackOffice;
+
+  const content = <Outlet key={effectiveLang} />;
 
   return (
     <LangContext.Provider
@@ -121,16 +132,34 @@ const LangLayout = () => {
         prefix: `/${effectiveLang}`,
       }}
     >
-      <div className="flex min-h-screen flex-col">
-        <a href="#main-content" className="skip-to-content">
-          {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
-        </a>
-        {!hideChrome && <Navbar />}
-        <main id="main-content" className={`flex-1 ${hideChrome ? "" : "pt-[68px]"}`}>
-          <Outlet key={effectiveLang} />
-        </main>
-        {!hideChrome && <Footer />}
-      </div>
+      {isDiagnosticFocusRoute ? (
+        <div className="flex min-h-screen flex-col">
+          <a href="#main-content" className="skip-to-content">
+            {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
+          </a>
+          <main id="main-content" className="flex-1">
+            {content}
+          </main>
+        </div>
+      ) : isLegacyChrome ? (
+        <div className="flex min-h-screen flex-col">
+          <a href="#main-content" className="skip-to-content">
+            {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
+          </a>
+          <Navbar />
+          <main id="main-content" className="flex-1 pt-[68px]">
+            {content}
+          </main>
+          <Footer />
+        </div>
+      ) : (
+        <>
+          <a href="#main-content" className="skip-to-content">
+            {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
+          </a>
+          <AppShellV2>{content}</AppShellV2>
+        </>
+      )}
     </LangContext.Provider>
   );
 };
@@ -170,6 +199,8 @@ export const AppRoutes = () => (
       <Route path="category" element={<CategoriesIndexPage />} />
       <Route path="category/:slug" element={<CategoryPage />} />
       <Route path="guides" element={<GuidesPage />} />
+      <Route path="panier" element={<CartPage />} />
+      <Route path="cart" element={<CartPage />} />
       <Route path="stacks" element={<StacksPage />} />
       <Route path="stacks/:slug" element={<StackDetailPage />} />
       {/* Persona pillar pages — declared BEFORE guide/:slug to take precedence */}

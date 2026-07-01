@@ -7,7 +7,6 @@ import { setSeoTags, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
-import AppShellV2 from "@/components/v2shell/AppShellV2";
 import { STACKS } from "@/data/stacks";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -175,7 +174,7 @@ export default function HomePageV2() {
   const featuredPosts = posts.slice(0, FEATURED_POSTS);
 
   return (
-    <AppShellV2>
+    <div>
       <HeroSectionV2 />
 
       <div className="v2-catalog">
@@ -394,6 +393,6 @@ export default function HomePageV2() {
 
         </div>
       </div>
-    </AppShellV2>
+    </div>
   );
 }
