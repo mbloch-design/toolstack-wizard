@@ -7,7 +7,7 @@ import { setSeoTags, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
-import HeroSection from "@/components/home/HeroSection";
+import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import { STACKS } from "@/data/stacks";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -188,7 +188,7 @@ export default function HomePageV2() {
 
   return (
     <div>
-      <HeroSection />
+      <HeroSectionV2 />
 
       <div className="v2-catalog">
         <div className="v2-container">
