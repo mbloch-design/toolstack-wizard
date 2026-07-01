@@ -8,46 +8,32 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSection from "@/components/home/HeroSection";
+import { supabase } from "@/integrations/supabase/client";
 
 const FEATURED_PER_CATEGORY = 8;
 const MAX_CATEGORIES = 12;
-const OG_PREVIEW_COUNT = 8;
 
-/* Fetches the og:image of a tool's website via Microlink (free tier). */
-function OgToolPanel({ tool }: { tool: { id: string; websiteUrl?: string; affiliateLink?: string } }) {
-  const [imgUrl, setImgUrl] = useState<string | null>(null);
-  const [failed, setFailed] = useState(false);
-
-  const siteUrl = (tool as any).websiteUrl || (tool as any).affiliateLink;
-
+/* Fetches og_image_url for a set of slugs from Supabase (one query). */
+function useOgImages(slugs: string[]): Record<string, string> {
+  const [map, setMap] = useState<Record<string, string>>({});
+  const key = slugs.join(",");
   useEffect(() => {
-    if (!siteUrl) { setFailed(true); return; }
-    let cancelled = false;
-    fetch(`https://api.microlink.io/?url=${encodeURIComponent(siteUrl)}&embed=image.url`)
-      .then((r) => r.json())
-      .then((json) => {
-        if (cancelled) return;
-        const url = json?.data?.image?.url as string | undefined;
-        if (url) setImgUrl(url);
-        else setFailed(true);
-      })
-      .catch(() => { if (!cancelled) setFailed(true); });
-    return () => { cancelled = true; };
-  }, [siteUrl]);
-
-  if (!failed && imgUrl) {
-    return (
-      <img
-        src={imgUrl}
-        alt=""
-        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-        onError={() => setFailed(true)}
-      />
-    );
-  }
-
-  /* Fallback: logo centered on surface */
-  return <ToolLogo tool={tool as any} size={52} />;
+    if (!slugs.length) return;
+    supabase
+      .from("tools")
+      .select("slug, og_image_url")
+      .in("slug", slugs)
+      .then(({ data }) => {
+        if (!data) return;
+        const m: Record<string, string> = {};
+        for (const row of data) {
+          if (row.og_image_url) m[row.slug as string] = row.og_image_url as string;
+        }
+        setMap(m);
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
+  return map;
 }
 
 export default function HomePageV2() {
@@ -104,6 +90,8 @@ export default function HomePageV2() {
     }
     return result;
   }, [tools, catCards]);
+
+  const ogImages = useOgImages(featured.map((t) => t.slug));
 
   return (
     <div>
@@ -167,15 +155,15 @@ export default function HomePageV2() {
           </div>
 
           <div className="v2-tool-grid">
-            {featured.map((tool, i) => (
+            {featured.map((tool) => (
               <Link
                 key={tool.id}
                 to={`${prefix}/tool/${tool.slug}`}
                 className="v2-tool-card"
               >
                 <div className="v2-tool-panel">
-                  {i < OG_PREVIEW_COUNT
-                    ? <OgToolPanel tool={tool as any} />
+                  {ogImages[tool.slug]
+                    ? <img src={ogImages[tool.slug]} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                     : <ToolLogo tool={tool as any} size={52} />
                   }
                 </div>
