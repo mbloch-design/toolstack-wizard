@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { X, SlidersHorizontal } from "lucide-react";
+import { X, SlidersHorizontal, ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
@@ -730,41 +730,46 @@ const StacksPage = () => {
 
       <section id="stacks" className="sk-section sk-listing-section scroll-mt-20">
         <div className="sk-container">
+          {/* Filter bar — same shape as ToolsPage's .tt-filter-bar: quick
+              pills for the 2 most decision-relevant facets (Profil, Budget),
+              a "Filtres" trigger for the long tail (Spécialité, Objectif,
+              Niveau, Complexité, Type, Nb d'outils), reusing the same panel
+              at every breakpoint instead of only on mobile. */}
           <div className="sk-mobile-trigger-row">
+            <div className="tt-filter-select-wrap">
+              <select
+                value={facetProfile}
+                onChange={(e) => handleProfileChange(e.target.value as StackFacetProfile)}
+                className="tt-filter-select"
+                aria-label={t("Profil", "Profile") as string}
+              >
+                {PROFILE_OPTIONS.map((opt) => (
+                  <option key={opt.id} value={opt.id}>{opt.id === "all" ? t("Tous les profils", "All profiles") : optionLabel(PROFILE_OPTIONS, opt.id, lang)}</option>
+                ))}
+              </select>
+              <ChevronDown className="tt-filter-select-chevron" aria-hidden />
+            </div>
+            <div className="tt-filter-select-wrap">
+              <select
+                value={facetBudget}
+                onChange={(e) => setFacetBudget(e.target.value as StackFacetBudget)}
+                className="tt-filter-select"
+                aria-label={t("Budget", "Budget") as string}
+              >
+                {BUDGET_OPTIONS.map((opt) => (
+                  <option key={opt.id} value={opt.id}>{opt.id === "all" ? t("Tous les budgets", "All budgets") : optionLabel(BUDGET_OPTIONS, opt.id, lang)}</option>
+                ))}
+              </select>
+              <ChevronDown className="tt-filter-select-chevron" aria-hidden />
+            </div>
             <button type="button" onClick={() => setMobileOpen(true)} className="sk-mobile-trigger" aria-label={t("Ouvrir les filtres", "Open filters") as string}>
               <SlidersHorizontal size={15} aria-hidden />
-              {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Filtres", "Filters")}
+              {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Plus de filtres", "More filters")}
             </button>
             <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t("Rechercher…", "Search…") as string} className="sk-search-input" />
           </div>
 
           <div className="sk-listing-layout">
-            <aside className="sk-sidebar" aria-label={t("Filtres", "Filters") as string}>
-              <SidebarContent
-                lang={lang}
-                facetProfile={facetProfile}
-                facetSpecialties={facetSpecialties}
-                facetObjectives={facetObjectives}
-                facetBudget={facetBudget}
-                facetLevel={facetLevel}
-                facetComplexity={facetComplexity}
-                facetTypes={facetTypes}
-                facetToolCount={facetToolCount}
-                subProfileOptions={subProfileOptions}
-                setFacetProfile={handleProfileChange}
-                toggleFacetSpecialty={toggleFacetSpecialty}
-                toggleFacetObjective={toggleFacetObjective}
-                setFacetBudget={setFacetBudget}
-                setFacetLevel={setFacetLevel}
-                setFacetComplexity={setFacetComplexity}
-                toggleFacetType={toggleFacetType}
-                setFacetToolCount={setFacetToolCount}
-                onReset={resetFacets}
-                isFiltered={isFiltered}
-                disabled={disabledFacetIds}
-              />
-            </aside>
-
             <div className="sk-results">
               <div className="sk-results-header">
                 <div>
@@ -782,10 +787,6 @@ const StacksPage = () => {
                     <option value="tools">{t("Nombre d’outils", "Tool count")}</option>
                   </select>
                 </div>
-              </div>
-
-              <div className="sk-results-search">
-                <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t("Rechercher une stack, un outil, un usage…", "Search a stack, tool, or use case…") as string} className="sk-search-input" />
               </div>
 
               {activeChips.length > 0 && (

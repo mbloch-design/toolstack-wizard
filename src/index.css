@@ -5116,9 +5116,9 @@
     .sk-card-cta { order: -1; }
   }
 
-  /* ── Mobile trigger row ─────────────────────────────── */
+  /* ── Filter bar row (quick pills + Filtres trigger + search) ────────── */
   .sk-mobile-trigger-row {
-    display: none; /* shown only on mobile via responsive override */
+    display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
@@ -5439,23 +5439,14 @@
   .sk-mobile-panel-reset:focus-visible { outline: 2px solid var(--color-border-strong); outline-offset: 2px; }
 
   /* ── Responsive ─────────────────────────────────────── */
-  @media (max-width: 1023px) {
-    /* Switch to single column, hide desktop sidebar */
-    .sk-listing-layout { grid-template-columns: 1fr; gap: 0; }
-    .sk-sidebar { display: none; }
-    /* Show mobile trigger */
-    .sk-mobile-trigger-row { display: flex; }
-    /* Search visible in mobile trigger row */
-    .sk-results-search { display: none; }
-  }
-  @media (min-width: 1024px) {
-    /* Hide mobile panel trigger on desktop */
-    .sk-mobile-trigger-row { display: none !important; }
-    .sk-mobile-panel { display: none !important; }
-  }
+  /* Single-column results at every breakpoint — the facet sidebar is gone,
+     replaced by the filter bar (quick pills + "Filtres" panel trigger)
+     above, shown at all widths instead of only below 1024px. */
+  .sk-listing-layout { grid-template-columns: 1fr; gap: 0; }
   @media (max-width: 767px) {
-    .sk-mobile-trigger-row { flex-wrap: nowrap; }
+    .sk-mobile-trigger-row { flex-wrap: nowrap; overflow-x: auto; }
     .sk-mobile-trigger { flex-shrink: 0; }
+    .tt-filter-select-wrap { flex-shrink: 0; }
   }
 }
 
@@ -5495,8 +5486,8 @@
     line-height: 1.35;
   }
   .sk-listing-layout {
-    grid-template-columns: 280px minmax(0, 1fr);
-    gap: 48px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
   .sk-sidebar {
     padding: 0;
@@ -13549,3 +13540,68 @@ section[id] {
   .asv2-nav-icon { width: 40px; height: 40px; }
   .asv2-nav-label { font-size: 10px; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Shared filter bar (tt-filter-*) — used by ToolsPage + StacksPage
+   Quick pill-selects for the 1-2 primary facets of each page. Secondary/
+   long-tail facets (Stacks) live behind the "Filtres" panel trigger
+   (.sk-mobile-trigger, now shown at every breakpoint, not just mobile).
+   Results count + sort reuse .sk-results-header/.sk-results-count/
+   .sk-results-sort so both pages share one literal set of classes there.
+   ══════════════════════════════════════════════════════════════════════ */
+.tt-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.tt-filter-select-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.tt-filter-select {
+  appearance: none;
+  height: 38px;
+  padding: 0 34px 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+.tt-filter-select:hover { border-color: var(--color-text); }
+.tt-filter-select:focus-visible { outline: 2px solid var(--color-border-strong); outline-offset: 2px; }
+.tt-filter-select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  color: var(--color-muted);
+}
+.tt-filter-bar-spacer { margin-left: auto; }
+.tt-filter-stack-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: border-color 150ms;
+}
+.tt-filter-stack-link:hover { border-color: var(--color-text); }
