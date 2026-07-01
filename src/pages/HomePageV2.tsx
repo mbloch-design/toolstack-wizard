@@ -21,7 +21,8 @@ const FEATURED_SLUGS = [
   "basecamp","better-proposals","blender","bloom-crm",
 ];
 
-const PAGE_SIZE = 8; // 2 rows × 4 cols
+const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
+const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
 const MAX_CATEGORIES = 12;
 const FEATURED_STACKS = 4;
 const FEATURED_POSTS = 4;
@@ -43,6 +44,13 @@ function useOgImages(slugs: string[]): Record<string, string> {
   }, [key]);
   return map;
 }
+
+/* Curated "new additions" — update this list as new tools are added to the catalogue */
+const NEW_SLUGS = [
+  "cursor","arc-browser","claude","deepseek","notion","airtable","figma-tokens","beehiiv",
+  "intercom","lemlist","waalaxy","qonto","toggl","honeybook","wrike","salesforce",
+  "amplitude","activecampaign","apollo-io","looka","pika-labs","frame-io","phantombuster","brand24",
+];
 
 /* ── Generic section header ── */
 function SectionHead({ label, to, linkLabel }: { label: string; to: string; linkLabel: string }) {
@@ -99,6 +107,7 @@ export default function HomePageV2() {
   const ogImages = useOgImages(FEATURED_SLUGS);
 
   const [featuredPage, setFeaturedPage] = useState(0);
+  const [newPage, setNewPage] = useState(0);
 
   useEffect(() => {
     setSeoTags({
@@ -122,6 +131,17 @@ export default function HomePageV2() {
 
   const prevPage = useCallback(() => setFeaturedPage((p) => Math.max(0, p - 1)), []);
   const nextPage = useCallback(() => setFeaturedPage((p) => Math.min(totalPages - 1, p + 1)), [totalPages]);
+
+  /* ── New tools (static curated list, no date column in DB) ── */
+  const latestTools = useMemo(() => {
+    const bySlug = new Map(tools.map((t) => [t.slug, t]));
+    return NEW_SLUGS.flatMap((slug) => { const t = bySlug.get(slug); return t ? [t] : []; });
+  }, [tools]);
+
+  const newTotalPages = Math.ceil(latestTools.length / NEW_PAGE_SIZE);
+  const visibleNew = latestTools.slice(newPage * NEW_PAGE_SIZE, (newPage + 1) * NEW_PAGE_SIZE);
+  const prevNewPage = useCallback(() => setNewPage((p) => Math.max(0, p - 1)), []);
+  const nextNewPage = useCallback(() => setNewPage((p) => Math.min(newTotalPages - 1, p + 1)), [newTotalPages]);
 
   /* ── Category cards ── */
   const catCards = useMemo(() => {
@@ -197,7 +217,51 @@ export default function HomePageV2() {
             </div>
           )}
 
-          {/* ══ 2. Catégories ══ */}
+          {/* ══ 2. Nouveautés — logo list 3×4 ══ */}
+          {latestTools.length > 0 && (
+            <div style={{ marginTop: 56 }}>
+              <FeaturedHead
+                label={t("Nouveautés", "New Additions")}
+                to={`${prefix}/tools`}
+                linkLabel={t("Voir tout", "See all")}
+                page={newPage}
+                total={newTotalPages}
+                onPrev={prevNewPage}
+                onNext={nextNewPage}
+              />
+              <div className="v2-new-grid">
+                {visibleNew.map((tool) => {
+                  const catName = stripLeadingEmoji(
+                    lang === "en"
+                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                  );
+                  return (
+                    <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-new-card">
+                      <div className="v2-new-logo">
+                        <ToolLogo tool={tool as any} size={36} />
+                      </div>
+                      <div className="v2-new-info">
+                        <span className="v2-new-name">{tool.name}</span>
+                        {catName && <span className="v2-new-cat">{catName}</span>}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+              {newTotalPages > 1 && (
+                <div className="v2-feat-dots">
+                  {Array.from({ length: newTotalPages }).map((_, i) => (
+                    <button key={i} className={`v2-feat-dot${i === newPage ? " v2-feat-dot--active" : ""}`}
+                      onClick={() => setNewPage(i)} aria-label={`Page ${i + 1}`} />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ══ 4. Catégories ══ */}
           <div style={{ marginTop: 56 }}>
             <SectionHead
               label={t("Catégories", "Categories")}
@@ -218,7 +282,7 @@ export default function HomePageV2() {
             </div>
           </div>
 
-          {/* ══ 3. Stacks ══ */}
+          {/* ══ 5. Stacks ══ */}
           <div style={{ marginTop: 56 }}>
             <SectionHead
               label={t("Stacks recommandées", "Recommended stacks")}
@@ -249,7 +313,7 @@ export default function HomePageV2() {
             </div>
           </div>
 
-          {/* ══ 4. Guides ══ */}
+          {/* ══ 6. Guides ══ */}
           {featuredPosts.length > 0 && (
             <div style={{ marginTop: 56, paddingBottom: "clamp(64px,8vw,112px)" }}>
               <SectionHead
