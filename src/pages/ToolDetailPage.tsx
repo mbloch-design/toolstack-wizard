@@ -25,6 +25,7 @@ import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolProfileRecommendationTable from "@/components/tool/ToolProfileRecommendationTable";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
+import ToolGallery from "@/components/tool/ToolGallery";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
@@ -573,6 +574,14 @@ const ToolDetailPage = () => {
 
             </div>
             {/* end hero identity */}
+
+            {/* Gallery — shown only for tools with images in Supabase */}
+            {(() => {
+              const ogImg = (tool as any).og_image_url as string | null;
+              const extra = ((tool as any).gallery_images as string[] | null) ?? [];
+              const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
+              return imgs.length > 0 ? <ToolGallery images={imgs} toolName={tool.name} /> : null;
+            })()}
 
             {/* Mobile decision card */}
             <div className="td-sidebar-mobile" style={{ marginBottom: 32 }}>
