@@ -4975,11 +4975,11 @@
     border-bottom: 1px solid var(--color-border);
   }
   .sk-section-title {
-    font-family: var(--font-brand);
+    font-family: var(--font-ui);
     font-size: clamp(1.75rem, 3vw, 2.75rem);
-    font-weight: 600;
-    letter-spacing: -0.05em;
-    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     color: var(--color-text);
     margin: 0 0 32px;
   }
@@ -5472,10 +5472,10 @@
     display: block;
     font-family: var(--font-ui);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted-light);
+    color: var(--color-text);
     margin-bottom: 14px;
   }
   .sk-section-title {
@@ -11658,9 +11658,14 @@ section[id] {
    - .tt-page-hero-cta      → CTA group (Stacks, no search)
    Each variant slots after the desc; the surrounding shell is identical.
    ───────────────────────────────────────────────────────────────────────── */
+/* Typography harmonized with the webapp shell's own hero (.hv2-*): Inter
+   Tight throughout, Light/Regular weights, #222222 — a compact page header
+   instead of the old Uncut-Sans marketing display type. Padding trimmed to
+   match the shell's tighter vertical rhythm now that a persistent top bar
+   already anchors the page, rather than a floating overlay navbar. */
 .tt-page-hero {
   background: var(--color-bg);
-  padding: 80px 0 56px;
+  padding: 48px 0 40px;
 }
 .tt-page-hero-inner {
   max-width: var(--layout-content, 1280px);
@@ -11671,20 +11676,20 @@ section[id] {
   display: block;
   font-family: var(--font-ui);
   font-size: var(--tt-size-kicker);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-text);
   margin-bottom: 14px;
 }
 .tt-page-hero-title {
-  font-family: var(--font-brand);
-  font-size: clamp(2.75rem, 5vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 0.98;
-  color: var(--color-text-strong);
-  margin: 0 0 20px;
+  font-family: var(--font-ui);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin: 0 0 16px;
   max-width: 22ch;
 }
 .tt-page-hero-desc {
