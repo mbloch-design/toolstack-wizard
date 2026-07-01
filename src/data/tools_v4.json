@@ -53005,21 +53005,26 @@
   {
     "id": "sysaid",
     "name": "SysAid",
-    "shortDescription": "Logiciel de gestion des services IT (ITSM).",
+    "shortDescription": "Logiciel ITSM (IT Service Management) avec helpdesk, gestion des actifs et workflows ITIL — prix sur devis uniquement.",
     "description": "SysAid, c'est logiciel de gestion des services IT (ITSM). À partir de 10€/mois. Pensé pour les managers et DSI et les CTOs et leads tech.\n\nSpécialisé en IT service management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
     "category": "organization",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Aucun plan gratuit : SysAid propose uniquement un essai de 30 jours. Aucun accès permanent sans contrat.",
+      "paid": "Tarification sur devis. Tier Help Desk : environ 1 200–1 500 $/an pour 3 agents et 250 actifs (estimation marché). Tier ITSM et ITSM+ : à partir de ~3 000–6 000 $/an selon agents et modules. Déploiement on-premise et cloud disponibles à des tarifs différents."
     },
     "website": "https://sysaid.com",
     "affiliateLink": "https://sysaid.com",
     "pros": [
-      "Spécialisé en IT service management",
-      "Interface professionnelle"
+      "ITSM complet et ITIL-ready sans complexité ServiceNow",
+      "Gestion des actifs (CMDB) incluse dans tous les tiers",
+      "Option on-premise pour les contraintes de souveraineté des données",
+      "Portail self-service configurable sans code"
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Aucun tarif public — impossible de budgéter sans contact commercial",
+      "Interface datée comparée à Freshservice ou Jira SM",
+      "Montée en charge coûteuse sur les tiers ITSM/ITSM+",
+      "Intégrations tierces limitées sur les tiers bas de gamme"
     ],
     "bestFor": [
       "all"
@@ -53051,7 +53056,9 @@
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "SysAid : Logiciel de gestion des services IT (ITSM). Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "SysAid : Logiciel de gestion des services IT (ITSM). Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "idealForFr": "DSI de PME (50–500 salariés) cherchant un ITSM complet avec ticketing ITIL, CMDB intégrée et option on-premise, sans la complexité de ServiceNow.",
+      "idealForEn": "SME IT departments (50–500 employees) seeking a full ITSM with ITIL ticketing, integrated CMDB, and on-premise option, without ServiceNow's complexity."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -53069,45 +53076,60 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "sysaid",
-    "shortDescriptionEn": "IT service management (ITSM) software.",
-    "longDescription": "SysAid, c'est logiciel de gestion des services IT (ITSM). À partir de 10€/mois. Pensé pour les managers et DSI et les CTOs et leads tech.\n\nSpécialisé en IT service management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 10€/mois.",
-    "longDescriptionEn": "SysAid is iT service management (ITSM) software. Starting at €10/month. Built for managers and IT directors and CTOs and tech leads.\n\nSpecialized in IT service management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €10/month.",
+    "shortDescriptionEn": "ITSM platform with help desk, asset management, and ITIL workflows — quote-only pricing.",
+    "longDescription": "SysAid est une plateforme ITSM complète qui couvre le cycle de vie des tickets (incidents, demandes, problèmes, changements), la gestion des actifs IT (CMDB), un portail self-service pour les utilisateurs finaux et des automatisations basées sur des règles métier. Compatible ITIL, il s'adresse aux DSI de PME et ETI qui veulent structurer leur support sans recourir à ServiceNow ou Jira Service Management. Disponible en SaaS cloud et en déploiement on-premise, SysAid n'affiche aucun tarif public — tout passe par un devis commercial.",
+    "longDescriptionEn": "SysAid is a full ITSM platform covering the complete ticket lifecycle (incidents, requests, problems, changes), IT asset management (CMDB), an end-user self-service portal, and rule-based automation. ITIL-compatible and aimed at SME and mid-market IT departments that want structured service management without the complexity of ServiceNow or Jira Service Management. Available as cloud SaaS or on-premise. SysAid publishes no public pricing — all tiers require a sales quote.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": "No free plan: SysAid offers a 30-day trial only. No permanent access without a paid contract.",
+      "paid": "Quote-based pricing only. Help Desk tier: ~$1,200–1,500/year for 3 agents and 250 assets (market estimate). ITSM and ITSM+ tiers: from ~$3,000–6,000/year depending on agents and modules. On-premise and cloud deployments priced differently."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "sysaid.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://sysaid.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 10
+      "compare_plan_kind": "custom",
+      "compare_price_monthly_eur": 0,
+      "cautions": [
+        "Tarification sur devis — demander un chiffrage avant toute comparaison.",
+        "Le coût on-premise inclut des frais d'infrastructure supplémentaires."
+      ],
+      "cautionsEn": [
+        "Quote-only pricing — request a quote before any comparison.",
+        "On-premise cost includes additional infrastructure fees."
+      ]
     },
     "websiteUrl": "https://sysaid.com",
     "logo": "",
     "verdictEn": {
+      "score": 68,
+      "label": "Mixed",
+      "summary": "SysAid is a solid, ITIL-complete ITSM for SME IT teams, but the lack of public pricing and an ageing interface are real disadvantages against Freshservice.",
       "keepIf": [
-        "Regular use",
-        "Essential features"
+        "Your IT department manages 100+ endpoints and needs a CMDB integrated with ticketing.",
+        "On-premise deployment is required for regulatory reasons.",
+        "Your team follows ITIL processes (incidents, problems, changes)."
       ],
       "avoidIf": [
-        "Occasional use",
-        "Tight budget"
+        "You're already on Jira SM or Freshservice with a working CMDB.",
+        "You need a quick pricing estimate — SysAid requires a sales call.",
+        "Your IT team has fewer than 5 agents (functional overkill)."
       ],
-      "threshold": "As soon as the tool saves you more than €10/month"
+      "threshold": "Cost-effective from ~5 IT agents managing 300+ assets, provided you negotiate the annual rate.",
+      "billingTraps": [
+        "The 30-day trial only surfaces a subset of modules — some ITSM+ features only appear post-contract.",
+        "On-premise pricing is consistently higher than SaaS for the same capacity.",
+        "Add-on modules (advanced asset discovery, BI reporting) are billed separately from the base fee."
+      ],
+      "tcoExampleEn": "For an IT team of 8 agents managing 500 endpoints: expect ~$4,000–6,000/year on the ITSM tier (estimate). Add 10–15% for Active Directory integration and initial training."
     },
     "prosEn": [
-      "Specialized in IT service management",
-      "Professional interface"
+      "Full ITSM and ITIL-ready without ServiceNow complexity",
+      "Asset management (CMDB) included across all tiers",
+      "On-premise option for data sovereignty requirements",
+      "Configurable self-service portal, no coding needed"
     ],
     "consEn": [
-      "Pricing to be verified based on usage"
+      "No public pricing — impossible to budget without a sales call",
+      "Dated UI compared to Freshservice or Jira SM",
+      "Significant cost jump when scaling to ITSM/ITSM+ tiers",
+      "Third-party integrations limited on lower tiers"
     ],
     "useCases": [],
     "useCasesEn": null,
@@ -53133,7 +53155,29 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false
+    "force_silence": false,
+    "verdictFr": {
+      "score": 68,
+      "label": "Mitigé",
+      "summary": "SysAid est un ITSM solide et ITIL-complet pour les PME IT, mais l'absence de tarification publique et une interface vieillissante pèsent face à Freshservice.",
+      "keepIf": [
+        "Votre DSI gère 100+ postes et a besoin d'un CMDB intégré au ticketing.",
+        "Un déploiement on-premise est requis pour des raisons réglementaires.",
+        "Votre équipe suit les processus ITIL (incidents, problèmes, changements)."
+      ],
+      "avoidIf": [
+        "Votre stack est déjà sur Jira ou Freshservice avec une CMDB fonctionnelle.",
+        "Vous avez besoin d'une estimation tarifaire rapide — SysAid exige un contact commercial.",
+        "Votre équipe IT compte moins de 5 agents (surcapacité fonctionnelle)."
+      ],
+      "threshold": "Rentable dès ~5 agents IT gérant 300+ actifs, à condition de négocier le tarif annuel.",
+      "billingTraps": [
+        "L'essai 30 jours ne donne accès qu'à une partie des modules — certaines fonctionnalités ITSM+ apparaissent seulement après signature.",
+        "Le pricing on-premise est systématiquement plus élevé que le SaaS pour une même capacité.",
+        "Les modules add-on (discovery d'assets avancé, BI reporting) se facturent séparément du tarif de base."
+      ],
+      "tcoExampleFr": "Pour une DSI de 8 agents gérant 500 postes : comptez environ 4 000–6 000 $/an sur le tier ITSM (estimation). Ajoutez 10–15 % pour l'intégration Active Directory et la formation initiale."
+    }
   },
   {
     "id": "tabnine",
@@ -101708,43 +101752,63 @@
     "slug": "safetyculture",
     "name": "Safetyculture",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Plateforme d'opérations terrain : checklists d'inspection, audits sécurité, observations et formations — plan gratuit disponible, Premium à 24 $/siège/mois.",
+    "shortDescriptionEn": "Frontline operations platform: inspection checklists, safety audits, observations and training — free plan available, Premium at $24/seat/month.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Safetyculture est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "longDescription": "SafetyCulture (anciennement iAuditor) digitalise les opérations terrain des secteurs industriels, de la construction, de la logistique et de la restauration. L'outil permet de créer des checklists d'inspection personnalisées, de capturer des observations et incidents en temps réel depuis un mobile, de gérer des actions correctives et de déployer des modules de formation (SafetyCulture Training). Sa force : une adoption terrain très rapide grâce à une application mobile soignée, même hors connexion. Le plan gratuit couvre les inspections de base pour des petites équipes ; le Premium ($24/siège/mois) débloque l'analytique avancée, l'historique de données illimité et les intégrations métier.",
+    "longDescriptionEn": "SafetyCulture (formerly iAuditor) digitalises frontline operations in industrial, construction, logistics, and food service sectors. It enables custom inspection checklists, real-time mobile incident capture, corrective action management, and training module deployment (SafetyCulture Training). Its strength is rapid field adoption thanks to a polished mobile app that works offline. The free plan covers basic inspections for small teams; Premium ($24/seat/month) unlocks advanced analytics, unlimited data history, and business integrations.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit : utilisateurs illimités, inspections de base, historique de données limité à 6 mois. Suffisant pour tester avec une petite équipe terrain.",
+      "paid": "Premium : 24 $/siège/mois (facturation mensuelle) ou ~19 $/siège/mois en annuel. Inclut analytique avancée, historique illimité, intégrations (Power BI, Salesforce, SAP). Enterprise : sur devis avec SSO, API étendue et support dédié."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free plan: unlimited users, basic inspections, 6-month data history limit. Enough to test with a small field team.",
+      "paid": "Premium: $24/seat/month (monthly billing) or ~$19/seat/month annually. Includes advanced analytics, unlimited history, integrations (Power BI, Salesforce, SAP). Enterprise: custom quote with SSO, extended API, and dedicated support."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_price_monthly_eur": 22,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Le plan gratuit limite l'historique à 6 mois — les anciennes inspections deviennent inaccessibles.",
+        "Vérifier le nombre de sièges réels nécessaires : chaque inspecteur terrain compte comme un siège."
       ],
-      "source_domain": "safetyculture.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://safetyculture.com",
-      "verification_status": "needs_official_quote"
+      "cautionsEn": [
+        "Free plan caps data history at 6 months — older inspections become inaccessible.",
+        "Verify actual seat count needed: every field inspector counts as a seat."
+      ]
     },
     "affiliateLink": "https://safetyculture.com",
     "websiteUrl": "https://safetyculture.com",
     "logo": "https://logo.clearbit.com/safetyculture.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Responsables HSE, qualité et opérations terrain dans l'industrie, la construction ou la restauration qui veulent digitaliser leurs checklists d'inspection et audits sécurité depuis un mobile.",
+      "idealForEn": "HSE, quality, and field operations managers in industrial, construction, or food service who want to digitise inspection checklists and safety audits from a mobile device."
+    },
+    "pros": [
+      "Application mobile très rapide à adopter sur le terrain, fonctionne hors ligne",
+      "Bibliothèque de templates d'inspection prête à l'emploi (HACCP, ISO 45001, etc.)",
+      "Module formation intégré (SafetyCulture Training) dans le même outil",
+      "Plan gratuit réel pour petites équipes (pas un simple essai)"
+    ],
+    "prosEn": [
+      "Mobile app with fast field adoption, works offline",
+      "Ready-to-use inspection template library (HACCP, ISO 45001, etc.)",
+      "Built-in training module (SafetyCulture Training) in the same platform",
+      "Genuine free plan for small teams (not just a trial)"
+    ],
+    "cons": [
+      "Historique limité à 6 mois en plan gratuit — bloquant pour les audits réglementaires",
+      "Tarification par siège peut surprendre lors du passage à l'échelle sur toute une équipe terrain",
+      "Analytique et intégrations (Power BI, SAP) réservées au Premium",
+      "Gestion des non-conformités complexe sans formation initiale"
+    ],
+    "consEn": [
+      "6-month data history cap on free plan — blocking for regulatory audits",
+      "Per-seat pricing can surprise when scaling to a full field team",
+      "Analytics and integrations (Power BI, SAP) locked to Premium",
+      "Non-conformance management has a learning curve without initial training"
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -101767,13 +101831,26 @@
       "threshold": "À ajouter seulement si le rôle est central."
     },
     "verdictEn": {
+      "score": 78,
+      "label": "Recommended",
+      "summary": "SafetyCulture is the benchmark for digitised field operations: fast mobile adoption, ready-to-use templates, and a built-in training module. The free plan is genuine but the 6-month history cap is a real blocker for regulatory audits.",
       "keepIf": [
-        "The need repeats across engagements."
+        "Your field teams run recurring inspections (safety, quality, hygiene) and still use paper forms.",
+        "You need a traceable audit trail for a certification (ISO, HACCP, SOC).",
+        "Inspectors work on-site with intermittent connectivity."
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "Your inspection process is purely office-based — a general-purpose tool (Notion, Google Forms) is enough.",
+        "Your team exceeds 20 people and the Premium cost ($19–24/seat) is prohibitive vs sector-specific alternatives.",
+        "You need audit history beyond 6 months on the free plan."
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Positive ROI from 2–3 field inspectors replacing paper forms and needing traceable PDF reports.",
+      "billingTraps": [
+        "Free plan cuts off access to inspections older than 6 months — critical issue for annual compliance audits.",
+        "Power BI, Salesforce, and SAP integrations are Premium/Enterprise only — not available on free.",
+        "Every active user account counts as a billable seat, including managers who only view reports."
+      ],
+      "tcoExampleEn": "For 15 field inspectors on annual Premium: 15 × $19 × 12 = $3,420/year. Add ~$500 for initial setup and template customisation training."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -101799,7 +101876,29 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "verdictFr": {
+      "score": 78,
+      "label": "Recommandé",
+      "summary": "SafetyCulture est la référence des opérations terrain digitalisées : adoption mobile rapide, templates prêts à l'emploi et module formation intégré. Le plan gratuit est réel mais la limite 6 mois d'historique est un vrai frein pour les audits réglementaires.",
+      "keepIf": [
+        "Vos équipes terrain réalisent des inspections récurrentes (sécurité, qualité, hygiène) et utilisent encore des formulaires papier.",
+        "Vous avez besoin d'un historique d'audit traçable pour une certification (ISO, HACCP, SOC).",
+        "Vos inspecteurs travaillent sur site avec connectivité intermittente."
+      ],
+      "avoidIf": [
+        "Votre processus d'inspection est purement bureautique — un outil généraliste (Notion, Google Forms) suffit.",
+        "Votre équipe dépasse 20 personnes et le budget Premium (19–24 $/siège) est prohibitif par rapport à vos concurrents sectoriels.",
+        "Vous avez besoin d'un historique d'audit sur plus de 6 mois en version gratuite."
+      ],
+      "threshold": "ROI positif dès 2–3 inspecteurs terrain qui remplacent leurs formulaires papier et doivent produire des rapports PDF traçables.",
+      "billingTraps": [
+        "Le plan gratuit coupe l'accès aux inspections de plus de 6 mois — problème critique pour les audits de conformité annuels.",
+        "Les intégrations Power BI, Salesforce et SAP sont réservées au Premium ou Enterprise — pas disponibles en gratuit.",
+        "Chaque compte utilisateur actif compte comme un siège facturé, y compris les managers qui ne font que consulter les rapports."
+      ],
+      "tcoExampleFr": "Pour 15 inspecteurs terrain en Premium annuel : 15 × 19 $ × 12 = 3 420 $/an (~3 100 €). Ajoutez ~500 € de mise en place et formation initiale sur les templates sectoriels."
+    }
   },
   {
     "id": "pandadoc",
@@ -101926,43 +102025,63 @@
     "slug": "condeco",
     "name": "Condeco",
     "category": "organization",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Plateforme de réservation de bureaux et salles de réunion pour le travail hybride — intégrée à Microsoft 365 et Teams, tarification sur devis. Rachetée par Eptura en 2023.",
+    "shortDescriptionEn": "Desk and meeting room booking platform for hybrid work — integrates with Microsoft 365 and Teams, quote-based pricing. Acquired by Eptura in 2023.",
     "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Condeco est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "longDescription": "Condeco est une solution de gestion des espaces de travail hybrides : réservation de bureaux, salles de réunion, espaces de stationnement et visiteurs depuis un portail web, une application mobile ou directement dans Microsoft Teams et Outlook. Racheté par Eptura en 2023 (groupe qui détient aussi Archibus et Serraview), Condeco s'intègre nativement à Microsoft 365, Exchange et Google Workspace. Il cible les entreprises de 500+ salariés ayant adopté le flex-office et cherchant à optimiser leur taux d'occupation réel. Pas de tarif public — exclusivement sur devis commercial.",
+    "longDescriptionEn": "Condeco is a hybrid workspace management solution: desk, meeting room, parking space, and visitor booking via a web portal, mobile app, or directly inside Microsoft Teams and Outlook. Acquired by Eptura in 2023 (which also owns Archibus and Serraview), Condeco integrates natively with Microsoft 365, Exchange, and Google Workspace. It targets companies with 500+ employees that have adopted flex-office and want to optimise actual space utilisation. No public pricing — exclusively quote-based.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Aucun plan gratuit ni essai public. L'accès passe obligatoirement par un contact commercial Eptura/Condeco.",
+      "paid": "Tarification sur devis. Les estimations du marché situent le prix entre 3 et 8 $/bureau/mois selon le volume et les modules (réservation seule vs analytique d'occupation + gestion visiteurs). Engagement annuel minimum généralement requis."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "No free plan or public trial. Access requires a commercial contact with Eptura/Condeco.",
+      "paid": "Quote-based pricing. Market estimates range from $3 to $8/desk/month depending on volume and modules (booking-only vs occupancy analytics + visitor management). Annual minimum commitment typically required."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
       "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
+      "compare_price_monthly_eur": 0,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Tarification sur devis uniquement — demander un chiffrage complet modules inclus avant tout engagement.",
+        "Acquisition par Eptura en 2023 : la roadmap et la structure tarifaire peuvent évoluer."
       ],
-      "source_domain": "condecosoftware.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://condecosoftware.com",
-      "verification_status": "needs_official_quote"
+      "cautionsEn": [
+        "Quote-only pricing — request a full quote including all modules before committing.",
+        "Acquired by Eptura in 2023: roadmap and pricing structure may change."
+      ]
     },
     "affiliateLink": "https://condecosoftware.com",
     "websiteUrl": "https://condecosoftware.com",
     "logo": "https://logo.clearbit.com/condecosoftware.com",
-    "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
+    "seo": {
+      "idealForFr": "Directeurs des ressources humaines et de l'immobilier d'entreprises 500+ salariés ayant adopté le flex-office et souhaitant une réservation de bureaux intégrée nativement à Microsoft 365 et Teams.",
+      "idealForEn": "HR and real-estate directors at 500+ employee companies with flex-office who want desk booking integrated natively into Microsoft 365 and Teams."
+    },
+    "pros": [
+      "Intégration native Microsoft 365 / Teams / Outlook sans plugin tiers",
+      "Gestion unifiée bureaux, salles, visiteurs et parking dans un seul outil",
+      "Analytique d'occupation en temps réel pour optimiser les surfaces",
+      "Application mobile soignée pour la réservation à la volée"
+    ],
+    "prosEn": [
+      "Native Microsoft 365 / Teams / Outlook integration without third-party plugin",
+      "Unified management of desks, rooms, visitors, and parking in one tool",
+      "Real-time occupancy analytics to optimise office space",
+      "Polished mobile app for on-the-go booking"
+    ],
+    "cons": [
+      "Aucun tarif public — processus de vente long avant de connaître le coût réel",
+      "Taille minimale cible : 500+ salariés — surdimensionné pour les PME",
+      "Rachat par Eptura crée une incertitude sur la roadmap à moyen terme",
+      "Implémentation complexe avec Active Directory et Exchange dans les SI anciens"
+    ],
+    "consEn": [
+      "No public pricing — long sales process before knowing real cost",
+      "Minimum target size: 500+ employees — overkill for SMEs",
+      "Eptura acquisition creates medium-term roadmap uncertainty",
+      "Complex implementation with Active Directory and Exchange in legacy IT environments"
+    ],
     "useCases": [],
     "useCasesEn": [],
     "covers": [
@@ -101985,13 +102104,26 @@
       "threshold": "À ajouter seulement si le rôle est central."
     },
     "verdictEn": {
+      "score": 65,
+      "label": "Mixed",
+      "summary": "Condeco is a safe bet for large Microsoft-first companies with flex-office, but the Eptura acquisition, absence of public pricing, and 500+ employee target make it unsuitable for smaller organisations.",
       "keepIf": [
-        "The need repeats across engagements."
+        "Your company has 500+ employees and has adopted flex-office with hot-desking.",
+        "Your IT stack is Microsoft 365 and you need booking directly inside Teams/Outlook.",
+        "You need to justify real occupancy rates to your real-estate team."
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "Your team is under 200 people — alternatives (Robin, Skedda, Nexudus) are more accessible.",
+        "You use Google Workspace and Microsoft-first integration is a friction point.",
+        "Your real-estate budget does not justify a multi-year quote-based contract."
       ],
-      "threshold": "Add only if the role is central."
+      "threshold": "Cost-effective from ~300 flex-office desks where occupancy analytics can reduce leased space by 10–15%.",
+      "billingTraps": [
+        "The 2023 Eptura acquisition changed the contractual structure — verify renewal terms are locked before signing.",
+        "Advanced analytics and visitor management modules are typically add-ons beyond the base booking fee.",
+        "IT integration costs (Active Directory, Exchange On-Premise) can exceed the software cost in year one."
+      ],
+      "tcoExampleEn": "For a company with 800 employees and 400 flex desks: 400 × ~$5 × 12 = $24,000/year in licence fees (estimate). Add $8,000–15,000 for integration and deployment in year one."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -102017,7 +102149,29 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "verdictFr": {
+      "score": 65,
+      "label": "Mitigé",
+      "summary": "Condeco est une valeur sûre pour les grandes entreprises Microsoft-first en flex-office, mais le rachat par Eptura, l'absence de tarif public et la cible 500+ salariés le rendent inadapté aux structures plus légères.",
+      "keepIf": [
+        "Votre entreprise dépasse 500 salariés et a adopté le flex-office avec des bureaux non-attitrés.",
+        "Votre stack IT est Microsoft 365 et vous avez besoin d'une réservation directement dans Teams/Outlook.",
+        "Vous devez justifier le taux d'occupation réel de vos surfaces à votre direction immobilière."
+      ],
+      "avoidIf": [
+        "Votre équipe compte moins de 200 personnes — des alternatives (Robin, Skedda, Nexudus) sont plus accessibles.",
+        "Vous utilisez Google Workspace et l'intégration Microsoft-first est un frein.",
+        "Votre budget immobilier ne justifie pas un contrat pluriannuel sur devis."
+      ],
+      "threshold": "Rentable à partir de ~300 bureaux flex-office où l'analytique d'occupation permet de réduire la surface louée de 10–15 %.",
+      "billingTraps": [
+        "L'acquisition par Eptura en 2023 a modifié la structure contractuelle — vérifier que les conditions de renouvellement sont figées avant signature.",
+        "Les modules analytique avancée et gestion visiteurs sont souvent en supplément du tarif de réservation de base.",
+        "Les coûts d'intégration SI (Active Directory, Exchange On-Premise) peuvent dépasser le coût logiciel la première année."
+      ],
+      "tcoExampleFr": "Pour une entreprise de 800 employés avec 400 bureaux flex : 400 × ~5 $ × 12 = 24 000 $/an de licence (estimation). Ajoutez 8 000–15 000 € d'intégration et déploiement pour la première année."
+    }
   },
   {
     "id": "tiktok-studio",
