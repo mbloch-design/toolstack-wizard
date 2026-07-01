@@ -8860,70 +8860,15 @@
 ───────────────────────────────────────────── */
 @layer components {
 
-  /* ── Single search field ─────────────────────────────── */
-  .cix-search-panel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--color-border-soft);
-  }
-  .cix-search-field {
-    display: flex;
-    flex: 1 1 420px;
-    align-items: center;
-    max-width: 560px;
-    min-height: 48px;
-    border-bottom: 1.5px solid var(--color-border-strong);
-    transition: border-color 160ms ease-out;
-  }
-  .cix-search-field:focus-within {
-    border-color: var(--color-text-strong);
-  }
-  .cix-search-input {
-    flex: 1;
-    height: 48px;
-    padding: 0 4px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-body-large);
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    color: var(--color-text-strong);
-  }
-  .cix-search-input::placeholder {
-    color: var(--color-muted-light);
-    font-weight: 400;
-  }
-  .cix-search-clear {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    background: transparent;
-    color: var(--color-muted);
-    cursor: pointer;
-    font-size: 20px;
-    line-height: 1;
-    transition: background 140ms ease-out, color 140ms ease-out;
-  }
-  .cix-search-clear:hover {
-    background: var(--color-surface-soft);
-    color: var(--color-text);
-  }
-  /* ── Popular chips below the search ──────────────────── */
+  /* ── Popular chips below the toolbar ─────────────────── */
   .cix-popular {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 0;
+    margin-bottom: 28px;
   }
   .cix-popular-label {
     font-family: var(--font-ui);
@@ -8978,37 +8923,7 @@
     color: var(--color-text);
     margin: 0;
   }
-  .cix-listing-count {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body);
-    color: var(--color-muted);
-  }
 
-  /* ── Category filters ────────────────────────────────── */
-  .cix-filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 28px;
-  }
-  @media (max-width: 900px) {
-    .cix-search-panel {
-      align-items: stretch;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .cix-search-field {
-      flex-basis: auto;
-      max-width: none;
-    }
-    .cix-popular {
-      justify-content: flex-start;
-    }
-  }
-  @media (max-width: 640px) {
-    .cix-filter-row { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; }
-    .cix-filter-row .gi-filter-pill { flex-shrink: 0; }
-  }
 
   /* ── Editorial list (replaces grid) ──────────────────── */
   .cix-list {

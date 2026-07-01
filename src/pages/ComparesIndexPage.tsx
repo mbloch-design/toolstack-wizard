@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { Search, X } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
+import FilterDropdown from "@/components/filters/FilterDropdown";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 
@@ -120,6 +122,12 @@ const ComparesIndexPage = () => {
   const [categoryFilter, setCategoryFilter] = useState<CompareCategoryId>(
     () => (isValidCat(searchParams.get("cat")) ? (searchParams.get("cat") as CompareCategoryId) : "all"),
   );
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const isSearchExpanded = isSearchOpen || query.length > 0;
+  useEffect(() => {
+    if (isSearchExpanded) searchInputRef.current?.focus();
+  }, [isSearchExpanded]);
   /* Sync state changes back to the URL (replaceState so back-button isn't polluted) */
   useEffect(() => {
     const next = new URLSearchParams();
@@ -229,60 +237,87 @@ const ComparesIndexPage = () => {
                 ? t(`Résultats pour "${query.trim()}"`, `Results for "${query.trim()}"`)
                 : t("Comparatifs éditoriaux.", "Editorial comparisons.")}
             </p>
-            <span className="cix-listing-count">
-              {filteredComparisons.length}&nbsp;{t("comparatifs", "comparisons")}
-            </span>
           </div>
 
-          <div className="cix-search-panel">
-            <div className="cix-search-field">
-              <input
-                id="cix-search-input"
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={t("Filtrer par outil, ex. Notion, Figma…", "Filter by tool, e.g. Notion, Figma…")}
-                className="cix-search-input"
-                autoComplete="off"
-                aria-label={t("Filtrer les comparatifs", "Filter comparisons")}
+          {/* ── Filter bar: same toolbar pattern as the Outils page ── */}
+          <div className="tt-catalog-toolbar">
+            <div className="tt-catalog-toolbar-filters">
+              <FilterDropdown
+                label={t("Catégorie", "Category") as string}
+                allLabel={t("Toutes les catégories", "All categories") as string}
+                options={COMPARE_CATEGORY_FILTERS.filter((f) => f.id !== "all").map((f) => ({
+                  id: f.id,
+                  label: (lang === "fr" ? f.label : f.labelEn) as string,
+                }))}
+                value={categoryFilter}
+                onChange={(id) => setCategoryFilter(id as CompareCategoryId)}
               />
-              {query && (
-                <button
-                  type="button"
-                  onClick={() => setQuery("")}
-                  className="cix-search-clear"
-                  aria-label={t("Effacer", "Clear")}
-                >
-                  ×
-                </button>
-              )}
+
+              <div className={`tt-catalog-inline-search${isSearchExpanded ? " tt-catalog-inline-search--open" : ""}`}>
+                {isSearchExpanded ? (
+                  <div className="tt-catalog-inline-search-field">
+                    <Search size={17} aria-hidden />
+                    <input
+                      ref={searchInputRef}
+                      id="cix-search-input"
+                      type="search"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      onBlur={() => {
+                        if (!query) setIsSearchOpen(false);
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.key === "Escape" && !query) setIsSearchOpen(false);
+                      }}
+                      placeholder={t("Filtrer par outil, ex. Notion, Figma…", "Filter by tool, e.g. Notion, Figma…") as string}
+                      className="tt-catalog-inline-search-input"
+                      autoComplete="off"
+                      aria-label={t("Filtrer les comparatifs", "Filter comparisons") as string}
+                    />
+                    {query && (
+                      <button
+                        type="button"
+                        onMouseDown={(event) => event.preventDefault()}
+                        onClick={() => {
+                          setQuery("");
+                          setIsSearchOpen(false);
+                        }}
+                        className="tt-catalog-inline-search-clear"
+                        aria-label={t("Effacer", "Clear") as string}
+                      >
+                        <X size={15} aria-hidden />
+                      </button>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    className="tt-catalog-inline-search-button"
+                    onClick={() => setIsSearchOpen(true)}
+                  >
+                    <Search size={17} aria-hidden />
+                    <span>{t("Rechercher", "Search")}</span>
+                  </button>
+                )}
+              </div>
             </div>
 
-            <div className="cix-popular">
-              <span className="cix-popular-label">{t("Populaires", "Popular")}</span>
-              {POPULAR_SUGGESTIONS.map((s) => (
-                <Link
-                  key={s.slugPair}
-                  to={`${prefix}/comparatif/${s.slugPair}`}
-                  className="cix-suggestion-chip"
-                >
-                  {s.label}
-                </Link>
-              ))}
+            <div className="tt-catalog-toolbar-meta">
+              <span>{filteredComparisons.length}&nbsp;{t("comparatifs", "comparisons")}</span>
             </div>
           </div>
 
-          {/* Category filters */}
-          <div className="cix-filter-row">
-            {COMPARE_CATEGORY_FILTERS.map((f) => (
-              <button
-                key={f.id}
-                type="button"
-                onClick={() => setCategoryFilter(f.id)}
-                className={`gi-filter-pill${categoryFilter === f.id ? " gi-filter-pill--active" : ""}`}
+          {/* Popular shortcuts */}
+          <div className="cix-popular">
+            <span className="cix-popular-label">{t("Populaires", "Popular")}</span>
+            {POPULAR_SUGGESTIONS.map((s) => (
+              <Link
+                key={s.slugPair}
+                to={`${prefix}/comparatif/${s.slugPair}`}
+                className="cix-suggestion-chip"
               >
-                {lang === "fr" ? f.label : f.labelEn}
-              </button>
+                {s.label}
+              </Link>
             ))}
           </div>
 

@@ -587,7 +587,7 @@ const ToolDetailPage = () => {
 
             {/* Gallery — shown only for tools with images in Supabase */}
             {(() => {
-              const ogImg = (tool as any).og_image_url as string | null;
+              const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
               const extra = ((tool as any).gallery_images as string[] | null) ?? [];
               const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
               return imgs.length > 0 ? <ToolGallery images={imgs} toolName={tool.name} /> : null;
