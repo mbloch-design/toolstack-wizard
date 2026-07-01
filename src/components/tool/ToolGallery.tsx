@@ -7,14 +7,18 @@ interface Props {
 }
 
 export default function ToolGallery({ images, toolName }: Props) {
-  const [lightbox, setLightbox] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
+  const [failed, setFailed] = useState<Set<number>>(new Set());
 
-  const prev = useCallback(() => setLightbox((i) => (i === null ? null : (i - 1 + images.length) % images.length)), [images.length]);
-  const next = useCallback(() => setLightbox((i) => (i === null ? null : (i + 1) % images.length)), [images.length]);
-  const close = useCallback(() => setLightbox(null), []);
+  const visible = images.filter((_, i) => !failed.has(i));
+
+  const prev = useCallback(() => setActive((i) => (i - 1 + visible.length) % visible.length), [visible.length]);
+  const next = useCallback(() => setActive((i) => (i + 1) % visible.length), [visible.length]);
+  const close = useCallback(() => setLightbox(false), []);
 
   useEffect(() => {
-    if (lightbox === null) return;
+    if (!lightbox) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowLeft") prev();
@@ -24,79 +28,81 @@ export default function ToolGallery({ images, toolName }: Props) {
     return () => document.removeEventListener("keydown", onKey);
   }, [lightbox, close, prev, next]);
 
-  if (!images.length) return null;
+  if (!visible.length) return null;
+
+  const src = visible[active];
 
   return (
     <>
-      {/* ── Strip ── */}
-      <div className="tg-strip" role="list" aria-label={`Aperçus de ${toolName}`}>
-        {images.map((src, i) => (
-          <button
+      {/* ── Main viewer ── */}
+      <div className="tg-viewer" style={{ marginTop: 28 }}>
+
+        {/* Full-width image */}
+        <div className="tg-main" onClick={() => setLightbox(true)}>
+          <img
             key={src}
-            role="listitem"
-            className="tg-thumb"
-            onClick={() => setLightbox(i)}
-            aria-label={`Voir l'image ${i + 1} de ${images.length}`}
-          >
-            <img
-              src={src}
-              alt={`${toolName} — aperçu ${i + 1}`}
-              className="tg-thumb-img"
-              loading="lazy"
-              onError={(e) => {
-                (e.currentTarget.closest(".tg-thumb") as HTMLElement | null)?.remove();
-              }}
-            />
-          </button>
-        ))}
+            src={src}
+            alt={`${toolName} — aperçu ${active + 1}`}
+            className="tg-main-img"
+            loading="lazy"
+            onError={() => {
+              setFailed((s) => new Set([...s, images.indexOf(src)]));
+              if (active >= visible.length - 1) setActive(0);
+            }}
+          />
+          <span className="tg-zoom-hint" aria-hidden="true">↗</span>
+          {visible.length > 1 && (
+            <span className="tg-counter">{active + 1} / {visible.length}</span>
+          )}
+        </div>
+
+        {/* Thumbnails — only if more than 1 image */}
+        {visible.length > 1 && (
+          <div className="tg-thumbs">
+            {visible.map((thumbSrc, i) => (
+              <button
+                key={thumbSrc}
+                className={`tg-dot-thumb${i === active ? " tg-dot-thumb--active" : ""}`}
+                onClick={() => setActive(i)}
+                aria-label={`Aperçu ${i + 1}`}
+                aria-current={i === active}
+              >
+                <img src={thumbSrc} alt="" className="tg-dot-img" />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* ── Lightbox ── */}
-      {lightbox !== null && (
+      {lightbox && (
         <div
           className="tg-lb"
           onClick={close}
           role="dialog"
           aria-modal="true"
-          aria-label={`Image ${lightbox + 1} sur ${images.length}`}
         >
-          {/* prev */}
-          {images.length > 1 && (
-            <button
-              className="tg-lb-nav tg-lb-prev"
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-              aria-label="Image précédente"
-            >
+          {visible.length > 1 && (
+            <button className="tg-lb-nav tg-lb-prev" onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Précédent">
               <ChevronLeft style={{ width: 22, height: 22 }} />
             </button>
           )}
-
           <img
-            src={images[lightbox]}
-            alt={`${toolName} — aperçu ${lightbox + 1}`}
+            src={src}
+            alt={`${toolName} — aperçu ${active + 1}`}
             className="tg-lb-img"
             onClick={(e) => e.stopPropagation()}
           />
-
-          {/* next */}
-          {images.length > 1 && (
-            <button
-              className="tg-lb-nav tg-lb-next"
-              onClick={(e) => { e.stopPropagation(); next(); }}
-              aria-label="Image suivante"
-            >
+          {visible.length > 1 && (
+            <button className="tg-lb-nav tg-lb-next" onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Suivant">
               <ChevronRight style={{ width: 22, height: 22 }} />
             </button>
           )}
-
-          {/* close */}
           <button className="tg-lb-close" onClick={close} aria-label="Fermer">
             <X style={{ width: 18, height: 18 }} />
           </button>
-
-          {/* counter */}
-          {images.length > 1 && (
-            <span className="tg-lb-count">{lightbox + 1} / {images.length}</span>
+          {visible.length > 1 && (
+            <span className="tg-lb-count">{active + 1} / {visible.length}</span>
           )}
         </div>
       )}

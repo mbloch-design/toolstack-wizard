@@ -12357,35 +12357,86 @@ section[id] {
    ToolGallery — image strip + lightbox on tool detail pages
    ───────────────────────────────────────────────────────────────────────── */
 
-/* Strip */
-.tg-strip {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 28px 0 4px;
-  margin-bottom: 8px;
-}
-.tg-strip::-webkit-scrollbar { display: none; }
+/* Main viewer */
+.tg-viewer { width: 100%; }
 
-.tg-thumb {
-  flex-shrink: 0;
-  width: 220px;
+.tg-main {
+  position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--color-border);
   background: var(--color-surface-soft);
-  padding: 0;
   cursor: zoom-in;
-  transition: border-color 130ms ease-out, transform 130ms ease-out;
 }
-.tg-thumb:hover {
+.tg-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 200ms ease-out;
+}
+.tg-main:hover .tg-main-img { transform: scale(1.01); }
+
+.tg-zoom-hint {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: oklch(0% 0 0 / 28%);
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+  pointer-events: none;
+}
+.tg-main:hover .tg-zoom-hint { opacity: 1; }
+
+.tg-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: oklch(100% 0 0 / 75%);
+  background: oklch(0% 0 0 / 32%);
+  padding: 2px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.04em;
+}
+
+/* Thumbnails row */
+.tg-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.tg-dot-thumb {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--color-surface-soft);
+  padding: 0;
+  cursor: pointer;
+  transition: border-color 120ms ease-out, opacity 120ms ease-out;
+  opacity: 0.55;
+  max-width: 100px;
+}
+.tg-dot-thumb--active {
   border-color: var(--color-text);
-  transform: translateY(-2px);
+  opacity: 1;
 }
-.tg-thumb-img {
+.tg-dot-thumb:hover { opacity: 0.85; }
+.tg-dot-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
