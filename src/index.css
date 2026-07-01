@@ -12760,7 +12760,7 @@ section[id] {
 /* ── V2 Stacks ── */
 .v2-stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -12768,13 +12768,14 @@ section[id] {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 22px 22px 18px;
+  padding: 20px 22px 18px;
   background: var(--color-surface);
   border: 1px solid var(--color-border-soft);
   border-radius: 14px;
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  min-height: 190px;
 }
 
 .v2-stack-card:hover {
@@ -12783,25 +12784,34 @@ section[id] {
   transform: translateY(-1px);
 }
 
+.v2-stack-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .v2-stack-logos {
   display: flex;
-  margin-bottom: 6px;
+  gap: 8px;
 }
 
 .v2-stack-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--color-surface-soft);
-  border: 2px solid var(--color-surface);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-left: -10px;
 }
-.v2-stack-logo:first-child { margin-left: 0; }
+
+.v2-stack-bookmark {
+  color: var(--color-muted-light);
+  flex-shrink: 0;
+}
 
 .v2-stack-title {
   font-family: var(--font-brand);
@@ -12820,7 +12830,7 @@ section[id] {
   margin: 0;
   line-height: 1.5;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
@@ -12828,18 +12838,10 @@ section[id] {
 
 .v2-stack-meta {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
   font-family: var(--font-ui);
   font-size: 12px;
   color: var(--color-muted-light);
-  margin-top: 6px;
-  padding-top: 12px;
-  border-top: 1px solid var(--color-border-soft);
-}
-.v2-stack-meta span:last-child {
-  font-weight: 600;
-  color: var(--color-text);
 }
 
 /* ── V2 Posts ── */

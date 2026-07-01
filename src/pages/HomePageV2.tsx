@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Bookmark } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { setSeoTags, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -23,8 +23,8 @@ const FEATURED_SLUGS = [
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
+const STACK_PAGE_SIZE = 3; // 1 row × 3 cols — stacks carousel
 const MAX_CATEGORIES = 12;
-const FEATURED_STACKS = 4;
 const FEATURED_POSTS = 4;
 
 /* Fetch og_image_url for featured slugs */
@@ -108,6 +108,7 @@ export default function HomePageV2() {
 
   const [featuredPage, setFeaturedPage] = useState(0);
   const [newPage, setNewPage] = useState(0);
+  const [stackPage, setStackPage] = useState(0);
 
   useEffect(() => {
     setSeoTags({
@@ -154,9 +155,12 @@ export default function HomePageV2() {
       .slice(0, MAX_CATEGORIES);
   }, [tools, categories, lang]);
 
-  /* ── Stacks ── */
+  /* ── Stacks pagination ── */
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
-  const featuredStacks = STACKS.slice(0, FEATURED_STACKS);
+  const stackTotalPages = Math.ceil(STACKS.length / STACK_PAGE_SIZE);
+  const visibleStacks = STACKS.slice(stackPage * STACK_PAGE_SIZE, (stackPage + 1) * STACK_PAGE_SIZE);
+  const prevStackPage = useCallback(() => setStackPage((p) => Math.max(0, p - 1)), []);
+  const nextStackPage = useCallback(() => setStackPage((p) => Math.min(stackTotalPages - 1, p + 1)), [stackTotalPages]);
 
   /* ── Posts ── */
   const featuredPosts = posts.slice(0, FEATURED_POSTS);
@@ -282,35 +286,49 @@ export default function HomePageV2() {
             </div>
           </div>
 
-          {/* ══ 5. Stacks ══ */}
+          {/* ══ 5. Stacks — carousel 1×3 ══ */}
           <div style={{ marginTop: 56 }}>
-            <SectionHead
+            <FeaturedHead
               label={t("Stacks recommandées", "Recommended stacks")}
               to={`${prefix}/stacks`}
               linkLabel={t("Toutes les stacks", "All stacks")}
+              page={stackPage}
+              total={stackTotalPages}
+              onPrev={prevStackPage}
+              onNext={nextStackPage}
             />
             <div className="v2-stack-grid">
-              {featuredStacks.map((stack) => {
+              {visibleStacks.map((stack) => {
                 const stackTools = stack.tools.slice(0, 5).map((s) => bySlug.get(s.slug)).filter(Boolean);
                 return (
                   <Link key={stack.slug} to={`${prefix}/stacks/${stack.slug}`} className="v2-stack-card">
-                    <div className="v2-stack-logos">
-                      {stackTools.map((st) => (
-                        <div key={st!.id} className="v2-stack-logo">
-                          <ToolLogo tool={st as any} size={20} />
-                        </div>
-                      ))}
+                    <div className="v2-stack-top">
+                      <div className="v2-stack-logos">
+                        {stackTools.map((st) => (
+                          <div key={st!.id} className="v2-stack-logo">
+                            <ToolLogo tool={st as any} size={22} />
+                          </div>
+                        ))}
+                      </div>
+                      <Bookmark className="v2-stack-bookmark" style={{ width: 16, height: 16 }} />
                     </div>
                     <p className="v2-stack-title">{lang === "en" ? stack.titleEn : stack.title}</p>
                     <p className="v2-stack-sub">{lang === "en" ? stack.subtitleEn : stack.subtitle}</p>
                     <div className="v2-stack-meta">
                       <span>{stack.tools.length} {t("outils", "tools")}</span>
-                      <span>{stack.monthlyBudget}€/{t("mois", "mo")}</span>
                     </div>
                   </Link>
                 );
               })}
             </div>
+            {stackTotalPages > 1 && (
+              <div className="v2-feat-dots">
+                {Array.from({ length: stackTotalPages }).map((_, i) => (
+                  <button key={i} className={`v2-feat-dot${i === stackPage ? " v2-feat-dot--active" : ""}`}
+                    onClick={() => setStackPage(i)} aria-label={`Page ${i + 1}`} />
+                ))}
+              </div>
+            )}
           </div>
 
           {/* ══ 6. Guides ══ */}
