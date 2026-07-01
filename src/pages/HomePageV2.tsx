@@ -24,6 +24,7 @@ const FEATURED_SLUGS = [
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
 const STACK_PAGE_SIZE = 3; // 1 row × 3 cols — stacks carousel
+const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
 const MAX_CATEGORIES = 12;
 const FEATURED_POSTS = 4;
 
@@ -155,10 +156,11 @@ export default function HomePageV2() {
       .slice(0, MAX_CATEGORIES);
   }, [tools, categories, lang]);
 
-  /* ── Stacks pagination ── */
+  /* ── Stacks pagination (capped to STACK_MAX_PAGES screens) ── */
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
-  const stackTotalPages = Math.ceil(STACKS.length / STACK_PAGE_SIZE);
-  const visibleStacks = STACKS.slice(stackPage * STACK_PAGE_SIZE, (stackPage + 1) * STACK_PAGE_SIZE);
+  const stackTotalPages = Math.min(STACK_MAX_PAGES, Math.ceil(STACKS.length / STACK_PAGE_SIZE));
+  const cappedStacks = STACKS.slice(0, stackTotalPages * STACK_PAGE_SIZE);
+  const visibleStacks = cappedStacks.slice(stackPage * STACK_PAGE_SIZE, (stackPage + 1) * STACK_PAGE_SIZE);
   const prevStackPage = useCallback(() => setStackPage((p) => Math.max(0, p - 1)), []);
   const nextStackPage = useCallback(() => setStackPage((p) => Math.min(stackTotalPages - 1, p + 1)), [stackTotalPages]);
 
