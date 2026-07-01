@@ -4283,13 +4283,6 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
-  /* Featured card: span 2 cols on large screens */
-  @media (min-width: 1024px) {
-    .tc-grid--featured-first .tc-card--featured:first-child {
-      grid-column: span 2;
-    }
-  }
 }
 
 /* ─────────────────────────────────────────────
@@ -4626,33 +4619,13 @@
   }
 
   /* ── Header row (type label + pick badge, above the name) ──────────────── */
-  .tce-header-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-
-  .tce-type-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    line-height: 1;
-  }
-
-  .dark .tce-type-label {
-    color: hsl(var(--muted-foreground));
-  }
-
-  /* ToolTrim Pick — quiet dark pill */
+  /* ToolTrim Pick — quiet dark pill, only rendered when applicable */
   .tce-pick-badge {
     display: inline-flex;
     align-items: center;
     height: 20px;
     padding: 0 8px;
+    margin-bottom: 8px;
     background: var(--color-text);
     color: var(--color-surface);
     font-family: var(--font-ui);
@@ -4703,16 +4676,16 @@
 
   .tce-description {
     font-family: var(--font-ui);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.45;
     color: var(--color-muted);
-    margin: 20px 0 0;
+    margin: 12px 0 0;
     max-width: 90%;
-    /* Trim to 3 lines max */
+    /* Trim to 2 lines max — this is a browsing card, not the fiche */
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     overflow: hidden;
   }
 
@@ -4720,124 +4693,31 @@
     color: hsl(var(--muted-foreground));
   }
 
-  /* ── Score block ────────────────────────────── */
-  .tce-score-block {
-    border-top: 1px solid var(--color-border-soft);
-    border-bottom: 1px solid var(--color-border-soft);
-    padding: 18px 0;
-    margin: 24px 0 0;
-  }
-
-  .dark .tce-score-block {
-    border-top-color: hsl(var(--border));
-    border-bottom-color: hsl(var(--border));
-  }
-
-  .tce-score-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    margin: 0 0 8px;
-    line-height: 1;
-  }
-
-  .dark .tce-score-label {
-    color: hsl(var(--muted-foreground));
-  }
-
-  .tce-score-row {
+  /* ── Footer: price + CTA — single row, replaces the old fake
+     TOOLTRIM SCORE block and the redundant PLAN/MODÈLE/IA meta grid ── */
+  .tce-footer {
     display: flex;
-    align-items: baseline;
-    gap: 3px;
-    margin-bottom: 10px;
-  }
-
-  .tce-score-number {
-    font-family: var(--font-ui);
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-    color: var(--color-text);
-  }
-
-  .dark .tce-score-number {
-    color: hsl(var(--foreground));
-  }
-
-  .tce-score-denom {
-    font-family: var(--font-ui);
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: var(--color-muted-light);
-    padding-bottom: 2px; /* optical alignment with baseline */
-  }
-
-  .dark .tce-score-denom {
-    color: hsl(var(--muted-foreground));
-  }
-
-  .tce-verdict {
-    font-family: var(--font-ui);
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.35;
-    color: var(--color-text);
-    margin: 0;
-    /* First word can be accented blue by the caller with a <span> */
-  }
-
-  .dark .tce-verdict {
-    color: hsl(var(--foreground));
-  }
-
-  /* ── Metadata grid ──────────────────────────── */
-  .tce-meta {
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     border-top: 1px solid var(--color-border-soft);
     margin-top: 20px;
     padding-top: 16px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
   }
 
-  .dark .tce-meta {
+  .dark .tce-footer {
     border-top-color: hsl(var(--border));
   }
 
-  .tce-meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .tce-meta-label {
+  .tce-price {
     font-family: var(--font-ui);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    line-height: 1;
-  }
-
-  .dark .tce-meta-label {
-    color: hsl(var(--muted-foreground) / 0.7);
-  }
-
-  .tce-meta-value {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.2;
+    letter-spacing: -0.01em;
     color: var(--color-text);
   }
 
-  .dark .tce-meta-value {
+  .dark .tce-price {
     color: hsl(var(--foreground));
   }
 
@@ -4847,12 +4727,11 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-ui);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.02em;
     color: var(--color-text);
     text-decoration: none;
-    margin-top: 20px;
   }
 
   .dark .tce-cta {
