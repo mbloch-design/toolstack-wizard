@@ -13726,6 +13726,16 @@ section[id] {
   margin-top: 8px;
 }
 
+/* Same 1280px/48px system as .sk-container / .gi-container / .cix-container
+   / .tt-page-hero-inner — was a raw Tailwind "mx-auto max-w-7xl px-6"
+   (24px gutter) before, which didn't line up with the hero right above it
+   or with the equivalent body container on Stacks/Guides/Comparatifs. */
+.tt-catalog-container {
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  padding: 40px var(--layout-gutter, 48px);
+}
+
 .tt-catalog-toolbar {
   display: flex;
   align-items: center;

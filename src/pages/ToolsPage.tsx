@@ -143,7 +143,7 @@ const ToolsPage = () => {
       </section>
 
       {/* ══════════════ BODY ══════════════ */}
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <div className="tt-catalog-container">
         {/* ── Filter bar: quick pills for the primary facets ── */}
         <div className="tt-catalog-toolbar">
           <div className="tt-catalog-toolbar-filters">
