@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState, useCallback } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Bookmark } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { setSeoTags, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
@@ -118,14 +118,45 @@ export default function HomePageV2() {
   const [aiPage, setAiPage] = useState(0);
 
   useEffect(() => {
-    setSeoTags({
-      title: "ToolTrim V2 (test)",
-      description: "Page de test — non indexée.",
-      url: `${SEO_BASE}/${lang}/v2`,
-      locale: lang === "fr" ? "fr_FR" : "en_US",
+    const title = lang === "fr"
+      ? "ToolTrim — Auditer sa stack SaaS freelance"
+      : "ToolTrim — Audit your freelance SaaS stack";
+    const desc = lang === "fr"
+      ? "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
+      : "ToolTrim analyzes your SaaS stack based on your profile, budget, day rate and real usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
+    const url = `${SEO_BASE}/${lang}`;
+    setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    setHreflang(`/${lang}`);
+    setJsonLd("home-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "ToolTrim",
+      url: SEO_BASE,
+      description: desc,
     });
-    setNoindex();
-    return () => cleanupSeo([]);
+    setJsonLd("home-org-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "ToolTrim",
+      url: SEO_BASE,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SEO_BASE}/picto-logo.svg`,
+        width: 512,
+        height: 512,
+      },
+      description: "Stack audit tool for freelancers and solopreneurs. Independent, honest, no affiliate bias.",
+      foundingDate: "2024",
+      email: "contact@tooltrim.com",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "contact@tooltrim.com",
+        url: `${SEO_BASE}/fr/contact`,
+        availableLanguage: ["French", "English"],
+      },
+    });
+    return () => cleanupSeo(["home-jsonld", "home-org-jsonld"]);
   }, [lang]);
 
   /* ── Featured tools ── */

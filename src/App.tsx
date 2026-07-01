@@ -13,11 +13,11 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
-// Critical: loaded eagerly (FCP for HomePage; SSR + no lazy-chunk waterfall
-// for ToolDetailPage and ComparePage — React can't resolve a lazy() chunk
-// during renderToString, so SSR silently falls through to the Suspense
-// fallback for any route still lazy-loaded here).
-import HomePage from "@/pages/HomePage";
+// Critical: loaded eagerly (FCP for the homepage; SSR + no lazy-chunk
+// waterfall for ToolDetailPage and ComparePage — React can't resolve a
+// lazy() chunk during renderToString, so SSR silently falls through to
+// the Suspense fallback for any route still lazy-loaded here).
+import HomePageV2 from "@/pages/HomePageV2";
 import ToolDetailPage from "@/pages/ToolDetailPage";
 import ComparePage from "@/pages/ComparePage";
 
@@ -46,7 +46,6 @@ const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));
 const BackOfficePage = lazy(() => import("@/pages/BackOfficePage"));
-const HomePageV2 = lazy(() => import("@/pages/HomePageV2"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -184,7 +183,7 @@ export const AppRoutes = () => (
     <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
 
     <Route path="/:lang" element={<LangLayout />}>
-      <Route index element={<HomePage />} />
+      <Route index element={<HomePageV2 />} />
       <Route path="selector" element={<SelectorPage />} />
       <Route path="selector/results" element={<ResultsPage />} />
       <Route path="tools" element={<ToolsPage />} />
@@ -232,7 +231,7 @@ export const AppRoutes = () => (
       <Route path="audit-saas-gratuit" element={<AuditLanding />} />
       <Route path="free-saas-audit" element={<AuditLanding />} />
       <Route path="back-office" element={<BackOfficePage />} />
-      <Route path="v2" element={<HomePageV2 />} />
+      <Route path="v2" element={<RedirectV2ToHome />} />
     </Route>
     <Route path="*" element={<NotFound />} />
   </Routes>
@@ -321,6 +320,12 @@ function RedirectBlogToGuide() {
 function RedirectCategoryToFr() {
   const { slug } = useParams();
   return <Navigate to={`/fr/category/${slug}`} replace />;
+}
+
+/** /v2 was the hidden preview of the new homepage — now the real homepage, so redirect there */
+function RedirectV2ToHome() {
+  const { lang } = useParams();
+  return <Navigate to={`/${lang || "fr"}`} replace />;
 }
 
 export default App;
