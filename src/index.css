@@ -12457,7 +12457,6 @@ section[id] {
 
 .v2-catalog {
   padding: clamp(48px, 6vw, 88px) 0 clamp(64px, 8vw, 112px);
-  border-top: 1px solid var(--color-border);
 }
 
 /* Search bar */
