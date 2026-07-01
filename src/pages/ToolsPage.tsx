@@ -2,13 +2,14 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
-import { Bookmark, ChevronDown, Search, X } from "lucide-react";
+import { Bookmark, Search, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCard } from "@/components/ToolCard";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
+import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useStackPins } from "@/hooks/useStackPins";
 import type { Tool } from "@/data/types";
 
@@ -162,34 +163,25 @@ const ToolsPage = () => {
 
         {/* ── Filter bar: quick pills for the primary facets ── */}
         <div className="tt-filter-bar">
-          <div className="tt-filter-select-wrap">
-            <select
-              value={selectedCategory ?? "all"}
-              onChange={(e) => setSelectedCategory(e.target.value === "all" ? null : e.target.value)}
-              className="tt-filter-select"
-              aria-label={t("Catégorie", "Category") as string}
-            >
-              <option value="all">{t("Toutes les catégories", "All categories")}</option>
-              {sortedCategories.map((cat) => (
-                <option key={cat.id} value={cat.id}>{getCatLabel(cat)}</option>
-              ))}
-            </select>
-            <ChevronDown className="tt-filter-select-chevron" aria-hidden />
-          </div>
+          <FilterDropdown
+            label={t("Toutes les catégories", "All categories") as string}
+            allLabel={t("Toutes les catégories", "All categories") as string}
+            options={sortedCategories.map((cat) => ({ id: cat.id, label: getCatLabel(cat) as string }))}
+            value={selectedCategory ?? "all"}
+            onChange={(id) => setSelectedCategory(id === "all" ? null : id)}
+            searchPlaceholder={t("Rechercher une catégorie…", "Search categories…") as string}
+          />
 
-          <div className="tt-filter-select-wrap">
-            <select
-              value={priceFilter}
-              onChange={(e) => setPriceFilter(e.target.value as PriceFilter)}
-              className="tt-filter-select"
-              aria-label={t("Prix", "Price") as string}
-            >
-              <option value="all">{t("Payant + Gratuit", "Paid + Free")}</option>
-              <option value="free">{t("Gratuit seulement", "Free only")}</option>
-              <option value="paid">{t("Payant seulement", "Paid only")}</option>
-            </select>
-            <ChevronDown className="tt-filter-select-chevron" aria-hidden />
-          </div>
+          <FilterDropdown
+            label={t("Payant + Gratuit", "Paid + Free") as string}
+            allLabel={t("Payant + Gratuit", "Paid + Free") as string}
+            options={[
+              { id: "free", label: t("Gratuit seulement", "Free only") as string },
+              { id: "paid", label: t("Payant seulement", "Paid only") as string },
+            ]}
+            value={priceFilter}
+            onChange={(id) => setPriceFilter(id as PriceFilter)}
+          />
 
           <Link to={`${prefix}/panier`} className="tt-filter-stack-link tt-filter-bar-spacer">
             <Bookmark size={15} aria-hidden />

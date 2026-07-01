@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
-import { X, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { X, SlidersHorizontal } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
+import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
@@ -507,6 +509,8 @@ const StacksPage = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const panelRef = useRef<HTMLDivElement>(null);
+  const filtersRef = useRef<HTMLButtonElement>(null);
+  const [panelCoords, setPanelCoords] = useState({ top: 0, left: 0 });
 
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: getStackDerivedFields(stack) })), []);
@@ -585,12 +589,31 @@ const StacksPage = () => {
   useEffect(() => {
     if (!mobileOpen) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMobileOpen(false); };
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Node;
+      if (filtersRef.current?.contains(target) || panelRef.current?.contains(target)) return;
+      setMobileOpen(false);
+    };
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
+    document.addEventListener("pointerdown", onPointerDown);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      document.removeEventListener("pointerdown", onPointerDown);
     };
+  }, [mobileOpen]);
+
+  // Panel is portaled to document.body (the filter bar scrolls horizontally
+  // on narrow widths, which would otherwise clip an absolutely-positioned
+  // panel's vertical overflow) — position it with fixed coordinates computed
+  // from the trigger's own rect, clamped so it never spills off either edge.
+  useLayoutEffect(() => {
+    if (!mobileOpen || !filtersRef.current) return;
+    const rect = filtersRef.current.getBoundingClientRect();
+    const panelWidth = Math.min(720, window.innerWidth - 32);
+    let left = rect.left;
+    if (left + panelWidth > window.innerWidth - 16) left = window.innerWidth - 16 - panelWidth;
+    if (left < 16) left = 16;
+    setPanelCoords({ top: rect.bottom + 8, left });
   }, [mobileOpen]);
 
   const currentFilters = useMemo(() => ({
@@ -736,36 +759,62 @@ const StacksPage = () => {
               Niveau, Complexité, Type, Nb d'outils), reusing the same panel
               at every breakpoint instead of only on mobile. */}
           <div className="sk-mobile-trigger-row">
-            <div className="tt-filter-select-wrap">
-              <select
-                value={facetProfile}
-                onChange={(e) => handleProfileChange(e.target.value as StackFacetProfile)}
-                className="tt-filter-select"
-                aria-label={t("Profil", "Profile") as string}
-              >
-                {PROFILE_OPTIONS.map((opt) => (
-                  <option key={opt.id} value={opt.id}>{opt.id === "all" ? t("Tous les profils", "All profiles") : optionLabel(PROFILE_OPTIONS, opt.id, lang)}</option>
-                ))}
-              </select>
-              <ChevronDown className="tt-filter-select-chevron" aria-hidden />
-            </div>
-            <div className="tt-filter-select-wrap">
-              <select
-                value={facetBudget}
-                onChange={(e) => setFacetBudget(e.target.value as StackFacetBudget)}
-                className="tt-filter-select"
-                aria-label={t("Budget", "Budget") as string}
-              >
-                {BUDGET_OPTIONS.map((opt) => (
-                  <option key={opt.id} value={opt.id}>{opt.id === "all" ? t("Tous les budgets", "All budgets") : optionLabel(BUDGET_OPTIONS, opt.id, lang)}</option>
-                ))}
-              </select>
-              <ChevronDown className="tt-filter-select-chevron" aria-hidden />
-            </div>
-            <button type="button" onClick={() => setMobileOpen(true)} className="sk-mobile-trigger" aria-label={t("Ouvrir les filtres", "Open filters") as string}>
+            <FilterDropdown
+              label={t("Tous les profils", "All profiles") as string}
+              allLabel={t("Tous les profils", "All profiles") as string}
+              options={PROFILE_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(PROFILE_OPTIONS, opt.id, lang) }))}
+              value={facetProfile}
+              onChange={(id) => handleProfileChange(id as StackFacetProfile)}
+            />
+            <FilterDropdown
+              label={t("Tous les budgets", "All budgets") as string}
+              allLabel={t("Tous les budgets", "All budgets") as string}
+              options={BUDGET_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(BUDGET_OPTIONS, opt.id, lang) }))}
+              value={facetBudget}
+              onChange={(id) => setFacetBudget(id as StackFacetBudget)}
+            />
+            <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen}>
               <SlidersHorizontal size={15} aria-hidden />
               {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Plus de filtres", "More filters")}
             </button>
+            {mobileOpen && createPortal(
+              <div className="sk-filters-panel" role="dialog" aria-label={t("Filtres", "Filters") as string} ref={panelRef} style={{ position: "fixed", top: panelCoords.top, left: panelCoords.left }}>
+                <div className="sk-mobile-panel-header">
+                  <span className="sk-mobile-panel-title">
+                    {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Filtres", "Filters")}
+                  </span>
+                  <button type="button" className="sk-mobile-panel-close" onClick={() => setMobileOpen(false)} aria-label={t("Fermer", "Close") as string}>
+                    <X size={20} aria-hidden />
+                  </button>
+                </div>
+                <div className="sk-mobile-panel-body">
+                  <SidebarContent
+                    lang={lang}
+                    facetProfile={facetProfile}
+                    facetSpecialties={facetSpecialties}
+                    facetObjectives={facetObjectives}
+                    facetBudget={facetBudget}
+                    facetLevel={facetLevel}
+                    facetComplexity={facetComplexity}
+                    facetTypes={facetTypes}
+                    facetToolCount={facetToolCount}
+                    subProfileOptions={subProfileOptions}
+                    setFacetProfile={handleProfileChange}
+                    toggleFacetSpecialty={toggleFacetSpecialty}
+                    toggleFacetObjective={toggleFacetObjective}
+                    setFacetBudget={setFacetBudget}
+                    setFacetLevel={setFacetLevel}
+                    setFacetComplexity={setFacetComplexity}
+                    toggleFacetType={toggleFacetType}
+                    setFacetToolCount={setFacetToolCount}
+                    onReset={resetFacets}
+                    isFiltered={isFiltered}
+                    disabled={disabledFacetIds}
+                  />
+                </div>
+              </div>,
+              document.body,
+            )}
             <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t("Rechercher…", "Search…") as string} className="sk-search-input" />
           </div>
 
@@ -834,50 +883,6 @@ const StacksPage = () => {
           </div>
         </div>
       </section>
-
-      {mobileOpen && (
-        <div className="sk-mobile-panel" role="dialog" aria-modal="true" aria-label={t("Filtres", "Filters") as string} ref={panelRef}>
-          <div className="sk-mobile-panel-header">
-            <span className="sk-mobile-panel-title">
-              {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Filtres", "Filters")}
-            </span>
-            <button type="button" className="sk-mobile-panel-close" onClick={() => setMobileOpen(false)} aria-label={t("Fermer", "Close") as string}>
-              <X size={20} aria-hidden />
-            </button>
-          </div>
-          <div className="sk-mobile-panel-body">
-            <SidebarContent
-              lang={lang}
-              facetProfile={facetProfile}
-              facetSpecialties={facetSpecialties}
-              facetObjectives={facetObjectives}
-              facetBudget={facetBudget}
-              facetLevel={facetLevel}
-              facetComplexity={facetComplexity}
-              facetTypes={facetTypes}
-              facetToolCount={facetToolCount}
-              subProfileOptions={subProfileOptions}
-              setFacetProfile={handleProfileChange}
-              toggleFacetSpecialty={toggleFacetSpecialty}
-              toggleFacetObjective={toggleFacetObjective}
-              setFacetBudget={setFacetBudget}
-              setFacetLevel={setFacetLevel}
-              setFacetComplexity={setFacetComplexity}
-              toggleFacetType={toggleFacetType}
-              setFacetToolCount={setFacetToolCount}
-              onReset={resetFacets}
-              isFiltered={isFiltered}
-              disabled={disabledFacetIds}
-            />
-          </div>
-          <div className="sk-mobile-panel-footer">
-            <button type="button" className="sk-mobile-panel-apply" onClick={() => setMobileOpen(false)}>
-              {t(`Voir les ${filteredStacks.length} stack${filteredStacks.length !== 1 ? "s" : ""}`, `See ${filteredStacks.length} stack${filteredStacks.length !== 1 ? "s" : ""}`)}
-            </button>
-            {isFiltered && <button type="button" className="sk-mobile-panel-reset" onClick={resetFacets}>{t("Réinitialiser", "Reset")}</button>}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
