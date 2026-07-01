@@ -711,22 +711,22 @@ const StacksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="tt-page-hero">
+      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--stacks">
         <div className="tt-page-hero-inner">
-          <div style={{ marginBottom: 14 }}>
-            <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
-          </div>
-          <span className="tt-page-hero-eyebrow">{t("Stacks types", "Stack templates")}</span>
-          <h1 className="tt-page-hero-title">{t("Trouve la stack adaptée à ton contexte.", "Find the stack that fits your context.")}</h1>
-          <p className="tt-page-hero-desc">
-            {t(
-              "Profil, niveau, budget, TJM, usages réels : ToolTrim classe les stacks selon ta situation, pas selon une liste générique d’outils.",
-              "Profile, level, budget, day rate, real usage: ToolTrim ranks stacks by your situation, not by a generic list of tools.",
-            )}
-          </p>
-          <div className="tt-page-hero-cta">
-            <Link to={`${prefix}/selector`} className="eh-cta-primary">{t("Auditer ma stack", "Audit my stack")} <span aria-hidden>→</span></Link>
-            <a href="#profils" className="eh-cta-secondary">{t("Explorer les profils", "Explore profiles")}</a>
+          <div className="tt-page-hero-band">
+            <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
+            <div className="tt-page-hero-content">
+              <div className="tt-page-hero-breadcrumb">
+                <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
+              </div>
+              <h1 className="tt-page-hero-title">{t("Trouver une stack claire.", "Find a clear stack.")}</h1>
+              <p className="tt-page-hero-desc">
+                {t(
+                  "Parcourez des stacks types pour comprendre quels outils servent vraiment selon un métier, un budget et un contexte.",
+                  "Browse stack templates to understand which tools really matter for a role, a budget and a context.",
+                )}
+              </p>
+            </div>
           </div>
         </div>
       </section>

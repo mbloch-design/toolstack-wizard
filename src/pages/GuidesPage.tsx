@@ -4,7 +4,7 @@ import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
-import EditorialHero from "@/components/EditorialHero";
+import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
@@ -232,89 +232,27 @@ const GuidesPage = () => {
     <div className="min-h-screen">
 
       {/* ══ 1. Hero ══════════════════════════════════════════════════════════ */}
-      <EditorialHero
-        breadcrumb={[{ label: t("Guides", "Guides") }]}
-        eyebrow={t("Ressources", "Resources")}
-        title={
-          <>
-            {t("Des guides pour mieux choisir.", "Guides to help you choose.")}
-            <br />
-            {t("Pas pour lire plus.", "Not to read more.")}
-          </>
-        }
-        description={t(
-          "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère.",
-          "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.",
-        )}
-        rightModule={
-          <div style={{ paddingTop: 4 }}>
-            <p style={{
-              fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-              marginBottom: 14,
-            }}>
-              {t("Index des guides", "Guide index")}
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {(lang === "fr"
-                ? [
-                    { filter: "all",       label: "Tous les guides" },
-                    { filter: "comparer",  label: "Comparatifs" },
-                    { filter: "remplacer", label: "Alternatives" },
-                    { filter: "ia",        label: "IA & Productivité" },
-                    { filter: "stack",     label: "Stacks commentées" },
-                    { filter: "freelance", label: "Freelance" },
-                  ]
-                : [
-                    { filter: "all",       label: "All guides" },
-                    { filter: "comparer",  label: "Comparisons" },
-                    { filter: "remplacer", label: "Alternatives" },
-                    { filter: "ia",        label: "AI & Productivity" },
-                    { filter: "stack",     label: "Annotated stacks" },
-                    { filter: "freelance", label: "Freelance" },
-                  ]
-              ).map(({ filter, label }) => (
-                <a
-                  key={label}
-                  href="#guides"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleFilterClick(filter);
-                  }}
-                  style={{
-                    display: "flex", alignItems: "center", justifyContent: "space-between",
-                    padding: "10px 14px",
-                    background: activeFilter === filter ? "var(--color-text)" : "var(--color-surface)",
-                    border: `1px solid ${activeFilter === filter ? "var(--color-text)" : "var(--color-border)"}`,
-                    borderRadius: 8,
-                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                    color: activeFilter === filter ? "var(--color-surface)" : "var(--color-text)",
-                    textDecoration: "none", cursor: "pointer",
-                    transition: "all 160ms ease-out",
-                  }}
-                  onMouseEnter={e => { if (activeFilter !== filter) (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                  onMouseLeave={e => { if (activeFilter !== filter) (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
-                >
-                  <span>{label}</span>
-                  <ArrowRight style={{ width: 12, height: 12, color: activeFilter === filter ? "var(--color-surface)" : "var(--color-muted-light)", flexShrink: 0 }} />
-                </a>
-              ))}
+      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--guides">
+        <div className="tt-page-hero-inner">
+          <div className="tt-page-hero-band">
+            <img src="/hero/guides-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
+            <div className="tt-page-hero-content">
+              <div className="tt-page-hero-breadcrumb">
+                <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
+              </div>
+              <h1 className="tt-page-hero-title">
+                {t("Mieux choisir ses outils.", "Choose tools with less noise.")}
+              </h1>
+              <p className="tt-page-hero-desc">
+                {t(
+                  "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère.",
+                  "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.",
+                )}
+              </p>
             </div>
           </div>
-        }
-      >
-        {/* Metadata tags below description */}
-        <div className="gi-hero-tags">
-          {[
-            t("Guides pratiques", "Practical guides"),
-            t("Stacks commentées", "Annotated stacks"),
-            t("Alternatives", "Alternatives"),
-            t("Prix vérifiés", "Verified pricing"),
-          ].map((tag) => (
-            <span key={tag} className="gi-hero-tag">{tag}</span>
-          ))}
         </div>
-      </EditorialHero>
+      </section>
 
       {/* ══ 2. Featured ══════════════════════════════════════════════════════ */}
       {!loading && featured && (

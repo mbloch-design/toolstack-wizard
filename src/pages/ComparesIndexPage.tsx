@@ -195,67 +195,26 @@ const ComparesIndexPage = () => {
   return (
     <div className="min-h-screen bg-background">
 
-      {/* ── Hero — shared tt-page-hero pattern ─────────────────────────── */}
-      <section className="tt-page-hero">
+      {/* ── Hero — shared banner pattern ─────────────────────────── */}
+      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--compares">
         <div className="tt-page-hero-inner">
-          <div style={{ marginBottom: 14 }}>
-            <Breadcrumb items={[{ label: t("Comparatifs", "Comparisons") }]} />
-          </div>
-
-          <span className="tt-page-hero-eyebrow">{t("Comparatifs", "Comparisons")}</span>
-          <h1 className="tt-page-hero-title">
-            {t("Comparer les outils.", "Compare the tools.")}<br />
-            {t("Choisir sans empiler.", "Choose without stacking.")}
-          </h1>
-          <p className="tt-page-hero-desc">
-            {t(
-              "Des comparatifs clairs pour comprendre les différences, les limites et le bon choix selon ton usage.",
-              "Clear comparisons to understand differences, limitations and the right choice for your use case.",
-            )}
-          </p>
-
-          {/* Single search field — filters the listing below in real time */}
-          <div className="tt-page-hero-search">
-            <label htmlFor="cix-search-input" className="tt-page-hero-search-label">
-              {t("Filtrer les comparatifs", "Filter comparisons")}
-            </label>
-            <div className="tt-page-hero-search-field">
-              <input
-                id="cix-search-input"
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={t("Ex. Notion, ChatGPT, Figma…", "E.g. Notion, ChatGPT, Figma…")}
-                className="tt-page-hero-search-input"
-                autoComplete="off"
-              />
-              {query && (
-                <button
-                  type="button"
-                  onClick={() => setQuery("")}
-                  className="tt-page-hero-search-clear"
-                  aria-label={t("Effacer", "Clear")}
-                >
-                  ×
-                </button>
-              )}
-            </div>
-
-            {/* Popular suggestions — quick entry points */}
-            <div className="cix-popular">
-              <span className="cix-popular-label">{t("POPULAIRES", "POPULAR")}</span>
-              {POPULAR_SUGGESTIONS.map((s) => (
-                <Link
-                  key={s.slugPair}
-                  to={`${prefix}/comparatif/${s.slugPair}`}
-                  className="cix-suggestion-chip"
-                >
-                  {s.label}
-                </Link>
-              ))}
+          <div className="tt-page-hero-band">
+            <img src="/hero/compares-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
+            <div className="tt-page-hero-content">
+              <div className="tt-page-hero-breadcrumb">
+                <Breadcrumb items={[{ label: t("Comparatifs", "Comparisons") }]} />
+              </div>
+              <h1 className="tt-page-hero-title">
+                {t("Comparer sans empiler.", "Compare without stacking.")}
+              </h1>
+              <p className="tt-page-hero-desc">
+                {t(
+                  "Des comparatifs clairs pour comprendre les différences, les limites et le bon choix selon votre usage.",
+                  "Clear comparisons to understand differences, limitations and the right choice for your use case.",
+                )}
+              </p>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -273,6 +232,44 @@ const ComparesIndexPage = () => {
             <span className="cix-listing-count">
               {filteredComparisons.length}&nbsp;{t("comparatifs", "comparisons")}
             </span>
+          </div>
+
+          <div className="cix-search-panel">
+            <div className="cix-search-field">
+              <input
+                id="cix-search-input"
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t("Filtrer par outil, ex. Notion, Figma…", "Filter by tool, e.g. Notion, Figma…")}
+                className="cix-search-input"
+                autoComplete="off"
+                aria-label={t("Filtrer les comparatifs", "Filter comparisons")}
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="cix-search-clear"
+                  aria-label={t("Effacer", "Clear")}
+                >
+                  ×
+                </button>
+              )}
+            </div>
+
+            <div className="cix-popular">
+              <span className="cix-popular-label">{t("Populaires", "Popular")}</span>
+              {POPULAR_SUGGESTIONS.map((s) => (
+                <Link
+                  key={s.slugPair}
+                  to={`${prefix}/comparatif/${s.slugPair}`}
+                  className="cix-suggestion-chip"
+                >
+                  {s.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Category filters */}

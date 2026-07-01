@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
-import { Bookmark, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
@@ -10,7 +9,6 @@ import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCard } from "@/components/ToolCard";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import FilterDropdown from "@/components/filters/FilterDropdown";
-import { useStackPins } from "@/hooks/useStackPins";
 import type { Tool } from "@/data/types";
 
 const TOOLS_PER_PAGE = 40;
@@ -35,7 +33,8 @@ const ToolsPage = () => {
   const [sort, setSort] = useState<SortKey>("popular");
   const [priceFilter, setPriceFilter] = useState<PriceFilter>("all");
   const [visibleCount, setVisibleCount] = useState(TOOLS_PER_PAGE);
-  const { state: stackPinsState } = useStackPins();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -110,49 +109,34 @@ const ToolsPage = () => {
     t(stripLeadingEmoji(cat.name, cat.id), stripLeadingEmoji(cat.nameEn, stripLeadingEmoji(cat.name, cat.id)));
 
   const isFiltering = !!(search || selectedCategory || priceFilter !== "all");
+  const isSearchExpanded = isSearchOpen || search.length > 0;
+  const resultLabel = lang === "fr"
+    ? `${filtered.length} outil${filtered.length > 1 ? "s" : ""}`
+    : `Showing ${filtered.length} ${filtered.length === 1 ? "tool" : "tools"}`;
+
+  useEffect(() => {
+    if (isSearchExpanded) searchInputRef.current?.focus();
+  }, [isSearchExpanded]);
 
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ══════════════ HERO — shared tt-page-hero pattern ══════════════ */}
-      <section className="tt-page-hero">
+      {/* ══════════════ HERO — shared banner pattern ══════════════ */}
+      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--tools">
         <div className="tt-page-hero-inner">
-          <div style={{ marginBottom: 14 }}>
-            <Breadcrumb items={[{ label: t("Catalogue", "Catalog") }]} />
-          </div>
-          <span className="tt-page-hero-eyebrow">{t("Catalogue", "Catalog")}</span>
-          <h1 className="tt-page-hero-title">{t("Trouver les bons outils.", "Find the right tools.")}</h1>
-          <p className="tt-page-hero-desc">
-            {t(
-              "Le catalogue ToolTrim : chaque outil noté sur son contexte réel, pas sur sa liste de fonctionnalités.",
-              "The ToolTrim catalog: each tool rated on its real context, not on its feature list.",
-            )}
-          </p>
-
-          <div className="tt-page-hero-search">
-            <label htmlFor="tools-search-input" className="tt-page-hero-search-label">
-              {t("Rechercher un outil", "Search a tool")}
-            </label>
-            <div className="tt-page-hero-search-field">
-              <input
-                id="tools-search-input"
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder={t("Ex. Notion, Figma, ChatGPT…", "E.g. Notion, Figma, ChatGPT…")}
-                className="tt-page-hero-search-input"
-                autoComplete="off"
-              />
-              {search && (
-                <button
-                  type="button"
-                  onClick={() => setSearch("")}
-                  className="tt-page-hero-search-clear"
-                  aria-label={t("Effacer", "Clear")}
-                >
-                  ×
-                </button>
-              )}
+          <div className="tt-page-hero-band">
+            <img src="/hero/tools-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
+            <div className="tt-page-hero-content">
+              <div className="tt-page-hero-breadcrumb">
+                <Breadcrumb items={[{ label: t("Catalogue", "Catalog") }]} />
+              </div>
+              <h1 className="tt-page-hero-title">{t("Trouver les bons outils.", "Find the right tools.")}</h1>
+              <p className="tt-page-hero-desc">
+                {t(
+                  "Explorez le catalogue ToolTrim et mettez de côté les outils utiles pour composer votre stack.",
+                  "Explore the ToolTrim catalog and save useful tools to compose your stack.",
+                )}
+              </p>
             </div>
           </div>
         </div>
@@ -160,33 +144,92 @@ const ToolsPage = () => {
 
       {/* ══════════════ BODY ══════════════ */}
       <div className="mx-auto max-w-7xl px-6 py-10">
-
         {/* ── Filter bar: quick pills for the primary facets ── */}
-        <div className="tt-filter-bar">
-          <FilterDropdown
-            label={t("Toutes les catégories", "All categories") as string}
-            allLabel={t("Toutes les catégories", "All categories") as string}
-            options={sortedCategories.map((cat) => ({ id: cat.id, label: getCatLabel(cat) as string }))}
-            value={selectedCategory ?? "all"}
-            onChange={(id) => setSelectedCategory(id === "all" ? null : id)}
-            searchPlaceholder={t("Rechercher une catégorie…", "Search categories…") as string}
-          />
+        <div className="tt-catalog-toolbar">
+          <div className="tt-catalog-toolbar-filters">
+            <FilterDropdown
+              label={t("Catégorie", "Category") as string}
+              allLabel={t("Toutes les catégories", "All categories") as string}
+              options={sortedCategories.map((cat) => ({ id: cat.id, label: getCatLabel(cat) as string }))}
+              value={selectedCategory ?? "all"}
+              onChange={(id) => setSelectedCategory(id === "all" ? null : id)}
+              searchPlaceholder={t("Rechercher une catégorie…", "Search categories…") as string}
+            />
 
-          <FilterDropdown
-            label={t("Payant + Gratuit", "Paid + Free") as string}
-            allLabel={t("Payant + Gratuit", "Paid + Free") as string}
-            options={[
-              { id: "free", label: t("Gratuit seulement", "Free only") as string },
-              { id: "paid", label: t("Payant seulement", "Paid only") as string },
-            ]}
-            value={priceFilter}
-            onChange={(id) => setPriceFilter(id as PriceFilter)}
-          />
+            <FilterDropdown
+              label={t("Prix", "Tools") as string}
+              allLabel={t("Tous les prix", "All tools") as string}
+              options={[
+                { id: "free", label: t("Gratuit seulement", "Free only") as string },
+                { id: "paid", label: t("Payant seulement", "Paid only") as string },
+              ]}
+              value={priceFilter}
+              onChange={(id) => setPriceFilter(id as PriceFilter)}
+            />
 
-          <Link to={`${prefix}/panier`} className="tt-filter-stack-link tt-filter-bar-spacer">
-            <Bookmark size={15} aria-hidden />
-            {t("Ma stack", "My stack")} · {stackPinsState.pinnedToolSlugs.length}
-          </Link>
+            <div className={`tt-catalog-inline-search${isSearchExpanded ? " tt-catalog-inline-search--open" : ""}`}>
+              {isSearchExpanded ? (
+                <div className="tt-catalog-inline-search-field">
+                  <Search size={17} aria-hidden />
+                  <input
+                    ref={searchInputRef}
+                    id="tools-search-input"
+                    type="search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    onBlur={() => {
+                      if (!search) setIsSearchOpen(false);
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === "Escape" && !search) setIsSearchOpen(false);
+                    }}
+                    placeholder={t("Rechercher", "Search") as string}
+                    className="tt-catalog-inline-search-input"
+                    autoComplete="off"
+                  />
+                  {search && (
+                    <button
+                      type="button"
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => {
+                        setSearch("");
+                        setIsSearchOpen(false);
+                      }}
+                      className="tt-catalog-inline-search-clear"
+                      aria-label={t("Effacer", "Clear") as string}
+                    >
+                      <X size={15} aria-hidden />
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  className="tt-catalog-inline-search-button"
+                  onClick={() => setIsSearchOpen(true)}
+                >
+                  <Search size={17} aria-hidden />
+                  <span>{t("Rechercher", "Search")}</span>
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="tt-catalog-toolbar-meta">
+            <span>{resultLabel}</span>
+            <span className="tt-catalog-toolbar-divider" aria-hidden />
+            <select
+              className="tt-catalog-sort-select"
+              value={sort}
+              onChange={(e) => setSort(e.target.value as SortKey)}
+              aria-label={t("Trier par", "Sort by") as string}
+            >
+              <option value="popular">{t("Populaire", "Latest")}</option>
+              <option value="name">{t("A → Z", "A → Z")}</option>
+              <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
+              <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
+            </select>
+          </div>
         </div>
 
         {/* ── Section 1: Noteworthy (only when not filtering) ── */}
@@ -220,23 +263,6 @@ const ToolsPage = () => {
 
         {/* ── Section 2: All apps ── */}
         <section className={!isFiltering && noteworthy.length > 0 ? "border-t border-border/50 pt-10" : ""}>
-          <div className="sk-results-header" style={{ marginBottom: 20 }}>
-            <span className="sk-results-count">
-              {isFiltering
-                ? `${filtered.length} ${t("résultat", "result")}${filtered.length !== 1 ? "s" : ""}`
-                : `${filtered.length} ${t("outils", "tools")}`}
-            </span>
-            <div className="sk-results-sort">
-              <span className="gi-sort-label">{t("Trier par", "Sort by")}</span>
-              <select className="gi-sort-select" value={sort} onChange={e => setSort(e.target.value as SortKey)} aria-label={t("Trier par", "Sort by") as string}>
-                <option value="popular">{t("Populaire", "Popular")}</option>
-                <option value="name">{t("A → Z", "A → Z")}</option>
-                <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
-                <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
-              </select>
-            </div>
-          </div>
-
           {filtered.length === 0 ? (
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed py-16 text-center" style={{ borderColor: "hsl(var(--border))" }}>
               <Search className="mx-auto h-8 w-8" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }} />
