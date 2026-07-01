@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
+/**
+ * Dark mode is disabled site-wide — always resolves to "light" and never
+ * writes a "dark" class to <html>, regardless of stored preference or
+ * system color-scheme. toggle/setTheme are kept as no-ops so callers
+ * (Navbar's theme switch, if still wired) don't need special-casing.
+ */
 export function useTheme() {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
-    if (typeof window === "undefined") return "light";
-    const stored = localStorage.getItem("theme");
-    if (stored === "dark" || stored === "light") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  });
-
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    root.classList.remove("dark");
+    root.classList.add("light");
+    localStorage.removeItem("theme");
+  }, []);
 
-  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
-
-  return { theme, setTheme, toggle };
+  return { theme: "light" as const, setTheme: () => {}, toggle: () => {} };
 }

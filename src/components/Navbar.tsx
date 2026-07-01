@@ -4,11 +4,9 @@ import {
   BookOpen,
   ChevronDown,
   Layers,
-  Moon,
   Scale,
   Search,
   Bookmark,
-  Sun,
   Tag,
   User,
   Wrench,
@@ -16,7 +14,6 @@ import {
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
-import { useTheme } from "@/hooks/useTheme";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { SearchModal } from "@/components/SearchModal";
 
@@ -327,7 +324,6 @@ const Navbar = () => {
   const { t, prefix, lang } = useLang();
   const location = useLocation();
   const otherLang = lang === "fr" ? "en" : "fr";
-  const { theme, toggle: toggleTheme } = useTheme();
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = cartCount > 0
@@ -510,8 +506,6 @@ const Navbar = () => {
           activeSection={activeSection}
           onSectionChange={setActiveSection}
           onClose={() => setPanelOpen(false)}
-          theme={theme}
-          onToggleTheme={toggleTheme}
           languageHref={languageHref}
           otherLang={otherLang}
           headerHeight={HEADER_H}
@@ -545,8 +539,6 @@ function EditoralPanel({
   activeSection,
   onSectionChange,
   onClose,
-  theme,
-  onToggleTheme,
   languageHref,
   otherLang,
   headerHeight,
@@ -559,8 +551,6 @@ function EditoralPanel({
   activeSection: string;
   onSectionChange: (s: string) => void;
   onClose: () => void;
-  theme: string;
-  onToggleTheme: () => void;
   languageHref: string;
   otherLang: string;
   headerHeight: number;
@@ -627,7 +617,6 @@ function EditoralPanel({
           {/* Footer controls — hidden on mobile via .panel-rail-footer */}
           <div className="mt-auto pt-6 flex flex-col gap-3 panel-rail-footer">
             <div className="flex items-center gap-2">
-              <ThemeToggle theme={theme} onClick={onToggleTheme} />
               <a
                 href={languageHref}
                 hrefLang={otherLang}
@@ -697,42 +686,6 @@ function MenuLines() {
       <line x1="0" y1="1" x2="15" y2="1" stroke="currentColor" strokeWidth="1.4" />
       <line x1="0" y1="9" x2="15" y2="9" stroke="currentColor" strokeWidth="1.4" />
     </svg>
-  );
-}
-
-function ThemeToggle({ theme, onClick }: { theme: string; onClick: () => void }) {
-  return (
-    <button
-      onClick={onClick}
-      aria-label="Toggle theme"
-      className="relative rounded-full border border-border transition-colors hover:border-foreground/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-      style={{
-        width: 44,
-        height: 24,
-        padding: 3,
-        background: theme === "dark" ? "hsl(var(--primary) / 0.12)" : "hsl(var(--muted) / 0.6)",
-      }}
-    >
-      <Sun
-        className="absolute"
-        style={{ left: 5, top: "50%", transform: "translateY(-50%)", width: 10, height: 10,
-          color: theme === "dark" ? "hsl(var(--muted-foreground) / 0.3)" : "hsl(var(--foreground) / 0.5)" }}
-      />
-      <Moon
-        className="absolute"
-        style={{ right: 5, top: "50%", transform: "translateY(-50%)", width: 10, height: 10,
-          color: theme === "dark" ? "hsl(var(--primary))" : "hsl(var(--muted-foreground) / 0.3)" }}
-      />
-      <div
-        className="absolute top-[3px] rounded-full bg-background"
-        style={{
-          width: 18, height: 18,
-          left: theme === "dark" ? 23 : 3,
-          transition: "left 200ms cubic-bezier(0.4,0,0.2,1)",
-          boxShadow: "0 1px 3px hsl(0 0% 0% / 0.15)",
-        }}
-      />
-    </button>
   );
 }
 

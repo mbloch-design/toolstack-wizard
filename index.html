@@ -1,24 +1,17 @@
 <!doctype html>
-<html lang="fr" class="dark">
+<html lang="fr" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Theme is set synchronously, before first paint, to match
-         useTheme.ts's logic exactly — without this, the static "dark"
-         default below briefly paints (now showing real SSR'd content,
-         not just a loading spinner) before React mounts and the
-         useEffect in useTheme.ts corrects it, causing a visible flash. -->
+    <!-- Dark mode is disabled site-wide (see useTheme.ts) — the "light"
+         class above is the permanent default. This script just clears any
+         stale "dark" value a returning visitor's browser may still have in
+         localStorage from before dark mode was turned off, so it can't
+         resurface. -->
     <script>
       (function () {
-        try {
-          var stored = localStorage.getItem("theme");
-          var theme = stored === "dark" || stored === "light"
-            ? stored
-            : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-          document.documentElement.classList.remove("light", "dark");
-          document.documentElement.classList.add(theme);
-        } catch (e) {}
+        try { localStorage.removeItem("theme"); } catch (e) {}
       })();
     </script>
 
