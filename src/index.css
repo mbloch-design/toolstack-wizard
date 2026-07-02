@@ -15154,128 +15154,153 @@ section[id] {
   color: var(--color-muted-light);
 }
 
-/* ── V2 Posts — editorial list, not another card grid ──
-   Lead article gets real hierarchy (bigger title + excerpt); the rest
-   are compact dated rows. Same hairline-divider language as the
-   Comparatifs index (.cix-list) for cross-page consistency. */
-.v2-post-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 2px solid var(--color-border-strong);
-}
-
-.v2-post-item {
-  border-bottom: 1px solid var(--color-border-soft);
-}
-
-.v2-post-row {
+/* ── V2 Posts — real cards, lead card given more weight so the
+   grid isn't four identical boxes. Accent bar + hover lift instead of
+   a photo, since guide posts don't carry a cover image. */
+.v2-post-grid {
   display: grid;
-  grid-template-columns: 210px 1fr auto;
-  align-items: baseline;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 20px;
-  padding: 18px 4px;
+}
+
+.v2-post-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 14px;
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
-  border-radius: 4px;
-  transition: background-color 0.2s ease-out;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.25s ease-out;
 }
 
-.v2-post-row:hover {
-  background-color: var(--color-surface-soft);
+.v2-post-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--color-primary, #1E4FCC),
+    color-mix(in oklch, var(--color-primary, #1E4FCC) 35%, transparent));
 }
 
-.v2-post-row-meta {
+.v2-post-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border);
+  box-shadow: 0 20px 32px -18px rgba(0, 0, 0, 0.22);
+}
+
+.v2-post-card--lead {
+  grid-column: span 2;
+  grid-row: span 1;
+  padding: 30px 28px 26px;
+}
+
+.v2-post-card-top {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-width: 0;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
-.v2-post-row-cat {
+.v2-post-card-cat {
+  display: inline-flex;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--color-primary, #1E4FCC) 10%, transparent);
   font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-primary, var(--color-text));
+  color: var(--color-primary, #1E4FCC);
   white-space: nowrap;
 }
 
-.v2-post-row-date {
+.v2-post-card-date {
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--color-muted-light);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.v2-post-row-title {
+.v2-post-card-title {
   margin: 0;
   font-family: var(--font-brand);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.32;
   color: var(--color-text-strong);
-  line-height: 1.35;
   transition: color 0.15s;
 }
 
-.v2-post-row:hover .v2-post-row-title {
-  color: var(--color-primary, var(--color-text));
-}
-
-.v2-post-row-excerpt {
-  display: none;
-}
-
-.v2-post-row-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-muted-light);
-  white-space: nowrap;
-}
-
-.v2-post-row:hover .v2-post-row-cta { color: var(--color-text); }
-
-/* Lead row: full-width stacked layout with real hierarchy */
-.v2-post-row--lead {
-  display: block;
-  padding: 26px 4px 30px;
-}
-.v2-post-row--lead .v2-post-row-meta { margin-bottom: 10px; }
-.v2-post-row--lead .v2-post-row-title {
-  font-family: var(--font-brand);
-  font-size: clamp(1.2rem, 2.1vw, 1.5rem);
-  font-weight: 600;
+.v2-post-card--lead .v2-post-card-title {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   letter-spacing: -0.02em;
-  line-height: 1.2;
-  max-width: 760px;
+  line-height: 1.22;
 }
-.v2-post-row--lead .v2-post-row-excerpt {
-  display: block;
+
+.v2-post-card:hover .v2-post-card-title {
+  color: var(--color-primary, #1E4FCC);
+}
+
+.v2-post-card-excerpt {
   margin: 10px 0 0;
-  max-width: 640px;
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--color-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.v2-post-row--lead .v2-post-row-cta {
-  margin-top: 14px;
+
+.v2-post-card--lead .v2-post-card-excerpt {
+  font-size: 14px;
+  -webkit-line-clamp: 2;
+  max-width: 560px;
+}
+
+.v2-post-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 16px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
   color: var(--color-muted);
+}
+
+.v2-post-card-cta svg {
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.v2-post-card:hover .v2-post-card-cta {
+  color: var(--color-primary, #1E4FCC);
+}
+
+.v2-post-card:hover .v2-post-card-cta svg {
+  transform: translateX(3px);
 }
 
 @media (max-width: 860px) {
   .v2-feat-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-new-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-ai-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2-post-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2-post-card--lead { grid-column: span 2; }
 }
 @media (max-width: 640px) {
   .v2-container { padding: 0 20px; }
@@ -15284,8 +15309,8 @@ section[id] {
   .v2-new-grid { grid-template-columns: repeat(1, 1fr); }
   .v2-ai-grid { grid-template-columns: repeat(1, 1fr); }
   .v2-stack-grid { grid-template-columns: 1fr; }
-  .v2-post-row { grid-template-columns: 1fr; gap: 6px; }
-  .v2-post-row-cta { display: none; }
+  .v2-post-grid { grid-template-columns: 1fr; }
+  .v2-post-card--lead { grid-column: span 1; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

@@ -404,36 +404,35 @@ export default function HomePageV2() {
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
               />
-              <ul className="v2-post-list" role="list">
+              <div className="v2-post-grid">
                 {featuredPosts.map((post, i) => {
                   const isLead = i === 0;
                   const dateLabel = post.date
                     ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { year: "numeric", month: "short", day: "numeric" })
                     : "";
                   return (
-                    <li key={post.slug} className="v2-post-item">
-                      <Link
-                        to={`${prefix}/guide/${post.slug}`}
-                        className={`v2-post-row${isLead ? " v2-post-row--lead" : ""}`}
-                      >
-                        <div className="v2-post-row-meta">
-                          {post.category && <span className="v2-post-row-cat">{post.category}</span>}
-                          <span className="v2-post-row-date">
-                            {dateLabel}{post.readTime ? ` · ${post.readTime}` : ""}
-                          </span>
-                        </div>
-                        <p className="v2-post-row-title">{post.title}</p>
-                        {isLead && post.excerpt && (
-                          <p className="v2-post-row-excerpt">{post.excerpt}</p>
-                        )}
-                        <span className="v2-post-row-cta">
-                          {t("Lire", "Read")} <ArrowRight style={{ width: 12, height: 12 }} />
+                    <Link
+                      key={post.slug}
+                      to={`${prefix}/guide/${post.slug}`}
+                      className={`v2-post-card${isLead ? " v2-post-card--lead" : ""}`}
+                    >
+                      <div className="v2-post-card-top">
+                        {post.category && <span className="v2-post-card-cat">{post.category}</span>}
+                        <span className="v2-post-card-date">
+                          {dateLabel}{post.readTime ? ` · ${post.readTime}` : ""}
                         </span>
-                      </Link>
-                    </li>
+                      </div>
+                      <p className="v2-post-card-title">{post.title}</p>
+                      {post.excerpt && (
+                        <p className="v2-post-card-excerpt">{post.excerpt}</p>
+                      )}
+                      <span className="v2-post-card-cta">
+                        {t("Lire", "Read")} <ArrowRight style={{ width: 13, height: 13 }} />
+                      </span>
+                    </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           )}
 
