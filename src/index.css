@@ -15429,7 +15429,7 @@ section[id] {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--color-bg);
+  background: var(--color-surface);
 }
 
 .asv2-topbar {
@@ -15443,7 +15443,6 @@ section[id] {
   flex-shrink: 0;
   padding: 0 28px 0 0;
   background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border-soft);
 }
 
 .asv2-logo {
@@ -15572,6 +15571,8 @@ section[id] {
 .asv2-content {
   flex: 1;
   min-width: 0;
+  background: var(--color-bg);
+  border-top-left-radius: 24px;
 }
 
 @media (max-width: 640px) {
