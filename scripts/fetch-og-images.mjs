@@ -42,6 +42,7 @@ const SERVICE_KEY = pick("SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_SERVICE_KEY", "S
 
 /* ── args ── */
 const APPLY  = process.argv.includes("--apply");
+const RETRY_MISS = process.argv.includes("--retry-miss");
 const LIMIT  = parseInt(process.argv.find((a) => a.startsWith("--limit="))?.split("=")[1] ?? "9999");
 const SINGLE = process.argv.find((a) => a.startsWith("--slug="))?.split("=")[1];
 const ONLY   = process.argv.find((a) => a.startsWith("--only="))?.split("=")[1]?.split(",");
@@ -76,12 +77,22 @@ async function fetchOgImage(url) {
     clearTimeout(timer);
     if (!res.ok) return null;
     const html = await res.text();
+    // Some sites (Next.js head managers, mostly) emit og:image under name=
+    // instead of property=, which the OG spec doesn't technically allow but
+    // browsers/crawlers accept anyway — so we match both.
     const match =
       html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
       html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ||
+      html.match(/<meta[^>]+name=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']og:image["']/i) ||
       html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ||
       html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
-    return match?.[1] ?? null;
+    if (!match?.[1]) return null;
+    try {
+      return new URL(match[1], url).href;
+    } catch {
+      return match[1];
+    }
   } catch {
     return null;
   }
@@ -93,6 +104,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 /* ── load cache ── */
 let cache = {};
 try { cache = JSON.parse(readFileSync(CACHE, "utf8")); } catch { /* first run */ }
+if (RETRY_MISS) {
+  for (const slug of Object.keys(cache)) {
+    if (cache[slug] === "") delete cache[slug];
+  }
+}
 
 /* ── main ── */
 let list = tools.filter((t) => {
