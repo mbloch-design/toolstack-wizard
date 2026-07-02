@@ -10,15 +10,6 @@ import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import { STACKS } from "@/data/stacks";
 import { supabase } from "@/integrations/supabase/client";
 
-/* ── Curated featured tools ── */
-const FEATURED_SLUGS = [
-  "invision","framer","chakra-ui","echarts","shadcn-ui","recharts","ant-design",
-  "material-ui","storybook","17hats","adcreative","adobe","adobe-after-effects",
-  "adobe-cc","adobe-illustrator","indesign","adobe-lightroom","adobe-photoshop",
-  "adobe-premiere-pro","adobe-xd","affinity-photo","airslate","figma-anima",
-  "ae-animation-composer","asana","audacity","autocad","ae-bao-boa",
-  "basecamp","better-proposals","blender","bloom-crm",
-];
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
@@ -196,7 +187,6 @@ export default function HomePageV2() {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
-  const ogImages = useOgImages(useMemo(() => [...FEATURED_SLUGS, ...AI_SLUGS], []));
 
   const [featuredPage, setFeaturedPage] = useState(0);
   const [newPage, setNewPage] = useState(0);
@@ -246,11 +236,18 @@ export default function HomePageV2() {
     return () => cleanupSeo(["home-jsonld", "home-org-jsonld"]);
   }, [lang]);
 
-  /* ── Featured tools ── */
-  const featured = useMemo(() => {
-    const bySlug = new Map(tools.map((t) => [t.slug, t]));
-    return FEATURED_SLUGS.flatMap((slug) => { const t = bySlug.get(slug); return t ? [t] : []; });
-  }, [tools]);
+  /* ── Featured tools — sourced from prescription_quality === "ferme",
+     ToolTrim's own firm-recommendation signal (the same one that drives
+     the "ToolTrim Pick" badge on tool cards elsewhere), not a hand-picked
+     slug list that drifts out of sync with the catalog. ── */
+  const featured = useMemo(
+    () => tools.filter((t) => t.prescription_quality === "ferme"),
+    [tools],
+  );
+  const ogImages = useOgImages(useMemo(
+    () => [...featured.map((t) => t.slug), ...AI_SLUGS],
+    [featured],
+  ));
 
   const totalPages = Math.ceil(featured.length / PAGE_SIZE);
   const visibleFeatured = featured.slice(featuredPage * PAGE_SIZE, (featuredPage + 1) * PAGE_SIZE);

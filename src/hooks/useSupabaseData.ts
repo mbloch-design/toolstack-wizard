@@ -128,6 +128,7 @@ export type ToolSummary = Pick<
   | "substitution_cluster_v2"
   | "functional_needs"
   | "verticals"
+  | "prescription_quality"
 >;
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
@@ -151,6 +152,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   substitution_cluster_v2: t.substitution_cluster_v2 || null,
   functional_needs: t.functional_needs || [],
   verticals: t.verticals || [],
+  prescription_quality: t.prescription_quality || null,
 }));
 
 function mapSupabaseCat(c: any): Category {
@@ -338,7 +340,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -363,6 +365,7 @@ export function useToolSummaries() {
           substitution_cluster_v2: t.substitution_cluster_v2 || null,
           functional_needs: t.functional_needs || [],
           verticals: t.verticals || [],
+          prescription_quality: t.prescription_quality || null,
         }));
         const merged = mergeById(staticToolSummaries, remoteTools);
         _toolSummariesCache = merged;
