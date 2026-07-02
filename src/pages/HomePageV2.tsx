@@ -416,19 +416,19 @@ export default function HomePageV2() {
                       to={`${prefix}/guide/${post.slug}`}
                       className={`v2-post-card${isLead ? " v2-post-card--lead" : ""}`}
                     >
-                      <div className="v2-post-card-top">
-                        {post.category && <span className="v2-post-card-cat">{post.category}</span>}
-                        <span className="v2-post-card-date">
-                          {dateLabel}{post.readTime ? ` · ${post.readTime}` : ""}
-                        </span>
-                      </div>
+                      {post.category && <span className="v2-post-card-kicker">{post.category}</span>}
                       <p className="v2-post-card-title">{post.title}</p>
                       {post.excerpt && (
                         <p className="v2-post-card-excerpt">{post.excerpt}</p>
                       )}
-                      <span className="v2-post-card-cta">
-                        {t("Lire", "Read")} <ArrowRight style={{ width: 13, height: 13 }} />
-                      </span>
+                      <div className="v2-post-card-footer">
+                        <span className="v2-post-card-date">
+                          {dateLabel}{post.readTime ? ` · ${post.readTime}` : ""}
+                        </span>
+                        <span className="v2-post-card-cta">
+                          {t("Lire", "Read")} <ArrowRight style={{ width: 13, height: 13 }} />
+                        </span>
+                      </div>
                     </Link>
                   );
                 })}
