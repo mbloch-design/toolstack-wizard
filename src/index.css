@@ -15328,7 +15328,7 @@ section[id] {
 .hv2-band {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 24px;
   background: var(--color-bg);
   min-height: 340px;
   display: flex;
