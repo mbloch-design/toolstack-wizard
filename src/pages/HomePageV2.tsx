@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Bookmark } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Bookmark, Plus } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -26,6 +26,21 @@ const STACK_PAGE_SIZE = 3; // 1 row × 3 cols — stacks carousel
 const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
 const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
 const POST_MAX_PAGES = 4; // cap carousel depth to 4 screens
+
+/* ── Category "duo rows" — two side-by-side compact-list carousels
+   sharing one row, picked for the biggest catalog sections not already
+   surfaced elsewhere on the homepage (Featured/AI/New are curated
+   cross-category picks, not per-category browsing). */
+const DUO_ROWS: { categoryId: string; label: string; labelEn: string }[][] = [
+  [
+    { categoryId: "creation", label: "Création de contenu", labelEn: "Content Creation" },
+    { categoryId: "nocode-web", label: "No-Code & Web", labelEn: "No-Code & Web" },
+  ],
+  [
+    { categoryId: "analytics", label: "Analytics", labelEn: "Analytics" },
+    { categoryId: "communication", label: "Communication", labelEn: "Communication" },
+  ],
+];
 
 /* Fetch og_image_url for featured slugs */
 function useOgImages(slugs: string[]): Record<string, string> {
@@ -101,6 +116,76 @@ function FeaturedHead({
         <Link to={to} className="v2-section-link" style={{ marginLeft: 8 }}>
           {linkLabel} <ArrowRight style={{ width: 13, height: 13 }} />
         </Link>
+      </div>
+    </div>
+  );
+}
+
+/* ── Compact tool tagline: trims a full shortDescription sentence down
+   to a short row label, cutting at a word boundary. ── */
+function shortTagline(desc: string | undefined, max = 40): string {
+  const clean = (desc || "").trim();
+  if (!clean) return "";
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${lastSpace > 20 ? cut.slice(0, lastSpace) : cut}…`;
+}
+
+const DUO_PAGE_SIZE = 6; // 2 cols × 3 rows per panel
+
+/* ── One side of a two-up category row: compact icon+name+tagline list,
+   its own mini pagination (arrows either side of a "see all" link). ── */
+function CategoryDuoPanel({
+  title, tools, prefix, categoryHref,
+}: {
+  title: string;
+  tools: any[];
+  prefix: string;
+  categoryHref: string;
+}) {
+  const [page, setPage] = useState(0);
+  const totalPages = Math.max(1, Math.ceil(tools.length / DUO_PAGE_SIZE));
+  const visible = tools.slice(page * DUO_PAGE_SIZE, (page + 1) * DUO_PAGE_SIZE);
+
+  return (
+    <div className="v2-duo-panel">
+      <div className="v2-duo-panel-head">
+        <h3 className="v2-duo-panel-title">{title}</h3>
+        <div className="v2-duo-panel-nav">
+          <button
+            type="button"
+            className="v2-duo-arrow"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={page === 0}
+            aria-label="Précédent"
+          >
+            <ChevronLeft style={{ width: 14, height: 14 }} />
+          </button>
+          <Link to={categoryHref} className="v2-duo-panel-link" aria-label="Voir tout">
+            <Plus style={{ width: 14, height: 14 }} />
+          </Link>
+          <button
+            type="button"
+            className="v2-duo-arrow"
+            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            disabled={page >= totalPages - 1}
+            aria-label="Suivant"
+          >
+            <ChevronRight style={{ width: 14, height: 14 }} />
+          </button>
+        </div>
+      </div>
+      <div className="v2-duo-list">
+        {visible.map((tool) => (
+          <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-duo-item">
+            <div className="v2-duo-item-logo"><ToolLogo tool={tool} size={26} /></div>
+            <div className="v2-duo-item-text">
+              <span className="v2-duo-item-name">{tool.name}</span>
+              <span className="v2-duo-item-sub">{shortTagline(tool.shortDescription)}</span>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
@@ -209,6 +294,18 @@ export default function HomePageV2() {
   const visiblePosts = cappedPosts.slice(postPage * POST_PAGE_SIZE, (postPage + 1) * POST_PAGE_SIZE);
   const prevPostPage = useCallback(() => setPostPage((p) => Math.max(0, p - 1)), []);
   const nextPostPage = useCallback(() => setPostPage((p) => Math.min(postTotalPages - 1, p + 1)), [postTotalPages]);
+
+  /* ── Tools grouped by category, for the duo rows ── */
+  const toolsByCategory = useMemo(() => {
+    const map = new Map<string, typeof tools>();
+    for (const tool of tools) {
+      const key = tool.categoryId;
+      if (!key) continue;
+      if (!map.has(key)) map.set(key, []);
+      map.get(key)!.push(tool);
+    }
+    return map;
+  }, [tools]);
 
   return (
     <div>
@@ -356,6 +453,30 @@ export default function HomePageV2() {
               )}
             </div>
           )}
+
+          {/* ══ 4b. Category duo rows — two compact-list carousels sharing a row ══ */}
+          {DUO_ROWS.map((row, rowIndex) => {
+            const panels = row
+              .map((cat) => ({
+                cat,
+                categoryTools: toolsByCategory.get(cat.categoryId) || [],
+              }))
+              .filter((p) => p.categoryTools.length > 0);
+            if (panels.length === 0) return null;
+            return (
+              <div key={rowIndex} className="v2-duo-row" style={{ marginTop: 56 }}>
+                {panels.map(({ cat, categoryTools }) => (
+                  <CategoryDuoPanel
+                    key={cat.categoryId}
+                    title={lang === "en" ? cat.labelEn : cat.label}
+                    tools={categoryTools}
+                    prefix={prefix}
+                    categoryHref={`${prefix}/category/${cat.categoryId}`}
+                  />
+                ))}
+              </div>
+            );
+          })}
 
           {/* ══ 5. Stacks — carousel 1×3 ══ */}
           <div style={{ marginTop: 56 }}>
