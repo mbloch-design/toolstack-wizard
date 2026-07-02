@@ -15154,122 +15154,18 @@ section[id] {
   color: var(--color-muted-light);
 }
 
-/* ── V2 Posts — same card language as .tc-card/.tce-card (tool
-   catalog): plain border, 8px radius, monochrome hover — no color
-   accents invented for this one section. Lead card gets more room
-   and a bigger title so the grid isn't four identical boxes. */
-.v2-post-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 16px;
-}
-
-.v2-post-card {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--color-text);
-  cursor: pointer;
-  transition: border-color 180ms ease-out, background 180ms ease-out;
-}
-
-.v2-post-card:hover {
-  border-color: var(--color-text);
-  background: var(--color-bg);
-}
-
-.v2-post-card--lead {
-  grid-column: span 2;
-}
-
-.v2-post-card-kicker {
-  font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.v2-post-card-title {
-  margin: 8px 0 0;
-  font-family: var(--font-ui);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-  color: var(--color-text-strong);
-}
-
-.v2-post-card--lead .v2-post-card-title {
-  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-
-.v2-post-card-excerpt {
-  margin: 10px 0 0;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-muted);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.v2-post-card--lead .v2-post-card-excerpt {
-  font-size: 14px;
-  max-width: 560px;
-}
-
-.v2-post-card-footer {
-  display: flex;
-  align-items: center;
+/* ── V2 Posts — reuses the exact .v2-stack-card shape (logos row,
+   title, excerpt, meta footer) so Guides carousel matches Stacks
+   pixel-for-pixel instead of inventing a fourth card style. Only the
+   meta footer needs its own alignment (date left, read time right). */
+.v2-post-meta {
   justify-content: space-between;
-  gap: 12px;
-  margin-top: auto;
-  padding-top: 16px;
-}
-
-.v2-post-card-date {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  color: var(--color-muted-light);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.v2-post-card-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-}
-
-.v2-post-card:hover .v2-post-card-cta {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
 }
 
 @media (max-width: 860px) {
   .v2-feat-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-new-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-ai-grid { grid-template-columns: repeat(2, 1fr); }
-  .v2-post-grid { grid-template-columns: repeat(2, 1fr); }
-  .v2-post-card--lead { grid-column: span 2; }
 }
 @media (max-width: 640px) {
   .v2-container { padding: 0 20px; }
@@ -15278,8 +15174,6 @@ section[id] {
   .v2-new-grid { grid-template-columns: repeat(1, 1fr); }
   .v2-ai-grid { grid-template-columns: repeat(1, 1fr); }
   .v2-stack-grid { grid-template-columns: 1fr; }
-  .v2-post-grid { grid-template-columns: 1fr; }
-  .v2-post-card--lead { grid-column: span 1; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

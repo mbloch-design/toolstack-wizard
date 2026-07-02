@@ -24,7 +24,8 @@ const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
 const STACK_PAGE_SIZE = 3; // 1 row × 3 cols — stacks carousel
 const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
-const FEATURED_POSTS = 4;
+const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
+const POST_MAX_PAGES = 4; // cap carousel depth to 4 screens
 
 /* Fetch og_image_url for featured slugs */
 function useOgImages(slugs: string[]): Record<string, string> {
@@ -116,6 +117,7 @@ export default function HomePageV2() {
   const [newPage, setNewPage] = useState(0);
   const [stackPage, setStackPage] = useState(0);
   const [aiPage, setAiPage] = useState(0);
+  const [postPage, setPostPage] = useState(0);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -201,8 +203,12 @@ export default function HomePageV2() {
   const prevStackPage = useCallback(() => setStackPage((p) => Math.max(0, p - 1)), []);
   const nextStackPage = useCallback(() => setStackPage((p) => Math.min(stackTotalPages - 1, p + 1)), [stackTotalPages]);
 
-  /* ── Posts ── */
-  const featuredPosts = posts.slice(0, FEATURED_POSTS);
+  /* ── Posts — carousel, 1 row × 3 cols, capped to POST_MAX_PAGES screens ── */
+  const postTotalPages = Math.min(POST_MAX_PAGES, Math.ceil(posts.length / POST_PAGE_SIZE)) || 1;
+  const cappedPosts = posts.slice(0, postTotalPages * POST_PAGE_SIZE);
+  const visiblePosts = cappedPosts.slice(postPage * POST_PAGE_SIZE, (postPage + 1) * POST_PAGE_SIZE);
+  const prevPostPage = useCallback(() => setPostPage((p) => Math.max(0, p - 1)), []);
+  const nextPostPage = useCallback(() => setPostPage((p) => Math.min(postTotalPages - 1, p + 1)), [postTotalPages]);
 
   return (
     <div>
@@ -396,43 +402,58 @@ export default function HomePageV2() {
             )}
           </div>
 
-          {/* ══ 6. Guides ══ */}
-          {featuredPosts.length > 0 && (
+          {/* ══ 6. Guides — carousel 1×3, same shape as Stacks ══ */}
+          {cappedPosts.length > 0 && (
             <div style={{ marginTop: 56, paddingBottom: "clamp(64px,8vw,112px)" }}>
-              <SectionHead
+              <FeaturedHead
                 label={t("Articles du guide", "Guide articles")}
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
+                page={postPage}
+                total={postTotalPages}
+                onPrev={prevPostPage}
+                onNext={nextPostPage}
               />
-              <div className="v2-post-grid">
-                {featuredPosts.map((post, i) => {
-                  const isLead = i === 0;
+              <div className="v2-stack-grid">
+                {visiblePosts.map((post) => {
                   const dateLabel = post.date
                     ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { year: "numeric", month: "short", day: "numeric" })
                     : "";
+                  const postTools = (post.tags || [])
+                    .map((tag) => bySlug.get(tag))
+                    .filter(Boolean)
+                    .slice(0, 5);
                   return (
-                    <Link
-                      key={post.slug}
-                      to={`${prefix}/guide/${post.slug}`}
-                      className={`v2-post-card${isLead ? " v2-post-card--lead" : ""}`}
-                    >
-                      {post.category && <span className="v2-post-card-kicker">{post.category}</span>}
-                      <p className="v2-post-card-title">{post.title}</p>
-                      {post.excerpt && (
-                        <p className="v2-post-card-excerpt">{post.excerpt}</p>
+                    <Link key={post.slug} to={`${prefix}/guide/${post.slug}`} className="v2-stack-card">
+                      {postTools.length > 0 && (
+                        <div className="v2-stack-top">
+                          <div className="v2-stack-logos">
+                            {postTools.map((pt) => (
+                              <div key={pt!.id} className="v2-stack-logo">
+                                <ToolLogo tool={pt as any} size={22} />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       )}
-                      <div className="v2-post-card-footer">
-                        <span className="v2-post-card-date">
-                          {dateLabel}{post.readTime ? ` · ${post.readTime}` : ""}
-                        </span>
-                        <span className="v2-post-card-cta">
-                          {t("Lire", "Read")} <ArrowRight style={{ width: 13, height: 13 }} />
-                        </span>
+                      <p className="v2-stack-title">{post.title}</p>
+                      {post.excerpt && <p className="v2-stack-sub">{post.excerpt}</p>}
+                      <div className="v2-stack-meta v2-post-meta">
+                        <span>{dateLabel}</span>
+                        {post.readTime && <span>{post.readTime}</span>}
                       </div>
                     </Link>
                   );
                 })}
               </div>
+              {postTotalPages > 1 && (
+                <div className="v2-feat-dots">
+                  {Array.from({ length: postTotalPages }).map((_, i) => (
+                    <button key={i} className={`v2-feat-dot${i === postPage ? " v2-feat-dot--active" : ""}`}
+                      onClick={() => setPostPage(i)} aria-label={`Page ${i + 1}`} />
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
