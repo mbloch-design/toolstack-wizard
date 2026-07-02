@@ -15516,7 +15516,7 @@ section[id] {
   position: sticky;
   top: 68px;
   height: calc(100vh - 68px);
-  width: 104px;
+  width: 80px;
   flex-shrink: 0;
   background: var(--color-surface);
 }
@@ -15525,17 +15525,17 @@ section[id] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 20px 12px;
+  gap: 2px;
+  padding: 16px 8px;
 }
 
 .asv2-nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   width: 100%;
-  padding: 6px 0 10px;
+  padding: 4px 0 8px;
   text-decoration: none;
 }
 
@@ -15543,9 +15543,9 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
   color: #222222;
   transition: background 120ms ease-out, color 120ms ease-out;
 }
@@ -15559,7 +15559,7 @@ section[id] {
 
 .asv2-nav-label {
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: #222222;
   line-height: 1.2;

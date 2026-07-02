@@ -85,7 +85,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                   className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
                 >
                   <span className="asv2-nav-icon">
-                    <item.Icon style={{ width: 22, height: 22 }} />
+                    <item.Icon style={{ width: 20, height: 20 }} />
                   </span>
                   <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
                 </Link>
