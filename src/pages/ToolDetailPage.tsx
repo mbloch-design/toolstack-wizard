@@ -10,6 +10,7 @@ import PinToolButton from "@/components/PinToolButton";
 import SectionPillNav from "@/components/SectionPillNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { getScrollTop, scrollToY } from "@/lib/scroll";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
@@ -239,8 +240,8 @@ const ToolDetailPage = () => {
       const el = document.getElementById(id);
       if (!el) return;
       const headerOffset = 92;
-      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+      const top = el.getBoundingClientRect().top + getScrollTop() - headerOffset;
+      scrollToY(top, "auto");
     });
   }, [subPage, slug]);
 

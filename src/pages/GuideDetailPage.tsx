@@ -7,6 +7,7 @@ import { useArticleTools } from "@/hooks/useArticleTools";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import { scrollToTop, getScrollMetrics, onScroll } from "@/lib/scroll";
 import DOMPurify from "dompurify";
 import type { Tool } from "@/data/types";
 
@@ -30,13 +31,11 @@ const GuideDetailPage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+      const { scrollTop, scrollableHeight } = getScrollMetrics();
+      setReadProgress(scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0);
       setShowBackToTop(scrollTop > 600);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return onScroll(handleScroll, { passive: true });
   }, []);
 
   /* ── SEO ── */
@@ -502,7 +501,7 @@ const GuideDetailPage = () => {
       {/* Back to top */}
       {showBackToTop && (
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => scrollToTop("smooth")}
           style={{
             position: "fixed", bottom: 24, right: 24, zIndex: 40,
             width: 40, height: 40, borderRadius: "50%",

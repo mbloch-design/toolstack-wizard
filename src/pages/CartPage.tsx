@@ -6,6 +6,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
+import { scrollToTop } from "@/lib/scroll";
 
 type StackBoard = {
   id: string;
@@ -631,7 +632,7 @@ const CartPage = () => {
     nextParams.set("objectif", boardId);
     setSearchParams(nextParams);
     if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToTop("smooth");
     }
   }
 

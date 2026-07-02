@@ -6,6 +6,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
+import { scrollToTop } from "@/lib/scroll";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
 
@@ -382,7 +383,7 @@ const GuidesPage = () => {
                     className="gi-theme-link"
                     onClick={(e) => {
                       e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      scrollToTop("smooth");
                     }}
                   >
                     {item}

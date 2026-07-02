@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { scrollToTop } from "@/lib/scroll";
 
 const ScrollToTop = () => {
   const { hash, pathname, state } = useLocation();
@@ -17,7 +18,7 @@ const ScrollToTop = () => {
     // would race with and cancel that animation.
     if ((state as { skipScrollReset?: boolean } | null)?.skipScrollReset) return;
 
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, [hash, pathname, state]);
 
   return null;

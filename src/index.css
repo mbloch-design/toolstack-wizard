@@ -15428,7 +15428,8 @@ section[id] {
 .asv2-root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: var(--color-surface);
 }
 
@@ -15509,16 +15510,15 @@ section[id] {
   display: flex;
   flex: 1;
   min-height: 0;
+  overflow: hidden;
 }
 
 .asv2-sidebar {
-  position: sticky;
-  top: 68px;
-  height: calc(100vh - 68px);
+  height: 100%;
   width: 80px;
   flex-shrink: 0;
+  overflow-y: auto;
   background: var(--color-surface);
-}
 }
 
 .asv2-nav {
@@ -15572,11 +15572,22 @@ section[id] {
 .asv2-content {
   flex: 1;
   min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: var(--color-bg);
   border-top-left-radius: 24px;
 }
 
 @media (max-width: 640px) {
+  /* Mobile keeps the normal, whole-page document scroll (the sidebar
+     collapses into a horizontal tab row below the topbar, so there's no
+     sidebar/content corner to preserve here) — undo the desktop
+     locked-shell/internal-scroll layout used to keep that corner in view. */
+  .asv2-root { height: auto; overflow: visible; }
+  .asv2-body { overflow: visible; }
+  .asv2-content { height: auto; overflow-y: visible; border-top-left-radius: 0; }
+
   .asv2-topbar { padding: 0 16px; height: 56px; gap: 12px; }
   .asv2-logo { width: auto; padding-right: 4px; }
   .asv2-search { width: auto; flex: 1; }
@@ -15589,6 +15600,7 @@ section[id] {
     position: static;
     width: 100%;
     height: auto;
+    overflow-y: visible;
     border-bottom: 1px solid var(--color-border-soft);
   }
   .asv2-nav {
