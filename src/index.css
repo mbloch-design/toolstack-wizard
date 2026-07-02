@@ -15518,6 +15518,21 @@ section[id] {
   width: 80px;
   flex-shrink: 0;
   background: var(--color-surface);
+  z-index: 5;
+}
+
+/* Rounded sidebar/content notch, anchored to the sticky sidebar itself
+   (not .asv2-content, which scrolls away) so it stays put on scroll
+   instead of reverting to a hard corner past the first 24px. */
+.asv2-sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -24px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at top left, transparent 24px, var(--color-bg) 24.5px);
+  pointer-events: none;
 }
 
 .asv2-nav {
@@ -15572,7 +15587,6 @@ section[id] {
   flex: 1;
   min-width: 0;
   background: var(--color-bg);
-  border-top-left-radius: 24px;
 }
 
 @media (max-width: 640px) {
