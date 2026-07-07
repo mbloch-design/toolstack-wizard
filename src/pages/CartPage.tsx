@@ -350,6 +350,103 @@ const CREATIVE_STACK_SUBDOMAINS: CreativeStackSubdomain[] = [
   },
 ];
 
+const DESIGN_PICKER_SUBDOMAIN_IDS = new Set([
+  "creative-photo-retouch",
+  "creative-motion-video",
+  "creative-three-d",
+  "creative-audio",
+  "creative-ui-system",
+  "creative-prototype-handoff",
+  "creative-visual-identity",
+  "creative-ai-visual",
+  "creative-plugins-resources",
+]);
+
+const DESIGN_PICKER_CATEGORY_IDS = new Set([
+  "creation",
+  "design-tools",
+  "prototyping",
+]);
+
+const DESIGN_PICKER_SIGNAL_KEYS = new Set([
+  "accessibility",
+  "ai-image",
+  "animation",
+  "animation-2d-3d",
+  "asset-library",
+  "assets-3d",
+  "background-removal",
+  "branding",
+  "color-grading",
+  "compositing",
+  "component",
+  "components",
+  "concept-art",
+  "creative-licensing",
+  "design-collaboration",
+  "design-resources",
+  "design-system",
+  "design-visuel",
+  "detourage",
+  "digital-painting",
+  "effets-visuels",
+  "fonts",
+  "generation-image",
+  "generation-video",
+  "handoff",
+  "handoff-dev",
+  "iconographie",
+  "icons",
+  "identite-visuelle",
+  "illustration",
+  "illustration-vectorielle",
+  "interactive-design",
+  "landing-page",
+  "logo-design",
+  "logos",
+  "lottie-export",
+  "mise-en-page",
+  "mockup",
+  "modelisation-3d",
+  "montage-audio",
+  "montage-video",
+  "montage-video-court",
+  "motion-assets",
+  "motion-design",
+  "packaging",
+  "photo",
+  "photo-cleanup",
+  "photo-enhancement",
+  "print",
+  "presentation-client",
+  "presentations",
+  "prototype",
+  "prototype-3d",
+  "prototypage",
+  "prototyping",
+  "raw",
+  "render-engine",
+  "rendering",
+  "retouche-photo",
+  "rendu-3d",
+  "short-form-video",
+  "sound-design",
+  "stock",
+  "stock-assets",
+  "templates",
+  "tests-utilisateurs",
+  "tokens",
+  "ui-components",
+  "ui-design",
+  "upscaling-video",
+  "video-editing",
+  "video-post-production",
+  "visual-identity",
+  "visual-production",
+  "web-animation",
+  "wireframing",
+]);
+
 const TOOL_TYPE_LABELS: Record<string, { fr: string; en: string }> = {
   ia: { fr: "IA", en: "AI" },
   metier: { fr: "Métier", en: "Core" },
@@ -441,6 +538,11 @@ function matchesCreativeSignals(tool: ToolSummary, categoryLabel: string, subdom
   if (!subdomain.signalKeys?.length) return false;
   const toolSignals = getToolSignalKeys(tool, categoryLabel);
   return subdomain.signalKeys.some((key) => toolSignals.has(normalizeKey(key)));
+}
+
+function countMatchingSignals(tool: ToolSummary, categoryLabel: string, signalKeys: Set<string>) {
+  const toolSignals = getToolSignalKeys(tool, categoryLabel);
+  return Array.from(signalKeys).filter((key) => toolSignals.has(normalizeKey(key))).length;
 }
 
 function getBoardForTool(tool: ToolSummary, categoryLabel: string) {
@@ -703,6 +805,29 @@ function getToolPickerScore(tool: ToolSummary) {
   return qualityScore + typeScore + Math.min(signalScore, 10);
 }
 
+function getDesignPickerScore(tool: ToolSummary, categoryLabel: string) {
+  const toolKeys = getToolIdentityKeys(tool);
+  const exactSubdomain = CREATIVE_STACK_SUBDOMAINS.find((subdomain) =>
+    DESIGN_PICKER_SUBDOMAIN_IDS.has(subdomain.id) &&
+    subdomain.toolIds?.some((id) => toolKeys.has(normalizeKey(id)))
+  );
+  const categoryMatch = DESIGN_PICKER_CATEGORY_IDS.has(normalizeKey(tool.categoryId));
+  const signalMatches = countMatchingSignals(tool, categoryLabel, DESIGN_PICKER_SIGNAL_KEYS);
+
+  if (!exactSubdomain && !categoryMatch && signalMatches === 0) return 0;
+
+  const exactScore = exactSubdomain ? 90 : 0;
+  const categoryScore = categoryMatch ? 28 : 0;
+  const signalScore = Math.min(signalMatches, 4) * 8;
+  return exactScore + categoryScore + signalScore + getToolPickerScore(tool);
+}
+
+function getToolPickerBoardScore(tool: ToolSummary, board: StackBoard, categoryLabel: string) {
+  if (board.id === "design") return getDesignPickerScore(tool, categoryLabel);
+  if (getBoardForTool(tool, categoryLabel).id !== board.id) return 0;
+  return 40 + getToolPickerScore(tool);
+}
+
 function slugMatches(toolSlug = "", relationValue = "") {
   return toolSlug === relationValue ||
     toolSlug.endsWith(`-${relationValue}`) ||
@@ -808,8 +933,16 @@ const CartPage = () => {
 
     return tools
       .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
-      .filter((tool) => getBoardForTool(tool, getCategoryLabel(tool)).id === pickerBoard.id)
-      .sort((a, b) => getToolPickerScore(b) - getToolPickerScore(a) || a.name.localeCompare(b.name))
+      .map((tool) => {
+        const categoryLabel = getCategoryLabel(tool);
+        return {
+          score: getToolPickerBoardScore(tool, pickerBoard, categoryLabel),
+          tool,
+        };
+      })
+      .filter((candidate) => candidate.score > 0)
+      .sort((a, b) => b.score - a.score || a.tool.name.localeCompare(b.tool.name))
+      .map((candidate) => candidate.tool)
       .slice(0, 12);
   }, [categoryById, lang, pickerBoard, pinnedToolSlugSet, tools]);
 
