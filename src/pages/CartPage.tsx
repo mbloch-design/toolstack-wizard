@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Plus, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Plus, Search, X } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
@@ -45,6 +45,11 @@ type StackPricingSummary = {
   bundleLines: StackBundleLine[];
   lineByToolKey: Map<string, StackBundleLine>;
 };
+
+type PickerFilterId = "recommended" | "objective" | "plugins" | "ai" | "budget";
+
+const PICKER_RESULT_BATCH = 8;
+const PICKER_FILTER_IDS: PickerFilterId[] = ["recommended", "objective", "plugins", "ai", "budget"];
 
 type CreativeStackSubdomain = StackSubdomain & {
   toolIds?: string[];
@@ -787,6 +792,86 @@ function getBoardToolsHref(board: StackBoard, prefix: string) {
   return `${prefix}/tools?${params.toString()}`;
 }
 
+function getPickerFilterLabel(filterId: PickerFilterId, board: StackBoard, lang: string) {
+  const labels: Record<PickerFilterId, { fr: string; en: string }> = {
+    recommended: { fr: "Suggestions", en: "Suggested" },
+    objective: {
+      fr: `Tout ${board.labelFr}`,
+      en: `All ${board.labelEn}`,
+    },
+    plugins: { fr: "Plugins", en: "Plugins" },
+    ai: { fr: "IA", en: "AI" },
+    budget: { fr: "Budget léger", en: "Light budget" },
+  };
+
+  return lang === "en" ? labels[filterId].en : labels[filterId].fr;
+}
+
+function getPickerQueryTokens(query: string) {
+  return query
+    .split(/\s+/)
+    .map(normalizeKey)
+    .filter((token) => token.length >= 2);
+}
+
+function toolMatchesPickerQuery(tool: ToolSummary, categoryLabel: string, queryTokens: string[]) {
+  if (queryTokens.length === 0) return true;
+  const text = normalizeKey(toolSearchText(tool, categoryLabel));
+  return queryTokens.every((token) => text.includes(token));
+}
+
+function getPickerSearchScore(tool: ToolSummary, categoryLabel: string, queryTokens: string[]) {
+  if (queryTokens.length === 0) return 0;
+  const name = normalizeKey(tool.name);
+  const slug = normalizeKey(getToolKey(tool));
+  const category = normalizeKey(categoryLabel);
+  return queryTokens.reduce((score, token) => {
+    if (name === token || slug === token) return score + 80;
+    if (name.startsWith(token) || slug.startsWith(token)) return score + 52;
+    if (name.includes(token) || slug.includes(token)) return score + 34;
+    if (category.includes(token)) return score + 14;
+    return score + 6;
+  }, 0);
+}
+
+function isPickerAiTool(tool: ToolSummary, categoryLabel: string) {
+  if (tool.tool_type === "ia") return true;
+  return /\bia\b|\bai\b|generat|gpt|llm|prompt|midjourney|claude|chatgpt/i.test(toolSearchText(tool, categoryLabel));
+}
+
+function matchesPickerFilter(filterId: PickerFilterId, tool: ToolSummary, boardScore: number, categoryLabel: string) {
+  if (filterId === "recommended") return boardScore > 0;
+  if (filterId === "objective") return boardScore > 0;
+  if (filterId === "plugins") return boardScore > 0 && (tool.tool_type === "plugin" || !!tool.host_app);
+  if (filterId === "ai") return boardScore > 0 && isPickerAiTool(tool, categoryLabel);
+  if (filterId === "budget") return boardScore > 0 && getToolPrice(tool) <= 20;
+  return boardScore > 0;
+}
+
+function getPickerResultIntro(hasQuery: boolean, filterId: PickerFilterId, resultCount: number, board: StackBoard, lang: string) {
+  if (resultCount === 0) {
+    return lang === "en"
+      ? "No matching tool for now."
+      : "Aucun outil correspondant pour le moment.";
+  }
+
+  if (hasQuery) {
+    return lang === "en"
+      ? `${resultCount} result${resultCount > 1 ? "s" : ""}, prioritized for ${board.labelEn}.`
+      : `${resultCount} résultat${resultCount > 1 ? "s" : ""}, priorisé${resultCount > 1 ? "s" : ""} pour ${board.labelFr}.`;
+  }
+
+  if (filterId === "recommended") {
+    return lang === "en"
+      ? "Smart suggestions based on this objective."
+      : "Suggestions prioritaires pour cet objectif.";
+  }
+
+  return lang === "en"
+    ? `${resultCount} available tool${resultCount > 1 ? "s" : ""} in this view.`
+    : `${resultCount} outil${resultCount > 1 ? "s" : ""} disponible${resultCount > 1 ? "s" : ""} dans cette vue.`;
+}
+
 function getSubdomainSectionClassName(group: StackSubdomainGroup) {
   return [
     "stack-subdomain-section",
@@ -873,6 +958,9 @@ const CartPage = () => {
   const { state, pinTool, unpinTool } = useStackPins();
   const [searchParams, setSearchParams] = useSearchParams();
   const [pickerBoardId, setPickerBoardId] = useState<string | null>(null);
+  const [pickerQuery, setPickerQuery] = useState("");
+  const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
+  const [pickerResultLimit, setPickerResultLimit] = useState(PICKER_RESULT_BATCH);
 
   const categoryById = useMemo(() => new Map(categories.map((category: any) => [category.id, category])), [categories]);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
@@ -928,6 +1016,9 @@ const CartPage = () => {
     return Array.from(groups.values()).sort((a, b) => a.order - b.order || a.labelFr.localeCompare(b.labelFr));
   }, [categoryById, lang, zoomedBoard]);
 
+  const pickerQueryTokens = useMemo(() => getPickerQueryTokens(pickerQuery), [pickerQuery]);
+  const hasPickerQuery = pickerQueryTokens.length > 0;
+
   const pickerCandidates = useMemo(() => {
     if (!pickerBoard) return [] as ToolSummary[];
 
@@ -935,16 +1026,63 @@ const CartPage = () => {
       .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
       .map((tool) => {
         const categoryLabel = getCategoryLabel(tool);
+        const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel);
+        const searchScore = getPickerSearchScore(tool, categoryLabel, pickerQueryTokens);
         return {
-          score: getToolPickerBoardScore(tool, pickerBoard, categoryLabel),
+          categoryLabel,
+          boardScore,
+          score: (boardScore * (hasPickerQuery ? 2 : 1)) + searchScore + getToolPickerScore(tool),
           tool,
         };
       })
-      .filter((candidate) => candidate.score > 0)
-      .sort((a, b) => b.score - a.score || a.tool.name.localeCompare(b.tool.name))
+      .filter((candidate) => {
+        if (hasPickerQuery) {
+          if (!toolMatchesPickerQuery(candidate.tool, candidate.categoryLabel, pickerQueryTokens)) return false;
+          if (pickerFilter === "recommended") return true;
+        }
+        return matchesPickerFilter(pickerFilter, candidate.tool, candidate.boardScore, candidate.categoryLabel);
+      })
+      .sort((a, b) =>
+        b.score - a.score ||
+        b.boardScore - a.boardScore ||
+        a.tool.name.localeCompare(b.tool.name)
+      )
       .map((candidate) => candidate.tool)
-      .slice(0, 12);
+      .slice(0, hasPickerQuery ? 48 : pickerFilter === "recommended" ? 24 : 40);
+  }, [categoryById, hasPickerQuery, lang, pickerBoard, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
+
+  const visiblePickerCandidates = pickerCandidates.slice(0, pickerResultLimit);
+  const hasMorePickerCandidates = pickerCandidates.length > visiblePickerCandidates.length;
+
+  const pickerFilterOptions = useMemo(() => {
+    if (!pickerBoard) return [] as PickerFilterId[];
+    return PICKER_FILTER_IDS.filter((filterId) => {
+      if (filterId === "recommended" || filterId === "objective") return true;
+      return tools
+        .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
+        .some((tool) => {
+          const categoryLabel = getCategoryLabel(tool);
+          const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel);
+          return matchesPickerFilter(filterId, tool, boardScore, categoryLabel);
+        });
+    });
   }, [categoryById, lang, pickerBoard, pinnedToolSlugSet, tools]);
+
+  const pickerResultIntro = pickerBoard
+    ? getPickerResultIntro(hasPickerQuery, pickerFilter, pickerCandidates.length, pickerBoard, lang)
+    : "";
+
+  useEffect(() => {
+    setPickerResultLimit(PICKER_RESULT_BATCH);
+  }, [pickerBoardId, pickerFilter, pickerQuery]);
+
+  useEffect(() => {
+    if (!pickerBoardId) {
+      setPickerQuery("");
+      setPickerFilter("recommended");
+      setPickerResultLimit(PICKER_RESULT_BATCH);
+    }
+  }, [pickerBoardId]);
 
   useEffect(() => {
     if (!pickerBoard) return;
@@ -960,6 +1098,9 @@ const CartPage = () => {
   }, [pickerBoard]);
 
   function openToolPicker(boardId: string) {
+    setPickerQuery("");
+    setPickerFilter("recommended");
+    setPickerResultLimit(PICKER_RESULT_BATCH);
     setPickerBoardId(boardId);
   }
 
@@ -1363,9 +1504,47 @@ const CartPage = () => {
               </button>
             </div>
 
+            <div className="stack-tool-picker-controls">
+              <label className="stack-tool-picker-search">
+                <Search size={16} aria-hidden />
+                <input
+                  type="search"
+                  value={pickerQuery}
+                  onChange={(event) => setPickerQuery(event.target.value)}
+                  placeholder={t("Chercher un outil précis", "Search a specific tool") as string}
+                  aria-label={t("Rechercher un outil dans le catalogue sans quitter ma stack", "Search the catalog without leaving my stack") as string}
+                />
+                {pickerQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setPickerQuery("")}
+                    aria-label={t("Effacer la recherche", "Clear search") as string}
+                  >
+                    <X size={14} aria-hidden />
+                  </button>
+                )}
+              </label>
+
+              <div className="stack-tool-picker-filters" aria-label={t("Affiner les outils proposés", "Refine suggested tools") as string}>
+                {pickerFilterOptions.map((filterId) => (
+                  <button
+                    key={filterId}
+                    type="button"
+                    className={filterId === pickerFilter ? "is-active" : undefined}
+                    onClick={() => setPickerFilter(filterId)}
+                    aria-pressed={filterId === pickerFilter}
+                  >
+                    {getPickerFilterLabel(filterId, pickerBoard, lang)}
+                  </button>
+                ))}
+              </div>
+
+              <p className="stack-tool-picker-intro">{pickerResultIntro}</p>
+            </div>
+
             {pickerCandidates.length > 0 ? (
               <div className="stack-tool-picker-list">
-                {pickerCandidates.map((tool) => {
+                {visiblePickerCandidates.map((tool) => {
                   const toolSlug = getToolKey(tool);
                   const categoryLabel = getCategoryLabel(tool);
                   const typeLabel = getToolTypeLabel(tool, lang);
@@ -1397,22 +1576,37 @@ const CartPage = () => {
                     </article>
                   );
                 })}
+                {hasMorePickerCandidates && (
+                  <button
+                    type="button"
+                    className="stack-tool-picker-more"
+                    onClick={() => setPickerResultLimit((limit) => limit + PICKER_RESULT_BATCH)}
+                  >
+                    {t("Afficher plus d'outils", "Show more tools")}
+                  </button>
+                )}
               </div>
             ) : (
               <div className="stack-tool-picker-empty">
-                <h3>{t("Tout est déjà dans votre stack", "Everything is already in your stack")}</h3>
+                <h3>{hasPickerQuery ? t("Aucun outil trouvé", "No tool found") : t("Tout est déjà dans votre stack", "Everything is already in your stack")}</h3>
                 <p>
-                  {t(
-                    "Aucun autre outil évident à proposer pour cet objectif avec les données actuelles.",
-                    "There are no other obvious tools to suggest for this objective with the current data.",
-                  )}
+                  {hasPickerQuery
+                    ? t(
+                      "Essayez un autre nom, un usage ou un plugin. La recherche reste dans cette fenêtre.",
+                      "Try another name, use case, or plugin. Search stays inside this panel.",
+                    )
+                    : t(
+                      "Aucun autre outil évident à proposer pour cet objectif avec les données actuelles.",
+                      "There are no other obvious tools to suggest for this objective with the current data.",
+                    )}
                 </p>
               </div>
             )}
 
             <div className="stack-tool-picker-foot">
+              <span>{t("Besoin de comparer plus largement ?", "Need a broader comparison?")}</span>
               <Link to={getBoardToolsHref(pickerBoard, prefix)} onClick={() => setPickerBoardId(null)}>
-                {t("Explorer le catalogue complet", "Explore the full catalog")}
+                {t("Ouvrir le catalogue filtré", "Open filtered catalog")}
                 <ArrowRight size={14} aria-hidden />
               </Link>
             </div>
