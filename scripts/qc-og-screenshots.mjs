@@ -35,7 +35,13 @@ const targets = tools.filter((t) => {
 console.log(`\nMode : ${APPLY ? "APPLY (nettoyage)" : "DRY-RUN"}`);
 console.log(`Screenshots à vérifier : ${targets.length}\n`);
 
-let ok = 0, broken = 0;
+// 401/403/429 usually mean the site is blocking bot traffic, not that the
+// page is actually dead — deleting a valid screenshot on that signal alone
+// would be a false positive. Only clean up statuses that reliably mean the
+// page itself is gone.
+const BOT_BLOCKED_STATUSES = new Set([401, 403, 429]);
+
+let ok = 0, broken = 0, blocked = 0;
 
 for (const tool of targets) {
   const slug = tool.slug || tool.id;
@@ -52,7 +58,12 @@ for (const tool of targets) {
     });
     clearTimeout(timer);
 
-    if (!res.ok) {
+    if (res.ok) {
+      ok++;
+    } else if (BOT_BLOCKED_STATUSES.has(res.status)) {
+      console.log(`BLOCKED ${slug}  (HTTP ${res.status}, probable filtre anti-bot — non nettoyé)  ${url}`);
+      blocked++;
+    } else {
       console.log(`BROKEN ${slug}  (HTTP ${res.status})  ${url}`);
       broken++;
       if (APPLY) {
@@ -64,8 +75,6 @@ for (const tool of targets) {
           if (error) console.error(`       ERR Supabase: ${error.message}`);
         }
       }
-    } else {
-      ok++;
     }
   } catch (e) {
     console.log(`FAIL   ${slug}  (${e.message}) — treating as broken  ${url}`);
@@ -87,6 +96,7 @@ for (const tool of targets) {
 if (APPLY) writeFileSync(CACHE, JSON.stringify(cache, null, 2));
 
 console.log(`\n── Résultat ──`);
-console.log(`OK:     ${ok}`);
-console.log(`Broken: ${broken}`);
+console.log(`OK:      ${ok}`);
+console.log(`Broken:  ${broken}`);
+console.log(`Blocked: ${blocked} (filtre anti-bot probable, à vérifier manuellement — non nettoyé)`);
 if (!APPLY) console.log(`\nRelance avec --apply pour nettoyer (cache + Supabase + fichier local).`);
