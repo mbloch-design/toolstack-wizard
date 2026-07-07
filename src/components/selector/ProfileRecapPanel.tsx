@@ -52,7 +52,7 @@ const ProfileRecapPanel = ({ form, tools, currentStep, onGoToStep, onReset }: Pr
   const selectedTools = form.currentTools.map((ct) => tools.find((t) => t.id === ct.toolId)).filter(Boolean) as Tool[];
   const totalCost = form.currentTools.reduce((sum, ct) => {
     const tool = tools.find((t) => t.id === ct.toolId);
-    return sum + (ct.monthlyCost || tool?.defaultMonthlyPrice || 0);
+    return sum + (ct.monthlyCost ?? tool?.defaultMonthlyPrice ?? 0);
   }, 0);
 
   const summaryLine = [

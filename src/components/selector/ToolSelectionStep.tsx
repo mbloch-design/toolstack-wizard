@@ -86,7 +86,7 @@ const ToolSelectionStep = ({
   );
   const totalCost = currentTools.reduce((sum, ct) => {
     const tool = tools.find((t) => t.id === ct.toolId);
-    return sum + (ct.monthlyCost || tool?.defaultMonthlyPrice || 0);
+    return sum + (ct.monthlyCost ?? tool?.defaultMonthlyPrice ?? 0);
   }, 0);
 
   const selectedTools = useMemo(() => tools.filter((t) => selectedIds.has(t.id)), [tools, selectedIds]);
