@@ -980,8 +980,7 @@
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
-    },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pterocos.png"
+    }
   },
   {
     "id": "react-hook-form",
@@ -6097,8 +6096,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.png"
+    "force_silence": false
   },
   {
     "id": "aircall-inc",
@@ -14716,8 +14714,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/cloudtask-marketplace.png"
+    "force_silence": false
   },
   {
     "id": "coast",
@@ -17721,8 +17718,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/desktopready.png"
+    "force_silence": false
   },
   {
     "id": "dext",
@@ -32517,8 +32513,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": false
     },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/liquid-web-partner-program.png"
+    "force_silence": false
   },
   {
     "id": "logomeai",
@@ -32652,8 +32647,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/logomeai.png"
+    "force_silence": false
   },
   {
     "id": "logseq",
@@ -34158,8 +34152,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/manifest-ai.png"
+    "force_silence": false
   },
   {
     "id": "masv",
@@ -59876,8 +59869,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/wunderlist.png"
+    "force_silence": false
   },
   {
     "id": "xero",
@@ -61035,8 +61027,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/zoom-ai-companion.png"
+    "force_silence": false
   },
   {
     "id": "taskade",
@@ -70038,8 +70029,7 @@
     "timeGainedHoursPerMonth": 2,
     "seo": {
       "metaDescription": "SEO Mode avis : outil SEO IA à 2$/mois. Budget minimal pour optimisation on-page et meta-descriptions."
-    },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/seo-mode.png"
+    }
   },
   {
     "id": "vmake",
@@ -70317,8 +70307,7 @@
     "timeGainedHoursPerMonth": 3,
     "seo": {
       "metaDescription": "Guideless avis : assistant IA de planification personnelle pour freelances. Structurez vos journées avec l'IA."
-    },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/guideless.png"
+    }
   },
   {
     "id": "cossistant",
@@ -104371,8 +104360,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/capcut-ai.png"
+    "decision_policy_v3": null
   },
   {
     "id": "opusclip",
@@ -108192,8 +108180,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/templates-ugc.png"
+    "decision_policy_v3": null
   },
   {
     "id": "teleprompter-apps",
@@ -108587,8 +108574,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/frame-guides.png"
+    "decision_policy_v3": null
   },
   {
     "id": "creatoriq",
@@ -108983,8 +108969,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/affiliate-dashboards.png"
+    "decision_policy_v3": null
   },
   {
     "id": "media-kit-templates",
@@ -109082,8 +109067,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/media-kit-templates.png"
+    "decision_policy_v3": null
   },
   {
     "id": "icons8",
@@ -110318,8 +110302,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/loox.png"
+    "decision_policy_v3": null
   },
   {
     "id": "judge-me",
@@ -111775,8 +111758,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gsc.png"
+    "decision_policy_v3": null
   },
   {
     "id": "link-whisper",
@@ -112888,8 +112870,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/elgato-stream-deck.png"
+    "decision_policy_v3": null
   },
   {
     "id": "overlays",
@@ -113306,8 +113287,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/streamelements-widgets.png"
+    "decision_policy_v3": null
   },
   {
     "id": "twitch",
@@ -113661,8 +113641,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gaming-overlays.png"
+    "decision_policy_v3": null
   },
   {
     "id": "premiere-rush",
@@ -113782,8 +113761,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/premiere-rush.png"
+    "decision_policy_v3": null
   },
   {
     "id": "google-maps",
@@ -114209,8 +114187,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/recipe-card-templates.png"
+    "decision_policy_v3": null
   },
   {
     "id": "lightroom-presets",
@@ -115402,8 +115379,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/newsletter-referral-tools.png"
+    "decision_policy_v3": null
   },
   {
     "id": "trainerize",
@@ -116532,8 +116508,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": true,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/mockup-plugins.png"
+    "force_silence": true
   },
   {
     "id": "product-hunt",
@@ -117247,8 +117222,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/content-credentials-tools.png"
+    "decision_policy_v3": null
   },
   {
     "id": "zotero",
@@ -118510,8 +118484,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/emoji-sticker-packs.png"
+    "decision_policy_v3": null
   },
   {
     "id": "lightroom-mobile",
@@ -118713,8 +118686,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/mobile-gimbal-apps.png"
+    "decision_policy_v3": null
   },
   {
     "id": "teleprompter",
@@ -119010,8 +118982,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/shared-cloud-folders.png"
+    "decision_policy_v3": null
   },
   {
     "id": "brand-kits",
@@ -119428,8 +119399,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/repurpose-io.png"
+    "decision_policy_v3": null
   },
   {
     "id": "social-schedulers",
@@ -119756,8 +119726,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/bots-discord.png"
+    "decision_policy_v3": null
   },
   {
     "id": "memberful",
@@ -121018,8 +120987,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pennylane-ai-selon-dispo.png"
+    "decision_policy_v3": null
   },
   {
     "id": "customer-io",
@@ -121518,8 +121486,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/excel-copilot.png"
+    "decision_policy_v3": null
   },
   {
     "id": "webhooks",
@@ -122221,8 +122188,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/chatgpt-pour-brouillons-non-juridiques.png"
+    "decision_policy_v3": null
   },
   {
     "id": "weezevent",
@@ -122561,8 +122527,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/krea-selon-metier.png"
+    "decision_policy_v3": null
   },
   {
     "id": "pennylane-ou-indy",
@@ -122661,8 +122626,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pennylane-ou-indy.png"
+    "decision_policy_v3": null
   },
   {
     "id": "gamma-ai",
@@ -123000,8 +122964,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-meet.png"
+    "decision_policy_v3": null
   },
   {
     "id": "pennylane-qonto",
@@ -123100,8 +123063,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pennylane-qonto.png"
+    "decision_policy_v3": null
   },
   {
     "id": "openai",
@@ -123300,8 +123262,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/instantly.png"
+    "decision_policy_v3": null
   },
   {
     "id": "whatsapp-business",
@@ -123730,8 +123691,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gorgias-helpscout.png"
+    "decision_policy_v3": null
   },
   {
     "id": "zapier-make",
@@ -133009,8 +132969,7 @@
       "free": "Free, all features, no ads"
     },
     "force_silence": false,
-    "description": "Snapseed, c'est l'appli de retouche photo mobile de Google, et elle est entièrement gratuite, sans pub ni achat intégré. Sur iOS comme sur Android, elle offre un niveau de contrôle qu'on n'attend pas d'une appli gratuite : courbes, retouche sélective au doigt (control points), correction de perspective, pinceau, et une vingtaine de filtres pro modifiables.\n\nLe gros atout, c'est l'édition non destructive et l'export en haute qualité (y compris en JPG sans perte visible). Pour un créateur qui retouche depuis son téléphone, c'est largement suffisant pour redresser, recadrer, ajuster lumière et couleurs, voire effacer un élément gênant.\n\nLa limite, c'est que ça reste mobile et ponctuel : pas de gestion de catalogue, pas de synchro desktop, pas de traitement par lot sérieux. Si tu gères un vrai flux photo, Lightroom mobile (avec son écosystème) ira plus loin. Mais pour de la retouche rapide et gratuite sur téléphone, Snapseed reste une référence difficile à battre. Aucune raison de payer pour ce qu'il fait déjà très bien.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/snapseed.png"
+    "description": "Snapseed, c'est l'appli de retouche photo mobile de Google, et elle est entièrement gratuite, sans pub ni achat intégré. Sur iOS comme sur Android, elle offre un niveau de contrôle qu'on n'attend pas d'une appli gratuite : courbes, retouche sélective au doigt (control points), correction de perspective, pinceau, et une vingtaine de filtres pro modifiables.\n\nLe gros atout, c'est l'édition non destructive et l'export en haute qualité (y compris en JPG sans perte visible). Pour un créateur qui retouche depuis son téléphone, c'est largement suffisant pour redresser, recadrer, ajuster lumière et couleurs, voire effacer un élément gênant.\n\nLa limite, c'est que ça reste mobile et ponctuel : pas de gestion de catalogue, pas de synchro desktop, pas de traitement par lot sérieux. Si tu gères un vrai flux photo, Lightroom mobile (avec son écosystème) ira plus loin. Mais pour de la retouche rapide et gratuite sur téléphone, Snapseed reste une référence difficile à battre. Aucune raison de payer pour ce qu'il fait déjà très bien."
   },
   {
     "id": "vidiq",
@@ -137621,8 +137580,7 @@
       "paid": ""
     },
     "force_silence": false,
-    "description": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-duik.png"
+    "description": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable."
   },
   {
     "id": "trapcode",
@@ -137758,8 +137716,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 50
     },
-    "substitution_cluster_v2": "plugin-after-effects",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/trapcode.png"
+    "substitution_cluster_v2": "plugin-after-effects"
   },
   {
     "id": "magic-bullet",
@@ -137896,8 +137853,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 50
     },
-    "substitution_cluster_v2": "plugin-after-effects",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/magic-bullet.png"
+    "substitution_cluster_v2": "plugin-after-effects"
   },
   {
     "id": "vfx-suite",
@@ -138033,8 +137989,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 50
     },
-    "substitution_cluster_v2": "plugin-after-effects",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/vfx-suite.png"
+    "substitution_cluster_v2": "plugin-after-effects"
   },
   {
     "id": "red-giant-universe",
@@ -138301,8 +138256,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 50
     },
-    "substitution_cluster_v2": "plugin-after-effects",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pluraleyes.png"
+    "substitution_cluster_v2": "plugin-after-effects"
   },
   {
     "id": "ae-red-giant",
