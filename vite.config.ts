@@ -436,8 +436,12 @@ function staticPrerenderPlugin(): Plugin {
           // truncation point for no CTR benefit. Unrounded price is still
           // used for jsonLd.offers.price below (structured data should stay
           // exact).
-          const price = tool.defaultMonthlyPrice || null;
-          const priceDisplay = price ? Math.round(price) : null;
+          // ?? (not ||) and != null (not truthy) checks throughout: a
+          // free tool's price is legitimately 0, which is falsy but not
+          // absent — `0 || null` and `price ? ... : null` both silently
+          // turn a real "it's free" value into "price unknown".
+          const price = tool.defaultMonthlyPrice ?? null;
+          const priceDisplay = price != null ? Math.round(price) : null;
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
@@ -742,7 +746,15 @@ function staticPrerenderPlugin(): Plugin {
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
-          const price: number | null = tool.defaultMonthlyPrice || null;
+          // ?? not ||: a free tool's price is legitimately 0 (see the
+          // matching fix in the main-page loop above).
+          const price: number | null = tool.defaultMonthlyPrice ?? null;
+          // Rounded value for the FAQ's natural-language pricing answer,
+          // so it matches the main tool page's FAQPage answer to the same
+          // question instead of disagreeing on precision (64€ vs 64.39€).
+          // Machine-readable fields (offers.price, meta description) below
+          // keep using the exact `price`.
+          const priceDisplay: number | null = price != null ? Math.round(price) : null;
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
@@ -800,8 +812,8 @@ function staticPrerenderPlugin(): Plugin {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: isFr
-                        ? `${name} coûte ${price === 0 ? "0€ (gratuit)" : price ? `${price}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
-                        : `${name} costs ${price === 0 ? "€0 (free)" : price ? `€${price}/month` : "variable by plan"}. Price verified by ToolTrim.`,
+                        ? `${name} coûte ${priceDisplay === 0 ? "0€ (gratuit)" : priceDisplay ? `${priceDisplay}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
+                        : `${name} costs ${priceDisplay === 0 ? "€0 (free)" : priceDisplay ? `€${priceDisplay}/month` : "variable by plan"}. Price verified by ToolTrim.`,
                     },
                   },
                   {

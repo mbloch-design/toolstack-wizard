@@ -311,7 +311,17 @@ export default function HomePageV2() {
       <div className="v2-catalog">
         <div className="v2-container">
 
-          {/* ══ 1. Outils en vedette — carousel 2×4 ══ */}
+          {/* ══ 1. Outils en vedette — carousel 2×4 ══
+               Gated on featured.length, same pattern as every other
+               conditional section below (Outils IA, Nouveautés...):
+               prescription_quality (what "featured" filters on) only
+               exists once the Supabase fetch resolves — the static/
+               offline fallback data doesn't carry it — so featured is
+               legitimately [] during that window. Showing the heading
+               + arrows with zero cards under it looked broken; hide the
+               whole section instead of rendering it empty. */}
+          {featured.length > 0 && (
+          <>
           <FeaturedHead
             label={t("Outils en vedette", "Featured tools")}
             to={`${prefix}/tools`}
@@ -358,6 +368,8 @@ export default function HomePageV2() {
                 />
               ))}
             </div>
+          )}
+          </>
           )}
 
           {/* ══ 2. Outils IA — single row of 4 ══ */}
