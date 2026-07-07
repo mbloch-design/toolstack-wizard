@@ -848,30 +848,6 @@ function matchesPickerFilter(filterId: PickerFilterId, tool: ToolSummary, boardS
   return boardScore > 0;
 }
 
-function getPickerResultIntro(hasQuery: boolean, filterId: PickerFilterId, resultCount: number, board: StackBoard, lang: string) {
-  if (resultCount === 0) {
-    return lang === "en"
-      ? "No matching tool for now."
-      : "Aucun outil correspondant pour le moment.";
-  }
-
-  if (hasQuery) {
-    return lang === "en"
-      ? `${resultCount} result${resultCount > 1 ? "s" : ""}, prioritized for ${board.labelEn}.`
-      : `${resultCount} résultat${resultCount > 1 ? "s" : ""}, priorisé${resultCount > 1 ? "s" : ""} pour ${board.labelFr}.`;
-  }
-
-  if (filterId === "recommended") {
-    return lang === "en"
-      ? "Smart suggestions based on this objective."
-      : "Suggestions prioritaires pour cet objectif.";
-  }
-
-  return lang === "en"
-    ? `${resultCount} available tool${resultCount > 1 ? "s" : ""} in this view.`
-    : `${resultCount} outil${resultCount > 1 ? "s" : ""} disponible${resultCount > 1 ? "s" : ""} dans cette vue.`;
-}
-
 function getSubdomainSectionClassName(group: StackSubdomainGroup) {
   return [
     "stack-subdomain-section",
@@ -1067,10 +1043,6 @@ const CartPage = () => {
         });
     });
   }, [categoryById, lang, pickerBoard, pinnedToolSlugSet, tools]);
-
-  const pickerResultIntro = pickerBoard
-    ? getPickerResultIntro(hasPickerQuery, pickerFilter, pickerCandidates.length, pickerBoard, lang)
-    : "";
 
   useEffect(() => {
     setPickerResultLimit(PICKER_RESULT_BATCH);
@@ -1485,14 +1457,7 @@ const CartPage = () => {
           >
             <div className="stack-tool-picker-head">
               <div>
-                <span>{t("Ajouter sans quitter ma stack", "Add without leaving my stack")}</span>
                 <h2 id="stack-tool-picker-title">{getObjectiveToolsCta({ ...pickerBoard, tools: [] }, lang)}</h2>
-                <p>
-                  {t(
-                    "Sélectionnez les outils utiles à cet objectif. Ils apparaissent immédiatement dans votre vue d'ensemble.",
-                    "Select tools for this objective. They appear immediately in your overview.",
-                  )}
-                </p>
               </div>
               <button
                 type="button"
@@ -1538,41 +1503,37 @@ const CartPage = () => {
                   </button>
                 ))}
               </div>
-
-              <p className="stack-tool-picker-intro">{pickerResultIntro}</p>
             </div>
 
             {pickerCandidates.length > 0 ? (
               <div className="stack-tool-picker-list">
                 {visiblePickerCandidates.map((tool) => {
                   const toolSlug = getToolKey(tool);
-                  const categoryLabel = getCategoryLabel(tool);
                   const typeLabel = getToolTypeLabel(tool, lang);
-                  const description = lang === "en" ? tool.shortDescriptionEn || tool.shortDescription : tool.shortDescription;
                   const relation = getToolRelation(tool, tools, lang);
 
                   return (
                     <article key={toolSlug} className="stack-tool-picker-card">
-                      <ToolLogo tool={tool} size={38} className="stack-tool-picker-logo" />
+                      <ToolLogo tool={tool} size={34} className="stack-tool-picker-logo" />
                       <div className="stack-tool-picker-card-copy">
                         <h3>{tool.name}</h3>
-                        {description && <p>{description}</p>}
                         <div className="stack-tool-picker-meta">
                           {typeLabel && <span>{typeLabel}</span>}
-                          {categoryLabel && <span>{categoryLabel}</span>}
-                          {relation && <span>{relation}</span>}
-                          <strong>{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</strong>
+                          {relation && <span className="stack-tool-picker-relation">{relation}</span>}
                         </div>
                       </div>
-                      <button
-                        type="button"
-                        className="stack-tool-picker-add"
-                        onClick={() => addToolFromPicker(tool)}
-                        aria-label={t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`) as string}
-                      >
-                        <Plus size={15} aria-hidden />
-                        {t("Ajouter", "Add")}
-                      </button>
+                      <div className="stack-tool-picker-card-actions">
+                        <strong className="stack-tool-picker-price">{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</strong>
+                        <button
+                          type="button"
+                          className="stack-tool-picker-add"
+                          onClick={() => addToolFromPicker(tool)}
+                          aria-label={t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`) as string}
+                        >
+                          <Plus size={15} aria-hidden />
+                          {t("Ajouter", "Add")}
+                        </button>
+                      </div>
                     </article>
                   );
                 })}
