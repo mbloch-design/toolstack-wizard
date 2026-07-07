@@ -179,9 +179,17 @@ function buildToolFaqSchema(params: {
         name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: isFr
-            ? `${name} coûte ${priceDisplay === 0 ? "0€ (gratuit)" : priceDisplay ? `${priceDisplay}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
-            : `${name} costs ${priceDisplay === 0 ? "€0 (free)" : priceDisplay ? `€${priceDisplay}/month` : "variable by plan"}. Price verified by ToolTrim.`,
+          text: (() => {
+            const hasFree = toolHasFreePlan(tool);
+            if (isFr) {
+              if (priceDisplay === 0) return `${name} est gratuit. Prix vérifié par ToolTrim.`;
+              if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${priceDisplay}€/mois. Prix vérifié par ToolTrim.`;
+              return `${name} a un tarif variable selon le plan${hasFree ? ", avec une offre gratuite" : ""}. Prix vérifié par ToolTrim.`;
+            }
+            if (priceDisplay === 0) return `${name} is free. Price verified by ToolTrim.`;
+            if (priceDisplay) return `${name} offers ${hasFree ? "a free plan, then paid tiers from" : "paid plans from"} €${priceDisplay}/month. Price verified by ToolTrim.`;
+            return `${name} has variable pricing by plan${hasFree ? ", including a free tier" : ""}. Price verified by ToolTrim.`;
+          })(),
         },
       },
       {
@@ -201,6 +209,46 @@ function buildToolFaqSchema(params: {
       },
     ],
   };
+}
+
+/** True when a tool has a real free plan (freemium or free). */
+function toolHasFreePlan(tool: any): boolean {
+  const p = tool.pricing;
+  return !!(p && typeof p === "object" && p.free);
+}
+
+/**
+ * schema.org Offer/AggregateOffer for a tool.
+ *  - freemium (free plan + a paid tier): AggregateOffer 0 → paid, so the
+ *    schema doesn't claim a paid-only price on a page that shows "Gratuit".
+ *  - paid only: single Offer at that price.
+ *  - free only / unknown: single Offer at 0.
+ */
+function buildToolOffers(price: number | null, hasFree: boolean, currency: string, url: string) {
+  const urlPart = url ? { url } : {};
+  const paid = price != null && price > 0 ? price : 0;
+  if (hasFree && paid > 0) {
+    return { "@type": "AggregateOffer", lowPrice: "0", highPrice: String(paid), priceCurrency: currency, offerCount: "2", ...urlPart };
+  }
+  return { "@type": "Offer", price: String(paid), priceCurrency: currency, ...urlPart };
+}
+
+/** Map a ToolTrim category to the closest schema.org applicationCategory. */
+const APP_CATEGORY_BY_TOOL_CATEGORY: Record<string, string> = {
+  "design-tools": "DesignApplication", design: "DesignApplication", illustration: "DesignApplication",
+  prototyping: "DesignApplication", "ui-components": "DeveloperApplication",
+  photo: "MultimediaApplication", video: "MultimediaApplication", "3d": "MultimediaApplication",
+  creation: "MultimediaApplication", publishing: "MultimediaApplication",
+  "nocode-web": "DeveloperApplication", automation: "DeveloperApplication",
+  security: "SecurityApplication", "vendor-risk-data": "SecurityApplication",
+  finance: "FinanceApplication", "budgeting-fpa": "FinanceApplication", erp: "FinanceApplication",
+  communication: "CommunicationApplication", "communication-team": "CommunicationApplication",
+  "email-productivity": "CommunicationApplication",
+  "formation-education": "EducationalApplication",
+  storage: "UtilitiesApplication",
+};
+function appCategoryFor(tool: any): string {
+  return APP_CATEGORY_BY_TOOL_CATEGORY[tool.category] || "BusinessApplication";
 }
 
 // --- Source de données du build SEO (sitemap + prerender) : Supabase est la
@@ -536,17 +584,13 @@ function staticPrerenderPlugin(): Plugin {
               name,
               ...(productUrl ? { url: productUrl } : {}),
               description: description || title,
-              applicationCategory: "BusinessApplication",
+              applicationCategory: appCategoryFor(tool),
               operatingSystem: "Web",
             };
-            // offers est requis par le rich result Software App (prix, ou "0"
-            // pour un outil gratuit) ; sans lui, pas d'étoiles même avec review.
-            jsonLd.offers = {
-              "@type": "Offer",
-              price: (price && typeof price === "number" && price > 0 ? price : 0).toString(),
-              priceCurrency: "EUR",
-              ...(productUrl ? { url: productUrl } : {}),
-            };
+            // offers est requis par le rich result Software App ; AggregateOffer
+            // 0→prix pour les freemium (sinon le schema annonce un prix payant
+            // sur une page qui affiche "Gratuit").
+            jsonLd.offers = buildToolOffers(price, toolHasFreePlan(tool), "EUR", productUrl);
             // Note éditoriale ToolTrim (affichée sur la page) exposée en Review.
             // C'est l'avis du média sur un outil tiers (légitime), PAS un
             // aggregateRating à faux compteur d'avis utilisateurs.
@@ -555,7 +599,7 @@ function staticPrerenderPlugin(): Plugin {
               jsonLd.review = {
                 "@type": "Review",
                 author: { "@type": "Organization", name: "ToolTrim" },
-                itemReviewed: { "@type": "SoftwareApplication", name, applicationCategory: "BusinessApplication" },
+                itemReviewed: { "@type": "SoftwareApplication", name, applicationCategory: appCategoryFor(tool) },
                 reviewRating: {
                   "@type": "Rating",
                   ratingValue: ts.score,
@@ -823,14 +867,9 @@ function staticPrerenderPlugin(): Plugin {
                 "@type": "SoftwareApplication",
                 name,
                 ...(subProductUrl ? { url: subProductUrl } : {}),
-                applicationCategory: "BusinessApplication",
+                applicationCategory: appCategoryFor(tool),
                 operatingSystem: "Web",
-                offers: {
-                  "@type": "Offer",
-                  price: (price && price > 0 ? price : 0).toString(),
-                  priceCurrency: "EUR",
-                  ...(subProductUrl ? { url: subProductUrl } : {}),
-                },
+                offers: buildToolOffers(price, toolHasFreePlan(tool), "EUR", subProductUrl),
                 ...(subScore && typeof subScore.score === "number" ? {
                   review: {
                     "@type": "Review",
