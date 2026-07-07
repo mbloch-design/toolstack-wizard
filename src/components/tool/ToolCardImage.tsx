@@ -20,7 +20,7 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "" }: {
   return (
     <div className={`tc-image${className ? ` ${className}` : ""}`}>
       {showImage ? (
-        <img src={src as string} alt="" loading="lazy" onError={() => setFailed(true)} />
+        <img src={src as string} alt={`${tool.name} — aperçu`} loading="lazy" onError={() => setFailed(true)} />
       ) : (
         <div className="tc-image-fallback">
           <ToolLogo tool={tool} size={logoSize} />

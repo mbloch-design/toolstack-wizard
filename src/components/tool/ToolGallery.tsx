@@ -23,12 +23,17 @@ export default function ToolGallery({ images, toolName }: Props) {
 
       {/* Full-width image */}
       <div className="tg-main">
+        {/* The first frame is the fiche's hero image and a likely LCP
+            element — load it eagerly with high priority instead of lazy,
+            which was deferring the fetch until after layout. Later frames
+            are user-triggered, so lazy is fine for them. */}
         <img
           key={src}
           src={src}
           alt={`${toolName} — aperçu ${active + 1}`}
           className="tg-main-img"
-          loading="lazy"
+          loading={active === 0 ? "eager" : "lazy"}
+          fetchPriority={active === 0 ? "high" : "auto"}
           onError={() => {
             setFailed((s) => new Set([...s, images.indexOf(src)]));
             if (active >= visible.length - 1) setActive(0);

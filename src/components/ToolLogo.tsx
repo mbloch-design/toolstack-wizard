@@ -24,7 +24,7 @@ const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
     return (
       <img
         src={src}
-        alt=""
+        alt={`${tool.name} logo`}
         width={size}
         height={size}
         loading="lazy"
