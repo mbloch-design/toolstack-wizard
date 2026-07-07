@@ -399,15 +399,28 @@
     min-height: 100vh;
     padding: 0 0 80px;
   }
-  .stack-overview-strip {
-    align-items: center;
+  .tt-page-hero--banner.tt-page-hero--ma-stack .tt-page-hero-band {
+    align-items: stretch;
+    min-height: 430px;
+  }
+  .tt-page-hero--banner.tt-page-hero--ma-stack .tt-page-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 430px;
+    padding: 48px 48px 42px;
+    width: 100%;
+  }
+  .stack-overview-hero-copy {
+    max-width: 660px;
+  }
+  .stack-overview-dashboard {
+    align-items: flex-end;
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 20px 28px;
     justify-content: space-between;
-    margin: 10px auto 34px;
-    max-width: var(--layout-content, 1280px);
-    padding: 0 var(--layout-gutter, 48px);
+    margin-top: clamp(48px, 6vw, 96px);
     width: 100%;
   }
   .stack-overview-facts {
@@ -419,11 +432,11 @@
     min-width: 0;
   }
   .stack-overview-facts div {
-    border-right: 1px solid var(--color-border);
+    border-right: 1px solid rgba(34, 34, 34, 0.16);
     display: grid;
     gap: 3px;
     min-width: 0;
-    padding: 0 20px;
+    padding: 0 24px;
   }
   .stack-overview-facts div:first-child {
     padding-left: 0;
@@ -451,6 +464,8 @@
   }
   .stack-overview-action {
     flex-shrink: 0;
+    min-height: 48px;
+    padding: 0 20px;
   }
   .stack-board-grid {
     display: grid;
@@ -1855,10 +1870,17 @@
       justify-content: center;
       width: 100%;
     }
-    .stack-overview-strip {
-      align-items: flex-start;
+    .tt-page-hero--banner.tt-page-hero--ma-stack .tt-page-hero-band {
+      min-height: auto;
+    }
+    .tt-page-hero--banner.tt-page-hero--ma-stack .tt-page-hero-content {
+      min-height: auto;
+      padding: 32px 22px;
+    }
+    .stack-overview-dashboard {
+      align-items: stretch;
       flex-direction: column;
-      margin-bottom: 28px;
+      margin-top: 32px;
     }
     .stack-overview-facts {
       display: grid;

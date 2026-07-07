@@ -1053,43 +1053,43 @@ const CartPage = () => {
             <div className="tt-page-hero-band">
               <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
               <div className="tt-page-hero-content">
-                <div className="tt-page-hero-breadcrumb">
-                  <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} />
+                <div className="stack-overview-hero-copy">
+                  <div className="tt-page-hero-breadcrumb">
+                    <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} />
+                  </div>
+                  <h1 className="tt-page-hero-title">{t("Ma stack", "My stack")}</h1>
+                  <p className="tt-page-hero-desc">
+                    {t(
+                      "Visualisez les outils mis de côté, comprenez leur rôle et préparez une stack plus claire.",
+                      "See the tools you saved, understand their role and prepare a clearer stack.",
+                    )}
+                  </p>
                 </div>
-                <h1 className="tt-page-hero-title">{t("Ma stack", "My stack")}</h1>
-                <p className="tt-page-hero-desc">
-                  {t(
-                    "Visualisez les outils mis de côté, comprenez leur rôle et préparez une stack plus claire.",
-                    "See the tools you saved, understand their role and prepare a clearer stack.",
-                  )}
-                </p>
+
+                <div className="stack-overview-dashboard" role="group" aria-label={t("Résumé de ma stack", "My stack summary") as string}>
+                  <dl className="stack-overview-facts">
+                    <div>
+                      <dt>{t("Outils", "Tools")}</dt>
+                      <dd>{selectedTools.length}</dd>
+                    </div>
+                    <div>
+                      <dt>{stackPricing.bundleLines.length > 0 ? t("Budget avec suites", "Budget with bundles") : t("Budget estimé", "Estimated budget")}</dt>
+                      <dd>{formatMonthlyPrice(stackPricing.total, lang)}</dd>
+                    </div>
+                    {stackPricing.bundleLines.length > 0 && (
+                      <div>
+                        <dt>{stackPricing.bundleLines.length === 1 ? t("Suite", "Bundle") : t("Suites", "Bundles")}</dt>
+                        <dd>{stackPricing.bundleLines.length}</dd>
+                      </div>
+                    )}
+                  </dl>
+                  <Link to={`${prefix}/tools`} className="cart-primary-link stack-overview-action">
+                    {selectedTools.length > 0 ? t("Ajouter des outils", "Add tools") : t("Ajouter un premier outil", "Add a first tool")}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-      )}
-
-      {!zoomedBoard && selectedTools.length > 0 && (
-        <section className="stack-overview-strip" aria-label={t("Résumé de ma stack", "My stack summary") as string}>
-          <dl className="stack-overview-facts">
-            <div>
-              <dt>{t("Outils", "Tools")}</dt>
-              <dd>{selectedTools.length}</dd>
-            </div>
-            <div>
-              <dt>{stackPricing.bundleLines.length > 0 ? t("Budget avec suites", "Budget with bundles") : t("Budget estimé", "Estimated budget")}</dt>
-              <dd>{formatMonthlyPrice(stackPricing.total, lang)}</dd>
-            </div>
-            {stackPricing.bundleLines.length > 0 && (
-              <div>
-                <dt>{stackPricing.bundleLines.length === 1 ? t("Suite", "Bundle") : t("Suites", "Bundles")}</dt>
-                <dd>{stackPricing.bundleLines.length}</dd>
-              </div>
-            )}
-          </dl>
-          <Link to={`${prefix}/tools`} className="cart-primary-link stack-overview-action">
-            {t("Ajouter des outils", "Add tools")}
-          </Link>
         </section>
       )}
 
