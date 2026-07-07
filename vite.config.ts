@@ -604,8 +604,9 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
-              `<meta property="og:image" content="${BASE}/og-image.png" />`,
-              `<meta name="twitter:image" content="${BASE}/og-image.png" />`,
+              // og:image / twitter:image come from the static <head> defaults in
+              // index.html — re-injecting the same generic image here just
+              // produced duplicate tags on every prerendered page.
               `<script id="tool-software-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
               `<script id="tool-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
               `<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(mainFaqSchema)}</script>`,
@@ -856,7 +857,8 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:url" content="${url}" />`,
-                `<meta property="og:image" content="${BASE}/og-image.png" />`,
+                // og:image / twitter:image inherited from the static <head>
+                // defaults in index.html (see main tool-page block).
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
                 ...(faqSchema ? [`<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
                 ...(appSchema ? [`<script id="tool-subpage-app-jsonld" type="application/ld+json">${JSON.stringify(appSchema)}</script>`] : []),
@@ -1049,6 +1051,13 @@ function staticPrerenderPlugin(): Plugin {
           },
         ];
 
+        // Non-guide SEO pages whose FR/EN slugs aren't symmetrical, so the
+        // /guide/ hreflang logic below can't derive the pair automatically.
+        const SEO_PAGE_HREFLANG_PAIRS: Record<string, { fr: string; en: string }> = {
+          "/fr/audit-saas-gratuit": { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit" },
+          "/en/free-saas-audit": { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit" },
+        };
+
         for (const sp of SEO_PAGES) {
           const url = `${BASE}${sp.path}`;
           const spLang = sp.path.startsWith("/en/") ? "en" : "fr";
@@ -1057,12 +1066,17 @@ function staticPrerenderPlugin(): Plugin {
           const enSlug = spLang === "en" ? slug : GUIDE_SLUG_ALTERNATES[slug] || slug;
           const frCanonical = sp.path.includes("/guide/") ? `${BASE}/fr/guide/${frSlug}` : url;
           const enCanonical = sp.path.includes("/guide/") ? `${BASE}/en/guide/${enSlug}` : url;
+          const hreflangPair = SEO_PAGE_HREFLANG_PAIRS[sp.path];
           const metaTags = [
             `<link rel="canonical" href="${url}" />`,
             ...(sp.path.includes("/guide/") ? [
               `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
               `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
               `<link rel="alternate" hreflang="x-default" href="${frCanonical}" />`,
+            ] : hreflangPair ? [
+              `<link rel="alternate" hreflang="fr" href="${BASE}${hreflangPair.fr}" />`,
+              `<link rel="alternate" hreflang="en" href="${BASE}${hreflangPair.en}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${BASE}${hreflangPair.fr}" />`,
             ] : []),
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
@@ -1408,8 +1422,7 @@ function staticPrerenderPlugin(): Plugin {
             `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:url" content="${url}" />`,
-            `<meta property="og:image" content="${BASE}/og-image.png" />`,
-            `<meta name="twitter:image" content="${BASE}/og-image.png" />`,
+            // og:image / twitter:image inherited from the static <head> defaults.
             ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
             `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
             `<script type="application/ld+json">${JSON.stringify(postBreadcrumb)}</script>`,
@@ -1421,6 +1434,9 @@ function staticPrerenderPlugin(): Plugin {
           html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
           html = html.replace(/<title>[^<]*<\/title>/, "");
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+          // This is an article, not the site default — drop the static
+          // og:type="website" so only the article one below remains.
+          html = html.replace(/<meta\s+property="og:type"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${postMetaTags}\n  </head>`);
           html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;").substring(0, 300)}</p></noscript>\n  </body>`);
 
