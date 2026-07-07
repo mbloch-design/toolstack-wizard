@@ -137,6 +137,72 @@ function buildToolMetaDesc(tool: any, lang: string): string {
   return `${base} ${tail}`.replace(/\s+/g, " ").trim().substring(0, 160);
 }
 
+/**
+ * Same 4-question FAQPage shape used on both the canonical tool page and
+ * its /faq sub-page — extracted to one function after a code review found
+ * the two independently-maintained copies had already drifted (one used
+ * a rounded price, the other didn't, so the two URLs disagreed on the
+ * exact same question). `referMainPage` only exists because the /faq
+ * sub-page's "worth it" fallback deliberately points back to "the main
+ * page" while the canonical page's own fallback doesn't need to.
+ */
+function buildToolFaqSchema(params: {
+  name: string;
+  isFr: boolean;
+  tool: any;
+  priceDisplay: number | null;
+  slugToName: Record<string, string>;
+  referMainPage: boolean;
+}) {
+  const { name, isFr, tool, priceDisplay, slugToName, referMainPage } = params;
+  const verdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+  const altNames = (tool.alternatives || []).slice(0, 3)
+    .map((id: string) => slugToName[id] || id).filter(Boolean);
+  const altAnswer = altNames.length > 0
+    ? (isFr ? `Les principales alternatives à ${name} sont : ${altNames.join(", ")}.` : `The main alternatives to ${name} are: ${altNames.join(", ")}.`)
+    : (isFr ? `ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.` : `ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || `${name} is a SaaS tool.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isFr
+            ? `${name} coûte ${priceDisplay === 0 ? "0€ (gratuit)" : priceDisplay ? `${priceDisplay}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
+            : `${name} costs ${priceDisplay === 0 ? "€0 (free)" : priceDisplay ? `€${priceDisplay}/month` : "variable by plan"}. Price verified by ToolTrim.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: isFr ? `${name} vaut-il son prix ?` : `Is ${name} worth the price?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: verdictThreshold || (isFr
+            ? `Cela dépend de votre usage. Consultez notre verdict complet sur ${referMainPage ? "la page principale de" : "la page de"} ${name}.`
+            : `It depends on your usage. See our full verdict on ${name}'s ${referMainPage ? "main " : ""}page.`),
+        },
+      },
+      {
+        "@type": "Question",
+        name: isFr ? `Quelles sont les meilleures alternatives à ${name} ?` : `What are the best alternatives to ${name}?`,
+        acceptedAnswer: { "@type": "Answer", text: altAnswer },
+      },
+    ],
+  };
+}
+
 // --- Source de données du build SEO (sitemap + prerender) : Supabase est la
 // source de vérité au runtime. On la fusionne PAR-DESSUS le JSON groupé
 // (Supabase gagne) pour que le build reflète le contenu live et couvre les
@@ -524,53 +590,9 @@ function staticPrerenderPlugin(): Plugin {
             // static prerender previously only built this schema for the
             // separate /faq sub-page. Google evaluates the canonical URL, so
             // the FAQ rich-result opportunity was missing exactly where it
-            // matters. Same 4-question shape as the /faq sub-page below —
+            // matters. Shared with the /faq sub-page via buildToolFaqSchema —
             // real content already shown on the page, not invented for schema.
-            const mainAltNames = (tool.alternatives || []).slice(0, 3)
-              .map((id: string) => slugToName[id] || id).filter(Boolean);
-            const mainAltAnswer = mainAltNames.length > 0
-              ? (isFr ? `Les principales alternatives à ${name} sont : ${mainAltNames.join(", ")}.` : `The main alternatives to ${name} are: ${mainAltNames.join(", ")}.`)
-              : (isFr ? `ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.` : `ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`);
-            const mainVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
-            const mainFaqSchema = {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || `${name} is a SaaS tool.`,
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: isFr
-                      ? `${name} coûte ${priceDisplay === 0 ? "0€ (gratuit)" : priceDisplay ? `${priceDisplay}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
-                      : `${name} costs ${priceDisplay === 0 ? "€0 (free)" : priceDisplay ? `€${priceDisplay}/month` : "variable by plan"}. Price verified by ToolTrim.`,
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: isFr ? `${name} vaut-il son prix ?` : `Is ${name} worth the price?`,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: mainVerdictThreshold || (isFr
-                      ? `Cela dépend de votre usage. Consultez notre verdict complet sur la page de ${name}.`
-                      : `It depends on your usage. See our full verdict on ${name}'s page.`),
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: isFr ? `Quelles sont les meilleures alternatives à ${name} ?` : `What are the best alternatives to ${name}?`,
-                  acceptedAnswer: { "@type": "Answer", text: mainAltAnswer },
-                },
-              ],
-            };
+            const mainFaqSchema = buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName, referMainPage: false });
 
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
@@ -786,53 +808,11 @@ function staticPrerenderPlugin(): Plugin {
               };
 
               // FAQPage schema — /faq sub-page only, injected in static HTML
-              // so Google's first-pass crawler (no JS) can validate it
-              const verdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
-              const altNames = (tool.alternatives || []).slice(0, 3)
-                .map((id: string) => slugToName[id] || id).filter(Boolean);
-              const altAnswer = altNames.length > 0
-                ? (isFr ? `Les principales alternatives à ${name} sont : ${altNames.join(", ")}.` : `The main alternatives to ${name} are: ${altNames.join(", ")}.`)
-                : (isFr ? `ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.` : `ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`);
-
-              const faqSchema = sub.path === "faq" ? {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || `${name} is a SaaS tool.`,
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: isFr
-                        ? `${name} coûte ${priceDisplay === 0 ? "0€ (gratuit)" : priceDisplay ? `${priceDisplay}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
-                        : `${name} costs ${priceDisplay === 0 ? "€0 (free)" : priceDisplay ? `€${priceDisplay}/month` : "variable by plan"}. Price verified by ToolTrim.`,
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: isFr ? `${name} vaut-il son prix ?` : `Is ${name} worth the price?`,
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: verdictThreshold || (isFr
-                        ? `Cela dépend de votre usage. Consultez notre verdict complet sur la page principale de ${name}.`
-                        : `It depends on your usage. See our full verdict on ${name}'s main page.`),
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: isFr ? `Quelles sont les meilleures alternatives à ${name} ?` : `What are the best alternatives to ${name}?`,
-                    acceptedAnswer: { "@type": "Answer", text: altAnswer },
-                  },
-                ],
-              } : null;
+              // so Google's first-pass crawler (no JS) can validate it.
+              // Shared with the main tool page via buildToolFaqSchema.
+              const faqSchema = sub.path === "faq"
+                ? buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName, referMainPage: true })
+                : null;
 
               const subProductUrl = tool.websiteUrl || tool.affiliateLink || tool.website_url || tool.affiliate_link || "";
               const subScore = computeToolTrimScore(tool);
@@ -840,6 +820,7 @@ function staticPrerenderPlugin(): Plugin {
               // Nœud SoftwareApplication complet (name + offers + review) émis
               // sur /avis et /prix : le rich result Google exige offers ET review
               // ensemble. offers="0" pour un outil gratuit.
+              const subVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
               const appSchema = (sub.path === "avis" || sub.path === "prix") ? {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
@@ -859,7 +840,7 @@ function staticPrerenderPlugin(): Plugin {
                     author: { "@type": "Organization", name: "ToolTrim" },
                     reviewRating: { "@type": "Rating", ratingValue: subScore.score.toString(), bestRating: "5", worstRating: "1" },
                     ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
-                    ...(verdictThreshold ? { reviewBody: String(verdictThreshold).substring(0, 280) } : {}),
+                    ...(subVerdictThreshold ? { reviewBody: String(subVerdictThreshold).substring(0, 280) } : {}),
                     ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
                   },
                 } : {}),
