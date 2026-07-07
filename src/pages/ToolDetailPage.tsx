@@ -536,6 +536,20 @@ const ToolDetailPage = () => {
               margin: 0, overflowWrap: "break-word", wordBreak: "break-word",
             }}>
               {tool.name}
+              {/* SXO finding: the H1 held only the bare tool name (e.g. just
+                  "Notion"), no intent signal for "avis"/"prix"/"alternatives"
+                  searches. Nested in the same <h1> so it's part of the tag
+                  Google reads, sized down so the giant poster name stays the
+                  visual anchor — turned out to read as a natural subtitle,
+                  not just a crawler-only addition. */}
+              <span style={{
+                display: "block",
+                fontSize: "1rem", fontWeight: 500,
+                letterSpacing: "-0.01em", lineHeight: 1.4,
+                color: "var(--color-muted)", marginTop: 8,
+              }}>
+                {t(`Avis, prix et alternatives ${new Date().getFullYear()}`, `Reviews, pricing and alternatives ${new Date().getFullYear()}`)}
+              </span>
             </h1>
 
             {/* Short description */}
