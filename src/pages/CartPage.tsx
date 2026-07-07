@@ -1,4 +1,4 @@
-import { useMemo, type KeyboardEvent } from "react";
+import { useEffect, useMemo, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Plus, X } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -692,6 +692,17 @@ function getSubdomainSectionClassName(group: StackSubdomainGroup) {
   ].join(" ");
 }
 
+function getToolPickerScore(tool: ToolSummary) {
+  const qualityScore = tool.prescription_quality === "ferme" ? 30 :
+    tool.prescription_quality === "oui" ? 20 :
+    tool.prescription_quality === "question" ? 8 : 0;
+  const typeScore = tool.tool_type === "metier" ? 10 :
+    tool.tool_type === "ia" ? 8 :
+    tool.tool_type === "plugin" ? 5 : 0;
+  const signalScore = (tool.functional_needs?.length || 0) + (tool.covers?.length || 0);
+  return qualityScore + typeScore + Math.min(signalScore, 10);
+}
+
 function slugMatches(toolSlug = "", relationValue = "") {
   return toolSlug === relationValue ||
     toolSlug.endsWith(`-${relationValue}`) ||
@@ -734,11 +745,13 @@ const CartPage = () => {
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, unpinTool } = useStackPins();
+  const { state, pinTool, unpinTool } = useStackPins();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [pickerBoardId, setPickerBoardId] = useState<string | null>(null);
 
   const categoryById = useMemo(() => new Map(categories.map((category: any) => [category.id, category])), [categories]);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
+  const pinnedToolSlugSet = useMemo(() => new Set(state.pinnedToolSlugs), [state.pinnedToolSlugs]);
   const selectedTools = state.pinnedToolSlugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[];
   const stackPricing = useMemo(() => computeStackPricing(selectedTools, tools), [selectedTools, tools]);
 
@@ -763,6 +776,7 @@ const CartPage = () => {
   const activeBoards = boards.filter((board) => board.tools.length > 0) as StackObjective[];
   const zoomObjectiveId = searchParams.get("objectif");
   const zoomedBoard = activeBoards.find((board) => board.id === zoomObjectiveId) || null;
+  const pickerBoard = STACK_BOARDS.find((board) => board.id === pickerBoardId) || null;
   const zoomedPricing = useMemo(
     () => computeStackPricing(zoomedBoard?.tools || [], tools),
     [tools, zoomedBoard],
@@ -789,6 +803,37 @@ const CartPage = () => {
     return Array.from(groups.values()).sort((a, b) => a.order - b.order || a.labelFr.localeCompare(b.labelFr));
   }, [categoryById, lang, zoomedBoard]);
 
+  const pickerCandidates = useMemo(() => {
+    if (!pickerBoard) return [] as ToolSummary[];
+
+    return tools
+      .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
+      .filter((tool) => getBoardForTool(tool, getCategoryLabel(tool)).id === pickerBoard.id)
+      .sort((a, b) => getToolPickerScore(b) - getToolPickerScore(a) || a.name.localeCompare(b.name))
+      .slice(0, 12);
+  }, [categoryById, lang, pickerBoard, pinnedToolSlugSet, tools]);
+
+  useEffect(() => {
+    if (!pickerBoard) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setPickerBoardId(null);
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [pickerBoard]);
+
+  function openToolPicker(boardId: string) {
+    setPickerBoardId(boardId);
+  }
+
+  function addToolFromPicker(tool: ToolSummary) {
+    pinTool(getToolKey(tool));
+  }
+
   function openObjective(boardId: string) {
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("objectif", boardId);
@@ -804,7 +849,7 @@ const CartPage = () => {
     setSearchParams(nextParams);
   }
 
-  function handleBoardKeyDown(event: KeyboardEvent<HTMLElement>, boardId: string) {
+  function handleBoardKeyDown(event: ReactKeyboardEvent<HTMLElement>, boardId: string) {
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
     openObjective(boardId);
@@ -844,9 +889,9 @@ const CartPage = () => {
                   )}
                 </p>
                 <div className="stack-objective-hero-actions">
-                  <Link to={`${prefix}/tools`} className="cart-primary-link stack-objective-hero-action">
+                  <button type="button" className="cart-primary-link stack-objective-hero-action" onClick={() => openToolPicker(zoomedBoard.id)}>
                     {getObjectiveToolsCta(zoomedBoard, lang)}
-                  </Link>
+                  </button>
                 </div>
 
                 <div className="stack-objective-hero-bottom">
@@ -1110,17 +1155,20 @@ const CartPage = () => {
                       {formatToolCount(board.tools.length, lang)}
                     </p>
                   </div>
-                  <Link
-                    to={getBoardToolsHref(board, prefix)}
+                  <button
+                    type="button"
                     className="stack-board-add-link"
-                    onClick={(event) => event.stopPropagation()}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      openToolPicker(board.id);
+                    }}
                     onKeyDown={(event) => event.stopPropagation()}
                     aria-label={getObjectiveToolsCta(board, lang)}
                     title={getObjectiveToolsCta(board, lang)}
                   >
                     <Plus size={14} aria-hidden />
                     {t("Ajouter", "Add")}
-                  </Link>
+                  </button>
                 </div>
               </section>
             );
@@ -1150,6 +1198,93 @@ const CartPage = () => {
             </section>
           )}
         </main>
+      )}
+
+      {pickerBoard && (
+        <div className="stack-tool-picker-backdrop" onClick={() => setPickerBoardId(null)}>
+          <aside
+            className="stack-tool-picker"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="stack-tool-picker-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="stack-tool-picker-head">
+              <div>
+                <span>{t("Ajouter sans quitter ma stack", "Add without leaving my stack")}</span>
+                <h2 id="stack-tool-picker-title">{getObjectiveToolsCta({ ...pickerBoard, tools: [] }, lang)}</h2>
+                <p>
+                  {t(
+                    "Sélectionnez les outils utiles à cet objectif. Ils apparaissent immédiatement dans votre vue d'ensemble.",
+                    "Select tools for this objective. They appear immediately in your overview.",
+                  )}
+                </p>
+              </div>
+              <button
+                type="button"
+                className="stack-tool-picker-close"
+                onClick={() => setPickerBoardId(null)}
+                aria-label={t("Fermer", "Close") as string}
+              >
+                <X size={18} aria-hidden />
+              </button>
+            </div>
+
+            {pickerCandidates.length > 0 ? (
+              <div className="stack-tool-picker-list">
+                {pickerCandidates.map((tool) => {
+                  const toolSlug = getToolKey(tool);
+                  const categoryLabel = getCategoryLabel(tool);
+                  const typeLabel = getToolTypeLabel(tool, lang);
+                  const description = lang === "en" ? tool.shortDescriptionEn || tool.shortDescription : tool.shortDescription;
+                  const relation = getToolRelation(tool, tools, lang);
+
+                  return (
+                    <article key={toolSlug} className="stack-tool-picker-card">
+                      <ToolLogo tool={tool} size={38} className="stack-tool-picker-logo" />
+                      <div className="stack-tool-picker-card-copy">
+                        <h3>{tool.name}</h3>
+                        {description && <p>{description}</p>}
+                        <div className="stack-tool-picker-meta">
+                          {typeLabel && <span>{typeLabel}</span>}
+                          {categoryLabel && <span>{categoryLabel}</span>}
+                          {relation && <span>{relation}</span>}
+                          <strong>{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</strong>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        className="stack-tool-picker-add"
+                        onClick={() => addToolFromPicker(tool)}
+                        aria-label={t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`) as string}
+                      >
+                        <Plus size={15} aria-hidden />
+                        {t("Ajouter", "Add")}
+                      </button>
+                    </article>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="stack-tool-picker-empty">
+                <h3>{t("Tout est déjà dans votre stack", "Everything is already in your stack")}</h3>
+                <p>
+                  {t(
+                    "Aucun autre outil évident à proposer pour cet objectif avec les données actuelles.",
+                    "There are no other obvious tools to suggest for this objective with the current data.",
+                  )}
+                </p>
+              </div>
+            )}
+
+            <div className="stack-tool-picker-foot">
+              <Link to={getBoardToolsHref(pickerBoard, prefix)} onClick={() => setPickerBoardId(null)}>
+                {t("Explorer le catalogue complet", "Explore the full catalog")}
+                <ArrowRight size={14} aria-hidden />
+              </Link>
+            </div>
+          </aside>
+        </div>
       )}
     </div>
   );
