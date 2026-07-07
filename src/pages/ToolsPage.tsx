@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { Search, X } from "lucide-react";
@@ -16,6 +17,28 @@ const TOOLS_PER_PAGE = 40;
 type SortKey = "popular" | "name" | "price-asc" | "free-first";
 type PriceFilter = "all" | "free" | "paid";
 
+const TOOL_VERTICAL_FILTERS: Record<string, RegExp> = {
+  ia: /\bia\b|\bai\b|gpt|llm|claude|chatgpt|midjourney|generation|generative|assistant|prompt/i,
+  organisation: /organis|project|projet|task|todo|kanban|note|doc|wiki|calendar|agenda|workspace|collaboration|meeting/i,
+  design: /design|figma|prototype|photo|image|visual|visuel|canvas|brand|branding|logo|video|vidéo|motion|3d|rendu|render|illustration|retouche|photoshop|lightroom|blender|sketch|canva|audio|podcast/i,
+  automation: /automat|workflow|zapier|make|n8n|integration|api|nocode|no-code|trigger|connector/i,
+  marketing: /marketing|seo|content|contenu|social|newsletter|email|campaign|ads|analytics|audience|growth/i,
+  vente: /crm|sales|vente|client|lead|prospect|pipeline|ecommerce|shop|payment|checkout|stripe|booking/i,
+  finance: /finance|account|compta|invoice|factur|billing|budget|expense|payroll|bank|tax/i,
+  dev: /dev|code|github|git|deploy|hosting|database|data|backend|frontend|monitoring|security|securite/i,
+};
+
+const TOOL_VERTICAL_LABELS: Record<string, { fr: string; en: string }> = {
+  ia: { fr: "IA", en: "AI" },
+  organisation: { fr: "Organisation", en: "Organization" },
+  design: { fr: "Design", en: "Design" },
+  automation: { fr: "Automatisation", en: "Automation" },
+  marketing: { fr: "Marketing", en: "Marketing" },
+  vente: { fr: "Vente", en: "Sales" },
+  finance: { fr: "Finance", en: "Finance" },
+  dev: { fr: "Dev", en: "Dev" },
+};
+
 function isTrending(tool: Tool) {
   return tool.prescription_quality === "ferme";
 }
@@ -23,11 +46,42 @@ function isRecommended(tool: Tool) {
   return tool.prescription_quality === "oui" || tool.prescription_quality === "ferme";
 }
 
+function normalizeToolText(value: unknown) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function getToolSearchText(tool: Tool, categoryLabel = "") {
+  return normalizeToolText([
+    tool.name,
+    tool.categoryId,
+    categoryLabel,
+    tool.shortDescription,
+    tool.shortDescriptionEn,
+    ...(tool.verticals || []),
+    ...(tool.covers || []),
+    ...(tool.functional_needs || []),
+    ...(tool.useCases || []),
+    ...(tool.useCasesEn || []),
+  ].join(" "));
+}
+
+function getVerticalFilterLabel(verticalId: string, lang: string) {
+  const label = TOOL_VERTICAL_LABELS[verticalId];
+  if (!label) return "";
+  return lang === "en" ? label.en : label.fr;
+}
+
 const ToolsPage = () => {
   const { lang, t, prefix } = useLang();
   const { tools } = useTools();
   const { categories } = useCategories();
-  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const urlSearch = searchParams.get("q") || "";
+  const selectedVertical = searchParams.get("vertical") || "";
+  const [search, setSearch] = useState(urlSearch);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>("popular");
   const [priceFilter, setPriceFilter] = useState<PriceFilter>("all");
@@ -64,6 +118,7 @@ const ToolsPage = () => {
       tools.filter(t => t.categoryId === b.id).length - tools.filter(t => t.categoryId === a.id).length
     ), [categories, tools]
   );
+  const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
 
   // Noteworthy: top recommended tools (not filtered by category/search)
   const noteworthy = useMemo(() =>
@@ -73,17 +128,22 @@ const ToolsPage = () => {
 
   // All tools filtered + sorted
   const filtered = useMemo(() => {
-    const q = search.toLowerCase();
+    const q = normalizeToolText(search);
+    const verticalPattern = selectedVertical ? TOOL_VERTICAL_FILTERS[selectedVertical] : null;
     const result = tools.filter(tool => {
-      const matchSearch = !search
-        || (tool.name ?? "").toLowerCase().includes(q)
-        || (tool.shortDescription ?? "").toLowerCase().includes(q);
+      const category = categoryById.get(tool.categoryId);
+      const categoryLabel = category
+        ? `${stripLeadingEmoji(category.name, category.id)} ${stripLeadingEmoji(category.nameEn || category.name, category.id)}`
+        : "";
+      const searchText = getToolSearchText(tool, categoryLabel);
+      const matchSearch = !search || searchText.includes(q);
+      const matchVertical = !verticalPattern || verticalPattern.test(searchText);
       const matchCat = !selectedCategory || tool.categoryId === selectedCategory;
       const matchPrice =
         priceFilter === "free" ? tool.defaultMonthlyPrice === 0 :
         priceFilter === "paid" ? tool.defaultMonthlyPrice > 0 :
         true;
-      return matchSearch && matchCat && matchPrice;
+      return matchSearch && matchVertical && matchCat && matchPrice;
     });
 
     result.sort((a, b) => {
@@ -98,24 +158,36 @@ const ToolsPage = () => {
       return 0;
     });
     return result;
-  }, [tools, search, selectedCategory, priceFilter, sort]);
+  }, [categoryById, tools, search, selectedVertical, selectedCategory, priceFilter, sort]);
 
-  useEffect(() => { setVisibleCount(TOOLS_PER_PAGE); }, [search, selectedCategory, priceFilter, sort]);
+  useEffect(() => { setVisibleCount(TOOLS_PER_PAGE); }, [search, selectedVertical, selectedCategory, priceFilter, sort]);
+
+  useEffect(() => {
+    setSearch(urlSearch);
+    if (urlSearch) setIsSearchOpen(true);
+  }, [urlSearch]);
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
   const getCatLabel = (cat: typeof categories[0]) =>
     t(stripLeadingEmoji(cat.name, cat.id), stripLeadingEmoji(cat.nameEn, stripLeadingEmoji(cat.name, cat.id)));
 
-  const isFiltering = !!(search || selectedCategory || priceFilter !== "all");
+  const isFiltering = !!(search || selectedVertical || selectedCategory || priceFilter !== "all" || sort !== "popular");
   const isSearchExpanded = isSearchOpen || search.length > 0;
+  const selectedVerticalLabel = getVerticalFilterLabel(selectedVertical, lang);
   const resultLabel = lang === "fr"
-    ? `${filtered.length} outil${filtered.length > 1 ? "s" : ""}`
-    : `Showing ${filtered.length} ${filtered.length === 1 ? "tool" : "tools"}`;
+    ? `${filtered.length} outil${filtered.length > 1 ? "s" : ""}${selectedVerticalLabel ? ` · ${selectedVerticalLabel}` : ""}`
+    : `Showing ${filtered.length} ${filtered.length === 1 ? "tool" : "tools"}${selectedVerticalLabel ? ` · ${selectedVerticalLabel}` : ""}`;
 
   useEffect(() => {
     if (isSearchExpanded) searchInputRef.current?.focus();
   }, [isSearchExpanded]);
+
+  function clearUrlParam(paramName: string) {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete(paramName);
+    setSearchParams(nextParams, { replace: true });
+  }
 
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
@@ -193,6 +265,7 @@ const ToolsPage = () => {
                       onClick={() => {
                         setSearch("");
                         setIsSearchOpen(false);
+                        clearUrlParam("q");
                       }}
                       className="tt-catalog-inline-search-clear"
                       aria-label={t("Effacer", "Clear") as string}
@@ -212,11 +285,22 @@ const ToolsPage = () => {
                 </button>
               )}
             </div>
+
+            {selectedVerticalLabel && (
+              <button
+                type="button"
+                className="tt-catalog-context-chip"
+                onClick={() => clearUrlParam("vertical")}
+                aria-label={t(`Retirer le filtre ${selectedVerticalLabel}`, `Remove ${selectedVerticalLabel} filter`) as string}
+              >
+                <span>{selectedVerticalLabel}</span>
+                <X size={14} aria-hidden />
+              </button>
+            )}
           </div>
 
           <div className="tt-catalog-toolbar-meta">
             <span>{resultLabel}</span>
-            <span className="tt-catalog-toolbar-divider" aria-hidden />
             <select
               className="tt-catalog-sort-select"
               value={sort}
@@ -265,7 +349,7 @@ const ToolsPage = () => {
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed py-16 text-center" style={{ borderColor: "hsl(var(--border))" }}>
               <Search className="mx-auto h-8 w-8" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }} />
               <p className="mt-3 font-semibold" style={{ color: "hsl(var(--foreground))" }}>{t("Aucun outil trouvé", "No tools found")}</p>
-              <button type="button" onClick={() => { setSearch(""); setSelectedCategory(null); setPriceFilter("all"); }}
+              <button type="button" onClick={() => { setSearch(""); setSelectedCategory(null); setPriceFilter("all"); setSearchParams(new URLSearchParams(), { replace: true }); }}
                 className="mt-4 rounded-full border px-4 py-1.5 text-sm font-semibold hover:text-primary"
                 style={{ borderColor: "hsl(var(--border))", color: "hsl(var(--muted-foreground))" }}>
                 {t("Réinitialiser", "Reset")}

@@ -33,6 +33,19 @@ type StackSubdomainGroup = StackSubdomain & {
   tools: ToolSummary[];
 };
 
+type StackBundleLine = {
+  id: string;
+  parent: ToolSummary;
+  tools: ToolSummary[];
+  bundleTotal: number;
+};
+
+type StackPricingSummary = {
+  total: number;
+  bundleLines: StackBundleLine[];
+  lineByToolKey: Map<string, StackBundleLine>;
+};
+
 type CreativeStackSubdomain = StackSubdomain & {
   toolIds?: string[];
   signalKeys?: string[];
@@ -534,6 +547,151 @@ function getToolNeedLabels(tool: ToolSummary, lang: string) {
     .map((need) => getNeedLabel(need, lang));
 }
 
+function getToolPrice(tool: ToolSummary | undefined) {
+  return Math.max(0, Number(tool?.defaultMonthlyPrice) || 0);
+}
+
+function getToolLookupKeys(tool: ToolSummary) {
+  return Array.from(new Set([tool.id, tool.slug, getToolKey(tool)].map(normalizeKey).filter(Boolean)));
+}
+
+function buildToolLookup(tools: ToolSummary[]) {
+  const lookup = new Map<string, ToolSummary>();
+  tools.forEach((tool) => {
+    getToolLookupKeys(tool).forEach((key) => {
+      if (!lookup.has(key)) lookup.set(key, tool);
+    });
+  });
+  return lookup;
+}
+
+function isSameTool(a: ToolSummary, b: ToolSummary) {
+  const bKeys = new Set(getToolLookupKeys(b));
+  return getToolLookupKeys(a).some((key) => bKeys.has(key));
+}
+
+function getBundleParentTool(tool: ToolSummary, lookup: Map<string, ToolSummary>) {
+  const parentKey = normalizeKey(tool.bundle_parent || "");
+  if (!parentKey) return null;
+  const parent = lookup.get(parentKey);
+  if (!parent || isSameTool(tool, parent)) return null;
+  return parent;
+}
+
+function computeStackPricing(selectedTools: ToolSummary[], allTools: ToolSummary[]): StackPricingSummary {
+  const lookup = buildToolLookup(allTools);
+  const processed = new Set<string>();
+  const lineByToolKey = new Map<string, StackBundleLine>();
+  const groups = new Map<string, { parent: ToolSummary; children: ToolSummary[] }>();
+
+  selectedTools.forEach((tool) => {
+    const parent = getBundleParentTool(tool, lookup);
+    if (!parent) return;
+    const parentKey = normalizeKey(getToolKey(parent));
+    const group = groups.get(parentKey) || { parent, children: [] };
+    group.children.push(tool);
+    groups.set(parentKey, group);
+  });
+
+  const selectedParentFor = (parent: ToolSummary) => selectedTools.find((tool) => isSameTool(tool, parent));
+  const groupCandidates = Array.from(groups.values())
+    .map((group) => {
+      const parentSelected = selectedParentFor(group.parent);
+      const selectedGroupTools = Array.from(new Map(
+        [parentSelected, ...group.children]
+          .filter(Boolean)
+          .map((tool) => [getToolKey(tool as ToolSummary), tool as ToolSummary]),
+      ).values());
+      const unit = selectedGroupTools.reduce((sum, tool) => sum + getToolPrice(tool), 0);
+      const bundlePrice = getToolPrice(group.parent);
+      return { ...group, parentSelected, selectedGroupTools, unit, bundlePrice };
+    })
+    .filter((group) => group.parentSelected || (group.children.length >= 2 && group.unit > 0))
+    .filter((group) => group.bundlePrice > 0)
+    .sort((a, b) => {
+      const gainA = a.unit - a.bundlePrice;
+      const gainB = b.unit - b.bundlePrice;
+      return gainB - gainA || b.children.length - a.children.length;
+    });
+
+  const bundleLines: StackBundleLine[] = [];
+
+  groupCandidates.forEach((group) => {
+    const availableTools = group.selectedGroupTools.filter((tool) => !processed.has(normalizeKey(getToolKey(tool))));
+    if (availableTools.length === 0) return;
+    const line: StackBundleLine = {
+      id: getToolKey(group.parent),
+      parent: group.parent,
+      tools: availableTools,
+      bundleTotal: group.bundlePrice,
+    };
+
+    bundleLines.push(line);
+    availableTools.forEach((tool) => {
+      getToolLookupKeys(tool).forEach((key) => {
+        processed.add(key);
+        lineByToolKey.set(key, line);
+      });
+    });
+  });
+
+  const standaloneTotal = selectedTools.reduce((sum, tool) => {
+    if (processed.has(normalizeKey(getToolKey(tool)))) return sum;
+    return sum + getToolPrice(tool);
+  }, 0);
+  const bundleTotal = bundleLines.reduce((sum, line) => sum + line.bundleTotal, 0);
+
+  return {
+    total: standaloneTotal + bundleTotal,
+    bundleLines,
+    lineByToolKey,
+  };
+}
+
+function getBundleLineForTool(summary: StackPricingSummary, tool: ToolSummary) {
+  return getToolLookupKeys(tool)
+    .map((key) => summary.lineByToolKey.get(key))
+    .find(Boolean) || null;
+}
+
+function getObjectiveToolsCta(board: StackObjective, lang: string) {
+  const labelsFr: Record<string, string> = {
+    ia: "Ajouter des outils IA",
+    organisation: "Ajouter des outils d'organisation",
+    design: "Ajouter des outils design",
+    automation: "Ajouter des outils d'automatisation",
+    marketing: "Ajouter des outils marketing",
+    vente: "Ajouter des outils de vente",
+    finance: "Ajouter des outils finance",
+    dev: "Ajouter des outils dev",
+  };
+  const labelsEn: Record<string, string> = {
+    ia: "Add AI tools",
+    organisation: "Add organization tools",
+    design: "Add design tools",
+    automation: "Add automation tools",
+    marketing: "Add marketing tools",
+    vente: "Add sales tools",
+    finance: "Add finance tools",
+    dev: "Add dev tools",
+  };
+
+  if (lang === "en") return labelsEn[board.id] || `Add ${board.labelEn.toLocaleLowerCase("en")} tools`;
+  return labelsFr[board.id] || `Ajouter des outils ${board.labelFr.toLocaleLowerCase("fr")}`;
+}
+
+function getBoardToolsHref(board: StackBoard, prefix: string) {
+  const params = new URLSearchParams({ vertical: board.id });
+  return `${prefix}/tools?${params.toString()}`;
+}
+
+function getSubdomainSectionClassName(group: StackSubdomainGroup) {
+  return [
+    "stack-subdomain-section",
+    group.tools.length === 1 ? "stack-subdomain-section--compact" : "stack-subdomain-section--wide",
+  ].join(" ");
+}
+
 function slugMatches(toolSlug = "", relationValue = "") {
   return toolSlug === relationValue ||
     toolSlug.endsWith(`-${relationValue}`) ||
@@ -582,6 +740,7 @@ const CartPage = () => {
   const categoryById = useMemo(() => new Map(categories.map((category: any) => [category.id, category])), [categories]);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const selectedTools = state.pinnedToolSlugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[];
+  const stackPricing = useMemo(() => computeStackPricing(selectedTools, tools), [selectedTools, tools]);
 
   const boards = useMemo(() => {
     const grouped = new Map<string, ToolSummary[]>();
@@ -604,7 +763,10 @@ const CartPage = () => {
   const activeBoards = boards.filter((board) => board.tools.length > 0) as StackObjective[];
   const zoomObjectiveId = searchParams.get("objectif");
   const zoomedBoard = activeBoards.find((board) => board.id === zoomObjectiveId) || null;
-  const zoomedBudget = zoomedBoard?.tools.reduce((sum, tool) => sum + (Number(tool.defaultMonthlyPrice) || 0), 0) || 0;
+  const zoomedPricing = useMemo(
+    () => computeStackPricing(zoomedBoard?.tools || [], tools),
+    [tools, zoomedBoard],
+  );
 
   function getCategoryLabel(tool: ToolSummary) {
     const category = categoryById.get(tool.categoryId) as any;
@@ -656,57 +818,159 @@ const CartPage = () => {
 
   return (
     <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}`}>
-      <header className="stack-boards-header">
-        <div>
-          <div className="cart-breadcrumb">
-            <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} />
+      {zoomedBoard ? (
+        <section className={`tt-page-hero tt-page-hero--banner stack-objective-page-hero stack-board-card--${zoomedBoard.id}`}>
+          <div className="tt-page-hero-inner">
+            <div className="tt-page-hero-band">
+              <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
+              <div className="tt-page-hero-content">
+                <div className="stack-objective-hero-topline">
+                  <Breadcrumb
+                    items={[
+                      { label: t("Ma stack", "My stack") as string, href: `${prefix}/ma-stack` },
+                      { label: t(zoomedBoard.labelFr, zoomedBoard.labelEn) as string },
+                    ]}
+                  />
+                  <button type="button" className="stack-objective-hero-back" onClick={closeObjective}>
+                    <ArrowLeft size={16} aria-hidden />
+                    {t("Retour", "Back")}
+                  </button>
+                </div>
+                <h1 className="tt-page-hero-title">{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</h1>
+                <p className="tt-page-hero-desc">
+                  {t(
+                    "Vue des outils retenus pour cet objectif, regroupés par usage concret.",
+                    "A view of the tools saved for this objective, grouped by practical use.",
+                  )}
+                </p>
+                <div className="stack-objective-hero-actions">
+                  <Link to={`${prefix}/tools`} className="cart-primary-link stack-objective-hero-action">
+                    {getObjectiveToolsCta(zoomedBoard, lang)}
+                  </Link>
+                </div>
+
+                <div className="stack-objective-hero-bottom">
+                  <dl className="stack-objective-hero-facts" aria-label={t("Résumé de cet objectif", "Objective summary") as string}>
+                    <div>
+                      <dt>{t("Outils", "Tools")}</dt>
+                      <dd>{zoomedBoard.tools.length}</dd>
+                    </div>
+                    <div>
+                      <dt>{t("Domaines", "Areas")}</dt>
+                      <dd>{zoomedSubdomains.length}</dd>
+                    </div>
+                    <div>
+                      <dt>{zoomedPricing.bundleLines.length > 0 ? t("Budget avec suites", "Budget with suites") : t("Budget estimé", "Estimated budget")}</dt>
+                      <dd>{formatMonthlyPrice(zoomedPricing.total, lang)}</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
           </div>
-          <span className="cart-eyebrow">{t("Vue d'ensemble", "Overview")}</span>
-          <h1>{t("Ma stack", "My stack")}</h1>
-          <p>{t("Un espace pour visualiser les outils que vous mettez de côté, comprendre leur rôle et préparer une stack plus claire.", "A place to see the tools you save, understand their role and prepare a clearer stack.")}</p>
-        </div>
-        <Link to={`${prefix}/tools`} className="cart-primary-link">
-          {activeBoards.length > 0 ? t("Ajouter des outils", "Add tools") : t("Ajouter un premier outil", "Add a first tool")}
-        </Link>
-      </header>
+        </section>
+      ) : (
+        <section className="tt-page-hero tt-page-hero--banner tt-page-hero--ma-stack">
+          <div className="tt-page-hero-inner">
+            <div className="tt-page-hero-band">
+              <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
+              <div className="tt-page-hero-content">
+                <div className="tt-page-hero-breadcrumb">
+                  <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} />
+                </div>
+                <h1 className="tt-page-hero-title">{t("Ma stack", "My stack")}</h1>
+                <p className="tt-page-hero-desc">
+                  {t(
+                    "Visualisez les outils mis de côté, comprenez leur rôle et préparez une stack plus claire.",
+                    "See the tools you saved, understand their role and prepare a clearer stack.",
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {!zoomedBoard && selectedTools.length > 0 && (
+        <section className="stack-overview-strip" aria-label={t("Résumé de ma stack", "My stack summary") as string}>
+          <dl className="stack-overview-facts">
+            <div>
+              <dt>{t("Outils", "Tools")}</dt>
+              <dd>{selectedTools.length}</dd>
+            </div>
+            <div>
+              <dt>{stackPricing.bundleLines.length > 0 ? t("Budget avec suites", "Budget with bundles") : t("Budget estimé", "Estimated budget")}</dt>
+              <dd>{formatMonthlyPrice(stackPricing.total, lang)}</dd>
+            </div>
+            {stackPricing.bundleLines.length > 0 && (
+              <div>
+                <dt>{stackPricing.bundleLines.length === 1 ? t("Suite", "Bundle") : t("Suites", "Bundles")}</dt>
+                <dd>{stackPricing.bundleLines.length}</dd>
+              </div>
+            )}
+          </dl>
+          <Link to={`${prefix}/tools`} className="cart-primary-link stack-overview-action">
+            {t("Ajouter des outils", "Add tools")}
+          </Link>
+        </section>
+      )}
 
       {zoomedBoard ? (
         <main className="stack-objective-detail" aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
-          <button type="button" className="stack-zoom-back" onClick={closeObjective}>
-            <ArrowLeft size={17} aria-hidden />
-            {t("Retour à la vue d'ensemble", "Back to overview")}
-          </button>
+          {zoomedPricing.bundleLines.length > 0 && (
+            <section className="stack-bundle-board-grid" aria-label={t("Suites de cette stack", "Suites in this stack") as string}>
+              {zoomedPricing.bundleLines.map((line) => {
+                const parentSelected = line.tools.some((tool) => isSameTool(tool, line.parent));
+                const visibleBundleTools = line.tools
+                  .filter((tool) => !isSameTool(tool, line.parent))
+                  .slice(0, 4);
+                const representedTools = visibleBundleTools.length + (parentSelected ? 1 : 0);
+                const overflowCount = Math.max(0, line.tools.length - representedTools);
 
-          <section className={`stack-objective-hero stack-board-card--${zoomedBoard.id}`}>
-            <div className="stack-objective-hero-copy">
-              <span>{t("Vue détaillée", "Detailed view")}</span>
-              <h2>{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</h2>
-              <p>
-                {t(
-                  "Les outils de cette partie de votre stack sont regroupés par usage concret pour voir rapidement ce qui sert à quoi.",
-                  "The tools in this part of your stack are grouped by practical use so you can quickly see what each one is for.",
-                )}
-              </p>
-            </div>
-            <div className="stack-objective-stats" aria-label={t("Résumé de cette partie de stack", "Stack section summary") as string}>
-              <div>
-                <strong>{zoomedBoard.tools.length}</strong>
-                <span>{t("outils", "tools")}</span>
-              </div>
-              <div>
-                <strong>{zoomedSubdomains.length}</strong>
-                <span>{t("domaines", "areas")}</span>
-              </div>
-              <div>
-                <strong>{formatMonthlyPrice(zoomedBudget, lang)}</strong>
-                <span>{t("budget estimé", "estimated budget")}</span>
-              </div>
-            </div>
-          </section>
+                return (
+                  <article key={line.id} className="stack-board-card stack-bundle-board-card">
+                    <div
+                      className="stack-bundle-preview"
+                      role="list"
+                      aria-label={t(`Outils regroupés dans ${line.parent.name}`, `Tools grouped in ${line.parent.name}`) as string}
+                    >
+                      <span className="stack-bundle-preview-logo stack-bundle-preview-logo--main" role="listitem">
+                        <ToolLogo tool={line.parent} size={64} className="stack-board-logo-mark" />
+                      </span>
+
+                      {visibleBundleTools.map((tool, index) => (
+                        <span
+                          key={getToolKey(tool)}
+                          className={`stack-bundle-preview-logo stack-bundle-preview-logo--${index + 1}`}
+                          role="listitem"
+                        >
+                          <ToolLogo tool={tool} size={38} className="stack-board-logo-mark" />
+                        </span>
+                      ))}
+
+                      {overflowCount > 0 && <span className="stack-board-overflow stack-bundle-overflow">+{overflowCount}</span>}
+                    </div>
+
+                    <div className="stack-board-footer stack-bundle-footer">
+                      <div>
+                        <h2>{line.parent.name}</h2>
+                        <p>
+                          {lang === "en"
+                            ? `${formatToolCount(line.tools.length, lang)} grouped`
+                            : `${formatToolCount(line.tools.length, lang)} regroupé${line.tools.length > 1 ? "s" : ""}`}
+                        </p>
+                      </div>
+                      <span>{formatMonthlyPrice(line.bundleTotal, lang)}</span>
+                    </div>
+                  </article>
+                );
+              })}
+            </section>
+          )}
 
           <div className="stack-subdomain-grid">
             {zoomedSubdomains.map((group) => (
-              <section key={group.id} className="stack-subdomain-section">
+              <section key={group.id} className={getSubdomainSectionClassName(group)}>
                 <div className="stack-subdomain-heading">
                   <span>{formatToolCount(group.tools.length, lang)}</span>
                   <h3>{t(group.labelFr, group.labelEn)}</h3>
@@ -718,44 +982,56 @@ const CartPage = () => {
                     const toolSlug = getToolKey(tool);
                     const needs = getToolNeedLabels(tool, lang);
                     const relation = getToolRelation(tool, tools, lang);
-                    const categoryLabel = getCategoryLabel(tool);
                     const description = lang === "en" ? tool.shortDescriptionEn || tool.shortDescription : tool.shortDescription;
+                    const bundleLine = getBundleLineForTool(zoomedPricing, tool);
+                    const countedInBundle = !!bundleLine && !isSameTool(tool, bundleLine.parent);
+                    const detailLine = getToolTypeLabel(tool, lang);
+                    const contextLine = countedInBundle && bundleLine
+                      ? t(`Inclus dans ${bundleLine.parent.name}`, `Included in ${bundleLine.parent.name}`)
+                      : relation || needs.slice(0, 2).join(" · ");
+                    const showStandalonePrice = getToolPrice(tool) > 0 && !countedInBundle;
 
                     return (
                       <article key={toolSlug} className="stack-detail-tool-card">
                         <div className="stack-detail-tool-head">
-                          <ToolLogo tool={tool} size={42} />
-                          <div>
-                            <span>{getToolTypeLabel(tool, lang)}</span>
+                          <ToolLogo tool={tool} size={36} className="stack-detail-tool-logo" />
+                          <div className="stack-detail-tool-title">
                             <h4>{tool.name}</h4>
+                            {detailLine && <p>{detailLine}</p>}
+                          </div>
+                          <div className="stack-detail-tool-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`) as string}>
+                            <button
+                              type="button"
+                              className="stack-detail-tool-remove"
+                              onClick={() => removeToolFromZoom(toolSlug)}
+                              aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
+                              title={t("Retirer de ma stack", "Remove from my stack") as string}
+                            >
+                              <X size={15} aria-hidden />
+                            </button>
                           </div>
                         </div>
 
                         {description && <p className="stack-detail-tool-desc">{description}</p>}
 
-                        <div className="stack-detail-tool-meta">
-                          {categoryLabel && <span>{categoryLabel}</span>}
-                          <span>{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</span>
-                          {relation && <span>{relation}</span>}
-                        </div>
-
-                        {needs.length > 0 && (
-                          <div className="stack-detail-chip-row">
-                            {needs.map((need) => (
-                              <span key={need}>{need}</span>
-                            ))}
+                        <div className="stack-detail-tool-footer">
+                          <div className="stack-detail-tool-footnote">
+                            {contextLine && (
+                              <span className={countedInBundle ? "stack-detail-tool-footer-bundle" : undefined}>
+                                {contextLine}
+                              </span>
+                            )}
+                            {showStandalonePrice && <strong>{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</strong>}
                           </div>
-                        )}
-
-                        <div className="stack-detail-tool-actions">
-                          <Link to={`${prefix}/tool/${toolSlug}`}>
-                            {t("Voir la fiche", "Open page")}
-                            <ArrowRight size={14} aria-hidden />
+                          <Link
+                            className="stack-detail-tool-link"
+                            to={`${prefix}/tool/${toolSlug}`}
+                            aria-label={t(`Voir la fiche ${tool.name}`, `Open ${tool.name} page`) as string}
+                            title={t("Voir la fiche", "Open page") as string}
+                          >
+                            <span>{t("Voir la fiche", "Open page")}</span>
+                            <ArrowRight size={13} aria-hidden />
                           </Link>
-                          <button type="button" onClick={() => removeToolFromZoom(toolSlug)}>
-                            <X size={14} aria-hidden />
-                            {t("Retirer", "Remove")}
-                          </button>
                         </div>
                       </article>
                     );
@@ -781,8 +1057,10 @@ const CartPage = () => {
             </section>
           )}
           {activeBoards.map((board) => {
-            const visibleTools = board.tools.slice(0, 6);
+            const visibleToolCount = board.tools.length > 6 ? 5 : 6;
+            const visibleTools = board.tools.slice(0, visibleToolCount);
             const overflowCount = Math.max(0, board.tools.length - visibleTools.length);
+            const subdomainCount = new Set(board.tools.map((tool) => getSubdomainForBoardTool(board.id, tool, getCategoryLabel(tool)).id)).size;
             return (
               <section
                 key={board.id}
@@ -820,18 +1098,29 @@ const CartPage = () => {
                       </button>
                     </span>
                   ))}
-                  {overflowCount > 0 && <span className="stack-board-overflow">+{overflowCount}</span>}
+                  {overflowCount > 0 && <span className="stack-board-overflow stack-board-overflow--preview">+{overflowCount}</span>}
                 </div>
 
                 <div className="stack-board-footer">
-                  <div>
+                  <div className="stack-board-footer-copy">
                     <h2>{t(board.labelFr, board.labelEn)}</h2>
-                    <p>{formatSubdomainCount(
-                      new Set(board.tools.map((tool) => getSubdomainForBoardTool(board.id, tool, getCategoryLabel(tool)).id)).size,
-                      lang,
-                    )}</p>
+                    <p>
+                      {formatSubdomainCount(subdomainCount, lang)}
+                      <span aria-hidden="true"> · </span>
+                      {formatToolCount(board.tools.length, lang)}
+                    </p>
                   </div>
-                  <span>{formatToolCount(board.tools.length, lang)}</span>
+                  <Link
+                    to={getBoardToolsHref(board, prefix)}
+                    className="stack-board-add-link"
+                    onClick={(event) => event.stopPropagation()}
+                    onKeyDown={(event) => event.stopPropagation()}
+                    aria-label={getObjectiveToolsCta(board, lang)}
+                    title={getObjectiveToolsCta(board, lang)}
+                  >
+                    <Plus size={14} aria-hidden />
+                    {t("Ajouter", "Add")}
+                  </Link>
                 </div>
               </section>
             );

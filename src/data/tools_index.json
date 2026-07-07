@@ -88,7 +88,8 @@
       "cms",
       "hosting"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "avocode",
@@ -216,7 +217,8 @@
       "forms",
       "validation"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "tanstack-router",
@@ -237,7 +239,8 @@
     "functional_needs": [
       "routing"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "apexcharts",
@@ -280,7 +283,8 @@
       "ui-components",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "radix-primitives",
@@ -302,7 +306,8 @@
       "ui-components",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "headless-ui",
@@ -345,7 +350,8 @@
       "ui-components",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "solid-js",
@@ -367,7 +373,8 @@
       "ui-components",
       "frontend-framework"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "greensock",
@@ -431,7 +438,8 @@
       "data-fetching",
       "state-management"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "vue-router",
@@ -452,7 +460,8 @@
     "functional_needs": [
       "routing"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "vue-cli"
   },
   {
     "id": "angular-material",
@@ -538,7 +547,8 @@
     "functional_needs": [
       "routing"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "shadcn-ui",
@@ -560,7 +570,8 @@
       "ui-components",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "recharts",
@@ -581,7 +592,8 @@
     "functional_needs": [
       "charting"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "ant-design",
@@ -603,7 +615,8 @@
       "ui-components",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "flux",
@@ -624,7 +637,8 @@
     "functional_needs": [
       "state-management"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "angular-universal",
@@ -712,7 +726,8 @@
       "graphql",
       "data-fetching"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "knockout",
@@ -777,7 +792,8 @@
       "ui-components",
       "frontend-framework"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "jquery",
@@ -820,7 +836,8 @@
       "ui-components",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "d3js",
@@ -884,7 +901,8 @@
       "styling",
       "css-in-js"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "svelte",
@@ -906,7 +924,8 @@
       "ui-components",
       "frontend-framework"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "storybook",
@@ -950,7 +969,8 @@
       "forms",
       "validation"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "vue-cli",
@@ -1018,7 +1038,8 @@
       "developpeur-solo",
       "fondateur-saas",
       "consultant-b2b"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "8fig",
@@ -1042,7 +1063,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "activecampaign",
@@ -1068,7 +1090,8 @@
     "verticals": [
       "consultant-b2b",
       "ecommercant"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "activepieces",
@@ -1114,7 +1137,8 @@
       "community-manager",
       "ecommercant",
       "createur-contenu"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "adobe",
@@ -1163,7 +1187,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "adobe-after-effects",
@@ -1188,7 +1213,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "adobe-cc",
@@ -1219,7 +1246,8 @@
       "photographe",
       "illustrateur",
       "scenographe"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "firefly",
@@ -1244,7 +1272,9 @@
     "verticals": [
       "graphiste-da",
       "photographe"
-    ]
+    ],
+    "tool_type": "ia",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "adobe-illustrator",
@@ -1271,7 +1301,9 @@
       "graphiste-da",
       "illustrateur",
       "ux-ui"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "indesign",
@@ -1298,7 +1330,8 @@
     "verticals": [
       "graphiste-da",
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "adobe-lightroom",
@@ -1324,7 +1357,9 @@
     "verticals": [
       "photographe",
       "graphiste-da"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "adobe-photoshop",
@@ -1352,7 +1387,9 @@
       "photographe",
       "motion-video",
       "illustrateur"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "adobe-podcast-ai",
@@ -1378,7 +1415,9 @@
       "podcasteur",
       "createur-contenu",
       "motion-video"
-    ]
+    ],
+    "tool_type": "ia",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "adobe-premiere-pro",
@@ -1404,7 +1443,9 @@
     "verticals": [
       "motion-video",
       "createur-contenu"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "adobe-xd",
@@ -1448,7 +1489,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "affinity-photo",
@@ -1471,7 +1513,8 @@
       "photomontage",
       "design-visuel"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "aircall-inc",
@@ -1497,7 +1540,8 @@
     "verticals": [
       "consultant-b2b",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "airslate",
@@ -1675,7 +1719,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "figma-anima",
@@ -1700,7 +1745,9 @@
     "verticals": [
       "ux-ui",
       "developpeur-solo"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "figma"
   },
   {
     "id": "ae-animation-composer",
@@ -1724,7 +1771,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "apollo-io",
@@ -1751,7 +1800,8 @@
     "verticals": [
       "consultant-b2b",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "arc-browser",
@@ -1846,7 +1896,8 @@
       "podcasteur",
       "createur-contenu",
       "motion-video"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "autocad",
@@ -1870,7 +1921,8 @@
     "verticals": [
       "architecte-bim",
       "scenographe"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "autonix",
@@ -1990,7 +2042,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "base44",
@@ -2154,7 +2208,8 @@
       "architecte-bim",
       "illustrateur",
       "scenographe"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "bloom-crm",
@@ -2221,7 +2276,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "ae-bodymovin",
@@ -2246,7 +2302,9 @@
       "motion-video",
       "developpeur-solo",
       "ux-ui"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "bolt-business",
@@ -2297,7 +2355,8 @@
       "developpeur-solo",
       "ai-builder",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "boompop",
@@ -2420,7 +2479,8 @@
     "verticals": [
       "createur-contenu",
       "consultant-b2b"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "buddy-punch",
@@ -2445,7 +2505,8 @@
     ],
     "verticals": [
       "manager-dsi"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "buffer",
@@ -2548,7 +2609,8 @@
       "consultant-b2b",
       "coach-formateur",
       "developpeur-solo"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "calendly",
@@ -2576,7 +2638,8 @@
       "coach-formateur",
       "rh-recruteur",
       "photographe"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "callhippo",
@@ -2725,7 +2788,9 @@
       "createur-contenu",
       "coach-formateur",
       "newslettiste-auteur"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "canva-pro"
   },
   {
     "id": "canva-ai",
@@ -2744,7 +2809,9 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia",
+    "bundle_parent": "canva-pro"
   },
   {
     "id": "canva-pro",
@@ -2768,7 +2835,9 @@
       "templates",
       "social-assets"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier",
+    "bundle_parent": "canva"
   },
   {
     "id": "capcut",
@@ -2835,7 +2904,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "capture-one",
@@ -2859,7 +2929,8 @@
     ],
     "verticals": [
       "photographe"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "cargo-site",
@@ -2934,7 +3005,8 @@
       "ai-builder",
       "newslettiste-auteur",
       "createur-contenu"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "circle",
@@ -2990,7 +3062,8 @@
       "newslettiste-auteur",
       "developpeur-solo",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "cleanvoice",
@@ -3009,7 +3082,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia"
   },
   {
     "id": "clearbit",
@@ -3180,7 +3254,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "coda",
@@ -3199,7 +3274,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "cognism",
@@ -3275,7 +3351,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "connecteam",
@@ -3362,7 +3439,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "crowdfire-inc",
@@ -3413,7 +3491,8 @@
       "developpeur-solo",
       "ai-builder",
       "cto-lead-tech"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "dashlane",
@@ -3459,7 +3538,8 @@
       "cto-lead-tech",
       "developpeur-solo",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "datev",
@@ -3484,7 +3564,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "davinci-resolve",
@@ -3511,7 +3592,8 @@
       "motion-video",
       "photographe",
       "createur-contenu"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "dayforce",
@@ -3536,7 +3618,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "deel",
@@ -3562,7 +3645,8 @@
     "verticals": [
       "manager-dsi",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "deepseek",
@@ -3589,7 +3673,8 @@
     "verticals": [
       "developpeur-solo",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "deputy",
@@ -3641,7 +3726,8 @@
       "createur-contenu",
       "coach-formateur",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "deskpro",
@@ -3714,7 +3800,8 @@
     ],
     "verticals": [
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "digitalocean",
@@ -3777,7 +3864,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "docyt",
@@ -3801,7 +3889,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "doola",
@@ -3825,7 +3914,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "doppler",
@@ -3844,7 +3934,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "dotenv-vault",
@@ -3961,7 +4052,9 @@
     "verticals": [
       "motion-video",
       "illustrateur"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "dun-bradstreet",
@@ -3986,7 +4079,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "easydmarc",
@@ -4035,7 +4129,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "elevenlabs",
@@ -4063,7 +4158,8 @@
       "createur-contenu",
       "ai-builder",
       "coach-formateur"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "elfsight",
@@ -4111,7 +4207,9 @@
     "verticals": [
       "architecte-bim",
       "scenographe"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "revit"
   },
   {
     "id": "extensis",
@@ -4160,7 +4258,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "fig-terminal",
@@ -4208,7 +4307,8 @@
       "product-manager",
       "developpeur-solo",
       "scenographe"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "figma-tokens",
@@ -4234,7 +4334,9 @@
     "verticals": [
       "ux-ui",
       "developpeur-solo"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "figma"
   },
   {
     "id": "final-cut-pro",
@@ -4296,7 +4398,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "flexiquiz",
@@ -4343,7 +4446,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "flux",
@@ -4364,7 +4469,8 @@
     "functional_needs": [
       "state-management"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "react"
   },
   {
     "id": "fly-io",
@@ -4452,7 +4558,8 @@
       "motion-video",
       "photographe",
       "createur-contenu"
-    ]
+    ],
+    "bundle_parent": "adobe-cc"
   },
   {
     "id": "framer",
@@ -4478,7 +4585,8 @@
       "cms",
       "hosting"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "freshbooks",
@@ -4503,7 +4611,8 @@
       "consultant-b2b",
       "graphiste-da",
       "photographe"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "front",
@@ -4598,7 +4707,8 @@
       "consultant-b2b",
       "createur-contenu",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "getida",
@@ -4692,7 +4802,9 @@
     "verticals": [
       "motion-video",
       "community-manager"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "github",
@@ -4719,7 +4831,8 @@
       "developpeur-solo",
       "cto-lead-tech",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "github-copilot",
@@ -4745,7 +4858,8 @@
       "developpeur-solo",
       "cto-lead-tech",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "glide",
@@ -4843,7 +4957,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "google-drive",
@@ -4897,7 +5012,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "google-slides",
@@ -4941,7 +5057,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "gorgias",
@@ -4992,7 +5109,8 @@
       "newslettiste-auteur",
       "consultant-b2b",
       "community-manager"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "gumroad",
@@ -5055,7 +5173,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "heptabase",
@@ -5118,7 +5237,8 @@
     ],
     "verticals": [
       "data-analyst"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "heygen",
@@ -5144,7 +5264,8 @@
       "createur-contenu",
       "coach-formateur",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "hibob",
@@ -5169,7 +5290,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "hive",
@@ -5342,7 +5464,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "core"
   },
   {
     "id": "humaans",
@@ -5367,7 +5490,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "hume-ai",
@@ -5392,7 +5516,8 @@
     ],
     "verticals": [
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "figma-iconify",
@@ -5417,7 +5542,9 @@
     "verticals": [
       "ux-ui",
       "graphiste-da"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "figma"
   },
   {
     "id": "icontact",
@@ -5469,7 +5596,8 @@
       "community-manager",
       "createur-contenu",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "ignition",
@@ -5496,7 +5624,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "inboxally",
@@ -5552,7 +5681,8 @@
       "graphiste-da",
       "photographe",
       "motion-video"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "infisical",
@@ -5571,7 +5701,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "inflow-inventory",
@@ -5711,7 +5842,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "jasper",
@@ -5806,7 +5938,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "justworks",
@@ -5831,7 +5964,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "kajabi",
@@ -5948,7 +6082,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "kissmetrics",
@@ -5999,7 +6134,8 @@
     "verticals": [
       "createur-contenu",
       "newslettiste-auteur"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "kixie",
@@ -6048,7 +6184,8 @@
       "motion-video",
       "createur-contenu",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "krea-ai",
@@ -6077,7 +6214,8 @@
       "illustrateur",
       "ai-builder",
       "scenographe"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "krispcall",
@@ -6356,7 +6494,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "legifrance-pro",
@@ -6375,7 +6514,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "lemlist",
@@ -6443,7 +6583,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "leonardo-ai",
@@ -6469,7 +6610,8 @@
       "graphiste-da",
       "illustrateur",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "lever",
@@ -6572,7 +6714,8 @@
     "verticals": [
       "graphiste-da",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "logseq",
@@ -6670,7 +6813,8 @@
       "developpeur-solo",
       "product-manager",
       "motion-video"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "loopio",
@@ -6717,7 +6861,8 @@
       "fondateur-saas",
       "ai-builder",
       "developpeur-solo"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "lucca",
@@ -6742,7 +6887,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "lucid-software",
@@ -6790,7 +6936,9 @@
     "verticals": [
       "photographe",
       "graphiste-da"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "photoshop"
   },
   {
     "id": "lumion",
@@ -6840,7 +6988,8 @@
       "graphiste-da",
       "motion-video",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "mailchimp",
@@ -6945,7 +7094,8 @@
     "verticals": [
       "ecommercant",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "masv",
@@ -7020,7 +7170,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "mem-ai",
@@ -7046,7 +7197,8 @@
       "consultant-b2b",
       "newslettiste-auteur",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "metabase",
@@ -7075,7 +7227,8 @@
       "product-manager",
       "fondateur-saas",
       "manager-dsi"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "metricool",
@@ -7119,7 +7272,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "core"
   },
   {
     "id": "microsoft-dynamics-365-finance-operations",
@@ -7144,7 +7298,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "microsoft-dynamics-business-central",
@@ -7169,7 +7324,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "microsoft-entra-id",
@@ -7194,7 +7350,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "microsoft-project",
@@ -7213,7 +7370,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "microsoft-teams",
@@ -7238,7 +7396,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "bundle_parent": "microsoft-365"
   },
   {
     "id": "midjourney",
@@ -7267,7 +7426,8 @@
       "scenographe",
       "illustrateur",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "miro",
@@ -7324,7 +7484,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "moosend",
@@ -7367,7 +7528,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "motion-bro",
@@ -7390,7 +7552,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "mrpeasy",
@@ -7482,7 +7646,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "navan",
@@ -7549,7 +7714,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "netchex",
@@ -7617,7 +7783,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "ae-newton3",
@@ -7641,7 +7808,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "nik-collection",
@@ -7664,7 +7833,9 @@
     ],
     "verticals": [
       "photographe"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "photoshop"
   },
   {
     "id": "nordpass",
@@ -7742,7 +7913,9 @@
       "product-manager",
       "fondateur-saas",
       "newslettiste-auteur"
-    ]
+    ],
+    "tool_type": "ia",
+    "bundle_parent": "notion"
   },
   {
     "id": "notionlytics",
@@ -7832,7 +8005,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "omniconvert-explore",
@@ -7906,7 +8080,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "onetrust",
@@ -7931,7 +8106,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "onramp-funds",
@@ -7955,7 +8131,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "openphone",
@@ -8004,7 +8181,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "otter-ai",
@@ -8031,7 +8209,8 @@
       "manager-dsi",
       "rh-recruteur",
       "coach-formateur"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "ae-overlord",
@@ -8055,7 +8234,9 @@
     "verticals": [
       "motion-video",
       "graphiste-da"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "ownr",
@@ -8079,7 +8260,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "oyster",
@@ -8221,7 +8403,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "payhawk",
@@ -8240,7 +8423,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "payoneer",
@@ -8264,7 +8448,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "paypal",
@@ -8287,7 +8472,8 @@
       "facturation",
       "encaissement"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "pennylane",
@@ -8343,7 +8529,8 @@
       "finance-ops",
       "freelance-ops",
       "business-ops"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "shine",
@@ -8372,7 +8559,8 @@
       "solo",
       "consultant",
       "ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "personio",
@@ -8418,7 +8606,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia"
   },
   {
     "id": "pigment",
@@ -8443,7 +8632,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "pika-labs",
@@ -8469,7 +8659,8 @@
       "motion-video",
       "createur-contenu",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "pipedrive",
@@ -8682,7 +8873,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia"
   },
   {
     "id": "podia",
@@ -8808,7 +9000,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "process-street",
@@ -8973,7 +9166,8 @@
     "verticals": [
       "newslettiste-auteur",
       "consultant-b2b"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "publer",
@@ -9040,7 +9234,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "quartile",
@@ -9112,7 +9307,8 @@
     "verticals": [
       "daf-finance",
       "consultant-b2b"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "railway",
@@ -9182,7 +9378,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "readymag",
@@ -9225,7 +9422,10 @@
     "verticals": [
       "motion-video",
       "photographe"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects",
+    "bundle_parent": "maxon-one"
   },
   {
     "id": "reflect-notes",
@@ -9268,7 +9468,8 @@
       "ecommerce-assets",
       "visual-production"
     ],
-    "verticals": []
+    "verticals": [],
+    "bundle_parent": "adobe-photoshop"
   },
   {
     "id": "render",
@@ -9314,7 +9515,8 @@
       "developpeur-solo",
       "ai-builder",
       "coach-formateur"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "replyio",
@@ -9439,7 +9641,8 @@
       "cto-lead-tech",
       "fondateur-saas",
       "data-analyst"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "revit",
@@ -9464,7 +9667,8 @@
     ],
     "verticals": [
       "architecte-bim"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "rippling",
@@ -9516,7 +9720,8 @@
       "ux-ui",
       "motion-video",
       "developpeur-solo"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "riverside",
@@ -9607,7 +9812,9 @@
     ],
     "verticals": [
       "motion-video"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "after-effects"
   },
   {
     "id": "ruby",
@@ -9657,7 +9864,8 @@
       "motion-video",
       "createur-contenu",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "rydoo",
@@ -9676,7 +9884,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "sage",
@@ -9701,7 +9910,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sage-intacct",
@@ -9726,7 +9936,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sage-paie",
@@ -9745,7 +9956,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "salesflare",
@@ -9820,7 +10032,8 @@
       "consultant-b2b",
       "manager-dsi",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "sap-business-bydesign",
@@ -9845,7 +10058,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sap-business-one",
@@ -9870,7 +10084,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sap-s4hana",
@@ -9895,7 +10110,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sap-successfactors",
@@ -9920,7 +10136,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "securityscorecard",
@@ -9945,7 +10162,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sellersfi",
@@ -9969,7 +10187,8 @@
     "verticals": [
       "consultant-b2b",
       "daf-finance"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "sellfy",
@@ -10021,7 +10240,8 @@
       "manager-dsi",
       "fondateur-saas",
       "consultant-b2b"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "semrush",
@@ -10121,7 +10341,8 @@
       "developpeur-solo",
       "cto-lead-tech",
       "fondateur-saas"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sharepoint",
@@ -10146,7 +10367,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "shield-app",
@@ -10274,7 +10496,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "similarweb",
@@ -10369,7 +10592,8 @@
       "prototypage",
       "design-system"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "sketchup-pro",
@@ -10395,7 +10619,8 @@
     "verticals": [
       "architecte-bim",
       "scenographe"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "skribble",
@@ -10600,7 +10825,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "spaceiq",
@@ -10648,7 +10874,8 @@
     "verticals": [
       "daf-finance",
       "manager-dsi"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "anchor-spotify",
@@ -10749,7 +10976,8 @@
       "illustrateur",
       "ai-builder",
       "motion-video"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "figma-stark",
@@ -10776,7 +11004,9 @@
     "verticals": [
       "ux-ui",
       "graphiste-da"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "figma"
   },
   {
     "id": "stripe",
@@ -10805,7 +11035,8 @@
       "ecommercant",
       "coach-formateur",
       "developpeur-solo"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "substack",
@@ -10877,7 +11108,8 @@
       "createur-contenu",
       "motion-video",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "supabase",
@@ -10896,7 +11128,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "superhuman",
@@ -10923,7 +11156,8 @@
       "fondateur-saas",
       "consultant-b2b",
       "manager-dsi"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "surveysparrow",
@@ -10996,7 +11230,8 @@
     "verticals": [
       "developpeur-solo",
       "cto-lead-tech"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "tally",
@@ -11285,7 +11520,8 @@
       "graphiste-da",
       "photographe",
       "motion-video"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "tomorro",
@@ -11310,7 +11546,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "topaz-gigapixel",
@@ -11334,7 +11571,9 @@
     "verticals": [
       "photographe",
       "graphiste-da"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "photoshop"
   },
   {
     "id": "topaz-video-ai",
@@ -11384,7 +11623,8 @@
     "verticals": [
       "manager-dsi",
       "coach-formateur"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "trello",
@@ -11563,7 +11803,8 @@
       "createur-contenu",
       "podcasteur",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "ukg-pro",
@@ -11588,7 +11829,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "unbounce",
@@ -11637,7 +11879,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "upwork",
@@ -11686,7 +11929,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "vcita",
@@ -11736,7 +11980,8 @@
     "verticals": [
       "developpeur-solo",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "vidiq",
@@ -11847,7 +12092,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "wave",
@@ -11948,7 +12194,8 @@
       "createur-contenu",
       "consultant-b2b",
       "ai-builder"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "wix",
@@ -11992,7 +12239,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "gestion"
   },
   {
     "id": "woocommerce",
@@ -12085,7 +12333,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "workday-financial-management",
@@ -12110,7 +12359,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "workday-hr",
@@ -12135,7 +12385,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "wrike",
@@ -12256,7 +12507,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "zelt",
@@ -12281,7 +12533,8 @@
       "business-ops",
       "finance-ops",
       "enterprise-ops"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "zendesk",
@@ -12373,7 +12626,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "bundle_parent": "zoom-pro"
   },
   {
     "id": "zoom-ai-companion",
@@ -12392,7 +12646,9 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia",
+    "bundle_parent": "zoom-pro"
   },
   {
     "id": "zoom-pro",
@@ -12411,7 +12667,8 @@
     "logo": "",
     "substitution_cluster_v2": null,
     "functional_needs": [],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "core"
   },
   {
     "id": "taskade",
@@ -12530,7 +12787,8 @@
       "design-to-code",
       "developer-tools"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia"
   },
   {
     "id": "reclaim-ai",
@@ -13001,7 +13259,8 @@
       "content-creation",
       "short-form-video"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "ia"
   },
   {
     "id": "fathom",
@@ -13070,7 +13329,8 @@
       "prototyping",
       "vector-design"
     ],
-    "verticals": []
+    "verticals": [],
+    "tool_type": "metier"
   },
   {
     "id": "screen-studio",
@@ -13846,7 +14106,8 @@
       "api-integration",
       "auth"
     ],
-    "verticals": []
+    "verticals": [],
+    "host_app": "webflow"
   },
   {
     "id": "microsoft-365-copilot",
@@ -13871,7 +14132,9 @@
     ],
     "verticals": [
       "enterprise"
-    ]
+    ],
+    "tool_type": "bundle",
+    "bundle_parent": "microsoft-365"
   },
   {
     "id": "liinks",
@@ -14234,7 +14497,9 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "host_app": "sketchup-pro",
+    "bundle_parent": "sketchup-pro"
   },
   {
     "id": "autocad-lt",
@@ -14257,7 +14522,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "archicad",
@@ -14280,7 +14546,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "rhino",
@@ -14304,7 +14571,8 @@
     "verticals": [
       "interior-design",
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "fredo6-bundle",
@@ -14327,7 +14595,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "joint-push-pull",
@@ -14350,7 +14619,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "fredocorner",
@@ -14373,7 +14643,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "curviloft",
@@ -14396,7 +14667,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "profile-builder-3",
@@ -14419,7 +14691,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "skatter",
@@ -14442,7 +14715,9 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "plugin",
+    "host_app": "sketchup-pro"
   },
   {
     "id": "transmutr",
@@ -14465,7 +14740,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "cleanup3",
@@ -14488,7 +14764,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "solid-inspector2",
@@ -14511,7 +14788,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "eneroth-face-creator",
@@ -14534,7 +14812,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "1001bit-tools",
@@ -14557,7 +14836,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "flextools",
@@ -14580,7 +14860,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "d5-render",
@@ -14605,7 +14886,8 @@
     "verticals": [
       "interior-design",
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "twinmotion",
@@ -14630,7 +14912,8 @@
     "verticals": [
       "interior-design",
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "v-ray",
@@ -14654,7 +14937,8 @@
     "verticals": [
       "interior-design",
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "programa",
@@ -14769,7 +15053,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "yousign",
@@ -14792,7 +15077,8 @@
     ],
     "verticals": [
       "interior-design"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "vectorworks",
@@ -15131,7 +15417,9 @@
     "verticals": [
       "motion-video",
       "creative"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "maxon-one"
   },
   {
     "id": "cavalry",
@@ -15508,7 +15796,8 @@
     ],
     "verticals": [
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "plasticity",
@@ -15552,7 +15841,8 @@
     ],
     "verticals": [
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "octane-render",
@@ -15576,7 +15866,8 @@
     "verticals": [
       "motion-video",
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "redshift",
@@ -15600,7 +15891,9 @@
     "verticals": [
       "motion-video",
       "creative"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "maxon-one"
   },
   {
     "id": "pure-ref",
@@ -15647,7 +15940,8 @@
     "verticals": [
       "creative",
       "architecte-bim"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "corona-renderer",
@@ -15671,7 +15965,8 @@
     "verticals": [
       "creative",
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "quixel-megascans",
@@ -15720,7 +16015,8 @@
     "verticals": [
       "creative",
       "motion-video"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "zbrush",
@@ -15743,7 +16039,9 @@
     ],
     "verticals": [
       "creative"
-    ]
+    ],
+    "tool_type": "metier",
+    "bundle_parent": "maxon-one"
   },
   {
     "id": "unreal-engine",
@@ -15769,7 +16067,8 @@
       "motion-video",
       "creative",
       "interior-design"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "unity",
@@ -15813,7 +16112,8 @@
     ],
     "verticals": [
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "perforce",
@@ -16679,7 +16979,8 @@
     ],
     "verticals": [
       "creative"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "acf",
@@ -16702,7 +17003,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "airbyte",
@@ -16771,7 +17073,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "app-store-connect",
@@ -16794,7 +17097,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "appsmith",
@@ -16817,7 +17121,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "auth-js",
@@ -16840,7 +17145,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "aws",
@@ -16863,7 +17169,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "axe-devtools",
@@ -16886,7 +17193,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "babylon-js",
@@ -16978,7 +17286,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "bricks",
@@ -17001,7 +17310,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "browserstack",
@@ -17024,7 +17334,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "budibase",
@@ -17047,7 +17358,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "bullmq",
@@ -17070,7 +17382,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "burp-suite",
@@ -17093,7 +17406,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "celery",
@@ -17116,7 +17430,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "chromatic",
@@ -17162,7 +17477,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "clerk",
@@ -17185,7 +17501,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "client-first",
@@ -17208,7 +17525,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "cloudflare",
@@ -17231,7 +17549,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "cloudinary",
@@ -17277,7 +17596,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "contentful",
@@ -17300,7 +17620,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "crisp",
@@ -17346,7 +17667,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "dart",
@@ -17369,7 +17691,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "dbt",
@@ -17415,7 +17738,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "directus",
@@ -17438,7 +17762,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "docker",
@@ -17461,7 +17786,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "eas-build",
@@ -17484,7 +17810,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "elementor",
@@ -17507,7 +17834,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "eslint",
@@ -17530,7 +17858,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "expo",
@@ -17553,7 +17882,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "fastapi",
@@ -17576,7 +17906,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "finsweet",
@@ -17599,7 +17930,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "flutter",
@@ -17622,7 +17954,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "fmod",
@@ -17714,7 +18047,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "gitlens",
@@ -17737,7 +18071,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "go",
@@ -17760,7 +18095,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "godot",
@@ -17806,7 +18142,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "google-play-console",
@@ -17829,7 +18166,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "google-tag-manager",
@@ -17898,7 +18236,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "helicone",
@@ -17921,7 +18260,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "hydrogen",
@@ -17967,7 +18307,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "insomnia",
@@ -17990,7 +18331,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "itch-io",
@@ -18036,7 +18378,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "jupyter",
@@ -18082,7 +18425,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "klaviyo",
@@ -18108,7 +18452,8 @@
     "verticals": [
       "ecommerce",
       "marketing"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "kubernetes",
@@ -18131,7 +18476,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "langchain",
@@ -18154,7 +18500,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "langsmith",
@@ -18177,7 +18524,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "lemon-squeezy",
@@ -18269,7 +18617,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "localwp",
@@ -18292,7 +18641,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "logtail",
@@ -18361,7 +18711,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "managewp",
@@ -18384,7 +18735,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "medusa",
@@ -18453,7 +18805,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "nestjs",
@@ -18476,7 +18829,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "newman",
@@ -18499,7 +18853,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "next-js",
@@ -18522,7 +18877,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "node-js",
@@ -18545,7 +18901,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "nvda",
@@ -18568,7 +18925,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "openai-api",
@@ -18591,7 +18949,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "openapi",
@@ -18614,7 +18973,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "ovh",
@@ -18637,7 +18997,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "owasp-zap",
@@ -18660,7 +19021,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "p5-js",
@@ -18752,7 +19114,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "percy",
@@ -18798,7 +19161,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "php",
@@ -18821,7 +19185,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "pinecone",
@@ -18844,7 +19209,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "playwright",
@@ -18867,7 +19233,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "poetry",
@@ -18890,7 +19257,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "postgresql",
@@ -18913,7 +19281,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "postman",
@@ -18936,7 +19305,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "prettier",
@@ -18959,7 +19329,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "prisma",
@@ -18982,7 +19353,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "processing",
@@ -19051,7 +19423,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "python",
@@ -19074,7 +19447,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "qdrant",
@@ -19097,7 +19471,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "rank-math",
@@ -19143,7 +19518,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "recharge",
@@ -19212,7 +19588,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "remix",
@@ -19235,7 +19612,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "resend",
@@ -19281,7 +19659,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "revenuecat",
@@ -19327,7 +19706,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "saleor",
@@ -19373,7 +19753,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "screaming-frog",
@@ -19442,7 +19823,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "seo-meta-in-1-click",
@@ -19580,7 +19962,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "sqlalchemy",
@@ -19603,7 +19986,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "stark",
@@ -19628,7 +20012,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "bundle_parent": "figma-stark"
   },
   {
     "id": "steamworks",
@@ -19674,7 +20059,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "tailwind-css",
@@ -19720,7 +20106,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "three-js",
@@ -19766,7 +20153,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "timber",
@@ -19789,7 +20177,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "tremor",
@@ -19835,7 +20224,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "uptimerobot",
@@ -19881,7 +20271,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "vercel-ai-sdk",
@@ -19904,7 +20295,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "vercel-analytics",
@@ -19950,7 +20342,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "voiceover",
@@ -19973,7 +20366,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "vs-code",
@@ -19996,7 +20390,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "webpagetest",
@@ -20065,7 +20460,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "wordpress",
@@ -20088,7 +20484,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "wp-rocket",
@@ -20157,7 +20554,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "django",
@@ -20180,7 +20578,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "flask",
@@ -20203,7 +20602,8 @@
     ],
     "verticals": [
       "dev-freelance"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "pandas",
@@ -20269,7 +20669,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "smartsheet",
@@ -20289,7 +20690,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "mixpanel",
@@ -20309,7 +20711,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "adobe-creative-cloud",
@@ -20334,7 +20737,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "metier"
   },
   {
     "id": "are-na",
@@ -20354,7 +20758,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "meltwater",
@@ -20374,7 +20779,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "cision",
@@ -20394,7 +20800,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "prowly",
@@ -20414,7 +20821,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "linkedin-recruiter",
@@ -20434,7 +20842,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "apollo",
@@ -20454,7 +20863,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "greenhouse",
@@ -20474,7 +20884,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "agicap",
@@ -20494,7 +20905,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "profitwell",
@@ -20514,7 +20926,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "chartmogul",
@@ -20534,7 +20947,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "triple-whale",
@@ -20554,7 +20968,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "microsoft-clarity",
@@ -20574,7 +20989,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "vwo",
@@ -20594,7 +21010,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "optimizely",
@@ -20614,7 +21031,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "bubble",
@@ -20634,7 +21052,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "usertesting",
@@ -20654,7 +21073,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "snipe-it",
@@ -20674,7 +21094,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "freshservice",
@@ -20694,7 +21115,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "microsoft-defender",
@@ -20714,7 +21136,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "crowdstrike",
@@ -20734,7 +21157,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "drata",
@@ -20754,7 +21178,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "axeptio",
@@ -20774,7 +21199,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "didomi",
@@ -20794,7 +21220,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "greenly",
@@ -20814,7 +21241,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "sweep",
@@ -20834,7 +21262,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "sami",
@@ -20854,7 +21283,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "coupa",
@@ -20874,7 +21304,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "safetyculture",
@@ -20894,7 +21325,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "pandadoc",
@@ -20914,7 +21346,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "condeco",
@@ -20934,7 +21367,8 @@
     ],
     "verticals": [
       "consulting"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tiktok-studio",
@@ -20954,7 +21388,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "youtube-studio",
@@ -20974,7 +21409,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "capcut-templates",
@@ -20994,7 +21430,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "motion-array",
@@ -21064,7 +21501,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "capcut-ai",
@@ -21084,7 +21522,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "opusclip",
@@ -21104,7 +21543,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "captions",
@@ -21124,7 +21564,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tubebuddy",
@@ -21144,7 +21585,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "envato",
@@ -21166,7 +21608,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "bundle_parent": "envato-elements"
   },
   {
     "id": "storyblocks",
@@ -21209,7 +21652,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "adobe-enhance-speech",
@@ -21231,7 +21675,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "ia"
   },
   {
     "id": "headliner",
@@ -21251,7 +21696,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "descript-ai",
@@ -21271,7 +21717,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "taplio",
@@ -21291,7 +21738,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "shield",
@@ -21311,7 +21759,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "linkedin",
@@ -21331,7 +21780,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "figma-templates",
@@ -21351,7 +21801,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "canva-templates",
@@ -21371,7 +21822,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "authoredup",
@@ -21391,7 +21843,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "convertkit",
@@ -21415,7 +21868,8 @@
     "verticals": [
       "createur-contenu",
       "newslettiste-auteur"
-    ]
+    ],
+    "tool_type": "gestion"
   },
   {
     "id": "mailerlite",
@@ -21435,7 +21889,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "sparkloop",
@@ -21455,7 +21910,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "rewardful",
@@ -21475,7 +21931,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "planoly",
@@ -21495,7 +21952,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "linktree",
@@ -21515,7 +21973,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "stan-store",
@@ -21535,7 +21994,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "presets-lightroom",
@@ -21556,7 +22016,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "canva-kits",
@@ -21576,7 +22037,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "unfold",
@@ -21596,7 +22058,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "mojo",
@@ -21616,7 +22079,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tezza",
@@ -21636,7 +22100,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "storyluxe",
@@ -21656,7 +22121,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "krea",
@@ -21678,7 +22144,9 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "ia",
+    "bundle_parent": "krea-ai"
   },
   {
     "id": "billo",
@@ -21698,7 +22166,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "insense",
@@ -21718,7 +22187,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "fiverr",
@@ -21738,7 +22208,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "templates-ugc",
@@ -21758,7 +22229,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "teleprompter-apps",
@@ -21778,7 +22250,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "music-libraries",
@@ -21798,7 +22271,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "lighting-kits",
@@ -21818,7 +22292,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "frame-guides",
@@ -21838,7 +22313,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "creatoriq",
@@ -21858,7 +22334,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "utm-builders",
@@ -21878,7 +22355,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "link-in-bio-tools",
@@ -21898,7 +22376,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "affiliate-dashboards",
@@ -21918,7 +22397,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "media-kit-templates",
@@ -21938,7 +22418,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "icons8",
@@ -22003,7 +22484,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "systeme-io",
@@ -22023,7 +22505,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "thrivecart",
@@ -22043,7 +22526,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "meta-ads",
@@ -22063,7 +22547,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tiktok-ads",
@@ -22083,7 +22568,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gempages",
@@ -22103,7 +22589,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "pagefly",
@@ -22123,7 +22610,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "loox",
@@ -22143,7 +22631,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "judge-me",
@@ -22163,7 +22652,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "motion",
@@ -22183,7 +22673,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "magicbrief",
@@ -22203,7 +22694,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "adcreative-ai",
@@ -22223,7 +22715,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "partnerstack",
@@ -22243,7 +22736,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "impact",
@@ -22263,7 +22757,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "rankmath",
@@ -22283,7 +22778,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "yoast",
@@ -22303,7 +22799,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "pretty-links",
@@ -22323,7 +22820,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "thirstyaffiliates",
@@ -22343,7 +22841,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tablepress",
@@ -22363,7 +22862,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gsc",
@@ -22383,7 +22883,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "link-whisper",
@@ -22403,7 +22904,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "shortpixel",
@@ -22423,7 +22925,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "surfer-ai",
@@ -22443,7 +22946,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "obs",
@@ -22463,7 +22967,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "streamlabs",
@@ -22483,7 +22988,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "twitch-studio",
@@ -22503,7 +23009,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "youtube-live",
@@ -22523,7 +23030,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "streamelements",
@@ -22543,7 +23051,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "elgato-stream-deck",
@@ -22563,7 +23072,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "overlays",
@@ -22583,7 +23093,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "nightbot",
@@ -22603,7 +23114,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "moobot",
@@ -22623,7 +23135,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "streamelements-widgets",
@@ -22643,7 +23156,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "twitch",
@@ -22663,7 +23177,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "elgato",
@@ -22683,7 +23198,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gaming-overlays",
@@ -22703,7 +23219,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "premiere-rush",
@@ -22723,7 +23240,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "google-maps",
@@ -22743,7 +23261,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "presets",
@@ -22763,7 +23282,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "map-tools",
@@ -22783,7 +23303,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "recipe-card-templates",
@@ -22803,7 +23324,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "lightroom-presets",
@@ -22824,7 +23346,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "ltk",
@@ -22844,7 +23367,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "shopmy",
@@ -22864,7 +23388,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tiktok",
@@ -22884,7 +23409,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "templates",
@@ -22904,7 +23430,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "link-in-bio",
@@ -22924,7 +23451,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "affiliate-tools",
@@ -22944,7 +23472,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tradingview",
@@ -22964,7 +23493,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "chart-tools",
@@ -22984,7 +23514,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "screenshot-tools",
@@ -23004,7 +23535,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "newsletter-referral-tools",
@@ -23024,7 +23556,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "trainerize",
@@ -23044,7 +23577,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "truecoach",
@@ -23064,7 +23598,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "workout-templates",
@@ -23084,7 +23619,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "form-apps",
@@ -23104,7 +23640,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "scheduling-tools",
@@ -23124,7 +23661,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "clay",
@@ -23144,7 +23682,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "wistia",
@@ -23164,7 +23703,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "vidyard",
@@ -23184,7 +23724,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "maven",
@@ -23204,7 +23745,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "mockup-plugins",
@@ -23225,7 +23767,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "product-hunt",
@@ -23245,7 +23788,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "kling",
@@ -23265,7 +23809,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "magnific",
@@ -23285,7 +23830,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "topaz",
@@ -23305,7 +23851,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "comfyui-workflows",
@@ -23325,7 +23872,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "prompt-libraries",
@@ -23345,7 +23893,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "content-credentials-tools",
@@ -23365,7 +23914,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "zotero",
@@ -23385,7 +23935,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "rev",
@@ -23405,7 +23956,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "otter",
@@ -23425,7 +23977,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "archive-tools",
@@ -23445,7 +23998,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "stock-footage",
@@ -23465,7 +24019,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "x",
@@ -23485,7 +24040,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "meme-templates",
@@ -23505,7 +24061,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "giphy",
@@ -23525,7 +24082,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "tenor",
@@ -23545,7 +24103,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "screen-capture-tools",
@@ -23565,7 +24124,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "emoji-sticker-packs",
@@ -23585,7 +24145,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "lightroom-mobile",
@@ -23607,7 +24168,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "bundle_parent": "adobe-lightroom"
   },
   {
     "id": "mobile-gimbal-apps",
@@ -23627,7 +24189,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "teleprompter",
@@ -23647,7 +24210,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "caption-tools",
@@ -23667,7 +24231,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "shared-cloud-folders",
@@ -23687,7 +24252,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "brand-kits",
@@ -23707,7 +24273,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "subtitle-tools",
@@ -23727,7 +24294,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "review-tools",
@@ -23747,7 +24315,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "repurpose-io",
@@ -23767,7 +24336,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "social-schedulers",
@@ -23787,7 +24357,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "patreon",
@@ -23807,7 +24378,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "bots-discord",
@@ -23827,7 +24399,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "memberful",
@@ -23847,7 +24420,8 @@
     ],
     "verticals": [
       "creator-economy"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "causal",
@@ -23867,7 +24441,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "attio",
@@ -23887,7 +24462,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gong",
@@ -23907,7 +24483,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "helpscout",
@@ -23927,7 +24504,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "float",
@@ -23947,7 +24525,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "clickup-ai",
@@ -23967,7 +24546,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "productive-io",
@@ -23987,7 +24567,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "ashby",
@@ -24007,7 +24588,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "axonaut",
@@ -24027,7 +24609,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gocardless",
@@ -24047,7 +24630,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "pennylane-ai-selon-dispo",
@@ -24067,7 +24651,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "customer-io",
@@ -24087,7 +24672,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "dovetail-ai",
@@ -24107,7 +24693,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "coupler-io",
@@ -24127,7 +24714,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "supermetrics",
@@ -24147,7 +24735,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "excel-copilot",
@@ -24167,7 +24756,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "webhooks",
@@ -24187,7 +24777,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "relevance-ai",
@@ -24207,7 +24798,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "lindy",
@@ -24227,7 +24819,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "around",
@@ -24247,7 +24840,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "captain-contrat",
@@ -24267,7 +24861,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "legalplace",
@@ -24287,7 +24882,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "chatgpt-pour-brouillons-non-juridiques",
@@ -24307,7 +24903,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "weezevent",
@@ -24327,7 +24924,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gmail",
@@ -24347,7 +24945,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "krea-selon-metier",
@@ -24367,7 +24966,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "pennylane-ou-indy",
@@ -24387,7 +24987,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gamma-ai",
@@ -24407,7 +25008,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "webflow-framer",
@@ -24427,7 +25029,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "google-meet",
@@ -24447,7 +25050,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "pennylane-qonto",
@@ -24467,7 +25071,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "openai",
@@ -24487,7 +25092,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "instantly",
@@ -24507,7 +25113,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "whatsapp-business",
@@ -24527,7 +25134,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "feedly",
@@ -24547,7 +25155,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "readwise",
@@ -24567,7 +25176,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "gorgias-helpscout",
@@ -24587,7 +25197,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "zapier-make",
@@ -24607,7 +25218,8 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   },
   {
     "id": "relume-ai",
@@ -24627,6 +25239,7 @@
     ],
     "verticals": [
       "operations"
-    ]
+    ],
+    "tool_type": "specialise"
   }
 ]
