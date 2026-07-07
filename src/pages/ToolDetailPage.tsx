@@ -536,6 +536,12 @@ const ToolDetailPage = () => {
               margin: 0, overflowWrap: "break-word", wordBreak: "break-word",
             }}>
               {tool.name}
+              {/* Space so the raw H1 text reads "Notion Avis, prix…" not
+                  "NotionAvis…" — the block span below adds no whitespace of
+                  its own, so screen readers and text extractors would run the
+                  name into the subtitle without it. Visually collapsed (the
+                  span starts a new line), so no layout impact. */}
+              {" "}
               {/* SXO finding: the H1 held only the bare tool name (e.g. just
                   "Notion"), no intent signal for "avis"/"prix"/"alternatives"
                   searches. Nested in the same <h1> so it's part of the tag

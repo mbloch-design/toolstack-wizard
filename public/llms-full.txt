@@ -1,4 +1,4 @@
-# ToolTrim — 314 tools (verified pricing)
+# ToolTrim — 1,100+ tools (verified pricing)
 # Last verified: 2026-04-30
 # Source: https://tooltrim.com
 # Format: JSON array

@@ -7,16 +7,16 @@ ToolTrim helps freelancers, solopreneurs, and startup founders audit their softw
 ## Pages
 
 - [Accueil](/fr): Audit indépendant de stack SaaS pour freelances et petites équipes.
-- [Outils](/fr/tools): Catalogue de 314 outils SaaS avec prix vérifiés et verdicts.
+- [Outils](/fr/tools): Catalogue de 1 100+ outils SaaS avec prix vérifiés et verdicts.
 - [Catégories](/fr/categories): Explorer les outils par catégorie fonctionnelle.
 - [Guides](/fr/guides): Comparatifs structurés et analyses ROI par profil.
 - [Sélecteur de stack](/fr/selector): Trouver la combinaison d'outils la plus rentable.
-- [Méthodologie](/fr/methodology): Comment les prix sont vérifiés et les verdicts produits.
+- [Méthodologie](/fr/transparency): Comment les prix sont vérifiés et les verdicts produits.
 - [Contact](/fr/contact): Poser une question ou signaler une erreur de prix.
 
 ## Key Facts
 
-- **314 tools** analyzed across 15 categories (project management, design, AI, dev, marketing, finance…)
+- **1,100+ tools** analyzed across 15 categories (project management, design, AI, dev, marketing, finance…)
 - **Pricing verified manually** against official pricing pages — last audit: 2026-04-29
 - **Bilingual**: French (primary) and English
 - **Free to use** — no account required
@@ -57,7 +57,7 @@ Each tool entry contains:
 - Interactive tool: select your current stack → get personalized savings estimate
 
 ### Methodology
-- URL: `https://tooltrim.com/fr/methodology`
+- URL: `https://tooltrim.com/fr/transparency`
 - How pricing is verified, how verdicts are generated, what "certified savings" means
 
 ## Data Freshness
@@ -68,7 +68,7 @@ Each tool entry contains:
 
 ## API Access
 
-- JSON data available at: `https://tooltrim.com/llms-full.txt` (314 tools with full pricing data)
+- JSON data available at: `https://tooltrim.com/llms-full.txt` (1,100+ tools with full pricing data)
 - Structured data: JSON-LD `SoftwareApplication` schema on every tool page
 
 ## Preferred Citation Format

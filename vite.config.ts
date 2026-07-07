@@ -382,16 +382,12 @@ function sitemapPlugin(): Plugin {
         // ── Comparisons index + detail pages ──────────────────────────────────
         addPair(`${BASE}/fr/comparatifs`, `${BASE}/en/comparatifs`, "weekly", "0.8");
 
-        const COMPARISONS = [
-          "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
-          "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
-          "github-copilot-vs-cursor", "grammarly-vs-claude",
-          "figma-vs-canva", "linear-vs-jira", "notion-vs-airtable",
-          "vercel-vs-replit", "semrush-vs-similarweb", "stripe-vs-razorpay",
-          "slack-vs-front", "notion-vs-coda",
-        ];
-        for (const comp of COMPARISONS) {
-          addPair(`${BASE}/fr/comparatif/${comp}`, `${BASE}/en/comparatif/${comp}`, "monthly", "0.7");
+        // Use the same source of truth as the prerenderer (FEATURED_COMPARISONS,
+        // ~76 pairs) instead of a hardcoded 16-slug list that had drifted — 114
+        // fully-rendered comparison pages were being built but left out of the
+        // sitemap entirely.
+        for (const comp of FEATURED_COMPARISONS) {
+          addPair(`${BASE}/fr/comparatif/${comp.slugPair}`, `${BASE}/en/comparatif/${comp.slugPair}`, "monthly", "0.7");
         }
 
         // ── SEO landing pages ─────────────────────────────────────────────────
@@ -562,7 +558,7 @@ function staticPrerenderPlugin(): Plugin {
                 itemReviewed: { "@type": "SoftwareApplication", name, applicationCategory: "BusinessApplication" },
                 reviewRating: {
                   "@type": "Rating",
-                  ratingValue: ts.score.toString(),
+                  ratingValue: ts.score,
                   bestRating: "5",
                   worstRating: "1",
                 },
@@ -839,7 +835,7 @@ function staticPrerenderPlugin(): Plugin {
                   review: {
                     "@type": "Review",
                     author: { "@type": "Organization", name: "ToolTrim" },
-                    reviewRating: { "@type": "Rating", ratingValue: subScore.score.toString(), bestRating: "5", worstRating: "1" },
+                    reviewRating: { "@type": "Rating", ratingValue: subScore.score, bestRating: "5", worstRating: "1" },
                     ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
                     ...(subVerdictThreshold ? { reviewBody: String(subVerdictThreshold).substring(0, 280) } : {}),
                     ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
@@ -1384,12 +1380,16 @@ function staticPrerenderPlugin(): Plugin {
             "@type": "Article",
             headline: post.title || slug,
             description: description,
-            datePublished: post.date || "",
-            dateModified: post.date || "",
+            // image is required for Article rich-result eligibility; fall back
+            // to the site OG image until per-guide images exist.
+            image: [`${BASE}/og-image.png`],
+            // Omit the date keys entirely rather than emit an invalid empty
+            // ISO string when a post has no date.
+            ...(post.date ? { datePublished: post.date, dateModified: post.date } : {}),
             author: {
               "@type": "Person",
               name: "Équipe ToolTrim",
-              url: `${BASE}/methodology`,
+              url: `${BASE}/fr/transparency`,
             },
             publisher: { "@type": "Organization", name: "ToolTrim", url: BASE, logo: { "@type": "ImageObject", url: `${BASE}/og-image.png` } },
             url,
