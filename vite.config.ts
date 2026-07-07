@@ -500,6 +500,20 @@ function staticPrerenderPlugin(): Plugin {
         const categories = JSON.parse(categoriesRaw);
 
         const distDir = path.resolve(__dirname, "dist");
+        // Per-tool OG image: use our own captured screenshot when one exists
+        // AND is light enough that a social/SERP crawler won't skip it (a
+        // >300KB OG image is often ignored). Otherwise fall back to the
+        // generic head default. Only our own /og-screenshots/ files are wired
+        // here — never the unverified third-party ogImageUrl hotlinks.
+        const OG_SHOTS_DIR = path.resolve(__dirname, "public/og-screenshots");
+        const OG_MAX_BYTES = 300 * 1024;
+        const toolOgScreenshot = (s: string): string | null => {
+          try {
+            const st = fs.statSync(path.join(OG_SHOTS_DIR, `${s}.png`));
+            if (st.isFile() && st.size <= OG_MAX_BYTES) return `${BASE}/og-screenshots/${s}.png`;
+          } catch { /* no local screenshot */ }
+          return null;
+        };
         const indexPath = path.resolve(distDir, "index.html");
         if (!fs.existsSync(indexPath)) {
           console.warn("⚠️ Prerender: dist/index.html not found, skipping");
@@ -540,6 +554,7 @@ function staticPrerenderPlugin(): Plugin {
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
+          const ogImage = toolOgScreenshot(slug); // per-tool screenshot or null
           // Rounded for display (title/priceTag): "64.39€" reads as an odd,
           // overly-precise price next to competitors who round, and the raw
           // decimal was pushing ~144 titles past Google's ~60-char SERP
@@ -644,9 +659,16 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
-              // og:image / twitter:image come from the static <head> defaults in
-              // index.html — re-injecting the same generic image here just
-              // produced duplicate tags on every prerendered page.
+              // Per-tool og:image when a light-enough local screenshot exists;
+              // otherwise the generic <head> default is inherited. When present
+              // the generic default is stripped below to avoid a duplicate tag.
+              ...(ogImage ? [
+                `<meta property="og:image" content="${ogImage}" />`,
+                `<meta property="og:image:width" content="1200" />`,
+                `<meta property="og:image:height" content="630" />`,
+                `<meta property="og:image:alt" content="${name.replace(/"/g, "&quot;")} — aperçu ToolTrim" />`,
+                `<meta name="twitter:image" content="${ogImage}" />`,
+              ] : []),
               `<script id="tool-software-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
               `<script id="tool-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
               `<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(mainFaqSchema)}</script>`,
@@ -662,6 +684,12 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace(/<title>[^<]*<\/title>/, "");
             // Remove existing meta description
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            // When a per-tool og:image was injected above, strip the generic
+            // og:image*/twitter:image defaults so the tags aren't duplicated.
+            if (ogImage) {
+              html = html.replace(/<meta\s+property="og:image(:[a-z]+)?"[^>]*\/?>/g, "");
+              html = html.replace(/<meta\s+name="twitter:image"[^>]*\/?>/, "");
+            }
             // Inject before </head>
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
             // Inject noscript body text for crawlers
