@@ -38,10 +38,23 @@ console.log(`Screenshots à vérifier : ${targets.length}\n`);
 // 401/403/429 usually mean the site is blocking bot traffic, not that the
 // page is actually dead — deleting a valid screenshot on that signal alone
 // would be a false positive. Only clean up statuses that reliably mean the
-// page itself is gone.
+// page itself is gone (404/410); 5xx and timeouts are treated as transient
+// and left alone since --apply is destructive (deletes the local file +
+// nulls Supabase).
 const BOT_BLOCKED_STATUSES = new Set([401, 403, 429]);
+const DEAD_STATUSES = new Set([404, 410]);
 
-let ok = 0, broken = 0, blocked = 0;
+async function cleanup(slug) {
+  delete cache[slug];
+  const filePath = `${OUT_DIR}/${slug}.png`;
+  if (existsSync(filePath)) unlinkSync(filePath);
+  if (supabase) {
+    const { error } = await supabase.from("tools").update({ og_image_url: null }).eq("slug", slug);
+    if (error) console.error(`       ERR Supabase: ${error.message}`);
+  }
+}
+
+let ok = 0, broken = 0, blocked = 0, uncertain = 0;
 
 for (const tool of targets) {
   const slug = tool.slug || tool.id;
@@ -63,31 +76,19 @@ for (const tool of targets) {
     } else if (BOT_BLOCKED_STATUSES.has(res.status)) {
       console.log(`BLOCKED ${slug}  (HTTP ${res.status}, probable filtre anti-bot — non nettoyé)  ${url}`);
       blocked++;
-    } else {
+    } else if (DEAD_STATUSES.has(res.status)) {
       console.log(`BROKEN ${slug}  (HTTP ${res.status})  ${url}`);
       broken++;
-      if (APPLY) {
-        delete cache[slug];
-        const filePath = `${OUT_DIR}/${slug}.png`;
-        if (existsSync(filePath)) unlinkSync(filePath);
-        if (supabase) {
-          const { error } = await supabase.from("tools").update({ og_image_url: null }).eq("slug", slug);
-          if (error) console.error(`       ERR Supabase: ${error.message}`);
-        }
-      }
+      if (APPLY) await cleanup(slug);
+    } else {
+      console.log(`UNCERTAIN ${slug}  (HTTP ${res.status}, probable erreur transitoire — non nettoyé)  ${url}`);
+      uncertain++;
     }
   } catch (e) {
-    console.log(`FAIL   ${slug}  (${e.message}) — treating as broken  ${url}`);
-    broken++;
-    if (APPLY) {
-      delete cache[slug];
-      const filePath = `${OUT_DIR}/${slug}.png`;
-      if (existsSync(filePath)) unlinkSync(filePath);
-      if (supabase) {
-        const { error } = await supabase.from("tools").update({ og_image_url: null }).eq("slug", slug);
-        if (error) console.error(`       ERR Supabase: ${error.message}`);
-      }
-    }
+    // Timeout / DNS / connection error — not a reliable "page is gone"
+    // signal, so report but never delete.
+    console.log(`UNCERTAIN ${slug}  (${e.message} — non nettoyé)  ${url}`);
+    uncertain++;
   }
 
   await new Promise((r) => setTimeout(r, 300));
@@ -96,7 +97,8 @@ for (const tool of targets) {
 if (APPLY) writeFileSync(CACHE, JSON.stringify(cache, null, 2));
 
 console.log(`\n── Résultat ──`);
-console.log(`OK:      ${ok}`);
-console.log(`Broken:  ${broken}`);
-console.log(`Blocked: ${blocked} (filtre anti-bot probable, à vérifier manuellement — non nettoyé)`);
+console.log(`OK:        ${ok}`);
+console.log(`Broken:    ${broken} (404/410 — nettoyé avec --apply)`);
+console.log(`Blocked:   ${blocked} (filtre anti-bot probable — non nettoyé)`);
+console.log(`Uncertain: ${uncertain} (5xx / timeout, probablement transitoire — non nettoyé)`);
 if (!APPLY) console.log(`\nRelance avec --apply pour nettoyer (cache + Supabase + fichier local).`);
