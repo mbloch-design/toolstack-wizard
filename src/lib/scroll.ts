@@ -6,14 +6,25 @@
  * and keep scrolling the window normally — these helpers fall back to
  * window in that case, so the same call site works in both contexts.
  */
+// getComputedStyle is a layout-forcing call — cache the result instead of
+// paying for it on every scroll-tick call to getScrollTop/getScrollMetrics.
+// Invalidated on resize since the mobile/desktop breakpoint flips whether
+// #main-content is the scroll container.
+let cachedScrollEl: HTMLElement | null | undefined;
+
 function getScrollEl(): HTMLElement | null {
+  if (cachedScrollEl !== undefined) return cachedScrollEl;
   const el = document.getElementById("main-content");
-  if (!el) return null;
+  if (!el) return (cachedScrollEl = null);
   // On mobile #main-content is CSS-overridden back to overflow-y: visible
   // (normal document scroll, sidebar collapses into a top row) — only
   // treat it as the scroll container when it's actually the one scrolling.
   const overflowY = window.getComputedStyle(el).overflowY;
-  return overflowY === "auto" || overflowY === "scroll" ? el : null;
+  return (cachedScrollEl = overflowY === "auto" || overflowY === "scroll" ? el : null);
+}
+
+if (typeof window !== "undefined") {
+  window.addEventListener("resize", () => { cachedScrollEl = undefined; });
 }
 
 export function scrollToTop(behavior: ScrollBehavior = "auto") {
