@@ -99878,76 +99878,56 @@
     "slug": "adobe-creative-cloud",
     "name": "Adobe Creative Cloud All Apps",
     "category": "design-tools",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Adobe Creative Cloud est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Suite créative complète : Photoshop, Illustrator, Premiere Pro et toutes les apps Adobe en un abonnement.",
+    "shortDescriptionEn": "The full creative suite: Photoshop, Illustrator, Premiere Pro and every Adobe app in one subscription.",
+    "description": "Adobe Creative Cloud All Apps regroupe l'intégralité des logiciels Adobe (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects...) dans un seul abonnement. C'est la référence historique du secteur créatif : la plupart des studios, agences et clients travaillent nativement dans ces formats, ce qui en fait un standard difficile à contourner dès qu'il y a de la collaboration externe.\n\nLe prix (78,65€/mois sans engagement, ou 779€/an) est le principal frein : si vous n'utilisez que 2-3 apps, des alternatives ciblées (Affinity, Figma) coûtent beaucoup moins cher pour un usage solo. All Apps ne se justifie que si vous alternez réellement entre plusieurs outils Adobe dans votre workflow.\n\nÀ noter : les tarifs Adobe augmentent régulièrement (intégration de l'IA générative Firefly), et l'engagement annuel avec paiement mensuel inclut des frais de résiliation anticipée peu visibles à la souscription.",
+    "longDescription": "Adobe Creative Cloud All Apps regroupe l'intégralité des logiciels Adobe (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects...) dans un seul abonnement. C'est la référence historique du secteur créatif : la plupart des studios, agences et clients travaillent nativement dans ces formats, ce qui en fait un standard difficile à contourner dès qu'il y a de la collaboration externe.\n\nLe prix (78,65€/mois sans engagement, ou 779€/an) est le principal frein : si vous n'utilisez que 2-3 apps, des alternatives ciblées (Affinity, Figma) coûtent beaucoup moins cher pour un usage solo. All Apps ne se justifie que si vous alternez réellement entre plusieurs outils Adobe dans votre workflow.\n\nÀ noter : les tarifs Adobe augmentent régulièrement (intégration de l'IA générative Firefly), et l'engagement annuel avec paiement mensuel inclut des frais de résiliation anticipée peu visibles à la souscription.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "78,65€/mois sans engagement, ou 779€/an (~64,90€/mois)"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "$69.99/mo month-to-month, or $779/yr (~€64.90/mo)"
     },
-    "defaultMonthlyPrice": 64.39,
+    "defaultMonthlyPrice": 64.9,
     "pricing_v5": {
-      "compare_price_monthly_eur": 64.39,
-      "compare_plan_name": "Creative Cloud All Apps",
-      "compare_plan_kind": "bundle",
-      "billing_model": "bundle",
-      "billing_options": [
-        {
-          "value": "bundle",
-          "label_fr": "Creative Cloud All Apps",
-          "label_en": "Creative Cloud All Apps",
-          "price_monthly_eur": 64.39,
-          "price_original": 69.99,
-          "currency": "USD"
-        },
-        {
-          "value": "included",
-          "label_fr": "Licence entreprise",
-          "label_en": "Company license",
-          "price_monthly_eur": 0
-        },
-        {
-          "value": "team",
-          "label_fr": "Licence équipe",
-          "label_en": "Team license",
-          "needs_verification": true
-        },
-        {
-          "value": "unknown",
-          "label_fr": "Je ne sais pas",
-          "label_en": "I don’t know",
-          "needs_verification": true
-        }
-      ],
-      "price_original": 69.99,
-      "price_original_currency": "USD",
-      "currency": "USD",
-      "conversion_rate_to_eur": 0.92,
-      "price_reliability": "high",
-      "usage_sensitive": false,
-      "location_sensitive": true,
-      "cautions": [
-        "Peut être déjà couvert par une licence équipe ou entreprise.",
-        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "adobe.com",
-      "verified_on": "2026-06-15",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "All Apps",
+      "price_reliability": "high",
+      "location_sensitive": true,
       "official_source_url": "https://www.adobe.com/creativecloud/plans.html",
-      "verification_status": "official_explicit"
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 64.9,
+      "cautions": [
+        "Aucun plan gratuit ; alternatives ciblées (Affinity, Figma) bien moins chères si vous n'utilisez que 1-2 apps",
+        "Engagement annuel avec paiement mensuel = frais de résiliation anticipée"
+      ],
+      "cautionsEn": [
+        "No free tier; targeted alternatives (Affinity, Figma) far cheaper if you only use 1-2 apps"
+      ]
     },
     "affiliateLink": "https://adobecreativecloud.com",
     "websiteUrl": "https://www.adobe.com/creativecloud/plans.html",
     "logo": "https://logo.clearbit.com/adobecreativecloud.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Standard du secteur créatif, compatibilité maximale avec clients et studios",
+      "Toutes les apps Adobe incluses (Photoshop, Illustrator, Premiere, After Effects...)",
+      "Intégration IA générative Firefly incluse",
+      "Mises à jour continues, pas de rachat de licence"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Prix élevé pour un usage solo si vous n'utilisez que 1-2 apps",
+      "Aucun plan gratuit",
+      "Engagement annuel implicite même en facturation mensuelle (frais de sortie anticipée)",
+      "Courbe d'apprentissage importante sur les logiciels Adobe historiques"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -99969,12 +99949,14 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Vous alternez réellement entre 3+ apps Adobe",
+        "Collaboration fréquente avec des clients/studios en formats Adobe natifs"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Vous n'utilisez qu'1-2 apps (une licence individuelle ou Affinity coûte bien moins cher)",
+        "Budget serré en solo débutant"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Dès que votre travail combine plusieurs apps Adobe au quotidien (retouche + mise en page + vidéo)."
     },
     "verdictEn": {
       "keepIf": [
@@ -99989,7 +99971,7 @@
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
     "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
@@ -100009,7 +99991,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -100811,42 +100793,57 @@
     "slug": "greenhouse",
     "name": "Greenhouse",
     "category": "hris-payroll",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Greenhouse est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Logiciel de recrutement (ATS) pour structurer et scaler le processus d'embauche en entreprise.",
+    "shortDescriptionEn": "Applicant tracking system (ATS) to structure and scale a company's hiring process.",
+    "description": "Greenhouse est un ATS (Applicant Tracking System) conçu pour des équipes RH qui recrutent en volume : suivi des candidatures, structuration des entretiens, reporting sur la qualité des sources de recrutement. C'est un outil sérieux et largement adopté par des entreprises en croissance (dizaines à centaines d'embauches par an).\n\nLe prix n'est pas public : Greenhouse facture au forfait selon l'effectif total de l'entreprise (pas le nombre de recruteurs), avec un point d'entrée réaliste autour de 500-540€/mois pour une petite structure, et des contrats qui montent vite au-delà pour les tiers intermédiaire et enterprise. Des frais d'implémentation (1 000 à 15 000€) et des modules additionnels (sourcing, onboarding) s'ajoutent souvent au forfait de base.\n\nPour un freelance ou une très petite équipe qui recrute occasionnellement, Greenhouse est largement surdimensionné : un tableur ou un ATS gratuit/low-cost suffit tant que le volume de recrutement reste faible.",
+    "longDescription": "Greenhouse est un ATS (Applicant Tracking System) conçu pour des équipes RH qui recrutent en volume : suivi des candidatures, structuration des entretiens, reporting sur la qualité des sources de recrutement. C'est un outil sérieux et largement adopté par des entreprises en croissance (dizaines à centaines d'embauches par an).\n\nLe prix n'est pas public : Greenhouse facture au forfait selon l'effectif total de l'entreprise (pas le nombre de recruteurs), avec un point d'entrée réaliste autour de 500-540€/mois pour une petite structure, et des contrats qui montent vite au-delà pour les tiers intermédiaire et enterprise. Des frais d'implémentation (1 000 à 15 000€) et des modules additionnels (sourcing, onboarding) s'ajoutent souvent au forfait de base.\n\nPour un freelance ou une très petite équipe qui recrute occasionnellement, Greenhouse est largement surdimensionné : un tableur ou un ATS gratuit/low-cost suffit tant que le volume de recrutement reste faible.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis, ~540€/mois minimum (facturé à l'effectif total, pas au nombre de recruteurs)"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote, ~$540/mo minimum (billed on total headcount, not recruiter seats)"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 540,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "greenhouse.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://greenhouse.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": "Core",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://www.greenhouse.com/pricing",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 540,
+      "cautions": [
+        "Prix non public, facturé sur l'effectif total de l'entreprise",
+        "Frais d'implémentation (1 000-15 000€) et modules add-on souvent nécessaires en plus"
+      ],
+      "cautionsEn": [
+        "Pricing not public, billed on total company headcount",
+        "Implementation fees ($1K-15K) and add-on modules often needed on top"
+      ]
     },
     "affiliateLink": "https://greenhouse.com",
     "websiteUrl": "https://greenhouse.com",
     "logo": "https://logo.clearbit.com/greenhouse.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Structuration rigoureuse du processus d'entretien",
+      "Reporting fiable sur la qualité des sources de recrutement",
+      "Large écosystème d'intégrations RH",
+      "Référence sur le marché mid-market/enterprise"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Prix non public, nécessite un devis",
+      "Facturé sur l'effectif total, pas sur l'usage réel du recrutement",
+      "Frais d'implémentation et d'onboarding séparés",
+      "Largement surdimensionné pour un recrutement occasionnel"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -100862,12 +100859,14 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Recrutement régulier et en volume (dizaines d'embauches/an)",
+        "Équipe RH dédiée qui a besoin de reporting structuré"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Recrutement occasionnel ou freelance/solo",
+        "Budget serré : un tableur ou un ATS gratuit suffit à faible volume"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Seulement si le recrutement est une fonction récurrente et structurée, pas un besoin ponctuel."
     },
     "verdictEn": {
       "keepIf": [
@@ -100881,8 +100880,8 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "low",
+    "teamRelevance": "high",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -100897,7 +100896,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -100910,42 +100909,54 @@
     "slug": "agicap",
     "name": "Agicap",
     "category": "finance",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Agicap est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Pilotage de trésorerie et prévisions de cash-flow pour PME et entreprises.",
+    "shortDescriptionEn": "Cash-flow forecasting and treasury management for SMEs and companies.",
+    "description": "Agicap centralise les comptes bancaires et permet de prévoir la trésorerie à venir : entrées/sorties, scénarios, alertes sur les tensions de cash. C'est un outil utile dès que le suivi de trésorerie sur tableur devient risqué (multi-comptes, prévisions à affiner régulièrement).\n\nAgicap ne publie pas ses tarifs : le prix se négocie en fonction du nombre de comptes bancaires connectés et du chiffre d'affaires, avec un point d'entrée généralement de plusieurs centaines d'euros par mois. Un essai gratuit existe pour tester l'outil avant engagement.\n\nPour un freelance ou une TPE avec un seul compte bancaire et une trésorerie simple, Agicap est probablement disproportionné : le suivi manuel ou un outil de facturation avec module trésorerie basique (type Qonto, Pennylane) couvre déjà l'essentiel du besoin.",
+    "longDescription": "Agicap centralise les comptes bancaires et permet de prévoir la trésorerie à venir : entrées/sorties, scénarios, alertes sur les tensions de cash. C'est un outil utile dès que le suivi de trésorerie sur tableur devient risqué (multi-comptes, prévisions à affiner régulièrement).\n\nAgicap ne publie pas ses tarifs : le prix se négocie en fonction du nombre de comptes bancaires connectés et du chiffre d'affaires, avec un point d'entrée généralement de plusieurs centaines d'euros par mois. Un essai gratuit existe pour tester l'outil avant engagement.\n\nPour un freelance ou une TPE avec un seul compte bancaire et une trésorerie simple, Agicap est probablement disproportionné : le suivi manuel ou un outil de facturation avec module trésorerie basique (type Qonto, Pennylane) couvre déjà l'essentiel du besoin.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Essai gratuit",
+      "paid": "Sur devis, généralement plusieurs centaines d'euros par mois selon comptes connectés et CA"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free trial",
+      "paid": "Custom quote, typically several hundred euros/month depending on connected accounts and revenue"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "agicap.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://agicap.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": null,
+      "price_reliability": "low",
+      "location_sensitive": false,
+      "official_source_url": "https://agicap.com/en-us/pricing/",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "Aucun tarif public, devis selon nombre de comptes bancaires et CA"
+      ],
+      "cautionsEn": [
+        "No public pricing, quote depends on number of bank accounts and revenue"
+      ]
     },
     "affiliateLink": "https://agicap.com",
     "websiteUrl": "https://agicap.com",
     "logo": "https://logo.clearbit.com/agicap.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Vision consolidée multi-comptes bancaires",
+      "Prévisions de trésorerie et scénarios",
+      "Alertes proactives sur les tensions de cash",
+      "Essai gratuit avant engagement"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Prix non public, nécessite un devis",
+      "Coût élevé pour une trésorerie simple à un seul compte",
+      "Surdimensionné pour un freelance sans multi-comptes"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -100961,12 +100972,14 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Plusieurs comptes bancaires à consolider",
+        "Prévisions de trésorerie régulières et complexes (saisonnalité, multi-devises)"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Un seul compte bancaire et trésorerie simple",
+        "Freelance ou TPE en tout début d'activité"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Seulement si le suivi manuel sur tableur devient risqué ou chronophage à cause de la complexité réelle."
     },
     "verdictEn": {
       "keepIf": [
@@ -100980,7 +100993,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -100996,7 +101009,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101009,42 +101022,54 @@
     "slug": "profitwell",
     "name": "Profitwell",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Profitwell est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Analytics de revenus SaaS (MRR, churn, rétention) gratuit, par Paddle.",
+    "shortDescriptionEn": "Free SaaS revenue analytics (MRR, churn, retention) by Paddle.",
+    "description": "ProfitWell Metrics (racheté par Paddle) donne une vision claire des métriques SaaS essentielles : MRR, churn, rétention, LTV, segmentées par plan ou marché. Son principal atout : c'est gratuit, sans limite de temps, en se connectant à Stripe, Chargebee, Braintree ou d'autres systèmes de facturation.\n\nPour un solopreneur ou une petite structure SaaS qui veut suivre ses revenus récurrents sans complexité ni coût, c'est une option évidente : pas de plan payant à comparer, l'outil est financé par l'écosystème Paddle.\n\nLa limite : les fonctionnalités avancées (segmentation poussée, prévisions) restent plus riches chez des concurrents payants comme ChartMogul si les besoins analytiques grandissent.",
+    "longDescription": "ProfitWell Metrics (racheté par Paddle) donne une vision claire des métriques SaaS essentielles : MRR, churn, rétention, LTV, segmentées par plan ou marché. Son principal atout : c'est gratuit, sans limite de temps, en se connectant à Stripe, Chargebee, Braintree ou d'autres systèmes de facturation.\n\nPour un solopreneur ou une petite structure SaaS qui veut suivre ses revenus récurrents sans complexité ni coût, c'est une option évidente : pas de plan payant à comparer, l'outil est financé par l'écosystème Paddle.\n\nLa limite : les fonctionnalités avancées (segmentation poussée, prévisions) restent plus riches chez des concurrents payants comme ChartMogul si les besoins analytiques grandissent.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit et illimité",
+      "paid": ""
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free and unlimited",
+      "paid": ""
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
+      "verified_on": "2026-07-07",
+      "source_domain": "paddle.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "price_reliability": "high",
       "location_sensitive": false,
+      "official_source_url": "https://www.paddle.com/profitwell-metrics",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0,
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Gratuit mais moins riche que ChartMogul sur la segmentation avancée et les prévisions"
       ],
-      "source_domain": "profitwell.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://profitwell.com",
-      "verification_status": "needs_official_quote"
+      "cautionsEn": [
+        "Free but less rich than ChartMogul on advanced segmentation and forecasting"
+      ]
     },
     "affiliateLink": "https://profitwell.com",
     "websiteUrl": "https://profitwell.com",
     "logo": "https://logo.clearbit.com/profitwell.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Totalement gratuit, sans limite de temps",
+      "Connexion directe à Stripe, Chargebee, Braintree",
+      "Métriques SaaS essentielles bien présentées (MRR, churn, LTV)",
+      "Aucune carte bancaire requise"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Moins de profondeur analytique que les outils payants (ChartMogul)",
+      "Fonctionnalités de prévision limitées",
+      "Dépendant de l'écosystème Paddle à long terme"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101060,12 +101085,13 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Vous voulez suivre MRR/churn sans budget dédié",
+        "Vos besoins analytiques restent simples à moyens"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Vous avez besoin de segmentation avancée ou de prévisions poussées"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Quasi systématique en solo/petite structure SaaS : c'est gratuit et couvre l'essentiel."
     },
     "verdictEn": {
       "keepIf": [
@@ -101079,7 +101105,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "high",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -101095,7 +101121,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "ferme",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101108,42 +101134,56 @@
     "slug": "chartmogul",
     "name": "Chartmogul",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Chartmogul est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Analytics de revenus SaaS (MRR, churn, cohortes) avec CRM intégré.",
+    "shortDescriptionEn": "SaaS revenue analytics (MRR, churn, cohorts) with built-in CRM.",
+    "description": "ChartMogul suit les métriques de revenus récurrents (MRR, churn, LTV, cohortes) avec un niveau de détail supérieur à des outils gratuits comme ProfitWell, plus un CRM léger intégré pour suivre les opportunités commerciales.\n\nUn plan gratuit existe pour les structures sous 10K$ de MRR (ou moins de 120K$ d'ARR), ce qui couvre une bonne partie des solopreneurs en phase de lancement. Au-delà, le plan Scale démarre à 100$/mois pour 10K$ de MRR, avec un coût additionnel progressif par tranche de MRR supplémentaire.\n\nUn programme Startup offre 50$/mois de réduction pendant 12 mois pour les jeunes structures, ce qui rend l'entrée en gamme payante plus accessible.",
+    "longDescription": "ChartMogul suit les métriques de revenus récurrents (MRR, churn, LTV, cohortes) avec un niveau de détail supérieur à des outils gratuits comme ProfitWell, plus un CRM léger intégré pour suivre les opportunités commerciales.\n\nUn plan gratuit existe pour les structures sous 10K$ de MRR (ou moins de 120K$ d'ARR), ce qui couvre une bonne partie des solopreneurs en phase de lancement. Au-delà, le plan Scale démarre à 100$/mois pour 10K$ de MRR, avec un coût additionnel progressif par tranche de MRR supplémentaire.\n\nUn programme Startup offre 50$/mois de réduction pendant 12 mois pour les jeunes structures, ce qui rend l'entrée en gamme payante plus accessible.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit sous 10K$ MRR / 120K$ ARR",
+      "paid": "À partir de 100$/mois (Scale) pour 10K$ de MRR"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free under $10K MRR / $120K ARR",
+      "paid": "From $100/mo (Scale) for $10K MRR"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 88,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "chartmogul.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://chartmogul.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Scale",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://chartmogul.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 88,
+      "cautions": [
+        "Coût progressif par tranche de 10K$ de MRR supplémentaire au-delà du plan Scale",
+        "CRM Pro inclus pour 1 siège seulement, sièges additionnels à 39$/mois"
+      ],
+      "cautionsEn": [
+        "Cost scales incrementally per additional $10K MRR beyond the Scale plan",
+        "CRM Pro included for 1 seat only, extra seats $39/mo"
+      ]
     },
     "affiliateLink": "https://chartmogul.com",
     "websiteUrl": "https://chartmogul.com",
     "logo": "https://logo.clearbit.com/chartmogul.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Plan gratuit généreux sous 10K$ MRR",
+      "Analytics de cohortes et churn plus poussés que les gratuits",
+      "CRM léger intégré",
+      "Programme Startup avec réduction 12 mois"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Coût qui grimpe vite avec la croissance du MRR",
+      "Sièges CRM additionnels payants",
+      "Plan Volume (2000$/mois) réservé aux grosses structures"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101159,12 +101199,13 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "MRR en croissance et besoin de cohortes/segmentation fine",
+        "Vous voulez un CRM léger sans outil séparé"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Métriques simples suffisent (ProfitWell gratuit couvre déjà l'essentiel)"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Dès que le MRR dépasse 10K$ et que le suivi de churn/cohortes devient stratégique."
     },
     "verdictEn": {
       "keepIf": [
@@ -101179,7 +101220,7 @@
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
     "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -101194,7 +101235,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101207,42 +101248,54 @@
     "slug": "triple-whale",
     "name": "Triple Whale",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Triple Whale est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme d'analytics et d'attribution e-commerce pour marques Shopify.",
+    "shortDescriptionEn": "E-commerce analytics and attribution platform for Shopify brands.",
+    "description": "Triple Whale centralise les données e-commerce (ventes, publicité, attribution multi-canal) pour donner une vue consolidée de la rentabilité par canal marketing. Utilisé par plus de 60 000 marques Shopify.\n\nLe tarif dépend du GMV (volume de vente) de la boutique : un tableau de bord gratuit existe pour démarrer, puis les plans payants commencent autour de 179-219$/mois pour les petites structures et montent vite avec la croissance du volume de vente.\n\nPertinent uniquement pour des marques e-commerce avec un volume de vente déjà significatif et plusieurs canaux d'acquisition à arbitrer ; pour un e-commerçant débutant avec peu de canaux publicitaires, les analytics natifs de Shopify suffisent largement.",
+    "longDescription": "Triple Whale centralise les données e-commerce (ventes, publicité, attribution multi-canal) pour donner une vue consolidée de la rentabilité par canal marketing. Utilisé par plus de 60 000 marques Shopify.\n\nLe tarif dépend du GMV (volume de vente) de la boutique : un tableau de bord gratuit existe pour démarrer, puis les plans payants commencent autour de 179-219$/mois pour les petites structures et montent vite avec la croissance du volume de vente.\n\nPertinent uniquement pour des marques e-commerce avec un volume de vente déjà significatif et plusieurs canaux d'acquisition à arbitrer ; pour un e-commerçant débutant avec peu de canaux publicitaires, les analytics natifs de Shopify suffisent largement.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Founders Dashboard gratuit (fonctionnalités limitées)",
+      "paid": "À partir de ~179$/mois selon le GMV"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free Founders Dashboard (limited features)",
+      "paid": "From ~$179/mo depending on GMV"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 157,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "triplewhale.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://triplewhale.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Starter",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://www.triplewhale.com/pricing",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 157,
+      "cautions": [
+        "Prix indexé sur le GMV (volume de ventes) de la boutique, augmente avec la croissance"
+      ],
+      "cautionsEn": [
+        "Pricing indexed on store GMV, increases as sales grow"
+      ]
     },
     "affiliateLink": "https://triplewhale.com",
     "websiteUrl": "https://triplewhale.com",
     "logo": "https://logo.clearbit.com/triplewhale.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Vue consolidée de l'attribution marketing multi-canal",
+      "Tableau de bord gratuit pour démarrer",
+      "Large adoption (60 000+ marques Shopify)",
+      "Facturation flexible mensuelle ou annuelle"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Prix indexé sur le GMV, monte vite avec la croissance",
+      "Surdimensionné pour une boutique avec peu de canaux publicitaires",
+      "Plan Enterprise sur devis uniquement"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101258,12 +101311,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Volume de vente significatif et plusieurs canaux publicitaires à arbitrer"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Boutique débutante avec peu de canaux d'acquisition (les analytics Shopify natifs suffisent)"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Dès que l'attribution multi-canal devient difficile à suivre manuellement."
     },
     "verdictEn": {
       "keepIf": [
@@ -101277,7 +101330,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -101293,7 +101346,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101306,42 +101359,53 @@
     "slug": "microsoft-clarity",
     "name": "Microsoft Clarity",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Microsoft Clarity est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Heatmaps et enregistrements de session gratuits et illimités, par Microsoft.",
+    "shortDescriptionEn": "Free, unlimited heatmaps and session recordings by Microsoft.",
+    "description": "Microsoft Clarity offre des heatmaps, enregistrements de session et résumés comportementaux propulsés par l'IA — entièrement gratuit, sans limite de trafic ni de sessions. Le modèle économique de Microsoft : les données anonymisées et agrégées nourrissent ses propres produits IA et publicitaires, ce qui finance la gratuité totale de l'outil.\n\nPour un freelance ou une petite structure qui veut comprendre le comportement des visiteurs sur son site sans budget dédié, c'est un choix quasi évident : aucun concurrent gratuit n'offre un niveau de détail comparable sans limite de sessions.\n\nSeule contrepartie réelle : accepter que Microsoft exploite les données agrégées selon ses conditions d'utilisation, ce qui peut être un point d'attention pour des sites très sensibles à la confidentialité des données.",
+    "longDescription": "Microsoft Clarity offre des heatmaps, enregistrements de session et résumés comportementaux propulsés par l'IA — entièrement gratuit, sans limite de trafic ni de sessions. Le modèle économique de Microsoft : les données anonymisées et agrégées nourrissent ses propres produits IA et publicitaires, ce qui finance la gratuité totale de l'outil.\n\nPour un freelance ou une petite structure qui veut comprendre le comportement des visiteurs sur son site sans budget dédié, c'est un choix quasi évident : aucun concurrent gratuit n'offre un niveau de détail comparable sans limite de sessions.\n\nSeule contrepartie réelle : accepter que Microsoft exploite les données agrégées selon ses conditions d'utilisation, ce qui peut être un point d'attention pour des sites très sensibles à la confidentialité des données.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit à vie, sans limite de trafic ni de sessions",
+      "paid": ""
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free forever, no traffic or session limits",
+      "paid": ""
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "clarity.microsoft.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://clarity.microsoft.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://clarity.microsoft.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0,
+      "cautions": [
+        "Microsoft exploite les données agrégées/anonymisées pour ses propres produits IA et publicitaires"
+      ],
+      "cautionsEn": [
+        "Microsoft uses aggregated/anonymized data for its own AI and advertising products"
+      ]
     },
     "affiliateLink": "https://clarity.microsoft.com",
     "websiteUrl": "https://clarity.microsoft.com",
     "logo": "https://logo.clearbit.com/clarity.microsoft.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "100% gratuit, sans aucune limite de sessions ni de trafic",
+      "Heatmaps + enregistrements de session + résumés IA inclus",
+      "Pas de carte bancaire requise",
+      "Intégration MCP Server pour connecter des outils IA"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Données agrégées exploitées par Microsoft (conditions d'utilisation à lire)",
+      "Moins de fonctionnalités avancées que des outils payants type Hotjar/FullStory sur l'analyse qualitative poussée"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101357,12 +101421,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Vous voulez comprendre le comportement des visiteurs sans budget dédié"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Confidentialité des données extrêmement sensible (secteur réglementé)"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Quasi systématique : gratuit, sans limite, et suffisant pour l'immense majorité des besoins de heatmaps/session replay."
     },
     "verdictEn": {
       "keepIf": [
@@ -101376,8 +101440,8 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "high",
+    "teamRelevance": "high",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -101392,7 +101456,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "ferme",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101405,42 +101469,54 @@
     "slug": "vwo",
     "name": "Vwo",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Vwo est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme d'A/B testing et d'expérimentation web, en fin de plan gratuit en 2026.",
+    "shortDescriptionEn": "A/B testing and experimentation platform, phasing out its free plan in 2026.",
+    "description": "VWO permet de lancer des tests A/B, des tests multivariés et du split-URL testing pour optimiser un site web ou une app. C'est un outil mature et reconnu du secteur CRO (Conversion Rate Optimization).\n\nEn 2026, VWO met fin à son plan gratuit historique (plafonné à 50 000 utilisateurs suivis par mois) : les nouveaux comptes n'ont plus qu'un essai gratuit de 30 jours. Les plans payants démarrent à environ 314$/mois (Growth) et montent à 972$/mois (Pro), avec des contrats réels qui atteignent souvent 17 000$/an selon les données de marché.\n\nCe changement de politique tarifaire rend VWO nettement moins accessible pour un freelance ou une petite structure qui testait jusqu'ici gratuitement : des alternatives avec un vrai plan gratuit (Google Optimize successors, PostHog) sont à considérer en premier pour un budget serré.",
+    "longDescription": "VWO permet de lancer des tests A/B, des tests multivariés et du split-URL testing pour optimiser un site web ou une app. C'est un outil mature et reconnu du secteur CRO (Conversion Rate Optimization).\n\nEn 2026, VWO met fin à son plan gratuit historique (plafonné à 50 000 utilisateurs suivis par mois) : les nouveaux comptes n'ont plus qu'un essai gratuit de 30 jours. Les plans payants démarrent à environ 314$/mois (Growth) et montent à 972$/mois (Pro), avec des contrats réels qui atteignent souvent 17 000$/an selon les données de marché.\n\nCe changement de politique tarifaire rend VWO nettement moins accessible pour un freelance ou une petite structure qui testait jusqu'ici gratuitement : des alternatives avec un vrai plan gratuit (Google Optimize successors, PostHog) sont à considérer en premier pour un budget serré.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Essai gratuit 30 jours uniquement (plan gratuit permanent supprimé en 2026)",
+      "paid": "À partir de ~314$/mois (Growth)"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "30-day free trial only (permanent free plan discontinued in 2026)",
+      "paid": "From ~$314/mo (Growth)"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 275,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "vwo.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://vwo.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Growth",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://vwo.com/pricing/",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 275,
+      "cautions": [
+        "Plan gratuit permanent supprimé en 2026, remplacé par un essai de 30 jours",
+        "Contrats réels souvent bien au-dessus du prix affiché (médiane ~17K$/an)"
+      ],
+      "cautionsEn": [
+        "Permanent free plan discontinued in 2026, replaced by a 30-day trial",
+        "Real contracts often well above list price (median ~$17K/yr)"
+      ]
     },
     "affiliateLink": "https://vwo.com",
     "websiteUrl": "https://vwo.com",
     "logo": "https://logo.clearbit.com/vwo.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Outil CRO mature avec A/B, multivarié et split-URL testing",
+      "Facturation flexible selon le volume de trafic testé"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Plan gratuit permanent supprimé en 2026",
+      "Prix réels souvent bien supérieurs aux tarifs affichés",
+      "Devient difficile à justifier pour un budget solo/freelance"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101456,12 +101532,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Budget CRO dédié et trafic suffisant pour des tests statistiquement significatifs"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Budget serré : privilégier un outil avec un vrai plan gratuit permanent"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Seulement avec un budget CRO confirmé ; le changement de tarification 2026 exclut de fait les petits budgets."
     },
     "verdictEn": {
       "keepIf": [
@@ -101475,7 +101551,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -101491,7 +101567,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101504,42 +101580,53 @@
     "slug": "optimizely",
     "name": "Optimizely",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Optimizely est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme enterprise de contenu, e-commerce et expérimentation digitale.",
+    "shortDescriptionEn": "Enterprise platform for content, commerce and digital experimentation.",
+    "description": "Optimizely regroupe trois familles de produits (Content Cloud, Commerce Cloud, Intelligence Cloud) pour la gestion de contenu, l'e-commerce et l'expérimentation à grande échelle. C'est un outil taillé pour de très grandes organisations avec des besoins complexes multi-produits.\n\nAucun tarif public n'existe : les déploiements basiques démarrent autour de 25 000-40 000$/an, les déploiements mid-market entre 65 000 et 120 000$/an, et les contrats enterprise dépassent régulièrement 120 000$/an. Pas de plan gratuit ni d'essai standard.\n\nCet outil n'a aucune pertinence pour un freelance, un solopreneur ou une petite équipe : le ticket d'entrée à cinq chiffres l'exclut de fait de ce public. Il n'est référencé ici que pour la complétude du catalogue.",
+    "longDescription": "Optimizely regroupe trois familles de produits (Content Cloud, Commerce Cloud, Intelligence Cloud) pour la gestion de contenu, l'e-commerce et l'expérimentation à grande échelle. C'est un outil taillé pour de très grandes organisations avec des besoins complexes multi-produits.\n\nAucun tarif public n'existe : les déploiements basiques démarrent autour de 25 000-40 000$/an, les déploiements mid-market entre 65 000 et 120 000$/an, et les contrats enterprise dépassent régulièrement 120 000$/an. Pas de plan gratuit ni d'essai standard.\n\nCet outil n'a aucune pertinence pour un freelance, un solopreneur ou une petite équipe : le ticket d'entrée à cinq chiffres l'exclut de fait de ce public. Il n'est référencé ici que pour la complétude du catalogue.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis uniquement, à partir de ~25 000$/an"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote only, from ~$25,000/yr"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 2500,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "optimizely.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://optimizely.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": null,
+      "price_reliability": "low",
+      "location_sensitive": false,
+      "official_source_url": "https://www.optimizely.com/plans",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 2500,
+      "cautions": [
+        "Aucun tarif public, aucun plan gratuit, ticket d'entrée à cinq chiffres annuels"
+      ],
+      "cautionsEn": [
+        "No public pricing, no free plan, five-figure annual entry ticket"
+      ]
     },
     "affiliateLink": "https://optimizely.com",
     "websiteUrl": "https://optimizely.com",
     "logo": "https://logo.clearbit.com/optimizely.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Plateforme complète content + commerce + expérimentation",
+      "Adapté aux très grandes organisations multi-marques"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public",
+      "Ticket d'entrée à cinq chiffres minimum",
+      "Aucun plan gratuit ni essai standard",
+      "Totalement disproportionné hors grande entreprise"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101555,12 +101642,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Grande organisation avec besoins complexes multi-produits et budget dédié à cinq chiffres"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Freelance, solopreneur ou petite équipe — quasi systématiquement le cas pour l'audience ToolTrim"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Jamais pertinent en dessous d'une organisation de taille significative avec budget IT dédié."
     },
     "verdictEn": {
       "keepIf": [
@@ -101574,8 +101661,8 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "low",
+    "teamRelevance": "low",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -101590,7 +101677,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -101736,42 +101823,55 @@
     "slug": "usertesting",
     "name": "Usertesting",
     "category": "analytics",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Usertesting est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Tests utilisateurs modérés et non-modérés à grande échelle, sur devis.",
+    "shortDescriptionEn": "Moderated and unmoderated user testing at scale, quote-based.",
+    "description": "UserTesting permet de recruter des panels de testeurs pour des sessions de tests utilisateurs (modérées ou non), avec analytics et intégrations (Jira, Slack). Fonctionne sur un système de crédits achetés en amont sur un contrat annuel.\n\nLes contrats annuels vont de 12 000$ à plus de 100 000$/an selon le volume de crédits et le panel utilisé, avec une moyenne SMB autour de 36 000$/an. Aucun tarif à l'unité ni d'essai gratuit classique : tout passe par un devis personnalisé.\n\nPour un freelance ou une petite structure, ce budget est hors de portée : des alternatives plus légères (tests utilisateurs ponctuels via des plateformes à la mission, ou recrutement direct de testeurs) couvrent le même besoin à une fraction du coût.",
+    "longDescription": "UserTesting permet de recruter des panels de testeurs pour des sessions de tests utilisateurs (modérées ou non), avec analytics et intégrations (Jira, Slack). Fonctionne sur un système de crédits achetés en amont sur un contrat annuel.\n\nLes contrats annuels vont de 12 000$ à plus de 100 000$/an selon le volume de crédits et le panel utilisé, avec une moyenne SMB autour de 36 000$/an. Aucun tarif à l'unité ni d'essai gratuit classique : tout passe par un devis personnalisé.\n\nPour un freelance ou une petite structure, ce budget est hors de portée : des alternatives plus légères (tests utilisateurs ponctuels via des plateformes à la mission, ou recrutement direct de testeurs) couvrent le même besoin à une fraction du coût.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis, contrats annuels de 12 000$ à 100 000$+ selon volume"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote, annual contracts from $12,000 to $100,000+ depending on volume"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 3000,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "usertesting.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://usertesting.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": "Essentials",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://www.usertesting.com/plans",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 3000,
+      "cautions": [
+        "Aucun tarif public, système de crédits sur contrat annuel uniquement",
+        "Moyenne SMB déjà à 36 000$/an"
+      ],
+      "cautionsEn": [
+        "No public pricing, credit-based system on annual contract only",
+        "SMB average already at $36,000/yr"
+      ]
     },
     "affiliateLink": "https://usertesting.com",
     "websiteUrl": "https://usertesting.com",
     "logo": "https://logo.clearbit.com/usertesting.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Panel de testeurs qualifiés à grande échelle",
+      "Tests modérés et non-modérés",
+      "Intégrations Jira/Slack pour intégrer les retours au workflow produit"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public ni essai standard",
+      "Budget annuel élevé même en entrée de gamme (12K$+)",
+      "Système de crédits complexe à estimer à l'avance"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -101787,12 +101887,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Budget UX research dédié et besoin récurrent de tests à grande échelle"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Freelance ou petite structure — privilégier des alternatives à la mission bien moins coûteuses"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Seulement avec un budget recherche utilisateur confirmé de plusieurs milliers d'euros par an."
     },
     "verdictEn": {
       "keepIf": [
@@ -101806,7 +101906,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -101822,7 +101922,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102133,42 +102233,53 @@
     "slug": "microsoft-defender",
     "name": "Microsoft Defender",
     "category": "security",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Microsoft Defender est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Sécurité endpoint (antivirus, EDR) pour PME, dès 3$/utilisateur/mois.",
+    "shortDescriptionEn": "Endpoint security (antivirus, EDR) for SMBs, from $3/user/month.",
+    "description": "Microsoft Defender for Business protège les postes de travail contre les malwares et menaces (antivirus nouvelle génération, EDR). Autonome à partir de 3$/utilisateur/mois, ou inclus dans Microsoft 365 Business Premium (22$/utilisateur/mois) avec Intune et Entra ID.\n\nÀ partir du 1er juillet 2026, Microsoft intègre une partie des fonctionnalités Defender directement dans Microsoft 365 Business Standard, avec une hausse de 3$/utilisateur/mois — un changement de périmètre à surveiller si vous êtes déjà abonné à Microsoft 365.\n\nPour une petite structure déjà sur l'écosystème Microsoft 365, l'ajout de Defender for Business est cohérent et peu coûteux ; si vous n'êtes pas sur Microsoft 365, d'autres solutions de sécurité endpoint sont à comparer avant de basculer.",
+    "longDescription": "Microsoft Defender for Business protège les postes de travail contre les malwares et menaces (antivirus nouvelle génération, EDR). Autonome à partir de 3$/utilisateur/mois, ou inclus dans Microsoft 365 Business Premium (22$/utilisateur/mois) avec Intune et Entra ID.\n\nÀ partir du 1er juillet 2026, Microsoft intègre une partie des fonctionnalités Defender directement dans Microsoft 365 Business Standard, avec une hausse de 3$/utilisateur/mois — un changement de périmètre à surveiller si vous êtes déjà abonné à Microsoft 365.\n\nPour une petite structure déjà sur l'écosystème Microsoft 365, l'ajout de Defender for Business est cohérent et peu coûteux ; si vous n'êtes pas sur Microsoft 365, d'autres solutions de sécurité endpoint sont à comparer avant de basculer.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "À partir de 3$/utilisateur/mois en autonome, inclus dans Microsoft 365 Business Premium (22$/utilisateur/mois)"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "From $3/user/month standalone, included in Microsoft 365 Business Premium ($22/user/month)"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 3,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "microsoft.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://microsoft.com/security/business/microsoft-defender",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Defender for Business (standalone)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.microsoft.com/en-us/security/pricing/small-medium-business",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 3,
+      "cautions": [
+        "Changement de périmètre Microsoft 365 Business Standard au 1er juillet 2026 (+3$/utilisateur/mois)"
+      ],
+      "cautionsEn": [
+        "Microsoft 365 Business Standard packaging change on July 1, 2026 (+$3/user/month)"
+      ]
     },
     "affiliateLink": "https://microsoft.com/security/business/microsoft-defender",
     "websiteUrl": "https://microsoft.com/security/business/microsoft-defender",
     "logo": "https://logo.clearbit.com/microsoft.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Prix d'entrée accessible (3$/utilisateur/mois)",
+      "Intégration native si déjà sur Microsoft 365",
+      "EDR + antivirus nouvelle génération inclus",
+      "Reconnu et fiable (Microsoft)"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Changement de packaging Microsoft 365 en 2026 à surveiller",
+      "Moins pertinent hors écosystème Microsoft"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102184,12 +102295,13 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Déjà sur l'écosystème Microsoft 365",
+        "Besoin de sécurité endpoint basique à coût maîtrisé"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Hors écosystème Microsoft (comparer d'autres solutions dédiées)"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Cohérent par défaut si vous êtes déjà sur Microsoft 365 ; à comparer sinon."
     },
     "verdictEn": {
       "keepIf": [
@@ -102204,7 +102316,7 @@
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
     "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -102219,7 +102331,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102231,42 +102343,56 @@
     "slug": "crowdstrike",
     "name": "Crowdstrike",
     "category": "security",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Crowdstrike est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Sécurité endpoint enterprise (EDR/XDR) ; Falcon Go pour petites structures dès ~5€/poste/mois.",
+    "shortDescriptionEn": "Enterprise endpoint security (EDR/XDR); Falcon Go for small businesses from ~€5/device/month.",
+    "description": "CrowdStrike Falcon est une référence du marché EDR/XDR (détection et réponse aux menaces), reconnue pour sa performance face aux attaques avancées. Falcon Go, son offre entrée de gamme pour petites structures, est plafonnée à 100 postes et facturée autour de 5€/poste/mois en équivalent mensuel (30$/poste facturé annuellement).\n\nAu-delà de Falcon Go, les offres montent vite (jusqu'à 60$/poste/mois pour les niveaux supérieurs) et ciblent des organisations avec des besoins de sécurité plus complexes.\n\nPour une petite structure avec moins de 100 postes et un besoin de protection sérieux (au-delà d'un antivirus basique), Falcon Go est une option crédible et abordable ; au-delà, CrowdStrike devient un investissement de sécurité substantiel à justifier par un vrai profil de risque.",
+    "longDescription": "CrowdStrike Falcon est une référence du marché EDR/XDR (détection et réponse aux menaces), reconnue pour sa performance face aux attaques avancées. Falcon Go, son offre entrée de gamme pour petites structures, est plafonnée à 100 postes et facturée autour de 5€/poste/mois en équivalent mensuel (30$/poste facturé annuellement).\n\nAu-delà de Falcon Go, les offres montent vite (jusqu'à 60$/poste/mois pour les niveaux supérieurs) et ciblent des organisations avec des besoins de sécurité plus complexes.\n\nPour une petite structure avec moins de 100 postes et un besoin de protection sérieux (au-delà d'un antivirus basique), Falcon Go est une option crédible et abordable ; au-delà, CrowdStrike devient un investissement de sécurité substantiel à justifier par un vrai profil de risque.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Falcon Go dès ~5€/poste/mois (facturation annuelle, max 100 postes) ; niveaux supérieurs jusqu'à 60$/poste/mois"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Falcon Go from ~€5/device/month (annual billing, max 100 devices); higher tiers up to $60/device/month"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 5,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "crowdstrike.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://crowdstrike.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Falcon Go",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.crowdstrike.com/en-us/pricing/falcon-go/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 5,
+      "cautions": [
+        "Falcon Go plafonné à 100 postes",
+        "Niveaux supérieurs (Falcon Pro/Enterprise) montent vite en prix"
+      ],
+      "cautionsEn": [
+        "Falcon Go capped at 100 devices",
+        "Higher tiers (Falcon Pro/Enterprise) scale up quickly in price"
+      ]
     },
     "affiliateLink": "https://crowdstrike.com",
     "websiteUrl": "https://crowdstrike.com",
     "logo": "https://logo.clearbit.com/crowdstrike.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Falcon Go accessible dès ~5€/poste/mois pour petites structures",
+      "Référence du marché EDR/XDR en fiabilité",
+      "Support express inclus sur Falcon Go",
+      "Protection mobile incluse"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Falcon Go limité à 100 postes",
+      "Niveaux supérieurs coûteux (jusqu'à 60$/poste/mois)",
+      "Surdimensionné pour un besoin de sécurité basique"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102282,12 +102408,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Moins de 100 postes et besoin de protection sérieuse au-delà d'un antivirus classique"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Besoin de sécurité très basique (un antivirus standard suffit)"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Falcon Go est un bon compromis prix/sérieux pour une petite structure exposée à un vrai risque."
     },
     "verdictEn": {
       "keepIf": [
@@ -102301,7 +102427,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -102317,7 +102443,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102330,42 +102456,56 @@
     "slug": "drata",
     "name": "Drata",
     "category": "security",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Drata est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Automatisation de conformité SOC 2 / ISO 27001, sur devis à partir de plusieurs milliers d'euros par an.",
+    "shortDescriptionEn": "SOC 2 / ISO 27001 compliance automation, quote-based from several thousand euros per year.",
+    "description": "Drata automatise la préparation aux audits de conformité (SOC 2, ISO 27001, HIPAA...) : collecte de preuves, monitoring continu, gestion des politiques. C'est un outil qui répond à un besoin réel dès qu'une entreprise doit prouver sa conformité pour signer des clients (souvent des exigences B2B enterprise).\n\nAucun tarif public : le premier palier (Foundation) démarre autour de 7 500-15 000$/an pour une startup pré-Series A, avec des contrats réels qui montent en moyenne à 24 600$/an selon les données de marché. S'ajoutent l'implémentation (10 000-25 000$) et l'audit externe obligatoire (12 000-100 000$+) : le premier exercice de conformité coûte souvent 45 000 à 70 000$ tout compris.\n\nCe n'est pas un outil pour un freelance ou une TPE : la conformité SOC 2/ISO 27001 elle-même n'est nécessaire que si des clients l'exigent contractuellement, ce qui concerne surtout des entreprises B2B en croissance qui vendent à de grands comptes.",
+    "longDescription": "Drata automatise la préparation aux audits de conformité (SOC 2, ISO 27001, HIPAA...) : collecte de preuves, monitoring continu, gestion des politiques. C'est un outil qui répond à un besoin réel dès qu'une entreprise doit prouver sa conformité pour signer des clients (souvent des exigences B2B enterprise).\n\nAucun tarif public : le premier palier (Foundation) démarre autour de 7 500-15 000$/an pour une startup pré-Series A, avec des contrats réels qui montent en moyenne à 24 600$/an selon les données de marché. S'ajoutent l'implémentation (10 000-25 000$) et l'audit externe obligatoire (12 000-100 000$+) : le premier exercice de conformité coûte souvent 45 000 à 70 000$ tout compris.\n\nCe n'est pas un outil pour un freelance ou une TPE : la conformité SOC 2/ISO 27001 elle-même n'est nécessaire que si des clients l'exigent contractuellement, ce qui concerne surtout des entreprises B2B en croissance qui vendent à de grands comptes.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis, à partir de ~7 500-15 000$/an (Foundation), moyenne réelle ~24 600$/an"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote, from ~$7,500-15,000/yr (Foundation), real average ~$24,600/yr"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 2050,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "drata.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://drata.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": "Foundation",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://drata.com/plans",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 2050,
+      "cautions": [
+        "Coût total première année souvent 45 000-70 000$ avec implémentation + audit externe obligatoire",
+        "Pertinent uniquement si des clients exigent contractuellement une certification"
+      ],
+      "cautionsEn": [
+        "Total first-year cost often $45,000-70,000 with implementation + mandatory external audit",
+        "Only relevant if clients contractually require certification"
+      ]
     },
     "affiliateLink": "https://drata.com",
     "websiteUrl": "https://drata.com",
     "logo": "https://logo.clearbit.com/drata.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Automatise une grande partie de la préparation d'audit SOC 2/ISO 27001",
+      "Monitoring continu de la conformité",
+      "Référence reconnue du secteur compliance automation"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public, devis uniquement",
+      "Coût total première année très élevé (45K-70K$)",
+      "Audit externe obligatoire non inclus, facturé séparément",
+      "Pertinent seulement si un client l'exige contractuellement"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102381,12 +102521,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Des clients B2B exigent contractuellement une certification SOC 2/ISO 27001"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Freelance, TPE ou aucune exigence contractuelle de conformité — quasi toujours le cas pour l'audience ToolTrim"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Jamais pertinent sans exigence contractuelle explicite d'un client ou d'un investisseur."
     },
     "verdictEn": {
       "keepIf": [
@@ -102400,8 +102540,8 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "low",
+    "teamRelevance": "low",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -102416,7 +102556,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102429,42 +102569,53 @@
     "slug": "axeptio",
     "name": "Axeptio",
     "category": "legal-contracts",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Axeptio est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Bannière de consentement cookies (CMP) conforme RGPD, dès 29€/mois.",
+    "shortDescriptionEn": "GDPR-compliant cookie consent banner (CMP), from €29/month.",
+    "description": "Axeptio configure et déploie une bannière de consentement cookies conforme RGPD/CCPA, personnalisable sans développement. Un vrai plan gratuit existe pour les sites sous 200 visiteurs/mois, et le plan Small démarre à 29€/mois jusqu'à 5 000 pages vues.\n\nLe point de vigilance : les paliers de trafic sont larges et le passage à la tranche supérieure peut faire bondir la facture (de 29€ à 69€/mois en passant de 80 000 à 120 000 pages vues/mois), ce qui a été signalé par plusieurs utilisateurs comme peu progressif.\n\nPour un freelance ou une petite structure avec un trafic modeste, Axeptio reste l'une des options les plus accessibles du marché des CMP, avec un vrai palier gratuit pour démarrer.",
+    "longDescription": "Axeptio configure et déploie une bannière de consentement cookies conforme RGPD/CCPA, personnalisable sans développement. Un vrai plan gratuit existe pour les sites sous 200 visiteurs/mois, et le plan Small démarre à 29€/mois jusqu'à 5 000 pages vues.\n\nLe point de vigilance : les paliers de trafic sont larges et le passage à la tranche supérieure peut faire bondir la facture (de 29€ à 69€/mois en passant de 80 000 à 120 000 pages vues/mois), ce qui a été signalé par plusieurs utilisateurs comme peu progressif.\n\nPour un freelance ou une petite structure avec un trafic modeste, Axeptio reste l'une des options les plus accessibles du marché des CMP, avec un vrai palier gratuit pour démarrer.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit sous 200 visiteurs/mois",
+      "paid": "29€/mois (Small, 5 000 pages vues) à 129€/mois (Large, 500 000 pages vues)"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free under 200 visitors/month",
+      "paid": "€29/mo (Small, 5,000 pageviews) to €129/mo (Large, 500,000 pageviews)"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 29,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "axeptio.eu",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://axeptio.eu",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Small",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.axeptio.eu/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 29,
+      "cautions": [
+        "Paliers de trafic larges : passage de 29€ à 69€/mois en franchissant 80 000-120 000 pages vues"
+      ],
+      "cautionsEn": [
+        "Wide traffic tiers: jump from €29 to €69/mo when crossing 80,000-120,000 pageviews"
+      ]
     },
     "affiliateLink": "https://axeptio.eu",
     "websiteUrl": "https://axeptio.eu",
     "logo": "https://logo.clearbit.com/axeptio.eu",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Vrai plan gratuit pour petits sites (<200 visiteurs/mois)",
+      "Configuration sans développement",
+      "Conforme RGPD/CCPA",
+      "Prix d'entrée accessible (29€/mois)"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Paliers de trafic larges, passage de tranche parfois brutal",
+      "Prix ont augmenté depuis 2021 selon les retours utilisateurs"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102480,12 +102631,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Site avec trafic modeste à moyen, besoin de conformité RGPD simple"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Trafic proche d'un palier supérieur (anticiper la hausse de prix)"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Bon choix par défaut pour un site français/européen avec un trafic modeste."
     },
     "verdictEn": {
       "keepIf": [
@@ -102499,7 +102650,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "high",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -102515,7 +102666,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102528,42 +102679,52 @@
     "slug": "didomi",
     "name": "Didomi",
     "category": "legal-contracts",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Didomi est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme de gestion du consentement (CMP) enterprise, sur devis.",
+    "shortDescriptionEn": "Enterprise consent management platform (CMP), quote-based.",
+    "description": "Didomi est une CMP (Consent Management Platform) positionnée sur le segment enterprise, avec des fonctionnalités avancées : scanning de domaines, exports d'analytics, SSO, gestion multi-domaines à grande échelle. Le tarif dépend du volume de visiteurs uniques mensuels (MUV) et n'est jamais public.\n\nTrois offres (Essential, Advanced, Premium) existent, toutes sur devis, avec des fonctionnalités qui montent en gamme (white-labeling, SSO pour 100 sièges, scanning hebdomadaire de 25 domaines sur Premium).\n\nPour un freelance ou une petite structure avec un seul site à gérer, Didomi est disproportionné : des CMP comme Axeptio, avec un tarif public et accessible, couvrent le même besoin réglementaire à un coût bien inférieur.",
+    "longDescription": "Didomi est une CMP (Consent Management Platform) positionnée sur le segment enterprise, avec des fonctionnalités avancées : scanning de domaines, exports d'analytics, SSO, gestion multi-domaines à grande échelle. Le tarif dépend du volume de visiteurs uniques mensuels (MUV) et n'est jamais public.\n\nTrois offres (Essential, Advanced, Premium) existent, toutes sur devis, avec des fonctionnalités qui montent en gamme (white-labeling, SSO pour 100 sièges, scanning hebdomadaire de 25 domaines sur Premium).\n\nPour un freelance ou une petite structure avec un seul site à gérer, Didomi est disproportionné : des CMP comme Axeptio, avec un tarif public et accessible, couvrent le même besoin réglementaire à un coût bien inférieur.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis uniquement, selon le volume de visiteurs uniques mensuels"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote only, based on monthly unique visitors"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "didomi.io",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://didomi.io",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": "Essential",
+      "price_reliability": "low",
+      "location_sensitive": false,
+      "official_source_url": "https://www.didomi.io/offers",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "Aucun tarif public, devis selon volume de visiteurs uniques mensuels"
+      ],
+      "cautionsEn": [
+        "No public pricing, quote based on monthly unique visitors"
+      ]
     },
     "affiliateLink": "https://didomi.io",
     "websiteUrl": "https://didomi.io",
     "logo": "https://logo.clearbit.com/didomi.io",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Fonctionnalités CMP avancées (scanning, SSO, multi-domaines)",
+      "Adapté aux organisations avec de nombreux domaines à gérer"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public",
+      "Disproportionné pour un site unique ou un petit trafic",
+      "Alternatives (Axeptio) moins chères et publiquement tarifées pour le même besoin réglementaire"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102579,12 +102740,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Organisation avec de nombreux domaines/marques à gérer en consentement centralisé"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Site unique ou petite structure — Axeptio couvre le même besoin à moindre coût"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Pertinent seulement à partir d'une gestion multi-domaines/multi-marques complexe."
     },
     "verdictEn": {
       "keepIf": [
@@ -102598,7 +102759,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -102614,7 +102775,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102627,42 +102788,55 @@
     "slug": "greenly",
     "name": "Greenly",
     "category": "finance",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Greenly est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme de bilan carbone et reporting ESG pour PME et ETI, sur devis.",
+    "shortDescriptionEn": "Carbon footprint and ESG reporting platform for SMEs and mid-market companies, quote-based.",
+    "description": "Greenly automatise le bilan carbone et le reporting ESG en centralisant les données financières et opérationnelles de l'entreprise. Basée à Paris, la plateforme cible principalement les PME et entreprises mid-market en Europe, aux US et au Royaume-Uni.\n\nAucun tarif public n'est communiqué : le prix dépend de la taille de l'entreprise et du périmètre de reporting demandé, avec des retours utilisateurs indiquant un coût significatif pour de petites structures.\n\nCe type d'outil ne devient pertinent que lorsqu'une obligation réglementaire (CSRD, bilan GES) ou une demande client impose un reporting carbone structuré — rarement le cas pour un freelance ou une TPE en dehors de secteurs très réglementés.",
+    "longDescription": "Greenly automatise le bilan carbone et le reporting ESG en centralisant les données financières et opérationnelles de l'entreprise. Basée à Paris, la plateforme cible principalement les PME et entreprises mid-market en Europe, aux US et au Royaume-Uni.\n\nAucun tarif public n'est communiqué : le prix dépend de la taille de l'entreprise et du périmètre de reporting demandé, avec des retours utilisateurs indiquant un coût significatif pour de petites structures.\n\nCe type d'outil ne devient pertinent que lorsqu'une obligation réglementaire (CSRD, bilan GES) ou une demande client impose un reporting carbone structuré — rarement le cas pour un freelance ou une TPE en dehors de secteurs très réglementés.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis, variable selon taille d'entreprise et périmètre"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote, varies by company size and scope"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "greenly.earth",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://greenly.earth",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": null,
+      "price_reliability": "low",
+      "location_sensitive": false,
+      "official_source_url": "https://greenly.earth/en-us/products/carbon-footprint",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "Aucun tarif public communiqué",
+        "Peut être coûteux pour une petite organisation selon les retours utilisateurs"
+      ],
+      "cautionsEn": [
+        "No public pricing disclosed",
+        "Can be costly for a small organization per user feedback"
+      ]
     },
     "affiliateLink": "https://greenly.earth",
     "websiteUrl": "https://greenly.earth",
     "logo": "https://logo.clearbit.com/greenly.earth",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Automatisation de la collecte de données pour le bilan carbone",
+      "Reporting ESG structuré et audit-ready",
+      "Reconnu sur le marché PME/mid-market européen"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public",
+      "Coût jugé élevé pour de petites structures",
+      "Pertinent seulement en cas d'obligation réglementaire ou de demande client"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102678,12 +102852,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Obligation réglementaire (CSRD, bilan GES) ou demande client de reporting carbone structuré"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Aucune obligation réglementaire — quasi toujours le cas pour un freelance/solopreneur"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Pertinent uniquement sous contrainte réglementaire ou commerciale explicite."
     },
     "verdictEn": {
       "keepIf": [
@@ -102697,7 +102871,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -102713,7 +102887,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102726,42 +102900,54 @@
     "slug": "sweep",
     "name": "Sweep",
     "category": "finance",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Sweep est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme de gestion carbone et ESG orientée mid-market, à partir de ~250$/mois.",
+    "shortDescriptionEn": "Carbon and ESG management platform for the mid-market, from ~$250/month.",
+    "description": "Sweep centralise le suivi des émissions carbone et des données ESG pour des entreprises de taille moyenne à grande. Le plan de base démarre autour de 250$/mois mais couvre des fonctionnalités limitées (upload manuel de données, tableaux de bord prédéfinis) : l'automatisation avancée (intégrations ERP, simulations de scénarios) nécessite les niveaux supérieurs, sur devis.\n\nSweep se positionne davantage sur le mid-market et les grandes entreprises : pour une PME sans équipe RSE dédiée, la courbe d'entrée est jugée élevée, tant en coût qu'en effort opérationnel de mise en place.\n\nComme pour les autres outils de bilan carbone du catalogue, la pertinence dépend presque entièrement d'une obligation réglementaire ou d'une exigence client — rarement le cas pour l'audience solo/freelance de ToolTrim.",
+    "longDescription": "Sweep centralise le suivi des émissions carbone et des données ESG pour des entreprises de taille moyenne à grande. Le plan de base démarre autour de 250$/mois mais couvre des fonctionnalités limitées (upload manuel de données, tableaux de bord prédéfinis) : l'automatisation avancée (intégrations ERP, simulations de scénarios) nécessite les niveaux supérieurs, sur devis.\n\nSweep se positionne davantage sur le mid-market et les grandes entreprises : pour une PME sans équipe RSE dédiée, la courbe d'entrée est jugée élevée, tant en coût qu'en effort opérationnel de mise en place.\n\nComme pour les autres outils de bilan carbone du catalogue, la pertinence dépend presque entièrement d'une obligation réglementaire ou d'une exigence client — rarement le cas pour l'audience solo/freelance de ToolTrim.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "À partir de ~250$/mois (fonctionnalités limitées), niveaux supérieurs sur devis"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "From ~$250/mo (limited features), higher tiers custom quote"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 250,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "sweep.net",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://sweep.net",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Base",
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://aws.amazon.com/marketplace/pp/prodview-5liosnbaui6tc",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 250,
+      "cautions": [
+        "Plan de base limité (upload manuel), automatisation avancée sur devis",
+        "Courbe d'entrée élevée sans équipe RSE dédiée"
+      ],
+      "cautionsEn": [
+        "Base plan limited (manual upload), advanced automation quote-based",
+        "High entry curve without a dedicated sustainability team"
+      ]
     },
     "affiliateLink": "https://sweep.net",
     "websiteUrl": "https://sweep.net",
     "logo": "https://logo.clearbit.com/sweep.net",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Tableaux de bord prédéfinis pour démarrer un bilan carbone",
+      "Scalable vers des intégrations ERP et simulations avancées"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Plan de base à fonctionnalités limitées malgré le prix",
+      "Orienté mid-market/grande entreprise",
+      "Effort opérationnel élevé sans équipe RSE dédiée"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102777,12 +102963,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Entreprise mid-market avec obligation réglementaire de reporting carbone"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "PME sans équipe RSE dédiée ou sans obligation réglementaire"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Pertinent uniquement pour des structures mid-market avec obligation réglementaire confirmée."
     },
     "verdictEn": {
       "keepIf": [
@@ -102796,7 +102982,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -102812,7 +102998,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102825,42 +103011,55 @@
     "slug": "sami",
     "name": "Sami",
     "category": "finance",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Sami est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme française de décarbonation et reporting ESG, sur devis (~75-800€/mois selon taille).",
+    "shortDescriptionEn": "French decarbonization and ESG reporting platform, quote-based (~€75-800/month depending on size).",
+    "description": "Sami (sami.eco) est une plateforme française tout-en-un pour le bilan carbone et la démarche de décarbonation d'entreprise. Le tarif dépend de la taille et du secteur : environ 900€/an minimum, jusqu'à 10 000€/an pour des structures plus importantes (exemple cité : ~7 900€/an pour 100 personnes en agroalimentaire).\n\nAucun essai gratuit n'est proposé : il faut passer par un rendez-vous commercial pour obtenir un devis précis, la tarification étant modulaire selon le volume de données et les fonctionnalités activées.\n\nComme pour les autres outils carbone/ESG du catalogue, la pertinence dépend d'une obligation réglementaire (CSRD, bilan GES réglementaire) ou d'une démarche volontaire structurée — un freelance ou une TPE n'est concerné que dans de rares cas spécifiques.",
+    "longDescription": "Sami (sami.eco) est une plateforme française tout-en-un pour le bilan carbone et la démarche de décarbonation d'entreprise. Le tarif dépend de la taille et du secteur : environ 900€/an minimum, jusqu'à 10 000€/an pour des structures plus importantes (exemple cité : ~7 900€/an pour 100 personnes en agroalimentaire).\n\nAucun essai gratuit n'est proposé : il faut passer par un rendez-vous commercial pour obtenir un devis précis, la tarification étant modulaire selon le volume de données et les fonctionnalités activées.\n\nComme pour les autres outils carbone/ESG du catalogue, la pertinence dépend d'une obligation réglementaire (CSRD, bilan GES réglementaire) ou d'une démarche volontaire structurée — un freelance ou une TPE n'est concerné que dans de rares cas spécifiques.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis, ~900€/an minimum jusqu'à 10 000€/an selon taille et secteur"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote, ~€900/yr minimum up to €10,000/yr depending on size and sector"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 75,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "sami.eco",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://sami.eco",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": null,
+      "price_reliability": "medium",
+      "location_sensitive": false,
+      "official_source_url": "https://en.sami.eco/nos-tarifs",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 75,
+      "cautions": [
+        "Aucun essai gratuit, devis obligatoire via rendez-vous commercial",
+        "Tarif modulaire selon volume de données et fonctionnalités"
+      ],
+      "cautionsEn": [
+        "No free trial, mandatory quote via sales meeting",
+        "Modular pricing based on data volume and features"
+      ]
     },
     "affiliateLink": "https://sami.eco",
     "websiteUrl": "https://sami.eco",
     "logo": "https://logo.clearbit.com/sami.eco",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Plateforme française, adaptée aux obligations réglementaires locales (CSRD)",
+      "Tarif d'entrée plus accessible que certains concurrents (dès ~75€/mois)",
+      "Accompagnement dans la démarche de décarbonation"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public précis, devis obligatoire",
+      "Aucun essai gratuit",
+      "Pertinent seulement sous obligation réglementaire ou démarche RSE volontaire"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102876,12 +103075,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Obligation réglementaire française (CSRD, bilan GES) ou démarche RSE structurée"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Aucune obligation réglementaire ni démarche RSE prioritaire"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Pertinent sous contrainte réglementaire française ou engagement RSE volontaire confirmé."
     },
     "verdictEn": {
       "keepIf": [
@@ -102895,7 +103094,7 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "low",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -102911,7 +103110,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
@@ -102924,42 +103123,57 @@
     "slug": "coupa",
     "name": "Coupa",
     "category": "finance",
-    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
-    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
-    "longDescription": "Coupa est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "shortDescription": "Plateforme enterprise de gestion des dépenses et achats (procurement), à partir de 15 000$/an.",
+    "shortDescriptionEn": "Enterprise spend management and procurement platform, from $15,000/year.",
+    "description": "Coupa gère les achats, factures fournisseurs et dépenses à l'échelle d'une grande organisation (procure-to-pay). C'est une référence du secteur spend management pour des entreprises avec des processus d'achat complexes et de multiples départements.\n\nAucun tarif public : pour une petite structure (1-10 utilisateurs), les coûts de licence annuels vont de 15 000 à 50 000$, avec 5 000 à 20 000$ d'implémentation et de formation en plus. Les déploiements enterprise avec plusieurs modules dépassent souvent 500 000$/an.\n\nCoupa n'a aucune pertinence pour un freelance, un solopreneur ou une petite équipe : le ticket d'entrée à cinq chiffres l'exclut structurellement de ce public. Il n'est référencé ici que pour la complétude du catalogue dans la catégorie finance.",
+    "longDescription": "Coupa gère les achats, factures fournisseurs et dépenses à l'échelle d'une grande organisation (procure-to-pay). C'est une référence du secteur spend management pour des entreprises avec des processus d'achat complexes et de multiples départements.\n\nAucun tarif public : pour une petite structure (1-10 utilisateurs), les coûts de licence annuels vont de 15 000 à 50 000$, avec 5 000 à 20 000$ d'implémentation et de formation en plus. Les déploiements enterprise avec plusieurs modules dépassent souvent 500 000$/an.\n\nCoupa n'a aucune pertinence pour un freelance, un solopreneur ou une petite équipe : le ticket d'entrée à cinq chiffres l'exclut structurellement de ce public. Il n'est référencé ici que pour la complétude du catalogue dans la catégorie finance.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "",
+      "paid": "Sur devis uniquement, à partir de ~15 000$/an même pour un petit déploiement"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "",
+      "paid": "Custom quote only, from ~$15,000/yr even for a small deployment"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 1750,
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
-      "location_sensitive": false,
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
+      "verified_on": "2026-07-07",
       "source_domain": "coupa.com",
-      "verified_on": "2026-05-11",
-      "official_source_url": "https://coupa.com",
-      "verification_status": "needs_official_quote"
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": null,
+      "price_reliability": "low",
+      "location_sensitive": false,
+      "official_source_url": "https://www.coupa.com/",
+      "verification_status": "third_party_estimate",
+      "compare_price_monthly_eur": 1750,
+      "cautions": [
+        "Aucun tarif public",
+        "Ticket d'entrée à cinq chiffres même pour un petit déploiement",
+        "Frais d'implémentation séparés (5 000-20 000$)"
+      ],
+      "cautionsEn": [
+        "No public pricing",
+        "Five-figure entry ticket even for a small deployment",
+        "Separate implementation fees ($5,000-20,000)"
+      ]
     },
     "affiliateLink": "https://coupa.com",
     "websiteUrl": "https://coupa.com",
     "logo": "https://logo.clearbit.com/coupa.com",
     "seo": {},
-    "pros": [],
+    "pros": [
+      "Plateforme procure-to-pay complète et reconnue",
+      "Adapté aux organisations avec processus d'achat complexes multi-départements"
+    ],
     "prosEn": [],
-    "cons": [],
+    "cons": [
+      "Aucun tarif public",
+      "Ticket d'entrée à cinq chiffres minimum",
+      "Frais d'implémentation séparés et significatifs",
+      "Totalement disproportionné hors grande organisation"
+    ],
     "consEn": [],
     "useCases": [],
     "useCasesEn": [],
@@ -102975,12 +103189,12 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs missions."
+        "Grande organisation avec processus d'achat complexes et budget IT dédié"
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Freelance, solopreneur ou petite équipe — quasi systématiquement le cas pour l'audience ToolTrim"
       ],
-      "threshold": "À ajouter seulement si le rôle est central."
+      "threshold": "Jamais pertinent en dessous d'une organisation de taille significative avec des achats structurés multi-départements."
     },
     "verdictEn": {
       "keepIf": [
@@ -102994,8 +103208,8 @@
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "low",
+    "teamRelevance": "low",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -103010,7 +103224,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "medium",
+    "prescription_quality": "silence",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
