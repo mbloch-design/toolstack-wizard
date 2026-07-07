@@ -421,22 +421,44 @@ function staticPrerenderPlugin(): Plugin {
         const cssHrefMatch = baseHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/);
         const compiledCssPath = cssHrefMatch ? path.resolve(distDir, cssHrefMatch[1].replace(/^\//, "")) : "";
 
+        // Build a slug→name lookup for enriching alternative names (used by
+        // both the main-page FAQ schema below and the sub-page loop further
+        // down).
+        const slugToName: Record<string, string> = {};
+        for (const t of tools) { slugToName[t.slug || t.id] = t.name || t.slug || t.id; }
+
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
+          // Rounded for display (title/priceTag): "64.39€" reads as an odd,
+          // overly-precise price next to competitors who round, and the raw
+          // decimal was pushing ~144 titles past Google's ~60-char SERP
+          // truncation point for no CTR benefit. Unrounded price is still
+          // used for jsonLd.offers.price below (structured data should stay
+          // exact).
           const price = tool.defaultMonthlyPrice || null;
+          const priceDisplay = price ? Math.round(price) : null;
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             // Titre mené par le prix : la requête dominante est "combien ça coûte".
             // Prix concret si payant, "gratuit" si offre gratuite, sinon "prix".
             const priceTag = isFr
-              ? (price && price > 0 ? `prix dès ${price}€` : (tool.pricing?.free ? "gratuit" : "prix"))
-              : (price && price > 0 ? `pricing from €${price}` : (tool.pricing?.free ? "free" : "pricing"));
+              ? (priceDisplay && priceDisplay > 0 ? `prix dès ${priceDisplay}€` : (tool.pricing?.free ? "gratuit" : "prix"))
+              : (priceDisplay && priceDisplay > 0 ? `pricing from €${priceDisplay}` : (tool.pricing?.free ? "free" : "pricing"));
             const presentationOverride = isFr ? tool.seo?.presentationTitleFr : tool.seo?.presentationTitleEn;
-            const title = presentationOverride || (isFr
+            // Drop the " | ToolTrim" brand suffix when the full title would
+            // overflow Google's ~60-char SERP truncation point — long tool
+            // names (e.g. "Microsoft Dynamics 365 Finance and Operations")
+            // need every character for the actual message, and Google
+            // appends the site name in the SERP on its own anyway.
+            const titleWithBrand = isFr
               ? `${name} : ${priceTag}, avis et alternatives 2026 | ToolTrim`
-              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`);
+              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`;
+            const titleNoBrand = isFr
+              ? `${name} : ${priceTag}, avis et alternatives 2026`
+              : `${name}: ${priceTag}, review & alternatives 2026`;
+            const title = presentationOverride || (titleWithBrand.length <= 60 ? titleWithBrand : titleNoBrand);
             const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
@@ -493,6 +515,59 @@ function staticPrerenderPlugin(): Plugin {
               ],
             };
 
+            // FAQPage — the on-page FAQ (ToolFAQSection) is visible on this
+            // canonical page too (includeFaq covers "presentation"), but the
+            // static prerender previously only built this schema for the
+            // separate /faq sub-page. Google evaluates the canonical URL, so
+            // the FAQ rich-result opportunity was missing exactly where it
+            // matters. Same 4-question shape as the /faq sub-page below —
+            // real content already shown on the page, not invented for schema.
+            const mainAltNames = (tool.alternatives || []).slice(0, 3)
+              .map((id: string) => slugToName[id] || id).filter(Boolean);
+            const mainAltAnswer = mainAltNames.length > 0
+              ? (isFr ? `Les principales alternatives à ${name} sont : ${mainAltNames.join(", ")}.` : `The main alternatives to ${name} are: ${mainAltNames.join(", ")}.`)
+              : (isFr ? `ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.` : `ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`);
+            const mainVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+            const mainFaqSchema = {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || `${name} is a SaaS tool.`,
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: isFr
+                      ? `${name} coûte ${priceDisplay === 0 ? "0€ (gratuit)" : priceDisplay ? `${priceDisplay}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
+                      : `${name} costs ${priceDisplay === 0 ? "€0 (free)" : priceDisplay ? `€${priceDisplay}/month` : "variable by plan"}. Price verified by ToolTrim.`,
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: isFr ? `${name} vaut-il son prix ?` : `Is ${name} worth the price?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: mainVerdictThreshold || (isFr
+                      ? `Cela dépend de votre usage. Consultez notre verdict complet sur la page de ${name}.`
+                      : `It depends on your usage. See our full verdict on ${name}'s page.`),
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: isFr ? `Quelles sont les meilleures alternatives à ${name} ?` : `What are the best alternatives to ${name}?`,
+                  acceptedAnswer: { "@type": "Answer", text: mainAltAnswer },
+                },
+              ],
+            };
+
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frToolUrl}" />`,
@@ -507,6 +582,7 @@ function staticPrerenderPlugin(): Plugin {
               `<meta name="twitter:image" content="${BASE}/og-image.png" />`,
               `<script id="tool-software-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
               `<script id="tool-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
+              `<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(mainFaqSchema)}</script>`,
             ].join("\n    ");
 
             // Inject into <head>, replacing existing title/meta if present
@@ -566,10 +642,6 @@ function staticPrerenderPlugin(): Plugin {
           buildDesc: (name: string, price: number | null, isFr: boolean, tool: any) => string;
           buildBody: (name: string, price: number | null, isFr: boolean, tool: any) => string;
         };
-
-        // Build a slug→name lookup for enriching alternative names
-        const slugToName: Record<string, string> = {};
-        for (const t of tools) { slugToName[t.slug || t.id] = t.name || t.slug || t.id; }
 
         const TOOL_SUB_PAGES: SubPageDef[] = [
           {
