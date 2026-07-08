@@ -7,7 +7,10 @@ import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
-import { STACKS } from "@/data/stacks";
+// Light index (first 12 stacks, ~3KB gzip) instead of the full 1.7MB stacks.ts:
+// HomePageV2 is an eager import, so pulling stacks.ts here modulepreloaded the
+// data-stacks chunk on every page. Regenerate with scripts/gen-stacks-index.ts.
+import STACKS from "@/data/stacks-index.json";
 import { supabase } from "@/integrations/supabase/client";
 
 

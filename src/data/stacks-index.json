@@ -1,0 +1,743 @@
+[
+  {
+    "slug": "developpeur-freelance-shipper",
+    "title": "Stack dev freelance",
+    "titleEn": "Freelance dev stack",
+    "subtitle": "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde.",
+    "subtitleEn": "A freelance dev stack to code, share client previews, document decisions, and get paid without overbuilding a product-team stack.",
+    "tools": [
+      {
+        "slug": "github"
+      },
+      {
+        "slug": "vercel"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "stripe"
+      }
+    ]
+  },
+  {
+    "slug": "designer-freelance-solo",
+    "title": "Stack designer freelance",
+    "titleEn": "Freelance designer stack",
+    "subtitle": "La base recommandée pour maquettes, branding léger, feedback client, plugins Figma utiles et déclinaisons rapides sans suite créative dormante.",
+    "subtitleEn": "For solo designers who mostly deliver framing, mockups, feedback, and simple assets without paying for a full creative factory.",
+    "tools": [
+      {
+        "slug": "figma"
+      },
+      {
+        "slug": "figma-tokens"
+      },
+      {
+        "slug": "figma-iconify"
+      },
+      {
+        "slug": "figma-stark"
+      },
+      {
+        "slug": "miro"
+      },
+      {
+        "slug": "canva"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "adobe-illustrator"
+      },
+      {
+        "slug": "adobe-lightroom"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "google-drive"
+      },
+      {
+        "slug": "framer"
+      },
+      {
+        "slug": "zeplin"
+      },
+      {
+        "slug": "loom"
+      },
+      {
+        "slug": "chatgpt"
+      }
+    ]
+  },
+  {
+    "slug": "architecte-interieur",
+    "title": "Stack architecte d'intérieur",
+    "titleEn": "Interior designer stack",
+    "subtitle": "La chaîne recommandée pour passer du brief au chantier : moodboard, plans 2D, 3D, rendus, sourcing, budget, validations et facturation.",
+    "subtitleEn": "The recommended chain from brief to site follow-up: moodboards, 2D plans, 3D, renders, sourcing, budget, approvals, and invoicing.",
+    "tools": [
+      {
+        "slug": "sketchup-pro"
+      },
+      {
+        "slug": "layout-sketchup"
+      },
+      {
+        "slug": "autocad-lt"
+      },
+      {
+        "slug": "d5-render"
+      },
+      {
+        "slug": "enscape"
+      },
+      {
+        "slug": "v-ray"
+      },
+      {
+        "slug": "twinmotion"
+      },
+      {
+        "slug": "fredo6-bundle"
+      },
+      {
+        "slug": "profile-builder-3"
+      },
+      {
+        "slug": "transmutr"
+      },
+      {
+        "slug": "skatter"
+      },
+      {
+        "slug": "cleanup3"
+      },
+      {
+        "slug": "solid-inspector2"
+      },
+      {
+        "slug": "rhino"
+      },
+      {
+        "slug": "blender"
+      },
+      {
+        "slug": "revit"
+      },
+      {
+        "slug": "archicad"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "firefly"
+      },
+      {
+        "slug": "indesign"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "krea-ai"
+      },
+      {
+        "slug": "midjourney"
+      },
+      {
+        "slug": "magnific-ai"
+      },
+      {
+        "slug": "milanote"
+      },
+      {
+        "slug": "pinterest"
+      },
+      {
+        "slug": "eagle"
+      },
+      {
+        "slug": "programa"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "google-workspace"
+      },
+      {
+        "slug": "loom"
+      },
+      {
+        "slug": "calendly"
+      },
+      {
+        "slug": "indy"
+      },
+      {
+        "slug": "qonto"
+      },
+      {
+        "slug": "shine"
+      },
+      {
+        "slug": "yousign"
+      },
+      {
+        "slug": "pennylane"
+      }
+    ]
+  },
+  {
+    "slug": "scenographe-evenementiel",
+    "title": "Stack scénographe",
+    "titleEn": "Scenographer stack",
+    "subtitle": "La chaîne pour passer d’un concept narratif à un espace produit : moodboard, plans, 3D, rendu, budget, fournisseurs et dossier client.",
+    "subtitleEn": "A chain from narrative concept to produced space: moodboard, plans, 3D, render, budget, suppliers, and client deck.",
+    "tools": [
+      {
+        "slug": "sketchup-pro"
+      },
+      {
+        "slug": "vectorworks"
+      },
+      {
+        "slug": "autocad"
+      },
+      {
+        "slug": "d5-render"
+      },
+      {
+        "slug": "twinmotion"
+      },
+      {
+        "slug": "indesign"
+      },
+      {
+        "slug": "adobe-illustrator"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "milanote"
+      },
+      {
+        "slug": "miro"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "monday"
+      },
+      {
+        "slug": "profile-builder-3"
+      },
+      {
+        "slug": "transmutr"
+      },
+      {
+        "slug": "skatter"
+      },
+      {
+        "slug": "open-cut-list"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "midjourney"
+      },
+      {
+        "slug": "firefly"
+      }
+    ]
+  },
+  {
+    "slug": "designer-stand-retail-popup",
+    "title": "Stack stand & retail",
+    "titleEn": "Stand and retail stack",
+    "subtitle": "Pour concevoir stands, corners, pop-ups et vitrines avec une chaîne claire entre concept, 3D, signalétique, fabrication et budget.",
+    "subtitleEn": "For stands, corners, pop-ups, and windows with a clear chain from concept to 3D, signage, fabrication, and budget.",
+    "tools": [
+      {
+        "slug": "sketchup-pro"
+      },
+      {
+        "slug": "rhino"
+      },
+      {
+        "slug": "autocad"
+      },
+      {
+        "slug": "vectorworks"
+      },
+      {
+        "slug": "d5-render"
+      },
+      {
+        "slug": "v-ray"
+      },
+      {
+        "slug": "adobe-illustrator"
+      },
+      {
+        "slug": "indesign"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "airtable"
+      },
+      {
+        "slug": "google-sheets"
+      },
+      {
+        "slug": "monday"
+      },
+      {
+        "slug": "profile-builder-3"
+      },
+      {
+        "slug": "transmutr"
+      },
+      {
+        "slug": "open-cut-list"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "krea-ai"
+      },
+      {
+        "slug": "magnific-ai"
+      }
+    ]
+  },
+  {
+    "slug": "designer-graphique-pro",
+    "title": "Stack designer graphique",
+    "titleEn": "Graphic designer stack",
+    "subtitle": "Le socle pour identité, print, digital, mockups, typographie, fichiers clients, validation et facturation.",
+    "subtitleEn": "The base for identity, print, digital, mockups, typography, client files, approval, and invoicing.",
+    "tools": [
+      {
+        "slug": "adobe-illustrator"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "indesign"
+      },
+      {
+        "slug": "figma"
+      },
+      {
+        "slug": "canva"
+      },
+      {
+        "slug": "adobe-express"
+      },
+      {
+        "slug": "fontbase"
+      },
+      {
+        "slug": "eagle"
+      },
+      {
+        "slug": "adobe-acrobat"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "google-drive"
+      },
+      {
+        "slug": "indy"
+      },
+      {
+        "slug": "astute-graphics"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "firefly"
+      },
+      {
+        "slug": "midjourney"
+      },
+      {
+        "slug": "topaz-gigapixel"
+      }
+    ]
+  },
+  {
+    "slug": "brand-designer-systeme",
+    "title": "Stack brand designer",
+    "titleEn": "Brand designer stack",
+    "subtitle": "Pour stratégie visuelle, moodboards, logo, guidelines, templates, assets et livraison de marque maintenable.",
+    "subtitleEn": "For visual strategy, moodboards, logo, guidelines, templates, assets, and maintainable brand delivery.",
+    "tools": [
+      {
+        "slug": "figma"
+      },
+      {
+        "slug": "adobe-illustrator"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "indesign"
+      },
+      {
+        "slug": "pitch"
+      },
+      {
+        "slug": "keynote"
+      },
+      {
+        "slug": "miro"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "eagle"
+      },
+      {
+        "slug": "arena"
+      },
+      {
+        "slug": "pinterest"
+      },
+      {
+        "slug": "brandpad"
+      },
+      {
+        "slug": "specify"
+      },
+      {
+        "slug": "figma-tokens"
+      },
+      {
+        "slug": "figma-iconify"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "midjourney"
+      },
+      {
+        "slug": "firefly"
+      }
+    ]
+  },
+  {
+    "slug": "directeur-artistique",
+    "title": "Stack directeur artistique",
+    "titleEn": "Art director stack",
+    "subtitle": "La stack pour piloter une vision : veille, moodboards, concepts, direction image, feedback, assets, présentation et validation client.",
+    "subtitleEn": "The stack to lead a vision: research, moodboards, concepts, image direction, feedback, assets, presentation, and client approval.",
+    "tools": [
+      {
+        "slug": "figma"
+      },
+      {
+        "slug": "keynote"
+      },
+      {
+        "slug": "pitch"
+      },
+      {
+        "slug": "milanote"
+      },
+      {
+        "slug": "arena"
+      },
+      {
+        "slug": "eagle"
+      },
+      {
+        "slug": "pinterest"
+      },
+      {
+        "slug": "shotdeck"
+      },
+      {
+        "slug": "frame-io"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "miro"
+      },
+      {
+        "slug": "google-drive"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "midjourney"
+      },
+      {
+        "slug": "firefly"
+      },
+      {
+        "slug": "runway"
+      },
+      {
+        "slug": "magnific-ai"
+      }
+    ]
+  },
+  {
+    "slug": "developpeur-webflow-nocode-creatif",
+    "title": "Stack Webflow créatif",
+    "titleEn": "Creative Webflow stack",
+    "subtitle": "Pour construire des sites Webflow propres : cadrage, design, CMS, SEO, formulaires, automatisation, membership, paiement et analytics.",
+    "subtitleEn": "For clean Webflow builds: framing, design, CMS, SEO, forms, automation, membership, payment, and analytics.",
+    "tools": [
+      {
+        "slug": "webflow"
+      },
+      {
+        "slug": "relume"
+      },
+      {
+        "slug": "figma"
+      },
+      {
+        "slug": "framer"
+      },
+      {
+        "slug": "make"
+      },
+      {
+        "slug": "zapier"
+      },
+      {
+        "slug": "airtable"
+      },
+      {
+        "slug": "memberstack"
+      },
+      {
+        "slug": "wized"
+      },
+      {
+        "slug": "whalesync"
+      },
+      {
+        "slug": "tally"
+      },
+      {
+        "slug": "typeform"
+      },
+      {
+        "slug": "stripe"
+      },
+      {
+        "slug": "plausible"
+      },
+      {
+        "slug": "google-search-console"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "perplexity"
+      }
+    ]
+  },
+  {
+    "slug": "monteur-video",
+    "title": "Stack monteur vidéo",
+    "titleEn": "Video editor stack",
+    "subtitle": "La chaîne pour dérusher, monter, sous-titrer, étalonner, nettoyer le son, faire valider et livrer sans friction.",
+    "subtitleEn": "The chain to ingest, edit, subtitle, grade, clean audio, approve, and deliver smoothly.",
+    "tools": [
+      {
+        "slug": "davinci-resolve"
+      },
+      {
+        "slug": "adobe-premiere-pro"
+      },
+      {
+        "slug": "final-cut-pro"
+      },
+      {
+        "slug": "frame-io"
+      },
+      {
+        "slug": "descript"
+      },
+      {
+        "slug": "capcut"
+      },
+      {
+        "slug": "adobe-audition"
+      },
+      {
+        "slug": "artlist"
+      },
+      {
+        "slug": "epidemic-sound"
+      },
+      {
+        "slug": "dropbox"
+      },
+      {
+        "slug": "google-drive"
+      },
+      {
+        "slug": "runway"
+      },
+      {
+        "slug": "topaz-video"
+      },
+      {
+        "slug": "elevenlabs"
+      },
+      {
+        "slug": "chatgpt"
+      }
+    ]
+  },
+  {
+    "slug": "realisateur-videaste",
+    "title": "Stack vidéaste",
+    "titleEn": "Videographer stack",
+    "subtitle": "Pour préparer, tourner, monter, faire valider et facturer des films de marque, interviews, événements ou capsules social media.",
+    "subtitleEn": "To prepare, shoot, edit, approve, and invoice brand films, interviews, events, or social clips.",
+    "tools": [
+      {
+        "slug": "milanote"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "shotdeck"
+      },
+      {
+        "slug": "frame-io"
+      },
+      {
+        "slug": "davinci-resolve"
+      },
+      {
+        "slug": "adobe-premiere-pro"
+      },
+      {
+        "slug": "final-cut-pro"
+      },
+      {
+        "slug": "artlist"
+      },
+      {
+        "slug": "epidemic-sound"
+      },
+      {
+        "slug": "riverside"
+      },
+      {
+        "slug": "google-drive"
+      },
+      {
+        "slug": "indy"
+      },
+      {
+        "slug": "yousign"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "runway"
+      },
+      {
+        "slug": "kling-ai"
+      },
+      {
+        "slug": "descript"
+      },
+      {
+        "slug": "elevenlabs"
+      }
+    ]
+  },
+  {
+    "slug": "designer-editorial-print",
+    "title": "Stack designer éditorial",
+    "titleEn": "Designer editorial / print stack",
+    "subtitle": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+    "subtitleEn": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+    "tools": [
+      {
+        "slug": "indesign"
+      },
+      {
+        "slug": "adobe-photoshop"
+      },
+      {
+        "slug": "adobe-illustrator"
+      },
+      {
+        "slug": "adobe-acrobat"
+      },
+      {
+        "slug": "fontbase"
+      },
+      {
+        "slug": "rightfont"
+      },
+      {
+        "slug": "eagle"
+      },
+      {
+        "slug": "languagetool"
+      },
+      {
+        "slug": "antidote"
+      },
+      {
+        "slug": "google-drive"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "chatgpt"
+      },
+      {
+        "slug": "claude"
+      },
+      {
+        "slug": "firefly"
+      }
+    ]
+  }
+]
