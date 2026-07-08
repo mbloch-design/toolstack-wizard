@@ -507,6 +507,10 @@ const StacksPage = () => {
   ], "recommended"));
   const [query, setQuery] = useState(() => searchParams.get("q") || "");
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Progressive rendering: the catalog has 200+ stacks; rendering them all at
+  // once produced a ~116,000px page with 9k+ DOM nodes. Show a page at a time.
+  const STACK_LIST_PAGE_SIZE = 12;
+  const [visibleCount, setVisibleCount] = useState(STACK_LIST_PAGE_SIZE);
 
   const panelRef = useRef<HTMLDivElement>(null);
   const filtersRef = useRef<HTMLButtonElement>(null);
@@ -663,6 +667,9 @@ const StacksPage = () => {
       return a.stack.title.localeCompare(b.stack.title);
     });
   }, [enrichedStacks, toolBySlug, currentFilters, sortBy]);
+
+  // Back to the first page whenever the filtered/sorted set changes.
+  useEffect(() => { setVisibleCount(STACK_LIST_PAGE_SIZE); }, [filteredStacks]);
 
   const activeChips = [
     facetProfile !== "all" ? { id: "profile", label: optionLabel(PROFILE_OPTIONS, facetProfile, lang), clear: () => handleProfileChange("all") } : null,
@@ -850,8 +857,9 @@ const StacksPage = () => {
               )}
 
               {filteredStacks.length > 0 ? (
+                <>
                 <div className="sk-results-grid">
-                  {filteredStacks.map((enriched) => {
+                  {filteredStacks.slice(0, visibleCount).map((enriched) => {
                     const stackTools = enriched.stack.tools
                       .slice(0, 5)
                       .map((slot) => toolBySlug.get(slot.slug))
@@ -870,6 +878,24 @@ const StacksPage = () => {
                     );
                   })}
                 </div>
+                {filteredStacks.length > visibleCount && (
+                  <div className="sk-load-more">
+                    <button
+                      type="button"
+                      className="sk-load-more-btn"
+                      onClick={() => setVisibleCount((c) => c + STACK_LIST_PAGE_SIZE)}
+                    >
+                      {t("Voir plus de stacks", "Show more stacks")}
+                    </button>
+                    <span className="sk-load-more-count">
+                      {t(
+                        `${Math.min(visibleCount, filteredStacks.length)} sur ${filteredStacks.length}`,
+                        `${Math.min(visibleCount, filteredStacks.length)} of ${filteredStacks.length}`,
+                      )}
+                    </span>
+                  </div>
+                )}
+                </>
               ) : (
                 <div className="sk-empty-state">
                   <p className="sk-empty-title">{t("Aucune stack ne correspond à cette combinaison.", "No stack matches this combination.")}</p>
