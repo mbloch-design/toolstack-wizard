@@ -139980,7 +139980,7 @@
     "shortDescriptionEn": "Vector design alternative for logos, identities, illustrations and brand visuals.",
     "pricing": {
       "free": "",
-      "paid": "Licence à vérifier selon plateforme et offre."
+      "paid": "Gratuit. Les fonctions IA (Generative Fill, etc.) nécessitent un compte Canva premium (~120$/an)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://affinity.serif.com/designer/",
@@ -140024,7 +140024,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "vector-design",
-    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg"
+    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg",
+    "description": "Affinity Designer est un éditeur graphique vectoriel professionnel (logos, illustrations, UI, mise en page). Depuis 2025, Canva a rendu Affinity gratuit : les trois apps historiques (Designer, Photo, Publisher) sont désormais réunies dans une seule application, sans abonnement. Tout ce qui tourne en local reste gratuit ; seules les fonctions IA passent par un compte Canva payant.",
+    "pros": [
+      "Gratuit depuis 2025, sans abonnement ni frais cachés pour le cœur de l'outil",
+      "Outils vectoriels sérieux (courbes, grilles, symboles) proches d'Illustrator",
+      "Vecteur, photo et mise en page réunis dans une seule app",
+      "Disponible sur Mac, Windows et iPad"
+    ],
+    "cons": [
+      "Nécessite un compte Canva gratuit pour télécharger et activer",
+      "Les fonctions IA sont réservées au plan Canva premium payant",
+      "Moins d'intégrations et de plugins tiers que l'écosystème Adobe",
+      "Avenir du produit dépendant des choix de Canva"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous faites du design vectoriel (logos, illustrations, UI) et voulez une alternative gratuite à Illustrator",
+        "Vous êtes freelance ou indépendant sans obligation d'écosystème Adobe"
+      ],
+      "avoidIf": [
+        "Votre équipe/vos clients imposent un flux Adobe intégré (compatibilité imparfaite)",
+        "Vous avez besoin des fonctions IA sans vouloir payer un compte Canva"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "coreldraw",
@@ -140035,9 +140061,9 @@
     "shortDescriptionEn": "Vector illustration and production suite often used for print, signage and illustration workflows.",
     "pricing": {
       "free": "",
-      "paid": "Abonnement ou licence à vérifier selon offre."
+      "paid": "Abonnement 269$/an (~22€/mois) ou licence perpétuelle ~549$. Prix vérifié le 2026-07-08."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 22,
     "affiliateLink": "https://www.coreldraw.com/",
     "websiteUrl": "https://www.coreldraw.com/",
     "logo": "",
@@ -140078,7 +140104,34 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "vector-design",
-    "ogImageUrl": "https://www.coreldraw.com/static/cdgs/images/social/cdgs-og-twitter-card.jpg"
+    "ogImageUrl": "https://www.coreldraw.com/static/cdgs/images/social/cdgs-og-twitter-card.jpg",
+    "description": "CorelDRAW Graphics Suite est une suite de création graphique vectorielle historique (illustration, mise en page, signalétique, print), très implantée dans l'impression, la découpe et la signalétique sous Windows. Elle se vend soit en abonnement annuel, soit en licence perpétuelle unique, ce qui la distingue d'Adobe.",
+    "pros": [
+      "Licence perpétuelle disponible (~549$) : on peut acheter une fois sans abonnement",
+      "Standard de fait dans la signalétique, la découpe et l'impression",
+      "Suite complète : vectoriel, retouche (PHOTO-PAINT), traçage, typographie",
+      "Traçage vectoriel IA et co-édition sur les versions récentes"
+    ],
+    "cons": [
+      "Expérience macOS en retrait, l'outil est pensé pour Windows",
+      "Abonnement (269$/an) cher face aux alternatives gratuites pour un usage léger",
+      "Interface dense, courbe d'apprentissage réelle",
+      "Moins présent que l'écosystème Adobe dans le design digital/agence"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez dans la signalétique, la découpe ou l'impression sous Windows",
+        "Vous préférez une licence perpétuelle à un abonnement mensuel"
+      ],
+      "avoidIf": [
+        "Vous êtes sur Mac ou dans un flux design digital orienté Adobe/Figma",
+        "Un besoin vectoriel occasionnel qu'une alternative gratuite (Affinity, Inkscape) couvre"
+      ],
+      "threshold": "Vaut son prix surtout en licence perpétuelle et pour un métier print/signalétique sous Windows."
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "clip-studio-paint",
@@ -140089,9 +140142,9 @@
     "shortDescriptionEn": "Drawing, illustration, comics and concept art tool for tablet or desktop workflows.",
     "pricing": {
       "free": "",
-      "paid": "Licence ou abonnement à vérifier selon plateforme."
+      "paid": "Achat unique : Pro 49,99$ / EX 219$. Ou abonnement dès ~27$/an (Pro). Prix vérifié le 2026-07-08."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": null,
     "affiliateLink": "https://www.clipstudio.net/",
     "websiteUrl": "https://www.clipstudio.net/",
     "logo": "",
@@ -140131,7 +140184,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "digital-illustration",
-    "ogImageUrl": "https://www.clipstudio.net/view/img/common/logo/ogp/ogp_ja_202603.jpg?0005"
+    "ogImageUrl": "https://www.clipstudio.net/view/img/common/logo/ogp/ogp_ja_202603.jpg?0005",
+    "description": "Clip Studio Paint est le logiciel de référence pour le dessin, l'illustration, la BD et le manga. Il existe en achat unique (Pro pour l'illustration, EX pour la BD multi-pages) ou en abonnement, sur Windows, Mac, iPad et Android, avec des outils de trait et de gestion de pages taillés pour les créateurs de contenu dessiné.",
+    "pros": [
+      "Achat unique possible (Pro 49,99$), sans abonnement obligatoire",
+      "Outils de dessin et de trait parmi les meilleurs du marché (stabilisation, perspective)",
+      "Gestion multi-pages et bulles pensée pour la BD/manga (version EX)",
+      "Multiplateforme : desktop, iPad et Android"
+    ],
+    "cons": [
+      "L'édition EX (BD multi-pages) est nettement plus chère (219$)",
+      "Moins adapté à la retouche photo ou au design print qu'un outil généraliste",
+      "Certaines ressources et matériaux premium sont payants en supplément",
+      "Interface riche qui demande un temps d'adaptation"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous dessinez, illustrez ou faites de la BD/manga et voulez le meilleur outil de trait",
+        "Vous préférez un achat unique plutôt qu'un abonnement"
+      ],
+      "avoidIf": [
+        "Votre besoin est la retouche photo ou la PAO plutôt que le dessin",
+        "Un usage très occasionnel qu'une app gratuite (Krita) couvrirait"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "krita",
@@ -140142,7 +140221,7 @@
     "shortDescriptionEn": "Open-source application for digital painting, illustration and concept art.",
     "pricing": {
       "free": "Open source.",
-      "paid": ""
+      "paid": "Gratuit et open source. Version payante sur les stores (Steam/MS Store) pour soutenir le projet."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://krita.org/",
@@ -140183,7 +140262,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "digital-illustration",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/krita.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/krita.png",
+    "description": "Krita est une application open source et gratuite de peinture numérique, d'illustration et de concept art. Portée par une fondation, elle propose des brosses avancées, la gestion des calques, l'animation image par image et un support tablette solide, ce qui en fait une des meilleures alternatives gratuites pour les dessinateurs.",
+    "pros": [
+      "Entièrement gratuit et open source, sans limite ni abonnement",
+      "Moteur de brosses très riche, pensé pour la peinture numérique",
+      "Animation image par image intégrée",
+      "Multiplateforme (Windows, Mac, Linux) et bon support des tablettes"
+    ],
+    "cons": [
+      "Moins adapté à la retouche photo ou à la PAO",
+      "Stabilité parfois en retrait sur les très gros fichiers",
+      "Pas de version iPad officielle stable",
+      "Support commercial inexistant (communauté uniquement)"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous dessinez, peignez ou faites du concept art et voulez un outil gratuit sérieux",
+        "Vous préférez l'open source et le multiplateforme"
+      ],
+      "avoidIf": [
+        "Votre besoin principal est la retouche photo RAW ou la mise en page",
+        "Vous voulez un support commercial et des mises à jour garanties"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "adobe-fresco",
@@ -140257,7 +140362,7 @@
     "shortDescriptionEn": "Layout tool for brochures, publications, print documents and PDFs.",
     "pricing": {
       "free": "",
-      "paid": "Licence à vérifier selon plateforme et offre."
+      "paid": "Gratuit (réuni dans l'app Affinity de Canva). Fonctions IA via compte Canva premium (~120$/an)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://affinity.serif.com/publisher/",
@@ -140297,7 +140402,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "layout-publishing",
-    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg"
+    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg",
+    "description": "Affinity Publisher est l'outil de mise en page et PAO d'Affinity (magazines, brochures, livres, PDF pro), équivalent d'InDesign. Depuis 2025 il est gratuit sous Canva, intégré à l'app Affinity unique aux côtés du vectoriel et de la photo, ce qui permet de passer de la retouche à la mise en page sans changer de logiciel.",
+    "pros": [
+      "Gratuit depuis 2025, là où InDesign coûte un abonnement mensuel",
+      "PAO complète : gabarits, styles, tables, gestion typographique avancée",
+      "StudioLink : bascule vers les outils photo/vecteur sans quitter l'app",
+      "Export PDF/X presse et gestion CMJN correcte"
+    ],
+    "cons": [
+      "Écosystème de plugins et scripts bien plus mince qu'InDesign",
+      "Compatibilité IDML avec InDesign limitée pour les échanges agence",
+      "Moins connu des imprimeurs et prestataires que le standard Adobe",
+      "Nécessite un compte Canva pour l'activation"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la mise en page (brochures, PDF, livres) et cherchez à sortir de l'abonnement InDesign",
+        "Vous utilisez déjà Affinity pour la photo ou le vectoriel"
+      ],
+      "avoidIf": [
+        "Vous échangez des fichiers InDesign natifs avec des agences ou imprimeurs",
+        "Votre flux éditorial repose sur des scripts/plugins InDesign spécifiques"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "quarkxpress",
@@ -140356,7 +140487,7 @@
     "shortDescriptionEn": "Open-source photography workflow for RAW development, organization and color adjustments.",
     "pricing": {
       "free": "Open source.",
-      "paid": ""
+      "paid": "Gratuit et open source."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.darktable.org/",
@@ -140397,7 +140528,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "photo-raw-workflow",
-    "ogImageUrl": "https://www.darktable.org/images/darktable-logo-only-512w.png"
+    "ogImageUrl": "https://www.darktable.org/images/darktable-logo-only-512w.png",
+    "description": "Darktable est un logiciel libre et gratuit de développement RAW et de gestion de photothèque, souvent présenté comme l'alternative open source à Lightroom. Il propose un flux non destructif par modules, un catalogue et une gestion des métadonnées, sur Windows, Mac et Linux.",
+    "pros": [
+      "Gratuit et open source, sans abonnement",
+      "Développement RAW non destructif complet (courbes, masques, débruitage)",
+      "Catalogue et gestion des métadonnées intégrés",
+      "Multiplateforme, très apprécié sous Linux"
+    ],
+    "cons": [
+      "Courbe d'apprentissage raide, interface peu intuitive au départ",
+      "Débruitage et rendu par défaut en retrait face à Lightroom/DxO",
+      "Performances variables selon la machine et le nombre de modules",
+      "Pas de sync mobile ni de support commercial"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe et voulez un développement RAW gratuit et non destructif",
+        "Vous êtes sous Linux ou attaché à l'open source"
+      ],
+      "avoidIf": [
+        "Vous voulez une prise en main immédiate et un rendu par défaut soigné",
+        "Vous avez besoin d'une sync cloud/mobile et d'un support"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "dxo-photolab",
@@ -140408,9 +140565,9 @@
     "shortDescriptionEn": "RAW development and advanced photo corrections, often used as a Lightroom alternative or complement.",
     "pricing": {
       "free": "",
-      "paid": "Licence à vérifier selon édition."
+      "paid": "Licence perpétuelle dès 99,99$ (Essential), Elite plus chère. Prix vérifié le 2026-07-08."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": null,
     "affiliateLink": "https://www.dxo.com/dxo-photolab/",
     "websiteUrl": "https://www.dxo.com/dxo-photolab/",
     "logo": "",
@@ -140453,7 +140610,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "photo-raw-workflow",
-    "ogImageUrl": "https://prod-www-cdn.dxo.com/wp-content/uploads/2024/06/newhero-en@2x-1-1024x725.jpg"
+    "ogImageUrl": "https://prod-www-cdn.dxo.com/wp-content/uploads/2024/06/newhero-en@2x-1-1024x725.jpg",
+    "description": "DxO PhotoLab est un logiciel de développement RAW et de retouche photo réputé pour sa réduction de bruit (DeepPRIME) et ses corrections optiques automatiques par modules d'objectifs, parmi les meilleures du marché. Il se vend en licence perpétuelle, sans abonnement, ce qui le distingue de Lightroom.",
+    "pros": [
+      "Réduction de bruit DeepPRIME de référence, surtout en haute sensibilité",
+      "Corrections optiques automatiques très précises (modules par boîtier/objectif)",
+      "Licence perpétuelle : pas d'abonnement",
+      "Rendu couleur et récupération de détails de haut niveau"
+    ],
+    "cons": [
+      "Gestion de catalogue et DAM moins aboutie que Lightroom",
+      "Modules optiques à télécharger selon votre matériel",
+      "Montée de version payante à chaque nouvelle édition majeure",
+      "Moins adapté à un flux collaboratif ou mobile"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe et la qualité de développement RAW/débruitage prime",
+        "Vous préférez une licence perpétuelle à l'abonnement Lightroom"
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un catalogue puissant et d'une sync mobile/cloud",
+        "Vous voulez un tout-en-un léger pour des retouches occasionnelles"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "photopea",
@@ -140464,7 +140647,7 @@
     "shortDescriptionEn": "Browser-based image editor for retouching, PSD files, quick compositions and fallback workflows.",
     "pricing": {
       "free": "Version gratuite avec limites possibles.",
-      "paid": "Plan premium à vérifier."
+      "paid": "Gratuit (financé par la pub). Premium sans pub dès ~5$/mois. Prix vérifié le 2026-07-08."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.photopea.com/",
@@ -140508,7 +140691,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "photo-editor",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/photopea.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/photopea.png",
+    "description": "Photopea est un éditeur d'images en ligne, gratuit et sans installation, qui reproduit l'interface et une grande partie des fonctions de Photoshop directement dans le navigateur. Il ouvre et enregistre les fichiers PSD ainsi que d'autres formats, ce qui en fait un dépannage idéal quand on n'a pas Photoshop sous la main.",
+    "pros": [
+      "Gratuit et sans installation, fonctionne dans le navigateur",
+      "Compatibilité PSD (ouverture et export) très correcte",
+      "Interface proche de Photoshop : prise en main immédiate pour ses utilisateurs",
+      "Calques, masques, courbes et outils de sélection essentiels présents"
+    ],
+    "cons": [
+      "Publicités dans la version gratuite (supprimées via le premium payant)",
+      "Dépend du navigateur : moins fluide que le natif sur gros fichiers",
+      "Pas d'accélération ni de fonctions pro les plus avancées",
+      "Traitement local dans l'onglet : gare aux très grosses images"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'ouvrir/retoucher un PSD ponctuellement sans installer Photoshop",
+        "Vous voulez un éditeur d'images gratuit et immédiat"
+      ],
+      "avoidIf": [
+        "Vous faites de la retouche lourde et régulière (préférez un outil natif)",
+        "La présence de publicités ou la dépendance au navigateur vous gênent"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "pixelmator-pro",
@@ -140519,9 +140728,9 @@
     "shortDescriptionEn": "Mac photo editing and composition app for retouching, cutouts and quick visuals.",
     "pricing": {
       "free": "",
-      "paid": "Licence à vérifier."
+      "paid": "Achat unique ~50€ sur le Mac App Store, sans abonnement. Prix vérifié le 2026-07-08."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": null,
     "affiliateLink": "https://www.pixelmator.com/pro/",
     "websiteUrl": "https://www.pixelmator.com/pro/",
     "logo": "",
@@ -140563,7 +140772,33 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "photo-editor",
-    "ogImageUrl": "https://www.apple.com/v/pixelmator-pro/a/images/overview/meta/pixelmator__c4dlsmpcudw2_og.png?202603241546"
+    "ogImageUrl": "https://www.apple.com/v/pixelmator-pro/a/images/overview/meta/pixelmator__c4dlsmpcudw2_og.png?202603241546",
+    "description": "Pixelmator Pro est un éditeur d'images et de retouche photo pour Mac uniquement, vendu en achat unique. Racheté par Apple, il mise sur une interface native soignée et des outils accélérés par le Mac (calques, retouche, upscale et détourage IA) comme alternative abordable à Photoshop pour les utilisateurs Apple.",
+    "pros": [
+      "Achat unique (~50€), aucun abonnement",
+      "Interface native Mac soignée, très intégrée à macOS",
+      "Outils IA (upscale, suppression d'arrière-plan, sélection) efficaces",
+      "Import/export PSD pour échanger avec Photoshop"
+    ],
+    "cons": [
+      "macOS uniquement : ni Windows, ni Linux",
+      "Moins profond que Photoshop sur les usages pro avancés",
+      "Écosystème de plugins limité",
+      "Avenir produit lié aux décisions d'Apple depuis le rachat"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous êtes sur Mac et voulez une alternative à Photoshop en achat unique",
+        "Vous faites de la retouche courante et du design léger"
+      ],
+      "avoidIf": [
+        "Vous travaillez sur Windows ou en équipe multi-OS",
+        "Vous avez besoin des fonctions pro les plus avancées de Photoshop"
+      ]
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-08"
+    }
   },
   {
     "id": "topaz-photo-ai",
