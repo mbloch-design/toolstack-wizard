@@ -16013,6 +16013,10 @@ section[id] {
   .v2-feat-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-new-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-ai-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Was missing here: at 641-860px the stacks grid stayed at 3 columns
+     while every sibling grid dropped to 2, so its 3rd card overflowed the
+     container and got clipped. Drop to 2 columns like the others. */
+  .v2-stack-grid { grid-template-columns: repeat(2, 1fr); }
   .v2-duo-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
