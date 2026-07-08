@@ -100,6 +100,41 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         </div>
       </div>
 
+      {/* ── Mobile app-style bottom navigation (hidden on desktop via CSS) ──
+          Two nav items each side of a raised circular "Ma stack" CTA, like a
+          native app's center action button. */}
+      <nav className="asv2-bottomnav" aria-label={t("Navigation", "Navigation")}>
+        {NAV_ITEMS.filter((i) => i.id === "home" || i.id === "tools").map((item) => {
+          const isActive = item.id === "home"
+            ? relPath === ""
+            : item.match.some((m) => relPath === m || relPath.startsWith(m));
+          return (
+            <Link key={item.id} to={`${prefix}${item.to}`} className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}>
+              <item.Icon style={{ width: 22, height: 22 }} />
+              <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
+            </Link>
+          );
+        })}
+
+        <Link to={`${prefix}/ma-stack`} className="asv2-bn-cta" aria-label={cartLabel}>
+          <span className="asv2-bn-cta-btn">
+            <Bookmark style={{ width: 24, height: 24 }} aria-hidden />
+            {cartCount > 0 && <span className="asv2-bn-badge">{cartCount}</span>}
+          </span>
+          <span className="asv2-bn-label">{t("Ma stack", "My stack")}</span>
+        </Link>
+
+        {NAV_ITEMS.filter((i) => i.id === "compare" || i.id === "guides").map((item) => {
+          const isActive = item.match.some((m) => relPath === m || relPath.startsWith(m));
+          return (
+            <Link key={item.id} to={`${prefix}${item.to}`} className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}>
+              <item.Icon style={{ width: 22, height: 22 }} />
+              <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
     </div>
   );
