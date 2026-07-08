@@ -413,63 +413,37 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools, isRecommended }:
   const { stack, derived } = enriched;
   const title = lang === "fr" ? stack.title : stack.titleEn;
   const verdict = lang === "fr" ? derived.verdict : derived.verdictEn;
-  const bestFor = lang === "fr" ? derived.bestFor : derived.bestForEn;
-  const avoidIf = lang === "fr" ? derived.avoidIf : derived.avoidIfEn;
   const primarySubProfile = stack.subProfiles[0];
   const budgetText = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
 
   return (
     <Link to={`${prefix}/stacks/${stack.slug}`} className="sk-card">
-      <div className="sk-card-header">
-        <div className="sk-card-kicker">
-          <span>STACK</span>
-          <span aria-hidden>·</span>
-          <span>{personaLabel(stack.persona, lang)}</span>
-          {primarySubProfile && (
-            <>
-              <span aria-hidden>·</span>
-              <span>{subProfileLabel(primarySubProfile, lang)}</span>
-            </>
-          )}
-        </div>
+      <div className="sk-card-top">
+        <span className="sk-card-tag">
+          {personaLabel(stack.persona, lang)}
+          {primarySubProfile ? ` · ${subProfileLabel(primarySubProfile, lang)}` : ""}
+        </span>
         {isRecommended && <span className="sk-card-badge-recommended">{t("Recommandée", "Recommended")}</span>}
       </div>
 
       <h2 className="sk-card-title">{title}</h2>
-      <p className="sk-card-verdict">{truncate(verdict, 135)}</p>
+      <p className="sk-card-verdict">{truncate(verdict, 96)}</p>
 
-      <div className="sk-card-meta-grid">
-        <div>
-          <span className="sk-card-meta-label">{t("Budget cible", "Target budget")}</span>
-          <strong>{budgetText}</strong>
-        </div>
-        <div>
-          <span className="sk-card-meta-label">{t("Outils", "Tools")}</span>
-          <strong>{derived.toolCount}</strong>
-        </div>
-        <div>
-          <span className="sk-card-meta-label">{t("Niveau", "Level")}</span>
-          <strong>{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</strong>
-        </div>
-        <div>
-          <span className="sk-card-meta-label">{t("Complexité", "Complexity")}</span>
-          <strong>{optionLabel(COMPLEXITY_OPTIONS, derived.complexity, lang)}</strong>
-        </div>
-      </div>
-
-      <div className="sk-card-decision">
-        <p><span>{t("Idéal si", "Best if")}</span>{truncate(bestFor, 120)}</p>
-        <p><span>{t("À éviter si", "Avoid if")}</span>{truncate(avoidIf, 120)}</p>
+      {/* Tools = the visual heart of a stack, shown as a clear row */}
+      <div className="sk-card-tools" aria-label={t("Outils de la stack", "Stack tools") as string}>
+        {tools.slice(0, 6).map((tool) => (
+          <span key={tool.id} title={tool.name} className="sk-card-tool">
+            <ToolLogo tool={tool} size={22} />
+          </span>
+        ))}
+        {stack.tools.length > 6 && <span className="sk-card-tool sk-card-tool-more">+{stack.tools.length - 6}</span>}
       </div>
 
       <div className="sk-card-footer">
-        <div className="sk-card-logos" aria-label={t("Outils de la stack", "Stack tools") as string}>
-          {tools.slice(0, 5).map((tool, i) => (
-            <span key={tool.id} title={tool.name} className="sk-card-logo" style={{ zIndex: tools.length - i }}>
-              <ToolLogo tool={tool} size={18} />
-            </span>
-          ))}
-          {stack.tools.length > 5 && <span className="sk-card-logo sk-card-logo-more">+{stack.tools.length - 5}</span>}
+        <div className="sk-card-stats">
+          <span className="sk-card-stat sk-card-stat--strong">{budgetText}</span>
+          <span className="sk-card-stat">{derived.toolCount} {t("outils", "tools")}</span>
+          <span className="sk-card-stat">{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</span>
         </div>
         <span className="sk-card-cta">{t("Voir la stack", "See stack")} <span aria-hidden>→</span></span>
       </div>
