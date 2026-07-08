@@ -374,10 +374,10 @@ function sitemapPlugin(): Plugin {
         for (const t of tools || []) {
           const slug = t.slug || t.id;
           addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8");
-          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7");
-          addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
-          addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6");
-          addPair(`${BASE}/fr/tool/${slug}/faq`,          `${BASE}/en/tool/${slug}/faq`,          "monthly", "0.6");
+          // Tool sub-pages (/prix, /alternatives, /avis, /faq) are noindex
+          // until they get real SSR content — see the sub-page prerender
+          // block. Keep them out of the sitemap so we don't advertise pages
+          // we're telling Google not to index.
         }
 
         // ── Category pages ────────────────────────────────────────────────────
@@ -920,6 +920,13 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:url" content="${url}" />`,
+                // noindex,follow: these sub-pages ship an empty root (no SSR
+                // yet) and only duplicate the fully-SSR'd canonical fiche's
+                // price/reviews/alternatives sections. Indexing empty shells
+                // that mirror the parent just cannibalises it and wastes crawl
+                // budget, so keep them out of the index (links still followed)
+                // until they get real SSR content. Also dropped from the sitemap.
+                `<meta name="robots" content="noindex, follow" />`,
                 // og:image / twitter:image inherited from the static <head>
                 // defaults in index.html (see main tool-page block).
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
@@ -932,6 +939,9 @@ function staticPrerenderPlugin(): Plugin {
               html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
               html = html.replace(/<title>[^<]*<\/title>/, "");
               html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+              // Replace the template's default index,follow with the noindex
+              // injected above (otherwise both robots metas would ship).
+              html = html.replace(/<meta\s+name="robots"[^>]*\/?>/, "");
               html = html.replace("</head>", `    ${metaTags}\n  </head>`);
               html = html.replace("</body>", `    <noscript><p>${bodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
