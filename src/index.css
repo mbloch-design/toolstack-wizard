@@ -16327,10 +16327,10 @@ section[id] {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   Mobile app-style bottom navigation (asv2-bottomnav)
-   A floating pill with two nav items each side of a raised circular
-   "Ma stack" CTA. Desktop keeps the left sidebar; this only appears on
-   mobile, where it replaces the horizontal tab row and the top-bar CTA.
+   Mobile bottom navigation (asv2-bottomnav) — minimal
+   A flat, full-width bar flush at the bottom: a subtle "Ma stack" pill
+   floating above a thin divider, then a row of 5 tabs with a small top
+   indicator on the active one. Desktop keeps the left sidebar.
    ══════════════════════════════════════════════════════════════════════ */
 .asv2-bottomnav { display: none; }
 
@@ -16338,94 +16338,88 @@ section[id] {
   /* Swap the old collapsed-sidebar tab row + top CTA for the bottom bar */
   .asv2-sidebar { display: none; }
   .asv2-topbar-cta { display: none; }
-  .asv2-content { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+  .asv2-content { padding-bottom: calc(118px + env(safe-area-inset-bottom)); }
 
   .asv2-bottomnav {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 2px;
+    flex-direction: column;
+    align-items: stretch;
     position: fixed;
-    left: 14px;
-    right: 14px;
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 200;
-    padding: 9px 16px 10px;
+    padding: 10px 0 calc(6px + env(safe-area-inset-bottom));
     background: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 28px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    box-shadow: 0 -1px 0 var(--color-border-soft), 0 -6px 24px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Subtle "Ma stack" pill, centered above the divider (like the ref chip) */
+  .asv2-bn-cta {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: background 120ms ease-out;
+  }
+  .asv2-bn-cta:active { background: var(--color-border-soft); }
+
+  .asv2-bn-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    border-top: 1px solid var(--color-border-soft);
+    padding-top: 8px;
   }
 
   .asv2-bn-item {
+    position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
-    padding: 5px 0 3px;
+    gap: 5px;
+    padding: 8px 0 2px;
     text-decoration: none;
     color: var(--color-muted);
-    transition: color 120ms ease-out;
+    transition: color 140ms ease-out;
   }
   .asv2-bn-item--active { color: var(--color-text-strong); }
-  .asv2-bn-item:active { opacity: 0.6; }
+  .asv2-bn-item:active { opacity: 0.55; }
+
+  /* Small top indicator bar on the active tab (sits on the divider) */
+  .asv2-bn-indicator {
+    position: absolute;
+    top: -8px;
+    width: 26px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--color-text-strong);
+    opacity: 0;
+    transition: opacity 140ms ease-out;
+  }
+  .asv2-bn-item--active .asv2-bn-indicator { opacity: 1; }
 
   .asv2-bn-label {
     font-family: var(--font-ui);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.01em;
   }
-
-  /* Center raised CTA */
-  .asv2-bn-cta {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    margin: 0 8px;
-    text-decoration: none;
-    color: var(--color-accent);
-  }
-  .asv2-bn-cta-btn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    margin-top: -28px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    color: #fff;
-    border: 4px solid var(--color-surface);
-    box-shadow: 0 6px 16px color-mix(in srgb, var(--color-accent) 45%, transparent);
-    transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .asv2-bn-cta:active .asv2-bn-cta-btn { transform: scale(0.93); }
-
-  .asv2-bn-badge {
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    min-width: 19px;
-    height: 19px;
-    padding: 0 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-text-strong);
-    color: var(--color-bg);
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1;
-    border-radius: 999px;
-    border: 2px solid var(--color-surface);
-  }
+  .asv2-bn-item--active .asv2-bn-label { font-weight: 650; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

@@ -100,39 +100,29 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      {/* ── Mobile app-style bottom navigation (hidden on desktop via CSS) ──
-          Two nav items each side of a raised circular "Ma stack" CTA, like a
-          native app's center action button. */}
+      {/* ── Mobile bottom navigation (hidden on desktop via CSS) ──
+          Minimal flat tab row with a small top indicator on the active item,
+          plus a subtle "Ma stack" pill floating just above the row. */}
       <nav className="asv2-bottomnav" aria-label={t("Navigation", "Navigation")}>
-        {NAV_ITEMS.filter((i) => i.id === "home" || i.id === "tools").map((item) => {
-          const isActive = item.id === "home"
-            ? relPath === ""
-            : item.match.some((m) => relPath === m || relPath.startsWith(m));
-          return (
-            <Link key={item.id} to={`${prefix}${item.to}`} className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}>
-              <item.Icon style={{ width: 22, height: 22 }} />
-              <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
-            </Link>
-          );
-        })}
-
         <Link to={`${prefix}/ma-stack`} className="asv2-bn-cta" aria-label={cartLabel}>
-          <span className="asv2-bn-cta-btn">
-            <Bookmark style={{ width: 24, height: 24 }} aria-hidden />
-            {cartCount > 0 && <span className="asv2-bn-badge">{cartCount}</span>}
-          </span>
-          <span className="asv2-bn-label">{t("Ma stack", "My stack")}</span>
+          <Bookmark style={{ width: 16, height: 16 }} aria-hidden />
+          <span>{cartLabel}</span>
         </Link>
 
-        {NAV_ITEMS.filter((i) => i.id === "compare" || i.id === "guides").map((item) => {
-          const isActive = item.match.some((m) => relPath === m || relPath.startsWith(m));
-          return (
-            <Link key={item.id} to={`${prefix}${item.to}`} className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}>
-              <item.Icon style={{ width: 22, height: 22 }} />
-              <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
-            </Link>
-          );
-        })}
+        <div className="asv2-bn-row">
+          {NAV_ITEMS.map((item) => {
+            const isActive = item.id === "home"
+              ? relPath === ""
+              : item.match.some((m) => relPath === m || relPath.startsWith(m));
+            return (
+              <Link key={item.id} to={`${prefix}${item.to}`} className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}>
+                <span className="asv2-bn-indicator" aria-hidden />
+                <item.Icon style={{ width: 21, height: 21 }} />
+                <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
+              </Link>
+            );
+          })}
+        </div>
       </nav>
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
