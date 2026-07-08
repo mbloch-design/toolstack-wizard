@@ -521,6 +521,7 @@ function staticPrerenderPlugin(): Plugin {
         }
         const baseHtml = fs.readFileSync(indexPath, "utf-8");
         let count = 0;
+        let subPagesSsrd = 0;
 
         // Real SSR for the main tool route (Phase 1 — see plan
         // "linked-dazzling-thimble") and comparison pages (Phase 2, added
@@ -935,9 +936,37 @@ function staticPrerenderPlugin(): Plugin {
               html = html.replace("</head>", `    ${metaTags}\n  </head>`);
               html = html.replace("</body>", `    <noscript><p>${bodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
+              // Real SSR: the sub-pages render the same ToolDetailPage as the
+              // canonical fiche (just deep-linked to the /prix, /avis... section),
+              // so they were shipping an empty root while carrying full JSON-LD.
+              // GSC shows these pages are ~65% of organic clicks, so give them
+              // real HTML: crawlers without JS (and the schema) now see content.
+              if (renderToolPage) {
+                try {
+                  const { html: markup, relatedPosts } = await renderToolPage(`/${lang}/tool/${slug}/${localizedPath}`, tool, lang);
+                  html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                  if (compiledCssPath) {
+                    const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                    if (utilityCss) {
+                      html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                    }
+                  }
+                  const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
+                  const relatedPostsJson = JSON.stringify(relatedPosts).replace(/<\/script/gi, "<\\/script");
+                  html = html.replace(
+                    "</body>",
+                    `    <script id="__SSR_TOOL__" type="application/json">${ssrJson}</script>\n` +
+                    `    <script id="__SSR_RELATED_POSTS__" type="application/json">${relatedPostsJson}</script>\n  </body>`
+                  );
+                } catch (e) {
+                  console.warn(`⚠️ SSR render failed for ${lang}/tool/${slug}/${localizedPath}, falling back to meta-only:`, e);
+                }
+              }
+
               const outDir = path.resolve(distDir, lang, "tool", slug, localizedPath);
               fs.mkdirSync(outDir, { recursive: true });
               fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+              subPagesSsrd++;
             }
           }
         }
@@ -1528,7 +1557,7 @@ function staticPrerenderPlugin(): Plugin {
 
         const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
