@@ -258,9 +258,13 @@ const GuideDetailPage = () => {
             <p className="ga-standfirst">{post.excerpt}</p>
           )}
 
-          {/* Tools mentioned in this guide */}
+          {/* Tools mentioned in this guide. flexWrap inline (not in
+              .ga-header-tools, which is Codex's CSS) so the chip row wraps to
+              multiple lines on narrow screens instead of overflowing the
+              viewport horizontally — a real mobile overflow the visual audit
+              caught (scrollWidth 601px on a 375px screen). */}
           {mentionedTools.length > 0 && (
-            <div className="ga-header-tools">
+            <div className="ga-header-tools" style={{ flexWrap: "wrap", rowGap: 10 }}>
               <span className="ga-header-tools-label">{t("Dans ce guide", "In this guide")}</span>
               {mentionedTools.slice(0, 6).map((tool) => (
                 <Link
