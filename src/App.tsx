@@ -20,6 +20,9 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import HomePageV2 from "@/pages/HomePageV2";
 import ToolDetailPage from "@/pages/ToolDetailPage";
 import ComparePage from "@/pages/ComparePage";
+// Eager (not lazy) so renderToString can SSR /guide/:slug — a lazy() chunk
+// can't be resolved during renderToString, it renders the Suspense fallback.
+import GuideDetailPage from "@/pages/GuideDetailPage";
 
 // Lazy-loaded pages (below the fold / secondary routes)
 const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
@@ -28,7 +31,6 @@ const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
-const GuideDetailPage = lazy(() => import("@/pages/GuideDetailPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
 const StackDetailPage = lazy(() => import("@/pages/StackDetailPage"));
 const CartPage = lazy(() => import("@/pages/CartPage"));

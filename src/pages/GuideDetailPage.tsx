@@ -341,7 +341,10 @@ const GuideDetailPage = () => {
             {/* Article body */}
             <div
               className="ga-content"
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
+              // DOMPurify needs a DOM; during SSR (Node, no window) fall back to
+              // the raw content — it's our own authored post HTML, not user
+              // input, and it's sanitised again on the client at hydration.
+              dangerouslySetInnerHTML={{ __html: typeof window === "undefined" ? htmlContent : DOMPurify.sanitize(htmlContent) }}
             />
 
             {/* Share row */}

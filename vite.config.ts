@@ -522,6 +522,7 @@ function staticPrerenderPlugin(): Plugin {
         const baseHtml = fs.readFileSync(indexPath, "utf-8");
         let count = 0;
         let subPagesSsrd = 0;
+        let guidesSsrd = 0;
 
         // Real SSR for the main tool route (Phase 1 — see plan
         // "linked-dazzling-thimble") and comparison pages (Phase 2, added
@@ -530,12 +531,14 @@ function staticPrerenderPlugin(): Plugin {
         // /avis, /faq) keep the previous meta-only prerender for now.
         let renderToolPage: ((path: string, tool: any, lang: string) => Promise<{ html: string; relatedPosts: any[] }>) | null = null;
         let renderComparePage: ((path: string, toolA: any, toolB: any) => Promise<string>) | null = null;
+        let renderGuidePage: ((path: string, post: any) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
             const ssrModule = await import(`file://${ssrEntryPath}?t=${Date.now()}`);
             renderToolPage = ssrModule.renderToolPage;
             renderComparePage = ssrModule.renderComparePage;
+            renderGuidePage = ssrModule.renderGuidePage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1536,6 +1539,27 @@ function staticPrerenderPlugin(): Plugin {
           html = html.replace("</head>", `    ${postMetaTags}\n  </head>`);
           html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;").substring(0, 300)}</p></noscript>\n  </body>`);
 
+          // Real SSR: guides shipped an empty root (GuideDetailPage was lazy).
+          // It's now eager and reads the post from SsrPostContext, so the full
+          // article body renders in the HTML for non-JS crawlers.
+          if (renderGuidePage) {
+            try {
+              const markup = await renderGuidePage(`/${lang}/guide/${slug}`, post);
+              html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              if (compiledCssPath) {
+                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                if (utilityCss) {
+                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                }
+              }
+              const ssrPostJson = JSON.stringify(post).replace(/<\/script/gi, "<\\/script");
+              html = html.replace("</body>", `    <script id="__SSR_POST__" type="application/json">${ssrPostJson}</script>\n  </body>`);
+              guidesSsrd++;
+            } catch (e) {
+              console.warn(`⚠️ SSR render failed for ${lang}/guide/${slug}, falling back to meta-only:`, e);
+            }
+          }
+
           const outDir = path.resolve(distDir, lang, "guide", slug);
           fs.mkdirSync(outDir, { recursive: true });
           fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
@@ -1557,7 +1581,7 @@ function staticPrerenderPlugin(): Plugin {
 
         const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }

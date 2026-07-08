@@ -10,7 +10,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { AppRoutes } from "@/App";
-import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, loadLocalPosts } from "@/hooks/useSupabaseData";
+import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, SsrPostContext, loadLocalPosts } from "@/hooks/useSupabaseData";
+import type { Post } from "@/hooks/useSupabaseData";
 import type { Tool } from "@/data/types";
 
 export interface RenderedToolPage {
@@ -61,6 +62,35 @@ export async function renderToolPage(path: string, tool: Tool, lang: string): Pr
   );
 
   return { html, relatedPosts };
+}
+
+// Same idea as renderToolPage, for /guide/:slug. GuideDetailPage must be an
+// eager import in App.tsx (renderToString can't resolve a lazy() chunk) and
+// usePostBySlug seeds from SsrPostContext so the body renders server-side.
+export async function renderGuidePage(path: string, post: Post): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <SsrPostContext.Provider value={post}>
+                  <AppRoutes />
+                </SsrPostContext.Provider>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
 }
 
 // Same idea as renderToolPage, for /comparatif/:slugPair. ComparePage was

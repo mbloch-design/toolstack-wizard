@@ -22,6 +22,11 @@ export const SsrRelatedPostsContext = createContext<Pick<Post, "slug" | "title" 
 // server-rendered for this exact slugA/slugB.
 export const SsrComparePairContext = createContext<{ toolA: Tool; toolB: Tool } | undefined>(undefined);
 
+// Same idea, for GuideDetailPage (see entry-server.tsx's renderGuidePage) - so
+// usePostBySlug can skip its client-only fetch when the post was already
+// server-rendered for this exact slug/lang.
+export const SsrPostContext = createContext<Post | undefined>(undefined);
+
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
   id: c.id,
@@ -463,11 +468,16 @@ export function usePosts(lang: string) {
 }
 
 export function usePostBySlug(slug: string | undefined, lang: string) {
-  const [post, setPost] = useState<Post | null>(null);
-  const [loading, setLoading] = useState(true);
+  // When the post was server-rendered for this exact slug (see renderGuidePage),
+  // seed from the SSR context and skip the client fetch so hydration matches.
+  const ssrPost = useContext(SsrPostContext);
+  const ssrMatches = ssrPost !== undefined && ssrPost.slug === slug;
+  const [post, setPost] = useState<Post | null>(ssrMatches ? ssrPost : null);
+  const [loading, setLoading] = useState(!ssrMatches);
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
+    if (ssrMatches) { setPost(ssrPost); setLoading(false); return; }
     let cancelled = false;
 
     (async () => {
