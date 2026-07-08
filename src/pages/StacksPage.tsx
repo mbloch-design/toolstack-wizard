@@ -696,22 +696,26 @@ const StacksPage = () => {
       : "Explore SaaS stacks recommended by profile, budget, level and real usage to know which tools to keep, cut or challenge.";
     setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/stacks`, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/stacks`);
+    // A single ItemList of the stacks, each pointing at its own detail page,
+    // is the standard schema for a listing page — lighter and more useful for
+    // SEO (it surfaces the individual /stacks/<slug> URLs) than the previous
+    // CollectionPage that nested every stack's full tool list inline.
     setJsonLd("stacks-jsonld", {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: title,
       description,
       url: `${SEO_BASE}/${lang}/stacks`,
-      numberOfItems: STACKS.length,
-      hasPart: STACKS.map((stack) => ({
+      mainEntity: {
         "@type": "ItemList",
-        name: lang === "fr" ? stack.title : stack.titleEn,
-        itemListElement: stack.tools.map((slot, index) => ({
+        numberOfItems: STACKS.length,
+        itemListElement: STACKS.map((stack, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          name: toolBySlug.get(slot.slug)?.name || slot.slug,
+          name: lang === "fr" ? stack.title : stack.titleEn,
+          url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`,
         })),
-      })),
+      },
     });
     return () => cleanupSeo(["stacks-jsonld"]);
   }, [lang, toolBySlug]);
