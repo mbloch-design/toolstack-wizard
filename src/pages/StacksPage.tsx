@@ -437,9 +437,9 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelection
 
       <div className="sk-card-footer">
         <div className="sk-card-stats">
-          <span className="sk-card-stat sk-card-stat--strong">{budgetText}</span>
-          <span className="sk-card-stat">{derived.toolCount} {t("outils", "tools")}</span>
-          <span className="sk-card-stat">{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</span>
+          <span className="sk-card-stat sk-card-stat--strong" title={t("Budget mensuel cible", "Target monthly budget") as string}>{budgetText}</span>
+          <span className="sk-card-stat" title={t("Nombre d'outils dans la stack", "Number of tools in the stack") as string}>{derived.toolCount} {t("outils", "tools")}</span>
+          <span className="sk-card-stat" title={t("Niveau d'expérience recommandé", "Recommended experience level") as string}>{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</span>
         </div>
         <span className="sk-card-cta">{t("Voir la stack", "See stack")} <span aria-hidden>→</span></span>
       </div>

@@ -8003,11 +8003,12 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    transition: transform 160ms ease-out, border-color 160ms ease-out, background 160ms ease-out;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease-out, box-shadow 220ms ease-out;
   }
   .sk-card:hover {
-    transform: translateY(-1px);
-    background: var(--color-surface);
+    transform: translateY(-3px);
+    border-color: var(--color-border-strong);
+    box-shadow: 0 10px 30px -12px rgba(20, 20, 18, 0.16);
   }
   .sk-card-tag {
     display: block;
@@ -8089,6 +8090,12 @@
     color: var(--color-text);
     font-weight: 650;
   }
+  /* Arrow nudges on hover — a small tactile cue, no layout animation */
+  .sk-card-cta span[aria-hidden] {
+    display: inline-block;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sk-card:hover .sk-card-cta span[aria-hidden] { transform: translateX(4px); }
   .sk-empty-state { margin-top: 0; }
   @media (max-width: 1180px) {
     .sk-results-grid { grid-template-columns: 1fr; }
