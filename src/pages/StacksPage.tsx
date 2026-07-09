@@ -406,10 +406,9 @@ interface StackSelectionCardProps {
   lang: "fr" | "en";
   t: (fr: string, en: string) => string;
   tools: NonNullable<ReturnType<typeof useToolSummaries>["tools"]>[number][];
-  isRecommended: boolean;
 }
 
-function StackSelectionCard({ enriched, prefix, lang, t, tools, isRecommended }: StackSelectionCardProps) {
+function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelectionCardProps) {
   const { stack, derived } = enriched;
   const title = lang === "fr" ? stack.title : stack.titleEn;
   const verdict = lang === "fr" ? derived.verdict : derived.verdictEn;
@@ -418,13 +417,10 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools, isRecommended }:
 
   return (
     <Link to={`${prefix}/stacks/${stack.slug}`} className="sk-card">
-      <div className="sk-card-top">
-        <span className="sk-card-tag">
-          {personaLabel(stack.persona, lang)}
-          {primarySubProfile ? ` · ${subProfileLabel(primarySubProfile, lang)}` : ""}
-        </span>
-        {isRecommended && <span className="sk-card-badge-recommended">{t("Recommandée", "Recommended")}</span>}
-      </div>
+      <span className="sk-card-tag">
+        {personaLabel(stack.persona, lang)}
+        {primarySubProfile ? ` · ${subProfileLabel(primarySubProfile, lang)}` : ""}
+      </span>
 
       <h2 className="sk-card-title">{title}</h2>
       <p className="sk-card-verdict">{truncate(verdict, 96)}</p>
@@ -839,10 +835,9 @@ const StacksPage = () => {
                 <div className="sk-results-grid">
                   {filteredStacks.slice(0, visibleCount).map((enriched) => {
                     const stackTools = enriched.stack.tools
-                      .slice(0, 5)
+                      .slice(0, 6)
                       .map((slot) => toolBySlug.get(slot.slug))
                       .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
-                    const isRecommended = PROFILE_RECOMMENDED_STACKS.some((p) => p.slug === enriched.stack.slug);
                     return (
                       <StackSelectionCard
                         key={enriched.stack.id}
@@ -851,7 +846,6 @@ const StacksPage = () => {
                         lang={lang}
                         t={t}
                         tools={stackTools}
-                        isRecommended={isRecommended}
                       />
                     );
                   })}
