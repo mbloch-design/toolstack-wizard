@@ -643,7 +643,26 @@ const StackDetailPage = () => {
       url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`,
       about: asArray(stack.tools).map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug),
     });
-    return () => cleanupSeo(["stack-detail-jsonld"]);
+    // FAQPage from the same checkpoints already rendered in the visible FAQ
+    // section below (editorial.faq) — SXO audit found this content existed
+    // and was shown to users but never exposed as structured data. Every
+    // one of the 212 stacks has checkpoints (verified), so no fallback needed.
+    const faqEntries = (stack.checkpoints ?? []).map((cp) => ({
+      q: lang === "fr" ? cp.q : cp.qEn,
+      a: lang === "fr" ? cp.hint : cp.hintEn,
+    }));
+    if (faqEntries.length > 0) {
+      setJsonLd("stack-detail-faq-jsonld", {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqEntries.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      });
+    }
+    return () => cleanupSeo(["stack-detail-jsonld", "stack-detail-faq-jsonld"]);
   }, [lang, stack, toolBySlug]);
 
   useEffect(() => {
