@@ -47,8 +47,7 @@ export function ToolCardEditorial({
   categoryLabel,
   lang = "fr",
 }: ToolCardEditorialProps) {
-  const isPick = tool.prescription_quality === "ferme";
-  const plan   = getPlanLabel(tool, lang);
+  const plan = getPlanLabel(tool, lang);
 
   const description = t(
     tool.shortDescription,
@@ -65,21 +64,24 @@ export function ToolCardEditorial({
       {/* Cover: OG image, falls back to centered logo */}
       <ToolCardImage tool={tool} logoSize={36} />
 
-      {/* ── Name + category + description ── */}
+      {/* ── Name + price (same line) + category ── */}
       <div className="tce-body">
-        {isPick && <span className="tce-pick-badge">Pick</span>}
-        <h3 className="tce-name">{tool.name}</h3>
+        <div className="tce-title-row">
+          <h3 className="tce-name">{tool.name}</h3>
+          <span className="tce-price">{plan}</span>
+        </div>
         {categoryLabel && (
           <p className="tce-category">{categoryLabel}</p>
         )}
+        {/* Description: hidden at rest, revealed on hover/focus — keeps the
+            base card short while the "why" is still one hover away. */}
         {description && (
           <p className="tce-description">{description}</p>
         )}
       </div>
 
-      {/* ── Footer: price + CTA ── */}
+      {/* ── Footer: CTA only — price moved up next to the title ── */}
       <div className="tce-footer">
-        <span className="tce-price">{plan}</span>
         <span className="tce-cta">
           {t("Voir l'outil", "View tool")}
           <span className="tce-cta-arrow" aria-hidden>→</span>

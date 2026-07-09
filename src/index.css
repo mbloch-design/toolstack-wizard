@@ -5397,7 +5397,7 @@
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 24px;
+    padding: 16px;
     text-decoration: none;
     color: var(--color-text);
     transition: border-color 180ms ease-out, background 180ms ease-out;
@@ -5425,107 +5425,107 @@
     background: hsl(var(--secondary));
   }
 
-  /* ── Header row (type label + pick badge, above the name) ──────────────── */
-  /* ToolTrim Pick — quiet dark pill, only rendered when applicable */
-  .tce-pick-badge {
-    display: inline-flex;
-    align-items: center;
-    height: 20px;
-    padding: 0 8px;
-    margin-bottom: 8px;
-    background: var(--color-text);
-    color: var(--color-surface);
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    line-height: 1;
-  }
-
-  .dark .tce-pick-badge {
-    background: hsl(var(--foreground));
-    color: hsl(var(--background));
-  }
-
   /* ── Body ───────────────────────────────────── */
   .tce-body {
     flex: 1;
   }
 
+  /* Name + price share one row — price is a small trailing label, not a
+     second headline, so it doesn't compete with the tool name. */
+  .tce-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
   .tce-name {
     font-family: var(--font-ui);
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.045em;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
     color: var(--color-text);
     margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .dark .tce-name {
     color: hsl(var(--foreground));
   }
 
+  .tce-price {
+    flex-shrink: 0;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-muted);
+  }
+
+  .dark .tce-price {
+    color: hsl(var(--muted-foreground));
+  }
+
   .tce-category {
     font-family: var(--font-ui);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 1.3;
     color: var(--color-muted);
-    margin: 6px 0 0;
+    margin: 4px 0 0;
   }
 
   .dark .tce-category {
     color: hsl(var(--muted-foreground));
   }
 
+  /* Description: collapsed to zero height at rest (card stays short in the
+     grid), revealed on hover/focus so the "why" is still one hover away
+     instead of always taking up two lines of vertical space. */
   .tce-description {
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 1.45;
     color: var(--color-muted);
-    margin: 12px 0 0;
+    margin: 0;
     max-width: 90%;
-    /* Trim to 2 lines max — this is a browsing card, not the fiche */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    overflow: hidden;
+    transition: max-height 200ms ease-out, opacity 160ms ease-out, margin-top 200ms ease-out;
+  }
+
+  .tce-card:hover .tce-description,
+  .tce-card:focus-visible .tce-description {
+    max-height: 40px;
+    opacity: 1;
+    margin-top: 8px;
   }
 
   .dark .tce-description {
     color: hsl(var(--muted-foreground));
   }
 
-  /* ── Footer: price + CTA — single row, replaces the old fake
-     TOOLTRIM SCORE block and the redundant PLAN/MODÈLE/IA meta grid ── */
+  /* ── Footer: CTA only — price now sits next to the title ── */
   .tce-footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: flex-end;
     border-top: 1px solid var(--color-border-soft);
-    margin-top: 20px;
-    padding-top: 16px;
+    margin-top: 12px;
+    padding-top: 10px;
   }
 
   .dark .tce-footer {
     border-top-color: hsl(var(--border));
-  }
-
-  .tce-price {
-    font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-  }
-
-  .dark .tce-price {
-    color: hsl(var(--foreground));
   }
 
   /* ── CTA ────────────────────────────────────── */
