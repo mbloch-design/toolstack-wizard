@@ -192,29 +192,15 @@ const ToolsPage = () => {
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ══════════════ HERO — shared banner pattern ══════════════ */}
-      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--tools">
-        <div className="tt-page-hero-inner">
-          <div className="tt-page-hero-band">
-            <img src="/hero/tools-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
-            <div className="tt-page-hero-content">
-              <div className="tt-page-hero-breadcrumb">
-                <Breadcrumb items={[{ label: t("Catalogue", "Catalog") }]} />
-              </div>
-              <h1 className="tt-page-hero-title">{t("Trouver les bons outils.", "Find the right tools.")}</h1>
-              <p className="tt-page-hero-desc">
-                {t(
-                  "Explorez le catalogue ToolTrim et mettez de côté les outils utiles pour composer votre stack.",
-                  "Explore the ToolTrim catalog and save useful tools to compose your stack.",
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ══════════════ BODY ══════════════ */}
       <div className="tt-catalog-container">
+        {/* ── Compact header: breadcrumb + title, no banner artwork — the
+            filter bar right below is the real above-the-fold content. ── */}
+        <div className="tt-catalog-compact-header">
+          <Breadcrumb items={[{ label: t("Catalogue", "Catalog") }]} />
+          <h1 className="tt-catalog-compact-title">{t("Trouver les bons outils.", "Find the right tools.")}</h1>
+        </div>
+
         {/* ── Filter bar: quick pills for the primary facets ── */}
         <div className="tt-catalog-toolbar">
           <div className="tt-catalog-toolbar-filters">
