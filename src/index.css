@@ -13273,6 +13273,15 @@ section[id] {
 .sd-tool-group:last-of-type {
   margin-bottom: 0;
 }
+/* Collapsed-but-present: kept in the DOM (not conditionally unmounted) so
+   crawlers see the tool names/links before any "show more" click, while
+   users still see the same collapsed UI until they expand. */
+.sd-tool-group--collapsed {
+  display: none;
+}
+.sd-tool-item--collapsed {
+  display: none;
+}
 
 /* Flex row of pills */
 .sd-tool-grid {

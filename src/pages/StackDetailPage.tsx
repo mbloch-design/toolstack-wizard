@@ -815,8 +815,6 @@ const StackDetailPage = () => {
                 expandLabel = lang === 'fr' ? 'Voir les compléments' : 'Show add-ons';
               }
 
-              const visibleSecondary = isExpanded ? groups.secondary : groups.secondary.slice(0, 3);
-
               const visibleCount = groups.core.length + Math.min(groups.secondary.length, 3);
 
               return (
@@ -868,39 +866,56 @@ const StackDetailPage = () => {
                                 <ToolLogo tool={tool!} size={34} />
                               </span>
                               <span className="sd-tool-name">{tool!.name}</span>
+                              {/* Always in the DOM (not just the click-to-open
+                                  Sheet) so this per-tool justification is
+                                  crawlable; visually hidden to keep the
+                                  compact pill design. */}
+                              {slot.reason && (
+                                <span className="sr-only">{t(slot.reason, slot.reasonEn ?? slot.reason)}</span>
+                              )}
                             </Link>
                           ))}
                         </div>
                       </div>
                     )}
 
-                    {/* Secondary group — first 3 always visible, rest on expand */}
+                    {/* Secondary group — first 3 always visible, rest CSS-hidden
+                        (not unmounted) until expand, so the tool names/links
+                        stay in the DOM for crawlers even before a click. */}
                     {groups.secondary.length > 0 && (
                       <div className="sd-tool-group">
                         <span className="sd-group-tag">
                           {lang === 'fr' ? 'Compléments' : 'Add-ons'}
                         </span>
                         <div className="sd-tool-grid">
-                          {visibleSecondary.map(({ slot, tool }) => (
+                          {groups.secondary.map(({ slot, tool }, i) => (
                             <Link
                               key={slot.slug}
                               to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className="sd-tool-item"
+                              className={`sd-tool-item${i >= 3 && !isExpanded ? " sd-tool-item--collapsed" : ""}`}
                               title={tool!.name}
                             >
                               <span className="sd-tool-logo">
                                 <ToolLogo tool={tool!} size={34} />
                               </span>
                               <span className="sd-tool-name">{tool!.name}</span>
+                              {/* Always in the DOM (not just the click-to-open
+                                  Sheet) so this per-tool justification is
+                                  crawlable; visually hidden to keep the
+                                  compact pill design. */}
+                              {slot.reason && (
+                                <span className="sr-only">{t(slot.reason, slot.reasonEn ?? slot.reason)}</span>
+                              )}
                             </Link>
                           ))}
                         </div>
                       </div>
                     )}
 
-                    {/* Extension group — only when expanded */}
-                    {isExpanded && groups.extension.length > 0 && (
-                      <div className="sd-tool-group">
+                    {/* Extension group — CSS-hidden (not unmounted) until
+                        expand; same reasoning as secondary above. */}
+                    {groups.extension.length > 0 && (
+                      <div className={`sd-tool-group${!isExpanded ? " sd-tool-group--collapsed" : ""}`}>
                         <span className="sd-group-tag">
                           {lang === 'fr' ? 'Extensions' : 'Extensions'}
                         </span>
@@ -916,6 +931,13 @@ const StackDetailPage = () => {
                                 <ToolLogo tool={tool!} size={34} />
                               </span>
                               <span className="sd-tool-name">{tool!.name}</span>
+                              {/* Always in the DOM (not just the click-to-open
+                                  Sheet) so this per-tool justification is
+                                  crawlable; visually hidden to keep the
+                                  compact pill design. */}
+                              {slot.reason && (
+                                <span className="sr-only">{t(slot.reason, slot.reasonEn ?? slot.reason)}</span>
+                              )}
                             </Link>
                           ))}
                         </div>
