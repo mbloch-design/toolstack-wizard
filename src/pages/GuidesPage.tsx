@@ -232,28 +232,14 @@ const GuidesPage = () => {
   return (
     <div className="min-h-screen">
 
-      {/* ══ 1. Hero ══════════════════════════════════════════════════════════ */}
-      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--guides">
-        <div className="tt-page-hero-inner">
-          <div className="tt-page-hero-band">
-            <img src="/hero/guides-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
-            <div className="tt-page-hero-content">
-              <div className="tt-page-hero-breadcrumb">
-                <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
-              </div>
-              <h1 className="tt-page-hero-title">
-                {t("Mieux choisir ses outils.", "Choose tools with less noise.")}
-              </h1>
-              <p className="tt-page-hero-desc">
-                {t(
-                  "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère.",
-                  "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.",
-                )}
-              </p>
-            </div>
-          </div>
+      {/* ══ 1. Compact header: breadcrumb + title, no banner artwork —
+          same pattern as ToolsPage, replacing the tall gradient hero. ══ */}
+      <div className="gi-container" style={{ paddingTop: 32 }}>
+        <div className="tt-catalog-compact-header">
+          <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
+          <h1 className="tt-catalog-compact-title">{t("Mieux choisir ses outils.", "Choose tools with less noise.")}</h1>
         </div>
-      </section>
+      </div>
 
       {/* ══ 2. Featured ══════════════════════════════════════════════════════ */}
       {!loading && featured && (

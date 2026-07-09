@@ -203,32 +203,16 @@ const ComparesIndexPage = () => {
   return (
     <div className="min-h-screen bg-background">
 
-      {/* ── Hero — shared banner pattern ─────────────────────────── */}
-      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--compares">
-        <div className="tt-page-hero-inner">
-          <div className="tt-page-hero-band">
-            <img src="/hero/compares-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
-            <div className="tt-page-hero-content">
-              <div className="tt-page-hero-breadcrumb">
-                <Breadcrumb items={[{ label: t("Comparatifs", "Comparisons") }]} />
-              </div>
-              <h1 className="tt-page-hero-title">
-                {t("Comparer sans empiler.", "Compare without stacking.")}
-              </h1>
-              <p className="tt-page-hero-desc">
-                {t(
-                  "Des comparatifs clairs pour comprendre les différences, les limites et le bon choix selon votre usage.",
-                  "Clear comparisons to understand differences, limitations and the right choice for your use case.",
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Listing section ───────────────────────────────────────────────── */}
       <section className="cix-section">
         <div className="cix-container">
+
+          {/* ── Compact header: breadcrumb + title, no banner artwork —
+              same pattern as ToolsPage, replacing the tall gradient hero. ── */}
+          <div className="tt-catalog-compact-header">
+            <Breadcrumb items={[{ label: t("Comparatifs", "Comparisons") }]} />
+            <h1 className="tt-catalog-compact-title">{t("Comparer sans empiler.", "Compare without stacking.")}</h1>
+          </div>
 
           {/* Header */}
           <div className="cix-listing-header">

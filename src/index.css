@@ -7535,12 +7535,25 @@
   }
 
   /* ── Filter bar row (quick pills + Filtres trigger + search) ────────── */
+  /* Sticky, same pattern as .tt-catalog-toolbar on ToolsPage: .asv2-content
+     is the real scroll container on desktop, so `top: 0` docks it right
+     under the app shell's own sticky topbar with no extra offset math. */
   .sk-mobile-trigger-row {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 12px 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid transparent;
+    transition: border-color 160ms ease-out;
+  }
+  .sk-mobile-trigger-row--stuck {
+    border-bottom-color: var(--color-border);
   }
   .sk-mobile-trigger {
     position: relative;

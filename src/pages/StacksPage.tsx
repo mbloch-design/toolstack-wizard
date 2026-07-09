@@ -498,6 +498,8 @@ const StacksPage = () => {
   const panelRef = useRef<HTMLDivElement>(null);
   const filtersRef = useRef<HTMLButtonElement>(null);
   const [panelCoords, setPanelCoords] = useState({ top: 0, left: 0 });
+  const [toolbarStuck, setToolbarStuck] = useState(false);
+  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
 
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: getStackDerivedFields(stack) })), []);
@@ -603,6 +605,21 @@ const StacksPage = () => {
     setPanelCoords({ top: rect.bottom + 8, left });
   }, [mobileOpen]);
 
+  // Toggle the sticky toolbar's "stuck" border once its sentinel (placed
+  // right above it) scrolls out of view — .asv2-content is the real scroll
+  // container on desktop, not the window, so it must be the observer's root.
+  useEffect(() => {
+    const sentinel = toolbarSentinelRef.current;
+    if (!sentinel) return;
+    const scrollRoot = sentinel.closest(".asv2-content");
+    const observer = new IntersectionObserver(
+      ([entry]) => setToolbarStuck(!entry.isIntersecting),
+      { root: scrollRoot, threshold: 0 },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
   const currentFilters = useMemo(() => ({
     profile: facetProfile,
     specialties: facetSpecialties,
@@ -701,34 +718,23 @@ const StacksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="tt-page-hero tt-page-hero--banner tt-page-hero--stacks">
-        <div className="tt-page-hero-inner">
-          <div className="tt-page-hero-band">
-            <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
-            <div className="tt-page-hero-content">
-              <div className="tt-page-hero-breadcrumb">
-                <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
-              </div>
-              <h1 className="tt-page-hero-title">{t("Trouver une stack claire.", "Find a clear stack.")}</h1>
-              <p className="tt-page-hero-desc">
-                {t(
-                  "Parcourez des stacks types pour comprendre quels outils servent vraiment selon un métier, un budget et un contexte.",
-                  "Browse stack templates to understand which tools really matter for a role, a budget and a context.",
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="stacks" className="sk-section sk-listing-section scroll-mt-20">
         <div className="sk-container">
+          {/* ── Compact header: breadcrumb + title, no banner artwork —
+              same pattern as ToolsPage, replacing the tall gradient hero. ── */}
+          <div className="tt-catalog-compact-header">
+            <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
+            <h1 className="tt-catalog-compact-title">{t("Trouver une stack claire.", "Find a clear stack.")}</h1>
+          </div>
+
+          <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+
           {/* Filter bar — same shape as ToolsPage's .tt-filter-bar: quick
               pills for the 2 most decision-relevant facets (Profil, Budget),
               a "Filtres" trigger for the long tail (Spécialité, Objectif,
               Niveau, Complexité, Type, Nb d'outils), reusing the same panel
               at every breakpoint instead of only on mobile. */}
-          <div className="sk-mobile-trigger-row">
+          <div className={`sk-mobile-trigger-row${toolbarStuck ? " sk-mobile-trigger-row--stuck" : ""}`}>
             <FilterDropdown
               label={t("Tous les profils", "All profiles") as string}
               allLabel={t("Tous les profils", "All profiles") as string}
