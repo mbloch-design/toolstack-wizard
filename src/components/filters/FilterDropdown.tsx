@@ -16,6 +16,13 @@ interface FilterDropdownProps {
   searchPlaceholder?: string;
   /** Only render the in-panel search field once there are at least this many options. */
   searchThreshold?: number;
+  /** Multi-select mode: checkboxes that stay open on click, a count badge
+   *  on the trigger, and a "Clear selections" footer — instead of the
+   *  single-choice radio-like list that closes on pick. */
+  multi?: boolean;
+  values?: string[];
+  onChangeMulti?: (ids: string[]) => void;
+  clearLabel?: string;
 }
 
 /**
@@ -37,6 +44,10 @@ export default function FilterDropdown({
   onChange,
   searchPlaceholder,
   searchThreshold = 8,
+  multi = false,
+  values = [],
+  onChangeMulti,
+  clearLabel = "Clear selections",
 }: FilterDropdownProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -46,6 +57,12 @@ export default function FilterDropdown({
 
   const activeOption = options.find((opt) => opt.id === value);
   const showSearch = options.length >= searchThreshold;
+  const selectedCount = values.length;
+
+  function toggleValue(id: string) {
+    if (!onChangeMulti) return;
+    onChangeMulti(values.includes(id) ? values.filter((v) => v !== id) : [...values, id]);
+  }
 
   const filteredOptions = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -88,12 +105,15 @@ export default function FilterDropdown({
       <button
         ref={triggerRef}
         type="button"
-        className={`tf-dd-trigger${open ? " tf-dd-trigger--open" : ""}${value !== "all" ? " tf-dd-trigger--active" : ""}`}
+        className={`tf-dd-trigger${open ? " tf-dd-trigger--open" : ""}${
+          multi ? (selectedCount > 0 ? " tf-dd-trigger--active" : "") : (value !== "all" ? " tf-dd-trigger--active" : "")
+        }`}
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <span>{value === "all" ? label : activeOption?.label ?? label}</span>
+        <span>{multi ? label : (value === "all" ? label : activeOption?.label ?? label)}</span>
+        {multi && selectedCount > 0 && <span className="tf-dd-count">{selectedCount}</span>}
         <ChevronDown className="tf-dd-chevron" aria-hidden />
       </button>
 
@@ -101,6 +121,7 @@ export default function FilterDropdown({
         <div
           className="tf-dd-panel"
           role="listbox"
+          aria-multiselectable={multi}
           ref={panelRef}
           style={{ position: "fixed", top: coords.top, left: coords.left }}
         >
@@ -117,33 +138,61 @@ export default function FilterDropdown({
             </div>
           )}
           <div className="tf-dd-list">
-            <button
-              type="button"
-              className={`tf-dd-item${value === "all" ? " tf-dd-item--active" : ""}`}
-              onClick={() => { onChange("all"); setOpen(false); }}
-              role="option"
-              aria-selected={value === "all"}
-            >
-              <span>{allLabel}</span>
-              {value === "all" && <Check size={14} aria-hidden />}
-            </button>
-            {filteredOptions.map((opt) => (
-              <button
-                key={opt.id}
-                type="button"
-                className={`tf-dd-item${value === opt.id ? " tf-dd-item--active" : ""}`}
-                onClick={() => { onChange(opt.id); setOpen(false); }}
-                role="option"
-                aria-selected={value === opt.id}
-              >
-                <span>{opt.label}</span>
-                {value === opt.id && <Check size={14} aria-hidden />}
-              </button>
-            ))}
+            {multi ? (
+              filteredOptions.map((opt) => {
+                const checked = values.includes(opt.id);
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    className={`tf-dd-item tf-dd-item--checkbox${checked ? " tf-dd-item--active" : ""}`}
+                    onClick={() => toggleValue(opt.id)}
+                    role="option"
+                    aria-selected={checked}
+                  >
+                    <span className={`tf-dd-checkbox${checked ? " tf-dd-checkbox--checked" : ""}`} aria-hidden>
+                      {checked && <Check size={12} aria-hidden />}
+                    </span>
+                    <span>{opt.label}</span>
+                  </button>
+                );
+              })
+            ) : (
+              <>
+                <button
+                  type="button"
+                  className={`tf-dd-item${value === "all" ? " tf-dd-item--active" : ""}`}
+                  onClick={() => { onChange("all"); setOpen(false); }}
+                  role="option"
+                  aria-selected={value === "all"}
+                >
+                  <span>{allLabel}</span>
+                  {value === "all" && <Check size={14} aria-hidden />}
+                </button>
+                {filteredOptions.map((opt) => (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    className={`tf-dd-item${value === opt.id ? " tf-dd-item--active" : ""}`}
+                    onClick={() => { onChange(opt.id); setOpen(false); }}
+                    role="option"
+                    aria-selected={value === opt.id}
+                  >
+                    <span>{opt.label}</span>
+                    {value === opt.id && <Check size={14} aria-hidden />}
+                  </button>
+                ))}
+              </>
+            )}
             {filteredOptions.length === 0 && (
               <p className="tf-dd-empty">—</p>
             )}
           </div>
+          {multi && selectedCount > 0 && (
+            <button type="button" className="tf-dd-clear" onClick={() => onChangeMulti?.([])}>
+              {clearLabel}
+            </button>
+          )}
         </div>,
         document.body,
       )}

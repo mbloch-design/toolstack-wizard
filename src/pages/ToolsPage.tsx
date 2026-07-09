@@ -82,7 +82,7 @@ const ToolsPage = () => {
   const urlSearch = searchParams.get("q") || "";
   const selectedVertical = searchParams.get("vertical") || "";
   const [search, setSearch] = useState(urlSearch);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [sort, setSort] = useState<SortKey>("popular");
   const [priceFilter, setPriceFilter] = useState<PriceFilter>("all");
   const [visibleCount, setVisibleCount] = useState(TOOLS_PER_PAGE);
@@ -140,7 +140,7 @@ const ToolsPage = () => {
       const searchText = getToolSearchText(tool, categoryLabel);
       const matchSearch = !search || searchText.includes(q);
       const matchVertical = !verticalPattern || verticalPattern.test(searchText);
-      const matchCat = !selectedCategory || tool.categoryId === selectedCategory;
+      const matchCat = selectedCategories.length === 0 || selectedCategories.includes(tool.categoryId);
       const matchPrice =
         priceFilter === "free" ? tool.defaultMonthlyPrice === 0 :
         priceFilter === "paid" ? tool.defaultMonthlyPrice > 0 :
@@ -160,9 +160,9 @@ const ToolsPage = () => {
       return 0;
     });
     return result;
-  }, [categoryById, tools, search, selectedVertical, selectedCategory, priceFilter, sort]);
+  }, [categoryById, tools, search, selectedVertical, selectedCategories, priceFilter, sort]);
 
-  useEffect(() => { setVisibleCount(TOOLS_PER_PAGE); }, [search, selectedVertical, selectedCategory, priceFilter, sort]);
+  useEffect(() => { setVisibleCount(TOOLS_PER_PAGE); }, [search, selectedVertical, selectedCategories, priceFilter, sort]);
 
   useEffect(() => {
     setSearch(urlSearch);
@@ -174,7 +174,7 @@ const ToolsPage = () => {
   const getCatLabel = (cat: typeof categories[0]) =>
     t(stripLeadingEmoji(cat.name, cat.id), stripLeadingEmoji(cat.nameEn, stripLeadingEmoji(cat.name, cat.id)));
 
-  const isFiltering = !!(search || selectedVertical || selectedCategory || priceFilter !== "all" || sort !== "popular");
+  const isFiltering = !!(search || selectedVertical || selectedCategories.length > 0 || priceFilter !== "all" || sort !== "popular");
   const isSearchExpanded = isSearchOpen || search.length > 0;
   const selectedVerticalLabel = getVerticalFilterLabel(selectedVertical, lang);
   const resultLabel = lang === "fr"
@@ -229,8 +229,12 @@ const ToolsPage = () => {
               label={t("Catégorie", "Category") as string}
               allLabel={t("Toutes les catégories", "All categories") as string}
               options={sortedCategories.map((cat) => ({ id: cat.id, label: getCatLabel(cat) as string }))}
-              value={selectedCategory ?? "all"}
-              onChange={(id) => setSelectedCategory(id === "all" ? null : id)}
+              value="all"
+              onChange={() => {}}
+              multi
+              values={selectedCategories}
+              onChangeMulti={setSelectedCategories}
+              clearLabel={t("Effacer la sélection", "Clear selections") as string}
               searchPlaceholder={t("Rechercher une catégorie…", "Search categories…") as string}
             />
 
@@ -356,7 +360,7 @@ const ToolsPage = () => {
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed py-16 text-center" style={{ borderColor: "hsl(var(--border))" }}>
               <Search className="mx-auto h-8 w-8" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }} />
               <p className="mt-3 font-semibold" style={{ color: "hsl(var(--foreground))" }}>{t("Aucun outil trouvé", "No tools found")}</p>
-              <button type="button" onClick={() => { setSearch(""); setSelectedCategory(null); setPriceFilter("all"); setSearchParams(new URLSearchParams(), { replace: true }); }}
+              <button type="button" onClick={() => { setSearch(""); setSelectedCategories([]); setPriceFilter("all"); setSearchParams(new URLSearchParams(), { replace: true }); }}
                 className="mt-4 rounded-full border px-4 py-1.5 text-sm font-semibold hover:text-primary"
                 style={{ borderColor: "hsl(var(--border))", color: "hsl(var(--muted-foreground))" }}>
                 {t("Réinitialiser", "Reset")}
