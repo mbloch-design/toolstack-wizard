@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { X, SlidersHorizontal } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
@@ -432,14 +433,35 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelection
             <ToolLogo tool={tool} size={22} />
           </span>
         ))}
-        {stack.tools.length > 6 && <span className="sk-card-tool sk-card-tool-more">+{stack.tools.length - 6}</span>}
+        {/* Count against the raw slot total minus what's actually rendered
+            (not stack.tools.length - 6): `tools` already dropped any slug
+            that failed to resolve via toolBySlug, so basing the badge on
+            the raw slot count under-/over-counts whenever that happens. */}
+        {stack.tools.length > tools.length && (
+          <span className="sk-card-tool sk-card-tool-more">+{stack.tools.length - tools.length}</span>
+        )}
       </div>
 
       <div className="sk-card-footer">
         <div className="sk-card-stats">
-          <span className="sk-card-stat sk-card-stat--strong" title={t("Budget mensuel cible", "Target monthly budget") as string}>{budgetText}</span>
-          <span className="sk-card-stat" title={t("Nombre d'outils dans la stack", "Number of tools in the stack") as string}>{derived.toolCount} {t("outils", "tools")}</span>
-          <span className="sk-card-stat" title={t("Niveau d'expérience recommandé", "Recommended experience level") as string}>{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</span>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="sk-card-stat sk-card-stat--strong">{budgetText}</span>
+            </TooltipTrigger>
+            <TooltipContent>{t("Budget mensuel cible", "Target monthly budget")}</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="sk-card-stat">{derived.toolCount} {t("outils", "tools")}</span>
+            </TooltipTrigger>
+            <TooltipContent>{t("Nombre d'outils dans la stack", "Number of tools in the stack")}</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="sk-card-stat">{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</span>
+            </TooltipTrigger>
+            <TooltipContent>{t("Niveau d'expérience recommandé", "Recommended experience level")}</TooltipContent>
+          </Tooltip>
         </div>
         <span className="sk-card-cta">{t("Voir la stack", "See stack")} <span aria-hidden>→</span></span>
       </div>
