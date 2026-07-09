@@ -4659,6 +4659,14 @@
   }
   .dark .tc-image { background: hsl(0 0% 14%); border-color: hsl(0 0% 22%); }
 
+  /* .tce-card uses a tighter 16px padding (see .tce-card below) — the
+     shared .tc-image negative margin above is sized for .tc-card's 24px,
+     so without this override the image bleeds past the card's own edges
+     and reads as wider than the card. */
+  .tce-card .tc-image {
+    margin: -16px -16px 12px -16px;
+  }
+
   /* Compact row variant (ListRow / tc-list-row) — small fixed thumbnail
      instead of a full-bleed panel, row height stays unchanged. */
   .tc-image--row {
@@ -5483,49 +5491,41 @@
     color: hsl(var(--muted-foreground));
   }
 
-  /* Description: collapsed to zero height at rest (card stays short in the
-     grid), revealed on hover/focus so the "why" is still one hover away
-     instead of always taking up two lines of vertical space. */
+  /* ── Image hover overlay: description + CTA ──────────────────────────────
+     Lives inside .tc-image (position: relative, overflow: hidden already
+     set there), absolutely filling it — so revealing this content on hover
+     never changes .tce-card's own height, unlike the old in-body reveal. */
+  .tc-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px;
+    background: linear-gradient(180deg, transparent 0%, rgba(18, 18, 16, 0.15) 40%, rgba(18, 18, 16, 0.82) 100%);
+    opacity: 0;
+    transition: opacity 160ms ease-out;
+    pointer-events: none;
+  }
+
+  .tce-card:hover .tc-image-overlay,
+  .tce-card:focus-visible .tc-image-overlay {
+    opacity: 1;
+  }
+
   .tce-description {
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 400;
-    line-height: 1.45;
-    color: var(--color-muted);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.92);
     margin: 0;
-    max-width: 90%;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    transition: max-height 200ms ease-out, opacity 160ms ease-out, margin-top 200ms ease-out;
-  }
-
-  .tce-card:hover .tce-description,
-  .tce-card:focus-visible .tce-description {
-    max-height: 40px;
-    opacity: 1;
-    margin-top: 8px;
-  }
-
-  .dark .tce-description {
-    color: hsl(var(--muted-foreground));
-  }
-
-  /* ── Footer: CTA only — price now sits next to the title ── */
-  .tce-footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-top: 1px solid var(--color-border-soft);
-    margin-top: 12px;
-    padding-top: 10px;
-  }
-
-  .dark .tce-footer {
-    border-top-color: hsl(var(--border));
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 
   /* ── CTA ────────────────────────────────────── */
@@ -5534,21 +5534,11 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #ffffff;
     text-decoration: none;
-  }
-
-  .dark .tce-cta {
-    color: hsl(var(--foreground));
-  }
-
-  .tce-card:hover .tce-cta {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
   }
 
   .tce-cta-arrow {

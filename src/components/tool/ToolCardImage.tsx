@@ -10,10 +10,14 @@ type ToolCardImageTool = Pick<Tool, "name"> & Partial<Pick<Tool, "id" | "slug" |
  * tool has one, otherwise a centered logo on the same panel background —
  * so the shape stays identical whether or not a screenshot exists yet.
  */
-export default function ToolCardImage({ tool, logoSize = 40, className = "" }: {
+export default function ToolCardImage({ tool, logoSize = 40, className = "", overlay }: {
   tool: ToolCardImageTool;
   logoSize?: number;
   className?: string;
+  /** Optional content absolutely-positioned over the image, revealed by the
+   *  consumer's own hover/focus state (e.g. ToolCardEditorial's description
+   *  + CTA) — keeps hover-only info from ever changing the card's height. */
+  overlay?: React.ReactNode;
 }) {
   const [failed, setFailed] = useState(false);
   const src = tool.ogImageUrl;
@@ -28,6 +32,7 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "" }: {
           <ToolLogo tool={tool} size={logoSize} />
         </div>
       )}
+      {overlay && <div className="tc-image-overlay">{overlay}</div>}
     </div>
   );
 }

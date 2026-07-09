@@ -61,8 +61,23 @@ export function ToolCardEditorial({
         to={`${prefix}/tool/${tool.slug ?? tool.id}`}
         className="tce-card"
       >
-      {/* Cover: OG image, falls back to centered logo */}
-      <ToolCardImage tool={tool} logoSize={36} />
+      {/* Cover: OG image, falls back to centered logo. Description + CTA
+          live in the image overlay (hidden at rest, revealed on hover/focus
+          via .tce-card:hover/:focus-visible) so hover-only info never
+          changes the card's own height. */}
+      <ToolCardImage
+        tool={tool}
+        logoSize={36}
+        overlay={
+          <>
+            {description && <p className="tce-description">{description}</p>}
+            <span className="tce-cta">
+              {t("Voir l'outil", "View tool")}
+              <span className="tce-cta-arrow" aria-hidden>→</span>
+            </span>
+          </>
+        }
+      />
 
       {/* ── Name + price (same line) + category ── */}
       <div className="tce-body">
@@ -73,19 +88,6 @@ export function ToolCardEditorial({
         {categoryLabel && (
           <p className="tce-category">{categoryLabel}</p>
         )}
-        {/* Description: hidden at rest, revealed on hover/focus — keeps the
-            base card short while the "why" is still one hover away. */}
-        {description && (
-          <p className="tce-description">{description}</p>
-        )}
-      </div>
-
-      {/* ── Footer: CTA only — price moved up next to the title ── */}
-      <div className="tce-footer">
-        <span className="tce-cta">
-          {t("Voir l'outil", "View tool")}
-          <span className="tce-cta-arrow" aria-hidden>→</span>
-        </span>
       </div>
       </Link>
     </div>
