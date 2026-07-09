@@ -14337,9 +14337,19 @@ section[id] {
   min-height: 64px;
   margin-bottom: 28px;
   padding: 12px 0;
-  border-bottom: none;
-  background: transparent;
+  border-bottom: 1px solid transparent;
+  background: var(--color-bg);
   color: var(--color-text);
+  /* .asv2-content (not the window) is the actual scroll container on
+     desktop, so `top: 0` sticks it right under the app shell's own
+     sticky topbar rather than the viewport edge. */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: border-color 160ms ease-out;
+}
+.tt-catalog-toolbar--stuck {
+  border-bottom-color: var(--color-border);
 }
 .tt-catalog-toolbar-filters {
   display: flex;
