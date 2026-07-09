@@ -23,6 +23,8 @@ import ComparePage from "@/pages/ComparePage";
 // Eager (not lazy) so renderToString can SSR /guide/:slug — a lazy() chunk
 // can't be resolved during renderToString, it renders the Suspense fallback.
 import GuideDetailPage from "@/pages/GuideDetailPage";
+// Same reason: SSR for /stacks/:slug (the 212 stack detail pages).
+import StackDetailPage from "@/pages/StackDetailPage";
 
 // Lazy-loaded pages (below the fold / secondary routes)
 const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
@@ -32,7 +34,6 @@ const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
-const StackDetailPage = lazy(() => import("@/pages/StackDetailPage"));
 const CartPage = lazy(() => import("@/pages/CartPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));

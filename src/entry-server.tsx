@@ -122,3 +122,32 @@ export async function renderComparePage(path: string, toolA: Tool, toolB: Tool):
     </HelmetProvider>,
   );
 }
+
+// Same idea as renderToolPage, for /stacks/:slug. StackDetailPage reads its
+// data from the STACKS static import (no client-only fetch), so no SSR
+// context provider is needed — just an eager import (see App.tsx) so
+// renderToString can resolve the route instead of rendering the Suspense
+// fallback.
+export async function renderStackPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <AppRoutes />
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
