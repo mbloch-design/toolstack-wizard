@@ -105,8 +105,12 @@ export function getAlternateLinks(path: string, base = SEO_BASE): [string, strin
   return [
     ["fr", `${base}/fr${frPath}`],
     ["en", `${base}/en${enPath}`],
-    // x-default points to English as the internationally neutral fallback.
-    ["x-default", `${base}/en${enPath}`],
+    // x-default -> FR: matches every prerendered page (vite.config.ts) and
+    // the guide branch above. This used to point to EN here, which meant
+    // client-side hydration silently overwrote the correct SSR x-default
+    // with the wrong one on every tool/guide/category page that calls
+    // setHreflang() after mount (ToolDetailPage, GuideDetailPage, etc).
+    ["x-default", `${base}/fr${frPath}`],
   ];
 }
 

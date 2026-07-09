@@ -30,10 +30,12 @@ export default function ToolGallery({ images, toolName }: Props) {
         <img
           key={src}
           src={src}
-          alt={`${toolName} — aperçu ${active + 1}`}
+          alt={`${toolName}, aperçu ${active + 1}`}
           className="tg-main-img"
           loading={active === 0 ? "eager" : "lazy"}
-          fetchPriority={active === 0 ? "high" : "auto"}
+          // Lowercase fetchpriority: this React version doesn't recognize
+          // fetchPriority as a known DOM prop and warns/drops it otherwise.
+          fetchpriority={active === 0 ? "high" : "auto"}
           onError={() => {
             setFailed((s) => new Set([...s, images.indexOf(src)]));
             if (active >= visible.length - 1) setActive(0);
