@@ -1293,9 +1293,43 @@ function formatToolCount(count: number, lang: string) {
   return `${count} outil${count > 1 ? "s" : ""}`;
 }
 
-function formatSubdomainCount(count: number, lang: string) {
-  if (lang === "en") return `${count} ${count === 1 ? "area" : "areas"}`;
-  return `${count} domaine${count > 1 ? "s" : ""}`;
+function getBoardOverviewCopy(board: StackBoard, lang: string) {
+  const copy: Record<string, { fr: string; en: string }> = {
+    ia: {
+      fr: "Assistants, génération et outils IA retenus pour votre travail.",
+      en: "Assistants, generation tools and AI utilities kept for your work.",
+    },
+    organisation: {
+      fr: "Projets, notes, fichiers et collaboration au même endroit.",
+      en: "Projects, notes, files and collaboration in one place.",
+    },
+    design: {
+      fr: "Création, interface, image, vidéo et ressources visuelles.",
+      en: "Creation, interface, image, video and visual resources.",
+    },
+    automation: {
+      fr: "Workflows, connexions et automatisations de votre stack.",
+      en: "Workflows, connections and automations in your stack.",
+    },
+    marketing: {
+      fr: "Contenu, acquisition, audience et mesure de performance.",
+      en: "Content, acquisition, audience and performance tracking.",
+    },
+    vente: {
+      fr: "CRM, prospection, paiement et relation client.",
+      en: "CRM, prospecting, payment and customer relationship tools.",
+    },
+    finance: {
+      fr: "Compta, factures, dépenses et pilotage budgétaire.",
+      en: "Accounting, invoices, expenses and budget tracking.",
+    },
+    dev: {
+      fr: "Code, déploiement, données et outils techniques.",
+      en: "Code, deployment, data and technical tools.",
+    },
+  };
+
+  return lang === "en" ? copy[board.id]?.en || "" : copy[board.id]?.fr || "";
 }
 
 function formatMonthlyPrice(value: number | undefined, lang: string) {
@@ -2074,7 +2108,6 @@ const CartPage = () => {
                     {" "}
                     <span className="stack-subdomain-count">{formatToolCount(group.tools.length, lang)}</span>
                   </h2>
-                  <p>{t(group.descriptionFr, group.descriptionEn)}</p>
                 </div>
 
                 <div className="stack-detail-tool-grid">
@@ -2092,49 +2125,56 @@ const CartPage = () => {
                     const showStandalonePrice = getToolPrice(tool) > 0 && !countedInBundle;
 
                     return (
-                      <article key={toolSlug} className="stack-detail-tool-card">
-                        <div className="stack-detail-tool-head">
-                          <ToolLogo tool={tool} size={36} className="stack-detail-tool-logo" />
-                          <div className="stack-detail-tool-title">
-                            <h4>{tool.name}</h4>
-                            {detailLine && <p>{detailLine}</p>}
+                      <article key={toolSlug} className="stack-detail-tool-card-frame">
+                        <Link
+                          className="stack-detail-tool-card"
+                          to={`${prefix}/tool/${toolSlug}`}
+                          aria-label={t(`Voir la fiche ${tool.name}`, `Open ${tool.name} page`) as string}
+                        >
+                          <div className="stack-detail-tool-media">
+                            <ToolCardImage tool={tool} logoSize={52} className="stack-detail-tool-image" />
+                            {detailLine && <span className="stack-detail-tool-tag">{detailLine}</span>}
                           </div>
-                          <div className="stack-detail-tool-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`) as string}>
-                            <button
-                              type="button"
-                              className="stack-detail-tool-remove"
-                              onClick={() => removeToolFromZoom(toolSlug)}
-                              aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
-                              title={t("Retirer de ma stack", "Remove from my stack") as string}
+
+                          <div className="stack-detail-tool-head">
+                            <ToolLogo tool={tool} size={52} className="stack-detail-tool-logo" />
+                            <div className="stack-detail-tool-title">
+                              <h4>{tool.name}</h4>
+                              {showStandalonePrice && <p className="stack-detail-tool-price">{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</p>}
+                            </div>
+                          </div>
+
+                          {description && <p className="stack-detail-tool-desc">{description}</p>}
+
+                          <div className="stack-detail-tool-footer">
+                            <div className="stack-detail-tool-footnote">
+                              {contextLine && (
+                                <span className={countedInBundle ? "stack-detail-tool-footer-bundle" : undefined}>
+                                  {contextLine}
+                                </span>
+                              )}
+                            </div>
+                            <span
+                              className="stack-detail-tool-link"
+                              aria-hidden="true"
                             >
-                              <Trash2 size={14} aria-hidden />
-                              <span>{t("Retirer", "Remove")}</span>
-                            </button>
+                              <span>{t("Voir la fiche", "Open page")}</span>
+                              <ArrowRight size={13} aria-hidden />
+                            </span>
                           </div>
-                        </div>
+                        </Link>
 
-                        <ToolCardImage tool={tool} logoSize={52} className="stack-detail-tool-image" />
-
-                        {description && <p className="stack-detail-tool-desc">{description}</p>}
-
-                        <div className="stack-detail-tool-footer">
-                          <div className="stack-detail-tool-footnote">
-                            {contextLine && (
-                              <span className={countedInBundle ? "stack-detail-tool-footer-bundle" : undefined}>
-                                {contextLine}
-                              </span>
-                            )}
-                            {showStandalonePrice && <strong>{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</strong>}
-                          </div>
-                          <Link
-                            className="stack-detail-tool-link"
-                            to={`${prefix}/tool/${toolSlug}`}
-                            aria-label={t(`Voir la fiche ${tool.name}`, `Open ${tool.name} page`) as string}
-                            title={t("Voir la fiche", "Open page") as string}
+                        <div className="stack-detail-tool-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`) as string}>
+                          <button
+                            type="button"
+                            className="stack-detail-tool-remove"
+                            onClick={() => removeToolFromZoom(toolSlug)}
+                            aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
+                            title={t("Retirer de ma stack", "Remove from my stack") as string}
                           >
-                            <span>{t("Voir la fiche", "Open page")}</span>
-                            <ArrowRight size={13} aria-hidden />
-                          </Link>
+                            <Trash2 size={14} aria-hidden />
+                            <span>{t("Retirer", "Remove")}</span>
+                          </button>
                         </div>
                       </article>
                     );
@@ -2160,10 +2200,10 @@ const CartPage = () => {
             </section>
           )}
           {activeBoards.map((board) => {
-            const visibleToolCount = board.tools.length > 6 ? 5 : 6;
+            const visibleToolCount = board.tools.length > 4 ? 3 : 4;
             const visibleTools = board.tools.slice(0, visibleToolCount);
             const overflowCount = Math.max(0, board.tools.length - visibleTools.length);
-            const subdomainCount = new Set(board.tools.map((tool) => getSubdomainForBoardTool(board.id, tool, getCategoryLabel(tool)).id)).size;
+            const boardCopy = getBoardOverviewCopy(board, lang);
             return (
               <section
                 key={board.id}
@@ -2174,45 +2214,51 @@ const CartPage = () => {
                 onKeyDown={(event) => handleBoardKeyDown(event, board.id)}
                 aria-label={t(`Voir le détail ${board.labelFr}`, `View ${board.labelEn} detail`) as string}
               >
-                <div
-                  className="stack-board-preview"
-                  role="list"
-                  aria-label={t(`Outils ${board.labelFr}`, `${board.labelEn} tools`) as string}
-                >
-                  {visibleTools.map((tool, index) => (
-                    <span
-                      key={getToolKey(tool)}
-                      className={`stack-board-logo stack-board-logo--${index + 1}`}
-                      data-tool-slug={getToolKey(tool)}
-                      role="listitem"
-                    >
-                      <ToolLogo tool={tool} size={42} className="stack-board-logo-mark" />
-                      <button
-                        type="button"
-                        className="stack-board-remove"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          unpinTool(getToolKey(tool));
-                        }}
-                        aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
-                        title={t("Retirer de ma stack", "Remove from my stack") as string}
+                <div className="stack-board-preview">
+                  <div className="stack-board-preview-copy">
+                    <h2>
+                      <span>{t(board.labelFr, board.labelEn)}</span>
+                      {" "}
+                      <span className="stack-board-title-count">{formatToolCount(board.tools.length, lang)}</span>
+                    </h2>
+                    {boardCopy && <p>{boardCopy}</p>}
+                  </div>
+
+                  <div
+                    className="stack-board-logo-row"
+                    role="list"
+                    aria-label={t(`Outils ${board.labelFr}`, `${board.labelEn} tools`) as string}
+                  >
+                    {visibleTools.map((tool, index) => (
+                      <span
+                        key={getToolKey(tool)}
+                        className={`stack-board-logo stack-board-logo--${index + 1}`}
+                        data-tool-slug={getToolKey(tool)}
+                        role="listitem"
                       >
-                        <X size={13} aria-hidden />
-                      </button>
-                    </span>
-                  ))}
-                  {overflowCount > 0 && <span className="stack-board-overflow stack-board-overflow--preview">+{overflowCount}</span>}
+                        <ToolLogo tool={tool} size={34} className="stack-board-logo-mark" />
+                        <button
+                          type="button"
+                          className="stack-board-remove"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            unpinTool(getToolKey(tool));
+                          }}
+                          aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
+                          title={t("Retirer de ma stack", "Remove from my stack") as string}
+                        >
+                          <X size={12} aria-hidden />
+                        </button>
+                      </span>
+                    ))}
+                    {overflowCount > 0 && <span className="stack-board-overflow stack-board-overflow--preview">+{overflowCount}</span>}
+                  </div>
                 </div>
 
                 <div className="stack-board-footer">
-                  <div className="stack-board-footer-copy">
-                    <h2>{t(board.labelFr, board.labelEn)}</h2>
-                    <p>
-                      {formatSubdomainCount(subdomainCount, lang)}
-                      <span aria-hidden="true"> · </span>
-                      {formatToolCount(board.tools.length, lang)}
-                    </p>
-                  </div>
+                  <span className="stack-board-explore">
+                    {t("Explorer", "Explore")}
+                  </span>
                   <button
                     type="button"
                     className="stack-board-add-link"
