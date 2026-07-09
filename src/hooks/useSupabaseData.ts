@@ -123,6 +123,7 @@ export type ToolSummary = Pick<
   | "defaultMonthlyPrice"
   | "affiliateLink"
   | "websiteUrl"
+  | "ogImageUrl"
   | "logo"
   | "covers"
   | "pros"
@@ -147,6 +148,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   defaultMonthlyPrice: Number(t.defaultMonthlyPrice ?? t.default_monthly_price ?? 0) || 0,
   affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
   websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
+  ogImageUrl: asLocalizedText(t.ogImageUrl || t.og_image_url, ""),
   logo: asLocalizedText(t.logo, ""),
   covers: t.covers || [],
   pros: t.pros || [],
@@ -345,7 +347,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -359,6 +361,7 @@ export function useToolSummaries() {
           pricing: t.pricing || { free: "", paid: "" },
           defaultMonthlyPrice: t.default_monthly_price || 0,
           affiliateLink: asLocalizedText(t.affiliate_link, ""),
+          ogImageUrl: asLocalizedText(t.og_image_url, ""),
           covers: t.covers || [],
           pros: t.pros || [],
           prosEn: t.pros_en || t.pros || null,

@@ -2,6 +2,8 @@ import { useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 import type { Tool } from "@/data/types";
 
+type ToolCardImageTool = Pick<Tool, "name"> & Partial<Pick<Tool, "id" | "slug" | "websiteUrl" | "affiliateLink" | "logo" | "ogImageUrl">>;
+
 /**
  * Shared cover-image panel for every tool card on the site (ToolCard,
  * ToolCardEditorial, homepage featured/AI carousels): OG image when the
@@ -9,7 +11,7 @@ import type { Tool } from "@/data/types";
  * so the shape stays identical whether or not a screenshot exists yet.
  */
 export default function ToolCardImage({ tool, logoSize = 40, className = "" }: {
-  tool: Tool;
+  tool: ToolCardImageTool;
   logoSize?: number;
   className?: string;
 }) {

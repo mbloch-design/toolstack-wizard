@@ -140,6 +140,7 @@ const toolSummaries = tools.map((tool) => ({
   defaultMonthlyPrice: tool.defaultMonthlyPrice || 0,
   affiliateLink: tool.affiliateLink || "",
   websiteUrl: tool.websiteUrl || tool.affiliateLink || "",
+  ogImageUrl: tool.ogImageUrl || "",
   logo: tool.logo || "",
   tool_type: tool.tool_type || "satellite",
   host_app: tool.host_app || null,

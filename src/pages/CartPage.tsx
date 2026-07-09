@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Plus, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Plus, Search, Trash2, X } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -47,6 +48,38 @@ type StackPricingSummary = {
 };
 
 type PickerFilterId = "recommended" | "objective" | "plugins" | "ai" | "budget";
+type PickerCandidate = {
+  categoryLabel: string;
+  boardScore: number;
+  score: number;
+  subdomainId?: string;
+  tool: ToolSummary;
+};
+
+type DesignPickerContext = {
+  activeSubdomainIds: Set<string>;
+  selectedBundleParentCounts: Map<string, number>;
+  selectedBundleParentKeys: Set<string>;
+  selectedFamilyKeys: Set<string>;
+  selectedNeedKeys: Set<string>;
+  selectedSubdomainCounts: Map<string, number>;
+  selectedToolKeys: Set<string>;
+  selectedToolCount: number;
+};
+
+type ObjectivePickerConfig = {
+  boardId: string;
+  categoryIds: string[];
+  coreSubdomainOrder: string[];
+  familyCap?: number;
+  minScore?: number;
+  pluginCap?: number;
+  signalKeys: string[];
+  starterToolIds: string[];
+  strictSignal?: boolean;
+  subdomainCap?: number;
+  supportSubdomainIds?: string[];
+};
 
 const PICKER_RESULT_BATCH = 8;
 const PICKER_FILTER_IDS: PickerFilterId[] = ["recommended", "objective", "plugins", "ai", "budget"];
@@ -61,7 +94,7 @@ const STACK_BOARDS: StackBoard[] = [
     id: "ia",
     labelFr: "IA",
     labelEn: "AI",
-    pattern: /\bia\b|ai|gpt|llm|claude|chatgpt|midjourney|generation|generative|assistant|prompt/i,
+    pattern: /\bia\b|\bai\b|gpt|llm|claude|chatgpt|midjourney|generation|generative|assistant|prompt/i,
   },
   {
     id: "organisation",
@@ -208,6 +241,266 @@ const STACK_SUBDOMAINS: StackSubdomain[] = [
     pattern: /project|projet|task|todo|kanban|note|doc|wiki|calendar|agenda|crm|client|workspace|collaboration/i,
   },
 ];
+
+const OBJECTIVE_STACK_SUBDOMAINS: Record<string, StackSubdomain[]> = {
+  ia: [
+    {
+      id: "ia-assistants",
+      labelFr: "Assistants et recherche",
+      labelEn: "Assistants and search",
+      descriptionFr: "Chat, recherche augmentée, analyse de documents et aide à la décision.",
+      descriptionEn: "Chat, augmented search, document analysis and decision support.",
+      order: 10,
+      pattern: /chatgpt|claude|perplexity|gemini|mistral|deepseek|assistant|generation-texte|analyse-documents|brainstorming|llm|prompt/i,
+    },
+    {
+      id: "ia-creative",
+      labelFr: "Création IA",
+      labelEn: "AI creation",
+      descriptionFr: "Images, vidéos, exploration visuelle, voix et accélération créative.",
+      descriptionEn: "Images, videos, visual exploration, voice and creative acceleration.",
+      order: 20,
+      pattern: /generation-image|generation-video|ai-image|midjourney|firefly|runway|ideogram|krea|leonardo|figma-weave|weavy|voice|audio-cleanup/i,
+    },
+    {
+      id: "ia-code",
+      labelFr: "Code et agents",
+      labelEn: "Code and agents",
+      descriptionFr: "Aide au développement, génération d'apps, agents et intégrations LLM.",
+      descriptionEn: "Development help, app generation, agents and LLM integrations.",
+      order: 30,
+      pattern: /coding|code|github-copilot|cursor|bolt|app-builder|ai-builder|integration-llm|agent/i,
+    },
+    {
+      id: "ia-meeting-data",
+      labelFr: "Réunions et données",
+      labelEn: "Meetings and data",
+      descriptionFr: "Transcription, synthèse, données vectorielles et recherche interne.",
+      descriptionEn: "Transcription, summaries, vector data and internal search.",
+      order: 40,
+      pattern: /transcription|meeting|otter|notebook|vector|pgvector|data|knowledge|search/i,
+    },
+  ],
+  organisation: [
+    {
+      id: "org-projects",
+      labelFr: "Projets et tâches",
+      labelEn: "Projects and tasks",
+      descriptionFr: "Pilotage, priorités, tâches, roadmap et suivi du travail.",
+      descriptionEn: "Planning, priorities, tasks, roadmap and work tracking.",
+      order: 10,
+      pattern: /project-management|task-management|kanban|roadmap|todo|asana|clickup|trello|monday|basecamp/i,
+    },
+    {
+      id: "org-docs",
+      labelFr: "Notes et documentation",
+      labelEn: "Notes and documentation",
+      descriptionFr: "Notes, wiki, documents, bases de connaissance et références.",
+      descriptionEn: "Notes, wiki, documents, knowledge bases and references.",
+      order: 20,
+      pattern: /notes|documentation|wiki|knowledge-base|productivity-docs|notion|coda|confluence|google-docs/i,
+    },
+    {
+      id: "org-files",
+      labelFr: "Fichiers et partage",
+      labelEn: "Files and sharing",
+      descriptionFr: "Stockage, partage, sauvegarde et accès aux fichiers.",
+      descriptionEn: "Storage, sharing, backup and file access.",
+      order: 30,
+      pattern: /storage|stockage|cloud-storage|drive|dropbox|box|fichiers|files/i,
+    },
+    {
+      id: "org-team",
+      labelFr: "Communication équipe",
+      labelEn: "Team communication",
+      descriptionFr: "Messagerie, réunions, calendrier et coordination quotidienne.",
+      descriptionEn: "Messaging, meetings, calendar and day-to-day coordination.",
+      order: 40,
+      pattern: /team-communication|meeting|calendar|slack|teams|chat|agenda|collaboration/i,
+    },
+  ],
+  automation: [
+    {
+      id: "auto-workflows",
+      labelFr: "Workflows",
+      labelEn: "Workflows",
+      descriptionFr: "Scénarios, déclencheurs, connexions entre outils et tâches répétitives.",
+      descriptionEn: "Scenarios, triggers, tool connections and repetitive tasks.",
+      order: 10,
+      pattern: /workflow|workflows|trigger|automation|automatisation|make|zapier|n8n|activepieces|connector/i,
+    },
+    {
+      id: "auto-apps",
+      labelFr: "Apps no-code",
+      labelEn: "No-code apps",
+      descriptionFr: "Création d'apps, portails, bases métier et interfaces internes.",
+      descriptionEn: "Apps, portals, business databases and internal interfaces.",
+      order: 20,
+      pattern: /no-code|nocode|app-builder|base44|bolt|bubble|softr|webflow|firebase/i,
+    },
+    {
+      id: "auto-data",
+      labelFr: "Données et API",
+      labelEn: "Data and APIs",
+      descriptionFr: "API, synchronisation, bases de données et enrichissement.",
+      descriptionEn: "APIs, sync, databases and enrichment.",
+      order: 30,
+      pattern: /api|integration|data|database|sync|airtable|supabase|firebase/i,
+    },
+  ],
+  marketing: [
+    {
+      id: "mkt-email",
+      labelFr: "Email et newsletter",
+      labelEn: "Email and newsletter",
+      descriptionFr: "Newsletters, automatisation email, nurturing et mesure email.",
+      descriptionEn: "Newsletters, email automation, nurturing and email measurement.",
+      order: 10,
+      pattern: /email-marketing|newsletter|automation-email|editeur-email|mailchimp|brevo|beehiiv|convertkit|getresponse/i,
+    },
+    {
+      id: "mkt-social-content",
+      labelFr: "Contenu et social",
+      labelEn: "Content and social",
+      descriptionFr: "Création de contenus, planification, réutilisation et réseaux sociaux.",
+      descriptionEn: "Content creation, scheduling, repurposing and social media.",
+      order: 20,
+      pattern: /content|contenu|social|planification-posts|buffer|metricool|later|canva|adcreative|castmagic/i,
+    },
+    {
+      id: "mkt-analytics",
+      labelFr: "Analytics et SEO",
+      labelEn: "Analytics and SEO",
+      descriptionFr: "Trafic, attribution, SEO, conversion et reporting.",
+      descriptionEn: "Traffic, attribution, SEO, conversion and reporting.",
+      order: 30,
+      pattern: /analytics|seo|web-analytics|conversion-tracking|campaign-measurement|posthog|hotjar|google-analytics|looker|semrush|ahrefs/i,
+    },
+    {
+      id: "mkt-crm",
+      labelFr: "CRM marketing",
+      labelEn: "Marketing CRM",
+      descriptionFr: "Audience, leads, segmentation et campagnes relationnelles.",
+      descriptionEn: "Audience, leads, segmentation and relationship campaigns.",
+      order: 40,
+      pattern: /crm-marketing|lead|audience|hubspot|activecampaign|campaign/i,
+    },
+  ],
+  vente: [
+    {
+      id: "sales-crm",
+      labelFr: "CRM et pipeline",
+      labelEn: "CRM and pipeline",
+      descriptionFr: "Contacts, opportunités, pipeline, suivi commercial et relances.",
+      descriptionEn: "Contacts, opportunities, pipeline, sales tracking and follow-ups.",
+      order: 10,
+      pattern: /crm|pipeline|client-management|hubspot|pipedrive|salesforce|close|folk|capsule/i,
+    },
+    {
+      id: "sales-prospecting",
+      labelFr: "Prospection",
+      labelEn: "Prospecting",
+      descriptionFr: "Leads, données, prospection sortante et intelligence commerciale.",
+      descriptionEn: "Leads, data, outbound and sales intelligence.",
+      order: 20,
+      pattern: /lead-generation|sales-intelligence|outbound|prospection|apollo|clearbit|cognism|data-enrichment/i,
+    },
+    {
+      id: "sales-meetings",
+      labelFr: "Rendez-vous et relation",
+      labelEn: "Meetings and relationship",
+      descriptionFr: "Prise de rendez-vous, appels, messagerie client et suivi relationnel.",
+      descriptionEn: "Booking, calls, client messaging and relationship follow-up.",
+      order: 30,
+      pattern: /booking|prise-rendez-vous|calendly|aircall|call-center|business-phone|front|intercom|communication/i,
+    },
+    {
+      id: "sales-checkout",
+      labelFr: "Paiement et checkout",
+      labelEn: "Payment and checkout",
+      descriptionFr: "Vente en ligne, paiement, panier, facturation et support marchand.",
+      descriptionEn: "Online sales, payment, cart, billing and merchant support.",
+      order: 40,
+      pattern: /payment|checkout|stripe|shopify|gumroad|paypal|gorgias|ecommerce/i,
+    },
+  ],
+  finance: [
+    {
+      id: "fin-accounting",
+      labelFr: "Compta et facturation",
+      labelEn: "Accounting and invoicing",
+      descriptionFr: "Factures, comptabilité, trésorerie, rapprochement et déclarations.",
+      descriptionEn: "Invoices, accounting, cash flow, reconciliation and filings.",
+      order: 10,
+      pattern: /accounting|invoice|facturation|freshbooks|quickbooks|pennylane|indy|stripe|paypal|bookkeeping/i,
+    },
+    {
+      id: "fin-expenses",
+      labelFr: "Dépenses et justificatifs",
+      labelEn: "Expenses and receipts",
+      descriptionFr: "Notes de frais, reçus, justificatifs et préparation comptable.",
+      descriptionEn: "Expenses, receipts, documents and bookkeeping prep.",
+      order: 20,
+      pattern: /expense|receipt|dext|expensify|coast|expense-documents|receipt-capture/i,
+    },
+    {
+      id: "fin-payroll",
+      labelFr: "Paie et contrats",
+      labelEn: "Payroll and contracts",
+      descriptionFr: "Paie, contrats, signatures, RH et conformité administrative.",
+      descriptionEn: "Payroll, contracts, signatures, HR and admin compliance.",
+      order: 30,
+      pattern: /payroll|hris|contract|legal-contracts|deel|gusto|docusign|adobe-acrobat-sign|contractor/i,
+    },
+    {
+      id: "fin-planning",
+      labelFr: "Budget et pilotage",
+      labelEn: "Budget and planning",
+      descriptionFr: "Budget, prévisionnel, reporting financier et pilotage.",
+      descriptionEn: "Budget, forecasts, financial reporting and planning.",
+      order: 40,
+      pattern: /budget|budgeting-fpa|fpa|forecast|anaplan|google-sheets|reporting/i,
+    },
+  ],
+  dev: [
+    {
+      id: "dev-code",
+      labelFr: "Code et dépôt",
+      labelEn: "Code and repository",
+      descriptionFr: "Code, versioning, revue, composants et collaboration dev.",
+      descriptionEn: "Code, versioning, review, components and dev collaboration.",
+      order: 10,
+      pattern: /code|github|git|versioning-code|code-review|react|ui-components|frontend-framework|cursor|copilot/i,
+    },
+    {
+      id: "dev-deploy",
+      labelFr: "Déploiement et hosting",
+      labelEn: "Deployment and hosting",
+      descriptionFr: "Déploiement, hébergement, CI/CD, backend et environnements.",
+      descriptionEn: "Deployment, hosting, CI/CD, backend and environments.",
+      order: 20,
+      pattern: /deploy|hosting|ci-cd|vercel|netlify|fly|digitalocean|firebase|docker|backend/i,
+    },
+    {
+      id: "dev-data",
+      labelFr: "Données et API",
+      labelEn: "Data and APIs",
+      descriptionFr: "Bases de données, API, auth, stockage et synchronisation.",
+      descriptionEn: "Databases, APIs, auth, storage and synchronization.",
+      order: 30,
+      pattern: /database|data|api|supabase|firebase|postgres|graphql|data-fetching|state-management/i,
+    },
+    {
+      id: "dev-monitoring",
+      labelFr: "Monitoring et sécurité",
+      labelEn: "Monitoring and security",
+      descriptionFr: "Observabilité, incidents, mots de passe, secrets et sécurité.",
+      descriptionEn: "Observability, incidents, passwords, secrets and security.",
+      order: 40,
+      pattern: /monitoring|observabilite|incident|security|securite|sentry|datadog|1password|bitwarden|dashlane/i,
+    },
+  ],
+};
 
 const CREATIVE_STACK_SUBDOMAINS: CreativeStackSubdomain[] = [
   {
@@ -356,6 +649,7 @@ const CREATIVE_STACK_SUBDOMAINS: CreativeStackSubdomain[] = [
 ];
 
 const DESIGN_PICKER_SUBDOMAIN_IDS = new Set([
+  "creative-brief-input",
   "creative-photo-retouch",
   "creative-motion-video",
   "creative-three-d",
@@ -365,7 +659,50 @@ const DESIGN_PICKER_SUBDOMAIN_IDS = new Set([
   "creative-visual-identity",
   "creative-ai-visual",
   "creative-plugins-resources",
+  "creative-review-delivery",
 ]);
+
+const DESIGN_PICKER_STARTER_TOOL_IDS = [
+  "figma",
+  "adobe-illustrator",
+  "adobe-photoshop",
+  "canva",
+  "adobe-lightroom",
+  "framer",
+  "midjourney",
+  "blender",
+  "adobe-premiere-pro",
+  "adobe-after-effects",
+  "capture-one",
+  "procreate",
+  "davinci-resolve",
+  "indesign",
+  "milanote",
+  "frame-io",
+];
+
+const DESIGN_PICKER_SUPPORT_SUBDOMAIN_IDS = new Set([
+  "creative-brief-input",
+  "creative-plugins-resources",
+  "creative-review-delivery",
+]);
+
+const DESIGN_PICKER_CORE_SUBDOMAIN_ORDER = [
+  "creative-ui-system",
+  "creative-photo-retouch",
+  "creative-motion-video",
+  "creative-visual-identity",
+  "creative-prototype-handoff",
+  "creative-three-d",
+  "creative-ai-visual",
+  "creative-audio",
+];
+
+const DESIGN_PICKER_CORE_SUBDOMAIN_IDS = new Set(DESIGN_PICKER_CORE_SUBDOMAIN_ORDER);
+
+const DESIGN_PICKER_FAMILY_CAP = 2;
+const DESIGN_PICKER_PLUGIN_CAP = 1;
+const DESIGN_PICKER_SUBDOMAIN_CAP = 1;
 
 const DESIGN_PICKER_CATEGORY_IDS = new Set([
   "creation",
@@ -452,6 +789,217 @@ const DESIGN_PICKER_SIGNAL_KEYS = new Set([
   "wireframing",
 ]);
 
+const OBJECTIVE_PICKER_CONFIGS: Record<string, ObjectivePickerConfig> = {
+  design: {
+    boardId: "design",
+    categoryIds: Array.from(DESIGN_PICKER_CATEGORY_IDS),
+    coreSubdomainOrder: DESIGN_PICKER_CORE_SUBDOMAIN_ORDER,
+    familyCap: DESIGN_PICKER_FAMILY_CAP,
+    pluginCap: DESIGN_PICKER_PLUGIN_CAP,
+    signalKeys: Array.from(DESIGN_PICKER_SIGNAL_KEYS),
+    starterToolIds: DESIGN_PICKER_STARTER_TOOL_IDS,
+    subdomainCap: DESIGN_PICKER_SUBDOMAIN_CAP,
+    supportSubdomainIds: Array.from(DESIGN_PICKER_SUPPORT_SUBDOMAIN_IDS),
+  },
+  ia: {
+    boardId: "ia",
+    categoryIds: ["ai-general"],
+    coreSubdomainOrder: ["ia-assistants", "ia-creative", "ia-code", "ia-meeting-data"],
+    signalKeys: [
+      "ai-builder",
+      "ai-generation",
+      "ai-general",
+      "analyse-documents",
+      "app-builder",
+      "audio-cleanup",
+      "brainstorming",
+      "chatbot",
+      "code",
+      "coding",
+      "generation-audio",
+      "generation-image",
+      "generation-texte",
+      "generation-video",
+      "ia",
+      "integration-llm",
+      "llm",
+      "no-code-ia",
+      "prompt",
+      "transcription",
+      "voice-enhancement",
+    ],
+    starterToolIds: [
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "gemini",
+      "deepseek",
+      "cursor",
+      "github-copilot",
+      "midjourney",
+      "firefly",
+      "runway",
+      "bolt-new",
+    ],
+    strictSignal: true,
+  },
+  organisation: {
+    boardId: "organisation",
+    categoryIds: ["project-management", "communication-team", "storage"],
+    coreSubdomainOrder: ["org-projects", "org-docs", "org-files", "org-team"],
+    signalKeys: [
+      "calendar",
+      "cloud-storage",
+      "collaboration",
+      "documentation",
+      "knowledge-base",
+      "notes",
+      "productivity-docs",
+      "project-management",
+      "stockage-fichiers",
+      "task-management",
+      "team-communication",
+      "time-tracking",
+      "wiki",
+      "workspace",
+    ],
+    starterToolIds: ["notion", "clickup", "asana", "monday", "airtable", "coda", "trello", "basecamp", "google-workspace", "microsoft-365", "slack", "google-drive", "dropbox"],
+    strictSignal: true,
+  },
+  automation: {
+    boardId: "automation",
+    categoryIds: ["automation"],
+    coreSubdomainOrder: ["auto-workflows", "auto-apps", "auto-data"],
+    signalKeys: [
+      "api",
+      "api-integration",
+      "app-builder",
+      "automation",
+      "automatisation",
+      "connectors",
+      "integration",
+      "integration-llm",
+      "no-code",
+      "no-code-ia",
+      "nocode",
+      "trigger",
+      "workflow",
+      "workflows",
+    ],
+    starterToolIds: ["make", "zapier", "n8n", "activepieces", "airtable", "base44", "bolt-new", "firebase", "bubble", "softr", "webflow"],
+    strictSignal: true,
+  },
+  marketing: {
+    boardId: "marketing",
+    categoryIds: ["email-productivity", "analytics", "marketing"],
+    coreSubdomainOrder: ["mkt-email", "mkt-social-content", "mkt-analytics", "mkt-crm"],
+    signalKeys: [
+      "ads",
+      "analytics",
+      "analytics-email",
+      "audience",
+      "brand-monitoring",
+      "campaign-measurement",
+      "content-repurposing",
+      "conversion-tracking",
+      "editeur-email",
+      "email-marketing",
+      "marketing-automation",
+      "newsletter",
+      "planification-posts",
+      "reporting-client",
+      "seo",
+      "social-media",
+      "social-publishing",
+      "web-analytics",
+    ],
+    starterToolIds: ["hubspot", "brevo", "mailchimp", "beehiiv", "buffer", "metricool", "google-analytics", "looker-studio", "semrush", "ahrefs", "hotjar", "posthog", "canva", "chatgpt"],
+    strictSignal: true,
+  },
+  vente: {
+    boardId: "vente",
+    categoryIds: ["communication"],
+    coreSubdomainOrder: ["sales-crm", "sales-prospecting", "sales-meetings", "sales-checkout"],
+    signalKeys: [
+      "booking",
+      "business-phone",
+      "call-center",
+      "client-management",
+      "crm",
+      "crm-calls",
+      "crm-marketing",
+      "data-enrichment",
+      "ecommerce",
+      "helpdesk",
+      "lead",
+      "lead-generation",
+      "outbound-email",
+      "payment",
+      "pipeline",
+      "prise-rendez-vous",
+      "prospection",
+      "sales-intelligence",
+    ],
+    starterToolIds: ["hubspot", "pipedrive", "salesforce", "close", "apollo-io", "folk", "calendly", "stripe", "shopify", "gorgias", "intercom", "aircall"],
+    strictSignal: true,
+  },
+  finance: {
+    boardId: "finance",
+    categoryIds: ["finance", "budgeting-fpa", "erp", "hris-payroll", "legal-contracts", "vendor-risk-data"],
+    coreSubdomainOrder: ["fin-accounting", "fin-expenses", "fin-payroll", "fin-planning"],
+    signalKeys: [
+      "accounting",
+      "accounting-automation",
+      "bookkeeping-prep",
+      "budgeting-fpa",
+      "contractor-management",
+      "expense-documents",
+      "expense-management",
+      "facturation",
+      "global-payroll",
+      "hris-sync",
+      "invoice",
+      "legal-contracts",
+      "payment",
+      "receipt-capture",
+      "tax-automation",
+    ],
+    starterToolIds: ["pennylane", "indy", "quickbooks", "freshbooks", "stripe", "paypal", "dext", "deel", "gusto", "anaplan", "google-sheets", "docusign"],
+    strictSignal: true,
+  },
+  dev: {
+    boardId: "dev",
+    categoryIds: ["security", "ui-components"],
+    coreSubdomainOrder: ["dev-code", "dev-deploy", "dev-data", "dev-monitoring"],
+    signalKeys: [
+      "ai-builder",
+      "api",
+      "app-builder",
+      "backend",
+      "build-tooling",
+      "ci-cd",
+      "code",
+      "code-review",
+      "coding",
+      "data-fetching",
+      "database",
+      "deploy",
+      "documentation",
+      "frontend-framework",
+      "hosting",
+      "integration-llm",
+      "monitoring",
+      "observabilite",
+      "security",
+      "state-management",
+      "ui-components",
+      "versioning-code",
+    ],
+    starterToolIds: ["github", "cursor", "github-copilot", "vercel", "netlify", "supabase", "firebase", "react", "next-js", "docker", "datadog", "sentry", "1password", "bitwarden"],
+    strictSignal: true,
+  },
+};
+
 const TOOL_TYPE_LABELS: Record<string, { fr: string; en: string }> = {
   ia: { fr: "IA", en: "AI" },
   metier: { fr: "Métier", en: "Core" },
@@ -533,6 +1081,26 @@ function getToolSignalKeys(tool: ToolSummary, categoryLabel: string) {
   ].map(normalizeKey).filter(Boolean));
 }
 
+function getToolFamilyKey(tool: ToolSummary) {
+  const key = normalizeKey(getToolKey(tool));
+  if (key.startsWith("adobe-") || ["indesign", "firefly"].includes(key)) return "adobe";
+  if (key.startsWith("figma")) return "figma";
+  if (key.startsWith("canva")) return "canva";
+  if (key.startsWith("affinity")) return "affinity";
+  if (key.startsWith("topaz")) return "topaz";
+  if (["davinci-resolve", "fusion"].includes(key)) return "blackmagic";
+  if (["cinema-4d", "redshift"].includes(key)) return "maxon";
+  if (["blender", "cycles"].includes(key)) return "blender";
+
+  return normalizeKey(
+    tool.bundle_parent ||
+    tool.host_app ||
+    tool.substitution_cluster_v2 ||
+    key.split("-")[0] ||
+    key
+  );
+}
+
 function matchesCreativeToolIds(tool: ToolSummary, subdomain: CreativeStackSubdomain) {
   if (!subdomain.toolIds?.length) return false;
   const toolKeys = getToolIdentityKeys(tool);
@@ -548,6 +1116,105 @@ function matchesCreativeSignals(tool: ToolSummary, categoryLabel: string, subdom
 function countMatchingSignals(tool: ToolSummary, categoryLabel: string, signalKeys: Set<string>) {
   const toolSignals = getToolSignalKeys(tool, categoryLabel);
   return Array.from(signalKeys).filter((key) => toolSignals.has(normalizeKey(key))).length;
+}
+
+function getCreativeSubdomainToolRank(tool: ToolSummary, subdomain: CreativeStackSubdomain | null) {
+  if (!subdomain?.toolIds?.length) return null;
+  const toolKeys = getToolIdentityKeys(tool);
+  const index = subdomain.toolIds.findIndex((id) => toolKeys.has(normalizeKey(id)));
+  return index === -1 ? null : index;
+}
+
+function getObjectivePickerConfig(boardId: string) {
+  return OBJECTIVE_PICKER_CONFIGS[boardId] || null;
+}
+
+function getObjectivePickerStarterRank(tool: ToolSummary, config: ObjectivePickerConfig) {
+  const toolKeys = getToolIdentityKeys(tool);
+  const index = config.starterToolIds.findIndex((id) => toolKeys.has(normalizeKey(id)));
+  return index === -1 ? null : index;
+}
+
+function canUseDesignSubdomainMatch(tool: ToolSummary, categoryLabel: string, subdomain: CreativeStackSubdomain) {
+  if (subdomain.id !== "creative-ai-visual") return true;
+  const signals = getToolSignalKeys(tool, categoryLabel);
+  const visualAiSignals = [
+    "ai-image",
+    "concept-art",
+    "direction-visuelle",
+    "generation-image",
+    "generation-video",
+    "motion-design",
+    "retouche-photo",
+    "video-post-production",
+  ];
+  return visualAiSignals.some((signal) => signals.has(normalizeKey(signal)));
+}
+
+function getDesignPickerSubdomain(tool: ToolSummary, categoryLabel: string) {
+  const exactMatch = CREATIVE_STACK_SUBDOMAINS.find((subdomain) =>
+    DESIGN_PICKER_SUBDOMAIN_IDS.has(subdomain.id) && matchesCreativeToolIds(tool, subdomain)
+  );
+  if (exactMatch) return exactMatch;
+
+  const signalMatch = CREATIVE_STACK_SUBDOMAINS.find((subdomain) =>
+    DESIGN_PICKER_SUBDOMAIN_IDS.has(subdomain.id) &&
+    canUseDesignSubdomainMatch(tool, categoryLabel, subdomain) &&
+    matchesCreativeSignals(tool, categoryLabel, subdomain)
+  );
+  if (signalMatch) return signalMatch;
+
+  return CREATIVE_STACK_SUBDOMAINS.find((subdomain) =>
+    DESIGN_PICKER_SUBDOMAIN_IDS.has(subdomain.id) &&
+    canUseDesignSubdomainMatch(tool, categoryLabel, subdomain) &&
+    !!subdomain.pattern?.test(toolSearchText(tool, categoryLabel))
+  ) || null;
+}
+
+function getObjectivePickerSubdomain(boardId: string, tool: ToolSummary, categoryLabel: string) {
+  if (boardId === "design") return getDesignPickerSubdomain(tool, categoryLabel);
+  return getSubdomainForBoardTool(boardId, tool, categoryLabel);
+}
+
+function buildObjectivePickerContext(boardId: string, boardTools: ToolSummary[], getCategoryLabel: (tool: ToolSummary) => string): DesignPickerContext {
+  const activeSubdomainIds = new Set<string>();
+  const selectedBundleParentCounts = new Map<string, number>();
+  const selectedBundleParentKeys = new Set<string>();
+  const selectedFamilyKeys = new Set<string>();
+  const selectedNeedKeys = new Set<string>();
+  const selectedSubdomainCounts = new Map<string, number>();
+  const selectedToolKeys = new Set<string>();
+
+  boardTools.forEach((tool) => {
+    getToolLookupKeys(tool).forEach((key) => selectedToolKeys.add(key));
+    selectedFamilyKeys.add(getToolFamilyKey(tool));
+    if (tool.bundle_parent) {
+      const parentKey = normalizeKey(tool.bundle_parent);
+      selectedBundleParentKeys.add(parentKey);
+      selectedBundleParentCounts.set(parentKey, (selectedBundleParentCounts.get(parentKey) || 0) + 1);
+    }
+    [...(tool.functional_needs || []), ...(tool.covers || [])].forEach((need) => {
+      const key = normalizeKey(need);
+      if (key) selectedNeedKeys.add(key);
+    });
+
+    const subdomain = getObjectivePickerSubdomain(boardId, tool, getCategoryLabel(tool));
+    if (subdomain) {
+      activeSubdomainIds.add(subdomain.id);
+      selectedSubdomainCounts.set(subdomain.id, (selectedSubdomainCounts.get(subdomain.id) || 0) + 1);
+    }
+  });
+
+  return {
+    activeSubdomainIds,
+    selectedBundleParentCounts,
+    selectedBundleParentKeys,
+    selectedFamilyKeys,
+    selectedNeedKeys,
+    selectedSubdomainCounts,
+    selectedToolKeys,
+    selectedToolCount: boardTools.length,
+  };
 }
 
 function getBoardForTool(tool: ToolSummary, categoryLabel: string) {
@@ -571,6 +1238,13 @@ function getSubdomainForTool(tool: ToolSummary, categoryLabel: string): StackSub
   };
 }
 
+function getObjectiveBoardSubdomain(boardId: string, tool: ToolSummary, categoryLabel: string) {
+  const subdomains = OBJECTIVE_STACK_SUBDOMAINS[boardId];
+  if (!subdomains?.length) return null;
+  const text = toolSearchText(tool, categoryLabel);
+  return subdomains.find((subdomain) => subdomain.pattern?.test(text)) || null;
+}
+
 function getCreativeSubdomainForTool(tool: ToolSummary, categoryLabel: string): StackSubdomain {
   const exactMatch = CREATIVE_STACK_SUBDOMAINS.find((subdomain) => matchesCreativeToolIds(tool, subdomain));
   if (exactMatch) return exactMatch;
@@ -592,6 +1266,8 @@ function getCreativeSubdomainForTool(tool: ToolSummary, categoryLabel: string): 
 
 function getSubdomainForBoardTool(boardId: string, tool: ToolSummary, categoryLabel: string): StackSubdomain {
   if (boardId === "design") return getCreativeSubdomainForTool(tool, categoryLabel);
+  const objectiveSubdomain = getObjectiveBoardSubdomain(boardId, tool, categoryLabel);
+  if (objectiveSubdomain) return objectiveSubdomain;
   return getSubdomainForTool(tool, categoryLabel);
 }
 
@@ -848,6 +1524,44 @@ function matchesPickerFilter(filterId: PickerFilterId, tool: ToolSummary, boardS
   return boardScore > 0;
 }
 
+function diversifyObjectivePickerCandidates(candidates: PickerCandidate[], filterId: PickerFilterId, hasQuery: boolean, config: ObjectivePickerConfig | null) {
+  if (filterId !== "recommended" || hasQuery) return candidates;
+
+  const result: PickerCandidate[] = [];
+  const picked = new Set<string>();
+  const familyCounts = new Map<string, number>();
+  let pluginCount = 0;
+  const subdomainCounts = new Map<string, number>();
+  const familyCap = config?.familyCap ?? 2;
+  const pluginCap = config?.pluginCap ?? 1;
+  const subdomainCap = config?.subdomainCap ?? 1;
+
+  const tryPick = (candidate: PickerCandidate, relaxed = false) => {
+    const toolKey = getToolKey(candidate.tool);
+    if (picked.has(toolKey)) return;
+
+    const family = getToolFamilyKey(candidate.tool);
+    const isPlugin = candidate.tool.tool_type === "plugin" || !!candidate.tool.host_app;
+    const subdomain = candidate.subdomainId || "autres";
+    const familyCount = familyCounts.get(family) || 0;
+    const subdomainCount = subdomainCounts.get(subdomain) || 0;
+
+    if (!relaxed && isPlugin && pluginCount >= pluginCap) return;
+    if (!relaxed && (familyCount >= familyCap || subdomainCount >= subdomainCap)) return;
+
+    picked.add(toolKey);
+    result.push(candidate);
+    if (isPlugin) pluginCount += 1;
+    familyCounts.set(family, familyCount + 1);
+    subdomainCounts.set(subdomain, subdomainCount + 1);
+  };
+
+  candidates.forEach((candidate) => tryPick(candidate));
+  candidates.forEach((candidate) => tryPick(candidate, true));
+
+  return result;
+}
+
 function getSubdomainSectionClassName(group: StackSubdomainGroup) {
   return [
     "stack-subdomain-section",
@@ -866,25 +1580,158 @@ function getToolPickerScore(tool: ToolSummary) {
   return qualityScore + typeScore + Math.min(signalScore, 10);
 }
 
-function getDesignPickerScore(tool: ToolSummary, categoryLabel: string) {
-  const toolKeys = getToolIdentityKeys(tool);
-  const exactSubdomain = CREATIVE_STACK_SUBDOMAINS.find((subdomain) =>
-    DESIGN_PICKER_SUBDOMAIN_IDS.has(subdomain.id) &&
-    subdomain.toolIds?.some((id) => toolKeys.has(normalizeKey(id)))
+function contextHasRelatedToolKey(context: DesignPickerContext, relationValue = "") {
+  const relationKey = normalizeKey(relationValue);
+  if (!relationKey) return false;
+  return Array.from(context.selectedToolKeys).some((toolKey) =>
+    toolKey === relationKey ||
+    toolKey.endsWith(`-${relationKey}`) ||
+    toolKey.replace(/^[^-]+-/, "") === relationKey
   );
-  const categoryMatch = DESIGN_PICKER_CATEGORY_IDS.has(normalizeKey(tool.categoryId));
-  const signalMatches = countMatchingSignals(tool, categoryLabel, DESIGN_PICKER_SIGNAL_KEYS);
-
-  if (!exactSubdomain && !categoryMatch && signalMatches === 0) return 0;
-
-  const exactScore = exactSubdomain ? 90 : 0;
-  const categoryScore = categoryMatch ? 28 : 0;
-  const signalScore = Math.min(signalMatches, 4) * 8;
-  return exactScore + categoryScore + signalScore + getToolPickerScore(tool);
 }
 
-function getToolPickerBoardScore(tool: ToolSummary, board: StackBoard, categoryLabel: string) {
-  if (board.id === "design") return getDesignPickerScore(tool, categoryLabel);
+function isPluginRelatedToSelection(tool: ToolSummary, context: DesignPickerContext) {
+  return contextHasRelatedToolKey(context, tool.host_app || "");
+}
+
+function isBundleRelatedToSelection(tool: ToolSummary, context: DesignPickerContext) {
+  const toolKeys = getToolLookupKeys(tool);
+  const parentKey = normalizeKey(tool.bundle_parent || "");
+  return (
+    (!!parentKey && contextHasRelatedToolKey(context, parentKey)) ||
+    toolKeys.some((key) => context.selectedBundleParentKeys.has(key))
+  );
+}
+
+function getBundleRelationScore(tool: ToolSummary, context: DesignPickerContext) {
+  const parentKey = normalizeKey(tool.bundle_parent || "");
+  const selectedSiblingCount = parentKey ? context.selectedBundleParentCounts.get(parentKey) || 0 : 0;
+  if (parentKey && contextHasRelatedToolKey(context, parentKey)) return 54;
+  if (selectedSiblingCount >= 2) return 48;
+  if (selectedSiblingCount === 1) return 18;
+
+  const selectedChildCount = getToolLookupKeys(tool)
+    .map((key) => context.selectedBundleParentCounts.get(key) || 0)
+    .reduce((max, count) => Math.max(max, count), 0);
+
+  if (selectedChildCount >= 2) return 76;
+  if (selectedChildCount === 1) return 22;
+  return 0;
+}
+
+function getSharedNeedCount(tool: ToolSummary, context: DesignPickerContext) {
+  return [...(tool.functional_needs || []), ...(tool.covers || [])]
+    .map(normalizeKey)
+    .filter((key) => key && context.selectedNeedKeys.has(key))
+    .length;
+}
+
+function getObjectivePickerCoverageScore(subdomain: StackSubdomain | null, context: DesignPickerContext, config: ObjectivePickerConfig) {
+  if (!subdomain) return 0;
+
+  const supportSubdomainIds = new Set((config.supportSubdomainIds || []).map(normalizeKey));
+  const coreSubdomainOrder = config.coreSubdomainOrder.map(normalizeKey);
+  const coreSubdomainIds = new Set(coreSubdomainOrder);
+  const subdomainId = normalizeKey(subdomain.id);
+  const selectedCount = context.selectedSubdomainCounts.get(subdomain.id) || 0;
+  if (selectedCount > 0) {
+    if (supportSubdomainIds.has(subdomainId)) return 4;
+    return selectedCount === 1 ? 24 : 10;
+  }
+
+  if (!coreSubdomainIds.has(subdomainId)) {
+    return supportSubdomainIds.has(subdomainId) ? 4 : 0;
+  }
+
+  const orderIndex = coreSubdomainOrder.indexOf(subdomainId);
+  return Math.max(12, 38 - Math.max(0, orderIndex) * 3);
+}
+
+function getObjectivePickerScore(tool: ToolSummary, board: StackBoard, categoryLabel: string, context: DesignPickerContext, config: ObjectivePickerConfig) {
+  const subdomain = getObjectivePickerSubdomain(board.id, tool, categoryLabel);
+  const subdomainRank = board.id === "design" ? getCreativeSubdomainToolRank(tool, subdomain as CreativeStackSubdomain | null) : null;
+  const starterRank = getObjectivePickerStarterRank(tool, config);
+  const categoryMatch = config.categoryIds.map(normalizeKey).includes(normalizeKey(tool.categoryId));
+  const signalMatches = countMatchingSignals(tool, categoryLabel, new Set(config.signalKeys.map(normalizeKey)));
+  const sharedNeedCount = getSharedNeedCount(tool, context);
+  const pluginRelated = isPluginRelatedToSelection(tool, context);
+  const bundleRelationScore = getBundleRelationScore(tool, context);
+  const bundleRelated = bundleRelationScore > 0 || isBundleRelatedToSelection(tool, context);
+  const sameFamily = context.selectedFamilyKeys.has(getToolFamilyKey(tool));
+  const hasSelectedObjectiveTools = context.selectedToolCount > 0;
+  const selectedSubdomainCount = subdomain ? context.selectedSubdomainCounts.get(subdomain.id) || 0 : 0;
+  const isPlugin = tool.tool_type === "plugin" || !!tool.host_app;
+  const isPrimaryTool = tool.tool_type === "metier" || tool.tool_type === "ia" || starterRank != null;
+  const supportSubdomainIds = new Set((config.supportSubdomainIds || []).map(normalizeKey));
+  const subdomainId = normalizeKey(subdomain?.id);
+  const boardMatch = getBoardForTool(tool, categoryLabel).id === board.id;
+  const canUseBundleAsObjectiveSignal = board.id === "design" || boardMatch || categoryMatch || signalMatches > 0 || starterRank != null;
+  const canUseSharedNeedsAsObjectiveSignal = board.id === "design" ? boardMatch || !!subdomain || sameFamily : boardMatch || !!subdomain;
+  const hasCatalogObjectiveSignal = starterRank != null ||
+    categoryMatch ||
+    signalMatches > 0 ||
+    pluginRelated ||
+    (bundleRelated && canUseBundleAsObjectiveSignal);
+  const hasContextObjectiveSignal = sharedNeedCount > 0 && canUseSharedNeedsAsObjectiveSignal;
+  const hasStrongObjectiveSignal = hasCatalogObjectiveSignal || hasContextObjectiveSignal;
+  const canUseSubdomainScore = board.id === "design" || hasStrongObjectiveSignal;
+
+  if (config.strictSignal && !hasStrongObjectiveSignal) {
+    return 0;
+  }
+
+  if (board.id === "ia" && tool.tool_type !== "ia" && starterRank == null && !categoryMatch && signalMatches === 0 && !pluginRelated) {
+    return 0;
+  }
+
+  if (!boardMatch && !hasStrongObjectiveSignal) {
+    return 0;
+  }
+
+  let score = getToolPickerScore(tool);
+
+  if (boardMatch) score += hasStrongObjectiveSignal ? 28 : 18;
+  if (starterRank != null) score += Math.max(36, 92 - starterRank * 4);
+  if (subdomain) {
+    const isTopSubdomainTool = subdomainRank != null && subdomainRank <= 10;
+    score += subdomainRank == null ? canUseSubdomainScore ? 34 : 0 : Math.max(16, 68 - subdomainRank * 3);
+    if (context.activeSubdomainIds.has(subdomain.id)) {
+      const activeSubdomainBoost = isPlugin ? 20 : 54;
+      score += (isTopSubdomainTool || starterRank != null || bundleRelated || sharedNeedCount > 0)
+        ? activeSubdomainBoost
+        : isPlugin ? 8 : 24;
+    }
+    else if (!hasSelectedObjectiveTools) score += supportSubdomainIds.has(subdomainId) ? 8 : 26;
+    else if (supportSubdomainIds.has(subdomainId)) score += 18;
+    else score += getObjectivePickerCoverageScore(subdomain, context, config);
+  }
+  if (signalMatches > 0) score += Math.min(32, signalMatches * 8);
+  if (sharedNeedCount > 0) score += Math.min(42, sharedNeedCount * 14);
+  if (categoryMatch) score += 12;
+  if (isPrimaryTool && subdomain) score += getObjectivePickerCoverageScore(subdomain, context, config);
+  if (pluginRelated) score += 42;
+  if (isPlugin && pluginRelated && sharedNeedCount > 0) score += 10;
+  score += bundleRelationScore;
+  if (sameFamily && hasSelectedObjectiveTools) score += 16;
+
+  const price = getToolPrice(tool);
+  if (isPlugin && !pluginRelated && !supportSubdomainIds.has(subdomainId)) score -= 58;
+  if (isPlugin && selectedSubdomainCount > 0) score -= 18;
+  if (isPlugin && starterRank == null && !hasSelectedObjectiveTools) score -= 18;
+  if (tool.tool_type === "satellite" && starterRank == null && !pluginRelated && !bundleRelated && signalMatches < 2) score -= 24;
+  if (subdomain && supportSubdomainIds.has(subdomainId) && !hasSelectedObjectiveTools && starterRank == null) score -= 20;
+  if (!subdomain && !pluginRelated && !bundleRelated && starterRank == null) score -= 30;
+  if (price >= 80 && starterRank == null && bundleRelationScore < 76) score -= 34;
+  else if (price >= 40 && starterRank == null && bundleRelationScore < 76) score -= pluginRelated ? 32 : 22;
+
+  return score >= (config.minScore || 42) ? score : 0;
+}
+
+function getToolPickerBoardScore(tool: ToolSummary, board: StackBoard, categoryLabel: string, objectiveContext?: DesignPickerContext) {
+  const config = getObjectivePickerConfig(board.id);
+  if (config && objectiveContext) {
+    return getObjectivePickerScore(tool, board, categoryLabel, objectiveContext, config);
+  }
   if (getBoardForTool(tool, categoryLabel).id !== board.id) return 0;
   return 40 + getToolPickerScore(tool);
 }
@@ -994,22 +1841,30 @@ const CartPage = () => {
 
   const pickerQueryTokens = useMemo(() => getPickerQueryTokens(pickerQuery), [pickerQuery]);
   const hasPickerQuery = pickerQueryTokens.length > 0;
+  const pickerObjectiveConfig = pickerBoard ? getObjectivePickerConfig(pickerBoard.id) : null;
+  const pickerObjectiveContext = useMemo(() => {
+    if (!pickerBoard) return undefined;
+    const boardTools = boards.find((board) => board.id === pickerBoard.id)?.tools || [];
+    return buildObjectivePickerContext(pickerBoard.id, boardTools, getCategoryLabel);
+  }, [boards, categoryById, lang, pickerBoard?.id]);
 
   const pickerCandidates = useMemo(() => {
     if (!pickerBoard) return [] as ToolSummary[];
 
-    return tools
+    const candidates = tools
       .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
       .map((tool) => {
         const categoryLabel = getCategoryLabel(tool);
-        const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel);
+        const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel, pickerObjectiveContext);
         const searchScore = getPickerSearchScore(tool, categoryLabel, pickerQueryTokens);
+        const subdomain = getObjectivePickerSubdomain(pickerBoard.id, tool, categoryLabel);
         return {
           categoryLabel,
           boardScore,
           score: (boardScore * (hasPickerQuery ? 2 : 1)) + searchScore + getToolPickerScore(tool),
+          subdomainId: subdomain?.id,
           tool,
-        };
+        } satisfies PickerCandidate;
       })
       .filter((candidate) => {
         if (hasPickerQuery) {
@@ -1022,10 +1877,12 @@ const CartPage = () => {
         b.score - a.score ||
         b.boardScore - a.boardScore ||
         a.tool.name.localeCompare(b.tool.name)
-      )
+      );
+
+    return diversifyObjectivePickerCandidates(candidates, pickerFilter, hasPickerQuery, pickerObjectiveConfig)
       .map((candidate) => candidate.tool)
       .slice(0, hasPickerQuery ? 48 : pickerFilter === "recommended" ? 24 : 40);
-  }, [categoryById, hasPickerQuery, lang, pickerBoard, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
+  }, [categoryById, hasPickerQuery, lang, pickerBoard, pickerObjectiveConfig, pickerObjectiveContext, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
 
   const visiblePickerCandidates = pickerCandidates.slice(0, pickerResultLimit);
   const hasMorePickerCandidates = pickerCandidates.length > visiblePickerCandidates.length;
@@ -1038,11 +1895,11 @@ const CartPage = () => {
         .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
         .some((tool) => {
           const categoryLabel = getCategoryLabel(tool);
-          const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel);
+          const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel, pickerObjectiveContext);
           return matchesPickerFilter(filterId, tool, boardScore, categoryLabel);
         });
     });
-  }, [categoryById, lang, pickerBoard, pinnedToolSlugSet, tools]);
+  }, [categoryById, lang, pickerBoard, pickerObjectiveContext, pinnedToolSlugSet, tools]);
 
   useEffect(() => {
     setPickerResultLimit(PICKER_RESULT_BATCH);
@@ -1208,57 +2065,6 @@ const CartPage = () => {
 
       {zoomedBoard ? (
         <main className="stack-objective-detail" aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
-          {zoomedPricing.bundleLines.length > 0 && (
-            <section className="stack-bundle-board-grid" aria-label={t("Suites de cette stack", "Suites in this stack") as string}>
-              {zoomedPricing.bundleLines.map((line) => {
-                const parentSelected = line.tools.some((tool) => isSameTool(tool, line.parent));
-                const visibleBundleTools = line.tools
-                  .filter((tool) => !isSameTool(tool, line.parent))
-                  .slice(0, 4);
-                const representedTools = visibleBundleTools.length + (parentSelected ? 1 : 0);
-                const overflowCount = Math.max(0, line.tools.length - representedTools);
-
-                return (
-                  <article key={line.id} className="stack-board-card stack-bundle-board-card">
-                    <div
-                      className="stack-bundle-preview"
-                      role="list"
-                      aria-label={t(`Outils regroupés dans ${line.parent.name}`, `Tools grouped in ${line.parent.name}`) as string}
-                    >
-                      <span className="stack-bundle-preview-logo stack-bundle-preview-logo--main" role="listitem">
-                        <ToolLogo tool={line.parent} size={64} className="stack-board-logo-mark" />
-                      </span>
-
-                      {visibleBundleTools.map((tool, index) => (
-                        <span
-                          key={getToolKey(tool)}
-                          className={`stack-bundle-preview-logo stack-bundle-preview-logo--${index + 1}`}
-                          role="listitem"
-                        >
-                          <ToolLogo tool={tool} size={38} className="stack-board-logo-mark" />
-                        </span>
-                      ))}
-
-                      {overflowCount > 0 && <span className="stack-board-overflow stack-bundle-overflow">+{overflowCount}</span>}
-                    </div>
-
-                    <div className="stack-board-footer stack-bundle-footer">
-                      <div>
-                        <h2>{line.parent.name}</h2>
-                        <p>
-                          {lang === "en"
-                            ? `${formatToolCount(line.tools.length, lang)} grouped`
-                            : `${formatToolCount(line.tools.length, lang)} regroupé${line.tools.length > 1 ? "s" : ""}`}
-                        </p>
-                      </div>
-                      <span>{formatMonthlyPrice(line.bundleTotal, lang)}</span>
-                    </div>
-                  </article>
-                );
-              })}
-            </section>
-          )}
-
           <div className="stack-subdomain-grid">
             {zoomedSubdomains.map((group) => (
               <section key={group.id} className={getSubdomainSectionClassName(group)}>
@@ -1298,10 +2104,13 @@ const CartPage = () => {
                               aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
                               title={t("Retirer de ma stack", "Remove from my stack") as string}
                             >
-                              <X size={15} aria-hidden />
+                              <Trash2 size={14} aria-hidden />
+                              <span>{t("Retirer", "Remove")}</span>
                             </button>
                           </div>
                         </div>
+
+                        <ToolCardImage tool={tool} logoSize={52} className="stack-detail-tool-image" />
 
                         {description && <p className="stack-detail-tool-desc">{description}</p>}
 
