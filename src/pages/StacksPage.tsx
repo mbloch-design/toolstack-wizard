@@ -64,15 +64,6 @@ const FEATURED_STACK_SLUGS = [
   "startup-saas",
 ];
 
-const PROFILE_RECOMMENDED_STACKS = [
-  { persona: "content" as StackPersona, slug: "createur-contenu-operateur" },
-  { persona: "designer" as StackPersona, slug: "designer-freelance-solo" },
-  { persona: "dev" as StackPersona, slug: "developpeur-freelance-shipper" },
-  { persona: "consultant" as StackPersona, slug: "consultant-b2b-propre" },
-  { persona: "ops" as StackPersona, slug: "ops-manager-fractional-coo" },
-  { persona: "solo" as StackPersona, slug: "freelance-solo-zero-bloat" },
-] as const;
-
 const PROFILE_OPTIONS: Option<StackFacetProfile>[] = [
   { id: "all", label: "Tous", labelEn: "All" },
   ...STACK_PERSONAS.filter((item): item is { value: StackPersona; label: string; labelEn: string } => item.value !== "all")
@@ -675,10 +666,6 @@ const StacksPage = () => {
     query.trim() ? { id: "q", label: query.trim(), clear: () => setQuery("") } : null,
   ].filter((chip): chip is { id: string; label: string; clear: () => void } => Boolean(chip));
 
-  const profileRecommendedStacks = PROFILE_RECOMMENDED_STACKS
-    .map(({ persona, slug }) => ({ persona, stack: STACKS.find((s) => s.slug === slug) }))
-    .filter((item): item is { persona: StackPersona; stack: StackListItem } => Boolean(item.stack));
-
   useEffect(() => {
     const title = lang === "fr"
       ? "Stacks SaaS freelance calibrées par profil, budget et niveau | ToolTrim"
@@ -730,26 +717,6 @@ const StacksPage = () => {
                 )}
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="profils" className="sk-section sk-profiles-section scroll-mt-20">
-        <div className="sk-container">
-          <span className="sk-section-eyebrow">{t("RECOMMANDÉES PAR PROFIL", "RECOMMENDED BY PROFILE")}</span>
-          <p className="sk-section-title">{t("Commence par le métier, affine par le contexte.", "Start with the role, refine by context.")}</p>
-          <div className="sk-profiles-grid">
-            {profileRecommendedStacks.map(({ persona, stack }) => {
-              const title = lang === "fr" ? stack.title : stack.titleEn;
-              const bestFor = lang === "fr" ? stack.bestFor : stack.bestForEn;
-              return (
-                <Link key={persona} to={`${prefix}/stacks/${stack.slug}`} className="sk-profile-card">
-                  <p className="sk-profile-name">{personaLabel(persona, lang)}</p>
-                  <p className="sk-profile-desc">{bestFor}</p>
-                  <p className="sk-profile-meta"><span>{title}</span><span aria-hidden>→</span></p>
-                </Link>
-              );
-            })}
           </div>
         </div>
       </section>
