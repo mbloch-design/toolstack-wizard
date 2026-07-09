@@ -7539,6 +7539,7 @@
     flex-wrap: wrap;
   }
   .sk-mobile-trigger {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -7557,6 +7558,13 @@
   }
   .sk-mobile-trigger:hover { border-color: var(--color-text); }
   .sk-mobile-trigger:focus-visible { outline: 2px solid var(--color-border-strong); outline-offset: 2px; }
+  /* Invisible 44px touch target (WCAG 2.5.5) without changing the visible
+     38px height, which matches the row's other filter pills/select. */
+  .sk-mobile-trigger::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+  }
 
   /* ── Search input ────────────────────────────────────── */
   .sk-search-input {

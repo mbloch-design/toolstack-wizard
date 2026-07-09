@@ -73,7 +73,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       {/* ── Body: sidebar + content ── */}
       <div className="asv2-body">
         <aside className="asv2-sidebar">
-          <nav className="asv2-nav">
+          <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
             {NAV_ITEMS.map((item) => {
               const isActive = item.id === "home"
                 ? relPath === ""
@@ -94,10 +94,10 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </nav>
         </aside>
 
-        <div id="main-content" className="asv2-content">
+        <main id="main-content" className="asv2-content">
           {children}
           <Footer />
-        </div>
+        </main>
       </div>
 
       {/* ── Mobile bottom navigation (hidden on desktop via CSS) ──
