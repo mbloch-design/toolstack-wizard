@@ -14,7 +14,7 @@ import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/
  * (cards, icons, colored panels) is replaced with prose typography.
  */
 const MethodologyPage = () => {
-  const { t, prefix, lang } = useLang();
+  const { t, lang } = useLang();
   const { tools } = useToolSummaries();
 
   const stats = useMemo(() => {
@@ -227,16 +227,6 @@ const MethodologyPage = () => {
               )}
             </p>
           </section>
-
-          {/* ── Clôture ── */}
-          <div className="ab-cta">
-            <Link to={`${prefix}/selector`} className="tt-button-primary">
-              {t("Lancer mon analyse →", "Start my analysis →")}
-            </Link>
-            <span className="ab-cta-secondary" style={{ pointerEvents: "none" }}>
-              {t("3 minutes · gratuit · sans inscription", "3 minutes · free · no signup")}
-            </span>
-          </div>
 
         </div>
       </article>

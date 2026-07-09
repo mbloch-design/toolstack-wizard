@@ -317,21 +317,6 @@ export default function ArticleFacturation() {
           </ul>
         </section>
 
-        {/* CTA */}
-        <section className="mt-14 rounded-xl border border-primary/30 bg-primary/5 p-8 text-center">
-          <h2 className="text-2xl font-extrabold text-foreground">Votre stack compta est-elle optimisée ?</h2>
-          <p className="mt-3 text-muted-foreground">
-            Selon les audits tooltrim.com, 30% des freelances paient deux outils qui font la même chose. Vérifiez en 5 minutes.
-          </p>
-          <Link
-            to="/fr/selector"
-            className="mt-6 inline-block rounded-lg bg-primary px-6 py-3 font-bold text-primary-foreground hover:opacity-90 transition"
-          >
-            Lancer mon diagnostic gratuit
-          </Link>
-          <p className="mt-3 text-sm text-muted-foreground">Aucune inscription requise.</p>
-        </section>
-
         <p className="mt-10 text-sm text-muted-foreground">
           Publié le 8 mai 2026 — Sources : economie.gouv.fr, Cegid, portail-autoentrepreneur.fr
         </p>

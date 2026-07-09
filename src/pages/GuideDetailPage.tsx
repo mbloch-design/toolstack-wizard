@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePostBySlug, usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
-import { ArrowRight, Clock, Check, Link2, ChevronUp } from "lucide-react";
+import { Clock, Check, Link2, ChevronUp } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -481,27 +481,6 @@ const GuideDetailPage = () => {
               </p>
             </div>
           </aside>
-        </div>
-      </div>
-
-      {/* ══ 3. CTA Band ═════════════════════════════════════════════════════ */}
-      <div className="ga-cta-band">
-        <div className="ga-cta-inner">
-          <div>
-            <p className="ga-cta-title">
-              {t("Construire une stack plus légère.", "Build a leaner stack.")}
-            </p>
-            <p className="ga-cta-text">
-              {t(
-                "Analyse tes outils actuels et repère les doublons, alternatives et abonnements à challenger.",
-                "Analyze your current tools and spot duplicates, alternatives and subscriptions worth challenging.",
-              )}
-            </p>
-          </div>
-          <Link to={`${prefix}/selector`} className="ga-cta-btn">
-            {t("Analyser ma stack", "Analyze my stack")}
-            <ArrowRight style={{ width: 16, height: 16 }} />
-          </Link>
         </div>
       </div>
 

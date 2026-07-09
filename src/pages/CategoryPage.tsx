@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import { Search, ExternalLink, ChevronDown, ArrowRight, X, TrendingDown, Sparkles } from "lucide-react";
+import { Search, ExternalLink, ChevronDown, X, TrendingDown, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
@@ -387,26 +387,6 @@ const CategoryPage = () => {
                 {t("Réinitialiser", "Reset")}
               </button>
             )}
-
-            {/* ── CTA — ToolsPage style, no border card ── */}
-            <div className="border-t border-border pt-5">
-              <p className="text-sm font-semibold leading-snug text-foreground">
-                {t("Votre stack coûte combien ?", "How much is your stack?")}
-              </p>
-              <p className="mt-1 text-xs leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Calculez ce que vous payez vraiment.", "Calculate what you're actually paying.")}
-              </p>
-              <Link
-                to={`${prefix}/selector`}
-                className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition-colors"
-                style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
-              >
-                {t("Calculer mon stack", "Calculate my stack")}
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
           </aside>
 
           {/* ══════════════ TOOL LIST ══════════════ */}

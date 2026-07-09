@@ -1100,31 +1100,6 @@ const StackDetailPage = () => {
       )}
 
       {/* ════════════════════════════════════════════════════════════════════
-          CTA BAND
-      ════════════════════════════════════════════════════════════════════ */}
-      <div className="sd-cta-band">
-        <div className="sd-cta-inner">
-          <span className="tt-kicker" style={{ color: "var(--color-muted)", marginBottom: 12 }}>
-            {t("Diagnostic", "Diagnostic")}
-          </span>
-          <h2 className="tt-cta-title">
-            {t(editorial.ctaTitle, editorial.ctaTitleEn)}
-          </h2>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5, color: "var(--color-muted)", maxWidth: 540, marginBottom: 32, letterSpacing: "-0.015em" }}>
-            {t(editorial.ctaDesc, editorial.ctaDescEn)}
-          </p>
-          <Link
-            to={`${prefix}/selector`}
-            style={{ display: "inline-flex", alignItems: "center", height: 48, padding: "0 22px", background: "var(--color-text)", color: "var(--color-surface)", borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", textDecoration: "none", transition: "background 160ms ease-out" }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
-          >
-            {t("Analyser ma stack", "Analyze my stack")}
-          </Link>
-        </div>
-      </div>
-
-      {/* ════════════════════════════════════════════════════════════════════
           FAQ
       ════════════════════════════════════════════════════════════════════ */}
       {editorial.faq.length > 0 && (

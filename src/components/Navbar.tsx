@@ -82,7 +82,6 @@ const SECTIONS: Section[] = [
           { fr: "Comparer deux outils", en: "Compare two tools", path: "/comparatifs" },
           { fr: "Trouver une alternative", en: "Find an alternative", path: "/comparatifs" },
           { fr: "Construire une stack", en: "Build a stack", path: "/stacks" },
-          { fr: "Analyser ma stack", en: "Analyze my stack", path: "/selector" },
         ],
       },
     ],

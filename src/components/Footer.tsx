@@ -46,7 +46,6 @@ const Footer = () => {
 
             <nav aria-label={t("Produit", "Product")} className="tt-footer-col">
               <span className="tt-footer-col-label">{t("Produit", "Product")}</span>
-              <Link to={`${prefix}/selector`}>{t("Audit de stack", "Stack audit")}</Link>
               <Link to={`${prefix}/tools`}>{t("Catalogue", "Catalog")}</Link>
               <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
               <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>

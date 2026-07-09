@@ -2392,12 +2392,6 @@ const ComparePage = () => {
             </div>
           )}
 
-          {/* CTA */}
-          <div className="cp-tipping-cta">
-            <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-secondary">
-              {t("Vérifier ma stack →", "Check my stack →")}
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -2684,28 +2678,6 @@ const ComparePage = () => {
           </div>
         </section>
       )}
-
-      {/* ── CTA diagnostic ─────────────────────────────────────────────────── */}
-      <div className="cp-cta-band">
-        <div className="cp-container">
-          <span className="cp-eyebrow">{t("Diagnostic", "Diagnostic")}</span>
-          <h2 className="tt-cta-title">
-            {t(
-              `${toolA.name} ou ${toolB.name} sont déjà dans ta stack ?`,
-              `${toolA.name} or ${toolB.name} already in your stack?`,
-            )}
-          </h2>
-          <p className="cp-cta-band-desc">
-            {t(
-              "Vérifie si plusieurs outils de ta stack font le même travail.",
-              "Check if multiple tools in your stack do the same job.",
-            )}
-          </p>
-          <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-primary">
-            {t("Analyser ma stack →", "Analyze my stack →")}
-          </Link>
-        </div>
-      </div>
 
       {/* ── Methodology footnote ───────────────────────────────────────────── */}
       <div className="cp-methodology-note">

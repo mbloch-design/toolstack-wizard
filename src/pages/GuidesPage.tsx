@@ -395,29 +395,6 @@ const GuidesPage = () => {
         </div>
       </div>
 
-      {/* ══ 6. CTA band ══════════════════════════════════════════════════════ */}
-      <div className="gi-cta-band">
-        <div className="gi-container">
-          <div className="gi-cta-band-inner">
-            <div>
-              <p className="gi-cta-band-title">
-                {t("Construire une stack plus légère.", "Build a leaner stack.")}
-              </p>
-              <p className="gi-cta-band-text">
-                {t(
-                  "Analyse tes outils actuels et repère les doublons, alternatives et abonnements à challenger.",
-                  "Analyze your current tools and spot duplicates, alternatives and subscriptions worth challenging.",
-                )}
-              </p>
-            </div>
-            <Link to={`${prefix}/selector`} className="gi-cta-band-btn">
-              {t("Analyser ma stack", "Analyze my stack")}
-              <ArrowRight style={{ width: 16, height: 16 }} />
-            </Link>
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 };

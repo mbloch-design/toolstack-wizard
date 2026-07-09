@@ -383,28 +383,6 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
           openCount={2}
         />
       </section>
-
-      {/* CTA */}
-      <section className="container mx-auto max-w-4xl px-6 pb-20 pt-10">
-        <div className="rounded-2xl bg-primary p-8 text-center md:p-10">
-          <h2 className="text-2xl font-semibold tracking-tighter text-primary-foreground md:text-3xl">
-            {t("Auditez votre stack en 5 minutes", "Audit your stack in 5 minutes")}
-          </h2>
-          <p className="mt-2 text-sm text-primary-foreground/80">
-            {t(
-              "Diagnostic personnalisé, gratuit et sans inscription.",
-              "Personalized diagnostic, free, no signup."
-            )}
-          </p>
-          <Link
-            to={`/${lang}/selector`}
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-background px-6 py-3 text-base font-semibold text-foreground transition-colors hover:bg-background/90"
-          >
-            {t("Lancer mon diagnostic gratuit", "Start my free diagnostic")}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

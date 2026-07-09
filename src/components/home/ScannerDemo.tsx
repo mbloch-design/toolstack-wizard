@@ -1,7 +1,5 @@
 import { useState, useCallback } from "react";
 import { useLang } from "@/hooks/useLang";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 interface DemoTool {
   name: string;
@@ -37,7 +35,7 @@ const VERDICT_CONFIG = {
 };
 
 const ScannerDemo = () => {
-  const { lang, t, prefix } = useLang();
+  const { lang, t } = useLang();
   const [scanning, setScanning] = useState(false);
   const [scannedIndex, setScannedIndex] = useState(-1);
   const [done, setDone] = useState(false);
@@ -219,15 +217,6 @@ const ScannerDemo = () => {
                 : t("Lancer le scan →", "Start scan →")}
             </button>
 
-            {done && (
-              <Link
-                to={`${prefix}/selector`}
-                className="mt-2 flex items-center justify-center gap-2 rounded-lg border border-primary/20 py-2.5 text-[13px] font-medium text-primary transition-all hover:bg-primary/5"
-              >
-                {t("Analyser MA stack →", "Analyze MY stack →")}
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            )}
           </div>
         </div>
       </div>

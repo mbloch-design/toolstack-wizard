@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import { Link } from "react-router-dom";
-import { ArrowRight, Laptop2, Rocket, Bot, Calculator } from "lucide-react";
+import { Laptop2, Rocket, Bot, Calculator } from "lucide-react";
 
 interface Persona {
   Icon: React.ComponentType<{ className?: string }>;
@@ -142,7 +142,7 @@ const PERSONAS: Persona[] = [
 ];
 
 const PersonasSection = () => {
-  const { lang, t, prefix } = useLang();
+  const { lang, t } = useLang();
   const [active, setActive] = useState(0);
   const p = PERSONAS[active];
   const signals = lang === "en" ? p.signalsEn : p.signals;
@@ -223,13 +223,6 @@ const PersonasSection = () => {
                   ))}
                 </div>
               </div>
-              <Link
-                to={`${prefix}/selector`}
-                className="home-profile-cta"
-              >
-                {t("Analyser ma stack", "Analyze my stack")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
 
           </div>

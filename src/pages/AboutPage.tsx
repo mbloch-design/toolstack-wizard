@@ -213,9 +213,6 @@ const AboutPage = () => {
 
           {/* ── CTA quiet ── */}
           <div className="ab-cta">
-            <Link to={`${prefix}/selector`} className="tt-button-primary">
-              {t("Auditer ma stack →", "Audit my stack →")}
-            </Link>
             <Link to={`${prefix}/methodology`} className="ab-cta-secondary">
               {t("Voir la méthodologie", "See the methodology")}
             </Link>

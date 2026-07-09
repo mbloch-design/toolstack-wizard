@@ -10,7 +10,6 @@ import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import {
   ArrowRight,
   Banknote,
-  Bot,
   Boxes,
   Clock3,
   Lightbulb,
@@ -485,34 +484,6 @@ const CategoriesIndexPage = () => {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-border bg-card py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 md:flex-row md:items-center">
-          <div>
-            <p className="label-section mb-2">{t("Tu hésites ?", "Not sure?")}</p>
-            <h2
-              className="font-display font-semibold text-foreground"
-              style={{
-                fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.15,
-              }}
-            >
-              {t("Laisse le diagnostic trouver les doublons à ta place.", "Let the diagnostic find duplicates for you.")}
-            </h2>
-            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-              {t(
-                "Sélectionne tes outils actuels : ToolTrim calcule les économies potentielles, les remplacements utiles et les abonnements à couper.",
-                "Select your current tools: ToolTrim calculates potential savings, useful replacements, and subscriptions to cut."
-              )}
-            </p>
-          </div>
-          <Link to={`${prefix}/selector`} className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
-            <Bot className="h-4 w-4" />
-            {t("Lancer l'audit", "Start audit")}
-          </Link>
         </div>
       </section>
     </div>
