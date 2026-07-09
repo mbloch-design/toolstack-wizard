@@ -127,7 +127,15 @@
        All containers use the same --layout-gutter → one breakpoint to rule them all.
     ─────────────────────────────────────────── */
     --layout-max:            1440px;   /* full-width shell (hero backgrounds, CTA bands) */
-    --layout-content:        1280px;   /* editorial content (guides, articles, tools) */
+    /* Editorial content column (guides, articles, tools). Was a hard
+       1280px cap, which left an ever-growing idle margin on wide desktop
+       screens once the viewport passed ~1280px + gutters — the column
+       just stopped growing while the screen kept getting wider. Clamp
+       lets it keep expanding with the viewport (still 1280px minimum,
+       same as before, on anything narrower) up to a 1600px ceiling so
+       it doesn't stretch into unreadable line lengths on ultra-wide
+       monitors either. */
+    --layout-content:        clamp(1280px, 90vw, 1600px);
     --layout-article:        760px;    /* article text column */
     --layout-sidebar:        260px;    /* article TOC sidebar */
     --layout-tool-sidebar:   360px;    /* tool page sticky card */
