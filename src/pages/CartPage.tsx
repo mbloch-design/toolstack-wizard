@@ -1984,7 +1984,11 @@ const CartPage = () => {
                     {t("Retour", "Back")}
                   </button>
                 </div>
-                <h1 className="tt-page-hero-title">{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</h1>
+                <h1 className="tt-page-hero-title stack-objective-title">
+                  <span>{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</span>
+                  {" "}
+                  <span className="stack-title-index">{formatToolCount(zoomedBoard.tools.length, lang)}</span>
+                </h1>
                 <p className="tt-page-hero-desc">
                   {t(
                     "Vue des outils retenus pour cet objectif, regroupés par usage concret.",
@@ -1999,10 +2003,6 @@ const CartPage = () => {
 
                 <div className="stack-objective-hero-bottom">
                   <dl className="stack-objective-hero-facts" aria-label={t("Résumé de cet objectif", "Objective summary") as string}>
-                    <div>
-                      <dt>{t("Outils", "Tools")}</dt>
-                      <dd>{zoomedBoard.tools.length}</dd>
-                    </div>
                     <div>
                       <dt>{t("Domaines", "Areas")}</dt>
                       <dd>{zoomedSubdomains.length}</dd>
@@ -2069,8 +2069,11 @@ const CartPage = () => {
             {zoomedSubdomains.map((group) => (
               <section key={group.id} className={getSubdomainSectionClassName(group)}>
                 <div className="stack-subdomain-heading">
-                  <span>{formatToolCount(group.tools.length, lang)}</span>
-                  <h3>{t(group.labelFr, group.labelEn)}</h3>
+                  <h2>
+                    <span>{t(group.labelFr, group.labelEn)}</span>
+                    {" "}
+                    <span className="stack-subdomain-count">{formatToolCount(group.tools.length, lang)}</span>
+                  </h2>
                   <p>{t(group.descriptionFr, group.descriptionEn)}</p>
                 </div>
 

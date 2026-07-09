@@ -1110,6 +1110,23 @@
   .tt-page-hero--banner.stack-objective-page-hero .tt-page-hero-title {
     max-width: 16ch;
   }
+  .tt-page-hero--banner.stack-objective-page-hero .tt-page-hero-title.stack-objective-title {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 14px;
+    max-width: 22ch;
+  }
+  .stack-title-index {
+    color: color-mix(in srgb, var(--color-text) 54%, var(--color-muted));
+    font-family: var(--font-ui);
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    font-weight: 760;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
   .stack-objective-hero-topline {
     align-items: center;
     display: flex;
@@ -1204,56 +1221,63 @@
   .stack-subdomain-grid {
     align-items: start;
     display: grid;
-    gap: 30px 24px;
+    gap: clamp(40px, 5vw, 66px) 24px;
     grid-auto-flow: dense;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .stack-subdomain-section {
-    border-top: 1px solid var(--color-border);
     display: grid;
     gap: 18px;
     min-width: 0;
-    padding-top: 22px;
+    padding-top: 0;
   }
   .stack-subdomain-section--wide {
     grid-column: 1 / -1;
   }
   .stack-subdomain-heading {
     display: grid;
-    gap: 6px;
+    gap: 10px;
     max-width: 720px;
   }
-  .stack-subdomain-heading > span {
-    color: var(--color-muted);
-    font-family: var(--font-ui);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .stack-subdomain-heading h3 {
+  .stack-subdomain-heading h2 {
+    align-items: baseline;
     color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: clamp(1.35rem, 2.6vw, 2rem);
-    font-weight: 850;
-    line-height: 1;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-brand);
+    font-size: clamp(2rem, 3.3vw, 3.45rem);
+    font-weight: 600;
+    gap: 0 10px;
+    letter-spacing: -0.06em;
+    line-height: 0.98;
     margin: 0;
+  }
+  .stack-subdomain-count {
+    color: color-mix(in srgb, var(--color-text) 46%, var(--color-muted));
+    font-family: var(--font-ui);
+    font-size: clamp(0.72rem, 1vw, 0.86rem);
+    font-weight: 760;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .stack-subdomain-heading p {
     color: var(--color-muted);
     font-family: var(--font-ui);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.45;
     margin: 0;
+    max-width: 760px;
   }
   .stack-subdomain-section--compact .stack-subdomain-heading {
     max-width: none;
   }
-  .stack-subdomain-section--compact .stack-subdomain-heading h3 {
-    font-size: clamp(1.15rem, 2vw, 1.45rem);
+  .stack-subdomain-section--compact .stack-subdomain-heading h2 {
+    font-size: clamp(1.75rem, 2.6vw, 2.55rem);
   }
   .stack-subdomain-section--compact .stack-subdomain-heading p {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
   }
   .stack-detail-tool-grid {
     display: grid;
@@ -1264,14 +1288,19 @@
     grid-template-columns: 1fr;
   }
   .stack-detail-tool-card {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(34, 34, 34, 0.11);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     min-height: 196px;
-    padding: 18px;
+    padding: 20px;
+    transition: background 180ms ease-out, border-color 180ms ease-out;
+  }
+  .stack-detail-tool-card:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
   }
   .stack-detail-tool-head {
     align-items: center;
@@ -1288,9 +1317,10 @@
   .stack-detail-tool-title h4 {
     color: var(--color-text);
     font-family: var(--font-ui);
-    font-size: 1rem;
-    font-weight: 850;
-    line-height: 1.15;
+    font-size: 1.08rem;
+    font-weight: 780;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
     margin: 1px 0 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1308,11 +1338,11 @@
     white-space: nowrap;
   }
   .stack-detail-tool-desc {
-    color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted));
+    color: var(--color-muted);
     display: -webkit-box;
     font-family: var(--font-ui);
-    font-size: 0.94rem;
-    line-height: 1.48;
+    font-size: 0.9rem;
+    line-height: 1.42;
     margin: 0;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -7359,74 +7389,6 @@
     transition: color 140ms;
   }
 
-  /* ── How-to section ──────────────────────── */
-  /* ── Stack card (row, editorial) ─────────── */
-  .sk-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 24px;
-    text-decoration: none;
-    color: var(--color-text);
-    display: block;
-    transition: border-color 160ms ease-out, background 160ms ease-out;
-  }
-  .sk-card:hover {
-    border-color: var(--color-text);
-    background: var(--color-bg);
-  }
-  .sk-card-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 14px;
-    gap: 16px;
-  }
-  .sk-card-title {
-    font-family: var(--font-brand);
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 1.15;
-    color: var(--color-text);
-    margin: 0 0 8px;
-  }
-  .sk-card-desc {
-    font-family: var(--font-ui);
-    font-size: 14px;
-    line-height: 1.45;
-    color: var(--color-muted);
-    margin: 0 0 16px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .sk-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--color-border-soft);
-    padding-top: 14px;
-    margin-top: 4px;
-  }
-  .sk-card-cta {
-    font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text);
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    flex-shrink: 0;
-  }
-  @media (max-width: 640px) {
-    .sk-card-footer { flex-direction: column; align-items: flex-start; }
-    .sk-card-cta { order: -1; }
-  }
-
   /* ── Filter bar row (quick pills + Filtres trigger + search) ────────── */
   .sk-mobile-trigger-row {
     display: flex;
@@ -7948,6 +7910,10 @@
     font-variant-numeric: tabular-nums;
   }
   .sk-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    text-decoration: none;
     min-height: 100%;
     border-radius: 12px;
     padding: 24px;
@@ -7974,6 +7940,10 @@
     white-space: nowrap;
   }
   .sk-card-title {
+    font-family: var(--font-brand);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--color-text);
     font-size: clamp(1.35rem, 2vw, 1.7rem);
     line-height: 1.06;
     margin-bottom: 8px;
@@ -8040,6 +8010,16 @@
   .sk-card-stat--strong {
     color: var(--color-text);
     font-weight: 650;
+  }
+  .sk-card-cta {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
   }
   /* Arrow nudges on hover — a small tactile cue, no layout animation */
   .sk-card-cta span[aria-hidden] {
