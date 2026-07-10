@@ -7,11 +7,11 @@ import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
+import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 // Light index (first 12 stacks, ~3KB gzip) instead of the full 1.7MB stacks.ts:
 // HomePageV2 is an eager import, so pulling stacks.ts here modulepreloaded the
 // data-stacks chunk on every page. Regenerate with scripts/gen-stacks-index.ts.
 import STACKS from "@/data/stacks-index.json";
-import { supabase } from "@/integrations/supabase/client";
 
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
@@ -35,24 +35,6 @@ const DUO_ROWS: { categoryId: string; label: string; labelEn: string }[][] = [
     { categoryId: "communication", label: "Communication", labelEn: "Communication" },
   ],
 ];
-
-/* Fetch og_image_url for featured slugs */
-function useOgImages(slugs: string[]): Record<string, string> {
-  const [map, setMap] = useState<Record<string, string>>({});
-  const key = slugs.join(",");
-  useEffect(() => {
-    if (!slugs.length) return;
-    supabase.from("tools").select("slug, og_image_url").in("slug", slugs)
-      .then(({ data }) => {
-        if (!data) return;
-        const m: Record<string, string> = {};
-        for (const row of data) if (row.og_image_url) m[row.slug as string] = row.og_image_url as string;
-        setMap(m);
-      });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key]);
-  return map;
-}
 
 /* Curated "new additions" — update this list as new tools are added to the catalogue */
 const NEW_SLUGS = [
@@ -247,10 +229,6 @@ export default function HomePageV2() {
     () => tools.filter((t) => t.prescription_quality === "ferme"),
     [tools],
   );
-  const ogImages = useOgImages(useMemo(
-    () => [...featured.map((t) => t.slug), ...AI_SLUGS],
-    [featured],
-  ));
 
   const totalPages = Math.ceil(featured.length / PAGE_SIZE);
   const visibleFeatured = featured.slice(featuredPage * PAGE_SIZE, (featuredPage + 1) * PAGE_SIZE);
@@ -334,7 +312,7 @@ export default function HomePageV2() {
             onPrev={prevPage}
             onNext={nextPage}
           />
-          <div className="v2-feat-grid">
+          <div className="tc-grid">
             {visibleFeatured.map((tool) => {
               const catName = stripLeadingEmoji(
                 lang === "en"
@@ -343,18 +321,7 @@ export default function HomePageV2() {
                   : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
               );
               return (
-                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-feat-card">
-                  <div className="v2-feat-img">
-                    {ogImages[tool.slug]
-                      ? <img src={ogImages[tool.slug]} alt="" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                      : <div className="v2-feat-logo"><ToolLogo tool={tool as any} size={40} /></div>
-                    }
-                  </div>
-                  <div className="v2-feat-body">
-                    <span className="v2-feat-name">{tool.name}</span>
-                    {catName && <span className="v2-feat-cat">{catName}</span>}
-                  </div>
-                </Link>
+                <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
               );
             })}
           </div>
@@ -387,7 +354,7 @@ export default function HomePageV2() {
                 onPrev={prevAiPage}
                 onNext={nextAiPage}
               />
-              <div className="v2-ai-grid">
+              <div className="tc-grid">
                 {visibleAi.map((tool) => {
                   const catName = stripLeadingEmoji(
                     lang === "en"
@@ -396,18 +363,7 @@ export default function HomePageV2() {
                       : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
                   );
                   return (
-                    <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-ai-card">
-                      <div className="v2-ai-img">
-                        {ogImages[tool.slug]
-                          ? <img src={ogImages[tool.slug]} alt="" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                          : <div className="v2-feat-logo"><ToolLogo tool={tool as any} size={44} /></div>
-                        }
-                      </div>
-                      <div className="v2-feat-body">
-                        <span className="v2-feat-name">{tool.name}</span>
-                        {catName && <span className="v2-feat-cat">{catName}</span>}
-                      </div>
-                    </Link>
+                    <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
                   );
                 })}
               </div>
