@@ -18,6 +18,19 @@ export function hasGenuineFreeTier(freeText: string | null | undefined): boolean
   return true;
 }
 
+/**
+ * Whether a tool has a genuine free tier AND a paid tier above it — i.e.
+ * "Freemium", not simply "Gratuit". A flat "Gratuit" label on a tool that
+ * also has a $20/mo Pro plan (Claude, ChatGPT, Notion...) overstates what
+ * most users will actually end up paying once they hit the free tier's
+ * limits. 264 of the catalog's 533 tools are in this situation — most of
+ * what shows as "Gratuit" today is really "free to start, paid to use
+ * seriously".
+ */
+export function isFreemiumPricing(pricing: { free?: string | null; paid?: string | null } | null | undefined): boolean {
+  return hasGenuineFreeTier(pricing?.free) && !!pricing?.paid?.trim();
+}
+
 const NEGATION_RE = /no free|aucun|pas de|non communiqué/i;
 const TRIAL_ONLY_RE = /essai|trial|jours? gratuit|demo gratuite|démo gratuite/i;
 // Phrases that override a trial-word match — the free text can mention

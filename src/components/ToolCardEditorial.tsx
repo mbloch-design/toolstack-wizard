@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
-import { hasGenuineFreeTier } from "@/lib/pricing";
+import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -22,6 +22,7 @@ interface ToolCardEditorialProps {
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
 
 function getPlanLabel(tool: Tool, lang: "fr" | "en"): string {
+  if (isFreemiumPricing(tool.pricing)) return "Freemium";
   if (hasGenuineFreeTier(tool.pricing?.free)) return lang === "fr" ? "Gratuit" : "Free";
   if (tool.pricing_v5?.compare_price_monthly_eur) {
     const p = tool.pricing_v5.compare_price_monthly_eur;

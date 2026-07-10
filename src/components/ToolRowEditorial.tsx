@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
-import { hasGenuineFreeTier } from "@/lib/pricing";
+import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -28,6 +28,7 @@ function getScore(tool: Tool): string {
 }
 
 function getPriceLabel(tool: Tool, lang: "fr" | "en"): string {
+  if (isFreemiumPricing(tool.pricing)) return "Freemium";
   if (hasGenuineFreeTier(tool.pricing?.free)) return lang === "fr" ? "Gratuit" : "Free";
   if (tool.pricing_v5?.compare_price_monthly_eur) {
     const p = tool.pricing_v5.compare_price_monthly_eur;
