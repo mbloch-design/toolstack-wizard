@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
+import { hasGenuineFreeTier } from "@/lib/pricing";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -24,10 +25,7 @@ interface ToolCardProps {
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
 
 function getPriceInfo(tool: Tool): { label: string; labelEn: string } {
-  const hasFree = !!(tool.pricing?.free
-    && !tool.pricing.free.toLowerCase().includes("no free")
-    && !tool.pricing.free.toLowerCase().includes("aucun")
-    && !tool.pricing.free.toLowerCase().includes("pas de"));
+  const hasFree = hasGenuineFreeTier(tool.pricing?.free);
   const hasPaid = !!(tool.pricing?.paid);
   const isFree     = tool.defaultMonthlyPrice === 0 && !hasPaid;
   const isFreemium = hasFree && hasPaid;

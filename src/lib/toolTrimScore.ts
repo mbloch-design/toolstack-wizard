@@ -1,3 +1,5 @@
+import { hasGenuineFreeTier } from "./pricing";
+
 /**
  * Computes the ToolTrim editorial score for a given tool.
  * Score range: 2.8–4.8 / 5
@@ -24,11 +26,7 @@ export function computeToolTrimScore(tool: any): { score: number; labelFr: strin
   if (tool.ia_use_case) score += 0.15;
 
   // Free plan = more accessible
-  const hasFree = tool.pricing?.free &&
-    !tool.pricing.free.toLowerCase().includes("no free") &&
-    !tool.pricing.free.toLowerCase().includes("aucun") &&
-    !tool.pricing.free.toLowerCase().includes("pas de");
-  if (hasFree) score += 0.1;
+  if (hasGenuineFreeTier(tool.pricing?.free)) score += 0.1;
 
   // Clamp
   score = Math.max(2.8, Math.min(4.8, score));

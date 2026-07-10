@@ -1,5 +1,6 @@
 import type { Tool } from "@/data/types";
 import { Check, ShieldCheck, CreditCard, ExternalLink, Sparkles } from "lucide-react";
+import { hasGenuineFreeTier } from "@/lib/pricing";
 
 interface Props {
   tool: Tool;
@@ -11,21 +12,9 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
-function isNoFree(text: string | undefined): boolean {
-  if (!text) return true;
-  const lower = text.toLowerCase();
-  return (
-    lower.includes("no free") ||
-    lower.includes("aucun") ||
-    lower.includes("pas de") ||
-    lower.includes("non communiqué") ||
-    lower.includes("essai gratuit") // trial only, not free plan
-  );
-}
-
 export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sourceDomain, prefix, lang, t }: Props) {
   const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
-  const hasFree = pricing?.free && !isNoFree(pricing.free);
+  const hasFree = hasGenuineFreeTier(pricing?.free);
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const officialUrl = tool.pricing_v5?.official_source_url || (sourceDomain ? `https://${sourceDomain}` : null);
 

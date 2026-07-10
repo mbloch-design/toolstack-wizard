@@ -3,6 +3,7 @@ import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
 import { Check, X, Minus } from "lucide-react";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
+import { hasGenuineFreeTier } from "@/lib/pricing";
 
 interface Props {
   tool: Tool;
@@ -13,9 +14,7 @@ interface Props {
 }
 
 function hasFreeplan(tool: any): boolean {
-  const free = tool.pricing?.free || "";
-  const lower = free.toLowerCase();
-  return !!free && !lower.includes("no free") && !lower.includes("aucun") && !lower.includes("pas de") && !lower.includes("non communiqué");
+  return hasGenuineFreeTier(tool.pricing?.free);
 }
 
 function prescriptionLabel(action: string | undefined): string {
