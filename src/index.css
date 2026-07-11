@@ -6906,18 +6906,18 @@
   }
   .ga-title {
     font-family: var(--font-brand);
-    /* Canonical hero size (same token as Compare/ToolDetail heroes) instead
-       of a page-specific clamp that drifted from the site's type scale. */
-    font-size: var(--tt-size-hero);
+    /* Sized to match the site's other guide template (outils-facturation-*,
+       text-3xl/md:text-5xl = 30px/48px): a guide title is a reading heading,
+       not a marketing hero — tt-size-hero (Compare/ToolDetail) was too big
+       here. tt-size-section-h is the closest canonical token to that 48px
+       reference. */
+    font-size: var(--tt-size-section-h);
     font-weight: 600;
-    line-height: 0.94;
-    letter-spacing: -0.065em;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
     color: var(--color-text);
-    max-width: 1040px;
+    max-width: 780px;
     margin-bottom: 0;
-  }
-  @media (max-width: 768px) {
-    .ga-title { font-size: clamp(44px, 12vw, 64px); }
   }
   .ga-standfirst {
     font-family: var(--font-ui);
