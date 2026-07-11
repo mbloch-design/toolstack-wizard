@@ -165,7 +165,12 @@ const GuidesPage = () => {
   }, [posts, activeFilter, sortBy]);
 
   const featured    = filteredPosts[0] ?? null;
-  const listPosts   = filteredPosts.slice(1);
+  // Was filteredPosts.slice(1) — the featured post lived only in the
+  // hero band (see below) and was excluded from the grid, which worked
+  // when the hero rendered its own full FeaturedBlock card. The hero is
+  // now page-level (title/subtitle/CTA, not a specific post's content),
+  // so the top guide belongs back in the grid instead of disappearing.
+  const listPosts   = filteredPosts;
   const visibleList = showAll ? listPosts : listPosts.slice(0, PAGE_SIZE);
   const hasMore     = !showAll && listPosts.length > PAGE_SIZE;
 
@@ -187,27 +192,33 @@ const GuidesPage = () => {
   return (
     <div className="min-h-screen">
 
-      {/* ══ 1. Compact header: breadcrumb + title, no banner artwork —
-          same pattern as ToolsPage, replacing the tall gradient hero.
-          paddingTop 40 matches .tt-catalog-container's own top padding
-          exactly, so the header sits at the same vertical offset as
-          Tools/Category/Stacks/Comparatifs. ══ */}
-      <div className="gi-container" style={{ paddingTop: 40 }}>
-        <div className="tt-catalog-compact-header">
+      {/* ══ 1. Hero — visual band (rich CSS gradient) instead of the plain
+          compact header, requested specifically for this page: the
+          compact header + separate Featured card combo read as floating/
+          text-heavy with no visual mass to open the page on. Page-level
+          (title/subtitle), not tied to one post's content, so the CTA
+          just points at the top guide instead of duplicating it — that
+          guide now also appears in the grid below instead of being
+          pulled out into its own card. ══ */}
+      <section className="gi-hero">
+        <div className="gi-container gi-hero-inner">
           <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
-          <h1 className="tt-catalog-compact-title">{t("Mieux choisir ses outils.", "Choose tools with less noise.")}</h1>
+          <span className="gi-hero-eyebrow">{t("GUIDES & COMPARATIFS", "GUIDES & COMPARISONS")}</span>
+          <h1 className="gi-hero-title">{t("Mieux choisir ses outils.", "Choose tools with less noise.")}</h1>
+          <p className="gi-hero-subtitle">
+            {t(
+              "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère.",
+              "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.",
+            )}
+          </p>
+          {featured && (
+            <Link to={`${prefix}/guide/${featured.slug}`} className="gi-hero-cta">
+              {t("Lire le dernier guide", "Read the latest guide")}
+              <ArrowRight style={{ width: 15, height: 15 }} />
+            </Link>
+          )}
         </div>
-      </div>
-
-      {/* ══ 2. Featured ══════════════════════════════════════════════════════ */}
-      {!loading && featured && (
-        <div style={{ borderBottom: "1px solid var(--color-border)" }}>
-          <div className="gi-container" style={{ paddingTop: 72, paddingBottom: 72 }}>
-            <p className="gi-section-label">{t("À lire en premier", "Read first")}</p>
-            <FeaturedBlock post={featured} prefix={prefix} lang={lang} t={t} tools={tools} />
-          </div>
-        </div>
-      )}
+      </section>
 
 
       {/* ══ 4. Filter bar + guides list — same tt-catalog-container padding
@@ -315,80 +326,6 @@ const GuidesPage = () => {
     </div>
   );
 };
-
-/* ── Featured guide block ──────────────────────────────────────────────────── */
-function FeaturedBlock({
-  post, prefix, lang, t, tools,
-}: {
-  post: Post; prefix: string; lang: string;
-  t: (fr: string, en: string) => string; tools: Tool[];
-}) {
-  const mentionedTools = useArticleTools(post, tools);
-
-  return (
-    <Link to={`${prefix}/guide/${post.slug}`} className="gi-featured">
-      {/* Left: text */}
-      <div className="gi-featured-left">
-        <div className="gi-featured-meta">
-          {post.category && <span className="gi-featured-meta-item">{post.category}</span>}
-          {post.date && (
-            <>
-              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "var(--color-border)", flexShrink: 0 }} />
-              <span className="gi-featured-meta-item">{post.date.slice(0, 4)}</span>
-            </>
-          )}
-          {post.readTime && (
-            <>
-              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "var(--color-border)", flexShrink: 0 }} />
-              <span className="gi-featured-meta-item">{post.readTime}</span>
-            </>
-          )}
-        </div>
-
-        <h2 className="gi-featured-title">{post.title}</h2>
-        <p className="gi-featured-excerpt">{post.excerpt}</p>
-
-        <span className="gi-featured-cta">
-          {t("Lire le guide", "Read the guide")}
-          <ArrowRight style={{ width: 14, height: 14 }} />
-        </span>
-      </div>
-
-      {/* Right: visual panel — large tool-logo tiles instead of a thin
-          text list, so the card has an actual visual anchor built from
-          real data (cited tools) rather than a fabricated cover image. */}
-      <div className="gi-featured-right">
-        <div>
-          <p className="gi-featured-right-label">
-            {t("Dans ce guide", "In this guide")}
-          </p>
-          {mentionedTools.length > 0 ? (
-            <div className="gi-featured-tools-grid">
-              {mentionedTools.slice(0, 4).map((tool) => (
-                <div key={tool.id} className="gi-featured-tool-tile" title={tool.name}>
-                  <ToolLogo tool={tool} size={30} />
-                  <span>{tool.name}</span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            post.category && (
-              <p style={{ fontFamily: "var(--font-brand)", fontSize: 28, fontWeight: 600, letterSpacing: "-0.04em", color: "var(--color-text)", lineHeight: 1.1 }}>
-                {post.category}
-              </p>
-            )
-          )}
-        </div>
-        {post.readTime && (
-          <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 6 }}>
-            <Clock style={{ width: 12, height: 12, color: "var(--color-muted-light)" }} />
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)" }}>{post.readTime}</span>
-          </div>
-        )}
-      </div>
-    </Link>
-  );
-}
 
 /* ── Article row (enhanced) ────────────────────────────────────────────────── */
 function ArticleRow({
