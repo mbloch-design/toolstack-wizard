@@ -102,7 +102,11 @@ function getPostIntent(post: Post): string | null {
   if (text.includes("vs ") || text.includes("comparatif")) return "COMPARER";
   if (text.includes("alternativ") || text.includes("remplacer")) return "REMPLACER";
   if (text.includes("gratuit") || text.includes("économie") || text.includes("tarif") || text.includes("coût") || text.includes("réduire") || text.includes("payant") || text.includes("rentabl")) return "RÉDUIRE LES COÛTS";
-  if (text.includes("stack")) return "STACK";
+  // Was "STACK" — identical to getPostType's own "STACK" case, so any
+  // stack guide with no other angle showed a nonsensical "STACK · STACK"
+  // tag. "CONSTRUIRE" actually adds information (the reader's angle),
+  // distinct from the type badge.
+  if (text.includes("stack")) return "CONSTRUIRE";
   return null;
 }
 
@@ -398,7 +402,7 @@ function ArticleRow({
 
   return (
     <Link to={`${prefix}/guide/${post.slug}`} className="sk-card">
-      <span className="sk-card-tag">{intent ? `${type} · ${intent}` : type}</span>
+      <span className="sk-card-tag">{intent && intent !== type ? `${type} · ${intent}` : type}</span>
 
       <h3 className="sk-card-title">{post.title}</h3>
       {post.excerpt && <p className="sk-card-verdict">{post.excerpt}</p>}
