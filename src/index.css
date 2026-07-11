@@ -6881,7 +6881,7 @@
   .ga-header {
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
-    padding: 80px 0 72px;
+    padding: var(--tt-hero-pt) 0 var(--tt-hero-pb);
   }
   .ga-eyebrow-row {
     display: flex;
@@ -6906,15 +6906,18 @@
   }
   .ga-title {
     font-family: var(--font-brand);
-    font-size: clamp(3.5rem, 7vw, 7rem);
+    /* Canonical hero size (same token as Compare/ToolDetail heroes) instead
+       of a page-specific clamp that drifted from the site's type scale. */
+    font-size: var(--tt-size-hero);
     font-weight: 600;
     line-height: 0.94;
     letter-spacing: -0.065em;
     color: var(--color-text);
+    max-width: 1040px;
     margin-bottom: 0;
   }
   @media (max-width: 768px) {
-    .ga-title { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+    .ga-title { font-size: clamp(44px, 12vw, 64px); }
   }
   .ga-standfirst {
     font-family: var(--font-ui);
