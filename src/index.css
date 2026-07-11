@@ -6512,20 +6512,31 @@
   }
   .gi-featured-title {
     font-family: var(--font-brand);
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    /* Capped at 2 lines — was unclamped and could run to 3+ lines,
+       turning the card opening into a wall of text with nothing to
+       anchor it visually. */
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 600;
-    line-height: 1.0;
-    letter-spacing: -0.05em;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
     color: var(--color-text);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
   .gi-featured-excerpt {
     font-family: var(--font-ui);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--color-muted);
     flex: 1;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
   .gi-featured-cta {
     font-family: var(--font-ui);
@@ -6536,13 +6547,52 @@
     align-items: center;
     gap: 6px;
   }
+  /* Visual anchor for the featured card: a tinted panel with the cited
+     tools shown as real tiles (logo + name), not a plain text list on
+     a barely-different background — gives the card opening actual
+     visual mass without inventing a cover image the data doesn't have. */
   .gi-featured-right {
-    background: var(--color-bg);
+    background: color-mix(in oklch, var(--color-text) 4%, var(--color-bg));
     border-left: 1px solid var(--color-border);
-    padding: 40px 32px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+  }
+  .gi-featured-right-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin: 0 0 16px;
+  }
+  .gi-featured-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gi-featured-tool-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    text-align: center;
+  }
+  .gi-featured-tool-tile span {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
   }
 
   /* Theme columns */

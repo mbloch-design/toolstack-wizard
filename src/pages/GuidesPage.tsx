@@ -106,25 +106,6 @@ function getPostIntent(post: Post): string | null {
   return null;
 }
 
-/* ── Tool logo pill stack ─────────────────────────────────────────────────── */
-function ToolLogoPillStack({ tools, max = 5 }: { tools: Tool[]; max?: number }) {
-  if (tools.length === 0) return null;
-  const display = tools.slice(0, max);
-  const overflow = tools.length - max;
-  return (
-    <div className="tool-logo-stack">
-      {display.map((tool) => (
-        <div key={tool.id} className="tool-logo-pill" title={tool.name}>
-          <ToolLogo tool={tool} size={18} />
-        </div>
-      ))}
-      {overflow > 0 && (
-        <div className="tool-logo-pill tool-logo-more">+{overflow}</div>
-      )}
-    </div>
-  );
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════ */
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
@@ -363,40 +344,26 @@ function FeaturedBlock({
         <h2 className="gi-featured-title">{post.title}</h2>
         <p className="gi-featured-excerpt">{post.excerpt}</p>
 
-        {mentionedTools.length > 0 && (
-          <ToolLogoPillStack tools={mentionedTools} max={5} />
-        )}
-
-        <span className="gi-featured-cta" style={{ marginTop: mentionedTools.length > 0 ? 28 : 0 }}>
+        <span className="gi-featured-cta">
           {t("Lire le guide", "Read the guide")}
           <ArrowRight style={{ width: 14, height: 14 }} />
         </span>
       </div>
 
-      {/* Right: typographic panel */}
+      {/* Right: visual panel — large tool-logo tiles instead of a thin
+          text list, so the card has an actual visual anchor built from
+          real data (cited tools) rather than a fabricated cover image. */}
       <div className="gi-featured-right">
         <div>
-          <p style={{
-            fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-            letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-            marginBottom: 20,
-          }}>
+          <p className="gi-featured-right-label">
             {t("Dans ce guide", "In this guide")}
           </p>
           {mentionedTools.length > 0 ? (
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {mentionedTools.slice(0, 5).map((tool) => (
-                <div key={tool.id} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{
-                    width: 28, height: 28, borderRadius: 6,
-                    border: "1px solid var(--color-border)", background: "var(--color-surface)",
-                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                  }}>
-                    <ToolLogo tool={tool} size={18} />
-                  </div>
-                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>
-                    {tool.name}
-                  </span>
+            <div className="gi-featured-tools-grid">
+              {mentionedTools.slice(0, 4).map((tool) => (
+                <div key={tool.id} className="gi-featured-tool-tile" title={tool.name}>
+                  <ToolLogo tool={tool} size={30} />
+                  <span>{tool.name}</span>
                 </div>
               ))}
             </div>
