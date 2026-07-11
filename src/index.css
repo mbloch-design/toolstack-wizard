@@ -6456,7 +6456,10 @@
     background:
       radial-gradient(120% 140% at 100% 0%, color-mix(in oklch, #E8A66E 55%, transparent) 0%, transparent 55%),
       linear-gradient(120deg, #F6F3EB 0%, #F3E4D2 40%, #F0C9A3 75%, #E8A66E 100%);
-    padding: 44px 48px 40px;
+    /* Horizontal padding tracks --layout-gutter (not a fixed 48px) so the
+       band's left/right edges keep matching the toolbar and grid below it
+       as the shared gutter shrinks at the tablet/mobile breakpoints. */
+    padding: 44px var(--layout-gutter) 40px;
   }
   .gi-hero-inner .cp-breadcrumb {
     margin-bottom: 18px;
@@ -6508,7 +6511,7 @@
   .gi-hero-cta:hover { opacity: 0.82; }
   @media (max-width: 640px) {
     .gi-hero { padding: 20px 0 4px; }
-    .gi-hero-inner { border-radius: 16px; padding: 32px 24px; }
+    .gi-hero-inner { border-radius: 16px; padding: 32px var(--layout-gutter); }
     .gi-hero-title { max-width: 100%; }
   }
 
