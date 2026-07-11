@@ -298,12 +298,10 @@ const GuidesPage = () => {
         </div>
       )}
 
-      {/* ══ 4. Filter bar + guides list ══════════════════════════════════════ */}
-      <div id="guides" style={{ borderBottom: "1px solid var(--color-border)" }}>
-        <div className="gi-container" style={{ paddingTop: 56, paddingBottom: 72 }}>
-
-          {/* Section label */}
-          <p className="gi-section-label">{t("Guides récents", "Recent guides")}</p>
+      {/* ══ 4. Filter bar + guides list — same tt-catalog-container padding
+          (40/40) and no border, matching Outils' filter block exactly. ══ */}
+      <div id="guides">
+        <div className="gi-container tt-catalog-container">
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
