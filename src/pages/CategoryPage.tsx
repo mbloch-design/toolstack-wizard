@@ -1,13 +1,15 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import { Search, ExternalLink, ChevronDown, X, TrendingDown, Sparkles } from "lucide-react";
+import { Search, ChevronDown, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
+import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { ToolRowEditorial } from "@/components/ToolRowEditorial";
 import Breadcrumb from "@/components/Breadcrumb";
 import type { PricingV5, ToolType } from "@/data/types";
@@ -64,6 +66,22 @@ const CategoryPage = () => {
   const [typeFilter, setTypeFilter]       = useState<string[]>([]);
   const [savingsFilter, setSavingsFilter] = useState<string[]>([]);
   const [visibleCount, setVisibleCount]   = useState(PER_PAGE);
+  const [isSearchOpen, setIsSearchOpen]   = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const [toolbarStuck, setToolbarStuck]   = useState(false);
+  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const sentinel = toolbarSentinelRef.current;
+    if (!sentinel) return;
+    const scrollRoot = sentinel.closest(".asv2-content");
+    const observer = new IntersectionObserver(
+      ([entry]) => setToolbarStuck(!entry.isIntersecting),
+      { root: scrollRoot, threshold: 0 },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
 
   const year = useMemo(() => new Date().getFullYear(), []);
 
@@ -124,8 +142,8 @@ const CategoryPage = () => {
       const matchPrice =
         priceFilter === "all" ? true :
         priceFilter === "free" ? (tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid) :
-        priceFilter === "freemium" ? (tool.pricing?.free && tool.pricing?.paid) :
-        priceFilter === "paid" ? (tool.defaultMonthlyPrice > 0 && !tool.pricing?.free) : true;
+        priceFilter === "freemium" ? isFreemiumPricing(tool.pricing) :
+        priceFilter === "paid" ? (tool.defaultMonthlyPrice > 0 && !hasGenuineFreeTier(tool.pricing?.free)) : true;
 
       const matchProfile =
         profileFilter.length === 0 ||
@@ -185,27 +203,6 @@ const CategoryPage = () => {
   const hasMore   = visibleCount < filtered.length;
   const relatedCats = categories.filter((c) => c.id !== category.id).slice(0, 4);
 
-  // ── Sidebar chip helper — same visual language as ToolsPage sidebar items ──
-  const FilterChip = ({
-    active, onClick, children,
-  }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
-    <button
-      type="button"
-      onClick={onClick}
-      className="rounded-lg px-3 py-1.5 text-left transition-colors duration-150"
-      style={{
-        fontSize: "0.8125rem",
-        fontWeight: active ? 500 : 400,
-        background: active ? "hsl(var(--primary) / 0.08)" : "transparent",
-        color: active ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))",
-      }}
-      onMouseEnter={e => { if (!active) { (e.currentTarget as HTMLElement).style.background = "hsl(var(--secondary))"; (e.currentTarget as HTMLElement).style.color = "hsl(var(--foreground))"; } }}
-      onMouseLeave={e => { if (!active) { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "hsl(var(--muted-foreground))"; } }}
-    >
-      {children}
-    </button>
-  );
-
   const displayName = t(catName, catNameEn) as string;
   const catDesc = category.description
     ? t(category.description, (category as any).descriptionEn || category.description) as string
@@ -244,207 +241,129 @@ const CategoryPage = () => {
       </section>
 
       {/* ── Body — same horizontal constraints as the hero (1280 max / 48px gutter)
-            so the sidebar + tool list align vertically with the H1 above. */}
+            so the filter bar + tool list align vertically with the H1 above. */}
       <div className="cat-body">
-        <div className="flex items-start gap-8">
+        <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-          {/* ══════════════ SIDEBAR ══════════════ */}
-          <aside className="hidden lg:flex w-[200px] shrink-0 flex-col gap-5 sticky top-6">
+        {/* ══════════════ FILTER BAR — same pilule+popover pattern as
+            Outils/Comparatifs/Stacks/Guides, replacing the old permanent
+            sidebar so every listing page on the site behaves the same way. ══ */}
+        <div className={`tt-catalog-toolbar${toolbarStuck ? " tt-catalog-toolbar--stuck" : ""}`}>
+          <div className="tt-catalog-toolbar-filters">
+            <FilterDropdown
+              label={t("Profil", "Profile") as string}
+              allLabel={t("Tous les profils", "All profiles") as string}
+              options={PROFILE_OPTIONS.map((p) => ({ id: p.key, label: lang === "fr" ? p.labelFr : p.labelEn }))}
+              value="all"
+              onChange={() => {}}
+              multi
+              values={profileFilter}
+              onChangeMulti={setProfileFilter}
+              clearLabel={t("Effacer la sélection", "Clear selections") as string}
+            />
+            <FilterDropdown
+              label={t("Type", "Type") as string}
+              allLabel={t("Tous les types", "All types") as string}
+              options={TYPE_OPTIONS.map((ty) => ({ id: ty.key, label: ty.short }))}
+              value="all"
+              onChange={() => {}}
+              multi
+              values={typeFilter}
+              onChangeMulti={setTypeFilter}
+              clearLabel={t("Effacer la sélection", "Clear selections") as string}
+            />
+            <FilterDropdown
+              label={t("Tarif", "Pricing") as string}
+              allLabel={t("Tous les tarifs", "All pricing") as string}
+              options={[
+                { id: "free", label: t("Gratuit", "Free") as string },
+                { id: "freemium", label: "Freemium" },
+                { id: "paid", label: t("Payant", "Paid") as string },
+              ]}
+              value={priceFilter}
+              onChange={(id) => setPriceFilter(id as PriceFilter)}
+            />
+            <FilterDropdown
+              label={t("Économies", "Savings") as string}
+              allLabel={t("Toutes", "All") as string}
+              options={SAVINGS_OPTIONS.map((s) => ({ id: s.key, label: lang === "fr" ? s.labelFr : s.labelEn }))}
+              value="all"
+              onChange={() => {}}
+              multi
+              values={savingsFilter}
+              onChangeMulti={setSavingsFilter}
+              clearLabel={t("Effacer la sélection", "Clear selections") as string}
+            />
 
-            {/* Search */}
-            <div className="relative">
-              <Search
-                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5"
-                style={{ color: "hsl(var(--muted-foreground) / 0.45)" }}
-              />
-              <input
-                id="category-tool-search"
-                name="category-tool-search"
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder={t("Rechercher…", "Search…")}
-                className="w-full rounded-lg border border-border bg-card py-2.5 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150"
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
-                  e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = "hsl(var(--border))";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              />
+            <div className={`tt-catalog-inline-search${isSearchOpen || search ? " tt-catalog-inline-search--open" : ""}`}>
+              {isSearchOpen || search ? (
+                <div className="tt-catalog-inline-search-field">
+                  <Search size={17} aria-hidden />
+                  <input
+                    ref={searchInputRef}
+                    id="category-tool-search"
+                    name="category-tool-search"
+                    type="search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    onBlur={() => { if (!search) setIsSearchOpen(false); }}
+                    onKeyDown={(event) => { if (event.key === "Escape" && !search) setIsSearchOpen(false); }}
+                    placeholder={t("Rechercher", "Search") as string}
+                    className="tt-catalog-inline-search-input"
+                    autoComplete="off"
+                  />
+                  {search && (
+                    <button
+                      type="button"
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => { setSearch(""); setIsSearchOpen(false); }}
+                      className="tt-catalog-inline-search-clear"
+                      aria-label={t("Effacer", "Clear") as string}
+                    >
+                      <X size={15} aria-hidden />
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <button type="button" className="tt-catalog-inline-search-button" onClick={() => setIsSearchOpen(true)}>
+                  <Search size={17} aria-hidden />
+                  <span>{t("Rechercher", "Search")}</span>
+                </button>
+              )}
             </div>
 
-            {/* ── Profil utilisateur ── */}
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Profil", "Profile")}
-              </p>
-              <div className="flex flex-col gap-0.5">
-                {PROFILE_OPTIONS.map((p) => (
-                  <FilterChip
-                    key={p.key}
-                    active={profileFilter.includes(p.key)}
-                    onClick={() => setProfileFilter((f) => toggleArr(f, p.key))}
-                  >
-                    {lang === "fr" ? p.labelFr : p.labelEn}
-                  </FilterChip>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Type d'outil ── */}
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Type", "Type")}
-              </p>
-              <div className="flex flex-col gap-0.5">
-                {TYPE_OPTIONS.map((type) => (
-                  <FilterChip
-                    key={type.key}
-                    active={typeFilter.includes(type.key)}
-                    onClick={() => setTypeFilter((f) => toggleArr(f, type.key))}
-                  >
-                    {type.short}
-                  </FilterChip>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Tarification ── */}
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Tarif", "Pricing")}
-              </p>
-              <div className="flex flex-col gap-0.5">
-                {(["all", "free", "freemium", "paid"] as PriceFilter[]).map((f) => (
-                  <FilterChip
-                    key={f}
-                    active={priceFilter === f}
-                    onClick={() => setPriceFilter(f)}
-                  >
-                    {f === "all" ? t("Tous", "All") :
-                     f === "free" ? t("Gratuit", "Free") :
-                     f === "freemium" ? "Freemium" : t("Payant", "Paid")}
-                  </FilterChip>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Potentiel d'économie ── */}
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Économies", "Savings")}
-              </p>
-              <div className="flex flex-col gap-0.5">
-                {SAVINGS_OPTIONS.map((s) => (
-                  <FilterChip
-                    key={s.key}
-                    active={savingsFilter.includes(s.key)}
-                    onClick={() => setSavingsFilter((f) => toggleArr(f, s.key))}
-                  >
-                    {lang === "fr" ? s.labelFr : s.labelEn}
-                  </FilterChip>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Trier par ── */}
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Trier par", "Sort by")}
-              </p>
-              <div className="flex flex-col gap-0.5">
-                {([
-                  ["name",       t("A → Z", "A → Z")],
-                  ["price-asc",  t("Prix croissant", "Price ↑")],
-                  ["price-desc", t("Prix décroissant", "Price ↓")],
-                  ["free-first", t("Gratuit d'abord", "Free first")],
-                  ["savings",    t("Économie max", "Max savings")],
-                ] as [SortKey, string][]).map(([key, label]) => (
-                  <FilterChip
-                    key={key}
-                    active={sort === key}
-                    onClick={() => setSort(key)}
-                  >
-                    {label}
-                  </FilterChip>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Reset ── */}
             {hasActiveFilters && (
               <button
+                type="button"
+                className="tt-catalog-context-chip"
                 onClick={resetFilters}
-                className="inline-flex items-center gap-1.5 text-xs transition-colors"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(var(--muted-foreground))")}
+                aria-label={t("Réinitialiser les filtres", "Reset filters") as string}
               >
-                <X className="h-3 w-3" />
-                {t("Réinitialiser", "Reset")}
+                <span>{t("Réinitialiser", "Reset")}</span>
+                <X size={14} aria-hidden />
               </button>
             )}
-          </aside>
+          </div>
 
-          {/* ══════════════ TOOL LIST ══════════════ */}
-          <div className="flex-1 min-w-0">
+          <div className="tt-catalog-toolbar-meta">
+            <span>{filtered.length} {t("résultats", "results")}</span>
+            <select
+              className="tt-catalog-sort-select"
+              value={sort}
+              onChange={(e) => setSort(e.target.value as SortKey)}
+              aria-label={t("Trier par", "Sort by") as string}
+            >
+              <option value="name">{t("A → Z", "A → Z")}</option>
+              <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
+              <option value="price-desc">{t("Prix décroissant", "Price: high to low")}</option>
+              <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
+              <option value="savings">{t("Économie max", "Max savings")}</option>
+            </select>
+          </div>
+        </div>
 
-            {/* Top bar */}
-            <div className="mb-5 flex items-center justify-between gap-3">
-              <p
-                style={{
-                  fontFamily: "ui-monospace, monospace",
-                  fontSize: "0.68rem",
-                  letterSpacing: "0.06em",
-                  color: "hsl(var(--muted-foreground) / 0.5)",
-                }}
-              >
-                {filtered.length} {t("résultats", "results")}
-                {search && ` · "${search}"`}
-                {hasActiveFilters && !search && (
-                  <button
-                    onClick={resetFilters}
-                    className="ml-2 underline underline-offset-2 transition-colors"
-                    style={{ color: "hsl(var(--primary) / 0.7)" }}
-                  >
-                    {t("réinitialiser", "reset")}
-                  </button>
-                )}
-              </p>
-
-              {/* Mobile controls */}
-              <div className="flex gap-2 lg:hidden">
-                <select
-                  id="category-mobile-price-filter"
-                  name="category-mobile-price-filter"
-                  value={priceFilter}
-                  onChange={(e) => setPriceFilter(e.target.value as PriceFilter)}
-                  className="rounded-lg border border-border bg-card px-2 py-1.5 text-xs text-foreground"
-                >
-                  <option value="all">{t("Tous", "All")}</option>
-                  <option value="free">{t("Gratuit", "Free")}</option>
-                  <option value="freemium">Freemium</option>
-                  <option value="paid">{t("Payant", "Paid")}</option>
-                </select>
-                <select
-                  id="category-mobile-sort"
-                  name="category-mobile-sort"
-                  value={sort}
-                  onChange={(e) => setSort(e.target.value as SortKey)}
-                  className="rounded-lg border border-border bg-card px-2 py-1.5 text-xs text-foreground"
-                >
-                  <option value="name">A→Z</option>
-                  <option value="price-asc">{t("Prix↑", "Price↑")}</option>
-                  <option value="price-desc">{t("Prix↓", "Price↓")}</option>
-                  <option value="free-first">{t("Gratuit", "Free")}</option>
-                  <option value="savings">{t("Économies", "Savings")}</option>
-                </select>
-              </div>
-            </div>
-
+        {/* ══════════════ TOOL LIST ══════════════ */}
+        <div className="min-w-0">
             {/* Cards — editorial list rows */}
             <div className="tcr-list">
               {visible.map((tool, i) => (
@@ -516,7 +435,6 @@ const CategoryPage = () => {
                 </ul>
               </section>
             )}
-          </div>
         </div>
       </div>
     </div>
