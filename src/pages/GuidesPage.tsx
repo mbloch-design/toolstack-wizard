@@ -251,8 +251,11 @@ const GuidesPage = () => {
     <div className="min-h-screen">
 
       {/* ══ 1. Compact header: breadcrumb + title, no banner artwork —
-          same pattern as ToolsPage, replacing the tall gradient hero. ══ */}
-      <div className="gi-container" style={{ paddingTop: 32 }}>
+          same pattern as ToolsPage, replacing the tall gradient hero.
+          paddingTop 40 matches .tt-catalog-container's own top padding
+          exactly, so the header sits at the same vertical offset as
+          Tools/Category/Stacks/Comparatifs. ══ */}
+      <div className="gi-container" style={{ paddingTop: 40 }}>
         <div className="tt-catalog-compact-header">
           <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
           <h1 className="tt-catalog-compact-title">{t("Mieux choisir ses outils.", "Choose tools with less noise.")}</h1>
