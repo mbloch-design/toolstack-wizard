@@ -2,17 +2,13 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { getCategoryIcon } from "@/lib/categoryIcons";
 import { Search, ChevronDown, X } from "lucide-react";
-import ToolLogo from "@/components/ToolLogo";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { getToolDomain } from "@/lib/toolUtils";
-import { asText, stripLeadingEmoji } from "@/lib/text";
+import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
-import { ToolRowEditorial } from "@/components/ToolRowEditorial";
+import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import Breadcrumb from "@/components/Breadcrumb";
-import type { PricingV5, ToolType } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -193,56 +189,30 @@ const CategoryPage = () => {
     );
   }
 
-  const Icon = getCategoryIcon(category.id);
   const catName = stripLeadingEmoji(category.name, category.id);
   const catNameEn = stripLeadingEmoji(category.nameEn, catName);
-  const freeCount = allCatTools.filter((tool) => tool.defaultMonthlyPrice === 0).length;
-  const paidTools = allCatTools.filter((tool) => tool.defaultMonthlyPrice > 0);
-  const avgPrice  = paidTools.reduce((s, tool) => s + tool.defaultMonthlyPrice, 0) / (paidTools.length || 1);
   const visible   = filtered.slice(0, visibleCount);
   const hasMore   = visibleCount < filtered.length;
   const relatedCats = categories.filter((c) => c.id !== category.id).slice(0, 4);
 
   const displayName = t(catName, catNameEn) as string;
-  const catDesc = category.description
-    ? t(category.description, (category as any).descriptionEn || category.description) as string
-    : t(`Prix vérifiés, alternatives honnêtes — sans commission, sans biais.`, `Verified pricing, honest alternatives — no commissions, no bias.`) as string;
 
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ══════════════ HERO — editorial, aligned with cp-hero pattern ══════════════ */}
-      <section className="cat-hero">
-        <div className="cat-hero-inner">
+      {/* ── Body — same horizontal constraints used across the site
+            (1280 max / 48px gutter). */}
+      <div className="cat-body">
+        {/* ── Compact header: breadcrumb + title, no banner/stats — same
+            pattern as ToolsPage, replacing the old editorial cat-hero. ── */}
+        <div className="tt-catalog-compact-header">
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             { label: displayName },
           ]} />
-
-          <span className="cat-hero-eyebrow">
-            {allCatTools.length} {t("outils analysés", "tools analyzed")}
-          </span>
-          <h1 className="cat-hero-title">{displayName}</h1>
-          {catDesc && <p className="cat-hero-desc">{catDesc}</p>}
-
-          {/* Stats line — editorial, monospace */}
-          {(freeCount > 0 || avgPrice > 0) && (
-            <p className="cat-hero-stats">
-              {freeCount > 0 && (
-                <span>{freeCount} {t("gratuits ou freemium", "free or freemium")}</span>
-              )}
-              {freeCount > 0 && avgPrice > 0 && <span className="cat-hero-stats-sep" aria-hidden="true">·</span>}
-              {avgPrice > 0 && (
-                <span>~{Math.round(avgPrice)}€ {t("prix moyen", "avg price")}</span>
-              )}
-            </p>
-          )}
+          <h1 className="tt-catalog-compact-title">{displayName}</h1>
         </div>
-      </section>
 
-      {/* ── Body — same horizontal constraints as the hero (1280 max / 48px gutter)
-            so the filter bar + tool list align vertically with the H1 above. */}
-      <div className="cat-body">
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
         {/* ══════════════ FILTER BAR — same pilule+popover pattern as
@@ -362,18 +332,18 @@ const CategoryPage = () => {
           </div>
         </div>
 
-        {/* ══════════════ TOOL LIST ══════════════ */}
+        {/* ══════════════ TOOL LIST — same tc-grid + ToolCardEditorial as
+            ToolsPage (image, name, inline price, hover-reveal description
+            + CTA on the image) instead of the old editorial list rows. ══ */}
         <div className="min-w-0">
-            {/* Cards — editorial list rows */}
-            <div className="tcr-list">
-              {visible.map((tool, i) => (
-                <ToolRowEditorial
+            <div className="tc-grid">
+              {visible.map((tool) => (
+                <ToolCardEditorial
                   key={tool.id}
                   tool={tool}
                   prefix={prefix}
                   t={t}
                   lang={lang}
-                  rank={i + 1}
                   categoryLabel={displayName}
                 />
               ))}
