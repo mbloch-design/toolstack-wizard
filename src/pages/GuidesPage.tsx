@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { ArrowRight, Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
+import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import { scrollToTop } from "@/lib/scroll";
 import type { Tool } from "@/data/types";
@@ -133,9 +134,26 @@ const GuidesPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
   const [showAll, setShowAll] = useState(false);
+  const [toolbarStuck, setToolbarStuck] = useState(false);
+  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
 
   /* Reset pagination on filter/sort change */
   useEffect(() => { setShowAll(false); }, [activeFilter, sortBy]);
+
+  // Toggle the sticky toolbar's "stuck" border once its sentinel (placed
+  // right above it) scrolls out of view — same pattern as ToolsPage/
+  // StacksPage. .asv2-content is the real scroll container on desktop.
+  useEffect(() => {
+    const sentinel = toolbarSentinelRef.current;
+    if (!sentinel) return;
+    const scrollRoot = sentinel.closest(".asv2-content");
+    const observer = new IntersectionObserver(
+      ([entry]) => setToolbarStuck(!entry.isIntersecting),
+      { root: scrollRoot, threshold: 0 },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -284,25 +302,25 @@ const GuidesPage = () => {
           {/* Section label */}
           <p className="gi-section-label">{t("Guides récents", "Recent guides")}</p>
 
-          {/* Filter bar */}
-          <div className="gi-filter-bar">
-            <div className="gi-filter-pills">
-              {filters.map((f) => (
-                <button
-                  key={f.id}
-                  className={`gi-filter-pill${activeFilter === f.id ? " gi-filter-pill--active" : ""}`}
-                  onClick={() => { setActiveFilter(f.id); setShowAll(false); }}
-                >
-                  {f.label}
-                </button>
-              ))}
+          <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+
+          {/* Filter bar — same pilule+popover pattern as Outils/Comparatifs/Stacks */}
+          <div className={`tt-catalog-toolbar${toolbarStuck ? " tt-catalog-toolbar--stuck" : ""}`}>
+            <div className="tt-catalog-toolbar-filters">
+              <FilterDropdown
+                label={t("Filtrer par", "Filter by") as string}
+                allLabel={t("Tous", "All") as string}
+                options={filters.filter((f) => f.id !== "all").map((f) => ({ id: f.id, label: f.label }))}
+                value={activeFilter}
+                onChange={(id) => { setActiveFilter(id); setShowAll(false); }}
+              />
             </div>
-            <div className="gi-sort-wrapper">
-              <span className="gi-sort-label">{t("TRIER PAR", "SORT BY")}</span>
+            <div className="tt-catalog-toolbar-meta">
               <select
-                className="gi-sort-select"
+                className="tt-catalog-sort-select"
                 value={sortBy}
                 onChange={e => { setSortBy(e.target.value); setShowAll(false); }}
+                aria-label={t("Trier par", "Sort by") as string}
               >
                 {sortOptions.map(o => (
                   <option key={o.id} value={o.id}>{o.label}</option>
