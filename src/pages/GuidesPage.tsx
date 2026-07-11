@@ -275,7 +275,7 @@ const GuidesPage = () => {
           )}
 
           {!loading && visibleList.length > 0 && (
-            <div>
+            <div className="sk-results-grid">
               {visibleList.map((post) => (
                 <ArticleRow key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
               ))}
@@ -430,35 +430,38 @@ function ArticleRow({
   const intent = getPostIntent(post);
 
   return (
-    <Link to={`${prefix}/guide/${post.slug}`} className="gi-row">
+    <Link to={`${prefix}/guide/${post.slug}`} className="sk-card">
+      <span className="sk-card-tag">{intent ? `${type} · ${intent}` : type}</span>
 
-      {/* Col 1: type + intent + read time */}
-      <div className="gi-row-meta">
-        <p className="gi-row-cat">{type}</p>
-        {intent && <p className="gi-row-intent">{intent}</p>}
+      <h3 className="sk-card-title">{post.title}</h3>
+      {post.excerpt && <p className="sk-card-verdict">{post.excerpt}</p>}
+
+      {mentionedTools.length > 0 && (
+        <div className="sk-card-tools" aria-label={lang === "fr" ? "Outils cités" : "Tools cited"}>
+          {mentionedTools.slice(0, 5).map((tool) => (
+            <span key={tool.id} title={tool.name} className="sk-card-tool">
+              <ToolLogo tool={tool} size={22} />
+            </span>
+          ))}
+          {mentionedTools.length > 5 && (
+            <span className="sk-card-tool sk-card-tool-more">+{mentionedTools.length - 5}</span>
+          )}
+        </div>
+      )}
+
+      <div className="sk-card-footer">
         {post.readTime && (
-          <p style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 8 }}>
-            <Clock style={{ width: 10, height: 10 }} />
-            {post.readTime}
-          </p>
-        )}
-      </div>
-
-      {/* Col 2: title + excerpt + tool logos */}
-      <div>
-        <h3 className="gi-row-title">{post.title}</h3>
-        {post.excerpt && <p className="gi-row-excerpt">{post.excerpt}</p>}
-        {mentionedTools.length > 0 && (
-          <div>
-            <p className="gi-row-tools-label">{lang === "fr" ? "OUTILS CITÉS" : "TOOLS CITED"}</p>
-            <ToolLogoPillStack tools={mentionedTools} max={5} />
+          <div className="sk-card-stats">
+            <span className="sk-card-stat" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+              <Clock style={{ width: 12, height: 12 }} aria-hidden />
+              {post.readTime}
+            </span>
           </div>
         )}
-      </div>
-
-      {/* Col 3: read CTA */}
-      <div className="gi-row-cta">
-        {lang === "fr" ? "Lire →" : "Read →"}
+        <span className="sk-card-cta">
+          {lang === "fr" ? "Lire" : "Read"}
+          <span aria-hidden>→</span>
+        </span>
       </div>
     </Link>
   );
