@@ -184,49 +184,6 @@ const GuidesPage = () => {
   const visibleList = showAll ? listPosts : listPosts.slice(0, PAGE_SIZE);
   const hasMore     = !showAll && listPosts.length > PAGE_SIZE;
 
-  /* ── "Commencer ici" entries ── */
-  const startHereItems = lang === "fr"
-    ? [
-        {
-          filter: "comparer",
-          icon: "⇌",
-          label: "Je veux choisir un outil",
-          desc: "Comparatifs honnêtes entre deux solutions proches. Sans biais, avec les vraies différences.",
-        },
-        {
-          filter: "remplacer",
-          icon: "→",
-          label: "Je veux remplacer un outil trop cher",
-          desc: "Alternatives concrètes, gratuites ou moins chères, pour chaque outil de ta stack.",
-        },
-        {
-          filter: "stack",
-          icon: "◈",
-          label: "Je veux construire ma stack",
-          desc: "Stacks commentées par profil : freelance, créateur, consultant, designer, ops.",
-        },
-      ]
-    : [
-        {
-          filter: "comparer",
-          icon: "⇌",
-          label: "I want to pick the right tool",
-          desc: "Honest comparisons between similar tools. No bias, just the real differences.",
-        },
-        {
-          filter: "remplacer",
-          icon: "→",
-          label: "I want to replace an expensive tool",
-          desc: "Concrete free or cheaper alternatives for every tool in your stack.",
-        },
-        {
-          filter: "stack",
-          icon: "◈",
-          label: "I want to build my stack",
-          desc: "Annotated stacks by profile: freelancer, creator, consultant, designer, ops.",
-        },
-      ];
-
   /* ── Theme columns ── */
   const themeColumns = lang === "fr"
     ? [
@@ -241,11 +198,6 @@ const GuidesPage = () => {
         { label: "AI & Productivity", items: ["AI skills", "Automation", "Augmented research", "Content production"] },
         { label: "Alternatives",      items: ["Free alternatives", "Cheaper tools", "Replace heavy tools", "Open-source"] },
       ];
-
-  const handleFilterClick = (filterId: string) => {
-    setActiveFilter(filterId);
-    document.getElementById("guides")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <div className="min-h-screen">
@@ -272,31 +224,6 @@ const GuidesPage = () => {
         </div>
       )}
 
-      {/* ══ 3. Commencer ici ═════════════════════════════════════════════════ */}
-      {!loading && (
-        <div style={{ borderBottom: "1px solid var(--color-border)" }}>
-          <div className="gi-container" style={{ paddingTop: 56, paddingBottom: 56 }}>
-            <p className="gi-section-label">{t("Commencer par le bon angle.", "Start from the right angle.")}</p>
-            <div className="gi-start-here-grid">
-              {startHereItems.map((item) => (
-                <button
-                  key={item.filter}
-                  className="gi-start-here-item"
-                  onClick={() => handleFilterClick(item.filter)}
-                >
-                  <span className="gi-start-here-icon">{item.icon}</span>
-                  <span className="gi-start-here-label">{item.label}</span>
-                  <span className="gi-start-here-desc">{item.desc}</span>
-                  <span className="gi-start-here-cta">
-                    {t("Voir les guides", "See guides")}
-                    <ArrowRight style={{ width: 12, height: 12 }} />
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* ══ 4. Filter bar + guides list — same tt-catalog-container padding
           (40/40) and no border, matching Outils' filter block exactly. ══ */}
