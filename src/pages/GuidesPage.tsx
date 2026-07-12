@@ -184,7 +184,7 @@ const GuidesPage = () => {
       ];
 
   return (
-    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#FF3EA5" } as CSSProperties}>
+    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#20E38C" } as CSSProperties}>
 
       {/* ══ Top — same compact header + grid as the Outils catalog page
           (breadcrumb + slim title, then the filter bar), so Guides shares

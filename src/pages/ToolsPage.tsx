@@ -209,7 +209,7 @@ const ToolsPage = () => {
   }
 
   return (
-    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#FF7A18" } as React.CSSProperties}>
+    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#10DDD6" } as React.CSSProperties}>
 
       {/* ══════════════ BODY ══════════════ */}
       <div className="tt-catalog-container">

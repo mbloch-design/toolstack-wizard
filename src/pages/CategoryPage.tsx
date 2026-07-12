@@ -198,7 +198,7 @@ const CategoryPage = () => {
   const displayName = t(catName, catNameEn) as string;
 
   return (
-    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#3DFF6E" } as CSSProperties}>
+    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#78EB2B" } as CSSProperties}>
 
       {/* ── Body — same horizontal constraints used across the site
             (1280 max / 48px gutter). */}
