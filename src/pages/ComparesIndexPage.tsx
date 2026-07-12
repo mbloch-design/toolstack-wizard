@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Search, X } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
@@ -201,7 +201,7 @@ const ComparesIndexPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#33D9FF" } as CSSProperties}>
 
       {/* ── Listing section ───────────────────────────────────────────────── */}
       <section className="cix-section">

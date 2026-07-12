@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
 import { X, SlidersHorizontal } from "lucide-react";
@@ -717,7 +717,7 @@ const StacksPage = () => {
   }, [lang, toolBySlug]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#00E572" } as CSSProperties}>
       <section id="stacks" className="sk-section sk-listing-section scroll-mt-20">
         <div className="sk-container">
           {/* ── Compact header: breadcrumb + title, no banner artwork —
