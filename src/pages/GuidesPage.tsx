@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, useRef } from "react";
-import { ArrowRight, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
 import FilterDropdown from "@/components/filters/FilterDropdown";
@@ -164,12 +164,6 @@ const GuidesPage = () => {
     return sortPosts(matched, sortBy);
   }, [posts, activeFilter, sortBy]);
 
-  const featured    = filteredPosts[0] ?? null;
-  // Was filteredPosts.slice(1) — the featured post lived only in the
-  // hero band (see below) and was excluded from the grid, which worked
-  // when the hero rendered its own full FeaturedBlock card. The hero is
-  // now page-level (title/subtitle/CTA, not a specific post's content),
-  // so the top guide belongs back in the grid instead of disappearing.
   const listPosts   = filteredPosts;
   const visibleList = showAll ? listPosts : listPosts.slice(0, PAGE_SIZE);
   const hasMore     = !showAll && listPosts.length > PAGE_SIZE;
@@ -192,38 +186,20 @@ const GuidesPage = () => {
   return (
     <div className="gi-page min-h-screen">
 
-      {/* ══ 1. Hero — full-bleed warm gradient wash at the top of the page
-          (see .gi-page in the CSS), NOT a boxed band: the gradient is a
-          page-level background that fades down into the page colour, with
-          the title/subtitle/CTA sitting directly on it, and the filter bar
-          below picking the same warm tone up when it pins (Spotify-style).
-          The CTA points at the top guide, which also appears in the grid
-          below. ══ */}
-      <section className="gi-hero">
-        <div className="gi-hero-inner">
-          <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
-          <span className="gi-hero-eyebrow">{t("GUIDES & COMPARATIFS", "GUIDES & COMPARISONS")}</span>
-          <h1 className="gi-hero-title">{t("Mieux choisir ses outils.", "Choose tools with less noise.")}</h1>
-          <p className="gi-hero-subtitle">
-            {t(
-              "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère.",
-              "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.",
-            )}
-          </p>
-          {featured && (
-            <Link to={`${prefix}/guide/${featured.slug}`} className="gi-hero-cta">
-              {t("Lire le dernier guide", "Read the latest guide")}
-              <ArrowRight style={{ width: 15, height: 15 }} />
-            </Link>
-          )}
-        </div>
-      </section>
-
-
-      {/* ══ 4. Filter bar + guides list — same tt-catalog-container padding
-          (40/40) and no border, matching Outils' filter block exactly. ══ */}
+      {/* ══ Top — same compact header + grid as the Outils catalog page
+          (breadcrumb + slim title, then the filter bar), so Guides shares
+          the exact spacing/rhythm of the other catalog pages. The warm
+          gradient wash lives on .gi-page behind it (Spotify-style), and the
+          filter bar picks that tone up as a band when it pins. ══ */}
       <div id="guides">
         <div className="gi-container tt-catalog-container">
+
+          <div className="tt-catalog-compact-header">
+            <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
+            <h1 className="tt-catalog-compact-title">
+              {t("Mieux choisir ses outils.", "Choose tools with less noise.")}
+            </h1>
+          </div>
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 

@@ -6439,81 +6439,20 @@
     padding: 0 var(--layout-gutter);
   }
 
-  /* Guides page top — full-bleed warm gradient WASH (Spotify-style), not a
-     boxed band. The gradient is a page-level background on .gi-page that is
-     strongest at the very top and fades down into the page colour; the hero
-     text and the (transparent) filter bar sit directly on it, and the filter
-     bar picks the same tone back up when it pins. One shared colour system,
-     no rounded box. */
+  /* Guides page top — full-bleed warm gradient WASH (Spotify-style). The
+     gradient is a page-level background on .gi-page, strongest at the very
+     top and fading down into the page colour behind the compact header +
+     filter bar (the Guides top now reuses the Outils compact-header/grid,
+     so it's just breadcrumb + slim title, not a tall hero). The filter bar
+     is transparent so the wash shows through at rest, then picks the tone
+     back up as a solid band when it pins. */
   .gi-page {
     background-color: var(--color-bg);
     background-image:
-      radial-gradient(85% 62% at 50% 0%, color-mix(in oklch, #E8A66E 52%, transparent) 0%, transparent 60%),
-      linear-gradient(180deg, #F3E4D2 0%, transparent 460px);
+      radial-gradient(78% 52% at 50% 0%, color-mix(in oklch, #E8A66E 50%, transparent) 0%, transparent 62%),
+      linear-gradient(180deg, #F3E4D2 0%, transparent 320px);
     background-repeat: no-repeat;
     background-position: top center;
-  }
-  /* .gi-hero is now just the gutter container for the hero text — no box,
-     no background of its own (the wash lives on .gi-page behind it). */
-  .gi-hero {
-    max-width: var(--layout-content);
-    margin: 0 auto;
-    padding: 40px var(--layout-gutter) 8px;
-  }
-  .gi-hero-inner {
-    position: relative;
-  }
-  .gi-hero-inner .cp-breadcrumb {
-    margin-bottom: 18px;
-  }
-  .gi-hero-eyebrow {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: color-mix(in oklch, var(--color-text) 70%, transparent);
-    margin-bottom: 14px;
-  }
-  .gi-hero-title {
-    font-family: var(--font-ui);
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    line-height: 1.03;
-    color: #222222;
-    max-width: 14ch;
-    margin: 0 0 16px;
-  }
-  .gi-hero-subtitle {
-    font-family: var(--font-ui);
-    font-size: 17px;
-    line-height: 1.5;
-    letter-spacing: -0.01em;
-    color: color-mix(in oklch, var(--color-text) 78%, transparent);
-    max-width: 46ch;
-    margin: 0 0 28px;
-  }
-  .gi-hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    height: 46px;
-    padding: 0 22px;
-    border-radius: 999px;
-    background: #222222;
-    color: #F6F3EB;
-    font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 150ms ease-out;
-  }
-  .gi-hero-cta:hover { opacity: 0.82; }
-  @media (max-width: 640px) {
-    .gi-hero { padding: 28px var(--layout-gutter) 4px; }
-    .gi-hero-title { max-width: 100%; }
   }
 
   /* Hero metadata tags row — dot-separated plain text, no badge borders */
