@@ -15685,8 +15685,13 @@ section[id] {
    visible so the root doesn't become a scroll container and the toolbar keeps
    sticking to .asv2-content. */
 .tt-catalog-page { overflow-x: clip; }
-.tt-catalog-page .tt-catalog-toolbar { isolation: isolate; background: transparent; }
-.tt-catalog-page .tt-catalog-toolbar::before {
+/* Stacks uses a bespoke filter row (.sk-mobile-trigger-row) instead of
+   .tt-catalog-toolbar, so it's listed alongside everywhere below to get the
+   exact same pinned accent band. */
+.tt-catalog-page .tt-catalog-toolbar,
+.tt-catalog-page .sk-mobile-trigger-row { isolation: isolate; background: transparent; }
+.tt-catalog-page .tt-catalog-toolbar::before,
+.tt-catalog-page .sk-mobile-trigger-row::before {
   content: "";
   position: absolute;
   top: 0;
@@ -15699,17 +15704,26 @@ section[id] {
   opacity: 0;                   /* the zone just gets its colour — no animation */
   pointer-events: none;
 }
-.tt-catalog-page .tt-catalog-toolbar--stuck { border-bottom-color: transparent; }
-.tt-catalog-page .tt-catalog-toolbar--stuck::before { opacity: 1; }
-/* Dark ink + light pill on the accent band so both controls read as a matched
+.tt-catalog-page .tt-catalog-toolbar--stuck,
+.tt-catalog-page .sk-mobile-trigger-row--stuck { border-bottom-color: transparent; }
+.tt-catalog-page .tt-catalog-toolbar--stuck::before,
+.tt-catalog-page .sk-mobile-trigger-row--stuck::before { opacity: 1; }
+/* Dark ink + light pill on the accent band so the controls read as a matched
    pair (already dark in the light theme; this also covers dark mode). */
 .tt-catalog-page .tt-catalog-toolbar--stuck .tf-dd-trigger,
 .tt-catalog-page .tt-catalog-toolbar--stuck .tf-dd-chevron,
-.tt-catalog-page .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
+.tt-catalog-page .tt-catalog-toolbar--stuck .tt-catalog-sort-select,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .tf-dd-trigger,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .tf-dd-chevron,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .sk-mobile-trigger,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .sk-search-input {
   color: #241a12;
 }
 .tt-catalog-page .tt-catalog-toolbar--stuck .tf-dd-trigger,
-.tt-catalog-page .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
+.tt-catalog-page .tt-catalog-toolbar--stuck .tt-catalog-sort-select,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .tf-dd-trigger,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .sk-mobile-trigger,
+.tt-catalog-page .sk-mobile-trigger-row--stuck .sk-search-input {
   background-color: color-mix(in oklch, #ffffff 62%, transparent);
   border-color: color-mix(in oklch, #241a12 22%, transparent);
 }
