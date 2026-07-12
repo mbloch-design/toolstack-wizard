@@ -14315,6 +14315,40 @@ section[id] {
 .tt-catalog-toolbar--stuck {
   border-bottom-color: var(--color-border);
 }
+
+/* ── Guides-only: Spotify-style sticky filter band ──────────────────────────
+   At rest the filter bar sits on the page background. As it scrolls up and
+   pins (--stuck), a full-bleed band in the hero's own warm gradient fades in
+   behind the chips — the hero's colour "compressing" into the sticky bar, one
+   shared colour system (like Spotify's top gradient collapsing into the
+   pinned chip row). The band echoes the hero gradient, so the controls flip
+   to dark ink to stay readable on it in any theme. Scoped to #guides so the
+   other catalog pages keep their plain neutral sticky bar. */
+#guides .tt-catalog-toolbar { isolation: isolate; }
+#guides .tt-catalog-toolbar::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(-1 * var(--layout-gutter));   /* full-bleed to the gutter edges */
+  z-index: -1;
+  background: linear-gradient(120deg, #F6F3EB 0%, #F3E4D2 45%, #F0C9A3 100%);
+  border-bottom: 1px solid color-mix(in oklch, #E8A66E 45%, transparent);
+  opacity: 0;
+  transition: opacity 240ms ease-out;
+  pointer-events: none;
+}
+#guides .tt-catalog-toolbar--stuck { border-bottom-color: transparent; }
+#guides .tt-catalog-toolbar--stuck::before { opacity: 1; }
+/* Dark ink on the warm band (already dark in the light theme; this also keeps
+   it readable if the page is viewed in dark mode). */
+#guides .tt-catalog-toolbar--stuck .tf-dd-trigger,
+#guides .tt-catalog-toolbar--stuck .tf-dd-chevron,
+#guides .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
+  color: #241a12;
+}
+#guides .tt-catalog-toolbar--stuck .tf-dd-trigger {
+  background: color-mix(in oklch, #ffffff 62%, transparent);
+  border-color: color-mix(in oklch, #241a12 22%, transparent);
+}
 .tt-catalog-toolbar-filters {
   display: flex;
   flex: 1 1 auto;
