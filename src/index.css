@@ -14258,13 +14258,22 @@ section[id] {
    pinned chip row). The band echoes the hero gradient, so the controls flip
    to dark ink to stay readable on it in any theme. Scoped to #guides so the
    other catalog pages keep their plain neutral sticky bar. */
+/* #guides clips horizontally so the band below can overshoot to -100vw on
+   each side and be trimmed to the page's full content width (past the
+   max-width container's centring margins), giving a true edge-to-edge band.
+   overflow-x: clip pairs with overflow-y: visible, so it does NOT become a
+   scroll container and the toolbar keeps sticking to .asv2-content. */
+#guides { overflow-x: clip; }
 #guides .tt-catalog-toolbar { isolation: isolate; background: transparent; }
 #guides .tt-catalog-toolbar::before {
   content: "";
   position: absolute;
-  inset: 0 calc(-1 * var(--layout-gutter));   /* full-bleed to the gutter edges */
+  top: 0;
+  bottom: 0;
+  left: -100vw;                 /* overshoot; clipped to #guides = full width */
+  right: -100vw;
   z-index: -1;
-  background: linear-gradient(120deg, #F6F3EB 0%, #F3E4D2 45%, #F0C9A3 100%);
+  background: #F0C9A3;          /* single flat tone — the gradient's reference apricot */
   border-bottom: 1px solid color-mix(in oklch, #E8A66E 45%, transparent);
   opacity: 0;
   transition: opacity 240ms ease-out;
@@ -14272,15 +14281,16 @@ section[id] {
 }
 #guides .tt-catalog-toolbar--stuck { border-bottom-color: transparent; }
 #guides .tt-catalog-toolbar--stuck::before { opacity: 1; }
-/* Dark ink on the warm band (already dark in the light theme; this also keeps
-   it readable if the page is viewed in dark mode). */
+/* Dark ink + light pill on the warm band so both controls read as a matched
+   pair (already dark in the light theme; this also covers dark mode). */
 #guides .tt-catalog-toolbar--stuck .tf-dd-trigger,
 #guides .tt-catalog-toolbar--stuck .tf-dd-chevron,
 #guides .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
   color: #241a12;
 }
-#guides .tt-catalog-toolbar--stuck .tf-dd-trigger {
-  background: color-mix(in oklch, #ffffff 62%, transparent);
+#guides .tt-catalog-toolbar--stuck .tf-dd-trigger,
+#guides .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
+  background-color: color-mix(in oklch, #ffffff 62%, transparent);
   border-color: color-mix(in oklch, #241a12 22%, transparent);
 }
 .tt-catalog-toolbar-filters {
@@ -14434,17 +14444,32 @@ section[id] {
   letter-spacing: 0;
   white-space: nowrap;
 }
+/* Sort control — styled as the same pill as the .tf-dd-trigger filter so the
+   two read as a matched pair (it was a bare, unstyled native select). */
 .tt-catalog-sort-select {
+  height: 42px;
   min-width: 104px;
-  border: none;
+  padding: 0 34px 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
   outline: none;
-  background: transparent;
+  background-color: var(--color-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239a948c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  -webkit-appearance: none;
+  appearance: none;
   color: var(--color-text);
   font-family: var(--font-ui);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0;
   cursor: pointer;
+  transition: border-color 160ms ease-out, background-color 160ms ease-out;
+}
+.tt-catalog-sort-select:hover {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-surface-soft);
 }
 .tt-catalog-sort-select option {
   color: var(--color-text);
