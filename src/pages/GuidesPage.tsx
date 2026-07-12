@@ -190,16 +190,15 @@ const GuidesPage = () => {
       ];
 
   return (
-    <div className="min-h-screen">
+    <div className="gi-page min-h-screen">
 
-      {/* ══ 1. Hero — visual band (rich CSS gradient) instead of the plain
-          compact header, requested specifically for this page: the
-          compact header + separate Featured card combo read as floating/
-          text-heavy with no visual mass to open the page on. Page-level
-          (title/subtitle), not tied to one post's content, so the CTA
-          just points at the top guide instead of duplicating it — that
-          guide now also appears in the grid below instead of being
-          pulled out into its own card. ══ */}
+      {/* ══ 1. Hero — full-bleed warm gradient wash at the top of the page
+          (see .gi-page in the CSS), NOT a boxed band: the gradient is a
+          page-level background that fades down into the page colour, with
+          the title/subtitle/CTA sitting directly on it, and the filter bar
+          below picking the same warm tone up when it pins (Spotify-style).
+          The CTA points at the top guide, which also appears in the grid
+          below. ══ */}
       <section className="gi-hero">
         <div className="gi-hero-inner">
           <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />

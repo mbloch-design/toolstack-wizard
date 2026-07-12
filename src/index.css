@@ -6439,33 +6439,29 @@
     padding: 0 var(--layout-gutter);
   }
 
-  /* Guides hero — rich CSS gradient band (no cover-image asset exists
-     for this page), replacing the plain compact-header + separate
-     Featured-card combo that read as floating/text-heavy with no
-     visual mass to open the page on. Same rounded-band shape as the
-     homepage's own hv2-band hero, so it's a variant of a pattern the
-     site already uses, not an invented one-off. */
-  /* .gi-hero is the gutter container (same axis as .gi-container: centered,
-     max-width, horizontal gutter). The colored band lives on .gi-hero-inner
-     INSIDE that gutter, so the band's edges line up with the toolbar/cards
-     region (128→content-1000 at desktop) instead of bleeding to the shell
-     sidebar on the left and the window edge on the right. */
+  /* Guides page top — full-bleed warm gradient WASH (Spotify-style), not a
+     boxed band. The gradient is a page-level background on .gi-page that is
+     strongest at the very top and fades down into the page colour; the hero
+     text and the (transparent) filter bar sit directly on it, and the filter
+     bar picks the same tone back up when it pins. One shared colour system,
+     no rounded box. */
+  .gi-page {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(85% 62% at 50% 0%, color-mix(in oklch, #E8A66E 52%, transparent) 0%, transparent 60%),
+      linear-gradient(180deg, #F3E4D2 0%, transparent 460px);
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+  /* .gi-hero is now just the gutter container for the hero text — no box,
+     no background of its own (the wash lives on .gi-page behind it). */
   .gi-hero {
     max-width: var(--layout-content);
     margin: 0 auto;
-    padding: 32px var(--layout-gutter) 8px;
+    padding: 40px var(--layout-gutter) 8px;
   }
   .gi-hero-inner {
     position: relative;
-    overflow: hidden;
-    border-radius: 24px;
-    border: 1px solid color-mix(in oklch, var(--color-border) 60%, transparent);
-    background:
-      radial-gradient(120% 140% at 100% 0%, color-mix(in oklch, #E8A66E 55%, transparent) 0%, transparent 55%),
-      linear-gradient(120deg, #F6F3EB 0%, #F3E4D2 40%, #F0C9A3 75%, #E8A66E 100%);
-    /* Internal text padding — the band already sits inside the page gutter
-       via .gi-hero, so this is breathing room inside the colored box. */
-    padding: 44px 48px 40px;
   }
   .gi-hero-inner .cp-breadcrumb {
     margin-bottom: 18px;
@@ -6516,8 +6512,7 @@
   }
   .gi-hero-cta:hover { opacity: 0.82; }
   @media (max-width: 640px) {
-    .gi-hero { padding: 20px var(--layout-gutter) 4px; }
-    .gi-hero-inner { border-radius: 16px; padding: 32px 24px; }
+    .gi-hero { padding: 28px var(--layout-gutter) 4px; }
     .gi-hero-title { max-width: 100%; }
   }
 
@@ -14324,7 +14319,7 @@ section[id] {
    pinned chip row). The band echoes the hero gradient, so the controls flip
    to dark ink to stay readable on it in any theme. Scoped to #guides so the
    other catalog pages keep their plain neutral sticky bar. */
-#guides .tt-catalog-toolbar { isolation: isolate; }
+#guides .tt-catalog-toolbar { isolation: isolate; background: transparent; }
 #guides .tt-catalog-toolbar::before {
   content: "";
   position: absolute;
