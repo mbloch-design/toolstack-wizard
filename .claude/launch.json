@@ -4,16 +4,16 @@
     {
       "name": "tooltrim",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "--port", "5177"],
-      "cwd": "/tmp/toolstack-wizard",
-      "port": 5177
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/mbloch/Documents/New project",
+      "autoPort": true
     },
     {
       "name": "tooltrim-preview",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "preview", "--port", "4173"],
+      "runtimeArgs": ["vite", "preview"],
       "cwd": "/Users/mbloch/Documents/New project",
-      "port": 4173
+      "autoPort": true
     }
   ]
 }
