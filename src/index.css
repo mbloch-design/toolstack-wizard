@@ -7301,18 +7301,22 @@
     padding: 0 var(--layout-gutter);
   }
 
-  /* Guides page top — full-bleed warm gradient WASH (Spotify-style). The
-     gradient is a page-level background on .gi-page, strongest at the very
-     top and fading down into the page colour behind the compact header +
-     filter bar (the Guides top now reuses the Outils compact-header/grid,
-     so it's just breadcrumb + slim title, not a tall hero). The filter bar
-     is transparent so the wash shows through at rest, then picks the tone
-     back up as a solid band when it pins. */
-  .gi-page {
+  /* Catalog page top — full-bleed gradient WASH derived from the page's own
+     primary colour (--page-accent), strongest at the very top and fading down
+     into the page colour behind the compact header + filter bar. Each catalog
+     page therefore opens on its own acid tint, and the filter bar (transparent
+     at rest) picks that same colour up as a solid band when it pins. */
+  .tt-catalog-page {
+    /* Opaque stops only (accent mixed into the page colour, no `transparent`
+       keyword) so the wash renders reliably: a strong acid tint at the very
+       top fading down to the page colour by ~300px. */
     background-color: var(--color-bg);
-    background-image:
-      radial-gradient(78% 52% at 50% 0%, color-mix(in oklch, #E8A66E 50%, transparent) 0%, transparent 62%),
-      linear-gradient(180deg, #F3E4D2 0%, transparent 320px);
+    background-image: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--page-accent, #E8A66E) 66%, var(--color-bg)) 0%,
+      color-mix(in srgb, var(--page-accent, #E8A66E) 30%, var(--color-bg)) 120px,
+      var(--color-bg) 320px
+    );
     background-repeat: no-repeat;
     background-position: top center;
   }
