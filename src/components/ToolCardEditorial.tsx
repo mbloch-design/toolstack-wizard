@@ -11,17 +11,38 @@ import type { Tool } from "@/data/types";
    image, name, category, one line of "why", price, CTA.
 ───────────────────────────────────────────────────────────────────────────── */
 
+export type ToolCardEditorialTool = Pick<
+  Tool,
+  | "id"
+  | "name"
+  | "categoryId"
+  | "shortDescription"
+  | "pricing"
+  | "defaultMonthlyPrice"
+  | "affiliateLink"
+> & Partial<Pick<
+  Tool,
+  | "slug"
+  | "shortDescriptionEn"
+  | "websiteUrl"
+  | "ogImageUrl"
+  | "logo"
+  | "pricing_v5"
+>>;
+
 interface ToolCardEditorialProps {
-  tool: Tool;
+  tool: ToolCardEditorialTool;
   prefix: string;
   t: (fr: string, en: string) => string;
   categoryLabel?: string;
   lang?: "fr" | "en";
+  variant?: "default" | "compact";
+  showPin?: boolean;
 }
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
 
-function getPlanLabel(tool: Tool, lang: "fr" | "en"): string {
+function getPlanLabel(tool: ToolCardEditorialTool, lang: "fr" | "en"): string {
   if (isFreemiumPricing(tool.pricing)) return "Freemium";
   if (hasGenuineFreeTier(tool.pricing?.free)) return lang === "fr" ? "Gratuit" : "Free";
   if (tool.pricing_v5?.compare_price_monthly_eur) {
@@ -42,8 +63,11 @@ export function ToolCardEditorial({
   t,
   categoryLabel,
   lang = "fr",
+  variant = "default",
+  showPin = true,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
+  const compact = variant === "compact";
 
   const description = t(
     tool.shortDescription,
@@ -51,11 +75,11 @@ export function ToolCardEditorial({
   ) as string;
 
   return (
-    <div className="tool-pin-wrap">
-      <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />
+    <div className={`tool-pin-wrap${compact ? " tool-pin-wrap--compact" : ""}`}>
+      {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
       <Link
         to={`${prefix}/tool/${tool.slug ?? tool.id}`}
-        className="tce-card"
+        className={`tce-card${compact ? " tce-card--compact" : ""}`}
       >
       {/* Cover: OG image, falls back to centered logo. Description + CTA
           live in the image overlay (hidden at rest, revealed on hover/focus
@@ -64,7 +88,7 @@ export function ToolCardEditorial({
       <ToolCardImage
         tool={tool}
         logoSize={36}
-        overlay={
+        overlay={compact ? undefined : (
           <>
             {description && <p className="tce-description">{description}</p>}
             <span className="tce-cta">
@@ -72,7 +96,7 @@ export function ToolCardEditorial({
               <span className="tce-cta-arrow" aria-hidden>→</span>
             </span>
           </>
-        }
+        )}
       />
 
       {/* ── Name + price (same line) + category ── */}
@@ -84,6 +108,7 @@ export function ToolCardEditorial({
         {categoryLabel && (
           <p className="tce-category">{categoryLabel}</p>
         )}
+        {compact && description && <p className="tce-compact-description">{description}</p>}
       </div>
       </Link>
     </div>

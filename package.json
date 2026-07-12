@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "sync:data": "node scripts/sync-supabase-to-json.mjs",
     "test": "vitest run",
+    "test:ma-stack": "vitest run --config vitest.ma-stack.config.ts",
     "test:watch": "vitest",
     "test:go14": "vitest run src/test/diagnostic/go14.diagnostic.spec.ts",
     "test:go15": "vitest run src/test/diagnostic/go15.onboarding.spec.ts",

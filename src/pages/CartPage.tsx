@@ -1,19 +1,22 @@
-import { useEffect, useMemo, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Plus, Search, Trash2, X } from "lucide-react";
-import Breadcrumb from "@/components/Breadcrumb";
+import { ArrowLeft, MoreHorizontal, Pencil, Plus, Search, Trash2, X } from "lucide-react";
+import { toast } from "sonner";
+import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
-import ToolCardImage from "@/components/tool/ToolCardImage";
+import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { scrollToTop } from "@/lib/scroll";
+import { classifyToolForStack } from "@/lib/stackAutoClassification";
 
 type StackBoard = {
   id: string;
   labelFr: string;
   labelEn: string;
   pattern: RegExp;
+  source?: "suggested" | "custom";
 };
 
 type StackObjective = StackBoard & {
@@ -1329,7 +1332,26 @@ function getBoardOverviewCopy(board: StackBoard, lang: string) {
     },
   };
 
-  return lang === "en" ? copy[board.id]?.en || "" : copy[board.id]?.fr || "";
+  if (copy[board.id]) return lang === "en" ? copy[board.id].en : copy[board.id].fr;
+  return lang === "en"
+    ? "A custom group built around one of your real needs."
+    : "Un lot personnalisé construit autour de l'un de vos besoins réels.";
+}
+
+function getBoardDisplayLabel(board: StackBoard, lang: string) {
+  const labels: Record<string, { fr: string; en: string }> = {
+    ia: { fr: "IA", en: "AI" },
+    organisation: { fr: "Organisation", en: "Organization" },
+    design: { fr: "Design", en: "Design" },
+    automation: { fr: "Automatisation", en: "Automation" },
+    marketing: { fr: "Marketing", en: "Marketing" },
+    vente: { fr: "Vente", en: "Sales" },
+    finance: { fr: "Finance", en: "Finance" },
+    dev: { fr: "Développement", en: "Development" },
+  };
+  const label = labels[board.id];
+  if (label) return lang === "en" ? label.en : label.fr;
+  return lang === "en" ? board.labelEn : board.labelFr;
 }
 
 function formatMonthlyPrice(value: number | undefined, lang: string) {
@@ -1812,24 +1834,62 @@ const CartPage = () => {
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, pinTool, unpinTool } = useStackPins();
+  const {
+    state,
+    pinTool,
+    unpinTool,
+    assignToolNeeds,
+    assignToolNeedsAutomatically,
+    createNeed,
+    renameNeed,
+    deleteNeed,
+    moveNeed,
+  } = useStackPins();
   const [searchParams, setSearchParams] = useSearchParams();
   const [pickerBoardId, setPickerBoardId] = useState<string | null>(null);
   const [pickerQuery, setPickerQuery] = useState("");
   const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
   const [pickerResultLimit, setPickerResultLimit] = useState(PICKER_RESULT_BATCH);
+  const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
+  const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
+  const [needsManagerOpen, setNeedsManagerOpen] = useState(false);
+  const workspaceMenuRef = useRef<HTMLDetailsElement | null>(null);
+  const needDialogRef = useRef<HTMLElement | null>(null);
+  const needDialogCloseRef = useRef<HTMLButtonElement | null>(null);
+  const needDialogPreviousFocusRef = useRef<HTMLElement | null>(null);
 
   const categoryById = useMemo(() => new Map(categories.map((category: any) => [category.id, category])), [categories]);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const pinnedToolSlugSet = useMemo(() => new Set(state.pinnedToolSlugs), [state.pinnedToolSlugs]);
-  const selectedTools = state.pinnedToolSlugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[];
+  const stackEntryBySlug = useMemo(
+    () => new Map(state.toolEntries.map((entry) => [entry.toolSlug, entry])),
+    [state.toolEntries],
+  );
+  const selectedTools = useMemo(
+    () => state.pinnedToolSlugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[],
+    [state.pinnedToolSlugs, toolBySlug],
+  );
   const stackPricing = useMemo(() => computeStackPricing(selectedTools, tools), [selectedTools, tools]);
+  const unassignedTools = selectedTools.filter((tool) => {
+    const entry = stackEntryBySlug.get(getToolKey(tool));
+    return !!entry && entry.needIds.length === 0 && entry.assignmentMode !== "pending";
+  });
+  const needDialogTool = needDialogToolSlug ? toolBySlug.get(needDialogToolSlug) || null : null;
 
   const boards = useMemo(() => {
     const grouped = new Map<string, ToolSummary[]>();
-    STACK_BOARDS.forEach((board) => grouped.set(board.id, []));
+    state.needs.forEach((need) => grouped.set(need.id, []));
 
     selectedTools.forEach((tool) => {
+      const savedNeedIds = stackEntryBySlug.get(getToolKey(tool))?.needIds.filter((needId) => grouped.has(needId)) || [];
+      if (savedNeedIds.length > 0) {
+        savedNeedIds.forEach((needId) => grouped.get(needId)?.push(tool));
+        return;
+      }
+
+      const entry = stackEntryBySlug.get(getToolKey(tool));
+      if (entry && entry.assignmentMode !== "pending") return;
+
       const category = categoryById.get(tool.categoryId);
       const categoryLabel = category
         ? cleanCategoryLabel(lang === "en" ? category.nameEn || category.name : category.name)
@@ -1838,19 +1898,23 @@ const CartPage = () => {
       grouped.get(board.id)?.push(tool);
     });
 
-    return STACK_BOARDS.map((board) => ({
-      ...board,
-      tools: grouped.get(board.id) || [],
-    }));
-  }, [categoryById, lang, selectedTools]);
-  const activeBoards = boards.filter((board) => board.tools.length > 0) as StackObjective[];
+    return state.needs.map((need) => {
+      const suggestedBoard = STACK_BOARDS.find((board) => board.id === need.id);
+      return {
+        id: need.id,
+        labelFr: need.labelFr,
+        labelEn: need.labelEn,
+        pattern: suggestedBoard?.pattern || /$^/,
+        source: need.source,
+        tools: grouped.get(need.id) || [],
+      } satisfies StackObjective;
+    });
+  }, [categoryById, lang, selectedTools, stackEntryBySlug, state.needs]);
+  const activeBoards = boards.filter((board) => board.tools.length > 0 || board.source === "custom") as StackObjective[];
   const zoomObjectiveId = searchParams.get("objectif");
   const zoomedBoard = activeBoards.find((board) => board.id === zoomObjectiveId) || null;
-  const pickerBoard = STACK_BOARDS.find((board) => board.id === pickerBoardId) || null;
-  const zoomedPricing = useMemo(
-    () => computeStackPricing(zoomedBoard?.tools || [], tools),
-    [tools, zoomedBoard],
-  );
+  const pickerBoard = boards.find((board) => board.id === pickerBoardId) || null;
+  const pickerIsCustom = pickerBoard?.source === "custom";
 
   function getCategoryLabel(tool: ToolSummary) {
     const category = categoryById.get(tool.categoryId) as any;
@@ -1858,6 +1922,37 @@ const CartPage = () => {
       ? cleanCategoryLabel(lang === "en" ? category.nameEn || category.name : category.name)
       : cleanCategoryLabel(tool.categoryId);
   }
+
+  useEffect(() => {
+    const assignments: Record<string, string[]> = {};
+
+    state.toolEntries.forEach((entry) => {
+      if (entry.needIds.length > 0 || entry.assignmentMode !== "pending") return;
+      const tool = toolBySlug.get(entry.toolSlug);
+      if (!tool) return;
+      const classification = classifyToolForStack(tool);
+      assignments[entry.toolSlug] = classification.confidence === "low" ? [] : classification.needIds;
+      const addedAt = Date.parse(entry.addedAt);
+      const addedRecently = Number.isFinite(addedAt) && Date.now() - addedAt < 60_000;
+      if (addedRecently) {
+        const classifiedNeedIds = new Set<string>(classification.confidence === "low" ? [] : classification.needIds);
+        const needLabels = state.needs
+          .filter((need) => classifiedNeedIds.has(need.id))
+          .map((need) => t(need.labelFr, need.labelEn));
+        toast.success(classifiedNeedIds.size > 0
+          ? t(
+            `${tool.name} rangé automatiquement dans ${needLabels.join(" et ")} · compté une seule fois.`,
+            `${tool.name} automatically organized under ${needLabels.join(" and ")} · counted only once.`,
+          ) as string
+          : t(
+            `${tool.name} ajouté à Ma stack · besoin à confirmer dans À ranger.`,
+            `${tool.name} added to My stack · confirm its need under To organize.`,
+          ) as string);
+      }
+    });
+
+    if (Object.keys(assignments).length > 0) assignToolNeedsAutomatically(assignments);
+  }, [assignToolNeedsAutomatically, state.needs, state.toolEntries, t, toolBySlug]);
 
   const zoomedSubdomains = useMemo(() => {
     if (!zoomedBoard) return [] as StackSubdomainGroup[];
@@ -1889,7 +1984,7 @@ const CartPage = () => {
       .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
       .map((tool) => {
         const categoryLabel = getCategoryLabel(tool);
-        const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel, pickerObjectiveContext);
+        const boardScore = pickerIsCustom ? 1 : getToolPickerBoardScore(tool, pickerBoard, categoryLabel, pickerObjectiveContext);
         const searchScore = getPickerSearchScore(tool, categoryLabel, pickerQueryTokens);
         const subdomain = getObjectivePickerSubdomain(pickerBoard.id, tool, categoryLabel);
         return {
@@ -1916,24 +2011,10 @@ const CartPage = () => {
     return diversifyObjectivePickerCandidates(candidates, pickerFilter, hasPickerQuery, pickerObjectiveConfig)
       .map((candidate) => candidate.tool)
       .slice(0, hasPickerQuery ? 48 : pickerFilter === "recommended" ? 24 : 40);
-  }, [categoryById, hasPickerQuery, lang, pickerBoard, pickerObjectiveConfig, pickerObjectiveContext, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
+  }, [categoryById, hasPickerQuery, lang, pickerBoard, pickerIsCustom, pickerObjectiveConfig, pickerObjectiveContext, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
 
   const visiblePickerCandidates = pickerCandidates.slice(0, pickerResultLimit);
   const hasMorePickerCandidates = pickerCandidates.length > visiblePickerCandidates.length;
-
-  const pickerFilterOptions = useMemo(() => {
-    if (!pickerBoard) return [] as PickerFilterId[];
-    return PICKER_FILTER_IDS.filter((filterId) => {
-      if (filterId === "recommended" || filterId === "objective") return true;
-      return tools
-        .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
-        .some((tool) => {
-          const categoryLabel = getCategoryLabel(tool);
-          const boardScore = getToolPickerBoardScore(tool, pickerBoard, categoryLabel, pickerObjectiveContext);
-          return matchesPickerFilter(filterId, tool, boardScore, categoryLabel);
-        });
-    });
-  }, [categoryById, lang, pickerBoard, pickerObjectiveContext, pinnedToolSlugSet, tools]);
 
   useEffect(() => {
     setPickerResultLimit(PICKER_RESULT_BATCH);
@@ -1960,6 +2041,46 @@ const CartPage = () => {
     };
   }, [pickerBoard]);
 
+  useEffect(() => {
+    if (!needDialogToolSlug) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusFrame = window.requestAnimationFrame(() => needDialogCloseRef.current?.focus());
+
+    function handleNeedDialogKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setNeedDialogToolSlug(null);
+        return;
+      }
+      if (event.key !== "Tab" || !needDialogRef.current) return;
+
+      const focusable = Array.from(needDialogRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+      )).filter((element) => !element.hasAttribute("hidden"));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleNeedDialogKeyDown);
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", handleNeedDialogKeyDown);
+      document.body.style.overflow = previousOverflow;
+      needDialogPreviousFocusRef.current?.focus();
+    };
+  }, [needDialogToolSlug]);
+
   function openToolPicker(boardId: string) {
     setPickerQuery("");
     setPickerFilter("recommended");
@@ -1968,7 +2089,67 @@ const CartPage = () => {
   }
 
   function addToolFromPicker(tool: ToolSummary) {
-    pinTool(getToolKey(tool));
+    pinTool(getToolKey(tool), pickerBoard ? [pickerBoard.id] : []);
+    if (pickerBoard) {
+      toast.success(t(
+        `${tool.name} ajouté au besoin ${pickerBoard.labelFr} · compté une seule fois.`,
+        `${tool.name} added to ${pickerBoard.labelEn} · counted only once.`,
+      ) as string);
+    }
+  }
+
+  function openNeedDialog(toolSlug: string) {
+    needDialogPreviousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setDraftNeedIds(stackEntryBySlug.get(toolSlug)?.needIds || []);
+    setNeedDialogToolSlug(toolSlug);
+  }
+
+  function closeNeedDialog() {
+    setNeedDialogToolSlug(null);
+  }
+
+  function toggleDraftNeed(needId: string) {
+    setDraftNeedIds((current) => current.includes(needId)
+      ? current.filter((id) => id !== needId)
+      : [...current, needId]);
+  }
+
+  function saveNeedAssignments() {
+    if (!needDialogToolSlug) return;
+    const toolName = needDialogTool?.name || needDialogToolSlug;
+    const selectedNeedLabels = state.needs
+      .filter((need) => draftNeedIds.includes(need.id))
+      .map((need) => t(need.labelFr, need.labelEn));
+    assignToolNeeds(needDialogToolSlug, draftNeedIds);
+    closeNeedDialog();
+    toast.success(selectedNeedLabels.length > 0
+      ? t(
+        `${toolName} rangé dans ${selectedNeedLabels.join(" et ")} · compté une seule fois.`,
+        `${toolName} organized under ${selectedNeedLabels.join(" and ")} · counted only once.`,
+      ) as string
+      : t(
+        `${toolName} reste dans Ma stack, dans À ranger.`,
+        `${toolName} remains in My stack, under To organize.`,
+      ) as string);
+  }
+
+  function leaveToolUnassigned() {
+    if (!needDialogToolSlug) return;
+    const toolName = needDialogTool?.name || needDialogToolSlug;
+    assignToolNeeds(needDialogToolSlug, []);
+    closeNeedDialog();
+    toast.success(t(
+      `${toolName} reste dans Ma stack, dans À ranger.`,
+      `${toolName} remains in My stack, under To organize.`,
+    ) as string);
+  }
+
+  function deleteToolFromStack() {
+    if (!needDialogToolSlug) return;
+    const shouldCloseObjective = !!zoomedBoard && zoomedBoard.tools.some((tool) => getToolKey(tool) === needDialogToolSlug) && zoomedBoard.tools.length <= 1;
+    unpinTool(needDialogToolSlug);
+    closeNeedDialog();
+    if (shouldCloseObjective) closeObjective();
   }
 
   function openObjective(boardId: string) {
@@ -1986,112 +2167,85 @@ const CartPage = () => {
     setSearchParams(nextParams);
   }
 
-  function handleBoardKeyDown(event: ReactKeyboardEvent<HTMLElement>, boardId: string) {
-    if (event.key !== "Enter" && event.key !== " ") return;
-    event.preventDefault();
-    openObjective(boardId);
-  }
-
-  function removeToolFromZoom(toolSlug: string) {
+  function removeToolFromCurrentNeed(toolSlug: string) {
+    if (!zoomedBoard) return;
     const shouldClose = !!zoomedBoard && zoomedBoard.tools.length <= 1;
-    unpinTool(toolSlug);
+    const entry = stackEntryBySlug.get(toolSlug);
+    assignToolNeeds(toolSlug, (entry?.needIds || []).filter((needId) => needId !== zoomedBoard.id));
     if (shouldClose) closeObjective();
   }
 
   return (
     <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}`}>
       {zoomedBoard ? (
-        <section className={`tt-page-hero tt-page-hero--banner stack-objective-page-hero stack-board-card--${zoomedBoard.id}`}>
-          <div className="tt-page-hero-inner">
-            <div className="tt-page-hero-band">
-              <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
-              <div className="tt-page-hero-content">
-                <div className="stack-objective-hero-topline">
-                  <Breadcrumb
-                    items={[
-                      { label: t("Ma stack", "My stack") as string, href: `${prefix}/ma-stack` },
-                      { label: t(zoomedBoard.labelFr, zoomedBoard.labelEn) as string },
-                    ]}
-                  />
-                  <button type="button" className="stack-objective-hero-back" onClick={closeObjective}>
-                    <ArrowLeft size={16} aria-hidden />
-                    {t("Retour", "Back")}
-                  </button>
-                </div>
-                <h1 className="tt-page-hero-title stack-objective-title">
-                  <span>{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</span>
-                  {" "}
-                  <span className="stack-title-index">{formatToolCount(zoomedBoard.tools.length, lang)}</span>
-                </h1>
-                <p className="tt-page-hero-desc">
-                  {t(
-                    "Vue des outils retenus pour cet objectif, regroupés par usage concret.",
-                    "A view of the tools saved for this objective, grouped by practical use.",
-                  )}
-                </p>
-                <div className="stack-objective-hero-actions">
-                  <button type="button" className="cart-primary-link stack-objective-hero-action" onClick={() => openToolPicker(zoomedBoard.id)}>
-                    {getObjectiveToolsCta(zoomedBoard, lang)}
-                  </button>
-                </div>
+        <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
+          <div className="stack-objective-hero-inner">
+            <button type="button" className="stack-objective-hero-round" onClick={closeObjective} aria-label={t("Retour à Ma stack", "Back to My stack") as string} title={t("Retour à Ma stack", "Back to My stack") as string}>
+              <ArrowLeft size={20} aria-hidden />
+            </button>
 
-                <div className="stack-objective-hero-bottom">
-                  <dl className="stack-objective-hero-facts" aria-label={t("Résumé de cet objectif", "Objective summary") as string}>
-                    <div>
-                      <dt>{t("Domaines", "Areas")}</dt>
-                      <dd>{zoomedSubdomains.length}</dd>
-                    </div>
-                    <div>
-                      <dt>{zoomedPricing.bundleLines.length > 0 ? t("Budget avec suites", "Budget with suites") : t("Budget estimé", "Estimated budget")}</dt>
-                      <dd>{formatMonthlyPrice(zoomedPricing.total, lang)}</dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
+            <div className="stack-objective-hero-copy">
+              <h1 id="stack-objective-title">{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</h1>
+              <p>
+                <span>{t("Besoin", "Need")}</span>
+                <span aria-hidden>·</span>
+                {formatToolCount(zoomedBoard.tools.length, lang)}
+                <span aria-hidden>·</span>
+                {zoomedSubdomains.length} {t(zoomedSubdomains.length > 1 ? "sous-sections" : "sous-section", zoomedSubdomains.length > 1 ? "sections" : "section")}
+              </p>
             </div>
+
+            <div
+              className="stack-objective-hero-cost"
+              aria-label={t(`Coût total de Ma stack : ${formatMonthlyPrice(stackPricing.total, lang)}`, `Total My stack cost: ${formatMonthlyPrice(stackPricing.total, lang)}`) as string}
+            >
+              <span>{t("Coût de Ma stack", "My stack cost")}</span>
+              <strong>{formatMonthlyPrice(stackPricing.total, lang)}</strong>
+            </div>
+
+            <button type="button" className="stack-objective-hero-add" onClick={() => openToolPicker(zoomedBoard.id)}>
+              <Plus size={19} aria-hidden />
+              <span>{t("Ajouter", "Add")}</span>
+            </button>
+
+            <details ref={workspaceMenuRef} className="stack-page-toolbar-menu stack-objective-hero-menu">
+              <summary className="stack-objective-hero-round" aria-label={t("Plus d’options", "More options") as string}>
+                <MoreHorizontal size={22} aria-hidden />
+              </summary>
+              <div className="stack-page-toolbar-popover">
+                <button type="button" onClick={() => { workspaceMenuRef.current?.removeAttribute("open"); setNeedsManagerOpen(true); }}>
+                  {t("Gérer tous les besoins", "Manage all needs")}
+                </button>
+              </div>
+            </details>
           </div>
         </section>
       ) : (
-        <section className="tt-page-hero tt-page-hero--banner tt-page-hero--ma-stack">
-          <div className="tt-page-hero-inner">
-            <div className="tt-page-hero-band">
-              <img src="/hero/stacks-gradient.png" alt="" className="tt-page-hero-art" aria-hidden="true" />
-              <div className="tt-page-hero-content">
-                <div className="stack-overview-hero-copy">
-                  <div className="tt-page-hero-breadcrumb">
-                    <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} />
-                  </div>
-                  <h1 className="tt-page-hero-title">{t("Ma stack", "My stack")}</h1>
-                  <p className="tt-page-hero-desc">
-                    {t(
-                      "Visualisez les outils mis de côté, comprenez leur rôle et préparez une stack plus claire.",
-                      "See the tools you saved, understand their role and prepare a clearer stack.",
-                    )}
-                  </p>
+        <section className="stack-page-toolbar stack-page-toolbar--overview">
+          <div className="stack-page-toolbar-inner">
+            <div className="stack-page-toolbar-copy">
+              <h1>{t("Ma stack", "My stack")}</h1>
+              <p>{selectedTools.length} {t("outils", "tools")} · {activeBoards.length} {t("besoins", "needs")}</p>
+            </div>
+            <div className="stack-page-toolbar-actions">
+              {unassignedTools.length > 0 && (
+                <button type="button" className="stack-page-toolbar-unassigned" onClick={() => document.getElementById("stack-unassigned-title")?.scrollIntoView({ behavior: "smooth", block: "center" })}>
+                  {t("À ranger", "To organize")} · {unassignedTools.length}
+                </button>
+              )}
+              <Link to={`${prefix}/tools`} className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" aria-label={t("Ajouter un outil", "Add a tool") as string} title={t("Ajouter un outil", "Add a tool") as string}>
+                <Plus size={19} aria-hidden />
+              </Link>
+              <details ref={workspaceMenuRef} className="stack-page-toolbar-menu">
+                <summary className="stack-page-toolbar-icon" aria-label={t("Plus d’options", "More options") as string}>
+                  <MoreHorizontal size={20} aria-hidden />
+                </summary>
+                <div className="stack-page-toolbar-popover">
+                  <button type="button" onClick={() => { workspaceMenuRef.current?.removeAttribute("open"); setNeedsManagerOpen(true); }}>
+                    {t("Gérer les besoins", "Manage needs")}
+                  </button>
                 </div>
-
-                <div className="stack-overview-dashboard" role="group" aria-label={t("Résumé de ma stack", "My stack summary") as string}>
-                  <dl className="stack-overview-facts">
-                    <div>
-                      <dt>{t("Outils", "Tools")}</dt>
-                      <dd>{selectedTools.length}</dd>
-                    </div>
-                    <div>
-                      <dt>{stackPricing.bundleLines.length > 0 ? t("Budget avec suites", "Budget with bundles") : t("Budget estimé", "Estimated budget")}</dt>
-                      <dd>{formatMonthlyPrice(stackPricing.total, lang)}</dd>
-                    </div>
-                    {stackPricing.bundleLines.length > 0 && (
-                      <div>
-                        <dt>{stackPricing.bundleLines.length === 1 ? t("Suite", "Bundle") : t("Suites", "Bundles")}</dt>
-                        <dd>{stackPricing.bundleLines.length}</dd>
-                      </div>
-                    )}
-                  </dl>
-                  <Link to={`${prefix}/tools`} className="cart-primary-link stack-overview-action">
-                    {selectedTools.length > 0 ? t("Ajouter des outils", "Add tools") : t("Ajouter un premier outil", "Add a first tool")}
-                  </Link>
-                </div>
-              </div>
+              </details>
             </div>
           </div>
         </section>
@@ -2099,83 +2253,39 @@ const CartPage = () => {
 
       {zoomedBoard ? (
         <main className="stack-objective-detail" aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
-          <div className="stack-subdomain-grid">
+          <div className="stack-role-section-grid">
             {zoomedSubdomains.map((group) => (
-              <section key={group.id} className={getSubdomainSectionClassName(group)}>
-                <div className="stack-subdomain-heading">
-                  <h2>
-                    <span>{t(group.labelFr, group.labelEn)}</span>
-                    {" "}
-                    <span className="stack-subdomain-count">{formatToolCount(group.tools.length, lang)}</span>
-                  </h2>
+              <section key={group.id} className="stack-role-section" aria-labelledby={`stack-role-${group.id}`}>
+                <div className="stack-role-section-head">
+                  <div>
+                    <h2 id={`stack-role-${group.id}`}>{t(group.labelFr, group.labelEn)}</h2>
+                    <p>{t(group.descriptionFr, group.descriptionEn)}</p>
+                  </div>
+                  <span>{formatToolCount(group.tools.length, lang)}</span>
                 </div>
-
-                <div className="stack-detail-tool-grid">
+                <div className="stack-role-tool-grid" role="list">
                   {group.tools.map((tool) => {
                     const toolSlug = getToolKey(tool);
-                    const needs = getToolNeedLabels(tool, lang);
-                    const relation = getToolRelation(tool, tools, lang);
-                    const description = lang === "en" ? tool.shortDescriptionEn || tool.shortDescription : tool.shortDescription;
-                    const bundleLine = getBundleLineForTool(zoomedPricing, tool);
-                    const countedInBundle = !!bundleLine && !isSameTool(tool, bundleLine.parent);
-                    const detailLine = getToolTypeLabel(tool, lang);
-                    const contextLine = countedInBundle && bundleLine
-                      ? t(`Inclus dans ${bundleLine.parent.name}`, `Included in ${bundleLine.parent.name}`)
-                      : relation || needs.slice(0, 2).join(" · ");
-                    const showStandalonePrice = getToolPrice(tool) > 0 && !countedInBundle;
-
                     return (
-                      <article key={toolSlug} className="stack-detail-tool-card-frame">
-                        <Link
-                          className="stack-detail-tool-card"
-                          to={`${prefix}/tool/${toolSlug}`}
-                          aria-label={t(`Voir la fiche ${tool.name}`, `Open ${tool.name} page`) as string}
+                      <article key={toolSlug} className="stack-role-tool-card" role="listitem">
+                        <ToolCardEditorial
+                          tool={tool}
+                          prefix={prefix}
+                          t={t}
+                          lang={lang}
+                          categoryLabel={getCategoryLabel(tool)}
+                          variant="compact"
+                          showPin={false}
+                        />
+                        <button
+                          type="button"
+                          className="stack-role-tool-edit"
+                          onClick={() => openNeedDialog(toolSlug)}
+                          aria-label={t(`Modifier ${tool.name}`, `Edit ${tool.name}`) as string}
+                          title={t("Modifier", "Edit") as string}
                         >
-                          <div className="stack-detail-tool-media">
-                            <ToolCardImage tool={tool} logoSize={52} className="stack-detail-tool-image" />
-                            {detailLine && <span className="stack-detail-tool-tag">{detailLine}</span>}
-                          </div>
-
-                          <div className="stack-detail-tool-head">
-                            <ToolLogo tool={tool} size={52} className="stack-detail-tool-logo" />
-                            <div className="stack-detail-tool-title">
-                              <h4>{tool.name}</h4>
-                              {showStandalonePrice && <p className="stack-detail-tool-price">{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</p>}
-                            </div>
-                          </div>
-
-                          {description && <p className="stack-detail-tool-desc">{description}</p>}
-
-                          <div className="stack-detail-tool-footer">
-                            <div className="stack-detail-tool-footnote">
-                              {contextLine && (
-                                <span className={countedInBundle ? "stack-detail-tool-footer-bundle" : undefined}>
-                                  {contextLine}
-                                </span>
-                              )}
-                            </div>
-                            <span
-                              className="stack-detail-tool-link"
-                              aria-hidden="true"
-                            >
-                              <span>{t("Voir la fiche", "Open page")}</span>
-                              <ArrowRight size={13} aria-hidden />
-                            </span>
-                          </div>
-                        </Link>
-
-                        <div className="stack-detail-tool-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`) as string}>
-                          <button
-                            type="button"
-                            className="stack-detail-tool-remove"
-                            onClick={() => removeToolFromZoom(toolSlug)}
-                            aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
-                            title={t("Retirer de ma stack", "Remove from my stack") as string}
-                          >
-                            <Trash2 size={14} aria-hidden />
-                            <span>{t("Retirer", "Remove")}</span>
-                          </button>
-                        </div>
+                          <Pencil size={13} aria-hidden />
+                        </button>
                       </article>
                     );
                   })}
@@ -2186,7 +2296,7 @@ const CartPage = () => {
         </main>
       ) : (
         <main className="stack-board-grid" aria-label={t("Vue d'ensemble de ma stack", "My stack overview") as string}>
-          {activeBoards.length === 0 && (
+          {selectedTools.length === 0 && (
             <section className="stack-empty-overview">
               <span>{t("Aucun outil sélectionné", "No selected tools")}</span>
               <h2>{t("Votre vue d'ensemble est vide", "Your overview is empty")}</h2>
@@ -2200,109 +2310,212 @@ const CartPage = () => {
             </section>
           )}
           {activeBoards.map((board) => {
-            const visibleToolCount = board.tools.length > 4 ? 3 : 4;
+            const visibleToolCount = 3;
             const visibleTools = board.tools.slice(0, visibleToolCount);
             const overflowCount = Math.max(0, board.tools.length - visibleTools.length);
-            const boardCopy = getBoardOverviewCopy(board, lang);
             return (
               <section
                 key={board.id}
-                className={`stack-board-card stack-board-card--${board.id} stack-board-card--openable`}
-                role="button"
-                tabIndex={0}
-                onClick={() => openObjective(board.id)}
-                onKeyDown={(event) => handleBoardKeyDown(event, board.id)}
-                aria-label={t(`Voir le détail ${board.labelFr}`, `View ${board.labelEn} detail`) as string}
+                className={`stack-board-card stack-board-card--${board.id}${board.source === "custom" ? " stack-board-card--custom" : ""}`}
+                aria-label={t(board.labelFr, board.labelEn) as string}
               >
-                <div className="stack-board-preview">
-                  <div className="stack-board-preview-copy">
-                    <h2>
-                      <span>{t(board.labelFr, board.labelEn)}</span>
-                      {" "}
+                <button
+                  type="button"
+                  className="stack-board-card-open"
+                  onClick={() => openObjective(board.id)}
+                  aria-label={t(`Ouvrir ${board.labelFr}`, `Open ${board.labelEn}`) as string}
+                />
+                <div className="stack-board-preview stack-board-editorial-cover">
+                  <span className="stack-board-preview-copy">
+                    <span className="stack-board-editorial-heading">
+                      <span className="stack-board-editorial-title">{getBoardDisplayLabel(board, lang)}</span>
                       <span className="stack-board-title-count">{formatToolCount(board.tools.length, lang)}</span>
-                    </h2>
-                    {boardCopy && <p>{boardCopy}</p>}
-                  </div>
-
-                  <div
-                    className="stack-board-logo-row"
-                    role="list"
-                    aria-label={t(`Outils ${board.labelFr}`, `${board.labelEn} tools`) as string}
-                  >
-                    {visibleTools.map((tool, index) => (
-                      <span
-                        key={getToolKey(tool)}
-                        className={`stack-board-logo stack-board-logo--${index + 1}`}
-                        data-tool-slug={getToolKey(tool)}
-                        role="listitem"
-                      >
-                        <ToolLogo tool={tool} size={34} className="stack-board-logo-mark" />
-                        <button
-                          type="button"
-                          className="stack-board-remove"
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            unpinTool(getToolKey(tool));
-                          }}
-                          aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`) as string}
-                          title={t("Retirer de ma stack", "Remove from my stack") as string}
-                        >
-                          <X size={12} aria-hidden />
-                        </button>
+                    </span>
+                    <span className="stack-board-editorial-description">{getBoardOverviewCopy(board, lang)}</span>
+                  </span>
+                  <div className="stack-board-editorial-logos" role="group" aria-label={t(`Outils ${board.labelFr}`, `${board.labelEn} tools`) as string}>
+                    {visibleTools.map((tool) => (
+                      <span key={getToolKey(tool)} className="stack-board-editorial-logo" role="listitem">
+                        <ToolLogo tool={tool} size={54} className="stack-board-editorial-logo-mark" />
                       </span>
                     ))}
-                    {overflowCount > 0 && <span className="stack-board-overflow stack-board-overflow--preview">+{overflowCount}</span>}
+                    {visibleTools.length === 0 && <span className="stack-board-editorial-empty"><Plus size={22} aria-hidden /></span>}
+                    {overflowCount > 0 && (
+                      <details className="stack-board-logo-more">
+                        <summary role="button" className="stack-board-overflow" aria-label={t(`Afficher ${overflowCount} outils supplémentaires`, `Show ${overflowCount} more tools`) as string}>
+                          +{overflowCount}
+                        </summary>
+                        <span className="stack-board-logo-popover" role="list">
+                          {board.tools.slice(visibleToolCount).map((tool) => (
+                            <span key={getToolKey(tool)} className="stack-board-logo-popover-item" role="listitem" title={tool.name}>
+                              <ToolLogo tool={tool} size={42} className="stack-board-editorial-logo-mark" />
+                            </span>
+                          ))}
+                        </span>
+                      </details>
+                    )}
                   </div>
                 </div>
 
                 <div className="stack-board-footer">
-                  <span className="stack-board-explore">
+                  <button type="button" className="stack-board-explore" onClick={() => openObjective(board.id)}>
                     {t("Explorer", "Explore")}
-                  </span>
+                  </button>
                   <button
                     type="button"
                     className="stack-board-add-link"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      openToolPicker(board.id);
-                    }}
-                    onKeyDown={(event) => event.stopPropagation()}
+                    onClick={() => openToolPicker(board.id)}
                     aria-label={getObjectiveToolsCta(board, lang)}
                     title={getObjectiveToolsCta(board, lang)}
                   >
-                    <Plus size={14} aria-hidden />
-                    {t("Ajouter", "Add")}
+                    <Plus size={15} aria-hidden />
+                    <span>{t("Ajouter", "Add")}</span>
                   </button>
                 </div>
               </section>
             );
           })}
-          {activeBoards.length > 0 && (
-            <section className="stack-board-card stack-board-card--create">
-              <Link
-                to={`${prefix}/tools`}
-                className="stack-board-create-preview"
-                aria-label={t("Ajouter des outils à ma stack", "Add tools to my stack") as string}
-              >
-                <span className="stack-board-create-tile stack-board-create-tile--main" />
-                <span className="stack-board-create-tile stack-board-create-tile--side-top" />
-                <span className="stack-board-create-tile stack-board-create-tile--side-bottom" />
-                <span className="stack-board-create-button">
-                  <Plus size={18} aria-hidden />
-                  {t("Ajouter", "Add")}
+          {unassignedTools.length > 0 && (
+            <section id="stack-unassigned-title" className="stack-board-card stack-board-card--unassigned" aria-label={t("À ranger", "To organize") as string}>
+              <button
+                type="button"
+                className="stack-board-card-open"
+                onClick={() => openNeedDialog(getToolKey(unassignedTools[0]))}
+                aria-label={t("Examiner les outils à ranger", "Review tools to organize") as string}
+              />
+              <div className="stack-board-preview stack-board-editorial-cover">
+                <span className="stack-board-preview-copy">
+                  <span className="stack-board-editorial-heading">
+                    <span className="stack-board-editorial-title">{t("À ranger", "To organize")}</span>
+                    <span className="stack-board-title-count">{formatToolCount(unassignedTools.length, lang)}</span>
+                  </span>
+                  <span className="stack-board-editorial-description">
+                    {t(
+                      "Quelques outils demandent simplement votre confirmation.",
+                      "A few tools simply need your confirmation.",
+                    )}
+                  </span>
                 </span>
-              </Link>
-
-              <div className="stack-board-footer">
-                <div>
-                  <h2>{t("Ajouter des outils", "Add tools")}</h2>
+                <div className="stack-board-editorial-logos" role="group" aria-label={t("Outils à confirmer", "Tools to confirm") as string}>
+                  {unassignedTools.slice(0, 3).map((tool) => (
+                    <span key={getToolKey(tool)} className="stack-board-editorial-logo">
+                      <ToolLogo tool={tool} size={54} className="stack-board-editorial-logo-mark" />
+                    </span>
+                  ))}
+                  {unassignedTools.length > 3 && (
+                    <details className="stack-board-logo-more">
+                      <summary role="button" className="stack-board-overflow" aria-label={t(`Afficher ${unassignedTools.length - 3} outils supplémentaires`, `Show ${unassignedTools.length - 3} more tools`) as string}>
+                        +{unassignedTools.length - 3}
+                      </summary>
+                      <span className="stack-board-logo-popover" role="list">
+                        {unassignedTools.slice(3).map((tool) => (
+                          <span key={getToolKey(tool)} className="stack-board-logo-popover-item" role="listitem" title={tool.name}>
+                            <ToolLogo tool={tool} size={42} className="stack-board-editorial-logo-mark" />
+                          </span>
+                        ))}
+                      </span>
+                    </details>
+                  )}
                 </div>
-                <span>{t("Catalogue", "Catalog")}</span>
+              </div>
+              <div className="stack-board-footer">
+                <button type="button" className="stack-board-explore" onClick={() => openNeedDialog(getToolKey(unassignedTools[0]))}>
+                  {t("Ranger", "Organize")}
+                </button>
+                <span>{t("À confirmer", "To confirm")}</span>
               </div>
             </section>
           )}
         </main>
       )}
+
+      {needDialogTool && (
+        <div className="stack-need-dialog-backdrop" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) closeNeedDialog();
+        }}>
+          <section
+            ref={needDialogRef}
+            className="stack-need-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="stack-need-dialog-title"
+          >
+            <div className="stack-need-dialog-head">
+              <ToolLogo tool={needDialogTool} size={42} className="stack-need-dialog-logo" />
+              <div>
+                <span>{t("Ranger l'outil", "Organize tool")}</span>
+                <h2 id="stack-need-dialog-title">{needDialogTool.name}</h2>
+              </div>
+              <button
+                ref={needDialogCloseRef}
+                type="button"
+                className="stack-need-dialog-close"
+                onClick={closeNeedDialog}
+                aria-label={t("Fermer", "Close") as string}
+              >
+                <X size={18} aria-hidden />
+              </button>
+            </div>
+
+            <p className="stack-need-dialog-intro">
+              {t(
+                "À quels besoins cet outil répond-il ? Vous pouvez en choisir plusieurs.",
+                "Which needs does this tool cover? You can choose several.",
+              )}
+            </p>
+
+            <fieldset className="stack-need-options">
+              <legend className="sr-only">{t("Besoins", "Needs")}</legend>
+              {state.needs.map((need) => {
+                const checked = draftNeedIds.includes(need.id);
+                return (
+                  <label key={need.id} className={`stack-need-option${checked ? " is-selected" : ""}`}>
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => toggleDraftNeed(need.id)}
+                    />
+                    <span className="stack-need-option-check" aria-hidden>{checked ? "✓" : ""}</span>
+                    <span>{lang === "en" ? need.labelEn : need.labelFr}</span>
+                  </label>
+                );
+              })}
+            </fieldset>
+
+            <div className="stack-need-dialog-foot">
+              <button type="button" className="stack-need-dialog-delete" onClick={deleteToolFromStack}>
+                <Trash2 size={14} aria-hidden />
+                {t("Supprimer de Ma stack", "Remove from My stack")}
+              </button>
+              <button type="button" className="stack-need-dialog-later" onClick={leaveToolUnassigned}>
+                {t("Laisser à ranger", "Organize later")}
+              </button>
+              <button
+                type="button"
+                className="stack-need-dialog-save"
+                onClick={saveNeedAssignments}
+                disabled={draftNeedIds.length === 0}
+              >
+                {draftNeedIds.length > 0
+                  ? t("Enregistrer le rangement", "Save organization")
+                  : t("Choisir un besoin", "Choose a need")}
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
+
+      <StackNeedsManagerDialog
+        isOpen={needsManagerOpen}
+        lang={lang}
+        needs={state.needs}
+        onClose={() => setNeedsManagerOpen(false)}
+        onCreate={createNeed}
+        onRename={renameNeed}
+        onDelete={deleteNeed}
+        onMove={moveNeed}
+        t={t}
+      />
 
       {pickerBoard && (
         <div className="stack-tool-picker-backdrop" onClick={() => setPickerBoardId(null)}>
@@ -2348,40 +2561,19 @@ const CartPage = () => {
                 )}
               </label>
 
-              <div className="stack-tool-picker-filters" aria-label={t("Affiner les outils proposés", "Refine suggested tools") as string}>
-                {pickerFilterOptions.map((filterId) => (
-                  <button
-                    key={filterId}
-                    type="button"
-                    className={filterId === pickerFilter ? "is-active" : undefined}
-                    onClick={() => setPickerFilter(filterId)}
-                    aria-pressed={filterId === pickerFilter}
-                  >
-                    {getPickerFilterLabel(filterId, pickerBoard, lang)}
-                  </button>
-                ))}
-              </div>
             </div>
 
             {pickerCandidates.length > 0 ? (
               <div className="stack-tool-picker-list">
                 {visiblePickerCandidates.map((tool) => {
                   const toolSlug = getToolKey(tool);
-                  const typeLabel = getToolTypeLabel(tool, lang);
-                  const relation = getToolRelation(tool, tools, lang);
-
                   return (
                     <article key={toolSlug} className="stack-tool-picker-card">
                       <ToolLogo tool={tool} size={34} className="stack-tool-picker-logo" />
                       <div className="stack-tool-picker-card-copy">
                         <h3>{tool.name}</h3>
-                        <div className="stack-tool-picker-meta">
-                          {typeLabel && <span>{typeLabel}</span>}
-                          {relation && <span className="stack-tool-picker-relation">{relation}</span>}
-                        </div>
                       </div>
                       <div className="stack-tool-picker-card-actions">
-                        <strong className="stack-tool-picker-price">{formatMonthlyPrice(tool.defaultMonthlyPrice, lang)}</strong>
                         <button
                           type="button"
                           className="stack-tool-picker-add"
@@ -2422,13 +2614,6 @@ const CartPage = () => {
               </div>
             )}
 
-            <div className="stack-tool-picker-foot">
-              <span>{t("Besoin de comparer plus largement ?", "Need a broader comparison?")}</span>
-              <Link to={getBoardToolsHref(pickerBoard, prefix)} onClick={() => setPickerBoardId(null)}>
-                {t("Ouvrir le catalogue filtré", "Open filtered catalog")}
-                <ArrowRight size={14} aria-hidden />
-              </Link>
-            </div>
           </aside>
         </div>
       )}

@@ -1,38 +1,29 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import {
+  STACK_STATE_STORAGE_KEY,
+  assignToolNeedsBatchInState,
+  assignToolNeedsAutomaticallyInState,
+  assignToolNeedsInState,
+  createCustomNeedInState,
+  createDefaultToolCartState,
+  deleteCustomNeedInState,
+  loadToolCartState,
+  normalizeToolCartState,
+  pinToolInState,
+  moveNeedInState,
+  renameCustomNeedInState,
+  reorderToolsInState,
+  saveToolCartState,
+  unpinToolInState,
+  type ToolCartState,
+} from "@/lib/stackState";
 
-export const STACK_PINS_STORAGE_KEY = "tooltrim-tool-cart-mvp-v1";
-const LEGACY_STACK_PINS_STORAGE_KEYS = [
-  "tooltrim-tool-cart-v1",
-  "tooltrim-stack-builder-preprod",
-  "tooltrim-stack-pins-preprod",
-  "tooltrim-stack-pins-preprod-v2",
-  "tooltrim-stack-pins-preprod-v3",
-];
-
-export interface ToolCartState {
-  pinnedToolSlugs: string[];
-}
-
-const DEFAULT_TOOL_CART_STATE: ToolCartState = {
-  pinnedToolSlugs: [],
-};
-
-function normalizeState(value: Partial<ToolCartState> | null): ToolCartState {
-  if (!value || !Array.isArray(value.pinnedToolSlugs)) return DEFAULT_TOOL_CART_STATE;
-  return {
-    pinnedToolSlugs: Array.from(new Set(value.pinnedToolSlugs.filter(Boolean))),
-  };
-}
+export const STACK_PINS_STORAGE_KEY = STACK_STATE_STORAGE_KEY;
+export type { StackNeed, StackToolEntry, ToolCartState } from "@/lib/stackState";
 
 function readToolCartState(): ToolCartState {
-  if (typeof window === "undefined") return DEFAULT_TOOL_CART_STATE;
-  try {
-    LEGACY_STACK_PINS_STORAGE_KEYS.forEach((key) => window.localStorage.removeItem(key));
-    const raw = window.localStorage.getItem(STACK_PINS_STORAGE_KEY);
-    return raw ? normalizeState(JSON.parse(raw) as Partial<ToolCartState>) : DEFAULT_TOOL_CART_STATE;
-  } catch {
-    return DEFAULT_TOOL_CART_STATE;
-  }
+  if (typeof window === "undefined") return createDefaultToolCartState();
+  return loadToolCartState(window.localStorage);
 }
 
 let currentToolCartState: ToolCartState | null = null;
@@ -44,9 +35,9 @@ function getCurrentToolCartState() {
 }
 
 function commitToolCartState(nextState: ToolCartState) {
-  currentToolCartState = normalizeState(nextState);
+  currentToolCartState = normalizeToolCartState(nextState);
   if (typeof window !== "undefined") {
-    window.localStorage.setItem(STACK_PINS_STORAGE_KEY, JSON.stringify(currentToolCartState));
+    currentToolCartState = saveToolCartState(window.localStorage, currentToolCartState);
   }
   subscribers.forEach((subscriber) => subscriber(currentToolCartState as ToolCartState));
 }
@@ -65,9 +56,9 @@ export function useStackPins() {
     function handleStorage(event: StorageEvent) {
       if (event.key !== STACK_PINS_STORAGE_KEY) return;
       try {
-        currentToolCartState = normalizeState(event.newValue ? JSON.parse(event.newValue) as Partial<ToolCartState> : null);
+        currentToolCartState = normalizeToolCartState(event.newValue ? JSON.parse(event.newValue) : null);
       } catch {
-        currentToolCartState = DEFAULT_TOOL_CART_STATE;
+        currentToolCartState = createDefaultToolCartState();
       }
       subscribers.forEach((subscriber) => subscriber(currentToolCartState as ToolCartState));
     }
@@ -84,21 +75,49 @@ export function useStackPins() {
     };
   }, []);
 
-  function pinTool(slug: string) {
-    updateToolCartState((current) => ({
-      ...current,
-      pinnedToolSlugs: current.pinnedToolSlugs.includes(slug) ? current.pinnedToolSlugs : [...current.pinnedToolSlugs, slug],
-    }));
-  }
+  const pinTool = useCallback((slug: string, needIds: string[] = []) => {
+    updateToolCartState((current) => pinToolInState(current, slug, needIds));
+  }, []);
 
-  function unpinTool(slug: string) {
-    updateToolCartState((current) => ({
-      ...current,
-      pinnedToolSlugs: current.pinnedToolSlugs.filter((item) => item !== slug),
-    }));
-  }
+  const unpinTool = useCallback((slug: string) => {
+    updateToolCartState((current) => unpinToolInState(current, slug));
+  }, []);
 
-  function moveTool(slug: string, direction: -1 | 1) {
+  const assignToolNeeds = useCallback((slug: string, needIds: string[]) => {
+    updateToolCartState((current) => assignToolNeedsInState(current, slug, needIds));
+  }, []);
+
+  const assignToolNeedsBatch = useCallback((assignments: Record<string, string[]>) => {
+    updateToolCartState((current) => assignToolNeedsBatchInState(current, assignments));
+  }, []);
+
+  const assignToolNeedsAutomatically = useCallback((assignments: Record<string, string[]>) => {
+    updateToolCartState((current) => assignToolNeedsAutomaticallyInState(current, assignments));
+  }, []);
+
+  const createNeed = useCallback((label: string) => {
+    let createdNeedId: string | null = null;
+    updateToolCartState((current) => {
+      const result = createCustomNeedInState(current, label);
+      createdNeedId = result.needId;
+      return result.state;
+    });
+    return createdNeedId;
+  }, []);
+
+  const renameNeed = useCallback((needId: string, label: string) => {
+    updateToolCartState((current) => renameCustomNeedInState(current, needId, label));
+  }, []);
+
+  const deleteNeed = useCallback((needId: string) => {
+    updateToolCartState((current) => deleteCustomNeedInState(current, needId));
+  }, []);
+
+  const moveNeed = useCallback((needId: string, direction: -1 | 1) => {
+    updateToolCartState((current) => moveNeedInState(current, needId, direction));
+  }, []);
+
+  const moveTool = useCallback((slug: string, direction: -1 | 1) => {
     updateToolCartState((current) => {
       const currentIndex = current.pinnedToolSlugs.indexOf(slug);
       if (currentIndex === -1) return current;
@@ -107,27 +126,31 @@ export function useStackPins() {
       const pinnedToolSlugs = [...current.pinnedToolSlugs];
       const [item] = pinnedToolSlugs.splice(currentIndex, 1);
       pinnedToolSlugs.splice(nextIndex, 0, item);
-      return { ...current, pinnedToolSlugs };
+      return reorderToolsInState(current, pinnedToolSlugs);
     });
-  }
+  }, []);
 
-  function setToolOrder(slugs: string[]) {
+  const setToolOrder = useCallback((slugs: string[]) => {
     updateToolCartState((current) => {
-      const knownSlugs = new Set(current.pinnedToolSlugs);
-      const orderedSlugs = slugs.filter((slug) => knownSlugs.has(slug));
-      const remainingSlugs = current.pinnedToolSlugs.filter((slug) => !orderedSlugs.includes(slug));
-      return { ...current, pinnedToolSlugs: [...orderedSlugs, ...remainingSlugs] };
+      return reorderToolsInState(current, slugs);
     });
-  }
+  }, []);
 
-  function clearTools() {
-    updateToolCartState((current) => ({ ...current, pinnedToolSlugs: [] }));
-  }
+  const clearTools = useCallback(() => {
+    updateToolCartState((current) => normalizeToolCartState({ ...current, toolEntries: [], pinnedToolSlugs: [] }));
+  }, []);
 
   return {
     state,
     pinTool,
     unpinTool,
+    assignToolNeeds,
+    assignToolNeedsBatch,
+    assignToolNeedsAutomatically,
+    createNeed,
+    renameNeed,
+    deleteNeed,
+    moveNeed,
     moveTool,
     setToolOrder,
     clearTools,
