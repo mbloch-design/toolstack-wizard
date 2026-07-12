@@ -6445,8 +6445,15 @@
      visual mass to open the page on. Same rounded-band shape as the
      homepage's own hv2-band hero, so it's a variant of a pattern the
      site already uses, not an invented one-off. */
+  /* .gi-hero is the gutter container (same axis as .gi-container: centered,
+     max-width, horizontal gutter). The colored band lives on .gi-hero-inner
+     INSIDE that gutter, so the band's edges line up with the toolbar/cards
+     region (128→content-1000 at desktop) instead of bleeding to the shell
+     sidebar on the left and the window edge on the right. */
   .gi-hero {
-    padding: 32px 0 8px;
+    max-width: var(--layout-content);
+    margin: 0 auto;
+    padding: 32px var(--layout-gutter) 8px;
   }
   .gi-hero-inner {
     position: relative;
@@ -6456,10 +6463,9 @@
     background:
       radial-gradient(120% 140% at 100% 0%, color-mix(in oklch, #E8A66E 55%, transparent) 0%, transparent 55%),
       linear-gradient(120deg, #F6F3EB 0%, #F3E4D2 40%, #F0C9A3 75%, #E8A66E 100%);
-    /* Horizontal padding tracks --layout-gutter (not a fixed 48px) so the
-       band's left/right edges keep matching the toolbar and grid below it
-       as the shared gutter shrinks at the tablet/mobile breakpoints. */
-    padding: 44px var(--layout-gutter) 40px;
+    /* Internal text padding — the band already sits inside the page gutter
+       via .gi-hero, so this is breathing room inside the colored box. */
+    padding: 44px 48px 40px;
   }
   .gi-hero-inner .cp-breadcrumb {
     margin-bottom: 18px;
@@ -6510,8 +6516,8 @@
   }
   .gi-hero-cta:hover { opacity: 0.82; }
   @media (max-width: 640px) {
-    .gi-hero { padding: 20px 0 4px; }
-    .gi-hero-inner { border-radius: 16px; padding: 32px var(--layout-gutter); }
+    .gi-hero { padding: 20px var(--layout-gutter) 4px; }
+    .gi-hero-inner { border-radius: 16px; padding: 32px 24px; }
     .gi-hero-title { max-width: 100%; }
   }
 

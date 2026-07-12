@@ -201,7 +201,7 @@ const GuidesPage = () => {
           guide now also appears in the grid below instead of being
           pulled out into its own card. ══ */}
       <section className="gi-hero">
-        <div className="gi-container gi-hero-inner">
+        <div className="gi-hero-inner">
           <Breadcrumb items={[{ label: t("Guides", "Guides") }]} />
           <span className="gi-hero-eyebrow">{t("GUIDES & COMPARATIFS", "GUIDES & COMPARISONS")}</span>
           <h1 className="gi-hero-title">{t("Mieux choisir ses outils.", "Choose tools with less noise.")}</h1>
