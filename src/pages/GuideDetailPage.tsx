@@ -619,7 +619,16 @@ function markdownToHtml(
   html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
   html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
   html = html.replace(/^---$/gm, "<hr />");
-  html = html.replace(/^(?!<[a-z/]|$)(.+)$/gm, "<p>$1</p>");
+  // Wrap remaining lines in <p>. Skip only lines that already start with a
+  // BLOCK-level tag (or a closing tag / blank line). A previous version
+  // skipped any line starting with "<", which broke every paragraph whose
+  // first token was inline markdown — "**bold** …", "[link] …", "*em* …",
+  // "`code` …" — since those become <strong>/<a>/<em>/<code> before this
+  // step and were left as loose 16px inline text instead of 19px body <p>.
+  html = html.replace(
+    /^(?!<(?:h[1-6]|ul|ol|li|blockquote|table|thead|tbody|tr|td|th|div|hr|p|pre)\b|<\/|$)(.+)$/gm,
+    "<p>$1</p>",
+  );
   html = html.replace(/<p>\s*<\/p>/g, "");
 
   // Auto-link tool names (first occurrence only)
