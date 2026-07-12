@@ -14275,12 +14275,36 @@ section[id] {
   z-index: -1;
   background: #F0C9A3;          /* single flat tone — the gradient's reference apricot */
   border-bottom: 1px solid color-mix(in oklch, #E8A66E 45%, transparent);
-  opacity: 0;
-  transition: opacity 240ms ease-out;
+  /* Reveal with a top-down clip wipe, not an opacity cross-fade: the fade
+     dragged the apricot through a washed-out half-tone at 50%. The band
+     keeps full colour and "unrolls" into place. A hair of vertical slide +
+     an ease-out-expo curve give it snap without bounce. */
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(-4px);
+  transition:
+    clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 #guides .tt-catalog-toolbar--stuck { border-bottom-color: transparent; }
-#guides .tt-catalog-toolbar--stuck::before { opacity: 1; }
+#guides .tt-catalog-toolbar--stuck::before {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(0);
+}
+/* Smooth the controls' colour flip as the band arrives (it snapped before). */
+#guides .tt-catalog-toolbar .tf-dd-trigger,
+#guides .tt-catalog-toolbar .tt-catalog-sort-select {
+  transition: background-color 220ms ease-out, border-color 220ms ease-out, color 220ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  #guides .tt-catalog-toolbar::before {
+    transform: none;
+    clip-path: none;
+    opacity: 0;
+    transition: opacity 140ms linear;
+  }
+  #guides .tt-catalog-toolbar--stuck::before { opacity: 1; }
+}
 /* Dark ink + light pill on the warm band so both controls read as a matched
    pair (already dark in the light theme; this also covers dark mode). */
 #guides .tt-catalog-toolbar--stuck .tf-dd-trigger,
