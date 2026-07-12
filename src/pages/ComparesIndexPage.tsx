@@ -128,6 +128,24 @@ const ComparesIndexPage = () => {
   useEffect(() => {
     if (isSearchExpanded) searchInputRef.current?.focus();
   }, [isSearchExpanded]);
+
+  // Sticky toolbar "stuck" state — same sentinel + IntersectionObserver as the
+  // other catalog pages, so the accent band shows when the filter bar pins.
+  const [toolbarStuck, setToolbarStuck] = useState(false);
+  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const sentinel = toolbarSentinelRef.current;
+    if (!sentinel) return;
+    const scrollRoot = sentinel.closest(".asv2-content");
+    const observer = new IntersectionObserver(
+      ([entry]) => setToolbarStuck(!entry.isIntersecting),
+      { root: scrollRoot, threshold: 0 },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+    // Depend on `loading`: this page early-returns a spinner while loading, so
+    // the sentinel isn't in the DOM on first mount. Re-run once content renders.
+  }, [loading]);
   /* Sync state changes back to the URL (replaceState so back-button isn't polluted) */
   useEffect(() => {
     const next = new URLSearchParams();
@@ -225,8 +243,10 @@ const ComparesIndexPage = () => {
             </div>
           )}
 
+          <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+
           {/* ── Filter bar: same toolbar pattern as the Outils page ── */}
-          <div className="tt-catalog-toolbar">
+          <div className={`tt-catalog-toolbar${toolbarStuck ? " tt-catalog-toolbar--stuck" : ""}`}>
             <div className="tt-catalog-toolbar-filters">
               <FilterDropdown
                 label={t("Catégorie", "Category") as string}
