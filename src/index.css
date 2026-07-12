@@ -10439,7 +10439,10 @@
   }
 
   /* ── Section / container shared ──────────────────────── */
-  .cix-section { padding: 56px 0; }
+  /* Top padding 40px to match the other catalog pages' hero offset
+     (.tt-catalog-container / .cat-body / .sk-listing-section all = 40px);
+     was 56px, which pushed the Comparatifs header lower than the rest. */
+  .cix-section { padding: 40px 0 56px; }
   .cix-container {
     max-width: var(--layout-content, 1280px);
     margin: 0 auto;
@@ -15017,11 +15020,15 @@ section[id] {
 }
 .stack-tool-inspector-sheet {
   background: var(--color-surface) !important;
+  border: 1px solid color-mix(in srgb, var(--color-border) 88%, transparent) !important;
+  border-radius: 24px !important;
   gap: 0 !important;
-  max-width: 820px !important;
+  height: min(840px, calc(100dvh - 64px)) !important;
+  max-height: calc(100dvh - 64px) !important;
+  max-width: 1040px !important;
   overflow: hidden !important;
   padding: 0 !important;
-  width: clamp(680px, 56vw, 820px) !important;
+  width: min(1040px, calc(100vw - 96px)) !important;
   z-index: 300 !important;
 }
 .stack-tool-inspector-sheet > button {
@@ -15039,23 +15046,34 @@ section[id] {
   z-index: 3;
 }
 .stack-tool-inspector {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
   height: 100%;
   overflow: hidden;
 }
-.stack-tool-inspector-intro {
-  display: grid;
-  grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr);
-  min-height: 300px;
+.stack-tool-inspector-media {
+  background: var(--color-surface-soft);
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
 }
 .stack-tool-inspector .stack-tool-inspector-cover {
+  aspect-ratio: auto;
   border: 0;
   border-right: 1px solid var(--color-border);
   border-radius: 0;
   height: 100%;
   margin: 0;
-  min-height: 300px;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+}
+.stack-tool-inspector-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
 }
 .stack-tool-inspector-nav {
   align-items: center;
@@ -15063,7 +15081,8 @@ section[id] {
   display: grid;
   grid-template-columns: 36px 1fr 36px;
   min-height: 52px;
-  padding: 0 18px;
+  flex: 0 0 auto;
+  padding: 0 64px 0 18px;
 }
 .stack-tool-inspector-nav > span {
   color: var(--color-muted);
@@ -15096,10 +15115,9 @@ section[id] {
   overflow-y: auto;
 }
 .stack-tool-inspector-head {
-  align-content: center;
   display: grid;
   gap: 10px;
-  padding: 42px 38px 30px;
+  padding: 34px 38px 28px;
 }
 .stack-tool-inspector-head > span,
 .stack-tool-inspector-context > span,
@@ -15185,6 +15203,10 @@ section[id] {
   font-size: 0.9rem;
   line-height: 1.62;
   margin: 2px 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 .stack-tool-inspector-grid {
   display: grid;
@@ -15301,21 +15323,28 @@ section[id] {
   outline-offset: 2px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .stack-tool-inspector-sheet {
     border: 0 !important;
+    border-radius: 0 !important;
+    height: 100dvh !important;
+    max-height: none !important;
     max-width: none !important;
     width: 100vw !important;
   }
-  .stack-tool-inspector-intro {
-    display: block;
-    min-height: 0;
+  .stack-tool-inspector {
+    display: flex;
+    flex-direction: column;
+  }
+  .stack-tool-inspector-media {
+    flex: 0 0 180px;
+    height: 180px;
   }
   .stack-tool-inspector .stack-tool-inspector-cover {
-    aspect-ratio: 16 / 8;
+    aspect-ratio: auto;
     border-bottom: 1px solid var(--color-border);
     border-right: 0;
-    height: auto;
+    height: 180px;
     min-height: 0;
   }
   .stack-tool-inspector-head {
@@ -15336,18 +15365,30 @@ section[id] {
     grid-template-columns: 1fr;
   }
   .stack-tool-inspector-actions {
-    grid-template-columns: 1fr;
     padding: 14px 20px calc(18px + env(safe-area-inset-bottom));
   }
-  .stack-tool-inspector-actions .stack-tool-inspector-full-link {
-    grid-column: auto;
+  .stack-tool-inspector-actions button,
+  .stack-tool-inspector-actions a {
+    font-size: 0.7rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
   }
 }
 
-@media (min-width: 601px) and (max-width: 1100px) {
+@media (min-width: 701px) and (max-width: 1100px) {
   .stack-tool-inspector-sheet {
     max-width: none !important;
     width: 90vw !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .stack-tool-inspector-actions {
+    grid-template-columns: 1fr;
+  }
+  .stack-tool-inspector-actions .stack-tool-inspector-full-link {
+    grid-column: auto;
   }
 }
 
