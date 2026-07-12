@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { Search, ChevronDown, X } from "lucide-react";
@@ -198,7 +198,7 @@ const CategoryPage = () => {
   const displayName = t(catName, catNameEn) as string;
 
   return (
-    <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
+    <div className="tt-catalog-page min-h-screen" style={{ background: "hsl(var(--background))", "--page-accent": "#EDE0BA" } as CSSProperties}>
 
       {/* ── Body — same horizontal constraints used across the site
             (1280 max / 48px gutter). */}

@@ -15005,6 +15005,246 @@ section[id] {
   }
 }
 
+/* Inspecteur d'outil : conserve Ma stack comme contexte de lecture. */
+.stack-role-tool-card .tce-card.is-selected {
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+.stack-tool-inspector-sheet {
+  background: var(--color-surface) !important;
+  gap: 0 !important;
+  max-width: 520px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  width: min(520px, 100vw) !important;
+  z-index: 300 !important;
+}
+.stack-tool-inspector-sheet > button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(18, 18, 16, 0.12);
+  border-radius: 999px;
+  display: inline-flex;
+  height: 38px;
+  justify-content: center;
+  opacity: 1;
+  right: 16px;
+  top: 16px;
+  width: 38px;
+  z-index: 3;
+}
+.stack-tool-inspector {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.stack-tool-inspector .stack-tool-inspector-cover {
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  flex: 0 0 auto;
+  height: auto;
+  margin: 0;
+}
+.stack-tool-inspector-nav {
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 36px 1fr 36px;
+  min-height: 52px;
+  padding: 0 18px;
+}
+.stack-tool-inspector-nav > span {
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 760;
+  text-align: center;
+}
+.stack-tool-inspector-nav a {
+  align-items: center;
+  border-radius: 999px;
+  color: var(--color-text);
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  text-decoration: none;
+  width: 34px;
+}
+.stack-tool-inspector-nav a:last-child {
+  justify-self: end;
+}
+.stack-tool-inspector-nav a:hover,
+.stack-tool-inspector-nav a:focus-visible {
+  background: var(--color-surface-soft);
+  outline: none;
+}
+.stack-tool-inspector-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+.stack-tool-inspector-head {
+  display: grid;
+  gap: 8px;
+  padding: 24px 24px 18px;
+}
+.stack-tool-inspector-head > span,
+.stack-tool-inspector-context > span,
+.stack-tool-inspector-pros > span,
+.stack-tool-inspector-facts span {
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  font-weight: 760;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+.stack-tool-inspector-head h2 {
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 1.85rem;
+  font-weight: 860;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+.stack-tool-inspector-head p {
+  color: color-mix(in srgb, var(--color-text) 70%, var(--color-muted));
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.stack-tool-inspector-facts {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 0 24px 18px;
+}
+.stack-tool-inspector-facts > div {
+  background: var(--color-surface-soft);
+  border-radius: 12px;
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+}
+.stack-tool-inspector-facts strong {
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+.stack-tool-inspector-context,
+.stack-tool-inspector-pros {
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 7px;
+  margin: 0 24px;
+  padding: 18px 0;
+}
+.stack-tool-inspector-context strong {
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 820;
+}
+.stack-tool-inspector-context p {
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  margin: 0;
+}
+.stack-tool-inspector-pros ul {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+}
+.stack-tool-inspector-pros li {
+  color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted));
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  padding-left: 16px;
+  position: relative;
+}
+.stack-tool-inspector-pros li::before {
+  background: var(--color-text);
+  border-radius: 999px;
+  content: "";
+  height: 4px;
+  left: 2px;
+  position: absolute;
+  top: 0.55em;
+  width: 4px;
+}
+.stack-tool-inspector-actions {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 8px;
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding: 16px 24px 22px;
+}
+.stack-tool-inspector-actions button,
+.stack-tool-inspector-actions a {
+  align-items: center;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 800;
+  gap: 7px;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  text-decoration: none;
+}
+.stack-tool-inspector-actions button {
+  appearance: none;
+  background: var(--color-text);
+  border: 1px solid var(--color-text);
+  color: var(--color-bg);
+}
+.stack-tool-inspector-actions a {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+}
+.stack-tool-inspector-actions button:focus-visible,
+.stack-tool-inspector-actions a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-text) 22%, transparent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .stack-tool-inspector-sheet {
+    border: 0 !important;
+    max-width: none !important;
+    width: 100vw !important;
+  }
+  .stack-tool-inspector-head {
+    padding: 20px 20px 16px;
+  }
+  .stack-tool-inspector-head h2 {
+    font-size: 1.6rem;
+  }
+  .stack-tool-inspector-facts {
+    padding: 0 20px 16px;
+  }
+  .stack-tool-inspector-context,
+  .stack-tool-inspector-pros {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .stack-tool-inspector-actions {
+    padding: 14px 20px calc(18px + env(safe-area-inset-bottom));
+  }
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    Shared page hero — used by ToolsPage, StacksPage, ComparesIndexPage,
    GuidesPage (and any future index/listing page). One visual contract so the
@@ -15283,70 +15523,40 @@ section[id] {
   border-bottom-color: var(--color-border);
 }
 
-/* ── Guides-only: Spotify-style sticky filter band ──────────────────────────
-   At rest the filter bar sits on the page background. As it scrolls up and
-   pins (--stuck), a full-bleed band in the hero's own warm gradient fades in
-   behind the chips — the hero's colour "compressing" into the sticky bar, one
-   shared colour system (like Spotify's top gradient collapsing into the
-   pinned chip row). The band echoes the hero gradient, so the controls flip
-   to dark ink to stay readable on it in any theme. Scoped to #guides so the
-   other catalog pages keep their plain neutral sticky bar. */
-/* #guides clips horizontally so the band below can overshoot to -100vw on
-   each side and be trimmed to the page's full content width (past the
-   max-width container's centring margins), giving a true edge-to-edge band.
-   overflow-x: clip pairs with overflow-y: visible, so it does NOT become a
-   scroll container and the toolbar keeps sticking to .asv2-content. */
-#guides { overflow-x: clip; }
-#guides .tt-catalog-toolbar { isolation: isolate; background: transparent; }
-#guides .tt-catalog-toolbar::before {
+/* ── Catalog pages: sticky filter band, one accent colour per page ──────────
+   When the filter bar pins (--stuck), the zone simply takes on the page's
+   accent colour — no reveal/slide animation, it just becomes coloured. Each
+   page sets its own --page-accent (a soft, non-fluo tone) on its .tt-catalog-page
+   root. overflow-x: clip lets the band overshoot to -100vw and be trimmed to
+   the page's full content width (edge to edge); it pairs with overflow-y:
+   visible so the root doesn't become a scroll container and the toolbar keeps
+   sticking to .asv2-content. */
+.tt-catalog-page { overflow-x: clip; }
+.tt-catalog-page .tt-catalog-toolbar { isolation: isolate; background: transparent; }
+.tt-catalog-page .tt-catalog-toolbar::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -100vw;                 /* overshoot; clipped to #guides = full width */
+  left: -100vw;                 /* overshoot; clipped to the page root = full width */
   right: -100vw;
   z-index: -1;
-  background: #F0C9A3;          /* single flat tone — the gradient's reference apricot */
-  border-bottom: 1px solid color-mix(in oklch, #E8A66E 45%, transparent);
-  /* Reveal with a top-down clip wipe, not an opacity cross-fade: the fade
-     dragged the apricot through a washed-out half-tone at 50%. The band
-     keeps full colour and "unrolls" into place. A hair of vertical slide +
-     an ease-out-expo curve give it snap without bounce. */
-  clip-path: inset(0 0 100% 0);
-  transform: translateY(-4px);
-  transition:
-    clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--page-accent, #EFD3B0);
+  border-bottom: 1px solid color-mix(in oklch, var(--page-accent, #EFD3B0), #000 12%);
+  opacity: 0;                   /* the zone just gets its colour — no animation */
   pointer-events: none;
 }
-#guides .tt-catalog-toolbar--stuck { border-bottom-color: transparent; }
-#guides .tt-catalog-toolbar--stuck::before {
-  clip-path: inset(0 0 0 0);
-  transform: translateY(0);
-}
-/* Smooth the controls' colour flip as the band arrives (it snapped before). */
-#guides .tt-catalog-toolbar .tf-dd-trigger,
-#guides .tt-catalog-toolbar .tt-catalog-sort-select {
-  transition: background-color 220ms ease-out, border-color 220ms ease-out, color 220ms ease-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  #guides .tt-catalog-toolbar::before {
-    transform: none;
-    clip-path: none;
-    opacity: 0;
-    transition: opacity 140ms linear;
-  }
-  #guides .tt-catalog-toolbar--stuck::before { opacity: 1; }
-}
-/* Dark ink + light pill on the warm band so both controls read as a matched
+.tt-catalog-page .tt-catalog-toolbar--stuck { border-bottom-color: transparent; }
+.tt-catalog-page .tt-catalog-toolbar--stuck::before { opacity: 1; }
+/* Dark ink + light pill on the accent band so both controls read as a matched
    pair (already dark in the light theme; this also covers dark mode). */
-#guides .tt-catalog-toolbar--stuck .tf-dd-trigger,
-#guides .tt-catalog-toolbar--stuck .tf-dd-chevron,
-#guides .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
+.tt-catalog-page .tt-catalog-toolbar--stuck .tf-dd-trigger,
+.tt-catalog-page .tt-catalog-toolbar--stuck .tf-dd-chevron,
+.tt-catalog-page .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
   color: #241a12;
 }
-#guides .tt-catalog-toolbar--stuck .tf-dd-trigger,
-#guides .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
+.tt-catalog-page .tt-catalog-toolbar--stuck .tf-dd-trigger,
+.tt-catalog-page .tt-catalog-toolbar--stuck .tt-catalog-sort-select {
   background-color: color-mix(in oklch, #ffffff 62%, transparent);
   border-color: color-mix(in oklch, #241a12 22%, transparent);
 }

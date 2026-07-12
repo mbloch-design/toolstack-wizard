@@ -74,6 +74,7 @@ Les trois verbes du MVP sont donc : **prendre, ranger, voir**.
 - Les tableaux retrouvent une composition éditoriale colorée : titre court, description du besoin, trois logos alignés puis compteur de surplus, avec les actions `Explorer` et `Ajouter`.
 - Les actions de rangement sont réduites à de petits crayons, visibles au survol et toujours accessibles sur mobile.
 - La page d'un besoin affiche ses sous-sections verticalement, puis réutilise la card éditoriale commune au catalogue dans une variante compacte de hauteur fixe (226 px) en grille `4 / 2 / 1` : image ou logo, nom, prix, catégorie et utilité. La carte entière ouvre la fiche et le petit crayon permet de corriger le rangement.
+- Depuis une sous-page de besoin, une card ouvre désormais un inspecteur contextuel sans quitter Ma stack. L'URL conserve le besoin et l'outil, le navigateur Retour ferme l'inspecteur, le scroll reste en place, et la fiche complète demeure une action secondaire. L'inspecteur est latéral sur desktop et plein écran sur mobile.
 - `À ranger` n'apparaît que pour les cas particuliers et prend désormais la forme d'un tableau identique aux autres ; il lance une correction simple outil par outil.
 - Le tableau `À ranger` est toujours placé après les besoins normaux, en dernière position de la grille.
 - Les logos se chevauchent légèrement pour former un groupe régulier ; le surplus est un vrai bouton rond `+N` ouvrant un panneau compact des outils supplémentaires.

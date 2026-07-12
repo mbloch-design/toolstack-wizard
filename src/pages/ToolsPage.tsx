@@ -209,7 +209,7 @@ const ToolsPage = () => {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
+    <div className="tt-catalog-page min-h-screen" style={{ background: "hsl(var(--background))", "--page-accent": "#E9CBCB" } as React.CSSProperties}>
 
       {/* ══════════════ BODY ══════════════ */}
       <div className="tt-catalog-container">

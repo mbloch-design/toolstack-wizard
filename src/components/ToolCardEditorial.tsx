@@ -38,6 +38,8 @@ interface ToolCardEditorialProps {
   lang?: "fr" | "en";
   variant?: "default" | "compact";
   showPin?: boolean;
+  to?: string;
+  selected?: boolean;
 }
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
@@ -65,6 +67,8 @@ export function ToolCardEditorial({
   lang = "fr",
   variant = "default",
   showPin = true,
+  to,
+  selected = false,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
   const compact = variant === "compact";
@@ -78,8 +82,9 @@ export function ToolCardEditorial({
     <div className={`tool-pin-wrap${compact ? " tool-pin-wrap--compact" : ""}`}>
       {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
       <Link
-        to={`${prefix}/tool/${tool.slug ?? tool.id}`}
-        className={`tce-card${compact ? " tce-card--compact" : ""}`}
+        to={to || `${prefix}/tool/${tool.slug ?? tool.id}`}
+        className={`tce-card${compact ? " tce-card--compact" : ""}${selected ? " is-selected" : ""}`}
+        aria-current={selected ? "true" : undefined}
       >
       {/* Cover: OG image, falls back to centered logo. Description + CTA
           live in the image overlay (hidden at rest, revealed on hover/focus

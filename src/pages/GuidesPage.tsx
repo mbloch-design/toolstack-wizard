@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useEffect, useRef, type CSSProperties } from "react";
 import { Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -184,7 +184,7 @@ const GuidesPage = () => {
       ];
 
   return (
-    <div className="gi-page min-h-screen">
+    <div className="tt-catalog-page gi-page min-h-screen" style={{ "--page-accent": "#EFD3B0" } as CSSProperties}>
 
       {/* ══ Top — same compact header + grid as the Outils catalog page
           (breadcrumb + slim title, then the filter bar), so Guides shares

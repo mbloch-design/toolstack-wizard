@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
 import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
+import StackToolInspector from "@/components/stack/StackToolInspector";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -1913,6 +1915,10 @@ const CartPage = () => {
   const activeBoards = boards.filter((board) => board.tools.length > 0 || board.source === "custom") as StackObjective[];
   const zoomObjectiveId = searchParams.get("objectif");
   const zoomedBoard = activeBoards.find((board) => board.id === zoomObjectiveId) || null;
+  const quickToolSlug = searchParams.get("outil");
+  const quickTool = zoomedBoard && quickToolSlug
+    ? zoomedBoard.tools.find((tool) => getToolKey(tool) === quickToolSlug) || null
+    : null;
   const pickerBoard = boards.find((board) => board.id === pickerBoardId) || null;
   const pickerIsCustom = pickerBoard?.source === "custom";
 
@@ -1967,6 +1973,12 @@ const CartPage = () => {
 
     return Array.from(groups.values()).sort((a, b) => a.order - b.order || a.labelFr.localeCompare(b.labelFr));
   }, [categoryById, lang, zoomedBoard]);
+  const quickToolIndex = quickTool && zoomedBoard
+    ? zoomedBoard.tools.findIndex((tool) => getToolKey(tool) === getToolKey(quickTool))
+    : -1;
+  const quickToolGroup = quickTool
+    ? zoomedSubdomains.find((group) => group.tools.some((tool) => getToolKey(tool) === getToolKey(quickTool))) || null
+    : null;
 
   const pickerQueryTokens = useMemo(() => getPickerQueryTokens(pickerQuery), [pickerQuery]);
   const hasPickerQuery = pickerQueryTokens.length > 0;
@@ -2164,7 +2176,27 @@ const CartPage = () => {
   function closeObjective() {
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete("objectif");
+    nextParams.delete("outil");
     setSearchParams(nextParams);
+  }
+
+  function getToolInspectorHref(toolSlug: string) {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.set("outil", toolSlug);
+    return `${prefix}/ma-stack?${nextParams.toString()}`;
+  }
+
+  function closeToolInspector() {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("outil");
+    setSearchParams(nextParams, { replace: true });
+  }
+
+  function editInspectedTool() {
+    if (!quickTool) return;
+    const toolSlug = getToolKey(quickTool);
+    closeToolInspector();
+    openNeedDialog(toolSlug);
   }
 
   function removeToolFromCurrentNeed(toolSlug: string) {
@@ -2276,6 +2308,8 @@ const CartPage = () => {
                           categoryLabel={getCategoryLabel(tool)}
                           variant="compact"
                           showPin={false}
+                          to={getToolInspectorHref(toolSlug)}
+                          selected={quickToolSlug === toolSlug}
                         />
                         <button
                           type="button"
@@ -2428,6 +2462,31 @@ const CartPage = () => {
           )}
         </main>
       )}
+
+      <Sheet open={!!quickTool} onOpenChange={(open) => { if (!open) closeToolInspector(); }}>
+        <SheetContent
+          side="right"
+          className="stack-tool-inspector-sheet"
+          overlayClassName="bg-black/20 backdrop-blur-[1px]"
+        >
+          {quickTool && zoomedBoard && (
+            <StackToolInspector
+              tool={quickTool}
+              needLabel={t(zoomedBoard.labelFr, zoomedBoard.labelEn)}
+              sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils du besoin", "Need tools")}
+              categoryLabel={getCategoryLabel(quickTool)}
+              typeLabel={getToolTypeLabel(quickTool, lang)}
+              priceLabel={quickTool.defaultMonthlyPrice > 0 ? formatMonthlyPrice(quickTool.defaultMonthlyPrice, lang) : t("Gratuit", "Free")}
+              prefix={prefix}
+              lang={lang}
+              previousHref={quickToolIndex > 0 ? getToolInspectorHref(getToolKey(zoomedBoard.tools[quickToolIndex - 1])) : undefined}
+              nextHref={quickToolIndex >= 0 && quickToolIndex < zoomedBoard.tools.length - 1 ? getToolInspectorHref(getToolKey(zoomedBoard.tools[quickToolIndex + 1])) : undefined}
+              onEdit={editInspectedTool}
+              t={t}
+            />
+          )}
+        </SheetContent>
+      </Sheet>
 
       {needDialogTool && (
         <div className="stack-need-dialog-backdrop" onMouseDown={(event) => {
