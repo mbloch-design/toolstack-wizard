@@ -214,14 +214,16 @@ const ComparesIndexPage = () => {
             <h1 className="tt-catalog-compact-title">{t("Comparer sans empiler.", "Compare without stacking.")}</h1>
           </div>
 
-          {/* Header */}
-          <div className="cix-listing-header">
-            <p className="cix-listing-title">
-              {query.trim()
-                ? t(`Résultats pour "${query.trim()}"`, `Results for "${query.trim()}"`)
-                : t("Comparatifs éditoriaux.", "Editorial comparisons.")}
-            </p>
-          </div>
+          {/* Search-results feedback only — the default editorial title was a
+              second H1-ish header the other catalog pages don't have; dropped
+              it so the header is just the shared compact header. */}
+          {query.trim() && (
+            <div className="cix-listing-header">
+              <p className="cix-listing-title">
+                {t(`Résultats pour "${query.trim()}"`, `Results for "${query.trim()}"`)}
+              </p>
+            </div>
+          )}
 
           {/* ── Filter bar: same toolbar pattern as the Outils page ── */}
           <div className="tt-catalog-toolbar">
