@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, MoreHorizontal, Pencil, Plus, Search, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
 import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
 import StackToolInspector from "@/components/stack/StackToolInspector";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -1834,6 +1833,8 @@ function getToolRelation(tool: ToolSummary, allTools: ToolSummary[], lang: strin
 
 const CartPage = () => {
   const { t, lang, prefix } = useLang();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const {
@@ -1848,6 +1849,9 @@ const CartPage = () => {
     moveNeed,
   } = useStackPins();
   const [searchParams, setSearchParams] = useSearchParams();
+  const inspectorNavigationDepth = typeof location.state?.stackToolInspectorDepth === "number"
+    ? Math.max(0, location.state.stackToolInspectorDepth)
+    : 0;
   const [pickerBoardId, setPickerBoardId] = useState<string | null>(null);
   const [pickerQuery, setPickerQuery] = useState("");
   const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
@@ -2187,6 +2191,10 @@ const CartPage = () => {
   }
 
   function closeToolInspector() {
+    if (inspectorNavigationDepth > 0) {
+      navigate(-inspectorNavigationDepth);
+      return;
+    }
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete("outil");
     setSearchParams(nextParams, { replace: true });
@@ -2210,7 +2218,7 @@ const CartPage = () => {
   return (
     <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}`}>
       {zoomedBoard ? (
-        <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
+        quickTool ? null : <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
           <div className="stack-objective-hero-inner">
             <button type="button" className="stack-objective-hero-round" onClick={closeObjective} aria-label={t("Retour à Ma stack", "Back to My stack") as string} title={t("Retour à Ma stack", "Back to My stack") as string}>
               <ArrowLeft size={20} aria-hidden />
@@ -2284,8 +2292,9 @@ const CartPage = () => {
       )}
 
       {zoomedBoard ? (
-        <main className="stack-objective-detail" aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
-          <div className="stack-role-section-grid">
+        <main className={`stack-objective-detail${quickTool ? " stack-objective-detail--tool-page" : ""}`} aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
+          {!quickTool && <div className="stack-objective-browser">
+            <div className="stack-role-section-grid">
             {zoomedSubdomains.map((group) => (
               <section key={group.id} className="stack-role-section" aria-labelledby={`stack-role-${group.id}`}>
                 <div className="stack-role-section-head">
@@ -2309,6 +2318,7 @@ const CartPage = () => {
                           variant="compact"
                           showPin={false}
                           to={getToolInspectorHref(toolSlug)}
+                          linkState={{ stackToolInspectorDepth: 1 }}
                           selected={quickToolSlug === toolSlug}
                         />
                         <button
@@ -2326,7 +2336,32 @@ const CartPage = () => {
                 </div>
               </section>
             ))}
-          </div>
+            </div>
+          </div>}
+
+          {quickTool && (
+            <section className="stack-tool-stage" aria-label={t(`Fiche ${quickTool.name}`, `${quickTool.name} profile`) as string}>
+              <StackToolInspector
+                tool={quickTool}
+                needLabel={t(zoomedBoard.labelFr, zoomedBoard.labelEn)}
+                sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils du besoin", "Need tools")}
+                categoryLabel={getCategoryLabel(quickTool)}
+                typeLabel={getToolTypeLabel(quickTool, lang)}
+                priceLabel={quickTool.defaultMonthlyPrice > 0 ? formatMonthlyPrice(quickTool.defaultMonthlyPrice, lang) : t("Gratuit", "Free")}
+                stackCostLabel={formatMonthlyPrice(stackPricing.total, lang)}
+                prefix={prefix}
+                lang={lang}
+                previousHref={quickToolIndex > 0 ? getToolInspectorHref(getToolKey(zoomedBoard.tools[quickToolIndex - 1])) : undefined}
+                previousLabel={quickToolIndex > 0 ? zoomedBoard.tools[quickToolIndex - 1].name : undefined}
+                nextHref={quickToolIndex >= 0 && quickToolIndex < zoomedBoard.tools.length - 1 ? getToolInspectorHref(getToolKey(zoomedBoard.tools[quickToolIndex + 1])) : undefined}
+                nextLabel={quickToolIndex >= 0 && quickToolIndex < zoomedBoard.tools.length - 1 ? zoomedBoard.tools[quickToolIndex + 1].name : undefined}
+                navigationDepth={inspectorNavigationDepth}
+                onClose={closeToolInspector}
+                onEdit={editInspectedTool}
+                t={t}
+              />
+            </section>
+          )}
         </main>
       ) : (
         <main className="stack-board-grid" aria-label={t("Vue d'ensemble de ma stack", "My stack overview") as string}>
@@ -2462,31 +2497,6 @@ const CartPage = () => {
           )}
         </main>
       )}
-
-      <Sheet open={!!quickTool} onOpenChange={(open) => { if (!open) closeToolInspector(); }}>
-        <SheetContent
-          side="right"
-          className="stack-tool-inspector-sheet"
-          overlayClassName="bg-black/20 backdrop-blur-[1px]"
-        >
-          {quickTool && zoomedBoard && (
-            <StackToolInspector
-              tool={quickTool}
-              needLabel={t(zoomedBoard.labelFr, zoomedBoard.labelEn)}
-              sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils du besoin", "Need tools")}
-              categoryLabel={getCategoryLabel(quickTool)}
-              typeLabel={getToolTypeLabel(quickTool, lang)}
-              priceLabel={quickTool.defaultMonthlyPrice > 0 ? formatMonthlyPrice(quickTool.defaultMonthlyPrice, lang) : t("Gratuit", "Free")}
-              prefix={prefix}
-              lang={lang}
-              previousHref={quickToolIndex > 0 ? getToolInspectorHref(getToolKey(zoomedBoard.tools[quickToolIndex - 1])) : undefined}
-              nextHref={quickToolIndex >= 0 && quickToolIndex < zoomedBoard.tools.length - 1 ? getToolInspectorHref(getToolKey(zoomedBoard.tools[quickToolIndex + 1])) : undefined}
-              onEdit={editInspectedTool}
-              t={t}
-            />
-          )}
-        </SheetContent>
-      </Sheet>
 
       {needDialogTool && (
         <div className="stack-need-dialog-backdrop" onMouseDown={(event) => {

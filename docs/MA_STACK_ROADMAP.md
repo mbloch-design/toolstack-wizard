@@ -311,7 +311,9 @@ Durée indicative : 2 à 3 jours.
 - Faire de chaque carte la réponse à `Pour ce besoin, j'ai ces outils`.
 - Afficher noms et logos sans dépendre uniquement d'un compteur.
 - Donner une place visible à `À ranger` lorsqu'il contient des outils.
-- Simplifier la vue détaillée autour du lot, sans reproduire une fiche catalogue.
+- Ouvrir une fiche outil riche en pleine page dans Ma stack, avec une sidebar droite dédiée au contexte du besoin, sans modale ni sortie de Ma stack.
+- Faire remonter dans cette fiche le rôle dans la stack, les usages, les points forts, les limites et le coût indicatif.
+- Conserver l'accès à la fiche catalogue complète comme action tertiaire.
 - Reléguer ou masquer le budget tant qu'il détourne du job principal.
 - Réduire le nombre d'actions `Ajouter` concurrentes.
 - Conserver la classification automatique comme aide discrète.

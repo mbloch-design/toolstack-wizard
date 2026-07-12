@@ -39,6 +39,7 @@ interface ToolCardEditorialProps {
   variant?: "default" | "compact";
   showPin?: boolean;
   to?: string;
+  linkState?: unknown;
   selected?: boolean;
 }
 
@@ -68,6 +69,7 @@ export function ToolCardEditorial({
   variant = "default",
   showPin = true,
   to,
+  linkState,
   selected = false,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
@@ -83,6 +85,7 @@ export function ToolCardEditorial({
       {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
       <Link
         to={to || `${prefix}/tool/${tool.slug ?? tool.id}`}
+        state={linkState}
         className={`tce-card${compact ? " tce-card--compact" : ""}${selected ? " is-selected" : ""}`}
         aria-current={selected ? "true" : undefined}
       >
