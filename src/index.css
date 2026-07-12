@@ -10497,11 +10497,19 @@
   .cix-card-logos {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     flex-shrink: 0;
   }
   .cix-card-logo {
     display: inline-flex;
+  }
+  .cix-card-vs {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted-light);
   }
   .cix-card-body {
     min-width: 0;
@@ -10515,28 +10523,42 @@
     line-height: 1.25;
     color: var(--color-text-strong);
   }
-  .cix-card-question {
-    margin: 6px 0 0;
+  /* Per-tool decision split: one line each, bold tool name + when to pick it.
+     Replaces the old question + "best for" pair that repeated the same data. */
+  .cix-card-split {
+    margin: 7px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cix-card-choice {
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body);
+    line-height: 1.4;
+    color: var(--color-muted);
+  }
+  .cix-card-choice-name {
+    flex-shrink: 0;
+    min-width: 96px;
+    font-weight: 700;
+    color: var(--color-text-strong);
+  }
+  .cix-card-choice-when {
+    min-width: 0;
+  }
+  .cix-card-choice-when::first-letter {
+    text-transform: uppercase;
+  }
+  .cix-card-choice-fallback {
+    margin: 7px 0 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-body);
     line-height: 1.45;
-    letter-spacing: -0.01em;
     color: var(--color-text);
-  }
-  .cix-card-bestfor {
-    margin: 8px 0 0;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body);
-    line-height: 1.5;
-    color: var(--color-muted);
-  }
-  .cix-card-bestfor span {
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-size: 10px;
-    color: var(--color-muted);
-    margin-right: 8px;
   }
   .cix-card-cat {
     flex-shrink: 0;
@@ -15013,43 +15035,81 @@ section[id] {
   }
 }
 
-/* Inspecteur d'outil : conserve Ma stack comme contexte de lecture. */
+/* Fiche outil intégrée : la stack reste visible, sans overlay ni modale. */
 .stack-role-tool-card .tce-card.is-selected {
   border-color: var(--color-text);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-text) 14%, transparent);
 }
-.stack-tool-inspector-sheet {
-  background: var(--color-surface) !important;
-  border: 1px solid color-mix(in srgb, var(--color-border) 88%, transparent) !important;
-  border-radius: 24px !important;
-  gap: 0 !important;
-  height: min(840px, calc(100dvh - 64px)) !important;
-  max-height: calc(100dvh - 64px) !important;
-  max-width: 1040px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  width: min(1040px, calc(100vw - 96px)) !important;
-  z-index: 300 !important;
+.stack-objective-detail--inspecting {
+  align-items: start;
+  gap: 28px;
+  grid-template-columns: minmax(440px, 44%) minmax(560px, 56%);
+  max-width: 1440px;
 }
-.stack-tool-inspector-sheet > button {
+.stack-objective-browser {
+  min-width: 0;
+}
+.stack-objective-detail--inspecting .stack-role-tool-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.stack-objective-detail--inspecting .stack-role-tool-card {
+  height: 212px;
+}
+.stack-objective-detail--inspecting .stack-role-tool-card .tce-card--compact .tc-image {
+  flex-basis: 92px;
+  height: 92px;
+}
+.stack-tool-stage {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  height: min(760px, calc(100dvh - 220px));
+  min-height: 620px;
+  min-width: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 88px;
+}
+.stack-tool-inspector-close {
   align-items: center;
+  appearance: none;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(18, 18, 16, 0.12);
   border-radius: 999px;
+  color: var(--color-text);
+  cursor: pointer;
   display: inline-flex;
   height: 38px;
   justify-content: center;
-  opacity: 1;
-  right: 16px;
-  top: 16px;
+  padding: 0;
+  position: absolute;
+  right: 12px;
+  top: 7px;
   width: 38px;
-  z-index: 3;
+  z-index: 4;
+}
+.stack-tool-inspector-close span,
+.stack-tool-inspector-close-mobile {
+  display: none;
+}
+.stack-tool-inspector-close span {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 760;
+  white-space: nowrap;
+}
+.stack-tool-inspector-close:hover,
+.stack-tool-inspector-close:focus-visible {
+  background: var(--color-text);
+  color: var(--color-bg);
+  outline: none;
 }
 .stack-tool-inspector {
   display: grid;
   grid-template-columns: minmax(0, 40%) minmax(0, 60%);
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 .stack-tool-inspector-media {
   background: var(--color-surface-soft);
@@ -15323,14 +15383,53 @@ section[id] {
   outline-offset: 2px;
 }
 
+@media (max-width: 1024px) {
+  .stack-objective-detail--inspecting {
+    display: block;
+  }
+  .stack-objective-detail--inspecting .stack-objective-browser {
+    display: none;
+  }
+  .stack-tool-stage {
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    position: static;
+  }
+  .stack-tool-inspector {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .stack-tool-inspector-media {
+    flex: 0 0 220px;
+    height: 220px;
+  }
+  .stack-tool-inspector-panel,
+  .stack-tool-inspector-body {
+    overflow: visible;
+  }
+  .stack-tool-inspector-close {
+    gap: 7px;
+    padding: 0 13px;
+    width: auto;
+  }
+  .stack-tool-inspector-close span,
+  .stack-tool-inspector-close-mobile {
+    display: inline-flex;
+  }
+  .stack-tool-inspector-close-desktop {
+    display: none;
+  }
+  .stack-tool-inspector-nav {
+    padding-right: 158px;
+  }
+}
+
 @media (max-width: 700px) {
-  .stack-tool-inspector-sheet {
-    border: 0 !important;
-    border-radius: 0 !important;
-    height: 100dvh !important;
-    max-height: none !important;
-    max-width: none !important;
-    width: 100vw !important;
+  .stack-objective-detail--inspecting {
+    padding-left: 0;
+    padding-right: 0;
   }
   .stack-tool-inspector {
     display: flex;
@@ -15373,13 +15472,6 @@ section[id] {
     padding-left: 10px;
     padding-right: 10px;
     white-space: nowrap;
-  }
-}
-
-@media (min-width: 701px) and (max-width: 1100px) {
-  .stack-tool-inspector-sheet {
-    max-width: none !important;
-    width: 90vw !important;
   }
 }
 

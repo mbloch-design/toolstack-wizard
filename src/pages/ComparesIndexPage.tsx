@@ -57,51 +57,19 @@ const POPULAR_SUGGESTIONS = [
   { label: "Linear vs Jira",     slugPair: "linear-vs-jira" },
 ];
 
-/* ─── Card description ───────────────────────────────────────────────────── */
-function deriveCardDesc(a: Tool, b: Tool, lang: "fr" | "en"): string {
+/* The two tools' "choose this if…" conditions, shown one per tool on the card
+   as a clear side-by-side split — replaces the old question + "best for" pair
+   that repeated the exact same keepIf data twice. Returns null when a tool has
+   no keepIf, so the card can fall back to a generic prompt. */
+function getCardChoices(a: Tool, b: Tool, lang: "fr" | "en"): { a: string; b: string } | null {
   const keepA = lang === "fr"
     ? (a.verdict?.keepIf || [])[0]
     : (a.verdictEn?.keepIf || a.verdict?.keepIf || [])[0];
   const keepB = lang === "fr"
     ? (b.verdict?.keepIf || [])[0]
     : (b.verdictEn?.keepIf || b.verdict?.keepIf || [])[0];
-  if (keepA && keepB) {
-    return lang === "fr"
-      ? `${a.name} si ${keepA.toLowerCase()}. ${b.name} si ${keepB.toLowerCase()}.`
-      : `${a.name} if ${keepA.toLowerCase()}. ${b.name} if ${keepB.toLowerCase()}.`;
-  }
-  const sd = lang === "fr"
-    ? (a.shortDescription || "") + (b.shortDescription ? ` vs ${b.shortDescription}` : "")
-    : (a.shortDescriptionEn || a.shortDescription || "");
-  return sd || (lang === "fr"
-    ? `Comparer ${a.name} et ${b.name} selon ton usage.`
-    : `Compare ${a.name} and ${b.name} based on your use case.`);
-}
-function getCardDecisionQuestion(a: Tool, b: Tool, lang: "fr" | "en"): string {
-  const keepA = lang === "fr"
-    ? (a.verdict?.keepIf || [])[0]
-    : (a.verdictEn?.keepIf || a.verdict?.keepIf || [])[0];
-  const keepB = lang === "fr"
-    ? (b.verdict?.keepIf || [])[0]
-    : (b.verdictEn?.keepIf || b.verdict?.keepIf || [])[0];
-  if (keepA && keepB) {
-    return lang === "fr"
-      ? `Plutôt ${a.name} pour ${keepA.toLowerCase()}, ou ${b.name} pour ${keepB.toLowerCase()} ?`
-      : `${a.name} for ${keepA.toLowerCase()}, or ${b.name} for ${keepB.toLowerCase()}?`;
-  }
-  return lang === "fr"
-    ? `Quel outil colle le mieux à ton usage réel ?`
-    : `Which tool best fits your real use case?`;
-}
-function getCardBestFor(a: Tool, b: Tool, lang: "fr" | "en"): string {
-  const keepA = lang === "fr"
-    ? (a.verdict?.keepIf || [])[0]
-    : (a.verdictEn?.keepIf || a.verdict?.keepIf || [])[0];
-  const keepB = lang === "fr"
-    ? (b.verdict?.keepIf || [])[0]
-    : (b.verdictEn?.keepIf || b.verdict?.keepIf || [])[0];
-  if (keepA && keepB) return `${a.name}: ${keepA}. ${b.name}: ${keepB}.`;
-  return deriveCardDesc(a, b, lang);
+  if (keepA && keepB) return { a: keepA, b: keepB };
+  return null;
 }
 /* (getCardRisk removed — cards no longer surface "Risque" signals;
    risk content lives inside the comparison page, not the listing card.) */
@@ -333,8 +301,7 @@ const ComparesIndexPage = () => {
               {filteredComparisons.map((c) => {
                 const a = c.toolAData!;
                 const b = c.toolBData!;
-                const question = getCardDecisionQuestion(a, b, lang);
-                const bestFor = getCardBestFor(a, b, lang);
+                const choices = getCardChoices(a, b, lang);
                 const catId = getSlugCategory(c.slugPair);
                 const catLabel = COMPARE_CATEGORY_FILTERS.find((f) => f.id === catId);
                 return (
@@ -345,15 +312,28 @@ const ComparesIndexPage = () => {
                       aria-label={t(`Lire le comparatif ${a.name} vs ${b.name}`, `Read the ${a.name} vs ${b.name} comparison`)}
                     >
                       <div className="cix-card-logos" aria-hidden="true">
-                        <span className="cix-card-logo"><ToolLogo tool={a} size={36} /></span>
-                        <span className="cix-card-logo"><ToolLogo tool={b} size={36} /></span>
+                        <span className="cix-card-logo"><ToolLogo tool={a} size={34} /></span>
+                        <span className="cix-card-vs">vs</span>
+                        <span className="cix-card-logo"><ToolLogo tool={b} size={34} /></span>
                       </div>
                       <div className="cix-card-body">
                         <h3 className="cix-card-title">{a.name} vs {b.name}</h3>
-                        <p className="cix-card-question">{question}</p>
-                        <p className="cix-card-bestfor">
-                          <span>{t("Meilleur pour", "Best for")}</span> {bestFor}
-                        </p>
+                        {choices ? (
+                          <div className="cix-card-split">
+                            <p className="cix-card-choice">
+                              <span className="cix-card-choice-name">{a.name}</span>
+                              <span className="cix-card-choice-when">{choices.a.toLowerCase()}</span>
+                            </p>
+                            <p className="cix-card-choice">
+                              <span className="cix-card-choice-name">{b.name}</span>
+                              <span className="cix-card-choice-when">{choices.b.toLowerCase()}</span>
+                            </p>
+                          </div>
+                        ) : (
+                          <p className="cix-card-choice-fallback">
+                            {t("Lequel colle le mieux à ton usage réel ?", "Which one fits your real use case?")}
+                          </p>
+                        )}
                       </div>
                       {catLabel && catLabel.id !== "all" && (
                         <span className="cix-card-cat" aria-hidden="true">
