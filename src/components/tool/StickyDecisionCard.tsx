@@ -110,14 +110,14 @@ export default function StickyDecisionCard({
 
   return (
     <div style={{
-      background: "var(--color-surface)",
+      background: "var(--color-surface-soft)",
       border: "1px solid var(--color-border)",
-      borderRadius: 10,
+      borderRadius: 16,
       overflow: "hidden",
     }}>
 
       {/* ── 1. Header ── */}
-      <div style={{ padding: "24px 24px 20px" }}>
+      <div style={{ padding: "22px 22px 18px" }}>
         <span style={{
           display: "block",
           fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
