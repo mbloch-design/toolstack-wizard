@@ -140049,7 +140049,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "affinity.serif.com",
+      "official_source_url": "https://affinity.serif.com/"
     }
   },
   {
@@ -140130,7 +140132,9 @@
       "threshold": "Vaut son prix surtout en licence perpétuelle et pour un métier print/signalétique sous Windows."
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "coreldraw.com",
+      "official_source_url": "https://www.coreldraw.com/en/product/coreldraw/"
     }
   },
   {
@@ -140209,7 +140213,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "clipstudio.net",
+      "official_source_url": "https://www.clipstudio.net/en/purchase/"
     }
   },
   {
@@ -140287,7 +140293,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "krita.org",
+      "official_source_url": "https://krita.org/en/"
     }
   },
   {
@@ -140427,7 +140435,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "affinity.serif.com",
+      "official_source_url": "https://affinity.serif.com/"
     }
   },
   {
@@ -140553,7 +140563,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "darktable.org",
+      "official_source_url": "https://www.darktable.org/"
     }
   },
   {
@@ -140635,7 +140647,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "dxo.com",
+      "official_source_url": "https://www.dxo.com/dxo-photolab/"
     }
   },
   {
@@ -140716,7 +140730,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "photopea.com",
+      "official_source_url": "https://www.photopea.com/"
     }
   },
   {
@@ -140797,7 +140813,9 @@
       ]
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08"
+      "verified_on": "2026-07-08",
+      "source_domain": "pixelmator.com",
+      "official_source_url": "https://www.pixelmator.com/pro/"
     }
   },
   {
