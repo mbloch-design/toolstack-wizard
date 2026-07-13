@@ -193,7 +193,8 @@ try {
     await manager.getByRole("button", { name: "Monter Besoin B", exact: true }).click();
     await manager.getByRole("button", { name: "Fermer", exact: true }).click();
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).click();
+    await page.getByRole("link", { name: /ChatGPT/ }).click();
+    await page.getByRole("button", { name: "Rangement", exact: true }).click();
     const assignment = page.getByRole("dialog", { name: "ChatGPT" });
     await assignment.getByRole("checkbox", { name: "Créer des visuels", exact: true }).check();
     await assignment.getByRole("button", { name: "Enregistrer le rangement", exact: true }).click();
@@ -208,7 +209,8 @@ try {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia", "design"])]));
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).click();
+    await page.getByRole("link", { name: /ChatGPT/ }).click();
+    await page.getByRole("button", { name: "Rangement", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "ChatGPT" });
     await dialog.getByRole("checkbox", { name: "Travailler avec l'IA", exact: true }).uncheck();
     await dialog.getByRole("button", { name: "Enregistrer le rangement", exact: true }).click();
@@ -221,7 +223,8 @@ try {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia"])]));
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).click();
+    await page.getByRole("link", { name: /ChatGPT/ }).click();
+    await page.getByRole("button", { name: "Rangement", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "ChatGPT" });
     page.once("dialog", (confirmation) => confirmation.accept());
     await dialog.locator('summary[aria-label="Plus d’options"]').click();
@@ -245,22 +248,71 @@ try {
     await closeScenario(scenario);
   });
 
-  await run("9. clavier et responsive 320–1440 px", async () => {
+  await run("9. clavier et responsive 320–1920 px", async () => {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia"])]));
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    for (const width of [320, 390, 768, 1024, 1440]) {
+    for (const width of [320, 390, 768, 1024, 1440, 1920]) {
       await page.setViewportSize({ width, height: width <= 390 ? 844 : 1000 });
-      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-      assert(overflow <= 1, `Débordement horizontal de ${overflow}px à ${width}px`);
+      const overflow = await page.evaluate(() => {
+        const content = document.querySelector(".asv2-content");
+        return {
+          document: document.documentElement.scrollWidth - window.innerWidth,
+          content: content ? content.scrollWidth - content.clientWidth : 0,
+          contentLeft: content?.scrollLeft || 0,
+        };
+      });
+      assert(overflow.document <= 1, `Débordement horizontal du document de ${overflow.document}px à ${width}px`);
+      assert(overflow.content <= 1, `Débordement horizontal de la zone centrale de ${overflow.content}px à ${width}px`);
+      assert(overflow.contentLeft === 0, `La zone centrale est décalée de ${overflow.contentLeft}px à ${width}px`);
+      if (width >= 768) {
+        const sparseCard = await page.locator(".stack-role-section--single .stack-role-tool-card").first().boundingBox();
+        assert(sparseCard && sparseCard.height >= 168 && sparseCard.height <= 184, `Carte seule hors cible à ${width}px`);
+        assert(sparseCard && sparseCard.width <= 330, `Carte seule artificiellement étirée à ${width}px`);
+      }
+      if (width >= 1024) {
+        const [heroCopy, firstSection, actionGroup, sectionGrid] = await Promise.all([
+          page.locator(".stack-objective-hero-copy").boundingBox(),
+          page.locator(".stack-role-section").first().boundingBox(),
+          page.locator(".stack-objective-hero-actions").boundingBox(),
+          page.locator(".stack-role-section-grid").boundingBox(),
+        ]);
+        assert(heroCopy && firstSection && Math.abs(heroCopy.x - firstSection.x) <= 1, `Axe gauche du hero instable à ${width}px`);
+        assert(actionGroup && sectionGrid && Math.abs((actionGroup.x + actionGroup.width) - (sectionGrid.x + sectionGrid.width)) <= 1, `Axe droit du hero instable à ${width}px`);
+      }
       if (width <= 390) {
         const card = await page.locator(".stack-role-tool-card").first().boundingBox();
-        const edit = await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).boundingBox();
-        assert(card && card.height >= 110 && card.height <= 130, `Carte mobile hors cible à ${width}px`);
-        assert(edit && edit.width >= 44 && edit.height >= 44, `Cible tactile trop petite à ${width}px (${edit ? `${edit.width}×${edit.height}` : "absente"})`);
+        assert(card && card.height >= 148 && card.height <= 160, `Carte mobile hors cible à ${width}px`);
+        assert(await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).count() === 0, "Les cartes de lecture ne doivent pas afficher de commande d’édition persistante");
       }
     }
+
+    // The objective and tool profile use the same pathname with different
+    // query parameters. Their shared shell must never preserve a horizontal
+    // offset or move the canonical title axis during that transition.
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    const [objectiveTitle, objectiveBack] = await Promise.all([
+      page.locator(".stack-objective-hero-copy h1").boundingBox(),
+      page.locator(".stack-objective-hero-inner > .stack-objective-hero-round").boundingBox(),
+    ]);
+    await page.getByRole("link", { name: /ChatGPT/ }).first().click();
+    await page.getByRole("heading", { name: "ChatGPT", exact: true }).waitFor();
+    const [toolTitle, toolBack, shellPosition] = await Promise.all([
+      page.locator(".stack-tool-profile-topbar-copy h1").boundingBox(),
+      page.locator(".stack-tool-profile-back").boundingBox(),
+      page.locator(".asv2-content").evaluate((content) => ({
+        overflow: content.scrollWidth - content.clientWidth,
+        scrollLeft: content.scrollLeft,
+      })),
+    ]);
+    assert(objectiveTitle && toolTitle && Math.abs(objectiveTitle.x - toolTitle.x) <= 1, "L’axe du titre bouge entre le besoin et la fiche outil");
+    assert(objectiveTitle && toolTitle && Math.abs(objectiveTitle.y - toolTitle.y) <= 1, `La hauteur du titre bouge entre le besoin (${objectiveTitle?.y}px) et la fiche outil (${toolTitle?.y}px)`);
+    assert(objectiveBack && toolBack && Math.abs(objectiveBack.x - toolBack.x) <= 1 && Math.abs(objectiveBack.y - toolBack.y) <= 1, "La flèche retour bouge entre le besoin et la fiche outil");
+    assert(shellPosition.overflow <= 1, `La fiche outil déborde horizontalement de ${shellPosition.overflow}px`);
+    assert(shellPosition.scrollLeft === 0, `La fiche outil conserve un décalage horizontal de ${shellPosition.scrollLeft}px`);
+
     await page.setViewportSize({ width: 390, height: 844 });
+    await page.getByRole("button", { name: "Retour à Travailler avec l'IA", exact: true }).click();
     await page.getByRole("button", { name: "Ajouter", exact: true }).click();
     const picker = page.getByRole("dialog", { name: "Ajouter des outils IA" });
     const search = picker.getByRole("searchbox");

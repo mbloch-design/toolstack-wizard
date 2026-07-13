@@ -29,8 +29,8 @@ if (typeof window !== "undefined") {
 
 export function scrollToTop(behavior: ScrollBehavior = "auto") {
   const el = getScrollEl();
-  if (el) el.scrollTo({ top: 0, behavior });
-  else window.scrollTo({ top: 0, behavior });
+  if (el) el.scrollTo({ top: 0, left: 0, behavior });
+  else window.scrollTo({ top: 0, left: 0, behavior });
 }
 
 export function scrollToY(top: number, behavior: ScrollBehavior = "auto") {

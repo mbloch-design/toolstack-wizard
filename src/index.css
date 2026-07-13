@@ -77,7 +77,7 @@
     ──────────────────────────────────────────── */
 
     /* ── Page / surface ── */
-    --background: 60 22% 97%;        /* #F8F8F4 — warm editorial off-white */
+    --background: 0 20% 99%;         /* #FDFCFC — soft near-white */
     --foreground: 0 0% 13%;          /* #222222 — main text */
 
     --card: 0 0% 100%;               /* #FFFFFF — pure white cards */
@@ -163,7 +163,7 @@
     --keep-foreground: 0 0% 100%;
 
     /* ── Sidebar ── */
-    --sidebar-background: 60 22% 97%;
+    --sidebar-background: 0 20% 99%;
     --sidebar-foreground: 60 3% 42%;
     --sidebar-primary: 224 76% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -181,7 +181,7 @@
        Use with color: var(--color-*) in custom CSS.
        For Tailwind, use the tokens above.
     ──────────────────────────────────────────── */
-    --color-bg:            #F8F8F4;
+    --color-bg:            #FDFCFC;
     --color-surface:       #FFFFFF;
     --color-surface-soft:  #F1F1EC;
 
@@ -549,7 +549,7 @@
     gap: 22px;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     margin: 18px auto 0;
-    max-width: var(--layout-content, 1280px);
+    max-width: calc(var(--layout-content, 1280px) + var(--layout-gutter, 48px) + var(--layout-gutter, 48px));
     padding: 0 var(--layout-gutter, 48px);
     width: 100%;
   }
@@ -896,7 +896,7 @@
     transform: translate(-50%, -50%) scale(1.02);
   }
   .stack-board-create-tile {
-    background: rgba(248, 248, 244, 0.32);
+    background: rgba(253, 252, 252, 0.32);
     min-width: 0;
   }
   .stack-board-create-tile--main {
@@ -1975,13 +1975,11 @@
   }
 
   .stack-objective-detail {
-    animation: stack-zoom-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
     display: grid;
     gap: 24px;
     margin: 0 auto;
-    max-width: var(--layout-content, 1280px);
+    max-width: calc(var(--layout-content, 1280px) + var(--layout-gutter, 48px) + var(--layout-gutter, 48px));
     padding: 0 var(--layout-gutter, 48px);
-    transform-origin: top center;
     width: 100%;
   }
   .stack-objective-page-hero .tt-page-hero-band {
@@ -4200,7 +4198,7 @@
   background-color: var(--color-bg);
   color: var(--color-text);
   /* shadcn/tailwind tokens */
-  --background: 60 22% 97%;
+  --background: 0 20% 99%;
   --foreground: 0 0% 13%;
   --card: 0 0% 100%;
   --card-foreground: 0 0% 13%;
@@ -4215,7 +4213,7 @@
   --accent: 224 76% 96%;
   --accent-foreground: 224 76% 44%;
   /* semantic hex tokens */
-  --color-bg:            #F8F8F4;
+  --color-bg:            #FDFCFC;
   --color-surface:       #FFFFFF;
   --color-surface-soft:  #F1F1EC;
   --color-text:          #222222;
@@ -11867,7 +11865,7 @@
     height: clamp(400px, 42vw, 580px);
     border-radius: 24px;
     overflow: hidden;
-    background: radial-gradient(circle at 52% 44%, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 244, 0.96) 42%, rgba(237, 237, 232, 0.88) 100%);
+    background: radial-gradient(circle at 52% 44%, rgba(255, 255, 255, 0.95) 0%, rgba(253, 252, 252, 0.96) 42%, rgba(237, 237, 232, 0.88) 100%);
     border: 1px solid var(--color-border);
     box-shadow: 0 28px 80px rgba(34, 34, 34, 0.08);
     isolation: isolate;
@@ -11903,8 +11901,8 @@
     z-index: 2;
     pointer-events: none;
     background:
-      radial-gradient(circle at 48% 52%, transparent 34%, rgba(248, 248, 244, 0.38) 76%, rgba(248, 248, 244, 0.74) 100%),
-      linear-gradient(180deg, rgba(248, 248, 244, 0.5), transparent 22%, transparent 78%, rgba(237, 237, 232, 0.64));
+      radial-gradient(circle at 48% 52%, transparent 34%, rgba(253, 252, 252, 0.38) 76%, rgba(253, 252, 252, 0.74) 100%),
+      linear-gradient(180deg, rgba(253, 252, 252, 0.5), transparent 22%, transparent 78%, rgba(237, 237, 232, 0.64));
   }
 
   .home-logo-cloud-axis {
@@ -13238,7 +13236,7 @@
   }
 
   .hp-audit-why {
-    background: rgba(248, 248, 244, 0.98);
+    background: rgba(253, 252, 252, 0.98);
     font-size: 13px;
     color: var(--color-text);
     border-bottom: 1px solid var(--color-border-soft);
@@ -15050,60 +15048,80 @@ section[id] {
 
 /* Sous-page d'un besoin — rôles visibles et cartes d'outils lisibles. */
 .stack-role-section-grid {
+  align-items: start;
   display: grid;
-  gap: 30px;
+  gap: 22px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .stack-role-section {
+  --stack-role-tint: #ded2ff;
+  background: color-mix(in srgb, var(--stack-role-tint) 28%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--stack-role-tint) 72%, var(--color-border));
+  border-radius: 20px;
   display: grid;
-  gap: 14px;
+  gap: 0;
+  grid-column: span 4;
+  margin: 0;
   min-width: 0;
+  overflow: hidden;
+}
+.stack-role-section--sparse {
+  grid-column: span 2;
+}
+.stack-role-section--single {
+  grid-column: span 1;
+}
+.stack-role-section:nth-child(4n + 2) {
+  --stack-role-tint: #c9eddf;
+}
+.stack-role-section:nth-child(4n + 3) {
+  --stack-role-tint: #cbe7f5;
+}
+.stack-role-section:nth-child(4n + 4) {
+  --stack-role-tint: #f1dfc4;
 }
 .stack-role-section-head {
-  align-items: end;
-  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+  background: transparent;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   justify-content: space-between;
-  padding-bottom: 12px;
+  min-height: 50px;
+  padding: 13px 16px 7px;
 }
-.stack-role-section-head > div {
-  display: grid;
-  gap: 5px;
-  min-width: 0;
-}
-.stack-role-section-head h2,
-.stack-role-section-head p {
+.stack-role-section-head h2 {
   font-family: var(--font-ui);
   margin: 0;
 }
 .stack-role-section-head h2 {
   color: var(--color-text);
-  font-size: 1.18rem;
-  font-weight: 860;
-  letter-spacing: -0.025em;
-}
-.stack-role-section-head p {
-  color: var(--color-muted);
-  font-size: 0.82rem;
-  font-weight: 560;
-  line-height: 1.35;
-  max-width: 66ch;
+  font-size: 1rem;
+  font-weight: 850;
+  letter-spacing: -0.018em;
 }
 .stack-role-section-head > span {
-  color: var(--color-muted);
+  color: color-mix(in srgb, var(--color-text) 62%, var(--color-muted));
   flex: 0 0 auto;
   font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 780;
+  font-size: 0.64rem;
+  font-weight: 760;
   white-space: nowrap;
 }
 .stack-role-tool-grid {
+  background: transparent;
   display: grid;
-  gap: 12px;
+  gap: 14px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 8px 16px 16px;
+}
+.stack-role-section--sparse .stack-role-tool-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.stack-role-section--single .stack-role-tool-grid {
+  grid-template-columns: minmax(0, 1fr);
 }
 .stack-role-tool-card {
-  height: 210px;
+  height: 176px;
   min-width: 0;
   position: relative;
 }
@@ -15112,41 +15130,37 @@ section[id] {
   height: 100%;
 }
 .stack-role-tool-card .tce-card--compact {
-  border-radius: 12px;
-  padding: 14px;
+  background: var(--color-surface);
+  border-color: color-mix(in srgb, var(--stack-role-tint) 52%, var(--color-border));
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(18, 18, 16, 0.045);
+  padding: 0;
+  overflow: hidden;
 }
 .stack-role-tool-card .tce-card--compact .tc-image {
   aspect-ratio: auto;
-  flex: 0 0 82px;
-  height: 82px;
-  margin: -14px -14px 11px;
+  flex: 0 0 128px;
+  height: 128px;
+  margin: 0;
 }
 .stack-role-tool-card .tce-body {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  padding: 11px 12px 10px;
 }
 .stack-role-tool-card .tce-title-row {
-  padding-right: 32px;
+  padding-right: 0;
 }
 .stack-role-tool-card .tce-name {
-  font-size: 0.95rem;
-  font-weight: 760;
+  font-size: 0.86rem;
+  font-weight: 790;
+  line-height: 1.12;
 }
 .stack-role-tool-card .tce-price,
 .stack-role-tool-card .tce-category,
 .stack-role-tool-card .tce-compact-description {
-  font-family: var(--font-ui);
-}
-.stack-role-tool-card .tce-price {
-  font-size: 0.66rem;
-}
-.stack-role-tool-card .tce-category {
-  font-size: 0.68rem;
-  margin-top: 3px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: none;
 }
 .tce-compact-description {
   color: color-mix(in srgb, var(--color-text) 76%, var(--color-muted));
@@ -15182,29 +15196,6 @@ section[id] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.stack-role-tool-edit {
-  align-items: center;
-  appearance: none;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(18, 18, 16, 0.12);
-  border-radius: 999px;
-  color: var(--color-muted);
-  cursor: pointer;
-  display: inline-flex;
-  height: 32px;
-  justify-content: center;
-  opacity: 0.58;
-  padding: 0;
-  position: absolute;
-  right: 9px;
-  top: 9px;
-  transition: opacity 140ms ease, color 140ms ease, background 140ms ease;
-  width: 32px;
-}
-.stack-role-tool-card:hover .stack-role-tool-edit,
-.stack-role-tool-card:focus-within .stack-role-tool-edit {
-  opacity: 1;
-}
 .stack-need-dialog-cost-note {
   color: var(--color-muted);
   font-family: var(--font-ui);
@@ -15214,15 +15205,50 @@ section[id] {
   margin: -4px 0 14px;
   padding: 0 22px;
 }
-.stack-role-tool-edit:hover,
-.stack-role-tool-edit:focus-visible {
-  background: var(--color-text);
-  color: var(--color-bg);
-  opacity: 1;
-  outline: none;
+@media (max-width: 1100px) {
+  .stack-role-section-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .stack-role-section {
+    grid-column: span 3;
+  }
+  .stack-role-section--sparse {
+    grid-column: span 2;
+  }
+  .stack-role-section--single {
+    grid-column: span 1;
+  }
+  .stack-role-tool-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1600px) {
+  .stack-role-section-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .stack-role-section {
+    grid-column: span 5;
+  }
+  .stack-role-section--sparse {
+    grid-column: span 2;
+  }
+  .stack-role-section--single {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .stack-role-section-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stack-role-section,
+  .stack-role-section--sparse {
+    grid-column: span 2;
+  }
+  .stack-role-section--single {
+    grid-column: span 1;
+  }
   .stack-role-tool-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -15230,58 +15256,33 @@ section[id] {
 
 @media (max-width: 700px) {
   .stack-role-section-grid {
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr);
   }
-  .stack-role-section-head {
-    align-items: start;
+  .stack-role-section,
+  .stack-role-section--sparse,
+  .stack-role-section--single {
+    grid-column: span 1;
   }
   .stack-role-tool-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stack-role-section--single .stack-role-tool-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
   .stack-role-tool-card {
-    height: 124px;
-  }
-  .stack-role-tool-card .tce-card--compact {
-    flex-direction: row;
-    overflow: hidden;
-    padding: 0;
+    height: 154px;
   }
   .stack-role-tool-card .tce-card--compact .tc-image {
-    border-radius: 11px 0 0 11px;
-    flex: 0 0 112px;
-    height: 100%;
+    border-radius: 13px 13px 0 0;
+    flex: 0 0 108px;
+    height: 108px;
     margin: 0;
   }
   .stack-role-tool-card .tce-body {
-    flex: 1;
-    overflow: hidden;
-    padding: 12px 52px 11px 13px;
-  }
-  .stack-role-tool-card .tce-title-row {
-    padding-right: 0;
+    padding: 10px 10px 9px;
   }
   .stack-role-tool-card .tce-name {
-    font-size: 1rem;
-  }
-  .stack-role-tool-card .tce-compact-description {
-    -webkit-line-clamp: 1;
-    margin-top: 5px;
-  }
-  .stack-role-tool-card .tce-context-role {
-    padding-top: 5px;
-  }
-  .stack-role-tool-edit {
-    height: 46px;
-    opacity: 1;
-    right: 7px;
-    top: 7px;
-    width: 46px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .stack-role-tool-edit {
-    transition: none;
+    font-size: 0.82rem;
   }
 }
 
@@ -15765,8 +15766,11 @@ section[id] {
 /* Fiche outil pleine page dans Ma stack. */
 .stack-objective-detail--tool-page {
   display: block;
-  max-width: 1440px;
-  padding-top: 24px;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: relative;
 }
 .stack-objective-detail--tool-page .stack-tool-stage {
   background: transparent;
@@ -15775,8 +15779,13 @@ section[id] {
   height: auto;
   max-height: none;
   min-height: 0;
+  margin: 0 auto;
+  max-width: calc(var(--layout-content, 1280px) + var(--layout-gutter, 48px) + var(--layout-gutter, 48px));
   overflow: visible;
+  padding-left: var(--layout-gutter, 48px);
+  padding-right: var(--layout-gutter, 48px);
   position: static;
+  width: 100%;
 }
 .stack-tool-profile {
   display: grid;
@@ -15791,33 +15800,84 @@ section[id] {
 }
 .stack-tool-profile-topbar {
   align-items: center;
-  border-bottom: 1px solid var(--color-border);
   display: flex;
   grid-area: topbar;
   justify-content: space-between;
-  min-height: 58px;
-  padding-bottom: 14px;
+  min-height: 118px;
+  padding-top: 26px;
+  position: static;
+}
+.stack-tool-profile-topbar-context {
+  display: block;
+  min-width: 0;
 }
 .stack-tool-profile-back {
   align-items: center;
   appearance: none;
-  background: transparent;
+  background: var(--color-surface-soft);
   border: 0;
   border-radius: 999px;
   color: var(--color-text);
   cursor: pointer;
   display: inline-flex;
   font-family: var(--font-ui);
-  font-size: 0.82rem;
-  font-weight: 790;
-  gap: 8px;
-  min-height: 42px;
-  padding: 0 14px 0 10px;
+  height: 48px;
+  justify-content: center;
+  left: 16px;
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  transition: background 140ms ease, transform 140ms ease;
+  width: 48px;
 }
 .stack-tool-profile-back:hover,
 .stack-tool-profile-back:focus-visible {
-  background: var(--color-surface-soft);
+  background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-border));
   outline: none;
+  transform: scale(1.03);
+}
+.stack-tool-profile-topbar-copy {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+.stack-tool-profile-topbar-copy h1,
+.stack-tool-profile-topbar-copy p {
+  font-family: var(--font-ui);
+  margin: 0;
+}
+.stack-tool-profile-topbar-copy h1 {
+  color: var(--color-text);
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  font-weight: 880;
+  letter-spacing: -0.052em;
+  line-height: 0.98;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.stack-tool-profile-topbar-copy p {
+  align-items: center;
+  color: var(--color-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 650;
+  gap: 7px;
+}
+.stack-tool-profile-topbar-copy p > span {
+  background: var(--color-surface-soft);
+  border-radius: 5px;
+  color: var(--color-text);
+  font-weight: 760;
+  padding: 3px 7px;
+}
+.stack-tool-profile-topbar-copy p > strong {
+  color: inherit;
+  font-weight: inherit;
+}
+.stack-tool-profile-topbar-copy p > i {
+  font-style: normal;
 }
 .stack-tool-profile-nav {
   align-items: center;
@@ -15892,8 +15952,8 @@ section[id] {
 }
 .stack-tool-profile-heading {
   display: grid;
-  gap: 12px;
-  padding: 34px 40px 38px;
+  gap: 8px;
+  padding: 26px 32px 30px;
 }
 .stack-tool-profile-heading > span,
 .stack-tool-profile-sidebar span,
@@ -15904,15 +15964,6 @@ section[id] {
   font-weight: 760;
   letter-spacing: 0.035em;
   text-transform: uppercase;
-}
-.stack-tool-profile-heading h1 {
-  color: var(--color-text);
-  font-family: var(--font-ui);
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  font-weight: 870;
-  letter-spacing: -0.055em;
-  line-height: 0.96;
-  margin: 0;
 }
 .stack-tool-profile-heading p {
   color: color-mix(in srgb, var(--color-text) 76%, var(--color-muted));
@@ -16020,7 +16071,7 @@ section[id] {
 
 @media (max-width: 900px) {
   .stack-objective-detail--tool-page {
-    padding-top: 14px;
+    padding-top: 0;
   }
   .stack-tool-profile {
     gap: 20px;
@@ -16035,6 +16086,17 @@ section[id] {
     align-items: stretch;
     display: grid;
     gap: 10px;
+    min-height: 0;
+    padding: 18px 0 0;
+  }
+  .stack-tool-profile-topbar-context {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+  }
+  .stack-tool-profile-back {
+    left: auto;
+    position: static;
   }
   .stack-tool-profile-nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -16053,9 +16115,6 @@ section[id] {
   .stack-tool-profile-heading {
     padding: 26px 24px 28px;
   }
-  .stack-tool-profile-heading h1 {
-    font-size: clamp(2.1rem, 10vw, 3.2rem);
-  }
   .stack-tool-profile-sidebar {
     position: static;
   }
@@ -16066,6 +16125,22 @@ section[id] {
 }
 
 @media (max-width: 600px) {
+  .stack-tool-profile-topbar-context {
+    gap: 12px;
+  }
+  .stack-tool-profile-back {
+    height: 44px;
+    width: 44px;
+  }
+  .stack-tool-profile-topbar-copy h1 {
+    font-size: 1.75rem;
+    line-height: 1.02;
+    white-space: normal;
+  }
+  .stack-tool-profile-topbar-copy p {
+    font-size: 0.7rem;
+    gap: 5px;
+  }
   .stack-tool-profile-nav a > span {
     font-size: 0.7rem;
   }
@@ -18373,6 +18448,9 @@ section[id] {
   background: #1a1a1a;
   color: #ffffff;
 }
+.asv2-nav-item--active:hover .asv2-nav-icon {
+  background: #1a1a1a;
+}
 
 .asv2-nav-label {
   font-family: var(--font-ui);
@@ -18390,7 +18468,9 @@ section[id] {
   flex: 1;
   min-width: 0;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-gutter: stable;
   -webkit-overflow-scrolling: touch;
   background: var(--color-bg);
   border-top-left-radius: 24px;
@@ -18403,7 +18483,7 @@ section[id] {
      locked-shell/internal-scroll layout used to keep that corner in view. */
   .asv2-root { height: auto; overflow: visible; }
   .asv2-body { overflow: visible; }
-  .asv2-content { height: auto; overflow-y: visible; border-top-left-radius: 0; }
+  .asv2-content { height: auto; overflow-x: hidden; overflow-y: visible; scrollbar-gutter: auto; border-top-left-radius: 0; }
 
   .asv2-topbar { padding: 0 16px; height: 56px; gap: 12px; }
   .asv2-logo { width: auto; padding-right: 4px; }
@@ -18989,20 +19069,21 @@ section[id] {
 /* Barre de page Ma stack : mêmes priorités qu'un tableau Pinterest. */
 .stack-page-toolbar {
   background: var(--color-bg);
-  padding: 28px var(--layout-gutter, 48px) 20px;
+  padding: 26px 0 30px;
 }
 .stack-page-toolbar-inner {
   align-items: center;
   display: flex;
   gap: 14px;
   margin: 0 auto;
-  max-width: var(--layout-content, 1280px);
-  min-height: 76px;
+  max-width: calc(var(--layout-content, 1280px) + var(--layout-gutter, 48px) + var(--layout-gutter, 48px));
+  min-height: 92px;
+  padding: 0 var(--layout-gutter, 48px);
   width: 100%;
 }
 .stack-page-toolbar-copy {
   display: grid;
-  gap: 4px;
+  gap: 7px;
   min-width: 0;
 }
 .stack-page-toolbar-copy h1,
@@ -19012,20 +19093,20 @@ section[id] {
 }
 .stack-page-toolbar-copy h1 {
   color: var(--color-text);
-  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
   font-weight: 880;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  letter-spacing: -0.052em;
+  line-height: 0.98;
 }
 .stack-page-toolbar-copy p {
   color: var(--color-muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 690;
 }
 .stack-page-toolbar-actions {
   align-items: center;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-left: auto;
 }
 .stack-page-toolbar-icon {
@@ -19038,13 +19119,13 @@ section[id] {
   cursor: pointer;
   display: inline-flex;
   flex: 0 0 auto;
-  height: 44px;
+  height: 48px;
   justify-content: center;
   list-style: none;
   padding: 0;
   text-decoration: none;
   transition: background 140ms ease, transform 140ms ease;
-  width: 44px;
+  width: 48px;
 }
 .stack-page-toolbar-icon::-webkit-details-marker {
   display: none;
@@ -19124,16 +19205,25 @@ section[id] {
 /* En-tête compact d'un besoin : une seule ligne, une hiérarchie claire. */
 .stack-objective-hero {
   background: var(--color-bg);
-  padding: 26px var(--layout-gutter, 48px) 30px;
+  padding: 26px 0 30px;
+  position: relative;
 }
 .stack-objective-hero-inner {
   align-items: center;
   display: grid;
   gap: 16px;
-  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   margin: 0 auto;
-  max-width: var(--layout-content, 1280px);
+  max-width: calc(var(--layout-content, 1280px) + var(--layout-gutter, 48px) + var(--layout-gutter, 48px));
+  min-height: 92px;
+  padding: 0 var(--layout-gutter, 48px);
+  position: static;
   width: 100%;
+}
+.stack-objective-hero-inner > .stack-objective-hero-round {
+  left: 16px;
+  position: absolute;
+  top: 48px;
 }
 .stack-objective-hero-round {
   align-items: center;
@@ -19209,6 +19299,14 @@ section[id] {
   min-width: 170px;
   padding: 11px 16px;
 }
+.stack-objective-hero-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 0;
+  min-width: 0;
+}
 .stack-objective-hero-cost span {
   color: var(--color-muted);
   font-size: 0.66rem;
@@ -19260,33 +19358,32 @@ section[id] {
 @media (max-width: 860px) {
   .stack-objective-hero-inner {
     align-items: start;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr);
   }
-  .stack-objective-hero-cost {
-    grid-column: 1 / 3;
-    grid-row: 2;
-    min-width: 0;
+  .stack-objective-hero-inner > .stack-objective-hero-round {
+    left: auto;
+    position: static;
   }
-  .stack-objective-hero-add {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .stack-objective-hero-menu {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: end;
+  .stack-objective-hero-actions {
+    flex-wrap: wrap;
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .stack-page-toolbar {
-    padding: 20px 20px 16px;
+    padding: 20px 0 16px;
   }
   .stack-page-toolbar-inner {
     min-height: 60px;
   }
   .stack-page-toolbar-copy h1 {
-    font-size: 1.55rem;
+    font-size: 1.75rem;
+  }
+  .stack-page-toolbar-copy p {
+    font-size: 0.7rem;
   }
   .stack-page-toolbar-actions {
     gap: 6px;
@@ -19306,7 +19403,7 @@ section[id] {
     gap: 2px;
   }
   .stack-objective-hero {
-    padding: 18px 20px 22px;
+    padding: 18px 0 22px;
   }
   .stack-objective-hero-inner {
     gap: 12px;
@@ -19345,10 +19442,81 @@ section[id] {
   }
 }
 
+/* Navigation Ma stack : une profondeur légère, sans déplacement latéral.
+   Le hero garde son axe fixe ; seuls les grands plans visuels respirent. */
+@keyframes stack-depth-enter {
+  from {
+    opacity: 0.72;
+    transform: scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes stack-depth-return {
+  from {
+    opacity: 0.72;
+    transform: scale(1.008);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes stack-context-fade {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+.stack-boards-page--motion-deeper .stack-objective-hero-copy,
+.stack-boards-page--motion-deeper .stack-objective-hero-actions,
+.stack-boards-page--motion-deeper .stack-tool-profile-topbar-copy,
+.stack-boards-page--motion-deeper .stack-tool-profile-nav {
+  animation: stack-context-fade 150ms ease-out both;
+}
+.stack-boards-page--motion-deeper .stack-objective-browser,
+.stack-boards-page--motion-deeper .stack-tool-profile-hero,
+.stack-boards-page--motion-deeper .stack-tool-profile-sidebar,
+.stack-boards-page--motion-deeper .stack-tool-profile-content {
+  animation: stack-depth-enter 190ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: 50% 12%;
+}
+.stack-boards-page--motion-shallower .stack-page-toolbar-copy,
+.stack-boards-page--motion-shallower .stack-page-toolbar-actions,
+.stack-boards-page--motion-shallower .stack-objective-hero-copy,
+.stack-boards-page--motion-shallower .stack-objective-hero-actions {
+  animation: stack-context-fade 150ms ease-out both;
+}
+.stack-boards-page--motion-shallower .stack-board-grid,
+.stack-boards-page--motion-shallower .stack-objective-browser {
+  animation: stack-depth-return 190ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: 50% 12%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-boards-page--motion-deeper .stack-objective-hero-copy,
+  .stack-boards-page--motion-deeper .stack-objective-hero-actions,
+  .stack-boards-page--motion-deeper .stack-objective-browser,
+  .stack-boards-page--motion-deeper .stack-tool-profile-topbar-copy,
+  .stack-boards-page--motion-deeper .stack-tool-profile-nav,
+  .stack-boards-page--motion-deeper .stack-tool-profile-hero,
+  .stack-boards-page--motion-deeper .stack-tool-profile-sidebar,
+  .stack-boards-page--motion-deeper .stack-tool-profile-content,
+  .stack-boards-page--motion-shallower .stack-page-toolbar-copy,
+  .stack-boards-page--motion-shallower .stack-page-toolbar-actions,
+  .stack-boards-page--motion-shallower .stack-objective-hero-copy,
+  .stack-boards-page--motion-shallower .stack-objective-hero-actions,
+  .stack-boards-page--motion-shallower .stack-board-grid,
+  .stack-boards-page--motion-shallower .stack-objective-browser {
+    animation: none;
+  }
+}
+
 /* Ma stack — cartes éditoriales colorées, proches de la référence validée. */
 .stack-board-grid {
   gap: 22px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 0;
 }
 .stack-board-card {
   grid-template-rows: minmax(0, 1fr) 60px;

@@ -13,7 +13,7 @@ export interface EditorialSectionProps {
   title: ReactNode;
   description?: ReactNode;
   cta?: { label: string; href: string };
-  /** default = off-white #F8F8F4, white = pure white, band = #EDEDE8 CTA band */
+  /** default = soft near-white #FDFCFC, white = pure white, band = #EDEDE8 CTA band */
   variant?: "default" | "white" | "band";
   children: ReactNode;
   id?: string;

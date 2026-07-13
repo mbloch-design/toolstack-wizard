@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Home,
   Wrench,
@@ -37,6 +37,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix } = useLang();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
+  const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = cartCount > 0
@@ -47,6 +48,14 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const relPath = location.pathname.startsWith(prefix)
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
+
+  // Ma stack changes view through query parameters while keeping the same
+  // pathname. Always return the shared content rail to its canonical
+  // horizontal origin so a focused/oversized child cannot make the whole
+  // shell jump sideways between the board and a tool profile.
+  useEffect(() => {
+    if (contentRef.current) contentRef.current.scrollLeft = 0;
+  }, [location.pathname, location.search]);
 
   return (
     <div className="asv2-root">
@@ -94,7 +103,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </nav>
         </aside>
 
-        <main id="main-content" className="asv2-content">
+        <main ref={contentRef} id="main-content" className="asv2-content">
           {children}
           <Footer />
         </main>

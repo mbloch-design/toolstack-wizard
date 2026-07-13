@@ -699,7 +699,7 @@ function LanguageToggle({ href, lang, otherLang }: { href: string; lang: string;
       style={{
         height: 32,
         border: "1px solid #DADAD4",
-        background: "#F8F8F4",
+        background: "#FDFCFC",
         borderRadius: 9999,
         padding: "3px",
         gap: 2,

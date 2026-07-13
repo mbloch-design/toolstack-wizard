@@ -75,10 +75,27 @@ export default function StackToolInspector({
   return (
     <article className="stack-tool-profile">
       <header className="stack-tool-profile-topbar">
-        <button type="button" className="stack-tool-profile-back" onClick={onClose}>
-          <ArrowLeft size={18} aria-hidden />
-          <span>{t(`Retour à ${needLabel}`, `Back to ${needLabel}`)}</span>
-        </button>
+        <div className="stack-tool-profile-topbar-context">
+          <button
+            type="button"
+            className="stack-tool-profile-back"
+            onClick={onClose}
+            aria-label={t(`Retour à ${needLabel}`, `Back to ${needLabel}`) as string}
+            title={t(`Retour à ${needLabel}`, `Back to ${needLabel}`) as string}
+          >
+            <ArrowLeft size={20} aria-hidden />
+          </button>
+          <div className="stack-tool-profile-topbar-copy">
+            <h1>{tool.name}</h1>
+            <p>
+              <span>{t("Outil", "Tool")}</span>
+              <i aria-hidden>·</i>
+              <strong>{needLabel}</strong>
+              <i aria-hidden>·</i>
+              {sectionLabel}
+            </p>
+          </div>
+        </div>
 
         <nav className="stack-tool-profile-nav" aria-label={t("Parcourir les outils du besoin", "Browse tools in this need") as string}>
           {previousHref ? (
@@ -100,7 +117,6 @@ export default function StackToolInspector({
         <ToolCardImage tool={tool} logoSize={88} className="stack-tool-profile-cover" />
         <div className="stack-tool-profile-heading">
           <span>{categoryLabel}</span>
-          <h1>{tool.name}</h1>
           <p>{description || t("Outil utilisé dans ce besoin.", "Tool used for this need.")}</p>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, MoreHorizontal, Pencil, Plus, Search, Trash2, X } from "lucide-react";
+import { ArrowLeft, MoreHorizontal, Plus, Search, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
@@ -1697,6 +1697,7 @@ const CartPage = () => {
   const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
   const [needsManagerOpen, setNeedsManagerOpen] = useState(false);
+  const [stackMotion, setStackMotion] = useState<"deeper" | "shallower" | "idle">("idle");
   const workspaceMenuRef = useRef<HTMLDetailsElement | null>(null);
   const needDialogRef = useRef<HTMLElement | null>(null);
   const needDialogCloseRef = useRef<HTMLButtonElement | null>(null);
@@ -2178,6 +2179,7 @@ const CartPage = () => {
   }
 
   function openObjective(boardId: string) {
+    setStackMotion("deeper");
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("objectif", boardId);
     setSearchParams(nextParams);
@@ -2187,6 +2189,7 @@ const CartPage = () => {
   }
 
   function closeObjective() {
+    setStackMotion("shallower");
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete("objectif");
     nextParams.delete("outil");
@@ -2200,6 +2203,7 @@ const CartPage = () => {
   }
 
   function closeToolInspector() {
+    setStackMotion("shallower");
     if (inspectorNavigationDepth > 0) {
       navigate(-inspectorNavigationDepth);
       return;
@@ -2225,7 +2229,7 @@ const CartPage = () => {
   }
 
   return (
-    <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}`}>
+    <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}${stackMotion !== "idle" ? ` stack-boards-page--motion-${stackMotion}` : ""}`}>
       {zoomedBoard ? (
         quickTool ? null : <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
           <div className="stack-objective-hero-inner">
@@ -2244,37 +2248,39 @@ const CartPage = () => {
               </p>
             </div>
 
-            <div
-              className="stack-objective-hero-cost"
-              aria-label={t(`Coût mensuel estimé : ${formatMonthlyPrice(stackPricing.total, lang)}`, `Estimated monthly cost: ${formatMonthlyPrice(stackPricing.total, lang)}`) as string}
-            >
-              <span>{t("Coût mensuel estimé", "Estimated monthly cost")}</span>
-              <strong>{formatMonthlyPrice(stackPricing.total, lang)}</strong>
-              {stackPricing.unknownPriceCount > 0 && (
-                <small>
-                  {stackPricing.unknownPriceCount} {t(
-                    stackPricing.unknownPriceCount > 1 ? "prix non renseignés" : "prix non renseigné",
-                    stackPricing.unknownPriceCount > 1 ? "prices not provided" : "price not provided",
-                  )}
-                </small>
-              )}
-            </div>
-
-            <button type="button" className="stack-objective-hero-add" onClick={() => openToolPicker(zoomedBoard.id)}>
-              <Plus size={19} aria-hidden />
-              <span>{t("Ajouter", "Add")}</span>
-            </button>
-
-            <details ref={workspaceMenuRef} className="stack-page-toolbar-menu stack-objective-hero-menu">
-              <summary className="stack-objective-hero-round" aria-label={t("Plus d’options", "More options") as string}>
-                <MoreHorizontal size={22} aria-hidden />
-              </summary>
-              <div className="stack-page-toolbar-popover">
-                <button type="button" onClick={() => { workspaceMenuRef.current?.removeAttribute("open"); setNeedsManagerOpen(true); }}>
-                  {t("Gérer tous les besoins", "Manage all needs")}
-                </button>
+            <div className="stack-objective-hero-actions">
+              <div
+                className="stack-objective-hero-cost"
+                aria-label={t(`Coût mensuel estimé : ${formatMonthlyPrice(stackPricing.total, lang)}`, `Estimated monthly cost: ${formatMonthlyPrice(stackPricing.total, lang)}`) as string}
+              >
+                <span>{t("Coût mensuel estimé", "Estimated monthly cost")}</span>
+                <strong>{formatMonthlyPrice(stackPricing.total, lang)}</strong>
+                {stackPricing.unknownPriceCount > 0 && (
+                  <small>
+                    {stackPricing.unknownPriceCount} {t(
+                      stackPricing.unknownPriceCount > 1 ? "prix non renseignés" : "prix non renseigné",
+                      stackPricing.unknownPriceCount > 1 ? "prices not provided" : "price not provided",
+                    )}
+                  </small>
+                )}
               </div>
-            </details>
+
+              <button type="button" className="stack-objective-hero-add" onClick={() => openToolPicker(zoomedBoard.id)}>
+                <Plus size={19} aria-hidden />
+                <span>{t("Ajouter", "Add")}</span>
+              </button>
+
+              <details ref={workspaceMenuRef} className="stack-page-toolbar-menu stack-objective-hero-menu">
+                <summary className="stack-objective-hero-round" aria-label={t("Plus d’options", "More options") as string}>
+                  <MoreHorizontal size={22} aria-hidden />
+                </summary>
+                <div className="stack-page-toolbar-popover">
+                  <button type="button" onClick={() => { workspaceMenuRef.current?.removeAttribute("open"); setNeedsManagerOpen(true); }}>
+                    {t("Gérer tous les besoins", "Manage all needs")}
+                  </button>
+                </div>
+              </details>
+            </div>
           </div>
         </section>
       ) : (
@@ -2316,29 +2322,25 @@ const CartPage = () => {
           {!quickTool && <div className="stack-objective-browser">
             <div className="stack-role-section-grid">
             {zoomedSubdomains.map((group) => (
-              <section key={group.id} className="stack-role-section" aria-labelledby={`stack-role-${group.id}`}>
+              <section
+                key={group.id}
+                className={`stack-role-section${group.tools.length <= 2 ? " stack-role-section--sparse" : ""}${group.tools.length === 1 ? " stack-role-section--single" : ""}`}
+                aria-labelledby={`stack-role-${group.id}`}
+              >
                 <div className="stack-role-section-head">
-                  <div>
-                    <h2 id={`stack-role-${group.id}`}>{t(group.labelFr, group.labelEn)}</h2>
-                    <p>{t(group.descriptionFr, group.descriptionEn)}</p>
-                  </div>
+                  <h2 id={`stack-role-${group.id}`}>{t(group.labelFr, group.labelEn)}</h2>
                   <span>{formatToolCount(group.tools.length, lang)}</span>
                 </div>
                 <div className="stack-role-tool-grid" role="list">
                   {group.tools.map((tool) => {
                     const toolSlug = getToolKey(tool);
                     return (
-                      <article key={toolSlug} className="stack-role-tool-card" role="listitem">
+                      <article key={toolSlug} className="stack-role-tool-card" role="listitem" onClickCapture={() => setStackMotion("deeper")}>
                         <ToolCardEditorial
                           tool={tool}
                           prefix={prefix}
                           t={t}
                           lang={lang}
-                          typeLabel={getToolTypeLabel(tool, lang)}
-                          contextRole={getToolContextRole(tool, group, lang)}
-                          contextLabel={stackEntryBySlug.get(toolSlug)?.assignmentMode === "auto"
-                            ? t("Usage proposé", "Suggested use") as string
-                            : undefined}
                           variant="compact"
                           showPin={false}
                           showPrice={false}
@@ -2346,15 +2348,6 @@ const CartPage = () => {
                           linkState={{ stackToolInspectorDepth: 1 }}
                           selected={quickToolSlug === toolSlug}
                         />
-                        <button
-                          type="button"
-                          className="stack-role-tool-edit"
-                          onClick={() => openNeedDialog(toolSlug)}
-                          aria-label={t(`Modifier l’usage de ${tool.name}`, `Edit ${tool.name}'s use`) as string}
-                          title={t("Modifier l’usage", "Edit use") as string}
-                        >
-                          <Pencil size={13} aria-hidden />
-                        </button>
                       </article>
                     );
                   })}
