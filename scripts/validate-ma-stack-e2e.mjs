@@ -132,7 +132,10 @@ try {
     const add = picker.getByRole("button", { name: "Ajouter ChatGPT à ma stack", exact: true });
     await add.click();
     await until(() => add.isDisabled(), "La ligne ChatGPT doit rester visible avec l’état Ajouté");
-    await picker.getByRole("button", { name: "Fermer", exact: true }).click();
+    assert(await search.inputValue() === "", "La recherche doit être vidée après l’ajout");
+    assert(await search.evaluate((element) => element === document.activeElement), "La recherche doit conserver le focus après l’ajout");
+    await picker.getByText("1 outil ajouté · 1 rangé", { exact: true }).waitFor();
+    await picker.getByRole("button", { name: "Voir ma stack (1)", exact: true }).click();
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).waitFor();
     await until(async () => (await persisted(page)).toolEntries[0]?.assignmentMode === "auto", "ChatGPT doit être rangé automatiquement");
     const saved = await persisted(page);
@@ -157,9 +160,10 @@ try {
   await run("3. À ranger puis correction", async () => {
     const scenario = await createScenario(browser, stack([entry("circle", [])]));
     const { page } = scenario;
-    const unassigned = page.getByRole("region", { name: "À ranger", exact: true });
-    await unassigned.getByRole("button", { name: "Examiner les outils à ranger", exact: true }).click();
+    await page.getByRole("button", { name: "1 outil à ranger", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "Circle" });
+    await dialog.getByText("À quoi vous sert Circle ? Sélectionnez un ou plusieurs usages.", { exact: true }).waitFor();
+    await dialog.getByText("Plusieurs usages possibles · coût compté une seule fois.", { exact: true }).waitFor();
     await dialog.getByRole("checkbox", { name: "Faire connaître mon activité", exact: true }).check();
     await dialog.getByRole("button", { name: "Enregistrer le rangement", exact: true }).click();
     await page.getByRole("region", { name: "Faire connaître mon activité", exact: true }).waitFor();
@@ -189,7 +193,7 @@ try {
     await manager.getByRole("button", { name: "Monter Besoin B", exact: true }).click();
     await manager.getByRole("button", { name: "Fermer", exact: true }).click();
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("button", { name: "Modifier ChatGPT", exact: true }).click();
+    await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).click();
     const assignment = page.getByRole("dialog", { name: "ChatGPT" });
     await assignment.getByRole("checkbox", { name: "Créer des visuels", exact: true }).check();
     await assignment.getByRole("button", { name: "Enregistrer le rangement", exact: true }).click();
@@ -204,7 +208,7 @@ try {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia", "design"])]));
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("button", { name: "Modifier ChatGPT", exact: true }).click();
+    await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "ChatGPT" });
     await dialog.getByRole("checkbox", { name: "Travailler avec l'IA", exact: true }).uncheck();
     await dialog.getByRole("button", { name: "Enregistrer le rangement", exact: true }).click();
@@ -217,7 +221,7 @@ try {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia"])]));
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("button", { name: "Modifier ChatGPT", exact: true }).click();
+    await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "ChatGPT" });
     page.once("dialog", (confirmation) => confirmation.accept());
     await dialog.locator('summary[aria-label="Plus d’options"]').click();
@@ -251,7 +255,7 @@ try {
       assert(overflow <= 1, `Débordement horizontal de ${overflow}px à ${width}px`);
       if (width <= 390) {
         const card = await page.locator(".stack-role-tool-card").first().boundingBox();
-        const edit = await page.getByRole("button", { name: "Modifier ChatGPT", exact: true }).boundingBox();
+        const edit = await page.getByRole("button", { name: "Modifier l’usage de ChatGPT", exact: true }).boundingBox();
         assert(card && card.height >= 110 && card.height <= 130, `Carte mobile hors cible à ${width}px`);
         assert(edit && edit.width >= 44 && edit.height >= 44, `Cible tactile trop petite à ${width}px (${edit ? `${edit.width}×${edit.height}` : "absente"})`);
       }

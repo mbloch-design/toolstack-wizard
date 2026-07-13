@@ -1242,18 +1242,28 @@
     font-size: 0.78rem;
     font-weight: 720;
   }
-  .stack-tool-picker-foot a {
+  .stack-tool-picker-foot button {
     align-items: center;
-    color: var(--color-text);
+    appearance: none;
+    background: var(--color-text);
+    border: 0;
+    border-radius: 999px;
+    color: var(--color-surface);
+    cursor: pointer;
     display: inline-flex;
     font-family: var(--font-ui);
     font-size: 0.82rem;
     font-weight: 820;
     gap: 7px;
-    text-decoration: none;
+    min-height: 40px;
+    padding: 0 16px;
+    white-space: nowrap;
   }
-  .stack-tool-picker-foot a:hover {
-    color: var(--color-muted);
+  .stack-tool-picker-foot button:hover,
+  .stack-tool-picker-foot button:focus-visible {
+    background: color-mix(in srgb, var(--color-text) 88%, var(--color-surface));
+    color: var(--color-surface);
+    outline: none;
   }
   .stack-empty-overview {
     align-items: center;
@@ -15183,7 +15193,7 @@ section[id] {
   display: inline-flex;
   height: 32px;
   justify-content: center;
-  opacity: 0;
+  opacity: 0.58;
   padding: 0;
   position: absolute;
   right: 9px;
@@ -15194,6 +15204,15 @@ section[id] {
 .stack-role-tool-card:hover .stack-role-tool-edit,
 .stack-role-tool-card:focus-within .stack-role-tool-edit {
   opacity: 1;
+}
+.stack-need-dialog-cost-note {
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 690;
+  line-height: 1.35;
+  margin: -4px 0 14px;
+  padding: 0 22px;
 }
 .stack-role-tool-edit:hover,
 .stack-role-tool-edit:focus-visible {

@@ -1769,6 +1769,24 @@ const CartPage = () => {
   const pickerIsGlobal = pickerBoardId === GLOBAL_STACK_PICKER_ID;
   const pickerIsCustom = pickerBoard?.source === "custom";
   const pickerAddedToolSlugSet = useMemo(() => new Set(pickerAddedToolSlugs), [pickerAddedToolSlugs]);
+  const pickerAddedStats = useMemo(() => {
+    let organized = 0;
+    let toConfirm = 0;
+    let pending = 0;
+
+    pickerAddedToolSlugs.forEach((toolSlug) => {
+      const entry = stackEntryBySlug.get(toolSlug);
+      if (!entry || entry.assignmentMode === "pending") {
+        pending += 1;
+      } else if (entry.needIds.length > 0) {
+        organized += 1;
+      } else {
+        toConfirm += 1;
+      }
+    });
+
+    return { organized, pending, toConfirm, total: pickerAddedToolSlugs.length };
+  }, [pickerAddedToolSlugs, stackEntryBySlug]);
 
   const getCategoryLabel = useCallback((tool: ToolSummary) => {
     const category = categoryById.get(tool.categoryId);
@@ -1812,15 +1830,15 @@ const CartPage = () => {
       assignments[entry.toolSlug] = classification.confidence === "low" ? [] : classification.needIds;
       const addedAt = Date.parse(entry.addedAt);
       const addedRecently = Number.isFinite(addedAt) && Date.now() - addedAt < 60_000;
-      if (addedRecently) {
+      if (addedRecently && !pickerAddedToolSlugSet.has(entry.toolSlug)) {
         const classifiedNeedIds = new Set<string>(classification.confidence === "low" ? [] : classification.needIds);
         const needLabels = state.needs
           .filter((need) => classifiedNeedIds.has(need.id))
           .map((need) => t(need.labelFr, need.labelEn));
         toast.success(classifiedNeedIds.size > 0
           ? t(
-            `${tool.name} rangé automatiquement dans ${needLabels.join(" et ")} · compté une seule fois.`,
-            `${tool.name} automatically organized under ${needLabels.join(" and ")} · counted only once.`,
+            `${tool.name} rangé provisoirement dans ${needLabels.join(" et ")} · modifiable à tout moment.`,
+            `${tool.name} provisionally organized under ${needLabels.join(" and ")} · editable at any time.`,
           ) as string
           : t(
             `${tool.name} ajouté à Ma stack · besoin à confirmer dans À ranger.`,
@@ -1830,7 +1848,7 @@ const CartPage = () => {
     });
 
     if (Object.keys(assignments).length > 0) assignToolNeedsAutomatically(assignments);
-  }, [assignToolNeedsAutomatically, state.needs, state.toolEntries, t, toolBySlug]);
+  }, [assignToolNeedsAutomatically, pickerAddedToolSlugSet, state.needs, state.toolEntries, t, toolBySlug]);
 
   const zoomedSubdomains = useMemo(() => {
     if (!zoomedBoard) return [] as StackSubdomainGroup[];
@@ -2012,25 +2030,8 @@ const CartPage = () => {
     if (pickerAddedToolSlugSet.has(toolSlug)) return;
     pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
     setPickerAddedToolSlugs((current) => [...current, toolSlug]);
-    if (pickerBoard) {
-      toast.success(t(
-        `${tool.name} ajouté au besoin ${pickerBoard.labelFr} · compté une seule fois.`,
-        `${tool.name} added to ${pickerBoard.labelEn} · counted only once.`,
-      ) as string);
-    } else {
-      const classification = classifyToolForStack(tool);
-      const needLabels = state.needs
-        .filter((need) => classification.needIds.includes(need.id))
-        .map((need) => t(need.labelFr, need.labelEn));
-      toast.success(t(
-        classification.confidence === "low" || needLabels.length === 0
-          ? `${tool.name} ajouté · son besoin reste à confirmer dans À ranger.`
-          : `${tool.name} ajouté · rangement dans ${needLabels.join(" et ")} en cours.`,
-        classification.confidence === "low" || needLabels.length === 0
-          ? `${tool.name} added · confirm its need under To organize.`
-          : `${tool.name} added · organizing under ${needLabels.join(" and ")}.`,
-      ) as string);
-    }
+    setPickerQuery("");
+    window.requestAnimationFrame(() => pickerSearchRef.current?.focus());
   }
 
   function getPickerNeedSuggestion(tool: ToolSummary) {
@@ -2043,8 +2044,52 @@ const CartPage = () => {
     }
     const need = state.needs.find((candidate) => candidate.id === classification.needIds[0]);
     return need
-      ? t(`Suggéré · ${need.labelFr}`, `Suggested · ${need.labelEn}`) as string
+      ? t(`Proposé · ${need.labelFr}`, `Suggested · ${need.labelEn}`) as string
       : t("Besoin à confirmer · À ranger", "Need to confirm · To organize") as string;
+  }
+
+  function getPickerAddedSummary(tool: ToolSummary) {
+    if (pickerBoard) {
+      return t(`Ajouté dans ${pickerBoard.labelFr}`, `Added to ${pickerBoard.labelEn}`) as string;
+    }
+    const classification = classifyToolForStack(tool);
+    const need = state.needs.find((candidate) => candidate.id === classification.needIds[0]);
+    if (classification.confidence === "low" || !need) {
+      return t("À confirmer · À ranger", "To confirm · To organize") as string;
+    }
+    return t(
+      `Rangé provisoirement · ${need.labelFr}`,
+      `Provisionally organized · ${need.labelEn}`,
+    ) as string;
+  }
+
+  function getPickerSessionSummary() {
+    if (pickerAddedStats.total === 0) {
+      return t(
+        "Ajoutez plusieurs outils sans fermer cette fenêtre.",
+        "Add several tools without closing this window.",
+      ) as string;
+    }
+    if (pickerAddedStats.pending > 0) {
+      return t(
+        `${formatToolCount(pickerAddedStats.total, lang)} ajouté${pickerAddedStats.total > 1 ? "s" : ""} · rangement en cours`,
+        `${formatToolCount(pickerAddedStats.total, lang)} added · organizing`,
+      ) as string;
+    }
+
+    const frenchParts = [
+      `${formatToolCount(pickerAddedStats.total, lang)} ajouté${pickerAddedStats.total > 1 ? "s" : ""}`,
+      pickerAddedStats.organized > 0
+        ? `${pickerAddedStats.organized} rangé${pickerAddedStats.organized > 1 ? "s" : ""}`
+        : "",
+      pickerAddedStats.toConfirm > 0 ? `${pickerAddedStats.toConfirm} à confirmer` : "",
+    ].filter(Boolean);
+    const englishParts = [
+      `${formatToolCount(pickerAddedStats.total, lang)} added`,
+      pickerAddedStats.organized > 0 ? `${pickerAddedStats.organized} organized` : "",
+      pickerAddedStats.toConfirm > 0 ? `${pickerAddedStats.toConfirm} to confirm` : "",
+    ].filter(Boolean);
+    return t(frenchParts.join(" · "), englishParts.join(" · ")) as string;
   }
 
   function openNeedDialog(toolSlug: string) {
@@ -2241,8 +2286,11 @@ const CartPage = () => {
             </div>
             <div className="stack-page-toolbar-actions">
               {unassignedTools.length > 0 && (
-                <button type="button" className="stack-page-toolbar-unassigned" onClick={() => document.getElementById("stack-unassigned-title")?.scrollIntoView({ behavior: "smooth", block: "center" })}>
-                  {t("À ranger", "To organize")} · {unassignedTools.length}
+                <button type="button" className="stack-page-toolbar-unassigned" onClick={() => openNeedDialog(getToolKey(unassignedTools[0]))}>
+                  {unassignedTools.length} {t(
+                    unassignedTools.length > 1 ? "outils à ranger" : "outil à ranger",
+                    unassignedTools.length > 1 ? "tools to organize" : "tool to organize",
+                  )}
                 </button>
               )}
               <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Ajouter un outil", "Add a tool") as string} title={t("Ajouter un outil", "Add a tool") as string}>
@@ -2288,6 +2336,9 @@ const CartPage = () => {
                           lang={lang}
                           typeLabel={getToolTypeLabel(tool, lang)}
                           contextRole={getToolContextRole(tool, group, lang)}
+                          contextLabel={stackEntryBySlug.get(toolSlug)?.assignmentMode === "auto"
+                            ? t("Usage proposé", "Suggested use") as string
+                            : undefined}
                           variant="compact"
                           showPin={false}
                           showPrice={false}
@@ -2299,8 +2350,8 @@ const CartPage = () => {
                           type="button"
                           className="stack-role-tool-edit"
                           onClick={() => openNeedDialog(toolSlug)}
-                          aria-label={t(`Modifier ${tool.name}`, `Edit ${tool.name}`) as string}
-                          title={t("Modifier", "Edit") as string}
+                          aria-label={t(`Modifier l’usage de ${tool.name}`, `Edit ${tool.name}'s use`) as string}
+                          title={t("Modifier l’usage", "Edit use") as string}
                         >
                           <Pencil size={13} aria-hidden />
                         </button>
@@ -2515,8 +2566,14 @@ const CartPage = () => {
 
             <p className="stack-need-dialog-intro">
               {t(
-                "À quels besoins cet outil répond-il ? Vous pouvez en choisir plusieurs.",
-                "Which needs does this tool cover? You can choose several.",
+                `À quoi vous sert ${needDialogTool.name} ? Sélectionnez un ou plusieurs usages.`,
+                `What do you use ${needDialogTool.name} for? Select one or more uses.`,
+              )}
+            </p>
+            <p className="stack-need-dialog-cost-note">
+              {t(
+                "Plusieurs usages possibles · coût compté une seule fois.",
+                "Multiple uses are possible · cost is counted only once.",
               )}
             </p>
 
@@ -2637,7 +2694,7 @@ const CartPage = () => {
                       <ToolLogo tool={tool} size={34} className="stack-tool-picker-logo" />
                       <div className="stack-tool-picker-card-copy">
                         <h3>{tool.name}</h3>
-                        <p>{getPickerNeedSuggestion(tool)}</p>
+                        <p>{wasAdded ? getPickerAddedSummary(tool) : getPickerNeedSuggestion(tool)}</p>
                       </div>
                       <div className="stack-tool-picker-card-actions">
                         <button
@@ -2684,6 +2741,18 @@ const CartPage = () => {
                 </p>
               </div>
             )}
+
+            <div className="stack-tool-picker-foot">
+              <span aria-live="polite">{getPickerSessionSummary()}</span>
+              <button type="button" onClick={closeToolPicker}>
+                {pickerBoard
+                  ? t("Voir ce besoin", "View this need")
+                  : t(
+                    pickerAddedStats.total > 0 ? `Voir ma stack (${pickerAddedStats.total})` : "Voir ma stack",
+                    pickerAddedStats.total > 0 ? `View my stack (${pickerAddedStats.total})` : "View my stack",
+                  )}
+              </button>
+            </div>
 
           </aside>
         </div>

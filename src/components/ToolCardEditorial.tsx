@@ -44,6 +44,7 @@ interface ToolCardEditorialProps {
   showPrice?: boolean;
   typeLabel?: string;
   contextRole?: string;
+  contextLabel?: string;
 }
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
@@ -77,6 +78,7 @@ export function ToolCardEditorial({
   showPrice = true,
   typeLabel,
   contextRole,
+  contextLabel,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
   const compact = variant === "compact";
@@ -125,7 +127,7 @@ export function ToolCardEditorial({
         {compact && description && <p className="tce-compact-description">{description}</p>}
         {compact && contextRole && (
           <p className="tce-context-role">
-            <span>{t("Sert à", "Used to")}</span>
+            <span>{contextLabel || t("Sert à", "Used to")}</span>
             <strong>{contextRole}</strong>
           </p>
         )}
