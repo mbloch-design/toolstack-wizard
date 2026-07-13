@@ -6904,6 +6904,89 @@
     max-width: 860px;
   }
 
+  /* ── Hero CARD — Ma-stack inspector gabarit (.stack-tool-profile-hero):
+     a bordered rounded card, cover image on top, heading below. Cleaner and
+     far more scannable than the giant poster name it replaces. ── */
+  .td-hero-card {
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+  .td-hero-cover {
+    display: block;
+    width: 100%;
+    height: clamp(240px, 26vw, 340px);
+    object-fit: cover;
+    object-position: top center;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+  .td-hero-heading {
+    display: grid;
+    gap: 14px;
+    padding: 30px 36px 34px;
+  }
+  @media (max-width: 640px) {
+    .td-hero-heading { padding: 24px 22px 26px; }
+    .td-hero-cover { height: clamp(180px, 44vw, 240px); }
+  }
+  .td-hero-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .td-hero-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+  .td-hero-cat:hover { color: var(--color-text); }
+  .td-hero-h1 {
+    font-family: var(--font-ui);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 820;
+    letter-spacing: -0.05em;
+    line-height: 0.98;
+    color: var(--color-text);
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+  .td-hero-h1-sub {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    color: var(--color-muted);
+    margin-top: 10px;
+  }
+  .td-hero-desc {
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: color-mix(in srgb, var(--color-text) 80%, var(--color-muted));
+    margin: 0;
+    max-width: 60ch;
+  }
+  .td-hero-context {
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-muted);
+    margin: 0;
+    max-width: 60ch;
+  }
+
   /* Hero identity — now the head of the main column in the unified page grid.
      Sits beside the decision card so the verdict starts at the very top. */
   .td-page-grid .td-hero {

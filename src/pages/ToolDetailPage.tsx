@@ -388,7 +388,8 @@ const ToolDetailPage = () => {
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
           <div>
 
-            {/* Hero identity */}
+            {/* Hero identity — Ma-stack inspector gabarit: bordered card, cover
+                image on top, heading (category eyebrow, H1, description) below. */}
             <div className="td-hero">
 
             <Breadcrumb items={[
@@ -400,137 +401,86 @@ const ToolDetailPage = () => {
               { label: tool.name },
             ]} />
 
-            {/* Logo + category badge */}
-            <div className="td-identity-row">
-              <div style={{
-                width: 56, height: 56, borderRadius: 10,
-                border: "1px solid var(--color-border)", background: "var(--color-surface)",
-                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-              }}>
-                <ToolLogo tool={tool} size={36} />
-              </div>
-              {category && (
-                <Link
-                  to={`${prefix}/category/${category.slug}`}
-                  style={{
-                    display: "inline-flex", alignItems: "center", gap: 6,
-                    height: 32, padding: "0 14px",
-                    background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 999,
-                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                    color: "var(--color-text)", textDecoration: "none",
-                    transition: "border-color 140ms",
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
-                >
-                  {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "var(--color-muted)" }} />}
-                  {t(catName, catNameEn)}
-                </Link>
-              )}
-              <div className="td-selection-action">
-                <PinToolButton
-                  slug={tool.slug || tool.id}
-                  label={tool.name}
-                  t={t}
-                  inline
-                  labelMode="full"
-                />
-              </div>
-            </div>
-
-            {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion.
-                Le minimum doit rester bas (~2.5rem) : à 8vw, la valeur préférée ne dépasse
-                4.5rem qu'au-delà de ~900px de viewport, donc tout mobile/tablette se figeait
-                sur le plancher (72-104px) — largement assez pour faire déborder un nom de
-                10+ caractères ("Eventbrite", "Twitch"...) sans espace pour se replier.
-                overflowWrap en filet de sécurité quel que soit le nom. */}
-            <h1 style={{
-              fontFamily: "var(--font-brand)",
-              fontSize: tool.name.length <= 5
-                ? "clamp(2.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
-                : "clamp(2.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
-              fontWeight: 600, lineHeight: 0.9,
-              letterSpacing: "-0.07em", color: "var(--color-text)",
-              margin: 0, overflowWrap: "break-word", wordBreak: "break-word",
-            }}>
-              {tool.name}
-              {/* Space so the raw H1 text reads "Notion Avis, prix…" not
-                  "NotionAvis…" — the block span below adds no whitespace of
-                  its own, so screen readers and text extractors would run the
-                  name into the subtitle without it. Visually collapsed (the
-                  span starts a new line), so no layout impact. */}
-              {" "}
-              {/* SXO finding: the H1 held only the bare tool name (e.g. just
-                  "Notion"), no intent signal for "avis"/"prix"/"alternatives"
-                  searches. Nested in the same <h1> so it's part of the tag
-                  Google reads, sized down so the giant poster name stays the
-                  visual anchor — turned out to read as a natural subtitle,
-                  not just a crawler-only addition. */}
-              <span style={{
-                display: "block",
-                fontSize: "1rem", fontWeight: 500,
-                letterSpacing: "-0.01em", lineHeight: 1.4,
-                color: "var(--color-muted)", marginTop: 8,
-              }}>
-                {t(`Avis, prix et alternatives ${new Date().getFullYear()}`, `Reviews, pricing and alternatives ${new Date().getFullYear()}`)}
-              </span>
-            </h1>
-
-            {/* Short description */}
-            {tool.shortDescription && (
-              <p style={{
-                fontFamily: "var(--font-ui)",
-                fontSize: "var(--tt-size-hero-sub)",
-                lineHeight: 1.35, letterSpacing: "-0.025em",
-                color: "var(--color-text)", maxWidth: 780,
-                marginTop: 28,
-              }}>
-                {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-              </p>
-            )}
-
-            {/* Short context: price + usage framing */}
             {(() => {
-              const pricePart = isFree
-                ? t("Gratuit.", "Free.")
-                : displayPrice > 0
-                ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t)}.`
-                : null;
-              const verdict = (tool as any).verdict;
-              const fullThreshold = lang === "en" && (tool as any).verdictEn?.threshold
-                ? (tool as any).verdictEn.threshold
-                : verdict?.threshold as string | undefined;
-              // First sentence only — the hero is a teaser, not the full
-              // reasoning. "Décision rapide" further down is the one place
-              // that shows the complete threshold; repeating all of it here
-              // meant the same two sentences appeared twice within the
-              // first screen of the page. Site-wide change, all 1109 tools.
-              const threshold = fullThreshold?.split(/(?<=[.!?])\s+/)[0];
-              const text = [pricePart, threshold].filter(Boolean).join(" ");
-              if (!text) return null;
+              const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
+              const extra = ((tool as any).gallery_images as string[] | null) ?? [];
+              const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
+              const cover = imgs[0] ?? null;
+              const rest = imgs.slice(1);
+              const year = new Date().getFullYear();
+
+              // Short context: price + first sentence of the verdict threshold.
+              const priceContext = (() => {
+                const pricePart = isFree
+                  ? t("Gratuit.", "Free.")
+                  : displayPrice > 0
+                  ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t)}.`
+                  : null;
+                const verdict = (tool as any).verdict;
+                const fullThreshold = lang === "en" && (tool as any).verdictEn?.threshold
+                  ? (tool as any).verdictEn.threshold
+                  : verdict?.threshold as string | undefined;
+                const threshold = fullThreshold?.split(/(?<=[.!?])\s+/)[0];
+                return [pricePart, threshold].filter(Boolean).join(" ") || null;
+              })();
+
               return (
-                <p style={{
-                  fontFamily: "var(--font-ui)",
-                  fontSize: 17,
-                  lineHeight: 1.5, letterSpacing: "-0.015em",
-                  color: "var(--color-muted)", maxWidth: 760,
-                  marginTop: 16,
-                }}>
-                  {text}
-                </p>
+                <>
+                  <div className="td-hero-card">
+                    {cover && (
+                      <img
+                        className="td-hero-cover"
+                        src={cover}
+                        alt={t(`Aperçu de ${tool.name}`, `${tool.name} preview`) as string}
+                        loading="lazy"
+                        width={1200}
+                        height={630}
+                      />
+                    )}
+                    <div className="td-hero-heading">
+                      <div className="td-hero-eyebrow-row">
+                        {category && (
+                          <Link className="td-hero-cat" to={`${prefix}/category/${category.slug}`}>
+                            {CategoryIcon && <CategoryIcon style={{ width: 12, height: 12 }} />}
+                            {t(catName, catNameEn)}
+                          </Link>
+                        )}
+                        <PinToolButton
+                          slug={tool.slug || tool.id}
+                          label={tool.name}
+                          t={t}
+                          inline
+                          labelMode="full"
+                        />
+                      </div>
+
+                      {/* Single H1: name + intent subtitle nested in the same tag
+                          so Google reads "Notion — Avis, prix et alternatives".
+                          The space keeps the raw text from running together. */}
+                      <h1 className="td-hero-h1">
+                        {tool.name}{" "}
+                        <span className="td-hero-h1-sub">
+                          {t(`Avis, prix et alternatives ${year}`, `Reviews, pricing and alternatives ${year}`)}
+                        </span>
+                      </h1>
+
+                      {tool.shortDescription && (
+                        <p className="td-hero-desc">
+                          {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                        </p>
+                      )}
+                      {priceContext && <p className="td-hero-context">{priceContext}</p>}
+                    </div>
+                  </div>
+
+                  {/* Remaining screenshots (if any) below the hero card */}
+                  {rest.length > 0 && <ToolGallery images={rest} toolName={tool.name} />}
+                </>
               );
             })()}
 
             </div>
             {/* end hero identity */}
-
-            {/* Gallery — shown only for tools with images in Supabase */}
-            {(() => {
-              const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
-              const extra = ((tool as any).gallery_images as string[] | null) ?? [];
-              const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
-              return imgs.length > 0 ? <ToolGallery images={imgs} toolName={tool.name} /> : null;
-            })()}
 
             {/* Mobile decision card */}
             <div className="td-sidebar-mobile" style={{ marginBottom: 32 }}>
