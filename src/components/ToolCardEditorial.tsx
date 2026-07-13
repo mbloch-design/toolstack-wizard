@@ -41,6 +41,9 @@ interface ToolCardEditorialProps {
   to?: string;
   linkState?: unknown;
   selected?: boolean;
+  showPrice?: boolean;
+  typeLabel?: string;
+  contextRole?: string;
 }
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
@@ -71,13 +74,16 @@ export function ToolCardEditorial({
   to,
   linkState,
   selected = false,
+  showPrice = true,
+  typeLabel,
+  contextRole,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
   const compact = variant === "compact";
 
   const description = t(
     tool.shortDescription,
-    (tool as any).shortDescriptionEn ?? tool.shortDescription,
+    tool.shortDescriptionEn ?? tool.shortDescription,
   ) as string;
 
   return (
@@ -111,12 +117,18 @@ export function ToolCardEditorial({
       <div className="tce-body">
         <div className="tce-title-row">
           <h3 className="tce-name">{tool.name}</h3>
-          <span className="tce-price">{plan}</span>
+          {showPrice && <span className="tce-price">{plan}</span>}
         </div>
-        {categoryLabel && (
-          <p className="tce-category">{categoryLabel}</p>
+        {(typeLabel || categoryLabel) && (
+          <p className="tce-category">{typeLabel || categoryLabel}</p>
         )}
         {compact && description && <p className="tce-compact-description">{description}</p>}
+        {compact && contextRole && (
+          <p className="tce-context-role">
+            <span>{t("Sert à", "Used to")}</span>
+            <strong>{contextRole}</strong>
+          </p>
+        )}
       </div>
       </Link>
     </div>

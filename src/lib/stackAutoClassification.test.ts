@@ -20,6 +20,10 @@ const expectedTools = {
   pennylane: "finance",
   github: "dev",
   vercel: "dev",
+  attio: "vente",
+  folk: "vente",
+  railway: "dev",
+  netlify: "dev",
 } as const;
 
 describe("stack automatic classification", () => {

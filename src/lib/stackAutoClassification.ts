@@ -24,9 +24,9 @@ const KNOWN_TOOL_NEEDS: Partial<Record<SuggestedStackNeedId, string[]>> = {
   design: ["figma", "canva", "framer", "adobe-photoshop", "adobe-illustrator", "affinity-designer", "blender", "sketch"],
   automation: ["make", "zapier", "n8n", "activepieces", "softr", "bubble"],
   marketing: ["mailchimp", "brevo", "buffer", "google-analytics", "semrush", "ahrefs"],
-  vente: ["hubspot", "pipedrive", "salesforce", "apollo-io", "close", "gong"],
+  vente: ["hubspot", "pipedrive", "salesforce", "apollo-io", "close", "gong", "attio", "folk", "snov-io"],
   finance: ["stripe", "pennylane", "indy", "quickbooks", "dext", "qonto", "paypal"],
-  dev: ["github", "gitlab", "cursor", "github-copilot", "vercel", "supabase", "next-js", "sentry", "docker"],
+  dev: ["github", "gitlab", "cursor", "github-copilot", "vercel", "supabase", "next-js", "sentry", "docker", "railway", "digitalocean", "firebase", "netlify"],
 };
 
 const CATEGORY_NEEDS: Partial<Record<SuggestedStackNeedId, string[]>> = {

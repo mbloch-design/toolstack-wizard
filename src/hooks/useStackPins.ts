@@ -7,39 +7,68 @@ import {
   createCustomNeedInState,
   createDefaultToolCartState,
   deleteCustomNeedInState,
-  loadToolCartState,
+  loadToolCartStateWithStatus,
   normalizeToolCartState,
   pinToolInState,
   moveNeedInState,
   renameCustomNeedInState,
   reorderToolsInState,
-  saveToolCartState,
+  saveToolCartStateWithStatus,
   unpinToolInState,
+  type StackPersistenceStatus,
   type ToolCartState,
 } from "@/lib/stackState";
 
 export const STACK_PINS_STORAGE_KEY = STACK_STATE_STORAGE_KEY;
-export type { StackNeed, StackToolEntry, ToolCartState } from "@/lib/stackState";
+export type { StackNeed, StackPersistenceStatus, StackToolEntry, ToolCartState } from "@/lib/stackState";
 
-function readToolCartState(): ToolCartState {
-  if (typeof window === "undefined") return createDefaultToolCartState();
-  return loadToolCartState(window.localStorage);
+function readToolCartState(): { state: ToolCartState; status: StackPersistenceStatus } {
+  if (typeof window === "undefined") {
+    return {
+      state: createDefaultToolCartState(),
+      status: { state: "ok", source: "default" },
+    };
+  }
+  return loadToolCartStateWithStatus(window.localStorage);
 }
 
 let currentToolCartState: ToolCartState | null = null;
+let currentPersistenceStatus: StackPersistenceStatus | null = null;
 const subscribers = new Set<(state: ToolCartState) => void>();
+const statusSubscribers = new Set<(status: StackPersistenceStatus) => void>();
+
+function initializeToolCartState() {
+  if (currentToolCartState && currentPersistenceStatus) return;
+  const loaded = readToolCartState();
+  currentToolCartState = loaded.state;
+  currentPersistenceStatus = loaded.status;
+}
 
 function getCurrentToolCartState() {
-  if (!currentToolCartState) currentToolCartState = readToolCartState();
-  return currentToolCartState;
+  initializeToolCartState();
+  return currentToolCartState as ToolCartState;
+}
+
+function getCurrentPersistenceStatus() {
+  initializeToolCartState();
+  return currentPersistenceStatus as StackPersistenceStatus;
+}
+
+function publishToolCartState() {
+  subscribers.forEach((subscriber) => subscriber(currentToolCartState as ToolCartState));
+  statusSubscribers.forEach((subscriber) => subscriber(currentPersistenceStatus as StackPersistenceStatus));
 }
 
 function commitToolCartState(nextState: ToolCartState) {
   currentToolCartState = normalizeToolCartState(nextState);
   if (typeof window !== "undefined") {
-    currentToolCartState = saveToolCartState(window.localStorage, currentToolCartState);
+    const saved = saveToolCartStateWithStatus(window.localStorage, currentToolCartState);
+    currentToolCartState = saved.state;
+    currentPersistenceStatus = saved.status;
+  } else {
+    currentPersistenceStatus = { state: "ok", source: "memory" };
   }
-  subscribers.forEach((subscriber) => subscriber(currentToolCartState as ToolCartState));
+  publishToolCartState();
 }
 
 function updateToolCartState(updater: (current: ToolCartState) => ToolCartState) {
@@ -48,19 +77,20 @@ function updateToolCartState(updater: (current: ToolCartState) => ToolCartState)
 
 export function useStackPins() {
   const [state, setState] = useState<ToolCartState>(() => getCurrentToolCartState());
+  const [persistenceStatus, setPersistenceStatus] = useState<StackPersistenceStatus>(() => getCurrentPersistenceStatus());
 
   useEffect(() => {
     subscribers.add(setState);
+    statusSubscribers.add(setPersistenceStatus);
     setState(getCurrentToolCartState());
+    setPersistenceStatus(getCurrentPersistenceStatus());
 
     function handleStorage(event: StorageEvent) {
       if (event.key !== STACK_PINS_STORAGE_KEY) return;
-      try {
-        currentToolCartState = normalizeToolCartState(event.newValue ? JSON.parse(event.newValue) : null);
-      } catch {
-        currentToolCartState = createDefaultToolCartState();
-      }
-      subscribers.forEach((subscriber) => subscriber(currentToolCartState as ToolCartState));
+      const loaded = readToolCartState();
+      currentToolCartState = loaded.state;
+      currentPersistenceStatus = loaded.status;
+      publishToolCartState();
     }
 
     if (typeof window !== "undefined") {
@@ -69,6 +99,7 @@ export function useStackPins() {
 
     return () => {
       subscribers.delete(setState);
+      statusSubscribers.delete(setPersistenceStatus);
       if (typeof window !== "undefined") {
         window.removeEventListener("storage", handleStorage);
       }
@@ -142,6 +173,7 @@ export function useStackPins() {
 
   return {
     state,
+    persistenceStatus,
     pinTool,
     unpinTool,
     assignToolNeeds,

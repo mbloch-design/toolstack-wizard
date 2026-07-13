@@ -1,389 +1,289 @@
-# ToolTrim — Roadmap MVP Ma stack
+# Tooltrim — Direction MVP Ma stack
 
-Mise à jour : 2026-07-11
+Mise à jour : 2026-07-13
+État : **P0/P1 terminés — prêt pour recette utilisateurs**
 
-## Vision du MVP
+## Livraison P0/P1 — 13 juillet 2026
 
-Ma stack est un espace simple pour :
+- 49 tests Ma stack passent : état, persistance, hook, rangement et coût.
+- Le benchmark fixe de 100 outils couvre les huit besoins et passe les seuils MVP.
+- 201 contrôles de pertinence des sélecteurs passent.
+- 9 parcours navigateur protègent `Ajouter → Ranger → Voir → Corriger`, le rechargement et les suppressions.
+- Les largeurs 320, 390, 768, 1024 et 1440 px sont vérifiées sans débordement.
+- La persistance possède une copie locale valide, une récupération après corruption et un état d'erreur visible.
+- Le coût distingue désormais `Gratuit`, `Prix inconnu` et `À partir de…` et reste dédupliqué.
+- L'ajout global et contextuel utilise le même sélecteur intégré, avec état `Ajouté`.
+- Les cartes expliquent le rôle contextuel et ne montrent plus le prix dans un besoin.
+- La correction est réversible ; la suppression est secondaire et confirmée.
+
+## Cap produit
+
+Ma stack permet de :
 
 1. prendre les outils que l'on utilise ;
-2. les ranger par besoin dans des lots ;
-3. obtenir une vue d'ensemble claire.
+2. laisser Tooltrim les ranger par besoin ;
+3. comprendre immédiatement ses lots d'outils ;
+4. corriger les exceptions sans refaire tout le rangement.
 
-La promesse de cette première base est :
+La promesse reste :
 
 > Pour tel besoin, j'ai ce lot d'outils.
 
-Les trois verbes du MVP sont donc : **prendre, ranger, voir**.
-
-## Avancement
-
-### 2026-07-10 — Phase 1 démarrée
-
-- Nouveau format local versionné `v2`.
-- Besoins suggérés intégrés au modèle.
-- Une entrée d'outil peut conserver plusieurs besoins.
-- Les outils sans affectation restent identifiables pour la future zone `À ranger`.
-- Migration automatique des anciennes listes de slugs, sans perte ni suppression avant écriture réussie.
-- Compatibilité conservée avec les composants existants.
-- Un ajout depuis un lot enregistre désormais ce lot.
-- Les affectations enregistrées sont prioritaires dans la vue ; l'ancien classement automatique reste un fallback transitoire.
-- 10 tests ciblés couvrent modèle, migration, persistance, affectation par lot, multi-affectation, suppression et ordre.
-- Les outils ajoutés hors d'un lot apparaissent désormais dans `À ranger`.
-- Un dialogue permet d'affecter un outil à un ou plusieurs besoins suggérés.
-- Un outil déjà rangé peut être réaffecté depuis la vue détaillée de son lot.
-- L'utilisateur peut remettre volontairement un outil dans `À ranger`.
-- Le dialogue gère le focus clavier, bloque le scroll du fond et passe au-dessus de la navigation mobile.
-- La copie du hero est recentrée sur le rangement par besoin.
-- Un gestionnaire permet de créer des besoins personnalisés.
-- Les besoins personnalisés peuvent être renommés, déplacés et supprimés.
-- Supprimer un besoin ne supprime jamais les outils : les outils devenus orphelins reviennent dans `À ranger`.
-- Les besoins personnalisés apparaissent comme des lots dans la vue d'ensemble, même lorsqu'ils sont encore vides.
-- `Retirer du besoin` conserve l'outil dans Ma stack et le renvoie dans `À ranger` si nécessaire.
-- `Supprimer de Ma stack` est désormais une action distincte dans le dialogue de rangement.
-- Les cartes de lots affichent désormais les noms des outils, pas seulement leurs logos.
-- Chaque lot sépare clairement les actions `Voir le lot` et `Ajouter`.
-- Les cartes ne sont plus de faux boutons contenant d'autres boutons : la structure clavier et lecteur d'écran est valide.
-- Les lots personnalisés vides affichent un état vide explicite et restent directement composables.
-- La vue a été vérifiée sans débordement horizontal sur ordinateur et sur mobile à 390 px.
-- Tout nouvel outil ajouté hors d'un lot passe désormais automatiquement par le moteur de classement.
-- Le modèle distingue un classement en attente, automatique ou manuel.
-- Une correction manuelle, y compris `Laisser à ranger`, n'est jamais écrasée par le moteur.
-- Sans signal suffisamment exploitable, le moteur tente une seule fois puis conserve l'outil dans `À ranger`.
-- Le classement autonome utilise désormais une hiérarchie explicite : outils connus, signaux fonctionnels, catégorie, puis texte libre.
-- Les cas ambigus dans le texte libre ne sont plus rangés arbitrairement dans le premier lot correspondant.
-- Les cas trompeurs du catalogue sont couverts : HubSpot rejoint `Vente`, GitHub rejoint `Dev` et Stripe rejoint `Finance`.
-- 17 outils représentatifs sont vérifiés directement à partir de leurs vraies fiches catalogue.
-- Chaque outil rangé par le moteur affiche désormais `Automatique · Corriger` dans la vue d'ensemble et la vue détaillée.
-- Cette action ouvre directement le choix des besoins de l'outil concerné.
-- Après une confirmation ou une correction, le rangement devient manuel et l'indication automatique disparaît.
-- Le parcours réel `ajouter → rangement automatique → corriger → priorité manuelle` a été vérifié sans erreur.
-- Une confirmation indique désormais où l'outil vient d'être rangé après un ajout automatique, un ajout dans un lot ou une correction.
-- La confirmation rappelle explicitement qu'un outil présent dans plusieurs besoins est `compté une seule fois`.
-- Un outil sans classement fiable reçoit une confirmation l'orientant vers `À ranger`.
-- Les besoins suggérés sont désormais formulés comme des actions utilisateur : `Organiser mon travail`, `Créer des visuels`, `Gérer mes finances`, etc.
-- Les classements de faible confiance ne sont plus appliqués automatiquement.
-- Le budget et les suites ont été retirés du résumé et de la vue détaillée de Ma stack.
-- La suppression globale a été retirée des cartes de lots ; elle reste uniquement dans le dialogue explicite de l'outil.
-- Le sélecteur contextuel est réduit à une recherche, une liste d'outils et l'action `Ajouter`.
-- La vue détaillée est réduite à `voir la fiche / modifier / retirer du besoin`, sans sous-domaines, prix ni relations secondaires.
-- Les actions essentielles mesurent 44 px sur mobile et la vue reste sans débordement à 390 px.
-- La vue globale suit désormais une grille visuelle régulière de gauche à droite, inspirée des boards Pinterest.
-- Les tableaux conservent une hauteur compacte et identique : 320 px sur desktop et 310 px sur petit mobile ; la carte finale d'ajout a été supprimée au profit des actions `+` déjà présentes.
-- La vue globale utilise quatre colonnes sur grand écran, puis se replie progressivement en trois, deux et une colonne.
-- Les tableaux retrouvent une composition éditoriale colorée : titre court, description du besoin, trois logos alignés puis compteur de surplus, avec les actions `Explorer` et `Ajouter`.
-- Les actions de rangement sont réduites à de petits crayons, visibles au survol et toujours accessibles sur mobile.
-- La page d'un besoin affiche ses sous-sections verticalement, puis réutilise la card éditoriale commune au catalogue dans une variante compacte de hauteur fixe (226 px) en grille `4 / 2 / 1` : image ou logo, nom, prix, catégorie et utilité. La carte entière ouvre la fiche et le petit crayon permet de corriger le rangement.
-- Depuis une sous-page de besoin, une card ouvre désormais un inspecteur contextuel sans quitter Ma stack. L'URL conserve le besoin et l'outil, le navigateur Retour ferme l'inspecteur, le scroll reste en place, et la fiche complète demeure une action secondaire. L'inspecteur est latéral sur desktop et plein écran sur mobile.
-- `À ranger` n'apparaît que pour les cas particuliers et prend désormais la forme d'un tableau identique aux autres ; il lance une correction simple outil par outil.
-- Le tableau `À ranger` est toujours placé après les besoins normaux, en dernière position de la grille.
-- Les logos se chevauchent légèrement pour former un groupe régulier ; le surplus est un vrai bouton rond `+N` ouvrant un panneau compact des outils supplémentaires.
-- Toute la surface d'un tableau ouvre désormais son détail, tandis que `+N`, `Ajouter` et `Ranger` conservent leurs interactions propres.
-- La navigation globale reste strictement identique au reste du site, avec sa barre latérale et son header sticky.
-- Le champ de recherche du header global est désormais plus large, plus contrasté et arrondi, dans une logique inspirée de Pinterest sur l'ensemble du site.
-- Dans le contenu de Ma stack uniquement, le grand hero marketing a été remplacé par une barre compacte `titre · outils · besoins · + · …` ; la page d'un besoin reprend la même logique avec `retour · titre · compteur · + · …`.
-- Le hero d'un besoin reprend désormais la hiérarchie d'un tableau Pinterest : retour et options discrets, titre et métadonnées, coût mensuel total de Ma stack, puis les actions visuelles `Organiser` et `Ajouter`, sans fonction factice hors MVP. Le coût est calculé sur les outils uniques, même lorsqu'ils répondent à plusieurs besoins.
-- Le hero d'un besoin est désormais un en-tête produit compact et continu : `retour → titre et compteurs → coût total → ajouter → options`. Il ne contient plus de grande zone vide ni de modules flottants. Sur mobile, le coût et l'ajout passent sur une seconde ligne.
-- L'action globale `Gérer tous les besoins` reste dans le menu `…`, tandis que le crayon de chaque card corrige le rangement local.
-
-Prochaine étape : mesurer les outils encore envoyés dans `À ranger`, puis extraire progressivement la logique restante de la grande page sans modifier l'expérience MVP.
-
-## Contrat produit
-
-### Job utilisateur
-
-> Je sélectionne mes outils, je les range selon les besoins auxquels ils répondent, puis je visualise l'ensemble de ma stack par lots cohérents.
-
-### Capacités indispensables
-
-- Ajouter un outil à Ma stack.
-- Créer ou choisir un besoin.
-- Ranger un outil dans un ou plusieurs besoins.
-- Corriger un classement proposé automatiquement.
-- Déplacer ou retirer un outil.
-- Lire la vue d'ensemble `besoin → lot d'outils`.
-
-### Vocabulaire recommandé
-
-- **Besoin** : le nom visible du groupe, par exemple `Créer des visuels`, `Gérer mes projets` ou `Facturer`.
-- **Lot d'outils** : l'ensemble des outils rangés dans ce besoin.
-- **À ranger** : les outils ajoutés qui n'ont pas encore de besoin confirmé.
-
-Dans l'interface, le mot principal doit être `besoin`. Le mot `lot` peut servir à expliquer le contenu d'un besoin, mais ne doit pas créer un deuxième concept concurrent.
-
-## Périmètre strict
-
-Cette roadmap concerne uniquement :
-
-- la sélection des outils ;
-- les besoins et lots ;
-- le rangement et le déplacement ;
-- la vue d'ensemble Ma stack ;
-- la persistance locale ;
-- la fiabilité du parcours mobile et clavier.
+Les quatre gestes du MVP sont : **ajouter, ranger, voir, corriger**.
 
-Sont hors MVP :
+## Mindset produit
 
-- verdicts `Garder / Supprimer / Remplacer` ;
-- optimisation automatique de stack ;
-- détection avancée de doublons ;
-- coût réel détaillé ;
-- comptes et synchronisation serveur ;
-- partage public ;
-- recommandations sophistiquées ;
-- scoring et IA générative ;
-- analytics avancées.
+- L'automatisation est la règle ; la correction manuelle est l'exception.
+- La vue d'ensemble doit rester plus importante que la fiche détaillée.
+- Un outil existe une seule fois dans Ma stack, même s'il répond à plusieurs besoins.
+- Un doute de classement doit produire `À ranger`, jamais un mauvais classement affirmatif.
+- Une nouvelle fonction n'entre dans le MVP que si elle améliore directement `Ajouter → Ranger → Voir → Corriger`.
+- La navigation globale, le header et le gabarit de la fiche sont désormais figés.
 
-## Historique avant refonte — problèmes désormais traités
+## Point d'étape
 
-Cette section conserve le diagnostic initial ayant guidé la refonte. Les écarts ci-dessous ont depuis été traités dans le socle MVP décrit dans `Avancement`.
+### Ce qui est réellement construit
 
-### Ce qui est déjà aligné
+#### Socle et persistance
 
-- Ajout et retrait d'outils depuis les cartes et les fiches.
-- Compteur global dans la navigation.
-- Persistance locale et synchronisation entre onglets.
-- Première vue d'ensemble en huit domaines.
-- Cartes montrant le nom du domaine et quelques outils.
-- Vue détaillée d'un domaine.
-- Sélecteur contextuel permettant d'ajouter sans quitter Ma stack.
-- Paramètre d'URL permettant d'ouvrir directement un domaine.
+- Format local versionné `v2`.
+- Migration des anciennes listes de slugs sans suppression préalable.
+- Besoins suggérés et besoins personnalisés.
+- Création, renommage, réordonnancement et suppression des besoins personnalisés.
+- Affectation d'un outil à plusieurs besoins.
+- Distinction entre classement `pending`, `auto` et `manual`.
+- Une correction manuelle n'est jamais écrasée par le moteur.
+- Suppression d'un besoin sans suppression de ses outils.
+- Synchronisation de l'état entre les onglets du navigateur.
 
-### Les écarts principaux
+#### Rangement autonome
 
-#### 1. Le rangement n'est pas enregistré
+- Classement fondé dans cet ordre sur : outil connu, signaux structurés, catégorie, texte.
+- Les classements de faible confiance restent dans `À ranger`.
+- Les cas ambigus ne sont pas forcés dans le premier besoin trouvé.
+- Confirmation du besoin choisi après classement automatique.
+- Correction possible vers un ou plusieurs besoins.
 
-L'état actuel conserve seulement une liste d'identifiants d'outils. Il ne conserve ni les besoins, ni les affectations entre un outil et un besoin.
+#### Parcours et interface
 
-#### 2. Le classement est imposé
+- Vue globale en tableaux : quatre colonnes puis adaptation responsive.
+- Tableaux de hauteur régulière avec piles de logos et compteur `+N`.
+- `À ranger` traité comme un tableau normal et placé en dernier.
+- Ajout contextuel depuis un besoin sans quitter Ma stack.
+- Sous-page d'un besoin organisée en sous-sections.
+- Fiche outil pleine page avec sidebar de contexte Ma stack.
+- Navigation précédent/suivant entre les outils d'un même besoin.
+- Coût calculé sur les outils uniques, sans double comptage multi-besoins.
+- Correction du rangement accessible depuis les tableaux, les cartes et la fiche.
+- Navigation globale et recherche identiques au reste du site.
 
-Le système range automatiquement chaque outil dans un seul des huit domaines à l'aide des données du catalogue et de règles internes. L'utilisateur ne peut pas corriger, déplacer ou confirmer ce classement.
+#### Preuves existantes
 
-#### 3. Un outil ne peut servir qu'un seul besoin
+- 16 tests unitaires du modèle et de la persistance.
+- 19 tests du moteur de classement automatique.
+- 201 contrôles de pertinence des sélecteurs de besoins.
+- Vérifications manuelles desktop et mobile, notamment à 390 px.
 
-Dans la réalité, Notion peut servir à la documentation et au pilotage de projet, tandis que ChatGPT peut servir à la rédaction et à la recherche. Le MVP doit pouvoir exprimer cette multi-affectation sans dupliquer l'outil dans la stack globale.
+### Ce qui n'est pas encore prouvé
 
-#### 4. Le contexte d'ajout n'est pas garanti
+- Cinq utilisateurs réels n'ont pas encore exécuté le scénario complet sans aide.
+- Le temps réel pour obtenir une stack utile de dix outils n'est pas encore mesuré.
+- Le benchmark de 100 outils protège le moteur, mais ne remplace pas l'observation des exceptions propres à chaque stack.
+- Le besoin d'un compte et d'une synchronisation n'est volontairement pas validé.
 
-Ajouter un outil depuis le lot `Organisation` ne garantit pas qu'il restera dans ce lot. Après l'ajout, la classification automatique peut l'envoyer ailleurs.
+## Décisions figées
 
-#### 5. Les besoins vides sont difficiles à démarrer
+### Interface
 
-La vue principale affiche surtout les domaines contenant déjà des outils. Le bouton générique d'ajout renvoie au catalogue au lieu de permettre de créer un besoin puis de composer son lot directement.
+- Vue globale : tableaux Pinterest-like, quatre colonnes sur grand écran.
+- Sous-page : sous-sections verticales et cartes compactes.
+- Fiche outil : pleine page avec sidebar droite Ma stack ; carte de contexte inline sur mobile.
+- `À ranger` : toujours en dernier et réservé aux cas incertains.
+- Organisation : boutons discrets, correction locale, pas de glisser-déposer au MVP.
 
-#### 6. Des fonctions secondaires parasitent le cœur du MVP
+### Rangement automatique
 
-Budget, suites, scoring, recommandations et nombreux filtres du sélecteur occupent une place importante alors que le geste essentiel `ranger dans un besoin` n'existe pas encore.
+- Le moteur choisit un besoin principal uniquement lorsque la confiance est suffisante.
+- Les cas ambigus restent dans `À ranger`.
+- L'affectation automatique à plusieurs besoins ne sera ajoutée que si le benchmark montre un gain net sans créer de bruit.
+- La correction manuelle reste prioritaire et définitive.
 
-#### 7. La base technique est trop concentrée
+### Données
 
-La page principale mélange modèle de données, classification, recommandations, budget et rendu dans un fichier de plus de 2 400 lignes. Aucun test fonctionnel ciblé ne protège le parcours `Ajouter → Ranger → Voir`.
+- Le MVP reste local-first.
+- Aucun compte ou backend de synchronisation avant validation de l'usage.
+- Le coût reste indicatif et secondaire.
 
-#### 8. Des problèmes UX restent à corriger
+## Roadmap réorientée
 
-- cartes déclarées comme boutons et contenant d'autres boutons ;
-- dialogue sans focus initial ni focus trap ;
-- scroll de la page derrière le dialogue ;
-- navigation mobile affichée au-dessus du dialogue ;
-- hiérarchie de titres irrégulière ;
-- petites cibles tactiles.
+### Étape 1 — Fiabiliser le cœur
 
-## Modèle minimal recommandé
+Priorité : **P0**
+Statut : **terminé le 13 juillet 2026**.
 
-### Besoin
+#### 1. Tests de bout en bout
 
-```ts
-type StackNeed = {
-  id: string;
-  name: string;
-  order: number;
-  source: "suggested" | "custom";
-};
-```
+Automatiser dans un vrai navigateur :
 
-### Entrée de stack
+1. stack vide → ajout global → classement automatique → vue d'ensemble ;
+2. ajout depuis un besoin → outil visible dans le bon lot ;
+3. outil incertain → `À ranger` → correction ;
+4. multi-affectation → outil affiché dans plusieurs besoins mais compté une fois ;
+5. rechargement → besoins, ordre et affectations conservés ;
+6. retrait d'un besoin → outil conservé dans Ma stack ;
+7. suppression de Ma stack → outil et affectations supprimés ;
+8. besoin personnalisé supprimé → outils orphelins renvoyés dans `À ranger`.
 
-```ts
-type StackToolEntry = {
-  toolSlug: string;
-  needIds: string[];
-  addedAt: string;
-};
-```
+#### 2. Sécuriser la persistance locale
 
-Un outil appartient une seule fois à Ma stack, mais peut être affiché dans plusieurs besoins grâce à `needIds`.
+- Intercepter les échecs d'écriture et de quota.
+- Conserver une dernière copie locale valide.
+- Détecter un état corrompu.
+- Proposer une récupération explicite au lieu d'afficher silencieusement une stack vide.
+- Tester ces états d'échec.
 
-Si `needIds` est vide, l'outil apparaît dans `À ranger`.
+#### 3. Benchmarker le rangement automatique
 
-### Suggestions de départ
+- Constituer un jeu fixe de 100 outils représentatifs des huit besoins.
+- Définir pour chaque outil : besoin principal acceptable, besoins secondaires éventuels ou `À ranger`.
+- Mesurer séparément : bons classements, mauvais classements affirmatifs et cas non classés.
+- Corriger uniquement les erreurs révélées par ce benchmark.
 
-Les huit domaines existants peuvent servir de besoins suggérés au démarrage. Ils ne doivent plus être des catégories imposées.
+Objectifs :
 
-La classification actuelle peut proposer un besoin lors de l'ajout, mais l'utilisateur doit pouvoir :
+- au moins 85 % de classements acceptables sans correction ;
+- moins de 5 % de mauvais classements affirmatifs ;
+- moins de 25 % des outils envoyés dans `À ranger`.
 
-- confirmer la proposition ;
-- choisir un autre besoin ;
-- créer un besoin ;
-- sélectionner plusieurs besoins ;
-- laisser temporairement l'outil dans `À ranger`.
+#### 4. Rendre le coût honnête
 
-## Parcours MVP cible
+- Distinguer `Gratuit`, `Prix inconnu` et `À partir de…`.
+- Renommer le total `Coût mensuel estimé`.
+- Indiquer discrètement le nombre de prix non renseignés.
+- Ajouter un test de déduplication du coût pour les outils multi-besoins.
 
-### Ajouter
+Critère de sortie : aucun parcours essentiel ne perd, ne duplique ou ne masque un outil après rechargement.
 
-1. L'utilisateur clique sur `Ajouter à Ma stack`.
-2. L'outil rejoint la stack.
-3. Une étape légère demande : `À quel besoin répond cet outil ?`
-4. Le système présélectionne éventuellement un besoin suggéré.
-5. L'utilisateur confirme, corrige ou choisit `Je rangerai plus tard`.
+### Étape 2 — Terminer l'ergonomie du parcours essentiel
 
-### Ranger
+Priorité : **P0 puis P1**
+Statut : **terminé le 13 juillet 2026**.
 
-Depuis Ma stack, l'utilisateur peut :
+#### 1. Unifier l'ajout
 
-- ouvrir `À ranger` ;
-- affecter un outil à un ou plusieurs besoins ;
-- déplacer un outil ;
-- retirer un outil d'un besoin sans le supprimer totalement ;
-- supprimer totalement l'outil de Ma stack ;
-- créer, renommer et réordonner ses besoins.
+- Utiliser le même sélecteur intégré depuis la vue globale et depuis un besoin.
+- Ne plus renvoyer au catalogue pour une action d'ajout Ma stack.
+- Afficher le rôle ou le besoin suggéré dans les résultats.
+- Après clic, conserver la ligne avec l'état `Ajouté` puis afficher son rangement.
 
-### Voir
+Objectif : `Ajouter → Rangé → Visible` en moins de trois secondes et sans changement de contexte.
 
-La vue d'ensemble affiche pour chaque besoin :
+#### 2. Faire expliquer les cartes
 
-- son nom ;
-- le nombre d'outils ;
-- les logos et noms des outils ;
-- une action simple pour ouvrir ou modifier le lot.
+Chaque carte d'un besoin doit répondre à :
 
-La page doit permettre de comprendre la stack sans ouvrir les fiches outils.
+> À quoi cet outil me sert-il ici ?
 
-## Roadmap
+Contenu cible :
 
-### Phase 0 — Valider le cadre MVP
+- nom ;
+- type discret ;
+- description courte ;
+- rôle contextuel `Sert à…` ;
+- prix uniquement dans la fiche outil.
 
-Durée indicative : une demi-journée à un jour.
+#### 3. Alléger la correction
 
-- Valider `besoin` comme concept principal de l'interface.
-- Valider que les besoins peuvent être proposés et personnalisés.
-- Valider qu'un outil peut répondre à plusieurs besoins.
-- Définir la différence entre `Retirer du besoin` et `Supprimer de Ma stack`.
-- Retirer de la priorité MVP les verdicts, le coût détaillé et l'optimisation.
+- Besoins cochés au centre de l'action.
+- `Enregistrer` comme action primaire.
+- `Mettre à ranger` comme action secondaire.
+- Suppression dans `…`, avec confirmation.
+- Retour de confirmation avec possibilité d'annuler.
 
-Critère de sortie : le parcours peut être résumé sans ambiguïté par `Je prends, je range, je vois`.
+#### 4. Finir clavier et mobile
 
-### Phase 1 — Construire le vrai modèle de rangement
+- Focus initial, boucle clavier, fond bloqué et focus restauré dans le sélecteur.
+- Cartes mobiles horizontales de 110 à 130 px.
+- Cibles tactiles d'au moins 44 px.
+- Vérification à 320, 390, 768, 1024 et 1440 px.
 
-Durée indicative : 2 à 3 jours.
+Critère de sortie : la page d'un besoin est comprise sans ouvrir une fiche, et le parcours complet fonctionne au clavier comme au tactile.
 
-- Versionner le format de stockage local.
-- Ajouter les besoins et les affectations `outil ↔ besoins`.
-- Autoriser plusieurs besoins par outil.
-- Créer automatiquement `À ranger` pour les affectations non confirmées.
-- Migrer sans perte la liste actuelle de slugs.
-- Utiliser la classification actuelle pour préaffecter les outils existants.
-- Ajouter des tests de migration, persistance et multi-affectation.
-- Extraire le modèle et la persistance hors de la page principale.
+### Étape 3 — Valider avec de vrais utilisateurs
 
-Critère de sortie : après rechargement, chaque outil reste dans les besoins choisis ou dans `À ranger`.
+Priorité : **prochaine étape, avant toute extension**
+Durée indicative : 1 à 2 jours de préparation, puis recette.
 
-### Phase 2 — Livrer les gestes essentiels
+Tester avec 5 à 10 personnes possédant des stacks de 5 à 20 outils.
 
-Durée indicative : 3 à 5 jours.
+Scénario :
 
-- Demander ou confirmer le besoin lors de l'ajout.
-- Créer un besoin depuis Ma stack.
-- Renommer et réordonner un besoin.
-- Affecter un outil à plusieurs besoins.
-- Déplacer un outil entre besoins.
-- Retirer un outil d'un besoin sans le supprimer globalement.
-- Supprimer clairement un outil de Ma stack.
-- Permettre de composer un besoin vide sans passer par un détour confus dans le catalogue.
-- Ajouter des retours visuels simples après chaque action.
+1. démarrer avec une stack vide ;
+2. ajouter dix outils ;
+3. expliquer la vue obtenue ;
+4. corriger un outil ;
+5. affecter un outil à deux besoins ;
+6. recharger et retrouver l'ensemble.
 
-Critère de sortie : l'utilisateur garde le contrôle total du rangement proposé par le système.
+Mesures :
 
-### Phase 3 — Simplifier la vue d'ensemble
+- temps jusqu'à la première stack utile ;
+- taux de classements conservés sans correction ;
+- nombre d'outils laissés dans `À ranger` ;
+- réussite sans aide de l'ajout, de la correction et du retour à la vue globale ;
+- compréhension de la règle de coût unique.
 
-Durée indicative : 2 à 3 jours.
+Critère de sortie : au moins 4 utilisateurs sur 5 terminent le parcours sans aide et peuvent expliquer leur stack besoin par besoin.
 
-- Faire de chaque carte la réponse à `Pour ce besoin, j'ai ces outils`.
-- Afficher noms et logos sans dépendre uniquement d'un compteur.
-- Donner une place visible à `À ranger` lorsqu'il contient des outils.
-- Ouvrir une fiche outil riche en pleine page dans Ma stack, avec une sidebar droite dédiée au contexte du besoin, sans modale ni sortie de Ma stack.
-- Faire remonter dans cette fiche le rôle dans la stack, les usages, les points forts, les limites et le coût indicatif.
-- Conserver l'accès à la fiche catalogue complète comme action tertiaire.
-- Reléguer ou masquer le budget tant qu'il détourne du job principal.
-- Réduire le nombre d'actions `Ajouter` concurrentes.
-- Conserver la classification automatique comme aide discrète.
+## Ordre exact des prochains chantiers
 
-Critère de sortie : la vue principale suffit pour expliquer oralement sa stack besoin par besoin.
+1. Faire la recette avec 5 utilisateurs possédant 5 à 20 outils.
+2. Mesurer temps de mise en place, corrections et compréhension des lots.
+3. Corriger uniquement les blocages observés par plusieurs utilisateurs.
+4. Rejouer les 49 tests, le benchmark, les 201 contrôles et les 9 parcours navigateur.
+5. Décider seulement ensuite si un compte et une synchronisation sont nécessaires.
 
-### Phase 4 — Fiabiliser le MVP
+## Définition de sortie du MVP
 
-Durée indicative : 2 à 3 jours.
+Le MVP est prêt lorsque :
 
-- Ajouter des tests fonctionnels sur :
-  - ajouter ;
-  - ranger ;
-  - multi-affecter ;
-  - déplacer ;
-  - recharger ;
-  - retirer d'un besoin ;
-  - supprimer de Ma stack.
-- Corriger les contrôles interactifs imbriqués.
-- Corriger le focus et le blocage du scroll du dialogue.
-- Placer la navigation mobile sous le dialogue.
-- Corriger titres et cibles tactiles.
-- Tester 320, 390, 768, 1024 et 1440 px.
-- Faire une recette courte avec 5 à 10 utilisateurs et des stacks de 5 à 20 outils.
+1. ⏳ une stack utile de dix outils est obtenue en moins de trois minutes ;
+2. ✅ au moins 85 % des classements du benchmark sont acceptables sans correction ;
+3. ✅ les parcours essentiels passent automatiquement après rechargement, sans perte ni duplication ;
+4. ✅ aucun blocage n'existe sur les largeurs cibles ni au clavier ;
+5. ⏳ au moins 4 utilisateurs sur 5 réussissent le scénario sans aide ;
+6. ⏳ la vue globale suffit à des utilisateurs réels pour dire : `Pour ce besoin, j'ai ce lot d'outils`.
 
-Critère de sortie : aucun outil ne disparaît, aucun rangement n'est imposé et le parcours fonctionne sur mobile comme au clavier.
+## Après le MVP
 
-## Critères de réussite du MVP
-
-- Depuis une stack vide, obtenir une vue utile en moins de trois minutes.
-- Tout outil apparaît dans au moins un besoin ou dans `À ranger`.
-- Aucun outil ne disparaît silencieusement.
-- Tout classement automatique peut être corrigé.
-- Un outil peut appartenir à plusieurs besoins sans être compté plusieurs fois dans la stack globale.
-- L'utilisateur peut dire, depuis la vue d'ensemble : `Pour ce besoin, j'ai ce lot d'outils`.
-- Les données restent intactes après rechargement.
-- Le parcours ne bloque ni sur mobile ni au clavier.
-
-## Priorisation stricte
-
-### Maintenant
-
-1. Besoins et affectations persistées.
-2. Zone `À ranger`.
-3. Correction et multi-affectation manuelles.
-4. Parcours `Ajouter → Ranger → Voir`.
-5. Tests du parcours essentiel.
-
-### Après le MVP
-
-- Budget détaillé et coûts réels.
-- Doublons et optimisation.
-- Verdicts de décision.
-- Comptes et synchronisation.
-- Partage et export.
+- Comptes et synchronisation multi-appareils.
+- Partage ou export de stack.
+- Coûts réels et gestion détaillée des abonnements.
+- Détection de doublons.
+- Suggestions de remplacement et optimisation.
 - Recommandations avancées.
-- Mesure produit approfondie.
+- Mesure produit automatisée.
 
-## Ce que nous arrêtons pendant le MVP
+## Ce que nous arrêtons maintenant
 
-- Refaire le hero sans améliorer le rangement.
-- Ajouter des règles de scoring pour compenser l'absence de contrôle utilisateur.
-- Imposer un domaine sans possibilité de correction.
-- Confondre ajout global et ajout à un besoin.
-- Ajouter des filtres avant de rendre le déplacement possible.
-- Faire du budget la promesse principale de cette première base.
-- Étendre le chantier aux pages publiques Stacks ou au diagnostic.
+- Refaire le hero, les tableaux, les cartes, la fiche outil ou la navigation globale.
+- Ajouter de nouveaux blocs de contenu à la fiche outil.
+- Ajouter du scoring, des filtres ou des règles automatiques sans benchmark.
+- Ajouter du glisser-déposer.
+- Étendre Ma stack aux pages publiques, au diagnostic ou aux stacks éditoriales.
+- Commencer les comptes, le partage, le budget détaillé ou l'optimisation.
+- Refactorer tout `CartPage` avant d'avoir sécurisé le parcours.
 
-## Prochain chantier recommandé
+## Dette technique autorisée
 
-Commencer par la Phase 1 : définir le nouveau format local, migrer les slugs actuels vers des entrées affectées aux besoins existants, créer `À ranger`, puis écrire les tests de persistance.
+`CartPage.tsx` et `index.css` restent trop volumineux. Cela ne justifie pas une réécriture avant validation du MVP.
 
-Une fois ce socle fiable, l'interface pourra enfin permettre à l'utilisateur de confirmer, corriger et composer ses lots.
+Extraire uniquement quand un chantier touche déjà la zone concernée :
+
+- configuration des besoins et sous-sections ;
+- calcul du coût ;
+- sélecteur d'outils ;
+- dialogue de correction ;
+- fiche outil.
+
+Chaque extraction doit conserver le comportement et ajouter ou maintenir les tests associés.

@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, MoreHorizontal, Pencil, Plus, Search, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
@@ -11,6 +11,7 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { scrollToTop } from "@/lib/scroll";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
+import { computeStackPricing, formatStackToolPrice } from "@/lib/stackPricing";
 
 type StackBoard = {
   id: string;
@@ -36,19 +37,6 @@ type StackSubdomain = {
 
 type StackSubdomainGroup = StackSubdomain & {
   tools: ToolSummary[];
-};
-
-type StackBundleLine = {
-  id: string;
-  parent: ToolSummary;
-  tools: ToolSummary[];
-  bundleTotal: number;
-};
-
-type StackPricingSummary = {
-  total: number;
-  bundleLines: StackBundleLine[];
-  lineByToolKey: Map<string, StackBundleLine>;
 };
 
 type PickerFilterId = "recommended" | "objective" | "plugins" | "ai" | "budget";
@@ -86,7 +74,7 @@ type ObjectivePickerConfig = {
 };
 
 const PICKER_RESULT_BATCH = 8;
-const PICKER_FILTER_IDS: PickerFilterId[] = ["recommended", "objective", "plugins", "ai", "budget"];
+const GLOBAL_STACK_PICKER_ID = "__all-tools__";
 
 type CreativeStackSubdomain = StackSubdomain & {
   toolIds?: string[];
@@ -1387,111 +1375,18 @@ function getToolNeedLabels(tool: ToolSummary, lang: string) {
     .map((need) => getNeedLabel(need, lang));
 }
 
+function getToolContextRole(tool: ToolSummary, group: StackSubdomainGroup, lang: string) {
+  const sectionLabel = lang === "en" ? group.labelEn : group.labelFr;
+  const labels = getToolNeedLabels(tool, lang);
+  return labels.find((label) => normalizeKey(label) !== normalizeKey(sectionLabel)) || sectionLabel;
+}
+
 function getToolPrice(tool: ToolSummary | undefined) {
   return Math.max(0, Number(tool?.defaultMonthlyPrice) || 0);
 }
 
 function getToolLookupKeys(tool: ToolSummary) {
   return Array.from(new Set([tool.id, tool.slug, getToolKey(tool)].map(normalizeKey).filter(Boolean)));
-}
-
-function buildToolLookup(tools: ToolSummary[]) {
-  const lookup = new Map<string, ToolSummary>();
-  tools.forEach((tool) => {
-    getToolLookupKeys(tool).forEach((key) => {
-      if (!lookup.has(key)) lookup.set(key, tool);
-    });
-  });
-  return lookup;
-}
-
-function isSameTool(a: ToolSummary, b: ToolSummary) {
-  const bKeys = new Set(getToolLookupKeys(b));
-  return getToolLookupKeys(a).some((key) => bKeys.has(key));
-}
-
-function getBundleParentTool(tool: ToolSummary, lookup: Map<string, ToolSummary>) {
-  const parentKey = normalizeKey(tool.bundle_parent || "");
-  if (!parentKey) return null;
-  const parent = lookup.get(parentKey);
-  if (!parent || isSameTool(tool, parent)) return null;
-  return parent;
-}
-
-function computeStackPricing(selectedTools: ToolSummary[], allTools: ToolSummary[]): StackPricingSummary {
-  const lookup = buildToolLookup(allTools);
-  const processed = new Set<string>();
-  const lineByToolKey = new Map<string, StackBundleLine>();
-  const groups = new Map<string, { parent: ToolSummary; children: ToolSummary[] }>();
-
-  selectedTools.forEach((tool) => {
-    const parent = getBundleParentTool(tool, lookup);
-    if (!parent) return;
-    const parentKey = normalizeKey(getToolKey(parent));
-    const group = groups.get(parentKey) || { parent, children: [] };
-    group.children.push(tool);
-    groups.set(parentKey, group);
-  });
-
-  const selectedParentFor = (parent: ToolSummary) => selectedTools.find((tool) => isSameTool(tool, parent));
-  const groupCandidates = Array.from(groups.values())
-    .map((group) => {
-      const parentSelected = selectedParentFor(group.parent);
-      const selectedGroupTools = Array.from(new Map(
-        [parentSelected, ...group.children]
-          .filter(Boolean)
-          .map((tool) => [getToolKey(tool as ToolSummary), tool as ToolSummary]),
-      ).values());
-      const unit = selectedGroupTools.reduce((sum, tool) => sum + getToolPrice(tool), 0);
-      const bundlePrice = getToolPrice(group.parent);
-      return { ...group, parentSelected, selectedGroupTools, unit, bundlePrice };
-    })
-    .filter((group) => group.parentSelected || (group.children.length >= 2 && group.unit > 0))
-    .filter((group) => group.bundlePrice > 0)
-    .sort((a, b) => {
-      const gainA = a.unit - a.bundlePrice;
-      const gainB = b.unit - b.bundlePrice;
-      return gainB - gainA || b.children.length - a.children.length;
-    });
-
-  const bundleLines: StackBundleLine[] = [];
-
-  groupCandidates.forEach((group) => {
-    const availableTools = group.selectedGroupTools.filter((tool) => !processed.has(normalizeKey(getToolKey(tool))));
-    if (availableTools.length === 0) return;
-    const line: StackBundleLine = {
-      id: getToolKey(group.parent),
-      parent: group.parent,
-      tools: availableTools,
-      bundleTotal: group.bundlePrice,
-    };
-
-    bundleLines.push(line);
-    availableTools.forEach((tool) => {
-      getToolLookupKeys(tool).forEach((key) => {
-        processed.add(key);
-        lineByToolKey.set(key, line);
-      });
-    });
-  });
-
-  const standaloneTotal = selectedTools.reduce((sum, tool) => {
-    if (processed.has(normalizeKey(getToolKey(tool)))) return sum;
-    return sum + getToolPrice(tool);
-  }, 0);
-  const bundleTotal = bundleLines.reduce((sum, line) => sum + line.bundleTotal, 0);
-
-  return {
-    total: standaloneTotal + bundleTotal,
-    bundleLines,
-    lineByToolKey,
-  };
-}
-
-function getBundleLineForTool(summary: StackPricingSummary, tool: ToolSummary) {
-  return getToolLookupKeys(tool)
-    .map((key) => summary.lineByToolKey.get(key))
-    .find(Boolean) || null;
 }
 
 function getObjectiveToolsCta(board: StackObjective, lang: string) {
@@ -1518,26 +1413,6 @@ function getObjectiveToolsCta(board: StackObjective, lang: string) {
 
   if (lang === "en") return labelsEn[board.id] || `Add ${board.labelEn.toLocaleLowerCase("en")} tools`;
   return labelsFr[board.id] || `Ajouter des outils ${board.labelFr.toLocaleLowerCase("fr")}`;
-}
-
-function getBoardToolsHref(board: StackBoard, prefix: string) {
-  const params = new URLSearchParams({ vertical: board.id });
-  return `${prefix}/tools?${params.toString()}`;
-}
-
-function getPickerFilterLabel(filterId: PickerFilterId, board: StackBoard, lang: string) {
-  const labels: Record<PickerFilterId, { fr: string; en: string }> = {
-    recommended: { fr: "Suggestions", en: "Suggested" },
-    objective: {
-      fr: `Tout ${board.labelFr}`,
-      en: `All ${board.labelEn}`,
-    },
-    plugins: { fr: "Plugins", en: "Plugins" },
-    ai: { fr: "IA", en: "AI" },
-    budget: { fr: "Budget léger", en: "Light budget" },
-  };
-
-  return lang === "en" ? labels[filterId].en : labels[filterId].fr;
 }
 
 function getPickerQueryTokens(query: string) {
@@ -1617,13 +1492,6 @@ function diversifyObjectivePickerCandidates(candidates: PickerCandidate[], filte
   candidates.forEach((candidate) => tryPick(candidate, true));
 
   return result;
-}
-
-function getSubdomainSectionClassName(group: StackSubdomainGroup) {
-  return [
-    "stack-subdomain-section",
-    group.tools.length === 1 ? "stack-subdomain-section--compact" : "stack-subdomain-section--wide",
-  ].join(" ");
 }
 
 function getToolPickerScore(tool: ToolSummary) {
@@ -1799,38 +1667,6 @@ function slugMatches(toolSlug = "", relationValue = "") {
     toolSlug.replace(/^[^-]+-/, "") === relationValue;
 }
 
-function getToolRelation(tool: ToolSummary, allTools: ToolSummary[], lang: string) {
-  const toolSlug = getToolKey(tool);
-  const hostApp = tool.host_app
-    ? allTools.find((candidate) => slugMatches(getToolKey(candidate), tool.host_app || ""))
-    : null;
-
-  if (hostApp) {
-    return lang === "en" ? `Plugin for ${hostApp.name}` : `Plugin pour ${hostApp.name}`;
-  }
-
-  const bundleParent = tool.bundle_parent
-    ? allTools.find((candidate) => getToolKey(candidate) === tool.bundle_parent || candidate.id === tool.bundle_parent)
-    : null;
-
-  if (bundleParent) {
-    return lang === "en" ? `Included in ${bundleParent.name}` : `Inclus dans ${bundleParent.name}`;
-  }
-
-  const childPlugins = allTools.filter((candidate) =>
-    candidate.tool_type === "plugin" &&
-    !!candidate.host_app &&
-    slugMatches(toolSlug, candidate.host_app)
-  );
-
-  if (childPlugins.length > 0) {
-    if (lang === "en") return `${childPlugins.length} ${childPlugins.length === 1 ? "plugin" : "plugins"} available`;
-    return `${childPlugins.length} plugin${childPlugins.length > 1 ? "s" : ""} associé${childPlugins.length > 1 ? "s" : ""}`;
-  }
-
-  return "";
-}
-
 const CartPage = () => {
   const { t, lang, prefix } = useLang();
   const location = useLocation();
@@ -1839,6 +1675,7 @@ const CartPage = () => {
   const { categories } = useCategories();
   const {
     state,
+    persistenceStatus,
     pinTool,
     unpinTool,
     assignToolNeeds,
@@ -1856,6 +1693,7 @@ const CartPage = () => {
   const [pickerQuery, setPickerQuery] = useState("");
   const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
   const [pickerResultLimit, setPickerResultLimit] = useState(PICKER_RESULT_BATCH);
+  const [pickerAddedToolSlugs, setPickerAddedToolSlugs] = useState<string[]>([]);
   const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
   const [needsManagerOpen, setNeedsManagerOpen] = useState(false);
@@ -1863,8 +1701,12 @@ const CartPage = () => {
   const needDialogRef = useRef<HTMLElement | null>(null);
   const needDialogCloseRef = useRef<HTMLButtonElement | null>(null);
   const needDialogPreviousFocusRef = useRef<HTMLElement | null>(null);
+  const pickerDialogRef = useRef<HTMLElement | null>(null);
+  const pickerSearchRef = useRef<HTMLInputElement | null>(null);
+  const pickerPreviousFocusRef = useRef<HTMLElement | null>(null);
+  const persistenceNoticeRef = useRef("");
 
-  const categoryById = useMemo(() => new Map(categories.map((category: any) => [category.id, category])), [categories]);
+  const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const pinnedToolSlugSet = useMemo(() => new Set(state.pinnedToolSlugs), [state.pinnedToolSlugs]);
   const stackEntryBySlug = useMemo(
@@ -1924,14 +1766,40 @@ const CartPage = () => {
     ? zoomedBoard.tools.find((tool) => getToolKey(tool) === quickToolSlug) || null
     : null;
   const pickerBoard = boards.find((board) => board.id === pickerBoardId) || null;
+  const pickerIsGlobal = pickerBoardId === GLOBAL_STACK_PICKER_ID;
   const pickerIsCustom = pickerBoard?.source === "custom";
+  const pickerAddedToolSlugSet = useMemo(() => new Set(pickerAddedToolSlugs), [pickerAddedToolSlugs]);
 
-  function getCategoryLabel(tool: ToolSummary) {
-    const category = categoryById.get(tool.categoryId) as any;
+  const getCategoryLabel = useCallback((tool: ToolSummary) => {
+    const category = categoryById.get(tool.categoryId);
     return category
       ? cleanCategoryLabel(lang === "en" ? category.nameEn || category.name : category.name)
       : cleanCategoryLabel(tool.categoryId);
-  }
+  }, [categoryById, lang]);
+
+  useEffect(() => {
+    if (persistenceStatus.state === "ok") return;
+    const signature = `${persistenceStatus.state}:${persistenceStatus.source}:${persistenceStatus.issue || ""}`;
+    if (persistenceNoticeRef.current === signature) return;
+    persistenceNoticeRef.current = signature;
+
+    if (persistenceStatus.state === "recovered") {
+      toast.success(t(
+        "La dernière copie valide de Ma stack a été restaurée.",
+        "The last valid copy of My stack was restored.",
+      ) as string);
+      return;
+    }
+
+    toast.error(t(
+      persistenceStatus.issue === "storage-write-failed"
+        ? "La modification reste visible, mais le navigateur n’a pas pu la sauvegarder. Libérez de l’espace avant de fermer cette page."
+        : "Ma stack n’a pas pu être relue correctement. Aucune donnée incertaine n’a été affichée.",
+      persistenceStatus.issue === "storage-write-failed"
+        ? "The change remains visible, but the browser could not save it. Free up storage before closing this page."
+        : "My stack could not be read safely. No uncertain data was displayed.",
+    ) as string, { duration: 9000 });
+  }, [persistenceStatus, t]);
 
   useEffect(() => {
     const assignments: Record<string, string[]> = {};
@@ -1976,7 +1844,7 @@ const CartPage = () => {
     });
 
     return Array.from(groups.values()).sort((a, b) => a.order - b.order || a.labelFr.localeCompare(b.labelFr));
-  }, [categoryById, lang, zoomedBoard]);
+  }, [getCategoryLabel, zoomedBoard]);
   const quickToolIndex = quickTool && zoomedBoard
     ? zoomedBoard.tools.findIndex((tool) => getToolKey(tool) === getToolKey(quickTool))
     : -1;
@@ -1991,23 +1859,26 @@ const CartPage = () => {
     if (!pickerBoard) return undefined;
     const boardTools = boards.find((board) => board.id === pickerBoard.id)?.tools || [];
     return buildObjectivePickerContext(pickerBoard.id, boardTools, getCategoryLabel);
-  }, [boards, categoryById, lang, pickerBoard?.id]);
+  }, [boards, getCategoryLabel, pickerBoard]);
 
   const pickerCandidates = useMemo(() => {
-    if (!pickerBoard) return [] as ToolSummary[];
+    if (!pickerBoard && !pickerIsGlobal) return [] as ToolSummary[];
 
     const candidates = tools
-      .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)))
+      .filter((tool) => !pinnedToolSlugSet.has(getToolKey(tool)) || pickerAddedToolSlugSet.has(getToolKey(tool)))
       .map((tool) => {
         const categoryLabel = getCategoryLabel(tool);
-        const boardScore = pickerIsCustom ? 1 : getToolPickerBoardScore(tool, pickerBoard, categoryLabel, pickerObjectiveContext);
+        const classification = pickerIsGlobal ? classifyToolForStack(tool) : null;
+        const boardScore = pickerIsGlobal
+          ? (classification?.confidence === "high" ? 5 : classification?.confidence === "medium" ? 3 : 1)
+          : pickerIsCustom ? 1 : getToolPickerBoardScore(tool, pickerBoard as StackObjective, categoryLabel, pickerObjectiveContext);
         const searchScore = getPickerSearchScore(tool, categoryLabel, pickerQueryTokens);
-        const subdomain = getObjectivePickerSubdomain(pickerBoard.id, tool, categoryLabel);
+        const subdomain = pickerBoard ? getObjectivePickerSubdomain(pickerBoard.id, tool, categoryLabel) : null;
         return {
           categoryLabel,
           boardScore,
           score: (boardScore * (hasPickerQuery ? 2 : 1)) + searchScore + getToolPickerScore(tool),
-          subdomainId: subdomain?.id,
+          subdomainId: subdomain?.id || classification?.needIds[0],
           tool,
         } satisfies PickerCandidate;
       })
@@ -2027,7 +1898,7 @@ const CartPage = () => {
     return diversifyObjectivePickerCandidates(candidates, pickerFilter, hasPickerQuery, pickerObjectiveConfig)
       .map((candidate) => candidate.tool)
       .slice(0, hasPickerQuery ? 48 : pickerFilter === "recommended" ? 24 : 40);
-  }, [categoryById, hasPickerQuery, lang, pickerBoard, pickerIsCustom, pickerObjectiveConfig, pickerObjectiveContext, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
+  }, [getCategoryLabel, hasPickerQuery, pickerAddedToolSlugSet, pickerBoard, pickerIsCustom, pickerIsGlobal, pickerObjectiveConfig, pickerObjectiveContext, pickerFilter, pickerQueryTokens, pinnedToolSlugSet, tools]);
 
   const visiblePickerCandidates = pickerCandidates.slice(0, pickerResultLimit);
   const hasMorePickerCandidates = pickerCandidates.length > visiblePickerCandidates.length;
@@ -2041,21 +1912,47 @@ const CartPage = () => {
       setPickerQuery("");
       setPickerFilter("recommended");
       setPickerResultLimit(PICKER_RESULT_BATCH);
+      setPickerAddedToolSlugs([]);
     }
   }, [pickerBoardId]);
 
   useEffect(() => {
-    if (!pickerBoard) return;
+    if (!pickerBoardId) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusFrame = window.requestAnimationFrame(() => pickerSearchRef.current?.focus());
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setPickerBoardId(null);
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setPickerBoardId(null);
+        return;
+      }
+      if (event.key !== "Tab" || !pickerDialogRef.current) return;
+      const focusable = Array.from(pickerDialogRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+      )).filter((element) => !element.hasAttribute("hidden"));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
 
     document.addEventListener("keydown", handleKeyDown);
     return () => {
+      window.cancelAnimationFrame(focusFrame);
       document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      pickerPreviousFocusRef.current?.focus();
     };
-  }, [pickerBoard]);
+  }, [pickerBoardId]);
 
   useEffect(() => {
     if (!needDialogToolSlug) return;
@@ -2097,21 +1994,57 @@ const CartPage = () => {
     };
   }, [needDialogToolSlug]);
 
-  function openToolPicker(boardId: string) {
+  function openToolPicker(boardId = GLOBAL_STACK_PICKER_ID) {
+    pickerPreviousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setPickerQuery("");
     setPickerFilter("recommended");
     setPickerResultLimit(PICKER_RESULT_BATCH);
+    setPickerAddedToolSlugs([]);
     setPickerBoardId(boardId);
   }
 
+  function closeToolPicker() {
+    setPickerBoardId(null);
+  }
+
   function addToolFromPicker(tool: ToolSummary) {
-    pinTool(getToolKey(tool), pickerBoard ? [pickerBoard.id] : []);
+    const toolSlug = getToolKey(tool);
+    if (pickerAddedToolSlugSet.has(toolSlug)) return;
+    pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
+    setPickerAddedToolSlugs((current) => [...current, toolSlug]);
     if (pickerBoard) {
       toast.success(t(
         `${tool.name} ajouté au besoin ${pickerBoard.labelFr} · compté une seule fois.`,
         `${tool.name} added to ${pickerBoard.labelEn} · counted only once.`,
       ) as string);
+    } else {
+      const classification = classifyToolForStack(tool);
+      const needLabels = state.needs
+        .filter((need) => classification.needIds.includes(need.id))
+        .map((need) => t(need.labelFr, need.labelEn));
+      toast.success(t(
+        classification.confidence === "low" || needLabels.length === 0
+          ? `${tool.name} ajouté · son besoin reste à confirmer dans À ranger.`
+          : `${tool.name} ajouté · rangement dans ${needLabels.join(" et ")} en cours.`,
+        classification.confidence === "low" || needLabels.length === 0
+          ? `${tool.name} added · confirm its need under To organize.`
+          : `${tool.name} added · organizing under ${needLabels.join(" and ")}.`,
+      ) as string);
     }
+  }
+
+  function getPickerNeedSuggestion(tool: ToolSummary) {
+    if (pickerBoard) {
+      return t(`Ajout dans ${pickerBoard.labelFr}`, `Add to ${pickerBoard.labelEn}`) as string;
+    }
+    const classification = classifyToolForStack(tool);
+    if (classification.confidence === "low" || classification.needIds.length === 0) {
+      return t("Besoin à confirmer · À ranger", "Need to confirm · To organize") as string;
+    }
+    const need = state.needs.find((candidate) => candidate.id === classification.needIds[0]);
+    return need
+      ? t(`Suggéré · ${need.labelFr}`, `Suggested · ${need.labelEn}`) as string
+      : t("Besoin à confirmer · À ranger", "Need to confirm · To organize") as string;
   }
 
   function openNeedDialog(toolSlug: string) {
@@ -2132,11 +2065,13 @@ const CartPage = () => {
 
   function saveNeedAssignments() {
     if (!needDialogToolSlug) return;
+    const toolSlug = needDialogToolSlug;
+    const previousNeedIds = stackEntryBySlug.get(toolSlug)?.needIds || [];
     const toolName = needDialogTool?.name || needDialogToolSlug;
     const selectedNeedLabels = state.needs
       .filter((need) => draftNeedIds.includes(need.id))
       .map((need) => t(need.labelFr, need.labelEn));
-    assignToolNeeds(needDialogToolSlug, draftNeedIds);
+    assignToolNeeds(toolSlug, draftNeedIds);
     closeNeedDialog();
     toast.success(selectedNeedLabels.length > 0
       ? t(
@@ -2146,26 +2081,55 @@ const CartPage = () => {
       : t(
         `${toolName} reste dans Ma stack, dans À ranger.`,
         `${toolName} remains in My stack, under To organize.`,
-      ) as string);
+      ) as string, {
+      action: {
+        label: t("Annuler", "Undo") as string,
+        onClick: () => assignToolNeeds(toolSlug, previousNeedIds),
+      },
+    });
   }
 
   function leaveToolUnassigned() {
     if (!needDialogToolSlug) return;
+    const toolSlug = needDialogToolSlug;
+    const previousNeedIds = stackEntryBySlug.get(toolSlug)?.needIds || [];
     const toolName = needDialogTool?.name || needDialogToolSlug;
-    assignToolNeeds(needDialogToolSlug, []);
+    assignToolNeeds(toolSlug, []);
     closeNeedDialog();
     toast.success(t(
       `${toolName} reste dans Ma stack, dans À ranger.`,
       `${toolName} remains in My stack, under To organize.`,
-    ) as string);
+    ) as string, {
+      action: {
+        label: t("Annuler", "Undo") as string,
+        onClick: () => assignToolNeeds(toolSlug, previousNeedIds),
+      },
+    });
   }
 
   function deleteToolFromStack() {
     if (!needDialogToolSlug) return;
+    const toolSlug = needDialogToolSlug;
+    const toolName = needDialogTool?.name || toolSlug;
+    const previousNeedIds = stackEntryBySlug.get(toolSlug)?.needIds || [];
+    const confirmed = window.confirm(t(
+      `Supprimer ${toolName} de Ma stack ?`,
+      `Remove ${toolName} from My stack?`,
+    ) as string);
+    if (!confirmed) return;
     const shouldCloseObjective = !!zoomedBoard && zoomedBoard.tools.some((tool) => getToolKey(tool) === needDialogToolSlug) && zoomedBoard.tools.length <= 1;
-    unpinTool(needDialogToolSlug);
+    unpinTool(toolSlug);
     closeNeedDialog();
     if (shouldCloseObjective) closeObjective();
+    toast.success(t(
+      `${toolName} supprimé de Ma stack.`,
+      `${toolName} removed from My stack.`,
+    ) as string, {
+      action: {
+        label: t("Annuler", "Undo") as string,
+        onClick: () => pinTool(toolSlug, previousNeedIds),
+      },
+    });
   }
 
   function openObjective(boardId: string) {
@@ -2237,10 +2201,18 @@ const CartPage = () => {
 
             <div
               className="stack-objective-hero-cost"
-              aria-label={t(`Coût total de Ma stack : ${formatMonthlyPrice(stackPricing.total, lang)}`, `Total My stack cost: ${formatMonthlyPrice(stackPricing.total, lang)}`) as string}
+              aria-label={t(`Coût mensuel estimé : ${formatMonthlyPrice(stackPricing.total, lang)}`, `Estimated monthly cost: ${formatMonthlyPrice(stackPricing.total, lang)}`) as string}
             >
-              <span>{t("Coût de Ma stack", "My stack cost")}</span>
+              <span>{t("Coût mensuel estimé", "Estimated monthly cost")}</span>
               <strong>{formatMonthlyPrice(stackPricing.total, lang)}</strong>
+              {stackPricing.unknownPriceCount > 0 && (
+                <small>
+                  {stackPricing.unknownPriceCount} {t(
+                    stackPricing.unknownPriceCount > 1 ? "prix non renseignés" : "prix non renseigné",
+                    stackPricing.unknownPriceCount > 1 ? "prices not provided" : "price not provided",
+                  )}
+                </small>
+              )}
             </div>
 
             <button type="button" className="stack-objective-hero-add" onClick={() => openToolPicker(zoomedBoard.id)}>
@@ -2273,9 +2245,9 @@ const CartPage = () => {
                   {t("À ranger", "To organize")} · {unassignedTools.length}
                 </button>
               )}
-              <Link to={`${prefix}/tools`} className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" aria-label={t("Ajouter un outil", "Add a tool") as string} title={t("Ajouter un outil", "Add a tool") as string}>
+              <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Ajouter un outil", "Add a tool") as string} title={t("Ajouter un outil", "Add a tool") as string}>
                 <Plus size={19} aria-hidden />
-              </Link>
+              </button>
               <details ref={workspaceMenuRef} className="stack-page-toolbar-menu">
                 <summary className="stack-page-toolbar-icon" aria-label={t("Plus d’options", "More options") as string}>
                   <MoreHorizontal size={20} aria-hidden />
@@ -2314,9 +2286,11 @@ const CartPage = () => {
                           prefix={prefix}
                           t={t}
                           lang={lang}
-                          categoryLabel={getCategoryLabel(tool)}
+                          typeLabel={getToolTypeLabel(tool, lang)}
+                          contextRole={getToolContextRole(tool, group, lang)}
                           variant="compact"
                           showPin={false}
+                          showPrice={false}
                           to={getToolInspectorHref(toolSlug)}
                           linkState={{ stackToolInspectorDepth: 1 }}
                           selected={quickToolSlug === toolSlug}
@@ -2347,7 +2321,7 @@ const CartPage = () => {
                 sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils du besoin", "Need tools")}
                 categoryLabel={getCategoryLabel(quickTool)}
                 typeLabel={getToolTypeLabel(quickTool, lang)}
-                priceLabel={quickTool.defaultMonthlyPrice > 0 ? formatMonthlyPrice(quickTool.defaultMonthlyPrice, lang) : t("Gratuit", "Free")}
+                priceLabel={formatStackToolPrice(quickTool, lang)}
                 stackCostLabel={formatMonthlyPrice(stackPricing.total, lang)}
                 prefix={prefix}
                 lang={lang}
@@ -2371,11 +2345,11 @@ const CartPage = () => {
               <h2>{t("Votre vue d'ensemble est vide", "Your overview is empty")}</h2>
               <p>
                 {t(
-                  "Ajoutez un premier outil depuis le catalogue. Il apparaîtra ici pour commencer à composer votre stack.",
-                  "Add a first tool from the catalog. It will appear here so you can start composing your stack.",
+                  "Ajoutez un premier outil. Tooltrim le rangera automatiquement ici, sans vous faire quitter Ma stack.",
+                  "Add a first tool. Tooltrim will organize it here automatically, without leaving My stack.",
                 )}
               </p>
-              <Link to={`${prefix}/tools`} className="cart-primary-link">{t("Ajouter un premier outil", "Add a first tool")}</Link>
+              <button type="button" className="cart-primary-link" onClick={() => openToolPicker()}>{t("Ajouter un premier outil", "Add a first tool")}</button>
             </section>
           )}
           {activeBoards.map((board) => {
@@ -2515,15 +2489,28 @@ const CartPage = () => {
                 <span>{t("Ranger l'outil", "Organize tool")}</span>
                 <h2 id="stack-need-dialog-title">{needDialogTool.name}</h2>
               </div>
-              <button
-                ref={needDialogCloseRef}
-                type="button"
-                className="stack-need-dialog-close"
-                onClick={closeNeedDialog}
-                aria-label={t("Fermer", "Close") as string}
-              >
-                <X size={18} aria-hidden />
-              </button>
+              <div className="stack-need-dialog-head-actions">
+                <details className="stack-need-dialog-menu">
+                  <summary aria-label={t("Plus d’options", "More options") as string} title={t("Plus d’options", "More options") as string}>
+                    <MoreHorizontal size={18} aria-hidden />
+                  </summary>
+                  <div>
+                    <button type="button" onClick={deleteToolFromStack}>
+                      <Trash2 size={14} aria-hidden />
+                      {t("Supprimer de Ma stack", "Remove from My stack")}
+                    </button>
+                  </div>
+                </details>
+                <button
+                  ref={needDialogCloseRef}
+                  type="button"
+                  className="stack-need-dialog-close"
+                  onClick={closeNeedDialog}
+                  aria-label={t("Fermer", "Close") as string}
+                >
+                  <X size={18} aria-hidden />
+                </button>
+              </div>
             </div>
 
             <p className="stack-need-dialog-intro">
@@ -2552,12 +2539,8 @@ const CartPage = () => {
             </fieldset>
 
             <div className="stack-need-dialog-foot">
-              <button type="button" className="stack-need-dialog-delete" onClick={deleteToolFromStack}>
-                <Trash2 size={14} aria-hidden />
-                {t("Supprimer de Ma stack", "Remove from My stack")}
-              </button>
               <button type="button" className="stack-need-dialog-later" onClick={leaveToolUnassigned}>
-                {t("Laisser à ranger", "Organize later")}
+                {t("Mettre à ranger", "Move to organize")}
               </button>
               <button
                 type="button"
@@ -2586,23 +2569,34 @@ const CartPage = () => {
         t={t}
       />
 
-      {pickerBoard && (
-        <div className="stack-tool-picker-backdrop" onClick={() => setPickerBoardId(null)}>
+      {pickerBoardId && (
+        <div className="stack-tool-picker-backdrop" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) closeToolPicker();
+        }}>
           <aside
+            ref={pickerDialogRef}
             className="stack-tool-picker"
             role="dialog"
             aria-modal="true"
             aria-labelledby="stack-tool-picker-title"
-            onClick={(event) => event.stopPropagation()}
           >
             <div className="stack-tool-picker-head">
               <div>
-                <h2 id="stack-tool-picker-title">{getObjectiveToolsCta({ ...pickerBoard, tools: [] }, lang)}</h2>
+                <h2 id="stack-tool-picker-title">
+                  {pickerBoard
+                    ? getObjectiveToolsCta({ ...pickerBoard, tools: [] }, lang)
+                    : t("Ajouter à Ma stack", "Add to My stack")}
+                </h2>
+                <p className="stack-tool-picker-intro">
+                  {pickerBoard
+                    ? t("L’outil sera directement rangé dans ce besoin.", "The tool will be organized directly under this need.")
+                    : t("Tooltrim propose un besoin, puis range l’outil automatiquement.", "Tooltrim suggests a need, then organizes the tool automatically.")}
+                </p>
               </div>
               <button
                 type="button"
                 className="stack-tool-picker-close"
-                onClick={() => setPickerBoardId(null)}
+                onClick={closeToolPicker}
                 aria-label={t("Fermer", "Close") as string}
               >
                 <X size={18} aria-hidden />
@@ -2613,6 +2607,7 @@ const CartPage = () => {
               <label className="stack-tool-picker-search">
                 <Search size={16} aria-hidden />
                 <input
+                  ref={pickerSearchRef}
                   type="search"
                   value={pickerQuery}
                   onChange={(event) => setPickerQuery(event.target.value)}
@@ -2636,21 +2631,24 @@ const CartPage = () => {
               <div className="stack-tool-picker-list">
                 {visiblePickerCandidates.map((tool) => {
                   const toolSlug = getToolKey(tool);
+                  const wasAdded = pickerAddedToolSlugSet.has(toolSlug);
                   return (
-                    <article key={toolSlug} className="stack-tool-picker-card">
+                    <article key={toolSlug} className={`stack-tool-picker-card${wasAdded ? " is-added" : ""}`}>
                       <ToolLogo tool={tool} size={34} className="stack-tool-picker-logo" />
                       <div className="stack-tool-picker-card-copy">
                         <h3>{tool.name}</h3>
+                        <p>{getPickerNeedSuggestion(tool)}</p>
                       </div>
                       <div className="stack-tool-picker-card-actions">
                         <button
                           type="button"
-                          className="stack-tool-picker-add"
+                          className={`stack-tool-picker-add${wasAdded ? " is-added" : ""}`}
                           onClick={() => addToolFromPicker(tool)}
+                          disabled={wasAdded}
                           aria-label={t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`) as string}
                         >
-                          <Plus size={15} aria-hidden />
-                          {t("Ajouter", "Add")}
+                          {wasAdded ? <span aria-hidden>✓</span> : <Plus size={15} aria-hidden />}
+                          {wasAdded ? t("Ajouté", "Added") : t("Ajouter", "Add")}
                         </button>
                       </div>
                     </article>
@@ -2676,8 +2674,12 @@ const CartPage = () => {
                       "Try another name, use case, or plugin. Search stays inside this panel.",
                     )
                     : t(
-                      "Aucun autre outil évident à proposer pour cet objectif avec les données actuelles.",
-                      "There are no other obvious tools to suggest for this objective with the current data.",
+                      pickerBoard
+                        ? "Aucun autre outil évident à proposer pour ce besoin avec les données actuelles."
+                        : "Tous les outils disponibles sont déjà dans Ma stack.",
+                      pickerBoard
+                        ? "There are no other obvious tools to suggest for this need with the current data."
+                        : "All available tools are already in My stack.",
                     )}
                 </p>
               </div>

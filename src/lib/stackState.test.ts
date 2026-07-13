@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   DEFAULT_STACK_NEEDS,
   LEGACY_STACK_STATE_STORAGE_KEYS,
+  STACK_STATE_BACKUP_STORAGE_KEY,
   STACK_STATE_STORAGE_KEY,
   STACK_STATE_VERSION,
   assignToolNeedsBatchInState,
@@ -11,12 +12,14 @@ import {
   createDefaultToolCartState,
   deleteCustomNeedInState,
   loadToolCartState,
+  loadToolCartStateWithStatus,
   normalizeToolCartState,
   moveNeedInState,
   pinToolInState,
   reorderToolsInState,
   renameCustomNeedInState,
   saveToolCartState,
+  saveToolCartStateWithStatus,
   unpinToolInState,
   type StackStorage,
 } from "@/lib/stackState";
@@ -81,6 +84,86 @@ describe("stackState", () => {
 
     expect(state.pinnedToolSlugs).toEqual(["chatgpt"]);
     expect(state.toolEntries[0].needIds).toEqual(["ia"]);
+  });
+
+  it("recovers the last valid local copy when the current v2 payload is corrupted", () => {
+    const storage = new MemoryStorage();
+    const first = pinToolInState(createDefaultToolCartState(), "notion", ["organisation"]);
+    const second = pinToolInState(first, "figma", ["design"]);
+    saveToolCartState(storage, first);
+    saveToolCartState(storage, second);
+    expect(JSON.parse(storage.getItem(STACK_STATE_BACKUP_STORAGE_KEY) as string).pinnedToolSlugs).toEqual(["notion"]);
+    storage.setItem(STACK_STATE_STORAGE_KEY, "{not-json");
+
+    const loaded = loadToolCartStateWithStatus(storage);
+
+    expect(loaded.state.pinnedToolSlugs).toEqual(["notion"]);
+    expect(loaded.status).toMatchObject({ state: "recovered", source: "backup", issue: "current-corrupt" });
+    expect(JSON.parse(storage.getItem(STACK_STATE_STORAGE_KEY) as string).pinnedToolSlugs).toEqual(["notion"]);
+  });
+
+  it("detects a structurally corrupted v2 payload instead of normalizing it into an empty stack", () => {
+    const storage = new MemoryStorage();
+    storage.setItem(STACK_STATE_STORAGE_KEY, JSON.stringify({ version: STACK_STATE_VERSION, needs: "invalid" }));
+
+    const loaded = loadToolCartStateWithStatus(storage);
+
+    expect(loaded.state.pinnedToolSlugs).toEqual([]);
+    expect(loaded.status).toMatchObject({ state: "degraded", source: "default", issue: "current-corrupt" });
+  });
+
+  it("keeps the updated state in memory when local persistence runs out of quota", () => {
+    const storage = new MemoryStorage();
+    const initial = pinToolInState(createDefaultToolCartState(), "notion", ["organisation"]);
+    saveToolCartState(storage, initial);
+    const updated = pinToolInState(initial, "figma", ["design"]);
+    const quotaStorage: StackStorage = {
+      getItem: (key) => storage.getItem(key),
+      removeItem: (key) => storage.removeItem(key),
+      setItem: () => {
+        throw new DOMException("Quota exceeded", "QuotaExceededError");
+      },
+    };
+
+    const saved = saveToolCartStateWithStatus(quotaStorage, updated);
+
+    expect(saved.state.pinnedToolSlugs).toEqual(["notion", "figma"]);
+    expect(saved.status).toMatchObject({ state: "degraded", source: "memory", issue: "storage-write-failed" });
+    expect(loadToolCartState(storage).pinnedToolSlugs).toEqual(["notion"]);
+  });
+
+  it("reports an unreadable storage without throwing", () => {
+    const unreadableStorage: StackStorage = {
+      getItem: () => {
+        throw new DOMException("Access denied", "SecurityError");
+      },
+      setItem: () => undefined,
+      removeItem: () => undefined,
+    };
+
+    const loaded = loadToolCartStateWithStatus(unreadableStorage);
+
+    expect(loaded.state).toEqual(createDefaultToolCartState());
+    expect(loaded.status).toMatchObject({ state: "degraded", source: "default", issue: "storage-read-failed" });
+  });
+
+  it("keeps legacy data when migration cannot be persisted", () => {
+    const storage = new MemoryStorage();
+    const legacyKey = LEGACY_STACK_STATE_STORAGE_KEYS[0];
+    storage.setItem(legacyKey, JSON.stringify({ pinnedToolSlugs: ["notion"] }));
+    const migrationBlockedStorage: StackStorage = {
+      getItem: (key) => storage.getItem(key),
+      removeItem: (key) => storage.removeItem(key),
+      setItem: () => {
+        throw new DOMException("Quota exceeded", "QuotaExceededError");
+      },
+    };
+
+    const loaded = loadToolCartStateWithStatus(migrationBlockedStorage);
+
+    expect(loaded.state.pinnedToolSlugs).toEqual(["notion"]);
+    expect(loaded.status).toMatchObject({ state: "degraded", source: "legacy", issue: "migration-write-failed" });
+    expect(storage.getItem(legacyKey)).not.toBeNull();
   });
 
   it("adds an unassigned tool to the stack", () => {

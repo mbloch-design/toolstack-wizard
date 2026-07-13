@@ -1,5 +1,6 @@
 export const STACK_STATE_VERSION = 2 as const;
 export const STACK_STATE_STORAGE_KEY = "tooltrim-ma-stack-mvp-v2";
+export const STACK_STATE_BACKUP_STORAGE_KEY = `${STACK_STATE_STORAGE_KEY}-backup`;
 
 export const LEGACY_STACK_STATE_STORAGE_KEYS = [
   "tooltrim-tool-cart-mvp-v1",
@@ -36,6 +37,32 @@ export interface ToolCartState {
 }
 
 export type StackStorage = Pick<Storage, "getItem" | "setItem" | "removeItem">;
+
+export type StackPersistenceSource = "current" | "backup" | "legacy" | "default" | "memory";
+export type StackPersistenceIssue =
+  | "current-corrupt"
+  | "backup-corrupt"
+  | "storage-read-failed"
+  | "storage-write-failed"
+  | "backup-write-failed"
+  | "migration-write-failed";
+
+export interface StackPersistenceStatus {
+  state: "ok" | "recovered" | "degraded";
+  source: StackPersistenceSource;
+  issue?: StackPersistenceIssue;
+  message?: string;
+}
+
+export interface StackStateLoadResult {
+  state: ToolCartState;
+  status: StackPersistenceStatus;
+}
+
+export interface StackStateSaveResult {
+  state: ToolCartState;
+  status: StackPersistenceStatus;
+}
 
 export const DEFAULT_STACK_NEEDS: StackNeed[] = [
   { id: "ia", labelFr: "Travailler avec l'IA", labelEn: "Work with AI", order: 10, source: "suggested" },
@@ -163,39 +190,189 @@ export function normalizeToolCartState(value: unknown): ToolCartState {
   };
 }
 
-function parseStoredState(raw: string | null): ToolCartState | null {
+function errorMessage(error: unknown) {
+  return error instanceof Error ? error.message : String(error);
+}
+
+function isStoredV2State(value: unknown): value is Record<string, unknown> {
+  const record = asRecord(value);
+  if (!record || record.version !== STACK_STATE_VERSION) return false;
+  if (!Array.isArray(record.needs) || !Array.isArray(record.toolEntries) || !Array.isArray(record.pinnedToolSlugs)) return false;
+  if (!record.pinnedToolSlugs.every((item) => typeof item === "string")) return false;
+  if (!record.needs.every((item) => {
+    const need = asRecord(item);
+    return !!need && typeof need.id === "string" && need.id.trim().length > 0;
+  })) return false;
+  return record.toolEntries.every((item) => {
+    const entry = asRecord(item);
+    return !!entry
+      && typeof entry.toolSlug === "string"
+      && entry.toolSlug.trim().length > 0
+      && Array.isArray(entry.needIds)
+      && entry.needIds.every((needId) => typeof needId === "string");
+  });
+}
+
+export function parseToolCartStateSnapshot(raw: string | null): ToolCartState | null {
   if (!raw) return null;
   try {
-    return normalizeToolCartState(JSON.parse(raw));
+    const parsed = JSON.parse(raw);
+    return isStoredV2State(parsed) ? normalizeToolCartState(parsed) : null;
   } catch {
     return null;
   }
 }
 
-export function loadToolCartState(storage: StackStorage): ToolCartState {
-  const current = parseStoredState(storage.getItem(STACK_STATE_STORAGE_KEY));
-  if (current) return current;
+function parseLegacyStoredState(raw: string | null): ToolCartState | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    const record = asRecord(parsed);
+    if (!record || (!Array.isArray(record.pinnedToolSlugs) && !Array.isArray(record.toolEntries))) return null;
+    return normalizeToolCartState(parsed);
+  } catch {
+    return null;
+  }
+}
 
-  for (const legacyKey of LEGACY_STACK_STATE_STORAGE_KEYS) {
-    const migrated = parseStoredState(storage.getItem(legacyKey));
-    if (!migrated) continue;
+function readStorage(storage: StackStorage, key: string): { raw: string | null; error?: string } {
+  try {
+    return { raw: storage.getItem(key) };
+  } catch (error) {
+    return { raw: null, error: errorMessage(error) };
+  }
+}
 
-    try {
-      storage.setItem(STACK_STATE_STORAGE_KEY, JSON.stringify(migrated));
-      LEGACY_STACK_STATE_STORAGE_KEYS.forEach((key) => storage.removeItem(key));
-    } catch {
-      // Keep the migrated state in memory and leave legacy data untouched.
-    }
-    return migrated;
+function writeStorage(storage: StackStorage, key: string, value: string): string | null {
+  try {
+    storage.setItem(key, value);
+    return null;
+  } catch (error) {
+    return errorMessage(error);
+  }
+}
+
+export function loadToolCartStateWithStatus(storage: StackStorage): StackStateLoadResult {
+  const currentRead = readStorage(storage, STACK_STATE_STORAGE_KEY);
+  const current = parseToolCartStateSnapshot(currentRead.raw);
+  if (current) {
+    return {
+      state: current,
+      status: { state: "ok", source: "current" },
+    };
   }
 
-  return createDefaultToolCartState();
+  const currentCorrupt = currentRead.raw !== null;
+  const backupRead = readStorage(storage, STACK_STATE_BACKUP_STORAGE_KEY);
+  const backup = parseToolCartStateSnapshot(backupRead.raw);
+  if (backup) {
+    const serialized = JSON.stringify(backup);
+    const restoreError = writeStorage(storage, STACK_STATE_STORAGE_KEY, serialized);
+    return {
+      state: backup,
+      status: {
+        state: restoreError ? "degraded" : "recovered",
+        source: "backup",
+        issue: restoreError ? "storage-write-failed" : currentCorrupt ? "current-corrupt" : undefined,
+        message: restoreError || undefined,
+      },
+    };
+  }
+
+  const backupCorrupt = backupRead.raw !== null;
+
+  for (const legacyKey of LEGACY_STACK_STATE_STORAGE_KEYS) {
+    const legacyRead = readStorage(storage, legacyKey);
+    const migrated = parseLegacyStoredState(legacyRead.raw);
+    if (!migrated) continue;
+
+    const saved = saveToolCartStateWithStatus(storage, migrated);
+    if (saved.status.issue !== "storage-write-failed") {
+      LEGACY_STACK_STATE_STORAGE_KEYS.forEach((key) => {
+        try {
+          storage.removeItem(key);
+        } catch {
+          // The migrated v2 state is already durable; stale legacy data is harmless.
+        }
+      });
+    }
+    return {
+      state: saved.state,
+      status: saved.status.issue === "storage-write-failed"
+        ? {
+          state: "degraded",
+          source: "legacy",
+          issue: "migration-write-failed",
+          message: saved.status.message,
+        }
+        : {
+          state: currentCorrupt || backupCorrupt ? "recovered" : "ok",
+          source: "legacy",
+          issue: currentCorrupt ? "current-corrupt" : backupCorrupt ? "backup-corrupt" : undefined,
+        },
+    };
+  }
+
+  const readError = currentRead.error || backupRead.error;
+  return {
+    state: createDefaultToolCartState(),
+    status: {
+      state: readError || currentCorrupt || backupCorrupt ? "degraded" : "ok",
+      source: "default",
+      issue: readError
+        ? "storage-read-failed"
+        : currentCorrupt
+          ? "current-corrupt"
+          : backupCorrupt
+            ? "backup-corrupt"
+            : undefined,
+      message: readError,
+    },
+  };
+}
+
+export function loadToolCartState(storage: StackStorage): ToolCartState {
+  return loadToolCartStateWithStatus(storage).state;
+}
+
+export function saveToolCartStateWithStatus(storage: StackStorage, state: ToolCartState): StackStateSaveResult {
+  const normalized = normalizeToolCartState(state);
+  const serialized = JSON.stringify(normalized);
+  const currentRead = readStorage(storage, STACK_STATE_STORAGE_KEY);
+  const previous = parseToolCartStateSnapshot(currentRead.raw);
+  let backupError: string | null = null;
+
+  if (previous) {
+    backupError = writeStorage(storage, STACK_STATE_BACKUP_STORAGE_KEY, JSON.stringify(previous));
+  }
+
+  const writeError = writeStorage(storage, STACK_STATE_STORAGE_KEY, serialized);
+  if (writeError) {
+    return {
+      state: normalized,
+      status: {
+        state: "degraded",
+        source: "memory",
+        issue: "storage-write-failed",
+        message: writeError,
+      },
+    };
+  }
+
+  if (!previous) {
+    backupError = writeStorage(storage, STACK_STATE_BACKUP_STORAGE_KEY, serialized);
+  }
+
+  return {
+    state: normalized,
+    status: backupError
+      ? { state: "degraded", source: "current", issue: "backup-write-failed", message: backupError }
+      : { state: "ok", source: "current" },
+  };
 }
 
 export function saveToolCartState(storage: StackStorage, state: ToolCartState): ToolCartState {
-  const normalized = normalizeToolCartState(state);
-  storage.setItem(STACK_STATE_STORAGE_KEY, JSON.stringify(normalized));
-  return normalized;
+  return saveToolCartStateWithStatus(storage, state).state;
 }
 
 export function pinToolInState(
