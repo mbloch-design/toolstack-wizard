@@ -1834,7 +1834,10 @@ function criticalCssPlugin(): Plugin {
 export default defineConfig(({ mode, isSsrBuild }) => ({
   server: {
     host: "::",
-    port: Number(process.env.PORT) || 8080,
+    port: process.env.PORT ? Number(process.env.PORT) : undefined,
+    watch: {
+      ignored: ["**/.build-trash/**", "**/dist-ssr 2/**", "**/.go*-staging/**", "**/.go*-work/**"],
+    },
     hmr: {
       overlay: false,
     },
