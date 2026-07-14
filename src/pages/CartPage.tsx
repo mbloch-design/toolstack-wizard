@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, MoreHorizontal, Plus, Search, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
@@ -20,6 +21,19 @@ type StackBoard = {
   pattern: RegExp;
   source?: "suggested" | "custom";
 };
+
+type StackViewTransitionDocument = Document & {
+  startViewTransition?: (update: () => void) => unknown;
+};
+
+function runStackViewTransition(update: () => void) {
+  const transitionDocument = document as StackViewTransitionDocument;
+  if (!transitionDocument.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    update();
+    return;
+  }
+  transitionDocument.startViewTransition(() => flushSync(update));
+}
 
 type StackObjective = StackBoard & {
   tools: ToolSummary[];
@@ -1686,10 +1700,13 @@ const CartPage = () => {
     moveNeed,
   } = useStackPins();
   const [searchParams, setSearchParams] = useSearchParams();
+  const pickerBoardId = searchParams.get("ajouter");
   const inspectorNavigationDepth = typeof location.state?.stackToolInspectorDepth === "number"
     ? Math.max(0, location.state.stackToolInspectorDepth)
     : 0;
-  const [pickerBoardId, setPickerBoardId] = useState<string | null>(null);
+  const pickerNavigationDepth = typeof location.state?.stackToolPickerDepth === "number"
+    ? Math.max(0, location.state.stackToolPickerDepth)
+    : 0;
   const [pickerQuery, setPickerQuery] = useState("");
   const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
   const [pickerResultLimit, setPickerResultLimit] = useState(PICKER_RESULT_BATCH);
@@ -1769,6 +1786,15 @@ const CartPage = () => {
   const pickerBoard = boards.find((board) => board.id === pickerBoardId) || null;
   const pickerIsGlobal = pickerBoardId === GLOBAL_STACK_PICKER_ID;
   const pickerIsCustom = pickerBoard?.source === "custom";
+  const pickerDestinationLabel = pickerBoard
+    ? t(pickerBoard.labelFr, pickerBoard.labelEn) as string
+    : t("Ma stack", "My stack") as string;
+  const pickerPageTitle = pickerBoard
+    ? t(`Ajouter des outils à ${pickerBoard.labelFr}`, `Add tools to ${pickerBoard.labelEn}`) as string
+    : t("Ajouter des outils à Ma stack", "Add tools to My stack") as string;
+  const pickerReturnLabel = pickerBoard
+    ? t(`Terminer et revenir à ${pickerBoard.labelFr}`, `Finish and return to ${pickerBoard.labelEn}`) as string
+    : t("Terminer et revenir à Ma stack", "Finish and return to My stack") as string;
   const pickerAddedToolSlugSet = useMemo(() => new Set(pickerAddedToolSlugs), [pickerAddedToolSlugs]);
   const pickerAddedStats = useMemo(() => {
     let organized = 0;
@@ -1937,30 +1963,20 @@ const CartPage = () => {
 
   useEffect(() => {
     if (!pickerBoardId) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const focusFrame = window.requestAnimationFrame(() => pickerSearchRef.current?.focus());
+    const focusFrame = window.requestAnimationFrame(() => {
+      if (window.matchMedia("(min-width: 601px)").matches) pickerSearchRef.current?.focus();
+    });
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         event.preventDefault();
-        setPickerBoardId(null);
-        return;
-      }
-      if (event.key !== "Tab" || !pickerDialogRef.current) return;
-      const focusable = Array.from(pickerDialogRef.current.querySelectorAll<HTMLElement>(
-        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
-      )).filter((element) => !element.hasAttribute("hidden"));
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
+        if (pickerNavigationDepth > 0) {
+          navigate(-pickerNavigationDepth);
+          return;
+        }
+        const nextParams = new URLSearchParams(searchParams);
+        nextParams.delete("ajouter");
+        setSearchParams(nextParams, { replace: true });
       }
     }
 
@@ -1968,10 +1984,9 @@ const CartPage = () => {
     return () => {
       window.cancelAnimationFrame(focusFrame);
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
       pickerPreviousFocusRef.current?.focus();
     };
-  }, [pickerBoardId]);
+  }, [navigate, pickerBoardId, pickerNavigationDepth, searchParams, setSearchParams]);
 
   useEffect(() => {
     if (!needDialogToolSlug) return;
@@ -2015,29 +2030,48 @@ const CartPage = () => {
 
   function openToolPicker(boardId = GLOBAL_STACK_PICKER_ID) {
     pickerPreviousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    setPickerQuery("");
-    setPickerFilter("recommended");
-    setPickerResultLimit(PICKER_RESULT_BATCH);
-    setPickerAddedToolSlugs([]);
-    setPickerBoardId(boardId);
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("outil");
+    nextParams.set("ajouter", boardId);
+    runStackViewTransition(() => {
+      setPickerQuery("");
+      setPickerFilter("recommended");
+      setPickerResultLimit(PICKER_RESULT_BATCH);
+      setPickerAddedToolSlugs([]);
+      setStackMotion("deeper");
+      setSearchParams(nextParams, {
+        state: { ...location.state, stackToolPickerDepth: pickerNavigationDepth + 1 },
+      });
+    });
   }
 
   function closeToolPicker() {
-    setPickerBoardId(null);
+    runStackViewTransition(() => {
+      setStackMotion("shallower");
+      if (pickerNavigationDepth > 0) {
+        navigate(-pickerNavigationDepth);
+        return;
+      }
+      const nextParams = new URLSearchParams(searchParams);
+      nextParams.delete("ajouter");
+      setSearchParams(nextParams, { replace: true });
+    });
   }
 
   function addToolFromPicker(tool: ToolSummary) {
     const toolSlug = getToolKey(tool);
-    if (pickerAddedToolSlugSet.has(toolSlug)) return;
+    if (pickerAddedToolSlugSet.has(toolSlug)) {
+      unpinTool(toolSlug);
+      setPickerAddedToolSlugs((current) => current.filter((slug) => slug !== toolSlug));
+      return;
+    }
     pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
     setPickerAddedToolSlugs((current) => [...current, toolSlug]);
-    setPickerQuery("");
-    window.requestAnimationFrame(() => pickerSearchRef.current?.focus());
   }
 
   function getPickerNeedSuggestion(tool: ToolSummary) {
     if (pickerBoard) {
-      return t(`Ajout dans ${pickerBoard.labelFr}`, `Add to ${pickerBoard.labelEn}`) as string;
+      return t(`Sera rangé dans ${pickerBoard.labelFr}`, `Will be organized under ${pickerBoard.labelEn}`) as string;
     }
     const classification = classifyToolForStack(tool);
     if (classification.confidence === "low" || classification.needIds.length === 0) {
@@ -2066,10 +2100,15 @@ const CartPage = () => {
 
   function getPickerSessionSummary() {
     if (pickerAddedStats.total === 0) {
-      return t(
-        "Ajoutez plusieurs outils sans fermer cette fenêtre.",
-        "Add several tools without closing this window.",
-      ) as string;
+      return pickerBoard
+        ? t(
+          `Sélectionnez les outils à ranger dans ${pickerBoard.labelFr}.`,
+          `Select the tools to organize under ${pickerBoard.labelEn}.`,
+        ) as string
+        : t(
+          "Sélectionnez plusieurs outils : Tooltrim les rangera automatiquement.",
+          "Select several tools: Tooltrim will organize them automatically.",
+        ) as string;
     }
     if (pickerAddedStats.pending > 0) {
       return t(
@@ -2229,7 +2268,7 @@ const CartPage = () => {
   }
 
   return (
-    <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}${stackMotion !== "idle" ? ` stack-boards-page--motion-${stackMotion}` : ""}`}>
+    <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}${pickerBoardId ? " stack-boards-page--adding" : ""}${stackMotion !== "idle" ? ` stack-boards-page--motion-${stackMotion}` : ""}`}>
       {zoomedBoard ? (
         quickTool ? null : <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
           <div className="stack-objective-hero-inner">
@@ -2620,96 +2659,81 @@ const CartPage = () => {
       />
 
       {pickerBoardId && (
-        <div className="stack-tool-picker-backdrop" onMouseDown={(event) => {
-          if (event.target === event.currentTarget) closeToolPicker();
-        }}>
-          <aside
-            ref={pickerDialogRef}
-            className="stack-tool-picker"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="stack-tool-picker-title"
-          >
-            <div className="stack-tool-picker-head">
-              <div>
-                <h2 id="stack-tool-picker-title">
-                  {pickerBoard
-                    ? getObjectiveToolsCta({ ...pickerBoard, tools: [] }, lang)
-                    : t("Ajouter à Ma stack", "Add to My stack")}
-                </h2>
-                <p className="stack-tool-picker-intro">
-                  {pickerBoard
-                    ? t("L’outil sera directement rangé dans ce besoin.", "The tool will be organized directly under this need.")
-                    : t("Tooltrim propose un besoin, puis range l’outil automatiquement.", "Tooltrim suggests a need, then organizes the tool automatically.")}
-                </p>
-              </div>
-              <button
-                type="button"
-                className="stack-tool-picker-close"
-                onClick={closeToolPicker}
-                aria-label={t("Fermer", "Close") as string}
-              >
-                <X size={18} aria-hidden />
-              </button>
+        <main ref={pickerDialogRef} className="stack-tool-add-page" aria-labelledby="stack-tool-picker-title">
+          <header className="stack-tool-add-hero">
+            <button type="button" className="stack-tool-add-back" onClick={closeToolPicker} aria-label={t(`Retour à ${pickerDestinationLabel}`, `Back to ${pickerDestinationLabel}`) as string}>
+              <ArrowLeft size={20} aria-hidden />
+            </button>
+            <div className="stack-tool-add-heading">
+              <h1 id="stack-tool-picker-title">{pickerPageTitle}</h1>
+              <p>
+                <span>{pickerBoard ? t("Stack de destination", "Destination stack") : t("Rangement automatique", "Automatic organization")}</span>
+                <strong>{pickerBoard
+                  ? t(`Chaque outil sélectionné sera rangé dans ${pickerBoard.labelFr}.`, `Each selected tool will be organized under ${pickerBoard.labelEn}.`)
+                  : t("Tooltrim proposera automatiquement le besoin le plus pertinent.", "Tooltrim will automatically suggest the most relevant need.")}</strong>
+              </p>
             </div>
+            <button type="button" className="stack-tool-add-done" onClick={closeToolPicker}>
+              {pickerReturnLabel}
+              {pickerAddedStats.total > 0 && <span>{pickerAddedStats.total}</span>}
+            </button>
+          </header>
 
-            <div className="stack-tool-picker-controls">
-              <label className="stack-tool-picker-search">
-                <Search size={16} aria-hidden />
-                <input
-                  ref={pickerSearchRef}
-                  type="search"
-                  value={pickerQuery}
-                  onChange={(event) => setPickerQuery(event.target.value)}
-                  placeholder={t("Chercher un outil précis", "Search a specific tool") as string}
-                  aria-label={t("Rechercher un outil dans le catalogue sans quitter ma stack", "Search the catalog without leaving my stack") as string}
-                />
-                {pickerQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setPickerQuery("")}
-                    aria-label={t("Effacer la recherche", "Clear search") as string}
-                  >
-                    <X size={14} aria-hidden />
-                  </button>
-                )}
-              </label>
+          <div className="stack-tool-add-search-row">
+            <label className="stack-tool-picker-search stack-tool-add-search">
+              <Search size={18} aria-hidden />
+              <input
+                ref={pickerSearchRef}
+                type="search"
+                value={pickerQuery}
+                onChange={(event) => setPickerQuery(event.target.value)}
+                placeholder={t("Rechercher un outil", "Search for a tool") as string}
+                aria-label={t("Rechercher un outil dans le catalogue", "Search the catalog") as string}
+              />
+              {pickerQuery && (
+                <button type="button" onClick={() => setPickerQuery("")} aria-label={t("Effacer la recherche", "Clear search") as string}>
+                  <X size={14} aria-hidden />
+                </button>
+              )}
+            </label>
+          </div>
 
+          <section className="stack-tool-add-results" aria-label={t("Outils disponibles", "Available tools") as string}>
+            <div className="stack-tool-add-results-head">
+              <h2>{hasPickerQuery ? t("Résultats", "Results") : t("Suggestions pour vous", "Suggestions for you")}</h2>
+              <span>{pickerCandidates.length} {t("outils", "tools")}</span>
             </div>
 
             {pickerCandidates.length > 0 ? (
-              <div className="stack-tool-picker-list">
+              <div className="stack-tool-add-grid">
                 {visiblePickerCandidates.map((tool) => {
                   const toolSlug = getToolKey(tool);
                   const wasAdded = pickerAddedToolSlugSet.has(toolSlug);
                   return (
-                    <article key={toolSlug} className={`stack-tool-picker-card${wasAdded ? " is-added" : ""}`}>
-                      <ToolLogo tool={tool} size={34} className="stack-tool-picker-logo" />
-                      <div className="stack-tool-picker-card-copy">
-                        <h3>{tool.name}</h3>
-                        <p>{wasAdded ? getPickerAddedSummary(tool) : getPickerNeedSuggestion(tool)}</p>
-                      </div>
-                      <div className="stack-tool-picker-card-actions">
-                        <button
-                          type="button"
-                          className={`stack-tool-picker-add${wasAdded ? " is-added" : ""}`}
-                          onClick={() => addToolFromPicker(tool)}
-                          disabled={wasAdded}
-                          aria-label={t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`) as string}
-                        >
-                          {wasAdded ? <span aria-hidden>✓</span> : <Plus size={15} aria-hidden />}
-                          {wasAdded ? t("Ajouté", "Added") : t("Ajouter", "Add")}
-                        </button>
-                      </div>
-                    </article>
+                    <button
+                      key={toolSlug}
+                      type="button"
+                      className={`stack-tool-add-card${wasAdded ? " is-added" : ""}`}
+                      onClick={() => addToolFromPicker(tool)}
+                      aria-pressed={wasAdded}
+                      aria-label={wasAdded
+                        ? t(`Retirer ${tool.name} de cette sélection`, `Remove ${tool.name} from this selection`) as string
+                        : t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`) as string}
+                    >
+                      <span className="stack-tool-add-card-top">
+                        <ToolLogo tool={tool} size={44} className="stack-tool-picker-logo" />
+                        <span className={`stack-tool-add-state${wasAdded ? " is-added" : ""}`} aria-hidden>{wasAdded ? "✓" : <Plus size={17} />}</span>
+                      </span>
+                      <span className="stack-tool-add-card-copy">
+                        <strong>{tool.name}</strong>
+                        <small>{getCategoryLabel(tool)}</small>
+                        <span>{wasAdded ? getPickerAddedSummary(tool) : getPickerNeedSuggestion(tool)}</span>
+                      </span>
+                    </button>
                   );
                 })}
                 {hasMorePickerCandidates && (
-                  <button
-                    type="button"
-                    className="stack-tool-picker-more"
-                    onClick={() => setPickerResultLimit((limit) => limit + PICKER_RESULT_BATCH)}
-                  >
+                  <button type="button" className="stack-tool-picker-more" onClick={() => setPickerResultLimit((limit) => limit + PICKER_RESULT_BATCH)}>
                     {t("Afficher plus d'outils", "Show more tools")}
                   </button>
                 )}
@@ -2717,38 +2741,22 @@ const CartPage = () => {
             ) : (
               <div className="stack-tool-picker-empty">
                 <h3>{hasPickerQuery ? t("Aucun outil trouvé", "No tool found") : t("Tout est déjà dans votre stack", "Everything is already in your stack")}</h3>
-                <p>
-                  {hasPickerQuery
-                    ? t(
-                      "Essayez un autre nom, un usage ou un plugin. La recherche reste dans cette fenêtre.",
-                      "Try another name, use case, or plugin. Search stays inside this panel.",
-                    )
-                    : t(
-                      pickerBoard
-                        ? "Aucun autre outil évident à proposer pour ce besoin avec les données actuelles."
-                        : "Tous les outils disponibles sont déjà dans Ma stack.",
-                      pickerBoard
-                        ? "There are no other obvious tools to suggest for this need with the current data."
-                        : "All available tools are already in My stack.",
-                    )}
-                </p>
+                <p>{hasPickerQuery
+                  ? t("Essayez un autre nom ou un usage.", "Try another name or use case.")
+                  : t("Tous les outils disponibles sont déjà dans Ma stack.", "All available tools are already in My stack.")}</p>
+                {hasPickerQuery && <button type="button" onClick={() => setPickerQuery("")}>{t("Effacer la recherche", "Clear search")}</button>}
               </div>
             )}
+          </section>
 
-            <div className="stack-tool-picker-foot">
-              <span aria-live="polite">{getPickerSessionSummary()}</span>
-              <button type="button" onClick={closeToolPicker}>
-                {pickerBoard
-                  ? t("Voir ce besoin", "View this need")
-                  : t(
-                    pickerAddedStats.total > 0 ? `Voir ma stack (${pickerAddedStats.total})` : "Voir ma stack",
-                    pickerAddedStats.total > 0 ? `View my stack (${pickerAddedStats.total})` : "View my stack",
-                  )}
-              </button>
-            </div>
-
-          </aside>
-        </div>
+          <footer className="stack-tool-add-footer">
+            <span aria-live="polite">{getPickerSessionSummary()}</span>
+            <button type="button" onClick={closeToolPicker}>
+              {pickerReturnLabel}
+              {pickerAddedStats.total > 0 && <span>{pickerAddedStats.total}</span>}
+            </button>
+          </footer>
+        </main>
       )}
     </div>
   );

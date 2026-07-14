@@ -125,17 +125,18 @@ try {
     const scenario = await createScenario(browser);
     const { page } = scenario;
     await page.getByRole("button", { name: "Ajouter un premier outil", exact: true }).click();
-    const picker = page.getByRole("dialog", { name: "Ajouter à Ma stack" });
+    const picker = page.locator(".stack-tool-add-page");
+    await picker.getByRole("heading", { name: "Ajouter des outils à Ma stack", exact: true }).waitFor();
     const search = picker.getByRole("searchbox");
     assert(await search.evaluate((element) => element === document.activeElement), "La recherche doit recevoir le focus initial");
     await search.fill("ChatGPT");
     const add = picker.getByRole("button", { name: "Ajouter ChatGPT à ma stack", exact: true });
     await add.click();
-    await until(() => add.isDisabled(), "La ligne ChatGPT doit rester visible avec l’état Ajouté");
-    assert(await search.inputValue() === "", "La recherche doit être vidée après l’ajout");
-    assert(await search.evaluate((element) => element === document.activeElement), "La recherche doit conserver le focus après l’ajout");
+    const remove = picker.getByRole("button", { name: "Retirer ChatGPT de cette sélection", exact: true });
+    await until(() => remove.getAttribute("aria-pressed").then((value) => value === "true"), "La carte ChatGPT doit rester visible avec l’état Ajouté");
+    assert(await search.inputValue() === "ChatGPT", "La recherche doit rester stable après l’ajout");
     await picker.getByText("1 outil ajouté · 1 rangé", { exact: true }).waitFor();
-    await picker.getByRole("button", { name: "Voir ma stack (1)", exact: true }).click();
+    await picker.locator(".stack-tool-add-footer").getByRole("button", { name: /Terminer et revenir à Ma stack/ }).click();
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).waitFor();
     await until(async () => (await persisted(page)).toolEntries[0]?.assignmentMode === "auto", "ChatGPT doit être rangé automatiquement");
     const saved = await persisted(page);
@@ -148,10 +149,11 @@ try {
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
     await page.getByRole("button", { name: "Ajouter", exact: true }).click();
-    const picker = page.getByRole("dialog", { name: "Ajouter des outils IA" });
+    const picker = page.locator(".stack-tool-add-page");
+    await picker.getByRole("heading", { name: "Ajouter des outils à Travailler avec l'IA", exact: true }).waitFor();
     await picker.getByRole("searchbox").fill("Claude");
     await picker.getByRole("button", { name: "Ajouter Claude à ma stack", exact: true }).click();
-    await picker.getByRole("button", { name: "Fermer", exact: true }).click();
+    await picker.locator(".stack-tool-add-footer").getByRole("button", { name: /Terminer et revenir à Travailler avec l'IA/ }).click();
     await page.getByRole("link", { name: /Claude/ }).waitFor();
     assert((await persisted(page)).toolEntries.find((item) => item.toolSlug === "claude")?.needIds.join() === "ia", "Claude doit être rangé dans IA");
     await closeScenario(scenario);
@@ -314,16 +316,14 @@ try {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.getByRole("button", { name: "Retour à Travailler avec l'IA", exact: true }).click();
     await page.getByRole("button", { name: "Ajouter", exact: true }).click();
-    const picker = page.getByRole("dialog", { name: "Ajouter des outils IA" });
+    const picker = page.locator(".stack-tool-add-page");
+    await picker.getByRole("heading", { name: "Ajouter des outils à Travailler avec l'IA", exact: true }).waitFor();
     const search = picker.getByRole("searchbox");
-    assert(await search.evaluate((element) => element === document.activeElement), "Le focus initial du picker doit être la recherche");
-    const overlayOrder = await page.evaluate(() => ({
-      picker: Number.parseInt(getComputedStyle(document.querySelector(".stack-tool-picker-backdrop")).zIndex, 10),
-      navigation: Number.parseInt(getComputedStyle(document.querySelector(".asv2-bottomnav")).zIndex, 10),
-    }));
-    assert(overlayOrder.picker > overlayOrder.navigation, "Le sélecteur mobile doit recouvrir la navigation fixe");
+    assert(!(await search.evaluate((element) => element === document.activeElement)), "La page d’ajout mobile ne doit pas ouvrir automatiquement le clavier");
+    const pageOverflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    assert(pageOverflow <= 1, `La page d’ajout mobile déborde horizontalement de ${pageOverflow}px`);
     await page.keyboard.press("Escape");
-    assert(!(await picker.isVisible()), "Échap doit fermer le picker");
+    assert(!(await picker.isVisible()), "Échap doit quitter la page d’ajout");
     await closeScenario(scenario);
   });
 } finally {
