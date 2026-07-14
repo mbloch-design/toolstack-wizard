@@ -7,6 +7,7 @@ const APP_URL = process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:8080";
 const STACK_URL = `${APP_URL}/fr/ma-stack`;
 const STORAGE_KEY = "tooltrim-ma-stack-mvp-v2";
 const BACKUP_KEY = `${STORAGE_KEY}-backup`;
+const SUBDOMAIN_OVERRIDES_KEY = "tooltrim-ma-stack-subdomains-v1";
 const ADDED_AT = "2026-01-01T00:00:00.000Z";
 
 const DEFAULT_NEEDS = [
@@ -66,13 +67,14 @@ async function createScenario(browser, initialState = stack(), viewport = { widt
   const page = await context.newPage();
   const pageErrors = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
-  await page.addInitScript(({ backupKey, initialState, storageKey }) => {
+  await page.addInitScript(({ backupKey, initialState, storageKey, subdomainOverridesKey }) => {
     if (sessionStorage.getItem("tooltrim-ma-stack-e2e-seeded")) return;
     localStorage.removeItem(storageKey);
     localStorage.removeItem(backupKey);
+    localStorage.removeItem(subdomainOverridesKey);
     localStorage.setItem(storageKey, JSON.stringify(initialState));
     sessionStorage.setItem("tooltrim-ma-stack-e2e-seeded", "1");
-  }, { backupKey: BACKUP_KEY, initialState, storageKey: STORAGE_KEY });
+  }, { backupKey: BACKUP_KEY, initialState, storageKey: STORAGE_KEY, subdomainOverridesKey: SUBDOMAIN_OVERRIDES_KEY });
   await page.goto(STACK_URL, { waitUntil: "networkidle" });
   await page.getByRole("heading", { name: "Ma stack", exact: true }).waitFor();
   return { context, page, pageErrors };
@@ -150,9 +152,16 @@ try {
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
     await page.getByRole("button", { name: "Ajouter", exact: true }).click();
     const picker = page.locator(".stack-tool-add-page");
-    await picker.getByRole("heading", { name: "Ajouter des outils à Travailler avec l'IA", exact: true }).waitFor();
+    await picker.getByRole("heading", { name: "Ajouter des outils", exact: true }).waitFor();
+    await picker.locator(".stack-tool-add-destination-card").waitFor();
+    await picker.locator(".stack-tool-add-sticky-destination").waitFor();
     await picker.getByRole("searchbox").fill("Claude");
-    await picker.getByRole("button", { name: "Ajouter Claude à ma stack", exact: true }).click();
+    const claudeCard = picker.locator(".stack-tool-add-card").filter({ hasText: "Claude" });
+    await claudeCard.click();
+    await page.locator(".stack-tool-add-flying-tool").waitFor({ state: "attached" });
+    assert(await claudeCard.getAttribute("aria-pressed") === "false", "Claude ne doit être ajouté qu’à l’arrivée dans le tableau");
+    await page.locator(".stack-tool-add-flying-tool").waitFor({ state: "detached" });
+    await picker.locator(".stack-tool-add-card.is-added").waitFor();
     await picker.locator(".stack-tool-add-footer").getByRole("button", { name: /Terminer et revenir à Travailler avec l'IA/ }).click();
     await page.getByRole("link", { name: /Claude/ }).waitFor();
     assert((await persisted(page)).toolEntries.find((item) => item.toolSlug === "claude")?.needIds.join() === "ia", "Claude doit être rangé dans IA");
@@ -211,11 +220,15 @@ try {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia", "design"])]));
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
-    await page.getByRole("link", { name: /ChatGPT/ }).click();
-    await page.getByRole("button", { name: "Rangement", exact: true }).click();
-    const dialog = page.getByRole("dialog", { name: "ChatGPT" });
-    await dialog.getByRole("checkbox", { name: "Travailler avec l'IA", exact: true }).uncheck();
-    await dialog.getByRole("button", { name: "Enregistrer le rangement", exact: true }).click();
+    await page.getByRole("button", { name: "Organiser", exact: true }).click();
+    await page.locator(".stack-objective-detail--editing").waitFor();
+    const chatgptCard = page.locator(".stack-role-tool-card").filter({ hasText: "ChatGPT" });
+    await chatgptCard.dragTo(page.getByRole("button", { name: "Création IA", exact: true }));
+    await page.getByRole("heading", { name: "Création IA", exact: true }).waitFor();
+    await page.reload({ waitUntil: "networkidle" });
+    await page.getByRole("heading", { name: "Création IA", exact: true }).waitFor();
+    await page.getByRole("button", { name: "Organiser", exact: true }).click();
+    await page.getByRole("button", { name: "Retirer ChatGPT de Travailler avec l'IA", exact: true }).click();
     const saved = await persisted(page);
     assert(saved.pinnedToolSlugs.join() === "chatgpt" && saved.toolEntries[0].needIds.join() === "design", "ChatGPT doit rester dans Ma stack et dans Design");
     await closeScenario(scenario);
@@ -317,7 +330,7 @@ try {
     await page.getByRole("button", { name: "Retour à Travailler avec l'IA", exact: true }).click();
     await page.getByRole("button", { name: "Ajouter", exact: true }).click();
     const picker = page.locator(".stack-tool-add-page");
-    await picker.getByRole("heading", { name: "Ajouter des outils à Travailler avec l'IA", exact: true }).waitFor();
+    await picker.getByRole("heading", { name: "Ajouter des outils", exact: true }).waitFor();
     const search = picker.getByRole("searchbox");
     assert(!(await search.evaluate((element) => element === document.activeElement)), "La page d’ajout mobile ne doit pas ouvrir automatiquement le clavier");
     const pageOverflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);

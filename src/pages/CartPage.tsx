@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, MoreHorizontal, Plus, Search, Trash2, X } from "lucide-react";
+import { ArrowLeft, GripVertical, MoreHorizontal, Pencil, Plus, Search, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
@@ -52,6 +52,25 @@ type StackSubdomain = {
 type StackSubdomainGroup = StackSubdomain & {
   tools: ToolSummary[];
 };
+
+type StackSubdomainOverrides = Record<string, Record<string, string>>;
+
+const STACK_SUBDOMAIN_OVERRIDES_KEY = "tooltrim-ma-stack-subdomains-v1";
+
+function readStackSubdomainOverrides(): StackSubdomainOverrides {
+  if (typeof window === "undefined") return {};
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(STACK_SUBDOMAIN_OVERRIDES_KEY) || "{}");
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return Object.fromEntries(Object.entries(parsed).flatMap(([boardId, value]) => {
+      if (!value || typeof value !== "object" || Array.isArray(value)) return [];
+      const entries = Object.entries(value).filter((entry): entry is [string, string] => typeof entry[1] === "string");
+      return entries.length > 0 ? [[boardId, Object.fromEntries(entries)]] : [];
+    }));
+  } catch {
+    return {};
+  }
+}
 
 type PickerFilterId = "recommended" | "objective" | "plugins" | "ai" | "budget";
 type PickerCandidate = {
@@ -1277,6 +1296,13 @@ function getSubdomainForBoardTool(boardId: string, tool: ToolSummary, categoryLa
   return getSubdomainForTool(tool, categoryLabel);
 }
 
+function getSubdomainOptionsForBoard(boardId: string): StackSubdomain[] {
+  if (boardId === "design") {
+    return CREATIVE_STACK_SUBDOMAINS.filter((subdomain) => DESIGN_PICKER_SUBDOMAIN_IDS.has(subdomain.id));
+  }
+  return OBJECTIVE_STACK_SUBDOMAINS[boardId] || [];
+}
+
 function cleanCategoryLabel(label?: string) {
   return (label || "").replace(/^[^\p{L}\p{N}]+/u, "").trim();
 }
@@ -1714,6 +1740,10 @@ const CartPage = () => {
   const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
   const [needsManagerOpen, setNeedsManagerOpen] = useState(false);
+  const [editingBoardId, setEditingBoardId] = useState<string | null>(null);
+  const [draggedToolSlug, setDraggedToolSlug] = useState<string | null>(null);
+  const [dragOverSubdomainId, setDragOverSubdomainId] = useState<string | null>(null);
+  const [subdomainOverrides, setSubdomainOverrides] = useState<StackSubdomainOverrides>(readStackSubdomainOverrides);
   const [stackMotion, setStackMotion] = useState<"deeper" | "shallower" | "idle">("idle");
   const workspaceMenuRef = useRef<HTMLDetailsElement | null>(null);
   const needDialogRef = useRef<HTMLElement | null>(null);
@@ -1723,6 +1753,14 @@ const CartPage = () => {
   const pickerSearchRef = useRef<HTMLInputElement | null>(null);
   const pickerPreviousFocusRef = useRef<HTMLElement | null>(null);
   const persistenceNoticeRef = useRef("");
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(STACK_SUBDOMAIN_OVERRIDES_KEY, JSON.stringify(subdomainOverrides));
+    } catch {
+      // The stack remains usable in memory when local storage is unavailable.
+    }
+  }, [subdomainOverrides]);
 
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
@@ -1783,6 +1821,7 @@ const CartPage = () => {
   const quickTool = zoomedBoard && quickToolSlug
     ? zoomedBoard.tools.find((tool) => getToolKey(tool) === quickToolSlug) || null
     : null;
+  const isEditingBoard = !!zoomedBoard && editingBoardId === zoomedBoard.id;
   const pickerBoard = boards.find((board) => board.id === pickerBoardId) || null;
   const pickerIsGlobal = pickerBoardId === GLOBAL_STACK_PICKER_ID;
   const pickerIsCustom = pickerBoard?.source === "custom";
@@ -1790,11 +1829,15 @@ const CartPage = () => {
     ? t(pickerBoard.labelFr, pickerBoard.labelEn) as string
     : t("Ma stack", "My stack") as string;
   const pickerPageTitle = pickerBoard
-    ? t(`Ajouter des outils à ${pickerBoard.labelFr}`, `Add tools to ${pickerBoard.labelEn}`) as string
+    ? t("Ajouter des outils", "Add tools") as string
     : t("Ajouter des outils à Ma stack", "Add tools to My stack") as string;
   const pickerReturnLabel = pickerBoard
     ? t(`Terminer et revenir à ${pickerBoard.labelFr}`, `Finish and return to ${pickerBoard.labelEn}`) as string
     : t("Terminer et revenir à Ma stack", "Finish and return to My stack") as string;
+  const pickerBoardPreviewTools = pickerBoard?.tools.slice(-3) || [];
+  const pickerBoardToneClass = pickerBoard
+    ? ` stack-board-card--${pickerBoard.id}${pickerBoard.source === "custom" ? " stack-board-card--custom" : ""}`
+    : "";
   const pickerAddedToolSlugSet = useMemo(() => new Set(pickerAddedToolSlugs), [pickerAddedToolSlugs]);
   const pickerAddedStats = useMemo(() => {
     let organized = 0;
@@ -1880,16 +1923,24 @@ const CartPage = () => {
   const zoomedSubdomains = useMemo(() => {
     if (!zoomedBoard) return [] as StackSubdomainGroup[];
     const groups = new Map<string, StackSubdomainGroup>();
+    const optionById = new Map(getSubdomainOptionsForBoard(zoomedBoard.id).map((subdomain) => [subdomain.id, subdomain]));
 
     zoomedBoard.tools.forEach((tool) => {
-      const subdomain = getSubdomainForBoardTool(zoomedBoard.id, tool, getCategoryLabel(tool));
+      const overrideId = subdomainOverrides[zoomedBoard.id]?.[getToolKey(tool)];
+      const subdomain = optionById.get(overrideId) || getSubdomainForBoardTool(zoomedBoard.id, tool, getCategoryLabel(tool));
       const existing = groups.get(subdomain.id) || { ...subdomain, tools: [] };
       existing.tools.push(tool);
       groups.set(subdomain.id, existing);
     });
 
     return Array.from(groups.values()).sort((a, b) => a.order - b.order || a.labelFr.localeCompare(b.labelFr));
-  }, [getCategoryLabel, zoomedBoard]);
+  }, [getCategoryLabel, subdomainOverrides, zoomedBoard]);
+  const zoomedSubdomainDestinations = useMemo(() => {
+    if (!zoomedBoard) return [] as StackSubdomain[];
+    const destinations = new Map(getSubdomainOptionsForBoard(zoomedBoard.id).map((subdomain) => [subdomain.id, subdomain]));
+    zoomedSubdomains.forEach((subdomain) => destinations.set(subdomain.id, subdomain));
+    return Array.from(destinations.values()).sort((a, b) => a.order - b.order || a.labelFr.localeCompare(b.labelFr));
+  }, [zoomedBoard, zoomedSubdomains]);
   const quickToolIndex = quickTool && zoomedBoard
     ? zoomedBoard.tools.findIndex((tool) => getToolKey(tool) === getToolKey(quickTool))
     : -1;
@@ -2058,15 +2109,82 @@ const CartPage = () => {
     });
   }
 
-  function addToolFromPicker(tool: ToolSummary) {
+  function animateToolIntoPickerBoard(sourceCard: HTMLElement, onArrive: () => void) {
+    if (!pickerBoard || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+
+    const destinations = Array.from(
+      pickerDialogRef.current?.querySelectorAll<HTMLElement>(
+        ".stack-tool-add-destination-card, .stack-tool-add-sticky-destination",
+      ) || [],
+    );
+    const destination = destinations.find((element) => {
+      const rect = element.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight;
+    });
+    const sourceLogo = sourceCard.querySelector<HTMLElement>(".stack-tool-picker-logo");
+    if (!destination || !sourceLogo) return false;
+
+    const sourceRect = sourceLogo.getBoundingClientRect();
+    const destinationRect = destination.getBoundingClientRect();
+    const flyingTool = sourceLogo.cloneNode(true) as HTMLElement;
+    flyingTool.removeAttribute("id");
+    flyingTool.classList.add("stack-tool-add-flying-tool");
+    flyingTool.setAttribute("aria-hidden", "true");
+    Object.assign(flyingTool.style, {
+      height: `${sourceRect.height}px`,
+      left: `${sourceRect.left}px`,
+      top: `${sourceRect.top}px`,
+      width: `${sourceRect.width}px`,
+    });
+    document.body.appendChild(flyingTool);
+    sourceCard.classList.add("is-adding");
+    sourceCard.setAttribute("disabled", "");
+
+    const translateX = destinationRect.left + destinationRect.width / 2 - (sourceRect.left + sourceRect.width / 2);
+    const translateY = destinationRect.top + destinationRect.height / 2 - (sourceRect.top + sourceRect.height / 2);
+    const flight = flyingTool.animate([
+      { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" },
+      { offset: 0.72, opacity: 1, transform: `translate3d(${translateX * 0.82}px, ${translateY * 0.82}px, 0) scale(0.72)` },
+      { opacity: 0.18, transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(0.48)` },
+    ], {
+      duration: 220,
+      easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    });
+
+    let settled = false;
+    const settleFlight = (showArrival: boolean) => {
+      if (settled) return;
+      settled = true;
+      flyingTool.remove();
+      sourceCard.classList.remove("is-adding");
+      sourceCard.removeAttribute("disabled");
+      onArrive();
+      if (showArrival) {
+        destination.animate([
+          { transform: "scale(1)" },
+          { transform: "scale(1.025)" },
+          { transform: "scale(1)" },
+        ], { duration: 180, easing: "ease-out" });
+      }
+    };
+    flight.addEventListener("finish", () => settleFlight(true), { once: true });
+    flight.addEventListener("cancel", () => settleFlight(false), { once: true });
+    return true;
+  }
+
+  function addToolFromPicker(tool: ToolSummary, sourceCard?: HTMLElement) {
     const toolSlug = getToolKey(tool);
     if (pickerAddedToolSlugSet.has(toolSlug)) {
       unpinTool(toolSlug);
       setPickerAddedToolSlugs((current) => current.filter((slug) => slug !== toolSlug));
       return;
     }
-    pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
-    setPickerAddedToolSlugs((current) => [...current, toolSlug]);
+    const commitAddition = () => {
+      pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
+      setPickerAddedToolSlugs((current) => [...current, toolSlug]);
+    };
+    if (sourceCard && animateToolIntoPickerBoard(sourceCard, commitAddition)) return;
+    commitAddition();
   }
 
   function getPickerNeedSuggestion(tool: ToolSummary) {
@@ -2218,6 +2336,9 @@ const CartPage = () => {
   }
 
   function openObjective(boardId: string) {
+    setEditingBoardId(null);
+    setDraggedToolSlug(null);
+    setDragOverSubdomainId(null);
     setStackMotion("deeper");
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("objectif", boardId);
@@ -2228,6 +2349,9 @@ const CartPage = () => {
   }
 
   function closeObjective() {
+    setEditingBoardId(null);
+    setDraggedToolSlug(null);
+    setDragOverSubdomainId(null);
     setStackMotion("shallower");
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete("objectif");
@@ -2261,10 +2385,55 @@ const CartPage = () => {
 
   function removeToolFromCurrentNeed(toolSlug: string) {
     if (!zoomedBoard) return;
-    const shouldClose = !!zoomedBoard && zoomedBoard.tools.length <= 1;
     const entry = stackEntryBySlug.get(toolSlug);
-    assignToolNeeds(toolSlug, (entry?.needIds || []).filter((needId) => needId !== zoomedBoard.id));
+    const previousNeedIds = entry?.needIds || [];
+    const toolName = toolBySlug.get(toolSlug)?.name || toolSlug;
+    const shouldClose = zoomedBoard.tools.length <= 1;
+    assignToolNeeds(toolSlug, previousNeedIds.filter((needId) => needId !== zoomedBoard.id));
     if (shouldClose) closeObjective();
+    toast.success(t(
+      `${toolName} retiré de ${zoomedBoard.labelFr}.`,
+      `${toolName} removed from ${zoomedBoard.labelEn}.`,
+    ) as string, {
+      action: {
+        label: t("Annuler", "Undo") as string,
+        onClick: () => assignToolNeeds(toolSlug, previousNeedIds),
+      },
+    });
+  }
+
+  function setToolSubdomainOverride(boardId: string, toolSlug: string, subdomainId: string | null) {
+    setSubdomainOverrides((current) => {
+      const boardOverrides = { ...(current[boardId] || {}) };
+      if (subdomainId) boardOverrides[toolSlug] = subdomainId;
+      else delete boardOverrides[toolSlug];
+      const next = { ...current };
+      if (Object.keys(boardOverrides).length > 0) next[boardId] = boardOverrides;
+      else delete next[boardId];
+      return next;
+    });
+  }
+
+  function moveToolToSubdomain(toolSlug: string, subdomainId: string) {
+    if (!zoomedBoard) return;
+    const destination = zoomedSubdomainDestinations.find((subdomain) => subdomain.id === subdomainId);
+    const tool = zoomedBoard.tools.find((candidate) => getToolKey(candidate) === toolSlug);
+    if (!destination || !tool) return;
+    const currentGroup = zoomedSubdomains.find((group) => group.tools.some((candidate) => getToolKey(candidate) === toolSlug));
+    const previousOverride = subdomainOverrides[zoomedBoard.id]?.[toolSlug] || null;
+    setDraggedToolSlug(null);
+    setDragOverSubdomainId(null);
+    if (currentGroup?.id === destination.id) return;
+    setToolSubdomainOverride(zoomedBoard.id, toolSlug, destination.id);
+    toast.success(t(
+      `${tool.name} déplacé dans ${destination.labelFr}.`,
+      `${tool.name} moved to ${destination.labelEn}.`,
+    ) as string, {
+      action: {
+        label: t("Annuler", "Undo") as string,
+        onClick: () => setToolSubdomainOverride(zoomedBoard.id, toolSlug, previousOverride),
+      },
+    });
   }
 
   return (
@@ -2309,16 +2478,20 @@ const CartPage = () => {
                 <span>{t("Ajouter", "Add")}</span>
               </button>
 
-              <details ref={workspaceMenuRef} className="stack-page-toolbar-menu stack-objective-hero-menu">
-                <summary className="stack-objective-hero-round" aria-label={t("Plus d’options", "More options") as string}>
-                  <MoreHorizontal size={22} aria-hidden />
-                </summary>
-                <div className="stack-page-toolbar-popover">
-                  <button type="button" onClick={() => { workspaceMenuRef.current?.removeAttribute("open"); setNeedsManagerOpen(true); }}>
-                    {t("Gérer tous les besoins", "Manage all needs")}
-                  </button>
-                </div>
-              </details>
+              <button
+                type="button"
+                className={`stack-objective-hero-edit${isEditingBoard ? " is-active" : ""}`}
+                onClick={() => {
+                  setEditingBoardId((current) => current === zoomedBoard.id ? null : zoomedBoard.id);
+                  setDraggedToolSlug(null);
+                  setDragOverSubdomainId(null);
+                }}
+                aria-pressed={isEditingBoard}
+              >
+                {isEditingBoard ? <X size={18} aria-hidden /> : <Pencil size={17} aria-hidden />}
+                <span>{isEditingBoard ? t("Terminer", "Done") : t("Organiser", "Organize")}</span>
+              </button>
+
             </div>
           </div>
         </section>
@@ -2357,14 +2530,55 @@ const CartPage = () => {
       )}
 
       {zoomedBoard ? (
-        <main className={`stack-objective-detail${quickTool ? " stack-objective-detail--tool-page" : ""}`} aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
+        <main className={`stack-objective-detail${quickTool ? " stack-objective-detail--tool-page" : ""}${isEditingBoard ? " stack-objective-detail--editing" : ""}`} aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
           {!quickTool && <div className="stack-objective-browser">
+            {isEditingBoard && zoomedSubdomainDestinations.length > 1 && (
+              <div className="stack-board-organize-destinations" aria-label={t("Groupes de destination", "Destination groups") as string}>
+                <span>{draggedToolSlug ? t("Déplacer vers", "Move to") : t("Glissez un outil", "Drag a tool")}</span>
+                <div>
+                  {zoomedSubdomainDestinations.map((destination) => (
+                    <button
+                      key={destination.id}
+                      type="button"
+                      className={dragOverSubdomainId === destination.id ? "is-over" : ""}
+                      aria-disabled={!draggedToolSlug}
+                      onClick={() => draggedToolSlug && moveToolToSubdomain(draggedToolSlug, destination.id)}
+                      onDragOver={(event) => {
+                        if (!draggedToolSlug) return;
+                        event.preventDefault();
+                        event.dataTransfer.dropEffect = "move";
+                        setDragOverSubdomainId(destination.id);
+                      }}
+                      onDrop={(event) => {
+                        event.preventDefault();
+                        const toolSlug = event.dataTransfer.getData("text/plain") || draggedToolSlug;
+                        if (toolSlug) moveToolToSubdomain(toolSlug, destination.id);
+                      }}
+                    >
+                      {t(destination.labelFr, destination.labelEn)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="stack-role-section-grid">
             {zoomedSubdomains.map((group) => (
               <section
                 key={group.id}
-                className={`stack-role-section${group.tools.length <= 2 ? " stack-role-section--sparse" : ""}${group.tools.length === 1 ? " stack-role-section--single" : ""}`}
+                className={`stack-role-section${group.tools.length <= 2 ? " stack-role-section--sparse" : ""}${group.tools.length === 1 ? " stack-role-section--single" : ""}${dragOverSubdomainId === group.id ? " is-drop-target" : ""}`}
                 aria-labelledby={`stack-role-${group.id}`}
+                onDragOver={(event) => {
+                  if (!isEditingBoard || !draggedToolSlug) return;
+                  event.preventDefault();
+                  event.dataTransfer.dropEffect = "move";
+                  setDragOverSubdomainId(group.id);
+                }}
+                onDrop={(event) => {
+                  if (!isEditingBoard) return;
+                  event.preventDefault();
+                  const toolSlug = event.dataTransfer.getData("text/plain") || draggedToolSlug;
+                  if (toolSlug) moveToolToSubdomain(toolSlug, group.id);
+                }}
               >
                 <div className="stack-role-section-head">
                   <h2 id={`stack-role-${group.id}`}>{t(group.labelFr, group.labelEn)}</h2>
@@ -2374,7 +2588,30 @@ const CartPage = () => {
                   {group.tools.map((tool) => {
                     const toolSlug = getToolKey(tool);
                     return (
-                      <article key={toolSlug} className="stack-role-tool-card" role="listitem" onClickCapture={() => setStackMotion("deeper")}>
+                      <article
+                        key={toolSlug}
+                        className={`stack-role-tool-card${draggedToolSlug === toolSlug ? " is-dragging" : ""}`}
+                        role="listitem"
+                        tabIndex={isEditingBoard ? 0 : undefined}
+                        draggable={isEditingBoard}
+                        onClickCapture={() => !isEditingBoard && setStackMotion("deeper")}
+                        onClick={() => isEditingBoard && setDraggedToolSlug((current) => current === toolSlug ? null : toolSlug)}
+                        onKeyDown={(event) => {
+                          if (!isEditingBoard || (event.key !== "Enter" && event.key !== " ")) return;
+                          event.preventDefault();
+                          setDraggedToolSlug((current) => current === toolSlug ? null : toolSlug);
+                        }}
+                        onDragStart={(event) => {
+                          event.dataTransfer.effectAllowed = "move";
+                          event.dataTransfer.setData("text/plain", toolSlug);
+                          setDraggedToolSlug(toolSlug);
+                        }}
+                        onDragEnd={() => {
+                          setDraggedToolSlug(null);
+                          setDragOverSubdomainId(null);
+                        }}
+                        aria-label={isEditingBoard ? t(`Déplacer ${tool.name}`, `Move ${tool.name}`) as string : undefined}
+                      >
                         <ToolCardEditorial
                           tool={tool}
                           prefix={prefix}
@@ -2387,6 +2624,21 @@ const CartPage = () => {
                           linkState={{ stackToolInspectorDepth: 1 }}
                           selected={quickToolSlug === toolSlug}
                         />
+                        {isEditingBoard && (
+                          <><span className="stack-role-tool-drag-handle" aria-hidden><GripVertical size={16} /></span><button
+                            type="button"
+                            className="stack-role-tool-remove"
+                            onClick={(event) => {
+                              event.preventDefault();
+                              event.stopPropagation();
+                              removeToolFromCurrentNeed(toolSlug);
+                            }}
+                            aria-label={t(`Retirer ${tool.name} de ${zoomedBoard.labelFr}`, `Remove ${tool.name} from ${zoomedBoard.labelEn}`) as string}
+                            title={t("Retirer du tableau", "Remove from board") as string}
+                          >
+                            <Trash2 size={17} aria-hidden />
+                          </button></>
+                        )}
                       </article>
                     );
                   })}
@@ -2659,19 +2911,30 @@ const CartPage = () => {
       />
 
       {pickerBoardId && (
-        <main ref={pickerDialogRef} className="stack-tool-add-page" aria-labelledby="stack-tool-picker-title">
+        <main ref={pickerDialogRef} className={`stack-tool-add-page${pickerBoardToneClass}`} aria-labelledby="stack-tool-picker-title">
           <header className="stack-tool-add-hero">
             <button type="button" className="stack-tool-add-back" onClick={closeToolPicker} aria-label={t(`Retour à ${pickerDestinationLabel}`, `Back to ${pickerDestinationLabel}`) as string}>
               <ArrowLeft size={20} aria-hidden />
             </button>
+            {pickerBoard && (
+              <div className="stack-tool-add-destination-card" aria-hidden="true">
+                <span className="stack-tool-add-destination-copy">
+                  <strong>{pickerDestinationLabel}</strong>
+                  <small>{formatToolCount(pickerBoard.tools.length, lang)}</small>
+                </span>
+                <span className="stack-tool-add-destination-logos">
+                  {pickerBoardPreviewTools.map((tool) => (
+                    <span key={getToolKey(tool)}>
+                      <ToolLogo tool={tool} size={34} className="stack-board-editorial-logo-mark" />
+                    </span>
+                  ))}
+                  {pickerBoardPreviewTools.length === 0 && <span><Plus size={15} /></span>}
+                </span>
+              </div>
+            )}
             <div className="stack-tool-add-heading">
               <h1 id="stack-tool-picker-title">{pickerPageTitle}</h1>
-              <p>
-                <span>{pickerBoard ? t("Stack de destination", "Destination stack") : t("Rangement automatique", "Automatic organization")}</span>
-                <strong>{pickerBoard
-                  ? t(`Chaque outil sélectionné sera rangé dans ${pickerBoard.labelFr}.`, `Each selected tool will be organized under ${pickerBoard.labelEn}.`)
-                  : t("Tooltrim proposera automatiquement le besoin le plus pertinent.", "Tooltrim will automatically suggest the most relevant need.")}</strong>
-              </p>
+              {!pickerBoard && <p><strong>{t("Tooltrim proposera automatiquement le besoin le plus pertinent.", "Tooltrim will automatically suggest the most relevant need.")}</strong></p>}
             </div>
             <button type="button" className="stack-tool-add-done" onClick={closeToolPicker}>
               {pickerReturnLabel}
@@ -2680,6 +2943,12 @@ const CartPage = () => {
           </header>
 
           <div className="stack-tool-add-search-row">
+            {pickerBoard && (
+              <div className="stack-tool-add-sticky-destination" aria-hidden="true">
+                <span />
+                <strong>{pickerDestinationLabel}</strong>
+              </div>
+            )}
             <label className="stack-tool-picker-search stack-tool-add-search">
               <Search size={18} aria-hidden />
               <input
@@ -2714,7 +2983,7 @@ const CartPage = () => {
                       key={toolSlug}
                       type="button"
                       className={`stack-tool-add-card${wasAdded ? " is-added" : ""}`}
-                      onClick={() => addToolFromPicker(tool)}
+                      onClick={(event) => addToolFromPicker(tool, event.currentTarget)}
                       aria-pressed={wasAdded}
                       aria-label={wasAdded
                         ? t(`Retirer ${tool.name} de cette sélection`, `Remove ${tool.name} from this selection`) as string
