@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Compass, ExternalLink } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
 import type { Tool } from "@/data/types";
+import { getExplorerHref } from "@/lib/toolExploration";
 
 /* Slug → readable tag: "gestion-projet" → "Gestion projet" */
 function tagLabel(slug: string) {
@@ -41,6 +42,7 @@ export default function StickyDecisionCard({
   primaryCtaUrl, hasAffiliateOffer, alternatives,
   catName, catNameEn,
 }: Props) {
+  const location = useLocation();
 
   const ts = computeToolTrimScore(tool);
 
@@ -203,11 +205,19 @@ export default function StickyDecisionCard({
           {hasAffiliateOffer ? t("Voir l'offre", "View offer") : isFree ? t("Essayer gratuitement", "Try for free") : t("Visiter le site", "Visit website")}
           <ExternalLink style={{ width: 14, height: 14 }} />
         </a>
+        <Link
+          to={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+          state={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: tool.name }}
+          className="td-explore-action"
+        >
+          <Compass size={16} aria-hidden />
+          {t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
+        </Link>
         {/* Only when there are real alternatives to compare — otherwise the
             /alternatives sub-page is empty, so the button led nowhere. */}
         {hasAlternatives && (
           <Link
-            to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
+            to={`${prefix}/tool/${tool.slug || tool.id}/alternatives`}
             style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               height: 42, background: "transparent", color: "var(--color-text)",
@@ -222,4 +232,3 @@ export default function StickyDecisionCard({
     </div>
   );
 }
-

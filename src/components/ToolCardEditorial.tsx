@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Compass } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
@@ -45,6 +46,8 @@ interface ToolCardEditorialProps {
   typeLabel?: string;
   contextRole?: string;
   contextLabel?: string;
+  exploreHref?: string;
+  exploreState?: unknown;
 }
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
@@ -79,6 +82,8 @@ export function ToolCardEditorial({
   typeLabel,
   contextRole,
   contextLabel,
+  exploreHref,
+  exploreState,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
   const compact = variant === "compact";
@@ -91,6 +96,17 @@ export function ToolCardEditorial({
   return (
     <div className={`tool-pin-wrap${compact ? " tool-pin-wrap--compact" : ""}`}>
       {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
+      {exploreHref && (
+        <Link
+          to={exploreHref}
+          state={exploreState}
+          className={`tce-explore${showPin ? " tce-explore--with-pin" : ""}`}
+          aria-label={t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
+          title={t("Explorer les outils associés", "Explore related tools")}
+        >
+          <Compass size={17} aria-hidden />
+        </Link>
+      )}
       <Link
         to={to || `${prefix}/tool/${tool.slug ?? tool.id}`}
         state={linkState}

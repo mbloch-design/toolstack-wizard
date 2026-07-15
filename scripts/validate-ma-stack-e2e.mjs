@@ -101,7 +101,7 @@ async function closeScenario(scenario) {
 const checks = [];
 const argValue = (name, fallback) => process.argv.find((arg) => arg.startsWith(`--${name}=`))?.split("=")[1] || fallback;
 const startAt = Math.max(1, Number(argValue("start", process.env.MA_STACK_E2E_START || 1)));
-const endAt = Math.min(9, Number(argValue("end", process.env.MA_STACK_E2E_END || 9)));
+const endAt = Math.min(10, Number(argValue("end", process.env.MA_STACK_E2E_END || 10)));
 let runIndex = 0;
 async function run(label, task) {
   runIndex += 1;
@@ -334,6 +334,115 @@ try {
     await page.keyboard.press("Escape");
     assert(!(await picker.isVisible()), "Échap doit quitter la page d’ajout");
     await closeScenario(scenario);
+  });
+
+  await run("10. exploration contextuelle transversale", async () => {
+    const scenario = await createScenario(browser, stack([entry("figma", ["design"])]));
+    const { page } = scenario;
+    await page.getByRole("button", { name: "Ouvrir Créer des visuels", exact: true }).click();
+    await page.getByRole("button", { name: "Explorer l’objectif Créer des visuels", exact: true }).click();
+    await page.locator(".ex-source-banner").getByRole("heading", { name: "Plus d’outils", exact: true }).waitFor();
+    assert((await page.locator(".ex-objective-heading").innerText()).includes("Créer des visuels"), "Le bandeau doit conserver clairement l’objectif de départ");
+    let url = new URL(page.url());
+    assert(url.pathname === "/fr/explorer" && url.searchParams.get("type") === "objectif" && url.searchParams.get("source") === "design", "L’objectif doit ouvrir la page Explorer dédiée");
+    assert(url.searchParams.get("destination") === "design", "La destination doit rester explicite dans l’URL");
+
+    const directions = page.locator(".ex-filter-pillnav");
+    assert(await directions.isVisible(), "La capsule sticky des filtres doit être visible dès l’ouverture d’Explorer");
+    assert(await directions.evaluate((element) => getComputedStyle(element).position) === "fixed", "Les filtres Explorer doivent utiliser la capsule fixe des fiches outils");
+    assert(await directions.getByRole("button", { name: /^Alternatives/ }).count() === 0, "Un objectif ne doit pas exposer les relations propres à une fiche outil");
+    assert(await directions.getByRole("button", { name: /^Extensions/ }).count() === 0, "Un objectif doit proposer des thématiques plutôt que des extensions");
+    const firstTheme = directions.getByRole("button").nth(1);
+    const firstThemeLabel = (await firstTheme.innerText()).replace(/\d+$/, "").trim();
+    await firstTheme.click();
+    assert(!!new URL(page.url()).searchParams.get("theme"), `La thématique ${firstThemeLabel} doit être conservée dans l’URL`);
+    await directions.getByRole("button", { name: /^Toutes les idées/ }).click();
+
+    const floatingFilters = directions;
+    await page.locator("#main-content").evaluate((element, top) => element.scrollTo(0, top), await page.locator(".ex-source-banner").evaluate((element) => element.getBoundingClientRect().bottom + 24));
+    const floatingTheme = floatingFilters.getByRole("button").nth(1);
+    const scrollBeforeFloatingFilter = await page.locator("#main-content").evaluate((element) => element.scrollTop);
+    await floatingTheme.click();
+    assert(!!new URL(page.url()).searchParams.get("theme"), "Le filtre flottant doit piloter la même thématique que le filtre du hero");
+    assert(await page.locator("#main-content").evaluate((element) => element.scrollTop) > 0 && scrollBeforeFloatingFilter > 0, "Un filtre flottant ne doit pas faire remonter la page");
+    await floatingFilters.getByRole("button", { name: "Toutes les idées", exact: true }).click();
+    await page.locator("#main-content").evaluate((element) => element.scrollTo(0, 0));
+
+    const firstCard = page.locator(".ex-card").first();
+    const firstProfileLink = firstCard.getByRole("link", { name: "Voir la fiche", exact: true });
+    const discoveredName = await firstCard.locator("strong").innerText();
+    const discoveredSlug = new URL((await firstProfileLink.getAttribute("href")) || "", APP_URL).pathname.split("/").pop();
+    assert(!!discoveredSlug, "Un résultat doit pointer vers une fiche outil");
+    assert((await firstCard.locator(".ex-card-copy > span").innerText()).includes("Figma"), "La relation doit nommer l’outil source exact");
+
+    await firstProfileLink.click();
+    await page.waitForURL((candidate) => candidate.pathname.endsWith(`/tool/${discoveredSlug}`));
+    assert((await persisted(page)).toolEntries.length === 1, "Voir la fiche ne doit pas ajouter l’outil");
+    await page.goBack({ waitUntil: "networkidle" });
+    await page.locator(".ex-source-banner").waitFor();
+
+    await page.locator(".ex-card").first().getByRole("button", { name: `Explorer autour de ${discoveredName}`, exact: true }).click();
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "Le clic principal doit seulement recentrer la source");
+    assert(new URL(page.url()).searchParams.get("destination") === "design", "Le recentrage ne doit pas changer la destination");
+    await page.locator(".ex-tool-focus").getByRole("heading", { name: discoveredName, exact: true }).waitFor();
+    assert(await page.locator(".ex-tool-focus-visual").count() === 1, "Une source outil doit s’ouvrir dans un hero visuel zoomé");
+    assert(await page.locator(".ex-tool-focus").getByRole("link", { name: "Voir la fiche complète", exact: true }).count() === 1, "Le hero zoomé doit conserver l’accès à la fiche complète");
+    assert(await page.locator(".ex-filter-pillnav").getByRole("button", { name: /^Alternatives/ }).count() === 1, "Une source outil doit retrouver le filtre Alternatives");
+    assert(await page.locator(".ex-filter-pillnav").getByRole("button", { name: /^Extensions/ }).count() === 1, "Une source outil doit retrouver le filtre Extensions");
+    const masonryGap = await page.evaluate(() => {
+      const sourceCard = document.querySelector(".ex-tool-focus")?.getBoundingClientRect();
+      if (!sourceCard) return Number.POSITIVE_INFINITY;
+      const nextLeftItem = [...document.querySelectorAll(".ex-card, .ex-more")]
+        .map((element) => element.getBoundingClientRect())
+        .filter((rect) => rect.left < sourceCard.right - 1 && rect.top >= sourceCard.bottom - 1)
+        .sort((a, b) => a.top - b.top)[0];
+      return nextLeftItem ? nextLeftItem.top - sourceCard.bottom : Number.POSITIVE_INFINITY;
+    });
+    assert(masonryGap <= 40, `La grille masonry ne doit pas laisser de trou sous la source (${masonryGap}px)`);
+    await page.goBack({ waitUntil: "networkidle" });
+    await page.locator(".ex-source-banner").getByRole("heading", { name: "Plus d’outils", exact: true }).waitFor();
+
+    for (const width of [320, 390, 768, 1440, 1920]) {
+      await page.setViewportSize({ width, height: width <= 390 ? 844 : 1000 });
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      assert(overflow <= 1, `Explorer déborde horizontalement de ${overflow}px à ${width}px`);
+      assert(await page.locator(".ex-filter-pillnav button").count() >= 2, `Les thématiques sticky doivent rester visibles à ${width}px`);
+      assert(await page.locator(".ex-card").count() === 8, `La première grille doit afficher 8 outils à ${width}px`);
+    }
+    await page.setViewportSize({ width: 1440, height: 1000 });
+
+    const addedCard = page.locator(".ex-card").first();
+    const addedName = await addedCard.locator("strong").innerText();
+    const addedSlug = new URL((await addedCard.getByRole("link", { name: "Voir la fiche", exact: true }).getAttribute("href")) || "", APP_URL).pathname.split("/").pop();
+    await addedCard.locator(".ex-card-actions button").click();
+    await page.locator(".ex-flying-tool").waitFor({ state: "detached" });
+    await page.locator(".ex-card").filter({ hasText: addedName }).getByRole("button", { name: `${addedName} déjà dans Créer des visuels`, exact: true }).waitFor();
+    assert(new URL(page.url()).searchParams.get("source") === "design", "Ajouter ne doit pas changer la source");
+    const savedAfterAdd = await persisted(page);
+    assert(savedAfterAdd.toolEntries.some((item) => item.toolSlug === addedSlug && item.needIds.includes("design")), "L’ajout doit fusionner la destination Design");
+
+    await page.goto(`${STACK_URL}?objectif=design&idees=figma&angle=extensions`, { waitUntil: "networkidle" });
+    await page.waitForURL((candidate) => candidate.pathname === "/fr/explorer");
+    url = new URL(page.url());
+    assert(url.searchParams.get("source") === "figma" && url.searchParams.get("angle") === "extensions", "Une ancienne URL idees doit être redirigée sans perdre sa source ni son angle");
+
+    await page.goto(`${APP_URL}/fr/tools`, { waitUntil: "networkidle" });
+    const catalogExplore = page.locator(".tce-explore").first();
+    assert(await catalogExplore.count() === 1, "Les cartes catalogue doivent exposer Compass");
+    await catalogExplore.click();
+    await page.waitForURL((candidate) => candidate.pathname === "/fr/explorer");
+    assert(new URL(page.url()).searchParams.get("destination") === null, "Une exploration extérieure ne doit pas inventer de destination");
+
+    await page.goto(`${APP_URL}/fr/tool/figma`, { waitUntil: "networkidle" });
+    assert(await page.getByRole("link", { name: "Explorer autour de Figma", exact: true }).count() >= 1, "La fiche catalogue doit proposer Explorer autour de l’outil");
+    await closeScenario(scenario);
+
+    const customNeed = { id: "formation", labelFr: "Créer une formation", labelEn: "Create a course", order: 90, source: "custom" };
+    const emptyScenario = await createScenario(browser, stack([], [customNeed]));
+    await emptyScenario.page.goto(`${STACK_URL}?objectif=formation`, { waitUntil: "networkidle" });
+    await emptyScenario.page.getByRole("heading", { name: "Créer une formation", exact: true }).waitFor();
+    assert(await emptyScenario.page.getByRole("button", { name: /Explorer l’objectif/ }).count() === 0, "Un objectif vide ne doit pas proposer une exploration sans source");
+    await closeScenario(emptyScenario);
   });
 } finally {
   await browser.close();

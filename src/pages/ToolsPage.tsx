@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { Search, X } from "lucide-react";
@@ -10,6 +10,7 @@ import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import type { Tool } from "@/data/types";
+import { getExplorerHref } from "@/lib/toolExploration";
 
 const TOOLS_PER_PAGE = 40;
 
@@ -75,6 +76,7 @@ function getVerticalFilterLabel(verticalId: string, lang: string) {
 }
 
 const ToolsPage = () => {
+  const location = useLocation();
   const { lang, t, prefix } = useLang();
   const { tools } = useTools();
   const { categories } = useCategories();
@@ -347,6 +349,8 @@ const ToolsPage = () => {
                     t={t}
                     lang={lang}
                     categoryLabel={catLabel}
+                    exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                    exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: t("Catalogue", "Catalog") }}
                   />
                 );
               })}
@@ -380,6 +384,8 @@ const ToolsPage = () => {
                       t={t}
                       lang={lang}
                       categoryLabel={catLabel}
+                      exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                      exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: t("Catalogue", "Catalog") }}
                     />
                   );
                 })}

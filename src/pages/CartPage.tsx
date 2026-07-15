@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, GripVertical, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Compass, GripVertical, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
@@ -12,6 +12,7 @@ import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSu
 import { scrollToTop } from "@/lib/scroll";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
 import { computeStackPricing, formatStackToolPrice } from "@/lib/stackPricing";
+import { getExplorerHref } from "@/lib/toolExploration";
 
 type StackBoard = {
   id: string;
@@ -79,6 +80,7 @@ type PickerCandidate = {
   subdomainId?: string;
   tool: ToolSummary;
 };
+
 
 type DesignPickerContext = {
   activeSubdomainIds: Set<string>;
@@ -1385,8 +1387,8 @@ function getBoardOverviewCopy(board: StackBoard, lang: string) {
 
   if (copy[board.id]) return lang === "en" ? copy[board.id].en : copy[board.id].fr;
   return lang === "en"
-    ? "A custom group built around one of your real needs."
-    : "Un lot personnalisé construit autour de l'un de vos besoins réels.";
+    ? "A custom group built around one of your real objectives."
+    : "Un lot personnalisé construit autour de l'un de vos objectifs réels.";
 }
 
 function getBoardDisplayLabel(board: StackBoard, lang: string) {
@@ -1723,6 +1725,7 @@ function getToolPickerBoardScore(tool: ToolSummary, board: StackBoard, categoryL
   return 40 + getToolPickerScore(tool);
 }
 
+
 function slugMatches(toolSlug = "", relationValue = "") {
   return toolSlug === relationValue ||
     toolSlug.endsWith(`-${relationValue}`) ||
@@ -1936,8 +1939,8 @@ const CartPage = () => {
             `${tool.name} provisionally organized under ${needLabels.join(" and ")} · editable at any time.`,
           ) as string
           : t(
-            `${tool.name} ajouté à Ma stack · besoin à confirmer dans À ranger.`,
-            `${tool.name} added to My stack · confirm its need under To organize.`,
+            `${tool.name} ajouté à Ma stack · objectif à confirmer dans À ranger.`,
+            `${tool.name} added to My stack · confirm its objective under To organize.`,
           ) as string);
       }
     });
@@ -2023,6 +2026,26 @@ const CartPage = () => {
 
   const visiblePickerCandidates = pickerCandidates.slice(0, pickerResultLimit);
   const hasMorePickerCandidates = pickerCandidates.length > visiblePickerCandidates.length;
+  const legacyIdeasSeed = searchParams.get("idees");
+  const legacyAngleParam = searchParams.get("angle");
+  const legacyAngle = legacyAngleParam === "alternatives" || legacyAngleParam === "extensions" || legacyAngleParam === "adjacent"
+    ? legacyAngleParam
+    : "all";
+
+  useEffect(() => {
+    if (!legacyIdeasSeed || !zoomedBoard) return;
+    const source = legacyIdeasSeed === "objectif"
+      ? { type: "objectif" as const, id: zoomedBoard.id }
+      : { type: "outil" as const, slug: legacyIdeasSeed };
+    navigate(getExplorerHref(prefix, source, { angle: legacyAngle, destination: zoomedBoard.id }), {
+      replace: true,
+      state: {
+        explorerCanGoBack: true,
+        explorerReturnTo: `${prefix}/ma-stack?objectif=${encodeURIComponent(zoomedBoard.id)}`,
+        previousSourceLabel: t(zoomedBoard.labelFr, zoomedBoard.labelEn),
+      },
+    });
+  }, [legacyAngle, legacyIdeasSeed, navigate, prefix, t, zoomedBoard]);
 
   useEffect(() => {
     setPickerResultLimit(PICKER_RESULT_BATCH);
@@ -2137,14 +2160,8 @@ const CartPage = () => {
     });
   }
 
-  function animateToolIntoPickerBoard(sourceCard: HTMLElement, onArrive: () => void) {
-    if (!pickerBoard || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-
-    const destinations = Array.from(
-      pickerDialogRef.current?.querySelectorAll<HTMLElement>(
-        ".stack-tool-add-destination-card, .stack-tool-add-sticky-destination",
-      ) || [],
-    );
+  function animateToolIntoDestination(sourceCard: HTMLElement, destinations: HTMLElement[], onArrive: () => void) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     const destination = destinations.find((element) => {
       const rect = element.getBoundingClientRect();
       return rect.bottom > 0 && rect.top < window.innerHeight;
@@ -2166,7 +2183,7 @@ const CartPage = () => {
     });
     document.body.appendChild(flyingTool);
     sourceCard.classList.add("is-adding");
-    sourceCard.setAttribute("disabled", "");
+    if (sourceCard instanceof HTMLButtonElement) sourceCard.disabled = true;
 
     const translateX = destinationRect.left + destinationRect.width / 2 - (sourceRect.left + sourceRect.width / 2);
     const translateY = destinationRect.top + destinationRect.height / 2 - (sourceRect.top + sourceRect.height / 2);
@@ -2185,7 +2202,7 @@ const CartPage = () => {
       settled = true;
       flyingTool.remove();
       sourceCard.classList.remove("is-adding");
-      sourceCard.removeAttribute("disabled");
+      if (sourceCard instanceof HTMLButtonElement) sourceCard.disabled = false;
       onArrive();
       if (showArrival) {
         destination.animate([
@@ -2198,6 +2215,16 @@ const CartPage = () => {
     flight.addEventListener("finish", () => settleFlight(true), { once: true });
     flight.addEventListener("cancel", () => settleFlight(false), { once: true });
     return true;
+  }
+
+  function animateToolIntoPickerBoard(sourceCard: HTMLElement, onArrive: () => void) {
+    if (!pickerBoard) return false;
+    const destinations = Array.from(
+      pickerDialogRef.current?.querySelectorAll<HTMLElement>(
+        ".stack-tool-add-destination-card, .stack-tool-add-sticky-destination",
+      ) || [],
+    );
+    return animateToolIntoDestination(sourceCard, destinations, onArrive);
   }
 
   function addToolFromPicker(tool: ToolSummary, sourceCard?: HTMLElement) {
@@ -2221,12 +2248,12 @@ const CartPage = () => {
     }
     const classification = classifyToolForStack(tool);
     if (classification.confidence === "low" || classification.needIds.length === 0) {
-      return t("Besoin à confirmer · À ranger", "Need to confirm · To organize") as string;
+      return t("Objectif à confirmer · À ranger", "Objective to confirm · To organize") as string;
     }
     const need = state.needs.find((candidate) => candidate.id === classification.needIds[0]);
     return need
       ? t(`Proposé · ${need.labelFr}`, `Suggested · ${need.labelEn}`) as string
-      : t("Besoin à confirmer · À ranger", "Need to confirm · To organize") as string;
+      : t("Objectif à confirmer · À ranger", "Objective to confirm · To organize") as string;
   }
 
   function getPickerAddedSummary(tool: ToolSummary) {
@@ -2387,7 +2414,25 @@ const CartPage = () => {
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete("objectif");
     nextParams.delete("outil");
+    nextParams.delete("idees");
+    nextParams.delete("angle");
     setSearchParams(nextParams);
+  }
+
+  function openDedicatedExplorer(seedSlug = "objectif") {
+    if (!zoomedBoard || zoomedBoard.tools.length === 0) return;
+    const source = seedSlug === "objectif"
+      ? { type: "objectif" as const, id: zoomedBoard.id }
+      : { type: "outil" as const, slug: seedSlug };
+    navigate(getExplorerHref(prefix, source, { destination: zoomedBoard.id }), {
+      state: {
+        explorerCanGoBack: true,
+        explorerReturnTo: `${prefix}/ma-stack?objectif=${encodeURIComponent(zoomedBoard.id)}`,
+        previousSourceLabel: seedSlug === "objectif"
+          ? t(zoomedBoard.labelFr, zoomedBoard.labelEn)
+          : toolBySlug.get(seedSlug)?.name || t(zoomedBoard.labelFr, zoomedBoard.labelEn),
+      },
+    });
   }
 
   function getToolInspectorHref(toolSlug: string) {
@@ -2543,7 +2588,7 @@ const CartPage = () => {
             <div className="stack-objective-hero-copy">
               <h1 id="stack-objective-title">{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</h1>
               <p>
-                <span>{t("Besoin", "Need")}</span>
+                <span>{t("Objectif", "Objective")}</span>
                 <span aria-hidden>·</span>
                 {formatToolCount(zoomedBoard.tools.length, lang)}
                 <span aria-hidden>·</span>
@@ -2569,6 +2614,18 @@ const CartPage = () => {
                 {isEditingBoard ? <X size={18} aria-hidden /> : <Pencil size={17} aria-hidden />}
               </button>
 
+              {zoomedBoard.tools.length > 0 && (
+                <button
+                  type="button"
+                  className="stack-objective-hero-explore"
+                  onClick={() => openDedicatedExplorer("objectif")}
+                  aria-label={t(`Explorer l’objectif ${zoomedBoard.labelFr}`, `Explore the ${zoomedBoard.labelEn} objective`) as string}
+                >
+                  <Compass size={17} aria-hidden />
+                  <span>{t("Explorer cet objectif", "Explore this objective")}</span>
+                </button>
+              )}
+
               <button type="button" className="stack-objective-hero-add" onClick={() => openToolPicker(zoomedBoard.id)}>
                 <Plus size={19} aria-hidden />
                 <span>{t("Ajouter", "Add")}</span>
@@ -2581,7 +2638,7 @@ const CartPage = () => {
           <div className="stack-page-toolbar-inner">
             <div className="stack-page-toolbar-copy">
               <h1>{t("Ma stack", "My stack")}</h1>
-              <p>{selectedTools.length} {t("outils", "tools")} · {activeBoards.length} {t("besoins", "needs")}</p>
+              <p>{selectedTools.length} {t("outils", "tools")} · {activeBoards.length} {t("objectifs", "objectives")}</p>
             </div>
             <div className="stack-page-toolbar-actions">
               {unassignedTools.length > 0 && (
@@ -2623,7 +2680,7 @@ const CartPage = () => {
 
       {zoomedBoard ? (
         <main className={`stack-objective-detail${quickTool ? " stack-objective-detail--tool-page" : ""}${isEditingBoard ? " stack-objective-detail--editing" : ""}`} aria-label={t(`Détail ${zoomedBoard.labelFr}`, `${zoomedBoard.labelEn} detail`) as string}>
-          {!quickTool && <div className="stack-objective-browser">
+          {!quickTool && (<div className="stack-objective-browser">
             {isEditingBoard && zoomedSubdomainDestinations.length > 1 && (
               <div className="stack-board-organize-destinations" aria-label={t("Groupes de destination", "Destination groups") as string}>
                 <span>{draggedToolSlug ? t("Déplacer vers", "Move to") : t("Glissez un outil", "Drag a tool")}</span>
@@ -2738,14 +2795,14 @@ const CartPage = () => {
               </section>
             ))}
             </div>
-          </div>}
+          </div>)}
 
           {quickTool && (
             <section className="stack-tool-stage" aria-label={t(`Fiche ${quickTool.name}`, `${quickTool.name} profile`) as string}>
               <StackToolInspector
                 tool={quickTool}
                 needLabel={t(zoomedBoard.labelFr, zoomedBoard.labelEn)}
-                sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils du besoin", "Need tools")}
+                sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils de l’objectif", "Objective tools")}
                 categoryLabel={getCategoryLabel(quickTool)}
                 typeLabel={getToolTypeLabel(quickTool, lang)}
                 priceLabel={formatStackToolPrice(quickTool, lang)}
@@ -2759,6 +2816,7 @@ const CartPage = () => {
                 navigationDepth={inspectorNavigationDepth}
                 onClose={closeToolInspector}
                 onEdit={editInspectedTool}
+                onExploreIdeas={() => openDedicatedExplorer(getToolKey(quickTool))}
                 headerAside={renderEstimatedProfile("stack-tool-profile-estimated")}
                 t={t}
               />
@@ -3036,7 +3094,7 @@ const CartPage = () => {
             </p>
 
             <fieldset className="stack-need-options">
-              <legend className="sr-only">{t("Besoins", "Needs")}</legend>
+              <legend className="sr-only">{t("Objectifs", "Objectives")}</legend>
               {state.needs.map((need) => {
                 const checked = draftNeedIds.includes(need.id);
                 return (
@@ -3065,7 +3123,7 @@ const CartPage = () => {
               >
                 {draftNeedIds.length > 0
                   ? t("Enregistrer le rangement", "Save organization")
-                  : t("Choisir un besoin", "Choose a need")}
+                  : t("Choisir un objectif", "Choose an objective")}
               </button>
             </div>
           </section>
@@ -3096,7 +3154,7 @@ const CartPage = () => {
             )}
             <div className="stack-tool-add-heading">
               <h1 id="stack-tool-picker-title">{pickerPageTitle}</h1>
-              {!pickerBoard && <p><strong>{t("Tooltrim proposera automatiquement le besoin le plus pertinent.", "Tooltrim will automatically suggest the most relevant need.")}</strong></p>}
+              {!pickerBoard && <p><strong>{t("Tooltrim proposera automatiquement l’objectif le plus pertinent.", "Tooltrim will automatically suggest the most relevant objective.")}</strong></p>}
             </div>
             {renderEstimatedProfile("stack-tool-add-profile")}
             <button type="button" className="stack-tool-add-done" onClick={closeToolPicker}>

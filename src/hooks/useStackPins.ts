@@ -110,6 +110,10 @@ export function useStackPins() {
     updateToolCartState((current) => pinToolInState(current, slug, needIds));
   }, []);
 
+  const pinToolAutomatically = useCallback((slug: string, needIds: string[] = []) => {
+    updateToolCartState((current) => pinToolInState(current, slug, needIds, new Date().toISOString(), "auto"));
+  }, []);
+
   const unpinTool = useCallback((slug: string) => {
     updateToolCartState((current) => unpinToolInState(current, slug));
   }, []);
@@ -175,6 +179,7 @@ export function useStackPins() {
     state,
     persistenceStatus,
     pinTool,
+    pinToolAutomatically,
     unpinTool,
     assignToolNeeds,
     assignToolNeedsBatch,

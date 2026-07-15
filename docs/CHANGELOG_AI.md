@@ -3292,3 +3292,37 @@ Labels : Coup d'œil, Verdict, Critères, Coût, Features, Seuil, Attention, Alt
 - Coût réel précède les features pour ancrer la réalité budgétaire
 - Le seuil de bascule clôt la partie décisionnelle avant les erreurs
 - Build : ✅ 0 erreur, 156 warnings pré-existants
+
+---
+
+## 2026-07-15 — Explorer : exploration contextuelle transversale
+
+### Objectif
+Ouvrir une découverte associative inspirée de Pinterest depuis toute surface portant un outil précis, sans présenter les résultats comme des recommandations personnalisées.
+
+### Fichiers modifiés
+- `src/pages/ExplorerPage.tsx` — page dédiée, source sticky, angles, grille, recentrage, historique et ajout sans perte de contexte.
+- `src/lib/toolExploration.ts` — modèle discriminé, classement partagé, attribution à l’outil source exact et génération centralisée des URL.
+- `src/pages/CartPage.tsx` — entrées objectif/fiche de stack et redirection transparente des anciennes URL `?idees=`.
+- `src/pages/ToolsPage.tsx`, `src/pages/CategoryPage.tsx`, `src/pages/SearchPage.tsx`, `src/components/ToolCardEditorial.tsx` — action Compass attachée aux cartes outil.
+- `src/components/tool/StickyDecisionCard.tsx` — entrée depuis les cartes de décision desktop et mobile des fiches catalogue.
+- `src/hooks/useStackPins.ts` — ajout avec classement automatique explicite et fallback `À ranger`.
+- `src/components/stack/StackToolInspector.tsx` — entrée « Explorer autour de cet outil » depuis une fiche de Ma stack.
+- `src/index.css` — bandeau source sticky, quatre angles toujours visibles, cartes compactes et transitions accessibles.
+- `src/lib/toolExploration.test.ts`, `scripts/validate-ma-stack-e2e.mjs` — attribution multi-source, états stack, URL, navigation, ajout, migration et responsive.
+
+### Résultat
+- La page `/fr/explorer` conserve dans son URL la source, la destination éventuelle et l’angle actif.
+- Le bandeau montre en permanence la source, l’origine du parcours et la règle de rangement des ajouts.
+- Chaque relation nomme l’outil qui a produit le signal, y compris depuis un objectif multi-outils.
+- Un clic principal change seulement la source ; le bouton `+` change seulement Ma stack et confirme l’état sur place.
+- Sans destination, le rangement automatique indique l’objectif réellement choisi et conserve les cas faibles dans `À ranger`.
+- Depuis un objectif, le bandeau parle désormais de découverte dans un ton simple et humain, et les filtres deviennent des thématiques métier (`Interfaces`, `Image & identité`, `Vidéo & mouvement`, `3D & rendu` pour Design).
+- Les angles `Alternatives`, `Extensions` et `Usages proches` apparaissent uniquement lorsqu’un outil précis devient la source ; les cartes d’un objectif emploient le libellé plus naturel `À découvrir avec …`.
+- Lorsqu’un outil devient la source, Explorer l’ouvre désormais dans un hero zoomé inspiré de Pinterest : grand aperçu canonique, identité, description, catégorie et accès à la fiche complète avant la grille associée.
+- Les filtres utilisent directement la capsule flottante déjà présente sur les fiches outils : elle reste visible dès l’ouverture puis pendant le scroll, sans répéter la navigation dans le hero ni perdre la position de lecture.
+- Le hero d’un objectif adopte une structure plus proche de Pinterest : flèche seule, titre central `Plus d’outils`, objectif en contexte discret et destination d’ajout compacte à droite.
+- La source outil devient une carte verticale centrée d’environ une demi-largeur sur desktop : image OG complète au bon ratio, puis identité et contenu sous l’image ; elle reprend toute la largeur sur tablette et mobile.
+- La page d’une source outil adopte finalement la composition Pinterest complète : carte source collée à gauche sur deux colonnes, résultats associés immédiatement à droite, puis remplissage dense des emplacements libres sous la carte.
+- Le remplissage masonry n’utilise plus un nombre fixe de rangées : un `ResizeObserver` mesure la hauteur réelle de la source et des résultats, calcule leur span sur une trame de 8 px et supprime les trous lorsque le contenu ou le zoom change.
+- Sur la première série de huit résultats, `Voir plus` occupe les deux colonnes restantes afin de fermer aussi la dernière cellule vide possible en fin de composition.

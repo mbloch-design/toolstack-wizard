@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useLocation, useParams, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
@@ -9,6 +9,7 @@ import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import Breadcrumb from "@/components/Breadcrumb";
+import { getExplorerHref } from "@/lib/toolExploration";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -44,6 +45,7 @@ const SAVINGS_OPTIONS = [
 //  mark + JSON-LD schema.)
 
 const CategoryPage = () => {
+  const location = useLocation();
   const { lang, t, prefix } = useLang();
   const { slug } = useParams();
   const { tools } = useTools();
@@ -345,6 +347,8 @@ const CategoryPage = () => {
                   t={t}
                   lang={lang}
                   categoryLabel={displayName}
+                  exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                  exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName }}
                 />
               ))}
             </div>

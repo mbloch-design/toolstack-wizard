@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Check, ExternalLink, Pencil } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Compass, ExternalLink, Pencil } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import ToolCardImage from "@/components/tool/ToolCardImage";
@@ -22,6 +22,7 @@ interface StackToolInspectorProps {
   headerAside?: ReactNode;
   onClose: () => void;
   onEdit: () => void;
+  onExploreIdeas: () => void;
   t: (fr: string, en: string) => string;
 }
 
@@ -48,6 +49,7 @@ export default function StackToolInspector({
   headerAside,
   onClose,
   onEdit,
+  onExploreIdeas,
   t,
 }: StackToolInspectorProps) {
   const { tool: fullTool, loading } = useToolBySlug(tool.slug || tool.id);
@@ -102,7 +104,7 @@ export default function StackToolInspector({
 
         {headerAside && <div className="stack-tool-profile-topbar-aside">{headerAside}</div>}
 
-        <nav className="stack-tool-profile-nav" aria-label={t("Parcourir les outils du besoin", "Browse tools in this need") as string}>
+        <nav className="stack-tool-profile-nav" aria-label={t("Parcourir les outils de l’objectif", "Browse tools in this objective") as string}>
           {previousHref ? (
             <Link to={previousHref} state={{ stackToolInspectorDepth: nextDepth }} aria-label={t(`Outil précédent : ${previousLabel}`, `Previous tool: ${previousLabel}`) as string}>
               <ArrowLeft size={16} aria-hidden />
@@ -122,7 +124,7 @@ export default function StackToolInspector({
         <ToolCardImage tool={tool} logoSize={88} className="stack-tool-profile-cover" />
         <div className="stack-tool-profile-heading">
           <span>{categoryLabel}</span>
-          <p>{description || t("Outil utilisé dans ce besoin.", "Tool used for this need.")}</p>
+          <p>{description || t("Outil utilisé dans cet objectif.", "Tool used for this objective.")}</p>
         </div>
       </section>
 
@@ -140,6 +142,9 @@ export default function StackToolInspector({
         </div>
 
         <div className="stack-tool-profile-actions">
+          <button type="button" className="stack-tool-profile-ideas" onClick={onExploreIdeas}>
+            <Compass size={15} aria-hidden />{t("Explorer autour de cet outil", "Explore around this tool")}
+          </button>
           {externalHref ? (
             <a href={externalHref} target="_blank" rel="noopener noreferrer">
               {t("Ouvrir l’outil", "Open tool")}<ExternalLink size={14} aria-hidden />
@@ -188,7 +193,7 @@ export default function StackToolInspector({
 
           {coverage.length > 0 && useCases.length > 0 && (
             <section className="stack-tool-inspector-detail">
-              <span>{t("Besoins couverts", "Needs covered")}</span>
+              <span>{t("Objectifs couverts", "Objectives covered")}</span>
               <div className="stack-tool-inspector-chips">{coverage.map((item) => <span key={item}>{item}</span>)}</div>
             </section>
           )}

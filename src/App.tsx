@@ -35,6 +35,7 @@ const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
 const CartPage = lazy(() => import("@/pages/CartPage"));
+const ExplorerPage = lazy(() => import("@/pages/ExplorerPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
 const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
@@ -210,6 +211,7 @@ export const AppRoutes = () => (
       <Route path="category/:slug" element={<CategoryPage />} />
       <Route path="guides" element={<GuidesPage />} />
       <Route path="ma-stack" element={<CartPage />} />
+      <Route path="explorer" element={<ExplorerPage />} />
       <Route path="my-stack" element={<CartPage />} />
       <Route path="panier" element={<CartPage />} />
       <Route path="cart" element={<CartPage />} />
