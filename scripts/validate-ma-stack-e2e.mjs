@@ -98,14 +98,6 @@ async function closeScenario(scenario) {
   await scenario.context.close();
 }
 
-async function openNeedsManager(page) {
-  await page.locator('.stack-page-toolbar--overview summary[aria-label="Plus d’options"]').click();
-  await page.getByRole("button", { name: "Gérer les besoins", exact: true }).click();
-  const dialog = page.getByRole("dialog", { name: "Gérer les besoins" });
-  await dialog.waitFor();
-  return dialog;
-}
-
 const checks = [];
 const argValue = (name, fallback) => process.argv.find((arg) => arg.startsWith(`--${name}=`))?.split("=")[1] || fallback;
 const startAt = Math.max(1, Number(argValue("start", process.env.MA_STACK_E2E_START || 1)));
@@ -185,6 +177,7 @@ try {
   await run("4. multi-affectation avec coût unique", async () => {
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia", "design"])]));
     const { page } = scenario;
+    await page.getByLabel("Coût mensuel estimé : 17 €/mois", { exact: true }).waitFor();
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
     await page.getByLabel("Coût mensuel estimé : 17 €/mois", { exact: true }).waitFor();
     await page.getByRole("button", { name: "Retour à Ma stack", exact: true }).click();
@@ -200,9 +193,12 @@ try {
     const needB = { id: "custom-b", labelFr: "Besoin B", labelEn: "Besoin B", order: 100, source: "custom" };
     const scenario = await createScenario(browser, stack([entry("chatgpt", ["ia"]), entry("circle", ["custom-a"])], [needA, needB]));
     const { page } = scenario;
-    const manager = await openNeedsManager(page);
-    await manager.getByRole("button", { name: "Monter Besoin B", exact: true }).click();
-    await manager.getByRole("button", { name: "Fermer", exact: true }).click();
+    await page.getByRole("button", { name: "Organiser", exact: true }).click();
+    await page.getByLabel("Déplacer Besoin B", { exact: true }).dragTo(page.getByLabel("Déplacer Besoin A", { exact: true }));
+    await page.getByRole("button", { name: "Terminer", exact: true }).click();
+    await page.getByRole("button", { name: "Ajouter une section", exact: true }).click();
+    await page.getByLabel("Nom de la section", { exact: true }).fill("Besoin C");
+    await page.getByRole("button", { name: "Créer", exact: true }).click();
     await page.getByRole("button", { name: "Ouvrir Travailler avec l'IA", exact: true }).click();
     await page.getByRole("link", { name: /ChatGPT/ }).click();
     await page.getByRole("button", { name: "Rangement", exact: true }).click();
@@ -213,6 +209,7 @@ try {
     const saved = await persisted(page);
     assert(saved.toolEntries.find((item) => item.toolSlug === "chatgpt")?.needIds.join() === "ia,design", "La multi-affectation doit survivre au reload");
     assert(saved.needs.findIndex((need) => need.id === "custom-b") < saved.needs.findIndex((need) => need.id === "custom-a"), "L’ordre des besoins doit survivre au reload");
+    assert(saved.needs.some((need) => need.labelFr === "Besoin C" && need.source === "custom"), "La section créée depuis la carte vierge doit persister");
     await closeScenario(scenario);
   });
 
@@ -254,9 +251,8 @@ try {
     const customNeed = { id: "custom-formation", labelFr: "Créer une formation", labelEn: "Create a course", order: 90, source: "custom" };
     const scenario = await createScenario(browser, stack([entry("circle", [customNeed.id])], [customNeed]));
     const { page } = scenario;
-    const manager = await openNeedsManager(page);
-    await manager.getByRole("button", { name: "Supprimer le besoin Créer une formation", exact: true }).click();
-    await manager.getByRole("button", { name: "Fermer", exact: true }).click();
+    await page.getByRole("button", { name: "Organiser", exact: true }).click();
+    await page.getByRole("button", { name: "Supprimer Créer une formation", exact: true }).click();
     await page.getByRole("region", { name: "À ranger", exact: true }).waitFor();
     const saved = await persisted(page);
     assert(saved.pinnedToolSlugs.join() === "circle" && saved.toolEntries[0].needIds.length === 0, "L’outil orphelin doit rester dans Ma stack et revenir dans À ranger");

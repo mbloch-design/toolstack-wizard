@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight, Check, ExternalLink, Pencil } from "lucide-react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -18,6 +19,7 @@ interface StackToolInspectorProps {
   nextHref?: string;
   nextLabel?: string;
   navigationDepth?: number;
+  headerAside?: ReactNode;
   onClose: () => void;
   onEdit: () => void;
   t: (fr: string, en: string) => string;
@@ -43,6 +45,7 @@ export default function StackToolInspector({
   nextHref,
   nextLabel,
   navigationDepth = 0,
+  headerAside,
   onClose,
   onEdit,
   t,
@@ -96,6 +99,8 @@ export default function StackToolInspector({
             </p>
           </div>
         </div>
+
+        {headerAside && <div className="stack-tool-profile-topbar-aside">{headerAside}</div>}
 
         <nav className="stack-tool-profile-nav" aria-label={t("Parcourir les outils du besoin", "Browse tools in this need") as string}>
           {previousHref ? (
