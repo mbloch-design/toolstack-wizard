@@ -341,8 +341,8 @@ try {
     const { page } = scenario;
     await page.getByRole("button", { name: "Ouvrir Créer des visuels", exact: true }).click();
     await page.getByRole("button", { name: "Explorer l’objectif Créer des visuels", exact: true }).click();
-    await page.locator(".ex-source-banner").getByRole("heading", { name: "Plus d’outils", exact: true }).waitFor();
-    assert((await page.locator(".ex-objective-heading").innerText()).includes("Créer des visuels"), "Le bandeau doit conserver clairement l’objectif de départ");
+    await page.locator(".ex-source-banner").getByRole("heading", { name: "Ajouter des outils pour créer des visuels", exact: true }).waitFor();
+    assert(await page.locator(".ex-source-banner--objective .ex-destination").count() === 0, "Le hero objectif ne doit pas simuler une action d’ajout sans interaction");
     let url = new URL(page.url());
     assert(url.pathname === "/fr/explorer" && url.searchParams.get("type") === "objectif" && url.searchParams.get("source") === "design", "L’objectif doit ouvrir la page Explorer dédiée");
     assert(url.searchParams.get("destination") === "design", "La destination doit rester explicite dans l’URL");
@@ -352,7 +352,7 @@ try {
     assert(await directions.evaluate((element) => getComputedStyle(element).position) === "fixed", "Les filtres Explorer doivent utiliser la capsule fixe des fiches outils");
     assert(await directions.getByRole("button", { name: /^Alternatives/ }).count() === 0, "Un objectif ne doit pas exposer les relations propres à une fiche outil");
     assert(await directions.getByRole("button", { name: /^Extensions/ }).count() === 0, "Un objectif doit proposer des thématiques plutôt que des extensions");
-    const firstTheme = directions.getByRole("button").nth(1);
+    const firstTheme = directions.locator(".tt-pillnav-item").nth(1);
     const firstThemeLabel = (await firstTheme.innerText()).replace(/\d+$/, "").trim();
     await firstTheme.click();
     assert(!!new URL(page.url()).searchParams.get("theme"), `La thématique ${firstThemeLabel} doit être conservée dans l’URL`);
@@ -360,7 +360,7 @@ try {
 
     const floatingFilters = directions;
     await page.locator("#main-content").evaluate((element, top) => element.scrollTo(0, top), await page.locator(".ex-source-banner").evaluate((element) => element.getBoundingClientRect().bottom + 24));
-    const floatingTheme = floatingFilters.getByRole("button").nth(1);
+    const floatingTheme = floatingFilters.locator(".tt-pillnav-item").nth(1);
     const scrollBeforeFloatingFilter = await page.locator("#main-content").evaluate((element) => element.scrollTop);
     await floatingTheme.click();
     assert(!!new URL(page.url()).searchParams.get("theme"), "Le filtre flottant doit piloter la même thématique que le filtre du hero");
@@ -381,8 +381,10 @@ try {
     await page.goBack({ waitUntil: "networkidle" });
     await page.locator(".ex-source-banner").waitFor();
 
-    await page.locator(".ex-card").first().getByRole("button", { name: `Explorer autour de ${discoveredName}`, exact: true }).click();
+    await page.locator("#main-content").evaluate((element) => element.scrollTo(0, 600));
+    await page.locator(".ex-card").first().getByRole("button", { name: `Explorer autour de ${discoveredName}`, exact: true }).evaluate((element) => element.click());
     await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "Le clic principal doit seulement recentrer la source");
+    await until(() => page.locator("#main-content").evaluate((element) => element.scrollTop <= 1), "Une nouvelle source Explorer doit revenir en haut de page");
     assert(new URL(page.url()).searchParams.get("destination") === "design", "Le recentrage ne doit pas changer la destination");
     await page.locator(".ex-tool-focus").getByRole("heading", { name: discoveredName, exact: true }).waitFor();
     assert(await page.locator(".ex-tool-focus-visual").count() === 1, "Une source outil doit s’ouvrir dans un hero visuel zoomé");
@@ -392,22 +394,58 @@ try {
     const masonryGap = await page.evaluate(() => {
       const sourceCard = document.querySelector(".ex-tool-focus")?.getBoundingClientRect();
       if (!sourceCard) return Number.POSITIVE_INFINITY;
-      const nextLeftItem = [...document.querySelectorAll(".ex-card, .ex-more")]
+      const nextLeftItem = [...document.querySelectorAll(".ex-card")]
         .map((element) => element.getBoundingClientRect())
         .filter((rect) => rect.left < sourceCard.right - 1 && rect.top >= sourceCard.bottom - 1)
         .sort((a, b) => a.top - b.top)[0];
       return nextLeftItem ? nextLeftItem.top - sourceCard.bottom : Number.POSITIVE_INFINITY;
     });
     assert(masonryGap <= 40, `La grille masonry ne doit pas laisser de trou sous la source (${masonryGap}px)`);
+
+    const loadedToolCards = page.locator(".ex-card:not(.ex-card--skeleton)");
+    const initialToolResultCount = await loadedToolCards.count();
+    const loadSentinel = page.locator(".ex-load-sentinel");
+    if (await loadSentinel.count()) {
+      await loadSentinel.scrollIntoViewIfNeeded();
+      await page.locator(".ex-card--skeleton").first().waitFor();
+      assert(await page.locator(".ex-card--skeleton").count() <= 4, "Le chargement au scroll doit rester limité à quatre skeletons");
+      await until(() => loadedToolCards.count().then((count) => count > initialToolResultCount), "Le scroll doit charger automatiquement un nouveau lot d’outils");
+      await page.locator(".ex-card--skeleton").first().waitFor({ state: "detached" });
+    }
+    const expandedToolResultCount = await loadedToolCards.count();
+    const nextSourceCard = loadedToolCards.first();
+    const nextSourceName = await nextSourceCard.locator("strong").innerText();
+    const nextSourceSlug = new URL((await nextSourceCard.getByRole("link", { name: "Voir la fiche", exact: true }).getAttribute("href")) || "", APP_URL).pathname.split("/").pop();
+    await page.locator("#main-content").evaluate((element) => element.scrollTo(0, 900));
+    const firstSourceScroll = await page.locator("#main-content").evaluate((element) => element.scrollTop);
+    await nextSourceCard.getByRole("button", { name: `Explorer autour de ${nextSourceName}`, exact: true }).evaluate((element) => element.click());
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === nextSourceSlug), "Un deuxième outil doit créer une nouvelle étape Explorer");
+    await until(() => page.locator("#main-content").evaluate((element) => element.scrollTop <= 1), "Avancer vers un deuxième outil doit ouvrir son hero en haut");
+    assert(await page.locator(".ex-tool-focus").getByRole("button", { name: `Retour à ${discoveredName}`, exact: true }).count() === 1, "Le retour du hero doit annoncer l’outil précédent");
+    assert(await page.locator(".ex-filter-pillnav").getByRole("button", { name: `Retour à ${discoveredName}`, exact: true }).count() === 1, "Le retour sticky doit annoncer la même étape que le hero");
+
     await page.goBack({ waitUntil: "networkidle" });
-    await page.locator(".ex-source-banner").getByRole("heading", { name: "Plus d’outils", exact: true }).waitFor();
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "Le retour navigateur doit remonter d’un seul outil");
+    await until(() => page.locator("#main-content").evaluate((element, expected) => Math.abs(element.scrollTop - expected) <= 2, firstSourceScroll), "Le retour navigateur doit restaurer la position de l’outil précédent");
+    assert(await loadedToolCards.count() === expandedToolResultCount, "Le retour doit restaurer le nombre de résultats déjà chargés");
+
+    await loadedToolCards.first().getByRole("button", { name: `Explorer autour de ${nextSourceName}`, exact: true }).evaluate((element) => element.click());
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === nextSourceSlug), "Le parcours doit pouvoir repartir après un retour navigateur");
+    await page.locator(".ex-tool-focus").getByRole("button", { name: `Retour à ${discoveredName}`, exact: true }).click();
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "La flèche du hero doit remonter d’un seul outil");
+    await until(() => page.locator("#main-content").evaluate((element, expected) => Math.abs(element.scrollTop - expected) <= 2, firstSourceScroll), "La flèche du hero doit restaurer la position précédente");
+
+    await page.locator(".ex-filter-pillnav").getByRole("button", { name: "Retour à Créer des visuels", exact: true }).click();
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("type") === "objectif" && new URL(page.url()).searchParams.get("source") === "design"), "Le retour sticky doit remonter vers l’objectif précédent");
+    await page.locator(".ex-source-banner").getByRole("heading", { name: "Ajouter des outils pour créer des visuels", exact: true }).waitFor();
+    await until(() => page.locator("#main-content").evaluate((element) => element.scrollTop >= 598), "Le retour à l’objectif doit restaurer sa position précédente");
 
     for (const width of [320, 390, 768, 1440, 1920]) {
       await page.setViewportSize({ width, height: width <= 390 ? 844 : 1000 });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       assert(overflow <= 1, `Explorer déborde horizontalement de ${overflow}px à ${width}px`);
       assert(await page.locator(".ex-filter-pillnav button").count() >= 2, `Les thématiques sticky doivent rester visibles à ${width}px`);
-      assert(await page.locator(".ex-card").count() === 8, `La première grille doit afficher 8 outils à ${width}px`);
+      assert(await page.locator(".ex-card:not(.ex-card--skeleton)").count() >= 20, `La grille doit conserver au moins les 20 premiers outils à ${width}px`);
     }
     await page.setViewportSize({ width: 1440, height: 1000 });
 
@@ -436,6 +474,16 @@ try {
     await page.goto(`${APP_URL}/fr/tool/figma`, { waitUntil: "networkidle" });
     assert(await page.getByRole("link", { name: "Explorer autour de Figma", exact: true }).count() >= 1, "La fiche catalogue doit proposer Explorer autour de l’outil");
     await closeScenario(scenario);
+
+    const sourceAddScenario = await createScenario(browser, stack([entry("figma", ["design"])]));
+    await sourceAddScenario.page.goto(`${APP_URL}/fr/explorer?type=outil&source=sentry&destination=marketing`, { waitUntil: "networkidle" });
+    const sourceAddButton = sourceAddScenario.page.getByRole("button", { name: "Ajouter Sentry à Faire connaître mon activité", exact: true });
+    await sourceAddButton.click();
+    await sourceAddScenario.page.locator(".ex-flying-tool").waitFor({ state: "detached" });
+    await sourceAddScenario.page.getByRole("button", { name: "Sentry déjà dans Faire connaître mon activité", exact: true }).waitFor();
+    assert((await persisted(sourceAddScenario.page)).toolEntries.some((item) => item.toolSlug === "sentry" && item.needIds.includes("marketing")), "Le CTA de la source doit réellement ajouter l’outil à la destination");
+    assert(new URL(sourceAddScenario.page.url()).searchParams.get("source") === "sentry", "Ajouter la source ne doit pas recentrer l’exploration");
+    await closeScenario(sourceAddScenario);
 
     const customNeed = { id: "formation", labelFr: "Créer une formation", labelEn: "Create a course", order: 90, source: "custom" };
     const emptyScenario = await createScenario(browser, stack([], [customNeed]));

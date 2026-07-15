@@ -19,7 +19,20 @@ import {
   type ExplorationDirection,
 } from "@/lib/toolExploration";
 
-const RESULT_BATCH = 8;
+const INITIAL_RESULT_COUNT = 20;
+const RESULT_BATCH = 12;
+const SKELETON_COUNT = 4;
+const LOAD_MORE_DELAY = 240;
+const explorerResultLimits = new Map<string, number>();
+const MAX_SAVED_EXPLORER_STEPS = 100;
+
+function rememberExplorerResultLimit(key: string, limit: number) {
+  explorerResultLimits.delete(key);
+  explorerResultLimits.set(key, limit);
+  if (explorerResultLimits.size <= MAX_SAVED_EXPLORER_STEPS) return;
+  const oldestKey = explorerResultLimits.keys().next().value;
+  if (oldestKey) explorerResultLimits.delete(oldestKey);
+}
 
 interface ExplorerLocationState {
   explorerCanGoBack?: boolean;
@@ -39,14 +52,14 @@ function ExplorerFloatingFilterNav({
   ariaLabel,
   items,
   logoAriaLabel,
-  logoTo,
+  onBack,
   onSelect,
 }: {
   activeId: string;
   ariaLabel: string;
   items: ExplorerFilterItem[];
   logoAriaLabel: string;
-  logoTo: string;
+  onBack: () => void;
   onSelect: (id: string) => void;
 }) {
   function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -62,9 +75,9 @@ function ExplorerFloatingFilterNav({
 
   return (
     <nav className="tt-pillnav ex-filter-pillnav" aria-label={ariaLabel}>
-      <Link to={logoTo} className="tt-pillnav-logo" aria-label={logoAriaLabel}>
+      <button type="button" className="tt-pillnav-logo" aria-label={logoAriaLabel} onClick={onBack}>
         <img src={pictoLogo} alt="" className="tt-pillnav-logo-img" />
-      </Link>
+      </button>
       <div className="tt-pillnav-items">
         {items.map((item, index) => (
           <button
@@ -87,6 +100,10 @@ function cleanCategoryLabel(value = "") {
   return value.replace(/^[^\p{L}\p{N}]+/u, "").trim();
 }
 
+function asSentenceContinuation(value: string) {
+  return value ? `${value.charAt(0).toLocaleLowerCase()}${value.slice(1)}` : value;
+}
+
 export default function ExplorerPage() {
   const { lang, prefix, t } = useLang();
   const location = useLocation();
@@ -95,9 +112,11 @@ export default function ExplorerPage() {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { state, pinTool, pinToolAutomatically } = useStackPins();
-  const [resultLimit, setResultLimit] = useState(RESULT_BATCH);
+  const [resultLimit, setResultLimit] = useState(INITIAL_RESULT_COUNT);
   const [addingSlug, setAddingSlug] = useState<string | null>(null);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const source = useMemo(() => parseExplorationSource(searchParams), [searchParams]);
+  const explorerHistoryKey = `${location.key}:${location.pathname}${location.search}`;
   const requestedDestinationId = searchParams.get("destination");
   const destination = state.needs.find((need) => need.id === requestedDestinationId) || null;
   const locationState = (location.state || {}) as ExplorerLocationState;
@@ -111,6 +130,8 @@ export default function ExplorerPage() {
   const sourceTool = source?.type === "outil" ? toolBySlug.get(source.slug) || null : null;
   const objectiveSourceSnapshot = useRef<{ id: string; slugs: string[] } | null>(null);
   const masonryRef = useRef<HTMLElement>(null);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
+  const loadingMoreRef = useRef(false);
   if (source?.type === "objectif" && objectiveSourceSnapshot.current?.id !== source.id) {
     objectiveSourceSnapshot.current = {
       id: source.id,
@@ -148,6 +169,7 @@ export default function ExplorerPage() {
     ? activeThemeId ? candidates.filter((candidate) => getObjectiveExplorationThemeId(source.id, candidate.tool) === activeThemeId) : candidates
     : angle === "all" ? candidates : candidates.filter((candidate) => candidate.direction === angle);
   const visibleCandidates = filteredCandidates.slice(0, resultLimit);
+  const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
   const sourceKey = source?.type === "objectif" ? `objectif:${source.id}` : source ? `outil:${source.slug}` : "unknown";
 
   useEffect(() => {
@@ -162,7 +184,7 @@ export default function ExplorerPage() {
         const styles = window.getComputedStyle(masonry);
         const rowHeight = Number.parseFloat(styles.gridAutoRows);
         const rowGap = Number.parseFloat(styles.rowGap) || 0;
-        const items = masonry.querySelectorAll<HTMLElement>(".ex-tool-focus, .ex-card, .ex-more");
+        const items = masonry.querySelectorAll<HTMLElement>(".ex-tool-focus, .ex-card");
         if (!Number.isFinite(rowHeight) || rowHeight <= 0) {
           items.forEach((item) => { item.style.gridRowEnd = "auto"; });
           return;
@@ -175,7 +197,7 @@ export default function ExplorerPage() {
       });
     };
 
-    const items = masonry.querySelectorAll<HTMLElement>(".ex-tool-focus, .ex-card, .ex-more");
+    const items = masonry.querySelectorAll<HTMLElement>(".ex-tool-focus, .ex-card");
     const resizeObserver = new ResizeObserver(updateSpans);
     items.forEach((item) => resizeObserver.observe(item));
     updateSpans();
@@ -185,11 +207,48 @@ export default function ExplorerPage() {
       resizeObserver.disconnect();
       window.removeEventListener("resize", updateSpans);
     };
-  }, [isObjectiveSource, sourceKey, visibleCandidates.length]);
+  }, [isLoadingMore, isObjectiveSource, sourceKey, visibleCandidates.length]);
 
   useEffect(() => {
-    setResultLimit(RESULT_BATCH);
+    setResultLimit(INITIAL_RESULT_COUNT);
+    loadingMoreRef.current = false;
+    setIsLoadingMore(false);
   }, [activeThemeId, angle, sourceKey]);
+
+  useEffect(() => {
+    const sentinel = loadMoreRef.current;
+    if (!sentinel || !hasMoreCandidates) return;
+
+    const scrollContainer = document.getElementById("main-content");
+    const overflowY = scrollContainer ? window.getComputedStyle(scrollContainer).overflowY : "visible";
+    const root = scrollContainer && (overflowY === "auto" || overflowY === "scroll") ? scrollContainer : null;
+    let timer = 0;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting || loadingMoreRef.current) return;
+      loadingMoreRef.current = true;
+      setIsLoadingMore(true);
+      observer.unobserve(sentinel);
+      timer = window.setTimeout(() => {
+        setResultLimit((current) => Math.min(current + RESULT_BATCH, filteredCandidates.length));
+        loadingMoreRef.current = false;
+        setIsLoadingMore(false);
+      }, LOAD_MORE_DELAY);
+    }, { root, rootMargin: "0px 0px 420px", threshold: 0.01 });
+
+    observer.observe(sentinel);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timer);
+    };
+  }, [filteredCandidates.length, hasMoreCandidates, resultLimit, sourceKey]);
+
+  useEffect(() => {
+    setResultLimit(explorerResultLimits.get(explorerHistoryKey) ?? INITIAL_RESULT_COUNT);
+  }, [explorerHistoryKey]);
+
+  useEffect(() => {
+    rememberExplorerResultLimit(explorerHistoryKey, resultLimit);
+  }, [explorerHistoryKey, resultLimit]);
 
   useEffect(() => {
     document.title = `${t("Explorer les outils", "Explore tools")} · ToolTrim`;
@@ -243,9 +302,9 @@ export default function ExplorerPage() {
         explorerCanGoBack: true,
         originLabel,
         previousSourceLabel: sourceLabel,
+        skipScrollReset: false,
       } satisfies ExplorerLocationState,
     });
-    scrollToTop(window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
   }
 
   function animateAddition(sourceCard: HTMLElement, commit: () => void) {
@@ -299,7 +358,7 @@ export default function ExplorerPage() {
       }
       setAddingSlug(null);
     };
-    const card = event.currentTarget.closest<HTMLElement>(".ex-card");
+    const card = event.currentTarget.closest<HTMLElement>(".ex-card, .ex-tool-focus");
     if (card) animateAddition(card, commit);
     else commit();
   }
@@ -326,6 +385,12 @@ export default function ExplorerPage() {
       { id: "extensions", label: t("Extensions", "Extensions") as string },
       { id: "adjacent", label: t("Usages proches", "Related uses") as string },
     ];
+  const sourceToolSlug = sourceTool ? getExplorationToolKey(sourceTool) : null;
+  const sourceStackEntry = sourceToolSlug ? state.toolEntries.find((entry) => entry.toolSlug === sourceToolSlug) : null;
+  const sourceAlreadyAdded = destination
+    ? Boolean(sourceStackEntry?.needIds.includes(destination.id))
+    : Boolean(sourceStackEntry);
+  const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
 
   return (
     <main ref={masonryRef} className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
@@ -335,15 +400,10 @@ export default function ExplorerPage() {
             <ArrowLeft size={19} aria-hidden />
           </button>
           <div className="ex-objective-heading">
-            <h1 id="explorer-title">{t("Plus d’outils", "More tools")}</h1>
-            <p>{sourceLabel}</p>
-          </div>
-          <div className="ex-destination">
-            {destination ? (
-              <><Plus size={15} aria-hidden /><span>{t(`Ajout dans ${destination.labelFr}`, `Add to ${destination.labelEn}`)}</span></>
-            ) : (
-              <><Compass size={15} aria-hidden /><span>{t("Classement automatique dans Ma stack", "Automatic organization in My stack")}</span></>
-            )}
+            <h1 id="explorer-title">{t(
+              `Ajouter des outils pour ${asSentenceContinuation(sourceLabel)}`,
+              `Add tools to ${asSentenceContinuation(sourceLabel)}`,
+            )}</h1>
           </div>
         </header>
       ) : sourceTool && (
@@ -352,13 +412,28 @@ export default function ExplorerPage() {
             <button type="button" className="ex-back" onClick={handleBack} aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}>
               <ArrowLeft size={19} aria-hidden />
             </button>
-            <div className="ex-destination">
-              {destination ? (
-                <><Plus size={15} aria-hidden /><span>{t(`Ajout direct à ${destination.labelFr}`, `Added directly to ${destination.labelEn}`)}</span></>
-              ) : (
-                <><Compass size={15} aria-hidden /><span>{t("Classement automatique dans Ma stack", "Automatic organization in My stack")}</span></>
-              )}
-            </div>
+            <button
+              type="button"
+              className={`ex-destination ex-tool-focus-add${sourceAlreadyAdded ? " is-added" : ""}`}
+              disabled={sourceAlreadyAdded || sourceIsAdding}
+              onClick={(event) => addTool(sourceTool, event)}
+              aria-label={destination
+                ? sourceAlreadyAdded
+                  ? t(`${sourceLabel} déjà dans ${destination.labelFr}`, `${sourceLabel} already in ${destination.labelEn}`) as string
+                  : t(`Ajouter ${sourceLabel} à ${destination.labelFr}`, `Add ${sourceLabel} to ${destination.labelEn}`) as string
+                : sourceAlreadyAdded
+                  ? t(`${sourceLabel} déjà dans Ma stack`, `${sourceLabel} already in My stack`) as string
+                  : t(`Ajouter ${sourceLabel} à Ma stack`, `Add ${sourceLabel} to My stack`) as string}
+            >
+              {sourceAlreadyAdded ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
+              <span>{destination
+                ? sourceAlreadyAdded
+                  ? t(`Déjà dans ${destination.labelFr}`, `Already in ${destination.labelEn}`)
+                  : t(`Ajouter à ${destination.labelFr}`, `Add to ${destination.labelEn}`)
+                : sourceAlreadyAdded
+                  ? t("Dans Ma stack", "In My stack")
+                  : t("Ajouter à Ma stack", "Add to My stack")}</span>
+            </button>
           </div>
           <div className="ex-tool-focus-main">
             <div className={`ex-tool-focus-visual${sourceCover ? " has-cover" : ""}`}>
@@ -374,7 +449,7 @@ export default function ExplorerPage() {
                 {originLabel !== sourceLabel && <> · {t(`depuis ${originLabel}`, `from ${originLabel}`)}</>}
               </span>
               <div className="ex-tool-focus-title">
-                <ToolLogo tool={sourceTool} size={54} />
+                <ToolLogo tool={sourceTool} size={54} className="ex-card-logo" />
                 <div>
                   <h1 id="explorer-title">{sourceLabel}</h1>
                   <span>{getCategoryLabel(sourceTool)}</span>
@@ -395,7 +470,7 @@ export default function ExplorerPage() {
         ariaLabel={t("Filtres d’exploration", "Exploration filters") as string}
         items={floatingFilterItems}
         logoAriaLabel={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}
-        logoTo={locationState.explorerReturnTo || fallbackHref}
+        onBack={handleBack}
         onSelect={(id) => {
           if (isObjectiveSource) setTheme(id === "all" ? null : id, false);
           else setAngle(id as ExplorationDirection, false);
@@ -433,7 +508,31 @@ export default function ExplorerPage() {
               </article>
             );
           })}
-          {filteredCandidates.length > visibleCandidates.length && <button type="button" className="ex-more" onClick={() => setResultLimit((current) => current + RESULT_BATCH)}>{t("Voir plus", "See more")}</button>}
+          {hasMoreCandidates && (
+            <>
+              {isLoadingMore && Array.from({ length: Math.min(SKELETON_COUNT, filteredCandidates.length - visibleCandidates.length) }, (_, index) => (
+                <article key={`skeleton-${index}`} className="ex-card ex-card--skeleton" aria-hidden="true">
+                  <div className="ex-card-main">
+                    <span className="ex-skeleton ex-skeleton--logo" />
+                    <span className="ex-card-copy">
+                      <span className="ex-skeleton ex-skeleton--title" />
+                      <span className="ex-skeleton ex-skeleton--meta" />
+                      <span className="ex-skeleton ex-skeleton--reason" />
+                    </span>
+                  </div>
+                  <div className="ex-card-actions">
+                    <span className="ex-skeleton ex-skeleton--link" />
+                    <span className="ex-skeleton ex-skeleton--button" />
+                  </div>
+                </article>
+              ))}
+              <div ref={loadMoreRef} className="ex-load-sentinel" role="status" aria-live="polite">
+                <span className="sr-only">{isLoadingMore
+                  ? t("Chargement de nouveaux outils", "Loading more tools")
+                  : t("Faites défiler pour découvrir plus d’outils", "Scroll to discover more tools")}</span>
+              </div>
+            </>
+          )}
         </section>
       ) : (
         <section className="ex-empty">
