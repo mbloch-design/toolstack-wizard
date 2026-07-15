@@ -441,7 +441,7 @@ const ToolDetailPage = () => {
                       <div className="td-hero-eyebrow-row">
                         {category && (
                           <Link className="td-hero-cat" to={`${prefix}/category/${category.slug}`}>
-                            {CategoryIcon && <CategoryIcon style={{ width: 12, height: 12 }} />}
+                            {CategoryIcon && <CategoryIcon className="td-icon-xs" />}
                             {t(catName, catNameEn)}
                           </Link>
                         )}
@@ -641,24 +641,16 @@ const ToolDetailPage = () => {
                     const clusterTools = findSimilarTools(tool, clusterCandidates).slice(0, 6);
                     if (!clusterTools.length) return null;
                     return (
-                      <div style={{ marginTop: 40 }}>
+                      <div className="td-subs">
                         <p className="td-eyebrow td-eyebrow--tight">
                           {t("Substituables directement", "Direct substitutes")}
                         </p>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                        <div className="td-chips">
                           {clusterTools.map((ct: any) => (
                             <Link
                               key={ct.id}
                               to={`${prefix}/tool/${ct.slug || ct.id}`}
-                              style={{
-                                display: "inline-flex", alignItems: "center", gap: 8,
-                                padding: "8px 14px",
-                                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
-                                fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
-                                textDecoration: "none", transition: "border-color 140ms",
-                              }}
-                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
+                              className="td-chip"
                             >
                               <ToolLogo tool={ct} size={18} />
                               {ct.name}
@@ -693,7 +685,7 @@ const ToolDetailPage = () => {
                       }) as { slugPair: string; other: any }[];
                     if (!compareTools.length) return null;
                     return (
-                      <div style={{ marginTop: 40 }}>
+                      <div className="td-subs">
                         <p className="td-eyebrow td-eyebrow--tight">
                           {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
                         </p>
@@ -944,25 +936,18 @@ const ToolDetailPage = () => {
                       </div>
 
                       {/* Reviews coming soon */}
-                      <div style={{ background: "var(--color-bg)", border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: "40px 32px", textAlign: "center" }}>
-                        <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", marginBottom: 10 }}>
+                      <div className="td-soon-card">
+                        <p className="td-soon-title">
                           {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
                         </p>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "var(--color-muted)", maxWidth: 420, margin: "0 auto 24px" }}>
+                        <p className="td-soon-text">
                           {t(
                             "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
                             "User reviews are coming soon. Share what works, what costs too much, what you'd change.",
                           )}
                         </p>
-                        <span style={{
-                          display: "inline-flex", alignItems: "center", gap: 8,
-                          padding: "8px 16px",
-                          border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)",
-                          background: "var(--color-surface-soft)",
-                          fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
-                          color: "var(--color-text-strong)", letterSpacing: "0.02em",
-                        }}>
-                          <span style={{ width: 6, height: 6, borderRadius: "var(--radius-circle)", background: "var(--color-text-strong)", animation: "pulse 2s infinite" }} />
+                        <span className="td-soon-badge">
+                          <span className="td-soon-dot" />
                           {t("Bientôt disponible", "Coming soon")}
                         </span>
                       </div>
@@ -998,14 +983,9 @@ const ToolDetailPage = () => {
             )}
 
             {/* ── Freshness footer ── */}
-            <footer style={{
-              marginTop: 24,
-              display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16,
-              borderTop: "1px solid var(--color-border)", paddingTop: 24,
-              fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)",
-            }}>
-              <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <CalendarCheck style={{ width: 12, height: 12 }} />
+            <footer className="td-fresh">
+              <span className="td-fresh-item">
+                <CalendarCheck className="td-icon-xs" />
                 {t("Mis à jour :", "Updated:")} <time dateTime={verifiedOn}>{verifiedOn}</time>
               </span>
               {sourceDomain && (

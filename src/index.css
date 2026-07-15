@@ -7537,6 +7537,105 @@
     height: 14px;
     color: var(--color-muted-light);
   }
+
+  /* ── "Coming soon" placeholder card (reviews) ── */
+  .td-soon-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .td-soon-title {
+    font-family: var(--font-brand);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+  .td-soon-text {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-muted);
+    max-width: 420px;
+    margin: 0 auto 24px;
+  }
+  .td-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-soft);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-strong);
+    letter-spacing: 0.02em;
+  }
+  .td-soon-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-circle);
+    background: var(--color-text-strong);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── Freshness footer — when the page was last verified, and against what ── */
+  .td-fresh {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 24px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--color-muted-light);
+  }
+  .td-fresh-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  /* Lucide icons sit inline with 12px copy. */
+  .td-icon-xs {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* ── Tool chips — a wrapped row of linked tools ── */
+  .td-subs {
+    margin-top: 40px;
+  }
+  .td-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .td-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 140ms;
+  }
+  /* was two JS mouse handlers rewriting borderColor by hand */
+  .td-chip:hover {
+    border-color: var(--color-text);
+  }
   .td-alt-row:first-child { border-top: none; }
 
   /* ── Décision rapide — 3-column editorial blocks ── */
