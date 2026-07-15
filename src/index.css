@@ -7069,13 +7069,13 @@
     }
   }
 
-  /* Section wrapper */
+  /* Section wrapper.
+     No rule between sections: 56px of padding on each side already separates
+     them, and every block inside (td-dr-block, td-judgment, td-synthesis)
+     draws its own top rule — so the page stacked two lines 56px apart with
+     nothing between them. Space separates; a rule should mean something. */
   .td-section {
     padding: 56px 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .td-section:last-child {
-    border-bottom: none;
   }
 
   /* Section eyebrow */
@@ -7097,10 +7097,14 @@
   /* Section title — 42px → 64px */
   .td-title {
     font-family: var(--font-brand);
-    font-size: clamp(2.625rem, 4vw, 4rem);
+    /* A section heading sits under the page title, never level with it.
+       This was clamp(2.625rem, 4vw, 4rem) — 42-64px — i.e. larger than
+       .td-hero-h1 (38-58px), so every section shouted as loud as the tool
+       name and the page read as a stack of H1s. */
+    font-size: clamp(1.75rem, 2.6vw, 2.25rem);
     font-weight: 600;
-    line-height: 0.98;
-    letter-spacing: -0.055em;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     color: var(--color-text);
     max-width: 820px;
     margin-bottom: 28px;
@@ -7461,7 +7465,12 @@
   .td-subpage-content + .td-subpage-content {
     margin-top: clamp(32px, 4vw, 48px);
     padding-top: clamp(28px, 3vw, 40px);
-    border-top: 2px solid var(--color-border-strong);
+    /* 1px/--color-border, like every other rule on the page. This was 2px of
+       --color-border-strong (#222222): the only near-black line on a page
+       where every other separator is a #DADAD4 hairline, so it read as an
+       error rather than as a chapter break. The 48px + 40px around it already
+       do the separating. */
+    border-top: 1px solid var(--color-border);
   }
 
   /* Hero metadata row */
