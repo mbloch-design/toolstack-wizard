@@ -1146,7 +1146,7 @@ const StackDetailPage = () => {
               {relatedStacks.map((related) => (
                 <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
                   <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text)", padding: "2px 6px", border: "1px solid var(--color-border)", borderRadius: 3 }}>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text)", padding: "2px 6px", border: "1px solid var(--color-border)", borderRadius: "var(--radius-xs)" }}>
                       {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
                     </span>
                   </div>
@@ -1383,7 +1383,7 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
         </div>
         <Link
           to={`${prefix}/tool/${tool!.slug}`}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px", background: "var(--color-text)", color: "var(--color-surface)", borderRadius: 6, fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px", background: "var(--color-text)", color: "var(--color-surface)", borderRadius: "var(--radius-sm)", fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none" }}
         >
           {t("Fiche complète", "Full details")}
           <ExternalLink className="h-3 w-3" />

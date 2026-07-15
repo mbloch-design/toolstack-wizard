@@ -106,7 +106,7 @@ export default function StickyDecisionCard({
     <div style={{
       background: "var(--color-surface-soft)",
       border: "1px solid var(--color-border)",
-      borderRadius: 16,
+      borderRadius: "var(--radius-lg)",
       padding: "20px 22px 22px",
       display: "grid",
       gap: 16,
@@ -115,7 +115,7 @@ export default function StickyDecisionCard({
       {/* ── Identity: logo + name (the logo lives nowhere else on the page) ── */}
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <div style={{
-          width: 38, height: 38, borderRadius: 9,
+          width: 38, height: 38, borderRadius: "var(--radius)",
           border: "1px solid var(--color-border)", background: "var(--color-bg)",
           display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
         }}>
@@ -166,7 +166,7 @@ export default function StickyDecisionCard({
               display: "inline-flex", alignItems: "center",
               height: 24, padding: "0 10px",
               background: "var(--color-surface)", border: "1px solid var(--color-border)",
-              borderRadius: 999, fontFamily: "var(--font-ui)", fontSize: 12,
+              borderRadius: "var(--radius-pill)", fontFamily: "var(--font-ui)", fontSize: 12,
               color: "var(--color-muted)", whiteSpace: "nowrap",
             }}>
               {tag}
@@ -198,7 +198,7 @@ export default function StickyDecisionCard({
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             height: 46, background: "var(--color-text)", color: "var(--color-surface)",
-            borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
+            borderRadius: "var(--radius)", fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
             textDecoration: "none",
           }}
         >
@@ -221,7 +221,7 @@ export default function StickyDecisionCard({
             style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               height: 42, background: "transparent", color: "var(--color-text)",
-              border: "1px solid var(--color-border)", borderRadius: 8,
+              border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
               fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, textDecoration: "none",
             }}
           >

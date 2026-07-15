@@ -51,7 +51,7 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       {/* Table — responsive via horizontal scroll on mobile.
           (Parent section already renders the eyebrow + title.) */}
-      <div className="overflow-x-auto" style={{ borderRadius: 12, border: "1px solid var(--color-border)" }}>
+      <div className="overflow-x-auto" style={{ borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
         <table className="w-full min-w-[560px] border-collapse" style={{ fontFamily: "var(--font-ui)", fontSize: 14 }}>
           <thead>
             <tr style={{ borderBottom: "1px solid var(--color-border)", background: "var(--color-surface-soft)", fontFamily: "var(--font-ui)", fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-muted)" }}>
@@ -89,7 +89,7 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
                         {isCurrentTool ? (
                           <span style={{ fontWeight: 600, color: "var(--color-text)" }} className="truncate block max-w-[160px]">
                             {row.name}
-                            <span style={{ marginLeft: 6, border: "1px solid var(--color-border-strong)", borderRadius: 999, padding: "1px 6px", fontSize: 9, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-text-strong)", verticalAlign: "middle" }}>
+                            <span style={{ marginLeft: 6, border: "1px solid var(--color-border-strong)", borderRadius: "var(--radius-pill)", padding: "1px 6px", fontSize: 9, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-text-strong)", verticalAlign: "middle" }}>
                               {t("Actuel", "Current")}
                             </span>
                           </span>
@@ -164,7 +164,7 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
                   <td className="py-3 px-4 text-center">
                     {prescription ? (
                       <span
-                        style={{ display: "inline-flex", alignItems: "center", borderRadius: 999, border: "1px solid var(--color-border)", padding: "2px 10px", fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "var(--color-text)", whiteSpace: "nowrap" }}
+                        style={{ display: "inline-flex", alignItems: "center", borderRadius: "var(--radius-pill)", border: "1px solid var(--color-border)", padding: "2px 10px", fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "var(--color-text)", whiteSpace: "nowrap" }}
                       >
                         {t(verdictLabel, verdictLabel)}
                       </span>

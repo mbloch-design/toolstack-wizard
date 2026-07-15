@@ -30,6 +30,7 @@
   "validate:phase4": "node scripts/validate-phase4-readiness.mjs",
   "validate:phase4:sessions": "node scripts/validate-phase4-session-log.mjs",
   "validate:ma-stack": "node scripts/validate-ma-stack-relevance.mjs",
+  "validate:design-tokens": "node scripts/validate-design-tokens.mjs",
   "summarize:phase4": "node scripts/summarize-phase4-wave.mjs",
   "assess:g4": "node scripts/assess-phase4-g4.mjs",
   "verify:preprod": "npm test -- --environment node && tsc --noEmit && npm run build",

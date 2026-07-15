@@ -175,9 +175,9 @@ const GuideDetailPage = () => {
       <div>
         <div style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)", padding: "80px 48px 72px" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-            <div style={{ height: 14, width: 200, background: "var(--color-surface-soft)", borderRadius: 4, marginBottom: 32 }} />
-            <div style={{ height: 72, width: "70%", background: "var(--color-surface-soft)", borderRadius: 4, marginBottom: 20 }} />
-            <div style={{ height: 22, width: "55%", background: "var(--color-surface-soft)", borderRadius: 4 }} />
+            <div style={{ height: 14, width: 200, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", marginBottom: 32 }} />
+            <div style={{ height: 72, width: "70%", background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", marginBottom: 20 }} />
+            <div style={{ height: 22, width: "55%", background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)" }} />
           </div>
         </div>
       </div>
@@ -273,7 +273,7 @@ const GuideDetailPage = () => {
                   style={{
                     display: "inline-flex", alignItems: "center", gap: 6,
                     height: 32, padding: "0 10px 0 6px",
-                    border: "1px solid var(--color-border)", borderRadius: 6,
+                    border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)",
                     background: "var(--color-surface)", textDecoration: "none",
                     fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
                     transition: "border-color 140ms",
@@ -282,7 +282,7 @@ const GuideDetailPage = () => {
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
                 >
                   <div style={{
-                    width: 20, height: 20, borderRadius: 4,
+                    width: 20, height: 20, borderRadius: "var(--radius-xs)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                   }}>
                     <ToolLogo tool={tool} size={16} />
@@ -315,7 +315,7 @@ const GuideDetailPage = () => {
                 <div style={{
                   display: "flex", flexWrap: "wrap", gap: 8,
                   padding: "14px 16px",
-                  border: "1px solid var(--color-border)", borderRadius: 8,
+                  border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
                   background: "var(--color-bg)",
                 }}>
                   {h2Toc.map((item) => (
@@ -326,7 +326,7 @@ const GuideDetailPage = () => {
                         fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)",
                         textDecoration: "none", whiteSpace: "nowrap",
                         padding: "3px 10px",
-                        border: "1px solid var(--color-border)", borderRadius: 4,
+                        border: "1px solid var(--color-border)", borderRadius: "var(--radius-xs)",
                         background: "var(--color-surface)",
                         transition: "color 120ms",
                       }}
@@ -451,7 +451,7 @@ const GuideDetailPage = () => {
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-muted)"; }}
                     >
                       <div style={{
-                        width: 24, height: 24, borderRadius: 5,
+                        width: 24, height: 24, borderRadius: "var(--radius-xs)",
                         border: "1px solid var(--color-border)", background: "var(--color-bg)",
                         display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                       }}>
@@ -469,9 +469,9 @@ const GuideDetailPage = () => {
               <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: 8 }}>
                 {t("Lecture", "Reading")}
               </p>
-              <div style={{ height: 3, background: "var(--color-surface-soft)", borderRadius: 2, overflow: "hidden" }}>
+              <div style={{ height: 3, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", overflow: "hidden" }}>
                 <div style={{
-                  height: "100%", background: "var(--color-text)", borderRadius: 2,
+                  height: "100%", background: "var(--color-text)", borderRadius: "var(--radius-xs)",
                   width: `${readProgress}%`,
                   transition: "width 150ms ease-out",
                 }} />
@@ -490,7 +490,7 @@ const GuideDetailPage = () => {
           onClick={() => scrollToTop("smooth")}
           style={{
             position: "fixed", bottom: 24, right: 24, zIndex: 40,
-            width: 40, height: 40, borderRadius: "50%",
+            width: 40, height: 40, borderRadius: "var(--radius-circle)",
             background: "var(--color-text)", color: "var(--color-surface)",
             border: "none", cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center",
@@ -526,7 +526,7 @@ function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: str
   return (
     <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className="ga-tool-row">
       <div style={{
-        width: 36, height: 36, borderRadius: 7,
+        width: 36, height: 36, borderRadius: "var(--radius-sm)",
         border: "1px solid var(--color-border)", background: "var(--color-bg)",
         display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
       }}>
@@ -547,7 +547,7 @@ function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: str
           fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
           letterSpacing: "0.02em", color: "var(--color-muted)",
           background: "var(--color-bg)", border: "1px solid var(--color-border)",
-          borderRadius: 4, padding: "3px 8px",
+          borderRadius: "var(--radius-xs)", padding: "3px 8px",
         }}>
           {priceLabel}
         </span>

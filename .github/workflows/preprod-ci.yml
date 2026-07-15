@@ -36,6 +36,9 @@ jobs:
       - name: Diagnostic gate
         run: npm run validate:diagnostic
 
+      - name: Design tokens gate
+        run: npm run validate:design-tokens
+
       - name: Typecheck
         run: npx tsc --noEmit
 

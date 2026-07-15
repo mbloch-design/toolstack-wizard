@@ -2124,7 +2124,7 @@ const ComparePage = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status" aria-label={t("Chargement en cours", "Loading")}>
-        <div style={{ width: 32, height: 32, borderRadius: "50%", border: "3px solid #DADAD4", borderTopColor: "#222222", animation: "spin 0.8s linear infinite" }} aria-hidden="true" />
+        <div style={{ width: 32, height: 32, borderRadius: "var(--radius-circle)", border: "3px solid #DADAD4", borderTopColor: "#222222", animation: "spin 0.8s linear infinite" }} aria-hidden="true" />
         <span className="sr-only">{t("Chargement en cours…", "Loading…")}</span>
       </div>
     );

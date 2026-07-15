@@ -53,7 +53,7 @@ export default function ToolProfileRecommendationTable({ tool, alternatives = []
       <p style={{ fontFamily: "var(--font-brand)", fontSize: 19, fontWeight: 600, letterSpacing: "-0.02em", color: "var(--color-text)", marginBottom: 16 }}>
         {t("Quel profil doit choisir quoi", "Which profile should pick what")}
       </p>
-      <div className="overflow-x-auto" style={{ borderRadius: 12, border: "1px solid var(--color-border)" }}>
+      <div className="overflow-x-auto" style={{ borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
         <table className="w-full min-w-[480px] border-collapse" style={{ fontFamily: "var(--font-ui)", fontSize: 14 }}>
           <thead>
             <tr style={{ borderBottom: "1px solid var(--color-border)", background: "var(--color-surface-soft)", fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-muted)" }}>

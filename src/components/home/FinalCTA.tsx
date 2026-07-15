@@ -30,7 +30,7 @@ const FinalCTA = () => {
                 padding: "0 24px",
                 background: "#222222",
                 color: "#FFFFFF",
-                borderRadius: 8,
+                borderRadius: "var(--radius)",
                 fontFamily: "var(--font-ui)",
                 fontSize: 15,
                 fontWeight: 500,

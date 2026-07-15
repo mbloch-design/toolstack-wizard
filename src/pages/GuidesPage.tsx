@@ -360,14 +360,14 @@ function LoadingSkeleton() {
           gap: 32, padding: "32px 0", borderTop: i > 1 ? "1px solid var(--color-border)" : "none",
         }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: 4, width: 64 }} />
-            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: 4, width: 88 }} />
+            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", width: 64 }} />
+            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", width: 88 }} />
           </div>
           <div>
-            <div style={{ height: 28, background: "var(--color-surface-soft)", borderRadius: 4, marginBottom: 10, maxWidth: 480 }} />
-            <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: 4, maxWidth: 600 }} />
+            <div style={{ height: 28, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", marginBottom: 10, maxWidth: 480 }} />
+            <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", maxWidth: 600 }} />
           </div>
-          <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: 4, width: 40 }} />
+          <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", width: 40 }} />
         </div>
       ))}
     </div>

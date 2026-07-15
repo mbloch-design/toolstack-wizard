@@ -64,7 +64,7 @@ export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
       style={{ gap: 24 }}
     >
       {profitableIf?.length ? (
-        <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 24 }}>
+        <div style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: 24 }}>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-text-strong)", marginBottom: 14 }}>
             {t(`${tool.name} est rentable si…`, `${tool.name} is worth it if…`)}
           </p>
@@ -79,7 +79,7 @@ export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
         </div>
       ) : null}
       {tooExpensiveIf?.length ? (
-        <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 24 }}>
+        <div style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: 24 }}>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 14 }}>
             {t(`${tool.name} est probablement trop cher si…`, `${tool.name} is probably too expensive if…`)}
           </p>

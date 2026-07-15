@@ -483,7 +483,7 @@ const ToolDetailPage = () => {
             {/* end hero identity */}
 
             {/* Mobile decision card */}
-            <div className="td-sidebar-mobile" style={{ marginBottom: 32 }}>
+            <div className="td-sidebar-mobile">
               <StickyDecisionCard {...cardProps} />
             </div>
 
@@ -566,7 +566,7 @@ const ToolDetailPage = () => {
                   <h2 className="td-title">
                     {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
                   </h2>
-                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                  <p className="td-body td-muted td-body--spaced">
                     {lang === "fr"
                       ? (() => {
                           if (displayPrice === 0)
@@ -604,7 +604,7 @@ const ToolDetailPage = () => {
                   <h2 className="td-title">
                     {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
                   </h2>
-                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                  <p className="td-body td-muted td-body--spaced">
                     {lang === "fr"
                       ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""}, comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois ${/^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`}.` : ""}`
                       : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""}, compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
@@ -642,7 +642,7 @@ const ToolDetailPage = () => {
                     if (!clusterTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                        <p className="td-eyebrow td-eyebrow--tight">
                           {t("Substituables directement", "Direct substitutes")}
                         </p>
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -653,7 +653,7 @@ const ToolDetailPage = () => {
                               style={{
                                 display: "inline-flex", alignItems: "center", gap: 8,
                                 padding: "8px 14px",
-                                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
                                 fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
                                 textDecoration: "none", transition: "border-color 140ms",
                               }}
@@ -694,7 +694,7 @@ const ToolDetailPage = () => {
                     if (!compareTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                        <p className="td-eyebrow td-eyebrow--tight">
                           {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
                         </p>
                         {compareTools.map(({ slugPair, other }) => (
@@ -702,20 +702,19 @@ const ToolDetailPage = () => {
                             key={slugPair}
                             to={`${prefix}/comparatif/${slugPair}`}
                             className="td-alt-row"
-                            style={{ textDecoration: "none", color: "inherit" }}
                           >
-                            <div style={{ width: 40, height: 40, borderRadius: 8, border: "1px solid var(--color-border)", background: "var(--color-bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <div className="td-alt-logo">
                               <ToolLogo tool={other} size={24} />
                             </div>
                             <div>
-                              <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
+                              <p className="td-alt-name">
                                 {tool.name} vs {other.name}
                               </p>
-                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 2 }}>
+                              <p className="td-alt-meta">
                                 {t("Voir la comparaison complète", "See full comparison")}
                               </p>
                             </div>
-                            <ArrowRight style={{ width: 14, height: 14, color: "var(--color-muted-light)" }} />
+                            <ArrowRight className="td-alt-arrow" />
                           </Link>
                         ))}
                       </div>
@@ -768,7 +767,7 @@ const ToolDetailPage = () => {
                     >
                       {(tool.pros?.length ?? 0) > 0 && (
                         <div>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                          <p className="td-eyebrow td-eyebrow--tight">
                             {t("Ce qu'il fait bien", "What it does well")}
                           </p>
                           <ul className="td-judgment">
@@ -783,7 +782,7 @@ const ToolDetailPage = () => {
                       )}
                       {(tool.cons?.length ?? 0) > 0 && (
                         <div>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                          <p className="td-eyebrow td-eyebrow--tight">
                             {t("Là où il montre ses limites", "Where it falls short")}
                           </p>
                           <ul className="td-judgment">
@@ -830,7 +829,7 @@ const ToolDetailPage = () => {
                           style={{
                             display: "flex", alignItems: "flex-start", gap: 10,
                             padding: "12px 16px",
-                            background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                            background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
                             fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", lineHeight: 1.45,
                           }}
                         >
@@ -909,33 +908,33 @@ const ToolDetailPage = () => {
                       </h2>
 
                       {/* Score card */}
-                      <div style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 10, overflow: "hidden", marginBottom: 32 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 32, padding: "28px 32px", borderBottom: "1px solid var(--color-border-soft)" }}>
-                          <div style={{ display: "flex", alignItems: "baseline", gap: 4, flexShrink: 0 }}>
-                            <span style={{ fontFamily: "var(--font-brand)", fontSize: 80, fontWeight: 600, lineHeight: 0.9, letterSpacing: "-0.07em", color: "var(--color-text)" }}>
+                      <div className="td-score-card">
+                        <div className="td-score-head">
+                          <div className="td-score-figure">
+                            <span className="td-score-value">
                               {ts.score.toFixed(1)}
                             </span>
-                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 24, color: "var(--color-muted-light)", lineHeight: 1, paddingBottom: 10 }}>/5</span>
+                            <span className="td-score-max">/5</span>
                           </div>
                           <div>
-                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 600, color: "var(--color-text-strong)", lineHeight: 1.2 }}>
+                            <p className="td-score-label">
                               {t(ts.labelFr, ts.labelEn)}
                             </p>
-                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 6 }}>
+                            <p className="td-score-meta">
                               {t("Score éditorial ToolTrim · Analyse indépendante", "ToolTrim editorial score · Independent analysis")}
                             </p>
                             {ts.score < 3.5 && resolveVerdict(tool, lang).keepItems.length > 0 && (
-                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)", marginTop: 4 }}>
+                              <p className="td-caption">
                                 {t("Score pour un usage générique : la fiche détaille les profils où c'est un bon choix.", "Score for generic use: the fiche details the profiles where it's a good fit.")}
                               </p>
                             )}
                           </div>
                         </div>
-                        <div style={{ padding: "24px 32px" }}>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                        <div className="td-score-body">
+                          <p className="td-eyebrow td-eyebrow--tight">
                             {t("Pourquoi ce score", "Why this score")}
                           </p>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.6, color: "var(--color-text)" }}>
+                          <p className="td-score-text">
                             {t(
                               `${tool.name} est ${scoreReasonFr}.`,
                               `${tool.name} is ${scoreReasonEn}.`,
@@ -945,7 +944,7 @@ const ToolDetailPage = () => {
                       </div>
 
                       {/* Reviews coming soon */}
-                      <div style={{ background: "var(--color-bg)", border: "1px solid var(--color-border)", borderRadius: 10, padding: "40px 32px", textAlign: "center" }}>
+                      <div style={{ background: "var(--color-bg)", border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: "40px 32px", textAlign: "center" }}>
                         <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", marginBottom: 10 }}>
                           {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
                         </p>
@@ -958,12 +957,12 @@ const ToolDetailPage = () => {
                         <span style={{
                           display: "inline-flex", alignItems: "center", gap: 8,
                           padding: "8px 16px",
-                          border: "1px solid var(--color-border)", borderRadius: 6,
+                          border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)",
                           background: "var(--color-surface-soft)",
                           fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
                           color: "var(--color-text-strong)", letterSpacing: "0.02em",
                         }}>
-                          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-text-strong)", animation: "pulse 2s infinite" }} />
+                          <span style={{ width: 6, height: 6, borderRadius: "var(--radius-circle)", background: "var(--color-text-strong)", animation: "pulse 2s infinite" }} />
                           {t("Bientôt disponible", "Coming soon")}
                         </span>
                       </div>
@@ -983,7 +982,7 @@ const ToolDetailPage = () => {
                   <h2 className="td-title">
                     {t(`Questions sur ${tool.name}.`, `Questions about ${tool.name}.`)}
                   </h2>
-                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                  <p className="td-body td-muted td-body--spaced">
                     {lang === "fr"
                       ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""}, les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
                       : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""}, key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
@@ -1018,7 +1017,7 @@ const ToolDetailPage = () => {
                       href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: "var(--color-muted)", textDecoration: "underline", textUnderlineOffset: 3 }}
+                      className="td-link-muted"
                     >
                       {sourceDomain}
                     </a>
@@ -1028,7 +1027,7 @@ const ToolDetailPage = () => {
               <span>·</span>
               <Link
                 to={`${prefix}/contact`}
-                style={{ color: "var(--color-muted)", textDecoration: "underline", textUnderlineOffset: 3 }}
+                className="td-link-muted"
               >
                 {t("Signaler un prix incorrect", "Report incorrect pricing")}
               </Link>
@@ -1044,7 +1043,7 @@ const ToolDetailPage = () => {
               {/* Related posts */}
               {relatedPosts.length > 0 && (
                 <div style={{ marginTop: 16 }}>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 10 }}>
+                  <p className="td-eyebrow td-eyebrow--tight">
                     {t("Guides liés", "Related guides")}
                   </p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -1054,7 +1053,7 @@ const ToolDetailPage = () => {
                         to={`${prefix}/guide/${post.slug}`}
                         style={{
                           display: "block", padding: "12px 16px",
-                          background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                          background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
                           textDecoration: "none", transition: "border-color 140ms",
                         }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
@@ -1064,7 +1063,7 @@ const ToolDetailPage = () => {
                           {post.title}
                         </p>
                         {post.readTime && (
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)", marginTop: 4 }}>
+                          <p className="td-caption">
                             {post.readTime}
                           </p>
                         )}

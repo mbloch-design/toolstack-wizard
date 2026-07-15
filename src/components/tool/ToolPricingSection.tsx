@@ -25,7 +25,7 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
 
         {/* Free plan card */}
         {hasFree && (
-          <div style={{ border: "1px solid var(--color-border-strong)", borderRadius: 12, padding: 20, background: "var(--color-surface-soft)", display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ border: "1px solid var(--color-border-strong)", borderRadius: "var(--radius-md)", padding: 20, background: "var(--color-surface-soft)", display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text-strong)" }}>
                 <Sparkles style={{ width: 15, height: 15, color: "var(--color-text-strong)" }} />
@@ -41,7 +41,7 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
 
         {/* Paid plan card */}
         {(hasPaid || displayPrice > 0) && (
-          <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 20, background: "var(--color-surface)", display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: 20, background: "var(--color-surface)", display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text)" }}>
                 <CreditCard style={{ width: 15, height: 15, color: "var(--color-muted)" }} />
@@ -70,7 +70,7 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
         const caution = lang === "en" ? (pv5?.cautionsEn?.[0] ?? pv5?.cautions?.[0]) : pv5?.cautions?.[0];
         if (!caution) return null;
         return (
-          <div style={{ display: "flex", alignItems: "flex-start", gap: 10, border: "1px solid var(--color-border)", borderRadius: 8, padding: "12px 16px", background: "var(--color-surface-soft)" }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: 10, border: "1px solid var(--color-border)", borderRadius: "var(--radius)", padding: "12px 16px", background: "var(--color-surface-soft)" }}>
             <Check style={{ marginTop: 2, width: 14, height: 14, flexShrink: 0, color: "var(--color-muted)" }} />
             <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, color: "var(--color-muted)" }}>
               {caution}

@@ -26,7 +26,7 @@ export default function ToolBillingTrapsBlock({ tool, lang, t }: Props) {
       </p>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {traps.map((trap: { title: string; text: string }, i: number) => (
-          <div key={i} style={{ border: "1px solid var(--color-border)", borderRadius: 10, padding: "14px 18px", background: "var(--color-surface-soft)" }}>
+          <div key={i} style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: "14px 18px", background: "var(--color-surface-soft)" }}>
             <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text-strong)", marginBottom: 4 }}>
               {trap.title}
             </p>

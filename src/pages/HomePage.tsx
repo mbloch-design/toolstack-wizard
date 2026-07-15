@@ -741,7 +741,7 @@ function BusinessObjectivesSection() {
               style={{
                 width: 40, height: 40,
                 border: "1px solid var(--color-border)",
-                borderRadius: "50%",
+                borderRadius: "var(--radius-circle)",
                 background: "var(--color-surface)",
                 color: "var(--color-text)",
                 cursor: "pointer",
@@ -761,7 +761,7 @@ function BusinessObjectivesSection() {
               style={{
                 width: 40, height: 40,
                 border: "1px solid var(--color-border-strong)",
-                borderRadius: "50%",
+                borderRadius: "var(--radius-circle)",
                 background: "var(--color-text)",
                 color: "var(--color-surface)",
                 cursor: "pointer",

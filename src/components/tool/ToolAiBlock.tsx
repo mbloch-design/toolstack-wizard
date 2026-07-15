@@ -51,7 +51,7 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
             gap: 8,
             margin: "2px 0 20px",
             padding: "7px 14px",
-            borderRadius: 999,
+            borderRadius: "var(--radius-pill)",
             border: "1px solid var(--color-border)",
             background: "var(--color-surface, transparent)",
             fontFamily: "var(--font-ui)",
