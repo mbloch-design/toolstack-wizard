@@ -1,289 +1,230 @@
-# Tooltrim — Direction MVP Ma stack
+# Tooltrim — Roadmap active Ma stack + Explorer
 
-Mise à jour : 2026-07-13
-État : **P0/P1 terminés — prêt pour recette utilisateurs**
-
-## Livraison P0/P1 — 13 juillet 2026
-
-- 49 tests Ma stack passent : état, persistance, hook, rangement et coût.
-- Le benchmark fixe de 100 outils couvre les huit besoins et passe les seuils MVP.
-- 201 contrôles de pertinence des sélecteurs passent.
-- 9 parcours navigateur protègent `Ajouter → Ranger → Voir → Corriger`, le rechargement et les suppressions.
-- Les largeurs 320, 390, 768, 1024 et 1440 px sont vérifiées sans débordement.
-- La persistance possède une copie locale valide, une récupération après corruption et un état d'erreur visible.
-- Le coût distingue désormais `Gratuit`, `Prix inconnu` et `À partir de…` et reste dédupliqué.
-- L'ajout global et contextuel utilise le même sélecteur intégré, avec état `Ajouté`.
-- Les cartes expliquent le rôle contextuel et ne montrent plus le prix dans un besoin.
-- La correction est réversible ; la suppression est secondaire et confirmée.
+> Mise à jour : 16 juillet 2026
+>
+> Statut : **Étape 0 terminée — Étape 1 à lancer**
+>
+> Ce document pilote l’ordre des travaux sur Ma stack et Explorer. La roadmap générale conserve l’historique du site ; le diagnostic possède sa propre roadmap.
 
 ## Cap produit
 
-Ma stack permet de :
+Tooltrim doit aider l’utilisateur à construire, comprendre et faire évoluer sa stack sans lui faire croire à une personnalisation que les données ne permettent pas encore.
+
+Le produit repose désormais sur deux boucles complémentaires :
+
+1. **Ma stack** : voir ses outils, les ranger par objectif, corriger le rangement et comprendre ce que chaque groupe permet de faire.
+2. **Explorer** : partir d’un objectif ou d’un outil, suivre des relations explicables, zoomer d’outil en outil puis ajouter sans perdre le contexte.
+
+La promesse MVP devient :
 
-1. prendre les outils que l'on utilise ;
-2. laisser Tooltrim les ranger par besoin ;
-3. comprendre immédiatement ses lots d'outils ;
-4. corriger les exceptions sans refaire tout le rangement.
+> Je comprends ma stack par objectif et je peux découvrir, autour de chaque outil, des alternatives, des extensions et des outils complémentaires, puis les ajouter au bon endroit sans perdre mon parcours.
 
-La promesse reste :
+## État actuel validé
 
-> Pour tel besoin, j'ai ce lot d'outils.
+### Ma stack
+
+- Vue globale et vues par objectif.
+- Ajout multiple dans une destination explicite.
+- Organisation et suppression des outils.
+- Déplacement des outils et des objectifs par glisser-déposer.
+- Persistance locale et fallback `À ranger` lorsque le classement reste ambigu.
+- Fiche outil ouverte sans perdre le contexte de la stack.
+- Profil estimé et coût mensuel indicatif, sans dépendre encore d’un compte.
+
+### Explorer
 
-Les quatre gestes du MVP sont : **ajouter, ranger, voir, corriger**.
+- Page dédiée et URL partageable selon la source, la destination et l’angle actif.
+- Entrées depuis un objectif ou un outil.
+- Navigation télescopique d’outil en outil avec historique navigateur.
+- Source visuelle enrichie pour un outil et retour nommé selon l’origine.
+- Cartes simplifiées : identité, description, navigation télescopique et ajout distinct.
+- Filtres par tags sticky, inspirés de YouTube, avec débordement, flèches et centrage de l’élément actif.
+- Terminologie actuelle : `Alternatives`, `Extensions`, `Outils complémentaires`.
+- Chargement progressif avec skeleton loader.
+- Responsive, clavier et `prefers-reduced-motion` pris en compte.
 
-## Mindset produit
+### Socle technique
 
-- L'automatisation est la règle ; la correction manuelle est l'exception.
-- La vue d'ensemble doit rester plus importante que la fiche détaillée.
-- Un outil existe une seule fois dans Ma stack, même s'il répond à plusieurs besoins.
-- Un doute de classement doit produire `À ranger`, jamais un mauvais classement affirmatif.
-- Une nouvelle fonction n'entre dans le MVP que si elle améliore directement `Ajouter → Ranger → Voir → Corriger`.
-- La navigation globale, le header et le gabarit de la fiche sont désormais figés.
+- TypeScript, build, validation des design tokens et parcours Explorer passent sur l’état courant.
+- 54 tests Ma stack passent lors de la dernière exécution complète connue.
+- Le test diagnostic `marc-under-instrumented` échoue indépendamment de ce chantier : score `74`, seuil `80`.
+- La CI ne lance pas encore la suite `npm test`, ce qui masque cette dette.
 
-## Point d'étape
+## Ce qui reste à prouver
 
-### Ce qui est réellement construit
+- La qualité réelle des relations proposées, surtout dans les huit premiers résultats.
+- La compréhension spontanée du clic principal d’une carte : « je zoome autour de cet outil ».
+- La différence perçue entre alternatives, extensions et outils complémentaires.
+- La qualité et la cohérence des descriptions, catégories, logos et images OG.
+- L’utilité du parcours auprès d’utilisateurs réels, au-delà de la validation technique.
+- Les performances avec un catalogue croissant et les gros bundles de données actuels.
+- La mesure du parcours : profondeur d’exploration, retours, ajouts et abandons.
 
-#### Socle et persistance
+## Invariants produit
 
-- Format local versionné `v2`.
-- Migration des anciennes listes de slugs sans suppression préalable.
-- Besoins suggérés et besoins personnalisés.
-- Création, renommage, réordonnancement et suppression des besoins personnalisés.
-- Affectation d'un outil à plusieurs besoins.
-- Distinction entre classement `pending`, `auto` et `manual`.
-- Une correction manuelle n'est jamais écrasée par le moteur.
-- Suppression d'un besoin sans suppression de ses outils.
-- Synchronisation de l'état entre les onglets du navigateur.
+- Ne jamais présenter Explorer comme une recommandation personnalisée au profil.
+- Toujours rendre la source et la destination compréhensibles.
+- Le clic principal d’une carte change la source ; le bouton d’ajout change uniquement la stack.
+- Un ajout avec destination fusionne l’objectif sans supprimer les affectations existantes.
+- Sans signal fiable, ranger dans `À ranger` plutôt que d’inventer une destination.
+- Ne jamais créer de doublon d’un même outil dans la stack.
+- Préserver le header, la navigation latérale et l’axe stable des pages Ma stack.
+- Conserver des transitions courtes de 150 à 220 ms et une version sans mouvement.
+- Rester local-first tant que les comptes et la synchronisation ne sont pas lancés.
 
-#### Rangement autonome
+## Roadmap
 
-- Classement fondé dans cet ordre sur : outil connu, signaux structurés, catégorie, texte.
-- Les classements de faible confiance restent dans `À ranger`.
-- Les cas ambigus ne sont pas forcés dans le premier besoin trouvé.
-- Confirmation du besoin choisi après classement automatique.
-- Correction possible vers un ou plusieurs besoins.
+| Étape | Objectif | Statut |
+|---|---|---|
+| 0 | Créer un checkpoint fiable et aligner documentation, Git et CI | **Terminé** |
+| 1 | Rendre les relations d’exploration crédibles et explicables | Prochaine étape |
+| 2 | Rendre la navigation télescopique évidente au clic et au retour | À faire |
+| 3 | Renforcer le contenu des outils et la qualité du catalogue | À faire |
+| 4 | Instrumenter le parcours et le tester avec de vrais utilisateurs | À faire |
+| 5 | Optimiser les performances et durcir la préproduction | À faire |
 
-#### Parcours et interface
+## Étape 0 — Checkpoint et fiabilisation
 
-- Vue globale en tableaux : quatre colonnes puis adaptation responsive.
-- Tableaux de hauteur régulière avec piles de logos et compteur `+N`.
-- `À ranger` traité comme un tableau normal et placé en dernier.
-- Ajout contextuel depuis un besoin sans quitter Ma stack.
-- Sous-page d'un besoin organisée en sous-sections.
-- Fiche outil pleine page avec sidebar de contexte Ma stack.
-- Navigation précédent/suivant entre les outils d'un même besoin.
-- Coût calculé sur les outils uniques, sans double comptage multi-besoins.
-- Correction du rangement accessible depuis les tableaux, les cartes et la fiche.
-- Navigation globale et recherche identiques au reste du site.
+### Travaux
 
-#### Preuves existantes
+- [x] Faire l’état des lieux produit, UX et technique.
+- [x] Réorienter la roadmap Ma stack autour du pivot Explorer.
+- [x] Rejouer la validation complète Ma stack + Explorer sur l’état final.
+- [x] Décider du traitement du test diagnostic `marc-under-instrumented`.
+- [x] Faire exécuter les tests Ma stack et exploration par la CI sans introduire une panne silencieuse.
+- [x] Créer un commit de checkpoint limité aux fichiers suivis du chantier courant.
+- [x] Synchroniser la branche distante après demande explicite.
 
-- 16 tests unitaires du modèle et de la persistance.
-- 19 tests du moteur de classement automatique.
-- 201 contrôles de pertinence des sélecteurs de besoins.
-- Vérifications manuelles desktop et mobile, notamment à 390 px.
+### Résultat du checkpoint technique — 16 juillet 2026
 
-### Ce qui n'est pas encore prouvé
+- `npx tsc --noEmit` : PASS.
+- `npm run validate:design-tokens` : PASS, aucune dette supplémentaire.
+- `npm run test:ma-stack` : PASS, 54 tests sur 54.
+- `npm run build` : PASS, y compris SSR, prerender et alias historiques.
+- `npm run test:e2e:ma-stack` : PASS, 10 parcours sur 10 de 320 à 1920 px.
+- `git diff --check` : PASS.
+- Suite globale : 230 tests sur 231 passent. Le seul échec reste le scénario diagnostic GO14 `marc-under-instrumented`, avec un score de 74 pour un seuil attendu de 80.
 
-- Cinq utilisateurs réels n'ont pas encore exécuté le scénario complet sans aide.
-- Le temps réel pour obtenir une stack utile de dix outils n'est pas encore mesuré.
-- Le benchmark de 100 outils protège le moteur, mais ne remplace pas l'observation des exceptions propres à chaque stack.
-- Le besoin d'un compte et d'une synchronisation n'est volontairement pas validé.
+Décision : ne pas masquer ni abaisser le seuil GO14 dans ce chantier. Cet échec reste une dette du diagnostic et ne remet pas en cause le checkpoint Ma stack + Explorer. La CI exécute désormais explicitement les 54 tests Ma stack et exploration ; l’intégration de toute la suite globale attend la correction du scénario GO14 dans sa roadmap dédiée.
 
-## Décisions figées
+### Critères de sortie
 
-### Interface
+- Working tree du chantier propre et branche distante synchronisée.
+- TypeScript, build, design tokens, tests Ma stack et parcours E2E Ma stack/Explorer validés.
+- Échec diagnostic corrigé ou explicitement isolé avec une décision documentée.
+- CI cohérente avec les validations réellement attendues avant mise en production.
 
-- Vue globale : tableaux Pinterest-like, quatre colonnes sur grand écran.
-- Sous-page : sous-sections verticales et cartes compactes.
-- Fiche outil : pleine page avec sidebar droite Ma stack ; carte de contexte inline sur mobile.
-- `À ranger` : toujours en dernier et réservé aux cas incertains.
-- Organisation : boutons discrets, correction locale, pas de glisser-déposer au MVP.
+## Étape 1 — Qualité des relations
 
-### Rangement automatique
+### Travaux
 
-- Le moteur choisit un besoin principal uniquement lorsque la confiance est suffisante.
-- Les cas ambigus restent dans `À ranger`.
-- L'affectation automatique à plusieurs besoins ne sera ajoutée que si le benchmark montre un gain net sans créer de bruit.
-- La correction manuelle reste prioritaire et définitive.
+- Formaliser les trois intentions : substituer, étendre, compléter.
+- Constituer un jeu de référence d’environ 30 sources représentatives.
+- Évaluer manuellement les dix premiers résultats de chaque source.
+- Ajouter des relations éditoriales fortes pour les outils structurants.
+- Conserver les heuristiques comme fallback, avec diversification et attribution de la source exacte.
+- Éliminer les faux positifs dus à une catégorie trop large ou à un simple mot-clé commun.
 
-### Données
+### Critères de sortie
 
-- Le MVP reste local-first.
-- Aucun compte ou backend de synchronisation avant validation de l'usage.
-- Le coût reste indicatif et secondaire.
+- Au moins 80 % des huit premiers résultats sont jugés crédibles dans le jeu de référence.
+- Aucun faux positif critique dans les quatre premiers résultats.
+- Chaque résultat peut expliquer sa relation sans promesse personnalisée.
+- Une source objectif multi-outils identifie l’outil qui a produit le signal principal.
 
-## Roadmap réorientée
+## Étape 2 — Micro-interactions télescopiques
 
-### Étape 1 — Fiabiliser le cœur
+### Travaux
 
-Priorité : **P0**
-Statut : **terminé le 13 juillet 2026**.
+- Donner un retour immédiat au clic sur toute la carte.
+- Relier visuellement la carte choisie au nouveau module source.
+- Inverser naturellement la transition lors du retour.
+- Restaurer le focus et la position utiles lors d’un retour navigateur.
+- Vérifier l’absence de conflit entre le clic télescopique et le bouton d’ajout.
 
-#### 1. Tests de bout en bout
+### Critères de sortie
 
-Automatiser dans un vrai navigateur :
+- Le changement de source est compris sans ajouter de texte explicatif.
+- Quatre utilisateurs sur cinq comprennent qu’ils peuvent continuer à zoomer d’outil en outil.
+- Retour, historique, clavier, tactile et réduction des mouvements produisent le même modèle mental.
 
-1. stack vide → ajout global → classement automatique → vue d'ensemble ;
-2. ajout depuis un besoin → outil visible dans le bon lot ;
-3. outil incertain → `À ranger` → correction ;
-4. multi-affectation → outil affiché dans plusieurs besoins mais compté une fois ;
-5. rechargement → besoins, ordre et affectations conservés ;
-6. retrait d'un besoin → outil conservé dans Ma stack ;
-7. suppression de Ma stack → outil et affectations supprimés ;
-8. besoin personnalisé supprimé → outils orphelins renvoyés dans `À ranger`.
+## Étape 3 — Contenu et catalogue
 
-#### 2. Sécuriser la persistance locale
+### Travaux
 
-- Intercepter les échecs d'écriture et de quota.
-- Conserver une dernière copie locale valide.
-- Détecter un état corrompu.
-- Proposer une récupération explicite au lieu d'afficher silencieusement une stack vide.
-- Tester ces états d'échec.
+- Donner à chaque outil une description courte qui explique concrètement ce qu’il permet de faire.
+- Normaliser catégories, usages, verticales, groupes de substitution et relations plugin/hôte.
+- Distinguer clairement outil, plugin, intégration et composant d’écosystème.
+- Contrôler logos canoniques, images OG et fallbacks visuels.
+- Détecter les fiches trop pauvres avant qu’elles n’entrent dans les premiers résultats.
 
-#### 3. Benchmarker le rangement automatique
+### Critères de sortie
 
-- Constituer un jeu fixe de 100 outils représentatifs des huit besoins.
-- Définir pour chaque outil : besoin principal acceptable, besoins secondaires éventuels ou `À ranger`.
-- Mesurer séparément : bons classements, mauvais classements affirmatifs et cas non classés.
-- Corriger uniquement les erreurs révélées par ce benchmark.
+- Une carte permet de comprendre l’utilité de l’outil sans ouvrir sa fiche.
+- Les données nécessaires au classement sont renseignées sur les outils prioritaires.
+- Les visuels ne sont ni déformés ni trompeurs sur mobile et desktop.
 
-Objectifs :
+## Étape 4 — Mesure et validation utilisateur
 
-- au moins 85 % de classements acceptables sans correction ;
-- moins de 5 % de mauvais classements affirmatifs ;
-- moins de 25 % des outils envoyés dans `À ranger`.
+### Travaux
 
-#### 4. Rendre le coût honnête
+- Mesurer les entrées Explorer, changements de tag, changements de source, profondeur, retours, ajouts et sorties.
+- Distinguer ajout explicite à un objectif et classement automatique.
+- Tester le parcours complet avec au moins cinq utilisateurs cibles.
+- Observer sans guider : trouver un outil, comprendre le lien, l’ajouter et revenir à la stack.
 
-- Distinguer `Gratuit`, `Prix inconnu` et `À partir de…`.
-- Renommer le total `Coût mensuel estimé`.
-- Indiquer discrètement le nombre de prix non renseignés.
-- Ajouter un test de déduplication du coût pour les outils multi-besoins.
+### Critères de sortie
 
-Critère de sortie : aucun parcours essentiel ne perd, ne duplique ou ne masque un outil après rechargement.
+- Quatre utilisateurs sur cinq terminent le parcours sans aide.
+- Les erreurs de destination et les ajouts involontaires sont absents des tests.
+- Les mesures permettent d’identifier où l’exploration devient utile ou se termine.
 
-### Étape 2 — Terminer l'ergonomie du parcours essentiel
+## Étape 5 — Performance et préproduction
 
-Priorité : **P0 puis P1**
-Statut : **terminé le 13 juillet 2026**.
+### Travaux
 
-#### 1. Unifier l'ajout
+- Découper les gros jeux de données et charger seulement ce qui est nécessaire au parcours courant.
+- Réduire les bundles principaux et différer les données catalogue non visibles.
+- Rejouer les parcours à 320, 768, 1280 et 1920 px.
+- Auditer accessibilité, focus, historique, rechargements directs et états sans résultat.
+- Aligner le pipeline de préproduction sur la définition de sortie MVP.
 
-- Utiliser le même sélecteur intégré depuis la vue globale et depuis un besoin.
-- Ne plus renvoyer au catalogue pour une action d'ajout Ma stack.
-- Afficher le rôle ou le besoin suggéré dans les résultats.
-- Après clic, conserver la ligne avec l'état `Ajouté` puis afficher son rangement.
+### Critères de sortie
 
-Objectif : `Ajouter → Rangé → Visible` en moins de trois secondes et sans changement de contexte.
+- Pas de blocage perceptible lors du changement de source ou du chargement suivant.
+- Aucun échec sur les parcours critiques Ma stack + Explorer.
+- Budget de bundle défini puis surveillé en CI.
+- Préproduction exploitable pour une session de test sans intervention technique.
 
-#### 2. Faire expliquer les cartes
+## Hors périmètre actuel
 
-Chaque carte d'un besoin doit répondre à :
+- Recommandation personnalisée ou promesse de « meilleur outil pour votre profil ».
+- Matching avancé fondé sur un volume de données encore insuffisant.
+- Compte, synchronisation cloud et collaboration multi-utilisateur.
+- Conseiller IA autonome.
+- Calcul financier précis lorsque les prix restent incomplets.
+- Nouveaux filtres ou fonctionnalités qui ne servent pas directement la boucle stack-exploration-ajout.
 
-> À quoi cet outil me sert-il ici ?
+## Prochaines actions concrètes
 
-Contenu cible :
+1. Terminer le checkpoint technique et Git de l’étape 0.
+2. Construire le jeu de référence des relations avant de retoucher encore l’interface.
+3. Lancer ensuite la passe de micro-interactions télescopiques sur des résultats devenus crédibles.
 
-- nom ;
-- type discret ;
-- description courte ;
-- rôle contextuel `Sert à…` ;
-- prix uniquement dans la fiche outil.
+## Définition de sortie MVP
 
-#### 3. Alléger la correction
+Le MVP Ma stack + Explorer est prêt lorsque :
 
-- Besoins cochés au centre de l'action.
-- `Enregistrer` comme action primaire.
-- `Mettre à ranger` comme action secondaire.
-- Suppression dans `…`, avec confirmation.
-- Retour de confirmation avec possibilité d'annuler.
+- la stack est compréhensible et corrigeable ;
+- l’exploration propose des relations crédibles et explicables ;
+- le passage d’un outil au suivant est compris sans mode d’emploi ;
+- un ajout conserve toujours la bonne destination et le contexte ;
+- quatre utilisateurs sur cinq accomplissent le parcours sans aide ;
+- les validations fonctionnelles, visuelles, d’accessibilité et de performance passent en préproduction.
 
-#### 4. Finir clavier et mobile
+## Dette suivie
 
-- Focus initial, boucle clavier, fond bloqué et focus restauré dans le sélecteur.
-- Cartes mobiles horizontales de 110 à 130 px.
-- Cibles tactiles d'au moins 44 px.
-- Vérification à 320, 390, 768, 1024 et 1440 px.
-
-Critère de sortie : la page d'un besoin est comprise sans ouvrir une fiche, et le parcours complet fonctionne au clavier comme au tactile.
-
-### Étape 3 — Valider avec de vrais utilisateurs
-
-Priorité : **prochaine étape, avant toute extension**
-Durée indicative : 1 à 2 jours de préparation, puis recette.
-
-Tester avec 5 à 10 personnes possédant des stacks de 5 à 20 outils.
-
-Scénario :
-
-1. démarrer avec une stack vide ;
-2. ajouter dix outils ;
-3. expliquer la vue obtenue ;
-4. corriger un outil ;
-5. affecter un outil à deux besoins ;
-6. recharger et retrouver l'ensemble.
-
-Mesures :
-
-- temps jusqu'à la première stack utile ;
-- taux de classements conservés sans correction ;
-- nombre d'outils laissés dans `À ranger` ;
-- réussite sans aide de l'ajout, de la correction et du retour à la vue globale ;
-- compréhension de la règle de coût unique.
-
-Critère de sortie : au moins 4 utilisateurs sur 5 terminent le parcours sans aide et peuvent expliquer leur stack besoin par besoin.
-
-## Ordre exact des prochains chantiers
-
-1. Faire la recette avec 5 utilisateurs possédant 5 à 20 outils.
-2. Mesurer temps de mise en place, corrections et compréhension des lots.
-3. Corriger uniquement les blocages observés par plusieurs utilisateurs.
-4. Rejouer les 49 tests, le benchmark, les 201 contrôles et les 9 parcours navigateur.
-5. Décider seulement ensuite si un compte et une synchronisation sont nécessaires.
-
-## Définition de sortie du MVP
-
-Le MVP est prêt lorsque :
-
-1. ⏳ une stack utile de dix outils est obtenue en moins de trois minutes ;
-2. ✅ au moins 85 % des classements du benchmark sont acceptables sans correction ;
-3. ✅ les parcours essentiels passent automatiquement après rechargement, sans perte ni duplication ;
-4. ✅ aucun blocage n'existe sur les largeurs cibles ni au clavier ;
-5. ⏳ au moins 4 utilisateurs sur 5 réussissent le scénario sans aide ;
-6. ⏳ la vue globale suffit à des utilisateurs réels pour dire : `Pour ce besoin, j'ai ce lot d'outils`.
-
-## Après le MVP
-
-- Comptes et synchronisation multi-appareils.
-- Partage ou export de stack.
-- Coûts réels et gestion détaillée des abonnements.
-- Détection de doublons.
-- Suggestions de remplacement et optimisation.
-- Recommandations avancées.
-- Mesure produit automatisée.
-
-## Ce que nous arrêtons maintenant
-
-- Refaire le hero, les tableaux, les cartes, la fiche outil ou la navigation globale.
-- Ajouter de nouveaux blocs de contenu à la fiche outil.
-- Ajouter du scoring, des filtres ou des règles automatiques sans benchmark.
-- Ajouter du glisser-déposer.
-- Étendre Ma stack aux pages publiques, au diagnostic ou aux stacks éditoriales.
-- Commencer les comptes, le partage, le budget détaillé ou l'optimisation.
-- Refactorer tout `CartPage` avant d'avoir sécurisé le parcours.
-
-## Dette technique autorisée
-
-`CartPage.tsx` et `index.css` restent trop volumineux. Cela ne justifie pas une réécriture avant validation du MVP.
-
-Extraire uniquement quand un chantier touche déjà la zone concernée :
-
-- configuration des besoins et sous-sections ;
-- calcul du coût ;
-- sélecteur d'outils ;
-- dialogue de correction ;
-- fiche outil.
-
-Chaque extraction doit conserver le comportement et ajouter ou maintenir les tests associés.
+- `CartPage.tsx` et `src/index.css` restent volumineux et devront être découpés après stabilisation du flux.
+- Les données catalogue sont encore chargées dans des bundles trop importants.
+- La CI couvre désormais les tests unitaires Ma stack et exploration, mais pas encore le parcours E2E navigateur ni la suite globale tant que GO14 reste rouge.
+- L’historique Git récent contient des changements Explorer mêlés à un commit nommé pour la page outil ; le checkpoint doit restaurer une lecture claire de l’état courant.

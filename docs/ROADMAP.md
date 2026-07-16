@@ -3,7 +3,10 @@
 État d'avancement et prochaines phases.
 
 > Ce document conserve l’historique général du site.
-> Pour le diagnostic adaptatif, la roadmap active et décisionnelle est désormais [`ROADMAP_DIAGNOSTIC.md`](../ROADMAP_DIAGNOSTIC.md).
+>
+> Les roadmaps actives et décisionnelles sont :
+> - [`ROADMAP_DIAGNOSTIC.md`](../ROADMAP_DIAGNOSTIC.md) pour le diagnostic adaptatif ;
+> - [`MA_STACK_ROADMAP.md`](./MA_STACK_ROADMAP.md) pour Ma stack et l’exploration contextuelle.
 
 ---
 

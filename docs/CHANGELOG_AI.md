@@ -2,6 +2,17 @@
 
 ---
 
+## 2026-07-16 — Lancement de la roadmap Ma stack + Explorer
+
+- La roadmap Ma stack existante a été réorientée pour intégrer le pivot vers l’exploration contextuelle télescopique.
+- Le chantier est organisé en six étapes : checkpoint, qualité des relations, micro-interactions, contenu catalogue, validation utilisateur et performance/préproduction.
+- Les invariants produit, critères de sortie et limites du MVP sont désormais explicites dans `docs/MA_STACK_ROADMAP.md`.
+- La roadmap générale référence maintenant les deux documents actifs : diagnostic et Ma stack + Explorer.
+- Le checkpoint technique passe sur TypeScript, design tokens, build, 54 tests Ma stack et 10 parcours E2E.
+- La CI exécute désormais `npm run test:ma-stack`. Le seul test global restant en échec est le scénario diagnostic GO14 `marc-under-instrumented` (74 pour un seuil de 80), conservé comme dette dédiée sans abaissement artificiel du seuil.
+
+---
+
 ## 2026-05-23 — Sprint 77 : Palette chromatique Awwwards — tout = var(--color-text)
 
 ### Objectif
@@ -3333,3 +3344,25 @@ Ouvrir une découverte associative inspirée de Pinterest depuis toute surface p
 - Le retour devient contextuel sur plusieurs niveaux : navigateur, flèche du hero et bouton du sticky remontent tous d’un seul outil, avec un libellé qui nomme la source précédente ; la position de lecture et le nombre de résultats déjà chargés sont restaurés, tandis qu’une navigation vers un nouvel outil commence toujours en haut.
 - Le hero d’un objectif formule désormais directement l’action humaine — `Ajouter des outils pour créer des visuels` — et supprime la pilule de destination non interactive qui ressemblait à tort à un bouton.
 - La découverte charge désormais automatiquement les outils par lots de 12 à l’approche du bas de la grille ; quatre cartes skeleton annoncent le chargement sans déplacer le contexte, avec une version statique sous `prefers-reduced-motion`.
+- Les cartes de découverte sont recentrées sur la navigation télescopique : identité, catégorie et description expliquent l’outil, tandis que toute la surface éditoriale approfondit l’exploration. Le bloc `Pourquoi ici` et le CTA `Voir la fiche` disparaissent ; seul `Ajouter` reste séparé comme action utilitaire. Le skeleton reprend cette même hiérarchie simplifiée.
+- Le filtre flottant sombre est remplacé par une barre de tags inspirée de YouTube : intégrée au flux, sticky sous le header, active en contraste fort et scrollable horizontalement sur mobile. Elle ne mélange plus le tri avec l’action de retour et ne recouvre plus les cartes.
+- Le séparateur inférieur de la barre de tags est retiré et un espacement dédié la détache de la grille : les cartes ne viennent plus heurter visuellement la zone sticky lors de son activation.
+- La barre détecte maintenant son débordement réel : contrôles précédent/suivant affichés uniquement lorsque nécessaires, swipe horizontal conservé et tag actif automatiquement recentré après un changement de filtre. Les contrôles disparaissent aux extrémités et respectent `prefers-reduced-motion`.
+- Le tag relationnel `Usages proches` devient `Outils complémentaires` afin de distinguer immédiatement les outils utilisés autour de la source des `Alternatives`, qui peuvent la remplacer. La valeur d’URL `angle=adjacent` reste inchangée.
+## 2026-07-16 — Fiches outils : nettoyage structurel du template
+
+### Objectif
+Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premier écran et remettre la carte de décision dans le système de design commun.
+
+### Fichiers modifiés
+- `src/pages/ToolDetailPage.tsx` — hero factuel sans répétition du verdict et variante compacte image/contenu.
+- `src/components/tool/StickyDecisionCard.tsx` — suppression des styles JSX inline au profit de classes `td-*` maintenables.
+- `src/index.css` — hero split-view desktop, rythme vertical resserré, grille de décision à deux colonnes et système complet de styles pour la sidebar.
+
+### Résultat
+- La couverture ne monopolise plus le premier écran sur desktop.
+- Le prix reste dans le hero ; le verdict demeure dans les surfaces décisionnelles dédiées.
+- Les cinq grands chapitres sont plus compacts sans perdre leur séparation éditoriale.
+- La carte sticky et sa version mobile partagent exactement les mêmes styles.
+- Vérification mobile complète sur la fiche Framer : OK.
+- Build production : PASS.

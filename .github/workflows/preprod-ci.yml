@@ -42,6 +42,9 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit
 
+      - name: Ma stack unit and exploration tests
+        run: npm run test:ma-stack
+
       - name: Build
         run: npm run build
 

@@ -409,24 +409,20 @@ const ToolDetailPage = () => {
               const rest = imgs.slice(1);
               const year = new Date().getFullYear();
 
-              // Short context: price + first sentence of the verdict threshold.
+              // Keep the hero factual. The verdict belongs to the decision
+              // card and to the analysis below, so repeating it here made the
+              // first screen say the same thing three times.
               const priceContext = (() => {
-                const pricePart = isFree
+                return isFree
                   ? t("Gratuit.", "Free.")
                   : displayPrice > 0
                   ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t)}.`
                   : null;
-                const verdict = (tool as any).verdict;
-                const fullThreshold = lang === "en" && (tool as any).verdictEn?.threshold
-                  ? (tool as any).verdictEn.threshold
-                  : verdict?.threshold as string | undefined;
-                const threshold = fullThreshold?.split(/(?<=[.!?])\s+/)[0];
-                return [pricePart, threshold].filter(Boolean).join(" ") || null;
               })();
 
               return (
                 <>
-                  <div className="td-hero-card">
+                  <div className={`td-hero-card${cover ? " td-hero-card--with-cover" : ""}`}>
                     {cover && (
                       <img
                         className="td-hero-cover"

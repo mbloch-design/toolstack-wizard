@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
-import { ArrowLeft, Check, Compass, Plus } from "lucide-react";
+import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "lucide-react";
 import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
-import pictoLogo from "@/assets/picto-logo.svg";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
@@ -47,43 +46,92 @@ interface ExplorerFilterItem {
   label: string;
 }
 
-function ExplorerFloatingFilterNav({
+function ExplorerTagFilterNav({
   activeId,
   ariaLabel,
   items,
-  logoAriaLabel,
-  onBack,
+  nextLabel,
   onSelect,
+  previousLabel,
 }: {
   activeId: string;
   ariaLabel: string;
   items: ExplorerFilterItem[];
-  logoAriaLabel: string;
-  onBack: () => void;
+  nextLabel: string;
   onSelect: (id: string) => void;
+  previousLabel: string;
 }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [overflow, setOverflow] = useState({ left: false, right: false });
+
+  const updateOverflow = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    setOverflow({
+      left: track.scrollLeft > 2,
+      right: track.scrollLeft < maxScroll - 2,
+    });
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const observer = new ResizeObserver(updateOverflow);
+    observer.observe(track);
+    track.addEventListener("scroll", updateOverflow, { passive: true });
+    const frame = window.requestAnimationFrame(updateOverflow);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+      track.removeEventListener("scroll", updateOverflow);
+    };
+  }, [items.length, updateOverflow]);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const activeItem = [...track.querySelectorAll<HTMLElement>(".ex-tag-filter-item")]
+      .find((item) => item.dataset.filterId === activeId);
+    if (!activeItem) return;
+    const target = activeItem.offsetLeft - (track.clientWidth - activeItem.offsetWidth) / 2;
+    track.scrollTo({
+      left: Math.max(0, target),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+    const timer = window.setTimeout(updateOverflow, 220);
+    return () => window.clearTimeout(timer);
+  }, [activeId, updateOverflow]);
+
+  function scrollTags(direction: -1 | 1) {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({
+      left: direction * Math.min(320, track.clientWidth * .72),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }
+
   function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
     event.preventDefault();
     const nextIndex = event.key === "ArrowRight" ? Math.min(index + 1, items.length - 1) : Math.max(index - 1, 0);
     const next = items[nextIndex];
     if (!next) return;
-    const buttons = event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>(".tt-pillnav-item");
+    const buttons = event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>(".ex-tag-filter-item");
     buttons?.[nextIndex]?.focus();
     onSelect(next.id);
   }
 
   return (
-    <nav className="tt-pillnav ex-filter-pillnav" aria-label={ariaLabel}>
-      <button type="button" className="tt-pillnav-logo" aria-label={logoAriaLabel} onClick={onBack}>
-        <img src={pictoLogo} alt="" className="tt-pillnav-logo-img" />
-      </button>
-      <div className="tt-pillnav-items">
+    <nav className="ex-tag-filter" aria-label={ariaLabel}>
+      <div ref={trackRef} className="ex-tag-filter-track">
         {items.map((item, index) => (
           <button
             key={item.id}
             type="button"
-            className={`tt-pillnav-item${activeId === item.id ? " tt-pillnav-item--active" : ""}`}
+            data-filter-id={item.id}
+            className={`ex-tag-filter-item${activeId === item.id ? " is-active" : ""}`}
             aria-pressed={activeId === item.id}
             onClick={() => onSelect(item.id)}
             onKeyDown={(event) => handleKeyDown(event, index)}
@@ -92,6 +140,26 @@ function ExplorerFloatingFilterNav({
           </button>
         ))}
       </div>
+      {overflow.left && (
+        <button
+          type="button"
+          className="ex-tag-filter-control ex-tag-filter-control--left"
+          onClick={() => scrollTags(-1)}
+          aria-label={previousLabel}
+        >
+          <ChevronLeft size={18} aria-hidden />
+        </button>
+      )}
+      {overflow.right && (
+        <button
+          type="button"
+          className="ex-tag-filter-control ex-tag-filter-control--right"
+          onClick={() => scrollTags(1)}
+          aria-label={nextLabel}
+        >
+          <ChevronRight size={18} aria-hidden />
+        </button>
+      )}
     </nav>
   );
 }
@@ -184,7 +252,7 @@ export default function ExplorerPage() {
         const styles = window.getComputedStyle(masonry);
         const rowHeight = Number.parseFloat(styles.gridAutoRows);
         const rowGap = Number.parseFloat(styles.rowGap) || 0;
-        const items = masonry.querySelectorAll<HTMLElement>(".ex-tool-focus, .ex-card");
+        const items = masonry.querySelectorAll<HTMLElement>(".ex-tag-filter, .ex-tool-focus, .ex-card");
         if (!Number.isFinite(rowHeight) || rowHeight <= 0) {
           items.forEach((item) => { item.style.gridRowEnd = "auto"; });
           return;
@@ -197,7 +265,7 @@ export default function ExplorerPage() {
       });
     };
 
-    const items = masonry.querySelectorAll<HTMLElement>(".ex-tool-focus, .ex-card");
+    const items = masonry.querySelectorAll<HTMLElement>(".ex-tag-filter, .ex-tool-focus, .ex-card");
     const resizeObserver = new ResizeObserver(updateSpans);
     items.forEach((item) => resizeObserver.observe(item));
     updateSpans();
@@ -383,7 +451,7 @@ export default function ExplorerPage() {
       { id: "all", label: t("Tout", "All") as string },
       { id: "alternatives", label: t("Alternatives", "Alternatives") as string },
       { id: "extensions", label: t("Extensions", "Extensions") as string },
-      { id: "adjacent", label: t("Usages proches", "Related uses") as string },
+      { id: "adjacent", label: t("Outils complémentaires", "Complementary tools") as string },
     ];
   const sourceToolSlug = sourceTool ? getExplorationToolKey(sourceTool) : null;
   const sourceStackEntry = sourceToolSlug ? state.toolEntries.find((entry) => entry.toolSlug === sourceToolSlug) : null;
@@ -391,9 +459,23 @@ export default function ExplorerPage() {
     ? Boolean(sourceStackEntry?.needIds.includes(destination.id))
     : Boolean(sourceStackEntry);
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
+  const tagFilters = (
+    <ExplorerTagFilterNav
+      activeId={isObjectiveSource ? activeThemeId || "all" : angle}
+      ariaLabel={t("Trier les outils par thème", "Sort tools by theme") as string}
+      items={floatingFilterItems}
+      nextLabel={t("Voir les tags suivants", "View next tags") as string}
+      previousLabel={t("Voir les tags précédents", "View previous tags") as string}
+      onSelect={(id) => {
+        if (isObjectiveSource) setTheme(id === "all" ? null : id, false);
+        else setAngle(id as ExplorationDirection, false);
+      }}
+    />
+  );
 
   return (
     <main ref={masonryRef} className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
+      {!isObjectiveSource && tagFilters}
       {isObjectiveSource ? (
         <header className="ex-source-banner ex-source-banner--objective">
           <button type="button" className="ex-back" onClick={handleBack} aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}>
@@ -465,17 +547,7 @@ export default function ExplorerPage() {
         </header>
       )}
 
-      <ExplorerFloatingFilterNav
-        activeId={isObjectiveSource ? activeThemeId || "all" : angle}
-        ariaLabel={t("Filtres d’exploration", "Exploration filters") as string}
-        items={floatingFilterItems}
-        logoAriaLabel={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}
-        onBack={handleBack}
-        onSelect={(id) => {
-          if (isObjectiveSource) setTheme(id === "all" ? null : id, false);
-          else setAngle(id as ExplorationDirection, false);
-        }}
-      />
+      {isObjectiveSource && tagFilters}
 
       {visibleCandidates.length > 0 ? (
         <section className="ex-grid" aria-label={t("Outils associés", "Related tools") as string}>
@@ -484,16 +556,29 @@ export default function ExplorerPage() {
             const isAdding = addingSlug === slug;
             const inDestination = candidate.stackState === "in-destination";
             const inStackWithoutDestination = !destination && candidate.stackState === "in-stack";
+            const description = t(
+              candidate.tool.shortDescription,
+              candidate.tool.shortDescriptionEn || candidate.tool.shortDescription,
+            ) as string;
             return (
-              <article key={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
-                <button type="button" className="ex-card-main" onClick={() => recenter(candidate.tool)} aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}>
-                  <ToolLogo tool={candidate.tool} size={52} className="ex-card-logo" />
-                  <span className="ex-card-copy"><strong>{candidate.tool.name}</strong><small>{candidate.categoryLabel}</small><span>{isObjectiveSource
-                    ? t(`À découvrir avec ${candidate.relatedSource.name}`, `Discover with ${candidate.relatedSource.name}`)
-                    : t(candidate.reasonFr, candidate.reasonEn)}</span></span>
+              <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
+                <button
+                  type="button"
+                  className="ex-card-main"
+                  onClick={() => recenter(candidate.tool)}
+                  aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
+                  aria-describedby={`explore-card-${slug}-description`}
+                >
+                  <span className="ex-card-header">
+                    <ToolLogo tool={candidate.tool} size={52} className="ex-card-logo" />
+                    <span className="ex-card-identity">
+                      <strong>{candidate.tool.name}</strong>
+                      <small>{candidate.categoryLabel}</small>
+                    </span>
+                  </span>
+                  <span id={`explore-card-${slug}-description`} className="ex-card-description">{description}</span>
                 </button>
                 <div className="ex-card-actions">
-                  <Link to={`${prefix}/tool/${slug}`}>{t("Voir la fiche", "View profile")}</Link>
                   <button type="button" onClick={(event) => addTool(candidate.tool, event)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
                     ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
                     : inStackWithoutDestination
@@ -513,15 +598,16 @@ export default function ExplorerPage() {
               {isLoadingMore && Array.from({ length: Math.min(SKELETON_COUNT, filteredCandidates.length - visibleCandidates.length) }, (_, index) => (
                 <article key={`skeleton-${index}`} className="ex-card ex-card--skeleton" aria-hidden="true">
                   <div className="ex-card-main">
-                    <span className="ex-skeleton ex-skeleton--logo" />
-                    <span className="ex-card-copy">
-                      <span className="ex-skeleton ex-skeleton--title" />
-                      <span className="ex-skeleton ex-skeleton--meta" />
-                      <span className="ex-skeleton ex-skeleton--reason" />
+                    <span className="ex-card-header">
+                      <span className="ex-skeleton ex-skeleton--logo" />
+                      <span className="ex-card-identity">
+                        <span className="ex-skeleton ex-skeleton--title" />
+                        <span className="ex-skeleton ex-skeleton--meta" />
+                      </span>
                     </span>
+                    <span className="ex-skeleton ex-skeleton--description" />
                   </div>
                   <div className="ex-card-actions">
-                    <span className="ex-skeleton ex-skeleton--link" />
                     <span className="ex-skeleton ex-skeleton--button" />
                   </div>
                 </article>

@@ -347,12 +347,12 @@ try {
     assert(url.pathname === "/fr/explorer" && url.searchParams.get("type") === "objectif" && url.searchParams.get("source") === "design", "L’objectif doit ouvrir la page Explorer dédiée");
     assert(url.searchParams.get("destination") === "design", "La destination doit rester explicite dans l’URL");
 
-    const directions = page.locator(".ex-filter-pillnav");
-    assert(await directions.isVisible(), "La capsule sticky des filtres doit être visible dès l’ouverture d’Explorer");
-    assert(await directions.evaluate((element) => getComputedStyle(element).position) === "fixed", "Les filtres Explorer doivent utiliser la capsule fixe des fiches outils");
+    const directions = page.locator(".ex-tag-filter");
+    assert(await directions.isVisible(), "La barre de tags doit être visible dès l’ouverture d’Explorer");
+    assert(await directions.evaluate((element) => getComputedStyle(element).position) === "sticky", "Les tags Explorer doivent rester sticky en haut du flux");
     assert(await directions.getByRole("button", { name: /^Alternatives/ }).count() === 0, "Un objectif ne doit pas exposer les relations propres à une fiche outil");
     assert(await directions.getByRole("button", { name: /^Extensions/ }).count() === 0, "Un objectif doit proposer des thématiques plutôt que des extensions");
-    const firstTheme = directions.locator(".tt-pillnav-item").nth(1);
+    const firstTheme = directions.locator(".ex-tag-filter-item").nth(1);
     const firstThemeLabel = (await firstTheme.innerText()).replace(/\d+$/, "").trim();
     await firstTheme.click();
     assert(!!new URL(page.url()).searchParams.get("theme"), `La thématique ${firstThemeLabel} doit être conservée dans l’URL`);
@@ -360,7 +360,7 @@ try {
 
     const floatingFilters = directions;
     await page.locator("#main-content").evaluate((element, top) => element.scrollTo(0, top), await page.locator(".ex-source-banner").evaluate((element) => element.getBoundingClientRect().bottom + 24));
-    const floatingTheme = floatingFilters.locator(".tt-pillnav-item").nth(1);
+    const floatingTheme = floatingFilters.locator(".ex-tag-filter-item").nth(1);
     const scrollBeforeFloatingFilter = await page.locator("#main-content").evaluate((element) => element.scrollTop);
     await floatingTheme.click();
     assert(!!new URL(page.url()).searchParams.get("theme"), "Le filtre flottant doit piloter la même thématique que le filtre du hero");
@@ -369,19 +369,15 @@ try {
     await page.locator("#main-content").evaluate((element) => element.scrollTo(0, 0));
 
     const firstCard = page.locator(".ex-card").first();
-    const firstProfileLink = firstCard.getByRole("link", { name: "Voir la fiche", exact: true });
     const discoveredName = await firstCard.locator("strong").innerText();
-    const discoveredSlug = new URL((await firstProfileLink.getAttribute("href")) || "", APP_URL).pathname.split("/").pop();
-    assert(!!discoveredSlug, "Un résultat doit pointer vers une fiche outil");
-    assert((await firstCard.locator(".ex-card-copy > span").innerText()).includes("Figma"), "La relation doit nommer l’outil source exact");
-
-    await firstProfileLink.click();
-    await page.waitForURL((candidate) => candidate.pathname.endsWith(`/tool/${discoveredSlug}`));
-    assert((await persisted(page)).toolEntries.length === 1, "Voir la fiche ne doit pas ajouter l’outil");
-    await page.goBack({ waitUntil: "networkidle" });
-    await page.locator(".ex-source-banner").waitFor();
+    const discoveredSlug = await firstCard.getAttribute("data-tool-slug");
+    assert(!!discoveredSlug, "Un résultat doit identifier l’outil exploré");
+    assert(await firstCard.locator(".ex-card-relation").count() === 0, "La carte télescopique ne doit pas répéter pourquoi elle apparaît");
+    assert(await firstCard.getByRole("link").count() === 0, "La carte télescopique ne doit pas proposer un départ vers la fiche");
+    assert((await firstCard.locator(".ex-card-description").innerText()).trim().length > 0, "Une carte d’exploration doit expliquer ce que propose l’outil");
 
     await page.locator("#main-content").evaluate((element) => element.scrollTo(0, 600));
+    const objectiveScroll = await page.locator("#main-content").evaluate((element) => element.scrollTop);
     await page.locator(".ex-card").first().getByRole("button", { name: `Explorer autour de ${discoveredName}`, exact: true }).evaluate((element) => element.click());
     await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "Le clic principal doit seulement recentrer la source");
     await until(() => page.locator("#main-content").evaluate((element) => element.scrollTop <= 1), "Une nouvelle source Explorer doit revenir en haut de page");
@@ -389,8 +385,8 @@ try {
     await page.locator(".ex-tool-focus").getByRole("heading", { name: discoveredName, exact: true }).waitFor();
     assert(await page.locator(".ex-tool-focus-visual").count() === 1, "Une source outil doit s’ouvrir dans un hero visuel zoomé");
     assert(await page.locator(".ex-tool-focus").getByRole("link", { name: "Voir la fiche complète", exact: true }).count() === 1, "Le hero zoomé doit conserver l’accès à la fiche complète");
-    assert(await page.locator(".ex-filter-pillnav").getByRole("button", { name: /^Alternatives/ }).count() === 1, "Une source outil doit retrouver le filtre Alternatives");
-    assert(await page.locator(".ex-filter-pillnav").getByRole("button", { name: /^Extensions/ }).count() === 1, "Une source outil doit retrouver le filtre Extensions");
+    assert(await page.locator(".ex-tag-filter").getByRole("button", { name: /^Alternatives/ }).count() === 1, "Une source outil doit retrouver le filtre Alternatives");
+    assert(await page.locator(".ex-tag-filter").getByRole("button", { name: /^Extensions/ }).count() === 1, "Une source outil doit retrouver le filtre Extensions");
     const masonryGap = await page.evaluate(() => {
       const sourceCard = document.querySelector(".ex-tool-focus")?.getBoundingClientRect();
       if (!sourceCard) return Number.POSITIVE_INFINITY;
@@ -415,14 +411,15 @@ try {
     const expandedToolResultCount = await loadedToolCards.count();
     const nextSourceCard = loadedToolCards.first();
     const nextSourceName = await nextSourceCard.locator("strong").innerText();
-    const nextSourceSlug = new URL((await nextSourceCard.getByRole("link", { name: "Voir la fiche", exact: true }).getAttribute("href")) || "", APP_URL).pathname.split("/").pop();
+    const nextSourceSlug = await nextSourceCard.getAttribute("data-tool-slug");
+    assert(!!nextSourceSlug, "Chaque carte doit conserver l’identifiant de sa prochaine source");
     await page.locator("#main-content").evaluate((element) => element.scrollTo(0, 900));
     const firstSourceScroll = await page.locator("#main-content").evaluate((element) => element.scrollTop);
     await nextSourceCard.getByRole("button", { name: `Explorer autour de ${nextSourceName}`, exact: true }).evaluate((element) => element.click());
     await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === nextSourceSlug), "Un deuxième outil doit créer une nouvelle étape Explorer");
     await until(() => page.locator("#main-content").evaluate((element) => element.scrollTop <= 1), "Avancer vers un deuxième outil doit ouvrir son hero en haut");
     assert(await page.locator(".ex-tool-focus").getByRole("button", { name: `Retour à ${discoveredName}`, exact: true }).count() === 1, "Le retour du hero doit annoncer l’outil précédent");
-    assert(await page.locator(".ex-filter-pillnav").getByRole("button", { name: `Retour à ${discoveredName}`, exact: true }).count() === 1, "Le retour sticky doit annoncer la même étape que le hero");
+    assert(await page.locator(".ex-tag-filter").getByRole("button", { name: /^Retour à / }).count() === 0, "La barre de tags ne doit pas mélanger tri et navigation");
 
     await page.goBack({ waitUntil: "networkidle" });
     await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "Le retour navigateur doit remonter d’un seul outil");
@@ -435,23 +432,38 @@ try {
     await until(() => Promise.resolve(new URL(page.url()).searchParams.get("source") === discoveredSlug), "La flèche du hero doit remonter d’un seul outil");
     await until(() => page.locator("#main-content").evaluate((element, expected) => Math.abs(element.scrollTop - expected) <= 2, firstSourceScroll), "La flèche du hero doit restaurer la position précédente");
 
-    await page.locator(".ex-filter-pillnav").getByRole("button", { name: "Retour à Créer des visuels", exact: true }).click();
-    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("type") === "objectif" && new URL(page.url()).searchParams.get("source") === "design"), "Le retour sticky doit remonter vers l’objectif précédent");
+    await page.locator(".ex-tool-focus").getByRole("button", { name: "Retour à Créer des visuels", exact: true }).click();
+    await until(() => Promise.resolve(new URL(page.url()).searchParams.get("type") === "objectif" && new URL(page.url()).searchParams.get("source") === "design"), "Le retour du hero doit remonter vers l’objectif précédent");
     await page.locator(".ex-source-banner").getByRole("heading", { name: "Ajouter des outils pour créer des visuels", exact: true }).waitFor();
-    await until(() => page.locator("#main-content").evaluate((element) => element.scrollTop >= 598), "Le retour à l’objectif doit restaurer sa position précédente");
+    await page.waitForTimeout(300);
+    await until(() => page.locator("#main-content").evaluate((element, expected) => Math.abs(element.scrollTop - expected) <= 2, objectiveScroll), "Le retour à l’objectif doit restaurer sa position précédente");
 
     for (const width of [320, 390, 768, 1440, 1920]) {
       await page.setViewportSize({ width, height: width <= 390 ? 844 : 1000 });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       assert(overflow <= 1, `Explorer déborde horizontalement de ${overflow}px à ${width}px`);
-      assert(await page.locator(".ex-filter-pillnav button").count() >= 2, `Les thématiques sticky doivent rester visibles à ${width}px`);
+      assert(await page.locator(".ex-tag-filter button").count() >= 2, `Les tags sticky doivent rester disponibles à ${width}px`);
+      if (width === 320) {
+        const tagTrack = page.locator(".ex-tag-filter-track");
+        await until(() => tagTrack.evaluate((element) => element.scrollWidth > element.clientWidth), "Les tags doivent déborder dans leur propre rail à 320px");
+        const nextTags = page.getByRole("button", { name: "Voir les tags suivants", exact: true });
+        await nextTags.waitFor();
+        const initialTagScroll = await tagTrack.evaluate((element) => element.scrollLeft);
+        await nextTags.click();
+        await until(() => tagTrack.evaluate((element, initial) => element.scrollLeft > initial, initialTagScroll), "La flèche suivante doit faire avancer le rail de tags");
+        await page.getByRole("button", { name: "Voir les tags précédents", exact: true }).waitFor();
+        await tagTrack.evaluate((element) => element.scrollTo({ left: element.scrollWidth, behavior: "auto" }));
+        await until(() => nextTags.count().then((count) => count === 0), "La flèche suivante doit disparaître à la fin du rail");
+        await tagTrack.evaluate((element) => element.scrollTo({ left: 0, behavior: "auto" }));
+      }
       assert(await page.locator(".ex-card:not(.ex-card--skeleton)").count() >= 20, `La grille doit conserver au moins les 20 premiers outils à ${width}px`);
     }
     await page.setViewportSize({ width: 1440, height: 1000 });
 
     const addedCard = page.locator(".ex-card").first();
     const addedName = await addedCard.locator("strong").innerText();
-    const addedSlug = new URL((await addedCard.getByRole("link", { name: "Voir la fiche", exact: true }).getAttribute("href")) || "", APP_URL).pathname.split("/").pop();
+    const addedSlug = await addedCard.getAttribute("data-tool-slug");
+    assert(!!addedSlug, "La carte ajoutée doit conserver son identifiant outil");
     await addedCard.locator(".ex-card-actions button").click();
     await page.locator(".ex-flying-tool").waitFor({ state: "detached" });
     await page.locator(".ex-card").filter({ hasText: addedName }).getByRole("button", { name: `${addedName} déjà dans Créer des visuels`, exact: true }).waitFor();

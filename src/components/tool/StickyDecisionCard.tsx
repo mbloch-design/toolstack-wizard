@@ -103,107 +103,62 @@ export default function StickyDecisionCard({
   void hasFreeplan;
 
   return (
-    <div style={{
-      background: "var(--color-surface-soft)",
-      border: "1px solid var(--color-border)",
-      borderRadius: "var(--radius-lg)",
-      padding: "20px 22px 22px",
-      display: "grid",
-      gap: 16,
-    }}>
+    <div className="td-decision-card">
 
       {/* ── Identity: logo + name (the logo lives nowhere else on the page) ── */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <div style={{
-          width: 38, height: 38, borderRadius: "var(--radius)",
-          border: "1px solid var(--color-border)", background: "var(--color-bg)",
-          display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-        }}>
+      <div className="td-decision-identity">
+        <div className="td-decision-logo">
           <ToolLogo tool={tool as any} size={24} />
         </div>
-        <p style={{
-          fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600,
-          letterSpacing: "-0.02em", color: "var(--color-text)", lineHeight: 1.2,
-          margin: 0, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-        }}>
-          {tool.name}
-        </p>
+        <p className="td-decision-name">{tool.name}</p>
       </div>
 
       {/* ── Score + verdict at a glance ── */}
-      <div>
-        <span style={{
-          display: "block",
-          fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-          letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-          marginBottom: 12,
-        }}>
+      <div className="td-decision-verdict">
+        <span className="td-decision-kicker">
           {t("Verdict ToolTrim", "ToolTrim Verdict")}
         </span>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 12 }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 3 }}>
-            <span style={{ fontFamily: "var(--font-brand)", fontSize: 52, fontWeight: 600, lineHeight: 0.9, letterSpacing: "-0.06em", color: "var(--color-text)" }}>
-              {ts.score.toFixed(1)}
-            </span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 17, fontWeight: 400, color: "var(--color-muted-light)", paddingBottom: 5 }}>/5</span>
+        <div className="td-decision-score-row">
+          <div className="td-decision-score">
+            <span className="td-decision-score-value">{ts.score.toFixed(1)}</span>
+            <span className="td-decision-score-max">/5</span>
           </div>
-          <span style={{ fontFamily: "var(--font-ui)", fontSize: 16, fontWeight: 600, color: "var(--color-text-strong)", textAlign: "right" }}>
-            {t(ts.labelFr, ts.labelEn)}
-          </span>
+          <span className="td-decision-score-label">{t(ts.labelFr, ts.labelEn)}</span>
         </div>
         {verdictText && (
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 14.5, lineHeight: 1.5, color: "var(--color-text)", margin: "12px 0 0" }}>
-            {verdictText}
-          </p>
+          <p className="td-decision-copy">{verdictText}</p>
         )}
       </div>
 
       {/* ── Ecosystem tags — what the tool covers, at a glance ── */}
       {ecosystemTags.length > 0 && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+        <div className="td-decision-tags">
           {ecosystemTags.map((tag) => (
-            <span key={tag} style={{
-              display: "inline-flex", alignItems: "center",
-              height: 24, padding: "0 10px",
-              background: "var(--color-surface)", border: "1px solid var(--color-border)",
-              borderRadius: "var(--radius-pill)", fontFamily: "var(--font-ui)", fontSize: 12,
-              color: "var(--color-muted)", whiteSpace: "nowrap",
-            }}>
-              {tag}
-            </span>
+            <span key={tag} className="td-decision-tag">{tag}</span>
           ))}
         </div>
       )}
 
       {/* ── 3 functional facts ── */}
-      <div style={{ display: "grid", gap: 0, borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-        {metaRows.map(({ label, value }, i) => (
-          <div key={label} style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
-            padding: "10px 0",
-            borderTop: i > 0 ? "1px solid var(--color-border-soft)" : "none",
-          }}>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", flexShrink: 0 }}>{label}</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "var(--color-text)", textAlign: "right" }}>{value}</span>
+      <div className="td-decision-facts">
+        {metaRows.map(({ label, value }) => (
+          <div key={label} className="td-decision-fact">
+            <span>{label}</span>
+            <strong>{value}</strong>
           </div>
         ))}
       </div>
 
       {/* ── Actions ── */}
-      <div style={{ display: "grid", gap: 8 }}>
+      <div className="td-decision-actions">
         <a
           href={primaryCtaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            height: 46, background: "var(--color-text)", color: "var(--color-surface)",
-            borderRadius: "var(--radius)", fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
-            textDecoration: "none",
-          }}
+          className="td-decision-primary"
         >
           {hasAffiliateOffer ? t("Voir l'offre", "View offer") : isFree ? t("Essayer gratuitement", "Try for free") : t("Visiter le site", "Visit website")}
-          <ExternalLink style={{ width: 14, height: 14 }} />
+          <ExternalLink aria-hidden />
         </a>
         <Link
           to={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
@@ -218,12 +173,7 @@ export default function StickyDecisionCard({
         {hasAlternatives && (
           <Link
             to={`${prefix}/tool/${tool.slug || tool.id}/alternatives`}
-            style={{
-              display: "flex", alignItems: "center", justifyContent: "center",
-              height: 42, background: "transparent", color: "var(--color-text)",
-              border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
-              fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, textDecoration: "none",
-            }}
+            className="td-decision-secondary"
           >
             {t("Comparer les alternatives", "Compare alternatives")}
           </Link>
