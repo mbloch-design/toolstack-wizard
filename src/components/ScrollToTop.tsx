@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
 import { getScrollTop, onScroll, scrollToTop, scrollToY } from "@/lib/scroll";
 
 const scrollPositions = new Map<string, number>();
 const MAX_SAVED_POSITIONS = 100;
+const useIsomorphicLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 interface ScrollLocationState {
   skipScrollReset?: boolean;
@@ -68,7 +69,11 @@ const ScrollToTop = () => {
     };
   }, [locationId]);
 
-  useEffect(() => {
+  // Reset before the browser paints the new route. A passive effect leaves
+  // one frame where the persistent AppShell scroll container still has the
+  // catalogue's old scrollTop; when the asynchronously loaded tool page then
+  // grows, browser scroll anchoring can keep the footer in view.
+  useIsomorphicLayoutEffect(() => {
     if (hash) {
       window.setTimeout(() => {
         document.querySelector(hash)?.scrollIntoView({ block: "start" });

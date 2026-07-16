@@ -19327,6 +19327,10 @@ section[id] {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  /* Route content can grow after a Supabase response. Never let the browser
+     preserve the footer as its scroll anchor across that layout change;
+     ScrollToTop owns route restoration explicitly. */
+  overflow-anchor: none;
   scrollbar-gutter: stable;
   -webkit-overflow-scrolling: touch;
   background: var(--color-bg);

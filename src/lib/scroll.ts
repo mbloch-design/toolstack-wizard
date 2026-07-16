@@ -28,12 +28,19 @@ if (typeof window !== "undefined") {
 }
 
 export function scrollToTop(behavior: ScrollBehavior = "auto") {
+  // Route changes may switch between the locked AppShell rail and normal
+  // document scrolling. Re-resolve the target instead of trusting a value
+  // cached by the previous layout.
+  cachedScrollEl = undefined;
   const el = getScrollEl();
   if (el) el.scrollTo({ top: 0, left: 0, behavior });
-  else window.scrollTo({ top: 0, left: 0, behavior });
+  // Reset the document too. It is normally already at zero on desktop, but
+  // this makes transitions to/from the mobile or legacy layout deterministic.
+  window.scrollTo({ top: 0, left: 0, behavior });
 }
 
 export function scrollToY(top: number, behavior: ScrollBehavior = "auto") {
+  cachedScrollEl = undefined;
   const el = getScrollEl();
   if (el) el.scrollTo({ top: Math.max(0, top), behavior });
   else window.scrollTo({ top: Math.max(0, top), behavior });

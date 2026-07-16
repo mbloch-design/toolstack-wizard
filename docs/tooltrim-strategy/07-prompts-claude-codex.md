@@ -3,6 +3,9 @@
 > Prompts optimisés pour accélérer la production de contenu et de code ToolTrim.
 > Utiliser avec Claude Sonnet ou Claude Opus selon la complexité.
 
+Pour la reprise complète et le scraping sourcé des fiches outils, utiliser le brief opérationnel canonique :
+`docs/CLAUDE_CODE_TOOL_ENRICHMENT_BRIEF.md`.
+
 ---
 
 ## Conventions

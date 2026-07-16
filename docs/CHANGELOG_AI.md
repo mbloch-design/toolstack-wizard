@@ -2,6 +2,28 @@
 
 ---
 
+## 2026-07-16 — Brief d’industrialisation des fiches outils
+
+- Ajout d’un brief Claude Code canonique pour auditer, rechercher, sourcer et enrichir les fiches outils par lots.
+- Séparation explicite entre dossiers de recherche traçables et données éditoriales publiées dans le catalogue.
+- Formalisation de la hiérarchie des sources, du traitement des conflits, du pricing et des règles anti-hallucination.
+- Cartographie des champs ToolTrim vers leur emplacement dans la fiche afin de limiter répétitions et mauvais usages.
+- Ajout de garde-fous pour Supabase, les champs de prescription et l’automatisation du scraping.
+- Définition d’un lot pilote, de contrôles qualité, d’un format de compte rendu et d’un prompt maître prêt à exécuter.
+- Ajout d’une architecture de migration vers Supabase comme source éditoriale unique, tout en conservant un snapshot de build indispensable au prerender SEO.
+- Documentation des tables de recherche, claims, révisions, vues publiées, phases de suppression des JSON et gates anti-régression.
+
+---
+
+## 2026-07-16 — Stabilisation du scroll entre catalogue et fiches
+
+- Le reset de scroll lors d’une navigation est exécuté avant le premier affichage de la nouvelle route.
+- Le vrai conteneur de scroll est recalculé lors de chaque restauration pour couvrir AppShell, mobile et routes legacy.
+- Le document et le rail interne sont remis à zéro lors d’une navigation classique.
+- Désactivation de l’ancrage automatique sur le contenu principal afin qu’une fiche chargée progressivement ne maintienne pas le footer dans le viewport.
+
+---
+
 ## 2026-07-16 — Lancement de la roadmap Ma stack + Explorer
 
 - La roadmap Ma stack existante a été réorientée pour intégrer le pivot vers l’exploration contextuelle télescopique.

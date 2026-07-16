@@ -17,6 +17,14 @@ React SPA · Vite + TypeScript · Tailwind CSS v3
 
 ---
 
+### Migration du catalogue outils
+
+Le catalogue est actuellement hybride : Supabase est prioritaire, avec des JSON locaux utilisés par le build, certains hooks, le diagnostic et les tests. La cible « Supabase source éditoriale unique + snapshot de build généré » et ses gates SEO sont documentées dans `docs/SUPABASE_TOOL_CATALOG_MIGRATION.md`.
+
+Ne pas supprimer `tools_v4.json` ou `tools_index.json` avant d’avoir migré le prerender, les listings, le diagnostic et les tests selon ce plan.
+
+---
+
 ## Structure des pages
 
 ```
