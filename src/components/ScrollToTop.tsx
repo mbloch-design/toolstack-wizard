@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
 import { getScrollTop, onScroll, scrollToTop, scrollToY } from "@/lib/scroll";
 
@@ -26,10 +26,34 @@ function persistScrollPosition(top: number) {
   }, "");
 }
 
+function isDocumentReload(): boolean {
+  if (typeof window === "undefined") return false;
+  const navigation = window.performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+  return navigation?.type === "reload";
+}
+
 const ScrollToTop = () => {
   const { hash, key, pathname, search, state } = useLocation();
   const navigationType = useNavigationType();
   const locationId = `${key}:${pathname}${search}`;
+  const initialLocationIdRef = useRef(locationId);
+  const hasLeftInitialLocationRef = useRef(false);
+  if (locationId !== initialLocationIdRef.current) hasLeftInitialLocationRef.current = true;
+
+  /* React Router reports both browser Back/Forward and a full document reload
+     as POP. Only Back/Forward should restore the saved position. Keep the
+     initial-location check stable across StrictMode's double effect run, but
+     stop treating it as a reload once the SPA has visited another location. */
+  const isInitialReload = !hasLeftInitialLocationRef.current
+    && locationId === initialLocationIdRef.current
+    && isDocumentReload();
+
+  useEffect(() => {
+    if (!("scrollRestoration" in window.history)) return;
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    return () => { window.history.scrollRestoration = previous; };
+  }, []);
 
   useEffect(() => {
     const savePosition = () => {
@@ -53,7 +77,7 @@ const ScrollToTop = () => {
     }
 
     const locationState = state as ScrollLocationState | null;
-    const savedPosition = navigationType === "POP"
+    const savedPosition = navigationType === "POP" && !isInitialReload
       ? locationState?.scrollPosition ?? scrollPositions.get(locationId)
       : undefined;
     if (savedPosition !== undefined) {
@@ -74,7 +98,7 @@ const ScrollToTop = () => {
     if (locationState?.skipScrollReset) return;
 
     scrollToTop();
-  }, [hash, key, locationId, navigationType, pathname, search, state]);
+  }, [hash, isInitialReload, key, locationId, navigationType, pathname, search, state]);
 
   return null;
 };

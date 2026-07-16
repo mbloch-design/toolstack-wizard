@@ -1,7 +1,8 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Check, X, Minus } from "lucide-react";
+import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 
@@ -17,24 +18,11 @@ function hasFreeplan(tool: any): boolean {
   return hasGenuineFreeTier(tool.pricing?.free);
 }
 
-function prescriptionLabel(action: string | undefined): string {
-  switch (action) {
-    case "keep": return "Garder";
-    case "cancel": return "Résilier";
-    case "replace-cheaper":
-    case "replace_for_cost":
-    case "replace-better":
-    case "replace_for_features": return "Remplacer";
-    case "downgrade": return "Dégrader";
-    default: return "À évaluer";
-  }
-}
-
-function Stars({ score, size = 3 }: { score: number; size?: number }) {
+function Stars({ score }: { score: number }) {
   return (
-    <div className="flex items-center gap-0.5">
+    <div className="td-compare-stars" aria-label={`${score.toFixed(1)} / 5`}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} className={`h-${size} w-${size}`} viewBox="0 0 12 12" fill={starFill(i, score)}>
+        <svg key={i} viewBox="0 0 12 12" fill={starFill(i, score)} aria-hidden>
           <path d="M6 1l1.3 2.6L10 4l-2 1.9.5 2.7L6 7.4 3.5 8.6 4 5.9 2 4l2.7-.4z" />
         </svg>
       ))}
@@ -45,143 +33,145 @@ function Stars({ score, size = 3 }: { score: number; size?: number }) {
 export default function ToolComparisonTable({ tool, alternatives, prefix, lang, t }: Props) {
   // Take current tool + top 4 alternatives
   const rows = [tool, ...alternatives.slice(0, 4)];
+  const railRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   if (rows.length < 2) return null;
 
+  const updateActiveIndex = useCallback(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+    const cards = Array.from(rail.querySelectorAll<HTMLElement>(".td-compare-card"));
+    if (!cards.length) return;
+    const index = cards.reduce((nearest, card, i) =>
+      Math.abs(card.offsetLeft - rail.scrollLeft) < Math.abs(cards[nearest].offsetLeft - rail.scrollLeft) ? i : nearest, 0);
+    setActiveIndex(index);
+  }, []);
+
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+    rail.addEventListener("scroll", updateActiveIndex, { passive: true });
+    window.addEventListener("resize", updateActiveIndex);
+    return () => {
+      rail.removeEventListener("scroll", updateActiveIndex);
+      window.removeEventListener("resize", updateActiveIndex);
+    };
+  }, [updateActiveIndex]);
+
+  const goTo = (index: number) => {
+    const rail = railRef.current;
+    const card = rail?.querySelectorAll<HTMLElement>(".td-compare-card")[index];
+    if (!rail || !card) return;
+    rail.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+    setActiveIndex(index);
+  };
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-      {/* Table — responsive via horizontal scroll on mobile.
-          (Parent section already renders the eyebrow + title.) */}
-      <div className="overflow-x-auto" style={{ borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
-        <table className="w-full min-w-[560px] border-collapse" style={{ fontFamily: "var(--font-ui)", fontSize: 14 }}>
-          <thead>
-            <tr style={{ borderBottom: "1px solid var(--color-border)", background: "var(--color-surface-soft)", fontFamily: "var(--font-ui)", fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-muted)" }}>
-              <th className="py-3 px-4 text-left font-semibold w-40">{t("Outil", "Tool")}</th>
-              <th className="py-3 px-4 text-right font-semibold">{t("Prix/mois", "Price/mo")}</th>
-              <th className="py-3 px-4 text-center font-semibold">{t("Gratuit", "Free plan")}</th>
-              <th className="py-3 px-4 text-center font-semibold">{t("Score TT", "TT Score")}</th>
-              <th className="py-3 px-4 text-center font-semibold">{t("Remplaçable", "Replaceable")}</th>
-              <th className="py-3 px-4 text-center font-semibold">{t("Verdict", "Verdict")}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, idx) => {
+    <div className="td-compare">
+      <div className="td-compare-controls">
+        <div className="td-compare-controls-actions">
+          <button type="button" onClick={() => goTo(Math.max(0, activeIndex - 1))} disabled={activeIndex === 0} aria-label={t("Alternative précédente", "Previous alternative")}>
+            <ChevronLeft aria-hidden />
+          </button>
+          <button type="button" onClick={() => goTo(Math.min(rows.length - 1, activeIndex + 1))} disabled={activeIndex === rows.length - 1} aria-label={t("Alternative suivante", "Next alternative")}>
+            <ChevronRight aria-hidden />
+          </button>
+        </div>
+      </div>
+      <div
+        className="td-compare-grid"
+        ref={railRef}
+        role="region"
+        aria-roledescription={t("carrousel", "carousel")}
+        aria-label={t("Alternatives à comparer", "Alternatives to compare")}
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            goTo(Math.max(0, activeIndex - 1));
+          }
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            goTo(Math.min(rows.length - 1, activeIndex + 1));
+          }
+        }}
+      >
+        {rows.map((row, idx) => {
               const isCurrentTool = idx === 0;
               const ts = computeToolTrimScore(row);
               const free = hasFreeplan(row);
               const price = (row as any).pricing_v5?.compare_price_monthly_eur ?? row.defaultMonthlyPrice ?? 0;
-              const prescription = (row as any).prescription_output?.action;
-              const substitutable = (row as any).substitutable;
-              const verdictLabel = prescriptionLabel(prescription);
+              const desc = lang === "en" && (row as any).shortDescriptionEn ? (row as any).shortDescriptionEn : row.shortDescription;
+              const cover = (row.ogImageUrl ?? (row as any).og_image_url ?? (row as any).gallery_images?.[0]) as string | undefined;
 
               return (
-                <tr
+                <article
                   key={row.id}
-                  className="last:border-0"
-                  style={{ borderBottom: "1px solid var(--color-border-soft)", background: isCurrentTool ? "var(--color-surface-soft)" : "transparent" }}
+                  className={`td-compare-card${isCurrentTool ? " td-compare-card--current" : ""}${cover ? " td-compare-card--with-media" : ""}`}
                 >
-                  {/* Tool name + one-line description — folds in what used
-                      to be a separate card grid below (ToolAlternativesSection),
-                      so the same info doesn't appear in two visual formats. */}
-                  <td className="py-3 px-4">
-                    <div className="flex items-start gap-2.5">
-                      <ToolLogo tool={row as any} size={24} className="rounded-md shrink-0" style={{ marginTop: 1 }} />
-                      <div className="min-w-0">
+                  {cover && (
+                    isCurrentTool ? (
+                      <div className="td-compare-card-media">
+                        <img src={cover} alt={t(`Aperçu de ${row.name}`, `${row.name} preview`)} loading="lazy" />
+                      </div>
+                    ) : (
+                      <Link className="td-compare-card-media" to={`${prefix}/tool/${(row as any).slug || row.id}`} aria-label={t(`Voir la fiche ${row.name}`, `View ${row.name}`)}>
+                        <img src={cover} alt={t(`Aperçu de ${row.name}`, `${row.name} preview`)} loading="lazy" />
+                      </Link>
+                    )
+                  )}
+                  <div className="td-compare-card-body">
+                  <header className="td-compare-card-head">
+                    <ToolLogo tool={row as any} size={30} className="rounded-md" />
+                    <div className="td-compare-card-identity">
                         {isCurrentTool ? (
-                          <span style={{ fontWeight: 600, color: "var(--color-text)" }} className="truncate block max-w-[160px]">
+                          <p className="td-compare-card-name">
                             {row.name}
-                            <span style={{ marginLeft: 6, border: "1px solid var(--color-border-strong)", borderRadius: "var(--radius-pill)", padding: "1px 6px", fontSize: 9, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--color-text-strong)", verticalAlign: "middle" }}>
+                            <span className="td-compare-current-badge">
                               {t("Actuel", "Current")}
                             </span>
-                          </span>
+                          </p>
                         ) : (
                           <Link
                             to={`${prefix}/tool/${(row as any).slug || row.id}`}
-                            className="td-synth-link truncate block max-w-[160px]"
-                            style={{ fontWeight: 500 }}
+                            className="td-compare-card-name td-compare-card-link"
                           >
                             {row.name}
                           </Link>
                         )}
-                        {(() => {
-                          const desc = lang === "en" && (row as any).shortDescriptionEn ? (row as any).shortDescriptionEn : row.shortDescription;
-                          if (!desc) return null;
-                          return (
-                            <p
-                              className="truncate max-w-[200px]"
-                              style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 2 }}
-                            >
-                              {desc}
-                            </p>
-                          );
-                        })()}
-                      </div>
+                        {desc && <p className="td-compare-card-desc">{desc}</p>}
                     </div>
-                  </td>
+                    {!isCurrentTool && <ArrowRight className="td-compare-card-arrow" aria-hidden />}
+                  </header>
 
-                  {/* Price */}
-                  <td className="py-3 px-4 text-right tabular-nums">
-                    {price === 0 ? (
-                      <span style={{ fontWeight: 600, color: "var(--color-text-strong)" }}>{t("Gratuit", "Free")}</span>
-                    ) : (
-                      <span style={{ fontWeight: 600, color: "var(--color-text)" }}>{Math.round(price)}€</span>
-                    )}
-                  </td>
+                  <div className="td-compare-score-row">
+                    <Stars score={ts.score} />
+                    <strong>{ts.score.toFixed(1)}</strong>
+                    <span>{t("Score ToolTrim", "ToolTrim score")}</span>
+                  </div>
 
-                  {/* Free plan */}
-                  <td className="py-3 px-4 text-center">
-                    {free ? (
-                      <Check className="h-4 w-4 mx-auto" style={{ color: "var(--color-text-strong)" }} />
-                    ) : (
-                      <Minus className="h-4 w-4 mx-auto" style={{ color: "var(--color-border)" }} />
-                    )}
-                  </td>
-
-                  {/* Score */}
-                  <td className="py-3 px-4">
-                    <div className="flex flex-col items-center gap-0.5">
-                      <Stars score={ts.score} size={3} />
-                      <span
-                        className="text-[10px] font-mono font-bold tabular-nums"
-                        style={{ color: "var(--color-muted)" }}
-                      >
-                        {ts.score.toFixed(1)}
-                      </span>
+                  <dl className="td-compare-facts">
+                    <div>
+                      <dt>{t("Prix mensuel", "Monthly price")}</dt>
+                      <dd>{price === 0 ? t("Gratuit", "Free") : `${Math.round(price)}€`}</dd>
                     </div>
-                  </td>
-
-                  {/* Replaceable */}
-                  <td className="py-3 px-4 text-center">
-                    {substitutable === false ? (
-                      <X className="h-4 w-4 mx-auto" style={{ color: "var(--color-muted-light)" }} />
-                    ) : substitutable === true ? (
-                      <Check className="h-4 w-4 mx-auto" style={{ color: "var(--color-text-strong)" }} />
-                    ) : (
-                      <Minus className="h-4 w-4 mx-auto" style={{ color: "var(--color-border)" }} />
-                    )}
-                  </td>
-
-                  {/* Verdict pill */}
-                  <td className="py-3 px-4 text-center">
-                    {prescription ? (
-                      <span
-                        style={{ display: "inline-flex", alignItems: "center", borderRadius: "var(--radius-pill)", border: "1px solid var(--color-border)", padding: "2px 10px", fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "var(--color-text)", whiteSpace: "nowrap" }}
-                      >
-                        {t(verdictLabel, verdictLabel)}
-                      </span>
-                    ) : (
-                      <span style={{ fontSize: 12, color: "var(--color-muted-light)" }}>n/a</span>
-                    )}
-                  </td>
-                </tr>
+                    <div>
+                      <dt>{t("Plan gratuit", "Free plan")}</dt>
+                      <dd className="td-compare-fact-icon">{free ? <><Check aria-hidden />{t("Inclus", "Included")}</> : t("Non", "No")}</dd>
+                    </div>
+                  </dl>
+                  </div>
+                </article>
               );
             })}
-          </tbody>
-        </table>
       </div>
 
-      <p style={{ fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted-light)" }}>
-        {t("Score ToolTrim · Analyse éditoriale indépendante · Pas un score utilisateur", "ToolTrim Score · Independent editorial analysis · Not a user rating")}
-      </p>
+      <div className="td-compare-dots" aria-label={t("Choisir une carte", "Choose a card")}>
+        {rows.map((row, index) => (
+          <button key={row.id} type="button" className={index === activeIndex ? "is-active" : ""} onClick={() => goTo(index)} aria-label={t(`Afficher ${row.name}`, `Show ${row.name}`)} aria-current={index === activeIndex ? "true" : undefined} />
+        ))}
+      </div>
+
     </div>
   );
 }

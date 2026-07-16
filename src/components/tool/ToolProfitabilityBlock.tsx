@@ -1,9 +1,13 @@
 import type { Tool } from "@/data/types";
+import { resolveMonthlyPrice } from "@/lib/pricing";
+import { CheckCircle2, CircleAlert } from "lucide-react";
 
 interface Props {
   tool: Tool;
   lang: string;
   t: (fr: string, en: string) => string;
+  keepText?: string;
+  challengeText?: string;
 }
 
 /**
@@ -20,12 +24,12 @@ interface Props {
  * duplicate "Décision rapide" either. Renders for any priced tool;
  * returns null only for free tools with nothing to compare against.
  */
-export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
+export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challengeText }: Props) {
   const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
   const curatedProfitable = verdict?.profitableIf;
   const curatedTooExpensive = verdict?.tooExpensiveIf;
 
-  const price = tool.defaultMonthlyPrice || 0;
+  const price = resolveMonthlyPrice(tool);
   const ba = (tool as any).betterAlternative;
   const altReason = lang === "en"
     ? (ba?.performanceGainEn || ba?.reasonEn || ba?.performanceGain || ba?.reason)
@@ -54,45 +58,48 @@ export default function ToolProfitabilityBlock({ tool, lang, t }: Props) {
       ]
     : undefined;
 
-  if (!profitableIf?.length && !tooExpensiveIf?.length) return null;
+  if (!keepText && !challengeText && !profitableIf?.length && !tooExpensiveIf?.length) return null;
 
-  const twoCols = !!profitableIf?.length && !!tooExpensiveIf?.length;
+  const twoCols = Boolean((keepText || profitableIf?.length) && (challengeText || tooExpensiveIf?.length));
 
   return (
-    <div
-      className={twoCols ? "td-profit-grid td-profit-grid--two" : "td-profit-grid"}
-      style={{ gap: 24 }}
-    >
-      {profitableIf?.length ? (
-        <div style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: 24 }}>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-text-strong)", marginBottom: 14 }}>
-            {t(`${tool.name} est rentable si…`, `${tool.name} is worth it if…`)}
-          </p>
-          <ul className="td-judgment">
+    <section className="td-profitability">
+      <div className={twoCols ? "td-profit-grid td-profit-grid--two" : "td-profit-grid"}>
+      {(keepText || profitableIf?.length) ? (
+        <div className="td-profit-card td-profit-card--positive">
+          <div className="td-profit-card-head"><CheckCircle2 aria-hidden /><p>{t("À garder si", "Keep if")}</p></div>
+          {keepText && <p className="td-profit-fit">{keepText}</p>}
+          {profitableIf?.length ? <div className="td-profit-threshold">
+            <span>{t(`${tool.name} devient rentable quand`, `${tool.name} becomes worthwhile when`)}</span>
+            <ul className="td-judgment">
             {profitableIf.map((item) => (
               <li key={item} className="td-judgment-item td-judgment-item--pro">
                 <span className="td-judgment-marker td-judgment-marker--pro" aria-hidden="true">+</span>
                 <span className="td-judgment-text">{item}</span>
               </li>
             ))}
-          </ul>
+            </ul>
+          </div> : null}
         </div>
       ) : null}
-      {tooExpensiveIf?.length ? (
-        <div style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: 24 }}>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 14 }}>
-            {t(`${tool.name} est probablement trop cher si…`, `${tool.name} is probably too expensive if…`)}
-          </p>
-          <ul className="td-judgment">
+      {(challengeText || tooExpensiveIf?.length) ? (
+        <div className="td-profit-card td-profit-card--negative">
+          <div className="td-profit-card-head"><CircleAlert aria-hidden /><p>{t("À challenger si", "Challenge if")}</p></div>
+          {challengeText && <p className="td-profit-fit">{challengeText}</p>}
+          {tooExpensiveIf?.length ? <div className="td-profit-threshold">
+            <span>{t(`${tool.name} devient trop cher quand`, `${tool.name} becomes too expensive when`)}</span>
+            <ul className="td-judgment">
             {tooExpensiveIf.map((item) => (
               <li key={item} className="td-judgment-item td-judgment-item--con">
                 <span className="td-judgment-marker td-judgment-marker--con" aria-hidden="true">−</span>
                 <span className="td-judgment-text">{item}</span>
               </li>
             ))}
-          </ul>
+            </ul>
+          </div> : null}
         </div>
       ) : null}
-    </div>
+      </div>
+    </section>
   );
 }

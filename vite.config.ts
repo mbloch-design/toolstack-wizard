@@ -7,6 +7,7 @@ import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
+import { resolveMonthlyPrice } from "./src/lib/pricing";
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
@@ -103,7 +104,7 @@ function buildToolMetaDesc(tool: any, lang: string): string {
   const long = isFr
     ? (tool.longDescription || "")
     : (tool.longDescriptionEn || tool.longDescription || "");
-  const price: number = tool.defaultMonthlyPrice || 0;
+  const price = resolveMonthlyPrice(tool);
   const hasFree = !!(tool.pricing && tool.pricing.free);
 
   // Base = description courte (curatée, punchy) ; on ne bascule sur la 1re
@@ -571,7 +572,7 @@ function staticPrerenderPlugin(): Plugin {
           // free tool's price is legitimately 0, which is falsy but not
           // absent — `0 || null` and `price ? ... : null` both silently
           // turn a real "it's free" value into "price unknown".
-          const price = tool.defaultMonthlyPrice ?? null;
+          const price = resolveMonthlyPrice(tool);
           const priceDisplay = price != null ? Math.round(price) : null;
 
           for (const lang of LANGS) {
@@ -629,7 +630,6 @@ function staticPrerenderPlugin(): Plugin {
                 },
                 ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
                 ...(tool.verdict?.threshold ? { reviewBody: String(tool.verdict.threshold).substring(0, 280) } : {}),
-                ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
               };
             }
 
@@ -654,6 +654,15 @@ function staticPrerenderPlugin(): Plugin {
             // matters. Shared with the /faq sub-page via buildToolFaqSchema —
             // real content already shown on the page, not invented for schema.
             const mainFaqSchema = buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName, referMainPage: false });
+            const webPageSchema = {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: title,
+              description,
+              url,
+              ...(tool.pricing_v5?.verified_on ? { dateModified: tool.pricing_v5.verified_on } : {}),
+              publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
+            };
 
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
@@ -665,6 +674,7 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
+              ...(tool.pricing_v5?.verified_on ? [`<meta property="article:modified_time" content="${tool.pricing_v5.verified_on}" />`] : []),
               // Per-tool og:image when a light-enough local screenshot exists;
               // otherwise the generic <head> default is inherited. When present
               // the generic default is stripped below to avoid a duplicate tag.
@@ -676,6 +686,7 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta name="twitter:image" content="${ogImage}" />`,
               ] : []),
               `<script id="tool-software-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
+              `<script id="tool-webpage-jsonld" type="application/ld+json">${JSON.stringify(webPageSchema)}</script>`,
               `<script id="tool-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
               `<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(mainFaqSchema)}</script>`,
             ].join("\n    ");
@@ -845,7 +856,7 @@ function staticPrerenderPlugin(): Plugin {
           const name = tool.name || slug;
           // ?? not ||: a free tool's price is legitimately 0 (see the
           // matching fix in the main-page loop above).
-          const price: number | null = tool.defaultMonthlyPrice ?? null;
+          const price = resolveMonthlyPrice(tool);
           // Rounded value for the FAQ's natural-language pricing answer,
           // so it matches the main tool page's FAQPage answer to the same
           // question instead of disagreeing on precision (64€ vs 64.39€).
@@ -911,10 +922,18 @@ function staticPrerenderPlugin(): Plugin {
                     reviewRating: { "@type": "Rating", ratingValue: subScore.score, bestRating: "5", worstRating: "1" },
                     ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
                     ...(subVerdictThreshold ? { reviewBody: String(subVerdictThreshold).substring(0, 280) } : {}),
-                    ...(tool.pricing_v5?.verified_on ? { datePublished: tool.pricing_v5.verified_on } : {}),
                   },
                 } : {}),
               } : null;
+              const subPageSchema = {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                name: title,
+                description: desc,
+                url,
+                ...(tool.pricing_v5?.verified_on ? { dateModified: tool.pricing_v5.verified_on } : {}),
+                publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
+              };
 
               const metaTags = [
                 `<link rel="canonical" href="${url}" />`,
@@ -926,9 +945,11 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:url" content="${url}" />`,
+                ...(tool.pricing_v5?.verified_on ? [`<meta property="article:modified_time" content="${tool.pricing_v5.verified_on}" />`] : []),
                 // og:image / twitter:image inherited from the static <head>
                 // defaults in index.html (see main tool-page block).
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
+                `<script id="tool-subpage-webpage-jsonld" type="application/ld+json">${JSON.stringify(subPageSchema)}</script>`,
                 ...(faqSchema ? [`<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
                 ...(appSchema ? [`<script id="tool-subpage-app-jsonld" type="application/ld+json">${JSON.stringify(appSchema)}</script>`] : []),
               ].join("\n    ");

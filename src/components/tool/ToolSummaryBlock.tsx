@@ -61,19 +61,15 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
   // consolidated block for LLM extraction and SEO snippets (its original
   // purpose), but reading it as a normal visible section means a human
   // hits the same facts a second time right where they just read them.
-  // <details collapsed> keeps it in the DOM (crawlers and AI scrapers read
-  // collapsed <details> content same as visible text) without it
-  // competing for a human reader's attention as another full section.
+  // Keep the structured recap in the document for extraction without adding
+  // a sixth, repetitive information surface to the human reading path.
   return (
-    <details
-      className="td-synthesis"
+    <section
+      className="sr-only"
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
-      <summary className="td-eyebrow td-synth-eyebrow">
-        {t("Fiche technique", "Spec sheet")}
-      </summary>
-      <h2 className="sr-only">{t(`Résumé de ${tool.name}`, `${tool.name} Summary`)}</h2>
+      <h2>{t(`Résumé de ${tool.name}`, `${tool.name} Summary`)}</h2>
       <meta itemProp="name" content={tool.name} />
       <meta itemProp="applicationCategory" content="BusinessApplication" />
       <meta itemProp="operatingSystem" content="Web" />
@@ -125,6 +121,6 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
           <dd className="td-synth-dd">{verdictText}</dd>
         </div>
       </dl>
-    </details>
+    </section>
   );
 }

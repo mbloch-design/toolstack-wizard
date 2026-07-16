@@ -36,63 +36,49 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
     : [];
 
   return (
-    <div className="td-section td-section--sub">
-      <span className="td-subhead">
-        <Sparkles />
-        {t("L'angle IA", "The AI angle")}
-      </span>
-      <h2 className="td-subtitle">{t(`${tool.name} face à l'IA`, `${tool.name} vs AI`)}</h2>
-
-      {stance && (
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            margin: "2px 0 20px",
-            padding: "7px 14px",
-            borderRadius: "var(--radius-pill)",
-            border: "1px solid var(--color-border)",
-            background: "var(--color-surface, transparent)",
-            fontFamily: "var(--font-ui)",
-            fontSize: 12,
-            fontWeight: 700,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: "var(--color-text-strong)",
-          }}
-        >
-          {isFr ? stance.fr : stance.en}
+    <section className="td-section td-ai-section">
+      <header className="td-ai-header">
+        <div>
+          <span className="td-subhead">
+            <Sparkles />
+            {t("L'angle IA", "The AI angle")}
+          </span>
+          <h2 className="td-subtitle">{t(`${tool.name} face à l'IA`, `${tool.name} vs AI`)}</h2>
         </div>
-      )}
+        {stance && (
+          <div className="td-ai-stance">
+            {isFr ? stance.fr : stance.en}
+          </div>
+        )}
+      </header>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+      <div className="td-ai-grid">
         {augment && (
-          <div>
-            <span className="td-subhead" style={{ marginBottom: 8 }}>
+          <div className="td-ai-point">
+            <span className="td-subhead">
               <ArrowUpRight />
               {t("Aller plus loin avec l'IA", "Go further with AI")}
             </span>
-            <p style={{ color: "var(--color-text)", lineHeight: 1.55, margin: 0 }}>{augment}</p>
+            <p>{augment}</p>
           </div>
         )}
         {replace && (
-          <div>
-            <span className="td-subhead" style={{ marginBottom: 8 }}>
+          <div className="td-ai-point">
+            <span className="td-subhead">
               <Swords />
               {t("L'IA peut-elle le remplacer ?", "Can AI replace it?")}
             </span>
-            <p style={{ color: "var(--color-text)", lineHeight: 1.55, margin: 0 }}>{replace}</p>
+            <p>{replace}</p>
           </div>
         )}
       </div>
 
       {aiTools.length > 0 && (
-        <div style={{ marginTop: 18 }}>
-          <span className="td-subhead" style={{ marginBottom: 10 }}>
+        <div className="td-ai-tools">
+          <span className="td-subhead">
             {t("Les IA qui comptent ici", "The AIs that matter here")}
           </span>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <div>
             {aiTools.map((a: any) => (
               <Link key={a.id} to={`${prefix}/tool/${(a as any).slug || a.id}`} className="td-chip">
                 <ToolLogo tool={a} size={14} className="rounded" />
@@ -102,6 +88,6 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

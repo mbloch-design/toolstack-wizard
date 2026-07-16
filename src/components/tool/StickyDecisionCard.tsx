@@ -2,15 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Compass, ExternalLink } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
-import { formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
+import { resolveVerdict } from "@/lib/toolUtils";
 import type { Tool } from "@/data/types";
 import { getExplorerHref } from "@/lib/toolExploration";
-
-/* Slug → readable tag: "gestion-projet" → "Gestion projet" */
-function tagLabel(slug: string) {
-  const s = slug.replace(/[-_]+/g, " ").trim();
-  return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
-}
 
 /* ─────────────────────────────────────────────────────────────────────────────
    StickyDecisionCard
@@ -21,26 +15,19 @@ function tagLabel(slug: string) {
 
 interface Props {
   tool: Tool;
-  displayPrice: number;
   verifiedOn: string;
   isFree: boolean;
-  isFreemium: boolean;
   hasFreeplan: boolean;
   prefix: string;
   lang: string;
   t: (fr: string, en: string) => string;
   primaryCtaUrl: string;
   hasAffiliateOffer: boolean;
-  alternatives: Tool[];
-  catName: string;
-  catNameEn: string;
 }
 
 export default function StickyDecisionCard({
-  tool, displayPrice, verifiedOn,
-  isFree, isFreemium, hasFreeplan, prefix, lang, t,
-  primaryCtaUrl, hasAffiliateOffer, alternatives,
-  catName, catNameEn,
+  tool, verifiedOn, isFree, hasFreeplan, prefix, lang, t,
+  primaryCtaUrl, hasAffiliateOffer,
 }: Props) {
   const location = useLocation();
 
@@ -74,32 +61,6 @@ export default function StickyDecisionCard({
     return "";
   })();
 
-  /* ── One consolidated price line (the old card repeated "freemium" across a
-       Plan gratuit / Modèle / Prix trio that all said the same thing) ── */
-  const priceValue = isFree
-    ? t("Gratuit", "Free")
-    : isFreemium
-    ? (displayPrice > 0
-        ? `${t("Freemium · dès", "Freemium · from")} ${formatPriceLabel(tool, displayPrice, t)}`
-        : t("Freemium", "Freemium"))
-    : displayPrice > 0
-    ? `${t("Dès", "From")} ${formatPriceLabel(tool, displayPrice, t)}`
-    : t("Sur devis", "On request");
-
-  /* ── Key facts: 3 genuinely distinct rows (no overlap) ── */
-  const metaRows = [
-    { label: t("Prix", "Price"), value: priceValue },
-    { label: t("Catégorie", "Category"), value: t(catName, catNameEn) },
-    { label: t("Vérifié le", "Verified"), value: verifiedOn },
-  ];
-
-  /* ── Ecosystem tags: what the tool covers, at a glance ── */
-  const rawTags = (((tool as any).covers as string[] | null | undefined)?.length
-    ? (tool as any).covers as string[]
-    : ((tool as any).functional_needs as string[] | null | undefined) || []);
-  const ecosystemTags = rawTags.slice(0, 5).map(tagLabel).filter(Boolean);
-
-  const hasAlternatives = alternatives.length > 0;
   void hasFreeplan;
 
   return (
@@ -130,25 +91,6 @@ export default function StickyDecisionCard({
         )}
       </div>
 
-      {/* ── Ecosystem tags — what the tool covers, at a glance ── */}
-      {ecosystemTags.length > 0 && (
-        <div className="td-decision-tags">
-          {ecosystemTags.map((tag) => (
-            <span key={tag} className="td-decision-tag">{tag}</span>
-          ))}
-        </div>
-      )}
-
-      {/* ── 3 functional facts ── */}
-      <div className="td-decision-facts">
-        {metaRows.map(({ label, value }) => (
-          <div key={label} className="td-decision-fact">
-            <span>{label}</span>
-            <strong>{value}</strong>
-          </div>
-        ))}
-      </div>
-
       {/* ── Actions ── */}
       <div className="td-decision-actions">
         <a
@@ -168,17 +110,10 @@ export default function StickyDecisionCard({
           <Compass size={16} aria-hidden />
           {t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
         </Link>
-        {/* Only when there are real alternatives to compare — otherwise the
-            /alternatives sub-page is empty, so the button led nowhere. */}
-        {hasAlternatives && (
-          <Link
-            to={`${prefix}/tool/${tool.slug || tool.id}/alternatives`}
-            className="td-decision-secondary"
-          >
-            {t("Comparer les alternatives", "Compare alternatives")}
-          </Link>
-        )}
       </div>
+      <p className="td-decision-verified">
+        {t("Tarifs vérifiés le", "Pricing verified on")} <time dateTime={verifiedOn}>{verifiedOn}</time>
+      </p>
     </div>
   );
 }

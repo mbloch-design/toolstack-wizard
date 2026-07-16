@@ -6916,6 +6916,12 @@
     padding-top: 40px;
     padding-bottom: 80px;
   }
+  .td-main {
+    --td-chapter-gap: clamp(52px, 6vw, 72px);
+    --td-block-gap: clamp(32px, 4vw, 44px);
+    min-width: 0;
+    display: flow-root;
+  }
   @media (max-width: 1100px) {
     .td-body-grid {
       grid-template-columns: minmax(0, 1fr);
@@ -7043,6 +7049,26 @@
     margin: 0;
     max-width: 60ch;
   }
+  .td-tool-subnav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 20px;
+    padding: 2px 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+  }
+  .td-tool-subnav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    text-underline-offset: 4px;
+  }
+  .td-tool-subnav a:hover { color: var(--color-text); }
+  .td-tool-subnav a[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
 
   /* Hero identity — now the head of the main column in the unified page grid.
      Sits beside the decision card so the verdict starts at the very top. */
@@ -7056,13 +7082,113 @@
     margin-bottom: clamp(16px, 2vw, 28px);
   }
 
-  /* Section wrapper.
-     No rule between sections: 56px of padding on each side already separates
-     them, and every block inside (td-dr-block, td-judgment, td-synthesis)
-     draws its own top rule — so the page stacked two lines 56px apart with
-     nothing between them. Space separates; a rule should mean something. */
+  /* Immediate orientation — compact enough to remain part of the opening,
+     but explicit enough to answer "for whom" and "what does it do". */
+  .td-quick-context {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 28px;
+    margin-bottom: 24px;
+    padding: 22px;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
+  }
+  .td-quick-context-label {
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-kicker);
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .td-audience-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .td-audience-tags--spaced { margin-bottom: 12px; }
+  .td-quick-context .td-chip {
+    padding: 5px 9px;
+    border: 0;
+    background: var(--color-surface);
+    font-size: 12px;
+  }
+  .td-quick-context .td-relevance { gap: 8px; }
+  .td-quick-context .td-relevance-item {
+    padding: 8px 10px;
+    border: 0;
+    border-radius: var(--radius);
+    background: transparent;
+  }
+  .td-quick-context .td-relevance-item--on { background: var(--color-surface); }
+  .td-quick-context .td-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .td-quick-context .td-feature {
+    padding: 7px 9px;
+    border: 0;
+    background: var(--color-surface);
+    font-size: 12px;
+  }
+  @media (max-width: 760px) {
+    .td-quick-context { grid-template-columns: 1fr; gap: 20px; padding: 18px; }
+  }
+
+  .td-editorial-intro {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+    column-gap: 40px;
+    align-items: start;
+    margin-top: var(--td-block-gap);
+    padding: 0;
+  }
+  .td-editorial-intro-head {
+    grid-column: 1;
+    display: grid;
+    align-content: start;
+    gap: 14px;
+    padding-top: 4px;
+  }
+  .td-editorial-intro-head .td-eyebrow {
+    margin: 0;
+  }
+  .td-editorial-intro-title {
+    margin: 0;
+    font-family: var(--font-brand);
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    color: var(--color-text);
+  }
+  .td-editorial-intro-copy {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 760px;
+  }
+  .td-editorial-intro .td-analysis-lead {
+    font-family: var(--font-ui);
+    font-size: clamp(1.125rem, 1.5vw, 1.3rem);
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+  }
+  .td-editorial-intro .td-analysis-paragraph {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .td-editorial-intro-usecases {
+    margin-top: 32px;
+  }
+  .td-editorial-intro-usecases .td-eyebrow { margin-bottom: 12px; }
+  @media (max-width: 760px) {
+    .td-editorial-intro { grid-template-columns: 1fr; }
+    .td-editorial-intro-head,
+    .td-editorial-intro-title,
+    .td-editorial-intro-copy { grid-column: 1; grid-row: auto; }
+    .td-editorial-intro-head { margin-bottom: 20px; padding-top: 0; }
+  }
+
+  /* Section wrapper: spacing belongs to the parent flow. Individual sections
+     no longer add symmetrical padding that doubles at every boundary. */
   .td-section {
-    padding: 40px 0;
+    padding: 0;
   }
 
   /* Section eyebrow */
@@ -7103,17 +7229,117 @@
      .td-section + .td-title, so the page read as ten chapters while the nav
      promises five. */
   .td-section--sub {
-    padding: 28px 0;
+    padding: 0;
   }
 
-  /* The tool page reuses the Ma stack inspector blocks verbatim so the two
-     sheets stay identical. One difference is intended: the inspector clamps
-     its summary to 5 lines because it is a preview inside a board — the tool
-     page is the reference sheet and shows the whole thing. */
-  .td-tool-overview .stack-tool-inspector-overview p {
-    -webkit-line-clamp: unset;
-    display: block;
-    overflow: visible;
+  /* Tool overview: production use cases and purchase criteria are separate
+     editorial sections. They answer different questions and should not read
+     as one continuous decision block. */
+  .td-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .td-overview-group {
+    padding: 22px;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
+  }
+  .td-overview-group--uses {
+    background: transparent;
+    padding: 0;
+  }
+  .td-overview-decision-head { margin-bottom: 20px; }
+  .td-overview-title {
+    margin: 0 0 7px;
+    font-family: var(--font-brand);
+    font-size: clamp(1.5rem, 2vw, 1.875rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    color: var(--color-text);
+  }
+  .td-overview-decision-head p {
+    max-width: 680px;
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+  .td-overview-group-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    font-family: var(--font-brand);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  .td-overview-group-title svg {
+    width: 19px;
+    height: 19px;
+    color: var(--color-text);
+  }
+  .td-overview-group--limits .td-overview-group-title,
+  .td-overview-group--limits .td-overview-group-title svg {
+    color: var(--color-muted);
+  }
+  .td-overview-group ul {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .td-overview-group--uses ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 24px;
+  }
+  .td-overview-group--uses li {
+    padding: 8px 0;
+    background: transparent;
+  }
+  .td-overview-group li {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 10px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--color-text);
+  }
+  .td-overview-group li svg { width: 15px; height: 15px; margin-top: 3px; }
+  .td-overview-group--uses li > span { display: grid; gap: 3px; }
+  .td-overview-group--uses li strong {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text);
+  }
+  .td-overview-group--uses li small {
+    font-size: 12px;
+    line-height: 1.35;
+    color: var(--color-muted);
+  }
+  .td-overview-group--limits { background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-bg)); }
+  .td-overview-group--limits li::before { content: "—"; color: var(--color-muted); }
+  .td-overview-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .td-overview-tags span {
+    padding: 6px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-soft);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+  @media (max-width: 700px) {
+    .td-overview-grid { grid-template-columns: 1fr; gap: 12px; }
+    .td-overview-group--uses ul { grid-template-columns: 1fr; }
   }
 
   /* Body text — 18px, readable */
@@ -7149,58 +7375,6 @@
     text-underline-offset: 3px;
   }
 
-  /* ── Score card ── the editorial verdict, one block ── */
-  .td-score-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-bottom: 32px;
-  }
-  .td-score-head {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    padding: 28px 32px;
-    border-bottom: 1px solid var(--color-border-soft);
-  }
-  .td-score-figure {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    flex-shrink: 0;
-  }
-  .td-score-value {
-    font-family: var(--font-brand);
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 0.9;
-    letter-spacing: -0.07em;
-    color: var(--color-text);
-  }
-  .td-score-max {
-    font-family: var(--font-ui);
-    font-size: 24px;
-    color: var(--color-muted-light);
-    line-height: 1;
-    padding-bottom: 10px;
-  }
-  .td-score-label {
-    font-family: var(--font-ui);
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--color-text-strong);
-    line-height: 1.2;
-  }
-  .td-score-meta {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: var(--color-muted);
-    margin-top: 6px;
-  }
-  .td-score-body {
-    padding: 24px 32px;
-  }
   .td-score-text {
     font-family: var(--font-ui);
     font-size: 15px;
@@ -7243,78 +7417,39 @@
   }
   .td-judgment-item--con .td-judgment-text { color: var(--color-muted); }
 
-  /* Editorial synthesis — machine-readable TL;DR rebuilt as a spec sheet */
-  /* Collapsed <details> kept for the SoftwareApplication schema — background,
-     not a chapter. It used to carry margin-top + padding-top + a lone
-     border-top: the only separator left on the page and an unbalanced 85px
-     gap, so it read as a stray rule. Now it follows the same quiet 28px
-     rhythm as the other background blocks, no border. */
-  .td-synthesis {
-    padding: 28px 0;
-  }
-  /* Same eyebrow as .td-eyebrow — it only needs to sit on a row with its
-     disclosure chevron. Everything typographic comes from the shared rule;
-     this used to restate all seven properties and was free to drift from it. */
-  .td-synth-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  /* Native <summary> default marker is removed by display:flex above —
-     add an explicit chevron so the row still reads as expandable. */
-  .td-synth-eyebrow::before {
-    content: "▸";
-    font-size: 10px;
-    transition: transform 140ms ease-out;
-  }
-  details[open] > .td-synth-eyebrow::before {
-    transform: rotate(90deg);
-  }
-  .td-synth-dl {
-    margin: 0;
-  }
-  .td-synth-row {
+  /* Pricing — one compact comparison surface rather than nested cards. */
+  .td-pricing { display: grid; gap: 14px; }
+  .td-pricing-plans {
     display: grid;
-    grid-template-columns: minmax(150px, 220px) 1fr;
-    column-gap: 32px;
-    row-gap: 4px;
-    align-items: baseline;
-    padding: 14px 0;
-    border-top: 1px solid var(--color-border-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
   }
-  .td-synth-row:first-child { border-top: none; }
-  .td-synth-dt {
+  .td-pricing-plans--split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .td-pricing-plan { display: grid; align-content: start; gap: 12px; padding: 22px; }
+  .td-pricing-plan + .td-pricing-plan { border-left: 1px solid var(--color-border); }
+  .td-pricing-plan--free { background: var(--color-surface-soft); }
+  .td-pricing-plan-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .td-pricing-plan-name { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--color-text); }
+  .td-pricing-plan-name svg { width: 15px; height: 15px; color: var(--color-muted); }
+  .td-pricing-price { font-family: var(--font-brand); font-size: 17px; font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .td-pricing-price small { font-family: var(--font-ui); font-size: 12px; font-weight: 400; color: var(--color-muted); }
+  .td-pricing-copy { font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--color-muted); }
+  .td-pricing-evidence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 7px;
     margin: 0;
     font-family: var(--font-ui);
-    font-size: var(--tt-size-kicker);
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-muted);
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--color-muted-light);
   }
-  .td-synth-dd {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.55;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-  }
-  .td-synth-link {
-    color: var(--color-text);
-    text-decoration: underline;
-    text-decoration-color: var(--color-border);
-    text-underline-offset: 3px;
-    transition: text-decoration-color 140ms ease-out;
-  }
-  .td-synth-link:hover { text-decoration-color: var(--color-text); }
-  @media (max-width: 600px) {
-    .td-synth-row {
-      grid-template-columns: 1fr;
-      row-gap: 6px;
-    }
+  .td-pricing-evidence a { color: var(--color-muted); text-underline-offset: 3px; }
+  @media (max-width: 640px) {
+    .td-pricing-plans--split { grid-template-columns: 1fr; }
+    .td-pricing-plan + .td-pricing-plan { border-left: 0; border-top: 1px solid var(--color-border); }
   }
 
   /* ── Editorial primitives for tool sub-blocks (audience / features / plugins)
@@ -7425,35 +7560,263 @@
   .td-feature svg { width: 12px; height: 12px; flex-shrink: 0; color: var(--color-text-strong); }
   .td-feature span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+  .td-ai-stance {
+    display: inline-flex;
+    margin: 0;
+    padding: 6px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-soft);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text);
+  }
+  .td-ai-section {
+    margin: 0;
+    padding: 26px;
+    border-radius: calc(var(--radius-lg) + 4px);
+    background: var(--color-surface-soft);
+  }
+  .td-ai-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .td-ai-header .td-subhead { margin-bottom: 9px; }
+  .td-ai-header .td-subtitle { margin: 0; }
+  .td-ai-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    background: transparent;
+  }
+  .td-ai-point { padding: 0; }
+  .td-ai-point + .td-ai-point { border-left: 0; }
+  .td-ai-point .td-subhead { margin-bottom: 8px; }
+  .td-ai-point p { margin: 0; font-family: var(--font-ui); font-size: 15px; line-height: 1.55; color: var(--color-text); }
+  .td-ai-tools { margin-top: 24px; }
+  .td-ai-tools .td-subhead { margin-bottom: 10px; }
+  .td-ai-tools > div { display: flex; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 700px) {
+    .td-ai-section { margin-inline: -12px; padding: 22px 12px; }
+    .td-ai-header { display: grid; }
+    .td-ai-grid { grid-template-columns: 1fr; }
+    .td-ai-grid { gap: 24px; }
+  }
+
   /* Tab nav — strong editorial subnav */
 
   /* Section anchor — scroll-margin compensates the fixed header only.
      (The in-page nav is now the bottom-floating pill, not a top bar.) */
   .td-subpage-content {
     scroll-margin-top: calc(var(--navbar-h, 68px) + 24px);
-    padding-top: 8px;
+    padding: 0;
   }
-  /* Single-scroll article: every section after the first gets an editorial
-     divider so the page reads as chapters, not a flat dump. Kept moderate
-     (was up to 128px of dead space) since some chapters — Reviews in
-     particular, which is just a "coming soon" placeholder — are short, and
-     a cavernous gap there reads as a layout bug rather than a transition.
-     The first section (#analyse) follows the tab nav directly with no
-     extra rule. */
+  .td-editorial-intro + .td-subpage-content,
   .td-subpage-content + .td-subpage-content {
-    margin-top: clamp(20px, 3vw, 32px);
-    padding-top: clamp(20px, 2.5vw, 32px);
-    /* 1px/--color-border, like every other rule on the page. This was 2px of
-       --color-border-strong (#222222): the only near-black line on a page
-       where every other separator is a #DADAD4 hairline, so it read as an
-       error rather than as a chapter break. The 48px + 40px around it already
-       do the separating. */
-    border-top: 1px solid var(--color-border);
+    margin-top: var(--td-chapter-gap);
+  }
+  .td-subpage-content > .td-section + .td-section {
+    margin-top: var(--td-block-gap);
   }
 
   /* Hero metadata row */
 
   /* Editorial comparison rows (alternatives section) */
+  .td-compare { display: grid; gap: 12px; }
+  .td-compare-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  .td-compare-controls-actions { display: flex; align-items: center; gap: 7px; }
+  .td-compare-controls button {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+  .td-compare-controls button:hover:not(:disabled) { background: var(--color-surface-soft); }
+  .td-compare-controls button:disabled { opacity: 0.3; cursor: default; }
+  .td-compare-controls button svg { width: 16px; height: 16px; }
+  .td-compare-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+  }
+  .td-compare-grid::-webkit-scrollbar { display: none; }
+  .td-compare-card {
+    display: grid;
+    align-content: start;
+    flex: 0 0 min(236px, 78vw);
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+  .td-compare-card--current {
+    background: var(--color-surface-soft);
+  }
+  .td-compare-card-media {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    background: var(--color-surface-soft);
+  }
+  .td-compare-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 220ms ease-out;
+  }
+  a.td-compare-card-media:hover img { transform: scale(1.025); }
+  .td-compare-card--current .td-compare-card-media {
+    min-height: 0;
+    aspect-ratio: 1.9 / 1;
+  }
+  .td-compare-card-body {
+    display: grid;
+    align-content: start;
+    min-width: 0;
+    padding: 14px;
+  }
+  .td-compare-card-head {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: start;
+  }
+  .td-compare-card-identity { min-width: 0; }
+  .td-compare-card-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    font-family: var(--font-brand);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+  }
+  .td-compare-card-link { text-decoration: none; }
+  .td-compare-card-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .td-compare-current-badge {
+    padding: 2px 7px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-surface);
+  }
+  .td-compare-card-desc {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 4px 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--color-muted);
+  }
+  .td-compare-card-arrow {
+    width: 16px;
+    height: 16px;
+    color: var(--color-muted);
+  }
+  .td-compare-score-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .td-compare-stars { display: flex; gap: 2px; }
+  .td-compare-stars svg { width: 13px; height: 13px; }
+  .td-compare-score-row strong {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text);
+  }
+  .td-compare-score-row > span {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--color-muted);
+  }
+  .td-compare-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin: 12px 0 0;
+  }
+  .td-compare-facts > div {
+    min-width: 0;
+    padding: 8px;
+    border-radius: var(--radius);
+    background: var(--color-surface-soft);
+  }
+  .td-compare-card--current .td-compare-facts > div { background: var(--color-surface); }
+  .td-compare-facts dt {
+    margin-bottom: 4px;
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .td-compare-facts dd {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text);
+  }
+  .td-compare-fact-icon { display: flex; align-items: center; gap: 5px; }
+  .td-compare-fact-icon svg { width: 13px; height: 13px; flex: 0 0 auto; }
+  .td-compare-dots { display: flex; justify-content: center; gap: 6px; }
+  .td-compare-dots button {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: width 160ms ease-out, background 160ms ease-out;
+  }
+  .td-compare-dots button.is-active { width: 20px; background: var(--color-text); }
+  @media (max-width: 700px) {
+    .td-compare-card { flex-basis: min(226px, 82vw); }
+  }
+
   .td-alt-row {
     display: grid;
     grid-template-columns: 48px 1fr auto;
@@ -7497,70 +7860,6 @@
     color: var(--color-muted-light);
   }
 
-  /* ── "Coming soon" placeholder card (reviews) ── */
-  .td-soon-card {
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 40px 32px;
-    text-align: center;
-  }
-  .td-soon-title {
-    font-family: var(--font-brand);
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--color-text);
-    margin-bottom: 10px;
-  }
-  .td-soon-text {
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--color-muted);
-    max-width: 420px;
-    margin: 0 auto 24px;
-  }
-  .td-soon-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    background: var(--color-surface-soft);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--color-text-strong);
-    letter-spacing: 0.02em;
-  }
-  .td-soon-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: var(--radius-circle);
-    background: var(--color-text-strong);
-    animation: pulse 2s infinite;
-  }
-
-  /* ── Freshness footer — when the page was last verified, and against what ── */
-  .td-fresh {
-    margin-top: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-    border-top: 1px solid var(--color-border);
-    padding-top: 24px;
-    font-family: var(--font-ui);
-    font-size: 12px;
-    color: var(--color-muted-light);
-  }
-  .td-fresh-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
   /* Lucide icons sit inline with 12px copy. */
   .td-icon-xs {
     width: 12px;
@@ -7597,37 +7896,64 @@
   }
   .td-alt-row:first-child { border-top: none; }
 
-  /* ── Décision rapide — 3-column editorial blocks ── */
-  .td-dr-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 32px;
-    margin-top: 32px;
-  }
-  @media (max-width: 768px) {
-    .td-dr-grid { grid-template-columns: 1fr; gap: 0; }
-  }
-  .td-dr-block {
-    border-top: 1px solid var(--color-border);
-    padding-top: 18px;
-    padding-bottom: 8px;
-  }
-  .td-dr-label {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    margin-bottom: 10px;
-  }
-  .td-dr-text {
+  .td-verdict-lead {
+    max-width: 760px;
+    margin: 0;
     font-family: var(--font-ui);
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.55;
     color: var(--color-text);
-    margin: 0;
+  }
+
+  .td-decision-flow {
+    margin: var(--td-block-gap) 0 0;
+    padding: 0;
+    background: transparent;
+  }
+  .td-decision-flow-intro { padding: 0 0 30px; }
+  .td-decision-flow .td-title { margin-bottom: 16px; }
+  @media (max-width: 700px) {
+    .td-decision-flow { margin-inline: 0; }
+  }
+
+  .td-analysis-lead {
+    font-weight: 500;
+    font-size: clamp(1rem, 1.2vw, 1.0625rem);
+  }
+  .td-analysis-paragraph {
+    margin-top: 1em;
+    color: var(--color-muted);
+  }
+
+  .td-review-rationale {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
+    gap: 32px;
+    align-items: start;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
+  }
+  .td-review-label {
+    font-family: var(--font-brand);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+  }
+
+  .td-related-guides { margin-top: 16px; }
+  .td-related-guides-list { display: flex; flex-direction: column; gap: 6px; }
+  .td-guide-link-title {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
   }
 
   /* ── Sticky decision card ───────────────────────────────────────────────
@@ -7714,39 +8040,8 @@
     line-height: 1.5;
     color: var(--color-text);
   }
-  .td-decision-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .td-decision-tag {
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-    padding: 3px 10px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-pill);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    line-height: 1.25;
-    color: var(--color-muted);
-  }
-  .td-decision-facts {
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-  }
-  .td-decision-fact {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 0;
-    font-family: var(--font-ui);
-    font-size: 13px;
-  }
-  .td-decision-fact + .td-decision-fact { border-top: 1px solid var(--color-border-soft); }
-  .td-decision-fact > span { flex-shrink: 0; color: var(--color-muted); }
-  .td-decision-fact > strong { font-weight: 600; text-align: right; color: var(--color-text); }
   .td-decision-actions { display: grid; gap: 8px; }
-  .td-decision-primary,
-  .td-decision-secondary {
+  .td-decision-primary {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7765,19 +8060,17 @@
   }
   .td-decision-primary svg { width: 14px; height: 14px; }
   .td-decision-primary:hover { opacity: 0.82; }
-  .td-decision-secondary {
-    height: 42px;
-    background: transparent;
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
-    font-size: 14px;
+  .td-decision-verified {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-align: center;
+    color: var(--color-muted-light);
   }
-  .td-decision-secondary:hover { border-color: var(--color-text); }
 
   @media (max-width: 640px) {
     .td-body-grid { padding-top: 24px; padding-bottom: 56px; }
-    .td-section { padding: 32px 0; }
     .td-decision-card { padding: 20px; }
+    .td-review-rationale { grid-template-columns: 1fr; gap: 14px; }
   }
 
   /* ── Audit de stack — editorial band (full-width, outside grid) ── */
@@ -7790,7 +8083,90 @@
   .td-profit-grid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
+  .td-profitability { margin-top: 30px; }
+  .td-profitability-title {
+    margin: 0 0 14px;
+    font-family: var(--font-brand);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  .td-profit-card {
+    padding: 24px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+  .td-profit-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .td-profit-card-head svg { width: 22px; height: 22px; color: var(--color-text); }
+  .td-profit-card--negative .td-profit-card-head svg { color: var(--color-muted); }
+  .td-profit-card-head p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-text-strong);
+  }
+  .td-profit-card--negative .td-profit-card-head p { color: var(--color-muted); }
+  .td-profit-fit {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: var(--color-text);
+  }
+  .td-profit-card--negative .td-profit-fit { color: var(--color-muted); }
+  .td-profit-threshold { margin-top: 24px; }
+  .td-profit-threshold > span {
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .td-profit-card .td-judgment {
+    display: grid;
+    gap: 12px;
+    border-top: 0;
+  }
+  .td-profit-card .td-judgment-item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 0;
+    border-bottom: 0;
+  }
+  .td-profit-card .td-judgment-marker {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-surface-soft);
+    font-size: 17px;
+    line-height: 1;
+  }
+  .td-profit-card .td-judgment-text {
+    padding-top: 3px;
+  }
+
   @media (min-width: 720px) {
     .td-profit-grid.td-profit-grid--two {
       grid-template-columns: 1fr 1fr;

@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import type { Tool, Category } from "@/data/types";
 import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { buildToolFaqs } from "@/lib/toolFaq";
+import { computeToolTrimScore } from "@/lib/toolTrimScore";
+import { hasGenuineFreeTier } from "@/lib/pricing";
 
 interface Props {
   tool: Tool;
@@ -23,12 +25,21 @@ interface Props {
 export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
   useEffect(() => {
     const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
+    const pageIntent = canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
+      ? (lang === "fr" ? "Prix et tarifs" : "Pricing and plans")
+      : canonicalUrl.endsWith("/alternatives")
+      ? (lang === "fr" ? "Alternatives" : "Alternatives")
+      : canonicalUrl.endsWith("/avis") || canonicalUrl.endsWith("/reviews")
+      ? (lang === "fr" ? "Avis et verdict" : "Review and verdict")
+      : canonicalUrl.endsWith("/faq")
+      ? "FAQ"
+      : (lang === "fr" ? "Avis, prix et alternatives" : "Review, pricing and alternatives");
 
     // 1. WebPage
     setJsonLd("tool-webpage-jsonld", {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: lang === "fr" ? `${tool.name} : Avis et alternatives | ToolTrim` : `${tool.name}: Review & alternatives | ToolTrim`,
+      name: `${tool.name} : ${pageIntent} | ToolTrim`,
       description: tool.shortDescription,
       url: canonicalUrl,
       dateModified: verifiedOn,
@@ -39,51 +50,11 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       },
     });
 
-    // 2. SoftwareApplication + Offer + AggregateRating + Review
-    // ToolTrim score (0–100) — prescription_quality as primary signal,
-    // tuned by soloRelevance, teamRelevance, pros/cons ratio and verdict balance.
-    const prosCount  = tool.pros?.length  || 0;
-    const consCount  = tool.cons?.length  || 0;
-    const keepCount  = tool.verdict?.keepIf?.length  || 0;
-    const avoidCount = tool.verdict?.avoidIf?.length || 0;
-
-    // 1. Base score from editorial prescription confidence
-    const pq = tool.prescription_quality || "silence";
-    const baseScore =
-      pq === "ferme" ? 84
-      : pq === "oui"  ? 80
-      : pq === "question" ? 68
-      : /* silence */  62; // 62 = no strong opinion, but tool exists in catalog
-
-    // 2. Solo relevance adjustment (ToolTrim's target audience = solo/freelance)
-    const soloAdj =
-      tool.soloRelevance === "high"   ?  9
-      : tool.soloRelevance === "medium" ?  3
-      : tool.soloRelevance === "low"    ? -6
-      : 0;
-
-    // 3. Team relevance (secondary signal)
-    const teamAdj =
-      tool.teamRelevance === "high"   ?  4
-      : tool.teamRelevance === "low"    ? -3
-      : 0;
-
-    // 4. Pros/cons directional signal (not ratio — absolute skew)
-    const pcAdj = prosCount > consCount ?  5
-      : consCount > prosCount ? -7
-      : 0;
-
-    // 5. Verdict directional signal
-    const vAdj = keepCount > avoidCount ?  4
-      : avoidCount > keepCount ? -5
-      : 0;
-
-    const rawScore = baseScore + soloAdj + teamAdj + pcAdj + vAdj;
-    const scoreOn100 = Math.min(97, Math.max(28, rawScore)); // clamp to [28, 97]
-    const ratingValue = (Math.round((scoreOn100 / 20) * 10) / 10).toFixed(1); // /5, 1 decimal
-
-    // ratingCount = number of editorial criteria evaluated (realistic count ≥ 5)
-    const criteriaEvaluated = Math.max(5, prosCount + consCount + keepCount + avoidCount + 2);
+    // 2. SoftwareApplication + editorial Review. Deliberately no
+    // AggregateRating: ToolTrim publishes one editorial score, not a pool of
+    // user ratings, so inventing ratingCount/reviewCount would be misleading.
+    const score = computeToolTrimScore(tool);
+    const ratingValue = score.score.toFixed(1);
     const reviewBody =
       (lang === "en" ? tool.verdictEn?.threshold : tool.verdict?.threshold) ||
       tool.verdict?.threshold ||
@@ -99,25 +70,19 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       url: tool.websiteUrl || canonicalUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      offers: {
-        "@type": "Offer",
-        price: String(displayPrice || 0),
-        priceCurrency: "EUR",
-        ...(displayPrice > 0 && {
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            billingDuration: "P1M",
+      offers: hasGenuineFreeTier(tool.pricing?.free) && displayPrice > 0
+        ? {
+            "@type": "AggregateOffer",
+            lowPrice: "0",
+            highPrice: String(displayPrice),
+            priceCurrency: "EUR",
+            offerCount: "2",
+          }
+        : {
+            "@type": "Offer",
+            price: String(displayPrice || 0),
+            priceCurrency: "EUR",
           },
-        }),
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue,
-        bestRating: "5",
-        worstRating: "1",
-        ratingCount: String(criteriaEvaluated),
-        reviewCount: "1",
-      },
       review: {
         "@type": "Review",
         author: {
@@ -216,7 +181,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
     });
 
     return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-faq-jsonld", "tool-breadcrumb-jsonld"]);
-  }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq]);
+  }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq, pageCanonicalUrl]);
 
   return null;
 }

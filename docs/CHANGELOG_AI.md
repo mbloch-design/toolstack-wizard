@@ -3362,7 +3362,74 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 ### Résultat
 - La couverture ne monopolise plus le premier écran sur desktop.
 - Le prix reste dans le hero ; le verdict demeure dans les surfaces décisionnelles dédiées.
-- Les cinq grands chapitres sont plus compacts sans perdre leur séparation éditoriale.
+- Le parcours suit six chapitres explicites : Analyse, Prix, Alternatives, Détails, Avis et FAQ.
+- L'ancienne reprise silencieuse de l'analyse devient un chapitre `Détails` adressable depuis la navigation flottante.
+- Le descriptif long n'est plus répété dans l'ouverture ; le résumé structuré est relégué à la fin du chapitre Détails.
+- La section Avis explique le verdict sans répéter le score numérique déjà présent dans la carte de décision.
+- Les derniers styles JSX propres au template (verdict, analyse longue et guides liés) sont migrés vers les classes `td-*`.
+- Les introductions SEO redondantes de Prix, Alternatives, Détails et FAQ sont retirées du rendu visible ; les composants métier portent directement l'information.
+- Le placeholder d'avis utilisateurs, le footer de fraîcheur dupliqué et les tags/faits répétés de la sidebar sont supprimés.
+- Les traits systématiques entre chapitres et autour du verdict détaillé sont remplacés par l'espacement et la hiérarchie typographique.
+- La vue d'ensemble quitte les styles de l'inspecteur Ma stack et adopte une grille éditoriale 2×2 compacte, avec listes et tags proportionnés.
+- Le pricing devient une seule surface comparative : plans côte à côte, avertissement sans encadré supplémentaire et provenance tarifaire discrète.
+- Le bloc IA passe en deux colonnes et la fiche technique est conservée uniquement pour les données structurées, sans faux chapitre visible ni grand vide avant Avis.
+- Un résumé d'orientation apparaît désormais immédiatement sous le hero : profils adaptés, signal solo/équipe et six fonctions principales.
+- Les anciennes sections longues `Pour qui` et `Ce que couvre` sont supprimées du chapitre Détails afin que cette information importante soit unique et visible dès l'ouverture.
+- L'ancienne vue `En un coup d'œil` devient `Les points qui comptent` et se concentre sur les usages, forces et limites plutôt que de répéter les fonctions.
+- L'analyse longue quitte le chapitre Détails et devient une véritable introduction éditoriale juste après la fiche d'ouverture.
+- Cette introduction adopte une composition titre/contenu en deux colonnes sur desktop, puis une lecture verticale sur mobile ; la première idée porte le cadrage, les paragraphes suivants apportent contexte et limites.
+- `Les points qui comptent` suit désormais une séquence explicite : usages concrets pleine largeur, puis bénéfices et limites face à face.
+- Les usages deviennent quatre unités courtes sur deux colonnes ; `Pourquoi le choisir` et `Limites à connaître` utilisent deux surfaces équilibrées sans laisser de bloc orphelin ni de grand vide.
+- Les usages concrets distinguent désormais le livrable du bénéfice attendu : un intitulé court et scannable, suivi d'une précision opérationnelle plus discrète.
+- Les cas Framer sont reformulés en français et en anglais autour de quatre productions identifiables (portfolio, landing page, site marketing et microsite), tout en conservant la compatibilité avec les anciennes chaînes libres du catalogue.
+- `Usages concrets` et `Forces et limites` deviennent deux sections éditoriales autonomes : la première décrit ce que l'on peut produire, la seconde aide à évaluer le choix de l'outil.
+- Le choix par profil quitte le chapitre Alternatives et rejoint directement la séquence de décision `Quand ça a du sens`, avant les seuils de rentabilité.
+- L'ancien tableau profil/recommandation devient une rangée compacte de recommandations par profil, sans styles inline, puis s'empile proprement sur mobile.
+- Toute la séquence de décision devient une surface visuelle continue : signaux d'adéquation illustrés, profils identifiables par icône et seuil de rentabilité clairement titré.
+- Les séparateurs internes du seuil de rentabilité sont supprimés ; des repères circulaires `+` et `−` suffisent à distinguer les critères sans quadriller les cartes.
+- Le faux intertitre flottant `Détails / Bien choisir…` disparaît : les sous-blocs portent désormais eux-mêmes leur contexte.
+- L'analyse IA devient une surface éditoriale autonome avec titre, position de l'IA, deux axes de lecture et outils associés réunis dans un même ensemble.
+- Le comparatif forces/limites devient explicitement `Avantages et inconvénients` : titre de section éditorial, phrase de cadrage et deux en-têtes de cartes typographiquement distincts avec repères `+` et `−`.
+- Le rythme vertical de la fiche repose désormais sur deux valeurs uniques : un écart entre chapitres et un écart entre sous-sections.
+- Les doubles espacements issus de `padding` symétriques, puis de couples `margin + padding`, sont supprimés ; la colonne principale devient un élément `<main>` explicite.
+- Le tableau horizontal des alternatives devient une grille de cartes : outil actuel en référence, quatre alternatives, données comparables regroupées et navigation directe vers chaque fiche.
+- La comparaison n'utilise plus de styles inline ni de classes Tailwind de mise en page ; elle s'adapte en une colonne sur mobile sans défilement horizontal.
+- La fiche applique une règle de profondeur unique : aucune grande surface ne contient désormais une seconde grille de cards lorsque l'espace et la typographie suffisent.
+- Les usages concrets redeviennent une liste ouverte, la séquence de décision perd son grand fond englobant et les deux axes IA sont intégrés directement dans leur surface parent.
+- La capsule de navigation flottante est retirée des fiches outils : elle recouvrait le contenu et ses ancres ne reflétaient plus la structure éditoriale actuelle.
+- Les routes profondes Prix, Alternatives, Avis et FAQ conservent leur défilement automatique, y compris lors d'une navigation SPA déjà montée.
+- Les cartes de comparaison utilisent désormais les images OG des outils comme couvertures éditoriales.
+- L'outil actuel ouvre la comparaison dans une carte horizontale image/contenu ; les alternatives adoptent une couverture 1,9:1 et une légère animation d'image au survol.
+- Les cartes `À garder / À challenger` et `Rentable / Trop cher` sont fusionnées en deux colonnes décisionnelles : adéquation fonctionnelle en premier, seuil économique dans la continuité.
+- L'introduction éditoriale regroupe désormais son eyebrow et son titre dans un même `<header>` aligné en haut ; le texte long ne peut plus repousser artificiellement le titre au milieu de la section.
+- Lorsqu'une introduction éditoriale existe, les usages concrets rejoignent directement sa colonne de texte ; ils ne repartent plus sur une nouvelle section pleine largeur.
+- Les fiches sans introduction longue conservent automatiquement le bloc d'usages autonome afin de ne perdre aucune information.
+- Le bloc `Le bon choix selon votre profil` est supprimé : ses recommandations répétaient les critères `À garder / À challenger` et les alternatives déjà détaillées plus bas.
+- La comparaison des alternatives devient un rail compact de cinq cartes homogènes ; l'outil actuel ne monopolise plus une rangée complète.
+- Le rail affiche quatre à cinq outils selon la largeur disponible et active un défilement horizontal avec snap lorsque nécessaire.
+- Le bouton secondaire `Comparer les alternatives` est retiré de la carte de décision : il doublonnait la navigation éditoriale sans apporter de destination fiable.
+- La restauration globale du scroll distingue désormais un rafraîchissement complet d'un vrai Retour/Avance navigateur : le reload repart en haut, tandis que l'historique SPA conserve sa position.
+- `history.scrollRestoration` passe en mode manuel pour empêcher la restauration native de concurrencer celle de l'application. Test automatisé local : `5860 px` avant reload, `0 px` après.
 - La carte sticky et sa version mobile partagent exactement les mêmes styles.
 - Vérification mobile complète sur la fiche Framer : OK.
 - Build production : PASS.
+## 2026-07-16 — Carrousel d’alternatives allégé
+
+- Les cartes d’alternatives sont recentrées sur le positionnement, le score, le prix et la présence d’un plan gratuit.
+- Suppression des blocs « remplaçable » et « verdict », trop répétitifs dans ce contexte de comparaison rapide.
+- Ajout d’un vrai carrousel accessible : précédent/suivant, pagination, scroll snap et navigation clavier.
+- Retrait du libellé de commande et du compteur ambigu : les flèches restent seules, alignées à droite.
+- La section tarifaire se termine désormais après les plans : retrait de l’avertissement, des métadonnées de vérification et du lien externe redondants.
+- Retrait sous le carrousel de la note méthodologique et du simple compteur d’alternatives gratuites, sans valeur décisionnelle.
+
+## 2026-07-16 — Passe SEO/GEO des fiches outil
+
+- Centralisation du prix mensuel sur `pricing_v5.compare_price_monthly_eur`, avec `defaultMonthlyPrice` uniquement en fallback, pour aligner UI, FAQ, rentabilité, métadonnées, noscript et JSON-LD.
+- Correction de la fiche Framer : prix d’entrée 5 €, ajout du plan Mini dans les textes tarifaires FR/EN.
+- Spécialisation des sous-pages `/prix`, `/alternatives`, `/avis` et `/faq` : H1 et contenu propres à chaque intention, sans répéter toute la fiche canonique.
+- Ajout d’un maillage interne non sticky entre la vue d’ensemble et les quatre sous-pages, avec état actif et breadcrumbs cohérents.
+- Suppression du double titre FAQ et arrêt du scroll automatique des anciennes deep-links.
+- Ajout d’une preuve tarifaire compacte (source officielle + date de vérification) et de `WebPage.dateModified` dans le pré-rendu.
+- Suppression du faux `AggregateRating` : le score ToolTrim est désormais exposé uniquement comme un `Review` éditorial attribué.
+- Alignement des titres client et pré-rendus, des offres freemium et des données structurées sur les mêmes faits.
+- Normalisation des slashes finaux afin que `/prix` et `/prix/` conservent la même intention, le même H1 et les mêmes métadonnées après hydratation.

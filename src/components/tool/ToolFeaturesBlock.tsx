@@ -74,7 +74,7 @@ function getLabel(slug: string, lang: "fr" | "en"): string {
   return slugToLabel(slug);
 }
 
-const MAX_FEATURES = 12;
+const MAX_FEATURES = 6;
 
 export default function ToolFeaturesBlock({ covers, functionalNeeds = [], toolName, t }: Props) {
   // Merge covers + functional_needs, deduplicate, cap at MAX_FEATURES
@@ -85,7 +85,7 @@ export default function ToolFeaturesBlock({ covers, functionalNeeds = [], toolNa
   const features = allSlugs.slice(0, MAX_FEATURES).map(slug => getLabel(slug, lang as "fr" | "en"));
 
   return (
-    <div>
+    <div className="td-features-summary">
       {/* Feature grid (parent section already renders the eyebrow + title) */}
       <div className="td-feature-grid">
         {features.map((label) => (

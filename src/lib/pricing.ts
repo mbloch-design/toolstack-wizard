@@ -31,6 +31,22 @@ export function isFreemiumPricing(pricing: { free?: string | null; paid?: string
   return hasGenuineFreeTier(pricing?.free) && !!pricing?.paid?.trim();
 }
 
+/**
+ * Canonical monthly comparison price used everywhere a tool price is stated.
+ * pricing_v5 is the editorially verified source; the legacy catalog value is
+ * only a fallback for tools that have not been migrated yet. Keeping this in
+ * one helper prevents visible copy, metadata, JSON-LD and SSR from drifting.
+ */
+export function resolveMonthlyPrice(tool: {
+  pricing_v5?: { compare_price_monthly_eur?: number | null } | null;
+  defaultMonthlyPrice?: number | null;
+}): number {
+  const verified = tool.pricing_v5?.compare_price_monthly_eur;
+  if (typeof verified === "number" && Number.isFinite(verified) && verified >= 0) return verified;
+  const legacy = tool.defaultMonthlyPrice;
+  return typeof legacy === "number" && Number.isFinite(legacy) && legacy >= 0 ? legacy : 0;
+}
+
 const NEGATION_RE = /no free|aucun|pas de|non communiqué/i;
 const TRIAL_ONLY_RE = /essai|trial|jours? gratuit|demo gratuite|démo gratuite/i;
 // Phrases that override a trial-word match — the free text can mention

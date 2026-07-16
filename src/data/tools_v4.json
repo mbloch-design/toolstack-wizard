@@ -251,13 +251,13 @@
     "longDescriptionEn": "Framer fills a rare space: design with precision, add agency-quality animations (scroll effects, parallax, page transitions), and publish directly to a Google-indexed website — no developer, no WordPress compromises.\n\nFor independents, the benefits are immediate: premium templates often free, built-in CMS for dynamic content, hosting + CDN included, and since 2024 a generative AI that builds entire sections from a prompt. Within hours you produce something compelling.\n\nThe limits are clear and honest: Framer is not a design tool (no Figma replacement), doesn't suit e-commerce, and its CMS is lightweight compared to a dedicated headless CMS. It's built for showcase sites and premium landing pages — within that precise scope, few tools do it better.",
     "pricing": {
       "free": "Plan gratuit : domaine framer.site, 1 000 pages, 1 collection CMS (1 000 items), collaboration jusqu'à 3 éditeurs — sans domaine custom",
-      "paid": "Basic 10$/mois (domaine custom, 30 pages, 1 CMS collection) · Pro 30$/mois (150 pages, 10 collections, staging) · Scale 100$/mois (300 pages, 20 collections, CDN premium)"
+      "paid": "Mini 5€/mois (1 page publiée, 1 collection CMS) · Basic 10$/mois (domaine custom, 30 pages, 1 CMS collection) · Pro 30$/mois (150 pages, 10 collections, staging) · Scale 100$/mois (300 pages, 20 collections, CDN premium)"
     },
     "pricingEn": {
       "free": "Free plan: framer.site domain, 1,000 pages, 1 CMS collection (1,000 items), up to 3 editors — no custom domain",
-      "paid": "Basic $10/mo (custom domain, 30 pages, 1 CMS collection) · Pro $30/mo (150 pages, 10 collections, staging) · Scale $100/mo (300 pages, 20 collections, premium CDN)"
+      "paid": "Mini €5/mo (1 published page, 1 CMS collection) · Basic $10/mo (custom domain, 30 pages, 1 CMS collection) · Pro $30/mo (150 pages, 10 collections, staging) · Scale $100/mo (300 pages, 20 collections, premium CDN)"
     },
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 5,
     "pricing_v5": {
       "compare_price_monthly_eur": 5,
       "compare_plan_name": "Mini",
@@ -322,15 +322,15 @@
     ],
     "useCases": [
       "Portfolio designer ou agence : vitrine animée qui convertit",
-      "Landing page de lancement produit ou SaaS avec animations avancées",
-      "Site marketing startup qui veut un rendu premium sans budget agence",
-      "Microsite de campagne ou event avec expérience visuelle forte"
+      "Landing page produit ou SaaS : lancement avec animations avancées",
+      "Site marketing de startup : rendu premium sans budget agence",
+      "Microsite de campagne ou événement : expérience visuelle forte"
     ],
     "useCasesEn": [
       "Designer or agency portfolio: animated showcase that converts",
-      "Product or SaaS launch landing page with advanced animations",
-      "Startup marketing site that wants a premium look without agency budget",
-      "Campaign or event microsite with strong visual experience"
+      "Product or SaaS landing page: launch with advanced animations",
+      "Startup marketing site: premium look without an agency budget",
+      "Campaign or event microsite: strong visual experience"
     ],
     "covers": [
       "website-builder",

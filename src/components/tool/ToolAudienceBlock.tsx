@@ -89,10 +89,10 @@ export default function ToolAudienceBlock({ relevantFor, soloRelevance, teamRele
   const showRelevance = isSoloHigh || isTeamHigh || isSoloMed || isTeamMed;
 
   return (
-    <div>
+    <div className="td-audience-summary">
       {/* Audience chips (parent section already renders the eyebrow + title) */}
       {mapped.length > 0 && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: showRelevance ? 20 : 0 }}>
+        <div className={`td-audience-tags${showRelevance ? " td-audience-tags--spaced" : ""}`}>
           {mapped.map(({ labelFr, labelEn, Icon }, i) => (
             <span key={i} className="td-chip">
               <Icon />

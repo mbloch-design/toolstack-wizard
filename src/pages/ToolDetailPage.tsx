@@ -1,21 +1,17 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
-import { useContext, useEffect, useRef } from "react";
-import {
-  ArrowRight, CalendarCheck, Check,
-} from "lucide-react";
+import { useContext, useEffect } from "react";
+import { ArrowRight, Check, CirclePlus, CircleMinus } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
-import SectionPillNav from "@/components/SectionPillNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { getScrollTop, scrollToY } from "@/lib/scroll";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
-import { asText, stripLeadingEmoji } from "@/lib/text";
-import { hasGenuineFreeTier } from "@/lib/pricing";
+import { stripLeadingEmoji } from "@/lib/text";
+import { hasGenuineFreeTier, resolveMonthlyPrice } from "@/lib/pricing";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
@@ -26,13 +22,11 @@ import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
 import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
 import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
-import ToolProfileRecommendationTable from "@/components/tool/ToolProfileRecommendationTable";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
-import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 
@@ -43,13 +37,21 @@ import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
    - Hero: large tool name + short description + metadata row
 ───────────────────────────────────────────────────────────────────────────── */
 
-const TABS = [
-  { id: "presentation", labelFr: "Analyse",       labelEn: "Overview",      path: ""             },
-  { id: "prix",         labelFr: "Prix",          labelEn: "Pricing",       path: "/prix"        },
-  { id: "alternatives", labelFr: "Alternatives",  labelEn: "Alternatives",  path: "/alternatives"},
-  { id: "avis",         labelFr: "Avis",          labelEn: "Reviews",       path: "/avis"        },
-  { id: "faq",          labelFr: "FAQ",           labelEn: "FAQ",           path: "/faq"         },
-] as const;
+function splitUseCase(value: string): { title: string; detail?: string } {
+  const separators = [" : ", ": ", " qui veut ", " that wants ", " avec ", " with "];
+  for (const separator of separators) {
+    const index = value.toLowerCase().indexOf(separator.toLowerCase());
+    if (index <= 0) continue;
+    const title = value.slice(0, index).trim();
+    const rawDetail = value.slice(index + separator.length).trim();
+    if (!rawDetail) break;
+    return {
+      title,
+      detail: rawDetail.charAt(0).toUpperCase() + rawDetail.slice(1),
+    };
+  }
+  return { title: value };
+}
 
 const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
@@ -67,7 +69,10 @@ const ToolDetailPage = () => {
   // more hooks than during the previous render").
   const ssrRelatedPosts = useContext(SsrRelatedPostsContext);
 
-  const pathEnd = location.pathname.split("/").pop() || "";
+  // Normalize trailing slashes so prerendered URLs and client-side routing
+  // resolve to the same intent page (`/prix` and `/prix/`, for example).
+  const normalizedPathname = location.pathname.replace(/\/+$/, "");
+  const pathEnd = normalizedPathname.split("/").pop() || "";
   const subPage: "presentation" | "prix" | "alternatives" | "faq" | "avis" =
     pathEnd === "prix" || pathEnd === "pricing" ? "prix"
     : pathEnd === "alternatives" ? "alternatives"
@@ -78,8 +83,7 @@ const ToolDetailPage = () => {
   /* ── SEO ── */
   useEffect(() => {
     if (!tool) return;
-    const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
-    const price = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
+    const price = resolveMonthlyPrice(tool);
     const hasPrice = price != null && price > 0;
     const year = new Date().getFullYear();
     const baseSlug = tool.slug || tool.id;
@@ -97,11 +101,11 @@ const ToolDetailPage = () => {
     const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
       presentation: {
         titleFr: hasPrice
-          ? `${tool.name} ${year} : Vaut-il ${priceRounded}€/mois ? Prix & Verdict | ToolTrim`
-          : `${tool.name} ${year} : Vraiment gratuit ? Plans & Verdict honnête | ToolTrim`,
+          ? `${tool.name} : prix dès ${priceRounded}€, avis et alternatives ${year} | ToolTrim`
+          : `${tool.name} : gratuit, avis et alternatives ${year} | ToolTrim`,
         titleEn: hasPrice
-          ? `${tool.name} ${year}: Worth €${priceRounded}/mo? Pricing & Verdict | ToolTrim`
-          : `${tool.name} ${year}: Really Free? Plans & Honest Verdict | ToolTrim`,
+          ? `${tool.name}: pricing from €${priceRounded}, review & alternatives ${year} | ToolTrim`
+          : `${tool.name}: free, review & alternatives ${year} | ToolTrim`,
         descFr: shortExcerpt
           ? `${shortExcerpt}. ${hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
           : hasPrice
@@ -116,10 +120,10 @@ const ToolDetailPage = () => {
       },
       prix: {
         titleFr: hasPrice
-          ? `${tool.name} Prix ${year} : ${priceRounded}€/mois, Tous les Plans & Tarifs | ToolTrim`
+          ? `${tool.name} : prix et tarifs ${year} | ToolTrim`
           : `${tool.name} Tarifs ${year} : Gratuit, Freemium ou Payant ? | ToolTrim`,
         titleEn: hasPrice
-          ? `${tool.name} Pricing ${year}: €${priceRounded}/mo, All Plans & Costs | ToolTrim`
+          ? `${tool.name} pricing & plans ${year} | ToolTrim`
           : `${tool.name} Pricing ${year}: Free, Freemium or Paid? | ToolTrim`,
         descFr: hasPrice
           ? `Combien coûte ${tool.name} en ${year} ? ${priceRounded}€/mois${planName ? ` (plan ${planName})` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} Détail des plans et alternatives moins chères.`
@@ -131,10 +135,10 @@ const ToolDetailPage = () => {
       },
       alternatives: {
         titleFr: hasPrice
-          ? `Alternatives à ${tool.name} moins chères en ${year} | ToolTrim`
+          ? `Meilleures alternatives à ${tool.name} en ${year} | ToolTrim`
           : `Meilleures alternatives à ${tool.name}, ${catLabel} | ToolTrim`,
         titleEn: hasPrice
-          ? `Cheaper ${tool.name} Alternatives in ${year} | ToolTrim`
+          ? `Best ${tool.name} alternatives in ${year} | ToolTrim`
           : `Best ${tool.name} Alternatives, ${catLabel} | ToolTrim`,
         descFr: hasPrice
           ? `Vous payez ${priceRounded}€/mois pour ${tool.name} (${catLabel}) ? Voici les meilleures alternatives moins chères ou gratuites, comparées par ToolTrim en ${year}.`
@@ -156,8 +160,8 @@ const ToolDetailPage = () => {
         suffix: "/avis",
       },
       faq: {
-        titleFr: `${tool.name} FAQ ${year} : Prix, Utilité & Alternatives | ToolTrim`,
-        titleEn: `${tool.name} FAQ ${year}: Pricing, Use Cases & Alternatives | ToolTrim`,
+        titleFr: `${tool.name} : questions fréquentes ${year} | ToolTrim`,
+        titleEn: `${tool.name} FAQ ${year} | ToolTrim`,
         descFr: shortExcerpt
           ? `${shortExcerpt}. Prix, plans, cas d'usage et alternatives à ${tool.name}, toutes les réponses clés en ${year}.`
           : `Tout ce que vous devez savoir sur ${tool.name} : prix, plans, utilité et meilleures alternatives, mis à jour ${year}.`,
@@ -204,47 +208,6 @@ const ToolDetailPage = () => {
       navigate(`${prefix}/tools`, { replace: true });
     }
   }, [loading, tool, navigate, prefix]);
-
-  /* Tabs — smooth scroll vers la section active.
-     <Link> gère la navigation (URL + SEO).
-     L'effect détecte le changement de subPage et scrolle vers la section,
-     uniquement lors d'un changement initié par l'utilisateur
-     (pas sur le premier rendu ni lors du changement d'outil).
-  */
-  const prevSubPageRef = useRef<string | null>(null);
-  const prevSlugRef    = useRef<string | null>(null);
-
-  /* Single-scroll article: all sections render together. Sub-routes
-     (/prix, /alternatives, /avis, /faq) are deep-links that scroll to the
-     matching anchor — instant on fresh load (SEO landing), smooth on
-     in-page nav clicks. The bare tool route never auto-scrolls. */
-  useEffect(() => {
-    const id = subPage === "presentation" ? "analyse" : subPage;
-    const isFirst = prevSubPageRef.current === null;
-    const toolChanged = prevSlugRef.current !== (slug ?? null);
-    prevSubPageRef.current = subPage;
-    prevSlugRef.current = slug ?? null;
-
-    // Only auto-scroll on a fresh deep-link landing (direct entry to a
-    // sub-route URL). In-page navigation is owned by the floating pill nav,
-    // which scrolls itself — re-scrolling here would double-fire and race
-    // it (the pill nav's smooth scrollIntoView starts first, then this
-    // effect's instant window.scrollTo would jump on top of it mid-flight).
-    // skipScrollReset is the explicit signal the pill nav sets on every
-    // navigate() it triggers, so check it directly instead of relying only
-    // on the isFirst/toolChanged heuristic.
-    if ((location.state as { skipScrollReset?: boolean } | null)?.skipScrollReset) return;
-    if (!isFirst && !toolChanged) return;
-    if (subPage === "presentation") return; // bare route never auto-scrolls
-
-    requestAnimationFrame(() => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const headerOffset = 92;
-      const top = el.getBoundingClientRect().top + getScrollTop() - headerOffset;
-      scrollToY(top, "auto");
-    });
-  }, [subPage, slug]);
 
   /* ── Loading / not found ── */
   if (loading) {
@@ -310,8 +273,7 @@ const ToolDetailPage = () => {
         .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
         .slice(0, 3);
 
-  const v5Price       = tool.pricing_v5?.compare_price_monthly_eur;
-  const displayPrice  = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
+  const displayPrice  = resolveMonthlyPrice(tool);
   const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
   const sourceDomain  = tool.pricing_v5?.source_domain;
   const domain        = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
@@ -342,28 +304,50 @@ const ToolDetailPage = () => {
   const cardProps = {
     tool, displayPrice, verifiedOn, isFree, isFreemium, hasFreeplan,
     prefix, lang, t, primaryCtaUrl, hasAffiliateOffer,
-    alternatives, catName, catNameEn,
+    catName, catNameEn,
   };
-
-  // Memoized: a fresh array on every render would tear down and recreate
-  // SectionPillNav's IntersectionObserver/keyboard listener on every
-  // unrelated state update (e.g. activeProfile), causing visible jank.
-  // "Alternatives" is dropped when there's nothing to show there (see the
-  // alternatives computation above — no curated/cover-overlap data, an
-  // honest empty result rather than a tab that leads to a half-empty page).
-  // Not memoized: this must stay a plain computation (no hook) since it's
-  // reached after the `if (!tool) return null` guard above — a useMemo
-  // here would only run once tool resolves, changing the hook count
-  // between the loading and loaded renders (React error #310). The
-  // array-identity churn this produces on every render is handled inside
-  // SectionPillNav itself (keyed off a content-derived string, not the
-  // array reference), not here.
-  const pillSections = TABS
-    .filter((tab) => tab.id !== "alternatives" || hasAlternativesContent)
-    .map((tab) => ({
-      id: tab.id === "presentation" ? "analyse" : tab.id,
-      label: lang === "fr" ? tab.labelFr : tab.labelEn,
-    }));
+  const editorialLongDesc = lang === "en"
+    ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
+    : ((tool as any).longDescription || "");
+  const hasEditorialIntro = editorialLongDesc.length >= 80;
+  const editorialParas = hasEditorialIntro
+    ? editorialLongDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean)
+    : [];
+  const editorialOverview = resolveToolOverview(tool, lang);
+  const isPresentation = subPage === "presentation";
+  const showAnalysis = isPresentation || subPage === "avis";
+  const showPricing = isPresentation || subPage === "prix";
+  const showAlternatives = isPresentation || subPage === "alternatives";
+  const showDeepDive = isPresentation;
+  const showReview = isPresentation || subPage === "avis";
+  const showFaq = isPresentation || subPage === "faq";
+  const year = new Date().getFullYear();
+  const heroIntent = subPage === "prix"
+    ? t(`Prix et tarifs ${year}`, `Pricing and plans ${year}`)
+    : subPage === "alternatives"
+    ? t(`Meilleures alternatives ${year}`, `Best alternatives ${year}`)
+    : subPage === "avis"
+    ? t(`Avis et verdict ${year}`, `Review and verdict ${year}`)
+    : subPage === "faq"
+    ? t(`Questions fréquentes ${year}`, `Frequently asked questions ${year}`)
+    : t(`Avis, prix et alternatives ${year}`, `Reviews, pricing and alternatives ${year}`);
+  const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
+  const subpageLinks = [
+    { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
+    { key: "prix", label: t("Prix", "Pricing"), to: `${baseToolPath}/${lang === "en" ? "pricing" : "prix"}` },
+    ...(hasAlternativesContent ? [{ key: "alternatives", label: t("Alternatives", "Alternatives"), to: `${baseToolPath}/alternatives` }] : []),
+    { key: "avis", label: t("Avis", "Reviews"), to: `${baseToolPath}/${lang === "en" ? "reviews" : "avis"}` },
+    { key: "faq", label: "FAQ", to: `${baseToolPath}/faq` },
+  ];
+  const subpageBreadcrumbLabel = subPage === "prix"
+    ? t("Prix", "Pricing")
+    : subPage === "alternatives"
+    ? t("Alternatives", "Alternatives")
+    : subPage === "avis"
+    ? t("Avis", "Reviews")
+    : subPage === "faq"
+    ? "FAQ"
+    : null;
 
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
@@ -386,7 +370,7 @@ const ToolDetailPage = () => {
         <div className="td-body-grid td-page-grid">
 
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
-          <div>
+          <main className="td-main">
 
             {/* Hero identity — Ma-stack inspector gabarit: bordered card, cover
                 image on top, heading (category eyebrow, H1, description) below. */}
@@ -398,7 +382,9 @@ const ToolDetailPage = () => {
                 label: t(catName, catNameEn),
                 href: `${prefix}/category/${category.slug}`,
               }] : []),
-              { label: tool.name },
+              ...(subpageBreadcrumbLabel
+                ? [{ label: tool.name, href: baseToolPath }, { label: subpageBreadcrumbLabel }]
+                : [{ label: tool.name }]),
             ]} />
 
             {(() => {
@@ -407,8 +393,6 @@ const ToolDetailPage = () => {
               const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
               const cover = imgs[0] ?? null;
               const rest = imgs.slice(1);
-              const year = new Date().getFullYear();
-
               // Keep the hero factual. The verdict belongs to the decision
               // card and to the analysis below, so repeating it here made the
               // first screen say the same thing three times.
@@ -456,7 +440,7 @@ const ToolDetailPage = () => {
                       <h1 className="td-hero-h1">
                         {tool.name}{" "}
                         <span className="td-hero-h1-sub">
-                          {t(`Avis, prix et alternatives ${year}`, `Reviews, pricing and alternatives ${year}`)}
+                          {heroIntent}
                         </span>
                       </h1>
 
@@ -470,7 +454,7 @@ const ToolDetailPage = () => {
                   </div>
 
                   {/* Remaining screenshots (if any) below the hero card */}
-                  {rest.length > 0 && <ToolGallery images={rest} toolName={tool.name} />}
+                  {isPresentation && rest.length > 0 && <ToolGallery images={rest} toolName={tool.name} />}
                 </>
               );
             })()}
@@ -478,15 +462,93 @@ const ToolDetailPage = () => {
             </div>
             {/* end hero identity */}
 
-            {/* Mobile decision card */}
+            <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
+              {subpageLinks.map((item) => (
+                <Link key={item.key} to={item.to} aria-current={subPage === item.key ? "page" : undefined}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Immediate orientation: answer what the tool does and who it is
+                for before asking the reader to interpret a verdict. */}
+            {isPresentation && ((tool as any).relevantFor?.length > 0 || (tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
+              <section className="td-quick-context" aria-label={t(`À quoi sert ${tool.name}`, `What ${tool.name} is for`)}>
+                {(tool as any).relevantFor?.length > 0 && (
+                  <div className="td-quick-context-group">
+                    <span className="td-quick-context-label">{t("Pour qui", "Best for")}</span>
+                    <ToolAudienceBlock
+                      relevantFor={(tool as any).relevantFor || []}
+                      soloRelevance={tool.soloRelevance}
+                      teamRelevance={tool.teamRelevance}
+                      toolName={tool.name}
+                      t={t}
+                    />
+                  </div>
+                )}
+                {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
+                  <div className="td-quick-context-group">
+                    <span className="td-quick-context-label">{t("Ce que fait l'outil", "What it does")}</span>
+                    <ToolFeaturesBlock
+                      covers={(tool as any).covers || []}
+                      functionalNeeds={(tool as any).functional_needs || []}
+                      toolName={tool.name}
+                      t={t}
+                    />
+                  </div>
+                )}
+              </section>
+            )}
+
+            {/* Mobile completes the opening fiche with its decision card. */}
             <div className="td-sidebar-mobile">
               <StickyDecisionCard {...cardProps} />
             </div>
 
+            {/* Editorial introduction — this frames the whole fiche, so it
+                belongs directly after the factual opening rather than in the
+                late-stage Details chapter. */}
+            {showAnalysis && hasEditorialIntro && (
+                <section className="td-editorial-intro">
+                  <header className="td-editorial-intro-head">
+                    <span className="td-eyebrow">{t("Notre lecture", "Our take")}</span>
+                    <h2 className="td-editorial-intro-title">
+                      {t(`Comprendre ${tool.name}.`, `Understanding ${tool.name}.`)}
+                    </h2>
+                  </header>
+                  <div className="td-editorial-intro-copy">
+                    {editorialParas.map((para: string, i: number) => (
+                      <p key={i} className={i === 0 ? "td-analysis-lead" : "td-analysis-paragraph"}>
+                        {para}
+                      </p>
+                    ))}
+                    {editorialOverview.useCases.length > 0 && (
+                      <section className="td-editorial-intro-usecases">
+                        <h3 className="td-eyebrow">{t("Usages concrets", "Practical uses")}</h3>
+                        <div className="td-overview-group td-overview-group--uses">
+                          <ul>{editorialOverview.useCases.map((useCase: string) => {
+                            const { title, detail } = splitUseCase(useCase);
+                            return (
+                              <li key={useCase}>
+                                <Check size={15} aria-hidden />
+                                <span>
+                                  <strong>{title}</strong>
+                                  {detail && <small>{detail}</small>}
+                                </span>
+                              </li>
+                            );
+                          })}</ul>
+                        </div>
+                      </section>
+                    )}
+                  </div>
+                </section>
+            )}
+
             {/* ════════════════════════════════
                 SECTION: Analyse / Présentation
             ════════════════════════════════ */}
-            {(
+            {showAnalysis && (
               <div id="analyse" className="td-subpage-content">
 
                 {/* 0 · Vue d'ensemble — même bloc que l'inspecteur de Ma stack.
@@ -496,62 +558,72 @@ const ToolDetailPage = () => {
                     la fiche ne tronque aucune liste — c'est la référence. */}
                 {(() => {
                   const ov = resolveToolOverview(tool, lang);
-                  if (!ov.longDescription && !ov.pros.length && !ov.useCases.length) return null;
+                  if (!ov.pros.length && !ov.cons.length && !ov.useCases.length) return null;
                   return (
-                    <div className="td-section td-tool-overview">
-                      {ov.longDescription && (
-                        <section className="stack-tool-inspector-overview">
-                          <span>{t("En bref", "Overview")}</span>
-                          <p>{asText(ov.longDescription)}</p>
-                        </section>
+                    <>
+                      {!hasEditorialIntro && ov.useCases.length > 0 && (
+                        <div className="td-section td-tool-overview td-tool-overview--uses">
+                          <h2 className="td-eyebrow">{t("Usages concrets", "Practical uses")}</h2>
+                          <section className="td-overview-group td-overview-group--uses">
+                            <ul>{ov.useCases.map((useCase: string) => {
+                              const { title, detail } = splitUseCase(useCase);
+                              return (
+                                <li key={useCase}>
+                                  <Check size={15} aria-hidden />
+                                  <span>
+                                    <strong>{title}</strong>
+                                    {detail && <small>{detail}</small>}
+                                  </span>
+                                </li>
+                              );
+                            })}</ul>
+                          </section>
+                        </div>
                       )}
-                      <div className="stack-tool-inspector-grid">
-                        {ov.useCases.length > 0 && (
-                          <section className="stack-tool-inspector-detail">
-                            <span>{t("Ce que vous pouvez en faire", "What you can do with it")}</span>
-                            <ul>{ov.useCases.map((u: string) => <li key={u}><Check size={15} aria-hidden />{u}</li>)}</ul>
-                          </section>
-                        )}
-                        {ov.pros.length > 0 && (
-                          <section className="stack-tool-inspector-detail">
-                            <span>{t("Points forts", "Strengths")}</span>
-                            <ul>{ov.pros.map((p: string) => <li key={p}><Check size={15} aria-hidden />{p}</li>)}</ul>
-                          </section>
-                        )}
-                        {ov.cons.length > 0 && (
-                          <section className="stack-tool-inspector-detail stack-tool-inspector-limitations">
-                            <span>{t("À garder en tête", "Worth keeping in mind")}</span>
-                            <ul>{ov.cons.map((c: string) => <li key={c}>{c}</li>)}</ul>
-                          </section>
-                        )}
-                        {ov.coverage.length > 0 && (
-                          <section className="stack-tool-inspector-detail">
-                            <span>{t("Objectifs couverts", "Objectives covered")}</span>
-                            <div className="stack-tool-inspector-chips">
-                              {ov.coverage.map((c: string) => <span key={c}>{c}</span>)}
-                            </div>
-                          </section>
-                        )}
-                      </div>
-                    </div>
+                      {(ov.pros.length > 0 || ov.cons.length > 0) && (
+                        <div className="td-section td-tool-overview td-tool-overview--decision">
+                          <header className="td-overview-decision-head">
+                            <h2 className="td-overview-title">
+                              {t("Avantages et inconvénients", "Pros and cons")}
+                            </h2>
+                            <p>{t("Ce que Framer fait particulièrement bien — et les limites à anticiper.", "What Framer does especially well — and the limits to anticipate.")}</p>
+                          </header>
+                          <div className="td-overview-grid">
+                            {ov.pros.length > 0 && (
+                              <section className="td-overview-group td-overview-group--pros">
+                                <h3 className="td-overview-group-title">
+                                  <CirclePlus aria-hidden />
+                                  {t("Avantages", "Pros")}
+                                </h3>
+                                <ul>{ov.pros.map((p: string) => <li key={p}><Check size={15} aria-hidden />{p}</li>)}</ul>
+                              </section>
+                            )}
+                            {ov.cons.length > 0 && (
+                              <section className="td-overview-group td-overview-group--limits">
+                                <h3 className="td-overview-group-title">
+                                  <CircleMinus aria-hidden />
+                                  {t("Inconvénients", "Cons")}
+                                </h3>
+                                <ul>{ov.cons.map((c: string) => <li key={c}>{c}</li>)}</ul>
+                              </section>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </>
                   );
                 })()}
 
+                <section className="td-decision-flow">
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
                   const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
 
-                  // No "Limite principale" column: it was cons[0], printed
-                  // verbatim a few centimetres above under "À garder en tête".
-                  // These two carry a threshold ("from 10h/week on"), which is
-                  // the advice — the overview lists the facts, this weighs them.
-                  const blocks = [
-                    { label: t("À garder si", "Keep if"),           text: keepItems.length  ? keepItems.slice(0, 2).join(". ")  : null },
-                    { label: t("À challenger si", "Challenge if"),   text: avoidItems.length ? avoidItems.slice(0, 2).join(". ") : null },
-                  ].filter((b): b is { label: string; text: string } => !!b.text);
+                  const keepText = keepItems.length ? keepItems.slice(0, 2).join(". ") : undefined;
+                  const challengeText = avoidItems.length ? avoidItems.slice(0, 2).join(". ") : undefined;
 
                   return (
-                    <div className="td-section">
+                    <div className="td-section td-decision-flow-intro">
                       <h2 className="td-title">
                         {lang === "fr"
                           ? `${tool.name} : quand ça a du sens.`
@@ -559,40 +631,18 @@ const ToolDetailPage = () => {
                       </h2>
 
                       {/* Verdict sentence */}
-                      {threshold && (
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.55, color: "var(--color-text)", maxWidth: 760, marginBottom: 0 }}>
-                          {threshold}
-                        </p>
-                      )}
+                      {threshold && <p className="td-verdict-lead">{threshold}</p>}
 
-                      {/* 3-column editorial blocks */}
-                      {blocks.length > 0 && (
-                        <div className="td-dr-grid">
-                          {blocks.map(block => (
-                            <div key={block.label} className="td-dr-block">
-                              <span className="td-dr-label">{block.label}</span>
-                              <p className="td-dr-text">{block.text}</p>
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                      <ToolProfitabilityBlock
+                        tool={tool} lang={lang} t={t}
+                        keepText={keepText} challengeText={challengeText}
+                      />
                     </div>
                   );
                 })()}
 
-                {/* 1.5 · Rentable si / trop cher si — usage thresholds,
-                     distinct from the keepIf/avoidIf reasoning above so the
-                     page doesn't repeat the same argument twice. Renders
-                     nothing on tools without this data. */}
-                <ToolProfitabilityBlock tool={tool} lang={lang} t={t} />
+                </section>
 
-                {/* 2.5 · Résumé machine-readable — placé tôt (juste après le
-                     verdict) pour l'extraction LLM/RAG (GEO), avant les
-                     sections éditoriales plus longues qui suivent. */}
-                <ToolSummaryBlock
-                  tool={tool} category={category} alternatives={alternatives}
-                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-                />
               </div>
             )}
 
@@ -603,32 +653,15 @@ const ToolDetailPage = () => {
                 "nice to know" content shouldn't sit between the verdict and
                 them. Site-wide change, all 1109 tool pages.
             ════════════════════════════════ */}
-            {(
+            {showPricing && (
               <div id="prix" className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
                     {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
                   </h2>
-                  <p className="td-body td-muted td-body--spaced">
-                    {lang === "fr"
-                      ? (() => {
-                          if (displayPrice === 0)
-                            return `${tool.name} propose un plan gratuit${tool.shortDescription ? `, ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
-                          const plan = tool.pricing_v5?.compare_plan_name;
-                          return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
-                        })()
-                      : (() => {
-                          if (displayPrice === 0)
-                            return `${tool.name} offers a free plan. Here's the full breakdown of available plans for ${new Date().getFullYear()}.`;
-                          const plan = tool.pricing_v5?.compare_plan_name;
-                          return `${tool.name} is priced at €${displayPrice}/mo${plan ? ` (${plan} plan)` : ""}. Here's what each plan actually includes.`;
-                        })()
-                    }
-                  </p>
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
-                    verifiedOn={verifiedOn} sourceDomain={sourceDomain}
-                    prefix={prefix} lang={lang} t={t}
+                    lang={lang} t={t}
                   />
                   <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
@@ -640,18 +673,12 @@ const ToolDetailPage = () => {
                 SECTION: Alternatives — moved up alongside Prix, see comment
                 above.
             ════════════════════════════════ */}
-            {hasAlternativesContent && (
+            {showAlternatives && hasAlternativesContent && (
               <div id="alternatives" className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
                     {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
                   </h2>
-                  <p className="td-body td-muted td-body--spaced">
-                    {lang === "fr"
-                      ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""}, comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois ${/^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? `d'${tool.name}` : `de ${tool.name}`}.` : ""}`
-                      : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""}, compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
-                    }
-                  </p>
 
                   {alternatives.length > 0 && (
                     <ToolComparisonTable
@@ -659,13 +686,6 @@ const ToolDetailPage = () => {
                       prefix={prefix} lang={lang} t={t}
                     />
                   )}
-
-                  <ToolProfileRecommendationTable tool={tool} alternatives={alternatives} lang={lang} t={t} />
-
-                  <ToolAlternativesSection
-                    tool={tool} category={category} alternatives={alternatives}
-                    prefix={prefix} lang={lang} t={t}
-                  />
 
                   {/* Substitution cluster — substitution_cluster_v2 groups
                        candidates roughly, but sharing a cluster tag (or a
@@ -763,66 +783,8 @@ const ToolDetailPage = () => {
                 features, use cases, long-form analysis, plugins, AI angle.
                 Background context now that price/alternatives are answered.
             ════════════════════════════════ */}
-            {(
-              <div className="td-subpage-content">
-
-                {/* 3 · Pour qui */}
-                {(tool as any).relevantFor?.length > 0 && (
-                  <div className="td-section td-section--sub">
-                    <h2 className="td-subtitle">
-                      {t(`Pour qui est ${tool.name} ?`, `Who is ${tool.name} for?`)}
-                    </h2>
-                    <ToolAudienceBlock
-                      relevantFor={(tool as any).relevantFor || []}
-                      soloRelevance={tool.soloRelevance}
-                      teamRelevance={tool.teamRelevance}
-                      toolName={tool.name}
-                      t={t}
-                    />
-                  </div>
-                )}
-
-                {/* 4-5 · Points forts / limites — side by side so + and − can be confronted directly */}
-
-                {/* 6 · Fonctionnalités */}
-                {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
-                  <div className="td-section td-section--sub">
-                    <h2 className="td-subtitle">
-                      {t(`Ce que couvre ${tool.name}.`, `What ${tool.name} covers.`)}
-                    </h2>
-                    <ToolFeaturesBlock
-                      covers={(tool as any).covers || []}
-                      functionalNeeds={(tool as any).functional_needs || []}
-                      toolName={tool.name}
-                      t={t}
-                    />
-                  </div>
-                )}
-
-
-                {/* 8 · Analyse éditoriale (long description) */}
-                {(() => {
-                  const longDesc = lang === "en"
-                    ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
-                    : ((tool as any).longDescription || "");
-                  if (!longDesc || longDesc.length < 80) return null;
-                  const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
-                  return (
-                    <div className="td-section td-section--sub">
-                      <h2 className="td-subtitle">
-                        {t(`Notre analyse de ${tool.name}.`, `Our take on ${tool.name}.`)}
-                      </h2>
-                      <div className="td-body">
-                        {paras.map((para: string, i: number) => (
-                          <p key={i} style={i === 0 ? { fontWeight: 500, fontSize: "clamp(1rem, 1.2vw, 1.0625rem)" } : { color: "var(--color-muted)", marginTop: "1em" }}>
-                            {para}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })()}
-
+            {showDeepDive && (
+              <div id="approfondir" className="td-subpage-content">
                 {/* 9 · Intégrations / Plugins — the block owns its own
                      td-section wrapper and returns null when there's
                      nothing to show, so no empty divider renders. */}
@@ -831,12 +793,20 @@ const ToolDetailPage = () => {
                 {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
                 <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
+                {/* Quiet structured recap for search and extraction. Keeping
+                    it at the end of the deep dive avoids interrupting the
+                    human decision path near the top of the page. */}
+                <ToolSummaryBlock
+                  tool={tool} category={category} alternatives={alternatives}
+                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
+                />
+
               </div>
             )}
             {/* ════════════════════════════════
                 SECTION: Avis
             ════════════════════════════════ */}
-            {(
+            {showReview && (
               <div id="avis" className="td-subpage-content">
                 {(() => {
                   const ts = computeToolTrimScore(tool);
@@ -864,58 +834,19 @@ const ToolDetailPage = () => {
                         {t(`Notre avis sur ${tool.name}.`, `Our verdict on ${tool.name}.`)}
                       </h2>
 
-                      {/* Score card */}
-                      <div className="td-score-card">
-                        <div className="td-score-head">
-                          <div className="td-score-figure">
-                            <span className="td-score-value">
-                              {ts.score.toFixed(1)}
-                            </span>
-                            <span className="td-score-max">/5</span>
-                          </div>
-                          <div>
-                            <p className="td-score-label">
-                              {t(ts.labelFr, ts.labelEn)}
-                            </p>
-                            <p className="td-score-meta">
-                              {t("Score éditorial ToolTrim · Analyse indépendante", "ToolTrim editorial score · Independent analysis")}
-                            </p>
-                            {ts.score < 3.5 && resolveVerdict(tool, lang).keepItems.length > 0 && (
-                              <p className="td-caption">
-                                {t("Score pour un usage générique : la fiche détaille les profils où c'est un bon choix.", "Score for generic use: the fiche details the profiles where it's a good fit.")}
-                              </p>
-                            )}
-                          </div>
+                      {/* The numeric score already lives in the sticky/mobile
+                          decision card. This section explains it instead of
+                          printing the same large metric twice. */}
+                      <div className="td-review-rationale">
+                        <div>
+                          <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
+                          <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
                         </div>
-                        <div className="td-score-body">
-                          <p className="td-eyebrow td-eyebrow--tight">
-                            {t("Pourquoi ce score", "Why this score")}
-                          </p>
-                          <p className="td-score-text">
-                            {t(
-                              `${tool.name} est ${scoreReasonFr}.`,
-                              `${tool.name} is ${scoreReasonEn}.`,
-                            )}
-                          </p>
-                        </div>
+                        <p className="td-score-text">
+                          {t(`${tool.name} est ${scoreReasonFr}.`, `${tool.name} is ${scoreReasonEn}.`)}
+                        </p>
                       </div>
 
-                      {/* Reviews coming soon */}
-                      <div className="td-soon-card">
-                        <p className="td-soon-title">
-                          {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
-                        </p>
-                        <p className="td-soon-text">
-                          {t(
-                            "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
-                            "User reviews are coming soon. Share what works, what costs too much, what you'd change.",
-                          )}
-                        </p>
-                        <span className="td-soon-badge">
-                          <span className="td-soon-dot" />
-                          {t("Bientôt disponible", "Coming soon")}
-                        </span>
-                      </div>
                     </div>
                   );
                 })()}
@@ -925,18 +856,9 @@ const ToolDetailPage = () => {
             {/* ════════════════════════════════
                 SECTION: FAQ
             ════════════════════════════════ */}
-            {(
+            {showFaq && (
               <div id="faq" className="td-subpage-content">
                 <div className="td-section">
-                  <h2 className="td-title">
-                    {t(`Questions sur ${tool.name}.`, `Questions about ${tool.name}.`)}
-                  </h2>
-                  <p className="td-body td-muted td-body--spaced">
-                    {lang === "fr"
-                      ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""}, les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
-                      : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""}, key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
-                    }
-                  </p>
                   <ToolFAQSection
                     tool={tool} displayPrice={displayPrice}
                     verifiedOn={verifiedOn} alternatives={alternatives}
@@ -946,38 +868,7 @@ const ToolDetailPage = () => {
               </div>
             )}
 
-            {/* ── Freshness footer ── */}
-            <footer className="td-fresh">
-              <span className="td-fresh-item">
-                <CalendarCheck className="td-icon-xs" />
-                {t("Mis à jour :", "Updated:")} <time dateTime={verifiedOn}>{verifiedOn}</time>
-              </span>
-              {sourceDomain && (
-                <>
-                  <span>·</span>
-                  <span>
-                    {t("Source :", "Source:")}{" "}
-                    <a
-                      href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="td-link-muted"
-                    >
-                      {sourceDomain}
-                    </a>
-                  </span>
-                </>
-              )}
-              <span>·</span>
-              <Link
-                to={`${prefix}/contact`}
-                className="td-link-muted"
-              >
-                {t("Signaler un prix incorrect", "Report incorrect pricing")}
-              </Link>
-            </footer>
-
-          </div>
+          </main>
           {/* end main content */}
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
@@ -986,18 +877,18 @@ const ToolDetailPage = () => {
 
               {/* Related posts */}
               {relatedPosts.length > 0 && (
-                <div style={{ marginTop: 16 }}>
+                <div className="td-related-guides">
                   <p className="td-eyebrow td-eyebrow--tight">
                     {t("Guides liés", "Related guides")}
                   </p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  <div className="td-related-guides-list">
                     {relatedPosts.map((post: any) => (
                       <Link
                         key={post.slug}
                         to={`${prefix}/guide/${post.slug}`}
                         className="td-guide-link"
                       >
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                        <p className="td-guide-link-title">
                           {post.title}
                         </p>
                         {post.readTime && (
@@ -1015,30 +906,6 @@ const ToolDetailPage = () => {
         </div>
       </div>
 
-      <SectionPillNav
-        sections={pillSections}
-        logoTo={`${prefix}/tools`}
-        logoAriaLabel={t("Retour aux outils", "Back to tools")}
-        ariaLabel={t("Navigation de la fiche outil", "Tool page navigation")}
-        heroSelector=".td-hero"
-        onSelect={(id) => {
-          // Update the URL to the dedicated route (SEO), but let the pill
-          // handle the scroll itself (return false) so it works even when the
-          // route is already current.
-          const tab = TABS.find((tb) => (tb.id === "presentation" ? "analyse" : tb.id) === id);
-          if (tab) {
-            const path = tab.id === "prix" && lang === "en" ? "/pricing"
-              : tab.id === "avis" && lang === "en" ? "/reviews"
-              : tab.path;
-            // replace: true — this is in-page anchor navigation, not a real
-            // page change. With replace: false every pill click pushed a
-            // history entry, so the back button stepped through tabs
-            // instead of leaving the tool page.
-            navigate(`${prefix}/tool/${slug}${path}`, { replace: true, state: { skipScrollReset: true } });
-          }
-          return false;
-        }}
-      />
 
     </article>
   );
