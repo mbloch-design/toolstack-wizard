@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
+import { resolveToolOverview } from "@/lib/toolUtils";
 
 interface StackToolInspectorProps {
   tool: ToolSummary;
@@ -24,11 +25,6 @@ interface StackToolInspectorProps {
   onEdit: () => void;
   onExploreIdeas: () => void;
   t: (fr: string, en: string) => string;
-}
-
-function humanizeValue(value: string) {
-  const cleaned = value.replace(/[-_]+/g, " ").trim();
-  return cleaned ? `${cleaned.charAt(0).toUpperCase()}${cleaned.slice(1)}` : "";
 }
 
 export default function StackToolInspector({
@@ -57,22 +53,14 @@ export default function StackToolInspector({
   const description = lang === "en"
     ? tool.shortDescriptionEn || tool.shortDescription
     : tool.shortDescription;
-  const longDescription = lang === "en"
-    ? resolvedTool?.longDescriptionEn || resolvedTool?.longDescription
-    : resolvedTool?.longDescription;
-  const pros = (lang === "en"
-    ? resolvedTool?.prosEn || resolvedTool?.pros || tool.prosEn || tool.pros
-    : resolvedTool?.pros || tool.pros || []).filter(Boolean).slice(0, 3);
-  const useCases = (lang === "en"
-    ? resolvedTool?.useCasesEn || resolvedTool?.useCases
-    : resolvedTool?.useCases || []).filter(Boolean).slice(0, 4);
-  const cons = (lang === "en"
-    ? resolvedTool?.consEn || resolvedTool?.cons
-    : resolvedTool?.cons || []).filter(Boolean).slice(0, 2);
-  const coverage = Array.from(new Set([
-    ...(resolvedTool?.functional_needs || tool.functional_needs || []),
-    ...(resolvedTool?.covers || tool.covers || []),
-  ])).map(humanizeValue).filter(Boolean).slice(0, 4);
+  // Same resolver as the tool page — the two sheets must describe the same
+  // tool the same way. Here it is capped: this is a preview inside a board,
+  // not the reference sheet.
+  const { longDescription, pros, useCases, cons, coverage } = resolveToolOverview(
+    resolvedTool || tool,
+    lang,
+    { pros: 3, useCases: 4, cons: 2, coverage: 4 }
+  );
   const toolSlug = tool.slug || tool.id;
   const externalHref = tool.websiteUrl || tool.affiliateLink;
   const nextDepth = navigationDepth + 1;

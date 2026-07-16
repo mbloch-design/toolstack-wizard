@@ -3,7 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
 import { useContext, useEffect, useRef } from "react";
 import {
-  ExternalLink, ArrowRight, CalendarCheck,
+  ArrowRight, CalendarCheck, Check,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
@@ -13,7 +13,7 @@ import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/se
 import { getScrollTop, scrollToY } from "@/lib/scroll";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
-import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict } from "@/lib/toolUtils";
+import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 
@@ -493,21 +493,69 @@ const ToolDetailPage = () => {
             {(
               <div id="analyse" className="td-subpage-content">
 
+                {/* 0 · Vue d'ensemble — même bloc que l'inspecteur de Ma stack.
+                    Classes .stack-tool-inspector-* réutilisées telles quelles,
+                    pas recopiées : les deux fiches doivent rester identiques
+                    sans que personne ait à y penser. Seule différence assumée,
+                    la fiche ne tronque aucune liste — c'est la référence. */}
+                {(() => {
+                  const ov = resolveToolOverview(tool, lang);
+                  if (!ov.longDescription && !ov.pros.length && !ov.useCases.length) return null;
+                  return (
+                    <div className="td-section td-tool-overview">
+                      {ov.longDescription && (
+                        <section className="stack-tool-inspector-overview">
+                          <span>{t("En bref", "Overview")}</span>
+                          <p>{asText(ov.longDescription)}</p>
+                        </section>
+                      )}
+                      <div className="stack-tool-inspector-grid">
+                        {ov.useCases.length > 0 && (
+                          <section className="stack-tool-inspector-detail">
+                            <span>{t("Ce que vous pouvez en faire", "What you can do with it")}</span>
+                            <ul>{ov.useCases.map((u: string) => <li key={u}><Check size={15} aria-hidden />{u}</li>)}</ul>
+                          </section>
+                        )}
+                        {ov.pros.length > 0 && (
+                          <section className="stack-tool-inspector-detail">
+                            <span>{t("Points forts", "Strengths")}</span>
+                            <ul>{ov.pros.map((p: string) => <li key={p}><Check size={15} aria-hidden />{p}</li>)}</ul>
+                          </section>
+                        )}
+                        {ov.cons.length > 0 && (
+                          <section className="stack-tool-inspector-detail stack-tool-inspector-limitations">
+                            <span>{t("À garder en tête", "Worth keeping in mind")}</span>
+                            <ul>{ov.cons.map((c: string) => <li key={c}>{c}</li>)}</ul>
+                          </section>
+                        )}
+                        {ov.coverage.length > 0 && (
+                          <section className="stack-tool-inspector-detail">
+                            <span>{t("Objectifs couverts", "Objectives covered")}</span>
+                            <div className="stack-tool-inspector-chips">
+                              {ov.coverage.map((c: string) => <span key={c}>{c}</span>)}
+                            </div>
+                          </section>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
                   const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
-                  const consArr = lang === "en" && (tool as any).consEn ? (tool as any).consEn : (tool.cons ?? []);
-                  const limitText: string | null = consArr.length > 0 ? consArr[0] : (avoidItems[0] ?? null);
 
+                  // No "Limite principale" column: it was cons[0], printed
+                  // verbatim a few centimetres above under "À garder en tête".
+                  // These two carry a threshold ("from 10h/week on"), which is
+                  // the advice — the overview lists the facts, this weighs them.
                   const blocks = [
                     { label: t("À garder si", "Keep if"),           text: keepItems.length  ? keepItems.slice(0, 2).join(". ")  : null },
                     { label: t("À challenger si", "Challenge if"),   text: avoidItems.length ? avoidItems.slice(0, 2).join(". ") : null },
-                    { label: t("Limite principale", "Main limitation"), text: limitText },
                   ].filter((b): b is { label: string; text: string } => !!b.text);
 
                   return (
                     <div className="td-section">
-                      <span className="td-eyebrow">{t("Décision rapide", "Quick decision")}</span>
                       <h2 className="td-title">
                         {lang === "fr"
                           ? `${tool.name} : quand ça a du sens.`
@@ -562,7 +610,6 @@ const ToolDetailPage = () => {
             {(
               <div id="prix" className="td-subpage-content">
                 <div className="td-section">
-                  <span className="td-eyebrow">{t("Tarifs", "Pricing")}</span>
                   <h2 className="td-title">
                     {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
                   </h2>
@@ -600,7 +647,6 @@ const ToolDetailPage = () => {
             {hasAlternativesContent && (
               <div id="alternatives" className="td-subpage-content">
                 <div className="td-section">
-                  <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
                   <h2 className="td-title">
                     {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
                   </h2>
@@ -726,9 +772,8 @@ const ToolDetailPage = () => {
 
                 {/* 3 · Pour qui */}
                 {(tool as any).relevantFor?.length > 0 && (
-                  <div className="td-section">
-                    <span className="td-eyebrow">{t("Audience", "Audience")}</span>
-                    <h2 className="td-title">
+                  <div className="td-section td-section--sub">
+                    <h2 className="td-subtitle">
                       {t(`Pour qui est ${tool.name} ?`, `Who is ${tool.name} for?`)}
                     </h2>
                     <ToolAudienceBlock
@@ -742,60 +787,11 @@ const ToolDetailPage = () => {
                 )}
 
                 {/* 4-5 · Points forts / limites — side by side so + and − can be confronted directly */}
-                {((tool.pros?.length ?? 0) > 0 || (tool.cons?.length ?? 0) > 0) && (
-                  <div className="td-section">
-                    <span className="td-eyebrow">{t("Forces et limites", "Strengths and limitations")}</span>
-                    <h2 className="td-title">
-                      {t(`${tool.name} en force et en limites.`, `${tool.name}, strengths and limitations.`)}
-                    </h2>
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: (tool.pros?.length ?? 0) > 0 && (tool.cons?.length ?? 0) > 0 ? "1fr 1fr" : "1fr",
-                        gap: 32,
-                        marginTop: 8,
-                      }}
-                      className="sm:grid-cols-2"
-                    >
-                      {(tool.pros?.length ?? 0) > 0 && (
-                        <div>
-                          <p className="td-eyebrow td-eyebrow--tight">
-                            {t("Ce qu'il fait bien", "What it does well")}
-                          </p>
-                          <ul className="td-judgment">
-                            {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
-                              <li key={pro} className="td-judgment-item td-judgment-item--pro">
-                                <span className="td-judgment-marker td-judgment-marker--pro" aria-hidden="true">+</span>
-                                <span className="td-judgment-text">{pro}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      {(tool.cons?.length ?? 0) > 0 && (
-                        <div>
-                          <p className="td-eyebrow td-eyebrow--tight">
-                            {t("Là où il montre ses limites", "Where it falls short")}
-                          </p>
-                          <ul className="td-judgment">
-                            {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
-                              <li key={con} className="td-judgment-item td-judgment-item--con">
-                                <span className="td-judgment-marker td-judgment-marker--con" aria-hidden="true">−</span>
-                                <span className="td-judgment-text">{con}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
 
                 {/* 6 · Fonctionnalités */}
                 {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
-                  <div className="td-section">
-                    <span className="td-eyebrow">{t("Fonctionnalités", "Features")}</span>
-                    <h2 className="td-title">
+                  <div className="td-section td-section--sub">
+                    <h2 className="td-subtitle">
                       {t(`Ce que couvre ${tool.name}.`, `What ${tool.name} covers.`)}
                     </h2>
                     <ToolFeaturesBlock
@@ -807,31 +803,6 @@ const ToolDetailPage = () => {
                   </div>
                 )}
 
-                {/* 7 · Cas d'usage */}
-                {tool.useCases && tool.useCases.length > 0 && (
-                  <div className="td-section">
-                    <span className="td-eyebrow">{t("Cas d'usage", "Use cases")}</span>
-                    <h2 className="td-title">
-                      {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
-                    </h2>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
-                      {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                        <div
-                          key={i}
-                          style={{
-                            display: "flex", alignItems: "flex-start", gap: 10,
-                            padding: "12px 16px",
-                            background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
-                            fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", lineHeight: 1.45,
-                          }}
-                        >
-                          <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "var(--color-text-strong)" }} />
-                          {uc}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
                 {/* 8 · Analyse éditoriale (long description) */}
                 {(() => {
@@ -841,9 +812,8 @@ const ToolDetailPage = () => {
                   if (!longDesc || longDesc.length < 80) return null;
                   const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
                   return (
-                    <div className="td-section">
-                      <span className="td-eyebrow">{t("Analyse ToolTrim", "ToolTrim Analysis")}</span>
-                      <h2 className="td-title">
+                    <div className="td-section td-section--sub">
+                      <h2 className="td-subtitle">
                         {t(`Notre analyse de ${tool.name}.`, `Our take on ${tool.name}.`)}
                       </h2>
                       <div className="td-body">
@@ -894,7 +864,6 @@ const ToolDetailPage = () => {
                   ].join(", ");
                   return (
                     <div className="td-section">
-                      <span className="td-eyebrow">{t("Évaluation", "Rating")}</span>
                       <h2 className="td-title">
                         {t(`Notre avis sur ${tool.name}.`, `Our verdict on ${tool.name}.`)}
                       </h2>
@@ -963,7 +932,6 @@ const ToolDetailPage = () => {
             {(
               <div id="faq" className="td-subpage-content">
                 <div className="td-section">
-                  <span className="td-eyebrow">{t("FAQ", "FAQ")}</span>
                   <h2 className="td-title">
                     {t(`Questions sur ${tool.name}.`, `Questions about ${tool.name}.`)}
                   </h2>
@@ -1031,13 +999,7 @@ const ToolDetailPage = () => {
                       <Link
                         key={post.slug}
                         to={`${prefix}/guide/${post.slug}`}
-                        style={{
-                          display: "block", padding: "12px 16px",
-                          background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
-                          textDecoration: "none", transition: "border-color 140ms",
-                        }}
-                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
+                        className="td-guide-link"
                       >
                         <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                           {post.title}

@@ -428,18 +428,6 @@
   .tool-pin-wrap--row .pin-tool-button:hover {
     transform: translateY(-50%);
   }
-  .td-identity-row {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 24px;
-    margin-top: 28px;
-  }
-  .td-selection-action {
-    display: flex;
-    margin-left: auto;
-  }
   .td-explore-action {
     align-items: center;
     background: var(--color-surface);
@@ -3055,14 +3043,6 @@
     }
     .pin-tool-button--compact:not(.pin-tool-button--icon) .pin-tool-button-text {
       display: none;
-    }
-    .td-selection-action {
-      margin-left: 0;
-      width: 100%;
-    }
-    .td-selection-action .pin-tool-button--inline {
-      justify-content: center;
-      width: 100%;
     }
     .tt-page-hero--banner.tt-page-hero--ma-stack .tt-page-hero-band {
       min-height: auto;
@@ -6925,7 +6905,6 @@
   }
   @media (max-width: 768px) {
     .td-container { padding-left: var(--layout-gutter-mobile); padding-right: var(--layout-gutter-mobile); }
-    .td-tab-nav { margin-left: -20px !important; margin-right: -20px !important; padding-left: 20px !important; padding-right: 20px !important; }
   }
 
   /* Two-column body grid: content | sidebar */
@@ -6963,21 +6942,15 @@
     .td-sidebar-mobile { display: none; }
   }
   /* td-sidebar is now just a semantic wrapper — no position override */
-  .td-sidebar { /* intentionally empty */ }
 
   /* Hero — single column: identity + positioning only (legacy, unused) */
-  .td-hero-layout {
-    padding-top: 56px;
-    padding-bottom: 56px;
-    max-width: 860px;
-  }
 
   /* ── Hero CARD — Ma-stack inspector gabarit (.stack-tool-profile-hero):
      a bordered rounded card, cover image on top, heading below. Cleaner and
      far more scannable than the giant poster name it replaces. ── */
   .td-hero-card {
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--color-surface);
   }
@@ -7057,16 +7030,14 @@
 
   /* Hero identity — now the head of the main column in the unified page grid.
      Sits beside the decision card so the verdict starts at the very top. */
+  /* The hero content now lives in .td-hero-card — a self-closing rounded,
+     bordered box. This wrapper used to add 42px of padding-bottom + a
+     border-bottom on top of that, from when the hero was an open layout with
+     a metadata row: the card closed, then 44px of nothing, then a second line.
+     Two frames for one hero. The card frames itself; a plain gap to the first
+     section is all that's left to do. */
   .td-page-grid .td-hero {
-    padding-bottom: clamp(36px, 3.5vw, 52px);
-    margin-bottom: clamp(20px, 2vw, 32px);
-    border-bottom: 1px solid var(--color-border);
-  }
-  @media (max-width: 768px) {
-    .td-page-grid .td-hero {
-      padding-bottom: 32px;
-      margin-bottom: 16px;
-    }
+    margin-bottom: clamp(24px, 2.5vw, 36px);
   }
 
   /* Section wrapper.
@@ -7110,6 +7081,25 @@
     margin-bottom: 28px;
   }
 
+  /* Background block: half the vertical rhythm of a chapter.
+     Pairs with .td-subtitle (declared further down): five background blocks
+     — audience, features, use cases, long-form analysis — wore a full
+     .td-section + .td-title, so the page read as ten chapters while the nav
+     promises five. */
+  .td-section--sub {
+    padding: 28px 0;
+  }
+
+  /* The tool page reuses the Ma stack inspector blocks verbatim so the two
+     sheets stay identical. One difference is intended: the inspector clamps
+     its summary to 5 lines because it is a preview inside a board — the tool
+     page is the reference sheet and shows the whole thing. */
+  .td-tool-overview .stack-tool-inspector-overview p {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+
   /* Body text — 18px, readable */
   .td-body {
     font-family: var(--font-ui);
@@ -7147,7 +7137,7 @@
   .td-score-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     margin-bottom: 32px;
   }
@@ -7238,22 +7228,23 @@
   .td-judgment-item--con .td-judgment-text { color: var(--color-muted); }
 
   /* Editorial synthesis — machine-readable TL;DR rebuilt as a spec sheet */
+  /* Collapsed <details> kept for the SoftwareApplication schema — background,
+     not a chapter. It used to carry margin-top + padding-top + a lone
+     border-top: the only separator left on the page and an unbalanced 85px
+     gap, so it read as a stray rule. Now it follows the same quiet 28px
+     rhythm as the other background blocks, no border. */
   .td-synthesis {
-    margin-top: clamp(40px, 4vw, 56px);
-    padding-top: clamp(28px, 3vw, 40px);
-    border-top: 1px solid var(--color-border);
+    padding: 28px 0;
   }
+  /* Same eyebrow as .td-eyebrow — it only needs to sit on a row with its
+     disclosure chevron. Everything typographic comes from the shared rule;
+     this used to restate all seven properties and was free to drift from it. */
   .td-synth-eyebrow {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-kicker);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
     margin-bottom: 20px;
+    cursor: pointer;
   }
   /* Native <summary> default marker is removed by display:flex above —
      add an explicit chevron so the row still reads as expandable. */
@@ -7352,6 +7343,19 @@
   a.td-chip:hover { border-color: var(--color-text); }
   .td-chip svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--color-muted); }
 
+  /* Related-guide link row. Was an inline style with two JS mouse handlers
+     rewriting borderColor by hand — same anti-pattern as the chips. */
+  .td-guide-link {
+    display: block;
+    padding: 12px 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 140ms;
+  }
+  .td-guide-link:hover { border-color: var(--color-text); }
+
   .td-tile {
     display: flex;
     align-items: center;
@@ -7377,7 +7381,7 @@
     align-items: center;
     gap: 10px;
     padding: 12px 14px;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     background: var(--color-surface);
   }
@@ -7406,48 +7410,6 @@
   .td-feature span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   /* Tab nav — strong editorial subnav */
-  .td-tab-nav {
-    position: sticky;
-    top: var(--header-height);
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    height: 72px;
-    overflow-x: auto;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-bg);
-    scrollbar-width: none;
-  }
-  .td-tab-nav::-webkit-scrollbar { display: none; }
-
-  .td-tab {
-    position: relative;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    height: 72px;
-    padding: 0;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-muted);
-    text-decoration: none;
-    transition: color 120ms ease-out;
-    white-space: nowrap;
-    letter-spacing: -0.02em;
-  }
-  .td-tab:hover { color: var(--color-text); }
-  .td-tab--active { color: var(--color-text); }
-  .td-tab--active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-text);
-  }
 
   /* Section anchor — scroll-margin compensates the fixed header only.
      (The in-page nav is now the bottom-floating pill, not a top bar.) */
@@ -7474,34 +7436,6 @@
   }
 
   /* Hero metadata row */
-  .td-hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
-    margin-top: 40px;
-    padding-top: 24px;
-    border-top: 1px solid var(--color-border);
-  }
-  .td-hero-meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .td-hero-meta-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-  }
-  .td-hero-meta-value {
-    font-family: var(--font-ui);
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--color-text);
-    letter-spacing: -0.01em;
-  }
 
   /* Editorial comparison rows (alternatives section) */
   .td-alt-row {
@@ -7551,7 +7485,7 @@
   .td-soon-card {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     padding: 40px 32px;
     text-align: center;
   }
@@ -7681,25 +7615,10 @@
   }
 
   /* ── Audit de stack — editorial band (full-width, outside grid) ── */
-  .td-diag-band {
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-bg);
-    padding: 56px 0;
-  }
   /* ── Same content, inline card variant — used when the band sits between
        two prose sections inside the content column instead of at the page
        end. No top/bottom rule (that reads as 2 extra dividers mid-page);
        a contained card with its own background reads as a callout instead. */
-  .td-diag-band--inline {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface);
-    padding: 32px;
-  }
-  .td-diag-band--inline .td-diag-inner {
-    gap: 32px;
-  }
 
   /* ── Profitable-if / too-expensive-if twin cards ── */
   .td-profit-grid {
@@ -7711,47 +7630,8 @@
       grid-template-columns: 1fr 1fr;
     }
   }
-  .td-diag-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 48px;
-    align-items: center;
-  }
-  @media (max-width: 900px) {
-    .td-diag-inner {
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-  }
 
   /* ── ToolTrim footer CTA — editorial, full-width ── */
-  .td-footer-cta {
-    background: var(--color-bg);
-    border-top: 1px solid var(--color-border);
-    padding: 72px 0;
-  }
-  .td-footer-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 64px;
-    align-items: end;
-  }
-  @media (max-width: 900px) {
-    .td-footer-inner {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-  }
-  .td-footer-title {
-    font-family: var(--font-brand);
-    font-size: clamp(3rem, 5vw, 5.125rem);
-    font-weight: 600;
-    line-height: 0.95;
-    letter-spacing: -0.055em;
-    color: var(--color-text);
-    white-space: pre-line;
-    margin: 0;
-  }
 }
 
 /* ── Guides Index — gi-* system ───────────────────────────────────────────── */
@@ -17795,14 +17675,12 @@ section[id] {
   .cp-methodology-note,
   .cp-hero-verdict-jump,
   .cp-faq-nav,
-  .td-tab-nav,
   .td-sidebar-desktop,
   .td-sidebar-mobile,
   .gi-cta-band,
   .ga-tab-nav,
   .ga-cta-band,
   .skip-to-content,
-  /* Site-wide chrome */
   header[role="banner"],
   footer[role="contentinfo"],
   .tt-footer {
@@ -18034,9 +17912,6 @@ section[id] {
 .td-feature:hover { border-color: var(--color-text); }
 
 /* Sticky card "see review" link — underline draw + arrow nudge */
-.td-cardlink { position: relative; }
-.td-cardlink-arrow { transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1); }
-.td-cardlink:hover .td-cardlink-arrow { transform: translateX(3px); }
 
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
@@ -20121,9 +19996,80 @@ section[id] {
   line-height: 1;
   margin: 0;
 }
-.ex-filter-pillnav .tt-pillnav-item {
+.ex-tag-filter {
+  background: var(--color-bg);
+  grid-column: 1 / -1;
+  isolation: isolate;
+  min-width: 0;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 45;
+}
+.ex-page:not(.ex-page--tool) > .ex-tag-filter { margin-bottom: 16px; }
+.ex-tag-filter-track {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  scroll-padding-inline: 2px;
+  scroll-snap-type: inline proximity;
+  touch-action: pan-x;
+}
+.ex-tag-filter-track::-webkit-scrollbar { display: none; }
+.ex-tag-filter-item {
+  align-items: center;
   appearance: none;
+  background: var(--color-surface-soft);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
   flex: 0 0 auto;
+  font-family: var(--font-ui);
+  font-size: .72rem;
+  font-weight: 720;
+  min-height: 36px;
+  padding: 0 13px;
+  scroll-snap-align: start;
+  white-space: nowrap;
+}
+.ex-tag-filter-item:hover { background: var(--color-border); }
+.ex-tag-filter-item.is-active {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+.ex-tag-filter-item:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-text) 22%, transparent);
+  outline-offset: 2px;
+}
+.ex-tag-filter-control {
+  align-items: center;
+  appearance: none;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-circle);
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 36px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  z-index: 2;
+}
+.ex-tag-filter-control--left { left: 0; }
+.ex-tag-filter-control--right { right: 0; }
+.ex-tag-filter-control:hover { background: var(--color-surface-soft); }
+.ex-tag-filter-control:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-text) 22%, transparent);
+  outline-offset: 2px;
 }
 @keyframes ex-tool-focus-enter {
   from { opacity: .7; transform: scale(.985); }
@@ -20264,19 +20210,18 @@ section[id] {
 .ex-directions button.is-active small { background: color-mix(in srgb, var(--color-bg) 18%, transparent); }
 .ex-directions button:disabled { cursor: default; opacity: .42; }
 .ex-grid { align-items: start; animation: stack-depth-enter 190ms cubic-bezier(.22,1,.36,1) both; display: grid; gap: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.ex-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: 0 2px 9px rgba(18,18,16,.045); display: grid; min-width: 0; overflow: hidden; transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
+.ex-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: 0 2px 9px rgba(18,18,16,.045); display: grid; grid-template-rows: 1fr auto; min-width: 0; overflow: hidden; transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
 .ex-card:hover, .ex-card:focus-within { border-color: var(--color-border-strong); box-shadow: 0 8px 24px rgba(18,18,16,.09); transform: translateY(-2px); }
 .ex-card.is-adding { opacity: .72; }
 .ex-card.is-present { border-color: color-mix(in srgb, #5f7f68 62%, var(--color-border)); }
-.ex-card-main { align-items: start; appearance: none; background: transparent; border: 0; color: var(--color-text); cursor: pointer; display: grid; gap: 16px; grid-template-columns: auto minmax(0, 1fr); min-height: 138px; padding: 24px 16px 16px; text-align: left; width: 100%; }
+.ex-card-main { align-content: start; appearance: none; background: transparent; border: 0; color: var(--color-text); cursor: pointer; display: grid; gap: 16px; min-height: 170px; padding: 18px; text-align: left; width: 100%; }
 .ex-card-main:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-text) 18%, transparent); outline-offset: -3px; }
-.ex-card-copy { display: grid; gap: 3px; min-width: 0; }
-.ex-card-copy strong { font-family: var(--font-ui); font-size: 1rem; font-weight: 850; letter-spacing: -.025em; line-height: 1.1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ex-card-copy small { color: var(--color-muted); font-family: var(--font-ui); font-size: .68rem; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ex-card-copy > span { background: var(--color-surface-soft); border-radius: var(--radius-pill); color: var(--color-text); font-family: var(--font-ui); font-size: .65rem; font-weight: 740; justify-self: start; margin-top: 8px; max-width: 100%; overflow: hidden; padding: 5px 9px; text-overflow: ellipsis; white-space: nowrap; }
-.ex-card-actions { align-items: center; border-top: 1px solid var(--color-border); display: flex; gap: 8px; justify-content: space-between; min-height: 52px; padding: 8px 12px; }
-.ex-card-actions > a { color: var(--color-muted); font-family: var(--font-ui); font-size: .7rem; font-weight: 740; padding: 8px; text-decoration: none; }
-.ex-card-actions > a:hover, .ex-card-actions > a:focus-visible { color: var(--color-text); outline: none; text-decoration: underline; text-underline-offset: 3px; }
+.ex-card-header { align-items: center; display: flex; gap: 13px; min-width: 0; }
+.ex-card-identity { display: grid; gap: 3px; min-width: 0; }
+.ex-card-identity strong { font-family: var(--font-ui); font-size: 1.02rem; font-weight: 850; letter-spacing: -.025em; line-height: 1.1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-card-identity small { color: var(--color-muted); font-family: var(--font-ui); font-size: .68rem; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-card-description { color: var(--color-text); display: -webkit-box; font-family: var(--font-ui); font-size: .78rem; font-weight: 540; line-height: 1.42; min-height: 3.4em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.ex-card-actions { align-items: center; border-top: 1px solid var(--color-border); display: flex; gap: 8px; justify-content: flex-end; min-height: 52px; padding: 8px 12px; }
 .ex-card-actions button { align-items: center; appearance: none; background: var(--color-text); border: 0; border-radius: var(--radius-pill); color: var(--color-bg); cursor: pointer; display: inline-flex; font-family: var(--font-ui); font-size: .68rem; font-weight: 800; gap: 5px; min-height: 34px; padding: 0 12px; }
 .ex-card-actions button:disabled { background: color-mix(in srgb, #5f7f68 82%, var(--color-text)); cursor: default; }
 @keyframes ex-skeleton-pulse {
@@ -20285,7 +20230,7 @@ section[id] {
 }
 .ex-card--skeleton { pointer-events: none; }
 .ex-card--skeleton .ex-card-main { cursor: default; }
-.ex-card--skeleton .ex-card-copy > .ex-skeleton { justify-self: stretch; margin-bottom: 0; max-width: none; overflow: visible; padding: 0; }
+.ex-card--skeleton .ex-card-identity > .ex-skeleton { justify-self: stretch; margin-bottom: 0; max-width: none; overflow: visible; padding: 0; }
 .ex-skeleton {
   animation: ex-skeleton-pulse 900ms ease-in-out infinite;
   background: color-mix(in srgb, var(--color-border) 72%, var(--color-surface-soft));
@@ -20295,8 +20240,7 @@ section[id] {
 .ex-skeleton--logo { border-radius: var(--radius-md); height: 52px; width: 52px; }
 .ex-skeleton--title { height: 17px; width: min(82%, 150px); }
 .ex-skeleton--meta { height: 11px; margin-top: 5px; width: min(58%, 96px); }
-.ex-skeleton--reason { height: 27px; margin-top: 10px; width: min(92%, 180px); }
-.ex-skeleton--link { height: 12px; margin-left: 8px; width: 70px; }
+.ex-skeleton--description { border-radius: var(--radius-sm); height: 46px; width: 100%; }
 .ex-skeleton--button { height: 34px; width: 88px; }
 .ex-load-sentinel { grid-column: 1 / -1; height: 1px; min-width: 0; pointer-events: none; }
 .ex-empty, .ex-page--empty { align-items: center; color: var(--color-muted); display: grid; font-family: var(--font-ui); gap: 10px; justify-items: center; margin: 48px auto; max-width: 560px; text-align: center; }
@@ -20330,7 +20274,7 @@ section[id] {
 @media (max-width: 520px) {
   .ex-grid { grid-template-columns: minmax(0, 1fr); }
   .ex-page--tool { grid-template-columns: minmax(0, 1fr); }
-  .ex-card-main { min-height: 122px; }
+  .ex-card-main { min-height: 170px; }
   .ex-directions { gap: 5px; }
   .ex-directions--themes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ex-directions--themes button:first-child { grid-column: 1 / -1; }
@@ -20341,7 +20285,9 @@ section[id] {
   .ex-directions button small { height: 18px; min-width: 18px; padding: 0 4px; }
 }
 @media (max-width: 640px) {
-  .ex-filter-pillnav { bottom: calc(126px + env(safe-area-inset-bottom)); }
+  .ex-tag-filter { margin-inline: -2px; padding-block: 8px; }
+  .ex-tag-filter-item { min-height: 34px; padding-inline: 11px; }
+  .ex-tag-filter-control { height: 34px; width: 34px; }
 }
 @media (max-width: 360px) { .ex-directions { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (prefers-reduced-motion: reduce) {

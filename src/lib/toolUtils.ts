@@ -73,3 +73,42 @@ export function getToolFaviconUrl(
   void size;
   return "";
 }
+
+/** Slug-ish taxonomy value ("generation-texte") -> label ("Generation texte"). */
+export function humanizeValue(value: string) {
+  const cleaned = value.replace(/[-_]+/g, " ").trim();
+  return cleaned ? `${cleaned.charAt(0).toUpperCase()}${cleaned.slice(1)}` : "";
+}
+
+/**
+ * The four lists behind the tool overview, resolved the same way on the tool
+ * page and inside the Ma stack inspector — the two must tell the same story
+ * about the same tool.
+ *
+ * `limit` truncates for the inspector, which is a preview inside a board. The
+ * tool page is the reference sheet and passes nothing: it shows everything.
+ */
+export function resolveToolOverview(
+  tool: any,
+  lang: string,
+  limits?: { pros?: number; useCases?: number; cons?: number; coverage?: number }
+) {
+  const pick = (fr: string, en: string) =>
+    ((lang === "en" ? tool?.[en] || tool?.[fr] : tool?.[fr]) || []).filter(Boolean);
+  const cap = (arr: any[], n?: number) => (n ? arr.slice(0, n) : arr);
+
+  return {
+    longDescription: lang === "en"
+      ? tool?.longDescriptionEn || tool?.longDescription
+      : tool?.longDescription,
+    pros: cap(pick("pros", "prosEn"), limits?.pros),
+    useCases: cap(pick("useCases", "useCasesEn"), limits?.useCases),
+    cons: cap(pick("cons", "consEn"), limits?.cons),
+    coverage: cap(
+      Array.from(new Set([...(tool?.functional_needs || []), ...(tool?.covers || [])]))
+        .map(humanizeValue)
+        .filter(Boolean),
+      limits?.coverage
+    ),
+  };
+}

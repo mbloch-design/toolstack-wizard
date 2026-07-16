@@ -36,7 +36,7 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
     : [];
 
   return (
-    <div className="td-section">
+    <div className="td-section td-section--sub">
       <span className="td-subhead">
         <Sparkles />
         {t("L'angle IA", "The AI angle")}

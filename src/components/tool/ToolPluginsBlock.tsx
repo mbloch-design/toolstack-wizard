@@ -64,7 +64,7 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
   if (!hasAnyContent) return null;
 
   return (
-    <div className="td-section" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+    <div className="td-section td-section--sub" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
 
       {/* ── Case 4: Bundle parent → show member tools ── */}
       {bundleMembers.length > 0 && (

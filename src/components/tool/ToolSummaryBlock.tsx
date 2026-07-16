@@ -70,8 +70,8 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
-      <summary className="td-synth-eyebrow" style={{ cursor: "pointer" }}>
-        {t("En bref (résumé condensé)", "Quick summary (condensed)")}
+      <summary className="td-eyebrow td-synth-eyebrow">
+        {t("Fiche technique", "Spec sheet")}
       </summary>
       <h2 className="sr-only">{t(`Résumé de ${tool.name}`, `${tool.name} Summary`)}</h2>
       <meta itemProp="name" content={tool.name} />
