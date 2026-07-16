@@ -367,6 +367,19 @@ const ToolDetailPage = () => {
           HERO — tool identity & positioning
       ══════════════════════════════════════════════════════════ */}
       <div className="td-container">
+        <div className="td-page-breadcrumb">
+          <Breadcrumb items={[
+            { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+            ...(category ? [{
+              label: t(catName, catNameEn),
+              href: `${prefix}/category/${category.slug}`,
+            }] : []),
+            ...(subpageBreadcrumbLabel
+              ? [{ label: tool.name, href: baseToolPath }, { label: subpageBreadcrumbLabel }]
+              : [{ label: tool.name }]),
+          ]} />
+        </div>
+
         <div className="td-body-grid td-page-grid">
 
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
@@ -375,18 +388,6 @@ const ToolDetailPage = () => {
             {/* Hero identity — Ma-stack inspector gabarit: bordered card, cover
                 image on top, heading (category eyebrow, H1, description) below. */}
             <div className="td-hero">
-
-            <Breadcrumb items={[
-              { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-              ...(category ? [{
-                label: t(catName, catNameEn),
-                href: `${prefix}/category/${category.slug}`,
-              }] : []),
-              ...(subpageBreadcrumbLabel
-                ? [{ label: tool.name, href: baseToolPath }, { label: subpageBreadcrumbLabel }]
-                : [{ label: tool.name }]),
-            ]} />
-
             {(() => {
               const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
               const extra = ((tool as any).gallery_images as string[] | null) ?? [];

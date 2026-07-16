@@ -3455,3 +3455,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Suppression du faux `AggregateRating` : le score ToolTrim est désormais exposé uniquement comme un `Review` éditorial attribué.
 - Alignement des titres client et pré-rendus, des offres freemium et des données structurées sur les mêmes faits.
 - Normalisation des slashes finaux afin que `/prix` et `/prix/` conservent la même intention, le même H1 et les mêmes métadonnées après hydratation.
+
+## 2026-07-16 — Alignement de l’ouverture des fiches outil
+
+- Le fil d’Ariane quitte la seule colonne de contenu et prend place au-dessus de la grille principale.
+- La carte hero et la carte de verdict partagent désormais la même ligne de départ sur desktop.
+- Les espacements avant et après le fil d’Ariane sont harmonisés sur desktop et mobile.

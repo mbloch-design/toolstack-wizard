@@ -6913,8 +6913,12 @@
     grid-template-columns: minmax(0, 1fr) 360px;
     gap: 48px;
     align-items: start;
-    padding-top: 40px;
+    padding-top: 0;
     padding-bottom: 80px;
+  }
+  .td-page-breadcrumb {
+    padding-top: 40px;
+    margin-bottom: 20px;
   }
   .td-main {
     --td-chapter-gap: clamp(52px, 6vw, 72px);
@@ -8068,7 +8072,8 @@
   }
 
   @media (max-width: 640px) {
-    .td-body-grid { padding-top: 24px; padding-bottom: 56px; }
+    .td-page-breadcrumb { padding-top: 24px; margin-bottom: 16px; }
+    .td-body-grid { padding-bottom: 56px; }
     .td-decision-card { padding: 20px; }
     .td-review-rationale { grid-template-columns: 1fr; gap: 14px; }
   }
