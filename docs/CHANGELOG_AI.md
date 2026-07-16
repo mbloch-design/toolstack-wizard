@@ -3461,3 +3461,5 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Le fil d’Ariane quitte la seule colonne de contenu et prend place au-dessus de la grille principale.
 - La carte hero et la carte de verdict partagent désormais la même ligne de départ sur desktop.
 - Les espacements avant et après le fil d’Ariane sont harmonisés sur desktop et mobile.
+- La navigation des sous-pages gagne en taille, en espacement et en contraste ; l’onglet actif est matérialisé par un trait dédié plutôt que par un simple soulignement de texte.
+- Sur mobile, les onglets restent sur une ligne et défilent horizontalement sans comprimer leurs libellés.

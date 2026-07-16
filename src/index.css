@@ -7057,21 +7057,36 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px 20px;
-    padding: 2px 0;
+    gap: 12px 30px;
+    margin-bottom: 30px;
+    padding: 4px 0 10px;
     font-family: var(--font-ui);
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 1.2;
   }
   .td-tool-subnav a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
     color: var(--color-muted);
     text-decoration: none;
-    text-underline-offset: 4px;
+    transition: color 160ms ease-out;
   }
   .td-tool-subnav a:hover { color: var(--color-text); }
   .td-tool-subnav a[aria-current="page"] {
     color: var(--color-text);
-    font-weight: 600;
-    text-decoration: underline;
+    font-weight: 700;
+  }
+  .td-tool-subnav a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
   }
 
   /* Hero identity — now the head of the main column in the unified page grid.
@@ -8074,6 +8089,18 @@
   @media (max-width: 640px) {
     .td-page-breadcrumb { padding-top: 24px; margin-bottom: 16px; }
     .td-body-grid { padding-bottom: 56px; }
+    .td-tool-subnav {
+      flex-wrap: nowrap;
+      gap: 24px;
+      margin-right: calc(var(--layout-gutter-mobile) * -1);
+      margin-bottom: 24px;
+      padding-right: var(--layout-gutter-mobile);
+      padding-bottom: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .td-tool-subnav::-webkit-scrollbar { display: none; }
+    .td-tool-subnav a { flex: 0 0 auto; }
     .td-decision-card { padding: 20px; }
     .td-review-rationale { grid-template-columns: 1fr; gap: 14px; }
   }
