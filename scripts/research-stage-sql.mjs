@@ -164,7 +164,7 @@ begin
        r->>'observed_locale',r->>'market_context',r->>'market_context_candidate',
        r->>'market_context_source',r->'market_evidence',r->>'evidence_excerpt',
        r->>'evidence_selector',(r->>'observed_on')::date,(r->>'last_confirmed_on')::date,
-       v_capture_id,r->>'context_attestation_id',null,r->>'confidence','observed',
+       v_capture_id,r->>'context_attestation_id',null,r->>'confidence',r->>'review_status',
        coalesce(r->'collector_payload','{}'::jsonb))
     on conflict (plan_id,collector_id) do update set
       last_confirmed_on=greatest(catalog_private.tool_price_observations.last_confirmed_on,

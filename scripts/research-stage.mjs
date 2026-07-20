@@ -71,7 +71,7 @@ export async function prepareStageDryRun(slug) {
       manifest_git_commit: manifest.gitCommit,
       catalog_source_sha256: sha256(toolsRaw),
       registry_schema_version: registry.schemaVersion,
-      profile: { plan_order: profile.planOrder, compare_plan_key: profile.comparePlanKey, locale: profile.locale },
+      profile: { plan_order: profile.planOrder, compare_plan_key: profile.comparePlanKey, free_plan_key: profile.freePlanKey ?? "free", locale: profile.locale },
       network_accessed: false,
       files_written: 0,
       sql_executed: false,

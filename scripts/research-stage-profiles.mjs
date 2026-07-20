@@ -8,6 +8,12 @@ export const STAGING_PROFILES = Object.freeze({
     comparePlanKey: "light",
     locale: "fr-FR",
   }),
+  webflow: Object.freeze({
+    planOrder: Object.freeze(["starter", "basic", "premium"]),
+    comparePlanKey: "basic",
+    freePlanKey: "starter",
+    locale: "fr-FR",
+  }),
 });
 
 export function stagingProfileFor(slug) {

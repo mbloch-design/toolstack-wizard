@@ -28,7 +28,7 @@ function reviewStatus(value) {
  * Construit le registre canonique des plans depuis les faits de recherche et
  * les seules décisions éditoriales qui ne sont pas déductibles des sources.
  */
-export function planRegistryFromResearch(doc, registryEntry, { planOrder, comparePlanKey } = {}) {
+export function planRegistryFromResearch(doc, registryEntry, { planOrder, comparePlanKey, freePlanKey = "free" } = {}) {
   requireValue(registryEntry?.plan_key_mapping, "staging: plan_key_mapping du registre requis");
   requireValue(Array.isArray(planOrder) && planOrder.length > 0, "staging: ordre canonique explicite requis");
   requireValue(comparePlanKey && planOrder.includes(comparePlanKey), "staging: plan comparatif explicite invalide");
@@ -38,7 +38,7 @@ export function planRegistryFromResearch(doc, registryEntry, { planOrder, compar
   const observedKeys = new Set(observations.map((row) => row.plan_key).filter(Boolean));
   const hasFree = (doc?.collector?.claims ?? []).some((claim) =>
     claim.key === "pricing.free_plan_exists" && claim.value_native === true);
-  if (hasFree) observedKeys.add("free");
+  if (hasFree) observedKeys.add(freePlanKey);
 
   for (const key of observedKeys) requireValue(mappedKeys.has(key), `staging: plan ${key} absent du mapping humain`);
   for (const key of planOrder) requireValue(mappedKeys.has(key), `staging: ordre contient un plan non mappé ${key}`);
@@ -52,7 +52,7 @@ export function planRegistryFromResearch(doc, registryEntry, { planOrder, compar
     requireValue(units.size <= 1, `staging: unités contradictoires pour ${planKey}`);
     requireValue(seats.size <= 1, `staging: seat_type contradictoires pour ${planKey}`);
     return [planKey, {
-      is_free: hasFree && planKey === "free",
+      is_free: hasFree && planKey === freePlanKey,
       pricing_unit: [...units][0] ?? unitClaim,
       seat_type: [...seats][0] ?? null,
       is_compare_plan: planKey === comparePlanKey,
@@ -228,7 +228,11 @@ export function buildStagingProposal(doc, { planRegistry, locale = "fr-FR", tool
 
   const freeClaim = claims.find((claim) => claim.key === "pricing.free_plan_exists" && claim.value_native === true);
   const observedPlanKeys = new Set(observations.map((observation) => observation.plan_key).filter(Boolean));
-  if (freeClaim) observedPlanKeys.add("free");
+  if (freeClaim) {
+    const freePlanKey = Object.entries(planRegistry).find(([, meta]) => meta.is_free === true)?.[0];
+    requireValue(freePlanKey, "staging: claim de gratuité sans plan gratuit déclaré");
+    observedPlanKeys.add(freePlanKey);
+  }
   for (const planKey of observedPlanKeys) requireValue(planRegistry[planKey], `staging: plan non déclaré ${planKey}`);
 
   const planRows = Object.entries(planRegistry)

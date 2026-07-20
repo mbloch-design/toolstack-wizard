@@ -8,6 +8,7 @@ import { stagingProfileFor } from "./research-stage-profiles.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const WIX = path.join(ROOT, "research", "tool-pages", "wix.json");
+const WEBFLOW = path.join(ROOT, "research", "tool-pages", "webflow.json");
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 const PLAN_REGISTRY = {
   free: { is_free: true, pricing_unit: "site", seat_type: null, is_compare_plan: false, display_order: 0 },
@@ -191,5 +192,18 @@ describe("proposition staging Wix — aucune I/O et aucun approved", () => {
     const result = validateStagingProposal(tables);
     expect(result.ok).toBe(false);
     expect(result.errors.join(" ")).toMatch(/publication éditoriale interdite/);
+  });
+});
+
+describe("proposition staging Webflow", () => {
+  it("associe le claim de gratuité au plan Starter sans inventer un plan free", async () => {
+    const [doc, registry] = await Promise.all([
+      readFile(WEBFLOW, "utf8").then(JSON.parse),
+      readFile(path.join(ROOT, "research", "sources-registry.json"), "utf8").then(JSON.parse),
+    ]);
+    const plans = planRegistryFromResearch(doc, registry.sources.webflow, stagingProfileFor("webflow"));
+    expect(Object.keys(plans)).toEqual(["starter", "basic", "premium"]);
+    expect(plans.starter.is_free).toBe(true);
+    expect(plans.basic).toMatchObject({ is_compare_plan: true, pricing_unit: "site" });
   });
 });

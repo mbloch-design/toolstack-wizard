@@ -6,6 +6,7 @@ const BASE_URL = (process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:4173").re
 
 const CANARY = [
   { slug: "wix", id: "wix", name: "Wix" },
+  { slug: "webflow", id: "webflow", name: "Webflow" },
   { slug: "balsamiq", id: "balsamiq", name: "Balsamiq" },
   { slug: "kit", id: "convertkit", name: "Kit" },
   { slug: "aircall", id: "aircall-inc", name: "Aircall" },
@@ -89,6 +90,16 @@ async function inspectSsrPage(page, tool, lang) {
         .sort((a, b) => a - b);
       assert(JSON.stringify(paidAmounts) === JSON.stringify([16.8, 30, 40.8, 178.8]), `${url} plans Wix incomplets`);
     }
+    if (tool.slug === "webflow") {
+      assert(ssrTool.pricing_v5?.price_reliability === "approved", `${url} Webflow n'est pas projeté comme approved`);
+      assert(ssrTool.pricing_v5?.plans?.length === 3, `${url} n'expose pas les 3 plans Webflow`);
+      const paidAmounts = ssrTool.pricing_v5.plans
+        .filter((plan) => plan.nativeAmount != null)
+        .map((plan) => plan.nativeAmount)
+        .sort((a, b) => a - b);
+      assert(JSON.stringify(paidAmounts) === JSON.stringify([15, 25]), `${url} plans Webflow incomplets`);
+      assert(ssrTool.pricing_v5.plans.filter((plan) => plan.nativeAmount != null).every((plan) => plan.nativeCurrency === "USD"), `${url} devise Webflow incorrecte`);
+    }
     if (tool.slug === "balsamiq") {
       assert(ssrTool.verdictEn.keepIf?.length > 0, `${url} fallback verdict EN vide`);
     }
@@ -141,6 +152,23 @@ async function inspectWixPricingSubpage(page) {
   }
 }
 
+async function inspectWebflowPricingSubpage(page) {
+  const url = `${BASE_URL}/fr/tool/webflow/prix/`;
+  const response = await fetch(url);
+  assert(response.ok, `${url} répond HTTP ${response.status}`);
+  const html = await response.text();
+  const match = html.match(/<script id="__SSR_TOOL__" type="application\/json">([\s\S]*?)<\/script>/);
+  const tool = match ? JSON.parse(match[1]) : null;
+  assert(tool?.pricing_v5?.price_reliability === "approved", `${url} SSR non canonical`);
+  assert(tool?.pricing_v5?.plans?.length === 3, `${url} SSR sans les 3 plans`);
+  await page.goto(url, { waitUntil: "networkidle" });
+  const body = await page.locator("body").innerText();
+  for (const expected of ["Gratuit", "Basic", "Premium", "15,00", "25,00", "$US", "par site"]) {
+    assert(body.includes(expected), `${url} n'affiche pas ${expected}`);
+  }
+  assert(!body.includes("12.12€") && !body.includes("13.14€"), `${url} affiche encore une ancienne conversion EUR`);
+}
+
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
 const page = await context.newPage();
@@ -158,7 +186,9 @@ try {
   console.log("[OK] SPA Figma → Canva via catalog_api");
   await inspectWixPricingSubpage(page);
   console.log("[OK] SSR + rendu sous-page Wix Prix");
-  console.log(`\nCanari Fiche : ${passed + 2}/${CANARY.length * 2 + 2} contrôles verts (${CANARY.length} fiches, 2 langues).`);
+  await inspectWebflowPricingSubpage(page);
+  console.log("[OK] SSR + rendu sous-page Webflow Prix");
+  console.log(`\nCanari Fiche : ${passed + 3}/${CANARY.length * 2 + 3} contrôles verts (${CANARY.length} fiches, 2 langues).`);
 } finally {
   await context.close();
   await browser.close();

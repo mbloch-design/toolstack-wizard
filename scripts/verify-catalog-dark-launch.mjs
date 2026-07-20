@@ -86,7 +86,7 @@ await check("catalog_api est exposé et complet", async () => {
   return `${result.total} lignes`;
 });
 
-await check("Wix est l'unique pilote canonical et ses prix sont approuvés", async () => {
+await check("Wix et Webflow sont les deux pilotes canonical", async () => {
   const result = await request(url, key, {
     schema: "catalog_api",
     query: "published_tool_projection?select=slug,lang,data_contract,price_status,compare_plan,compare_native_amount,compare_native_currency,compare_monthly_eur,compare_eur_is_legacy_conversion,billing_commitment,tax_inclusion,compare_market,compare_locale,plans&slug=eq.wix&order=lang.asc",
@@ -108,8 +108,21 @@ await check("Wix est l'unique pilote canonical et ses prix sont approuvés", asy
     count: true,
   });
   assert(canonical.response.ok, `canonical count HTTP ${canonical.response.status}`);
-  assert(canonical.total === 2, `Wix seul doit être canonical (2 langues), reçu ${canonical.total}`);
-  return "Wix seul, fr/en, Light 16.8 EUR, 5 plans, annuel prépayé TTC";
+  assert(canonical.total === 4, `Wix + Webflow doivent produire 4 lignes localisées, reçu ${canonical.total}`);
+
+  const webflow = await request(url, key, {
+    schema: "catalog_api",
+    query: "published_tool_projection?select=slug,lang,data_contract,price_status,compare_plan,compare_native_amount,compare_native_currency,compare_monthly_eur,billing_commitment,tax_inclusion,compare_market,compare_locale,plans&slug=eq.webflow&order=lang.asc",
+  });
+  assert(webflow.response.ok, `Webflow HTTP ${webflow.response.status}`);
+  assert(Array.isArray(webflow.body) && webflow.body.length === 2, "projection Webflow bilingue absente");
+  assert(webflow.body.every((row) => row.data_contract === "canonical" && row.price_status === "approved"), "Webflow non canonical/approved");
+  assert(webflow.body.every((row) => row.compare_plan === "basic" && Number(row.compare_native_amount) === 15 && row.compare_native_currency === "USD"), "prix natif Webflow incorrect");
+  assert(webflow.body.every((row) => row.compare_monthly_eur == null), "conversion EUR Webflow non sourcée");
+  assert(webflow.body.every((row) => row.billing_commitment === "annual_prepaid" && row.tax_inclusion === "ht"), "conditions Webflow incomplètes");
+  assert(webflow.body.every((row) => row.compare_market == null && row.compare_locale == null), "locale Webflow artificielle");
+  assert(webflow.body.every((row) => Array.isArray(row.plans) && row.plans.length === 3), "jeu de plans Webflow incomplet");
+  return "Wix FR/EUR + Webflow global/USD, fr/en, prix approuvés";
 });
 
 await check("catalog_private demeure hors Data API", async () => {
