@@ -240,6 +240,16 @@ describe("v0.3 — dispatch adaptateur Wix via le moteur", () => {
   it("pricing_unit reste null (non prouvée par la page)", () => {
     expect(ex.observations.every((o) => o.pricing_unit === null)).toBe(true);
   });
+
+  it("le hash adaptateur ignore le bruit visible hors grille", () => {
+    const noisy = extractWithAdapter({
+      adapter: "wix", html: wixHtml.replace("</body>", "<footer>campagne dynamique 987</footer></body>"),
+      url: "https://www.wix.com/premium-purchase-plan/dynamo", headers: {}, market: "FR", locale: "fr-FR",
+      registryEntry: { market_context_declared: null },
+    });
+    expect(noisy.content_hash).toBe(ex.content_hash);
+    expect(noisy.content_hash_scope).toBe("adapter_semantic_facts");
+  });
 });
 
 describe("v0.3.1 — billing_commitment resserré", () => {

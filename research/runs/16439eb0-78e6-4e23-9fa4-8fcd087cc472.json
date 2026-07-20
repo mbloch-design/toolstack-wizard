@@ -1,0 +1,79 @@
+{
+  "agent": "research-collector",
+  "attestations": [],
+  "checks": [
+    {
+      "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "mode": "cache_hit",
+      "slug": "webflow",
+      "ttl_remaining_s": 86287,
+      "url": "https://webflow.com/pricing"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.3.3.1",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=0 approved=0 | doc_claims: extracted=0 created=0 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-20T12:17:28.306Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 0,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 0,
+    "doc_claims_unchanged": 0,
+    "versions_created": 0
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "webflow"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": false,
+      "observations": 2,
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing",
+      "versionsCreated": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "16439eb0-78e6-4e23-9fa4-8fcd087cc472",
+  "started_at": "2026-07-20T12:17:27.698Z",
+  "valid": true
+}

@@ -1,0 +1,228 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-20T12:02:22.688Z",
+      "attestation_id": "sha256:7e2fc3d8a0a67a4eab21c0b261ccbd9ee2cd8f3ab99207428cab5424a18033fc",
+      "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "$"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://webflow.com/pricing",
+      "html_lang": "en",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4",
+      "schema": "context_attestation/1",
+      "slug": "webflow",
+      "source_url": "https://webflow.com/pricing",
+      "timezone": "Europe/Paris",
+      "visible_markers": []
+    },
+    {
+      "accessed_at": "2026-07-20T12:02:30.309Z",
+      "attestation_id": "sha256:908a2916f1c0a26f3d0487d3b25da196b9f98a4f5f0f550e29ef533ccac8c150",
+      "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+      "content_language": null,
+      "currency_symbols_seen": [],
+      "egress_country": null,
+      "egress_measured_from": null,
+      "egress_source": null,
+      "final_url": "https://www.framer.com/pricing/",
+      "html_lang": null,
+      "http_status": 200,
+      "locale_requested": null,
+      "navigator_language": null,
+      "rendered_by": "static",
+      "resolved_locale": null,
+      "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4",
+      "schema": "context_attestation/1",
+      "slug": "framer",
+      "source_url": "https://www.framer.com/pricing/",
+      "timezone": null,
+      "visible_markers": []
+    }
+  ],
+  "checks": [
+    {
+      "adapter": null,
+      "adapter_version": null,
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": null,
+      "market_context_source": null,
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing"
+    },
+    {
+      "adapter": null,
+      "adapter_version": null,
+      "attempts": 1,
+      "browser_context": null,
+      "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": null,
+      "market_context_source": null,
+      "mode": "network_forced",
+      "rendered_by": "static",
+      "slug": "framer",
+      "url": "https://www.framer.com/pricing/"
+    }
+  ],
+  "claims_created": 106,
+  "collector_version": "0.3.3.1",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=0 approved=0 | doc_claims: extracted=0 created=0 unchanged=0",
+  "errors": [
+    {
+      "code": "network_or_tool_limit",
+      "detail": "page.goto: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://fr.squarespace.com/tarifs\", waiting until \"networkidle\"\u001b[22m\n",
+      "slug": "squarespace",
+      "url": "https://fr.squarespace.com/tarifs"
+    }
+  ],
+  "finished_at": "2026-07-20T12:03:20.126Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 0,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 0,
+    "doc_claims_unchanged": 0,
+    "versions_created": 0
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "webflow",
+      "framer",
+      "squarespace"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 1
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing",
+      "versionsCreated": 1
+    },
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 1
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "framer",
+      "url": "https://www.framer.com/pricing/",
+      "versionsCreated": 1
+    },
+    {
+      "accessible": false,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": null,
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "squarespace",
+      "url": "https://fr.squarespace.com/tarifs",
+      "versionsCreated": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4",
+  "started_at": "2026-07-20T12:02:22.686Z",
+  "valid": true
+}

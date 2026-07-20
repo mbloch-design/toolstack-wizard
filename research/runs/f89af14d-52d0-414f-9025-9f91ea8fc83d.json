@@ -1,0 +1,160 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-20T12:15:24.943Z",
+      "attestation_id": "sha256:921306cb096503b1287e82e7f7148fa84f48af66c0280e14ae9aec55ca765bd9",
+      "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "$"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://webflow.com/pricing",
+      "html_lang": "en",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "f89af14d-52d0-414f-9025-9f91ea8fc83d",
+      "schema": "context_attestation/1",
+      "slug": "webflow",
+      "source_url": "https://webflow.com/pricing",
+      "timezone": "Europe/Paris",
+      "visible_markers": []
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "webflow",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "http_status": 200,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing"
+    },
+    {
+      "content_hash": "sha256:406b0337389433ec408b00941acd01c9d6645f780ed6c4bc92a72c3639d4509b",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan"
+    },
+    {
+      "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+    },
+    {
+      "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+    }
+  ],
+  "claims_created": 2,
+  "collector_version": "0.3.3.1",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=2 claims_created=2 claims_unchanged=0 claims_confirmed=0 conflicts_opened=2 versions_created=2 attestations_created=1 approved=0 | doc_claims: extracted=3 created=3 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-20T12:15:56.133Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 2,
+    "claims_extracted": 2,
+    "claims_unchanged": 0,
+    "conflicts_opened": 2,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 3,
+    "doc_claims_extracted": 3,
+    "doc_claims_unchanged": 0,
+    "versions_created": 2
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "webflow"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 2,
+      "created": false,
+      "hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 2,
+        "claims_extracted": 2,
+        "claims_unchanged": 0,
+        "conflicts_opened": 2,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 3,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 0,
+        "versions_created": 2
+      },
+      "networkChecked": true,
+      "observations": 2,
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing",
+      "versionsCreated": 2
+    }
+  ],
+  "review_status": "open",
+  "run_id": "f89af14d-52d0-414f-9025-9f91ea8fc83d",
+  "started_at": "2026-07-20T12:15:24.940Z",
+  "valid": true
+}

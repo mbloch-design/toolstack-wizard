@@ -1,65 +1,1207 @@
 {
-  "schemaVersion": 1,
-  "slug": "squarespace",
-  "researchedOn": "2026-07-16",
-  "researcher": "Claude Code",
-  "status": "needs_review",
-  "mode": "RESEARCH_no_apply",
+  "claims": [
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Stocké 'Entry paid plan' générique + kind='seat' (faux, site).",
+      "evidence": "Page tarifs FR: Basic/Essentiel/Plus/Advanced. (Support officiel EN: Basic/Core/Plus/Advanced.)",
+      "key": "identity.plan_names",
+      "observed_locale": "fr-FR",
+      "observed_market": "FR",
+      "proposal_not_applied": "plan_key stable + nom localisé; unité site; plan d'entrée = basic.",
+      "sourceTier": 1,
+      "sourceUrl": "https://fr.squarespace.com/tarifs",
+      "value_native": {
+        "names_fr": [
+          "Basic",
+          "Essentiel",
+          "Plus",
+          "Advanced"
+        ],
+        "plan_keys": [
+          "basic",
+          "core",
+          "plus",
+          "advanced"
+        ]
+      },
+      "volatility": "medium"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Stocké pricing.free suggère un plan gratuit → faux.",
+      "evidence": "'14 jours d'essai gratuit'. Support officiel: aucun plan gratuit.",
+      "key": "pricing.free_plan_vs_trial",
+      "observed_locale": "fr-FR",
+      "observed_market": "FR",
+      "proposal_not_applied": "free_core_available=false, trial_days=14; ne jamais présenter l'essai comme plan gratuit.",
+      "sourceTier": 1,
+      "sourceUrl": "https://fr.squarespace.com/tarifs",
+      "value_native": {
+        "free_trial": true,
+        "genuine_free_plan": false,
+        "trial_length_days": 14
+      },
+      "volatility": "low"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Stocké 20€ 'seat' → montant et unité incorrects (12€/site en FR annuel).",
+      "evidence": "Basic 12 €/mois (mode paiement annuel).",
+      "key": "pricing.entry_paid_plan",
+      "observed_locale": "fr-FR",
+      "observed_market": "FR",
+      "proposal_not_applied": "Marché FR: Basic 12€/mois (annuel) comme comparaison FR; conserver observations d'autres marchés.",
+      "sourceTier": 1,
+      "sourceUrl": "https://fr.squarespace.com/tarifs",
+      "value_native": {
+        "amount": 12,
+        "commitment": "annual_prepaid",
+        "currency": "EUR",
+        "period": "monthly",
+        "plan_key": "basic",
+        "tax": "unknown",
+        "unit": "site"
+      },
+      "volatility": "high"
+    }
+  ],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "basic",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "core",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "plus",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "advanced",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "a billing cycle. We offer two options: Annual or Monthly . Annual - Pay in advance for a year of service. Your payment method is automatically billed on the same day each following year. This option comes with a free el",
+        "evidence_captures": [
+          "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Annual - Pay in advance for a year of service",
+        "sourceTier": 1,
+        "source_id": "src:8b6c6b308b6e6a20c2c09aefc6afdf6a09454727c0bed7715ca33400ea96864b",
+        "source_url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2",
+        "claim_id": "clm:d99be428cde0151cc2e3963dce71d263c2f4cc9cfc937cc0a6d8bd417db4aeb7",
+        "confidence": "high",
+        "evidence": "learn more about older plans, visit Legacy billing plans . Billing plans apply to individual sites only. If you have more than one Squarespace site, you’ll pay for each one separately, and each will have its own billing",
+        "evidence_captures": [
+          "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Billing plans apply to individual sites only|pay for each one separately",
+        "sourceTier": 1,
+        "source_id": "src:85eb060ab29dd64e25e66abb3baea5e581ed6805e24aea514be69730088f3d8d",
+        "source_url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan",
+        "status": "observed",
+        "value_native": "site",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-20T12:11:18.845Z",
+        "attestation_id": "sha256:ed0daf8d08c536629eda92e4bbf31f09c17aaf93f611086a6347acbb4f72b7ff",
+        "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+        "content_language": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang": "fr",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1",
+        "schema": "context_attestation/1",
+        "slug": "squarespace",
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      {
+        "accessed_at": "2026-07-20T12:13:59.865Z",
+        "attestation_id": "sha256:8553b39eeedde0a2d97d55a9a8508e963f2d0828e8c9781fdf63ab33f17c7e20",
+        "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+        "content_language": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang": "fr",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646",
+        "schema": "context_attestation/1",
+        "slug": "squarespace",
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      {
+        "accessed_at": "2026-07-20T12:20:14.283Z",
+        "attestation_id": "sha256:b294b11aef9089a95e7b81a37910805c1b0683f611d6bfefe6bcaa4a0346c745",
+        "content_hash": "sha256:3f662d74ee25678f9bb89e4dc4513cc4029e760186b0636222d0b217f8da6110",
+        "content_language": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang": "fr",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3",
+        "schema": "context_attestation/1",
+        "slug": "squarespace",
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      {
+        "accessed_at": "2026-07-20T12:22:28.262Z",
+        "attestation_id": "sha256:0cf6700edd057572085af4a4b8e699cccded1f8b13eb5fcc63bdb26557612e2f",
+        "content_hash": "sha256:72639b7e0eb5c0ca7881fcbafde0961fdfb971c90b670fb86f39c974f66df168",
+        "content_language": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang": "fr",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+        "schema": "context_attestation/1",
+        "slug": "squarespace",
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      {
+        "accessed_at": "2026-07-20T12:23:45.353Z",
+        "attestation_id": "sha256:a03f4db9bd86778c57a3b26be0d30bcbe7d329902bc25d09c4f5aeeb8c8ee958",
+        "content_hash": "sha256:72639b7e0eb5c0ca7881fcbafde0961fdfb971c90b670fb86f39c974f66df168",
+        "content_language": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang": "fr",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a",
+        "schema": "context_attestation/1",
+        "slug": "squarespace",
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      }
+    ],
+    "extraction_unknowns": [
+      "tax_inclusion non explicitée sur la grille tarifaire"
+    ],
+    "last_checked_at": "2026-07-20T12:23:45.353Z",
+    "last_context_evidence": {
+      "adapter": "squarespace",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-20T12:23:45.353Z",
+      "browser_context": {
+        "content_language_header": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang_attr": "fr",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      "market_context": "reference_fr",
+      "market_context_candidate": null,
+      "market_context_source": "proven",
+      "rendered_by": "browser",
+      "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+          "excerpt": "a billing cycle. We offer two options: Annual or Monthly . Annual - Pay in advance for a year of service. Your payment method is automatically billed on the same day each following year. This option comes with a free el",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+        },
+        "billing_period": "monthly",
+        "business_key": "squarespace|basic|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+        "confidence": "medium",
+        "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+            "observed_on": "2026-07-20",
+            "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1"
+          },
+          {
+            "capture_id": "cap:6b7a7a78545c7782e9fb28d27b7ed6ec68018b276335e553cea597e1c3eebea4",
+            "observed_on": "2026-07-20",
+            "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+          },
+          {
+            "capture_id": "cap:520aa1a5c15af2ecef51385afe25cd5012030844d0ccdfe3058fc32fbb71f802",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "BasicÉconomisez 10 % lors du paiement12 €/moisCréez votre propre site web personnalisé et faites-vous connaître en ligne.CommencerCréer votre site webDe superbes templates et des outils puissants pour tous les sites webNom de domaine personnalisé gratuit*Outils d’IA intégrésJusqu’à 2 contributeursAccepter des paiementsTarifs des cartes de crédit à partir de ",
+        "evidence_selector": "pricing-card:Basic",
+        "feature_highlights": [
+          "10 % lors du paiement12 €/moisCréez votre propre site web personnalisé et faites-vou",
+          "2 contributeurs",
+          "2 % + 0,25 €2 % de frais de transaction pour les boutiques en ligne7 % de frais de "
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "content_language_header": "fr-FR",
+          "host_is_fr": "fr.squarespace.com",
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 12,
+        "native_currency": "EUR",
+        "observation_id": "obs:a7d753c5c79e7dd7d27ea06a24be77152c592cbdd913adb4348d8c5502013ea7",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "basic",
+        "plan_key": "basic",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Basic",
+        "plan_summary": "Pour lancer un site professionnel avec les fonctions essentielles.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+          "excerpt": "learn more about older plans, visit Legacy billing plans . Billing plans apply to individual sites only. If you have more than one Squarespace site, you’ll pay for each one separately, and each will have its own billing",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+        },
+        "seat_type": null,
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "unknown",
+        "tool": "squarespace",
+        "value_fingerprint": "12|EUR|monthly|site|unknown"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+          "excerpt": "a billing cycle. We offer two options: Annual or Monthly . Annual - Pay in advance for a year of service. Your payment method is automatically billed on the same day each following year. This option comes with a free el",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+        },
+        "billing_period": "monthly",
+        "business_key": "squarespace|core|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+        "confidence": "medium",
+        "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+            "observed_on": "2026-07-20",
+            "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1"
+          },
+          {
+            "capture_id": "cap:6b7a7a78545c7782e9fb28d27b7ed6ec68018b276335e553cea597e1c3eebea4",
+            "observed_on": "2026-07-20",
+            "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+          },
+          {
+            "capture_id": "cap:520aa1a5c15af2ecef51385afe25cd5012030844d0ccdfe3058fc32fbb71f802",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "EssentielRecommandé18 €/mois Découvrez notre gamme complète de fonctionnalités commerciales au fur et à mesure que vous développez votre activité. CommencerCréer votre site webDe superbes templates et des outils puissants pour tous les sites webNom de domaine personnalisé gratuit*Outils d’IA intégrésNombre illimité de contributeursOutils d’analyse avancée du",
+        "evidence_selector": "pricing-card:Essentiel",
+        "feature_highlights": [
+          "CSS et JavaScriptAdresse e-mail professionnelle avec Googl",
+          "2 % + 0,25 €0 % de frais de transaction pour les boutiques en ligne5 % de frais de "
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "content_language_header": "fr-FR",
+          "host_is_fr": "fr.squarespace.com",
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 18,
+        "native_currency": "EUR",
+        "observation_id": "obs:60b28a0b3aefade2a011ba13cb378ff962573ff6e328cb566a24f8a687ddd6cb",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "essentiel",
+        "plan_key": "core",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Essentiel",
+        "plan_summary": "Pour développer un site avec davantage de personnalisation et de commerce.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+          "excerpt": "learn more about older plans, visit Legacy billing plans . Billing plans apply to individual sites only. If you have more than one Squarespace site, you’ll pay for each one separately, and each will have its own billing",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+        },
+        "seat_type": null,
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "unknown",
+        "tool": "squarespace",
+        "value_fingerprint": "18|EUR|monthly|site|unknown"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+          "excerpt": "a billing cycle. We offer two options: Annual or Monthly . Annual - Pay in advance for a year of service. Your payment method is automatically billed on the same day each following year. This option comes with a free el",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+        },
+        "billing_period": "monthly",
+        "business_key": "squarespace|plus|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+        "confidence": "medium",
+        "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+            "observed_on": "2026-07-20",
+            "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1"
+          },
+          {
+            "capture_id": "cap:6b7a7a78545c7782e9fb28d27b7ed6ec68018b276335e553cea597e1c3eebea4",
+            "observed_on": "2026-07-20",
+            "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+          },
+          {
+            "capture_id": "cap:520aa1a5c15af2ecef51385afe25cd5012030844d0ccdfe3058fc32fbb71f802",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "Plus32 €/mois Profitez de réductions des frais de traitement pour les paiements au fur et à mesure que vous développez votre activité. CommencerCréer votre site webDe superbes templates et des outils puissants pour tous les sites webNom de domaine personnalisé gratuit*Outils d’IA intégrésNombre illimité de contributeursOutils d’analyse avancée du site webPer",
+        "evidence_selector": "pricing-card:Plus",
+        "feature_highlights": [
+          "CSS et JavaScriptAdresse e-mail professionnelle avec Googl",
+          "7 % + 0,25 €0 % de frais de transaction pour les boutiques en ligne1 % de frais de "
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "content_language_header": "fr-FR",
+          "host_is_fr": "fr.squarespace.com",
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 32,
+        "native_currency": "EUR",
+        "observation_id": "obs:cb42f96149111c1bb4c5a4a3a91c98d3b33cfadc714ff668c7ff2b646c1e2b1f",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "plus",
+        "plan_key": "plus",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Plus",
+        "plan_summary": "Pour les activités qui veulent réduire les frais et développer la vente.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+          "excerpt": "learn more about older plans, visit Legacy billing plans . Billing plans apply to individual sites only. If you have more than one Squarespace site, you’ll pay for each one separately, and each will have its own billing",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+        },
+        "seat_type": null,
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "unknown",
+        "tool": "squarespace",
+        "value_fingerprint": "32|EUR|monthly|site|unknown"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+          "excerpt": "a billing cycle. We offer two options: Annual or Monthly . Annual - Pay in advance for a year of service. Your payment method is automatically billed on the same day each following year. This option comes with a free el",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+        },
+        "billing_period": "monthly",
+        "business_key": "squarespace|advanced|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+        "confidence": "medium",
+        "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+            "observed_on": "2026-07-20",
+            "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1"
+          },
+          {
+            "capture_id": "cap:6b7a7a78545c7782e9fb28d27b7ed6ec68018b276335e553cea597e1c3eebea4",
+            "observed_on": "2026-07-20",
+            "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+          },
+          {
+            "capture_id": "cap:520aa1a5c15af2ecef51385afe25cd5012030844d0ccdfe3058fc32fbb71f802",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "Advanced69 €/mois Optimisez vos revenus grâce à nos réductions des frais de traitement pour les paiements et à nos outils commerciaux les plus avancés. CommencerCréer votre site webDe superbes templates et des outils puissants pour tous les sites webNom de domaine personnalisé gratuit*Outils d’IA intégrésNombre illimité de contributeursOutils d’analyse avanc",
+        "evidence_selector": "pricing-card:Advanced",
+        "feature_highlights": [
+          "CSS et JavaScriptAdresse e-mail professionnelle avec Googl",
+          "5 % + 0,25 €0 % de frais de transaction pour les boutiques en ligne0 % de frais de ",
+          "Analyses basiques du trafic des sites webHébergement et stockag",
+          "CSSBloc IntégrerCollecte de donsAdresse e-mail professionn",
+          "2 % + 0,25 €2 % + 0,25 €1,7 % + 0,25 €1,5 % + 0,25 €Cartes premium†3 % + 0,25 €3 % ",
+          "3 % + 0,25 €3 % + 0,25 €Paiements ACH†0 %0 %0 %0 %Supplément pour carte internation"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "content_language_header": "fr-FR",
+          "host_is_fr": "fr.squarespace.com",
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 69,
+        "native_currency": "EUR",
+        "observation_id": "obs:7b9902d3d62f30bef0c5cf6c3123e6f2e22910173bf2d254fed796a8bd35f384",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "advanced",
+        "plan_key": "advanced",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Advanced",
+        "plan_summary": "Pour les activités à fort volume qui recherchent les frais les plus bas.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+          "excerpt": "learn more about older plans, visit Legacy billing plans . Billing plans apply to individual sites only. If you have more than one Squarespace site, you’ll pay for each one separately, and each will have its own billing",
+          "source_url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+        },
+        "seat_type": null,
+        "source_url": "https://fr.squarespace.com/tarifs",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "unknown",
+        "tool": "squarespace",
+        "value_fingerprint": "69|EUR|monthly|site|unknown"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "annual_toggle_selected": true,
+        "no_free_plan": true,
+        "trial_14_days": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": true,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": true,
+        "annual_prepaid_proof": false,
+        "monthly": true
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "basic",
+        "plan_name_localized": "Basic",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "core",
+        "plan_name_localized": "Essentiel",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "plus",
+        "plan_name_localized": "Plus",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "advanced",
+        "plan_name_localized": "Advanced",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-20T12:02:32.561Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4"
+      },
+      {
+        "at": "2026-07-20T12:11:18.845Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 4,
+          "claims_extracted": 4,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 2,
+          "doc_claims_extracted": 2,
+          "doc_claims_unchanged": 0,
+          "versions_created": 3
+        },
+        "network_checked": true,
+        "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1"
+      },
+      {
+        "at": "2026-07-20T12:13:59.865Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 4,
+          "claims_unchanged": 4,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 2,
+          "doc_claims_unchanged": 2,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+      },
+      {
+        "at": "2026-07-20T12:20:14.283Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 4,
+          "claims_created": 0,
+          "claims_extracted": 4,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 2,
+          "doc_claims_unchanged": 2,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+      },
+      {
+        "at": "2026-07-20T12:22:28.262Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 4,
+          "claims_created": 0,
+          "claims_extracted": 4,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 2,
+          "doc_claims_unchanged": 2,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+      },
+      {
+        "at": "2026-07-20T12:23:45.353Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 4,
+          "claims_unchanged": 4,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 2,
+          "doc_claims_unchanged": 2,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:11:18.845Z",
+            "adapter": "squarespace",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": "fr-FR",
+              "currency_symbols_seen": [
+                "€"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://fr.squarespace.com/tarifs",
+              "html_lang_attr": "fr",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": [
+                "/mois",
+                "abonnement annuel",
+                "€",
+                "forfait"
+              ]
+            },
+            "capture_id": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+            "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "content_language_header": "fr-FR",
+              "host_is_fr": "fr.squarespace.com",
+              "html_lang_attr": "fr"
+            },
+            "locale_proven": true,
+            "market_context": "reference_fr",
+            "market_context_candidate": null,
+            "market_context_source": "proven",
+            "observed_locale": "fr-FR",
+            "observed_market": "FR",
+            "rendered_by": "browser",
+            "text_len": 26261,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-20T12:20:14.283Z",
+            "adapter": "squarespace",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": "fr-FR",
+              "currency_symbols_seen": [
+                "€"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://fr.squarespace.com/tarifs",
+              "html_lang_attr": "fr",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": [
+                "/mois",
+                "abonnement annuel",
+                "€",
+                "forfait"
+              ]
+            },
+            "capture_id": "cap:6b7a7a78545c7782e9fb28d27b7ed6ec68018b276335e553cea597e1c3eebea4",
+            "content_hash": "sha256:3f662d74ee25678f9bb89e4dc4513cc4029e760186b0636222d0b217f8da6110",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "content_language_header": "fr-FR",
+              "host_is_fr": "fr.squarespace.com",
+              "html_lang_attr": "fr"
+            },
+            "locale_proven": true,
+            "market_context": "reference_fr",
+            "market_context_candidate": null,
+            "market_context_source": "proven",
+            "observed_locale": "fr-FR",
+            "observed_market": "FR",
+            "rendered_by": "browser",
+            "text_len": 25562,
+            "version": 2
+          },
+          {
+            "accessed_at": "2026-07-20T12:22:28.262Z",
+            "adapter": "squarespace",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": "fr-FR",
+              "currency_symbols_seen": [
+                "€"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://fr.squarespace.com/tarifs",
+              "html_lang_attr": "fr",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": [
+                "/mois",
+                "abonnement annuel",
+                "€",
+                "forfait"
+              ]
+            },
+            "capture_id": "cap:520aa1a5c15af2ecef51385afe25cd5012030844d0ccdfe3058fc32fbb71f802",
+            "content_hash": "sha256:72639b7e0eb5c0ca7881fcbafde0961fdfb971c90b670fb86f39c974f66df168",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "content_language_header": "fr-FR",
+              "host_is_fr": "fr.squarespace.com",
+              "html_lang_attr": "fr"
+            },
+            "locale_proven": true,
+            "market_context": "reference_fr",
+            "market_context_candidate": null,
+            "market_context_source": "proven",
+            "observed_locale": "fr-FR",
+            "observed_market": "FR",
+            "rendered_by": "browser",
+            "text_len": 26261,
+            "version": 3
+          }
+        ],
+        "domain": "fr.squarespace.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:45.353Z",
+        "purpose": "pricing",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-20T12:23:45.353Z",
+          "reason": null
+        },
+        "source_id": "src:032f084b2feed6fedc190045754c3f1f569e76e8c9fb28094e5404b0d12f14bd",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://fr.squarespace.com/tarifs"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:11:42.016Z",
+            "capture_id": "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+            "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 46727,
+            "version": 1
+          }
+        ],
+        "domain": "support.squarespace.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:24:08.379Z",
+        "purpose": "billing_commitment",
+        "source_id": "src:8b6c6b308b6e6a20c2c09aefc6afdf6a09454727c0bed7715ca33400ea96864b",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:11:43.119Z",
+            "capture_id": "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2",
+            "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 43146,
+            "version": 1
+          }
+        ],
+        "domain": "support.squarespace.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:24:08.473Z",
+        "purpose": "pricing_unit",
+        "source_id": "src:85eb060ab29dd64e25e66abb3baea5e581ed6805e24aea514be69730088f3d8d",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [
+    "Essai présenté comme gratuit (stocké)",
+    "kind='seat' faux (site)",
+    "20€ stocké → 12€ (FR annuel)"
+  ],
+  "editorial_drafts": {
+    "author": "ToolTrim research pilot",
+    "content_version": 1,
+    "en": {
+      "cons": [
+        "Less flexible than development-oriented tools",
+        "Transaction fees vary by plan",
+        "Each website has its own subscription"
+      ],
+      "long_description": "Squarespace combines website creation, hosting, content, and commerce features in a guided interface. It suits freelancers and small organizations that want a professional presence without assembling several services. Plan choice mainly depends on contributor count, customization needs, and selling-related fees.",
+      "pros": [
+        "All-in-one environment",
+        "Guided publishing workflow",
+        "Commerce features across several tiers"
+      ],
+      "short_description": "An all-in-one website builder for publishing, selling, and managing an online presence.",
+      "use_cases": [
+        "Create a professional business website",
+        "Publish a portfolio or blog",
+        "Sell products, services, or content"
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need fine-grained technical control",
+          "You run several sites and may underestimate per-site costs"
+        ],
+        "keepIf": [
+          "You want a professional site without managing multiple services",
+          "You prefer a guided setup"
+        ],
+        "threshold": "Worth it for small organizations that value operational simplicity over maximum technical freedom."
+      }
+    },
+    "facts_basis": [
+      "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e"
+    ],
+    "fr": {
+      "cons": [
+        "Personnalisation plus contrainte qu’un outil orienté développement",
+        "Les frais de transaction varient selon l’offre",
+        "Chaque site possède son propre abonnement"
+      ],
+      "long_description": "Squarespace réunit création de site, hébergement, contenus et fonctions commerciales dans une interface guidée. Il convient aux indépendants et petites structures qui veulent lancer une présence professionnelle sans assembler plusieurs services. Le choix d’offre dépend surtout du nombre de contributeurs, du niveau de personnalisation et des frais liés à la vente.",
+      "pros": [
+        "Environnement tout-en-un",
+        "Mise en ligne guidée",
+        "Fonctions commerciales accessibles sur plusieurs offres"
+      ],
+      "short_description": "Un constructeur de sites tout-en-un pour publier, vendre et gérer une présence en ligne.",
+      "use_cases": [
+        "Créer un site vitrine professionnel",
+        "Publier un portfolio ou un blog",
+        "Vendre des produits, services ou contenus"
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Tu veux un contrôle technique très fin",
+          "Tu exploites plusieurs sites et sous-estimes le coût par site"
+        ],
+        "keepIf": [
+          "Tu veux un site professionnel sans gérer plusieurs services",
+          "Tu privilégies une expérience guidée"
+        ],
+        "threshold": "Pertinent pour une petite structure qui privilégie la simplicité d’exploitation à la liberté technique maximale."
+      }
+    },
+    "generated_on": "2026-07-20",
+    "pricing_facts_policy": "Les montants, devises et engagements restent exclusivement dans collector.observations.",
+    "status": "draft"
+  },
   "identity": {
+    "accessedOn": "2026-07-16",
+    "accessible": true,
+    "docsUrl": "https://support.squarespace.com/",
+    "note": "Recollecte en contexte FR/fr-FR (navigateur). Montants exposés en mode 'Paiement annuel'. Noms localisés: Basic/Essentiel/Plus/Advanced (FR 'Essentiel' = EN 'Core').",
     "officialName": "Squarespace",
     "officialUrl": "https://www.squarespace.com/",
     "pricingUrl": "https://fr.squarespace.com/tarifs",
-    "docsUrl": "https://support.squarespace.com/",
-    "accessedOn": "2026-07-16",
-    "sourceTier": 1,
-    "accessible": true,
     "renderedBy": "browser",
-    "note": "Recollecte en contexte FR/fr-FR (navigateur). Montants exposés en mode 'Paiement annuel'. Noms localisés: Basic/Essentiel/Plus/Advanced (FR 'Essentiel' = EN 'Core')."
+    "sourceTier": 1
   },
+  "mode": "RESEARCH_no_apply",
   "pricing": {
     "captureNote": "Contexte observé: marché FR, locale fr-FR. EUR. Toggle par défaut 'Paiement annuel' → prix = équivalent mensuel d'un abonnement annuel (billing_commitment=annual_prepaid). Taxe non explicitée sur la page → tax_inclusion=unknown. Par site.",
     "freePlanGenuine": false,
-    "trialDays": 14,
+    "normalized_eur": {
+      "normalized_monthly_eur": null,
+      "note": "EUR natif FR; équivalent mensuel en engagement MENSUEL non capturé (toggle annuel)."
+    },
     "plans_native": [
-      { "plan_key": "basic",    "name_fr": "Basic",     "seat_type": null, "native_amount": 12, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16", "key_limits": "2 contributeurs" },
-      { "plan_key": "core",     "name_fr": "Essentiel", "seat_type": null, "native_amount": 18, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16", "key_limits": "contributeurs illimités" },
-      { "plan_key": "plus",     "name_fr": "Plus",      "seat_type": null, "native_amount": 32, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16" },
-      { "plan_key": "advanced", "name_fr": "Advanced",  "seat_type": null, "native_amount": 69, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16" }
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_period": "monthly",
+        "key_limits": "2 contributeurs",
+        "name_fr": "Basic",
+        "native_amount": 12,
+        "native_currency": "EUR",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-16",
+        "plan_key": "basic",
+        "pricing_unit": "site",
+        "seat_type": null,
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_period": "monthly",
+        "key_limits": "contributeurs illimités",
+        "name_fr": "Essentiel",
+        "native_amount": 18,
+        "native_currency": "EUR",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-16",
+        "plan_key": "core",
+        "pricing_unit": "site",
+        "seat_type": null,
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_period": "monthly",
+        "name_fr": "Plus",
+        "native_amount": 32,
+        "native_currency": "EUR",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-16",
+        "plan_key": "plus",
+        "pricing_unit": "site",
+        "seat_type": null,
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_period": "monthly",
+        "name_fr": "Advanced",
+        "native_amount": 69,
+        "native_currency": "EUR",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-16",
+        "plan_key": "advanced",
+        "pricing_unit": "site",
+        "seat_type": null,
+        "tax_inclusion": "unknown"
+      }
     ],
-    "normalized_eur": { "normalized_monthly_eur": null, "note": "EUR natif FR; équivalent mensuel en engagement MENSUEL non capturé (toggle annuel)." }
+    "trialDays": 14
   },
-  "claims": [
-    {
-      "key": "identity.plan_names",
-      "value_native": { "plan_keys": ["basic","core","plus","advanced"], "names_fr": ["Basic","Essentiel","Plus","Advanced"] },
-      "sourceUrl": "https://fr.squarespace.com/tarifs",
-      "sourceTier": 1, "accessedOn": "2026-07-16", "observed_market": "FR", "observed_locale": "fr-FR",
-      "evidence": "Page tarifs FR: Basic/Essentiel/Plus/Advanced. (Support officiel EN: Basic/Core/Plus/Advanced.)",
-      "confidence": "high", "volatility": "medium",
-      "conflict": "Stocké 'Entry paid plan' générique + kind='seat' (faux, site).",
-      "proposal_not_applied": "plan_key stable + nom localisé; unité site; plan d'entrée = basic."
-    },
-    {
-      "key": "pricing.free_plan_vs_trial",
-      "value_native": { "genuine_free_plan": false, "free_trial": true, "trial_length_days": 14 },
-      "sourceUrl": "https://fr.squarespace.com/tarifs",
-      "sourceTier": 1, "accessedOn": "2026-07-16", "observed_market": "FR", "observed_locale": "fr-FR",
-      "evidence": "'14 jours d'essai gratuit'. Support officiel: aucun plan gratuit.",
-      "confidence": "high", "volatility": "low",
-      "conflict": "Stocké pricing.free suggère un plan gratuit → faux.",
-      "proposal_not_applied": "free_core_available=false, trial_days=14; ne jamais présenter l'essai comme plan gratuit."
-    },
-    {
-      "key": "pricing.entry_paid_plan",
-      "value_native": { "plan_key": "basic", "amount": 12, "currency": "EUR", "period": "monthly", "commitment": "annual_prepaid", "unit": "site", "tax": "unknown" },
-      "sourceUrl": "https://fr.squarespace.com/tarifs",
-      "sourceTier": 1, "accessedOn": "2026-07-16", "observed_market": "FR", "observed_locale": "fr-FR",
-      "evidence": "Basic 12 €/mois (mode paiement annuel).",
-      "confidence": "high", "volatility": "high",
-      "conflict": "Stocké 20€ 'seat' → montant et unité incorrects (12€/site en FR annuel).",
-      "proposal_not_applied": "Marché FR: Basic 12€/mois (annuel) comme comparaison FR; conserver observations d'autres marchés."
-    }
-  ],
-  "unknowns": ["Prix en engagement MENSUEL (toggle annuel par défaut)", "Inclusion TVA (non explicitée)", "Montants sur d'autres marchés"],
-  "conflicts_summary": ["Essai présenté comme gratuit (stocké)", "kind='seat' faux (site)", "20€ stocké → 12€ (FR annuel)"]
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "schemaVersion": 1,
+  "slug": "squarespace",
+  "status": "needs_review",
+  "unknowns": [
+    "Prix en engagement MENSUEL (toggle annuel par défaut)",
+    "Inclusion TVA (non explicitée)",
+    "Montants sur d'autres marchés"
+  ]
 }

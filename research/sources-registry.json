@@ -37,10 +37,58 @@
       "verified_on": "2026-07-17"
     },
     "framer": {
+      "adapter": "framer",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "is_official": true,
+          "notes": "Support officiel Framer : une souscription annuelle est facturée d'avance pour l'année complète.",
+          "proof_pattern": "Billed upfront for the full year|Annual subscriptions are billed upfront for the entire year",
+          "purpose": "billing_commitment",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://www.framer.com/help/articles/subscriptions-and-charges/",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "is_official": true,
+          "notes": "Support officiel Framer : les offres payantes sont explicitement des Site plans servant à construire et publier un site.",
+          "proof_pattern": "Site plans include the essential tools and features you need to build and publish a professional website",
+          "purpose": "pricing_unit",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://www.framer.com/help/articles/site-plans-explained/",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "La grille officielle affiche un plan Free à 0 USD ; le fait est porté comme claim, sans fabriquer de périodicité.",
+          "proof_pattern": "Free Try for free \\$0|Start for Free",
+          "purpose": "free_plan",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.framer.com/pricing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        }
+      ],
       "is_official": true,
       "market_context_declared": "global_usd_fallback",
       "market_context_justification": "Grille affichée en $ sur la page par défaut, aucun signal de locale. Décision humaine : fallback mondial USD.",
       "notes": "Grille Free/Basic/Pro/Enterprise en USD.",
+      "plan_key_mapping": {
+        "Basic": "basic",
+        "Enterprise": "enterprise",
+        "Free": "free",
+        "Pro": "pro"
+      },
       "pricing_url": "https://www.framer.com/pricing/",
       "renderer_hint": "auto",
       "source_tier": 1,
@@ -49,9 +97,44 @@
       "verified_on": "2026-07-16"
     },
     "squarespace": {
-      "adapter": null,
+      "adapter": "squarespace",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "is_official": true,
+          "notes": "Support officiel Squarespace : le terme annuel est payé d'avance pour une année de service.",
+          "proof_pattern": "Annual - Pay in advance for a year of service",
+          "purpose": "billing_commitment",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "is_official": true,
+          "notes": "Support officiel Squarespace : chaque site dispose de son propre forfait et est payé séparément.",
+          "proof_pattern": "Billing plans apply to individual sites only|pay for each one separately",
+          "purpose": "pricing_unit",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        }
+      ],
       "is_official": true,
       "notes": "Hôte fr.* => locale fr-FR prouvée par l'hôte. Montants rendus en JS (toggle Paiement annuel/mensuel).",
+      "plan_key_mapping": {
+        "Advanced": "advanced",
+        "Avancé": "advanced",
+        "Basic": "basic",
+        "Essentiel": "core",
+        "Plus": "plus"
+      },
       "pricing_url": "https://fr.squarespace.com/tarifs",
       "renderer_hint": "browser",
       "source_tier": 1,
@@ -60,10 +143,57 @@
       "verified_on": "2026-07-16"
     },
     "webflow": {
+      "adapter": "webflow",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "is_official": true,
+          "notes": "Support officiel Webflow : le tarif annuel est payé d'avance pour une année complète.",
+          "proof_pattern": "pay upfront for a full year",
+          "purpose": "billing_commitment",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "is_official": true,
+          "notes": "Support officiel Webflow : chaque site à héberger sur domaine personnalisé requiert son propre Site plan.",
+          "proof_pattern": "each site you want to host with Webflow on a custom domain needs its own Site plan|A Site plan is tied to an individual site",
+          "purpose": "pricing_unit",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "Support officiel Webflow : Starter est explicitement le plan gratuit par défaut.",
+          "proof_pattern": "Starter Site plan \\(free\\)|free Starter Site plan",
+          "purpose": "free_plan",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        }
+      ],
       "is_official": true,
       "market_context_declared": "global_usd_fallback",
       "market_context_justification": "Site plans affichés en USD, marché non détecté (fetch statique en échec). Décision humaine : fallback mondial USD, observed_market/locale nuls.",
       "notes": "Le fetch statique échoue sur `Parse Error: Header overflow` (limite de l'outil, pas un blocage). Navigateur requis. Statut HTTP non constaté en statique.",
+      "plan_key_mapping": {
+        "Basic": "basic",
+        "Premium": "premium",
+        "Starter": "starter"
+      },
       "pricing_url": "https://webflow.com/pricing",
       "renderer_hint": "browser",
       "source_tier": 1,

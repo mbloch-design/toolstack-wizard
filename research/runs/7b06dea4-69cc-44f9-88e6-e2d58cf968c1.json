@@ -1,0 +1,161 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-20T12:11:18.845Z",
+      "attestation_id": "sha256:ed0daf8d08c536629eda92e4bbf31f09c17aaf93f611086a6347acbb4f72b7ff",
+      "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+      "content_language": "fr-FR",
+      "currency_symbols_seen": [
+        "€"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://fr.squarespace.com/tarifs",
+      "html_lang": "fr",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1",
+      "schema": "context_attestation/1",
+      "slug": "squarespace",
+      "source_url": "https://fr.squarespace.com/tarifs",
+      "timezone": "Europe/Paris",
+      "visible_markers": [
+        "/mois",
+        "abonnement annuel",
+        "€",
+        "forfait"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "squarespace",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang_attr": "fr",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+      "http_status": 200,
+      "market_context": "reference_fr",
+      "market_context_candidate": null,
+      "market_context_source": "proven",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "squarespace",
+      "url": "https://fr.squarespace.com/tarifs"
+    },
+    {
+      "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "static",
+      "slug": "squarespace",
+      "url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+    },
+    {
+      "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "static",
+      "slug": "squarespace",
+      "url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+    }
+  ],
+  "claims_created": 4,
+  "collector_version": "0.3.3.1",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=4 claims_created=4 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=3 attestations_created=1 approved=0 | doc_claims: extracted=2 created=2 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-20T12:11:45.975Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 4,
+    "claims_extracted": 4,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 2,
+    "doc_claims_extracted": 2,
+    "doc_claims_unchanged": 0,
+    "versions_created": 3
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "squarespace"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 4,
+        "claims_extracted": 4,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 2,
+        "doc_claims_extracted": 2,
+        "doc_claims_unchanged": 0,
+        "versions_created": 3
+      },
+      "networkChecked": true,
+      "observations": 4,
+      "slug": "squarespace",
+      "url": "https://fr.squarespace.com/tarifs",
+      "versionsCreated": 3
+    }
+  ],
+  "review_status": "open",
+  "run_id": "7b06dea4-69cc-44f9-88e6-e2d58cf968c1",
+  "started_at": "2026-07-20T12:11:18.843Z",
+  "valid": true
+}

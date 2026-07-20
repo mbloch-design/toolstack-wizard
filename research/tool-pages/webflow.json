@@ -1,142 +1,1100 @@
 {
-  "schemaVersion": 1,
-  "slug": "webflow",
-  "researchedOn": "2026-07-16",
-  "researcher": "Claude Code",
-  "status": "needs_review",
-  "mode": "RESEARCH_no_apply",
-  "identity": {
-    "officialName": "Webflow",
-    "officialUrl": "https://webflow.com/",
-    "pricingUrl": "https://webflow.com/pricing",
-    "docsUrl": "https://university.webflow.com/",
-    "accessedOn": "2026-07-16",
-    "sourceTier": 1,
-    "accessible": true,
-    "note": "Grille Site plans confirmée sur la page officielle. Fetch statique en échec (header overflow); valeurs établies hors observation directe de marché → marché NON détecté, fallback USD global explicite (pas 'US')."
-  },
-  "pricing": {
-    "captureNote": "Prix par SITE, HORS TAXES. Montants d'abonnement ANNUEL payé intégralement (billed annually). Devise USD = fallback mondial explicite; observed_market NON détecté (null), pas 'US'.",
-    "freePlanGenuine": true,
-    "plans_native": [
-      {
-        "plan_name": "Starter",
-        "native_amount": 0,
-        "native_currency": "USD",
-        "billing_period": "monthly",
-        "billing_commitment": "n/a",
-        "pricing_unit": "site",
-        "tax_inclusion": "ht",
-        "observed_market": null,
-        "observed_locale": null,
-        "observed_on": "2026-07-16",
-        "market_context": "global_usd_fallback"
-      },
-      {
-        "plan_name": "Basic",
-        "native_amount": 15,
-        "native_currency": "USD",
-        "billing_period": "monthly",
-        "billing_commitment": "annual_prepaid",
-        "pricing_unit": "site",
-        "tax_inclusion": "ht",
-        "observed_market": null,
-        "observed_locale": null,
-        "observed_on": "2026-07-16",
-        "market_context": "global_usd_fallback"
-      },
-      {
-        "plan_name": "Premium",
-        "native_amount": 25,
-        "native_currency": "USD",
-        "billing_period": "monthly",
-        "billing_commitment": "annual_prepaid",
-        "pricing_unit": "site",
-        "tax_inclusion": "ht",
-        "observed_market": null,
-        "observed_locale": null,
-        "observed_on": "2026-07-16",
-        "market_context": "global_usd_fallback"
-      }
-    ],
-    "normalized_eur": {
-      "normalized_monthly_eur": null,
-      "fx_rate": null,
-      "fx_rate_date": null,
-      "normalization_method": "NON CALCULÉ — dériver du natif USD; non appliqué"
-    }
-  },
   "claims": [
     {
-      "key": "pricing.entry_paid_plan",
-      "value_native": {
-        "plan_name": "Basic",
-        "amount": 15,
-        "currency": "USD",
-        "period": "monthly",
-        "commitment": "annual_prepaid",
-        "unit": "site",
-        "tax": "ht"
-      },
-      "sourceUrl": "https://webflow.com/pricing",
-      "sourceTier": 1,
       "accessedOn": "2026-07-16",
-      "observed_market": null,
-      "observed_locale": null,
-      "evidence": "Site plans: Starter gratuit, Basic 15$/mois facturé annuellement, Premium 25$/mois facturé annuellement; par site, HT.",
       "confidence": "high",
-      "volatility": "high",
       "conflict": "Stocké: JSON compare 12.12 EUR et Supabase default_monthly_price 13.14, tous deux dérivés d'un ancien '14 USD'. Le tarif d'entrée observé est 15 USD/mois (annuel) → montant stocké périmé; pricing.paid 'USD 14/month' obsolète.",
+      "evidence": "Site plans: Starter gratuit, Basic 15$/mois facturé annuellement, Premium 25$/mois facturé annuellement; par site, HT.",
+      "key": "pricing.entry_paid_plan",
+      "market_context": "global_usd_fallback",
+      "observed_locale": null,
+      "observed_market": null,
       "proposal_not_applied": "Plan de comparaison = Basic 15 USD/mois en engagement annuel; enregistrer billing_commitment=annual_prepaid; recalculer normalized_monthly_eur séparément; conserver l'ancienne valeur en conflit.",
-      "market_context": "global_usd_fallback"
-    },
-    {
-      "key": "pricing.premium_plan",
+      "sourceTier": 1,
+      "sourceUrl": "https://webflow.com/pricing",
       "value_native": {
-        "plan_name": "Premium",
-        "amount": 25,
+        "amount": 15,
+        "commitment": "annual_prepaid",
         "currency": "USD",
         "period": "monthly",
-        "commitment": "annual_prepaid",
-        "unit": "site",
-        "tax": "ht"
+        "plan_name": "Basic",
+        "tax": "ht",
+        "unit": "site"
       },
-      "sourceUrl": "https://webflow.com/pricing",
-      "sourceTier": 1,
-      "accessedOn": "2026-07-16",
-      "observed_market": null,
-      "observed_locale": null,
-      "evidence": "Premium 25$/mois facturé annuellement.",
-      "confidence": "high",
-      "volatility": "high",
-      "conflict": "Aucun équivalent explicite dans le stocké.",
-      "proposal_not_applied": "Ajouter le plan Premium au contexte pricing.",
-      "market_context": "global_usd_fallback"
+      "volatility": "high"
     },
     {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Aucun équivalent explicite dans le stocké.",
+      "evidence": "Premium 25$/mois facturé annuellement.",
+      "key": "pricing.premium_plan",
+      "market_context": "global_usd_fallback",
+      "observed_locale": null,
+      "observed_market": null,
+      "proposal_not_applied": "Ajouter le plan Premium au contexte pricing.",
+      "sourceTier": 1,
+      "sourceUrl": "https://webflow.com/pricing",
+      "value_native": {
+        "amount": 25,
+        "commitment": "annual_prepaid",
+        "currency": "USD",
+        "period": "monthly",
+        "plan_name": "Premium",
+        "tax": "ht",
+        "unit": "site"
+      },
+      "volatility": "high"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Cohérent avec le stocké (free plan présent).",
+      "evidence": "Plan Starter gratuit (Site plans).",
       "key": "pricing.free_plan_exists",
+      "market_context": "global_usd_fallback",
+      "proposal_not_applied": "Conserver; ne pas présenter comme essai.",
+      "sourceTier": 1,
+      "sourceUrl": "https://webflow.com/pricing",
       "value_native": {
         "free": true,
         "plan_name": "Starter"
       },
-      "sourceUrl": "https://webflow.com/pricing",
-      "sourceTier": 1,
-      "accessedOn": "2026-07-16",
-      "evidence": "Plan Starter gratuit (Site plans).",
-      "confidence": "high",
-      "volatility": "medium",
-      "conflict": "Cohérent avec le stocké (free plan présent).",
-      "proposal_not_applied": "Conserver; ne pas présenter comme essai.",
-      "market_context": "global_usd_fallback"
+      "volatility": "medium"
     }
   ],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "basic",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "premium",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:f79d5a0bf93db85e73bfee4414e1dbb8942dbebaaeaf663e7a69a23d69bd3b14",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "e Billed monthly or Billed yearly — yearly pricing lets you pay upfront for a full year at a discounted rate Choose the Site plan you want (Optional) Add related add-ons to the plan (e.g., more bandwidth) Click Continue",
+        "evidence_captures": [
+          "cap:f79d5a0bf93db85e73bfee4414e1dbb8942dbebaaeaf663e7a69a23d69bd3b14"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "pay upfront for a full year",
+        "sourceTier": 1,
+        "source_id": "src:21beeeffa1bb158b8fcdbb7d28e1271f344814761f097d8d43e167217b9e1cb5",
+        "source_url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502",
+        "claim_id": "clm:d99be428cde0151cc2e3963dce71d263c2f4cc9cfc937cc0a6d8bd417db4aeb7",
+        "confidence": "high",
+        "evidence": "te plans and choose a plan according to your hosting needs. A Site plan is tied to an individual site, allowing you to publish it to a custom domain and unlock site-specific features like CMS collections, custom code, an",
+        "evidence_captures": [
+          "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "each site you want to host with Webflow on a custom domain needs its own Site plan|A Site plan is tied to an individual site",
+        "sourceTier": 1,
+        "source_id": "src:58c5b47e5fbd8356219e4ff58e9233cd4151d22a6281fd2de039824cb48a4712",
+        "source_url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan",
+        "status": "observed",
+        "value_native": "site",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "r the Ecommerce site tab Scroll down below the plan options Starter Site plan (free) When you create a site, you'll start out with the free Starter Site plan by default. The free Starter Site plan allows your site up to",
+        "evidence_captures": [
+          "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Starter Site plan \\(free\\)|free Starter Site plan",
+        "sourceTier": 1,
+        "source_id": "src:58c5b47e5fbd8356219e4ff58e9233cd4151d22a6281fd2de039824cb48a4712",
+        "source_url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [
+      {
+        "business_key": "webflow|basic|·|global_usd_fallback|annual_prepaid",
+        "kind": "metadata_enrichment",
+        "observation_ids": [
+          "obs:6e57e5dcb3fb7f80ba1657d06576d0342583bb5c4442c060fe1731d761152f83",
+          "obs:52105d692d923202a3f2b2493f152067639e1d10417f2fff8a136b7156409844"
+        ],
+        "opened_at": "2026-07-20T12:15:24.943Z",
+        "resolution": "observation complétée par une preuve documentaire ; faits économiques inchangés",
+        "resolved_at": "2026-07-20T12:17:27.704Z",
+        "status": "resolved"
+      },
+      {
+        "business_key": "webflow|premium|·|global_usd_fallback|annual_prepaid",
+        "kind": "metadata_enrichment",
+        "observation_ids": [
+          "obs:8ba34b595c7946e69c0fa7d2b24b4d165620d5f65aac7151159320d853b8d705",
+          "obs:b21c03f813435d5eedfa5a66ab952bd7dc9d0e2ccae6fd7dda516806998f2f82"
+        ],
+        "opened_at": "2026-07-20T12:15:24.943Z",
+        "resolution": "observation complétée par une preuve documentaire ; faits économiques inchangés",
+        "resolved_at": "2026-07-20T12:17:27.704Z",
+        "status": "resolved"
+      }
+    ],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-20T12:02:22.688Z",
+        "attestation_id": "sha256:7e2fc3d8a0a67a4eab21c0b261ccbd9ee2cd8f3ab99207428cab5424a18033fc",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4",
+        "schema": "context_attestation/1",
+        "slug": "webflow",
+        "source_url": "https://webflow.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:13:37.404Z",
+        "attestation_id": "sha256:bb82fd6aaf0f92b479323063cc41fa095ab0c90d4767947580e3c74b36dc4258",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646",
+        "schema": "context_attestation/1",
+        "slug": "webflow",
+        "source_url": "https://webflow.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:15:24.943Z",
+        "attestation_id": "sha256:921306cb096503b1287e82e7f7148fa84f48af66c0280e14ae9aec55ca765bd9",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "f89af14d-52d0-414f-9025-9f91ea8fc83d",
+        "schema": "context_attestation/1",
+        "slug": "webflow",
+        "source_url": "https://webflow.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:19:31.212Z",
+        "attestation_id": "sha256:2935c3f13b54ee5cde9404ef5c4dae015a42c217c8e638d7851324dbb079580a",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3",
+        "schema": "context_attestation/1",
+        "slug": "webflow",
+        "source_url": "https://webflow.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:21:46.511Z",
+        "attestation_id": "sha256:41ecd608a487f9b88ea7b635fcc814f382231027fd30476b5096ab457c901958",
+        "content_hash": "sha256:9e88cbaea383c71c5aa891ceb4fe0bb21a1ecf61e911891aa4160d89921b127b",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+        "schema": "context_attestation/1",
+        "slug": "webflow",
+        "source_url": "https://webflow.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:23:01.734Z",
+        "attestation_id": "sha256:3ae46c76d0145dcb65e8ac4a8f5d7a8cf127d4f79fed4b7951d83d20d77a90bf",
+        "content_hash": "sha256:9e88cbaea383c71c5aa891ceb4fe0bb21a1ecf61e911891aa4160d89921b127b",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a",
+        "schema": "context_attestation/1",
+        "slug": "webflow",
+        "source_url": "https://webflow.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "les plans Platform (Team/Enterprise) sont une famille distincte, exclus des observations Site plans"
+    ],
+    "last_checked_at": "2026-07-20T12:23:01.734Z",
+    "last_context_evidence": {
+      "adapter": "webflow",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-20T12:23:01.734Z",
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "browser",
+      "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": null,
+        "billing_period": "monthly",
+        "business_key": "webflow|basic|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+        "confidence": "medium",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+            "observed_on": "2026-07-20",
+            "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+          }
+        ],
+        "evidence_excerpt": "Basic For simple sites that don't need a CMS. $ 15 /mo billed yearly Add plan Custom domain 300 static pages 10 GB bandwidth Unlimited form submissions Password protection Webflow AI MCP server Webflow Cloud app hosting Free Starter Workspace ",
+        "evidence_selector": "site-plans:Basic",
+        "feature_highlights": [
+          "Custom domain 300 static pages 10 G",
+          "B bandwidth",
+          "Unlimited form submissions",
+          "Password protection",
+          "Webflow AI MC",
+          "P server"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Site plans affichés en USD, marché non détecté (fetch statique en échec). Décision humaine : fallback mondial USD, observed_market/locale nuls."
+        },
+        "native_amount": 15,
+        "native_currency": "USD",
+        "observation_id": "obs:6e57e5dcb3fb7f80ba1657d06576d0342583bb5c4442c060fe1731d761152f83",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "basic",
+        "plan_key": "basic",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Basic",
+        "plan_summary": "Pour les sites simples sans CMS.",
+        "pricing_unit": null,
+        "pricing_unit_evidence": null,
+        "seat_type": null,
+        "source_url": "https://webflow.com/pricing",
+        "status": "superseded_candidate",
+        "tax_evidence": null,
+        "tax_inclusion": "ht",
+        "tool": "webflow",
+        "value_fingerprint": "15|USD|monthly|·|ht"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": null,
+        "billing_period": "monthly",
+        "business_key": "webflow|premium|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+        "confidence": "medium",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+            "observed_on": "2026-07-20",
+            "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+          }
+        ],
+        "evidence_excerpt": "Premium For content-rich sites with robust CMS and traffic needs. New $ 25 /mo billed yearly Add plan Everything in Basic, plus: Webflow CMS 50 GB 100 GB 150 GB 200 GB 300 GB 400 GB 500 GB 750 GB 1 TB 1.5 TB 2 TB 2.5 TB bandwidth Code components Site search Form file upload Well-known files ",
+        "evidence_selector": "site-plans:Premium",
+        "feature_highlights": [
+          "Everything in",
+          "Basic, plus:",
+          "Webflow CM",
+          "S 50 G",
+          "B 100 G",
+          "B 150 G"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Site plans affichés en USD, marché non détecté (fetch statique en échec). Décision humaine : fallback mondial USD, observed_market/locale nuls."
+        },
+        "native_amount": 25,
+        "native_currency": "USD",
+        "observation_id": "obs:8ba34b595c7946e69c0fa7d2b24b4d165620d5f65aac7151159320d853b8d705",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "premium",
+        "plan_key": "premium",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Premium",
+        "plan_summary": "Pour les sites riches en contenu avec CMS et davantage de trafic.",
+        "pricing_unit": null,
+        "pricing_unit_evidence": null,
+        "seat_type": null,
+        "source_url": "https://webflow.com/pricing",
+        "status": "superseded_candidate",
+        "tax_evidence": null,
+        "tax_inclusion": "ht",
+        "tool": "webflow",
+        "value_fingerprint": "25|USD|monthly|·|ht"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:f79d5a0bf93db85e73bfee4414e1dbb8942dbebaaeaf663e7a69a23d69bd3b14",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:406b0337389433ec408b00941acd01c9d6645f780ed6c4bc92a72c3639d4509b",
+          "excerpt": "e Billed monthly or Billed yearly — yearly pricing lets you pay upfront for a full year at a discounted rate Choose the Site plan you want (Optional) Add related add-ons to the plan (e.g., more bandwidth) Click Continue",
+          "source_url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan"
+        },
+        "billing_period": "monthly",
+        "business_key": "webflow|basic|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+        "confidence": "medium",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+            "observed_on": "2026-07-20",
+            "run_id": "f89af14d-52d0-414f-9025-9f91ea8fc83d"
+          },
+          {
+            "capture_id": "cap:f25eae13b00f7bd5809f51199cd1e80079e9575346a45fb702c53e926289f3e6",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "Basic For simple sites that don't need a CMS. $ 15 /mo billed yearly Add plan Custom domain 300 static pages 10 GB bandwidth Unlimited form submissions Password protection Webflow AI MCP server Webflow Cloud app hosting Free Starter Workspace ",
+        "evidence_selector": "site-plans:Basic",
+        "feature_highlights": [
+          "Custom domain 300 static pages 10 G",
+          "B bandwidth",
+          "Unlimited form submissions",
+          "Password protection",
+          "Webflow AI MC",
+          "P server"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Site plans affichés en USD, marché non détecté (fetch statique en échec). Décision humaine : fallback mondial USD, observed_market/locale nuls."
+        },
+        "native_amount": 15,
+        "native_currency": "USD",
+        "observation_id": "obs:52105d692d923202a3f2b2493f152067639e1d10417f2fff8a136b7156409844",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "basic",
+        "plan_key": "basic",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Basic",
+        "plan_summary": "Pour les sites simples sans CMS.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+          "excerpt": "te plans and choose a plan according to your hosting needs. A Site plan is tied to an individual site, allowing you to publish it to a custom domain and unlock site-specific features like CMS collections, custom code, an",
+          "source_url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+        },
+        "seat_type": null,
+        "source_url": "https://webflow.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "ht",
+        "tool": "webflow",
+        "value_fingerprint": "15|USD|monthly|site|ht"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:f79d5a0bf93db85e73bfee4414e1dbb8942dbebaaeaf663e7a69a23d69bd3b14",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:406b0337389433ec408b00941acd01c9d6645f780ed6c4bc92a72c3639d4509b",
+          "excerpt": "e Billed monthly or Billed yearly — yearly pricing lets you pay upfront for a full year at a discounted rate Choose the Site plan you want (Optional) Add related add-ons to the plan (e.g., more bandwidth) Click Continue",
+          "source_url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan"
+        },
+        "billing_period": "monthly",
+        "business_key": "webflow|premium|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+        "confidence": "medium",
+        "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+            "observed_on": "2026-07-20",
+            "run_id": "f89af14d-52d0-414f-9025-9f91ea8fc83d"
+          },
+          {
+            "capture_id": "cap:f25eae13b00f7bd5809f51199cd1e80079e9575346a45fb702c53e926289f3e6",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "Premium For content-rich sites with robust CMS and traffic needs. New $ 25 /mo billed yearly Add plan Everything in Basic, plus: Webflow CMS 50 GB 100 GB 150 GB 200 GB 300 GB 400 GB 500 GB 750 GB 1 TB 1.5 TB 2 TB 2.5 TB bandwidth Code components Site search Form file upload Well-known files ",
+        "evidence_selector": "site-plans:Premium",
+        "feature_highlights": [
+          "Everything in",
+          "Basic, plus:",
+          "Webflow CM",
+          "S 50 G",
+          "B 100 G",
+          "B 150 G"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Site plans affichés en USD, marché non détecté (fetch statique en échec). Décision humaine : fallback mondial USD, observed_market/locale nuls."
+        },
+        "native_amount": 25,
+        "native_currency": "USD",
+        "observation_id": "obs:b21c03f813435d5eedfa5a66ab952bd7dc9d0e2ccae6fd7dda516806998f2f82",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "premium",
+        "plan_key": "premium",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Premium",
+        "plan_summary": "Pour les sites riches en contenu avec CMS et davantage de trafic.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+          "excerpt": "te plans and choose a plan according to your hosting needs. A Site plan is tied to an individual site, allowing you to publish it to a custom domain and unlock site-specific features like CMS collections, custom code, an",
+          "source_url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+        },
+        "seat_type": null,
+        "source_url": "https://webflow.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "ht",
+        "tool": "webflow",
+        "value_fingerprint": "25|USD|monthly|site|ht"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "currency_unit_tax_proof": true,
+        "free_plan_proven": true,
+        "platform_plans_excluded": true,
+        "site_plan_section_found": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": true,
+      "pricing_unit": "site",
+      "seat_type": "full",
+      "signals_found": {
+        "annual_billed_weak": true,
+        "annual_prepaid_proof": false,
+        "monthly": true
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "basic",
+        "plan_name_localized": "Basic",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "premium",
+        "plan_name_localized": "Premium",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-20T12:02:22.688Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4"
+      },
+      {
+        "at": "2026-07-20T12:13:37.404Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+      },
+      {
+        "at": "2026-07-20T12:15:24.943Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 2,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "f89af14d-52d0-414f-9025-9f91ea8fc83d"
+      },
+      {
+        "at": "2026-07-20T12:17:27.704Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": false,
+        "run_id": "16439eb0-78e6-4e23-9fa4-8fcd087cc472"
+      },
+      {
+        "at": "2026-07-20T12:19:31.212Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 2,
+          "claims_unchanged": 2,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 3,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+      },
+      {
+        "at": "2026-07-20T12:21:46.511Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 2,
+          "claims_created": 0,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 3,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+      },
+      {
+        "at": "2026-07-20T12:23:01.734Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 2,
+          "claims_unchanged": 2,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 3,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:02:22.688Z",
+            "adapter": null,
+            "adapter_version": null,
+            "browser_context": {
+              "content_language_header": null,
+              "currency_symbols_seen": [
+                "$"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://webflow.com/pricing",
+              "html_lang_attr": "en",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": []
+            },
+            "capture_id": "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6",
+            "content_hash": "sha256:b6e90fb04522c183713920daab8173840c41c52c4541755d312d8474daccaf9c",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "market_context_candidate": null,
+            "market_context_source": null,
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "browser",
+            "text_len": 59017,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-20T12:21:46.511Z",
+            "adapter": "webflow",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": null,
+              "currency_symbols_seen": [
+                "$"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://webflow.com/pricing",
+              "html_lang_attr": "en",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": []
+            },
+            "capture_id": "cap:f25eae13b00f7bd5809f51199cd1e80079e9575346a45fb702c53e926289f3e6",
+            "content_hash": "sha256:9e88cbaea383c71c5aa891ceb4fe0bb21a1ecf61e911891aa4160d89921b127b",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "browser",
+            "text_len": 59017,
+            "version": 2
+          }
+        ],
+        "domain": "webflow.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:01.734Z",
+        "purpose": "pricing",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-20T12:23:01.734Z",
+          "reason": null
+        },
+        "source_id": "src:73a5891f72b7ef433f354a36785f7154e7bcb8e32ae179a671b741f6e7e9388c",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://webflow.com/pricing"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:15:35.037Z",
+            "capture_id": "cap:f79d5a0bf93db85e73bfee4414e1dbb8942dbebaaeaf663e7a69a23d69bd3b14",
+            "content_hash": "sha256:406b0337389433ec408b00941acd01c9d6645f780ed6c4bc92a72c3639d4509b",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 3414,
+            "version": 1
+          }
+        ],
+        "domain": "help.webflow.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:11.100Z",
+        "purpose": "billing_commitment",
+        "source_id": "src:21beeeffa1bb158b8fcdbb7d28e1271f344814761f097d8d43e167217b9e1cb5",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:15:41.989Z",
+            "capture_id": "cap:b8aea3b5211789ac0a99523b4a12190e58e0a7fea687868289a10e92c11a7502",
+            "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 5797,
+            "version": 1
+          }
+        ],
+        "domain": "help.webflow.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:24.143Z",
+        "purpose": "free_plan",
+        "source_id": "src:58c5b47e5fbd8356219e4ff58e9233cd4151d22a6281fd2de039824cb48a4712",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [
+    "Entrée stockée ~14 USD (12.12/13.14 EUR) périmée vs 15 USD observé",
+    "pricing.paid obsolète"
+  ],
+  "editorial_drafts": {
+    "author": "ToolTrim research pilot",
+    "content_version": 1,
+    "en": {
+      "cons": [
+        "Steeper learning curve than highly guided builders",
+        "Site and organization pricing are separate",
+        "The non-CMS tier is quickly limiting for editorial sites"
+      ],
+      "long_description": "Webflow combines a precise visual editor, managed hosting, and a CMS. It is best suited to marketing and editorial sites that need more control than a general-purpose builder without requiring teams to maintain a full technical stack. Site plans and team-level plans should remain clearly separated when estimating total cost.",
+      "pros": [
+        "Fine-grained visual layout control",
+        "CMS and hosting in one platform",
+        "A clear upgrade path for content-rich sites"
+      ],
+      "short_description": "A visual website builder focused on design control, CMS, and professional publishing.",
+      "use_cases": [
+        "Build a custom marketing site",
+        "Publish an editorial website with a CMS",
+        "Deliver client sites without managing hosting"
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only need a few pages with minimal setup",
+          "You may overlook the difference between site and team costs"
+        ],
+        "keepIf": [
+          "You need strong design control without maintaining web infrastructure",
+          "Your site needs a structured CMS"
+        ],
+        "threshold": "Worth it when design and CMS control justify the additional learning curve."
+      }
+    },
+    "facts_basis": [
+      "cap:e57f450f1be901ad018f83e57cb308c4fe709f1fc699042d9dfefb822fb492b6"
+    ],
+    "fr": {
+      "cons": [
+        "Courbe d’apprentissage supérieure à un éditeur très guidé",
+        "Tarification séparée entre site et organisation",
+        "Le plan sans CMS devient vite limité pour un site éditorial"
+      ],
+      "long_description": "Webflow combine un éditeur visuel précis, un hébergement géré et un CMS. Il convient surtout aux sites marketing et éditoriaux qui demandent davantage de contrôle qu’un constructeur généraliste, sans imposer de gérer soi-même une pile technique complète. La séparation entre offres de site et offres d’équipe doit toutefois rester claire au moment d’estimer le coût réel.",
+      "pros": [
+        "Contrôle visuel poussé sur la mise en page",
+        "CMS et hébergement réunis",
+        "Montée en gamme possible pour les sites riches en contenu"
+      ],
+      "short_description": "Un constructeur de sites visuel orienté design, CMS et publication professionnelle.",
+      "use_cases": [
+        "Créer un site marketing sur mesure",
+        "Publier un site éditorial avec CMS",
+        "Livrer des sites clients sans gérer l’hébergement"
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Tu veux seulement publier quelques pages avec le minimum de réglages",
+          "Tu risques de confondre coûts du site et coûts de l’équipe"
+        ],
+        "keepIf": [
+          "Tu veux contrôler finement le design sans maintenir une infrastructure web",
+          "Ton site a besoin d’un CMS structuré"
+        ],
+        "threshold": "Pertinent quand la maîtrise du design et du CMS justifie une prise en main plus exigeante."
+      }
+    },
+    "generated_on": "2026-07-20",
+    "pricing_facts_policy": "Les montants, devises et engagements restent exclusivement dans collector.observations.",
+    "status": "draft"
+  },
+  "identity": {
+    "accessedOn": "2026-07-16",
+    "accessible": true,
+    "docsUrl": "https://university.webflow.com/",
+    "note": "Grille Site plans confirmée sur la page officielle. Fetch statique en échec (header overflow); valeurs établies hors observation directe de marché → marché NON détecté, fallback USD global explicite (pas 'US').",
+    "officialName": "Webflow",
+    "officialUrl": "https://webflow.com/",
+    "pricingUrl": "https://webflow.com/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_no_apply",
+  "pricing": {
+    "captureNote": "Prix par SITE, HORS TAXES. Montants d'abonnement ANNUEL payé intégralement (billed annually). Devise USD = fallback mondial explicite; observed_market NON détecté (null), pas 'US'.",
+    "freePlanGenuine": true,
+    "normalized_eur": {
+      "fx_rate": null,
+      "fx_rate_date": null,
+      "normalization_method": "NON CALCULÉ — dériver du natif USD; non appliqué",
+      "normalized_monthly_eur": null
+    },
+    "plans_native": [
+      {
+        "billing_commitment": "n/a",
+        "billing_period": "monthly",
+        "market_context": "global_usd_fallback",
+        "native_amount": 0,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-16",
+        "plan_name": "Starter",
+        "pricing_unit": "site",
+        "tax_inclusion": "ht"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_period": "monthly",
+        "market_context": "global_usd_fallback",
+        "native_amount": 15,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-16",
+        "plan_name": "Basic",
+        "pricing_unit": "site",
+        "tax_inclusion": "ht"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_period": "monthly",
+        "market_context": "global_usd_fallback",
+        "native_amount": 25,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-16",
+        "plan_name": "Premium",
+        "pricing_unit": "site",
+        "tax_inclusion": "ht"
+      }
+    ]
+  },
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "schemaVersion": 1,
+  "slug": "webflow",
+  "status": "needs_review",
   "unknowns": [
     "Équivalent mensuel en engagement MENSUEL (le montant observé est l'annuel).",
     "Plans CMS/Business (au-delà de Basic/Premium) non détaillés cette passe.",
     "Grille EUR régionale non observée."
-  ],
-  "conflicts_summary": [
-    "Entrée stockée ~14 USD (12.12/13.14 EUR) périmée vs 15 USD observé",
-    "pricing.paid obsolète"
   ]
 }

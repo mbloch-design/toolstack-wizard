@@ -1,0 +1,363 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-20T12:21:46.511Z",
+      "attestation_id": "sha256:41ecd608a487f9b88ea7b635fcc814f382231027fd30476b5096ab457c901958",
+      "content_hash": "sha256:9e88cbaea383c71c5aa891ceb4fe0bb21a1ecf61e911891aa4160d89921b127b",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "$"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://webflow.com/pricing",
+      "html_lang": "en",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+      "schema": "context_attestation/1",
+      "slug": "webflow",
+      "source_url": "https://webflow.com/pricing",
+      "timezone": "Europe/Paris",
+      "visible_markers": []
+    },
+    {
+      "accessed_at": "2026-07-20T12:22:16.270Z",
+      "attestation_id": "sha256:4276ba1bc64875f240798413b1d40e78b8549b1b75cbc82b25a846af60db9576",
+      "content_hash": "sha256:a48f407a21edfceb45825eabe62b3078b594ab07f00a7d1f6d42c4e20446b6d6",
+      "content_language": null,
+      "currency_symbols_seen": [],
+      "egress_country": null,
+      "egress_measured_from": null,
+      "egress_source": null,
+      "final_url": "https://www.framer.com/pricing/",
+      "html_lang": null,
+      "http_status": 200,
+      "locale_requested": null,
+      "navigator_language": null,
+      "rendered_by": "static",
+      "resolved_locale": null,
+      "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+      "schema": "context_attestation/1",
+      "slug": "framer",
+      "source_url": "https://www.framer.com/pricing/",
+      "timezone": null,
+      "visible_markers": []
+    },
+    {
+      "accessed_at": "2026-07-20T12:22:28.262Z",
+      "attestation_id": "sha256:0cf6700edd057572085af4a4b8e699cccded1f8b13eb5fcc63bdb26557612e2f",
+      "content_hash": "sha256:72639b7e0eb5c0ca7881fcbafde0961fdfb971c90b670fb86f39c974f66df168",
+      "content_language": "fr-FR",
+      "currency_symbols_seen": [
+        "€"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://fr.squarespace.com/tarifs",
+      "html_lang": "fr",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+      "schema": "context_attestation/1",
+      "slug": "squarespace",
+      "source_url": "https://fr.squarespace.com/tarifs",
+      "timezone": "Europe/Paris",
+      "visible_markers": [
+        "/mois",
+        "abonnement annuel",
+        "€",
+        "forfait"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "webflow",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://webflow.com/pricing",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "content_hash": "sha256:9e88cbaea383c71c5aa891ceb4fe0bb21a1ecf61e911891aa4160d89921b127b",
+      "http_status": 200,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing"
+    },
+    {
+      "content_hash": "sha256:406b0337389433ec408b00941acd01c9d6645f780ed6c4bc92a72c3639d4509b",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://help.webflow.com/hc/en-us/articles/33961220134035-Upgrade-your-Site-plan"
+    },
+    {
+      "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+    },
+    {
+      "content_hash": "sha256:f2b1d3986f4a8e4932b91d9ca6d539b2ab9036eb9d079e357a5bc3ab54beab4e",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "browser",
+      "slug": "webflow",
+      "url": "https://help.webflow.com/hc/en-us/articles/33961232582419-Choose-a-Site-plan"
+    },
+    {
+      "adapter": "framer",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": null,
+      "content_hash": "sha256:a48f407a21edfceb45825eabe62b3078b594ab07f00a7d1f6d42c4e20446b6d6",
+      "http_status": 200,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "mode": "network_forced",
+      "rendered_by": "static",
+      "slug": "framer",
+      "url": "https://www.framer.com/pricing/"
+    },
+    {
+      "content_hash": "sha256:fee5ed4588d1247189dc559579a1e3b043d5e603510d375eda10d5b6d015d483",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "browser",
+      "slug": "framer",
+      "url": "https://www.framer.com/help/articles/subscriptions-and-charges/"
+    },
+    {
+      "content_hash": "sha256:bc93ce6ec7286eff1ad0e463933ab678360c7225ccc3f13068a3370cc8363174",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "static",
+      "slug": "framer",
+      "url": "https://www.framer.com/help/articles/site-plans-explained/"
+    },
+    {
+      "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "static",
+      "slug": "framer",
+      "url": "https://www.framer.com/pricing/"
+    },
+    {
+      "adapter": "squarespace",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": "fr-FR",
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://fr.squarespace.com/tarifs",
+        "html_lang_attr": "fr",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      "content_hash": "sha256:72639b7e0eb5c0ca7881fcbafde0961fdfb971c90b670fb86f39c974f66df168",
+      "http_status": 200,
+      "market_context": "reference_fr",
+      "market_context_candidate": null,
+      "market_context_source": "proven",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "squarespace",
+      "url": "https://fr.squarespace.com/tarifs"
+    },
+    {
+      "content_hash": "sha256:b3e6fe8aed0bcfb22139bcff8627160330956e7be4404d557e2660c2b7c0c890",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "static",
+      "slug": "squarespace",
+      "url": "https://support.squarespace.com/hc/en-us/articles/206536807-Upgrading-to-paid-service"
+    },
+    {
+      "content_hash": "sha256:cd2e48495b8919397dfecb8d48f4d10c1fc22ecf8fa919628041f71d5c118fd5",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "static",
+      "slug": "squarespace",
+      "url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+    }
+  ],
+  "claims_created": 8,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=4 claims_created=0 claims_unchanged=0 claims_confirmed=4 conflicts_opened=0 versions_created=1 attestations_created=1 approved=0 | doc_claims: extracted=2 created=0 unchanged=2",
+  "errors": [],
+  "finished_at": "2026-07-20T12:22:52.921Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 4,
+    "claims_created": 0,
+    "claims_extracted": 4,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 2,
+    "doc_claims_unchanged": 2,
+    "versions_created": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "webflow",
+      "framer",
+      "squarespace"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:9e88cbaea383c71c5aa891ceb4fe0bb21a1ecf61e911891aa4160d89921b127b",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 2,
+        "claims_created": 0,
+        "claims_extracted": 2,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 3,
+        "versions_created": 1
+      },
+      "networkChecked": true,
+      "observations": 2,
+      "slug": "webflow",
+      "url": "https://webflow.com/pricing",
+      "versionsCreated": 1
+    },
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:a48f407a21edfceb45825eabe62b3078b594ab07f00a7d1f6d42c4e20446b6d6",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 2,
+        "claims_created": 0,
+        "claims_extracted": 2,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 3,
+        "versions_created": 1
+      },
+      "networkChecked": true,
+      "observations": 2,
+      "slug": "framer",
+      "url": "https://www.framer.com/pricing/",
+      "versionsCreated": 1
+    },
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:72639b7e0eb5c0ca7881fcbafde0961fdfb971c90b670fb86f39c974f66df168",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 4,
+        "claims_created": 0,
+        "claims_extracted": 4,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 2,
+        "doc_claims_unchanged": 2,
+        "versions_created": 1
+      },
+      "networkChecked": true,
+      "observations": 4,
+      "slug": "squarespace",
+      "url": "https://fr.squarespace.com/tarifs",
+      "versionsCreated": 1
+    }
+  ],
+  "review_status": "open",
+  "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+  "started_at": "2026-07-20T12:21:46.444Z",
+  "valid": true
+}

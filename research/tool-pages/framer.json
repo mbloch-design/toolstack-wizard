@@ -1,71 +1,821 @@
 {
-  "schemaVersion": 1,
-  "slug": "framer",
-  "researchedOn": "2026-07-16",
-  "researcher": "Claude Code",
-  "status": "needs_review",
-  "mode": "RESEARCH_no_apply",
+  "claims": [
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Stocké (JSON+Supabase): pricing_v5.compare_plan_name='Mini', compare_price_monthly_eur=5. Le plan 'Mini' n'existe plus dans la grille observée → valeur périmée.",
+      "evidence": "Grille officielle: Free / Basic 10$ / Pro 30$ / Enterprise. Pas de plan 'Mini'.",
+      "key": "pricing.entry_paid_plan",
+      "proposal_not_applied": "Remplacer plan de comparaison par 'Basic' natif 10 USD/mois; recalculer normalized_monthly_eur séparément; conserver l'ancienne valeur en conflit jusqu'à validation.",
+      "sourceTier": 1,
+      "sourceUrl": "https://www.framer.com/pricing/",
+      "value_native": {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly",
+        "plan_name": "Basic"
+      },
+      "volatility": "high"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Stocké décrit un free plan à '1 page / framer.site uniquement' — limites périmées vs 30 pages observées.",
+      "evidence": "Plan Free à 0$ listé, durable (non essai).",
+      "key": "pricing.free_plan_exists",
+      "proposal_not_applied": "Mettre à jour la description du plan gratuit; ne pas présenter comme essai.",
+      "sourceTier": 1,
+      "sourceUrl": "https://www.framer.com/pricing/",
+      "value_native": {
+        "free": true,
+        "limits": "30 pages, 10 collections, 3 éditeurs",
+        "plan_name": "Free"
+      },
+      "volatility": "medium"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "medium",
+      "conflict": "Stocké mélange EUR (compare 5€) et $ dans pricing.paid. Devise native à figer = USD (sous réserve de la version régionale EUR de Framer).",
+      "evidence": "Montants affichés avec symbole $ (marché US).",
+      "key": "pricing.currency_native",
+      "proposal_not_applied": "Enregistrer native_currency=USD; vérifier s'il existe une grille EUR régionale avant de publier une devise.",
+      "sourceTier": 1,
+      "sourceUrl": "https://www.framer.com/pricing/",
+      "value_native": {
+        "currency": "USD"
+      },
+      "volatility": "low"
+    }
+  ],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "basic",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "pro",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:4ee17a3799d760995758f41c4ec4ef440d50f1664e6e1255283923e56cb324f9",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "billing period and renews automatically every month. Annual Billed upfront for the full year and renews automatically on the subscription anniversary date. Subscriptions continue to renew automatically unless canceled be",
+        "evidence_captures": [
+          "cap:4ee17a3799d760995758f41c4ec4ef440d50f1664e6e1255283923e56cb324f9",
+          "cap:b1f1165c33e0085f1473bf575792cef4fc0449e0880fa215efcf4d233c31284c"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Billed upfront for the full year|Annual subscriptions are billed upfront for the entire year",
+        "sourceTier": 1,
+        "source_id": "src:3e226b924385114828950536ce0f810dce9e505d03b1aabcc4f474d6f3fcb4b6",
+        "source_url": "https://www.framer.com/help/articles/subscriptions-and-charges/",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:cd5e5525d09cf4347b787afd0b19d51cdbd447b1dbdf748187916d2fc6cb5637",
+        "claim_id": "clm:d99be428cde0151cc2e3963dce71d263c2f4cc9cfc937cc0a6d8bd417db4aeb7",
+        "confidence": "high",
+        "evidence": "w. See Why choose Framer for website building? . Site plans Site plans include the essential tools and features you need to build and publish a professional website. All paid plans come with reliable hosting, so you can",
+        "evidence_captures": [
+          "cap:cd5e5525d09cf4347b787afd0b19d51cdbd447b1dbdf748187916d2fc6cb5637"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Site plans include the essential tools and features you need to build and publish a professional website",
+        "sourceTier": 1,
+        "source_id": "src:92c21f2e0a5c2d6ae1e9cb4cabfb1b86cddd7d20bcef7669e39a469d791e1e1a",
+        "source_url": "https://www.framer.com/help/articles/site-plans-explained/",
+        "status": "observed",
+        "value_native": "site",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "e your site Start free, then scale your site Yearly billing Free Try for free $0 500 credits to try Free Framer domain 1 GB bandwidth Design pages Start for Free Basic Creative personal sites $10 per month 1,000 credits",
+        "evidence_captures": [
+          "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Free Try for free \\$0|Start for Free",
+        "sourceTier": 1,
+        "source_id": "src:52a61134b444eae8b6d684d409a7fcd8ed0fcf1e01f25882e50c4c9f3f99cd89",
+        "source_url": "https://www.framer.com/pricing/",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-20T12:02:30.309Z",
+        "attestation_id": "sha256:908a2916f1c0a26f3d0487d3b25da196b9f98a4f5f0f550e29ef533ccac8c150",
+        "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.framer.com/pricing/",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4",
+        "schema": "context_attestation/1",
+        "slug": "framer",
+        "source_url": "https://www.framer.com/pricing/",
+        "timezone": null,
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:13:51.610Z",
+        "attestation_id": "sha256:50cda45023998272164696710d43a4ed5c92d92ec198773e23e1a8f01addfb02",
+        "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.framer.com/pricing/",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646",
+        "schema": "context_attestation/1",
+        "slug": "framer",
+        "source_url": "https://www.framer.com/pricing/",
+        "timezone": null,
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:20:01.506Z",
+        "attestation_id": "sha256:17d403f1cde37105d0189b975c3f9be6e6840faa9502144c1946f14c4406176a",
+        "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.framer.com/pricing/",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3",
+        "schema": "context_attestation/1",
+        "slug": "framer",
+        "source_url": "https://www.framer.com/pricing/",
+        "timezone": null,
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:22:16.270Z",
+        "attestation_id": "sha256:4276ba1bc64875f240798413b1d40e78b8549b1b75cbc82b25a846af60db9576",
+        "content_hash": "sha256:a48f407a21edfceb45825eabe62b3078b594ab07f00a7d1f6d42c4e20446b6d6",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.framer.com/pricing/",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5",
+        "schema": "context_attestation/1",
+        "slug": "framer",
+        "source_url": "https://www.framer.com/pricing/",
+        "timezone": null,
+        "visible_markers": []
+      },
+      {
+        "accessed_at": "2026-07-20T12:23:32.070Z",
+        "attestation_id": "sha256:8f45f7e11009559a10ea4432eec63c159c3824cea6f60bbdb5d8d5c19d30315c",
+        "content_hash": "sha256:a48f407a21edfceb45825eabe62b3078b594ab07f00a7d1f6d42c4e20446b6d6",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.framer.com/pricing/",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a",
+        "schema": "context_attestation/1",
+        "slug": "framer",
+        "source_url": "https://www.framer.com/pricing/",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Enterprise est sur devis : identité de plan conservée, aucune observation de prix",
+      "les tarifs d'éditeurs additionnels sont des frais par siège distincts des Site plans",
+      "Mini absent de la grille actuelle : ancien plan à traiter comme superseded_candidate"
+    ],
+    "last_checked_at": "2026-07-20T12:23:32.070Z",
+    "last_context_evidence": {
+      "adapter": "framer",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-20T12:23:32.070Z",
+      "browser_context": null,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "static",
+      "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:4ee17a3799d760995758f41c4ec4ef440d50f1664e6e1255283923e56cb324f9",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:201ec07f648a27b44df829eb1890e8861cbeed38517915ae6b229b734d4855db",
+          "excerpt": "billing period and renews automatically every month. Annual Billed upfront for the full year and renews automatically on the subscription anniversary date. Subscriptions continue to renew automatically unless canceled be",
+          "source_url": "https://www.framer.com/help/articles/subscriptions-and-charges/"
+        },
+        "billing_period": "monthly",
+        "business_key": "framer|basic|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+        "confidence": "medium",
+        "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+            "observed_on": "2026-07-20",
+            "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+          },
+          {
+            "capture_id": "cap:1a1b314906a96d361c0dd1e92ec43fabc278351daf190aaf4579097863809a62",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "Basic Creative personal sites $10 per month 1,000 credits / month 2,000 credits / month 3,000 credits / month 5,000 credits / month 8,000 credits / month 10,000 credits / month 15,000 credits / month Free custom domain 2 CMS collections 50 GB bandwidth Built-in SEO Use your own domain Localization (add-on) Start with Basic ",
+        "evidence_selector": "pricing-card:Basic",
+        "feature_highlights": [
+          "Free custom domain",
+          "2 CMS collections",
+          "50 GB bandwidth",
+          "Built-in SEO"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Grille affichée en $ sur la page par défaut, aucun signal de locale. Décision humaine : fallback mondial USD."
+        },
+        "native_amount": 10,
+        "native_currency": "USD",
+        "observation_id": "obs:00228f4c38528ccdb0a86fcb95ad47ea8211e47b98f15097754ea62f3dd7a4ab",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "basic",
+        "plan_key": "basic",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Basic",
+        "plan_summary": "Pour les sites personnels créatifs.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:cd5e5525d09cf4347b787afd0b19d51cdbd447b1dbdf748187916d2fc6cb5637",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:bc93ce6ec7286eff1ad0e463933ab678360c7225ccc3f13068a3370cc8363174",
+          "excerpt": "w. See Why choose Framer for website building? . Site plans Site plans include the essential tools and features you need to build and publish a professional website. All paid plans come with reliable hosting, so you can",
+          "source_url": "https://www.framer.com/help/articles/site-plans-explained/"
+        },
+        "seat_type": null,
+        "source_url": "https://www.framer.com/pricing/",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "ht",
+        "tool": "framer",
+        "value_fingerprint": "10|USD|monthly|site|ht"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:4ee17a3799d760995758f41c4ec4ef440d50f1664e6e1255283923e56cb324f9",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:201ec07f648a27b44df829eb1890e8861cbeed38517915ae6b229b734d4855db",
+          "excerpt": "billing period and renews automatically every month. Annual Billed upfront for the full year and renews automatically on the subscription anniversary date. Subscriptions continue to renew automatically unless canceled be",
+          "source_url": "https://www.framer.com/help/articles/subscriptions-and-charges/"
+        },
+        "billing_period": "monthly",
+        "business_key": "framer|pro|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+        "confidence": "medium",
+        "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+            "observed_on": "2026-07-20",
+            "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+          },
+          {
+            "capture_id": "cap:1a1b314906a96d361c0dd1e92ec43fabc278351daf190aaf4579097863809a62",
+            "observed_on": "2026-07-20",
+            "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+          }
+        ],
+        "evidence_excerpt": "Pro Growing professional sites $30 per month 3,000 credits / month 5,000 credits / month 10,000 credits / month 20,000 credits / month 30,000 credits / month 50,000 credits / month 100,000 credits / month Free custom domain 10 CMS collections 100 GB bandwidth Site redirects Staging environment Branching with previews Advanced hosting (add",
+        "evidence_selector": "pricing-card:Pro",
+        "feature_highlights": [
+          "Free custom domain",
+          "10 CMS collections",
+          "100 GB bandwidth",
+          "Site redirects",
+          "Staging environment",
+          "Branching with previews"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Grille affichée en $ sur la page par défaut, aucun signal de locale. Décision humaine : fallback mondial USD."
+        },
+        "native_amount": 30,
+        "native_currency": "USD",
+        "observation_id": "obs:1101f8542f8c63ae11d43ccf3016d45896b14f0688074086e68b411aca889f4e",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "pro",
+        "plan_key": "pro",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Pro",
+        "plan_summary": "Pour les sites professionnels en croissance.",
+        "pricing_unit": "site",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:cd5e5525d09cf4347b787afd0b19d51cdbd447b1dbdf748187916d2fc6cb5637",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:bc93ce6ec7286eff1ad0e463933ab678360c7225ccc3f13068a3370cc8363174",
+          "excerpt": "w. See Why choose Framer for website building? . Site plans Site plans include the essential tools and features you need to build and publish a professional website. All paid plans come with reliable hosting, so you can",
+          "source_url": "https://www.framer.com/help/articles/site-plans-explained/"
+        },
+        "seat_type": null,
+        "source_url": "https://www.framer.com/pricing/",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": "ht",
+        "tool": "framer",
+        "value_fingerprint": "30|USD|monthly|site|ht"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "enterprise_custom": true,
+        "free_plan_proven": true,
+        "mini_absent_from_current_grid": true,
+        "yearly_billing_selected": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": false,
+      "pricing_unit": "seat",
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "basic",
+        "plan_name_localized": "Basic",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "pro",
+        "plan_name_localized": "Pro",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-20T12:02:30.309Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "e8294d39-332c-4f5d-be34-da31f4a3fff4"
+      },
+      {
+        "at": "2026-07-20T12:13:51.610Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "ee5cb2f2-bc67-4eec-bf32-024a84247646"
+      },
+      {
+        "at": "2026-07-20T12:20:01.506Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 2,
+          "claims_unchanged": 2,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 1,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 2,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "8756cd90-7a17-4ce8-ad3f-c3049717f3c3"
+      },
+      {
+        "at": "2026-07-20T12:22:16.270Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 2,
+          "claims_created": 0,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 3,
+          "versions_created": 1
+        },
+        "network_checked": true,
+        "run_id": "e7839d5a-8d85-4400-a689-aedf289220d5"
+      },
+      {
+        "at": "2026-07-20T12:23:32.070Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 2,
+          "claims_unchanged": 2,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 3,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "e7b2d74c-5429-41f6-9895-e8cb3c10814a"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:02:30.309Z",
+            "adapter": null,
+            "adapter_version": null,
+            "browser_context": null,
+            "capture_id": "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+            "content_hash": "sha256:ce98648f7c684d973effffa0b9c60732f650ffc2316848ac4e6d1ba87ca87a2e",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "market_context_candidate": null,
+            "market_context_source": null,
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 13412,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-20T12:22:16.270Z",
+            "adapter": "framer",
+            "adapter_version": "1.0.0",
+            "browser_context": null,
+            "capture_id": "cap:1a1b314906a96d361c0dd1e92ec43fabc278351daf190aaf4579097863809a62",
+            "content_hash": "sha256:a48f407a21edfceb45825eabe62b3078b594ab07f00a7d1f6d42c4e20446b6d6",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 13412,
+            "version": 2
+          }
+        ],
+        "domain": "www.framer.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:43.294Z",
+        "purpose": "free_plan",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-20T12:23:32.070Z",
+          "reason": "allow: /"
+        },
+        "source_id": "src:52a61134b444eae8b6d684d409a7fcd8ed0fcf1e01f25882e50c4c9f3f99cd89",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.framer.com/pricing/"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:13:54.007Z",
+            "capture_id": "cap:4ee17a3799d760995758f41c4ec4ef440d50f1664e6e1255283923e56cb324f9",
+            "content_hash": "sha256:201ec07f648a27b44df829eb1890e8861cbeed38517915ae6b229b734d4855db",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 10557,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-20T12:20:03.761Z",
+            "capture_id": "cap:b1f1165c33e0085f1473bf575792cef4fc0449e0880fa215efcf4d233c31284c",
+            "content_hash": "sha256:fee5ed4588d1247189dc559579a1e3b043d5e603510d375eda10d5b6d015d483",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 7982,
+            "version": 2
+          }
+        ],
+        "domain": "www.framer.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:34.395Z",
+        "purpose": "billing_commitment",
+        "source_id": "src:3e226b924385114828950536ce0f810dce9e505d03b1aabcc4f474d6f3fcb4b6",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://www.framer.com/help/articles/subscriptions-and-charges/"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T12:13:55.731Z",
+            "capture_id": "cap:cd5e5525d09cf4347b787afd0b19d51cdbd447b1dbdf748187916d2fc6cb5637",
+            "content_hash": "sha256:bc93ce6ec7286eff1ad0e463933ab678360c7225ccc3f13068a3370cc8363174",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 6738,
+            "version": 1
+          }
+        ],
+        "domain": "www.framer.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T12:23:43.067Z",
+        "purpose": "pricing_unit",
+        "source_id": "src:92c21f2e0a5c2d6ae1e9cb4cabfb1b86cddd7d20bcef7669e39a469d791e1e1a",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://www.framer.com/help/articles/site-plans-explained/"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [
+    "Plan 'Mini 5€' stocké = périmé",
+    "Devise EUR/USD incohérente dans le stocké"
+  ],
+  "editorial_drafts": {
+    "author": "ToolTrim research pilot",
+    "content_version": 1,
+    "en": {
+      "cons": [
+        "Additional editors are billed separately",
+        "CMS and bandwidth limits vary significantly by tier",
+        "Legacy plan names can make historical comparisons misleading"
+      ],
+      "long_description": "Framer helps teams design and publish visual websites quickly, with custom domains, CMS capabilities, and publishing tools depending on the selected plan. Its workflow feels close to modern design tools. Site costs and additional editor-seat costs remain separate parts of the overall budget.",
+      "pros": [
+        "Fast path from design to a live site",
+        "Strong visual polish",
+        "Staging and collaboration features on higher tiers"
+      ],
+      "short_description": "A visual website builder focused on speed, design quality, and interactions.",
+      "use_cases": [
+        "Build a polished landing page",
+        "Publish a portfolio",
+        "Launch a marketing site with a CMS quickly"
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a highly complex CMS",
+          "You have many paid editors"
+        ],
+        "keepIf": [
+          "You prioritize design speed and visual quality",
+          "Your team already works with design-tool-like workflows"
+        ],
+        "threshold": "Worth it for quickly publishing a visually polished marketing site or portfolio."
+      }
+    },
+    "facts_basis": [
+      "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3"
+    ],
+    "fr": {
+      "cons": [
+        "Les éditeurs supplémentaires sont facturés séparément",
+        "Les limites CMS et de bande passante varient fortement selon l’offre",
+        "Les anciens noms de plans peuvent rendre les comparaisons historiques trompeuses"
+      ],
+      "long_description": "Framer permet de concevoir et publier rapidement des sites visuels, avec domaine personnalisé, CMS et outils de mise en ligne selon l’offre choisie. Il se distingue par un flux de travail proche des outils de design. Les frais liés au site et ceux des éditeurs supplémentaires restent deux dimensions différentes du coût.",
+      "pros": [
+        "Passage rapide du design au site publié",
+        "Bon niveau de finition visuelle",
+        "Fonctions de staging et de collaboration sur les offres supérieures"
+      ],
+      "short_description": "Un outil de création de sites visuels centré sur la rapidité, le design et les interactions.",
+      "use_cases": [
+        "Créer une landing page soignée",
+        "Publier un portfolio",
+        "Lancer rapidement un site marketing avec CMS"
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Tu as besoin d’un CMS très complexe",
+          "Ton équipe comporte de nombreux éditeurs payants"
+        ],
+        "keepIf": [
+          "Tu privilégies la vitesse de conception et la qualité visuelle",
+          "Ton équipe travaille déjà avec une logique proche des outils de design"
+        ],
+        "threshold": "Pertinent pour publier vite un site marketing ou un portfolio très visuel."
+      }
+    },
+    "generated_on": "2026-07-20",
+    "pricing_facts_policy": "Les montants, devises et engagements restent exclusivement dans collector.observations.",
+    "status": "draft"
+  },
   "identity": {
+    "accessedOn": "2026-07-16",
+    "accessible": true,
+    "docsUrl": "https://www.framer.com/help/",
     "officialName": "Framer",
     "officialUrl": "https://www.framer.com/",
     "pricingUrl": "https://www.framer.com/pricing/",
-    "docsUrl": "https://www.framer.com/help/",
-    "accessedOn": "2026-07-16",
-    "sourceTier": 1,
-    "accessible": true
+    "sourceTier": 1
   },
+  "mode": "RESEARCH_no_apply",
   "pricing": {
     "captureNote": "Devise affichée: symbole $ (USD présumé, marché US). Plans mensuels observés; l'équivalent annuel n'a pas été capturé précisément cette passe.",
     "freePlanGenuine": true,
+    "normalized_eur": {
+      "fx_rate": null,
+      "fx_rate_date": null,
+      "normalization_method": "NON CALCULÉ — à dériver du montant natif USD via FX daté; non appliqué",
+      "normalized_monthly_eur": null
+    },
     "plans_native": [
-      { "plan_name": "Free",  "native_amount": 0,  "native_currency": "USD", "billing_period": "monthly", "billing_commitment": "n/a", "pricing_unit": "site", "key_limits": "30 pages, 10 collections CMS, 1000 items, 50 GB, jusqu'à 3 éditeurs, domaine .com offert à l'année" },
-      { "plan_name": "Basic", "native_amount": 10, "native_currency": "USD", "billing_period": "monthly", "billing_commitment": "unknown", "pricing_unit": "site", "key_limits": "150 pages, 2 collections CMS, 1000 items, 50 GB, domaine custom; éditeurs additionnels +20$/mois" },
-      { "plan_name": "Pro",   "native_amount": 30, "native_currency": "USD", "billing_period": "monthly", "billing_commitment": "unknown", "pricing_unit": "site", "key_limits": "150 pages (extensible), 10 collections, 2500 items, 100 GB, éditeurs illimités" },
-      { "plan_name": "Enterprise", "native_amount": null, "native_currency": "USD", "billing_period": "n/a", "billing_commitment": "n/a", "pricing_unit": "site", "key_limits": "Sur devis" }
-    ],
-    "normalized_eur": { "normalized_monthly_eur": null, "fx_rate": null, "fx_rate_date": null, "normalization_method": "NON CALCULÉ — à dériver du montant natif USD via FX daté; non appliqué" }
+      {
+        "billing_commitment": "n/a",
+        "billing_period": "monthly",
+        "key_limits": "30 pages, 10 collections CMS, 1000 items, 50 GB, jusqu'à 3 éditeurs, domaine .com offert à l'année",
+        "native_amount": 0,
+        "native_currency": "USD",
+        "plan_name": "Free",
+        "pricing_unit": "site"
+      },
+      {
+        "billing_commitment": "unknown",
+        "billing_period": "monthly",
+        "key_limits": "150 pages, 2 collections CMS, 1000 items, 50 GB, domaine custom; éditeurs additionnels +20$/mois",
+        "native_amount": 10,
+        "native_currency": "USD",
+        "plan_name": "Basic",
+        "pricing_unit": "site"
+      },
+      {
+        "billing_commitment": "unknown",
+        "billing_period": "monthly",
+        "key_limits": "150 pages (extensible), 10 collections, 2500 items, 100 GB, éditeurs illimités",
+        "native_amount": 30,
+        "native_currency": "USD",
+        "plan_name": "Pro",
+        "pricing_unit": "site"
+      },
+      {
+        "billing_commitment": "n/a",
+        "billing_period": "n/a",
+        "key_limits": "Sur devis",
+        "native_amount": null,
+        "native_currency": "USD",
+        "plan_name": "Enterprise",
+        "pricing_unit": "site"
+      }
+    ]
   },
-  "claims": [
-    {
-      "key": "pricing.entry_paid_plan",
-      "value_native": { "plan_name": "Basic", "amount": 10, "currency": "USD", "period": "monthly" },
-      "sourceUrl": "https://www.framer.com/pricing/",
-      "sourceTier": 1,
-      "accessedOn": "2026-07-16",
-      "evidence": "Grille officielle: Free / Basic 10$ / Pro 30$ / Enterprise. Pas de plan 'Mini'.",
-      "confidence": "high",
-      "volatility": "high",
-      "conflict": "Stocké (JSON+Supabase): pricing_v5.compare_plan_name='Mini', compare_price_monthly_eur=5. Le plan 'Mini' n'existe plus dans la grille observée → valeur périmée.",
-      "proposal_not_applied": "Remplacer plan de comparaison par 'Basic' natif 10 USD/mois; recalculer normalized_monthly_eur séparément; conserver l'ancienne valeur en conflit jusqu'à validation."
-    },
-    {
-      "key": "pricing.free_plan_exists",
-      "value_native": { "free": true, "plan_name": "Free", "limits": "30 pages, 10 collections, 3 éditeurs" },
-      "sourceUrl": "https://www.framer.com/pricing/",
-      "sourceTier": 1,
-      "accessedOn": "2026-07-16",
-      "evidence": "Plan Free à 0$ listé, durable (non essai).",
-      "confidence": "high",
-      "volatility": "medium",
-      "conflict": "Stocké décrit un free plan à '1 page / framer.site uniquement' — limites périmées vs 30 pages observées.",
-      "proposal_not_applied": "Mettre à jour la description du plan gratuit; ne pas présenter comme essai."
-    },
-    {
-      "key": "pricing.currency_native",
-      "value_native": { "currency": "USD" },
-      "sourceUrl": "https://www.framer.com/pricing/",
-      "sourceTier": 1,
-      "accessedOn": "2026-07-16",
-      "evidence": "Montants affichés avec symbole $ (marché US).",
-      "confidence": "medium",
-      "volatility": "low",
-      "conflict": "Stocké mélange EUR (compare 5€) et $ dans pricing.paid. Devise native à figer = USD (sous réserve de la version régionale EUR de Framer).",
-      "proposal_not_applied": "Enregistrer native_currency=USD; vérifier s'il existe une grille EUR régionale avant de publier une devise."
-    }
-  ],
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "schemaVersion": 1,
+  "slug": "framer",
+  "status": "needs_review",
   "unknowns": [
     "Équivalent mensuel en engagement annuel (réduction annuelle) non capturé.",
     "Existence/valeurs d'une grille EUR régionale Framer non vérifiée."
-  ],
-  "conflicts_summary": ["Plan 'Mini 5€' stocké = périmé", "Devise EUR/USD incohérente dans le stocké"]
+  ]
 }

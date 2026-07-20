@@ -28,22 +28,30 @@ import { createHash, randomUUID } from "node:crypto";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { extractWix } from "./research-adapters/wix.mjs";
+import { extractWebflow } from "./research-adapters/webflow.mjs";
+import { extractFramer } from "./research-adapters/framer.mjs";
+import { extractSquarespace } from "./research-adapters/squarespace.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
   valueFingerprintOf, observationIdOf, upsertSource, appendCapture, findCapture,
   appendClaim, applyObservation, migrateLegacyObservation,
   resolveEffectiveMarketContext, approvedPreEligibility, attestationReadiness,
-  contextPolicySatisfied,
+  contextPolicySatisfied, isMetadataEnrichment,
 } from "./research-model.mjs";
 
 /** Table d'adaptateurs dédiés (hors moteur générique). Import statique : pas d'import()
  *  dynamique à template littéral (illisible pour l'analyse statique des bundlers). */
-const ADAPTERS = { wix: extractWix };
+const ADAPTERS = {
+  wix: extractWix,
+  webflow: extractWebflow,
+  framer: extractFramer,
+  squarespace: extractSquarespace,
+};
 
 export { resolveEffectiveMarketContext, approvedPreEligibility, attestationReadiness,
          canonicalPlanKey, observedPlanKey, captureIdOf as captureRefOf, observedPlanKey as planKeyOf };
 
-export const COLLECTOR_VERSION = "0.3.3.1";
+export const COLLECTOR_VERSION = "0.4.0";
 const ROOT = process.cwd();
 const UA = "ToolTrimResearchBot/0.3 (+https://tooltrim.com; research; contact: bloch.mic@gmail.com)";
 const REGISTRY_PATH = path.join(ROOT, "research", "sources-registry.json");
@@ -316,13 +324,29 @@ export function extractWithAdapter({ adapter, html, url, headers = {}, market, l
   if (mc.market_context_candidate) unknowns.add(`market_context_candidate='${mc.market_context_candidate}' déduit de marqueurs de contenu — NON prouvé, soumis à revue`);
   else if (!mc.market_context) unknowns.add(`marché/locale non prouvés (demandé ${market}/${locale}) et aucun fallback déclaré au registre`);
 
+  // Le hash de version d'un adaptateur porte sur les faits tarifaires extraits,
+  // pas sur le chrome dynamique de la page (bannières, tests A/B, ordre de scripts).
+  // Une variation de prix/plan/feature change le hash ; un bruit hors grille non.
+  const semanticBasis = {
+    adapter: r.adapter, adapter_version: r.adapter_version,
+    plans: r.plans.map((p) => ({
+      plan_name: p.plan_name, native_amount: p.native_amount, native_currency: p.native_currency,
+      billing_period: p.billing_period, billing_commitment: p.billing_commitment,
+      pricing_unit: p.pricing_unit, tax_inclusion: p.tax_inclusion,
+      plan_summary: p.plan_summary ?? null, feature_highlights: p.feature_highlights ?? [],
+    })),
+    ambiguities: (r.ambiguities ?? []).map((p) => ({ plan_name: p.plan_name, reason: p.reason ?? null, missing: p.missing ?? [] })),
+    page_proof: r.page_proof ?? null,
+  };
   return {
     adapter: r.adapter, adapter_version: r.adapter_version,
     observations: r.plans.map((p) => withCtx(p, "observed")),
     weak_claims: (r.ambiguities ?? []).map((p) => withCtx(p, "weak_claim")),
     page_signals: { ...pageSignals(text), adapter_page_proof: r.page_proof },
     locale_proof: proof, market_context_decision: mc,
-    unknowns: [...unknowns], text_len: text.length, content_hash: contentHash(text),
+    unknowns: [...unknowns], text_len: text.length,
+    content_hash: contentHash(JSON.stringify(sortKeys(semanticBasis))),
+    content_hash_scope: "adapter_semantic_facts",
   };
 }
 
@@ -485,8 +509,13 @@ async function renderBrowser(urlStr, ctx) {
     });
     const page = await context.newPage();
     await politeWait(new URL(urlStr).host, ctx.delayMs);
-    const resp = await page.goto(urlStr, { waitUntil: "networkidle", timeout: 45000 });
-    await page.waitForTimeout(1500);
+    // Certaines pages tarifaires (Squarespace notamment) conservent des requêtes
+    // analytics ouvertes : `networkidle` n'arrive alors jamais, même si la grille
+    // est déjà rendue. Le document chargé est le seuil bloquant ; networkidle reste
+    // une amélioration best-effort, jamais une condition de collecte.
+    const resp = await page.goto(urlStr, { waitUntil: "domcontentloaded", timeout: 45000 });
+    try { await page.waitForLoadState("networkidle", { timeout: 15000 }); } catch { /* page dynamique stable sans idle */ }
+    await page.waitForTimeout(3000);
     const html = await page.content();
     const headers = resp ? await resp.allHeaders() : {};
 
@@ -567,7 +596,9 @@ async function loadManifestSlugs() {
 async function collectAdditionalSource({ slug, src, run, cfg }) {
   const checkedAt = nowIso();
   let r;
-  try { r = await renderStatic(src.url, { delayMs: cfg.delayMs, locale: cfg.locale, run, slug }); }
+  try {
+    r = await render(src.url, { delayMs: cfg.delayMs, locale: cfg.locale, run, slug }, src.renderer_hint || "static");
+  }
   catch (e) {
     run.errors.push({ slug, url: src.url, code: "network_or_tool_limit", detail: String(e?.message || e), purpose: src.purpose });
     return { url: src.url, purpose: src.purpose, established: false, error: String(e?.message || e), last_checked_at: checkedAt, capture: null };
@@ -721,6 +752,24 @@ async function processSlug(slug, run, cfg) {
     ex.observations = ex.observations.map((o) => ({ ...o, ...stamp }));
     ex.unknowns = ex.unknowns.filter((u) => !/pricing_unit/i.test(u));
   }
+  // billing_commitment : comme l'unité, il peut être établi par une documentation
+  // officielle distincte. On ne l'applique qu'aux observations payantes ; un plan
+  // gratuit n'a pas d'engagement de facturation.
+  const commitmentFact = additional.find((a) => a.purpose === "billing_commitment" && a.established);
+  if (commitmentFact) {
+    const stamp = {
+      billing_commitment: commitmentFact.claim.value_native,
+      billing_commitment_evidence: {
+        capture_id: captureIdOf(commitmentFact.url, commitmentFact.capture.content_hash),
+        source_url: commitmentFact.url,
+        content_hash: commitmentFact.capture.content_hash,
+        claim_key: commitmentFact.claim.key,
+        excerpt: commitmentFact.claim.evidence,
+      },
+    };
+    ex.observations = ex.observations.map((o) => o.native_amount > 0 ? ({ ...o, ...stamp }) : o);
+    ex.unknowns = ex.unknowns.filter((u) => !/billing_commitment/i.test(u));
+  }
   // v0.3.3 — les candidats sont estampillés ; l'application au dossier (append-only,
   // conflits, métriques) est faite par le modèle dans mergeDossier.
   ex.observations = ex.observations.map((o) => ({
@@ -746,6 +795,7 @@ async function processSlug(slug, run, cfg) {
       locale_evidence: ex.locale_proof.evidence,
       browser_context: r.browser_context ?? null,
       adapter: ex.adapter ?? null, adapter_version: ex.adapter_version ?? null,
+      content_hash_scope: ex.content_hash_scope ?? "normalized_text",
       is_accessible: true,
     },
   }, run, cfg);
@@ -822,6 +872,21 @@ async function mergeDossier(slug, r, run, cfg) {
     else if (out.outcome === "unchanged") metrics.claims_unchanged++;
     else if (out.outcome === "confirmed") metrics.claims_confirmed++;
     else if (out.outcome === "conflicted") { metrics.claims_created++; metrics.conflicts_opened++; }
+  }
+
+  // Réconciliation des dossiers produits par une version antérieure : null ->
+  // métadonnée sourcée (ex. unité `site`) est un enrichissement, pas un conflit
+  // tarifaire. Les deux observations restent historisées.
+  for (const conflict of c.conflicts.filter((x) => x.status === "open")) {
+    const rows = conflict.observation_ids.map((id) => c.observations.find((o) => o.observation_id === id)).filter(Boolean);
+    const current = rows.find((o) => o.status === "observed");
+    const previous = rows.filter((o) => o !== current);
+    if (current && previous.length && previous.every((o) => isMetadataEnrichment(o, current))) {
+      conflict.kind = "metadata_enrichment";
+      conflict.status = "resolved";
+      conflict.resolved_at = r.last_checked_at;
+      conflict.resolution = "observation complétée par une preuve documentaire ; faits économiques inchangés";
+    }
   }
 
   // ── complétion de métadonnée de preuve (le FAIT n'est pas modifié) :

@@ -29,6 +29,30 @@ export const sortKeys = (v) =>
 export const sourceIdOf = (url) => "src:" + sha256(String(url));
 export const captureIdOf = (url, content_hash) => "cap:" + sha256(`${url}|${content_hash}`);
 
+/**
+ * Une observation incomplète puis complétée par une preuve documentaire n'est
+ * pas un conflit de prix. Les faits économiques doivent être identiques et les
+ * seuls écarts autorisés sont null/unknown -> valeur établie sur des métadonnées.
+ */
+export function isMetadataEnrichment(previous, current) {
+  const economicKeys = [
+    "plan_key", "seat_type", "native_amount", "native_currency", "billing_period",
+    "billing_commitment", "observed_market", "observed_locale", "market_context",
+    "market_context_candidate",
+  ];
+  if (economicKeys.some((k) => (previous?.[k] ?? null) !== (current?.[k] ?? null))) return false;
+  const metadataKeys = ["pricing_unit", "tax_inclusion"];
+  let enriched = false;
+  for (const k of metadataKeys) {
+    const before = previous?.[k] ?? null;
+    const after = current?.[k] ?? null;
+    const empty = before === null || before === "unknown";
+    if (empty && after !== null && after !== "unknown") enriched = true;
+    else if (before !== after) return false;
+  }
+  return enriched;
+}
+
 /** Clé LOCALE dérivée du nom observé. Jamais une clé de jointure canonique. */
 export function observedPlanKey(plan_name) {
   return String(plan_name || "").normalize("NFD").replace(/[̀-ͯ]/g, "")
@@ -204,12 +228,15 @@ export function applyObservation(doc, cand, { capture_id, run_id, now, mapping, 
     seat_type: cand.seat_type ?? null,
     native_amount: cand.native_amount, native_currency: cand.native_currency,
     billing_period: cand.billing_period, billing_commitment: cand.billing_commitment,
+    billing_commitment_evidence: cand.billing_commitment_evidence ?? null,
     pricing_unit: cand.pricing_unit ?? null, pricing_unit_evidence: cand.pricing_unit_evidence ?? null,
     tax_inclusion: cand.tax_inclusion ?? null, tax_evidence: cand.tax_evidence ?? null,
     observed_market: cand.observed_market ?? null, observed_locale: cand.observed_locale ?? null,
     market_context: cand.market_context ?? null, market_context_candidate: cand.market_context_candidate ?? null,
     market_context_source: cand.market_context_source ?? null, market_evidence: cand.market_evidence ?? null,
     evidence_excerpt: cand.evidence_excerpt ?? null, evidence_selector: cand.evidence_selector ?? null,
+    plan_summary: cand.plan_summary ?? null,
+    feature_highlights: Array.isArray(cand.feature_highlights) ? cand.feature_highlights : [],
     confidence: cand.confidence ?? "medium", status: "observed",
     source_url: cand.source_url ?? null, content_hash: cand.content_hash ?? null,
     capture_ref: capture_id, observed_on,
@@ -220,6 +247,15 @@ export function applyObservation(doc, cand, { capture_id, run_id, now, mapping, 
 
   if (siblings.length) {                                              // valeur différente => conflit
     for (const s of siblings) if (s.status === "observed") s.status = "superseded_candidate";
+    if (siblings.every((s) => isMetadataEnrichment(s, record))) {
+      c.conflicts.push({
+        business_key, kind: "metadata_enrichment", status: "resolved",
+        opened_at: now ?? null, resolved_at: now ?? null,
+        resolution: "observation complétée par une preuve documentaire ; faits économiques inchangés",
+        observation_ids: [...siblings.map((s) => s.observation_id), observation_id],
+      });
+      return { outcome: "created", observation_id, metadata_enrichment: true };
+    }
     let conflict = c.conflicts.find((x) => x.business_key === business_key && x.status === "open");
     if (!conflict) { conflict = { business_key, status: "open", opened_at: now ?? null, observation_ids: [] }; c.conflicts.push(conflict); }
     for (const id of [...siblings.map((s) => s.observation_id), observation_id])

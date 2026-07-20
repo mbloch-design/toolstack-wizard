@@ -4,7 +4,7 @@ import {
   captureIdOf, sourceIdOf, upsertSource, appendCapture, findCapture, appendClaim,
   applyObservation, migrateLegacyObservation, resolveEffectiveMarketContext,
   approvedPreEligibility, contextPolicySatisfied,
-  contextKeyOf, sourcesInvariant, ensureCollector, factFreshnessDate,
+  contextKeyOf, sourcesInvariant, ensureCollector, factFreshnessDate, isMetadataEnrichment,
 } from "./research-model.mjs";
 import { hasGenuineFreeTier } from "../src/lib/pricing.ts";
 
@@ -440,5 +440,24 @@ describe("v0.3.3.1 — résolution effective marché/locale", () => {
     expect(r.effective_observed_locale).toBe("fr-FR");
     expect(JSON.stringify(o)).toBe(before);            // aucune mutation
     expect(o.observed_market).toBeNull();
+  });
+});
+
+describe("enrichissement documentaire ≠ conflit tarifaire", () => {
+  it("null -> site conserve l'historique et clôt le delta comme metadata_enrichment", () => {
+    const doc = freshDoc();
+    const incomplete = { ...candidate("Light", 16.8), pricing_unit: null, pricing_unit_evidence: null };
+    const complete = candidate("Light", 16.8);
+    expect(isMetadataEnrichment(incomplete, complete)).toBe(true);
+    applyObservation(doc, incomplete, { capture_id: CAP1, run_id: "r1", now: "2026-07-17T10:00:00Z", mapping: MAPPING, tool: "wix" });
+    const out = applyObservation(doc, complete, { capture_id: CAP1, run_id: "r2", now: "2026-07-18T10:00:00Z", mapping: MAPPING, tool: "wix" });
+    expect(out.metadata_enrichment).toBe(true);
+    expect(doc.collector.observations).toHaveLength(2);
+    expect(doc.collector.conflicts).toContainEqual(expect.objectContaining({ kind: "metadata_enrichment", status: "resolved" }));
+    expect(doc.collector.conflicts.filter((x) => x.status === "open")).toHaveLength(0);
+  });
+
+  it("un montant différent reste un vrai conflit ouvert", () => {
+    expect(isMetadataEnrichment(candidate("Light", 16.8), candidate("Light", 17.8))).toBe(false);
   });
 });
