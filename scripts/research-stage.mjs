@@ -60,6 +60,7 @@ export async function prepareStageDryRun(slug) {
     toolId,
     publishedTools,
     legacyTool: toolArray.find((tool) => tool.slug === slug),
+    editorialSource: profile.editorialSource ?? "legacy",
   });
   return {
     proposal,

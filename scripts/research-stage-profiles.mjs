@@ -14,6 +14,17 @@ export const STAGING_PROFILES = Object.freeze({
     freePlanKey: "starter",
     locale: "fr-FR",
   }),
+  n8n: Object.freeze({
+    // Plan gratuit = Community Edition auto-hébergée (freePlanKey non nommé "free").
+    // Enterprise (contact sales) reste éditorial : hors planOrder, sans observation de prix.
+    planOrder: Object.freeze(["community", "starter", "pro", "business"]),
+    comparePlanKey: "starter",
+    freePlanKey: "community",
+    locale: "fr-FR",
+    // Fiche legacy quasi vide : l'éditorial DOIT venir de research.editorial_drafts.
+    // Aucun fallback silencieux vers le legacy (voir buildStagingProposal).
+    editorialSource: "research",
+  }),
 });
 
 export function stagingProfileFor(slug) {

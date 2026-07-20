@@ -1,0 +1,79 @@
+{
+  "agent": "research-collector",
+  "attestations": [],
+  "checks": [
+    {
+      "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+      "mode": "cache_hit",
+      "slug": "n8n",
+      "ttl_remaining_s": 86083,
+      "url": "https://n8n.io/pricing/"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=0 approved=0 | doc_claims: extracted=0 created=0 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-20T13:59:12.428Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 0,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 0,
+    "doc_claims_unchanged": 0,
+    "versions_created": 0
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "n8n"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": true,
+      "hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": false,
+      "observations": 0,
+      "slug": "n8n",
+      "url": "https://n8n.io/pricing/",
+      "versionsCreated": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "9cf17008-cc86-416a-bd76-b98afcbbf50c",
+  "started_at": "2026-07-20T13:59:12.265Z",
+  "valid": true
+}

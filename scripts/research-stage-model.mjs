@@ -107,7 +107,56 @@ export function editorialRowsFromLegacy(tool, toolId = tool?.id ?? tool?.slug) {
   }));
 }
 
-export function buildStagingProposal(doc, { planRegistry, locale = "fr-FR", toolId: resolvedToolId, publishedTools, legacyTool } = {}) {
+/** Champs éditoriaux minimaux exigés par langue pour AUTORISER un staging éditorial research. */
+const RESEARCH_EDITORIAL_REQUIRED = ["short_description", "long_description", "verdict", "pros", "cons", "use_cases"];
+
+/** Vérifie que research.editorial_drafts est complet FR ET EN. Sinon => refus (aucun fallback). */
+export function assertResearchEditorialComplete(doc, toolId) {
+  const drafts = doc?.editorial_drafts;
+  requireValue(drafts && drafts.fr && drafts.en,
+    `staging: editorial_drafts FR/EN requis pour ${toolId} (aucun repli sur le legacy vide autorisé)`);
+  for (const lang of ["fr", "en"]) {
+    for (const key of RESEARCH_EDITORIAL_REQUIRED) {
+      const v = drafts[lang]?.[key];
+      const empty = v == null || (typeof v === "string" && v.trim() === "") || (Array.isArray(v) && v.length === 0);
+      requireValue(!empty, `staging: editorial_drafts.${lang}.${key} manquant/vide pour ${toolId}`);
+    }
+  }
+  return drafts;
+}
+
+/**
+ * Lignes éditoriales issues de research.editorial_drafts (fiche à contenu neuf).
+ * Ne republie JAMAIS le legacy : utilisé quand le profil déclare editorialSource="research".
+ */
+export function editorialRowsFromResearch(doc, toolId) {
+  const drafts = assertResearchEditorialComplete(doc, toolId);
+  const author = drafts.author ?? "research";
+  const rowFor = (lang) => {
+    const d = drafts[lang];
+    return {
+      tool_id: toolId, content_version: drafts.content_version ?? 1, lang,
+      short_description: d.short_description ?? null,
+      long_description: d.long_description ?? null,
+      covers: d.covers ?? null,
+      relevant_for: d.relevant_for ?? null,
+      seo: d.seo ?? null,
+      use_cases: d.use_cases ?? null,
+      pros: d.pros ?? null,
+      cons: d.cons ?? null,
+      verdict: d.verdict ?? null,
+      gallery_images: d.gallery_images ?? null,
+      ai_angle: d.ai_angle ?? null,
+      pricing_guidance: d.pricing_guidance ?? null,
+      status: "draft", author, reviewed_by: null, published_at: null,
+    };
+  };
+  return ["fr", "en"].map(rowFor).map((row) => ({
+    ...row, content_hash: `sha256:${sha256(JSON.stringify(sortKeys(row)))}`,
+  }));
+}
+
+export function buildStagingProposal(doc, { planRegistry, locale = "fr-FR", toolId: resolvedToolId, publishedTools, legacyTool, editorialSource = "legacy" } = {}) {
   requireValue(doc?.slug, "staging: slug manquant");
   requireValue(planRegistry && typeof planRegistry === "object", "staging: planRegistry explicite requis");
   const toolSlug = doc.slug;
@@ -366,7 +415,14 @@ export function buildStagingProposal(doc, { planRegistry, locale = "fr-FR", tool
     };
   });
 
-  const editorialRows = legacyTool ? editorialRowsFromLegacy(legacyTool, toolId) : [];
+  // Choix EXPLICITE de la source éditoriale (profil). "research" => contenus neufs obligatoires
+  // et complets, JAMAIS de repli silencieux vers un legacy vide. "legacy" => comportement historique.
+  let editorialRows;
+  if (editorialSource === "research") {
+    editorialRows = editorialRowsFromResearch(doc, toolId);
+  } else {
+    editorialRows = legacyTool ? editorialRowsFromLegacy(legacyTool, toolId) : [];
+  }
 
   const tables = sortKeys({
     tool_sources: sourceRows,

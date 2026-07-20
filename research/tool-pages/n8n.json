@@ -1,0 +1,919 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "starter",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "pro",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "business",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:1ab45da421a26936f45000fb8f4e234f843fe1fdd1343186ca12021aa4086009",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "tions: You may use or modify the software only for your own internal business purposes or for non-commercial or personal use. You may distribute the software or provide it to others only if you do so free of charge for n",
+        "evidence_captures": [
+          "cap:1ab45da421a26936f45000fb8f4e234f843fe1fdd1343186ca12021aa4086009"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "free to use|internal business purposes",
+        "sourceTier": 1,
+        "source_id": "src:d9c7e936631a190a7f6cd48611a070251ea76a1c88d329f9a3ab2a2f0f2b5f2b",
+        "source_url": "https://docs.n8n.io/sustainable-use-license/",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+        "claim_id": "clm:9286af382a4bc31731b2ffe5ebb2ae8a7c00e78a7bfd866a4964d436a414101a",
+        "confidence": "high",
+        "evidence": "for all machine-readable content. Pricing All plans include unlimited users & workflows and every integration. Pricing based on monthly workflow executions, regardless of complexity. Monthly Annually (Save 17%) Starter G",
+        "evidence_captures": [
+          "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "Pricing based on monthly workflow executions|unlimited users & workflows",
+        "sourceTier": 1,
+        "source_id": "src:9c31625dedccf56fc0f7d8b18c19b78b25f614ab0aac0ef2509c7a39bad9ba4c",
+        "source_url": "https://n8n.io/pricing/",
+        "status": "observed",
+        "value_native": "workflow_execution",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "t for getting started and seeing the power of n8n. 20€ /mo, billed annually 2.5K workflow executions with unlimited steps Start free trial No credit card required Hosted by n8n This plan includes: 1 shared project 5 conc",
+        "evidence_captures": [
+          "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-20",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-20",
+        "proof_pattern": "billed annually",
+        "sourceTier": 1,
+        "source_id": "src:9c31625dedccf56fc0f7d8b18c19b78b25f614ab0aac0ef2509c7a39bad9ba4c",
+        "source_url": "https://n8n.io/pricing/",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-20T13:59:32.009Z",
+        "attestation_id": "sha256:253e633404a74ad0f58cdfeb546d2918c350a1a3485f93ec630ae39228e1a799",
+        "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://n8n.io/pricing/",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "8acd636a-30d7-41b9-8cd7-c1fca0fd94c5",
+        "schema": "context_attestation/1",
+        "slug": "n8n",
+        "source_url": "https://n8n.io/pricing/",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      },
+      {
+        "accessed_at": "2026-07-20T14:40:19.174Z",
+        "attestation_id": "sha256:d9143af185dbc9cf497755c5ddd26933c4c40e3c625abedc40019a6284ac3e03",
+        "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://n8n.io/pricing/",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "58e1fe04-68f5-412c-835f-8ab782942114",
+        "schema": "context_attestation/1",
+        "slug": "n8n",
+        "source_url": "https://n8n.io/pricing/",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      }
+    ],
+    "extraction_unknowns": [
+      "Enterprise: tarif sur devis, exclu des observations de prix",
+      "tax_inclusion inconnu: la grille n'établit ni HT ni TTC",
+      "Community Edition: licence sans coût, mais infrastructure/exploitation NON gratuites (éditorial)",
+      "market_context_candidate='reference_fr' (currency_egress_candidate_review_required) — NON prouvé, soumis à revue humaine"
+    ],
+    "last_checked_at": "2026-07-20T14:40:19.174Z",
+    "last_context_evidence": {
+      "adapter": "n8n",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-20T14:40:19.174Z",
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://n8n.io/pricing/",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      },
+      "market_context": null,
+      "market_context_candidate": "reference_fr",
+      "market_context_source": "currency_egress_candidate_review_required",
+      "rendered_by": "browser",
+      "run_id": "58e1fe04-68f5-412c-835f-8ab782942114"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+          "excerpt": "t for getting started and seeing the power of n8n. 20€ /mo, billed annually 2.5K workflow executions with unlimited steps Start free trial No credit card required Hosted by n8n This plan includes: 1 shared project 5 conc",
+          "source_url": "https://n8n.io/pricing/"
+        },
+        "billing_period": "monthly",
+        "business_key": "n8n|starter|·|candidate:reference_fr|annual_prepaid",
+        "capture_ref": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+        "confidence": "medium",
+        "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+        "context_key": "candidate:reference_fr",
+        "evidence": [
+          {
+            "capture_id": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+            "observed_on": "2026-07-20",
+            "run_id": "8acd636a-30d7-41b9-8cd7-c1fca0fd94c5"
+          }
+        ],
+        "evidence_excerpt": "Starter Great for getting started and seeing the power of n8n. 20€ /mo, billed annually 2.5K workflow executions with unlimited steps Start free trial No credit card required Hosted by n8n This plan includes: 1 shared project 5 concurrent executions Unlimited users 2,300 AI credits/month Forum support ",
+        "evidence_selector": "pricing-card:Starter",
+        "feature_highlights": [
+          "1 shared project",
+          "5 concurrent executions",
+          "Unlimited users 2,300 AI credits/month",
+          "Forum support"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": null,
+        "market_context_candidate": "reference_fr",
+        "market_context_source": "currency_egress_candidate_review_required",
+        "market_evidence": {
+          "egress_country": "FR",
+          "french_content_markers": [
+            "€"
+          ],
+          "grid_currency": "EUR",
+          "html_lang_attr": "en"
+        },
+        "native_amount": 20,
+        "native_currency": "EUR",
+        "observation_id": "obs:a2bdda899774bbd38873a579957ea91eed91c31e92f53083ae1353ed572212da",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "starter",
+        "plan_key": "starter",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Starter",
+        "plan_summary": "Pour démarrer et découvrir la puissance de n8n en Cloud.",
+        "pricing_unit": "workflow_execution",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+          "excerpt": "for all machine-readable content. Pricing All plans include unlimited users & workflows and every integration. Pricing based on monthly workflow executions, regardless of complexity. Monthly Annually (Save 17%) Starter G",
+          "source_url": "https://n8n.io/pricing/"
+        },
+        "seat_type": null,
+        "source_url": "https://n8n.io/pricing/",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "n8n",
+        "value_fingerprint": "20|EUR|monthly|workflow_execution|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+          "excerpt": "t for getting started and seeing the power of n8n. 20€ /mo, billed annually 2.5K workflow executions with unlimited steps Start free trial No credit card required Hosted by n8n This plan includes: 1 shared project 5 conc",
+          "source_url": "https://n8n.io/pricing/"
+        },
+        "billing_period": "monthly",
+        "business_key": "n8n|pro|·|candidate:reference_fr|annual_prepaid",
+        "capture_ref": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+        "confidence": "medium",
+        "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+        "context_key": "candidate:reference_fr",
+        "evidence": [
+          {
+            "capture_id": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+            "observed_on": "2026-07-20",
+            "run_id": "8acd636a-30d7-41b9-8cd7-c1fca0fd94c5"
+          }
+        ],
+        "evidence_excerpt": "Pro For solo builders and small teams running workflows in production. 50€ /mo, billed annually 10K workflow executions with unlimited steps Start free trial No credit card required Hosted by n8n Everything in Starter plan, plus: 3 shared projects 20 concurrent executions 7 days of insights Up to 13,700 AI credits/month Admin roles Global",
+        "evidence_selector": "pricing-card:Pro",
+        "feature_highlights": [
+          "3 shared projects",
+          "20 concurrent executions",
+          "7 days of insights",
+          "Up to 13,700 AI credits/month",
+          "Admin roles",
+          "Global variables",
+          "Workflow history",
+          "Execution search"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": null,
+        "market_context_candidate": "reference_fr",
+        "market_context_source": "currency_egress_candidate_review_required",
+        "market_evidence": {
+          "egress_country": "FR",
+          "french_content_markers": [
+            "€"
+          ],
+          "grid_currency": "EUR",
+          "html_lang_attr": "en"
+        },
+        "native_amount": 50,
+        "native_currency": "EUR",
+        "observation_id": "obs:eb7a98540b231f9304b181b6468e51c7aa8bccb0267477fa54a4423d4f055bb8",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "pro",
+        "plan_key": "pro",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Pro",
+        "plan_summary": "Pour indépendants et petites équipes en production.",
+        "pricing_unit": "workflow_execution",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+          "excerpt": "for all machine-readable content. Pricing All plans include unlimited users & workflows and every integration. Pricing based on monthly workflow executions, regardless of complexity. Monthly Annually (Save 17%) Starter G",
+          "source_url": "https://n8n.io/pricing/"
+        },
+        "seat_type": null,
+        "source_url": "https://n8n.io/pricing/",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "n8n",
+        "value_fingerprint": "50|EUR|monthly|workflow_execution|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+          "excerpt": "t for getting started and seeing the power of n8n. 20€ /mo, billed annually 2.5K workflow executions with unlimited steps Start free trial No credit card required Hosted by n8n This plan includes: 1 shared project 5 conc",
+          "source_url": "https://n8n.io/pricing/"
+        },
+        "billing_period": "monthly",
+        "business_key": "n8n|business|·|candidate:reference_fr|annual_prepaid",
+        "capture_ref": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+        "confidence": "medium",
+        "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+        "context_key": "candidate:reference_fr",
+        "evidence": [
+          {
+            "capture_id": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+            "observed_on": "2026-07-20",
+            "run_id": "8acd636a-30d7-41b9-8cd7-c1fca0fd94c5"
+          }
+        ],
+        "evidence_excerpt": "Business For companies with &lt; 100 employees needing collaboration and scale. 667€ /mo, billed annually 40K workflow executions with unlimited steps Start free trial Self-hosted Everything in Pro plan, plus: 6 shared projects SSO, SAML and LDAP 30 days of insights AI Assistant coming soon Different environments Scaling options Version c",
+        "evidence_selector": "pricing-card:Business",
+        "feature_highlights": [
+          "6 shared projects",
+          "SSO, SAML and LDAP",
+          "30 days of insights AI",
+          "Assistant coming soon",
+          "Different environments",
+          "Scaling options",
+          "Version control using",
+          "Git"
+        ],
+        "first_observed_on": "2026-07-20",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-20",
+        "market_context": null,
+        "market_context_candidate": "reference_fr",
+        "market_context_source": "currency_egress_candidate_review_required",
+        "market_evidence": {
+          "egress_country": "FR",
+          "french_content_markers": [
+            "€"
+          ],
+          "grid_currency": "EUR",
+          "html_lang_attr": "en"
+        },
+        "native_amount": 667,
+        "native_currency": "EUR",
+        "observation_id": "obs:60181dcfcbb8b1964e52b6e0126938eed7ec386c6eca07437edc4fef19ce99cc",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-20",
+        "observed_plan_key": "business",
+        "plan_key": "business",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Business",
+        "plan_summary": "Pour entreprises (< 100 employés) qui collaborent et passent à l'échelle.",
+        "pricing_unit": "workflow_execution",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+          "excerpt": "for all machine-readable content. Pricing All plans include unlimited users & workflows and every integration. Pricing based on monthly workflow executions, regardless of complexity. Monthly Annually (Save 17%) Starter G",
+          "source_url": "https://n8n.io/pricing/"
+        },
+        "seat_type": null,
+        "source_url": "https://n8n.io/pricing/",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "n8n",
+        "value_fingerprint": "667|EUR|monthly|workflow_execution|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "cloud_data_residency_eu": true,
+        "community_edition_free_selfhosted_proven": true,
+        "execution_based_pricing": true,
+        "grid_found": true,
+        "no_tax_statement_on_grid": true,
+        "per_execution_not_per_step": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": true,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": true,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": "sha256:5f7cee3eecaf121f4767b60416a0247691f2784b224d7ae6ca8fc424b78c76b3",
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "starter",
+        "plan_name_localized": "Starter",
+        "resolution": "human_review_attestation"
+      },
+      {
+        "applied_attestation_id": "sha256:5f7cee3eecaf121f4767b60416a0247691f2784b224d7ae6ca8fc424b78c76b3",
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "pro",
+        "plan_name_localized": "Pro",
+        "resolution": "human_review_attestation"
+      },
+      {
+        "applied_attestation_id": "sha256:5f7cee3eecaf121f4767b60416a0247691f2784b224d7ae6ca8fc424b78c76b3",
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "business",
+        "plan_name_localized": "Business",
+        "resolution": "human_review_attestation"
+      }
+    ],
+    "relationships": [
+      {
+        "capture_ref": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+        "confidence": "medium",
+        "direction": "directed",
+        "observed_on": "2026-07-20",
+        "reason_en": "Workflow automation alternative: n8n positions itself against per-step/per-task tools like Zapier, with a more technical, self-hostable, execution-billed approach.",
+        "reason_fr": "Alternative d’automatisation de workflows : n8n se positionne face aux outils facturés par étape/tâche comme Zapier, avec une approche plus technique, auto-hébergeable et facturée à l’exécution.",
+        "relationship_type": "substitutes",
+        "status": "proposed",
+        "target_slug": "zapier"
+      },
+      {
+        "capture_ref": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+        "confidence": "medium",
+        "direction": "directed",
+        "observed_on": "2026-07-20",
+        "reason_en": "Workflow automation alternative: like Make, n8n orchestrates apps and APIs, but adds code, self-hosting and execution-based billing instead of per-operation.",
+        "reason_fr": "Alternative d’automatisation de workflows : comme Make, n8n orchestre applications et API, mais ajoute le code, l’auto-hébergement et une facturation à l’exécution plutôt que par opération.",
+        "relationship_type": "substitutes",
+        "status": "proposed",
+        "target_slug": "make"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-20T13:59:32.009Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 3,
+          "claims_extracted": 3,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 3
+        },
+        "network_checked": true,
+        "run_id": "8acd636a-30d7-41b9-8cd7-c1fca0fd94c5"
+      },
+      {
+        "at": "2026-07-20T14:40:19.174Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 3,
+          "claims_unchanged": 3,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 3,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "58e1fe04-68f5-412c-835f-8ab782942114"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T13:59:32.009Z",
+            "adapter": "n8n",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": null,
+              "currency_symbols_seen": [
+                "€"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://n8n.io/pricing/",
+              "html_lang_attr": "en",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": [
+                "€"
+              ]
+            },
+            "capture_id": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+            "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "market_context_candidate": "reference_fr",
+            "market_context_source": "currency_egress_candidate_review_required",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "browser",
+            "text_len": 25602,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-20T13:59:50.439Z",
+            "capture_id": "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+            "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 25602,
+            "version": 2
+          }
+        ],
+        "domain": "n8n.io",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T14:40:38.731Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-20T14:40:19.174Z",
+          "reason": null
+        },
+        "source_id": "src:9c31625dedccf56fc0f7d8b18c19b78b25f614ab0aac0ef2509c7a39bad9ba4c",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://n8n.io/pricing/"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-20T13:59:44.809Z",
+            "capture_id": "cap:1ab45da421a26936f45000fb8f4e234f843fe1fdd1343186ca12021aa4086009",
+            "content_hash": "sha256:ac11f559ed8a018cee17b80411387ad84c27772bba646e59552591e30c6ae4f9",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 11760,
+            "version": 1
+          }
+        ],
+        "domain": "docs.n8n.io",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-20T14:40:26.856Z",
+        "purpose": "free_plan",
+        "source_id": "src:d9c7e936631a190a7f6cd48611a070251ea76a1c88d329f9a3ab2a2f0f2b5f2b",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://docs.n8n.io/sustainable-use-license/"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "en": {
+      "ai_angle": {
+        "aiTools": [
+          "openai",
+          "anthropic",
+          "langchain"
+        ],
+        "augmentEn": "n8n is an orchestration backbone for AI: it wires models and agents (RAG, tool calls) onto real data and apps, with controlled execution. AI becomes a reliable step in a process, not an isolated chatbot.",
+        "idealForEn": "Technical users who want to embed AI into concrete processes, with control over data and executions.",
+        "replaceEn": "Replace n8n with an AI? No: AI needs an orchestrator to act on real systems safely and reproducibly. n8n augments AI by giving it triggers, integrations and auditable execution.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Real learning curve: not suited to a fully non-technical user.",
+        "Licence-'free' self-hosting has a hidden cost: infrastructure, maintenance, security, updates, observability.",
+        "Fair-code licence (non-OSI): some features and uses fall under paid offers.",
+        "Reasoning in execution volume requires estimating your load to pick the right tier."
+      ],
+      "covers": [
+        "automation",
+        "ai-orchestration",
+        "integration"
+      ],
+      "functional_needs": [
+        "workflow-automation",
+        "ai-agents",
+        "app-integration"
+      ],
+      "long_description": "n8n is a workflow automation tool that connects apps, APIs and AI models to run end-to-end processes. It stands out on two axes: a visual workflow editor paired with real code capabilities (JavaScript/Python nodes, HTTP/GraphQL requests, webhooks), and a dual deployment model — a managed n8n Cloud and a self-hostable edition.\n\nUnlike a purely no-code tool, n8n assumes some technical comfort: understanding an API, handling credentials, occasionally writing a few lines of code, and — if you self-host — administering a server. In return it offers fine-grained control, complex logic in a single execution, and AI-agent orchestration (RAG, tool calls, multi-step chains).\n\nIts licence is not OSI open source: n8n ships under the Sustainable Use License (fair-code), source-available, allowing internal, personal or non-commercial use of the self-hosted Community Edition. Advanced features (SSO, environments, support) belong to Business/Enterprise offers, unlockable even when self-hosted via a licence key.",
+      "personas": [
+        "technical-freelancer",
+        "automation-engineer",
+        "small-team-tech-lead"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Prices shown in EUR by location; market context pending human review.",
+          "A free trial is not a free plan: only the self-hosted Community Edition is durably free of licence cost.",
+          "Licence-free self-hosting still incurs real infrastructure, maintenance, security, update and observability costs."
+        ],
+        "deployment_note": "Clearly distinguish: self-hosted Community Edition (no licence cost, infra/ops on you), managed n8n Cloud plans (EU data), and Business/Enterprise features unlockable on self-hosted via a licence key.",
+        "free_plan_card": "Self-hosted Community Edition — no licence cost, infrastructure and operations are on you",
+        "location_sensitive": true,
+        "plan_details": {
+          "business": {
+            "deployment": "Cloud or self-hosted (licence key)",
+            "quota": "Higher execution tier; quota COMBINED across all instances using the licence key",
+            "quota_combined_across_instances": true,
+            "summary": "For companies (< 100 employees): SSO/SAML/LDAP, environments, Git version control."
+          },
+          "community": {
+            "deployment": "Self-hosted",
+            "note": "Self-hosted Community Edition — no licence cost, infrastructure and operations are on you",
+            "quota": "No n8n execution billing; limits = your own infrastructure"
+          },
+          "enterprise": {
+            "deployment": "Cloud or self-hosted (licence key)",
+            "quota": "Custom number of executions (contact sales)",
+            "summary": "Governance/compliance, SLA, invoice billing. Custom quote."
+          },
+          "pro": {
+            "deployment": "Cloud (hosted by n8n, EU data — Frankfurt)",
+            "quota": "Mid execution tier, more projects and insights",
+            "summary": "For solo builders and small teams in production on Cloud."
+          },
+          "starter": {
+            "deployment": "Cloud (hosted by n8n, EU data — Frankfurt)",
+            "quota": "Lowest monthly workflow-execution tier",
+            "summary": "To get started and try n8n on Cloud without running infrastructure."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "n8n Cloud pricing is based on the number of monthly workflow executions (one execution = one full workflow run, regardless of steps), not per user or per step. Unlimited users and workflows on every plan.",
+        "usage_sensitive": true
+      },
+      "pros": [
+        "Visual editor combined with real code (JS/Python, HTTP, webhooks): few functional ceilings.",
+        "Dual deployment: managed Cloud (EU data) or self-hosting for control and sovereignty.",
+        "Readable execution model: one execution = one full workflow, regardless of step count.",
+        "Strong fit for AI agents and complex orchestrations, with a large integration catalogue."
+      ],
+      "relevant_for": [
+        "ops",
+        "engineering",
+        "it",
+        "data"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "n8n: ToolTrim review. Fair-code workflow automation, Cloud or self-hosted, for technical users and AI agents — licence, real costs and comparison with Zapier/Make."
+      },
+      "short_description": "Fair-code workflow automation platform, self-hostable or Cloud, built for technical users and AI-agent orchestration.",
+      "solo_relevance": "medium",
+      "team_relevance": "high",
+      "use_cases": [
+        "Orchestrate AI agents (RAG, tool calls, chains) inside business processes.",
+        "Sync and transform data between apps and internal APIs.",
+        "Automate IT/security operations triggered by webhooks or schedules.",
+        "Prototype an automation back-end without building all the infrastructure."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You are non-technical and want turnkey automation with no learning curve.",
+          "You don't want to administer a server or reason in execution volume.",
+          "Your needs are limited to a few simple connections between consumer apps."
+        ],
+        "keepIf": [
+          "You (or your team) are technical and want to automate logic that no-code tools can't cover.",
+          "You are building AI agents or multi-step orchestrations and want to keep control of data and credentials.",
+          "Data sovereignty or self-hosting are important criteria."
+        ],
+        "threshold": "n8n becomes the right choice when workflow complexity, the need for code, or control/sovereignty requirements exceed what Zapier or Make offer comfortably; below that, a simpler no-code tool is preferable."
+      },
+      "verticals": [
+        "tech-ops",
+        "it-operations",
+        "ai-automation"
+      ]
+    },
+    "facts_basis": [
+      "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+      "cap:6206a331fb2ce65bb01430d997bad1bac4c12913f3002e6764b8e12ed3bdc3b7",
+      "cap:1ab45da421a26936f45000fb8f4e234f843fe1fdd1343186ca12021aa4086009"
+    ],
+    "fr": {
+      "ai_angle": {
+        "aiTools": [
+          "openai",
+          "anthropic",
+          "langchain"
+        ],
+        "augmentFr": "n8n est un socle d'orchestration pour l'IA : il branche des modèles et des agents (RAG, appels d'outils) sur des données et des applications réelles, avec exécution contrôlée. L'IA devient une étape fiable d'un processus, pas un chatbot isolé.",
+        "idealForFr": "Profils techniques qui veulent intégrer l'IA dans des processus concrets, avec contrôle des données et des exécutions.",
+        "replaceFr": "Remplacer n8n par une IA ? Non : l'IA a besoin d'un orchestrateur pour agir sur des systèmes réels de façon sûre et reproductible. n8n augmente l'IA en lui donnant des déclencheurs, des intégrations et une exécution auditable.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Courbe d'apprentissage réelle : peu adapté à un profil totalement non technique.",
+        "L'auto-hébergement « gratuit » côté licence a un coût caché : infrastructure, maintenance, sécurité, mises à jour, observabilité.",
+        "Licence fair-code (non OSI) : certaines fonctions et usages relèvent d'offres payantes.",
+        "Raisonner en volume d'exécutions demande d'estimer sa charge pour choisir le bon palier."
+      ],
+      "covers": [
+        "automation",
+        "ai-orchestration",
+        "integration"
+      ],
+      "functional_needs": [
+        "workflow-automation",
+        "ai-agents",
+        "app-integration"
+      ],
+      "long_description": "n8n est un outil d'automatisation de workflows qui relie des applications, des API et des modèles d'IA pour exécuter des traitements de bout en bout. Il se distingue sur deux axes : un éditeur visuel de workflows doublé de vraies capacités de code (nœuds JavaScript/Python, requêtes HTTP/GraphQL, webhooks), et un modèle de déploiement double — un Cloud géré par n8n et une édition auto-hébergeable.\n\nContrairement à un outil purement no-code, n8n suppose un minimum d'aisance technique : comprendre une API, gérer des identifiants, parfois écrire quelques lignes de code, et — si l'on choisit l'auto-hébergement — administrer un serveur. En échange, il offre un contrôle fin, l'exécution de logiques complexes en une seule exécution et l'orchestration d'agents IA (RAG, appels d'outils, chaînes multi-étapes).\n\nSa licence n'est pas open source au sens de l'OSI : n8n est distribué sous « Sustainable Use License » (fair-code), source-available, qui autorise un usage interne, personnel ou non commercial de la Community Edition auto-hébergée. Certaines fonctions avancées (SSO, environnements, support) relèvent des offres Business/Enterprise, activables même en auto-hébergé via une clé de licence.",
+      "personas": [
+        "technical-freelancer",
+        "automation-engineer",
+        "small-team-tech-lead"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Prix affichés en EUR selon la localisation ; contexte marché soumis à revue humaine.",
+          "Un essai gratuit n'est pas un plan gratuit : seule la Community Edition auto-hébergée est durablement sans coût de licence.",
+          "L'auto-hébergement gratuit côté licence implique des coûts réels d'infrastructure, de maintenance, de sécurité, de mises à jour et d'observabilité."
+        ],
+        "deployment_note": "Distinguer clairement : Community Edition auto-hébergée (licence sans coût, infra/exploitation à votre charge), plans Cloud gérés par n8n (données UE), et fonctionnalités Business/Enterprise activables en auto-hébergé via une clé de licence.",
+        "free_plan_card": "Community Edition auto-hébergée — licence sans coût, infrastructure et exploitation à votre charge",
+        "location_sensitive": true,
+        "plan_details": {
+          "business": {
+            "deployment": "Cloud ou auto-hébergé (clé de licence)",
+            "quota": "Palier d'exécutions élevé ; quota CUMULÉ sur toutes les instances portant la clé de licence",
+            "quota_combined_across_instances": true,
+            "summary": "Pour entreprises (< 100 employés) : SSO/SAML/LDAP, environnements, version Git."
+          },
+          "community": {
+            "deployment": "Auto-hébergée (self-hosted)",
+            "note": "Community Edition auto-hébergée — licence sans coût, infrastructure et exploitation à votre charge",
+            "quota": "Exécutions non facturées par n8n ; limites = votre infrastructure"
+          },
+          "enterprise": {
+            "deployment": "Cloud ou auto-hébergé (clé de licence)",
+            "quota": "Nombre d'exécutions personnalisé (sur devis)",
+            "summary": "Gouvernance/conformité, SLA, facturation sur facture. Tarif sur devis."
+          },
+          "pro": {
+            "deployment": "Cloud (hébergé par n8n, données UE — Frankfurt)",
+            "quota": "Palier d'exécutions intermédiaire, projets et insights supplémentaires",
+            "summary": "Pour indépendants et petites équipes en production sur Cloud."
+          },
+          "starter": {
+            "deployment": "Cloud (hébergé par n8n, données UE — Frankfurt)",
+            "quota": "Palier d'exécutions de workflow mensuelles le plus bas",
+            "summary": "Pour démarrer et découvrir n8n en Cloud sans opérer d'infrastructure."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Tarification n8n Cloud fondée sur le nombre d'exécutions de workflow mensuelles (une exécution = un déclenchement complet du workflow, quel que soit le nombre d'étapes), et non par utilisateur ni par étape. Utilisateurs et workflows illimités sur tous les plans.",
+        "usage_sensitive": true
+      },
+      "pros": [
+        "Éditeur visuel combiné à du vrai code (JS/Python, HTTP, webhooks) : peu de plafonds fonctionnels.",
+        "Double déploiement : Cloud géré (données UE) ou auto-hébergement pour le contrôle et la souveraineté.",
+        "Modèle d'exécution lisible : une exécution = un workflow complet, indépendamment du nombre d'étapes.",
+        "Très adapté aux agents IA et aux orchestrations complexes, avec un large catalogue d'intégrations."
+      ],
+      "relevant_for": [
+        "ops",
+        "engineering",
+        "it",
+        "data"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "n8n : fiche ToolTrim. Automatisation de workflows fair-code, Cloud ou auto-hébergée, pour profils techniques et agents IA — licence, coûts réels et comparaison avec Zapier/Make."
+      },
+      "short_description": "Plateforme d'automatisation de workflows fair-code, auto-hébergeable ou en Cloud, taillée pour les profils techniques et l'orchestration d'agents IA.",
+      "solo_relevance": "medium",
+      "team_relevance": "high",
+      "use_cases": [
+        "Orchestrer des agents IA (RAG, appels d'outils, enchaînements) au sein de processus métier.",
+        "Synchroniser et transformer des données entre applications et API internes.",
+        "Automatiser des opérations IT/sécurité déclenchées par webhooks ou planifications.",
+        "Prototyper un back-end d'automatisation sans construire toute l'infrastructure."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous êtes non technique et cherchez une automatisation clé en main sans courbe d'apprentissage.",
+          "Vous ne voulez ni administrer un serveur ni raisonner en volume d'exécutions.",
+          "Vos besoins se limitent à quelques connexions simples entre applications grand public."
+        ],
+        "keepIf": [
+          "Vous (ou votre équipe) avez un profil technique et voulez automatiser des logiques que les outils no-code ne couvrent pas.",
+          "Vous construisez des agents IA ou des orchestrations multi-étapes et voulez garder le contrôle des données et des identifiants.",
+          "La souveraineté des données ou l'auto-hébergement sont des critères importants."
+        ],
+        "threshold": "n8n devient le bon choix quand la complexité des workflows, le besoin de code ou l'exigence de contrôle/souveraineté dépassent ce que Zapier ou Make offrent confortablement ; en dessous, un outil no-code plus simple reste préférable."
+      },
+      "verticals": [
+        "tech-ops",
+        "it-operations",
+        "ai-automation"
+      ]
+    },
+    "generated_on": "2026-07-20",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
+    "status": "draft"
+  },
+  "identity": {
+    "officialName": "n8n",
+    "pricingUrl": "https://n8n.io/pricing/",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-20",
+  "researcher": "research-collector",
+  "review_attestations": [
+    {
+      "act": "human_review_attestation",
+      "applies_to_capture_ref": "cap:2d565f1b2923dcba9490b442b84f06aafd5a6a59e7fac96b124c6e460f261e25",
+      "attested_at": "2026-07-20T14:39:59.293Z",
+      "attested_by": "ToolTrim — Mike",
+      "attests": "market_context",
+      "basis_attestation_id": "sha256:253e633404a74ad0f58cdfeb546d2918c350a1a3485f93ec630ae39228e1a799",
+      "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+      "note": null,
+      "review_attestation_id": "sha256:5f7cee3eecaf121f4767b60416a0247691f2784b224d7ae6ca8fc424b78c76b3",
+      "schema": "review_attestation/2",
+      "scope_note": "Ne s'applique qu'à cette version de contenu. Toute nouvelle capture exige une nouvelle attestation.",
+      "semantic_fingerprint": "sfp:768c22f89cd8900ff9e619c9671cebf7acabc4245e26ba10b2f6d12c2645ebe4",
+      "slug": "n8n",
+      "source_url": "https://n8n.io/pricing/",
+      "value": "reference_fr"
+    }
+  ],
+  "schemaVersion": 1,
+  "slug": "n8n",
+  "status": "needs_review",
+  "unknowns": []
+}

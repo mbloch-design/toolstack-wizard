@@ -36,6 +36,8 @@
     "validate:catalog-fiche-canary": "node scripts/validate-catalog-fiche-canary.mjs",
     "pilot:wix": "node scripts/wix-canonical-pilot.mjs",
     "pilot:webflow": "node scripts/webflow-canonical-pilot.mjs",
+    "pilot:n8n": "node scripts/n8n-canonical-pilot.mjs",
+    "pilot:n8n-identity": "node scripts/n8n-identity-pilot.mjs",
     "summarize:phase4": "node scripts/summarize-phase4-wave.mjs",
     "assess:g4": "node scripts/assess-phase4-g4.mjs",
     "verify:preprod": "npm test -- --environment node && tsc --noEmit && npm run build",

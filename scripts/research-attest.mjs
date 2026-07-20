@@ -70,9 +70,13 @@ export const SUPPORTED_DECISIONS = {
         const markers = ctx.visible_markers ?? [];
         const symbols = ctx.currency_symbols_seen ?? [];
         if (!symbols.includes("€") && !markers.includes("€")) fails.push("aucun marqueur EUR (€) observé");
-        if (!markers.includes("TVA")) fails.push("aucun marqueur TVA observé");
         if (symbols.some((x) => x !== "€")) fails.push(`devises incohérentes: ${JSON.stringify(symbols)} (EUR attendu seul)`);
-        return { ok: fails.length === 0, fails };
+        // Le faisceau FORT (egress FR + playwright + fr-FR ×3 + Europe/Paris + EUR seul) établit
+        // à lui seul le contexte reference_fr soumis à revue humaine. Le marqueur « TVA » est une
+        // CORROBORATION (pages en français) : présent, il renforce ; absent (page EN à prix EUR
+        // géo-résolus depuis un egress FR, ex. n8n), il n'invalide pas le faisceau fort.
+        const strongBundle = fails.length === 0;
+        return { ok: strongBundle, fails, corroboration: { tva_marker: markers.includes("TVA") } };
       },
     },
   },

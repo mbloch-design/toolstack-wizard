@@ -1,0 +1,164 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-20T14:40:19.174Z",
+      "attestation_id": "sha256:d9143af185dbc9cf497755c5ddd26933c4c40e3c625abedc40019a6284ac3e03",
+      "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "€"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://n8n.io/pricing/",
+      "html_lang": "en",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "58e1fe04-68f5-412c-835f-8ab782942114",
+      "schema": "context_attestation/1",
+      "slug": "n8n",
+      "source_url": "https://n8n.io/pricing/",
+      "timezone": "Europe/Paris",
+      "visible_markers": [
+        "€"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "n8n",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://n8n.io/pricing/",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      },
+      "content_hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": "reference_fr",
+      "market_context_source": "currency_egress_candidate_review_required",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "n8n",
+      "url": "https://n8n.io/pricing/"
+    },
+    {
+      "content_hash": "sha256:ac11f559ed8a018cee17b80411387ad84c27772bba646e59552591e30c6ae4f9",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "browser",
+      "slug": "n8n",
+      "url": "https://docs.n8n.io/sustainable-use-license/"
+    },
+    {
+      "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "browser",
+      "slug": "n8n",
+      "url": "https://n8n.io/pricing/"
+    },
+    {
+      "content_hash": "sha256:1c77c08ae7e721700eea3f67647352ef67c1a27aebf32602833a474d7b99db04",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "browser",
+      "slug": "n8n",
+      "url": "https://n8n.io/pricing/"
+    }
+  ],
+  "claims_created": 4,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=3 claims_created=0 claims_unchanged=3 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=1 approved=0 | doc_claims: extracted=3 created=0 unchanged=3",
+  "errors": [],
+  "finished_at": "2026-07-20T14:40:48.338Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 3,
+    "claims_unchanged": 3,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 3,
+    "doc_claims_unchanged": 3,
+    "versions_created": 0
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "browser",
+    "slugs": [
+      "n8n"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:d5a4eb16d3ec6b765a035204db85e9c993de24ee5db90f52aa625d24d76c740a",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 3,
+        "claims_unchanged": 3,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 3,
+        "versions_created": 0
+      },
+      "networkChecked": true,
+      "observations": 3,
+      "slug": "n8n",
+      "url": "https://n8n.io/pricing/",
+      "versionsCreated": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "58e1fe04-68f5-412c-835f-8ab782942114",
+  "started_at": "2026-07-20T14:40:18.950Z",
+  "valid": true
+}

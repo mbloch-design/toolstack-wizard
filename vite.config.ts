@@ -296,24 +296,33 @@ function sbRowToTool(row: Record<string, any>): Record<string, any> {
 let _sbToolsCache: Record<string, any>[] | null = null;
 let _catalogProjectionToolsCache: Record<string, any>[] | null = null;
 
-async function getProjectedFicheTools(): Promise<Record<string, any>[]> {
+async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Promise<Record<string, any>[]> {
   if (_catalogProjectionToolsCache) return _catalogProjectionToolsCache;
 
   const rows: CatalogProjectionRow[] = [];
-  // This view resolves prices and relationships per row. A 1,000-row `select=*`
-  // can exceed PostgREST's statement budget even though lighter count/shadow
-  // reads pass. Smaller pages keep the production build deterministic.
-  const pageSize = 200;
-  for (let from = 0; ; from += pageSize) {
+  // The projection resolves prices and relationships per row. An unfiltered
+  // scan can exceed PostgREST's statement timeout, including with Range pages,
+  // because PostgreSQL may still evaluate the full security-barrier view first.
+  // Explicit id filters let it restrict public.tools before the lateral
+  // resolvers. Small batches preserve every legacy fallback while keeping the
+  // production build deterministic and bounded.
+  const toolIds = [...new Set(catalogTools.map((tool) => tool.id).filter(Boolean))].sort();
+  const batchSize = 25;
+  const concurrency = 4;
+  const batches: string[][] = [];
+  for (let index = 0; index < toolIds.length; index += batchSize) {
+    batches.push(toolIds.slice(index, index + batchSize));
+  }
+  const fetchBatch = async (ids: string[]) => {
+    const idFilter = ids.map((id) => encodeURIComponent(id)).join(",");
     const res = await fetch(
-      `${SB_PRERENDER_URL}/rest/v1/published_tool_projection?select=*&order=id.asc,lang.asc`,
+      `${SB_PRERENDER_URL}/rest/v1/published_tool_projection?select=*&id=in.(${idFilter})&order=id.asc,lang.asc`,
       {
         headers: {
           apikey: SB_PRERENDER_ANON,
           Authorization: `Bearer ${SB_PRERENDER_ANON}`,
           "Accept-Profile": "catalog_api",
           "Cache-Control": "no-cache",
-          Range: `${from}-${from + pageSize - 1}`,
         },
         cache: "no-store",
       },
@@ -324,8 +333,11 @@ async function getProjectedFicheTools(): Promise<Record<string, any>[]> {
     }
     const page = await res.json();
     if (!Array.isArray(page)) throw new Error("projection invalid response");
-    rows.push(...page as CatalogProjectionRow[]);
-    if (page.length < pageSize) break;
+    return page as CatalogProjectionRow[];
+  };
+  for (let index = 0; index < batches.length; index += concurrency) {
+    const pages = await Promise.all(batches.slice(index, index + concurrency).map(fetchBatch));
+    for (const page of pages) rows.push(...page);
   }
 
   const byTool = new Map<string, CatalogProjectionRow[]>();
@@ -339,8 +351,11 @@ async function getProjectedFicheTools(): Promise<Record<string, any>[]> {
     .map(catalogProjectionRowsToTool)
     .filter((tool): tool is NonNullable<typeof tool> => tool != null);
 
-  if (rows.length !== 2252 || tools.length !== 1126) {
-    throw new Error(`projection cardinality ${rows.length}/${tools.length}, expected 2252/1126`);
+  const incompleteLocalization = [...byTool.values()].some((localized) =>
+    localized.length !== 2 || !localized.some((row) => row.lang === "fr") || !localized.some((row) => row.lang === "en")
+  );
+  if (tools.length !== toolIds.length || rows.length !== toolIds.length * 2 || incompleteLocalization) {
+    throw new Error(`projection catalogue incomplète: ${rows.length} lignes pour ${tools.length} outils`);
   }
 
   _catalogProjectionToolsCache = tools as unknown as Record<string, any>[];
@@ -568,7 +583,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let ficheTools = tools;
         if (useCatalogProjectionForFiche) {
           try {
-            ficheTools = await getProjectedFicheTools();
+            ficheTools = await getProjectedFicheTools(tools);
           } catch (error) {
             console.warn("⚠️ Fiche + SSR: projection indisponible, fallback public.tools/JSON:", error);
           }

@@ -66,7 +66,8 @@ describe("décisions supportées uniquement", () => {
 /* ── vérification automatique du faisceau ─────────────────────────────────── */
 describe("faisceau vérifié automatiquement dans la basis", () => {
   it("POSITIF — faisceau Wix réel => ok", () => {
-    expect(verify(CTX_OK)).toEqual({ ok: true, fails: [] });
+    expect(verify(CTX_OK)).toMatchObject({ ok: true, fails: [] });
+    expect(verify(CTX_OK).corroboration).toMatchObject({ tva_marker: true });
   });
   it("NÉGATIF — basis US (egress_country=US) => refus", () => {
     const r = verify({ ...CTX_OK, egress_country: "US" });
@@ -96,10 +97,15 @@ describe("faisceau vérifié automatiquement dans la basis", () => {
     expect(r.ok).toBe(false);
     expect(r.fails.join(" ")).toMatch(/devises incohérentes/);
   });
-  it("NÉGATIF — aucun marqueur TVA => refus", () => {
-    const r = verify({ ...CTX_OK, visible_markers: ["/mois", "€"] });
+  it("TVA absent mais faisceau FORT (page EN à prix EUR, egress FR) => ACCEPTÉ, TVA corroborante", () => {
+    const r = verify({ ...CTX_OK, visible_markers: ["€"] });   // page anglaise, pas de « TVA »
+    expect(r.ok).toBe(true);
+    expect(r.corroboration.tva_marker).toBe(false);
+  });
+  it("NÉGATIF — TVA absent ET faisceau faible (egress US) => refus", () => {
+    const r = verify({ ...CTX_OK, visible_markers: ["€"], egress_country: "US" });
     expect(r.ok).toBe(false);
-    expect(r.fails.join(" ")).toMatch(/TVA/);
+    expect(r.fails.join(" ")).toMatch(/egress_country=US/);
   });
 });
 

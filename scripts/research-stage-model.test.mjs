@@ -3,7 +3,8 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildStagingProposal, editorialRowsFromLegacy, planRegistryFromResearch, validateStagingProposal } from "./research-stage-model.mjs";
+import { buildStagingProposal, editorialRowsFromLegacy, planRegistryFromResearch, validateStagingProposal,
+  editorialRowsFromResearch, assertResearchEditorialComplete } from "./research-stage-model.mjs";
 import { stagingProfileFor } from "./research-stage-profiles.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -192,6 +193,91 @@ describe("proposition staging Wix — aucune I/O et aucun approved", () => {
     const result = validateStagingProposal(tables);
     expect(result.ok).toBe(false);
     expect(result.errors.join(" ")).toMatch(/publication éditoriale interdite/);
+  });
+});
+
+describe("profil de staging n8n — éditorial research, freePlanKey=community", () => {
+  const N8N = path.join(ROOT, "research", "tool-pages", "n8n.json");
+  async function n8nDoc() { return JSON.parse(await readFile(N8N, "utf8")); }
+  async function n8nRegistry() {
+    const reg = JSON.parse(await readFile(path.join(ROOT, "research", "sources-registry.json"), "utf8"));
+    return reg.sources.n8n;
+  }
+  async function n8nProposal(docOverride) {
+    const doc = docOverride ?? await n8nDoc();
+    const profile = stagingProfileFor("n8n");
+    const planRegistry = planRegistryFromResearch(doc, await n8nRegistry(), profile);
+    return buildStagingProposal(doc, { planRegistry, locale: profile.locale, toolId: "n8n",
+      publishedTools: new Map([["n8n", "n8n"], ["zapier", "zapier"], ["make", "make"]]),
+      legacyTool: { id: "n8n", slug: "n8n" }, editorialSource: profile.editorialSource });
+  }
+
+  it("profil : freePlanKey=community (non 'free') et comparePlanKey=starter", () => {
+    const p = stagingProfileFor("n8n");
+    expect(p.freePlanKey).toBe("community");
+    expect(p.comparePlanKey).toBe("starter");
+    expect(p.editorialSource).toBe("research");
+    expect(p.planOrder).toEqual(["community", "starter", "pro", "business"]);
+  });
+
+  it("plan registry : community gratuit sans observation, starter comparatif, unité workflow_execution", async () => {
+    const proposal = await n8nProposal();
+    const plans = proposal.tables.tool_plans;
+    const community = plans.find((x) => x.plan_key === "community");
+    const starter = plans.find((x) => x.plan_key === "starter");
+    expect(community).toMatchObject({ is_free: true, is_compare_plan: false });
+    expect(starter).toMatchObject({ is_free: false, is_compare_plan: true, pricing_unit: "workflow_execution" });
+    // aucune collision de clés Cloud/self-hosted : 4 clés distinctes
+    expect(new Set(plans.map((x) => x.plan_key)).size).toBe(4);
+    // AUCUNE observation 0 EUR pour community (safeguard)
+    expect(proposal.tables.tool_price_observations.some((o) => o.plan_ref?.plan_key === "community")).toBe(false);
+    expect(proposal.approved_rows).toBe(0);
+  });
+
+  it("éditorial FR/EN vient de research (jamais du legacy vide) avec la carte gratuite conforme", async () => {
+    const proposal = await n8nProposal();
+    const rows = proposal.tables.tool_editorial_content;
+    expect(rows.map((r) => r.lang).sort()).toEqual(["en", "fr"]);
+    expect(rows.every((r) => r.status === "draft" && r.author === "Claude Code" && r.reviewed_by == null)).toBe(true);
+    expect(rows.every((r) => /^sha256:[0-9a-f]{64}$/.test(r.content_hash))).toBe(true);
+    const fr = rows.find((r) => r.lang === "fr");
+    expect(fr.short_description).toMatch(/fair-code/i);
+    expect(fr.pricing_guidance.free_plan_card).toBe("Community Edition auto-hébergée — licence sans coût, infrastructure et exploitation à votre charge");
+  });
+
+  it("REFUS de bascule si l'éditorial research est incomplet — aucun repli silencieux sur le legacy", async () => {
+    const doc = await n8nDoc();
+    delete doc.editorial_drafts.fr.verdict;            // rend l'éditorial incomplet
+    await expect(n8nProposal(doc)).rejects.toThrow(/editorial_drafts\.fr\.verdict|aucun repli/i);
+    const doc2 = await n8nDoc();
+    delete doc2.editorial_drafts;                       // pas de drafts du tout
+    await expect(n8nProposal(doc2)).rejects.toThrow(/editorial_drafts FR\/EN requis|aucun repli/i);
+  });
+
+  it("séparation stricte faits de prix / pricing_guidance", async () => {
+    const proposal = await n8nProposal();
+    // faits : montants natifs uniquement dans les observations
+    expect(proposal.tables.tool_price_observations.every((o) => typeof o.native_amount === "number")).toBe(true);
+    // pricing_guidance ne porte AUCUN fait tarifaire faisant autorité
+    for (const row of proposal.tables.tool_editorial_content) {
+      const g = JSON.stringify(row.pricing_guidance ?? {});
+      expect(g).not.toMatch(/native_amount|compare_price_monthly_eur|"20"|"50"|"667"/);
+    }
+  });
+
+  it("relations n8n -> zapier / make : proposées, expliquées FR/EN, jamais approuvées", async () => {
+    const proposal = await n8nProposal();
+    const rels = proposal.tables.tool_relationships;
+    expect(rels.map((r) => r.related_tool_slug).sort()).toEqual(["make", "zapier"]);
+    expect(rels.every((r) => r.status === "proposed" && r.approval_event_id == null)).toBe(true);
+    expect(rels.every((r) => r.collector_payload?.reason_fr && r.collector_payload?.reason_en)).toBe(true);
+  });
+
+  it("assertResearchEditorialComplete valide le dossier n8n réel", async () => {
+    expect(() => assertResearchEditorialComplete({ editorial_drafts: {} }, "n8n")).toThrow();
+    const doc = await n8nDoc();
+    expect(assertResearchEditorialComplete(doc, "n8n")).toBeTruthy();
+    expect(editorialRowsFromResearch(doc, "n8n")).toHaveLength(2);
   });
 });
 

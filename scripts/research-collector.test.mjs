@@ -215,6 +215,37 @@ describe("v0.3 — contexte marché : prouvé | déclaré | candidat", () => {
   it("les marqueurs FR sont listés comme preuves faibles", () => {
     expect(frenchContentMarkers(FR_TEXT)).toEqual(expect.arrayContaining(["TVA", "/mois", "€"]));
   });
+
+  it("FAISCEAU DEVISE+EGRESS : grille EUR + egress FR + fr-FR => CANDIDAT reference_fr (revue), jamais prouvé", () => {
+    const d = decideMarketContext({
+      proof: PROOF_UNPROVEN, registryEntry: {}, text: "Starter 20€ /mo billed annually",
+      market: "FR", locale: "fr-FR", currency: "EUR", egressCountry: "FR",
+    });
+    expect(d.market_context).toBeNull();                      // jamais déduit
+    expect(d.market_context_candidate).toBe("reference_fr");  // candidat seulement
+    expect(d.observed_market).toBeNull();
+    expect(d.observed_locale).toBeNull();
+    expect(d.market_context_source).toBe("currency_egress_candidate_review_required");
+    expect(d.market_evidence.grid_currency).toBe("EUR");
+    expect(d.market_evidence.egress_country).toBe("FR");
+  });
+
+  it("EUR mais egress NON FR => aucun candidat (pas de sur-attribution)", () => {
+    const d = decideMarketContext({
+      proof: PROOF_UNPROVEN, registryEntry: {}, text: "Starter 20€ /mo",
+      market: "FR", locale: "fr-FR", currency: "EUR", egressCountry: "DE",
+    });
+    expect(d.market_context_candidate).toBeNull();
+    expect(d.market_context_source).toBe("unproven");
+  });
+
+  it("USD depuis egress FR => aucun candidat reference_fr (devise non EUR)", () => {
+    const d = decideMarketContext({
+      proof: PROOF_UNPROVEN, registryEntry: {}, text: "Pro $30/mo",
+      market: "FR", locale: "fr-FR", currency: "USD", egressCountry: "FR",
+    });
+    expect(d.market_context_candidate).toBeNull();
+  });
 });
 
 describe("v0.3 — dispatch adaptateur Wix via le moteur", () => {

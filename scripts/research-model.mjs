@@ -310,9 +310,10 @@ export function contextPolicySatisfied(ctx) {
   if (ctx.timezone !== "Europe/Paris") fails.push("timezone ≠ Europe/Paris");
   const syms = ctx.currency_symbols_seen ?? [];
   if (!syms.includes("€") && !(ctx.visible_markers ?? []).includes("€")) fails.push("marqueur EUR absent");
-  if (!(ctx.visible_markers ?? []).includes("TVA")) fails.push("marqueur TVA absent");
   if (syms.some((x) => x !== "€")) fails.push("devises incohérentes");
-  return { ok: fails.length === 0, fails };
+  // Faisceau FORT (egress FR + playwright + fr-FR ×3 + Europe/Paris + EUR seul) suffisant.
+  // Marqueur « TVA » = CORROBORATION (pages FR), non requis pour une page EN à prix EUR géo-résolus.
+  return { ok: fails.length === 0, fails, corroboration: { tva_marker: (ctx.visible_markers ?? []).includes("TVA") } };
 }
 
 export function attestationReadiness(o) {

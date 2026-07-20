@@ -255,6 +255,67 @@
       "source_type": "pricing",
       "verified_http_status": 200,
       "verified_on": "2026-07-16"
+    },
+    "n8n": {
+      "adapter": "n8n",
+      "pricing_url": "https://n8n.io/pricing/",
+      "renderer_hint": "browser",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-20",
+      "market_context_declared": null,
+      "market_context_justification": "Grille Cloud rendue en EUR (Starter 20€, Pro 50€, Business 667€) : devise déterminée par l'egress/géolocalisation (EUR constaté même sous locale en-US ; egress FR mesuré depuis le contexte Playwright) et données Cloud hébergées dans l'UE (Frankfurt). La page est en anglais : la locale FR n'est pas prouvable par le transport HTML. Le collecteur ne produit donc qu'un market_context_candidate=reference_fr via le faisceau devise EUR + egress FR, soumis à revue humaine (jamais prouvé, jamais auto-approuvé).",
+      "plan_key_mapping": {
+        "Community Edition": "community",
+        "Starter": "starter",
+        "Pro": "pro",
+        "Business": "business",
+        "Enterprise": "enterprise"
+      },
+      "plan_key_mapping_note": "Plans Cloud n8n + Community Edition auto-hébergée (plan gratuit 'community', porté par un claim is_free, hors grille Cloud, sans observation 0 EUR). Enterprise reste éditorial (contact sales), hors planOrder.",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "Sustainable Use License (fair-code, NON open source au sens OSI). La Community Edition auto-hébergée est libre d'usage côté licence (« free to use » ; usage « internal business purposes »). Aucun montant affiché => AUCUNE observation 0 EUR ; le fait est porté par ce claim. Infrastructure et exploitation NON gratuites (traité en éditorial).",
+          "proof_pattern": "free to use|internal business purposes",
+          "purpose": "free_plan",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://docs.n8n.io/sustainable-use-license/",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "workflow_execution" },
+          "is_official": true,
+          "notes": "Grille officielle : « All plans include unlimited users & workflows and every integration. Pricing based on monthly workflow executions, regardless of complexity ». Unité = exécution de workflow (jamais par siège, par étape, ni par instance). Le quota Business/Enterprise self-hosted est CUMULÉ sur toutes les instances portant la clé de licence.",
+          "proof_pattern": "Pricing based on monthly workflow executions|unlimited users & workflows",
+          "purpose": "pricing_unit",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://n8n.io/pricing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        },
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "is_official": true,
+          "notes": "Grille officielle : les tarifs affichés sont « billed annually » (engagement annuel). billing_period mensuel, engagement annuel prépayé.",
+          "proof_pattern": "billed annually",
+          "purpose": "billing_commitment",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://n8n.io/pricing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-20"
+        }
+      ]
     }
   }
 }

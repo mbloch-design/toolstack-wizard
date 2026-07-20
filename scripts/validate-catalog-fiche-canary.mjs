@@ -7,6 +7,7 @@ const BASE_URL = (process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:4173").re
 const CANARY = [
   { slug: "wix", id: "wix", name: "Wix" },
   { slug: "webflow", id: "webflow", name: "Webflow" },
+  { slug: "n8n", id: "n8n", name: "n8n" },
   { slug: "balsamiq", id: "balsamiq", name: "Balsamiq" },
   { slug: "kit", id: "convertkit", name: "Kit" },
   { slug: "aircall", id: "aircall-inc", name: "Aircall" },
@@ -99,6 +100,18 @@ async function inspectSsrPage(page, tool, lang) {
         .sort((a, b) => a - b);
       assert(JSON.stringify(paidAmounts) === JSON.stringify([15, 25]), `${url} plans Webflow incomplets`);
       assert(ssrTool.pricing_v5.plans.filter((plan) => plan.nativeAmount != null).every((plan) => plan.nativeCurrency === "USD"), `${url} devise Webflow incorrecte`);
+    }
+    if (tool.slug === "n8n") {
+      assert(ssrTool.defaultMonthlyPrice === 20, `${url} prix comparatif n8n inattendu`);
+      assert(ssrTool.pricing_v5?.price_reliability === "approved", `${url} n8n n'est pas projeté comme approved`);
+      assert(ssrTool.pricing_v5?.plans?.length === 4, `${url} n'expose pas les 4 plans n8n`);
+      const paidAmounts = ssrTool.pricing_v5.plans
+        .filter((plan) => plan.nativeAmount != null)
+        .map((plan) => plan.nativeAmount)
+        .sort((a, b) => a - b);
+      assert(JSON.stringify(paidAmounts) === JSON.stringify([20, 50, 667]), `${url} plans n8n incomplets`);
+      assert(ssrTool.pricing_v5.plans.filter((plan) => plan.nativeAmount != null).every((plan) => plan.nativeCurrency === "EUR"), `${url} devise n8n incorrecte`);
+      assert(ssrTool.verdict?.keepIf?.length > 0 && ssrTool.verdictEn?.keepIf?.length > 0, `${url} éditorial n8n incomplet`);
     }
     if (tool.slug === "balsamiq") {
       assert(ssrTool.verdictEn.keepIf?.length > 0, `${url} fallback verdict EN vide`);

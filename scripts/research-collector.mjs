@@ -31,6 +31,7 @@ import { extractWix } from "./research-adapters/wix.mjs";
 import { extractWebflow } from "./research-adapters/webflow.mjs";
 import { extractFramer } from "./research-adapters/framer.mjs";
 import { extractSquarespace } from "./research-adapters/squarespace.mjs";
+import { extractN8n } from "./research-adapters/n8n.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
   valueFingerprintOf, observationIdOf, upsertSource, appendCapture, findCapture,
@@ -46,6 +47,7 @@ const ADAPTERS = {
   webflow: extractWebflow,
   framer: extractFramer,
   squarespace: extractSquarespace,
+  n8n: extractN8n,
 };
 
 export { resolveEffectiveMarketContext, approvedPreEligibility, attestationReadiness,
@@ -170,7 +172,7 @@ export function frenchContentMarkers(text) {
  *  3. CANDIDAT  : texte français seul => market_context RESTE null, on émet
  *                 `market_context_candidate='reference_fr'` soumis à revue.
  */
-export function decideMarketContext({ proof, registryEntry, text, market, locale }) {
+export function decideMarketContext({ proof, registryEntry, text, market, locale, currency = null, egressCountry = null }) {
   if (proof.proven) {
     return { market_context: proof.market_context, market_context_candidate: null,
              observed_market: proof.observed_market, observed_locale: proof.observed_locale,
@@ -184,11 +186,22 @@ export function decideMarketContext({ proof, registryEntry, text, market, locale
              market_evidence: { ...proof.evidence, registry_justification: registryEntry.market_context_justification ?? null } };
   }
   const markers = frenchContentMarkers(text);
-  const candidate = market === "FR" && locale === "fr-FR" && markers.length >= 3 ? "reference_fr" : null;
+  const evidence = { ...proof.evidence, french_content_markers: markers };
+  let candidate = market === "FR" && locale === "fr-FR" && markers.length >= 3 ? "reference_fr" : null;
+  let source = candidate ? "content_markers_candidate_review_required" : "unproven";
+  // Faisceau DEVISE+EGRESS : une grille rendue en EUR, servie depuis un egress FR, avec
+  // locale fr-FR demandée, constitue un CANDIDAT reference_fr soumis à revue humaine —
+  // jamais prouvé, jamais auto-approuvé. Cas d'une page EN dont le prix EUR est géo-résolu
+  // (p.ex. n8n : texte anglais, grille EUR par egress FR). Ne modifie AUCUN modèle de données.
+  if (!candidate && market === "FR" && locale === "fr-FR" && currency === "EUR" && egressCountry === "FR") {
+    candidate = "reference_fr";
+    source = "currency_egress_candidate_review_required";
+    evidence.grid_currency = currency;
+    evidence.egress_country = egressCountry;
+  }
   return { market_context: null, market_context_candidate: candidate,
            observed_market: null, observed_locale: null,
-           market_context_source: candidate ? "content_markers_candidate_review_required" : "unproven",
-           market_evidence: { ...proof.evidence, french_content_markers: markers } };
+           market_context_source: source, market_evidence: evidence };
 }
 
 /* ──────────────────── preuve marché/locale (jamais déduite) ───────────────── */
@@ -306,13 +319,16 @@ export function findAmounts(text) {
  * v0.3 — extraction via ADAPTATEUR dédié (hors moteur générique).
  * Le contexte marché suit decideMarketContext (prouvé | déclaré | candidat).
  */
-export function extractWithAdapter({ adapter, html, url, headers = {}, market, locale, registryEntry }) {
+export function extractWithAdapter({ adapter, html, url, headers = {}, market, locale, registryEntry, egressCountry = null }) {
   const fn = ADAPTERS[adapter];
   if (!fn) throw new Error(`adaptateur inconnu: ${adapter}`);
   const text = normalizedText(html);
   const proof = proveLocale({ headers, html, url, market, locale });
-  const mc = decideMarketContext({ proof, registryEntry, text, market, locale });
   const r = fn({ html, url });
+  // Devise dominante UNIQUE de la grille (sinon null) — sert au faisceau devise+egress.
+  const currencies = [...new Set((r.plans ?? []).map((p) => p.native_currency).filter(Boolean))];
+  const currency = currencies.length === 1 ? currencies[0] : null;
+  const mc = decideMarketContext({ proof, registryEntry, text, market, locale, currency, egressCountry });
 
   const withCtx = (o, status) => ({
     ...o, observed_market: mc.observed_market, observed_locale: mc.observed_locale,
@@ -321,7 +337,7 @@ export function extractWithAdapter({ adapter, html, url, headers = {}, market, l
     status, confidence: status === "observed" ? "medium" : "low",
   });
   const unknowns = new Set(r.unknowns ?? []);
-  if (mc.market_context_candidate) unknowns.add(`market_context_candidate='${mc.market_context_candidate}' déduit de marqueurs de contenu — NON prouvé, soumis à revue`);
+  if (mc.market_context_candidate) unknowns.add(`market_context_candidate='${mc.market_context_candidate}' (${mc.market_context_source}) — NON prouvé, soumis à revue humaine`);
   else if (!mc.market_context) unknowns.add(`marché/locale non prouvés (demandé ${market}/${locale}) et aucun fallback déclaré au registre`);
 
   // Le hash de version d'un adaptateur porte sur les faits tarifaires extraits,
@@ -707,7 +723,8 @@ async function processSlug(slug, run, cfg) {
   // v0.3 — adaptateur dédié si déclaré au registre, sinon moteur générique
   const ex = entry.adapter
     ? extractWithAdapter({ adapter: entry.adapter, html: r.html, url, headers: r.headers,
-                           market: cfg.market, locale: cfg.locale, registryEntry: entry })
+                           market: cfg.market, locale: cfg.locale, registryEntry: entry,
+                           egressCountry: r.browser_context?.egress_country ?? null })
     : extractOffers({ html: r.html, url, headers: r.headers, market: cfg.market, locale: cfg.locale });
   // 8. HTML/texte rendu conservé UNIQUEMENT dans le cache git-ignored
   await safeWrite(cachePathFor(url), JSON.stringify({
