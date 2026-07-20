@@ -1,0 +1,135 @@
+<!doctype html>
+<!-- Fixture RÉALISTE reproduisant la structure observée sur
+     https://www.wix.com/premium-purchase-plan/dynamo (capture navigateur FR, 2026-07-17).
+     Points fidèles au réel :
+       - AUCUN attribut lang sur <html> et aucun Content-Language  => locale NON prouvable
+       - noms de plans dans des <span>, pas dans des h1-h4
+       - prix éclaté : symbole / entier / fraction / cycle via data-hook
+       - la grille est rendue DEUX FOIS (cartes + tableau comparatif) => 8 price-container
+     Montants attendus : Light 16,80 · Essentiel 30 · Business 40,80 · Business Plus 178,80 -->
+<html>
+<head><title>Informations sur les tarifs de Wix | Souscrire à un forfait Premium | Wix.com</title></head>
+<body>
+  <h2>Forfaits Premium Wix</h2>
+  <p>Commencez avec plus de 900 templates gratuits et personnalisables.</p>
+
+  <!-- ── Rendu 1 : cartes ──────────────────────────────────────────────── -->
+  <div class="cards">
+    <div class="card">
+      <div class="box"><span class="Text__root">Business Plus</span><span class="Text__root">Pour les entreprises complexes</span></div>
+      <div class="grid-price">
+        <div data-hook="price-container" class="Box__root">
+          <div data-hook="display-price" class="Box__root">
+            <div class="Box__root"><span data-hook="display-price-currency-symbol">€</span></div>
+            <span data-hook="display-price-integer-price">178</span>
+            <span data-hook="display-price-fraction-price">80</span>
+            <span data-hook="display-price-cycle-label">/mois</span>
+          </div>
+        </div>
+      </div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+      <span class="Text__root">Jusqu'à 100 collaborateurs sur le site</span>
+    </div>
+
+    <!-- Carte « Business » : porte un BADGE « Recommandé » (data-hook=card-hat-container)
+         AVANT le nom du plan — piège réel observé sur la page live. -->
+    <div class="card">
+      <div data-hook="card-hat-container" class="hat"><span class="Text__root">Recommandé</span></div>
+      <div class="box"><span class="Text__root">Business</span><span class="Text__root">Pour les PME en croissance</span></div>
+      <div class="grid-price">
+        <div data-hook="price-container" class="Box__root">
+          <div data-hook="display-price" class="Box__root">
+            <div class="Box__root"><span data-hook="display-price-currency-symbol">€</span></div>
+            <span data-hook="display-price-integer-price">40</span>
+            <span data-hook="display-price-fraction-price">80</span>
+            <span data-hook="display-price-cycle-label">/mois</span>
+          </div>
+        </div>
+      </div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+      <span class="Text__root">Jusqu'à 10 collaborateurs sur le site</span>
+    </div>
+
+    <div class="card">
+      <div class="box"><span class="Text__root">Essentiel</span><span class="Text__root">Pour les petites équipes professionnelles</span></div>
+      <div class="grid-price">
+        <div data-hook="price-container" class="Box__root">
+          <div data-hook="display-price" class="Box__root">
+            <div class="Box__root"><span data-hook="display-price-currency-symbol">€</span></div>
+            <span data-hook="display-price-integer-price">30</span>
+            <span data-hook="display-price-cycle-label">/mois</span>
+          </div>
+        </div>
+      </div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+      <span class="Text__root">Jusqu'à 5 collaborateurs sur le site</span>
+    </div>
+
+    <div class="card">
+      <div class="box"><span class="Text__root">Light</span><span class="Text__root">Pour les entrepreneurs individuels</span></div>
+      <div class="grid-price">
+        <div data-hook="price-container" class="Box__root">
+          <div data-hook="display-price" class="Box__root">
+            <div class="Box__root"><span data-hook="display-price-currency-symbol">€</span></div>
+            <span data-hook="display-price-integer-price">16</span>
+            <span data-hook="display-price-fraction-price">80</span>
+            <span data-hook="display-price-cycle-label">/mois</span>
+          </div>
+        </div>
+      </div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+      <span class="Text__root">Jusqu'à 2 collaborateurs sur le site</span>
+    </div>
+  </div>
+
+  <p>Les prix affichés correspondent aux abonnements annuels, réglés en totalité au moment de l'achat.
+     Des périodes d'abonnement supplémentaires sont disponibles.</p>
+
+  <!-- ── Rendu 2 : tableau comparatif (mêmes plans, mêmes prix) ────────── -->
+  <div class="comparison-grid">
+    <div class="col">
+      <div class="box"><span class="Text__root">Business Plus</span></div>
+      <div class="grid-price"><div data-hook="price-container">
+        <div data-hook="display-price">
+          <div><span data-hook="display-price-currency-symbol">€</span></div>
+          <span data-hook="display-price-integer-price">178</span>
+          <span data-hook="display-price-fraction-price">80</span>
+          <span data-hook="display-price-cycle-label">/mois</span>
+        </div></div></div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+    </div>
+    <div class="col">
+      <div class="box"><span class="Text__root">Business</span></div>
+      <div class="grid-price"><div data-hook="price-container">
+        <div data-hook="display-price">
+          <div><span data-hook="display-price-currency-symbol">€</span></div>
+          <span data-hook="display-price-integer-price">40</span>
+          <span data-hook="display-price-fraction-price">80</span>
+          <span data-hook="display-price-cycle-label">/mois</span>
+        </div></div></div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+    </div>
+    <div class="col">
+      <div class="box"><span class="Text__root">Essentiel</span></div>
+      <div class="grid-price"><div data-hook="price-container">
+        <div data-hook="display-price">
+          <div><span data-hook="display-price-currency-symbol">€</span></div>
+          <span data-hook="display-price-integer-price">30</span>
+          <span data-hook="display-price-cycle-label">/mois</span>
+        </div></div></div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+    </div>
+    <div class="col">
+      <div class="box"><span class="Text__root">Light</span></div>
+      <div class="grid-price"><div data-hook="price-container">
+        <div data-hook="display-price">
+          <div><span data-hook="display-price-currency-symbol">€</span></div>
+          <span data-hook="display-price-integer-price">16</span>
+          <span data-hook="display-price-fraction-price">80</span>
+          <span data-hook="display-price-cycle-label">/mois</span>
+        </div></div></div>
+      <span data-hook="tax-note">Le prix comprend la TVA</span>
+    </div>
+  </div>
+</body>
+</html>

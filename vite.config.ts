@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from "vite";
+import { defineConfig, loadEnv, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
@@ -8,6 +8,7 @@ import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 import { resolveMonthlyPrice } from "./src/lib/pricing";
+import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
@@ -293,6 +294,60 @@ function sbRowToTool(row: Record<string, any>): Record<string, any> {
   return t;
 }
 let _sbToolsCache: Record<string, any>[] | null = null;
+let _catalogProjectionToolsCache: Record<string, any>[] | null = null;
+
+async function getProjectedFicheTools(): Promise<Record<string, any>[]> {
+  if (_catalogProjectionToolsCache) return _catalogProjectionToolsCache;
+
+  const rows: CatalogProjectionRow[] = [];
+  // This view resolves prices and relationships per row. A 1,000-row `select=*`
+  // can exceed PostgREST's statement budget even though lighter count/shadow
+  // reads pass. Smaller pages keep the production build deterministic.
+  const pageSize = 200;
+  for (let from = 0; ; from += pageSize) {
+    const res = await fetch(
+      `${SB_PRERENDER_URL}/rest/v1/published_tool_projection?select=*&order=id.asc,lang.asc`,
+      {
+        headers: {
+          apikey: SB_PRERENDER_ANON,
+          Authorization: `Bearer ${SB_PRERENDER_ANON}`,
+          "Accept-Profile": "catalog_api",
+          "Cache-Control": "no-cache",
+          Range: `${from}-${from + pageSize - 1}`,
+        },
+        cache: "no-store",
+      },
+    );
+    if (!res.ok) {
+      const detail = (await res.text()).slice(0, 300);
+      throw new Error(`projection HTTP ${res.status}${detail ? `: ${detail}` : ""}`);
+    }
+    const page = await res.json();
+    if (!Array.isArray(page)) throw new Error("projection invalid response");
+    rows.push(...page as CatalogProjectionRow[]);
+    if (page.length < pageSize) break;
+  }
+
+  const byTool = new Map<string, CatalogProjectionRow[]>();
+  for (const row of rows) {
+    const localized = byTool.get(row.tool_id || row.id) || [];
+    localized.push(row);
+    byTool.set(row.tool_id || row.id, localized);
+  }
+
+  const tools = [...byTool.values()]
+    .map(catalogProjectionRowsToTool)
+    .filter((tool): tool is NonNullable<typeof tool> => tool != null);
+
+  if (rows.length !== 2252 || tools.length !== 1126) {
+    throw new Error(`projection cardinality ${rows.length}/${tools.length}, expected 2252/1126`);
+  }
+
+  _catalogProjectionToolsCache = tools as unknown as Record<string, any>[];
+  console.log(`✓ Fiche + SSR source: catalog_api (${rows.length} lignes, ${tools.length} outils)`);
+  return _catalogProjectionToolsCache;
+}
+
 async function getMergedTools(jsonTools: any[]): Promise<any[]> {
   try {
     if (!_sbToolsCache) {
@@ -303,14 +358,26 @@ async function getMergedTools(jsonTools: any[]): Promise<any[]> {
       // connection. PostgREST treats unknown query params as column filters
       // (a "_cb" cache-busting param 400s), so this relies on the header
       // alone to bypass any such cache.
-      const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&limit=2000`, {
-        headers: { apikey: SB_PRERENDER_ANON, Authorization: `Bearer ${SB_PRERENDER_ANON}`, "Cache-Control": "no-cache" },
-        cache: "no-store",
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const rows = await res.json();
-      if (!Array.isArray(rows) || rows.length === 0) throw new Error("empty response");
-      _sbToolsCache = rows as Record<string, any>[];
+      const rows: Record<string, any>[] = [];
+      const pageSize = 1000; // plafond Data API Supabase par requête
+      for (let from = 0; ; from += pageSize) {
+        const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&order=id.asc`, {
+          headers: {
+            apikey: SB_PRERENDER_ANON,
+            Authorization: `Bearer ${SB_PRERENDER_ANON}`,
+            "Cache-Control": "no-cache",
+            Range: `${from}-${from + pageSize - 1}`,
+          },
+          cache: "no-store",
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const page = await res.json();
+        if (!Array.isArray(page)) throw new Error("invalid response");
+        rows.push(...page);
+        if (page.length < pageSize) break;
+      }
+      if (rows.length === 0) throw new Error("empty response");
+      _sbToolsCache = rows;
     }
     const bySlug = new Map<string, any>();
     for (const t of jsonTools) bySlug.set(t.slug || t.id, t);
@@ -489,7 +556,7 @@ function sitemapPlugin(): Plugin {
   };
 }
 
-function staticPrerenderPlugin(): Plugin {
+function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
   return {
     name: "static-prerender-tools",
     apply: "build",
@@ -498,6 +565,14 @@ function staticPrerenderPlugin(): Plugin {
         const toolsRaw = fs.readFileSync(path.resolve(__dirname, "src/data/tools_v4.json"), "utf-8");
         const categoriesRaw = fs.readFileSync(path.resolve(__dirname, "src/data/categories_index.json"), "utf-8");
         const tools = await getMergedTools(JSON.parse(toolsRaw));
+        let ficheTools = tools;
+        if (useCatalogProjectionForFiche) {
+          try {
+            ficheTools = await getProjectedFicheTools();
+          } catch (error) {
+            console.warn("⚠️ Fiche + SSR: projection indisponible, fallback public.tools/JSON:", error);
+          }
+        }
         const categories = JSON.parse(categoriesRaw);
 
         const distDir = path.resolve(__dirname, "dist");
@@ -556,9 +631,9 @@ function staticPrerenderPlugin(): Plugin {
         // both the main-page FAQ schema below and the sub-page loop further
         // down).
         const slugToName: Record<string, string> = {};
-        for (const t of tools) { slugToName[t.slug || t.id] = t.name || t.slug || t.id; }
+        for (const t of ficheTools) { slugToName[t.slug || t.id] = t.name || t.slug || t.id; }
 
-        for (const tool of tools) {
+        for (const tool of ficheTools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
           const ogImage = toolOgScreenshot(slug); // per-tool screenshot or null
@@ -851,7 +926,9 @@ function staticPrerenderPlugin(): Plugin {
           },
         ];
 
-        for (const tool of tools) {
+        // Fiche et sous-pages doivent partager exactement la même source :
+        // sinon /tool/wix serait canonical tandis que /tool/wix/prix resterait legacy.
+        for (const tool of ficheTools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
           // ?? not ||: a free tool's price is legitimately 0 (see the
@@ -1852,7 +1929,13 @@ function criticalCssPlugin(): Plugin {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode, isSsrBuild }) => ({
+export default defineConfig(({ mode, isSsrBuild }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  // Activated by default after the dark-launch gates. Set explicitly to
+  // "false" for an immediate build-time rollback to public.tools + JSON.
+  const useCatalogProjectionForFiche = env.VITE_CATALOG_PROJECTION_FICHE !== "false";
+
+  return {
   server: {
     host: "::",
     port: process.env.PORT ? Number(process.env.PORT) : undefined,
@@ -1871,7 +1954,7 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
     // which exist/apply during the separate `vite build --ssr` pass.
     !isSsrBuild && sitemapPlugin(),
     !isSsrBuild && criticalCssPlugin(),
-    !isSsrBuild && staticPrerenderPlugin(),
+    !isSsrBuild && staticPrerenderPlugin(useCatalogProjectionForFiche),
   ].filter(Boolean),
   build: {
     rollupOptions: {
@@ -1896,4 +1979,5 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+  };
+});

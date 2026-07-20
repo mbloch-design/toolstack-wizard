@@ -1,0 +1,81 @@
+{
+  "agent": "research-collector",
+  "checks": [
+    {
+      "attempts": 1,
+      "content_hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+      "http_status": 200,
+      "mode": "network_ttl",
+      "rendered_by": "static",
+      "slug": "carrd",
+      "url": "https://carrd.co/pro"
+    },
+    {
+      "attempts": 1,
+      "content_hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "http_status": 200,
+      "mode": "network_ttl",
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo"
+    }
+  ],
+  "claims_created": 25,
+  "collector_version": "0.2.0",
+  "conflicts": [],
+  "diff_summary": "1 version(s) ; 1 dossier(s) créé(s) ; 0 observation(s) observed ; 25 weak_claim(s) ; 0 approved",
+  "errors": [],
+  "finished_at": "2026-07-17T10:42:51.271Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "carrd",
+      "wix"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "created": true,
+      "hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+      "localeProven": false,
+      "networkChecked": true,
+      "observations": 0,
+      "rendered_by": "static",
+      "slug": "carrd",
+      "url": "https://carrd.co/pro",
+      "versionAdded": true,
+      "versionReason": "first_capture",
+      "weak_claims": 17
+    },
+    {
+      "accessible": true,
+      "created": false,
+      "hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "localeProven": false,
+      "networkChecked": true,
+      "observations": 0,
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "versionAdded": false,
+      "versionReason": "hash_unchanged",
+      "weak_claims": 8
+    }
+  ],
+  "review_status": "open",
+  "run_id": "bc14e7a5-4845-428e-bff3-7b3f6a31ba79",
+  "started_at": "2026-07-17T10:42:41.005Z",
+  "valid": true
+}

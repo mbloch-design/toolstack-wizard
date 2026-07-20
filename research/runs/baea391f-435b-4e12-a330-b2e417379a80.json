@@ -1,0 +1,67 @@
+{
+  "agent": "research-collector",
+  "checks": [
+    {
+      "content_hash": "sha256:e042149553bcbcb2a6fadeb9a1c74723e36af780dca69a76c41fb23e5141f4e1",
+      "http_status": 404,
+      "mode": "network_ttl",
+      "slug": "carrd",
+      "url": "https://carrd.co/pricing"
+    },
+    {
+      "content_hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+      "http_status": 200,
+      "mode": "network_ttl",
+      "slug": "figma",
+      "url": "https://www.figma.com/pricing/"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.1.0",
+  "conflicts": [],
+  "diff_summary": "2 nouvelle(s) version(s) de contenu ; 1 dossier(s) créé(s) ; 0 valeur approved",
+  "errors": [],
+  "finished_at": "2026-07-17T10:29:30.464Z",
+  "invalid_reason": "collector_bug_404_versioned",
+  "invalidated_at": "2026-07-17T10:35:52.545Z",
+  "invalidated_note": "Passe conservée pour l'historique. Le collecteur v0.1 a créé une version de contenu à partir d'une réponse HTTP 404 (carrd.co/pricing, URL seed erronée). Corrigé en v0.2 : réponse non-OK => contrôle + erreur, jamais de capture. Les artefacts issus de ce run ont été retirés et rejoués.",
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "slugs": [
+      "carrd",
+      "figma"
+    ]
+  },
+  "results": [
+    {
+      "accessible": false,
+      "created": true,
+      "hash": "sha256:e042149553bcbcb2a6fadeb9a1c74723e36af780dca69a76c41fb23e5141f4e1",
+      "localeProven": false,
+      "networkChecked": true,
+      "slug": "carrd",
+      "url": "https://carrd.co/pricing",
+      "versionAdded": true
+    },
+    {
+      "accessible": true,
+      "created": false,
+      "hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+      "localeProven": false,
+      "networkChecked": true,
+      "slug": "figma",
+      "url": "https://www.figma.com/pricing/",
+      "versionAdded": true
+    }
+  ],
+  "review_status": "open",
+  "run_id": "baea391f-435b-4e12-a330-b2e417379a80",
+  "started_at": "2026-07-17T10:29:24.767Z",
+  "valid": false
+}

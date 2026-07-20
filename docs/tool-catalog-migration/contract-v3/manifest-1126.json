@@ -1,0 +1,6254 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-07-16",
+  "gitCommit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+  "gitBranch": "codex/go25-preprod-hardening",
+  "source": {
+    "path": "src/data/tools_v4.json",
+    "sha256": "d92d47b5a7fa9614a19f72b6fc4368a89f856a7d64fd414b9f60a21c4bed4f9c",
+    "recordCount": 1126,
+    "supabaseAddsAtAudit": 0
+  },
+  "slugCount": 1126,
+  "slugListSha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458",
+  "legacyJsonOnly": {
+    "inventoryPath": "docs/tool-catalog-migration/inventory-json-only.csv",
+    "inventorySha256": "bd1ea817e13ba80ab2ad64a471bcda0bc122b9ffc12aa6b51c0963dfa4a40094",
+    "count": 593
+  },
+  "legacyIsFreeReference": {
+    "implementation": "src/lib/pricing.ts::hasGenuineFreeTier",
+    "trueCount": 589,
+    "falseCount": 537
+  },
+  "note": "Liste de publication exacte des routes tool/ existantes. Aucun slug implicite.",
+  "slugs": [
+    "1001bit-tools",
+    "17hats",
+    "1password",
+    "3ds-max",
+    "8fig",
+    "ableton-live",
+    "acast",
+    "acf",
+    "activecampaign",
+    "activepieces",
+    "adcreative",
+    "adcreative-ai",
+    "adobe",
+    "adobe-acrobat",
+    "adobe-acrobat-sign",
+    "adobe-after-effects",
+    "adobe-audition",
+    "adobe-cc",
+    "adobe-creative-cloud",
+    "adobe-enhance-speech",
+    "adobe-express",
+    "adobe-fresco",
+    "adobe-illustrator",
+    "adobe-lightroom",
+    "adobe-photoshop",
+    "adobe-podcast-ai",
+    "adobe-premiere-pro",
+    "adobe-stock",
+    "adobe-substance-3d",
+    "adobe-xd",
+    "adp-workforce",
+    "ae-animation-composer",
+    "ae-bao-boa",
+    "ae-bodymovin",
+    "ae-duik",
+    "ae-gifgun",
+    "ae-newton3",
+    "ae-overlord",
+    "ae-red-giant",
+    "ae-rubberhose",
+    "aescripts-flow",
+    "affiliate-dashboards",
+    "affiliate-tools",
+    "affinity-designer",
+    "affinity-photo",
+    "affinity-publisher",
+    "agicap",
+    "ahrefs",
+    "airbyte",
+    "aircall",
+    "airslate",
+    "airtable",
+    "albato",
+    "algolia",
+    "allstate",
+    "aloware",
+    "alpinejs",
+    "amplemarket",
+    "amplitude",
+    "anaplan",
+    "anchor-spotify",
+    "angular-material",
+    "angular-universal",
+    "ant-design",
+    "anthropic",
+    "antidote",
+    "apexcharts",
+    "apollo",
+    "apollo-io",
+    "app-store-connect",
+    "appsmith",
+    "arc-browser",
+    "arcgis",
+    "archicad",
+    "archive-tools",
+    "are-na",
+    "arena",
+    "arnold",
+    "around",
+    "arounddeal",
+    "articulate",
+    "artlist",
+    "artstation",
+    "asana",
+    "ashby",
+    "astute-graphics",
+    "attio",
+    "audacity",
+    "auphonic",
+    "ausha",
+    "auth-js",
+    "authoredup",
+    "auto-rig-pro",
+    "autocad",
+    "autocad-lt",
+    "autodesk-flow-studio",
+    "autonix",
+    "auvik",
+    "avocode",
+    "aweber",
+    "aws",
+    "axe-devtools",
+    "axeptio",
+    "axonaut",
+    "azure",
+    "babylon-js",
+    "balsamiq",
+    "bamboohr",
+    "base44",
+    "basecamp",
+    "beautiful-ai",
+    "beehiiv",
+    "beehiiv-analytics",
+    "better-proposals",
+    "better-stack",
+    "bigquery",
+    "billo",
+    "bitwarden",
+    "blender",
+    "bloc",
+    "bloom-crm",
+    "blueink-esignatures",
+    "boast",
+    "bolt-business",
+    "bolt-new",
+    "boompop",
+    "bots-discord",
+    "box",
+    "brand-kits",
+    "brand24",
+    "brandcrowd",
+    "brandmark",
+    "brandpad",
+    "breezy-hr",
+    "brevo",
+    "bricks",
+    "browserstack",
+    "browzwear",
+    "bubble",
+    "buddy-punch",
+    "budibase",
+    "buffer",
+    "bugherd",
+    "bullmq",
+    "burp-suite",
+    "buzzsprout",
+    "bynder",
+    "cal-com",
+    "calendly",
+    "callhippo",
+    "callrail",
+    "calltrackingmetrics",
+    "campaigner",
+    "canny",
+    "canva",
+    "canva-ai",
+    "canva-kits",
+    "canva-pro",
+    "canva-templates",
+    "capcut",
+    "capcut-ai",
+    "capcut-templates",
+    "capsule",
+    "captain-contrat",
+    "captaindoc",
+    "caption-tools",
+    "captions",
+    "capture-one",
+    "cargo-site",
+    "carrd",
+    "castmagic",
+    "causal",
+    "cavalry",
+    "celery",
+    "chakra-ui",
+    "chart-tools",
+    "chartjs",
+    "chartmogul",
+    "chatbase",
+    "chatgpt",
+    "chatgpt-pour-brouillons-non-juridiques",
+    "chromatic",
+    "chrome-devtools",
+    "cinema-4d",
+    "circle",
+    "cision",
+    "claude",
+    "clay",
+    "cleanup3",
+    "cleanvoice",
+    "clearbit",
+    "clerk",
+    "clickup",
+    "clickup-ai",
+    "client-first",
+    "clip-studio-paint",
+    "clipwing",
+    "clo-3d",
+    "clockify",
+    "clockshark",
+    "close",
+    "cloudflare",
+    "cloudinary",
+    "cloudtask-marketplace",
+    "coast",
+    "coda",
+    "codemagic",
+    "cognism",
+    "comfyui-workflows",
+    "condeco",
+    "confluence",
+    "conga",
+    "connecteam",
+    "connective",
+    "content-credentials-tools",
+    "contentful",
+    "contra",
+    "convertkit-analytics",
+    "coreldraw",
+    "corona-renderer",
+    "cossistant",
+    "coupa",
+    "coupler-io",
+    "crawlbase",
+    "crayo-ai",
+    "create-react-app",
+    "creatoriq",
+    "creditsafe",
+    "crisp",
+    "crowdfire-inc",
+    "crowdstrike",
+    "cursor",
+    "curviloft",
+    "customer-io",
+    "cycles",
+    "cypress",
+    "d3js",
+    "d5-render",
+    "darktable",
+    "dart",
+    "dashlane",
+    "datadog",
+    "datawrapper",
+    "datev",
+    "davinci-resolve",
+    "dayforce",
+    "dbt",
+    "deel",
+    "deepseek",
+    "dependabot",
+    "deputy",
+    "descript",
+    "descript-ai",
+    "deskpro",
+    "desktopready",
+    "dext",
+    "didomi",
+    "digitalocean",
+    "directus",
+    "discord",
+    "django",
+    "docker",
+    "docusign",
+    "docyt",
+    "doola",
+    "doppler",
+    "dorik",
+    "dotenv-vault",
+    "dovetail",
+    "dovetail-ai",
+    "draftbit",
+    "drata",
+    "dropbox",
+    "dub",
+    "dubsado",
+    "dun-bradstreet",
+    "dxo-photolab",
+    "dynamic-mockups",
+    "eagle",
+    "eas-build",
+    "easydmarc",
+    "echarts",
+    "ecovadis",
+    "elementor",
+    "elevenlabs",
+    "elfsight",
+    "elgato",
+    "elgato-stream-deck",
+    "embergen",
+    "emergent",
+    "emoji-sticker-packs",
+    "emotion",
+    "eneroth-face-creator",
+    "enscape",
+    "envato",
+    "envato-elements",
+    "epidemic-sound",
+    "esko-studio",
+    "eslint",
+    "eventbrite",
+    "excalidraw",
+    "excel",
+    "excel-copilot",
+    "expo",
+    "extensis",
+    "factorial",
+    "fastapi",
+    "fathom",
+    "fathom-analytics",
+    "feedly",
+    "fellow",
+    "fig-terminal",
+    "figjam",
+    "figma",
+    "figma-anima",
+    "figma-iconify",
+    "figma-slides",
+    "figma-stark",
+    "figma-templates",
+    "figma-tokens",
+    "figma-weave",
+    "fillout",
+    "final-cut-pro",
+    "finale-inventory",
+    "finsweet",
+    "firebase",
+    "firecrawl",
+    "firefly",
+    "fiverr",
+    "flask",
+    "flexiquiz",
+    "flextools",
+    "float",
+    "flourish",
+    "flowmapp",
+    "flutter",
+    "flux",
+    "flux-ai",
+    "fly-io",
+    "fmod",
+    "folk",
+    "fontbase",
+    "form-apps",
+    "format",
+    "formik",
+    "frame-guides",
+    "frame-io",
+    "framer",
+    "framer-motion",
+    "frase",
+    "fredo6-bundle",
+    "fredocorner",
+    "freshbooks",
+    "freshservice",
+    "front",
+    "fusion",
+    "fusion-360",
+    "ga4",
+    "gaea",
+    "gaming-overlays",
+    "gamma",
+    "gamma-ai",
+    "gcp",
+    "gelato",
+    "gemini",
+    "gempages",
+    "genially",
+    "getida",
+    "getresponse",
+    "ghost",
+    "giphy",
+    "github",
+    "github-actions",
+    "github-advanced-security",
+    "github-copilot",
+    "gitlens",
+    "glide",
+    "gmail",
+    "go",
+    "gocardless",
+    "godot",
+    "gong",
+    "google-ai-studio",
+    "google-analytics",
+    "google-chat",
+    "google-docs",
+    "google-drive",
+    "google-earth-studio",
+    "google-maps",
+    "google-meet",
+    "google-play-console",
+    "google-search-console",
+    "google-sheets",
+    "google-slides",
+    "google-tag-manager",
+    "google-workspace",
+    "gorgias",
+    "gorgias-helpscout",
+    "grabcad",
+    "grafana",
+    "grammarly",
+    "granola",
+    "graphql",
+    "greenhouse",
+    "greenly",
+    "greensock",
+    "grok",
+    "gsap",
+    "gsc",
+    "guideless",
+    "gumloop",
+    "gumroad",
+    "gusto",
+    "hard-ops-boxcutter",
+    "harvest",
+    "headless-ui",
+    "headliner",
+    "helicone",
+    "helpscout",
+    "heptabase",
+    "heroku",
+    "hex",
+    "heygen",
+    "hibob",
+    "highcharts",
+    "hive",
+    "honeybook",
+    "hootsuite",
+    "hostfully",
+    "hotjar",
+    "houdini",
+    "houzz-pro",
+    "hubspot",
+    "hugeicons",
+    "humaans",
+    "hume-ai",
+    "hydrogen",
+    "hyperbrowser",
+    "icons8",
+    "icontact",
+    "ideogram",
+    "ignition",
+    "impact",
+    "inbound",
+    "inboxally",
+    "indesign",
+    "indy",
+    "infisical",
+    "inflow-inventory",
+    "infomaniak",
+    "insense",
+    "insightly",
+    "insomnia",
+    "instagram",
+    "instantly",
+    "instapage",
+    "integrately",
+    "intercom",
+    "invision",
+    "invoicely",
+    "ironclad",
+    "itch-io",
+    "itsdart",
+    "jasper",
+    "jest",
+    "jira",
+    "jobber",
+    "joint-push-pull",
+    "jotform",
+    "jquery",
+    "judge-me",
+    "jupyter",
+    "juro",
+    "justworks",
+    "kajabi",
+    "katana-cloud-manufacturing",
+    "kavkom",
+    "keeptruckin",
+    "kelio",
+    "keynote",
+    "keyshot",
+    "kinsta",
+    "kissmetrics",
+    "kit",
+    "kixie",
+    "klaviyo",
+    "kling",
+    "kling-ai",
+    "knockout",
+    "krea",
+    "krea-ai",
+    "krea-selon-metier",
+    "krispcall",
+    "krita",
+    "kubernetes",
+    "la-growth-machine",
+    "landbot",
+    "landingi",
+    "langchain",
+    "langsmith",
+    "languagetool",
+    "lano",
+    "lastpass",
+    "later",
+    "layout-sketchup",
+    "leadflow",
+    "leadpages",
+    "leadsquared",
+    "learnworlds",
+    "legalplace",
+    "legalstart",
+    "legifrance-pro",
+    "lemlist",
+    "lemon-squeezy",
+    "lemonsqueezy",
+    "lendio",
+    "leonardo-ai",
+    "lever",
+    "lighthouse",
+    "lighting-kits",
+    "lightroom-mobile",
+    "lightroom-presets",
+    "liinks",
+    "lindy",
+    "linear",
+    "link-in-bio",
+    "link-in-bio-tools",
+    "link-whisper",
+    "linkedin",
+    "linkedin-recruiter",
+    "linktree",
+    "liquid",
+    "liquid-web-partner-program",
+    "llamaindex",
+    "localwp",
+    "logic-pro",
+    "logomeai",
+    "logseq",
+    "logtail",
+    "looka",
+    "lookback",
+    "looker-studio",
+    "loom",
+    "loopio",
+    "loops",
+    "loox",
+    "lottie",
+    "lottiefiles",
+    "lovable",
+    "ltk",
+    "lucca",
+    "lucid-software",
+    "lucidchart",
+    "luminar-neo",
+    "lumion",
+    "lusha",
+    "maced-ai",
+    "madmapper",
+    "magic-bullet",
+    "magic-patterns",
+    "magicbrief",
+    "magnific",
+    "magnific-ai",
+    "mailchimp",
+    "mailerlite",
+    "mailgun",
+    "mainwp",
+    "make",
+    "managewp",
+    "manifest-ai",
+    "mantine",
+    "map-tools",
+    "mapbox",
+    "mari",
+    "marmoset-toolbag",
+    "marvelous-designer",
+    "masv",
+    "material-swift",
+    "material-ui",
+    "maven",
+    "maxon-one",
+    "maya",
+    "maze",
+    "media-kit-templates",
+    "medusa",
+    "megahr",
+    "meltwater",
+    "mem-ai",
+    "memberful",
+    "memberstack",
+    "meme-templates",
+    "meshy",
+    "meta-ads",
+    "meta-quest-developer-tools",
+    "metabase",
+    "metricool",
+    "microsoft-365",
+    "microsoft-365-copilot",
+    "microsoft-clarity",
+    "microsoft-defender",
+    "microsoft-dynamics-365-finance-operations",
+    "microsoft-dynamics-business-central",
+    "microsoft-entra-id",
+    "microsoft-project",
+    "microsoft-teams",
+    "midjourney",
+    "milanote",
+    "miro",
+    "mixpanel",
+    "mobile-gimbal-apps",
+    "mockup-plugins",
+    "modo",
+    "mojo",
+    "monday",
+    "monday-com",
+    "mongodb-atlas",
+    "moobot",
+    "moodle",
+    "moosend",
+    "moss",
+    "motion",
+    "motion-app",
+    "motion-array",
+    "motion-bro",
+    "move-ai",
+    "mrpeasy",
+    "murf",
+    "music-libraries",
+    "mycase",
+    "n8n",
+    "namecheap",
+    "namely",
+    "navan",
+    "nearst",
+    "neon",
+    "nestjs",
+    "netchex",
+    "netlify",
+    "netsuite",
+    "newman",
+    "newsletter-referral-tools",
+    "next-js",
+    "nightbot",
+    "nik-collection",
+    "node-js",
+    "nomad-sculpt",
+    "nordpass",
+    "notch",
+    "notion",
+    "notion-ai",
+    "notionlytics",
+    "noun-project",
+    "nuke",
+    "nusii",
+    "nvda",
+    "obs",
+    "obsidian",
+    "octane-render",
+    "okta",
+    "omniconvert-explore",
+    "onedrive",
+    "onelogin",
+    "onetrust",
+    "onramp-funds",
+    "open-cut-list",
+    "openai",
+    "openai-api",
+    "openapi",
+    "openphone",
+    "optimizely",
+    "opus-clip",
+    "opusclip",
+    "oracle-fusion-cloud",
+    "origami",
+    "otter",
+    "otter-ai",
+    "overlays",
+    "ovh",
+    "owasp-zap",
+    "ownr",
+    "oyster",
+    "p5-js",
+    "pabbly-connect",
+    "pacdora",
+    "packhelp",
+    "paddle",
+    "pageai",
+    "pagecloud",
+    "pagefly",
+    "pagerduty",
+    "pagespeed-insights",
+    "pandadoc",
+    "pandas",
+    "partnerstack",
+    "partytown",
+    "patreon",
+    "payfit",
+    "payhawk",
+    "payload-cms",
+    "payoneer",
+    "paypal",
+    "pennylane",
+    "pennylane-ai-selon-dispo",
+    "pennylane-ou-indy",
+    "pennylane-qonto",
+    "penpot",
+    "percy",
+    "perforce",
+    "perplexity",
+    "personio",
+    "pgvector",
+    "phantombuster",
+    "photopea",
+    "php",
+    "pics-io",
+    "pigment",
+    "pika-labs",
+    "pikkovia",
+    "pinecone",
+    "pinterest",
+    "pipedrive",
+    "pipelinepro",
+    "pitch",
+    "pixco",
+    "pixelmator-pro",
+    "pixieset",
+    "plane",
+    "planetscale",
+    "planoly",
+    "plasticity",
+    "plausible",
+    "playwright",
+    "pluraleyes",
+    "plutio",
+    "podbean",
+    "podcastle",
+    "podia",
+    "poetry",
+    "postgresql",
+    "posthog",
+    "postman",
+    "postsyncer",
+    "power-bi",
+    "power-user",
+    "powerpoint",
+    "preact",
+    "premiere-rush",
+    "presets",
+    "presets-lightroom",
+    "prettier",
+    "pretty-links",
+    "prezi",
+    "printify",
+    "priority",
+    "prisma",
+    "pro-tools",
+    "process-street",
+    "processing",
+    "procreate",
+    "product-hunt",
+    "productboard",
+    "productioncrate",
+    "productive-io",
+    "profile-builder-3",
+    "profitwell",
+    "programa",
+    "prometheus",
+    "promo-com",
+    "prompt-libraries",
+    "proofhub",
+    "proposify",
+    "protopie",
+    "prowly",
+    "prowritingaid",
+    "pterocos",
+    "publer",
+    "pure-ref",
+    "pushowl-web-push-notifications",
+    "pytest",
+    "python",
+    "qdrant",
+    "qgis",
+    "qonto",
+    "quadient",
+    "quarkxpress",
+    "quartile",
+    "quick-base",
+    "quickbooks",
+    "quickbooks-online",
+    "quixel-megascans",
+    "radix-primitives",
+    "radix-ui",
+    "railway",
+    "rank-math",
+    "rankmath",
+    "raycast",
+    "razorpay",
+    "react",
+    "react-hook-form",
+    "react-native",
+    "react-query",
+    "react-router",
+    "readwise",
+    "readymag",
+    "reaper",
+    "recharge",
+    "recharts",
+    "recipe-card-templates",
+    "reclaim",
+    "reclaim-ai",
+    "red-giant-universe",
+    "redirect-path",
+    "redis",
+    "redshift",
+    "reflect-notes",
+    "relay",
+    "relevance-ai",
+    "relume",
+    "relume-ai",
+    "remix",
+    "remove-bg",
+    "render",
+    "renderman",
+    "replit",
+    "replyio",
+    "repurpose-io",
+    "resend",
+    "resolume",
+    "respond-io",
+    "responsetap",
+    "rest-client",
+    "restream",
+    "retool",
+    "rev",
+    "revenuecat",
+    "review-tools",
+    "revit",
+    "rewardful",
+    "rhino",
+    "rightfont",
+    "rippling",
+    "rive",
+    "riverpod",
+    "riverside",
+    "roam-research",
+    "rocket-lawyer",
+    "rocketlink",
+    "rork",
+    "ruby",
+    "runway",
+    "rydoo",
+    "safetyculture",
+    "sage",
+    "sage-intacct",
+    "sage-paie",
+    "saleor",
+    "salesflare",
+    "salesforce",
+    "samcart",
+    "sami",
+    "sanebox",
+    "sanity",
+    "sap-business-bydesign",
+    "sap-business-one",
+    "sap-s4hana",
+    "sap-successfactors",
+    "scheduling-tools",
+    "screaming-frog",
+    "screen-capture-tools",
+    "screen-studio",
+    "screensage-pro",
+    "screenshot-tools",
+    "scribe",
+    "seamless-ai",
+    "securityscorecard",
+    "segment",
+    "sellersfi",
+    "sellfy",
+    "sellsy",
+    "semgrep",
+    "semrush",
+    "sendible",
+    "sendinblue",
+    "sentry",
+    "seo-meta-in-1-click",
+    "seo-mode",
+    "shadcn-ui",
+    "shared-cloud-folders",
+    "sharepoint",
+    "shield",
+    "shield-app",
+    "shine",
+    "shipstation",
+    "shogun",
+    "shophero",
+    "shopify",
+    "shopify-cli",
+    "shopify-payments",
+    "shopmy",
+    "shortpixel",
+    "shotdeck",
+    "signrequest",
+    "silae",
+    "similarweb",
+    "simple-analytics",
+    "simpletexting",
+    "simvoly",
+    "skatter",
+    "sketch",
+    "sketchup-pro",
+    "skribble",
+    "slack",
+    "slido",
+    "smartsheet",
+    "smartsuite",
+    "smtp-com",
+    "snapseed",
+    "snipe-it",
+    "snov-io",
+    "snowflake",
+    "snyk",
+    "social-schedulers",
+    "socialbee",
+    "softr",
+    "soldo",
+    "solid-inspector2",
+    "solid-js",
+    "solidworks",
+    "spaceiq",
+    "sparkloop",
+    "specify",
+    "spendesk",
+    "spline",
+    "spotify-for-podcasters",
+    "sprout-social",
+    "sql",
+    "sqlalchemy",
+    "squarespace",
+    "stable-diffusion",
+    "stan-store",
+    "stark",
+    "steamworks",
+    "stock-footage",
+    "storyblocks",
+    "storybook",
+    "storyluxe",
+    "strapi",
+    "streamelements",
+    "streamelements-widgets",
+    "streamlabs",
+    "stripe",
+    "styled-components",
+    "submagic",
+    "substack",
+    "substance-3d-designer",
+    "substance-3d-painter",
+    "subtitle-tools",
+    "suitedash",
+    "suno",
+    "supabase",
+    "superdev-pro",
+    "superhuman",
+    "superlist",
+    "supermetrics",
+    "superwhisper",
+    "surfer-ai",
+    "surferseo",
+    "surveysparrow",
+    "svelte",
+    "sweep",
+    "switch-monster",
+    "sysaid",
+    "systeme-io",
+    "tableau",
+    "tablepress",
+    "tabnine",
+    "tailwind-css",
+    "tally",
+    "tanstack-router",
+    "taplio",
+    "taskade",
+    "tave",
+    "teachable",
+    "teamwork",
+    "techpacker",
+    "teleprompter",
+    "teleprompter-apps",
+    "tella",
+    "templates",
+    "templates-ugc",
+    "tenor",
+    "terraform",
+    "tezza",
+    "thinkific",
+    "thirstyaffiliates",
+    "thordata",
+    "three-js",
+    "thrivecart",
+    "thunder-client",
+    "tidio",
+    "tiime",
+    "tiktok",
+    "tiktok-ads",
+    "tiktok-studio",
+    "timber",
+    "time-doctor",
+    "timecamp",
+    "todoist",
+    "toggl",
+    "tomorro",
+    "topaz",
+    "topaz-gigapixel",
+    "topaz-photo-ai",
+    "topaz-video",
+    "topaz-video-ai",
+    "touchdesigner",
+    "tradingview",
+    "trainerize",
+    "trainual",
+    "transmutr",
+    "trapcode",
+    "trello",
+    "tremor",
+    "triple-whale",
+    "tripo",
+    "truecoach",
+    "trustpilot",
+    "tubebody",
+    "tubebuddy",
+    "turbotic",
+    "twinmotion",
+    "twitch",
+    "twitch-studio",
+    "typedream",
+    "typeform",
+    "typefully",
+    "typescript",
+    "typotab",
+    "udio",
+    "ukg-pro",
+    "unbounce",
+    "unfold",
+    "unit4",
+    "unity",
+    "unreal-engine",
+    "uptimerobot",
+    "upwork",
+    "usertesting",
+    "utm-builders",
+    "uv",
+    "v-ray",
+    "v0-vercel",
+    "vanta",
+    "vault",
+    "vcita",
+    "vectorworks",
+    "vercel",
+    "vercel-ai-sdk",
+    "vercel-analytics",
+    "vfx-suite",
+    "vidiq",
+    "vidyard",
+    "vimeo",
+    "visily",
+    "visme",
+    "vitest",
+    "vmake",
+    "voiceover",
+    "voicetypr",
+    "vs-code",
+    "vue-cli",
+    "vue-router",
+    "vwo",
+    "waalaxy",
+    "warp",
+    "wave",
+    "webflow",
+    "webflow-framer",
+    "webhooks",
+    "webpagetest",
+    "webxr",
+    "weezevent",
+    "wetransfer",
+    "whalesync",
+    "whatsapp-business",
+    "whimsical",
+    "whisper",
+    "windsurf",
+    "wistia",
+    "wix",
+    "wized",
+    "wolters-kluwer",
+    "woocommerce",
+    "wordfence",
+    "wordpress",
+    "wordpress-com",
+    "workable",
+    "workday",
+    "workday-financial-management",
+    "workday-hr",
+    "workout-templates",
+    "wp-rocket",
+    "wrike",
+    "wunderlist",
+    "wwise",
+    "x",
+    "x-particles",
+    "xero",
+    "yoast",
+    "youform",
+    "yousign",
+    "youtube-live",
+    "youtube-studio",
+    "zapier",
+    "zapier-make",
+    "zbrush",
+    "zcal",
+    "zed",
+    "zelt",
+    "zendesk",
+    "zeplin",
+    "zoho",
+    "zoom",
+    "zoom-ai-companion",
+    "zoom-pro",
+    "zotero"
+  ],
+  "legacyJsonOnlySlugs": [
+    "1001bit-tools",
+    "ableton-live",
+    "acast",
+    "acf",
+    "adcreative-ai",
+    "adobe-acrobat",
+    "adobe-audition",
+    "adobe-creative-cloud",
+    "adobe-enhance-speech",
+    "adobe-express",
+    "adobe-fresco",
+    "adobe-stock",
+    "adobe-substance-3d",
+    "affiliate-dashboards",
+    "affiliate-tools",
+    "affinity-designer",
+    "affinity-publisher",
+    "agicap",
+    "ahrefs",
+    "airbyte",
+    "algolia",
+    "alpinejs",
+    "angular-material",
+    "angular-universal",
+    "anthropic",
+    "antidote",
+    "apexcharts",
+    "apollo",
+    "app-store-connect",
+    "appsmith",
+    "arcgis",
+    "archicad",
+    "archive-tools",
+    "are-na",
+    "arena",
+    "around",
+    "articulate",
+    "artlist",
+    "artstation",
+    "ashby",
+    "astute-graphics",
+    "attio",
+    "auphonic",
+    "ausha",
+    "auth-js",
+    "authoredup",
+    "auto-rig-pro",
+    "autocad-lt",
+    "avocode",
+    "aws",
+    "axe-devtools",
+    "axeptio",
+    "axonaut",
+    "azure",
+    "babylon-js",
+    "balsamiq",
+    "beautiful-ai",
+    "better-stack",
+    "bigquery",
+    "billo",
+    "bloc",
+    "bots-discord",
+    "brand-kits",
+    "brandcrowd",
+    "brandmark",
+    "brandpad",
+    "bricks",
+    "browserstack",
+    "browzwear",
+    "bubble",
+    "budibase",
+    "bullmq",
+    "burp-suite",
+    "bynder",
+    "canva-kits",
+    "canva-templates",
+    "capcut-ai",
+    "capcut-templates",
+    "captain-contrat",
+    "caption-tools",
+    "captions",
+    "carrd",
+    "causal",
+    "cavalry",
+    "celery",
+    "chart-tools",
+    "chartjs",
+    "chartmogul",
+    "chatbase",
+    "chatgpt-pour-brouillons-non-juridiques",
+    "chromatic",
+    "chrome-devtools",
+    "cision",
+    "clay",
+    "clerk",
+    "clickup-ai",
+    "client-first",
+    "clip-studio-paint",
+    "clipwing",
+    "clo-3d",
+    "cloudflare",
+    "cloudinary",
+    "codemagic",
+    "comfyui-workflows",
+    "condeco",
+    "content-credentials-tools",
+    "contentful",
+    "contra",
+    "coreldraw",
+    "cossistant",
+    "coupa",
+    "coupler-io",
+    "crawlbase",
+    "crayo-ai",
+    "create-react-app",
+    "creatoriq",
+    "crisp",
+    "crowdstrike",
+    "curviloft",
+    "customer-io",
+    "cycles",
+    "cypress",
+    "d3js",
+    "darktable",
+    "datawrapper",
+    "dbt",
+    "dependabot",
+    "descript-ai",
+    "didomi",
+    "directus",
+    "django",
+    "docker",
+    "dorik",
+    "dovetail",
+    "dovetail-ai",
+    "drata",
+    "dub",
+    "dxo-photolab",
+    "dynamic-mockups",
+    "eagle",
+    "eas-build",
+    "elementor",
+    "elgato",
+    "elgato-stream-deck",
+    "emergent",
+    "emoji-sticker-packs",
+    "emotion",
+    "eneroth-face-creator",
+    "envato",
+    "envato-elements",
+    "epidemic-sound",
+    "esko-studio",
+    "eslint",
+    "eventbrite",
+    "excalidraw",
+    "excel",
+    "excel-copilot",
+    "expo",
+    "fastapi",
+    "fathom",
+    "fathom-analytics",
+    "feedly",
+    "fellow",
+    "figjam",
+    "figma-slides",
+    "figma-templates",
+    "fillout",
+    "finsweet",
+    "firecrawl",
+    "fiverr",
+    "flask",
+    "flextools",
+    "float",
+    "flourish",
+    "flowmapp",
+    "flutter",
+    "flux-ai",
+    "fmod",
+    "fontbase",
+    "form-apps",
+    "formik",
+    "frame-guides",
+    "framer-motion",
+    "frase",
+    "fredo6-bundle",
+    "fredocorner",
+    "freshservice",
+    "fusion",
+    "fusion-360",
+    "ga4",
+    "gaming-overlays",
+    "gamma-ai",
+    "gcp",
+    "gempages",
+    "genially",
+    "giphy",
+    "github-actions",
+    "github-advanced-security",
+    "gmail",
+    "go",
+    "gocardless",
+    "godot",
+    "gong",
+    "google-ai-studio",
+    "google-earth-studio",
+    "google-maps",
+    "google-meet",
+    "google-play-console",
+    "google-search-console",
+    "google-tag-manager",
+    "gorgias-helpscout",
+    "grabcad",
+    "grafana",
+    "granola",
+    "graphql",
+    "greenhouse",
+    "greenly",
+    "greensock",
+    "grok",
+    "gsap",
+    "gsc",
+    "guideless",
+    "gumloop",
+    "hard-ops-boxcutter",
+    "harvest",
+    "headless-ui",
+    "headliner",
+    "helicone",
+    "helpscout",
+    "highcharts",
+    "hugeicons",
+    "hydrogen",
+    "hyperbrowser",
+    "icons8",
+    "impact",
+    "inbound",
+    "infomaniak",
+    "insense",
+    "insomnia",
+    "instagram",
+    "instantly",
+    "invoicely",
+    "itch-io",
+    "itsdart",
+    "jest",
+    "joint-push-pull",
+    "jotform",
+    "jquery",
+    "judge-me",
+    "jupyter",
+    "keynote",
+    "kinsta",
+    "klaviyo",
+    "kling",
+    "knockout",
+    "krea",
+    "krea-selon-metier",
+    "krita",
+    "kubernetes",
+    "langchain",
+    "langsmith",
+    "languagetool",
+    "layout-sketchup",
+    "legalplace",
+    "lemon-squeezy",
+    "lighthouse",
+    "lighting-kits",
+    "lightroom-mobile",
+    "lightroom-presets",
+    "liinks",
+    "lindy",
+    "link-in-bio",
+    "link-in-bio-tools",
+    "link-whisper",
+    "linkedin",
+    "linkedin-recruiter",
+    "linktree",
+    "liquid",
+    "llamaindex",
+    "localwp",
+    "logic-pro",
+    "logtail",
+    "lookback",
+    "loops",
+    "loox",
+    "lottie",
+    "lottiefiles",
+    "ltk",
+    "lucidchart",
+    "maced-ai",
+    "madmapper",
+    "magic-patterns",
+    "magicbrief",
+    "magnific",
+    "mailerlite",
+    "mainwp",
+    "managewp",
+    "mantine",
+    "map-tools",
+    "mapbox",
+    "material-swift",
+    "maven",
+    "media-kit-templates",
+    "medusa",
+    "meltwater",
+    "memberful",
+    "memberstack",
+    "meme-templates",
+    "meta-ads",
+    "meta-quest-developer-tools",
+    "microsoft-365-copilot",
+    "microsoft-clarity",
+    "microsoft-defender",
+    "milanote",
+    "mixpanel",
+    "mobile-gimbal-apps",
+    "mockup-plugins",
+    "mojo",
+    "monday",
+    "moobot",
+    "moodle",
+    "motion",
+    "motion-app",
+    "motion-array",
+    "music-libraries",
+    "namecheap",
+    "nestjs",
+    "newman",
+    "newsletter-referral-tools",
+    "next-js",
+    "nightbot",
+    "node-js",
+    "notch",
+    "noun-project",
+    "nvda",
+    "obs",
+    "open-cut-list",
+    "openai",
+    "openai-api",
+    "openapi",
+    "optimizely",
+    "opus-clip",
+    "opusclip",
+    "origami",
+    "otter",
+    "overlays",
+    "owasp-zap",
+    "p5-js",
+    "pacdora",
+    "paddle",
+    "pageai",
+    "pagefly",
+    "pagespeed-insights",
+    "pandadoc",
+    "pandas",
+    "partnerstack",
+    "partytown",
+    "patreon",
+    "payload-cms",
+    "pennylane-ai-selon-dispo",
+    "pennylane-ou-indy",
+    "pennylane-qonto",
+    "penpot",
+    "percy",
+    "perforce",
+    "pgvector",
+    "photopea",
+    "php",
+    "pics-io",
+    "pikkovia",
+    "pinecone",
+    "pinterest",
+    "pixco",
+    "pixelmator-pro",
+    "plane",
+    "planoly",
+    "plasticity",
+    "playwright",
+    "poetry",
+    "postgresql",
+    "postman",
+    "postsyncer",
+    "power-bi",
+    "power-user",
+    "powerpoint",
+    "preact",
+    "premiere-rush",
+    "presets",
+    "presets-lightroom",
+    "prettier",
+    "pretty-links",
+    "prisma",
+    "pro-tools",
+    "processing",
+    "procreate",
+    "product-hunt",
+    "productive-io",
+    "profile-builder-3",
+    "profitwell",
+    "programa",
+    "prometheus",
+    "prompt-libraries",
+    "proofhub",
+    "prowly",
+    "pterocos",
+    "pure-ref",
+    "pytest",
+    "python",
+    "qdrant",
+    "qgis",
+    "quarkxpress",
+    "quickbooks-online",
+    "radix-primitives",
+    "radix-ui",
+    "rank-math",
+    "rankmath",
+    "react",
+    "react-hook-form",
+    "react-native",
+    "react-query",
+    "react-router",
+    "readwise",
+    "reaper",
+    "recharge",
+    "recipe-card-templates",
+    "reclaim-ai",
+    "redirect-path",
+    "redis",
+    "relay",
+    "relevance-ai",
+    "relume",
+    "relume-ai",
+    "repurpose-io",
+    "resend",
+    "resolume",
+    "rest-client",
+    "rev",
+    "revenuecat",
+    "review-tools",
+    "rewardful",
+    "rightfont",
+    "riverpod",
+    "rocket-lawyer",
+    "rork",
+    "safetyculture",
+    "saleor",
+    "samcart",
+    "sami",
+    "sanity",
+    "scheduling-tools",
+    "screaming-frog",
+    "screen-capture-tools",
+    "screen-studio",
+    "screensage-pro",
+    "screenshot-tools",
+    "scribe",
+    "segment",
+    "semgrep",
+    "seo-meta-in-1-click",
+    "seo-mode",
+    "shared-cloud-folders",
+    "shield",
+    "shine",
+    "shipstation",
+    "shopify-cli",
+    "shopify-payments",
+    "shopmy",
+    "shortpixel",
+    "shotdeck",
+    "simple-analytics",
+    "skatter",
+    "slido",
+    "smartsheet",
+    "snipe-it",
+    "snowflake",
+    "snyk",
+    "social-schedulers",
+    "solid-inspector2",
+    "solid-js",
+    "solidworks",
+    "sparkloop",
+    "specify",
+    "spline",
+    "spotify-for-podcasters",
+    "sql",
+    "sqlalchemy",
+    "stan-store",
+    "stark",
+    "steamworks",
+    "stock-footage",
+    "storyblocks",
+    "storyluxe",
+    "strapi",
+    "streamelements",
+    "streamelements-widgets",
+    "streamlabs",
+    "styled-components",
+    "submagic",
+    "subtitle-tools",
+    "superdev-pro",
+    "superlist",
+    "supermetrics",
+    "superwhisper",
+    "surfer-ai",
+    "surferseo",
+    "svelte",
+    "sweep",
+    "switch-monster",
+    "systeme-io",
+    "tableau",
+    "tablepress",
+    "tailwind-css",
+    "tanstack-router",
+    "taplio",
+    "taskade",
+    "techpacker",
+    "teleprompter",
+    "teleprompter-apps",
+    "tella",
+    "templates",
+    "templates-ugc",
+    "tenor",
+    "terraform",
+    "tezza",
+    "thirstyaffiliates",
+    "three-js",
+    "thrivecart",
+    "thunder-client",
+    "tiktok",
+    "tiktok-ads",
+    "tiktok-studio",
+    "timber",
+    "topaz",
+    "topaz-photo-ai",
+    "topaz-video",
+    "touchdesigner",
+    "tradingview",
+    "trainerize",
+    "transmutr",
+    "tremor",
+    "triple-whale",
+    "truecoach",
+    "tubebuddy",
+    "twitch",
+    "twitch-studio",
+    "typedream",
+    "typescript",
+    "typotab",
+    "unfold",
+    "unity",
+    "uptimerobot",
+    "usertesting",
+    "utm-builders",
+    "uv",
+    "v0-vercel",
+    "vectorworks",
+    "vercel-ai-sdk",
+    "vercel-analytics",
+    "vidyard",
+    "visily",
+    "vitest",
+    "vmake",
+    "voiceover",
+    "voicetypr",
+    "vs-code",
+    "vue-cli",
+    "vue-router",
+    "vwo",
+    "webflow-framer",
+    "webhooks",
+    "webpagetest",
+    "webxr",
+    "weezevent",
+    "whalesync",
+    "whatsapp-business",
+    "whimsical",
+    "windsurf",
+    "wistia",
+    "wized",
+    "wordfence",
+    "workout-templates",
+    "wp-rocket",
+    "wwise",
+    "x",
+    "x-particles",
+    "yoast",
+    "youform",
+    "yousign",
+    "youtube-live",
+    "youtube-studio",
+    "zapier-make",
+    "zcal",
+    "zotero"
+  ],
+  "legacyIsFreeExpected": [
+    {
+      "slug": "1001bit-tools",
+      "isFree": true
+    },
+    {
+      "slug": "17hats",
+      "isFree": false
+    },
+    {
+      "slug": "1password",
+      "isFree": false
+    },
+    {
+      "slug": "3ds-max",
+      "isFree": false
+    },
+    {
+      "slug": "8fig",
+      "isFree": true
+    },
+    {
+      "slug": "ableton-live",
+      "isFree": false
+    },
+    {
+      "slug": "acast",
+      "isFree": false
+    },
+    {
+      "slug": "acf",
+      "isFree": true
+    },
+    {
+      "slug": "activecampaign",
+      "isFree": false
+    },
+    {
+      "slug": "activepieces",
+      "isFree": true
+    },
+    {
+      "slug": "adcreative",
+      "isFree": false
+    },
+    {
+      "slug": "adcreative-ai",
+      "isFree": false
+    },
+    {
+      "slug": "adobe",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-acrobat",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-acrobat-sign",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-after-effects",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-audition",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-cc",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-creative-cloud",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-enhance-speech",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-express",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-fresco",
+      "isFree": true
+    },
+    {
+      "slug": "adobe-illustrator",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-lightroom",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-photoshop",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-podcast-ai",
+      "isFree": true
+    },
+    {
+      "slug": "adobe-premiere-pro",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-stock",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-substance-3d",
+      "isFree": false
+    },
+    {
+      "slug": "adobe-xd",
+      "isFree": false
+    },
+    {
+      "slug": "adp-workforce",
+      "isFree": false
+    },
+    {
+      "slug": "ae-animation-composer",
+      "isFree": true
+    },
+    {
+      "slug": "ae-bao-boa",
+      "isFree": false
+    },
+    {
+      "slug": "ae-bodymovin",
+      "isFree": true
+    },
+    {
+      "slug": "ae-duik",
+      "isFree": true
+    },
+    {
+      "slug": "ae-gifgun",
+      "isFree": false
+    },
+    {
+      "slug": "ae-newton3",
+      "isFree": false
+    },
+    {
+      "slug": "ae-overlord",
+      "isFree": false
+    },
+    {
+      "slug": "ae-red-giant",
+      "isFree": false
+    },
+    {
+      "slug": "ae-rubberhose",
+      "isFree": false
+    },
+    {
+      "slug": "aescripts-flow",
+      "isFree": false
+    },
+    {
+      "slug": "affiliate-dashboards",
+      "isFree": false
+    },
+    {
+      "slug": "affiliate-tools",
+      "isFree": false
+    },
+    {
+      "slug": "affinity-designer",
+      "isFree": false
+    },
+    {
+      "slug": "affinity-photo",
+      "isFree": true
+    },
+    {
+      "slug": "affinity-publisher",
+      "isFree": false
+    },
+    {
+      "slug": "agicap",
+      "isFree": false
+    },
+    {
+      "slug": "ahrefs",
+      "isFree": true
+    },
+    {
+      "slug": "airbyte",
+      "isFree": true
+    },
+    {
+      "slug": "aircall",
+      "isFree": false
+    },
+    {
+      "slug": "airslate",
+      "isFree": false
+    },
+    {
+      "slug": "airtable",
+      "isFree": true
+    },
+    {
+      "slug": "albato",
+      "isFree": true
+    },
+    {
+      "slug": "algolia",
+      "isFree": true
+    },
+    {
+      "slug": "allstate",
+      "isFree": false
+    },
+    {
+      "slug": "aloware",
+      "isFree": false
+    },
+    {
+      "slug": "alpinejs",
+      "isFree": true
+    },
+    {
+      "slug": "amplemarket",
+      "isFree": true
+    },
+    {
+      "slug": "amplitude",
+      "isFree": true
+    },
+    {
+      "slug": "anaplan",
+      "isFree": false
+    },
+    {
+      "slug": "anchor-spotify",
+      "isFree": true
+    },
+    {
+      "slug": "angular-material",
+      "isFree": true
+    },
+    {
+      "slug": "angular-universal",
+      "isFree": true
+    },
+    {
+      "slug": "ant-design",
+      "isFree": true
+    },
+    {
+      "slug": "anthropic",
+      "isFree": true
+    },
+    {
+      "slug": "antidote",
+      "isFree": false
+    },
+    {
+      "slug": "apexcharts",
+      "isFree": true
+    },
+    {
+      "slug": "apollo",
+      "isFree": true
+    },
+    {
+      "slug": "apollo-io",
+      "isFree": true
+    },
+    {
+      "slug": "app-store-connect",
+      "isFree": true
+    },
+    {
+      "slug": "appsmith",
+      "isFree": true
+    },
+    {
+      "slug": "arc-browser",
+      "isFree": true
+    },
+    {
+      "slug": "arcgis",
+      "isFree": false
+    },
+    {
+      "slug": "archicad",
+      "isFree": false
+    },
+    {
+      "slug": "archive-tools",
+      "isFree": false
+    },
+    {
+      "slug": "are-na",
+      "isFree": true
+    },
+    {
+      "slug": "arena",
+      "isFree": true
+    },
+    {
+      "slug": "arnold",
+      "isFree": false
+    },
+    {
+      "slug": "around",
+      "isFree": true
+    },
+    {
+      "slug": "arounddeal",
+      "isFree": true
+    },
+    {
+      "slug": "articulate",
+      "isFree": false
+    },
+    {
+      "slug": "artlist",
+      "isFree": false
+    },
+    {
+      "slug": "artstation",
+      "isFree": true
+    },
+    {
+      "slug": "asana",
+      "isFree": true
+    },
+    {
+      "slug": "ashby",
+      "isFree": false
+    },
+    {
+      "slug": "astute-graphics",
+      "isFree": false
+    },
+    {
+      "slug": "attio",
+      "isFree": false
+    },
+    {
+      "slug": "audacity",
+      "isFree": true
+    },
+    {
+      "slug": "auphonic",
+      "isFree": false
+    },
+    {
+      "slug": "ausha",
+      "isFree": false
+    },
+    {
+      "slug": "auth-js",
+      "isFree": true
+    },
+    {
+      "slug": "authoredup",
+      "isFree": false
+    },
+    {
+      "slug": "auto-rig-pro",
+      "isFree": false
+    },
+    {
+      "slug": "autocad",
+      "isFree": false
+    },
+    {
+      "slug": "autocad-lt",
+      "isFree": false
+    },
+    {
+      "slug": "autodesk-flow-studio",
+      "isFree": true
+    },
+    {
+      "slug": "autonix",
+      "isFree": true
+    },
+    {
+      "slug": "auvik",
+      "isFree": false
+    },
+    {
+      "slug": "avocode",
+      "isFree": false
+    },
+    {
+      "slug": "aweber",
+      "isFree": false
+    },
+    {
+      "slug": "aws",
+      "isFree": true
+    },
+    {
+      "slug": "axe-devtools",
+      "isFree": true
+    },
+    {
+      "slug": "axeptio",
+      "isFree": true
+    },
+    {
+      "slug": "axonaut",
+      "isFree": false
+    },
+    {
+      "slug": "azure",
+      "isFree": true
+    },
+    {
+      "slug": "babylon-js",
+      "isFree": true
+    },
+    {
+      "slug": "balsamiq",
+      "isFree": false
+    },
+    {
+      "slug": "bamboohr",
+      "isFree": false
+    },
+    {
+      "slug": "base44",
+      "isFree": true
+    },
+    {
+      "slug": "basecamp",
+      "isFree": true
+    },
+    {
+      "slug": "beautiful-ai",
+      "isFree": false
+    },
+    {
+      "slug": "beehiiv",
+      "isFree": true
+    },
+    {
+      "slug": "beehiiv-analytics",
+      "isFree": true
+    },
+    {
+      "slug": "better-proposals",
+      "isFree": false
+    },
+    {
+      "slug": "better-stack",
+      "isFree": true
+    },
+    {
+      "slug": "bigquery",
+      "isFree": true
+    },
+    {
+      "slug": "billo",
+      "isFree": false
+    },
+    {
+      "slug": "bitwarden",
+      "isFree": false
+    },
+    {
+      "slug": "blender",
+      "isFree": true
+    },
+    {
+      "slug": "bloc",
+      "isFree": true
+    },
+    {
+      "slug": "bloom-crm",
+      "isFree": false
+    },
+    {
+      "slug": "blueink-esignatures",
+      "isFree": false
+    },
+    {
+      "slug": "boast",
+      "isFree": true
+    },
+    {
+      "slug": "bolt-business",
+      "isFree": true
+    },
+    {
+      "slug": "bolt-new",
+      "isFree": true
+    },
+    {
+      "slug": "boompop",
+      "isFree": true
+    },
+    {
+      "slug": "bots-discord",
+      "isFree": false
+    },
+    {
+      "slug": "box",
+      "isFree": true
+    },
+    {
+      "slug": "brand-kits",
+      "isFree": false
+    },
+    {
+      "slug": "brand24",
+      "isFree": false
+    },
+    {
+      "slug": "brandcrowd",
+      "isFree": true
+    },
+    {
+      "slug": "brandmark",
+      "isFree": true
+    },
+    {
+      "slug": "brandpad",
+      "isFree": false
+    },
+    {
+      "slug": "breezy-hr",
+      "isFree": true
+    },
+    {
+      "slug": "brevo",
+      "isFree": true
+    },
+    {
+      "slug": "bricks",
+      "isFree": false
+    },
+    {
+      "slug": "browserstack",
+      "isFree": false
+    },
+    {
+      "slug": "browzwear",
+      "isFree": false
+    },
+    {
+      "slug": "bubble",
+      "isFree": false
+    },
+    {
+      "slug": "buddy-punch",
+      "isFree": false
+    },
+    {
+      "slug": "budibase",
+      "isFree": true
+    },
+    {
+      "slug": "buffer",
+      "isFree": true
+    },
+    {
+      "slug": "bugherd",
+      "isFree": false
+    },
+    {
+      "slug": "bullmq",
+      "isFree": true
+    },
+    {
+      "slug": "burp-suite",
+      "isFree": true
+    },
+    {
+      "slug": "buzzsprout",
+      "isFree": true
+    },
+    {
+      "slug": "bynder",
+      "isFree": false
+    },
+    {
+      "slug": "cal-com",
+      "isFree": true
+    },
+    {
+      "slug": "calendly",
+      "isFree": true
+    },
+    {
+      "slug": "callhippo",
+      "isFree": false
+    },
+    {
+      "slug": "callrail",
+      "isFree": false
+    },
+    {
+      "slug": "calltrackingmetrics",
+      "isFree": false
+    },
+    {
+      "slug": "campaigner",
+      "isFree": false
+    },
+    {
+      "slug": "canny",
+      "isFree": true
+    },
+    {
+      "slug": "canva",
+      "isFree": true
+    },
+    {
+      "slug": "canva-ai",
+      "isFree": false
+    },
+    {
+      "slug": "canva-kits",
+      "isFree": false
+    },
+    {
+      "slug": "canva-pro",
+      "isFree": false
+    },
+    {
+      "slug": "canva-templates",
+      "isFree": false
+    },
+    {
+      "slug": "capcut",
+      "isFree": false
+    },
+    {
+      "slug": "capcut-ai",
+      "isFree": false
+    },
+    {
+      "slug": "capcut-templates",
+      "isFree": false
+    },
+    {
+      "slug": "capsule",
+      "isFree": false
+    },
+    {
+      "slug": "captain-contrat",
+      "isFree": false
+    },
+    {
+      "slug": "captaindoc",
+      "isFree": false
+    },
+    {
+      "slug": "caption-tools",
+      "isFree": false
+    },
+    {
+      "slug": "captions",
+      "isFree": false
+    },
+    {
+      "slug": "capture-one",
+      "isFree": false
+    },
+    {
+      "slug": "cargo-site",
+      "isFree": true
+    },
+    {
+      "slug": "carrd",
+      "isFree": true
+    },
+    {
+      "slug": "castmagic",
+      "isFree": true
+    },
+    {
+      "slug": "causal",
+      "isFree": false
+    },
+    {
+      "slug": "cavalry",
+      "isFree": false
+    },
+    {
+      "slug": "celery",
+      "isFree": true
+    },
+    {
+      "slug": "chakra-ui",
+      "isFree": true
+    },
+    {
+      "slug": "chart-tools",
+      "isFree": false
+    },
+    {
+      "slug": "chartjs",
+      "isFree": true
+    },
+    {
+      "slug": "chartmogul",
+      "isFree": true
+    },
+    {
+      "slug": "chatbase",
+      "isFree": true
+    },
+    {
+      "slug": "chatgpt",
+      "isFree": true
+    },
+    {
+      "slug": "chatgpt-pour-brouillons-non-juridiques",
+      "isFree": false
+    },
+    {
+      "slug": "chromatic",
+      "isFree": false
+    },
+    {
+      "slug": "chrome-devtools",
+      "isFree": true
+    },
+    {
+      "slug": "cinema-4d",
+      "isFree": false
+    },
+    {
+      "slug": "circle",
+      "isFree": false
+    },
+    {
+      "slug": "cision",
+      "isFree": false
+    },
+    {
+      "slug": "claude",
+      "isFree": true
+    },
+    {
+      "slug": "clay",
+      "isFree": false
+    },
+    {
+      "slug": "cleanup3",
+      "isFree": true
+    },
+    {
+      "slug": "cleanvoice",
+      "isFree": true
+    },
+    {
+      "slug": "clearbit",
+      "isFree": false
+    },
+    {
+      "slug": "clerk",
+      "isFree": false
+    },
+    {
+      "slug": "clickup",
+      "isFree": true
+    },
+    {
+      "slug": "clickup-ai",
+      "isFree": false
+    },
+    {
+      "slug": "client-first",
+      "isFree": true
+    },
+    {
+      "slug": "clip-studio-paint",
+      "isFree": false
+    },
+    {
+      "slug": "clipwing",
+      "isFree": true
+    },
+    {
+      "slug": "clo-3d",
+      "isFree": false
+    },
+    {
+      "slug": "clockify",
+      "isFree": true
+    },
+    {
+      "slug": "clockshark",
+      "isFree": false
+    },
+    {
+      "slug": "close",
+      "isFree": false
+    },
+    {
+      "slug": "cloudflare",
+      "isFree": true
+    },
+    {
+      "slug": "cloudinary",
+      "isFree": true
+    },
+    {
+      "slug": "cloudtask-marketplace",
+      "isFree": true
+    },
+    {
+      "slug": "coast",
+      "isFree": false
+    },
+    {
+      "slug": "coda",
+      "isFree": true
+    },
+    {
+      "slug": "codemagic",
+      "isFree": true
+    },
+    {
+      "slug": "cognism",
+      "isFree": false
+    },
+    {
+      "slug": "comfyui-workflows",
+      "isFree": false
+    },
+    {
+      "slug": "condeco",
+      "isFree": false
+    },
+    {
+      "slug": "confluence",
+      "isFree": true
+    },
+    {
+      "slug": "conga",
+      "isFree": false
+    },
+    {
+      "slug": "connecteam",
+      "isFree": true
+    },
+    {
+      "slug": "connective",
+      "isFree": false
+    },
+    {
+      "slug": "content-credentials-tools",
+      "isFree": false
+    },
+    {
+      "slug": "contentful",
+      "isFree": true
+    },
+    {
+      "slug": "contra",
+      "isFree": true
+    },
+    {
+      "slug": "convertkit-analytics",
+      "isFree": true
+    },
+    {
+      "slug": "coreldraw",
+      "isFree": false
+    },
+    {
+      "slug": "corona-renderer",
+      "isFree": false
+    },
+    {
+      "slug": "cossistant",
+      "isFree": true
+    },
+    {
+      "slug": "coupa",
+      "isFree": false
+    },
+    {
+      "slug": "coupler-io",
+      "isFree": false
+    },
+    {
+      "slug": "crawlbase",
+      "isFree": true
+    },
+    {
+      "slug": "crayo-ai",
+      "isFree": false
+    },
+    {
+      "slug": "create-react-app",
+      "isFree": true
+    },
+    {
+      "slug": "creatoriq",
+      "isFree": false
+    },
+    {
+      "slug": "creditsafe",
+      "isFree": false
+    },
+    {
+      "slug": "crisp",
+      "isFree": true
+    },
+    {
+      "slug": "crowdfire-inc",
+      "isFree": true
+    },
+    {
+      "slug": "crowdstrike",
+      "isFree": false
+    },
+    {
+      "slug": "cursor",
+      "isFree": true
+    },
+    {
+      "slug": "curviloft",
+      "isFree": true
+    },
+    {
+      "slug": "customer-io",
+      "isFree": false
+    },
+    {
+      "slug": "cycles",
+      "isFree": true
+    },
+    {
+      "slug": "cypress",
+      "isFree": true
+    },
+    {
+      "slug": "d3js",
+      "isFree": true
+    },
+    {
+      "slug": "d5-render",
+      "isFree": true
+    },
+    {
+      "slug": "darktable",
+      "isFree": true
+    },
+    {
+      "slug": "dart",
+      "isFree": true
+    },
+    {
+      "slug": "dashlane",
+      "isFree": false
+    },
+    {
+      "slug": "datadog",
+      "isFree": true
+    },
+    {
+      "slug": "datawrapper",
+      "isFree": true
+    },
+    {
+      "slug": "datev",
+      "isFree": false
+    },
+    {
+      "slug": "davinci-resolve",
+      "isFree": false
+    },
+    {
+      "slug": "dayforce",
+      "isFree": false
+    },
+    {
+      "slug": "dbt",
+      "isFree": true
+    },
+    {
+      "slug": "deel",
+      "isFree": true
+    },
+    {
+      "slug": "deepseek",
+      "isFree": true
+    },
+    {
+      "slug": "dependabot",
+      "isFree": true
+    },
+    {
+      "slug": "deputy",
+      "isFree": false
+    },
+    {
+      "slug": "descript",
+      "isFree": true
+    },
+    {
+      "slug": "descript-ai",
+      "isFree": false
+    },
+    {
+      "slug": "deskpro",
+      "isFree": false
+    },
+    {
+      "slug": "desktopready",
+      "isFree": true
+    },
+    {
+      "slug": "dext",
+      "isFree": false
+    },
+    {
+      "slug": "didomi",
+      "isFree": false
+    },
+    {
+      "slug": "digitalocean",
+      "isFree": false
+    },
+    {
+      "slug": "directus",
+      "isFree": true
+    },
+    {
+      "slug": "discord",
+      "isFree": true
+    },
+    {
+      "slug": "django",
+      "isFree": true
+    },
+    {
+      "slug": "docker",
+      "isFree": true
+    },
+    {
+      "slug": "docusign",
+      "isFree": false
+    },
+    {
+      "slug": "docyt",
+      "isFree": false
+    },
+    {
+      "slug": "doola",
+      "isFree": false
+    },
+    {
+      "slug": "doppler",
+      "isFree": true
+    },
+    {
+      "slug": "dorik",
+      "isFree": true
+    },
+    {
+      "slug": "dotenv-vault",
+      "isFree": true
+    },
+    {
+      "slug": "dovetail",
+      "isFree": false
+    },
+    {
+      "slug": "dovetail-ai",
+      "isFree": false
+    },
+    {
+      "slug": "draftbit",
+      "isFree": true
+    },
+    {
+      "slug": "drata",
+      "isFree": false
+    },
+    {
+      "slug": "dropbox",
+      "isFree": true
+    },
+    {
+      "slug": "dub",
+      "isFree": true
+    },
+    {
+      "slug": "dubsado",
+      "isFree": true
+    },
+    {
+      "slug": "dun-bradstreet",
+      "isFree": false
+    },
+    {
+      "slug": "dxo-photolab",
+      "isFree": false
+    },
+    {
+      "slug": "dynamic-mockups",
+      "isFree": true
+    },
+    {
+      "slug": "eagle",
+      "isFree": false
+    },
+    {
+      "slug": "eas-build",
+      "isFree": true
+    },
+    {
+      "slug": "easydmarc",
+      "isFree": true
+    },
+    {
+      "slug": "echarts",
+      "isFree": true
+    },
+    {
+      "slug": "ecovadis",
+      "isFree": false
+    },
+    {
+      "slug": "elementor",
+      "isFree": false
+    },
+    {
+      "slug": "elevenlabs",
+      "isFree": true
+    },
+    {
+      "slug": "elfsight",
+      "isFree": false
+    },
+    {
+      "slug": "elgato",
+      "isFree": false
+    },
+    {
+      "slug": "elgato-stream-deck",
+      "isFree": false
+    },
+    {
+      "slug": "embergen",
+      "isFree": false
+    },
+    {
+      "slug": "emergent",
+      "isFree": true
+    },
+    {
+      "slug": "emoji-sticker-packs",
+      "isFree": false
+    },
+    {
+      "slug": "emotion",
+      "isFree": true
+    },
+    {
+      "slug": "eneroth-face-creator",
+      "isFree": true
+    },
+    {
+      "slug": "enscape",
+      "isFree": false
+    },
+    {
+      "slug": "envato",
+      "isFree": false
+    },
+    {
+      "slug": "envato-elements",
+      "isFree": false
+    },
+    {
+      "slug": "epidemic-sound",
+      "isFree": false
+    },
+    {
+      "slug": "esko-studio",
+      "isFree": false
+    },
+    {
+      "slug": "eslint",
+      "isFree": true
+    },
+    {
+      "slug": "eventbrite",
+      "isFree": true
+    },
+    {
+      "slug": "excalidraw",
+      "isFree": true
+    },
+    {
+      "slug": "excel",
+      "isFree": false
+    },
+    {
+      "slug": "excel-copilot",
+      "isFree": false
+    },
+    {
+      "slug": "expo",
+      "isFree": true
+    },
+    {
+      "slug": "extensis",
+      "isFree": true
+    },
+    {
+      "slug": "factorial",
+      "isFree": false
+    },
+    {
+      "slug": "fastapi",
+      "isFree": true
+    },
+    {
+      "slug": "fathom",
+      "isFree": true
+    },
+    {
+      "slug": "fathom-analytics",
+      "isFree": false
+    },
+    {
+      "slug": "feedly",
+      "isFree": false
+    },
+    {
+      "slug": "fellow",
+      "isFree": true
+    },
+    {
+      "slug": "fig-terminal",
+      "isFree": true
+    },
+    {
+      "slug": "figjam",
+      "isFree": false
+    },
+    {
+      "slug": "figma",
+      "isFree": true
+    },
+    {
+      "slug": "figma-anima",
+      "isFree": true
+    },
+    {
+      "slug": "figma-iconify",
+      "isFree": true
+    },
+    {
+      "slug": "figma-slides",
+      "isFree": true
+    },
+    {
+      "slug": "figma-stark",
+      "isFree": true
+    },
+    {
+      "slug": "figma-templates",
+      "isFree": false
+    },
+    {
+      "slug": "figma-tokens",
+      "isFree": true
+    },
+    {
+      "slug": "figma-weave",
+      "isFree": true
+    },
+    {
+      "slug": "fillout",
+      "isFree": true
+    },
+    {
+      "slug": "final-cut-pro",
+      "isFree": false
+    },
+    {
+      "slug": "finale-inventory",
+      "isFree": true
+    },
+    {
+      "slug": "finsweet",
+      "isFree": true
+    },
+    {
+      "slug": "firebase",
+      "isFree": true
+    },
+    {
+      "slug": "firecrawl",
+      "isFree": true
+    },
+    {
+      "slug": "firefly",
+      "isFree": true
+    },
+    {
+      "slug": "fiverr",
+      "isFree": true
+    },
+    {
+      "slug": "flask",
+      "isFree": true
+    },
+    {
+      "slug": "flexiquiz",
+      "isFree": true
+    },
+    {
+      "slug": "flextools",
+      "isFree": false
+    },
+    {
+      "slug": "float",
+      "isFree": false
+    },
+    {
+      "slug": "flourish",
+      "isFree": true
+    },
+    {
+      "slug": "flowmapp",
+      "isFree": true
+    },
+    {
+      "slug": "flutter",
+      "isFree": true
+    },
+    {
+      "slug": "flux",
+      "isFree": true
+    },
+    {
+      "slug": "flux-ai",
+      "isFree": true
+    },
+    {
+      "slug": "fly-io",
+      "isFree": false
+    },
+    {
+      "slug": "fmod",
+      "isFree": true
+    },
+    {
+      "slug": "folk",
+      "isFree": false
+    },
+    {
+      "slug": "fontbase",
+      "isFree": true
+    },
+    {
+      "slug": "form-apps",
+      "isFree": false
+    },
+    {
+      "slug": "format",
+      "isFree": false
+    },
+    {
+      "slug": "formik",
+      "isFree": true
+    },
+    {
+      "slug": "frame-guides",
+      "isFree": false
+    },
+    {
+      "slug": "frame-io",
+      "isFree": true
+    },
+    {
+      "slug": "framer",
+      "isFree": true
+    },
+    {
+      "slug": "framer-motion",
+      "isFree": true
+    },
+    {
+      "slug": "frase",
+      "isFree": false
+    },
+    {
+      "slug": "fredo6-bundle",
+      "isFree": true
+    },
+    {
+      "slug": "fredocorner",
+      "isFree": true
+    },
+    {
+      "slug": "freshbooks",
+      "isFree": false
+    },
+    {
+      "slug": "freshservice",
+      "isFree": false
+    },
+    {
+      "slug": "front",
+      "isFree": false
+    },
+    {
+      "slug": "fusion",
+      "isFree": true
+    },
+    {
+      "slug": "fusion-360",
+      "isFree": false
+    },
+    {
+      "slug": "ga4",
+      "isFree": true
+    },
+    {
+      "slug": "gaea",
+      "isFree": true
+    },
+    {
+      "slug": "gaming-overlays",
+      "isFree": false
+    },
+    {
+      "slug": "gamma",
+      "isFree": false
+    },
+    {
+      "slug": "gamma-ai",
+      "isFree": false
+    },
+    {
+      "slug": "gcp",
+      "isFree": true
+    },
+    {
+      "slug": "gelato",
+      "isFree": true
+    },
+    {
+      "slug": "gemini",
+      "isFree": true
+    },
+    {
+      "slug": "gempages",
+      "isFree": false
+    },
+    {
+      "slug": "genially",
+      "isFree": false
+    },
+    {
+      "slug": "getida",
+      "isFree": true
+    },
+    {
+      "slug": "getresponse",
+      "isFree": true
+    },
+    {
+      "slug": "ghost",
+      "isFree": false
+    },
+    {
+      "slug": "giphy",
+      "isFree": true
+    },
+    {
+      "slug": "github",
+      "isFree": true
+    },
+    {
+      "slug": "github-actions",
+      "isFree": true
+    },
+    {
+      "slug": "github-advanced-security",
+      "isFree": true
+    },
+    {
+      "slug": "github-copilot",
+      "isFree": true
+    },
+    {
+      "slug": "gitlens",
+      "isFree": true
+    },
+    {
+      "slug": "glide",
+      "isFree": false
+    },
+    {
+      "slug": "gmail",
+      "isFree": true
+    },
+    {
+      "slug": "go",
+      "isFree": true
+    },
+    {
+      "slug": "gocardless",
+      "isFree": false
+    },
+    {
+      "slug": "godot",
+      "isFree": true
+    },
+    {
+      "slug": "gong",
+      "isFree": false
+    },
+    {
+      "slug": "google-ai-studio",
+      "isFree": true
+    },
+    {
+      "slug": "google-analytics",
+      "isFree": false
+    },
+    {
+      "slug": "google-chat",
+      "isFree": false
+    },
+    {
+      "slug": "google-docs",
+      "isFree": true
+    },
+    {
+      "slug": "google-drive",
+      "isFree": true
+    },
+    {
+      "slug": "google-earth-studio",
+      "isFree": true
+    },
+    {
+      "slug": "google-maps",
+      "isFree": false
+    },
+    {
+      "slug": "google-meet",
+      "isFree": true
+    },
+    {
+      "slug": "google-play-console",
+      "isFree": true
+    },
+    {
+      "slug": "google-search-console",
+      "isFree": false
+    },
+    {
+      "slug": "google-sheets",
+      "isFree": true
+    },
+    {
+      "slug": "google-slides",
+      "isFree": false
+    },
+    {
+      "slug": "google-tag-manager",
+      "isFree": true
+    },
+    {
+      "slug": "google-workspace",
+      "isFree": false
+    },
+    {
+      "slug": "gorgias",
+      "isFree": false
+    },
+    {
+      "slug": "gorgias-helpscout",
+      "isFree": false
+    },
+    {
+      "slug": "grabcad",
+      "isFree": true
+    },
+    {
+      "slug": "grafana",
+      "isFree": true
+    },
+    {
+      "slug": "grammarly",
+      "isFree": true
+    },
+    {
+      "slug": "granola",
+      "isFree": true
+    },
+    {
+      "slug": "graphql",
+      "isFree": true
+    },
+    {
+      "slug": "greenhouse",
+      "isFree": false
+    },
+    {
+      "slug": "greenly",
+      "isFree": false
+    },
+    {
+      "slug": "greensock",
+      "isFree": true
+    },
+    {
+      "slug": "grok",
+      "isFree": true
+    },
+    {
+      "slug": "gsap",
+      "isFree": true
+    },
+    {
+      "slug": "gsc",
+      "isFree": false
+    },
+    {
+      "slug": "guideless",
+      "isFree": true
+    },
+    {
+      "slug": "gumloop",
+      "isFree": true
+    },
+    {
+      "slug": "gumroad",
+      "isFree": false
+    },
+    {
+      "slug": "gusto",
+      "isFree": false
+    },
+    {
+      "slug": "hard-ops-boxcutter",
+      "isFree": false
+    },
+    {
+      "slug": "harvest",
+      "isFree": false
+    },
+    {
+      "slug": "headless-ui",
+      "isFree": true
+    },
+    {
+      "slug": "headliner",
+      "isFree": false
+    },
+    {
+      "slug": "helicone",
+      "isFree": true
+    },
+    {
+      "slug": "helpscout",
+      "isFree": true
+    },
+    {
+      "slug": "heptabase",
+      "isFree": false
+    },
+    {
+      "slug": "heroku",
+      "isFree": false
+    },
+    {
+      "slug": "hex",
+      "isFree": true
+    },
+    {
+      "slug": "heygen",
+      "isFree": true
+    },
+    {
+      "slug": "hibob",
+      "isFree": false
+    },
+    {
+      "slug": "highcharts",
+      "isFree": true
+    },
+    {
+      "slug": "hive",
+      "isFree": true
+    },
+    {
+      "slug": "honeybook",
+      "isFree": false
+    },
+    {
+      "slug": "hootsuite",
+      "isFree": false
+    },
+    {
+      "slug": "hostfully",
+      "isFree": false
+    },
+    {
+      "slug": "hotjar",
+      "isFree": true
+    },
+    {
+      "slug": "houdini",
+      "isFree": true
+    },
+    {
+      "slug": "houzz-pro",
+      "isFree": true
+    },
+    {
+      "slug": "hubspot",
+      "isFree": true
+    },
+    {
+      "slug": "hugeicons",
+      "isFree": true
+    },
+    {
+      "slug": "humaans",
+      "isFree": false
+    },
+    {
+      "slug": "hume-ai",
+      "isFree": true
+    },
+    {
+      "slug": "hydrogen",
+      "isFree": true
+    },
+    {
+      "slug": "hyperbrowser",
+      "isFree": true
+    },
+    {
+      "slug": "icons8",
+      "isFree": false
+    },
+    {
+      "slug": "icontact",
+      "isFree": false
+    },
+    {
+      "slug": "ideogram",
+      "isFree": true
+    },
+    {
+      "slug": "ignition",
+      "isFree": false
+    },
+    {
+      "slug": "impact",
+      "isFree": false
+    },
+    {
+      "slug": "inbound",
+      "isFree": true
+    },
+    {
+      "slug": "inboxally",
+      "isFree": true
+    },
+    {
+      "slug": "indesign",
+      "isFree": false
+    },
+    {
+      "slug": "indy",
+      "isFree": true
+    },
+    {
+      "slug": "infisical",
+      "isFree": true
+    },
+    {
+      "slug": "inflow-inventory",
+      "isFree": true
+    },
+    {
+      "slug": "infomaniak",
+      "isFree": false
+    },
+    {
+      "slug": "insense",
+      "isFree": false
+    },
+    {
+      "slug": "insightly",
+      "isFree": false
+    },
+    {
+      "slug": "insomnia",
+      "isFree": true
+    },
+    {
+      "slug": "instagram",
+      "isFree": true
+    },
+    {
+      "slug": "instantly",
+      "isFree": false
+    },
+    {
+      "slug": "instapage",
+      "isFree": true
+    },
+    {
+      "slug": "integrately",
+      "isFree": true
+    },
+    {
+      "slug": "intercom",
+      "isFree": false
+    },
+    {
+      "slug": "invision",
+      "isFree": true
+    },
+    {
+      "slug": "invoicely",
+      "isFree": true
+    },
+    {
+      "slug": "ironclad",
+      "isFree": false
+    },
+    {
+      "slug": "itch-io",
+      "isFree": true
+    },
+    {
+      "slug": "itsdart",
+      "isFree": true
+    },
+    {
+      "slug": "jasper",
+      "isFree": false
+    },
+    {
+      "slug": "jest",
+      "isFree": true
+    },
+    {
+      "slug": "jira",
+      "isFree": true
+    },
+    {
+      "slug": "jobber",
+      "isFree": false
+    },
+    {
+      "slug": "joint-push-pull",
+      "isFree": true
+    },
+    {
+      "slug": "jotform",
+      "isFree": true
+    },
+    {
+      "slug": "jquery",
+      "isFree": true
+    },
+    {
+      "slug": "judge-me",
+      "isFree": false
+    },
+    {
+      "slug": "jupyter",
+      "isFree": true
+    },
+    {
+      "slug": "juro",
+      "isFree": false
+    },
+    {
+      "slug": "justworks",
+      "isFree": false
+    },
+    {
+      "slug": "kajabi",
+      "isFree": false
+    },
+    {
+      "slug": "katana-cloud-manufacturing",
+      "isFree": true
+    },
+    {
+      "slug": "kavkom",
+      "isFree": true
+    },
+    {
+      "slug": "keeptruckin",
+      "isFree": true
+    },
+    {
+      "slug": "kelio",
+      "isFree": false
+    },
+    {
+      "slug": "keynote",
+      "isFree": true
+    },
+    {
+      "slug": "keyshot",
+      "isFree": false
+    },
+    {
+      "slug": "kinsta",
+      "isFree": false
+    },
+    {
+      "slug": "kissmetrics",
+      "isFree": true
+    },
+    {
+      "slug": "kit",
+      "isFree": true
+    },
+    {
+      "slug": "kixie",
+      "isFree": true
+    },
+    {
+      "slug": "klaviyo",
+      "isFree": true
+    },
+    {
+      "slug": "kling",
+      "isFree": false
+    },
+    {
+      "slug": "kling-ai",
+      "isFree": true
+    },
+    {
+      "slug": "knockout",
+      "isFree": true
+    },
+    {
+      "slug": "krea",
+      "isFree": false
+    },
+    {
+      "slug": "krea-ai",
+      "isFree": true
+    },
+    {
+      "slug": "krea-selon-metier",
+      "isFree": false
+    },
+    {
+      "slug": "krispcall",
+      "isFree": false
+    },
+    {
+      "slug": "krita",
+      "isFree": true
+    },
+    {
+      "slug": "kubernetes",
+      "isFree": true
+    },
+    {
+      "slug": "la-growth-machine",
+      "isFree": false
+    },
+    {
+      "slug": "landbot",
+      "isFree": true
+    },
+    {
+      "slug": "landingi",
+      "isFree": false
+    },
+    {
+      "slug": "langchain",
+      "isFree": true
+    },
+    {
+      "slug": "langsmith",
+      "isFree": true
+    },
+    {
+      "slug": "languagetool",
+      "isFree": false
+    },
+    {
+      "slug": "lano",
+      "isFree": true
+    },
+    {
+      "slug": "lastpass",
+      "isFree": false
+    },
+    {
+      "slug": "later",
+      "isFree": true
+    },
+    {
+      "slug": "layout-sketchup",
+      "isFree": true
+    },
+    {
+      "slug": "leadflow",
+      "isFree": true
+    },
+    {
+      "slug": "leadpages",
+      "isFree": false
+    },
+    {
+      "slug": "leadsquared",
+      "isFree": true
+    },
+    {
+      "slug": "learnworlds",
+      "isFree": false
+    },
+    {
+      "slug": "legalplace",
+      "isFree": false
+    },
+    {
+      "slug": "legalstart",
+      "isFree": true
+    },
+    {
+      "slug": "legifrance-pro",
+      "isFree": true
+    },
+    {
+      "slug": "lemlist",
+      "isFree": false
+    },
+    {
+      "slug": "lemon-squeezy",
+      "isFree": true
+    },
+    {
+      "slug": "lemonsqueezy",
+      "isFree": false
+    },
+    {
+      "slug": "lendio",
+      "isFree": true
+    },
+    {
+      "slug": "leonardo-ai",
+      "isFree": true
+    },
+    {
+      "slug": "lever",
+      "isFree": false
+    },
+    {
+      "slug": "lighthouse",
+      "isFree": true
+    },
+    {
+      "slug": "lighting-kits",
+      "isFree": false
+    },
+    {
+      "slug": "lightroom-mobile",
+      "isFree": false
+    },
+    {
+      "slug": "lightroom-presets",
+      "isFree": false
+    },
+    {
+      "slug": "liinks",
+      "isFree": true
+    },
+    {
+      "slug": "lindy",
+      "isFree": false
+    },
+    {
+      "slug": "linear",
+      "isFree": true
+    },
+    {
+      "slug": "link-in-bio",
+      "isFree": false
+    },
+    {
+      "slug": "link-in-bio-tools",
+      "isFree": false
+    },
+    {
+      "slug": "link-whisper",
+      "isFree": false
+    },
+    {
+      "slug": "linkedin",
+      "isFree": true
+    },
+    {
+      "slug": "linkedin-recruiter",
+      "isFree": false
+    },
+    {
+      "slug": "linktree",
+      "isFree": false
+    },
+    {
+      "slug": "liquid",
+      "isFree": true
+    },
+    {
+      "slug": "liquid-web-partner-program",
+      "isFree": true
+    },
+    {
+      "slug": "llamaindex",
+      "isFree": true
+    },
+    {
+      "slug": "localwp",
+      "isFree": true
+    },
+    {
+      "slug": "logic-pro",
+      "isFree": true
+    },
+    {
+      "slug": "logomeai",
+      "isFree": true
+    },
+    {
+      "slug": "logseq",
+      "isFree": true
+    },
+    {
+      "slug": "logtail",
+      "isFree": true
+    },
+    {
+      "slug": "looka",
+      "isFree": false
+    },
+    {
+      "slug": "lookback",
+      "isFree": false
+    },
+    {
+      "slug": "looker-studio",
+      "isFree": true
+    },
+    {
+      "slug": "loom",
+      "isFree": true
+    },
+    {
+      "slug": "loopio",
+      "isFree": false
+    },
+    {
+      "slug": "loops",
+      "isFree": true
+    },
+    {
+      "slug": "loox",
+      "isFree": false
+    },
+    {
+      "slug": "lottie",
+      "isFree": true
+    },
+    {
+      "slug": "lottiefiles",
+      "isFree": false
+    },
+    {
+      "slug": "lovable",
+      "isFree": true
+    },
+    {
+      "slug": "ltk",
+      "isFree": false
+    },
+    {
+      "slug": "lucca",
+      "isFree": false
+    },
+    {
+      "slug": "lucid-software",
+      "isFree": true
+    },
+    {
+      "slug": "lucidchart",
+      "isFree": true
+    },
+    {
+      "slug": "luminar-neo",
+      "isFree": false
+    },
+    {
+      "slug": "lumion",
+      "isFree": false
+    },
+    {
+      "slug": "lusha",
+      "isFree": true
+    },
+    {
+      "slug": "maced-ai",
+      "isFree": true
+    },
+    {
+      "slug": "madmapper",
+      "isFree": false
+    },
+    {
+      "slug": "magic-bullet",
+      "isFree": false
+    },
+    {
+      "slug": "magic-patterns",
+      "isFree": true
+    },
+    {
+      "slug": "magicbrief",
+      "isFree": false
+    },
+    {
+      "slug": "magnific",
+      "isFree": false
+    },
+    {
+      "slug": "magnific-ai",
+      "isFree": true
+    },
+    {
+      "slug": "mailchimp",
+      "isFree": true
+    },
+    {
+      "slug": "mailerlite",
+      "isFree": false
+    },
+    {
+      "slug": "mailgun",
+      "isFree": false
+    },
+    {
+      "slug": "mainwp",
+      "isFree": true
+    },
+    {
+      "slug": "make",
+      "isFree": true
+    },
+    {
+      "slug": "managewp",
+      "isFree": true
+    },
+    {
+      "slug": "manifest-ai",
+      "isFree": true
+    },
+    {
+      "slug": "mantine",
+      "isFree": true
+    },
+    {
+      "slug": "map-tools",
+      "isFree": false
+    },
+    {
+      "slug": "mapbox",
+      "isFree": true
+    },
+    {
+      "slug": "mari",
+      "isFree": true
+    },
+    {
+      "slug": "marmoset-toolbag",
+      "isFree": false
+    },
+    {
+      "slug": "marvelous-designer",
+      "isFree": false
+    },
+    {
+      "slug": "masv",
+      "isFree": true
+    },
+    {
+      "slug": "material-swift",
+      "isFree": true
+    },
+    {
+      "slug": "material-ui",
+      "isFree": true
+    },
+    {
+      "slug": "maven",
+      "isFree": false
+    },
+    {
+      "slug": "maxon-one",
+      "isFree": false
+    },
+    {
+      "slug": "maya",
+      "isFree": false
+    },
+    {
+      "slug": "maze",
+      "isFree": true
+    },
+    {
+      "slug": "media-kit-templates",
+      "isFree": false
+    },
+    {
+      "slug": "medusa",
+      "isFree": true
+    },
+    {
+      "slug": "megahr",
+      "isFree": false
+    },
+    {
+      "slug": "meltwater",
+      "isFree": false
+    },
+    {
+      "slug": "mem-ai",
+      "isFree": false
+    },
+    {
+      "slug": "memberful",
+      "isFree": false
+    },
+    {
+      "slug": "memberstack",
+      "isFree": false
+    },
+    {
+      "slug": "meme-templates",
+      "isFree": false
+    },
+    {
+      "slug": "meshy",
+      "isFree": true
+    },
+    {
+      "slug": "meta-ads",
+      "isFree": false
+    },
+    {
+      "slug": "meta-quest-developer-tools",
+      "isFree": true
+    },
+    {
+      "slug": "metabase",
+      "isFree": true
+    },
+    {
+      "slug": "metricool",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-365",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-365-copilot",
+      "isFree": true
+    },
+    {
+      "slug": "microsoft-clarity",
+      "isFree": true
+    },
+    {
+      "slug": "microsoft-defender",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-dynamics-365-finance-operations",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-dynamics-business-central",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-entra-id",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-project",
+      "isFree": false
+    },
+    {
+      "slug": "microsoft-teams",
+      "isFree": false
+    },
+    {
+      "slug": "midjourney",
+      "isFree": false
+    },
+    {
+      "slug": "milanote",
+      "isFree": true
+    },
+    {
+      "slug": "miro",
+      "isFree": false
+    },
+    {
+      "slug": "mixpanel",
+      "isFree": true
+    },
+    {
+      "slug": "mobile-gimbal-apps",
+      "isFree": false
+    },
+    {
+      "slug": "mockup-plugins",
+      "isFree": false
+    },
+    {
+      "slug": "modo",
+      "isFree": false
+    },
+    {
+      "slug": "mojo",
+      "isFree": false
+    },
+    {
+      "slug": "monday",
+      "isFree": true
+    },
+    {
+      "slug": "monday-com",
+      "isFree": false
+    },
+    {
+      "slug": "mongodb-atlas",
+      "isFree": true
+    },
+    {
+      "slug": "moobot",
+      "isFree": false
+    },
+    {
+      "slug": "moodle",
+      "isFree": true
+    },
+    {
+      "slug": "moosend",
+      "isFree": true
+    },
+    {
+      "slug": "moss",
+      "isFree": false
+    },
+    {
+      "slug": "motion",
+      "isFree": false
+    },
+    {
+      "slug": "motion-app",
+      "isFree": false
+    },
+    {
+      "slug": "motion-array",
+      "isFree": false
+    },
+    {
+      "slug": "motion-bro",
+      "isFree": true
+    },
+    {
+      "slug": "move-ai",
+      "isFree": true
+    },
+    {
+      "slug": "mrpeasy",
+      "isFree": true
+    },
+    {
+      "slug": "murf",
+      "isFree": true
+    },
+    {
+      "slug": "music-libraries",
+      "isFree": false
+    },
+    {
+      "slug": "mycase",
+      "isFree": true
+    },
+    {
+      "slug": "n8n",
+      "isFree": false
+    },
+    {
+      "slug": "namecheap",
+      "isFree": false
+    },
+    {
+      "slug": "namely",
+      "isFree": false
+    },
+    {
+      "slug": "navan",
+      "isFree": true
+    },
+    {
+      "slug": "nearst",
+      "isFree": true
+    },
+    {
+      "slug": "neon",
+      "isFree": true
+    },
+    {
+      "slug": "nestjs",
+      "isFree": true
+    },
+    {
+      "slug": "netchex",
+      "isFree": true
+    },
+    {
+      "slug": "netlify",
+      "isFree": false
+    },
+    {
+      "slug": "netsuite",
+      "isFree": false
+    },
+    {
+      "slug": "newman",
+      "isFree": true
+    },
+    {
+      "slug": "newsletter-referral-tools",
+      "isFree": false
+    },
+    {
+      "slug": "next-js",
+      "isFree": true
+    },
+    {
+      "slug": "nightbot",
+      "isFree": false
+    },
+    {
+      "slug": "nik-collection",
+      "isFree": false
+    },
+    {
+      "slug": "node-js",
+      "isFree": true
+    },
+    {
+      "slug": "nomad-sculpt",
+      "isFree": false
+    },
+    {
+      "slug": "nordpass",
+      "isFree": false
+    },
+    {
+      "slug": "notch",
+      "isFree": false
+    },
+    {
+      "slug": "notion",
+      "isFree": true
+    },
+    {
+      "slug": "notion-ai",
+      "isFree": false
+    },
+    {
+      "slug": "notionlytics",
+      "isFree": true
+    },
+    {
+      "slug": "noun-project",
+      "isFree": false
+    },
+    {
+      "slug": "nuke",
+      "isFree": true
+    },
+    {
+      "slug": "nusii",
+      "isFree": false
+    },
+    {
+      "slug": "nvda",
+      "isFree": true
+    },
+    {
+      "slug": "obs",
+      "isFree": false
+    },
+    {
+      "slug": "obsidian",
+      "isFree": true
+    },
+    {
+      "slug": "octane-render",
+      "isFree": false
+    },
+    {
+      "slug": "okta",
+      "isFree": false
+    },
+    {
+      "slug": "omniconvert-explore",
+      "isFree": true
+    },
+    {
+      "slug": "onedrive",
+      "isFree": false
+    },
+    {
+      "slug": "onelogin",
+      "isFree": false
+    },
+    {
+      "slug": "onetrust",
+      "isFree": false
+    },
+    {
+      "slug": "onramp-funds",
+      "isFree": true
+    },
+    {
+      "slug": "open-cut-list",
+      "isFree": true
+    },
+    {
+      "slug": "openai",
+      "isFree": false
+    },
+    {
+      "slug": "openai-api",
+      "isFree": true
+    },
+    {
+      "slug": "openapi",
+      "isFree": true
+    },
+    {
+      "slug": "openphone",
+      "isFree": true
+    },
+    {
+      "slug": "optimizely",
+      "isFree": false
+    },
+    {
+      "slug": "opus-clip",
+      "isFree": true
+    },
+    {
+      "slug": "opusclip",
+      "isFree": false
+    },
+    {
+      "slug": "oracle-fusion-cloud",
+      "isFree": false
+    },
+    {
+      "slug": "origami",
+      "isFree": true
+    },
+    {
+      "slug": "otter",
+      "isFree": false
+    },
+    {
+      "slug": "otter-ai",
+      "isFree": true
+    },
+    {
+      "slug": "overlays",
+      "isFree": false
+    },
+    {
+      "slug": "ovh",
+      "isFree": false
+    },
+    {
+      "slug": "owasp-zap",
+      "isFree": true
+    },
+    {
+      "slug": "ownr",
+      "isFree": true
+    },
+    {
+      "slug": "oyster",
+      "isFree": true
+    },
+    {
+      "slug": "p5-js",
+      "isFree": true
+    },
+    {
+      "slug": "pabbly-connect",
+      "isFree": false
+    },
+    {
+      "slug": "pacdora",
+      "isFree": false
+    },
+    {
+      "slug": "packhelp",
+      "isFree": true
+    },
+    {
+      "slug": "paddle",
+      "isFree": false
+    },
+    {
+      "slug": "pageai",
+      "isFree": false
+    },
+    {
+      "slug": "pagecloud",
+      "isFree": true
+    },
+    {
+      "slug": "pagefly",
+      "isFree": false
+    },
+    {
+      "slug": "pagerduty",
+      "isFree": true
+    },
+    {
+      "slug": "pagespeed-insights",
+      "isFree": true
+    },
+    {
+      "slug": "pandadoc",
+      "isFree": false
+    },
+    {
+      "slug": "pandas",
+      "isFree": true
+    },
+    {
+      "slug": "partnerstack",
+      "isFree": false
+    },
+    {
+      "slug": "partytown",
+      "isFree": true
+    },
+    {
+      "slug": "patreon",
+      "isFree": false
+    },
+    {
+      "slug": "payfit",
+      "isFree": false
+    },
+    {
+      "slug": "payhawk",
+      "isFree": false
+    },
+    {
+      "slug": "payload-cms",
+      "isFree": true
+    },
+    {
+      "slug": "payoneer",
+      "isFree": true
+    },
+    {
+      "slug": "paypal",
+      "isFree": true
+    },
+    {
+      "slug": "pennylane",
+      "isFree": false
+    },
+    {
+      "slug": "pennylane-ai-selon-dispo",
+      "isFree": false
+    },
+    {
+      "slug": "pennylane-ou-indy",
+      "isFree": false
+    },
+    {
+      "slug": "pennylane-qonto",
+      "isFree": false
+    },
+    {
+      "slug": "penpot",
+      "isFree": true
+    },
+    {
+      "slug": "percy",
+      "isFree": true
+    },
+    {
+      "slug": "perforce",
+      "isFree": true
+    },
+    {
+      "slug": "perplexity",
+      "isFree": true
+    },
+    {
+      "slug": "personio",
+      "isFree": false
+    },
+    {
+      "slug": "pgvector",
+      "isFree": true
+    },
+    {
+      "slug": "phantombuster",
+      "isFree": false
+    },
+    {
+      "slug": "photopea",
+      "isFree": true
+    },
+    {
+      "slug": "php",
+      "isFree": true
+    },
+    {
+      "slug": "pics-io",
+      "isFree": false
+    },
+    {
+      "slug": "pigment",
+      "isFree": false
+    },
+    {
+      "slug": "pika-labs",
+      "isFree": true
+    },
+    {
+      "slug": "pikkovia",
+      "isFree": false
+    },
+    {
+      "slug": "pinecone",
+      "isFree": true
+    },
+    {
+      "slug": "pinterest",
+      "isFree": false
+    },
+    {
+      "slug": "pipedrive",
+      "isFree": true
+    },
+    {
+      "slug": "pipelinepro",
+      "isFree": true
+    },
+    {
+      "slug": "pitch",
+      "isFree": true
+    },
+    {
+      "slug": "pixco",
+      "isFree": true
+    },
+    {
+      "slug": "pixelmator-pro",
+      "isFree": false
+    },
+    {
+      "slug": "pixieset",
+      "isFree": true
+    },
+    {
+      "slug": "plane",
+      "isFree": true
+    },
+    {
+      "slug": "planetscale",
+      "isFree": false
+    },
+    {
+      "slug": "planoly",
+      "isFree": false
+    },
+    {
+      "slug": "plasticity",
+      "isFree": false
+    },
+    {
+      "slug": "plausible",
+      "isFree": false
+    },
+    {
+      "slug": "playwright",
+      "isFree": true
+    },
+    {
+      "slug": "pluraleyes",
+      "isFree": false
+    },
+    {
+      "slug": "plutio",
+      "isFree": false
+    },
+    {
+      "slug": "podbean",
+      "isFree": true
+    },
+    {
+      "slug": "podcastle",
+      "isFree": true
+    },
+    {
+      "slug": "podia",
+      "isFree": false
+    },
+    {
+      "slug": "poetry",
+      "isFree": true
+    },
+    {
+      "slug": "postgresql",
+      "isFree": true
+    },
+    {
+      "slug": "posthog",
+      "isFree": true
+    },
+    {
+      "slug": "postman",
+      "isFree": true
+    },
+    {
+      "slug": "postsyncer",
+      "isFree": false
+    },
+    {
+      "slug": "power-bi",
+      "isFree": false
+    },
+    {
+      "slug": "power-user",
+      "isFree": false
+    },
+    {
+      "slug": "powerpoint",
+      "isFree": false
+    },
+    {
+      "slug": "preact",
+      "isFree": true
+    },
+    {
+      "slug": "premiere-rush",
+      "isFree": false
+    },
+    {
+      "slug": "presets",
+      "isFree": false
+    },
+    {
+      "slug": "presets-lightroom",
+      "isFree": false
+    },
+    {
+      "slug": "prettier",
+      "isFree": true
+    },
+    {
+      "slug": "pretty-links",
+      "isFree": false
+    },
+    {
+      "slug": "prezi",
+      "isFree": true
+    },
+    {
+      "slug": "printify",
+      "isFree": true
+    },
+    {
+      "slug": "priority",
+      "isFree": false
+    },
+    {
+      "slug": "prisma",
+      "isFree": true
+    },
+    {
+      "slug": "pro-tools",
+      "isFree": false
+    },
+    {
+      "slug": "process-street",
+      "isFree": false
+    },
+    {
+      "slug": "processing",
+      "isFree": true
+    },
+    {
+      "slug": "procreate",
+      "isFree": true
+    },
+    {
+      "slug": "product-hunt",
+      "isFree": false
+    },
+    {
+      "slug": "productboard",
+      "isFree": false
+    },
+    {
+      "slug": "productioncrate",
+      "isFree": true
+    },
+    {
+      "slug": "productive-io",
+      "isFree": false
+    },
+    {
+      "slug": "profile-builder-3",
+      "isFree": false
+    },
+    {
+      "slug": "profitwell",
+      "isFree": true
+    },
+    {
+      "slug": "programa",
+      "isFree": false
+    },
+    {
+      "slug": "prometheus",
+      "isFree": true
+    },
+    {
+      "slug": "promo-com",
+      "isFree": true
+    },
+    {
+      "slug": "prompt-libraries",
+      "isFree": false
+    },
+    {
+      "slug": "proofhub",
+      "isFree": false
+    },
+    {
+      "slug": "proposify",
+      "isFree": false
+    },
+    {
+      "slug": "protopie",
+      "isFree": false
+    },
+    {
+      "slug": "prowly",
+      "isFree": false
+    },
+    {
+      "slug": "prowritingaid",
+      "isFree": true
+    },
+    {
+      "slug": "pterocos",
+      "isFree": true
+    },
+    {
+      "slug": "publer",
+      "isFree": false
+    },
+    {
+      "slug": "pure-ref",
+      "isFree": true
+    },
+    {
+      "slug": "pushowl-web-push-notifications",
+      "isFree": true
+    },
+    {
+      "slug": "pytest",
+      "isFree": true
+    },
+    {
+      "slug": "python",
+      "isFree": true
+    },
+    {
+      "slug": "qdrant",
+      "isFree": true
+    },
+    {
+      "slug": "qgis",
+      "isFree": true
+    },
+    {
+      "slug": "qonto",
+      "isFree": false
+    },
+    {
+      "slug": "quadient",
+      "isFree": true
+    },
+    {
+      "slug": "quarkxpress",
+      "isFree": false
+    },
+    {
+      "slug": "quartile",
+      "isFree": true
+    },
+    {
+      "slug": "quick-base",
+      "isFree": true
+    },
+    {
+      "slug": "quickbooks",
+      "isFree": true
+    },
+    {
+      "slug": "quickbooks-online",
+      "isFree": false
+    },
+    {
+      "slug": "quixel-megascans",
+      "isFree": true
+    },
+    {
+      "slug": "radix-primitives",
+      "isFree": true
+    },
+    {
+      "slug": "radix-ui",
+      "isFree": true
+    },
+    {
+      "slug": "railway",
+      "isFree": false
+    },
+    {
+      "slug": "rank-math",
+      "isFree": true
+    },
+    {
+      "slug": "rankmath",
+      "isFree": false
+    },
+    {
+      "slug": "raycast",
+      "isFree": true
+    },
+    {
+      "slug": "razorpay",
+      "isFree": true
+    },
+    {
+      "slug": "react",
+      "isFree": true
+    },
+    {
+      "slug": "react-hook-form",
+      "isFree": true
+    },
+    {
+      "slug": "react-native",
+      "isFree": true
+    },
+    {
+      "slug": "react-query",
+      "isFree": true
+    },
+    {
+      "slug": "react-router",
+      "isFree": true
+    },
+    {
+      "slug": "readwise",
+      "isFree": false
+    },
+    {
+      "slug": "readymag",
+      "isFree": true
+    },
+    {
+      "slug": "reaper",
+      "isFree": false
+    },
+    {
+      "slug": "recharge",
+      "isFree": false
+    },
+    {
+      "slug": "recharts",
+      "isFree": true
+    },
+    {
+      "slug": "recipe-card-templates",
+      "isFree": false
+    },
+    {
+      "slug": "reclaim",
+      "isFree": true
+    },
+    {
+      "slug": "reclaim-ai",
+      "isFree": true
+    },
+    {
+      "slug": "red-giant-universe",
+      "isFree": false
+    },
+    {
+      "slug": "redirect-path",
+      "isFree": true
+    },
+    {
+      "slug": "redis",
+      "isFree": true
+    },
+    {
+      "slug": "redshift",
+      "isFree": false
+    },
+    {
+      "slug": "reflect-notes",
+      "isFree": false
+    },
+    {
+      "slug": "relay",
+      "isFree": true
+    },
+    {
+      "slug": "relevance-ai",
+      "isFree": false
+    },
+    {
+      "slug": "relume",
+      "isFree": false
+    },
+    {
+      "slug": "relume-ai",
+      "isFree": false
+    },
+    {
+      "slug": "remix",
+      "isFree": true
+    },
+    {
+      "slug": "remove-bg",
+      "isFree": false
+    },
+    {
+      "slug": "render",
+      "isFree": false
+    },
+    {
+      "slug": "renderman",
+      "isFree": true
+    },
+    {
+      "slug": "replit",
+      "isFree": true
+    },
+    {
+      "slug": "replyio",
+      "isFree": false
+    },
+    {
+      "slug": "repurpose-io",
+      "isFree": false
+    },
+    {
+      "slug": "resend",
+      "isFree": true
+    },
+    {
+      "slug": "resolume",
+      "isFree": false
+    },
+    {
+      "slug": "respond-io",
+      "isFree": true
+    },
+    {
+      "slug": "responsetap",
+      "isFree": true
+    },
+    {
+      "slug": "rest-client",
+      "isFree": true
+    },
+    {
+      "slug": "restream",
+      "isFree": true
+    },
+    {
+      "slug": "retool",
+      "isFree": true
+    },
+    {
+      "slug": "rev",
+      "isFree": false
+    },
+    {
+      "slug": "revenuecat",
+      "isFree": true
+    },
+    {
+      "slug": "review-tools",
+      "isFree": false
+    },
+    {
+      "slug": "revit",
+      "isFree": false
+    },
+    {
+      "slug": "rewardful",
+      "isFree": false
+    },
+    {
+      "slug": "rhino",
+      "isFree": false
+    },
+    {
+      "slug": "rightfont",
+      "isFree": false
+    },
+    {
+      "slug": "rippling",
+      "isFree": false
+    },
+    {
+      "slug": "rive",
+      "isFree": true
+    },
+    {
+      "slug": "riverpod",
+      "isFree": true
+    },
+    {
+      "slug": "riverside",
+      "isFree": true
+    },
+    {
+      "slug": "roam-research",
+      "isFree": false
+    },
+    {
+      "slug": "rocket-lawyer",
+      "isFree": true
+    },
+    {
+      "slug": "rocketlink",
+      "isFree": true
+    },
+    {
+      "slug": "rork",
+      "isFree": true
+    },
+    {
+      "slug": "ruby",
+      "isFree": true
+    },
+    {
+      "slug": "runway",
+      "isFree": true
+    },
+    {
+      "slug": "rydoo",
+      "isFree": false
+    },
+    {
+      "slug": "safetyculture",
+      "isFree": true
+    },
+    {
+      "slug": "sage",
+      "isFree": false
+    },
+    {
+      "slug": "sage-intacct",
+      "isFree": false
+    },
+    {
+      "slug": "sage-paie",
+      "isFree": false
+    },
+    {
+      "slug": "saleor",
+      "isFree": true
+    },
+    {
+      "slug": "salesflare",
+      "isFree": true
+    },
+    {
+      "slug": "salesforce",
+      "isFree": true
+    },
+    {
+      "slug": "samcart",
+      "isFree": false
+    },
+    {
+      "slug": "sami",
+      "isFree": false
+    },
+    {
+      "slug": "sanebox",
+      "isFree": false
+    },
+    {
+      "slug": "sanity",
+      "isFree": true
+    },
+    {
+      "slug": "sap-business-bydesign",
+      "isFree": false
+    },
+    {
+      "slug": "sap-business-one",
+      "isFree": false
+    },
+    {
+      "slug": "sap-s4hana",
+      "isFree": false
+    },
+    {
+      "slug": "sap-successfactors",
+      "isFree": false
+    },
+    {
+      "slug": "scheduling-tools",
+      "isFree": false
+    },
+    {
+      "slug": "screaming-frog",
+      "isFree": true
+    },
+    {
+      "slug": "screen-capture-tools",
+      "isFree": false
+    },
+    {
+      "slug": "screen-studio",
+      "isFree": true
+    },
+    {
+      "slug": "screensage-pro",
+      "isFree": true
+    },
+    {
+      "slug": "screenshot-tools",
+      "isFree": false
+    },
+    {
+      "slug": "scribe",
+      "isFree": true
+    },
+    {
+      "slug": "seamless-ai",
+      "isFree": true
+    },
+    {
+      "slug": "securityscorecard",
+      "isFree": false
+    },
+    {
+      "slug": "segment",
+      "isFree": true
+    },
+    {
+      "slug": "sellersfi",
+      "isFree": true
+    },
+    {
+      "slug": "sellfy",
+      "isFree": true
+    },
+    {
+      "slug": "sellsy",
+      "isFree": false
+    },
+    {
+      "slug": "semgrep",
+      "isFree": true
+    },
+    {
+      "slug": "semrush",
+      "isFree": false
+    },
+    {
+      "slug": "sendible",
+      "isFree": true
+    },
+    {
+      "slug": "sendinblue",
+      "isFree": true
+    },
+    {
+      "slug": "sentry",
+      "isFree": true
+    },
+    {
+      "slug": "seo-meta-in-1-click",
+      "isFree": true
+    },
+    {
+      "slug": "seo-mode",
+      "isFree": true
+    },
+    {
+      "slug": "shadcn-ui",
+      "isFree": true
+    },
+    {
+      "slug": "shared-cloud-folders",
+      "isFree": false
+    },
+    {
+      "slug": "sharepoint",
+      "isFree": false
+    },
+    {
+      "slug": "shield",
+      "isFree": false
+    },
+    {
+      "slug": "shield-app",
+      "isFree": false
+    },
+    {
+      "slug": "shine",
+      "isFree": true
+    },
+    {
+      "slug": "shipstation",
+      "isFree": false
+    },
+    {
+      "slug": "shogun",
+      "isFree": true
+    },
+    {
+      "slug": "shophero",
+      "isFree": true
+    },
+    {
+      "slug": "shopify",
+      "isFree": false
+    },
+    {
+      "slug": "shopify-cli",
+      "isFree": true
+    },
+    {
+      "slug": "shopify-payments",
+      "isFree": true
+    },
+    {
+      "slug": "shopmy",
+      "isFree": false
+    },
+    {
+      "slug": "shortpixel",
+      "isFree": false
+    },
+    {
+      "slug": "shotdeck",
+      "isFree": false
+    },
+    {
+      "slug": "signrequest",
+      "isFree": true
+    },
+    {
+      "slug": "silae",
+      "isFree": false
+    },
+    {
+      "slug": "similarweb",
+      "isFree": true
+    },
+    {
+      "slug": "simple-analytics",
+      "isFree": false
+    },
+    {
+      "slug": "simpletexting",
+      "isFree": true
+    },
+    {
+      "slug": "simvoly",
+      "isFree": true
+    },
+    {
+      "slug": "skatter",
+      "isFree": true
+    },
+    {
+      "slug": "sketch",
+      "isFree": false
+    },
+    {
+      "slug": "sketchup-pro",
+      "isFree": false
+    },
+    {
+      "slug": "skribble",
+      "isFree": false
+    },
+    {
+      "slug": "slack",
+      "isFree": true
+    },
+    {
+      "slug": "slido",
+      "isFree": true
+    },
+    {
+      "slug": "smartsheet",
+      "isFree": true
+    },
+    {
+      "slug": "smartsuite",
+      "isFree": false
+    },
+    {
+      "slug": "smtp-com",
+      "isFree": true
+    },
+    {
+      "slug": "snapseed",
+      "isFree": true
+    },
+    {
+      "slug": "snipe-it",
+      "isFree": true
+    },
+    {
+      "slug": "snov-io",
+      "isFree": true
+    },
+    {
+      "slug": "snowflake",
+      "isFree": true
+    },
+    {
+      "slug": "snyk",
+      "isFree": true
+    },
+    {
+      "slug": "social-schedulers",
+      "isFree": false
+    },
+    {
+      "slug": "socialbee",
+      "isFree": false
+    },
+    {
+      "slug": "softr",
+      "isFree": true
+    },
+    {
+      "slug": "soldo",
+      "isFree": false
+    },
+    {
+      "slug": "solid-inspector2",
+      "isFree": true
+    },
+    {
+      "slug": "solid-js",
+      "isFree": true
+    },
+    {
+      "slug": "solidworks",
+      "isFree": false
+    },
+    {
+      "slug": "spaceiq",
+      "isFree": false
+    },
+    {
+      "slug": "sparkloop",
+      "isFree": false
+    },
+    {
+      "slug": "specify",
+      "isFree": true
+    },
+    {
+      "slug": "spendesk",
+      "isFree": false
+    },
+    {
+      "slug": "spline",
+      "isFree": true
+    },
+    {
+      "slug": "spotify-for-podcasters",
+      "isFree": true
+    },
+    {
+      "slug": "sprout-social",
+      "isFree": false
+    },
+    {
+      "slug": "sql",
+      "isFree": true
+    },
+    {
+      "slug": "sqlalchemy",
+      "isFree": true
+    },
+    {
+      "slug": "squarespace",
+      "isFree": true
+    },
+    {
+      "slug": "stable-diffusion",
+      "isFree": true
+    },
+    {
+      "slug": "stan-store",
+      "isFree": false
+    },
+    {
+      "slug": "stark",
+      "isFree": true
+    },
+    {
+      "slug": "steamworks",
+      "isFree": true
+    },
+    {
+      "slug": "stock-footage",
+      "isFree": false
+    },
+    {
+      "slug": "storyblocks",
+      "isFree": false
+    },
+    {
+      "slug": "storybook",
+      "isFree": true
+    },
+    {
+      "slug": "storyluxe",
+      "isFree": false
+    },
+    {
+      "slug": "strapi",
+      "isFree": true
+    },
+    {
+      "slug": "streamelements",
+      "isFree": true
+    },
+    {
+      "slug": "streamelements-widgets",
+      "isFree": false
+    },
+    {
+      "slug": "streamlabs",
+      "isFree": true
+    },
+    {
+      "slug": "stripe",
+      "isFree": true
+    },
+    {
+      "slug": "styled-components",
+      "isFree": true
+    },
+    {
+      "slug": "submagic",
+      "isFree": false
+    },
+    {
+      "slug": "substack",
+      "isFree": true
+    },
+    {
+      "slug": "substance-3d-designer",
+      "isFree": false
+    },
+    {
+      "slug": "substance-3d-painter",
+      "isFree": false
+    },
+    {
+      "slug": "subtitle-tools",
+      "isFree": false
+    },
+    {
+      "slug": "suitedash",
+      "isFree": false
+    },
+    {
+      "slug": "suno",
+      "isFree": true
+    },
+    {
+      "slug": "supabase",
+      "isFree": true
+    },
+    {
+      "slug": "superdev-pro",
+      "isFree": true
+    },
+    {
+      "slug": "superhuman",
+      "isFree": false
+    },
+    {
+      "slug": "superlist",
+      "isFree": true
+    },
+    {
+      "slug": "supermetrics",
+      "isFree": false
+    },
+    {
+      "slug": "superwhisper",
+      "isFree": true
+    },
+    {
+      "slug": "surfer-ai",
+      "isFree": false
+    },
+    {
+      "slug": "surferseo",
+      "isFree": false
+    },
+    {
+      "slug": "surveysparrow",
+      "isFree": true
+    },
+    {
+      "slug": "svelte",
+      "isFree": true
+    },
+    {
+      "slug": "sweep",
+      "isFree": false
+    },
+    {
+      "slug": "switch-monster",
+      "isFree": true
+    },
+    {
+      "slug": "sysaid",
+      "isFree": false
+    },
+    {
+      "slug": "systeme-io",
+      "isFree": false
+    },
+    {
+      "slug": "tableau",
+      "isFree": false
+    },
+    {
+      "slug": "tablepress",
+      "isFree": false
+    },
+    {
+      "slug": "tabnine",
+      "isFree": true
+    },
+    {
+      "slug": "tailwind-css",
+      "isFree": true
+    },
+    {
+      "slug": "tally",
+      "isFree": true
+    },
+    {
+      "slug": "tanstack-router",
+      "isFree": true
+    },
+    {
+      "slug": "taplio",
+      "isFree": false
+    },
+    {
+      "slug": "taskade",
+      "isFree": true
+    },
+    {
+      "slug": "tave",
+      "isFree": false
+    },
+    {
+      "slug": "teachable",
+      "isFree": true
+    },
+    {
+      "slug": "teamwork",
+      "isFree": true
+    },
+    {
+      "slug": "techpacker",
+      "isFree": false
+    },
+    {
+      "slug": "teleprompter",
+      "isFree": false
+    },
+    {
+      "slug": "teleprompter-apps",
+      "isFree": false
+    },
+    {
+      "slug": "tella",
+      "isFree": true
+    },
+    {
+      "slug": "templates",
+      "isFree": false
+    },
+    {
+      "slug": "templates-ugc",
+      "isFree": false
+    },
+    {
+      "slug": "tenor",
+      "isFree": false
+    },
+    {
+      "slug": "terraform",
+      "isFree": true
+    },
+    {
+      "slug": "tezza",
+      "isFree": false
+    },
+    {
+      "slug": "thinkific",
+      "isFree": true
+    },
+    {
+      "slug": "thirstyaffiliates",
+      "isFree": false
+    },
+    {
+      "slug": "thordata",
+      "isFree": false
+    },
+    {
+      "slug": "three-js",
+      "isFree": true
+    },
+    {
+      "slug": "thrivecart",
+      "isFree": false
+    },
+    {
+      "slug": "thunder-client",
+      "isFree": true
+    },
+    {
+      "slug": "tidio",
+      "isFree": true
+    },
+    {
+      "slug": "tiime",
+      "isFree": false
+    },
+    {
+      "slug": "tiktok",
+      "isFree": true
+    },
+    {
+      "slug": "tiktok-ads",
+      "isFree": false
+    },
+    {
+      "slug": "tiktok-studio",
+      "isFree": false
+    },
+    {
+      "slug": "timber",
+      "isFree": true
+    },
+    {
+      "slug": "time-doctor",
+      "isFree": false
+    },
+    {
+      "slug": "timecamp",
+      "isFree": true
+    },
+    {
+      "slug": "todoist",
+      "isFree": true
+    },
+    {
+      "slug": "toggl",
+      "isFree": true
+    },
+    {
+      "slug": "tomorro",
+      "isFree": false
+    },
+    {
+      "slug": "topaz",
+      "isFree": false
+    },
+    {
+      "slug": "topaz-gigapixel",
+      "isFree": false
+    },
+    {
+      "slug": "topaz-photo-ai",
+      "isFree": false
+    },
+    {
+      "slug": "topaz-video",
+      "isFree": false
+    },
+    {
+      "slug": "topaz-video-ai",
+      "isFree": false
+    },
+    {
+      "slug": "touchdesigner",
+      "isFree": true
+    },
+    {
+      "slug": "tradingview",
+      "isFree": false
+    },
+    {
+      "slug": "trainerize",
+      "isFree": false
+    },
+    {
+      "slug": "trainual",
+      "isFree": false
+    },
+    {
+      "slug": "transmutr",
+      "isFree": false
+    },
+    {
+      "slug": "trapcode",
+      "isFree": false
+    },
+    {
+      "slug": "trello",
+      "isFree": true
+    },
+    {
+      "slug": "tremor",
+      "isFree": true
+    },
+    {
+      "slug": "triple-whale",
+      "isFree": true
+    },
+    {
+      "slug": "tripo",
+      "isFree": true
+    },
+    {
+      "slug": "truecoach",
+      "isFree": false
+    },
+    {
+      "slug": "trustpilot",
+      "isFree": true
+    },
+    {
+      "slug": "tubebody",
+      "isFree": true
+    },
+    {
+      "slug": "tubebuddy",
+      "isFree": false
+    },
+    {
+      "slug": "turbotic",
+      "isFree": false
+    },
+    {
+      "slug": "twinmotion",
+      "isFree": true
+    },
+    {
+      "slug": "twitch",
+      "isFree": true
+    },
+    {
+      "slug": "twitch-studio",
+      "isFree": true
+    },
+    {
+      "slug": "typedream",
+      "isFree": true
+    },
+    {
+      "slug": "typeform",
+      "isFree": true
+    },
+    {
+      "slug": "typefully",
+      "isFree": true
+    },
+    {
+      "slug": "typescript",
+      "isFree": true
+    },
+    {
+      "slug": "typotab",
+      "isFree": true
+    },
+    {
+      "slug": "udio",
+      "isFree": true
+    },
+    {
+      "slug": "ukg-pro",
+      "isFree": false
+    },
+    {
+      "slug": "unbounce",
+      "isFree": true
+    },
+    {
+      "slug": "unfold",
+      "isFree": false
+    },
+    {
+      "slug": "unit4",
+      "isFree": false
+    },
+    {
+      "slug": "unity",
+      "isFree": true
+    },
+    {
+      "slug": "unreal-engine",
+      "isFree": true
+    },
+    {
+      "slug": "uptimerobot",
+      "isFree": true
+    },
+    {
+      "slug": "upwork",
+      "isFree": false
+    },
+    {
+      "slug": "usertesting",
+      "isFree": false
+    },
+    {
+      "slug": "utm-builders",
+      "isFree": false
+    },
+    {
+      "slug": "uv",
+      "isFree": true
+    },
+    {
+      "slug": "v-ray",
+      "isFree": false
+    },
+    {
+      "slug": "v0-vercel",
+      "isFree": true
+    },
+    {
+      "slug": "vanta",
+      "isFree": false
+    },
+    {
+      "slug": "vault",
+      "isFree": true
+    },
+    {
+      "slug": "vcita",
+      "isFree": true
+    },
+    {
+      "slug": "vectorworks",
+      "isFree": false
+    },
+    {
+      "slug": "vercel",
+      "isFree": true
+    },
+    {
+      "slug": "vercel-ai-sdk",
+      "isFree": true
+    },
+    {
+      "slug": "vercel-analytics",
+      "isFree": true
+    },
+    {
+      "slug": "vfx-suite",
+      "isFree": false
+    },
+    {
+      "slug": "vidiq",
+      "isFree": true
+    },
+    {
+      "slug": "vidyard",
+      "isFree": false
+    },
+    {
+      "slug": "vimeo",
+      "isFree": true
+    },
+    {
+      "slug": "visily",
+      "isFree": true
+    },
+    {
+      "slug": "visme",
+      "isFree": true
+    },
+    {
+      "slug": "vitest",
+      "isFree": true
+    },
+    {
+      "slug": "vmake",
+      "isFree": true
+    },
+    {
+      "slug": "voiceover",
+      "isFree": true
+    },
+    {
+      "slug": "voicetypr",
+      "isFree": true
+    },
+    {
+      "slug": "vs-code",
+      "isFree": true
+    },
+    {
+      "slug": "vue-cli",
+      "isFree": true
+    },
+    {
+      "slug": "vue-router",
+      "isFree": true
+    },
+    {
+      "slug": "vwo",
+      "isFree": true
+    },
+    {
+      "slug": "waalaxy",
+      "isFree": true
+    },
+    {
+      "slug": "warp",
+      "isFree": true
+    },
+    {
+      "slug": "wave",
+      "isFree": false
+    },
+    {
+      "slug": "webflow",
+      "isFree": true
+    },
+    {
+      "slug": "webflow-framer",
+      "isFree": false
+    },
+    {
+      "slug": "webhooks",
+      "isFree": false
+    },
+    {
+      "slug": "webpagetest",
+      "isFree": true
+    },
+    {
+      "slug": "webxr",
+      "isFree": true
+    },
+    {
+      "slug": "weezevent",
+      "isFree": false
+    },
+    {
+      "slug": "wetransfer",
+      "isFree": true
+    },
+    {
+      "slug": "whalesync",
+      "isFree": false
+    },
+    {
+      "slug": "whatsapp-business",
+      "isFree": false
+    },
+    {
+      "slug": "whimsical",
+      "isFree": true
+    },
+    {
+      "slug": "whisper",
+      "isFree": true
+    },
+    {
+      "slug": "windsurf",
+      "isFree": true
+    },
+    {
+      "slug": "wistia",
+      "isFree": false
+    },
+    {
+      "slug": "wix",
+      "isFree": false
+    },
+    {
+      "slug": "wized",
+      "isFree": true
+    },
+    {
+      "slug": "wolters-kluwer",
+      "isFree": false
+    },
+    {
+      "slug": "woocommerce",
+      "isFree": false
+    },
+    {
+      "slug": "wordfence",
+      "isFree": true
+    },
+    {
+      "slug": "wordpress",
+      "isFree": true
+    },
+    {
+      "slug": "wordpress-com",
+      "isFree": true
+    },
+    {
+      "slug": "workable",
+      "isFree": false
+    },
+    {
+      "slug": "workday",
+      "isFree": false
+    },
+    {
+      "slug": "workday-financial-management",
+      "isFree": false
+    },
+    {
+      "slug": "workday-hr",
+      "isFree": false
+    },
+    {
+      "slug": "workout-templates",
+      "isFree": false
+    },
+    {
+      "slug": "wp-rocket",
+      "isFree": false
+    },
+    {
+      "slug": "wrike",
+      "isFree": true
+    },
+    {
+      "slug": "wunderlist",
+      "isFree": false
+    },
+    {
+      "slug": "wwise",
+      "isFree": true
+    },
+    {
+      "slug": "x",
+      "isFree": false
+    },
+    {
+      "slug": "x-particles",
+      "isFree": true
+    },
+    {
+      "slug": "xero",
+      "isFree": false
+    },
+    {
+      "slug": "yoast",
+      "isFree": false
+    },
+    {
+      "slug": "youform",
+      "isFree": true
+    },
+    {
+      "slug": "yousign",
+      "isFree": true
+    },
+    {
+      "slug": "youtube-live",
+      "isFree": false
+    },
+    {
+      "slug": "youtube-studio",
+      "isFree": true
+    },
+    {
+      "slug": "zapier",
+      "isFree": true
+    },
+    {
+      "slug": "zapier-make",
+      "isFree": false
+    },
+    {
+      "slug": "zbrush",
+      "isFree": true
+    },
+    {
+      "slug": "zcal",
+      "isFree": true
+    },
+    {
+      "slug": "zed",
+      "isFree": true
+    },
+    {
+      "slug": "zelt",
+      "isFree": false
+    },
+    {
+      "slug": "zendesk",
+      "isFree": false
+    },
+    {
+      "slug": "zeplin",
+      "isFree": true
+    },
+    {
+      "slug": "zoho",
+      "isFree": true
+    },
+    {
+      "slug": "zoom",
+      "isFree": true
+    },
+    {
+      "slug": "zoom-ai-companion",
+      "isFree": false
+    },
+    {
+      "slug": "zoom-pro",
+      "isFree": true
+    },
+    {
+      "slug": "zotero",
+      "isFree": false
+    }
+  ]
+}

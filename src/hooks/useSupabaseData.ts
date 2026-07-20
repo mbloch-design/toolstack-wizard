@@ -405,6 +405,22 @@ export function useToolBySlug(slug: string | undefined) {
 
     (async () => {
       setLoading(true);
+      const useCatalogProjection = import.meta.env.VITE_CATALOG_PROJECTION_FICHE !== "false";
+      if (useCatalogProjection) {
+        try {
+          const { fetchProjectedTool } = await import("@/lib/catalogProjection");
+          const projectedTool = await fetchProjectedTool(slug);
+          if (cancelled) return;
+          if (projectedTool) {
+            setTool(projectedTool);
+            setLoading(false);
+            return;
+          }
+        } catch (error) {
+          console.warn("Fiche: projection catalog_api indisponible, fallback historique", error);
+        }
+      }
+
       let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
       if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
       if (cancelled) return;

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "squarespace",
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "mode": "RESEARCH_no_apply",
+  "identity": {
+    "officialName": "Squarespace",
+    "officialUrl": "https://www.squarespace.com/",
+    "pricingUrl": "https://fr.squarespace.com/tarifs",
+    "docsUrl": "https://support.squarespace.com/",
+    "accessedOn": "2026-07-16",
+    "sourceTier": 1,
+    "accessible": true,
+    "renderedBy": "browser",
+    "note": "Recollecte en contexte FR/fr-FR (navigateur). Montants exposés en mode 'Paiement annuel'. Noms localisés: Basic/Essentiel/Plus/Advanced (FR 'Essentiel' = EN 'Core')."
+  },
+  "pricing": {
+    "captureNote": "Contexte observé: marché FR, locale fr-FR. EUR. Toggle par défaut 'Paiement annuel' → prix = équivalent mensuel d'un abonnement annuel (billing_commitment=annual_prepaid). Taxe non explicitée sur la page → tax_inclusion=unknown. Par site.",
+    "freePlanGenuine": false,
+    "trialDays": 14,
+    "plans_native": [
+      { "plan_key": "basic",    "name_fr": "Basic",     "seat_type": null, "native_amount": 12, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16", "key_limits": "2 contributeurs" },
+      { "plan_key": "core",     "name_fr": "Essentiel", "seat_type": null, "native_amount": 18, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16", "key_limits": "contributeurs illimités" },
+      { "plan_key": "plus",     "name_fr": "Plus",      "seat_type": null, "native_amount": 32, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16" },
+      { "plan_key": "advanced", "name_fr": "Advanced",  "seat_type": null, "native_amount": 69, "native_currency": "EUR", "billing_period": "monthly", "billing_commitment": "annual_prepaid", "pricing_unit": "site", "tax_inclusion": "unknown", "observed_market": "FR", "observed_locale": "fr-FR", "observed_on": "2026-07-16" }
+    ],
+    "normalized_eur": { "normalized_monthly_eur": null, "note": "EUR natif FR; équivalent mensuel en engagement MENSUEL non capturé (toggle annuel)." }
+  },
+  "claims": [
+    {
+      "key": "identity.plan_names",
+      "value_native": { "plan_keys": ["basic","core","plus","advanced"], "names_fr": ["Basic","Essentiel","Plus","Advanced"] },
+      "sourceUrl": "https://fr.squarespace.com/tarifs",
+      "sourceTier": 1, "accessedOn": "2026-07-16", "observed_market": "FR", "observed_locale": "fr-FR",
+      "evidence": "Page tarifs FR: Basic/Essentiel/Plus/Advanced. (Support officiel EN: Basic/Core/Plus/Advanced.)",
+      "confidence": "high", "volatility": "medium",
+      "conflict": "Stocké 'Entry paid plan' générique + kind='seat' (faux, site).",
+      "proposal_not_applied": "plan_key stable + nom localisé; unité site; plan d'entrée = basic."
+    },
+    {
+      "key": "pricing.free_plan_vs_trial",
+      "value_native": { "genuine_free_plan": false, "free_trial": true, "trial_length_days": 14 },
+      "sourceUrl": "https://fr.squarespace.com/tarifs",
+      "sourceTier": 1, "accessedOn": "2026-07-16", "observed_market": "FR", "observed_locale": "fr-FR",
+      "evidence": "'14 jours d'essai gratuit'. Support officiel: aucun plan gratuit.",
+      "confidence": "high", "volatility": "low",
+      "conflict": "Stocké pricing.free suggère un plan gratuit → faux.",
+      "proposal_not_applied": "free_core_available=false, trial_days=14; ne jamais présenter l'essai comme plan gratuit."
+    },
+    {
+      "key": "pricing.entry_paid_plan",
+      "value_native": { "plan_key": "basic", "amount": 12, "currency": "EUR", "period": "monthly", "commitment": "annual_prepaid", "unit": "site", "tax": "unknown" },
+      "sourceUrl": "https://fr.squarespace.com/tarifs",
+      "sourceTier": 1, "accessedOn": "2026-07-16", "observed_market": "FR", "observed_locale": "fr-FR",
+      "evidence": "Basic 12 €/mois (mode paiement annuel).",
+      "confidence": "high", "volatility": "high",
+      "conflict": "Stocké 20€ 'seat' → montant et unité incorrects (12€/site en FR annuel).",
+      "proposal_not_applied": "Marché FR: Basic 12€/mois (annuel) comme comparaison FR; conserver observations d'autres marchés."
+    }
+  ],
+  "unknowns": ["Prix en engagement MENSUEL (toggle annuel par défaut)", "Inclusion TVA (non explicitée)", "Montants sur d'autres marchés"],
+  "conflicts_summary": ["Essai présenté comme gratuit (stocké)", "kind='seat' faux (site)", "20€ stocké → 12€ (FR annuel)"]
+}

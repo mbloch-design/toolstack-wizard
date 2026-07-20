@@ -1,0 +1,155 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-17T13:05:47.900Z",
+      "attestation_id": "sha256:0c218f5c85474256605cf31144fdd5013332c716b510e1e8a195b67bcb4a8b57",
+      "content_hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "€"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "html_lang": null,
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "b321ed0c-c31b-42b7-acc8-94188aade801",
+      "schema": "context_attestation/1",
+      "slug": "wix",
+      "source_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "timezone": "Europe/Paris",
+      "visible_markers": [
+        "TVA",
+        "/mois",
+        "abonnement annuel",
+        "€",
+        "forfait"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "wix",
+      "adapter_version": "0.3.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+        "html_lang_attr": null,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "TVA",
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      "content_hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": "reference_fr",
+      "market_context_source": "content_markers_candidate_review_required",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo"
+    },
+    {
+      "content_hash": "sha256:361999d5c076e32b3dc6bad6b959f10fb4d25e5d104bfbc98fc93182ba258c85",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "static",
+      "slug": "wix",
+      "url": "https://support.wix.com/en/article/number-of-sites-associated-with-a-premium-plan"
+    },
+    {
+      "content_hash": "sha256:cb6095e25c8dc61f92f70d8382948f9795fc9bee5c46f45ebade0fb55ed7444d",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "static",
+      "slug": "wix",
+      "url": "https://support.wix.com/en/article/building-a-website-for-free"
+    }
+  ],
+  "claims_created": 4,
+  "collector_version": "0.3.3",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=6 claims_created=2 claims_unchanged=4 claims_confirmed=0 conflicts_opened=0 versions_created=2 attestations_created=1 approved=0",
+  "errors": [],
+  "finished_at": "2026-07-17T13:05:57.599Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 2,
+    "claims_extracted": 6,
+    "claims_unchanged": 4,
+    "conflicts_opened": 0,
+    "versions_created": 2
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "wix"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 2,
+        "claims_extracted": 6,
+        "claims_unchanged": 4,
+        "conflicts_opened": 0,
+        "versions_created": 2
+      },
+      "networkChecked": true,
+      "observations": 4,
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "versionsCreated": 2
+    }
+  ],
+  "review_status": "open",
+  "run_id": "b321ed0c-c31b-42b7-acc8-94188aade801",
+  "started_at": "2026-07-17T13:05:47.895Z",
+  "valid": true
+}

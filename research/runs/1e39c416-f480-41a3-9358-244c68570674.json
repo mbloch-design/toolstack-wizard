@@ -1,0 +1,63 @@
+{
+  "agent": "research-collector",
+  "checks": [
+    {
+      "content_hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+      "http_status": 200,
+      "mode": "network_forced",
+      "slug": "carrd",
+      "url": "https://carrd.co/pro"
+    },
+    {
+      "content_hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+      "http_status": 200,
+      "mode": "network_forced",
+      "slug": "figma",
+      "url": "https://www.figma.com/pricing/"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.1.0",
+  "conflicts": [],
+  "diff_summary": "0 nouvelle(s) version(s) de contenu ; 0 dossier(s) créé(s) ; 0 valeur approved",
+  "errors": [],
+  "finished_at": "2026-07-17T10:30:56.342Z",
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "slugs": [
+      "carrd",
+      "figma"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "created": false,
+      "hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+      "localeProven": false,
+      "networkChecked": true,
+      "slug": "carrd",
+      "url": "https://carrd.co/pro",
+      "versionAdded": false
+    },
+    {
+      "accessible": true,
+      "created": false,
+      "hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+      "localeProven": false,
+      "networkChecked": true,
+      "slug": "figma",
+      "url": "https://www.figma.com/pricing/",
+      "versionAdded": false
+    }
+  ],
+  "review_status": "open",
+  "run_id": "1e39c416-f480-41a3-9358-244c68570674",
+  "started_at": "2026-07-17T10:30:50.470Z"
+}

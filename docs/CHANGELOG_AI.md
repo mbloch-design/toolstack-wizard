@@ -3463,3 +3463,23 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les espacements avant et après le fil d’Ariane sont harmonisés sur desktop et mobile.
 - La navigation des sous-pages gagne en taille, en espacement et en contraste ; l’onglet actif est matérialisé par un trait dédié plutôt que par un simple soulignement de texte.
 - Sur mobile, les onglets restent sur une ligne et défilent horizontalement sans comprimer leurs libellés.
+
+## 2026-07-20 — Dark launch du catalogue canonique Supabase
+
+- Déploiement additif rév. 4.12 commité sur Supabase après preflight en lecture seule et restauration-test d'un backup PostgreSQL 17.
+- Catalogue porté à 1 126 outils, dont 593 imports legacy complets ; projection publique bilingue à 2 252 lignes.
+- Schémas internes protégés de `anon` et `authenticated`, projection publique accessible via un propriétaire `NOLOGIN` sans `BYPASSRLS` et une vue `security_barrier`.
+- Wix reste en recherche : 4 observations contextualisées, une attestation humaine active et aucun prix approuvé ; le resolver publie `needs_review` avec montant nul.
+- Aucun consommateur Fiche/Ma Stack/Explorer/build n'est basculé pendant le dark launch ; aucune projection diagnostic n'est créée.
+- Les 61 outils dont la catégorie legacy n'existe pas encore dans `public.categories` conservent la valeur brute dans `legacy_payload` et attendent un mapping séparé.
+- Validation : 164/164 tests RESEARCH, parité `legacy_is_free` 589/537, accès effectifs sous `anon`/`authenticated` et bundle SQL verrouillé par hashes.
+- Exposition du seul schéma `catalog_api` dans la Data API, avec `catalog_private` toujours absent ; ajout d'un gate REST en lecture seule contrôlant cardinalités, contrat Wix legacy et isolation privée.
+- Shadow read complet entre `public.tools` et la projection : correction de 182 fallbacks de verdict anglais portant un littéral JSON `null`, puis zéro divergence sur 40 champs et 2 252 lignes.
+- Pagination du fetch Supabase du build SEO : les 1 126 outils sont désormais lus malgré le plafond de 1 000 lignes par requête.
+- Activation couplée Fiche + SSR/SEO sur `catalog_api`, avec fallback automatique et rollback unique via `VITE_CATALOG_PROJECTION_FICHE=false` ; Ma Stack, Explorer et Comparateur restent inchangés.
+- Validation de 97 deltas d'alternatives intentionnels : cibles canoniques et publiées uniquement, sans slug orphelin.
+- Canari pré-commit reproductible : 10 fiches représentatives contrôlées en FR/EN et navigation SPA Figma → Canva, soit 21/21 contrôles verts sans erreur d'hydratation ni ressource locale en échec.
+- Wix devient le premier pilote réellement canonique : quatre observations tarifaires officielles approuvées (16,80 €, 30 €, 40,80 €, 178,80 €), plan gratuit, engagement annuel payé d'avance, TVA et unité par site restitués sur la fiche et sa sous-page Prix.
+- La transaction de bascule Wix est rollback-only par défaut, idempotente et verrouillée ; elle publie les contenus FR/EN seulement après une parité champ par champ, sans basculer les 1 125 autres outils.
+- Canari final étendu à 22/22 avec contrôle SSR et rendu de `/fr/tool/wix/prix`.
+- Les cartes tarifaires canoniques peuvent désormais restituer une correspondance synthétique par plan (public cible et trois différences clés), séparée des observations de prix et reliée à une source officielle. Wix inaugure ce format sur ses cinq offres.

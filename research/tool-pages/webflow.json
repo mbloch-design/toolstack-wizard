@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "slug": "webflow",
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "mode": "RESEARCH_no_apply",
+  "identity": {
+    "officialName": "Webflow",
+    "officialUrl": "https://webflow.com/",
+    "pricingUrl": "https://webflow.com/pricing",
+    "docsUrl": "https://university.webflow.com/",
+    "accessedOn": "2026-07-16",
+    "sourceTier": 1,
+    "accessible": true,
+    "note": "Grille Site plans confirmée sur la page officielle. Fetch statique en échec (header overflow); valeurs établies hors observation directe de marché → marché NON détecté, fallback USD global explicite (pas 'US')."
+  },
+  "pricing": {
+    "captureNote": "Prix par SITE, HORS TAXES. Montants d'abonnement ANNUEL payé intégralement (billed annually). Devise USD = fallback mondial explicite; observed_market NON détecté (null), pas 'US'.",
+    "freePlanGenuine": true,
+    "plans_native": [
+      {
+        "plan_name": "Starter",
+        "native_amount": 0,
+        "native_currency": "USD",
+        "billing_period": "monthly",
+        "billing_commitment": "n/a",
+        "pricing_unit": "site",
+        "tax_inclusion": "ht",
+        "observed_market": null,
+        "observed_locale": null,
+        "observed_on": "2026-07-16",
+        "market_context": "global_usd_fallback"
+      },
+      {
+        "plan_name": "Basic",
+        "native_amount": 15,
+        "native_currency": "USD",
+        "billing_period": "monthly",
+        "billing_commitment": "annual_prepaid",
+        "pricing_unit": "site",
+        "tax_inclusion": "ht",
+        "observed_market": null,
+        "observed_locale": null,
+        "observed_on": "2026-07-16",
+        "market_context": "global_usd_fallback"
+      },
+      {
+        "plan_name": "Premium",
+        "native_amount": 25,
+        "native_currency": "USD",
+        "billing_period": "monthly",
+        "billing_commitment": "annual_prepaid",
+        "pricing_unit": "site",
+        "tax_inclusion": "ht",
+        "observed_market": null,
+        "observed_locale": null,
+        "observed_on": "2026-07-16",
+        "market_context": "global_usd_fallback"
+      }
+    ],
+    "normalized_eur": {
+      "normalized_monthly_eur": null,
+      "fx_rate": null,
+      "fx_rate_date": null,
+      "normalization_method": "NON CALCULÉ — dériver du natif USD; non appliqué"
+    }
+  },
+  "claims": [
+    {
+      "key": "pricing.entry_paid_plan",
+      "value_native": {
+        "plan_name": "Basic",
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly",
+        "commitment": "annual_prepaid",
+        "unit": "site",
+        "tax": "ht"
+      },
+      "sourceUrl": "https://webflow.com/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-07-16",
+      "observed_market": null,
+      "observed_locale": null,
+      "evidence": "Site plans: Starter gratuit, Basic 15$/mois facturé annuellement, Premium 25$/mois facturé annuellement; par site, HT.",
+      "confidence": "high",
+      "volatility": "high",
+      "conflict": "Stocké: JSON compare 12.12 EUR et Supabase default_monthly_price 13.14, tous deux dérivés d'un ancien '14 USD'. Le tarif d'entrée observé est 15 USD/mois (annuel) → montant stocké périmé; pricing.paid 'USD 14/month' obsolète.",
+      "proposal_not_applied": "Plan de comparaison = Basic 15 USD/mois en engagement annuel; enregistrer billing_commitment=annual_prepaid; recalculer normalized_monthly_eur séparément; conserver l'ancienne valeur en conflit.",
+      "market_context": "global_usd_fallback"
+    },
+    {
+      "key": "pricing.premium_plan",
+      "value_native": {
+        "plan_name": "Premium",
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly",
+        "commitment": "annual_prepaid",
+        "unit": "site",
+        "tax": "ht"
+      },
+      "sourceUrl": "https://webflow.com/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-07-16",
+      "observed_market": null,
+      "observed_locale": null,
+      "evidence": "Premium 25$/mois facturé annuellement.",
+      "confidence": "high",
+      "volatility": "high",
+      "conflict": "Aucun équivalent explicite dans le stocké.",
+      "proposal_not_applied": "Ajouter le plan Premium au contexte pricing.",
+      "market_context": "global_usd_fallback"
+    },
+    {
+      "key": "pricing.free_plan_exists",
+      "value_native": {
+        "free": true,
+        "plan_name": "Starter"
+      },
+      "sourceUrl": "https://webflow.com/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-07-16",
+      "evidence": "Plan Starter gratuit (Site plans).",
+      "confidence": "high",
+      "volatility": "medium",
+      "conflict": "Cohérent avec le stocké (free plan présent).",
+      "proposal_not_applied": "Conserver; ne pas présenter comme essai.",
+      "market_context": "global_usd_fallback"
+    }
+  ],
+  "unknowns": [
+    "Équivalent mensuel en engagement MENSUEL (le montant observé est l'annuel).",
+    "Plans CMS/Business (au-delà de Basic/Premium) non détaillés cette passe.",
+    "Grille EUR régionale non observée."
+  ],
+  "conflicts_summary": [
+    "Entrée stockée ~14 USD (12.12/13.14 EUR) périmée vs 15 USD observé",
+    "pricing.paid obsolète"
+  ]
+}

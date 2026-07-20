@@ -128,6 +128,31 @@ export interface PricingV5 {
   // row priced at compare_price_monthly_eur x 1 would contradict the
   // billing-traps section on the same page.
   minSeats?: number;
+  /** Plans tarifaires canoniques issus d'observations approuvées. */
+  plans?: ToolPricingPlan[];
+}
+
+export interface ToolPricingPlan {
+  planKey: string;
+  displayName: string;
+  /** Synthèse éditoriale localisée du positionnement du plan. */
+  summary?: string | null;
+  /** Quelques différences utiles, sans dupliquer les faits de prix. */
+  featureHighlights?: string[];
+  /** Source officielle utilisée pour la correspondance fonctionnelle. */
+  detailsSourceUrl?: string | null;
+  pricingUnit?: string | null;
+  isFree: boolean;
+  isComparePlan: boolean;
+  nativeAmount: number | null;
+  nativeCurrency: string | null;
+  billingPeriod?: "monthly" | "annual" | null;
+  billingCommitment?: "monthly" | "annual_prepaid" | null;
+  taxInclusion?: "ht" | "ttc" | "unknown" | null;
+  observedMarket?: string | null;
+  observedLocale?: string | null;
+  observedOn?: string | null;
+  lastConfirmedOn?: string | null;
 }
 
 export interface ToolCostRow {

@@ -1,0 +1,57 @@
+{
+  "agent": "research-collector",
+  "checks": [
+    {
+      "attempts": 1,
+      "content_hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "http_status": 200,
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo"
+    }
+  ],
+  "claims_created": 4,
+  "collector_version": "0.3.0",
+  "conflicts": [],
+  "diff_summary": "0 version(s) ; 0 dossier(s) créé(s) ; 4 observation(s) observed ; 0 weak_claim(s) ; 0 approved",
+  "errors": [],
+  "finished_at": "2026-07-17T10:57:18.761Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "wix"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "created": false,
+      "hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "localeProven": false,
+      "networkChecked": true,
+      "observations": 4,
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "versionAdded": false,
+      "versionReason": "hash_unchanged",
+      "weak_claims": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "242b0013-00fa-4f90-b5b4-b76b7838717f",
+  "started_at": "2026-07-17T10:57:07.873Z",
+  "valid": true
+}

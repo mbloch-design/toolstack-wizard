@@ -1,0 +1,545 @@
+{
+  "claims": [],
+  "collector": {
+    "extraction_unknowns": [
+      "pricing_unit non exprimée explicitement sur la page",
+      "marché/locale non prouvés (demandé FR/fr-FR) : aucun montant retenu",
+      "billing_commitment",
+      "pricing_unit",
+      "observed_market/observed_locale (non prouvés)"
+    ],
+    "last_checked_at": "2026-07-17T10:43:03.624Z",
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.2.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored).",
+      "Toute donnée ambiguë reste weak_claim/unknown et n'est jamais une observation tarifaire."
+    ],
+    "observations": [],
+    "page_signals": {
+      "billing_commitment": null,
+      "commitment_ambiguous": false,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-17T10:42:41.008Z",
+        "content_hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+        "network_checked": true,
+        "run_id": "bc14e7a5-4845-428e-bff3-7b3f6a31ba79",
+        "version_added": true,
+        "version_reason": "first_capture"
+      },
+      {
+        "at": "2026-07-17T10:43:03.624Z",
+        "content_hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+        "network_checked": true,
+        "run_id": "c98a676e-c27c-4815-8d23-a5904cd2a2a4",
+        "version_added": false,
+        "version_reason": "hash_unchanged"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-17T10:42:41.008Z",
+            "content_hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 7791,
+            "version": 1
+          }
+        ],
+        "domain": "carrd.co",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-17T10:43:03.624Z",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-17T10:43:03.624Z",
+          "reason": null
+        },
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://carrd.co/pro"
+      }
+    ],
+    "version": "0.2.0",
+    "weak_claims": [
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Go Pro! Upgrade your Carrd experience! Go Pro from just $19 / year (yup, per year ) and get access to Pro-exclusive features like:",
+        "evidence_selector": "heading:\"Go Pro!\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 19,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Go Pro!",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Lite $ 9 / year 3 Sites Premium URLs No Branding High Quality Images Large Images and Videos No Element Limit Premi",
+        "evidence_selector": "heading:\"Pro Lite\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 9,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Lite",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Lite 10 $ 14 / year 10 Sites Premium URLs No Branding High Quality Images Large Images and Videos No Element Limit Pre",
+        "evidence_selector": "heading:\"Pro Lite 10\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 14,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Lite 10",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Lite 25 $ 29 / year 25 Sites Premium URLs No Branding High Quality Images Large Images and Videos No Element Limit Pre",
+        "evidence_selector": "heading:\"Pro Lite 25\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 29,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Lite 25",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard $ 19 / year 10 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element Lim",
+        "evidence_selector": "heading:\"Pro Standard\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 19,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard 25 $ 39 / year 25 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element Lim",
+        "evidence_selector": "heading:\"Pro Standard 25\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 39,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard 25",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard 50 $ 69 / year 50 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element Lim",
+        "evidence_selector": "heading:\"Pro Standard 50\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 69,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard 50",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard 100 $ 119 / year 100 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element L",
+        "evidence_selector": "heading:\"Pro Standard 100\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 119,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard 100",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard 250 $ 249 / year 250 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element L",
+        "evidence_selector": "heading:\"Pro Standard 250\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 249,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard 250",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard 500 $ 399 / year 500 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element L",
+        "evidence_selector": "heading:\"Pro Standard 500\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 399,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard 500",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Standard 1000 $ 599 / year 1000 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element",
+        "evidence_selector": "heading:\"Pro Standard 1000\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 599,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Standard 1000",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Plus $ 49 / year 25 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element Lim",
+        "evidence_selector": "heading:\"Pro Plus\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 49,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Plus",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Plus 50 $ 89 / year 50 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element Lim",
+        "evidence_selector": "heading:\"Pro Plus 50\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 89,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Plus 50",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Plus 100 $ 159 / year 100 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element L",
+        "evidence_selector": "heading:\"Pro Plus 100\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 159,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Plus 100",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Plus 250 $ 349 / year 250 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element L",
+        "evidence_selector": "heading:\"Pro Plus 250\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 349,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Plus 250",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Plus 500 $ 599 / year 500 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element L",
+        "evidence_selector": "heading:\"Pro Plus 500\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 599,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Plus 500",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      },
+      {
+        "billing_commitment": null,
+        "billing_period": "annual",
+        "confidence": "low",
+        "evidence_excerpt": "Pro Plus 1000 $ 999 / year 1000 Sites Custom Domain URLs No Branding High Quality Images Large Images and Videos No Element",
+        "evidence_selector": "heading:\"Pro Plus 1000\"",
+        "market_context": null,
+        "market_evidence": {
+          "html_lang_attr": "en"
+        },
+        "missing": [
+          "billing_commitment",
+          "pricing_unit",
+          "observed_market/observed_locale (non prouvés)"
+        ],
+        "native_amount": 999,
+        "native_currency": "USD",
+        "observed_locale": null,
+        "observed_market": null,
+        "plan_name": "Pro Plus 1000",
+        "pricing_unit": null,
+        "reason": "non promu en observation : billing_commitment, pricing_unit, observed_market/observed_locale (non prouvés)",
+        "seat_type": null,
+        "status": "weak_claim",
+        "tax_inclusion": "unknown"
+      }
+    ]
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "accessible": true,
+    "officialName": "carrd",
+    "pricingUrl": "https://carrd.co/pro",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-17",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "carrd",
+  "status": "needs_review",
+  "unknowns": []
+}

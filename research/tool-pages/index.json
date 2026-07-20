@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "note": "File de production RESEARCH — dossier NON importé par le bundle client. Aucune valeur appliquée à tools_v4.json ni à Supabase. Pilote méthode/provenance.",
+  "generatedOn": "2026-07-16",
+  "mode": "RESEARCH",
+  "languages": "FR_EN",
+  "items": [
+    { "slug": "framer",      "status": "needs_review", "priority": "P1", "researchedOn": "2026-07-16", "openConflicts": 2, "assignedTo": "Claude Code", "note": "Plan d'entrée changé: 'Mini 5€' stocké périmé; entrée = Basic 10 USD." },
+    { "slug": "figma",       "status": "needs_review", "priority": "P1", "researchedOn": "2026-07-16", "openConflicts": 2, "assignedTo": "Claude Code", "note": "Full seat 16 USD (page, commitment inconnu); help 12/15$ 2025 = historique superseded_candidate; devise stockée EUR erronée." },
+    { "slug": "webflow",     "status": "needs_review", "priority": "P1", "researchedOn": "2026-07-16", "openConflicts": 1, "assignedTo": "Claude Code", "note": "Accessible: Starter gratuit, Basic 15$/mo annuel, Premium 25$/mo annuel, par site, HT. Stocké ~14 USD périmé." },
+    { "slug": "wix",         "status": "approved", "priority": "P1", "researchedOn": "2026-07-20", "openConflicts": 0, "assignedTo": "ToolTrim — Mike", "note": "Pilote canonique: Free + 4 plans payants FR/fr-FR approuvés (16,80/30/40,80/178,80 EUR par mois, abonnement annuel payé d'avance, TVA comprise, par site) et correspondances de plans FR/EN publiées." },
+    { "slug": "squarespace", "status": "needs_review", "priority": "P1", "researchedOn": "2026-07-16", "openConflicts": 1, "assignedTo": "Claude Code", "note": "Identité + 'pas de plan gratuit' + essai 14j confirmés (support officiel). Montants inconnus (page JS)." }
+  ]
+}

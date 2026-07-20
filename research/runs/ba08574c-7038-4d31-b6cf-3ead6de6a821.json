@@ -1,0 +1,45 @@
+{
+  "agent": "research-collector",
+  "checks": [
+    {
+      "content_hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+      "http_status": 200,
+      "mode": "network_ttl",
+      "slug": "carrd",
+      "url": "https://carrd.co/pro"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.1.0",
+  "conflicts": [],
+  "diff_summary": "1 nouvelle(s) version(s) de contenu ; 1 dossier(s) créé(s) ; 0 valeur approved",
+  "errors": [],
+  "finished_at": "2026-07-17T10:30:39.209Z",
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "slugs": [
+      "carrd"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "created": true,
+      "hash": "sha256:1f5c2d4b14e70fafc1c1ccf44c7a7d43825f75cb7283f158334344e508acc1e9",
+      "localeProven": false,
+      "networkChecked": true,
+      "slug": "carrd",
+      "url": "https://carrd.co/pro",
+      "versionAdded": true
+    }
+  ],
+  "review_status": "open",
+  "run_id": "ba08574c-7038-4d31-b6cf-3ead6de6a821",
+  "started_at": "2026-07-17T10:30:37.014Z"
+}

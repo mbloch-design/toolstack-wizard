@@ -12,6 +12,10 @@ dist
 dist-ssr
 .build-trash
 *.local
+
+# Cache de collecte RESEARCH_ONLY (HTML/texte rendu) — artefact reproductible,
+# jamais une source éditoriale. Cf. docs/tool-catalog-migration/08-cahier-scraper-research-only.md
+.cache/tooltrim/research/
 .env
 .env.preprod
 supabase/.temp/

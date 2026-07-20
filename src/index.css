@@ -7446,7 +7446,15 @@
     background: var(--color-surface);
   }
   .td-pricing-plans--split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .td-pricing-plans--catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--color-border);
+  }
   .td-pricing-plan { display: grid; align-content: start; gap: 12px; padding: 22px; }
+  .td-pricing-plans--catalog .td-pricing-plan,
+  .td-pricing-plans--catalog .td-pricing-plan + .td-pricing-plan { border: 0; background: var(--color-surface); }
+  .td-pricing-plans--catalog .td-pricing-plan--free { grid-column: 1 / -1; background: var(--color-surface-soft); }
   .td-pricing-plan + .td-pricing-plan { border-left: 1px solid var(--color-border); }
   .td-pricing-plan--free { background: var(--color-surface-soft); }
   .td-pricing-plan-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
@@ -7455,6 +7463,12 @@
   .td-pricing-price { font-family: var(--font-brand); font-size: 17px; font-weight: 600; color: var(--color-text); white-space: nowrap; }
   .td-pricing-price small { font-family: var(--font-ui); font-size: 12px; font-weight: 400; color: var(--color-muted); }
   .td-pricing-copy { font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--color-muted); }
+  .td-pricing-plan-summary { margin: 0; font-family: var(--font-ui); font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--color-text); }
+  .td-pricing-plan-highlights { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
+  .td-pricing-plan-highlights li { position: relative; padding-left: 13px; font-family: var(--font-ui); font-size: 12px; line-height: 1.4; color: var(--color-muted); }
+  .td-pricing-plan-highlights li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 4px; height: 4px; border-radius: 999px; background: var(--color-muted-light); }
+  .td-pricing-plan-meta { margin: 0; font-family: var(--font-ui); font-size: 12px; line-height: 1.45; color: var(--color-muted); }
+  .td-pricing-plan-source { width: fit-content; font-family: var(--font-ui); font-size: 11px; color: var(--color-muted); text-underline-offset: 3px; }
   .td-pricing-evidence {
     display: flex;
     flex-wrap: wrap;
@@ -7468,6 +7482,7 @@
   .td-pricing-evidence a { color: var(--color-muted); text-underline-offset: 3px; }
   @media (max-width: 640px) {
     .td-pricing-plans--split { grid-template-columns: 1fr; }
+    .td-pricing-plans--catalog { grid-template-columns: 1fr; }
     .td-pricing-plan + .td-pricing-plan { border-left: 0; border-top: 1px solid var(--color-border); }
   }
 

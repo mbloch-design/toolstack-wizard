@@ -1,0 +1,199 @@
+{
+  "claims": [
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Engagement (Monthly/Annual) non établi → billing_commitment=unknown. Voir claim historique 2025 (12/15$).",
+      "evidence": "Page pricing: Professional Full seat 16$/mo (Dev 12$, Collab 3$).",
+      "key": "pricing.professional_full_seat",
+      "observed_on": "2026-07-16",
+      "proposal_not_applied": "Enregistrer 16 USD comme observation actuelle avec commitment=unknown; établir l'état du toggle avant de figer l'engagement.",
+      "sourceTier": 1,
+      "sourceUrl": "https://www.figma.com/pricing/",
+      "value_native": {
+        "amount": 16,
+        "commitment": "unknown",
+        "currency": "USD",
+        "period": "monthly",
+        "plan_name": "Professional",
+        "seat_type": "full"
+      },
+      "volatility": "high"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "high",
+      "conflict": "Stocké: compare_price_monthly_eur=16 étiqueté EUR alors que la source affiche 16$ USD.",
+      "evidence": "Prix affichés en $ (USD).",
+      "key": "pricing.currency_native",
+      "proposal_not_applied": "native_amount=16, native_currency=USD; normalized_monthly_eur à calculer séparément (≠ 16 tel quel).",
+      "sourceTier": 1,
+      "sourceUrl": "https://www.figma.com/pricing/",
+      "value_native": {
+        "currency": "USD"
+      },
+      "volatility": "low"
+    },
+    {
+      "accessedOn": "2026-07-16",
+      "confidence": "medium",
+      "conflict": "Observation HISTORIQUE, potentiellement remplacée par 16$ (page pricing). NE PAS supprimer; conserver comme superseded_candidate.",
+      "effective_date": "2025-03-11",
+      "evidence": "Article d'aide: Full seat 12$/mois annuel, 15$/mois mensuel (effet 2025-03-11).",
+      "key": "pricing.professional_full_seat.historical_2025",
+      "observed_on": "2026-07-16",
+      "proposal_not_applied": "Conserver en historique; ne trancher qu'après établissement de l'état du toggle sur la page pricing.",
+      "sourceTier": 1,
+      "sourceUrl": "https://help.figma.com/hc/en-us/articles/27468498501527-Updates-to-Figma-s-pricing-seats-and-billing-experience",
+      "status": "superseded_candidate",
+      "value_native": {
+        "amount_annual": 12,
+        "amount_monthly": 15,
+        "currency": "USD",
+        "plan_name": "Professional",
+        "seat_type": "full"
+      },
+      "volatility": "high"
+    }
+  ],
+  "collector": {
+    "last_checked_at": "2026-07-17T10:30:52.909Z",
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY : aucune valeur `approved` ne peut être produite ici.",
+      "Marché/locale NON prouvés par la réponse : aucun montant retenu (market_context=null).",
+      "Engagement (mensuel vs annuel prépayé) non établi par un fetch statique : aucun montant natif enregistré."
+    ],
+    "observations": [],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-17T10:29:27.751Z",
+        "content_hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+        "network_checked": true,
+        "run_id": "baea391f-435b-4e12-a330-b2e417379a80",
+        "version_added": true
+      },
+      {
+        "at": "2026-07-17T10:30:52.909Z",
+        "content_hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+        "network_checked": true,
+        "run_id": "1e39c416-f480-41a3-9358-244c68570674",
+        "version_added": false
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-17T10:29:27.751Z",
+            "content_hash": "sha256:bdbf5f9ba691a79e909e2e7df6a54cd83ca5b6e2902c685b78f85ca1c234bef0",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 26237,
+            "version": 1
+          }
+        ],
+        "domain": "www.figma.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-17T10:30:52.909Z",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-17T10:30:52.909Z",
+          "reason": "aucune règle applicable"
+        },
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.figma.com/pricing/"
+      }
+    ],
+    "version": "0.1.0"
+  },
+  "conflicts_summary": [
+    "Page pricing 16$ (commitment inconnu) vs help 12/15$ (2025-03, historique)",
+    "Devise stockée EUR vs source USD"
+  ],
+  "identity": {
+    "accessedOn": "2026-07-16",
+    "accessible": true,
+    "docsUrl": "https://help.figma.com/",
+    "officialName": "Figma",
+    "officialUrl": "https://www.figma.com/",
+    "pricingUrl": "https://www.figma.com/pricing/",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_no_apply",
+  "pricing": {
+    "captureNote": "Modèle par siège (Full/Dev/Collab) x plan. Devise $ (USD). L'état du toggle Monthly/Annual sur la page pricing n'a pas été établi cette passe.",
+    "freePlanGenuine": true,
+    "normalized_eur": {
+      "fx_rate": null,
+      "fx_rate_date": null,
+      "normalization_method": "NON CALCULÉ — dériver du natif USD; non appliqué",
+      "normalized_monthly_eur": null
+    },
+    "plans_native": [
+      {
+        "billing_commitment": "n/a",
+        "billing_period": "n/a",
+        "native_amount": 0,
+        "native_currency": "USD",
+        "observed_on": "2026-07-16",
+        "plan_name": "Starter",
+        "pricing_unit": "seat",
+        "seat_type": "n/a"
+      },
+      {
+        "billing_commitment": "unknown",
+        "billing_period": "monthly",
+        "native_amount": 16,
+        "native_currency": "USD",
+        "note": "16$/mo affiché; état Monthly/Annual du toggle non établi.",
+        "observed_on": "2026-07-16",
+        "plan_name": "Professional",
+        "pricing_unit": "seat",
+        "seat_type": "full"
+      },
+      {
+        "billing_commitment": "unknown",
+        "billing_period": "monthly",
+        "native_amount": 12,
+        "native_currency": "USD",
+        "observed_on": "2026-07-16",
+        "plan_name": "Professional",
+        "pricing_unit": "seat",
+        "seat_type": "dev"
+      },
+      {
+        "billing_commitment": "unknown",
+        "billing_period": "monthly",
+        "native_amount": 3,
+        "native_currency": "USD",
+        "observed_on": "2026-07-16",
+        "plan_name": "Professional",
+        "pricing_unit": "seat",
+        "seat_type": "collab"
+      }
+    ]
+  },
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "schemaVersion": 1,
+  "slug": "figma",
+  "status": "needs_review",
+  "unknowns": [
+    "État Monthly/Annual du toggle de la page pricing (donc engagement du 16$).",
+    "Grille EUR régionale Figma (facturation en devises locales UE) non observée."
+  ]
+}

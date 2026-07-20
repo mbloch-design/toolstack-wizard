@@ -1,0 +1,130 @@
+{
+  "note": "Registre des URL officielles de collecte. ENTRÉE humaine — le collecteur le LIT, ne l'écrit jamais. Règle absolue : aucune URL devinée. Un slug absent d'ici est ignoré avec l'erreur `no_official_url_in_registry`. Une URL n'entre ici qu'après vérification (statut HTTP constaté + date).",
+  "rules": [
+    "Chaque entrée doit porter verified_on et verified_http_status.",
+    "L'URL doit être la page tarifaire officielle (pas la homepage, pas un comparateur).",
+    "Si l'URL change ou casse, corriger ici — jamais dans le code du collecteur.",
+    "renderer_hint est indicatif : `auto` laisse le collecteur décider (statique puis navigateur si la grille n'est pas exposée).",
+    "v0.3 — `market_context_declared: 'global_usd_fallback'` est la SEULE façon d'autoriser un contexte marché avec marché/locale nuls. Il exige `market_context_justification` (décision humaine, traçable). Sans cette déclaration, un marché non prouvé reste `null`.",
+    "v0.3 — `adapter` désigne un extracteur dédié (hors moteur générique) quand la page ne se prête pas à l'association par titre.",
+    "v0.3.1 — `additional_sources` : sources officielles DISTINCTES établissant un fait précis (`purpose`). Chacune donne lieu à une capture distincte reliée au claim. `proof_pattern` est la phrase/motif que la source DOIT contenir : si elle ne matche pas, le fait n'est pas établi et rien n'est inféré.",
+    "v0.3.3 — `plan_key_mapping` : mapping CANONIQUE déclaré (nom fournisseur localisé -> clé de jointure ToolTrim). Le collecteur ne slugifie JAMAIS un nom pour en faire une clé canonique ; la slugification n'existe que comme `observed_plan_key`. Un plan non mappé => plan_key null => bloqué au gate."
+  ],
+  "schemaVersion": 1,
+  "sources": {
+    "carrd": {
+      "is_official": true,
+      "market_context_declared": null,
+      "market_context_justification": "html lang=en ; aucun signal FR. Pas de fallback déclaré à ce stade.",
+      "notes": "https://carrd.co/pricing renvoie 404 (constaté 2026-07-17). La grille officielle est /pro. robots.txt n'interdit que /ref.",
+      "pricing_url": "https://carrd.co/pro",
+      "renderer_hint": "static",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "verified_http_status": 200,
+      "verified_on": "2026-07-17"
+    },
+    "figma": {
+      "is_official": true,
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Grille servie en USD, html lang=en malgré Accept-Language fr-FR (constaté 2026-07-17). Aucun signal de locale FR. Décision humaine : traiter comme grille mondiale USD, marché/locale nuls.",
+      "notes": "Répond html lang=en malgré Accept-Language fr-FR : marché/locale FR non prouvés en statique.",
+      "pricing_url": "https://www.figma.com/pricing/",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "verified_http_status": 200,
+      "verified_on": "2026-07-17"
+    },
+    "framer": {
+      "is_official": true,
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Grille affichée en $ sur la page par défaut, aucun signal de locale. Décision humaine : fallback mondial USD.",
+      "notes": "Grille Free/Basic/Pro/Enterprise en USD.",
+      "pricing_url": "https://www.framer.com/pricing/",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "verified_http_status": 200,
+      "verified_on": "2026-07-16"
+    },
+    "squarespace": {
+      "adapter": null,
+      "is_official": true,
+      "notes": "Hôte fr.* => locale fr-FR prouvée par l'hôte. Montants rendus en JS (toggle Paiement annuel/mensuel).",
+      "pricing_url": "https://fr.squarespace.com/tarifs",
+      "renderer_hint": "browser",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "verified_http_status": 200,
+      "verified_on": "2026-07-16"
+    },
+    "webflow": {
+      "is_official": true,
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Site plans affichés en USD, marché non détecté (fetch statique en échec). Décision humaine : fallback mondial USD, observed_market/locale nuls.",
+      "notes": "Le fetch statique échoue sur `Parse Error: Header overflow` (limite de l'outil, pas un blocage). Navigateur requis. Statut HTTP non constaté en statique.",
+      "pricing_url": "https://webflow.com/pricing",
+      "renderer_hint": "browser",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "verified_http_status": null,
+      "verified_on": "2026-07-16"
+    },
+    "wix": {
+      "adapter": "wix",
+      "additional_sources": [
+        {
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "site"
+          },
+          "is_official": true,
+          "notes": "Support officiel Wix (niveau 1). Phrase établissant l'unité : « A site plan cannot be used for multiple sites. Each site you want to upgrade must have its own Premium or Studio site plan. » => facturation PAR SITE. La page tarifaire seule ne l'établissait pas.",
+          "proof_pattern": "cannot be used for multiple sites|must have its own (Premium|Studio) site plan",
+          "purpose": "pricing_unit",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://support.wix.com/en/article/number-of-sites-associated-with-a-premium-plan",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-17"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
+          "is_official": true,
+          "notes": "Support officiel Wix (niveau 1). Phrase établissant la DURABILITÉ du plan gratuit : « There is no obligation to upgrade unless you want to make use of our premium features. » => plan gratuit durable, pas un essai. Aucun montant/devise n'étant affiché, AUCUNE observation 0 EUR n'est créée : le fait est porté par ce claim.",
+          "proof_pattern": "no obligation to upgrade|free to (use|build)|only need to pay to upgrade",
+          "purpose": "free_plan",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://support.wix.com/en/article/building-a-website-for-free",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-17"
+        }
+      ],
+      "is_official": true,
+      "market_context_declared": null,
+      "market_context_justification": "La page n'expose NI <html lang> NI Content-Language (constaté 2026-07-17) : la locale FR n'est pas prouvable par le transport. Aucun fallback déclaré => market_context reste null ; le collecteur ne peut produire qu'un market_context_candidate soumis à revue. v0.3.1 : l'unité tarifaire est établie par une source officielle DISTINCTE (support.wix.com), pas par la page tarifaire.",
+      "notes": "Grille Premium rendue en JS et régionalisée. Navigateur requis. /plans redirige vers l'accueil.",
+      "plan_key_mapping": {
+        "Business": "business",
+        "Business Plus": "business_elite",
+        "Essentiel": "core",
+        "Gratuit": "free",
+        "Light": "light"
+      },
+      "plan_key_mapping_note": "Mapping validé (dossier de recherche wix.json). Les noms sont ceux servis en FR ; l'équivalent EN est Light/Core/Business/Business Elite.",
+      "pricing_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "renderer_hint": "browser",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "verified_http_status": 200,
+      "verified_on": "2026-07-16"
+    }
+  }
+}

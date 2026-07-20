@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "slug": "framer",
+  "researchedOn": "2026-07-16",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "mode": "RESEARCH_no_apply",
+  "identity": {
+    "officialName": "Framer",
+    "officialUrl": "https://www.framer.com/",
+    "pricingUrl": "https://www.framer.com/pricing/",
+    "docsUrl": "https://www.framer.com/help/",
+    "accessedOn": "2026-07-16",
+    "sourceTier": 1,
+    "accessible": true
+  },
+  "pricing": {
+    "captureNote": "Devise affichée: symbole $ (USD présumé, marché US). Plans mensuels observés; l'équivalent annuel n'a pas été capturé précisément cette passe.",
+    "freePlanGenuine": true,
+    "plans_native": [
+      { "plan_name": "Free",  "native_amount": 0,  "native_currency": "USD", "billing_period": "monthly", "billing_commitment": "n/a", "pricing_unit": "site", "key_limits": "30 pages, 10 collections CMS, 1000 items, 50 GB, jusqu'à 3 éditeurs, domaine .com offert à l'année" },
+      { "plan_name": "Basic", "native_amount": 10, "native_currency": "USD", "billing_period": "monthly", "billing_commitment": "unknown", "pricing_unit": "site", "key_limits": "150 pages, 2 collections CMS, 1000 items, 50 GB, domaine custom; éditeurs additionnels +20$/mois" },
+      { "plan_name": "Pro",   "native_amount": 30, "native_currency": "USD", "billing_period": "monthly", "billing_commitment": "unknown", "pricing_unit": "site", "key_limits": "150 pages (extensible), 10 collections, 2500 items, 100 GB, éditeurs illimités" },
+      { "plan_name": "Enterprise", "native_amount": null, "native_currency": "USD", "billing_period": "n/a", "billing_commitment": "n/a", "pricing_unit": "site", "key_limits": "Sur devis" }
+    ],
+    "normalized_eur": { "normalized_monthly_eur": null, "fx_rate": null, "fx_rate_date": null, "normalization_method": "NON CALCULÉ — à dériver du montant natif USD via FX daté; non appliqué" }
+  },
+  "claims": [
+    {
+      "key": "pricing.entry_paid_plan",
+      "value_native": { "plan_name": "Basic", "amount": 10, "currency": "USD", "period": "monthly" },
+      "sourceUrl": "https://www.framer.com/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-07-16",
+      "evidence": "Grille officielle: Free / Basic 10$ / Pro 30$ / Enterprise. Pas de plan 'Mini'.",
+      "confidence": "high",
+      "volatility": "high",
+      "conflict": "Stocké (JSON+Supabase): pricing_v5.compare_plan_name='Mini', compare_price_monthly_eur=5. Le plan 'Mini' n'existe plus dans la grille observée → valeur périmée.",
+      "proposal_not_applied": "Remplacer plan de comparaison par 'Basic' natif 10 USD/mois; recalculer normalized_monthly_eur séparément; conserver l'ancienne valeur en conflit jusqu'à validation."
+    },
+    {
+      "key": "pricing.free_plan_exists",
+      "value_native": { "free": true, "plan_name": "Free", "limits": "30 pages, 10 collections, 3 éditeurs" },
+      "sourceUrl": "https://www.framer.com/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-07-16",
+      "evidence": "Plan Free à 0$ listé, durable (non essai).",
+      "confidence": "high",
+      "volatility": "medium",
+      "conflict": "Stocké décrit un free plan à '1 page / framer.site uniquement' — limites périmées vs 30 pages observées.",
+      "proposal_not_applied": "Mettre à jour la description du plan gratuit; ne pas présenter comme essai."
+    },
+    {
+      "key": "pricing.currency_native",
+      "value_native": { "currency": "USD" },
+      "sourceUrl": "https://www.framer.com/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-07-16",
+      "evidence": "Montants affichés avec symbole $ (marché US).",
+      "confidence": "medium",
+      "volatility": "low",
+      "conflict": "Stocké mélange EUR (compare 5€) et $ dans pricing.paid. Devise native à figer = USD (sous réserve de la version régionale EUR de Framer).",
+      "proposal_not_applied": "Enregistrer native_currency=USD; vérifier s'il existe une grille EUR régionale avant de publier une devise."
+    }
+  ],
+  "unknowns": [
+    "Équivalent mensuel en engagement annuel (réduction annuelle) non capturé.",
+    "Existence/valeurs d'une grille EUR régionale Framer non vérifiée."
+  ],
+  "conflicts_summary": ["Plan 'Mini 5€' stocké = périmé", "Devise EUR/USD incohérente dans le stocké"]
+}

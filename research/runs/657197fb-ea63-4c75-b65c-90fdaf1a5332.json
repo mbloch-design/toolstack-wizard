@@ -1,0 +1,131 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-17T12:54:07.676Z",
+      "attestation_id": "sha256:c7f02330059963627344e18a12636aa2471f8139e33acf2c0cea2c3d2859841d",
+      "content_hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "€"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "html_lang": null,
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "657197fb-ea63-4c75-b65c-90fdaf1a5332",
+      "schema": "context_attestation/1",
+      "slug": "wix",
+      "source_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "timezone": "Europe/Paris",
+      "visible_markers": [
+        "TVA",
+        "/mois",
+        "abonnement annuel",
+        "€",
+        "forfait"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "wix",
+      "adapter_version": "0.3.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.wix.com/premium-purchase-plan/dynamo",
+        "html_lang_attr": null,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "TVA",
+          "/mois",
+          "abonnement annuel",
+          "€",
+          "forfait"
+        ]
+      },
+      "content_hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": "reference_fr",
+      "market_context_source": "content_markers_candidate_review_required",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo"
+    },
+    {
+      "content_hash": "sha256:361999d5c076e32b3dc6bad6b959f10fb4d25e5d104bfbc98fc93182ba258c85",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "static",
+      "slug": "wix",
+      "url": "https://support.wix.com/en/article/number-of-sites-associated-with-a-premium-plan"
+    }
+  ],
+  "claims_created": 4,
+  "collector_version": "0.3.2",
+  "conflicts": [],
+  "diff_summary": "0 version(s) ; 0 dossier(s) créé(s) ; 4 observation(s) observed ; 0 weak_claim(s) ; 0 approved",
+  "errors": [],
+  "finished_at": "2026-07-17T12:54:16.101Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "wix"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "created": false,
+      "hash": "sha256:8278b53421e7b9c70fc957a99951accf4a897866215bbe1aac73b961dbd05a16",
+      "localeProven": false,
+      "networkChecked": true,
+      "observations": 4,
+      "rendered_by": "browser",
+      "slug": "wix",
+      "url": "https://www.wix.com/premium-purchase-plan/dynamo",
+      "versionAdded": false,
+      "versionReason": "hash_unchanged",
+      "weak_claims": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "657197fb-ea63-4c75-b65c-90fdaf1a5332",
+  "started_at": "2026-07-17T12:54:07.674Z",
+  "valid": true
+}

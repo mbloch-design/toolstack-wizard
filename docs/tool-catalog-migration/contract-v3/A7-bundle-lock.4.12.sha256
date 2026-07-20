@@ -1,0 +1,12 @@
+1a336a24c6ee3d0e5e7ab0960ab16cefe0638d26298e2801c6eb7b2cd30d1b01  A1-contrat-canonique.sql
+729a0399b547b0cedf3cf07c7568276697c6e7a001edb935fdd8f54f3fafe255  A2-import-593-legacy.sql
+05c0fef1a52af51e0712664eda3e798d1b23611b5462985b0b7e0997e1d5ea75  A4-regle-selection-prix.sql
+c705d9b58c2c3da162679f85a562eb97726ebc7aebea5d3471adfbc53962d253  A5-projection-publique.sql
+eaf1e902aba4f76463794a0030c84a5bb1953c4df41b520d967d1fe211eaff7b  A7-expected-snapshot.4.12.sql
+4c485ee58353f4194b3da6befbd837604407bf5ebd53b799edbd3df351feb076  A7-baseline-existing.4.12.sql
+de490618f314798f33888fa7e28d73bbb30d18da10673be84bb11fe4f222a1ec  A7-schema-preflight.4.12.sql
+21c77d691be3b0f272e1a30e4b9bba2b62489b3ba57a420468576d849fd64c1a  A7-parity-gate.4.12.sql
+902e50cb37bd889759317e349f3f8bdffc5b143885fdb5b22cfc11ba6e4d64e4  A7-online-preflight-readonly.4.12.sql
+31fb300f2434e0eb44d680ec628cef71eb973c8bb41783cb1fcf5baced3b2335  wix-staging-import.embed.4.11.sql
+1bad9e0f3d986ee962d1b2b5fb9d6e5e81fddc2d1ca32bc5181f1e2b72ab8309  A7-migration-dark-launch.4.12.sql
+f19745dc79c8c4e5c5fc19ad3e1441d0aa8b6e9330061dc6154eea581b4998cd  A7-rollback-dark-launch.4.12.sql
