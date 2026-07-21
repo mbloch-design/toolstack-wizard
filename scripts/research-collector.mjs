@@ -33,6 +33,7 @@ import { extractFramer } from "./research-adapters/framer.mjs";
 import { extractSquarespace } from "./research-adapters/squarespace.mjs";
 import { extractN8n } from "./research-adapters/n8n.mjs";
 import { extractContra } from "./research-adapters/contra.mjs";
+import { extractCalendly } from "./research-adapters/calendly.mjs";
 import { extractGeneric } from "./research-adapters/generic.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
@@ -51,6 +52,7 @@ const ADAPTERS = {
   squarespace: extractSquarespace,
   n8n: extractN8n,
   contra: extractContra,
+  calendly: extractCalendly,
   generic: extractGeneric,
 };
 

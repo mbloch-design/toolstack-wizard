@@ -48,6 +48,14 @@ export const STAGING_PROFILES = Object.freeze({
     locale: "fr-FR",
     editorialSource: "research",
   }),
+  calendly: Object.freeze({
+    // SaaS par utilisateur (siège). Free + Standard + Teams ; Enterprise sur devis (hors planOrder).
+    planOrder: Object.freeze(["free", "standard", "teams"]),
+    comparePlanKey: "standard",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
   "angular-material": Object.freeze({
     // Bibliothèque open-source MIT : un seul "plan" gratuit, aucun prix. free=compare.
     // openSource: licence libre VÉRIFIÉE (claim MIT) -> unité pricing_unit="open_source"

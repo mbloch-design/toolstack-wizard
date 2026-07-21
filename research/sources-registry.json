@@ -343,6 +343,66 @@
         }
       ]
     },
+    "calendly": {
+      "adapter": "calendly",
+      "pricing_url": "https://calendly.com/pricing",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-21",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Grille servie en USD (symbole $ ; Standard $10/seat/mo, Teams $16/seat/mo, Enterprise « Starts at $15k /yr ») même sous Accept-Language fr-FR ; aucune grille EUR n'est servie depuis un egress FR et la page n'expose pas de locale FR (constaté 2026-07-21). Calendly est une plateforme mondiale de prise de rendez-vous. Décision humaine : traiter comme grille mondiale USD, observed_market/locale nuls.",
+      "plan_key_mapping": {
+        "Free Plan": "free",
+        "Standard Plan": "standard",
+        "Teams Plan": "teams",
+        "Enterprise Plan": "enterprise"
+      },
+      "plan_key_mapping_note": "Trois offres tarifées publiquement (Free, Standard, Teams) + Enterprise sur devis (« Starts at $15k /yr », contact sales) qui reste éditorial, hors planOrder. Free = plan gratuit durable (« Always free ») porté par le claim pricing.free_plan_exists, sans observation 0 USD.",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "La grille officielle expose une offre « Free » durable (« Always free », « For personal use »), distincte d'un essai. Le fait est porté par ce claim ; aucune observation 0 USD n'est fabriquée.",
+          "proof_pattern": "Always free|Free[\\s\\S]{0,40}personal use",
+          "purpose": "free_plan",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://calendly.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-21"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "seat" },
+          "is_official": true,
+          "notes": "Grille officielle : les offres payantes Standard et Teams sont tarifées « /seat/mo » (par siège). Unité = siège, jamais par instance ni par exécution.",
+          "proof_pattern": "/\\s*seat\\s*/\\s*mo|per seat",
+          "purpose": "pricing_unit",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://calendly.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-21"
+        },
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "is_official": true,
+          "notes": "Grille officielle : le tarif par défaut est affiché « Billed yearly » (mention « Save 16% »/« Save 20% ») : engagement annuel prépayé. billing_period mensuel (prix affiché « /mo »), engagement annuel prépayé.",
+          "proof_pattern": "Billed yearly|Save 1[0-9]%",
+          "purpose": "billing_commitment",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://calendly.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-21"
+        }
+      ]
+    },
     "angular-material": {
       "adapter": null,
       "pricing_url": "https://material.angular.dev",

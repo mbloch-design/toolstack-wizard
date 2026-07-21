@@ -1,0 +1,624 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "standard",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "teams",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "USD € EUR £ GBP Billed yearly Billed monthly Billed yearly Free For personal use Always free Get started Free features: Scheduling 1 event type Connect 1 calendar Customize availability Add video conferencing Customize",
+        "evidence_captures": [
+          "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-21",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-21",
+        "proof_pattern": "Always free|Free[\\s\\S]{0,40}personal use",
+        "sourceTier": 1,
+        "source_id": "src:71fe4a44c927a3e49c5f57f0f0e659bd1405c2edd2c2ef430e2ad679f008526c",
+        "source_url": "https://calendly.com/pricing",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+        "claim_id": "clm:085f681ee597a5631aeb563b20e31c9d5ee6de4ba3b395418889dd0a755e1407",
+        "confidence": "high",
+        "evidence": "sions Standard Yearly For professionals and small teams $10 /seat/mo Save 16% $ USD $ USD € EUR £ GBP Try for free Free features, plus: Scheduling Unlimited event types Connect multiple calendars Connect Hubspot, Mailchi",
+        "evidence_captures": [
+          "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-21",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-21",
+        "proof_pattern": "/\\s*seat\\s*/\\s*mo|per seat",
+        "sourceTier": 1,
+        "source_id": "src:71fe4a44c927a3e49c5f57f0f0e659bd1405c2edd2c2ef430e2ad679f008526c",
+        "source_url": "https://calendly.com/pricing",
+        "status": "observed",
+        "value_native": "seat",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "Pick the perfect plan for your team $ USD $ USD € EUR £ GBP Billed yearly Billed monthly Billed yearly Free For personal use Always free Get started Free features: Scheduling 1 event type Connect 1 calendar Customize ava",
+        "evidence_captures": [
+          "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-21",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-21",
+        "proof_pattern": "Billed yearly|Save 1[0-9]%",
+        "sourceTier": 1,
+        "source_id": "src:71fe4a44c927a3e49c5f57f0f0e659bd1405c2edd2c2ef430e2ad679f008526c",
+        "source_url": "https://calendly.com/pricing",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-21T15:16:02.250Z",
+        "attestation_id": "sha256:d5815dd9ac9630bf771dd3cd94942087fdc9747526ab0c033e6e8511753d90c0",
+        "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://calendly.com/pricing",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "2e126f2a-ef73-40fa-8752-2fb8429fc073",
+        "schema": "context_attestation/1",
+        "slug": "calendly",
+        "source_url": "https://calendly.com/pricing",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Free: porté par le claim pricing.free_plan_exists, jamais par une observation 0 USD",
+      "Enterprise: plancher « Starting at $15,000/year » sur devis (contact sales) — non observable (éditorial)",
+      "tax_inclusion inconnu: la grille n'établit ni HT ni TTC"
+    ],
+    "last_checked_at": "2026-07-21T15:16:02.250Z",
+    "last_context_evidence": {
+      "adapter": "calendly",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-21T15:16:02.250Z",
+      "browser_context": null,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "static",
+      "run_id": "2e126f2a-ef73-40fa-8752-2fb8429fc073"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:4bc82f85a687d6c66790e6962805f8251fb0f6ad0b4af5c806f6d40635ac216f",
+          "excerpt": "Pick the perfect plan for your team $ USD $ USD € EUR £ GBP Billed yearly Billed monthly Billed yearly Free For personal use Always free Get started Free features: Scheduling 1 event type Connect 1 calendar Customize ava",
+          "source_url": "https://calendly.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "calendly|standard|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d",
+        "confidence": "medium",
+        "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d",
+            "observed_on": "2026-07-21",
+            "run_id": "2e126f2a-ef73-40fa-8752-2fb8429fc073"
+          }
+        ],
+        "evidence_excerpt": "JSON-LD Offer: Standard Plan 10 USD (seat/month, P1Y)",
+        "evidence_selector": "jsonld:Offer",
+        "feature_highlights": [],
+        "first_observed_on": "2026-07-21",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-21",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Grille servie en USD (symbole $ ; Standard $10/seat/mo, Teams $16/seat/mo, Enterprise « Starts at $15k /yr ») même sous Accept-Language fr-FR ; aucune grille EUR n'est servie depuis un egress FR et la page n'expose pas de locale FR (constaté 2026-07-21). Calendly est une plateforme mondiale de prise de rendez-vous. Décision humaine : traiter comme grille mondiale USD, observed_market/locale nuls."
+        },
+        "native_amount": 10,
+        "native_currency": "USD",
+        "observation_id": "obs:a06a7f56133ef21551b0aa3fead3a42e0b287d3f7a08a6da9a34863f0d1251fa",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-21",
+        "observed_plan_key": "standard_plan",
+        "plan_key": "standard",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Standard Plan",
+        "plan_summary": null,
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:4bc82f85a687d6c66790e6962805f8251fb0f6ad0b4af5c806f6d40635ac216f",
+          "excerpt": "sions Standard Yearly For professionals and small teams $10 /seat/mo Save 16% $ USD $ USD € EUR £ GBP Try for free Free features, plus: Scheduling Unlimited event types Connect multiple calendars Connect Hubspot, Mailchi",
+          "source_url": "https://calendly.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://calendly.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "calendly",
+        "value_fingerprint": "10|USD|monthly|seat|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:4bc82f85a687d6c66790e6962805f8251fb0f6ad0b4af5c806f6d40635ac216f",
+          "excerpt": "Pick the perfect plan for your team $ USD $ USD € EUR £ GBP Billed yearly Billed monthly Billed yearly Free For personal use Always free Get started Free features: Scheduling 1 event type Connect 1 calendar Customize ava",
+          "source_url": "https://calendly.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "calendly|teams|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d",
+        "confidence": "medium",
+        "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d",
+            "observed_on": "2026-07-21",
+            "run_id": "2e126f2a-ef73-40fa-8752-2fb8429fc073"
+          }
+        ],
+        "evidence_excerpt": "JSON-LD Offer: Teams Plan 16 USD (seat/month, P1Y)",
+        "evidence_selector": "jsonld:Offer",
+        "feature_highlights": [],
+        "first_observed_on": "2026-07-21",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-21",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Grille servie en USD (symbole $ ; Standard $10/seat/mo, Teams $16/seat/mo, Enterprise « Starts at $15k /yr ») même sous Accept-Language fr-FR ; aucune grille EUR n'est servie depuis un egress FR et la page n'expose pas de locale FR (constaté 2026-07-21). Calendly est une plateforme mondiale de prise de rendez-vous. Décision humaine : traiter comme grille mondiale USD, observed_market/locale nuls."
+        },
+        "native_amount": 16,
+        "native_currency": "USD",
+        "observation_id": "obs:154fd77ffa22d403e81fb77192b3597e94830d136fbde65cbb2bade00f4c7189",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-21",
+        "observed_plan_key": "teams_plan",
+        "plan_key": "teams",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Teams Plan",
+        "plan_summary": null,
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:4bc82f85a687d6c66790e6962805f8251fb0f6ad0b4af5c806f6d40635ac216f",
+          "excerpt": "sions Standard Yearly For professionals and small teams $10 /seat/mo Save 16% $ USD $ USD € EUR £ GBP Try for free Free features, plus: Scheduling Unlimited event types Connect multiple calendars Connect Hubspot, Mailchi",
+          "source_url": "https://calendly.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://calendly.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "calendly",
+        "value_fingerprint": "16|USD|monthly|seat|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "enterprise_quote_only": true,
+        "free_plan_proven_on_grid": true,
+        "jsonld_offers_total": 10,
+        "paid_plans_promoted": 2,
+        "seat_unit": true,
+        "standard_found": true,
+        "teams_found": true,
+        "usd_offers": 4
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": true,
+      "pricing_unit": "seat",
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": true,
+        "annual_prepaid_proof": false,
+        "monthly": true
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "standard",
+        "plan_name_localized": "Standard Plan",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "teams",
+        "plan_name_localized": "Teams Plan",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-21T15:16:02.250Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "2e126f2a-ef73-40fa-8752-2fb8429fc073"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-21T15:16:02.250Z",
+            "adapter": "calendly",
+            "adapter_version": "1.0.0",
+            "browser_context": null,
+            "capture_id": "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d",
+            "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 9963,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-21T15:16:04.673Z",
+            "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+            "content_hash": "sha256:4bc82f85a687d6c66790e6962805f8251fb0f6ad0b4af5c806f6d40635ac216f",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 14000,
+            "version": 2
+          }
+        ],
+        "domain": "calendly.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-21T15:16:21.260Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-21T15:16:02.250Z",
+          "reason": "allow: /pricing"
+        },
+        "source_id": "src:71fe4a44c927a3e49c5f57f0f0e659bd1405c2edd2c2ef430e2ad679f008526c",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://calendly.com/pricing"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "officialName": "calendly",
+    "pricingUrl": "https://calendly.com/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-21",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "calendly",
+  "status": "needs_review",
+  "unknowns": [],
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "status": "draft",
+    "generated_on": "2026-07-21",
+    "pricing_facts_policy": "Aucun montant, devise ou engagement dans la rédaction : les faits de prix restent dans collector.observations. pricing_guidance ne porte que de la présentation (modèle par utilisateur, déploiement, cautions).",
+    "facts_basis": [
+      "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d"
+    ],
+    "fr": {
+      "short_description": "Outil de planification de rendez-vous automatisée : partagez vos disponibilités et laissez vos contacts réserver un créneau sans échanges d'e-mails.",
+      "long_description": "Calendly automatise la prise de rendez-vous : vous connectez votre agenda, définissez vos règles de disponibilité et vos types de réunion, puis partagez un lien où vos contacts choisissent eux-mêmes un créneau libre. Fini les allers-retours par e-mail pour trouver une date.\n\nL'outil se facture par utilisateur : un plan gratuit couvre l'usage individuel de base (un seul type d'événement), tandis que les offres payantes ajoutent plusieurs types de réunion, des intégrations (visio, CRM, paiement), des rappels automatiques et, en équipe, la répartition des rendez-vous entre plusieurs personnes.\n\nCalendly convient surtout aux profils qui prennent beaucoup de rendez-vous externes — commerciaux, recruteurs, consultants, support — et aux équipes qui veulent une prise de rendez-vous cohérente. Pour un usage très occasionnel, le plan gratuit ou un simple agenda partagé suffit souvent.",
+      "verdict": {
+        "keepIf": [
+          "Vous prenez régulièrement des rendez-vous externes et voulez supprimer les échanges d'e-mails de calage.",
+          "Vous avez besoin de plusieurs types de réunion, de rappels et d'intégrations (visio, CRM, paiement).",
+          "En équipe, vous voulez répartir automatiquement les rendez-vous entre plusieurs personnes."
+        ],
+        "avoidIf": [
+          "Vous ne prenez que quelques rendez-vous par mois : un agenda partagé suffit.",
+          "Vos besoins de planification sont internes et déjà couverts par votre suite bureautique.",
+          "Vous voulez éviter un coût par utilisateur qui grimpe vite avec la taille de l'équipe."
+        ],
+        "threshold": "Calendly se justifie dès que le temps perdu à caler des rendez-vous dépasse le coût par utilisateur ; en dessous, le plan gratuit ou un agenda partagé fait l'affaire."
+      },
+      "pros": [
+        "Supprime les allers-retours d'e-mails pour fixer un créneau.",
+        "Se connecte aux principaux agendas et outils de visioconférence.",
+        "Plan gratuit réel pour un usage individuel simple.",
+        "Répartition des rendez-vous en équipe (round-robin) sur les offres supérieures."
+      ],
+      "cons": [
+        "Facturation par utilisateur : le coût grimpe vite pour une équipe.",
+        "Les fonctions avancées (routing, intégrations, marque) sont réservées aux plans payants.",
+        "Un essai ou un plan gratuit limité ne couvre qu'un seul type d'événement.",
+        "Périmètre volontairement centré sur la prise de rendez-vous, pas la gestion de projet."
+      ],
+      "use_cases": [
+        "Laisser des prospects réserver une démonstration commerciale.",
+        "Organiser des entretiens de recrutement sans coordination manuelle.",
+        "Proposer des créneaux de conseil ou de support à des clients.",
+        "Répartir automatiquement les rendez-vous entrants dans une équipe."
+      ],
+      "covers": [
+        "scheduling",
+        "meetings",
+        "productivity"
+      ],
+      "relevant_for": [
+        "sales",
+        "recruiting",
+        "consulting",
+        "support"
+      ],
+      "personas": [
+        "freelance-consultant",
+        "sales-rep",
+        "recruiter",
+        "small-team-lead"
+      ],
+      "functional_needs": [
+        "appointment-scheduling",
+        "calendar-integration",
+        "meeting-automation"
+      ],
+      "verticals": [
+        "sales-ops",
+        "hr-recruiting",
+        "professional-services"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "augmente",
+        "augmentFr": "Calendly reste un outil de prise de rendez-vous ; l'IA y aide surtout à qualifier, router ou résumer les réunions autour, sans remplacer la mécanique de réservation elle-même.",
+        "replaceFr": "Remplacer Calendly par une IA ? Non : la valeur est la synchronisation fiable des disponibilités et la réservation en libre-service, pas une conversation. L'IA complète (qualification, suivi), elle ne réserve pas à votre place.",
+        "aiTools": [
+          "openai"
+        ],
+        "idealForFr": "Profils qui prennent beaucoup de rendez-vous externes et veulent automatiser le calage sans friction."
+      },
+      "seo": {
+        "metaDescription": "Calendly : fiche ToolTrim. Planification de rendez-vous automatisée par utilisateur — plan gratuit, offres payantes, intégrations, à qui ça convient et quand l'éviter.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "free_plan_card": "Plan gratuit durable pour un usage individuel de base (un seul type d'événement) ; les fonctions avancées et le multi-utilisateur sont payants.",
+        "pricing_model": "Facturation par utilisateur (par siège). Un plan gratuit couvre l'usage individuel simple ; les offres payantes ajoutent types de réunion, intégrations, rappels et, en équipe, la répartition des rendez-vous.",
+        "price_reliability": "high",
+        "usage_sensitive": false,
+        "location_sensitive": false,
+        "cautions": [
+          "Le coût est par utilisateur : il croît avec la taille de l'équipe.",
+          "Un plan gratuit limité ou un essai n'est pas équivalent aux offres payantes (un seul type d'événement)."
+        ],
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS (Cloud)",
+            "summary": "Usage individuel de base, un seul type d'événement."
+          },
+          "standard": {
+            "deployment": "SaaS (Cloud)",
+            "unit": "par utilisateur",
+            "summary": "Plusieurs types de réunion, intégrations, rappels."
+          },
+          "teams": {
+            "deployment": "SaaS (Cloud)",
+            "unit": "par utilisateur",
+            "summary": "Collaboration et répartition des rendez-vous en équipe."
+          },
+          "enterprise": {
+            "deployment": "SaaS (Cloud)",
+            "summary": "SSO, administration et sécurité renforcées — sur devis."
+          }
+        }
+      }
+    },
+    "en": {
+      "short_description": "Automated appointment scheduling: share your availability and let people book a slot without back-and-forth emails.",
+      "long_description": "Calendly automates booking: connect your calendar, set availability rules and meeting types, then share a link where people pick an open slot themselves. No more email ping-pong to find a time.\n\nIt bills per user: a free plan covers basic individual use (a single event type), while paid tiers add multiple meeting types, integrations (video, CRM, payment), automated reminders and, for teams, distributing meetings across several people.\n\nCalendly fits people who take many external meetings — sales, recruiters, consultants, support — and teams wanting consistent booking. For very occasional use, the free plan or a shared calendar is often enough.",
+      "verdict": {
+        "keepIf": [
+          "You regularly take external meetings and want to remove scheduling emails.",
+          "You need several meeting types, reminders and integrations (video, CRM, payment).",
+          "As a team, you want to automatically distribute meetings across people."
+        ],
+        "avoidIf": [
+          "You only book a few meetings a month: a shared calendar is enough.",
+          "Your scheduling is internal and already covered by your office suite.",
+          "You want to avoid a per-user cost that climbs with team size."
+        ],
+        "threshold": "Calendly pays off once the time lost coordinating meetings exceeds the per-user cost; below that, the free plan or a shared calendar does the job."
+      },
+      "pros": [
+        "Removes email back-and-forth to set a time.",
+        "Connects to major calendars and video tools.",
+        "Genuine free plan for simple individual use.",
+        "Team round-robin meeting distribution on higher tiers."
+      ],
+      "cons": [
+        "Per-user billing: cost climbs fast for a team.",
+        "Advanced features (routing, integrations, branding) are paid-only.",
+        "A trial or limited free plan covers only a single event type.",
+        "Deliberately focused on booking, not project management."
+      ],
+      "use_cases": [
+        "Let prospects book a sales demo.",
+        "Schedule recruiting interviews without manual coordination.",
+        "Offer consulting or support slots to clients.",
+        "Automatically route incoming meetings across a team."
+      ],
+      "covers": [
+        "scheduling",
+        "meetings",
+        "productivity"
+      ],
+      "relevant_for": [
+        "sales",
+        "recruiting",
+        "consulting",
+        "support"
+      ],
+      "personas": [
+        "freelance-consultant",
+        "sales-rep",
+        "recruiter",
+        "small-team-lead"
+      ],
+      "functional_needs": [
+        "appointment-scheduling",
+        "calendar-integration",
+        "meeting-automation"
+      ],
+      "verticals": [
+        "sales-ops",
+        "hr-recruiting",
+        "professional-services"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "augmente",
+        "augmentEn": "Calendly stays a booking tool; AI mainly helps qualify, route or summarize the meetings around it, without replacing the booking mechanics.",
+        "replaceEn": "Replace Calendly with an AI? No: the value is reliable availability sync and self-service booking, not a conversation. AI complements (qualification, follow-up); it doesn't book for you.",
+        "aiTools": [
+          "openai"
+        ],
+        "idealForEn": "People who take many external meetings and want frictionless scheduling."
+      },
+      "seo": {
+        "metaDescription": "Calendly: ToolTrim review. Automated per-user appointment scheduling — free plan, paid tiers, integrations, who it fits and when to avoid it.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "free_plan_card": "Durable free plan for basic individual use (a single event type); advanced features and multi-user are paid.",
+        "pricing_model": "Per-user (per-seat) billing. A free plan covers simple individual use; paid tiers add meeting types, integrations, reminders and, for teams, meeting distribution.",
+        "price_reliability": "high",
+        "usage_sensitive": false,
+        "location_sensitive": false,
+        "cautions": [
+          "Cost is per user: it grows with team size.",
+          "A limited free plan or trial is not equivalent to paid tiers (single event type)."
+        ],
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS (Cloud)",
+            "summary": "Basic individual use, single event type."
+          },
+          "standard": {
+            "deployment": "SaaS (Cloud)",
+            "unit": "per user",
+            "summary": "Multiple meeting types, integrations, reminders."
+          },
+          "teams": {
+            "deployment": "SaaS (Cloud)",
+            "unit": "per user",
+            "summary": "Collaboration and team meeting distribution."
+          },
+          "enterprise": {
+            "deployment": "SaaS (Cloud)",
+            "summary": "SSO, admin and security — custom quote."
+          }
+        }
+      }
+    }
+  }
+}

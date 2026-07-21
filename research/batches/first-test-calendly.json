@@ -1,0 +1,72 @@
+{
+  "batch_id": "first-test-calendly",
+  "schema_version": 1,
+  "slugs": [
+    "calendly"
+  ],
+  "market": "FR",
+  "locale": "fr-FR",
+  "created_by": "Claude Code",
+  "created_at": "2026-07-21T21:20:47.125Z",
+  "updated_at": "2026-07-21T21:21:10.492Z",
+  "status": "done",
+  "tools": {
+    "calendly": {
+      "state": "canonical",
+      "errors": [],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": "sha256:c6480610ea21442fd5fa3a2912eceb6bf6777bbd08cb0d6b8d56baf606a5a945",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-07-21T21:20:47.105Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-07-21T21:20:47.126Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-07-21T21:20:47.222Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-07-21T21:20:47.223Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-07-21T21:20:47.223Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "eligible",
+          "to": "approved",
+          "at": "2026-07-21T21:21:10.489Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "approved",
+          "to": "canonical",
+          "at": "2026-07-21T21:21:10.492Z",
+          "reason": "engine apply",
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-07-21T21:21:10.492Z"
+    }
+  }
+}
