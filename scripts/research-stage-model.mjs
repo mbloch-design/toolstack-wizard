@@ -306,7 +306,9 @@ export function buildStagingProposal(doc, { planRegistry, locale = "fr-FR", tool
     requireValue(capturesByCollectorId.has(observation.capture_ref), `staging: observation sans capture ${observation.observation_id}`);
     const applicable = activeAttestations.find((attestation) =>
       attestation.attests === "market_context" &&
-      attestation.value === observation.market_context_candidate &&
+      // candidat (ex. wix/n8n) OU marché PROUVÉ (ex. squarespace, hôte fr.*) : l'attestation
+      // humaine lie le context_attestation_id requis par le trigger d'approbation.
+      attestation.value === (observation.market_context_candidate ?? observation.market_context) &&
       attestation.applies_to_capture_ref === observation.capture_ref &&
       attestation.content_hash === observation.content_hash &&
       !attestation.revoked_at && attestation.active !== false);

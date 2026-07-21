@@ -1084,10 +1084,12 @@
           "Billing is per website: running several sites means several subscriptions."
         ],
         "deployment_note": "Fully managed SaaS: licence, hosting and operations are bundled and there is no self-hosting or site export. Billing applies to each individual website separately.",
-        "pricing_model": "Squarespace is sold as a per-website subscription across a small ladder of tiers (entry, then commerce-oriented plans). The default billing view is an annual commitment paid up front; higher tiers mainly add customization, commerce features and lower online-store transaction fees. There is no durable free plan, only a time-limited trial.",
-        "price_reliability": "official_verified",
-        "usage_sensitive": true,
         "plan_details": {
+          "advanced": {
+            "deployment": "Managed SaaS (hosting included), billed per website",
+            "quota": "Lowest online-store transaction fees and the most advanced commerce tools",
+            "summary": "For high-volume activities looking for the lowest selling fees."
+          },
           "basic": {
             "deployment": "Managed SaaS (hosting included), billed per website",
             "quota": "Entry tier with a limited number of contributors; core site-building and payment features",
@@ -1102,13 +1104,11 @@
             "deployment": "Managed SaaS (hosting included), billed per website",
             "quota": "Reduced online-store transaction fees and more advanced selling tools",
             "summary": "For activities that want lower processing fees and to scale selling."
-          },
-          "advanced": {
-            "deployment": "Managed SaaS (hosting included), billed per website",
-            "quota": "Lowest online-store transaction fees and the most advanced commerce tools",
-            "summary": "For high-volume activities looking for the lowest selling fees."
           }
-        }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Squarespace is sold as a per-website subscription across a small ladder of tiers (entry, then commerce-oriented plans). The default billing view is an annual commitment paid up front; higher tiers mainly add customization, commerce features and lower online-store transaction fees. There is no durable free plan, only a time-limited trial.",
+        "usage_sensitive": true
       },
       "pros": [
         "Genuinely all-in-one: design, hosting, content and a store in one managed platform, with a custom domain included on paid plans.",
@@ -1198,10 +1198,12 @@
           "La facturation est par site : exploiter plusieurs sites implique plusieurs abonnements."
         ],
         "deployment_note": "SaaS entièrement géré : licence, hébergement et exploitation sont regroupés, sans auto-hébergement ni export du site. La facturation s'applique à chaque site individuellement.",
-        "pricing_model": "Squarespace se vend sous forme d'abonnement par site, sur une courte échelle d'offres (entrée de gamme puis plans orientés commerce). La vue de facturation par défaut est un engagement annuel payé d'avance ; les offres supérieures ajoutent surtout de la personnalisation, des fonctions commerciales et des frais de transaction réduits sur la boutique en ligne. Pas de plan gratuit durable, seulement un essai limité dans le temps.",
-        "price_reliability": "official_verified",
-        "usage_sensitive": true,
         "plan_details": {
+          "advanced": {
+            "deployment": "SaaS géré (hébergement inclus), facturé par site",
+            "quota": "Frais de transaction les plus bas sur la boutique en ligne et outils commerciaux les plus avancés",
+            "summary": "Pour les activités à fort volume qui recherchent les frais de vente les plus bas."
+          },
           "basic": {
             "deployment": "SaaS géré (hébergement inclus), facturé par site",
             "quota": "Offre d'entrée avec un nombre limité de contributeurs ; création de site et fonctions de paiement de base",
@@ -1216,13 +1218,11 @@
             "deployment": "SaaS géré (hébergement inclus), facturé par site",
             "quota": "Frais de transaction réduits sur la boutique en ligne et outils de vente plus avancés",
             "summary": "Pour les activités qui veulent réduire les frais de traitement et développer la vente."
-          },
-          "advanced": {
-            "deployment": "SaaS géré (hébergement inclus), facturé par site",
-            "quota": "Frais de transaction les plus bas sur la boutique en ligne et outils commerciaux les plus avancés",
-            "summary": "Pour les activités à fort volume qui recherchent les frais de vente les plus bas."
           }
-        }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Squarespace se vend sous forme d'abonnement par site, sur une courte échelle d'offres (entrée de gamme puis plans orientés commerce). La vue de facturation par défaut est un engagement annuel payé d'avance ; les offres supérieures ajoutent surtout de la personnalisation, des fonctions commerciales et des frais de transaction réduits sur la boutique en ligne. Pas de plan gratuit durable, seulement un essai limité dans le temps.",
+        "usage_sensitive": true
       },
       "pros": [
         "Réellement tout-en-un : design, hébergement, contenu et boutique sur une seule plateforme gérée, domaine personnalisé inclus avec les offres payantes.",
@@ -1356,6 +1356,25 @@
   },
   "researchedOn": "2026-07-16",
   "researcher": "Claude Code",
+  "review_attestations": [
+    {
+      "act": "human_review_attestation",
+      "applies_to_capture_ref": "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+      "attested_at": "2026-07-21T14:52:46.868Z",
+      "attested_by": "ToolTrim — Mike",
+      "attests": "market_context",
+      "basis_attestation_id": "sha256:ed0daf8d08c536629eda92e4bbf31f09c17aaf93f611086a6347acbb4f72b7ff",
+      "content_hash": "sha256:5d00ba0b056fe380d826640d6b2b5e8acfc34db1212e8e5890b21a6e5d8b2fa7",
+      "note": null,
+      "review_attestation_id": "sha256:6b23a9478020c7a3c8c7220a627177f37e0876433bc1152bab128516c477320a",
+      "schema": "review_attestation/2",
+      "scope_note": "Ne s'applique qu'à cette version de contenu. Toute nouvelle capture exige une nouvelle attestation.",
+      "semantic_fingerprint": "sfp:3256bbd28dcf5a98aa0dcee7555898314544c53e6792e485d38c640327849111",
+      "slug": "squarespace",
+      "source_url": "https://fr.squarespace.com/tarifs",
+      "value": "reference_fr"
+    }
+  ],
   "schemaVersion": 1,
   "slug": "squarespace",
   "status": "needs_review",
