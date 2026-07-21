@@ -240,7 +240,7 @@ export async function runTool({ sql, profile, proposal, actor, apply = false }) 
   A(["legacy", "canonical"].includes(before.tool?.data_contract), `${cfg.toolId}: état initial invalide`);
 
   if (before.tool.data_contract === "canonical") {
-    await validateProjection(sql, cfg, true);
+    await validateProjection(sql, cfg, cfg.expectedPrices.length > 0);   // outil free-only => needs_review attendu
     return { toolId: cfg.toolId, mode: apply ? "APPLY_NOOP" : "DRY_RUN_CURRENT_STATE", applied: false, noop: true,
       proposal_hash: proposal.proposal_hash, canonical_count: before.counts.canonical_count };
   }

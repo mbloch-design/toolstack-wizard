@@ -11,8 +11,8 @@
   "locale": "fr-FR",
   "created_by": "Claude Code",
   "created_at": "2026-07-21T14:43:02.076Z",
-  "updated_at": "2026-07-21T14:44:49.823Z",
-  "status": "attention",
+  "updated_at": "2026-07-21T14:50:52.537Z",
+  "status": "preparing",
   "tools": {
     "framer": {
       "state": "eligible",
@@ -103,7 +103,7 @@
       "updated_at": "2026-07-21T14:43:02.202Z"
     },
     "angular-material": {
-      "state": "failed",
+      "state": "canonical",
       "errors": [
         {
           "at": "2026-07-21T14:44:49.822Z",
@@ -155,9 +155,37 @@
           "at": "2026-07-21T14:44:49.823Z",
           "reason": null,
           "run_id": null
+        },
+        {
+          "from": "failed",
+          "to": "staged",
+          "at": "2026-07-21T14:50:52.532Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-07-21T14:50:52.536Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "eligible",
+          "to": "approved",
+          "at": "2026-07-21T14:50:52.536Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "approved",
+          "to": "canonical",
+          "at": "2026-07-21T14:50:52.537Z",
+          "reason": "open source, unité open_source",
+          "run_id": null
         }
       ],
-      "updated_at": "2026-07-21T14:44:49.823Z"
+      "updated_at": "2026-07-21T14:50:52.537Z"
     },
     "contra": {
       "state": "eligible",

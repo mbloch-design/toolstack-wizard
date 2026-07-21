@@ -28,7 +28,7 @@ function reviewStatus(value) {
  * Construit le registre canonique des plans depuis les faits de recherche et
  * les seules décisions éditoriales qui ne sont pas déductibles des sources.
  */
-export function planRegistryFromResearch(doc, registryEntry, { planOrder, comparePlanKey, freePlanKey = "free" } = {}) {
+export function planRegistryFromResearch(doc, registryEntry, { planOrder, comparePlanKey, freePlanKey = "free", openSource = false } = {}) {
   requireValue(registryEntry?.plan_key_mapping, "staging: plan_key_mapping du registre requis");
   requireValue(Array.isArray(planOrder) && planOrder.length > 0, "staging: ordre canonique explicite requis");
   requireValue(comparePlanKey && planOrder.includes(comparePlanKey), "staging: plan comparatif explicite invalide");
@@ -51,9 +51,12 @@ export function planRegistryFromResearch(doc, registryEntry, { planOrder, compar
     const seats = new Set(observations.filter((row) => row.plan_key === planKey).map((row) => row.seat_type).filter(Boolean));
     requireValue(units.size <= 1, `staging: unités contradictoires pour ${planKey}`);
     requireValue(seats.size <= 1, `staging: seat_type contradictoires pour ${planKey}`);
+    const isFreePlan = hasFree && planKey === freePlanKey;
     return [planKey, {
-      is_free: hasFree && planKey === freePlanKey,
-      pricing_unit: [...units][0] ?? unitClaim,
+      is_free: isFreePlan,
+      // Outil open source vérifié : l'unité du plan gratuit est "open_source" (licence libre),
+      // ce qui permet à un outil free-only d'avoir un plan comparatif valide sans prix inventé.
+      pricing_unit: [...units][0] ?? unitClaim ?? (openSource && isFreePlan ? "open_source" : null),
       seat_type: [...seats][0] ?? null,
       is_compare_plan: planKey === comparePlanKey,
       display_order: displayOrder,

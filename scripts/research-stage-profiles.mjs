@@ -50,9 +50,12 @@ export const STAGING_PROFILES = Object.freeze({
   }),
   "angular-material": Object.freeze({
     // Bibliothèque open-source MIT : un seul "plan" gratuit, aucun prix. free=compare.
+    // openSource: licence libre VÉRIFIÉE (claim MIT) -> unité pricing_unit="open_source"
+    // (véridique) pour satisfaire la contrainte du plan comparatif, sans fabriquer de prix.
     planOrder: Object.freeze(["free"]),
     comparePlanKey: "free",
     freePlanKey: "free",
+    openSource: true,
     locale: "fr-FR",
     editorialSource: "research",
   }),
