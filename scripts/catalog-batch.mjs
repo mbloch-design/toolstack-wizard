@@ -13,6 +13,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createBatch, loadBatch, transition, resumable, batchPath } from "./catalog/batch-state.mjs";
 import { loadProfile } from "./catalog/profile.mjs";
+import { validateEditorial } from "./catalog/editorial-contract.mjs";
+import { verifyCatalogInvariants, untouchedFingerprint } from "./catalog/verify-batch.mjs";
 import { prepareStageDryRun } from "./research-stage.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -68,16 +70,20 @@ async function cmdPrepare(a) {
     const t = loadBatch(a.batch).tools[slug];
     if (t.state === "failed" || t.state === "queued") continue;
     try {
+      const profile = loadProfile(slug);
+      const blockers = [];
+      // Garde éditoriale automatique (contrat) pour les fiches à contenu research.
+      if (profile.editorialSource === "research") {
+        const doc = JSON.parse(readFileSync(path.join(ROOT, "research", "tool-pages", `${slug}.json`), "utf8"));
+        const v = validateEditorial(doc.editorial_drafts, { slug });
+        if (!v.ok) blockers.push(`éditorial non conforme: ${v.errors.slice(0, 2).join("; ")}`);
+      }
       const { proposal } = await prepareStageDryRun(slug);
-      const needsEditorial = loadProfile(slug).editorialSource === "research";
       transition(a.batch, slug, "editorial_draft");
       transition(a.batch, slug, "staged", { proposal_hash: proposal.proposal_hash });
-      // gate simple : attestation reference_fr requise si contexte candidat, sinon eligible
       const obs = proposal.tables.tool_price_observations ?? [];
-      const needsAttestation = obs.some((o) => o.market_context_candidate === "reference_fr");
-      const blockers = [];
-      if (needsAttestation) blockers.push("attestation reference_fr requise (ToolTrim — Mike)");
-      if (needsEditorial) blockers.push("éditorial research à rédiger/valider");
+      if (obs.some((o) => o.market_context_candidate === "reference_fr"))
+        blockers.push("attestation reference_fr requise (ToolTrim — Mike)");
       transition(a.batch, slug, blockers.length ? "needs_review" : "eligible", { blockers });
     } catch (e) { transition(a.batch, slug, "failed", { error: e.message }); }
   }
@@ -106,20 +112,21 @@ function cmdReport(a) {
 // ── dry-run / apply : moteur générique par outil, isolé ──
 async function cmdRun(a, apply) {
   const b = loadBatch(a.batch);
-  const { stagingProfileFor } = await import("./research-stage-profiles.mjs");
   const { runTool } = await import("./catalog/supabase-engine.mjs");
   const only = a.slugs ? new Set(String(a.slugs).split(",").map((s) => s.trim())) : null;
   const actor = a.actor || "ToolTrim — Mike";
   const sql = await connect();
   const results = [];
   try {
+    // Empreinte des outils hors lot AVANT apply (filet non-régression).
+    const untouched = apply ? await untouchedFingerprint(sql, b.slugs) : null;
     for (const slug of b.slugs) {
       if (only && !only.has(slug)) continue;
       const st = b.tools[slug].state;
       if (apply && st !== "eligible" && st !== "approved" && st !== "canonical") { results.push({ toolId: slug, skipped: st }); continue; }
       try {
         const { proposal } = await prepareStageDryRun(slug);
-        const res = await runTool({ sql, profile: stagingProfileFor(slug), proposal, actor, apply });
+        const res = await runTool({ sql, profile: loadProfile(slug), proposal, actor, apply });   // profil unifié (marketContext)
         results.push(res);
         if (apply && res.applied) {
           if (b.tools[slug].state === "eligible") transition(a.batch, slug, "approved");
@@ -127,9 +134,23 @@ async function cmdRun(a, apply) {
         }
       } catch (e) { results.push({ toolId: slug, error: e.message }); if (apply) transition(a.batch, slug, "failed", { error: e.message }); }
     }
+    // Phase K : invariants catalogue après apply (cardinalité, projection, rôles, aucun hors-lot modifié).
+    if (apply) {
+      const inv = await verifyCatalogInvariants(sql, { untouched });
+      console.log(JSON.stringify({ mode: "APPLY", batch: b.batch_id, invariants: inv, results }, null, 2));
+      return results;
+    }
   } finally { await sql.end({ timeout: 1 }); }
-  console.log(JSON.stringify({ mode: apply ? "APPLY" : "DRY_RUN", batch: b.batch_id, results }, null, 2));
+  console.log(JSON.stringify({ mode: "DRY_RUN", batch: b.batch_id, results }, null, 2));
   return results;
+}
+
+async function cmdVerify(a) {
+  const sql = await connect();
+  try {
+    const inv = await verifyCatalogInvariants(sql, a.canonical ? { canonicalCount: Number(a.canonical) } : {});
+    console.log(JSON.stringify({ mode: "VERIFY", invariants: inv }, null, 2));
+  } finally { await sql.end({ timeout: 1 }); }
 }
 
 // ── rollback : par outil ──
@@ -150,6 +171,7 @@ const cmd = a._[0];
 const run = {
   prepare: () => cmdPrepare(a), report: () => cmdReport(a),
   "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
+  verify: () => cmdVerify(a),
 }[cmd];
-if (!run) { console.error("commandes: prepare | report | dry-run | apply | rollback"); process.exit(1); }
+if (!run) { console.error("commandes: prepare | report | dry-run | apply | rollback | verify"); process.exit(1); }
 Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
