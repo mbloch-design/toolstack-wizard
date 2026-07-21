@@ -33,6 +33,7 @@ import { extractFramer } from "./research-adapters/framer.mjs";
 import { extractSquarespace } from "./research-adapters/squarespace.mjs";
 import { extractN8n } from "./research-adapters/n8n.mjs";
 import { extractContra } from "./research-adapters/contra.mjs";
+import { extractGeneric } from "./research-adapters/generic.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
   valueFingerprintOf, observationIdOf, upsertSource, appendCapture, findCapture,
@@ -50,6 +51,7 @@ const ADAPTERS = {
   squarespace: extractSquarespace,
   n8n: extractN8n,
   contra: extractContra,
+  generic: extractGeneric,
 };
 
 export { resolveEffectiveMarketContext, approvedPreEligibility, attestationReadiness,
