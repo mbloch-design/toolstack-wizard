@@ -111,6 +111,30 @@ function cmdReport(a) {
   return { ready, blocked };
 }
 
+// ── auto-signature de l'attestation reference_fr (réserve levée par ToolTrim).
+//    Ne signe QUE si le marché est reference_fr (candidat ou prouvé), qu'aucune attestation
+//    active n'existe, et qu'une basis au FAISCEAU FORT existe. Sinon renvoie un blocage (jamais forcé). ──
+function autoSignReferenceFr(slug, actor) {
+  const p = path.join(ROOT, "research", "tool-pages", `${slug}.json`);
+  if (!existsSync(p)) return { skip: true };
+  const doc = JSON.parse(readFileSync(p, "utf8"));
+  const obs = doc.collector?.observations ?? [];
+  const needsRef = obs.some((o) => o.market_context_candidate === "reference_fr" || o.market_context === "reference_fr");
+  if (!needsRef) return { skip: true };
+  const active = (doc.review_attestations ?? []).some((att) =>
+    att.attests === "market_context" && att.value === "reference_fr" && !att.revoked_at && att.active !== false);
+  if (active) return { already: true };
+  const obsHashes = new Set(obs.map((o) => o.content_hash));
+  const ctx = (doc.collector?.context_attestations ?? []).find((att) =>
+    att.egress_country === "FR" && obsHashes.has(att.content_hash) && (att.currency_symbols_seen || []).includes("€"));
+  if (!ctx) return { blocked: "aucune basis reference_fr conforme (faisceau fort absent)" };
+  const r = spawnSync(process.execPath, [path.join(ROOT, "scripts", "research-attest.mjs"),
+    `--slug=${slug}`, "--attest=market_context", "--value=reference_fr",
+    `--basis=${ctx.attestation_id}`, `--by=${actor}`, "--apply"], { cwd: ROOT, encoding: "utf8" });
+  if (r.status !== 0) return { blocked: `signature refusée: ${(r.stderr || r.stdout || "").trim().slice(0, 140)}` };
+  return { signed: ctx.attestation_id };
+}
+
 // ── dry-run / apply : moteur générique par outil, isolé ──
 async function cmdRun(a, apply) {
   const b = loadBatch(a.batch);
@@ -127,9 +151,16 @@ async function cmdRun(a, apply) {
       const st = b.tools[slug].state;
       if (apply && st !== "eligible" && st !== "approved" && st !== "canonical") { results.push({ toolId: slug, skipped: st }); continue; }
       try {
+        // Lot mixte en une commande : auto-signe l'attestation reference_fr si requise (réserve levée).
+        let attestation = null;
+        if (apply) {
+          const sign = autoSignReferenceFr(slug, actor);
+          if (sign.blocked) { results.push({ toolId: slug, blocked: sign.blocked }); transition(a.batch, slug, "needs_review", { blockers: [sign.blocked] }); continue; }
+          attestation = sign.signed ? "signed" : sign.already ? "already" : null;
+        }
         const { proposal } = await prepareStageDryRun(slug);
         const res = await runTool({ sql, profile: loadProfile(slug), proposal, actor, apply });   // profil unifié (marketContext)
-        results.push(res);
+        results.push({ ...res, attestation });
         if (apply && res.applied) {
           if (b.tools[slug].state === "eligible") transition(a.batch, slug, "approved");
           transition(a.batch, slug, "canonical", { reason: "engine apply" });
