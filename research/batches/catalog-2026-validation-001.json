@@ -1,0 +1,206 @@
+{
+  "batch_id": "catalog-2026-validation-001",
+  "schema_version": 1,
+  "slugs": [
+    "framer",
+    "squarespace",
+    "angular-material",
+    "contra"
+  ],
+  "market": "FR",
+  "locale": "fr-FR",
+  "created_by": "Claude Code",
+  "created_at": "2026-07-21T14:43:02.076Z",
+  "updated_at": "2026-07-21T14:44:49.823Z",
+  "status": "attention",
+  "tools": {
+    "framer": {
+      "state": "eligible",
+      "errors": [],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": "sha256:0df6d978e58e2277a1103873791537b921cc4f39824111e9fa619e392e5d99fc",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-07-21T14:43:02.075Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-07-21T14:43:02.077Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-07-21T14:43:02.142Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-07-21T14:43:02.143Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-07-21T14:43:02.143Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-07-21T14:43:02.143Z"
+    },
+    "squarespace": {
+      "state": "needs_review",
+      "errors": [],
+      "blockers": [
+        "attestation reference_fr requise (ToolTrim — Mike)"
+      ],
+      "attempts": 0,
+      "proposal_hash": "sha256:6f9819e10ba23230b42e67091e7860159c19d00e6d103c6ec37df228b224278a",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-07-21T14:43:02.076Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-07-21T14:43:02.078Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-07-21T14:43:02.201Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-07-21T14:43:02.202Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "needs_review",
+          "at": "2026-07-21T14:43:02.202Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-07-21T14:43:02.202Z"
+    },
+    "angular-material": {
+      "state": "failed",
+      "errors": [
+        {
+          "at": "2026-07-21T14:44:49.822Z",
+          "message": "blocage modèle: outil gratuit sans pricing_unit — plan comparatif chiffré impossible (contrainte tool_plans_check). Reste legacy; décision de modèle séparée requise pour les outils free-only."
+        }
+      ],
+      "blockers": [
+        "free-only non représentable en canonical"
+      ],
+      "attempts": 0,
+      "proposal_hash": "sha256:46944a03968e7db0c7996afe28ba1f9c88e85512e959e19a47ea2f3e570f2084",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-07-21T14:43:02.076Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-07-21T14:43:02.078Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-07-21T14:43:02.261Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-07-21T14:43:02.262Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-07-21T14:43:02.262Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "eligible",
+          "to": "failed",
+          "at": "2026-07-21T14:44:49.823Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-07-21T14:44:49.823Z"
+    },
+    "contra": {
+      "state": "eligible",
+      "errors": [],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": "sha256:6f12e8b47c7c50679a3a8aa7e8b2bd79790a577b62c9befb2548693dd371c78a",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-07-21T14:43:02.076Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-07-21T14:43:02.078Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-07-21T14:43:02.318Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-07-21T14:43:02.319Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-07-21T14:43:02.319Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-07-21T14:43:02.319Z"
+    }
+  }
+}

@@ -48,6 +48,14 @@ export const STAGING_PROFILES = Object.freeze({
     locale: "fr-FR",
     editorialSource: "research",
   }),
+  "angular-material": Object.freeze({
+    // Bibliothèque open-source MIT : un seul "plan" gratuit, aucun prix. free=compare.
+    planOrder: Object.freeze(["free"]),
+    comparePlanKey: "free",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
 });
 
 export function stagingProfileFor(slug) {

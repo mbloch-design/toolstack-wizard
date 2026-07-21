@@ -52,18 +52,20 @@ async function cmdPrepare(a) {
   for (const slug of slugs) loadProfile(slug);
   const batch = existsSync(batchPath(a.batch)) ? loadBatch(a.batch)
     : createBatch({ batch_id: a.batch, slugs, market: a.market || "FR", locale: a.locale || "fr-FR" });
-  // 2) collecte (collecteur robots-respect ; slugs explicites uniquement)
+  // 2) collecte — REPRISE : un dossier déjà présent n'est pas re-collecté (sauf --recollect).
+  const dossier = (slug) => path.join(ROOT, "research", "tool-pages", `${slug}.json`);
+  const pending = resumable(a.batch).filter((t) => ["queued", "failed", "collecting"].includes(t.state)).map((t) => t.slug);
+  for (const slug of pending) if (!a.recollect && existsSync(dossier(slug))) transition(a.batch, slug, "collected", { reason: "dossier existant (reprise)" });
   const todo = resumable(a.batch).filter((t) => ["queued", "failed", "collecting"].includes(t.state)).map((t) => t.slug);
   if (todo.length) {
     for (const slug of todo) transition(a.batch, slug, "collecting", { incrementAttempt: true });
+    // Slugs explicites uniquement ; robots respecté ; concurrence bornée (2-3), délai + jitter côté collecteur.
     const r = spawnSync(process.execPath, [path.join(ROOT, "scripts", "research-collector.mjs"),
       `--slugs=${todo.join(",")}`, `--market=${batch.market}`, `--locale=${batch.locale}`,
       "--renderer=auto", "--concurrency=2", "--delay=2000"], { cwd: ROOT, encoding: "utf8" });
-    if (r.status !== 0) console.error("collecte: sortie non nulle (voir dossiers research/runs)");
-    for (const slug of todo) {
-      if (existsSync(path.join(ROOT, "research", "tool-pages", `${slug}.json`))) transition(a.batch, slug, "collected");
-      else transition(a.batch, slug, "failed", { error: "collecte sans dossier research" });
-    }
+    if (r.status !== 0) console.error("collecte: sortie non nulle (voir research/runs) — erreurs isolées par outil");
+    for (const slug of todo) transition(a.batch, slug, existsSync(dossier(slug)) ? "collected" : "failed",
+      existsSync(dossier(slug)) ? {} : { error: "collecte sans dossier research" });
   }
   // 3) staging + gate (éditorial research requis selon profil)
   for (const slug of loadBatch(a.batch).slugs) {
@@ -82,7 +84,7 @@ async function cmdPrepare(a) {
       transition(a.batch, slug, "editorial_draft");
       transition(a.batch, slug, "staged", { proposal_hash: proposal.proposal_hash });
       const obs = proposal.tables.tool_price_observations ?? [];
-      if (obs.some((o) => o.market_context_candidate === "reference_fr"))
+      if (obs.some((o) => o.market_context_candidate === "reference_fr" || o.market_context === "reference_fr"))
         blockers.push("attestation reference_fr requise (ToolTrim — Mike)");
       transition(a.batch, slug, blockers.length ? "needs_review" : "eligible", { blockers });
     } catch (e) { transition(a.batch, slug, "failed", { error: e.message }); }

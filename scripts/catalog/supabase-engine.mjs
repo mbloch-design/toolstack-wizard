@@ -20,8 +20,9 @@ export function deriveConfig(profile, proposal) {
   const currencies = [...new Set(obs.map((o) => o.native_currency).filter(Boolean))];
   const currency = currencies.length === 1 ? currencies[0] : null;
   const candidate = obs.map((o) => o.market_context_candidate).find(Boolean) ?? null;
+  const proven = obs.map((o) => o.market_context).find((m) => m === "reference_fr") ?? null;   // ex: hôte fr.* prouvé
   const declared = profile.marketContext ?? null;   // ex: global_usd_fallback déclaré au registre
-  const marketContext = declared ?? candidate ?? null;
+  const marketContext = declared ?? candidate ?? proven ?? null;
   const requiresAttestation = marketContext === "reference_fr";
   const eurIdentity = currency === "EUR" && marketContext === "reference_fr";
   // Éligible à l'approbation = observé + montant présent + (gratuit OU engagement présent).

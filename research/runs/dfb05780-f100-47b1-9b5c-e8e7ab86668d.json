@@ -1,0 +1,120 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-21T14:41:05.366Z",
+      "attestation_id": "sha256:c5c047dab21751e1863f1fa952a898cbc38a90357cab11d761a016311d838085",
+      "content_hash": "sha256:3427466567c19fb3b1a95364007be5a0dc934d6ffd2ae1a36195d39a7387028e",
+      "content_language": null,
+      "currency_symbols_seen": [],
+      "egress_country": null,
+      "egress_measured_from": null,
+      "egress_source": null,
+      "final_url": "https://material.angular.dev",
+      "html_lang": null,
+      "http_status": 200,
+      "locale_requested": null,
+      "navigator_language": null,
+      "rendered_by": "static",
+      "resolved_locale": null,
+      "run_id": "dfb05780-f100-47b1-9b5c-e8e7ab86668d",
+      "schema": "context_attestation/1",
+      "slug": "angular-material",
+      "source_url": "https://material.angular.dev",
+      "timezone": null,
+      "visible_markers": []
+    }
+  ],
+  "checks": [
+    {
+      "adapter": null,
+      "adapter_version": null,
+      "attempts": 1,
+      "browser_context": null,
+      "content_hash": "sha256:3427466567c19fb3b1a95364007be5a0dc934d6ffd2ae1a36195d39a7387028e",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": null,
+      "market_context_source": null,
+      "mode": "network_forced",
+      "rendered_by": "static",
+      "slug": "angular-material",
+      "url": "https://material.angular.dev"
+    },
+    {
+      "content_hash": "sha256:ab0b146fa50201dfa135b03eb747911285a6433374148f96c76fefdfe31b93ef",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "static",
+      "slug": "angular-material",
+      "url": "https://github.com/angular/components/blob/main/LICENSE"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=2 attestations_created=1 approved=0 | doc_claims: extracted=1 created=1 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-21T14:41:08.130Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 1,
+    "doc_claims_extracted": 1,
+    "doc_claims_unchanged": 0,
+    "versions_created": 2
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "angular-material"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:3427466567c19fb3b1a95364007be5a0dc934d6ffd2ae1a36195d39a7387028e",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 1,
+        "doc_claims_extracted": 1,
+        "doc_claims_unchanged": 0,
+        "versions_created": 2
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "angular-material",
+      "url": "https://material.angular.dev",
+      "versionsCreated": 2
+    }
+  ],
+  "review_status": "open",
+  "run_id": "dfb05780-f100-47b1-9b5c-e8e7ab86668d",
+  "started_at": "2026-07-21T14:41:05.364Z",
+  "valid": true
+}

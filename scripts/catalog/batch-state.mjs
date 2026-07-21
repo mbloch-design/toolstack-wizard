@@ -15,7 +15,7 @@ export const STATES = Object.freeze([
   "needs_review", "eligible", "approved", "canonical", "failed", "rolled_back",
 ]);
 const ALLOWED = Object.freeze({
-  queued: ["collecting", "failed"],
+  queued: ["collecting", "collected", "failed"],   // collected direct = reprise (dossier déjà présent)
   collecting: ["collected", "failed"],
   collected: ["editorial_draft", "failed"],
   editorial_draft: ["staged", "failed"],

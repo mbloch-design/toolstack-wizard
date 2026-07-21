@@ -205,10 +205,7 @@
       "adapter": "wix",
       "additional_sources": [
         {
-          "establishes": {
-            "claim_key": "pricing.unit",
-            "value": "site"
-          },
+          "establishes": { "claim_key": "pricing.unit", "value": "site" },
           "is_official": true,
           "notes": "Support officiel Wix (niveau 1). Phrase établissant l'unité : « A site plan cannot be used for multiple sites. Each site you want to upgrade must have its own Premium or Studio site plan. » => facturation PAR SITE. La page tarifaire seule ne l'établissait pas.",
           "proof_pattern": "cannot be used for multiple sites|must have its own (Premium|Studio) site plan",
@@ -221,10 +218,7 @@
           "verified_on": "2026-07-17"
         },
         {
-          "establishes": {
-            "claim_key": "pricing.free_plan_exists",
-            "value": true
-          },
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
           "is_official": true,
           "notes": "Support officiel Wix (niveau 1). Phrase établissant la DURABILITÉ du plan gratuit : « There is no obligation to upgrade unless you want to make use of our premium features. » => plan gratuit durable, pas un essai. Aucun montant/devise n'étant affiché, AUCUNE observation 0 EUR n'est créée : le fait est porté par ce claim.",
           "proof_pattern": "no obligation to upgrade|free to (use|build)|only need to pay to upgrade",
@@ -344,6 +338,37 @@
           "source_tier": 1,
           "source_type": "pricing",
           "url": "https://contra.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-21"
+        }
+      ]
+    },
+    "angular-material": {
+      "adapter": null,
+      "pricing_url": "https://material.angular.dev",
+      "renderer_hint": "static",
+      "source_type": "docs",
+      "source_tier": 1,
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-21",
+      "market_context_declared": null,
+      "market_context_justification": "Bibliothèque open-source sous licence MIT, sans grille tarifaire ni devise : aucun contexte marché ne s'applique (pas d'observation de prix possible).",
+      "plan_key_mapping": {
+        "Open Source (MIT)": "free"
+      },
+      "plan_key_mapping_note": "Un seul 'plan' : la bibliothèque MIT, gratuite côté licence, portée par le claim pricing.free_plan_exists (aucune observation 0 EUR, aucun montant). Intégration/maintenance NON gratuites (traité en éditorial).",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "Licence MIT du dépôt officiel angular/components (@angular/material, @angular/cdk), Copyright Google LLC. Usage, modification et distribution libres, sans coût de licence. Aucun montant affiché => AUCUNE observation 0 EUR ; le fait est porté par ce claim. Intégration, thématisation, montées de version et maintenance NON gratuites (traité en éditorial).",
+          "proof_pattern": "MIT License|Permission is hereby granted, free of charge",
+          "purpose": "free_plan",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://github.com/angular/components/blob/main/LICENSE",
           "verified_http_status": 200,
           "verified_on": "2026-07-21"
         }

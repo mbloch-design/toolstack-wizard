@@ -1,5 +1,183 @@
 {
-  "slug": "angular-material",
+  "collector": {
+    "attestation_readiness": [],
+    "claims": [
+      {
+        "capture_id": "cap:9ceda592267ade7dc1ee3ece7a2358006dfe8d22f78493bb099c09170fe36c2e",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "s 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 The MIT License Copyright (c) 2026 Google LLC. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated document",
+        "evidence_captures": [
+          "cap:9ceda592267ade7dc1ee3ece7a2358006dfe8d22f78493bb099c09170fe36c2e"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-21",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-21",
+        "proof_pattern": "MIT License|Permission is hereby granted, free of charge",
+        "sourceTier": 1,
+        "source_id": "src:6cc0f321aa078f2b77b2cad6acda1f70f0456f3c49f05c05df14de2f5ae6a378",
+        "source_url": "https://github.com/angular/components/blob/main/LICENSE",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-21T14:41:05.366Z",
+        "attestation_id": "sha256:c5c047dab21751e1863f1fa952a898cbc38a90357cab11d761a016311d838085",
+        "content_hash": "sha256:3427466567c19fb3b1a95364007be5a0dc934d6ffd2ae1a36195d39a7387028e",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://material.angular.dev",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "dfb05780-f100-47b1-9b5c-e8e7ab86668d",
+        "schema": "context_attestation/1",
+        "slug": "angular-material",
+        "source_url": "https://material.angular.dev",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "pricing_unit non exprimée explicitement sur la page",
+      "marché/locale non prouvés (demandé FR/fr-FR) : aucun montant retenu"
+    ],
+    "last_checked_at": "2026-07-21T14:41:05.366Z",
+    "last_context_evidence": {
+      "adapter": null,
+      "adapter_version": null,
+      "at": "2026-07-21T14:41:05.366Z",
+      "browser_context": null,
+      "market_context": null,
+      "market_context_candidate": null,
+      "market_context_source": null,
+      "rendered_by": "static",
+      "run_id": "dfb05780-f100-47b1-9b5c-e8e7ab86668d"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [],
+    "page_signals": {
+      "billing_commitment": null,
+      "commitment_ambiguous": false,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-21T14:41:05.366Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 1,
+          "doc_claims_extracted": 1,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "dfb05780-f100-47b1-9b5c-e8e7ab86668d"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-21T14:41:05.366Z",
+            "adapter": null,
+            "adapter_version": null,
+            "browser_context": null,
+            "capture_id": "cap:d0ec91aeca268c5bda5ce03803e71e0f9ec788eff4a70020af8f1a5d5c945058",
+            "content_hash": "sha256:3427466567c19fb3b1a95364007be5a0dc934d6ffd2ae1a36195d39a7387028e",
+            "content_hash_scope": "normalized_text",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en-US"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "market_context_candidate": null,
+            "market_context_source": null,
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 37,
+            "version": 1
+          }
+        ],
+        "domain": "material.angular.dev",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-21T14:41:05.366Z",
+        "purpose": "pricing",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-21T14:41:05.366Z",
+          "reason": null
+        },
+        "source_id": "src:7e8cb8d5ef89f7f8e9cacb7baa40c6a5d4c56d23fe4987f89122872068f6fe88",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://material.angular.dev"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-21T14:41:07.460Z",
+            "capture_id": "cap:9ceda592267ade7dc1ee3ece7a2358006dfe8d22f78493bb099c09170fe36c2e",
+            "content_hash": "sha256:ab0b146fa50201dfa135b03eb747911285a6433374148f96c76fefdfe31b93ef",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 4590,
+            "version": 1
+          }
+        ],
+        "domain": "github.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-21T14:41:07.460Z",
+        "purpose": "free_plan",
+        "source_id": "src:6cc0f321aa078f2b77b2cad6acda1f70f0456f3c49f05c05df14de2f5ae6a378",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://github.com/angular/components/blob/main/LICENSE"
+      }
+    ],
+    "version": "0.4.0"
+  },
   "editorial_drafts": {
     "author": "Claude Code",
     "content_version": 1,
@@ -189,5 +367,7 @@
         ]
       }
     }
-  }
+  },
+  "slug": "angular-material",
+  "status": "needs_review"
 }
