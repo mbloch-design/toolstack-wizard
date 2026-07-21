@@ -46,6 +46,7 @@ export function loadProfile(slug) {
     planOrder: staging.planOrder, comparePlanKey: staging.comparePlanKey,
     freePlanKey: staging.freePlanKey ?? null, locale: staging.locale,
     editorialSource: staging.editorialSource ?? "legacy",
+    openSource: staging.openSource === true,
   };
   const v = validateProfile(profile);
   if (!v.ok) throw new Error(`profil invalide (${slug}): ${v.errors.join("; ")}`);

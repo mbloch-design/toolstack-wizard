@@ -74,11 +74,17 @@ async function cmdPrepare(a) {
     try {
       const profile = loadProfile(slug);
       const blockers = [];
+      const doc = JSON.parse(readFileSync(path.join(ROOT, "research", "tool-pages", `${slug}.json`), "utf8"));
       // Garde éditoriale automatique (contrat) pour les fiches à contenu research.
       if (profile.editorialSource === "research") {
-        const doc = JSON.parse(readFileSync(path.join(ROOT, "research", "tool-pages", `${slug}.json`), "utf8"));
         const v = validateEditorial(doc.editorial_drafts, { slug });
         if (!v.ok) blockers.push(`éditorial non conforme: ${v.errors.slice(0, 2).join("; ")}`);
+      }
+      // Règle B automatique : un outil free-only (plan comparatif = plan gratuit) ne peut être
+      // canonical que s'il est OPEN SOURCE avec preuve de licence (jamais un freeware propriétaire).
+      if (profile.comparePlanKey === profile.freePlanKey && profile.freePlanKey) {
+        if (!(profile.openSource === true && hasOpenSourceEvidence(doc)))
+          blockers.push("free-only : licence open source vérifiée requise (sinon non représentable en canonical)");
       }
       const { proposal } = await prepareStageDryRun(slug);
       transition(a.batch, slug, "editorial_draft");
@@ -109,6 +115,15 @@ function cmdReport(a) {
   const blocked = rows.filter((r) => r.gate !== "READY").map((r) => r.slug);
   console.log(`\nREADY: ${ready.join(", ") || "—"}\nBLOCKED: ${blocked.join(", ") || "—"}`);
   return { ready, blocked };
+}
+
+// Preuve de licence OPEN SOURCE au sens OSI (nom de licence explicite). NE compte PAS
+// "fair-code"/"source-available"/"sustainable use" (n8n) comme open source.
+const OSI_LICENSE = /\b(MIT|Apache[- ]?2(?:\.0)?|GPL(?:v?[23])?|LGPL|AGPL|BSD(?:-[0-9])?|MPL(?:-2\.0)?|ISC|EPL|CDDL|Unlicense|CC0|Zlib)\b/;
+function hasOpenSourceEvidence(doc) {
+  const hay = JSON.stringify({ claims: doc.collector?.claims ?? [], sources: doc.collector?.sources ?? [],
+    editorial: doc.editorial_drafts ?? {} });
+  return OSI_LICENSE.test(hay);
 }
 
 // ── auto-signature de l'attestation reference_fr (réserve levée par ToolTrim).
