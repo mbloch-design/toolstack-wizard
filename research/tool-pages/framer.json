@@ -682,73 +682,241 @@
     "Devise EUR/USD incohérente dans le stocké"
   ],
   "editorial_drafts": {
-    "author": "ToolTrim research pilot",
+    "author": "Claude Code",
     "content_version": 1,
     "en": {
+      "ai_angle": {
+        "aiTools": [
+          "framer-ai"
+        ],
+        "augmentEn": "Framer bundles AI assistance into the site-building flow: generating page structures, copy and translations, and speeding up the path from a blank canvas to a publishable layout. AI here accelerates production inside the editor rather than replacing the designer's judgment on hierarchy, brand and interactions.",
+        "idealForEn": "Designers and founders who want to move fast from idea to a live, visually refined site and use AI to bootstrap structure and content.",
+        "replaceEn": "Replace Framer with an AI? No: turning a prompt into a coherent, on-brand, published website still needs a real editor for layout, responsive behaviour, CMS and hosting. Framer uses AI to speed up building, not to remove the design and publishing surface.",
+        "stance": "augmente"
+      },
       "cons": [
-        "Additional editors are billed separately",
-        "CMS and bandwidth limits vary significantly by tier",
-        "Legacy plan names can make historical comparisons misleading"
+        "Additional editor seats are billed separately from the site plan, which raises the real cost of team collaboration.",
+        "It is a hosted SaaS only: no self-hosting and no option to run the published site on your own infrastructure.",
+        "Deeply structured or relational content needs can outgrow its CMS, which favours marketing sites over complex applications.",
+        "Design-first freedom implies design responsibility: without layout discipline, results can drift on responsive breakpoints."
       ],
-      "long_description": "Framer helps teams design and publish visual websites quickly, with custom domains, CMS capabilities, and publishing tools depending on the selected plan. Its workflow feels close to modern design tools. Site costs and additional editor-seat costs remain separate parts of the overall budget.",
+      "covers": [
+        "website-builder",
+        "cms",
+        "publishing"
+      ],
+      "functional_needs": [
+        "website-building",
+        "landing-pages",
+        "content-management"
+      ],
+      "long_description": "Framer is a hosted website builder that lets you design and publish visual sites directly from a canvas-based editor, without writing code. Its workflow is close to a modern design tool: you lay out pages freely, style components, add interactions and animations, then publish to the web with hosting included in the paid site plans.\n\nUnlike a developer-oriented stack, Framer targets designers, founders and marketers who want a polished result quickly. Paid plans add a custom domain, CMS collections for structured content (blog, portfolio, case studies), built-in SEO controls and, on higher tiers, staging and collaboration features. AI assistance is built into the editor to help generate structure, copy and translations.\n\nFramer is a fully managed cloud product: there is no self-hosted or desktop edition, and the published site is hosted by Framer. Editions differ by site plan (Free, Basic, Pro, Enterprise), and team collaboration is priced through additional editor seats that are separate from the site plan itself.",
+      "personas": [
+        "freelance-designer",
+        "solo-founder",
+        "marketing-team-member"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "A genuine free plan exists, but it publishes on a Framer subdomain with reduced limits — it does not imply a zero total cost for a real production site.",
+          "Additional editor seats are charged separately from the site plan; team collaboration is not covered by the site price alone.",
+          "Legacy plan names (such as an older entry tier) may appear in historical data and no longer match the current grid."
+        ],
+        "deployment_note": "Framer is hosted SaaS only. Hosting for the published site is included in paid site plans; there is no self-hosted, desktop or on-premise edition. Distinguish the site plan (the site itself and its hosting) from editor-seat costs (team collaboration) and from the Enterprise tier (custom quote).",
+        "free_plan_card": "Free plan — genuine and durable, but publishes on a Framer subdomain with reduced limits and no custom domain",
+        "location_sensitive": true,
+        "plan_details": {
+          "basic": {
+            "deployment": "Hosted by Framer",
+            "quota": "Entry paid site tier with a custom domain and basic CMS",
+            "summary": "For creative personal sites that need a custom domain."
+          },
+          "enterprise": {
+            "deployment": "Hosted by Framer",
+            "quota": "Custom scale and governance (contact sales)",
+            "summary": "Governance, scale and support for larger organisations. Custom quote."
+          },
+          "free": {
+            "deployment": "Hosted by Framer (Framer subdomain)",
+            "note": "Genuine free plan, not a trial; limited and published on a Framer subdomain without a custom domain",
+            "quota": "Reduced limits suited to trying the product or a minimal site",
+            "summary": "To try Framer or publish a minimal site on a Framer subdomain."
+          },
+          "pro": {
+            "deployment": "Hosted by Framer",
+            "quota": "Higher site tier with more CMS collections, staging and collaboration features",
+            "summary": "For growing professional sites needing staging, branching and more CMS."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Framer is priced per site plan (the pricing unit is the site), with paid tiers unlocking custom domains, CMS capacity, hosting and collaboration. Team collaboration is billed through additional editor seats, separate from the site plan. Enterprise is on a custom quote.",
+        "usage_sensitive": true
+      },
       "pros": [
-        "Fast path from design to a live site",
-        "Strong visual polish",
-        "Staging and collaboration features on higher tiers"
+        "Fast path from a design canvas to a published, visually polished site, with hosting included on paid plans.",
+        "Design-tool-like editing (free layout, components, interactions and animations) with no code required.",
+        "Built-in CMS, custom domains and SEO controls make it viable for real marketing sites and portfolios, not just prototypes.",
+        "Higher tiers add staging, branching and collaboration for teams working on the same site."
       ],
-      "short_description": "A visual website builder focused on speed, design quality, and interactions.",
+      "relevant_for": [
+        "design",
+        "marketing",
+        "founders"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Framer: ToolTrim review. Hosted, no-code visual website builder with CMS, custom domains and AI assistance — who it fits, when to avoid it, and how editions and editor seats work."
+      },
+      "short_description": "Hosted, no-code visual website builder for designers and founders, focused on speed, design quality and publishing.",
+      "solo_relevance": "high",
+      "team_relevance": "medium",
       "use_cases": [
-        "Build a polished landing page",
-        "Publish a portfolio",
-        "Launch a marketing site with a CMS quickly"
+        "Design and publish a visually polished landing page without code.",
+        "Build and host a portfolio on a custom domain.",
+        "Launch a marketing site with a CMS-driven blog or case studies.",
+        "Iterate on a professional site with staging before publishing changes."
       ],
       "verdict": {
         "avoidIf": [
-          "You need a highly complex CMS",
-          "You have many paid editors"
+          "You need a highly complex or deeply relational CMS, or an application rather than a marketing site.",
+          "You require self-hosting or ownership of the hosting infrastructure.",
+          "Your team has many editors and seat costs would dominate the budget."
         ],
         "keepIf": [
-          "You prioritize design speed and visual quality",
-          "Your team already works with design-tool-like workflows"
+          "You prioritise design speed and visual quality and are comfortable in a canvas-based editor.",
+          "You want a live site with a custom domain, CMS and hosting handled for you.",
+          "You are a designer, founder or small marketing team shipping portfolios or marketing sites."
         ],
-        "threshold": "Worth it for quickly publishing a visually polished marketing site or portfolio."
-      }
+        "threshold": "Framer is the right choice when design quality and speed-to-publish matter more than deep application logic or self-hosting; if you need complex data models or infrastructure control, a different stack fits better."
+      },
+      "verticals": [
+        "web-design",
+        "marketing-sites",
+        "portfolios"
+      ]
     },
     "facts_basis": [
-      "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3"
+      "cap:0274136d668eb9dd5e89607f4668a80b456f753062e580a58ac8f17174cd2bb3",
+      "cap:cd5e5525d09cf4347b787afd0b19d51cdbd447b1dbdf748187916d2fc6cb5637",
+      "cap:4ee17a3799d760995758f41c4ec4ef440d50f1664e6e1255283923e56cb324f9"
     ],
     "fr": {
+      "ai_angle": {
+        "aiTools": [
+          "framer-ai"
+        ],
+        "augmentFr": "Framer intègre une assistance IA directement dans le flux de création : génération de structure de page, de contenu et de traductions, pour accélérer le passage d'une page blanche à une mise en page publiable. Ici l'IA accélère la production dans l'éditeur, sans remplacer le jugement du designer sur la hiérarchie, la marque et les interactions.",
+        "idealForFr": "Designers et fondateurs qui veulent aller vite de l'idée à un site en ligne soigné, en s'appuyant sur l'IA pour amorcer structure et contenu.",
+        "replaceFr": "Remplacer Framer par une IA ? Non : transformer un prompt en site cohérent, fidèle à la marque et publié nécessite toujours un vrai éditeur pour la mise en page, le responsive, le CMS et l'hébergement. Framer utilise l'IA pour accélérer la construction, pas pour supprimer la surface de design et de publication.",
+        "stance": "augmente"
+      },
       "cons": [
-        "Les éditeurs supplémentaires sont facturés séparément",
-        "Les limites CMS et de bande passante varient fortement selon l’offre",
-        "Les anciens noms de plans peuvent rendre les comparaisons historiques trompeuses"
+        "Les éditeurs supplémentaires sont facturés séparément de l'offre de site, ce qui alourdit le coût réel de la collaboration en équipe.",
+        "C'est un SaaS hébergé uniquement : pas d'auto-hébergement ni de possibilité d'exploiter le site publié sur sa propre infrastructure.",
+        "Des besoins de contenu très structurés ou relationnels peuvent dépasser son CMS, plutôt taillé pour des sites marketing que pour des applications complexes.",
+        "La liberté du design implique une responsabilité de design : sans discipline de mise en page, le rendu peut déraper sur les points de rupture responsive."
       ],
-      "long_description": "Framer permet de concevoir et publier rapidement des sites visuels, avec domaine personnalisé, CMS et outils de mise en ligne selon l’offre choisie. Il se distingue par un flux de travail proche des outils de design. Les frais liés au site et ceux des éditeurs supplémentaires restent deux dimensions différentes du coût.",
+      "covers": [
+        "website-builder",
+        "cms",
+        "publishing"
+      ],
+      "functional_needs": [
+        "website-building",
+        "landing-pages",
+        "content-management"
+      ],
+      "long_description": "Framer est un créateur de sites hébergé qui permet de concevoir et publier des sites visuels directement depuis un éditeur type canvas, sans écrire de code. Son flux de travail est proche d'un outil de design moderne : on met en page librement, on style les composants, on ajoute interactions et animations, puis on publie sur le web avec l'hébergement inclus dans les offres de site payantes.\n\nContrairement à une stack orientée développeurs, Framer vise les designers, fondateurs et profils marketing qui veulent un résultat soigné rapidement. Les offres payantes ajoutent un domaine personnalisé, des collections CMS pour du contenu structuré (blog, portfolio, études de cas), des réglages SEO intégrés et, sur les paliers supérieurs, des fonctions de staging et de collaboration. Une assistance IA est intégrée à l'éditeur pour aider à générer structure, contenu et traductions.\n\nFramer est un produit cloud entièrement géré : il n'existe pas d'édition auto-hébergée ni desktop, et le site publié est hébergé par Framer. Les éditions se distinguent par l'offre de site (Free, Basic, Pro, Enterprise), et la collaboration en équipe se facture via des éditeurs supplémentaires, distincts de l'offre de site elle-même.",
+      "personas": [
+        "freelance-designer",
+        "solo-founder",
+        "marketing-team-member"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Un vrai plan gratuit existe, mais il publie sur un sous-domaine Framer avec des limites réduites — il n'implique pas un coût total nul pour un site de production réel.",
+          "Les éditeurs supplémentaires sont facturés séparément de l'offre de site ; la collaboration en équipe n'est pas couverte par le seul prix du site.",
+          "D'anciens noms de plans (comme une ancienne offre d'entrée) peuvent apparaître dans les données historiques et ne plus correspondre à la grille actuelle."
+        ],
+        "deployment_note": "Framer est un SaaS hébergé uniquement. L'hébergement du site publié est inclus dans les offres de site payantes ; il n'y a pas d'édition auto-hébergée, desktop ou on-premise. Distinguer l'offre de site (le site lui-même et son hébergement), le coût des éditeurs (collaboration en équipe) et l'offre Enterprise (sur devis).",
+        "free_plan_card": "Plan gratuit — réel et durable, mais publie sur un sous-domaine Framer avec des limites réduites et sans domaine personnalisé",
+        "location_sensitive": true,
+        "plan_details": {
+          "basic": {
+            "deployment": "Hébergé par Framer",
+            "quota": "Palier de site payant d'entrée, avec domaine personnalisé et CMS de base",
+            "summary": "Pour des sites personnels créatifs nécessitant un domaine personnalisé."
+          },
+          "enterprise": {
+            "deployment": "Hébergé par Framer",
+            "quota": "Échelle et gouvernance personnalisées (sur devis)",
+            "summary": "Gouvernance, échelle et support pour les grandes organisations. Tarif sur devis."
+          },
+          "free": {
+            "deployment": "Hébergé par Framer (sous-domaine Framer)",
+            "note": "Vrai plan gratuit, pas un essai ; limité et publié sur un sous-domaine Framer sans domaine personnalisé",
+            "quota": "Limites réduites, adaptées à l'essai du produit ou à un site minimal",
+            "summary": "Pour essayer Framer ou publier un site minimal sur un sous-domaine Framer."
+          },
+          "pro": {
+            "deployment": "Hébergé par Framer",
+            "quota": "Palier de site supérieur, avec plus de collections CMS, staging et fonctions de collaboration",
+            "summary": "Pour des sites professionnels en croissance nécessitant staging, branching et davantage de CMS."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Framer se tarife par offre de site (l'unité de tarification est le site), les paliers payants débloquant domaines personnalisés, capacité CMS, hébergement et collaboration. La collaboration en équipe se facture via des éditeurs supplémentaires, distincts de l'offre de site. L'offre Enterprise est sur devis.",
+        "usage_sensitive": true
+      },
       "pros": [
-        "Passage rapide du design au site publié",
-        "Bon niveau de finition visuelle",
-        "Fonctions de staging et de collaboration sur les offres supérieures"
+        "Passage rapide d'un canvas de design à un site publié et soigné, avec hébergement inclus dans les offres payantes.",
+        "Édition proche d'un outil de design (mise en page libre, composants, interactions et animations) sans code.",
+        "CMS intégré, domaines personnalisés et réglages SEO en font une option viable pour de vrais sites marketing et portfolios, pas seulement des prototypes.",
+        "Les paliers supérieurs ajoutent staging, branching et collaboration pour les équipes travaillant sur un même site."
       ],
-      "short_description": "Un outil de création de sites visuels centré sur la rapidité, le design et les interactions.",
+      "relevant_for": [
+        "design",
+        "marketing",
+        "founders"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Framer : fiche ToolTrim. Créateur de sites visuel, no-code et hébergé, avec CMS, domaines personnalisés et assistance IA — à qui il convient, quand l'éviter, et comment fonctionnent éditions et éditeurs."
+      },
+      "short_description": "Créateur de sites visuel, no-code et hébergé, pour designers et fondateurs, centré sur la rapidité, la qualité de design et la publication.",
+      "solo_relevance": "high",
+      "team_relevance": "medium",
       "use_cases": [
-        "Créer une landing page soignée",
-        "Publier un portfolio",
-        "Lancer rapidement un site marketing avec CMS"
+        "Concevoir et publier une landing page très soignée sans code.",
+        "Construire et héberger un portfolio sur un domaine personnalisé.",
+        "Lancer un site marketing avec un blog ou des études de cas gérés en CMS.",
+        "Itérer sur un site professionnel en staging avant de publier les changements."
       ],
       "verdict": {
         "avoidIf": [
-          "Tu as besoin d’un CMS très complexe",
-          "Ton équipe comporte de nombreux éditeurs payants"
+          "Vous avez besoin d'un CMS très complexe ou relationnel, ou d'une application plutôt que d'un site marketing.",
+          "Vous exigez l'auto-hébergement ou la maîtrise de l'infrastructure d'hébergement.",
+          "Votre équipe compte de nombreux éditeurs et le coût des sièges dominerait le budget."
         ],
         "keepIf": [
-          "Tu privilégies la vitesse de conception et la qualité visuelle",
-          "Ton équipe travaille déjà avec une logique proche des outils de design"
+          "Vous privilégiez la vitesse de conception et la qualité visuelle et êtes à l'aise dans un éditeur type canvas.",
+          "Vous voulez un site en ligne avec domaine personnalisé, CMS et hébergement pris en charge pour vous.",
+          "Vous êtes designer, fondateur ou petite équipe marketing publiant portfolios ou sites marketing."
         ],
-        "threshold": "Pertinent pour publier vite un site marketing ou un portfolio très visuel."
-      }
+        "threshold": "Framer est le bon choix quand la qualité de design et la rapidité de publication comptent plus que la logique applicative profonde ou l'auto-hébergement ; si vous avez besoin de modèles de données complexes ou du contrôle de l'infrastructure, une autre stack convient mieux."
+      },
+      "verticals": [
+        "web-design",
+        "marketing-sites",
+        "portfolios"
+      ]
     },
     "generated_on": "2026-07-20",
-    "pricing_facts_policy": "Les montants, devises et engagements restent exclusivement dans collector.observations.",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
     "status": "draft"
   },
   "identity": {

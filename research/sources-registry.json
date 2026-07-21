@@ -316,6 +316,38 @@
           "verified_on": "2026-07-20"
         }
       ]
+    },
+    "contra": {
+      "adapter": "contra",
+      "pricing_url": "https://contra.com/pricing",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-21",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Grille servie en USD (symbole $ ; Free $0/mo, Pro $199/yr ou $29/mo) même sous Accept-Language fr-FR ; la page n'expose ni <html lang> ni Content-Language FR (constaté 2026-07-21). Contra est une plateforme mondiale pour freelances : aucune grille EUR n'est servie depuis un egress FR. Décision humaine : traiter comme grille mondiale USD, observed_market/locale nuls.",
+      "plan_key_mapping": {
+        "Free": "free",
+        "Pro": "pro"
+      },
+      "plan_key_mapping_note": "Deux offres publiques : Free (usage gratuit durable, commission-free) et Pro (mensuel ou annuel). Le total n'est jamais nul : des frais de plateforme par paiement + frais de traitement tiers subsistent (traité en éditorial, jamais comme coût 0).",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "La grille officielle expose une offre Free durable à 0 $/mois (colonne « Free », bouton d'accès), distincte d'un essai : Contra est « always commission-free ». Le fait est porté par ce claim ; aucune observation 0 USD n'est fabriquée. Coût total NON nul : frais de plateforme par paiement + frais de traitement tiers (éditorial).",
+          "proof_pattern": "Free \\$ ?0 / mo|always commission-free for all creatives",
+          "purpose": "free_plan",
+          "renderer_hint": "static",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://contra.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-21"
+        }
+      ]
     }
   }
 }

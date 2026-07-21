@@ -1,0 +1,120 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-21T09:29:47.991Z",
+      "attestation_id": "sha256:f31d235dc37bdf4fcc23bcd795baef778a1fd20dcbc675ff872a24428f3b2f4b",
+      "content_hash": "sha256:ced35f6360754da53d3cdeb01c4b726c5ca7761d9d12d474f0427299f1941f46",
+      "content_language": null,
+      "currency_symbols_seen": [],
+      "egress_country": null,
+      "egress_measured_from": null,
+      "egress_source": null,
+      "final_url": "https://contra.com/pricing",
+      "html_lang": null,
+      "http_status": 200,
+      "locale_requested": null,
+      "navigator_language": null,
+      "rendered_by": "static",
+      "resolved_locale": null,
+      "run_id": "e5290438-2d60-45b3-a2e3-786c75da166c",
+      "schema": "context_attestation/1",
+      "slug": "contra",
+      "source_url": "https://contra.com/pricing",
+      "timezone": null,
+      "visible_markers": []
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "contra",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": null,
+      "content_hash": "sha256:ced35f6360754da53d3cdeb01c4b726c5ca7761d9d12d474f0427299f1941f46",
+      "http_status": 200,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "mode": "network_forced",
+      "rendered_by": "static",
+      "slug": "contra",
+      "url": "https://contra.com/pricing"
+    },
+    {
+      "content_hash": "sha256:2ccc32bc208ef3e200ff604139052e176d591e54b0b340ab40ee97331e127d50",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "static",
+      "slug": "contra",
+      "url": "https://contra.com/pricing"
+    }
+  ],
+  "claims_created": 2,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=2 claims_created=1 claims_unchanged=0 claims_confirmed=1 conflicts_opened=1 versions_created=1 attestations_created=1 approved=0 | doc_claims: extracted=1 created=0 unchanged=1",
+  "errors": [],
+  "finished_at": "2026-07-21T09:29:52.441Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 1,
+    "claims_created": 1,
+    "claims_extracted": 2,
+    "claims_unchanged": 0,
+    "conflicts_opened": 1,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 1,
+    "doc_claims_unchanged": 1,
+    "versions_created": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "contra"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 1,
+      "created": false,
+      "hash": "sha256:ced35f6360754da53d3cdeb01c4b726c5ca7761d9d12d474f0427299f1941f46",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 1,
+        "claims_created": 1,
+        "claims_extracted": 2,
+        "claims_unchanged": 0,
+        "conflicts_opened": 1,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 1,
+        "doc_claims_unchanged": 1,
+        "versions_created": 1
+      },
+      "networkChecked": true,
+      "observations": 2,
+      "slug": "contra",
+      "url": "https://contra.com/pricing",
+      "versionsCreated": 1
+    }
+  ],
+  "review_status": "open",
+  "run_id": "e5290438-2d60-45b3-a2e3-786c75da166c",
+  "started_at": "2026-07-21T09:29:47.986Z",
+  "valid": true
+}

@@ -1044,73 +1044,233 @@
     "20€ stocké → 12€ (FR annuel)"
   ],
   "editorial_drafts": {
-    "author": "ToolTrim research pilot",
-    "content_version": 1,
+    "author": "Claude Code",
+    "content_version": 2,
     "en": {
+      "ai_angle": {
+        "aiTools": [],
+        "augmentEn": "Squarespace bundles assistive AI inside the builder to help draft copy, generate layout ideas and speed up publishing. It stays a helper for the site owner, not an autonomous agent: you review and approve what goes live.",
+        "idealForEn": "Non-technical creators and small businesses who want AI help to write and structure a site faster, without leaving the editor.",
+        "replaceEn": "Replace Squarespace with an AI? No: publishing, hosting and selling still need a managed platform. The built-in AI accelerates content and layout work, but the site owner keeps editorial control.",
+        "stance": "augmente"
+      },
       "cons": [
-        "Less flexible than development-oriented tools",
-        "Transaction fees vary by plan",
-        "Each website has its own subscription"
+        "Customization is more constrained than a developer-oriented stack: you work within the templates and the editor rather than an open codebase.",
+        "Fully managed and closed: no self-hosting and no export to run the site elsewhere, so you are tied to the platform.",
+        "Selling online carries transaction fees that differ by plan, and moving up tiers mainly buys lower fees and more commerce features.",
+        "Each website is billed as its own subscription, so running several sites multiplies the cost."
       ],
-      "long_description": "Squarespace combines website creation, hosting, content, and commerce features in a guided interface. It suits freelancers and small organizations that want a professional presence without assembling several services. Plan choice mainly depends on contributor count, customization needs, and selling-related fees.",
+      "covers": [
+        "website-builder",
+        "hosting",
+        "ecommerce"
+      ],
+      "functional_needs": [
+        "website-creation",
+        "online-store",
+        "content-publishing"
+      ],
+      "long_description": "Squarespace is an all-in-one website builder that bundles design templates, hosting, content management and commerce behind a single guided editor. Instead of assembling a CMS, a host, a domain and a store separately, you get one managed platform where creating pages, connecting a custom domain, publishing a blog and selling products all live in the same place.\n\nIt is built for people who value getting online cleanly over maximum technical control. You customize through templates, style controls and drag-and-drop blocks rather than by owning the code; higher tiers open more advanced styling (CSS/JavaScript on the commerce-heavy plans) and reduce online-store transaction fees. Built-in AI tools help draft copy and lay out pages, and a custom domain is included with the paid plans.\n\nImportant to understand about the model: Squarespace is a closed, fully hosted SaaS. Licence, hosting and day-to-day operations are bundled together — there is no self-hosting and no way to take the site to run elsewhere. Billing applies per individual website, so each site you run is a separate subscription. There is no durable free plan: you can evaluate the product during a time-limited free trial, but keeping a site online requires a paid plan.",
+      "personas": [
+        "freelancer",
+        "small-business-owner",
+        "creator"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "There is no durable free plan: a time-limited free trial lets you evaluate the product, but a live site requires a paid plan.",
+          "Prices are observed in the FR market (EUR); amounts and taxes are not restated here and live only in collector.observations.",
+          "Online selling adds transaction fees that vary by tier, so the real cost of a store depends on sales volume, not just the plan price.",
+          "Billing is per website: running several sites means several subscriptions."
+        ],
+        "deployment_note": "Fully managed SaaS: licence, hosting and operations are bundled and there is no self-hosting or site export. Billing applies to each individual website separately.",
+        "pricing_model": "Squarespace is sold as a per-website subscription across a small ladder of tiers (entry, then commerce-oriented plans). The default billing view is an annual commitment paid up front; higher tiers mainly add customization, commerce features and lower online-store transaction fees. There is no durable free plan, only a time-limited trial.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": true,
+        "plan_details": {
+          "basic": {
+            "deployment": "Managed SaaS (hosting included), billed per website",
+            "quota": "Entry tier with a limited number of contributors; core site-building and payment features",
+            "summary": "To launch a professional site with the essentials and start being found online."
+          },
+          "core": {
+            "deployment": "Managed SaaS (hosting included), billed per website",
+            "quota": "Unlimited contributors; fuller commerce and customization feature set",
+            "summary": "To grow a site with more customization and commerce as the activity develops."
+          },
+          "plus": {
+            "deployment": "Managed SaaS (hosting included), billed per website",
+            "quota": "Reduced online-store transaction fees and more advanced selling tools",
+            "summary": "For activities that want lower processing fees and to scale selling."
+          },
+          "advanced": {
+            "deployment": "Managed SaaS (hosting included), billed per website",
+            "quota": "Lowest online-store transaction fees and the most advanced commerce tools",
+            "summary": "For high-volume activities looking for the lowest selling fees."
+          }
+        }
+      },
       "pros": [
-        "All-in-one environment",
-        "Guided publishing workflow",
-        "Commerce features across several tiers"
+        "Genuinely all-in-one: design, hosting, content and a store in one managed platform, with a custom domain included on paid plans.",
+        "Guided, low-friction publishing: polished templates and drag-and-drop editing get a professional site online without code.",
+        "Commerce available across the range, with higher tiers unlocking lower transaction fees and more advanced selling tools.",
+        "Built-in AI helps draft copy and structure pages, speeding up first publication for non-technical users."
       ],
-      "short_description": "An all-in-one website builder for publishing, selling, and managing an online presence.",
+      "relevant_for": [
+        "marketing",
+        "sales",
+        "founder"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Squarespace: ToolTrim review. All-in-one managed website builder with hosting, commerce and built-in AI for non-technical creators — per-site billing, no free plan, when to pick it."
+      },
+      "short_description": "All-in-one managed website builder with hosting, content and commerce in a single guided editor, aimed at non-technical creators and small businesses.",
+      "solo_relevance": "high",
+      "team_relevance": "medium",
       "use_cases": [
-        "Create a professional business website",
-        "Publish a portfolio or blog",
-        "Sell products, services, or content"
+        "Launch a professional business or portfolio website without assembling separate hosting, CMS and domain services.",
+        "Publish and maintain a blog or content site through a guided editor.",
+        "Sell products, services or content with a built-in online store.",
+        "Get a clean, hosted presence online quickly with no server administration."
       ],
       "verdict": {
         "avoidIf": [
-          "You need fine-grained technical control",
-          "You run several sites and may underestimate per-site costs"
+          "You need fine-grained technical control, an open codebase or the ability to self-host and export the site.",
+          "You run several sites and want to avoid paying a separate subscription for each one.",
+          "Your project depends on capabilities the templates and closed platform don't expose."
         ],
         "keepIf": [
-          "You want a professional site without managing multiple services",
-          "You prefer a guided setup"
+          "You want a professional site online quickly without assembling and managing several services.",
+          "You are non-technical (or want to stay non-technical) and prefer a guided, all-in-one editor.",
+          "You want hosting, content and a store bundled, with selling available as you grow."
         ],
-        "threshold": "Worth it for small organizations that value operational simplicity over maximum technical freedom."
-      }
+        "threshold": "Squarespace is the right choice when operational simplicity and an all-in-one managed platform matter more than technical control or ownership; if you need open code, self-hosting or many sites cheaply, a different approach fits better."
+      },
+      "verticals": [
+        "small-business",
+        "creative",
+        "ecommerce"
+      ]
     },
     "facts_basis": [
-      "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e"
+      "cap:9cade5521852435b073c5a04267451cb09db27e2af55df6bcd06c7b2618d5f6e",
+      "cap:50cdb445e839a62a2eea907c6773c462abbe10fed5474e3d1cac1d692fada485",
+      "cap:74b9e216f8695aa3e2f834035736e35d4a240b5a9d15acf89232980eb00427e2"
     ],
     "fr": {
+      "ai_angle": {
+        "aiTools": [],
+        "augmentFr": "Squarespace intègre une IA d'assistance dans l'éditeur pour aider à rédiger des textes, générer des idées de mise en page et accélérer la mise en ligne. Elle reste une aide pour le propriétaire du site, pas un agent autonome : c'est vous qui relisez et validez ce qui est publié.",
+        "idealForFr": "Créateurs et petites entreprises non techniques qui veulent une aide IA pour rédiger et structurer un site plus vite, sans quitter l'éditeur.",
+        "replaceFr": "Remplacer Squarespace par une IA ? Non : publier, héberger et vendre exigent toujours une plateforme gérée. L'IA intégrée accélère le travail de contenu et de mise en page, mais le propriétaire du site garde le contrôle éditorial.",
+        "stance": "augmente"
+      },
       "cons": [
-        "Personnalisation plus contrainte qu’un outil orienté développement",
-        "Les frais de transaction varient selon l’offre",
-        "Chaque site possède son propre abonnement"
+        "Personnalisation plus contrainte qu'une stack orientée développement : on travaille dans les templates et l'éditeur plutôt que dans un code ouvert.",
+        "Plateforme fermée et entièrement gérée : ni auto-hébergement ni export pour faire tourner le site ailleurs, d'où une dépendance à la plateforme.",
+        "La vente en ligne s'accompagne de frais de transaction qui varient selon l'offre ; monter en gamme sert surtout à réduire ces frais et à débloquer des fonctions commerciales.",
+        "Chaque site est facturé comme un abonnement distinct : exploiter plusieurs sites multiplie le coût."
       ],
-      "long_description": "Squarespace réunit création de site, hébergement, contenus et fonctions commerciales dans une interface guidée. Il convient aux indépendants et petites structures qui veulent lancer une présence professionnelle sans assembler plusieurs services. Le choix d’offre dépend surtout du nombre de contributeurs, du niveau de personnalisation et des frais liés à la vente.",
+      "covers": [
+        "website-builder",
+        "hosting",
+        "ecommerce"
+      ],
+      "functional_needs": [
+        "website-creation",
+        "online-store",
+        "content-publishing"
+      ],
+      "long_description": "Squarespace est un constructeur de sites tout-en-un qui réunit templates de design, hébergement, gestion de contenu et commerce derrière un éditeur unique et guidé. Plutôt que d'assembler séparément un CMS, un hébergeur, un domaine et une boutique, on dispose d'une seule plateforme gérée où créer des pages, connecter un domaine personnalisé, publier un blog et vendre des produits vivent au même endroit.\n\nIl s'adresse à celles et ceux qui privilégient une mise en ligne propre plutôt qu'un contrôle technique maximal. La personnalisation passe par les templates, des réglages de style et des blocs en glisser-déposer, non par la maîtrise du code ; les offres supérieures ouvrent une personnalisation plus avancée (CSS/JavaScript sur les plans les plus commerciaux) et réduisent les frais de transaction de la boutique en ligne. Des outils d'IA intégrés aident à rédiger les textes et à agencer les pages, et un domaine personnalisé est inclus avec les offres payantes.\n\nUn point important sur le modèle : Squarespace est un SaaS fermé, entièrement hébergé. Licence, hébergement et exploitation au quotidien sont regroupés — pas d'auto-hébergement ni de moyen d'emporter le site pour le faire tourner ailleurs. La facturation s'applique par site individuel : chaque site exploité est un abonnement distinct. Il n'existe pas de plan gratuit durable : on peut évaluer le produit pendant un essai gratuit limité dans le temps, mais garder un site en ligne exige une offre payante.",
+      "personas": [
+        "freelancer",
+        "small-business-owner",
+        "creator"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Il n'existe pas de plan gratuit durable : un essai gratuit limité dans le temps permet d'évaluer le produit, mais un site en ligne exige une offre payante.",
+          "Les prix sont observés sur le marché FR (EUR) ; les montants et la fiscalité ne sont pas repris ici et vivent uniquement dans collector.observations.",
+          "La vente en ligne ajoute des frais de transaction variables selon l'offre : le coût réel d'une boutique dépend du volume de ventes, pas seulement du prix du plan.",
+          "La facturation est par site : exploiter plusieurs sites implique plusieurs abonnements."
+        ],
+        "deployment_note": "SaaS entièrement géré : licence, hébergement et exploitation sont regroupés, sans auto-hébergement ni export du site. La facturation s'applique à chaque site individuellement.",
+        "pricing_model": "Squarespace se vend sous forme d'abonnement par site, sur une courte échelle d'offres (entrée de gamme puis plans orientés commerce). La vue de facturation par défaut est un engagement annuel payé d'avance ; les offres supérieures ajoutent surtout de la personnalisation, des fonctions commerciales et des frais de transaction réduits sur la boutique en ligne. Pas de plan gratuit durable, seulement un essai limité dans le temps.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": true,
+        "plan_details": {
+          "basic": {
+            "deployment": "SaaS géré (hébergement inclus), facturé par site",
+            "quota": "Offre d'entrée avec un nombre limité de contributeurs ; création de site et fonctions de paiement de base",
+            "summary": "Pour lancer un site professionnel avec l'essentiel et se faire connaître en ligne."
+          },
+          "core": {
+            "deployment": "SaaS géré (hébergement inclus), facturé par site",
+            "quota": "Contributeurs illimités ; ensemble de fonctions commerciales et de personnalisation plus complet",
+            "summary": "Pour développer un site avec davantage de personnalisation et de commerce."
+          },
+          "plus": {
+            "deployment": "SaaS géré (hébergement inclus), facturé par site",
+            "quota": "Frais de transaction réduits sur la boutique en ligne et outils de vente plus avancés",
+            "summary": "Pour les activités qui veulent réduire les frais de traitement et développer la vente."
+          },
+          "advanced": {
+            "deployment": "SaaS géré (hébergement inclus), facturé par site",
+            "quota": "Frais de transaction les plus bas sur la boutique en ligne et outils commerciaux les plus avancés",
+            "summary": "Pour les activités à fort volume qui recherchent les frais de vente les plus bas."
+          }
+        }
+      },
       "pros": [
-        "Environnement tout-en-un",
-        "Mise en ligne guidée",
-        "Fonctions commerciales accessibles sur plusieurs offres"
+        "Réellement tout-en-un : design, hébergement, contenu et boutique sur une seule plateforme gérée, domaine personnalisé inclus avec les offres payantes.",
+        "Mise en ligne guidée et sans friction : templates soignés et édition en glisser-déposer pour un site professionnel sans code.",
+        "Commerce disponible sur toute la gamme, les offres supérieures débloquant des frais de transaction plus bas et des outils de vente avancés.",
+        "IA intégrée pour aider à rédiger les textes et structurer les pages, accélérant la première mise en ligne pour un profil non technique."
       ],
-      "short_description": "Un constructeur de sites tout-en-un pour publier, vendre et gérer une présence en ligne.",
+      "relevant_for": [
+        "marketing",
+        "sales",
+        "founder"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Squarespace : fiche ToolTrim. Constructeur de sites tout-en-un géré, hébergement, commerce et IA intégrée pour créateurs non techniques — facturation par site, pas de plan gratuit, quand le choisir."
+      },
+      "short_description": "Constructeur de sites tout-en-un géré, réunissant hébergement, contenu et commerce dans un éditeur unique et guidé, pensé pour les créateurs et petites entreprises non techniques.",
+      "solo_relevance": "high",
+      "team_relevance": "medium",
       "use_cases": [
-        "Créer un site vitrine professionnel",
-        "Publier un portfolio ou un blog",
-        "Vendre des produits, services ou contenus"
+        "Lancer un site vitrine professionnel ou un portfolio sans assembler séparément hébergement, CMS et domaine.",
+        "Publier et maintenir un blog ou un site de contenu via un éditeur guidé.",
+        "Vendre des produits, services ou contenus avec une boutique en ligne intégrée.",
+        "Obtenir rapidement une présence en ligne propre et hébergée, sans administration de serveur."
       ],
       "verdict": {
         "avoidIf": [
-          "Tu veux un contrôle technique très fin",
-          "Tu exploites plusieurs sites et sous-estimes le coût par site"
+          "Vous avez besoin d'un contrôle technique fin, d'un code ouvert ou de pouvoir auto-héberger et exporter le site.",
+          "Vous exploitez plusieurs sites et voulez éviter un abonnement distinct pour chacun.",
+          "Votre projet dépend de capacités que les templates et la plateforme fermée n'exposent pas."
         ],
         "keepIf": [
-          "Tu veux un site professionnel sans gérer plusieurs services",
-          "Tu privilégies une expérience guidée"
+          "Vous voulez un site professionnel en ligne rapidement sans assembler ni gérer plusieurs services.",
+          "Vous êtes non technique (ou souhaitez le rester) et préférez un éditeur tout-en-un et guidé.",
+          "Vous voulez hébergement, contenu et boutique regroupés, avec la vente disponible à mesure que vous grandissez."
         ],
-        "threshold": "Pertinent pour une petite structure qui privilégie la simplicité d’exploitation à la liberté technique maximale."
-      }
+        "threshold": "Squarespace est le bon choix quand la simplicité d'exploitation et une plateforme gérée tout-en-un comptent plus que le contrôle technique ou la propriété ; si vous avez besoin de code ouvert, d'auto-hébergement ou de nombreux sites à bas coût, une autre approche convient mieux."
+      },
+      "verticals": [
+        "small-business",
+        "creative",
+        "ecommerce"
+      ]
     },
-    "generated_on": "2026-07-20",
-    "pricing_facts_policy": "Les montants, devises et engagements restent exclusivement dans collector.observations.",
+    "generated_on": "2026-07-21",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
     "status": "draft"
   },
   "identity": {

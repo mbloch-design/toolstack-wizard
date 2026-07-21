@@ -1,0 +1,193 @@
+{
+  "slug": "angular-material",
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "generated_on": "2026-07-21",
+    "status": "draft",
+    "pricing_facts_policy": "Bibliothèque open-source sous licence MIT : aucune grille tarifaire, aucun montant, devise ou quota n'existe ni n'est rédigé. free_plan_card qualifie le caractère gratuit (licence MIT) sans jamais impliquer un coût total nul : le coût réel se situe dans l'intégration, la maintenance et le build de VOTRE application. Aucun fait tarifaire ne fait autorité.",
+    "facts_basis": [],
+    "fr": {
+      "short_description": "Bibliothèque de composants UI Material Design pour Angular, open-source (MIT), maintenue par l'équipe Angular de Google.",
+      "long_description": "Angular Material est la bibliothèque officielle de composants d'interface pour Angular, qui implémente le langage visuel Material Design. Elle fournit un catalogue prêt à l'emploi — boutons, champs de formulaire, dialogues, tables de données, menus, navigation, date pickers — pensés pour l'accessibilité et la cohérence visuelle.\n\nElle s'appuie sur le CDK (Component Development Kit), un socle de primitives non stylées (overlay, drag-and-drop, virtual scrolling, gestion du focus, a11y) qui sert aussi à construire ses propres composants sur mesure. Le projet regroupe les paquets @angular/material et @angular/cdk, publiés sur npm.\n\nAngular Material vise les équipes qui développent déjà en Angular et veulent une base d'UI accessible et maintenue plutôt que de repartir de zéro. Elle suppose une aisance réelle avec Angular (TypeScript, composants, thèmes SCSS) : ce n'est pas un outil no-code ni un site à assembler, mais une dépendance de code intégrée à une application. Elle est distribuée en open-source sous licence MIT, sans édition payante ni grille tarifaire.",
+      "verdict": {
+        "keepIf": [
+          "Vous construisez déjà une application Angular et voulez une bibliothèque de composants accessible et officiellement maintenue.",
+          "Vous voulez un design system cohérent basé sur Material Design sans réécrire chaque composant.",
+          "Vous avez besoin de primitives bas niveau (overlay, a11y, drag-and-drop) via le CDK pour vos propres composants."
+        ],
+        "avoidIf": [
+          "Votre stack front n'est pas Angular : la bibliothèque n'est pas conçue pour React, Vue ou du HTML statique.",
+          "Vous ne voulez pas adopter l'esthétique Material Design et cherchez un thème visuel radicalement différent.",
+          "Vous cherchez un constructeur d'interface sans code : Angular Material est une dépendance de développement."
+        ],
+        "threshold": "Angular Material devient le bon choix dès qu'une application Angular a besoin d'une UI accessible, cohérente et durablement maintenue ; hors écosystème Angular ou hors Material Design, une autre bibliothèque est préférable."
+      },
+      "pros": [
+        "Open-source sous licence MIT, sans coût de licence ni édition payante.",
+        "Maintenue par l'équipe Angular de Google, alignée sur les versions d'Angular.",
+        "Composants pensés pour l'accessibilité, plus le CDK pour construire ses propres briques.",
+        "Thématisation SCSS et intégration native au framework (TypeScript, injection, modules)."
+      ],
+      "cons": [
+        "Réservée à Angular : aucun intérêt hors de cet écosystème.",
+        "Gratuité de la licence ≠ coût nul : intégration, thématisation, montées de version et maintenance mobilisent du temps de développement.",
+        "L'esthétique Material Design peut être contraignante si l'on vise une identité visuelle très différente.",
+        "Suppose une réelle maîtrise d'Angular et de son cycle de versions (breaking changes possibles à chaque majeure)."
+      ],
+      "use_cases": [
+        "Doter une application Angular d'une UI cohérente et accessible sans réécrire les composants de base.",
+        "Construire des composants sur mesure à partir des primitives du CDK (overlay, focus, drag-and-drop).",
+        "Standardiser un design system Material Design au sein d'une équipe front Angular.",
+        "Accélérer le prototypage d'un back-office ou d'un outil interne en Angular."
+      ],
+      "covers": [
+        "ui-components",
+        "design-system",
+        "accessibility"
+      ],
+      "relevant_for": [
+        "engineering",
+        "frontend",
+        "design-system"
+      ],
+      "personas": [
+        "angular-developer",
+        "frontend-engineer",
+        "design-system-maintainer"
+      ],
+      "functional_needs": [
+        "ui-component-library",
+        "accessible-components",
+        "design-system"
+      ],
+      "verticals": [
+        "web-development",
+        "enterprise-apps",
+        "internal-tools"
+      ],
+      "solo_relevance": "medium",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "augmente",
+        "augmentFr": "Angular Material fournit des composants stables et typés que les assistants de code (génération, échafaudage) peuvent assembler de façon fiable. L'IA accélère l'écriture de formulaires, tables et dialogues, mais la bibliothèque reste le socle déterministe et accessible du rendu.",
+        "replaceFr": "Remplacer Angular Material par une IA ? Non : une bibliothèque de composants apporte accessibilité, cohérence et maintenance versionnée qu'un rendu généré à la volée n'offre pas. L'IA augmente la productivité en s'appuyant sur ces composants, elle ne les remplace pas.",
+        "idealForFr": "Développeurs Angular qui utilisent des assistants de code pour produire plus vite des interfaces à partir de composants éprouvés.",
+        "aiTools": [
+          "github-copilot",
+          "cursor",
+          "claude"
+        ]
+      },
+      "seo": {
+        "metaDescription": "Angular Material : fiche ToolTrim. Bibliothèque de composants UI Material Design pour Angular, open-source MIT et gratuite — périmètre, coûts réels d'intégration et à qui elle convient.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Bibliothèque open-source distribuée sous licence MIT, sans grille tarifaire ni édition commerciale. Le coût de licence est nul ; il n'existe pas de plans payants.",
+        "free_plan_card": "Open-source sous licence MIT — gratuit côté licence ; le coût réel tient à l'intégration, la thématisation, les montées de version et la maintenance dans votre application.",
+        "deployment_note": "Dépendance de code (paquets npm @angular/material et @angular/cdk) intégrée à votre build Angular ; aucun service hébergé ni facturation à l'usage.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "cautions": [
+          "Licence MIT : usage, modification et distribution libres, sans coût de licence.",
+          "Gratuité de la licence n'implique pas un coût total nul : temps d'intégration, de maintenance et de mise à jour à votre charge.",
+          "Aucun plan payant ni support commercial officiel n'est proposé pour la bibliothèque elle-même."
+        ]
+      }
+    },
+    "en": {
+      "short_description": "Material Design UI component library for Angular, open-source (MIT), maintained by Google's Angular team.",
+      "long_description": "Angular Material is the official UI component library for Angular, implementing the Material Design visual language. It ships a ready-to-use catalogue — buttons, form fields, dialogs, data tables, menus, navigation, date pickers — built with accessibility and visual consistency in mind.\n\nIt is built on the CDK (Component Development Kit), a layer of unstyled primitives (overlay, drag-and-drop, virtual scrolling, focus management, a11y) that you also use to build your own custom components. The project bundles the @angular/material and @angular/cdk packages, published on npm.\n\nAngular Material targets teams already building in Angular that want an accessible, maintained UI foundation rather than starting from scratch. It assumes real Angular fluency (TypeScript, components, SCSS theming): it is not a no-code tool or a site builder, but a code dependency wired into an application. It is distributed as open source under the MIT license, with no paid edition and no pricing tiers.",
+      "verdict": {
+        "keepIf": [
+          "You are already building an Angular application and want an accessible, officially maintained component library.",
+          "You want a consistent Material Design system without rewriting every component.",
+          "You need low-level primitives (overlay, a11y, drag-and-drop) via the CDK for your own components."
+        ],
+        "avoidIf": [
+          "Your front-end stack is not Angular: the library is not meant for React, Vue or static HTML.",
+          "You don't want the Material Design aesthetic and need a radically different visual theme.",
+          "You are looking for a no-code interface builder: Angular Material is a development dependency."
+        ],
+        "threshold": "Angular Material becomes the right choice as soon as an Angular application needs an accessible, consistent and durably maintained UI; outside the Angular ecosystem or Material Design, another library is preferable."
+      },
+      "pros": [
+        "Open source under the MIT license, with no licence cost and no paid edition.",
+        "Maintained by Google's Angular team, aligned with Angular releases.",
+        "Components designed for accessibility, plus the CDK to build your own building blocks.",
+        "SCSS theming and native framework integration (TypeScript, injection, modules)."
+      ],
+      "cons": [
+        "Angular-only: no value outside that ecosystem.",
+        "Free licence does not mean zero cost: integration, theming, version upgrades and maintenance take developer time.",
+        "The Material Design aesthetic can be constraining if you want a very different visual identity.",
+        "Assumes solid Angular skills and awareness of its release cycle (breaking changes possible at each major)."
+      ],
+      "use_cases": [
+        "Give an Angular application a consistent, accessible UI without rewriting core components.",
+        "Build custom components on top of CDK primitives (overlay, focus, drag-and-drop).",
+        "Standardise a Material Design system across an Angular front-end team.",
+        "Speed up prototyping of a back-office or internal tool in Angular."
+      ],
+      "covers": [
+        "ui-components",
+        "design-system",
+        "accessibility"
+      ],
+      "relevant_for": [
+        "engineering",
+        "frontend",
+        "design-system"
+      ],
+      "personas": [
+        "angular-developer",
+        "frontend-engineer",
+        "design-system-maintainer"
+      ],
+      "functional_needs": [
+        "ui-component-library",
+        "accessible-components",
+        "design-system"
+      ],
+      "verticals": [
+        "web-development",
+        "enterprise-apps",
+        "internal-tools"
+      ],
+      "solo_relevance": "medium",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "augmente",
+        "augmentEn": "Angular Material provides stable, typed components that code assistants (generation, scaffolding) can assemble reliably. AI speeds up writing forms, tables and dialogs, while the library remains the deterministic, accessible foundation of the rendered UI.",
+        "replaceEn": "Replace Angular Material with an AI? No: a component library brings accessibility, consistency and versioned maintenance that on-the-fly generated markup does not. AI boosts productivity by leaning on these components, it does not replace them.",
+        "idealForEn": "Angular developers using code assistants to ship interfaces faster from proven components.",
+        "aiTools": [
+          "github-copilot",
+          "cursor",
+          "claude"
+        ]
+      },
+      "seo": {
+        "metaDescription": "Angular Material: ToolTrim review. Material Design UI component library for Angular, open-source MIT and free — scope, real integration costs and who it suits.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Open-source library distributed under the MIT license, with no pricing tiers and no commercial edition. Licence cost is zero; there are no paid plans.",
+        "free_plan_card": "Open source under the MIT license — free on the licence side; the real cost lies in integration, theming, version upgrades and maintenance within your application.",
+        "deployment_note": "Code dependency (npm packages @angular/material and @angular/cdk) wired into your Angular build; no hosted service and no usage-based billing.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "cautions": [
+          "MIT license: free to use, modify and distribute, with no licence cost.",
+          "A free licence does not imply zero total cost: integration, maintenance and update time are on you.",
+          "No paid plan or official commercial support is offered for the library itself."
+        ]
+      }
+    }
+  }
+}

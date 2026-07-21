@@ -32,6 +32,7 @@ import { extractWebflow } from "./research-adapters/webflow.mjs";
 import { extractFramer } from "./research-adapters/framer.mjs";
 import { extractSquarespace } from "./research-adapters/squarespace.mjs";
 import { extractN8n } from "./research-adapters/n8n.mjs";
+import { extractContra } from "./research-adapters/contra.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
   valueFingerprintOf, observationIdOf, upsertSource, appendCapture, findCapture,
@@ -48,6 +49,7 @@ const ADAPTERS = {
   framer: extractFramer,
   squarespace: extractSquarespace,
   n8n: extractN8n,
+  contra: extractContra,
 };
 
 export { resolveEffectiveMarketContext, approvedPreEligibility, attestationReadiness,

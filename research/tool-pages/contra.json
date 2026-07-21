@@ -1,0 +1,557 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "pro",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "pro",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:45cf62b05a7470c9e60d94ee9b031e5e31418053dfdf368f12b7670555087365",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "ade and earn even more Upgrade and earn even more Contra is always commission-free for all creatives. Explore plans for feature upgrades and to waive fees for anyone paying you. Free REDUCED FEES Pro Get paid commission-",
+        "evidence_captures": [
+          "cap:45cf62b05a7470c9e60d94ee9b031e5e31418053dfdf368f12b7670555087365"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-21",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-21",
+        "proof_pattern": "Free \\$ ?0 / mo|always commission-free for all creatives",
+        "sourceTier": 1,
+        "source_id": "src:ced185837292cb3bafcdee4c7cb0971287d3bce1f972f25aa71941f69aca4dd2",
+        "source_url": "https://contra.com/pricing",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-21T14:13:04.322Z",
+        "attestation_id": "sha256:da2ee20a2766c065eb432607f111ad19fdbab7846873b93ee45959f0b6eb1a71",
+        "content_hash": "sha256:af96b54a15c4653e710dab74af847d2fe457ef0ae81ae5158d78004861a972f2",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://contra.com/pricing",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "8fbdc27b-1739-4785-ba8c-7617fcbd1fd3",
+        "schema": "context_attestation/1",
+        "slug": "contra",
+        "source_url": "https://contra.com/pricing",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Free: porté par le claim pricing.free_plan_exists, jamais par une observation 0 USD",
+      "Coût total NON nul: frais de plateforme par paiement + traitement tiers (éditorial)",
+      "tax_inclusion inconnu: la grille n'établit ni HT ni TTC"
+    ],
+    "last_checked_at": "2026-07-21T14:13:04.322Z",
+    "last_context_evidence": {
+      "adapter": "contra",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-21T14:13:04.322Z",
+      "browser_context": null,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "static",
+      "run_id": "8fbdc27b-1739-4785-ba8c-7617fcbd1fd3"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "excerpt": "$199 / yr (save 43%)",
+          "selector": "pricing-card:Pro"
+        },
+        "billing_period": "annual",
+        "business_key": "contra|pro|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:7a283842580353cdf296e498be481f7a0b617a8ffeb0faf0aec489e4fca5c772",
+        "confidence": "medium",
+        "content_hash": "sha256:af96b54a15c4653e710dab74af847d2fe457ef0ae81ae5158d78004861a972f2",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:7a283842580353cdf296e498be481f7a0b617a8ffeb0faf0aec489e4fca5c772",
+            "observed_on": "2026-07-21",
+            "run_id": "8fbdc27b-1739-4785-ba8c-7617fcbd1fd3"
+          }
+        ],
+        "evidence_excerpt": "Pro $ 199 / year (save 43%) or $29 / month Get Pro Free REDUCED FEES Pro Get",
+        "evidence_selector": "pricing-card:Pro",
+        "feature_highlights": [
+          "Unlimited job access",
+          "Boosted ranking + discovery score insights",
+          "50% off platform fees",
+          "Faster payouts: 1% fee",
+          "Crypto payouts: 1% fee",
+          "Top priority 24/7 support"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-21",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "registry_justification": "Grille servie en USD (symbole $ ; Free $0/mo, Pro $199/yr ou $29/mo) même sous Accept-Language fr-FR ; la page n'expose ni <html lang> ni Content-Language FR (constaté 2026-07-21). Contra est une plateforme mondiale pour freelances : aucune grille EUR n'est servie depuis un egress FR. Décision humaine : traiter comme grille mondiale USD, observed_market/locale nuls."
+        },
+        "native_amount": 199,
+        "native_currency": "USD",
+        "observation_id": "obs:2885d1ba4cb438addc53d1b8428534bad223837a5f34b7c15e831acb110a3751",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-21",
+        "observed_plan_key": "pro",
+        "plan_key": "pro",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Pro",
+        "plan_summary": "Offre payante Contra : frais de plateforme réduits de 50%, accès illimité aux jobs, meilleur classement et payouts accélérés.",
+        "pricing_unit": "creator",
+        "pricing_unit_evidence": null,
+        "seat_type": null,
+        "source_url": "https://contra.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "contra",
+        "value_fingerprint": "199|USD|annual|creator|·"
+      },
+      {
+        "billing_commitment": null,
+        "billing_commitment_evidence": null,
+        "billing_period": "monthly",
+        "business_key": "contra|pro|·|global_usd_fallback|·",
+        "capture_ref": "cap:7a283842580353cdf296e498be481f7a0b617a8ffeb0faf0aec489e4fca5c772",
+        "confidence": "medium",
+        "content_hash": "sha256:af96b54a15c4653e710dab74af847d2fe457ef0ae81ae5158d78004861a972f2",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:7a283842580353cdf296e498be481f7a0b617a8ffeb0faf0aec489e4fca5c772",
+            "observed_on": "2026-07-21",
+            "run_id": "8fbdc27b-1739-4785-ba8c-7617fcbd1fd3"
+          }
+        ],
+        "evidence_excerpt": "or $29 / mo",
+        "evidence_selector": "pricing-card:Pro",
+        "feature_highlights": [
+          "Unlimited job access",
+          "Boosted ranking + discovery score insights",
+          "50% off platform fees",
+          "Faster payouts: 1% fee",
+          "Crypto payouts: 1% fee",
+          "Top priority 24/7 support"
+        ],
+        "first_observed_on": "2026-07-21",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-21",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "registry_justification": "Grille servie en USD (symbole $ ; Free $0/mo, Pro $199/yr ou $29/mo) même sous Accept-Language fr-FR ; la page n'expose ni <html lang> ni Content-Language FR (constaté 2026-07-21). Contra est une plateforme mondiale pour freelances : aucune grille EUR n'est servie depuis un egress FR. Décision humaine : traiter comme grille mondiale USD, observed_market/locale nuls."
+        },
+        "native_amount": 29,
+        "native_currency": "USD",
+        "observation_id": "obs:ec05ac67450a881273c78a0b60c593371a3e59b581c58d46e5681a672f6e093d",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-21",
+        "observed_plan_key": "pro",
+        "plan_key": "pro",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Pro",
+        "plan_summary": "Offre payante Contra : frais de plateforme réduits de 50%, accès illimité aux jobs, meilleur classement et payouts accélérés.",
+        "pricing_unit": "creator",
+        "pricing_unit_evidence": null,
+        "seat_type": null,
+        "source_url": "https://contra.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "contra",
+        "value_fingerprint": "29|USD|monthly|creator|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "currency_usd": true,
+        "free_plan_proven_on_grid": true,
+        "grid_found": true,
+        "no_enterprise_plan": true,
+        "no_tax_statement_on_grid": true,
+        "pro_monthly_found": true,
+        "pro_yearly_found": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": true,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": true,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [
+          "pricing_unit_evidence sans capture_id"
+        ],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": false,
+        "plan_key": "pro",
+        "plan_name_localized": "Pro",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [
+          "billing_commitment manquant (prix payant)",
+          "pricing_unit_evidence sans capture_id"
+        ],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": false,
+        "plan_key": "pro",
+        "plan_name_localized": "Pro",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-21T14:13:04.322Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 1,
+          "doc_claims_extracted": 1,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "8fbdc27b-1739-4785-ba8c-7617fcbd1fd3"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-21T14:13:04.322Z",
+            "adapter": "contra",
+            "adapter_version": "1.0.0",
+            "browser_context": null,
+            "capture_id": "cap:7a283842580353cdf296e498be481f7a0b617a8ffeb0faf0aec489e4fca5c772",
+            "content_hash": "sha256:af96b54a15c4653e710dab74af847d2fe457ef0ae81ae5158d78004861a972f2",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {},
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 8283,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-21T14:13:06.758Z",
+            "capture_id": "cap:45cf62b05a7470c9e60d94ee9b031e5e31418053dfdf368f12b7670555087365",
+            "content_hash": "sha256:2ccc32bc208ef3e200ff604139052e176d591e54b0b340ab40ee97331e127d50",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 8283,
+            "version": 2
+          }
+        ],
+        "domain": "contra.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-21T14:13:06.758Z",
+        "purpose": "free_plan",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-21T14:13:04.322Z",
+          "reason": null
+        },
+        "source_id": "src:ced185837292cb3bafcdee4c7cb0971287d3bce1f972f25aa71941f69aca4dd2",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://contra.com/pricing"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "officialName": "contra",
+    "pricingUrl": "https://contra.com/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-21",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "contra",
+  "status": "needs_review",
+  "unknowns": [],
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "en": {
+      "ai_angle": {
+        "aiTools": [],
+        "augmentEn": "Contra leans on assisted discovery and matching to connect freelancers with clients; AI acts as a visibility accelerator here, not a substitute for creative work or the client relationship.",
+        "idealForEn": "Creative freelancers who want to be found and paid without commission, while keeping control of their portfolio and client relationships.",
+        "replaceEn": "Replace Contra with an AI? No: an AI replaces neither the marketplace, the contracts, nor the secured payment between a freelancer and their clients. AI can help draft a profile or triage opportunities; the value remains matching and getting paid.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "The 'commission-free' model does not mean free: platform fees apply per payment, on top of third-party payment processing fees.",
+        "Centred on the individual freelancer: poorly suited to running an agency or a team.",
+        "Value depends heavily on the visibility gained in discovery: without inbound clients, it narrows to payment collection.",
+        "Creative-oriented ecosystem: less relevant outside design, content and adjacent trades."
+      ],
+      "covers": [
+        "freelance-marketplace",
+        "portfolio",
+        "payments"
+      ],
+      "functional_needs": [
+        "find-clients",
+        "portfolio-hosting",
+        "get-paid"
+      ],
+      "long_description": "Contra is a platform built for creative freelancers who want to showcase their work, get discovered by clients and get paid in one place. It combines a public portfolio, an opportunity-oriented profile, proposal and contracting tools, and an integrated payment system.\n\nIts core positioning is the absence of commission: Contra takes no commission on the freelancer's earnings, unlike legacy marketplaces. That choice does not make the platform cost-free, however — platform fees apply per payment, and processing fees charged by third-party payment providers remain separate. The paid subscription lowers those fees and improves visibility in discovery.\n\nContra is aimed first at the independent professional: designer, creative, service-oriented profile. It offers a gateway to new clients and a coherent 'profile → proposal → payment' chain, rather than an agency or team management suite.",
+      "personas": [
+        "freelancer",
+        "independent-creative",
+        "solo-designer"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "A durable free usage exists, but the total cost is never zero: platform fees apply per payment, on top of third-party processing fees.",
+          "'Commission-free' targets the commission on the freelancer's earnings, not the platform fees or payment processing fees.",
+          "Grid served in a single global currency on an international platform; market context declared as a global fallback, amounts pending human review."
+        ],
+        "deployment_note": "Hosted SaaS platform (cloud), no self-hosting. Distinguish the durable Free offer from the Pro subscription (monthly or annual), which lowers platform fees and improves visibility in discovery.",
+        "free_plan_card": "Durable, commission-free Free offer — but total cost is not zero: per-payment platform fees and third-party processing fees remain",
+        "location_sensitive": false,
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS (cloud)",
+            "note": "Durable free usage, commission-free; total cost is not zero (per-payment platform fees + third-party processing fees).",
+            "summary": "For a freelancer who wants a portfolio, discovery and payment collection without commission, accepting standard platform fees."
+          },
+          "pro": {
+            "deployment": "SaaS (cloud)",
+            "note": "Monthly or annual subscription; lowers platform fees and improves visibility.",
+            "summary": "For an active freelancer who wants to lower platform fees and gain visibility in discovery."
+          }
+        },
+        "price_reliability": "needs_review",
+        "pricing_model": "A commission-free model on the freelancer's earnings: a durable free offer and a Pro subscription (monthly or annual). Contra takes no commission, but applies platform fees per payment, distinct from the processing fees charged by third-party payment providers; the Pro subscription lowers platform fees and improves visibility.",
+        "usage_sensitive": true
+      },
+      "pros": [
+        "Commission-free on the freelancer's earnings: a strong argument against commission-based marketplaces.",
+        "Coherent 'portfolio → discovery → proposal → payment' chain in one place.",
+        "Built for the independent creative: showcases the work and provides access to inbound clients.",
+        "Optional subscription that lowers platform fees and improves visibility, without being required to get started."
+      ],
+      "relevant_for": [
+        "design",
+        "marketing",
+        "creative",
+        "freelance"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Contra: ToolTrim review. Commission-free platform for creative freelancers — portfolio, discovery and payments. Durable free offer, Pro subscription, and real fees explained."
+      },
+      "short_description": "Commission-free platform for creative freelancers: portfolio, client discovery and payment collection, with a durable free offer and an optional Pro subscription.",
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "use_cases": [
+        "Showcase a portfolio and get discovered by new clients.",
+        "Send proposals and contract with a client without leaving the platform.",
+        "Collect client payments without commission on your earnings.",
+        "Lower platform fees and gain visibility through the Pro subscription."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You run an agency or a team and need a full management suite.",
+          "You want to avoid any platform fee whatsoever.",
+          "You only work with existing off-platform clients and have no need for discovery."
+        ],
+        "keepIf": [
+          "You are a creative freelancer and want to showcase your work, get discovered and get paid in one place.",
+          "You care about not giving up a commission on your earnings to a marketplace.",
+          "Visibility to inbound clients and integrated payment collection are important criteria."
+        ],
+        "threshold": "Contra becomes relevant when you are an independent creative who wants to get discovered, showcase work and get paid without commission; below that (occasional invoicing to already-acquired clients), a simple invoicing tool may suffice."
+      },
+      "verticals": [
+        "creative-freelance",
+        "design-services",
+        "independent-work"
+      ]
+    },
+    "facts_basis": [
+      "cap:45cf62b05a7470c9e60d94ee9b031e5e31418053dfdf368f12b7670555087365"
+    ],
+    "fr": {
+      "ai_angle": {
+        "aiTools": [],
+        "augmentFr": "Contra s'appuie sur des mécanismes de découverte et de mise en relation assistés pour connecter freelances et clients ; l'IA y sert d'accélérateur de visibilité, pas de substitut au travail créatif ni à la relation client.",
+        "idealForFr": "Freelances créatifs qui veulent être trouvés et payés sans commission, tout en gardant la main sur leur portfolio et leurs relations clients.",
+        "replaceFr": "Remplacer Contra par une IA ? Non : une IA ne remplace ni la place de marché, ni les contrats, ni l'encaissement sécurisé entre un freelance et ses clients. L'IA peut aider à rédiger un profil ou à trier des opportunités ; la valeur reste la mise en relation et le paiement.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Le modèle « sans commission » ne signifie pas gratuit : des frais de plateforme s'appliquent par paiement, en plus des frais de traitement des prestataires tiers.",
+        "Centré sur le freelance individuel : peu adapté à la gestion d'une agence ou d'une équipe.",
+        "La valeur dépend fortement de la visibilité obtenue dans la découverte : sans clients entrants, l'intérêt se réduit à l'encaissement.",
+        "Écosystème orienté profils créatifs : moins pertinent hors design, contenu et métiers proches."
+      ],
+      "covers": [
+        "freelance-marketplace",
+        "portfolio",
+        "payments"
+      ],
+      "functional_needs": [
+        "find-clients",
+        "portfolio-hosting",
+        "get-paid"
+      ],
+      "long_description": "Contra est une plateforme pensée pour les freelances créatifs qui veulent présenter leur travail, se faire découvrir par des clients et être payés au même endroit. Elle combine un portfolio public, un profil orienté opportunités, des outils de proposition et de contractualisation, et un système d'encaissement intégré.\n\nSon positionnement central est l'absence de commission : Contra ne prélève pas de commission sur les revenus du freelance, à la différence des places de marché historiques. Ce choix ne rend pas la plateforme sans coût pour autant — des frais de plateforme s'appliquent par paiement, et les frais de traitement facturés par les prestataires de paiement tiers restent à part. L'abonnement payant réduit ces frais et améliore la visibilité dans la découverte.\n\nContra s'adresse d'abord au professionnel indépendant : designer, créatif, profil orienté prestation. Elle offre une porte d'entrée vers de nouveaux clients et une chaîne « profil → proposition → paiement » cohérente, plutôt qu'une suite de gestion d'agence ou d'équipe.",
+      "personas": [
+        "freelancer",
+        "independent-creative",
+        "solo-designer"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Un usage gratuit durable existe, mais le coût total n'est jamais nul : des frais de plateforme s'appliquent par paiement, en plus des frais de traitement des prestataires tiers.",
+          "« Sans commission » vise la commission sur les revenus du freelance, pas les frais de plateforme ni les frais de traitement des paiements.",
+          "Grille servie dans une devise mondiale unique sur une plateforme internationale ; contexte marché déclaré en fallback mondial, montants soumis à revue humaine."
+        ],
+        "deployment_note": "Plateforme SaaS hébergée (cloud), sans auto-hébergement. Distinguer l'offre Free durable de l'abonnement Pro (mensuel ou annuel), qui réduit les frais de plateforme et améliore la visibilité dans la découverte.",
+        "free_plan_card": "Offre Free durable et sans commission — mais coût total non nul : frais de plateforme par paiement et frais de traitement tiers subsistent",
+        "location_sensitive": false,
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS (cloud)",
+            "note": "Usage gratuit durable, sans commission ; coût total non nul (frais de plateforme par paiement + frais de traitement tiers).",
+            "summary": "Pour un freelance qui veut un portfolio, de la découverte et l'encaissement sans commission, en acceptant les frais de plateforme standards."
+          },
+          "pro": {
+            "deployment": "SaaS (cloud)",
+            "note": "Abonnement mensuel ou annuel ; réduit les frais de plateforme et améliore la visibilité.",
+            "summary": "Pour un freelance actif qui veut abaisser ses frais de plateforme et gagner en visibilité dans la découverte."
+          }
+        },
+        "price_reliability": "needs_review",
+        "pricing_model": "Modèle sans commission sur les revenus du freelance : une offre gratuite durable et un abonnement Pro (mensuel ou annuel). Contra ne prélève pas de commission, mais applique des frais de plateforme par paiement, distincts des frais de traitement facturés par les prestataires de paiement tiers ; l'abonnement Pro réduit les frais de plateforme et améliore la visibilité.",
+        "usage_sensitive": true
+      },
+      "pros": [
+        "Sans commission sur les revenus du freelance : un argument fort face aux places de marché à commission.",
+        "Chaîne cohérente « portfolio → découverte → proposition → paiement » en un seul endroit.",
+        "Pensé pour l'indépendant créatif : mise en avant du travail et accès à des clients entrants.",
+        "Abonnement optionnel qui réduit les frais de plateforme et améliore la visibilité, sans être obligatoire pour démarrer."
+      ],
+      "relevant_for": [
+        "design",
+        "marketing",
+        "creative",
+        "freelance"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Contra : fiche ToolTrim. Plateforme sans commission pour freelances créatifs — portfolio, découverte et paiements. Offre gratuite durable, abonnement Pro, et frais réels expliqués."
+      },
+      "short_description": "Plateforme sans commission pour freelances créatifs : portfolio, découverte de clients et encaissement, avec une offre gratuite durable et un abonnement Pro optionnel.",
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "use_cases": [
+        "Présenter un portfolio et être découvert par de nouveaux clients.",
+        "Envoyer des propositions et contractualiser avec un client sans quitter la plateforme.",
+        "Encaisser des paiements de clients sans commission sur ses revenus.",
+        "Réduire ses frais de plateforme et gagner en visibilité via l'abonnement Pro."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous gérez une agence ou une équipe et cherchez une suite de gestion complète.",
+          "Vous voulez éviter tout frais de plateforme, quel qu'il soit.",
+          "Vous ne travaillez qu'avec des clients existants hors plateforme et n'avez pas besoin de découverte."
+        ],
+        "keepIf": [
+          "Vous êtes un freelance créatif et voulez présenter votre travail, être découvert et payé au même endroit.",
+          "Vous tenez à ne pas céder de commission sur vos revenus à une place de marché.",
+          "La visibilité auprès de clients entrants et un encaissement intégré sont des critères importants."
+        ],
+        "threshold": "Contra devient pertinent quand vous êtes un indépendant créatif qui veut se faire découvrir, présenter son travail et encaisser sans commission ; en deçà (facturation ponctuelle à des clients déjà acquis), un simple outil de facturation peut suffire."
+      },
+      "verticals": [
+        "creative-freelance",
+        "design-services",
+        "independent-work"
+      ]
+    },
+    "generated_on": "2026-07-21",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
+    "status": "draft"
+  }
+}

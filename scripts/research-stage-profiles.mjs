@@ -25,6 +25,29 @@ export const STAGING_PROFILES = Object.freeze({
     // Aucun fallback silencieux vers le legacy (voir buildStagingProposal).
     editorialSource: "research",
   }),
+  framer: Object.freeze({
+    // Free/Basic/Pro (+Enterprise sur devis, hors planOrder). Marché global USD (registre).
+    planOrder: Object.freeze(["free", "basic", "pro"]),
+    comparePlanKey: "basic",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
+  squarespace: Object.freeze({
+    // Basic/Core/Plus/Advanced, pas de plan gratuit durable (essai seulement). Hôte fr.* => locale FR.
+    planOrder: Object.freeze(["basic", "core", "plus", "advanced"]),
+    comparePlanKey: "basic",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
+  contra: Object.freeze({
+    // Plateforme freelances : Free durable + Pro. Prix peu publics => observations souvent needs_review.
+    planOrder: Object.freeze(["free", "pro"]),
+    comparePlanKey: "pro",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
 });
 
 export function stagingProfileFor(slug) {
