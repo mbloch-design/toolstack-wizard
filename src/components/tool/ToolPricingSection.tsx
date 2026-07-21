@@ -12,6 +12,8 @@ interface Props {
 export default function ToolPricingSection({ tool, displayPrice, lang, t }: Props) {
   const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
   const canonicalPlans = tool.pricing_v5?.plans || [];
+  // Texte de carte gratuite qualifié (licence vs coût total) fourni par la projection canonique.
+  const freeCard = (tool.pricing_v5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
   const hasFree = hasGenuineFreeTier(pricing?.free);
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const verifiedOn = tool.pricing_v5?.verified_on;
@@ -34,11 +36,14 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               <div className="td-pricing-plan-head">
                 <span className="td-pricing-plan-name">
                   {plan.isFree ? <Sparkles aria-hidden /> : <CreditCard aria-hidden />}
-                  {plan.isFree ? t("Gratuit", "Free") : plan.displayName}
+                  {plan.isFree
+                    ? (plan.pricingUnit === "open_source" ? t("Open source", "Open source") : t("Gratuit", "Free"))
+                    : plan.displayName}
                 </span>
                 {(plan.isFree || plan.nativeAmount != null) && (
                   <strong className="td-pricing-price">
                     {plan.isFree ? "0 €" : formatNativeAmount(plan.nativeAmount!, plan.nativeCurrency)}
+                    {plan.isFree && plan.pricingUnit === "open_source" && <small>{t(" licence", " license")}</small>}
                     {!plan.isFree && plan.billingPeriod === "monthly" && <small>/{t("mois", "mo")}</small>}
                   </strong>
                 )}
@@ -53,7 +58,11 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               )}
               <p className="td-pricing-plan-meta">
                 {plan.isFree
-                  ? t("Plan gratuit durable", "Permanent free plan")
+                  ? (freeCard
+                      ?? (plan.pricingUnit === "open_source"
+                            ? t("Licence open source — infrastructure et exploitation à votre charge",
+                                "Open-source license — infrastructure and operations on you")
+                            : t("Plan gratuit durable", "Permanent free plan")))
                   : [
                       plan.billingCommitment === "annual_prepaid"
                         ? t("abonnement annuel payé d’avance", "annual subscription paid upfront")
