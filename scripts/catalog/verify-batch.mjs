@@ -39,7 +39,7 @@ export async function verifyCatalogInvariants(sql, expected = {}) {
   if (expected.untouched?.fingerprint != null) {
     const ids = expected.untouched.batch ?? [];
     const [fp] = await sql`select md5(coalesce(string_agg(id||':'||data_contract, ',' order by id), '')) fp
-      from public.tools where id <> all(${sql.array(ids)})`;
+      from public.tools where id <> all(${ids}::text[])`;
     A(fp.fp === expected.untouched.fingerprint, "un outil hors lot a été modifié (empreinte divergente)");
   }
 
@@ -59,6 +59,6 @@ export async function verifyCatalogInvariants(sql, expected = {}) {
 /** Empreinte des outils hors d'un lot (à capturer AVANT apply pour la comparaison post-apply). */
 export async function untouchedFingerprint(sql, batchIds) {
   const [fp] = await sql`select md5(coalesce(string_agg(id||':'||data_contract, ',' order by id), '')) fp
-    from public.tools where id <> all(${sql.array(batchIds)})`;
+    from public.tools where id <> all(${batchIds}::text[])`;
   return { batch: batchIds, fingerprint: fp.fp };
 }
