@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 
@@ -69,14 +70,14 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
   return (
     <div className="td-compare">
       <div className="td-compare-controls">
-        <div className="td-compare-controls-actions">
-          <button type="button" onClick={() => goTo(Math.max(0, activeIndex - 1))} disabled={activeIndex === 0} aria-label={t("Alternative précédente", "Previous alternative")}>
-            <ChevronLeft aria-hidden />
-          </button>
-          <button type="button" onClick={() => goTo(Math.min(rows.length - 1, activeIndex + 1))} disabled={activeIndex === rows.length - 1} aria-label={t("Alternative suivante", "Next alternative")}>
-            <ChevronRight aria-hidden />
-          </button>
-        </div>
+        <CarouselControls
+          onPrevious={() => goTo(Math.max(0, activeIndex - 1))}
+          onNext={() => goTo(Math.min(rows.length - 1, activeIndex + 1))}
+          previousDisabled={activeIndex === 0}
+          nextDisabled={activeIndex === rows.length - 1}
+          previousLabel={t("Alternative précédente", "Previous alternative")}
+          nextLabel={t("Alternative suivante", "Next alternative")}
+        />
       </div>
       <div
         className="td-compare-grid"
@@ -166,11 +167,13 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
             })}
       </div>
 
-      <div className="td-compare-dots" aria-label={t("Choisir une carte", "Choose a card")}>
-        {rows.map((row, index) => (
-          <button key={row.id} type="button" className={index === activeIndex ? "is-active" : ""} onClick={() => goTo(index)} aria-label={t(`Afficher ${row.name}`, `Show ${row.name}`)} aria-current={index === activeIndex ? "true" : undefined} />
-        ))}
-      </div>
+      <CarouselPagination
+        current={activeIndex}
+        total={rows.length}
+        onChange={goTo}
+        label={t("Choisir une carte", "Choose a card")}
+        pageLabel={(index) => t(`Afficher ${rows[index].name}`, `Show ${rows[index].name}`)}
+      />
 
     </div>
   );

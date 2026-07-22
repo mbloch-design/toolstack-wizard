@@ -13,6 +13,7 @@
 - L'accueil actif applique ce système à tous ses rails avec un sous-titre rapproché et des actions secondaires alignées à droite.
 - Les composants partagés des fiches outil, comparatifs, guides, pages institutionnelles, catégories et FAQ sont raccordés aux mêmes tokens.
 - Les actions secondaires des en-têtes de section partagent désormais `.tt-section-action` sur l'accueil, le catalogue et les sections éditoriales : même graisse, même flèche Lucide et même mouvement au survol.
+- Les carrousels éditoriaux de l'accueil et le rail d'alternatives utilisent désormais les mêmes contrôles de 36px et la même pagination accessible ; les rails paginés de l'accueil acceptent aussi le balayage horizontal tactile.
 
 ---
 

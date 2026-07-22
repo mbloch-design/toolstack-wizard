@@ -129,6 +129,7 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 - Le sous-titre est placé directement sous le H2 avec un écart de `8px` et utilise `--tt-size-section-intro`.
 - L'action éventuelle reste secondaire, alignée à droite sur desktop et sous le titre sur mobile.
 - Elle utilise `.tt-section-action` : 14px/600, icône Lucide de 15px et déplacement de 3px au survol. La flèche pointe à droite pour naviguer et vers le bas pour rejoindre une ancre interne.
+- Les rails éditoriaux utilisent `CarouselControls` et `CarouselPagination` : boutons circulaires de 36px, icônes de 16px, état désactivé à faible contraste et pagination active en pilule de 20px. Ne pas recréer de contrôles locaux.
 - Dans une galerie ou un rail, les images portent la présence visuelle ; la typographie ne doit pas les concurrencer.
 - Les kickers sont facultatifs. Ne pas en ajouter uniquement pour donner artificiellement de la hauteur au header.
 

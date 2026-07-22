@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo, useState, useCallback } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Bookmark, Plus } from "lucide-react";
+import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
+import { ArrowRight, Bookmark } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -9,6 +9,7 @@ import ToolLogo from "@/components/ToolLogo";
 import ToolLogoPile from "@/components/ToolLogoPile";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
+import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
 // Light index (first 12 stacks, ~3KB gzip) instead of the full 1.7MB stacks.ts:
 // HomePageV2 is an eager import, so pulling stacks.ts here modulepreloaded the
 // data-stacks chunk on every page. Regenerate with scripts/gen-stacks-index.ts.
@@ -51,6 +52,39 @@ const AI_SLUGS = [
 ];
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
 
+function SwipePager({
+  className,
+  onPrevious,
+  onNext,
+  children,
+}: {
+  className: string;
+  onPrevious: () => void;
+  onNext: () => void;
+  children: ReactNode;
+}) {
+  const startX = useRef<number | null>(null);
+
+  const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+    startX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (event: TouchEvent<HTMLDivElement>) => {
+    if (startX.current === null) return;
+    const delta = event.changedTouches[0]?.clientX - startX.current;
+    startX.current = null;
+    if (Math.abs(delta) < 48) return;
+    if (delta < 0) onNext();
+    else onPrevious();
+  };
+
+  return (
+    <div className={className} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      {children}
+    </div>
+  );
+}
+
 /* ── Generic section header ── */
 function SectionHead({ label, description, to, linkLabel }: { label: string; description?: string; to: string; linkLabel: string }) {
   return (
@@ -68,10 +102,11 @@ function SectionHead({ label, description, to, linkLabel }: { label: string; des
 
 /* ── Featured carousel header with arrows ── */
 function FeaturedHead({
-  label, description, to, linkLabel, page, total, onPrev, onNext,
+  label, description, to, linkLabel, page, total, onPrev, onNext, previousLabel, nextLabel,
 }: {
   label: string; description?: string; to: string; linkLabel: string;
   page: number; total: number; onPrev: () => void; onNext: () => void;
+  previousLabel: string; nextLabel: string;
 }) {
   return (
     <div className="v2-section-head">
@@ -80,22 +115,14 @@ function FeaturedHead({
         {description && <p className="v2-section-description">{description}</p>}
       </div>
       <div className="v2-featured-nav">
-        <button
-          className="v2-feat-arrow"
-          onClick={onPrev}
-          disabled={page === 0}
-          aria-label="Page précédente"
-        >
-          <ChevronLeft style={{ width: 16, height: 16 }} />
-        </button>
-        <button
-          className="v2-feat-arrow"
-          onClick={onNext}
-          disabled={page >= total - 1}
-          aria-label="Page suivante"
-        >
-          <ChevronRight style={{ width: 16, height: 16 }} />
-        </button>
+        <CarouselControls
+          onPrevious={onPrev}
+          onNext={onNext}
+          previousDisabled={page === 0}
+          nextDisabled={page >= total - 1}
+          previousLabel={previousLabel}
+          nextLabel={nextLabel}
+        />
         <Link to={to} className="tt-section-action v2-section-link">
           {linkLabel} <ArrowRight aria-hidden />
         </Link>
@@ -120,12 +147,15 @@ const DUO_PAGE_SIZE = 6; // 2 cols × 3 rows per panel
 /* ── One side of a two-up category row: compact icon+name+tagline list,
    its own mini pagination (arrows either side of a "see all" link). ── */
 function CategoryDuoPanel({
-  title, tools, prefix, categoryHref,
+  title, tools, prefix, categoryHref, seeAllLabel, previousLabel, nextLabel,
 }: {
   title: string;
   tools: any[];
   prefix: string;
   categoryHref: string;
+  seeAllLabel: string;
+  previousLabel: string;
+  nextLabel: string;
 }) {
   const [page, setPage] = useState(0);
   const totalPages = Math.max(1, Math.ceil(tools.length / DUO_PAGE_SIZE));
@@ -136,27 +166,18 @@ function CategoryDuoPanel({
       <div className="v2-duo-panel-head">
         <h3 className="v2-duo-panel-title">{title}</h3>
         <div className="v2-duo-panel-nav">
-          <button
-            type="button"
-            className="v2-duo-arrow"
-            onClick={() => setPage((p) => Math.max(0, p - 1))}
-            disabled={page === 0}
-            aria-label="Précédent"
-          >
-            <ChevronLeft style={{ width: 14, height: 14 }} />
-          </button>
-          <Link to={categoryHref} className="v2-duo-panel-link" aria-label="Voir tout">
-            <Plus style={{ width: 14, height: 14 }} />
+          <CarouselControls
+            onPrevious={() => setPage((p) => Math.max(0, p - 1))}
+            onNext={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            previousDisabled={page === 0}
+            nextDisabled={page >= totalPages - 1}
+            previousLabel={previousLabel}
+            nextLabel={nextLabel}
+          />
+          <Link to={categoryHref} className="tt-section-action v2-duo-panel-link">
+            {seeAllLabel}
+            <ArrowRight aria-hidden />
           </Link>
-          <button
-            type="button"
-            className="v2-duo-arrow"
-            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-            disabled={page >= totalPages - 1}
-            aria-label="Suivant"
-          >
-            <ChevronRight style={{ width: 14, height: 14 }} />
-          </button>
         </div>
       </div>
       <div className="v2-duo-list">
@@ -319,8 +340,10 @@ export default function HomePageV2() {
             total={totalPages}
             onPrev={prevPage}
             onNext={nextPage}
+            previousLabel={t("Page précédente", "Previous page") as string}
+            nextLabel={t("Page suivante", "Next page") as string}
           />
-          <div className="tc-grid">
+          <SwipePager className="tc-grid" onPrevious={prevPage} onNext={nextPage}>
             {visibleFeatured.map((tool) => {
               const catName = stripLeadingEmoji(
                 lang === "en"
@@ -332,21 +355,16 @@ export default function HomePageV2() {
                 <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
               );
             })}
-          </div>
+          </SwipePager>
 
           {/* Page dots */}
-          {totalPages > 1 && (
-            <div className="v2-feat-dots">
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <button
-                  key={i}
-                  className={`v2-feat-dot${i === featuredPage ? " v2-feat-dot--active" : ""}`}
-                  onClick={() => setFeaturedPage(i)}
-                  aria-label={`Page ${i + 1}`}
-                />
-              ))}
-            </div>
-          )}
+          <CarouselPagination
+            current={featuredPage}
+            total={totalPages}
+            onChange={setFeaturedPage}
+            label={t("Choisir une page d'outils", "Choose a tools page") as string}
+            pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
+          />
           </>
           )}
 
@@ -362,8 +380,10 @@ export default function HomePageV2() {
                 total={aiTotalPages}
                 onPrev={prevAiPage}
                 onNext={nextAiPage}
+                previousLabel={t("Page précédente", "Previous page") as string}
+                nextLabel={t("Page suivante", "Next page") as string}
               />
-              <div className="tc-grid">
+              <SwipePager className="tc-grid" onPrevious={prevAiPage} onNext={nextAiPage}>
                 {visibleAi.map((tool) => {
                   const catName = stripLeadingEmoji(
                     lang === "en"
@@ -375,15 +395,10 @@ export default function HomePageV2() {
                     <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
                   );
                 })}
-              </div>
-              {aiTotalPages > 1 && (
-                <div className="v2-feat-dots">
-                  {Array.from({ length: aiTotalPages }).map((_, i) => (
-                    <button key={i} className={`v2-feat-dot${i === aiPage ? " v2-feat-dot--active" : ""}`}
-                      onClick={() => setAiPage(i)} aria-label={`Page ${i + 1}`} />
-                  ))}
-                </div>
-              )}
+              </SwipePager>
+              <CarouselPagination current={aiPage} total={aiTotalPages} onChange={setAiPage}
+                label={t("Choisir une page d'outils IA", "Choose an AI tools page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
             </div>
           )}
 
@@ -399,8 +414,10 @@ export default function HomePageV2() {
                 total={newTotalPages}
                 onPrev={prevNewPage}
                 onNext={nextNewPage}
+                previousLabel={t("Page précédente", "Previous page") as string}
+                nextLabel={t("Page suivante", "Next page") as string}
               />
-              <div className="v2-new-grid">
+              <SwipePager className="v2-new-grid" onPrevious={prevNewPage} onNext={nextNewPage}>
                 {visibleNew.map((tool) => {
                   const catName = stripLeadingEmoji(
                     lang === "en"
@@ -420,15 +437,10 @@ export default function HomePageV2() {
                     </Link>
                   );
                 })}
-              </div>
-              {newTotalPages > 1 && (
-                <div className="v2-feat-dots">
-                  {Array.from({ length: newTotalPages }).map((_, i) => (
-                    <button key={i} className={`v2-feat-dot${i === newPage ? " v2-feat-dot--active" : ""}`}
-                      onClick={() => setNewPage(i)} aria-label={`Page ${i + 1}`} />
-                  ))}
-                </div>
-              )}
+              </SwipePager>
+              <CarouselPagination current={newPage} total={newTotalPages} onChange={setNewPage}
+                label={t("Choisir une page de nouveautés", "Choose a new additions page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
             </div>
           )}
 
@@ -450,6 +462,9 @@ export default function HomePageV2() {
                     tools={categoryTools}
                     prefix={prefix}
                     categoryHref={`${prefix}/category/${cat.categoryId}`}
+                    seeAllLabel={t("Voir tout", "See all") as string}
+                    previousLabel={t("Page précédente", "Previous page") as string}
+                    nextLabel={t("Page suivante", "Next page") as string}
                   />
                 ))}
               </div>
@@ -467,8 +482,10 @@ export default function HomePageV2() {
               total={stackTotalPages}
               onPrev={prevStackPage}
               onNext={nextStackPage}
+              previousLabel={t("Page précédente", "Previous page") as string}
+              nextLabel={t("Page suivante", "Next page") as string}
             />
-            <div className="v2-stack-grid">
+            <SwipePager className="v2-stack-grid" onPrevious={prevStackPage} onNext={nextStackPage}>
               {visibleStacks.map((stack) => {
                 const stackTools = stack.tools.slice(0, 5).map((s) => bySlug.get(s.slug)).filter(Boolean);
                 return (
@@ -493,15 +510,10 @@ export default function HomePageV2() {
                   </Link>
                 );
               })}
-            </div>
-            {stackTotalPages > 1 && (
-              <div className="v2-feat-dots">
-                {Array.from({ length: stackTotalPages }).map((_, i) => (
-                  <button key={i} className={`v2-feat-dot${i === stackPage ? " v2-feat-dot--active" : ""}`}
-                    onClick={() => setStackPage(i)} aria-label={`Page ${i + 1}`} />
-                ))}
-              </div>
-            )}
+            </SwipePager>
+            <CarouselPagination current={stackPage} total={stackTotalPages} onChange={setStackPage}
+              label={t("Choisir une page de stacks", "Choose a stacks page") as string}
+              pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
           </div>
 
           {/* ══ 6. Guides — carousel 1×3, same shape as Stacks ══ */}
@@ -516,8 +528,10 @@ export default function HomePageV2() {
                 total={postTotalPages}
                 onPrev={prevPostPage}
                 onNext={nextPostPage}
+                previousLabel={t("Page précédente", "Previous page") as string}
+                nextLabel={t("Page suivante", "Next page") as string}
               />
-              <div className="v2-stack-grid">
+              <SwipePager className="v2-stack-grid" onPrevious={prevPostPage} onNext={nextPostPage}>
                 {visiblePosts.map((post) => {
                   const dateLabel = post.date
                     ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { year: "numeric", month: "short", day: "numeric" })
@@ -549,15 +563,10 @@ export default function HomePageV2() {
                     </Link>
                   );
                 })}
-              </div>
-              {postTotalPages > 1 && (
-                <div className="v2-feat-dots">
-                  {Array.from({ length: postTotalPages }).map((_, i) => (
-                    <button key={i} className={`v2-feat-dot${i === postPage ? " v2-feat-dot--active" : ""}`}
-                      onClick={() => setPostPage(i)} aria-label={`Page ${i + 1}`} />
-                  ))}
-                </div>
-              )}
+              </SwipePager>
+              <CarouselPagination current={postPage} total={postTotalPages} onChange={setPostPage}
+                label={t("Choisir une page de guides", "Choose a guides page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
             </div>
           )}
 
