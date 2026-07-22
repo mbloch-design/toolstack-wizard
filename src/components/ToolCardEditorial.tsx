@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Compass } from "lucide-react";
+import { Compass, MoreVertical } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import ToolLogo from "@/components/ToolLogo";
@@ -30,7 +30,6 @@ export type ToolCardEditorialTool = Pick<
   | "ogImageUrl"
   | "logo"
   | "pricing_v5"
-  | "prescription_quality"
 >>;
 
 interface ToolCardEditorialProps {
@@ -141,7 +140,6 @@ export function ToolCardEditorial({
             overlayMode="static"
             overlay={(
               <div className="tce-cover-meta">
-                {tool.prescription_quality === "ferme" && <span className="tce-cover-pick">ToolTrim Pick</span>}
                 {showPrice && plan !== "N/A" && <span className="tce-cover-price">{plan}</span>}
               </div>
             )}
@@ -150,29 +148,47 @@ export function ToolCardEditorial({
 
         <div className="tce-body">
           <div className="tce-identity-row">
-            <ToolLogo tool={tool} size={40} className="tce-logo" />
+            <ToolLogo tool={tool} size={24} className="tce-logo" />
             <div className="tce-identity-copy">
               <Link className="tce-name-link" to={toolHref} state={linkState}>
                 <h3 className="tce-name">{tool.name}</h3>
               </Link>
-              {(typeLabel || categoryLabel) && <p className="tce-category">{typeLabel || categoryLabel}</p>}
+              {(typeLabel || categoryLabel) && <span className="tce-category">{typeLabel || categoryLabel}</span>}
             </div>
-            <div className="tce-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}>
-              {exploreHref && (
-                <Link
-                  to={exploreHref}
-                  state={exploreState}
-                  className="tce-card-action"
-                  aria-label={t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
-                  title={t("Explorer les outils associés", "Explore related tools")}
+            {(exploreHref || showPin) && (
+              <details className="tce-action-menu">
+                <summary
+                  className="tce-action-trigger"
+                  aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}
+                  title={t("Plus d’actions", "More actions")}
                 >
-                  <Compass size={17} aria-hidden />
-                </Link>
-              )}
-              {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact inline labelMode="icon" />}
-            </div>
+                  <MoreVertical size={19} aria-hidden />
+                </summary>
+                <div className="tce-action-popover">
+                  {exploreHref && (
+                    <Link
+                      to={exploreHref}
+                      state={exploreState}
+                      className="tce-action-item"
+                    >
+                      <Compass size={16} aria-hidden />
+                      <span>{t("Explorer autour", "Explore around")}</span>
+                    </Link>
+                  )}
+                  {showPin && (
+                    <PinToolButton
+                      slug={tool.slug ?? tool.id}
+                      label={tool.name}
+                      t={t}
+                      compact
+                      inline
+                      labelMode="short"
+                    />
+                  )}
+                </div>
+              </details>
+            )}
           </div>
-          {description && <p className="tce-summary">{description}</p>}
         </div>
       </article>
     </div>

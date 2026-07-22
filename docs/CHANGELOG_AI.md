@@ -2,6 +2,22 @@
 
 ---
 
+## 2026-07-22 — Allègement du système de cards catalogue
+
+- Suppression de la coque bordée autour des cards média du catalogue : la miniature, la typographie et l'espacement portent désormais la hiérarchie.
+- Conservation des coques uniquement pour les variantes fonctionnelles et décisionnelles.
+- Regroupement des actions « Explorer » et « Ajouter à la stack » dans un menu contextuel unique afin de réduire la concurrence visuelle.
+- Miniatures autonomes avec rayon harmonisé et mouvement de survol discret.
+- Réduction des piles de logos à 36px maximum, sans ombre ni animation décorative.
+- Documentation des trois niveaux de profondeur de cards dans le design system.
+- Renforcement du lien miniature-identité : espace interne resserré, titre plus distinctif et métadonnées ramenées à une échelle secondaire.
+- Séparation des lignes de la grille portée à 44px pour éviter qu'un titre soit visuellement rattaché à la miniature suivante.
+- Raffinement de la ligne d'identité sur le modèle des galeries éditoriales : logo 30px, titre 16px, catégorie et description 12px, menu compact 30px.
+- Recomposition finale d'après Contra Projects : la zone sous l'image devient une légende unique (logo rond 24px, nom 15px, catégorie inline, menu 28px) et la description est retirée de la card média.
+- Suppression du badge « ToolTrim Pick » des miniatures, dont le signal éditorial n'était pas explicite pour l'utilisateur.
+
+---
+
 ## 2026-07-16 — Brief d’industrialisation des fiches outils
 
 - Ajout d’un brief Claude Code canonique pour auditer, rechercher, sourcer et enrichir les fiches outils par lots.

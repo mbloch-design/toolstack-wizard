@@ -6084,7 +6084,8 @@
   /* ── RESPONSIVE GRID ────────────────────────────────────────────────────── */
   .tc-grid {
     display: grid;
-    gap: 12px;
+    column-gap: 18px;
+    row-gap: 36px;
     grid-template-columns: 1fr;
   }
 
@@ -6432,9 +6433,29 @@
   .tce-card--compact { cursor: pointer; }
 
   /* Catalog media card: the image is the recognition layer, while the
-     identity and actions live below it. Links and buttons are deliberately
-     separated so pinning a tool never competes with opening its fiche. */
-  .tce-card--media:focus-within { border-color: var(--color-text); }
+     identity lives on the page below it. It deliberately has no enclosing
+     card shell: hierarchy comes from image, type and spacing, not another
+     rectangle in an already dense catalog. */
+  .tce-card--media {
+    overflow: visible;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .tce-card--media:hover,
+  .dark .tce-card--media:hover {
+    border-color: transparent;
+    background: transparent;
+  }
+  .tce-card--media:focus-within { border-color: transparent; }
+  .tce-card--media .tc-image {
+    margin: 0;
+    border: 0;
+    border-radius: var(--tt-radius-md);
+    transition: transform 180ms ease-out;
+  }
+  .tce-card--media:hover .tc-image { transform: translateY(-2px); }
   .tce-cover-link {
     display: block;
     color: inherit;
@@ -6442,7 +6463,8 @@
   }
   .tce-cover-link:focus-visible,
   .tce-name-link:focus-visible,
-  .tce-card-action:focus-visible {
+  .tce-action-trigger:focus-visible,
+  .tce-action-item:focus-visible {
     outline: 2px solid var(--color-text);
     outline-offset: 3px;
   }
@@ -6451,6 +6473,11 @@
     background: hsl(var(--card));
     border-color: hsl(var(--border));
     color: hsl(var(--foreground));
+  }
+
+  .dark .tce-card--media {
+    background: transparent;
+    border-color: transparent;
   }
 
   .dark .tce-card:hover {
@@ -6462,56 +6489,100 @@
   .tce-body {
     flex: 1;
   }
+  .tce-card--media .tce-body {
+    padding: 8px 2px 0;
+  }
 
   .tce-identity-row {
     display: grid;
-    grid-template-columns: 40px minmax(0, 1fr) auto;
-    align-items: start;
-    gap: 11px;
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 7px;
   }
   .tce-logo {
-    border-radius: 10px !important;
+    border-radius: 50% !important;
     background: var(--color-surface) !important;
   }
-  .tce-identity-copy { min-width: 0; }
+  .tce-identity-copy {
+    display: flex;
+    align-items: baseline;
+    min-width: 0;
+    gap: 6px;
+    overflow: hidden;
+  }
   .tce-name-link {
     display: block;
+    min-width: 0;
+    max-width: 65%;
+    flex: 0 1 auto;
     color: inherit;
     text-decoration: none;
   }
-  .tce-actions {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  .tce-action-menu {
+    position: relative;
+    justify-self: end;
   }
-  .tce-card-action,
-  .tce-actions .pin-tool-button {
-    position: static;
+  .tce-action-trigger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    min-width: 34px;
-    height: 34px;
-    min-height: 34px;
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    min-height: 28px;
     padding: 0;
     border: 1px solid transparent;
     border-radius: var(--radius-pill);
     background: transparent;
     color: var(--color-muted);
+    cursor: pointer;
+    list-style: none;
+  }
+  .tce-action-trigger::-webkit-details-marker { display: none; }
+  .tce-action-trigger:hover,
+  .tce-action-menu[open] .tce-action-trigger {
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+  }
+  .tce-action-popover {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 6px);
+    right: 0;
+    display: grid;
+    min-width: 178px;
+    padding: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--tt-radius-sm);
+    background: var(--color-surface);
+    box-shadow: 0 10px 28px rgba(34, 34, 34, 0.12);
+  }
+  .tce-action-item,
+  .tce-action-popover .pin-tool-button {
+    position: static;
+    display: flex;
+    width: 100%;
+    min-height: 38px;
+    justify-content: flex-start;
+    gap: 9px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
     transform: none;
   }
-  .tce-card-action:hover,
-  .tce-actions .pin-tool-button:hover {
-    border-color: var(--color-border);
+  .tce-action-item:hover,
+  .tce-action-popover .pin-tool-button:hover,
+  .tce-action-popover .pin-tool-button--active {
     background: var(--color-surface-soft);
     color: var(--color-text);
     transform: none;
-  }
-  .tce-actions .pin-tool-button--active {
-    border-color: var(--color-border);
-    background: var(--color-surface-soft);
-    color: var(--color-text);
   }
 
   /* Name + price share one row — price is a small trailing label, not a
@@ -6525,17 +6596,17 @@
 
   .tce-name {
     font-family: var(--font-ui);
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 1.25;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.015em;
     color: var(--color-text);
     margin: 0;
     min-width: 0;
-    display: -webkit-box;
+    display: block;
     overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .dark .tce-name {
@@ -6556,28 +6627,37 @@
   }
 
   .tce-category {
+    display: flex;
+    align-items: center;
+    min-width: 0;
     font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 450;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0;
     color: var(--color-muted);
-    margin: 3px 0 0;
+    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .tce-category::before {
+    content: "·";
+    flex: 0 0 auto;
+    margin-right: 6px;
+    color: var(--color-muted-light);
+  }
 
   .tce-summary {
     display: -webkit-box;
-    margin: 9px 0 0 51px;
+    margin: 7px 0 0 38px;
     overflow: hidden;
     color: var(--color-muted);
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
+    line-height: 1.4;
+    letter-spacing: 0;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
@@ -6617,7 +6697,6 @@
     gap: 8px;
     width: 100%;
   }
-  .tce-cover-pick,
   .tce-cover-price {
     display: inline-flex;
     align-items: center;
@@ -6631,10 +6710,6 @@
     font-weight: 700;
     line-height: 1;
     box-shadow: 0 0 0 1px rgba(255,255,255,.16);
-  }
-  .tce-cover-pick {
-    letter-spacing: .04em;
-    text-transform: uppercase;
   }
   .tce-cover-price { margin-left: auto; }
 
@@ -18942,20 +19017,18 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 42px;
-  width: 42px;
-  height: 42px;
-  margin-left: -10px;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  margin-left: -8px;
   overflow: hidden;
   border: 2px solid var(--color-surface);
   border-radius: var(--radius-pill);
   background: var(--color-surface);
-  box-shadow: 0 1px 3px rgba(34, 34, 34, 0.12);
-  transition: transform 150ms ease-out;
+  box-shadow: none;
 }
 
 .tlp-item:first-child { margin-left: 0; }
-.tlp-item:hover { z-index: 2; transform: translateY(-2px); }
 
 .tlp-mark {
   border: 0 !important;
@@ -18966,10 +19039,10 @@ section[id] {
 }
 
 .tlp--sm .tlp-item {
-  flex-basis: 34px;
-  width: 34px;
-  height: 34px;
-  margin-left: -8px;
+  flex-basis: 30px;
+  width: 30px;
+  height: 30px;
+  margin-left: -7px;
 }
 .tlp--sm .tlp-item:first-child { margin-left: 0; }
 

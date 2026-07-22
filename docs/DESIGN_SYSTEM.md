@@ -64,6 +64,23 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 ---
 
+## Profondeur des cards
+
+Le catalogue limite volontairement les rectangles imbriqués. Une card ne reçoit une coque que si cette coque porte une fonction.
+
+| Niveau | Traitement | Usage |
+|---|---|---|
+| Média | Miniature arrondie + contenu ouvert, sans bordure extérieure | Catalogue, découverte, carrousels |
+| Fonctionnel | Surface douce, sans bordure décorative | Actions de stack, filtres, états |
+| Décision | Fond blanc + bordure fine | Prix, verdict, comparaison, interaction structurante |
+
+- Une card média affiche au maximum deux signaux sur sa miniature.
+- Les actions secondaires sont regroupées dans un menu contextuel unique.
+- La miniature, la typographie et l'espacement créent la hiérarchie ; ne pas ajouter une coque par défaut.
+- Les piles de logos utilisent des avatars de 36px maximum, sans ombre ni animation décorative.
+
+---
+
 ## Espacement — tokens globaux
 
 Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** — jamais de pixel arbitraire.

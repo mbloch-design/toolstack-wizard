@@ -30,7 +30,7 @@ export default function ToolLogoPile({
   const resolved = tools.filter((tool): tool is LogoPileTool => Boolean(tool));
   const visible = resolved.slice(0, max);
   const remaining = Math.max(0, (totalCount ?? resolved.length) - visible.length);
-  const logoSize = size === "sm" ? 24 : 30;
+  const logoSize = size === "sm" ? 22 : 28;
 
   if (visible.length === 0 && remaining === 0) return null;
 
