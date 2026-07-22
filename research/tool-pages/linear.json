@@ -1,0 +1,690 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "basic",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "business",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "icing Now Contact Docs Open app Log in Sign up Pricing Free $0 Free for everyone Unlimited members 2 teams 250 issues Agent platform Linear Agent Get started Get started Basic $10 per user/month $10 per user/month Billed",
+        "evidence_captures": [
+          "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58"
+        ],
+        "first_observed_on": "2026-07-22",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-22",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-22",
+        "proof_pattern": "Free for everyone|\\$0",
+        "sourceTier": 1,
+        "source_id": "src:7e33d38adafe35f6fedad0dd193794c03d650f1ca497f1903304d7982d3edb2f",
+        "source_url": "https://linear.app/pricing",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+        "claim_id": "clm:085f681ee597a5631aeb563b20e31c9d5ee6de4ba3b395418889dd0a755e1407",
+        "confidence": "high",
+        "evidence": "ent platform Linear Agent Get started Get started Basic $10 per user/month $10 per user/month Billed yearly All Free features + 5 teams Unlimited issues Unlimited file uploads Admin roles Get started Get started Business",
+        "evidence_captures": [
+          "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58"
+        ],
+        "first_observed_on": "2026-07-22",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-22",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-22",
+        "proof_pattern": "per user/month",
+        "sourceTier": 1,
+        "source_id": "src:7e33d38adafe35f6fedad0dd193794c03d650f1ca497f1903304d7982d3edb2f",
+        "source_url": "https://linear.app/pricing",
+        "status": "observed",
+        "value_native": "seat",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "ted Get started Basic $10 per user/month $10 per user/month Billed yearly All Free features + 5 teams Unlimited issues Unlimited file uploads Admin roles Get started Get started Business $16 per user/month $16 per user/m",
+        "evidence_captures": [
+          "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58"
+        ],
+        "first_observed_on": "2026-07-22",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-22",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-22",
+        "proof_pattern": "Billed yearly",
+        "sourceTier": 1,
+        "source_id": "src:7e33d38adafe35f6fedad0dd193794c03d650f1ca497f1903304d7982d3edb2f",
+        "source_url": "https://linear.app/pricing",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-22T13:04:58.294Z",
+        "attestation_id": "sha256:aadf929562cc81b6890c42c57d95c761977cf69ecf353dfa2d1badeebc7dad15",
+        "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://linear.app/pricing",
+        "html_lang": "en",
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": "en-US",
+        "rendered_by": "browser",
+        "resolved_locale": "en-US",
+        "run_id": "3b85a0b2-6838-436c-99ff-c19481729249",
+        "schema": "context_attestation/1",
+        "slug": "linear",
+        "source_url": "https://linear.app/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Free: porté par le claim pricing.free_plan_exists, jamais par une observation 0 USD",
+      "Enterprise: tarif « Custom » sur devis (contact sales) — non observable (éditorial)",
+      "« Billed yearly »: engagement annuel posé par le registre (annual_prepaid), pas par l'adaptateur",
+      "tax_inclusion inconnu: la grille n'établit ni HT ni TTC"
+    ],
+    "last_checked_at": "2026-07-22T13:04:58.294Z",
+    "last_context_evidence": {
+      "adapter": "linear",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-22T13:04:58.294Z",
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://linear.app/pricing",
+        "html_lang_attr": "en",
+        "locale_requested": null,
+        "navigator_language": "en-US",
+        "navigator_languages": [
+          "en-US"
+        ],
+        "redirected": false,
+        "resolved_locale": "en-US",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "browser",
+      "run_id": "3b85a0b2-6838-436c-99ff-c19481729249"
+    },
+    "locale_requested": null,
+    "market_requested": null,
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:47b0ad803612530fd29c99d54d0da1505f8fcc790098f879ff2910ace661160a",
+          "excerpt": "ted Get started Basic $10 per user/month $10 per user/month Billed yearly All Free features + 5 teams Unlimited issues Unlimited file uploads Admin roles Get started Get started Business $16 per user/month $16 per user/m",
+          "source_url": "https://linear.app/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "linear|basic|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:ae58a99ceaed26017610679b0462c8f8568ce00c0957473e7bc45e5c7112f5b1",
+        "confidence": "medium",
+        "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:ae58a99ceaed26017610679b0462c8f8568ce00c0957473e7bc45e5c7112f5b1",
+            "observed_on": "2026-07-22",
+            "run_id": "3b85a0b2-6838-436c-99ff-c19481729249"
+          }
+        ],
+        "evidence_excerpt": "Basic $10 per user/month — Billed yearly",
+        "evidence_selector": "pricing-card:Basic",
+        "feature_highlights": [
+          "All Free features",
+          "5 teams",
+          "Unlimited issues",
+          "Unlimited file uploads",
+          "Admin roles"
+        ],
+        "first_observed_on": "2026-07-22",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-22",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Grille servie en USD ($), contenu en anglais, aucun signal de locale/marché FR malgré une navigation depuis la France (constaté 2026-07-22). Décision humaine : traiter comme grille mondiale USD, marché/locale nuls."
+        },
+        "native_amount": 10,
+        "native_currency": "USD",
+        "observation_id": "obs:0fc073110571263ff138d2e54316994b0a3f94416281c3ef8686526a5d105a8f",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-22",
+        "observed_plan_key": "basic",
+        "plan_key": "basic",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Basic",
+        "plan_summary": "Offre payante d'entrée de Linear : au-delà du Free, jusqu'à 5 équipes, issues et uploads illimités, rôles admin.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:47b0ad803612530fd29c99d54d0da1505f8fcc790098f879ff2910ace661160a",
+          "excerpt": "ent platform Linear Agent Get started Get started Basic $10 per user/month $10 per user/month Billed yearly All Free features + 5 teams Unlimited issues Unlimited file uploads Admin roles Get started Get started Business",
+          "source_url": "https://linear.app/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://linear.app/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "linear",
+        "value_fingerprint": "10|USD|monthly|seat|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:47b0ad803612530fd29c99d54d0da1505f8fcc790098f879ff2910ace661160a",
+          "excerpt": "ted Get started Basic $10 per user/month $10 per user/month Billed yearly All Free features + 5 teams Unlimited issues Unlimited file uploads Admin roles Get started Get started Business $16 per user/month $16 per user/m",
+          "source_url": "https://linear.app/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "linear|business|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:ae58a99ceaed26017610679b0462c8f8568ce00c0957473e7bc45e5c7112f5b1",
+        "confidence": "medium",
+        "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:ae58a99ceaed26017610679b0462c8f8568ce00c0957473e7bc45e5c7112f5b1",
+            "observed_on": "2026-07-22",
+            "run_id": "3b85a0b2-6838-436c-99ff-c19481729249"
+          }
+        ],
+        "evidence_excerpt": "Business $16 per user/month — Billed yearly",
+        "evidence_selector": "pricing-card:Business",
+        "feature_highlights": [
+          "All Basic features",
+          "Unlimited teams",
+          "Private teams and guests",
+          "Triage Intelligence",
+          "Zendesk and Intercom integrations"
+        ],
+        "first_observed_on": "2026-07-22",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-22",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "Grille servie en USD ($), contenu en anglais, aucun signal de locale/marché FR malgré une navigation depuis la France (constaté 2026-07-22). Décision humaine : traiter comme grille mondiale USD, marché/locale nuls."
+        },
+        "native_amount": 16,
+        "native_currency": "USD",
+        "observation_id": "obs:4b1b4548f06d52bf8e0eba7609e049421746571cfc27d34807ce5fae843a374f",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-22",
+        "observed_plan_key": "business",
+        "plan_key": "business",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Business",
+        "plan_summary": "Offre intermédiaire de Linear : équipes illimitées, équipes privées et invités, Triage Intelligence, intégrations avancées.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:47b0ad803612530fd29c99d54d0da1505f8fcc790098f879ff2910ace661160a",
+          "excerpt": "ent platform Linear Agent Get started Get started Basic $10 per user/month $10 per user/month Billed yearly All Free features + 5 teams Unlimited issues Unlimited file uploads Admin roles Get started Get started Business",
+          "source_url": "https://linear.app/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://linear.app/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "linear",
+        "value_fingerprint": "16|USD|monthly|seat|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "basic_amount": 10,
+        "basic_found": true,
+        "billed_yearly_display": true,
+        "business_amount": 16,
+        "business_found": true,
+        "currency_usd": true,
+        "enterprise_quote_only": true,
+        "free_plan_proven_on_grid": true,
+        "no_tax_statement_on_grid": false,
+        "per_user_month_display": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": true,
+      "pricing_unit": "seat",
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": true,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "basic",
+        "plan_name_localized": "Basic",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "business",
+        "plan_name_localized": "Business",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-22T13:04:58.294Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "3b85a0b2-6838-436c-99ff-c19481729249"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-22T13:04:58.294Z",
+            "adapter": "linear",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": null,
+              "currency_symbols_seen": [
+                "$"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://linear.app/pricing",
+              "html_lang_attr": "en",
+              "locale_requested": null,
+              "navigator_language": "en-US",
+              "navigator_languages": [
+                "en-US"
+              ],
+              "redirected": false,
+              "resolved_locale": "en-US",
+              "timezone": "Europe/Paris",
+              "visible_markers": []
+            },
+            "capture_id": "cap:ae58a99ceaed26017610679b0462c8f8568ce00c0957473e7bc45e5c7112f5b1",
+            "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "browser",
+            "text_len": 2901,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-22T13:05:05.730Z",
+            "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+            "content_hash": "sha256:47b0ad803612530fd29c99d54d0da1505f8fcc790098f879ff2910ace661160a",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 2901,
+            "version": 2
+          }
+        ],
+        "domain": "linear.app",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-22T13:05:26.733Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-22T13:04:58.294Z",
+          "reason": null
+        },
+        "source_id": "src:7e33d38adafe35f6fedad0dd193794c03d650f1ca497f1903304d7982d3edb2f",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://linear.app/pricing"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "officialName": "linear",
+    "pricingUrl": "https://linear.app/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-22",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "linear",
+  "status": "needs_review",
+  "unknowns": [],
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "en": {
+      "ai_angle": {
+        "aiTools": [
+          "openai",
+          "anthropic"
+        ],
+        "augmentEn": "Linear folds AI in as execution support: drafting and enriching issues, summaries and search, suggestions along the tracking flow. AI speeds up shaping and moving information through the workflow without replacing the team's decisions.",
+        "idealForEn": "Product/engineering teams that want to cut input and search friction without giving up a structured execution method.",
+        "replaceEn": "Replace Linear with an AI? No: structured tracking of issues, cycles and roadmaps remains a team's coordination backbone. AI assists that frame; it doesn't run the project in people's place.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Opinionated approach: you must adopt Linear's method, ill-suited to a fully bespoke workflow.",
+        "Product/engineering focus: less natural for non-technical teams or non-software projects.",
+        "No self-hosting: data sits on Linear's managed infrastructure.",
+        "Per-user billing: cost tracks team size, to anticipate as you scale."
+      ],
+      "covers": [
+        "project-management",
+        "issue-tracking",
+        "product-roadmap"
+      ],
+      "functional_needs": [
+        "issue-tracking",
+        "sprint-planning",
+        "roadmapping"
+      ],
+      "long_description": "Linear is a project management and issue-tracking tool designed for product and software-engineering teams. Where many tools chase maximum versatility, Linear takes an opinionated stance: a work model organised around issues, cycles (sprints), projects and roadmaps, with keyboard shortcuts everywhere and a deliberately fast interface.\n\nThe product targets teams that build software iteratively: engineers, product managers and designers who want to plan, track progress and tie work to the development cycle. Integrations with code repositories, communication tools and design tools are part of the expected use. A non-technical person can use it, but the logic of issues, cycles and statuses assumes you adopt Linear's method rather than bending it to an arbitrary workflow.\n\nLinear ships as SaaS, with a free plan aimed at small teams and trials, and paid plans billed per user that unlock expanded limits and collaboration and administration features. The Enterprise edition covers the governance, compliance and contracting needs of larger organisations. There is no self-hosted edition: data lives on Linear's managed infrastructure.",
+      "personas": [
+        "product-manager",
+        "engineering-lead",
+        "software-team"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "A free plan exists and is not a time-limited trial; it remains bounded by usage limits.",
+          "Billing is per user: total cost tracks the number of team members.",
+          "Prices shown in USD; market context declared as a global USD grid, pending human review.",
+          "The Enterprise edition is quote-based: no public price should be taken as given."
+        ],
+        "deployment_note": "SaaS only, hosted and operated by Linear: no self-hosting. Data sits on the vendor's managed infrastructure.",
+        "free_plan_card": "Free plan — aimed at small teams and trials, with usage limits; moving to a paid plan follows team size and needs",
+        "plan_details": {
+          "basic": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Expanded limits over the free plan; billed per user",
+            "summary": "First paid tier for a team outgrowing the free plan's limits."
+          },
+          "business": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Advanced collaboration and administration features; billed per user",
+            "summary": "For established teams needing more control and collaboration."
+          },
+          "enterprise": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Governance, compliance and contracting; quote-based",
+            "summary": "For large organisations with security, compliance and contractual requirements."
+          },
+          "free": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Free plan bounded by usage limits; aimed at small teams and trials",
+            "summary": "To get started as a small team or evaluate Linear with no commitment."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Per-user SaaS pricing: a free plan to start, paid plans billed by number of users that expand limits and team features, and an Enterprise edition on quote. No self-hosted edition.",
+        "usage_sensitive": false
+      },
+      "pros": [
+        "Very fast, keyboard-driven interface built for intensive daily use.",
+        "Opinionated execution method (issues, cycles, projects, roadmaps) ready out of the box.",
+        "Solid integration with the software development cycle (code, communication, design).",
+        "A free plan to get started as a small team before moving to a paid plan."
+      ],
+      "relevant_for": [
+        "engineering",
+        "product",
+        "design",
+        "ops"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Linear: ToolTrim review. Fast, opinionated project management and issue tracking for product and engineering teams — method, free plan, per-user billing and positioning."
+      },
+      "short_description": "Project management and issue tracking built for product and engineering teams, betting on speed and an opinionated execution method.",
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "use_cases": [
+        "Track an engineering team's issues and bugs across cycles.",
+        "Plan sprints and a product roadmap with projects tied to real work.",
+        "Coordinate product, design and engineering around a single task repository.",
+        "Connect task tracking to the development cycle through code integrations."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You want a general-purpose, highly customisable project tool for non-technical teams.",
+          "You need a self-hosted deployment or full control of the data infrastructure.",
+          "Your need is limited to a simple shared task list, with no notion of cycles or roadmap."
+        ],
+        "keepIf": [
+          "Your team builds a software product iteratively and wants fast, structured issue tracking.",
+          "You prefer an opinionated method (issues, cycles, projects) out of the box over a tool you must configure entirely.",
+          "Keyboard-driven speed and a clean interface matter for adoption."
+        ],
+        "threshold": "Linear becomes the right choice when a product/engineering team wants to frame its execution with a clear, fast method; for general-purpose, non-software or fully bespoke use, a more flexible tool is preferable."
+      },
+      "verticals": [
+        "software-development",
+        "product-teams",
+        "tech-startups"
+      ]
+    },
+    "facts_basis": [
+      "cap:d5b03b2d7f64763ac160a2847355fb4f0b388894a1b83f32325cda739da1308d",
+      "cap:022f8b97b6535dc101d75985fad4262a2292bf5a4bd0b2dc6b56989e3cf926f2"
+    ],
+    "fr": {
+      "ai_angle": {
+        "aiTools": [
+          "openai",
+          "anthropic"
+        ],
+        "augmentFr": "Linear intègre l'IA comme aide à l'exécution : formulation et enrichissement d'issues, résumés et recherche, suggestions au fil du suivi. L'IA accélère la mise en forme et la circulation de l'information dans le flux de travail, sans se substituer aux décisions de l'équipe.",
+        "idealForFr": "Équipes produit/ingénierie qui veulent réduire les frictions de saisie et de recherche sans renoncer à une méthode d'exécution structurée.",
+        "replaceFr": "Remplacer Linear par une IA ? Non : le suivi structuré des issues, des cycles et des roadmaps reste le socle de coordination d'une équipe. L'IA vient assister ce cadre, pas gérer le projet à la place des personnes.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Approche opinionée : il faut adopter la méthode de Linear, peu adaptée à un usage totalement sur mesure.",
+        "Orientation produit/ingénierie : moins naturel pour des équipes non techniques ou des projets non logiciels.",
+        "Pas d'auto-hébergement : les données reposent sur l'infrastructure gérée par Linear.",
+        "Facturation par utilisateur : le coût suit la taille de l'équipe, à anticiper lors de la montée en charge."
+      ],
+      "covers": [
+        "project-management",
+        "issue-tracking",
+        "product-roadmap"
+      ],
+      "functional_needs": [
+        "issue-tracking",
+        "sprint-planning",
+        "roadmapping"
+      ],
+      "long_description": "Linear est un outil de gestion de projet et de suivi d'issues pensé pour les équipes produit et d'ingénierie logicielle. Là où beaucoup d'outils cherchent la polyvalence maximale, Linear assume une approche opinionée : un modèle de travail organisé autour des issues, des cycles (sprints), des projets et des roadmaps, avec des raccourcis clavier omniprésents et une interface volontairement rapide.\n\nLe produit s'adresse d'abord aux équipes qui construisent un logiciel de façon itérative : ingénieurs, product managers, designers qui veulent planifier, suivre l'avancement et relier le travail au cycle de développement. Les intégrations avec les dépôts de code, les outils de communication et de design font partie de l'usage attendu. Un profil non technique peut l'utiliser, mais la logique d'issues, de cycles et de statuts suppose d'adopter la méthode de Linear plutôt que de la plier à un fonctionnement arbitraire.\n\nLinear se distribue en SaaS, avec un plan gratuit destiné aux petites équipes et aux essais, et des plans payants facturés par utilisateur qui débloquent des limites étendues et des fonctions de collaboration et d'administration. L'édition Enterprise couvre les besoins de gouvernance, de conformité et de contractualisation des grandes organisations. Il n'y a pas d'édition auto-hébergée : les données vivent sur l'infrastructure gérée par Linear.",
+      "personas": [
+        "product-manager",
+        "engineering-lead",
+        "software-team"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Un plan gratuit existe et n'est pas un essai limité dans le temps ; il reste borné par des limites d'usage.",
+          "La facturation est par utilisateur : le coût total suit le nombre de membres de l'équipe.",
+          "Prix affichés en USD ; contexte marché déclaré comme grille mondiale USD, soumis à revue humaine.",
+          "L'édition Enterprise est sur devis : aucun tarif public à considérer comme acquis."
+        ],
+        "deployment_note": "SaaS uniquement, hébergé et exploité par Linear : pas d'auto-hébergement. Les données reposent sur l'infrastructure gérée par l'éditeur.",
+        "free_plan_card": "Plan gratuit — destiné aux petites équipes et aux essais, avec des limites d'usage ; le passage à un plan payant se fait à la taille et aux besoins de l'équipe",
+        "plan_details": {
+          "basic": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Limites étendues par rapport au plan gratuit ; facturé par utilisateur",
+            "summary": "Premier palier payant pour une équipe qui dépasse les limites du plan gratuit."
+          },
+          "business": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Fonctions de collaboration et d'administration avancées ; facturé par utilisateur",
+            "summary": "Pour des équipes établies ayant besoin de plus de contrôle et de collaboration."
+          },
+          "enterprise": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Gouvernance, conformité et contractualisation ; tarif sur devis",
+            "summary": "Pour grandes organisations avec exigences de sécurité, conformité et contractuelles."
+          },
+          "free": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Plan gratuit borné par des limites d'usage ; destiné aux petites équipes et aux essais",
+            "summary": "Pour démarrer en petite équipe ou évaluer Linear sans engagement."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Tarification SaaS par utilisateur : un plan gratuit pour démarrer, des plans payants facturés au nombre d'utilisateurs qui étendent les limites et les fonctions d'équipe, et une édition Enterprise sur devis. Pas d'édition auto-hébergée.",
+        "usage_sensitive": false
+      },
+      "pros": [
+        "Interface très rapide, pilotable au clavier, pensée pour un usage quotidien intensif.",
+        "Méthode d'exécution opinionée (issues, cycles, projets, roadmaps) prête à l'emploi.",
+        "Bonne intégration au cycle de développement logiciel (code, communication, design).",
+        "Plan gratuit permettant de démarrer en petite équipe avant de passer à un plan payant."
+      ],
+      "relevant_for": [
+        "engineering",
+        "product",
+        "design",
+        "ops"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Linear : fiche ToolTrim. Gestion de projet et suivi d'issues rapide et opinioné pour équipes produit et ingénierie — méthode, plan gratuit, facturation par utilisateur et positionnement."
+      },
+      "short_description": "Outil de gestion de projet et de suivi d'issues taillé pour les équipes produit et d'ingénierie, misant sur la rapidité et une méthode d'exécution opinionée.",
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "use_cases": [
+        "Suivre les issues et bugs d'une équipe d'ingénierie tout au long des cycles.",
+        "Planifier des sprints et une roadmap produit avec des projets reliés au travail réel.",
+        "Coordonner produit, design et ingénierie autour d'un référentiel de tâches unique.",
+        "Relier le suivi des tâches au cycle de développement via les intégrations de code."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil de gestion de projet généraliste très personnalisable pour des équipes non techniques.",
+          "Vous avez besoin d'un déploiement auto-hébergé ou d'un contrôle complet de l'infrastructure de données.",
+          "Votre besoin se limite à une simple liste de tâches partagée, sans notion de cycles ni de roadmap."
+        ],
+        "keepIf": [
+          "Votre équipe construit un produit logiciel de façon itérative et veut un suivi d'issues rapide et structuré.",
+          "Vous préférez une méthode opinionée (issues, cycles, projets) prête à l'emploi plutôt qu'un outil à tout configurer.",
+          "La vitesse d'usage au clavier et une interface épurée sont des critères importants pour l'adoption."
+        ],
+        "threshold": "Linear devient le bon choix quand une équipe produit/ingénierie veut cadrer son exécution avec une méthode claire et rapide ; pour un usage généraliste, hors développement logiciel, ou totalement sur mesure, un outil plus flexible reste préférable."
+      },
+      "verticals": [
+        "software-development",
+        "product-teams",
+        "tech-startups"
+      ]
+    },
+    "generated_on": "2026-07-22",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle par utilisateur, engagement, cautions), sans fait tarifaire faisant autorité.",
+    "status": "draft"
+  }
+}

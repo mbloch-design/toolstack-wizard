@@ -48,6 +48,30 @@ export const STAGING_PROFILES = Object.freeze({
     locale: "fr-FR",
     editorialSource: "research",
   }),
+  notion: Object.freeze({
+    // Par utilisateur. Free + Plus + Business ; Enterprise sur devis (exclu). EUR par géo => candidat reference_fr.
+    planOrder: Object.freeze(["free", "plus", "business"]),
+    comparePlanKey: "plus",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
+  loom: Object.freeze({
+    // Par utilisateur. Starter gratuit + Business + Business+AI ; Enterprise sur devis (exclu). Global USD.
+    planOrder: Object.freeze(["free", "business", "business_ai"]),
+    comparePlanKey: "business",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
+  linear: Object.freeze({
+    // Par utilisateur, engagement annuel. Free + Basic + Business ; Enterprise sur devis (exclu). Global USD.
+    planOrder: Object.freeze(["free", "basic", "business"]),
+    comparePlanKey: "basic",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
   calendly: Object.freeze({
     // SaaS par utilisateur (siège). Free + Standard + Teams ; Enterprise sur devis (hors planOrder).
     planOrder: Object.freeze(["free", "standard", "teams"]),

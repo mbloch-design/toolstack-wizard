@@ -28,9 +28,13 @@ node scripts/catalog-batch.mjs prepare  --batch=<id> --slugs=a,b --market=FR --l
 node scripts/catalog-batch.mjs report   --batch=<id>          # tableau READY / REVIEW / BLOCKED
 node scripts/catalog-batch.mjs dry-run   --batch=<id>          # transaction prod, rollback
 node scripts/catalog-batch.mjs apply     --batch=<id> --actor="ToolTrim — Mike"
-node scripts/catalog-batch.mjs rollback  --batch=<id> --slugs=a --actor="ToolTrim — Mike"
+node scripts/catalog-batch.mjs rollback  --batch=<id> --slugs=a --actor="ToolTrim — Mike"          # DRY-RUN (rollback, aucune persistance)
+node scripts/catalog-batch.mjs rollback  --batch=<id> --slugs=a --actor="ToolTrim — Mike" --apply  # PERSISTE (canonical -> legacy)
 node scripts/catalog-batch.mjs verify    [--canonical=<n>]
+node scripts/catalog-batch.mjs reconcile --batch=<id>          # aligne l'état local sur Supabase (remote READ-ONLY)
 ```
+
+> **⚠️ Rollback.** Par défaut, `rollback` est un **DRY-RUN** : il ouvre la transaction, vérifie le retour à legacy, puis **annule (rollback)** — rien n'est persisté. La bascule `canonical → legacy` n'est **écrite que si `--apply`** est passé. Vérifier le dry-run avant d'ajouter `--apply`. Le rollback ordinaire conserve sources/captures/événements (ledger) et ne touche aucun autre outil.
 - `prepare` valide les profils **avant réseau**, reprend (dossier présent = pas de re-collecte),
   garde éditoriale + garde free-only-open-source, gate par outil.
 - `apply` **auto-signe** l'attestation `reference_fr` requise (marché candidat ou prouvé), applique
@@ -44,6 +48,36 @@ node scripts/catalog-batch.mjs verify    [--canonical=<n>]
 - Aucun prix/devise/taux/unité inventé ; conversion EUR interdite sans taux+date+méthode (l'identité
   EUR `native_eur_identity` n'est PAS une conversion).
 - Rollback ordinaire : `data_contract` canonical → legacy, ledger conservé, aucun autre outil touché.
+
+## Industrialisation (réduction tokens)
+
+Principe : **les scripts exécutent, contrôlent et résument ; Claude tranche les ambiguïtés et rédige.**
+Claude ne re-vérifie jamais à la main un invariant déjà validé par un script.
+
+```bash
+node scripts/catalog-batch.mjs work-order --slug=<s>            # research/work-orders/<s>.json (dossier factuel compact, déterministe)
+node scripts/catalog-batch.mjs report  --batch=<id> --report=compact   # JSON {slug,phase,status,blockers,tests,mutations,next_action}
+node scripts/catalog-batch.mjs metrics --batch=<id>            # coût du lot (outils, sans-intervention, bloqués, appels agent, reprises, captures réutilisées…)
+```
+
+- **Work order** (`scripts/catalog/work-order.mjs`) : seul contexte transmis à un sous-agent — source
+  officielle + captures (id/hash), claims, observations, profil, contrôles en échec, relations, décisions
+  humaines. Ne recopie ni les anciens rapports ni l'historique. Sérialisation déterministe (même input ⇒ même WO).
+- **Contrôles déterministes** (`scripts/catalog/controls.mjs`) : `localControls` (dossier) +
+  `remoteControls` (Supabase read-only : relations publiées, fingerprint hors lot, projection).
+  `failingControls` ne remonte **que les échecs** — l'arbitre ne voit rien d'autre.
+- **Matrice éditoriale** (`scripts/catalog/editorial-matrix.mjs`) : état compact structuré
+  (positioning/best_for/strengths/limits/use_cases/avoid_if/ai_stance/pricing_model **sans montants**/
+  deployment/sources) généré **une fois** avant la prose FR/EN. Les faits tarifaires restent dans les observations.
+- **Cache de collecte** (`scripts/catalog/capture-cache.mjs`) : ancré sur `content_hash`. Capture inchangée ⇒
+  `{ noop:true }`, aucun retraitement. `excerptsFor` ne fournit que les extraits nécessaires. N'écrase jamais dossier/ledger.
+- **Anti-boucle** (`scripts/catalog/loop-guard.mjs`) : max 1 génération éditoriale/langue, max 1 correction auto,
+  **2 échecs identiques ⇒ `blocked`** (aucune relance), pas d'audits narratifs répétés (rapports compacts idempotents).
+
+### Pipeline sous-agents (borné)
+collecte déterministe → **dossier factuel (work order)** → **agent éditorial unique** → validateurs (scripts) →
+**agent arbitre uniquement pour les outils bloqués**. Chaque sous-agent reçoit un work order borné et **retourne du
+JSON structuré** — jamais de relecture du dépôt complet, jamais de discussion libre ni de rapport narratif intermédiaire.
 
 ## Git
 `git status` d'abord ; **jamais** `git add -A` ; stage **explicite** des seuls fichiers de la mission ;

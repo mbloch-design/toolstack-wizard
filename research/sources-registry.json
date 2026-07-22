@@ -40,7 +40,10 @@
       "adapter": "framer",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
           "is_official": true,
           "notes": "Support officiel Framer : une souscription annuelle est facturée d'avance pour l'année complète.",
           "proof_pattern": "Billed upfront for the full year|Annual subscriptions are billed upfront for the entire year",
@@ -53,7 +56,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "site"
+          },
           "is_official": true,
           "notes": "Support officiel Framer : les offres payantes sont explicitement des Site plans servant à construire et publier un site.",
           "proof_pattern": "Site plans include the essential tools and features you need to build and publish a professional website",
@@ -66,7 +72,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "La grille officielle affiche un plan Free à 0 USD ; le fait est porté comme claim, sans fabriquer de périodicité.",
           "proof_pattern": "Free Try for free \\$0|Start for Free",
@@ -100,7 +109,10 @@
       "adapter": "squarespace",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
           "is_official": true,
           "notes": "Support officiel Squarespace : le terme annuel est payé d'avance pour une année de service.",
           "proof_pattern": "Annual - Pay in advance for a year of service",
@@ -113,7 +125,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "site"
+          },
           "is_official": true,
           "notes": "Support officiel Squarespace : chaque site dispose de son propre forfait et est payé séparément.",
           "proof_pattern": "Billing plans apply to individual sites only|pay for each one separately",
@@ -146,7 +161,10 @@
       "adapter": "webflow",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
           "is_official": true,
           "notes": "Support officiel Webflow : le tarif annuel est payé d'avance pour une année complète.",
           "proof_pattern": "pay upfront for a full year",
@@ -159,7 +177,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "site"
+          },
           "is_official": true,
           "notes": "Support officiel Webflow : chaque site à héberger sur domaine personnalisé requiert son propre Site plan.",
           "proof_pattern": "each site you want to host with Webflow on a custom domain needs its own Site plan|A Site plan is tied to an individual site",
@@ -172,7 +193,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "Support officiel Webflow : Starter est explicitement le plan gratuit par défaut.",
           "proof_pattern": "Starter Site plan \\(free\\)|free Starter Site plan",
@@ -205,7 +229,10 @@
       "adapter": "wix",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.unit", "value": "site" },
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "site"
+          },
           "is_official": true,
           "notes": "Support officiel Wix (niveau 1). Phrase établissant l'unité : « A site plan cannot be used for multiple sites. Each site you want to upgrade must have its own Premium or Studio site plan. » => facturation PAR SITE. La page tarifaire seule ne l'établissait pas.",
           "proof_pattern": "cannot be used for multiple sites|must have its own (Premium|Studio) site plan",
@@ -218,7 +245,10 @@
           "verified_on": "2026-07-17"
         },
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "Support officiel Wix (niveau 1). Phrase établissant la DURABILITÉ du plan gratuit : « There is no obligation to upgrade unless you want to make use of our premium features. » => plan gratuit durable, pas un essai. Aucun montant/devise n'étant affiché, AUCUNE observation 0 EUR n'est créée : le fait est porté par ce claim.",
           "proof_pattern": "no obligation to upgrade|free to (use|build)|only need to pay to upgrade",
@@ -271,7 +301,10 @@
       "plan_key_mapping_note": "Plans Cloud n8n + Community Edition auto-hébergée (plan gratuit 'community', porté par un claim is_free, hors grille Cloud, sans observation 0 EUR). Enterprise reste éditorial (contact sales), hors planOrder.",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "Sustainable Use License (fair-code, NON open source au sens OSI). La Community Edition auto-hébergée est libre d'usage côté licence (« free to use » ; usage « internal business purposes »). Aucun montant affiché => AUCUNE observation 0 EUR ; le fait est porté par ce claim. Infrastructure et exploitation NON gratuites (traité en éditorial).",
           "proof_pattern": "free to use|internal business purposes",
@@ -284,7 +317,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.unit", "value": "workflow_execution" },
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "workflow_execution"
+          },
           "is_official": true,
           "notes": "Grille officielle : « All plans include unlimited users & workflows and every integration. Pricing based on monthly workflow executions, regardless of complexity ». Unité = exécution de workflow (jamais par siège, par étape, ni par instance). Le quota Business/Enterprise self-hosted est CUMULÉ sur toutes les instances portant la clé de licence.",
           "proof_pattern": "Pricing based on monthly workflow executions|unlimited users & workflows",
@@ -297,7 +333,10 @@
           "verified_on": "2026-07-20"
         },
         {
-          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
           "is_official": true,
           "notes": "Grille officielle : les tarifs affichés sont « billed annually » (engagement annuel). billing_period mensuel, engagement annuel prépayé.",
           "proof_pattern": "billed annually",
@@ -329,7 +368,10 @@
       "plan_key_mapping_note": "Deux offres publiques : Free (usage gratuit durable, commission-free) et Pro (mensuel ou annuel). Le total n'est jamais nul : des frais de plateforme par paiement + frais de traitement tiers subsistent (traité en éditorial, jamais comme coût 0).",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "La grille officielle expose une offre Free durable à 0 $/mois (colonne « Free », bouton d'accès), distincte d'un essai : Contra est « always commission-free ». Le fait est porté par ce claim ; aucune observation 0 USD n'est fabriquée. Coût total NON nul : frais de plateforme par paiement + frais de traitement tiers (éditorial).",
           "proof_pattern": "Free \\$ ?0 / mo|always commission-free for all creatives",
@@ -363,7 +405,10 @@
       "plan_key_mapping_note": "Trois offres tarifées publiquement (Free, Standard, Teams) + Enterprise sur devis (« Starts at $15k /yr », contact sales) qui reste éditorial, hors planOrder. Free = plan gratuit durable (« Always free ») porté par le claim pricing.free_plan_exists, sans observation 0 USD.",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "La grille officielle expose une offre « Free » durable (« Always free », « For personal use »), distincte d'un essai. Le fait est porté par ce claim ; aucune observation 0 USD n'est fabriquée.",
           "proof_pattern": "Always free|Free[\\s\\S]{0,40}personal use",
@@ -376,7 +421,10 @@
           "verified_on": "2026-07-21"
         },
         {
-          "establishes": { "claim_key": "pricing.unit", "value": "seat" },
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "seat"
+          },
           "is_official": true,
           "notes": "Grille officielle : les offres payantes Standard et Teams sont tarifées « /seat/mo » (par siège). Unité = siège, jamais par instance ni par exécution.",
           "proof_pattern": "/\\s*seat\\s*/\\s*mo|per seat",
@@ -389,7 +437,10 @@
           "verified_on": "2026-07-21"
         },
         {
-          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
           "is_official": true,
           "notes": "Grille officielle : le tarif par défaut est affiché « Billed yearly » (mention « Save 16% »/« Save 20% ») : engagement annuel prépayé. billing_period mensuel (prix affiché « /mo »), engagement annuel prépayé.",
           "proof_pattern": "Billed yearly|Save 1[0-9]%",
@@ -420,7 +471,10 @@
       "plan_key_mapping_note": "Un seul 'plan' : la bibliothèque MIT, gratuite côté licence, portée par le claim pricing.free_plan_exists (aucune observation 0 EUR, aucun montant). Intégration/maintenance NON gratuites (traité en éditorial).",
       "additional_sources": [
         {
-          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
           "is_official": true,
           "notes": "Licence MIT du dépôt officiel angular/components (@angular/material, @angular/cdk), Copyright Google LLC. Usage, modification et distribution libres, sans coût de licence. Aucun montant affiché => AUCUNE observation 0 EUR ; le fait est porté par ce claim. Intégration, thématisation, montées de version et maintenance NON gratuites (traité en éditorial).",
           "proof_pattern": "MIT License|Permission is hereby granted, free of charge",
@@ -431,6 +485,213 @@
           "url": "https://github.com/angular/components/blob/main/LICENSE",
           "verified_http_status": 200,
           "verified_on": "2026-07-21"
+        }
+      ]
+    },
+    "notion": {
+      "adapter": "generic",
+      "pricing_url": "https://www.notion.com/pricing",
+      "renderer_hint": "auto",
+      "source_type": "pricing",
+      "source_tier": 1,
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-22",
+      "market_context_declared": null,
+      "market_context_justification": "Page tarifaire officielle en anglais (sélecteur affiche 'English (US)'), montants servis en EUR par géolocalisation mais aucun signal de locale FR (html/lang, contenu FR) prouvé. Grille ni USD-mondiale claire ni FR prouvée : conformément à v0.3, un marché non prouvé reste null tant qu'une capture ne l'établit pas.",
+      "plan_key_mapping": {
+        "Free": "free",
+        "Plus": "plus",
+        "Business": "business",
+        "Enterprise": "enterprise"
+      },
+      "plan_key_mapping_note": "Quatre plans observés sur la page tarifaire officielle. 'Free' est un plan gratuit durable (0, quotas réduits, 'For individuals'), pas un essai. 'Plus' et 'Business' sont facturés par membre/mois (seat), engagement mensuel ou annuel (annuel = économie affichée 'Save up to 20% with yearly'). Notion AI est inclus en accès d'essai limité sur Free/Plus/Business et complet sur Enterprise ; un add-on 'Custom Agents' facturé au crédit existe (usage-sensitive) mais reste hors mapping de plan. 'Enterprise' est sur devis (custom), non public.",
+      "additional_sources": [
+        {
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
+          "is_official": true,
+          "notes": "Plan 'Free' à 0 observé sur la page tarifaire officielle ('For individuals to organize personal projects and life'), avec quotas réduits. Tier gratuit durable, distinct de l'essai limité de Notion AI.",
+          "proof_pattern": "Free[\\s\\S]*€0|For individuals to organize personal projects",
+          "purpose": "free_plan",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.notion.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "seat"
+          },
+          "is_official": true,
+          "notes": "Plans payants (Plus, Business) facturés 'per member / month' : l'unité de tarification est le siège (membre/utilisateur), pas l'usage ni le document.",
+          "proof_pattern": "per member / month|per member",
+          "purpose": "pricing_unit",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.notion.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
+          "is_official": true,
+          "notes": "Bascule de facturation observée sur la page ('Pay monthly' / 'Pay yearly'), le paiement annuel affichant une économie par rapport au mensuel.",
+          "proof_pattern": "Pay monthly|Pay yearly|Save up to 20% with yearly",
+          "purpose": "billing_commitment",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.notion.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        }
+      ]
+    },
+    "loom": {
+      "adapter": "generic",
+      "pricing_url": "https://www.loom.com/pricing",
+      "renderer_hint": "dynamic",
+      "source_type": "pricing",
+      "source_tier": 1,
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-22",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Grille tarifaire officielle affichée en USD ($) sans sélecteur de pays observé ; montants par utilisateur/mois en dollars, sans devise locale (EUR) exposée. On déclare donc un repli USD mondial en attendant une éventuelle localisation confirmée par capture.",
+      "plan_key_mapping": {
+        "Starter": "free",
+        "Business": "business",
+        "Business + AI": "business_ai",
+        "Enterprise": "enterprise"
+      },
+      "plan_key_mapping_note": "Quatre plans observés sur la page tarifaire officielle. 'Starter' est un plan gratuit durable (0 $, quotas réduits), pas un essai. 'Business' et 'Business + AI' sont facturés par utilisateur/mois (seat), engagement mensuel ou annuel (annuel = économie affichée). 'Business + AI' expose un essai gratuit limité dans le temps (≠ plan gratuit). 'Enterprise' est sur devis (custom), non public.",
+      "additional_sources": [
+        {
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
+          "is_official": true,
+          "notes": "Plan 'Starter' à 0 $ observé sur la page tarifaire officielle, avec quotas réduits (nombre de vidéos et durée d'enregistrement plafonnés). Tier gratuit durable, distinct de l'essai gratuit du plan Business + AI.",
+          "proof_pattern": "Starter|\\$0|Free",
+          "purpose": "free_plan",
+          "renderer_hint": "dynamic",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.loom.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "seat"
+          },
+          "is_official": true,
+          "notes": "Plans payants (Business, Business + AI) facturés 'per user/month' : l'unité de tarification est le siège (seat/créateur), pas l'usage ni la vidéo.",
+          "proof_pattern": "per user|/user|per creator|seat",
+          "purpose": "pricing_unit",
+          "renderer_hint": "dynamic",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.loom.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
+          "is_official": true,
+          "notes": "Engagement mensuel ou annuel proposé sur les plans payants ; le paiement annuel affiche une économie par rapport au mensuel (bascule de facturation observée sur la page).",
+          "proof_pattern": "billed annually|save|/mo|per month|annual",
+          "purpose": "billing_commitment",
+          "renderer_hint": "dynamic",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.loom.com/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        }
+      ]
+    },
+    "linear": {
+      "adapter": "linear",
+      "pricing_url": "https://linear.app/pricing",
+      "renderer_hint": "browser",
+      "source_type": "pricing",
+      "source_tier": 1,
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-22",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "Grille servie en USD ($), contenu en anglais, aucun signal de locale/marché FR malgré une navigation depuis la France (constaté 2026-07-22). Décision humaine : traiter comme grille mondiale USD, marché/locale nuls.",
+      "plan_key_mapping": {
+        "Free": "free",
+        "Basic": "basic",
+        "Business": "business",
+        "Enterprise": "enterprise"
+      },
+      "plan_key_mapping_note": "Quatre plans exposés sur la grille officielle (Free / Basic / Business / Enterprise). Enterprise = tarif sur devis (custom), exclu des observations de prix. Association par titre : la grille présente des cartes de plan titrées, adaptée au moteur générique.",
+      "additional_sources": [
+        {
+          "establishes": {
+            "claim_key": "pricing.free_plan_exists",
+            "value": true
+          },
+          "is_official": true,
+          "notes": "Le plan Free ($0, « Free for everyone ») est un plan gratuit durable et non un essai. Aucune observation 0 USD n'est fabriquée : le fait est porté par ce claim.",
+          "proof_pattern": "Free for everyone|\\$0",
+          "purpose": "free_plan",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://linear.app/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "seat"
+          },
+          "is_official": true,
+          "notes": "Tarification par utilisateur (siège/seat) : les plans Basic et Business sont libellés « per user/month ». Facturation au nombre d'utilisateurs, pas à l'usage.",
+          "proof_pattern": "per user/month",
+          "purpose": "pricing_unit",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://linear.app/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
+          "is_official": true,
+          "notes": "Les prix par utilisateur des plans payants sont affichés avec la mention « Billed yearly » ; Enterprise est facturé annuellement également.",
+          "proof_pattern": "Billed yearly",
+          "purpose": "billing_commitment",
+          "renderer_hint": "browser",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://linear.app/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-22"
         }
       ]
     }

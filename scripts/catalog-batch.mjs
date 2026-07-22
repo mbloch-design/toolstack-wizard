@@ -10,9 +10,12 @@
 import { readFileSync, existsSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { createBatch, loadBatch, transition, resumable, batchPath } from "./catalog/batch-state.mjs";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import { createBatch, loadBatch, transition, resumable, batchPath, reconcileState, nextAction } from "./catalog/batch-state.mjs";
 import { loadProfile } from "./catalog/profile.mjs";
+import { writeWorkOrder } from "./catalog/work-order.mjs";
+import { localControls, failingControls } from "./catalog/controls.mjs";
+import { batchMetrics } from "./catalog/metrics.mjs";
 import { validateEditorial } from "./catalog/editorial-contract.mjs";
 import { verifyCatalogInvariants, untouchedFingerprint } from "./catalog/verify-batch.mjs";
 import { prepareStageDryRun } from "./research-stage.mjs";
@@ -55,7 +58,13 @@ async function cmdPrepare(a) {
   // 2) collecte — REPRISE : un dossier déjà présent n'est pas re-collecté (sauf --recollect).
   const dossier = (slug) => path.join(ROOT, "research", "tool-pages", `${slug}.json`);
   const pending = resumable(a.batch).filter((t) => ["queued", "failed", "collecting"].includes(t.state)).map((t) => t.slug);
-  for (const slug of pending) if (!a.recollect && existsSync(dossier(slug))) transition(a.batch, slug, "collected", { reason: "dossier existant (reprise)" });
+  for (const slug of pending) {
+    if (a.recollect || !existsSync(dossier(slug))) continue;
+    // Reprise avec dossier présent : un outil "failed" repasse par "queued" (transition légale)
+    // avant "collected" — sinon failed->collected est rejeté par le graphe d'états.
+    if (loadBatch(a.batch).tools[slug].state === "failed") transition(a.batch, slug, "queued", { reason: "reprise depuis échec" });
+    transition(a.batch, slug, "collected", { reason: "dossier existant (reprise)" });
+  }
   const todo = resumable(a.batch).filter((t) => ["queued", "failed", "collecting"].includes(t.state)).map((t) => t.slug);
   if (todo.length) {
     for (const slug of todo) transition(a.batch, slug, "collecting", { incrementAttempt: true });
@@ -98,8 +107,51 @@ async function cmdPrepare(a) {
   cmdReport({ batch: a.batch });
 }
 
+// Statut compact normalisé par outil.
+function compactStatus(state) {
+  if (["eligible", "approved", "canonical"].includes(state)) return "ready";
+  if (["needs_review"].includes(state)) return "blocked";
+  if (state === "failed") return "failed";
+  return "pending";
+}
+// Rapport COMPACT (JSON machine) — {slug,phase,status,blockers,tests,mutations,next_action}.
+// --slug=<s> => objet unique ; sinon tableau. Aucun audit narratif.
+function cmdReportCompact(a) {
+  const b = loadBatch(a.batch);
+  const one = (slug) => {
+    const t = b.tools[slug];
+    const failing = failingControls(localControls(slug));
+    return {
+      slug, phase: t.state, status: compactStatus(t.state),
+      blockers: t.blockers || [],
+      tests: { validator_failures: failing.length },
+      mutations: [],
+      next_action: nextAction(t),
+    };
+  };
+  const only = a.slugs ? String(a.slugs).split(",").map((s) => s.trim()).filter(Boolean) : b.slugs;
+  const payload = a.slug ? one(a.slug) : only.map(one);
+  console.log(JSON.stringify(payload, null, 2));
+  return payload;
+}
+
+// ── work-order : dossier factuel compact par outil ──
+function cmdWorkOrder(a) {
+  const slugs = a.slug ? [a.slug] : String(a.slugs || "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (!slugs.length) throw new Error("work-order exige --slug ou --slugs");
+  const written = slugs.map((s) => { writeWorkOrder(s); return `research/work-orders/${s}.json`; });
+  console.log(JSON.stringify({ mode: "WORK_ORDER", written }, null, 2));
+}
+
+// ── metrics : coût du lot ──
+function cmdMetrics(a) {
+  if (!a.batch) throw new Error("metrics exige --batch");
+  console.log(JSON.stringify({ mode: "METRICS", ...batchMetrics(a.batch) }, null, 2));
+}
+
 // ── report : tableau compact ──
 function cmdReport(a) {
+  if (a.report === "compact") return cmdReportCompact(a);
   const b = loadBatch(a.batch);
   const rows = b.slugs.map((slug) => {
     const t = b.tools[slug];
@@ -129,7 +181,7 @@ function hasOpenSourceEvidence(doc) {
 // ── auto-signature de l'attestation reference_fr (réserve levée par ToolTrim).
 //    Ne signe QUE si le marché est reference_fr (candidat ou prouvé), qu'aucune attestation
 //    active n'existe, et qu'une basis au FAISCEAU FORT existe. Sinon renvoie un blocage (jamais forcé). ──
-function autoSignReferenceFr(slug, actor) {
+export function autoSignReferenceFr(slug, actor) {
   const p = path.join(ROOT, "research", "tool-pages", `${slug}.json`);
   if (!existsSync(p)) return { skip: true };
   const doc = JSON.parse(readFileSync(p, "utf8"));
@@ -150,6 +202,18 @@ function autoSignReferenceFr(slug, actor) {
   return { signed: ctx.attestation_id };
 }
 
+// Un outil est applicable si eligible/approved/canonical, OU en needs_review dont le SEUL
+// blocage est l'attestation reference_fr (l'auto-signature autorisée peut le débloquer).
+export function applicableForApply(tool) {
+  const st = tool?.state;
+  if (["eligible", "approved", "canonical"].includes(st)) return true;
+  if (st === "needs_review") {
+    const bl = tool.blockers || [];
+    return bl.length > 0 && bl.every((x) => /attestation reference_fr/i.test(x));
+  }
+  return false;
+}
+
 // ── dry-run / apply : moteur générique par outil, isolé ──
 async function cmdRun(a, apply) {
   const b = loadBatch(a.batch);
@@ -163,21 +227,23 @@ async function cmdRun(a, apply) {
     const untouched = apply ? await untouchedFingerprint(sql, b.slugs) : null;
     for (const slug of b.slugs) {
       if (only && !only.has(slug)) continue;
-      const st = b.tools[slug].state;
-      if (apply && st !== "eligible" && st !== "approved" && st !== "canonical") { results.push({ toolId: slug, skipped: st }); continue; }
+      if (apply && !applicableForApply(b.tools[slug])) { results.push({ toolId: slug, skipped: b.tools[slug].state }); continue; }
       try {
         // Lot mixte en une commande : auto-signe l'attestation reference_fr si requise (réserve levée).
+        // Un outil en needs_review dont le SEUL blocage est l'attestation devient eligible ici.
         let attestation = null;
         if (apply) {
           const sign = autoSignReferenceFr(slug, actor);
           if (sign.blocked) { results.push({ toolId: slug, blocked: sign.blocked }); transition(a.batch, slug, "needs_review", { blockers: [sign.blocked] }); continue; }
           attestation = sign.signed ? "signed" : sign.already ? "already" : null;
+          if (loadBatch(a.batch).tools[slug].state === "needs_review" && attestation)
+            transition(a.batch, slug, "eligible", { reason: "attestation reference_fr auto-signée", blockers: [] });
         }
         const { proposal } = await prepareStageDryRun(slug);
         const res = await runTool({ sql, profile: loadProfile(slug), proposal, actor, apply });   // profil unifié (marketContext)
         results.push({ ...res, attestation });
         if (apply && res.applied) {
-          if (b.tools[slug].state === "eligible") transition(a.batch, slug, "approved");
+          if (loadBatch(a.batch).tools[slug].state === "eligible") transition(a.batch, slug, "approved");
           transition(a.batch, slug, "canonical", { reason: "engine apply" });
         }
       } catch (e) { results.push({ toolId: slug, error: e.message }); if (apply) transition(a.batch, slug, "failed", { error: e.message }); }
@@ -191,6 +257,24 @@ async function cmdRun(a, apply) {
   } finally { await sql.end({ timeout: 1 }); }
   console.log(JSON.stringify({ mode: "DRY_RUN", batch: b.batch_id, results }, null, 2));
   return results;
+}
+
+// ── reconcile : aligne l'état LOCAL du lot sur Supabase (remote READ-ONLY) ──
+async function cmdReconcile(a) {
+  const b = loadBatch(a.batch);
+  const sql = await connect();
+  try {
+    const rows = await sql`select id, data_contract from public.tools where id = any(${b.slugs}::text[])`;
+    const dc = Object.fromEntries(rows.map((r) => [r.id, r.data_contract]));
+    const changes = [];
+    for (const slug of b.slugs) {
+      const dbCanon = dc[slug] === "canonical";
+      const local = b.tools[slug].state;
+      if (dbCanon && local !== "canonical") { reconcileState(a.batch, slug, "canonical", "Supabase=canonical"); changes.push(`${slug}: ${local} -> canonical (DB)`); }
+      else if (!dbCanon && local === "canonical") { reconcileState(a.batch, slug, "rolled_back", `Supabase=${dc[slug] ?? "absent"}`); changes.push(`${slug}: canonical local mais DB=${dc[slug] ?? "absent"} -> rolled_back (DIVERGENCE)`); }
+    }
+    console.log(JSON.stringify({ mode: "RECONCILE", batch: b.batch_id, remote_read_only: true, changes: changes.length ? changes : ["aucun écart"], db: dc }, null, 2));
+  } finally { await sql.end({ timeout: 1 }); }
 }
 
 async function cmdVerify(a) {
@@ -214,12 +298,16 @@ async function cmdRollback(a) {
   console.log(JSON.stringify({ mode: apply ? "ROLLBACK_APPLY" : "ROLLBACK_DRY_RUN", results }, null, 2));
 }
 
-const a = args(process.argv.slice(2));
-const cmd = a._[0];
-const run = {
-  prepare: () => cmdPrepare(a), report: () => cmdReport(a),
-  "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
-  verify: () => cmdVerify(a),
-}[cmd];
-if (!run) { console.error("commandes: prepare | report | dry-run | apply | rollback | verify"); process.exit(1); }
-Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
+// Exécution CLI uniquement quand lancé directement (importable pour les tests sans effet de bord).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const a = args(process.argv.slice(2));
+  const cmd = a._[0];
+  const run = {
+    prepare: () => cmdPrepare(a), report: () => cmdReport(a),
+    "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
+    verify: () => cmdVerify(a), reconcile: () => cmdReconcile(a),
+    "work-order": () => cmdWorkOrder(a), metrics: () => cmdMetrics(a),
+  }[cmd];
+  if (!run) { console.error("commandes: prepare | report [--report=compact] | work-order | metrics | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
+  Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
+}

@@ -37,10 +37,8 @@ export async function verifyCatalogInvariants(sql, expected = {}) {
 
   // Aucun outil hors lot modifié (empreinte id:data_contract).
   if (expected.untouched?.fingerprint != null) {
-    const ids = expected.untouched.batch ?? [];
-    const [fp] = await sql`select md5(coalesce(string_agg(id||':'||data_contract, ',' order by id), '')) fp
-      from public.tools where id <> all(${ids}::text[])`;
-    A(fp.fp === expected.untouched.fingerprint, "un outil hors lot a été modifié (empreinte divergente)");
+    const now = await untouchedFingerprint(sql, expected.untouched.batch ?? []);
+    A(now.fingerprint === expected.untouched.fingerprint, "un outil hors lot a été modifié (empreinte divergente sur tools/plans/prix/contenus/relations/localisations)");
   }
 
   // catalog_private inaccessible à anon/authenticated ; projection accessible.
@@ -56,9 +54,27 @@ export async function verifyCatalogInvariants(sql, expected = {}) {
   return report;
 }
 
-/** Empreinte des outils hors d'un lot (à capturer AVANT apply pour la comparaison post-apply). */
+/**
+ * Empreinte DÉTERMINISTE des outils hors d'un lot, sur TOUTES les surfaces consommées par la
+ * projection : public.tools (identité/lifecycle), plans, observations/prix, contenus éditoriaux,
+ * relations, localisations. Une mutation hors lot sur l'une d'elles change l'empreinte.
+ * Une seule requête, agrégats ordonnés (coût raisonnable).
+ */
 export async function untouchedFingerprint(sql, batchIds) {
-  const [fp] = await sql`select md5(coalesce(string_agg(id||':'||data_contract, ',' order by id), '')) fp
-    from public.tools where id <> all(${batchIds}::text[])`;
-  return { batch: batchIds, fingerprint: fp.fp };
+  const ids = batchIds;
+  const [r] = await sql`select md5(concat_ws('|',
+    coalesce((select string_agg(id||':'||data_contract||':'||content_status||':'||research_status, ',' order by id)
+      from public.tools where id <> all(${ids}::text[])), ''),
+    coalesce((select md5(string_agg(p.tool_id||'/'||p.plan_key||'/'||p.is_free||'/'||p.is_compare_plan||'/'||coalesce(p.pricing_unit,''), ',' order by p.tool_id, p.plan_key))
+      from catalog_private.tool_plans p where p.tool_id <> all(${ids}::text[])), ''),
+    coalesce((select md5(string_agg(pl.tool_id||'/'||o.review_status||'/'||coalesce(o.native_amount::text,'')||'/'||coalesce(o.native_currency,'')||'/'||coalesce(o.approval_event_id,''), ',' order by pl.tool_id, o.id))
+      from catalog_private.tool_price_observations o join catalog_private.tool_plans pl on pl.id=o.plan_id where pl.tool_id <> all(${ids}::text[])), ''),
+    coalesce((select md5(string_agg(e.tool_id||'/'||e.lang||'/'||e.status||'/'||coalesce(e.content_hash,''), ',' order by e.tool_id, e.lang))
+      from catalog_private.tool_editorial_content e where e.tool_id <> all(${ids}::text[])), ''),
+    coalesce((select md5(string_agg(rr.tool_id||'/'||rr.related_tool_id||'/'||rr.status, ',' order by rr.tool_id, rr.related_tool_id))
+      from catalog_private.tool_relationships rr where rr.tool_id <> all(${ids}::text[])), ''),
+    coalesce((select md5(string_agg(pl.tool_id||'/'||l.locale||'/'||l.status||'/'||coalesce(l.display_name,''), ',' order by pl.tool_id, l.locale, l.id))
+      from catalog_private.tool_plan_localizations l join catalog_private.tool_plans pl on pl.id=l.plan_id where pl.tool_id <> all(${ids}::text[])), '')
+  )) fp`;
+  return { batch: batchIds, fingerprint: r.fp };
 }

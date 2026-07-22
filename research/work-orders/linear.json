@@ -1,0 +1,76 @@
+{
+  "captures": [
+    {
+      "capture_id": "cap:ae58a99ceaed26017610679b0462c8f8568ce00c0957473e7bc45e5c7112f5b1",
+      "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+      "source_url": "https://linear.app/pricing"
+    },
+    {
+      "capture_id": "cap:f95a7c6a2008f090f847bdf459b001b243c6904521e22c6f8d45ccc973688b58",
+      "content_hash": "sha256:47b0ad803612530fd29c99d54d0da1505f8fcc790098f879ff2910ace661160a",
+      "source_url": "https://linear.app/pricing"
+    }
+  ],
+  "claims": [],
+  "conflicts": [],
+  "human_decisions": [
+    "unknown: Free: porté par le claim pricing.free_plan_exists, jamais par une observation 0 USD",
+    "unknown: Enterprise: tarif « Custom » sur devis (contact sales) — non observable (éditorial)",
+    "unknown: « Billed yearly »: engagement annuel posé par le registre (annual_prepaid), pas par l'adaptateur",
+    "unknown: tax_inclusion inconnu: la grille n'établit ni HT ni TTC"
+  ],
+  "observations": [
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+      "market_context": "global_usd_fallback",
+      "native_amount": 10,
+      "native_currency": "USD",
+      "plan_key": "basic",
+      "pricing_unit": "seat",
+      "status": "observed"
+    },
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:87edc9a658a5d963102b94480d6da4ed95aba2039c772f02ec76f530a3bd2ccb",
+      "market_context": "global_usd_fallback",
+      "native_amount": 16,
+      "native_currency": "USD",
+      "plan_key": "business",
+      "pricing_unit": "seat",
+      "status": "observed"
+    }
+  ],
+  "profile": {
+    "adapter": "linear",
+    "comparePlanKey": "basic",
+    "freePlanKey": "free",
+    "locale": "fr-FR",
+    "marketContext": "global_usd_fallback",
+    "openSource": false,
+    "planOrder": [
+      "free",
+      "basic",
+      "business"
+    ],
+    "pricing_url": "https://linear.app/pricing"
+  },
+  "relations_candidates": [
+    "project-management",
+    "issue-tracking",
+    "product-roadmap",
+    "engineering",
+    "product",
+    "design",
+    "ops"
+  ],
+  "slug": "linear",
+  "source": {
+    "is_official": true,
+    "source_id": "src:7e33d38adafe35f6fedad0dd193794c03d650f1ca497f1903304d7982d3edb2f",
+    "tier": 1,
+    "url": "https://linear.app/pricing"
+  },
+  "tool_id": "linear",
+  "validator_failures": []
+}

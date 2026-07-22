@@ -93,6 +93,22 @@ export function transition(batch_id, slug, to, { reason, run_id, proposal_hash, 
   return t;
 }
 
+/** Aligne l'état local d'un outil sur une vérité externe (Supabase), hors graphe de transitions.
+ *  Réservé au reconcile : la réalité distante prime sur un fichier de batch ancien. */
+export function reconcileState(batch_id, slug, to, reason = "reconcile") {
+  const b = loadBatch(batch_id);
+  const t = b.tools[slug];
+  if (!t) throw new Error(`slug hors lot: ${slug}`);
+  if (!STATES.includes(to)) throw new Error(`état inconnu: ${to}`);
+  if (t.state === to) return t;
+  const from = t.state;
+  t.state = to;
+  t.history.push({ from, to, at: now(), reason, reconciled: true });
+  t.updated_at = now();
+  saveBatch(b);
+  return t;
+}
+
 /** Prochaine action déterministe pour un outil (pour la reprise automatique). */
 export function nextAction(tool) {
   return ({
