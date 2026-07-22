@@ -39,12 +39,42 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const activeItemRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   /* Auto-focus */
   useEffect(() => {
+    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const id = setTimeout(() => inputRef.current?.focus(), 30);
-    return () => clearTimeout(id);
-  }, []);
+    const handleDialogKeys = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+      ));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", handleDialogKeys);
+    return () => {
+      clearTimeout(id);
+      document.removeEventListener("keydown", handleDialogKeys);
+      previousFocusRef.current?.focus();
+    };
+  }, [onClose]);
 
   /* Lock scroll */
   useEffect(() => {
@@ -157,7 +187,8 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
 
       {/* Dialog */}
       <div
-        className="fixed inset-x-0 top-[8vh] z-[201] mx-auto w-full max-w-[600px] px-4"
+        ref={dialogRef}
+        className="search-modal-dialog fixed inset-x-0 top-[8vh] z-[201] mx-auto w-full max-w-[600px] px-4"
         role="dialog"
         aria-modal="true"
         aria-label={t("Recherche", "Search")}
@@ -173,6 +204,8 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
               role="combobox"
               aria-expanded={results.length > 0}
               aria-autocomplete="list"
+              aria-controls="global-search-results"
+              aria-activedescendant={activeIndex >= 0 ? `global-search-option-${activeIndex}` : undefined}
               value={query}
               onChange={e => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -194,6 +227,14 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
                   <X className="h-4 w-4 text-muted-foreground" />
                 </button>
               )}
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-md p-1 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+                aria-label={t("Fermer la recherche", "Close search")}
+              >
+                <X className="h-4 w-4 text-muted-foreground" aria-hidden />
+              </button>
               <kbd className="rounded-md border border-border bg-secondary px-1.5 py-0.5 text-[11px] font-medium leading-none text-muted-foreground">
                 Esc
               </kbd>
@@ -204,7 +245,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
 
           {/* Results body */}
           {query.length >= 2 ? (
-            <div className="max-h-[440px] overflow-y-auto" role="listbox">
+            <div id="global-search-results" className="max-h-[440px] overflow-y-auto" role="listbox">
               {results.length > 0 ? (
                 <div className="py-1.5">
 
@@ -215,6 +256,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
                         return (
                           <ResultRow
                             key={r.id}
+                            id={`global-search-option-${idx}`}
                             ref={activeIndex === idx ? activeItemRef : undefined}
                             active={activeIndex === idx}
                             onHover={() => setActiveIndex(idx)}
@@ -238,6 +280,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
                         return (
                           <ResultRow
                             key={r.id}
+                            id={`global-search-option-${idx}`}
                             ref={activeIndex === idx ? activeItemRef : undefined}
                             active={activeIndex === idx}
                             onHover={() => setActiveIndex(idx)}
@@ -266,6 +309,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
                         return (
                           <ResultRow
                             key={r.id}
+                            id={`global-search-option-${idx}`}
                             ref={activeIndex === idx ? activeItemRef : undefined}
                             active={activeIndex === idx}
                             onHover={() => setActiveIndex(idx)}
@@ -291,6 +335,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
                   <div className="mt-0.5 border-t border-border/60 pt-0.5">
                     <ResultRow
                       ref={activeIndex === results.length ? activeItemRef : undefined}
+                      id={`global-search-option-${results.length}`}
                       active={activeIndex === results.length}
                       onHover={() => setActiveIndex(results.length)}
                       onClick={handleViewAll}
@@ -328,7 +373,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
           ) : (
             /* Suggestions */
             <div className="py-2">
-              <p className="px-4 pb-1.5 pt-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/55">
+              <p className="px-4 pb-1.5 pt-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
                 {t("Outils populaires", "Popular tools")}
               </p>
               <div className="grid grid-cols-3 gap-0.5 px-2 pb-2">
@@ -344,6 +389,12 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
               </div>
             </div>
           )}
+
+          <p className="sr-only" aria-live="polite" aria-atomic="true">
+            {query.trim().length >= 2
+              ? t(`${results.length} résultats disponibles`, `${results.length} results available`)
+              : ""}
+          </p>
 
           {/* Footer — keyboard hints */}
           <div className="flex items-center gap-4 border-t border-border bg-secondary/30 px-4 py-2">
@@ -383,13 +434,15 @@ function ResultGroup({
 const ResultRow = forwardRef<
   HTMLButtonElement,
   {
+    id?: string;
     active: boolean;
     onHover: () => void;
     onClick: () => void;
     children: React.ReactNode;
   }
->(({ active, onHover, onClick, children }, ref) => (
+>(({ id, active, onHover, onClick, children }, ref) => (
   <button
+    id={id}
     ref={ref}
     role="option"
     aria-selected={active}

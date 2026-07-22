@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   BookOpen,
   ChevronDown,
@@ -557,6 +557,39 @@ function EditoralPanel({
   isMobile?: boolean;
 }) {
   const section = SECTIONS.find((s) => s.id === activeSection) ?? SECTIONS[0];
+  const panelRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const focusFrame = window.requestAnimationFrame(() => {
+      panelRef.current?.querySelector<HTMLElement>("button, a[href]")?.focus();
+    });
+
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" || !panelRef.current) return;
+      const focusable = Array.from(panelRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])',
+      ));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", trapFocus);
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", trapFocus);
+      previousFocusRef.current?.focus();
+    };
+  }, []);
 
   /* Positioning differs between desktop panel and mobile full-screen menu */
   const panelStyle: React.CSSProperties = isMobile
@@ -585,6 +618,7 @@ function EditoralPanel({
 
   return (
     <div
+      ref={panelRef}
       className={`fixed z-[46] editorial-panel${closing ? " editorial-panel--closing" : " editorial-panel--opening"}`}
       style={panelStyle}
       role="dialog"
@@ -723,7 +757,7 @@ function LanguageToggle({ href, lang, otherLang }: { href: string; lang: string;
             justifyContent: "center",
             padding: "0 8px",
             background: lang === item ? "#222222" : "transparent",
-            color: lang === item ? "#FFFFFF" : "#9A9A92",
+            color: lang === item ? "#FFFFFF" : "#5F5F59",
           }}
         >
           {item}

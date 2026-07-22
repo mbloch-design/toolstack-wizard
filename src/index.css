@@ -5187,9 +5187,15 @@
 
   /* Panel shell — floats 8px below the header, no duplicated header inside */
   .editorial-panel {
+    --color-muted: #5f5f59;
+    --color-muted-light: #5f5f59;
     border-radius: var(--radius-md);
     background: var(--color-surface-soft);
     border: 1px solid var(--color-border);
+  }
+
+  .editorial-panel .text-muted-foreground {
+    color: #5f5f59;
   }
 
   .dark .editorial-panel {
@@ -9971,7 +9977,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted-light);
+    color: #5f5f59;
     margin: 0 0 14px;
   }
   .sk-facet-group {

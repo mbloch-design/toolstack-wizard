@@ -571,7 +571,30 @@ const StacksPage = () => {
 
   useEffect(() => {
     if (!mobileOpen) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMobileOpen(false); };
+    const focusFrame = window.requestAnimationFrame(() => {
+      panelRef.current?.querySelector<HTMLElement>("button, input, [href]")?.focus();
+    });
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setMobileOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !panelRef.current) return;
+      const focusable = Array.from(panelRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+      ));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Node;
       if (filtersRef.current?.contains(target) || panelRef.current?.contains(target)) return;
@@ -580,8 +603,10 @@ const StacksPage = () => {
     document.addEventListener("keydown", onKey);
     document.addEventListener("pointerdown", onPointerDown);
     return () => {
+      window.cancelAnimationFrame(focusFrame);
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("pointerdown", onPointerDown);
+      filtersRef.current?.focus();
     };
   }, [mobileOpen]);
 
@@ -743,14 +768,14 @@ const StacksPage = () => {
               value={facetBudget}
               onChange={(id) => setFacetBudget(id as StackFacetBudget)}
             />
-            <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen}>
+            <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={mobileOpen ? t("Fermer les filtres", "Close filters") as string : t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen} aria-haspopup="dialog">
               <SlidersHorizontal size={15} aria-hidden />
               {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Plus de filtres", "More filters")}
             </button>
             {mobileOpen && createPortal(
-              <div className="sk-filters-panel" role="dialog" aria-label={t("Filtres", "Filters") as string} ref={panelRef} style={{ position: "fixed", top: panelCoords.top, left: panelCoords.left }}>
+              <div className="sk-filters-panel" role="dialog" aria-modal="true" aria-labelledby="stack-filters-title" ref={panelRef} style={{ position: "fixed", top: panelCoords.top, left: panelCoords.left }}>
                 <div className="sk-mobile-panel-header">
-                  <span className="sk-mobile-panel-title">
+                  <span id="stack-filters-title" className="sk-mobile-panel-title">
                     {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Filtres", "Filters")}
                   </span>
                   <button type="button" className="sk-mobile-panel-close" onClick={() => setMobileOpen(false)} aria-label={t("Fermer", "Close") as string}>

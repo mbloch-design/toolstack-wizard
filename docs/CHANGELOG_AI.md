@@ -10,6 +10,10 @@
 - Respect de `prefers-reduced-motion` sur les cards média et compactes : transitions neutralisées et zoom de miniature supprimé.
 - Couverture Playwright des états de filtre, de la navigation clavier du menu contextuel, de la restitution du focus après Échap et de la réduction des animations.
 - Nouvelle commande `npm run test:e2e:a11y` pour rejouer les garde-fous d’accessibilité.
+- Cycle clavier complet des overlays : focus initial, confinement dans Recherche, Explorer et filtres Ma Stack, fermeture avec Échap puis retour au déclencheur.
+- Recherche globale reliée explicitement à sa liste de résultats via `aria-controls` / `aria-activedescendant`, avec annonce vocale du nombre de résultats.
+- Popovers de filtres nommés, focusés à l’ouverture et refermés sans perte de position clavier ; déclencheur Ma Stack synchronisé avec son état ouvert/fermé.
+- Audit Axe étendu aux états ouverts des overlays, et pas seulement aux pages au repos.
 
 ---
 

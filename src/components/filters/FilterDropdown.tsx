@@ -59,6 +59,11 @@ export default function FilterDropdown({
   const showSearch = options.length >= searchThreshold;
   const selectedCount = values.length;
 
+  function closeAndRestoreFocus() {
+    setOpen(false);
+    window.requestAnimationFrame(() => triggerRef.current?.focus());
+  }
+
   function toggleValue(id: string) {
     if (!onChangeMulti) return;
     onChangeMulti(values.includes(id) ? values.filter((v) => v !== id) : [...values, id]);
@@ -88,7 +93,10 @@ export default function FilterDropdown({
       setOpen(false);
     }
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeAndRestoreFocus();
+      }
     }
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKey);
@@ -100,6 +108,14 @@ export default function FilterDropdown({
 
   useEffect(() => { if (!open) setQuery(""); }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const focusFrame = window.requestAnimationFrame(() => {
+      panelRef.current?.querySelector<HTMLElement>('input, button[role="option"]')?.focus();
+    });
+    return () => window.cancelAnimationFrame(focusFrame);
+  }, [open]);
+
   return (
     <>
       <button
@@ -109,7 +125,7 @@ export default function FilterDropdown({
           multi ? (selectedCount > 0 ? " tf-dd-trigger--active" : "") : (value !== "all" ? " tf-dd-trigger--active" : "")
         }`}
         onClick={() => setOpen((o) => !o)}
-        aria-haspopup="listbox"
+        aria-haspopup="dialog"
         aria-expanded={open}
       >
         <span>{multi ? label : (value === "all" ? label : activeOption?.label ?? label)}</span>
@@ -120,8 +136,8 @@ export default function FilterDropdown({
       {open && createPortal(
         <div
           className="tf-dd-panel"
-          role="listbox"
-          aria-multiselectable={multi}
+          role="dialog"
+          aria-label={label}
           ref={panelRef}
           style={{ position: "fixed", top: coords.top, left: coords.left }}
         >
@@ -133,11 +149,12 @@ export default function FilterDropdown({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={searchPlaceholder}
+                aria-label={searchPlaceholder || label}
                 autoFocus
               />
             </div>
           )}
-          <div className="tf-dd-list">
+          <div className="tf-dd-list" role="listbox" aria-label={label} aria-multiselectable={multi}>
             {multi ? (
               filteredOptions.map((opt) => {
                 const checked = values.includes(opt.id);
@@ -162,7 +179,7 @@ export default function FilterDropdown({
                 <button
                   type="button"
                   className={`tf-dd-item${value === "all" ? " tf-dd-item--active" : ""}`}
-                  onClick={() => { onChange("all"); setOpen(false); }}
+                  onClick={() => { onChange("all"); closeAndRestoreFocus(); }}
                   role="option"
                   aria-selected={value === "all"}
                 >
@@ -174,7 +191,7 @@ export default function FilterDropdown({
                     key={opt.id}
                     type="button"
                     className={`tf-dd-item${value === opt.id ? " tf-dd-item--active" : ""}`}
-                    onClick={() => { onChange(opt.id); setOpen(false); }}
+                    onClick={() => { onChange(opt.id); closeAndRestoreFocus(); }}
                     role="option"
                     aria-selected={value === opt.id}
                   >
