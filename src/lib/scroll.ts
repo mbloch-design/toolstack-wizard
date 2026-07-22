@@ -20,7 +20,8 @@ function getScrollEl(): HTMLElement | null {
   // (normal document scroll, sidebar collapses into a top row) — only
   // treat it as the scroll container when it's actually the one scrolling.
   const overflowY = window.getComputedStyle(el).overflowY;
-  return (cachedScrollEl = overflowY === "auto" || overflowY === "scroll" ? el : null);
+  const canScroll = el.scrollHeight > el.clientHeight + 1;
+  return (cachedScrollEl = (overflowY === "auto" || overflowY === "scroll") && canScroll ? el : null);
 }
 
 if (typeof window !== "undefined") {

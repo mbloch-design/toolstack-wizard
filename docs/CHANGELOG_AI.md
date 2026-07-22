@@ -2,6 +2,16 @@
 
 ---
 
+## 2026-07-22 — Lancement des chantiers images, navigation et cohérence éditoriale
+
+- Baseline versionnée des 17 références d’images locales déjà cassées et nouvelle commande `validate:card-images` qui bloque uniquement les régressions supplémentaires.
+- Projection `getToolPresentation()` partagée par les cards média, décisionnelles et compactes pour normaliser nom, description localisée, prix mensuel, libellé de plan et remplaçabilité sans réécrire les données pendant la migration base de données.
+- Audit éditorial non destructif du catalogue léger : slugs, catégories, descriptions FR/EN, prix et contradictions de remplacement, avec rapport JSON optionnel.
+- Correction du choix du conteneur de scroll mobile : `#main-content` n’est retenu que lorsqu’il est réellement scrollable, sinon le document porte la mémorisation et la restauration.
+- Couverture E2E de la continuité de navigation : nouvelle fiche en haut, retour catalogue restauré, rechargement profond réinitialisé et comportement mobile verrouillé.
+
+---
+
 ## 2026-07-22 — Passe responsive globale catalogue, recherche, Explorer et Ma stack
 
 - Recherche restructurée avec des classes `sp-*` dédiées : largeur intrinsèque des catégories corrigée à 320 px, onglets confinés à un rail horizontal et cibles tactiles portées à 40–44 px.

@@ -19,6 +19,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCE = path.join(ROOT, "src/data/tools_index.json");
 const NETWORK = process.argv.includes("--network");
 const WRITE = process.argv.includes("--write");
+const USE_BASELINE = process.argv.includes("--baseline");
 const LIMIT = Number(process.argv.find((arg) => arg.startsWith("--limit="))?.split("=")[1] || Infinity);
 const MIN_WIDTH = 320;
 const MIN_HEIGHT = 160;
@@ -117,6 +118,7 @@ for (const tool of tools) {
 
 const counts = report.reduce((acc, item) => ({ ...acc, [item.status]: (acc[item.status] || 0) + 1 }), {});
 const actionable = report.filter((item) => ["broken", "fallback", "review"].includes(item.status));
+const brokenSlugs = report.filter((item) => item.status === "broken").map((item) => item.slug);
 
 console.log(`Card image audit — ${report.length} tools${NETWORK ? " (network enabled)" : " (offline)"}`);
 console.table(counts);
@@ -131,4 +133,17 @@ if (WRITE) {
   console.log(`Report written to ${path.relative(ROOT, output)}`);
 }
 
-if (counts.broken) process.exitCode = 1;
+if (USE_BASELINE) {
+  const baselinePath = path.join(ROOT, "scripts", "card-image-baseline.json");
+  const baseline = JSON.parse(readFileSync(baselinePath, "utf8"));
+  const knownBroken = new Set(Array.isArray(baseline.knownBroken) ? baseline.knownBroken : []);
+  const regressions = brokenSlugs.filter((slug) => !knownBroken.has(slug));
+  const resolved = [...knownBroken].filter((slug) => !brokenSlugs.includes(slug));
+  if (resolved.length) console.log(`Resolved since baseline: ${resolved.join(", ")}`);
+  if (regressions.length) {
+    console.error(`New broken card images: ${regressions.join(", ")}`);
+    process.exitCode = 1;
+  } else {
+    console.log(`Image baseline respected — no new broken references (${brokenSlugs.length} known).`);
+  }
+} else if (counts.broken) process.exitCode = 1;

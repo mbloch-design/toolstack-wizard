@@ -1,0 +1,7 @@
+{
+  "knownBroken": [
+    "origami", "clearbit", "clickup", "dayforce", "onetrust", "pipelinepro",
+    "razorpay", "wetransfer", "dovetail", "flutter", "insomnia", "kubernetes",
+    "processing", "sweep", "krea", "stock-footage", "webhooks"
+  ]
+}

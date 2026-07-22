@@ -1,6 +1,7 @@
 import { ArrowRight, Compass } from "lucide-react";
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
+import { getToolPresentation } from "@/lib/toolPresentation";
 
 interface ToolCardCompactTool {
   id: string;
@@ -9,6 +10,8 @@ interface ToolCardCompactTool {
   shortDescription?: string;
   shortDescriptionEn?: string;
   defaultMonthlyPrice?: number;
+  pricing?: { free?: string; paid?: string } | null;
+  pricing_v5?: { compare_price_monthly_eur?: number | null } | null;
   logo?: string;
 }
 
@@ -30,11 +33,8 @@ export function ToolCardCompact({
   exploreHref,
   exploreState,
 }: ToolCardCompactProps) {
-  const slug = tool.slug || tool.id;
-  const name = tool.name || tool.id;
-  const description = lang === "en"
-    ? (tool.shortDescriptionEn || tool.shortDescription || "")
-    : (tool.shortDescription || "");
+  const presentation = getToolPresentation(tool, lang);
+  const { slug, name, description } = presentation;
 
   return (
     <article className="tcc-card">
@@ -48,8 +48,8 @@ export function ToolCardCompact({
         <h3 className="tcc-name">{name}</h3>
         {description && <p className="tcc-description">{description}</p>}
       </div>
-      {Boolean(tool.defaultMonthlyPrice && tool.defaultMonthlyPrice > 0) && (
-        <span className="tcc-price">{tool.defaultMonthlyPrice}€/mo</span>
+      {presentation.monthlyPrice > 0 && (
+        <span className="tcc-price">{presentation.planLabel}</span>
       )}
       <ArrowRight className="tcc-arrow" size={15} aria-hidden />
       {exploreHref && (

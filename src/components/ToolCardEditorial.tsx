@@ -4,7 +4,7 @@ import { Compass, MoreVertical } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import ToolLogo from "@/components/ToolLogo";
-import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
+import { getToolPresentation } from "@/lib/toolPresentation";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -50,21 +50,6 @@ interface ToolCardEditorialProps {
   contextLabel?: string;
   exploreHref?: string;
   exploreState?: unknown;
-}
-
-/* ── Helpers ─────────────────────────────────────────────────────────────── */
-
-function getPlanLabel(tool: ToolCardEditorialTool, lang: "fr" | "en"): string {
-  if (isFreemiumPricing(tool.pricing)) return "Freemium";
-  if (hasGenuineFreeTier(tool.pricing?.free)) return lang === "fr" ? "Gratuit" : "Free";
-  if (tool.pricing_v5?.compare_price_monthly_eur) {
-    const p = tool.pricing_v5.compare_price_monthly_eur;
-    return lang === "fr" ? `${p} €/mois` : `€${p}/mo`;
-  }
-  if (tool.defaultMonthlyPrice > 0) {
-    return lang === "fr" ? `${tool.defaultMonthlyPrice} €/mois` : `€${tool.defaultMonthlyPrice}/mo`;
-  }
-  return "N/A";
 }
 
 interface CardActionMenuProps {
@@ -163,13 +148,11 @@ export function ToolCardEditorial({
   exploreHref,
   exploreState,
 }: ToolCardEditorialProps) {
-  const plan = getPlanLabel(tool, lang);
+  const presentation = getToolPresentation(tool, lang);
+  const plan = presentation.planLabel;
   const decision = variant === "decision";
 
-  const description = t(
-    tool.shortDescription,
-    tool.shortDescriptionEn ?? tool.shortDescription,
-  ) as string;
+  const description = presentation.description;
 
   const toolHref = to || `${prefix}/tool/${tool.slug ?? tool.id}`;
 
