@@ -14,6 +14,7 @@
 - Les composants partagés des fiches outil, comparatifs, guides, pages institutionnelles, catégories et FAQ sont raccordés aux mêmes tokens.
 - Les actions secondaires des en-têtes de section partagent désormais `.tt-section-action` sur l'accueil, le catalogue et les sections éditoriales : même graisse, même flèche Lucide et même mouvement au survol.
 - Les carrousels éditoriaux de l'accueil et le rail d'alternatives utilisent désormais les mêmes contrôles de 36px et la même pagination accessible ; les rails paginés de l'accueil acceptent aussi le balayage horizontal tactile.
+- Les surfaces publiques sont ramenées à trois niveaux : média sans coque (18px), card informative bordée (12px) et panneau neutre sans double séparation (24px). Les ombres et translations des cards de stacks sont supprimées.
 
 ---
 
@@ -3558,6 +3559,13 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les logos deviennent des avatars circulaires chevauchés avec contour de séparation, survol léger et compteur `+n` final.
 - Migration des cards de stacks, des cards de guides et des rails stacks/guides de la homepage.
 - Les piles interactives de l’éditeur de stack restent distinctes car elles proposent un popover et des actions supplémentaires.
+
+## 2026-07-22 — Cohérence des petites surfaces publiques
+
+- Les cartes compactes, résultats de recherche, guides liés, stacks liées et variantes de stacks partagent désormais le rayon informatif, une bordure douce et un survol local sans ombre ni déplacement vertical.
+- Les cartes de stacks abandonnent leur animation SaaS en élévation au profit d'une interaction éditoriale plus calme.
+- Les profils de stacks sont regroupés dans un panneau neutre sans double coque extérieure.
+- L'index des catégories quitte ses anciennes cartes bleutées Tailwind et adopte une variante dédiée alignée sur les cartes de recherche : icône 36px, hiérarchie typographique compacte et métadonnées neutres.
 
 ## 2026-07-20 — Dark launch du catalogue canonique Supabase
 

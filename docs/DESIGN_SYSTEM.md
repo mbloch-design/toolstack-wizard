@@ -133,6 +133,16 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 - Dans une galerie ou un rail, les images portent la présence visuelle ; la typographie ne doit pas les concurrencer.
 - Les kickers sont facultatifs. Ne pas en ajouter uniquement pour donner artificiellement de la hauteur au header.
 
+### Hiérarchie des surfaces publiques
+
+- Média éditorial : sans coque extérieure, rayon `--tt-surface-radius-media` (18px). L'image et l'espace portent la hiérarchie.
+- Card informative ou fonctionnelle : surface blanche, bordure douce unique, rayon `--tt-surface-radius-info` (12px).
+- Panneau de regroupement ou hero : fond neutre sans bordure ajoutée, rayon `--tt-surface-radius-panel` (24px).
+- Ne pas cumuler fond contrasté, bordure et ombre pour exprimer un seul niveau de séparation.
+- Les cards éditoriales n'utilisent ni ombre portée ni déplacement vertical au survol ; seul le contraste local évolue.
+- Les micro-surfaces d'une même famille (logo, icône, badge, métadonnée) gardent une échelle stable : icône fonctionnelle 36px, rayon 8px, texte secondaire 12–13px. Les badges de statut restent des pilules et ne deviennent pas des mini-cards.
+- Au survol d'une card informative, utiliser une bordure neutre et un léger mélange de surface ; ne pas introduire de noir, de bleu ou d'ombre comme signal local.
+
 ### Variables CSS de taille (`--tt-size-*`)
 
 Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes les classes `tt-*`, `cp-*`, `sd-*` doivent référencer ces vars — jamais coder `clamp()` en dur sur une page.

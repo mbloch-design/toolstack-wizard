@@ -499,35 +499,35 @@ function CategoryCard({
   return (
     <Link
       to={`${prefix}/category/${cat.slug}`}
-      className="group rounded-xl border border-border bg-card p-5 transition-colors duration-150 hover:border-primary/30 hover:bg-primary/5"
+      className="cat-index-card"
     >
-      <div className="flex items-start gap-4">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20">
+      <div className="cat-index-card-layout">
+        <div className="cat-index-card-icon">
           <Icon className="h-5 w-5" />
         </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="text-sm font-medium tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
+        <div className="cat-index-card-copy">
+          <div className="cat-index-card-head">
+            <h3 className="cat-index-card-title">
               {t(catName, englishName)}
             </h3>
-            <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground opacity-50 transition-all group-hover:translate-x-0.5 group-hover:text-primary group-hover:opacity-100" />
+            <ArrowRight className="cat-index-card-arrow" />
           </div>
           {cat.description && (
-            <p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">
+            <p className="cat-index-card-description">
               {t(cat.description, cat.descriptionEn)}
             </p>
           )}
-          <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <span className="font-semibold text-foreground">
+          <div className="cat-index-card-meta">
+            <span className="cat-index-card-count">
               <span className="num-mono">{stats?.count || 0}</span> {t("outils", "tools")}
             </span>
             {(stats?.freeCount || 0) > 0 && (
-              <span className="text-primary">
+              <span>
                 <span className="num-mono">{stats?.freeCount}</span> {t("gratuits ou freemium", "free or freemium")}
               </span>
             )}
             {(stats?.paidCount || 0) > 0 && featured && (
-              <span className="text-muted-foreground">
+              <span>
                 <span className="num-mono">{stats?.paidCount}</span> {t("plans payants", "paid plans")}
               </span>
             )}
