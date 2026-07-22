@@ -14,6 +14,7 @@
     "test:ma-stack": "vitest run --config vitest.ma-stack.config.ts",
     "test:e2e:ma-stack": "node scripts/validate-ma-stack-e2e.mjs",
     "test:e2e:cards": "playwright test e2e/card-system.spec.ts",
+    "test:e2e:responsive": "playwright test e2e/responsive-shell.spec.ts",
     "test:watch": "vitest",
     "test:go14": "vitest run src/test/diagnostic/go14.diagnostic.spec.ts",
     "test:go15": "vitest run src/test/diagnostic/go15.onboarding.spec.ts",

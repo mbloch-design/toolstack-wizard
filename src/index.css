@@ -6751,10 +6751,12 @@
 @layer components {
   .tcc-card {
     position: relative;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 36px minmax(0, 1fr) auto auto 36px;
     align-items: center;
     gap: 12px;
+    height: 66px;
     min-height: 66px;
     padding: 13px 12px 13px 14px;
     border: 1px solid var(--color-border);
@@ -6849,6 +6851,218 @@
       width: 44px;
       height: 44px;
     }
+  }
+}
+
+/* ─────────────────────────────────────────────
+   SEARCH PAGE (sp-*)
+   One constrained editorial column. Horizontal tabs are the only element
+   allowed to scroll; result cards always shrink to the viewport.
+───────────────────────────────────────────── */
+@layer components {
+  .sp-page {
+    width: min(100%, 768px);
+    min-width: 0;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-md) var(--space-3xl);
+    font-family: var(--font-ui);
+  }
+  .sp-search-field {
+    position: relative;
+    margin-bottom: var(--space-xl);
+  }
+  .sp-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    color: var(--color-muted-light);
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+  .sp-search-input {
+    width: 100%;
+    min-height: 56px;
+    padding: 0 48px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--tt-radius-md);
+    outline: none;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-body);
+    font-weight: 550;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+  .sp-search-input::placeholder { color: var(--color-muted-light); font-weight: 400; }
+  .sp-search-input:focus {
+    border-color: var(--color-text);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-text) 10%, transparent);
+  }
+  .sp-search-clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-muted);
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  .sp-search-clear:hover { background: var(--color-surface-soft); color: var(--color-text); }
+  .sp-query-hint,
+  .sp-empty-query { color: var(--color-muted); font-size: 14px; text-align: center; }
+  .sp-empty-query > p { margin: 0 0 var(--space-lg); }
+  .sp-suggestions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-xs); }
+  .sp-suggestion,
+  .sp-tab {
+    min-height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: 600 14px/1 var(--font-ui);
+    cursor: pointer;
+  }
+  .sp-suggestion { padding: 0 16px; }
+  .sp-suggestion:hover { border-color: var(--color-text); }
+  .sp-results-header { display: flex; align-items: center; margin-bottom: var(--space-lg); }
+  .sp-results-header p { margin: 0; color: var(--color-muted); font-size: 14px; }
+  .sp-results-header strong { color: var(--color-text); font-weight: 650; }
+  .sp-tabs {
+    display: flex;
+    max-width: 100%;
+    gap: 6px;
+    margin: 0 0 var(--space-lg);
+    padding: 0 0 4px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+  .sp-tabs::-webkit-scrollbar { display: none; }
+  .sp-tab {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    border-color: transparent;
+    background: var(--color-surface-soft);
+    color: var(--color-muted);
+  }
+  .sp-tab:hover { color: var(--color-text); }
+  .sp-tab.is-active { background: var(--color-text); color: var(--color-bg); }
+  .sp-tab-count {
+    display: inline-flex;
+    min-width: 20px;
+    min-height: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    border-radius: var(--radius-pill);
+    background: var(--color-border);
+    color: var(--color-muted);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .sp-tab.is-active .sp-tab-count { background: rgba(255, 255, 255, 0.18); color: inherit; }
+  .sp-no-results {
+    padding: var(--space-2xl) var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--tt-radius-md);
+    background: var(--color-surface);
+    color: var(--color-muted-light);
+    text-align: center;
+  }
+  .sp-no-results > svg { margin: 0 auto var(--space-sm); }
+  .sp-no-results-title { margin: 0; color: var(--color-text); font-weight: 650; }
+  .sp-no-results-copy { margin: 6px 0 0; color: var(--color-muted); font-size: 14px; }
+  .sp-no-results-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--space-md);
+    padding: 0 16px;
+    border-radius: 10px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+  .sp-result-groups { display: grid; gap: var(--space-xl); min-width: 0; }
+  .sp-result-groups section,
+  .sp-tool-results,
+  .sp-category-results,
+  .sp-guide-results { min-width: 0; }
+  .sp-tool-results,
+  .sp-guide-results { display: grid; gap: var(--space-xs); }
+  .sp-category-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xs); }
+  .sp-section-header {
+    display: flex;
+    min-height: 32px;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+  .sp-section-title { display: flex; min-width: 0; align-items: center; gap: var(--space-xs); color: var(--color-text); font-size: 14px; font-weight: 650; }
+  .sp-section-title > span:first-child { display: inline-flex; color: var(--color-muted); }
+  .sp-section-count { padding: 3px 8px; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-muted); font-size: 11px; font-weight: 600; }
+  .sp-section-more {
+    min-height: 40px;
+    flex: 0 0 auto;
+    padding: 0 4px;
+    border: 0;
+    background: transparent;
+    color: var(--color-text);
+    font: 600 12px/1 var(--font-ui);
+    cursor: pointer;
+  }
+  .sp-category-card,
+  .sp-guide-card {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 13px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--tt-radius-sm);
+    background: var(--color-surface);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+  .sp-guide-card { align-items: flex-start; }
+  .sp-category-card:hover,
+  .sp-guide-card:hover { border-color: var(--color-text); background: var(--color-bg); }
+  .sp-result-icon { display: inline-flex; width: 36px; height: 36px; flex: 0 0 36px; align-items: center; justify-content: center; border-radius: 10px; background: var(--color-surface-soft); color: var(--color-text); }
+  .sp-result-copy { min-width: 0; flex: 1 1 auto; }
+  .sp-result-name { margin: 0; color: var(--color-text); font-size: 14px; font-weight: 650; line-height: 1.3; }
+  .sp-result-description { margin: 2px 0 0; overflow: hidden; color: var(--color-muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+  .sp-guide-excerpt { display: -webkit-box; margin: 4px 0 0; overflow: hidden; color: var(--color-muted); font-size: 12px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .sp-guide-meta { margin: 6px 0 0; color: var(--color-muted-light); font-size: 11px; }
+  .sp-result-arrow { flex: 0 0 auto; color: var(--color-muted-light); transition: color 160ms ease, transform 160ms ease; }
+  .sp-category-card:hover .sp-result-arrow,
+  .sp-guide-card:hover .sp-result-arrow { color: var(--color-text); transform: translateX(2px); }
+
+  @media (max-width: 560px) {
+    .sp-page { padding: var(--space-xl) var(--space-md) var(--space-3xl); }
+    .sp-search-field { margin-bottom: var(--space-lg); }
+    .sp-search-input { min-height: 52px; }
+    .sp-results-header { margin-bottom: var(--space-md); }
+    .sp-category-results { grid-template-columns: minmax(0, 1fr); }
+    .sp-category-card,
+    .sp-guide-card { width: 100%; }
   }
 }
 

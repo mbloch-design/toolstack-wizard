@@ -2,6 +2,14 @@
 
 ---
 
+## 2026-07-22 — Passe responsive globale catalogue, recherche, Explorer et Ma stack
+
+- Recherche restructurée avec des classes `sp-*` dédiées : largeur intrinsèque des catégories corrigée à 320 px, onglets confinés à un rail horizontal et cibles tactiles portées à 40–44 px.
+- Styles utilitaires dispersés de `SearchPage` remplacés par une architecture CSS responsive alignée sur les tokens du design system.
+- Nouvelle couverture Playwright à 320, 768 et 1280 px sur `/tools`, `/search`, `/explorer` et `/ma-stack`, avec détection des débordements de page et contrôle de la largeur réelle des résultats.
+
+---
+
 ## 2026-07-22 — Allègement du système de cards catalogue
 
 - Suppression de la coque bordée autour des cards média du catalogue : la miniature, la typographie et l'espacement portent désormais la hiérarchie.

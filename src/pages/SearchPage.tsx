@@ -102,13 +102,13 @@ const SearchPage = () => {
   const showGuides     = activeTab === "all" || activeTab === "guides";
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12">
+    <div className="sp-page">
 
       {/* Search input */}
-      <div className="relative mb-8">
+      <div className="sp-search-field">
         <Search
-          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5"
-          style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}
+          className="sp-search-icon"
+          aria-hidden
         />
         <input
           ref={inputRef}
@@ -119,47 +119,40 @@ const SearchPage = () => {
             "Rechercher un outil, une catégorie, un guide…",
             "Search for a tool, category, guide…"
           )}
-          className="w-full rounded-2xl border border-border bg-card py-4 pl-12 pr-12 text-base font-medium text-foreground placeholder:font-normal placeholder:text-muted-foreground/50 outline-none transition-all duration-150 focus:ring-2 focus:ring-primary/20"
-          style={{ borderColor: "hsl(var(--border))" }}
-          onFocus={e => {
-            e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
-          }}
-          onBlur={e => {
-            e.currentTarget.style.borderColor = "hsl(var(--border))";
-          }}
+          className="sp-search-input"
           autoComplete="off"
           spellCheck={false}
         />
         {inputValue && (
           <button
             onClick={() => { setInputValue(""); inputRef.current?.focus(); }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-md p-1 transition-colors hover:bg-secondary"
+            className="sp-search-clear"
             aria-label={t("Effacer", "Clear")}
           >
-            <X className="h-4 w-4 text-muted-foreground" />
+            <X size={16} aria-hidden />
           </button>
         )}
       </div>
 
       {/* Query too short */}
       {inputValue.trim().length > 0 && inputValue.trim().length < 2 && (
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="sp-query-hint">
           {t("Tapez au moins 2 caractères…", "Type at least 2 characters…")}
         </p>
       )}
 
       {/* Empty query — suggestions */}
       {inputValue.trim().length === 0 && (
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground mb-6">
+        <div className="sp-empty-query">
+          <p>
             {t("Que cherchez-vous ?", "What are you looking for?")}
           </p>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="sp-suggestions">
             {["Notion", "Figma", "Slack", "Zapier", "HubSpot", "Linear", "CRM", "Design"].map(s => (
               <button
                 key={s}
                 onClick={() => setInputValue(s)}
-                className="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5"
+                className="sp-suggestion"
               >
                 {s}
               </button>
@@ -172,18 +165,18 @@ const SearchPage = () => {
       {query.length >= 2 && (
         <>
           {/* Header */}
-          <div className="mb-6 flex items-center justify-between">
-            <p className="text-sm text-muted-foreground">
+          <div className="sp-results-header">
+            <p>
               {totalCount > 0 ? (
                 <>
-                  <span className="font-semibold text-foreground">{totalCount}</span>{" "}
+                  <strong>{totalCount}</strong>{" "}
                   {t(`résultat${totalCount > 1 ? "s" : ""} pour`, `result${totalCount > 1 ? "s" : ""} for`)}{" "}
-                  <span className="font-semibold text-foreground">"{inputValue.trim()}"</span>
+                  <strong>"{inputValue.trim()}"</strong>
                 </>
               ) : (
                 <>
                   {t(`Aucun résultat pour`, `No results for`)}{" "}
-                  <span className="font-semibold text-foreground">"{inputValue.trim()}"</span>
+                  <strong>"{inputValue.trim()}"</strong>
                 </>
               )}
             </p>
@@ -191,22 +184,18 @@ const SearchPage = () => {
 
           {/* Tabs */}
           {totalCount > 0 && tabs.length > 2 && (
-            <div className="mb-6 flex gap-1 overflow-x-auto pb-1">
+            <div className="sp-tabs" role="tablist" aria-label={t("Types de résultats", "Result types")}>
               {tabs.map(tab => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex shrink-0 items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                    activeTab === tab.id
-                      ? "bg-foreground text-background"
-                      : "bg-secondary text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`sp-tab${activeTab === tab.id ? " is-active" : ""}`}
+                  role="tab"
+                  aria-selected={activeTab === tab.id}
                 >
                   {tab.label}
                   <span
-                    className={`rounded-full px-1.5 py-0.5 text-[11px] font-semibold ${
-                      activeTab === tab.id ? "bg-background/20 text-background" : "bg-border text-muted-foreground"
-                    }`}
+                    className="sp-tab-count"
                   >
                     {tab.count}
                   </span>
@@ -217,12 +206,12 @@ const SearchPage = () => {
 
           {totalCount === 0 ? (
             /* No results */
-            <div className="rounded-card border border-border bg-card px-6 py-12 text-center">
-              <Search className="mx-auto mb-3 h-8 w-8 text-muted-foreground/40" />
-              <p className="font-medium text-foreground">
+            <div className="sp-no-results">
+              <Search size={32} aria-hidden />
+              <p className="sp-no-results-title">
                 {t("Aucun résultat", "No results")}
               </p>
-              <p className="mt-1.5 text-sm text-muted-foreground">
+              <p className="sp-no-results-copy">
                 {t(
                   "Essayez un autre terme ou explorez le catalogue complet.",
                   "Try a different term or browse the full catalog."
@@ -230,14 +219,14 @@ const SearchPage = () => {
               </p>
               <Link
                 to={`${prefix}/tools`}
-                className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="sp-no-results-link"
               >
                 {t("Voir tous les outils", "Browse all tools")}
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight size={16} aria-hidden />
               </Link>
             </div>
           ) : (
-            <div className="space-y-8">
+            <div className="sp-result-groups">
 
               {/* Tools */}
               {showTools && toolResults.length > 0 && (
@@ -250,7 +239,7 @@ const SearchPage = () => {
                     onShowAll={() => setActiveTab("tools")}
                     t={t}
                   />
-                  <div className="grid gap-2">
+                  <div className="sp-tool-results">
                     {(activeTab === "all" ? toolResults.slice(0, 5) : toolResults).map(tool => (
                       <ToolCardCompact
                         key={tool.id}
@@ -277,7 +266,7 @@ const SearchPage = () => {
                     onShowAll={() => setActiveTab("categories")}
                     t={t}
                   />
-                  <div className="grid gap-2 sm:grid-cols-2">
+                  <div className="sp-category-results">
                     {(activeTab === "all" ? catResults.slice(0, 4) : catResults).map(cat => (
                       <CategoryCard key={cat.id} cat={cat} prefix={prefix} lang={lang} />
                     ))}
@@ -296,7 +285,7 @@ const SearchPage = () => {
                     onShowAll={() => setActiveTab("guides")}
                     t={t}
                   />
-                  <div className="grid gap-2">
+                  <div className="sp-guide-results">
                     {(activeTab === "all" ? guideResults.slice(0, 3) : guideResults).map(post => (
                       <GuideCard key={post.id} post={post} prefix={prefix} />
                     ))}
@@ -326,18 +315,18 @@ function SectionHeader({
   t: (fr: string, en: string) => string;
 }) {
   return (
-    <div className="mb-3 flex items-center justify-between">
-      <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-        <span className="text-muted-foreground">{icon}</span>
+    <div className="sp-section-header">
+      <div className="sp-section-title">
+        <span>{icon}</span>
         {label}
-        <span className="rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+        <span className="sp-section-count">
           {count}
         </span>
       </div>
       {showAll && (
         <button
           onClick={onShowAll}
-          className="text-[12px] font-medium text-primary hover:text-primary/80 transition-colors"
+          className="sp-section-more"
         >
           {t("Voir tout →", "See all →")}
         </button>
@@ -353,18 +342,18 @@ function CategoryCard({ cat, prefix, lang }: { cat: any; prefix: string; lang: s
   return (
     <Link
       to={`${prefix}/category/${cat.slug}`}
-      className="group flex items-center gap-3 rounded-card border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
+      className="sp-category-card"
     >
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary">
-        <Hash className="h-4 w-4" />
+      <div className="sp-result-icon">
+        <Hash size={16} aria-hidden />
       </div>
-      <div className="min-w-0 flex-1">
-        <p className="text-[14px] font-semibold text-foreground">{name}</p>
+      <div className="sp-result-copy">
+        <p className="sp-result-name">{name}</p>
         {desc && (
-          <p className="mt-0.5 truncate text-[12px] text-muted-foreground">{desc}</p>
+          <p className="sp-result-description">{desc}</p>
         )}
       </div>
-      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/40 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+      <ArrowRight className="sp-result-arrow" size={14} aria-hidden />
     </Link>
   );
 }
@@ -373,23 +362,23 @@ function GuideCard({ post, prefix }: { post: any; prefix: string }) {
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group flex items-start gap-3.5 rounded-card border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
+      className="sp-guide-card"
     >
-      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary">
-        <BookOpen className="h-4 w-4" />
+      <div className="sp-result-icon">
+        <BookOpen size={16} aria-hidden />
       </div>
-      <div className="min-w-0 flex-1">
-        <p className="text-[14px] font-semibold text-foreground leading-snug">{post.title}</p>
+      <div className="sp-result-copy">
+        <p className="sp-result-name">{post.title}</p>
         {post.excerpt && (
-          <p className="mt-1 line-clamp-2 text-[12px] leading-relaxed text-muted-foreground">
+          <p className="sp-guide-excerpt">
             {post.excerpt}
           </p>
         )}
         {post.readTime && (
-          <p className="mt-1.5 text-[11px] text-muted-foreground/60">{post.readTime}</p>
+          <p className="sp-guide-meta">{post.readTime}</p>
         )}
       </div>
-      <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground/40 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+      <ArrowRight className="sp-result-arrow" size={14} aria-hidden />
     </Link>
   );
 }
