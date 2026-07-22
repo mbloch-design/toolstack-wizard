@@ -190,7 +190,8 @@ Fermetures : Escape (global keydown listener) + clic extérieur (click-catcher `
 ## Données
 
 ### Hooks
-- `useTools()` — tous les outils
+- `useToolSummaries()` — index léger pour listings, recherche, catégories, guides, Explorer et Ma Stack. Les routes de découverte ne doivent pas importer `tools_v4.json`.
+- `useTools()` — fiches complètes, réservé aux calculs et écrans qui consomment réellement les champs éditoriaux riches.
 - `useToolBySlug(slug)` — outil unique + loading state
 - `useCategories()` — toutes les catégories
 - `usePosts(lang)` — guides/articles

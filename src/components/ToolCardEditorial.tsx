@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Compass, MoreVertical } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
@@ -38,7 +39,7 @@ interface ToolCardEditorialProps {
   t: (fr: string, en: string) => string;
   categoryLabel?: string;
   lang?: "fr" | "en";
-  variant?: "default" | "compact";
+  variant?: "media" | "decision";
   showPin?: boolean;
   to?: string;
   linkState?: unknown;
@@ -66,6 +67,82 @@ function getPlanLabel(tool: ToolCardEditorialTool, lang: "fr" | "en"): string {
   return "N/A";
 }
 
+interface CardActionMenuProps {
+  tool: ToolCardEditorialTool;
+  t: ToolCardEditorialProps["t"];
+  exploreHref?: string;
+  exploreState?: unknown;
+  showPin: boolean;
+}
+
+function CardActionMenu({ tool, t, exploreHref, exploreState, showPin }: CardActionMenuProps) {
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const closeOnPointerDown = (event: PointerEvent) => {
+      if (!menuRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuRef.current?.querySelector<HTMLElement>("summary")?.focus();
+      }
+    };
+
+    document.addEventListener("pointerdown", closeOnPointerDown);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnPointerDown);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
+  return (
+    <details
+      ref={menuRef}
+      className="tce-action-menu"
+      open={open}
+      onToggle={(event) => setOpen(event.currentTarget.open)}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          setOpen(false);
+          menuRef.current?.querySelector<HTMLElement>("summary")?.focus();
+        }
+      }}
+    >
+      <summary
+        className="tce-action-trigger"
+        aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}
+        title={t("Plus d’actions", "More actions")}
+      >
+        <MoreVertical size={17} aria-hidden />
+      </summary>
+      <div className="tce-action-popover" onClick={() => setOpen(false)}>
+        {exploreHref && (
+          <Link to={exploreHref} state={exploreState} className="tce-action-item">
+            <Compass size={16} aria-hidden />
+            <span>{t("Explorer autour", "Explore around")}</span>
+          </Link>
+        )}
+        {showPin && (
+          <PinToolButton
+            slug={tool.slug ?? tool.id}
+            label={tool.name}
+            t={t}
+            compact
+            inline
+            labelMode="short"
+          />
+        )}
+      </div>
+    </details>
+  );
+}
+
 /* ── Component ───────────────────────────────────────────────────────────── */
 
 export function ToolCardEditorial({
@@ -74,7 +151,7 @@ export function ToolCardEditorial({
   t,
   categoryLabel,
   lang = "fr",
-  variant = "default",
+  variant = "media",
   showPin = true,
   to,
   linkState,
@@ -87,7 +164,7 @@ export function ToolCardEditorial({
   exploreState,
 }: ToolCardEditorialProps) {
   const plan = getPlanLabel(tool, lang);
-  const compact = variant === "compact";
+  const decision = variant === "decision";
 
   const description = t(
     tool.shortDescription,
@@ -100,7 +177,7 @@ export function ToolCardEditorial({
      The catalog variant below adopts a media-card anatomy: thumbnail first,
      then logo + identity + contextual actions, like a useful editorial
      equivalent of a YouTube card. */
-  if (compact) {
+  if (decision) {
     return (
       <div className="tool-pin-wrap tool-pin-wrap--compact">
         {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
@@ -133,7 +210,15 @@ export function ToolCardEditorial({
   return (
     <div className="tool-pin-wrap">
       <article className={`tce-card tce-card--media${selected ? " is-selected" : ""}`}>
-        <Link className="tce-cover-link" to={toolHref} state={linkState} aria-label={tool.name}>
+        <Link
+          className="tce-primary-link"
+          to={toolHref}
+          state={linkState}
+          aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)}
+          aria-current={selected ? "true" : undefined}
+        />
+
+        <div className="tce-cover">
           <ToolCardImage
             tool={tool}
             logoSize={44}
@@ -144,49 +229,25 @@ export function ToolCardEditorial({
               </div>
             )}
           />
-        </Link>
+        </div>
 
         <div className="tce-body">
           <div className="tce-identity-row">
-            <ToolLogo tool={tool} size={24} className="tce-logo" />
-            <div className="tce-identity-copy">
-              <Link className="tce-name-link" to={toolHref} state={linkState}>
+            <div className="tce-identity-link">
+              <ToolLogo tool={tool} size={24} className="tce-logo" />
+              <div className="tce-identity-copy">
                 <h3 className="tce-name">{tool.name}</h3>
-              </Link>
-              {(typeLabel || categoryLabel) && <span className="tce-category">{typeLabel || categoryLabel}</span>}
+                {(typeLabel || categoryLabel) && <span className="tce-category">{typeLabel || categoryLabel}</span>}
+              </div>
             </div>
             {(exploreHref || showPin) && (
-              <details className="tce-action-menu">
-                <summary
-                  className="tce-action-trigger"
-                  aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}
-                  title={t("Plus d’actions", "More actions")}
-                >
-                  <MoreVertical size={19} aria-hidden />
-                </summary>
-                <div className="tce-action-popover">
-                  {exploreHref && (
-                    <Link
-                      to={exploreHref}
-                      state={exploreState}
-                      className="tce-action-item"
-                    >
-                      <Compass size={16} aria-hidden />
-                      <span>{t("Explorer autour", "Explore around")}</span>
-                    </Link>
-                  )}
-                  {showPin && (
-                    <PinToolButton
-                      slug={tool.slug ?? tool.id}
-                      label={tool.name}
-                      t={t}
-                      compact
-                      inline
-                      labelMode="short"
-                    />
-                  )}
-                </div>
-              </details>
+              <CardActionMenu
+                tool={tool}
+                t={t}
+                exploreHref={exploreHref}
+                exploreState={exploreState}
+                showPin={showPin}
+              />
             )}
           </div>
         </div>

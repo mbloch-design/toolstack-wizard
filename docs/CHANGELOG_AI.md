@@ -15,6 +15,21 @@
 - Raffinement de la ligne d'identité sur le modèle des galeries éditoriales : logo 30px, titre 16px, catégorie et description 12px, menu compact 30px.
 - Recomposition finale d'après Contra Projects : la zone sous l'image devient une légende unique (logo rond 24px, nom 15px, catégorie inline, menu 28px) et la description est retirée de la card média.
 - Suppression du badge « ToolTrim Pick » des miniatures, dont le signal éditorial n'était pas explicite pour l'utilisateur.
+- Allègement des prix en micro-label clair, harmonisation des miniatures par une bordure interne discrète et un zoom de survol contenu.
+- Toute la légende produit est désormais cliquable ; le menu contextuel se ferme au clic extérieur, après une action et avec Échap.
+- Mise en place d'une politique de miniatures `curated / og / fallback`, avec normalisation locale des captures ToolTrim et rejet runtime des images inférieures à 320×160.
+- Ajout de `npm run audit:card-images` pour contrôler les fichiers locaux, les URLs, les réponses HTTP, les types MIME et les dimensions sans modifier les données.
+- Navigation unifiée sur toute la surface des cards média, sans liens imbriqués, avec menu contextuel indépendant et focus clavier visible.
+- Ajout d'un état de chargement stable pour les miniatures, d'un squelette respectant `prefers-reduced-motion` et de cibles tactiles de 44 px pour les actions.
+- Exposition de `data-image-state` (`loading`, `ready`, `fallback`) pour les tests et diagnostics visuels.
+- Consolidation des cards outils autour de trois usages explicites : média (`ToolCardEditorial`), décision (`variant="decision"`) et compacte (`ToolCardCompact`).
+- Migration des résultats de recherche vers la card compacte partagée, avec cible principale complète et action Explorer indépendante.
+- Suppression des anciens composants `ToolCard` et `ToolRowEditorial`, devenus orphelins après la migration du catalogue et des catégories.
+- Ajout d'une suite Playwright dédiée aux cards média, compactes et décisionnelles, avec références visuelles desktop/mobile et contrats clavier/tactile.
+- Nettoyage des coques CSS historiques `tc-card` et du bloc `tcr-*` ; les primitives d’image et de grille restent partagées sous `tc-*`.
+- Les routes catalogue `/tools`, catégories, guides et articles consomment désormais `useToolSummaries()` au lieu de déclencher le chargement de `tools_v4.json`.
+- Le texte de recherche du catalogue est calculé depuis l’index léger (identité, descriptions et signaux de classement), sans champs éditoriaux de fiche complète.
+- Les quatre signaux nécessaires aux filtres de catégorie sont intégrés au résumé (`relevantFor`, alternatives, substituabilité), ce qui retire aussi `tools_v4.json` des fiches catégorie.
 
 ---
 

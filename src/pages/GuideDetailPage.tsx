@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { usePostBySlug, usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
+import { usePostBySlug, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
 import { Clock, Check, Link2, ChevronUp } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
@@ -9,7 +9,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { scrollToTop, getScrollMetrics, onScroll } from "@/lib/scroll";
 import DOMPurify from "dompurify";
-import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuideDetailPage — editorial redesign
@@ -22,7 +21,7 @@ const GuideDetailPage = () => {
   const { lang, t, prefix } = useLang();
   const { post, loading } = usePostBySlug(slug, lang);
   const { posts: allPosts } = usePosts(lang);
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const mentionedTools = useArticleTools(post, tools);
   const [readProgress, setReadProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -506,7 +505,7 @@ const GuideDetailPage = () => {
 };
 
 /* ── Tool row ── */
-function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: string }) {
+function ToolRow({ tool, prefix, lang }: { tool: ToolSummary; prefix: string; lang: string }) {
   const v5Price = (tool as any).pricing_v5?.compare_price_monthly_eur;
   const price = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
   const isFree = price === 0 && !(tool.pricing as any)?.paid;

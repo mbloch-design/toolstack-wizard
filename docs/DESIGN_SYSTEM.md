@@ -79,6 +79,14 @@ Le catalogue limite volontairement les rectangles imbriqués. Une card ne reçoi
 - La miniature, la typographie et l'espacement créent la hiérarchie ; ne pas ajouter une coque par défaut.
 - Les piles de logos utilisent des avatars de 36px maximum, sans ombre ni animation décorative.
 
+### Politique des miniatures
+
+1. Capture éditoriale locale `/og-screenshots/<slug>.png` — état `curated`.
+2. Image Open Graph distante suffisamment grande — état `og`.
+3. Fond ToolTrim + logo produit — état `fallback`.
+
+Les URLs ToolTrim sont normalisées vers l'asset local pour ne pas dépendre du réseau. Une image inférieure à 320×160 est rejetée par la card. L'état actif est exposé via `data-image-quality` pour les audits et les tests. Utiliser `npm run audit:card-images` pour le contrôle offline, ou ajouter `-- --network` pour vérifier les sources distantes.
+
 ---
 
 ## Espacement — tokens globaux
@@ -549,24 +557,17 @@ Déclenchement Markdown : `> À retenir : texte…` (ou `Key takeaway`, `À note
 ### ToolCardEditorial (tce-*) — grille outils
 Carte média éditoriale utilisée par le catalogue, les catégories et les rails de découverte.
 - `tce-card--media` — miniature OG 16:10, puis ligne d’identité séparée.
-- La ligne d’identité associe logo 40px, nom, catégorie et actions contextuelles.
+- La ligne d’identité associe logo 24px, nom, catégorie et actions contextuelles.
 - Le prix et le statut éditorial peuvent se superposer à la miniature sous forme de capsules factuelles.
-- La description reste visible sur deux lignes : aucune information essentielle ne dépend du hover.
-- Le lien vers la fiche, l’exploration autour de l’outil et l’ajout à la stack sont trois interactions distinctes.
-- `tce-card--compact` conserve une anatomie dédiée aux surfaces de manipulation de stack.
+- Toute la surface ouvre la fiche ; l’exploration et l’ajout à la stack restent dans un menu contextuel indépendant.
+- `variant="decision"` conserve une anatomie dédiée aux surfaces de manipulation de stack.
 
-### ToolRowEditorial (tcr-*) — liste catégorie
-Ligne horizontale éditoriale. Utilisée par `CategoryPage`.
-```css
-.tcr-list { border-top: 1px solid #DADAD4; }   /* container */
-.tcr-row { padding: 18px 10px; border-bottom: 1px solid #DADAD4; }
-.tcr-rank { width: 20px; color: #9A9A92; font-variant-numeric: tabular-nums; }
-.tcr-logo { width: 40px; height: 40px; border-radius: 8px; }
-.tcr-score { font-size: 13px; font-weight: 600; }   /* "4.6 /5" */
-.tcr-price { min-width: 64px; text-align: right; }
-.tcr-pick { background: #222222; color: #FFFFFF; font-size: 9px; }
-```
-Mobile ≤640px : rang, score, prix masqués.
+### ToolCardCompact (tcc-*) — recherche et listes contraintes
+Ligne compacte sans grande miniature, utilisée lorsque la densité prime sur l’inspiration visuelle.
+- Logo 36px, titre 14px et description sur une ligne.
+- La surface complète ouvre la fiche ; Explorer reste une action secondaire indépendante.
+- Le prix disparaît sous 560px et la cible Explorer passe à 44px.
+- Ne pas réintroduire de métadonnées secondaires ou de badges dans cette variante.
 
 ### Stack selection cards (`sk-card`) — stacks
 La page `/fr/stacks` utilise désormais un système dédié à la sélection contextuelle.
@@ -581,10 +582,9 @@ La page `/fr/stacks` utilise désormais un système dédié à la sélection con
 Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compteurs globaux si ceux-ci ne tiennent pas compte des autres facettes actives.
 
 ### Composants dépréciés
-- `ToolCard variant="default"` → remplacé par `ToolCardEditorial`
-- `ToolCard variant="list-row"` → remplacé par `ToolRowEditorial`
+- `ToolCard` → supprimé, remplacé par `ToolCardEditorial` ou `ToolCardCompact`
+- `ToolRowEditorial` → supprimé, les catégories utilisent la grille média
 - `StackCardEditorial` → supprimé, remplacé par le système `sk-card` contextualisé de `StacksPage`
-- `ToolCard variant="featured"` → conservé pour la Sélection éditoriale ToolsPage uniquement
 
 ---
 

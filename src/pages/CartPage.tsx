@@ -2766,7 +2766,7 @@ const CartPage = () => {
                           prefix={prefix}
                           t={t}
                           lang={lang}
-                          variant="compact"
+                          variant="decision"
                           showPin={false}
                           showPrice={false}
                           to={getToolInspectorHref(toolSlug)}

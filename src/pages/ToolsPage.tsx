@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
 import { Search, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -9,7 +9,6 @@ import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import FilterDropdown from "@/components/filters/FilterDropdown";
-import type { Tool } from "@/data/types";
 import { getExplorerHref } from "@/lib/toolExploration";
 
 const TOOLS_PER_PAGE = 40;
@@ -40,10 +39,10 @@ const TOOL_VERTICAL_LABELS: Record<string, { fr: string; en: string }> = {
   dev: { fr: "Dev", en: "Dev" },
 };
 
-function isTrending(tool: Tool) {
+function isTrending(tool: ToolSummary) {
   return tool.prescription_quality === "ferme";
 }
-function isRecommended(tool: Tool) {
+function isRecommended(tool: ToolSummary) {
   return tool.prescription_quality === "oui" || tool.prescription_quality === "ferme";
 }
 
@@ -54,7 +53,7 @@ function normalizeToolText(value: unknown) {
     .toLowerCase();
 }
 
-function getToolSearchText(tool: Tool, categoryLabel = "") {
+function getToolSearchText(tool: ToolSummary, categoryLabel = "") {
   return normalizeToolText([
     tool.name,
     tool.categoryId,
@@ -64,8 +63,6 @@ function getToolSearchText(tool: Tool, categoryLabel = "") {
     ...(tool.verticals || []),
     ...(tool.covers || []),
     ...(tool.functional_needs || []),
-    ...(tool.useCases || []),
-    ...(tool.useCasesEn || []),
   ].join(" "));
 }
 
@@ -78,7 +75,7 @@ function getVerticalFilterLabel(verticalId: string, lang: string) {
 const ToolsPage = () => {
   const location = useLocation();
   const { lang, t, prefix } = useLang();
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSearch = searchParams.get("q") || "";

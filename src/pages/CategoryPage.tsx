@@ -1,7 +1,7 @@
 import { useLocation, useParams, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
-import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { Search, ChevronDown, X } from "lucide-react";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -48,7 +48,7 @@ const CategoryPage = () => {
   const location = useLocation();
   const { lang, t, prefix } = useLang();
   const { slug } = useParams();
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
   const category = categories.find((c) => c.slug === slug);

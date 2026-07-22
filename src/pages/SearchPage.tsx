@@ -1,9 +1,9 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import { useSearchParams, useNavigate, Link } from "react-router-dom";
-import { Search, Hash, BookOpen, Wrench, ArrowRight, Compass, X } from "lucide-react";
+import { Search, Hash, BookOpen, Wrench, ArrowRight, X } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import ToolLogo from "@/components/ToolLogo";
+import ToolCardCompact from "@/components/tool/ToolCardCompact";
 import { getExplorerHref } from "@/lib/toolExploration";
 
 /* ────────────────────────────────────────────────────────────
@@ -252,7 +252,15 @@ const SearchPage = () => {
                   />
                   <div className="grid gap-2">
                     {(activeTab === "all" ? toolResults.slice(0, 5) : toolResults).map(tool => (
-                      <ToolCard key={tool.id} tool={tool} prefix={prefix} query={inputValue.trim()} lang={lang} t={t} />
+                      <ToolCardCompact
+                        key={tool.id}
+                        tool={tool}
+                        prefix={prefix}
+                        lang={lang}
+                        t={t}
+                        exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                        exploreState={{ explorerCanGoBack: true, previousSourceLabel: t("Recherche", "Search") }}
+                      />
                     ))}
                   </div>
                 </section>
@@ -334,51 +342,6 @@ function SectionHeader({
           {t("Voir tout →", "See all →")}
         </button>
       )}
-    </div>
-  );
-}
-
-function ToolCard({
-  tool, prefix, query, lang, t,
-}: {
-  tool: any;
-  prefix: string;
-  query: string;
-  lang: string;
-  t: (fr: string, en: string) => string;
-}) {
-  const desc = lang === "en"
-    ? (tool.shortDescriptionEn || tool.shortDescription || "")
-    : (tool.shortDescription || "");
-
-  return (
-    <div className="search-tool-result group relative flex items-center rounded-card border border-border bg-card transition-all hover:border-primary/30 hover:bg-primary/3">
-    <Link
-      to={`${prefix}/tool/${tool.slug || tool.id}`}
-      className="flex min-w-0 flex-1 items-center gap-3.5 px-4 py-3.5"
-    >
-      <ToolLogo tool={tool} size={36} />
-      <div className="min-w-0 flex-1">
-        <p className="text-[14px] font-semibold text-foreground">{tool.name || tool.id}</p>
-        {desc && (
-          <p className="mt-0.5 truncate text-[12px] text-muted-foreground">{desc}</p>
-        )}
-      </div>
-      {tool.defaultMonthlyPrice > 0 && (
-        <span className="shrink-0 text-[12px] font-medium text-muted-foreground">
-          {tool.defaultMonthlyPrice}€/mo
-        </span>
-      )}
-      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/40 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-    </Link>
-    <Link
-      to={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
-      state={{ explorerCanGoBack: true, previousSourceLabel: t("Recherche", "Search") }}
-      className="search-tool-explore mr-3 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground"
-      aria-label={t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
-    >
-      <Compass className="h-4 w-4" aria-hidden />
-    </Link>
     </div>
   );
 }

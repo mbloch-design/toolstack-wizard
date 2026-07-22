@@ -148,6 +148,10 @@ const toolSummaries = tools.map((tool) => ({
   substitution_cluster_v2: tool.substitution_cluster_v2 || null,
   functional_needs: tool.functional_needs || [],
   verticals: tool.verticals || [],
+  relevantFor: tool.relevantFor || [],
+  freeAlternative: tool.freeAlternative || null,
+  substitutable: tool.substitutable ?? true,
+  betterAlternative: tool.betterAlternative || null,
 }));
 
 await Promise.all([

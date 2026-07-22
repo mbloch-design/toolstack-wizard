@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { useLang } from "@/hooks/useLang";
-import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import type { Category } from "@/data/types";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import EditorialHero from "@/components/EditorialHero";
@@ -199,7 +199,7 @@ function SectionTitle({ children }: { children: ReactNode }) {
 
 const CategoriesIndexPage = () => {
   const { lang, t, prefix } = useLang();
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const [activeIntent, setActiveIntent] = useState(INTENTS[0].id);
 

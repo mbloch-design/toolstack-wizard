@@ -5568,61 +5568,10 @@
 }
 
 /* ─────────────────────────────────────────────
-   TOOL CARDS — editorial directory system
-   3 variants: .tc-card (grid), .tc-card--featured, .tc-list-row (rankings)
+   TOOL CARD SHARED PRIMITIVES
+   Image panel + responsive catalog grid.
 ───────────────────────────────────────────── */
 @layer components {
-
-  /* ── BASE CARD ─────────────────────────────────────────────────────────── */
-  .tc-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 24px;
-    color: var(--color-text);
-    text-decoration: none;
-    cursor: pointer;
-    transition: border-color 180ms ease-out, background 180ms ease-out;
-  }
-
-  .dark .tc-card {
-    background: hsl(0 0% 11%);
-    border-color: hsl(0 0% 20%);
-    color: hsl(var(--foreground));
-  }
-
-  .tc-card:hover {
-    border-color: var(--color-text);
-    background: var(--color-bg);
-  }
-
-  .dark .tc-card:hover {
-    border-color: hsl(0 0% 55%);
-    background: hsl(0 0% 14%);
-  }
-
-  /* ── FEATURED CARD modifier ─────────────────────────────────────────────── */
-  .tc-card--featured {
-    background: var(--color-surface);
-    border-color: var(--color-text);
-  }
-
-  .dark .tc-card--featured {
-    background: hsl(0 0% 13%);
-    border-color: hsl(0 0% 35%);
-  }
-
-  .tc-card--featured:hover {
-    background: var(--color-bg);
-    border-color: var(--color-text-strong);
-  }
-
-  .dark .tc-card--featured:hover {
-    background: hsl(0 0% 16%);
-  }
-
   /* ── COVER IMAGE (ToolCardImage) ───────────────────────────────────────────
      Shared by .tc-card and .tce-card — same shape whether a real OG
      screenshot exists or it falls back to a centered logo, so every tool
@@ -5638,10 +5587,31 @@
     border-bottom: 1px solid var(--color-border-soft);
   }
   .tc-image img {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    opacity: 1;
+    transition: opacity 180ms ease-out;
+  }
+  .tc-image.is-loading img {
+    opacity: 0;
+  }
+  .tc-image.is-loading::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      100deg,
+      var(--color-surface-soft) 20%,
+      color-mix(in srgb, var(--color-surface) 72%, white) 42%,
+      var(--color-surface-soft) 64%
+    );
+    background-size: 220% 100%;
+    animation: tc-image-loading 1.2s ease-in-out infinite;
   }
   .tc-image-fallback {
     width: 100%;
@@ -5649,6 +5619,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .tc-image--fallback .tc-image-fallback {
+    background: var(--color-surface-soft);
+  }
+  .tc-image--fallback .tc-image-fallback > * {
+    box-shadow: 0 0 0 8px var(--color-surface);
   }
   .tc-image.stack-detail-tool-image {
     aspect-ratio: 16 / 9;
@@ -5665,6 +5641,15 @@
     object-position: center;
   }
   .dark .tc-image { background: hsl(0 0% 14%); border-color: hsl(0 0% 22%); }
+
+  @keyframes tc-image-loading {
+    from { background-position: 100% 0; }
+    to { background-position: -100% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tc-image.is-loading::before { animation: none; }
+  }
 
   /* .tce-card uses a tighter 16px padding (see .tce-card below) — the
      shared .tc-image negative margin above is sized for .tc-card's 24px,
@@ -6437,6 +6422,7 @@
      card shell: hierarchy comes from image, type and spacing, not another
      rectangle in an already dense catalog. */
   .tce-card--media {
+    position: relative;
     overflow: visible;
     padding: 0;
     border: 0;
@@ -6453,21 +6439,35 @@
     margin: 0;
     border: 0;
     border-radius: var(--tt-radius-md);
-    transition: transform 180ms ease-out;
+    background: var(--color-surface-soft);
   }
-  .tce-card--media:hover .tc-image { transform: translateY(-2px); }
-  .tce-cover-link {
-    display: block;
-    color: inherit;
-    text-decoration: none;
+  .tce-card--media .tc-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border: 1px solid rgba(34, 34, 34, 0.08);
+    border-radius: inherit;
+    pointer-events: none;
   }
-  .tce-cover-link:focus-visible,
-  .tce-name-link:focus-visible,
+  .tce-card--media .tc-image img {
+    transition: transform 220ms ease-out;
+  }
+  .tce-card--media:hover .tc-image img,
+  .tce-card--media:focus-within .tc-image img { transform: scale(1.012); }
+  .tce-primary-link {
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+    border-radius: var(--tt-radius-md);
+  }
+  .tce-primary-link:focus-visible,
   .tce-action-trigger:focus-visible,
   .tce-action-item:focus-visible {
     outline: 2px solid var(--color-text);
     outline-offset: 3px;
   }
+  .tce-cover { position: relative; }
 
   .dark .tce-card {
     background: hsl(var(--card));
@@ -6495,9 +6495,18 @@
 
   .tce-identity-row {
     display: grid;
-    grid-template-columns: 24px minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 7px;
+  }
+  .tce-identity-link {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    align-items: center;
+    min-width: 0;
+    gap: 7px;
+    color: inherit;
+    text-decoration: none;
   }
   .tce-logo {
     border-radius: 50% !important;
@@ -6510,16 +6519,9 @@
     gap: 6px;
     overflow: hidden;
   }
-  .tce-name-link {
-    display: block;
-    min-width: 0;
-    max-width: 65%;
-    flex: 0 1 auto;
-    color: inherit;
-    text-decoration: none;
-  }
   .tce-action-menu {
     position: relative;
+    z-index: 6;
     justify-self: end;
   }
   .tce-action-trigger {
@@ -6534,7 +6536,8 @@
     border: 1px solid transparent;
     border-radius: var(--radius-pill);
     background: transparent;
-    color: var(--color-muted);
+    color: var(--color-muted-light);
+    opacity: 0.72;
     cursor: pointer;
     list-style: none;
   }
@@ -6543,6 +6546,7 @@
   .tce-action-menu[open] .tce-action-trigger {
     background: var(--color-surface-soft);
     color: var(--color-text);
+    opacity: 1;
   }
   .tce-action-popover {
     position: absolute;
@@ -6607,6 +6611,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .tce-card--media:hover .tce-name,
+  .tce-card--media:focus-within .tce-name {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
 
   .dark .tce-name {
@@ -6700,197 +6710,145 @@
   .tce-cover-price {
     display: inline-flex;
     align-items: center;
-    min-height: 25px;
-    padding: 0 9px;
+    min-height: 22px;
+    padding: 0 7px;
     border-radius: var(--radius-pill);
-    background: rgba(34, 34, 34, 0.9);
-    color: #fff;
+    border: 1px solid rgba(34, 34, 34, 0.12);
+    background: rgba(255, 255, 255, 0.88);
+    color: #222;
     font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 10px;
+    font-weight: 600;
     line-height: 1;
-    box-shadow: 0 0 0 1px rgba(255,255,255,.16);
+    box-shadow: none;
+    backdrop-filter: blur(8px);
   }
   .tce-cover-price { margin-left: auto; }
 
   .tce-card:hover .tc-image-overlay--hover,
-  .tce-card:focus-visible .tc-image-overlay--hover {
+  .tce-card:focus-within .tc-image-overlay--hover {
     opacity: 1;
+  }
+
+  @media (pointer: coarse) {
+    .tce-action-trigger {
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      min-height: 44px;
+    }
+    .tce-action-item,
+    .tce-action-popover .pin-tool-button {
+      min-height: 44px;
+    }
   }
 }
 
 /* ─────────────────────────────────────────────
-   TOOL ROW EDITORIAL (tcr-*)
-   Horizontal list row — category rankings, alternatives.
-   rank → logo → content → score → price → cta
+   TOOL CARD COMPACT (tcc-*)
+   Dense discovery row for search and constrained lists.
 ───────────────────────────────────────────── */
 @layer components {
-
-  /* ── Container: adds a top border to the list ── */
-  .tcr-list {
-    border-top: 1px solid var(--color-border);
-  }
-
-  /* ── Row shell ──────────────────────────────── */
-  .tcr-row {
-    display: flex;
+  .tcc-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr) auto auto 36px;
     align-items: center;
-    gap: 16px;
-    padding: 18px 10px;
-    border-bottom: 1px solid var(--color-border);
-    text-decoration: none;
-    color: var(--color-text);
-    border-radius: var(--radius-sm);
-    transition: background 140ms ease-out;
+    gap: 12px;
+    min-height: 66px;
+    padding: 13px 12px 13px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--tt-radius-sm);
+    background: var(--color-surface);
+    transition: border-color 160ms ease-out, background 160ms ease-out;
   }
-  .tcr-row:hover { background: var(--color-bg); }
-  .dark .tcr-row { color: hsl(var(--foreground)); border-bottom-color: hsl(var(--border)); }
-  .dark .tcr-row:hover { background: hsl(var(--secondary)); }
-
-  /* ── Rank ─────────────────────────────────── */
-  .tcr-rank {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--color-muted-light);
-    width: 20px;
-    flex-shrink: 0;
-    text-align: center;
-    font-variant-numeric: tabular-nums;
-    line-height: 1;
-  }
-
-  /* ── Logo ─────────────────────────────────── */
-  .tcr-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius);
+  .tcc-card:hover,
+  .tcc-card:focus-within {
+    border-color: color-mix(in srgb, var(--color-text) 32%, var(--color-border));
     background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
   }
-  .dark .tcr-logo { background: hsl(0 0% 14%); border-color: hsl(0 0% 22%); }
-
-  /* ── Content ──────────────────────────────── */
-  .tcr-content { flex: 1; min-width: 0; }
-
-  .tcr-name {
-    font-family: var(--font-ui);
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
+  .tcc-primary-link {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    border-radius: inherit;
+  }
+  .tcc-primary-link:focus-visible,
+  .tcc-explore:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
+  .tcc-logo,
+  .tcc-copy,
+  .tcc-price,
+  .tcc-arrow { pointer-events: none; }
+  .tcc-copy { min-width: 0; }
+  .tcc-name {
     margin: 0;
-    line-height: 1.2;
-  }
-  .dark .tcr-name { color: hsl(var(--foreground)); }
-
-  .tcr-category {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    margin: 3px 0 0;
-    line-height: 1;
-  }
-
-  .tcr-excerpt {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.4;
-    color: var(--color-muted);
-    margin: 6px 0 0;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
     overflow: hidden;
-  }
-  .dark .tcr-excerpt { color: hsl(var(--muted-foreground)); }
-
-  /* ── Right section ───────────────────────── */
-  .tcr-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-shrink: 0;
-  }
-
-  .tcr-score {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
     color: var(--color-text);
-    white-space: nowrap;
-  }
-  .dark .tcr-score { color: hsl(var(--foreground)); }
-
-  .tcr-score-denom {
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--color-muted-light);
-    letter-spacing: 0;
-  }
-
-  .tcr-price {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-muted);
-    min-width: 64px;
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-
-  .tcr-cta {
     font-family: var(--font-ui);
     font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text);
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
+    font-weight: 650;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .dark .tcr-cta { color: hsl(var(--foreground)); }
-
-  .tcr-cta-arrow {
-    display: inline-block;
-    transition: transform 160ms ease-out;
-  }
-  .tcr-row:hover .tcr-cta-arrow { transform: translateX(3px); }
-
-  /* ── Pick inline badge ───────────────────── */
-  .tcr-pick {
-    display: inline-flex;
-    align-items: center;
-    height: 18px;
-    padding: 0 7px;
-    background: var(--color-text);
-    color: var(--color-surface);
+  .tcc-description {
+    margin: 2px 0 0;
+    overflow: hidden;
+    color: var(--color-muted);
     font-family: var(--font-ui);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: var(--radius-xs);
-    margin-left: 6px;
-    vertical-align: middle;
-    line-height: 1;
+    font-size: 12px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-
-  /* ── Responsive ──────────────────────────── */
-  @media (max-width: 640px) {
-    .tcr-rank  { display: none; }
-    .tcr-score { display: none; }
-    .tcr-price { display: none; }
+  .tcc-price {
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .tcc-arrow {
+    color: var(--color-muted-light);
+    transition: transform 160ms ease-out, color 160ms ease-out;
+  }
+  .tcc-card:hover .tcc-arrow,
+  .tcc-card:focus-within .tcc-arrow {
+    color: var(--color-text);
+    transform: translateX(2px);
+  }
+  .tcc-explore {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-muted);
+  }
+  .tcc-explore:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+  }
+  @media (max-width: 560px) {
+    .tcc-card {
+      grid-template-columns: 36px minmax(0, 1fr) 44px;
+      gap: 10px;
+    }
+    .tcc-price,
+    .tcc-arrow { display: none; }
+    .tcc-explore {
+      width: 44px;
+      height: 44px;
+    }
   }
 }
 

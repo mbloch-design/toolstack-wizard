@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
+import { usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, useRef, type CSSProperties } from "react";
 import { Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
@@ -8,7 +8,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import { scrollToTop } from "@/lib/scroll";
-import type { Tool } from "@/data/types";
 import ToolLogoPile from "@/components/ToolLogoPile";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -114,7 +113,7 @@ function getPostIntent(post: Post): string | null {
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
   const { posts, loading } = usePosts(lang);
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
@@ -306,7 +305,7 @@ const GuidesPage = () => {
 function ArticleRow({
   post, prefix, lang, tools,
 }: {
-  post: Post; prefix: string; lang: string; tools: Tool[];
+  post: Post; prefix: string; lang: string; tools: ToolSummary[];
 }) {
   const mentionedTools = useArticleTools(post, tools);
   const type   = getPostType(post);

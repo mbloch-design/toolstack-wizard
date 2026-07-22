@@ -135,6 +135,10 @@ export type ToolSummary = Pick<
   | "functional_needs"
   | "verticals"
   | "prescription_quality"
+  | "relevantFor"
+  | "freeAlternative"
+  | "substitutable"
+  | "betterAlternative"
 >;
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
@@ -160,6 +164,10 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   functional_needs: t.functional_needs || [],
   verticals: t.verticals || [],
   prescription_quality: t.prescription_quality || null,
+  relevantFor: t.relevantFor || t.relevant_for || [],
+  freeAlternative: t.freeAlternative || t.free_alternative || null,
+  substitutable: t.substitutable ?? true,
+  betterAlternative: t.betterAlternative || t.better_alternative || null,
 }));
 
 function mapSupabaseCat(c: any): Category {
@@ -347,7 +355,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, free_alternative, substitutable, better_alternative")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -374,6 +382,10 @@ export function useToolSummaries() {
           functional_needs: t.functional_needs || [],
           verticals: t.verticals || [],
           prescription_quality: t.prescription_quality || null,
+          relevantFor: t.relevant_for || [],
+          freeAlternative: t.free_alternative || null,
+          substitutable: t.substitutable ?? true,
+          betterAlternative: t.better_alternative || null,
         }));
         const merged = mergeById(staticToolSummaries, remoteTools);
         _toolSummariesCache = merged;
