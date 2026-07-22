@@ -16,6 +16,7 @@
     "test:e2e:cards": "playwright test e2e/card-system.spec.ts",
     "test:e2e:responsive": "playwright test e2e/responsive-shell.spec.ts",
     "test:e2e:navigation": "playwright test e2e/navigation-continuity.spec.ts",
+    "test:e2e:a11y": "playwright test e2e/accessibility.spec.ts",
     "test:watch": "vitest",
     "test:go14": "vitest run src/test/diagnostic/go14.diagnostic.spec.ts",
     "test:go15": "vitest run src/test/diagnostic/go15.onboarding.spec.ts",
@@ -136,6 +137,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
     "@eslint/js": "^9.32.0",
     "@playwright/test": "^1.57.0",
     "@tailwindcss/typography": "^0.5.19",

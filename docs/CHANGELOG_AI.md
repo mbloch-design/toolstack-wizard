@@ -2,6 +2,17 @@
 
 ---
 
+## 2026-07-22 — Socle d’accessibilité des parcours de découverte
+
+- Audit Axe automatisé sur Catalogue, Recherche, Explorer et Ma Stack, sans violation critique ou sérieuse sur les quatre routes.
+- Correction des filtres de recherche : abandon de la sémantique d’onglets incomplète au profit d’un groupe de filtres avec état `aria-pressed` explicite.
+- Renforcement des contrastes des filtres, compteurs de résultats et métadonnées de la barre Ma Stack afin de respecter le seuil WCAG AA.
+- Respect de `prefers-reduced-motion` sur les cards média et compactes : transitions neutralisées et zoom de miniature supprimé.
+- Couverture Playwright des états de filtre, de la navigation clavier du menu contextuel, de la restitution du focus après Échap et de la réduction des animations.
+- Nouvelle commande `npm run test:e2e:a11y` pour rejouer les garde-fous d’accessibilité.
+
+---
+
 ## 2026-07-22 — Lancement des chantiers images, navigation et cohérence éditoriale
 
 - Baseline versionnée des 17 références d’images locales déjà cassées et nouvelle commande `validate:card-images` qui bloque uniquement les régressions supplémentaires.

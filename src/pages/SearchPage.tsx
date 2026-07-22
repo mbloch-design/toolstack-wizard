@@ -184,14 +184,13 @@ const SearchPage = () => {
 
           {/* Tabs */}
           {totalCount > 0 && tabs.length > 2 && (
-            <div className="sp-tabs" role="tablist" aria-label={t("Types de résultats", "Result types")}>
+            <div className="sp-tabs" role="group" aria-label={t("Filtrer les résultats par type", "Filter results by type")}>
               {tabs.map(tab => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`sp-tab${activeTab === tab.id ? " is-active" : ""}`}
-                  role="tab"
-                  aria-selected={activeTab === tab.id}
+                  aria-pressed={activeTab === tab.id}
                 >
                   {tab.label}
                   <span
