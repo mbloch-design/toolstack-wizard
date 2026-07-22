@@ -46,9 +46,9 @@ export function EditorialSection({
               {description && <p className="es-description">{description}</p>}
             </div>
             {cta && (
-              <Link to={cta.href} className="es-cta-link">
+              <Link to={cta.href} className="tt-section-action es-cta-link">
                 {cta.label}
-                <ArrowRight style={{ width: 14, height: 14, flexShrink: 0 }} />
+                <ArrowRight aria-hidden />
               </Link>
             )}
           </div>

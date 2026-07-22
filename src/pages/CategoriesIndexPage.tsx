@@ -183,18 +183,7 @@ function cleanCategoryName(name: string) {
 }
 
 function SectionTitle({ children }: { children: ReactNode }) {
-  return (
-    <h2
-      className="font-display font-semibold text-foreground"
-      style={{
-        fontSize: "clamp(1.875rem, 3vw, 2.5rem)",
-        letterSpacing: "-0.025em",
-        lineHeight: 1.1,
-      }}
-    >
-      {children}
-    </h2>
-  );
+  return <h2 className="tt-section-title">{children}</h2>;
 }
 
 const CategoriesIndexPage = () => {

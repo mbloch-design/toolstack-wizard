@@ -70,7 +70,7 @@ export default function FaqBlock({
   /* ── Default mode: landing / home page — large editorial layout ── */
   return (
     <div className={`mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[340px_1fr] lg:gap-16 ${className}`}>
-      <h2 className="font-display text-[clamp(2.3rem,4.2vw,4.2rem)] font-bold leading-[1.02] tracking-tight text-foreground">
+      <h2 className="tt-section-title">
         {title}
       </h2>
 

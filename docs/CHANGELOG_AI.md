@@ -2,6 +2,20 @@
 
 ---
 
+## 2026-07-22 — Ouverture éditoriale du catalogue outils
+
+- La sélection recommandée est ramenée de huit à trois outils afin de jouer un rôle éditorial clair plutôt que de dupliquer une rangée du catalogue.
+- Le haut de page présente trois recommandations homogènes et amples, sans hiérarchie de taille arbitraire entre les outils.
+- Un titre de section compact, son sous-titre rapproché et une action discrète laissent les visuels porter la présence éditoriale.
+- Le catalogue complet retrouve sa propre entrée, son nombre de résultats et une séparation visuelle plus respirante.
+- Sur tablette, les trois recommandations conservent le même ratio ; sur mobile, elles deviennent un rail horizontal homogène avec scroll snap.
+- La hiérarchie typographique devient une règle globale : les H2 de section utilisent désormais une échelle compacte de 25 à 32 px, distincte des H1 et héros éditoriaux.
+- L'accueil actif applique ce système à tous ses rails avec un sous-titre rapproché et des actions secondaires alignées à droite.
+- Les composants partagés des fiches outil, comparatifs, guides, pages institutionnelles, catégories et FAQ sont raccordés aux mêmes tokens.
+- Les actions secondaires des en-têtes de section partagent désormais `.tt-section-action` sur l'accueil, le catalogue et les sections éditoriales : même graisse, même flèche Lucide et même mouvement au survol.
+
+---
+
 ## 2026-07-22 — Socle d’accessibilité des parcours de découverte
 
 - Audit Axe automatisé sur Catalogue, Recherche, Explorer et Ma Stack, sans violation critique ou sérieuse sur les quatre routes.

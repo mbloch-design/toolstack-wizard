@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
-import { Search, X } from "lucide-react";
+import { ArrowDown, Search, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
@@ -12,6 +12,7 @@ import FilterDropdown from "@/components/filters/FilterDropdown";
 import { getExplorerHref } from "@/lib/toolExploration";
 
 const TOOLS_PER_PAGE = 40;
+const EDITORIAL_SELECTION = ["framer", "notion", "figma"];
 
 
 type SortKey = "popular" | "name" | "price-asc" | "free-first";
@@ -121,11 +122,17 @@ const ToolsPage = () => {
   );
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
 
-  // Noteworthy: top recommended tools (not filtered by category/search)
-  const noteworthy = useMemo(() =>
-    tools.filter(isRecommended).slice(0, 8),
-    [tools]
-  );
+  // A short editorial opening, deliberately distinct from the exhaustive grid.
+  // Three entries are enough to create hierarchy without duplicating a full row
+  // of the catalogue above the catalogue itself.
+  const noteworthy = useMemo(() => {
+    const selected = EDITORIAL_SELECTION
+      .map((slug) => tools.find((tool) => (tool.slug || tool.id) === slug))
+      .filter((tool): tool is ToolSummary => Boolean(tool));
+    const selectedIds = new Set(selected.map((tool) => tool.id));
+    const fallback = tools.filter((tool) => isRecommended(tool) && !selectedIds.has(tool.id));
+    return [...selected, ...fallback].slice(0, 3);
+  }, [tools]);
 
   // All tools filtered + sorted
   const filtered = useMemo(() => {
@@ -325,30 +332,46 @@ const ToolsPage = () => {
           </div>
         </div>
 
-        {/* ── Section 1: Noteworthy (only when not filtering) ── */}
+        {/* ── Section 1: editorial opening (only when not filtering) ── */}
         {!isFiltering && noteworthy.length > 0 && (
-          <section className="mb-12">
-            <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-              {t("Sélection éditoriale", "Editor's picks")}
-            </p>
-            <h2 className="mb-5 font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
-              {t("Les outils qu'on recommande vraiment", "Tools we actually recommend")}
-            </h2>
-            <div className="tc-grid">
+          <section className="tt-editorial-opening" aria-labelledby="editorial-selection-title">
+            <header className="tt-editorial-opening-header">
+              <div className="tt-editorial-opening-heading">
+                <h2 id="editorial-selection-title" className="tt-editorial-opening-title">
+                  {t("Trois outils à découvrir", "Three tools to discover")}
+                </h2>
+                <p className="tt-editorial-opening-intro">
+                  {t(
+                    "Une sélection courte pour commencer par les options les plus solides.",
+                    "A short selection of strong options to start with.",
+                  )}
+                </p>
+              </div>
+              <a className="tt-section-action tt-editorial-opening-link" href="#catalogue-complet">
+                {t("Voir tout le catalogue", "View full catalogue")}
+                <ArrowDown aria-hidden />
+              </a>
+            </header>
+
+            <div className="tt-editorial-opening-grid">
               {noteworthy.map((tool) => {
                 const catObj = categories.find(c => c.id === tool.categoryId);
                 const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
                 return (
-                  <ToolCardEditorial
+                  <div
                     key={tool.id}
-                    tool={tool}
-                    prefix={prefix}
-                    t={t}
-                    lang={lang}
-                    categoryLabel={catLabel}
-                    exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
-                    exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: t("Catalogue", "Catalog") }}
-                  />
+                    className="tt-editorial-opening-item"
+                  >
+                    <ToolCardEditorial
+                      tool={tool}
+                      prefix={prefix}
+                      t={t}
+                      lang={lang}
+                      categoryLabel={catLabel}
+                      exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                      exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: t("Catalogue", "Catalog") }}
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -356,7 +379,11 @@ const ToolsPage = () => {
         )}
 
         {/* ── Section 2: All apps ── */}
-        <section className={!isFiltering && noteworthy.length > 0 ? "border-t border-border/50 pt-10" : ""}>
+        <section
+          id="catalogue-complet"
+          className={!isFiltering && noteworthy.length > 0 ? "tt-catalog-results tt-catalog-results--after-editorial" : "tt-catalog-results"}
+          aria-labelledby={filtered.length > 0 ? "catalogue-results-title" : undefined}
+        >
           {filtered.length === 0 ? (
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed py-16 text-center" style={{ borderColor: "hsl(var(--border))" }}>
               <Search className="mx-auto h-8 w-8" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }} />
@@ -369,6 +396,12 @@ const ToolsPage = () => {
             </div>
           ) : (
             <>
+              <header className="tt-catalog-results-header">
+                <p className="tt-catalog-results-kicker">{t("Catalogue complet", "Full catalogue")}</p>
+                <h2 id="catalogue-results-title" className="tt-catalog-results-title">
+                  {t(`${filtered.length} outils à comparer`, `${filtered.length} tools to compare`)}
+                </h2>
+              </header>
               <div className="tc-grid">
                 {visible.map(tool => {
                   const catObj = categories.find(c => c.id === tool.categoryId);

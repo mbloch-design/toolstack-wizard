@@ -122,6 +122,16 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 --font-ui:    "Inter Tight"           /* UI, corps, labels */
 ```
 
+### Hiérarchie des sections
+
+- Un H1 ou un hero peut employer `--tt-size-hero` ou `--tt-size-page-title`.
+- Un H2 qui introduit une section emploie toujours `--tt-size-section-h` : il ne doit jamais se comporter comme un second hero.
+- Le sous-titre est placé directement sous le H2 avec un écart de `8px` et utilise `--tt-size-section-intro`.
+- L'action éventuelle reste secondaire, alignée à droite sur desktop et sous le titre sur mobile.
+- Elle utilise `.tt-section-action` : 14px/600, icône Lucide de 15px et déplacement de 3px au survol. La flèche pointe à droite pour naviguer et vers le bas pour rejoindre une ancre interne.
+- Dans une galerie ou un rail, les images portent la présence visuelle ; la typographie ne doit pas les concurrencer.
+- Les kickers sont facultatifs. Ne pas en ajouter uniquement pour donner artificiellement de la hauteur au header.
+
 ### Variables CSS de taille (`--tt-size-*`)
 
 Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes les classes `tt-*`, `cp-*`, `sd-*` doivent référencer ces vars — jamais coder `clamp()` en dur sur une page.
@@ -130,8 +140,9 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 |---|---|---|
 | `--tt-size-hero` | `clamp(64px, 8vw, 124px)` | H1 principal (Compare, ToolDetail) |
 | `--tt-size-hero-sub` | `clamp(22px, 2vw, 30px)` | Phrase sous H1 |
-| `--tt-size-section-h` | `clamp(44px, 5vw, 76px)` | Titre de section — éditorial large |
-| `--tt-size-section-intro` | `clamp(20px, 1.8vw, 26px)` | Intro de section |
+| `--tt-size-page-title` | `clamp(40px, 4.5vw, 56px)` | H1 de page ou d'article éditorial |
+| `--tt-size-section-h` | `clamp(25px, 2.4vw, 32px)` | Titre de section compact |
+| `--tt-size-section-intro` | `clamp(16px, 1.3vw, 18px)` | Sous-titre directement lié à la section |
 | `--tt-size-body-large` | `clamp(18px, 1.5vw, 22px)` | Grand corps / framing |
 | `--tt-size-body` | `16px` | Corps standard |
 | `--tt-size-kicker` | `11px` | TOUS les kickers / eyebrows |
@@ -146,7 +157,7 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 
 | Variable | Valeur | Usage |
 |---|---|---|
-| `--tt-section-y` | `clamp(80px, 9vw, 140px)` | Padding vertical de section |
+| `--tt-section-y` | `clamp(56px, 5.5vw, 88px)` | Padding vertical de section |
 | `--tt-hero-pt` | `72px` | Padding-top du hero |
 | `--tt-hero-pb` | `64px` | Padding-bottom du hero |
 
@@ -170,8 +181,8 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 | `.tt-hero-title` | `--tt-size-hero` | 700 | -0.07em | 0.92 | H1 pages principales |
 | `.tt-hero-subtitle` | `--tt-size-hero-sub` | 400 | -0.035em | 1.28 | Phrase sous H1 |
 | `.tt-kicker` | `--tt-size-kicker` | 700 | +0.08em | 1 | Eyebrows, kickers, labels uppercase |
-| `.tt-section-title` | `--tt-size-section-h` | 700 | -0.06em | 0.95 | Titres de sections |
-| `.tt-section-intro` | `--tt-size-section-intro` | 400 | -0.035em | 1.32 | Intros de section |
+| `.tt-section-title` | `--tt-size-section-h` | 620 | -0.035em | 1.08 | Titres de sections |
+| `.tt-section-intro` | `--tt-size-section-intro` | 400 | -0.01em | 1.45 | Sous-titres de section |
 | `.tt-body` | `--tt-size-body` | 400 | — | 1.5 | Corps standard |
 | `.tt-body-large` | `--tt-size-body-large` | 400 | -0.02em | 1.42 | Grand corps, framing |
 | `.tt-fact-label` | `10px` (fixe) | 700 | +0.08em | 1 | Micro-label uppercase (10px) |
@@ -214,11 +225,11 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 Les pages Comparatif utilisent `.cp-title` comme titre de section, mais ce niveau doit rester nettement inférieur au H1 hero.
 
 - H1 comparatif : `--tt-size-hero`, conservé comme signal principal.
-- H2 comparatif `.cp-title` : `clamp(32px, 3vw, 36px)`, weight 700.
+- H2 comparatif `.cp-title` : `var(--tt-size-section-h)` (`clamp(25px, 2.4vw, 32px)`), weight 620.
 - Titres de critères / cartes : `18–20px`.
 - Corps de cards et cellules : `14px`.
 
-Ne pas remonter les H2 comparatif au niveau `--tt-size-section-h` sans revoir toute la hiérarchie hero.
+Les H2 comparatif suivent le token commun `--tt-size-section-h` ; seul le H1 hero conserve une échelle expressive.
 
 ### Hiérarchie éditoriale (référence pages Stack)
 
@@ -695,7 +706,7 @@ Chaque section utilise une structure à 2 colonnes sur desktop :
 cp-container
   span.cp-eyebrow          ← 12px 700 caps, margin-bottom 28px
   div.cp-section-grid      ← grid: minmax(280px, 0.9fr) / minmax(0, 1.6fr), gap 80px
-    div.cp-section-heading ← gauche : h2.cp-title (clamp 32–36px, weight 700, tracking -0.06em)
+    div.cp-section-heading ← gauche : h2.cp-title (token --tt-size-section-h, weight 620, tracking -0.035em)
     div.cp-section-body    ← droite : contenu décisionnel
 ```
 
@@ -1432,7 +1443,7 @@ Les pages détail stack utilisent une hiérarchie plus éditoriale que les listi
 **Type scale :**
 - H1 stack : `clamp(56px, 6vw, 104px)`, line-height `0.92`, tracking `-0.065em`.
 - Sous-titre hero : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`.
-- H2 section : `clamp(36px, 4vw, 64px)`, line-height `0.98`.
+- H2 section : `var(--tt-size-section-h)` (`clamp(25px, 2.4vw, 32px)`), line-height `1.08`.
 - Body : `16px / 1.5`.
 - Verdict important : `18px / 1.45`, weight `500`.
 - Metadata : `13px / 1.35`.

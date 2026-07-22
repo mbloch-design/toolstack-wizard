@@ -52,12 +52,15 @@ const AI_SLUGS = [
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
 
 /* ── Generic section header ── */
-function SectionHead({ label, to, linkLabel }: { label: string; to: string; linkLabel: string }) {
+function SectionHead({ label, description, to, linkLabel }: { label: string; description?: string; to: string; linkLabel: string }) {
   return (
     <div className="v2-section-head">
-      <h2 className="v2-section-title">{label}</h2>
-      <Link to={to} className="v2-section-link">
-        {linkLabel} <ArrowRight style={{ width: 13, height: 13 }} />
+      <div className="v2-section-heading-copy">
+        <h2 className="v2-section-title">{label}</h2>
+        {description && <p className="v2-section-description">{description}</p>}
+      </div>
+      <Link to={to} className="tt-section-action v2-section-link">
+        {linkLabel} <ArrowRight aria-hidden />
       </Link>
     </div>
   );
@@ -65,14 +68,17 @@ function SectionHead({ label, to, linkLabel }: { label: string; to: string; link
 
 /* ── Featured carousel header with arrows ── */
 function FeaturedHead({
-  label, to, linkLabel, page, total, onPrev, onNext,
+  label, description, to, linkLabel, page, total, onPrev, onNext,
 }: {
-  label: string; to: string; linkLabel: string;
+  label: string; description?: string; to: string; linkLabel: string;
   page: number; total: number; onPrev: () => void; onNext: () => void;
 }) {
   return (
     <div className="v2-section-head">
-      <h2 className="v2-section-title">{label}</h2>
+      <div className="v2-section-heading-copy">
+        <h2 className="v2-section-title">{label}</h2>
+        {description && <p className="v2-section-description">{description}</p>}
+      </div>
       <div className="v2-featured-nav">
         <button
           className="v2-feat-arrow"
@@ -90,8 +96,8 @@ function FeaturedHead({
         >
           <ChevronRight style={{ width: 16, height: 16 }} />
         </button>
-        <Link to={to} className="v2-section-link" style={{ marginLeft: 8 }}>
-          {linkLabel} <ArrowRight style={{ width: 13, height: 13 }} />
+        <Link to={to} className="tt-section-action v2-section-link">
+          {linkLabel} <ArrowRight aria-hidden />
         </Link>
       </div>
     </div>
@@ -306,6 +312,7 @@ export default function HomePageV2() {
           <>
           <FeaturedHead
             label={t("Outils en vedette", "Featured tools")}
+            description={t("Une sélection courte d'outils solides pour commencer.", "A short selection of strong tools to start with.") as string}
             to={`${prefix}/tools`}
             linkLabel={t("Voir tout", "See all")}
             page={featuredPage}
@@ -348,6 +355,7 @@ export default function HomePageV2() {
             <div style={{ marginTop: 56 }}>
               <FeaturedHead
                 label={t("Outils IA", "AI Design Tools")}
+                description={t("Les assistants et modèles à comparer selon ton usage réel.", "Assistants and models to compare for your actual use.") as string}
                 to={`${prefix}/category/ai-general`}
                 linkLabel={t("Voir tout", "See all")}
                 page={aiPage}
@@ -384,6 +392,7 @@ export default function HomePageV2() {
             <div style={{ marginTop: 56 }}>
               <FeaturedHead
                 label={t("Nouveautés", "New Additions")}
+                description={t("Les ajouts récents au catalogue ToolTrim.", "Recent additions to the ToolTrim catalogue.") as string}
                 to={`${prefix}/tools`}
                 linkLabel={t("Voir tout", "See all")}
                 page={newPage}
@@ -451,6 +460,7 @@ export default function HomePageV2() {
           <div style={{ marginTop: 56 }}>
             <FeaturedHead
               label={t("Stacks recommandées", "Recommended stacks")}
+              description={t("Des combinaisons cohérentes selon le métier, le budget et le niveau.", "Coherent combinations by role, budget and experience.") as string}
               to={`${prefix}/stacks`}
               linkLabel={t("Toutes les stacks", "All stacks")}
               page={stackPage}
@@ -499,6 +509,7 @@ export default function HomePageV2() {
             <div style={{ marginTop: 56, paddingBottom: "clamp(64px,8vw,112px)" }}>
               <FeaturedHead
                 label={t("Articles du guide", "Guide articles")}
+                description={t("Des analyses pour décider sans empiler les outils.", "Analysis to help you decide without stacking tools.") as string}
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
                 page={postPage}
