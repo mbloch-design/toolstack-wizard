@@ -6416,7 +6416,7 @@
     text-decoration: none;
     color: var(--color-text);
     transition: border-color 180ms ease-out, background 180ms ease-out;
-    cursor: pointer;
+    cursor: default;
   }
 
   .tce-card:hover {
@@ -6427,6 +6427,24 @@
   .tce-card:focus-visible {
     outline: 1px solid hsl(var(--primary));
     outline-offset: 2px;
+  }
+
+  .tce-card--compact { cursor: pointer; }
+
+  /* Catalog media card: the image is the recognition layer, while the
+     identity and actions live below it. Links and buttons are deliberately
+     separated so pinning a tool never competes with opening its fiche. */
+  .tce-card--media:focus-within { border-color: var(--color-text); }
+  .tce-cover-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .tce-cover-link:focus-visible,
+  .tce-name-link:focus-visible,
+  .tce-card-action:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
   }
 
   .dark .tce-card {
@@ -6445,6 +6463,57 @@
     flex: 1;
   }
 
+  .tce-identity-row {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 11px;
+  }
+  .tce-logo {
+    border-radius: 10px !important;
+    background: var(--color-surface) !important;
+  }
+  .tce-identity-copy { min-width: 0; }
+  .tce-name-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .tce-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tce-card-action,
+  .tce-actions .pin-tool-button {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    min-height: 34px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-muted);
+    transform: none;
+  }
+  .tce-card-action:hover,
+  .tce-actions .pin-tool-button:hover {
+    border-color: var(--color-border);
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+    transform: none;
+  }
+  .tce-actions .pin-tool-button--active {
+    border-color: var(--color-border);
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+  }
+
   /* Name + price share one row — price is a small trailing label, not a
      second headline, so it doesn't compete with the tool name. */
   .tce-title-row {
@@ -6456,16 +6525,17 @@
 
   .tce-name {
     font-family: var(--font-ui);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
     color: var(--color-text);
     margin: 0;
     min-width: 0;
+    display: -webkit-box;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .dark .tce-name {
@@ -6487,74 +6557,90 @@
 
   .tce-category {
     font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.3;
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
     color: var(--color-muted);
-    margin: 4px 0 0;
+    margin: 3px 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tce-summary {
+    display: -webkit-box;
+    margin: 9px 0 0 51px;
+    overflow: hidden;
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .dark .tce-category {
     color: hsl(var(--muted-foreground));
   }
 
-  /* ── Image hover overlay: description + CTA ──────────────────────────────
-     Lives inside .tc-image (position: relative, overflow: hidden already
-     set there), absolutely filling it — so revealing this content on hover
-     never changes .tce-card's own height, unlike the old in-body reveal. */
+  /* Overlay layer shared by factual chips and optional hover content. */
   .tc-image-overlay {
     position: absolute;
     inset: 0;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     gap: 8px;
-    padding: 14px;
-    background: linear-gradient(180deg, transparent 0%, rgba(18, 18, 16, 0.15) 40%, rgba(18, 18, 16, 0.82) 100%);
-    opacity: 0;
     transition: opacity 160ms ease-out;
     pointer-events: none;
   }
 
-  .tce-card:hover .tc-image-overlay,
-  .tce-card:focus-visible .tc-image-overlay {
+  .tc-image-overlay.tc-image-overlay--static {
+    justify-content: flex-start;
+    padding: 12px;
+    background: transparent;
     opacity: 1;
   }
-
-  .tce-description {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.92);
-    margin: 0;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+  .tc-image-overlay.tc-image-overlay--hover {
+    justify-content: flex-end;
+    padding: 14px;
+    background: rgba(18, 18, 16, 0.78);
+    opacity: 0;
   }
-
-  /* ── CTA ────────────────────────────────────── */
-  .tce-cta {
+  .tce-cover-meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+  .tce-cover-pick,
+  .tce-cover-price {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    min-height: 25px;
+    padding: 0 9px;
+    border-radius: var(--radius-pill);
+    background: rgba(34, 34, 34, 0.9);
+    color: #fff;
     font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--color-surface);
-    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.16);
   }
-
-  .tce-cta-arrow {
-    display: inline-block;
-    transition: transform 160ms ease-out;
+  .tce-cover-pick {
+    letter-spacing: .04em;
+    text-transform: uppercase;
   }
+  .tce-cover-price { margin-left: auto; }
 
-  .tce-card:hover .tce-cta-arrow {
-    transform: translateX(3px);
+  .tce-card:hover .tc-image-overlay--hover,
+  .tce-card:focus-visible .tc-image-overlay--hover {
+    opacity: 1;
   }
 }
 
@@ -9802,27 +9888,7 @@
   /* Tools row — the visual anchor of a stack card */
   .sk-card-tools {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     margin-bottom: 18px;
-  }
-  .sk-card-tool {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .sk-card-tool-more {
-    background: var(--color-bg);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-muted);
   }
   .sk-card-footer {
     margin-top: auto;
@@ -13760,32 +13826,6 @@
   .home-stack-logos {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .home-stack-logo {
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-pill);
-    background: var(--color-surface);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-text);
-  }
-
-  .home-stack-logo img {
-    max-width: 21px;
-    max-height: 21px;
-    object-fit: contain;
-    display: block;
   }
 
   .home-stack-challenge {
@@ -18888,22 +18928,66 @@ section[id] {
   gap: 8px;
 }
 
-.v2-stack-logos {
-  display: flex;
-  gap: 8px;
-}
-
-.v2-stack-logo {
-  width: 30px;
-  height: 30px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--color-surface-soft);
+.tlp {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  flex-wrap: nowrap;
+  gap: 0;
+  isolation: isolate;
+  overflow: visible;
 }
+
+.tlp-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  margin-left: -10px;
+  overflow: hidden;
+  border: 2px solid var(--color-surface);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(34, 34, 34, 0.12);
+  transition: transform 150ms ease-out;
+}
+
+.tlp-item:first-child { margin-left: 0; }
+.tlp-item:hover { z-index: 2; transform: translateY(-2px); }
+
+.tlp-mark {
+  border: 0 !important;
+  border-radius: var(--radius-pill) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 3px !important;
+}
+
+.tlp--sm .tlp-item {
+  flex-basis: 34px;
+  width: 34px;
+  height: 34px;
+  margin-left: -8px;
+}
+.tlp--sm .tlp-item:first-child { margin-left: 0; }
+
+.tlp-more {
+  color: var(--color-muted);
+  background: var(--color-surface-soft);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tlp.sk-card-tools {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.tlp.v2-stack-logos { gap: 0; }
 
 .v2-stack-bookmark {
   color: var(--color-muted-light);

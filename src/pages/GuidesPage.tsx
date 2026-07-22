@@ -9,7 +9,7 @@ import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import { scrollToTop } from "@/lib/scroll";
 import type { Tool } from "@/data/types";
-import ToolLogo from "@/components/ToolLogo";
+import ToolLogoPile from "@/components/ToolLogoPile";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -320,16 +320,13 @@ function ArticleRow({
       {post.excerpt && <p className="sk-card-verdict">{post.excerpt}</p>}
 
       {mentionedTools.length > 0 && (
-        <div className="sk-card-tools" aria-label={lang === "fr" ? "Outils cités" : "Tools cited"}>
-          {mentionedTools.slice(0, 5).map((tool) => (
-            <span key={tool.id} title={tool.name} className="sk-card-tool">
-              <ToolLogo tool={tool} size={22} />
-            </span>
-          ))}
-          {mentionedTools.length > 5 && (
-            <span className="sk-card-tool sk-card-tool-more">+{mentionedTools.length - 5}</span>
-          )}
-        </div>
+        <ToolLogoPile
+          tools={mentionedTools}
+          max={5}
+          ariaLabel={lang === "fr" ? "Outils cités" : "Tools cited"}
+          moreLabel={(count) => lang === "fr" ? `${count} outils supplémentaires` : `${count} more tools`}
+          className="sk-card-tools"
+        />
       )}
 
       <div className="sk-card-footer">

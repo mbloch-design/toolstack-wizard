@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperti
 import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
 import { X, SlidersHorizontal } from "lucide-react";
-import ToolLogo from "@/components/ToolLogo";
+import ToolLogoPile from "@/components/ToolLogoPile";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import FilterDropdown from "@/components/filters/FilterDropdown";
@@ -418,20 +418,14 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelection
       <p className="sk-card-verdict">{truncate(verdict, 96)}</p>
 
       {/* Tools = the visual heart of a stack, shown as a clear row */}
-      <div className="sk-card-tools" aria-label={t("Outils de la stack", "Stack tools") as string}>
-        {tools.slice(0, 6).map((tool) => (
-          <span key={tool.id} title={tool.name} className="sk-card-tool">
-            <ToolLogo tool={tool} size={22} />
-          </span>
-        ))}
-        {/* Count against the raw slot total minus what's actually rendered
-            (not stack.tools.length - 6): `tools` already dropped any slug
-            that failed to resolve via toolBySlug, so basing the badge on
-            the raw slot count under-/over-counts whenever that happens. */}
-        {stack.tools.length > tools.length && (
-          <span className="sk-card-tool sk-card-tool-more">+{stack.tools.length - tools.length}</span>
-        )}
-      </div>
+      <ToolLogoPile
+        tools={tools}
+        totalCount={stack.tools.length}
+        max={6}
+        ariaLabel={t("Outils de la stack", "Stack tools") as string}
+        moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
+        className="sk-card-tools"
+      />
 
       <div className="sk-card-footer">
         <div className="sk-card-stats">

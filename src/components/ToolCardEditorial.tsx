@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Compass } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
+import ToolLogo from "@/components/ToolLogo";
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import type { Tool } from "@/data/types";
 
@@ -29,6 +30,7 @@ export type ToolCardEditorialTool = Pick<
   | "ogImageUrl"
   | "logo"
   | "pricing_v5"
+  | "prescription_quality"
 >>;
 
 interface ToolCardEditorialProps {
@@ -93,62 +95,86 @@ export function ToolCardEditorial({
     tool.shortDescriptionEn ?? tool.shortDescription,
   ) as string;
 
-  return (
-    <div className={`tool-pin-wrap${compact ? " tool-pin-wrap--compact" : ""}`}>
-      {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
-      {exploreHref && (
-        <Link
-          to={exploreHref}
-          state={exploreState}
-          className={`tce-explore${showPin ? " tce-explore--with-pin" : ""}`}
-          aria-label={t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
-          title={t("Explorer les outils associés", "Explore related tools")}
-        >
-          <Compass size={17} aria-hidden />
-        </Link>
-      )}
-      <Link
-        to={to || `${prefix}/tool/${tool.slug ?? tool.id}`}
-        state={linkState}
-        className={`tce-card${compact ? " tce-card--compact" : ""}${selected ? " is-selected" : ""}`}
-        aria-current={selected ? "true" : undefined}
-      >
-      {/* Cover: OG image, falls back to centered logo. Description + CTA
-          live in the image overlay (hidden at rest, revealed on hover/focus
-          via .tce-card:hover/:focus-visible) so hover-only info never
-          changes the card's own height. */}
-      <ToolCardImage
-        tool={tool}
-        logoSize={36}
-        overlay={compact ? undefined : (
-          <>
-            {description && <p className="tce-description">{description}</p>}
-            <span className="tce-cta">
-              {t("Voir l'outil", "View tool")}
-              <span className="tce-cta-arrow" aria-hidden>→</span>
-            </span>
-          </>
-        )}
-      />
+  const toolHref = to || `${prefix}/tool/${tool.slug ?? tool.id}`;
 
-      {/* ── Name + price (same line) + category ── */}
-      <div className="tce-body">
-        <div className="tce-title-row">
-          <h3 className="tce-name">{tool.name}</h3>
-          {showPrice && <span className="tce-price">{plan}</span>}
-        </div>
-        {(typeLabel || categoryLabel) && (
-          <p className="tce-category">{typeLabel || categoryLabel}</p>
-        )}
-        {compact && description && <p className="tce-compact-description">{description}</p>}
-        {compact && contextRole && (
-          <p className="tce-context-role">
-            <span>{contextLabel || t("Sert à", "Used to")}</span>
-            <strong>{contextRole}</strong>
-          </p>
-        )}
+  /* Stack cards are interaction-heavy and intentionally remain compact.
+     The catalog variant below adopts a media-card anatomy: thumbnail first,
+     then logo + identity + contextual actions, like a useful editorial
+     equivalent of a YouTube card. */
+  if (compact) {
+    return (
+      <div className="tool-pin-wrap tool-pin-wrap--compact">
+        {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
+        <Link
+          to={toolHref}
+          state={linkState}
+          className={`tce-card tce-card--compact${selected ? " is-selected" : ""}`}
+          aria-current={selected ? "true" : undefined}
+        >
+          <ToolCardImage tool={tool} logoSize={36} />
+          <div className="tce-body">
+            <div className="tce-title-row">
+              <h3 className="tce-name">{tool.name}</h3>
+              {showPrice && <span className="tce-price">{plan}</span>}
+            </div>
+            {(typeLabel || categoryLabel) && <p className="tce-category">{typeLabel || categoryLabel}</p>}
+            {description && <p className="tce-compact-description">{description}</p>}
+            {contextRole && (
+              <p className="tce-context-role">
+                <span>{contextLabel || t("Sert à", "Used to")}</span>
+                <strong>{contextRole}</strong>
+              </p>
+            )}
+          </div>
+        </Link>
       </div>
-      </Link>
+    );
+  }
+
+  return (
+    <div className="tool-pin-wrap">
+      <article className={`tce-card tce-card--media${selected ? " is-selected" : ""}`}>
+        <Link className="tce-cover-link" to={toolHref} state={linkState} aria-label={tool.name}>
+          <ToolCardImage
+            tool={tool}
+            logoSize={44}
+            overlayMode="static"
+            overlay={(
+              <div className="tce-cover-meta">
+                {tool.prescription_quality === "ferme" && <span className="tce-cover-pick">ToolTrim Pick</span>}
+                {showPrice && plan !== "N/A" && <span className="tce-cover-price">{plan}</span>}
+              </div>
+            )}
+          />
+        </Link>
+
+        <div className="tce-body">
+          <div className="tce-identity-row">
+            <ToolLogo tool={tool} size={40} className="tce-logo" />
+            <div className="tce-identity-copy">
+              <Link className="tce-name-link" to={toolHref} state={linkState}>
+                <h3 className="tce-name">{tool.name}</h3>
+              </Link>
+              {(typeLabel || categoryLabel) && <p className="tce-category">{typeLabel || categoryLabel}</p>}
+            </div>
+            <div className="tce-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}>
+              {exploreHref && (
+                <Link
+                  to={exploreHref}
+                  state={exploreState}
+                  className="tce-card-action"
+                  aria-label={t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
+                  title={t("Explorer les outils associés", "Explore related tools")}
+                >
+                  <Compass size={17} aria-hidden />
+                </Link>
+              )}
+              {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact inline labelMode="icon" />}
+            </div>
+          </div>
+          {description && <p className="tce-summary">{description}</p>}
+        </div>
+      </article>
     </div>
   );
 }

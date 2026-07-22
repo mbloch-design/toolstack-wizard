@@ -13,6 +13,7 @@ import TickerBar from "@/components/home/TickerBar";
 import PersonasSection from "@/components/home/PersonasSection";
 import FaqBlock from "@/components/FaqBlock";
 import EditorialSection from "@/components/EditorialSection";
+import ToolLogoPile from "@/components/ToolLogoPile";
 
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
@@ -685,22 +686,6 @@ function WhatWeCutSection() {
 /* ─────────────────────────────────────────────────────────────────────────────
    BusinessObjectivesSection — stacks par objectif/persona concret
 ───────────────────────────────────────────────────────────────────────────── */
-function StackObjectiveLogo({ name }: { name: string }) {
-  const [failed, setFailed] = useState(false);
-  const logo = getToolLogoSources({ slug: name, name }, 64)[0];
-  const initial = name.charAt(0).toUpperCase();
-
-  return (
-    <span className="home-stack-logo" title={name} aria-label={name}>
-      {logo && !failed ? (
-        <img src={logo} alt="" loading="lazy" onError={() => setFailed(true)} />
-      ) : (
-        <span>{initial}</span>
-      )}
-    </span>
-  );
-}
-
 function BusinessObjectivesSection() {
   const { lang, t, prefix } = useLang();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -809,11 +794,13 @@ function BusinessObjectivesSection() {
                     <span className="home-stack-profile">{label}</span>
                     <span className="home-stack-budget">{t("Budget cible :", "Target budget:")} {objective.monthlyBudget}€/{t("mois", "mo")}</span>
                   </div>
-                  <div className="home-stack-logos" aria-label={t("Outils clés", "Key tools")}>
-                    {objective.visualTools.map((tool) => (
-                      <StackObjectiveLogo key={tool} name={tool} />
-                    ))}
-                  </div>
+                  <ToolLogoPile
+                    tools={objective.visualTools.map((name) => ({ name, slug: name }))}
+                    size="sm"
+                    ariaLabel={t("Outils clés", "Key tools") as string}
+                    moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
+                    className="home-stack-logos"
+                  />
                   <div className="home-stack-challenge">
                     <span>{t("À challenger", "To challenge")}</span>
                     <p>{lang === "fr" ? objective.challengeFr : objective.challengeEn}</p>

@@ -6,6 +6,7 @@ import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseDa
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
+import ToolLogoPile from "@/components/ToolLogoPile";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 // Light index (first 12 stacks, ~3KB gzip) instead of the full 1.7MB stacks.ts:
@@ -463,13 +464,15 @@ export default function HomePageV2() {
                 return (
                   <Link key={stack.slug} to={`${prefix}/stacks/${stack.slug}`} className="v2-stack-card">
                     <div className="v2-stack-top">
-                      <div className="v2-stack-logos">
-                        {stackTools.map((st) => (
-                          <div key={st!.id} className="v2-stack-logo">
-                            <ToolLogo tool={st as any} size={22} />
-                          </div>
-                        ))}
-                      </div>
+                      <ToolLogoPile
+                        tools={stackTools as any[]}
+                        totalCount={stack.tools.length}
+                        max={5}
+                        size="sm"
+                        ariaLabel={t("Outils de la stack", "Stack tools") as string}
+                        moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
+                        className="v2-stack-logos"
+                      />
                       <Bookmark className="v2-stack-bookmark" style={{ width: 16, height: 16 }} />
                     </div>
                     <p className="v2-stack-title">{lang === "en" ? stack.titleEn : stack.title}</p>
@@ -516,13 +519,14 @@ export default function HomePageV2() {
                     <Link key={post.slug} to={`${prefix}/guide/${post.slug}`} className="v2-stack-card">
                       {postTools.length > 0 && (
                         <div className="v2-stack-top">
-                          <div className="v2-stack-logos">
-                            {postTools.map((pt) => (
-                              <div key={pt!.id} className="v2-stack-logo">
-                                <ToolLogo tool={pt as any} size={22} />
-                              </div>
-                            ))}
-                          </div>
+                          <ToolLogoPile
+                            tools={postTools as any[]}
+                            max={5}
+                            size="sm"
+                            ariaLabel={t("Outils cités", "Mentioned tools") as string}
+                            moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
+                            className="v2-stack-logos"
+                          />
                         </div>
                       )}
                       <p className="v2-stack-title">{post.title}</p>

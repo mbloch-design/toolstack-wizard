@@ -522,12 +522,21 @@ Déclenchement Markdown : `> À retenir : texte…` (ou `Key takeaway`, `À note
 
 ## Cards / Listings — système unifié
 
+### ToolLogoPile (tlp-*) — piles de produits
+
+- Avatars circulaires de 42px (`md`) ou 34px (`sm`), avec un recouvrement constant.
+- Chaque logo conserve un fond blanc et un contour de séparation afin de rester lisible sur toute surface.
+- Le dernier avatar peut afficher `+n` pour les outils non visibles.
+- Utilisé dans les cards de stacks, les guides et les rails de homepage ; les piles interactives de l’éditeur de stack conservent leur composant dédié.
+
 ### ToolCardEditorial (tce-*) — grille outils
-Carte éditoriale grid. Utilisée par `ToolsPage` (grille principale).
-- `tce-card` — shell blanc, border #DADAD4, hover noir, padding 24px
-- Score block (`tce-score-block`) : score numérique 48px + verdict court
-- Metadata 3 colonnes : PLAN · MODÈLE · IA
-- Badge `tce-pick-badge` : fond #222222, uppercase 10px
+Carte média éditoriale utilisée par le catalogue, les catégories et les rails de découverte.
+- `tce-card--media` — miniature OG 16:10, puis ligne d’identité séparée.
+- La ligne d’identité associe logo 40px, nom, catégorie et actions contextuelles.
+- Le prix et le statut éditorial peuvent se superposer à la miniature sous forme de capsules factuelles.
+- La description reste visible sur deux lignes : aucune information essentielle ne dépend du hover.
+- Le lien vers la fiche, l’exploration autour de l’outil et l’ajout à la stack sont trois interactions distinctes.
+- `tce-card--compact` conserve une anatomie dédiée aux surfaces de manipulation de stack.
 
 ### ToolRowEditorial (tcr-*) — liste catégorie
 Ligne horizontale éditoriale. Utilisée par `CategoryPage`.

@@ -3464,6 +3464,22 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - La navigation des sous-pages gagne en taille, en espacement et en contraste ; l’onglet actif est matérialisé par un trait dédié plutôt que par un simple soulignement de texte.
 - Sur mobile, les onglets restent sur une ligne et défilent horizontalement sans comprimer leurs libellés.
 
+## 2026-07-16 — Fondation du nouveau système de cards outils
+
+- Les cards catalogue adoptent une anatomie média inspirée des interfaces de contenu : miniature pour reconnaître, logo pour identifier, texte court pour décider et actions séparées.
+- Le prix et le statut `ToolTrim Pick` deviennent des informations superposables à la miniature, sans masquer le visuel.
+- Le nom et l’image ouvrent la fiche ; les actions Explorer et Ajouter à la stack ne sont plus imbriquées dans le lien principal.
+- La description est visible sur deux lignes et ne dépend plus d’un hover inaccessible sur mobile.
+- Les cards compactes du constructeur de stack restent une variante autonome afin de préserver leurs interactions de sélection et de déplacement.
+- La hiérarchie typographique reprend une logique de carte média : nom dense sur deux lignes maximum, catégorie secondaire puis description courte alignée avec le texte plutôt qu’avec le logo.
+
+## 2026-07-22 — Piles de logos produits unifiées
+
+- Création du composant partagé `ToolLogoPile` pour remplacer les rangées de logos encadrés indépendamment.
+- Les logos deviennent des avatars circulaires chevauchés avec contour de séparation, survol léger et compteur `+n` final.
+- Migration des cards de stacks, des cards de guides et des rails stacks/guides de la homepage.
+- Les piles interactives de l’éditeur de stack restent distinctes car elles proposent un popover et des actions supplémentaires.
+
 ## 2026-07-20 — Dark launch du catalogue canonique Supabase
 
 - Déploiement additif rév. 4.12 commité sur Supabase après preflight en lecture seule et restauration-test d'un backup PostgreSQL 17.
