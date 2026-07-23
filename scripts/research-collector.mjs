@@ -846,6 +846,12 @@ async function mergeDossier(slug, r, run, cfg) {
   c.observations ??= []; c.claims ??= []; c.conflicts ??= []; c.context_attestations ??= [];
   // stockages parallèles v0.3.1/0.3.2 supprimés : tout vit dans sources[] / claims[]
   delete c.additional_sources; delete c.unit_claims; delete c.weak_claims_legacy;
+  // Re-collecte propre (`--reset-observations`) : on vide les FAITS volatils du collecteur pour ne
+  // pas empiler des observations périmées d'un contexte antérieur (ex. changement de marché/devise).
+  // doc.editorial_drafts (éditorial humain) et doc.identity NE sont PAS touchés → aucun backup/restore.
+  if (cfg.resetObservations && !created) {
+    c.observations = []; c.sources = []; c.context_attestations = []; c.conflicts = []; c.claims = [];
+  }
 
   const mapping = r.entry?.plan_key_mapping ?? null;
   // `claims_*` = FAITS TARIFAIRES (observations plan/prix). Les claims documentaires
@@ -983,6 +989,9 @@ async function main() {
     delayMs: Number(args.delay ?? 2000),
     cacheTtlS: Number(args["cache-ttl"] ?? 86400),
     forceRecheck: Boolean(args["force-recheck"]),
+    // Re-collecte propre : repart des faits vierges (observations/captures/attestations) sans
+    // accumuler ceux d'un contexte marché antérieur. L'ÉDITORIAL humain reste préservé.
+    resetObservations: Boolean(args["reset-observations"]),
     renderer: String(args.renderer ?? "auto"),
     robots: new Map(),
   };

@@ -55,10 +55,19 @@ Principe : **les scripts exécutent, contrôlent et résument ; Claude tranche l
 Claude ne re-vérifie jamais à la main un invariant déjà validé par un script.
 
 ```bash
+node scripts/catalog-batch.mjs canary  --batch=<id> --slugs=a,b --market=FR --locale=fr-FR  # collect→stage→work-order→dry-run, ARRÊT avant apply
 node scripts/catalog-batch.mjs work-order --slug=<s>            # research/work-orders/<s>.json (dossier factuel compact, déterministe)
 node scripts/catalog-batch.mjs report  --batch=<id> --report=compact   # JSON {slug,phase,status,blockers,tests,mutations,next_action}
 node scripts/catalog-batch.mjs metrics --batch=<id>            # coût du lot (outils, sans-intervention, bloqués, appels agent, reprises, captures réutilisées…)
+node scripts/catalog-batch.mjs assert-tool --slug=<s>          # assertions de publication READ-ONLY (plans, comparatif unique, obs approuvées, FR/EN, projection, canonical)
 ```
+
+- **`canary`** enchaîne tout le pipeline SANS apply : idempotent (relançable), il s'arrête avant
+  toute écriture canonical. `prepare` ne (re)stage que les états pré-décision (jamais un outil déjà
+  décidé/canonical → pas de transition interdite).
+- **Re-collecte propre** : `research-collector.mjs … --force-recheck --reset-observations` repart des
+  faits vierges (observations/captures/attestations) sans accumuler ceux d'un contexte marché
+  antérieur ; l'ÉDITORIAL humain (`editorial_drafts`) est **préservé** (aucun backup/restore manuel).
 
 - **Work order** (`scripts/catalog/work-order.mjs`) : seul contexte transmis à un sous-agent — source
   officielle + captures (id/hash), claims, observations, profil, contrôles en échec, relations, décisions

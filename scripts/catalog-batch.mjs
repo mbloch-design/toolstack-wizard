@@ -264,6 +264,18 @@ async function cmdRun(a, apply) {
   return results;
 }
 
+// ── canary : pipeline complet SANS apply (collect -> stage -> work-order -> dry-run) ──
+// Un seul appel remplace la séquence manuelle ; s'ARRÊTE avant toute écriture canonical.
+async function cmdCanary(a) {
+  await cmdPrepare(a);                                   // collecte + staging + gate (tableau)
+  const b = loadBatch(a.batch);
+  const only = a.slugs ? String(a.slugs).split(",").map((s) => s.trim()).filter(Boolean) : b.slugs;
+  for (const slug of only) writeWorkOrder(slug);         // dossiers factuels compacts
+  await cmdRun(a, false);                                 // dry-run transactionnel rollback-only
+  cmdReportCompact(a);                                   // rapport compact machine
+  console.log("\n⏹  canary terminé — ARRÊT avant apply. Lancer `apply --batch=… --slugs=…` pour publier.");
+}
+
 // ── assert-tool : assertions de publication d'un outil (READ-ONLY) ──
 // Factorise les vérifications canari : plans, plan comparatif unique, observations approuvées,
 // contenus FR/EN publiés, projection à 2 lignes, data_contract canonical. Aucune écriture.
@@ -346,7 +358,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
     verify: () => cmdVerify(a), reconcile: () => cmdReconcile(a),
     "work-order": () => cmdWorkOrder(a), metrics: () => cmdMetrics(a), "assert-tool": () => cmdAssertTool(a),
+    canary: () => cmdCanary(a),
   }[cmd];
-  if (!run) { console.error("commandes: prepare | report [--report=compact] | work-order | metrics | assert-tool | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
+  if (!run) { console.error("commandes: prepare | canary | report [--report=compact] | work-order | metrics | assert-tool | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
   Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
 }
