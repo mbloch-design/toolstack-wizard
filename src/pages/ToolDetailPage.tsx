@@ -623,6 +623,10 @@ const ToolDetailPage = () => {
                   const keepText = keepItems.length ? keepItems.slice(0, 2).join(". ") : undefined;
                   const challengeText = avoidItems.length ? avoidItems.slice(0, 2).join(". ") : undefined;
 
+                  // Ne pas rendre une coquille vide « quand ça a du sens » pour un outil sans
+                  // matière de verdict (ex. app de bundle non onboardée) : la section disparaît.
+                  if (!threshold && !keepText && !challengeText) return null;
+
                   return (
                     <div className="td-section td-decision-flow-intro">
                       <h2 className="td-title">
