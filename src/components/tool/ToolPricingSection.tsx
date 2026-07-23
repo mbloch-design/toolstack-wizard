@@ -1,6 +1,10 @@
 import type { Tool } from "@/data/types";
-import { CreditCard, Sparkles } from "lucide-react";
+import { CreditCard, Sparkles, Package } from "lucide-react";
 import { hasGenuineFreeTier } from "@/lib/pricing";
+
+// Slug de bundle -> nom lisible (ex. "adobe-creative-cloud" -> "Adobe Creative Cloud").
+const humanizeSlug = (s: string) =>
+  s.split("-").map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : w)).join(" ");
 
 interface Props {
   tool: Tool;
@@ -26,8 +30,22 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
     { style: "currency", currency: currency || "EUR", maximumFractionDigits: 2 },
   ).format(amount);
 
+  const bundleParent = tool.bundle_parent;
+  const parentLang = lang === "en" ? "en" : "fr";
+
   return (
     <section className="td-pricing">
+      {bundleParent && canonicalPlans.length === 0 && (
+        <a className="td-pricing-bundle-note" href={`/${parentLang}/tool/${bundleParent}`}>
+          <Package aria-hidden />
+          <span>
+            {t(
+              `Cet outil est inclus dans ${humanizeSlug(bundleParent)}. Voir les tarifs et les plans sur la fiche de la suite.`,
+              `This tool is included in ${humanizeSlug(bundleParent)}. See pricing and plans on the suite's page.`,
+            )}
+          </span>
+        </a>
+      )}
       {canonicalPlans.length > 0 ? (
         <div className="td-pricing-plans td-pricing-plans--catalog">
           {canonicalPlans.map((plan) => (
