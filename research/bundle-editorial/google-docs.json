@@ -1,0 +1,72 @@
+{
+  "slug": "google-docs",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous collaborez en temps réel sur des documents avec plusieurs personnes.",
+        "Vous voulez un traitement de texte simple, sans installation.",
+        "Votre équipe est déjà sur Google Workspace."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de mise en page avancée type PAO.",
+        "Vous travaillez surtout hors ligne de façon intensive.",
+        "Vous dépendez de fonctions Word très spécifiques."
+      ],
+      "threshold": "Google Docs excelle dès que la collaboration temps réel prime sur la mise en page riche ; pour de la PAO ou des documents très formatés, un outil dédié reste supérieur."
+    },
+    "pros": [
+      "Collaboration temps réel fluide avec commentaires et suggestions.",
+      "Historique des versions automatique.",
+      "Accessible partout depuis un navigateur, sans installation.",
+      "Intégré à Drive, Gmail et Meet."
+    ],
+    "cons": [
+      "Mise en page moins fine qu'un traitement de texte de bureau.",
+      "Fonctions avancées en retrait par rapport à Word.",
+      "Mode hors ligne perfectible."
+    ],
+    "use_cases": [
+      "Rédiger à plusieurs un document avec suivi des contributions.",
+      "Partager des notes et comptes rendus reliés à Drive.",
+      "Collecter des retours via commentaires et suggestions."
+    ],
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes rédactionnelles"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You collaborate on documents in real time with several people.",
+        "You want a simple word processor, no install.",
+        "Your team is already on Google Workspace."
+      ],
+      "avoidIf": [
+        "You need advanced desktop-publishing layout.",
+        "You work heavily offline.",
+        "You rely on very specific Word features."
+      ],
+      "threshold": "Google Docs shines when real-time collaboration matters more than rich layout; for DTP or heavily formatted documents, a dedicated tool remains stronger."
+    },
+    "pros": [
+      "Smooth real-time collaboration with comments and suggestions.",
+      "Automatic version history.",
+      "Accessible anywhere from a browser, no install.",
+      "Integrated with Drive, Gmail and Meet."
+    ],
+    "cons": [
+      "Finer layout than a desktop word processor is missing.",
+      "Advanced features trail Word.",
+      "Offline mode is imperfect."
+    ],
+    "use_cases": [
+      "Co-write a document with contribution tracking.",
+      "Share notes and minutes linked to Drive.",
+      "Collect feedback via comments and suggestions."
+    ]
+  }
+}

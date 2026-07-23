@@ -1,0 +1,72 @@
+{
+  "slug": "google-meet",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez des visioconférences intégrées à Agenda et Gmail.",
+        "Votre équipe est sur Google Workspace.",
+        "Vous privilégiez la simplicité à la richesse fonctionnelle."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de webinaires avancés et de nombreuses intégrations.",
+        "Vous animez de très grands événements interactifs.",
+        "Vous n'utilisez pas le reste de la suite Google."
+      ],
+      "threshold": "Meet suffit largement pour les réunions d'équipe reliées à l'agenda ; pour du webinaire poussé, des plateformes dédiées restent plus complètes."
+    },
+    "pros": [
+      "Lancement d'une réunion en un clic depuis Agenda ou Gmail.",
+      "Aucune installation requise côté navigateur.",
+      "Sécurité et gestion des accès centralisées.",
+      "Sous-titres et enregistrement selon l'édition."
+    ],
+    "cons": [
+      "Fonctions de webinaire et d'engagement en retrait.",
+      "Écosystème d'intégrations tierces limité.",
+      "Dépendance à Google Workspace."
+    ],
+    "use_cases": [
+      "Organiser des réunions d'équipe reliées à l'agenda.",
+      "Passer d'un e-mail ou d'un chat à une visio en un clic.",
+      "Enregistrer une réunion pour les absents."
+    ],
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes distribuées"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want video meetings integrated with Calendar and Gmail.",
+        "Your team is on Google Workspace.",
+        "You value simplicity over feature richness."
+      ],
+      "avoidIf": [
+        "You need advanced webinars and many integrations.",
+        "You run very large interactive events.",
+        "You don't use the rest of Google's suite."
+      ],
+      "threshold": "Meet is plenty for calendar-linked team meetings; for heavy webinars, dedicated platforms remain more complete."
+    },
+    "pros": [
+      "Start a meeting in one click from Calendar or Gmail.",
+      "No install needed in the browser.",
+      "Centralised security and access management.",
+      "Captions and recording depending on edition."
+    ],
+    "cons": [
+      "Webinar and engagement features trail.",
+      "Limited third-party integration ecosystem.",
+      "Dependency on Google Workspace."
+    ],
+    "use_cases": [
+      "Run calendar-linked team meetings.",
+      "Jump from an email or chat to a video call in one click.",
+      "Record a meeting for absentees."
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "adobe-xd",
+  "bundle_parent": "adobe-creative-cloud",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des maquettes et prototypes d'interface.",
+        "Vous êtes déjà dans l'écosystème Adobe.",
+        "Vous avez des projets UI ponctuels."
+      ],
+      "avoidIf": [
+        "Vous travaillez surtout dans Figma.",
+        "Vous cherchez un outil UI activement développé.",
+        "Vous avez besoin d'une collaboration temps réel poussée."
+      ],
+      "threshold": "Adobe Xd est pertinent quand le design d'interfaces fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+    },
+    "pros": [
+      "Outil de référence pour le design d'interfaces.",
+      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
+      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
+      "Écosystème riche de ressources, tutoriels et plugins."
+    ],
+    "cons": [
+      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
+      "Peut être surdimensionné pour un besoin ponctuel."
+    ],
+    "use_cases": [
+      "Réaliser un projet nécessitant le design d'interfaces dans un flux professionnel.",
+      "Enchaîner avec les autres apps Adobe sans friction de format.",
+      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+    ],
+    "relevant_for": [
+      "Créatifs",
+      "Studios et agences",
+      "Freelances du design"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design interface mockups and prototypes.",
+        "You're already in the Adobe ecosystem.",
+        "You have occasional UI projects."
+      ],
+      "avoidIf": [
+        "You mostly work in Figma.",
+        "You want an actively developed UI tool.",
+        "You need strong real-time collaboration."
+      ],
+      "threshold": "Adobe Xd is relevant when UI/UX design and prototyping is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+    },
+    "pros": [
+      "A reference tool for UI/UX design and prototyping.",
+      "Smooth integration with other Adobe Creative Cloud apps.",
+      "Included in the Creative Cloud subscription, no separate purchase.",
+      "Rich ecosystem of resources, tutorials and plugins."
+    ],
+    "cons": [
+      "A real learning curve to unlock its full potential.",
+      "Most relevant within the Creative Cloud subscription.",
+      "Can be overkill for a one-off need."
+    ],
+    "use_cases": [
+      "Deliver a project requiring UI/UX design and prototyping in a professional workflow.",
+      "Move to other Adobe apps without format friction.",
+      "Leverage the Adobe ecosystem's resources and templates."
+    ]
+  }
+}

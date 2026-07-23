@@ -1,0 +1,72 @@
+{
+  "slug": "google-drive",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un stockage cloud partagé simple pour toute l'équipe.",
+        "Vous utilisez déjà Docs, Sheets et Slides.",
+        "Vous avez besoin de partages et permissions faciles à gérer."
+      ],
+      "avoidIf": [
+        "Vous exigez un chiffrement de bout en bout sous votre seul contrôle.",
+        "Vous voulez un stockage souverain hors Google.",
+        "Vos besoins se limitent à de la sauvegarde froide bon marché."
+      ],
+      "threshold": "Drive s'impose comme socle de fichiers d'une équipe Google Workspace ; hors de cet usage collaboratif, des solutions de stockage pur peuvent suffire."
+    },
+    "pros": [
+      "Partage et permissions simples, à l'échelle de l'équipe.",
+      "Intégration native avec les éditeurs Google.",
+      "Recherche puissante, y compris dans le contenu des fichiers.",
+      "Espaces partagés pour le travail d'équipe."
+    ],
+    "cons": [
+      "Dépendance à la gouvernance des données Google.",
+      "Chiffrement de bout en bout non natif.",
+      "Coûts de stockage à surveiller à grande échelle."
+    ],
+    "use_cases": [
+      "Centraliser les fichiers d'une équipe avec des droits clairs.",
+      "Collaborer sur des documents reliés aux éditeurs Google.",
+      "Retrouver rapidement un fichier via la recherche."
+    ],
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes distribuées"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want simple shared cloud storage for the whole team.",
+        "You already use Docs, Sheets and Slides.",
+        "You need easy sharing and permissions."
+      ],
+      "avoidIf": [
+        "You require end-to-end encryption under your sole control.",
+        "You want sovereign storage outside Google.",
+        "You only need cheap cold backup."
+      ],
+      "threshold": "Drive is the natural file backbone for a Google Workspace team; outside that collaborative use, pure-storage solutions may suffice."
+    },
+    "pros": [
+      "Simple team-wide sharing and permissions.",
+      "Native integration with Google editors.",
+      "Powerful search, including inside file contents.",
+      "Shared drives for teamwork."
+    ],
+    "cons": [
+      "Dependency on Google's data governance.",
+      "No native end-to-end encryption.",
+      "Storage costs to watch at scale."
+    ],
+    "use_cases": [
+      "Centralise a team's files with clear access rights.",
+      "Collaborate on documents linked to Google editors.",
+      "Quickly find a file via search."
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "indesign",
+  "bundle_parent": "adobe-creative-cloud",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez des mises en page multi-pages (magazines, brochures, livres).",
+        "Vous avez besoin d'un contrôle typographique fin.",
+        "Vous travaillez dans l'écosystème Adobe."
+      ],
+      "avoidIf": [
+        "Vous ne faites que des documents simples.",
+        "Un traitement de texte suffit à vos besoins.",
+        "Vous voulez éviter l'abonnement Adobe."
+      ],
+      "threshold": "Indesign est pertinent quand la mise en page et la PAO fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+    },
+    "pros": [
+      "Outil de référence pour la mise en page et la PAO.",
+      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
+      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
+      "Écosystème riche de ressources, tutoriels et plugins."
+    ],
+    "cons": [
+      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
+      "Peut être surdimensionné pour un besoin ponctuel."
+    ],
+    "use_cases": [
+      "Réaliser un projet nécessitant la mise en page et la PAO dans un flux professionnel.",
+      "Enchaîner avec les autres apps Adobe sans friction de format.",
+      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+    ],
+    "relevant_for": [
+      "Créatifs",
+      "Studios et agences",
+      "Freelances du design"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce multi-page layouts (magazines, brochures, books).",
+        "You need fine typographic control.",
+        "You work in the Adobe ecosystem."
+      ],
+      "avoidIf": [
+        "You only make simple documents.",
+        "A word processor covers your needs.",
+        "You want to avoid the Adobe subscription."
+      ],
+      "threshold": "Indesign is relevant when the reference tool for multi-page layout and publishing is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+    },
+    "pros": [
+      "A reference tool for the reference tool for multi-page layout and publishing.",
+      "Smooth integration with other Adobe Creative Cloud apps.",
+      "Included in the Creative Cloud subscription, no separate purchase.",
+      "Rich ecosystem of resources, tutorials and plugins."
+    ],
+    "cons": [
+      "A real learning curve to unlock its full potential.",
+      "Most relevant within the Creative Cloud subscription.",
+      "Can be overkill for a one-off need."
+    ],
+    "use_cases": [
+      "Deliver a project requiring the reference tool for multi-page layout and publishing in a professional workflow.",
+      "Move to other Adobe apps without format friction.",
+      "Leverage the Adobe ecosystem's resources and templates."
+    ]
+  }
+}

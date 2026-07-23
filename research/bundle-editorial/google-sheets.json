@@ -1,0 +1,72 @@
+{
+  "slug": "google-sheets",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un tableur collaboratif en temps réel.",
+        "Vos besoins d'analyse restent raisonnables.",
+        "Votre équipe est sur Google Workspace."
+      ],
+      "avoidIf": [
+        "Vous manipulez de très gros volumes ou des modèles financiers lourds.",
+        "Vous dépendez de macros et fonctions Excel avancées.",
+        "Vous travaillez surtout hors ligne."
+      ],
+      "threshold": "Sheets est idéal pour le tableur collaboratif du quotidien ; pour de la modélisation lourde ou de très gros jeux de données, Excel garde l'avantage."
+    },
+    "pros": [
+      "Collaboration temps réel avec historique des versions.",
+      "Fonctions et formules suffisantes pour la plupart des besoins.",
+      "Connexion facile à d'autres services Google.",
+      "Accessible depuis un navigateur, sans installation."
+    ],
+    "cons": [
+      "Performances limitées sur de très gros volumes.",
+      "Fonctions avancées en retrait par rapport à Excel.",
+      "Mode hors ligne perfectible."
+    ],
+    "use_cases": [
+      "Suivre un budget ou un planning à plusieurs.",
+      "Collecter et analyser des données d'équipe en temps réel.",
+      "Partager un tableau de bord relié à Drive."
+    ],
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes ops"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a real-time collaborative spreadsheet.",
+        "Your analysis needs stay reasonable.",
+        "Your team is on Google Workspace."
+      ],
+      "avoidIf": [
+        "You handle very large volumes or heavy financial models.",
+        "You rely on advanced Excel macros and functions.",
+        "You work mostly offline."
+      ],
+      "threshold": "Sheets is ideal for everyday collaborative spreadsheets; for heavy modelling or very large datasets, Excel keeps the edge."
+    },
+    "pros": [
+      "Real-time collaboration with version history.",
+      "Functions and formulas enough for most needs.",
+      "Easy connection to other Google services.",
+      "Browser-accessible, no install."
+    ],
+    "cons": [
+      "Limited performance on very large volumes.",
+      "Advanced features trail Excel.",
+      "Offline mode is imperfect."
+    ],
+    "use_cases": [
+      "Track a budget or plan collaboratively.",
+      "Collect and analyse team data in real time.",
+      "Share a dashboard linked to Drive."
+    ]
+  }
+}

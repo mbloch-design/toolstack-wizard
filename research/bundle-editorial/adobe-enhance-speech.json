@@ -1,0 +1,72 @@
+{
+  "slug": "adobe-enhance-speech",
+  "bundle_parent": "adobe-creative-cloud",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous nettoyez rapidement des voix bruitées par IA.",
+        "Vous produisez du contenu parlé (interviews, podcasts).",
+        "Vous voulez un rendu propre sans réglages complexes."
+      ],
+      "avoidIf": [
+        "Vous disposez déjà d'un traitement audio pro.",
+        "Vos besoins sont ponctuels.",
+        "Vous préférez un outil autonome."
+      ],
+      "threshold": "Adobe Enhance Speech est pertinent quand le nettoyage vocal par IA fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+    },
+    "pros": [
+      "Outil de référence pour le nettoyage vocal par IA.",
+      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
+      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
+      "Écosystème riche de ressources, tutoriels et plugins."
+    ],
+    "cons": [
+      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
+      "Peut être surdimensionné pour un besoin ponctuel."
+    ],
+    "use_cases": [
+      "Réaliser un projet nécessitant le nettoyage vocal par IA dans un flux professionnel.",
+      "Enchaîner avec les autres apps Adobe sans friction de format.",
+      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+    ],
+    "relevant_for": [
+      "Créatifs",
+      "Studios et agences",
+      "Freelances du design"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You quickly clean noisy voices with AI.",
+        "You produce spoken content (interviews, podcasts).",
+        "You want a clean result without complex settings."
+      ],
+      "avoidIf": [
+        "You already have pro audio processing.",
+        "Your needs are occasional.",
+        "You prefer a standalone tool."
+      ],
+      "threshold": "Adobe Enhance Speech is relevant when AI-based speech cleanup is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+    },
+    "pros": [
+      "A reference tool for AI-based speech cleanup.",
+      "Smooth integration with other Adobe Creative Cloud apps.",
+      "Included in the Creative Cloud subscription, no separate purchase.",
+      "Rich ecosystem of resources, tutorials and plugins."
+    ],
+    "cons": [
+      "A real learning curve to unlock its full potential.",
+      "Most relevant within the Creative Cloud subscription.",
+      "Can be overkill for a one-off need."
+    ],
+    "use_cases": [
+      "Deliver a project requiring AI-based speech cleanup in a professional workflow.",
+      "Move to other Adobe apps without format friction.",
+      "Leverage the Adobe ecosystem's resources and templates."
+    ]
+  }
+}

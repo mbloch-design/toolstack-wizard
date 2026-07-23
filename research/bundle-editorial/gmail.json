@@ -1,0 +1,72 @@
+{
+  "slug": "gmail",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une messagerie professionnelle sur votre domaine, administrée de façon centralisée.",
+        "Votre équipe vit déjà dans l'écosystème Google (Agenda, Drive, Meet).",
+        "Vous appréciez une recherche d'e-mails rapide et des filtres puissants."
+      ],
+      "avoidIf": [
+        "Vous refusez de confier votre messagerie à l'écosystème Google.",
+        "Vous avez besoin d'un client mail auto-hébergé ou souverain.",
+        "Vous ne comptez pas utiliser le reste de Google Workspace."
+      ],
+      "threshold": "Gmail professionnel s'impose quand vous adoptez Google Workspace pour toute l'équipe ; isolé de la suite, l'intérêt par rapport à un webmail classique est limité."
+    },
+    "pros": [
+      "Messagerie sur votre domaine avec administration centralisée.",
+      "Recherche et filtres très efficaces sur de gros volumes.",
+      "Intégration native avec Agenda, Meet, Drive et Chat.",
+      "Protection anti-spam et sécurité gérées par Google."
+    ],
+    "cons": [
+      "Dépendance forte à l'écosystème et à la gouvernance des données Google.",
+      "Personnalisation de l'interface limitée.",
+      "Peu pertinent en dehors de Google Workspace."
+    ],
+    "use_cases": [
+      "Doter une équipe d'adresses professionnelles sur son domaine.",
+      "Centraliser e-mails, agenda et visioconférence au même endroit.",
+      "Gérer la sécurité et les accès mail depuis une console d'admin."
+    ],
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Indépendants"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want professional email on your own domain, centrally administered.",
+        "Your team already lives in Google's ecosystem (Calendar, Drive, Meet).",
+        "You value fast email search and powerful filters."
+      ],
+      "avoidIf": [
+        "You won't entrust your mail to Google's ecosystem.",
+        "You need self-hosted or sovereign email.",
+        "You won't use the rest of Google Workspace."
+      ],
+      "threshold": "Professional Gmail makes sense when you adopt Google Workspace across the team; isolated from the suite, the edge over a plain webmail is limited."
+    },
+    "pros": [
+      "Email on your domain with centralised administration.",
+      "Very effective search and filters at high volume.",
+      "Native integration with Calendar, Meet, Drive and Chat.",
+      "Spam protection and security handled by Google."
+    ],
+    "cons": [
+      "Strong dependency on Google's ecosystem and data governance.",
+      "Limited interface customisation.",
+      "Little relevance outside Google Workspace."
+    ],
+    "use_cases": [
+      "Give a team professional addresses on its domain.",
+      "Centralise email, calendar and video meetings in one place.",
+      "Manage mail security and access from an admin console."
+    ]
+  }
+}

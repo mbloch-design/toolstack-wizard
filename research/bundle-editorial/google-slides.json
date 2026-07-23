@@ -1,0 +1,72 @@
+{
+  "slug": "google-slides",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des présentations à plusieurs, en ligne.",
+        "Vous voulez un partage et une diffusion simples.",
+        "Votre équipe est sur Google Workspace."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'animations et d'un design très avancés.",
+        "Vous produisez des présentations haut de gamme complexes.",
+        "Vous travaillez surtout hors ligne."
+      ],
+      "threshold": "Slides couvre parfaitement les présentations d'équipe courantes ; pour du design très abouti, PowerPoint ou Keynote restent plus riches."
+    },
+    "pros": [
+      "Collaboration temps réel sur les présentations.",
+      "Partage et diffusion faciles via un lien.",
+      "Intégration avec Drive et les autres éditeurs Google.",
+      "Modèles et thèmes prêts à l'emploi."
+    ],
+    "cons": [
+      "Animations et effets moins poussés que PowerPoint.",
+      "Design avancé limité.",
+      "Dépendance à Google Workspace."
+    ],
+    "use_cases": [
+      "Construire une présentation à plusieurs mains.",
+      "Partager un support relié à Drive.",
+      "Présenter en visioconférence via Meet."
+    ],
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build presentations collaboratively, online.",
+        "You want simple sharing and delivery.",
+        "Your team is on Google Workspace."
+      ],
+      "avoidIf": [
+        "You need very advanced animation and design.",
+        "You produce complex high-end presentations.",
+        "You work mostly offline."
+      ],
+      "threshold": "Slides perfectly covers common team presentations; for very polished design, PowerPoint or Keynote remain richer."
+    },
+    "pros": [
+      "Real-time collaboration on presentations.",
+      "Easy sharing and delivery via a link.",
+      "Integration with Drive and other Google editors.",
+      "Ready-made templates and themes."
+    ],
+    "cons": [
+      "Animations and effects less advanced than PowerPoint.",
+      "Limited advanced design.",
+      "Dependency on Google Workspace."
+    ],
+    "use_cases": [
+      "Build a presentation with several contributors.",
+      "Share a deck linked to Drive.",
+      "Present over a Meet video call."
+    ]
+  }
+}

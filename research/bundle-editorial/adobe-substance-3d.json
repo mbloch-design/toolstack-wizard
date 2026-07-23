@@ -1,0 +1,72 @@
+{
+  "slug": "adobe-substance-3d",
+  "bundle_parent": "adobe-creative-cloud",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des matériaux et textures 3D.",
+        "Vous travaillez sur des rendus produit ou du jeu vidéo.",
+        "Vous êtes dans un pipeline 3D."
+      ],
+      "avoidIf": [
+        "Vous ne faites pas de 3D.",
+        "Vos besoins sont couverts par un moteur unique.",
+        "Vous cherchez une alternative libre."
+      ],
+      "threshold": "Adobe Substance 3d est pertinent quand la création 3D (texturing, matériaux) fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+    },
+    "pros": [
+      "Outil de référence pour la création 3D (texturing, matériaux).",
+      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
+      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
+      "Écosystème riche de ressources, tutoriels et plugins."
+    ],
+    "cons": [
+      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
+      "Peut être surdimensionné pour un besoin ponctuel."
+    ],
+    "use_cases": [
+      "Réaliser un projet nécessitant la création 3D (texturing, matériaux) dans un flux professionnel.",
+      "Enchaîner avec les autres apps Adobe sans friction de format.",
+      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+    ],
+    "relevant_for": [
+      "Créatifs",
+      "Studios et agences",
+      "Freelances du design"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create 3D materials and textures.",
+        "You work on product renders or games.",
+        "You're in a 3D pipeline."
+      ],
+      "avoidIf": [
+        "You don't do 3D.",
+        "A single engine covers your needs.",
+        "You want an open-source alternative."
+      ],
+      "threshold": "Adobe Substance 3d is relevant when 3D texturing and material authoring is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+    },
+    "pros": [
+      "A reference tool for 3D texturing and material authoring.",
+      "Smooth integration with other Adobe Creative Cloud apps.",
+      "Included in the Creative Cloud subscription, no separate purchase.",
+      "Rich ecosystem of resources, tutorials and plugins."
+    ],
+    "cons": [
+      "A real learning curve to unlock its full potential.",
+      "Most relevant within the Creative Cloud subscription.",
+      "Can be overkill for a one-off need."
+    ],
+    "use_cases": [
+      "Deliver a project requiring 3D texturing and material authoring in a professional workflow.",
+      "Move to other Adobe apps without format friction.",
+      "Leverage the Adobe ecosystem's resources and templates."
+    ]
+  }
+}

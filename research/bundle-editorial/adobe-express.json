@@ -1,0 +1,72 @@
+{
+  "slug": "adobe-express",
+  "bundle_parent": "adobe-creative-cloud",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez rapidement des visuels pour les réseaux sociaux ou le marketing.",
+        "Vous voulez des modèles prêts à l'emploi sans expertise design.",
+        "Vous êtes dans l'écosystème Adobe."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un contrôle design fin (Photoshop, Illustrator).",
+        "Vous préférez une alternative comme Canva.",
+        "Vos besoins sont très spécialisés."
+      ],
+      "threshold": "Adobe Express est pertinent quand la création graphique rapide fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+    },
+    "pros": [
+      "Outil de référence pour la création graphique rapide.",
+      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
+      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
+      "Écosystème riche de ressources, tutoriels et plugins."
+    ],
+    "cons": [
+      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
+      "Peut être surdimensionné pour un besoin ponctuel."
+    ],
+    "use_cases": [
+      "Réaliser un projet nécessitant la création graphique rapide dans un flux professionnel.",
+      "Enchaîner avec les autres apps Adobe sans friction de format.",
+      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+    ],
+    "relevant_for": [
+      "Créatifs",
+      "Studios et agences",
+      "Freelances du design"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You quickly create social or marketing visuals.",
+        "You want ready-made templates without design expertise.",
+        "You're in the Adobe ecosystem."
+      ],
+      "avoidIf": [
+        "You need fine design control (Photoshop, Illustrator).",
+        "You prefer an alternative like Canva.",
+        "Your needs are very specialised."
+      ],
+      "threshold": "Adobe Express is relevant when quick, template-based graphic creation is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+    },
+    "pros": [
+      "A reference tool for quick, template-based graphic creation.",
+      "Smooth integration with other Adobe Creative Cloud apps.",
+      "Included in the Creative Cloud subscription, no separate purchase.",
+      "Rich ecosystem of resources, tutorials and plugins."
+    ],
+    "cons": [
+      "A real learning curve to unlock its full potential.",
+      "Most relevant within the Creative Cloud subscription.",
+      "Can be overkill for a one-off need."
+    ],
+    "use_cases": [
+      "Deliver a project requiring quick, template-based graphic creation in a professional workflow.",
+      "Move to other Adobe apps without format friction.",
+      "Leverage the Adobe ecosystem's resources and templates."
+    ]
+  }
+}
