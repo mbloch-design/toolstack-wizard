@@ -269,18 +269,14 @@
 
 ---
 
-## Phase 6 — Dark mode ← DETTE TECHNIQUE
+## Phase 6 — Dark mode
 
-**Problème :** Les systèmes de classes `gi-*` (GuidesPage) et `ga-*` (GuideDetailPage)
-n'ont aucun dark variant dans `index.css`. Les guides seront visuellement cassés en dark mode.
-
-**Scope :** Ajouter `.dark .gi-*` et `.dark .ga-*` pour toutes les classes déclarées en Session 2.
-
-**Priorité :** Non bloquant si dark mode n'est pas actif en prod. Ne pas traiter avant Phase 4.
-
-**Fichiers concernés :**
-- `src/index.css` — sections gi-* et ga-*
-- Environ 50–70 sélecteurs à créer
+| Item | Statut | Notes |
+|---|---|---|
+| Préférence clair/sombre persistante | ✅ Fait | Sélecteur dans la sidebar, fallback sur la préférence système |
+| Guides `gi-*` en sombre | ✅ Vérifié | Index contrôlé visuellement dans le shell desktop |
+| Audit global des pages historiques | 📋 Dette technique | Vérifier les anciennes surfaces non migrées vers les tokens |
+| Prévention du flash de thème au chargement | 📋 À évaluer | Ajouter un script de pré-hydratation uniquement si le flash est perceptible en production |
 
 ---
 

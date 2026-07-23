@@ -8,8 +8,15 @@ import {
   BookOpen,
   Search,
   Bookmark,
+  Languages,
+  Moon,
+  PanelLeftClose,
+  PanelLeftOpen,
+  Settings2,
+  Sun,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
+import { useTheme } from "@/hooks/useTheme";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { SearchModal } from "@/components/SearchModal";
@@ -34,15 +41,19 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export default function AppShellV2({ children }: { children: ReactNode }) {
-  const { t, prefix } = useLang();
+  const { t, prefix, lang } = useLang();
+  const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
+  const [sidebarExpanded, setSidebarExpanded] = useState(false);
   const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = cartCount > 0
     ? `${t("Ma stack", "My stack")} · ${cartCount}`
     : t("Ma stack", "My stack");
+  const otherLang = lang === "fr" ? "en" : "fr";
+  const languageHref = `/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}${location.hash}`;
 
   // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
   const relPath = location.pathname.startsWith(prefix)
@@ -57,8 +68,20 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     if (contentRef.current) contentRef.current.scrollLeft = 0;
   }, [location.pathname, location.search]);
 
+  useEffect(() => {
+    setSidebarExpanded(localStorage.getItem("tooltrim:sidebar-expanded") === "true");
+  }, []);
+
+  const toggleSidebar = () => {
+    setSidebarExpanded((current) => {
+      const next = !current;
+      localStorage.setItem("tooltrim:sidebar-expanded", String(next));
+      return next;
+    });
+  };
+
   return (
-    <div className="asv2-root">
+    <div className={`asv2-root${sidebarExpanded ? " asv2-root--sidebar-expanded" : ""}`}>
       {/* ── Top bar (spans full width, flush with sidebar below) ── */}
       <header className="asv2-topbar">
         <Link to={prefix} className="asv2-logo">
@@ -81,7 +104,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
       {/* ── Body: sidebar + content ── */}
       <div className="asv2-body">
-        <aside className="asv2-sidebar">
+        <aside className="asv2-sidebar" data-expanded={sidebarExpanded}>
           <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
             {NAV_ITEMS.map((item) => {
               const isActive = item.id === "home"
@@ -92,6 +115,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                   key={item.id}
                   to={`${prefix}${item.to}`}
                   className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
+                  aria-label={t(item.labelFr, item.labelEn)}
+                  title={!sidebarExpanded ? t(item.labelFr, item.labelEn) : undefined}
                 >
                   <span className="asv2-nav-icon">
                     <item.Icon style={{ width: 20, height: 20 }} />
@@ -101,6 +126,59 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               );
             })}
           </nav>
+
+          <div className="asv2-sidebar-utility">
+            <div className="asv2-utility-heading" aria-hidden="true">
+              <Settings2 />
+              <span>{t("Préférences", "Preferences")}</span>
+            </div>
+
+            <a
+              href={languageHref}
+              className="asv2-utility-item"
+              aria-label={t("Passer le site en anglais", "Switch the site to French")}
+              title={!sidebarExpanded ? t("Changer de langue", "Change language") : undefined}
+            >
+              <Languages />
+              <span className="asv2-utility-text">
+                {t("English", "Français")}
+              </span>
+              <span className="asv2-utility-value">{otherLang.toUpperCase()}</span>
+            </a>
+
+            <button
+              type="button"
+              className="asv2-utility-item asv2-theme-toggle"
+              onClick={toggleTheme}
+              aria-pressed={theme === "dark"}
+              aria-label={theme === "dark"
+                ? t("Passer en mode clair", "Switch to light mode")
+                : t("Passer en mode sombre", "Switch to dark mode")}
+              title={!sidebarExpanded ? t("Changer de thème", "Change theme") : undefined}
+            >
+              {theme === "dark" ? <Sun /> : <Moon />}
+              <span className="asv2-utility-text">
+                {theme === "dark" ? t("Mode clair", "Light mode") : t("Mode sombre", "Dark mode")}
+              </span>
+              <span className="asv2-utility-value">{theme === "dark" ? t("Clair", "Light") : t("Sombre", "Dark")}</span>
+            </button>
+
+            <button
+              type="button"
+              className="asv2-utility-item asv2-sidebar-toggle"
+              onClick={toggleSidebar}
+              aria-expanded={sidebarExpanded}
+              aria-label={sidebarExpanded
+                ? t("Réduire la barre latérale", "Collapse sidebar")
+                : t("Déployer la barre latérale", "Expand sidebar")}
+              title={!sidebarExpanded ? t("Déployer la navigation", "Expand navigation") : undefined}
+            >
+              {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
+              <span className="asv2-utility-text">
+                {sidebarExpanded ? t("Réduire", "Collapse") : t("Déployer", "Expand")}
+              </span>
+            </button>
+          </div>
         </aside>
 
         <main ref={contentRef} id="main-content" className="asv2-content">
