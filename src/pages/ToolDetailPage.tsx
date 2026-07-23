@@ -587,7 +587,7 @@ const ToolDetailPage = () => {
                             <h2 className="td-overview-title">
                               {t("Avantages et inconvénients", "Pros and cons")}
                             </h2>
-                            <p>{t("Ce que Framer fait particulièrement bien — et les limites à anticiper.", "What Framer does especially well — and the limits to anticipate.")}</p>
+                            <p>{t(`Ce que ${tool.name} fait particulièrement bien — et les limites à anticiper.`, `What ${tool.name} does especially well — and the limits to anticipate.`)}</p>
                           </header>
                           <div className="td-overview-grid">
                             {ov.pros.length > 0 && (
