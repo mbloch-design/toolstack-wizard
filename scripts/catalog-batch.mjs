@@ -77,9 +77,14 @@ async function cmdPrepare(a) {
       existsSync(dossier(slug)) ? {} : { error: "collecte sans dossier research" });
   }
   // 3) staging + gate (éditorial research requis selon profil)
+  // On ne (re)stage QUE les états pré-décision : collected/editorial_draft/staged. Les états déjà
+  // décidés ou terminaux (eligible, needs_review, approved, canonical, rolled_back, failed, queued)
+  // ne sont pas re-touchés — cela garantit l'idempotence de `prepare` et évite les transitions
+  // interdites (ex. canonical->editorial_draft, needs_review->editorial_draft) qui corrompaient l'état.
+  const STAGEABLE = new Set(["collected", "editorial_draft", "staged"]);
   for (const slug of loadBatch(a.batch).slugs) {
     const t = loadBatch(a.batch).tools[slug];
-    if (t.state === "failed" || t.state === "queued") continue;
+    if (!STAGEABLE.has(t.state)) continue;
     try {
       const profile = loadProfile(slug);
       const blockers = [];
@@ -259,6 +264,40 @@ async function cmdRun(a, apply) {
   return results;
 }
 
+// ── assert-tool : assertions de publication d'un outil (READ-ONLY) ──
+// Factorise les vérifications canari : plans, plan comparatif unique, observations approuvées,
+// contenus FR/EN publiés, projection à 2 lignes, data_contract canonical. Aucune écriture.
+async function cmdAssertTool(a) {
+  const slug = a.slug || a.slugs;
+  if (!slug) throw new Error("assert-tool exige --slug");
+  const sql = await connect();
+  try {
+    const plans = await sql`select plan_key, is_free, is_compare_plan from catalog_private.tool_plans where tool_id=${slug} order by plan_key`;
+    const obs = await sql`select p.plan_key, o.review_status, o.native_amount, o.native_currency
+      from catalog_private.tool_price_observations o join catalog_private.tool_plans p on p.id=o.plan_id
+      where p.tool_id=${slug}`;
+    const content = await sql`select lang, status from catalog_private.tool_editorial_content where tool_id=${slug} order by lang`;
+    const proj = await sql`select lang from catalog_api.published_tool_projection where tool_id=${slug} order by lang`;
+    const [tool] = await sql`select data_contract from public.tools where id=${slug}`;
+    const compare = plans.filter((p) => p.is_compare_plan).map((p) => p.plan_key);
+    const paid = obs.filter((o) => Number(o.native_amount) > 0);
+    const langs = content.map((c) => `${c.lang}:${c.status}`);
+    const projLangs = proj.map((p) => p.lang);
+    const A = [
+      ["data_contract_canonical", tool?.data_contract === "canonical", tool?.data_contract],
+      ["plans_min_2", plans.length >= 2, plans.length],
+      ["exactly_one_compare_plan", compare.length === 1, compare],
+      ["paid_observations_approved", paid.length > 0 && paid.every((o) => o.review_status === "approved"), `${paid.filter((o) => o.review_status === "approved").length}/${paid.length}`],
+      ["content_fr_en_published", ["fr", "en"].every((l) => content.some((c) => c.lang === l && c.status === "published")), langs],
+      ["projection_2_rows_fr_en", projLangs.length === 2 && projLangs.includes("fr") && projLangs.includes("en"), projLangs],
+    ];
+    const assertions = A.map(([id, ok, detail]) => ({ id, ok, detail }));
+    const failed = assertions.filter((x) => !x.ok);
+    console.log(JSON.stringify({ mode: "ASSERT_TOOL", slug, ok: failed.length === 0, assertions, remote_read_only: true }, null, 2));
+    if (failed.length) process.exitCode = 1;
+  } finally { await sql.end({ timeout: 1 }); }
+}
+
 // ── reconcile : aligne l'état LOCAL du lot sur Supabase (remote READ-ONLY) ──
 async function cmdReconcile(a) {
   const b = loadBatch(a.batch);
@@ -306,8 +345,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     prepare: () => cmdPrepare(a), report: () => cmdReport(a),
     "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
     verify: () => cmdVerify(a), reconcile: () => cmdReconcile(a),
-    "work-order": () => cmdWorkOrder(a), metrics: () => cmdMetrics(a),
+    "work-order": () => cmdWorkOrder(a), metrics: () => cmdMetrics(a), "assert-tool": () => cmdAssertTool(a),
   }[cmd];
-  if (!run) { console.error("commandes: prepare | report [--report=compact] | work-order | metrics | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
+  if (!run) { console.error("commandes: prepare | report [--report=compact] | work-order | metrics | assert-tool | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
   Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
 }
