@@ -337,7 +337,10 @@ async function cmdBundleEditorial(a) {
   try {
     const [tool] = await sql`select id, bundle_parent, verdict, pros from public.tools where id=${slug}`;
     if (!tool) throw new Error(`outil introuvable: ${slug}`);
-    if (!tool.bundle_parent) throw new Error(`${slug} n'est pas un membre de bundle (bundle_parent absent)`);
+    // Remplit l'éditorial de n'importe quel outil (membre de bundle OU autonome/parent).
+    // Sécurité : ne JAMAIS écraser un éditorial existant sans --overwrite.
+    if ((tool.verdict != null || tool.pros != null) && !a.overwrite)
+      throw new Error(`${slug} a déjà un éditorial (verdict/pros) — utiliser --overwrite pour forcer`);
     const cols = {
       verdict: d.fr.verdict, verdict_en: d.en.verdict,
       pros: d.fr.pros, pros_en: d.en.pros,

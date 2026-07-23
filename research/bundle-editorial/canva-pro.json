@@ -1,0 +1,67 @@
+{
+  "slug": "canva-pro",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement des visuels (réseaux sociaux, présentations, supports marketing) sans être designer.",
+        "Vous voulez une bibliothèque de modèles, un kit de marque et des outils rapides (fond transparent, redimensionnement).",
+        "Votre équipe collabore sur des visuels et a besoin de partages simples."
+      ],
+      "avoidIf": [
+        "Vous avez besoin du contrôle fin d'outils pro comme Photoshop ou Illustrator.",
+        "Le plan gratuit de Canva couvre déjà vos besoins.",
+        "Vous produisez des livrables très spécialisés (impression pro, vectoriel avancé)."
+      ],
+      "threshold": "Canva Pro se justifie quand la rapidité et les modèles priment sur le contrôle créatif fin ; si vous avez besoin de maîtrise pixel ou vectorielle poussée, un outil pro dédié reste supérieur, et le plan gratuit suffit pour un usage occasionnel."
+    },
+    "pros": [
+      "Immense bibliothèque de modèles et d'assets prêts à l'emploi.",
+      "Prise en main très rapide, aucune expertise design requise.",
+      "Kit de marque, redimensionnement automatique et outils magiques (fond transparent, retouche).",
+      "Collaboration et partage d'équipe intégrés."
+    ],
+    "cons": [
+      "Moins de contrôle créatif que les outils professionnels dédiés.",
+      "Rendus vite génériques si l'on reste sur les modèles par défaut.",
+      "Abonnement récurrent pour débloquer l'essentiel des fonctions premium."
+    ],
+    "use_cases": [
+      "Produire rapidement des visuels cohérents pour les réseaux sociaux.",
+      "Créer présentations et supports marketing à partir de modèles.",
+      "Maintenir une identité visuelle d'équipe via un kit de marque partagé."
+    ],
+    "relevant_for": ["Freelances", "Petites équipes marketing", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create visuals (social media, presentations, marketing) without being a designer.",
+        "You want a template library, a brand kit and quick tools (background remover, resizing).",
+        "Your team collaborates on visuals and needs simple sharing."
+      ],
+      "avoidIf": [
+        "You need the fine control of pro tools like Photoshop or Illustrator.",
+        "Canva's free plan already covers your needs.",
+        "You produce highly specialised deliverables (pro print, advanced vector)."
+      ],
+      "threshold": "Canva Pro is worth it when speed and templates matter more than fine creative control; if you need advanced pixel or vector mastery, a dedicated pro tool remains stronger, and the free plan suffices for occasional use."
+    },
+    "pros": [
+      "Huge library of ready-made templates and assets.",
+      "Very fast to pick up, no design expertise required.",
+      "Brand kit, automatic resizing and magic tools (background remover, retouch).",
+      "Built-in team collaboration and sharing."
+    ],
+    "cons": [
+      "Less creative control than dedicated professional tools.",
+      "Outputs can look generic if you stick to default templates.",
+      "Recurring subscription to unlock most premium features."
+    ],
+    "use_cases": [
+      "Quickly produce consistent visuals for social media.",
+      "Create presentations and marketing collateral from templates.",
+      "Maintain a team's visual identity via a shared brand kit."
+    ]
+  }
+}
