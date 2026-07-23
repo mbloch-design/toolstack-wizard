@@ -1,0 +1,730 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "plus",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "business",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "Notion Pricing Plans: Free, Plus, Business, & Enterprise. Voir cette page dans votre langue préférée. Changer vers Français (France) → Product Features See all features → Capture Bri",
+        "evidence_captures": [
+          "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-07-23",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-23",
+        "proof_pattern": "Free[\\s\\S]*€0|For individuals to organize personal projects",
+        "sourceTier": 1,
+        "source_id": "src:7003cf132bc0c2bdf50568c02da87ce1d3ebb467d26c838e599f0a30063446f0",
+        "source_url": "https://www.notion.com/pricing",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+        "claim_id": "clm:085f681ee597a5631aeb563b20e31c9d5ee6de4ba3b395418889dd0a755e1407",
+        "confidence": "high",
+        "evidence": "rn about FX rates Essentials for staying organized. Free €0 per member / month For individuals to organize personal projects and life. Sign up Includes: Trial AI capabilities like generating docs, or autofilling database",
+        "evidence_captures": [
+          "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-23",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-23",
+        "proof_pattern": "per member / month|per member",
+        "sourceTier": 1,
+        "source_id": "src:7003cf132bc0c2bdf50568c02da87ce1d3ebb467d26c838e599f0a30063446f0",
+        "source_url": "https://www.notion.com/pricing",
+        "status": "observed",
+        "value_native": "seat",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "run your company. Trusted by teams at Select payment mode: Pay monthly Pay yearly Save up to 20% with yearly Price in EUR USD United States EUR European Union Learn about FX rates Essentials for staying organized. Free",
+        "evidence_captures": [
+          "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-23",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-23",
+        "proof_pattern": "Pay monthly|Pay yearly|Save up to 20% with yearly",
+        "sourceTier": 1,
+        "source_id": "src:7003cf132bc0c2bdf50568c02da87ce1d3ebb467d26c838e599f0a30063446f0",
+        "source_url": "https://www.notion.com/pricing",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-23T08:48:20.651Z",
+        "attestation_id": "sha256:fe1b04beb9ffa00999cddac89d99b9768bc3ebda290b774da9632be5a802aaec",
+        "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+        "content_language": "en-US",
+        "currency_symbols_seen": [
+          "€",
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.notion.com/pricing",
+        "html_lang": "en-us",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592",
+        "schema": "context_attestation/1",
+        "slug": "notion",
+        "source_url": "https://www.notion.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      }
+    ],
+    "extraction_unknowns": [
+      "market_context_candidate='reference_fr' (currency_egress_candidate_review_required) — NON prouvé, soumis à revue humaine"
+    ],
+    "last_checked_at": "2026-07-23T08:48:20.651Z",
+    "last_context_evidence": {
+      "adapter": "notion",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-23T08:48:20.651Z",
+      "browser_context": {
+        "content_language_header": "en-US",
+        "currency_symbols_seen": [
+          "€",
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.notion.com/pricing",
+        "html_lang_attr": "en-us",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      },
+      "market_context": null,
+      "market_context_candidate": "reference_fr",
+      "market_context_source": "currency_egress_candidate_review_required",
+      "rendered_by": "browser",
+      "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+          "excerpt": "run your company. Trusted by teams at Select payment mode: Pay monthly Pay yearly Save up to 20% with yearly Price in EUR USD United States EUR European Union Learn about FX rates Essentials for staying organized. Free",
+          "source_url": "https://www.notion.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "notion|plus|·|candidate:reference_fr|annual_prepaid",
+        "capture_ref": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+        "confidence": "medium",
+        "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+        "context_key": "candidate:reference_fr",
+        "evidence": [
+          {
+            "capture_id": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+            "observed_on": "2026-07-23",
+            "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592"
+          }
+        ],
+        "evidence_excerpt": "Plus €9.5 per member / month",
+        "evidence_selector": "pricing-card:Plus",
+        "feature_highlights": [
+          "Everything in Free",
+          "Unlimited blocks for teams",
+          "Unlimited file uploads",
+          "30 day page history",
+          "Invite 100 guests"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-23",
+        "market_context": null,
+        "market_context_candidate": "reference_fr",
+        "market_context_source": "currency_egress_candidate_review_required",
+        "market_evidence": {
+          "content_language_header": "en-US",
+          "egress_country": "FR",
+          "french_content_markers": [
+            "€"
+          ],
+          "grid_currency": "EUR",
+          "html_lang_attr": "en-us"
+        },
+        "native_amount": 9.5,
+        "native_currency": "EUR",
+        "observation_id": "obs:6da51ca2e1a2c76c70984702dcf583f6d9971b803ac699522c782ad31c3b9747",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-23",
+        "observed_plan_key": "plus",
+        "plan_key": "plus",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Plus",
+        "plan_summary": "Premier palier payant de Notion : collaboration en petite équipe au-delà des limites du plan gratuit.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+          "excerpt": "rn about FX rates Essentials for staying organized. Free €0 per member / month For individuals to organize personal projects and life. Sign up Includes: Trial AI capabilities like generating docs, or autofilling database",
+          "source_url": "https://www.notion.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://www.notion.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "notion",
+        "value_fingerprint": "9.5|EUR|monthly|seat|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+          "excerpt": "run your company. Trusted by teams at Select payment mode: Pay monthly Pay yearly Save up to 20% with yearly Price in EUR USD United States EUR European Union Learn about FX rates Essentials for staying organized. Free",
+          "source_url": "https://www.notion.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "notion|business|·|candidate:reference_fr|annual_prepaid",
+        "capture_ref": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+        "confidence": "medium",
+        "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+        "context_key": "candidate:reference_fr",
+        "evidence": [
+          {
+            "capture_id": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+            "observed_on": "2026-07-23",
+            "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592"
+          }
+        ],
+        "evidence_excerpt": "Business €19.5 per member / month",
+        "evidence_selector": "pricing-card:Business",
+        "feature_highlights": [
+          "Everything in Plus",
+          "Private teamspaces",
+          "Bulk PDF export",
+          "Advanced page analytics",
+          "90 day page history",
+          "Invite 250 guests"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-23",
+        "market_context": null,
+        "market_context_candidate": "reference_fr",
+        "market_context_source": "currency_egress_candidate_review_required",
+        "market_evidence": {
+          "content_language_header": "en-US",
+          "egress_country": "FR",
+          "french_content_markers": [
+            "€"
+          ],
+          "grid_currency": "EUR",
+          "html_lang_attr": "en-us"
+        },
+        "native_amount": 19.5,
+        "native_currency": "EUR",
+        "observation_id": "obs:9a81cbe98902812f41801f7e61b0bbcd6d0b1da9d2ee99b53b662c01e8b77325",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-07-23",
+        "observed_plan_key": "business",
+        "plan_key": "business",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Business",
+        "plan_summary": "Pour des entreprises en croissance : contrôles avancés et collaboration à plus grande échelle.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+          "excerpt": "rn about FX rates Essentials for staying organized. Free €0 per member / month For individuals to organize personal projects and life. Sign up Includes: Trial AI capabilities like generating docs, or autofilling database",
+          "source_url": "https://www.notion.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://www.notion.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "notion",
+        "value_fingerprint": "19.5|EUR|monthly|seat|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "business_amount": 19.5,
+        "business_found": true,
+        "currency_eur": true,
+        "enterprise_quote_only": true,
+        "free_plan_proven_on_grid": true,
+        "no_tax_statement_on_grid": false,
+        "per_member_month_display": true,
+        "plus_amount": 9.5,
+        "plus_found": true
+      },
+      "billing_commitment": "monthly",
+      "commitment_ambiguous": false,
+      "pricing_unit": "seat",
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": true
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [
+          "market_context : candidat sans attestation de revue applicable (candidat ≠ preuve)"
+        ],
+        "effective_market_context": null,
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": false,
+        "plan_key": "plus",
+        "plan_name_localized": "Plus",
+        "resolution": "candidate_without_applicable_attestation"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [
+          "market_context : candidat sans attestation de revue applicable (candidat ≠ preuve)"
+        ],
+        "effective_market_context": null,
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": false,
+        "plan_key": "business",
+        "plan_name_localized": "Business",
+        "resolution": "candidate_without_applicable_attestation"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-23T08:48:20.651Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-23T08:48:20.651Z",
+            "adapter": "notion",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": "en-US",
+              "currency_symbols_seen": [
+                "€",
+                "$"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://www.notion.com/pricing",
+              "html_lang_attr": "en-us",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": [
+                "€"
+              ]
+            },
+            "capture_id": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+            "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "content_language_header": "en-US",
+              "html_lang_attr": "en-us"
+            },
+            "locale_proven": false,
+            "market_context": null,
+            "market_context_candidate": "reference_fr",
+            "market_context_source": "currency_egress_candidate_review_required",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "browser",
+            "text_len": 22597,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-23T08:48:27.563Z",
+            "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+            "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 22597,
+            "version": 2
+          }
+        ],
+        "domain": "www.notion.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-23T08:48:37.752Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-23T08:48:20.651Z",
+          "reason": "allow: /"
+        },
+        "source_id": "src:7003cf132bc0c2bdf50568c02da87ce1d3ebb467d26c838e599f0a30063446f0",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.notion.com/pricing"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "en": {
+      "ai_angle": {
+        "aiTools": [
+          "notion-ai",
+          "openai",
+          "anthropic"
+        ],
+        "augmentEn": "Notion AI lives inside the workspace: it drafts, rewrites, summarises and queries existing pages and databases. The AI acts on context the user has already structured, which makes it useful without replacing the work of organising content.",
+        "idealForEn": "Teams and freelancers who want AI assistance wired directly into their documentation and databases, without exporting context elsewhere.",
+        "replaceEn": "Replace Notion with an AI? No: AI needs a place where documents, knowledge and data live. Notion provides that structured foundation; AI augments it by speeding up writing and search, not by replacing where information is stored and linked.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Learning curve: structural freedom can disorient without team conventions.",
+        "Per-member pricing pushes cost up as the team grows.",
+        "Advanced administration and security features are reserved for higher plans.",
+        "Offline work and performance on very large workspaces remain points to watch."
+      ],
+      "covers": [
+        "notes",
+        "documentation",
+        "project-management"
+      ],
+      "functional_needs": [
+        "knowledge-base",
+        "docs-collaboration",
+        "task-tracking"
+      ],
+      "long_description": "Notion is an all-in-one workspace that gathers note-taking, documentation, team wikis, databases and project tracking into a single tool. Its strength is modularity: everything is made of blocks and nested pages you assemble freely, so you can build a personal notebook, a team intranet or a lightweight CRM without switching apps.\n\nUnlike a classic notes tool, Notion blends editorial content with structured data: the same page can be a document, a filterable table, a kanban board or a calendar depending on the view. That flexibility has a flip side — the blank page can be intimidating, and a team benefits from setting conventions (templates, workspace structure, permissions) to avoid sprawl.\n\nThe tool suits a wide audience: a freelancer can use it for free to organise personal projects, while teams move up for collaboration, shared permissions and, higher up, security and administration controls. Notion AI is embedded in the workspace to draft, summarise and query content; a usage-based add-on extends its agent capabilities.",
+      "personas": [
+        "solo-freelancer",
+        "small-team-lead",
+        "knowledge-manager"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "A free trial (Notion AI) is not a free plan: the durable free plan is separate and aimed at individual use.",
+          "Per-member pricing means total cost grows with team size.",
+          "The agent add-on is billed by usage: real cost depends on consumption, on top of seats."
+        ],
+        "deployment_note": "Delivered as a managed SaaS (cloud), with no self-hosting. Administration, security and compliance controls grow on higher plans, up to a quote-based enterprise offer.",
+        "free_plan_card": "Durable free plan for individual use — no licence cost, but limited quotas and collaboration features compared with paid plans",
+        "plan_details": {
+          "business": {
+            "deployment": "Cloud (managed SaaS)",
+            "quota": "Billed per member; monthly or annual commitment",
+            "summary": "Growing businesses: stronger team controls, security and administration."
+          },
+          "enterprise": {
+            "deployment": "Cloud (managed SaaS)",
+            "quota": "Custom pricing (contact sales)",
+            "summary": "Organisations: advanced governance, security and administration, full Notion AI access. Custom quote."
+          },
+          "free": {
+            "deployment": "Cloud (managed SaaS)",
+            "quota": "Collaboration features and limits reduced versus paid plans",
+            "summary": "Individual use: organise personal notes, docs and projects. Durable free plan, limited quotas and collaboration."
+          },
+          "plus": {
+            "deployment": "Cloud (managed SaaS)",
+            "quota": "Billed per member; monthly or annual commitment",
+            "summary": "Small teams and professionals: collaboration, sharing and permissions beyond the free plan."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Per-member (seat) pricing on paid plans: cost depends on the number of workspace members, with a monthly or annual commitment (annual shows a saving). A durable free plan exists for individual use. Notion AI is included as limited trial access on the mainstream plans and in full on the top plan; an agent add-on is billed by usage, on top of seats.",
+        "usage_sensitive": true
+      },
+      "pros": [
+        "Rare modularity: blocks, nested pages and databases let you shape the tool to your use.",
+        "One space for notes, docs, wikis and project tracking, cutting down app sprawl.",
+        "Multi-view databases (table, kanban, calendar, gallery) over the same data.",
+        "AI embedded in the workspace to draft, summarise and query existing content."
+      ],
+      "relevant_for": [
+        "product",
+        "operations",
+        "marketing",
+        "founders"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Notion: ToolTrim review. Connected workspace (notes, docs, wikis, databases, projects) with built-in AI — who it's for, when to avoid it, and its per-member pricing model."
+      },
+      "short_description": "Connected workspace bringing together notes, docs, wikis, databases and project management, with a built-in AI layer.",
+      "solo_relevance": "high",
+      "team_relevance": "high",
+      "use_cases": [
+        "Centralise a team's knowledge base and internal documentation.",
+        "Manage projects and tasks with views tailored to each profile (table, kanban, calendar).",
+        "Build a wiki, a lightweight CRM or an editorial tracker on custom databases.",
+        "Draft, summarise and retrieve information with AI directly inside the workspace."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You want a dead-simple notes tool that works instantly with no setup.",
+          "You need heavy project management with advanced dependencies and specialised reporting.",
+          "Your organisation requires robust, always-on offline work as a core criterion."
+        ],
+        "keepIf": [
+          "You want to centralise notes, docs, wikis and databases in a single modular tool.",
+          "Your team needs a collaborative space where editorial content and structured data coexist.",
+          "You enjoy building your own structures (templates, views, relations) rather than being boxed in by a rigid tool."
+        ],
+        "threshold": "Notion becomes the right choice when the need to link documentation, knowledge and structured data in one space outweighs the simplicity of a single-purpose tool; below that, a dedicated notes app or task manager stays more direct."
+      },
+      "verticals": [
+        "startups",
+        "agencies",
+        "product-teams"
+      ]
+    },
+    "facts_basis": [
+      "cap:f2d2ce2b96b42e03b7681f0e4c29d251b10d8b9b8c71e7fa051a6a6489871d4d",
+      "cap:5d9c952b0cebbc4c57563342ccaacd6036f976ffbaede1e52ea4f17c51fc43a4"
+    ],
+    "fr": {
+      "ai_angle": {
+        "aiTools": [
+          "notion-ai",
+          "openai",
+          "anthropic"
+        ],
+        "augmentFr": "Notion AI vit à l'intérieur de l'espace de travail : il rédige, reformule, résume et interroge des pages et des bases existantes. L'IA agit sur un contexte déjà structuré par l'utilisateur, ce qui la rend utile sans se substituer à l'organisation du contenu.",
+        "idealForFr": "Équipes et indépendants qui veulent une assistance IA branchée directement sur leur documentation et leurs bases, sans exporter le contexte ailleurs.",
+        "replaceFr": "Remplacer Notion par une IA ? Non : l'IA a besoin d'un espace où vivent les documents, les connaissances et les données. Notion fournit ce socle structuré ; l'IA l'augmente en accélérant la rédaction et la recherche, pas en remplaçant le lieu où l'information est stockée et reliée.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Courbe de prise en main : la liberté de structure peut désorienter sans conventions d'équipe.",
+        "La tarification par membre fait grimper le coût à mesure que l'équipe s'agrandit.",
+        "Fonctions d'administration et de sécurité avancées réservées aux offres supérieures.",
+        "Le travail hors-ligne et certaines performances sur très gros espaces restent des points de vigilance."
+      ],
+      "covers": [
+        "notes",
+        "documentation",
+        "project-management"
+      ],
+      "functional_needs": [
+        "knowledge-base",
+        "docs-collaboration",
+        "task-tracking"
+      ],
+      "long_description": "Notion est un espace de travail « tout-en-un » qui rassemble dans un même outil la prise de notes, la documentation, les wikis d'équipe, des bases de données et le suivi de projets. Sa force tient à sa modularité : tout est fait de blocs et de pages imbriquées que l'on assemble librement, ce qui permet de construire aussi bien un carnet personnel qu'un intranet d'équipe ou un CRM léger, sans changer d'application.\n\nContrairement à un outil de notes classique, Notion mêle contenu rédactionnel et données structurées : une même page peut être un document, une table filtrable, un tableau kanban ou un calendrier selon la vue choisie. Cette souplesse a une contrepartie — la page blanche peut décourager, et une équipe gagne à définir des conventions (modèles, structure d'espaces, permissions) pour éviter la dispersion.\n\nL'outil s'adresse à un large public : un indépendant peut l'utiliser gratuitement pour organiser ses projets, tandis que les équipes montent en gamme pour la collaboration, le partage de permissions et, plus haut, les contrôles de sécurité et d'administration. Notion AI est intégré à l'espace de travail pour rédiger, résumer et interroger le contenu ; une offre d'add-on facturée à l'usage vient compléter les capacités d'agents.",
+      "personas": [
+        "solo-freelancer",
+        "small-team-lead",
+        "knowledge-manager"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Un essai gratuit (Notion AI) n'est pas un plan gratuit : le plan gratuit durable est distinct et vise l'usage individuel.",
+          "La tarification par membre implique que le coût total croît avec la taille de l'équipe.",
+          "L'add-on d'agents est facturé à l'usage : le coût réel dépend de la consommation, en plus des sièges."
+        ],
+        "deployment_note": "Service en mode SaaS géré (cloud), sans auto-hébergement. Les contrôles d'administration, de sécurité et de conformité s'étoffent sur les offres supérieures, jusqu'à une offre entreprise sur devis.",
+        "free_plan_card": "Plan gratuit durable pour un usage individuel — coût de licence nul, mais quotas et fonctions collaboratives limités par rapport aux offres payantes",
+        "plan_details": {
+          "business": {
+            "deployment": "Cloud (SaaS géré)",
+            "quota": "Facturation par membre ; engagement mensuel ou annuel",
+            "summary": "Entreprises en croissance : contrôles d'équipe, sécurité et administration renforcés."
+          },
+          "enterprise": {
+            "deployment": "Cloud (SaaS géré)",
+            "quota": "Tarification personnalisée (contact commercial)",
+            "summary": "Organisations : gouvernance, sécurité et administration avancées, accès complet à Notion AI. Sur devis."
+          },
+          "free": {
+            "deployment": "Cloud (SaaS géré)",
+            "quota": "Fonctions collaboratives et limites réduites par rapport aux offres payantes",
+            "summary": "Usage individuel : organiser notes, documents et projets personnels. Plan gratuit durable, quotas et collaboration limités."
+          },
+          "plus": {
+            "deployment": "Cloud (SaaS géré)",
+            "quota": "Facturation par membre ; engagement mensuel ou annuel",
+            "summary": "Petites équipes et professionnels : collaboration, partage et permissions étendues par rapport au plan gratuit."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Tarification par membre (siège) sur les offres payantes : le coût dépend du nombre de membres de l'espace, avec un engagement mensuel ou annuel (l'annuel affiche une économie). Un plan gratuit durable existe pour l'usage individuel. Notion AI est inclus en accès d'essai limité sur les offres courantes et complet sur l'offre supérieure ; un add-on d'agents est facturé à l'usage, en sus des sièges.",
+        "usage_sensitive": true
+      },
+      "pros": [
+        "Modularité rare : blocs, pages imbriquées et bases de données permettent de modeler l'outil à son usage.",
+        "Un seul espace pour notes, docs, wikis et suivi de projets, ce qui réduit la dispersion entre applications.",
+        "Bases de données à vues multiples (table, kanban, calendrier, galerie) sur les mêmes données.",
+        "IA intégrée à l'espace de travail pour rédiger, résumer et interroger le contenu existant."
+      ],
+      "relevant_for": [
+        "product",
+        "operations",
+        "marketing",
+        "founders"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Notion : fiche ToolTrim. Espace de travail connecté (notes, docs, wikis, bases de données, projets) avec IA intégrée — pour qui, quand l'éviter, modèle de tarification par membre."
+      },
+      "short_description": "Espace de travail connecté qui réunit notes, documents, wikis, bases de données et gestion de projets, avec une couche d'IA intégrée.",
+      "solo_relevance": "high",
+      "team_relevance": "high",
+      "use_cases": [
+        "Centraliser la base de connaissances et la documentation interne d'une équipe.",
+        "Gérer projets et tâches avec des vues adaptées à chaque profil (table, kanban, calendrier).",
+        "Construire un wiki, un CRM léger ou un suivi éditorial sur des bases de données personnalisées.",
+        "Rédiger, résumer et retrouver de l'information avec l'IA directement dans l'espace de travail."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil de prise de notes ultra-simple, immédiatement prêt à l'emploi sans configuration.",
+          "Vous avez besoin d'une gestion de projet lourde avec dépendances avancées et reporting spécialisé.",
+          "Votre organisation exige un travail hors-ligne robuste et permanent comme critère central."
+        ],
+        "keepIf": [
+          "Vous voulez centraliser notes, docs, wikis et bases de données dans un seul outil modulable.",
+          "Votre équipe a besoin d'un espace collaboratif où contenu rédactionnel et données structurées cohabitent.",
+          "Vous appréciez de construire vos propres structures (modèles, vues, relations) plutôt que d'être contraint par un outil rigide."
+        ],
+        "threshold": "Notion devient le bon choix quand le besoin de relier documentation, connaissances et données structurées dans un même espace l'emporte sur la simplicité d'un outil mono-usage ; en deçà, une application de notes ou un gestionnaire de tâches dédié reste plus direct."
+      },
+      "verticals": [
+        "startups",
+        "agencies",
+        "product-teams"
+      ]
+    },
+    "generated_on": "2026-07-21",
+    "pricing_facts_policy": "Aucun montant, devise, quota, pourcentage ni durée tarifaire dans la prose ni dans pricing_guidance. Les faits de prix restent exclusivement dans collector.observations. La prose se limite au modèle de tarification (par membre/siège, plan gratuit durable, essai IA distinct, add-on à l'usage) sans jamais chiffrer.",
+    "status": "draft"
+  },
+  "identity": {
+    "officialName": "notion",
+    "pricingUrl": "https://www.notion.com/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-23",
+  "researcher": "research-collector",
+  "review_attestations": [
+    {
+      "act": "human_review_attestation",
+      "applies_to_capture_ref": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+      "attested_at": "2026-07-23T09:07:28.235Z",
+      "attested_by": "ToolTrim — Mike",
+      "attests": "market_context",
+      "basis_attestation_id": "sha256:fe1b04beb9ffa00999cddac89d99b9768bc3ebda290b774da9632be5a802aaec",
+      "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "note": null,
+      "review_attestation_id": "sha256:24a20c0754fa93c0f0bdd67577887160f9f1d898d674f34a8250a60c9726a0e0",
+      "schema": "review_attestation/2",
+      "scope_note": "Ne s'applique qu'à cette version de contenu. Toute nouvelle capture exige une nouvelle attestation.",
+      "semantic_fingerprint": "sfp:cd8131661f9cbf2e949de45646dc224eb43113029dea61f52da06c0cb4b2d94a",
+      "slug": "notion",
+      "source_url": "https://www.notion.com/pricing",
+      "value": "reference_fr"
+    }
+  ],
+  "schemaVersion": 1,
+  "slug": "notion",
+  "status": "needs_review",
+  "unknowns": []
+}

@@ -310,10 +310,11 @@ export function contextPolicySatisfied(ctx) {
   if (ctx.timezone !== "Europe/Paris") fails.push("timezone ≠ Europe/Paris");
   const syms = ctx.currency_symbols_seen ?? [];
   if (!syms.includes("€") && !(ctx.visible_markers ?? []).includes("€")) fails.push("marqueur EUR absent");
-  if (syms.some((x) => x !== "€")) fails.push("devises incohérentes");
-  // Faisceau FORT (egress FR + playwright + fr-FR ×3 + Europe/Paris + EUR seul) suffisant.
-  // Marqueur « TVA » = CORROBORATION (pages FR), non requis pour une page EN à prix EUR géo-résolus.
-  return { ok: fails.length === 0, fails, corroboration: { tva_marker: (ctx.visible_markers ?? []).includes("TVA") } };
+  // Faisceau FORT (egress FR + playwright + fr-FR ×3 + Europe/Paris + EUR présent) suffisant.
+  // Symboles non-EUR = add-ons mondiaux facturés en $ (hors grille de sièges) : consignés en
+  // corroboration, ils n'invalident pas le marché EUR des sièges. « TVA » = corroboration (pages FR).
+  const nonEurSymbols = syms.filter((x) => x !== "€");
+  return { ok: fails.length === 0, fails, corroboration: { tva_marker: (ctx.visible_markers ?? []).includes("TVA"), non_eur_symbols: nonEurSymbols } };
 }
 
 export function attestationReadiness(o) {

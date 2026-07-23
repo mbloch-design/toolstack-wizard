@@ -1,0 +1,74 @@
+{
+  "captures": [
+    {
+      "capture_id": "cap:0fce2ddbc3d1d3f327be736405ab8b5fd9f8b6f2ef3dd83c1e08b73d9fddf912",
+      "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "source_url": "https://www.notion.com/pricing"
+    },
+    {
+      "capture_id": "cap:81d1ed608514d64bfa0afd1df3bc79ca90b4601f65a1558899a6d62d1d9597e0",
+      "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+      "source_url": "https://www.notion.com/pricing"
+    }
+  ],
+  "claims": [],
+  "conflicts": [],
+  "human_decisions": [
+    "attestation reference_fr (auto-signable si faisceau fort)",
+    "unknown: market_context_candidate='reference_fr' (currency_egress_candidate_review_required) — NON prouvé, soumis à revue humaine"
+  ],
+  "observations": [
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "market_context": "reference_fr",
+      "native_amount": 9.5,
+      "native_currency": "EUR",
+      "plan_key": "plus",
+      "pricing_unit": "seat",
+      "status": "observed"
+    },
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "market_context": "reference_fr",
+      "native_amount": 19.5,
+      "native_currency": "EUR",
+      "plan_key": "business",
+      "pricing_unit": "seat",
+      "status": "observed"
+    }
+  ],
+  "profile": {
+    "adapter": "notion",
+    "comparePlanKey": "plus",
+    "freePlanKey": "free",
+    "locale": "fr-FR",
+    "marketContext": null,
+    "openSource": false,
+    "planOrder": [
+      "free",
+      "plus",
+      "business"
+    ],
+    "pricing_url": "https://www.notion.com/pricing"
+  },
+  "relations_candidates": [
+    "notes",
+    "documentation",
+    "project-management",
+    "product",
+    "operations",
+    "marketing",
+    "founders"
+  ],
+  "slug": "notion",
+  "source": {
+    "is_official": true,
+    "source_id": "src:7003cf132bc0c2bdf50568c02da87ce1d3ebb467d26c838e599f0a30063446f0",
+    "tier": 1,
+    "url": "https://www.notion.com/pricing"
+  },
+  "tool_id": "notion",
+  "validator_failures": []
+}

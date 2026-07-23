@@ -92,10 +92,15 @@ describe("faisceau vérifié automatiquement dans la basis", () => {
     expect(r.ok).toBe(false);
     expect(r.fails.join(" ")).toMatch(/timezone=America\/New_York/);
   });
-  it("NÉGATIF — marqueurs EUR/TVA incohérents ($ vu) => refus", () => {
+  it("POSITIF — add-ons non-EUR ($) sur grille EUR + faisceau fort => ACCEPTÉ, $ en corroboration", () => {
     const r = verify({ ...CTX_OK, currency_symbols_seen: ["€", "$"] });
+    expect(r.ok).toBe(true);
+    expect(r.corroboration.non_eur_symbols).toContain("$");
+  });
+  it("NÉGATIF — aucun marqueur EUR (€) observé => refus", () => {
+    const r = verify({ ...CTX_OK, currency_symbols_seen: ["$"], visible_markers: [] });
     expect(r.ok).toBe(false);
-    expect(r.fails.join(" ")).toMatch(/devises incohérentes/);
+    expect(r.fails.join(" ")).toMatch(/EUR/);
   });
   it("TVA absent mais faisceau FORT (page EN à prix EUR, egress FR) => ACCEPTÉ, TVA corroborante", () => {
     const r = verify({ ...CTX_OK, visible_markers: ["€"] });   // page anglaise, pas de « TVA »

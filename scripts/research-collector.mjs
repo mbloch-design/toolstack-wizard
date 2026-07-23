@@ -35,6 +35,8 @@ import { extractN8n } from "./research-adapters/n8n.mjs";
 import { extractContra } from "./research-adapters/contra.mjs";
 import { extractCalendly } from "./research-adapters/calendly.mjs";
 import { extractLinear } from "./research-adapters/linear.mjs";
+import { extractNotion } from "./research-adapters/notion.mjs";
+import { extractLoom } from "./research-adapters/loom.mjs";
 import { extractGeneric } from "./research-adapters/generic.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
@@ -55,6 +57,8 @@ const ADAPTERS = {
   contra: extractContra,
   calendly: extractCalendly,
   linear: extractLinear,
+  notion: extractNotion,
+  loom: extractLoom,
   generic: extractGeneric,
 };
 

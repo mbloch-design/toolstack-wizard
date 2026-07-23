@@ -1,0 +1,71 @@
+{
+  "captures": [
+    {
+      "capture_id": "cap:cd63aed5e237962fd0ddbfc557be5e2bb8893d92094f0517f718ff56680f7c5d",
+      "content_hash": "sha256:1fef22cfbff5f978e0e9734f6e72186515682357bd596ab90e74ba6eafa1450a",
+      "source_url": "https://www.loom.com/pricing"
+    },
+    {
+      "capture_id": "cap:6f34d2d3fda3e8d053602711d89a493679060677afe5877e316c3406bf8bfb5d",
+      "content_hash": "sha256:888fdff8422e5160ea686a074afb374277547b4f2ad4def679c38060047eeb62",
+      "source_url": "https://www.loom.com/pricing"
+    }
+  ],
+  "claims": [],
+  "conflicts": [],
+  "human_decisions": [],
+  "observations": [
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:1fef22cfbff5f978e0e9734f6e72186515682357bd596ab90e74ba6eafa1450a",
+      "market_context": "global_usd_fallback",
+      "native_amount": 18,
+      "native_currency": "USD",
+      "plan_key": "business",
+      "pricing_unit": "seat",
+      "status": "observed"
+    },
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:1fef22cfbff5f978e0e9734f6e72186515682357bd596ab90e74ba6eafa1450a",
+      "market_context": "global_usd_fallback",
+      "native_amount": 24,
+      "native_currency": "USD",
+      "plan_key": "business_ai",
+      "pricing_unit": "seat",
+      "status": "observed"
+    }
+  ],
+  "profile": {
+    "adapter": "loom",
+    "comparePlanKey": "business",
+    "freePlanKey": "free",
+    "locale": "fr-FR",
+    "marketContext": "global_usd_fallback",
+    "openSource": false,
+    "planOrder": [
+      "free",
+      "business",
+      "business_ai"
+    ],
+    "pricing_url": "https://www.loom.com/pricing"
+  },
+  "relations_candidates": [
+    "async-video",
+    "screen-recording",
+    "team-communication",
+    "product",
+    "engineering",
+    "customer-success",
+    "marketing"
+  ],
+  "slug": "loom",
+  "source": {
+    "is_official": true,
+    "source_id": "src:b4e1aa69a86b3ee999fa2112330b46b6deba582039ed35a6924cc2fc4e75ba53",
+    "tier": 1,
+    "url": "https://www.loom.com/pricing"
+  },
+  "tool_id": "loom",
+  "validator_failures": []
+}
