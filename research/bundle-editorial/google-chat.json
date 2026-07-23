@@ -1,0 +1,68 @@
+{
+  "slug": "google-chat",
+  "bundle_parent": "google-workspace",
+  "author": "ToolTrim — Mike",
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe travaille déjà dans Google Workspace (Gmail, Meet, Drive, Docs) au quotidien.",
+        "Vous voulez une messagerie d'équipe simple, avec espaces et fils, sans ajouter un outil séparé.",
+        "Vous appréciez de discuter directement à côté des documents et des visios plutôt que dans un silo à part."
+      ],
+      "avoidIf": [
+        "Vous cherchez une messagerie riche en intégrations tierces et en automatisations avancées, façon Slack.",
+        "Votre équipe n'est pas sur Google Workspace : Chat seul a peu d'intérêt hors de l'écosystème.",
+        "Vous avez besoin de fonctions de communauté ou de canaux publics à grande échelle."
+      ],
+      "threshold": "Google Chat s'impose quand vous êtes déjà dans Google Workspace et voulez centraliser les échanges d'équipe sans outil supplémentaire ; en dehors de cet écosystème, une messagerie dédiée comme Slack ou Teams reste plus pertinente."
+    },
+    "pros": [
+      "Intégration native avec Gmail, Meet, Drive et Docs : on discute à côté du travail réel.",
+      "Espaces et fils de discussion pour organiser les sujets et les équipes sans se perdre.",
+      "Inclus dans Google Workspace : aucun abonnement supplémentaire à gérer.",
+      "Interface légère et rapide, faible courbe d'apprentissage pour qui connaît déjà Google."
+    ],
+    "cons": [
+      "Écosystème d'intégrations tierces plus limité que Slack.",
+      "Peu d'intérêt en dehors de Google Workspace : dépendance forte à la suite.",
+      "Fonctions d'automatisation et de personnalisation plus modestes que les messageries spécialisées."
+    ],
+    "use_cases": [
+      "Coordonner une équipe déjà sur Google Workspace sans ajouter d'outil de messagerie séparé.",
+      "Créer des espaces par projet ou par équipe, reliés aux documents Drive et aux réunions Meet.",
+      "Passer d'un fil de discussion à une visioconférence Meet en un clic."
+    ],
+    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes opérationnelles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team already works in Google Workspace (Gmail, Meet, Drive, Docs) every day.",
+        "You want simple team messaging with spaces and threads, without adding a separate tool.",
+        "You like chatting right next to your documents and meetings rather than in a separate silo."
+      ],
+      "avoidIf": [
+        "You want a messaging app rich in third-party integrations and advanced automation, Slack-style.",
+        "Your team isn't on Google Workspace: Chat alone has little value outside the ecosystem.",
+        "You need large-scale community features or public channels."
+      ],
+      "threshold": "Google Chat makes sense when you're already in Google Workspace and want to centralise team conversations without an extra tool; outside that ecosystem, a dedicated messenger like Slack or Teams remains more relevant."
+    },
+    "pros": [
+      "Native integration with Gmail, Meet, Drive and Docs: you chat next to the actual work.",
+      "Spaces and threads to organise topics and teams without getting lost.",
+      "Included in Google Workspace: no extra subscription to manage.",
+      "Light, fast interface with a gentle learning curve for anyone already using Google."
+    ],
+    "cons": [
+      "Smaller third-party integration ecosystem than Slack.",
+      "Little value outside Google Workspace: strong dependency on the suite.",
+      "More modest automation and customisation than specialised messengers."
+    ],
+    "use_cases": [
+      "Coordinate a team already on Google Workspace without adding a separate messaging tool.",
+      "Create per-project or per-team spaces linked to Drive documents and Meet meetings.",
+      "Jump from a chat thread to a Meet video call in one click."
+    ]
+  }
+}

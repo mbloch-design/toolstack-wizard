@@ -310,6 +310,62 @@ async function cmdAssertTool(a) {
   } finally { await sql.end({ timeout: 1 }); }
 }
 
+// ── bundle-editorial : remplit l'éditorial d'un membre de bundle (verdict/pros/cons/use_cases FR+EN) ──
+// Industrialise la fiche satellite : contenu riche SANS prix propre (le prix reste « inclus dans le
+// parent »). Lit research/bundle-editorial/<slug>.json. Dry-run par défaut ; --apply écrit en base
+// (transaction, invariants cardinalité/canonical inchangés). Aucune donnée tarifaire dans la prose.
+const MONEY_RE = /(?:€|\$|£|USD|EUR|GBP)\s?\d|\d[\d.,]*\s?(?:€|\$|£|USD|EUR|GBP|\/mois\b|\/mo\b|%)/i;
+function cmdBundleEditorialLoad(slug, file) {
+  const p = file || path.join(ROOT, "research", "bundle-editorial", `${slug}.json`);
+  if (!existsSync(p)) throw new Error(`éditorial bundle absent: ${p}`);
+  const d = JSON.parse(readFileSync(p, "utf8"));
+  const money = JSON.stringify({ fr: d.fr, en: d.en }).match(MONEY_RE);
+  if (money) throw new Error(`fait tarifaire interdit dans la prose: ${money[0]}`);
+  for (const lang of ["fr", "en"]) {
+    const b = d[lang] || {};
+    for (const arr of ["pros", "cons", "use_cases"]) if (!Array.isArray(b[arr]) || b[arr].length < 3) throw new Error(`${lang}.${arr} doit avoir ≥3 éléments`);
+    if (!b.verdict || !Array.isArray(b.verdict.keepIf) || !Array.isArray(b.verdict.avoidIf) || !b.verdict.threshold) throw new Error(`${lang}.verdict incomplet (keepIf/avoidIf/threshold)`);
+  }
+  return d;
+}
+async function cmdBundleEditorial(a) {
+  const slug = a.slug;
+  if (!slug) throw new Error("bundle-editorial exige --slug");
+  const d = cmdBundleEditorialLoad(slug, a.file);
+  const apply = Boolean(a.apply);
+  const sql = await connect();
+  try {
+    const [tool] = await sql`select id, bundle_parent, verdict, pros from public.tools where id=${slug}`;
+    if (!tool) throw new Error(`outil introuvable: ${slug}`);
+    if (!tool.bundle_parent) throw new Error(`${slug} n'est pas un membre de bundle (bundle_parent absent)`);
+    const cols = {
+      verdict: d.fr.verdict, verdict_en: d.en.verdict,
+      pros: d.fr.pros, pros_en: d.en.pros,
+      cons: d.fr.cons, cons_en: d.en.cons,
+      use_cases: d.fr.use_cases, use_cases_en: d.en.use_cases,
+      relevant_for: d.fr.relevant_for ?? [],
+    };
+    const willFill = Object.keys(cols).filter((c) => cols[c] != null);
+    if (!apply) {
+      console.log(JSON.stringify({ mode: "BUNDLE_EDITORIAL_DRY_RUN", slug, bundle_parent: tool.bundle_parent, fields: willFill, remote_read_only: true }, null, 2));
+      return;
+    }
+    const [before] = await sql`select count(*)::int n, count(*) filter (where data_contract='canonical')::int c from public.tools`;
+    await sql.begin(async (tx) => {
+      await tx`update public.tools set
+        verdict=${sql.json(cols.verdict)}, verdict_en=${sql.json(cols.verdict_en)},
+        pros=${sql.json(cols.pros)}, pros_en=${sql.json(cols.pros_en)},
+        cons=${sql.json(cols.cons)}, cons_en=${sql.json(cols.cons_en)},
+        use_cases=${sql.json(cols.use_cases)}, use_cases_en=${sql.json(cols.use_cases_en)},
+        relevant_for=${sql.json(cols.relevant_for)}, content_status='published'
+        where id=${slug}`;
+      const [after] = await tx`select count(*)::int n, count(*) filter (where data_contract='canonical')::int c from public.tools`;
+      if (after.n !== before.n || after.c !== before.c) throw new Error("invariant cardinalité/canonical modifié — rollback");
+    });
+    console.log(JSON.stringify({ mode: "BUNDLE_EDITORIAL_APPLY", slug, filled: willFill }, null, 2));
+  } finally { await sql.end({ timeout: 1 }); }
+}
+
 // ── bundle : rattache des outils membres à une app parente (bundle_parent), via la factory ──
 // Dry-run par défaut ; --apply écrit dans une transaction et vérifie que la cardinalité et le
 // nombre de canonical restent inchangés (bundle_parent = métadonnée, aucun autre effet).
@@ -390,8 +446,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
     verify: () => cmdVerify(a), reconcile: () => cmdReconcile(a),
     "work-order": () => cmdWorkOrder(a), metrics: () => cmdMetrics(a), "assert-tool": () => cmdAssertTool(a),
-    canary: () => cmdCanary(a), bundle: () => cmdBundle(a),
+    canary: () => cmdCanary(a), bundle: () => cmdBundle(a), "bundle-editorial": () => cmdBundleEditorial(a),
   }[cmd];
-  if (!run) { console.error("commandes: prepare | canary | report [--report=compact] | work-order | metrics | assert-tool | bundle | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
+  if (!run) { console.error("commandes: prepare | canary | report [--report=compact] | work-order | metrics | assert-tool | bundle | bundle-editorial | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
   Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
 }
