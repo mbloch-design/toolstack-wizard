@@ -310,6 +310,38 @@ async function cmdAssertTool(a) {
   } finally { await sql.end({ timeout: 1 }); }
 }
 
+// ── bundle : rattache des outils membres à une app parente (bundle_parent), via la factory ──
+// Dry-run par défaut ; --apply écrit dans une transaction et vérifie que la cardinalité et le
+// nombre de canonical restent inchangés (bundle_parent = métadonnée, aucun autre effet).
+async function cmdBundle(a) {
+  const parent = a.parent;
+  const members = String(a.members || "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (!parent || !members.length) throw new Error("bundle exige --parent et --members=a,b,…");
+  if (members.includes(parent)) throw new Error("le parent ne peut pas être son propre membre");
+  const apply = Boolean(a.apply);
+  const sql = await connect();
+  try {
+    const [p] = await sql`select id from public.tools where id=${parent}`;
+    if (!p) throw new Error(`parent introuvable: ${parent}`);
+    const rows = await sql`select id, bundle_parent from public.tools where id = any(${members}::text[])`;
+    const found = new Set(rows.map((r) => r.id));
+    const missing = members.filter((m) => !found.has(m));
+    if (missing.length) throw new Error(`membres introuvables: ${missing.join(",")}`);
+    const changes = rows.filter((r) => r.bundle_parent !== parent).map((r) => ({ id: r.id, from: r.bundle_parent, to: parent }));
+    const [before] = await sql`select count(*)::int n, count(*) filter (where data_contract='canonical')::int c from public.tools`;
+    if (!apply) {
+      console.log(JSON.stringify({ mode: "BUNDLE_DRY_RUN", parent, changes, unchanged: rows.length - changes.length, remote_read_only: true }, null, 2));
+      return;
+    }
+    await sql.begin(async (tx) => {
+      await tx`update public.tools set bundle_parent=${parent} where id = any(${members}::text[]) and id <> ${parent}`;
+      const [after] = await tx`select count(*)::int n, count(*) filter (where data_contract='canonical')::int c from public.tools`;
+      if (after.n !== before.n || after.c !== before.c) throw new Error("invariant cardinalité/canonical modifié — rollback");
+    });
+    console.log(JSON.stringify({ mode: "BUNDLE_APPLY", parent, changed: changes.map((c) => c.id), no_change: rows.length - changes.length }, null, 2));
+  } finally { await sql.end({ timeout: 1 }); }
+}
+
 // ── reconcile : aligne l'état LOCAL du lot sur Supabase (remote READ-ONLY) ──
 async function cmdReconcile(a) {
   const b = loadBatch(a.batch);
@@ -358,8 +390,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     "dry-run": () => cmdRun(a, false), apply: () => cmdRun(a, true), rollback: () => cmdRollback(a),
     verify: () => cmdVerify(a), reconcile: () => cmdReconcile(a),
     "work-order": () => cmdWorkOrder(a), metrics: () => cmdMetrics(a), "assert-tool": () => cmdAssertTool(a),
-    canary: () => cmdCanary(a),
+    canary: () => cmdCanary(a), bundle: () => cmdBundle(a),
   }[cmd];
-  if (!run) { console.error("commandes: prepare | canary | report [--report=compact] | work-order | metrics | assert-tool | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
+  if (!run) { console.error("commandes: prepare | canary | report [--report=compact] | work-order | metrics | assert-tool | bundle | dry-run | apply | rollback | verify | reconcile"); process.exit(1); }
   Promise.resolve(run()).catch((e) => { console.error(e.message); process.exit(1); });
 }

@@ -37,6 +37,7 @@ import { extractCalendly } from "./research-adapters/calendly.mjs";
 import { extractLinear } from "./research-adapters/linear.mjs";
 import { extractNotion } from "./research-adapters/notion.mjs";
 import { extractLoom } from "./research-adapters/loom.mjs";
+import { extractGoogleWorkspace } from "./research-adapters/google-workspace.mjs";
 import { extractGeneric } from "./research-adapters/generic.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
@@ -59,6 +60,7 @@ const ADAPTERS = {
   linear: extractLinear,
   notion: extractNotion,
   loom: extractLoom,
+  "google-workspace": extractGoogleWorkspace,
   generic: extractGeneric,
 };
 

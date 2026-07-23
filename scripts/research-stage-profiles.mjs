@@ -64,6 +64,15 @@ export const STAGING_PROFILES = Object.freeze({
     locale: "fr-FR",
     editorialSource: "research",
   }),
+  "google-workspace": Object.freeze({
+    // Par utilisateur. Aucun palier gratuit (essai). Business Starter/Standard/Plus ; Enterprise sur
+    // devis (exclu). Grille EUR géo-résolue depuis FR => candidat reference_fr à la revue.
+    planOrder: Object.freeze(["business_starter", "business_standard", "business_plus"]),
+    comparePlanKey: "business_standard",
+    freePlanKey: null,
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
   linear: Object.freeze({
     // Par utilisateur, engagement annuel. Free + Basic + Business ; Enterprise sur devis (exclu). Global USD.
     planOrder: Object.freeze(["free", "basic", "business"]),

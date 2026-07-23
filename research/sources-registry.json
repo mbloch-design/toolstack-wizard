@@ -694,6 +694,59 @@
           "verified_on": "2026-07-22"
         }
       ]
+    },
+    "google-workspace": {
+      "adapter": "google-workspace",
+      "pricing_url": "https://workspace.google.com/pricing",
+      "renderer_hint": "browser",
+      "source_type": "pricing",
+      "source_tier": 1,
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-07-23",
+      "market_context_declared": null,
+      "market_context_justification": "Grille servie en EUR (€) depuis un egress FR, montants géo-résolus, page fr-FR (constaté 2026-07-23). Contexte CANDIDAT reference_fr soumis à revue humaine (jamais prouvé automatiquement).",
+      "plan_key_mapping": {
+        "Business Starter": "business_starter",
+        "Business Standard": "business_standard",
+        "Business Plus": "business_plus",
+        "Enterprise": "enterprise"
+      },
+      "plan_key_mapping_note": "Trois offres Business chiffrées + Enterprise sur devis (exclu). Aucun palier gratuit (essai uniquement).",
+      "additional_sources": [
+        {
+          "establishes": {
+            "claim_key": "pricing.unit",
+            "value": "seat"
+          },
+          "is_official": true,
+          "url": "https://workspace.google.com/pricing",
+          "purpose": "pricing_unit",
+          "source_type": "pricing",
+          "source_tier": 1,
+          "renderer_hint": "browser",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-23",
+          "proof_pattern": "par utilisateur et par mois",
+          "notes": "Tarification au siège (« par utilisateur et par mois »)."
+        },
+        {
+          "establishes": {
+            "claim_key": "pricing.billing_commitment",
+            "value": "annual_prepaid"
+          },
+          "is_official": true,
+          "url": "https://workspace.google.com/pricing",
+          "purpose": "billing_commitment",
+          "source_type": "pricing",
+          "source_tier": 1,
+          "renderer_hint": "browser",
+          "verified_http_status": 200,
+          "verified_on": "2026-07-23",
+          "proof_pattern": "par utilisateur et par mois",
+          "notes": "Tarif annuel affiché par défaut (offre flexible mensuelle plus chère) — à confirmer en revue."
+        }
+      ]
     }
   }
 }

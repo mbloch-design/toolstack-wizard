@@ -1,0 +1,84 @@
+{
+  "captures": [
+    {
+      "capture_id": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+      "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+      "source_url": "https://workspace.google.com/pricing"
+    },
+    {
+      "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+      "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+      "source_url": "https://workspace.google.com/pricing"
+    }
+  ],
+  "claims": [],
+  "conflicts": [],
+  "human_decisions": [
+    "attestation reference_fr (auto-signable si faisceau fort)"
+  ],
+  "observations": [
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+      "market_context": "reference_fr",
+      "native_amount": 6.8,
+      "native_currency": "EUR",
+      "plan_key": "business_starter",
+      "pricing_unit": "seat",
+      "status": "observed"
+    },
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+      "market_context": "reference_fr",
+      "native_amount": 13.6,
+      "native_currency": "EUR",
+      "plan_key": "business_standard",
+      "pricing_unit": "seat",
+      "status": "observed"
+    },
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+      "market_context": "reference_fr",
+      "native_amount": 21.1,
+      "native_currency": "EUR",
+      "plan_key": "business_plus",
+      "pricing_unit": "seat",
+      "status": "observed"
+    }
+  ],
+  "profile": {
+    "adapter": "google-workspace",
+    "comparePlanKey": "business_standard",
+    "freePlanKey": null,
+    "locale": "fr-FR",
+    "marketContext": null,
+    "openSource": false,
+    "planOrder": [
+      "business_starter",
+      "business_standard",
+      "business_plus"
+    ],
+    "pricing_url": "https://workspace.google.com/pricing"
+  },
+  "relations_candidates": [
+    "Messagerie professionnelle",
+    "Visioconférence",
+    "Documents collaboratifs",
+    "Stockage cloud",
+    "Administration centralisée",
+    "Petites équipes",
+    "PME",
+    "Organisations en croissance"
+  ],
+  "slug": "google-workspace",
+  "source": {
+    "is_official": true,
+    "source_id": "src:01e2367dac0d38eccdecc6e77b1b531c9bd910493bc247c6a0f7ee43af8d2b6f",
+    "tier": 1,
+    "url": "https://workspace.google.com/pricing"
+  },
+  "tool_id": "google-workspace",
+  "validator_failures": []
+}

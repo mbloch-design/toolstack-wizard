@@ -1,0 +1,735 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "business_starter",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "business_standard",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "business_plus",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+        "claim_id": "clm:085f681ee597a5631aeb563b20e31c9d5ee6de4ba3b395418889dd0a755e1407",
+        "confidence": "high",
+        "evidence": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+        "evidence_captures": [
+          "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-07-23",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-23",
+        "proof_pattern": "par utilisateur et par mois",
+        "sourceTier": 1,
+        "source_id": "src:01e2367dac0d38eccdecc6e77b1b531c9bd910493bc247c6a0f7ee43af8d2b6f",
+        "source_url": "https://workspace.google.com/pricing",
+        "status": "observed",
+        "value_native": "seat",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+        "evidence_captures": [
+          "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-07-23",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-07-23",
+        "proof_pattern": "par utilisateur et par mois",
+        "sourceTier": 1,
+        "source_id": "src:01e2367dac0d38eccdecc6e77b1b531c9bd910493bc247c6a0f7ee43af8d2b6f",
+        "source_url": "https://workspace.google.com/pricing",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-07-23T10:39:42.827Z",
+        "attestation_id": "sha256:f999879e9e1fd4dfda8fedfdf8f6d82e2d339caec3c93dc27d3056f3f6756140",
+        "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+        "content_language": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://workspace.google.com/pricing",
+        "html_lang": "fr",
+        "http_status": 200,
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "rendered_by": "browser",
+        "resolved_locale": "fr-FR",
+        "run_id": "13f34dbb-9087-453e-8d3d-e3304910f820",
+        "schema": "context_attestation/1",
+        "slug": "google-workspace",
+        "source_url": "https://workspace.google.com/pricing",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "€",
+          "forfait"
+        ]
+      }
+    ],
+    "extraction_unknowns": [],
+    "last_checked_at": "2026-07-23T10:39:42.827Z",
+    "last_context_evidence": {
+      "adapter": "google-workspace",
+      "adapter_version": "1.0.0",
+      "at": "2026-07-23T10:39:42.827Z",
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "€"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://workspace.google.com/pricing",
+        "html_lang_attr": "fr",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "/mois",
+          "€",
+          "forfait"
+        ]
+      },
+      "market_context": "reference_fr",
+      "market_context_candidate": null,
+      "market_context_source": "proven",
+      "rendered_by": "browser",
+      "run_id": "13f34dbb-9087-453e-8d3d-e3304910f820"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+          "excerpt": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+          "source_url": "https://workspace.google.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "google-workspace|business_starter|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+        "confidence": "medium",
+        "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+            "observed_on": "2026-07-23",
+            "run_id": "13f34dbb-9087-453e-8d3d-e3304910f820"
+          }
+        ],
+        "evidence_excerpt": "Business Starter € 6.8 par utilisateur et par mois",
+        "evidence_selector": "pricing-card:Business Starter",
+        "feature_highlights": [
+          "Gmail professionnel",
+          "Meet 100 participants",
+          "30 Go / utilisateur",
+          "Contrôles de sécurité standard"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-23",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 6.8,
+        "native_currency": "EUR",
+        "observation_id": "obs:c01bd4cc8a942e826ee6d384daef7d2cb1399c6a0b45930716cebd7fd8928fd4",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-23",
+        "observed_plan_key": "business_starter",
+        "plan_key": "business_starter",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Business Starter",
+        "plan_summary": "Offre d'entrée de Google Workspace : messagerie pro, visioconférence et 30 Go de stockage par utilisateur.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+          "excerpt": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+          "source_url": "https://workspace.google.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://workspace.google.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "google-workspace",
+        "value_fingerprint": "6.8|EUR|monthly|seat|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+          "excerpt": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+          "source_url": "https://workspace.google.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "google-workspace|business_standard|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+        "confidence": "medium",
+        "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+            "observed_on": "2026-07-23",
+            "run_id": "13f34dbb-9087-453e-8d3d-e3304910f820"
+          }
+        ],
+        "evidence_excerpt": "Business Standard € 13.6 par utilisateur et par mois",
+        "evidence_selector": "pricing-card:Business Standard",
+        "feature_highlights": [
+          "Tout Business Starter",
+          "2 To / utilisateur",
+          "Meet 150 participants + enregistrement",
+          "Espaces partagés"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-23",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 13.6,
+        "native_currency": "EUR",
+        "observation_id": "obs:447336893bd3ef6199f67fa59dca36b53c1551a9e42226f238e1275c6d0c6ab2",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-23",
+        "observed_plan_key": "business_standard",
+        "plan_key": "business_standard",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Business Standard",
+        "plan_summary": "Offre intermédiaire : plus de stockage et des réunions enrichies pour les équipes qui collaborent au quotidien.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+          "excerpt": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+          "source_url": "https://workspace.google.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://workspace.google.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "google-workspace",
+        "value_fingerprint": "13.6|EUR|monthly|seat|·"
+      },
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+          "excerpt": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+          "source_url": "https://workspace.google.com/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "google-workspace|business_plus|·|FR/fr-FR|annual_prepaid",
+        "capture_ref": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+        "confidence": "medium",
+        "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+        "context_key": "FR/fr-FR",
+        "evidence": [
+          {
+            "capture_id": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+            "observed_on": "2026-07-23",
+            "run_id": "13f34dbb-9087-453e-8d3d-e3304910f820"
+          }
+        ],
+        "evidence_excerpt": "Business Plus € 21.1 par utilisateur et par mois",
+        "evidence_selector": "pricing-card:Business Plus",
+        "feature_highlights": [
+          "Tout Business Standard",
+          "5 To / utilisateur",
+          "Meet 500 participants",
+          "Vault + gestion des terminaux avancée"
+        ],
+        "first_observed_on": "2026-07-23",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-07-23",
+        "market_context": "reference_fr",
+        "market_context_candidate": null,
+        "market_context_source": "proven",
+        "market_evidence": {
+          "html_lang_attr": "fr"
+        },
+        "native_amount": 21.1,
+        "native_currency": "EUR",
+        "observation_id": "obs:1938e9e0b39699389356dbb535d7bb9203b8ef9ffd917a8fa70cdf6e9c6f4ee0",
+        "observed_locale": "fr-FR",
+        "observed_market": "FR",
+        "observed_on": "2026-07-23",
+        "observed_plan_key": "business_plus",
+        "plan_key": "business_plus",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Business Plus",
+        "plan_summary": "Offre avancée : stockage étendu, contrôles de sécurité et conformité renforcés pour les organisations exigeantes.",
+        "pricing_unit": "seat",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+          "excerpt": "tilisateur/mois pour tous les utilisateurs 3,40 € 6,80 € ** par utilisateur et par mois Commencer un essai Inclus dans le forfait Starter : 30 Go d'espace de stockage commun par personne* Adresse e-mail professionnelle p",
+          "source_url": "https://workspace.google.com/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://workspace.google.com/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "google-workspace",
+        "value_fingerprint": "21.1|EUR|monthly|seat|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "currency_eur": true,
+        "enterprise_quote_only": true,
+        "no_free_tier": true,
+        "no_tax_statement_on_grid": false,
+        "paid_plans_found": 3,
+        "per_user_month_display": true,
+        "plus_amount": 21.1,
+        "standard_amount": 13.6,
+        "starter_amount": 6.8
+      },
+      "billing_commitment": "monthly",
+      "commitment_ambiguous": false,
+      "pricing_unit": "seat",
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": true
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "business_starter",
+        "plan_name_localized": "Business Starter",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "business_standard",
+        "plan_name_localized": "Business Standard",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "reference_fr",
+        "effective_observed_locale": "fr-FR",
+        "effective_observed_market": "FR",
+        "eligible": true,
+        "plan_key": "business_plus",
+        "plan_name_localized": "Business Plus",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-07-23T10:39:42.827Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 3,
+          "claims_extracted": 3,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 2,
+          "doc_claims_extracted": 2,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "13f34dbb-9087-453e-8d3d-e3304910f820"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-07-23T10:39:42.827Z",
+            "adapter": "google-workspace",
+            "adapter_version": "1.0.0",
+            "browser_context": {
+              "content_language_header": null,
+              "currency_symbols_seen": [
+                "€"
+              ],
+              "egress_country": "FR",
+              "egress_error": null,
+              "egress_measured_from": "playwright_context",
+              "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+              "final_url": "https://workspace.google.com/pricing",
+              "html_lang_attr": "fr",
+              "locale_requested": "fr-FR",
+              "navigator_language": "fr-FR",
+              "navigator_languages": [
+                "fr-FR"
+              ],
+              "redirected": false,
+              "resolved_locale": "fr-FR",
+              "timezone": "Europe/Paris",
+              "visible_markers": [
+                "/mois",
+                "€",
+                "forfait"
+              ]
+            },
+            "capture_id": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+            "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "fr"
+            },
+            "locale_proven": true,
+            "market_context": "reference_fr",
+            "market_context_candidate": null,
+            "market_context_source": "proven",
+            "observed_locale": "fr-FR",
+            "observed_market": "FR",
+            "rendered_by": "browser",
+            "text_len": 28682,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-07-23T10:39:50.467Z",
+            "capture_id": "cap:189a8fa9ec9927852b2e0fbf945d893379960579aad6ad7805d4615f32402157",
+            "content_hash": "sha256:76b4624ca4dcecc2765eeca26b1508531f223e07420bac9e2a72f888b902f52e",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 28682,
+            "version": 2
+          }
+        ],
+        "domain": "workspace.google.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-07-23T10:39:56.564Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-07-23T10:39:42.827Z",
+          "reason": "allow: /"
+        },
+        "source_id": "src:01e2367dac0d38eccdecc6e77b1b531c9bd910493bc247c6a0f7ee43af8d2b6f",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://workspace.google.com/pricing"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "editorial_drafts": {
+    "author": "ToolTrim — Mike",
+    "content_version": 1,
+    "en": {
+      "ai_angle": "Google embeds its AI assistant (Gemini) across the suite for drafting, summarising and meeting assistance, depending on the tier.",
+      "cons": [
+        "No free tier: every user is billed past the trial.",
+        "Strong dependency on Google's ecosystem and data governance.",
+        "Advanced security and compliance features reserved for higher tiers."
+      ],
+      "covers": [
+        "Professional email",
+        "Video meetings",
+        "Collaborative documents",
+        "Cloud storage",
+        "Centralised administration"
+      ],
+      "functional_needs": [
+        "Domain email",
+        "Document collaboration",
+        "Video conferencing",
+        "Shared storage"
+      ],
+      "long_description": "Google Workspace bundles professional Gmail, Meet, Drive, Docs, Sheets, Slides and Chat into a coherent, centrally administered set. It targets organisations that want email on their own domain, real-time collaboration spaces and shared storage without running infrastructure. Pricing is per user, with Business tiers that raise storage, meeting capabilities and security controls. The Enterprise edition covers governance and compliance needs of larger structures.",
+      "personas": [
+        "Founder / owner",
+        "Office manager / IT",
+        "Operations team"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "No free tier: past the trial, every user is billed.",
+          "Enterprise edition is quote-based and outside the public grid."
+        ],
+        "deployment_note": "Fully cloud: nothing to host or maintain server-side.",
+        "free_plan_card": null,
+        "plan_details": {
+          "business_plus": {
+            "deployment": "Cloud (Google-managed SaaS)",
+            "quota": "Per-user billing; annual commitment",
+            "summary": "Advanced tier: stronger security, compliance and endpoint management for demanding organisations."
+          },
+          "business_standard": {
+            "deployment": "Cloud (Google-managed SaaS)",
+            "quota": "Per-user billing; annual commitment",
+            "summary": "Reference tier: more storage and richer meetings for teams collaborating daily."
+          },
+          "business_starter": {
+            "deployment": "Cloud (Google-managed SaaS)",
+            "quota": "Per-user billing; annual commitment",
+            "summary": "Entry tier: professional email, video meetings and shared storage to get a team started."
+          }
+        },
+        "price_reliability": "Official Google grid, may vary by region and currency.",
+        "pricing_model": "Per-user subscription billed monthly on an annual commitment; a flexible monthly option exists.",
+        "usage_sensitive": false
+      },
+      "pros": [
+        "Integrated, centrally administered suite with little friction to start.",
+        "Mature real-time collaboration on docs, sheets and slides.",
+        "Consistent video meetings, mail and storage within one ecosystem."
+      ],
+      "relevant_for": [
+        "Small teams",
+        "SMBs",
+        "Growing organisations"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augment"
+        },
+        "metaDescription": "Google Workspace: ToolTrim review. Collaboration suite (domain mail, Meet, Drive, Docs) billed per user — who it's for, when to avoid it, pricing model."
+      },
+      "short_description": "Google's professional collaboration suite: email, video meetings, documents and storage brought together for teams.",
+      "solo_relevance": "medium",
+      "team_relevance": "high",
+      "use_cases": [
+        "Give a team professional email on its own domain.",
+        "Collaborate in real time on shared documents with history and permissions.",
+        "Run meetings, calendars and shared storage within one organisation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You want a free, single-purpose tool rather than a full suite.",
+          "Your organisation requires on-premise hosting or staying outside Google's ecosystem.",
+          "You only need one isolated capability already covered by a specialised tool."
+        ],
+        "keepIf": [
+          "You want professional email on your own domain with centralised administration.",
+          "Your team collaborates in real time on documents and needs built-in video meetings.",
+          "You prefer a turnkey cloud suite over assembling and maintaining separate tools."
+        ],
+        "threshold": "Google Workspace makes sense once the need for domain email, real-time collaboration and unified administration outweighs stitching together disparate free tools; below that, isolated bricks suffice."
+      },
+      "verticals": [
+        "Generalist",
+        "Services",
+        "Tech"
+      ]
+    },
+    "facts_basis": "collector observations (workspace.google.com/pricing, 2026-07-23)",
+    "fr": {
+      "ai_angle": "Google intègre son assistant IA (Gemini) dans la suite pour la rédaction, la synthèse et l'aide en réunion, selon l'offre souscrite.",
+      "cons": [
+        "Aucun palier gratuit : chaque utilisateur est facturé au-delà de l'essai.",
+        "Dépendance forte à l'écosystème Google et à sa gouvernance des données.",
+        "Fonctions avancées de sécurité et conformité réservées aux offres supérieures."
+      ],
+      "covers": [
+        "Messagerie professionnelle",
+        "Visioconférence",
+        "Documents collaboratifs",
+        "Stockage cloud",
+        "Administration centralisée"
+      ],
+      "functional_needs": [
+        "Messagerie de domaine",
+        "Collaboration documentaire",
+        "Visioconférence",
+        "Stockage partagé"
+      ],
+      "long_description": "Google Workspace regroupe Gmail professionnel, Meet, Drive, Docs, Sheets, Slides et Chat dans un ensemble cohérent administré de façon centralisée. L'outil vise les organisations qui veulent une messagerie sur leur domaine, des espaces de collaboration en temps réel et un stockage partagé, sans gérer d'infrastructure. La tarification se fait par utilisateur, avec des paliers Business qui augmentent le stockage, les capacités de réunion et les contrôles de sécurité. L'édition Enterprise couvre les besoins de gouvernance et de conformité des grandes structures.",
+      "personas": [
+        "Fondateur / dirigeant",
+        "Office manager / IT",
+        "Équipe opérationnelle"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Aucun palier gratuit : au-delà de l'essai, chaque utilisateur est facturé.",
+          "L'édition Enterprise est sur devis et sort de la grille publique."
+        ],
+        "deployment_note": "Entièrement cloud : rien à héberger ni à maintenir côté serveur.",
+        "free_plan_card": null,
+        "plan_details": {
+          "business_plus": {
+            "deployment": "Cloud (SaaS géré par Google)",
+            "quota": "Facturation par utilisateur ; engagement annuel",
+            "summary": "Offre avancée : sécurité, conformité et gestion des terminaux renforcées pour les organisations exigeantes."
+          },
+          "business_standard": {
+            "deployment": "Cloud (SaaS géré par Google)",
+            "quota": "Facturation par utilisateur ; engagement annuel",
+            "summary": "Offre de référence : stockage étendu et réunions enrichies pour les équipes qui collaborent au quotidien."
+          },
+          "business_starter": {
+            "deployment": "Cloud (SaaS géré par Google)",
+            "quota": "Facturation par utilisateur ; engagement annuel",
+            "summary": "Offre d'entrée : messagerie professionnelle, visioconférence et stockage partagé pour démarrer en équipe."
+          }
+        },
+        "price_reliability": "Grille officielle Google, susceptible d'évoluer selon la région et la devise.",
+        "pricing_model": "Abonnement par utilisateur, facturé mensuellement avec engagement annuel ; offre flexible mensuelle possible.",
+        "usage_sensitive": false
+      },
+      "pros": [
+        "Suite intégrée et administrée de façon centralisée, peu de friction pour démarrer.",
+        "Collaboration temps réel mature sur documents, feuilles et présentations.",
+        "Visioconférence, messagerie et stockage cohérents dans un même écosystème."
+      ],
+      "relevant_for": [
+        "Petites équipes",
+        "PME",
+        "Organisations en croissance"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Google Workspace : fiche ToolTrim. Suite collaborative (mail de domaine, Meet, Drive, Docs) facturée par utilisateur — pour qui, quand l'éviter, modèle de tarification."
+      },
+      "short_description": "Suite collaborative professionnelle de Google : messagerie, visioconférence, documents et stockage réunis pour les équipes.",
+      "solo_relevance": "medium",
+      "team_relevance": "high",
+      "use_cases": [
+        "Doter une équipe d'une messagerie professionnelle sur son propre domaine.",
+        "Collaborer en temps réel sur des documents partagés avec historique et permissions.",
+        "Organiser réunions, agendas et stockage partagé au sein d'une même organisation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil gratuit et un seul usage précis plutôt qu'une suite complète.",
+          "Votre organisation impose un hébergement sur site ou hors de l'écosystème Google.",
+          "Vous n'avez besoin que d'une brique isolée déjà couverte par un outil spécialisé."
+        ],
+        "keepIf": [
+          "Vous voulez une messagerie professionnelle sur votre domaine avec une administration centralisée.",
+          "Votre équipe collabore en temps réel sur des documents et a besoin de visioconférence intégrée.",
+          "Vous préférez une suite cloud clé en main plutôt que d'assembler et maintenir des outils séparés."
+        ],
+        "threshold": "Google Workspace s'impose quand le besoin d'une messagerie de domaine, d'une collaboration temps réel et d'une administration unifiée l'emporte sur l'assemblage d'outils gratuits disparates ; en deçà, des briques isolées suffisent."
+      },
+      "verticals": [
+        "Généraliste",
+        "Services",
+        "Tech"
+      ]
+    },
+    "generated_on": "2026-07-23",
+    "pricing_facts_policy": "Aucun fait tarifaire dans la prose ; montants uniquement dans les observations structurées.",
+    "status": "draft"
+  },
+  "identity": {
+    "officialName": "google-workspace",
+    "pricingUrl": "https://workspace.google.com/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-07-23",
+  "researcher": "research-collector",
+  "review_attestations": [
+    {
+      "act": "human_review_attestation",
+      "applies_to_capture_ref": "cap:48e98b83beba437e283fc0d022917ec6ff60cac23eac5639153b85d52527e62c",
+      "attested_at": "2026-07-23T10:45:39.621Z",
+      "attested_by": "ToolTrim — Mike",
+      "attests": "market_context",
+      "basis_attestation_id": "sha256:f999879e9e1fd4dfda8fedfdf8f6d82e2d339caec3c93dc27d3056f3f6756140",
+      "content_hash": "sha256:18c41a8778a74a387d8c7af6afab3c38809cdc2e930a79b02020f15842c93b4c",
+      "note": null,
+      "review_attestation_id": "sha256:26e352af61e4edd7d2b0d52600f215eed64fcf6b5fb1d385d743e89a5e303da8",
+      "schema": "review_attestation/2",
+      "scope_note": "Ne s'applique qu'à cette version de contenu. Toute nouvelle capture exige une nouvelle attestation.",
+      "semantic_fingerprint": "sfp:6530ec5878b3778b493ddf9a726343a241b7ecc7ac0ecfc1623f9c6da6854b2a",
+      "slug": "google-workspace",
+      "source_url": "https://workspace.google.com/pricing",
+      "value": "reference_fr"
+    }
+  ],
+  "schemaVersion": 1,
+  "slug": "google-workspace",
+  "status": "needs_review",
+  "unknowns": []
+}

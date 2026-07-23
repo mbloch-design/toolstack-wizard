@@ -1,0 +1,79 @@
+{
+  "batch_id": "canary-gws",
+  "schema_version": 1,
+  "slugs": [
+    "google-workspace"
+  ],
+  "market": "FR",
+  "locale": "fr-FR",
+  "created_by": "Claude Code",
+  "created_at": "2026-07-23T10:42:10.118Z",
+  "updated_at": "2026-07-23T10:45:41.556Z",
+  "status": "done",
+  "tools": {
+    "google-workspace": {
+      "state": "canonical",
+      "errors": [],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": "sha256:89008353fdcd240e95613bf06ae83c1ce49f27c16c38b1db6ab21faccbea6e7e",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-07-23T10:42:10.117Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-07-23T10:42:10.119Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-07-23T10:42:10.179Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-07-23T10:42:10.180Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "needs_review",
+          "at": "2026-07-23T10:42:10.181Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "needs_review",
+          "to": "eligible",
+          "at": "2026-07-23T10:45:39.631Z",
+          "reason": "attestation reference_fr auto-signée",
+          "run_id": null
+        },
+        {
+          "from": "eligible",
+          "to": "approved",
+          "at": "2026-07-23T10:45:41.555Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "approved",
+          "to": "canonical",
+          "at": "2026-07-23T10:45:41.556Z",
+          "reason": "engine apply",
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-07-23T10:45:41.556Z"
+    }
+  }
+}
