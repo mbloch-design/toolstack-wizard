@@ -314,7 +314,8 @@ async function cmdAssertTool(a) {
 // Industrialise la fiche satellite : contenu riche SANS prix propre (le prix reste « inclus dans le
 // parent »). Lit research/bundle-editorial/<slug>.json. Dry-run par défaut ; --apply écrit en base
 // (transaction, invariants cardinalité/canonical inchangés). Aucune donnée tarifaire dans la prose.
-const MONEY_RE = /(?:€|\$|£|USD|EUR|GBP)\s?\d|\d[\d.,]*\s?(?:€|\$|£|USD|EUR|GBP|\/mois\b|\/mo\b|%)/i;
+// Frontière de mot sur les codes devise pour éviter les faux positifs (« moteur 3D » ≠ EUR 3).
+const MONEY_RE = /(?:€|\$|£|\b(?:USD|EUR|GBP))\s?\d|\d[\d.,]*\s?(?:€|\$|£|\b(?:USD|EUR|GBP)\b|\/mois\b|\/mo\b|%)/i;
 function cmdBundleEditorialLoad(slug, file) {
   const p = file || path.join(ROOT, "research", "bundle-editorial", `${slug}.json`);
   if (!existsSync(p)) throw new Error(`éditorial bundle absent: ${p}`);

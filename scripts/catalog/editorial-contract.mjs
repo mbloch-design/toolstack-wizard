@@ -7,7 +7,8 @@ const REQUIRED = ["short_description", "long_description", "verdict", "pros", "c
 const MIN = { short_description: 40, long_description: 120 };
 const PLACEHOLDER = /\b(lorem ipsum|todo|tbd|placeholder|xxx|à compléter|à rédiger)\b/i;
 // Montant/devise/quota tarifaire : interdit dans la prose ET pricing_guidance.
-const MONEY = /(?:€|\$|£|USD|EUR|GBP)\s?\d|\d[\d.,]*\s?(?:€|\$|£|USD|EUR|GBP|\/mo\b|\/mois\b|\/yr\b|\/an\b|%)/i;
+// Frontière de mot sur les codes devise : évite « moteur 3D » (mot-EUR-3) faussement pris pour un prix.
+const MONEY = /(?:€|\$|£|\b(?:USD|EUR|GBP))\s?\d|\d[\d.,]*\s?(?:€|\$|£|\b(?:USD|EUR|GBP)\b|\/mo\b|\/mois\b|\/yr\b|\/an\b|%)/i;
 const PRICE_KEYS = /native_amount|compare_price_monthly|native_currency|normalized_monthly/i;
 
 const isEmpty = (v) => v == null || (typeof v === "string" && !v.trim()) || (Array.isArray(v) && !v.length);
