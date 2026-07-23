@@ -1,0 +1,86 @@
+{
+  "slug": "qonto",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Qonto", "url": "https://qonto.com/en/pricing" }
+  ],
+  "facts": {
+    "what": "Établissement de paiement pour entreprises : compte pro, moyens de paiement et gestion financière (pas une banque).",
+    "pricing_model": "Abonnement par palier, facturation annuelle (mensuelle possible). Aucun plan gratuit ; essai 1 mois.",
+    "free_tier": { "exists": false, "detail": "Aucun plan gratuit ; chaque palier inclut un essai d'un mois." },
+    "plans": [
+      { "name": "Indépendants — Basic / Smart / Premium", "price": "9 € / 19 € / 39 € par mois" },
+      { "name": "Équipes — Essential / Business / Enterprise", "price": "49 € / 99 € / 199 € par mois" }
+    ],
+    "key_features": [
+      "IBAN local et virements SEPA instantanés",
+      "Facturation électronique et devis illimités",
+      "Gestion des dépenses d'équipe (cartes, plafonds, validation, reçus)",
+      "Rémunération du compte selon le plan"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un compte pro moderne avec une gestion financière intégrée (dépenses, facturation).",
+        "Vous êtes indépendant ou une PME et voulez piloter cartes, virements et notes de frais au même endroit.",
+        "Vous avez besoin d'IBAN local et de virements SEPA rapides."
+      ],
+      "avoidIf": [
+        "Vous cherchez une banque de plein exercice avec crédit et découvert classiques.",
+        "Vous voulez une solution gratuite : Qonto est uniquement sur abonnement.",
+        "Vos besoins bancaires sont très basiques et déjà couverts."
+      ],
+      "threshold": "Qonto s'impose quand la gestion financière intégrée (dépenses, facturation, cartes d'équipe) compte autant que le compte lui-même ; pour du crédit bancaire classique ou un besoin gratuit, une banque traditionnelle est plus indiquée."
+    },
+    "pros": [
+      "Compte pro avec IBAN local et virements SEPA instantanés.",
+      "Gestion des dépenses d'équipe : cartes, plafonds, validations, reçus.",
+      "Facturation électronique et devis illimités inclus.",
+      "Interface et onboarding pensés pour indépendants et PME."
+    ],
+    "cons": [
+      "Aucun plan gratuit : l'accès se fait uniquement par abonnement.",
+      "Établissement de paiement, pas une banque : pas de crédit ni découvert classiques.",
+      "Le coût mensuel monte vite avec les paliers d'équipe."
+    ],
+    "use_cases": [
+      "Ouvrir un compte pro et gérer cartes et virements d'une petite structure.",
+      "Suivre et valider les dépenses d'équipe avec reçus rattachés.",
+      "Émettre devis et factures électroniques depuis le même outil."
+    ],
+    "relevant_for": ["Indépendants", "PME", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a modern business account with built-in financial management (expenses, invoicing).",
+        "You are self-employed or an SMB and want to run cards, transfers and expenses in one place.",
+        "You need a local IBAN and fast SEPA transfers."
+      ],
+      "avoidIf": [
+        "You want a full-service bank with classic credit and overdraft.",
+        "You want a free solution: Qonto is subscription-only.",
+        "Your banking needs are very basic and already covered."
+      ],
+      "threshold": "Qonto makes sense when integrated financial management (expenses, invoicing, team cards) matters as much as the account itself; for classic bank credit or a free need, a traditional bank fits better."
+    },
+    "pros": [
+      "Business account with local IBAN and instant SEPA transfers.",
+      "Team expense management: cards, limits, approvals, receipts.",
+      "E-invoicing and unlimited quotes included.",
+      "Interface and onboarding designed for freelancers and SMBs."
+    ],
+    "cons": [
+      "No free plan: access is subscription-only.",
+      "A payment institution, not a bank: no classic credit or overdraft.",
+      "Monthly cost climbs quickly with team tiers."
+    ],
+    "use_cases": [
+      "Open a business account and manage a small company's cards and transfers.",
+      "Track and approve team expenses with attached receipts.",
+      "Issue e-invoices and quotes from the same tool."
+    ]
+  }
+}

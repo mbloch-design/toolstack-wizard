@@ -1,0 +1,86 @@
+{
+  "slug": "basecamp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Basecamp", "url": "https://basecamp.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de gestion de projet et de collaboration d'équipe qui centralise communication, tâches et fichiers.",
+    "pricing_model": "Palier gratuit limité, plan Pro par utilisateur, plan Pro Unlimited à tarif forfaitaire.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 1 projet, 1 Go de stockage, jusqu'à 20 utilisateurs." },
+    "plans": [
+      { "name": "Pro", "price": "15 $/utilisateur/mois", "detail": "projets illimités, 500 Go, essai 30 jours" },
+      { "name": "Pro Unlimited", "price": "299 $/mois (annuel)", "detail": "utilisateurs et projets illimités, 5 To, essai 60 jours" }
+    ],
+    "key_features": [
+      "Message boards (annonces) et Docs & Files",
+      "To-dos et Card Tables (suivi façon Kanban)",
+      "Campfires & Pings (chat de groupe et messages directs)",
+      "Planning (échéances, jalons, événements)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un outil simple pour centraliser communication, tâches et fichiers d'équipe.",
+        "Vous préférez une approche opinionée et peu de configuration à un outil très paramétrable.",
+        "Une équipe nombreuse peut profiter du tarif forfaitaire à utilisateurs illimités."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de gestion de projet avancée (dépendances, diagrammes de Gantt, reporting fin).",
+        "Vous voulez de nombreuses intégrations et automatisations tierces.",
+        "Votre équipe est très petite : le coût par utilisateur peut être moins avantageux qu'un forfait."
+      ],
+      "threshold": "Basecamp s'impose quand la simplicité et la centralisation priment sur la richesse fonctionnelle ; pour de la gestion de projet lourde ou très outillée, un outil spécialisé reste plus adapté."
+    },
+    "pros": [
+      "Centralise messages, tâches, fichiers et planning au même endroit.",
+      "Prise en main immédiate, approche opinionée et sans surcharge.",
+      "Palier gratuit pour un petit projet, essais généreux sur les plans payants.",
+      "Tarif forfaitaire à utilisateurs illimités intéressant pour les grandes équipes."
+    ],
+    "cons": [
+      "Fonctions de gestion de projet avancées limitées (dépendances, Gantt, reporting).",
+      "Écosystème d'intégrations tierces plus restreint que les concurrents.",
+      "L'approche opinionée convient mal aux workflows très sur-mesure."
+    ],
+    "use_cases": [
+      "Coordonner une équipe autour d'un espace unique messages + tâches + fichiers.",
+      "Suivre l'avancement de projets simples sans surcharge d'outil.",
+      "Regrouper une grande équipe sous un tarif forfaitaire à utilisateurs illimités."
+    ],
+    "relevant_for": ["Petites équipes", "PME", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a simple tool to centralise team communication, tasks and files.",
+        "You prefer an opinionated, low-config approach over a highly customisable tool.",
+        "A large team can benefit from the flat, unlimited-users rate."
+      ],
+      "avoidIf": [
+        "You need advanced project management (dependencies, Gantt charts, fine reporting).",
+        "You want many third-party integrations and automations.",
+        "Your team is very small: per-user pricing may be less favourable than a flat plan."
+      ],
+      "threshold": "Basecamp makes sense when simplicity and centralisation matter more than feature richness; for heavy or heavily-tooled project management, a specialised tool remains a better fit."
+    },
+    "pros": [
+      "Centralises messages, tasks, files and scheduling in one place.",
+      "Immediate to pick up, opinionated and clutter-free.",
+      "Free tier for a small project, generous trials on paid plans.",
+      "Flat unlimited-users rate is attractive for large teams."
+    ],
+    "cons": [
+      "Limited advanced project-management features (dependencies, Gantt, reporting).",
+      "Smaller third-party integration ecosystem than competitors.",
+      "The opinionated approach suits highly custom workflows poorly."
+    ],
+    "use_cases": [
+      "Coordinate a team around a single messages + tasks + files space.",
+      "Track simple projects without tool overhead.",
+      "Gather a large team under a flat unlimited-users rate."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "zbrush",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Options d'abonnement ZBrush — Maxon", "url": "https://www.maxon.net/en/zbrush-plan-options" },
+    { "label": "Plans et tarifs Maxon", "url": "https://www.maxon.net/en/buy" }
+  ],
+  "facts": {
+    "what": "Logiciel de sculpture numérique 3D de référence (Maxon), pour modeler des personnages, créatures et assets détaillés.",
+    "pricing_model": "Abonnement uniquement (licences perpétuelles arrêtées en décembre 2023). Mensuel ou annuel, via un abonnement ZBrush ou Maxon One ; inclut ZBrush pour iPad. Montants exacts sur la page Maxon.",
+    "free_tier": { "exists": false, "detail": "Pas de palier gratuit (essai possible selon Maxon)." },
+    "plans": [
+      { "name": "ZBrush", "detail": "abonnement mensuel ou annuel" },
+      { "name": "Maxon One", "detail": "abonnement groupé incluant ZBrush et d'autres apps Maxon" }
+    ],
+    "key_features": [
+      "Sculpture numérique haute résolution (millions de polygones)",
+      "Système de pinceaux et d'outils de modelage avancés",
+      "Retopologie, UV et rendu intégrés",
+      "ZBrush pour iPad inclus dans l'abonnement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la sculpture numérique 3D (personnages, créatures, assets détaillés).",
+        "Vous voulez l'outil standard de l'industrie pour le high-poly et le détail.",
+        "Vous êtes dans un pipeline 3D (jeu, film, impression) qui exige un modelage fin."
+      ],
+      "avoidIf": [
+        "Vos besoins 3D sont occasionnels ou couverts par un modeleur généraliste.",
+        "Vous voulez une licence perpétuelle : ZBrush est passé à l'abonnement.",
+        "Vous cherchez une alternative gratuite (ex. Blender pour du sculpting basique)."
+      ],
+      "threshold": "ZBrush s'impose quand la sculpture haute résolution est au cœur de votre travail ; pour du modelage occasionnel ou généraliste, un outil plus polyvalent (ou gratuit) peut suffire."
+    },
+    "pros": [
+      "Référence de la sculpture numérique 3D, extrêmement détaillée.",
+      "Pinceaux et outils de modelage parmi les plus puissants du marché.",
+      "Retopologie, UV et rendu intégrés au flux de sculpture.",
+      "ZBrush pour iPad inclus dans l'abonnement."
+    ],
+    "cons": [
+      "Courbe d'apprentissage réputée exigeante.",
+      "Plus de licence perpétuelle : abonnement obligatoire depuis fin 2023.",
+      "Surdimensionné pour un besoin 3D occasionnel."
+    ],
+    "use_cases": [
+      "Sculpter un personnage ou une créature haute résolution pour le jeu ou le film.",
+      "Détailler un asset avant retopologie et export vers un moteur 3D.",
+      "Préparer un modèle destiné à l'impression 3D."
+    ],
+    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Freelances 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do 3D digital sculpting (characters, creatures, detailed assets).",
+        "You want the industry-standard tool for high-poly detail.",
+        "You're in a 3D pipeline (game, film, print) that requires fine sculpting."
+      ],
+      "avoidIf": [
+        "Your 3D needs are occasional or covered by a general-purpose modeller.",
+        "You want a perpetual license: ZBrush moved to subscription.",
+        "You want a free alternative (e.g. Blender for basic sculpting)."
+      ],
+      "threshold": "ZBrush makes sense when high-resolution sculpting is core to your work; for occasional or general-purpose modelling, a more versatile (or free) tool may suffice."
+    },
+    "pros": [
+      "The reference in 3D digital sculpting, extremely detailed.",
+      "Some of the most powerful sculpting brushes and tools on the market.",
+      "Retopology, UVs and rendering integrated into the sculpting flow.",
+      "ZBrush for iPad included in the subscription."
+    ],
+    "cons": [
+      "Notoriously steep learning curve.",
+      "No more perpetual license: subscription-only since late 2023.",
+      "Overkill for occasional 3D needs."
+    ],
+    "use_cases": [
+      "Sculpt a high-resolution character or creature for game or film.",
+      "Detail an asset before retopology and export to a 3D engine.",
+      "Prepare a model for 3D printing."
+    ]
+  }
+}

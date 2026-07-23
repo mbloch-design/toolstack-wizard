@@ -1,0 +1,87 @@
+{
+  "slug": "wetransfer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Limites des plans — support WeTransfer", "url": "https://wetransfer.com/help-center/subscriptions/plan-limits" },
+    { "label": "Page tarifaire officielle", "url": "https://wetransfer.com/pricing" }
+  ],
+  "facts": {
+    "what": "Service d'envoi et de partage de gros fichiers, simple et sans compte pour l'envoi de base.",
+    "pricing_model": "Palier gratuit limité, puis abonnements payants (montants exacts sur la page officielle — non revérifiés ici).",
+    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 10 transferts ou 3 Go au total sur une fenêtre glissante de 30 jours." },
+    "plans": [
+      { "name": "Starter", "detail": "jusqu'à 10 transferts ou 300 Go / 30 jours" },
+      { "name": "Ultimate", "detail": "transferts illimités jusqu'à 1 To/transfert, expiration personnalisée, protection par mot de passe, pages de marque, contrôle d'accès" }
+    ],
+    "key_features": [
+      "Envoi de gros fichiers via un lien, sans compte pour l'usage de base",
+      "Protection par mot de passe et expiration des liens (plans payants)",
+      "Pages et e-mails de transfert personnalisables (marque)",
+      "Contrôle d'accès sur les plans supérieurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez envoyer ponctuellement de gros fichiers, simplement, via un lien.",
+        "Vous voulez éviter la création de compte pour l'usage de base.",
+        "Vous avez besoin d'options pro (mot de passe, expiration, marque) sur les envois."
+      ],
+      "avoidIf": [
+        "Vous cherchez un stockage cloud collaboratif permanent plutôt qu'un transfert ponctuel.",
+        "Vous devez gérer des fichiers d'équipe avec permissions fines dans la durée.",
+        "Vous voulez une solution de sauvegarde ou de synchronisation."
+      ],
+      "threshold": "WeTransfer s'impose pour l'envoi rapide et ponctuel de gros fichiers ; pour du stockage collaboratif permanent avec permissions, une solution type Drive est plus adaptée."
+    },
+    "pros": [
+      "Envoi de gros fichiers ultra simple, via un lien.",
+      "Palier gratuit pratique pour un besoin occasionnel.",
+      "Options pro utiles : mot de passe, expiration, pages de marque.",
+      "Aucune installation ni compte requis pour l'usage de base."
+    ],
+    "cons": [
+      "Orienté transfert ponctuel, pas stockage collaboratif durable.",
+      "Le palier gratuit est limité en volume et en nombre de transferts.",
+      "Peu de gestion de fichiers d'équipe dans la durée."
+    ],
+    "use_cases": [
+      "Envoyer un gros livrable à un client via un simple lien.",
+      "Protéger un envoi sensible par mot de passe et date d'expiration.",
+      "Partager des fichiers volumineux sans obliger le destinataire à créer un compte."
+    ],
+    "relevant_for": ["Créatifs", "Freelances", "Petites équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to occasionally send large files, simply, via a link.",
+        "You want to avoid account creation for basic use.",
+        "You need pro options (password, expiry, branding) on transfers."
+      ],
+      "avoidIf": [
+        "You want permanent collaborative cloud storage rather than one-off transfer.",
+        "You must manage team files with fine permissions over time.",
+        "You want a backup or sync solution."
+      ],
+      "threshold": "WeTransfer is ideal for quick, one-off large-file sending; for permanent collaborative storage with permissions, a Drive-style solution fits better."
+    },
+    "pros": [
+      "Dead-simple large-file sending via a link.",
+      "Handy free tier for occasional needs.",
+      "Useful pro options: password, expiry, branded pages.",
+      "No install or account needed for basic use."
+    ],
+    "cons": [
+      "Geared to one-off transfer, not durable collaborative storage.",
+      "The free tier is limited in volume and number of transfers.",
+      "Little long-term team file management."
+    ],
+    "use_cases": [
+      "Send a large deliverable to a client via a simple link.",
+      "Protect a sensitive send with a password and expiry date.",
+      "Share large files without forcing the recipient to create an account."
+    ]
+  }
+}
