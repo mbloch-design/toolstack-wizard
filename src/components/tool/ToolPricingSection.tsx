@@ -11,13 +11,15 @@ interface Props {
 
 export default function ToolPricingSection({ tool, displayPrice, lang, t }: Props) {
   const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
-  const canonicalPlans = tool.pricing_v5?.plans || [];
+  // Variante de prix dans la langue de la page (résumés/plans localisés) ; repli sûr sur pricing_v5.
+  const pv5 = lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;
+  const canonicalPlans = pv5?.plans || [];
   // Texte de carte gratuite qualifié (licence vs coût total) fourni par la projection canonique.
-  const freeCard = (tool.pricing_v5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
+  const freeCard = (pv5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
   const hasFree = hasGenuineFreeTier(pricing?.free);
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
-  const verifiedOn = tool.pricing_v5?.verified_on;
-  const officialUrl = tool.pricing_v5?.official_source_url;
+  const verifiedOn = pv5?.verified_on;
+  const officialUrl = pv5?.official_source_url;
 
   const formatNativeAmount = (amount: number, currency: string | null) => new Intl.NumberFormat(
     lang === "en" ? "en-US" : "fr-FR",
@@ -102,7 +104,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
             <div className="td-pricing-plan-head">
               <span className="td-pricing-plan-name">
                 <CreditCard aria-hidden />
-                {tool.pricing_v5?.compare_plan_name || t("Plan payant", "Paid plan")}
+                {pv5?.compare_plan_name || t("Plan payant", "Paid plan")}
               </span>
               {displayPrice > 0 && (
                 <strong className="td-pricing-price">

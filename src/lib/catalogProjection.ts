@@ -116,6 +116,9 @@ export function catalogProjectionRowsToTool(rows: CatalogProjectionRow[]): Tool 
     prescription_quality: (base.prescription_quality || "silence") as PrescriptionQuality,
     substitution_cluster_v2: base.substitution_cluster_v2 || null,
     pricing_v5: canonicalPricingV5(base),
+    // Variante EN : résumés/plans localisés lus depuis la ligne EN de la projection
+    // (la page anglaise doit afficher les résumés de plan anglais, pas ceux de la ligne FR).
+    pricing_v5En: canonicalPricingV5(en || fr),
     // Kept outside the current Tool contract but useful to future projection
     // consumers; the cast avoids silently dropping these public fields.
     relationships,
