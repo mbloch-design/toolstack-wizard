@@ -1,0 +1,86 @@
+{
+  "slug": "mongodb-atlas",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle MongoDB", "url": "https://www.mongodb.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de base de données MongoDB entièrement gérée, multi-cloud (AWS, Azure, Google Cloud).",
+    "pricing_model": "À l'usage (par heure). Palier gratuit M0, palier Flex (dev/test), paliers Dedicated (production).",
+    "free_tier": { "exists": true, "detail": "M0 : 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie, sans carte bancaire." },
+    "plans": [
+      { "name": "Flex", "price": "0,011 $/h, plafonné ~30 $/mois", "for": "développement et test" },
+      { "name": "Dedicated", "price": "à partir de 56,94 $/mois (0,08 $/h)", "for": "production" }
+    ],
+    "key_features": [
+      "Déploiement multi-cloud (AWS, Azure, Google Cloud)",
+      "Sauvegardes automatiques et snapshots continus",
+      "Atlas Search et Vector Search (recherche plein texte et sémantique/IA)",
+      "Stream Processing (données temps réel, intégration Kafka)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez sur MongoDB et voulez une base gérée sans administrer l'infrastructure.",
+        "Vous démarrez petit (le palier M0 gratuit suffit pour prototyper) avec une montée en charge à l'usage.",
+        "Vous avez besoin de recherche plein texte ou vectorielle (IA) intégrée à la base."
+      ],
+      "avoidIf": [
+        "Votre modèle de données est fortement relationnel : une base SQL gérée sera plus adaptée.",
+        "Vous voulez un coût mensuel fixe et prévisible plutôt qu'une facturation à l'usage.",
+        "Vous devez auto-héberger pour des raisons de souveraineté ou de contrôle total."
+      ],
+      "threshold": "MongoDB Atlas s'impose quand vous êtes déjà sur MongoDB et voulez déléguer l'exploitation (sauvegardes, scaling, sécurité) ; si votre besoin est relationnel ou exige un coût fixe, une base SQL gérée ou l'auto-hébergement restent plus indiqués."
+    },
+    "pros": [
+      "Base MongoDB entièrement gérée : sauvegardes, mises à l'échelle et sécurité prises en charge.",
+      "Palier gratuit M0 (512 Mo) réellement gratuit à vie pour prototyper sans carte bancaire.",
+      "Multi-cloud : déploiement sur AWS, Azure ou Google Cloud.",
+      "Recherche plein texte et vectorielle (IA) intégrées, sans service séparé."
+    ],
+    "cons": [
+      "Facturation à l'usage : le coût peut grimper et devient moins prévisible en production.",
+      "Modèle orienté documents : peu adapté à un usage fortement relationnel.",
+      "Optimiser les coûts et la performance demande une vraie compréhension d'Atlas."
+    ],
+    "use_cases": [
+      "Prototyper une application sur le palier gratuit M0 avant de passer en production.",
+      "Exploiter une base MongoDB de production sans gérer serveurs, sauvegardes ni mises à l'échelle.",
+      "Ajouter de la recherche plein texte ou sémantique (IA) directement dans la base."
+    ],
+    "relevant_for": ["Développeurs", "Startups", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build on MongoDB and want a managed database without running infrastructure.",
+        "You start small (the free M0 tier is enough to prototype) with usage-based scaling.",
+        "You need full-text or vector (AI) search built into the database."
+      ],
+      "avoidIf": [
+        "Your data model is strongly relational: a managed SQL database will fit better.",
+        "You want a fixed, predictable monthly cost rather than usage-based billing.",
+        "You must self-host for sovereignty or full control."
+      ],
+      "threshold": "MongoDB Atlas makes sense when you're already on MongoDB and want to offload operations (backups, scaling, security); if your need is relational or requires a fixed cost, a managed SQL database or self-hosting remain more suitable."
+    },
+    "pros": [
+      "Fully managed MongoDB: backups, scaling and security handled for you.",
+      "Genuinely free M0 tier (512 MB), free forever, no credit card to prototype.",
+      "Multi-cloud: deploy on AWS, Azure or Google Cloud.",
+      "Built-in full-text and vector (AI) search, no separate service."
+    ],
+    "cons": [
+      "Usage-based billing: costs can climb and become less predictable in production.",
+      "Document-oriented model: poorly suited to strongly relational use.",
+      "Optimising cost and performance takes real Atlas know-how."
+    ],
+    "use_cases": [
+      "Prototype an app on the free M0 tier before moving to production.",
+      "Run a production MongoDB database without managing servers, backups or scaling.",
+      "Add full-text or semantic (AI) search directly in the database."
+    ]
+  }
+}

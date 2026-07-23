@@ -1,0 +1,87 @@
+{
+  "slug": "hotjar",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Tarifs officiels (Hotjar désormais partie de Contentsquare)", "url": "https://contentsquare.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil d'analyse comportementale web : cartes de chaleur (heatmaps), enregistrements de session et sondages sur site.",
+    "note": "Hotjar fait désormais partie de Contentsquare (les tarifs sont servis sur contentsquare.com).",
+    "pricing_model": "Par volume de sessions. Palier gratuit, puis paliers payants.",
+    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 200 000 sessions/mois, 1 projet, replays/heatmaps/funnels de base, 100 sondages/mois." },
+    "plans": [
+      { "name": "Growth", "price": "49 $/mois", "for": "équipes en croissance" },
+      { "name": "Pro / Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Enregistrements de session (session replay)",
+      "Cartes de chaleur par zones (heatmaps)",
+      "Sondages et feedback sur site",
+      "Analyse par IA (chat en langage naturel côté Contentsquare)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez comprendre visuellement le comportement des visiteurs (clics, scroll, parcours).",
+        "Vous cherchez à recueillir du feedback qualitatif directement sur votre site (sondages).",
+        "Une petite équipe veut des insights rapides sans mettre en place une analytics lourde."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'analytics produit quantitative avancée (entonnoirs, cohortes) : un outil dédié est plus adapté.",
+        "Vos contraintes de confidentialité rendent l'enregistrement de session délicat.",
+        "Vous disposez déjà d'une suite analytics complète."
+      ],
+      "threshold": "Hotjar s'impose quand le besoin est de VOIR et comprendre le comportement (heatmaps, replays, sondages) plutôt que de mesurer finement des métriques produit ; pour de l'analytics quantitative poussée, un outil spécialisé reste supérieur."
+    },
+    "pros": [
+      "Heatmaps, enregistrements de session et sondages réunis dans un seul outil.",
+      "Palier gratuit généreux pour démarrer sur un site à trafic modéré.",
+      "Mise en place rapide, sans expertise analytics.",
+      "Désormais adossé à Contentsquare (analyse enrichie, y compris par IA)."
+    ],
+    "cons": [
+      "Approche qualitative : ne remplace pas une analytics produit quantitative complète.",
+      "L'enregistrement de session demande de gérer la confidentialité des visiteurs.",
+      "Les fonctions avancées et le fort volume font monter la note."
+    ],
+    "use_cases": [
+      "Repérer les points de friction d'une page grâce aux heatmaps et aux replays.",
+      "Recueillir l'avis des visiteurs via des sondages ciblés sur le site.",
+      "Prioriser des améliorations UX à partir de comportements réels observés."
+    ],
+    "relevant_for": ["Petites équipes", "Product/UX", "E-commerce et sites de conversion"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to visually understand visitor behaviour (clicks, scroll, journeys).",
+        "You want to collect qualitative feedback directly on your site (surveys).",
+        "A small team wants quick insight without setting up heavy analytics."
+      ],
+      "avoidIf": [
+        "You need advanced quantitative product analytics (funnels, cohorts): a dedicated tool fits better.",
+        "Privacy constraints make session recording sensitive.",
+        "You already have a full analytics suite."
+      ],
+      "threshold": "Hotjar makes sense when the need is to SEE and understand behaviour (heatmaps, replays, surveys) rather than finely measure product metrics; for advanced quantitative analytics, a specialised tool remains stronger."
+    },
+    "pros": [
+      "Heatmaps, session recordings and surveys in a single tool.",
+      "Generous free tier to start on a moderate-traffic site.",
+      "Fast setup, no analytics expertise required.",
+      "Now backed by Contentsquare (richer, AI-assisted analysis)."
+    ],
+    "cons": [
+      "Qualitative approach: not a replacement for full quantitative product analytics.",
+      "Session recording requires managing visitor privacy.",
+      "Advanced features and high volume push the cost up."
+    ],
+    "use_cases": [
+      "Spot friction points on a page via heatmaps and replays.",
+      "Gather visitor opinions through targeted on-site surveys.",
+      "Prioritise UX improvements from real observed behaviour."
+    ]
+  }
+}

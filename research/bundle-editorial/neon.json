@@ -1,0 +1,86 @@
+{
+  "slug": "neon",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Neon", "url": "https://neon.com/pricing" }
+  ],
+  "facts": {
+    "what": "Postgres serverless : base PostgreSQL gérée, à l'usage, avec branching et mise à l'échelle automatique.",
+    "pricing_model": "À l'usage (compute facturé au CU-heure). Palier gratuit, puis Launch et Scale.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 0,5 Go de stockage/projet, 100 CU-h de compute/projet, jusqu'à 100 projets, 5 Go d'egress inclus." },
+    "plans": [
+      { "name": "Launch", "price": "à l'usage, 0,106 $/CU-h" },
+      { "name": "Scale", "price": "à l'usage, 0,222 $/CU-h" }
+    ],
+    "key_features": [
+      "Branching de base de données (branches façon Git pour dev/CI)",
+      "Scale-to-zero : compute suspendu = 0 $ après inactivité",
+      "Autoscaling du compute",
+      "PostgreSQL standard (compatible)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez du PostgreSQL serverless avec des branches de base pour vos workflows de dev/CI.",
+        "Vos charges sont variables ou intermittentes : le scale-to-zero évite de payer à l'arrêt.",
+        "Vous démarrez petit et voulez rester sur du Postgres standard."
+      ],
+      "avoidIf": [
+        "Vous voulez un coût mensuel fixe et parfaitement prévisible.",
+        "Vous avez une charge toujours active et très gourmande en compute.",
+        "Vous devez auto-héberger votre base."
+      ],
+      "threshold": "Neon s'impose quand le branching Postgres et le scale-to-zero collent à des charges variables ou à des workflows de dev ; pour une charge constante et un budget fixe, une base gérée classique reste plus prévisible."
+    },
+    "pros": [
+      "PostgreSQL serverless standard, sans administrer l'infrastructure.",
+      "Scale-to-zero : vous ne payez pas le compute quand la base est inactive.",
+      "Branching de base de données pour tester et itérer comme avec Git.",
+      "Palier gratuit confortable pour démarrer."
+    ],
+    "cons": [
+      "Facturation à l'usage : coût moins prévisible à grande échelle.",
+      "Le réveil après scale-to-zero peut introduire une légère latence.",
+      "Plus jeune que les bases gérées historiques."
+    ],
+    "use_cases": [
+      "Créer une branche de base par pull request pour tester sans toucher la production.",
+      "Héberger une application à charge variable sans payer le compute à l'arrêt.",
+      "Démarrer un projet Postgres sur le palier gratuit puis monter à l'usage."
+    ],
+    "relevant_for": ["Développeurs", "Startups", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want serverless PostgreSQL with database branching for dev/CI workflows.",
+        "Your workloads are variable or intermittent: scale-to-zero avoids paying when idle.",
+        "You start small and want to stay on standard Postgres."
+      ],
+      "avoidIf": [
+        "You want a fixed, fully predictable monthly cost.",
+        "You have an always-on, very compute-heavy workload.",
+        "You must self-host your database."
+      ],
+      "threshold": "Neon makes sense when Postgres branching and scale-to-zero fit variable workloads or dev flows; for a constant workload and fixed budget, a classic managed database stays more predictable."
+    },
+    "pros": [
+      "Standard serverless PostgreSQL, no infrastructure to run.",
+      "Scale-to-zero: you don't pay for compute while the database is idle.",
+      "Database branching to test and iterate like with Git.",
+      "Comfortable free tier to get started."
+    ],
+    "cons": [
+      "Usage-based billing: less predictable cost at scale.",
+      "Waking up after scale-to-zero can add slight latency.",
+      "Younger than incumbent managed databases."
+    ],
+    "use_cases": [
+      "Create a database branch per pull request to test without touching production.",
+      "Host a variable-load app without paying for compute when idle.",
+      "Start a Postgres project on the free tier, then scale with usage."
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "contra",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Contra", "url": "https://contra.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme freelance « commission-free » : portfolio, clients, contrats et paiements pour les indépendants.",
+    "pricing_model": "Gratuit à rejoindre, sans commission sur les revenus. Des frais de plateforme s'appliquent par paiement ; abonnement Pro optionnel.",
+    "free_tier": { "exists": true, "detail": "Gratuit : adhésion sans coût, frais de plateforme 2–29 $ par paiement selon le montant, placement standard." },
+    "plans": [
+      { "name": "Pro", "price": "29 $/mois ou 199 $/an", "benefits": "frais de paiement réduits de ~50 % (1–15 $), accès illimité aux missions, meilleure visibilité, support prioritaire" }
+    ],
+    "key_features": [
+      "Portfolio et découverte de missions",
+      "Gestion de projets et de contrats",
+      "Facturation et paiements internationaux",
+      "Réseau communautaire de créatifs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes indépendant et voulez une plateforme sans commission sur vos revenus.",
+        "Vous cherchez à réunir portfolio, contrats et paiements au même endroit.",
+        "Vous voulez être découvert par des clients sans intermédiaire prélevant une commission."
+      ],
+      "avoidIf": [
+        "Vous voulez le volume de missions d'une grande place de marché établie.",
+        "Vous avez besoin d'un séquestre (escrow) et de garanties de niveau entreprise.",
+        "Vous préférez travailler entièrement hors plateforme."
+      ],
+      "threshold": "Contra s'impose quand l'absence de commission et la maîtrise de la relation client priment ; si vous cherchez d'abord le volume d'une marketplace massive, une plateforme établie peut apporter plus de missions."
+    },
+    "pros": [
+      "Sans commission sur les revenus : vous gardez ce que vous facturez.",
+      "Portfolio, contrats et paiements internationaux réunis.",
+      "Découverte de missions et mise en réseau de créatifs.",
+      "Adhésion gratuite pour démarrer."
+    ],
+    "cons": [
+      "Place de marché plus petite que les acteurs historiques.",
+      "Des frais de plateforme s'appliquent à chaque paiement reçu.",
+      "L'offre Pro est souvent nécessaire pour la meilleure visibilité et des frais réduits."
+    ],
+    "use_cases": [
+      "Recevoir des paiements clients sans commission sur ses revenus.",
+      "Présenter son portfolio et être découvert par de nouveaux clients.",
+      "Gérer contrats et facturation d'une activité freelance au même endroit."
+    ],
+    "relevant_for": ["Freelances", "Créatifs indépendants", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are independent and want a platform with no commission on your earnings.",
+        "You want portfolio, contracts and payments in one place.",
+        "You want to be discovered by clients without an intermediary taking a commission."
+      ],
+      "avoidIf": [
+        "You want the job volume of a large established marketplace.",
+        "You need escrow and enterprise-grade guarantees.",
+        "You prefer to work entirely off-platform."
+      ],
+      "threshold": "Contra makes sense when zero commission and owning the client relationship matter most; if you primarily want the volume of a massive marketplace, an established platform may bring more jobs."
+    },
+    "pros": [
+      "No commission on earnings: you keep what you invoice.",
+      "Portfolio, contracts and global payments together.",
+      "Job discovery and creative networking.",
+      "Free to join to get started."
+    ],
+    "cons": [
+      "Smaller marketplace than incumbent platforms.",
+      "Platform fees apply on each payment received.",
+      "The Pro plan is often needed for the best discovery and reduced fees."
+    ],
+    "use_cases": [
+      "Receive client payments without commission on your earnings.",
+      "Showcase your portfolio and get discovered by new clients.",
+      "Manage contracts and invoicing for a freelance business in one place."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "patreon",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Aperçu des frais créateur — centre d'aide Patreon", "url": "https://support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview" },
+    { "label": "Frais standard pour les nouveaux créateurs (depuis août 2025)", "url": "https://support.patreon.com/hc/en-us/articles/36426991446797-A-standard-platform-fee-for-new-creators-effective-after-August-4-2025" }
+  ],
+  "facts": {
+    "what": "Plateforme d'abonnement/membership permettant aux créateurs de monétiser leur audience via des paliers récurrents et des avantages.",
+    "pricing_model": "Gratuit à démarrer. Frais de plateforme prélevés sur les revenus + frais de traitement des paiements + taxes applicables.",
+    "free_tier": { "exists": true, "detail": "Création de page gratuite ; les frais s'appliquent uniquement sur les revenus perçus." },
+    "fees": {
+      "standard_new_creators": "10 % (nouveaux créateurs, depuis le 4 août 2025)",
+      "legacy": "anciens plans à 5 %, 8 % ou 11 % ; Pro (8 %) et Premium (12 %) fusionnés dans le standard 10 %"
+    },
+    "key_features": [
+      "Paliers d'abonnement et avantages (perks) personnalisables",
+      "Gestion des membres et des paiements récurrents",
+      "Publication de contenu réservé aux membres",
+      "Écosystème et découverte pour créateurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur et voulez monétiser une audience via des abonnements récurrents.",
+        "Vous souhaitez proposer des paliers, des avantages et du contenu réservé aux membres.",
+        "Vous préférez une solution clé en main (paiements, gestion des membres) à un système auto-hébergé."
+      ],
+      "avoidIf": [
+        "Votre modèle repose sur des ventes ponctuelles plutôt que sur l'abonnement récurrent.",
+        "Vous cherchez à minimiser au maximum les frais prélevés sur vos revenus.",
+        "Votre audience n'est pas prête à s'abonner de façon récurrente."
+      ],
+      "threshold": "Patreon s'impose quand la relation avec votre audience est récurrente et communautaire ; pour des ventes ponctuelles ou une volonté de minimiser les frais, une solution de vente directe est souvent plus indiquée."
+    },
+    "pros": [
+      "Solution clé en main : abonnements, paiements récurrents et gestion des membres intégrés.",
+      "Paliers et avantages personnalisables pour structurer son offre.",
+      "Page de création gratuite : on ne paie que sur les revenus perçus.",
+      "Large écosystème de créateurs et de mécènes."
+    ],
+    "cons": [
+      "Des frais de plateforme et de traitement des paiements sont prélevés sur chaque revenu.",
+      "L'audience est liée à Patreon plutôt qu'à un canal que vous contrôlez.",
+      "Moins de contrôle et de personnalisation qu'une solution auto-hébergée."
+    ],
+    "use_cases": [
+      "Lancer un abonnement mensuel pour financer un travail créatif régulier.",
+      "Offrir du contenu et des avantages exclusifs à ses membres par palier.",
+      "Fédérer une communauté payante autour d'un créateur ou d'un projet."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Artistes et indépendants", "Communautés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a creator and want to monetise an audience through recurring memberships.",
+        "You want to offer tiers, perks and members-only content.",
+        "You prefer a turnkey solution (payments, member management) over a self-hosted setup."
+      ],
+      "avoidIf": [
+        "Your model relies on one-off sales rather than recurring subscriptions.",
+        "You want to minimise the fees taken from your revenue.",
+        "Your audience isn't ready to subscribe on a recurring basis."
+      ],
+      "threshold": "Patreon makes sense when your audience relationship is recurring and community-driven; for one-off sales or minimising fees, a direct-sales solution is often more suitable."
+    },
+    "pros": [
+      "Turnkey solution: memberships, recurring payments and member management built in.",
+      "Customisable tiers and perks to structure your offer.",
+      "Free creator page: you only pay on the revenue you earn.",
+      "Large ecosystem of creators and patrons."
+    ],
+    "cons": [
+      "Platform and payment-processing fees are taken from every payout.",
+      "Your audience is tied to Patreon rather than a channel you control.",
+      "Less control and customisation than a self-hosted solution."
+    ],
+    "use_cases": [
+      "Launch a monthly membership to fund ongoing creative work.",
+      "Offer exclusive content and perks to members by tier.",
+      "Build a paying community around a creator or project."
+    ]
+  }
+}
