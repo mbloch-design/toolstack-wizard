@@ -15,6 +15,7 @@ import { hasGenuineFreeTier, resolveMonthlyPrice } from "@/lib/pricing";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
+import ToolBundleSection from "@/components/tool/ToolBundleSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
@@ -671,6 +672,7 @@ const ToolDetailPage = () => {
                   <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                 </div>
+                <ToolBundleSection tool={tool} lang={lang} t={t} />
               </div>
             )}
 

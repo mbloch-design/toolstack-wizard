@@ -7908,6 +7908,22 @@
   }
   .td-pricing-bundle-note:hover { border-color: var(--color-border-strong); }
   .td-pricing-bundle-note svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 1px; color: var(--color-muted); }
+  .td-bundle-head { margin-bottom: 14px; }
+  .td-bundle .td-title { display: flex; align-items: center; gap: 8px; }
+  .td-bundle .td-title svg { width: 20px; height: 20px; color: var(--color-muted); }
+  .td-bundle-sub { margin: 6px 0 0; font-family: var(--font-ui); font-size: 14px; color: var(--color-muted); line-height: 1.45; }
+  .td-bundle-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+  .td-bundle-item a, .td-bundle-item > span {
+    display: flex; flex-direction: column; gap: 2px; height: 100%;
+    padding: 12px 14px; border: 1px solid var(--color-border); border-radius: 10px;
+    background: var(--color-surface); text-decoration: none; color: var(--color-text);
+  }
+  .td-bundle-item a:hover { border-color: var(--color-border-strong); background: var(--color-surface-soft); }
+  .td-bundle-item strong { font-family: var(--font-ui); font-size: 14px; font-weight: 600; }
+  .td-bundle-item span span, .td-bundle-item > span > span,
+  .td-bundle-item a span { font-family: var(--font-ui); font-size: 12px; color: var(--color-muted); }
+  .td-bundle-item--parent a { background: var(--color-surface-soft); border-color: var(--color-border-strong); }
+  .td-bundle-item--current > span { border-style: dashed; background: var(--color-surface-soft); }
   .td-pricing-plans {
     display: grid;
     border: 1px solid var(--color-border);
