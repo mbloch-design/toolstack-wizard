@@ -5,8 +5,17 @@
 set -uo pipefail
 cd "$(dirname "$0")"
 
+# Cibler des slugs précis : bash apply-sourced-editorial.sh attio feedly gong
+# Sans argument : applique TOUTES les fiches sourcées (réécriture idempotente).
+if [ "$#" -gt 0 ]; then
+  files=(); for s in "$@"; do files+=("research/bundle-editorial/$s.json"); done
+else
+  files=(research/bundle-editorial/*.json)
+fi
+
 ok=0; ko=0
-for f in research/bundle-editorial/*.json; do
+for f in "${files[@]}"; do
+  [ -f "$f" ] || { echo "  ✗ $f introuvable"; ko=$((ko+1)); continue; }
   slug=$(basename "$f" .json)
   # ne traiter que les fiches réellement sourcées (présence d'un bloc "sources")
   grep -q '"sources"' "$f" || continue
