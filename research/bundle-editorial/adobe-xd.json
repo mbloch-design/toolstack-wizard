@@ -2,71 +2,82 @@
   "slug": "adobe-xd",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe XD — description et statut (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_XD" }
+  ],
+  "facts": {
+    "what": "Outil de design vectoriel pour interfaces web et mobiles (wireframing, prototypage) d'Adobe.",
+    "status": "Développement ARRÊTÉ : retiré des produits achetables en juin 2023 ; Adobe a annoncé ne plus investir dans la plateforme (après l'échec du rachat de Figma).",
+    "pricing_note": "Historiquement inclus dans Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Wireframing et prototypes cliquables",
+      "Repeat grid (listes et galeries)",
+      "Prototypes animés par liaison d'artboards",
+      "Import de fichiers Illustrator, Photoshop, Sketch, After Effects"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous concevez des maquettes et prototypes d'interface.",
-        "Vous êtes déjà dans l'écosystème Adobe.",
-        "Vous avez des projets UI ponctuels."
+        "Vous avez des projets XD existants à maintenir.",
+        "Vous êtes déjà dans l'écosystème Adobe et avez un usage ponctuel.",
+        "Vous devez ouvrir/convertir d'anciens fichiers XD."
       ],
       "avoidIf": [
-        "Vous travaillez surtout dans Figma.",
-        "Vous cherchez un outil UI activement développé.",
-        "Vous avez besoin d'une collaboration temps réel poussée."
+        "Vous démarrez un nouveau projet UI : XD n'est plus développé, préférez Figma.",
+        "Vous avez besoin d'une collaboration temps réel poussée.",
+        "Vous voulez un outil activement maintenu et mis à jour."
       ],
-      "threshold": "Adobe Xd est pertinent quand le design d'interfaces fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Adobe XD n'est plus recommandé pour de nouveaux projets : son développement est arrêté. Pour du design d'interface actif, Figma (ou un outil maintenu) est plus indiqué ; XD ne se justifie que pour de la maintenance d'existant."
     },
     "pros": [
-      "Outil de référence pour le design d'interfaces.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Design d'interface et prototypage vectoriels.",
+      "Repeat grid pratique pour listes et galeries.",
+      "Import depuis Illustrator, Photoshop, Sketch, After Effects.",
+      "Intégration à l'écosystème Adobe."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Développement arrêté depuis 2023 : plus d'évolutions.",
+      "Collaboration temps réel en retrait face à Figma.",
+      "Non recommandé pour de nouveaux projets."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant le design d'interfaces dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Maintenir ou ouvrir d'anciens projets XD.",
+      "Convertir des fichiers XD vers un outil actif.",
+      "Prototyper ponctuellement dans l'écosystème Adobe existant."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Designers UI (existant)", "Studios avec projets XD", "Maintenance"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You design interface mockups and prototypes.",
-        "You're already in the Adobe ecosystem.",
-        "You have occasional UI projects."
+        "You have existing XD projects to maintain.",
+        "You're already in the Adobe ecosystem with occasional use.",
+        "You need to open/convert old XD files."
       ],
       "avoidIf": [
-        "You mostly work in Figma.",
-        "You want an actively developed UI tool.",
-        "You need strong real-time collaboration."
+        "You're starting a new UI project: XD is no longer developed, prefer Figma.",
+        "You need strong real-time collaboration.",
+        "You want an actively maintained, updated tool."
       ],
-      "threshold": "Adobe Xd is relevant when UI/UX design and prototyping is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Adobe XD is no longer recommended for new projects: its development has stopped. For active interface design, Figma (or a maintained tool) fits better; XD only makes sense for maintaining existing work."
     },
     "pros": [
-      "A reference tool for UI/UX design and prototyping.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Vector interface design and prototyping.",
+      "Handy repeat grid for lists and galleries.",
+      "Import from Illustrator, Photoshop, Sketch, After Effects.",
+      "Integration with the Adobe ecosystem."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Development stopped since 2023: no more updates.",
+      "Real-time collaboration trails Figma.",
+      "Not recommended for new projects."
     ],
     "use_cases": [
-      "Deliver a project requiring UI/UX design and prototyping in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Maintain or open old XD projects.",
+      "Convert XD files to an active tool.",
+      "Occasionally prototype within an existing Adobe setup."
     ]
   }
 }

@@ -2,71 +2,82 @@
   "slug": "adobe-fresco",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Fresco — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Fresco" }
+  ],
+  "facts": {
+    "what": "Éditeur de dessin numérique (vectoriel et matriciel) d'Adobe, orienté peinture, pour iPad, iPhone et Windows.",
+    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Live Brushes et pinceaux vectoriels",
+      "Simulation d'aquarelle et de peinture à l'huile réaliste",
+      "Dessin et peinture avec calques, texte et animation",
+      "Compatibilité et import de pinceaux Photoshop",
+      "iPad, iPhone et Windows"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous dessinez ou peignez au stylet sur tablette.",
-        "Vous voulez des pinceaux vectoriels et pixel réunis.",
-        "Vous êtes dans l'écosystème Adobe."
+        "Vous dessinez ou peignez au stylet, notamment sur iPad.",
+        "Vous voulez des pinceaux vectoriels et matriciels réunis, avec des médias réalistes.",
+        "Vous travaillez déjà avec Photoshop (compatibilité pinceaux/fichiers)."
       ],
       "avoidIf": [
         "Vous ne dessinez pas à la main.",
         "Vous préférez Procreate ou une alternative.",
-        "Vous n'avez pas de tablette adaptée."
+        "Vous n'avez pas de tablette/stylet adaptés."
       ],
-      "threshold": "Adobe Fresco est pertinent quand le dessin et la peinture numérique fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Fresco s'impose quand le dessin/peinture au stylet est central et que vous êtes dans l'écosystème Adobe ; sinon, une alternative comme Procreate peut suffire."
     },
     "pros": [
-      "Outil de référence pour le dessin et la peinture numérique.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Live Brushes et rendu réaliste (aquarelle, huile).",
+      "Pinceaux vectoriels et matriciels réunis.",
+      "Compatibilité Photoshop (pinceaux, fichiers).",
+      "Disponible sur iPad, iPhone et Windows."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Accessible via l'abonnement Creative Cloud.",
+      "Pertinent surtout avec un stylet/tablette.",
+      "Moins polyvalent qu'un éditeur d'images complet."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant le dessin et la peinture numérique dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Peindre une illustration au stylet avec des médias réalistes.",
+      "Combiner pinceaux vectoriels et matriciels dans un même dessin.",
+      "Importer des pinceaux Photoshop pour dessiner sur iPad."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Illustrateurs", "Artistes numériques", "Designers"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You draw or paint with a stylus on a tablet.",
-        "You want vector and pixel brushes combined.",
-        "You're in the Adobe ecosystem."
+        "You draw or paint with a stylus, notably on iPad.",
+        "You want vector and raster brushes combined, with realistic media.",
+        "You already work with Photoshop (brush/file compatibility)."
       ],
       "avoidIf": [
         "You don't draw by hand.",
         "You prefer Procreate or an alternative.",
-        "You lack a suitable tablet."
+        "You lack a suitable tablet/stylus."
       ],
-      "threshold": "Adobe Fresco is relevant when digital drawing and painting is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Fresco makes sense when stylus drawing/painting is central and you're in the Adobe ecosystem; otherwise, an alternative like Procreate may suffice."
     },
     "pros": [
-      "A reference tool for digital drawing and painting.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Live Brushes and realistic rendering (watercolor, oil).",
+      "Vector and raster brushes combined.",
+      "Photoshop compatibility (brushes, files).",
+      "Available on iPad, iPhone and Windows."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Available via the Creative Cloud subscription.",
+      "Most relevant with a stylus/tablet.",
+      "Less versatile than a full image editor."
     ],
     "use_cases": [
-      "Deliver a project requiring digital drawing and painting in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Paint an illustration with a stylus using realistic media.",
+      "Combine vector and raster brushes in one drawing.",
+      "Import Photoshop brushes to draw on iPad."
     ]
   }
 }

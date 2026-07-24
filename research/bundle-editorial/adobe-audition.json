@@ -2,71 +2,82 @@
   "slug": "adobe-audition",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Audition — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Audition" }
+  ],
+  "facts": {
+    "what": "Station de travail audionumérique (DAW) d'Adobe : environnement multipiste non destructif et éditeur de forme d'onde.",
+    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Enregistrement et mixage multipiste",
+      "Édition non destructive et en temps réel",
+      "Édition spectrale/fréquentielle précise",
+      "Restauration audio et réduction de bruit",
+      "Windows et macOS"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous éditez, nettoyez et mixez de l'audio de façon professionnelle.",
         "Vous travaillez sur des podcasts ou des bandes-son vidéo.",
-        "Vous êtes dans l'écosystème Adobe."
+        "Vous êtes dans l'écosystème Adobe (lien avec Premiere Pro)."
       ],
       "avoidIf": [
         "Vos besoins audio sont ponctuels.",
         "Vous cherchez une alternative gratuite (Audacity).",
         "Vous voulez un outil léger."
       ],
-      "threshold": "Adobe Audition est pertinent quand l'édition et le mixage audio fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Audition s'impose pour l'édition et le mixage audio pro (podcasts, bandes-son) dans l'écosystème Adobe ; pour un besoin ponctuel, une alternative gratuite suffit."
     },
     "pros": [
-      "Outil de référence pour l'édition et le mixage audio.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Multipiste et édition de forme d'onde réunis.",
+      "Édition spectrale précise et restauration audio.",
+      "Réduction de bruit efficace.",
+      "Intégration avec Premiere Pro."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Accessible via l'abonnement Creative Cloud.",
+      "Surdimensionné pour de simples retouches audio.",
+      "Courbe d'apprentissage pour l'édition avancée."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant l'édition et le mixage audio dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Nettoyer et mixer un enregistrement de podcast.",
+      "Restaurer un audio bruité par édition spectrale.",
+      "Préparer la bande-son d'une vidéo montée dans Premiere Pro."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Podcasteurs", "Monteurs son", "Studios audio/vidéo"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You edit, clean and mix audio professionally.",
         "You work on podcasts or video soundtracks.",
-        "You're in the Adobe ecosystem."
+        "You're in the Adobe ecosystem (link with Premiere Pro)."
       ],
       "avoidIf": [
         "Your audio needs are occasional.",
         "You want a free alternative (Audacity).",
         "You want a light tool."
       ],
-      "threshold": "Adobe Audition is relevant when professional audio editing and mixing is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Audition makes sense for pro audio editing and mixing (podcasts, soundtracks) within the Adobe ecosystem; for occasional needs, a free alternative suffices."
     },
     "pros": [
-      "A reference tool for professional audio editing and mixing.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Multitrack and waveform editing combined.",
+      "Precise spectral editing and audio restoration.",
+      "Effective noise reduction.",
+      "Integration with Premiere Pro."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Available via the Creative Cloud subscription.",
+      "Overkill for simple audio touch-ups.",
+      "Learning curve for advanced editing."
     ],
     "use_cases": [
-      "Deliver a project requiring professional audio editing and mixing in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Clean and mix a podcast recording.",
+      "Restore noisy audio via spectral editing.",
+      "Prepare the soundtrack of a video edited in Premiere Pro."
     ]
   }
 }
