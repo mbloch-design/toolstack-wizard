@@ -1,0 +1,87 @@
+{
+  "slug": "teleprompter",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Teleprompter.com", "url": "https://www.teleprompter.com/pricing" }
+  ],
+  "facts": {
+    "what": "Application de téléprompteur (iPhone, iPad, macOS) : lit scripts, discours et paroles avec défilement automatique ou piloté par la voix, miroir, réglage de vitesse et enregistrement vidéo intégré.",
+    "pricing_model": "Palier gratuit (avec filigrane) puis Pro (mensuel ou annuel, annuel moins cher), plus des offres Max et Team.",
+    "free_tier": { "exists": true, "detail": "Plan Starter gratuit, avec un léger filigrane sur la vidéo finale." },
+    "plans": [
+      { "name": "Starter", "price": "0 $ (filigrane)" },
+      { "name": "Pro", "price": "7,50 $/mois (annuel), 19,99 $ en mensuel — 4K, défilement auto, sous-titres" },
+      { "name": "Max / Team", "price": "paliers supérieurs (voir site officiel)" }
+    ],
+    "key_features": [
+      "Défilement automatique et piloté par la voix",
+      "Miroir vertical/horizontal",
+      "Import de scripts (TXT, Word, PDF)",
+      "Enregistrement vidéo intégré (jusqu'à 4K en Pro)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous filmez face caméra et voulez lire un script fluidement.",
+        "Vous voulez un défilement piloté par la voix.",
+        "Vous enregistrez directement depuis l'app."
+      ],
+      "avoidIf": [
+        "Vous filmez rarement face caméra.",
+        "Le filigrane du gratuit ne vous convient pas et vous n'irez pas au Pro.",
+        "Vous êtes sur un OS non supporté."
+      ],
+      "threshold": "Teleprompter.com s'impose pour qui filme régulièrement face caméra et veut un prompteur fiable ; pour un usage rare, le gratuit (avec filigrane) suffit."
+    },
+    "pros": [
+      "Défilement auto et piloté par la voix.",
+      "Enregistrement vidéo intégré (4K en Pro).",
+      "Import de scripts multi-formats.",
+      "Palier gratuit pour tester."
+    ],
+    "cons": [
+      "Filigrane sur le gratuit.",
+      "Écosystème Apple (iPhone/iPad/macOS).",
+      "Fonctions avancées réservées au Pro."
+    ],
+    "use_cases": [
+      "Lire un script en filmant face caméra.",
+      "Enregistrer une vidéo avec prompteur intégré.",
+      "Piloter le défilement à la voix."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Présentateurs", "Formateurs vidéo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You film to camera and want to read a script smoothly.",
+        "You want voice-driven scrolling.",
+        "You record straight from the app."
+      ],
+      "avoidIf": [
+        "You rarely film to camera.",
+        "The free watermark bothers you and you won't upgrade.",
+        "You're on an unsupported OS."
+      ],
+      "threshold": "Teleprompter.com makes sense for those regularly filming to camera who want a reliable prompter; for rare use, the free tier (with watermark) suffices."
+    },
+    "pros": [
+      "Auto and voice-driven scrolling.",
+      "Built-in video recording (4K on Pro).",
+      "Multi-format script import.",
+      "Free tier to test."
+    ],
+    "cons": [
+      "Watermark on the free tier.",
+      "Apple ecosystem (iPhone/iPad/macOS).",
+      "Advanced features reserved for Pro."
+    ],
+    "use_cases": [
+      "Read a script while filming to camera.",
+      "Record a video with a built-in prompter.",
+      "Control scrolling by voice."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "topaz",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Topaz Labs — logiciels d'amélioration IA (site officiel)", "url": "https://www.topazlabs.com/" }
+  ],
+  "facts": {
+    "what": "Éditeur des logiciels d'amélioration par IA de Topaz Labs : Photo AI (débruitage, netteté), Video AI (amélioration vidéo), Gigapixel (agrandissement jusqu'à 6×, en local sur le GPU), plus Studio/Astra.",
+    "pricing_model": "Abonnement uniquement depuis fin 2025 (fin des licences perpétuelles). Plans par produit ou bundle (annuel ou mensuel).",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai possible. Licences perpétuelles supprimées en septembre 2025." },
+    "plans": [
+      { "name": "Photo AI", "price": "199 $/an" },
+      { "name": "Video AI", "price": "299 $/an" },
+      { "name": "Gigapixel", "price": "99 $/an" },
+      { "name": "Topaz Studio (suite)", "price": "399 $/an (45 $/mois en annuel, 69 $/mois sans engagement) ; Pro 799 $/an" }
+    ],
+    "key_features": [
+      "Photo AI : débruitage, netteté, détail",
+      "Video AI : amélioration et upscaling vidéo",
+      "Gigapixel : agrandissement jusqu'à 6× en local",
+      "Traitement sur GPU local (préservation du détail)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous améliorez photos ou vidéos avec des modèles IA de référence.",
+        "Vous voulez agrandir des images en préservant le détail.",
+        "Vous préférez un traitement local sur votre GPU."
+      ],
+      "avoidIf": [
+        "Un enhancer gratuit basique vous suffit.",
+        "Vous refusez le passage à l'abonnement (fin du perpétuel).",
+        "Vous n'avez pas de GPU adapté au traitement local."
+      ],
+      "threshold": "Topaz Labs s'impose pour de l'amélioration photo/vidéo haut de gamme en local ; pour un besoin ponctuel et basique, un outil gratuit suffit."
+    },
+    "pros": [
+      "Qualité d'amélioration parmi les meilleures.",
+      "Agrandissement jusqu'à 6× (Gigapixel).",
+      "Traitement local sur GPU.",
+      "Gamme couvrant photo et vidéo."
+    ],
+    "cons": [
+      "Abonnement uniquement (fin des licences perpétuelles).",
+      "Pas de plan gratuit.",
+      "Traitement local exigeant en matériel."
+    ],
+    "use_cases": [
+      "Débruiter et améliorer des photos.",
+      "Upscaler et restaurer des vidéos.",
+      "Agrandir une image en préservant le détail."
+    ],
+    "relevant_for": ["Photographes", "Vidéastes", "Studios visuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You enhance photos or videos with reference-grade AI models.",
+        "You want to upscale images while preserving detail.",
+        "You prefer local processing on your GPU."
+      ],
+      "avoidIf": [
+        "A basic free enhancer is enough.",
+        "You refuse the shift to subscription (no more perpetual).",
+        "You lack a GPU suited to local processing."
+      ],
+      "threshold": "Topaz Labs makes sense for high-end local photo/video enhancement; for a basic one-off need, a free tool suffices."
+    },
+    "pros": [
+      "Some of the best enhancement quality.",
+      "Upscaling up to 6× (Gigapixel).",
+      "Local GPU processing.",
+      "Range covering photo and video."
+    ],
+    "cons": [
+      "Subscription only (perpetual licenses ended).",
+      "No free plan.",
+      "Local processing is hardware-demanding."
+    ],
+    "use_cases": [
+      "Denoise and enhance photos.",
+      "Upscale and restore videos.",
+      "Enlarge an image while preserving detail."
+    ]
+  }
+}

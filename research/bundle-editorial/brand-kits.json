@@ -1,0 +1,82 @@
+{
+  "slug": "brand-kits",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Stylebase — plateforme de brand guidelines (site officiel)", "url": "https://stylebase.ai/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion d'identité de marque (Stylebase) : définir, faire évoluer et partager ses brand guidelines et design systems, via un écosystème d'outils (Brandy pour la marque, UI Vault pour les design systems).",
+    "pricing_model": "Propose des outils gratuits ; offres et tarifs détaillés sur le site officiel.",
+    "free_tier": { "exists": true, "detail": "Outils gratuits proposés ; détails et paliers sur le site officiel." },
+    "key_features": [
+      "Création et partage de brand guidelines",
+      "Gestion d'identité de marque (Brandy)",
+      "Documentation de design system (UI Vault)",
+      "Écosystème centré sur la cohérence de marque"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez centraliser et partager votre charte de marque.",
+        "Vous documentez un design system.",
+        "Vous voulez faire respecter une identité cohérente."
+      ],
+      "avoidIf": [
+        "Un simple document partagé suffit à votre équipe.",
+        "Vous n'avez pas de charte de marque à maintenir.",
+        "Vous cherchez un outil de création graphique, pas de gouvernance de marque."
+      ],
+      "threshold": "Stylebase s'impose pour gouverner et partager une identité de marque à plusieurs ; pour une charte figée dans un simple PDF, un document partagé suffit."
+    },
+    "pros": [
+      "Centralise les brand guidelines.",
+      "Documente un design system.",
+      "Favorise la cohérence de marque.",
+      "Outils gratuits pour démarrer."
+    ],
+    "cons": [
+      "Sans objet sans charte à maintenir.",
+      "Outil de gouvernance, pas de création graphique.",
+      "Détails d'offre à consulter sur le site."
+    ],
+    "use_cases": [
+      "Partager sa charte de marque à l'équipe.",
+      "Documenter un design system.",
+      "Maintenir une identité cohérente dans le temps."
+    ],
+    "relevant_for": ["Équipes design", "Marques", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to centralise and share your brand guidelines.",
+        "You document a design system.",
+        "You want to enforce a consistent identity."
+      ],
+      "avoidIf": [
+        "A simple shared doc is enough for your team.",
+        "You have no brand guidelines to maintain.",
+        "You want a graphic-creation tool, not brand governance."
+      ],
+      "threshold": "Stylebase makes sense to govern and share a brand identity across a team; for guidelines frozen in a PDF, a shared doc suffices."
+    },
+    "pros": [
+      "Centralises brand guidelines.",
+      "Documents a design system.",
+      "Promotes brand consistency.",
+      "Free tools to get started."
+    ],
+    "cons": [
+      "Pointless with no guidelines to maintain.",
+      "Governance tool, not graphic creation.",
+      "Plan details to check on the site."
+    ],
+    "use_cases": [
+      "Share your brand guidelines with the team.",
+      "Document a design system.",
+      "Maintain a consistent identity over time."
+    ]
+  }
+}

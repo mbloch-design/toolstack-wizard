@@ -24,6 +24,18 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "capcut-ai", "clickup-ai", "excel-copilot", "streamelements-widgets", "gsc", "gorgias-helpscout",
   // Feature sans produit autonome ni parent fiché → retirée de l'index.
   "youtube-live",
+  // Recatégorisation placeholder (preuve HTTP) : URL morte ou domaine parké/générique
+  // (archivées à la source), + 4 combos/doublons redirigés 301 (krea→krea-ai,
+  // zapier-make→zapier, webflow-framer→webflow, teleprompter-apps→teleprompter).
+  "affiliate-dashboards", "affiliate-tools", "archive-tools", "bots-discord", "canva-kits", "canva-templates",
+  "capcut-templates", "caption-tools", "chart-tools", "chatgpt-pour-brouillons-non-juridiques", "comfyui-workflows", "content-credentials-tools",
+  "emoji-sticker-packs", "figma-templates", "form-apps", "frame-guides", "gaming-overlays", "krea",
+  "krea-selon-metier", "lighting-kits", "lightroom-presets", "link-in-bio", "link-in-bio-tools", "map-tools",
+  "media-kit-templates", "meme-templates", "mobile-gimbal-apps", "mockup-plugins", "music-libraries", "newsletter-referral-tools",
+  "overlays", "pennylane-ai-selon-dispo", "pennylane-ou-indy", "pennylane-qonto", "presets", "presets-lightroom",
+  "prompt-libraries", "recipe-card-templates", "review-tools", "scheduling-tools", "screen-capture-tools", "screenshot-tools",
+  "shared-cloud-folders", "social-schedulers", "stock-footage", "subtitle-tools", "teleprompter-apps", "templates",
+  "templates-ugc", "utm-builders", "webflow-framer", "webhooks", "workout-templates", "zapier-make",
 ]);
 
 // SEO landing + persona pillar pages (localized slugs)
