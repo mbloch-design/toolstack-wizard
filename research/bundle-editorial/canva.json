@@ -1,0 +1,86 @@
+{
+  "slug": "canva",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Canva", "url": "https://www.canva.com/en/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de design graphique tout-en-un, à base de modèles, pour créer des visuels sans expertise design.",
+    "pricing_model": "Plan gratuit, Canva Pro (individuel), Canva Business (équipes). Le plan Teams n'est plus proposé aux nouveaux comptes.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec les outils et modèles de base." },
+    "plans": [
+      { "name": "Canva Pro", "detail": "individuel, outils premium et IA (prix sur la page officielle)" },
+      { "name": "Canva Business", "price": "20 $/personne/mois", "detail": "sans minimum de sièges, collaboration et outils d'équipe" }
+    ],
+    "key_features": [
+      "Immense bibliothèque de modèles et d'assets",
+      "Kit de marque et redimensionnement automatique",
+      "Outils magiques/IA (fond transparent, retouche, génération)",
+      "Collaboration et partage d'équipe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement des visuels (réseaux sociaux, présentations, marketing) sans être designer.",
+        "Vous voulez des modèles prêts à l'emploi et un kit de marque.",
+        "Votre équipe collabore sur des visuels."
+      ],
+      "avoidIf": [
+        "Vous avez besoin du contrôle fin d'outils pro (Photoshop, Illustrator).",
+        "Le plan gratuit couvre déjà vos besoins.",
+        "Vous produisez des livrables très spécialisés."
+      ],
+      "threshold": "Canva s'impose quand la rapidité et les modèles priment sur le contrôle créatif fin ; pour de la maîtrise pixel/vectorielle, un outil pro dédié reste supérieur, et le gratuit suffit pour un usage occasionnel."
+    },
+    "pros": [
+      "Immense bibliothèque de modèles et d'assets.",
+      "Prise en main très rapide, sans expertise design.",
+      "Kit de marque, redimensionnement et outils IA (fond, retouche).",
+      "Plan gratuit généreux et collaboration d'équipe."
+    ],
+    "cons": [
+      "Moins de contrôle créatif que les outils professionnels.",
+      "Rendus vite génériques si l'on reste sur les modèles par défaut.",
+      "Abonnement pour débloquer l'essentiel des fonctions premium."
+    ],
+    "use_cases": [
+      "Produire rapidement des visuels pour les réseaux sociaux.",
+      "Créer présentations et supports marketing à partir de modèles.",
+      "Maintenir une identité visuelle d'équipe via un kit de marque."
+    ],
+    "relevant_for": ["Freelances", "Petites équipes marketing", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create visuals (social, presentations, marketing) without being a designer.",
+        "You want ready-made templates and a brand kit.",
+        "Your team collaborates on visuals."
+      ],
+      "avoidIf": [
+        "You need the fine control of pro tools (Photoshop, Illustrator).",
+        "The free plan already covers your needs.",
+        "You produce highly specialised deliverables."
+      ],
+      "threshold": "Canva makes sense when speed and templates matter more than fine creative control; for pixel/vector mastery, a dedicated pro tool remains stronger, and free suffices for occasional use."
+    },
+    "pros": [
+      "Huge library of templates and assets.",
+      "Very fast to pick up, no design expertise.",
+      "Brand kit, resizing and AI tools (background, retouch).",
+      "Generous free plan and team collaboration."
+    ],
+    "cons": [
+      "Less creative control than professional tools.",
+      "Outputs can look generic if you stick to default templates.",
+      "Subscription to unlock most premium features."
+    ],
+    "use_cases": [
+      "Quickly produce visuals for social media.",
+      "Create presentations and marketing collateral from templates.",
+      "Maintain a team's visual identity via a brand kit."
+    ]
+  }
+}

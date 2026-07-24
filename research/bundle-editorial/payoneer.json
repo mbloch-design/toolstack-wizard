@@ -1,0 +1,87 @@
+{
+  "slug": "payoneer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Tarifs officiels Payoneer", "url": "https://www.payoneer.com/about/pricing/" },
+    { "label": "Calcul des frais de retrait — Payoneer", "url": "https://www.payoneer.com/resources/how-to-use-payoneer/how-payoneer-calculates-withdrawal-fees/" }
+  ],
+  "facts": {
+    "what": "Plateforme de paiements transfrontaliers pour freelances et entreprises : recevoir, détenir, convertir et retirer plusieurs devises.",
+    "pricing_model": "Ouverture gratuite ; frais sur retraits, conversions et certains paiements (variables selon la route).",
+    "fees": {
+      "receiving": "jusqu'à 1 % via coordonnées directes ; Payoneer-à-Payoneer généralement gratuit ; par carte jusqu'à 3,99 % + 0,49 $",
+      "withdrawal": "retrait vers un compte en devise différente jusqu'à 2 % ; transferts < 400 : frais fixe de 4 (USD/EUR/GBP), sinon 1 % (depuis mars 2025)",
+      "conversion": "jusqu'à 3,5 %"
+    },
+    "key_features": [
+      "Comptes de réception multi-devises (USD, EUR, GBP…)",
+      "Encaissement depuis marketplaces et clients internationaux",
+      "Carte Payoneer pour dépenser / retirer",
+      "Transferts Payoneer-à-Payoneer généralement gratuits"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelance ou entreprise et recevez des paiements internationaux.",
+        "Vous encaissez depuis des marketplaces ou des clients à l'étranger.",
+        "Vous voulez des comptes de réception multi-devises."
+      ],
+      "avoidIf": [
+        "Vos paiements sont uniquement domestiques : une banque locale suffit.",
+        "Vous voulez minimiser au maximum les frais de retrait et de conversion.",
+        "Vous n'avez qu'un paiement ponctuel à recevoir."
+      ],
+      "threshold": "Payoneer s'impose quand recevoir des paiements internationaux (marketplaces, clients étrangers) est récurrent ; pour du domestique ou un besoin ponctuel, une banque locale est plus simple et souvent moins coûteuse."
+    },
+    "pros": [
+      "Réception de paiements internationaux depuis marketplaces et clients.",
+      "Comptes de réception multi-devises.",
+      "Carte pour dépenser et retirer.",
+      "Transferts Payoneer-à-Payoneer généralement gratuits."
+    ],
+    "cons": [
+      "Des frais s'appliquent aux retraits, conversions et certains paiements.",
+      "La grille de frais est complexe selon la route et la devise.",
+      "La conversion entre devises est facturée."
+    ],
+    "use_cases": [
+      "Encaisser des paiements de clients ou marketplaces à l'étranger.",
+      "Détenir et convertir plusieurs devises.",
+      "Retirer ses fonds vers un compte bancaire local."
+    ],
+    "relevant_for": ["Freelances", "E-commerçants", "Entreprises exportatrices"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a freelancer or business receiving international payments.",
+        "You get paid from marketplaces or overseas clients.",
+        "You want multi-currency receiving accounts."
+      ],
+      "avoidIf": [
+        "Your payments are domestic only: a local bank suffices.",
+        "You want to minimise withdrawal and conversion fees.",
+        "You only have a one-off payment to receive."
+      ],
+      "threshold": "Payoneer makes sense when receiving international payments (marketplaces, overseas clients) is recurring; for domestic or one-off needs, a local bank is simpler and often cheaper."
+    },
+    "pros": [
+      "Receive international payments from marketplaces and clients.",
+      "Multi-currency receiving accounts.",
+      "Card to spend and withdraw.",
+      "Payoneer-to-Payoneer transfers generally free."
+    ],
+    "cons": [
+      "Fees apply to withdrawals, conversions and some payments.",
+      "The fee grid is complex depending on route and currency.",
+      "Currency conversion is charged."
+    ],
+    "use_cases": [
+      "Collect payments from clients or marketplaces abroad.",
+      "Hold and convert multiple currencies.",
+      "Withdraw funds to a local bank account."
+    ]
+  }
+}

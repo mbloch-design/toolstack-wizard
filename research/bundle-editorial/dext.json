@@ -1,0 +1,87 @@
+{
+  "slug": "dext",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Plans et tarifs officiels Dext", "url": "https://dext.com/us/business/pricing" },
+    { "label": "Plans Dext pour cabinets — centre d'aide", "url": "https://help.dext.com/en/articles/273220-dext-plans-for-accountants-and-bookkeepers" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation comptable : capture de reçus/factures, extraction de données et alimentation du logiciel comptable.",
+    "pricing_model": "Cabinets : Practice Essentials / Practice Advanced (au client). Entreprises : Dext Business (selon utilisateurs et volume de documents). Essai 14 jours sans CB.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai gratuit de 14 jours avec accès complet aux fonctions de base." },
+    "plans": [
+      { "name": "Practice Essentials / Advanced", "detail": "pour cabinets, au client ; Advanced ajoute gestion d'équipe et suivi des workflows" },
+      { "name": "Dext Business", "detail": "un plan, tarifé selon utilisateurs et volume de documents" }
+    ],
+    "key_features": [
+      "Capture de reçus et factures (photo, e-mail, upload)",
+      "Extraction automatique des données",
+      "Stockage des documents",
+      "Intégration avec les logiciels de comptabilité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez automatiser la capture de reçus/factures et l'extraction de données.",
+        "Vous êtes cabinet comptable ou entreprise gérant beaucoup de pièces.",
+        "Vous voulez alimenter automatiquement votre logiciel de comptabilité."
+      ],
+      "avoidIf": [
+        "Votre volume de documents est très faible : la saisie manuelle suffit.",
+        "Vous n'avez pas de logiciel comptable à intégrer.",
+        "Vous cherchez une solution gratuite."
+      ],
+      "threshold": "Dext s'impose quand le volume de pièces comptables justifie l'automatisation de la capture et de l'extraction ; pour un volume marginal, la saisie manuelle reste plus simple."
+    },
+    "pros": [
+      "Capture et extraction automatiques des reçus et factures.",
+      "Intégration avec les principaux logiciels de comptabilité.",
+      "Stockage et centralisation des documents.",
+      "Outils dédiés aux cabinets (gestion des clients, workflows)."
+    ],
+    "cons": [
+      "Pas de plan gratuit : essai 14 jours puis abonnement.",
+      "Tarification selon le volume/les clients, à cadrer.",
+      "Pensé pour la comptabilité : peu utile hors de ce cadre."
+    ],
+    "use_cases": [
+      "Numériser reçus et factures et en extraire les données.",
+      "Alimenter automatiquement un logiciel de comptabilité.",
+      "Gérer la comptabilité de plusieurs clients dans un cabinet."
+    ],
+    "relevant_for": ["Cabinets comptables", "PME", "Indépendants avec volume"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to automate receipt/invoice capture and data extraction.",
+        "You are an accounting firm or business handling many documents.",
+        "You want to feed your accounting software automatically."
+      ],
+      "avoidIf": [
+        "Your document volume is very low: manual entry is enough.",
+        "You have no accounting software to integrate.",
+        "You want a free solution."
+      ],
+      "threshold": "Dext makes sense when document volume justifies automating capture and extraction; for marginal volume, manual entry stays simpler."
+    },
+    "pros": [
+      "Automatic capture and extraction of receipts and invoices.",
+      "Integration with major accounting software.",
+      "Document storage and centralisation.",
+      "Practice tools (client management, workflows)."
+    ],
+    "cons": [
+      "No free plan: 14-day trial then subscription.",
+      "Pricing by volume/clients, to scope.",
+      "Built for accounting: little use outside that context."
+    ],
+    "use_cases": [
+      "Digitise receipts and invoices and extract their data.",
+      "Feed an accounting software automatically.",
+      "Manage several clients' bookkeeping in a firm."
+    ]
+  }
+}

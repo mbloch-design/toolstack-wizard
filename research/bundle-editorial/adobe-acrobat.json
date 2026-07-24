@@ -2,71 +2,83 @@
   "slug": "adobe-acrobat",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Acrobat — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Acrobat" }
+  ],
+  "facts": {
+    "what": "Famille d'applications et de services Adobe pour visualiser, créer, éditer, signer et gérer des fichiers PDF.",
+    "pricing_note": "Acrobat Reader gratuit (lecture/annotation) ; Acrobat (création/édition complète) via licence payante / Creative Cloud.",
+    "free_tier": { "exists": true, "detail": "Acrobat Reader gratuit pour visualiser, imprimer et annoter des PDF." },
+    "key_features": [
+      "Créer, éditer et convertir des PDF",
+      "Signer électroniquement et chiffrer des documents",
+      "Commentaires, annotations et caviardage (redaction)",
+      "OCR et conformité PDF/A",
+      "Windows, macOS, iOS, Android (Reader) et Document Cloud (web)"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous créez, éditez et gérez des PDF régulièrement.",
-        "Vous avez besoin de formulaires, commentaires et signatures.",
+        "Vous avez besoin de formulaires, commentaires, OCR ou signatures.",
         "Vous voulez le standard PDF de l'industrie."
       ],
       "avoidIf": [
-        "Vous ne faites que lire des PDF occasionnellement.",
-        "Un lecteur gratuit suffit à vos besoins.",
+        "Vous ne faites que lire des PDF : Acrobat Reader gratuit suffit.",
+        "Vos besoins d'édition PDF sont ponctuels.",
         "Vous voulez éviter l'abonnement."
       ],
-      "threshold": "Adobe Acrobat est pertinent quand les PDF (lecture, édition, signature) fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Acrobat s'impose quand créer et éditer des PDF est un besoin récurrent ; pour de la simple lecture, Reader gratuit suffit."
     },
     "pros": [
-      "Outil de référence pour les PDF (lecture, édition, signature).",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Référence du PDF : création, édition, conversion.",
+      "Signature électronique et chiffrement.",
+      "OCR, commentaires et caviardage.",
+      "Reader gratuit pour la lecture et l'annotation."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "L'édition complète passe par une licence payante / Creative Cloud.",
+      "Fonctions avancées parfois surdimensionnées pour un usage simple.",
+      "Écosystème Adobe (Document Cloud) pour les services en ligne."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant les PDF (lecture, édition, signature) dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Créer et éditer un PDF (fusion, formulaires, conversion).",
+      "Faire signer électroniquement un document.",
+      "Reconnaître le texte (OCR) d'un PDF scanné."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Professionnels", "Équipes administratives", "Indépendants"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You create, edit and manage PDFs regularly.",
-        "You need forms, comments and signatures.",
+        "You need forms, comments, OCR or signatures.",
         "You want the industry PDF standard."
       ],
       "avoidIf": [
-        "You only read PDFs occasionally.",
-        "A free reader covers your needs.",
+        "You only read PDFs: free Acrobat Reader is enough.",
+        "Your PDF editing needs are occasional.",
         "You want to avoid the subscription."
       ],
-      "threshold": "Adobe Acrobat is relevant when creating, editing and managing PDFs is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Acrobat makes sense when creating and editing PDFs is a recurring need; for simple reading, free Reader suffices."
     },
     "pros": [
-      "A reference tool for creating, editing and managing PDFs.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "The PDF reference: creation, editing, conversion.",
+      "Electronic signature and encryption.",
+      "OCR, comments and redaction.",
+      "Free Reader for viewing and annotating."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Full editing requires a paid license / Creative Cloud.",
+      "Advanced features can be overkill for simple use.",
+      "Adobe ecosystem (Document Cloud) for online services."
     ],
     "use_cases": [
-      "Deliver a project requiring creating, editing and managing PDFs in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Create and edit a PDF (merge, forms, conversion).",
+      "Get a document e-signed.",
+      "OCR a scanned PDF's text."
     ]
   }
 }
