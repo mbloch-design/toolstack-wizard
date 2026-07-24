@@ -2,6 +2,20 @@
   "slug": "google-sheets",
   "bundle_parent": "google-workspace",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Google Sheets — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Sheets" }
+  ],
+  "facts": {
+    "what": "Tableur en ligne, membre de la suite gratuite Google Docs Editors.",
+    "pricing_note": "Gratuit pour les particuliers ; version pro incluse dans Google Workspace (voir la fiche de la suite).",
+    "key_features": [
+      "Collaboration temps réel avec historique des versions",
+      "Formules, graphiques et prise en charge .xlsx/.xls/.csv",
+      "Mode hors ligne (extension Chrome, apps Android/iOS)",
+      "Multi-plateforme (web, mobile, ChromeOS)"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
@@ -18,7 +32,7 @@
     },
     "pros": [
       "Collaboration temps réel avec historique des versions.",
-      "Fonctions et formules suffisantes pour la plupart des besoins.",
+      "Formules, graphiques et compatibilité .xlsx/.csv.",
       "Connexion facile à d'autres services Google.",
       "Accessible depuis un navigateur, sans installation."
     ],
@@ -32,11 +46,7 @@
       "Collecter et analyser des données d'équipe en temps réel.",
       "Partager un tableau de bord relié à Drive."
     ],
-    "relevant_for": [
-      "Petites équipes",
-      "PME sur Google Workspace",
-      "Équipes ops"
-    ]
+    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes ops"]
   },
   "en": {
     "verdict": {
@@ -54,7 +64,7 @@
     },
     "pros": [
       "Real-time collaboration with version history.",
-      "Functions and formulas enough for most needs.",
+      "Formulas, charts and .xlsx/.csv compatibility.",
       "Easy connection to other Google services.",
       "Browser-accessible, no install."
     ],

@@ -2,6 +2,20 @@
   "slug": "google-meet",
   "bundle_parent": "google-workspace",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Google Meet — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Meet" }
+  ],
+  "facts": {
+    "what": "Service de visioconférence de Google, dans le navigateur et via apps mobiles.",
+    "pricing_note": "Modèle freemium ; fonctions avancées (enregistrement, sous-titres, arrière-plans) via Google Workspace (voir la fiche de la suite).",
+    "key_features": [
+      "Réunions vidéo jusqu'à 100 participants (gratuit), 250 en Workspace Enterprise",
+      "Accès navigateur et apps Android/iOS",
+      "Intégration Google Agenda et Gmail (lancement en un clic)",
+      "Enregistrement, sous-titres, arrière-plans virtuels (Workspace)"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
@@ -19,24 +33,20 @@
     "pros": [
       "Lancement d'une réunion en un clic depuis Agenda ou Gmail.",
       "Aucune installation requise côté navigateur.",
-      "Sécurité et gestion des accès centralisées.",
-      "Sous-titres et enregistrement selon l'édition."
+      "Enregistrement, sous-titres et arrière-plans selon l'édition Workspace.",
+      "Sécurité et gestion des accès centralisées."
     ],
     "cons": [
       "Fonctions de webinaire et d'engagement en retrait.",
       "Écosystème d'intégrations tierces limité.",
-      "Dépendance à Google Workspace."
+      "Fonctions avancées réservées à Workspace."
     ],
     "use_cases": [
       "Organiser des réunions d'équipe reliées à l'agenda.",
       "Passer d'un e-mail ou d'un chat à une visio en un clic.",
-      "Enregistrer une réunion pour les absents."
+      "Enregistrer une réunion pour les absents (Workspace)."
     ],
-    "relevant_for": [
-      "Petites équipes",
-      "PME sur Google Workspace",
-      "Équipes distribuées"
-    ]
+    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes distribuées"]
   },
   "en": {
     "verdict": {
@@ -55,18 +65,18 @@
     "pros": [
       "Start a meeting in one click from Calendar or Gmail.",
       "No install needed in the browser.",
-      "Centralised security and access management.",
-      "Captions and recording depending on edition."
+      "Recording, captions and backgrounds depending on Workspace edition.",
+      "Centralised security and access management."
     ],
     "cons": [
       "Webinar and engagement features trail.",
       "Limited third-party integration ecosystem.",
-      "Dependency on Google Workspace."
+      "Advanced features reserved for Workspace."
     ],
     "use_cases": [
       "Run calendar-linked team meetings.",
       "Jump from an email or chat to a video call in one click.",
-      "Record a meeting for absentees."
+      "Record a meeting for absentees (Workspace)."
     ]
   }
 }

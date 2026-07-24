@@ -2,6 +2,20 @@
   "slug": "gmail",
   "bundle_parent": "google-workspace",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Gmail — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Gmail" }
+  ],
+  "facts": {
+    "what": "Service de messagerie web de Google ; version pro (domaine, administration) via Google Workspace.",
+    "pricing_note": "Gmail gratuit (15 Go partagés Drive/Photos) ; version professionnelle incluse dans Google Workspace (voir la fiche de la suite).",
+    "key_features": [
+      "15 Go de stockage gratuit partagés avec Drive et Photos",
+      "Filtrage anti-spam/malware et chiffrement HTTPS",
+      "Recherche puissante, libellés, filtres et conversations groupées",
+      "Version pro (domaine, 99,9 % de disponibilité, support) via Workspace"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
@@ -17,26 +31,22 @@
       "threshold": "Gmail professionnel s'impose quand vous adoptez Google Workspace pour toute l'équipe ; isolé de la suite, l'intérêt par rapport à un webmail classique est limité."
     },
     "pros": [
-      "Messagerie sur votre domaine avec administration centralisée.",
+      "Messagerie sur votre domaine avec administration centralisée (Workspace).",
       "Recherche et filtres très efficaces sur de gros volumes.",
-      "Intégration native avec Agenda, Meet, Drive et Chat.",
-      "Protection anti-spam et sécurité gérées par Google."
+      "Anti-spam et sécurité gérés par Google.",
+      "15 Go gratuits partagés avec Drive et Photos."
     ],
     "cons": [
-      "Dépendance forte à l'écosystème et à la gouvernance des données Google.",
+      "Dépendance à l'écosystème et à la gouvernance des données Google.",
       "Personnalisation de l'interface limitée.",
-      "Peu pertinent en dehors de Google Workspace."
+      "Peu pertinent en dehors de Google Workspace pour l'usage pro."
     ],
     "use_cases": [
       "Doter une équipe d'adresses professionnelles sur son domaine.",
       "Centraliser e-mails, agenda et visioconférence au même endroit.",
       "Gérer la sécurité et les accès mail depuis une console d'admin."
     ],
-    "relevant_for": [
-      "Petites équipes",
-      "PME sur Google Workspace",
-      "Indépendants"
-    ]
+    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Indépendants"]
   },
   "en": {
     "verdict": {
@@ -53,15 +63,15 @@
       "threshold": "Professional Gmail makes sense when you adopt Google Workspace across the team; isolated from the suite, the edge over a plain webmail is limited."
     },
     "pros": [
-      "Email on your domain with centralised administration.",
+      "Email on your domain with centralised administration (Workspace).",
       "Very effective search and filters at high volume.",
-      "Native integration with Calendar, Meet, Drive and Chat.",
-      "Spam protection and security handled by Google."
+      "Spam protection and security handled by Google.",
+      "15 GB free storage shared with Drive and Photos."
     ],
     "cons": [
       "Strong dependency on Google's ecosystem and data governance.",
       "Limited interface customisation.",
-      "Little relevance outside Google Workspace."
+      "Little relevance outside Google Workspace for pro use."
     ],
     "use_cases": [
       "Give a team professional addresses on its domain.",

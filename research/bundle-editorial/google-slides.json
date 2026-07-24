@@ -2,6 +2,20 @@
   "slug": "google-slides",
   "bundle_parent": "google-workspace",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Google Slides — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Slides" }
+  ],
+  "facts": {
+    "what": "Outil de présentation en ligne, membre de la suite gratuite Google Docs Editors.",
+    "pricing_note": "Gratuit pour les particuliers ; version pro incluse dans Google Workspace (voir la fiche de la suite).",
+    "key_features": [
+      "Collaboration temps réel avec historique des versions",
+      "Modèles et thèmes prêts à l'emploi",
+      "Compatibilité PowerPoint (.pptx)",
+      "Multi-plateforme (navigateurs, apps Android/iOS)"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
@@ -19,24 +33,20 @@
     "pros": [
       "Collaboration temps réel sur les présentations.",
       "Partage et diffusion faciles via un lien.",
-      "Intégration avec Drive et les autres éditeurs Google.",
+      "Compatibilité PowerPoint (.pptx).",
       "Modèles et thèmes prêts à l'emploi."
     ],
     "cons": [
       "Animations et effets moins poussés que PowerPoint.",
       "Design avancé limité.",
-      "Dépendance à Google Workspace."
+      "Mode hors ligne perfectible."
     ],
     "use_cases": [
       "Construire une présentation à plusieurs mains.",
       "Partager un support relié à Drive.",
       "Présenter en visioconférence via Meet."
     ],
-    "relevant_for": [
-      "Petites équipes",
-      "PME sur Google Workspace",
-      "Équipes marketing"
-    ]
+    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes marketing"]
   },
   "en": {
     "verdict": {
@@ -55,13 +65,13 @@
     "pros": [
       "Real-time collaboration on presentations.",
       "Easy sharing and delivery via a link.",
-      "Integration with Drive and other Google editors.",
+      "PowerPoint compatibility (.pptx).",
       "Ready-made templates and themes."
     ],
     "cons": [
       "Animations and effects less advanced than PowerPoint.",
       "Limited advanced design.",
-      "Dependency on Google Workspace."
+      "Offline mode is imperfect."
     ],
     "use_cases": [
       "Build a presentation with several contributors.",
