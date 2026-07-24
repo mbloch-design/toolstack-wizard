@@ -1,0 +1,82 @@
+{
+  "slug": "gong",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gong — plateforme de revenue intelligence (site officiel)", "url": "https://www.gong.io/" }
+  ],
+  "facts": {
+    "what": "Plateforme de revenue intelligence : enregistre, transcrit et analyse par IA les appels et réunions commerciales pour dégager des insights (risque de deal, coaching, mentions concurrents, santé du pipeline).",
+    "pricing_model": "Sur devis, non public. Modèle en trois parties : frais de plateforme annuels, licence par utilisateur, et services d'onboarding/implémentation.",
+    "free_tier": { "exists": false, "detail": "Pas de palier gratuit ; tarification entreprise sur devis." },
+    "key_features": [
+      "Enregistrement et transcription des appels commerciaux",
+      "Analyse IA des conversations (insights, risques de deal)",
+      "Coaching des équipes de vente",
+      "Suivi de la santé du pipeline"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe commerciale et voulez analyser vos appels à grande échelle.",
+        "Vous cherchez du coaching data-driven pour vos commerciaux.",
+        "Vous voulez objectiver le risque et la santé de votre pipeline."
+      ],
+      "avoidIf": [
+        "Vous êtes solo ou en très petite équipe.",
+        "Vous voulez un outil au tarif transparent et léger.",
+        "Vous n'avez pas de volume d'appels commerciaux à analyser."
+      ],
+      "threshold": "Gong s'impose pour des équipes commerciales structurées qui veulent industrialiser l'analyse d'appels et le coaching ; pour un solo ou un petit volume, c'est surdimensionné et coûteux."
+    },
+    "pros": [
+      "Analyse IA riche des conversations commerciales.",
+      "Coaching et montée en compétence des équipes.",
+      "Visibilité sur le risque et le pipeline.",
+      "Référence du marché revenue intelligence."
+    ],
+    "cons": [
+      "Tarification non publique et orientée entreprise.",
+      "Frais de plateforme et services d'implémentation en plus des licences.",
+      "Surdimensionné pour les petites structures."
+    ],
+    "use_cases": [
+      "Analyser les appels commerciaux à grande échelle.",
+      "Coacher les commerciaux sur des cas réels.",
+      "Suivre la santé du pipeline et le risque de deal."
+    ],
+    "relevant_for": ["Équipes commerciales", "Directions des ventes", "Scale-ups B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a sales team and want to analyse calls at scale.",
+        "You want data-driven coaching for your reps.",
+        "You want to quantify deal risk and pipeline health."
+      ],
+      "avoidIf": [
+        "You are solo or a very small team.",
+        "You want a transparent, lightweight tool.",
+        "You have no volume of sales calls to analyse."
+      ],
+      "threshold": "Gong makes sense for structured sales teams that want to industrialise call analysis and coaching; for a solo or low volume, it's oversized and costly."
+    },
+    "pros": [
+      "Rich AI analysis of sales conversations.",
+      "Coaching and team skill-building.",
+      "Visibility into risk and pipeline.",
+      "Market reference in revenue intelligence."
+    ],
+    "cons": [
+      "Non-public, enterprise-oriented pricing.",
+      "Platform fees and implementation services on top of licenses.",
+      "Oversized for small organisations."
+    ],
+    "use_cases": [
+      "Analyse sales calls at scale.",
+      "Coach reps on real cases.",
+      "Track pipeline health and deal risk."
+    ]
+  }
+}

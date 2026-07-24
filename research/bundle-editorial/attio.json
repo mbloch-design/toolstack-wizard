@@ -1,0 +1,88 @@
+{
+  "slug": "attio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Attio", "url": "https://attio.com/pricing" }
+  ],
+  "facts": {
+    "what": "CRM moderne, orienté données : modèle de données flexible, synchronisation d'emails/agenda et automatisations, pensé pour les équipes go-to-market.",
+    "pricing_model": "Par siège, avec palier gratuit et facturation mensuelle ou annuelle (annuel ~20 % moins cher).",
+    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 3 sièges, avec automatisations et types d'objets limités." },
+    "plans": [
+      { "name": "Free", "price": "0 €" },
+      { "name": "Plus", "price": "31 €/siège/mois (annuel), 39 € en mensuel" },
+      { "name": "Pro", "price": "74 €/siège/mois (annuel), 93 € en mensuel" },
+      { "name": "Enterprise", "price": "sur devis, facturé annuellement" }
+    ],
+    "key_features": [
+      "Modèle de données personnalisable (objets, attributs)",
+      "Synchronisation email et agenda",
+      "Automatisations et séquences",
+      "Enrichissement de données et rapports"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un CRM flexible qui s'adapte à votre modèle de données.",
+        "Votre équipe go-to-market veut de l'automatisation moderne.",
+        "Vous préférez une prise en main rapide à un CRM lourd à paramétrer."
+      ],
+      "avoidIf": [
+        "Vous cherchez un CRM gratuit pour une grande équipe.",
+        "Vous avez besoin d'un écosystème mature d'intégrations tierces (type Salesforce).",
+        "Vos process exigent des modules verticaux clés en main."
+      ],
+      "threshold": "Attio s'impose quand on veut un CRM souple et rapide à modeler pour une équipe commerciale ; pour un écosystème très établi ou un usage gratuit à grande échelle, un autre CRM est plus indiqué."
+    },
+    "pros": [
+      "Modèle de données très flexible.",
+      "Interface moderne et rapide à prendre en main.",
+      "Automatisations et synchronisation email/agenda.",
+      "Palier gratuit pour démarrer à petite équipe."
+    ],
+    "cons": [
+      "Coût réel variable selon l'usage (crédits, enrichissement, IA).",
+      "Écosystème d'intégrations plus jeune que les CRM historiques.",
+      "Gratuit limité à quelques sièges."
+    ],
+    "use_cases": [
+      "Structurer un pipeline commercial sur mesure.",
+      "Synchroniser emails et contacts automatiquement.",
+      "Automatiser le suivi des deals d'une équipe GTM."
+    ],
+    "relevant_for": ["Startups", "Équipes go-to-market", "Petites équipes commerciales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a flexible CRM that adapts to your data model.",
+        "Your go-to-market team wants modern automation.",
+        "You prefer fast setup over a heavy CRM to configure."
+      ],
+      "avoidIf": [
+        "You need a free CRM for a large team.",
+        "You need a mature third-party integration ecosystem (like Salesforce).",
+        "Your processes require ready-made vertical modules."
+      ],
+      "threshold": "Attio makes sense when you want a flexible, quick-to-model CRM for a sales team; for a very established ecosystem or free use at scale, another CRM fits better."
+    },
+    "pros": [
+      "Very flexible data model.",
+      "Modern, fast interface.",
+      "Automations and email/calendar sync.",
+      "Free tier to start with a small team."
+    ],
+    "cons": [
+      "Real cost varies with usage (credits, enrichment, AI).",
+      "Younger integration ecosystem than legacy CRMs.",
+      "Free tier limited to a few seats."
+    ],
+    "use_cases": [
+      "Structure a custom sales pipeline.",
+      "Sync emails and contacts automatically.",
+      "Automate deal tracking for a GTM team."
+    ]
+  }
+}

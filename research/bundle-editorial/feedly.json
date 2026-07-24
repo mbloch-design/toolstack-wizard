@@ -1,0 +1,89 @@
+{
+  "slug": "feedly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Feedly", "url": "https://feedly.com/i/pricing" },
+    { "label": "Feedly — différences entre les plans (documentation officielle)", "url": "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams" }
+  ],
+  "facts": {
+    "what": "Lecteur de flux RSS et outil de veille : agrège sources, blogs et actualités en un seul endroit, avec des « AI Feeds » pour filtrer et prioriser l'information.",
+    "pricing_model": "Palier gratuit puis abonnements Pro / Pro+ (mensuel ou annuel), et offres entreprise (Market Intelligence) sur devis.",
+    "free_tier": { "exists": true, "detail": "Gratuit : limité à 100 sources et 3 feeds, sans fonctions IA." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (100 sources, 3 feeds, sans IA)" },
+      { "name": "Pro", "price": "~6 $/mois en annuel (72 $/an)" },
+      { "name": "Pro+", "price": "~8,25 $/mois en annuel (99 $/an), fonctions IA" },
+      { "name": "Enterprise / Market Intelligence", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Agrégation de flux RSS et de sources d'actualité",
+      "AI Feeds pour filtrer et prioriser l'information",
+      "Organisation par dossiers et tableaux",
+      "Veille concurrentielle et marché (offres entreprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous suivez beaucoup de sources et voulez tout centraliser.",
+        "Vous faites de la veille et voulez filtrer le bruit avec l'IA.",
+        "Vous préférez les flux RSS aux algorithmes des réseaux sociaux."
+      ],
+      "avoidIf": [
+        "Vous suivez seulement quelques sites (le gratuit très limité suffit à peine).",
+        "Vous ne consultez l'actualité que ponctuellement.",
+        "Vous ne voulez pas d'abonnement pour les fonctions utiles."
+      ],
+      "threshold": "Feedly s'impose pour une veille régulière sur de nombreuses sources ; pour un suivi occasionnel de quelques sites, le gratuit très limité ou un simple lecteur RSS suffit."
+    },
+    "pros": [
+      "Centralise de nombreuses sources en un seul flux.",
+      "AI Feeds pour prioriser l'information.",
+      "Organisation claire par dossiers.",
+      "Offres entreprise pour la veille marché."
+    ],
+    "cons": [
+      "Gratuit très limité (100 sources, 3 feeds, sans IA).",
+      "Fonctions IA réservées aux plans payants.",
+      "Offres entreprise nettement plus chères."
+    ],
+    "use_cases": [
+      "Centraliser sa veille sectorielle.",
+      "Filtrer le bruit d'actualité avec l'IA.",
+      "Suivre concurrents et tendances marché."
+    ],
+    "relevant_for": ["Veilleurs et analystes", "Équipes marketing", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You follow many sources and want to centralise everything.",
+        "You do monitoring and want AI to filter the noise.",
+        "You prefer RSS feeds over social media algorithms."
+      ],
+      "avoidIf": [
+        "You follow only a few sites (the very limited free tier barely covers it).",
+        "You only check news occasionally.",
+        "You don't want a subscription for the useful features."
+      ],
+      "threshold": "Feedly makes sense for regular monitoring across many sources; for occasional tracking of a few sites, the very limited free tier or a plain RSS reader suffices."
+    },
+    "pros": [
+      "Centralises many sources into one feed.",
+      "AI Feeds to prioritise information.",
+      "Clear folder-based organisation.",
+      "Enterprise offering for market intelligence."
+    ],
+    "cons": [
+      "Very limited free tier (100 sources, 3 feeds, no AI).",
+      "AI features reserved for paid plans.",
+      "Enterprise offering is significantly pricier."
+    ],
+    "use_cases": [
+      "Centralise industry monitoring.",
+      "Filter news noise with AI.",
+      "Track competitors and market trends."
+    ]
+  }
+}

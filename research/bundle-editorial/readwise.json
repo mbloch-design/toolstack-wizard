@@ -1,0 +1,86 @@
+{
+  "slug": "readwise",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Readwise", "url": "https://readwise.io/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de lecture différée et de mémorisation : centralise articles, PDF, newsletters, flux RSS et surlignages, avec révision quotidienne et export vers Notion/Obsidian. Inclut l'app de lecture Reader.",
+    "pricing_model": "Abonnement (essai gratuit 30 jours, pas de palier gratuit permanent), facturation mensuelle ou annuelle.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours ; abonnement requis ensuite. Réduction 50 % étudiants/universitaires." },
+    "plans": [
+      { "name": "Readwise Lite", "price": "5,59 $/mois (annuel) — révision des surlignages, sans l'app Reader" },
+      { "name": "Readwise (complet)", "price": "9,99 $/mois (annuel), 12,99 $ en mensuel — inclut l'app Reader et les exports" }
+    ],
+    "key_features": [
+      "Boîte de réception unique (articles, PDF, newsletters, RSS, EPUB)",
+      "Surlignage et révision quotidienne (spaced repetition)",
+      "Export vers Notion, Obsidian et autres",
+      "App de lecture Reader incluse (plan complet)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous lisez beaucoup et voulez retenir ce que vous surlignez.",
+        "Vous centralisez articles, PDF et newsletters dans une seule boîte.",
+        "Vous exportez vos notes vers Notion ou Obsidian."
+      ],
+      "avoidIf": [
+        "Vous cherchez un simple read-later gratuit.",
+        "Vous ne relisez jamais vos surlignages.",
+        "Vous ne voulez pas d'abonnement récurrent."
+      ],
+      "threshold": "Readwise s'impose pour qui veut vraiment capitaliser sur ses lectures (surligner, réviser, exporter) ; pour un simple « lire plus tard » ponctuel, une app gratuite suffit."
+    },
+    "pros": [
+      "Centralise lectures et surlignages au même endroit.",
+      "Révision quotidienne pour mémoriser.",
+      "Exports vers Notion, Obsidian et autres.",
+      "App de lecture Reader intégrée."
+    ],
+    "cons": [
+      "Pas de palier gratuit permanent.",
+      "Abonnement requis après l'essai.",
+      "Sur-dimensionné pour un usage occasionnel."
+    ],
+    "use_cases": [
+      "Centraliser et annoter ses lectures.",
+      "Réviser ses surlignages pour les retenir.",
+      "Exporter ses notes vers un outil de PKM."
+    ],
+    "relevant_for": ["Chercheurs et étudiants", "Créateurs de contenu", "Adeptes du PKM"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You read a lot and want to retain what you highlight.",
+        "You centralise articles, PDFs and newsletters in one inbox.",
+        "You export notes to Notion or Obsidian."
+      ],
+      "avoidIf": [
+        "You want a simple free read-later app.",
+        "You never revisit your highlights.",
+        "You don't want a recurring subscription."
+      ],
+      "threshold": "Readwise makes sense for people who want to capitalise on their reading (highlight, review, export); for a simple occasional read-later, a free app suffices."
+    },
+    "pros": [
+      "Centralises reading and highlights in one place.",
+      "Daily review to help retention.",
+      "Exports to Notion, Obsidian and more.",
+      "Built-in Reader read-later app."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Subscription required after the trial.",
+      "Overkill for occasional use."
+    ],
+    "use_cases": [
+      "Centralise and annotate your reading.",
+      "Review highlights to remember them.",
+      "Export notes to a PKM tool."
+    ]
+  }
+}
