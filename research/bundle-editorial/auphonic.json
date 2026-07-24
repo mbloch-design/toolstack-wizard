@@ -1,0 +1,87 @@
+{
+  "slug": "auphonic",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Auphonic — post-production audio automatisée (site officiel)", "url": "https://auphonic.com/" }
+  ],
+  "facts": {
+    "what": "Service web de post-production audio automatisée : nivellement intelligent, réduction de bruit et de réverbération, normalisation du loudness et encodage, pour podcasts, audiobooks et enregistrements.",
+    "pricing_model": "Palier gratuit mensuel puis abonnements ou packs d'heures.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 2 heures de traitement par mois." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (2 h/mois)" },
+      { "name": "S Recurring", "price": "11 $/mois (9 h)" },
+      { "name": "XL Recurring", "price": "99 $/mois (100 h)" }
+    ],
+    "key_features": [
+      "Nivellement et normalisation du loudness",
+      "Réduction de bruit et de réverbération",
+      "Suppression de silences et de mots de remplissage",
+      "Équilibrage multipiste et encodage automatique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez automatiser la finition audio de vos podcasts.",
+        "Vous cherchez un rendu loudness aux normes sans compétences pointues.",
+        "Vous traitez de l'audio régulièrement."
+      ],
+      "avoidIf": [
+        "Vous voulez un contrôle manuel fin du mixage.",
+        "Vous n'avez qu'un fichier ponctuel à traiter.",
+        "Vous utilisez déjà un DAW avec vos propres chaînes de traitement."
+      ],
+      "threshold": "Auphonic s'impose pour automatiser la post-prod audio à volume ; pour un mixage manuel précis ou un besoin unique, un éditeur audio suffit."
+    },
+    "pros": [
+      "Finition audio automatique aux normes.",
+      "Réduction de bruit et de réverbération.",
+      "Palier gratuit mensuel.",
+      "Simple, sans compétences techniques."
+    ],
+    "cons": [
+      "Contrôle manuel limité.",
+      "Facturation à l'heure de traitement.",
+      "Redondant si on a déjà une chaîne DAW."
+    ],
+    "use_cases": [
+      "Nettoyer et normaliser un épisode de podcast.",
+      "Automatiser la finition d'audiobooks.",
+      "Uniformiser le loudness d'une série d'enregistrements."
+    ],
+    "relevant_for": ["Podcasteurs", "Créateurs audio", "Producteurs d'audiobooks"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to automate audio finishing for your podcasts.",
+        "You want standards-compliant loudness without deep skills.",
+        "You process audio regularly."
+      ],
+      "avoidIf": [
+        "You want fine manual mixing control.",
+        "You only have a one-off file to process.",
+        "You already use a DAW with your own processing chains."
+      ],
+      "threshold": "Auphonic makes sense to automate audio post-production at volume; for precise manual mixing or a one-off need, an audio editor suffices."
+    },
+    "pros": [
+      "Automatic, standards-compliant finishing.",
+      "Noise and reverb reduction.",
+      "Monthly free tier.",
+      "Simple, no technical skills needed."
+    ],
+    "cons": [
+      "Limited manual control.",
+      "Billed by processing hours.",
+      "Redundant if you already have a DAW chain."
+    ],
+    "use_cases": [
+      "Clean and normalise a podcast episode.",
+      "Automate audiobook finishing.",
+      "Even out loudness across recordings."
+    ]
+  }
+}

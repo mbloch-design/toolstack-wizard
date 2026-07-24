@@ -1,0 +1,87 @@
+{
+  "slug": "buffer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Buffer", "url": "https://buffer.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil simple de planification et de gestion des réseaux sociaux : programmation de posts, analytics et collaboration, facturé par canal (pas par utilisateur).",
+    "pricing_model": "Palier gratuit puis abonnements par canal social (mensuel/annuel), avec dégressivité selon le nombre de canaux.",
+    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 3 canaux, 10 posts programmés par canal, assistant IA, analytics de base." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (3 canaux)" },
+      { "name": "Essentials", "price": "6 $/canal/mois (dégressif au volume)" },
+      { "name": "Team", "price": "12 $/canal/mois (dégressif au volume)" }
+    ],
+    "key_features": [
+      "Programmation de posts multi-réseaux",
+      "Analytics de performance",
+      "Assistant IA de rédaction",
+      "Facturation par canal, pas par utilisateur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez programmer vos posts simplement.",
+        "Vous gérez plusieurs comptes sans multiplier les sièges.",
+        "Vous débutez avec un besoin de planification léger."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un social management très avancé (écoute, CRM social).",
+        "Vous gérez énormément de canaux (le coût par canal grimpe).",
+        "Vous voulez de la publication vidéo/collaboration poussée."
+      ],
+      "threshold": "Buffer s'impose pour de la programmation sociale simple et multi-comptes ; pour du social management avancé, un outil plus complet convient mieux."
+    },
+    "pros": [
+      "Simple et rapide à prendre en main.",
+      "Facturation par canal, pas par utilisateur.",
+      "Palier gratuit correct.",
+      "Assistant IA inclus."
+    ],
+    "cons": [
+      "Coût qui grimpe avec le nombre de canaux.",
+      "Fonctions avancées limitées.",
+      "Moins d'écoute/CRM social que les suites complètes."
+    ],
+    "use_cases": [
+      "Programmer une semaine de posts multi-réseaux.",
+      "Gérer plusieurs comptes clients.",
+      "Suivre la performance de base des publications."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Community managers", "Petites entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to schedule posts simply.",
+        "You manage several accounts without adding seats.",
+        "You're starting with light scheduling needs."
+      ],
+      "avoidIf": [
+        "You need very advanced social management (listening, social CRM).",
+        "You manage a huge number of channels (per-channel cost adds up).",
+        "You want advanced video publishing/collaboration."
+      ],
+      "threshold": "Buffer makes sense for simple, multi-account social scheduling; for advanced social management, a fuller tool fits better."
+    },
+    "pros": [
+      "Simple and quick to learn.",
+      "Billed per channel, not per user.",
+      "Decent free tier.",
+      "Built-in AI assistant."
+    ],
+    "cons": [
+      "Cost grows with the number of channels.",
+      "Limited advanced features.",
+      "Less listening/social CRM than full suites."
+    ],
+    "use_cases": [
+      "Schedule a week of multi-network posts.",
+      "Manage several client accounts.",
+      "Track basic post performance."
+    ]
+  }
+}

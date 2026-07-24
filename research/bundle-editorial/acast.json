@@ -1,0 +1,86 @@
+{
+  "slug": "acast",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Acast — hébergement et monétisation de podcasts (site officiel)", "url": "https://www.acast.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme mondiale d'hébergement et de monétisation de podcasts : distribution, insertion publicitaire dynamique, mise en relation avec des annonceurs et analytics.",
+    "pricing_model": "Palier gratuit puis abonnements ; marketplace publicitaire en partage de revenus.",
+    "free_tier": { "exists": true, "detail": "Gratuit limité (ex. quelques épisodes) sauf activation de la monétisation. Partage de revenus sur la pub (Acast prélève une part)." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (limité)" },
+      { "name": "Payant", "price": "~15–30 $/mois selon les fonctions (montants sur le site officiel)" }
+    ],
+    "key_features": [
+      "Hébergement et distribution multi-plateformes",
+      "Insertion publicitaire dynamique",
+      "Marketplace annonceurs (partage de revenus)",
+      "Analytics d'audience"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez héberger et monétiser un podcast.",
+        "Vous cherchez de la pub dynamique et une marketplace annonceurs.",
+        "Vous avez une audience suffisante pour la monétisation."
+      ],
+      "avoidIf": [
+        "Vous débutez avec très peu d'écoutes.",
+        "Vous ne visez pas la monétisation publicitaire.",
+        "Vous voulez un hébergeur au tarif fixe sans partage de revenus."
+      ],
+      "threshold": "Acast s'impose pour un podcast qui vise la monétisation par la pub à l'échelle ; pour un débutant sans audience, un hébergeur simple suffit."
+    },
+    "pros": [
+      "Monétisation publicitaire intégrée.",
+      "Insertion dynamique de pub.",
+      "Distribution multi-plateformes.",
+      "Marketplace annonceurs."
+    ],
+    "cons": [
+      "Partage de revenus sur la pub.",
+      "Gratuit limité.",
+      "Pertinent surtout avec une audience établie."
+    ],
+    "use_cases": [
+      "Héberger et distribuer un podcast.",
+      "Monétiser via la pub dynamique.",
+      "Accéder à des annonceurs via la marketplace."
+    ],
+    "relevant_for": ["Podcasteurs", "Studios audio", "Créateurs cherchant la monétisation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to host and monetise a podcast.",
+        "You want dynamic ads and an advertiser marketplace.",
+        "You have enough audience for monetisation."
+      ],
+      "avoidIf": [
+        "You're starting with very few listens.",
+        "You don't aim for ad monetisation.",
+        "You want a flat-fee host with no revenue share."
+      ],
+      "threshold": "Acast makes sense for a podcast aiming at ad monetisation at scale; for a beginner with no audience, a simple host suffices."
+    },
+    "pros": [
+      "Built-in ad monetisation.",
+      "Dynamic ad insertion.",
+      "Multi-platform distribution.",
+      "Advertiser marketplace."
+    ],
+    "cons": [
+      "Revenue share on ads.",
+      "Limited free tier.",
+      "Mostly relevant with an established audience."
+    ],
+    "use_cases": [
+      "Host and distribute a podcast.",
+      "Monetise via dynamic ads.",
+      "Access advertisers via the marketplace."
+    ]
+  }
+}

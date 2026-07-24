@@ -1,0 +1,86 @@
+{
+  "slug": "buzzsprout",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Buzzsprout", "url": "https://www.buzzsprout.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'hébergement de podcasts orientée débutants : publication, génération du flux RSS et distribution vers Apple Podcasts, Spotify et les grands annuaires, sans configuration technique.",
+    "pricing_model": "Palier gratuit (limité et éphémère) puis abonnements selon les heures d'upload mensuelles (mensuel/annuel).",
+    "free_tier": { "exists": true, "detail": "Gratuit : 2 h d'upload/mois, mais les épisodes sont supprimés après 90 jours (pour tester, pas pour publier durablement)." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (2 h/mois, épisodes supprimés à 90 j)" },
+      { "name": "Payant", "price": "à partir de ~19 $/mois (4 h) jusqu'à 79 $/mois (35 h), stockage illimité" }
+    ],
+    "key_features": [
+      "Hébergement et flux RSS automatique",
+      "Distribution vers Apple Podcasts, Spotify, etc.",
+      "Site web de podcast inclus",
+      "Analytics d'audience"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous débutez un podcast et voulez publier sans technique.",
+        "Vous voulez une distribution simple vers les annuaires.",
+        "Vous cherchez un site de podcast clé en main."
+      ],
+      "avoidIf": [
+        "Vous voulez héberger durablement sans payer (le gratuit supprime les épisodes).",
+        "Vous avez besoin de monétisation publicitaire avancée.",
+        "Vous produisez de très gros volumes d'heures."
+      ],
+      "threshold": "Buzzsprout s'impose pour lancer et publier un podcast simplement ; pour de la monétisation pub avancée, une plateforme orientée revenus convient mieux."
+    },
+    "pros": [
+      "Très simple pour débuter.",
+      "Distribution automatique vers les annuaires.",
+      "Site de podcast et analytics inclus.",
+      "Stockage illimité sur les plans payants."
+    ],
+    "cons": [
+      "Gratuit éphémère (suppression à 90 j).",
+      "Facturation liée aux heures d'upload.",
+      "Monétisation moins poussée que des plateformes dédiées."
+    ],
+    "use_cases": [
+      "Publier et distribuer un premier podcast.",
+      "Obtenir un site de podcast prêt à l'emploi.",
+      "Suivre l'audience de ses épisodes."
+    ],
+    "relevant_for": ["Podcasteurs débutants", "Créateurs de contenu", "Petites équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting a podcast and want to publish without tech.",
+        "You want simple distribution to directories.",
+        "You want a ready-made podcast website."
+      ],
+      "avoidIf": [
+        "You want durable hosting for free (the free tier deletes episodes).",
+        "You need advanced ad monetisation.",
+        "You produce very large upload volumes."
+      ],
+      "threshold": "Buzzsprout makes sense to launch and publish a podcast simply; for advanced ad monetisation, a revenue-focused platform fits better."
+    },
+    "pros": [
+      "Very simple to start.",
+      "Automatic distribution to directories.",
+      "Podcast website and analytics included.",
+      "Unlimited storage on paid plans."
+    ],
+    "cons": [
+      "Ephemeral free tier (90-day deletion).",
+      "Billing tied to upload hours.",
+      "Less advanced monetisation than dedicated platforms."
+    ],
+    "use_cases": [
+      "Publish and distribute a first podcast.",
+      "Get a ready-made podcast website.",
+      "Track episode audience."
+    ]
+  }
+}

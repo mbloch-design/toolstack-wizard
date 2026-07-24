@@ -1,0 +1,87 @@
+{
+  "slug": "ableton-live",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ableton — éditions et tarifs (site officiel)", "url": "https://www.ableton.com/en/shop/live/" }
+  ],
+  "facts": {
+    "what": "Station de travail audio numérique (DAW) réputée pour la production électronique et le live, avec sa Session View non linéaire (clips/scènes) en plus de l'Arrangement View classique.",
+    "pricing_model": "Licence perpétuelle par édition (achat unique), option rent-to-own sur l'édition haute. Trois éditions : Intro, Standard, Suite.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ; pas de version gratuite permanente. Achat de licence par édition." },
+    "plans": [
+      { "name": "Intro", "price": "99 $ (16 pistes/scènes, pour débuter)" },
+      { "name": "Standard", "price": "349 $ (sans limites, plus d'outils)" },
+      { "name": "Suite", "price": "749 $ (tout inclus + Max for Live)" }
+    ],
+    "key_features": [
+      "Session View non linéaire (clips, scènes) pour le live",
+      "Arrangement View timeline classique",
+      "Vaste banque d'instruments, effets et boucles",
+      "Max for Live (Suite) pour le sound design avancé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez de la musique électronique ou jouez en live.",
+        "Vous aimez travailler par clips et improvisation (Session View).",
+        "Vous voulez un DAW mature avec une grande banque de sons."
+      ],
+      "avoidIf": [
+        "Vous voulez un DAW gratuit.",
+        "Vous faites surtout de l'enregistrement studio linéaire classique.",
+        "Un usage très ponctuel ne justifie pas l'achat."
+      ],
+      "threshold": "Ableton Live s'impose pour la production électronique et la performance live ; pour un enregistrement studio ponctuel ou gratuit, un autre DAW convient mieux."
+    },
+    "pros": [
+      "Session View unique pour le live et l'improvisation.",
+      "Banque d'instruments et d'effets très fournie.",
+      "Licence perpétuelle (pas d'abonnement).",
+      "Max for Live pour le sound design (Suite)."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Édition Suite au tarif élevé.",
+      "Fonctions bridées sur l'édition Intro."
+    ],
+    "use_cases": [
+      "Produire un morceau électronique de A à Z.",
+      "Préparer et jouer un set en live.",
+      "Concevoir des sons avec Max for Live."
+    ],
+    "relevant_for": ["Producteurs de musique", "DJ / live performers", "Sound designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce electronic music or perform live.",
+        "You like working with clips and improvisation (Session View).",
+        "You want a mature DAW with a large sound library."
+      ],
+      "avoidIf": [
+        "You want a free DAW.",
+        "You mostly do classic linear studio recording.",
+        "Very occasional use doesn't justify the purchase."
+      ],
+      "threshold": "Ableton Live makes sense for electronic production and live performance; for occasional or free studio recording, another DAW fits better."
+    },
+    "pros": [
+      "Unique Session View for live and improvisation.",
+      "Very rich instrument and effects library.",
+      "Perpetual license (no subscription).",
+      "Max for Live for sound design (Suite)."
+    ],
+    "cons": [
+      "No free version.",
+      "Suite edition is pricey.",
+      "Features limited on the Intro edition."
+    ],
+    "use_cases": [
+      "Produce an electronic track end to end.",
+      "Prepare and play a live set.",
+      "Design sounds with Max for Live."
+    ]
+  }
+}

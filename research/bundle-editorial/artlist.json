@@ -1,0 +1,86 @@
+{
+  "slug": "artlist",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Artlist — musique et assets sous licence (site officiel)", "url": "https://artlist.io/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque par abonnement de musique et d'effets sonores sous licence (et, sur les plans supérieurs, stock vidéo, templates et plugins), avec licence commerciale et perpétuelle.",
+    "pricing_model": "Abonnement annuel (mensuel possible avec surcoût). Licence perpétuelle : les morceaux téléchargés restent licenciés à vie, même après résiliation.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; abonnement (essai possible). Licence commerciale incluse sur tous les plans." },
+    "plans": [
+      { "name": "Music & SFX Unlimited", "price": "~16,60 $/mois (annuel)" },
+      { "name": "Max (avec stock vidéo, templates, IA)", "price": "~33,25 $/mois (annuel)" }
+    ],
+    "key_features": [
+      "Musique et SFX sous licence commerciale",
+      "Licence perpétuelle (usage garanti après résiliation)",
+      "Stock vidéo, templates et plugins (Max)",
+      "Outils IA (image, vidéo, voix) sur Max"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de musique/SFX sous licence pour vos contenus.",
+        "Vous voulez une licence commerciale claire et perpétuelle.",
+        "Vous produisez des vidéos régulièrement."
+      ],
+      "avoidIf": [
+        "Vous avez un besoin unique et ponctuel.",
+        "Vous cherchez de la musique gratuite libre de droits.",
+        "Vous n'utilisez jamais de musique sous licence."
+      ],
+      "threshold": "Artlist s'impose pour qui utilise régulièrement de la musique/vidéo sous licence ; pour un besoin unique, un achat à la piste suffit."
+    },
+    "pros": [
+      "Licence commerciale et perpétuelle.",
+      "Grande bibliothèque musique + SFX.",
+      "Stock vidéo et templates (Max).",
+      "Usage garanti après résiliation."
+    ],
+    "cons": [
+      "Facturation surtout annuelle.",
+      "Pas de plan gratuit.",
+      "Plans Max plus chers."
+    ],
+    "use_cases": [
+      "Sonoriser des vidéos avec de la musique licenciée.",
+      "Accéder à du stock vidéo et des templates.",
+      "Sécuriser la licence commerciale de ses contenus."
+    ],
+    "relevant_for": ["Créateurs vidéo", "Monteurs", "Agences de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need licensed music/SFX for your content.",
+        "You want a clear, perpetual commercial license.",
+        "You produce videos regularly."
+      ],
+      "avoidIf": [
+        "You have a single one-off need.",
+        "You want free royalty-free music.",
+        "You never use licensed music."
+      ],
+      "threshold": "Artlist makes sense for regular use of licensed music/video; for a one-off need, a per-track purchase suffices."
+    },
+    "pros": [
+      "Commercial, perpetual license.",
+      "Large music + SFX library.",
+      "Stock video and templates (Max).",
+      "Usage guaranteed after cancellation."
+    ],
+    "cons": [
+      "Mostly annual billing.",
+      "No free plan.",
+      "Max plans are pricier."
+    ],
+    "use_cases": [
+      "Score videos with licensed music.",
+      "Access stock video and templates.",
+      "Secure the commercial license of your content."
+    ]
+  }
+}

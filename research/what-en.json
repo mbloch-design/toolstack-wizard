@@ -41,5 +41,11 @@
   "teachable": "Platform to create and sell online courses, coaching and digital products, with built-in sales pages and payments.",
   "teamwork": "Project management software for agencies and client-service teams: time tracking, invoicing, per-project profitability and multiple views (lists, boards, Gantt).",
   "wrike": "Project management and collaborative work software for teams and enterprises: tasks, multiple views (Kanban, Gantt, tables), automations and reporting.",
-  "tiktok": "Short-form video platform driven by a discovery algorithm: create, edit in-app (sounds, effects, captions) and publish, with strong organic-reach potential. Business side via TikTok for Business / TikTok Ads."
+  "tiktok": "Short-form video platform driven by a discovery algorithm: create, edit in-app (sounds, effects, captions) and publish, with strong organic-reach potential. Business side via TikTok for Business / TikTok Ads.",
+  "ableton-live": "Digital audio workstation (DAW) known for electronic production and live performance, with its non-linear Session View (clips/scenes) alongside a classic Arrangement View.",
+  "acast": "Global podcast hosting and monetisation platform: distribution, dynamic ad insertion, advertiser marketplace and audience analytics.",
+  "artlist": "Subscription library of licensed music and sound effects (plus stock video, templates and plugins on higher plans), with a commercial, perpetual license.",
+  "auphonic": "Automated audio post-production web service: intelligent leveling, noise and reverb reduction, loudness normalisation and encoding for podcasts and audiobooks.",
+  "buffer": "Simple social media scheduling and management tool: post scheduling, analytics and collaboration, billed per channel rather than per user.",
+  "buzzsprout": "Beginner-friendly podcast hosting: publishing, automatic RSS feed and distribution to Apple Podcasts, Spotify and major directories, with no technical setup."
 }
