@@ -1,0 +1,88 @@
+{
+  "slug": "epidemic-sound",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Epidemic Sound — tarifs et licences (site officiel)", "url": "https://www.epidemicsound.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de musique et d'effets sonores libres de droits par abonnement : tant que l'abonnement est actif, l'utilisateur peut télécharger et utiliser les pistes dans ses vidéos et podcasts, y compris monétisés, sans redevance supplémentaire.",
+    "what_en": "Subscription library of royalty-free music and sound effects: as long as the subscription is active, users can download and use tracks in their videos and podcasts, including monetized ones, with no extra royalties.",
+    "pricing_model": "Abonnement mensuel ou annuel par palier (Personal, Commercial, Enterprise).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; pas de version gratuite permanente. Licence liée à l'abonnement actif." },
+    "plans": [
+      { "name": "Personal", "price": "à partir de 9 $/mois (~6 $/mois en annuel)" },
+      { "name": "Commercial", "price": "à partir de 49 $/mois" },
+      { "name": "Enterprise", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Téléchargements illimités de musique et d'effets sonores",
+      "Licences pour réseaux sociaux, podcasts et web",
+      "Monétisation autorisée selon le plan",
+      "Recherche par ambiance, genre, instrument et BPM"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez régulièrement des vidéos ou podcasts monétisés.",
+        "Vous voulez éviter les revendications de droits sur YouTube.",
+        "Vous avez besoin d'un large catalogue renouvelé souvent."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'une seule piste ponctuelle.",
+        "Vous voulez posséder définitivement la musique achetée.",
+        "Votre production ne justifie pas un abonnement continu."
+      ],
+      "threshold": "Epidemic Sound se justifie pour une production régulière et monétisée ; pour un besoin unique, une licence à la piste est plus économique."
+    },
+    "pros": [
+      "Catalogue vaste et régulièrement enrichi.",
+      "Pas de revendication de droits tant que l'abonnement est actif.",
+      "Licences claires pour réseaux sociaux et podcasts.",
+      "Recherche fine par ambiance et instrument."
+    ],
+    "cons": [
+      "Les droits d'usage dépendent d'un abonnement actif.",
+      "Pas de version gratuite permanente.",
+      "Le plan commercial est nettement plus cher que le personnel."
+    ],
+    "use_cases": [
+      "Sonoriser des vidéos YouTube ou TikTok sans risque de copyright.",
+      "Habiller un podcast en musique et effets.",
+      "Fournir des pistes libres de droits pour des clients."
+    ],
+    "relevant_for": ["Créateurs vidéo", "Podcasteurs", "Monteurs / freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly publish monetized videos or podcasts.",
+        "You want to avoid copyright claims on YouTube.",
+        "You need a large, frequently refreshed catalog."
+      ],
+      "avoidIf": [
+        "You only need a single one-off track.",
+        "You want to own the purchased music permanently.",
+        "Your output doesn't justify an ongoing subscription."
+      ],
+      "threshold": "Epidemic Sound makes sense for regular, monetized production; for a one-time need, a per-track license is cheaper."
+    },
+    "pros": [
+      "Large, regularly expanded catalog.",
+      "No copyright claims while the subscription is active.",
+      "Clear licenses for social media and podcasts.",
+      "Fine search by mood and instrument."
+    ],
+    "cons": [
+      "Usage rights depend on an active subscription.",
+      "No permanent free version.",
+      "The commercial plan is markedly pricier than personal."
+    ],
+    "use_cases": [
+      "Score YouTube or TikTok videos without copyright risk.",
+      "Add music and effects to a podcast.",
+      "Supply royalty-free tracks for clients."
+    ]
+  }
+}

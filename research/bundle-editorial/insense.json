@@ -1,0 +1,88 @@
+{
+  "slug": "insense",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Insense — tarifs (site officiel)", "url": "https://insense.pro/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'influence et de contenu généré par les créateurs (UGC) qui connecte les marques à des créateurs vérifiés pour produire des vidéos et lancer des publicités sociales (whitelisting Instagram/Facebook).",
+    "what_en": "Influencer and user-generated-content (UGC) platform connecting brands with vetted creators to produce videos and run social ads (Instagram/Facebook whitelisting).",
+    "pricing_model": "Abonnement mensuel pour les marques, souvent facturé au trimestre ; paiements des créateurs et frais de marketplace en sus.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite permanente ; formules payantes pour les marques, budgets créateurs séparés." },
+    "plans": [
+      { "name": "UGC + Creator Ads", "price": "à partir de 450 $/mois (350 $/mois en annuel), facturé au trimestre" },
+      { "name": "Advanced", "price": "1 300 $/mois (1 000 $/mois en annuel), avec manager dédié" },
+      { "name": "Frais marketplace", "price": "7 % à 20 % sur les paiements créateurs selon le plan" }
+    ],
+    "key_features": [
+      "Marketplace de créateurs UGC vérifiés",
+      "Gestion des collaborations et briefs créateurs",
+      "Whitelisting pour publicités Instagram / Facebook",
+      "Suivi des campagnes et livraison des contenus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une marque e-commerce ou DTC en croissance.",
+        "Vous voulez produire du contenu UGC à l'échelle.",
+        "Vous exploitez le whitelisting pour vos publicités sociales."
+      ],
+      "avoidIf": [
+        "Vous êtes freelance ou avez un budget marketing serré.",
+        "Vous avez besoin d'un seul contenu ponctuel.",
+        "Vous ne faites pas de publicité sociale payante."
+      ],
+      "threshold": "Insense convient aux marques qui industrialisent l'UGC et les publicités sociales ; pour un besoin ponctuel ou un petit budget, une marketplace à la pièce suffit."
+    },
+    "pros": [
+      "Accès à un large vivier de créateurs vérifiés.",
+      "Whitelisting intégré pour les publicités sociales.",
+      "Gestion des briefs et collaborations centralisée.",
+      "Formules avec accompagnement dédié."
+    ],
+    "cons": [
+      "Pas d'offre gratuite.",
+      "Ticket d'entrée élevé pour les petites structures.",
+      "Frais de marketplace en plus des paiements créateurs."
+    ],
+    "use_cases": [
+      "Produire des vidéos UGC pour des publicités.",
+      "Lancer des campagnes avec whitelisting.",
+      "Renouveler régulièrement ses créas sociales."
+    ],
+    "relevant_for": ["Marques e-commerce / DTC", "Équipes performance / paid social", "Agences marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a growing e-commerce or DTC brand.",
+        "You want to produce UGC content at scale.",
+        "You use whitelisting for your social ads."
+      ],
+      "avoidIf": [
+        "You're a freelancer or on a tight marketing budget.",
+        "You just need a single one-off piece of content.",
+        "You don't run paid social advertising."
+      ],
+      "threshold": "Insense fits brands industrializing UGC and social ads; for one-off needs or a small budget, a pay-per-piece marketplace is enough."
+    },
+    "pros": [
+      "Access to a large pool of vetted creators.",
+      "Built-in whitelisting for social ads.",
+      "Centralized brief and collaboration management.",
+      "Plans with dedicated support."
+    ],
+    "cons": [
+      "No free tier.",
+      "High entry point for small teams.",
+      "Marketplace fees on top of creator payments."
+    ],
+    "use_cases": [
+      "Produce UGC videos for ads.",
+      "Launch campaigns with whitelisting.",
+      "Regularly refresh social creatives."
+    ]
+  }
+}

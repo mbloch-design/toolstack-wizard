@@ -1,0 +1,87 @@
+{
+  "slug": "authoredup",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "AuthoredUp — site officiel", "url": "https://authoredup.com" }
+  ],
+  "facts": {
+    "what": "Outil de création et d'analyse de contenu pour LinkedIn (extension Chrome + web) : mise en forme enrichie, aperçu des posts, brouillons, bibliothèque d'accroches et statistiques détaillées.",
+    "what_en": "LinkedIn content creation and analytics tool (Chrome extension + web): rich formatting, post previews, drafts, a hooks library and detailed analytics.",
+    "pricing_model": "Abonnement mensuel (individuel et équipes/business), essai gratuit.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit de 14 jours sans carte bancaire ; abonnement ensuite." },
+    "plans": [
+      { "name": "Individual", "price": "19,95 $/mois pour un profil (montants sur la page officielle)" },
+      { "name": "Business / Teams", "price": "14,95 $/profil/mois, minimum de profils (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Mise en forme enrichie et aperçu fidèle des posts LinkedIn",
+      "Gestion des brouillons et bibliothèque d'accroches/templates",
+      "Analytics détaillés (impressions, engagement, heatmaps)",
+      "Réutilisation et comparaison de posts"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez régulièrement sur LinkedIn et voulez soigner la mise en forme.",
+        "Vous voulez des statistiques plus fines que celles de LinkedIn.",
+        "Vous gérez des brouillons et un flux de posts récurrent."
+      ],
+      "avoidIf": [
+        "Vous cherchez un générateur de contenu par IA.",
+        "Vous publiez très rarement sur LinkedIn.",
+        "Vous ne travaillez pas dans le navigateur (extension Chrome)."
+      ],
+      "threshold": "AuthoredUp vaut son abonnement pour un créateur LinkedIn régulier ; pour un usage occasionnel ou multi-réseaux, un autre outil convient mieux."
+    },
+    "pros": [
+      "Mise en forme et aperçu fidèles pour LinkedIn.",
+      "Analytics bien plus détaillés que la plateforme native.",
+      "Bibliothèque d'accroches et gestion des brouillons.",
+      "Essai gratuit sans carte bancaire."
+    ],
+    "cons": [
+      "Pas de génération de contenu par IA.",
+      "Centré uniquement sur LinkedIn.",
+      "Dépend de l'extension Chrome."
+    ],
+    "use_cases": [
+      "Rédiger et formater des posts LinkedIn percutants.",
+      "Analyser les performances de ses publications.",
+      "Gérer un calendrier de brouillons et de réutilisations."
+    ],
+    "relevant_for": ["Créateurs LinkedIn", "Personal branders", "Équipes marketing B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You post regularly on LinkedIn and care about formatting.",
+        "You want deeper analytics than LinkedIn's native ones.",
+        "You manage drafts and a recurring posting flow."
+      ],
+      "avoidIf": [
+        "You're looking for an AI content generator.",
+        "You rarely post on LinkedIn.",
+        "You don't work in the browser (Chrome extension)."
+      ],
+      "threshold": "AuthoredUp earns its subscription for a regular LinkedIn creator; for occasional or multi-network use, another tool fits better."
+    },
+    "pros": [
+      "Accurate formatting and preview for LinkedIn.",
+      "Far more detailed analytics than the native platform.",
+      "Hooks library and draft management.",
+      "Free trial with no credit card."
+    ],
+    "cons": [
+      "No AI content generation.",
+      "Focused solely on LinkedIn.",
+      "Relies on the Chrome extension."
+    ],
+    "use_cases": [
+      "Write and format punchy LinkedIn posts.",
+      "Analyze the performance of your publications.",
+      "Manage a calendar of drafts and reuses."
+    ]
+  }
+}

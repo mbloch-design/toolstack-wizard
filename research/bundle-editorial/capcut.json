@@ -1,0 +1,88 @@
+{
+  "slug": "capcut",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CapCut (site officiel)", "url": "https://www.capcut.com" }
+  ],
+  "facts": {
+    "what": "Éditeur vidéo multiplateforme (mobile, desktop, web) de ByteDance, orienté contenu court pour les réseaux sociaux, avec sous-titres automatiques, effets, musique et nombreux outils IA.",
+    "what_en": "Cross-platform video editor (mobile, desktop, web) by ByteDance, focused on short social content, with auto captions, effects, music and many AI tools.",
+    "pricing_model": "Freemium : version gratuite complète, abonnements Standard et Pro.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec montage multipiste, keyframes, chroma key et export 1080p ; filigrane sur certains exports." },
+    "plans": [
+      { "name": "Free", "price": "0 $" },
+      { "name": "Standard", "price": "9,99 $/mois (sans filigrane)" },
+      { "name": "Pro", "price": "19,99 $/mois ou 179,99 $/an (export 4K, boîte à outils IA complète, 1 To de stockage)" }
+    ],
+    "key_features": [
+      "Sous-titres automatiques multilingues",
+      "Montage multipiste, keyframes et chroma key",
+      "Outils IA : suppression d'arrière-plan, suivi de mouvement, voix",
+      "Bibliothèque de musique, effets et modèles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez beaucoup de vidéos courtes pour les réseaux.",
+        "Vous voulez des sous-titres automatiques rapides.",
+        "Vous montez surtout sur mobile."
+      ],
+      "avoidIf": [
+        "Vous faites du montage cinéma/broadcast exigeant.",
+        "La propriété des données par ByteDance vous pose problème.",
+        "Vous voulez un outil libre de tout écosystème."
+      ],
+      "threshold": "CapCut est imbattable pour le contenu social rapide et le mobile ; pour du montage pro exigeant ou sensible aux données, un NLE classique convient mieux."
+    },
+    "pros": [
+      "Version gratuite très complète.",
+      "Sous-titres automatiques rapides et fiables.",
+      "Nombreux outils IA intégrés.",
+      "Disponible sur mobile, desktop et web."
+    ],
+    "cons": [
+      "Filigrane et bridages sur le plan gratuit.",
+      "Écosystème fermé lié à ByteDance.",
+      "Moins précis que les NLE professionnels."
+    ],
+    "use_cases": [
+      "Monter des vidéos verticales pour TikTok ou Reels.",
+      "Ajouter des sous-titres automatiques à un rush.",
+      "Créer un montage rapide avec modèles et effets."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Community managers", "Monteurs mobiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce lots of short social videos.",
+        "You want quick auto captions.",
+        "You mostly edit on mobile."
+      ],
+      "avoidIf": [
+        "You do demanding film/broadcast editing.",
+        "ByteDance data ownership is a concern.",
+        "You want a tool free of any ecosystem."
+      ],
+      "threshold": "CapCut is unbeatable for quick social content and mobile; for demanding pro editing or data-sensitive work, a classic NLE fits better."
+    },
+    "pros": [
+      "Very complete free version.",
+      "Fast, reliable auto captions.",
+      "Many built-in AI tools.",
+      "Available on mobile, desktop and web."
+    ],
+    "cons": [
+      "Watermark and limits on the free plan.",
+      "Closed ecosystem tied to ByteDance.",
+      "Less precise than professional NLEs."
+    ],
+    "use_cases": [
+      "Edit vertical videos for TikTok or Reels.",
+      "Add auto captions to raw footage.",
+      "Create a quick edit with templates and effects."
+    ]
+  }
+}

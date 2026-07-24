@@ -1,0 +1,89 @@
+{
+  "slug": "captions",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Captions (site officiel)", "url": "https://www.captions.ai" }
+  ],
+  "facts": {
+    "what": "Application de création vidéo pilotée par l'IA, spécialisée dans les sous-titres animés multilingues et la génération de contenu (avatars IA, texte-vers-vidéo) pour les créateurs sociaux.",
+    "what_en": "AI-driven video creation app specialized in animated multilingual captions and content generation (AI avatars, text-to-video) for social creators.",
+    "pricing_model": "Freemium avec crédits ; abonnements Pro, Max et Scale, plus offre Enterprise.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec outils de base (découpe, transitions, médiathèque) mais sans crédits IA." },
+    "plans": [
+      { "name": "Pro", "price": "9,99 $/mois" },
+      { "name": "Max", "price": "24,99 $/mois (outils IA génératifs)" },
+      { "name": "Scale", "price": "à partir de 69,99 $/mois" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Sous-titres animés dans plus de 100 langues",
+      "Avatars IA (AI Twin) et acteurs IA",
+      "Génération texte-vers-vidéo",
+      "Export sans filigrane sur les plans payants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez des sous-titres animés soignés et multilingues.",
+        "Vous testez la génération de vidéos par IA (avatars, texte-vers-vidéo).",
+        "Vous produisez du contenu social vertical régulièrement."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que de sous-titres simples.",
+        "Le système de crédits vous inquiète pour le budget.",
+        "Vous voulez un montage vidéo complet et polyvalent."
+      ],
+      "threshold": "Captions vaut le coup pour des sous-titres animés et de la vidéo IA générative ; pour du sous-titrage basique, une option gratuite suffit."
+    },
+    "pros": [
+      "Sous-titres animés très soignés en 100+ langues.",
+      "Avatars IA et texte-vers-vidéo intégrés.",
+      "Export sans filigrane sur les plans payants.",
+      "Interface pensée pour les créateurs."
+    ],
+    "cons": [
+      "Aucun crédit IA sur le plan gratuit.",
+      "Coûts variables liés à la consommation de crédits.",
+      "Moins complet qu'un éditeur vidéo généraliste."
+    ],
+    "use_cases": [
+      "Ajouter des sous-titres animés à une vidéo verticale.",
+      "Générer un avatar IA qui présente un script.",
+      "Créer une vidéo courte à partir d'un texte."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Marketeurs vidéo", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want polished animated multilingual captions.",
+        "You experiment with AI video generation (avatars, text-to-video).",
+        "You produce vertical social content regularly."
+      ],
+      "avoidIf": [
+        "You only need simple captions.",
+        "The credit system worries you budget-wise.",
+        "You want a full, versatile video editor."
+      ],
+      "threshold": "Captions is worth it for animated captions and generative AI video; for basic captioning, a free option is enough."
+    },
+    "pros": [
+      "Very polished animated captions in 100+ languages.",
+      "Built-in AI avatars and text-to-video.",
+      "Watermark-free export on paid plans.",
+      "Creator-focused interface."
+    ],
+    "cons": [
+      "No AI credits on the free plan.",
+      "Variable costs tied to credit usage.",
+      "Less complete than a general video editor."
+    ],
+    "use_cases": [
+      "Add animated captions to a vertical video.",
+      "Generate an AI avatar that delivers a script.",
+      "Create a short video from text."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "itch-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "itch.io — à propos (site officiel)", "url": "https://itch.io/docs/general/about" }
+  ],
+  "facts": {
+    "what": "Place de marché ouverte pour vendre et distribuer des jeux indépendants et des assets numériques, avec pages personnalisables, prix « payez ce que vous voulez » et partage de revenus au choix du créateur.",
+    "what_en": "Open marketplace to sell and distribute indie games and digital assets, with customizable pages, pay-what-you-want pricing and creator-chosen revenue sharing.",
+    "pricing_model": "Gratuit pour publier ; partage de revenus au choix du vendeur (part par défaut de 10 %, réglable de 0 à 100 %), frais de paiement Stripe/PayPal en sus.",
+    "free_tier": { "exists": true, "detail": "Publier des pages et téléverser du contenu est gratuit, sans coût initial." },
+    "plans": [
+      { "name": "Publication", "price": "0 $ (aucun coût initial)" },
+      { "name": "Part itch.io", "price": "part par défaut de 10 % au choix du créateur (0 à 100 %)" },
+      { "name": "Frais de paiement", "price": "frais Stripe/PayPal (~2,9 % + 0,30 $) en plus" }
+    ],
+    "key_features": [
+      "Pages de jeu/asset personnalisables",
+      "Prix « payez ce que vous voulez » avec minimum réglable",
+      "Partage de revenus défini par le créateur",
+      "Outils de vente, clés de distribution et téléchargements"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur ou créateur indépendant.",
+        "Vous voulez vendre un jeu ou des assets sans coût initial.",
+        "Vous appréciez la liberté de fixer votre prix et votre part."
+      ],
+      "avoidIf": [
+        "Vous visez la vitrine et l'audience massives d'une grande plateforme.",
+        "Vous avez besoin d'outils anti-triche ou de DRM avancés.",
+        "Vous voulez un back-office marketing très poussé."
+      ],
+      "threshold": "itch.io est idéal pour distribuer de l'indé en toute liberté ; pour une visibilité de masse, une grande boutique convient mieux."
+    },
+    "pros": [
+      "Aucun coût initial pour publier.",
+      "Partage de revenus au choix du créateur.",
+      "Pages et prix très flexibles.",
+      "Communauté indé active."
+    ],
+    "cons": [
+      "Découvrabilité plus faible qu'une grande plateforme.",
+      "Frais de paiement toujours prélevés.",
+      "Peu de fonctions anti-piratage / DRM."
+    ],
+    "use_cases": [
+      "Vendre un jeu indépendant en direct.",
+      "Distribuer des assets ou outils pour créateurs.",
+      "Organiser une game jam et héberger les soumissions."
+    ],
+    "relevant_for": ["Développeurs de jeux indés", "Créateurs d'assets numériques", "Organisateurs de game jams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an independent developer or creator.",
+        "You want to sell a game or assets with no upfront cost.",
+        "You value freedom to set your price and revenue share."
+      ],
+      "avoidIf": [
+        "You want the massive storefront and reach of a large platform.",
+        "You need advanced anti-cheat or DRM tools.",
+        "You want a heavy built-in marketing back office."
+      ],
+      "threshold": "itch.io is ideal for freely distributing indie work; for mass visibility, a large store fits better."
+    },
+    "pros": [
+      "No upfront cost to publish.",
+      "Creator-chosen revenue share.",
+      "Very flexible pages and pricing.",
+      "Active indie community."
+    ],
+    "cons": [
+      "Lower discoverability than a large platform.",
+      "Payment fees always deducted.",
+      "Few anti-piracy / DRM features."
+    ],
+    "use_cases": [
+      "Sell an indie game directly.",
+      "Distribute assets or tools for creators.",
+      "Host a game jam and its submissions."
+    ]
+  }
+}

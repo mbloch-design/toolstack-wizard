@@ -1,0 +1,88 @@
+{
+  "slug": "format",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Format — tarifs portfolio (site officiel)", "url": "https://www.format.com/pricing-portfolio" }
+  ],
+  "facts": {
+    "what": "Créateur de sites portfolio pensé pour les créatifs (photographes, illustrateurs, designers), avec thèmes, galeries clients, boutique en ligne, blog et outils de proofing.",
+    "what_en": "Portfolio website builder aimed at creatives (photographers, illustrators, designers), with themes, client galleries, online store, blog and proofing tools.",
+    "pricing_model": "Abonnement mensuel ou annuel, trois paliers.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ; pas de plan gratuit permanent. Abonnement par palier." },
+    "plans": [
+      { "name": "Basic", "price": "14 $/mois ou 120 $/an" },
+      { "name": "Pro", "price": "24 $/mois ou 204 $/an" },
+      { "name": "Pro Plus", "price": "36 $/mois ou 312 $/an" }
+    ],
+    "key_features": [
+      "Thèmes soignés orientés portfolio visuel",
+      "Galeries clients et proofing photo",
+      "Boutique en ligne intégrée",
+      "Blog et éditeur de code avancé (paliers supérieurs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe ou créatif et voulez un portfolio soigné.",
+        "Vous avez besoin de galeries clients et de proofing.",
+        "Vous voulez vendre vos tirages ou prestations en ligne."
+      ],
+      "avoidIf": [
+        "Vous voulez un site vitrine généraliste plutôt qu'un portfolio.",
+        "Vous cherchez une solution gratuite.",
+        "Vous avez besoin d'une personnalisation code très poussée."
+      ],
+      "threshold": "Format s'impose pour un portfolio créatif clé en main avec galeries clients ; pour un site généraliste ou gratuit, un autre builder convient mieux."
+    },
+    "pros": [
+      "Thèmes élégants dédiés au visuel.",
+      "Galeries clients et proofing intégrés.",
+      "Boutique en ligne native.",
+      "Prise en main rapide sans code."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Moins polyvalent qu'un builder généraliste.",
+      "Personnalisation code limitée sur les paliers bas."
+    ],
+    "use_cases": [
+      "Publier un portfolio photo professionnel.",
+      "Livrer des galeries privées aux clients.",
+      "Vendre des tirages ou prestations en ligne."
+    ],
+    "relevant_for": ["Photographes", "Illustrateurs / designers", "Créatifs freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a photographer or creative wanting a polished portfolio.",
+        "You need client galleries and proofing.",
+        "You want to sell prints or services online."
+      ],
+      "avoidIf": [
+        "You want a general-purpose site rather than a portfolio.",
+        "You're looking for a free solution.",
+        "You need very deep code customization."
+      ],
+      "threshold": "Format fits a turnkey creative portfolio with client galleries; for a general or free site, another builder fits better."
+    },
+    "pros": [
+      "Elegant, visual-first themes.",
+      "Built-in client galleries and proofing.",
+      "Native online store.",
+      "Quick to set up, no code needed."
+    ],
+    "cons": [
+      "No permanent free plan.",
+      "Less versatile than a general builder.",
+      "Limited code customization on lower tiers."
+    ],
+    "use_cases": [
+      "Publish a professional photo portfolio.",
+      "Deliver private galleries to clients.",
+      "Sell prints or services online."
+    ]
+  }
+}

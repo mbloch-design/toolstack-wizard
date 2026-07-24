@@ -1,0 +1,86 @@
+{
+  "slug": "keynote",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Apple — Keynote (site officiel)", "url": "https://www.apple.com/keynote/" }
+  ],
+  "facts": {
+    "what": "Logiciel de présentation d'Apple (suite iWork) pour créer des diaporamas soignés avec thèmes, transitions cinématiques et animations, disponible sur Mac, iPhone, iPad et via iCloud sur le web.",
+    "what_en": "Apple's presentation software (iWork suite) to build polished slideshows with themes, cinematic transitions and animations, available on Mac, iPhone, iPad and via iCloud on the web.",
+    "pricing_model": "Gratuit sur les appareils Apple compatibles et via iCloud ; aucun abonnement requis.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit sur Mac, iPhone et iPad, plus accès web via un compte iCloud." },
+    "plans": [
+      { "name": "Keynote", "price": "0 $ (gratuit sur les appareils Apple et via iCloud)" }
+    ],
+    "key_features": [
+      "Thèmes et modèles conçus par Apple",
+      "Transitions cinématiques et animations d'objets",
+      "Collaboration en temps réel via iCloud",
+      "Import/export PowerPoint et accès web multiplateforme"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes dans l'écosystème Apple (Mac/iPhone/iPad).",
+        "Vous voulez des présentations soignées sans abonnement.",
+        "Vous collaborez en temps réel via iCloud."
+      ],
+      "avoidIf": [
+        "Votre équipe est majoritairement sur Windows.",
+        "Vous vivez dans l'écosystème PowerPoint/Office.",
+        "Vous avez besoin de fonctions d'entreprise très poussées."
+      ],
+      "threshold": "Keynote s'impose pour des présentations élégantes dans l'écosystème Apple ; en environnement Windows/Office, PowerPoint reste plus adapté."
+    },
+    "pros": [
+      "Entièrement gratuit sur les appareils Apple.",
+      "Rendu et animations très soignés.",
+      "Collaboration en temps réel via iCloud.",
+      "Import/export PowerPoint et accès web."
+    ],
+    "cons": [
+      "Optimisé pour l'écosystème Apple.",
+      "Accès web bridé en fonctions avancées.",
+      "Compatibilité PowerPoint imparfaite sur les cas complexes."
+    ],
+    "use_cases": [
+      "Concevoir une présentation commerciale soignée.",
+      "Collaborer sur un diaporama via iCloud.",
+      "Présenter depuis un iPhone ou un iPad."
+    ],
+    "relevant_for": ["Utilisateurs Apple", "Freelances et indépendants", "Enseignants et étudiants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're in the Apple ecosystem (Mac/iPhone/iPad).",
+        "You want polished presentations with no subscription.",
+        "You collaborate in real time via iCloud."
+      ],
+      "avoidIf": [
+        "Your team is mostly on Windows.",
+        "You live in the PowerPoint/Office ecosystem.",
+        "You need very advanced enterprise features."
+      ],
+      "threshold": "Keynote fits elegant presentations in the Apple ecosystem; in a Windows/Office environment, PowerPoint remains a better fit."
+    },
+    "pros": [
+      "Entirely free on Apple devices.",
+      "Very polished rendering and animations.",
+      "Real-time collaboration via iCloud.",
+      "PowerPoint import/export and web access."
+    ],
+    "cons": [
+      "Optimized for the Apple ecosystem.",
+      "Web access limited on advanced features.",
+      "Imperfect PowerPoint compatibility on complex files."
+    ],
+    "use_cases": [
+      "Design a polished sales presentation.",
+      "Collaborate on a slideshow via iCloud.",
+      "Present from an iPhone or iPad."
+    ]
+  }
+}

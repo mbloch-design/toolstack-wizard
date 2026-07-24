@@ -1,0 +1,89 @@
+{
+  "slug": "houdini",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SideFX — comparatif et boutique Houdini (site officiel)", "url": "https://www.sidefx.com/buy/" }
+  ],
+  "facts": {
+    "what": "Logiciel 3D procédural de SideFX pour les VFX, la simulation (pyro, fluides, cloth, cheveux, foules), le modeling, le rigging et l'animation, très utilisé en cinéma et jeu vidéo.",
+    "what_en": "SideFX procedural 3D software for VFX, simulation (pyro, fluids, cloth, hair, crowds), modeling, rigging and animation, widely used in film and games.",
+    "pricing_model": "Éditions par licence : version Apprentice gratuite non commerciale, Indie à tarif réduit sous plafond de revenus, Core et FX en abonnement/licence pro.",
+    "free_tier": { "exists": true, "detail": "Houdini Apprentice : gratuit, non commercial, rendus filigranés et format propriétaire, pour apprendre." },
+    "plans": [
+      { "name": "Apprentice", "price": "0 $ (non commercial, watermark)" },
+      { "name": "Indie", "price": "299 $/an (studios sous 100 000 $ de revenus/an, 3 postes max)" },
+      { "name": "Core", "price": "montants sur la page officielle (modeling/animation, sans la suite de simulation complète)" },
+      { "name": "FX", "price": "montants sur la page officielle (suite de simulation complète)" }
+    ],
+    "key_features": [
+      "Workflow procédural par nœuds (non destructif)",
+      "Suite de simulation complète : pyro, fluides FLIP, RBD, Vellum, foules",
+      "Modeling, rigging, animation et lighting",
+      "Houdini Engine pour intégrer les assets dans d'autres logiciels"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites des VFX ou des simulations complexes.",
+        "Vous voulez un workflow procédural non destructif.",
+        "Vous travaillez pour le cinéma, la pub ou le jeu vidéo."
+      ],
+      "avoidIf": [
+        "Vous débutez en 3D sans besoin de simulation.",
+        "Vous cherchez un outil simple et rapide à prendre en main.",
+        "Votre studio dépasse le plafond de revenus de l'édition Indie."
+      ],
+      "threshold": "Houdini s'impose pour les VFX et la simulation procédurale ; pour de la 3D simple, un logiciel plus accessible convient mieux."
+    },
+    "pros": [
+      "Approche procédurale non destructive très puissante.",
+      "Suite de simulation de référence dans l'industrie.",
+      "Version Apprentice gratuite pour apprendre.",
+      "Édition Indie abordable sous plafond de revenus."
+    ],
+    "cons": [
+      "Courbe d'apprentissage abrupte.",
+      "Éditions pro au tarif élevé.",
+      "Apprentice non commercial et filigrané."
+    ],
+    "use_cases": [
+      "Simuler une explosion ou un fluide pour un plan VFX.",
+      "Générer des environnements procéduraux.",
+      "Créer des systèmes de foules ou de destruction."
+    ],
+    "relevant_for": ["Artistes VFX", "Studios de cinéma / jeu", "Techniciens FX 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do complex VFX or simulations.",
+        "You want a non-destructive procedural workflow.",
+        "You work in film, advertising or games."
+      ],
+      "avoidIf": [
+        "You're new to 3D with no simulation needs.",
+        "You want a simple, quick-to-learn tool.",
+        "Your studio exceeds the Indie edition revenue cap."
+      ],
+      "threshold": "Houdini fits VFX and procedural simulation; for simple 3D, a more accessible tool fits better."
+    },
+    "pros": [
+      "Very powerful non-destructive procedural approach.",
+      "Industry-reference simulation suite.",
+      "Free Apprentice edition for learning.",
+      "Affordable Indie edition under a revenue cap."
+    ],
+    "cons": [
+      "Steep learning curve.",
+      "Pro editions are pricey.",
+      "Apprentice is non-commercial and watermarked."
+    ],
+    "use_cases": [
+      "Simulate an explosion or fluid for a VFX shot.",
+      "Generate procedural environments.",
+      "Build crowd or destruction systems."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "ausha",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ausha — tarifs (site officiel)", "url": "https://www.ausha.co/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme française tout-en-un d'hébergement, de distribution, d'analytics et de marketing de podcasts, pensée pour les créateurs et les marques.",
+    "what_en": "French all-in-one podcast hosting, distribution, analytics and marketing platform, built for creators and brands.",
+    "pricing_model": "Abonnement par paliers (mensuel ou annuel), essai gratuit. Remise étudiante.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit de 14 jours ; abonnement ensuite. Remise étudiante disponible." },
+    "plans": [
+      { "name": "Launch", "price": "15 $/mois en annuel, 17 $/mois en mensuel (montants sur la page officielle)" },
+      { "name": "Boost", "price": "29 $/mois en annuel, 35 $/mois en mensuel (montants sur la page officielle)" },
+      { "name": "Supersonic", "price": "69 $/mois en annuel, 83 $/mois en mensuel (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Hébergement et distribution vers les principales plateformes",
+      "Analytics avancés (IAB, audience, sources)",
+      "Outils marketing (clips, waveform, Smart Player, pages)",
+      "Distribution YouTube/SoundCloud sur les paliers supérieurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez héberger et promouvoir un podcast au même endroit.",
+        "Vous avez besoin d'analytics détaillés et d'outils marketing.",
+        "Vous appréciez un service et un support en français."
+      ],
+      "avoidIf": [
+        "Vous cherchez un hébergement strictement gratuit.",
+        "Vous n'avez besoin que d'un flux RSS minimaliste.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "Ausha convient à un podcast qui veut hébergement et marketing intégrés ; pour un simple hébergement gratuit, une autre plateforme suffit."
+    },
+    "pros": [
+      "Suite tout-en-un (hébergement, analytics, marketing).",
+      "Analytics détaillés et certifiés.",
+      "Outils de promotion intégrés (clips, pages, Smart Player).",
+      "Support et interface en français."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Certaines distributions réservées aux paliers supérieurs.",
+      "Coût qui grimpe avec les fonctions avancées."
+    ],
+    "use_cases": [
+      "Héberger et promouvoir un podcast depuis un seul outil.",
+      "Suivre l'audience avec des analytics détaillés.",
+      "Créer des clips vidéo pour les réseaux sociaux."
+    ],
+    "relevant_for": ["Podcasteurs indépendants", "Marques et médias", "Agences podcast"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to host and promote a podcast in one place.",
+        "You need detailed analytics and marketing tools.",
+        "You value a French-language service and support."
+      ],
+      "avoidIf": [
+        "You want strictly free hosting.",
+        "You only need a minimal RSS feed.",
+        "Very occasional use doesn't justify the subscription."
+      ],
+      "threshold": "Ausha fits a podcast that wants integrated hosting and marketing; for plain free hosting, another platform is enough."
+    },
+    "pros": [
+      "All-in-one suite (hosting, analytics, marketing).",
+      "Detailed, certified analytics.",
+      "Built-in promotion tools (clips, pages, Smart Player).",
+      "French-language interface and support."
+    ],
+    "cons": [
+      "No permanent free plan.",
+      "Some distributions reserved for higher tiers.",
+      "Cost rises with advanced features."
+    ],
+    "use_cases": [
+      "Host and promote a podcast from a single tool.",
+      "Track audience with detailed analytics.",
+      "Create video clips for social media."
+    ]
+  }
+}

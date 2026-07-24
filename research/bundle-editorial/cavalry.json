@@ -1,0 +1,88 @@
+{
+  "slug": "cavalry",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cavalry — tarifs (site officiel)", "url": "https://cavalry.scenegroup.co/pricing/" }
+  ],
+  "facts": {
+    "what": "Logiciel de motion design et d'animation 2D procédural (Scene Group) pour macOS et Windows, avec rigs procéduraux, viewport temps réel et séquences pilotées par les données.",
+    "what_en": "Procedural 2D motion design and animation software (Scene Group) for macOS and Windows, with procedural rigs, real-time viewport and data-driven sequences.",
+    "pricing_model": "Version gratuite complète, plus abonnement Pro en location (rental-only).",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec fonctionnalités pro (rigs procéduraux, viewport temps réel), utilisable sans limite de temps." },
+    "plans": [
+      { "name": "Free", "price": "0" },
+      { "name": "Pro (annuel)", "price": "environ 192 £/an (~260 $/an)" },
+      { "name": "Enterprise", "price": "sur devis (SSO, gestion d'équipe)" }
+    ],
+    "key_features": [
+      "Rigs et animation procéduraux",
+      "Viewport temps réel",
+      "Séquences pilotées par les données",
+      "Export pour motion design 2D"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du motion design 2D procédural.",
+        "Vous voulez une alternative moderne aux outils classiques.",
+        "Vous aimez piloter l'animation par les données."
+      ],
+      "avoidIf": [
+        "Vous faites surtout de l'animation image par image classique.",
+        "Vous avez besoin d'un écosystème de plugins très large.",
+        "Vous préférez une licence perpétuelle à la location."
+      ],
+      "threshold": "Cavalry brille pour le motion design procédural et data-driven ; pour de l'animation traditionnelle ou un gros besoin de plugins, un outil établi convient mieux."
+    },
+    "pros": [
+      "Version gratuite très capable.",
+      "Approche procédurale et data-driven puissante.",
+      "Viewport temps réel réactif.",
+      "Disponible sur macOS et Windows."
+    ],
+    "cons": [
+      "Plan payant uniquement en location.",
+      "Écosystème plus jeune que les leaders du secteur.",
+      "Approche procédurale demandant un temps d'adaptation."
+    ],
+    "use_cases": [
+      "Animer une infographie animée pilotée par des données.",
+      "Créer des habillages graphiques procéduraux.",
+      "Produire des boucles et motifs animés."
+    ],
+    "relevant_for": ["Motion designers", "Graphistes animation", "Studios créatifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do procedural 2D motion design.",
+        "You want a modern alternative to legacy tools.",
+        "You like driving animation with data."
+      ],
+      "avoidIf": [
+        "You mostly do classic frame-by-frame animation.",
+        "You need a very large plugin ecosystem.",
+        "You prefer a perpetual license over rental."
+      ],
+      "threshold": "Cavalry shines for procedural, data-driven motion design; for traditional animation or heavy plugin needs, an established tool fits better."
+    },
+    "pros": [
+      "Very capable free version.",
+      "Powerful procedural, data-driven approach.",
+      "Responsive real-time viewport.",
+      "Available on macOS and Windows."
+    ],
+    "cons": [
+      "Paid plan is rental-only.",
+      "Younger ecosystem than industry leaders.",
+      "Procedural approach requires a learning ramp."
+    ],
+    "use_cases": [
+      "Animate a data-driven motion infographic.",
+      "Create procedural graphic packages.",
+      "Produce animated loops and patterns."
+    ]
+  }
+}

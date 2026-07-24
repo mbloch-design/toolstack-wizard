@@ -1,0 +1,89 @@
+{
+  "slug": "castmagic",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Castmagic — tarifs (site officiel)", "url": "https://www.castmagic.io/pricing" }
+  ],
+  "facts": {
+    "what": "Outil IA qui transforme des enregistrements audio ou vidéo (podcasts, réunions) en transcriptions puis en contenus dérivés : notes d'épisode, posts réseaux, newsletters et extraits.",
+    "what_en": "AI tool that turns audio or video recordings (podcasts, meetings) into transcripts and then repurposed content: show notes, social posts, newsletters and clips.",
+    "pricing_model": "Abonnement basé sur l'usage (heures de transcription), plusieurs paliers ; facturation mensuelle ou annuelle.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit disponible." },
+    "plans": [
+      { "name": "Hobby", "price": "21 $/mois en annuel (~5 h de transcription/mois)" },
+      { "name": "Starter", "price": "39 $/mois ou 23 $/mois en annuel" },
+      { "name": "Professional", "price": "299 $/mois ou 179 $/mois en annuel" },
+      { "name": "Business", "price": "790 $/mois" }
+    ],
+    "key_features": [
+      "Transcription automatique de l'audio et de la vidéo",
+      "Génération de contenus dérivés (show notes, posts, newsletters)",
+      "Extraits vidéo (Studio clips)",
+      "Intégrations et modèles de contenu"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez un podcast ou beaucoup de contenu audio/vidéo.",
+        "Vous voulez recycler un enregistrement en plusieurs formats.",
+        "Vous gagnez du temps en automatisant show notes et posts."
+      ],
+      "avoidIf": [
+        "Vous produisez peu de contenu audio.",
+        "Vous relisez et réécrivez tout à la main de toute façon.",
+        "Un simple outil de transcription vous suffit."
+      ],
+      "threshold": "Castmagic est rentable pour recycler du contenu audio en volume ; pour une transcription ponctuelle, un outil plus simple convient."
+    },
+    "pros": [
+      "Transcription et génération de contenus en une passe.",
+      "Nombreux formats dérivés à partir d'un enregistrement.",
+      "Extraits vidéo et intégrations.",
+      "Fait gagner un temps de rédaction important."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Facturation à l'usage qui grimpe vite en volume.",
+      "Sorties IA à relire avant publication."
+    ],
+    "use_cases": [
+      "Générer les show notes d'un épisode de podcast.",
+      "Transformer une interview en posts réseaux et newsletter.",
+      "Extraire des clips à partir d'un long enregistrement."
+    ],
+    "relevant_for": ["Podcasteurs", "Créateurs de contenu", "Agences de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a podcast or a lot of audio/video content.",
+        "You want to repurpose a recording into multiple formats.",
+        "You save time automating show notes and posts."
+      ],
+      "avoidIf": [
+        "You produce little audio content.",
+        "You rewrite everything by hand anyway.",
+        "A simple transcription tool is enough for you."
+      ],
+      "threshold": "Castmagic pays off for repurposing audio content at volume; for occasional transcription, a simpler tool fits."
+    },
+    "pros": [
+      "Transcription and content generation in one pass.",
+      "Many derived formats from a single recording.",
+      "Video clips and integrations.",
+      "Saves significant writing time."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Usage-based billing scales up quickly at volume.",
+      "AI outputs need review before publishing."
+    ],
+    "use_cases": [
+      "Generate show notes for a podcast episode.",
+      "Turn an interview into social posts and a newsletter.",
+      "Extract clips from a long recording."
+    ]
+  }
+}

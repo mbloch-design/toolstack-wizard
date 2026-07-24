@@ -1,0 +1,88 @@
+{
+  "slug": "final-cut-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Apple Final Cut Pro (site officiel)", "url": "https://www.apple.com/final-cut-pro/" }
+  ],
+  "facts": {
+    "what": "Logiciel de montage vidéo professionnel d'Apple pour Mac (et iPad), reposant sur une timeline magnétique, optimisé pour Apple Silicon avec rendu et exports très rapides, et doté d'outils assistés par IA (recherche visuelle, détection de rythme).",
+    "what_en": "Apple's professional video editing software for Mac (and iPad), built on a magnetic timeline, optimized for Apple Silicon with very fast rendering and exports, and equipped with AI-assisted tools (visual search, beat detection).",
+    "pricing_model": "Achat unique (licence perpétuelle) sur le Mac App Store ; option abonnement via Apple Creator Studio.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit proposé par Apple ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Final Cut Pro (Mac) — achat unique", "price": "299,99 $ (licence perpétuelle)" },
+      { "name": "Pro Apps Bundle for Education", "price": "199 $ (étudiants et enseignants)" },
+      { "name": "Apple Creator Studio (abonnement)", "price": "12,99 $/mois ou 129 $/an (bundle apps pro)" }
+    ],
+    "key_features": [
+      "Timeline magnétique et montage optimisé Apple Silicon",
+      "Rendu et exports en temps réel très rapides",
+      "Outils IA : recherche visuelle, détection de rythme",
+      "Versions Mac et iPad avec fonctions pro"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous montez sur Mac et voulez un outil professionnel rapide.",
+        "Vous préférez un achat unique à un abonnement.",
+        "Vous exploitez la puissance d'Apple Silicon."
+      ],
+      "avoidIf": [
+        "Vous travaillez sur Windows ou en équipe multi-OS.",
+        "Vous avez besoin d'une collaboration cloud poussée.",
+        "Un montage très occasionnel ne justifie pas l'achat."
+      ],
+      "threshold": "Final Cut Pro s'impose pour le montage professionnel sur Mac en achat unique ; hors écosystème Apple, un éditeur multiplateforme convient mieux."
+    },
+    "pros": [
+      "Achat unique, sans abonnement obligatoire.",
+      "Performances excellentes sur Apple Silicon.",
+      "Timeline magnétique fluide et productive.",
+      "Outils IA intégrés (recherche visuelle, rythme)."
+    ],
+    "cons": [
+      "Réservé à l'écosystème Apple (macOS / iPad).",
+      "Collaboration multi-OS limitée.",
+      "Prise en main différente des éditeurs à pistes classiques."
+    ],
+    "use_cases": [
+      "Monter des vidéos YouTube ou clients sur Mac.",
+      "Exploiter Apple Silicon pour des exports rapides.",
+      "Éditer en mobilité sur iPad."
+    ],
+    "relevant_for": ["Monteurs vidéo", "Créateurs YouTube", "Vidéastes freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You edit on Mac and want a fast professional tool.",
+        "You prefer a one-time purchase over a subscription.",
+        "You leverage Apple Silicon performance."
+      ],
+      "avoidIf": [
+        "You work on Windows or in a multi-OS team.",
+        "You need advanced cloud collaboration.",
+        "Very occasional editing doesn't justify the purchase."
+      ],
+      "threshold": "Final Cut Pro is the go-to for professional Mac editing as a one-time buy; outside the Apple ecosystem, a cross-platform editor fits better."
+    },
+    "pros": [
+      "One-time purchase, no mandatory subscription.",
+      "Excellent performance on Apple Silicon.",
+      "Smooth, productive magnetic timeline.",
+      "Built-in AI tools (visual search, beat detection)."
+    ],
+    "cons": [
+      "Limited to the Apple ecosystem (macOS / iPad).",
+      "Limited multi-OS collaboration.",
+      "Different workflow from classic track-based editors."
+    ],
+    "use_cases": [
+      "Edit YouTube or client videos on Mac.",
+      "Leverage Apple Silicon for fast exports.",
+      "Edit on the go on iPad."
+    ]
+  }
+}

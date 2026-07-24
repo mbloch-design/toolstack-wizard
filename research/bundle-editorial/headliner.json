@@ -1,0 +1,89 @@
+{
+  "slug": "headliner",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Headliner — tarifs (site officiel)", "url": "https://www.headliner.app/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil web pour créer des audiograms et des clips vidéo animés à partir d'audio (podcasts, épisodes), avec transcription automatique, sous-titres et modèles pour les réseaux sociaux.",
+    "what_en": "Web tool to create audiograms and animated video clips from audio (podcasts, episodes), with automatic transcription, captions and templates for social media.",
+    "pricing_model": "Freemium : offre gratuite permanente puis abonnements par paliers.",
+    "free_tier": { "exists": true, "detail": "Forever Free : quelques vidéos sans watermark par mois et minutes de transcription limitées, sans carte bancaire." },
+    "plans": [
+      { "name": "Forever Free", "price": "0 $ (vidéos et transcription limitées)" },
+      { "name": "Basic", "price": "7,99 $/mois en annuel (9,99 $/mois au mois)" },
+      { "name": "Pro", "price": "19,99 $/mois (vidéos illimitées)" },
+      { "name": "Business", "price": "49,99 $/mois (fonctions équipe et support prioritaire)" }
+    ],
+    "key_features": [
+      "Création d'audiograms animés à partir d'audio",
+      "Transcription automatique et sous-titres",
+      "Modèles et formats adaptés aux réseaux sociaux",
+      "Export de clips vidéo pour promouvoir un podcast"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez un podcast et voulez le promouvoir en vidéo.",
+        "Vous avez besoin d'audiograms rapides pour les réseaux.",
+        "Vous voulez des sous-titres automatiques sur vos clips."
+      ],
+      "avoidIf": [
+        "Vous faites du montage vidéo complexe (préférez un éditeur dédié).",
+        "Vous ne publiez jamais d'extraits audio.",
+        "Vous voulez un contrôle créatif fin sur l'animation."
+      ],
+      "threshold": "Headliner est idéal pour transformer de l'audio en clips sociaux ; pour du montage vidéo poussé, un éditeur dédié convient mieux."
+    },
+    "pros": [
+      "Création rapide d'audiograms et de clips.",
+      "Transcription et sous-titres automatiques.",
+      "Offre gratuite sans carte bancaire.",
+      "Modèles prêts pour les réseaux sociaux."
+    ],
+    "cons": [
+      "Offre gratuite bridée en volume.",
+      "Montage vidéo limité par rapport à un éditeur pro.",
+      "Personnalisation créative encadrée par les modèles."
+    ],
+    "use_cases": [
+      "Créer un audiogram pour teaser un épisode.",
+      "Ajouter des sous-titres à un extrait audio.",
+      "Décliner un podcast en clips pour les réseaux."
+    ],
+    "relevant_for": ["Podcasteurs", "Community managers", "Créateurs de contenu audio"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce a podcast and want to promote it in video.",
+        "You need quick audiograms for social media.",
+        "You want automatic captions on your clips."
+      ],
+      "avoidIf": [
+        "You do complex video editing (use a dedicated editor).",
+        "You never publish audio snippets.",
+        "You want fine creative control over animation."
+      ],
+      "threshold": "Headliner is ideal for turning audio into social clips; for advanced video editing, a dedicated editor fits better."
+    },
+    "pros": [
+      "Fast audiogram and clip creation.",
+      "Automatic transcription and captions.",
+      "Free tier with no credit card required.",
+      "Ready-made templates for social media."
+    ],
+    "cons": [
+      "Free tier limited in volume.",
+      "Video editing is limited versus a pro editor.",
+      "Creative customization framed by templates."
+    ],
+    "use_cases": [
+      "Create an audiogram to tease an episode.",
+      "Add captions to an audio snippet.",
+      "Repurpose a podcast into social clips."
+    ]
+  }
+}

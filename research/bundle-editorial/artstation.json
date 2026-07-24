@@ -1,0 +1,87 @@
+{
+  "slug": "artstation",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ArtStation — site officiel", "url": "https://www.artstation.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de portfolio et réseau professionnel pour les artistes 3D, concept art et jeu vidéo, avec galeries, marketplace et offres d'emploi.",
+    "what_en": "Portfolio platform and professional network for 3D, concept and game artists, with galleries, a marketplace and job listings.",
+    "pricing_model": "Gratuit avec un portfolio de base ; abonnement Plus et Pro pour plus de fonctions.",
+    "free_tier": { "exists": true, "detail": "Portfolio gratuit avec fonctions de base. Abonnements Plus et Pro pour médias 4K, domaine personnalisé, meilleures conditions marketplace et analytics." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 € — portfolio de base" },
+      { "name": "Pro", "price": "9,95 $/mois ou 99,50 $/an (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Portfolio en ligne orienté art 3D / concept art",
+      "Marketplace de produits digitaux (brushes, tutos, assets)",
+      "Offres d'emploi et vitrine pour recruteurs",
+      "Options Pro : médias 4K, domaine perso, analytics, sans pub"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes artiste 3D, concept ou jeu vidéo et cherchez de la visibilité.",
+        "Vous voulez vendre des ressources digitales à une audience ciblée.",
+        "Vous visez des recruteurs de studios."
+      ],
+      "avoidIf": [
+        "Votre travail n'est pas lié aux arts visuels / 3D.",
+        "Vous voulez un site totalement personnalisé et indépendant.",
+        "Un portfolio gratuit basique vous suffit déjà."
+      ],
+      "threshold": "ArtStation est incontournable pour se montrer dans l'industrie de l'art 3D et du jeu ; hors de ce domaine, une autre plateforme convient mieux."
+    },
+    "pros": [
+      "Audience professionnelle très ciblée (studios, recruteurs).",
+      "Portfolio gratuit pour démarrer.",
+      "Marketplace intégrée pour vendre ses ressources.",
+      "Options Pro utiles (4K, domaine, analytics)."
+    ],
+    "cons": [
+      "Pertinent surtout pour l'art visuel et la 3D.",
+      "Personnalisation limitée face à un site indépendant.",
+      "Meilleures conditions réservées aux abonnés."
+    ],
+    "use_cases": [
+      "Exposer un portfolio pour décrocher un poste en studio.",
+      "Vendre des brushes, assets ou tutoriels.",
+      "Se constituer une audience dans le milieu du jeu vidéo."
+    ],
+    "relevant_for": ["Artistes 3D / concept", "Illustrateurs jeu vidéo", "Étudiants en art"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a 3D, concept or game artist seeking visibility.",
+        "You want to sell digital assets to a targeted audience.",
+        "You're targeting studio recruiters."
+      ],
+      "avoidIf": [
+        "Your work isn't tied to visual arts / 3D.",
+        "You want a fully custom, independent website.",
+        "A basic free portfolio already suffices."
+      ],
+      "threshold": "ArtStation is essential for visibility in 3D and game art; outside that field, another platform fits better."
+    },
+    "pros": [
+      "Highly targeted professional audience (studios, recruiters).",
+      "Free portfolio to get started.",
+      "Built-in marketplace to sell resources.",
+      "Useful Pro options (4K, custom domain, analytics)."
+    ],
+    "cons": [
+      "Relevant mainly for visual and 3D art.",
+      "Limited customization versus an independent site.",
+      "Best terms reserved for subscribers."
+    ],
+    "use_cases": [
+      "Showcase a portfolio to land a studio job.",
+      "Sell brushes, assets or tutorials.",
+      "Build an audience in the game industry."
+    ]
+  }
+}

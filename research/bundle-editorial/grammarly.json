@@ -1,0 +1,88 @@
+{
+  "slug": "grammarly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Grammarly — tarifs (site officiel)", "url": "https://www.grammarly.com/plans" }
+  ],
+  "facts": {
+    "what": "Assistant d'écriture qui corrige grammaire, orthographe, ponctuation et ton en anglais, avec réécritures de phrases et fonctions d'IA générative, intégré au navigateur et aux applications de bureau.",
+    "what_en": "Writing assistant that checks English grammar, spelling, punctuation and tone, with full-sentence rewrites and generative-AI features, embedded in the browser and desktop apps.",
+    "pricing_model": "Freemium : version gratuite, abonnement individuel (Pro) et offre Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Correction de base de la grammaire, de l'orthographe et du ton, sans engagement." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (corrections de base)" },
+      { "name": "Pro", "price": "12 $/mois en facturation annuelle (env. 30 $/mois au mois)" },
+      { "name": "Enterprise", "price": "sur devis (administration centralisée, contrôles de marque)" }
+    ],
+    "key_features": [
+      "Correction grammaire, orthographe et ponctuation en temps réel",
+      "Suggestions de ton et de clarté, réécritures de phrases",
+      "Fonctions d'IA générative (prompts) sur les plans payants",
+      "Détection de plagiat et intégrations navigateur / apps de bureau"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez beaucoup en anglais au quotidien.",
+        "Vous voulez une correction et un lissage du ton en temps réel.",
+        "Vous travaillez dans plusieurs apps et navigateurs."
+      ],
+      "avoidIf": [
+        "Vous écrivez surtout en français (langue non couverte).",
+        "Un correcteur intégré à votre traitement de texte vous suffit.",
+        "Vous ne voulez pas d'extension qui lit votre saisie."
+      ],
+      "threshold": "Grammarly s'impose pour un usage intensif de l'anglais professionnel ; pour du français ou un besoin ponctuel, un correcteur natif suffit."
+    },
+    "pros": [
+      "Correction en temps réel dans la plupart des apps.",
+      "Suggestions de ton et de clarté utiles.",
+      "Version gratuite déjà exploitable.",
+      "Fonctions d'IA générative sur les plans payants."
+    ],
+    "cons": [
+      "Centré sur l'anglais, pas le français.",
+      "Fonctions avancées réservées au plan payant.",
+      "Extension qui accède au contenu saisi."
+    ],
+    "use_cases": [
+      "Relire e-mails et documents en anglais.",
+      "Ajuster le ton d'un message professionnel.",
+      "Réécrire des phrases lourdes avec l'IA."
+    ],
+    "relevant_for": ["Rédacteurs non anglophones", "Équipes travaillant en anglais", "Étudiants et chercheurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You write a lot in English every day.",
+        "You want real-time corrections and tone smoothing.",
+        "You work across many apps and browsers."
+      ],
+      "avoidIf": [
+        "You mostly write in a language Grammarly doesn't cover.",
+        "Your word processor's built-in checker is enough.",
+        "You don't want an extension reading your input."
+      ],
+      "threshold": "Grammarly fits heavy professional English writing; for another language or occasional needs, a native checker is enough."
+    },
+    "pros": [
+      "Real-time corrections in most apps.",
+      "Useful tone and clarity suggestions.",
+      "Free version is already usable.",
+      "Generative-AI features on paid plans."
+    ],
+    "cons": [
+      "English-focused, limited other languages.",
+      "Advanced features locked behind the paid plan.",
+      "Extension accesses typed content."
+    ],
+    "use_cases": [
+      "Proofread English emails and documents.",
+      "Adjust the tone of a professional message.",
+      "Rewrite clunky sentences with AI."
+    ]
+  }
+}

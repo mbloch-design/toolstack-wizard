@@ -1,0 +1,89 @@
+{
+  "slug": "gamma",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gamma — tarifs (site officiel)", "url": "https://gamma.app/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de génération assistée par IA de présentations, documents et sites web à partir d'un prompt ou d'un plan, avec mise en page automatique et publication en ligne.",
+    "what_en": "AI-assisted tool that generates presentations, documents and websites from a prompt or outline, with automatic layout and online publishing.",
+    "pricing_model": "Freemium : plan gratuit avec crédits, puis abonnements par palier avec crédits IA mensuels.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec un stock initial de crédits IA et le branding Gamma. Paliers payants pour plus de crédits et le retrait du branding." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (crédits IA initiaux limités)" },
+      { "name": "Plus", "price": "8 $/mois (annuel) ou 10 $/mois, ~1 000 crédits/mois" },
+      { "name": "Pro", "price": "15 $/mois (annuel) ou 20 $/mois, ~4 000 crédits/mois" },
+      { "name": "Ultra", "price": "100 $/mois, ~20 000 crédits/mois" }
+    ],
+    "key_features": [
+      "Génération de présentations et docs par IA",
+      "Mise en page automatique et responsive",
+      "Publication web et export",
+      "Branding personnalisé et analytics (paliers supérieurs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez produire vite des présentations soignées.",
+        "Vous partez d'un prompt ou d'un plan à mettre en forme.",
+        "Vous aimez publier en ligne plutôt qu'exporter un PPT."
+      ],
+      "avoidIf": [
+        "Vous voulez un contrôle typographique et de mise en page très fin.",
+        "Vous êtes déjà à l'aise dans PowerPoint/Keynote.",
+        "Un usage intensif épuise vite le stock de crédits."
+      ],
+      "threshold": "Gamma s'impose pour créer vite des présentations et pages web par IA ; pour un contrôle graphique poussé, un outil de design classique convient mieux."
+    },
+    "pros": [
+      "Génération très rapide depuis un prompt.",
+      "Mise en page automatique cohérente.",
+      "Publication web native.",
+      "Plan gratuit pour tester."
+    ],
+    "cons": [
+      "Contrôle de design moins fin qu'un outil dédié.",
+      "Fonctionnement par crédits qui peut limiter l'usage.",
+      "Branding Gamma sur le plan gratuit."
+    ],
+    "use_cases": [
+      "Générer un deck de présentation en quelques minutes.",
+      "Créer une page web simple à partir d'un texte.",
+      "Transformer des notes en document mis en forme."
+    ],
+    "relevant_for": ["Freelances", "Startups / fondateurs", "Marketeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to produce polished presentations fast.",
+        "You start from a prompt or outline to format.",
+        "You like publishing online rather than exporting a PPT."
+      ],
+      "avoidIf": [
+        "You want very fine control over typography and layout.",
+        "You're already comfortable in PowerPoint/Keynote.",
+        "Heavy use quickly drains the credit balance."
+      ],
+      "threshold": "Gamma fits fast AI creation of presentations and web pages; for deep design control, a traditional design tool fits better."
+    },
+    "pros": [
+      "Very fast generation from a prompt.",
+      "Consistent automatic layout.",
+      "Native web publishing.",
+      "Free plan to try it out."
+    ],
+    "cons": [
+      "Less fine design control than a dedicated tool.",
+      "Credit-based model can limit usage.",
+      "Gamma branding on the free plan."
+    ],
+    "use_cases": [
+      "Generate a presentation deck in minutes.",
+      "Create a simple web page from text.",
+      "Turn notes into a formatted document."
+    ]
+  }
+}

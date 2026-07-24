@@ -1,0 +1,87 @@
+{
+  "slug": "fiverr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Fiverr (site officiel)", "url": "https://www.fiverr.com/" }
+  ],
+  "facts": {
+    "what": "Place de marché de services freelance : les vendeurs proposent des prestations packagées (« gigs ») dans le design, la rédaction, le marketing, la vidéo, etc., et les acheteurs commandent et paient à l'avance via la plateforme.",
+    "what_en": "Freelance services marketplace: sellers offer packaged services (\"gigs\") in design, writing, marketing, video and more, and buyers order and pay in advance through the platform.",
+    "pricing_model": "Gratuit à l'inscription ; commission prélevée par la plateforme sur les transactions (côté vendeur) et frais de service côté acheteur.",
+    "free_tier": { "exists": true, "detail": "Inscription et navigation gratuites ; on paie au prix de la prestation commandée plus les frais de plateforme." },
+    "plans": [
+      { "name": "Commission vendeur", "price": "20 % prélevés sur chaque transaction" },
+      { "name": "Frais de service acheteur", "price": "~5,5 % au paiement (+ frais fixe sur petits montants)" }
+    ],
+    "key_features": [
+      "Catalogue de prestations freelance packagées (« gigs »)",
+      "Paiement sécurisé et à l'avance via la plateforme",
+      "Système d'avis et de notes des vendeurs",
+      "Options et packages personnalisables par prestation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez déléguer rapidement une tâche ponctuelle.",
+        "Vous voulez comparer de nombreux prestataires au même endroit.",
+        "Vous recherchez un paiement sécurisé et des avis fiables."
+      ],
+      "avoidIf": [
+        "Vous cherchez une relation freelance longue et intégrée.",
+        "Vous voulez éviter les commissions de plateforme.",
+        "Votre besoin exige un cadrage impossible via des gigs standard."
+      ],
+      "threshold": "Fiverr convient pour déléguer des tâches ponctuelles avec paiement sécurisé ; pour une collaboration durable et sur-mesure, un contrat direct est préférable."
+    },
+    "pros": [
+      "Large choix de prestataires et de services.",
+      "Paiement sécurisé et à l'avance.",
+      "Avis et notes pour évaluer les vendeurs.",
+      "Inscription et recherche gratuites."
+    ],
+    "cons": [
+      "Commission prélevée sur chaque transaction.",
+      "Frais de service ajoutés côté acheteur.",
+      "Qualité variable d'un prestataire à l'autre."
+    ],
+    "use_cases": [
+      "Commander un logo ou un visuel rapidement.",
+      "Déléguer de la rédaction ou de la traduction.",
+      "Sous-traiter un montage vidéo ponctuel."
+    ],
+    "relevant_for": ["Petites entreprises", "Freelances (côté vendeur)", "Marketeurs / entrepreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to delegate a one-off task quickly.",
+        "You want to compare many providers in one place.",
+        "You want secure payment and reliable reviews."
+      ],
+      "avoidIf": [
+        "You want a long, integrated freelance relationship.",
+        "You want to avoid platform commissions.",
+        "Your need requires scoping impossible via standard gigs."
+      ],
+      "threshold": "Fiverr suits delegating one-off tasks with secure payment; for lasting, bespoke collaboration, a direct contract is better."
+    },
+    "pros": [
+      "Wide choice of providers and services.",
+      "Secure, upfront payment.",
+      "Reviews and ratings to assess sellers.",
+      "Free signup and browsing."
+    ],
+    "cons": [
+      "Commission taken on each transaction.",
+      "Service fees added on the buyer side.",
+      "Quality varies from one provider to another."
+    ],
+    "use_cases": [
+      "Order a logo or graphic quickly.",
+      "Delegate writing or translation.",
+      "Outsource a one-off video edit."
+    ]
+  }
+}

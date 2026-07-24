@@ -1,0 +1,88 @@
+{
+  "slug": "3ds-max",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autodesk — 3ds Max présentation et achat (site officiel)", "url": "https://www.autodesk.com/products/3ds-max/overview" }
+  ],
+  "facts": {
+    "what": "Logiciel de modélisation, d'animation et de rendu 3D d'Autodesk, très utilisé pour l'archviz, le jeu vidéo et les effets visuels sur Windows.",
+    "what_en": "Autodesk's 3D modeling, animation and rendering software, widely used for architectural visualization, game development and visual effects on Windows.",
+    "pricing_model": "Abonnement (mensuel, 1 an ou 3 ans). Gratuit pour les étudiants et enseignants éligibles.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit ; licence éducative gratuite pour étudiants/enseignants éligibles ; sinon abonnement." },
+    "plans": [
+      { "name": "Abonnement mensuel", "price": "245 $/mois (montants sur la page officielle)" },
+      { "name": "Abonnement annuel", "price": "environ 33 % d'économie vs le mensuel (montants sur la page officielle)" },
+      { "name": "Abonnement 3 ans", "price": "tarif verrouillé sur 3 ans (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Modélisation polygonale et paramétrique avancée",
+      "Rendu photoréaliste (Arnold inclus)",
+      "Animation, rigging et simulations",
+      "Écosystème de plugins et scripts (MAXScript, Python)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en archviz, jeu vidéo ou VFX sur Windows.",
+        "Vous avez besoin d'outils de modélisation et de rendu professionnels.",
+        "Vous vous appuyez sur un écosystème de plugins établi."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil 3D gratuit ou open source.",
+        "Vous travaillez sur Mac (non pris en charge).",
+        "Un usage occasionnel ne justifie pas l'abonnement."
+      ],
+      "threshold": "3ds Max s'impose pour la production 3D professionnelle sous Windows ; pour un usage ponctuel ou gratuit, un outil open source convient mieux."
+    },
+    "pros": [
+      "Standard de l'industrie en archviz et jeu vidéo.",
+      "Rendu Arnold inclus et pipeline mature.",
+      "Vaste écosystème de plugins et de scripts.",
+      "Intégration avec les autres outils Autodesk."
+    ],
+    "cons": [
+      "Réservé à Windows.",
+      "Abonnement récurrent au coût élevé.",
+      "Courbe d'apprentissage importante."
+    ],
+    "use_cases": [
+      "Produire des rendus d'architecture photoréalistes.",
+      "Modéliser des assets pour un jeu vidéo.",
+      "Créer des animations et effets pour la vidéo."
+    ],
+    "relevant_for": ["Artistes 3D / archviz", "Studios de jeu vidéo", "Artistes VFX"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in archviz, game dev or VFX on Windows.",
+        "You need professional modeling and rendering tools.",
+        "You rely on an established plugin ecosystem."
+      ],
+      "avoidIf": [
+        "You want a free or open-source 3D tool.",
+        "You work on Mac (not supported).",
+        "Occasional use doesn't justify the subscription."
+      ],
+      "threshold": "3ds Max fits professional 3D production on Windows; for occasional or free use, an open-source tool is a better fit."
+    },
+    "pros": [
+      "Industry standard for archviz and game dev.",
+      "Bundled Arnold renderer and mature pipeline.",
+      "Huge plugin and scripting ecosystem.",
+      "Integrates with other Autodesk tools."
+    ],
+    "cons": [
+      "Windows only.",
+      "Costly recurring subscription.",
+      "Steep learning curve."
+    ],
+    "use_cases": [
+      "Produce photorealistic architectural renders.",
+      "Model assets for a video game.",
+      "Create animation and effects for video."
+    ]
+  }
+}

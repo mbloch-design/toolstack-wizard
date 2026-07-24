@@ -1,0 +1,87 @@
+{
+  "slug": "judge-me",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Judge.me — tarifs (site officiel)", "url": "https://judge.me/pricing" }
+  ],
+  "facts": {
+    "what": "Application d'avis produits pour boutiques e-commerce (surtout Shopify) : collecte automatique d'avis avec photos et vidéos, widgets, rich snippets SEO et badges de confiance.",
+    "what_en": "Product reviews app for e-commerce stores (mainly Shopify): automatic review collection with photos and videos, widgets, SEO rich snippets and trust badges.",
+    "pricing_model": "Freemium à deux plans : gratuit à vie et plan payant unique à prix fixe.",
+    "free_tier": { "exists": true, "detail": "Forever Free : demandes d'avis illimitées, avis photo/vidéo, rich snippets et badges." },
+    "plans": [
+      { "name": "Forever Free", "price": "0 $ (fonctions essentielles, demandes d'avis illimitées)" },
+      { "name": "Awesome", "price": "15 $/mois (IA, regroupement de produits, Q&A, coupons, syndication)" }
+    ],
+    "key_features": [
+      "Collecte automatique d'avis produits (photo et vidéo)",
+      "Widgets d'affichage et badges de confiance",
+      "Rich snippets SEO (étoiles dans Google)",
+      "Fonctions IA, Q&A et syndication multi-canaux (plan payant)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous tenez une boutique Shopify et voulez des avis produits.",
+        "Vous cherchez des rich snippets pour le SEO.",
+        "Vous voulez démarrer sans budget."
+      ],
+      "avoidIf": [
+        "Votre plateforme e-commerce n'est pas prise en charge.",
+        "Vous voulez une solution d'avis multi-sites très avancée.",
+        "Vous n'avez pas de catalogue produits."
+      ],
+      "threshold": "Judge.me est un choix solide pour les avis produits sur Shopify ; hors de cet écosystème, une autre solution peut mieux convenir."
+    },
+    "pros": [
+      "Plan gratuit très généreux.",
+      "Avis photo et vidéo inclus.",
+      "Rich snippets SEO d'origine.",
+      "Tarif payant simple et fixe."
+    ],
+    "cons": [
+      "Centré sur l'écosystème Shopify.",
+      "Fonctions IA et avancées réservées au plan payant.",
+      "Personnalisation des widgets parfois limitée."
+    ],
+    "use_cases": [
+      "Collecter des avis après achat automatiquement.",
+      "Afficher des étoiles dans les résultats Google.",
+      "Ajouter des avis photo/vidéo aux fiches produits."
+    ],
+    "relevant_for": ["Marchands Shopify", "Marques DTC", "Responsables e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a Shopify store and want product reviews.",
+        "You want rich snippets for SEO.",
+        "You want to start with no budget."
+      ],
+      "avoidIf": [
+        "Your e-commerce platform isn't supported.",
+        "You need a very advanced multi-site reviews solution.",
+        "You have no product catalog."
+      ],
+      "threshold": "Judge.me is a solid choice for product reviews on Shopify; outside that ecosystem, another solution may fit better."
+    },
+    "pros": [
+      "Very generous free plan.",
+      "Photo and video reviews included.",
+      "Built-in SEO rich snippets.",
+      "Simple, flat paid price."
+    ],
+    "cons": [
+      "Centered on the Shopify ecosystem.",
+      "AI and advanced features locked to the paid plan.",
+      "Widget customization sometimes limited."
+    ],
+    "use_cases": [
+      "Automatically collect post-purchase reviews.",
+      "Show star ratings in Google results.",
+      "Add photo/video reviews to product pages."
+    ]
+  }
+}

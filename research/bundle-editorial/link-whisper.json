@@ -1,0 +1,89 @@
+{
+  "slug": "link-whisper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Link Whisper — tarifs (site officiel)", "url": "https://linkwhisper.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plugin WordPress d'aide au maillage interne : il suggère automatiquement des liens internes pertinents pendant la rédaction, détecte les liens cassés et les pages orphelines.",
+    "what_en": "WordPress internal-linking plugin: it automatically suggests relevant internal links while writing, and detects broken links and orphan pages.",
+    "pricing_model": "Version gratuite limitée sur WordPress.org et licences annuelles payantes selon le nombre de sites.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec fonctions de base sur WordPress.org ; fonctions avancées dans les licences payantes." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (fonctions de base)" },
+      { "name": "1 site", "price": "77 $/an" },
+      { "name": "3 sites", "price": "117 $/an" },
+      { "name": "10 sites", "price": "167 $/an" }
+    ],
+    "key_features": [
+      "Suggestions automatiques de liens internes à la rédaction",
+      "Détection des liens cassés",
+      "Repérage des pages orphelines",
+      "Rapports de maillage interne et auto-linking"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un site WordPress avec beaucoup de contenu.",
+        "Vous voulez industrialiser votre maillage interne pour le SEO.",
+        "Vous cherchez à repérer liens cassés et pages orphelines."
+      ],
+      "avoidIf": [
+        "Votre site n'est pas sous WordPress.",
+        "Vous avez peu d'articles à relier.",
+        "Vous préférez gérer vos liens manuellement."
+      ],
+      "threshold": "Link Whisper est utile pour maintenir le maillage interne d'un gros site WordPress ; pour un petit blog, la version gratuite ou un travail manuel suffit."
+    },
+    "pros": [
+      "Suggestions de liens internes rapides.",
+      "Détection des liens cassés et pages orphelines.",
+      "Gain de temps sur les gros sites.",
+      "Version gratuite pour tester."
+    ],
+    "cons": [
+      "Réservé à WordPress.",
+      "Fonctions avancées payantes par nombre de sites.",
+      "Suggestions à relire pour rester pertinentes."
+    ],
+    "use_cases": [
+      "Ajouter des liens internes en rédigeant un article.",
+      "Auditer et corriger les liens cassés du site.",
+      "Relier les pages orphelines pour le SEO."
+    ],
+    "relevant_for": ["Éditeurs de sites WordPress", "Rédacteurs SEO", "Blogueurs et content managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a content-heavy WordPress site.",
+        "You want to industrialize internal linking for SEO.",
+        "You want to spot broken links and orphan pages."
+      ],
+      "avoidIf": [
+        "Your site isn't on WordPress.",
+        "You have few articles to interlink.",
+        "You prefer to manage links manually."
+      ],
+      "threshold": "Link Whisper helps maintain internal linking on a large WordPress site; for a small blog, the free version or manual work is enough."
+    },
+    "pros": [
+      "Fast internal link suggestions.",
+      "Broken-link and orphan-page detection.",
+      "Time saver on large sites.",
+      "Free version to test."
+    ],
+    "cons": [
+      "WordPress only.",
+      "Advanced features paid per number of sites.",
+      "Suggestions need review to stay relevant."
+    ],
+    "use_cases": [
+      "Add internal links while writing an article.",
+      "Audit and fix broken links across the site.",
+      "Connect orphan pages for SEO."
+    ]
+  }
+}

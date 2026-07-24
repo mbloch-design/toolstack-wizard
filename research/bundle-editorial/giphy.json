@@ -1,0 +1,87 @@
+{
+  "slug": "giphy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GIPHY Developers — docs & API (site officiel)", "url": "https://developers.giphy.com/docs/api/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque et moteur de recherche de GIF animés et stickers, accessible en ligne pour partager des GIF et via une API/SDK pour les intégrer dans des applications et messageries.",
+    "what_en": "Library and search engine for animated GIFs and stickers, available online to share GIFs and via an API/SDK to embed them in apps and messaging.",
+    "pricing_model": "Site grand public gratuit ; API avec clé beta gratuite (usage limité) et clés de production payantes sur devis.",
+    "free_tier": { "exists": true, "detail": "Recherche et partage de GIF gratuits sur le site. Clé API beta gratuite plafonnée à ~100 appels/heure ; production sur devis." },
+    "plans": [
+      { "name": "Site & clé beta", "price": "Gratuit (~100 appels API/heure)" },
+      { "name": "Clé de production (API)", "price": "Sur devis (montants communiqués par l'équipe GIPHY)" }
+    ],
+    "key_features": [
+      "Recherche de GIF et stickers animés",
+      "Partage et intégration dans les messageries",
+      "API et SDK pour développeurs",
+      "Outils de création (GIF Maker)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez trouver et partager des GIF rapidement.",
+        "Vous intégrez une recherche de GIF dans une app ou un chat.",
+        "Un volume d'API modéré vous suffit (clé beta)."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un fort volume d'API sans négociation.",
+        "Vous cherchez une banque d'images fixes plutôt que des GIF.",
+        "Vous voulez des garanties de licence commerciale strictes."
+      ],
+      "threshold": "GIPHY s'impose pour trouver, partager et intégrer des GIF ; pour un usage API à fort volume, il faut passer par une clé de production négociée."
+    },
+    "pros": [
+      "Immense catalogue de GIF et stickers.",
+      "Recherche rapide et pertinente.",
+      "API et SDK bien documentés.",
+      "Usage grand public gratuit."
+    ],
+    "cons": [
+      "Clé beta plafonnée pour les développeurs.",
+      "Production API sur devis, peu transparent.",
+      "Dépendance à un catalogue tiers."
+    ],
+    "use_cases": [
+      "Ajouter un sélecteur de GIF dans une messagerie.",
+      "Illustrer un post social avec un GIF.",
+      "Créer et partager un GIF animé."
+    ],
+    "relevant_for": ["Développeurs d'apps", "Community managers", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to find and share GIFs quickly.",
+        "You embed GIF search into an app or chat.",
+        "A moderate API volume is enough for you (beta key)."
+      ],
+      "avoidIf": [
+        "You need high API volume without negotiation.",
+        "You want a still-image library rather than GIFs.",
+        "You need strict commercial licensing guarantees."
+      ],
+      "threshold": "GIPHY fits finding, sharing and embedding GIFs; for high-volume API use, you need a negotiated production key."
+    },
+    "pros": [
+      "Huge catalog of GIFs and stickers.",
+      "Fast, relevant search.",
+      "Well-documented API and SDK.",
+      "Free consumer use."
+    ],
+    "cons": [
+      "Beta key capped for developers.",
+      "Production API is quote-based, less transparent.",
+      "Reliance on a third-party catalog."
+    ],
+    "use_cases": [
+      "Add a GIF picker to a messaging app.",
+      "Illustrate a social post with a GIF.",
+      "Create and share an animated GIF."
+    ]
+  }
+}

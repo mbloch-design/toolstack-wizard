@@ -1,0 +1,88 @@
+{
+  "slug": "flux-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Black Forest Labs — FLUX API pricing (site officiel)", "url": "https://bfl.ai/pricing" },
+    { "label": "BFL — documentation & Playground (site officiel)", "url": "https://docs.bfl.ai" }
+  ],
+  "facts": {
+    "what": "Famille de modèles de génération et d'édition d'images par IA (FLUX.1, FLUX.2, Kontext) développée par Black Forest Labs, accessible via API, un Playground web et des poids ouverts pour certaines variantes.",
+    "what_en": "Family of AI image generation and editing models (FLUX.1, FLUX.2, Kontext) built by Black Forest Labs, available via API, a web Playground and open weights for some variants.",
+    "pricing_model": "Facturation à l'usage via crédits (1 crédit = 0,01 $), même tarif API et Playground. Poids ouverts disponibles pour les variantes non-Pro.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite permanente sur l'API/Playground ; les modèles à poids ouverts peuvent être exécutés en local. Packs de crédits à l'achat." },
+    "plans": [
+      { "name": "Crédits (usage)", "price": "1 crédit = 0,01 $ ; packs à partir de 1 000 crédits pour 10 $" },
+      { "name": "Image Pro (Playground)", "price": "≈ 4 crédits par image Pro (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Génération texte-vers-image haute qualité",
+      "Édition d'image contextuelle (FLUX.1 Kontext)",
+      "API et Playground web pour tester les cas d'usage",
+      "Poids ouverts pour certaines variantes (exécution locale)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous intégrez la génération d'images IA dans un produit ou un pipeline.",
+        "Vous voulez un rendu photoréaliste et une édition guidée par contexte.",
+        "Vous appréciez de pouvoir héberger certains modèles en local (poids ouverts)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil grand public clé en main sans code.",
+        "Vous voulez une offre gratuite illimitée.",
+        "Un besoin très ponctuel ne justifie pas d'intégration API."
+      ],
+      "threshold": "FLUX s'impose pour les développeurs et studios qui veulent un moteur d'images IA de pointe via API ou en local ; pour un usage occasionnel sans code, un outil grand public convient mieux."
+    },
+    "pros": [
+      "Qualité de rendu parmi les meilleures du marché.",
+      "Édition contextuelle puissante (Kontext).",
+      "API simple et Playground pour prototyper.",
+      "Poids ouverts pour certaines variantes."
+    ],
+    "cons": [
+      "Facturation à l'usage qui grimpe à fort volume.",
+      "Orienté développeurs plus que grand public.",
+      "Pas d'offre gratuite illimitée sur l'API."
+    ],
+    "use_cases": [
+      "Générer des visuels marketing à la demande.",
+      "Éditer des images par instruction dans une app.",
+      "Prototyper une fonctionnalité d'image IA."
+    ],
+    "relevant_for": ["Développeurs", "Studios créatifs", "Équipes produit / IA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You embed AI image generation into a product or pipeline.",
+        "You want photorealistic output and context-aware editing.",
+        "You value being able to self-host some models (open weights)."
+      ],
+      "avoidIf": [
+        "You want a no-code consumer tool out of the box.",
+        "You need an unlimited free plan.",
+        "A very occasional need doesn't justify API integration."
+      ],
+      "threshold": "FLUX fits developers and studios wanting a state-of-the-art AI image engine via API or self-hosted; for occasional no-code use, a consumer tool fits better."
+    },
+    "pros": [
+      "Output quality among the best available.",
+      "Powerful context-aware editing (Kontext).",
+      "Simple API and Playground for prototyping.",
+      "Open weights for some variants."
+    ],
+    "cons": [
+      "Usage-based billing scales up at high volume.",
+      "Developer-oriented rather than consumer-friendly.",
+      "No unlimited free plan on the API."
+    ],
+    "use_cases": [
+      "Generate marketing visuals on demand.",
+      "Edit images by instruction inside an app.",
+      "Prototype an AI image feature."
+    ]
+  }
+}

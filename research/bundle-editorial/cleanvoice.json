@@ -1,0 +1,87 @@
+{
+  "slug": "cleanvoice",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cleanvoice (site officiel)", "url": "https://cleanvoice.ai" }
+  ],
+  "facts": {
+    "what": "Outil IA d'édition audio qui détecte et supprime automatiquement les mots de remplissage, bruits de bouche, bégaiements et silences dans les podcasts et voix off, avec un mode de révision avant application.",
+    "what_en": "AI audio editing tool that automatically detects and removes filler words, mouth sounds, stutters and silences from podcasts and voice-overs, with a review mode before edits are applied.",
+    "pricing_model": "Paiement à la minute traitée ou packs d'heures ; facturation à l'usage.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans carte bancaire ni inscription ; ensuite paiement à l'usage." },
+    "plans": [
+      { "name": "Pay as You Go", "price": "0,015 $/minute (packs : 5 h pour 11 $, 10 h pour 20 $, 30 h pour 45 $)" }
+    ],
+    "key_features": [
+      "Suppression des mots de remplissage (« euh », « hum »)",
+      "Retrait des bruits de bouche et bégaiements",
+      "Détection des silences et respirations",
+      "Mode de révision avant application des coupes",
+      "Prise en charge de 20+ langues"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous montez régulièrement des podcasts ou des voix off.",
+        "Vous voulez automatiser le nettoyage des mots parasites.",
+        "Vous préférez valider chaque coupe avant application."
+      ],
+      "avoidIf": [
+        "Vous éditez très peu d'audio.",
+        "Vous voulez un montage audio complet, pas seulement du nettoyage.",
+        "Vous préférez un abonnement fixe à un paiement à l'usage."
+      ],
+      "threshold": "Cleanvoice fait gagner beaucoup de temps sur le nettoyage audio en volume ; pour un montage ponctuel, l'édition manuelle suffit."
+    },
+    "pros": [
+      "Nettoyage automatique très efficace des mots parasites.",
+      "Mode de révision pour garder le contrôle.",
+      "Prise en charge de nombreuses langues.",
+      "Paiement à l'usage sans engagement."
+    ],
+    "cons": [
+      "Se limite au nettoyage, pas au montage complet.",
+      "Coût qui grimpe avec le volume traité.",
+      "Détections parfois à corriger manuellement."
+    ],
+    "use_cases": [
+      "Nettoyer un épisode de podcast des « euh » et silences.",
+      "Préparer une voix off avant montage.",
+      "Traiter en lot plusieurs enregistrements bruts."
+    ],
+    "relevant_for": ["Podcasteurs", "Monteurs audio", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly edit podcasts or voice-overs.",
+        "You want to automate filler-word cleanup.",
+        "You prefer to approve each cut before it's applied."
+      ],
+      "avoidIf": [
+        "You edit very little audio.",
+        "You want full audio editing, not just cleanup.",
+        "You prefer a fixed subscription to usage-based billing."
+      ],
+      "threshold": "Cleanvoice saves a lot of time on audio cleanup at volume; for occasional editing, manual work is enough."
+    },
+    "pros": [
+      "Very effective automatic filler-word removal.",
+      "Review mode to keep control.",
+      "Support for many languages.",
+      "Usage-based payment with no commitment."
+    ],
+    "cons": [
+      "Limited to cleanup, not full editing.",
+      "Cost rises with processed volume.",
+      "Detections sometimes need manual correction."
+    ],
+    "use_cases": [
+      "Clean a podcast episode of fillers and silences.",
+      "Prepare a voice-over before editing.",
+      "Batch-process several raw recordings."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "billo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Billo — site officiel", "url": "https://billo.app" }
+  ],
+  "facts": {
+    "what": "Place de marché qui met en relation les marques e-commerce avec des créateurs pour produire des vidéos UGC (témoignages, démos produit) destinées aux réseaux et à la pub.",
+    "what_en": "Marketplace connecting e-commerce brands with creators to produce UGC videos (testimonials, product demos) for social media and ads.",
+    "pricing_model": "Paiement à la vidéo (pas d'abonnement obligatoire), options de forfaits pour les volumes.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Paiement à la vidéo, sans abonnement obligatoire pour démarrer ; forfaits pour les volumes." },
+    "plans": [
+      { "name": "À la vidéo", "price": "à partir d'environ 99 $ par vidéo (montants sur la page officielle)" },
+      { "name": "Forfait mensuel / volume", "price": "offres pour marques à fort volume (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Réseau de créateurs UGC vérifiés",
+      "Commande de vidéos à partir d'un brief",
+      "Formats courts pour réseaux et publicité",
+      "Gestion des révisions et livraison des vidéos"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une marque e-commerce et avez besoin de vidéos UGC régulières.",
+        "Vous n'avez pas de créateurs sous la main pour tourner.",
+        "Vous voulez alimenter vos pubs en formats courts."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'une seule vidéo ponctuelle.",
+        "Vous voulez un contrôle créatif fin sur chaque tournage.",
+        "Votre budget publicitaire est très limité."
+      ],
+      "threshold": "Billo convient aux marques qui produisent des vidéos UGC en continu ; pour un besoin isolé, un créateur en direct peut suffire."
+    },
+    "pros": [
+      "Accès rapide à un réseau de créateurs UGC.",
+      "Paiement à la vidéo, sans abonnement obligatoire.",
+      "Formats adaptés aux réseaux et à la pub.",
+      "Processus de brief et de révision cadré."
+    ],
+    "cons": [
+      "Contrôle créatif limité par le format marketplace.",
+      "Coût par vidéo qui s'additionne à l'échelle.",
+      "Qualité variable selon les créateurs."
+    ],
+    "use_cases": [
+      "Commander des vidéos témoignages pour une marque.",
+      "Alimenter des campagnes publicitaires en UGC.",
+      "Tester plusieurs angles créatifs à moindre effort."
+    ],
+    "relevant_for": ["Marques e-commerce", "Marketeurs performance", "Agences social media"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an e-commerce brand needing regular UGC videos.",
+        "You don't have creators on hand to film.",
+        "You want to feed your ads with short-form content."
+      ],
+      "avoidIf": [
+        "You only need a single one-off video.",
+        "You want fine creative control over each shoot.",
+        "Your ad budget is very limited."
+      ],
+      "threshold": "Billo fits brands producing UGC videos continuously; for a one-off need, a direct creator may suffice."
+    },
+    "pros": [
+      "Fast access to a network of UGC creators.",
+      "Pay-per-video, no mandatory subscription.",
+      "Formats suited to social media and ads.",
+      "Structured brief and revision process."
+    ],
+    "cons": [
+      "Creative control limited by the marketplace format.",
+      "Per-video cost adds up at scale.",
+      "Quality varies by creator."
+    ],
+    "use_cases": [
+      "Order testimonial videos for a brand.",
+      "Feed ad campaigns with UGC.",
+      "Test several creative angles with little effort."
+    ]
+  }
+}

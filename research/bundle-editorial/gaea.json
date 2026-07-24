@@ -1,0 +1,90 @@
+{
+  "slug": "gaea",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "QuadSpinner — commander Gaea (site officiel)", "url": "https://quadspinner.com/Order" },
+    { "label": "QuadSpinner — comparer les éditions (site officiel)", "url": "https://quadspinner.com/compare" }
+  ],
+  "facts": {
+    "what": "Logiciel de création de terrains de QuadSpinner : génère par nodes des paysages, montagnes et reliefs procéduraux avec érosion réaliste, pour la 3D, le cinéma et les jeux.",
+    "what_en": "Terrain creation software by QuadSpinner: node-based generation of procedural landscapes, mountains and reliefs with realistic erosion, for 3D, film and games.",
+    "pricing_model": "Licence perpétuelle par édition (achat unique) ; édition Community gratuite non commerciale.",
+    "free_tier": { "exists": true, "detail": "Community Edition gratuite pour usage non commercial, export limité à 1K. Éditions payantes pour le commercial." },
+    "plans": [
+      { "name": "Community", "price": "Gratuit (non commercial, export 1K)" },
+      { "name": "Indie", "price": "99 $ (export jusqu'à 8K)" },
+      { "name": "Professional", "price": "199 $ (résolution 256K, fonctions avancées)" },
+      { "name": "Enterprise", "price": "299 $ (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Génération de terrain procédurale par nodes",
+      "Simulations d'érosion réalistes",
+      "Export haute résolution (jusqu'à 256K)",
+      "Texturage et masques pour le rendu"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des terrains pour la 3D, le cinéma ou les jeux.",
+        "Vous voulez une érosion et un relief réalistes.",
+        "Vous appréciez un workflow procédural par nodes."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de terrains détaillés.",
+        "Vous cherchez un outil de modélisation 3D généraliste.",
+        "Un usage strictement commercial ne rentre pas dans l'édition gratuite."
+      ],
+      "threshold": "Gaea s'impose pour la création de terrains procéduraux de qualité production ; pour de la modélisation 3D générale, un autre logiciel convient mieux."
+    },
+    "pros": [
+      "Érosion et relief très réalistes.",
+      "Workflow procédural puissant par nodes.",
+      "Édition Community gratuite pour apprendre.",
+      "Licence perpétuelle (pas d'abonnement)."
+    ],
+    "cons": [
+      "Spécialisé sur les terrains uniquement.",
+      "Édition gratuite limitée en export.",
+      "Courbe d'apprentissage sur le graphe de nodes."
+    ],
+    "use_cases": [
+      "Générer un décor de montagne pour un film.",
+      "Créer des terrains pour un jeu vidéo.",
+      "Prototyper des paysages procéduraux."
+    ],
+    "relevant_for": ["Artistes 3D / environnement", "Studios VFX", "Développeurs de jeux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create terrains for 3D, film or games.",
+        "You want realistic erosion and relief.",
+        "You like a node-based procedural workflow."
+      ],
+      "avoidIf": [
+        "You don't need detailed terrains.",
+        "You want a general-purpose 3D modeling tool.",
+        "A strictly commercial use doesn't fit the free edition."
+      ],
+      "threshold": "Gaea fits production-grade procedural terrain creation; for general 3D modeling, another tool fits better."
+    },
+    "pros": [
+      "Very realistic erosion and relief.",
+      "Powerful node-based procedural workflow.",
+      "Free Community edition to learn.",
+      "Perpetual license (no subscription)."
+    ],
+    "cons": [
+      "Specialized on terrains only.",
+      "Free edition limited on export.",
+      "Learning curve on the node graph."
+    ],
+    "use_cases": [
+      "Generate a mountain set for a film.",
+      "Create terrains for a video game.",
+      "Prototype procedural landscapes."
+    ]
+  }
+}

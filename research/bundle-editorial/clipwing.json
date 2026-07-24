@@ -1,0 +1,88 @@
+{
+  "slug": "clipwing",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Clipwing — tarifs (site officiel)", "url": "https://clipwing.pro/pricing" }
+  ],
+  "facts": {
+    "what": "Outil IA qui découpe de longues vidéos (podcasts, interviews, démos, cours) en clips courts prêts à publier sur les réseaux sociaux.",
+    "what_en": "AI tool that cuts long videos (podcasts, interviews, demos, lectures) into short clips ready to publish on social media.",
+    "pricing_model": "Freemium : plan gratuit limité en minutes, puis abonnements Pro et Studio.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec toutes les fonctionnalités, limité à 60 minutes de vidéo par mois." },
+    "plans": [
+      { "name": "Free", "price": "0 (60 min/mois)" },
+      { "name": "Pro", "price": "29,99 $/mois" },
+      { "name": "Studio", "price": "59,99 $/mois" }
+    ],
+    "key_features": [
+      "Découpe automatique de longues vidéos en clips courts",
+      "Export sans filigrane sur les plans payants",
+      "Options de stockage et de minutes étendues",
+      "Adapté aux vidéos parlées (podcasts, interviews, démos)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous transformez de longues vidéos en clips courts.",
+        "Vous publiez régulièrement des extraits sur les réseaux.",
+        "Vous voulez tester l'outil via son plan gratuit."
+      ],
+      "avoidIf": [
+        "Vous ne produisez pas de vidéos longues à recycler.",
+        "Vous avez besoin d'un montage vidéo complet.",
+        "Un volume élevé rend d'autres outils plus rentables."
+      ],
+      "threshold": "Clipwing est utile pour recycler des vidéos longues en clips sociaux ; sans contenu long à découper, il n'a pas d'intérêt."
+    },
+    "pros": [
+      "Découpe automatique rapide en clips courts.",
+      "Plan gratuit pour tester sans engagement.",
+      "Adapté aux podcasts et interviews.",
+      "Export sans filigrane sur les plans payants."
+    ],
+    "cons": [
+      "Plan gratuit limité en minutes.",
+      "Se concentre sur le clipping, pas le montage complet.",
+      "Qualité de découpe à vérifier selon le contenu."
+    ],
+    "use_cases": [
+      "Extraire des clips d'un épisode de podcast vidéo.",
+      "Découper une interview en extraits pour les réseaux.",
+      "Recycler une démo produit en formats courts."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Podcasteurs vidéo", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You turn long videos into short clips.",
+        "You regularly publish clips on social media.",
+        "You want to test the tool via its free plan."
+      ],
+      "avoidIf": [
+        "You don't produce long videos to repurpose.",
+        "You need full video editing.",
+        "High volume makes other tools more cost-effective."
+      ],
+      "threshold": "Clipwing is useful for repurposing long videos into social clips; without long content to cut, it has no value."
+    },
+    "pros": [
+      "Fast automatic cutting into short clips.",
+      "Free plan to test without commitment.",
+      "Suited to podcasts and interviews.",
+      "Watermark-free export on paid plans."
+    ],
+    "cons": [
+      "Free plan limited in minutes.",
+      "Focused on clipping, not full editing.",
+      "Cut quality varies by content."
+    ],
+    "use_cases": [
+      "Extract clips from a video podcast episode.",
+      "Cut an interview into clips for social media.",
+      "Repurpose a product demo into short formats."
+    ]
+  }
+}

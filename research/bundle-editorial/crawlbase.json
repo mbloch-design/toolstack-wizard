@@ -1,0 +1,89 @@
+{
+  "slug": "crawlbase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Crawlbase — tarifs (site officiel)", "url": "https://crawlbase.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'API de web scraping et de proxies : elle récupère le HTML de pages web (avec rendu JavaScript possible), contourne les blocages et propose du stockage de données extraites, facturé à la requête réussie.",
+    "what_en": "Web scraping and proxy API platform: it fetches web page HTML (with optional JavaScript rendering), bypasses blocks and offers extracted-data storage, billed per successful request.",
+    "pricing_model": "Abonnement mensuel par volume de requêtes + option pay-as-you-go ; paiement uniquement pour les requêtes réussies.",
+    "free_tier": { "exists": true, "detail": "1 000 requêtes gratuites pour tester avant tout engagement." },
+    "plans": [
+      { "name": "Crawling API — Starter", "price": "29 $/mois (~25 000 requêtes)" },
+      { "name": "Crawling API — intermédiaire", "price": "99 $/mois (~100 000 requêtes)" },
+      { "name": "Crawling API — avancé", "price": "199 $/mois (~500 000 requêtes)" },
+      { "name": "Proxies / Storage", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "API de crawling avec rendu JavaScript optionnel",
+      "Réseau de proxies pour contourner les blocages",
+      "Facturation uniquement sur les requêtes réussies",
+      "Storage API pour conserver les données extraites"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez extraire des données web à grande échelle de façon fiable.",
+        "Vous voulez éviter de gérer vous-même proxies et anti-bot.",
+        "Vous préférez payer uniquement les requêtes qui aboutissent."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un besoin de scraping ponctuel et minime.",
+        "Vous n'avez pas de compétences techniques pour intégrer une API.",
+        "Votre cas d'usage ne tolère aucune dépendance à un tiers."
+      ],
+      "threshold": "Crawlbase se justifie pour du scraping récurrent et industrialisé ; pour une extraction rare, un script maison ou une extension suffit."
+    },
+    "pros": [
+      "Facturation à la requête réussie, sans gaspillage.",
+      "Rendu JavaScript et proxies intégrés.",
+      "Palier gratuit pour tester le service.",
+      "Storage API pour centraliser les données."
+    ],
+    "cons": [
+      "Nécessite des compétences techniques pour l'intégration.",
+      "Coûts qui grimpent vite à fort volume.",
+      "Dépendance à un service tiers pour vos données."
+    ],
+    "use_cases": [
+      "Collecter des prix ou catalogues concurrents.",
+      "Alimenter un dataset pour de l'analyse ou de l'IA.",
+      "Surveiller des pages web à intervalles réguliers."
+    ],
+    "relevant_for": ["Développeurs", "Data analysts", "Équipes growth / SEO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need reliable large-scale web data extraction.",
+        "You'd rather not manage proxies and anti-bot yourself.",
+        "You prefer paying only for requests that succeed."
+      ],
+      "avoidIf": [
+        "You only have a tiny, one-off scraping need.",
+        "You lack the technical skills to integrate an API.",
+        "Your use case can't tolerate a third-party dependency."
+      ],
+      "threshold": "Crawlbase makes sense for recurring, industrial-scale scraping; for rare extraction, a homemade script or extension is enough."
+    },
+    "pros": [
+      "Billing on successful requests only, no waste.",
+      "Built-in JavaScript rendering and proxies.",
+      "Free tier to test the service.",
+      "Storage API to centralize data."
+    ],
+    "cons": [
+      "Requires technical skills to integrate.",
+      "Costs ramp up quickly at high volume.",
+      "Reliance on a third-party service for your data."
+    ],
+    "use_cases": [
+      "Collect competitor prices or catalogs.",
+      "Feed a dataset for analytics or AI.",
+      "Monitor web pages at regular intervals."
+    ]
+  }
+}

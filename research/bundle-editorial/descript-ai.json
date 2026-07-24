@@ -1,0 +1,89 @@
+{
+  "slug": "descript-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Descript — tarifs (site officiel)", "url": "https://www.descript.com/pricing" }
+  ],
+  "facts": {
+    "what": "Éditeur vidéo et podcast piloté par IA qui transcrit l'audio/vidéo en texte, puis permet de monter en éditant simplement le transcript (couper des mots, supprimer les hésitations), avec sous-titres, clonage de voix et studio sound.",
+    "what_en": "AI-powered video and podcast editor that transcribes audio/video into text, then lets you edit by simply editing the transcript (cutting words, removing filler words), with captions, voice cloning and studio sound.",
+    "pricing_model": "Abonnement mensuel/annuel par utilisateur, avec un palier gratuit.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec quota de minutes limité ; exports vidéo filigranés et fonctions IA plafonnées." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (exports filigranés, quota limité)" },
+      { "name": "Hobbyist", "price": "16 $/mois en annuel (24 $ en mensuel)" },
+      { "name": "Creator", "price": "24 $/mois en annuel (35 $ en mensuel)" },
+      { "name": "Business", "price": "50 $/mois en annuel (65 $ en mensuel)" }
+    ],
+    "key_features": [
+      "Montage par édition du transcript (text-based editing)",
+      "Transcription automatique de haute précision",
+      "Suppression des mots de remplissage et Studio Sound",
+      "Sous-titres, clonage de voix et avatars IA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous montez des podcasts ou vidéos parlées régulièrement.",
+        "Vous préférez éditer un transcript plutôt qu'une timeline.",
+        "Vous voulez sous-titres et nettoyage audio automatiques."
+      ],
+      "avoidIf": [
+        "Vous faites du montage cinématographique complexe.",
+        "Vous n'avez pas de contenu majoritairement parlé.",
+        "Un besoin très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "Descript brille pour le montage de contenu parlé par le texte ; pour du montage visuel avancé, un éditeur timeline reste plus adapté."
+    },
+    "pros": [
+      "Montage par le texte, très rapide à prendre en main.",
+      "Transcription précise et sous-titres automatiques.",
+      "Nettoyage audio et suppression des hésitations.",
+      "Palier gratuit pour découvrir l'outil."
+    ],
+    "cons": [
+      "Exports filigranés sur le plan gratuit.",
+      "Moins adapté au montage vidéo purement visuel.",
+      "Fonctions IA plafonnées selon le plan."
+    ],
+    "use_cases": [
+      "Monter un podcast en corrigeant le transcript.",
+      "Produire des vidéos parlées avec sous-titres.",
+      "Nettoyer un enregistrement (hésitations, bruit)."
+    ],
+    "relevant_for": ["Podcasteurs", "Créateurs YouTube", "Marketeurs contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You edit podcasts or talking-head videos regularly.",
+        "You prefer editing a transcript over a timeline.",
+        "You want automatic captions and audio cleanup."
+      ],
+      "avoidIf": [
+        "You do complex cinematic editing.",
+        "Your content isn't mostly spoken word.",
+        "A very occasional need doesn't justify the subscription."
+      ],
+      "threshold": "Descript shines for editing spoken content via text; for advanced visual editing, a timeline editor remains a better fit."
+    },
+    "pros": [
+      "Text-based editing, very quick to learn.",
+      "Accurate transcription and automatic captions.",
+      "Audio cleanup and filler-word removal.",
+      "Free tier to discover the tool."
+    ],
+    "cons": [
+      "Watermarked exports on the free plan.",
+      "Less suited to purely visual video editing.",
+      "AI features capped depending on plan."
+    ],
+    "use_cases": [
+      "Edit a podcast by fixing the transcript.",
+      "Produce talking-head videos with captions.",
+      "Clean up a recording (fillers, noise)."
+    ]
+  }
+}

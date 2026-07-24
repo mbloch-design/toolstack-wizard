@@ -1,0 +1,88 @@
+{
+  "slug": "elgato",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Elgato — produits (site officiel)", "url": "https://www.elgato.com/us/en/explorer/products/" }
+  ],
+  "facts": {
+    "what": "Marque de matériel et d'accessoires pour créateurs et streamers : Stream Deck (pavé de touches programmables), cartes d'acquisition, microphones, éclairages, fonds verts et supports, avec les logiciels associés.",
+    "what_en": "Brand of hardware and accessories for creators and streamers: Stream Deck (programmable key pad), capture cards, microphones, lighting, green screens and mounts, with companion software.",
+    "pricing_model": "Achat de matériel à l'unité (produits vendus séparément) ; logiciels associés généralement gratuits.",
+    "free_tier": { "exists": false, "detail": "Produits matériels achetés à l'unité ; le logiciel Stream Deck est fourni gratuitement." },
+    "plans": [
+      { "name": "Stream Deck (pavé de touches)", "price": "montants sur la page officielle" },
+      { "name": "Cartes d'acquisition (ex. Cam Link 4K, HD60)", "price": "montants sur la page officielle" },
+      { "name": "Microphones / éclairages / accessoires", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Stream Deck : touches programmables et profils intelligents",
+      "Cartes d'acquisition pour capturer consoles et caméras",
+      "Microphones, éclairages Key Light et fonds verts",
+      "Logiciel Stream Deck avec large bibliothèque de plugins"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous streamez ou enregistrez du contenu régulièrement.",
+        "Vous voulez automatiser des actions via des touches physiques.",
+        "Vous équipez un studio de création vidéo/audio."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution logicielle seule, sans matériel.",
+        "Votre usage est trop ponctuel pour investir dans du matériel.",
+        "Vous n'avez pas besoin d'acquisition ni de contrôle physique."
+      ],
+      "threshold": "Elgato s'impose pour équiper un setup de streaming ou de création ; pour un usage occasionnel, le matériel dédié n'est pas rentable."
+    },
+    "pros": [
+      "Écosystème matériel complet pour créateurs.",
+      "Stream Deck très personnalisable via plugins.",
+      "Logiciel de contrôle fourni gratuitement.",
+      "Cartes d'acquisition et éclairages de référence."
+    ],
+    "cons": [
+      "Investissement matériel initial à prévoir.",
+      "Produits vendus séparément, coût cumulé.",
+      "Surdimensionné pour un usage occasionnel."
+    ],
+    "use_cases": [
+      "Piloter OBS et des scènes en direct via le Stream Deck.",
+      "Capturer une console ou une caméra vers l'ordinateur.",
+      "Équiper un studio (micro, éclairage, fond vert)."
+    ],
+    "relevant_for": ["Streamers", "Créateurs vidéo", "Podcasteurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You stream or record content regularly.",
+        "You want to automate actions via physical keys.",
+        "You're equipping a video/audio creation studio."
+      ],
+      "avoidIf": [
+        "You want a software-only solution, no hardware.",
+        "Your use is too occasional to invest in hardware.",
+        "You need no capture or physical control."
+      ],
+      "threshold": "Elgato is the go-to for kitting out a streaming or creation setup; for occasional use, dedicated hardware isn't worth it."
+    },
+    "pros": [
+      "Complete hardware ecosystem for creators.",
+      "Highly customizable Stream Deck via plugins.",
+      "Control software provided free.",
+      "Reference-grade capture cards and lighting."
+    ],
+    "cons": [
+      "Upfront hardware investment required.",
+      "Products sold separately, costs add up.",
+      "Overkill for occasional use."
+    ],
+    "use_cases": [
+      "Drive OBS and live scenes via the Stream Deck.",
+      "Capture a console or camera to the computer.",
+      "Equip a studio (mic, lighting, green screen)."
+    ]
+  }
+}

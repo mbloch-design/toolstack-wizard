@@ -1,0 +1,86 @@
+{
+  "slug": "babylon-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Babylon.js — site officiel", "url": "https://www.babylonjs.com" }
+  ],
+  "facts": {
+    "what": "Moteur 3D JavaScript open source (WebGL/WebGPU/WebXR) soutenu par Microsoft, pour créer des jeux, scènes et expériences 3D interactives dans le navigateur.",
+    "what_en": "Open-source JavaScript 3D engine (WebGL/WebGPU/WebXR) backed by Microsoft, for building games, scenes and interactive 3D experiences in the browser.",
+    "pricing_model": "Gratuit et open source (licence Apache 2.0). Aucun coût de licence.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source (Apache 2.0), usage commercial autorisé sans redevance." },
+    "plans": [
+      { "name": "Open source", "price": "0 € — licence Apache 2.0, usage commercial libre" }
+    ],
+    "key_features": [
+      "Rendu WebGL et WebGPU haute performance",
+      "Physique, animation et GUI intégrées",
+      "Support WebXR (VR/AR) natif",
+      "Outils (Playground, Node Material Editor, Inspector)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des expériences 3D ou des jeux pour le web.",
+        "Vous voulez un moteur open source sans redevance.",
+        "Vous ciblez le WebXR (VR/AR) dans le navigateur."
+      ],
+      "avoidIf": [
+        "Vous ne codez pas et cherchez un outil sans programmation.",
+        "Vous visez un jeu AAA natif desktop/console.",
+        "Vous voulez un éditeur visuel complet plutôt qu'une librairie."
+      ],
+      "threshold": "Babylon.js s'impose pour la 3D interactive dans le navigateur ; pour du no-code ou du jeu AAA natif, un autre outil convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Fonctionnalités riches (physique, animation, WebXR).",
+      "Soutenu par Microsoft, communauté active.",
+      "Outils de développement complets (Playground, Inspector)."
+    ],
+    "cons": [
+      "Nécessite des compétences en développement.",
+      "Pas d'éditeur visuel tout-en-un comme un moteur de jeu classique.",
+      "Optimisation web à gérer pour les grosses scènes."
+    ],
+    "use_cases": [
+      "Créer un jeu ou une démo 3D jouable dans le navigateur.",
+      "Développer un configurateur produit 3D.",
+      "Construire une expérience WebXR (VR/AR)."
+    ],
+    "relevant_for": ["Développeurs web", "Studios de jeux web", "Créateurs d'expériences 3D/XR"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build 3D experiences or games for the web.",
+        "You want a royalty-free open-source engine.",
+        "You target WebXR (VR/AR) in the browser."
+      ],
+      "avoidIf": [
+        "You don't code and want a no-programming tool.",
+        "You're targeting a native AAA desktop/console game.",
+        "You want a full visual editor rather than a library."
+      ],
+      "threshold": "Babylon.js fits interactive 3D in the browser; for no-code or native AAA games, another tool is a better fit."
+    },
+    "pros": [
+      "Fully free and open source.",
+      "Rich features (physics, animation, WebXR).",
+      "Backed by Microsoft with an active community.",
+      "Complete dev tools (Playground, Inspector)."
+    ],
+    "cons": [
+      "Requires development skills.",
+      "No all-in-one visual editor like a classic game engine.",
+      "Web optimization to manage for large scenes."
+    ],
+    "use_cases": [
+      "Build a playable 3D game or demo in the browser.",
+      "Develop a 3D product configurator.",
+      "Create a WebXR (VR/AR) experience."
+    ]
+  }
+}

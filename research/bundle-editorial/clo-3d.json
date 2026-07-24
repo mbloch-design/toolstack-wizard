@@ -1,0 +1,89 @@
+{
+  "slug": "clo-3d",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CLO — plans et tarifs (site officiel)", "url": "https://www.clo3d.com/en/plans" }
+  ],
+  "facts": {
+    "what": "Logiciel de conception 3D de vêtements permettant de créer des prototypes numériques réalistes à partir de patronages 2D, avec simulation du tombé et des matières pour la mode.",
+    "what_en": "3D garment design software for creating realistic digital prototypes from 2D patterns, with drape and material simulation for fashion.",
+    "pricing_model": "Abonnement (mensuel ou annuel) ; licences individuelles et entreprises, tarif étudiant.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit de 30 jours." },
+    "plans": [
+      { "name": "Student", "price": "18,75 $/mois" },
+      { "name": "Individual", "price": "37,50 $/mois (ou pack annuel 225 $)" },
+      { "name": "Monthly pack", "price": "50 $/mois" },
+      { "name": "Business", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Prototypage 3D de vêtements à partir de patronages 2D",
+      "Simulation réaliste du tombé et des matières",
+      "Rendu photoréaliste des tenues",
+      "Outils pour la mode et le textile numérique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des vêtements et voulez limiter les échantillons.",
+        "Vous travaillez à partir de patronages 2D.",
+        "Vous voulez présenter des rendus 3D réalistes."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas dans la mode / le textile.",
+        "Vous cherchez un outil gratuit.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "CLO 3D s'impose pour la conception professionnelle de vêtements en 3D ; hors filière mode ou pour un besoin gratuit, il n'est pas adapté."
+    },
+    "pros": [
+      "Simulation réaliste du tombé des tissus.",
+      "Passage fluide du patronage 2D à la 3D.",
+      "Rendus photoréalistes des tenues.",
+      "Tarif étudiant accessible."
+    ],
+    "cons": [
+      "Courbe d'apprentissage marquée.",
+      "Pas de version gratuite permanente.",
+      "Réservé à la filière mode/textile."
+    ],
+    "use_cases": [
+      "Prototyper un vêtement sans échantillon physique.",
+      "Convertir un patronage 2D en rendu 3D.",
+      "Présenter une collection en images photoréalistes."
+    ],
+    "relevant_for": ["Designers mode", "Modélistes", "Étudiants en mode"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design garments and want to limit samples.",
+        "You work from 2D patterns.",
+        "You want to present realistic 3D renders."
+      ],
+      "avoidIf": [
+        "You're not in fashion/textiles.",
+        "You want a free tool.",
+        "Very occasional use doesn't justify the subscription."
+      ],
+      "threshold": "CLO 3D makes sense for professional 3D garment design; outside fashion or for free needs, it isn't suitable."
+    },
+    "pros": [
+      "Realistic fabric drape simulation.",
+      "Smooth 2D-pattern-to-3D workflow.",
+      "Photorealistic garment renders.",
+      "Accessible student pricing."
+    ],
+    "cons": [
+      "Marked learning curve.",
+      "No permanent free version.",
+      "Limited to the fashion/textile industry."
+    ],
+    "use_cases": [
+      "Prototype a garment without a physical sample.",
+      "Convert a 2D pattern into a 3D render.",
+      "Present a collection in photorealistic images."
+    ]
+  }
+}

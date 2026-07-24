@@ -1,0 +1,89 @@
+{
+  "slug": "browzwear",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Browzwear — plans tarifaires (site officiel)", "url": "https://browzwear.com/pricing-plans" }
+  ],
+  "facts": {
+    "what": "Plateforme de conception 3D de vêtements (VStitcher) qui permet de créer des prototypes numériques de textiles et de patronages, avec simulation réaliste du tombé et des matières pour l'industrie de la mode.",
+    "what_en": "3D garment design platform (VStitcher) for building digital prototypes of fabrics and patterns, with realistic simulation of drape and materials for the fashion industry.",
+    "pricing_model": "Abonnement par utilisateur, avec plans distincts pour freelances, petites équipes et entreprises.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; démo gratuite disponible sur demande." },
+    "plans": [
+      { "name": "Freelancer", "price": "75 $/mois" },
+      { "name": "Freelancer Plus", "price": "montants sur la page officielle (accès à plus de versions)" },
+      { "name": "Teams", "price": "montants sur la page officielle (jusqu'à 3 utilisateurs)" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Prototypage 3D de vêtements et simulation réaliste des matières",
+      "Patronage numérique et tech packs",
+      "Collaboration et partage (Stylezone)",
+      "Rendus et outils IA sur les plans supérieurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des vêtements et voulez réduire les échantillons physiques.",
+        "Vous travaillez dans la mode / le textile en 3D.",
+        "Vous devez produire des tech packs et prototypes numériques."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas dans la conception de vêtements.",
+        "Vous cherchez un outil gratuit.",
+        "Un usage très occasionnel ne justifie pas l'abonnement."
+      ],
+      "threshold": "Browzwear s'impose pour la conception professionnelle de vêtements en 3D ; hors filière mode ou pour un besoin ponctuel, l'investissement n'a pas de sens."
+    },
+    "pros": [
+      "Simulation réaliste du tombé et des matières.",
+      "Chaîne complète du patronage au tech pack.",
+      "Plan freelance accessible pour les indépendants.",
+      "Réduit le recours aux échantillons physiques."
+    ],
+    "cons": [
+      "Courbe d'apprentissage élevée.",
+      "Tarifs entreprise sur devis, peu transparents.",
+      "Réservé à la filière mode/textile."
+    ],
+    "use_cases": [
+      "Prototyper une collection sans échantillon physique.",
+      "Créer des patronages et tech packs numériques.",
+      "Présenter des rendus 3D à un client ou à la production."
+    ],
+    "relevant_for": ["Designers mode", "Modélistes", "Marques textiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design garments and want to cut physical samples.",
+        "You work in fashion/textiles in 3D.",
+        "You need to produce digital tech packs and prototypes."
+      ],
+      "avoidIf": [
+        "You're not in garment design.",
+        "You want a free tool.",
+        "Very occasional use doesn't justify the subscription."
+      ],
+      "threshold": "Browzwear makes sense for professional 3D garment design; outside fashion or for occasional needs, the investment isn't justified."
+    },
+    "pros": [
+      "Realistic drape and material simulation.",
+      "Full pipeline from pattern to tech pack.",
+      "Accessible freelancer plan for independents.",
+      "Reduces reliance on physical samples."
+    ],
+    "cons": [
+      "Steep learning curve.",
+      "Enterprise pricing by quote, low transparency.",
+      "Limited to the fashion/textile industry."
+    ],
+    "use_cases": [
+      "Prototype a collection without physical samples.",
+      "Build digital patterns and tech packs.",
+      "Present 3D renders to a client or production."
+    ]
+  }
+}

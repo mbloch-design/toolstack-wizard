@@ -1,0 +1,88 @@
+{
+  "slug": "cinema-4d",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Maxon Cinema 4D (site officiel)", "url": "https://www.maxon.net/cinema-4d" }
+  ],
+  "facts": {
+    "what": "Logiciel de modélisation, d'animation et de rendu 3D de Maxon, réputé en motion graphics et visualisation, incluant désormais le moteur de rendu GPU Redshift.",
+    "what_en": "3D modeling, animation and rendering software by Maxon, well known in motion graphics and visualization, now bundling the Redshift GPU renderer.",
+    "pricing_model": "Abonnement (mensuel ou annuel) ; bundle Maxon One avec les autres outils Maxon.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit et tarifs étudiants disponibles." },
+    "plans": [
+      { "name": "Cinema 4D (annuel)", "price": "environ 719 $/an (montants sur la page officielle)" },
+      { "name": "Cinema 4D (mensuel)", "price": "environ 109 $/mois" },
+      { "name": "Maxon One", "price": "environ 1 199 $/an (Cinema 4D, Redshift, ZBrush, Red Giant…)" }
+    ],
+    "key_features": [
+      "Modélisation, animation et rendu 3D",
+      "Moteur de rendu GPU Redshift inclus",
+      "Outils de motion graphics (MoGraph)",
+      "Interoperabilité avec l'écosystème Maxon"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du motion graphics ou de la 3D pro.",
+        "Vous voulez un rendu GPU rapide (Redshift inclus).",
+        "Vous travaillez dans la pub, le broadcast ou la visualisation."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution 3D gratuite.",
+        "Vous préférez une licence perpétuelle.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "Cinema 4D s'impose pour le motion graphics et la 3D pro avec Redshift ; pour un besoin gratuit ou occasionnel, une alternative comme Blender convient mieux."
+    },
+    "pros": [
+      "Référence du motion graphics (MoGraph).",
+      "Rendu GPU Redshift inclus.",
+      "Interface réputée accessible pour de la 3D.",
+      "Écosystème Maxon complet via Maxon One."
+    ],
+    "cons": [
+      "Uniquement en abonnement.",
+      "Tarif élevé, surtout avec Maxon One.",
+      "Pas de version gratuite."
+    ],
+    "use_cases": [
+      "Créer un habillage motion graphics animé.",
+      "Modéliser et rendre une scène produit en 3D.",
+      "Produire des visualisations pour la pub ou le broadcast."
+    ],
+    "relevant_for": ["Motion designers", "Artistes 3D", "Studios pub / broadcast"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do motion graphics or pro 3D.",
+        "You want fast GPU rendering (Redshift included).",
+        "You work in advertising, broadcast or visualization."
+      ],
+      "avoidIf": [
+        "You want a free 3D solution.",
+        "You prefer a perpetual license.",
+        "Very occasional use doesn't justify the subscription."
+      ],
+      "threshold": "Cinema 4D makes sense for motion graphics and pro 3D with Redshift; for free or occasional needs, an alternative like Blender fits better."
+    },
+    "pros": [
+      "A motion graphics reference (MoGraph).",
+      "Redshift GPU renderer included.",
+      "Interface known as approachable for 3D.",
+      "Full Maxon ecosystem via Maxon One."
+    ],
+    "cons": [
+      "Subscription-only.",
+      "Pricey, especially with Maxon One.",
+      "No free version."
+    ],
+    "use_cases": [
+      "Create an animated motion graphics package.",
+      "Model and render a product scene in 3D.",
+      "Produce visualizations for advertising or broadcast."
+    ]
+  }
+}

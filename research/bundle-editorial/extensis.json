@@ -1,0 +1,87 @@
+{
+  "slug": "extensis",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Extensis — logiciels (site officiel)", "url": "https://www.extensis.com/" }
+  ],
+  "facts": {
+    "what": "Éditeur de logiciels de gestion de polices et d'actifs créatifs : sa solution Connect Fonts (ex-Suitcase Fusion) organise, active et synchronise les polices d'une équipe et gère le risque de licence, avec aussi des outils de gestion d'actifs numériques.",
+    "what_en": "Vendor of font and creative-asset management software: its Connect Fonts (formerly Suitcase Fusion) organizes, activates and syncs a team's fonts and manages licensing risk, alongside digital asset management tools.",
+    "pricing_model": "Abonnement par utilisateur, facturé mensuellement ou annuellement.",
+    "free_tier": { "exists": false, "detail": "Essai disponible ; offre par abonnement, pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Connect Fonts", "price": "à partir de ~12,50 $/utilisateur/mois (~150 $/an)" },
+      { "name": "Connect + Insight / offres équipe", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Organisation et activation des polices à la demande",
+      "Synchronisation des polices au sein d'une équipe",
+      "Gestion du risque de conformité des licences de polices",
+      "Gestion d'actifs créatifs (images, logos, documents)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez de très nombreuses polices au quotidien.",
+        "Vous travaillez en équipe créative et devez partager des polices.",
+        "Vous voulez maîtriser la conformité des licences de polices."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez qu'une poignée de polices système.",
+        "Un gestionnaire de polices gratuit couvre déjà vos besoins.",
+        "Vous travaillez seul sur des projets simples."
+      ],
+      "threshold": "Extensis se justifie pour les studios et équipes gérant de grandes bibliothèques de polices ; pour un usage individuel léger, un outil gratuit suffit."
+    },
+    "pros": [
+      "Organisation et activation efficaces de larges bibliothèques.",
+      "Synchronisation des polices en équipe.",
+      "Aide à la conformité des licences.",
+      "Extension possible à la gestion d'actifs créatifs."
+    ],
+    "cons": [
+      "Payant, sans version gratuite permanente.",
+      "Surdimensionné pour un usage individuel léger.",
+      "Marque en transition (rebranding Monotype)."
+    ],
+    "use_cases": [
+      "Centraliser et activer les polices d'un studio.",
+      "Partager une bibliothèque de polices en équipe.",
+      "Auditer la conformité des licences de polices."
+    ],
+    "relevant_for": ["Studios de design", "Directions artistiques", "Équipes marketing / print"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a very large number of fonts daily.",
+        "You work in a creative team and must share fonts.",
+        "You want to control font-license compliance."
+      ],
+      "avoidIf": [
+        "You only use a handful of system fonts.",
+        "A free font manager already covers your needs.",
+        "You work solo on simple projects."
+      ],
+      "threshold": "Extensis makes sense for studios and teams managing large font libraries; for light individual use, a free tool is enough."
+    },
+    "pros": [
+      "Efficient organization and activation of large libraries.",
+      "Team font synchronization.",
+      "Helps with license compliance.",
+      "Can extend to creative asset management."
+    ],
+    "cons": [
+      "Paid, with no permanent free version.",
+      "Overkill for light individual use.",
+      "Brand in transition (Monotype rebranding)."
+    ],
+    "use_cases": [
+      "Centralize and activate a studio's fonts.",
+      "Share a font library across a team.",
+      "Audit font-license compliance."
+    ]
+  }
+}

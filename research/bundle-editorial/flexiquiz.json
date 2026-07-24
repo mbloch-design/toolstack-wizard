@@ -1,0 +1,88 @@
+{
+  "slug": "flexiquiz",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FlexiQuiz — plans (site officiel)", "url": "https://www.flexiquiz.com/Home/Plans" }
+  ],
+  "facts": {
+    "what": "Créateur de quiz, tests et examens en ligne : il permet de construire des questionnaires notés automatiquement, de les partager en public ou en privé, et d'analyser les résultats via des rapports par répondant ou par quiz.",
+    "what_en": "Online quiz, test and exam maker: it lets you build auto-graded questionnaires, share them publicly or privately, and analyze results through per-respondent or per-quiz reports.",
+    "pricing_model": "Freemium : plan gratuit limité + abonnements payants mensuels/annuels.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec quiz illimités mais quota mensuel de réponses limité et nombre de questions plafonné par quiz ; sans carte bancaire." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (quota de réponses mensuel limité)" },
+      { "name": "Premium", "price": "à partir de ~16 $/mois" },
+      { "name": "Enterprise", "price": "à partir de ~44 $/mois" }
+    ],
+    "key_features": [
+      "Création de quiz, tests et examens en ligne",
+      "Notation et correction automatiques",
+      "Partage public ou privé, écrans personnalisables",
+      "Rapports et analyses par répondant ou par quiz"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement des quiz, tests ou examens.",
+        "Vous avez besoin de notation automatique et de rapports.",
+        "Vous voulez commencer gratuitement avant d'évoluer."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un formulaire simple ponctuel.",
+        "Votre volume de réponses dépasse ce qu'un plan couvre sans coût élevé.",
+        "Un outil de formulaire déjà en place suffit."
+      ],
+      "threshold": "FlexiQuiz convient pour des évaluations en ligne récurrentes avec notation et analyses ; pour un simple sondage ponctuel, un formulaire gratuit basique suffit."
+    },
+    "pros": [
+      "Notation et correction automatiques.",
+      "Rapports d'analyse par répondant et par quiz.",
+      "Plan gratuit pour démarrer sans carte.",
+      "Écrans et partages personnalisables."
+    ],
+    "cons": [
+      "Quota de réponses limité sur le plan gratuit.",
+      "Nombre de questions plafonné en version gratuite.",
+      "Fonctions avancées réservées aux plans payants."
+    ],
+    "use_cases": [
+      "Créer un examen noté pour des apprenants.",
+      "Évaluer des connaissances en formation d'entreprise.",
+      "Analyser les résultats d'un test à grande échelle."
+    ],
+    "relevant_for": ["Formateurs / enseignants", "Équipes RH / formation", "Entrepreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create quizzes, tests or exams.",
+        "You need auto-grading and reports.",
+        "You want to start free before scaling up."
+      ],
+      "avoidIf": [
+        "You only need a simple one-off form.",
+        "Your response volume exceeds what a plan covers without high cost.",
+        "A form tool you already use is enough."
+      ],
+      "threshold": "FlexiQuiz suits recurring online assessments with grading and analytics; for a simple one-off survey, a basic free form is enough."
+    },
+    "pros": [
+      "Automatic grading and scoring.",
+      "Per-respondent and per-quiz analytics reports.",
+      "Free plan to start with no card.",
+      "Customizable screens and sharing."
+    ],
+    "cons": [
+      "Limited response quota on the free plan.",
+      "Question count capped on the free version.",
+      "Advanced features reserved for paid plans."
+    ],
+    "use_cases": [
+      "Create a graded exam for learners.",
+      "Assess knowledge in corporate training.",
+      "Analyze test results at scale."
+    ]
+  }
+}

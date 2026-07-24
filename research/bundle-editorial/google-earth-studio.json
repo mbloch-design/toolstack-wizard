@@ -1,0 +1,86 @@
+{
+  "slug": "google-earth-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Earth Studio — introduction (site officiel)", "url": "https://earth.google.com/studio/docs/" }
+  ],
+  "facts": {
+    "what": "Outil d'animation web basé sur l'imagerie 3D et satellite de Google Earth : crée des animations de caméra cinématiques (survols, zooms) par images-clés directement dans le navigateur.",
+    "what_en": "Web-based animation tool built on Google Earth's 3D and satellite imagery: creates cinematic keyframe camera animations (flyovers, zooms) directly in the browser.",
+    "pricing_model": "Gratuit avec un compte Google (usage soumis aux conditions de Google Earth Studio).",
+    "free_tier": { "exists": true, "detail": "Accès gratuit avec un compte Google ; utilisation encadrée par les conditions et l'attribution requises de Google." },
+    "plans": [
+      { "name": "Google Earth Studio", "price": "Gratuit (compte Google requis)" }
+    ],
+    "key_features": [
+      "Animation de caméra par images-clés",
+      "Imagerie 3D et satellite mondiale de Google Earth",
+      "Quick Starts et templates de mouvements",
+      "Export d'images-clés et de séquences vidéo"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez des plans aériens cinématiques de lieux réels.",
+        "Vous produisez des vidéos géographiques ou journalistiques.",
+        "Vous connaissez déjà l'animation par images-clés."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un contrôle 3D personnalisé hors imagerie Earth.",
+        "Votre usage sort du cadre autorisé par Google.",
+        "Vous cherchez un outil de motion design généraliste."
+      ],
+      "threshold": "Earth Studio s'impose pour animer des survols du globe à partir de l'imagerie Google ; pour de la 3D sur mesure, un logiciel d'animation dédié convient mieux."
+    },
+    "pros": [
+      "Rendu de survols cinématiques impressionnant.",
+      "Accès gratuit à une imagerie mondiale.",
+      "Contrôles par images-clés familiers.",
+      "Fonctionne dans le navigateur, sans installation."
+    ],
+    "cons": [
+      "Limité à l'imagerie de Google Earth.",
+      "Conditions d'usage et attribution imposées.",
+      "Pas de personnalisation 3D hors du globe."
+    ],
+    "use_cases": [
+      "Créer un survol animé d'une ville pour une vidéo.",
+      "Illustrer un reportage avec un plan géographique.",
+      "Produire une intro cinématique de lieu réel."
+    ],
+    "relevant_for": ["Vidéastes / monteurs", "Journalistes", "Créateurs de contenu géographique"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want cinematic aerial shots of real locations.",
+        "You produce geographic or journalistic videos.",
+        "You already know keyframe animation."
+      ],
+      "avoidIf": [
+        "You need custom 3D control beyond Earth imagery.",
+        "Your use falls outside Google's allowed terms.",
+        "You want a general-purpose motion design tool."
+      ],
+      "threshold": "Earth Studio fits animating globe flyovers from Google imagery; for custom 3D, a dedicated animation tool fits better."
+    },
+    "pros": [
+      "Impressive cinematic flyover rendering.",
+      "Free access to global imagery.",
+      "Familiar keyframe controls.",
+      "Runs in the browser, no install."
+    ],
+    "cons": [
+      "Limited to Google Earth imagery.",
+      "Imposed usage terms and attribution.",
+      "No custom 3D beyond the globe."
+    ],
+    "use_cases": [
+      "Create an animated city flyover for a video.",
+      "Illustrate a report with a geographic shot.",
+      "Produce a cinematic real-location intro."
+    ]
+  }
+}

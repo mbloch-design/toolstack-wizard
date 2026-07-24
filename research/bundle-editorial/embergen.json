@@ -1,0 +1,87 @@
+{
+  "slug": "embergen",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "JangaFX EmberGen (site officiel)", "url": "https://jangafx.com/software/embergen" }
+  ],
+  "facts": {
+    "what": "Logiciel de simulation de fluides volumétriques en temps réel (feu, fumée, explosions, effets magiques) qui simule, rend et exporte en quelques millisecondes des flipbooks, séquences d'images et volumes VDB.",
+    "what_en": "Real-time volumetric fluid simulation software (fire, smoke, explosions, magic effects) that simulates, renders and exports flipbooks, image sequences and VDB volumes in milliseconds.",
+    "pricing_model": "Abonnement mensuel par palier (indie / studio), avec licence perpétuelle obtenue après 18 mois d'abonnement indie.",
+    "free_tier": { "exists": false, "detail": "Essai possible ; abonnement indie pour les utilisateurs gagnant moins d'un million de dollars par an." },
+    "plans": [
+      { "name": "Indie", "price": "à partir de 19,99 $/mois (licence perpétuelle après 18 mois)" },
+      { "name": "Studio / Enterprise", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Simulation de fluides (feu, fumée, explosions) en temps réel",
+      "Itération quasi instantanée sur les simulations",
+      "Export en flipbooks, séquences d'images et volumes VDB",
+      "Utilisé par de nombreux studios de jeux et de VFX"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des effets de feu, fumée ou explosions pour la VFX ou les jeux.",
+        "Vous voulez itérer sur vos simulations en temps réel.",
+        "Vous exportez vers un moteur de jeu ou un pipeline 3D (VDB)."
+      ],
+      "avoidIf": [
+        "Vous n'avez aucun besoin d'effets de fluides.",
+        "Votre machine ne supporte pas la simulation GPU temps réel.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "EmberGen s'impose pour produire des effets de fluides rapidement en VFX ou jeu vidéo ; sans besoin d'effets, il n'a pas d'utilité."
+    },
+    "pros": [
+      "Simulation et rendu en temps réel, itération immédiate.",
+      "Exports compatibles moteurs de jeu et pipelines 3D.",
+      "Licence perpétuelle possible après abonnement.",
+      "Adopté par de nombreux studios de référence."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Exige une carte graphique performante.",
+      "Périmètre spécialisé sur les effets de fluides."
+    ],
+    "use_cases": [
+      "Créer une explosion ou un feu pour un plan VFX.",
+      "Générer des flipbooks de fumée pour un jeu.",
+      "Exporter des volumes VDB vers un logiciel 3D."
+    ],
+    "relevant_for": ["Artistes VFX", "Développeurs de jeux", "Artistes 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create fire, smoke or explosion effects for VFX or games.",
+        "You want to iterate on simulations in real time.",
+        "You export to a game engine or 3D pipeline (VDB)."
+      ],
+      "avoidIf": [
+        "You have no need for fluid effects.",
+        "Your machine can't handle real-time GPU simulation.",
+        "A very occasional need doesn't justify the subscription."
+      ],
+      "threshold": "EmberGen is the go-to for producing fluid effects fast in VFX or games; with no need for effects, it serves no purpose."
+    },
+    "pros": [
+      "Real-time simulation and rendering, immediate iteration.",
+      "Exports compatible with game engines and 3D pipelines.",
+      "Perpetual license possible after subscription.",
+      "Adopted by many reference studios."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Requires a powerful graphics card.",
+      "Specialized scope on fluid effects."
+    ],
+    "use_cases": [
+      "Create an explosion or fire for a VFX shot.",
+      "Generate smoke flipbooks for a game.",
+      "Export VDB volumes to 3D software."
+    ]
+  }
+}

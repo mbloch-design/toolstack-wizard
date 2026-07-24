@@ -1,0 +1,88 @@
+{
+  "slug": "crayo-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Crayo — tarifs (site officiel)", "url": "https://crayo.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Générateur de vidéos courtes « faceless » par IA : à partir d'un texte ou d'un prompt, il produit des clips verticaux avec voix off, sous-titres et images pour TikTok, Reels et Shorts.",
+    "what_en": "AI faceless short-video generator: from a text or prompt, it produces vertical clips with voiceover, captions and visuals for TikTok, Reels and Shorts.",
+    "pricing_model": "Abonnement mensuel ou annuel par crédits ; pas de version gratuite.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ni d'essai gratuit ; facturation par crédits." },
+    "plans": [
+      { "name": "Hobby", "price": "19 $/mois (~13 $/mois en annuel, ~50 crédits)" },
+      { "name": "Clipper", "price": "39 $/mois (~27 $/mois en annuel, ~150 crédits)" },
+      { "name": "Pro", "price": "79 $/mois (~55 $/mois en annuel, ~250 crédits)" }
+    ],
+    "key_features": [
+      "Génération de clips à partir de texte ou de prompts",
+      "Voix off IA et sous-titres automatiques",
+      "Images IA et bibliothèque de visuels",
+      "Suivi des performances sociales intégré"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez des vidéos courtes faceless en volume.",
+        "Vous voulez automatiser le montage sans compétence vidéo.",
+        "Vous publiez régulièrement sur TikTok, Reels ou Shorts."
+      ],
+      "avoidIf": [
+        "Vous voulez tester l'outil gratuitement avant d'acheter.",
+        "Vous cherchez un montage vidéo fin et personnalisé.",
+        "Votre production est trop occasionnelle pour un abonnement."
+      ],
+      "threshold": "Crayo AI convient aux créateurs qui industrialisent les shorts faceless ; pour du montage soigné ou ponctuel, un éditeur classique est préférable."
+    },
+    "pros": [
+      "Production rapide de clips sans savoir-faire vidéo.",
+      "Voix off et sous-titres générés automatiquement.",
+      "Pensé pour la publication de shorts en série.",
+      "Suivi des performances intégré."
+    ],
+    "cons": [
+      "Aucune version gratuite pour essayer.",
+      "Système de crédits qui limite le volume.",
+      "Personnalisation du montage limitée."
+    ],
+    "use_cases": [
+      "Créer des shorts faceless à la chaîne.",
+      "Transformer un script en vidéo verticale.",
+      "Alimenter plusieurs comptes sociaux."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Growth marketers", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce faceless short videos at volume.",
+        "You want to automate editing with no video skills.",
+        "You post regularly on TikTok, Reels or Shorts."
+      ],
+      "avoidIf": [
+        "You want to test the tool for free before buying.",
+        "You need fine, custom video editing.",
+        "Your output is too occasional to justify a subscription."
+      ],
+      "threshold": "Crayo AI fits creators industrializing faceless shorts; for polished or occasional editing, a classic editor is better."
+    },
+    "pros": [
+      "Fast clip production with no video know-how.",
+      "Automatic voiceover and captions.",
+      "Built for churning out shorts in series.",
+      "Built-in performance tracking."
+    ],
+    "cons": [
+      "No free version to try.",
+      "Credit system caps your volume.",
+      "Limited editing customization."
+    ],
+    "use_cases": [
+      "Create faceless shorts assembly-line style.",
+      "Turn a script into a vertical video.",
+      "Feed several social accounts."
+    ]
+  }
+}

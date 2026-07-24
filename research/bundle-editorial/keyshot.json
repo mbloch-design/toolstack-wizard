@@ -1,0 +1,88 @@
+{
+  "slug": "keyshot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "KeyShot — tarifs (site officiel)", "url": "https://www.keyshot.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Logiciel de rendu 3D et de visualisation produit réputé pour sa rapidité et sa simplicité : matériaux réalistes, éclairage physique et rendu temps réel à partir de modèles CAO.",
+    "what_en": "3D rendering and product visualization software known for speed and simplicity: realistic materials, physical lighting and real-time rendering from CAD models.",
+    "pricing_model": "Abonnement (les licences perpétuelles ont été abandonnées) ; plusieurs paliers et add-ons.",
+    "free_tier": { "exists": false, "detail": "Essai disponible ; pas de version gratuite permanente. Abonnement par palier." },
+    "plans": [
+      { "name": "Professional", "price": "montants sur la page officielle (+ add-ons VR, Web, Network Rendering)" },
+      { "name": "Business", "price": "1 599 $/an (option 3 ans à 4 797 $)" },
+      { "name": "Enterprise", "price": "sur devis (facturation flexible)" }
+    ],
+    "key_features": [
+      "Rendu temps réel rapide et matériaux réalistes",
+      "Éclairage physique et environnements HDRI",
+      "Import de nombreux formats CAO",
+      "Animations et add-ons (VR, Web, rendu réseau)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la visualisation produit à partir de fichiers CAO.",
+        "Vous voulez un rendu rapide sans courbe d'apprentissage lourde.",
+        "Vous avez besoin de matériaux et d'éclairage réalistes."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Vous faites surtout de l'animation ou du VFX complexe.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "KeyShot excelle pour la visualisation produit rapide ; pour de l'animation/VFX poussée ou un besoin gratuit, un autre outil convient mieux."
+    },
+    "pros": [
+      "Prise en main rapide et rendu véloce.",
+      "Matériaux et éclairage réalistes.",
+      "Large support des formats CAO.",
+      "Add-ons pour VR, web et rendu réseau."
+    ],
+    "cons": [
+      "Plus de licence perpétuelle (abonnement uniquement).",
+      "Tarif élevé pour les paliers pro.",
+      "Moins adapté à l'animation/VFX complexe."
+    ],
+    "use_cases": [
+      "Créer des visuels produits photoréalistes.",
+      "Décliner des variantes de matériaux et couleurs.",
+      "Produire des rendus marketing à partir de CAO."
+    ],
+    "relevant_for": ["Designers produit / industriels", "Ingénieurs CAO", "Studios de visualisation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do product visualization from CAD files.",
+        "You want fast rendering without a heavy learning curve.",
+        "You need realistic materials and lighting."
+      ],
+      "avoidIf": [
+        "You're looking for a free solution.",
+        "You mostly do complex animation or VFX.",
+        "Very occasional use doesn't justify the subscription."
+      ],
+      "threshold": "KeyShot excels at fast product visualization; for heavy animation/VFX or a free need, another tool fits better."
+    },
+    "pros": [
+      "Quick to learn and fast rendering.",
+      "Realistic materials and lighting.",
+      "Broad CAD format support.",
+      "Add-ons for VR, web and network rendering."
+    ],
+    "cons": [
+      "No more perpetual license (subscription only).",
+      "Pricey for pro tiers.",
+      "Less suited to complex animation/VFX."
+    ],
+    "use_cases": [
+      "Create photorealistic product visuals.",
+      "Iterate on material and color variants.",
+      "Produce marketing renders from CAD."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "godot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Godot Engine — site officiel", "url": "https://godotengine.org" },
+    { "label": "Godot — licence (site officiel)", "url": "https://godotengine.org/license/" }
+  ],
+  "facts": {
+    "what": "Moteur de jeu open source pour créer des jeux 2D et 3D, avec son propre langage GDScript (et support C#), un éditeur intégré et une architecture par nodes et scènes.",
+    "what_en": "Open-source game engine for building 2D and 3D games, with its own GDScript language (and C# support), a built-in editor and a node-and-scene architecture.",
+    "pricing_model": "Gratuit et open source (licence MIT), sans redevance ni royalties.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source (MIT) : aucun coût, aucune redevance sur les revenus des jeux publiés." },
+    "plans": [
+      { "name": "Godot Engine", "price": "Gratuit, open source (MIT), sans royalties" }
+    ],
+    "key_features": [
+      "Éditeur 2D et 3D intégré",
+      "Architecture par nodes et scènes",
+      "GDScript et support C#",
+      "Export multiplateforme (desktop, mobile, web, consoles)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un moteur de jeu gratuit et sans royalties.",
+        "Vous faites du 2D ou du 3D indépendant.",
+        "Vous appréciez l'open source et une communauté active."
+      ],
+      "avoidIf": [
+        "Vous visez du AAA très exigeant en rendu 3D de pointe.",
+        "Vous dépendez d'un large écosystème d'assets commerciaux.",
+        "Votre équipe est déjà investie dans un autre moteur."
+      ],
+      "threshold": "Godot s'impose pour les jeux indés 2D/3D sans coût de licence ; pour du AAA de pointe, un moteur commercial reste souvent préféré."
+    },
+    "pros": [
+      "Entièrement gratuit et sans royalties.",
+      "Léger, rapide à prendre en main.",
+      "Excellent pour la 2D et solide en 3D.",
+      "Communauté et open source dynamiques."
+    ],
+    "cons": [
+      "Écosystème d'assets plus réduit que les leaders.",
+      "Rendu 3D haut de gamme en retrait sur du AAA.",
+      "Moins d'intégrations tierces professionnelles."
+    ],
+    "use_cases": [
+      "Développer un jeu indépendant 2D.",
+      "Prototyper rapidement un concept de jeu.",
+      "Créer un jeu 3D multiplateforme."
+    ],
+    "relevant_for": ["Développeurs indépendants", "Studios de petite taille", "Étudiants / hobbyistes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a free, royalty-free game engine.",
+        "You make indie 2D or 3D games.",
+        "You value open source and an active community."
+      ],
+      "avoidIf": [
+        "You target demanding AAA cutting-edge 3D rendering.",
+        "You rely on a large commercial asset ecosystem.",
+        "Your team is already invested in another engine."
+      ],
+      "threshold": "Godot fits indie 2D/3D games with no license cost; for high-end AAA, a commercial engine is often still preferred."
+    },
+    "pros": [
+      "Fully free and royalty-free.",
+      "Lightweight, quick to learn.",
+      "Excellent for 2D and solid in 3D.",
+      "Dynamic open-source community."
+    ],
+    "cons": [
+      "Smaller asset ecosystem than the leaders.",
+      "High-end 3D rendering trails AAA engines.",
+      "Fewer professional third-party integrations."
+    ],
+    "use_cases": [
+      "Develop an indie 2D game.",
+      "Quickly prototype a game concept.",
+      "Build a cross-platform 3D game."
+    ]
+  }
+}

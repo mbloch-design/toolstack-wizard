@@ -1,0 +1,88 @@
+{
+  "slug": "google-maps",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Maps Platform — tarifs (site officiel)", "url": "https://mapsplatform.google.com/pricing/" },
+    { "label": "Google Maps Platform — facturation & FAQ (site officiel)", "url": "https://developers.google.com/maps/billing-and-pricing/faq" }
+  ],
+  "facts": {
+    "what": "Service de cartographie de Google : application grand public de cartes et itinéraires, et Google Maps Platform (API cartes, géocodage, lieux, itinéraires) pour intégrer cartes et données de localisation dans des sites et apps.",
+    "what_en": "Google's mapping service: consumer maps-and-directions app, plus Google Maps Platform (maps, geocoding, places, routes APIs) to embed maps and location data into websites and apps.",
+    "pricing_model": "Application grand public gratuite ; Google Maps Platform facturé à l'usage par SKU, avec un palier gratuit mensuel par produit (depuis mars 2025, le crédit universel a été remplacé).",
+    "free_tier": { "exists": true, "detail": "App grand public gratuite. Sur la plateforme développeur : paliers gratuits mensuels par produit (SKU) et crédit d'essai pour les nouveaux comptes ; au-delà, facturation à l'usage." },
+    "plans": [
+      { "name": "App grand public", "price": "Gratuit" },
+      { "name": "Maps Platform (usage)", "price": "Facturation par SKU au-delà du palier gratuit ; crédit d'essai de 300 $ pour les nouveaux comptes (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Cartes, recherche de lieux et itinéraires",
+      "APIs Maps, Geocoding, Places, Routes",
+      "Données de trafic et de transports en temps réel",
+      "Cartes intégrables et personnalisables (styling)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de cartes et d'itinéraires fiables au quotidien.",
+        "Vous intégrez cartes ou géolocalisation dans un site/app.",
+        "Vous voulez la couverture et la fraîcheur des données Google."
+      ],
+      "avoidIf": [
+        "Vous voulez éviter toute dépendance à un service payant à l'usage.",
+        "Vous privilégiez une solution cartographique open source.",
+        "Votre volume d'API élevé rend la facture difficile à maîtriser."
+      ],
+      "threshold": "Google Maps s'impose pour la qualité de données et l'intégration; pour maîtriser les coûts à fort volume, une alternative open source peut être envisagée."
+    },
+    "pros": [
+      "Couverture mondiale et données à jour.",
+      "APIs complètes et bien documentées.",
+      "Trafic et transports en temps réel.",
+      "App grand public gratuite et universelle."
+    ],
+    "cons": [
+      "Facturation à l'usage qui grimpe à fort volume.",
+      "Modèle de crédits gratuits par SKU moins simple depuis 2025.",
+      "Dépendance à l'écosystème Google."
+    ],
+    "use_cases": [
+      "Afficher une carte interactive sur un site.",
+      "Calculer des itinéraires dans une application.",
+      "Rechercher et localiser des lieux via l'API."
+    ],
+    "relevant_for": ["Développeurs web / mobile", "Commerces locaux", "Grand public"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need reliable maps and directions daily.",
+        "You embed maps or geolocation into a site/app.",
+        "You want Google's coverage and data freshness."
+      ],
+      "avoidIf": [
+        "You want to avoid any dependency on a usage-priced service.",
+        "You prefer an open-source mapping solution.",
+        "Your high API volume makes the bill hard to control."
+      ],
+      "threshold": "Google Maps fits data quality and integration; to control costs at high volume, an open-source alternative may be worth considering."
+    },
+    "pros": [
+      "Global coverage and up-to-date data.",
+      "Comprehensive, well-documented APIs.",
+      "Real-time traffic and transit.",
+      "Free, universal consumer app."
+    ],
+    "cons": [
+      "Usage-based billing scales up at high volume.",
+      "Per-SKU free credit model less simple since 2025.",
+      "Dependency on the Google ecosystem."
+    ],
+    "use_cases": [
+      "Display an interactive map on a website.",
+      "Compute routes inside an application.",
+      "Search and locate places via the API."
+    ]
+  }
+}

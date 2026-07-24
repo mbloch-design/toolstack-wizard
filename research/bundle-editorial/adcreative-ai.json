@@ -1,0 +1,88 @@
+{
+  "slug": "adcreative-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "AdCreative.ai — site officiel", "url": "https://www.adcreative.ai" }
+  ],
+  "facts": {
+    "what": "Plateforme d'IA générative qui produit des visuels et textes publicitaires optimisés pour la conversion (Meta, Google, etc.) à partir de la marque et d'un brief.",
+    "what_en": "Generative-AI platform that produces conversion-focused ad creatives and copy (Meta, Google, etc.) from your brand and a brief.",
+    "pricing_model": "Abonnement mensuel par crédits, plusieurs paliers. Pas de forfait gratuit permanent.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 7 jours avec crédits limités (carte bancaire requise) ; pas de plan gratuit permanent." },
+    "plans": [
+      { "name": "Starter", "price": "à partir de 29 $/mois (crédits limités — montants sur la page officielle)" },
+      { "name": "Paliers intermédiaires", "price": "59 à 249 $/mois selon les crédits (montants sur la page officielle)" },
+      { "name": "Volume / Custom", "price": "399 $/mois et plus, ou sur devis (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Génération de visuels publicitaires par IA",
+      "Rédaction de textes/accroches orientés conversion",
+      "Scores de performance prédictifs sur les créas",
+      "Cohérence de marque (couleurs, logo, polices)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez beaucoup de visuels publicitaires régulièrement.",
+        "Vous gérez des campagnes Meta/Google et voulez itérer vite.",
+        "Vous voulez tester des créas sans designer dédié."
+      ],
+      "avoidIf": [
+        "Vous ne lancez que quelques annonces par an.",
+        "Vous voulez un contrôle créatif fin, pixel par pixel.",
+        "Le système de crédits vous semble contraignant."
+      ],
+      "threshold": "AdCreative.ai vaut son abonnement pour un flux soutenu de créas publicitaires ; pour un usage ponctuel, un outil de design généraliste suffit."
+    },
+    "pros": [
+      "Génération rapide de nombreuses variantes de créas.",
+      "Scores prédictifs pour prioriser les visuels.",
+      "Respect des éléments de marque.",
+      "Adapté aux formats des grandes régies publicitaires."
+    ],
+    "cons": [
+      "Système de crédits qui ne se reportent pas.",
+      "Contrôle créatif limité par rapport à un designer.",
+      "Pas de plan gratuit permanent."
+    ],
+    "use_cases": [
+      "Produire des variantes de bannières pour un test A/B.",
+      "Alimenter des campagnes Meta/Google en continu.",
+      "Générer des accroches publicitaires rapidement."
+    ],
+    "relevant_for": ["Marketeurs performance", "Agences / freelances pub", "E-commerçants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce lots of ad creatives regularly.",
+        "You run Meta/Google campaigns and want to iterate fast.",
+        "You want to test creatives without a dedicated designer."
+      ],
+      "avoidIf": [
+        "You only launch a few ads per year.",
+        "You want fine, pixel-level creative control.",
+        "The credit system feels too restrictive."
+      ],
+      "threshold": "AdCreative.ai earns its subscription for a steady flow of ad creatives; for occasional use, a general design tool is enough."
+    },
+    "pros": [
+      "Fast generation of many creative variants.",
+      "Predictive scores to prioritize visuals.",
+      "Respects brand assets.",
+      "Fits the formats of major ad networks."
+    ],
+    "cons": [
+      "Credit system with no rollover.",
+      "Limited creative control versus a designer.",
+      "No permanent free plan."
+    ],
+    "use_cases": [
+      "Produce banner variants for an A/B test.",
+      "Continuously feed Meta/Google campaigns.",
+      "Generate ad hooks quickly."
+    ]
+  }
+}

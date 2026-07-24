@@ -1,0 +1,88 @@
+{
+  "slug": "corona-renderer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Chaos Corona — tarifs (site officiel)", "url": "https://www.chaos.com/corona/buy-online" }
+  ],
+  "facts": {
+    "what": "Moteur de rendu photoréaliste de Chaos, spécialisé en visualisation architecturale, fonctionnant avec 3ds Max et Cinema 4D sous une licence unique.",
+    "what_en": "Photorealistic rendering engine by Chaos, specialized in architectural visualization, working with 3ds Max and Cinema 4D under a single license.",
+    "pricing_model": "Abonnement (mensuel ou annuel), en édition Solo ou Premium ; essai gratuit.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit disponible." },
+    "plans": [
+      { "name": "Corona Solo (annuel)", "price": "358,80 €/an" },
+      { "name": "Corona Premium (annuel)", "price": "454,80 €/an (Player, Scans, licences flottantes)" },
+      { "name": "Education (étudiant)", "price": "64,80 $/an" }
+    ],
+    "key_features": [
+      "Rendu photoréaliste orienté visualisation architecturale",
+      "Compatible 3ds Max et Cinema 4D sous une licence unique",
+      "Édition Premium avec licences flottantes et Scans",
+      "Réputé pour sa simplicité de prise en main"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la visualisation architecturale.",
+        "Vous travaillez sur 3ds Max ou Cinema 4D.",
+        "Vous voulez un rendu photoréaliste simple à régler."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas 3ds Max ni Cinema 4D.",
+        "Vous cherchez un moteur de rendu gratuit.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "Corona s'impose pour l'archviz sur 3ds Max ou Cinema 4D ; hors de ces hôtes ou pour un besoin gratuit, un autre moteur convient mieux."
+    },
+    "pros": [
+      "Rendu photoréaliste de haute qualité.",
+      "Réputé simple à prendre en main.",
+      "Une licence couvre 3ds Max et Cinema 4D.",
+      "Édition Premium avec licences flottantes."
+    ],
+    "cons": [
+      "Uniquement en abonnement.",
+      "Limité à 3ds Max et Cinema 4D.",
+      "Pas de version gratuite permanente."
+    ],
+    "use_cases": [
+      "Produire un rendu photoréaliste d'un projet d'architecture.",
+      "Créer des images d'intérieur pour un client.",
+      "Réaliser des visuels de visualisation produit."
+    ],
+    "relevant_for": ["Architectes", "Artistes archviz", "Studios de visualisation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do architectural visualization.",
+        "You work in 3ds Max or Cinema 4D.",
+        "You want photorealistic rendering that's easy to set up."
+      ],
+      "avoidIf": [
+        "You don't use 3ds Max or Cinema 4D.",
+        "You want a free render engine.",
+        "Very occasional use doesn't justify the subscription."
+      ],
+      "threshold": "Corona makes sense for archviz on 3ds Max or Cinema 4D; outside those hosts or for free needs, another engine fits better."
+    },
+    "pros": [
+      "High-quality photorealistic rendering.",
+      "Known for being easy to learn.",
+      "One license covers 3ds Max and Cinema 4D.",
+      "Premium edition with floating licenses."
+    ],
+    "cons": [
+      "Subscription-only.",
+      "Limited to 3ds Max and Cinema 4D.",
+      "No permanent free version."
+    ],
+    "use_cases": [
+      "Produce a photorealistic render of an architecture project.",
+      "Create interior images for a client.",
+      "Make product visualization visuals."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "gempages",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GemPages — tarifs (site officiel)", "url": "https://gempages.net/pages/pricing" }
+  ],
+  "facts": {
+    "what": "Constructeur de pages en glisser-déposer pour Shopify : crée des pages d'accueil, landing pages et fiches produit personnalisées au-delà des limites du thème, orienté conversion.",
+    "what_en": "Drag-and-drop page builder for Shopify: builds custom homepages, landing pages and product pages beyond theme limits, conversion-oriented.",
+    "pricing_model": "Freemium : plan gratuit limité, puis abonnements mensuels par palier.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permettant de publier une page ; plans payants pour publication illimitée et fonctions avancées." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (1 page publiée)" },
+      { "name": "Build", "price": "29 $/mois" },
+      { "name": "Optimize", "price": "59 $/mois" },
+      { "name": "Enterprise", "price": "199 $/mois" }
+    ],
+    "key_features": [
+      "Éditeur glisser-déposer sans code",
+      "Templates de landing et fiches produit",
+      "Optimisation de la conversion (A/B, éléments marketing)",
+      "Intégration native Shopify"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une boutique Shopify et voulez dépasser les limites du thème.",
+        "Vous créez des landing pages pour vos campagnes.",
+        "Vous testez des pages produit pour améliorer la conversion."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas sur Shopify.",
+        "Le thème natif couvre déjà vos besoins.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "GemPages s'impose pour personnaliser des pages Shopify orientées conversion ; hors Shopify ou pour des besoins simples, il n'apporte rien."
+    },
+    "pros": [
+      "Éditeur visuel sans code puissant.",
+      "Templates orientés conversion.",
+      "Intégration Shopify native.",
+      "Plan gratuit pour démarrer."
+    ],
+    "cons": [
+      "Réservé à l'écosystème Shopify.",
+      "Plan gratuit très limité.",
+      "Peut alourdir les pages si mal utilisé."
+    ],
+    "use_cases": [
+      "Créer une landing page produit pour une campagne.",
+      "Personnaliser la page d'accueil d'une boutique.",
+      "Tester des variantes de fiche produit."
+    ],
+    "relevant_for": ["Marchands Shopify", "Dropshippers", "Marketeurs e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a Shopify store and want to go beyond theme limits.",
+        "You build landing pages for campaigns.",
+        "You test product pages to improve conversion."
+      ],
+      "avoidIf": [
+        "You're not on Shopify.",
+        "The native theme already covers your needs.",
+        "You want a fully free solution."
+      ],
+      "threshold": "GemPages fits customizing conversion-focused Shopify pages; outside Shopify or for simple needs, it adds nothing."
+    },
+    "pros": [
+      "Powerful no-code visual editor.",
+      "Conversion-focused templates.",
+      "Native Shopify integration.",
+      "Free plan to get started."
+    ],
+    "cons": [
+      "Locked to the Shopify ecosystem.",
+      "Very limited free plan.",
+      "Can bloat pages if misused."
+    ],
+    "use_cases": [
+      "Build a product landing page for a campaign.",
+      "Customize a store's homepage.",
+      "Test product page variants."
+    ]
+  }
+}

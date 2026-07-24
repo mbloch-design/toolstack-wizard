@@ -1,0 +1,87 @@
+{
+  "slug": "fmod",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FMOD — licensing (site officiel)", "url": "https://www.fmod.com/licensing" }
+  ],
+  "facts": {
+    "what": "Middleware audio pour jeux vidéo : FMOD Studio permet de concevoir et mixer des ambiances sonores interactives, intégrées au moteur de jeu (Unity, Unreal et autres) via son moteur d'exécution.",
+    "what_en": "Audio middleware for games: FMOD Studio lets you design and mix interactive soundscapes, integrated into the game engine (Unity, Unreal and others) through its runtime.",
+    "pricing_model": "Licence par titre selon le budget de développement : gratuit pour les indés, tarifs croissants pour les budgets élevés.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour les développeurs indés sous un seuil de revenu/budget annuel ; jeux de type simulation/gambling exclus." },
+    "plans": [
+      { "name": "Indie", "price": "Gratuit (revenu annuel sous 200 000 $ et budget titre sous 500 000 $)" },
+      { "name": "Budgets supérieurs", "price": "Licence par titre selon le budget (jusqu'à ~15 000 $ ; montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Conception d'audio interactif basé sur des événements",
+      "Mixage adaptatif et paramètres temps réel",
+      "Intégration Unity, Unreal et autres moteurs",
+      "Profilage et débogage audio à l'exécution"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez l'audio d'un jeu et voulez un mixage interactif.",
+        "Vous travaillez sous Unity ou Unreal.",
+        "Vous êtes un studio indé qui bénéficie de la licence gratuite."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin d'audio adaptatif temps réel.",
+        "Votre projet n'est pas un jeu ou une application interactive.",
+        "Votre type de projet est exclu de la licence indé."
+      ],
+      "threshold": "FMOD s'impose pour du sound design de jeu interactif ; pour de l'audio linéaire ou hors jeu, un DAW classique suffit."
+    },
+    "pros": [
+      "Standard reconnu du sound design de jeu.",
+      "Gratuit pour les studios indés éligibles.",
+      "Intégration solide avec les grands moteurs.",
+      "Outils de profilage et de mixage temps réel."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour les non-audio.",
+      "Licence payante pour les budgets élevés.",
+      "Certains types de projets exclus de l'offre indé."
+    ],
+    "use_cases": [
+      "Créer une bande-son interactive pour un jeu.",
+      "Piloter le mixage audio selon l'action du joueur.",
+      "Intégrer l'audio dans un projet Unity/Unreal."
+    ],
+    "relevant_for": ["Sound designers de jeu", "Studios indépendants", "Développeurs Unity/Unreal"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design game audio and want interactive mixing.",
+        "You work in Unity or Unreal.",
+        "You're an indie studio eligible for the free license."
+      ],
+      "avoidIf": [
+        "You don't need real-time adaptive audio.",
+        "Your project isn't a game or interactive app.",
+        "Your project type is excluded from the indie license."
+      ],
+      "threshold": "FMOD fits interactive game sound design; for linear or non-game audio, a regular DAW is enough."
+    },
+    "pros": [
+      "Recognized standard for game sound design.",
+      "Free for eligible indie studios.",
+      "Strong integration with major engines.",
+      "Real-time profiling and mixing tools."
+    ],
+    "cons": [
+      "Learning curve for non-audio folks.",
+      "Paid license for large budgets.",
+      "Some project types excluded from the indie offer."
+    ],
+    "use_cases": [
+      "Build an interactive soundtrack for a game.",
+      "Drive audio mixing from player actions.",
+      "Integrate audio into a Unity/Unreal project."
+    ]
+  }
+}

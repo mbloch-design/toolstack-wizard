@@ -1,0 +1,88 @@
+{
+  "slug": "beautiful-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Beautiful.ai — site officiel", "url": "https://www.beautiful.ai" }
+  ],
+  "facts": {
+    "what": "Outil de création de présentations assisté par IA : des « Smart Slides » qui s'auto-mettent en page et un générateur de deck par IA pour produire rapidement des slides soignées.",
+    "what_en": "AI-assisted presentation tool: self-formatting 'Smart Slides' and an AI deck generator to quickly produce polished slides.",
+    "pricing_model": "Abonnement par utilisateur (mensuel ou annuel), essai gratuit. Pas de plan gratuit permanent.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit de 14 jours sur les offres payantes." },
+    "plans": [
+      { "name": "Pro", "price": "12 $/mois en annuel, 45 $/mois en mensuel (montants sur la page officielle)" },
+      { "name": "Team", "price": "40 $/utilisateur/mois en annuel, 50 $/mois en mensuel (montants sur la page officielle)" },
+      { "name": "Enterprise", "price": "sur devis (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Smart Slides à mise en page automatique",
+      "Génération de présentations et de textes/images par IA",
+      "Contrôle de marque et bibliothèques partagées (Team)",
+      "Export PDF/PPT et analytics d'engagement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez souvent des présentations et voulez gagner du temps sur la mise en page.",
+        "Vous voulez un rendu propre sans être designer.",
+        "Votre équipe a besoin de cohérence de marque."
+      ],
+      "avoidIf": [
+        "Vous voulez un contrôle total et créatif du design.",
+        "Un outil de présentation gratuit vous suffit.",
+        "Vous ne faites des slides que très ponctuellement."
+      ],
+      "threshold": "Beautiful.ai vaut son abonnement pour qui produit régulièrement des slides soignées ; pour un usage rare ou gratuit, un autre outil suffit."
+    },
+    "pros": [
+      "Mise en page automatique qui garde des slides propres.",
+      "Génération de deck et de contenu par IA.",
+      "Contrôle de marque pour les équipes.",
+      "Export standard (PDF, PPT)."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Contrôle créatif plus limité que des outils libres.",
+      "Coût par utilisateur qui grimpe en équipe."
+    ],
+    "use_cases": [
+      "Monter rapidement un deck commercial soigné.",
+      "Standardiser les présentations d'une équipe.",
+      "Générer une première version de slides par IA."
+    ],
+    "relevant_for": ["Consultants / freelances", "Équipes marketing et vente", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You often create presentations and want to save time on layout.",
+        "You want a clean look without being a designer.",
+        "Your team needs brand consistency."
+      ],
+      "avoidIf": [
+        "You want full, creative control over the design.",
+        "A free presentation tool is enough for you.",
+        "You only make slides very occasionally."
+      ],
+      "threshold": "Beautiful.ai earns its subscription for anyone producing polished slides regularly; for rare or free use, another tool is enough."
+    },
+    "pros": [
+      "Automatic layout that keeps slides clean.",
+      "AI deck and content generation.",
+      "Brand control for teams.",
+      "Standard export (PDF, PPT)."
+    ],
+    "cons": [
+      "No permanent free plan.",
+      "More limited creative control than free tools.",
+      "Per-user cost rises for teams."
+    ],
+    "use_cases": [
+      "Quickly build a polished sales deck.",
+      "Standardize a team's presentations.",
+      "Generate a first slide draft with AI."
+    ]
+  }
+}
