@@ -1,0 +1,89 @@
+{
+  "slug": "teamwork",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Teamwork.com", "url": "https://www.teamwork.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion de projet orienté agences et équipes de service client : suivi du temps, facturation, rentabilité par projet et vues multiples (listes, tableaux, Gantt).",
+    "pricing_model": "Palier gratuit puis abonnements par utilisateur (mensuel ou annuel, annuel moins cher).",
+    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 5 utilisateurs et 5 projets, avec suivi du temps, facturation et vues de projet." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (5 utilisateurs, 5 projets)" },
+      { "name": "Deliver", "price": "10,99 $/utilisateur/mois (annuel)" },
+      { "name": "Grow", "price": "19,99 $/utilisateur/mois (annuel)" },
+      { "name": "Scale", "price": "54,99 $/utilisateur/mois (annuel)" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Gestion de projet multi-vues (listes, tableaux, Gantt)",
+      "Suivi du temps et facturation clients",
+      "Suivi de la rentabilité par projet",
+      "Gestion des ressources et de la charge"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des projets clients facturables (agence, prestataire).",
+        "Vous voulez suivre le temps et la rentabilité au même endroit.",
+        "Vous avez besoin de plusieurs vues (Gantt, tableaux, listes)."
+      ],
+      "avoidIf": [
+        "Vous voulez juste une to-do simple.",
+        "Vous n'avez pas de facturation ni de suivi du temps à gérer.",
+        "Votre équipe dépasse le gratuit sans budget outil."
+      ],
+      "threshold": "Teamwork s'impose pour les agences et équipes de service qui facturent au temps ; pour une simple gestion de tâches, un outil plus léger suffit."
+    },
+    "pros": [
+      "Pensé pour le travail client facturable.",
+      "Suivi du temps et rentabilité intégrés.",
+      "Palier gratuit généreux pour une petite équipe.",
+      "Vues multiples adaptées à la gestion de projet."
+    ],
+    "cons": [
+      "Gratuit plafonné à 5 utilisateurs et 5 projets.",
+      "Fonctions avancées (ressources, rentabilité) sur les paliers élevés.",
+      "Surdimensionné pour une simple to-do."
+    ],
+    "use_cases": [
+      "Piloter des projets clients facturables.",
+      "Suivre le temps passé et la rentabilité.",
+      "Coordonner une équipe d'agence sur plusieurs projets."
+    ],
+    "relevant_for": ["Agences", "Prestataires de services", "Équipes projet"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run billable client projects (agency, service provider).",
+        "You want to track time and profitability in one place.",
+        "You need several views (Gantt, boards, lists)."
+      ],
+      "avoidIf": [
+        "You just want a simple to-do.",
+        "You have no billing or time tracking to manage.",
+        "Your team outgrows the free tier with no tooling budget."
+      ],
+      "threshold": "Teamwork makes sense for agencies and service teams that bill by time; for simple task management, a lighter tool suffices."
+    },
+    "pros": [
+      "Built for billable client work.",
+      "Integrated time tracking and profitability.",
+      "Generous free tier for a small team.",
+      "Multiple views suited to project management."
+    ],
+    "cons": [
+      "Free tier capped at 5 users and 5 projects.",
+      "Advanced features (resourcing, profitability) on higher tiers.",
+      "Overkill for a simple to-do."
+    ],
+    "use_cases": [
+      "Run billable client projects.",
+      "Track time spent and profitability.",
+      "Coordinate an agency team across projects."
+    ]
+  }
+}

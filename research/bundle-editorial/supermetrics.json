@@ -1,0 +1,87 @@
+{
+  "slug": "supermetrics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Supermetrics", "url": "https://supermetrics.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'intégration de données marketing : extrait et transfère automatiquement les données de 150+ canaux (Google Ads, Meta, Shopify…) vers Google Sheets, Excel, Looker Studio ou un entrepôt de données.",
+    "pricing_model": "Abonnement par paliers (essai gratuit 14 jours), selon le nombre de sources, d'utilisateurs, la fréquence de rafraîchissement et la destination. Annuel ~20 % moins cher.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 14 jours ; abonnement requis ensuite." },
+    "plans": [
+      { "name": "Essential / connecteur unique", "price": "à partir de 29 $/mois" },
+      { "name": "Core", "price": "à partir de ~159 $/mois" },
+      { "name": "Paliers supérieurs", "price": "coûts croissants avec les sources, sièges et destinations" }
+    ],
+    "key_features": [
+      "150+ connecteurs de données marketing et vente",
+      "Export vers Sheets, Excel, Looker Studio, entrepôt de données",
+      "Rafraîchissement automatique des rapports",
+      "Une destination principale incluse par plan"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous consolidez des données marketing de plusieurs canaux.",
+        "Vous automatisez des rapports dans Sheets, Looker Studio ou un entrepôt.",
+        "Vous voulez éviter les exports manuels."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'une ou deux sources simples à suivre.",
+        "Vous cherchez une solution gratuite.",
+        "Votre nombre de sources ferait exploser la facture."
+      ],
+      "threshold": "Supermetrics s'impose quand on automatise le reporting multi-canaux à volume ; pour une ou deux sources simples, un export natif ou gratuit suffit."
+    },
+    "pros": [
+      "Très large choix de connecteurs.",
+      "Rapports rafraîchis automatiquement.",
+      "S'intègre à Sheets, Looker Studio et entrepôts.",
+      "Gain de temps sur les exports manuels."
+    ],
+    "cons": [
+      "Coût qui grimpe vite avec sources, sièges et destinations.",
+      "Pas de palier gratuit permanent.",
+      "Multi-destinations facturé en supplément."
+    ],
+    "use_cases": [
+      "Automatiser un reporting marketing multi-canaux.",
+      "Alimenter un dashboard Looker Studio.",
+      "Centraliser les données dans un entrepôt."
+    ],
+    "relevant_for": ["Équipes marketing", "Agences", "Analystes data"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You consolidate marketing data from several channels.",
+        "You automate reports in Sheets, Looker Studio or a warehouse.",
+        "You want to avoid manual exports."
+      ],
+      "avoidIf": [
+        "You only have one or two simple sources to track.",
+        "You want a free solution.",
+        "Your number of sources would blow up the bill."
+      ],
+      "threshold": "Supermetrics makes sense when automating multi-channel reporting at volume; for one or two simple sources, a native or free export suffices."
+    },
+    "pros": [
+      "Very wide range of connectors.",
+      "Reports refreshed automatically.",
+      "Integrates with Sheets, Looker Studio and warehouses.",
+      "Saves time on manual exports."
+    ],
+    "cons": [
+      "Cost rises fast with sources, seats and destinations.",
+      "No permanent free tier.",
+      "Multi-destination billed as an add-on."
+    ],
+    "use_cases": [
+      "Automate multi-channel marketing reporting.",
+      "Feed a Looker Studio dashboard.",
+      "Centralise data into a warehouse."
+    ]
+  }
+}

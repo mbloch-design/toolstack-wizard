@@ -1,0 +1,88 @@
+{
+  "slug": "learnworlds",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle LearnWorlds", "url": "https://www.learnworlds.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme pour créer, héberger et vendre des cours en ligne : école de formation en marque blanche, pages de vente, interactivité vidéo et certifications.",
+    "pricing_model": "Abonnement (essai gratuit 30 jours, pas de palier gratuit permanent), mensuel ou annuel (annuel jusqu'à ~20 % moins cher). Frais par inscription sur l'entrée de gamme.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours ; abonnement requis ensuite." },
+    "plans": [
+      { "name": "Starter", "price": "24 $/mois (annuel), 29 $ en mensuel — 5 $ de frais par inscription à un cours" },
+      { "name": "Pro Trainer", "price": "79 $/mois (annuel), 99 $ en mensuel — sans frais par inscription" },
+      { "name": "Learning Center", "price": "249 $/mois (annuel), 299 $ en mensuel" },
+      { "name": "High Volume & Corporate", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Création de cours et école en marque blanche",
+      "Vidéo interactive et évaluations",
+      "Pages de vente et gestion des paiements",
+      "Certificats et suivi des apprenants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des formations en ligne sous votre marque.",
+        "Vous voulez de la vidéo interactive et des certifications.",
+        "Vous montez une véritable école ou académie en ligne."
+      ],
+      "avoidIf": [
+        "Vous voulez juste héberger quelques vidéos.",
+        "Vous cherchez une plateforme gratuite.",
+        "Votre volume ne justifie pas encore un abonnement dédié."
+      ],
+      "threshold": "LearnWorlds s'impose pour qui construit une vraie activité de formation en ligne (marque blanche, interactivité) ; pour partager quelques vidéos, une solution plus légère suffit."
+    },
+    "pros": [
+      "École en marque blanche complète.",
+      "Vidéo interactive et évaluations.",
+      "Pages de vente et paiements intégrés.",
+      "Certificats et suivi des apprenants."
+    ],
+    "cons": [
+      "Pas de palier gratuit.",
+      "Frais par inscription sur l'entrée de gamme.",
+      "Fonctions avancées réservées aux paliers élevés."
+    ],
+    "use_cases": [
+      "Lancer et vendre une formation en ligne.",
+      "Créer une académie de marque pour ses clients.",
+      "Certifier des apprenants à la fin d'un parcours."
+    ],
+    "relevant_for": ["Formateurs indépendants", "Créateurs de contenu", "Organismes de formation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell online training under your own brand.",
+        "You want interactive video and certifications.",
+        "You are building a real online school or academy."
+      ],
+      "avoidIf": [
+        "You just want to host a few videos.",
+        "You want a free platform.",
+        "Your volume doesn't yet justify a dedicated subscription."
+      ],
+      "threshold": "LearnWorlds makes sense for building a real online training business (white-label, interactivity); to share a few videos, a lighter solution suffices."
+    },
+    "pros": [
+      "Complete white-label school.",
+      "Interactive video and assessments.",
+      "Built-in sales pages and payments.",
+      "Certificates and learner tracking."
+    ],
+    "cons": [
+      "No free tier.",
+      "Per-enrollment fee on the entry plan.",
+      "Advanced features reserved for higher tiers."
+    ],
+    "use_cases": [
+      "Launch and sell an online course.",
+      "Create a branded academy for your clients.",
+      "Certify learners at the end of a path."
+    ]
+  }
+}

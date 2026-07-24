@@ -1,0 +1,88 @@
+{
+  "slug": "teachable",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Teachable", "url": "https://teachable.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme pour créer et vendre des cours en ligne, des coachings et des produits digitaux, avec pages de vente et paiements intégrés.",
+    "pricing_model": "Abonnement (essai gratuit 7 jours, plus de palier gratuit permanent), mensuel ou annuel (annuel ~22–26 % moins cher). Frais de transaction sur l'entrée de gamme.",
+    "free_tier": { "exists": false, "detail": "Plus de plan gratuit ; essai de 7 jours puis abonnement requis." },
+    "plans": [
+      { "name": "Starter", "price": "29 $/mois (annuel), 39 $ en mensuel — 7,5 % de frais de transaction" },
+      { "name": "Builder", "price": "69 $/mois (annuel) — 0 % de frais de transaction plateforme" },
+      { "name": "Growth", "price": "139 $/mois (annuel)" },
+      { "name": "Advanced", "price": "309 $/mois (annuel)" }
+    ],
+    "key_features": [
+      "Création et vente de cours en ligne",
+      "Pages de vente et paiements (Stripe/PayPal)",
+      "Coaching et produits digitaux",
+      "Gestion des apprenants et des accès"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des cours ou du coaching en ligne.",
+        "Vous voulez une plateforme simple et rapide à lancer.",
+        "Vous montez en volume et voulez supprimer les frais de transaction."
+      ],
+      "avoidIf": [
+        "Vous cherchez une plateforme gratuite.",
+        "Vous voulez une école très personnalisable en marque blanche.",
+        "Vos ventes sont trop faibles pour absorber l'abonnement et les frais."
+      ],
+      "threshold": "Teachable s'impose pour lancer vite une offre de cours en ligne ; pour une personnalisation poussée ou du gratuit, un autre outil est plus indiqué."
+    },
+    "pros": [
+      "Simple et rapide à prendre en main.",
+      "Pages de vente et paiements intégrés.",
+      "Frais de transaction supprimés dès le palier intermédiaire.",
+      "Gère cours, coaching et produits digitaux."
+    ],
+    "cons": [
+      "Plus de palier gratuit.",
+      "Frais de transaction sur l'entrée de gamme.",
+      "Personnalisation moins poussée que certains concurrents."
+    ],
+    "use_cases": [
+      "Lancer rapidement une offre de cours en ligne.",
+      "Vendre du coaching et des produits digitaux.",
+      "Encaisser les paiements sans outillage externe."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Coachs", "Formateurs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell online courses or coaching.",
+        "You want a simple, quick-to-launch platform.",
+        "You scale volume and want to remove transaction fees."
+      ],
+      "avoidIf": [
+        "You want a free platform.",
+        "You want a highly customisable white-label school.",
+        "Your sales are too low to absorb the subscription and fees."
+      ],
+      "threshold": "Teachable makes sense to quickly launch an online course offer; for deep customisation or a free option, another tool fits better."
+    },
+    "pros": [
+      "Simple and quick to get started.",
+      "Built-in sales pages and payments.",
+      "Transaction fees removed from the mid tier.",
+      "Handles courses, coaching and digital products."
+    ],
+    "cons": [
+      "No free tier anymore.",
+      "Transaction fee on the entry plan.",
+      "Less deep customisation than some competitors."
+    ],
+    "use_cases": [
+      "Quickly launch an online course offer.",
+      "Sell coaching and digital products.",
+      "Collect payments without external tooling."
+    ]
+  }
+}

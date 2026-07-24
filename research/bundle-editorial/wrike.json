@@ -1,0 +1,88 @@
+{
+  "slug": "wrike",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Wrike", "url": "https://www.wrike.com/price/" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion de projet et de travail collaboratif pour équipes et entreprises : tâches, vues multiples (Kanban, Gantt, tableaux), automatisations et reporting.",
+    "pricing_model": "Palier gratuit puis abonnements par utilisateur (annuel moins cher). Gamme restructurée en janvier 2026 (fin d'Enterprise pour les nouveaux clients, ajout du palier Apex).",
+    "free_tier": { "exists": true, "detail": "Gratuit : gestion de tâches et de projets de base, vues tableau (Kanban) et table." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (jusqu'à 5 utilisateurs environ)" },
+      { "name": "Team", "price": "10 $/utilisateur/mois (annuel), jusqu'à 25 utilisateurs" },
+      { "name": "Business", "price": "25 $/utilisateur/mois (annuel), min. 5 sièges" },
+      { "name": "Pinnacle / Apex", "price": "sur devis (paliers hauts)" }
+    ],
+    "key_features": [
+      "Vues multiples (Kanban, Gantt, tableaux)",
+      "Automatisations de workflow",
+      "Reporting et tableaux de bord",
+      "Gestion des ressources (paliers élevés)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous coordonnez des projets d'équipe avec plusieurs vues.",
+        "Vous voulez des automatisations et du reporting.",
+        "Vous montez en charge d'une petite à une grande équipe."
+      ],
+      "avoidIf": [
+        "Vous cherchez une simple liste de tâches.",
+        "Vous voulez un tarif totalement transparent jusqu'en haut de gamme.",
+        "Votre équipe est trop petite pour justifier les paliers payants."
+      ],
+      "threshold": "Wrike s'impose pour des équipes qui veulent structurer projets, automatisations et reporting à l'échelle ; pour un usage léger, un outil plus simple suffit."
+    },
+    "pros": [
+      "Vues multiples et flexibles (Kanban, Gantt).",
+      "Automatisations et reporting solides.",
+      "Palier gratuit pour démarrer.",
+      "Passe à l'échelle des petites aux grandes équipes."
+    ],
+    "cons": [
+      "Paliers hauts (Pinnacle/Apex) sur devis.",
+      "Business avec minimum de sièges facturés.",
+      "Courbe d'apprentissage sur les fonctions avancées."
+    ],
+    "use_cases": [
+      "Coordonner des projets multi-équipes.",
+      "Automatiser des workflows récurrents.",
+      "Suivre l'avancement via reporting et tableaux de bord."
+    ],
+    "relevant_for": ["Équipes projet", "Équipes marketing", "PME et ETI"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You coordinate team projects with multiple views.",
+        "You want automations and reporting.",
+        "You scale from a small to a large team."
+      ],
+      "avoidIf": [
+        "You want a simple task list.",
+        "You want fully transparent pricing up to the top tier.",
+        "Your team is too small to justify paid tiers."
+      ],
+      "threshold": "Wrike makes sense for teams that want to structure projects, automations and reporting at scale; for light use, a simpler tool suffices."
+    },
+    "pros": [
+      "Multiple flexible views (Kanban, Gantt).",
+      "Solid automations and reporting.",
+      "Free tier to start.",
+      "Scales from small to large teams."
+    ],
+    "cons": [
+      "Top tiers (Pinnacle/Apex) are quote-based.",
+      "Business has a billed seat minimum.",
+      "Learning curve on advanced features."
+    ],
+    "use_cases": [
+      "Coordinate multi-team projects.",
+      "Automate recurring workflows.",
+      "Track progress via reporting and dashboards."
+    ]
+  }
+}
