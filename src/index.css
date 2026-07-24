@@ -19831,41 +19831,81 @@ section[id] {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   V2 App Shell — webapp-style: full-width top bar + left icon sidebar,
-   both sharing the same chrome surface (Adobe Creative Cloud pattern)
+   V2 App Shell — two independent surfaces on a quiet shell background:
+   a navigation box on the left and a workspace box on the right.
    ══════════════════════════════════════════════════════════════════════ */
 .asv2-root {
   display: flex;
-  flex-direction: column;
+  gap: 8px;
   height: 100vh;
   overflow: hidden;
-  background: var(--color-surface);
+  padding: 8px;
+  background: var(--color-surface-soft);
 }
 
-.asv2-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
+.asv2-workspace {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 68px;
-  flex-shrink: 0;
-  padding: 0 28px 0 0;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 24px;
   background: var(--color-surface);
 }
 
 .asv2-logo {
   display: flex;
   align-items: center;
-  padding-left: 24px;
-  flex-shrink: 0;
-  height: 100%;
-  transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  justify-content: center;
+  min-height: 62px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  text-decoration: none;
 }
-.asv2-logo img { display: block; }
+.asv2-logo img {
+  display: block;
+  flex-shrink: 0;
+}
+.asv2-logo-mark {
+  width: 32px;
+  height: 32px;
+}
+.asv2-logo-full {
+  display: none !important;
+}
 .asv2-root--sidebar-expanded .asv2-logo {
-  width: 236px;
+  justify-content: flex-start;
+  padding-inline: 11px;
+}
+.asv2-root--sidebar-expanded .asv2-logo-mark {
+  display: none;
+}
+.asv2-root--sidebar-expanded .asv2-logo-full {
+  display: block !important;
+}
+
+.asv2-topbar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 68px;
+  flex-shrink: 0;
+  padding: 0 20px;
+  background: var(--color-surface);
+}
+
+.asv2-mobile-logo {
+  display: none;
+  align-items: center;
+  flex-shrink: 0;
+}
+.asv2-mobile-logo img {
+  display: block;
+  height: 28px;
+  width: 127px;
 }
 
 .asv2-search {
@@ -19928,13 +19968,6 @@ section[id] {
 }
 .asv2-topbar-cta:hover { opacity: 0.85; }
 
-.asv2-body {
-  display: flex;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
-}
-
 .asv2-sidebar {
   display: flex;
   flex-direction: column;
@@ -19944,13 +19977,12 @@ section[id] {
   overflow: hidden;
   padding: 12px 10px 14px;
   background: var(--color-surface);
-  border-right: 1px solid transparent;
-  transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms ease-out;
+  border-radius: 24px;
+  transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .asv2-root--sidebar-expanded .asv2-sidebar {
   width: 236px;
-  border-right-color: var(--color-border-soft);
 }
 
 .asv2-nav {
@@ -20126,6 +20158,9 @@ section[id] {
 .dark .asv2-logo img {
   filter: invert(1);
 }
+.dark .asv2-mobile-logo img {
+  filter: invert(1);
+}
 .dark .asv2-search {
   background: var(--color-surface-soft);
   color: var(--color-text);
@@ -20151,7 +20186,6 @@ section[id] {
   scrollbar-gutter: stable;
   -webkit-overflow-scrolling: touch;
   background: var(--color-bg);
-  border-top-left-radius: 24px;
 }
 
 @media (max-width: 640px) {
@@ -20159,34 +20193,29 @@ section[id] {
      collapses into a horizontal tab row below the topbar, so there's no
      sidebar/content corner to preserve here) — undo the desktop
      locked-shell/internal-scroll layout used to keep that corner in view. */
-  .asv2-root { height: auto; overflow: visible; }
-  .asv2-body { overflow: visible; }
-  .asv2-content { height: auto; overflow-x: hidden; overflow-y: visible; scrollbar-gutter: auto; border-top-left-radius: 0; }
+  .asv2-root {
+    display: block;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    background: var(--color-surface);
+  }
+  .asv2-workspace {
+    display: block;
+    overflow: visible;
+    border-radius: 0;
+  }
+  .asv2-content { height: auto; overflow-x: hidden; overflow-y: visible; scrollbar-gutter: auto; }
 
-  .asv2-topbar { padding: 0 16px; height: 56px; gap: 12px; }
-  .asv2-logo { width: auto; padding-right: 4px; }
+  .asv2-topbar { position: sticky; top: 0; padding: 0 16px; height: 56px; gap: 12px; }
+  .asv2-mobile-logo { display: flex; padding-right: 4px; }
   .asv2-search { width: auto; flex: 1; min-width: 0; height: 42px; padding: 0 14px; }
   .asv2-kbd { display: none; }
   .asv2-topbar-cta { padding: 8px 14px; font-size: 12px; }
 
-  .asv2-body { flex-direction: column; }
   .asv2-sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-    overflow-y: visible;
-    border-bottom: 1px solid var(--color-border-soft);
+    display: none;
   }
-  .asv2-nav {
-    flex-direction: row;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 10px 12px;
-    gap: 4px;
-  }
-  .asv2-nav-item { width: auto; flex-shrink: 0; padding: 4px 6px; }
-  .asv2-nav-icon { width: 40px; height: 40px; }
-  .asv2-nav-label { font-size: 10px; }
 }
 
 @media (max-width: 440px) {
@@ -20202,8 +20231,7 @@ section[id] {
 .asv2-bottomnav { display: none; }
 
 @media (max-width: 640px) {
-  /* Swap the old collapsed-sidebar tab row + top CTA for the bottom bar */
-  .asv2-sidebar { display: none; }
+  /* Desktop sidebar is replaced by the mobile bottom bar */
   .asv2-topbar-cta { display: none; }
   .asv2-content { padding-bottom: calc(118px + env(safe-area-inset-bottom)); }
 

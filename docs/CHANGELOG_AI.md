@@ -3586,3 +3586,15 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - La transaction de bascule Wix est rollback-only par défaut, idempotente et verrouillée ; elle publie les contenus FR/EN seulement après une parité champ par champ, sans basculer les 1 125 autres outils.
 - Canari final étendu à 22/22 avec contrôle SSR et rendu de `/fr/tool/wix/prix`.
 - Les cartes tarifaires canoniques peuvent désormais restituer une correspondance synthétique par plan (public cible et trois différences clés), séparée des observations de prix et reliée à une source officielle. Wix inaugure ce format sur ses cinq offres.
+
+## 2026-07-23 — Sidebar du shell et préférences d’affichage
+
+- Le shell desktop sépare désormais la navigation et l'espace de travail en deux boîtes autonomes, reliées par une gouttière neutre plutôt que par une bordure verticale.
+- Le logo ToolTrim est intégré à la sidebar : pictogramme en mode compact, signature complète en mode déployé.
+- Le header de recherche est intégré à la boîte de contenu afin que toute la partie droite forme une seule surface cohérente.
+- La sidebar desktop possède désormais une version compacte iconographique et une version déployée avec libellés, mémorisées localement.
+- Les états actifs utilisent une surface neutre et une hiérarchie typographique plus fine, sans pavé noir décoratif.
+- Une zone de préférences dédiée est placée en bas : changement de langue, thème clair/sombre et réduction de la navigation.
+- Le changement de langue conserve la page, les paramètres et l’ancre en cours.
+- Le thème suit d’abord la préférence enregistrée, puis celle du système, et applique un `color-scheme` cohérent au document.
+- Les variantes ont été vérifiées visuellement sur l’index des guides, en clair et en sombre, ainsi que par tests E2E de persistance.

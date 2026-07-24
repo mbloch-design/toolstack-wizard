@@ -64,6 +64,29 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 ---
 
+## Sidebar du shell public (`asv2-*`)
+
+Sur desktop, le shell est composé de deux surfaces autonomes posées sur une
+gouttière neutre : la boîte de navigation à gauche et la boîte de travail à
+droite. Le logo appartient à la sidebar ; le header de recherche appartient à
+la surface de contenu. Les pages restent ouvertes à l'intérieur de cette
+seconde surface et ne reçoivent pas une coque supplémentaire.
+
+La navigation possède deux états persistants :
+
+- **compact — 76px** : icônes seules, libellés accessibles par `aria-label` et `title` ;
+- **déployé — 236px** : icône + libellé, état actif porté par une surface neutre.
+
+Le bas de la sidebar forme une zone de préférences distincte de la navigation :
+
+1. changement de langue en conservant le chemin, la query et l'ancre ;
+2. bascule clair/sombre persistée dans `tooltrim:theme` ;
+3. commande de réduction/déploiement persistée dans `tooltrim:sidebar-expanded`.
+
+La sidebar reste compacte par défaut et disparaît au profit de la navigation mobile sous le breakpoint du shell. Les états actifs ne doivent pas utiliser un pavé noir : la surface, le poids typographique et l'icône suffisent à créer la hiérarchie.
+
+---
+
 ## Profondeur des cards
 
 Le catalogue limite volontairement les rectangles imbriqués. Une card ne reçoit une coque que si cette coque porte une fonction.

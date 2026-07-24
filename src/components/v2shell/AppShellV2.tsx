@@ -19,6 +19,7 @@ import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
+import pictoToolTrim from "@/assets/picto-logo.svg";
 import { SearchModal } from "@/components/SearchModal";
 import Footer from "@/components/Footer";
 
@@ -82,104 +83,107 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <div className={`asv2-root${sidebarExpanded ? " asv2-root--sidebar-expanded" : ""}`}>
-      {/* ── Top bar (spans full width, flush with sidebar below) ── */}
-      <header className="asv2-topbar">
-        <Link to={prefix} className="asv2-logo">
-          <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} style={{ height: 28, width: 127 }} />
+      <aside className="asv2-sidebar" data-expanded={sidebarExpanded}>
+        <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
+          <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={32} height={32} aria-hidden />
+          <img className="asv2-logo-full" src={logoToolTrim} alt="" width={127} height={28} aria-hidden />
         </Link>
 
-        <button className="asv2-search" onClick={() => setSearchOpen(true)}>
-          <Search style={{ width: 15, height: 15 }} />
-          <span>{t("Rechercher un outil...", "Search a tool...")}</span>
-          <kbd className="asv2-kbd">⌘K</kbd>
-        </button>
+        <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
+          {NAV_ITEMS.map((item) => {
+            const isActive = item.id === "home"
+              ? relPath === ""
+              : item.match.some((m) => relPath === m || relPath.startsWith(m));
+            return (
+              <Link
+                key={item.id}
+                to={`${prefix}${item.to}`}
+                className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
+                aria-label={t(item.labelFr, item.labelEn)}
+                title={!sidebarExpanded ? t(item.labelFr, item.labelEn) : undefined}
+              >
+                <span className="asv2-nav-icon">
+                  <item.Icon style={{ width: 20, height: 20 }} />
+                </span>
+                <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
+              </Link>
+            );
+          })}
+        </nav>
 
-        <div className="asv2-topbar-right">
-          <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
-            <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
-            <span>{cartLabel}</span>
-          </Link>
-        </div>
-      </header>
-
-      {/* ── Body: sidebar + content ── */}
-      <div className="asv2-body">
-        <aside className="asv2-sidebar" data-expanded={sidebarExpanded}>
-          <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
-            {NAV_ITEMS.map((item) => {
-              const isActive = item.id === "home"
-                ? relPath === ""
-                : item.match.some((m) => relPath === m || relPath.startsWith(m));
-              return (
-                <Link
-                  key={item.id}
-                  to={`${prefix}${item.to}`}
-                  className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
-                  aria-label={t(item.labelFr, item.labelEn)}
-                  title={!sidebarExpanded ? t(item.labelFr, item.labelEn) : undefined}
-                >
-                  <span className="asv2-nav-icon">
-                    <item.Icon style={{ width: 20, height: 20 }} />
-                  </span>
-                  <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          <div className="asv2-sidebar-utility">
-            <div className="asv2-utility-heading" aria-hidden="true">
-              <Settings2 />
-              <span>{t("Préférences", "Preferences")}</span>
-            </div>
-
-            <a
-              href={languageHref}
-              className="asv2-utility-item"
-              aria-label={t("Passer le site en anglais", "Switch the site to French")}
-              title={!sidebarExpanded ? t("Changer de langue", "Change language") : undefined}
-            >
-              <Languages />
-              <span className="asv2-utility-text">
-                {t("English", "Français")}
-              </span>
-              <span className="asv2-utility-value">{otherLang.toUpperCase()}</span>
-            </a>
-
-            <button
-              type="button"
-              className="asv2-utility-item asv2-theme-toggle"
-              onClick={toggleTheme}
-              aria-pressed={theme === "dark"}
-              aria-label={theme === "dark"
-                ? t("Passer en mode clair", "Switch to light mode")
-                : t("Passer en mode sombre", "Switch to dark mode")}
-              title={!sidebarExpanded ? t("Changer de thème", "Change theme") : undefined}
-            >
-              {theme === "dark" ? <Sun /> : <Moon />}
-              <span className="asv2-utility-text">
-                {theme === "dark" ? t("Mode clair", "Light mode") : t("Mode sombre", "Dark mode")}
-              </span>
-              <span className="asv2-utility-value">{theme === "dark" ? t("Clair", "Light") : t("Sombre", "Dark")}</span>
-            </button>
-
-            <button
-              type="button"
-              className="asv2-utility-item asv2-sidebar-toggle"
-              onClick={toggleSidebar}
-              aria-expanded={sidebarExpanded}
-              aria-label={sidebarExpanded
-                ? t("Réduire la barre latérale", "Collapse sidebar")
-                : t("Déployer la barre latérale", "Expand sidebar")}
-              title={!sidebarExpanded ? t("Déployer la navigation", "Expand navigation") : undefined}
-            >
-              {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
-              <span className="asv2-utility-text">
-                {sidebarExpanded ? t("Réduire", "Collapse") : t("Déployer", "Expand")}
-              </span>
-            </button>
+        <div className="asv2-sidebar-utility">
+          <div className="asv2-utility-heading" aria-hidden="true">
+            <Settings2 />
+            <span>{t("Préférences", "Preferences")}</span>
           </div>
-        </aside>
+
+          <a
+            href={languageHref}
+            className="asv2-utility-item"
+            aria-label={t("Passer le site en anglais", "Switch the site to French")}
+            title={!sidebarExpanded ? t("Changer de langue", "Change language") : undefined}
+          >
+            <Languages />
+            <span className="asv2-utility-text">
+              {t("English", "Français")}
+            </span>
+            <span className="asv2-utility-value">{otherLang.toUpperCase()}</span>
+          </a>
+
+          <button
+            type="button"
+            className="asv2-utility-item asv2-theme-toggle"
+            onClick={toggleTheme}
+            aria-pressed={theme === "dark"}
+            aria-label={theme === "dark"
+              ? t("Passer en mode clair", "Switch to light mode")
+              : t("Passer en mode sombre", "Switch to dark mode")}
+            title={!sidebarExpanded ? t("Changer de thème", "Change theme") : undefined}
+          >
+            {theme === "dark" ? <Sun /> : <Moon />}
+            <span className="asv2-utility-text">
+              {theme === "dark" ? t("Mode clair", "Light mode") : t("Mode sombre", "Dark mode")}
+            </span>
+            <span className="asv2-utility-value">{theme === "dark" ? t("Clair", "Light") : t("Sombre", "Dark")}</span>
+          </button>
+
+          <button
+            type="button"
+            className="asv2-utility-item asv2-sidebar-toggle"
+            onClick={toggleSidebar}
+            aria-expanded={sidebarExpanded}
+            aria-label={sidebarExpanded
+              ? t("Réduire la barre latérale", "Collapse sidebar")
+              : t("Déployer la barre latérale", "Expand sidebar")}
+            title={!sidebarExpanded ? t("Déployer la navigation", "Expand navigation") : undefined}
+          >
+            {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
+            <span className="asv2-utility-text">
+              {sidebarExpanded ? t("Réduire", "Collapse") : t("Déployer", "Expand")}
+            </span>
+          </button>
+        </div>
+      </aside>
+
+      <div className="asv2-workspace">
+        <header className="asv2-topbar">
+          <Link to={prefix} className="asv2-mobile-logo">
+            <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} />
+          </Link>
+
+          <button className="asv2-search" onClick={() => setSearchOpen(true)}>
+            <Search style={{ width: 15, height: 15 }} />
+            <span>{t("Rechercher un outil...", "Search a tool...")}</span>
+            <kbd className="asv2-kbd">⌘K</kbd>
+          </button>
+
+          <div className="asv2-topbar-right">
+            <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
+              <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+              <span>{cartLabel}</span>
+            </Link>
+          </div>
+        </header>
 
         <main ref={contentRef} id="main-content" className="asv2-content">
           {children}
