@@ -31,7 +31,7 @@
       ],
       "avoidIf": [
         "Vous cherchez une simple automatisation par règles.",
-        "Vous voulez une facture 100 % fixe (double compteur).",
+        "Vous voulez une facture entièrement fixe (double compteur).",
         "Vos besoins IA sont marginaux."
       ],
       "threshold": "Relevance AI s'impose pour orchestrer des agents IA sur des tâches GTM/ops ; pour de l'automatisation simple par règles, un outil classique suffit."

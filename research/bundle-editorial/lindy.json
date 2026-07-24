@@ -30,11 +30,11 @@
         "Vous connectez de nombreuses apps dans vos workflows."
       ],
       "avoidIf": [
-        "Vous voulez une facture parfaitement prévisible.",
+        "Vous voulez une facture parfaitement stable et prévisible.",
         "Vos besoins d'automatisation sont marginaux.",
         "Vous préférez un simple outil de règles no-IA."
       ],
-      "threshold": "Lindy s'impose pour automatiser des tâches IA multi-apps sans code ; pour un besoin marginal ou une facture 100 % prévisible, un automatiseur classique convient mieux."
+      "threshold": "Lindy s'impose pour automatiser des tâches IA multi-apps sans code ; pour un besoin marginal ou une facture parfaitement stable, un automatiseur classique convient mieux."
     },
     "pros": [
       "Agents IA no-code puissants.",
