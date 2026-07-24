@@ -24,6 +24,8 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "capcut-ai", "clickup-ai", "excel-copilot", "streamelements-widgets", "gsc", "gorgias-helpscout",
   // Feature sans produit autonome ni parent fiché → retirée de l'index.
   "youtube-live",
+  // Produit fermé (shieldapp.ai affiche « Shield is winding down »).
+  "shield",
   // Recatégorisation placeholder (preuve HTTP) : URL morte ou domaine parké/générique
   // (archivées à la source), + 4 combos/doublons redirigés 301 (krea→krea-ai,
   // zapier-make→zapier, webflow-framer→webflow, teleprompter-apps→teleprompter).
