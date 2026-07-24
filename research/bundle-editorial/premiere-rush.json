@@ -2,6 +2,20 @@
   "slug": "premiere-rush",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Premiere Rush — page produit officielle", "url": "https://www.adobe.com/products/premiere-rush.html" }
+  ],
+  "facts": {
+    "what": "Éditeur vidéo simplifié et multi-appareils d'Adobe (bureau et mobile), pensé pour publier vite sur les réseaux sociaux.",
+    "pricing_note": "Inclus dans l'écosystème Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Montage vidéo simple sur mobile et bureau",
+      "Synchronisation des projets entre appareils",
+      "Titres, transitions et audio de base",
+      "Export optimisé pour les réseaux sociaux"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
@@ -12,31 +26,27 @@
       "avoidIf": [
         "Vous avez besoin d'un montage avancé (Premiere Pro).",
         "Vous cherchez une alternative gratuite.",
-        "Vos projets sont complexes."
+        "Vos projets vidéo sont complexes."
       ],
-      "threshold": "Premiere Rush est pertinent quand le montage vidéo simplifié fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Premiere Rush s'impose pour du montage rapide et mobile destiné aux réseaux sociaux ; pour un montage exigeant, Premiere Pro est plus adapté."
     },
     "pros": [
-      "Outil de référence pour le montage vidéo simplifié.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Montage simple sur mobile et bureau.",
+      "Synchronisation des projets entre appareils.",
+      "Titres, transitions et audio de base intégrés.",
+      "Export optimisé réseaux sociaux."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Fonctions limitées face à Premiere Pro.",
+      "Accessible via l'écosystème Creative Cloud.",
+      "Peu adapté aux projets complexes."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant le montage vidéo simplifié dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Monter une vidéo courte pour les réseaux sociaux depuis un mobile.",
+      "Reprendre un projet d'un appareil à l'autre.",
+      "Ajouter titres et transitions simples rapidement."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Créateurs de contenu", "Community managers", "Débutants vidéo"]
   },
   "en": {
     "verdict": {
@@ -48,25 +58,25 @@
       "avoidIf": [
         "You need advanced editing (Premiere Pro).",
         "You want a free alternative.",
-        "Your projects are complex."
+        "Your video projects are complex."
       ],
-      "threshold": "Premiere Rush is relevant when quick, simplified video editing is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Premiere Rush makes sense for quick, mobile editing aimed at social media; for demanding editing, Premiere Pro fits better."
     },
     "pros": [
-      "A reference tool for quick, simplified video editing.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Simple editing on mobile and desktop.",
+      "Project sync across devices.",
+      "Built-in titles, transitions and basic audio.",
+      "Export optimised for social media."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Limited features versus Premiere Pro.",
+      "Available via the Creative Cloud ecosystem.",
+      "Poorly suited to complex projects."
     ],
     "use_cases": [
-      "Deliver a project requiring quick, simplified video editing in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Edit a short social video from a phone.",
+      "Continue a project from one device to another.",
+      "Quickly add simple titles and transitions."
     ]
   }
 }

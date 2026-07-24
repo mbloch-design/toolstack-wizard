@@ -2,11 +2,25 @@
   "slug": "lightroom-mobile",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Lightroom (versions mobile et web) — Wikipédia", "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom" }
+  ],
+  "facts": {
+    "what": "Version mobile d'Adobe Lightroom : retouche photo non destructive sur smartphone/tablette, synchronisée au cloud.",
+    "pricing_note": "Liée à l'abonnement Lightroom / Creative Cloud Photo (voir la fiche de la suite).",
+    "key_features": [
+      "Retouche non destructive sur mobile",
+      "Synchronisation cloud avec Lightroom bureau et web",
+      "Prise en charge RAW sur mobile",
+      "Préréglages applicables et partageables"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous retouchez vos photos depuis un mobile ou une tablette.",
-        "Vous voulez une synchronisation cloud avec Lightroom.",
+        "Vous voulez une synchronisation cloud avec Lightroom bureau.",
         "Vous shootez et éditez en déplacement."
       ],
       "avoidIf": [
@@ -14,59 +28,55 @@
         "Vous préférez une app photo gratuite.",
         "Vous n'avez pas besoin de synchronisation."
       ],
-      "threshold": "Lightroom Mobile est pertinent quand la retouche photo sur mobile fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Lightroom mobile s'impose pour retoucher et synchroniser ses photos en déplacement dans l'écosystème Lightroom ; pour de l'édition uniquement sur ordinateur, la version bureau suffit."
     },
     "pros": [
-      "Outil de référence pour la retouche photo sur mobile.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Retouche non destructive sur mobile.",
+      "Synchronisation cloud avec Lightroom bureau et web.",
+      "Prise en charge RAW sur mobile.",
+      "Préréglages applicables et partageables."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Liée à l'abonnement Lightroom / CC Photo.",
+      "Écran mobile moins confortable pour l'édition fine.",
+      "Dépendance au cloud pour la synchronisation."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant la retouche photo sur mobile dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Retoucher une photo RAW directement depuis un mobile.",
+      "Synchroniser ses édits entre mobile et ordinateur.",
+      "Appliquer un préréglage en déplacement."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Photographes mobiles", "Créateurs de contenu", "Voyageurs"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You edit photos from a phone or tablet.",
-        "You want cloud sync with Lightroom.",
+        "You want cloud sync with desktop Lightroom.",
         "You shoot and edit on the go."
       ],
       "avoidIf": [
-        "You edit only on desktop.",
+        "You edit only on a computer.",
         "You prefer a free photo app.",
         "You don't need syncing."
       ],
-      "threshold": "Lightroom Mobile is relevant when mobile photo editing synced with Lightroom is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Lightroom mobile makes sense to edit and sync photos on the go within the Lightroom ecosystem; for computer-only editing, the desktop version suffices."
     },
     "pros": [
-      "A reference tool for mobile photo editing synced with Lightroom.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Non-destructive editing on mobile.",
+      "Cloud sync with desktop and web Lightroom.",
+      "RAW support on mobile.",
+      "Presets applicable and shareable."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Tied to the Lightroom / CC Photography plan.",
+      "Mobile screen less comfortable for fine editing.",
+      "Cloud dependency for syncing."
     ],
     "use_cases": [
-      "Deliver a project requiring mobile photo editing synced with Lightroom in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Edit a RAW photo directly from a phone.",
+      "Sync your edits between mobile and computer.",
+      "Apply a preset on the go."
     ]
   }
 }

@@ -2,71 +2,81 @@
   "slug": "adobe-podcast-ai",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Podcast — page officielle", "url": "https://podcast.adobe.com/" }
+  ],
+  "facts": {
+    "what": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
+    "pricing_note": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite).",
+    "key_features": [
+      "Amélioration de la voix par IA (Enhance Speech)",
+      "Enregistrement et édition audio dans le navigateur",
+      "Réduction de bruit et de réverbération",
+      "Rendu de qualité studio sans expertise audio"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous nettoyez et améliorez des enregistrements vocaux par IA.",
-        "Vous produisez des podcasts ou voix-off.",
-        "Vous voulez un traitement rapide sans expertise audio."
+        "Vous produisez du contenu parlé (podcasts, voix-off) et voulez un rendu propre par IA.",
+        "Vous voulez enregistrer et améliorer de la voix sans expertise audio.",
+        "Vous cherchez un traitement rapide, dans le navigateur."
       ],
       "avoidIf": [
         "Vous mixez déjà finement dans un DAW.",
         "Vos besoins audio sont rares.",
         "Vous cherchez un outil hors Adobe."
       ],
-      "threshold": "Adobe Podcast Ai est pertinent quand l'amélioration audio par IA fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Adobe Podcast s'impose pour améliorer rapidement de la voix par IA sans expertise ; pour un mixage fin, un DAW dédié (comme Audition) reste plus adapté."
     },
     "pros": [
-      "Outil de référence pour l'amélioration audio par IA.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Amélioration de la voix par IA, rendu propre.",
+      "Enregistrement et édition dans le navigateur.",
+      "Réduction de bruit et de réverbération.",
+      "Accessible sans expertise audio."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Moins fin qu'un mixage pro dans un DAW.",
+      "Pertinent surtout pour la voix (pas la musique).",
+      "Rattaché à l'écosystème Adobe."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant l'amélioration audio par IA dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Nettoyer une voix bruitée pour un podcast.",
+      "Enregistrer et éditer une voix-off dans le navigateur.",
+      "Obtenir un rendu voix « qualité studio » rapidement."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Podcasteurs", "Créateurs de contenu", "Voix-off"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You clean and enhance voice recordings with AI.",
-        "You produce podcasts or voice-overs.",
-        "You want fast processing without audio expertise."
+        "You produce spoken content (podcasts, voice-overs) and want a clean AI result.",
+        "You want to record and enhance voice without audio expertise.",
+        "You want fast, in-browser processing."
       ],
       "avoidIf": [
         "You already mix finely in a DAW.",
         "Your audio needs are rare.",
         "You want a non-Adobe tool."
       ],
-      "threshold": "Adobe Podcast Ai is relevant when AI-based speech enhancement is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Adobe Podcast makes sense to quickly enhance voice with AI without expertise; for fine mixing, a dedicated DAW (like Audition) fits better."
     },
     "pros": [
-      "A reference tool for AI-based speech enhancement.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "AI voice enhancement with a clean result.",
+      "In-browser recording and editing.",
+      "Noise and reverb reduction.",
+      "Accessible without audio expertise."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Less fine than pro mixing in a DAW.",
+      "Mostly relevant for voice (not music).",
+      "Tied to the Adobe ecosystem."
     ],
     "use_cases": [
-      "Deliver a project requiring AI-based speech enhancement in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Clean a noisy voice for a podcast.",
+      "Record and edit a voice-over in the browser.",
+      "Get studio-quality voice quickly."
     ]
   }
 }
