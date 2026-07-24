@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "linktree",
+    "name": "Linktree",
+    "url": "https://linktr.ee"
+  },
+  {
+    "slug": "logic-pro",
+    "name": "Logic Pro",
+    "url": "https://www.apple.com/logic-pro/"
+  },
+  {
+    "slug": "looka",
+    "name": "Looka",
+    "url": "https://looka.com"
+  },
+  {
+    "slug": "loox",
+    "name": "Loox",
+    "url": "https://loox.com"
+  },
+  {
+    "slug": "ltk",
+    "name": "Ltk",
+    "url": "https://ltk.com"
+  },
+  {
+    "slug": "lucid-software",
+    "name": "Lucid Software",
+    "url": "https://lucid.co"
+  },
+  {
+    "slug": "madmapper",
+    "name": "MadMapper",
+    "url": "https://madmapper.com"
+  },
+  {
+    "slug": "magicbrief",
+    "name": "Magicbrief",
+    "url": "https://magicbrief.com"
+  },
+  {
+    "slug": "mari",
+    "name": "Mari",
+    "url": "https://www.foundry.com/products/mari"
+  },
+  {
+    "slug": "marmoset-toolbag",
+    "name": "Marmoset Toolbag",
+    "url": "https://marmoset.co/toolbag/"
+  }
+]

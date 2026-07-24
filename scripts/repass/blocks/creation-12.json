@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "sparkloop",
+    "name": "Sparkloop",
+    "url": "https://sparkloop.app"
+  },
+  {
+    "slug": "spotify-for-podcasters",
+    "name": "Spotify for Podcasters",
+    "url": "https://podcasters.spotify.com"
+  },
+  {
+    "slug": "sprout-social",
+    "name": "Sprout Social",
+    "url": "https://sproutsocial.com"
+  },
+  {
+    "slug": "steamworks",
+    "name": "Steamworks",
+    "url": "https://partner.steamgames.com"
+  },
+  {
+    "slug": "storyblocks",
+    "name": "Storyblocks",
+    "url": "https://storyblocks.com"
+  },
+  {
+    "slug": "submagic",
+    "name": "Submagic",
+    "url": "https://submagic.co"
+  },
+  {
+    "slug": "superdev-pro",
+    "name": "SuperDev Pro",
+    "url": "https://superdev.pro"
+  },
+  {
+    "slug": "surfer-ai",
+    "name": "Surfer AI",
+    "url": "https://surferai.com"
+  },
+  {
+    "slug": "systeme-io",
+    "name": "Systeme Io",
+    "url": "https://systeme.io"
+  },
+  {
+    "slug": "tablepress",
+    "name": "Tablepress",
+    "url": "https://tablepress.com"
+  }
+]

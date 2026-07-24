@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "browzwear",
+    "name": "Browzwear",
+    "url": "https://browzwear.com"
+  },
+  {
+    "slug": "capcut",
+    "name": "CapCut",
+    "url": "https://capcut.com"
+  },
+  {
+    "slug": "captions",
+    "name": "Captions",
+    "url": "https://captions.ai"
+  },
+  {
+    "slug": "castmagic",
+    "name": "Castmagic",
+    "url": "https://castmagic.io"
+  },
+  {
+    "slug": "cavalry",
+    "name": "Cavalry",
+    "url": "https://cavalry.scenegroup.co"
+  },
+  {
+    "slug": "cinema-4d",
+    "name": "Cinema 4D",
+    "url": "https://www.maxon.net/cinema-4d"
+  },
+  {
+    "slug": "cleanvoice",
+    "name": "Cleanvoice",
+    "url": ""
+  },
+  {
+    "slug": "clipwing",
+    "name": "Clipwing",
+    "url": "https://clipwing.pro"
+  },
+  {
+    "slug": "clo-3d",
+    "name": "CLO 3D",
+    "url": "https://www.clo3d.com"
+  },
+  {
+    "slug": "corona-renderer",
+    "name": "Corona Renderer",
+    "url": "https://www.chaos.com/corona"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "murf",
+    "name": "Murf",
+    "url": "https://murf.ai"
+  },
+  {
+    "slug": "nightbot",
+    "name": "Nightbot",
+    "url": "https://nightbot.com"
+  },
+  {
+    "slug": "nomad-sculpt",
+    "name": "Nomad Sculpt",
+    "url": "https://nomadsculpt.com"
+  },
+  {
+    "slug": "notch",
+    "name": "Notch",
+    "url": "https://www.notch.one"
+  },
+  {
+    "slug": "nuke",
+    "name": "Nuke",
+    "url": "https://www.foundry.com/products/nuke-family"
+  },
+  {
+    "slug": "obs",
+    "name": "OBS",
+    "url": "https://obsproject.com"
+  },
+  {
+    "slug": "octane-render",
+    "name": "Octane Render",
+    "url": "https://home.otoy.com/render/octane-render/"
+  },
+  {
+    "slug": "opus-clip",
+    "name": "Opus Clip",
+    "url": "https://www.opus.pro"
+  },
+  {
+    "slug": "opusclip",
+    "name": "Opusclip",
+    "url": "https://opus.pro"
+  },
+  {
+    "slug": "p5-js",
+    "name": "p5.js",
+    "url": "https://p5js.org"
+  }
+]

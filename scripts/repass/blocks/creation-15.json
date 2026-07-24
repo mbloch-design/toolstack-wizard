@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "vmake",
+    "name": "Vmake",
+    "url": "https://vmake.ai"
+  },
+  {
+    "slug": "webxr",
+    "name": "WebXR",
+    "url": "https://immersiveweb.dev"
+  },
+  {
+    "slug": "wistia",
+    "name": "Wistia",
+    "url": "https://wistia.com"
+  },
+  {
+    "slug": "wwise",
+    "name": "Wwise",
+    "url": "https://www.audiokinetic.com"
+  },
+  {
+    "slug": "x",
+    "name": "X",
+    "url": "https://x.com"
+  },
+  {
+    "slug": "yoast",
+    "name": "Yoast",
+    "url": "https://yoast.com"
+  }
+]

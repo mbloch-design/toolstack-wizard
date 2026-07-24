@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "marvelous-designer",
+    "name": "Marvelous Designer",
+    "url": "https://www.marvelousdesigner.com"
+  },
+  {
+    "slug": "masv",
+    "name": "MASV",
+    "url": "https://massive.io"
+  },
+  {
+    "slug": "maven",
+    "name": "Maven",
+    "url": "https://maven.com"
+  },
+  {
+    "slug": "maxon-one",
+    "name": "Maxon One",
+    "url": "https://www.maxon.net/maxon-one"
+  },
+  {
+    "slug": "maya",
+    "name": "Maya",
+    "url": "https://www.autodesk.com/products/maya/overview"
+  },
+  {
+    "slug": "memberful",
+    "name": "Memberful",
+    "url": "https://memberful.com"
+  },
+  {
+    "slug": "meta-quest-developer-tools",
+    "name": "Meta Quest Developer Tools",
+    "url": "https://developer.oculus.com"
+  },
+  {
+    "slug": "modo",
+    "name": "Modo",
+    "url": "https://www.foundry.com/products/modo"
+  },
+  {
+    "slug": "motion",
+    "name": "Motion",
+    "url": "https://motion.com"
+  },
+  {
+    "slug": "motion-array",
+    "name": "Motion Array",
+    "url": "https://motionarray.com"
+  }
+]

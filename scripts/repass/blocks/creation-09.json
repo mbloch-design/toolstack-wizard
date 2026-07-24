@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "pagefly",
+    "name": "Pagefly",
+    "url": "https://pagefly.com"
+  },
+  {
+    "slug": "pinterest",
+    "name": "Pinterest",
+    "url": "https://www.pinterest.com"
+  },
+  {
+    "slug": "pixco",
+    "name": "Pixco",
+    "url": "https://pixco.io"
+  },
+  {
+    "slug": "pixieset",
+    "name": "Pixieset",
+    "url": "https://pixieset.com"
+  },
+  {
+    "slug": "planoly",
+    "name": "Planoly",
+    "url": "https://planoly.com"
+  },
+  {
+    "slug": "podbean",
+    "name": "Podbean",
+    "url": "https://podbean.com"
+  },
+  {
+    "slug": "podcastle",
+    "name": "Podcastle",
+    "url": ""
+  },
+  {
+    "slug": "postsyncer",
+    "name": "PostSyncer",
+    "url": "https://postsyncer.com"
+  },
+  {
+    "slug": "powerpoint",
+    "name": "Microsoft PowerPoint",
+    "url": "https://www.microsoft.com/microsoft-365/powerpoint"
+  },
+  {
+    "slug": "pretty-links",
+    "name": "Pretty Links",
+    "url": "https://prettylinks.com"
+  }
+]

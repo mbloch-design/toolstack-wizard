@@ -46,7 +46,7 @@ try {
     const what = j?.facts?.what;
     if (!j.sources || !what) { continue; } // seulement les fiches sourcées avec un "what"
     const slug = j.slug;
-    const whatEn = WHAT_EN[slug]; // description EN (map research/what-en.json)
+    const whatEn = j?.facts?.what_en || WHAT_EN[slug]; // EN : d'abord dans la fiche (facts.what_en), sinon la map
     const [row] = await sql`select short_description sd, long_description ld, short_description_en sden, long_description_en lden from public.tools where slug=${slug}`;
     if (!row) { console.log(`  ? ${slug} — absent en base`); missing++; continue; }
 

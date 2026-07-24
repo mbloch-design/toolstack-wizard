@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "flux-ai",
+    "name": "FLUX AI",
+    "url": "https://blackforestlabs.ai"
+  },
+  {
+    "slug": "fmod",
+    "name": "FMOD",
+    "url": "https://www.fmod.com"
+  },
+  {
+    "slug": "format",
+    "name": "Format",
+    "url": "https://format.com"
+  },
+  {
+    "slug": "gaea",
+    "name": "Gaea",
+    "url": "https://quadspinner.com"
+  },
+  {
+    "slug": "gamma",
+    "name": "Gamma",
+    "url": "https://gamma.app"
+  },
+  {
+    "slug": "gempages",
+    "name": "Gempages",
+    "url": "https://gempages.com"
+  },
+  {
+    "slug": "giphy",
+    "name": "Giphy",
+    "url": "https://giphy.com"
+  },
+  {
+    "slug": "godot",
+    "name": "Godot",
+    "url": "https://godotengine.org"
+  },
+  {
+    "slug": "google-earth-studio",
+    "name": "Google Earth Studio",
+    "url": "https://www.google.com/earth/studio/"
+  },
+  {
+    "slug": "google-maps",
+    "name": "Google Maps",
+    "url": "https://googlemaps.com"
+  }
+]
