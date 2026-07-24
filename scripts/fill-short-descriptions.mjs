@@ -13,8 +13,11 @@ import postgres from "postgres";
 
 const APPLY = process.argv.includes("--apply");
 const DIR = "research/bundle-editorial";
-const PLACEHOLDER = /^(Outil ou ressource|Outil spécialisé)/;
-const PLACEHOLDER_EN = /^(Tool or resource|Tool special)/;
+// Gabarits génériques à remplacer : le placeholder court (short_description)
+// ET le gabarit long_description « <X> est référencé pour couvrir un besoin
+// précis dans les stacks … » (le nom en tête, donc non capté par ^placeholder).
+const PLACEHOLDER = /^(Outil ou ressource|Outil spécialisé)|référencé pour couvrir un besoin précis dans les stacks/;
+const PLACEHOLDER_EN = /^(Tool or resource|Tool special)|referenced to cover a specific need/;
 const WHAT_EN = JSON.parse(readFileSync("research/what-en.json", "utf8"));
 
 for (const l of readFileSync(".env.preprod", "utf8").split(/\r?\n/)) {
