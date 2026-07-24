@@ -1,0 +1,87 @@
+{
+  "slug": "captain-contrat",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Captain Contrat — services juridiques en ligne (site officiel)", "url": "https://www.captaincontrat.com/" }
+  ],
+  "facts": {
+    "what": "Legaltech française d'accompagnement juridique : création d'entreprise, rédaction de contrats et assistance juridique, sur un modèle hybride (technologie + avocats/juristes).",
+    "pricing_model": "Prestations de création d'entreprise à l'acte + abonnement juridique mensuel. Frais administratifs (immatriculation, modification…) en plus.",
+    "free_tier": { "exists": false, "detail": "Service payant ; abonnement juridique ou prestations à l'acte." },
+    "plans": [
+      { "name": "Abonnement Essential", "price": "29,90 € HT/mois" },
+      { "name": "Abonnement Premium", "price": "249 € HT/mois" },
+      { "name": "Création d'entreprise", "price": "à l'acte + frais administratifs" }
+    ],
+    "key_features": [
+      "Création d'entreprise en ligne (SAS, SARL…)",
+      "Rédaction et vérification de contrats",
+      "Assistance juridique par téléphone (avocats)",
+      "Modèle hybride tech + accompagnement humain"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez votre entreprise et voulez être accompagné.",
+        "Vous voulez un accès à des avocats en plus des modèles.",
+        "Vous préférez un modèle hybride tech + humain."
+      ],
+      "avoidIf": [
+        "Vous êtes à l'aise pour faire vos démarches seul.",
+        "Vous cherchez le tarif le plus bas possible.",
+        "Vous n'avez pas de besoin juridique récurrent."
+      ],
+      "threshold": "Captain Contrat s'impose quand on veut de l'accompagnement humain sur ses démarches juridiques ; pour du 100 % autonome au meilleur prix, une legaltech plus automatisée suffit."
+    },
+    "pros": [
+      "Accompagnement humain (avocats/juristes).",
+      "Couvre le cycle de vie de l'entreprise.",
+      "Modèle hybride rassurant.",
+      "Tarifs alignés sur la concurrence."
+    ],
+    "cons": [
+      "Plus cher qu'une legaltech 100 % automatisée.",
+      "Frais administratifs en plus des tarifs affichés.",
+      "Pertinent surtout sur le marché français."
+    ],
+    "use_cases": [
+      "Créer sa société avec accompagnement.",
+      "Faire rédiger ou vérifier un contrat.",
+      "Accéder à un juriste pour ses questions courantes."
+    ],
+    "relevant_for": ["Créateurs d'entreprise", "TPE françaises", "Indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting your company and want guidance.",
+        "You want access to lawyers on top of templates.",
+        "You prefer a hybrid tech + human model."
+      ],
+      "avoidIf": [
+        "You're comfortable handling procedures yourself.",
+        "You want the lowest possible price.",
+        "You have no recurring legal need."
+      ],
+      "threshold": "Captain Contrat makes sense when you want human guidance on legal procedures; for fully self-service at the best price, a more automated legaltech suffices."
+    },
+    "pros": [
+      "Human guidance (lawyers/jurists).",
+      "Covers the company life cycle.",
+      "Reassuring hybrid model.",
+      "Pricing aligned with competitors."
+    ],
+    "cons": [
+      "Pricier than a fully automated legaltech.",
+      "Administrative fees on top of listed prices.",
+      "Mostly relevant to the French market."
+    ],
+    "use_cases": [
+      "Incorporate your company with guidance.",
+      "Have a contract drafted or reviewed.",
+      "Access a jurist for everyday questions."
+    ]
+  }
+}

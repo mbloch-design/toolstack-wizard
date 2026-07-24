@@ -1,0 +1,87 @@
+{
+  "slug": "legalplace",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LegalPlace — services juridiques en ligne (site officiel)", "url": "https://www.legalplace.fr/" }
+  ],
+  "facts": {
+    "what": "Legaltech française spécialisée dans la création d'entreprise en ligne et les démarches juridiques : statuts, modifications, dissolution, domiciliation, comptabilité et documents juridiques du quotidien.",
+    "pricing_model": "Prestations à l'acte (création) + services par abonnement (domiciliation, abonnement juridique). Frais légaux/administratifs en plus.",
+    "free_tier": { "exists": false, "detail": "Service payant ; prestations à l'acte ou par abonnement." },
+    "plans": [
+      { "name": "Création d'entreprise", "price": "à partir de 99 € HT (statuts + formalités RCS, hors frais légaux ~50–200 €)" },
+      { "name": "Domiciliation", "price": "à partir de 19 €/mois" },
+      { "name": "Abonnement juridique", "price": "à partir de 49 €/mois" }
+    ],
+    "key_features": [
+      "Création d'entreprise en ligne (SAS, SARL, SCI…)",
+      "Modifications de statuts et dissolution",
+      "Domiciliation et comptabilité",
+      "Documents juridiques du quotidien"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez une entreprise et voulez des démarches guidées.",
+        "Vous cherchez un tarif de départ accessible.",
+        "Vous voulez centraliser création, domiciliation et documents."
+      ],
+      "avoidIf": [
+        "Vous voulez un accompagnement avocat très poussé et personnalisé.",
+        "Vous savez déjà tout faire seul gratuitement.",
+        "Vous n'avez qu'un besoin ponctuel et simple."
+      ],
+      "threshold": "LegalPlace s'impose pour créer et gérer une entreprise en ligne à coût maîtrisé ; pour un accompagnement humain approfondi, une legaltech plus premium convient mieux."
+    },
+    "pros": [
+      "Tarif de création accessible.",
+      "Large éventail de démarches en ligne.",
+      "Centralise création, domiciliation et documents.",
+      "Leader du marché français."
+    ],
+    "cons": [
+      "Frais légaux/administratifs en plus.",
+      "Accompagnement moins humain que certaines offres premium.",
+      "Pertinent surtout sur le marché français."
+    ],
+    "use_cases": [
+      "Créer sa société en ligne à moindre coût.",
+      "Domicilier son entreprise.",
+      "Générer ses documents juridiques courants."
+    ],
+    "relevant_for": ["Créateurs d'entreprise", "Micro-entrepreneurs", "TPE françaises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting a company and want guided procedures.",
+        "You want an accessible entry price.",
+        "You want to centralise incorporation, address and documents."
+      ],
+      "avoidIf": [
+        "You want deep, personalised lawyer support.",
+        "You already know how to do everything yourself for free.",
+        "You only have a simple one-off need."
+      ],
+      "threshold": "LegalPlace makes sense to create and manage a company online at controlled cost; for deep human support, a more premium legaltech fits better."
+    },
+    "pros": [
+      "Accessible incorporation price.",
+      "Wide range of online procedures.",
+      "Centralises incorporation, address and documents.",
+      "Leader in the French market."
+    ],
+    "cons": [
+      "Legal/administrative fees on top.",
+      "Less human support than some premium offers.",
+      "Mostly relevant to the French market."
+    ],
+    "use_cases": [
+      "Incorporate your company online cheaply.",
+      "Register your business address.",
+      "Generate everyday legal documents."
+    ]
+  }
+}

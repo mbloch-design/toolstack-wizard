@@ -1,0 +1,88 @@
+{
+  "slug": "coupler-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Coupler.io", "url": "https://www.coupler.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
+    "pricing_model": "Abonnement basé sur le nombre de comptes de sources connectés (pas par utilisateur ni par flux). Palier gratuit et essai disponibles.",
+    "free_tier": { "exists": true, "detail": "Version gratuite disponible ; tarif selon le nombre de comptes de sources connectés." },
+    "plans": [
+      { "name": "Personal", "price": "24 $/mois (3 comptes)" },
+      { "name": "Professional", "price": "99 $/mois (~15 comptes)" },
+      { "name": "Team", "price": "199 $/mois" },
+      { "name": "Business", "price": "449 $/mois" }
+    ],
+    "key_features": [
+      "400+ connecteurs de données",
+      "ETL, transformation et synchronisation",
+      "Flux et tableaux de bord illimités par compte connecté",
+      "Planification et mises à jour automatiques"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous automatisez des rapports depuis plusieurs sources.",
+        "Vous alimentez un tableur, une BI ou un entrepôt.",
+        "Vous préférez payer aux sources connectées, pas aux utilisateurs."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'une source simple à exporter.",
+        "Vos besoins de reporting sont ponctuels.",
+        "Un export natif suffit à votre usage."
+      ],
+      "threshold": "Coupler.io s'impose pour automatiser du reporting multi-sources vers tableur/BI ; pour une source unique et simple, un export natif suffit."
+    },
+    "pros": [
+      "Très large choix de connecteurs.",
+      "Flux et dashboards illimités par compte.",
+      "Facturation aux sources, pas aux utilisateurs.",
+      "Palier gratuit pour démarrer."
+    ],
+    "cons": [
+      "Coût qui monte avec le nombre de sources.",
+      "Surdimensionné pour un besoin ponctuel.",
+      "Transformation avancée = prise en main."
+    ],
+    "use_cases": [
+      "Automatiser un reporting multi-sources.",
+      "Alimenter un dashboard BI ou un entrepôt.",
+      "Consolider des données cross-canal."
+    ],
+    "relevant_for": ["Équipes data", "Analystes", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You automate reports from several sources.",
+        "You feed a spreadsheet, BI or warehouse.",
+        "You prefer paying per connected source, not per user."
+      ],
+      "avoidIf": [
+        "You only have one simple source to export.",
+        "Your reporting needs are one-off.",
+        "A native export covers your use."
+      ],
+      "threshold": "Coupler.io makes sense to automate multi-source reporting into spreadsheets/BI; for a single simple source, a native export suffices."
+    },
+    "pros": [
+      "Very wide choice of connectors.",
+      "Unlimited flows and dashboards per account.",
+      "Billed per source, not per user.",
+      "Free tier to start."
+    ],
+    "cons": [
+      "Cost rises with number of sources.",
+      "Oversized for a one-off need.",
+      "Advanced transformation has a learning curve."
+    ],
+    "use_cases": [
+      "Automate multi-source reporting.",
+      "Feed a BI dashboard or warehouse.",
+      "Consolidate cross-channel data."
+    ]
+  }
+}

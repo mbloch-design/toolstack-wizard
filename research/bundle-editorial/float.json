@@ -1,0 +1,87 @@
+{
+  "slug": "float",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Float", "url": "https://www.float.com/pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion des ressources (resource management) pour équipes de prestation : planifie qui travaille sur quoi, la capacité, les disponibilités et le suivi du temps.",
+    "pricing_model": "Abonnement par utilisateur (mensuel ou annuel), paliers Starter / Pro, plus une offre Enterprise sur devis.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; pas de palier gratuit permanent. Tarif par utilisateur." },
+    "plans": [
+      { "name": "Starter", "price": "7,50 $/utilisateur/mois" },
+      { "name": "Pro", "price": "12,50 $/utilisateur/mois" },
+      { "name": "Enterprise", "price": "sur devis (CSM dédié, SLA, support prioritaire)" }
+    ],
+    "key_features": [
+      "Planification des ressources et de la capacité",
+      "Gestion des disponibilités et congés",
+      "Suivi du temps et des réalisés (Pro)",
+      "Reporting et estimations de projet (Pro)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous planifiez la charge d'une équipe de prestation.",
+        "Vous voulez voir qui est dispo et qui est surchargé.",
+        "Vous suivez capacité et temps au même endroit."
+      ],
+      "avoidIf": [
+        "Vous cherchez surtout un gestionnaire de tâches.",
+        "Vous êtes solo sans planning d'équipe.",
+        "Vous voulez une solution gratuite."
+      ],
+      "threshold": "Float s'impose pour piloter la capacité d'une équipe de prestation ; pour de la simple gestion de tâches, un outil de projet classique suffit."
+    },
+    "pros": [
+      "Vue claire de la capacité et des disponibilités.",
+      "Détection précoce des surcharges.",
+      "Suivi du temps et des réalisés (Pro).",
+      "Prise en main rapide."
+    ],
+    "cons": [
+      "Pas de palier gratuit permanent.",
+      "Centré ressources, pas gestion de tâches détaillée.",
+      "Reporting avancé réservé au Pro."
+    ],
+    "use_cases": [
+      "Planifier la charge d'une équipe sur les projets.",
+      "Repérer les surcharges et les creux.",
+      "Suivre le temps passé vs estimé."
+    ],
+    "relevant_for": ["Agences", "Équipes de prestation", "Ops et delivery"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You plan the workload of a delivery team.",
+        "You want to see who's available and who's overloaded.",
+        "You track capacity and time in one place."
+      ],
+      "avoidIf": [
+        "You mainly need a task manager.",
+        "You're solo with no team schedule.",
+        "You want a free solution."
+      ],
+      "threshold": "Float makes sense to manage a delivery team's capacity; for simple task management, a classic project tool suffices."
+    },
+    "pros": [
+      "Clear view of capacity and availability.",
+      "Early detection of overloads.",
+      "Time and actuals tracking (Pro).",
+      "Quick to get started."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Resource-focused, not detailed task management.",
+      "Advanced reporting reserved for Pro."
+    ],
+    "use_cases": [
+      "Plan a team's workload across projects.",
+      "Spot overloads and gaps.",
+      "Track time spent vs estimated."
+    ]
+  }
+}

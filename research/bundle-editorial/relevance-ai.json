@@ -1,0 +1,88 @@
+{
+  "slug": "relevance-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Relevance AI", "url": "https://relevanceai.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code pour construire et orchestrer des équipes d'agents IA (« AI Workforce ») : automatise recherche, outbound, enrichissement de données et tâches back-office, pour les équipes go-to-market et ops.",
+    "pricing_model": "Double compteur : « Actions » (exécutions d'agents) et « Vendor Credits » (crédits prépayés pour le compute IA). Agents illimités sur tous les plans. Palier gratuit disponible.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 200 Actions/mois + 1 000 Vendor Credits one-time — pour explorer et tester, pas pour la production." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (200 Actions/mois, 1 000 crédits one-time)" },
+      { "name": "Pro", "price": "19 $/mois (annuel)" },
+      { "name": "Team", "price": "234 $/mois (annuel), ~349 $ en mensuel" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Construction d'agents IA no-code",
+      "Orchestration d'équipes d'agents",
+      "Automatisation recherche, outbound, enrichissement",
+      "Agents illimités sur tous les plans"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez automatiser recherche, outbound ou back-office par IA.",
+        "Vous construisez des agents IA sans code.",
+        "Vous voulez des agents illimités."
+      ],
+      "avoidIf": [
+        "Vous cherchez une simple automatisation par règles.",
+        "Vous voulez une facture 100 % fixe (double compteur).",
+        "Vos besoins IA sont marginaux."
+      ],
+      "threshold": "Relevance AI s'impose pour orchestrer des agents IA sur des tâches GTM/ops ; pour de l'automatisation simple par règles, un outil classique suffit."
+    },
+    "pros": [
+      "Agents IA no-code et illimités.",
+      "Orchestration d'équipes d'agents.",
+      "Palier gratuit pour tester.",
+      "Ciblé GTM et ops."
+    ],
+    "cons": [
+      "Double compteur (Actions + crédits) à comprendre.",
+      "Gratuit insuffisant pour la production.",
+      "Facture variable selon l'usage IA."
+    ],
+    "use_cases": [
+      "Automatiser de la recherche et de l'enrichissement.",
+      "Construire des agents d'outbound.",
+      "Déléguer des tâches back-office à des agents IA."
+    ],
+    "relevant_for": ["Équipes go-to-market", "Ops", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to automate research, outbound or back-office with AI.",
+        "You build AI agents without code.",
+        "You want unlimited agents."
+      ],
+      "avoidIf": [
+        "You want simple rules-based automation.",
+        "You want a fully fixed bill (dual meter).",
+        "Your AI needs are marginal."
+      ],
+      "threshold": "Relevance AI makes sense to orchestrate AI agents on GTM/ops tasks; for simple rules-based automation, a classic tool suffices."
+    },
+    "pros": [
+      "No-code, unlimited AI agents.",
+      "Agent-team orchestration.",
+      "Free tier to test.",
+      "Targeted at GTM and ops."
+    ],
+    "cons": [
+      "Dual meter (Actions + credits) to grasp.",
+      "Free tier insufficient for production.",
+      "Bill varies with AI usage."
+    ],
+    "use_cases": [
+      "Automate research and enrichment.",
+      "Build outbound agents.",
+      "Delegate back-office tasks to AI agents."
+    ]
+  }
+}

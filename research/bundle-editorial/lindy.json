@@ -1,0 +1,88 @@
+{
+  "slug": "lindy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Lindy", "url": "https://www.lindy.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code d'agents IA : automatise email, réunions et workflows via 100+ intégrations (tri d'emails, prise de notes en réunion, mise à jour CRM, workflows multi-étapes).",
+    "pricing_model": "Abonnement à paliers fonctionnant aux crédits ; la facture réelle varie selon l'usage (tâches IA plus coûteuses en crédits).",
+    "free_tier": { "exists": false, "detail": "Paliers payants à crédits ; l'usage réel fait varier la facture. Offre Enterprise sur devis." },
+    "plans": [
+      { "name": "Plus", "price": "49,99 $/mois — jusqu'à 2 boîtes" },
+      { "name": "Pro", "price": "99,99 $/mois — 3× l'usage, automatisation navigateur" },
+      { "name": "Max", "price": "199,99 $/mois — 7× l'usage, jusqu'à 5 boîtes" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Agents IA no-code",
+      "Tri et rédaction d'emails, gestion d'agenda",
+      "Prise de notes en réunion et extraction d'actions",
+      "100+ intégrations et workflows multi-étapes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez automatiser email, réunions et tâches répétitives.",
+        "Vous cherchez des agents IA sans code.",
+        "Vous connectez de nombreuses apps dans vos workflows."
+      ],
+      "avoidIf": [
+        "Vous voulez une facture parfaitement prévisible.",
+        "Vos besoins d'automatisation sont marginaux.",
+        "Vous préférez un simple outil de règles no-IA."
+      ],
+      "threshold": "Lindy s'impose pour automatiser des tâches IA multi-apps sans code ; pour un besoin marginal ou une facture 100 % prévisible, un automatiseur classique convient mieux."
+    },
+    "pros": [
+      "Agents IA no-code puissants.",
+      "Automatise email, réunions et CRM.",
+      "100+ intégrations.",
+      "Workflows multi-étapes déclenchés automatiquement."
+    ],
+    "cons": [
+      "Modèle à crédits : facture variable selon l'usage.",
+      "Tâches IA intensives coûteuses en crédits.",
+      "Pas de palier gratuit permanent."
+    ],
+    "use_cases": [
+      "Trier et rédiger ses emails automatiquement.",
+      "Prendre des notes en réunion et extraire les actions.",
+      "Automatiser un workflow multi-apps."
+    ],
+    "relevant_for": ["Solos et petites équipes", "Ops", "Équipes commerciales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to automate email, meetings and repetitive tasks.",
+        "You want no-code AI agents.",
+        "You connect many apps in your workflows."
+      ],
+      "avoidIf": [
+        "You want a perfectly predictable bill.",
+        "Your automation needs are marginal.",
+        "You prefer a simple no-AI rules tool."
+      ],
+      "threshold": "Lindy makes sense to automate multi-app AI tasks without code; for a marginal need or a fully predictable bill, a classic automation tool fits better."
+    },
+    "pros": [
+      "Powerful no-code AI agents.",
+      "Automates email, meetings and CRM.",
+      "100+ integrations.",
+      "Multi-step workflows triggered automatically."
+    ],
+    "cons": [
+      "Credit model: bill varies with usage.",
+      "AI-intensive tasks cost more credits.",
+      "No permanent free tier."
+    ],
+    "use_cases": [
+      "Triage and draft emails automatically.",
+      "Take meeting notes and extract action items.",
+      "Automate a multi-app workflow."
+    ]
+  }
+}
