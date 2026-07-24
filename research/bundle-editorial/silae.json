@@ -1,0 +1,83 @@
+{
+  "slug": "silae",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Analyse tarifaire Silae Paie (Apogea, partenaire/intégrateur)", "url": "https://www.apogea.fr/tarif-logiciel-silae-paie/" }
+  ],
+  "facts": {
+    "what": "Logiciel de paie SaaS très répandu dans les cabinets d'expertise comptable français, à modèle de distribution indirect.",
+    "pricing_model": "Sur devis, principalement au bulletin. Vendu via un réseau de cabinets partenaires, pas directement aux entreprises.",
+    "free_tier": { "exists": false, "detail": "Aucun palier gratuit ; tarif au bulletin (dégressif selon le volume), monté des dossiers inclus, uniquement sur devis." },
+    "distribution": "Modèle indirect : ~5 500 cabinets partenaires saisissent les variables de paie ; l'entreprise reçoit ses bulletins.",
+    "key_features": [
+      "Moteur de paie automatisé conforme (droit français)",
+      "Gestion des variables et production des bulletins",
+      "Coffre-fort numérique / diffusion des bulletins",
+      "Écosystème My Silae et modules RH complémentaires"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un cabinet d'expertise comptable produisant de la paie à volume.",
+        "Vous voulez un moteur de paie français standard, automatisé et conforme.",
+        "Vous travaillez déjà avec un cabinet partenaire Silae."
+      ],
+      "avoidIf": [
+        "Vous êtes une entreprise voulant acheter directement : Silae se vend via des partenaires.",
+        "Vous êtes une très petite structure sans volume de bulletins.",
+        "Vous voulez une grille tarifaire publique et transparente."
+      ],
+      "threshold": "Silae s'impose dans un cabinet ou via un partenaire produisant de la paie au volume ; pour une petite entreprise voulant acheter en direct avec un prix affiché, le modèle indirect et sur devis est un frein."
+    },
+    "pros": [
+      "Standard de fait dans les cabinets d'expertise comptable français.",
+      "Moteur de paie automatisé et conforme au droit français.",
+      "Modèle au bulletin qui s'adapte au volume.",
+      "Écosystème My Silae et modules RH complémentaires."
+    ],
+    "cons": [
+      "Vendu uniquement via des cabinets partenaires, pas en direct aux entreprises.",
+      "Tarification opaque : uniquement sur devis.",
+      "Pensé pour les cabinets et le volume, moins pour une petite structure autonome."
+    ],
+    "use_cases": [
+      "Produire la paie de nombreux dossiers clients dans un cabinet comptable.",
+      "Automatiser la génération et la diffusion des bulletins.",
+      "Recevoir ses bulletins via un cabinet partenaire Silae."
+    ],
+    "relevant_for": ["Cabinets d'expertise comptable", "Services paie", "PME via partenaire"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an accounting firm producing payroll at volume.",
+        "You want a standard, automated, compliant French payroll engine.",
+        "You already work with a Silae partner firm."
+      ],
+      "avoidIf": [
+        "You are a company wanting to buy directly: Silae sells via partners.",
+        "You are a very small structure with no payslip volume.",
+        "You want a public, transparent pricing grid."
+      ],
+      "threshold": "Silae makes sense in a firm or via a partner producing payroll at volume; for a small company wanting to buy directly with a listed price, the indirect, quote-only model is a barrier."
+    },
+    "pros": [
+      "De-facto standard in French accounting firms.",
+      "Automated payroll engine compliant with French law.",
+      "Per-payslip model that scales with volume.",
+      "My Silae ecosystem and complementary HR modules."
+    ],
+    "cons": [
+      "Sold only via partner firms, not directly to companies.",
+      "Opaque pricing: quote-only.",
+      "Built for firms and volume, less for a small standalone structure."
+    ],
+    "use_cases": [
+      "Produce payroll for many client files within an accounting firm.",
+      "Automate payslip generation and distribution.",
+      "Receive your payslips via a Silae partner firm."
+    ]
+  }
+}

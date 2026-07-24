@@ -1,0 +1,85 @@
+{
+  "slug": "zoom-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Tarifs officiels Zoom Workplace", "url": "https://zoom.us/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de visioconférence : réunions vidéo, webinaires et outils de collaboration.",
+    "pricing_model": "Palier gratuit (Basic) puis paliers payants par utilisateur (Pro, Business, Enterprise).",
+    "free_tier": { "exists": true, "detail": "Basic gratuit : réunions jusqu'à 40 minutes, jusqu'à 100 participants." },
+    "plans": [
+      { "name": "Pro / Business / Enterprise", "detail": "suppriment la limite de 40 min, AI Companion inclus selon l'éligibilité (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Réunions vidéo HD jusqu'à 100 participants (plus sur plans payants)",
+      "Enregistrement et sous-titres",
+      "AI Companion (résumés, assistance) selon le plan",
+      "Webinaires et grandes réunions (plans supérieurs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous tenez des réunions vidéo régulières dépassant la limite du plan gratuit.",
+        "Vous voulez une visio fiable et largement adoptée par vos interlocuteurs.",
+        "Vous avez besoin de webinaires ou de grandes réunions."
+      ],
+      "avoidIf": [
+        "Vos appels sont courts et le plan gratuit suffit.",
+        "Votre visio est déjà intégrée à votre suite (Meet, Teams).",
+        "Vos besoins sont minimaux et ponctuels."
+      ],
+      "threshold": "Zoom Pro s'impose quand la visio est fréquente et dépasse le plan gratuit, ou qu'il faut des webinaires ; pour des appels courts ou une suite déjà équipée, l'intérêt est limité."
+    },
+    "pros": [
+      "Qualité vidéo fiable et adoption quasi universelle.",
+      "Suppression de la limite de durée du plan gratuit sur les plans payants.",
+      "AI Companion (résumés, assistance) selon le plan.",
+      "Webinaires et grandes réunions sur les plans supérieurs."
+    ],
+    "cons": [
+      "Le plan gratuit est bridé à 40 minutes par réunion.",
+      "Le coût par utilisateur s'additionne pour une équipe.",
+      "Un catalogue de fonctions vaste qui peut dépasser le besoin."
+    ],
+    "use_cases": [
+      "Tenir des réunions d'équipe sans limite de durée.",
+      "Organiser un webinaire ou une grande réunion.",
+      "Enregistrer et résumer automatiquement des réunions."
+    ],
+    "relevant_for": ["Équipes distribuées", "PME", "Formateurs et organisateurs de webinaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You hold regular video meetings that exceed the free plan's limit.",
+        "You want reliable video widely adopted by your contacts.",
+        "You need webinars or large meetings."
+      ],
+      "avoidIf": [
+        "Your calls are short and the free plan is enough.",
+        "Your video is already integrated in your suite (Meet, Teams).",
+        "Your needs are minimal and occasional."
+      ],
+      "threshold": "Zoom Pro makes sense when video is frequent and exceeds the free plan, or you need webinars; for short calls or an already-equipped suite, the value is limited."
+    },
+    "pros": [
+      "Reliable video quality and near-universal adoption.",
+      "Removes the free plan's meeting-length limit on paid plans.",
+      "AI Companion (summaries, assistance) depending on plan.",
+      "Webinars and large meetings on higher plans."
+    ],
+    "cons": [
+      "The free plan is capped at 40 minutes per meeting.",
+      "Per-user cost adds up for a team.",
+      "A vast feature catalogue that can exceed the need."
+    ],
+    "use_cases": [
+      "Hold team meetings without a length limit.",
+      "Run a webinar or a large meeting.",
+      "Record and automatically summarise meetings."
+    ]
+  }
+}

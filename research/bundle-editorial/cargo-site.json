@@ -1,0 +1,85 @@
+{
+  "slug": "cargo-site",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Tarifs et services — documentation Cargo", "url": "https://docs.cargo.site/rates-services" }
+  ],
+  "facts": {
+    "what": "Créateur de sites/portfolios pour créatifs (designers, artistes, photographes, architectes) misant sur la présentation visuelle.",
+    "pricing_model": "Tarif unique pour tous les comptes (pas de paliers), plus un plan gratuit brandé.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permettant de construire et publier un site, avec marque Cargo et fonctions limitées." },
+    "plans": [
+      { "name": "Payant (tarif unique)", "price": "14 $/mois (annuel) ou 19 $/mois (mensuel)", "detail": "1 domaine personnalisé inclus" }
+    ],
+    "key_features": [
+      "Modèles et mise en page orientés portfolio visuel",
+      "Publication rapide d'un site design",
+      "Domaine personnalisé inclus",
+      "Édition sans code, pensée pour les créatifs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créatif (designer, artiste, photographe) et voulez un portfolio esthétique.",
+        "Vous privilégiez la présentation visuelle à des fonctions marketing/e-commerce lourdes.",
+        "Vous appréciez une tarification simple à un seul palier."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un site marketing ou e-commerce complet (Squarespace, Wix).",
+        "Vous voulez de nombreux modèles, du SEO avancé et des intégrations.",
+        "Votre site doit gérer des fonctionnalités complexes au-delà du portfolio."
+      ],
+      "threshold": "Cargo s'impose pour un portfolio créatif au rendu soigné et une tarification simple ; pour un site marketing/e-commerce complet, un constructeur généraliste est plus adapté."
+    },
+    "pros": [
+      "Portfolios au rendu esthétique distinctif.",
+      "Tarification simple à un seul palier.",
+      "Domaine personnalisé inclus.",
+      "Plan gratuit (brandé) pour démarrer sans payer."
+    ],
+    "cons": [
+      "Orienté portfolio, pas un constructeur de site généraliste.",
+      "Moins de fonctions marketing/SEO/e-commerce que les grands concurrents.",
+      "Le plan gratuit impose la marque Cargo et des limites."
+    ],
+    "use_cases": [
+      "Publier un portfolio de designer ou de photographe soigné.",
+      "Mettre en ligne un site vitrine créatif rapidement.",
+      "Démarrer gratuitement puis passer au tarif unique avec domaine."
+    ],
+    "relevant_for": ["Designers", "Photographes", "Artistes et studios créatifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a creative (designer, artist, photographer) and want an aesthetic portfolio.",
+        "You value visual presentation over heavy marketing/e-commerce features.",
+        "You like simple single-tier pricing."
+      ],
+      "avoidIf": [
+        "You need a full marketing or e-commerce site (Squarespace, Wix).",
+        "You want many templates, advanced SEO and integrations.",
+        "Your site must handle complex features beyond a portfolio."
+      ],
+      "threshold": "Cargo makes sense for a polished creative portfolio with simple pricing; for a full marketing/e-commerce site, a general-purpose builder fits better."
+    },
+    "pros": [
+      "Distinctive, aesthetic portfolios.",
+      "Simple single-tier pricing.",
+      "Custom domain included.",
+      "Free (branded) plan to get started."
+    ],
+    "cons": [
+      "Portfolio-oriented, not a general-purpose site builder.",
+      "Fewer marketing/SEO/e-commerce features than large competitors.",
+      "The free plan enforces Cargo branding and limits."
+    ],
+    "use_cases": [
+      "Publish a polished designer or photographer portfolio.",
+      "Put a creative showcase site online quickly.",
+      "Start free, then move to the single tier with a custom domain."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "similarweb",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Similarweb (sur devis)", "url": "https://www.similarweb.com/corp/pricing/" },
+    { "label": "Analyse tarifaire tierce (Vendr marketplace)", "url": "https://www.vendr.com/marketplace/similarweb" }
+  ],
+  "facts": {
+    "what": "Plateforme de web/market intelligence : estimation de trafic, analyse concurrentielle et parts de marché.",
+    "pricing_model": "Pas de plan gratuit permanent (essai 7 jours avec carte). Palier Starter, puis paliers business sur devis.",
+    "free_tier": { "exists": false, "detail": "Essai 7 jours (accès limité, ~15 actions/jour, CB requise) + outils web gratuits sans compte (traffic lookup, SERP checker, extension)." },
+    "plans": [
+      { "name": "Web Intelligence Starter", "price": "199 $/mois ou 1 500 $/an" },
+      { "name": "Team / Professional / Enterprise", "price": "sur devis (contrats annuels souvent élevés)" }
+    ],
+    "key_features": [
+      "Estimation de trafic et de sources de trafic par domaine",
+      "Analyse concurrentielle et benchmarking de marché",
+      "Recherche de mots-clés et parts de recherche",
+      "Outils web gratuits (aperçu de trafic, SERP)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de l'analyse concurrentielle et de marché (trafic, sources, benchmarks).",
+        "Vous avez besoin d'estimations de trafic sur des domaines tiers.",
+        "Une équipe marketing/SEO exploite ces données régulièrement."
+      ],
+      "avoidIf": [
+        "Vous voulez seulement l'analytics de votre propre site : un outil gratuit (Analytics) suffit.",
+        "Votre budget est limité : les plans payants sont chers et sur devis.",
+        "Vos besoins sont ponctuels : les outils web gratuits couvrent déjà des aperçus."
+      ],
+      "threshold": "Similarweb s'impose pour l'intelligence concurrentielle et de marché à l'échelle ; pour de l'analytics de son propre site ou des vérifications ponctuelles, une solution gratuite est plus indiquée."
+    },
+    "pros": [
+      "Large couverture de données de trafic et de concurrence.",
+      "Outils web gratuits pour des aperçus rapides sans compte.",
+      "Benchmarking de marché et analyse des sources de trafic.",
+      "Recherche de mots-clés et de parts de recherche."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent : seulement un essai limité.",
+      "Les plans business sont chers et communiqués uniquement sur devis.",
+      "Des estimations, pas des chiffres exacts issus de vos propres données."
+    ],
+    "use_cases": [
+      "Comparer le trafic et les sources d'acquisition de concurrents.",
+      "Évaluer une part de marché ou un secteur avant une décision.",
+      "Faire un aperçu rapide de trafic via les outils web gratuits."
+    ],
+    "relevant_for": ["Équipes marketing", "SEO / growth", "Analystes de marché"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do competitive and market analysis (traffic, sources, benchmarks).",
+        "You need traffic estimates for third-party domains.",
+        "A marketing/SEO team uses this data regularly."
+      ],
+      "avoidIf": [
+        "You only need your own site's analytics: a free tool (Analytics) suffices.",
+        "Your budget is limited: paid plans are expensive and quote-only.",
+        "Your needs are occasional: the free web tools already give overviews."
+      ],
+      "threshold": "Similarweb makes sense for competitive and market intelligence at scale; for your own site's analytics or occasional checks, a free solution fits better."
+    },
+    "pros": [
+      "Broad coverage of traffic and competitive data.",
+      "Free web tools for quick lookups without an account.",
+      "Market benchmarking and traffic-source analysis.",
+      "Keyword and search-share research."
+    ],
+    "cons": [
+      "No permanent free plan: only a limited trial.",
+      "Business plans are expensive and quote-only.",
+      "Estimates, not exact numbers from your own data."
+    ],
+    "use_cases": [
+      "Compare competitors' traffic and acquisition sources.",
+      "Assess a market share or sector before a decision.",
+      "Run a quick traffic overview via the free web tools."
+    ]
+  }
+}
