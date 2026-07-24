@@ -1,0 +1,87 @@
+{
+  "slug": "tezza",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tezza: Aesthetic Photo Editor (App Store — Apple)", "url": "https://apps.apple.com/us/app/tezza-aesthetic-photo-editor/id1393061654" }
+  ],
+  "facts": {
+    "what": "App d'édition photo et vidéo (iOS/Android) pour créateurs, axée sur l'esthétique film : presets photo, effets vidéo, modèles de stories, collages, feed planner et édition par lot.",
+    "pricing_model": "Palier gratuit limité ; abonnements photo ou photo+vidéo (mensuel ou annuel).",
+    "free_tier": { "exists": true, "detail": "Gratuit avec fonctions limitées ; abonnement pour débloquer presets et fonctions." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (fonctions limitées)" },
+      { "name": "Photo", "price": "1,99 $/mois ou 19,99 $/an" },
+      { "name": "Photo + Vidéo", "price": "3,99 $/mois ou 39,99 $/an" }
+    ],
+    "key_features": [
+      "40+ presets photo au rendu film",
+      "Effets vidéo et modèles de stories",
+      "Collages et feed planner",
+      "Édition par lot"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un rendu photo esthétique et cohérent.",
+        "Vous éditez surtout depuis mobile pour les réseaux.",
+        "Vous aimez travailler avec des presets film."
+      ],
+      "avoidIf": [
+        "Vous cherchez un éditeur pro sur ordinateur.",
+        "Vous avez besoin de retouche très avancée.",
+        "Vous éditez trop peu pour un abonnement."
+      ],
+      "threshold": "Tezza s'impose pour un feed esthétique et cohérent édité depuis mobile ; pour de la retouche pro poussée, un éditeur desktop reste plus adapté."
+    },
+    "pros": [
+      "Presets film au rendu soigné.",
+      "Photo, vidéo, collages et feed planner.",
+      "Simple et mobile-first.",
+      "Abonnement accessible."
+    ],
+    "cons": [
+      "Palier gratuit limité.",
+      "Retouche moins avancée qu'un éditeur pro.",
+      "Centré sur l'esthétique mobile."
+    ],
+    "use_cases": [
+      "Appliquer un preset film à ses photos.",
+      "Planifier un feed cohérent.",
+      "Éditer des visuels par lot pour les réseaux."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Influenceurs", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want an aesthetic, consistent photo look.",
+        "You mostly edit from mobile for social.",
+        "You like working with film presets."
+      ],
+      "avoidIf": [
+        "You want a pro desktop editor.",
+        "You need very advanced retouching.",
+        "You edit too little for a subscription."
+      ],
+      "threshold": "Tezza makes sense for an aesthetic, consistent feed edited from mobile; for advanced pro retouching, a desktop editor remains a better fit."
+    },
+    "pros": [
+      "Polished film presets.",
+      "Photo, video, collages and feed planner.",
+      "Simple and mobile-first.",
+      "Affordable subscription."
+    ],
+    "cons": [
+      "Limited free tier.",
+      "Less advanced retouching than a pro editor.",
+      "Focused on mobile aesthetics."
+    ],
+    "use_cases": [
+      "Apply a film preset to your photos.",
+      "Plan a consistent feed.",
+      "Batch-edit visuals for social."
+    ]
+  }
+}

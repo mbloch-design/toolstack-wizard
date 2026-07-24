@@ -1,0 +1,86 @@
+{
+  "slug": "storyluxe",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Storyluxe: Templates & Filters (App Store — Apple)", "url": "https://apps.apple.com/us/app/storyluxe-templates-filters/id1324447436" }
+  ],
+  "facts": {
+    "what": "App mobile de création de stories sociales : 700+ modèles photo/vidéo (film, papier, collage, néon…), filtres au rendu vintage, polices designer et textures de fond, exportables vers Instagram, TikTok, Snapchat…",
+    "pricing_model": "App gratuite avec une partie des modèles/filtres accessibles ; abonnement Storyluxe (mensuel ou annuel) pour l'accès premium illimité.",
+    "free_tier": { "exists": true, "detail": "Nombreux modèles, filtres et fonds gratuits ; abonnement pour l'accès premium illimité." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (modèles et filtres de base)" },
+      { "name": "Abonnement premium", "price": "mensuel ou annuel (montants sur l'App Store)" }
+    ],
+    "key_features": [
+      "700+ modèles de stories photo/vidéo",
+      "Filtres au rendu film/vintage",
+      "16 polices designer et textures de fond",
+      "Export vers Instagram, TikTok, Snapchat…"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des stories soignées depuis votre mobile.",
+        "Vous aimez un rendu esthétique film/vintage.",
+        "Vous voulez des modèles prêts à l'emploi."
+      ],
+      "avoidIf": [
+        "Vous montez surtout sur ordinateur.",
+        "Vous avez besoin d'un éditeur vidéo complet.",
+        "Vous publiez trop peu pour un abonnement."
+      ],
+      "threshold": "Storyluxe s'impose pour habiller vite de belles stories depuis mobile ; pour du montage poussé, un éditeur complet reste plus adapté."
+    },
+    "pros": [
+      "Très large choix de modèles.",
+      "Rendu esthétique film/vintage.",
+      "Simple et mobile-first.",
+      "Partie gratuite conséquente."
+    ],
+    "cons": [
+      "Accès premium illimité payant.",
+      "Centré stories, pas montage complet.",
+      "Surtout sur mobile."
+    ],
+    "use_cases": [
+      "Créer une story esthétique en quelques minutes.",
+      "Appliquer un filtre film à ses visuels.",
+      "Habiller un feed avec un style cohérent."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Influenceurs", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create polished stories from your phone.",
+        "You like a film/vintage aesthetic.",
+        "You want ready-made templates."
+      ],
+      "avoidIf": [
+        "You mostly edit on desktop.",
+        "You need a full video editor.",
+        "You post too little for a subscription."
+      ],
+      "threshold": "Storyluxe makes sense to quickly craft beautiful stories from mobile; for advanced editing, a full editor remains a better fit."
+    },
+    "pros": [
+      "Very wide choice of templates.",
+      "Film/vintage aesthetic.",
+      "Simple and mobile-first.",
+      "Substantial free portion."
+    ],
+    "cons": [
+      "Unlimited premium access is paid.",
+      "Story-focused, not full editing.",
+      "Mostly mobile."
+    ],
+    "use_cases": [
+      "Create an aesthetic story in minutes.",
+      "Apply a film filter to visuals.",
+      "Style a feed with a consistent look."
+    ]
+  }
+}

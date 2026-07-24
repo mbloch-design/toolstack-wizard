@@ -1,0 +1,85 @@
+{
+  "slug": "weezevent",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Weezevent", "url": "https://weezevent.com/fr/nos-tarifs/" }
+  ],
+  "facts": {
+    "what": "Plateforme de billetterie et solutions événementielles : billetterie en ligne, cashless, contrôle d'accès, accréditation du personnel et CRM, pour salons, concerts, festivals, conférences et événements sportifs.",
+    "pricing_model": "Sans abonnement : commission par billet vendu, gratuit pour les événements gratuits.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour les événements gratuits ; sinon commission par billet vendu, sans abonnement ni frais cachés." },
+    "plans": [
+      { "name": "À la billetterie", "price": "~0,99 £ + 2,50 % TTC par billet vendu (gratuit pour les événements gratuits)" }
+    ],
+    "key_features": [
+      "Billetterie en ligne",
+      "Cashless et contrôle d'accès",
+      "Accréditation du personnel",
+      "CRM et données participants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous organisez des événements payants et vendez des billets.",
+        "Vous voulez billetterie, cashless et contrôle d'accès réunis.",
+        "Vous préférez une commission au billet sans abonnement."
+      ],
+      "avoidIf": [
+        "Vous n'organisez pas d'événements.",
+        "Vous voulez uniquement un CRM générique.",
+        "Vos événements sont tous gratuits sans besoin d'outillage."
+      ],
+      "threshold": "Weezevent s'impose pour organiser et vendre des billets d'événement (avec cashless/contrôle d'accès) ; hors événementiel, il est sans objet."
+    },
+    "pros": [
+      "Sans abonnement : on paie au billet vendu.",
+      "Gratuit pour les événements gratuits.",
+      "Billetterie, cashless et contrôle d'accès réunis.",
+      "Solution éprouvée à grande échelle."
+    ],
+    "cons": [
+      "Commission prélevée sur chaque billet payant.",
+      "Spécifique à l'événementiel.",
+      "Fonctions avancées pensées pour les gros événements."
+    ],
+    "use_cases": [
+      "Vendre des billets pour un concert ou un salon.",
+      "Gérer le cashless et le contrôle d'accès sur place.",
+      "Centraliser les données participants."
+    ],
+    "relevant_for": ["Organisateurs d'événements", "Festivals et concerts", "Salons et conférences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run paid events and sell tickets.",
+        "You want ticketing, cashless and access control together.",
+        "You prefer a per-ticket fee with no subscription."
+      ],
+      "avoidIf": [
+        "You don't run events.",
+        "You only want a generic CRM.",
+        "Your events are all free with no tooling needed."
+      ],
+      "threshold": "Weezevent makes sense to run and sell event tickets (with cashless/access control); outside events, it's not relevant."
+    },
+    "pros": [
+      "No subscription: you pay per ticket sold.",
+      "Free for free events.",
+      "Ticketing, cashless and access control combined.",
+      "Proven at large scale."
+    ],
+    "cons": [
+      "A fee is taken on each paid ticket.",
+      "Event-specific.",
+      "Advanced features geared to large events."
+    ],
+    "use_cases": [
+      "Sell tickets for a concert or trade show.",
+      "Manage cashless and on-site access control.",
+      "Centralise attendee data."
+    ]
+  }
+}

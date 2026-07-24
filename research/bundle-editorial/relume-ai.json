@@ -1,0 +1,87 @@
+{
+  "slug": "relume-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Relume — bibliothèque de composants et wireframes IA (site officiel)", "url": "https://www.relume.io/" }
+  ],
+  "facts": {
+    "what": "Framework de design assisté par IA : génère sitemaps et wireframes à partir d'une bibliothèque de 1 000+ composants conçus par des humains, exportables vers Webflow, Figma ou React. Ne produit pas un site fini, mais accélère la conception.",
+    "pricing_model": "Palier gratuit puis abonnements (mensuel ou annuel, annuel moins cher). Usage IA illimité dès le gratuit.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 30 composants Webflow, 1 projet, usage IA illimité." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (30 composants, 1 projet)" },
+      { "name": "Starter", "price": "38 $/mois — bibliothèque complète (1 000+ composants), projets illimités, export Figma/Webflow" },
+      { "name": "Pro", "price": "48 $/mois — équipes et pros" }
+    ],
+    "key_features": [
+      "Génération de sitemaps et wireframes par IA",
+      "Bibliothèque de 1 000+ composants",
+      "Export vers Webflow, Figma, React",
+      "Usage IA illimité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes designer/dev et voulez accélérer la conception de sites.",
+        "Vous partez de wireframes exportables vers Webflow ou Figma.",
+        "Vous réutilisez une large bibliothèque de composants."
+      ],
+      "avoidIf": [
+        "Vous voulez un builder qui produit un site fini clé en main.",
+        "Vous ne travaillez pas avec Webflow, Figma ou React.",
+        "Vous créez trop peu de sites pour l'abonnement."
+      ],
+      "threshold": "Relume s'impose pour des pros du web qui veulent accélérer wireframes et structure ; pour un site fini sans étape design, un builder classique convient mieux."
+    },
+    "pros": [
+      "Wireframes et sitemaps générés par IA.",
+      "Très large bibliothèque de composants.",
+      "Export Webflow, Figma, React.",
+      "Usage IA illimité, même au gratuit."
+    ],
+    "cons": [
+      "Ne produit pas un site fini.",
+      "Pertinent surtout avec Webflow/Figma/React.",
+      "Bibliothèque complète réservée au payant."
+    ],
+    "use_cases": [
+      "Générer la structure d'un site rapidement.",
+      "Construire des wireframes exportables.",
+      "Réutiliser des composants prêts à l'emploi."
+    ],
+    "relevant_for": ["Web designers", "Développeurs", "Agences web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a designer/dev wanting to speed up site design.",
+        "You start from wireframes exportable to Webflow or Figma.",
+        "You reuse a large component library."
+      ],
+      "avoidIf": [
+        "You want a builder that outputs a finished site.",
+        "You don't work with Webflow, Figma or React.",
+        "You build too few sites for the subscription."
+      ],
+      "threshold": "Relume makes sense for web pros wanting to speed up wireframes and structure; for a finished site with no design step, a classic builder fits better."
+    },
+    "pros": [
+      "AI-generated wireframes and sitemaps.",
+      "Very large component library.",
+      "Export to Webflow, Figma, React.",
+      "Unlimited AI usage, even on free."
+    ],
+    "cons": [
+      "Doesn't produce a finished site.",
+      "Mostly relevant with Webflow/Figma/React.",
+      "Full library reserved for paid tiers."
+    ],
+    "use_cases": [
+      "Generate a site's structure quickly.",
+      "Build exportable wireframes.",
+      "Reuse ready-made components."
+    ]
+  }
+}
