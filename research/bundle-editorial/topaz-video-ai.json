@@ -1,0 +1,86 @@
+{
+  "slug": "topaz-video-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page produit officielle Topaz Video AI", "url": "https://www.topazlabs.com/topaz-video-ai" }
+  ],
+  "facts": {
+    "what": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.",
+    "pricing_model": "Abonnement (mensuel ou annuel). Plans Personal et Pro ; inclus dans Topaz Studio. Aucune licence perpétuelle affichée.",
+    "free_tier": { "exists": false, "detail": "Essai possible selon l'éditeur ; traitement en local sur la machine." },
+    "plans": [
+      { "name": "Personal", "price": "25 $/mois (annuel) ou 39 $/mois (mensuel)" },
+      { "name": "Pro", "price": "58 $/mois (annuel) ou 74 $/mois (mensuel)" }
+    ],
+    "key_features": [
+      "Upscaling vidéo (montée en résolution jusqu'à 4K+)",
+      "Interpolation d'images (ralentis fluides)",
+      "Débruitage et restauration de séquences",
+      "Stabilisation après tournage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez améliorer, restaurer ou upscaler des vidéos (montée en résolution, débruitage).",
+        "Vous voulez créer des ralentis fluides par interpolation d'images.",
+        "Vous préférez un traitement en local sur votre machine plutôt qu'un service cloud."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et l'abonnement n'est pas rentable.",
+        "Vous n'avez pas de machine assez puissante (traitement gourmand en GPU).",
+        "De simples retouches suffisent : ce n'est pas un outil de montage."
+      ],
+      "threshold": "Topaz Video AI s'impose quand l'amélioration/restauration vidéo par IA est un besoin récurrent et que vous disposez d'une machine capable ; pour un besoin ponctuel ou léger, l'abonnement et la charge GPU sont difficiles à justifier."
+    },
+    "pros": [
+      "Upscaling et restauration vidéo par IA parmi les plus aboutis.",
+      "Interpolation d'images pour des ralentis fluides.",
+      "Traitement en local (pas d'envoi de vidéos dans le cloud).",
+      "Débruitage et stabilisation intégrés."
+    ],
+    "cons": [
+      "Abonnement uniquement, aucune licence perpétuelle affichée.",
+      "Traitement très gourmand : nécessite une machine puissante (GPU).",
+      "Outil d'amélioration, pas de montage : à combiner avec un éditeur."
+    ],
+    "use_cases": [
+      "Upscaler d'anciennes vidéos vers une résolution plus élevée.",
+      "Créer un ralenti fluide à partir d'une séquence standard.",
+      "Débruiter et stabiliser des rushes tournés en basse lumière."
+    ],
+    "relevant_for": ["Vidéastes", "Monteurs", "Studios de post-production"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to enhance, restore or upscale video (resolution, denoise).",
+        "You want smooth slow motion via frame interpolation.",
+        "You prefer local processing on your machine over a cloud service."
+      ],
+      "avoidIf": [
+        "Your need is occasional and the subscription isn't worth it.",
+        "You lack a powerful enough machine (GPU-heavy processing).",
+        "Simple retouching is enough: this is not an editor."
+      ],
+      "threshold": "Topaz Video AI makes sense when AI video enhancement/restoration is a recurring need and you have a capable machine; for occasional or light needs, the subscription and GPU load are hard to justify."
+    },
+    "pros": [
+      "Some of the most advanced AI video upscaling and restoration.",
+      "Frame interpolation for smooth slow motion.",
+      "Local processing (no uploading videos to the cloud).",
+      "Built-in denoise and stabilisation."
+    ],
+    "cons": [
+      "Subscription only, no perpetual license shown.",
+      "Very compute-heavy: needs a powerful machine (GPU).",
+      "An enhancement tool, not an editor: pair it with a video editor."
+    ],
+    "use_cases": [
+      "Upscale old videos to a higher resolution.",
+      "Create smooth slow motion from standard footage.",
+      "Denoise and stabilise low-light rushes."
+    ]
+  }
+}

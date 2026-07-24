@@ -1,0 +1,84 @@
+{
+  "slug": "google-ai-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Facturation Gemini API / AI Studio — Google", "url": "https://ai.google.dev/gemini-api/docs/billing" },
+    { "label": "Tarifs Gemini Developer API — Google", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+  ],
+  "facts": {
+    "what": "Interface web de Google pour prototyper avec les modèles Gemini : rédiger des prompts, tester, régler puis exporter vers l'API.",
+    "pricing_model": "AI Studio est gratuit à utiliser. L'usage de l'API Gemini est facturé séparément (palier gratuit puis payant).",
+    "free_tier": { "exists": true, "detail": "Utilisation d'AI Studio gratuite dans toutes les régions ; l'API dispose d'un palier gratuit avant passage au payant." },
+    "billing_note": "À partir du 23 mars 2026, plans Prepay/Postpay pour l'API ; les crédits Google Cloud Free Trial excluent l'usage Gemini API/AI Studio pour les comptes récents.",
+    "key_features": [
+      "Accès direct aux derniers modèles Gemini",
+      "Rédaction et test de prompts, réglages (température, etc.)",
+      "Export du prompt vers du code/API",
+      "Prototypage rapide multimodal (texte, image…)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur et voulez prototyper rapidement avec les modèles Gemini.",
+        "Vous testez des prompts avant de passer à l'API dans votre application.",
+        "Vous voulez expérimenter gratuitement avant tout coût."
+      ],
+      "avoidIf": [
+        "Vous cherchez un chatbot grand public prêt à l'emploi (l'app Gemini est plus indiquée).",
+        "Vous avez besoin d'une infrastructure de production managée (Vertex AI).",
+        "Vous ne comptez pas toucher à l'API ni au prompt engineering."
+      ],
+      "threshold": "Google AI Studio s'impose pour prototyper et itérer sur des prompts Gemini gratuitement avant l'API ; pour un produit grand public clé en main ou une prod à l'échelle, l'app Gemini ou Vertex AI sont plus adaptés."
+    },
+    "pros": [
+      "Utilisation gratuite pour prototyper avec Gemini.",
+      "Accès direct aux derniers modèles Gemini.",
+      "Passage fluide du prompt testé vers du code/API.",
+      "Itération rapide sur des cas multimodaux."
+    ],
+    "cons": [
+      "Outil orienté développeurs, pas un produit grand public.",
+      "L'usage de l'API est facturé séparément et grimpe à l'échelle.",
+      "Fortement lié à l'écosystème Google (modèles, facturation)."
+    ],
+    "use_cases": [
+      "Tester et affiner des prompts Gemini avant intégration.",
+      "Prototyper une fonctionnalité IA multimodale.",
+      "Exporter un prompt validé vers l'API pour son application."
+    ],
+    "relevant_for": ["Développeurs", "Équipes produit IA", "Prototypage"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a developer and want to prototype quickly with Gemini models.",
+        "You test prompts before moving to the API in your app.",
+        "You want to experiment for free before any cost."
+      ],
+      "avoidIf": [
+        "You want a ready-made consumer chatbot (the Gemini app fits better).",
+        "You need managed production infrastructure (Vertex AI).",
+        "You won't touch the API or prompt engineering."
+      ],
+      "threshold": "Google AI Studio makes sense to prototype and iterate on Gemini prompts for free before the API; for a turnkey consumer product or production at scale, the Gemini app or Vertex AI fit better."
+    },
+    "pros": [
+      "Free to use for prototyping with Gemini.",
+      "Direct access to the latest Gemini models.",
+      "Smooth path from a tested prompt to code/API.",
+      "Fast iteration on multimodal cases."
+    ],
+    "cons": [
+      "Developer-oriented tool, not a consumer product.",
+      "API usage is billed separately and climbs at scale.",
+      "Strongly tied to Google's ecosystem (models, billing)."
+    ],
+    "use_cases": [
+      "Test and refine Gemini prompts before integration.",
+      "Prototype a multimodal AI feature.",
+      "Export a validated prompt to the API for your app."
+    ]
+  }
+}

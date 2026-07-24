@@ -1,0 +1,87 @@
+{
+  "slug": "jira",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Jira (Atlassian)", "url": "https://www.atlassian.com/software/jira/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de gestion de projet et de suivi des tickets (issues) pour les équipes, très utilisé en développement logiciel agile.",
+    "pricing_model": "Palier gratuit jusqu'à 10 utilisateurs, puis Standard, Premium et Enterprise (par utilisateur).",
+    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 10 utilisateurs, avec l'essentiel des fonctions et l'accès aux 1 000+ apps et intégrations." },
+    "plans": [
+      { "name": "Standard", "detail": "au-delà de 10 utilisateurs, plus de stockage, support en heures ouvrées (prix par utilisateur sur la page officielle)" },
+      { "name": "Premium", "detail": "SLA 99,9 %, support 24/7, fonctions avancées de mise à l'échelle" },
+      { "name": "Enterprise", "detail": "sur devis, gouvernance multi-instances" }
+    ],
+    "key_features": [
+      "Tableaux agiles (Scrum, Kanban) et suivi des sprints",
+      "Suivi d'issues, workflows et automatisations",
+      "1 000+ apps et intégrations (Marketplace)",
+      "Rapports et tableaux de bord d'avancement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe développe un logiciel et suit issues, sprints et backlog en agile.",
+        "Vous voulez des tableaux Scrum/Kanban et de nombreuses intégrations.",
+        "Vous devez monter en charge jusqu'à des besoins d'entreprise."
+      ],
+      "avoidIf": [
+        "Vous cherchez une simple liste de tâches : Jira sera surdimensionné.",
+        "Votre équipe est non technique et veut un outil léger.",
+        "Vous voulez une prise en main immédiate sans configuration."
+      ],
+      "threshold": "Jira s'impose pour des équipes logicielles qui suivent issues et sprints en agile et veulent un écosystème riche ; pour un besoin simple ou non technique, un outil plus léger est plus adapté."
+    },
+    "pros": [
+      "Suivi d'issues et gestion agile puissants (Scrum, Kanban).",
+      "Palier gratuit jusqu'à 10 utilisateurs.",
+      "Écosystème d'apps et d'intégrations immense.",
+      "Monte en charge jusqu'aux besoins d'entreprise (SLA, support 24/7)."
+    ],
+    "cons": [
+      "Complexe et parfois lourd pour des besoins simples.",
+      "Courbe d'apprentissage et configuration non négligeables.",
+      "Fonctions avancées et garanties réservées aux plans payants."
+    ],
+    "use_cases": [
+      "Suivre le backlog et les sprints d'une équipe de développement.",
+      "Organiser le travail en tableaux Scrum ou Kanban.",
+      "Automatiser des workflows d'issues et suivre l'avancement via des rapports."
+    ],
+    "relevant_for": ["Équipes de développement", "Product/agile", "Grandes organisations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team builds software and tracks issues, sprints and backlog with agile.",
+        "You want Scrum/Kanban boards and many integrations.",
+        "You need to scale up to enterprise needs."
+      ],
+      "avoidIf": [
+        "You want a simple task list: Jira will be overkill.",
+        "Your team is non-technical and wants a lightweight tool.",
+        "You want immediate use with no configuration."
+      ],
+      "threshold": "Jira makes sense for software teams tracking issues and sprints with agile and wanting a rich ecosystem; for a simple or non-technical need, a lighter tool fits better."
+    },
+    "pros": [
+      "Powerful issue tracking and agile management (Scrum, Kanban).",
+      "Free tier up to 10 users.",
+      "Huge ecosystem of apps and integrations.",
+      "Scales up to enterprise needs (SLA, 24/7 support)."
+    ],
+    "cons": [
+      "Complex and sometimes heavy for simple needs.",
+      "Non-trivial learning curve and configuration.",
+      "Advanced features and guarantees reserved for paid plans."
+    ],
+    "use_cases": [
+      "Track a development team's backlog and sprints.",
+      "Organise work in Scrum or Kanban boards.",
+      "Automate issue workflows and track progress via reports."
+    ]
+  }
+}

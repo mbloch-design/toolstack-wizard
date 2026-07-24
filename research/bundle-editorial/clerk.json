@@ -1,0 +1,86 @@
+{
+  "slug": "clerk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Clerk", "url": "https://clerk.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'authentification et de gestion des utilisateurs pour applications (inscription, connexion, profils, organisations).",
+    "pricing_model": "Palier gratuit Hobby, puis Pro/Business à l'usage (utilisateurs actifs mensuels), add-ons B2B/admin/billing.",
+    "free_tier": { "exists": true, "detail": "Hobby gratuit : jusqu'à 50 000 utilisateurs actifs mensuels (MAU) par application, jusqu'à 3 sièges dashboard, applications illimitées." },
+    "plans": [
+      { "name": "Pro", "price": "25 $/mois (20 $ en annuel)", "detail": "50 000 MAU inclus puis 0,02 $/MAU" },
+      { "name": "Business", "price": "300 $/mois (250 $ en annuel)" }
+    ],
+    "key_features": [
+      "Composants d'auth prêts à l'emploi (sign-up/in, profils)",
+      "MFA, passkeys, modèles d'e-mails personnalisés",
+      "SSO entreprise et organisations (B2B)",
+      "Modèle « First Day Free » (un utilisateur ne compte qu'après 24 h)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur et voulez ajouter l'authentification rapidement, avec une UI prête à l'emploi.",
+        "Vous avez besoin de gestion des utilisateurs, MFA, passkeys ou d'organisations B2B.",
+        "Vous démarrez et le palier gratuit couvre déjà votre volume d'utilisateurs."
+      ],
+      "avoidIf": [
+        "Votre besoin d'auth est trivial et vous préférez le gérer vous-même.",
+        "Vous voulez une solution entièrement auto-hébergée ou open source.",
+        "Votre volume d'utilisateurs actifs est très élevé et le coût à l'usage devient lourd."
+      ],
+      "threshold": "Clerk s'impose quand vous voulez une authentification complète et une UI prête à l'emploi sans la construire ; pour un besoin trivial ou une exigence d'auto-hébergement, une solution maison ou open source est plus indiquée."
+    },
+    "pros": [
+      "Composants d'authentification et gestion des utilisateurs prêts à l'emploi.",
+      "Palier gratuit généreux en utilisateurs actifs mensuels.",
+      "MFA, passkeys et SSO entreprise intégrés.",
+      "Applications illimitées, même sur le plan gratuit."
+    ],
+    "cons": [
+      "Coût à l'usage qui grimpe avec le nombre d'utilisateurs actifs.",
+      "Dépendance à un tiers pour une brique aussi critique que l'auth.",
+      "Certaines fonctions B2B/administration passent par des add-ons."
+    ],
+    "use_cases": [
+      "Ajouter inscription, connexion et profils à une application web ou mobile.",
+      "Mettre en place MFA, passkeys et SSO sans tout coder.",
+      "Gérer des organisations et des rôles pour une application B2B."
+    ],
+    "relevant_for": ["Développeurs", "Startups", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a developer and want to add authentication fast, with prebuilt UI.",
+        "You need user management, MFA, passkeys or B2B organisations.",
+        "You're starting out and the free tier already covers your user volume."
+      ],
+      "avoidIf": [
+        "Your auth need is trivial and you'd rather handle it yourself.",
+        "You want a fully self-hosted or open-source solution.",
+        "Your active-user volume is very high and usage-based cost becomes heavy."
+      ],
+      "threshold": "Clerk makes sense when you want complete authentication and prebuilt UI without building it; for a trivial need or a self-hosting requirement, a homegrown or open-source solution fits better."
+    },
+    "pros": [
+      "Prebuilt authentication components and user management.",
+      "Generous free tier in monthly active users.",
+      "Built-in MFA, passkeys and enterprise SSO.",
+      "Unlimited applications, even on the free plan."
+    ],
+    "cons": [
+      "Usage-based cost climbs with active users.",
+      "Third-party dependency for a critical piece like auth.",
+      "Some B2B/admin features are behind add-ons."
+    ],
+    "use_cases": [
+      "Add sign-up, sign-in and profiles to a web or mobile app.",
+      "Set up MFA, passkeys and SSO without coding it all.",
+      "Manage organisations and roles for a B2B app."
+    ]
+  }
+}
