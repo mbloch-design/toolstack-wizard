@@ -1,0 +1,86 @@
+{
+  "slug": "gocardless",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GoCardless — prélèvement bancaire récurrent (site officiel)", "url": "https://gocardless.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement — alternative bancaire aux paiements par carte.",
+    "pricing_model": "À la transaction, sans frais mensuels obligatoires ni engagement. Paliers Standard / Advanced / Pro selon le volume.",
+    "free_tier": { "exists": false, "detail": "Pas d'abonnement mensuel obligatoire ni de frais de mise en place ; on paie à la transaction." },
+    "plans": [
+      { "name": "Standard", "price": "~1 % + 0,20 £ par transaction, plafonné à 4 £ ; SEPA ~1 % plafonné à 2 €" },
+      { "name": "Advanced / Pro", "price": "options avancées selon le volume traité" }
+    ],
+    "key_features": [
+      "Prélèvement bancaire récurrent (SEPA, Direct Debit, ACH)",
+      "Sans frais mensuels ni engagement",
+      "Frais souvent plus bas que la carte pour l'abonnement",
+      "Meilleur taux de réussite sur les paiements récurrents"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous encaissez des paiements récurrents (abonnements, factures).",
+        "Vous voulez réduire les frais vs la carte bancaire.",
+        "Vous cherchez de meilleurs taux de réussite sur le récurrent."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un encaissement instantané.",
+        "Vos paiements sont ponctuels et par carte.",
+        "Vous vendez surtout en one-shot au checkout."
+      ],
+      "threshold": "GoCardless s'impose pour l'encaissement récurrent par prélèvement (économies qui se cumulent) ; pour du paiement instantané ou ponctuel, la carte reste plus adaptée."
+    },
+    "pros": [
+      "Frais souvent plus bas que la carte sur le récurrent.",
+      "Sans frais mensuels ni engagement.",
+      "Bon taux de réussite sur les prélèvements.",
+      "Multi-schémas (SEPA, Direct Debit, ACH)."
+    ],
+    "cons": [
+      "Délai de règlement (2 à 5 jours ouvrés).",
+      "Peu adapté aux paiements instantanés.",
+      "Moins pertinent pour du one-shot au checkout."
+    ],
+    "use_cases": [
+      "Encaisser des abonnements par prélèvement.",
+      "Automatiser le recouvrement de factures récurrentes.",
+      "Réduire les frais de paiement sur le récurrent."
+    ],
+    "relevant_for": ["Abonnements SaaS", "Prestataires récurrents", "PME facturant à échéance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You collect recurring payments (subscriptions, invoices).",
+        "You want to cut fees vs card payments.",
+        "You want better success rates on recurring billing."
+      ],
+      "avoidIf": [
+        "You need instant settlement.",
+        "Your payments are one-off and card-based.",
+        "You mostly sell one-shot at checkout."
+      ],
+      "threshold": "GoCardless makes sense for recurring bank-debit collection (savings compound); for instant or one-off payment, cards remain a better fit."
+    },
+    "pros": [
+      "Often lower fees than cards on recurring.",
+      "No monthly fees or commitment.",
+      "Good success rate on debits.",
+      "Multi-scheme (SEPA, Direct Debit, ACH)."
+    ],
+    "cons": [
+      "Settlement delay (2 to 5 business days).",
+      "Poorly suited to instant payments.",
+      "Less relevant for one-shot checkout."
+    ],
+    "use_cases": [
+      "Collect subscriptions by direct debit.",
+      "Automate recurring invoice collection.",
+      "Reduce payment fees on recurring billing."
+    ]
+  }
+}

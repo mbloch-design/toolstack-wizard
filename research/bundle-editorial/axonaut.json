@@ -1,0 +1,85 @@
+{
+  "slug": "axonaut",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Axonaut", "url": "https://axonaut.com/content/prix" }
+  ],
+  "facts": {
+    "what": "ERP français tout-en-un pour TPE/PME : CRM, facturation (conforme facturation électronique), comptabilité, trésorerie, gestion de projet, notes de frais et stock dans une seule plateforme.",
+    "pricing_model": "Abonnement par entreprise (pas par utilisateur), tarif dégressif selon l'engagement. Essai gratuit 15 jours.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 15 jours ; abonnement requis ensuite." },
+    "plans": [
+      { "name": "Abonnement (tout inclus)", "price": "à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement — par entreprise, options en plus" }
+    ],
+    "key_features": [
+      "CRM + facturation conforme (facturation électronique)",
+      "Comptabilité et rapprochement bancaire",
+      "Gestion de projet et feuilles de temps",
+      "OCR notes de frais et suivi des stocks"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une TPE/PME française et voulez tout centraliser.",
+        "Vous voulez CRM et facturation conforme au même endroit.",
+        "Vous préférez un tarif par entreprise, pas par utilisateur."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un CRM ou que d'une facturation.",
+        "Vous voulez un outil international multi-langues.",
+        "Vous cherchez une solution gratuite."
+      ],
+      "threshold": "Axonaut s'impose pour une TPE/PME française qui veut un tout-en-un CRM + gestion ; pour un seul besoin isolé, un outil spécialisé suffit."
+    },
+    "pros": [
+      "Tout-en-un CRM + facturation + compta.",
+      "Conforme à la facturation électronique.",
+      "Tarif par entreprise, pas par utilisateur.",
+      "Pensé pour les TPE/PME françaises."
+    ],
+    "cons": [
+      "Surtout pertinent sur le marché français.",
+      "Pas de palier gratuit permanent.",
+      "Tout-en-un moins profond qu'un spécialiste sur chaque brique."
+    ],
+    "use_cases": [
+      "Gérer devis, factures et relances de A à Z.",
+      "Centraliser CRM et comptabilité d'une TPE.",
+      "Suivre projets et notes de frais au même endroit."
+    ],
+    "relevant_for": ["TPE françaises", "PME françaises", "Indépendants avec activité structurée"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a French small business and want to centralise everything.",
+        "You want CRM and compliant invoicing in one place.",
+        "You prefer per-company pricing, not per-user."
+      ],
+      "avoidIf": [
+        "You only need a CRM or only invoicing.",
+        "You want an international multi-language tool.",
+        "You want a free solution."
+      ],
+      "threshold": "Axonaut makes sense for a French small business wanting an all-in-one CRM + management suite; for a single isolated need, a specialised tool suffices."
+    },
+    "pros": [
+      "All-in-one CRM + invoicing + accounting.",
+      "Compliant with French e-invoicing.",
+      "Per-company pricing, not per-user.",
+      "Built for French small businesses."
+    ],
+    "cons": [
+      "Mostly relevant to the French market.",
+      "No permanent free tier.",
+      "All-in-one is shallower than a specialist per module."
+    ],
+    "use_cases": [
+      "Manage quotes, invoices and reminders end to end.",
+      "Centralise CRM and accounting for a small business.",
+      "Track projects and expenses in one place."
+    ]
+  }
+}

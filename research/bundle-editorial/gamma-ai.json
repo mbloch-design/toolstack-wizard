@@ -1,0 +1,88 @@
+{
+  "slug": "gamma-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Gamma", "url": "https://gamma.app/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme IA pour créer présentations, documents et pages web en quelques minutes à partir d'un prompt, avec mise en forme automatique.",
+    "pricing_model": "Palier gratuit (crédits IA limités) puis abonnements (mensuel ou annuel, annuel ~20 % moins cher) fonctionnant à crédits IA.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 400 crédits IA one-time, avec la marque Gamma affichée sur les créations." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (400 crédits IA, branding Gamma)" },
+      { "name": "Plus", "price": "9 $/mois — retire le branding" },
+      { "name": "Pro", "price": "18 $/mois — 4 000 crédits/mois, branding perso, analytics, API" },
+      { "name": "Ultra", "price": "90 $/mois" }
+    ],
+    "key_features": [
+      "Génération de présentations/docs/pages par IA",
+      "Mise en forme et design automatiques",
+      "Branding personnalisé (paliers payants)",
+      "Partage web et analytics (paliers payants)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez produire vite des présentations soignées par IA.",
+        "Vous préférez un rendu web moderne aux slides classiques.",
+        "Vous itérez souvent sur des docs ou pages."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un contrôle de design très fin (PowerPoint/Keynote).",
+        "Vous ne créez que rarement des présentations.",
+        "Vous ne voulez pas d'un fonctionnement à crédits."
+      ],
+      "threshold": "Gamma s'impose pour produire rapidement des présentations et pages soignées par IA ; pour un design très maîtrisé ou un usage rare, un outil classique suffit."
+    },
+    "pros": [
+      "Création très rapide par IA.",
+      "Rendu web moderne et responsive.",
+      "Palier gratuit pour tester.",
+      "Branding et analytics sur les paliers payants."
+    ],
+    "cons": [
+      "Fonctionnement à crédits IA.",
+      "Branding Gamma sur le gratuit.",
+      "Contrôle de design moins fin que PowerPoint/Keynote."
+    ],
+    "use_cases": [
+      "Générer une présentation à partir d'un prompt.",
+      "Créer une page web ou un document soigné rapidement.",
+      "Itérer sur un deck sans partir d'une page blanche."
+    ],
+    "relevant_for": ["Freelances", "Startups", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to produce polished presentations fast with AI.",
+        "You prefer a modern web render over classic slides.",
+        "You iterate often on docs or pages."
+      ],
+      "avoidIf": [
+        "You need very fine design control (PowerPoint/Keynote).",
+        "You rarely create presentations.",
+        "You don't want a credit-based system."
+      ],
+      "threshold": "Gamma makes sense to quickly produce polished AI presentations and pages; for tightly controlled design or rare use, a classic tool suffices."
+    },
+    "pros": [
+      "Very fast AI creation.",
+      "Modern, responsive web render.",
+      "Free tier to try.",
+      "Branding and analytics on paid tiers."
+    ],
+    "cons": [
+      "Credit-based AI system.",
+      "Gamma branding on the free tier.",
+      "Less fine design control than PowerPoint/Keynote."
+    ],
+    "use_cases": [
+      "Generate a presentation from a prompt.",
+      "Create a polished web page or document fast.",
+      "Iterate on a deck without a blank page."
+    ]
+  }
+}

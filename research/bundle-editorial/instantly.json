@@ -1,0 +1,86 @@
+{
+  "slug": "instantly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Instantly", "url": "https://instantly.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de cold email B2B : envoi à froid à volume avec comptes multiples, warmup (chauffe des boîtes), campagnes et suivi de délivrabilité.",
+    "pricing_model": "Abonnement par paliers (mensuel ou annuel, annuel ~20 % moins cher) ; nombre de comptes d'envoi souvent illimité, facturation liée au volume d'emails/contacts.",
+    "free_tier": { "exists": false, "detail": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts." },
+    "plans": [
+      { "name": "Growth", "price": "47 $/mois (37,60 $ en annuel) — 5 000 emails/mois, 1 000 contacts" },
+      { "name": "Hypergrowth", "price": "97 $/mois (77,60 $ en annuel) — 100 000 emails/mois, 25 000 contacts, comptes illimités" }
+    ],
+    "key_features": [
+      "Envoi cold email multi-comptes",
+      "Warmup automatique des boîtes",
+      "Campagnes et séquences de relance",
+      "Suivi de délivrabilité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la prospection à froid par email à volume.",
+        "Vous voulez chauffer et gérer plusieurs boîtes d'envoi.",
+        "Vous scalez l'outbound sans multiplier les coûts par boîte."
+      ],
+      "avoidIf": [
+        "Vous ne faites pas de cold email.",
+        "Vous cherchez un simple outil de newsletter.",
+        "Vous envoyez trop peu pour justifier l'abonnement."
+      ],
+      "threshold": "Instantly s'impose pour de l'outbound à froid à volume avec plusieurs boîtes ; pour une newsletter ou du transactionnel, un autre type d'outil convient mieux."
+    },
+    "pros": [
+      "Comptes d'envoi souvent illimités à tarif fixe.",
+      "Warmup automatique des boîtes.",
+      "Pensé pour scaler l'outbound.",
+      "Suivi de délivrabilité intégré."
+    ],
+    "cons": [
+      "Pas de palier gratuit permanent.",
+      "Sans objet hors prospection à froid.",
+      "Facturation qui monte avec le volume."
+    ],
+    "use_cases": [
+      "Lancer des campagnes de cold email B2B.",
+      "Chauffer plusieurs boîtes d'envoi.",
+      "Scaler l'outbound d'une équipe commerciale."
+    ],
+    "relevant_for": ["Équipes commerciales", "Growth/outbound", "Agences de prospection"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run cold email prospecting at volume.",
+        "You want to warm up and manage multiple sending inboxes.",
+        "You scale outbound without multiplying per-inbox costs."
+      ],
+      "avoidIf": [
+        "You don't do cold email.",
+        "You want a simple newsletter tool.",
+        "You send too little to justify the subscription."
+      ],
+      "threshold": "Instantly makes sense for cold outbound at volume with many inboxes; for a newsletter or transactional email, another type of tool fits better."
+    },
+    "pros": [
+      "Often unlimited sending accounts at a flat rate.",
+      "Automatic inbox warmup.",
+      "Built to scale outbound.",
+      "Built-in deliverability tracking."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Pointless outside cold prospecting.",
+      "Billing rises with volume."
+    ],
+    "use_cases": [
+      "Run B2B cold email campaigns.",
+      "Warm up multiple sending inboxes.",
+      "Scale a sales team's outbound."
+    ]
+  }
+}

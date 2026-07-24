@@ -1,0 +1,86 @@
+{
+  "slug": "ashby",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ashby — plateforme de recrutement (site officiel)", "url": "https://www.ashbyhq.com/" }
+  ],
+  "facts": {
+    "what": "ATS (logiciel de suivi des candidatures) moderne pour startups et scale-ups, orienté analytics, entretiens structurés et reporting approfondi.",
+    "pricing_model": "Sur devis, basé sur l'effectif (par employé/headcount), avec un modèle de « sièges élevés » pour les managers/admins. Pas de tarif public transparent.",
+    "free_tier": { "exists": false, "detail": "Pas de palier gratuit ; tarification entreprise sur devis, à partir d'un ticket d'entrée élevé." },
+    "plans": [
+      { "name": "Foundations", "price": "à partir de ~400 $/mois (jusqu'à ~100 employés)" },
+      { "name": "Plus / Enterprise", "price": "sur devis (scale selon l'effectif)" }
+    ],
+    "key_features": [
+      "Suivi des candidatures (ATS)",
+      "Entretiens structurés",
+      "Analytics et reporting de recrutement approfondis",
+      "Tarification liée à l'effectif"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recrutez à un rythme soutenu (startup/scale-up).",
+        "Vous voulez piloter le recrutement par la donnée.",
+        "Vous tenez aux entretiens structurés et au reporting fin."
+      ],
+      "avoidIf": [
+        "Vous recrutez ponctuellement.",
+        "Vous cherchez un ATS gratuit ou peu cher.",
+        "Vous êtes une petite équipe sans budget recrutement dédié."
+      ],
+      "threshold": "Ashby s'impose pour des équipes qui recrutent à l'échelle et pilotent par la donnée ; pour du recrutement ponctuel ou un petit budget, un ATS plus léger suffit."
+    },
+    "pros": [
+      "Analytics et reporting de recrutement poussés.",
+      "Entretiens structurés intégrés.",
+      "Pensé pour le scale-up.",
+      "Expérience utilisateur moderne."
+    ],
+    "cons": [
+      "Ticket d'entrée élevé.",
+      "Tarification non publique, liée à l'effectif.",
+      "Surdimensionné pour de petits volumes de recrutement."
+    ],
+    "use_cases": [
+      "Structurer un process de recrutement à l'échelle.",
+      "Analyser la performance des sources et des étapes.",
+      "Standardiser les entretiens dans l'équipe."
+    ],
+    "relevant_for": ["Startups", "Scale-ups", "Équipes recrutement"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You recruit at a sustained pace (startup/scale-up).",
+        "You want to run hiring by the data.",
+        "You value structured interviews and fine reporting."
+      ],
+      "avoidIf": [
+        "You hire occasionally.",
+        "You want a free or cheap ATS.",
+        "You're a small team with no dedicated hiring budget."
+      ],
+      "threshold": "Ashby makes sense for teams hiring at scale and driving by data; for occasional hiring or a small budget, a lighter ATS suffices."
+    },
+    "pros": [
+      "Deep recruiting analytics and reporting.",
+      "Built-in structured interviews.",
+      "Designed for scale-ups.",
+      "Modern user experience."
+    ],
+    "cons": [
+      "High entry ticket.",
+      "Non-public, headcount-based pricing.",
+      "Oversized for low hiring volumes."
+    ],
+    "use_cases": [
+      "Structure a hiring process at scale.",
+      "Analyse source and stage performance.",
+      "Standardise interviews across the team."
+    ]
+  }
+}
