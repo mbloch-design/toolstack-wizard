@@ -13,6 +13,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Critical: loaded eagerly (FCP for the homepage; SSR + no lazy-chunk
 // waterfall for ToolDetailPage and ComparePage — React can't resolve a
@@ -262,6 +263,7 @@ const App = () => (
         <ScrollToTop />
         <DynamicCanonical />
         <Analytics />
+        <SpeedInsights />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
           <AppRoutes />
