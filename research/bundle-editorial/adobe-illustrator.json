@@ -2,71 +2,82 @@
   "slug": "adobe-illustrator",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Illustrator — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Illustrator" }
+  ],
+  "facts": {
+    "what": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.",
+    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Dessin vectoriel (courbes de Bézier) redimensionnable à l'infini",
+      "Création de logos et de branding",
+      "Typographie et manipulation de texte avancées",
+      "Outils de précision (plume, points d'ancrage, repères)",
+      "IA générative (texte-vers-vecteur, recoloration)"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous créez des logos, icônes ou illustrations vectorielles.",
-        "Vous voulez le standard vectoriel de l'industrie.",
-        "Vous êtes déjà dans l'écosystème Adobe."
+        "Vous voulez le standard vectoriel avec des outils de précision.",
+        "Vous avez besoin de visuels redimensionnables sans perte de qualité."
       ],
       "avoidIf": [
+        "Vous travaillez surtout des images matricielles : Photoshop est plus adapté.",
         "Vos besoins vectoriels sont occasionnels.",
-        "Vous préférez une alternative sans abonnement.",
-        "Vous cherchez un outil plus simple et abordable."
+        "Vous voulez éviter l'abonnement Creative Cloud."
       ],
-      "threshold": "Adobe Illustrator est pertinent quand le dessin vectoriel de référence fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Illustrator s'impose quand le vectoriel (logos, illustrations, typographie) est central ; pour de la photo/retouche ou un usage occasionnel, un autre outil convient mieux."
     },
     "pros": [
-      "Outil de référence pour le dessin vectoriel de référence.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Référence du dessin vectoriel, précise et complète.",
+      "Outils de précision (plume, points d'ancrage, repères).",
+      "Typographie et gestion de texte avancées.",
+      "IA générative (texte-vers-vecteur, recoloration)."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Accessible via l'abonnement Creative Cloud.",
+      "Courbe d'apprentissage réelle.",
+      "Surdimensionné pour un besoin vectoriel occasionnel."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant le dessin vectoriel de référence dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Concevoir un logo ou une identité visuelle.",
+      "Créer des illustrations et icônes redimensionnables.",
+      "Réaliser des compositions typographiques soignées."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Designers graphiques", "Illustrateurs", "Studios et agences"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You create logos, icons or vector illustrations.",
-        "You want the industry vector standard.",
-        "You're already in the Adobe ecosystem."
+        "You want the vector standard with precision tools.",
+        "You need infinitely scalable visuals without quality loss."
       ],
       "avoidIf": [
+        "You mostly work with raster images: Photoshop fits better.",
         "Your vector needs are occasional.",
-        "You prefer a subscription-free alternative.",
-        "You want a simpler, cheaper tool."
+        "You want to avoid the Creative Cloud subscription."
       ],
-      "threshold": "Adobe Illustrator is relevant when the industry standard for vector graphics is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Illustrator makes sense when vector work (logos, illustrations, typography) is central; for photo/retouch or occasional use, another tool fits better."
     },
     "pros": [
-      "A reference tool for the industry standard for vector graphics.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "The reference vector editor, precise and complete.",
+      "Precision tools (pen, anchor points, guides).",
+      "Advanced typography and text handling.",
+      "Generative AI (text-to-vector, recolour)."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Available via the Creative Cloud subscription.",
+      "Real learning curve.",
+      "Overkill for occasional vector needs."
     ],
     "use_cases": [
-      "Deliver a project requiring the industry standard for vector graphics in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Design a logo or a visual identity.",
+      "Create scalable illustrations and icons.",
+      "Produce polished typographic compositions."
     ]
   }
 }

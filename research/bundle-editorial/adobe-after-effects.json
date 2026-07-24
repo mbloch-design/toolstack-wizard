@@ -2,71 +2,82 @@
   "slug": "adobe-after-effects",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe After Effects — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_After_Effects" }
+  ],
+  "facts": {
+    "what": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Motion graphics et animation",
+      "Effets visuels (VFX) et compositing",
+      "Keying (incrustation) et tracking",
+      "Riche écosystème de plugins, scripts et extensions",
+      "Intégration avec Premiere Pro"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous créez des animations, du motion design ou des effets visuels.",
         "Vous travaillez avec Premiere Pro sur des projets vidéo.",
-        "Vous êtes dans l'écosystème Adobe."
+        "Vous voulez un riche écosystème de plugins et de scripts."
       ],
       "avoidIf": [
-        "Vous n'avez pas besoin d'animation avancée.",
-        "Vous cherchez un outil plus simple ou moins coûteux.",
-        "Votre machine est peu puissante."
+        "Vous voulez seulement monter de la vidéo : Premiere Pro suffit.",
+        "Vos besoins d'animation sont occasionnels.",
+        "Votre machine est peu puissante (traitement gourmand)."
       ],
-      "threshold": "Adobe After Effects est pertinent quand les motion graphics et le compositing fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "After Effects s'impose quand le motion design, les VFX ou l'animation sont au cœur du projet ; pour du simple montage vidéo, Premiere Pro est plus indiqué."
     },
     "pros": [
-      "Outil de référence pour les motion graphics et le compositing.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Référence du motion graphics et du compositing.",
+      "Keying et tracking pour des VFX aboutis.",
+      "Écosystème de plugins et de scripts très riche.",
+      "Intégration fluide avec Premiere Pro."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Accessible via l'abonnement Creative Cloud.",
+      "Courbe d'apprentissage réputée exigeante.",
+      "Traitement gourmand en ressources (CPU/GPU)."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant les motion graphics et le compositing dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Animer des titres et des éléments de motion graphics.",
+      "Composer des effets visuels sur une séquence.",
+      "Incruster (keying) et suivre (tracking) des plans."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Motion designers", "Monteurs VFX", "Studios film/vidéo"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You create animation, motion design or visual effects.",
         "You work with Premiere Pro on video projects.",
-        "You're in the Adobe ecosystem."
+        "You want a rich ecosystem of plugins and scripts."
       ],
       "avoidIf": [
-        "You don't need advanced animation.",
-        "You want a simpler or cheaper tool.",
-        "Your machine is low-powered."
+        "You only want to edit video: Premiere Pro is enough.",
+        "Your animation needs are occasional.",
+        "Your machine is low-powered (heavy processing)."
       ],
-      "threshold": "Adobe After Effects is relevant when motion graphics, animation and visual effects is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "After Effects makes sense when motion design, VFX or animation are core to the project; for simple video editing, Premiere Pro fits better."
     },
     "pros": [
-      "A reference tool for motion graphics, animation and visual effects.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "The reference in motion graphics and compositing.",
+      "Keying and tracking for polished VFX.",
+      "Very rich ecosystem of plugins and scripts.",
+      "Smooth integration with Premiere Pro."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Available via the Creative Cloud subscription.",
+      "Notoriously steep learning curve.",
+      "Resource-heavy processing (CPU/GPU)."
     ],
     "use_cases": [
-      "Deliver a project requiring motion graphics, animation and visual effects in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Animate titles and motion-graphics elements.",
+      "Composite visual effects onto footage.",
+      "Key and track shots."
     ]
   }
 }

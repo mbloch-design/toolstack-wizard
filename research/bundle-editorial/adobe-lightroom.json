@@ -2,71 +2,82 @@
   "slug": "adobe-lightroom",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Lightroom — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom" }
+  ],
+  "facts": {
+    "what": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.",
+    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
+    "key_features": [
+      "Retouche non destructive (édits enregistrés séparément de l'original)",
+      "Organisation par métadonnées, mots-clés et collections",
+      "Prise en charge RAW (et TIFF, JPEG, PNG, PSD)",
+      "Synchronisation cloud entre bureau, mobile et web",
+      "Préréglages (presets) applicables en lot et partageables"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous gérez et retouchez de gros volumes de photos.",
-        "Vous voulez une retouche non destructive et un catalogage cloud.",
-        "Vous travaillez sur plusieurs appareils."
+        "Vous voulez une retouche non destructive et un catalogue synchronisé dans le cloud.",
+        "Vous travaillez sur plusieurs appareils (bureau, mobile, web)."
       ],
       "avoidIf": [
         "Vous éditez des photos très occasionnellement.",
-        "Vous préférez un outil gratuit ou local.",
-        "Vous n'avez pas besoin de catalogage avancé."
+        "Vous préférez un outil gratuit ou entièrement local.",
+        "Vous avez besoin d'un contrôle pixel poussé (Photoshop)."
       ],
-      "threshold": "Adobe Lightroom est pertinent quand la gestion et retouche photo fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Lightroom s'impose quand la gestion et la retouche non destructive d'une photothèque priment ; pour du contrôle pixel fin, Photoshop reste plus adapté, et un usage occasionnel n'en a pas besoin."
     },
     "pros": [
-      "Outil de référence pour la gestion et retouche photo.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Retouche non destructive : l'original n'est jamais altéré.",
+      "Organisation puissante (métadonnées, mots-clés, collections).",
+      "Synchronisation cloud entre bureau, mobile et web.",
+      "Préréglages applicables en lot et partageables."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Accessible via l'abonnement Creative Cloud / Photo.",
+      "Orienté cloud : le stockage compte dans l'offre.",
+      "Moins de contrôle pixel que Photoshop."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant la gestion et retouche photo dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Cataloguer et retoucher une photothèque volumineuse.",
+      "Synchroniser ses édits entre ordinateur et mobile.",
+      "Appliquer des préréglages en lot à une série de photos."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Photographes", "Créatifs visuels", "Studios photo"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You manage and edit large photo volumes.",
-        "You want non-destructive editing and cloud cataloguing.",
-        "You work across several devices."
+        "You want non-destructive editing and a cloud-synced catalogue.",
+        "You work across several devices (desktop, mobile, web)."
       ],
       "avoidIf": [
         "You edit photos very occasionally.",
-        "You prefer a free or local tool.",
-        "You don't need advanced cataloguing."
+        "You prefer a free or fully local tool.",
+        "You need advanced pixel control (Photoshop)."
       ],
-      "threshold": "Adobe Lightroom is relevant when photo management and non-destructive editing is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Lightroom makes sense when managing and non-destructively editing a photo library matters most; for fine pixel control, Photoshop fits better, and occasional use doesn't need it."
     },
     "pros": [
-      "A reference tool for photo management and non-destructive editing.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Non-destructive editing: the original is never altered.",
+      "Powerful organisation (metadata, keywords, collections).",
+      "Cloud sync across desktop, mobile and web.",
+      "Presets applied in batch and shareable."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Available via the Creative Cloud / Photography plan.",
+      "Cloud-oriented: storage counts in the plan.",
+      "Less pixel control than Photoshop."
     ],
     "use_cases": [
-      "Deliver a project requiring photo management and non-destructive editing in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Catalogue and edit a large photo library.",
+      "Sync your edits between computer and mobile.",
+      "Batch-apply presets to a set of photos."
     ]
   }
 }

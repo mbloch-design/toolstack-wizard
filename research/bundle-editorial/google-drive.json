@@ -2,71 +2,87 @@
   "slug": "google-drive",
   "bundle_parent": "google-workspace",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Forfaits de stockage Google One (officiel)", "url": "https://one.google.com/about/plans" }
+  ],
+  "facts": {
+    "what": "Stockage cloud de Google, partagé entre Drive, Gmail et Google Photos, avec édition collaborative intégrée.",
+    "pricing_note": "15 Go gratuits avec tout compte Google ; stockage supplémentaire via Google One ou inclus dans Google Workspace (voir la fiche de la suite).",
+    "free_tier": { "exists": true, "detail": "15 Go inclus, partagés entre Drive, Gmail et Photos." },
+    "plans": [
+      { "name": "Google One 100 Go", "price": "1,99 €/mois" },
+      { "name": "Google One 200 Go", "price": "2,99 €/mois" },
+      { "name": "Google One 2 To (AI Plus)", "price": "9,99 €/mois" }
+    ],
+    "key_features": [
+      "Stockage cloud accessible partout, multi-appareils",
+      "Partage de stockage avec jusqu'à 5 personnes (plans payants)",
+      "Intégration native avec Docs, Sheets, Slides et Gmail",
+      "Recherche puissante, y compris dans le contenu des fichiers"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous voulez un stockage cloud partagé simple pour toute l'équipe.",
-        "Vous utilisez déjà Docs, Sheets et Slides.",
-        "Vous avez besoin de partages et permissions faciles à gérer."
+        "Vous voulez un stockage cloud simple, accessible partout et multi-appareils.",
+        "Vous utilisez déjà Docs, Sheets, Slides et Gmail.",
+        "Vous avez besoin de partager de l'espace ou des fichiers facilement."
       ],
       "avoidIf": [
         "Vous exigez un chiffrement de bout en bout sous votre seul contrôle.",
-        "Vous voulez un stockage souverain hors Google.",
-        "Vos besoins se limitent à de la sauvegarde froide bon marché."
+        "Vous voulez un stockage souverain hors de l'écosystème Google.",
+        "Vous cherchez uniquement de la sauvegarde froide au meilleur prix."
       ],
-      "threshold": "Drive s'impose comme socle de fichiers d'une équipe Google Workspace ; hors de cet usage collaboratif, des solutions de stockage pur peuvent suffire."
+      "threshold": "Google Drive s'impose comme socle de fichiers pour qui vit dans l'écosystème Google ; hors de cet usage collaboratif, un stockage pur ou chiffré peut être plus indiqué."
     },
     "pros": [
-      "Partage et permissions simples, à l'échelle de l'équipe.",
+      "15 Go gratuits, partagés entre Drive, Gmail et Photos.",
       "Intégration native avec les éditeurs Google.",
-      "Recherche puissante, y compris dans le contenu des fichiers.",
-      "Espaces partagés pour le travail d'équipe."
+      "Partage de stockage avec plusieurs personnes sur les plans payants.",
+      "Recherche puissante, y compris dans le contenu des fichiers."
     ],
     "cons": [
       "Dépendance à la gouvernance des données Google.",
       "Chiffrement de bout en bout non natif.",
-      "Coûts de stockage à surveiller à grande échelle."
+      "Le stockage gratuit est vite atteint avec Gmail et Photos."
     ],
     "use_cases": [
-      "Centraliser les fichiers d'une équipe avec des droits clairs.",
-      "Collaborer sur des documents reliés aux éditeurs Google.",
-      "Retrouver rapidement un fichier via la recherche."
+      "Stocker et partager des fichiers reliés aux éditeurs Google.",
+      "Partager de l'espace de stockage en famille ou en équipe.",
+      "Retrouver un fichier via la recherche, même dans son contenu."
     ],
-    "relevant_for": [
-      "Petites équipes",
-      "PME sur Google Workspace",
-      "Équipes distribuées"
-    ]
+    "relevant_for": ["Particuliers", "Petites équipes", "Utilisateurs de Google Workspace"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You want simple shared cloud storage for the whole team.",
-        "You already use Docs, Sheets and Slides.",
-        "You need easy sharing and permissions."
+        "You want simple cloud storage, accessible anywhere and across devices.",
+        "You already use Docs, Sheets, Slides and Gmail.",
+        "You need to share storage or files easily."
       ],
       "avoidIf": [
         "You require end-to-end encryption under your sole control.",
-        "You want sovereign storage outside Google.",
-        "You only need cheap cold backup."
+        "You want sovereign storage outside Google's ecosystem.",
+        "You only need the cheapest cold backup."
       ],
-      "threshold": "Drive is the natural file backbone for a Google Workspace team; outside that collaborative use, pure-storage solutions may suffice."
+      "threshold": "Google Drive is the natural file backbone for those living in Google's ecosystem; outside that collaborative use, pure or encrypted storage may fit better."
     },
     "pros": [
-      "Simple team-wide sharing and permissions.",
+      "15 GB free, shared across Drive, Gmail and Photos.",
       "Native integration with Google editors.",
-      "Powerful search, including inside file contents.",
-      "Shared drives for teamwork."
+      "Share storage with several people on paid plans.",
+      "Powerful search, including inside file contents."
     ],
     "cons": [
       "Dependency on Google's data governance.",
       "No native end-to-end encryption.",
-      "Storage costs to watch at scale."
+      "The free storage fills up quickly with Gmail and Photos."
     ],
     "use_cases": [
-      "Centralise a team's files with clear access rights.",
-      "Collaborate on documents linked to Google editors.",
-      "Quickly find a file via search."
+      "Store and share files linked to Google editors.",
+      "Share storage space with family or a team.",
+      "Find a file via search, even within its content."
     ]
   }
 }

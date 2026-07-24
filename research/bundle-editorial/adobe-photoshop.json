@@ -2,71 +2,82 @@
   "slug": "adobe-photoshop",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Photoshop — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Photoshop" }
+  ],
+  "facts": {
+    "what": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
+    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Édition multi-calques avec masques et compositing",
+      "Retouche professionnelle (correcteur, remplissage selon le contenu)",
+      "Traitement RAW via Camera Raw",
+      "Fonctions d'IA générative (Remplissage et Extension génératifs)",
+      "Disponible sur Windows, macOS et iPad"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous éditez des images ou faites de la retouche de façon régulière.",
-        "Vous voulez l'outil standard de l'industrie, riche en plugins.",
-        "Vous travaillez déjà dans l'écosystème Adobe."
+        "Vous éditez, retouchez ou composez des images de façon régulière.",
+        "Vous voulez l'outil de référence, avec l'IA générative (Firefly) intégrée.",
+        "Vous travaillez sur plusieurs plateformes (bureau et iPad)."
       ],
       "avoidIf": [
-        "Vous n'avez que des besoins ponctuels et simples.",
-        "Vous cherchez une alternative sans abonnement.",
-        "Vous voulez un outil léger et rapide à prendre en main."
+        "Vous ne faites que du dessin vectoriel : Illustrator est plus adapté.",
+        "Vos retouches sont simples et occasionnelles.",
+        "Vous voulez éviter l'abonnement Creative Cloud."
       ],
-      "threshold": "Adobe Photoshop est pertinent quand l'édition d'images de référence fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Photoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux."
     },
     "pros": [
-      "Outil de référence pour l'édition d'images de référence.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Référence de l'édition d'images matricielles, extrêmement complète.",
+      "Retouche puissante : correcteur, remplissage selon le contenu, masques.",
+      "Traitement RAW intégré via Camera Raw.",
+      "Remplissage et Extension génératifs (IA) intégrés."
     ],
     "cons": [
+      "Accessible via l'abonnement Creative Cloud, pas en achat unique.",
       "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Surdimensionné pour de simples retouches."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant l'édition d'images de référence dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Retoucher et corriger des photographies en détail.",
+      "Composer une image multi-calques (montage, affiche).",
+      "Étendre ou compléter une image par IA générative."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Designers", "Photographes", "Studios et agences"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You edit or retouch images regularly.",
-        "You want the industry standard, rich in plugins.",
-        "You already work in the Adobe ecosystem."
+        "You edit, retouch or composite images regularly.",
+        "You want the reference tool, with generative AI (Firefly) built in.",
+        "You work across platforms (desktop and iPad)."
       ],
       "avoidIf": [
-        "Your needs are occasional and simple.",
-        "You want a subscription-free alternative.",
-        "You want a light, quick-to-learn tool."
+        "You only do vector work: Illustrator fits better.",
+        "Your edits are simple and occasional.",
+        "You want to avoid the Creative Cloud subscription."
       ],
-      "threshold": "Adobe Photoshop is relevant when the industry standard for pixel-based image editing is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Photoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better."
     },
     "pros": [
-      "A reference tool for the industry standard for pixel-based image editing.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "The reference raster image editor, extremely complete.",
+      "Powerful retouching: healing, content-aware fill, masks.",
+      "Built-in RAW processing via Camera Raw.",
+      "Built-in Generative Fill and Expand (AI)."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Available via the Creative Cloud subscription, not one-off purchase.",
+      "Real learning curve to unlock its full potential.",
+      "Overkill for simple retouching."
     ],
     "use_cases": [
-      "Deliver a project requiring the industry standard for pixel-based image editing in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Retouch and correct photographs in detail.",
+      "Composite a multi-layer image (montage, poster).",
+      "Extend or complete an image with generative AI."
     ]
   }
 }
