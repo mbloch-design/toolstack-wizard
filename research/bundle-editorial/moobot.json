@@ -1,0 +1,88 @@
+{
+  "slug": "moobot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Moobot — chatbot Twitch (site officiel)", "url": "https://moo.bot/" }
+  ],
+  "facts": {
+    "what": "Chatbot cloud pour Twitch : automatise la modération du chat, les messages programmés, les commandes personnalisées, sondages, giveaways et demandes de musique. Sans téléchargement.",
+    "pricing_model": "Gratuit avec fonctions de base ; abonnements payants pour plus de fonctions et de personnalisation.",
+    "free_tier": { "exists": true, "detail": "Gratuit avec les fonctions de base ; plans payants pour débloquer plus." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (fonctions de base)" },
+      { "name": "Affiliate", "price": "4,99 $/mois" },
+      { "name": "Partner", "price": "14,99 $/mois" },
+      { "name": "Business", "price": "24,99 $/mois" }
+    ],
+    "key_features": [
+      "Modération automatique du chat (anti-spam)",
+      "Messages programmés et commandes personnalisées",
+      "Sondages, giveaways et raffles",
+      "Demandes de musique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous streamez sur Twitch et voulez automatiser votre chat.",
+        "Vous voulez modération, commandes et messages programmés.",
+        "Vous cherchez un bot cloud sans installation."
+      ],
+      "avoidIf": [
+        "Vous ne streamez pas sur Twitch.",
+        "Votre communauté est trop petite pour justifier un bot.",
+        "Vous voulez un bot multi-plateformes avancé."
+      ],
+      "threshold": "Moobot s'impose pour automatiser un chat Twitch (modération, commandes) ; hors Twitch ou pour une très petite chaîne, il n'apporte pas grand-chose."
+    },
+    "pros": [
+      "Modération et anti-spam automatiques.",
+      "Commandes et messages programmés.",
+      "Bot cloud, sans installation.",
+      "Palier gratuit fonctionnel."
+    ],
+    "cons": [
+      "Spécifique à Twitch.",
+      "Fonctions avancées sur les plans payants.",
+      "Peu utile pour une très petite chaîne."
+    ],
+    "use_cases": [
+      "Modérer automatiquement un chat Twitch.",
+      "Programmer des messages récurrents (liens, sponsors).",
+      "Lancer sondages et giveaways en direct."
+    ],
+    "relevant_for": ["Streamers Twitch", "Créateurs live", "Modérateurs de communauté"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You stream on Twitch and want to automate your chat.",
+        "You want moderation, commands and scheduled messages.",
+        "You want a cloud bot with no install."
+      ],
+      "avoidIf": [
+        "You don't stream on Twitch.",
+        "Your community is too small to justify a bot.",
+        "You want an advanced multi-platform bot."
+      ],
+      "threshold": "Moobot makes sense to automate a Twitch chat (moderation, commands); off Twitch or for a very small channel, it adds little."
+    },
+    "pros": [
+      "Automatic moderation and anti-spam.",
+      "Commands and scheduled messages.",
+      "Cloud bot, no install.",
+      "Functional free tier."
+    ],
+    "cons": [
+      "Twitch-specific.",
+      "Advanced features on paid plans.",
+      "Little use for a very small channel."
+    ],
+    "use_cases": [
+      "Automatically moderate a Twitch chat.",
+      "Schedule recurring messages (links, sponsors).",
+      "Run polls and giveaways live."
+    ]
+  }
+}

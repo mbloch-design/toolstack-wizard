@@ -1,0 +1,87 @@
+{
+  "slug": "dovetail-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dovetail — plateforme de recherche utilisateur (site officiel)", "url": "https://dovetail.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de recherche qualitative : stocke transcripts d'entretiens, permet de taguer/coder les données, de faire émerger des thèmes entre projets et de partager les insights. Ne gère pas le recrutement de participants.",
+    "pricing_model": "Abonnement par siège (éditeur), à paliers selon fonctions et taille d'équipe. Coût qui monte vite dès 5 chercheurs.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec stockage et fonctions limités." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (stockage et fonctions limités)" },
+      { "name": "Professional", "price": "à partir de ~29 $/éditeur/mois (annuel), selon la source ~39–49 $" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Dépôt centralisé de transcripts et données qualitatives",
+      "Tag et codage des verbatims",
+      "Émergence de thèmes entre projets",
+      "Partage d'insights aux parties prenantes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous centralisez et analysez de la recherche qualitative.",
+        "Vous voulez taguer, coder et retrouver vos verbatims.",
+        "Vous partagez des insights à des parties prenantes."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de recruter des participants (non inclus).",
+        "Vous faites de la recherche très ponctuelle.",
+        "Votre équipe est trop grande pour le coût par siège."
+      ],
+      "threshold": "Dovetail s'impose pour une équipe qui capitalise sur sa recherche qualitative ; pour du ponctuel ou du recrutement de panel, un autre outil est nécessaire."
+    },
+    "pros": [
+      "Dépôt centralisé de la recherche.",
+      "Tag et codage des verbatims.",
+      "Thèmes transverses entre projets.",
+      "Palier gratuit pour démarrer."
+    ],
+    "cons": [
+      "Coût par siège qui grimpe vite en équipe.",
+      "Pas de recrutement de participants.",
+      "Certaines fonctions déplacées vers les paliers hauts."
+    ],
+    "use_cases": [
+      "Centraliser les transcripts d'entretiens.",
+      "Coder et analyser des verbatims.",
+      "Partager des insights de recherche."
+    ],
+    "relevant_for": ["Équipes UX/recherche", "Product teams", "Designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You centralise and analyse qualitative research.",
+        "You want to tag, code and retrieve your verbatims.",
+        "You share insights with stakeholders."
+      ],
+      "avoidIf": [
+        "You need to recruit participants (not included).",
+        "You do very occasional research.",
+        "Your team is too large for the per-seat cost."
+      ],
+      "threshold": "Dovetail makes sense for a team capitalising on qualitative research; for occasional work or panel recruitment, another tool is needed."
+    },
+    "pros": [
+      "Centralised research repository.",
+      "Verbatim tagging and coding.",
+      "Cross-project themes.",
+      "Free tier to start."
+    ],
+    "cons": [
+      "Per-seat cost rises fast on a team.",
+      "No participant recruitment.",
+      "Some features moved to higher tiers."
+    ],
+    "use_cases": [
+      "Centralise interview transcripts.",
+      "Code and analyse verbatims.",
+      "Share research insights."
+    ]
+  }
+}

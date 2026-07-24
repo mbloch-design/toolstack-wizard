@@ -1,0 +1,86 @@
+{
+  "slug": "mojo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Mojo", "url": "https://mojo-app.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Application mobile de création de stories et de reels animés pour les réseaux (Instagram, TikTok, YouTube Shorts, Facebook) : modèles animés, styles de texte, stickers et effets vidéo.",
+    "pricing_model": "App gratuite au téléchargement (iOS/Android) ; fonctions avancées via l'abonnement Mojo Pro (mensuel ou annuel).",
+    "free_tier": { "exists": true, "detail": "Gratuit au téléchargement avec fonctions de base ; Mojo Pro (essai 7 jours) pour tout débloquer." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (fonctions de base)" },
+      { "name": "Mojo Pro", "price": "9,99 $/mois ou 49,99 $/an" }
+    ],
+    "key_features": [
+      "Modèles de stories et reels animés",
+      "Styles de texte, stickers et effets vidéo",
+      "Branding (polices, logos, couleurs) — Pro",
+      "Redimensionnement multi-formats et sous-titres auto — Pro"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des stories et reels animés depuis votre mobile.",
+        "Vous voulez des modèles prêts à l'emploi, sans compétences design.",
+        "Vous publiez régulièrement du contenu social vertical."
+      ],
+      "avoidIf": [
+        "Vous montez surtout sur ordinateur avec un éditeur pro.",
+        "Vous avez besoin d'un contrôle vidéo très fin.",
+        "Vous créez trop peu pour justifier l'abonnement Pro."
+      ],
+      "threshold": "Mojo s'impose pour produire vite des stories/reels animés depuis mobile ; pour du montage vidéo poussé, un éditeur pro reste plus adapté."
+    },
+    "pros": [
+      "Modèles animés prêts à l'emploi.",
+      "Simple et mobile-first.",
+      "Branding et sous-titres auto (Pro).",
+      "Multi-formats pour tous les réseaux."
+    ],
+    "cons": [
+      "Fonctions clés réservées à Mojo Pro.",
+      "Contrôle vidéo moins fin qu'un éditeur pro.",
+      "Centré sur le format court vertical."
+    ],
+    "use_cases": [
+      "Créer une story animée en quelques minutes.",
+      "Produire des reels sur sa marque.",
+      "Ajouter des sous-titres automatiques à une vidéo."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Community managers", "Petites entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create animated stories and reels from your phone.",
+        "You want ready-made templates, no design skills needed.",
+        "You regularly post vertical social content."
+      ],
+      "avoidIf": [
+        "You mostly edit on desktop with a pro editor.",
+        "You need very fine video control.",
+        "You create too little to justify the Pro subscription."
+      ],
+      "threshold": "Mojo makes sense to quickly produce animated stories/reels from mobile; for advanced video editing, a pro editor remains a better fit."
+    },
+    "pros": [
+      "Ready-made animated templates.",
+      "Simple and mobile-first.",
+      "Branding and auto captions (Pro).",
+      "Multi-format for all networks."
+    ],
+    "cons": [
+      "Key features reserved for Mojo Pro.",
+      "Less fine video control than a pro editor.",
+      "Focused on short vertical format."
+    ],
+    "use_cases": [
+      "Create an animated story in minutes.",
+      "Produce on-brand reels.",
+      "Add auto captions to a video."
+    ]
+  }
+}

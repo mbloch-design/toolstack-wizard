@@ -1,0 +1,87 @@
+{
+  "slug": "kling",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kling AI — plans d'abonnement (site officiel)", "url": "https://klingai.com/" }
+  ],
+  "facts": {
+    "what": "Générateur de vidéo par IA (texte-vers-vidéo et image-vers-vidéo) développé par Kuaishou : clips courts très dynamiques, simulation physique, cohérence des personnages, 4K natif, contrôle de caméra, audio natif et API.",
+    "pricing_model": "Palier gratuit à crédits quotidiens puis abonnements à crédits (les crédits se consomment à la seconde de vidéo générée). Annuel moins cher sur la plupart des plans.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 66 crédits/jour (≈ 6 clips standard/jour), remis à zéro toutes les 24 h, sans report." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (66 crédits/jour)" },
+      { "name": "Standard / Pro / Premier", "price": "de ~10 $ à ~100 $/mois selon le plan (annuel moins cher)" },
+      { "name": "Ultra", "price": "128 $/mois (volume de crédits nettement supérieur)" }
+    ],
+    "key_features": [
+      "Texte-vers-vidéo et image-vers-vidéo",
+      "Simulation physique et cohérence des personnages",
+      "4K natif et contrôle de caméra cinématique",
+      "Génération audio native et API développeur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous générez des clips vidéo courts par IA.",
+        "Vous voulez du mouvement et une bonne cohérence de personnage.",
+        "Vous itérez à partir de prompts ou d'images."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de vidéos longues et montées classiquement.",
+        "Vous cherchez un contrôle d'édition image par image.",
+        "Vous ne voulez pas d'un fonctionnement à crédits."
+      ],
+      "threshold": "Kling s'impose pour générer rapidement des clips IA dynamiques ; pour de la vidéo longue ou un montage classique, un éditeur vidéo reste plus adapté."
+    },
+    "pros": [
+      "Clips très dynamiques et cohérents.",
+      "4K natif et contrôle de caméra.",
+      "Palier gratuit quotidien pour tester.",
+      "API pour les usages avancés."
+    ],
+    "cons": [
+      "Fonctionnement à crédits (à la seconde générée).",
+      "Peu adapté à la vidéo longue.",
+      "Crédits gratuits vite consommés."
+    ],
+    "use_cases": [
+      "Générer des clips pour les réseaux sociaux.",
+      "Animer une image fixe en vidéo.",
+      "Explorer des rendus par prompt."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Équipes marketing", "Motion designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You generate short AI video clips.",
+        "You want motion and good character consistency.",
+        "You iterate from prompts or images."
+      ],
+      "avoidIf": [
+        "You need long, classically edited videos.",
+        "You want frame-by-frame editing control.",
+        "You don't want a credit-based system."
+      ],
+      "threshold": "Kling makes sense to quickly generate dynamic AI clips; for long video or classic editing, a video editor remains a better fit."
+    },
+    "pros": [
+      "Very dynamic, consistent clips.",
+      "Native 4K and camera control.",
+      "Daily free tier to test.",
+      "API for advanced use."
+    ],
+    "cons": [
+      "Credit-based (per generated second).",
+      "Poorly suited to long video.",
+      "Free credits consumed quickly."
+    ],
+    "use_cases": [
+      "Generate clips for social media.",
+      "Animate a still image into video.",
+      "Explore renders via prompt."
+    ]
+  }
+}

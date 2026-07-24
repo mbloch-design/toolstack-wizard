@@ -1,0 +1,87 @@
+{
+  "slug": "magnific",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Magnific AI — upscaler et enhancer d'images (site officiel)", "url": "https://magnific.ai/" }
+  ],
+  "facts": {
+    "what": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
+    "pricing_model": "Abonnement à crédits (mensuel), essai gratuit limité. Les crédits se consomment selon le nombre et la taille des upscales.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 24 h (50 crédits) ; usage régulier via un plan payant." },
+    "plans": [
+      { "name": "Pro", "price": "39 $/mois (2 500 crédits)" },
+      { "name": "Premium", "price": "99 $/mois (6 500 crédits)" },
+      { "name": "Business", "price": "299 $/mois (20 000 crédits)" }
+    ],
+    "key_features": [
+      "Upscaling jusqu'à 16×",
+      "Ajout de détail réaliste par IA",
+      "Curseur Creativity (contrôle du détail inventé)",
+      "Intégré à l'écosystème Freepik"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez agrandir des images en gardant/inventant du détail.",
+        "Vous travaillez des visuels haute résolution.",
+        "Vous voulez contrôler la quantité de détail ajouté."
+      ],
+      "avoidIf": [
+        "Un upscaler basique gratuit vous suffit.",
+        "Vous voulez une fidélité stricte à l'original (sans détail inventé).",
+        "Vous n'agrandissez que rarement des images."
+      ],
+      "threshold": "Magnific s'impose pour de l'upscaling créatif haut de gamme ; pour un agrandissement fidèle et occasionnel, un upscaler plus simple suffit."
+    },
+    "pros": [
+      "Upscaling très poussé (jusqu'à 16×).",
+      "Détail réaliste ajouté par IA.",
+      "Contrôle via le curseur Creativity.",
+      "Intégré à l'écosystème Freepik."
+    ],
+    "cons": [
+      "Fonctionnement à crédits.",
+      "Le détail inventé peut s'écarter de l'original.",
+      "Pas de palier gratuit permanent."
+    ],
+    "use_cases": [
+      "Agrandir un visuel pour l'impression ou le web.",
+      "Réhausser le détail d'une image générée.",
+      "Préparer des rendus haute résolution."
+    ],
+    "relevant_for": ["Designers", "Créatifs", "Studios visuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to upscale images while keeping/inventing detail.",
+        "You work with high-resolution visuals.",
+        "You want to control how much detail is added."
+      ],
+      "avoidIf": [
+        "A basic free upscaler is enough.",
+        "You want strict fidelity to the original (no invented detail).",
+        "You rarely upscale images."
+      ],
+      "threshold": "Magnific makes sense for high-end creative upscaling; for faithful, occasional enlargement, a simpler upscaler suffices."
+    },
+    "pros": [
+      "Very advanced upscaling (up to 16×).",
+      "Realistic AI-added detail.",
+      "Control via the Creativity slider.",
+      "Integrated into the Freepik ecosystem."
+    ],
+    "cons": [
+      "Credit-based system.",
+      "Invented detail can diverge from the original.",
+      "No permanent free tier."
+    ],
+    "use_cases": [
+      "Upscale a visual for print or web.",
+      "Boost the detail of a generated image.",
+      "Prepare high-resolution renders."
+    ]
+  }
+}

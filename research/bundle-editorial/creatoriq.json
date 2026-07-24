@@ -1,0 +1,85 @@
+{
+  "slug": "creatoriq",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CreatorIQ — plateforme de creator marketing (site officiel)", "url": "https://www.creatoriq.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme entreprise de creator/influence marketing : découverte de créateurs sur une base indexée, gestion de campagnes, workflows relationnels, analytics et reporting, avec de l'IA sur la découverte et la mesure.",
+    "pricing_model": "Sur devis, contrat annuel, non public. Positionnée entreprise (grands comptes).",
+    "free_tier": { "exists": false, "detail": "Pas de plan mensuel ni de tarif public ; contrat annuel entreprise, ticket d'entrée élevé." },
+    "plans": [
+      { "name": "Entreprise", "price": "sur devis, contrat annuel (ticket d'entrée de l'ordre de plusieurs dizaines de milliers de dollars/an)" }
+    ],
+    "key_features": [
+      "Découverte de créateurs (grande base indexée)",
+      "Gestion de campagnes d'influence",
+      "Workflows de relation créateurs",
+      "Analytics et reporting de performance"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous pilotez de gros programmes d'influence (grand compte).",
+        "Vous gérez de nombreux créateurs et campagnes en parallèle.",
+        "Vous avez besoin de reporting et de mesure à l'échelle."
+      ],
+      "avoidIf": [
+        "Vous êtes une marque DTC ou mid-market qui démarre.",
+        "Vous cherchez un tarif accessible et transparent.",
+        "Vous gérez seulement quelques partenariats."
+      ],
+      "threshold": "CreatorIQ s'impose pour de grands programmes d'influence structurés ; pour une marque qui démarre ou quelques partenariats, une plateforme plus légère suffit."
+    },
+    "pros": [
+      "Découverte sur une très large base de créateurs.",
+      "Gestion de campagnes de bout en bout.",
+      "Analytics et mesure à l'échelle.",
+      "Référence des grands comptes."
+    ],
+    "cons": [
+      "Ticket d'entrée élevé, contrat annuel.",
+      "Tarif non public.",
+      "Surdimensionné hors grands programmes."
+    ],
+    "use_cases": [
+      "Gérer un programme d'influence à grande échelle.",
+      "Découvrir et qualifier des créateurs.",
+      "Mesurer la performance des campagnes."
+    ],
+    "relevant_for": ["Grandes marques", "Agences d'influence", "Équipes marketing entreprise"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run large influence programs (enterprise).",
+        "You manage many creators and campaigns in parallel.",
+        "You need reporting and measurement at scale."
+      ],
+      "avoidIf": [
+        "You're a DTC or mid-market brand just starting.",
+        "You want accessible, transparent pricing.",
+        "You only manage a few partnerships."
+      ],
+      "threshold": "CreatorIQ makes sense for large, structured influence programs; for a starting brand or a few partnerships, a lighter platform suffices."
+    },
+    "pros": [
+      "Discovery across a very large creator base.",
+      "End-to-end campaign management.",
+      "Analytics and measurement at scale.",
+      "Reference for large accounts."
+    ],
+    "cons": [
+      "High entry ticket, annual contract.",
+      "Non-public pricing.",
+      "Oversized outside large programs."
+    ],
+    "use_cases": [
+      "Run an influence program at scale.",
+      "Discover and qualify creators.",
+      "Measure campaign performance."
+    ]
+  }
+}
