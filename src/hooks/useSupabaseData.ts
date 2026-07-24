@@ -141,6 +141,11 @@ export type ToolSummary = Pick<
   | "betterAlternative"
 >;
 
+// Fiches doublons consolidées (301 → canonique dans vercel.json). On les retire
+// des listings/cartes pour ne pas afficher plusieurs fiches du même produit.
+// Canonique Adobe = adobe-creative-cloud.
+const DEPRECATED_TOOL_SLUGS = new Set(["adobe", "adobe-cc"]);
+
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
   id: asLocalizedText(t.id, ""),
   slug: asLocalizedText(t.slug || t.id, ""),
@@ -168,7 +173,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   freeAlternative: t.freeAlternative || t.free_alternative || null,
   substitutable: t.substitutable ?? true,
   betterAlternative: t.betterAlternative || t.better_alternative || null,
-}));
+})).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
 
 function mapSupabaseCat(c: any): Category {
   const localFallback = staticCategories.find((category) => category.id === c.id);
@@ -387,7 +392,8 @@ export function useToolSummaries() {
           substitutable: t.substitutable ?? true,
           betterAlternative: t.better_alternative || null,
         }));
-        const merged = mergeById(staticToolSummaries, remoteTools);
+        const merged = mergeById(staticToolSummaries, remoteTools)
+          .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
         _toolSummariesCache = merged;
         setTools(merged);
       }

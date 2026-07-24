@@ -15,6 +15,10 @@ const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
 const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact"];
 const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
+// Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
+// dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
+// pour éviter d'indexer des URLs redirigées. Canonique Adobe = adobe-creative-cloud.
+const DEPRECATED_TOOL_SLUGS = new Set(["adobe", "adobe-cc"]);
 
 // SEO landing + persona pillar pages (localized slugs)
 const SEO_LANDING_PAGE_PAIRS: { fr: string; en: string; priority: string }[] = [
@@ -456,6 +460,7 @@ function sitemapPlugin(): Plugin {
         // ── Tool pages + sub-pages ────────────────────────────────────────────
         for (const t of tools || []) {
           const slug = t.slug || t.id;
+          if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
           addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8");
           addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
@@ -650,6 +655,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         for (const tool of ficheTools) {
           const slug = tool.slug || tool.id;
+          if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
           const name = tool.name || slug;
           const ogImage = toolOgScreenshot(slug); // per-tool screenshot or null
           // Rounded for display (title/priceTag): "64.39€" reads as an odd,
@@ -945,6 +951,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         // sinon /tool/wix serait canonical tandis que /tool/wix/prix resterait legacy.
         for (const tool of ficheTools) {
           const slug = tool.slug || tool.id;
+          if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
           const name = tool.name || slug;
           // ?? not ||: a free tool's price is legitimately 0 (see the
           // matching fix in the main-page loop above).
