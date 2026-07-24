@@ -1,0 +1,87 @@
+{
+  "slug": "figma",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Page tarifaire officielle Figma", "url": "https://www.figma.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de design d'interface et de collaboration en temps réel, dans le navigateur.",
+    "pricing_model": "Palier Starter gratuit, puis Professional, Organization et Enterprise (par éditeur/siège).",
+    "free_tier": { "exists": true, "detail": "Starter gratuit : brouillons illimités, accès aux UI kits/templates, 150 crédits IA/jour (max 500/mois)." },
+    "plans": [
+      { "name": "Professional", "price": "16 $/mois par siège" },
+      { "name": "Organization", "price": "55 $/mois par siège (annuel)" },
+      { "name": "Enterprise", "price": "90 $/mois par siège (annuel)" }
+    ],
+    "key_features": [
+      "Design d'interface (composants, auto layout, édition vectorielle)",
+      "FigJam (tableau blanc collaboratif)",
+      "Dev Mode (inspection, export CSS/iOS/Android, handoff)",
+      "Prototypage avancé (animations, variables, logique conditionnelle)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des interfaces et collaborez en temps réel sur le design.",
+        "Vous voulez réunir design, prototypage et handoff développeur au même endroit.",
+        "Votre équipe design/produit travaille dans le navigateur, multi-plateforme."
+      ],
+      "avoidIf": [
+        "Vous faites surtout du graphisme print ou vectoriel pur (Illustrator, InDesign).",
+        "Vos besoins de design UI sont très ponctuels.",
+        "Vous voulez un outil entièrement hors ligne."
+      ],
+      "threshold": "Figma s'impose quand le design d'interface collaboratif et le prototypage priment ; pour du print ou du vectoriel pur, un outil dédié est plus adapté."
+    },
+    "pros": [
+      "Design d'interface et collaboration en temps réel dans le navigateur.",
+      "Prototypage avancé (animations, variables, logique).",
+      "Dev Mode pour le handoff développeur (inspection, export).",
+      "FigJam pour le brainstorming et les diagrammes."
+    ],
+    "cons": [
+      "Coût par siège qui monte avec la taille de l'équipe.",
+      "Orienté produit/UI : moins adapté au print ou au vectoriel pur.",
+      "Dépendance au cloud et au navigateur."
+    ],
+    "use_cases": [
+      "Concevoir et prototyper une interface à plusieurs en temps réel.",
+      "Préparer le handoff développeur via Dev Mode.",
+      "Animer un atelier ou un diagramme d'équipe avec FigJam."
+    ],
+    "relevant_for": ["Designers produit/UI", "Équipes produit", "Studios et agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design interfaces and collaborate on design in real time.",
+        "You want design, prototyping and developer handoff in one place.",
+        "Your design/product team works in the browser, cross-platform."
+      ],
+      "avoidIf": [
+        "You mostly do print or pure vector work (Illustrator, InDesign).",
+        "Your UI design needs are very occasional.",
+        "You want a fully offline tool."
+      ],
+      "threshold": "Figma makes sense when collaborative interface design and prototyping matter most; for print or pure vector work, a dedicated tool fits better."
+    },
+    "pros": [
+      "Interface design and real-time collaboration in the browser.",
+      "Advanced prototyping (animations, variables, logic).",
+      "Dev Mode for developer handoff (inspection, export).",
+      "FigJam for brainstorming and diagrams."
+    ],
+    "cons": [
+      "Per-seat cost climbs with team size.",
+      "Product/UI-oriented: less suited to print or pure vector.",
+      "Cloud and browser dependency."
+    ],
+    "use_cases": [
+      "Design and prototype an interface collaboratively in real time.",
+      "Prepare developer handoff via Dev Mode.",
+      "Run a team workshop or diagram with FigJam."
+    ]
+  }
+}
