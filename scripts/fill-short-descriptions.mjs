@@ -14,6 +14,8 @@ import postgres from "postgres";
 const APPLY = process.argv.includes("--apply");
 const DIR = "research/bundle-editorial";
 const PLACEHOLDER = /^(Outil ou ressource|Outil spécialisé)/;
+const PLACEHOLDER_EN = /^(Tool or resource|Tool special)/;
+const WHAT_EN = JSON.parse(readFileSync("research/what-en.json", "utf8"));
 
 for (const l of readFileSync(".env.preprod", "utf8").split(/\r?\n/)) {
   const x = l.match(/^([A-Za-z_]\w*)=(.*)$/);
@@ -28,31 +30,34 @@ const sql = postgres({
 let updated = 0, skipped = 0, missing = 0;
 try {
   // Descriptions partagées par >1 fiche publiée = doublons paresseux à remplacer
-  // (ex. teamwork/wrike, learnworlds/teachable), en plus des placeholders.
-  const dupRows = await sql`
-    select short_description sd from public.tools
-    where content_status='published' and coalesce(short_description,'')<>''
-    group by short_description having count(*)>1`;
-  const DUPES = new Set(dupRows.map((r) => r.sd));
+  // (ex. teamwork/wrike, learnworlds/teachable), en plus des placeholders. FR + EN.
+  const dupFr = await sql`select short_description sd from public.tools where content_status='published' and coalesce(short_description,'')<>'' group by short_description having count(*)>1`;
+  const dupEn = await sql`select short_description_en sd from public.tools where content_status='published' and coalesce(short_description_en,'')<>'' group by short_description_en having count(*)>1`;
+  const DUPES = new Set(dupFr.map((r) => r.sd));
+  const DUPES_EN = new Set(dupEn.map((r) => r.sd));
+  const isGenericFr = (v) => v == null || PLACEHOLDER.test(v) || DUPES.has(v);
+  const isGenericEn = (v) => v == null || PLACEHOLDER_EN.test(v) || DUPES_EN.has(v);
 
   for (const file of readdirSync(DIR).filter((f) => f.endsWith(".json"))) {
     const j = JSON.parse(readFileSync(`${DIR}/${file}`, "utf8"));
     const what = j?.facts?.what;
     if (!j.sources || !what) { continue; } // seulement les fiches sourcées avec un "what"
     const slug = j.slug;
-    const [row] = await sql`select short_description sd, long_description ld from public.tools where slug=${slug}`;
+    const whatEn = WHAT_EN[slug]; // description EN (map research/what-en.json)
+    const [row] = await sql`select short_description sd, long_description ld, short_description_en sden, long_description_en lden from public.tools where slug=${slug}`;
     if (!row) { console.log(`  ? ${slug} — absent en base`); missing++; continue; }
 
-    const fixSd = row.sd == null || PLACEHOLDER.test(row.sd) || DUPES.has(row.sd);
-    const fixLd = row.ld == null || PLACEHOLDER.test(row.ld) || DUPES.has(row.ld);
-    if (!fixSd && !fixLd) { skipped++; continue; } // déjà du vrai contenu
+    const set = {};
+    if (isGenericFr(row.sd)) set.short_description = what;
+    if (isGenericFr(row.ld)) set.long_description = what;
+    if (whatEn && isGenericEn(row.sden)) set.short_description_en = whatEn;
+    if (whatEn && isGenericEn(row.lden)) set.long_description_en = whatEn;
 
-    if (APPLY) {
-      if (fixSd && fixLd) await sql`update public.tools set short_description=${what}, long_description=${what} where slug=${slug}`;
-      else if (fixSd)     await sql`update public.tools set short_description=${what} where slug=${slug}`;
-      else                await sql`update public.tools set long_description=${what} where slug=${slug}`;
-    }
-    console.log(`  ${APPLY ? "✓" : "→"} ${slug}${fixSd ? " [sd]" : ""}${fixLd ? " [ld]" : ""}  « ${what.slice(0, 55)}… »`);
+    const cols = Object.keys(set);
+    if (cols.length === 0) { skipped++; continue; }
+    if (APPLY) await sql`update public.tools set ${sql(set)} where slug=${slug}`;
+    const tags = cols.map((c) => c.replace("short_description", "sd").replace("long_description", "ld").replace("_en", ":en")).join(" ");
+    console.log(`  ${APPLY ? "✓" : "→"} ${slug.padEnd(22)} [${tags}]`);
     updated++;
   }
   console.log(`\n${APPLY ? "Appliqué" : "Dry-run"} : ${updated} à mettre à jour, ${skipped} déjà OK, ${missing} absents.`);
