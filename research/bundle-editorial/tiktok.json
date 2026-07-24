@@ -1,0 +1,82 @@
+{
+  "slug": "tiktok",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TikTok — plateforme de vidéo courte (site officiel)", "url": "https://www.tiktok.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de vidéos courtes portée par un algorithme de découverte : création, montage in-app (sons, effets, sous-titres) et diffusion, avec un fort potentiel de portée organique. Volet pro via TikTok for Business / TikTok Ads.",
+    "pricing_model": "Gratuit pour créer et publier. La publicité (TikTok Ads) est en libre-service, aux enchères selon le budget et le ciblage.",
+    "free_tier": { "exists": true, "detail": "Application et publication gratuites ; monétisation et publicité via des programmes dédiés." },
+    "key_features": [
+      "Création et montage vidéo in-app (sons, effets, sous-titres)",
+      "Algorithme de découverte à forte portée organique",
+      "TikTok for Business et TikTok Ads (libre-service)",
+      "Formats courts verticaux, lives et tendances"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous visez de la portée organique sur de la vidéo courte.",
+        "Votre audience cible est active sur la plateforme.",
+        "Vous produisez du contenu vidéo régulier et natif."
+      ],
+      "avoidIf": [
+        "Votre cible n'est pas présente sur la plateforme.",
+        "Vous ne pouvez pas produire de vidéo courte régulièrement.",
+        "Votre marché est strictement B2B de niche."
+      ],
+      "threshold": "TikTok s'impose quand la vidéo courte et la portée organique servent votre audience ; pour une cible absente de la plateforme ou sans capacité de production vidéo, l'effort n'est pas rentable."
+    },
+    "pros": [
+      "Portée organique potentielle très élevée.",
+      "Outils de création et de montage intégrés.",
+      "Gratuit pour créer et publier.",
+      "Écosystème pub en libre-service (TikTok Ads)."
+    ],
+    "cons": [
+      "Demande une production vidéo régulière.",
+      "Portée dépendante d'un algorithme changeant.",
+      "Peu adapté à certaines cibles B2B de niche."
+    ],
+    "use_cases": [
+      "Développer une audience via la vidéo courte.",
+      "Tester des formats et des tendances rapidement.",
+      "Lancer des campagnes publicitaires ciblées."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Marques et community managers", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You target organic reach on short-form video.",
+        "Your audience is active on the platform.",
+        "You produce regular, native video content."
+      ],
+      "avoidIf": [
+        "Your audience isn't on the platform.",
+        "You can't produce short-form video regularly.",
+        "Your market is strictly niche B2B."
+      ],
+      "threshold": "TikTok makes sense when short-form video and organic reach serve your audience; for an audience not on the platform or without video capacity, the effort doesn't pay off."
+    },
+    "pros": [
+      "Very high potential organic reach.",
+      "Built-in creation and editing tools.",
+      "Free to create and publish.",
+      "Self-serve ads ecosystem (TikTok Ads)."
+    ],
+    "cons": [
+      "Requires regular video production.",
+      "Reach depends on a changing algorithm.",
+      "Poor fit for some niche B2B audiences."
+    ],
+    "use_cases": [
+      "Grow an audience via short-form video.",
+      "Test formats and trends quickly.",
+      "Run targeted ad campaigns."
+    ]
+  }
+}
