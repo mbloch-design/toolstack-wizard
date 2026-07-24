@@ -2,11 +2,25 @@
   "slug": "substance-3d-designer",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Substance 3D Designer — page produit officielle", "url": "https://www.adobe.com/products/substance3d/apps/designer.html" }
+  ],
+  "facts": {
+    "what": "Application de création de matériaux 3D procéduraux (node-based) et de motifs/textures, au sein de la suite Substance 3D.",
+    "pricing_note": "Via l'abonnement Substance 3D ou Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Création de matériaux procéduraux node-based",
+      "Textures paramétriques réutilisables et non destructives",
+      "Bibliothèques de nœuds et de filtres",
+      "Export vers Painter et les moteurs 3D"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous créez des matériaux procéduraux réutilisables.",
-        "Vous alimentez un pipeline 3D exigeant.",
+        "Vous alimentez un pipeline 3D exigeant (jeu, film, produit).",
         "Vous travaillez avec Substance Painter."
       ],
       "avoidIf": [
@@ -14,35 +28,31 @@
         "Le procédural n'est pas nécessaire à votre flux.",
         "Vous cherchez une alternative libre."
       ],
-      "threshold": "Substance 3d Designer est pertinent quand la création de matériaux procéduraux fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Substance 3D Designer s'impose quand la création de matériaux procéduraux réutilisables est au cœur du pipeline ; sinon, un texturing direct (Painter) ou un autre outil suffit."
     },
     "pros": [
-      "Outil de référence pour la création de matériaux procéduraux.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Création de matériaux procéduraux node-based.",
+      "Textures paramétriques réutilisables et non destructives.",
+      "Bibliothèques de nœuds et de filtres.",
+      "Export vers Painter et les moteurs 3D."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Réservé à un usage 3D professionnel.",
+      "Approche node-based à la courbe d'apprentissage exigeante.",
+      "Abonnement (Substance 3D ou Creative Cloud)."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant la création de matériaux procéduraux dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Créer un matériau procédural réutilisable pour plusieurs assets.",
+      "Générer des textures paramétriques non destructives.",
+      "Alimenter Substance Painter et les moteurs 3D."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Material artists"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You create reusable procedural materials.",
-        "You feed a demanding 3D pipeline.",
+        "You feed a demanding 3D pipeline (game, film, product).",
         "You work with Substance Painter."
       ],
       "avoidIf": [
@@ -50,23 +60,23 @@
         "Procedural isn't needed in your flow.",
         "You want an open-source alternative."
       ],
-      "threshold": "Substance 3d Designer is relevant when procedural 3D material authoring is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Substance 3D Designer makes sense when creating reusable procedural materials is core to the pipeline; otherwise, direct texturing (Painter) or another tool suffices."
     },
     "pros": [
-      "A reference tool for procedural 3D material authoring.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Node-based procedural material creation.",
+      "Reusable, non-destructive parametric textures.",
+      "Libraries of nodes and filters.",
+      "Export to Painter and 3D engines."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Reserved for professional 3D use.",
+      "Node-based approach with a steep learning curve.",
+      "Subscription (Substance 3D or Creative Cloud)."
     ],
     "use_cases": [
-      "Deliver a project requiring procedural 3D material authoring in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Create a reusable procedural material for multiple assets.",
+      "Generate non-destructive parametric textures.",
+      "Feed Substance Painter and 3D engines."
     ]
   }
 }

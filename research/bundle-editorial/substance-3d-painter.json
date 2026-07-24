@@ -2,71 +2,81 @@
   "slug": "substance-3d-painter",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Substance 3D Painter — page produit officielle", "url": "https://www.adobe.com/products/substance3d/apps/painter.html" }
+  ],
+  "facts": {
+    "what": "Application de peinture de textures directement sur des modèles 3D (texturing PBR), au sein de la suite Substance 3D.",
+    "pricing_note": "Via l'abonnement Substance 3D ou Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Peinture de textures en temps réel sur le modèle 3D",
+      "Matériaux et pinceaux intelligents (smart materials/masks)",
+      "Rendu PBR et export vers les moteurs 3D",
+      "Intégration au pipeline Substance"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous peignez des textures directement sur des modèles 3D.",
         "Vous travaillez sur des assets de jeu ou de rendu.",
-        "Vous êtes dans un pipeline Substance."
+        "Vous êtes dans un pipeline Substance/3D."
       ],
       "avoidIf": [
         "Vous ne faites pas de texturing 3D.",
         "Vous utilisez un autre pipeline.",
         "Vos besoins 3D sont marginaux."
       ],
-      "threshold": "Substance 3d Painter est pertinent quand la peinture de textures 3D fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Substance 3D Painter s'impose quand le texturing sur modèle 3D est central ; hors pipeline 3D, il n'a pas d'intérêt."
     },
     "pros": [
-      "Outil de référence pour la peinture de textures 3D.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Peinture de textures directement sur le modèle 3D.",
+      "Smart materials et masques intelligents.",
+      "Rendu PBR et export vers les moteurs 3D.",
+      "Intégré au pipeline Substance."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Réservé au texturing 3D professionnel.",
+      "Courbe d'apprentissage exigeante.",
+      "Abonnement (Substance 3D ou Creative Cloud)."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant la peinture de textures 3D dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Texturer un personnage ou un asset de jeu en PBR.",
+      "Appliquer des smart materials sur un modèle 3D.",
+      "Exporter des textures vers un moteur 3D."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Texture artists"]
   },
   "en": {
     "verdict": {
       "keepIf": [
         "You paint textures directly onto 3D models.",
         "You work on game or render assets.",
-        "You're in a Substance pipeline."
+        "You're in a Substance/3D pipeline."
       ],
       "avoidIf": [
         "You don't do 3D texturing.",
         "You use another pipeline.",
         "Your 3D needs are marginal."
       ],
-      "threshold": "Substance 3d Painter is relevant when painting textures onto 3D models is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Substance 3D Painter makes sense when texturing on 3D models is central; outside a 3D pipeline it has no value."
     },
     "pros": [
-      "A reference tool for painting textures onto 3D models.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Paint textures directly on the 3D model.",
+      "Smart materials and smart masks.",
+      "PBR rendering and export to 3D engines.",
+      "Integrated into the Substance pipeline."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Reserved for professional 3D texturing.",
+      "Steep learning curve.",
+      "Subscription (Substance 3D or Creative Cloud)."
     ],
     "use_cases": [
-      "Deliver a project requiring painting textures onto 3D models in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Texture a character or game asset in PBR.",
+      "Apply smart materials to a 3D model.",
+      "Export textures to a 3D engine."
     ]
   }
 }

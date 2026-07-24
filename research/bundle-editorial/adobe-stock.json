@@ -2,11 +2,25 @@
   "slug": "adobe-stock",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Stock — description et modèle (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Stock" }
+  ],
+  "facts": {
+    "what": "Banque d'assets sous licence (photos, vidéos, vecteurs, modèles) intégrée aux applications Creative Cloud.",
+    "pricing_note": "Vendu par abonnement ou à crédits ; offre « Toutes les apps + Adobe Stock » ou accès autonome (voir la fiche de la suite).",
+    "key_features": [
+      "Photos, vidéos, vecteurs et modèles sous licence",
+      "Intégration directe dans Photoshop, Illustrator, InDesign…",
+      "Licence par abonnement ou par crédits",
+      "Aperçu et essai d'assets avant licence"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous avez besoin de photos, vidéos ou vecteurs sous licence.",
-        "Vous voulez des assets intégrés aux apps Adobe.",
+        "Vous avez besoin de photos, vidéos ou vecteurs sous licence pour vos projets.",
+        "Vous voulez des assets intégrés directement dans les apps Adobe.",
         "Vous produisez du contenu régulièrement."
       ],
       "avoidIf": [
@@ -14,35 +28,31 @@
         "Vos besoins d'assets sont rares.",
         "Vous voulez éviter l'écosystème Adobe."
       ],
-      "threshold": "Adobe Stock est pertinent quand la banque d'assets fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Adobe Stock s'impose quand vous avez besoin d'assets sous licence intégrés à un flux Adobe ; pour un usage rare, des banques gratuites peuvent suffire."
     },
     "pros": [
-      "Outil de référence pour la banque d'assets.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Large choix d'assets sous licence (photo, vidéo, vecteur, modèles).",
+      "Intégration directe dans les apps Adobe.",
+      "Licence flexible (abonnement ou crédits).",
+      "Aperçu des assets avant achat de licence."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Coût récurrent (abonnement ou crédits).",
+      "Pertinent surtout au sein de l'écosystème Adobe.",
+      "Moins intéressant si des banques gratuites couvrent le besoin."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant la banque d'assets dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Licencier une photo ou une vidéo pour un projet client.",
+      "Insérer un asset directement depuis Photoshop ou Illustrator.",
+      "Constituer une bibliothèque d'assets sous licence."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Designers", "Studios et agences", "Créateurs de contenu"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You need licensed photos, videos or vectors.",
-        "You want assets integrated into Adobe apps.",
+        "You need licensed photos, videos or vectors for your projects.",
+        "You want assets integrated directly into Adobe apps.",
         "You produce content regularly."
       ],
       "avoidIf": [
@@ -50,23 +60,23 @@
         "Your asset needs are rare.",
         "You want to avoid the Adobe ecosystem."
       ],
-      "threshold": "Adobe Stock is relevant when licensed stock assets is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Adobe Stock makes sense when you need licensed assets integrated into an Adobe flow; for rare use, free libraries may suffice."
     },
     "pros": [
-      "A reference tool for licensed stock assets.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Wide choice of licensed assets (photo, video, vector, templates).",
+      "Direct integration into Adobe apps.",
+      "Flexible licensing (subscription or credits).",
+      "Preview assets before licensing."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Recurring cost (subscription or credits).",
+      "Most relevant within the Adobe ecosystem.",
+      "Less compelling if free libraries cover the need."
     ],
     "use_cases": [
-      "Deliver a project requiring licensed stock assets in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "License a photo or video for a client project.",
+      "Insert an asset directly from Photoshop or Illustrator.",
+      "Build a library of licensed assets."
     ]
   }
 }

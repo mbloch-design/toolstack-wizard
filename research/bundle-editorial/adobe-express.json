@@ -2,71 +2,81 @@
   "slug": "adobe-express",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Adobe Express — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Express" }
+  ],
+  "facts": {
+    "what": "Plateforme de design cloud d'Adobe, orientée grand public, pour créer rapidement visuels, vidéos, PDF et pages web à partir de modèles.",
+    "pricing_note": "Palier gratuit + premium ; inclus dans l'écosystème Creative Cloud (voir la fiche de la suite).",
+    "key_features": [
+      "Création multi-formats (visuels, vidéos, PDF, pages web)",
+      "Système de modèles pour une création rapide",
+      "IA générative intégrée (Adobe Firefly)",
+      "Web, iOS et Android"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
         "Vous créez rapidement des visuels pour les réseaux sociaux ou le marketing.",
         "Vous voulez des modèles prêts à l'emploi sans expertise design.",
-        "Vous êtes dans l'écosystème Adobe."
+        "Vous êtes dans l'écosystème Adobe et voulez de l'IA générative simple."
       ],
       "avoidIf": [
-        "Vous avez besoin d'un contrôle design fin (Photoshop, Illustrator).",
+        "Vous avez besoin du contrôle fin de Photoshop ou Illustrator.",
         "Vous préférez une alternative comme Canva.",
         "Vos besoins sont très spécialisés."
       ],
-      "threshold": "Adobe Express est pertinent quand la création graphique rapide fait partie de votre travail régulier et que vous êtes dans l'écosystème Adobe ; pour un usage occasionnel, une alternative plus légère ou sans abonnement peut suffire."
+      "threshold": "Adobe Express s'impose pour de la création rapide à base de modèles au sein de l'écosystème Adobe ; pour un contrôle créatif fin, un outil pro dédié reste supérieur."
     },
     "pros": [
-      "Outil de référence pour la création graphique rapide.",
-      "Intégration fluide avec les autres apps Adobe Creative Cloud.",
-      "Inclus dans l'abonnement Creative Cloud, sans achat séparé.",
-      "Écosystème riche de ressources, tutoriels et plugins."
+      "Création rapide multi-formats à base de modèles.",
+      "IA générative intégrée (Firefly).",
+      "Web et mobile (iOS, Android).",
+      "Accessible aux non-designers."
     ],
     "cons": [
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Pertinent surtout au sein de l'abonnement Creative Cloud.",
-      "Peut être surdimensionné pour un besoin ponctuel."
+      "Moins de contrôle créatif que les outils pro.",
+      "Rendus vite génériques sur les modèles par défaut.",
+      "Pertinent surtout dans l'écosystème Adobe."
     ],
     "use_cases": [
-      "Réaliser un projet nécessitant la création graphique rapide dans un flux professionnel.",
-      "Enchaîner avec les autres apps Adobe sans friction de format.",
-      "Capitaliser sur les ressources et modèles de l'écosystème Adobe."
+      "Créer un visuel social ou marketing en quelques minutes.",
+      "Générer des éléments par IA (Firefly) dans un design.",
+      "Produire une courte vidéo ou une page web simple."
     ],
-    "relevant_for": [
-      "Créatifs",
-      "Studios et agences",
-      "Freelances du design"
-    ]
+    "relevant_for": ["Créateurs de contenu", "Petites équipes marketing", "Non-designers"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You quickly create social or marketing visuals.",
+        "You quickly create visuals for social or marketing.",
         "You want ready-made templates without design expertise.",
-        "You're in the Adobe ecosystem."
+        "You're in the Adobe ecosystem and want simple generative AI."
       ],
       "avoidIf": [
-        "You need fine design control (Photoshop, Illustrator).",
+        "You need the fine control of Photoshop or Illustrator.",
         "You prefer an alternative like Canva.",
         "Your needs are very specialised."
       ],
-      "threshold": "Adobe Express is relevant when quick, template-based graphic creation is part of your regular work and you're in the Adobe ecosystem; for occasional use, a lighter or subscription-free alternative may suffice."
+      "threshold": "Adobe Express makes sense for quick template-based creation within the Adobe ecosystem; for fine creative control, a dedicated pro tool remains stronger."
     },
     "pros": [
-      "A reference tool for quick, template-based graphic creation.",
-      "Smooth integration with other Adobe Creative Cloud apps.",
-      "Included in the Creative Cloud subscription, no separate purchase.",
-      "Rich ecosystem of resources, tutorials and plugins."
+      "Quick multi-format creation from templates.",
+      "Built-in generative AI (Firefly).",
+      "Web and mobile (iOS, Android).",
+      "Accessible to non-designers."
     ],
     "cons": [
-      "A real learning curve to unlock its full potential.",
-      "Most relevant within the Creative Cloud subscription.",
-      "Can be overkill for a one-off need."
+      "Less creative control than pro tools.",
+      "Outputs can look generic on default templates.",
+      "Most relevant within the Adobe ecosystem."
     ],
     "use_cases": [
-      "Deliver a project requiring quick, template-based graphic creation in a professional workflow.",
-      "Move to other Adobe apps without format friction.",
-      "Leverage the Adobe ecosystem's resources and templates."
+      "Create a social or marketing visual in minutes.",
+      "Generate elements with AI (Firefly) in a design.",
+      "Produce a short video or a simple web page."
     ]
   }
 }
