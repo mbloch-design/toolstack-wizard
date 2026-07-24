@@ -12,6 +12,7 @@ import AppShellV2 from "@/components/v2shell/AppShellV2";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { Analytics } from "@vercel/analytics/react";
 
 // Critical: loaded eagerly (FCP for the homepage; SSR + no lazy-chunk
 // waterfall for ToolDetailPage and ComparePage — React can't resolve a
@@ -260,6 +261,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <DynamicCanonical />
+        <Analytics />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
           <AppRoutes />
