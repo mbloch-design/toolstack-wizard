@@ -1,0 +1,82 @@
+{
+  "slug": "audacity",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Audacity — description et licence (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Audacity_(audio_editor)" }
+  ],
+  "facts": {
+    "what": "Éditeur audio et enregistreur libre et open source (licence GPL-2.0+).",
+    "pricing_model": "Gratuit et open source.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit ; code open source (GPL)." },
+    "key_features": [
+      "Enregistrement multipiste (sources simultanées)",
+      "Édition et effets (normalisation, coupe, fondus)",
+      "Import/export multi-formats (WAV, MP3, Ogg, FLAC via FFmpeg)",
+      "Analyse spectrale (spectrogramme)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez éditer et enregistrer de l'audio gratuitement.",
+        "Vous avez besoin de multipiste et d'effets de base.",
+        "Vous cherchez un outil multi-plateforme et open source."
+      ],
+      "avoidIf": [
+        "Vous voulez un DAW pro moderne (Audition, Reaper).",
+        "Vous tenez à une interface soignée et non destructive.",
+        "Vous avez besoin de fonctions avancées de mixage."
+      ],
+      "threshold": "Audacity s'impose pour de l'édition/enregistrement audio gratuit et simple ; pour un flux pro non destructif, un DAW payant reste plus adapté."
+    },
+    "pros": [
+      "Gratuit et open source.",
+      "Enregistrement et édition multipiste.",
+      "Large prise en charge de formats.",
+      "Multi-plateforme (Windows, macOS, Linux)."
+    ],
+    "cons": [
+      "Interface datée.",
+      "Édition plutôt destructive.",
+      "Moins de fonctions pro qu'un DAW payant."
+    ],
+    "use_cases": [
+      "Enregistrer et monter un podcast gratuitement.",
+      "Nettoyer, couper ou normaliser un audio.",
+      "Convertir un fichier audio d'un format à un autre."
+    ],
+    "relevant_for": ["Podcasteurs débutants", "Créateurs de contenu", "Usages ponctuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to edit and record audio for free.",
+        "You need multitrack and basic effects.",
+        "You want a cross-platform, open-source tool."
+      ],
+      "avoidIf": [
+        "You want a modern pro DAW (Audition, Reaper).",
+        "You care about a polished, non-destructive interface.",
+        "You need advanced mixing features."
+      ],
+      "threshold": "Audacity makes sense for free, simple audio editing/recording; for a non-destructive pro flow, a paid DAW fits better."
+    },
+    "pros": [
+      "Free and open source.",
+      "Multitrack recording and editing.",
+      "Wide format support.",
+      "Cross-platform (Windows, macOS, Linux)."
+    ],
+    "cons": [
+      "Dated interface.",
+      "Largely destructive editing.",
+      "Fewer pro features than a paid DAW."
+    ],
+    "use_cases": [
+      "Record and edit a podcast for free.",
+      "Clean, trim or normalise audio.",
+      "Convert an audio file from one format to another."
+    ]
+  }
+}

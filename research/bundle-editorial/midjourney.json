@@ -1,0 +1,85 @@
+{
+  "slug": "midjourney",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-23",
+  "sources": [
+    { "label": "Comparaison des plans Midjourney (docs officielles)", "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans" }
+  ],
+  "facts": {
+    "what": "Outil d'IA générative d'images à partir de descriptions textuelles (prompts), réputé pour la qualité et le style.",
+    "pricing_model": "Abonnement uniquement (pas de palier gratuit). Paliers Basic, Standard, Pro et Mega ; modes de vitesse GPU (Fast, Relax, Turbo).",
+    "free_tier": { "exists": false, "detail": "Pas de palier gratuit ; accès par abonnement (montants sur la page officielle)." },
+    "plans": [
+      { "name": "Basic / Standard / Pro / Mega", "detail": "paliers croissants (temps GPU, usages), prix sur la page officielle" }
+    ],
+    "key_features": [
+      "Génération d'images par prompt de haute qualité",
+      "Styles et rendus artistiques réputés",
+      "Modes de vitesse (Fast, Relax, Turbo)",
+      "Itération rapide et variations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous générez des images par IA de haute qualité et au style marqué.",
+        "Vous itérez sur des prompts pour explorer des visuels.",
+        "Vous produisez de l'illustration, du concept art ou des visuels marketing."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de garanties d'usage commercial « safe » (ex. Firefly).",
+        "Vous voulez un outil gratuit.",
+        "Vous avez besoin d'un contrôle/édition précis plutôt que de génération."
+      ],
+      "threshold": "Midjourney s'impose quand la qualité et le style de l'image générée priment ; pour un cadre commercial garanti ou un contrôle d'édition fin, un autre outil (Firefly, éditeur) est plus indiqué."
+    },
+    "pros": [
+      "Qualité et style d'image parmi les meilleurs.",
+      "Itération rapide et variations.",
+      "Modes de vitesse (Fast, Relax, Turbo).",
+      "Communauté et écosystème actifs."
+    ],
+    "cons": [
+      "Pas de palier gratuit : abonnement obligatoire.",
+      "Contrôle d'édition moins précis qu'un éditeur d'images.",
+      "Historiquement centré sur Discord."
+    ],
+    "use_cases": [
+      "Générer du concept art ou des illustrations.",
+      "Explorer des styles visuels par prompts.",
+      "Créer des visuels marketing originaux."
+    ],
+    "relevant_for": ["Créatifs", "Illustrateurs", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You generate high-quality, distinctive AI images.",
+        "You iterate on prompts to explore visuals.",
+        "You produce illustration, concept art or marketing visuals."
+      ],
+      "avoidIf": [
+        "You need commercial-safe usage guarantees (e.g. Firefly).",
+        "You want a free tool.",
+        "You need precise control/editing rather than generation."
+      ],
+      "threshold": "Midjourney makes sense when the quality and style of the generated image matter most; for guaranteed commercial safety or fine editing control, another tool (Firefly, an editor) fits better."
+    },
+    "pros": [
+      "Some of the best image quality and style.",
+      "Fast iteration and variations.",
+      "Speed modes (Fast, Relax, Turbo).",
+      "Active community and ecosystem."
+    ],
+    "cons": [
+      "No free tier: subscription required.",
+      "Less precise editing control than an image editor.",
+      "Historically Discord-centric."
+    ],
+    "use_cases": [
+      "Generate concept art or illustrations.",
+      "Explore visual styles via prompts.",
+      "Create original marketing visuals."
+    ]
+  }
+}
