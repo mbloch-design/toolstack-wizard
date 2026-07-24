@@ -144,7 +144,13 @@ export type ToolSummary = Pick<
 // Fiches doublons consolidées (301 → canonique dans vercel.json). On les retire
 // des listings/cartes pour ne pas afficher plusieurs fiches du même produit.
 // Canonique Adobe = adobe-creative-cloud.
-const DEPRECATED_TOOL_SLUGS = new Set(["adobe", "adobe-cc"]);
+const DEPRECATED_TOOL_SLUGS = new Set([
+  "adobe", "adobe-cc",
+  // Alias/features/combos consolidés vers la fiche canonique du produit (301 dans vercel.json).
+  "capcut-ai", "clickup-ai", "excel-copilot", "streamelements-widgets", "gsc", "gorgias-helpscout",
+  // Feature sans produit autonome ni parent fiché.
+  "youtube-live",
+]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
   id: asLocalizedText(t.id, ""),

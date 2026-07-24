@@ -1,0 +1,86 @@
+{
+  "slug": "power-user",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Power-user — add-in Office (site officiel)", "url": "https://www.power-user.com/" }
+  ],
+  "facts": {
+    "what": "Add-in de productivité pour PowerPoint, Excel et Word : des milliers de modèles, icônes vectorielles, cartes éditables, diagrammes (Gantt, Mekko, waterfall) et images HD pour accélérer la création de slides et de documents.",
+    "pricing_model": "Licence annuelle par utilisateur ; offres équipe/entreprise sur devis.",
+    "free_tier": { "exists": false, "detail": "Version d'essai possible ; usage régulier via une licence annuelle." },
+    "plans": [
+      { "name": "Licence individuelle", "price": "à partir de ~240 $/an" },
+      { "name": "Équipe / Entreprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Milliers de modèles de slides",
+      "Icônes vectorielles et cartes éditables",
+      "Diagrammes (Gantt, Mekko, waterfall)",
+      "Bibliothèque d'images HD"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez beaucoup de slides et de documents Office.",
+        "Vous voulez gagner du temps avec modèles, icônes et diagrammes.",
+        "Vous travaillez surtout dans PowerPoint, Excel et Word."
+      ],
+      "avoidIf": [
+        "Vous créez rarement des présentations.",
+        "Vous n'utilisez pas la suite Microsoft Office.",
+        "Vous cherchez un outil de présentation autonome (type Gamma)."
+      ],
+      "threshold": "Power-user s'impose pour qui produit beaucoup dans Office et veut accélérer la mise en forme ; pour un usage rare ou hors Microsoft, il est sans objet."
+    },
+    "pros": [
+      "Énorme bibliothèque de modèles et d'éléments.",
+      "Diagrammes avancés (Gantt, Mekko, waterfall).",
+      "S'intègre directement dans Office.",
+      "Gain de temps réel sur les slides."
+    ],
+    "cons": [
+      "Réservé à l'écosystème Microsoft Office.",
+      "Licence annuelle payante.",
+      "Sans objet pour un usage occasionnel."
+    ],
+    "use_cases": [
+      "Créer des slides pro plus vite dans PowerPoint.",
+      "Insérer diagrammes et cartes éditables.",
+      "Standardiser la mise en forme des documents."
+    ],
+    "relevant_for": ["Consultants", "Analystes", "Équipes qui vivent dans Office"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce lots of Office slides and documents.",
+        "You want to save time with templates, icons and diagrams.",
+        "You mostly work in PowerPoint, Excel and Word."
+      ],
+      "avoidIf": [
+        "You rarely create presentations.",
+        "You don't use the Microsoft Office suite.",
+        "You want a standalone presentation tool (like Gamma)."
+      ],
+      "threshold": "Power-user makes sense for those producing a lot in Office who want to speed up formatting; for rare use or outside Microsoft, it's not relevant."
+    },
+    "pros": [
+      "Huge library of templates and elements.",
+      "Advanced diagrams (Gantt, Mekko, waterfall).",
+      "Integrates directly into Office.",
+      "Real time savings on slides."
+    ],
+    "cons": [
+      "Limited to the Microsoft Office ecosystem.",
+      "Paid annual license.",
+      "Pointless for occasional use."
+    ],
+    "use_cases": [
+      "Create pro slides faster in PowerPoint.",
+      "Insert diagrams and editable maps.",
+      "Standardise document formatting."
+    ]
+  }
+}

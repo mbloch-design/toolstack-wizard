@@ -18,7 +18,13 @@ const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
 // Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
 // dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
 // pour éviter d'indexer des URLs redirigées. Canonique Adobe = adobe-creative-cloud.
-const DEPRECATED_TOOL_SLUGS = new Set(["adobe", "adobe-cc"]);
+const DEPRECATED_TOOL_SLUGS = new Set([
+  "adobe", "adobe-cc",
+  // Alias/features/combos consolidés vers la fiche canonique du produit (301 dans vercel.json) :
+  "capcut-ai", "clickup-ai", "excel-copilot", "streamelements-widgets", "gsc", "gorgias-helpscout",
+  // Feature sans produit autonome ni parent fiché → retirée de l'index.
+  "youtube-live",
+]);
 
 // SEO landing + persona pillar pages (localized slugs)
 const SEO_LANDING_PAGE_PAIRS: { fr: string; en: string; priority: string }[] = [
