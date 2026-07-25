@@ -40,6 +40,8 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "templates-ugc", "utm-builders", "webflow-framer", "webhooks", "workout-templates", "zapier-make",
   // Doublons/parké repérés à la repasse : gamma-ai→gamma, adcreative→adcreative-ai, inbound (parké).
   "gamma-ai", "adcreative", "inbound",
+  // Repasse creation vague 2 : magicbrief + modo (fermés), opusclip→opus-clip (doublon).
+  "magicbrief", "modo", "opusclip",
 ]);
 
 // SEO landing + persona pillar pages (localized slugs)

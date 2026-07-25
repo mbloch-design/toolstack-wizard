@@ -81,6 +81,8 @@
     { "source": "/:lang(fr|en)/tool/gamma-ai/:path*", "destination": "/:lang/tool/gamma/:path*", "permanent": true },
     { "source": "/:lang(fr|en)/tool/adcreative", "destination": "/:lang/tool/adcreative-ai", "permanent": true },
     { "source": "/:lang(fr|en)/tool/adcreative/:path*", "destination": "/:lang/tool/adcreative-ai/:path*", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/opusclip", "destination": "/:lang/tool/opus-clip", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/opusclip/:path*", "destination": "/:lang/tool/opus-clip/:path*", "permanent": true },
     { "source": "/en/guide/loom-prix-alternatives", "destination": "/en/guide/loom-pricing-alternatives", "permanent": true },
     { "source": "/fr/guide/loom-pricing-alternatives", "destination": "/fr/guide/loom-prix-alternatives", "permanent": true },
     { "source": "/en/guide/conseils-ia-freelances-2026", "destination": "/en/guide/ai-tips-freelancers-2026", "permanent": true },

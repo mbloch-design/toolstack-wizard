@@ -26,6 +26,7 @@ const files = [
   "scripts/sql/archive-placeholder-recategorization.sql",
   "scripts/sql/archive-shield-discontinued.sql",
   "scripts/sql/archive-repass-flags.sql",
+  "scripts/sql/archive-repass-flags-2.sql",
 ];
 
 let totalArchived = 0;

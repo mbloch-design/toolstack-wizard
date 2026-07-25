@@ -164,6 +164,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "shared-cloud-folders", "social-schedulers", "stock-footage", "subtitle-tools", "teleprompter-apps", "templates",
   "templates-ugc", "utm-builders", "webflow-framer", "webhooks", "workout-templates", "zapier-make",
   "gamma-ai", "adcreative", "inbound",
+  "magicbrief", "modo", "opusclip",
 ]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
