@@ -1,0 +1,89 @@
+{
+  "slug": "podbean",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Podbean — pricing (site officiel)", "url": "https://www.podbean.com/podcast-hosting-pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'hébergement de podcasts avec site personnalisable, distribution vers les annuaires, statistiques et outils de monétisation, pour l'audio comme la vidéo.",
+    "what_en": "Podcast hosting platform with a customizable site, distribution to directories, analytics and monetization tools, for both audio and video.",
+    "pricing_model": "Freemium par abonnement mensuel, avec remise en facturation annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan Basic gratuit : stockage total limité (~5 h) et bande passante mensuelle plafonnée." },
+    "plans": [
+      { "name": "Basic (Free)", "price": "0 $ (5 h de stockage, 100 Go/mois)" },
+      { "name": "Unlimited Audio", "price": "~9 $/mois (annuel) — stockage et bande passante illimités" },
+      { "name": "Unlimited Plus", "price": "~29 $/mois (annuel) — podcast vidéo, personnalisation avancée" },
+      { "name": "Network / Business", "price": "à partir de ~79-99 $/mois (annuel)" }
+    ],
+    "key_features": [
+      "Hébergement audio et vidéo illimité (plans payants)",
+      "Distribution en un clic vers les principaux annuaires",
+      "Site web de podcast personnalisable",
+      "Statistiques avancées et outils de monétisation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous lancez ou hébergez un podcast régulier.",
+        "Vous voulez distribuer facilement sur toutes les plateformes.",
+        "Vous cherchez à monétiser votre audience."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un projet audio très ponctuel.",
+        "Vous êtes déjà hébergé ailleurs sans envie de migrer.",
+        "Vous n'avez pas besoin de statistiques ni de distribution."
+      ],
+      "threshold": "Podbean s'impose pour héberger et distribuer un podcast régulier ; pour un projet audio isolé, un hébergement gratuit basique suffit."
+    },
+    "pros": [
+      "Hébergement illimité sur les plans payants.",
+      "Distribution en un clic vers les annuaires.",
+      "Outils de monétisation intégrés.",
+      "Plan gratuit pour démarrer."
+    ],
+    "cons": [
+      "Stockage et bande passante très limités en gratuit.",
+      "Personnalisation avancée réservée aux plans supérieurs.",
+      "Interface un peu datée par endroits."
+    ],
+    "use_cases": [
+      "Héberger et distribuer un podcast hebdomadaire.",
+      "Publier un podcast vidéo.",
+      "Monétiser une audience de podcast."
+    ],
+    "relevant_for": ["Podcasteurs", "Créateurs de contenu", "Petites entreprises média"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're launching or hosting a regular podcast.",
+        "You want easy distribution to every platform.",
+        "You're looking to monetize your audience."
+      ],
+      "avoidIf": [
+        "You only have a very occasional audio project.",
+        "You're already hosted elsewhere with no wish to migrate.",
+        "You don't need analytics or distribution."
+      ],
+      "threshold": "Podbean makes sense to host and distribute a regular podcast; for a one-off audio project, basic free hosting is enough."
+    },
+    "pros": [
+      "Unlimited hosting on paid plans.",
+      "One-click distribution to directories.",
+      "Built-in monetization tools.",
+      "Free plan to get started."
+    ],
+    "cons": [
+      "Very limited storage and bandwidth on free.",
+      "Advanced customization reserved for higher plans.",
+      "Interface feels dated in places."
+    ],
+    "use_cases": [
+      "Host and distribute a weekly podcast.",
+      "Publish a video podcast.",
+      "Monetize a podcast audience."
+    ]
+  }
+}

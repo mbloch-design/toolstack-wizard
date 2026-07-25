@@ -1,0 +1,89 @@
+{
+  "slug": "opus-clip",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OpusClip (site officiel)", "url": "https://www.opus.pro/" }
+  ],
+  "facts": {
+    "what": "Outil IA de repurposing vidéo : il découpe une longue vidéo en clips courts verticaux avec sous-titres, score de viralité et recadrage automatique, pour Shorts, Reels et TikTok.",
+    "what_en": "AI video repurposing tool: it cuts a long video into short vertical clips with captions, a virality score and auto-reframing, for Shorts, Reels and TikTok.",
+    "pricing_model": "Freemium par abonnement (mensuel/annuel) basé sur des crédits de traitement, plus une offre Business.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec crédits mensuels limités, exports filigranés et durée de stockage courte." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (60 crédits/mois, exports filigranés)" },
+      { "name": "Starter", "price": "15 $/mois" },
+      { "name": "Pro", "price": "29 $/mois (tous formats, scheduler, B-roll IA)" },
+      { "name": "Business", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Découpage automatique de longues vidéos en clips courts",
+      "Sous-titres animés et recadrage vertical",
+      "Score de viralité par clip",
+      "B-roll IA et planification sociale (plans supérieurs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous transformez de longues vidéos en formats courts régulièrement.",
+        "Vous voulez automatiser sous-titres et recadrage vertical.",
+        "Vous publiez sur TikTok, Reels ou Shorts."
+      ],
+      "avoidIf": [
+        "Vous ne produisez pas de contenu vidéo long à recycler.",
+        "Vous voulez un contrôle éditorial fin sur chaque montage.",
+        "Un usage ponctuel se contente d'un montage manuel."
+      ],
+      "threshold": "OpusClip est utile si vous industrialisez le format court à partir de vidéos longues ; pour un besoin rare, un montage manuel suffit."
+    },
+    "pros": [
+      "Automatise le repurposing en clips courts.",
+      "Sous-titres et recadrage vertical rapides.",
+      "Score de viralité pour prioriser les clips.",
+      "Plan gratuit pour tester."
+    ],
+    "cons": [
+      "Fonctions clés réservées aux plans payants.",
+      "Exports filigranés sur le plan gratuit.",
+      "Découpage IA parfois à retoucher manuellement."
+    ],
+    "use_cases": [
+      "Extraire des Shorts d'un podcast vidéo.",
+      "Produire des Reels à partir d'un webinaire.",
+      "Alimenter un calendrier TikTok à partir de rushes longs."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Podcasteurs vidéo", "Community / social media managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You turn long videos into short formats regularly.",
+        "You want to automate captions and vertical reframing.",
+        "You publish on TikTok, Reels or Shorts."
+      ],
+      "avoidIf": [
+        "You don't produce long video content to recycle.",
+        "You want fine editorial control over each cut.",
+        "Occasional use is fine with manual editing."
+      ],
+      "threshold": "OpusClip helps if you scale short-form from long videos; for rare needs, manual editing is enough."
+    },
+    "pros": [
+      "Automates repurposing into short clips.",
+      "Fast captions and vertical reframing.",
+      "Virality score to prioritize clips.",
+      "Free plan to test."
+    ],
+    "cons": [
+      "Key features locked to paid plans.",
+      "Watermarked exports on the free plan.",
+      "AI cuts sometimes need manual touch-ups."
+    ],
+    "use_cases": [
+      "Extract Shorts from a video podcast.",
+      "Produce Reels from a webinar.",
+      "Feed a TikTok calendar from long footage."
+    ]
+  }
+}

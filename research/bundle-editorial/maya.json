@@ -1,0 +1,88 @@
+{
+  "slug": "maya",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autodesk Maya (site officiel)", "url": "https://www.autodesk.com/products/maya/overview" }
+  ],
+  "facts": {
+    "what": "Logiciel de référence pour l'animation, la modélisation et le rendu 3D, largement utilisé dans le cinéma, les VFX et les jeux vidéo.",
+    "what_en": "Industry-standard software for 3D animation, modeling and rendering, widely used in film, VFX and games.",
+    "pricing_model": "Abonnement mensuel ou annuel (plus d'achat perpétuel), avec une édition Indie à tarif réduit.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours et licences étudiantes ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Maya (mensuel)", "price": "245 $/mois" },
+      { "name": "Maya (annuel)", "price": "1 945 $/an" },
+      { "name": "Maya Indie", "price": "305 $/an (revenus annuels < 100 000 $)" }
+    ],
+    "key_features": [
+      "Animation de personnages et rigging avancés",
+      "Modélisation polygonale et NURBS",
+      "Simulations (dynamiques, fluides, particules)",
+      "Pipeline standard du cinéma, des VFX et des jeux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de l'animation ou des VFX professionnels.",
+        "Vous devez vous intégrer à un pipeline studio standard.",
+        "Vous avez besoin de rigging et de simulations avancés."
+      ],
+      "avoidIf": [
+        "Vous débutez et cherchez un outil gratuit (Blender).",
+        "Votre usage 3D est occasionnel.",
+        "Vous refusez le modèle par abonnement."
+      ],
+      "threshold": "Maya s'impose pour l'animation et les VFX pro intégrés à un pipeline studio ; pour un usage amateur ou occasionnel, une alternative gratuite convient mieux."
+    },
+    "pros": [
+      "Standard de l'industrie du cinéma et des VFX.",
+      "Outils d'animation et de rigging très puissants.",
+      "Écosystème de plugins et de scripts riche.",
+      "Édition Indie plus accessible."
+    ],
+    "cons": [
+      "Uniquement en abonnement, tarif élevé.",
+      "Courbe d'apprentissage exigeante.",
+      "Surdimensionné pour un usage ponctuel."
+    ],
+    "use_cases": [
+      "Animer des personnages pour un film ou un jeu.",
+      "Réaliser des effets visuels complexes.",
+      "S'intégrer à un pipeline de production 3D."
+    ],
+    "relevant_for": ["Animateurs 3D", "Artistes VFX", "Studios cinéma/jeu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do professional animation or VFX.",
+        "You must fit a standard studio pipeline.",
+        "You need advanced rigging and simulations."
+      ],
+      "avoidIf": [
+        "You're a beginner wanting a free tool (Blender).",
+        "Your 3D use is occasional.",
+        "You reject the subscription model."
+      ],
+      "threshold": "Maya is essential for pro animation and VFX inside a studio pipeline; for hobby or occasional use, a free alternative fits better."
+    },
+    "pros": [
+      "Industry standard for film and VFX.",
+      "Very powerful animation and rigging tools.",
+      "Rich plugin and scripting ecosystem.",
+      "More accessible Indie edition."
+    ],
+    "cons": [
+      "Subscription only, high price.",
+      "Demanding learning curve.",
+      "Overkill for occasional use."
+    ],
+    "use_cases": [
+      "Animate characters for a film or game.",
+      "Create complex visual effects.",
+      "Integrate into a 3D production pipeline."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "maven",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Maven — plateforme et tarifs (site officiel)", "url": "https://maven.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de cours en cohorte (cohort-based courses) où des experts créent et vendent des formations live, avec paiement, inscriptions et outils pédagogiques intégrés.",
+    "what_en": "Cohort-based course platform where experts build and sell live training, with payments, enrollment and teaching tools built in.",
+    "pricing_model": "Gratuit à la création ; Maven prélève une commission sur les ventes (le formateur conserve l'essentiel des revenus, hors frais Stripe).",
+    "free_tier": { "exists": true, "detail": "Créer un cours est gratuit ; Maven se rémunère via une commission sur le chiffre d'affaires." },
+    "plans": [
+      { "name": "Créateur", "price": "part reversée d'environ 90 % des revenus (hors frais Stripe)" },
+      { "name": "Étudiant (cours)", "price": "tarifs fixés par l'instructeur, souvent 500 $ à 3 000 $ par cohorte" }
+    ],
+    "key_features": [
+      "Cours live en cohorte avec calendrier et sessions",
+      "Paiements, inscriptions et pages de vente intégrés",
+      "Lightning Lessons gratuites et workshops payants",
+      "Outils d'accompagnement et de communauté d'apprenants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez lancer une formation live en cohorte.",
+        "Vous préférez ne payer que sur vos ventes réelles.",
+        "Vous misez sur l'interaction et la communauté d'apprenants."
+      ],
+      "avoidIf": [
+        "Vous voulez des cours à la demande automatisés.",
+        "Vous refusez de partager une commission.",
+        "Vous cherchez un simple hébergeur de vidéos."
+      ],
+      "threshold": "Maven convient si votre valeur repose sur le live et la cohorte ; pour de la vidéo à la demande, une plateforme de cours classique coûte moins cher à terme."
+    },
+    "pros": [
+      "Aucun coût fixe pour démarrer.",
+      "Le formateur garde la majorité des revenus.",
+      "Outils pensés pour les cours en cohorte.",
+      "Formats variés (lightning lessons, workshops, cohortes)."
+    ],
+    "cons": [
+      "Commission prélevée sur chaque vente.",
+      "Modèle live exigeant en temps et animation.",
+      "Peu adapté aux cours entièrement préenregistrés."
+    ],
+    "use_cases": [
+      "Lancer une formation live de plusieurs semaines.",
+      "Tester un sujet via une lightning lesson gratuite.",
+      "Vendre un workshop intensif d'une journée."
+    ],
+    "relevant_for": ["Experts et formateurs", "Créateurs de contenu", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to launch a live cohort-based course.",
+        "You prefer paying only on real sales.",
+        "You bank on interaction and a learner community."
+      ],
+      "avoidIf": [
+        "You want automated on-demand courses.",
+        "You refuse to share a commission.",
+        "You just need a video hosting platform."
+      ],
+      "threshold": "Maven fits if your value rests on live cohorts; for on-demand video, a classic course platform is cheaper long term."
+    },
+    "pros": [
+      "No fixed cost to start.",
+      "Instructor keeps most of the revenue.",
+      "Tools built for cohort courses.",
+      "Varied formats (lightning lessons, workshops, cohorts)."
+    ],
+    "cons": [
+      "Commission taken on each sale.",
+      "Live model is demanding in time and facilitation.",
+      "Poorly suited to fully pre-recorded courses."
+    ],
+    "use_cases": [
+      "Launch a multi-week live course.",
+      "Test a topic via a free lightning lesson.",
+      "Sell an intensive one-day workshop."
+    ]
+  }
+}

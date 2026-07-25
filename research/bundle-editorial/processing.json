@@ -1,0 +1,86 @@
+{
+  "slug": "processing",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Processing (site officiel)", "url": "https://processing.org" }
+  ],
+  "facts": {
+    "what": "Environnement de programmation open source dédié au creative coding : il permet aux artistes, designers et débutants d'écrire du code pour créer des œuvres graphiques, interactives et génératives.",
+    "what_en": "Open-source programming environment for creative coding: it lets artists, designers and beginners write code to create graphical, interactive and generative works.",
+    "pricing_model": "Gratuit et open source (logiciel libre, financé par des dons).",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source ; dons possibles à la Processing Foundation. Variantes p5.js (web) et Python mode." },
+    "plans": [
+      { "name": "Processing", "price": "Gratuit (open source)" }
+    ],
+    "key_features": [
+      "Langage et IDE pensés pour apprendre à coder visuellement",
+      "Sketchbook pour prototyper rapidement des visuels",
+      "Bibliothèques pour l'interaction, la 3D, la vidéo, les capteurs",
+      "Écosystème p5.js pour le web et déclinaisons multi-langages"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez apprendre à coder par le visuel.",
+        "Vous créez de l'art génératif ou des installations interactives.",
+        "Vous cherchez un outil libre et sans coût."
+      ],
+      "avoidIf": [
+        "Vous voulez créer des visuels sans écrire de code.",
+        "Vous avez besoin d'un outil de design clé en main.",
+        "Vos projets exigent un moteur temps réel de niveau jeu vidéo."
+      ],
+      "threshold": "Processing est idéal pour apprendre le creative coding et prototyper des visuels par le code ; si vous ne voulez pas programmer, un outil de design visuel conviendra mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Excellente porte d'entrée vers le code créatif.",
+      "Grande communauté et nombreuses bibliothèques.",
+      "Décliné en p5.js pour le web."
+    ],
+    "cons": [
+      "Il faut accepter d'écrire du code.",
+      "Interface d'édition minimaliste.",
+      "Moins adapté aux gros projets temps réel."
+    ],
+    "use_cases": [
+      "Créer une œuvre d'art génératif.",
+      "Prototyper une installation interactive.",
+      "Apprendre la programmation de façon visuelle."
+    ],
+    "relevant_for": ["Artistes numériques", "Designers créatifs", "Étudiants en code"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to learn to code visually.",
+        "You create generative art or interactive installations.",
+        "You want a free, open-source tool."
+      ],
+      "avoidIf": [
+        "You want visuals without writing any code.",
+        "You need a ready-made design tool.",
+        "Your projects need a game-grade real-time engine."
+      ],
+      "threshold": "Processing is ideal to learn creative coding and prototype visuals through code; if you don't want to program, a visual design tool fits better."
+    },
+    "pros": [
+      "Entirely free and open source.",
+      "Great entry point into creative coding.",
+      "Large community and many libraries.",
+      "Available as p5.js for the web."
+    ],
+    "cons": [
+      "You have to be willing to write code.",
+      "Minimalist editing interface.",
+      "Less suited to large real-time projects."
+    ],
+    "use_cases": [
+      "Create a generative artwork.",
+      "Prototype an interactive installation.",
+      "Learn programming in a visual way."
+    ]
+  }
+}

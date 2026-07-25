@@ -1,0 +1,88 @@
+{
+  "slug": "postsyncer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PostSyncer — pricing (site officiel)", "url": "https://postsyncer.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de programmation et de publication de contenu sur plus de dix réseaux sociaux (Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky…), avec studio IA et bibliothèque média.",
+    "what_en": "Tool to schedule and publish content across 10+ social networks (Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky…), with an AI studio and media library.",
+    "pricing_model": "Abonnement mensuel par paliers, avec accès équipe illimité inclus et remise en facturation annuelle.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; pas de version gratuite permanente identifiée." },
+    "plans": [
+      { "name": "Starter", "price": "7 $/mois (1 utilisateur, 10 comptes connectés)" },
+      { "name": "Pro", "price": "15 $/mois (utilisateurs multiples)" },
+      { "name": "Business", "price": "25 $/mois (utilisateurs illimités)" }
+    ],
+    "key_features": [
+      "Programmation multi-réseaux (11+ plateformes)",
+      "Studio IA de suggestion de contenu",
+      "Bibliothèque média et publications carrousel",
+      "Accès équipe illimité sur les plans payants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez sur de nombreux réseaux à la fois.",
+        "Vous voulez un accès équipe sans surcoût par utilisateur.",
+        "Vous cherchez un outil de programmation abordable."
+      ],
+      "avoidIf": [
+        "Vous ne gérez qu'un seul réseau.",
+        "Vous avez besoin d'analyses très poussées de niveau entreprise.",
+        "Vous privilégiez un acteur établi de longue date."
+      ],
+      "threshold": "PostSyncer convient pour programmer du contenu multi-réseaux à petit budget avec une équipe ; pour un seul réseau, un outil natif suffit."
+    },
+    "pros": [
+      "Large couverture de réseaux sociaux.",
+      "Accès équipe illimité sans surcoût par siège.",
+      "Studio IA pour aider à la création.",
+      "Tarifs d'entrée accessibles."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente claire.",
+      "Analyses moins profondes que les acteurs entreprise.",
+      "Produit plus récent, moins éprouvé."
+    ],
+    "use_cases": [
+      "Programmer du contenu sur dix réseaux depuis un seul endroit.",
+      "Collaborer en équipe sur un calendrier social.",
+      "Générer des idées de posts avec l'IA."
+    ],
+    "relevant_for": ["Community managers", "Petites agences", "Freelances social media"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You publish across many networks at once.",
+        "You want team access with no per-user surcharge.",
+        "You're looking for an affordable scheduling tool."
+      ],
+      "avoidIf": [
+        "You only manage a single network.",
+        "You need very deep enterprise-level analytics.",
+        "You prefer a long-established vendor."
+      ],
+      "threshold": "PostSyncer suits scheduling multi-network content on a small budget with a team; for a single network, a native tool is enough."
+    },
+    "pros": [
+      "Broad social network coverage.",
+      "Unlimited team access with no per-seat surcharge.",
+      "AI studio to assist creation.",
+      "Accessible entry pricing."
+    ],
+    "cons": [
+      "No clear permanent free version.",
+      "Analytics shallower than enterprise players.",
+      "Newer, less battle-tested product."
+    ],
+    "use_cases": [
+      "Schedule content across ten networks from one place.",
+      "Collaborate as a team on a social calendar.",
+      "Generate post ideas with AI."
+    ]
+  }
+}

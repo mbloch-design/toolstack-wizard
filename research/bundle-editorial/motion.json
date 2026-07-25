@@ -1,0 +1,88 @@
+{
+  "slug": "motion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Motion — pricing (site officiel)", "url": "https://motion.com" }
+  ],
+  "facts": {
+    "what": "Application de productivité qui combine calendrier, tâches et projets, et planifie automatiquement le travail dans l'agenda grâce à l'IA.",
+    "what_en": "Productivity app that combines calendar, tasks and projects, automatically scheduling work into your agenda with AI.",
+    "pricing_model": "Abonnement par utilisateur, mensuel ou annuel (annuel moins cher).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Pro AI (annuel)", "price": "environ 12,73 $/utilisateur/mois (annuel)" },
+      { "name": "Pro AI (mensuel)", "price": "19 $/utilisateur/mois" },
+      { "name": "Business AI", "price": "29 $/utilisateur/mois (19,43 $ en annuel)" }
+    ],
+    "key_features": [
+      "Planification automatique des tâches dans le calendrier (IA)",
+      "Gestion de projets et de tâches",
+      "Prise de rendez-vous (appointment scheduling)",
+      "Notes de réunion et gestion d'équipe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous jonglez avec de nombreuses tâches et un agenda chargé.",
+        "Vous voulez que l'IA planifie votre travail à votre place.",
+        "Vous gérez calendrier, tâches et projets au même endroit."
+      ],
+      "avoidIf": [
+        "Vous cherchez un gestionnaire de tâches gratuit.",
+        "Votre organisation reste simple.",
+        "Vous ne voulez pas confier votre agenda à un algorithme."
+      ],
+      "threshold": "Motion vaut son prix pour un emploi du temps dense à optimiser automatiquement ; pour une organisation légère, un outil gratuit suffit."
+    },
+    "pros": [
+      "Planification automatique intelligente du travail.",
+      "Calendrier, tâches et projets réunis.",
+      "Réserve du temps pour chaque tâche.",
+      "Fonctions de prise de rendez-vous intégrées."
+    ],
+    "cons": [
+      "Tarif jugé élevé pour un usage solo.",
+      "Pas de version gratuite.",
+      "Facturation avantageuse surtout à l'année."
+    ],
+    "use_cases": [
+      "Faire planifier automatiquement sa journée.",
+      "Suivre des projets et deadlines multiples.",
+      "Prendre et organiser des rendez-vous."
+    ],
+    "relevant_for": ["Freelances surchargés", "Managers", "Petites équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You juggle many tasks and a busy calendar.",
+        "You want AI to schedule your work for you.",
+        "You manage calendar, tasks and projects in one place."
+      ],
+      "avoidIf": [
+        "You want a free task manager.",
+        "Your organization stays simple.",
+        "You don't want to hand your calendar to an algorithm."
+      ],
+      "threshold": "Motion is worth it for a dense schedule to auto-optimize; for light organization, a free tool is enough."
+    },
+    "pros": [
+      "Smart automatic scheduling of work.",
+      "Calendar, tasks and projects combined.",
+      "Reserves time for each task.",
+      "Built-in appointment scheduling."
+    ],
+    "cons": [
+      "Seen as pricey for solo use.",
+      "No free version.",
+      "Best value mainly on annual billing."
+    ],
+    "use_cases": [
+      "Have your day auto-scheduled.",
+      "Track multiple projects and deadlines.",
+      "Book and organize appointments."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "productioncrate",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ProductionCrate (site officiel)", "url": "https://www.productioncrate.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque d'assets pour la vidéo et le motion design : effets visuels, éléments 3D, musiques, effets sonores et overlays, avec des plug-ins pour After Effects, Premiere Pro, DaVinci Resolve et Blender.",
+    "what_en": "Asset library for video and motion design: visual effects, 3D elements, music, sound effects and overlays, with plug-ins for After Effects, Premiere Pro, DaVinci Resolve and Blender.",
+    "pricing_model": "Freemium — accès gratuit limité puis abonnement Pro (mensuel ou annuel).",
+    "free_tier": { "exists": true, "detail": "Accès gratuit limité (résolution et catalogue réduits) ; le Pro débloque la 4K, la 3D et les scripts." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (accès limité)" },
+      { "name": "Pro", "price": "abonnement mensuel ou annuel — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Milliers d'assets VFX, 3D, musique et SFX",
+      "Overlays et éléments graphiques prêts à composer",
+      "Plug-ins et intégrations After Effects, Premiere, Resolve, Blender",
+      "Rendu 4K et scripts sur l'abonnement Pro"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous montez des vidéos et voulez des VFX prêts à l'emploi.",
+        "Vous travaillez sur After Effects, Premiere ou Resolve.",
+        "Vous avez besoin d'un flux régulier d'assets variés."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un asset ponctuel.",
+        "Vous préférez créer vos effets de zéro.",
+        "Vous cherchez des modèles 3D de production haut de gamme."
+      ],
+      "threshold": "ProductionCrate est utile si vous consommez régulièrement des VFX et sons pour vos montages ; pour un besoin isolé, un achat à l'unité ailleurs suffit."
+    },
+    "pros": [
+      "Large catalogue VFX, 3D, musique et SFX.",
+      "Plug-ins intégrés aux logiciels de montage courants.",
+      "Palier gratuit pour tester.",
+      "Assets prêts à composer, gain de temps."
+    ],
+    "cons": [
+      "Les meilleurs assets et la 4K sont payants.",
+      "Qualité variable selon les catégories.",
+      "Peu pertinent pour un usage très occasionnel."
+    ],
+    "use_cases": [
+      "Ajouter des explosions ou du feu à un montage.",
+      "Habiller une vidéo avec overlays et transitions.",
+      "Sonoriser un projet avec musiques et SFX."
+    ],
+    "relevant_for": ["Monteurs vidéo", "Motion designers", "Créateurs YouTube"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You edit video and want ready-made VFX.",
+        "You work in After Effects, Premiere or Resolve.",
+        "You need a steady flow of varied assets."
+      ],
+      "avoidIf": [
+        "You only need a one-off asset.",
+        "You prefer building your effects from scratch.",
+        "You need high-end production 3D models."
+      ],
+      "threshold": "ProductionCrate pays off if you regularly use VFX and sound in your edits; for a one-off need, buying a single asset elsewhere is enough."
+    },
+    "pros": [
+      "Large VFX, 3D, music and SFX catalog.",
+      "Plug-ins built into common editing software.",
+      "Free tier to try it out.",
+      "Ready-to-composite assets save time."
+    ],
+    "cons": [
+      "Best assets and 4K are paid.",
+      "Quality varies across categories.",
+      "Little value for very occasional use."
+    ],
+    "use_cases": [
+      "Add explosions or fire to an edit.",
+      "Dress up a video with overlays and transitions.",
+      "Score a project with music and SFX."
+    ]
+  }
+}

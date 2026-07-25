@@ -1,0 +1,88 @@
+{
+  "slug": "powerpoint",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft PowerPoint (site officiel)", "url": "https://www.microsoft.com/microsoft-365/powerpoint" }
+  ],
+  "facts": {
+    "what": "Logiciel de présentation de Microsoft pour créer des diapositives, intégré à la suite Microsoft 365, avec modèles, animations, collaboration et outils d'aide à la conception.",
+    "what_en": "Microsoft's presentation software for building slides, part of the Microsoft 365 suite, with templates, animations, collaboration and design assistance tools.",
+    "pricing_model": "Inclus dans un abonnement Microsoft 365 (personnel, famille ou professionnel) ; version web gratuite limitée.",
+    "free_tier": { "exists": true, "detail": "Version web gratuite avec compte Microsoft ; fonctionnalités complètes via un abonnement Microsoft 365." },
+    "plans": [
+      { "name": "Web (gratuit)", "price": "0 € (compte Microsoft requis)" },
+      { "name": "Microsoft 365 Personnel / Famille", "price": "montants sur la page officielle" },
+      { "name": "Microsoft 365 Business", "price": "abonnement par utilisateur — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Création de diapositives avec modèles et thèmes",
+      "Animations et transitions",
+      "Collaboration en temps réel et coédition",
+      "Outils d'aide à la conception (Designer)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement des présentations professionnelles.",
+        "Vous travaillez déjà dans l'écosystème Microsoft 365.",
+        "Vous avez besoin d'un format universellement reconnu."
+      ],
+      "avoidIf": [
+        "Vous ne faites que de rares présentations très simples.",
+        "Vous préférez un outil de présentation web collaboratif natif.",
+        "Vous voulez éviter tout abonnement Microsoft."
+      ],
+      "threshold": "PowerPoint reste la référence pour des présentations professionnelles et compatibles partout ; pour un usage rare et simple, un outil gratuit web suffit."
+    },
+    "pros": [
+      "Standard de fait, format universellement compatible.",
+      "Modèles, animations et outils riches.",
+      "Collaboration en temps réel via Microsoft 365.",
+      "Version web gratuite disponible."
+    ],
+    "cons": [
+      "Fonctionnalités complètes derrière un abonnement.",
+      "Peut sembler lourd pour des besoins simples.",
+      "Écosystème centré sur Microsoft."
+    ],
+    "use_cases": [
+      "Préparer une présentation client.",
+      "Construire un support de formation.",
+      "Créer un pitch deck professionnel."
+    ],
+    "relevant_for": ["Professionnels", "Formateurs", "Étudiants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create professional presentations.",
+        "You already work in the Microsoft 365 ecosystem.",
+        "You need a universally recognized format."
+      ],
+      "avoidIf": [
+        "You only make rare, very simple presentations.",
+        "You prefer a natively collaborative web presentation tool.",
+        "You want to avoid any Microsoft subscription."
+      ],
+      "threshold": "PowerPoint remains the reference for professional, universally compatible presentations; for rare and simple use, a free web tool is enough."
+    },
+    "pros": [
+      "De facto standard, universally compatible format.",
+      "Rich templates, animations and tools.",
+      "Real-time collaboration via Microsoft 365.",
+      "Free web version available."
+    ],
+    "cons": [
+      "Full features behind a subscription.",
+      "Can feel heavy for simple needs.",
+      "Microsoft-centric ecosystem."
+    ],
+    "use_cases": [
+      "Prepare a client presentation.",
+      "Build training material.",
+      "Create a professional pitch deck."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "mari",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Foundry — Mari (site officiel)", "url": "https://www.foundry.com/products/mari" }
+  ],
+  "facts": {
+    "what": "Logiciel de texture painting 3D de Foundry, conçu pour peindre des textures haute résolution sur des modèles complexes, utilisé en VFX, cinéma et jeux vidéo.",
+    "what_en": "Foundry's 3D texture-painting software, built to paint high-resolution textures on complex models, used in VFX, film and games.",
+    "pricing_model": "Abonnement (utilisateur individuel annuel, ou licences node-locked/floating pour studios) ; location au trimestre possible. Pas de version gratuite.",
+    "free_tier": { "exists": false, "detail": "Essai / version non commerciale selon Foundry ; produit payant, tarifs sur la page officielle." },
+    "plans": [
+      { "name": "Mari Individual (abonnement)", "price": "abonnement annuel — montants sur la page officielle Foundry" },
+      { "name": "Licences studio (node-locked / floating)", "price": "sur devis — montants sur la page officielle Foundry" }
+    ],
+    "key_features": [
+      "Peinture de textures haute résolution multi-canaux",
+      "Gestion de modèles très lourds et de nombreux UDIM",
+      "Prévisualisation PBR et intégration pipeline VFX",
+      "Projection et calques de peinture avancés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous peignez des textures sur des assets 3D complexes et détaillés.",
+        "Vous travaillez en VFX, cinéma ou jeu AAA.",
+        "Vous devez gérer de nombreux UDIM en haute résolution."
+      ],
+      "avoidIf": [
+        "Vous débutez en texturing sur des modèles simples.",
+        "Un usage occasionnel ne justifie pas le coût.",
+        "Vous cherchez une solution gratuite ou grand public."
+      ],
+      "threshold": "Mari s'impose pour du texturing haut de gamme sur assets complexes ; pour des modèles simples ou un usage ponctuel, une solution plus légère suffit."
+    },
+    "pros": [
+      "Gère des textures et modèles très lourds.",
+      "Standard reconnu en VFX et cinéma.",
+      "Support multi-UDIM haute résolution.",
+      "S'intègre aux pipelines de production."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Coût élevé et courbe d'apprentissage marquée.",
+      "Surdimensionné pour des projets simples."
+    ],
+    "use_cases": [
+      "Peindre les textures d'un personnage de film.",
+      "Texturer des assets pour un jeu AAA.",
+      "Préparer des textures haute résolution pour le rendu."
+    ],
+    "relevant_for": ["Texture artists 3D", "Studios VFX / cinéma", "Artistes jeux vidéo AAA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You paint textures on complex, detailed 3D assets.",
+        "You work in VFX, film or AAA games.",
+        "You need to handle many high-resolution UDIMs."
+      ],
+      "avoidIf": [
+        "You're starting out texturing simple models.",
+        "Occasional use doesn't justify the cost.",
+        "You want a free or consumer solution."
+      ],
+      "threshold": "Mari is the pick for high-end texturing on complex assets; for simple models or occasional use, a lighter solution is enough."
+    },
+    "pros": [
+      "Handles very heavy textures and models.",
+      "Recognized standard in VFX and film.",
+      "High-resolution multi-UDIM support.",
+      "Integrates into production pipelines."
+    ],
+    "cons": [
+      "No free version.",
+      "High cost and steep learning curve.",
+      "Overkill for simple projects."
+    ],
+    "use_cases": [
+      "Paint textures for a film character.",
+      "Texture assets for an AAA game.",
+      "Prepare high-resolution textures for rendering."
+    ]
+  }
+}

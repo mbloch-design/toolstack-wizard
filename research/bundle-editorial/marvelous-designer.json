@@ -1,0 +1,89 @@
+{
+  "slug": "marvelous-designer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Marvelous Designer — pricing (site officiel)", "url": "https://www.marvelousdesigner.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de simulation et de création de vêtements 3D, utilisé pour habiller des personnages avec des tissus réalistes destinés au cinéma, aux jeux vidéo et à la mode.",
+    "what_en": "3D clothing simulation and design software used to dress characters with realistic fabrics for film, games and fashion.",
+    "pricing_model": "Abonnement (rental-only) mensuel ou annuel, par édition (Personal, Enterprise/Indie, Student/Academic).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit et offres étudiantes limitées ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Personal", "price": "39 $/mois ou 280 $/an" },
+      { "name": "Student", "price": "8,25 $/mois (éligibilité étudiante)" },
+      { "name": "Academic", "price": "300 $/an" },
+      { "name": "Enterprise", "price": "199 $/mois ou 2 000 $/an" }
+    ],
+    "key_features": [
+      "Simulation de tissu en temps réel",
+      "Patronage 2D synchronisé avec le rendu 3D",
+      "Export vers les principaux outils 3D (Maya, Blender, Cinema 4D)",
+      "Bibliothèque de tissus et de propriétés physiques"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des vêtements 3D pour le cinéma, le jeu ou la mode.",
+        "Vous avez besoin de simulations de tissu réalistes.",
+        "Vous intégrez un pipeline 3D existant (Maya, Blender)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit.",
+        "Vous ne faites pas de personnages ou de textile 3D.",
+        "Un usage très ponctuel ne justifie pas l'abonnement."
+      ],
+      "threshold": "Marvelous Designer s'impose dès que le vêtement 3D réaliste devient central dans votre production ; pour du 3D généraliste, il reste un outil de niche."
+    },
+    "pros": [
+      "Référence pour la simulation de tissu réaliste.",
+      "Patronage 2D intuitif lié au 3D.",
+      "S'intègre aux principaux logiciels 3D.",
+      "Éditions étudiantes accessibles."
+    ],
+    "cons": [
+      "Uniquement en abonnement (plus d'achat perpétuel).",
+      "Courbe d'apprentissage sur le patronage.",
+      "Outil spécialisé, peu utile hors textile."
+    ],
+    "use_cases": [
+      "Habiller un personnage de jeu ou de film.",
+      "Créer un prototype de vêtement pour la mode.",
+      "Produire des drapés et tissus réalistes pour un rendu."
+    ],
+    "relevant_for": ["Artistes 3D personnages", "Studios de jeu/VFX", "Designers de mode 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create 3D clothing for film, games or fashion.",
+        "You need realistic cloth simulation.",
+        "You plug into an existing 3D pipeline (Maya, Blender)."
+      ],
+      "avoidIf": [
+        "You want a free tool.",
+        "You don't work on 3D characters or garments.",
+        "Very occasional use doesn't justify a subscription."
+      ],
+      "threshold": "Marvelous Designer is essential once realistic 3D garments become central to your production; for general 3D it stays a niche tool."
+    },
+    "pros": [
+      "Benchmark for realistic cloth simulation.",
+      "Intuitive 2D patterning linked to 3D.",
+      "Integrates with major 3D software.",
+      "Accessible student editions."
+    ],
+    "cons": [
+      "Subscription only (no perpetual license).",
+      "Learning curve on patterning.",
+      "Specialized tool, limited use beyond textiles."
+    ],
+    "use_cases": [
+      "Dress a game or film character.",
+      "Prototype a garment for fashion.",
+      "Produce realistic drapes and fabrics for a render."
+    ]
+  }
+}

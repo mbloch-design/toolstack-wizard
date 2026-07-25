@@ -1,0 +1,89 @@
+{
+  "slug": "rankmath",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rank Math — tarifs (site officiel)", "url": "https://rankmath.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Extension SEO pour WordPress : elle guide l'optimisation on-page (mots-clés, schema, sitemaps, redirections) et intègre les données Google Search Console et Analytics directement dans le tableau de bord WordPress.",
+    "what_en": "SEO plugin for WordPress: it guides on-page optimization (keywords, schema, sitemaps, redirects) and integrates Google Search Console and Analytics data right inside the WordPress dashboard.",
+    "pricing_model": "Freemium — version gratuite complète puis abonnements annuels PRO / Business / Agency.",
+    "free_tier": { "exists": true, "detail": "Version gratuite riche (mots-clés illimités par article, redirections, 404, GA4, schémas). Les paliers payants sont annuels et ajoutent suivi de position, Content AI et schémas avancés." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "PRO", "price": "abonnement annuel — montants sur la page officielle" },
+      { "name": "Business", "price": "abonnement annuel supérieur (multi-sites)" },
+      { "name": "Agency", "price": "abonnement annuel pour agences (nombreux sites clients)" }
+    ],
+    "key_features": [
+      "Optimisation on-page guidée et score SEO par contenu",
+      "Gestion des schémas (rich snippets) et des sitemaps",
+      "Gestionnaire de redirections et suivi des erreurs 404",
+      "Données Search Console et Analytics dans WordPress"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre site tourne sous WordPress et vous soignez le SEO.",
+        "Vous voulez piloter schémas, redirections et sitemaps facilement.",
+        "Vous appréciez une version gratuite déjà très complète."
+      ],
+      "avoidIf": [
+        "Votre site n'est pas sous WordPress.",
+        "Vous avez déjà un autre plugin SEO qui vous convient.",
+        "Vous voulez un audit SEO externe plutôt qu'on-page."
+      ],
+      "threshold": "Rank Math est un excellent choix SEO pour WordPress, avec une version gratuite généreuse ; hors WordPress, il ne s'applique pas."
+    },
+    "pros": [
+      "Version gratuite très complète.",
+      "Gestion fine des schémas et redirections.",
+      "Intégration Search Console et Analytics.",
+      "Interface d'optimisation guidée claire."
+    ],
+    "cons": [
+      "Réservé à WordPress.",
+      "Abondance d'options qui peut dérouter les débutants.",
+      "Les fonctions avancées demandent un abonnement."
+    ],
+    "use_cases": [
+      "Optimiser chaque article WordPress pour le référencement.",
+      "Mettre en place des données structurées (rich snippets).",
+      "Gérer redirections et erreurs 404 d'un site."
+    ],
+    "relevant_for": ["Éditeurs WordPress", "Blogueurs", "Freelances SEO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your site runs on WordPress and you care about SEO.",
+        "You want easy control of schema, redirects and sitemaps.",
+        "You value a free version that's already very complete."
+      ],
+      "avoidIf": [
+        "Your site isn't on WordPress.",
+        "You already have another SEO plugin you like.",
+        "You want an external SEO audit rather than on-page."
+      ],
+      "threshold": "Rank Math is an excellent SEO choice for WordPress, with a generous free version; outside WordPress it doesn't apply."
+    },
+    "pros": [
+      "Very complete free version.",
+      "Fine control of schema and redirects.",
+      "Search Console and Analytics integration.",
+      "Clear, guided optimization interface."
+    ],
+    "cons": [
+      "WordPress-only.",
+      "Wealth of options can confuse beginners.",
+      "Advanced features require a subscription."
+    ],
+    "use_cases": [
+      "Optimize each WordPress post for search.",
+      "Set up structured data (rich snippets).",
+      "Manage a site's redirects and 404 errors."
+    ]
+  }
+}

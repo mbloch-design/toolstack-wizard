@@ -1,0 +1,88 @@
+{
+  "slug": "podcastle",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Podcastle — pricing (site officiel)", "url": "https://podcastle.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Studio de création audio et vidéo assisté par IA : enregistrement multipiste à distance, édition, transcription, synthèse vocale et clonage de voix pour podcasts et contenus.",
+    "what_en": "AI-powered audio and video creation studio: remote multitrack recording, editing, transcription, text-to-speech and voice cloning for podcasts and content.",
+    "pricing_model": "Freemium par abonnement mensuel, remise en facturation annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan Basic gratuit : enregistrement audio, stockage et fonctionnalités limités." },
+    "plans": [
+      { "name": "Basic (Free)", "price": "0 $ (limites d'enregistrement et de stockage)" },
+      { "name": "Storyteller", "price": "~11,99 $/mois (édition IA, limites étendues)" },
+      { "name": "Pro", "price": "~23,99 $/mois (clonage de voix Revoice, plus de transcription)" }
+    ],
+    "key_features": [
+      "Enregistrement multipiste à distance",
+      "Édition audio assistée par IA",
+      "Transcription et synthèse vocale",
+      "Clonage de voix (Revoice) sur les plans supérieurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous enregistrez des podcasts à distance avec des invités.",
+        "Vous voulez éditer et transcrire rapidement avec l'IA.",
+        "Vous cherchez un studio tout-en-un sans logiciel complexe."
+      ],
+      "avoidIf": [
+        "Vous avez déjà une chaîne d'édition audio professionnelle.",
+        "Vous voulez un contrôle fin sur chaque piste.",
+        "Vos besoins se limitent à un simple enregistreur."
+      ],
+      "threshold": "Podcastle convient à qui veut enregistrer et éditer un podcast avec l'IA sans logiciel lourd ; pour de la post-production experte, une DAW dédiée reste préférable."
+    },
+    "pros": [
+      "Enregistrement à distance simple et multipiste.",
+      "Outils d'édition et de transcription par IA.",
+      "Synthèse vocale et clonage de voix.",
+      "Plan gratuit pour tester."
+    ],
+    "cons": [
+      "Limites d'enregistrement et de stockage en gratuit.",
+      "Contrôle audio moins fin qu'une DAW dédiée.",
+      "Fonctions IA avancées réservées aux plans payants."
+    ],
+    "use_cases": [
+      "Enregistrer un podcast avec un invité à distance.",
+      "Éditer et transcrire un épisode rapidement.",
+      "Générer une voix off par IA."
+    ],
+    "relevant_for": ["Podcasteurs", "Créateurs de contenu", "Freelances audio"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You record podcasts remotely with guests.",
+        "You want to edit and transcribe quickly with AI.",
+        "You want an all-in-one studio without complex software."
+      ],
+      "avoidIf": [
+        "You already have a professional audio editing chain.",
+        "You want fine control over every track.",
+        "Your needs are limited to a simple recorder."
+      ],
+      "threshold": "Podcastle suits those who want to record and edit a podcast with AI without heavy software; for expert post-production, a dedicated DAW is still better."
+    },
+    "pros": [
+      "Simple, multitrack remote recording.",
+      "AI editing and transcription tools.",
+      "Text-to-speech and voice cloning.",
+      "Free plan to try it."
+    ],
+    "cons": [
+      "Recording and storage limits on free.",
+      "Less fine audio control than a dedicated DAW.",
+      "Advanced AI features reserved for paid plans."
+    ],
+    "use_cases": [
+      "Record a podcast with a remote guest.",
+      "Edit and transcribe an episode quickly.",
+      "Generate an AI voiceover."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "promo-com",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Promo.com — tarifs (site officiel)", "url": "https://promo.com/pricing" }
+  ],
+  "facts": {
+    "what": "Créateur de vidéos marketing en ligne : on part de modèles et d'une vaste banque de clips, musiques et images sous licence pour produire rapidement des vidéos promotionnelles et pour les réseaux sociaux.",
+    "what_en": "Online marketing video maker: you start from templates and a large library of licensed clips, music and images to quickly produce promotional and social media videos.",
+    "pricing_model": "Abonnement (mensuel ou annuel), plusieurs paliers. Annuel plus avantageux.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; abonnements Basic, Standard et Pro (mensuels ou annuels, l'annuel étant moins cher)." },
+    "plans": [
+      { "name": "Basic", "price": "environ 29 $/mois en facturation annuelle" },
+      { "name": "Standard", "price": "environ 59 $/mois en facturation annuelle" },
+      { "name": "Pro", "price": "environ 199 $/mois en facturation annuelle (multi-marques, marque blanche)" }
+    ],
+    "key_features": [
+      "Banque de clips, musiques et images sous licence",
+      "Modèles vidéo pour réseaux sociaux et publicités",
+      "Éditeur en ligne simple, redimensionnement multi-formats",
+      "Gestion multi-marques et marque blanche sur le plan Pro"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez souvent de courtes vidéos marketing.",
+        "Vous voulez des visuels sous licence sans chercher ailleurs.",
+        "Vous privilégiez la rapidité via des modèles."
+      ],
+      "avoidIf": [
+        "Vous faites du montage vidéo créatif et sur mesure.",
+        "Vous n'avez qu'un besoin ponctuel.",
+        "Vous voulez un outil gratuit."
+      ],
+      "threshold": "Promo.com convient si vous devez sortir régulièrement des vidéos promo rapides avec des médias licenciés ; pour du montage sur mesure, un éditeur vidéo classique est plus adapté."
+    },
+    "pros": [
+      "Banque de médias sous licence intégrée.",
+      "Modèles pour produire vite.",
+      "Redimensionnement pour chaque réseau social.",
+      "Options multi-marques et marque blanche (Pro)."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Moins de liberté créative qu'un éditeur complet.",
+      "Coût peu justifié pour un usage rare."
+    ],
+    "use_cases": [
+      "Créer une publicité vidéo pour les réseaux.",
+      "Décliner une vidéo en plusieurs formats.",
+      "Alimenter un calendrier social en contenus vidéo."
+    ],
+    "relevant_for": ["Marketeurs", "Petites entreprises", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You often produce short marketing videos.",
+        "You want licensed visuals without hunting elsewhere.",
+        "You value speed through templates."
+      ],
+      "avoidIf": [
+        "You do custom, creative video editing.",
+        "You only have a one-off need.",
+        "You want a free tool."
+      ],
+      "threshold": "Promo.com fits if you must ship quick promo videos with licensed media regularly; for custom editing, a classic video editor is a better fit."
+    },
+    "pros": [
+      "Built-in licensed media library.",
+      "Templates for fast output.",
+      "Resizing for each social network.",
+      "Multi-brand and white-label options (Pro)."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Less creative freedom than a full editor.",
+      "Hard to justify for rare use."
+    ],
+    "use_cases": [
+      "Create a video ad for social media.",
+      "Repurpose a video into multiple formats.",
+      "Feed a social calendar with video content."
+    ]
+  }
+}

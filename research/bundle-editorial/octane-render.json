@@ -1,0 +1,87 @@
+{
+  "slug": "octane-render",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OTOY OctaneRender (site officiel)", "url": "https://home.otoy.com/render/octane-render/" }
+  ],
+  "facts": {
+    "what": "Moteur de rendu 3D GPU non biaisé (path tracing) d'OTOY, avec de nombreuses intégrations DCC et rendu réseau, utilisé pour l'image de synthèse photoréaliste.",
+    "what_en": "OTOY's unbiased GPU 3D render engine (path tracing), with many DCC integrations and network rendering, used for photorealistic CGI.",
+    "pricing_model": "Abonnement annuel (OctaneStudio+), incluant ressources tierces et crédits de rendu ; une licence gratuite limitée existe.",
+    "free_tier": { "exists": true, "detail": "Licence gratuite limitée (sélection de plugins réduite, connexion internet requise) ; pas d'accès complet." },
+    "plans": [
+      { "name": "Licence gratuite", "price": "0 € (plugins limités, en ligne)" },
+      { "name": "OctaneStudio+ 2026", "price": "16,65 €/mois en annuel (packs inclus + crédits de rendu)" }
+    ],
+    "key_features": [
+      "Rendu GPU non biaisé (path tracing) photoréaliste",
+      "20+ intégrations DCC (Cinema 4D, Blender, etc.)",
+      "Rendu réseau multi-nœuds",
+      "Packs de matériaux, textures et HDRI inclus (Studio+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un rendu GPU photoréaliste rapide.",
+        "Vous travaillez avec Cinema 4D, Blender ou un autre DCC intégré.",
+        "Vous voulez du rendu réseau multi-nœuds."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de GPU compatible performant.",
+        "Un usage ponctuel ne justifie pas l'abonnement.",
+        "Vous préférez un moteur de rendu inclus gratuitement dans votre logiciel."
+      ],
+      "threshold": "Octane convient si vous produisez du photoréalisme GPU régulier ; pour un besoin rare, un moteur intégré ou la licence gratuite bridée suffit."
+    },
+    "pros": [
+      "Rendu GPU rapide et photoréaliste.",
+      "Nombreuses intégrations DCC.",
+      "Rendu réseau multi-nœuds.",
+      "Ressources tierces incluses dans l'abonnement."
+    ],
+    "cons": [
+      "Nécessite un GPU performant.",
+      "Modèle par abonnement (plus de licence perpétuelle).",
+      "Licence gratuite très limitée."
+    ],
+    "use_cases": [
+      "Rendre un visuel produit photoréaliste.",
+      "Produire une animation 3D avec rendu réseau.",
+      "Créer des images d'architecture ou de design."
+    ],
+    "relevant_for": ["Artistes 3D / motion", "Studios de visualisation produit", "Archviz"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want fast photorealistic GPU rendering.",
+        "You work with Cinema 4D, Blender or another integrated DCC.",
+        "You want multi-node network rendering."
+      ],
+      "avoidIf": [
+        "You don't have a capable compatible GPU.",
+        "Occasional use doesn't justify a subscription.",
+        "You prefer a render engine bundled free in your software."
+      ],
+      "threshold": "Octane fits if you produce GPU photorealism regularly; for rare needs, a built-in engine or the limited free license is enough."
+    },
+    "pros": [
+      "Fast, photorealistic GPU rendering.",
+      "Many DCC integrations.",
+      "Multi-node network rendering.",
+      "Third-party assets bundled in the subscription."
+    ],
+    "cons": [
+      "Requires a capable GPU.",
+      "Subscription model (no perpetual license).",
+      "Free license is very limited."
+    ],
+    "use_cases": [
+      "Render a photorealistic product visual.",
+      "Produce a 3D animation with network rendering.",
+      "Create architecture or design imagery."
+    ]
+  }
+}

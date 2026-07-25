@@ -1,0 +1,88 @@
+{
+  "slug": "loox",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Loox — tarifs (site officiel)", "url": "https://loox.com/pricing" }
+  ],
+  "facts": {
+    "what": "Application Shopify d'avis clients avec photos et vidéos : elle collecte automatiquement des avis visuels après achat et les affiche pour renforcer la preuve sociale et les ventes.",
+    "what_en": "A Shopify product-reviews app with photos and videos: it automatically collects visual reviews after purchase and displays them to boost social proof and sales.",
+    "pricing_model": "Abonnement mensuel par paliers, indexé sur le volume de commandes mensuelles.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ; abonnement ensuite, par palier de commandes mensuelles." },
+    "plans": [
+      { "name": "Beginner", "price": "9,99 $/mois (jusqu'à 100 commandes/mois)" },
+      { "name": "Scale", "price": "34,99 $/mois (jusqu'à 300 commandes/mois, +Google Shopping)" },
+      { "name": "Unlimited", "price": "299,99 $/mois (commandes illimitées, intégration Klaviyo)" }
+    ],
+    "key_features": [
+      "Collecte automatique d'avis photo et vidéo après achat",
+      "Widgets d'avis et galeries personnalisables",
+      "Demandes d'avis par e-mail avec incitations",
+      "Intégrations Google Shopping et Klaviyo (plans supérieurs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur Shopify et voulez des avis visuels.",
+        "La preuve sociale photo/vidéo est clé pour vos produits.",
+        "Vous voulez automatiser la collecte d'avis après achat."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas sur Shopify.",
+        "Votre volume de commandes rend les paliers trop coûteux.",
+        "Les avis texte simples vous suffisent."
+      ],
+      "threshold": "Loox est pertinent pour une boutique Shopify misant sur les avis photo/vidéo ; hors Shopify ou pour de simples avis texte, une autre solution suffit."
+    },
+    "pros": [
+      "Avis photo et vidéo qui renforcent la conversion.",
+      "Collecte automatisée après achat.",
+      "Widgets soignés et personnalisables.",
+      "Intégrations Google Shopping et Klaviyo."
+    ],
+    "cons": [
+      "Réservé à Shopify.",
+      "Tarif indexé sur le volume de commandes.",
+      "Palier supérieur coûteux pour les gros volumes."
+    ],
+    "use_cases": [
+      "Afficher des avis clients avec photos sur les fiches produit.",
+      "Automatiser les demandes d'avis post-achat.",
+      "Diffuser les avis vers Google Shopping."
+    ],
+    "relevant_for": ["Marchands Shopify", "E-commerçants DTC", "Marques produits visuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on Shopify and want visual reviews.",
+        "Photo/video social proof is key for your products.",
+        "You want to automate post-purchase review collection."
+      ],
+      "avoidIf": [
+        "You're not on Shopify.",
+        "Your order volume makes the tiers too costly.",
+        "Plain text reviews are enough for you."
+      ],
+      "threshold": "Loox fits a Shopify store betting on photo/video reviews; off Shopify or for simple text reviews, another solution is enough."
+    },
+    "pros": [
+      "Photo and video reviews that lift conversion.",
+      "Automated post-purchase collection.",
+      "Polished, customizable widgets.",
+      "Google Shopping and Klaviyo integrations."
+    ],
+    "cons": [
+      "Shopify-only.",
+      "Pricing tied to order volume.",
+      "Top tier is costly for high volumes."
+    ],
+    "use_cases": [
+      "Show photo customer reviews on product pages.",
+      "Automate post-purchase review requests.",
+      "Push reviews to Google Shopping."
+    ]
+  }
+}

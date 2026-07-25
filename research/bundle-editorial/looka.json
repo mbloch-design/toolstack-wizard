@@ -1,0 +1,89 @@
+{
+  "slug": "looka",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Looka — tarifs (site officiel)", "url": "https://looka.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Générateur de logo et de kit de marque assisté par IA : vous répondez à quelques questions, l'outil propose des logos, et vous payez seulement au téléchargement des fichiers.",
+    "what_en": "AI-assisted logo and brand kit generator: you answer a few questions, it suggests logos, and you pay only when you download the files.",
+    "pricing_model": "Achat unique par logo (Basic/Premium) ou abonnement annuel pour le kit de marque et le site.",
+    "free_tier": { "exists": false, "detail": "Création et aperçu gratuits ; paiement requis pour télécharger les fichiers utilisables." },
+    "plans": [
+      { "name": "Basic Logo", "price": "20 $ (achat unique, PNG haute résolution)" },
+      { "name": "Premium Logo", "price": "65 $ (achat unique, fichiers vectoriels SVG/EPS/PDF)" },
+      { "name": "Brand Kit", "price": "96 $/an (300+ éléments de marque)" },
+      { "name": "Brand Kit Web", "price": "129 $/an (kit + site web)" }
+    ],
+    "key_features": [
+      "Génération de logos par IA à partir de préférences",
+      "Fichiers vectoriels et déclinaisons de couleurs (Premium)",
+      "Kit de marque : cartes de visite, réseaux, signatures",
+      "Création de site web intégrée (Brand Kit Web)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un logo correct rapidement, sans designer.",
+        "Vous lancez une petite marque avec un budget serré.",
+        "Vous avez besoin d'un kit d'assets cohérent en plus du logo."
+      ],
+      "avoidIf": [
+        "Vous cherchez une identité sur-mesure et distinctive.",
+        "Vous voulez un rendu unique, non basé sur des gabarits.",
+        "Vous avez déjà un designer ou une charte."
+      ],
+      "threshold": "Looka dépanne pour un logo rapide et abordable ; pour une identité vraiment différenciante, un designer humain reste préférable."
+    },
+    "pros": [
+      "Résultats rapides, sans compétence en design.",
+      "Fichiers vectoriels disponibles pour l'impression.",
+      "Kit de marque cohérent au-delà du logo.",
+      "On ne paie qu'au téléchargement."
+    ],
+    "cons": [
+      "Rendus qui peuvent se ressembler entre utilisateurs.",
+      "Personnalisation limitée face à un designer.",
+      "Kit et site en abonnement annuel."
+    ],
+    "use_cases": [
+      "Créer un premier logo pour une petite entreprise.",
+      "Générer un kit de marque cohérent.",
+      "Décliner un logo pour réseaux et impression."
+    ],
+    "relevant_for": ["Fondateurs de petites entreprises", "Freelances et solopreneurs", "Créateurs sans budget design"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a decent logo quickly, without a designer.",
+        "You're launching a small brand on a tight budget.",
+        "You need a consistent asset kit on top of the logo."
+      ],
+      "avoidIf": [
+        "You want a bespoke, distinctive identity.",
+        "You want a unique result not based on templates.",
+        "You already have a designer or brand guidelines."
+      ],
+      "threshold": "Looka works for a quick, affordable logo; for a truly differentiating identity, a human designer is still preferable."
+    },
+    "pros": [
+      "Fast results, no design skills needed.",
+      "Vector files available for print.",
+      "Consistent brand kit beyond the logo.",
+      "You only pay when you download."
+    ],
+    "cons": [
+      "Results can look similar across users.",
+      "Limited customization versus a designer.",
+      "Kit and site are annual subscriptions."
+    ],
+    "use_cases": [
+      "Create a first logo for a small business.",
+      "Generate a consistent brand kit.",
+      "Adapt a logo for social and print."
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "ltk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LTK — Creator (site officiel)", "url": "https://company.shopltk.com/en/creator" }
+  ],
+  "facts": {
+    "what": "Plateforme de shopping d'influence (ex-LIKEtoKNOW.it) : les créateurs publient des contenus « shoppables » avec liens d'affiliation vers les produits, et touchent des commissions sur les ventes générées.",
+    "what_en": "A creator commerce platform (formerly LIKEtoKNOW.it): creators publish shoppable content with affiliate links to products and earn commissions on the sales they drive.",
+    "pricing_model": "Gratuit pour les créateurs et les acheteurs ; LTK se rémunère via des commissions d'affiliation sur les ventes.",
+    "free_tier": { "exists": true, "detail": "App et outils créateurs gratuits ; monétisation par commissions d'affiliation, sous réserve d'acceptation dans le programme." },
+    "plans": [
+      { "name": "Créateur / Acheteur", "price": "Gratuit (rémunération par commissions d'affiliation)" }
+    ],
+    "key_features": [
+      "Publication de posts et vidéos shoppables",
+      "Liens d'affiliation vers marques partenaires",
+      "Boutique créateur (LTK Shop) suivie par les abonnés",
+      "Suivi des ventes et des commissions"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur mode/beauté/lifestyle et voulez monétiser vos recommandations.",
+        "Votre audience achète les produits que vous montrez.",
+        "Vous voulez des contenus shoppables même sur réseaux fermés."
+      ],
+      "avoidIf": [
+        "Votre niche a peu de marques partenaires sur la plateforme.",
+        "Vous n'avez pas d'audience prête à acheter.",
+        "Vous cherchez un salaire fixe plutôt que des commissions."
+      ],
+      "threshold": "LTK a du sens pour un créateur avec une audience qui achète ; sans communauté engagée ni marques dans votre niche, les revenus d'affiliation restent marginaux."
+    },
+    "pros": [
+      "Gratuit pour créateurs et acheteurs.",
+      "Contenus shoppables même hors plateformes ouvertes.",
+      "Réseau de marques partenaires établi.",
+      "Suivi des ventes et commissions intégré."
+    ],
+    "cons": [
+      "Revenus dépendants d'une audience qui achète.",
+      "Accès créateur soumis à acceptation.",
+      "Catalogue de marques inégal selon les niches."
+    ],
+    "use_cases": [
+      "Monétiser des recommandations produits en affiliation.",
+      "Créer une boutique de créateur suivie par ses abonnés.",
+      "Rendre shoppables des posts Instagram ou TikTok."
+    ],
+    "relevant_for": ["Créateurs mode / beauté", "Influenceurs lifestyle", "Créateurs de contenu commerçant"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a fashion/beauty/lifestyle creator wanting to monetize recommendations.",
+        "Your audience buys the products you show.",
+        "You want shoppable content even on closed social platforms."
+      ],
+      "avoidIf": [
+        "Your niche has few partner brands on the platform.",
+        "You don't have an audience ready to buy.",
+        "You want a fixed salary rather than commissions."
+      ],
+      "threshold": "LTK makes sense for a creator with a buying audience; without an engaged community or brands in your niche, affiliate income stays marginal."
+    },
+    "pros": [
+      "Free for creators and shoppers.",
+      "Shoppable content even off open platforms.",
+      "Established network of partner brands.",
+      "Built-in sales and commission tracking."
+    ],
+    "cons": [
+      "Income depends on a buying audience.",
+      "Creator access is subject to approval.",
+      "Brand catalog varies by niche."
+    ],
+    "use_cases": [
+      "Monetize product recommendations via affiliate links.",
+      "Build a creator shop followed by subscribers.",
+      "Make Instagram or TikTok posts shoppable."
+    ]
+  }
+}

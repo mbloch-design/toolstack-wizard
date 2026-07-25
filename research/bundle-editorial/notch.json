@@ -1,0 +1,88 @@
+{
+  "slug": "notch",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Notch — tarifs (site officiel)", "url": "https://www.notch.one/pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de création de motion design et VFX en temps réel, utilisé pour les visuels de concerts, installations interactives, scéno et contenus vidéo générés en direct.",
+    "what_en": "Real-time motion graphics and VFX authoring software, used for concert visuals, interactive installations, stage design and live-generated video content.",
+    "pricing_model": "Abonnement (mensuel ou annuel) par licence liée au compte, décliné en éditions selon l'usage.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; éditions par abonnement, dont une Indie non commerciale à tarif réduit." },
+    "plans": [
+      { "name": "Indie", "price": "abonnement réduit, usage hobby/non commercial (montants sur la page officielle)" },
+      { "name": "VFX", "price": "abonnement, rendu vidéo pro (montants sur la page officielle)" },
+      { "name": "RFX", "price": "abonnement, sortie temps réel (licence dongle, montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Nodal en temps réel pour motion et VFX",
+      "Rendu vidéo (édition VFX) et sortie live (édition RFX)",
+      "Intégration avec les médias-serveurs de scène",
+      "Effets, particules et simulations GPU"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des visuels temps réel pour la scène ou l'événementiel.",
+        "Vous produisez des installations interactives.",
+        "Vous voulez un outil nodal orienté performance live."
+      ],
+      "avoidIf": [
+        "Vous faites du motion design classique non temps réel.",
+        "Un usage ponctuel ne justifie pas l'abonnement.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Notch s'impose pour les visuels temps réel et le live ; pour du motion design offline classique, un logiciel plus généraliste convient."
+    },
+    "pros": [
+      "Rendu temps réel puissant (GPU).",
+      "Éditions adaptées au rendu vidéo ou au live.",
+      "Intégration avec les médias-serveurs de spectacle.",
+      "Approche nodale flexible."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Courbe d'apprentissage exigeante.",
+      "Édition live (RFX) liée à un dongle."
+    ],
+    "use_cases": [
+      "Concevoir les visuels d'un concert en temps réel.",
+      "Créer une installation interactive.",
+      "Générer du contenu vidéo à la volée pour la scène."
+    ],
+    "relevant_for": ["VJ / artistes visuels", "Studios événementiels", "Designers d'installations interactives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create real-time visuals for stage or live events.",
+        "You build interactive installations.",
+        "You want a node-based tool geared to live performance."
+      ],
+      "avoidIf": [
+        "You do classic non-real-time motion design.",
+        "Occasional use doesn't justify a subscription.",
+        "You want a fully free solution."
+      ],
+      "threshold": "Notch shines for real-time visuals and live shows; for classic offline motion design, a more general tool fits."
+    },
+    "pros": [
+      "Powerful real-time GPU rendering.",
+      "Editions tailored to video render or live output.",
+      "Integrates with show media servers.",
+      "Flexible node-based approach."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Demanding learning curve.",
+      "Live edition (RFX) tied to a dongle."
+    ],
+    "use_cases": [
+      "Design a concert's visuals in real time.",
+      "Build an interactive installation.",
+      "Generate video content on the fly for the stage."
+    ]
+  }
+}

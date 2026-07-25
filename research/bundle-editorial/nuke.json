@@ -1,0 +1,89 @@
+{
+  "slug": "nuke",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Foundry Nuke (site officiel)", "url": "https://www.foundry.com/products/nuke-family" }
+  ],
+  "facts": {
+    "what": "Suite de compositing nodal et VFX de Foundry, standard de l'industrie du cinéma et de la TV, avec conform, éditorial et review dans les éditions supérieures.",
+    "what_en": "Foundry's node-based compositing and VFX suite, an industry standard in film and TV, with conform, editorial and review in higher editions.",
+    "pricing_model": "Abonnement (annuel ou trimestriel) ; plusieurs éditions dont une Indie à revenu limité et une Non-Commercial gratuite mais bridée.",
+    "free_tier": { "exists": true, "detail": "Nuke Non-Commercial gratuit mais filigrané et limité en résolution ; usage non commercial uniquement." },
+    "plans": [
+      { "name": "Non-Commercial", "price": "gratuit (filigrané, 1080p, non commercial)" },
+      { "name": "Nuke Indie", "price": "499 $/an, revenu annuel < 100 000 $ (usage commercial autorisé)" },
+      { "name": "Nuke", "price": "abonnement annuel (montants sur la page officielle)" },
+      { "name": "NukeX / Nuke Studio", "price": "abonnement annuel supérieur (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Compositing nodal complet",
+      "Outils VFX, tracking et deep compositing",
+      "Conform et éditorial (Nuke Studio)",
+      "Pipeline scriptable (Python)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du compositing VFX professionnel pour le film ou la pub.",
+        "Vous travaillez dans un pipeline nodal exigeant.",
+        "Vous avez besoin d'un standard reconnu par les studios."
+      ],
+      "avoidIf": [
+        "Vous voulez seulement du montage vidéo simple.",
+        "Un usage occasionnel ne justifie pas le coût.",
+        "Vous cherchez un outil gratuit pour un projet commercial."
+      ],
+      "threshold": "Nuke s'impose pour le compositing VFX pro ; pour des besoins légers ou non commerciaux, l'édition gratuite ou un autre outil suffit."
+    },
+    "pros": [
+      "Standard de l'industrie VFX.",
+      "Compositing nodal très puissant.",
+      "Édition Indie accessible sous condition de revenu.",
+      "Pipeline scriptable et extensible."
+    ],
+    "cons": [
+      "Éditions pro au tarif élevé.",
+      "Version gratuite filigranée et bridée.",
+      "Courbe d'apprentissage abrupte."
+    ],
+    "use_cases": [
+      "Composer des plans VFX pour un film.",
+      "Intégrer des éléments 3D dans des prises de vues réelles.",
+      "Conformer et reviewer une séquence (Nuke Studio)."
+    ],
+    "relevant_for": ["Compositeurs VFX", "Studios de post-production", "Artistes cinéma/TV"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do professional VFX compositing for film or ads.",
+        "You work in a demanding node-based pipeline.",
+        "You need a studio-recognized standard."
+      ],
+      "avoidIf": [
+        "You only want simple video editing.",
+        "Occasional use doesn't justify the cost.",
+        "You want a free tool for commercial work."
+      ],
+      "threshold": "Nuke is the go-to for pro VFX compositing; for light or non-commercial needs, the free edition or another tool is enough."
+    },
+    "pros": [
+      "Industry-standard for VFX.",
+      "Very powerful node-based compositing.",
+      "Affordable Indie edition under a revenue cap.",
+      "Scriptable, extensible pipeline."
+    ],
+    "cons": [
+      "Pro editions are expensive.",
+      "Free version is watermarked and limited.",
+      "Steep learning curve."
+    ],
+    "use_cases": [
+      "Composite VFX shots for a film.",
+      "Integrate 3D elements into live-action footage.",
+      "Conform and review a sequence (Nuke Studio)."
+    ]
+  }
+}

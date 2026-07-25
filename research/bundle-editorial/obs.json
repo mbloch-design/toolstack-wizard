@@ -1,0 +1,86 @@
+{
+  "slug": "obs",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OBS Studio (site officiel)", "url": "https://obsproject.com/" }
+  ],
+  "facts": {
+    "what": "Logiciel libre et open source d'enregistrement vidéo et de streaming en direct, pour Windows, macOS et Linux, avec scènes, sources multiples et mixeur audio.",
+    "what_en": "Free and open-source software for video recording and live streaming, for Windows, macOS and Linux, with scenes, multiple sources and an audio mixer.",
+    "pricing_model": "Gratuit et open source (licence GPLv2), sans filigrane ni limite, usage commercial autorisé.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, sans filigrane ni limitation ; financé par les dons et les contributeurs." },
+    "plans": [
+      { "name": "OBS Studio", "price": "gratuit (open source, GPLv2)" }
+    ],
+    "key_features": [
+      "Scènes composées de sources multiples (capture, webcam, images, texte)",
+      "Mixeur audio avec filtres par source",
+      "Mode Studio (prévisualisation avant diffusion)",
+      "API pour plugins et scripts"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez streamer ou enregistrer votre écran gratuitement.",
+        "Vous avez besoin de scènes et de sources multiples.",
+        "Vous voulez un outil extensible via plugins."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution ultra-simple sans configuration.",
+        "Vous voulez un montage vidéo avancé intégré.",
+        "Vous préférez un service cloud clés en main."
+      ],
+      "threshold": "OBS est le choix par défaut pour le streaming et l'enregistrement local gratuits ; pour un montage poussé, il faut un logiciel dédié en complément."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Sans filigrane ni limite, usage commercial autorisé.",
+      "Multiplateforme (Windows, macOS, Linux).",
+      "Écosystème de plugins riche."
+    ],
+    "cons": [
+      "Configuration initiale parfois technique.",
+      "Pas de montage vidéo intégré.",
+      "Support communautaire uniquement."
+    ],
+    "use_cases": [
+      "Streamer un gameplay sur Twitch ou YouTube.",
+      "Enregistrer un tutoriel ou une démo à l'écran.",
+      "Produire un webinaire avec plusieurs sources."
+    ],
+    "relevant_for": ["Streamers", "Créateurs de tutoriels", "Formateurs / webinaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to stream or record your screen for free.",
+        "You need scenes and multiple sources.",
+        "You want a tool extensible via plugins."
+      ],
+      "avoidIf": [
+        "You want an ultra-simple, no-config solution.",
+        "You want built-in advanced video editing.",
+        "You prefer a turnkey cloud service."
+      ],
+      "threshold": "OBS is the default for free streaming and local recording; for heavy editing you need a dedicated app alongside it."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "No watermark or limits, commercial use allowed.",
+      "Cross-platform (Windows, macOS, Linux).",
+      "Rich plugin ecosystem."
+    ],
+    "cons": [
+      "Initial setup can be technical.",
+      "No built-in video editing.",
+      "Community support only."
+    ],
+    "use_cases": [
+      "Stream gameplay to Twitch or YouTube.",
+      "Record a screen tutorial or demo.",
+      "Produce a webinar with multiple sources."
+    ]
+  }
+}

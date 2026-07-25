@@ -1,0 +1,89 @@
+{
+  "slug": "linktree",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Linktree — tarifs (site officiel)", "url": "https://linktr.ee/s/pricing" }
+  ],
+  "facts": {
+    "what": "Créateur de page « link-in-bio » : une page unique qui regroupe tous vos liens (réseaux, boutique, contenus) derrière une seule URL à partager, notamment en bio Instagram/TikTok.",
+    "what_en": "A link-in-bio page builder: a single page gathering all your links (socials, shop, content) behind one shareable URL, typically used in Instagram/TikTok bios.",
+    "pricing_model": "Freemium par abonnement mensuel/annuel, avec des frais de vente prélevés sur les produits numériques selon le plan.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permanent avec branding Linktree et frais de vente plus élevés sur les produits numériques." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (branding Linktree, frais de vente les plus élevés)" },
+      { "name": "Starter", "price": "8 $/mois (moins cher en annuel)" },
+      { "name": "Pro", "price": "15 $/mois (moins cher en annuel)" },
+      { "name": "Premium", "price": "35 $/mois (0 % de frais de vente)" }
+    ],
+    "key_features": [
+      "Page de liens personnalisable à URL unique",
+      "Statistiques de clics et d'audience",
+      "Vente de produits numériques et pourboires",
+      "Intégrations réseaux sociaux et outils marketing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez centraliser plusieurs liens derrière une seule URL de bio.",
+        "Vous voulez une mise en ligne immédiate sans savoir-faire technique.",
+        "Vous suivez vos clics pour orienter votre contenu."
+      ],
+      "avoidIf": [
+        "Vous vendez beaucoup en numérique et les frais de vente vous pénalisent.",
+        "Vous avez déjà un vrai site qui joue ce rôle.",
+        "Vous voulez une page sans branding sans passer au plan payant."
+      ],
+      "threshold": "Linktree convient pour centraliser vite ses liens ; dès que la vente de produits ou l'image de marque devient sérieuse, un plan payant ou une solution auto-hébergée se justifie."
+    },
+    "pros": [
+      "Mise en place immédiate, sans code.",
+      "Plan gratuit permanent utilisable.",
+      "Statistiques de clics intégrées.",
+      "Nombreuses intégrations réseaux et paiement."
+    ],
+    "cons": [
+      "Branding Linktree imposé sur le plan gratuit.",
+      "Frais de vente prélevés sur les produits numériques (sauf plan haut).",
+      "Personnalisation limitée face à un vrai site."
+    ],
+    "use_cases": [
+      "Regrouper ses liens en bio Instagram/TikTok.",
+      "Diriger l'audience vers boutique, contenus et contact.",
+      "Vendre des produits numériques ou recevoir des pourboires."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Petites marques / e-commerçants", "Freelances et artistes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to centralize several links behind one bio URL.",
+        "You want to go live instantly with no technical skills.",
+        "You track clicks to steer your content."
+      ],
+      "avoidIf": [
+        "You sell a lot of digital products and seller fees hurt.",
+        "You already have a real site that plays this role.",
+        "You want an unbranded page without upgrading."
+      ],
+      "threshold": "Linktree is great to centralize links fast; once selling products or brand image gets serious, a paid plan or a self-hosted solution makes more sense."
+    },
+    "pros": [
+      "Instant setup, no code.",
+      "Usable permanent free plan.",
+      "Built-in click analytics.",
+      "Many social and payment integrations."
+    ],
+    "cons": [
+      "Linktree branding forced on the free plan.",
+      "Seller fees on digital products (except top plan).",
+      "Limited customization versus a real website."
+    ],
+    "use_cases": [
+      "Gather your links in an Instagram/TikTok bio.",
+      "Route your audience to shop, content and contact.",
+      "Sell digital products or collect tips."
+    ]
+  }
+}

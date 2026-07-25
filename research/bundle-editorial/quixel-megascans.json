@@ -1,0 +1,87 @@
+{
+  "slug": "quixel-megascans",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Quixel Megascans (site officiel)", "url": "https://quixel.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque d'assets 3D photoréalistes issus de scans réels : surfaces, décors, végétation et objets haute fidélité pour le jeu vidéo, le film et la visualisation. Désormais distribuée via Fab (Epic Games).",
+    "what_en": "Library of photorealistic 3D assets from real-world scans: high-fidelity surfaces, environments, foliage and objects for games, film and visualization. Now distributed through Fab (Epic Games).",
+    "pricing_model": "Payant à l'asset ou inclus dans les paliers d'abonnement Fab ; la période d'accès gratuit généralisé a pris fin fin 2024.",
+    "free_tier": { "exists": false, "detail": "L'accès gratuit illimité (2024) est terminé. Les nouveaux assets sont vendus sur Fab (à l'unité ou via abonnement) ; la bibliothèque héritée reste téléchargeable pour les assets déjà acquis, sans nouveaux achats via Bridge." },
+    "plans": [
+      { "name": "Fab — à l'asset", "price": "achat à l'unité — montants sur Fab" },
+      { "name": "Fab — abonnement", "price": "paliers d'abonnement Fab — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Assets 3D scannés, photoréalistes et haute résolution",
+      "Surfaces, décors, végétation et objets prêts à l'emploi",
+      "Intégration Unreal Engine via Fab dans le launcher",
+      "Bibliothèque héritée accessible pour les assets déjà acquis"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des scènes 3D ou des environnements photoréalistes.",
+        "Vous travaillez sur Unreal Engine ou en VFX.",
+        "Vous voulez gagner du temps avec des assets scannés prêts à l'emploi."
+      ],
+      "avoidIf": [
+        "Vous comptiez sur l'ancien accès gratuit illimité.",
+        "Vos projets sont stylisés et non photoréalistes.",
+        "Vous n'avez besoin que d'un ou deux assets isolés."
+      ],
+      "threshold": "Megascans reste une référence pour la 3D photoréaliste, surtout sous Unreal ; mais le modèle a changé (Fab, payant), donc évaluez le coût selon votre volume d'usage."
+    },
+    "pros": [
+      "Qualité de scan photoréaliste haut de gamme.",
+      "Immense catalogue de surfaces et décors.",
+      "Intégration fluide avec Unreal Engine.",
+      "Bibliothèque héritée conservée pour les assets acquis."
+    ],
+    "cons": [
+      "Fin de l'accès gratuit généralisé.",
+      "Migration vers Fab, écosystème en transition.",
+      "Tous les anciens assets ne sont pas migrés."
+    ],
+    "use_cases": [
+      "Habiller un environnement de jeu photoréaliste.",
+      "Composer un décor pour un plan VFX.",
+      "Texturer une scène d'architecture réaliste."
+    ],
+    "relevant_for": ["Artistes 3D", "Développeurs de jeux", "Artistes VFX"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build 3D scenes or photoreal environments.",
+        "You work in Unreal Engine or VFX.",
+        "You want to save time with ready-made scanned assets."
+      ],
+      "avoidIf": [
+        "You counted on the old unlimited free access.",
+        "Your projects are stylized, not photoreal.",
+        "You only need one or two isolated assets."
+      ],
+      "threshold": "Megascans is still a benchmark for photoreal 3D, especially in Unreal; but the model changed (Fab, paid), so weigh cost against your usage volume."
+    },
+    "pros": [
+      "High-end photorealistic scan quality.",
+      "Huge catalog of surfaces and environments.",
+      "Smooth integration with Unreal Engine.",
+      "Legacy library kept for already-acquired assets."
+    ],
+    "cons": [
+      "End of broad free access.",
+      "Migration to Fab, ecosystem in transition.",
+      "Not all legacy assets are being migrated."
+    ],
+    "use_cases": [
+      "Dress a photoreal game environment.",
+      "Build a set for a VFX shot.",
+      "Texture a realistic architecture scene."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "marmoset-toolbag",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Marmoset — Toolbag (site officiel)", "url": "https://marmoset.co/toolbag/" }
+  ],
+  "facts": {
+    "what": "Suite de rendu, de baking de textures et de présentation d'assets 3D en temps réel, utilisée par les artistes pour texturer, présenter et rendre leurs modèles avec un moteur PBR.",
+    "what_en": "A real-time 3D rendering, texture-baking and asset-presentation suite, used by artists to texture, present and render their models with a PBR engine.",
+    "pricing_model": "Licence perpétuelle (achat unique) par utilisateur, avec licences Individual, Studio et Academic ; mises à jour de la version majeure incluses.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ; achat de licence perpétuelle ensuite (tarifs Individual/Studio/Academic)." },
+    "plans": [
+      { "name": "Individual", "price": "à partir de 189 $ (licence perpétuelle par utilisateur)" },
+      { "name": "Studio / Academic", "price": "tarifs studio et académiques — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Baking de maps (normal, ambient occlusion, curvature…)",
+      "Moteur de rendu PBR raster et ray-tracing temps réel",
+      "Présentation interactive et marmosets viewer web",
+      "Support des formats et pipelines 3D standards (USD…)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez baker des maps et présenter des assets 3D.",
+        "Vous voulez un rendu PBR temps réel rapide.",
+        "Vous préférez une licence perpétuelle à un abonnement."
+      ],
+      "avoidIf": [
+        "Vous cherchez un moteur de rendu photoréaliste hors ligne complet.",
+        "Vous ne faites pas de baking ni de présentation d'assets.",
+        "Un usage très ponctuel ne justifie pas l'achat."
+      ],
+      "threshold": "Marmoset Toolbag s'impose pour le baking et la présentation d'assets 3D en temps réel ; pour du rendu photoréaliste offline lourd, un moteur dédié convient mieux."
+    },
+    "pros": [
+      "Baking de textures rapide et fiable.",
+      "Rendu PBR temps réel de qualité.",
+      "Licence perpétuelle avec mises à jour majeures incluses.",
+      "Excellent pour présenter un portfolio 3D."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Moins adapté au rendu photoréaliste offline complexe.",
+      "Outil de niche centré sur les artistes 3D."
+    ],
+    "use_cases": [
+      "Baker les maps d'un asset de jeu.",
+      "Présenter un modèle 3D dans un portfolio interactif.",
+      "Réaliser des rendus de présentation d'assets."
+    ],
+    "relevant_for": ["Artistes 3D / game artists", "Texture et material artists", "Studios de jeux vidéo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to bake maps and present 3D assets.",
+        "You want fast real-time PBR rendering.",
+        "You prefer a perpetual license over a subscription."
+      ],
+      "avoidIf": [
+        "You want a full offline photorealistic render engine.",
+        "You don't do baking or asset presentation.",
+        "Very occasional use doesn't justify the purchase."
+      ],
+      "threshold": "Marmoset Toolbag is the pick for baking and real-time asset presentation; for heavy offline photorealistic rendering, a dedicated engine fits better."
+    },
+    "pros": [
+      "Fast, reliable texture baking.",
+      "Quality real-time PBR rendering.",
+      "Perpetual license with major updates included.",
+      "Great for presenting a 3D portfolio."
+    ],
+    "cons": [
+      "No free version.",
+      "Less suited to complex offline photorealistic rendering.",
+      "Niche tool focused on 3D artists."
+    ],
+    "use_cases": [
+      "Bake the maps of a game asset.",
+      "Present a 3D model in an interactive portfolio.",
+      "Produce asset presentation renders."
+    ]
+  }
+}

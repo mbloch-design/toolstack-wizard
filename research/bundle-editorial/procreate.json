@@ -1,0 +1,88 @@
+{
+  "slug": "procreate",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Procreate (site officiel)", "url": "https://procreate.com" }
+  ],
+  "facts": {
+    "what": "Application de dessin et de peinture numérique pour iPad (et iPhone via Procreate Pocket), appréciée des illustrateurs pour ses pinceaux réactifs et son moteur de rendu optimisé Apple Pencil.",
+    "what_en": "Digital drawing and painting app for iPad (and iPhone via Procreate Pocket), loved by illustrators for its responsive brushes and Apple Pencil-optimized engine.",
+    "pricing_model": "Achat unique (licence perpétuelle) sur l'App Store, sans abonnement ni achat intégré.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite : achat unique. Procreate (iPad), Procreate Pocket (iPhone) et Procreate Dreams (animation) sont vendus séparément." },
+    "plans": [
+      { "name": "Procreate (iPad)", "price": "environ 12,99 $ (achat unique)" },
+      { "name": "Procreate Pocket (iPhone)", "price": "environ 5,99 $ (achat unique)" },
+      { "name": "Procreate Dreams (animation)", "price": "environ 19,99 $ (achat unique)" }
+    ],
+    "key_features": [
+      "Moteur de peinture fluide optimisé pour Apple Pencil",
+      "Vaste bibliothèque de pinceaux personnalisables",
+      "Animation image par image et timelapse d'enregistrement",
+      "Achat unique sans abonnement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dessinez ou illustrez sur iPad avec un Apple Pencil.",
+        "Vous préférez un achat unique à un abonnement.",
+        "Vous voulez une app rapide et centrée sur la peinture."
+      ],
+      "avoidIf": [
+        "Vous travaillez sur Windows ou Android (app iPad/iPhone uniquement).",
+        "Vous avez besoin d'un vrai flux d'édition photo ou de PAO.",
+        "Vous voulez tester gratuitement avant d'acheter."
+      ],
+      "threshold": "Procreate est un excellent choix pour l'illustration sur iPad avec achat unique ; hors écosystème Apple ou pour la retouche photo pro, un autre outil s'impose."
+    },
+    "pros": [
+      "Achat unique, pas d'abonnement.",
+      "Moteur de peinture rapide et naturel.",
+      "Immense choix de pinceaux et de ressources.",
+      "Enregistrement timelapse intégré."
+    ],
+    "cons": [
+      "Réservé à l'écosystème Apple (iPad/iPhone).",
+      "Pas de version gratuite pour essayer.",
+      "Moins outillé pour la retouche photo poussée."
+    ],
+    "use_cases": [
+      "Illustrer un projet du croquis au rendu final.",
+      "Réaliser un character design ou un concept art.",
+      "Animer une courte séquence avec Procreate Dreams."
+    ],
+    "relevant_for": ["Illustrateurs", "Concept artists", "Utilisateurs iPad"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You draw or illustrate on iPad with an Apple Pencil.",
+        "You prefer a one-time purchase over a subscription.",
+        "You want a fast, painting-focused app."
+      ],
+      "avoidIf": [
+        "You work on Windows or Android (iPad/iPhone only).",
+        "You need real photo editing or DTP workflows.",
+        "You want to try it for free before buying."
+      ],
+      "threshold": "Procreate is a great pick for iPad illustration with a one-time buy; outside Apple's ecosystem or for pro photo editing, another tool fits."
+    },
+    "pros": [
+      "One-time purchase, no subscription.",
+      "Fast, natural painting engine.",
+      "Huge choice of brushes and resources.",
+      "Built-in timelapse recording."
+    ],
+    "cons": [
+      "Limited to Apple ecosystem (iPad/iPhone).",
+      "No free version to try.",
+      "Less equipped for heavy photo editing."
+    ],
+    "use_cases": [
+      "Illustrate a project from sketch to final render.",
+      "Create character design or concept art.",
+      "Animate a short sequence with Procreate Dreams."
+    ]
+  }
+}

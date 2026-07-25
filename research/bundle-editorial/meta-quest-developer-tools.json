@@ -1,0 +1,87 @@
+{
+  "slug": "meta-quest-developer-tools",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Meta Horizon OS Developers (site officiel)", "url": "https://developers.meta.com/horizon/" }
+  ],
+  "facts": {
+    "what": "Ensemble d'outils et de SDK gratuits de Meta pour développer des applications VR/MR sur les casques Meta Quest (Meta Quest Developer Hub, Spatial SDK, All-in-One SDK).",
+    "what_en": "Free set of Meta tools and SDKs to build VR/MR apps for Meta Quest headsets (Meta Quest Developer Hub, Spatial SDK, All-in-One SDK).",
+    "pricing_model": "Gratuit (outils et SDK de développement téléchargeables).",
+    "free_tier": { "exists": true, "detail": "Outils et SDK gratuits ; une commission s'applique sur les ventes via le Meta Horizon Store." },
+    "plans": [
+      { "name": "Outils et SDK développeur", "price": "gratuit" },
+      { "name": "Publication sur le Store", "price": "commission Meta sur les ventes d'applications" }
+    ],
+    "key_features": [
+      "Meta Quest Developer Hub (gestion appareils, débogage, déploiement)",
+      "All-in-One SDK pour Unity",
+      "Meta Spatial SDK (Kotlin) pour le mixed reality",
+      "Publication et soumission au Meta Horizon Store"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des apps VR/MR pour Meta Quest.",
+        "Vous travaillez avec Unity ou en natif.",
+        "Vous visez une publication sur le Meta Horizon Store."
+      ],
+      "avoidIf": [
+        "Vous ne ciblez pas l'écosystème Meta Quest.",
+        "Vous ne faites pas de développement XR.",
+        "Vous cherchez un moteur de jeu tout-en-un."
+      ],
+      "threshold": "Ces outils sont incontournables et gratuits dès que vous ciblez le Meta Quest ; hors de cet écosystème, ils n'ont pas d'intérêt."
+    },
+    "pros": [
+      "Entièrement gratuits.",
+      "Officiels et bien intégrés à Unity.",
+      "Couvrent débogage, déploiement et publication.",
+      "SDK Spatial pour le mixed reality."
+    ],
+    "cons": [
+      "Verrouillés à l'écosystème Meta Quest.",
+      "Courbe d'apprentissage XR exigeante.",
+      "Commission Meta sur les ventes du Store."
+    ],
+    "use_cases": [
+      "Développer un jeu VR pour Meta Quest.",
+      "Déboguer et déployer une app sur casque.",
+      "Publier une application sur le Meta Horizon Store."
+    ],
+    "relevant_for": ["Développeurs XR/VR", "Studios de jeu", "Créateurs d'expériences immersives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build VR/MR apps for Meta Quest.",
+        "You work with Unity or natively.",
+        "You aim to publish on the Meta Horizon Store."
+      ],
+      "avoidIf": [
+        "You don't target the Meta Quest ecosystem.",
+        "You don't do XR development.",
+        "You want an all-in-one game engine."
+      ],
+      "threshold": "These tools are essential and free once you target Meta Quest; outside that ecosystem they hold no interest."
+    },
+    "pros": [
+      "Completely free.",
+      "Official and well integrated with Unity.",
+      "Cover debugging, deployment and publishing.",
+      "Spatial SDK for mixed reality."
+    ],
+    "cons": [
+      "Locked to the Meta Quest ecosystem.",
+      "Demanding XR learning curve.",
+      "Meta commission on Store sales."
+    ],
+    "use_cases": [
+      "Build a VR game for Meta Quest.",
+      "Debug and deploy an app to the headset.",
+      "Publish an app on the Meta Horizon Store."
+    ]
+  }
+}

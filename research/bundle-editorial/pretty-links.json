@@ -1,0 +1,89 @@
+{
+  "slug": "pretty-links",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pretty Links — pricing (site officiel)", "url": "https://prettylinks.com/pricing/plans/" }
+  ],
+  "facts": {
+    "what": "Plugin WordPress de gestion de liens : raccourcissement, masquage (cloaking), redirections et suivi des clics, très utilisé pour les liens d'affiliation.",
+    "what_en": "WordPress link management plugin: shortening, cloaking, redirects and click tracking, widely used for affiliate links.",
+    "pricing_model": "Licence annuelle par nombre de sites, avec une version gratuite de base sur WordPress.org.",
+    "free_tier": { "exists": true, "detail": "Version gratuite sur WordPress.org : cloaking de base, redirections 301/302, suivi simple des clics, liens illimités." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (fonctions de base)" },
+      { "name": "Beginner", "price": "99,50 $/an (1 site)" },
+      { "name": "Marketer", "price": "149,50 $/an (2 sites, A/B testing, QR codes)" },
+      { "name": "Super Affiliate", "price": "199,50 $/an (5 sites, tous les addons)" }
+    ],
+    "key_features": [
+      "Masquage et raccourcissement de liens",
+      "Redirections 301/302 et types avancés",
+      "Suivi et rapports de clics",
+      "Rotation de liens (A/B testing) et QR codes sur les plans supérieurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez beaucoup de liens d'affiliation sur WordPress.",
+        "Vous voulez des URL propres et suivies.",
+        "Vous avez besoin de redirections et de rapports de clics."
+      ],
+      "avoidIf": [
+        "Votre site n'est pas sous WordPress.",
+        "Vous n'avez que quelques liens à gérer.",
+        "La version gratuite couvre déjà tous vos besoins."
+      ],
+      "threshold": "Pretty Links s'impose pour gérer des liens d'affiliation à l'échelle sur WordPress ; hors WordPress ou pour quelques liens, un raccourcisseur simple suffit."
+    },
+    "pros": [
+      "Intégration native à WordPress.",
+      "Masquage et redirections avancées.",
+      "Suivi et rapports de clics détaillés.",
+      "Version gratuite fonctionnelle."
+    ],
+    "cons": [
+      "Réservé à WordPress.",
+      "Fonctions avancées derrière la licence payante.",
+      "Licence limitée en nombre de sites selon le plan."
+    ],
+    "use_cases": [
+      "Masquer et suivre des liens d'affiliation.",
+      "Créer des URL courtes et mémorisables.",
+      "Faire de l'A/B testing sur des liens."
+    ],
+    "relevant_for": ["Affiliés", "Blogueurs WordPress", "Marketeurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage many affiliate links on WordPress.",
+        "You want clean, tracked URLs.",
+        "You need redirects and click reports."
+      ],
+      "avoidIf": [
+        "Your site isn't on WordPress.",
+        "You only have a few links to manage.",
+        "The free version already covers your needs."
+      ],
+      "threshold": "Pretty Links makes sense to manage affiliate links at scale on WordPress; outside WordPress or for a few links, a simple shortener is enough."
+    },
+    "pros": [
+      "Native WordPress integration.",
+      "Cloaking and advanced redirects.",
+      "Detailed click tracking and reports.",
+      "Functional free version."
+    ],
+    "cons": [
+      "Limited to WordPress.",
+      "Advanced features behind the paid license.",
+      "License capped by number of sites per plan."
+    ],
+    "use_cases": [
+      "Cloak and track affiliate links.",
+      "Create short, memorable URLs.",
+      "Run A/B testing on links."
+    ]
+  }
+}

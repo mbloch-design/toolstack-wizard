@@ -1,0 +1,87 @@
+{
+  "slug": "logic-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Apple — Logic Pro (site officiel)", "url": "https://www.apple.com/logic-pro/" }
+  ],
+  "facts": {
+    "what": "Station de travail audio numérique (DAW) professionnelle d'Apple pour Mac et iPad, avec une vaste bibliothèque d'instruments, boucles et effets, et des outils de production et mixage avancés.",
+    "what_en": "Apple's professional digital audio workstation (DAW) for Mac and iPad, with a large library of instruments, loops and effects, plus advanced production and mixing tools.",
+    "pricing_model": "Achat unique sur Mac (App Store) ; version iPad par abonnement mensuel/annuel. Réservé à l'écosystème Apple.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ; pas de version gratuite permanente. Achat unique sur Mac, abonnement sur iPad." },
+    "plans": [
+      { "name": "Logic Pro pour Mac", "price": "199,99 $ (achat unique)" },
+      { "name": "Logic Pro pour iPad", "price": "4,99 $/mois ou 49 $/an (abonnement)" }
+    ],
+    "key_features": [
+      "Grande bibliothèque d'instruments logiciels, boucles et effets",
+      "Outils de production assistée (Session Players, mastering)",
+      "Mixage et automation de niveau professionnel",
+      "Écosystème Apple (Mac/iPad), rendu optimisé Apple Silicon"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez de la musique sur Mac ou iPad.",
+        "Vous voulez un DAW complet à achat unique côté Mac.",
+        "Vous exploitez la grande bibliothèque de sons Apple."
+      ],
+      "avoidIf": [
+        "Vous travaillez sur Windows ou Linux.",
+        "Vous voulez un DAW multiplateforme partagé avec des collaborateurs PC.",
+        "Vous cherchez seulement une solution gratuite."
+      ],
+      "threshold": "Logic Pro s'impose pour produire dans l'écosystème Apple ; hors Mac/iPad ou en équipe multiplateforme, un DAW compatible Windows convient mieux."
+    },
+    "pros": [
+      "Achat unique sur Mac, sans abonnement.",
+      "Bibliothèque d'instruments et de boucles très fournie.",
+      "Outils de production et de mixage avancés.",
+      "Optimisé pour le matériel Apple."
+    ],
+    "cons": [
+      "Réservé à l'écosystème Apple (pas de Windows).",
+      "Version iPad par abonnement.",
+      "Courbe d'apprentissage pour les débutants."
+    ],
+    "use_cases": [
+      "Composer et arranger un morceau complet.",
+      "Enregistrer et mixer un projet en studio.",
+      "Produire en mobilité sur iPad."
+    ],
+    "relevant_for": ["Producteurs de musique", "Compositeurs / beatmakers", "Ingénieurs du son sur Mac"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce music on Mac or iPad.",
+        "You want a full DAW with a one-time purchase on Mac.",
+        "You leverage Apple's large sound library."
+      ],
+      "avoidIf": [
+        "You work on Windows or Linux.",
+        "You want a cross-platform DAW shared with PC collaborators.",
+        "You only want a free solution."
+      ],
+      "threshold": "Logic Pro is the pick for producing in Apple's ecosystem; outside Mac/iPad or on a cross-platform team, a Windows-compatible DAW fits better."
+    },
+    "pros": [
+      "One-time purchase on Mac, no subscription.",
+      "Very rich instrument and loop library.",
+      "Advanced production and mixing tools.",
+      "Optimized for Apple hardware."
+    ],
+    "cons": [
+      "Apple-only (no Windows).",
+      "iPad version is subscription-based.",
+      "Learning curve for beginners."
+    ],
+    "use_cases": [
+      "Compose and arrange a full track.",
+      "Record and mix a studio project.",
+      "Produce on the go on iPad."
+    ]
+  }
+}

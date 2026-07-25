@@ -1,0 +1,89 @@
+{
+  "slug": "prezi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Prezi — tarifs (site officiel)", "url": "https://prezi.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil de présentation qui remplace les diapositives linéaires par une toile en zoom : on navigue et on zoome dans un canevas unique pour raconter une histoire non linéaire. Inclut désormais génération IA, vidéo et modèles.",
+    "what_en": "Presentation tool that replaces linear slides with a zoomable canvas: you pan and zoom across a single map to tell a non-linear story. Now includes AI generation, video and templates.",
+    "pricing_model": "Freemium — plan gratuit limité puis abonnements mensuels/annuels (individuel, pro, équipes, éducation).",
+    "free_tier": { "exists": true, "detail": "Plan Basic gratuit mais présentations publiques et visibles par tous ; essai des plans payants disponible." },
+    "plans": [
+      { "name": "Basic", "price": "Gratuit (présentations publiques)" },
+      { "name": "Plus / Individual", "price": "environ 15 $/mois — IA, import, sans filigrane, app bureau" },
+      { "name": "Premium", "price": "environ 25 $/mois — analytics et support prioritaire" },
+      { "name": "Teams", "price": "à partir de ~39 $/utilisateur/mois — collaboration, SSO, brand kit" }
+    ],
+    "key_features": [
+      "Canevas en zoom non linéaire (Prezi Present)",
+      "Génération de présentations et d'images par IA",
+      "Prezi Video pour apparaître à côté du contenu",
+      "Modèles, import PDF/PowerPoint et export"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez sortir du format diapo linéaire pour marquer les esprits.",
+        "Vos présentations racontent une histoire ou un parcours visuel.",
+        "Vous présentez souvent et voulez des analytics d'engagement."
+      ],
+      "avoidIf": [
+        "Vous avez juste besoin de diapositives simples et rapides.",
+        "Vous ne voulez rien de public (le plan gratuit expose vos contenus).",
+        "Le mouvement de zoom donne le mal des transports à votre audience."
+      ],
+      "threshold": "Prezi vaut le coup si l'effet narratif en zoom sert votre message ; pour des slides classiques, un outil de présentation standard suffit."
+    },
+    "pros": [
+      "Format en zoom distinctif et mémorable.",
+      "Génération IA et modèles pour démarrer vite.",
+      "Prezi Video pour les présentations à distance.",
+      "Analytics d'engagement sur les plans supérieurs."
+    ],
+    "cons": [
+      "Le plan gratuit rend les présentations publiques.",
+      "Courbe d'apprentissage face aux diapositives classiques.",
+      "Le zoom peut fatiguer ou distraire l'audience."
+    ],
+    "use_cases": [
+      "Pitch commercial qui doit sortir du lot.",
+      "Présentation pédagogique avec parcours visuel.",
+      "Présentation vidéo pour une audience à distance."
+    ],
+    "relevant_for": ["Commerciaux", "Formateurs et enseignants", "Marketeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to break out of linear slides and stand out.",
+        "Your presentations tell a story or a visual journey.",
+        "You present often and want engagement analytics."
+      ],
+      "avoidIf": [
+        "You just need quick, simple slides.",
+        "You need everything private (the free plan is public).",
+        "The zoom motion makes your audience queasy."
+      ],
+      "threshold": "Prezi is worth it when the zooming narrative serves your message; for classic slides, a standard presentation tool is enough."
+    },
+    "pros": [
+      "Distinctive, memorable zoom format.",
+      "AI generation and templates to start fast.",
+      "Prezi Video for remote presentations.",
+      "Engagement analytics on higher plans."
+    ],
+    "cons": [
+      "Free plan makes presentations public.",
+      "Learning curve versus classic slides.",
+      "Zooming can tire or distract the audience."
+    ],
+    "use_cases": [
+      "A sales pitch that must stand out.",
+      "A teaching presentation with a visual path.",
+      "A video presentation for a remote audience."
+    ]
+  }
+}

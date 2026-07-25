@@ -1,0 +1,89 @@
+{
+  "slug": "pixieset",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pixieset — pricing (site officiel)", "url": "https://pixieset.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme pour photographes réunissant galeries client, boutique d'impression, site web et outils de gestion de studio pour livrer et vendre des photos.",
+    "what_en": "Platform for photographers combining client galleries, a print store, website and studio management tools to deliver and sell photos.",
+    "pricing_model": "Freemium par abonnement mensuel, avec commission sur les ventes uniquement sur le plan gratuit.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : stockage limité, galeries illimitées, boutique intégrée mais commission de 15 % sur les ventes." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (3 Go, commission 15 % sur les ventes)" },
+      { "name": "Basic", "price": "10 $/mois (10 Go, sans commission)" },
+      { "name": "Plus", "price": "20 $/mois (100 Go)" },
+      { "name": "Pro / Ultimate", "price": "~50 $/mois (1 To à illimité)" }
+    ],
+    "key_features": [
+      "Galeries client pour livrer et faire valider les photos",
+      "Boutique d'impression et vente en ligne",
+      "Constructeur de site web pour photographes",
+      "Studio Manager (CRM, contrats, facturation)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe et livrez des galeries à vos clients.",
+        "Vous voulez vendre tirages et fichiers en ligne.",
+        "Vous cherchez à regrouper galerie, site et gestion en un outil."
+      ],
+      "avoidIf": [
+        "Vous ne faites pas de photographie client.",
+        "Un simple partage de fichiers vous suffit.",
+        "Vous voulez éviter toute commission dès le départ (plan gratuit)."
+      ],
+      "threshold": "Pixieset s'impose pour un photographe qui livre et vend des photos ; pour un simple partage ponctuel de fichiers, un outil générique suffit."
+    },
+    "pros": [
+      "Galeries client soignées et professionnelles.",
+      "Boutique d'impression et vente intégrées.",
+      "Suite complète (galerie, site, CRM).",
+      "Plan gratuit pour démarrer."
+    ],
+    "cons": [
+      "Commission sur les ventes en plan gratuit.",
+      "Stockage limité sur les paliers bas.",
+      "Fonctions studio réservées aux plans supérieurs."
+    ],
+    "use_cases": [
+      "Livrer les photos d'un mariage à des clients.",
+      "Vendre des tirages en ligne.",
+      "Gérer contrats et facturation d'un studio photo."
+    ],
+    "relevant_for": ["Photographes professionnels", "Studios photo", "Photographes freelance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a photographer delivering galleries to clients.",
+        "You want to sell prints and files online.",
+        "You want to combine gallery, website and management in one tool."
+      ],
+      "avoidIf": [
+        "You don't do client photography.",
+        "Simple file sharing is enough for you.",
+        "You want to avoid any sales commission from the start (free plan)."
+      ],
+      "threshold": "Pixieset makes sense for a photographer who delivers and sells photos; for occasional file sharing, a generic tool is enough."
+    },
+    "pros": [
+      "Polished, professional client galleries.",
+      "Built-in print store and online sales.",
+      "Full suite (gallery, website, CRM).",
+      "Free plan to get started."
+    ],
+    "cons": [
+      "Sales commission on the free plan.",
+      "Limited storage on lower tiers.",
+      "Studio features reserved for higher plans."
+    ],
+    "use_cases": [
+      "Deliver wedding photos to clients.",
+      "Sell prints online.",
+      "Manage contracts and invoicing for a photo studio."
+    ]
+  }
+}

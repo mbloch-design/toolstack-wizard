@@ -1,0 +1,89 @@
+{
+  "slug": "pro-tools",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Avid Pro Tools (site officiel)", "url": "https://www.avid.com/pro-tools" }
+  ],
+  "facts": {
+    "what": "Station de travail audio numérique (DAW) standard de l'industrie pour l'enregistrement, le montage, le mixage et la post-production audio en studio professionnel.",
+    "what_en": "Industry-standard digital audio workstation (DAW) for professional studio recording, editing, mixing and audio post-production.",
+    "pricing_model": "Abonnement par édition (mensuel ou annuel). Édition Intro gratuite ; réductions étudiants/enseignants.",
+    "free_tier": { "exists": true, "detail": "Pro Tools Intro gratuit (fonctions et pistes limitées) ; les éditions Artist/Studio/Ultimate sont payantes." },
+    "plans": [
+      { "name": "Intro", "price": "Gratuit (version limitée)" },
+      { "name": "Artist", "price": "environ 9,99 $/mois ou 99 $/an" },
+      { "name": "Studio", "price": "environ 34,99 $/mois" },
+      { "name": "Ultimate", "price": "environ 99 $/mois (haut de gamme)" }
+    ],
+    "key_features": [
+      "Enregistrement et montage audio multipiste de référence",
+      "Moteur de mixage et automation professionnels",
+      "Post-production et workflows compatibles studios",
+      "Écosystème de plug-ins AAX et intégration matériel Avid"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en studio pro ou visez ce milieu.",
+        "Vous devez collaborer avec des studios qui imposent ce standard.",
+        "Vous faites de la post-production ou du mixage exigeant."
+      ],
+      "avoidIf": [
+        "Vous débutez et cherchez surtout à produire des beats.",
+        "Vous voulez un abonnement léger ou une licence unique.",
+        "Vos besoins sont couverts par un DAW gratuit ou plus simple."
+      ],
+      "threshold": "Pro Tools s'impose quand la compatibilité studio et la post-production priment ; pour la production maison ou l'apprentissage, un DAW plus abordable convient."
+    },
+    "pros": [
+      "Standard reconnu des studios professionnels.",
+      "Montage et mixage audio d'une grande précision.",
+      "Édition Intro gratuite pour tester.",
+      "Écosystème mature de plug-ins et de matériel."
+    ],
+    "cons": [
+      "Modèle par abonnement peu apprécié de certains.",
+      "Courbe d'apprentissage exigeante.",
+      "Édition haut de gamme au tarif élevé."
+    ],
+    "use_cases": [
+      "Enregistrer et mixer un album en studio.",
+      "Réaliser la post-production audio d'un film.",
+      "Collaborer sur des sessions au standard de l'industrie."
+    ],
+    "relevant_for": ["Ingénieurs du son", "Studios professionnels", "Post-production audio"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in a pro studio or aim to.",
+        "You must collaborate with studios that mandate this standard.",
+        "You do demanding post-production or mixing."
+      ],
+      "avoidIf": [
+        "You're a beginner mainly making beats.",
+        "You want a light subscription or a one-time license.",
+        "A free or simpler DAW already covers your needs."
+      ],
+      "threshold": "Pro Tools is the pick when studio compatibility and post-production matter most; for home production or learning, a cheaper DAW fits."
+    },
+    "pros": [
+      "Recognized standard of professional studios.",
+      "Highly precise audio editing and mixing.",
+      "Free Intro edition to try it out.",
+      "Mature plug-in and hardware ecosystem."
+    ],
+    "cons": [
+      "Subscription model disliked by some.",
+      "Steep learning curve.",
+      "High-end edition is pricey."
+    ],
+    "use_cases": [
+      "Record and mix an album in a studio.",
+      "Handle the audio post-production of a film.",
+      "Collaborate on industry-standard sessions."
+    ]
+  }
+}

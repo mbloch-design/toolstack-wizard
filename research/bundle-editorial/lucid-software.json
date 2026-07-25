@@ -1,0 +1,89 @@
+{
+  "slug": "lucid-software",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lucid — tarifs (site officiel)", "url": "https://lucid.co/pricing" }
+  ],
+  "facts": {
+    "what": "Suite de collaboration visuelle regroupant Lucidchart (diagrammes et schémas), Lucidspark (tableau blanc collaboratif) et Lucidscale (visualisation d'architecture cloud), pour cartographier processus et systèmes en équipe.",
+    "what_en": "A visual collaboration suite bundling Lucidchart (diagrams), Lucidspark (collaborative whiteboard) and Lucidscale (cloud architecture visualization), to map processes and systems as a team.",
+    "pricing_model": "Freemium par abonnement mensuel/annuel et par utilisateur, avec paliers Individual, Team et Enterprise, par produit ou en suite.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec un nombre limité de documents/objets par produit ; fonctions avancées et collaboration étendue en payant." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (documents et fonctionnalités limités)" },
+      { "name": "Individual", "price": "à partir d'environ 8 $/mois (facturé annuellement)" },
+      { "name": "Team", "price": "à partir d'environ 9 $/utilisateur/mois" },
+      { "name": "Enterprise", "price": "sur devis (SSO, provisioning, administration avancée)" }
+    ],
+    "key_features": [
+      "Diagrammes et organigrammes (Lucidchart)",
+      "Tableau blanc collaboratif et brainstorming (Lucidspark)",
+      "Visualisation d'architecture cloud (Lucidscale)",
+      "Collaboration temps réel et intégrations (Google, Microsoft, Atlassian…)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cartographiez des processus, systèmes ou architectures en équipe.",
+        "Vous voulez à la fois diagrammes et tableau blanc.",
+        "Vous avez besoin d'intégrations avec Google, Microsoft ou Atlassian."
+      ],
+      "avoidIf": [
+        "Un simple tableau blanc gratuit vous suffit.",
+        "Vous ne faites que des schémas ponctuels et isolés.",
+        "Vous voulez éviter une tarification par utilisateur."
+      ],
+      "threshold": "Lucid s'impose pour une équipe qui documente processus et systèmes visuellement ; pour du brainstorming occasionnel, un tableau blanc gratuit suffit."
+    },
+    "pros": [
+      "Diagrammes et tableau blanc dans un même écosystème.",
+      "Collaboration en temps réel.",
+      "Nombreuses intégrations (Google, Microsoft, Atlassian).",
+      "Plan gratuit pour démarrer."
+    ],
+    "cons": [
+      "Tarification par utilisateur qui grimpe en équipe.",
+      "Plan gratuit limité en nombre de documents/objets.",
+      "Suite complète pouvant être surdimensionnée pour un usage simple."
+    ],
+    "use_cases": [
+      "Cartographier un processus métier ou un flux d'utilisateur.",
+      "Animer un atelier de brainstorming à distance.",
+      "Documenter une architecture cloud."
+    ],
+    "relevant_for": ["Équipes produit / ingénierie", "Chefs de projet et consultants", "Équipes ops et architectes cloud"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You map processes, systems or architectures as a team.",
+        "You want both diagrams and a whiteboard.",
+        "You need integrations with Google, Microsoft or Atlassian."
+      ],
+      "avoidIf": [
+        "A simple free whiteboard is enough for you.",
+        "You only make occasional, standalone diagrams.",
+        "You want to avoid per-user pricing."
+      ],
+      "threshold": "Lucid is the pick for a team documenting processes and systems visually; for occasional brainstorming, a free whiteboard is enough."
+    },
+    "pros": [
+      "Diagrams and whiteboard in one ecosystem.",
+      "Real-time collaboration.",
+      "Many integrations (Google, Microsoft, Atlassian).",
+      "Free plan to get started."
+    ],
+    "cons": [
+      "Per-user pricing that adds up on teams.",
+      "Free plan limited in documents/objects.",
+      "Full suite can be overkill for simple use."
+    ],
+    "use_cases": [
+      "Map a business process or user flow.",
+      "Run a remote brainstorming workshop.",
+      "Document a cloud architecture."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "motion-array",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Motion Array — pricing (site officiel)", "url": "https://motionarray.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'assets vidéo par abonnement offrant des téléchargements illimités de templates, rushes, musiques, sons et plugins pour le montage (Premiere Pro, After Effects).",
+    "what_en": "Subscription video-asset platform offering unlimited downloads of templates, footage, music, sound and editing plugins for Premiere Pro and After Effects.",
+    "pricing_model": "Abonnement mensuel ou annuel avec téléchargements illimités (plafond quotidien d'usage).",
+    "free_tier": { "exists": false, "detail": "Ressources gratuites limitées ; téléchargements illimités réservés aux abonnés." },
+    "plans": [
+      { "name": "Video Templates / Everything", "price": "à partir d'environ 30 $/mois ou 250 $/an" },
+      { "name": "Everything (annuel)", "price": "environ 24,99 $/mois facturé annuellement" }
+    ],
+    "key_features": [
+      "Téléchargements illimités de templates et d'assets",
+      "Rushes, musiques libres de droits et effets sonores",
+      "Templates Premiere Pro et After Effects",
+      "Plugins et presets de montage, licence universelle"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous montez des vidéos régulièrement.",
+        "Vous avez besoin de templates, musiques et rushes variés.",
+        "Vous travaillez sur Premiere Pro ou After Effects."
+      ],
+      "avoidIf": [
+        "Vous avez un besoin ponctuel d'un seul asset.",
+        "Vous produisez peu de vidéo.",
+        "Vous préférez acheter des éléments à l'unité."
+      ],
+      "threshold": "Motion Array est rentable pour un monteur actif qui consomme beaucoup d'assets ; pour un besoin isolé, l'achat à l'unité suffit."
+    },
+    "pros": [
+      "Téléchargements illimités sur un vaste catalogue.",
+      "Assets vidéo, audio et plugins réunis.",
+      "Licence universelle sur les éléments.",
+      "Bien intégré aux logiciels Adobe."
+    ],
+    "cons": [
+      "Plafond quotidien de téléchargements.",
+      "Abonnement peu rentable en usage rare.",
+      "Catalogue orienté vidéo avant tout."
+    ],
+    "use_cases": [
+      "Habiller un montage avec templates et musique.",
+      "Trouver des rushes libres de droits.",
+      "Ajouter des plugins et presets à Premiere Pro."
+    ],
+    "relevant_for": ["Monteurs vidéo", "Créateurs de contenu", "Motion designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You edit videos regularly.",
+        "You need varied templates, music and footage.",
+        "You work in Premiere Pro or After Effects."
+      ],
+      "avoidIf": [
+        "You need a single asset occasionally.",
+        "You produce little video.",
+        "You'd rather buy items individually."
+      ],
+      "threshold": "Motion Array pays off for an active editor consuming many assets; for a one-off need, buying per item is enough."
+    },
+    "pros": [
+      "Unlimited downloads from a vast catalog.",
+      "Video, audio and plugin assets combined.",
+      "Universal license on items.",
+      "Well integrated with Adobe software."
+    ],
+    "cons": [
+      "Daily download cap.",
+      "Subscription poor value for rare use.",
+      "Catalog is video-first above all."
+    ],
+    "use_cases": [
+      "Dress an edit with templates and music.",
+      "Find royalty-free footage.",
+      "Add plugins and presets to Premiere Pro."
+    ]
+  }
+}

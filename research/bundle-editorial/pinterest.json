@@ -1,0 +1,87 @@
+{
+  "slug": "pinterest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pinterest Business (site officiel)", "url": "https://business.pinterest.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de découverte visuelle où les utilisateurs enregistrent et organisent des images (« épingles ») sur des tableaux, très utilisée pour l'inspiration et le référencement visuel des marques.",
+    "what_en": "Visual discovery platform where users save and organize images (\"pins\") on boards, widely used for inspiration and visual brand discovery.",
+    "pricing_model": "Gratuit pour les utilisateurs et pour un compte business ; monétisation via la publicité (Pinterest Ads).",
+    "free_tier": { "exists": true, "detail": "Comptes personnels et business gratuits ; seule la publicité est payante (enchères)." },
+    "plans": [
+      { "name": "Compte personnel / Business", "price": "gratuit" },
+      { "name": "Pinterest Ads", "price": "budget publicitaire libre (enchères)" }
+    ],
+    "key_features": [
+      "Tableaux et épingles pour organiser le contenu visuel",
+      "Épingles enrichies et épingles produit pour l'e-commerce",
+      "Régie publicitaire Pinterest Ads",
+      "Statistiques d'audience pour les comptes business"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre audience cherche de l'inspiration visuelle (déco, mode, food, DIY).",
+        "Vous vendez des produits à fort attrait visuel.",
+        "Vous voulez un canal de trafic durable via la recherche d'images."
+      ],
+      "avoidIf": [
+        "Votre offre est très technique ou B2B de niche.",
+        "Vous n'avez pas de contenu visuel à publier régulièrement.",
+        "Vous cherchez une conversion immédiate plutôt qu'un trafic de long terme."
+      ],
+      "threshold": "Pinterest vaut le coup pour les marques à univers visuel et intention d'achat ; pour du B2B technique sans visuel, l'effort n'est pas justifié."
+    },
+    "pros": [
+      "Accès et compte business entièrement gratuits.",
+      "Fort potentiel de trafic durable via la recherche visuelle.",
+      "Intention d'achat élevée des utilisateurs.",
+      "Épingles produit adaptées à l'e-commerce."
+    ],
+    "cons": [
+      "Suppose une production visuelle régulière.",
+      "Résultats organiques lents à s'installer.",
+      "Audience concentrée sur certaines thématiques."
+    ],
+    "use_cases": [
+      "Attirer du trafic vers un blog ou une boutique.",
+      "Mettre en avant un catalogue produit visuel.",
+      "Construire une image de marque inspirante."
+    ],
+    "relevant_for": ["Marques e-commerce", "Créateurs de contenu", "Blogueurs lifestyle"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your audience seeks visual inspiration (decor, fashion, food, DIY).",
+        "You sell products with strong visual appeal.",
+        "You want a durable traffic channel via image search."
+      ],
+      "avoidIf": [
+        "Your offering is highly technical or niche B2B.",
+        "You have no visual content to publish regularly.",
+        "You want immediate conversion rather than long-term traffic."
+      ],
+      "threshold": "Pinterest is worth it for visually driven brands with buying intent; for technical B2B with no visuals, the effort isn't justified."
+    },
+    "pros": [
+      "Fully free access and business account.",
+      "Strong potential for durable traffic via visual search.",
+      "High user buying intent.",
+      "Product pins suited to e-commerce."
+    ],
+    "cons": [
+      "Requires regular visual production.",
+      "Organic results are slow to build.",
+      "Audience concentrated on certain themes."
+    ],
+    "use_cases": [
+      "Drive traffic to a blog or store.",
+      "Showcase a visual product catalog.",
+      "Build an inspiring brand image."
+    ]
+  }
+}

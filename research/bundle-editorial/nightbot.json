@@ -1,0 +1,87 @@
+{
+  "slug": "nightbot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Nightbot (site officiel)", "url": "https://nightbot.tv/" }
+  ],
+  "facts": {
+    "what": "Chatbot hébergé dans le cloud pour Twitch, YouTube et Trovo : modération du chat, commandes personnalisées, timers et gestion des demandes de musique.",
+    "what_en": "Cloud-hosted chat bot for Twitch, YouTube and Trovo: chat moderation, custom commands, timers and song-request management.",
+    "pricing_model": "Gratuit, avec une offre payante optionnelle (Nightbot Plus).",
+    "free_tier": { "exists": true, "detail": "Toutes les fonctions principales gratuites ; Nightbot Plus ajoute des avantages moyennant un abonnement." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (fonctions principales)" },
+      { "name": "Nightbot Plus", "price": "abonnement mensuel (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Modération automatique du chat (filtres, spam, liens)",
+      "Commandes personnalisées et réponses automatiques",
+      "Timers pour messages récurrents",
+      "Gestion des demandes de musique (YouTube, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous streamez sur Twitch ou YouTube et voulez modérer le chat.",
+        "Vous cherchez une solution cloud sans rien installer.",
+        "Vous voulez des commandes et timers automatisés."
+      ],
+      "avoidIf": [
+        "Vous ne diffusez pas en direct.",
+        "Vous avez besoin d'intégrations très avancées propres à un autre bot.",
+        "Vous préférez un bot auto-hébergé que vous contrôlez entièrement."
+      ],
+      "threshold": "Nightbot suffit pour la plupart des streamers ; pour des automatisations très poussées, un bot spécialisé peut être préférable."
+    },
+    "pros": [
+      "Entièrement cloud, aucune installation.",
+      "Fonctions principales gratuites.",
+      "Commandes et timers faciles à configurer.",
+      "Compatible Twitch, YouTube et Trovo."
+    ],
+    "cons": [
+      "Moins d'automatisations avancées que certains concurrents.",
+      "Dépendance à un service tiers hébergé.",
+      "Personnalisation limitée hors des commandes standard."
+    ],
+    "use_cases": [
+      "Modérer automatiquement le chat d'un stream.",
+      "Répondre aux questions récurrentes via commandes.",
+      "Gérer une file de demandes de musique."
+    ],
+    "relevant_for": ["Streamers Twitch", "Créateurs YouTube live", "Modérateurs de communauté"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You stream on Twitch or YouTube and want chat moderation.",
+        "You want a cloud solution with nothing to install.",
+        "You want automated commands and timers."
+      ],
+      "avoidIf": [
+        "You don't broadcast live.",
+        "You need very advanced integrations specific to another bot.",
+        "You prefer a self-hosted bot you fully control."
+      ],
+      "threshold": "Nightbot is enough for most streamers; for very advanced automation a specialized bot may be better."
+    },
+    "pros": [
+      "Fully cloud, no installation.",
+      "Core features are free.",
+      "Easy to set up commands and timers.",
+      "Works with Twitch, YouTube and Trovo."
+    ],
+    "cons": [
+      "Fewer advanced automations than some rivals.",
+      "Reliance on a third-party hosted service.",
+      "Limited customization beyond standard commands."
+    ],
+    "use_cases": [
+      "Automatically moderate a stream's chat.",
+      "Answer recurring questions via commands.",
+      "Manage a song-request queue."
+    ]
+  }
+}

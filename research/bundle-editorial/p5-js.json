@@ -1,0 +1,86 @@
+{
+  "slug": "p5-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "p5.js (site officiel)", "url": "https://p5js.org/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript de creative coding, héritière de Processing, pensée pour rendre le code visuel accessible aux artistes, designers et débutants dans le navigateur.",
+    "what_en": "JavaScript library for creative coding, heir to Processing, designed to make visual code accessible to artists, designers and beginners in the browser.",
+    "pricing_model": "Gratuit et open source (soutenu par la Processing Foundation).",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source ; éditeur web en ligne également gratuit, sans installation." },
+    "plans": [
+      { "name": "p5.js", "price": "gratuit (open source)" }
+    ],
+    "key_features": [
+      "API de dessin complète (formes, animation, interaction)",
+      "Support audio, vidéo, webcam et texte",
+      "Éditeur web en ligne sans installation",
+      "Communauté et documentation orientées pédagogie"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du creative coding ou de l'art génératif.",
+        "Vous débutez et voulez apprendre le code visuel en douceur.",
+        "Vous voulez publier des sketches interactifs sur le web."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil no-code sans programmation.",
+        "Vous avez besoin de rendu 3D haute performance natif.",
+        "Vous voulez une application desktop complète clés en main."
+      ],
+      "threshold": "p5.js est idéal pour apprendre et créer du visuel interactif sur le web ; pour de la 3D lourde ou du no-code, un autre outil convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Très accessible aux débutants.",
+      "Éditeur web sans installation.",
+      "Communauté et ressources pédagogiques riches."
+    ],
+    "cons": [
+      "Nécessite d'écrire du code JavaScript.",
+      "Moins adapté à la 3D très performante.",
+      "Performances limitées pour de très gros projets."
+    ],
+    "use_cases": [
+      "Créer une animation ou de l'art génératif dans le navigateur.",
+      "Prototyper une data-visualisation interactive.",
+      "Apprendre les bases de la programmation créative."
+    ],
+    "relevant_for": ["Artistes / creative coders", "Enseignants et étudiants", "Designers interactifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do creative coding or generative art.",
+        "You're a beginner wanting a gentle path into visual code.",
+        "You want to publish interactive sketches on the web."
+      ],
+      "avoidIf": [
+        "You want a no-code tool without programming.",
+        "You need native high-performance 3D rendering.",
+        "You want a full turnkey desktop application."
+      ],
+      "threshold": "p5.js is ideal to learn and build interactive visuals on the web; for heavy 3D or no-code, another tool fits better."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Very beginner-friendly.",
+      "Web editor with no installation.",
+      "Rich community and learning resources."
+    ],
+    "cons": [
+      "Requires writing JavaScript code.",
+      "Less suited to very high-performance 3D.",
+      "Limited performance on very large projects."
+    ],
+    "use_cases": [
+      "Create an animation or generative art in the browser.",
+      "Prototype an interactive data visualization.",
+      "Learn the basics of creative programming."
+    ]
+  }
+}

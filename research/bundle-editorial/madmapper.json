@@ -1,0 +1,88 @@
+{
+  "slug": "madmapper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "MadMapper — logiciel (site officiel)", "url": "https://madmapper.com/madmapper/software" }
+  ],
+  "facts": {
+    "what": "Logiciel de mapping vidéo et de contrôle lumière : il projette des visuels sur des surfaces et volumes (bâtiments, objets, scènes) et pilote des LED, pour installations, spectacles et VJing.",
+    "what_en": "Video mapping and light-control software: it projects visuals onto surfaces and volumes (buildings, objects, stages) and drives LEDs, for installations, shows and VJing.",
+    "pricing_model": "Licence perpétuelle (achat unique) ou licence temporaire par abonnement mensuel ; version gratuite avec sortie filigranée.",
+    "free_tier": { "exists": true, "detail": "Version gratuite utilisable mais avec sortie filigranée ; licence perpétuelle ou temporaire pour lever la limite." },
+    "plans": [
+      { "name": "Version gratuite", "price": "0 € (sortie filigranée)" },
+      { "name": "Licence temporaire", "price": "à partir de 44 €/mois" },
+      { "name": "Licence perpétuelle", "price": "à partir de 479 € (achat unique)" }
+    ],
+    "key_features": [
+      "Mapping de projection sur surfaces et volumes",
+      "Contrôle de LED et de matériel lumière",
+      "Gestion de médias vidéo et masques",
+      "Synchronisation audio et intégrations pour le live"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous réalisez des installations de mapping ou du VJing.",
+        "Vous devez piloter projection et LED ensemble.",
+        "Vous voulez une licence perpétuelle plutôt qu'un abonnement."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de projet de projection ou de scène.",
+        "Un usage très ponctuel ne justifie pas l'achat.",
+        "Vous voulez un outil de montage vidéo classique."
+      ],
+      "threshold": "MadMapper s'impose pour du mapping et du contrôle lumière ; sans projet de projection ou de scène, il n'a pas d'usage."
+    },
+    "pros": [
+      "Référence du mapping de projection.",
+      "Contrôle combiné projection et LED.",
+      "Licence perpétuelle disponible.",
+      "Version gratuite pour tester."
+    ],
+    "cons": [
+      "Sortie filigranée sur la version gratuite.",
+      "Outil de niche à la prise en main technique.",
+      "Nécessite un matériel de projection/LED adapté."
+    ],
+    "use_cases": [
+      "Projeter des visuels sur un bâtiment ou un décor.",
+      "Piloter une installation LED artistique.",
+      "Assurer les visuels d'un concert ou d'un événement."
+    ],
+    "relevant_for": ["VJs et vidéastes live", "Scénographes / créateurs d'installations", "Techniciens événementiel"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build mapping installations or do VJing.",
+        "You need to drive projection and LEDs together.",
+        "You prefer a perpetual license over a subscription."
+      ],
+      "avoidIf": [
+        "You have no projection or stage project.",
+        "Very occasional use doesn't justify the purchase.",
+        "You want a classic video editor."
+      ],
+      "threshold": "MadMapper is the pick for projection mapping and light control; without a projection or stage project, it has no use."
+    },
+    "pros": [
+      "A reference for projection mapping.",
+      "Combined projection and LED control.",
+      "Perpetual license available.",
+      "Free version to test."
+    ],
+    "cons": [
+      "Watermarked output on the free version.",
+      "Niche tool with a technical learning curve.",
+      "Requires suitable projection/LED hardware."
+    ],
+    "use_cases": [
+      "Project visuals onto a building or a set.",
+      "Drive an artistic LED installation.",
+      "Handle visuals for a concert or event."
+    ]
+  }
+}

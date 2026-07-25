@@ -1,0 +1,89 @@
+{
+  "slug": "prowritingaid",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ProWritingAid (site officiel)", "url": "https://prowritingaid.com" }
+  ],
+  "facts": {
+    "what": "Assistant d'écriture et correcteur de style pour l'anglais : au-delà de la grammaire, il analyse la lisibilité, les répétitions, le rythme des phrases et propose des rapports détaillés, particulièrement prisé des auteurs de fiction.",
+    "what_en": "Writing assistant and style editor for English: beyond grammar, it analyzes readability, repetition and sentence pacing, offering detailed reports, especially popular with fiction authors.",
+    "pricing_model": "Freemium — plan gratuit limité puis abonnements Premium / Premium Pro (mensuel, annuel) et licence à vie.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité (nombre de mots restreint). Premium et Premium Pro en mensuel/annuel ; option licence à vie." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (limite de mots)" },
+      { "name": "Premium", "price": "environ 120 $/an" },
+      { "name": "Premium Pro", "price": "environ 144 $/an (crédits IA inclus)" },
+      { "name": "Lifetime", "price": "environ 399 $ (Premium) — achat unique" }
+    ],
+    "key_features": [
+      "Correction grammaticale et stylistique avancée",
+      "Rapports détaillés (lisibilité, répétitions, rythme, adverbes)",
+      "Suggestions IA de réécriture (paliers supérieurs)",
+      "Intégrations navigateur, Word, Scrivener, Google Docs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez de longs textes en anglais et voulez soigner le style.",
+        "Vous êtes auteur de fiction et aimez les rapports détaillés.",
+        "Vous voulez plus qu'un simple correcteur grammatical."
+      ],
+      "avoidIf": [
+        "Vous écrivez surtout dans une autre langue que l'anglais.",
+        "Vous voulez juste corriger vite quelques fautes.",
+        "Les rapports détaillés vous semblent superflus."
+      ],
+      "threshold": "ProWritingAid vaut le coup pour retravailler en profondeur des textes en anglais ; pour une correction rapide ou une autre langue, un correcteur plus léger suffit."
+    },
+    "pros": [
+      "Analyse de style bien plus poussée que la seule grammaire.",
+      "Rapports utiles pour l'écriture longue et la fiction.",
+      "Nombreuses intégrations (Word, Scrivener, navigateur).",
+      "Option licence à vie possible."
+    ],
+    "cons": [
+      "Centré sur l'anglais.",
+      "Beaucoup de rapports : un peu intimidant au départ.",
+      "Le plan gratuit est limité en volume."
+    ],
+    "use_cases": [
+      "Éditer un manuscrit de roman.",
+      "Fluidifier des articles ou rapports en anglais.",
+      "Traquer répétitions et tics d'écriture."
+    ],
+    "relevant_for": ["Auteurs de fiction", "Rédacteurs anglophones", "Étudiants et chercheurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You write long-form English and want to polish style.",
+        "You're a fiction author who values detailed reports.",
+        "You want more than a basic grammar checker."
+      ],
+      "avoidIf": [
+        "You mostly write in a language other than English.",
+        "You just want quick error fixes.",
+        "Detailed reports feel like overkill to you."
+      ],
+      "threshold": "ProWritingAid is worth it to deeply rework English writing; for quick proofreading or another language, a lighter checker is enough."
+    },
+    "pros": [
+      "Style analysis far beyond grammar.",
+      "Reports useful for long-form and fiction.",
+      "Many integrations (Word, Scrivener, browser).",
+      "Lifetime license option available."
+    ],
+    "cons": [
+      "English-focused.",
+      "Lots of reports: a bit intimidating at first.",
+      "Free plan is limited in volume."
+    ],
+    "use_cases": [
+      "Edit a novel manuscript.",
+      "Smooth out English articles or reports.",
+      "Hunt down repetition and writing tics."
+    ]
+  }
+}

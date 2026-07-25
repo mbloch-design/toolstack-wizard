@@ -1,0 +1,89 @@
+{
+  "slug": "masv",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "MASV — pricing (site officiel)", "url": "https://massive.io/pricing/" }
+  ],
+  "facts": {
+    "what": "Service de transfert de gros fichiers à haute vitesse, pensé pour les équipes vidéo et créatives qui envoient des rushes et médias volumineux.",
+    "what_en": "High-speed large-file transfer service built for video and creative teams sending heavy footage and media.",
+    "pricing_model": "Usage-based (paiement au Go sortant) avec option abonnement et pré-achat de volume.",
+    "free_tier": { "exists": true, "detail": "15 Go de transfert offerts chaque mois, puis facturation à l'usage." },
+    "plans": [
+      { "name": "Pay As You Go", "price": "0,25 $/Go après 15 Go gratuits/mois" },
+      { "name": "Subscription", "price": "à partir de 58 $/mois (paquets 250 Go à 5 To)" },
+      { "name": "Pre-buy", "price": "à partir de 1 229 $ (5 To à 25 To)" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Transfert de fichiers de plusieurs To sans limite de taille",
+      "Accélération réseau multi-connexion",
+      "Portails de réception personnalisés (Portals)",
+      "Intégrations cloud (S3, Google Drive, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez régulièrement des fichiers vidéo très volumineux.",
+        "Vous voulez payer uniquement ce que vous transférez.",
+        "Vous collaborez avec des clients ou monteurs distants."
+      ],
+      "avoidIf": [
+        "Vos fichiers sont légers et occasionnels.",
+        "Vous avez déjà un stockage cloud partagé suffisant.",
+        "Vous voulez un coût fixe totalement prévisible."
+      ],
+      "threshold": "MASV devient rentable dès que les gros transferts vidéo sont fréquents ; pour des envois légers, un stockage cloud classique suffit."
+    },
+    "pros": [
+      "Aucune limite de taille de fichier.",
+      "Vitesse de transfert élevée.",
+      "Modèle à l'usage sans engagement lourd.",
+      "Portails de réception pratiques pour les clients."
+    ],
+    "cons": [
+      "Coût au Go qui grimpe vite en gros volume.",
+      "Moins pertinent pour de petits fichiers.",
+      "Pas un espace de stockage permanent."
+    ],
+    "use_cases": [
+      "Envoyer des rushes 4K à un monteur distant.",
+      "Recevoir des livrables lourds via un portail client.",
+      "Transférer des médias vers un stockage cloud."
+    ],
+    "relevant_for": ["Monteurs vidéo", "Studios de production", "Photographes/vidéastes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly send very large video files.",
+        "You want to pay only for what you transfer.",
+        "You collaborate with remote clients or editors."
+      ],
+      "avoidIf": [
+        "Your files are light and occasional.",
+        "You already have enough shared cloud storage.",
+        "You want a fully predictable fixed cost."
+      ],
+      "threshold": "MASV pays off once large video transfers are frequent; for light sends, regular cloud storage is enough."
+    },
+    "pros": [
+      "No file size limit.",
+      "High transfer speed.",
+      "Usage-based model with no heavy commitment.",
+      "Handy receiving portals for clients."
+    ],
+    "cons": [
+      "Per-GB cost adds up fast at high volume.",
+      "Less relevant for small files.",
+      "Not a permanent storage space."
+    ],
+    "use_cases": [
+      "Send 4K footage to a remote editor.",
+      "Receive heavy deliverables via a client portal.",
+      "Transfer media to cloud storage."
+    ]
+  }
+}

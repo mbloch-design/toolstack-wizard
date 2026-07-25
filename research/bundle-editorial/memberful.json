@@ -1,0 +1,88 @@
+{
+  "slug": "memberful",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Memberful — pricing (site officiel)", "url": "https://memberful.com" }
+  ],
+  "facts": {
+    "what": "Outil de gestion d'abonnements et d'adhésions pour créateurs, permettant de vendre du contenu premium et de gérer les membres depuis son propre site.",
+    "what_en": "Membership and subscription management tool for creators, letting them sell premium content and manage members from their own site.",
+    "pricing_model": "Freemium : plan gratuit avec commission sur les transactions, plans payants mensuels avec commission réduite (hors frais Stripe).",
+    "free_tier": { "exists": true, "detail": "Plan Starter gratuit avec une commission de 10 % sur les transactions." },
+    "plans": [
+      { "name": "Starter", "price": "gratuit + 10 % de commission" },
+      { "name": "Pro", "price": "25 $/mois + 4,9 % de commission" },
+      { "name": "Premium", "price": "100 $/mois + 4,9 % de commission" }
+    ],
+    "key_features": [
+      "Adhésions et abonnements payants récurrents",
+      "Intégration à votre propre site (WordPress, etc.)",
+      "Paiements via Stripe",
+      "Gestion des membres, e-mails et niveaux d'accès"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des adhésions depuis votre propre site.",
+        "Vous voulez garder le contrôle de votre audience.",
+        "Vous démarrez et préférez sans coût fixe au départ."
+      ],
+      "avoidIf": [
+        "Vous voulez une plateforme tout-en-un hébergée.",
+        "Un fort volume rend la commission trop lourde.",
+        "Vous ne vendez pas de contenu récurrent."
+      ],
+      "threshold": "Memberful convient pour monétiser une audience sur son propre site ; à fort volume, un plan avec commission réduite ou une autre solution devient plus avantageux."
+    },
+    "pros": [
+      "Plan gratuit pour démarrer sans coût fixe.",
+      "S'intègre à votre site existant.",
+      "Vous restez propriétaire de votre audience.",
+      "Gestion des membres et paiements simple."
+    ],
+    "cons": [
+      "Commission sur chaque transaction.",
+      "Dépendance à Stripe et à ses frais.",
+      "Moins d'outils de cours qu'une plateforme dédiée."
+    ],
+    "use_cases": [
+      "Vendre un contenu premium en abonnement.",
+      "Gérer une communauté payante sur son site.",
+      "Ajouter une adhésion à un blog ou une newsletter."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Médias indépendants", "Podcasteurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell memberships from your own site.",
+        "You want to keep control of your audience.",
+        "You're starting and prefer no upfront fixed cost."
+      ],
+      "avoidIf": [
+        "You want an all-in-one hosted platform.",
+        "High volume makes the commission too heavy.",
+        "You don't sell recurring content."
+      ],
+      "threshold": "Memberful fits to monetize an audience on your own site; at high volume, a reduced-commission plan or another solution becomes better value."
+    },
+    "pros": [
+      "Free plan to start with no fixed cost.",
+      "Integrates with your existing site.",
+      "You stay the owner of your audience.",
+      "Simple member and payment management."
+    ],
+    "cons": [
+      "Commission on every transaction.",
+      "Reliance on Stripe and its fees.",
+      "Fewer course tools than a dedicated platform."
+    ],
+    "use_cases": [
+      "Sell premium content on subscription.",
+      "Manage a paid community on your site.",
+      "Add a membership to a blog or newsletter."
+    ]
+  }
+}

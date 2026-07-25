@@ -1,0 +1,89 @@
+{
+  "slug": "planoly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Planoly — pricing (site officiel)", "url": "https://www.planoly.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de planification et de programmation visuelle pour les réseaux sociaux (Instagram, Pinterest, TikTok, Facebook, LinkedIn, etc.), avec aperçu du feed et calendrier de contenu.",
+    "what_en": "Visual planning and scheduling tool for social media (Instagram, Pinterest, TikTok, Facebook, LinkedIn, etc.), with feed preview and content calendar.",
+    "pricing_model": "Abonnement mensuel par paliers, avec un petit plan gratuit limité et remise en facturation annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité à un faible nombre de publications ; peu viable sur la durée." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (uploads limités)" },
+      { "name": "Growth", "price": "~28 $/mois (uploads illimités, un jeu de comptes)" },
+      { "name": "Pro", "price": "~43 $/mois" },
+      { "name": "Pro Plus", "price": "montants sur la page officielle (monétisation Creator Store)" }
+    ],
+    "key_features": [
+      "Aperçu visuel du feed avant publication",
+      "Calendrier et programmation multi-réseaux",
+      "Statistiques et analyse d'audience",
+      "Outils de monétisation créateurs (Creator Store)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous soignez l'esthétique de votre feed Instagram ou Pinterest.",
+        "Vous programmez du contenu sur plusieurs réseaux.",
+        "Vous êtes créateur et voulez planifier visuellement."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un seul réseau et peu de publications.",
+        "L'aperçu visuel du feed ne vous intéresse pas.",
+        "Vous cherchez surtout des workflows d'équipe complexes."
+      ],
+      "threshold": "Planoly convient aux créateurs et marques attachés à l'esthétique du feed ; pour de la simple programmation ponctuelle, un outil plus léger suffit."
+    },
+    "pros": [
+      "Aperçu visuel du feed avant publication.",
+      "Programmation multi-réseaux centralisée.",
+      "Interface pensée pour les créateurs.",
+      "Palier gratuit pour tester."
+    ],
+    "cons": [
+      "Plan gratuit très limité en uploads.",
+      "Fonctions avancées réservées aux paliers hauts.",
+      "Moins orienté gestion d'équipe volumineuse."
+    ],
+    "use_cases": [
+      "Planifier l'esthétique d'un feed Instagram.",
+      "Programmer une semaine de contenu multi-réseaux.",
+      "Monétiser son audience via le Creator Store."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Community managers", "Petites marques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You care about the aesthetics of your Instagram or Pinterest feed.",
+        "You schedule content across several networks.",
+        "You're a creator and want to plan visually."
+      ],
+      "avoidIf": [
+        "You have only one network and few posts.",
+        "Visual feed preview doesn't matter to you.",
+        "You mainly need complex team workflows."
+      ],
+      "threshold": "Planoly suits creators and brands who care about feed aesthetics; for simple occasional scheduling, a lighter tool is enough."
+    },
+    "pros": [
+      "Visual feed preview before publishing.",
+      "Centralized multi-network scheduling.",
+      "Interface built for creators.",
+      "Free tier to try it."
+    ],
+    "cons": [
+      "Free plan very limited on uploads.",
+      "Advanced features reserved for higher tiers.",
+      "Less geared toward large team management."
+    ],
+    "use_cases": [
+      "Plan the aesthetics of an Instagram feed.",
+      "Schedule a week of multi-network content.",
+      "Monetize an audience via the Creator Store."
+    ]
+  }
+}

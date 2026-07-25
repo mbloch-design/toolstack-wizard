@@ -1,0 +1,87 @@
+{
+  "slug": "pixco",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pixco (site officiel)", "url": "https://pixco.io/" }
+  ],
+  "facts": {
+    "what": "Éditeur photo en ligne assisté par IA pour la retouche, la suppression d'arrière-plan, l'amélioration de qualité et la création de visuels produit sans passer par Photoshop.",
+    "what_en": "AI-powered online photo editor for retouching, background removal, quality enhancement and creating product visuals without Photoshop.",
+    "pricing_model": "Abonnement, avec palier d'essai gratuit.",
+    "free_tier": { "exists": true, "detail": "Version gratuite pour tester avant de payer ; montants sur la page officielle." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 € (essai)" },
+      { "name": "Payant", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Suppression automatique d'arrière-plan",
+      "Retouche et amélioration de qualité par IA",
+      "Création de visuels produit",
+      "Édition en ligne sans logiciel lourd"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez beaucoup de visuels produit et voulez gagner du temps.",
+        "Vous n'êtes pas à l'aise avec Photoshop.",
+        "Vous voulez des retouches rapides directement en ligne."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un contrôle pixel fin professionnel.",
+        "Vous travaillez déjà avec une suite de retouche avancée.",
+        "Votre volume d'images est très faible."
+      ],
+      "threshold": "Pixco convient à qui veut retoucher vite des visuels produit sans Photoshop ; pour un contrôle expert, un éditeur professionnel reste préférable."
+    },
+    "pros": [
+      "Prise en main simple, sans logiciel installé.",
+      "Suppression d'arrière-plan et retouche automatisées.",
+      "Adapté aux visuels e-commerce.",
+      "Palier gratuit pour évaluer."
+    ],
+    "cons": [
+      "Moins de contrôle qu'un éditeur professionnel.",
+      "Dépendance à une connexion en ligne.",
+      "Résultats IA parfois à retoucher manuellement."
+    ],
+    "use_cases": [
+      "Détourer des photos produit en lot.",
+      "Améliorer la qualité d'images pour une fiche produit.",
+      "Créer des visuels marketing rapidement."
+    ],
+    "relevant_for": ["E-commerçants", "Freelances", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce lots of product visuals and want to save time.",
+        "You're not comfortable with Photoshop.",
+        "You want quick edits directly online."
+      ],
+      "avoidIf": [
+        "You need fine, professional pixel control.",
+        "You already use an advanced editing suite.",
+        "Your image volume is very low."
+      ],
+      "threshold": "Pixco suits those who want to edit product visuals fast without Photoshop; for expert control, a professional editor is still better."
+    },
+    "pros": [
+      "Simple to use, no installed software.",
+      "Automated background removal and retouching.",
+      "Suited to e-commerce visuals.",
+      "Free tier to evaluate."
+    ],
+    "cons": [
+      "Less control than a professional editor.",
+      "Depends on an online connection.",
+      "AI results sometimes need manual touch-ups."
+    ],
+    "use_cases": [
+      "Cut out product photos in bulk.",
+      "Improve image quality for a product listing.",
+      "Create marketing visuals quickly."
+    ]
+  }
+}

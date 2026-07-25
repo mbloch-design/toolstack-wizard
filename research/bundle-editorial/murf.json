@@ -1,0 +1,89 @@
+{
+  "slug": "murf",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Murf AI — tarifs (site officiel)", "url": "https://murf.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Générateur de voix off par IA (text-to-speech) avec plus de 200 voix dans 30+ langues, un studio d'édition et des options de clonage vocal, destiné aux vidéos, e-learning et podcasts.",
+    "what_en": "AI voice-over generator (text-to-speech) with 200+ voices across 30+ languages, an editing studio and voice-cloning options, aimed at video, e-learning and podcasts.",
+    "pricing_model": "Freemium par abonnement (mensuel ou annuel), plus une offre API à l'usage et un plan Enterprise.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité (temps de génération réduit, sans téléchargement ni droits commerciaux)." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (génération limitée, sans droits commerciaux)" },
+      { "name": "Creator", "price": "29 $/mois (19 $/mois en annuel), droits commerciaux" },
+      { "name": "Business", "price": "99 $/mois (66 $/mois en annuel), support prioritaire" },
+      { "name": "Enterprise", "price": "sur devis (voix illimitée, clonage, conformité)" }
+    ],
+    "key_features": [
+      "Text-to-speech avec 200+ voix et 30+ langues",
+      "Studio d'édition (intonation, pauses, accentuation)",
+      "Clonage vocal (plans supérieurs)",
+      "API TTS et traduction à l'usage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez régulièrement des voix off pour vidéos ou e-learning.",
+        "Vous avez besoin de plusieurs langues et voix cohérentes.",
+        "Vous voulez éditer finement l'intonation et le rythme."
+      ],
+      "avoidIf": [
+        "Un besoin ponctuel ne justifie pas l'abonnement.",
+        "Vous cherchez une voix humaine enregistrée en studio.",
+        "Vous voulez un outil entièrement gratuit avec droits commerciaux."
+      ],
+      "threshold": "Murf convient si vous industrialisez la voix off multilingue ; pour un usage rare ou une voix humaine, une autre solution suffit."
+    },
+    "pros": [
+      "Large choix de voix et de langues.",
+      "Studio d'édition précis (pauses, intonation).",
+      "Clonage vocal et API disponibles.",
+      "Interface accessible aux non-techniciens."
+    ],
+    "cons": [
+      "Droits commerciaux réservés aux plans payants.",
+      "Temps de génération plafonné selon le plan.",
+      "Voix IA parfois moins naturelles sur certains accents."
+    ],
+    "use_cases": [
+      "Doubler une vidéo explicative en plusieurs langues.",
+      "Produire la narration d'un module e-learning.",
+      "Générer une voix off de podcast ou de pub."
+    ],
+    "relevant_for": ["Créateurs vidéo", "Concepteurs e-learning", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly produce voice-overs for video or e-learning.",
+        "You need several languages and consistent voices.",
+        "You want fine control over intonation and pacing."
+      ],
+      "avoidIf": [
+        "A one-off need doesn't justify a subscription.",
+        "You want a real human voice recorded in a studio.",
+        "You want a fully free tool with commercial rights."
+      ],
+      "threshold": "Murf fits if you scale multilingual voice-over; for rare use or a human voice, another option is enough."
+    },
+    "pros": [
+      "Wide choice of voices and languages.",
+      "Precise editing studio (pauses, intonation).",
+      "Voice cloning and API available.",
+      "Approachable interface for non-technical users."
+    ],
+    "cons": [
+      "Commercial rights limited to paid plans.",
+      "Generation time capped by plan.",
+      "AI voices can sound less natural on some accents."
+    ],
+    "use_cases": [
+      "Dub an explainer video into several languages.",
+      "Produce narration for an e-learning module.",
+      "Generate voice-over for a podcast or ad."
+    ]
+  }
+}

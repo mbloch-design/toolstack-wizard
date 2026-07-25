@@ -1,0 +1,88 @@
+{
+  "slug": "maxon-one",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Maxon One (site officiel)", "url": "https://www.maxon.net/maxon-one" }
+  ],
+  "facts": {
+    "what": "Suite d'abonnement Maxon qui regroupe ses logiciels de création 3D et motion design : Cinema 4D, Redshift, ZBrush et Red Giant, dans une seule licence.",
+    "what_en": "Maxon's subscription bundle combining its 3D and motion design software: Cinema 4D, Redshift, ZBrush and Red Giant, under one license.",
+    "pricing_model": "Abonnement mensuel ou annuel donnant accès à l'ensemble de la suite.",
+    "free_tier": { "exists": false, "detail": "Essais gratuits sur certains produits ; pas de version gratuite permanente de la suite." },
+    "plans": [
+      { "name": "Maxon One (annuel)", "price": "environ 105 $/mois facturé annuellement" },
+      { "name": "Maxon One (mensuel)", "price": "169 $/mois" },
+      { "name": "Cinema 4D seul", "price": "environ 70 $/mois (annuel)" }
+    ],
+    "key_features": [
+      "Cinema 4D pour la modélisation et l'animation 3D",
+      "Redshift pour le rendu GPU",
+      "ZBrush pour la sculpture numérique",
+      "Red Giant et Universe pour les effets et le motion design"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez plusieurs outils Maxon (C4D, Redshift, ZBrush).",
+        "Vous faites du motion design et de la 3D combinés.",
+        "Vous voulez une licence unique plutôt que des achats séparés."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un seul logiciel de la suite.",
+        "Vous cherchez une solution gratuite ou perpétuelle.",
+        "Votre usage 3D reste très occasionnel."
+      ],
+      "threshold": "Maxon One devient rentable dès que vous employez au moins deux de ses logiciels ; pour un seul outil, l'abonnement individuel suffit."
+    },
+    "pros": [
+      "Suite 3D/motion très complète en une licence.",
+      "Rendu GPU Redshift inclus.",
+      "ZBrush intégré pour la sculpture.",
+      "Écosystème Red Giant pour les effets."
+    ],
+    "cons": [
+      "Coût élevé si un seul outil est utilisé.",
+      "Uniquement en abonnement.",
+      "Ensemble surdimensionné pour un débutant."
+    ],
+    "use_cases": [
+      "Produire une animation 3D avec rendu GPU.",
+      "Sculpter des assets puis les animer dans Cinema 4D.",
+      "Créer des effets et du motion design pour la vidéo."
+    ],
+    "relevant_for": ["Motion designers", "Artistes 3D", "Studios de création"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use several Maxon tools (C4D, Redshift, ZBrush).",
+        "You combine motion design and 3D.",
+        "You want one license instead of separate purchases."
+      ],
+      "avoidIf": [
+        "You only need a single tool from the suite.",
+        "You want a free or perpetual solution.",
+        "Your 3D use stays very occasional."
+      ],
+      "threshold": "Maxon One pays off once you use at least two of its apps; for a single tool, the individual subscription is enough."
+    },
+    "pros": [
+      "Very complete 3D/motion suite in one license.",
+      "Redshift GPU rendering included.",
+      "ZBrush bundled for sculpting.",
+      "Red Giant ecosystem for effects."
+    ],
+    "cons": [
+      "Costly if only one tool is used.",
+      "Subscription only.",
+      "Oversized bundle for a beginner."
+    ],
+    "use_cases": [
+      "Produce a 3D animation with GPU rendering.",
+      "Sculpt assets then animate them in Cinema 4D.",
+      "Create effects and motion design for video."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "redshift",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Maxon Redshift (site officiel)", "url": "https://www.maxon.net/redshift" }
+  ],
+  "facts": {
+    "what": "Moteur de rendu 3D biaisé accéléré par GPU, édité par Maxon : il produit des images photoréalistes rapidement et s'intègre aux principaux logiciels 3D (Cinema 4D, Maya, 3ds Max, Houdini, Blender).",
+    "what_en": "GPU-accelerated biased 3D renderer by Maxon: it produces photorealistic images fast and plugs into major 3D software (Cinema 4D, Maya, 3ds Max, Houdini, Blender).",
+    "pricing_model": "Abonnement (mensuel ou annuel), ou inclus dans le bundle Maxon One aux côtés de Cinema 4D, ZBrush et Red Giant.",
+    "free_tier": { "exists": false, "detail": "Essai disponible ; pas de version gratuite permanente. Abonnement Redshift seul (mensuel/annuel) ou via le bundle Maxon One." },
+    "plans": [
+      { "name": "Redshift (mensuel)", "price": "environ 49 $/mois" },
+      { "name": "Redshift (annuel)", "price": "environ 289 $/an" },
+      { "name": "Maxon One", "price": "bundle complet (C4D, ZBrush, Red Giant…) — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Rendu GPU rapide et photoréaliste (moteur biaisé)",
+      "Intégrations Cinema 4D, Maya, 3ds Max, Houdini, Blender",
+      "Gestion avancée des matériaux et de l'éclairage",
+      "Disponible seul ou dans le bundle Maxon One"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du rendu 3D et voulez de la vitesse via le GPU.",
+        "Vous travaillez sur C4D, Maya, Houdini ou 3ds Max.",
+        "Vous visez des images photoréalistes de qualité production."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de GPU adapté au rendu.",
+        "Un moteur de rendu intégré et gratuit vous suffit.",
+        "Vous faites du rendu très ponctuel."
+      ],
+      "threshold": "Redshift s'impose pour du rendu GPU rapide en production 3D ; pour un usage occasionnel ou sans GPU dédié, un moteur intégré convient mieux."
+    },
+    "pros": [
+      "Rendu GPU rapide et photoréaliste.",
+      "Compatible avec les principaux logiciels 3D.",
+      "Contrôle fin des matériaux et de la lumière.",
+      "Inclus dans le bundle Maxon One."
+    ],
+    "cons": [
+      "Nécessite un GPU performant.",
+      "Modèle par abonnement.",
+      "Courbe d'apprentissage pour l'optimiser."
+    ],
+    "use_cases": [
+      "Rendre une scène produit photoréaliste.",
+      "Produire des plans de motion design en 3D.",
+      "Accélérer le rendu d'un projet VFX."
+    ],
+    "relevant_for": ["Artistes 3D", "Motion designers", "Studios VFX"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do 3D rendering and want GPU speed.",
+        "You work in C4D, Maya, Houdini or 3ds Max.",
+        "You aim for production-quality photoreal images."
+      ],
+      "avoidIf": [
+        "You don't have a GPU suited to rendering.",
+        "A free built-in renderer is enough for you.",
+        "You render only very occasionally."
+      ],
+      "threshold": "Redshift is the pick for fast GPU rendering in 3D production; for occasional use or without a dedicated GPU, a built-in engine fits better."
+    },
+    "pros": [
+      "Fast, photorealistic GPU rendering.",
+      "Compatible with major 3D software.",
+      "Fine control of materials and lighting.",
+      "Included in the Maxon One bundle."
+    ],
+    "cons": [
+      "Requires a capable GPU.",
+      "Subscription model.",
+      "Learning curve to optimize it."
+    ],
+    "use_cases": [
+      "Render a photoreal product scene.",
+      "Produce 3D motion design shots.",
+      "Speed up rendering on a VFX project."
+    ]
+  }
+}

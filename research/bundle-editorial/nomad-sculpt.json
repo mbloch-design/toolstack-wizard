@@ -1,0 +1,86 @@
+{
+  "slug": "nomad-sculpt",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Nomad Sculpt (site officiel)", "url": "https://nomadsculpt.com/" }
+  ],
+  "facts": {
+    "what": "Application de sculpture et modélisation 3D pour iPad et Android, avec pinceaux de sculpture, système de couches, PBR et rendu, pensée pour le travail au stylet.",
+    "what_en": "3D sculpting and modeling app for iPad and Android, with sculpting brushes, a layer system, PBR and rendering, designed for stylus work.",
+    "pricing_model": "Achat unique sur l'App Store / Google Play (pas d'abonnement).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; achat unique donnant droit aux mises à jour." },
+    "plans": [
+      { "name": "Achat unique", "price": "14,99 $ environ (montant exact sur l'App Store/Play Store)" }
+    ],
+    "key_features": [
+      "Pinceaux de sculpture numérique complets",
+      "Système de couches non destructif",
+      "Peinture PBR et matériaux",
+      "Moteur de rendu intégré, mobile-first"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous sculptez en 3D sur iPad ou tablette Android au stylet.",
+        "Vous voulez un outil pro sans abonnement.",
+        "Vous cherchez une alternative mobile abordable à ZBrush."
+      ],
+      "avoidIf": [
+        "Vous travaillez uniquement sur desktop avec un pipeline lourd.",
+        "Vous avez besoin de CAO paramétrique plutôt que de sculpture.",
+        "Vous ne possédez pas de tablette compatible."
+      ],
+      "threshold": "Nomad Sculpt est idéal pour la sculpture 3D mobile ; pour un pipeline studio desktop complet, un logiciel de bureau reste préférable."
+    },
+    "pros": [
+      "Achat unique, sans abonnement.",
+      "Très abordable pour un outil pro.",
+      "Système de couches et PBR complets.",
+      "Optimisé pour le travail au stylet sur tablette."
+    ],
+    "cons": [
+      "Limité aux appareils mobiles compatibles.",
+      "Moins puissant qu'un logiciel desktop haut de gamme.",
+      "Pas de version d'essai gratuite permanente."
+    ],
+    "use_cases": [
+      "Sculpter un personnage ou une créature sur iPad.",
+      "Créer un prototype 3D pour l'impression.",
+      "Peindre et rendre un modèle en PBR en mobilité."
+    ],
+    "relevant_for": ["Sculpteurs 3D", "Illustrateurs / concept artists", "Créateurs pour l'impression 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sculpt in 3D on an iPad or Android tablet with a stylus.",
+        "You want a pro tool with no subscription.",
+        "You want an affordable mobile alternative to ZBrush."
+      ],
+      "avoidIf": [
+        "You work only on desktop with a heavy pipeline.",
+        "You need parametric CAD rather than sculpting.",
+        "You don't own a compatible tablet."
+      ],
+      "threshold": "Nomad Sculpt is ideal for mobile 3D sculpting; for a full desktop studio pipeline, a desktop app is still better."
+    },
+    "pros": [
+      "One-time purchase, no subscription.",
+      "Very affordable for a pro tool.",
+      "Full layer system and PBR.",
+      "Optimized for stylus work on tablets."
+    ],
+    "cons": [
+      "Limited to compatible mobile devices.",
+      "Less powerful than high-end desktop software.",
+      "No permanent free trial version."
+    ],
+    "use_cases": [
+      "Sculpt a character or creature on iPad.",
+      "Create a 3D prototype for printing.",
+      "Paint and render a model in PBR on the go."
+    ]
+  }
+}

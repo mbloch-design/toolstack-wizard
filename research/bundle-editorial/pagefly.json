@@ -1,0 +1,88 @@
+{
+  "slug": "pagefly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PageFly — pricing (site officiel)", "url": "https://pagefly.io/pages/pricing" }
+  ],
+  "facts": {
+    "what": "Constructeur de pages en glisser-déposer pour Shopify, dédié à la création de landing pages, pages produit et pages d'accueil sans code.",
+    "what_en": "Drag-and-drop page builder for Shopify, focused on building landing pages, product pages and home pages without code.",
+    "pricing_model": "Abonnement mensuel basé sur le nombre de « slots » (pages/sections publiés). Version gratuite limitée.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec un slot publié, toutes les fonctionnalités et le support inclus." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (1 slot publié)" },
+      { "name": "Pay As You Go", "price": "à partir de ~24 $/mois (plusieurs slots, coût dégressif)" },
+      { "name": "Unlimited", "price": "99 $/mois (slots illimités)" }
+    ],
+    "key_features": [
+      "Éditeur visuel glisser-déposer intégré à Shopify",
+      "Modèles de landing pages et pages produit",
+      "Sections et éléments réutilisables",
+      "Support en direct 24/7"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une boutique Shopify et voulez des pages personnalisées.",
+        "Vous n'écrivez pas de code mais voulez dépasser le thème par défaut.",
+        "Vous lancez régulièrement des landing pages pour vos campagnes."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas sur Shopify.",
+        "Le thème natif couvre déjà tous vos besoins.",
+        "Vous ne publiez qu'une page très ponctuelle."
+      ],
+      "threshold": "PageFly s'impose pour une boutique Shopify qui a besoin de pages sur mesure sans code ; hors Shopify ou pour un thème déjà suffisant, il n'apporte rien."
+    },
+    "pros": [
+      "Intégration native et fluide avec Shopify.",
+      "Éditeur visuel accessible aux non-développeurs.",
+      "Large bibliothèque de modèles et sections.",
+      "Palier gratuit pour tester."
+    ],
+    "cons": [
+      "Réservé à l'écosystème Shopify.",
+      "La tarification par slots peut vite grimper.",
+      "Courbe d'apprentissage sur les mises en page complexes."
+    ],
+    "use_cases": [
+      "Créer une landing page de campagne.",
+      "Personnaliser une page produit à fort trafic.",
+      "Refaire la page d'accueil de la boutique."
+    ],
+    "relevant_for": ["Marchands Shopify", "E-commerçants", "Freelances e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a Shopify store and want custom pages.",
+        "You don't code but want to go beyond the default theme.",
+        "You regularly launch campaign landing pages."
+      ],
+      "avoidIf": [
+        "You're not on Shopify.",
+        "The native theme already covers your needs.",
+        "You only publish a one-off page."
+      ],
+      "threshold": "PageFly makes sense for a Shopify store that needs custom, code-free pages; outside Shopify or with a sufficient theme, it adds nothing."
+    },
+    "pros": [
+      "Native, smooth Shopify integration.",
+      "Visual editor accessible to non-developers.",
+      "Large library of templates and sections.",
+      "Free tier to try it out."
+    ],
+    "cons": [
+      "Limited to the Shopify ecosystem.",
+      "Slot-based pricing can add up quickly.",
+      "Learning curve for complex layouts."
+    ],
+    "use_cases": [
+      "Build a campaign landing page.",
+      "Customize a high-traffic product page.",
+      "Rebuild the store home page."
+    ]
+  }
+}
