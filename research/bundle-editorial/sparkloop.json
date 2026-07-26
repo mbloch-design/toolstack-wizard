@@ -1,0 +1,88 @@
+{
+  "slug": "sparkloop",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SparkLoop — tarifs (site officiel)", "url": "https://sparkloop.app/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de croissance et de monétisation d'infolettres : parrainage (referral giveaways), recommandations entre newsletters et Partner Network pour être payé au nouvel abonné vérifié.",
+    "what_en": "Newsletter growth and monetization platform: referral giveaways, cross-newsletter recommendations, and a Partner Network that pays you per verified new subscriber.",
+    "pricing_model": "Freemium : le Partner Network et les recommandations sont gratuits (commission prélevée sur les gains) ; achat de parrainages et plan éditeur payants.",
+    "free_tier": { "exists": true, "detail": "Rejoindre le Partner Network et recommander d'autres newsletters est gratuit ; SparkLoop prélève une commission sur les gains, plus les frais de paiement." },
+    "plans": [
+      { "name": "Partner Network / Recommandations", "price": "Gratuit à rejoindre ; commission d'environ 20 % sur les gains + frais de paiement" },
+      { "name": "Achat de parrainages (Upscribe)", "price": "Budget personnalisé à partir de 100 $/mois, paiement au subscriber vérifié" },
+      { "name": "Solo Creator", "price": "99 $/mois (jusqu'à 100 000 abonnés) — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Partner Network pour être payé au nouvel abonné recommandé",
+      "Recommandations croisées entre newsletters",
+      "Referral giveaways (parrainage par récompenses)",
+      "Achat de parrainages ciblés avec vérification anti-fraude"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez faire croître votre infolettre par le parrainage.",
+        "Vous cherchez à monétiser vos recommandations de newsletters.",
+        "Vous voulez acheter des abonnés qualifiés et vérifiés."
+      ],
+      "avoidIf": [
+        "Votre audience est trop petite pour intéresser des partenaires.",
+        "Vous refusez qu'une commission soit prélevée sur vos gains.",
+        "Votre plateforme d'emailing gère déjà bien le parrainage."
+      ],
+      "threshold": "SparkLoop s'impose si la croissance par recommandation est un levier central ; pour une simple liste d'emails naissante, l'outil est prématuré."
+    },
+    "pros": [
+      "Réseau de partenaires pour monétiser chaque abonné recommandé.",
+      "Système de recommandations croisées bien rodé.",
+      "Achat d'abonnés avec vérification anti-fraude.",
+      "Entrée gratuite via le Partner Network."
+    ],
+    "cons": [
+      "Commission prélevée sur les gains.",
+      "L'ancien programme de parrainage par paliers a été retiré pour les nouveaux comptes.",
+      "Peu utile sans une audience minimale."
+    ],
+    "use_cases": [
+      "Lancer une campagne de parrainage pour sa newsletter.",
+      "Monétiser des recommandations vers d'autres infolettres.",
+      "Acheter des abonnés qualifiés à budget maîtrisé."
+    ],
+    "relevant_for": ["Créateurs de newsletters", "Médias indépendants", "Marketeurs email"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to grow your newsletter through referrals.",
+        "You want to monetize newsletter recommendations.",
+        "You want to buy qualified, verified subscribers."
+      ],
+      "avoidIf": [
+        "Your audience is too small to attract partners.",
+        "You don't want a commission taken on your earnings.",
+        "Your email platform already handles referrals well."
+      ],
+      "threshold": "SparkLoop shines when referral-driven growth is a core lever; for a brand-new email list, it's premature."
+    },
+    "pros": [
+      "Partner Network to monetize each recommended subscriber.",
+      "Well-established cross-recommendation system.",
+      "Paid subscriber acquisition with fraud verification.",
+      "Free entry via the Partner Network."
+    ],
+    "cons": [
+      "Commission taken on earnings.",
+      "Legacy milestone referral program retired for new accounts.",
+      "Little value without a minimum audience."
+    ],
+    "use_cases": [
+      "Launch a referral campaign for your newsletter.",
+      "Monetize recommendations to other newsletters.",
+      "Buy qualified subscribers on a controlled budget."
+    ]
+  }
+}

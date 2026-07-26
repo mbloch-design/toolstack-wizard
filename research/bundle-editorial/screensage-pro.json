@@ -1,0 +1,87 @@
+{
+  "slug": "screensage-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ScreenSage Pro (site officiel)", "url": "https://screensage.pro/" }
+  ],
+  "facts": {
+    "what": "Application macOS d'enregistrement d'écran orientée démos et tutoriels : zoom automatique sur les clics, effets de caméra 3D, sous-titres IA et rendus soignés, sans montage manuel poussé.",
+    "what_en": "macOS screen-recording app aimed at demos and tutorials: automatic click zoom, 3D camera effects, AI captions and polished exports, without heavy manual editing.",
+    "pricing_model": "Licence à vie (achat unique), utilisable sur plusieurs Mac ; différents paliers selon le niveau de mises à jour et de support.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; macOS uniquement. Licence à vie payante." },
+    "plans": [
+      { "name": "Licence à vie (Standard)", "price": "~79,90 $ (1 an de mises à jour, 3 Mac) — montants sur la page officielle" },
+      { "name": "Licence à vie (Premium)", "price": "~209,90 $ (mises à jour à vie, support prioritaire) — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Zoom et suivi automatiques sur les clics et la frappe",
+      "Effets de caméra 3D cinématiques",
+      "Sous-titres générés par IA",
+      "Enregistrement multi-pistes et iOS, liens de partage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes sur Mac et créez des démos ou tutoriels.",
+        "Vous voulez des effets automatiques (zoom, caméra) sans montage.",
+        "Vous préférez une licence à vie à un abonnement."
+      ],
+      "avoidIf": [
+        "Vous êtes sous Windows ou Linux.",
+        "Vous voulez un outil très établi avec un long historique.",
+        "Un enregistrement d'écran brut vous suffit."
+      ],
+      "threshold": "ScreenSage Pro convient pour des démos Mac avec effets automatiques et un achat unique ; pour un besoin brut ou hors macOS, un enregistreur classique suffit."
+    },
+    "pros": [
+      "Zoom et suivi automatiques pratiques.",
+      "Effets de caméra 3D pour un rendu soigné.",
+      "Sous-titres IA intégrés.",
+      "Licence à vie, sans abonnement."
+    ],
+    "cons": [
+      "macOS uniquement.",
+      "Outil récent, écosystème encore jeune.",
+      "Pas de version gratuite permanente."
+    ],
+    "use_cases": [
+      "Créer une démo produit animée pour une page de vente.",
+      "Enregistrer un tutoriel logiciel avec zooms automatiques.",
+      "Produire des vidéos promotionnelles courtes."
+    ],
+    "relevant_for": ["Créateurs de contenu Mac", "Indie makers / SaaS", "Formateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're on Mac and create demos or tutorials.",
+        "You want automatic effects (zoom, camera) without editing.",
+        "You prefer a lifetime license over a subscription."
+      ],
+      "avoidIf": [
+        "You're on Windows or Linux.",
+        "You want a very established tool with a long track record.",
+        "A raw screen recording is enough for you."
+      ],
+      "threshold": "ScreenSage Pro fits Mac demos with automatic effects and a one-time purchase; for a raw need or off macOS, a classic recorder is enough."
+    },
+    "pros": [
+      "Handy automatic zoom and tracking.",
+      "3D camera effects for a polished look.",
+      "Built-in AI captions.",
+      "Lifetime license, no subscription."
+    ],
+    "cons": [
+      "macOS only.",
+      "Recent tool, still-young ecosystem.",
+      "No permanent free version."
+    ],
+    "use_cases": [
+      "Create an animated product demo for a sales page.",
+      "Record a software tutorial with automatic zooms.",
+      "Produce short promotional videos."
+    ]
+  }
+}

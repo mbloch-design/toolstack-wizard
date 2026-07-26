@@ -1,0 +1,90 @@
+{
+  "slug": "vimeo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vimeo — tarifs (site officiel)", "url": "https://vimeo.com/upgrade" }
+  ],
+  "facts": {
+    "what": "Plateforme d'hébergement et de gestion vidéo professionnelle : lecture sans publicité, lecteur personnalisable, contrôle de confidentialité, collaboration, streaming en direct et analytics.",
+    "what_en": "Professional video hosting and management platform: ad-free playback, customizable player, privacy controls, collaboration, live streaming and analytics.",
+    "pricing_model": "Abonnement mensuel ou annuel par paliers, avec version gratuite limitée. Plafond de bande passante sur les plans self-serve.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : stockage total limité, filigrane Vimeo et nombre d'imports mensuels restreint." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (stockage limité, filigrane)" },
+      { "name": "Starter", "price": "≈ 12 $/mois en annuel" },
+      { "name": "Standard", "price": "≈ 25 $/mois (jusqu'à ~50–75 $/mois selon options)" },
+      { "name": "Advanced", "price": "≈ 75 $/mois (plan self-serve le plus élevé)" },
+      { "name": "Enterprise", "price": "Tarif sur mesure (au-delà du plafond de bande passante)" }
+    ],
+    "key_features": [
+      "Hébergement sans publicité et lecteur personnalisable",
+      "Contrôles de confidentialité et protection par mot de passe",
+      "Collaboration et revue vidéo",
+      "Streaming en direct et analytics"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez héberger des vidéos avec un rendu pro et sans publicité.",
+        "Vous avez besoin de contrôles de confidentialité fins.",
+        "Vous collaborez sur des vidéos ou faites du live."
+      ],
+      "avoidIf": [
+        "Vous cherchez la portée d'audience gratuite de YouTube.",
+        "Vous consommez beaucoup de bande passante (risque de surcoût).",
+        "Vous n'avez besoin que d'un partage occasionnel."
+      ],
+      "threshold": "Vimeo convient à l'hébergement vidéo pro et privé ; pour la portée publicitaire de masse, YouTube reste plus adapté."
+    },
+    "pros": [
+      "Lecture sans publicité et lecteur personnalisable.",
+      "Contrôles de confidentialité avancés.",
+      "Outils de collaboration et de revue.",
+      "Streaming en direct intégré."
+    ],
+    "cons": [
+      "Plafond de bande passante avec surcoûts possibles.",
+      "Filigrane et imports limités sur le plan gratuit.",
+      "Moins de portée organique que YouTube."
+    ],
+    "use_cases": [
+      "Héberger des vidéos de marque sur un site sans publicité.",
+      "Partager des rushes en revue avec des clients.",
+      "Diffuser un événement en direct."
+    ],
+    "relevant_for": ["Vidéastes professionnels", "Entreprises et marques", "Formateurs / éducateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want pro, ad-free video hosting.",
+        "You need fine-grained privacy controls.",
+        "You collaborate on videos or run live streams."
+      ],
+      "avoidIf": [
+        "You want YouTube's free audience reach.",
+        "You use heavy bandwidth (overage risk).",
+        "You only need occasional sharing."
+      ],
+      "threshold": "Vimeo fits pro, private video hosting; for mass ad-driven reach, YouTube remains a better fit."
+    },
+    "pros": [
+      "Ad-free playback and customizable player.",
+      "Advanced privacy controls.",
+      "Collaboration and review tools.",
+      "Built-in live streaming."
+    ],
+    "cons": [
+      "Bandwidth caps with possible overage costs.",
+      "Watermark and limited uploads on the free plan.",
+      "Less organic reach than YouTube."
+    ],
+    "use_cases": [
+      "Host branded videos on a site without ads.",
+      "Share rough cuts for review with clients.",
+      "Stream a live event."
+    ]
+  }
+}

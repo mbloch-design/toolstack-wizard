@@ -1,0 +1,90 @@
+{
+  "slug": "vidiq",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "vidIQ — tarifs (site officiel)", "url": "https://vidiq.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil de croissance YouTube (extension + app) : recherche de tendances et mots-clés, idées de contenu, génération de vignettes, analytics de chaîne et coach IA.",
+    "what_en": "YouTube growth tool (extension + app): trend and keyword research, content ideas, thumbnail generation, channel analytics and AI coach.",
+    "pricing_model": "Abonnement mensuel ou annuel par paliers, avec version gratuite. Remise en facturation annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : crédits IA mensuels limités, tendances de niche, idées quotidiennes et conseils du coach IA." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (crédits IA limités)" },
+      { "name": "Pro", "price": "≈ 5 $/mois en annuel (7,50 $/mois au mois)" },
+      { "name": "Boost", "price": "≈ 16,58 $/mois en annuel (39 $/mois au mois)" },
+      { "name": "Max", "price": "≈ 39 $/mois en annuel (chaînes illimitées, outils en masse)" },
+      { "name": "Coaching", "price": "≈ 99 $/mois (coaching individuel en plus de Boost)" }
+    ],
+    "key_features": [
+      "Recherche de tendances et de mots-clés YouTube",
+      "Générateur de vignettes et idées de contenu",
+      "Analytics de chaîne et insights d'abonnés",
+      "Coach IA personnalisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez faire croître une chaîne YouTube méthodiquement.",
+        "Vous cherchez des idées de contenu et des tendances.",
+        "Vous appréciez les recommandations d'un coach IA."
+      ],
+      "avoidIf": [
+        "Vous publiez rarement ou sans objectif de croissance.",
+        "Vous ne travaillez pas sur YouTube.",
+        "Vous voulez un outil entièrement gratuit sans limites."
+      ],
+      "threshold": "vidIQ aide le créateur qui veut structurer sa croissance YouTube ; pour un usage passif ou hors YouTube, il apporte peu."
+    },
+    "pros": [
+      "Recherche de tendances et mots-clés solide.",
+      "Version gratuite pour commencer.",
+      "Coach IA et idées de contenu.",
+      "Analytics de chaîne détaillés."
+    ],
+    "cons": [
+      "Fonctions clés réservées aux paliers payants.",
+      "Centré exclusivement sur YouTube.",
+      "Crédits IA limités sur le plan gratuit."
+    ],
+    "use_cases": [
+      "Trouver des sujets de vidéos porteurs.",
+      "Optimiser titres et vignettes pour le clic.",
+      "Suivre la progression d'une chaîne dans le temps."
+    ],
+    "relevant_for": ["YouTubeurs", "Créateurs de contenu vidéo", "Marketeurs vidéo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to grow a YouTube channel methodically.",
+        "You look for content ideas and trends.",
+        "You value AI coach recommendations."
+      ],
+      "avoidIf": [
+        "You publish rarely or without a growth goal.",
+        "You don't work on YouTube.",
+        "You want a fully free tool with no limits."
+      ],
+      "threshold": "vidIQ helps creators who want to structure YouTube growth; for passive or non-YouTube use it adds little."
+    },
+    "pros": [
+      "Strong trend and keyword research.",
+      "Free version to get started.",
+      "AI coach and content ideas.",
+      "Detailed channel analytics."
+    ],
+    "cons": [
+      "Key features locked behind paid tiers.",
+      "Focused exclusively on YouTube.",
+      "Limited AI credits on the free plan."
+    ],
+    "use_cases": [
+      "Find high-potential video topics.",
+      "Optimize titles and thumbnails for clicks.",
+      "Track a channel's progress over time."
+    ]
+  }
+}

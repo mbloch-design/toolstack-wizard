@@ -1,0 +1,89 @@
+{
+  "slug": "vidyard",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vidyard — tarifs (site officiel)", "url": "https://www.vidyard.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de vidéo pour la vente et le marketing : enregistrement d'écran et webcam, hébergement, lecteur personnalisable, analytics de visionnage, CTA et intégrations CRM.",
+    "what_en": "Video platform for sales and marketing: screen and webcam recording, hosting, customizable player, viewing analytics, CTAs and CRM integrations.",
+    "pricing_model": "Abonnement par utilisateur par paliers, avec version gratuite. Facturation généralement annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : jusqu'à 25 vidéos, analytics de base et lecteur personnalisable ; CTA, formulaires et intégrations avancées réservés aux paliers payants." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (jusqu'à 25 vidéos)" },
+      { "name": "Pro", "price": "≈ 19–29 $/utilisateur/mois en annuel" },
+      { "name": "Teams / Business", "price": "≈ 99 $/utilisateur/mois" },
+      { "name": "Enterprise", "price": "Tarif sur mesure" }
+    ],
+    "key_features": [
+      "Enregistrement écran et webcam en un clic",
+      "Hébergement vidéo et lecteur personnalisable",
+      "Analytics de visionnage et notifications",
+      "CTA, formulaires et intégrations CRM/marketing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez la vidéo pour la prospection commerciale.",
+        "Vous voulez savoir qui regarde vos vidéos et jusqu'où.",
+        "Vous intégrez la vidéo à votre CRM."
+      ],
+      "avoidIf": [
+        "Vous cherchez un simple hébergeur public type Vimeo/YouTube.",
+        "Vous ne faites pas de vente ou de marketing par vidéo.",
+        "Vous avez un budget très serré pour plusieurs sièges."
+      ],
+      "threshold": "Vidyard vise les équipes qui vendent par la vidéo ; pour du simple hébergement ou du contenu grand public, un autre outil convient mieux."
+    },
+    "pros": [
+      "Enregistrement écran/webcam intégré et rapide.",
+      "Analytics de visionnage orientés vente.",
+      "Intégrations CRM et marketing.",
+      "Version gratuite pour démarrer."
+    ],
+    "cons": [
+      "Fonctions clés réservées aux paliers payants élevés.",
+      "Coût par siège qui grimpe vite en équipe.",
+      "Moins adapté à la diffusion grand public."
+    ],
+    "use_cases": [
+      "Envoyer une vidéo de prospection personnalisée.",
+      "Suivre l'engagement des prospects sur une vidéo.",
+      "Intégrer des vidéos suivies dans un CRM."
+    ],
+    "relevant_for": ["Équipes commerciales", "Marketeurs B2B", "SDR / Sales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use video for sales prospecting.",
+        "You want to know who watches your videos and how far.",
+        "You integrate video with your CRM."
+      ],
+      "avoidIf": [
+        "You just need a public host like Vimeo/YouTube.",
+        "You don't do video sales or marketing.",
+        "You're on a very tight budget for several seats."
+      ],
+      "threshold": "Vidyard targets teams selling with video; for simple hosting or consumer content, another tool fits better."
+    },
+    "pros": [
+      "Fast built-in screen/webcam recording.",
+      "Sales-oriented viewing analytics.",
+      "CRM and marketing integrations.",
+      "Free version to get started."
+    ],
+    "cons": [
+      "Key features locked behind higher paid tiers.",
+      "Per-seat cost scales fast for teams.",
+      "Less suited to consumer distribution."
+    ],
+    "use_cases": [
+      "Send a personalized prospecting video.",
+      "Track prospect engagement on a video.",
+      "Embed tracked videos inside a CRM."
+    ]
+  }
+}

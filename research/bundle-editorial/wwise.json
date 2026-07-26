@@ -1,0 +1,89 @@
+{
+  "slug": "wwise",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Audiokinetic Wwise — tarifs jeux (site officiel)", "url": "https://www.audiokinetic.com/pricing/for-games/" }
+  ],
+  "facts": {
+    "what": "Middleware audio interactif d'Audiokinetic pour jeux vidéo et expériences temps réel : authoring du sound design, mixage adaptatif, intégration aux moteurs (Unity, Unreal) via une pipeline dédiée.",
+    "what_en": "Audiokinetic's interactive audio middleware for video games and real-time experiences: sound design authoring, adaptive mixing, and engine integration (Unity, Unreal) through a dedicated pipeline.",
+    "pricing_model": "Licence par projet et par plateforme, avec paliers selon le budget de production ; alternatives en royalties ou Games-as-a-Service.",
+    "free_tier": { "exists": true, "detail": "Licence Indie gratuite pour les projets dont le budget de production est inférieur au seuil officiel ; accès complet à la plateforme, sons illimités." },
+    "plans": [
+      { "name": "Indie", "price": "gratuit (budget de prod jusqu'à 250 000 $)" },
+      { "name": "Pro", "price": "à partir de 7 000 $ par projet et plateforme (budget jusqu'à 2 M$)" },
+      { "name": "Premium / Platinum", "price": "tarif projet pour budgets supérieurs à 2 M$ (voir page officielle)" },
+      { "name": "Royalties / GaaS", "price": "option royautés (1 % des ventes brutes) ou frais mensuels selon revenus" }
+    ],
+    "key_features": [
+      "Authoring de sound design interactif et évènementiel",
+      "Mixage adaptatif et états/RTPC temps réel",
+      "Intégration Unity et Unreal Engine",
+      "Profiling et optimisation audio en jeu"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez un jeu avec de l'audio interactif complexe.",
+        "Vous voulez un mixage adaptatif piloté par le gameplay.",
+        "Votre studio est éligible à la licence Indie."
+      ],
+      "avoidIf": [
+        "Votre projet n'a besoin que de simples lectures de sons.",
+        "Votre équipe n'a pas de sound designer dédié.",
+        "Un gros budget de production alourdit le coût de licence."
+      ],
+      "threshold": "Wwise est la référence pour l'audio de jeu interactif ; pour de l'audio linéaire ou basique, l'API audio native du moteur suffit."
+    },
+    "pros": [
+      "Standard de l'industrie pour l'audio de jeu.",
+      "Licence Indie gratuite pour petits budgets.",
+      "Mixage adaptatif très puissant.",
+      "Intégrations solides Unity et Unreal."
+    ],
+    "cons": [
+      "Courbe d'apprentissage importante.",
+      "Coût de licence élevé pour les gros budgets.",
+      "Surdimensionné pour des besoins audio simples."
+    ],
+    "use_cases": [
+      "Concevoir une bande-son réactive au gameplay.",
+      "Gérer un mixage dynamique multi-plateforme.",
+      "Optimiser l'empreinte audio d'un jeu."
+    ],
+    "relevant_for": ["Studios de jeux", "Sound designers de jeu", "Développeurs Unity/Unreal"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build a game with complex interactive audio.",
+        "You want adaptive mixing driven by gameplay.",
+        "Your studio qualifies for the Indie license."
+      ],
+      "avoidIf": [
+        "Your project only needs simple sound playback.",
+        "Your team has no dedicated sound designer.",
+        "A large production budget inflates the license cost."
+      ],
+      "threshold": "Wwise is the reference for interactive game audio; for linear or basic audio, the engine's native audio API is enough."
+    },
+    "pros": [
+      "Industry standard for game audio.",
+      "Free Indie license for small budgets.",
+      "Very powerful adaptive mixing.",
+      "Strong Unity and Unreal integrations."
+    ],
+    "cons": [
+      "Steep learning curve.",
+      "High license cost for large budgets.",
+      "Overkill for simple audio needs."
+    ],
+    "use_cases": [
+      "Design a soundtrack that reacts to gameplay.",
+      "Manage dynamic multi-platform mixing.",
+      "Optimize a game's audio footprint."
+    ]
+  }
+}

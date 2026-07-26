@@ -1,0 +1,87 @@
+{
+  "slug": "superdev-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SuperDev Pro (site officiel)", "url": "https://superdevpro.com/" }
+  ],
+  "facts": {
+    "what": "Extension navigateur regroupant de nombreux outils pour développeurs front et designers : inspecteur/éditeur CSS, édition de texte en direct, pipette de couleurs, extraction d'images, test responsive, inspecteur SEO.",
+    "what_en": "Browser extension bundling many front-end developer and designer tools: CSS inspector/editor, live text editing, color picker, image extraction, responsive testing, SEO meta inspector.",
+    "pricing_model": "Freemium : quelques outils gratuits, le reste débloqué via un abonnement Premium ou une licence à vie.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec un nombre limité d'outils ; Premium ou licence à vie pour débloquer l'ensemble." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (nombre limité d'outils)" },
+      { "name": "Premium / Lifetime", "price": "Abonnement ou licence à vie — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Inspecteur et éditeur CSS en direct",
+      "Pipette de couleurs et palettes",
+      "Extraction et remplacement d'images, capture d'écran",
+      "Test responsive et inspecteur de métadonnées SEO"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez le front-end ou le design dans le navigateur.",
+        "Vous voulez regrouper plusieurs micro-outils en un seul.",
+        "Vous inspectez et ajustez souvent le CSS de pages en direct."
+      ],
+      "avoidIf": [
+        "Les DevTools du navigateur vous suffisent déjà.",
+        "Vous préférez éviter d'installer une extension tierce.",
+        "Votre travail est surtout back-end ou hors navigateur."
+      ],
+      "threshold": "SuperDev Pro fait gagner du temps à qui bricole souvent le CSS et le design en direct ; pour un usage occasionnel, les DevTools natifs suffisent."
+    },
+    "pros": [
+      "Nombreux outils front réunis dans une extension.",
+      "Édition CSS et texte en direct pratique.",
+      "Pipette, extraction d'images et captures intégrées.",
+      "Version gratuite pour tester les bases."
+    ],
+    "cons": [
+      "Plupart des outils réservés au plan payant.",
+      "Recouvre en partie les DevTools natifs.",
+      "Dépendance à une extension tierce."
+    ],
+    "use_cases": [
+      "Ajuster le CSS d'une page en direct.",
+      "Extraire des couleurs et images d'un site.",
+      "Vérifier le rendu responsive et les métadonnées SEO."
+    ],
+    "relevant_for": ["Développeurs front-end", "Designers web", "Intégrateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work on front-end or design in the browser.",
+        "You want many micro-tools bundled into one.",
+        "You often inspect and tweak live page CSS."
+      ],
+      "avoidIf": [
+        "Your browser's DevTools already suffice.",
+        "You prefer not to install a third-party extension.",
+        "Your work is mostly back-end or outside the browser."
+      ],
+      "threshold": "SuperDev Pro saves time for anyone constantly tweaking live CSS and design; for occasional use, native DevTools are enough."
+    },
+    "pros": [
+      "Many front-end tools bundled into one extension.",
+      "Handy live CSS and text editing.",
+      "Built-in color picker, image extraction and screenshots.",
+      "Free version to test the basics."
+    ],
+    "cons": [
+      "Most tools locked behind the paid plan.",
+      "Overlaps partly with native DevTools.",
+      "Reliance on a third-party extension."
+    ],
+    "use_cases": [
+      "Tweak a page's CSS live.",
+      "Extract colors and images from a site.",
+      "Check responsive rendering and SEO metadata."
+    ]
+  }
+}

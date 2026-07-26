@@ -1,0 +1,88 @@
+{
+  "slug": "resolume",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Resolume — Avenue & Arena (site officiel)", "url": "https://resolume.com/software/avenue-arena" }
+  ],
+  "facts": {
+    "what": "Logiciel de VJing et de media server pour mixer, déclencher et manipuler de la vidéo en temps réel lors de performances live ; l'édition Arena ajoute le mapping de projection et le blending multi-écrans.",
+    "what_en": "VJing and media-server software to mix, trigger and manipulate video in real time during live performances; the Arena edition adds projection mapping and multi-screen blending.",
+    "pricing_model": "Licence perpétuelle par édition (achat unique, par ordinateur). Deux éditions : Avenue et Arena.",
+    "free_tier": { "exists": false, "detail": "Version d'essai gratuite avec filigrane ; pas de version gratuite permanente. Réductions étudiants/enseignants." },
+    "plans": [
+      { "name": "Avenue", "price": "299 € pour 1 ordinateur (VJing)" },
+      { "name": "Arena", "price": "799 € pour 1 ordinateur (VJing + mapping de projection)" },
+      { "name": "Upgrade Avenue → Arena", "price": "500 €" }
+    ],
+    "key_features": [
+      "Déclenchement de clips vidéo en temps réel (grille de composition)",
+      "Effets, mélanges et automations live",
+      "Mapping de projection et blending multi-écrans (Arena)",
+      "Prise en charge multi-sorties et synchronisation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du VJing ou pilotez des visuels en concert ou en club.",
+        "Vous avez besoin de mapping de projection sur scène (Arena).",
+        "Vous voulez déclencher et mixer de la vidéo en temps réel."
+      ],
+      "avoidIf": [
+        "Vous cherchez un logiciel de montage vidéo linéaire.",
+        "Vous n'avez aucun besoin de performance live.",
+        "Un usage très ponctuel ne justifie pas l'achat d'une licence."
+      ],
+      "threshold": "Resolume s'impose pour les visuels live et le mapping de projection ; pour du montage classique ou un besoin ponctuel, un autre logiciel convient mieux."
+    },
+    "pros": [
+      "Référence du VJing et des visuels live.",
+      "Mapping de projection puissant (Arena).",
+      "Licence perpétuelle, pas d'abonnement.",
+      "Nombreux effets et sorties temps réel."
+    ],
+    "cons": [
+      "Édition Arena au tarif élevé.",
+      "Pas de version gratuite permanente.",
+      "Courbe d'apprentissage pour le mapping avancé."
+    ],
+    "use_cases": [
+      "Piloter les visuels d'un concert ou d'un DJ set.",
+      "Réaliser un mapping de projection sur une scène ou un décor.",
+      "Mixer plusieurs sources vidéo en direct."
+    ],
+    "relevant_for": ["VJs", "Techniciens spectacle / scène", "Artistes audiovisuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do VJing or drive visuals at concerts or clubs.",
+        "You need on-stage projection mapping (Arena).",
+        "You want to trigger and mix video in real time."
+      ],
+      "avoidIf": [
+        "You're looking for linear video-editing software.",
+        "You have no live-performance need.",
+        "Very occasional use doesn't justify buying a license."
+      ],
+      "threshold": "Resolume is the go-to for live visuals and projection mapping; for classic editing or an occasional need, another tool fits better."
+    },
+    "pros": [
+      "Industry standard for VJing and live visuals.",
+      "Powerful projection mapping (Arena).",
+      "Perpetual license, no subscription.",
+      "Many real-time effects and outputs."
+    ],
+    "cons": [
+      "Arena edition is pricey.",
+      "No permanent free version.",
+      "Learning curve for advanced mapping."
+    ],
+    "use_cases": [
+      "Drive the visuals of a concert or DJ set.",
+      "Run projection mapping on a stage or set piece.",
+      "Mix several video sources live."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "vmake",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vmake — tarifs (site officiel)", "url": "https://vmake.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Suite d'édition vidéo et image en ligne assistée par IA, orientée e-commerce et créateurs : amélioration/upscaling, suppression de watermark et d'arrière-plan, génération et retouche de visuels produit.",
+    "what_en": "Online AI-powered video and image editing suite aimed at e-commerce and creators: enhancement/upscaling, watermark and background removal, and product visual generation and retouching.",
+    "pricing_model": "Freemium par abonnement mensuel avec système de crédits (options pay-per-use).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit à crédits limités, exports filigranés et fonctions de base." },
+    "plans": [
+      { "name": "Free", "price": "gratuit (crédits limités, exports filigranés)" },
+      { "name": "Plus", "price": "9,99 $/mois (retrait watermark, export 1080p)" },
+      { "name": "Pro", "price": "29,99 $/mois (crédits élevés, export 2K/4K, usage commercial)" }
+    ],
+    "key_features": [
+      "Amélioration et upscaling de vidéos et d'images",
+      "Suppression de watermark et d'arrière-plan",
+      "Génération et retouche de visuels produit par IA",
+      "Système de crédits flexible selon l'usage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez beaucoup de visuels e-commerce à retoucher rapidement.",
+        "Vous cherchez à améliorer ou upscaler des vidéos et images.",
+        "Vous voulez retirer watermarks et arrière-plans sans logiciel lourd."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un montage vidéo avancé sur timeline.",
+        "Vous voulez éviter les exports filigranés d'un plan gratuit.",
+        "Un usage très ponctuel ne justifie pas un abonnement."
+      ],
+      "threshold": "Vmake convient aux créateurs et boutiques qui traitent des visuels en volume ; pour du montage vidéo professionnel poussé, un éditeur dédié reste préférable."
+    },
+    "pros": [
+      "Outils IA variés en un seul endroit.",
+      "Prise en main simple, entièrement en ligne.",
+      "Suppression de watermark et d'arrière-plan efficace.",
+      "Système de crédits adaptable à l'usage."
+    ],
+    "cons": [
+      "Exports filigranés sur le plan gratuit.",
+      "Pas d'édition timeline avancée.",
+      "Coûts en crédits qui grimpent en usage intensif."
+    ],
+    "use_cases": [
+      "Nettoyer et améliorer des visuels produit pour une boutique.",
+      "Upscaler une vidéo de faible qualité.",
+      "Retirer l'arrière-plan d'un lot d'images."
+    ],
+    "relevant_for": ["Vendeurs e-commerce", "Créateurs de contenu", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce lots of e-commerce visuals that need quick retouching.",
+        "You want to enhance or upscale videos and images.",
+        "You want to remove watermarks and backgrounds without heavy software."
+      ],
+      "avoidIf": [
+        "You need advanced timeline video editing.",
+        "You want to avoid watermarked exports from a free plan.",
+        "Very occasional use doesn't justify a subscription."
+      ],
+      "threshold": "Vmake suits creators and shops handling visuals at volume; for advanced professional video editing, a dedicated editor is still better."
+    },
+    "pros": [
+      "Varied AI tools in one place.",
+      "Simple to use, fully online.",
+      "Effective watermark and background removal.",
+      "Credit system that adapts to usage."
+    ],
+    "cons": [
+      "Watermarked exports on the free plan.",
+      "No advanced timeline editing.",
+      "Credit costs climb with heavy use."
+    ],
+    "use_cases": [
+      "Clean and enhance product visuals for a store.",
+      "Upscale a low-quality video.",
+      "Remove the background from a batch of images."
+    ]
+  }
+}

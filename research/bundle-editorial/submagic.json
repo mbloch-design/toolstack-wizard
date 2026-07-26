@@ -1,0 +1,89 @@
+{
+  "slug": "submagic",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Submagic — tarifs (site officiel)", "url": "https://www.submagic.co/pricing" }
+  ],
+  "facts": {
+    "what": "Outil d'édition vidéo par IA pour les formats courts : sous-titres automatiques animés, B-rolls générés, zooms et effets dynamiques pour Reels, Shorts et TikTok.",
+    "what_en": "AI video editing tool for short-form content: automatic animated captions, generated B-rolls, zooms and dynamic effects for Reels, Shorts and TikTok.",
+    "pricing_model": "Freemium : plan gratuit limité puis abonnements mensuels selon le nombre de vidéos.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit d'environ 3 vidéos/mois avec filigrane ; plans payants sans filigrane." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (environ 3 vidéos/mois, avec filigrane)" },
+      { "name": "Starter", "price": "20 $/mois (12 $/mois en annuel), environ 30 vidéos, sans filigrane" },
+      { "name": "Pro", "price": "40 $/mois (23 $/mois en annuel), environ 100 vidéos" },
+      { "name": "Agency / Business", "price": "80 $/mois (41 $/mois en annuel), environ 300 vidéos" }
+    ],
+    "key_features": [
+      "Sous-titres automatiques animés (nombreuses langues)",
+      "B-rolls générés par IA",
+      "Zooms, effets et transitions dynamiques",
+      "Brand kits et API sur les plans supérieurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez beaucoup de vidéos courtes.",
+        "Vous voulez des sous-titres animés en quelques clics.",
+        "Vous cherchez à ajouter des B-rolls automatiquement."
+      ],
+      "avoidIf": [
+        "Vous montez surtout des vidéos longues et complexes.",
+        "Vous voulez un contrôle image par image très fin.",
+        "Le plan gratuit avec filigrane vous suffit largement."
+      ],
+      "threshold": "Submagic accélère nettement le montage de vidéos courtes sous-titrées ; pour du montage long ou très précis, un éditeur classique reste préférable."
+    },
+    "pros": [
+      "Sous-titres animés rapides et multilingues.",
+      "B-rolls et effets générés automatiquement.",
+      "Interface pensée pour le format court.",
+      "Gain de temps réel sur les Reels et Shorts."
+    ],
+    "cons": [
+      "Plan gratuit limité et avec filigrane.",
+      "Quota de vidéos selon le palier.",
+      "Peu adapté au montage long ou complexe."
+    ],
+    "use_cases": [
+      "Sous-titrer et habiller un Reel en quelques minutes.",
+      "Ajouter des B-rolls à un extrait de podcast.",
+      "Produire des Shorts sous-titrés en série."
+    ],
+    "relevant_for": ["Créateurs de contenu court", "Community managers", "Monteurs sociaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce a lot of short videos.",
+        "You want animated captions in a few clicks.",
+        "You want B-rolls added automatically."
+      ],
+      "avoidIf": [
+        "You mostly edit long, complex videos.",
+        "You want fine frame-by-frame control.",
+        "The free plan with watermark is plenty for you."
+      ],
+      "threshold": "Submagic clearly speeds up captioned short-form editing; for long or highly precise edits, a classic editor is better."
+    },
+    "pros": [
+      "Fast, multilingual animated captions.",
+      "Automatically generated B-rolls and effects.",
+      "Interface built for short-form.",
+      "Real time savings on Reels and Shorts."
+    ],
+    "cons": [
+      "Free plan limited and watermarked.",
+      "Video quota depends on the tier.",
+      "Poorly suited to long or complex editing."
+    ],
+    "use_cases": [
+      "Caption and style a Reel in minutes.",
+      "Add B-rolls to a podcast clip.",
+      "Produce captioned Shorts in batches."
+    ]
+  }
+}

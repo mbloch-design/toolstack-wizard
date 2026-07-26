@@ -1,0 +1,88 @@
+{
+  "slug": "shortpixel",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ShortPixel — tarifs (site officiel)", "url": "https://shortpixel.com/pricing" }
+  ],
+  "facts": {
+    "what": "Service d'optimisation et de compression d'images (JPEG, PNG, WebP, AVIF) pour accélérer les sites web, disponible en plugin WordPress, en optimiseur de site et via une API.",
+    "what_en": "Image optimization and compression service (JPEG, PNG, WebP, AVIF) to speed up websites, available as a WordPress plugin, a site optimizer and via an API.",
+    "pricing_model": "Freemium : crédits mensuels gratuits, puis plans par crédits (mensuels récurrents ou packs ponctuels qui n'expirent pas) ou plan illimité mensuel.",
+    "free_tier": { "exists": true, "detail": "100 crédits gratuits par mois." },
+    "plans": [
+      { "name": "Unlimited", "price": "~9,99 $/mois (crédits illimités)" },
+      { "name": "Packs de crédits ponctuels", "price": "à partir de ~19,99 $ (crédits qui n'expirent pas) — montants sur la page officielle" },
+      { "name": "Plans mensuels par crédits", "price": "paliers selon le volume — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Compression avec ou sans perte (lossy / lossless)",
+      "Conversion WebP et AVIF",
+      "Plugin WordPress et optimiseur de site",
+      "API et traitement par lots"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un ou plusieurs sites où la vitesse d'affichage compte.",
+        "Vous voulez servir des images en WebP/AVIF automatiquement.",
+        "Vous utilisez WordPress et cherchez un plugin d'optimisation."
+      ],
+      "avoidIf": [
+        "Vous n'avez que quelques images à compresser une fois.",
+        "Votre hébergement optimise déjà les images pour vous.",
+        "Vous ne publiez quasiment jamais de nouveaux visuels."
+      ],
+      "threshold": "ShortPixel est utile dès qu'un site gagne à charger plus vite avec des images optimisées ; pour quelques images ponctuelles, un compresseur en ligne gratuit suffit."
+    },
+    "pros": [
+      "Bonne compression avec formats modernes (WebP, AVIF).",
+      "Plugin WordPress simple à mettre en place.",
+      "API et traitement par lots pour automatiser.",
+      "Crédits ponctuels qui n'expirent pas."
+    ],
+    "cons": [
+      "Le modèle par crédits peut être déroutant au départ.",
+      "Les gros volumes demandent le bon plan pour rester rentables.",
+      "Optimisation trop agressive possible si mal réglée."
+    ],
+    "use_cases": [
+      "Optimiser toutes les images d'un site WordPress.",
+      "Convertir un catalogue d'images en WebP/AVIF.",
+      "Automatiser la compression via API dans un pipeline."
+    ],
+    "relevant_for": ["Webmasters WordPress", "Développeurs web", "Responsables e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run one or more sites where load speed matters.",
+        "You want to serve images as WebP/AVIF automatically.",
+        "You use WordPress and want an optimization plugin."
+      ],
+      "avoidIf": [
+        "You only have a few images to compress once.",
+        "Your hosting already optimizes images for you.",
+        "You almost never publish new visuals."
+      ],
+      "threshold": "ShortPixel is useful whenever a site benefits from faster loading with optimized images; for a few one-off images, a free online compressor is enough."
+    },
+    "pros": [
+      "Good compression with modern formats (WebP, AVIF).",
+      "Easy-to-set-up WordPress plugin.",
+      "API and batch processing for automation.",
+      "One-time credits that never expire."
+    ],
+    "cons": [
+      "The credit model can be confusing at first.",
+      "Large volumes need the right plan to stay cost-effective.",
+      "Over-aggressive optimization possible if misconfigured."
+    ],
+    "use_cases": [
+      "Optimize all images on a WordPress site.",
+      "Convert an image catalog to WebP/AVIF.",
+      "Automate compression via API in a pipeline."
+    ]
+  }
+}

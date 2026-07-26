@@ -1,0 +1,87 @@
+{
+  "slug": "three-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Three.js — site officiel", "url": "https://threejs.org/" },
+    { "label": "Three.js — dépôt GitHub (officiel)", "url": "https://github.com/mrdoob/three.js/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript 3D open source qui simplifie le rendu de graphismes 2D/3D interactifs dans le navigateur via WebGL, en gérant scènes, lumières, matériaux et caméras.",
+    "what_en": "Open-source 3D JavaScript library that simplifies rendering interactive 2D/3D graphics in the browser via WebGL, handling scenes, lights, materials, and cameras.",
+    "pricing_model": "Open source, licence MIT — gratuit.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source (licence MIT)." },
+    "plans": [
+      { "name": "Open source (MIT)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Rendu WebGL de scènes 2D/3D dans le navigateur",
+      "Gestion des scènes, lumières, ombres et matériaux",
+      "API de mathématiques 3D et chargeurs de modèles",
+      "Large communauté et écosystème d'extensions"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des expériences 3D pour le web.",
+        "Vous voulez une bibliothèque mature et documentée.",
+        "Vous cherchez une solution open source sans coût de licence."
+      ],
+      "avoidIf": [
+        "Vous ne codez pas en JavaScript.",
+        "Vous cherchez un éditeur 3D visuel sans code.",
+        "Votre projet ne nécessite pas de rendu 3D."
+      ],
+      "threshold": "Three.js s'impose pour du 3D web en JavaScript ; pour un rendu 3D sans code, un éditeur visuel est plus adapté."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Bibliothèque mature et très utilisée.",
+      "Grande communauté et documentation abondante.",
+      "Abstraction de la complexité de WebGL."
+    ],
+    "cons": [
+      "Nécessite des compétences en JavaScript.",
+      "Courbe d'apprentissage pour la 3D.",
+      "Pas d'interface visuelle intégrée."
+    ],
+    "use_cases": [
+      "Créer une visualisation 3D interactive sur un site.",
+      "Développer un configurateur produit en 3D.",
+      "Construire une expérience WebGL immersive."
+    ],
+    "relevant_for": ["Développeurs web", "Creative coders", "Studios interactifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build 3D experiences for the web.",
+        "You want a mature, well-documented library.",
+        "You want an open-source solution with no license cost."
+      ],
+      "avoidIf": [
+        "You don't code in JavaScript.",
+        "You want a no-code visual 3D editor.",
+        "Your project doesn't need 3D rendering."
+      ],
+      "threshold": "Three.js is the standard for web 3D in JavaScript; for no-code 3D, a visual editor fits better."
+    },
+    "pros": [
+      "Fully free and open source.",
+      "Mature and widely used library.",
+      "Large community and abundant documentation.",
+      "Abstracts away WebGL complexity."
+    ],
+    "cons": [
+      "Requires JavaScript skills.",
+      "Learning curve for 3D concepts.",
+      "No built-in visual interface."
+    ],
+    "use_cases": [
+      "Build an interactive 3D visualization on a site.",
+      "Develop a 3D product configurator.",
+      "Create an immersive WebGL experience."
+    ]
+  }
+}

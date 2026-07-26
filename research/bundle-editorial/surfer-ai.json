@@ -1,0 +1,89 @@
+{
+  "slug": "surfer-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Surfer — tarifs (site officiel)", "url": "https://surferseo.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Suite d'optimisation de contenu SEO : Content Editor qui note et guide la rédaction selon l'analyse des SERP, plus Surfer AI qui génère des articles optimisés de bout en bout.",
+    "what_en": "SEO content optimization suite: a Content Editor that scores and guides writing based on SERP analysis, plus Surfer AI which generates fully optimized articles end to end.",
+    "pricing_model": "Abonnement mensuel (moins cher en annuel), paliers selon le nombre d'articles ; crédits Surfer AI et add-ons facturés à part.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; articles Surfer AI facturés au crédit au-delà de l'inclus." },
+    "plans": [
+      { "name": "Essential", "price": "99 $/mois (79 $/mois en annuel), 30 articles Content Editor" },
+      { "name": "Scale", "price": "219 $/mois (175 $/mois en annuel), 100 articles + articles IA" },
+      { "name": "Enterprise", "price": "à partir de 999 $/mois (annuel)" },
+      { "name": "Article Surfer AI supplémentaire", "price": "29 $ par article au-delà de l'inclus" }
+    ],
+    "key_features": [
+      "Content Editor avec score d'optimisation en temps réel",
+      "Surfer AI pour générer des articles optimisés",
+      "Analyse des SERP et recommandations de mots-clés",
+      "Audit de contenu existant et suivi (add-ons)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez du contenu SEO régulièrement.",
+        "Vous voulez guider vos rédacteurs avec un score d'optimisation.",
+        "Vous cherchez à générer des brouillons optimisés rapidement."
+      ],
+      "avoidIf": [
+        "Vous publiez très peu d'articles.",
+        "Vous privilégiez une écriture sans contrainte d'algorithme.",
+        "Votre budget outils SEO est limité."
+      ],
+      "threshold": "Surfer se justifie pour une production de contenu SEO soutenue ; pour quelques articles par an, l'abonnement est difficile à rentabiliser."
+    },
+    "pros": [
+      "Score d'optimisation clair pour cadrer la rédaction.",
+      "Génération d'articles optimisés avec Surfer AI.",
+      "Analyse des SERP et suggestions de mots-clés.",
+      "Utile pour aligner une équipe de rédacteurs."
+    ],
+    "cons": [
+      "Coût qui grimpe vite avec le volume.",
+      "Articles IA facturés au crédit au-delà de l'inclus.",
+      "Risque de sur-optimisation si suivi aveuglément."
+    ],
+    "use_cases": [
+      "Optimiser un article pour un mot-clé cible.",
+      "Générer un premier jet d'article optimisé.",
+      "Cadrer la rédaction d'une équipe de contenu."
+    ],
+    "relevant_for": ["Rédacteurs SEO", "Agences de contenu", "Responsables marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce SEO content regularly.",
+        "You want to guide writers with an optimization score.",
+        "You want to generate optimized drafts quickly."
+      ],
+      "avoidIf": [
+        "You publish very few articles.",
+        "You prefer writing free of algorithmic constraints.",
+        "Your SEO tooling budget is limited."
+      ],
+      "threshold": "Surfer makes sense for sustained SEO content output; for a handful of articles a year, the subscription is hard to justify."
+    },
+    "pros": [
+      "Clear optimization score to frame writing.",
+      "Optimized article generation with Surfer AI.",
+      "SERP analysis and keyword suggestions.",
+      "Useful for aligning a team of writers."
+    ],
+    "cons": [
+      "Cost climbs quickly with volume.",
+      "AI articles billed per credit beyond the included amount.",
+      "Risk of over-optimization if followed blindly."
+    ],
+    "use_cases": [
+      "Optimize an article for a target keyword.",
+      "Generate an optimized first draft.",
+      "Frame a content team's writing."
+    ]
+  }
+}

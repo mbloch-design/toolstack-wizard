@@ -1,0 +1,87 @@
+{
+  "slug": "storyblocks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Storyblocks — tarifs (site officiel)", "url": "https://www.storyblocks.com/pricing" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de médias libres de droits par abonnement : vidéos, séquences 4K, templates After Effects, musiques, effets sonores et images, avec téléchargements illimités selon le plan.",
+    "what_en": "Subscription-based royalty-free media library: videos, 4K footage, After Effects templates, music, sound effects and images, with unlimited downloads on select plans.",
+    "pricing_model": "Abonnement (mensuel ou annuel), plusieurs plans dont un plan tout-accès à téléchargements illimités.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; essai gratuit de 7 jours et quelques ressources gratuites." },
+    "plans": [
+      { "name": "Basic (Video)", "price": "environ 19 $/mois ou 99 $/an, téléchargements limités" },
+      { "name": "Unlimited All Access", "price": "environ 30 $/mois en annuel, vidéo + audio + images illimités" }
+    ],
+    "key_features": [
+      "Téléchargements illimités (plan All Access)",
+      "Vidéos et séquences 4K, templates After Effects",
+      "Bibliothèque audio (musiques et effets sonores)",
+      "Licence libre de droits pour usage commercial"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez des vidéos régulièrement.",
+        "Vous voulez un volume élevé sans coût à l'unité.",
+        "Vous avez besoin de vidéo, audio et templates au même endroit."
+      ],
+      "avoidIf": [
+        "Vous ne téléchargez que quelques éléments par an.",
+        "Vous cherchez des visuels très pointus ou rares.",
+        "Un abonnement récurrent ne vous convient pas."
+      ],
+      "threshold": "Storyblocks est rentable pour un usage vidéo soutenu grâce aux téléchargements illimités ; pour des besoins ponctuels, l'achat à l'unité ailleurs est plus adapté."
+    },
+    "pros": [
+      "Téléchargements illimités sur le plan tout-accès.",
+      "Catalogue vidéo, audio et templates réunis.",
+      "Licence libre de droits couvrant l'usage commercial.",
+      "Séquences 4K et modèles After Effects."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Qualité et originalité variables selon les ressources.",
+      "Engagement annuel pour le meilleur tarif."
+    ],
+    "use_cases": [
+      "Alimenter des montages vidéo en b-roll et musiques.",
+      "Habiller des vidéos avec des templates animés.",
+      "Sourcer visuels et sons pour des contenus sociaux."
+    ],
+    "relevant_for": ["Monteurs vidéo", "Créateurs de contenu", "Agences et studios"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce videos regularly.",
+        "You want high volume with no per-item cost.",
+        "You need video, audio and templates in one place."
+      ],
+      "avoidIf": [
+        "You only download a few assets per year.",
+        "You need very niche or rare visuals.",
+        "A recurring subscription doesn't suit you."
+      ],
+      "threshold": "Storyblocks pays off for heavy video use thanks to unlimited downloads; for occasional needs, buying single assets elsewhere fits better."
+    },
+    "pros": [
+      "Unlimited downloads on the all-access plan.",
+      "Combined video, audio and template catalog.",
+      "Royalty-free license covering commercial use.",
+      "4K footage and After Effects templates."
+    ],
+    "cons": [
+      "No permanent free plan.",
+      "Quality and originality vary across assets.",
+      "Annual commitment for the best rate."
+    ],
+    "use_cases": [
+      "Fill video edits with b-roll and music.",
+      "Dress up videos with animated templates.",
+      "Source visuals and sounds for social content."
+    ]
+  }
+}

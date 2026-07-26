@@ -1,0 +1,89 @@
+{
+  "slug": "truecoach",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TrueCoach — tarifs (site officiel)", "url": "https://truecoach.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de coaching fitness en ligne pour personal trainers : programmation d'entraînements, bibliothèque de vidéos d'exercices, suivi des clients, messagerie et application mobile de marque.",
+    "what_en": "Online fitness coaching platform for personal trainers: workout programming, exercise video library, client tracking, messaging and a branded mobile app.",
+    "pricing_model": "Abonnement mensuel par paliers, tarifé selon le nombre de clients actifs. Essai gratuit, pas de version gratuite permanente.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 14 jours ; ensuite abonnement selon le nombre de clients actifs." },
+    "plans": [
+      { "name": "Starter", "price": "29,98 $/mois (jusqu'à 5 clients actifs)" },
+      { "name": "Standard", "price": "69,98 $/mois (jusqu'à 20 clients)" },
+      { "name": "Pro", "price": "164,98 $/mois (jusqu'à 50 clients)" },
+      { "name": "Custom", "price": "Tarif sur mesure au-delà de 50 clients" }
+    ],
+    "key_features": [
+      "Programmation d'entraînements avec bibliothèque de vidéos d'exercices",
+      "Suivi de progression et données issues d'objets connectés",
+      "Messagerie client et notifications",
+      "Application mobile aux couleurs du coach"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes coach indépendant et gérez du coaching à distance.",
+        "Vous voulez délivrer des programmes structurés avec vidéos d'exercices.",
+        "Vous cherchez une app de marque pour vos clients."
+      ],
+      "avoidIf": [
+        "Vous coachez uniquement en présentiel sans suivi digital.",
+        "Vous avez très peu de clients et un usage occasionnel.",
+        "Vous voulez une solution entièrement gratuite."
+      ],
+      "threshold": "TrueCoach convient au coach qui structure du suivi à distance ; pour du présentiel pur ou une poignée de clients, l'abonnement se justifie moins."
+    },
+    "pros": [
+      "Bibliothèque de vidéos d'exercices intégrée.",
+      "Suivi client et données d'objets connectés.",
+      "Application mobile personnalisable.",
+      "Interface pensée pour la programmation d'entraînements."
+    ],
+    "cons": [
+      "Tarif qui grimpe avec le nombre de clients.",
+      "Pas de version gratuite permanente.",
+      "Des frais de transaction s'appliquent aux paiements."
+    ],
+    "use_cases": [
+      "Envoyer des programmes d'entraînement personnalisés à distance.",
+      "Suivre la progression et l'assiduité des clients.",
+      "Communiquer via une app de coaching de marque."
+    ],
+    "relevant_for": ["Personal trainers", "Coachs sportifs en ligne", "Studios fitness"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an independent coach running remote coaching.",
+        "You want to deliver structured programs with exercise videos.",
+        "You want a branded app for your clients."
+      ],
+      "avoidIf": [
+        "You coach only in person with no digital follow-up.",
+        "You have very few clients and occasional use.",
+        "You want a fully free solution."
+      ],
+      "threshold": "TrueCoach fits coaches structuring remote follow-up; for purely in-person work or a handful of clients, the subscription is harder to justify."
+    },
+    "pros": [
+      "Built-in exercise video library.",
+      "Client tracking and wearable data.",
+      "Customizable mobile app.",
+      "Interface designed for workout programming."
+    ],
+    "cons": [
+      "Cost scales with the number of clients.",
+      "No permanent free version.",
+      "Transaction fees apply to payments."
+    ],
+    "use_cases": [
+      "Send personalized workout programs remotely.",
+      "Track client progress and adherence.",
+      "Communicate through a branded coaching app."
+    ]
+  }
+}

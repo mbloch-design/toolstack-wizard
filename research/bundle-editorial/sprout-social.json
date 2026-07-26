@@ -1,0 +1,89 @@
+{
+  "slug": "sprout-social",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sprout Social — tarifs (site officiel)", "url": "https://sproutsocial.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des réseaux sociaux tout-en-un : planification et publication, boîte de réception unifiée, analytics, social listening et reporting pour les équipes marketing.",
+    "what_en": "All-in-one social media management platform: scheduling and publishing, unified inbox, analytics, social listening and reporting for marketing teams.",
+    "pricing_model": "Abonnement par utilisateur/mois (facturation annuelle ou mensuelle), plusieurs paliers plus add-ons (Premium Analytics, Social Listening).",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; essai gratuit de 30 jours sans carte bancaire." },
+    "plans": [
+      { "name": "Standard", "price": "199 $/siège/mois (annuel), 5 profils sociaux" },
+      { "name": "Professional", "price": "299 $/siège/mois (annuel), profils illimités" },
+      { "name": "Advanced", "price": "399 $/siège/mois (annuel)" },
+      { "name": "Enterprise", "price": "Sur devis" }
+    ],
+    "key_features": [
+      "Boîte de réception sociale unifiée (Smart Inbox)",
+      "Planification et publication multi-réseaux",
+      "Analytics et reporting avancés",
+      "Social listening (add-on) et outils d'équipe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs comptes sociaux en équipe.",
+        "Vous avez besoin de reporting et d'analytics solides.",
+        "Le social listening fait partie de vos priorités."
+      ],
+      "avoidIf": [
+        "Vous êtes un créateur solo au budget serré.",
+        "Vous ne gérez qu'un ou deux comptes simples.",
+        "Vous cherchez avant tout une option gratuite."
+      ],
+      "threshold": "Sprout Social vaut son coût pour des équipes marketing exigeantes en reporting et écoute sociale ; pour un usage solo léger, un outil plus abordable suffit."
+    },
+    "pros": [
+      "Boîte de réception unifiée puissante pour les équipes.",
+      "Analytics et rapports parmi les plus complets.",
+      "Social listening intégré (en add-on).",
+      "Interface soignée et fiable."
+    ],
+    "cons": [
+      "Tarif élevé, facturé par siège.",
+      "Pas de plan gratuit.",
+      "Fonctions clés reléguées à des add-ons payants."
+    ],
+    "use_cases": [
+      "Piloter les réseaux sociaux d'une marque en équipe.",
+      "Produire des rapports de performance clients.",
+      "Surveiller les mentions et tendances (listening)."
+    ],
+    "relevant_for": ["Équipes marketing", "Agences sociales", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage several social accounts as a team.",
+        "You need strong reporting and analytics.",
+        "Social listening is one of your priorities."
+      ],
+      "avoidIf": [
+        "You're a solo creator on a tight budget.",
+        "You only run one or two simple accounts.",
+        "You mainly want a free option."
+      ],
+      "threshold": "Sprout Social earns its cost for marketing teams that demand reporting and listening; for light solo use, a cheaper tool is enough."
+    },
+    "pros": [
+      "Powerful unified inbox for teams.",
+      "Among the most complete analytics and reports.",
+      "Built-in social listening (as an add-on).",
+      "Polished, reliable interface."
+    ],
+    "cons": [
+      "High price, billed per seat.",
+      "No free plan.",
+      "Key features gated behind paid add-ons."
+    ],
+    "use_cases": [
+      "Run a brand's social channels as a team.",
+      "Produce client performance reports.",
+      "Monitor mentions and trends (listening)."
+    ]
+  }
+}

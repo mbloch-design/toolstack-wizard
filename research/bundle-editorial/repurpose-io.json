@@ -1,0 +1,87 @@
+{
+  "slug": "repurpose-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Repurpose.io — tarifs (site officiel)", "url": "https://repurpose.io/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme qui automatise la réédition et la distribution de contenus vidéo/audio d'une plateforme à une autre (ex. YouTube, TikTok, Instagram, podcasts) sans réimport manuel.",
+    "what_en": "Platform that automates repurposing and distributing video/audio content from one platform to another (e.g. YouTube, TikTok, Instagram, podcasts) without manual re-uploading.",
+    "pricing_model": "Abonnement mensuel ou annuel (annuel moins cher), par paliers selon le nombre de comptes connectés.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit de 14 jours (publication limitée)." },
+    "plans": [
+      { "name": "Content Marketer / Starter", "price": "à partir de ~35 $/mois (facturation annuelle moins chère)" },
+      { "name": "Agency / Pro", "price": "paliers supérieurs ~99 $ à ~179 $/mois selon le nombre de comptes — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Publication automatique multi-plateformes",
+      "Conversion vidéo ↔ audio (podcast)",
+      "Déclencheurs à partir de YouTube, Drive, Dropbox, etc.",
+      "Gestion de plusieurs comptes par réseau"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez le même contenu sur plusieurs plateformes.",
+        "Vous voulez automatiser la distribution sans réimporter à la main.",
+        "Vous transformez régulièrement des vidéos en clips ou en podcasts."
+      ],
+      "avoidIf": [
+        "Vous publiez sur une seule plateforme.",
+        "Vous produisez peu de contenu récurrent.",
+        "Vous préférez tout maîtriser manuellement à la publication."
+      ],
+      "threshold": "Repurpose.io se rentabilise dès que vous diffusez en volume sur plusieurs réseaux ; pour un canal unique ou un rythme faible, la publication manuelle suffit."
+    },
+    "pros": [
+      "Automatise la distribution multi-plateformes.",
+      "Convertit vidéo et audio entre formats.",
+      "Nombreuses intégrations (réseaux, cloud).",
+      "Gère plusieurs comptes par réseau."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Le tarif grimpe vite avec le nombre de comptes.",
+      "Dépend des règles et API des plateformes tierces."
+    ],
+    "use_cases": [
+      "Republier automatiquement des vidéos YouTube en Shorts et TikTok.",
+      "Transformer une vidéo en épisode de podcast.",
+      "Distribuer le contenu d'une agence sur les comptes de plusieurs clients."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Podcasteurs", "Agences social media"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You publish the same content across several platforms.",
+        "You want to automate distribution without re-uploading by hand.",
+        "You regularly turn videos into clips or podcasts."
+      ],
+      "avoidIf": [
+        "You publish to a single platform.",
+        "You produce little recurring content.",
+        "You'd rather control everything manually at publish time."
+      ],
+      "threshold": "Repurpose.io pays off once you distribute at volume across networks; for a single channel or a low cadence, manual publishing is enough."
+    },
+    "pros": [
+      "Automates multi-platform distribution.",
+      "Converts video and audio between formats.",
+      "Many integrations (social, cloud).",
+      "Handles multiple accounts per network."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Price rises quickly with the number of accounts.",
+      "Depends on third-party platform rules and APIs."
+    ],
+    "use_cases": [
+      "Auto-republish YouTube videos as Shorts and TikToks.",
+      "Turn a video into a podcast episode.",
+      "Distribute an agency's content across several client accounts."
+    ]
+  }
+}

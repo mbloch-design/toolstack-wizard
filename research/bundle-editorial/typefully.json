@@ -1,0 +1,89 @@
+{
+  "slug": "typefully",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Typefully — tarifs (site officiel)", "url": "https://typefully.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil d'écriture et de planification sociale orienté texte : composition de threads et posts sans distraction, publication et programmation vers X, LinkedIn, Threads, Bluesky et Mastodon, avec analytics.",
+    "what_en": "Text-first social writing and scheduling tool: distraction-free composing of threads and posts, publishing and scheduling to X, LinkedIn, Threads, Bluesky and Mastodon, with analytics.",
+    "pricing_model": "Abonnement par « social set » (ensemble de comptes d'une marque), avec version gratuite. Remise en facturation annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 1 social set, 1 utilisateur, quota de posts mensuel limité." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (1 social set, ~15 posts/mois)" },
+      { "name": "Pro", "price": "8 $/mois par social set en annuel (10 $/mois au mois)" },
+      { "name": "Business", "price": "18 $/mois par social set en annuel (20 $/mois au mois)" },
+      { "name": "Enterprise", "price": "Tarif sur mesure" }
+    ],
+    "key_features": [
+      "Éditeur de threads sans distraction",
+      "Planification et publication multi-réseaux",
+      "Analytics de performance des posts",
+      "Assistance IA à la rédaction"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez régulièrement des threads sur X ou LinkedIn.",
+        "Vous voulez planifier vos posts à l'avance.",
+        "Vous appréciez un éditeur épuré centré sur le texte."
+      ],
+      "avoidIf": [
+        "Vous publiez surtout du contenu visuel (Instagram, TikTok).",
+        "Vous gérez de nombreuses marques et le coût par social set pèse.",
+        "Vous ne publiez qu'occasionnellement."
+      ],
+      "threshold": "Typefully brille pour le créateur texte sur X/LinkedIn ; pour du contenu visuel ou multi-marques lourd, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Éditeur épuré idéal pour les threads.",
+      "Publication vers plusieurs réseaux sociaux.",
+      "Version gratuite pour tester.",
+      "Analytics et aide IA intégrées."
+    ],
+    "cons": [
+      "Facturation par social set qui grimpe avec plusieurs marques.",
+      "Peu adapté au contenu très visuel.",
+      "Quota de posts limité sur le plan gratuit."
+    ],
+    "use_cases": [
+      "Rédiger et planifier un thread X à l'avance.",
+      "Recycler un post sur LinkedIn, Threads et Bluesky.",
+      "Analyser les performances de ses publications."
+    ],
+    "relevant_for": ["Créateurs de contenu texte", "Community managers", "Solopreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly write threads on X or LinkedIn.",
+        "You want to schedule posts in advance.",
+        "You value a clean, text-focused editor."
+      ],
+      "avoidIf": [
+        "You mostly publish visual content (Instagram, TikTok).",
+        "You manage many brands and per-social-set cost adds up.",
+        "You only publish occasionally."
+      ],
+      "threshold": "Typefully shines for text creators on X/LinkedIn; for visual content or heavy multi-brand use, other tools fit better."
+    },
+    "pros": [
+      "Clean editor ideal for threads.",
+      "Publishing to several social networks.",
+      "Free version to try it out.",
+      "Built-in analytics and AI assistance."
+    ],
+    "cons": [
+      "Per-social-set billing scales up with several brands.",
+      "Poorly suited to highly visual content.",
+      "Limited post quota on the free plan."
+    ],
+    "use_cases": [
+      "Draft and schedule an X thread in advance.",
+      "Repurpose a post to LinkedIn, Threads and Bluesky.",
+      "Analyze the performance of your posts."
+    ]
+  }
+}

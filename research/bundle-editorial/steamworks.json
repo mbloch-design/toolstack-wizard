@@ -1,0 +1,87 @@
+{
+  "slug": "steamworks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Steamworks — Steam Direct Fee (site officiel)", "url": "https://partner.steamgames.com/doc/gettingstarted/appfee" }
+  ],
+  "facts": {
+    "what": "Suite d'outils et de services de Valve pour publier et distribuer des jeux sur Steam : SDK (succès, multijoueur, cloud, DRM), page boutique, gestion des ventes et des clés.",
+    "what_en": "Valve's suite of tools and services to publish and distribute games on Steam: SDK (achievements, multiplayer, cloud, DRM), store page, sales and key management.",
+    "pricing_model": "Frais d'entrée par produit (Steam Direct Fee) puis partage de revenus sur les ventes.",
+    "free_tier": { "exists": false, "detail": "Frais Steam Direct de 100 $ par produit publié, récupérable après 1 000 $ de revenus ; Valve prélève ensuite une part sur les ventes." },
+    "plans": [
+      { "name": "Steam Direct Fee", "price": "100 $ par produit, récupérable après 1 000 $ de revenus" },
+      { "name": "Partage de revenus", "price": "Valve prélève 30 %, dégressif à 25 % au-delà de 10 M$ et 20 % au-delà de 50 M$" }
+    ],
+    "key_features": [
+      "Publication et page boutique sur Steam",
+      "SDK : succès, multijoueur, sauvegarde cloud, matchmaking",
+      "Gestion des clés, remises et campagnes",
+      "Statistiques de ventes et outils d'édition"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez vendre un jeu PC sur la plus grande boutique.",
+        "Vous avez besoin de multijoueur, succès et cloud intégrés.",
+        "Vous visez l'audience massive de Steam."
+      ],
+      "avoidIf": [
+        "Vous refusez la part prélevée par la plateforme.",
+        "Votre projet n'est pas un jeu vidéo.",
+        "Vous privilégiez une distribution entièrement autonome."
+      ],
+      "threshold": "Steamworks est incontournable pour publier un jeu PC à grande échelle ; pour éviter la commission ou hors du jeu vidéo, il n'a pas de sens."
+    },
+    "pros": [
+      "Accès à l'audience gigantesque de Steam.",
+      "SDK riche : multijoueur, succès, cloud, matchmaking.",
+      "Outils de vente, clés et campagnes de remises.",
+      "Frais d'entrée récupérables au-delà d'un seuil de revenus."
+    ],
+    "cons": [
+      "Commission conséquente prélevée sur les ventes.",
+      "Réservé à la distribution de jeux vidéo.",
+      "Dépendance forte à la plateforme Valve."
+    ],
+    "use_cases": [
+      "Publier un jeu indépendant sur Steam.",
+      "Intégrer succès et multijoueur via le SDK.",
+      "Gérer clés, remises et ventes saisonnières."
+    ],
+    "relevant_for": ["Développeurs de jeux", "Studios indépendants", "Éditeurs PC"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to sell a PC game on the biggest store.",
+        "You need built-in multiplayer, achievements and cloud.",
+        "You're targeting Steam's massive audience."
+      ],
+      "avoidIf": [
+        "You won't accept the platform's revenue cut.",
+        "Your project isn't a video game.",
+        "You prefer fully self-hosted distribution."
+      ],
+      "threshold": "Steamworks is essential to publish a PC game at scale; to avoid the commission or outside gaming, it makes no sense."
+    },
+    "pros": [
+      "Access to Steam's enormous audience.",
+      "Rich SDK: multiplayer, achievements, cloud, matchmaking.",
+      "Sales, keys and discount campaign tools.",
+      "Entry fee recoupable past a revenue threshold."
+    ],
+    "cons": [
+      "Substantial commission taken on sales.",
+      "Limited to video game distribution.",
+      "Strong dependence on Valve's platform."
+    ],
+    "use_cases": [
+      "Publish an indie game on Steam.",
+      "Integrate achievements and multiplayer via the SDK.",
+      "Manage keys, discounts and seasonal sales."
+    ]
+  }
+}

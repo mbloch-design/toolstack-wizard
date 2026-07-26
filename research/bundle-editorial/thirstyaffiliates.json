@@ -1,0 +1,88 @@
+{
+  "slug": "thirstyaffiliates",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ThirstyAffiliates — tarifs (site officiel)", "url": "https://thirstyaffiliates.com/pricing" }
+  ],
+  "facts": {
+    "what": "Extension WordPress de gestion de liens d'affiliation : masquage (cloaking) des liens, redirections, catégorisation et suivi des clics, avec des fonctions Pro d'automatisation.",
+    "what_en": "WordPress affiliate link management plugin: link cloaking, redirects, categorization, and click tracking, with Pro automation features.",
+    "pricing_model": "Licence annuelle par nombre de sites ; version gratuite limitée disponible.",
+    "free_tier": { "exists": true, "detail": "Version gratuite limitée ; les fonctions d'automatisation sont réservées aux plans payants." },
+    "plans": [
+      { "name": "Basic", "price": "99,60 $/an (1 site)" },
+      { "name": "Plus", "price": "149,60 $/an (jusqu'à 5 sites)" },
+      { "name": "Advanced", "price": "149,70 $/an (jusqu'à 10 sites)" }
+    ],
+    "key_features": [
+      "Masquage (cloaking) des liens d'affiliation",
+      "Redirections et catégorisation des liens",
+      "Suivi et statistiques de clics",
+      "Autolinker et vérification de santé des liens (Pro)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez de nombreux liens d'affiliation sur WordPress.",
+        "Vous voulez masquer et organiser vos liens proprement.",
+        "Vous suivez les clics pour optimiser vos revenus."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas WordPress.",
+        "Vous avez très peu de liens à gérer.",
+        "Vous n'avez pas besoin de suivi ni d'automatisation."
+      ],
+      "threshold": "ThirstyAffiliates se justifie pour gérer beaucoup de liens sur WordPress ; pour quelques liens, la gestion manuelle suffit."
+    },
+    "pros": [
+      "Masquage et organisation des liens efficaces.",
+      "Suivi des clics intégré.",
+      "Automatisation (Autolinker) sur les plans Pro.",
+      "Version gratuite pour démarrer."
+    ],
+    "cons": [
+      "Réservé à l'écosystème WordPress.",
+      "Fonctions clés derrière les plans payants.",
+      "Licence à renouveler chaque année."
+    ],
+    "use_cases": [
+      "Masquer et organiser ses liens d'affiliation.",
+      "Suivre les clics par lien.",
+      "Automatiser l'insertion de liens dans les articles."
+    ],
+    "relevant_for": ["Blogueurs", "Affiliés", "Éditeurs WordPress"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage many affiliate links on WordPress.",
+        "You want to cloak and organize links cleanly.",
+        "You track clicks to optimize revenue."
+      ],
+      "avoidIf": [
+        "You don't use WordPress.",
+        "You have very few links to manage.",
+        "You don't need tracking or automation."
+      ],
+      "threshold": "ThirstyAffiliates makes sense for managing many links on WordPress; for a few links, manual handling is enough."
+    },
+    "pros": [
+      "Effective link cloaking and organization.",
+      "Built-in click tracking.",
+      "Automation (Autolinker) on Pro plans.",
+      "Free version to get started."
+    ],
+    "cons": [
+      "Limited to the WordPress ecosystem.",
+      "Key features behind paid plans.",
+      "License renewed yearly."
+    ],
+    "use_cases": [
+      "Cloak and organize affiliate links.",
+      "Track clicks per link.",
+      "Auto-insert links into articles."
+    ]
+  }
+}

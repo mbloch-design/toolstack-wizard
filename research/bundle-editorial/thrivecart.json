@@ -1,0 +1,88 @@
+{
+  "slug": "thrivecart",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ThriveCart — site officiel", "url": "https://thrivecart.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de pages de paiement (checkout) pour vendeurs de produits digitaux et services : pages de vente, upsells/bump offers, abonnements, affiliation et livraison de cours (Learn).",
+    "what_en": "Checkout platform for digital product and service sellers: checkout pages, upsells/bump offers, subscriptions, affiliate management, and course delivery (Learn).",
+    "pricing_model": "Licence à paiement unique (accès à vie) sans frais mensuels ; modules payants en option. Sans frais de transaction de plateforme.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ni d'essai gratuit ; paiement unique pour démarrer." },
+    "plans": [
+      { "name": "Standard", "price": "495 $ (paiement unique, accès à vie)" },
+      { "name": "Pro+ (option)", "price": "295 $/an (rapports, QR checkout, automatisations avancées)" },
+      { "name": "Learn+ (option)", "price": "195 $ (paiement unique, diffusion de cours avancée)" }
+    ],
+    "key_features": [
+      "Pages de paiement optimisées avec upsells et bump offers",
+      "Gestion des abonnements et paiements échelonnés",
+      "Programme d'affiliation intégré",
+      "Diffusion de cours (Learn) et aucun frais de plateforme"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des produits digitaux ou des services.",
+        "Vous voulez un checkout à paiement unique sans abonnement mensuel.",
+        "Vous voulez optimiser vos ventes avec upsells et affiliation."
+      ],
+      "avoidIf": [
+        "Vous voulez tester gratuitement avant d'acheter.",
+        "Vous avez besoin d'une boutique e-commerce physique complète.",
+        "Votre volume de ventes ne justifie pas l'investissement initial."
+      ],
+      "threshold": "ThriveCart se justifie pour vendre des produits digitaux sur le long terme ; pour tester sans engagement, une solution avec essai gratuit convient mieux."
+    },
+    "pros": [
+      "Paiement unique, sans abonnement mensuel.",
+      "Aucun frais de transaction de plateforme.",
+      "Upsells, bump offers et affiliation intégrés.",
+      "Module de diffusion de cours (Learn)."
+    ],
+    "cons": [
+      "Pas d'essai gratuit ni de version gratuite.",
+      "Investissement initial élevé.",
+      "Moins adapté au e-commerce physique complet."
+    ],
+    "use_cases": [
+      "Vendre un cours ou un produit digital.",
+      "Optimiser la conversion avec des upsells.",
+      "Gérer un programme d'affiliation."
+    ],
+    "relevant_for": ["Vendeurs de produits digitaux", "Créateurs de cours", "Coachs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell digital products or services.",
+        "You want a one-time checkout with no monthly subscription.",
+        "You want to boost sales with upsells and affiliates."
+      ],
+      "avoidIf": [
+        "You want to try it free before buying.",
+        "You need a full physical e-commerce store.",
+        "Your sales volume doesn't justify the upfront cost."
+      ],
+      "threshold": "ThriveCart makes sense for selling digital products long-term; to test without commitment, a free-trial option fits better."
+    },
+    "pros": [
+      "One-time payment, no monthly subscription.",
+      "No platform transaction fees.",
+      "Built-in upsells, bump offers, and affiliates.",
+      "Course delivery module (Learn)."
+    ],
+    "cons": [
+      "No free trial or free version.",
+      "High upfront investment.",
+      "Less suited to full physical e-commerce."
+    ],
+    "use_cases": [
+      "Sell a course or digital product.",
+      "Boost conversion with upsells.",
+      "Run an affiliate program."
+    ]
+  }
+}

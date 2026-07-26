@@ -1,0 +1,88 @@
+{
+  "slug": "tradingview",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TradingView — site officiel", "url": "https://www.tradingview.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme web de graphiques et d'analyse des marchés financiers : charts avancés, centaines d'indicateurs, alertes de prix, screeners, trading papier et réseau social de traders.",
+    "what_en": "Web platform for financial charting and market analysis: advanced charts, hundreds of indicators, price alerts, screeners, paper trading, and a social network of traders.",
+    "pricing_model": "Freemium : plan Basic gratuit (avec publicités) ; plans payants mensuels ou annuels (remise annuelle).",
+    "free_tier": { "exists": true, "detail": "Plan Basic gratuit sans limite de durée (graphiques limités, publicités) ; essai de 30 jours des plans payants." },
+    "plans": [
+      { "name": "Basic", "price": "Gratuit (avec publicités, fonctions limitées)" },
+      { "name": "Essential / Plus / Premium", "price": "à partir d'environ 15 $/mois — montants sur la page officielle" },
+      { "name": "Ultimate", "price": "jusqu'à environ 240 $/mois — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Graphiques avancés multi-timeframes",
+      "Centaines d'indicateurs et Pine Script",
+      "Alertes de prix et screeners de marchés",
+      "Trading papier et réseau social de traders"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous analysez les marchés et voulez de bons graphiques.",
+        "Vous voulez créer des alertes et des indicateurs personnalisés.",
+        "Vous voulez démarrer gratuitement puis monter en gamme."
+      ],
+      "avoidIf": [
+        "Vous cherchez uniquement un courtier pour passer des ordres.",
+        "Vous n'analysez pas les marchés financiers.",
+        "Vous êtes gêné par les publicités et ne voulez pas payer."
+      ],
+      "threshold": "TradingView s'impose pour l'analyse graphique des marchés ; pour un usage occasionnel, le plan gratuit suffit souvent."
+    },
+    "pros": [
+      "Plan gratuit sans limite de durée.",
+      "Graphiques et indicateurs très complets.",
+      "Alertes, screeners et trading papier.",
+      "Communauté active et scripts partagés."
+    ],
+    "cons": [
+      "Publicités et limites sur le plan gratuit.",
+      "Fonctions avancées réservées aux plans payants.",
+      "Coût élevé sur les plans supérieurs."
+    ],
+    "use_cases": [
+      "Analyser un actif avec des indicateurs.",
+      "Configurer des alertes de prix.",
+      "S'entraîner en trading papier."
+    ],
+    "relevant_for": ["Traders", "Investisseurs", "Analystes de marché"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You analyze markets and want strong charts.",
+        "You want to build alerts and custom indicators.",
+        "You want to start free then upgrade over time."
+      ],
+      "avoidIf": [
+        "You only need a broker to place orders.",
+        "You don't analyze financial markets.",
+        "Ads bother you and you won't pay."
+      ],
+      "threshold": "TradingView is the go-to for market charting; for occasional use, the free plan is often enough."
+    },
+    "pros": [
+      "Free plan with no time limit.",
+      "Very complete charts and indicators.",
+      "Alerts, screeners, and paper trading.",
+      "Active community and shared scripts."
+    ],
+    "cons": [
+      "Ads and limits on the free plan.",
+      "Advanced features reserved for paid plans.",
+      "High cost on top tiers."
+    ],
+    "use_cases": [
+      "Analyze an asset with indicators.",
+      "Set up price alerts.",
+      "Practice with paper trading."
+    ]
+  }
+}

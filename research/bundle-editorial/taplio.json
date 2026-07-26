@@ -1,0 +1,88 @@
+{
+  "slug": "taplio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Taplio — tarifs (site officiel)", "url": "https://taplio.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil tout-en-un pour développer sa présence sur LinkedIn : génération et planification de posts assistées par IA, banque d'inspiration, analytics personnelles et outils de relation.",
+    "what_en": "All-in-one tool to grow a LinkedIn presence: AI-assisted post generation and scheduling, an inspiration library, personal analytics, and relationship-building tools.",
+    "pricing_model": "Abonnement mensuel ou annuel (remise annuelle). Essai gratuit de 7 jours.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit de 7 jours avec accès complet." },
+    "plans": [
+      { "name": "Starter", "price": "39 $/mois (planification et analytics, sans crédits IA)" },
+      { "name": "Standard", "price": "65 $/mois (posts IA, carrousels, relation, crédits IA)" },
+      { "name": "Pro", "price": "199 $/mois (base de profils enrichis, plus de génération IA)" }
+    ],
+    "key_features": [
+      "Génération de posts LinkedIn par IA",
+      "Planification et file d'attente de publication",
+      "Banque d'inspiration et de posts viraux",
+      "Analytics personnelles et outils de relation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez régulièrement sur LinkedIn pour votre marque personnelle.",
+        "Vous voulez gagner du temps sur l'idéation et la rédaction de posts.",
+        "Vous suivez vos performances et voulez construire un réseau ciblé."
+      ],
+      "avoidIf": [
+        "Vous publiez rarement sur LinkedIn.",
+        "Vous n'utilisez pas LinkedIn comme canal principal.",
+        "Vous préférez rédiger sans assistance IA."
+      ],
+      "threshold": "Taplio se justifie si LinkedIn est un canal d'acquisition régulier ; pour un usage occasionnel, l'outil natif suffit."
+    },
+    "pros": [
+      "Génération et planification de posts au même endroit.",
+      "Banque d'inspiration pour trouver des angles.",
+      "Analytics personnelles pour suivre sa progression.",
+      "Outils de relation pour engager sa cible."
+    ],
+    "cons": [
+      "Plan d'entrée sans crédits IA.",
+      "Coût qui grimpe vite selon les besoins.",
+      "Centré uniquement sur LinkedIn."
+    ],
+    "use_cases": [
+      "Planifier une semaine de posts LinkedIn.",
+      "Trouver des idées à partir de posts performants.",
+      "Suivre l'évolution de son audience."
+    ],
+    "relevant_for": ["Créateurs LinkedIn", "Freelances", "Marketeurs B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You post regularly on LinkedIn for your personal brand.",
+        "You want to save time on ideation and post writing.",
+        "You track performance and want to build a targeted network."
+      ],
+      "avoidIf": [
+        "You rarely post on LinkedIn.",
+        "LinkedIn isn't a main channel for you.",
+        "You prefer writing without AI assistance."
+      ],
+      "threshold": "Taplio makes sense if LinkedIn is a regular acquisition channel; for occasional use, the native tool is enough."
+    },
+    "pros": [
+      "Post generation and scheduling in one place.",
+      "Inspiration library to find angles.",
+      "Personal analytics to track progress.",
+      "Relationship tools to engage your audience."
+    ],
+    "cons": [
+      "Entry plan has no AI credits.",
+      "Cost rises quickly with needs.",
+      "Focused solely on LinkedIn."
+    ],
+    "use_cases": [
+      "Plan a week of LinkedIn posts.",
+      "Find ideas from top-performing posts.",
+      "Track audience growth over time."
+    ]
+  }
+}

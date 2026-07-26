@@ -1,0 +1,88 @@
+{
+  "slug": "restream",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Restream — tarifs (site officiel)", "url": "https://restream.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de multistreaming et de studio live qui diffuse une même vidéo en direct simultanément sur plusieurs réseaux (YouTube, Twitch, Facebook, LinkedIn, etc.) depuis une seule source.",
+    "what_en": "Multistreaming and live-studio platform that broadcasts a single live video simultaneously to many networks (YouTube, Twitch, Facebook, LinkedIn, etc.) from one source.",
+    "pricing_model": "Freemium : plan gratuit limité, puis abonnements mensuels ou annuels (annuel moins cher) par paliers selon le nombre de canaux et les fonctions.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : diffusion vers 2 canaux avec filigrane Restream." },
+    "plans": [
+      { "name": "Standard", "price": "à partir de ~16 $/mois (sans filigrane, plus de canaux)" },
+      { "name": "Professional", "price": "~39 $/mois (1080p, accès équipe) — montants sur la page officielle" },
+      { "name": "Business", "price": "~199 $/mois (plus de canaux, SRT) — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Diffusion simultanée vers 30+ réseaux",
+      "Studio live dans le navigateur (invités, overlays)",
+      "Enregistrement et clips",
+      "Analytics et chat unifié multi-plateformes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous diffusez en direct sur plusieurs plateformes à la fois.",
+        "Vous voulez un studio live dans le navigateur, sans logiciel lourd.",
+        "Vous invitez des intervenants à distance dans vos lives."
+      ],
+      "avoidIf": [
+        "Vous ne streamez que sur une seule plateforme.",
+        "Vous avez déjà un setup OBS complet qui vous suffit.",
+        "Vous streamez très rarement."
+      ],
+      "threshold": "Restream est idéal pour multiplier votre audience live sans complexité technique ; pour un canal unique ou un setup OBS déjà en place, l'intérêt est limité."
+    },
+    "pros": [
+      "Diffusion simultanée sur de nombreux réseaux.",
+      "Studio live simple dans le navigateur.",
+      "Chat unifié multi-plateformes.",
+      "Plan gratuit pour démarrer."
+    ],
+    "cons": [
+      "Le plan gratuit ajoute un filigrane.",
+      "Le tarif grimpe avec le nombre de canaux.",
+      "Certaines fonctions avancées facturées en plus."
+    ],
+    "use_cases": [
+      "Diffuser un webinaire en direct sur YouTube et LinkedIn en même temps.",
+      "Animer une émission live avec des invités à distance.",
+      "Élargir l'audience d'un stream de jeu multi-plateformes."
+    ],
+    "relevant_for": ["Streamers", "Créateurs de contenu live", "Équipes marketing / webinaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You go live on several platforms at once.",
+        "You want a browser-based live studio, no heavy software.",
+        "You invite remote guests into your live streams."
+      ],
+      "avoidIf": [
+        "You only stream to a single platform.",
+        "You already have a complete OBS setup that's enough.",
+        "You stream very rarely."
+      ],
+      "threshold": "Restream is ideal for multiplying your live reach without technical hassle; for a single channel or an existing OBS setup, the value is limited."
+    },
+    "pros": [
+      "Simultaneous broadcasting to many networks.",
+      "Simple browser-based live studio.",
+      "Unified cross-platform chat.",
+      "Free plan to get started."
+    ],
+    "cons": [
+      "The free plan adds a watermark.",
+      "Price rises with the number of channels.",
+      "Some advanced features cost extra."
+    ],
+    "use_cases": [
+      "Broadcast a webinar live to YouTube and LinkedIn at once.",
+      "Host a live show with remote guests.",
+      "Grow a game stream's audience across platforms."
+    ]
+  }
+}

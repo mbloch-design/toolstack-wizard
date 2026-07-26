@@ -1,0 +1,89 @@
+{
+  "slug": "visme",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Visme — tarifs (site officiel)", "url": "https://www.visme.co/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de création de contenu visuel : présentations, infographies, documents, rapports et visuels sociaux à partir de modèles, avec outils IA, collaboration et gouvernance de marque.",
+    "what_en": "Visual content creation platform: presentations, infographics, documents, reports and social visuals from templates, with AI tools, collaboration and brand governance.",
+    "pricing_model": "Freemium : plan gratuit limité, puis abonnements par utilisateur (mensuel ou annuel) pour individus, équipes et entreprises.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : jeu limité de modèles et d'assets, stockage réduit et formats d'export de base (PNG, JPG)." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (modèles et export limités)" },
+      { "name": "Starter", "price": "12,25 $/utilisateur/mois en annuel (29 $/mois au mois)" },
+      { "name": "Pro", "price": "24,75 $/utilisateur/mois en annuel (59 $/mois au mois)" },
+      { "name": "Enterprise", "price": "Tarif sur mesure (gouvernance, sécurité, onboarding)" }
+    ],
+    "key_features": [
+      "Modèles de présentations, infographies et documents",
+      "Outils IA de génération et d'assistance",
+      "Gouvernance de marque et collaboration d'équipe",
+      "Analytics et formats d'export variés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez présentations, infographies et rapports régulièrement.",
+        "Vous voulez des modèles prêts et une charte de marque.",
+        "Vous collaborez en équipe sur des visuels."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un outil de design vectoriel avancé.",
+        "Vous ne produisez que des documents texte simples.",
+        "Vous voulez tout sans limites gratuitement."
+      ],
+      "threshold": "Visme convient à qui produit régulièrement du contenu visuel structuré ; pour du design vectoriel pointu, un outil spécialisé est préférable."
+    },
+    "pros": [
+      "Large éventail de types de contenus (présentations, infographies…).",
+      "Modèles et assets nombreux.",
+      "Gouvernance de marque et collaboration.",
+      "Version gratuite pour tester."
+    ],
+    "cons": [
+      "Modèles premium et export avancé réservés aux plans payants.",
+      "Stockage réduit sur le plan gratuit.",
+      "Moins puissant qu'un outil de design vectoriel dédié."
+    ],
+    "use_cases": [
+      "Concevoir une présentation de marque à partir d'un modèle.",
+      "Créer une infographie à partir de données.",
+      "Produire des visuels sociaux cohérents en équipe."
+    ],
+    "relevant_for": ["Marketeurs", "Formateurs / éducateurs", "Petites équipes et PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create presentations, infographics and reports.",
+        "You want ready-made templates and brand controls.",
+        "You collaborate as a team on visuals."
+      ],
+      "avoidIf": [
+        "You need an advanced vector design tool.",
+        "You only produce simple text documents.",
+        "You want everything free with no limits."
+      ],
+      "threshold": "Visme fits people who regularly produce structured visual content; for advanced vector design, a specialized tool is better."
+    },
+    "pros": [
+      "Wide range of content types (presentations, infographics…).",
+      "Many templates and assets.",
+      "Brand governance and collaboration.",
+      "Free version to try it out."
+    ],
+    "cons": [
+      "Premium templates and advanced export locked behind paid plans.",
+      "Limited storage on the free plan.",
+      "Less powerful than a dedicated vector design tool."
+    ],
+    "use_cases": [
+      "Design a branded presentation from a template.",
+      "Create an infographic from data.",
+      "Produce consistent social visuals as a team."
+    ]
+  }
+}

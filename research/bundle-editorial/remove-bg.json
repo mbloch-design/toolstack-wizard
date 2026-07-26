@@ -1,0 +1,88 @@
+{
+  "slug": "remove-bg",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Remove.bg — tarifs (site officiel)", "url": "https://www.remove.bg/pricing" }
+  ],
+  "facts": {
+    "what": "Outil en ligne qui détoure automatiquement l'arrière-plan d'une image en quelques secondes, sans intervention manuelle. Disponible via le web, une appli de bureau, des plugins et une API.",
+    "what_en": "Online tool that automatically removes the background from an image in seconds, with no manual work. Available via web, desktop app, plugins and an API.",
+    "pricing_model": "Freemium : aperçu gratuit, puis crédits à l'achat (pay-as-you-go) ou abonnements mensuels selon le volume.",
+    "free_tier": { "exists": true, "detail": "Aperçu gratuit en basse résolution ; le téléchargement haute définition consomme un crédit." },
+    "plans": [
+      { "name": "Pay-as-you-go", "price": "à partir de ~9 $ (crédits ponctuels, sans abonnement)" },
+      { "name": "Subscription (Lite / Pro / Volume+)", "price": "abonnements mensuels ~9 $ à ~89 $/mois selon le volume — montants sur la page officielle" },
+      { "name": "API", "price": "crédits API — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Détourage automatique par IA en quelques secondes",
+      "Traitement par lots (bulk)",
+      "API et plugins (Photoshop, Figma, etc.)",
+      "Applis web et bureau"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous détourez régulièrement des visuels produits ou portraits.",
+        "Vous voulez un résultat propre sans passer par un logiciel de retouche.",
+        "Vous avez besoin d'automatiser le détourage via API ou par lots."
+      ],
+      "avoidIf": [
+        "Vous ne détourez qu'une image de temps en temps.",
+        "Vous voulez un contrôle manuel très fin sur les contours complexes.",
+        "Vous préférez tout garder dans votre éditeur d'images habituel."
+      ],
+      "threshold": "Remove.bg brille pour un détourage rapide et répétitif ; pour un besoin ponctuel ou un contrôle pixel par pixel, un éditeur d'images classique suffit."
+    },
+    "pros": [
+      "Détourage automatique très rapide.",
+      "Qualité solide sur portraits et produits.",
+      "API et traitement par lots pour automatiser.",
+      "Nombreux plugins et intégrations."
+    ],
+    "cons": [
+      "Le téléchargement haute résolution est payant.",
+      "Résultats parfois imparfaits sur cheveux ou contours fins.",
+      "Peu de contrôle manuel avancé."
+    ],
+    "use_cases": [
+      "Préparer des visuels produits pour une boutique en ligne.",
+      "Détourer des portraits pour des vignettes ou avatars.",
+      "Automatiser le détourage d'un grand lot d'images via API."
+    ],
+    "relevant_for": ["E-commerçants", "Créateurs de contenu", "Graphistes / marketeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly cut out product shots or portraits.",
+        "You want a clean result without opening a photo editor.",
+        "You need to automate cutouts via API or in bulk."
+      ],
+      "avoidIf": [
+        "You only remove a background once in a while.",
+        "You need fine manual control over complex edges.",
+        "You'd rather keep everything in your usual image editor."
+      ],
+      "threshold": "Remove.bg shines for fast, repetitive cutouts; for a one-off need or pixel-level control, a classic image editor is enough."
+    },
+    "pros": [
+      "Very fast automatic background removal.",
+      "Solid quality on portraits and products.",
+      "API and batch processing for automation.",
+      "Many plugins and integrations."
+    ],
+    "cons": [
+      "High-resolution download is paid.",
+      "Results can be imperfect on hair or fine edges.",
+      "Little advanced manual control."
+    ],
+    "use_cases": [
+      "Prepare product shots for an online store.",
+      "Cut out portraits for thumbnails or avatars.",
+      "Automate cutouts across a large batch of images via API."
+    ]
+  }
+}

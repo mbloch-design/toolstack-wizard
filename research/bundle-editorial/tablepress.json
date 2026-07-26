@@ -1,0 +1,88 @@
+{
+  "slug": "tablepress",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TablePress (site officiel)", "url": "https://tablepress.org/" }
+  ],
+  "facts": {
+    "what": "Extension WordPress pour créer et gérer des tableaux interactifs sans code : édition type tableur, tri, recherche, pagination, import/export CSV et Excel, insertion via shortcode ou bloc.",
+    "what_en": "WordPress plugin to create and manage interactive tables without code: spreadsheet-like editing, sorting, search, pagination, CSV/Excel import-export, insertion via shortcode or block.",
+    "pricing_model": "Freemium : version gratuite sur WordPress.org, modules avancés via un abonnement PRO ou MAX (annuel).",
+    "free_tier": { "exists": true, "detail": "Version gratuite complète pour les tableaux interactifs de base ; fonctionnalités avancées réservées aux plans payants." },
+    "plans": [
+      { "name": "Gratuit (WordPress.org)", "price": "0 $ (fonctions de base)" },
+      { "name": "PRO", "price": "environ 89 $/an (styles, responsive, fonctions avancées)" },
+      { "name": "MAX", "price": "environ 189 $/an (sync base de données externe, etc.)" }
+    ],
+    "key_features": [
+      "Éditeur de tableaux type tableur, sans code",
+      "Tri, recherche, filtrage et pagination côté visiteur",
+      "Import/export CSV, Excel, HTML, JSON",
+      "Insertion par shortcode ou bloc Gutenberg"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des tableaux de données sur un site WordPress.",
+        "Vous voulez des tableaux triables et recherchables sans code.",
+        "Vous importez vos données depuis CSV ou Excel."
+      ],
+      "avoidIf": [
+        "Votre site n'est pas sous WordPress.",
+        "Vous n'affichez que de rares tableaux statiques simples.",
+        "Vous avez besoin de tableaux applicatifs très dynamiques."
+      ],
+      "threshold": "TablePress est la référence pour des tableaux interactifs sur WordPress ; hors WordPress ou pour un tableau statique isolé, il n'est pas nécessaire."
+    },
+    "pros": [
+      "Version gratuite couvrant l'essentiel.",
+      "Éditeur simple, sans code.",
+      "Tri, recherche et pagination pour le visiteur.",
+      "Import/export CSV et Excel pratique."
+    ],
+    "cons": [
+      "Fonctions avancées derrière un abonnement payant.",
+      "Limité à l'écosystème WordPress.",
+      "Mise en forme moins poussée que des solutions dédiées."
+    ],
+    "use_cases": [
+      "Publier un tableau comparatif triable sur un article.",
+      "Importer un jeu de données depuis un fichier Excel.",
+      "Afficher des données chiffrées lisibles et filtrables."
+    ],
+    "relevant_for": ["Éditeurs WordPress", "Blogueurs", "Petites entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage data tables on a WordPress site.",
+        "You want sortable, searchable tables with no code.",
+        "You import your data from CSV or Excel."
+      ],
+      "avoidIf": [
+        "Your site isn't on WordPress.",
+        "You only show rare, simple static tables.",
+        "You need highly dynamic app-like tables."
+      ],
+      "threshold": "TablePress is the go-to for interactive tables on WordPress; outside WordPress or for a lone static table, it isn't needed."
+    },
+    "pros": [
+      "Free version covering the essentials.",
+      "Simple, no-code editor.",
+      "Sorting, search and pagination for visitors.",
+      "Handy CSV and Excel import/export."
+    ],
+    "cons": [
+      "Advanced features behind a paid subscription.",
+      "Limited to the WordPress ecosystem.",
+      "Less advanced styling than dedicated solutions."
+    ],
+    "use_cases": [
+      "Publish a sortable comparison table in a post.",
+      "Import a dataset from an Excel file.",
+      "Display readable, filterable numeric data."
+    ]
+  }
+}

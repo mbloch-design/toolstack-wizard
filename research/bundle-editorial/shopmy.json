@@ -1,0 +1,88 @@
+{
+  "slug": "shopmy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ShopMy (site officiel)", "url": "https://shopmy.us/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'affiliation et de marketing d'influence : les créateurs montent une vitrine de liens produits monétisés, et les marques gèrent leurs programmes d'affiliation, de gifting et de collaborations.",
+    "what_en": "Affiliate and influencer-marketing platform: creators build a storefront of monetized product links, while brands run their affiliate, gifting and collaboration programs.",
+    "pricing_model": "Gratuit pour les créateurs (commissions sur ventes) ; abonnement + commission sur le volume de ventes (GMV) pour les marques.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour les créateurs : candidature, vitrine et liens sans abonnement. Côté marques, offre payante sur devis." },
+    "plans": [
+      { "name": "Créateurs", "price": "gratuit (rémunération par commissions d'affiliation)" },
+      { "name": "Marques (Affiliate)", "price": "à partir de ~399 $/mois + commission sur les ventes générées — montants sur devis officiel" },
+      { "name": "Marques (paliers supérieurs)", "price": "~2 799 $+/mois selon les fonctions — montants sur devis officiel" }
+    ],
+    "key_features": [
+      "Vitrine de liens produits monétisés pour créateurs",
+      "Gestion de programmes d'affiliation côté marques",
+      "Gifting et collaborations rémunérées",
+      "Suivi des ventes, commissions et analytics"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur mode/beauté/lifestyle et voulez monétiser vos recommandations.",
+        "Vous êtes une marque qui pilote un programme d'affiliation et de gifting.",
+        "Vous voulez centraliser liens, commissions et collaborations."
+      ],
+      "avoidIf": [
+        "Vous ne recommandez pas de produits à votre audience.",
+        "Votre secteur est éloigné de la mode, beauté ou lifestyle.",
+        "Petite marque au budget serré côté abonnement et commission."
+      ],
+      "threshold": "ShopMy est pertinent pour monétiser des recommandations ou piloter un programme d'affiliation ; sans audience prescriptrice ni budget marque, l'intérêt est limité."
+    },
+    "pros": [
+      "Gratuit et simple à démarrer pour les créateurs.",
+      "Vitrine de liens et suivi des commissions.",
+      "Gestion complète des programmes côté marques.",
+      "Bien adapté à la mode, beauté et lifestyle."
+    ],
+    "cons": [
+      "Offre marque à l'entrée élevée (abonnement + commission).",
+      "Accès marque via démonstration, pas d'inscription directe.",
+      "Centré sur certains secteurs (mode/beauté/lifestyle)."
+    ],
+    "use_cases": [
+      "Un créateur monétise sa liste de produits recommandés.",
+      "Une marque beauté lance un programme d'affiliation.",
+      "Organiser du gifting et des collaborations rémunérées."
+    ],
+    "relevant_for": ["Créateurs mode/beauté", "Marques DTC", "Responsables marketing d'influence"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a fashion/beauty/lifestyle creator wanting to monetize recommendations.",
+        "You're a brand running an affiliate and gifting program.",
+        "You want to centralize links, commissions and collaborations."
+      ],
+      "avoidIf": [
+        "You don't recommend products to an audience.",
+        "Your niche is far from fashion, beauty or lifestyle.",
+        "You're a small brand tight on subscription and commission budget."
+      ],
+      "threshold": "ShopMy fits monetizing recommendations or running an affiliate program; without a prescriptive audience or brand budget, the value is limited."
+    },
+    "pros": [
+      "Free and simple to start for creators.",
+      "Link storefront and commission tracking.",
+      "Full program management for brands.",
+      "Well suited to fashion, beauty and lifestyle."
+    ],
+    "cons": [
+      "High entry cost for brands (subscription + commission).",
+      "Brand access via demo, no direct sign-up.",
+      "Focused on certain niches (fashion/beauty/lifestyle)."
+    ],
+    "use_cases": [
+      "A creator monetizes their recommended-product list.",
+      "A beauty brand launches an affiliate program.",
+      "Run gifting and paid collaborations."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "shotdeck",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ShotDeck — tarifs (site officiel)", "url": "https://shotdeck.com/welcome/pricing" }
+  ],
+  "facts": {
+    "what": "Bibliothèque d'images de films et de publicités en haute définition, richement taguée et cherchable (par plan, couleur, éclairage, genre…) pour l'inspiration, les moodboards et la préparation de tournages.",
+    "what_en": "Searchable, richly tagged high-definition library of film and commercial stills (by shot type, color, lighting, genre…) for inspiration, moodboards and shoot prep.",
+    "pricing_model": "Abonnement (mensuel ou annuel, annuel moins cher) ; réductions étudiants/enseignants et offres équipes/studios.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai/aperçu limité. Abonnement pour un accès complet." },
+    "plans": [
+      { "name": "Mensuel", "price": "~13 $/mois" },
+      { "name": "Annuel", "price": "~100 $/an (moins cher que le mensuel) — montants sur la page officielle" },
+      { "name": "Équipes / studios", "price": "tarifs entreprise, facturation centralisée — sur devis" }
+    ],
+    "key_features": [
+      "Grande bibliothèque de plans de films et de pubs en HD",
+      "Recherche avancée (plan, couleur, éclairage, décor…)",
+      "Création de moodboards et de storyboards",
+      "Applis web et iOS"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous préparez des tournages et cherchez des références visuelles.",
+        "Vous construisez des moodboards de cadrage, couleur ou lumière.",
+        "Vous êtes réalisateur, chef op ou étudiant en cinéma."
+      ],
+      "avoidIf": [
+        "Vous cherchez des images libres de droits à réutiliser commercialement.",
+        "Vous n'avez pas de besoin régulier de références cinéma.",
+        "Un simple dossier d'images glanées vous suffit."
+      ],
+      "threshold": "ShotDeck est précieux pour la recherche de références et les moodboards de tournage ; pour un usage occasionnel ou des visuels réutilisables, une autre banque convient mieux."
+    },
+    "pros": [
+      "Immense bibliothèque de plans en HD.",
+      "Recherche très fine par critères techniques.",
+      "Outils de moodboard intégrés.",
+      "Appli iOS en complément du web."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Images destinées à la référence, pas à la réutilisation commerciale.",
+      "Intérêt limité hors métiers de l'image."
+    ],
+    "use_cases": [
+      "Constituer un moodboard visuel pour préparer un tournage.",
+      "Chercher des références de cadrage, lumière ou couleur.",
+      "Illustrer un pitch ou un traitement de réalisation."
+    ],
+    "relevant_for": ["Réalisateurs", "Directeurs photo", "Étudiants / enseignants cinéma"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prep shoots and look for visual references.",
+        "You build moodboards for framing, color or lighting.",
+        "You're a director, DP or film student."
+      ],
+      "avoidIf": [
+        "You need royalty-free images for commercial reuse.",
+        "You have no regular need for film references.",
+        "A simple folder of gathered stills is enough for you."
+      ],
+      "threshold": "ShotDeck is valuable for reference hunting and shoot moodboards; for occasional use or reusable visuals, another library fits better."
+    },
+    "pros": [
+      "Huge library of HD film stills.",
+      "Very fine search by technical criteria.",
+      "Built-in moodboard tools.",
+      "iOS app alongside the web."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Images meant for reference, not commercial reuse.",
+      "Limited value outside image-related crafts."
+    ],
+    "use_cases": [
+      "Build a visual moodboard to prep a shoot.",
+      "Search for framing, lighting or color references.",
+      "Illustrate a pitch or a director's treatment."
+    ]
+  }
+}

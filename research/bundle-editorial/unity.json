@@ -1,0 +1,88 @@
+{
+  "slug": "unity",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Unity — tarifs (site officiel)", "url": "https://unity.com/products/unity-engine" }
+  ],
+  "facts": {
+    "what": "Moteur de jeu et plateforme de création temps réel multiplateforme (2D/3D), utilisé pour les jeux, la simulation, la XR et les expériences interactives, avec un vaste écosystème d'assets.",
+    "what_en": "Cross-platform real-time game engine and creation platform (2D/3D), used for games, simulation, XR and interactive experiences, with a vast asset ecosystem.",
+    "pricing_model": "Abonnement par siège par paliers ; version gratuite pour les petits revenus. Les frais Runtime par installation ont été abandonnés.",
+    "free_tier": { "exists": true, "detail": "Unity Personal gratuit pour les individus et organisations sous un seuil de revenus/financement annuel." },
+    "plans": [
+      { "name": "Personal", "price": "Gratuit (sous seuil de revenus/financement annuel)" },
+      { "name": "Pro", "price": "≈ 2 040–2 400 $/siège/an (hausse de 5 % au 12 janvier 2026)" },
+      { "name": "Enterprise", "price": "Tarif sur mesure (contrats annuels démarrant généralement vers 4 000–5 000 $)" }
+    ],
+    "key_features": [
+      "Éditeur temps réel 2D/3D multiplateforme",
+      "Déploiement mobile, PC, console, web et XR",
+      "Asset Store et large écosystème",
+      "Services cloud (build, analytics, multijoueur)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des jeux ou expériences interactives multiplateformes.",
+        "Vous ciblez le mobile ou la XR.",
+        "Vous voulez un large écosystème d'assets et de tutoriels."
+      ],
+      "avoidIf": [
+        "Vous visez surtout le très haut de gamme graphique AAA.",
+        "Vous ne faites pas de développement temps réel.",
+        "Un projet ponctuel ne justifie pas la montée en compétence."
+      ],
+      "threshold": "Unity s'impose pour le jeu mobile et multiplateforme avec un grand écosystème ; pour du rendu AAA de pointe, un autre moteur peut être préféré."
+    },
+    "pros": [
+      "Déploiement sur de très nombreuses plateformes.",
+      "Version gratuite pour les petits studios.",
+      "Écosystème d'assets et communauté immenses.",
+      "Frais Runtime par installation abandonnés."
+    ],
+    "cons": [
+      "Rendu haut de gamme souvent jugé en retrait d'Unreal.",
+      "Abonnement par siège coûteux au-delà du seuil gratuit.",
+      "Historique de changements de tarification controversés."
+    ],
+    "use_cases": [
+      "Développer et publier un jeu mobile multiplateforme.",
+      "Créer une expérience VR/AR interactive.",
+      "Prototyper rapidement un jeu 2D ou 3D."
+    ],
+    "relevant_for": ["Développeurs de jeux", "Studios indépendants", "Créateurs XR"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build cross-platform games or interactive experiences.",
+        "You target mobile or XR.",
+        "You want a large asset ecosystem and tutorials."
+      ],
+      "avoidIf": [
+        "You mainly aim for top-end AAA graphics.",
+        "You don't do real-time development.",
+        "A one-off project doesn't justify the learning curve."
+      ],
+      "threshold": "Unity stands out for mobile and cross-platform games with a huge ecosystem; for cutting-edge AAA rendering, another engine may be preferred."
+    },
+    "pros": [
+      "Deployment to a very wide range of platforms.",
+      "Free version for small studios.",
+      "Massive asset ecosystem and community.",
+      "Per-install Runtime fee has been dropped."
+    ],
+    "cons": [
+      "High-end rendering often seen as behind Unreal.",
+      "Per-seat subscription is costly beyond the free threshold.",
+      "History of controversial pricing changes."
+    ],
+    "use_cases": [
+      "Develop and publish a cross-platform mobile game.",
+      "Build an interactive VR/AR experience.",
+      "Quickly prototype a 2D or 3D game."
+    ]
+  }
+}

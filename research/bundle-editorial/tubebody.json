@@ -1,0 +1,90 @@
+{
+  "slug": "tubebody",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TubeBuddy — tarifs (site officiel)", "url": "https://www.tubebuddy.com/pricing" }
+  ],
+  "facts": {
+    "what": "Boîte à outils de gestion de chaîne YouTube (extension navigateur + app) : recherche de mots-clés, optimisation SEO, tests A/B de vignettes, traitement en masse et gestion des commentaires.",
+    "what_en": "YouTube channel management toolkit (browser extension + app): keyword research, SEO optimization, thumbnail A/B testing, bulk processing and comment management.",
+    "pricing_model": "Abonnement mensuel ou annuel par paliers, avec version gratuite. Remise sur l'engagement annuel.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : une chaîne, tags vidéo, analytics de base, outils de commentaires et générateur de vignettes limité." },
+    "plans": [
+      { "name": "Free", "price": "0 $" },
+      { "name": "Pro", "price": "≈ 4,99 $/mois (env. 3 $/mois en annuel)" },
+      { "name": "Star", "price": "≈ 12 $/mois en annuel (traitement en masse, planification)" },
+      { "name": "Legend", "price": "≈ 23 $/mois en annuel (tests A/B, outils IA)" },
+      { "name": "Enterprise", "price": "Tarif sur mesure (agences, MCN, multi-chaînes)" }
+    ],
+    "key_features": [
+      "Recherche de mots-clés et optimisation SEO YouTube",
+      "Tests A/B de vignettes (paliers supérieurs)",
+      "Traitement en masse (tags, cartes, descriptions)",
+      "Gestion des commentaires et modération"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez régulièrement sur YouTube et visez la croissance.",
+        "Vous voulez optimiser vos titres, tags et vignettes.",
+        "Vous gérez plusieurs vidéos et avez besoin d'outils en masse."
+      ],
+      "avoidIf": [
+        "Vous publiez très rarement sur YouTube.",
+        "Vous ne cherchez pas à optimiser le référencement.",
+        "Vous préférez une solution multi-plateformes hors YouTube."
+      ],
+      "threshold": "TubeBuddy s'adresse au créateur YouTube qui veut optimiser et automatiser ; pour un usage passif ou hors YouTube, il apporte peu."
+    },
+    "pros": [
+      "Intégration directe dans l'interface YouTube.",
+      "Version gratuite utile pour débuter.",
+      "Outils de traitement en masse et de planification.",
+      "Tests A/B de vignettes sur les paliers hauts."
+    ],
+    "cons": [
+      "Fonctions avancées réservées aux plans payants élevés.",
+      "Centré exclusivement sur YouTube.",
+      "Tarification par paliers qui peut prêter à confusion."
+    ],
+    "use_cases": [
+      "Optimiser le SEO d'une vidéo avant publication.",
+      "Tester deux vignettes pour maximiser le taux de clic.",
+      "Mettre à jour tags et cartes sur plusieurs vidéos d'un coup."
+    ],
+    "relevant_for": ["YouTubeurs", "Créateurs de contenu vidéo", "Gestionnaires de chaînes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You publish regularly on YouTube and target growth.",
+        "You want to optimize titles, tags and thumbnails.",
+        "You manage many videos and need bulk tools."
+      ],
+      "avoidIf": [
+        "You publish very rarely on YouTube.",
+        "You don't care about search optimization.",
+        "You prefer a multi-platform tool beyond YouTube."
+      ],
+      "threshold": "TubeBuddy fits YouTube creators who want to optimize and automate; for passive or non-YouTube use it adds little."
+    },
+    "pros": [
+      "Direct integration inside the YouTube interface.",
+      "Useful free version to get started.",
+      "Bulk processing and scheduling tools.",
+      "Thumbnail A/B testing on higher tiers."
+    ],
+    "cons": [
+      "Advanced features locked behind higher paid tiers.",
+      "Focused exclusively on YouTube.",
+      "Tiered pricing can be confusing."
+    ],
+    "use_cases": [
+      "Optimize a video's SEO before publishing.",
+      "Test two thumbnails to maximize click-through.",
+      "Update tags and cards across many videos at once."
+    ]
+  }
+}

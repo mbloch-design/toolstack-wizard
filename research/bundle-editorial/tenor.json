@@ -1,0 +1,88 @@
+{
+  "slug": "tenor",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tenor — accueil (site officiel)", "url": "https://tenor.com/" },
+    { "label": "Tenor — GIF API (site officiel)", "url": "https://tenor.com/gifapi" }
+  ],
+  "facts": {
+    "what": "Bibliothèque et moteur de recherche de GIF animés (propriété de Google), intégré à de nombreuses applications de messagerie et au clavier Gboard, avec une API gratuite pour développeurs.",
+    "what_en": "Animated GIF library and search engine (owned by Google), embedded in many messaging apps and the Gboard keyboard, with a free developer API.",
+    "pricing_model": "Gratuit pour la recherche et le partage de GIF ; API développeur gratuite (avec clé).",
+    "free_tier": { "exists": true, "detail": "Recherche, partage et upload gratuits ; API gratuite pour les développeurs." },
+    "plans": [
+      { "name": "Utilisation grand public", "price": "Gratuit" },
+      { "name": "GIF API (développeurs)", "price": "Gratuit (clé API)" }
+    ],
+    "key_features": [
+      "Recherche de GIF animés par mots-clés",
+      "Clavier GIF intégré aux apps de messagerie",
+      "Upload et partage de ses propres GIF",
+      "API gratuite pour intégrer la recherche de GIF"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez ajouter des GIF à vos conversations ou contenus.",
+        "Vous êtes développeur et cherchez une API de GIF gratuite.",
+        "Vous voulez partager vos propres GIF."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de médias sous licence commerciale exclusive.",
+        "Vous cherchez une bibliothèque de vidéos longues.",
+        "Vous avez besoin d'un contrôle total sur les droits d'usage."
+      ],
+      "threshold": "Tenor s'impose pour trouver et intégrer des GIF gratuitement ; pour du contenu sous licence exclusive, ce n'est pas l'outil."
+    },
+    "pros": [
+      "Vaste catalogue de GIF animés.",
+      "Intégration native dans de nombreuses apps.",
+      "API développeur entièrement gratuite.",
+      "Upload et partage de GIF personnels."
+    ],
+    "cons": [
+      "Peu de contrôle sur les droits d'usage précis.",
+      "Centré sur le format GIF court.",
+      "Écosystème dépendant de Google."
+    ],
+    "use_cases": [
+      "Ajouter un GIF dans un message.",
+      "Intégrer la recherche de GIF dans une app.",
+      "Partager ses propres GIF."
+    ],
+    "relevant_for": ["Développeurs d'apps", "Community managers", "Grand public"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to add GIFs to conversations or content.",
+        "You're a developer looking for a free GIF API.",
+        "You want to share your own GIFs."
+      ],
+      "avoidIf": [
+        "You need exclusively licensed commercial media.",
+        "You're looking for a long-form video library.",
+        "You need full control over usage rights."
+      ],
+      "threshold": "Tenor is the go-to for finding and embedding GIFs for free; for exclusively licensed content, it's not the tool."
+    },
+    "pros": [
+      "Huge catalog of animated GIFs.",
+      "Native integration in many apps.",
+      "Fully free developer API.",
+      "Upload and share personal GIFs."
+    ],
+    "cons": [
+      "Little control over precise usage rights.",
+      "Focused on the short GIF format.",
+      "Ecosystem tied to Google."
+    ],
+    "use_cases": [
+      "Add a GIF to a message.",
+      "Embed GIF search into an app.",
+      "Share your own GIFs."
+    ]
+  }
+}

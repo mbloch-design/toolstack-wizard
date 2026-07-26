@@ -1,0 +1,88 @@
+{
+  "slug": "x",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "X Premium — présentation (site officiel)", "url": "https://help.x.com/en/using-x/x-premium" }
+  ],
+  "facts": {
+    "what": "Réseau social de microblogging (ex-Twitter) et son offre d'abonnement X Premium : fonctionnalités avancées, badge, portée accrue, édition de posts et outils créateurs.",
+    "what_en": "Microblogging social network (formerly Twitter) and its X Premium subscription: advanced features, badge, expanded reach, post editing, and creator tools.",
+    "pricing_model": "Plateforme gratuite avec abonnement Premium à paliers (mensuel/annuel) ; tarifs plus élevés via les stores iOS/Android.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit complet à la publication et à la lecture ; abonnement optionnel pour les fonctions avancées." },
+    "plans": [
+      { "name": "Basic", "price": "à partir de 3 $/mois (32 $/an) sur le web" },
+      { "name": "Premium", "price": "à partir de 8 $/mois (84 $/an) sur le web" },
+      { "name": "Premium+", "price": "à partir de 40 $/mois (395 $/an) sur le web" }
+    ],
+    "key_features": [
+      "Publication et fils de discussion en temps réel",
+      "Badge et portée accrue selon le palier",
+      "Édition et posts longs pour les abonnés",
+      "Outils de monétisation créateurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une audience professionnelle en temps réel.",
+        "Vous voulez une portée accrue et des outils créateurs.",
+        "Votre secteur est actif sur cette plateforme."
+      ],
+      "avoidIf": [
+        "Votre audience cible n'est pas présente sur X.",
+        "Vous ne cherchez pas d'abonnement payant.",
+        "Vous préférez des plateformes plus visuelles ou pro."
+      ],
+      "threshold": "X est utile pour la visibilité en temps réel et le personal branding ; si votre audience est ailleurs, un autre réseau sera plus rentable."
+    },
+    "pros": [
+      "Diffusion en temps réel très rapide.",
+      "Fort potentiel de personal branding.",
+      "Outils créateurs et monétisation.",
+      "Version gratuite pleinement utilisable."
+    ],
+    "cons": [
+      "Portée organique en partie liée à l'abonnement.",
+      "Environnement modéré et volatil.",
+      "Tarifs plus élevés via les stores mobiles."
+    ],
+    "use_cases": [
+      "Développer une présence professionnelle en temps réel.",
+      "Diffuser des annonces et suivre l'actualité de son secteur.",
+      "Monétiser une audience de créateur."
+    ],
+    "relevant_for": ["Créateurs et indépendants", "Community managers", "Professionnels tech/media"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build a professional audience in real time.",
+        "You want expanded reach and creator tools.",
+        "Your industry is active on the platform."
+      ],
+      "avoidIf": [
+        "Your target audience isn't on X.",
+        "You don't want a paid subscription.",
+        "You prefer more visual or professional platforms."
+      ],
+      "threshold": "X is useful for real-time visibility and personal branding; if your audience is elsewhere, another network pays off more."
+    },
+    "pros": [
+      "Very fast real-time distribution.",
+      "Strong personal-branding potential.",
+      "Creator and monetization tools.",
+      "Fully usable free version."
+    ],
+    "cons": [
+      "Organic reach partly tied to the subscription.",
+      "Volatile, heavily moderated environment.",
+      "Higher prices via mobile app stores."
+    ],
+    "use_cases": [
+      "Build a real-time professional presence.",
+      "Broadcast announcements and follow industry news.",
+      "Monetize a creator audience."
+    ]
+  }
+}

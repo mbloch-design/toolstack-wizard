@@ -1,0 +1,86 @@
+{
+  "slug": "spotify-for-podcasters",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Spotify for Creators (site officiel)", "url": "https://creators.spotify.com" }
+  ],
+  "facts": {
+    "what": "Plateforme gratuite d'hébergement, de distribution et de monétisation de podcasts (ex-Anchor, renommée Spotify for Creators fin 2024). Gère l'audio, la vidéo, les analyses et le Spotify Partner Program.",
+    "what_en": "Free podcast hosting, distribution and monetization platform (formerly Anchor, renamed Spotify for Creators in late 2024). Manages audio, video, analytics and the Spotify Partner Program.",
+    "pricing_model": "Gratuit : hébergement et distribution sans frais ; monétisation via publicité et Spotify Partner Program (partage de revenus).",
+    "free_tier": { "exists": true, "detail": "Hébergement et distribution illimités gratuits ; monétisation possible via ads et le Partner Program pour les créateurs éligibles." },
+    "plans": [
+      { "name": "Spotify for Creators", "price": "Gratuit ; revenus via ads et Partner Program" }
+    ],
+    "key_features": [
+      "Hébergement et distribution de podcasts gratuits",
+      "Podcasts vidéo et audio, avec miniatures personnalisées",
+      "Analyses d'audience détaillées",
+      "Monétisation via ads et Spotify Partner Program"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous démarrez un podcast sans budget d'hébergement.",
+        "Votre audience est surtout sur Spotify.",
+        "Vous voulez publier des podcasts vidéo facilement."
+      ],
+      "avoidIf": [
+        "Vous voulez rester indépendant d'un écosystème unique.",
+        "Vous avez besoin de statistiques cross-plateformes avancées.",
+        "Vous privilégiez un hébergeur neutre pour votre flux RSS."
+      ],
+      "threshold": "Spotify for Creators convient pour lancer un podcast gratuitement et viser l'audience Spotify ; pour une stratégie multiplateforme neutre, un hébergeur indépendant reste préférable."
+    },
+    "pros": [
+      "Hébergement et distribution entièrement gratuits.",
+      "Prise en charge native des podcasts vidéo.",
+      "Monétisation intégrée via le Partner Program.",
+      "Interface accessible aux débutants."
+    ],
+    "cons": [
+      "Forte dépendance à l'écosystème Spotify.",
+      "Statistiques cross-plateformes limitées.",
+      "Monétisation réservée aux créateurs éligibles."
+    ],
+    "use_cases": [
+      "Lancer un premier podcast sans coût d'hébergement.",
+      "Publier un podcast vidéo sur Spotify.",
+      "Monétiser une audience Spotify via les ads."
+    ],
+    "relevant_for": ["Podcasteurs débutants", "Créateurs vidéo", "Médias audio"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting a podcast with no hosting budget.",
+        "Your audience is mostly on Spotify.",
+        "You want to publish video podcasts easily."
+      ],
+      "avoidIf": [
+        "You want to stay independent of a single ecosystem.",
+        "You need advanced cross-platform analytics.",
+        "You prefer a neutral host for your RSS feed."
+      ],
+      "threshold": "Spotify for Creators fits launching a podcast for free and targeting Spotify's audience; for a neutral multi-platform strategy, an independent host is better."
+    },
+    "pros": [
+      "Fully free hosting and distribution.",
+      "Native video podcast support.",
+      "Built-in monetization via the Partner Program.",
+      "Beginner-friendly interface."
+    ],
+    "cons": [
+      "Heavy reliance on Spotify's ecosystem.",
+      "Limited cross-platform analytics.",
+      "Monetization restricted to eligible creators."
+    ],
+    "use_cases": [
+      "Launch a first podcast with no hosting cost.",
+      "Publish a video podcast on Spotify.",
+      "Monetize a Spotify audience through ads."
+    ]
+  }
+}

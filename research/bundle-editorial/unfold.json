@@ -1,0 +1,87 @@
+{
+  "slug": "unfold",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Unfold by Squarespace (site officiel)", "url": "https://unfold.com" }
+  ],
+  "facts": {
+    "what": "Application mobile de création de stories et Reels : modèles graphiques soignés, polices, outils d'édition et fonctions IA pour composer du contenu social (Instagram, TikTok…). Éditée par Squarespace.",
+    "what_en": "Mobile app for creating stories and Reels: polished graphic templates, fonts, editing tools and AI features to compose social content (Instagram, TikTok…). Owned by Squarespace.",
+    "pricing_model": "Freemium : app gratuite avec abonnement Unfold+ pour débloquer modèles et fonctions avancées.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec un jeu limité de modèles et de polices." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (modèles et polices de base)" },
+      { "name": "Unfold+", "price": "Abonnement (≈ 19,99 $/mois ; montants sur la page officielle), 400+ modèles, polices avancées, outils IA" }
+    ],
+    "key_features": [
+      "Bibliothèque de modèles de stories et Reels",
+      "Polices et options typographiques soignées",
+      "Outils d'édition (dont suppression d'arrière-plan IA)",
+      "Export optimisé pour les réseaux sociaux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez souvent des stories Instagram ou des Reels.",
+        "Vous voulez un rendu esthétique sans savoir-faire en design.",
+        "Vous travaillez principalement depuis votre mobile."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un éditeur graphique complet sur desktop.",
+        "Vous ne publiez pas de contenu social visuel.",
+        "Vous voulez tout gratuitement sans limites."
+      ],
+      "threshold": "Unfold est parfait pour habiller vite ses stories ; pour de la conception graphique poussée, un outil desktop est plus adapté."
+    },
+    "pros": [
+      "Modèles élégants et minimalistes.",
+      "Prise en main immédiate sur mobile.",
+      "Version gratuite pour commencer.",
+      "Outils IA d'édition intégrés."
+    ],
+    "cons": [
+      "Modèles les plus riches réservés à l'abonnement.",
+      "Centré sur le mobile et le format story.",
+      "Peu adapté à la conception graphique complexe."
+    ],
+    "use_cases": [
+      "Composer une story Instagram soignée en quelques minutes.",
+      "Créer un carrousel ou un Reel avec des modèles cohérents.",
+      "Uniformiser l'esthétique d'un feed social."
+    ],
+    "relevant_for": ["Créateurs de contenu social", "Influenceurs", "Petites marques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You often create Instagram stories or Reels.",
+        "You want a polished look without design skills.",
+        "You mainly work from your phone."
+      ],
+      "avoidIf": [
+        "You need a full desktop graphic editor.",
+        "You don't publish visual social content.",
+        "You want everything free with no limits."
+      ],
+      "threshold": "Unfold is perfect for quickly styling stories; for advanced graphic design, a desktop tool fits better."
+    },
+    "pros": [
+      "Elegant, minimalist templates.",
+      "Instant to pick up on mobile.",
+      "Free version to get started.",
+      "Built-in AI editing tools."
+    ],
+    "cons": [
+      "Richest templates locked behind the subscription.",
+      "Focused on mobile and story format.",
+      "Not suited to complex graphic design."
+    ],
+    "use_cases": [
+      "Compose a polished Instagram story in minutes.",
+      "Create a carousel or Reel with consistent templates.",
+      "Unify the look of a social feed."
+    ]
+  }
+}

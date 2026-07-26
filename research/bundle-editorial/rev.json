@@ -1,0 +1,89 @@
+{
+  "slug": "rev",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rev — tarifs (site officiel)", "url": "https://www.rev.com/pricing" }
+  ],
+  "facts": {
+    "what": "Service de transcription, sous-titrage et légendage audio/vidéo, proposé en version IA (automatique) et en version humaine (professionnelle) avec une précision plus élevée.",
+    "what_en": "Audio/video transcription, captioning and subtitling service, offered in an AI (automatic) version and a human (professional) version with higher accuracy.",
+    "pricing_model": "Mixte : abonnements mensuels/annuels pour la transcription IA, et tarification au minute pour la transcription humaine et les sous-titres.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec un quota mensuel limité de minutes de transcription/sous-titres IA." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (quota mensuel de minutes IA limité)" },
+      { "name": "Essentials / Pro (abonnements IA)", "price": "~25 $ à ~60 $/mois par siège selon le palier — montants sur la page officielle" },
+      { "name": "Transcription humaine", "price": "~1,99 $/minute (au volume) — montants sur la page officielle" },
+      { "name": "Unlimited", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Transcription IA rapide et transcription humaine haute précision",
+      "Sous-titres et légendes (SRT, VTT…)",
+      "Éditeur en ligne et export multi-formats",
+      "Traduction et sous-titrage multilingue"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de transcriptions ou de sous-titres fiables régulièrement.",
+        "Vous voulez le choix entre IA rapide et relecture humaine.",
+        "Vous produisez des vidéos qui doivent être sous-titrées."
+      ],
+      "avoidIf": [
+        "Un simple export IA gratuit d'un autre outil vous suffit.",
+        "Vous n'avez qu'un besoin ponctuel et minime.",
+        "Votre budget exclut la transcription humaine payante."
+      ],
+      "threshold": "Rev vaut le coup si la précision et le sous-titrage sont critiques ; pour un besoin ponctuel et non critique, une transcription IA gratuite peut suffire."
+    },
+    "pros": [
+      "Transcription humaine très précise disponible.",
+      "Option IA rapide pour les volumes.",
+      "Sous-titres et export multi-formats.",
+      "Traduction et sous-titrage multilingue."
+    ],
+    "cons": [
+      "La transcription humaine revient cher au volume.",
+      "Le plan gratuit est très limité en minutes.",
+      "La qualité IA reste inférieure à la relecture humaine."
+    ],
+    "use_cases": [
+      "Transcrire des interviews ou des podcasts.",
+      "Ajouter des sous-titres à des vidéos marketing ou YouTube.",
+      "Obtenir un compte rendu écrit précis d'une réunion."
+    ],
+    "relevant_for": ["Journalistes / chercheurs", "Créateurs vidéo", "Podcasteurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need reliable transcripts or captions regularly.",
+        "You want the choice between fast AI and human review.",
+        "You produce videos that must be captioned."
+      ],
+      "avoidIf": [
+        "A free AI export from another tool is enough for you.",
+        "You only have a one-off, minimal need.",
+        "Your budget rules out paid human transcription."
+      ],
+      "threshold": "Rev is worth it when accuracy and captioning are critical; for an occasional, non-critical need, free AI transcription may be enough."
+    },
+    "pros": [
+      "Highly accurate human transcription available.",
+      "Fast AI option for volume.",
+      "Captions and multi-format export.",
+      "Translation and multilingual subtitling."
+    ],
+    "cons": [
+      "Human transcription gets expensive at volume.",
+      "The free plan is very limited in minutes.",
+      "AI quality stays below human review."
+    ],
+    "use_cases": [
+      "Transcribe interviews or podcasts.",
+      "Add captions to marketing or YouTube videos.",
+      "Get an accurate written record of a meeting."
+    ]
+  }
+}

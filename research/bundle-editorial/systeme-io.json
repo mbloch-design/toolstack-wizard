@@ -1,0 +1,89 @@
+{
+  "slug": "systeme-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Systeme.io — tarifs (site officiel)", "url": "https://systeme.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme marketing tout-en-un : tunnels de vente, pages de destination, emailing, cours en ligne, blog et programme d'affiliation, sans besoin de compétences techniques.",
+    "what_en": "All-in-one marketing platform: sales funnels, landing pages, email marketing, online courses, blog and affiliate program, with no technical skills required.",
+    "pricing_model": "Freemium : plan gratuit sans limite de durée, puis abonnements selon le nombre de contacts et de fonctionnalités. Aucun frais de transaction sur les ventes.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit sans carte : jusqu'à 2 000 contacts, 3 tunnels, 1 cours, 1 blog, emails illimités." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (jusqu'à 2 000 contacts)" },
+      { "name": "Startup", "price": "17 $/mois" },
+      { "name": "Webinar", "price": "47 $/mois" },
+      { "name": "Unlimited", "price": "97 $/mois" }
+    ],
+    "key_features": [
+      "Constructeur de tunnels de vente drag-and-drop",
+      "Emailing avec envois illimités",
+      "Hébergement de cours en ligne et de blog",
+      "Programme d'affiliation intégré, sans frais de transaction"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez regrouper tunnels, emails et cours en un seul outil.",
+        "Vous débutez et cherchez un plan gratuit généreux.",
+        "Vous vendez des produits ou formations en ligne."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de personnalisation ou de design très poussé.",
+        "Vous utilisez déjà un CRM et un emailing spécialisés.",
+        "Votre activité exige des intégrations tierces avancées."
+      ],
+      "threshold": "Systeme.io convient aux solos et petites équipes qui veulent tout centraliser à moindre coût ; pour des besoins avancés en design ou intégrations, des outils spécialisés sont préférables."
+    },
+    "pros": [
+      "Tout-en-un : tunnels, emails, cours, affiliation.",
+      "Plan gratuit réellement utilisable.",
+      "Aucun frais de transaction sur les ventes.",
+      "Prise en main simple, sans technique."
+    ],
+    "cons": [
+      "Personnalisation du design limitée.",
+      "Moins puissant que des outils spécialisés pris séparément.",
+      "Intégrations tierces plus restreintes."
+    ],
+    "use_cases": [
+      "Créer un tunnel de vente pour une formation.",
+      "Envoyer des campagnes email à sa liste.",
+      "Héberger un cours en ligne avec paiement."
+    ],
+    "relevant_for": ["Solopreneurs", "Formateurs en ligne", "Petites équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want funnels, emails and courses in one tool.",
+        "You're starting out and want a generous free plan.",
+        "You sell products or courses online."
+      ],
+      "avoidIf": [
+        "You need deep customization or advanced design.",
+        "You already use dedicated CRM and email tools.",
+        "Your business needs advanced third-party integrations."
+      ],
+      "threshold": "Systeme.io fits solos and small teams wanting to centralize everything cheaply; for advanced design or integration needs, specialized tools are better."
+    },
+    "pros": [
+      "All-in-one: funnels, email, courses, affiliation.",
+      "Genuinely usable free plan.",
+      "No transaction fees on sales.",
+      "Simple, non-technical setup."
+    ],
+    "cons": [
+      "Limited design customization.",
+      "Less powerful than best-of-breed tools separately.",
+      "More limited third-party integrations."
+    ],
+    "use_cases": [
+      "Build a sales funnel for a course.",
+      "Send email campaigns to your list.",
+      "Host an online course with payment."
+    ]
+  }
+}

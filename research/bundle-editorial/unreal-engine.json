@@ -1,0 +1,88 @@
+{
+  "slug": "unreal-engine",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Unreal Engine — licence (site officiel)", "url": "https://www.unrealengine.com/en-US/license" }
+  ],
+  "facts": {
+    "what": "Moteur de création temps réel d'Epic Games, réputé pour son rendu haute fidélité (Nanite, Lumen), utilisé pour les jeux AAA, le cinéma, la production virtuelle, l'architecture et la simulation.",
+    "what_en": "Epic Games' real-time creation engine, known for high-fidelity rendering (Nanite, Lumen), used for AAA games, film, virtual production, architecture and simulation.",
+    "pricing_model": "Gratuit à l'usage ; royalties de 5 % sur le chiffre d'affaires d'un jeu au-delà d'un seuil. Licence par siège pour les usages commerciaux non-jeu.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour créer ; royalties sur le CA des jeux au-delà d'un seuil de revenus par produit. Cinéma/TV et rendu non-jeu exemptés de royalties." },
+    "plans": [
+      { "name": "Jeux (royalty)", "price": "Gratuit ; 5 % de royalties au-delà de 1 M$ de CA cumulé par produit" },
+      { "name": "Licence siège (non-jeu)", "price": "1 850 $/siège/an (architecture, simulation, film…)" },
+      { "name": "Custom / Enterprise", "price": "Tarif sur mesure" }
+    ],
+    "key_features": [
+      "Rendu temps réel haute fidélité (Nanite, Lumen)",
+      "Blueprints (programmation visuelle sans code)",
+      "Production virtuelle et cinéma temps réel",
+      "Déploiement multiplateforme"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous visez un rendu graphique haut de gamme.",
+        "Vous faites du jeu AAA, de la production virtuelle ou de l'archiviz.",
+        "Vous appréciez le prototypage visuel via Blueprints."
+      ],
+      "avoidIf": [
+        "Vous ciblez surtout le mobile léger 2D.",
+        "Vous avez peu de puissance machine pour l'éditeur.",
+        "Vous cherchez la courbe d'apprentissage la plus douce."
+      ],
+      "threshold": "Unreal excelle pour le rendu haute fidélité et la production temps réel ; pour du mobile léger ou un démarrage rapide, un moteur plus simple peut convenir."
+    },
+    "pros": [
+      "Qualité de rendu temps réel de référence.",
+      "Gratuit tant que le CA reste sous le seuil.",
+      "Blueprints pour prototyper sans code.",
+      "Fort en cinéma et production virtuelle."
+    ],
+    "cons": [
+      "Exigeant en puissance machine.",
+      "Courbe d'apprentissage marquée.",
+      "Royalties au-delà du seuil pour les jeux."
+    ],
+    "use_cases": [
+      "Développer un jeu au rendu graphique poussé.",
+      "Réaliser de la production virtuelle pour le cinéma.",
+      "Créer des visualisations architecturales temps réel."
+    ],
+    "relevant_for": ["Studios de jeux AAA", "Professionnels du film/VFX", "Architectes et archiviz"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You target high-end graphics.",
+        "You do AAA games, virtual production or archviz.",
+        "You value visual prototyping via Blueprints."
+      ],
+      "avoidIf": [
+        "You mainly target lightweight 2D mobile.",
+        "You have limited machine power for the editor.",
+        "You want the gentlest learning curve."
+      ],
+      "threshold": "Unreal excels at high-fidelity rendering and real-time production; for lightweight mobile or a quick start, a simpler engine may fit."
+    },
+    "pros": [
+      "Benchmark real-time rendering quality.",
+      "Free while revenue stays below the threshold.",
+      "Blueprints for no-code prototyping.",
+      "Strong in film and virtual production."
+    ],
+    "cons": [
+      "Demanding on machine power.",
+      "Steep learning curve.",
+      "Royalties above the threshold for games."
+    ],
+    "use_cases": [
+      "Develop a game with high-end graphics.",
+      "Run virtual production for film.",
+      "Create real-time architectural visualizations."
+    ]
+  }
+}

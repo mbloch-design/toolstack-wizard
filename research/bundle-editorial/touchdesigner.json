@@ -1,0 +1,90 @@
+{
+  "slug": "touchdesigner",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Derivative — produits TouchDesigner (site officiel)", "url": "https://derivative.ca/UserGuide/TouchDesigner_Products" },
+    { "label": "Derivative — licences (site officiel)", "url": "https://derivative.ca/UserGuide/Licensing" }
+  ],
+  "facts": {
+    "what": "Environnement de programmation visuelle par nœuds pour créer des contenus interactifs temps réel : projections, installations, mapping vidéo, visuels génératifs et scénographies.",
+    "what_en": "Node-based visual programming environment for building real-time interactive content: projections, installations, video mapping, generative visuals, and stage scenography.",
+    "pricing_model": "Édition Non-Commercial gratuite ; licences Éducation, Commercial et Pro par achat de licence.",
+    "free_tier": { "exists": true, "detail": "Édition Non-Commercial gratuite pour usage personnel/évaluation (non rémunéré)." },
+    "plans": [
+      { "name": "Non-Commercial", "price": "Gratuit (usage non rémunéré)" },
+      { "name": "Educational", "price": "300 $/licence" },
+      { "name": "Commercial", "price": "600 $/licence" },
+      { "name": "Commercial Floating (Cloud)", "price": "900 $/licence" }
+    ],
+    "key_features": [
+      "Programmation visuelle par nœuds (opérateurs)",
+      "Rendu temps réel de visuels 2D/3D génératifs",
+      "Mapping vidéo et gestion de projections",
+      "Intégration de capteurs, MIDI, DMX et flux externes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des visuels interactifs ou installations temps réel.",
+        "Vous faites du mapping vidéo ou de la scénographie.",
+        "Vous voulez un environnement nodal puissant et flexible."
+      ],
+      "avoidIf": [
+        "Vous cherchez un simple éditeur vidéo linéaire.",
+        "Vous ne travaillez pas avec du contenu temps réel.",
+        "Vous voulez un outil sans courbe d'apprentissage."
+      ],
+      "threshold": "TouchDesigner s'impose pour des visuels interactifs temps réel ; pour du montage linéaire simple, un autre outil convient mieux."
+    },
+    "pros": [
+      "Édition Non-Commercial gratuite pour apprendre.",
+      "Environnement nodal très flexible.",
+      "Rendu temps réel de haute qualité.",
+      "Intégration matérielle (capteurs, DMX, MIDI)."
+    ],
+    "cons": [
+      "Courbe d'apprentissage marquée.",
+      "Licence commerciale requise pour tout travail rémunéré.",
+      "Exigeant en ressources selon les projets."
+    ],
+    "use_cases": [
+      "Concevoir une installation interactive.",
+      "Réaliser du mapping vidéo pour un événement.",
+      "Générer des visuels temps réel pour un live."
+    ],
+    "relevant_for": ["Artistes numériques", "VJ / scénographes", "Studios interactifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build interactive visuals or real-time installations.",
+        "You do video mapping or stage scenography.",
+        "You want a powerful, flexible node-based environment."
+      ],
+      "avoidIf": [
+        "You just need a simple linear video editor.",
+        "You don't work with real-time content.",
+        "You want a tool with no learning curve."
+      ],
+      "threshold": "TouchDesigner is the go-to for real-time interactive visuals; for simple linear editing, another tool fits better."
+    },
+    "pros": [
+      "Free Non-Commercial edition to learn.",
+      "Highly flexible node-based environment.",
+      "High-quality real-time rendering.",
+      "Hardware integration (sensors, DMX, MIDI)."
+    ],
+    "cons": [
+      "Steep learning curve.",
+      "Commercial license required for any paid work.",
+      "Resource-intensive depending on projects."
+    ],
+    "use_cases": [
+      "Design an interactive installation.",
+      "Do video mapping for an event.",
+      "Generate real-time visuals for a live show."
+    ]
+  }
+}

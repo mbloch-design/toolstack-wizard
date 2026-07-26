@@ -1,0 +1,89 @@
+{
+  "slug": "trainerize",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ABC Trainerize — tarifs (site officiel)", "url": "https://www.trainerize.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Application de coaching fitness pour entraîneurs personnels et salles : création de programmes d'entraînement et nutrition, suivi des clients, messagerie et application mobile de marque.",
+    "what_en": "Fitness coaching app for personal trainers and gyms: build workout and nutrition programs, track clients, message them, and offer a branded mobile app.",
+    "pricing_model": "Abonnement mensuel par paliers selon le nombre de clients ; modules additionnels en option (paiements, app de marque, nutrition avancée).",
+    "free_tier": { "exists": true, "detail": "Plan Basic gratuit pour 1 client ; essai gratuit disponible." },
+    "plans": [
+      { "name": "Basic", "price": "Gratuit (1 client)" },
+      { "name": "Grow", "price": "9 $/mois (jusqu'à 2 clients)" },
+      { "name": "Pro", "price": "à partir de 23 $/mois (5 à 200 clients)" },
+      { "name": "Studio Plus", "price": "248 $/mois par établissement" }
+    ],
+    "key_features": [
+      "Création de programmes d'entraînement et de nutrition",
+      "Suivi des progrès et des habitudes des clients",
+      "Messagerie et engagement client intégrés",
+      "Application mobile personnalisable (option)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous coachez des clients à distance ou en salle.",
+        "Vous voulez centraliser programmes, suivi et messagerie.",
+        "Vous voulez proposer une app mobile à vos clients."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de clients à suivre.",
+        "Vous coachez uniquement en présentiel sans outil digital.",
+        "Vous voulez éviter des coûts qui grimpent avec les modules."
+      ],
+      "threshold": "Trainerize se justifie pour un coach avec plusieurs clients à suivre ; pour un unique client, le plan gratuit suffit."
+    },
+    "pros": [
+      "Plan gratuit pour démarrer avec un client.",
+      "Programmes, nutrition et suivi au même endroit.",
+      "Application mobile de marque en option.",
+      "Tarification progressive selon le nombre de clients."
+    ],
+    "cons": [
+      "Modules payants en supplément (paiements, nutrition, app).",
+      "Coût réel souvent supérieur au tarif affiché.",
+      "Palier Studio nettement plus cher."
+    ],
+    "use_cases": [
+      "Envoyer des programmes personnalisés à ses clients.",
+      "Suivre les progrès et la nutrition à distance.",
+      "Proposer une app de coaching de marque."
+    ],
+    "relevant_for": ["Coachs personnels", "Salles de sport", "Studios fitness"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You coach clients remotely or in a gym.",
+        "You want programs, tracking, and messaging in one place.",
+        "You want to offer a branded mobile app to clients."
+      ],
+      "avoidIf": [
+        "You have no clients to track.",
+        "You coach only in person without digital tools.",
+        "You want to avoid costs rising with add-ons."
+      ],
+      "threshold": "Trainerize makes sense for a coach with several clients to track; for a single client, the free plan is enough."
+    },
+    "pros": [
+      "Free plan to start with one client.",
+      "Programs, nutrition, and tracking in one place.",
+      "Optional branded mobile app.",
+      "Tiered pricing by number of clients."
+    ],
+    "cons": [
+      "Paid add-ons on top (payments, nutrition, app).",
+      "Real cost often higher than headline price.",
+      "Studio tier notably more expensive."
+    ],
+    "use_cases": [
+      "Send personalized programs to clients.",
+      "Track progress and nutrition remotely.",
+      "Offer a branded coaching app."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "tella",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tella — tarifs (site officiel)", "url": "https://www.tella.tv/pricing" }
+  ],
+  "facts": {
+    "what": "Outil d'enregistrement et de montage vidéo dans le navigateur : capture webcam et écran, édition assistée par IA, arrière-plans et mises en page, export jusqu'en 4K.",
+    "what_en": "Browser-based screen and webcam recording and editing tool: AI-assisted editing, backgrounds and layouts, and export up to 4K.",
+    "pricing_model": "Abonnement mensuel ou annuel (remise annuelle). Essai gratuit de 7 jours.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit de 7 jours." },
+    "plans": [
+      { "name": "Pro", "price": "19 $/mois (12 $/mois en annuel) — enregistrement illimité, édition IA, export 4K" },
+      { "name": "Premium", "price": "49 $/mois (39 $/mois en annuel) — branding, domaine, analytics" },
+      { "name": "Team", "price": "sur demande — collaboration d'équipe" }
+    ],
+    "key_features": [
+      "Enregistrement webcam et écran dans le navigateur",
+      "Édition assistée par IA (coupes, transitions)",
+      "Arrière-plans, mises en page et branding",
+      "Export haute qualité jusqu'en 4K"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des vidéos de démonstration ou tutoriels soignés.",
+        "Vous voulez éditer rapidement sans logiciel lourd.",
+        "Vous partagez régulièrement des vidéos écran/webcam."
+      ],
+      "avoidIf": [
+        "Vous cherchez un enregistreur totalement gratuit.",
+        "Vos besoins se limitent à des captures ponctuelles.",
+        "Vous avez besoin d'un montage vidéo professionnel avancé."
+      ],
+      "threshold": "Tella convient pour des vidéos soignées et rapides ; pour de simples captures ponctuelles, un enregistreur gratuit suffit."
+    },
+    "pros": [
+      "Rendu soigné avec arrière-plans et mises en page.",
+      "Édition rapide directement dans le navigateur.",
+      "Export haute qualité jusqu'en 4K.",
+      "Pas de limite de stockage sur les plans payants."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Fonctions avancées réservées au plan supérieur.",
+      "Moins adapté au montage professionnel poussé."
+    ],
+    "use_cases": [
+      "Enregistrer une démo produit soignée.",
+      "Créer un tutoriel écran + webcam.",
+      "Produire des vidéos marketing courtes."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Équipes produit", "Freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create polished demo or tutorial videos.",
+        "You want fast editing without heavy software.",
+        "You regularly share screen/webcam videos."
+      ],
+      "avoidIf": [
+        "You want a fully free recorder.",
+        "Your needs are limited to occasional captures.",
+        "You need advanced professional video editing."
+      ],
+      "threshold": "Tella suits polished, fast videos; for simple occasional captures, a free recorder is enough."
+    },
+    "pros": [
+      "Polished output with backgrounds and layouts.",
+      "Fast editing right in the browser.",
+      "High-quality export up to 4K.",
+      "No storage limits on paid plans."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Advanced features reserved for the higher plan.",
+      "Less suited to heavy professional editing."
+    ],
+    "use_cases": [
+      "Record a polished product demo.",
+      "Create a screen + webcam tutorial.",
+      "Produce short marketing videos."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "screen-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Screen Studio (site officiel)", "url": "https://screen.studio" }
+  ],
+  "facts": {
+    "what": "Application macOS d'enregistrement d'écran qui produit automatiquement des vidéos soignées : zooms automatiques sur le curseur, mouvements de caméra fluides et arrière-plans stylisés, sans montage manuel.",
+    "what_en": "macOS screen-recording app that automatically produces polished videos: automatic cursor zooms, smooth camera moves and styled backgrounds, with no manual editing.",
+    "pricing_model": "Licence payante : abonnement mensuel/annuel ou licence à vie (achat unique), utilisable sur plusieurs Mac personnels.",
+    "free_tier": { "exists": false, "detail": "Essai possible ; pas de version gratuite permanente. macOS uniquement." },
+    "plans": [
+      { "name": "Annuel", "price": "~108 $/an (soit ~9 $/mois facturé annuellement)" },
+      { "name": "Mensuel", "price": "~29 $/mois" },
+      { "name": "Licence à vie", "price": "~229 $ (achat unique) — montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Zoom automatique sur le curseur et les actions",
+      "Mouvements de caméra et transitions automatiques",
+      "Arrière-plans, marges et curseurs personnalisables",
+      "Export haute qualité et liens de partage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes sur Mac et créez des démos ou tutoriels produits.",
+        "Vous voulez un rendu professionnel sans passer par un montage long.",
+        "Vous publiez régulièrement des vidéos d'écran soignées."
+      ],
+      "avoidIf": [
+        "Vous êtes sous Windows ou Linux.",
+        "Un simple enregistrement d'écran brut vous suffit.",
+        "Vous filmez votre écran de façon très occasionnelle."
+      ],
+      "threshold": "Screen Studio brille pour des démos Mac au rendu pro sans montage ; hors macOS ou pour un besoin brut ponctuel, un enregistreur classique suffit."
+    },
+    "pros": [
+      "Rendu professionnel automatique (zooms, caméra).",
+      "Gain de temps face à un montage manuel.",
+      "Personnalisation soignée (fonds, curseur).",
+      "Licence à vie disponible."
+    ],
+    "cons": [
+      "macOS uniquement, pas de version Windows.",
+      "Pas de version gratuite permanente.",
+      "Les liens de partage intégrés ont des limites de durée."
+    ],
+    "use_cases": [
+      "Créer une démo produit soignée pour une landing page.",
+      "Enregistrer un tutoriel logiciel clair.",
+      "Produire des clips d'écran pour les réseaux sociaux."
+    ],
+    "relevant_for": ["Créateurs de contenu Mac", "Équipes produit / marketing", "Formateurs / éducateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're on Mac and create product demos or tutorials.",
+        "You want a professional look without long editing.",
+        "You regularly publish polished screen videos."
+      ],
+      "avoidIf": [
+        "You're on Windows or Linux.",
+        "A plain raw screen recording is enough for you.",
+        "You record your screen very occasionally."
+      ],
+      "threshold": "Screen Studio shines for pro-looking Mac demos with no editing; off macOS or for a raw one-off need, a basic recorder is enough."
+    },
+    "pros": [
+      "Automatic professional look (zooms, camera).",
+      "Saves time versus manual editing.",
+      "Refined customization (backgrounds, cursor).",
+      "Lifetime license available."
+    ],
+    "cons": [
+      "macOS only, no Windows version.",
+      "No permanent free version.",
+      "Built-in share links have duration limits."
+    ],
+    "use_cases": [
+      "Create a polished product demo for a landing page.",
+      "Record a clear software tutorial.",
+      "Produce screen clips for social media."
+    ]
+  }
+}

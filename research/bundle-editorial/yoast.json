@@ -1,0 +1,89 @@
+{
+  "slug": "yoast",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Yoast SEO — tarifs (site officiel)", "url": "https://yoast.com/wordpress/plugins/seo/" }
+  ],
+  "facts": {
+    "what": "Extension SEO pour WordPress (et Shopify) : optimisation on-page, analyse de lisibilité et de mot-clé, génération de sitemaps XML, données structurées et gestion des balises meta.",
+    "what_en": "SEO plugin for WordPress (and Shopify): on-page optimization, readability and keyword analysis, XML sitemap generation, structured data, and meta tag management.",
+    "pricing_model": "Extension gratuite ; version Premium par abonnement annuel, licence par site.",
+    "free_tier": { "exists": true, "detail": "Plugin gratuit couvrant l'analyse SEO de base, la lisibilité et les sitemaps." },
+    "plans": [
+      { "name": "Yoast SEO Free", "price": "gratuit" },
+      { "name": "Premium", "price": "environ 129 $/an par site" },
+      { "name": "WooCommerce SEO", "price": "178,80 $/an (abonnement unifié)" },
+      { "name": "AI+", "price": "358,80 $/an (inclut WooCommerce SEO + brand monitoring)" }
+    ],
+    "key_features": [
+      "Analyse SEO et lisibilité en temps réel",
+      "Suggestions de liens internes (Premium)",
+      "Gestionnaire de redirections (Premium)",
+      "Sitemaps XML et données structurées automatiques"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez le SEO d'un site WordPress.",
+        "Vous voulez un cadre d'optimisation on-page guidé.",
+        "Vous avez besoin de redirections et de liens internes (Premium)."
+      ],
+      "avoidIf": [
+        "Votre site n'est pas sous WordPress ou Shopify.",
+        "Vous préférez une approche SEO manuelle et légère.",
+        "Vos besoins se limitent au strict minimum couvert par le gratuit."
+      ],
+      "threshold": "Yoast est un choix sûr pour le SEO WordPress ; hors de cet écosystème ou pour un besoin minimal, une alternative plus légère suffit."
+    },
+    "pros": [
+      "Analyse on-page claire et pédagogique.",
+      "Version gratuite déjà très complète.",
+      "Gestion des redirections et liens internes en Premium.",
+      "Sitemaps et données structurées automatiques."
+    ],
+    "cons": [
+      "Premium en abonnement annuel par site.",
+      "Limité à l'écosystème WordPress/Shopify.",
+      "Feux verts parfois trop mécaniques."
+    ],
+    "use_cases": [
+      "Optimiser les articles et pages d'un blog WordPress.",
+      "Gérer les redirections après une refonte.",
+      "Générer et maintenir un sitemap XML."
+    ],
+    "relevant_for": ["Éditeurs de sites WordPress", "Blogueurs", "Spécialistes SEO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage SEO for a WordPress site.",
+        "You want a guided on-page optimization framework.",
+        "You need redirects and internal linking (Premium)."
+      ],
+      "avoidIf": [
+        "Your site is not on WordPress or Shopify.",
+        "You prefer a lightweight, manual SEO approach.",
+        "Your needs fit within the free version alone."
+      ],
+      "threshold": "Yoast is a safe pick for WordPress SEO; outside that ecosystem or for minimal needs, a lighter alternative is enough."
+    },
+    "pros": [
+      "Clear, educational on-page analysis.",
+      "Already very capable free version.",
+      "Redirect and internal-linking management in Premium.",
+      "Automatic sitemaps and structured data."
+    ],
+    "cons": [
+      "Premium is an annual per-site subscription.",
+      "Limited to the WordPress/Shopify ecosystem.",
+      "Green-light checks can feel too mechanical."
+    ],
+    "use_cases": [
+      "Optimize posts and pages on a WordPress blog.",
+      "Manage redirects after a site redesign.",
+      "Generate and maintain an XML sitemap."
+    ]
+  }
+}

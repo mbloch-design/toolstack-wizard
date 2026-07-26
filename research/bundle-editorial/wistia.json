@@ -1,0 +1,88 @@
+{
+  "slug": "wistia",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Wistia — tarifs (site officiel)", "url": "https://wistia.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'hébergement et de marketing vidéo pour les entreprises : lecteur personnalisable, analytics d'engagement, CTA et capture de leads intégrés, intégrations marketing.",
+    "what_en": "Video hosting and marketing platform for businesses: customizable player, engagement analytics, built-in CTAs and lead capture, and marketing integrations.",
+    "pricing_model": "Freemium par abonnement mensuel/annuel, facturation basée sur le stockage (modèle par vidéo devenu historique).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 1 utilisateur, nombre de médias et bande passante limités." },
+    "plans": [
+      { "name": "Free", "price": "gratuit (1 utilisateur, médias et bande passante limités)" },
+      { "name": "Business", "price": "79 $/mois en annuel (99 $/mois mensuel), 3 utilisateurs inclus" },
+      { "name": "Enterprise", "price": "tarif sur devis" }
+    ],
+    "key_features": [
+      "Hébergement vidéo sans publicité, lecteur personnalisable",
+      "Analytics d'engagement et heatmaps",
+      "CTA in-video et formulaires de capture de leads",
+      "Intégrations marketing (HubSpot, Marketo, etc.) via add-on"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez la vidéo pour générer et qualifier des leads.",
+        "Vous voulez des analytics d'engagement détaillés.",
+        "Vous voulez un lecteur sans pub, aux couleurs de votre marque."
+      ],
+      "avoidIf": [
+        "Vous cherchez seulement un hébergement vidéo gratuit et illimité.",
+        "Vous avez déjà YouTube/Vimeo et pas de besoin marketing.",
+        "Votre volume de stockage ferait grimper la facture."
+      ],
+      "threshold": "Wistia s'impose pour le marketing vidéo B2B orienté leads ; pour un simple hébergement de vidéos, une solution grand public suffit."
+    },
+    "pros": [
+      "Analytics d'engagement parmi les plus fines du marché.",
+      "Lecteur personnalisable sans publicité.",
+      "Outils de capture de leads intégrés.",
+      "Bonnes intégrations avec les outils marketing."
+    ],
+    "cons": [
+      "Facturation au stockage qui monte vite.",
+      "Add-on d'automatisation marketing coûteux.",
+      "Surdimensionné pour un simple hébergement."
+    ],
+    "use_cases": [
+      "Héberger des vidéos marketing et suivre l'engagement.",
+      "Capturer des leads directement dans le lecteur.",
+      "Relier les vues vidéo à un CRM marketing."
+    ],
+    "relevant_for": ["Équipes marketing B2B", "Créateurs de contenu vidéo", "Growth / demand gen"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use video to generate and qualify leads.",
+        "You want detailed engagement analytics.",
+        "You want an ad-free, brand-styled player."
+      ],
+      "avoidIf": [
+        "You only want free, unlimited video hosting.",
+        "You already use YouTube/Vimeo with no marketing needs.",
+        "Your storage volume would inflate the bill."
+      ],
+      "threshold": "Wistia makes sense for lead-focused B2B video marketing; for plain video hosting, a consumer solution is enough."
+    },
+    "pros": [
+      "Some of the finest engagement analytics on the market.",
+      "Customizable, ad-free player.",
+      "Built-in lead capture tools.",
+      "Solid integrations with marketing tools."
+    ],
+    "cons": [
+      "Storage-based billing climbs quickly.",
+      "Marketing automation add-on is costly.",
+      "Overkill for simple hosting."
+    ],
+    "use_cases": [
+      "Host marketing videos and track engagement.",
+      "Capture leads directly in the player.",
+      "Connect video views to a marketing CRM."
+    ]
+  }
+}
