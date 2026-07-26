@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "railway",
+    "name": "Railway",
+    "url": "https://railway.app"
+  },
+  {
+    "slug": "react-native",
+    "name": "React Native",
+    "url": "https://reactnative.dev"
+  },
+  {
+    "slug": "readymag",
+    "name": "Readymag",
+    "url": ""
+  },
+  {
+    "slug": "recharge",
+    "name": "Recharge",
+    "url": "https://getrecharge.com"
+  },
+  {
+    "slug": "redis",
+    "name": "Redis",
+    "url": "https://redis.io"
+  },
+  {
+    "slug": "relume",
+    "name": "Relume",
+    "url": "https://www.relume.io"
+  },
+  {
+    "slug": "remix",
+    "name": "Remix",
+    "url": "https://remix.run"
+  },
+  {
+    "slug": "render",
+    "name": "Render",
+    "url": "https://render.com"
+  },
+  {
+    "slug": "rest-client",
+    "name": "REST Client",
+    "url": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client"
+  },
+  {
+    "slug": "retool",
+    "name": "Retool",
+    "url": "https://retool.com"
+  }
+]

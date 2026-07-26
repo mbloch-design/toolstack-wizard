@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "planetscale",
+    "name": "PlanetScale",
+    "url": "https://planetscale.com"
+  },
+  {
+    "slug": "playwright",
+    "name": "Playwright",
+    "url": "https://playwright.dev"
+  },
+  {
+    "slug": "poetry",
+    "name": "Poetry",
+    "url": "https://python-poetry.org"
+  },
+  {
+    "slug": "postgresql",
+    "name": "PostgreSQL",
+    "url": "https://www.postgresql.org"
+  },
+  {
+    "slug": "postman",
+    "name": "Postman",
+    "url": "https://www.postman.com"
+  },
+  {
+    "slug": "prettier",
+    "name": "Prettier",
+    "url": "https://prettier.io"
+  },
+  {
+    "slug": "printify",
+    "name": "Printify",
+    "url": "https://printify.com"
+  },
+  {
+    "slug": "prisma",
+    "name": "Prisma",
+    "url": "https://www.prisma.io"
+  },
+  {
+    "slug": "pytest",
+    "name": "Pytest",
+    "url": "https://pytest.org"
+  },
+  {
+    "slug": "python",
+    "name": "Python",
+    "url": "https://www.python.org"
+  }
+]

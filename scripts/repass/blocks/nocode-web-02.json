@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "bullmq",
+    "name": "BullMQ",
+    "url": "https://bullmq.io"
+  },
+  {
+    "slug": "carrd",
+    "name": "Carrd",
+    "url": "https://carrd.co"
+  },
+  {
+    "slug": "celery",
+    "name": "Celery",
+    "url": "https://docs.celeryq.dev"
+  },
+  {
+    "slug": "chrome-devtools",
+    "name": "Chrome DevTools",
+    "url": "https://developer.chrome.com/docs/devtools"
+  },
+  {
+    "slug": "client-first",
+    "name": "Client-First",
+    "url": "https://finsweet.com/client-first"
+  },
+  {
+    "slug": "codemagic",
+    "name": "Codemagic",
+    "url": "https://codemagic.io"
+  },
+  {
+    "slug": "contentful",
+    "name": "Contentful",
+    "url": "https://www.contentful.com"
+  },
+  {
+    "slug": "cypress",
+    "name": "Cypress",
+    "url": "https://www.cypress.io"
+  },
+  {
+    "slug": "dart",
+    "name": "Dart",
+    "url": "https://dart.dev"
+  },
+  {
+    "slug": "digitalocean",
+    "name": "DigitalOcean",
+    "url": "https://digitalocean.com"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "leadpages",
+    "name": "Leadpages",
+    "url": "https://www.leadpages.com"
+  },
+  {
+    "slug": "liquid",
+    "name": "Liquid",
+    "url": "https://shopify.github.io/liquid/"
+  },
+  {
+    "slug": "liquid-web-partner-program",
+    "name": "Liquid Web Partner+ Program",
+    "url": "https://liquidweb.com/partner-program"
+  },
+  {
+    "slug": "localwp",
+    "name": "LocalWP",
+    "url": "https://localwp.com"
+  },
+  {
+    "slug": "mainwp",
+    "name": "MainWP",
+    "url": "https://mainwp.com"
+  },
+  {
+    "slug": "managewp",
+    "name": "ManageWP",
+    "url": "https://managewp.com"
+  },
+  {
+    "slug": "medusa",
+    "name": "Medusa",
+    "url": "https://medusajs.com"
+  },
+  {
+    "slug": "memberstack",
+    "name": "Memberstack",
+    "url": "https://www.memberstack.com"
+  },
+  {
+    "slug": "mrpeasy",
+    "name": "MRPeasy",
+    "url": "https://mrpeasy.com"
+  },
+  {
+    "slug": "nestjs",
+    "name": "NestJS",
+    "url": "https://nestjs.com"
+  }
+]

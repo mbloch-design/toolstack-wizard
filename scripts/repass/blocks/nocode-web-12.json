@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "sqlalchemy",
+    "name": "SQLAlchemy",
+    "url": "https://www.sqlalchemy.org"
+  },
+  {
+    "slug": "strapi",
+    "name": "Strapi",
+    "url": "https://strapi.io"
+  },
+  {
+    "slug": "supabase",
+    "name": "Supabase",
+    "url": "https://supabase.com"
+  },
+  {
+    "slug": "terraform",
+    "name": "Terraform",
+    "url": "https://www.terraform.io"
+  },
+  {
+    "slug": "thunder-client",
+    "name": "Thunder Client",
+    "url": "https://www.thunderclient.com"
+  },
+  {
+    "slug": "timber",
+    "name": "Timber",
+    "url": "https://timber.github.io/docs/"
+  },
+  {
+    "slug": "typedream",
+    "name": "Typedream",
+    "url": "https://typedream.com"
+  },
+  {
+    "slug": "typescript",
+    "name": "TypeScript",
+    "url": "https://www.typescriptlang.org"
+  },
+  {
+    "slug": "unbounce",
+    "name": "Unbounce",
+    "url": "https://unbounce.com"
+  },
+  {
+    "slug": "uv",
+    "name": "uv",
+    "url": "https://github.com/astral-sh/uv"
+  }
+]

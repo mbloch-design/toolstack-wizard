@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "url": "https://vercel.com"
+  },
+  {
+    "slug": "vitest",
+    "name": "Vitest",
+    "url": "https://vitest.dev"
+  },
+  {
+    "slug": "vs-code",
+    "name": "VS Code",
+    "url": "https://code.visualstudio.com"
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "url": "https://webflow.com"
+  },
+  {
+    "slug": "wized",
+    "name": "Wized",
+    "url": "https://www.wized.com"
+  },
+  {
+    "slug": "woocommerce",
+    "name": "WooCommerce",
+    "url": "https://woocommerce.com"
+  },
+  {
+    "slug": "wordpress",
+    "name": "WordPress",
+    "url": "https://wordpress.org"
+  },
+  {
+    "slug": "youform",
+    "name": "Youform",
+    "url": "https://youform.com"
+  }
+]

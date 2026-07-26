@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "riverpod",
+    "name": "Riverpod",
+    "url": "https://riverpod.dev"
+  },
+  {
+    "slug": "rork",
+    "name": "Rork",
+    "url": "https://rork.com"
+  },
+  {
+    "slug": "saleor",
+    "name": "Saleor",
+    "url": "https://saleor.io"
+  },
+  {
+    "slug": "sanity",
+    "name": "Sanity",
+    "url": "https://www.sanity.io"
+  },
+  {
+    "slug": "sellfy",
+    "name": "Sellfy",
+    "url": "https://sellfy.com"
+  },
+  {
+    "slug": "shipstation",
+    "name": "ShipStation",
+    "url": "https://www.shipstation.com"
+  },
+  {
+    "slug": "shogun",
+    "name": "Shogun",
+    "url": "https://getshogun.com"
+  },
+  {
+    "slug": "shophero",
+    "name": "ShopHero",
+    "url": "https://shophero.com"
+  },
+  {
+    "slug": "shopify",
+    "name": "Shopify",
+    "url": "https://shopify.com"
+  },
+  {
+    "slug": "shopify-cli",
+    "name": "Shopify CLI",
+    "url": "https://shopify.dev/docs/api/shopify-cli"
+  }
+]

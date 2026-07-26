@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "netlify",
+    "name": "Netlify",
+    "url": "https://netlify.com"
+  },
+  {
+    "slug": "newman",
+    "name": "Newman",
+    "url": "https://github.com/postmanlabs/newman"
+  },
+  {
+    "slug": "next-js",
+    "name": "Next.js",
+    "url": "https://nextjs.org"
+  },
+  {
+    "slug": "node-js",
+    "name": "Node.js",
+    "url": "https://nodejs.org"
+  },
+  {
+    "slug": "openapi",
+    "name": "OpenAPI",
+    "url": "https://www.openapis.org"
+  },
+  {
+    "slug": "ovh",
+    "name": "OVHcloud",
+    "url": "https://www.ovhcloud.com"
+  },
+  {
+    "slug": "packhelp",
+    "name": "Packhelp",
+    "url": "https://packhelp.com"
+  },
+  {
+    "slug": "pageai",
+    "name": "PageAI",
+    "url": "https://pageai.io"
+  },
+  {
+    "slug": "payload-cms",
+    "name": "Payload CMS",
+    "url": "https://payloadcms.com"
+  },
+  {
+    "slug": "php",
+    "name": "PHP",
+    "url": "https://www.php.net"
+  }
+]

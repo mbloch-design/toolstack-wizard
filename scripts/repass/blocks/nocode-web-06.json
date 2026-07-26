@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "hydrogen",
+    "name": "Hydrogen",
+    "url": "https://hydrogen.shopify.dev"
+  },
+  {
+    "slug": "inflow-inventory",
+    "name": "inFlow Inventory",
+    "url": "https://inflowinventory.com"
+  },
+  {
+    "slug": "infomaniak",
+    "name": "Infomaniak",
+    "url": "https://www.infomaniak.com"
+  },
+  {
+    "slug": "insomnia",
+    "name": "Insomnia",
+    "url": "https://insomnia.rest"
+  },
+  {
+    "slug": "jest",
+    "name": "Jest",
+    "url": "https://jestjs.io"
+  },
+  {
+    "slug": "jotform",
+    "name": "Jotform",
+    "url": "https://www.jotform.com"
+  },
+  {
+    "slug": "katana-cloud-manufacturing",
+    "name": "Katana Cloud Manufacturing",
+    "url": "https://katanamrp.com"
+  },
+  {
+    "slug": "kinsta",
+    "name": "Kinsta",
+    "url": "https://kinsta.com"
+  },
+  {
+    "slug": "kubernetes",
+    "name": "Kubernetes",
+    "url": "https://kubernetes.io"
+  },
+  {
+    "slug": "landingi",
+    "name": "Landingi",
+    "url": "https://try.landingi.com/8he4kr5kasjb"
+  }
+]
