@@ -42,6 +42,8 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "gamma-ai", "adcreative", "inbound",
   // Repasse creation vague 2 : magicbrief + modo (fermés), opusclip→opus-clip (doublon).
   "magicbrief", "modo", "opusclip",
+  // Repasse creation vague 3 : webxr (standard W3C, pas un produit), topaz-video→topaz-video-ai (doublon).
+  "webxr", "topaz-video",
 ]);
 
 // SEO landing + persona pillar pages (localized slugs)

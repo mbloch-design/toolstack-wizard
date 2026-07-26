@@ -165,6 +165,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "templates-ugc", "utm-builders", "webflow-framer", "webhooks", "workout-templates", "zapier-make",
   "gamma-ai", "adcreative", "inbound",
   "magicbrief", "modo", "opusclip",
+  "webxr", "topaz-video",
 ]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
