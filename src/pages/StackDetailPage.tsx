@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ChevronDown, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import SectionPillNav from "@/components/SectionPillNav";
-import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
@@ -609,23 +607,8 @@ const StackDetailPage = () => {
     return [...samePersona, ...fill].slice(0, 3);
   }, [stack]);
 
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [expandedToolLayers, setExpandedToolLayers] = useState<Set<string>>(() => new Set());
-
-  const navItems = useMemo(() => {
-    if (!stack) return [];
-    const stackEditorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
-    const baseItems = [
-      { id: "outils", label: lang === "fr" ? "Outils" : "Tools" },
-      { id: "budget", label: "Budget" },
-      ...(stackEditorial.risks.length > 0 ? [{ id: "risques", label: lang === "fr" ? "Risques" : "Risks" }] : []),
-      { id: "calibrage", label: lang === "fr" ? "Calibrage" : "Calibration" },
-      ...(stackEditorial.altVariants.length > 0 ? [{ id: "alternatives", label: "Alternatives" }] : []),
-      { id: "faq", label: "FAQ" },
-    ];
-    return baseItems;
-  }, [lang, stack]);
 
   useEffect(() => {
     if (!stack) return;
@@ -683,13 +666,6 @@ const StackDetailPage = () => {
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
 
   const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const tooLightRows = lang === "fr"
-    ? ["Tu gères plusieurs projets clients en parallèle.", "Tu as besoin de QA, staging ou monitoring avancé.", "Tu travailles avec plusieurs devs.", "Tu dois suivre des specs produit lourdes."]
-    : ["You manage several client projects in parallel.", "You need advanced QA, staging, or monitoring.", "You work with several developers.", "You need to track heavy product specs."];
-  const tooHeavyRows = lang === "fr"
-    ? ["Tu livres surtout des landing pages simples.", "Tu n'as pas encore de flux client régulier.", "Tu paies plusieurs outils pour la même étape.", "Tu utilises moins de la moitié des fonctions."]
-    : ["You mostly ship simple landing pages.", "You do not have a steady client flow yet.", "You pay several tools for the same step.", "You use less than half of the features."];
-
   const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
   const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
   const stackMapFamilies = buildStackMapFamilies(stack, stackLayers);
@@ -713,70 +689,29 @@ const StackDetailPage = () => {
       {/* ════════════════════════════════════════════════════════════════════
           HERO — éditorial + table signalétique
       ════════════════════════════════════════════════════════════════════ */}
-      <section className="sd-hero-section">
-        <div className="sd-hero-editorial">
-
-          {/* Breadcrumb */}
-          <nav className="sd-hero-breadcrumb" aria-label="breadcrumb">
+      <div className="sd-page-frame">
+          <nav className="cp-breadcrumb sd-hero-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
+            <Link to={`${prefix}`}>ToolTrim</Link>
+            <span>/</span>
             <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            <span style={{ color: "var(--color-border)" }}>/</span>
-            <span style={{ color: "var(--color-text)" }}>{detailTitle}</span>
+            <span>/</span>
+            <span>{detailTitle}</span>
           </nav>
 
-          {/* Eyebrow */}
-          <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
+            <header className="sd-hero-editorial">
+              <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
+              <h1 className="sd-hero-h1">
+                {heroDecision.title.split("\n").map((line, i) => (
+                  i === 0 ? <span key={i}>{line}</span> : <span key={i}><br />{line}</span>
+                ))}
+              </h1>
+              <p className="sd-hero-desc">{heroSubtitle}</p>
+            </header>
 
-          {/* H1 */}
-          <h1 className="sd-hero-h1">
-            {heroDecision.title.split("\n").map((line, i) => (
-              i === 0 ? <span key={i}>{line}</span> : <span key={i}><br />{line}</span>
-            ))}
-          </h1>
+          <div className="sd-hero-sentinel" aria-hidden="true" />
 
-          {/* Promise */}
-          <p className="sd-hero-desc">
-            {heroSubtitle}
-          </p>
-
-        </div>
-
-        {/* ── Signaletic fact table ── */}
-        <div className="sd-hero-fact-table" aria-label={t("Signalétique de la stack", "Stack fact sheet") as string}>
-          {heroDecision.reperes.map((repere) => {
-            const compactLabels = ["BUDGET", "OUTILS", "TOOLS"];
-            const levelLabels  = ["NIVEAU", "LEVEL"];
-            const longLabels = ["PROFIL", "WORKFLOW", "POINT D'ATTENTION", "PROFILE", "KEY RISK"];
-            const isBudget = repere.label === "BUDGET";
-            const modifier = compactLabels.includes(repere.label)
-              ? " sd-fact-col--compact"
-              : levelLabels.includes(repere.label)
-              ? " sd-fact-col--level"
-              : longLabels.includes(repere.label)
-              ? " sd-fact-col--long"
-              : "";
-            const budgetSplit = isBudget ? splitBudget(repere.value) : null;
-            return (
-              <div key={repere.label} className={`sd-fact-col${modifier}`}>
-                <span className="sd-fact-label">{repere.label}</span>
-                {isBudget && budgetSplit ? (
-                  <span className="sd-fact-value sd-fact-col--compact sd-budget-value">
-                    <span className="sd-budget-composition">
-                      <span className="sd-budget-main">{budgetSplit.main}</span>
-                      <span className="sd-budget-unit">{budgetSplit.unit}</span>
-                    </span>
-                  </span>
-                ) : (
-                  <span className="sd-fact-value">{repere.value}</span>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Sentinel: reveals the floating pill nav once the hero scrolls away */}
-        <div className="sd-hero-sentinel" aria-hidden="true" style={{ height: 0 }} />
-
-      </section>
+          <div className="sd-page-grid">
+            <main className="sd-page-main">
 
       {/* ════════════════════════════════════════════════════════════════════
           OUTILS — stack par étape
@@ -963,116 +898,116 @@ const StackDetailPage = () => {
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("03 — BUDGET", "03 — BUDGET")}</span>
           <p className="sd-section-title sd-budget-title">
-            {stack.monthlyBudget > 0
+            {stack.slug === "developpeur-freelance-shipper"
+              ? t("Budget réel : de 0 à 32€/mois.", "Real budget: €0 to €32/month.")
+              : stack.monthlyBudget > 0
               ? t(
                   `${stack.monthlyBudget}€/mois, si le socle travaille vraiment.`,
                   `€${stack.monthlyBudget}/month, when the core stack earns its keep.`,
                 )
               : t("Le budget qui reste sain.", "A budget that stays healthy.")}
           </p>
-          <p className="sd-budget-intro">
-            {t(
-              "Ce budget reste sain si chaque outil sert une étape réelle : livrer, montrer, documenter ou encaisser. S'il dépasse le seuil sans volume client clair, cherche d'abord les doublons.",
-              "This budget stays healthy when each tool serves a real step: ship, present, document, or get paid. If it climbs past the threshold without clear client volume, look for overlaps first.",
-            )}
-          </p>
-
-          <div className="sd-budget-thresholds" aria-label={t("Seuils de budget", "Budget thresholds")}>
-            <div className="sd-budget-threshold">
-              <span className="sd-bt-range">{t("0–15€/mois", "0–15€/mo")}</span>
-              <span className="sd-bt-label">{t("Tester", "Testing")}</span>
-              <span className="sd-bt-desc">{t("Plans gratuits + un outil payant maximum.", "Free plans + one paid tool maximum.")}</span>
+          {stack.slug === "developpeur-freelance-shipper" ? (
+            <div className="sd-budget-breakdown" aria-label={t("Composition du budget", "Budget breakdown")}>
+              {[
+                {
+                  slugs: ["github", "vercel"],
+                  labelFr: "Socle gratuit",
+                  labelEn: "Free core",
+                  priceFr: "0€/mois",
+                  priceEn: "€0/month",
+                  detailFr: "GitHub et Vercel suffisent en plan gratuit pour démarrer et livrer seul.",
+                  detailEn: "GitHub and Vercel free plans are enough to start and ship solo.",
+                },
+                {
+                  slugs: ["chatgpt", "notion"],
+                  labelFr: "Abonnements optionnels",
+                  labelEn: "Optional subscriptions",
+                  priceFr: "≈27€/mois",
+                  priceEn: "≈€27/month",
+                  detailFr: "ChatGPT Plus et Notion Plus seulement si tu les utilises chaque semaine.",
+                  detailEn: "ChatGPT Plus and Notion Plus only when you use them every week.",
+                },
+                {
+                  slugs: ["stripe"],
+                  labelFr: "Paiement à l’usage",
+                  labelEn: "Usage-based payment",
+                  priceFr: "Sans abonnement",
+                  priceEn: "No subscription",
+                  detailFr: "Stripe prélève une commission uniquement quand le client paie.",
+                  detailEn: "Stripe charges a fee only when the client pays.",
+                },
+              ].map((row) => (
+                <div key={row.labelFr} className="sd-budget-breakdown-row">
+                  <div className="sd-budget-breakdown-tools">
+                    {row.slugs.map((toolSlug) => {
+                      const budgetTool = toolBySlug.get(toolSlug);
+                      return budgetTool ? (
+                        <span key={toolSlug} className="sd-budget-breakdown-logo">
+                          <ToolLogo tool={budgetTool} size={24} />
+                        </span>
+                      ) : null;
+                    })}
+                  </div>
+                  <div className="sd-budget-breakdown-copy">
+                    <span>{t(row.labelFr, row.labelEn)}</span>
+                    <p>{t(row.detailFr, row.detailEn)}</p>
+                  </div>
+                  <strong>{t(row.priceFr, row.priceEn)}</strong>
+                </div>
+              ))}
             </div>
-            <div className="sd-budget-threshold sd-budget-threshold--active">
-              <span className="sd-bt-range">{budgetTargetLabel}</span>
-              <span className="sd-bt-label">{t("Livrer régulièrement", "Shipping regularly")}</span>
-              <span className="sd-bt-desc">{t("Le socle est utilisé chaque semaine.", "The core stack is used every week.")}</span>
+          ) : (
+            <div className="sd-budget-thresholds" aria-label={t("Seuils de budget", "Budget thresholds")}>
+              <div className="sd-budget-threshold">
+                <span className="sd-bt-range">{t("0–15€/mois", "0–15€/mo")}</span>
+                <span className="sd-bt-label">{t("Tester", "Testing")}</span>
+                <span className="sd-bt-desc">{t("Plans gratuits + un outil payant maximum.", "Free plans + one paid tool maximum.")}</span>
+              </div>
+              <div className="sd-budget-threshold sd-budget-threshold--active">
+                <span className="sd-bt-range">{budgetTargetLabel}</span>
+                <span className="sd-bt-label">{t("Livrer régulièrement", "Shipping regularly")}</span>
+                <span className="sd-bt-desc">{t("Le socle est utilisé chaque semaine.", "The core stack is used every week.")}</span>
+              </div>
+              <div className="sd-budget-threshold">
+                <span className="sd-bt-range">{t("80–100€/mois", "80–100€/mo")}</span>
+                <span className="sd-bt-label">{t("Auditer", "Time to audit")}</span>
+                <span className="sd-bt-desc">{t("Doublons IA, CRM, projet ou automatisation à vérifier.", "Check for AI, CRM, project or automation overlaps.")}</span>
+              </div>
             </div>
-            <div className="sd-budget-threshold">
-              <span className="sd-bt-range">{t("80–100€/mois", "80–100€/mo")}</span>
-              <span className="sd-bt-label">{t("Auditer", "Time to audit")}</span>
-              <span className="sd-bt-desc">{t("Doublons IA, CRM, projet ou automatisation à vérifier.", "Check for AI, CRM, project or automation overlaps.")}</span>
-            </div>
-          </div>
-
-          <div className="sd-budget-principles">
-            <div className="sd-budget-principle">
-              <span className="sd-bp-head">{t("À payer", "Worth paying for")}</span>
-              <p className="sd-bp-body">{t("Ce qui porte une étape réelle de livraison.", "What carries a real delivery step.")}</p>
-            </div>
-            <div className="sd-budget-principle">
-              <span className="sd-bp-head">{t("À garder gratuit", "Keep free")}</span>
-              <p className="sd-bp-body">{t("Ce qui suffit en plan gratuit tant que le volume reste simple.", "What a free plan handles while volume stays low.")}</p>
-            </div>
-            <div className="sd-budget-principle">
-              <span className="sd-bp-head">{t("À auditer", "Time to audit")}</span>
-              <p className="sd-bp-body">{t("Ce qui se répète, se chevauche ou sert moins d'une fois par semaine.", "What overlaps, repeats, or gets used less than once a week.")}</p>
-            </div>
-          </div>
+          )}
 
           <p className="sd-budget-note">
             {t(
-              "Ce budget est un repère, pas une promesse. Si tu dépasses le seuil sans volume client clair, commence par supprimer les doublons avant d'ajouter un nouvel outil.",
-              "This budget is a benchmark, not a promise. If you exceed the threshold without clear client volume, remove overlaps before adding a new tool.",
+              "32€ est un plafond confortable, pas un coût minimum : commence gratuitement puis active un abonnement quand il fait gagner du temps chaque semaine.",
+              "€32 is a comfortable ceiling, not a minimum cost: start free, then activate a subscription when it saves time every week.",
             )}
           </p>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          RISQUES — doublons à éviter
+          LIMITES — points à surveiller
       ════════════════════════════════════════════════════════════════════ */}
       {hasRisks && (
-        <section id="risques" className="sd-section scroll-mt-20">
+        <section id="limites" className="sd-section scroll-mt-20">
           <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("04 — RISQUES", "04 — RISKS")}</span>
-            <p className="sd-section-title" style={{ marginBottom: 0 }}>
-              {t(editorial.risksTitle, editorial.risksTitleEn)}
+            <span className="sd-section-eyebrow">{t("04 — GARDER LA STACK LÉGÈRE", "04 — KEEP THE STACK LIGHT")}</span>
+            <p className="sd-section-title">
+              {t("À ne pas ajouter trop tôt.", "Do not add these too early.")}
             </p>
-            <div style={{ marginTop: 8 }}>
-              {editorial.risks.map((risk, i) => (
-                <div key={i} className="sd-risk-enhanced-row">
-                  <div className="sd-risk-enhanced-col">
-                    <span className="sd-risk-col-label">{t("Problème", "Problem")}</span>
-                    <p className="sd-risk-problem-text">{t(risk.problem, risk.problemEn)}</p>
-                  </div>
-                  <div className="sd-risk-enhanced-col">
-                    <span className="sd-risk-col-label">{t("Conséquence", "Consequence")}</span>
-                    <p className="sd-risk-consequence-text">{t(risk.consequence, risk.consequenceEn)}</p>
-                  </div>
-                  <div className="sd-risk-enhanced-col">
-                    <span className="sd-risk-col-label">{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
-                    <p className="sd-risk-reco-text">{t(risk.reco, risk.recoEn)}</p>
-                  </div>
-                </div>
+            <ul className="sd-watch-list">
+              {editorial.risks.slice(0, 3).map((risk, i) => (
+                <li key={i} className="sd-watch-row">
+                  <span className="sd-watch-marker" aria-hidden="true" />
+                  <h3>{t(risk.problem, risk.problemEn)}</h3>
+                  <p>{t(risk.reco, risk.recoEn)}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
       )}
-
-      <section id="calibrage" className="sd-section scroll-mt-20">
-        <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("05 — CALIBRAGE", "05 — CALIBRATION")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 0 }}>
-            {t("Quand cette stack devient mal calibrée.", "When this stack becomes miscalibrated.")}
-          </p>
-          <div className="sd-calibration-grid">
-            <div className="sd-calibration-card">
-              <span className="sd-calibration-label">{t("Trop légère si", "Too light if")}</span>
-              <ul>
-                {tooLightRows.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="sd-calibration-card">
-              <span className="sd-calibration-label">{t("Trop lourde si", "Too heavy if")}</span>
-              <ul>
-                {tooHeavyRows.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ════════════════════════════════════════════════════════════════════
           ALTERNATIVES — 3 variantes de stack
@@ -1081,7 +1016,7 @@ const StackDetailPage = () => {
         <section id="alternatives" className="sd-section scroll-mt-20">
           <div className="sd-container">
             <span className="sd-section-eyebrow">{t("ALTERNATIVES", "ALTERNATIVES")}</span>
-            <p className="sd-section-title" style={{ marginBottom: 8 }}>
+            <p className="sd-section-title">
               {t(editorial.altsTitle, editorial.altsTitleEn)}
             </p>
             <div className="sd-alt-grid">
@@ -1106,7 +1041,7 @@ const StackDetailPage = () => {
         <section id="faq" className="sd-section scroll-mt-20">
           <div className="sd-container">
             <span className="sd-section-eyebrow">FAQ</span>
-            <p className="sd-section-title" style={{ marginBottom: 0 }}>
+            <p className="sd-section-title">
               {t("Questions fréquentes.", "Frequently asked questions.")}
             </p>
             <div className="sd-faq-list">
@@ -1136,262 +1071,91 @@ const StackDetailPage = () => {
           STACKS PROCHES
       ════════════════════════════════════════════════════════════════════ */}
       {relatedStacks.length > 0 && (
-        <section className="sd-section scroll-mt-20" style={{ borderBottom: "none" }}>
+        <section className="sd-section sd-section--last scroll-mt-20">
           <div className="sd-container">
             <span className="sd-section-eyebrow">{t("STACKS PROCHES", "RELATED STACKS")}</span>
-            <p className="sd-section-title" style={{ marginBottom: 24 }}>
+            <p className="sd-section-title">
               {t("Si cette stack ne correspond pas tout à fait à ton usage.", "If this stack does not quite match your use case.")}
             </p>
             <div className="sd-related-grid">
-              {relatedStacks.map((related) => (
-                <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
-                  <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text)", padding: "2px 6px", border: "1px solid var(--color-border)", borderRadius: "var(--radius-xs)" }}>
-                      {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
-                    </span>
-                  </div>
-                  <p className="sd-related-name">{t(related.title, related.titleEn)}</p>
-                  <p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p>
-                  <div className="sd-related-footer">
-                    <span className="sd-related-budget">≈ {related.monthlyBudget}€/mois</span>
-                    <span className="sd-related-cta">{t("Voir", "See")} →</span>
-                  </div>
-                </Link>
-              ))}
+              {relatedStacks.map((related) => {
+                const relatedTools = asArray(related.tools)
+                  .map((slot) => toolBySlug.get(slot.slug))
+                  .filter((tool): tool is ToolSummary => Boolean(tool))
+                  .slice(0, 4);
+
+                return (
+                  <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
+                    <div className="sd-related-visual" aria-label={t("Outils principaux", "Main tools") as string}>
+                      <div className="sd-related-logo-pile">
+                        {relatedTools.map((tool) => (
+                          <span key={tool.id} className="sd-related-logo">
+                            <ToolLogo tool={tool} size={30} />
+                          </span>
+                        ))}
+                      </div>
+                      <span className="sd-related-tool-count">
+                        {related.tools.length} {t("outils", "tools")}
+                      </span>
+                    </div>
+
+                    <div className="sd-related-content">
+                      <div className="sd-related-meta">
+                        <span className="sd-related-persona">
+                          {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
+                        </span>
+                        <span className="sd-related-budget">≈ {related.monthlyBudget}€/mois</span>
+                      </div>
+                      <p className="sd-related-name">{t(related.title, related.titleEn)}</p>
+                      <p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p>
+                      <span className="sd-related-cta">{t("Voir la stack", "See stack")} →</span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
       )}
 
-      {/* ════════════════════════════════════════════════════════════════════
-          TOOL QUICK PANEL (Sheet — inchangé)
-      ════════════════════════════════════════════════════════════════════ */}
-      <Sheet open={selectedIndex !== null} onOpenChange={(open) => { if (!open) setSelectedIndex(null); }}>
-        <SheetContent side="right" className="w-full sm:max-w-[420px] p-0 flex flex-col gap-0 overflow-hidden">
-          {selectedIndex !== null && (
-            <ToolPanel
-              stackTools={stackTools}
-              selectedIndex={selectedIndex}
-              onNavigate={setSelectedIndex}
-              prefix={prefix}
-              t={t}
-            />
-          )}
-        </SheetContent>
-      </Sheet>
+            </main>
 
-      {/* ════════════════════════════════════════════════════════════════════
-          STICKY BOTTOM NAV — desktop only, visible after hero
-      ════════════════════════════════════════════════════════════════════ */}
-      <SectionPillNav
-        sections={navItems}
-        logoTo={`${prefix}/stacks`}
-        logoAriaLabel={t("Retour aux stacks", "Back to stacks")}
-        ariaLabel={t("Navigation de la fiche stack", "Stack page navigation")}
-        heroSelector=".sd-hero-sentinel"
-      />
+            <aside className="sd-decision-sidebar" aria-label={t("Décision ToolTrim", "ToolTrim decision") as string}>
+              <div className="sd-decision-card">
+                <span className="sd-decision-kicker">{t("DÉCISION TOOLTRIM", "TOOLTRIM DECISION")}</span>
+                <h2 className="sd-decision-title">
+                  {stack.slug === "developpeur-freelance-shipper"
+                    ? t("Le socle avant les extensions.", "Core first, extensions later.")
+                    : t("Une stack calibrée pour cet usage.", "A stack calibrated for this use case.")}
+                </h2>
+                <p className="sd-decision-copy">{t(editorial.overviewIntro, editorial.overviewIntroEn)}</p>
+
+                <div className="sd-decision-facts">
+                  {heroDecision.reperes
+                    .filter((repere) => ["PROFIL", "PROFILE", "BUDGET", "OUTILS", "TOOLS"].includes(repere.label))
+                    .map((repere) => (
+                      <div key={repere.label} className="sd-decision-fact">
+                        <span>{repere.label}</span>
+                        <strong>{repere.value}</strong>
+                      </div>
+                    ))}
+                </div>
+
+                <div className="sd-decision-workflow">
+                  <span>{t("WORKFLOW", "WORKFLOW")}</span>
+                  <strong>
+                    {heroDecision.reperes.find((repere) => repere.label === "WORKFLOW")?.value}
+                  </strong>
+                </div>
+
+              </div>
+            </aside>
+          </div>
+        </div>
 
     </div>
   );
 };
-
-/* ─── Tool Panel (unchanged) ─────────────────────────────────────────────── */
-interface ToolPanelProps {
-  stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
-  selectedIndex: number;
-  onNavigate: (index: number) => void;
-  prefix: string;
-  t: (fr: string, en: string) => string;
-}
-
-function BudgetToolChips({
-  items,
-  emptyLabel,
-}: {
-  items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
-  emptyLabel: string;
-}) {
-  if (items.length === 0) {
-    return <span className="sd-budget-tool-empty">{emptyLabel}</span>;
-  }
-
-  return (
-    <div className="sd-budget-tool-list">
-      {items.map(({ slot, tool }) => (
-        <span key={slot.slug} className="sd-budget-tool-chip">
-          <span className="sd-budget-tool-logo"><ToolLogo tool={tool!} size={18} /></span>
-          <span>{tool!.name}</span>
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPanelProps) {
-  const { slot, tool } = stackTools[selectedIndex];
-  const status = getToolDecisionStatus(slot);
-  const hasPrev = selectedIndex > 0;
-  const hasNext = selectedIndex < stackTools.length - 1;
-
-  useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === "ArrowLeft"  && hasPrev) onNavigate(selectedIndex - 1);
-      if (e.key === "ArrowRight" && hasNext) onNavigate(selectedIndex + 1);
-    }
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedIndex, hasPrev, hasNext, onNavigate]);
-
-  const callout = {
-    core: {
-      fr: "Outil central de cette stack. Inutile de chercher une alternative : c'est lui qui tient tout.",
-      en: "Core tool in this stack. No need to look for an alternative: it holds everything together.",
-      textClass: "text-keep", borderClass: "border-keep/25 bg-keep/[0.05]", dotClass: "bg-keep",
-    },
-    conditional: {
-      fr: "Utile selon les contextes. Vérifie que tu l'utilises vraiment chaque mois avant de renouveler.",
-      en: "Useful in some contexts. Check you actually use it every month before renewing.",
-      textClass: "text-primary", borderClass: "border-primary/25 bg-primary/[0.04]", dotClass: "bg-primary",
-    },
-    challenge: {
-      fr: "Candidat au downgrade. Cet outil doit prouver sa valeur par un résultat concret et mesurable.",
-      en: "Downgrade candidate. This tool needs to prove its value through concrete, measurable results.",
-      textClass: "text-destructive", borderClass: "border-destructive/25 bg-destructive/[0.04]", dotClass: "bg-destructive",
-    },
-  }[status.key];
-
-  const headerTint = {
-    core: "from-keep/[0.06]",
-    conditional: "from-primary/[0.06]",
-    challenge: "from-destructive/[0.06]",
-  }[status.key];
-
-  return (
-    <>
-      <div className={`relative border-b border-border px-6 pb-5 pt-5 bg-gradient-to-b ${headerTint} to-transparent`}>
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <ToolLogo tool={tool!} size={64} className="rounded-2xl shrink-0 shadow-sm ring-1 ring-border" />
-            <div className="min-w-0">
-              <p className="text-base font-bold text-foreground leading-tight truncate">{tool!.name}</p>
-              <p className="mt-0.5 text-xs text-muted-foreground truncate">{t(slot.role, slot.roleEn ?? slot.role)}</p>
-              <span className={`mt-2 inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wide ${status.className}`}>
-                {t(status.labelFr, status.labelEn)}
-              </span>
-            </div>
-          </div>
-          <SheetClose className="shrink-0 rounded-md p-1.5 text-muted-foreground hover:text-foreground transition-colors mt-0.5">
-            <X className="h-4 w-4" />
-          </SheetClose>
-        </div>
-      </div>
-
-      <div className="flex-1 overflow-y-auto px-5 py-5 space-y-4">
-        <div className={`flex items-start gap-3 rounded-xl border p-4 ${callout.borderClass}`}>
-          <div className={`mt-[5px] shrink-0 h-2 w-2 rounded-full ${callout.dotClass}`} />
-          <p className={`text-sm font-medium leading-6 ${callout.textClass}`}>
-            {t(callout.fr, callout.en)}
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-border bg-secondary/40 p-4 space-y-3">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-            {t("Dans cette stack", "In this stack")}
-          </p>
-          <p className="text-sm leading-6 text-foreground/80">{t(slot.reason, slot.reasonEn ?? slot.reason)}</p>
-          {slot.tip && (
-            <div className="flex items-start gap-2.5 pt-3 border-t border-border/60">
-              <Lightbulb className="h-3.5 w-3.5 shrink-0 mt-0.5 text-primary" />
-              <p className="text-xs font-medium text-primary leading-5">
-                {t(slot.tip, slot.tipEn ?? slot.tip)}
-              </p>
-            </div>
-          )}
-        </div>
-
-        {(tool?.shortDescription || tool?.shortDescriptionEn) && (
-          <div className="px-1">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2">
-              {t("En résumé", "About")}
-            </p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              {t(tool.shortDescription ?? "", tool.shortDescriptionEn ?? "")}
-            </p>
-          </div>
-        )}
-
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-3 px-1">
-            {t("Tarifs", "Pricing")}
-          </p>
-          <div className="grid grid-cols-2 gap-2.5">
-            {tool?.pricing?.free ? (
-              <div className="rounded-xl border border-keep/25 bg-keep/[0.05] p-3.5">
-                <p className="text-[10px] font-bold uppercase tracking-wide text-keep mb-2">{t("Gratuit", "Free")}</p>
-                <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.free}</p>
-              </div>
-            ) : (
-              <div className="rounded-xl border border-border bg-secondary/30 p-3.5 flex items-center justify-center">
-                <p className="text-xs text-muted-foreground/50 text-center">{t("Pas de plan gratuit", "No free plan")}</p>
-              </div>
-            )}
-            <div className="rounded-xl border border-border bg-secondary/30 p-3.5">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground mb-2">{t("Payant", "Paid")}</p>
-              {tool?.pricing?.paid ? (
-                <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.paid}</p>
-              ) : (
-                <p className="text-sm font-bold text-foreground">
-                  {(tool?.defaultMonthlyPrice ?? 0) === 0
-                    ? t("Gratuit", "Free")
-                    : `${tool?.defaultMonthlyPrice}€/${t("mois", "mo")}`}
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {tool?.websiteUrl && (
-          <a
-            href={tool.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-all hover:border-primary/40 hover:bg-primary/[0.02] group"
-          >
-            <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate pr-3">
-              {tool.websiteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
-            </span>
-            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
-          </a>
-        )}
-      </div>
-
-      <div className="border-t border-border px-5 py-4 flex items-center justify-between gap-3 bg-background/50">
-        <div className="flex items-center gap-1.5">
-          <button type="button" disabled={!hasPrev} onClick={() => onNavigate(selectedIndex - 1)}
-            title={t("Outil précédent (←)", "Previous tool (←)")}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <span className="min-w-[3.25rem] text-center text-xs tabular-nums text-muted-foreground">
-            {selectedIndex + 1} / {stackTools.length}
-          </span>
-          <button type="button" disabled={!hasNext} onClick={() => onNavigate(selectedIndex + 1)}
-            title={t("Outil suivant (→)", "Next tool (→)")}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed">
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-        <Link
-          to={`${prefix}/tool/${tool!.slug}`}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px", background: "var(--color-text)", color: "var(--color-surface)", borderRadius: "var(--radius-sm)", fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none" }}
-        >
-          {t("Fiche complète", "Full details")}
-          <ExternalLink className="h-3 w-3" />
-        </Link>
-      </div>
-    </>
-  );
-}
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 function personaLabel(persona: StackPersona, locale: "fr" | "en") {
@@ -1406,107 +1170,6 @@ function stageLabel(stage: StackStage, locale: "fr" | "en") {
   const item = STACK_STAGES.find((option) => option.value === stage);
   return locale === "fr" ? item?.label || stage : item?.labelEn || stage;
 }
-function formatToolPrice(tool: ToolSummary | undefined, locale: "fr" | "en") {
-  if (!tool) return locale === "fr" ? "Prix à vérifier" : "Check price";
-  if (!tool.defaultMonthlyPrice || tool.defaultMonthlyPrice <= 0) return locale === "fr" ? "Plan gratuit possible" : "Free plan possible";
-  const price = `${Math.round(tool.defaultMonthlyPrice * 100) / 100}€/${locale === "fr" ? "mois" : "mo"}`;
-  return locale === "fr" ? `Dès ${price}` : `From ${price}`;
-}
-function getExpertTips(stack: StackGuide): StackInsight[] {
-  return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona] || [];
-}
-function getToolDecisionDisplay(key: "core" | "conditional" | "challenge", locale: "fr" | "en"): string {
-  if (key === "core") return locale === "fr" ? "Socle" : "Core";
-  if (key === "conditional") return locale === "fr" ? "Conditionnel" : "Conditional";
-  return locale === "fr" ? "À challenger" : "Challenge";
-}
-
-/** Workflow-card-only status label — friendlier, no technical jargon */
-function getWorkflowStatusLabel(status: string, locale: "fr" | "en"): string {
-  const fr: Record<string, string> = {
-    core: "Socle", socle: "Socle", essential: "Socle", keep: "Socle",
-    conditional: "Selon usage", conditionnel: "Selon usage", optional: "Selon usage",
-    challenge: "Extension", challenger: "Extension", avoid: "Extension",
-  };
-  const en: Record<string, string> = {
-    core: "Core", socle: "Core", essential: "Core", keep: "Core",
-    conditional: "As needed", conditionnel: "As needed", optional: "As needed",
-    challenge: "Extension", challenger: "Extension", avoid: "Extension",
-  };
-  const map = locale === "en" ? en : fr;
-  return map[status?.toLowerCase()] ?? (locale === "en" ? "As needed" : "Selon usage");
-}
-
-/** Build a readable status summary for the workflow card header */
-function buildWorkflowStatusSummary(items: { slot: StackToolSlot }[], locale: "fr" | "en"): string {
-  const core       = items.filter(({ slot }) => ["core","socle","essential","keep"].includes(slot.decision?.toLowerCase() ?? "")).length;
-  const conditional = items.filter(({ slot }) => ["conditional","conditionnel","optional"].includes(slot.decision?.toLowerCase() ?? "")).length;
-  const extension  = items.filter(({ slot }) => ["challenge","challenger","avoid"].includes(slot.decision?.toLowerCase() ?? "")).length;
-  // Fall back to getToolDecisionStatus key for items without a direct string decision
-  const byKey = items.reduce<{ core: number; conditional: number; challenge: number }>(
-    (acc, item) => { acc[getToolDecisionStatus(item.slot).key] += 1; return acc; },
-    { core: 0, conditional: 0, challenge: 0 },
-  );
-  const coreCount       = core || byKey.core;
-  const conditionalCount = conditional || byKey.conditional;
-  const extensionCount  = extension || byKey.challenge;
-  const parts: string[] = [];
-  if (coreCount)        parts.push(locale === "en" ? `Core: ${coreCount}` : `Socle : ${coreCount}`);
-  if (conditionalCount) parts.push(locale === "en" ? `As needed: ${conditionalCount}` : `Selon usage : ${conditionalCount}`);
-  if (extensionCount)   parts.push(locale === "en" ? `Extensions: ${extensionCount}` : `Extensions : ${extensionCount}`);
-  return parts.join(" · ");
-}
-
-function getSocleTools(
-  stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>,
-  socleSlugs: string[],
-): Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }> {
-  if (socleSlugs.length > 0) {
-    return socleSlugs
-      .map((slug) => stackTools.find(({ tool }) => tool?.slug === slug || tool?.id === slug))
-      .filter((item): item is NonNullable<typeof item> => item !== undefined)
-      .slice(0, 5);
-  }
-  return stackTools
-    .filter(({ slot }) => getToolDecisionStatus(slot).key === "core")
-    .slice(0, 5);
-}
-
-function getBudgetWorthPayingTools(items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>) {
-  const paid = sortToolsByDecision(items)
-    .filter(({ slot, tool }) => (tool?.defaultMonthlyPrice ?? 0) > 0 && getToolDecisionStatus(slot).key !== "challenge")
-    .slice(0, 4);
-  if (paid.length > 0) return paid;
-  return sortToolsByDecision(items)
-    .filter(({ slot }) => getToolDecisionStatus(slot).key === "core")
-    .slice(0, 4);
-}
-
-function getBudgetFreeTools(items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>) {
-  return sortToolsByDecision(items)
-    .filter(({ tool }) => (tool?.defaultMonthlyPrice ?? 0) <= 0)
-    .slice(0, 4);
-}
-
-function getBudgetDriverTools(items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>) {
-  const drivers = sortToolsByDecision(items)
-    .filter(({ slot }) => {
-      const key = getToolDecisionStatus(slot).key;
-      return key === "conditional" || key === "challenge";
-    })
-    .slice(0, 4);
-  if (drivers.length > 0) return drivers;
-  return sortToolsByDecision(items)
-    .filter(({ tool }) => (tool?.defaultMonthlyPrice ?? 0) >= 25)
-    .slice(0, 4);
-}
-
-function getBudgetWatchThreshold(monthlyBudget: number, locale: "fr" | "en") {
-  if (monthlyBudget <= 60) return locale === "fr" ? "80–100€/mois" : "€80–100/month";
-  const rounded = Math.ceil((monthlyBudget * 1.35) / 10) * 10;
-  return locale === "fr" ? `>${rounded}€/mois` : `>€${rounded}/month`;
-}
-
 function getDecisionOrder(slot: StackToolSlot): number {
   const key = getToolDecisionStatus(slot).key;
   if (key === "core") return 0;

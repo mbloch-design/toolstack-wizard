@@ -3682,3 +3682,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les anciens blocs Risques et Calibrage sont fusionnés en trois points de vigilance directement actionnables.
 - Suppression du panneau latéral d'outil devenu inaccessible et de ses composants associés.
 - Les espacements, surfaces, cartes, FAQ et fiches proches sont alignés sur le rythme éditorial actuel des pages produit et comparatifs.
+- Le template utilise désormais la même grille article + sidebar que les fiches produit ; la carte de décision reste sticky et remplace la navigation flottante de bas de page.
