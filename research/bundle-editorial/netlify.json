@@ -1,0 +1,89 @@
+{
+  "slug": "netlify",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Netlify", "url": "https://www.netlify.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de build, déploiement et hébergement de sites et apps web (JAMstack et frameworks modernes : Next.js, Nuxt, SvelteKit), avec CI/CD et fonctions serverless.",
+    "what_en": "Platform to build, deploy and host web sites and apps (JAMstack and modern frameworks: Next.js, Nuxt, SvelteKit), with CI/CD and serverless functions.",
+    "pricing_model": "Palier gratuit puis abonnements par mois, avec un modèle à crédits (déploiements, bande passante, compute) depuis 2025.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 300 crédits/mois (~100 Go bande passante, 300 min de build), suffisant pour de petits projets peu actifs." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (300 crédits/mois)" },
+      { "name": "Personal", "price": "9 $/mois (1 000 crédits)" },
+      { "name": "Pro", "price": "20 $/mois (3 000 crédits)" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Déploiement continu depuis Git",
+      "Hébergement CDN mondial",
+      "Fonctions serverless",
+      "Support des frameworks modernes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous déployez des sites statiques ou JAMstack depuis Git.",
+        "Vous voulez du CI/CD et un CDN sans gérer de serveur.",
+        "Vos projets frontend sont modérés en trafic."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de serveurs persistants, workers ou bases managées (plutôt Render).",
+        "Le modèle à crédits vous semble opaque pour un gros trafic.",
+        "Vous voulez un tarif à l'usage très prévisible."
+      ],
+      "threshold": "Netlify s'impose pour déployer vite du frontend/JAMstack depuis Git ; pour du full-stack avec serveurs persistants et bases, une plateforme comme Render est plus adaptée."
+    },
+    "pros": [
+      "Déploiement continu simple depuis Git.",
+      "CDN mondial et fonctions serverless.",
+      "Support des frameworks modernes.",
+      "Palier gratuit pour démarrer."
+    ],
+    "cons": [
+      "Modèle à crédits moins lisible depuis 2025.",
+      "Gratuit vite limité pour un projet actif.",
+      "Moins adapté au full-stack persistant."
+    ],
+    "use_cases": [
+      "Déployer un site statique ou JAMstack.",
+      "Mettre en place du CI/CD frontend.",
+      "Servir un site via un CDN mondial."
+    ],
+    "relevant_for": ["Développeurs front", "Agences web", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You deploy static or JAMstack sites from Git.",
+        "You want CI/CD and a CDN without managing servers.",
+        "Your frontend projects have moderate traffic."
+      ],
+      "avoidIf": [
+        "You need persistent servers, workers or managed databases (rather Render).",
+        "The credit model feels opaque for high traffic.",
+        "You want very predictable usage-based pricing."
+      ],
+      "threshold": "Netlify makes sense to quickly deploy frontend/JAMstack from Git; for full-stack with persistent servers and databases, a platform like Render fits better."
+    },
+    "pros": [
+      "Simple continuous deployment from Git.",
+      "Global CDN and serverless functions.",
+      "Modern framework support.",
+      "Free tier to start."
+    ],
+    "cons": [
+      "Credit model less readable since 2025.",
+      "Free tier quickly limited for an active project.",
+      "Less suited to persistent full-stack."
+    ],
+    "use_cases": [
+      "Deploy a static or JAMstack site.",
+      "Set up frontend CI/CD.",
+      "Serve a site via a global CDN."
+    ]
+  }
+}

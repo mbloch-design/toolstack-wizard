@@ -1,0 +1,88 @@
+{
+  "slug": "publer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Publer", "url": "https://publer.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de planification social media multi-plateformes : programmation en masse, recyclage de contenu, RSS auto-post, légendes IA et génération d'images, sur 12+ réseaux.",
+    "what_en": "Multi-platform social media scheduling tool: bulk scheduling, content recycling, RSS auto-posting, AI captions and image generation, across 12+ networks.",
+    "pricing_model": "Palier gratuit puis abonnements par compte social (mensuel/annuel, annuel = 2 mois offerts).",
+    "free_tier": { "exists": true, "detail": "Gratuit : 1 utilisateur, 3 comptes sociaux, jusqu'à 10 posts programmés (X/Twitter indisponible en gratuit)." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (3 comptes, 10 posts)" },
+      { "name": "Professional", "price": "à partir de ~12 $/mois (3 comptes) — posts illimités" },
+      { "name": "Business", "price": "à partir de ~21 $/mois — analytics avancés, rapports" }
+    ],
+    "key_features": [
+      "Programmation en masse et recyclage de contenu",
+      "RSS auto-post et file d'attente",
+      "Légendes IA et génération d'images",
+      "Support de 12+ réseaux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous programmez du contenu sur plusieurs réseaux à volume.",
+        "Vous voulez recyclage de contenu et auto-post RSS.",
+        "Vous cherchez une alternative abordable aux gros outils."
+      ],
+      "avoidIf": [
+        "Vous ne publiez que quelques posts (le gratuit suffit).",
+        "X/Twitter est central (indispo en gratuit, coûteux).",
+        "Vous voulez un social management très avancé (écoute, CRM)."
+      ],
+      "threshold": "Publer s'impose pour de la planification multi-réseaux à volume à prix contenu ; pour quelques posts ou du social management avancé, un autre outil convient mieux."
+    },
+    "pros": [
+      "Programmation en masse et recyclage.",
+      "Légendes IA et génération d'images.",
+      "Abordable vs les gros acteurs.",
+      "Palier gratuit fonctionnel."
+    ],
+    "cons": [
+      "X/Twitter indisponible en gratuit.",
+      "Facturation par compte social.",
+      "Moins d'écoute/CRM que les suites complètes."
+    ],
+    "use_cases": [
+      "Programmer une file de posts multi-réseaux.",
+      "Recycler automatiquement du contenu.",
+      "Auto-poster depuis un flux RSS."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Community managers", "Petites agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You schedule content across several networks at volume.",
+        "You want content recycling and RSS auto-posting.",
+        "You want an affordable alternative to big tools."
+      ],
+      "avoidIf": [
+        "You only publish a few posts (the free tier suffices).",
+        "X/Twitter is central (unavailable on free, costly).",
+        "You want very advanced social management (listening, CRM)."
+      ],
+      "threshold": "Publer makes sense for multi-network scheduling at volume at a contained price; for a few posts or advanced social management, another tool fits better."
+    },
+    "pros": [
+      "Bulk scheduling and recycling.",
+      "AI captions and image generation.",
+      "Affordable vs big players.",
+      "Functional free tier."
+    ],
+    "cons": [
+      "X/Twitter unavailable on free.",
+      "Billed per social account.",
+      "Less listening/CRM than full suites."
+    ],
+    "use_cases": [
+      "Schedule a queue of multi-network posts.",
+      "Automatically recycle content.",
+      "Auto-post from an RSS feed."
+    ]
+  }
+}

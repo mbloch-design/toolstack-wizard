@@ -1,0 +1,89 @@
+{
+  "slug": "metricool",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Metricool", "url": "https://metricool.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil d'analytics et de planification social media : publication multi-réseaux, link-in-bio, veille concurrentielle et rapports sur une dizaine de plateformes.",
+    "what_en": "Social media analytics and scheduling tool: multi-network publishing, link-in-bio, competitor tracking and reporting across a dozen platforms.",
+    "pricing_model": "Modèle par marque (pas par utilisateur). Palier gratuit puis abonnements (mensuel/annuel).",
+    "free_tier": { "exists": true, "detail": "Gratuit : 1 marque, planification sur les principaux réseaux (sauf LinkedIn et X), jusqu'à 20 posts/mois, 30 jours d'historique." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (1 marque)" },
+      { "name": "Starter", "price": "à partir de ~20 $/mois (annuel), ~25 $ mensuel" },
+      { "name": "Advanced", "price": "à partir de ~67 $/mois (agences)" },
+      { "name": "Custom", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Publication multi-réseaux (~11 plateformes)",
+      "Analytics et rapports",
+      "Veille concurrentielle",
+      "Link-in-bio et intégrations (Canva, Drive)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs réseaux et voulez analytics + planification réunis.",
+        "Vous suivez des concurrents et produisez des rapports.",
+        "Vous préférez une tarification par marque, pas par utilisateur."
+      ],
+      "avoidIf": [
+        "Vous ne gérez qu'un seul réseau simplement.",
+        "Vous voulez surtout de la publication basique (le gratuit d'un autre outil suffit).",
+        "X/Twitter est central pour vous (add-on payant)."
+      ],
+      "threshold": "Metricool s'impose pour piloter analytics + planification multi-réseaux d'une ou plusieurs marques ; pour un seul réseau en publication simple, un outil plus léger suffit."
+    },
+    "pros": [
+      "Analytics et planification réunis.",
+      "Veille concurrentielle et rapports.",
+      "Tarification par marque.",
+      "Palier gratuit correct."
+    ],
+    "cons": [
+      "X/Twitter en add-on payant.",
+      "Gratuit limité (20 posts, sans LinkedIn/X).",
+      "Coût qui monte avec le nombre de marques."
+    ],
+    "use_cases": [
+      "Planifier et publier sur plusieurs réseaux.",
+      "Analyser la performance et surveiller les concurrents.",
+      "Produire des rapports pour des clients."
+    ],
+    "relevant_for": ["Community managers", "Agences", "Créateurs multi-réseaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage several networks and want analytics + scheduling combined.",
+        "You track competitors and produce reports.",
+        "You prefer per-brand pricing, not per-user."
+      ],
+      "avoidIf": [
+        "You only manage a single network simply.",
+        "You mainly want basic publishing (another tool's free tier suffices).",
+        "X/Twitter is central for you (paid add-on)."
+      ],
+      "threshold": "Metricool makes sense to run analytics + multi-network scheduling for one or more brands; for a single network with simple publishing, a lighter tool suffices."
+    },
+    "pros": [
+      "Analytics and scheduling combined.",
+      "Competitor tracking and reports.",
+      "Per-brand pricing.",
+      "Decent free tier."
+    ],
+    "cons": [
+      "X/Twitter is a paid add-on.",
+      "Free tier limited (20 posts, no LinkedIn/X).",
+      "Cost rises with the number of brands."
+    ],
+    "use_cases": [
+      "Schedule and publish across several networks.",
+      "Analyse performance and monitor competitors.",
+      "Produce reports for clients."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "render",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Render", "url": "https://render.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud pour déployer applications web, API, workers, cron jobs et bases managées (Postgres, Redis) — supporte le full-stack avec serveurs persistants, contrairement aux plateformes purement frontend.",
+    "what_en": "Cloud platform to deploy web apps, APIs, background workers, cron jobs and managed databases (Postgres, Redis) — supports full-stack with persistent servers, unlike frontend-only platforms.",
+    "pricing_model": "Depuis avril 2026 : forfait workspace mensuel (0 à 499 $, sans coût par siège) + compute facturé à la seconde. Palier gratuit sans carte.",
+    "free_tier": { "exists": true, "detail": "Gratuit : web services (750 h/mois, mise en veille après 15 min), sites statiques illimités, Postgres/Redis d'essai. Sans carte bancaire." },
+    "plans": [
+      { "name": "Workspace gratuit", "price": "0 $ (services web en veille, statique illimité)" },
+      { "name": "Starter (toujours actif)", "price": "à partir de 7 $/mois par service" },
+      { "name": "Workspace payant", "price": "jusqu'à 499 $/mois + compute à la seconde" }
+    ],
+    "key_features": [
+      "Déploiement full-stack (web, API, workers)",
+      "Bases managées Postgres et Redis",
+      "Cron jobs et sites statiques",
+      "Facturation compute à la seconde"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous déployez du full-stack (serveurs persistants, workers, bases).",
+        "Vous voulez du Postgres/Redis managé sans ops.",
+        "Vous préférez un forfait workspace + compte à la seconde."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un site statique/frontend (plateforme front plus simple).",
+        "Le service gratuit en veille (cold start) vous gêne.",
+        "Vous voulez éviter un forfait workspace mensuel."
+      ],
+      "threshold": "Render s'impose pour du full-stack avec serveurs persistants et bases managées ; pour du pur frontend statique, une plateforme front (Netlify) suffit."
+    },
+    "pros": [
+      "Full-stack avec serveurs persistants.",
+      "Bases Postgres/Redis managées.",
+      "Palier gratuit sans carte.",
+      "Facturation compute à la seconde."
+    ],
+    "cons": [
+      "Services gratuits mis en veille (cold start).",
+      "Forfait workspace mensuel sur les plans payants.",
+      "Coût qui monte avec le compute."
+    ],
+    "use_cases": [
+      "Héberger une API ou une app full-stack.",
+      "Faire tourner des workers et cron jobs.",
+      "Déployer une base Postgres managée."
+    ],
+    "relevant_for": ["Développeurs full-stack", "Startups", "Petites équipes tech"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You deploy full-stack (persistent servers, workers, databases).",
+        "You want managed Postgres/Redis without ops.",
+        "You prefer a workspace fee + per-second compute."
+      ],
+      "avoidIf": [
+        "You only have a static/frontend site (a frontend platform is simpler).",
+        "The free service sleeping (cold start) bothers you.",
+        "You want to avoid a monthly workspace fee."
+      ],
+      "threshold": "Render makes sense for full-stack with persistent servers and managed databases; for pure static frontend, a frontend platform (Netlify) suffices."
+    },
+    "pros": [
+      "Full-stack with persistent servers.",
+      "Managed Postgres/Redis databases.",
+      "Free tier with no card.",
+      "Per-second compute billing."
+    ],
+    "cons": [
+      "Free services sleep (cold start).",
+      "Monthly workspace fee on paid plans.",
+      "Cost rises with compute."
+    ],
+    "use_cases": [
+      "Host an API or full-stack app.",
+      "Run workers and cron jobs.",
+      "Deploy a managed Postgres database."
+    ]
+  }
+}

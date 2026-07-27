@@ -1,0 +1,88 @@
+{
+  "slug": "dashlane",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Dashlane", "url": "https://www.dashlane.com/pricing" }
+  ],
+  "facts": {
+    "what": "Gestionnaire de mots de passe et sécurité des identités : coffre-fort chiffré, autofill, surveillance dark web, SSO et VPN, pour particuliers, familles et entreprises.",
+    "what_en": "Password manager and identity security: encrypted vault, autofill, dark-web monitoring, SSO and VPN, for individuals, families and businesses.",
+    "pricing_model": "Abonnement (mensuel/annuel). Le palier gratuit a été retiré en 2025 ; garantie satisfait 30 jours.",
+    "free_tier": { "exists": false, "detail": "Plus de plan gratuit (retiré en 2025) ; garantie de remboursement 30 jours." },
+    "plans": [
+      { "name": "Premium", "price": "à partir d'environ 4 $/mois (annuel), VPN inclus" },
+      { "name": "Friends & Family", "price": "abonnement famille (plusieurs utilisateurs)" },
+      { "name": "Entreprise", "price": "sur devis (SSO, gestion des accès)" }
+    ],
+    "key_features": [
+      "Coffre-fort de mots de passe chiffré + autofill",
+      "Surveillance du dark web",
+      "VPN inclus (Premium)",
+      "SSO et gestion d'accès (entreprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez centraliser et sécuriser vos mots de passe.",
+        "Vous appréciez un VPN inclus dans l'abonnement.",
+        "Vous gérez les accès d'une équipe (SSO)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un gestionnaire gratuit (Dashlane n'en a plus).",
+        "Vous voulez de l'open source auto-hébergeable.",
+        "Vos besoins sont couverts par le trousseau de votre OS."
+      ],
+      "threshold": "Dashlane s'impose pour qui veut un gestionnaire complet (mots de passe + VPN + dark web) ; pour du gratuit ou de l'open source, une autre solution convient mieux."
+    },
+    "pros": [
+      "Coffre-fort chiffré et autofill fiables.",
+      "VPN inclus au Premium.",
+      "Surveillance du dark web.",
+      "Fonctions entreprise (SSO)."
+    ],
+    "cons": [
+      "Plus de plan gratuit.",
+      "Pas d'open source auto-hébergeable.",
+      "Redondant si le trousseau OS suffit."
+    ],
+    "use_cases": [
+      "Stocker et remplir ses mots de passe en sécurité.",
+      "Surveiller les fuites de données.",
+      "Gérer les accès d'une équipe."
+    ],
+    "relevant_for": ["Particuliers", "Familles", "Équipes et PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to centralise and secure your passwords.",
+        "You value a VPN included in the subscription.",
+        "You manage a team's access (SSO)."
+      ],
+      "avoidIf": [
+        "You want a free manager (Dashlane no longer has one).",
+        "You want self-hostable open source.",
+        "Your needs are covered by your OS keychain."
+      ],
+      "threshold": "Dashlane makes sense for a complete manager (passwords + VPN + dark web); for free or open source, another solution fits better."
+    },
+    "pros": [
+      "Reliable encrypted vault and autofill.",
+      "VPN included on Premium.",
+      "Dark-web monitoring.",
+      "Enterprise features (SSO)."
+    ],
+    "cons": [
+      "No free plan anymore.",
+      "No self-hostable open source.",
+      "Redundant if the OS keychain suffices."
+    ],
+    "use_cases": [
+      "Store and autofill passwords securely.",
+      "Monitor data breaches.",
+      "Manage a team's access."
+    ]
+  }
+}

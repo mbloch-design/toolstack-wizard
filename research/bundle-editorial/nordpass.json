@@ -1,0 +1,88 @@
+{
+  "slug": "nordpass",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle NordPass", "url": "https://nordpass.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Gestionnaire de mots de passe (par l'équipe Nord) : stockage et autofill chiffrés, générateur de mots de passe, partage sécurisé et surveillance de fuites.",
+    "what_en": "Password manager (by the Nord team): encrypted storage and autofill, password generator, secure sharing and breach monitoring.",
+    "pricing_model": "Palier gratuit permanent (1 appareil) puis abonnements Premium / Family (engagement 1-2 ans, moins cher sur 2 ans).",
+    "free_tier": { "exists": true, "detail": "Gratuit à vie : stockage illimité et autofill, mais sur un seul appareil et sans surveillance de fuites." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (1 appareil)" },
+      { "name": "Premium", "price": "à partir d'environ 1,49 $/mois (engagement 2 ans)" },
+      { "name": "Family", "price": "à partir d'environ 2,79 $/mois (jusqu'à 6 utilisateurs, engagement 2 ans)" }
+    ],
+    "key_features": [
+      "Coffre-fort chiffré et autofill",
+      "Générateur de mots de passe",
+      "Partage sécurisé",
+      "Surveillance de fuites (plans payants)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un gestionnaire simple et abordable.",
+        "Vous êtes déjà dans l'écosystème Nord.",
+        "Un palier gratuit (mono-appareil) vous suffit pour tester."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un usage multi-appareils gratuit.",
+        "Vous voulez de l'open source auto-hébergeable.",
+        "Vous cherchez des fonctions entreprise avancées."
+      ],
+      "threshold": "NordPass s'impose pour un gestionnaire abordable et simple ; pour du multi-appareils gratuit ou de l'open source, une autre solution convient mieux."
+    },
+    "pros": [
+      "Abordable, surtout sur 2 ans.",
+      "Palier gratuit permanent.",
+      "Générateur et partage sécurisé.",
+      "Écosystème Nord."
+    ],
+    "cons": [
+      "Gratuit limité à un seul appareil.",
+      "Meilleur prix conditionné à un engagement long.",
+      "Pas d'open source auto-hébergeable."
+    ],
+    "use_cases": [
+      "Stocker et générer ses mots de passe.",
+      "Partager des accès en sécurité.",
+      "Surveiller les fuites (plans payants)."
+    ],
+    "relevant_for": ["Particuliers", "Familles", "Petites équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a simple, affordable manager.",
+        "You're already in the Nord ecosystem.",
+        "A free (single-device) tier is enough to test."
+      ],
+      "avoidIf": [
+        "You need free multi-device use.",
+        "You want self-hostable open source.",
+        "You need advanced enterprise features."
+      ],
+      "threshold": "NordPass makes sense for an affordable, simple manager; for free multi-device or open source, another solution fits better."
+    },
+    "pros": [
+      "Affordable, especially over 2 years.",
+      "Permanent free tier.",
+      "Generator and secure sharing.",
+      "Nord ecosystem."
+    ],
+    "cons": [
+      "Free limited to a single device.",
+      "Best price tied to a long commitment.",
+      "No self-hostable open source."
+    ],
+    "use_cases": [
+      "Store and generate passwords.",
+      "Share access securely.",
+      "Monitor breaches (paid plans)."
+    ]
+  }
+}
