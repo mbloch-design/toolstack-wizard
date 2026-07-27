@@ -1,0 +1,90 @@
+{
+  "slug": "hibob",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "HiBob — Pricing Plans (site officiel)", "url": "https://www.hibob.com/pricing-plans/" }
+  ],
+  "facts": {
+    "what": "Plateforme HRIS & HCM modulaire pour PME-ETI, couvrant gestion d'employés, congés, onboarding, paie (optionnel), et analytics RH avec automations workflows.",
+    "what_en": "Modular HRIS & HCM platform for SMBs to mid-market, covering employee management, time-off, onboarding, payroll (optional), and HR analytics with workflow automation.",
+    "pricing_model": "Modèle par employé par mois (PEPM), montants sur la page officielle. Pricing personnalisé selon effectif et modules choisis (Core HR, Paie, Temps, Talents, Compensation).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès au questionnaire de pricing en ligne sur le site (taille, modules, contact)." },
+    "plans": [
+      { "name": "Core HR", "price": "Base incluse dans tous les plans (employee database, documents, time-off, workflows)" },
+      { "name": "Modules optionnels", "price": "À ajouter : Paie, Temps, Talents, Compensation, Finances. Montants sur la page officielle." }
+    ],
+    "key_features": [
+      "Base HR core (annuaire, documents, congés, workflows)",
+      "Automatisation workflows avancée",
+      "Pulse surveys et feedback tools",
+      "Org charts et role-based permissions",
+      "Integrations (Google, Microsoft, Slack, Okta)",
+      "Modules additionnels : Paie, Compensation, Talents",
+      "Analytics et reporting dashboard"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME-ETI (50-1000 salariés).",
+        "Vous cherchez une solution modulable sans forfait lourd.",
+        "Vous voulez workflow automation et employee engagement."
+      ],
+      "avoidIf": [
+        "Vous êtes une microentreprise.",
+        "Vous avez une paie très complexe (multi-pays, conventions).",
+        "Vous avez besoin d'un ERP complet."
+      ],
+      "threshold": "HiBob excelle pour PME-ETI modernes ; pour paie complexe ou microentreprises, autres solutions plus adaptées."
+    },
+    "pros": [
+      "Plateforme modulable — payez seulement ce dont vous avez besoin.",
+      "Interface moderne et user-friendly.",
+      "Excellentes automations workflows.",
+      "Support onboarding/migration réputé."
+    ],
+    "cons": [
+      "Tarif sur devis (pas de prix public).",
+      "Paie en option seulement (pas complète comparé concurrents).",
+      "Peut être cher pour microentreprise."
+    ],
+    "use_cases": [
+      "Remplacer tableur Excel RH par outil moderne.",
+      "Automatiser congés, absences, workflows.",
+      "Centraliser donnée employé et onboarding."
+    ],
+    "relevant_for": ["PME-ETI", "RH généralists", "Startups en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an SMB to mid-market (50-1000 employees).",
+        "You want a modular solution without heavy bundling.",
+        "You value workflow automation and employee engagement."
+      ],
+      "avoidIf": [
+        "You're a microenterprise.",
+        "You have complex payroll (multi-country, bargaining agreements).",
+        "You need a complete ERP."
+      ],
+      "threshold": "HiBob shines for modern SMBs; for complex payroll or microenterprises, other solutions are better suited."
+    },
+    "pros": [
+      "Modular platform — pay only for what you need.",
+      "Modern and user-friendly interface.",
+      "Excellent workflow automation.",
+      "Reputed onboarding/migration support."
+    ],
+    "cons": [
+      "Pricing on quote only (no public pricing).",
+      "Payroll only as add-on (not core like competitors).",
+      "Can be expensive for microenterprises."
+    ],
+    "use_cases": [
+      "Replace Excel HR spreadsheet with modern tool.",
+      "Automate time-off, absences, workflows.",
+      "Centralize employee data and onboarding."
+    ]
+  }
+}

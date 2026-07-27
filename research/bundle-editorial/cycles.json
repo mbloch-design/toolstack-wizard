@@ -1,0 +1,87 @@
+{
+  "slug": "cycles",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Blender official website", "url": "https://www.blender.org/" }
+  ],
+  "facts": {
+    "what": "Moteur de rendu physique intégré à Blender, utilisant le path tracing pour produire des images réalistes de haute qualité en architecture, VFX et design de produits.",
+    "what_en": "Physically-based render engine integrated into Blender, using path tracing to produce photorealistic images for architecture, VFX, and product design.",
+    "pricing_model": "Gratuit, inclus dans Blender (logiciel libre, licence GPL).",
+    "free_tier": { "exists": true, "detail": "Cycles est entièrement gratuit et illimité, sans abonnement, pour tous les usages y compris commerciaux." },
+    "plans": [
+      { "name": "Blender complet (incluant Cycles)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Path tracing physiquement correct",
+      "Rendu CPU et GPU (CUDA, OptiX, HIP)",
+      "Path Guiding et Light Trees pour optimisation",
+      "Prévisualisation temps réel en viewport",
+      "PBR shaders et éclairage HDR"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un rendu réaliste sans coût logiciel.",
+        "Vous travaillez en architecture, VFX ou design de produits.",
+        "Vous intégrez Blender dans votre pipeline 3D."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de rendus ultra-rapides (comparé à des engines GPU commerciaux).",
+        "Vous préférez une interface dédiée hors Blender."
+      ],
+      "threshold": "Cycles s'impose dès que vous maîtrisez Blender et cherchez la qualité réaliste sans budget rendu ; pour du rendu ultrarapide ou sur hardware limité, envisagez d'autres engines."
+    },
+    "pros": [
+      "Totalement gratuit et sans abonnement.",
+      "Intégré nativement dans Blender, aucune installation supplémentaire.",
+      "Qualité réaliste, physicalement correct.",
+      "Rendu hybride CPU+GPU avec plusieurs backends (CUDA, HIP, OptiX)."
+    ],
+    "cons": [
+      "Rendu plus lent que certains engines GPU commerciaux.",
+      "Courbe d'apprentissage liée à Blender lui-même.",
+      "Configuration requise GPU plus exigeante pour temps réel."
+    ],
+    "use_cases": [
+      "Visualisation architecturale et renderings immobiliers.",
+      "Production VFX et compositing pour films.",
+      "Design et présentation de produits 3D.",
+      "Éducation et apprentissage du rendu 3D."
+    ],
+    "relevant_for": ["Artistes 3D", "Studios d'architecture", "Producteurs VFX"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want photorealistic rendering at zero software cost.",
+        "You work in architecture, VFX, or product design.",
+        "You already use Blender in your pipeline."
+      ],
+      "avoidIf": [
+        "You need ultra-fast render times compared to commercial GPU engines.",
+        "You prefer a standalone renderer outside Blender."
+      ],
+      "threshold": "Cycles is the obvious choice once you're comfortable in Blender and need photorealistic output at no cost; for faster turnaround or limited hardware, explore commercial alternatives."
+    },
+    "pros": [
+      "Completely free with no subscription.",
+      "Native integration with Blender, no separate installation.",
+      "Physically accurate rendering, production-quality output.",
+      "Hybrid CPU+GPU rendering with multiple backends."
+    ],
+    "cons": [
+      "Slower than some commercial GPU engines.",
+      "Learning curve tied to Blender's complexity.",
+      "More demanding GPU specs for real-time viewport performance."
+    ],
+    "use_cases": [
+      "Architectural visualization and real estate renders.",
+      "VFX production and compositing for film.",
+      "3D product design and presentation.",
+      "Teaching and learning 3D rendering."
+    ]
+  }
+}

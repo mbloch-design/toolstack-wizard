@@ -1,0 +1,96 @@
+{
+  "slug": "sap-business-bydesign",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SAP Business ByDesign — site officiel", "url": "https://www.sap.com/products/erp/business-bydesign.html" }
+  ],
+  "facts": {
+    "what": "ERP cloud pour PME/ETI (100–500 salariés) couvrant Finance, Supply Chain, HCM et Manufacturing en modèle SaaS tout-inclus.",
+    "what_en": "Cloud ERP for SMEs/mid-market (100–500 employees) covering Finance, Supply Chain, HCM, and Manufacturing in all-in-one SaaS model.",
+    "pricing_model": "Abonnement SaaS avec frais plateforme fixe + coûts par utilisateur. Trois types d'utilisateurs (Full, Self-Service, Enterprise). Contrats 3 ans avec escalade annuelle 4–7%.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai SAP disponible sur demande." },
+    "plans": [
+      { "name": "Platform Fee", "price": "1 099 $/mois" },
+      { "name": "Full User", "price": "149–197 $/mois" },
+      { "name": "Self-Service User", "price": "17–29 $/mois" },
+      { "name": "Enterprise User", "price": "107–149 $/mois" }
+    ],
+    "key_features": [
+      "Comptabilité générale et consolidation",
+      "Supply chain et procurement automation",
+      "Human Capital Management et paie",
+      "Manufacturing et project management",
+      "Analytics et reporting",
+      "Évolutivité vers S/4HANA Cloud si croissance",
+      "Support multi-pays et conformité locale"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME/ETI en croissance (100–500 personnes).",
+        "Vous acceptez un engagement 3 ans avec escalade annuelle.",
+        "Vous avez besoin d'un ERP complet Finance-Supply Chain-HCM."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-structure sans besoins opérationnels complexes.",
+        "Vous cherchez la flexibilité (contrats courts, pas d'escalade).",
+        "Vous privilégiez les éditeurs cloud purs (pas legacy)."
+      ],
+      "threshold": "ByDesign convient aux PME/ETI en croissance acceptant l'approche SAP ; son avenir est incertain (sunset annoncé en faveur de S/4HANA Cloud)."
+    },
+    "pros": [
+      "ERP complet en mode cloud all-in-one.",
+      "Implémentation plus rapide que SAP classique (6–12 mois).",
+      "Scalabilité progressive vers S/4HANA Cloud.",
+      "Support SAP établi et fiable."
+    ],
+    "cons": [
+      "Contrats pluriannuels peu flexibles avec escalade tarifaire annuelle.",
+      "SAP annonce le sunset en faveur de S/4HANA Cloud.",
+      "La négociation permet de réduire sensiblement le tarif affiché.",
+      "Implémentation et intégration coûteuses (30k–100k)."
+    ],
+    "use_cases": [
+      "Déployer un ERP SAP pour une PME/ETI en croissance.",
+      "Gérer Finance, Supply Chain et HCM de manière intégrée.",
+      "Piloter les opérations avec des KPIs temps réel.",
+      "Préparer la migration vers S/4HANA Cloud à terme."
+    ],
+    "relevant_for": ["PME et ETI en croissance", "Directeurs généraux", "Directeurs opérations", "Directeurs financiers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a growing SME/mid-market (100–500 employees).",
+        "You accept 3-year commitment with annual escalation.",
+        "You need a complete Finance-Supply Chain-HCM ERP."
+      ],
+      "avoidIf": [
+        "You are a micro-structure without complex operational needs.",
+        "You seek flexibility (short contracts, no escalation).",
+        "You prefer pure cloud vendors (not legacy)."
+      ],
+      "threshold": "ByDesign suits growing SMEs/mid-market accepting SAP approach; its future is uncertain (sunset announced in favor of S/4HANA Cloud)."
+    },
+    "pros": [
+      "Complete ERP in all-in-one cloud mode.",
+      "Faster implementation than classic SAP (6–12 months).",
+      "Progressive scalability toward S/4HANA Cloud.",
+      "Established and reliable SAP support."
+    ],
+    "cons": [
+      "Inflexible multi-year contracts with annual price escalation.",
+      "SAP announces sunset in favor of S/4HANA Cloud.",
+      "Negotiation can meaningfully reduce the listed price.",
+      "Implementation and integration costly (30k–100k)."
+    ],
+    "use_cases": [
+      "Deploy an SAP ERP for a growing SME/mid-market.",
+      "Manage Finance, Supply Chain, and HCM in an integrated way.",
+      "Drive operations with real-time KPIs.",
+      "Prepare migration to S/4HANA Cloud over time."
+    ]
+  }
+}

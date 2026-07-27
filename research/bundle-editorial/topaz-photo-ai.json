@@ -1,0 +1,101 @@
+{
+  "slug": "topaz-photo-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Topaz Photo AI official product page", "url": "https://www.topazlabs.com/topaz-photo-ai" }
+  ],
+  "facts": {
+    "what": "Logiciel d'amélioration photo assistée par IA utilisant des modèles spécialisés pour l'upscaling, la réduction de bruit et l'affûtage, avec optimisations pour visages, paysages et conditions de prise de vue variées.",
+    "what_en": "AI-powered photo enhancement software using specialized models for upscaling, noise reduction, and sharpening, with dedicated optimizations for faces, landscapes, and various shooting conditions.",
+    "pricing_model": "Abonnement mensuel ou annuel. Depuis septembre 2025, Topaz a supprimé les licences perpétuelles ; uniquement abonnement cloud.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Accès uniquement via abonnement payant." },
+    "plans": [
+      { "name": "Photo (abonnement mensuel)", "price": "39 $ / mois" },
+      { "name": "Photo (abonnement annuel facturé mensuellement)", "price": "25 $ / mois (300 $/an)" },
+      { "name": "Photo (abonnement annuel prépayé)", "price": "199 $ / an" },
+      { "name": "Pro (abonnement annuel facturé mensuellement)", "price": "63 $ / mois (756 $/an)" },
+      { "name": "Pro (abonnement annuel prépayé)", "price": "599 $ / an" },
+      { "name": "Topaz Studio Bundle (7 apps + Photo + Video + Gigapixel + Astra)", "price": "399 $ / an (399 $) ou 45 $ / mois (540 $/an billed monthly)"
+      }
+    ],
+    "key_features": [
+      "AI upscaling avec plusieurs modèles spécialisés",
+      "Réduction de bruit (Denoise, Super Focus)",
+      "Affûtage (Sharpening) et détail",
+      "Modèles dédiés pour visages et paysages",
+      "Rendu illimité local et cloud",
+      "Outils de suppression (Remove) et restauration",
+      "Mode Dust & Scratch pour nettoyage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'upscaling photo de haute qualité avec IA.",
+        "Vous traitez régulièrement du bruit ou du manque de détail.",
+        "Vous acceptez le modèle abonnement pour accès cloud continu."
+      ],
+      "avoidIf": [
+        "Vous cherchez une licence perpétuelle (uniquement abonnement depuis 2025).",
+        "Vous ne traitez que quelques photos occasionnelles.",
+        "Vous avez un budget très limité."
+      ],
+      "threshold": "Topaz Photo AI excelle pour photographes et retoucheurs créatifs en workflow abonnement ; sa fin des licences perpétuelles l'élève en coût global pour petits volumes."
+    },
+    "pros": [
+      "Qualité d'upscaling supérieure avec modèles spécialisés (visages, paysages).",
+      "Réduction de bruit et affûtage très efficaces.",
+      "Rendu illimité local et cloud sans restrictions.",
+      "Modèles régulièrement améliorés via mises à jour.",
+      "Studio Bundle offre bonne valeur (7 apps)."
+    ],
+    "cons": [
+      "Uniquement abonnement depuis septembre 2025 (pas de licence perpétuelle).",
+      "Coût annuel cumulatif pour petit volume de photos.",
+      "Requiert connexion internet pour cloud rendering.",
+      "API local peut être limité en batch processing sans Studio."
+    ],
+    "use_cases": [
+      "Upscaling photos anciennes ou basse résolution.",
+      "Restauration et nettoyage de photos dégradées.",
+      "Amélioration portrait et retouche de visage IA.",
+      "Traitement batch de paysages et photos d'archives."
+    ],
+    "relevant_for": ["Photographes professionnels", "Retoucheurs d'images", "Archivistes numériques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need high-quality photo upscaling with AI.",
+        "You regularly handle noisy or low-detail photos.",
+        "You accept a subscription model for ongoing cloud access."
+      ],
+      "avoidIf": [
+        "You want a perpetual license (subscription-only since 2025).",
+        "You process only occasional photos.",
+        "Your budget is very tight."
+      ],
+      "threshold": "Topaz Photo AI shines for creative photographers and retouchers in subscription mode; its end of perpetual licenses increases overall cost for small-batch work."
+    },
+    "pros": [
+      "Superior upscaling quality with specialized models (faces, landscapes).",
+      "Very effective noise reduction and sharpening.",
+      "Unlimited local and cloud rendering without restrictions.",
+      "Models regularly improved via updates.",
+      "Studio Bundle offers solid value (7 apps)."
+    ],
+    "cons": [
+      "Subscription-only since September 2025 (no perpetual license).",
+      "Cumulative annual cost for small photo volumes.",
+      "Requires internet for cloud rendering.",
+      "Local API may be limited in batch processing without Studio."
+    ],
+    "use_cases": [
+      "Upscaling old or low-resolution photos.",
+      "Restoration and cleanup of degraded photos.",
+      "Portrait enhancement and AI face retouching.",
+      "Batch processing of landscapes and archive photos."
+    ]
+  }
+}

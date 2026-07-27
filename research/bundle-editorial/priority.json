@@ -1,0 +1,96 @@
+{
+  "slug": "priority",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Priority Software — site officiel", "url": "https://www.priority-software.com" }
+  ],
+  "facts": {
+    "what": "ERP cloud modulaire pour PME et ETI avec Finance, Supply Chain, Manufacturing et HCM, enrichie d'IA générative et 150+ connecteurs préintégrés.",
+    "what_en": "Modular cloud ERP for SMEs and mid-market with Finance, Supply Chain, Manufacturing, and HCM, enriched with generative AI and 150+ pre-integrated connectors.",
+    "pricing_model": "Abonnement SaaS par utilisateur, tarification modulaire sans engagement long terme. Tarification personnalisée selon modules et nombre d'utilisateurs.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Devis sur demande pour les prospects." },
+    "plans": [
+      { "name": "Base (variable)", "price": "montants sur demande, commençant par ~100 $/utilisateur/mois selon modules" }
+    ],
+    "key_features": [
+      "Comptabilité et finance intégrées",
+      "Gestion des ventes et CRM",
+      "Supply chain et warehouse management",
+      "Manufacturing et production",
+      "HCM et paie",
+      "IA générative pour automations",
+      "150+ connecteurs et REST API",
+      "Support multi-langue et multi-devise"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME en croissance cherchant un ERP complet avec IA.",
+        "Vous avez besoin de nombreuses intégrations (Shopify, WMS, etc.).",
+        "Vous voulez la flexibilité modulaire sans engagement long."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-entreprise (< 5 personnes).",
+        "Vous préférez les solutions très légères et peu coûteuses.",
+        "Vous avez besoin d'un support français natif 24/7."
+      ],
+      "threshold": "Priority excelle pour les PME agiles qui veulent un ERP moderne avec IA ; pour une micro-structure, c'est trop ; pour un grand groupe, c'est insuffisant."
+    },
+    "pros": [
+      "150+ connecteurs préintégrés pour réduire l'intégration custom.",
+      "IA générative et automations natives.",
+      "Tarification modulaire sans contrat long (flexibilité).",
+      "Interface intuitive et peu de code custom nécessaire.",
+      "Support multi-pays et multi-devise."
+    ],
+    "cons": [
+      "Moins connu que SAP/Oracle en France.",
+      "Support français peut être limité.",
+      "Tarification cachée jusqu'au devis.",
+      "Scalabilité pour les très gros volumes moins prouvée."
+    ],
+    "use_cases": [
+      "Déployer un ERP moderne et connecté pour une PME.",
+      "Automatiser les workflows avec l'IA générative intégrée.",
+      "Intégrer Shopify, WMS, ou outils tiers via les 150+ connecteurs.",
+      "Gérer supply chain et manufacturing pour une PME/ETI."
+    ],
+    "relevant_for": ["PME et ETI agiles", "Directeurs généraux", "Responsables opérations", "E-commerce et retail"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a growing SME seeking a complete ERP with AI.",
+        "You need many integrations (Shopify, WMS, etc.).",
+        "You want modular flexibility without long-term commitment."
+      ],
+      "avoidIf": [
+        "You are a micro-business (< 5 people).",
+        "You prefer lightweight, low-cost solutions.",
+        "You need native 24/7 support in your language."
+      ],
+      "threshold": "Priority excels for agile SMEs wanting modern ERP with AI; too much for a micro-business, insufficient for a large enterprise."
+    },
+    "pros": [
+      "150+ pre-integrated connectors reduce custom integration.",
+      "Native generative AI and automations.",
+      "Modular pricing with no long-term contracts (flexibility).",
+      "Intuitive interface requiring minimal custom code.",
+      "Multi-country and multi-currency support."
+    ],
+    "cons": [
+      "Less known than SAP/Oracle globally.",
+      "Local language support may be limited.",
+      "Pricing hidden until quote request.",
+      "Scalability for very large volumes less proven."
+    ],
+    "use_cases": [
+      "Deploy a modern, connected ERP for an SME.",
+      "Automate workflows with embedded generative AI.",
+      "Integrate Shopify, WMS, or third-party tools via 150+ connectors.",
+      "Manage supply chain and manufacturing for SME/mid-market."
+    ]
+  }
+}

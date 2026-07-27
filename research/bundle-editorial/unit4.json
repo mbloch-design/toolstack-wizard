@@ -1,0 +1,94 @@
+{
+  "slug": "unit4",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Unit4 — site officiel", "url": "https://www.unit4.com" }
+  ],
+  "facts": {
+    "what": "ERP cloud modulaire pour PME/ETI et organisations de services (100–500+ salariés), spécialisé en Financial, HCM, FP&A et Procurement avec IA générative en 2026.",
+    "what_en": "Modular cloud ERP for SMEs/mid-market and service organizations (100–500+ employees), specialized in Financial, HCM, FP&A, and Procurement with generative AI in 2026.",
+    "pricing_model": "Abonnement SaaS par utilisateur sans engagement long terme. Tarification par module (Financials, HCM, FP&A, Procurement). Pricing personnalisée selon taille et localisation.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Devis sur demande." },
+    "plans": [
+      { "name": "Per-User Subscription", "price": "montants sur demande, indicatif 80–150 $/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Comptabilité générale et consolidation multi-entités",
+      "Human Capital Management (HCM) et paie",
+      "Financial Planning & Analysis (FP&A)",
+      "Procurement et spend management",
+      "IA générative pour automations (2026+)",
+      "Analytics et business intelligence",
+      "Support multi-pays et multi-devise",
+      "Intégrations via API et connecteurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME/ETI moderne cherchant HCM + FP&A intégrés.",
+        "Vous êtes une organisation de services (cabinets, agences).",
+        "Vous acceptez la tarification nuancée (per-module et per-user)."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-entreprise (< 10 personnes) ou freelanceur.",
+        "Vous avez besoin d'un ERP full-spectrum (supply chain, manufacturing).",
+        "Vous préférez les prix transparents affichés publiquement."
+      ],
+      "threshold": "Unit4 convient aux PME/ETI de services modernes et agiles ; pour une structure légère ou un industriel complexe, ce n'est pas optimal."
+    },
+    "pros": [
+      "Excellente suite Financial + HCM + FP&A intégrée.",
+      "IA générative pour automations en 2026.",
+      "Tarification flexible et modulaire (on ne paie que ce qu'on utilise).",
+      "Cloud-native et architecture moderne."
+    ],
+    "cons": [
+      "Tarification opaque et cachée (devis obligatoire).",
+      "Ne couvre pas supply chain, manufacturing (limité en ERP full).",
+      "Moins connu que SAP/Oracle globalement.",
+      "Support et implémentation peuvent être coûteux pour PME."
+    ],
+    "use_cases": [
+      "Gérer financials + HCM + FP&A pour une PME/ETI services.",
+      "Automatiser comptabilité, paie et rapports financiers.",
+      "Piloter les marges et la profitabilité par projet/client.",
+      "Intégrer planning financier et gestion de ressources humaines."
+    ],
+    "relevant_for": ["PME et ETI de services", "Cabinets de conseil", "Agences créatives", "Directeurs financiers", "CHRO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a modern SME/mid-market seeking integrated HCM + FP&A.",
+        "You are a service organization (consultancies, agencies).",
+        "You accept nuanced pricing (per-module and per-user)."
+      ],
+      "avoidIf": [
+        "You are a micro-business (< 10 people) or freelancer.",
+        "You need a full-spectrum ERP (supply chain, manufacturing).",
+        "You prefer transparent, publicly listed pricing."
+      ],
+      "threshold": "Unit4 suits modern, agile service SMEs/mid-market; for a lean structure or complex manufacturer, it is not optimal."
+    },
+    "pros": [
+      "Excellent integrated Financial + HCM + FP&A suite.",
+      "Generative AI for automations in 2026.",
+      "Flexible, modular pricing (pay only for what you use).",
+      "Cloud-native and modern architecture."
+    ],
+    "cons": [
+      "Opaque and hidden pricing (quote required).",
+      "Limited supply chain and manufacturing coverage (not full ERP).",
+      "Less known than SAP/Oracle globally.",
+      "Support and implementation can be costly for SMEs."
+    ],
+    "use_cases": [
+      "Manage Financial + HCM + FP&A for a service SME/mid-market.",
+      "Automate accounting, payroll, and financial reporting.",
+      "Drive margins and profitability by project/client.",
+      "Integrate financial planning and human resource management."
+    ]
+  }
+}

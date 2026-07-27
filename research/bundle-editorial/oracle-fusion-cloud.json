@@ -1,0 +1,94 @@
+{
+  "slug": "oracle-fusion-cloud",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Oracle Cloud — site officiel", "url": "https://www.oracle.com/cloud" }
+  ],
+  "facts": {
+    "what": "Suite ERP cloud modulaire d'Oracle pour les grandes organisations, couvrant Finance, Supply Chain, HCM, Manufacturing avec IA et machine learning natifs.",
+    "what_en": "Modular Oracle cloud ERP suite for large organizations, covering Finance, Supply Chain, HCM, Manufacturing with native AI and machine learning.",
+    "pricing_model": "Abonnement SaaS par utilisateur, modèle à la carte. Plusieurs types d'utilisateurs (Core Finance, SCM, HCM, Self-Service). Minimum 25 utilisateurs requis.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai Oracle Cloud disponible." },
+    "plans": [
+      { "name": "Core Financials User", "price": "375–475 $/utilisateur/mois" },
+      { "name": "Full ERP User", "price": "300–550 $/utilisateur/mois" },
+      { "name": "Self-Service User", "price": "50–100 $/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Comptabilité et gestion financière multicurrency multi-entités",
+      "Supply chain et procurement automation",
+      "Human Capital Management (HCM)",
+      "Manufacturing et planification de production",
+      "IA et analytics pour insights prédictifs",
+      "Traçabilité et conformité réglementaire"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un grand groupe (500+ collaborateurs).",
+        "Vous avez besoin d'une intégration Finance-Supply Chain-HCM complète.",
+        "Vous acceptez les prix premium pour la scalabilité et la stabilité."
+      ],
+      "avoidIf": [
+        "Vous êtes une PME sans besoins globe trotters.",
+        "Votre budget d'implémentation est limité (< 500k).",
+        "Vous n'avez pas 25+ utilisateurs pour justifier le coût."
+      ],
+      "threshold": "Oracle Fusion est un choix d'entreprise majeure pour les groupes multinationaux de grande taille ; pour une PME, le coût d'entrée et de maintenance est prohibitif."
+    },
+    "pros": [
+      "Écosystème enterprise complet (Finance, Supply Chain, HCM).",
+      "Scalabilité et performances garanties pour les très gros volumes.",
+      "IA et machine learning intégrés pour l'optimisation.",
+      "Conformité globale et audit trail robuste."
+    ],
+    "cons": [
+      "Coûts de licence très élevés (minimum 25 utilisateurs).",
+      "Implémentation coûteuse et longue (200k–500k+).",
+      "Courbe d'apprentissage très raide.",
+      "Négociation de prix nécessaire pour les grandes structures."
+    ],
+    "use_cases": [
+      "Consolider une multinationale avec plusieurs monnaies et juridictions.",
+      "Optimiser une supply chain complexe avec IA.",
+      "Gérer une paie et des ressources humaines mondialisées.",
+      "Piloter la profitabilité par centre de coûts et produits."
+    ],
+    "relevant_for": ["Grands groupes multinationaux", "Directeurs financiers", "CFO", "Supply chain executives", "Contrôleurs de gestion entreprise"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a large group (500+ employees).",
+        "You need full Finance-Supply Chain-HCM integration.",
+        "You accept premium pricing for scalability and stability."
+      ],
+      "avoidIf": [
+        "You are an SME without global needs.",
+        "Your implementation budget is limited (< 500k).",
+        "You don't have 25+ users to justify the cost."
+      ],
+      "threshold": "Oracle Fusion is a major enterprise choice for large multinational groups; for an SME, the entry and maintenance costs are prohibitive."
+    },
+    "pros": [
+      "Complete enterprise ecosystem (Finance, Supply Chain, HCM).",
+      "Scalability and performance guaranteed for very large volumes.",
+      "Embedded AI and machine learning for optimization.",
+      "Global compliance and robust audit trails."
+    ],
+    "cons": [
+      "Very high license costs (minimum 25 users).",
+      "Expensive and long implementation (200k–500k+).",
+      "Very steep learning curve.",
+      "Price negotiation required for large structures."
+    ],
+    "use_cases": [
+      "Consolidate a multinational with multiple currencies and jurisdictions.",
+      "Optimize complex supply chain with AI.",
+      "Manage globalized payroll and human resources.",
+      "Drive profitability by cost centers and products."
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "dayforce",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dayforce (site officiel)", "url": "https://www.dayforce.com" }
+  ],
+  "facts": {
+    "what": "Plateforme HCM intégrée unifiant paie, HR, gestion des talents, planification des effectifs, et gestion des horaires avec analytics en temps réel et automatisation IA.",
+    "what_en": "Integrated HCM platform unifying payroll, HR, talent management, workforce planning, and scheduling with real-time analytics and AI automation.",
+    "pricing_model": "Modèle par employé par mois (PEPM), estimé entre montants sur la page officielle. Tarif personnalisé selon taille entreprise, modules sélectionnés et implémentation.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification sur devis après consultation sales." },
+    "plans": [
+      { "name": "Basic", "price": "À partir de montants sur la page officielle, pour moins de 1000 employés" },
+      { "name": "Standard", "price": "Tarification personnalisée selon configuration" },
+      { "name": "Premium", "price": "Tarification personnalisée selon configuration" }
+    ],
+    "key_features": [
+      "Paie continue et temps réel (200+ pays)",
+      "Gestion des horaires et workforce optimization",
+      "HR et talent acquisition intégrés",
+      "Self-service employé et manager",
+      "Analytics et insights IA",
+      "Gestion de la paie temporaire et contingente",
+      "Conformité et tax filing automatisés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une paie complexe ou multi-pays.",
+        "Vous cherchez une suite HCM complètement intégrée.",
+        "Vous voulez optimiser les horaires et la main-d'œuvre."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-entreprise ou startup.",
+        "Vous avez besoin de transparence tarifaire avant contact commercial.",
+        "Vous préférez un outil léger et modulable."
+      ],
+      "threshold": "Dayforce excelle pour les multinationales ; pour PME légères, choisir une solution plus abordable."
+    },
+    "pros": [
+      "Suite HCM complète et hautement intégrée.",
+      "Paie continue et time calculation robustes.",
+      "Global payroll 200+ pays.",
+      "Analytics et automation avancés."
+    ],
+    "cons": [
+      "Tarif sur devis uniquement.",
+      "Implémentation complexe et coûteuse.",
+      "Destiné aux moyennes/grandes entreprises."
+    ],
+    "use_cases": [
+      "Gérer paie et HR pour multinationale.",
+      "Optimiser les horaires avec IA.",
+      "Unifier HR, paie et talents."
+    ],
+    "relevant_for": ["HRBP", "Paie internationales", "Grandes entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have complex or multi-country payroll.",
+        "You want a fully integrated HCM suite.",
+        "You need workforce scheduling optimization."
+      ],
+      "avoidIf": [
+        "You're a microenterprise or startup.",
+        "You need price transparency before contacting sales.",
+        "You prefer a lightweight, modular tool."
+      ],
+      "threshold": "Dayforce excels for multinationals; for light SMBs, choose a more affordable solution."
+    },
+    "pros": [
+      "Complete and highly integrated HCM suite.",
+      "Robust continuous payroll and time calculation.",
+      "Global payroll across 200+ countries.",
+      "Advanced analytics and automation."
+    ],
+    "cons": [
+      "Pricing on quote only.",
+      "Complex and costly implementation.",
+      "Designed for mid-market/enterprise."
+    ],
+    "use_cases": [
+      "Manage payroll and HR for multinational.",
+      "Optimize scheduling with AI.",
+      "Unify HR, payroll, and talent."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "fusion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Blackmagic Fusion official product page", "url": "https://www.blackmagicdesign.com/products/fusion" }
+  ],
+  "facts": {
+    "what": "Logiciel de compositing 2D/3D node-based professionnel, utilisé en VFX, motion graphics et post-production cinéma pour assembler et traiter des éléments visuels complexes.",
+    "what_en": "Professional node-based 2D/3D compositing software used in VFX, motion graphics, and post-production to composite and process complex visual elements.",
+    "pricing_model": "Version gratuite incluse dans DaVinci Resolve gratuit ; Fusion Studio à licence unique ($295 perpétuelle).",
+    "free_tier": { "exists": true, "detail": "Fusion est inclus gratuitement dans DaVinci Resolve gratuit avec les outils de compositing essentiels ; Fusion Studio ajoute des capacités avancées (centaines d'outils, particules 3D, rotoscoping, tracking)." },
+    "plans": [
+      { "name": "Fusion (dans DaVinci Resolve Free)", "price": "Gratuit" },
+      { "name": "Fusion Studio", "price": "295 $ (licence perpétuelle, unique code activation pour Resolve + Fusion)" }
+    ],
+    "key_features": [
+      "Architecture node-based pour la compositing flexible",
+      "Outils 2D et 3D (centaines d'outils en Studio)",
+      "Particles, tracking 3D, rotoscoping, keying",
+      "Animation curves avancées et keyframe editors",
+      "Intégration DaVinci Resolve pour workflow vidéo"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous pratiquez la post-production vidéo ou VFX à niveau professionnel.",
+        "Vous avez besoin d'une compositing node-based puissante.",
+        "Vous travaillez déjà avec DaVinci Resolve."
+      ],
+      "avoidIf": [
+        "Vous débutez en compositing (la courbe d'apprentissage est raide).",
+        "Vous préférez une interface layer-stack classique."
+      ],
+      "threshold": "Fusion est le choix studio pour les VFX pros et compositors expérimentés ; sa version gratuite suffit pour débuter, Fusion Studio pour productions commerciales exigeantes."
+    },
+    "pros": [
+      "Version gratuite robuste incluse dans Resolve Free.",
+      "Architecture node-based extrêmement flexible et puissante.",
+      "Centaines d'outils avancés en Studio (tracking, 3D, particules).",
+      "Intégration seamless avec DaVinci Resolve."
+    ],
+    "cons": [
+      "Courbe d'apprentissage très importante (node-based paradigm).",
+      "Moins intuitif que les logiciels layer-stack pour débutants.",
+      "GPU requirements élevés pour performances temps réel."
+    ],
+    "use_cases": [
+      "Post-production VFX pour films et séries.",
+      "Motion graphics et animations complexes.",
+      "Compositing node-based professionnel.",
+      "Integration dans pipelines DaVinci Resolve."
+    ],
+    "relevant_for": ["Compositors professionnels", "Studios VFX", "Coloristes et éditeurs vidéo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do professional-level post-production or VFX work.",
+        "You need powerful node-based compositing.",
+        "You already use DaVinci Resolve in your workflow."
+      ],
+      "avoidIf": [
+        "You're new to compositing (steep learning curve).",
+        "You prefer traditional layer-stack interfaces."
+      ],
+      "threshold": "Fusion is the studio standard for professional VFX and experienced compositors; the free version is solid for learning, Fusion Studio for demanding commercial work."
+    },
+    "pros": [
+      "Robust free version included in DaVinci Resolve Free.",
+      "Extremely flexible and powerful node-based architecture.",
+      "Hundreds of advanced tools in Studio (tracking, 3D, particles).",
+      "Seamless integration with DaVinci Resolve workflow."
+    ],
+    "cons": [
+      "Steep learning curve for node-based paradigm.",
+      "Less intuitive than layer-stack software for beginners.",
+      "High GPU requirements for real-time performance."
+    ],
+    "use_cases": [
+      "VFX post-production for film and television.",
+      "Complex motion graphics and animations.",
+      "Professional node-based compositing.",
+      "Integration into DaVinci Resolve pipelines."
+    ]
+  }
+}

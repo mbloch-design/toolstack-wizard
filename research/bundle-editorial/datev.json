@@ -1,0 +1,101 @@
+{
+  "slug": "datev",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "DATEV official website", "url": "https://www.datev.com" }
+  ],
+  "facts": {
+    "what": "Suite logicielle allemande pour comptabilité, paie et gestion du personnel, avec solutions cloud (DATEV Unternehmen online) ISO 27001 pour PME et experts-comptables allemands.",
+    "what_en": "German software suite for accounting, payroll, and personnel management, with ISO 27001 certified cloud solutions (DATEV Unternehmen online) for SMBs and German tax/accounting professionals.",
+    "pricing_model": "Pricing complexe basé modules, utilisateurs par employé, stockage données, onboarding/training. Contrats multi-ans typiques. Pas de pricing public.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ni trial public. Pricing sur-mesure nécessitant contact commercial direct et devis personnalisé." },
+    "plans": [
+      { "name": "Contrats personnalisés (DATEV Lohn und Gehalt, DATEV LODAS, modules)", "price": "Montants sur la page officielle (contact commercial)" }
+    ],
+    "key_features": [
+      "Comptabilité générale (Finanzbuchhaltung) et paie (Lohnbuchhaltung)",
+      "Gestion des immobilisations (Anlagenwirtschaft)",
+      "Déclarations VAT et fiscales intégrées",
+      "Cloud sécurisé DATEV Unternehmen online (ISO 27001)",
+      "Connecteurs avec logiciels tiers (ERP, etc.)",
+      "Traitement batch centralisé (DATEV LODAS pour mandataires)",
+      "Formation et onboarding inclus (plusieurs jours)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes PME/expert-comptable allemand(e).",
+        "Vous avez besoins comptabilité + paie + gestion personnel complexes.",
+        "Vous opérez en Allemagne (conformité locale forte).",
+        "Vous préférez partenaire de confiance établi depuis 30+ ans."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution low-cost ou freemium.",
+        "Vous opérez hors Allemagne (compliance locale moins pertinente).",
+        "Vous avez très petit budget ou startup micro-team.",
+        "Vous préférez pricing transparent et public."
+      ],
+      "threshold": "DATEV est quasi-obligatoire pour PME allemandes cherchant conformité fiscale/comptable pro ; pour startups ou opérations hors-Allemagne, solutions cloud modernes (Wave, Lexoffice) offrent meilleur prix/flexibilité."
+    },
+    "pros": [
+      "Standard de facto pour comptabilité PME en Allemagne.",
+      "Déclarations fiscales/VAT entièrement conformes et intégrées.",
+      "Onboarding/formation incluse (réduction courbe apprentissage).",
+      "Cloud sécurisé (ISO 27001) et maintenance opérée.",
+      "Réseau large de partenaires formés DATEV."
+    ],
+    "cons": [
+      "Pricing très élevé et opaque (sans devis, impossible estimer).",
+      "Onboarding/formation sur plusieurs jours ajoute coût.",
+      "Interface datée, peu intuitive vs. solutions modernes.",
+      "Ciblé Allemagne : peu d'utilité hors.",
+      "Contrats longs et peu flexibles."
+    ],
+    "use_cases": [
+      "Comptabilité complète et conformité fiscale (Allemagne).",
+      "Paie multi-employé et gestion RH élémentaire.",
+      "Rapports automatisés pour experts-comptables mandataires.",
+      "Archivage fiscal sécurisé long-terme."
+    ],
+    "relevant_for": ["PME allemandes", "Experts-comptables (Steuerberater)", "Cabinets expertise-comptable"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a German SMB or tax/accounting professional.",
+        "You have complex accounting + payroll + HR needs.",
+        "You operate in Germany (local compliance critical).",
+        "You value an established, trusted partner (30+ years)."
+      ],
+      "avoidIf": [
+        "You want a low-cost or freemium solution.",
+        "You operate outside Germany (local compliance less relevant).",
+        "You're a micro-startup with tight budget.",
+        "You prefer transparent, public pricing."
+      ],
+      "threshold": "DATEV is quasi-mandatory for German SMBs seeking professional tax/accounting compliance; for startups or non-German operations, modern cloud solutions (Wave, Lexoffice) offer better price/flexibility."
+    },
+    "pros": [
+      "De facto standard for German SMB accounting.",
+      "Tax/VAT declarations fully compliant and integrated.",
+      "Onboarding/training included (shortens learning curve).",
+      "Secure cloud (ISO 27001) with managed operations.",
+      "Large network of trained DATEV partners."
+    ],
+    "cons": [
+      "Very high and opaque pricing (no public quotes).",
+      "Onboarding/training adds days/cost.",
+      "Dated interface, less intuitive vs. modern solutions.",
+      "Germany-focused: little utility outside.",
+      "Long, inflexible contracts."
+    ],
+    "use_cases": [
+      "Complete accounting and tax compliance (Germany).",
+      "Multi-employee payroll and basic HR management.",
+      "Automated reports for tax advisor mandates.",
+      "Long-term secure tax archival."
+    ]
+  }
+}

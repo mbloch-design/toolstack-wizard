@@ -1,0 +1,110 @@
+{
+  "slug": "microsoft-entra-id",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Entra — Plans et tarification (site officiel)", "url": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing" }
+  ],
+  "facts": {
+    "what": "Service de gestion des identités et accès (IAM) basé sur le cloud offrant authentification multi-facteur, single sign-on (SSO), accès conditionnel et gouvernance des identités pour entreprises et identités externes.",
+    "what_en": "Cloud-based identity and access management (IAM) service providing multifactor authentication, single sign-on (SSO), conditional access, and identity governance for enterprises and external identities.",
+    "pricing_model": "Plans gratuit ou par utilisateur/mois selon fonctionnalités (Free, P1, P2, Suite). Accès inclus dans Microsoft 365 E3/E5.",
+    "free_tier": { "exists": true, "detail": "Entra ID Free — Inclus avec Microsoft Cloud (Azure, Microsoft 365). Authentification multifacteur, SSO illimité, rapports basiques, changement autogéré de mot de passe." },
+    "plans": [
+      { "name": "Microsoft Entra ID Free", "price": "Gratuit (inclus Microsoft Cloud)" },
+      { "name": "Microsoft Entra ID P1", "price": "$6–7/utilisateur/mois (engagement annuel)" },
+      { "name": "Microsoft Entra ID P2", "price": "$9–10/utilisateur/mois (engagement annuel)" },
+      { "name": "Microsoft Entra Suite", "price": "$12/utilisateur/mois (engagement annuel, nécessite P1)" },
+      { "name": "Internet Access / Private Access (standalone)", "price": "$5/utilisateur/mois chacun" },
+      { "name": "ID Governance (standalone)", "price": "$7/utilisateur/mois" },
+      { "name": "Workload ID (standalone)", "price": "$3/workload/mois" }
+    ],
+    "key_features": [
+      "Authentification multi-facteur (MFA) et conditional access",
+      "Single Sign-On (SSO) illimité",
+      "Accès basé sur les risques avec détection IA",
+      "Gestion des identités et des cycles de vie",
+      "Protection contre les menaces et vulnérabilités",
+      "Gouvernance des accès et gestion des permissions",
+      "Intégration 3 000+ applications cloud",
+      "Support des identités externes (B2B/B2C)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Microsoft 365 ou Azure.",
+        "Vous avez besoin de SSO et MFA pour équipe distante.",
+        "Vous gérez identités des partenaires ou clients (B2B/B2C).",
+        "Vous cherchez IAM native intégrée à l'écosystème Microsoft."
+      ],
+      "avoidIf": [
+        "Vous êtes micro-entreprise sans besoins SSO.",
+        "Vous refusez écosystème Microsoft.",
+        "Vous n'avez que quelques utilisateurs cloud."
+      ],
+      "threshold": "Entra ID s'impose pour organisations Microsoft ; les alternatives non-Microsoft (Okta, Auth0) conviennent mieux aux stacks neutres."
+    },
+    "pros": [
+      "Gratuit avec Microsoft Cloud (Free tier très complet).",
+      "Tarification modeste pour P1 et P2.",
+      "Accès conditionnel basé sur les risques IA.",
+      "Intégration native 3 000+ applications.",
+      "Gestion des identités externes incluse.",
+      "Protection contre menaces automatisée.",
+      "Pas de frais supplémentaires si vous avez Microsoft 365 E3/E5."
+    ],
+    "cons": [
+      "Meilleur choix si vous êtes dans écosystème Microsoft.",
+      "Courbe d'apprentissage pour IAM complexes.",
+      "Moins de flexibilité hors Microsoft.",
+      "Tarification par utilisateur peut coûter cher pour équipes immenses."
+    ],
+    "use_cases": [
+      "Activer SSO pour équipes utilisant Microsoft 365.",
+      "Sécuriser l'accès aux applications cloud tierces.",
+      "Gérer identités et permissions d'équipes distantes.",
+      "Accorder accès sécurisé aux partenaires (B2B).",
+      "Détecter et répondre à comportements de connexion suspects."
+    ],
+    "relevant_for": ["Organisations Microsoft 365", "Équipes IT et sécurité", "Gestionnaires d'identités"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Microsoft 365 or Azure.",
+        "You need SSO and MFA for remote teams.",
+        "You manage partner or customer identities (B2B/B2C).",
+        "You seek IAM natively integrated with Microsoft ecosystem."
+      ],
+      "avoidIf": [
+        "You are micro-business without SSO needs.",
+        "You avoid Microsoft ecosystem.",
+        "You have only a handful of cloud users."
+      ],
+      "threshold": "Entra ID is the choice for Microsoft-centric organizations; non-Microsoft alternatives (Okta, Auth0) suit neutral stacks better."
+    },
+    "pros": [
+      "Free with Microsoft Cloud (Free tier is comprehensive).",
+      "Modest pricing for P1 and P2.",
+      "Risk-based conditional access with AI.",
+      "Native integration with 3,000+ applications.",
+      "External identity management included.",
+      "Automated threat protection.",
+      "No extra cost if you have Microsoft 365 E3/E5."
+    ],
+    "cons": [
+      "Best choice only if you are in Microsoft ecosystem.",
+      "Learning curve for complex IAM scenarios.",
+      "Less flexibility outside Microsoft.",
+      "Per-user pricing can be expensive for very large teams."
+    ],
+    "use_cases": [
+      "Enable SSO for Microsoft 365 teams.",
+      "Secure access to third-party cloud applications.",
+      "Manage identity and permissions for remote teams.",
+      "Grant secure partner access (B2B).",
+      "Detect and respond to suspicious sign-in patterns."
+    ]
+  }
+}

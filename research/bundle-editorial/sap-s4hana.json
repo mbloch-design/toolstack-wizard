@@ -1,0 +1,96 @@
+{
+  "slug": "sap-s4hana",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SAP S/4HANA — site officiel", "url": "https://www.sap.com/products/erp/s4hana.html" }
+  ],
+  "facts": {
+    "what": "ERP d'entreprise SAP nouvelle génération (cloud et on-premise) pour les grandes organisations, remplaçant les anciens systèmes avec in-memory analytics et IA intégrée.",
+    "what_en": "Next-generation SAP enterprise ERP (cloud and on-premise) for large organizations, replacing legacy systems with in-memory analytics and embedded AI.",
+    "pricing_model": "Abonnement cloud SaaS pour Public Cloud, ou licence perpétuelle + maintenance pour on-premise. Tarification par utilisateur et plateforme. Minimum 15 utilisateurs requis. Quote-only pricing.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. SAP trial cloud disponible, mais pricing complet sur devis." },
+    "plans": [
+      { "name": "Public Cloud (SaaS)", "price": "180–400 $/utilisateur/mois + 5 000 $/mois frais plateforme" },
+      { "name": "On-Premise License", "price": "3 500 $ minimum par utilisateur" },
+      { "name": "Implementation", "price": "75 000–500 000 $ selon complexité" }
+    ],
+    "key_features": [
+      "In-memory database (SAP HANA) pour performances hautes",
+      "Comptabilité réinventée (New General Ledger)",
+      "Supply chain et procurement automation",
+      "Manufacturing et production",
+      "HCM (Human Capital Management)",
+      "Analytics et planning avec machine learning",
+      "API et intégrations modernes",
+      "Cloud-native et scalable"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un grand groupe (500+ salariés) avec structure complexe.",
+        "Vous devez remplacer un ancien SAP/ERP pour rester compétitif.",
+        "Vous acceptez investissements lourds (500k–3M sur 3 ans)."
+      ],
+      "avoidIf": [
+        "Vous êtes une PME (< 500 personnes) sans urgence de modernisation.",
+        "Votre budget est limité (< 500k sur 3 ans).",
+        "Vous préférez une implémentation rapide et légère."
+      ],
+      "threshold": "S/4HANA est le choix des grands groupes qui remplacent l'ancien SAP ; pour les PME, c'est trop lourd ; pour les startups, c'est complètement inadapté."
+    },
+    "pros": [
+      "Plate-forme d'entreprise la plus puissante au monde.",
+      "In-memory database (SAP HANA) pour analyses temps réel.",
+      "Scalabilité et fiabilité éprouvées pour les très gros volumes.",
+      "Roadmap d'innovation agressive (IA, Cloud, Analytics)."
+    ],
+    "cons": [
+      "Coûts très élevés (license + implémentation 500k–3M+).",
+      "Implémentation longue (18–36 mois typiquement).",
+      "TCO sur 5 ans : 1.5–3M $ pour 100 utilisateurs.",
+      "Dépendance forte à SAP pour support et mises à jour."
+    ],
+    "use_cases": [
+      "Remplacer un vieux SAP R/3 ou ERP legacy par une plateforme moderne.",
+      "Piloter une multinationale avec consolidation temps réel.",
+      "Optimiser supply chain avec machine learning et predictive analytics.",
+      "Embarquer des données clients et fournisseurs en temps réel."
+    ],
+    "relevant_for": ["Grands groupes multinationaux", "Directeurs informatiques", "Directeurs financiers", "CFO", "CTO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a large enterprise (500+ employees) with complex structure.",
+        "You must replace legacy SAP/ERP to stay competitive.",
+        "You accept heavy investments (500k–3M over 3 years)."
+      ],
+      "avoidIf": [
+        "You are an SME (< 500 people) without modernization urgency.",
+        "Your budget is limited (< 500k over 3 years).",
+        "You prefer fast, lightweight implementation."
+      ],
+      "threshold": "S/4HANA is the choice of large enterprises replacing legacy SAP; too heavy for SMEs; completely unsuited for startups."
+    },
+    "pros": [
+      "Most powerful enterprise platform in the world.",
+      "In-memory database (SAP HANA) for real-time analytics.",
+      "Proven scalability and reliability for very large volumes.",
+      "Aggressive innovation roadmap (AI, Cloud, Analytics)."
+    ],
+    "cons": [
+      "Very high costs (license + implementation 500k–3M+).",
+      "Long implementation (18–36 months typically).",
+      "5-year TCO: 1.5–3M$ for 100 users.",
+      "Strong dependency on SAP for support and updates."
+    ],
+    "use_cases": [
+      "Replace legacy SAP R/3 or ERP with a modern platform.",
+      "Drive multinational with real-time consolidation.",
+      "Optimize supply chain with machine learning and predictive analytics.",
+      "Embed customer and supplier data in real time."
+    ]
+  }
+}

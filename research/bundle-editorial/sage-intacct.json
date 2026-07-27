@@ -1,0 +1,95 @@
+{
+  "slug": "sage-intacct",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sage Intacct — Pricing", "url": "https://www.sage.com/en-us/sage-business-cloud/intacct/pricing/" }
+  ],
+  "facts": {
+    "what": "Suite cloud de gestion financière pour les organisations moyenne à grande, spécialisée en consolidation multi-entités, accounting automation et revenue recognition.",
+    "what_en": "Cloud financial management suite for mid-to-large organizations, specialized in multi-entity consolidation, accounting automation, and revenue recognition.",
+    "pricing_model": "Abonnement cloud SaaS par utilisateur sans option licence perpétuelle. Tarification personnalisée selon modules (core GL, AR, AP, cash management + modules additionnels).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Devis personnalisé par Sage ou partenaire." },
+    "plans": [
+      { "name": "Core Subscription", "price": "montants sur demande, débutant à partir de 15 000 $/an" },
+      { "name": "Per-User Cost", "price": "400–800 $/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Comptabilité générale multicurrency et multi-entités",
+      "Comptes fournisseurs et comptes clients",
+      "Gestion de trésorerie",
+      "Consolidation et reporting multi-entités",
+      "Reconnaissance des revenus (ASC 606)",
+      "Accounting automation",
+      "Analytics et reporting avancé",
+      "Intégrations via Connector API"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une structure multi-entités complexe.",
+        "La consolidation consolidée multi-juridictions est critique.",
+        "Vous acceptez un budget de dépenses financières (50k–200k/an)."
+      ],
+      "avoidIf": [
+        "Vous êtes une PME pure avec structure simple et unique.",
+        "Votre budget est très serré (< 25k/an).",
+        "Vous cherchez un ERP complet (supply chain, manufacturing)."
+      ],
+      "threshold": "Intacct est le choix des structures multi-entités sophistiquées ; pour une PME simple, c'est trop cher ; pour un grand groupe, il faut l'ERP complet (Oracle/SAP)."
+    },
+    "pros": [
+      "Consolidation multi-entités et multi-currency très sophistiquée.",
+      "Accounting automation native (réduction des erreurs).",
+      "Cloud-native, pas de maintenance infrastructure.",
+      "Conformité revenue recognition (ASC 606 / IFRS 15)."
+    ],
+    "cons": [
+      "Très cher pour une PME classique.",
+      "Ne couvre que la Finance (pas supply chain, manufacturing, HCM).",
+      "Pas de tarification publique (devis obligatoire).",
+      "Courbe d'apprentissage raide pour les petites équipes."
+    ],
+    "use_cases": [
+      "Consolider les financials de plusieurs filiales.",
+      "Automatiser les rapprochements bancaires et écritures.",
+      "Appliquer revenue recognition complex (SaaS, contrats long terme).",
+      "Piloter la trésorerie et les projections de cash."
+    ],
+    "relevant_for": ["Groupes multi-entités", "Directeurs financiers", "Consolidateurs financiers", "Trésoriers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a complex multi-entity structure.",
+        "Multi-jurisdiction consolidation is critical.",
+        "You accept significant financial software spending (50k–200k/year)."
+      ],
+      "avoidIf": [
+        "You are a pure SME with simple, single entity structure.",
+        "Your budget is very tight (< 25k/year).",
+        "You seek a complete ERP (supply chain, manufacturing)."
+      ],
+      "threshold": "Intacct is the choice for sophisticated multi-entity structures; too expensive for simple SMEs; for large groups, you need complete ERP (Oracle/SAP)."
+    },
+    "pros": [
+      "Sophisticated multi-entity and multi-currency consolidation.",
+      "Native accounting automation (reduces errors).",
+      "Cloud-native, no infrastructure maintenance.",
+      "Revenue recognition compliance (ASC 606 / IFRS 15)."
+    ],
+    "cons": [
+      "Very expensive for typical SMEs.",
+      "Covers only Finance (no supply chain, manufacturing, HCM).",
+      "No public pricing (quote required).",
+      "Steep learning curve for small teams."
+    ],
+    "use_cases": [
+      "Consolidate financials across multiple subsidiaries.",
+      "Automate bank reconciliation and journal entries.",
+      "Apply complex revenue recognition (SaaS, long-term contracts).",
+      "Drive cash flow and liquidity forecasting."
+    ]
+  }
+}

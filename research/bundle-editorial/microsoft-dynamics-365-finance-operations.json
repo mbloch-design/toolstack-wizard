@@ -1,0 +1,94 @@
+{
+  "slug": "microsoft-dynamics-365-finance-operations",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Dynamics 365 Finance — site officiel", "url": "https://www.microsoft.com/dynamics-365/" }
+  ],
+  "facts": {
+    "what": "Suite de gestion financière et opérationnelle cloud pour les grands groupes, intégrant comptabilité, trésorerie, supply chain et conformité réglementaire avec IA et automatisation.",
+    "what_en": "Cloud-based financial and operations management suite for large enterprises, integrating accounting, cash management, supply chain, and regulatory compliance with AI and automation.",
+    "pricing_model": "Abonnement SaaS par utilisateur, modèle de licence cloud. Trois types d'utilisateurs : Finance and Operations, Activity users, Team Members.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai disponible via Microsoft." },
+    "plans": [
+      { "name": "Finance and Operations User", "price": "210 $/utilisateur/mois" },
+      { "name": "Activity User", "price": "70 $/utilisateur/mois" },
+      { "name": "Team Member", "price": "8 $/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Gestion financière intégrée (GL, AP, AR, trésorerie)",
+      "Supply chain et procurement",
+      "Manufacturing et production",
+      "IA et automatisation des processus",
+      "Conformité multi-juridictionnelle",
+      "Reporting et analytique avancée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre groupe a une comptabilité complexe et multi-entités.",
+        "Vous avez besoin d'une intégration complète Finance-Supply Chain.",
+        "La conformité réglementaire et la traçabilité sont critiques."
+      ],
+      "avoidIf": [
+        "Vous êtes une PME cherchant une solution légère.",
+        "Votre budget d'implémentation est limité.",
+        "Vous avez une structure financière simple et centralisée."
+      ],
+      "threshold": "D365 Finance est un choix d'entreprise pour les organisations complexes ; une PME sans besoins multi-juridiques trouvera mieux ailleurs."
+    },
+    "pros": [
+      "Écosystème Microsoft intégré (Teams, Excel, Power BI).",
+      "Scalabilité sans limite pour les grands groupes.",
+      "Conformité et audit natifs (multi-pays, multi-devise).",
+      "IA et bots pour l'automatisation comptable."
+    ],
+    "cons": [
+      "Coût de licence élevé pour les petites équipes.",
+      "Implémentation longue et coûteuse (200k–500k+).",
+      "Courbe d'apprentissage importante.",
+      "Coûts de maintenance et support élevés."
+    ],
+    "use_cases": [
+      "Consolider la comptabilité de plusieurs filiales.",
+      "Automatiser les rapprochements bancaires et les écritures comptables.",
+      "Gérer la conformité fiscale et sociale multi-pays.",
+      "Piloter la trésorerie et les liquidités en temps réel."
+    ],
+    "relevant_for": ["Groupes multinationaux", "Grandes PME", "Directeurs financiers", "Contrôleurs de gestion"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your group has complex, multi-entity accounting.",
+        "You need full Finance-Supply Chain integration.",
+        "Regulatory compliance and audit trails are critical."
+      ],
+      "avoidIf": [
+        "You are an SME looking for a lightweight solution.",
+        "Your implementation budget is limited.",
+        "You have a simple, centralized financial structure."
+      ],
+      "threshold": "D365 Finance is an enterprise choice for complex organisations; an SME without multi-jurisdictional needs will find better options elsewhere."
+    },
+    "pros": [
+      "Integrated Microsoft ecosystem (Teams, Excel, Power BI).",
+      "Limitless scalability for large enterprises.",
+      "Native compliance and audit (multi-country, multi-currency).",
+      "AI and bots for accounting automation."
+    ],
+    "cons": [
+      "High license costs for small teams.",
+      "Long and expensive implementation (200k–500k+).",
+      "Steep learning curve.",
+      "High maintenance and support costs."
+    ],
+    "use_cases": [
+      "Consolidate accounting across multiple subsidiaries.",
+      "Automate bank reconciliation and journal entries.",
+      "Manage multi-country tax and regulatory compliance.",
+      "Drive cash flow and liquidity management in real time."
+    ]
+  }
+}

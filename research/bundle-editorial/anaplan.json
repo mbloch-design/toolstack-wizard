@@ -1,0 +1,100 @@
+{
+  "slug": "anaplan",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Anaplan official website", "url": "https://www.anaplan.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de planification d'entreprise modulaire (CPM) avec modélisation multi-dimensionnelle, budgeting, forecasting, planification des ventes et gestion des stocks, intégration IA pour scénarios prédictifs.",
+    "what_en": "Modular corporate performance management (CPM) platform with multi-dimensional modeling, budgeting, forecasting, sales planning, and inventory management, plus AI-powered predictive scenarios.",
+    "pricing_model": "Modèle d'entreprise personnalisé avec tarification basée sur nombre utilisateurs (named, read-only, automation), taille du modèle, modules additionnels et support. Pas de pricing public.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement via contrats d'entreprise avec pricing personnalisé et contrats multi-ans (3-5 ans typiques)." },
+    "plans": [
+      { "name": "Estimation pour déploiement 50 utilisateurs", "price": "15 000 $ / mois approximativement (contrat 3-5 ans, escalade ~10% annuels)" }
+    ],
+    "key_features": [
+      "Planification budgétaire et forecasting avancé",
+      "Planification des ventes et gestion des territoires",
+      "Compensation plan modeling",
+      "Gestion des stocks et planification supply chain",
+      "Analyse scénarios et what-if simulations",
+      "Dashboards et KPI monitoring en temps réel",
+      "AI Forecaster et Data Orchestrator (modules IA)",
+      "Audit trail et contrôle d'accès granulaires"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une moyenne/grande entreprise avec besoins complexes de planification.",
+        "Vous intégrez budgeting, ventes, supply chain et RH.",
+        "Vous validez budgets collaboratifs multi-niveaux.",
+        "Vous avez budget significatif (> 20k€/an recommandé)."
+      ],
+      "avoidIf": [
+        "Vous débutez dans la planification (surspecifié).",
+        "Vous cherchez une solution low-cost ou open-source.",
+        "Votre budget annuel est limité."
+      ],
+      "threshold": "Anaplan s'impose pour grandes organisations avec cycles de planification complexes ; pour PME ou débutants, des solutions plus légères (Pigment, Vena) offrent meilleur rapport coût/valeur."
+    },
+    "pros": [
+      "Plateforme unifiée pour tous les streams de planification (budget, sales, supply).",
+      "Modèles multi-dimensionnels très flexibles et scalables.",
+      "Collaboration asynchrone et validation workflows avancés.",
+      "IA intégrée (Forecaster, Data Orchestrator) pour scénarios prédictifs.",
+      "Tableau de bord temps réel et monitoring KPI."
+    ],
+    "cons": [
+      "Tarification très élevée, sans pricing public (contrats only).",
+      "Courbe d'apprentissage raide pour data modeling.",
+      "Frais de mise en œuvre et intégration significatifs.",
+      "Escalade tarifaire annuelle qui alourdit le coût cumulé.",
+      "Contrats longs (3-5 ans) peu flexibles."
+    ],
+    "use_cases": [
+      "Planification budgétaire multi-niveaux pour holding.",
+      "Forecasting de ventes avec scénarios what-if.",
+      "Consolidation de planification supply chain et RH.",
+      "Scenariosing et simulations stratégiques complexes."
+    ],
+    "relevant_for": ["Grandes entreprises (> 500 salariés)", "Groupes multinationaux", "Organisations avec cycles planification complexes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a mid/large enterprise with complex planning needs.",
+        "You integrate budgeting, sales, supply chain, and HR planning.",
+        "You validate multi-level collaborative budgets.",
+        "You have a significant annual budget."
+      ],
+      "avoidIf": [
+        "You're new to planning (overengineered).",
+        "You seek a low-cost or open-source solution.",
+        "Your annual budget is limited."
+      ],
+      "threshold": "Anaplan is the choice for large organizations with complex planning cycles; for SMBs or beginners, lighter solutions (Pigment, Vena) offer better cost/value."
+    },
+    "pros": [
+      "Unified platform for all planning streams (budgeting, sales, supply).",
+      "Flexible, highly scalable multi-dimensional models.",
+      "Advanced asynchronous collaboration and validation workflows.",
+      "Integrated AI (Forecaster, Data Orchestrator) for predictive scenarios.",
+      "Real-time dashboards and KPI monitoring."
+    ],
+    "cons": [
+      "Very high pricing, no public list (contracts only).",
+      "Steep learning curve for data modeling.",
+      "Significant implementation and integration costs.",
+      "Annual price escalation increases cumulative cost over time.",
+      "Long contracts (3-5 years) lack flexibility."
+    ],
+    "use_cases": [
+      "Multi-level budgeting for holding companies.",
+      "Sales forecasting with what-if scenarios.",
+      "Consolidation of supply chain and HR planning.",
+      "Complex strategic scenarios and simulations."
+    ]
+  }
+}

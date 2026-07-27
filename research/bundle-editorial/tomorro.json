@@ -1,0 +1,98 @@
+{
+  "slug": "tomorro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tomorro — Plateforme de gestion de contrats (site officiel)", "url": "https://www.tomorro.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion du cycle de vie des contrats (CLM) utilisant l'IA pour automatiser création, négociation, signature et archivage avec assistant Oro IA pour révision et extraction de données.",
+    "what_en": "AI-powered contract lifecycle management (CLM) platform automating contract creation, negotiation, signature, and storage with Oro AI assistant for document review and data extraction.",
+    "pricing_model": "Abonnement par utilisateur « core » (utilisateurs auteur/réviseur) avec plans tiérés et limitations de contrats.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai sur demande." },
+    "plans": [
+      { "name": "Pro", "price": "$119/utilisateur core/mois (max 10 utilisateurs core, 150 collaborateurs, 2 000 contrats)" },
+      { "name": "Advanced", "price": "Tarif sur demande — utilisateurs core illimités, collaborateurs illimités" }
+    ],
+    "key_features": [
+      "Assistant Oro IA pour révision assistée, recommandations de politique.",
+      "Extraction de données IA (92 % de précision).",
+      "Modèles dynamiques avec clauses personnalisables.",
+      "Workflows d'approbation automatisés.",
+      "Signature électronique native.",
+      "Alertes de renouvellement automatiques.",
+      "Intégrations Docusign, Salesforce, HubSpot, Zapier."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une équipe légale ou commerciale cherchant CLM avec IA.",
+        "Vous gérez 50 à 2 000 contrats par an.",
+        "Vous avez besoin de signature électronique et workflows automatisés."
+      ],
+      "avoidIf": [
+        "Vous gérez très peu de contrats (<50/an).",
+        "Vous cherchez une solution sans frais mensuels.",
+        "Vous avez besoin de très grandes limitations de contrats."
+      ],
+      "threshold": "Tomorro convient aux équipes commerciales et juridiques cherchant CLM avec IA pour accélérer négociation ; les petites équipes trouveront solutions plus légères."
+    },
+    "pros": [
+      "Assistant Oro IA pour l'extraction de clauses.",
+      "Réduction des temps de négociation rapportée par l'éditeur.",
+      "Signature électronique native incluse.",
+      "Workflows d'approbation automatisés et intelligents.",
+      "Utilisé par 2 000+ entreprises (Nestlé, Vinci, Qonto)."
+    ],
+    "cons": [
+      "Coût par utilisateur « core » élevé à l'échelle.",
+      "Limitation du nombre de contrats par plan.",
+      "Interface peut être complexe pour débuts.",
+      "Tarification opaque pour plans advanced."
+    ],
+    "use_cases": [
+      "Automatiser révision de contrats avec IA Oro.",
+      "Générer et approuver contrats via workflows intelligents.",
+      "Extraire données clés de contrats entrants.",
+      "Piloter renouvellements et conformité.",
+      "Accélérer cycles commerciaux avec négociation collaborative."
+    ],
+    "relevant_for": ["Équipes juridiques et commerciales", "Responsables contrats", "Gestionnaires de conformité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a legal or sales team seeking CLM with AI capabilities.",
+        "You manage 50 to 2,000 contracts annually.",
+        "You need e-signature and automated approval workflows."
+      ],
+      "avoidIf": [
+        "You manage very few contracts (<50/year).",
+        "You need a no-subscription model.",
+        "You require unlimited contract volume at fixed cost."
+      ],
+      "threshold": "Tomorro suits commercial and legal teams seeking AI-powered CLM for negotiation acceleration; small teams are better served by lighter solutions."
+    },
+    "pros": [
+      "Oro AI assistant for clause extraction.",
+      "Vendor-reported reduction in negotiation time.",
+      "Native e-signature included.",
+      "Automated intelligent approval workflows.",
+      "Trusted by 2,000+ companies (Nestlé, Vinci, Qonto)."
+    ],
+    "cons": [
+      "Per-core-user cost scales quickly.",
+      "Contract volume limits vary by plan.",
+      "Interface may be complex for beginners.",
+      "Advanced tier pricing opaque."
+    ],
+    "use_cases": [
+      "Automate contract review with Oro AI.",
+      "Generate and approve contracts via intelligent workflows.",
+      "Extract key data from incoming contracts.",
+      "Drive renewals and compliance tracking.",
+      "Accelerate sales cycles with collaborative negotiation."
+    ]
+  }
+}

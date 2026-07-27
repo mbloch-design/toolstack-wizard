@@ -1,0 +1,98 @@
+{
+  "slug": "sap-successfactors",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SAP SuccessFactors HCM Suite (site officiel)", "url": "https://www.sap.com/products/hcm.html" }
+  ],
+  "facts": {
+    "what": "Suite HCM cloud enterprise de SAP couvrant HR, paie globale, talent management, et employee experience avec IA et analytics avancés.",
+    "what_en": "SAP's enterprise cloud HCM suite covering HR, global payroll, talent management, and employee experience with advanced AI and analytics.",
+    "pricing_model": "Abonnement cloud modulaire par utilisateur par mois. Montants sur la page officielle. Tarification personnalisée selon modules (HR, Paie, Talents, Learning, etc.).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification sur devis pour entreprises. Implémentation très coûteuse (300k-2M$)." },
+    "plans": [
+      { "name": "Core HR", "price": "À partir de montants sur la page officielle — gestion RH et données employés" },
+      { "name": "Modules additionnels", "price": "Paie, Talents, Learning, Onboarding, Performance — chacun tarifé séparément selon usage" },
+      { "name": "Contrat", "price": "Durée 12-60 mois selon configuration" }
+    ],
+    "key_features": [
+      "Core HR et employee central",
+      "Global payroll (multi-pays)",
+      "Talent management (recruiting, performance, succession, learning)",
+      "Compensation management",
+      "Learning & development",
+      "Employee experience personalization",
+      "IA et analytics avancés",
+      "Skills intelligence foundation",
+      "Contingent worker management",
+      "Cloud-based avec adoption tools"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes grand groupe / multinationale.",
+        "Vous avez déjà SAP et intégration existante.",
+        "Vous avez budget important et équipe implémentation."
+      ],
+      "avoidIf": [
+        "Vous êtes PME ou startup.",
+        "Vous cherchez solution légère et rapide.",
+        "Vous avez budget limité (implémentation très coûteuse)."
+      ],
+      "threshold": "SAP SuccessFactors pour très grandes entreprises ; pour PME/ETI, solutions cloud natives meilleures."
+    },
+    "pros": [
+      "Suite très complète de SAP.",
+      "Talent management et learning avancés.",
+      "Global payroll multi-pays robuste.",
+      "IA et analytics très puissants.",
+      "Intégration SAP native si ecosystème existant."
+    ],
+    "cons": [
+      "Tarif et implémentation très élevés.",
+      "Destiné aux très grandes entreprises seulement.",
+      "Courbe apprentissage et complexité.",
+      "Pas adapté PME/startups."
+    ],
+    "use_cases": [
+      "Gérer HR, talents et paie pour grand groupe.",
+      "Intégrer avec ecosystème SAP existant.",
+      "Analytics avancés et skills intelligence."
+    ],
+    "relevant_for": ["Grands groupes / multinationales", "Directeurs HR", "Grandes enterprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a large group / multinational.",
+        "You already have SAP and existing integration.",
+        "You have significant budget and implementation team."
+      ],
+      "avoidIf": [
+        "You're an SMB or startup.",
+        "You want a lightweight, fast solution.",
+        "You have limited budget (implementation very costly)."
+      ],
+      "threshold": "SAP SuccessFactors for very large enterprises; for SMBs/mid-market, native cloud solutions are better."
+    },
+    "pros": [
+      "Very comprehensive SAP suite.",
+      "Advanced talent management and learning.",
+      "Robust multi-country global payroll.",
+      "Powerful AI and analytics.",
+      "Native SAP integration if existing ecosystem."
+    ],
+    "cons": [
+      "Very high cost and implementation.",
+      "Designed for very large enterprises only.",
+      "Steep learning curve and complexity.",
+      "Not suitable for SMBs/startups."
+    ],
+    "use_cases": [
+      "Manage HR, talent, and payroll for large group.",
+      "Integrate with existing SAP ecosystem.",
+      "Advanced analytics and skills intelligence."
+    ]
+  }
+}

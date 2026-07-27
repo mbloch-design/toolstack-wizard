@@ -1,0 +1,95 @@
+{
+  "slug": "canva-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Canva official AI features page", "url": "https://www.canva.com/ai/" }
+  ],
+  "facts": {
+    "what": "Suite d'outils IA (Magic Studio) intégrée dans Canva pour la génération d'images, suppression d'arrière-plan, gestion d'objets et suggestions de layout assistées par IA, accessible via les plans payants.",
+    "what_en": "Suite of AI tools (Magic Studio) integrated into Canva for image generation, background removal, object editing, and AI-powered layout suggestions, accessible through paid plans.",
+    "pricing_model": "Inclus dans les plans payants Canva Pro (abonnement mensuel/annuel) et Canva Business, avec allocation mensuelle de crédits IA selon le plan.",
+    "free_tier": { "exists": true, "detail": "Le plan gratuit inclut 200 utilisations IA Standard ou 20 IA Premium par mois ; les plans Pro et Business offrent 10x et 20x ces allocations respectivement." },
+    "plans": [
+      { "name": "Canva Free", "price": "Gratuit (200 Standard AI uses/mois ou 20 Premium AI uses)" },
+      { "name": "Canva Pro", "price": "144 $ / an ou 18 $ / mois (2000 Standard AI uses/mois ou 200 Premium AI uses)" },
+      { "name": "Canva Business", "price": "250 $ / an minimum (4000 Standard AI uses/mois ou 400 Premium AI uses, sans limites de sièges)" }
+    ],
+    "key_features": [
+      "Magic Design : génération de designs par prompt texte",
+      "Text-to-image : génération d'images IA",
+      "Background Remover : suppression d'arrière-plan automatique",
+      "Magic Eraser : suppression d'objets intelligente",
+      "AI layout suggestions : recommandations de mise en page IA",
+      "Magic Write : aide à la rédaction de texte",
+      "141M+ assets numériques inclus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement du contenu visuel (réseaux sociaux, présentations, graphiques).",
+        "Vous cherchez un outil accessibleavec IA générative intégrée.",
+        "Vous avez un budget petit à moyen pour design."
+      ],
+      "avoidIf": [
+        "Vous êtes designer professionnel (pas de control pixel parfait).",
+        "Vous avez besoin d'outils IA avancés et séparés (Photoshop, etc.)."
+      ],
+      "threshold": "Canva AI est idéal pour PME, freelances et créateurs de contenu Social ; pour designers pro cherchant contrôle élevé, les suites complètes (Photoshop, Affinity) offrent plus."
+    },
+    "pros": [
+      "Suite IA (Magic Studio) entièrement intégrée dans Canva.",
+      "Très accessible : plan gratuit avec allocations IA incluses.",
+      "Huge asset library (141M+) pour designs rapides.",
+      "Affinity Free inclus depuis 2026 (logiciel professionnel gratuit).",
+      "Collaboratif et multi-device (web + mobile)."
+    ],
+    "cons": [
+      "Moins de contrôle créatif et pixel-parfait que outils pro.",
+      "Crédits IA mensuels limités selon plan.",
+      "Modèles IA génériques comparé à Midjourney/DALL-E.",
+      "Contrôle typographique et composition moins fin."
+    ],
+    "use_cases": [
+      "Création de posts réseaux sociaux avec graphiques IA.",
+      "Design rapide de présentations et pitch decks.",
+      "Branding et templates marketing pour PME.",
+      "Content creation avec text-to-image et magic design."
+    ],
+    "relevant_for": ["Freelances créatifs", "PME sans designers", "Creators de contenu Social"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create visual content regularly (social media, presentations, graphics).",
+        "You want accessible AI generation integrated into a design tool.",
+        "You have a modest to mid-range design budget."
+      ],
+      "avoidIf": [
+        "You're a professional designer (lacks pixel-perfect control).",
+        "You need advanced, separate AI tools (Photoshop, etc.)."
+      ],
+      "threshold": "Canva AI is ideal for SMBs, freelancers, and content creators; for pro designers wanting fine-grained control, full suites (Photoshop, Affinity) offer more."
+    },
+    "pros": [
+      "Complete AI suite (Magic Studio) fully integrated in Canva.",
+      "Very accessible: free plan with included AI allocations.",
+      "Huge asset library (141M+) for rapid design.",
+      "Affinity Free included since 2026 (pro software at no cost).",
+      "Collaborative and multi-device (web + mobile)."
+    ],
+    "cons": [
+      "Less creative control and pixel-perfect than pro tools.",
+      "Monthly AI credits limited per plan.",
+      "Generic AI models vs. Midjourney/DALL-E.",
+      "Coarser typography and composition control."
+    ],
+    "use_cases": [
+      "Social media post creation with AI graphics.",
+      "Quick design of presentations and pitch decks.",
+      "Branding and marketing templates for SMBs.",
+      "Content creation with text-to-image and magic design."
+    ]
+  }
+}

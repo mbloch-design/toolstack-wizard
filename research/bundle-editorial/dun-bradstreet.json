@@ -1,0 +1,112 @@
+{
+  "slug": "dun-bradstreet",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dun & Bradstreet — Business Intelligence & Credit (site officiel)", "url": "https://www.dnb.com/en-us" }
+  ],
+  "facts": {
+    "what": "Fournisseur historique de données commerciales globales et numéro D-U-N-S, offrant rapports de crédit, scores de risque, monitoring fournisseurs et données d'entreprises pour compliance et prise de décision commerciale.",
+    "what_en": "Global business data provider offering credit reports, D-U-N-S numbers, supplier monitoring, and company intelligence for compliance and commercial decision-making.",
+    "pricing_model": "Abonnement mensuel/annuel par produit (Credit Insights, D&B Hoovers) ou achat à l'unité de rapports. Plans tiérés pour SMB et Enterprise.",
+    "free_tier": { "exists": true, "detail": "D-U-N-S Manager gratuit pour consulter et mettre à jour infos entreprise. D-U-N-S gratuit en traitement standard (Traitement accéléré : $229–349)." },
+    "plans": [
+      { "name": "Credit Insights", "price": "$49–149/mois" },
+      { "name": "D&B Hoovers Essentials", "price": "$49/mois" },
+      { "name": "Business Information Reports", "price": "À partir de $139.99/an (par rapport)" },
+      { "name": "D&B Credit Evaluator Plus", "price": "$61.99/rapport" },
+      { "name": "Enterprise Solution", "price": "À partir de $10 000/an (contrats annuels requis); $25 000–$50 000+ pour bundles complets" }
+    ],
+    "key_features": [
+      "D-U-N-S (numéro universel d'identité d'entreprise)",
+      "Rapports de crédit et scores de solvabilité",
+      "Monitoring de risque fournisseurs en temps-réel",
+      "Données de paiement commercial historiques",
+      "Compliance (AML, sanctions, KYC/KYB)",
+      "Évaluation de risque entreprises",
+      "Intégrations API et ERP/CRM",
+      "D&B Hoovers pour prospection B2B"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un D-U-N-S pour partenariats internationaux.",
+        "Vous évaluez crédit et solvabilité de prospects/fournisseurs.",
+        "Vous piloter risques compliance et AML.",
+        "Vous utilisez données commerciales pour prospection B2B."
+      ],
+      "avoidIf": [
+        "Vous êtes freelance/micro-entreprise sans partenaires B2B.",
+        "Vous cherchez solution légère et bon marché.",
+        "Vous n'avez pas besoin de numéro D-U-N-S."
+      ],
+      "threshold": "Dun & Bradstreet s'impose pour entreprises multinationales avec obligations de compliance ; les PME locales trouveront alternatives plus légères et moins coûteuses."
+    },
+    "pros": [
+      "Leader historique mondialement reconnu.",
+      "D-U-N-S (standard mondial d'identité entreprise).",
+      "Larges données commerciales (millions d'entreprises).",
+      "Compliance AML et sanctions intégrées.",
+      "Monitoring fournisseurs en temps-réel.",
+      "Solutions d'entreprise flexibles et personnalisables.",
+      "Dun & Bradstreet Score pour prédiction de paiement."
+    ],
+    "cons": [
+      "Écart tarifaire très large entre offres PME et entreprise.",
+      "Interface et navigation complexes.",
+      "Données peuvent être obsolètes pour petites entreprises.",
+      "Processus de devis entreprise long et opaque.",
+      "Données limitées hors États-Unis et pays développés."
+    ],
+    "use_cases": [
+      "Obtenir D-U-N-S pour contrats internationaux.",
+      "Évaluer solvabilité de nouveaux fournisseurs.",
+      "Monitorer risque de partenaires existants.",
+      "Accomplir vérifications conformité AML/KYC.",
+      "Prospecter entreprises avec données D&B Hoovers.",
+      "Automatiser évaluation crédit avec score D&B."
+    ],
+    "relevant_for": ["Responsables achats", "Équipes crédit et risque", "Managers compliance", "Directeurs B2B sales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a D-U-N-S for international partnerships.",
+        "You assess credit and solvency of prospects/suppliers.",
+        "You manage compliance and AML risk.",
+        "You use business data for B2B prospecting."
+      ],
+      "avoidIf": [
+        "You are freelancer/micro-business without B2B partners.",
+        "You seek lightweight and low-cost solution.",
+        "You don't need a D-U-N-S number."
+      ],
+      "threshold": "Dun & Bradstreet is the choice for multinational enterprises with compliance obligations; local SMEs are better served by lighter and cheaper alternatives."
+    },
+    "pros": [
+      "Historically recognized global leader.",
+      "D-U-N-S (worldwide standard for business identity).",
+      "Extensive business data (millions of companies).",
+      "Integrated AML and sanctions compliance.",
+      "Real-time vendor risk monitoring.",
+      "Flexible and customizable enterprise solutions.",
+      "Dun & Bradstreet Score for payment prediction."
+    ],
+    "cons": [
+      "Very wide pricing gap between SMB and enterprise offers.",
+      "Interface and navigation complex.",
+      "Data may be stale for small businesses.",
+      "Enterprise quoting process is long and opaque.",
+      "Limited data outside USA and developed countries."
+    ],
+    "use_cases": [
+      "Obtain D-U-N-S for international contracts.",
+      "Assess creditworthiness of new suppliers.",
+      "Monitor existing partner risk.",
+      "Conduct AML/KYC compliance checks.",
+      "Prospect companies with D&B Hoovers data.",
+      "Automate credit evaluation with D&B Score."
+    ]
+  }
+}

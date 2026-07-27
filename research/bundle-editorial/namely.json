@@ -1,0 +1,96 @@
+{
+  "slug": "namely",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Namely (site officiel)", "url": "https://www.namely.com" }
+  ],
+  "facts": {
+    "what": "Plateforme HCM modulaire pour PME (50-1000 salariés) unifiant HR, paie, talents, onboarding, benefits et analytics avec employee portal social.",
+    "what_en": "Modular HCM platform for SMBs (50-1,000 employees) unifying HR, payroll, talent, onboarding, benefits, and analytics with social employee portal.",
+    "pricing_model": "Modèle par employé par mois. Quatre plans (Namely Now, Plus, Plus People, Complete) avec tarification personnalisée. Montants sur la page officielle.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification sur devis après consultation sales." },
+    "plans": [
+      { "name": "Namely Now", "price": "À partir de montants sur la page officielle — features de base HR/paie" },
+      { "name": "Namely Plus", "price": "Tarification personnalisée — features enrichies" },
+      { "name": "Namely Plus People", "price": "Tarification personnalisée — talent management inclus" },
+      { "name": "Namely Complete", "price": "Tarification personnalisée — suite complète all-in-one" }
+    ],
+    "key_features": [
+      "HR management et employee database",
+      "Payroll processing avec tax management",
+      "Time & attendance tracking",
+      "Onboarding automation",
+      "Performance management et 360° feedback",
+      "Benefits enrollment et admin",
+      "Applicant tracking (recruitment)",
+      "Employee self-service portal social-style",
+      "Org charts et compliance guidance",
+      "Integrations (50+)",
+      "Managed services (outsourced HR/Paie/Benefits optionnel)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes PME US-based ou international (50-1000 salariés).",
+        "Vous cherchez suite HCM complète et intégrée.",
+        "Vous avez besoin de managed services (outsourcing paie/benefits)."
+      ],
+      "avoidIf": [
+        "Vous êtes entreprise française avec paie locale complexe.",
+        "Vous cherchez solution très bon marché.",
+        "Vous avez besoin d'une interface française."
+      ],
+      "threshold": "Namely excelle pour PME US-international ; pour France, Lucca ou solutions locales plus adaptées."
+    },
+    "pros": [
+      "Suite HCM complète avec payroll intégrée.",
+      "Employee portal social-style moderne.",
+      "Managed services optionnels (outsourcing).",
+      "50+ intégrations robustes."
+    ],
+    "cons": [
+      "Tarif sur devis uniquement.",
+      "Orientation US/international (moins pour France).",
+      "Implémentation lourde."
+    ],
+    "use_cases": [
+      "Unifier HR, paie et talents pour PME internationale.",
+      "Utiliser managed services pour outsourcer paie/benefits.",
+      "Créer employee experience moderne."
+    ],
+    "relevant_for": ["PME 50-1000 salariés", "Paie US/international", "HRBP étrangères"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a US-based or international SMB (50-1,000 employees).",
+        "You want a complete and integrated HCM suite.",
+        "You need managed services (payroll/benefits outsourcing)."
+      ],
+      "avoidIf": [
+        "You're a French company with complex local payroll.",
+        "You're looking for a budget solution.",
+        "You need a French interface."
+      ],
+      "threshold": "Namely excels for US/international SMBs; for France, Lucca or local solutions are better suited."
+    },
+    "pros": [
+      "Complete HCM suite with integrated payroll.",
+      "Modern social-style employee portal.",
+      "Optional managed services (outsourcing).",
+      "50+ robust integrations."
+    ],
+    "cons": [
+      "Pricing on quote only.",
+      "US/international focus (less suited for France).",
+      "Heavy implementation."
+    ],
+    "use_cases": [
+      "Unify HR, payroll, and talent for international SMB.",
+      "Leverage managed services to outsource payroll/benefits.",
+      "Create modern employee experience."
+    ]
+  }
+}

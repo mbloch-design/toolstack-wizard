@@ -1,0 +1,96 @@
+{
+  "slug": "sage",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sage — suite produits ERP", "url": "https://www.sage.com" }
+  ],
+  "facts": {
+    "what": "Portefeuille de solutions ERP Sage pour PME et ETI (Sage 100, Sage X3, Sage Intacct) couvrant comptabilité, supply chain, manufacturing et financials.",
+    "what_en": "Sage portfolio of ERP solutions for SMEs and mid-market (Sage 100, Sage X3, Sage Intacct) covering accounting, supply chain, manufacturing, and financials.",
+    "pricing_model": "Tarification variable selon la solution : licence perpétuelle + maintenance pour Sage 100 ; abonnement cloud par utilisateur pour X3 et Intacct.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essais disponibles sur demande." },
+    "plans": [
+      { "name": "Sage 100 (licence perpétuelle)", "price": "3000–5000 $ par utilisateur + 18–22% maintenance annuelle" },
+      { "name": "Sage 100 (cloud)", "price": "50–76 $/utilisateur/mois" },
+      { "name": "Sage X3 (cloud)", "price": "75–500 $/utilisateur/mois selon région et type" },
+      { "name": "Sage Intacct (cloud)", "price": "400–800 $/utilisateur/mois minimum 15k $/an" }
+    ],
+    "key_features": [
+      "Comptabilité générale et paie",
+      "Gestion commerciale et ventes",
+      "Supply chain et procurement",
+      "Manufacturing et production",
+      "Financials et consolidation multi-entités",
+      "Analytics et reporting avancé",
+      "Support multi-pays et multi-devise"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME/ETI avec structure comptable classique.",
+        "Vous cherchez un ERP français avec bon support local.",
+        "Vous avez un budget modéré et besoin de scalabilité progressive."
+      ],
+      "avoidIf": [
+        "Vous êtes un micro-freelanceur sans complexité.",
+        "Vous cherchez un ERP cloud ultra-moderne.",
+        "Vous avez des besoins très atypiques hors Europe."
+      ],
+      "threshold": "Sage convient aux PME françaises traditionnelles ; pour une startup ultra-agile ou un grand groupe, d'autres solutions sont mieux adaptées."
+    },
+    "pros": [
+      "Solutions progressives de Sage 100 à X3 à Intacct (croissance possible).",
+      "Bon support local et couverture en France.",
+      "Tarification progressive selon la taille.",
+      "Intégrations et écosystème de partenaires établi."
+    ],
+    "cons": [
+      "Interfaces moins modernes que les challengers cloud.",
+      "Tarification fragmentée entre produits (confus à comparer).",
+      "Intacct relativement cher pour une PME pure.",
+      "Migration entre solutions Sage coûteuse."
+    ],
+    "use_cases": [
+      "Gérer la comptabilité et la paie d'une PME française.",
+      "Piloter un supply chain simple pour une PME/ETI.",
+      "Consolider les financials de plusieurs entités.",
+      "Croître progressivement d'un produit Sage à l'autre."
+    ],
+    "relevant_for": ["PME et ETI françaises", "Experts-comptables", "Directeurs généraux", "Responsables administratifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an SME/mid-market with classic accounting structure.",
+        "You seek a European ERP with good local support.",
+        "You have a moderate budget and need progressive scalability."
+      ],
+      "avoidIf": [
+        "You are a micro-freelancer with no complexity.",
+        "You seek an ultra-modern cloud ERP.",
+        "You have very atypical needs outside Europe."
+      ],
+      "threshold": "Sage suits traditional European SMEs; for an ultra-agile startup or large enterprise, other solutions fit better."
+    },
+    "pros": [
+      "Progressive solutions from Sage 100 to X3 to Intacct (growth possible).",
+      "Good local support and European footprint.",
+      "Progressive pricing by size.",
+      "Established integrations and partner ecosystem."
+    ],
+    "cons": [
+      "Interfaces less modern than cloud challengers.",
+      "Fragmented pricing across products (confusing to compare).",
+      "Intacct relatively pricey for pure SME.",
+      "Migration between Sage solutions costly."
+    ],
+    "use_cases": [
+      "Manage accounting and payroll for an SME.",
+      "Drive simple supply chain for SME/mid-market.",
+      "Consolidate financials across multiple entities.",
+      "Grow progressively from one Sage product to another."
+    ]
+  }
+}

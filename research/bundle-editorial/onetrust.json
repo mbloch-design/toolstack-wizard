@@ -1,0 +1,110 @@
+{
+  "slug": "onetrust",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OneTrust — Plateforme de gouvernance (site officiel)", "url": "https://www.onetrust.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gouvernance IA pour piloter confidentialité des données, conformité, gestion des risques et gouvernance IA en temps réel à travers toute l'organisation.",
+    "what_en": "AI-powered governance platform for managing data privacy, compliance, risk management, and AI governance in real-time across the organization.",
+    "pricing_model": "Abonnement personnalisé par domaine ou volume de trafic selon modules (consentement, confidentialité, gestion des tiers, GRC, IA).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Minimum de contrat annuel de $10 000 à partir de Q2 2026. Montants sur demande auprès du commercial." },
+    "plans": [
+      { "name": "Consent Management (par domaine)", "price": "À partir de ~$1 100/mois" },
+      { "name": "Privacy Automation", "price": "À partir de ~$3 860/mois" },
+      { "name": "Third-Party Risk Management", "price": "À partir de ~$10 000/an" },
+      { "name": "GRC (Governance, Risk, Compliance)", "price": "À partir de ~$50 000/an" },
+      { "name": "AI Governance (2026)", "price": "Tarif sur demande" }
+    ],
+    "key_features": [
+      "Consentement et gestion des cookies",
+      "Automatisation de la confidentialité RGPD/CCPA",
+      "DPIA/PIA automatisée",
+      "Gestion des risques tiers et évaluations",
+      "Screening sanctions et conformité AML",
+      "Workflows de demandes de droits d'accès",
+      "Gouvernance IA avec conformité éthique",
+      "Intégrations Microsoft 365, ServiceNow, Jira"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez données personnelles multi-juridictions (RGPD, CCPA, etc.).",
+        "Vous avez obligation de conformité GRC et audit.",
+        "Vous devez piloter risques fournisseurs (évaluations, AML).",
+        "Vous déployez IA et avez besoin de gouvernance éthique."
+      ],
+      "avoidIf": [
+        "Vous avez un budget très limité.",
+        "Vous êtes micro-entreprise sans compliance complexe.",
+        "Vous refusez contrat d'engagement minimal annuel."
+      ],
+      "threshold": "OneTrust s'adresse aux entreprises avec obligations de conformité multinationales ; les start-ups ou micro-entités trouveront solutions allégées."
+    },
+    "pros": [
+      "Plateforme unifiée couvrant RGPD, CCPA, GRC, IA.",
+      "DPIA/PIA automatisées pour gagner temps.",
+      "Gestion des risques tiers intégrée.",
+      "Governance IA pour conformité éthique.",
+      "Reconnue Leader par Gartner et Forrester.",
+      "Nommée Visionnaire 2026 Magic Quadrant IA Governance."
+    ],
+    "cons": [
+      "Tarification opaque avec un ticket d'entrée élevé.",
+      "Fortes hausses au renouvellement rapportées par des clients.",
+      "Migration vers metering sur le trafic (pas bon pour sites traffic-élevé).",
+      "Arrêt du tier self-serve OneTrust Pro.",
+      "Courbe d'apprentissage importante."
+    ],
+    "use_cases": [
+      "Gérer consentement utilisateur et cookies multi-domaines.",
+      "Automatiser conformité RGPD/CCPA.",
+      "Évaluer et monitorer risques fournisseurs tiers.",
+      "Piloter workflows d'accès et rectification données.",
+      "Implementer gouvernance IA et conformité éthique.",
+      "Conduire audits GRC et démontrer conformité."
+    ],
+    "relevant_for": ["Responsables confidentialité (DPO)", "Équipes GRC", "Gestionnaires de conformité", "Entreprises multinationales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You handle personal data across multiple jurisdictions (GDPR, CCPA, etc.).",
+        "You have mandatory GRC compliance and audit requirements.",
+        "You must manage vendor risk (assessments, AML screening).",
+        "You deploy AI and need ethical governance."
+      ],
+      "avoidIf": [
+        "You have a very tight budget.",
+        "You are a micro-business without complex compliance.",
+        "You refuse annual minimum contract commitment."
+      ],
+      "threshold": "OneTrust targets enterprises with multinational compliance obligations; startups or micro-entities are better served by lighter solutions."
+    },
+    "pros": [
+      "Unified platform covering GDPR, CCPA, GRC, and AI governance.",
+      "Automated DPIA/PIA workflows save time.",
+      "Integrated third-party vendor risk management.",
+      "AI governance for ethical compliance.",
+      "Recognized Gartner Leader and Forrester Leader.",
+      "Named 2026 Visionary in Magic Quadrant for AI Governance."
+    ],
+    "cons": [
+      "Opaque pricing with a high entry ticket.",
+      "Steep renewal increases reported by customers.",
+      "Shift to traffic-based metering (not favorable for high-traffic sites).",
+      "Discontinuation of OneTrust Pro self-serve tier.",
+      "Steep learning curve."
+    ],
+    "use_cases": [
+      "Manage user consent and cookies across multiple domains.",
+      "Automate GDPR/CCPA compliance workflows.",
+      "Assess and monitor third-party vendor risks.",
+      "Drive data access and rectification workflows.",
+      "Implement AI governance and ethical compliance.",
+      "Conduct GRC audits and demonstrate compliance."
+    ]
+  }
+}

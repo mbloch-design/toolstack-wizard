@@ -1,0 +1,91 @@
+{
+  "slug": "zelt",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zelt — Pricing (site officiel)", "url": "https://zelt.app/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme SIRH tout-en-un pour PME, centralisant gestion du personnel, paie, avantages, temps de travail et IT en un seul système.",
+    "what_en": "All-in-one HR platform for SMEs, centralizing employee management, payroll, benefits, time tracking, and IT in a single system.",
+    "pricing_model": "Abonnement par utilisateur, deux tiers (Core et Pro) avec minimum 20 sièges.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit disponible sur demande." },
+    "plans": [
+      { "name": "Core", "price": "£5/utilisateur/mois (minimum 20 sièges) — accès de base à tous les modules" },
+      { "name": "Pro", "price": "Tarif sur demande — déblocage par module avec fonctionnalités illimitées" }
+    ],
+    "key_features": [
+      "Gestion des employees et documents",
+      "Paie intégrée avec conformité HMRC",
+      "Gestion du temps et des congés",
+      "Gestion des actifs IT et sécurité",
+      "Provisionnement IT automatisé",
+      "Avis de performance et sondages d'engagement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME (11 à 1 000 salariés) en France ou en Europe.",
+        "Vous cherchez une SIRH tout-en-one unifiée.",
+        "Vous avez besoin de conformité HMRC/paie réglementée."
+      ],
+      "avoidIf": [
+        "Vous avez moins de 20 salariés (minimum de sièges).",
+        "Vous cherchez une solution gratuite.",
+        "Vous êtes micro-entreprise ou freelance solo."
+      ],
+      "threshold": "Zelt s'adresse aux PME structurées ayant besoin d'une plateforme RH unifiée ; les solopreneurs ou micro-équipes trouveront mieux ailleurs."
+    },
+    "pros": [
+      "Centralise RH, paie, IT et avantages dans un seul système.",
+      "Onboarding et offboarding automatisés.",
+      "Conformité réglementaire HMRC intégrée.",
+      "Pistes d'audit exhaustives et accès API."
+    ],
+    "cons": [
+      "Minimum de 20 sièges (coût initial pour petites équipes).",
+      "Tarification opaque pour le tier Pro.",
+      "Axé principalement sur le marché britannique/européen."
+    ],
+    "use_cases": [
+      "Automatiser et centraliser la gestion RH dans une PME.",
+      "Simplifier la paie et la conformité réglementaire.",
+      "Gérer le cycle de vie complet des employés (onboarding à offboarding).",
+      "Réduire les tâches administratives en IT provisioning."
+    ],
+    "relevant_for": ["PME (11-1000 salariés)", "Directeurs RH", "Responsables paie et conformité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an SME (11–1,000 employees) in France or Europe.",
+        "You need an all-in-one, unified HR platform.",
+        "You require regulated payroll and compliance features."
+      ],
+      "avoidIf": [
+        "You have fewer than 20 employees (seat minimum).",
+        "You need a free solution.",
+        "You are a micro-business or solo freelancer."
+      ],
+      "threshold": "Zelt targets structured SMEs needing unified HR infrastructure; solopreneurs and micro-teams are better served elsewhere."
+    },
+    "pros": [
+      "Consolidates HR, payroll, IT, and benefits in one platform.",
+      "Automated onboarding and offboarding workflows.",
+      "Built-in regulatory compliance (HMRC).",
+      "Comprehensive audit trails and API access."
+    ],
+    "cons": [
+      "Minimum 20-seat commitment (high setup for small teams).",
+      "Opaque pricing for Pro tier.",
+      "Primarily optimized for UK/European markets."
+    ],
+    "use_cases": [
+      "Automate and centralize HR operations in an SME.",
+      "Simplify payroll processing and regulatory compliance.",
+      "Manage full employee lifecycle from hire to exit.",
+      "Reduce manual IT provisioning tasks."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "microsoft-dynamics-business-central",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Dynamics 365 Business Central — site officiel", "url": "https://www.microsoft.com/dynamics-365/" }
+  ],
+  "facts": {
+    "what": "ERP cloud pour PME et ETI, intégrant comptabilité, ventes, achats et manufacturing en une seule plateforme avec IA et automatisation.",
+    "what_en": "Cloud ERP for SMEs and mid-market companies, integrating accounting, sales, purchasing, and manufacturing in a single platform with AI and automation.",
+    "pricing_model": "Abonnement SaaS par utilisateur, deux tiers d'édition cloud (Essentials, Premium). Trois types d'utilisateurs : Full, Team Member, Device.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai disponible via Microsoft." },
+    "plans": [
+      { "name": "Essentials", "price": "80 $/utilisateur/mois" },
+      { "name": "Premium", "price": "110 $/utilisateur/mois" },
+      { "name": "Team Member", "price": "8 $/utilisateur/mois" },
+      { "name": "Device License", "price": "40 $/appareil/mois" }
+    ],
+    "key_features": [
+      "Comptabilité complète et reporting financier",
+      "Gestion des ventes et du CRM intégré",
+      "Achats et gestion des stocks",
+      "Manufacturing et planification de production",
+      "IA pour les prévisions et insights",
+      "Intégration Microsoft (Excel, Power BI, Teams)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME/ETI en croissance (10–500 collaborateurs).",
+        "Vous utilisez déjà Microsoft 365 et Excel.",
+        "Vous avez besoin de comptabilité + ventes + manufacturing intégrés."
+      ],
+      "avoidIf": [
+        "Vous êtes une très petite structure (pas de comptable).",
+        "Vous avez des besoins atypiques ou très spécialisés.",
+        "Votre budget d'implémentation est quasi zéro."
+      ],
+      "threshold": "Business Central convient parfaitement aux PME en croissance qui maîtrisent déjà Microsoft ; pour une startup ou structure très légère, c'est disproportionné."
+    },
+    "pros": [
+      "Intégration native avec Microsoft 365 et Power BI.",
+      "Implémentation rapide (3–6 mois vs. 12–24 pour un ERP classique).",
+      "Coûts de licence raisonnables pour une PME.",
+      "Scalabilité vers Dynamics 365 Finance si croissance."
+    ],
+    "cons": [
+      "Moins puissant que Dynamics 365 Finance pour les groupes complexes.",
+      "Intégration de données tierces peut être coûteuse.",
+      "Support et formation importants dans les premiers mois.",
+      "Dépendance à Microsoft pour les mises à jour."
+    ],
+    "use_cases": [
+      "Déployer un ERP rapide pour une PME en croissance.",
+      "Automatiser la facturation, les commandes et l'inventaire.",
+      "Créer des reportings financiers en temps réel via Power BI.",
+      "Intégrer ventes, achats et finance dans un seul système."
+    ],
+    "relevant_for": ["PME et ETI en croissance", "Directeurs généraux", "Contrôleurs de gestion", "Responsables opérations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a growing SME/mid-market (10–500 employees).",
+        "You already use Microsoft 365 and Excel.",
+        "You need integrated accounting, sales, and manufacturing."
+      ],
+      "avoidIf": [
+        "You are a very small structure with no accountant.",
+        "You have atypical or highly specialized needs.",
+        "Your implementation budget is near zero."
+      ],
+      "threshold": "Business Central fits growing SMEs that are already fluent in Microsoft; for a startup or very lean operation, it's disproportionate."
+    },
+    "pros": [
+      "Native integration with Microsoft 365 and Power BI.",
+      "Fast implementation (3–6 months vs. 12–24 for classic ERP).",
+      "Reasonable licensing costs for an SME.",
+      "Scalability to Dynamics 365 Finance if growth occurs."
+    ],
+    "cons": [
+      "Less powerful than Dynamics 365 Finance for complex groups.",
+      "Third-party data integration can be costly.",
+      "Significant support and training in early months.",
+      "Dependency on Microsoft for updates."
+    ],
+    "use_cases": [
+      "Deploy a fast ERP for a growing SME.",
+      "Automate invoicing, orders, and inventory.",
+      "Create real-time financial reporting via Power BI.",
+      "Integrate sales, purchasing, and finance in one system."
+    ]
+  }
+}

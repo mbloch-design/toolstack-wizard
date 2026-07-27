@@ -1,0 +1,96 @@
+{
+  "slug": "conga",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Conga — plateforme commerciale unifiée (site officiel)", "url": "https://conga.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de commerce unifié combinant automatisation documentaire, gestion du cycle de vie des contrats, tarification et commerce des revenus, optimisation des prix et intelligence IA pour aligner les équipes commerciales et juridiques.",
+    "what_en": "Unified commerce platform combining document automation, contract lifecycle management, revenue and commerce capabilities, pricing optimization, and AI-driven intelligence to align sales and legal teams.",
+    "pricing_model": "Abonnement personnalisé basé sur les modules (CLM, CPQ, facturation, document automation). Tarification sur demande.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai sur demande via contact commercial." },
+    "plans": [
+      { "name": "Conga Composer (Document Automation)", "price": "Tarif sur demande" },
+      { "name": "Conga Sign (eSignature)", "price": "Tarif sur demande" },
+      { "name": "Conga CLM (Contract Lifecycle Management)", "price": "Estimé 30 000–100 000 $/an" },
+      { "name": "Conga CPQ & Billing", "price": "Tarif sur demande" }
+    ],
+    "key_features": [
+      "Automatisation documentaire et signature électronique",
+      "Gestion complète du cycle de vie des contrats",
+      "CPQ (Configure-Price-Quote) intégré",
+      "Optimisation des prix avec IA",
+      "Facturation et gestion des revenus",
+      "Intelligence IA pour la chaîne commerciale",
+      "Intégrations Salesforce natives"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une entreprise moyenne à grande cherchant à unifier commerce et contrats.",
+        "Vous avez besoin de CLM, CPQ et d'automatisation documentaire intégrés.",
+        "Vous utilisez Salesforce et avez un budget de mise en œuvre."
+      ],
+      "avoidIf": [
+        "Vous êtes une start-up ou PME sans budget CLM.",
+        "Vous cherchez une solution légère ou low-code simple.",
+        "Vous avez un petit nombre de contrats à gérer."
+      ],
+      "threshold": "Conga s'adresse aux entreprises de taille moyenne-grande nécessitant une solution CLM enterprise intégrée ; les petites équipes trouveront des alternatives plus abordables."
+    },
+    "pros": [
+      "Intégration native Salesforce et commerce.",
+      "Plateforme unifiée couvrant documents, contrats et tarification.",
+      "Intelligence IA pour accélérer les cycles commerciaux.",
+      "Automatisation end-to-end des workflows commerciaux."
+    ],
+    "cons": [
+      "Tarification élevée et exigeant contact commercial.",
+      "Complexité de mise en œuvre pour petites équipes.",
+      "Courbe d'apprentissage importante.",
+      "Coûts de personnalisation et d'intégration substantiels."
+    ],
+    "use_cases": [
+      "Automatiser la génération et la signature de contrats de vente.",
+      "Centraliser tarification et gestion des devis.",
+      "Piloter l'agrément de contrats entre équipes juridiques et commerciales.",
+      "Créer des documents sans code réutilisables et conformes."
+    ],
+    "relevant_for": ["Entreprises moyennes à grandes", "Équipes juridiques et commerciales", "Responsables revenus et conformité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a mid-market to enterprise seeking unified commerce and contract management.",
+        "You need integrated CLM, CPQ, and document automation.",
+        "You use Salesforce and have implementation budget."
+      ],
+      "avoidIf": [
+        "You are a startup or SME without CLM budget.",
+        "You need a lightweight or simple no-code solution.",
+        "You manage few contracts or transactions."
+      ],
+      "threshold": "Conga targets mid-to-large enterprises requiring integrated CLM infrastructure; small teams are better served by lighter alternatives."
+    },
+    "pros": [
+      "Native Salesforce integration and commerce capabilities.",
+      "Unified platform spanning documents, contracts, and pricing.",
+      "AI-driven intelligence accelerating sales cycles.",
+      "End-to-end automation of commercial workflows."
+    ],
+    "cons": [
+      "High pricing requiring sales engagement.",
+      "Implementation complexity for small teams.",
+      "Steep learning curve.",
+      "Customization and integration costs are substantial."
+    ],
+    "use_cases": [
+      "Automate generation and signing of sales contracts.",
+      "Centralize quoting and pricing management.",
+      "Drive contract approvals between legal and sales teams.",
+      "Create reusable, compliant no-code documents."
+    ]
+  }
+}

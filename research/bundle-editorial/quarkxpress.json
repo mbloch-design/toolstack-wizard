@@ -1,0 +1,94 @@
+{
+  "slug": "quarkxpress",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "QuarkXPress official product page", "url": "https://www.quark.com/products/quarkxpress" }
+  ],
+  "facts": {
+    "what": "Logiciel de mise en page et publication assistée par ordinateur (PAO) professionnel pour la création de brochures, magazines, livres et documents multi-canal avec typographie avancée et style sheets.",
+    "what_en": "Professional desktop publishing (DTP) software for creating brochures, magazines, books, and multi-channel documents with advanced typography, style management, and collaborative workflows.",
+    "pricing_model": "Abonnement annuel avec maintenance et support, ou licence perpétuelle unique.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès payant uniquement via abonnement ou licence perpétuelle." },
+    "plans": [
+      { "name": "Abonnement annuel avec maintenance", "price": "279 $ par an (inclut mises à jour et support)" },
+      { "name": "Licence perpétuelle", "price": "699 $ (sans upgrades ni support après achat)" }
+    ],
+    "key_features": [
+      "Mise en page et design layout avancés",
+      "Typographie professionnelle et feuilles de styles",
+      "Gestion de contenu et import/export",
+      "Édition d'images intégrée et retouche",
+      "Sortie multi-formats (PDF print-ready, HTML5, publications numériques)",
+      "Workflows collaboratifs multi-utilisateurs",
+      "Contrôle de version"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des documents imprimés (magazines, brochures, livres) professionnellement.",
+        "Vous avez besoin de typographie avancée et gestion de styles.",
+        "Vous préférez une alternative historique et éprouvée à InDesign."
+      ],
+      "avoidIf": [
+        "Vous débutez en PAO (courbe d'apprentissage importante).",
+        "Vous cherchez un outil gratuit ou très abordable.",
+        "Vous avez besoin d'intégrations récentes avec les suites modernes."
+      ],
+      "threshold": "QuarkXPress convient aux studios de PAO établis avec workflows typographiques exigeants ; pour débutants ou budgets limités, envisagez d'autres solutions."
+    },
+    "pros": [
+      "Historique de 30+ ans dans la PAO professionnelle.",
+      "Typographie avancée et gestion de styles très fine.",
+      "Contrôle de version et collaboration multi-utilisateurs.",
+      "Édition d'images intégrée directement dans le workflow."
+    ],
+    "cons": [
+      "Plus cher que InDesign en abonnement annuel.",
+      "Marché rétréci, moins de ressources éducatives et plugins que concurrents.",
+      "Pas de version gratuite ou d'essai gratuit.",
+      "Interface datée comparée aux outils modernes."
+    ],
+    "use_cases": [
+      "Mise en page de magazines et journaux professionnels.",
+      "Design de brochures et catalogues techniques.",
+      "Production de livres multi-canal (print + digital).",
+      "Projets éditoriaux complexes avec typographie fine."
+    ],
+    "relevant_for": ["Studios d'édition", "Designers PAO", "Agences de communications"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce printed materials (magazines, brochures, books) professionally.",
+        "You need advanced typography and fine style management.",
+        "You prefer a battle-tested alternative to InDesign."
+      ],
+      "avoidIf": [
+        "You're new to DTP (steep learning curve).",
+        "You need a free or very affordable tool.",
+        "You rely on modern integrations with contemporary design suites."
+      ],
+      "threshold": "QuarkXPress is for established publishing studios with demanding typographic workflows; for beginners or tight budgets, consider lighter alternatives."
+    },
+    "pros": [
+      "30+ years of professional DTP heritage and reliability.",
+      "Advanced typography and granular style management.",
+      "Version control and multi-user collaboration.",
+      "Built-in image editing integrated into workflow."
+    ],
+    "cons": [
+      "Pricier than InDesign on annual subscription.",
+      "Shrinking market, fewer educational resources and plugins.",
+      "No free version or free trial.",
+      "Dated interface compared to modern design tools."
+    ],
+    "use_cases": [
+      "Professional magazine and newspaper layout.",
+      "Brochure and technical catalog design.",
+      "Multi-channel book production (print + digital).",
+      "Complex editorial projects with fine typography."
+    ]
+  }
+}

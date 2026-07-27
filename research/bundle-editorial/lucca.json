@@ -1,0 +1,91 @@
+{
+  "slug": "lucca",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lucca (site officiel)", "url": "https://www.lucca.fr" }
+  ],
+  "facts": {
+    "what": "Suite modulaire de gestion RH française (SIRH), couvrant personnel, absences, talents, compensation/paie, et notes de frais, avec 15 solutions interconnectées et IA « Ask Lucca ».",
+    "what_en": "Modular French HR suite (SIRH), covering employee file, absences, talent, compensation/payroll, and expenses, with 15 interconnected solutions and AI 'Ask Lucca'.",
+    "pricing_model": "Modèle à la carte modulaire — chaque logiciel a son tarif selon modules et nombre d'utilisateurs. La Suite Paie forfaitaire est fixée à montants sur la page officielle.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification personnalisée selon modules sélectionnés et effectif." },
+    "plans": [
+      { "name": "Modules à la carte", "price": "Tarification modulaire flexible : 0.50€-6.25€/utilisateur/mois selon module pour PME ~50 salariés" },
+      { "name": "Suite Paie (forfaitaire)", "price": "6.15€/utilisateur/mois (Timmi Absences, Poplee Socle RH, Pagga Rémunération, Pagga Bulletins). Tarif dégressif." }
+    ],
+    "key_features": [
+      "15 modules RH interconnectés (personnel, congés, talents, paie, notes de frais, entretiens)",
+      "IA « Ask Lucca » conversationnelle",
+      "Gestion congés/absences (Timmi)",
+      "Socle RH/personnel (Poplee)",
+      "Rémunération et bulletins (Pagga)",
+      "Automations AI pour paie et RH",
+      "Intégrations Silae et autres outils",
+      "Interface modulable et évolutive"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes PME-ETI française avec paie et RH classiques.",
+        "Vous cherchez solution modulable à prix avantageux.",
+        "Vous avez équipe RH/Paie en interne."
+      ],
+      "avoidIf": [
+        "Vous êtes microentreprise (<10 salariés).",
+        "Vous avez paie très complexe ou multi-pays.",
+        "Vous cherchez une solution cloud entièrement self-service."
+      ],
+      "threshold": "Lucca excelle pour PME-ETI française en croissance ; pour microentreprise ou paie très complexe, autres solutions."
+    },
+    "pros": [
+      "Suite modulable et à prix avantageux pour PME.",
+      "Solution entièrement française — support local de qualité.",
+      "IA Ask Lucca pour assistance paie/RH.",
+      "8000+ clients en France — fiabilité prouvée."
+    ],
+    "cons": [
+      "Interface moins moderne que SaaS cloud purs.",
+      "Paie moins simple que solutions all-in-one intégrées.",
+      "Besoin de ressources RH/Paie en interne pour complet."
+    ],
+    "use_cases": [
+      "Gérer RH et paie PME avec IA d'assistance.",
+      "Remplacer tableurs Excel par outils modulables.",
+      "Utiliser IA Ask Lucca pour automations paie."
+    ],
+    "relevant_for": ["PME-ETI françaises", "RH/Paie généralists", "Experts-comptables"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a French SMB to mid-market with standard HR/payroll.",
+        "You want a modular, cost-effective solution.",
+        "You have HR/Payroll team in-house."
+      ],
+      "avoidIf": [
+        "You're a microenterprise (<10 employees).",
+        "You have very complex or multi-country payroll.",
+        "You want a fully self-service cloud solution."
+      ],
+      "threshold": "Lucca excels for growing French SMBs; for microenterprises or complex payroll, other solutions are better."
+    },
+    "pros": [
+      "Modular suite at attractive price for SMBs.",
+      "Fully French solution — strong local support.",
+      "Ask Lucca AI for payroll/HR assistance.",
+      "8,000+ clients in France — proven reliability."
+    ],
+    "cons": [
+      "Interface less modern than pure cloud SaaS.",
+      "Payroll less simple than integrated all-in-one solutions.",
+      "Requires in-house HR/Payroll resources for full value."
+    ],
+    "use_cases": [
+      "Manage SMB HR and payroll with AI assistance.",
+      "Replace Excel spreadsheets with modular tools.",
+      "Leverage Ask Lucca AI for payroll automations."
+    ]
+  }
+}

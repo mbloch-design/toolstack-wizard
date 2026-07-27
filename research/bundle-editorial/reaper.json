@@ -1,0 +1,96 @@
+{
+  "slug": "reaper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "REAPER official website", "url": "https://www.reaper.fm/" }
+  ],
+  "facts": {
+    "what": "Station de travail audio numérique (DAW) légère et très personnalisable pour l'enregistrement, l'édition, le mixage et le mastering audio avec support de pistes illimitées.",
+    "what_en": "Lightweight and highly customizable digital audio workstation (DAW) for recording, editing, mixing, and mastering audio with unlimited tracks and plugin ecosystem support.",
+    "pricing_model": "Licence perpétuelle unique, paiement unique sans abonnement. Essai complet de 60 jours gratuit.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente, mais essai complet de 60 jours sans limitation ni watermark." },
+    "plans": [
+      { "name": "Licence personnelle (usage personnel ou petites structures < 20k€/an)", "price": "60 $ (paiement unique perpétuel)" },
+      { "name": "Licence commerciale", "price": "225 $ (paiement unique perpétuel)" }
+    ],
+    "key_features": [
+      "Pistes audio et MIDI illimitées",
+      "Routing et mix avancés avec flexibilité extrême",
+      "Support VST, VST3, AU, et JS plugins",
+      "Édition audio destructive et non-destructive",
+      "Automation avancée et actions/scripts personnalisés",
+      "Édition vidéo et remote control intégrés",
+      "Interface hautement personnalisable"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un DAW léger, stable et très abordable.",
+        "Vous travaillez avec des pistes illimitées et des routages complexes.",
+        "Vous aimez personnaliser votre interface et vos workflows."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une large communauté et de nombreux templates tout-faits.",
+        "Vous préférez une interface graphique très moderne et intuitive."
+      ],
+      "threshold": "REAPER excelle pour les pros du son exigeants et petits budgets ; pour débutants cherchant de l'aide rapide, les DAW plus populaires offrent meilleur onboarding."
+    },
+    "pros": [
+      "Très abordable : licence perpétuelle, sans abonnement.",
+      "Pistes audio et MIDI illimitées sans surcoût.",
+      "Routing et automation avancés, extrêmement flexible.",
+      "Personnalisation sans limite (scripts Lua, actions personnalisées).",
+      "Très léger, fonctionne même sur matériel ancien.",
+      "Mises à jour très fréquentes (toutes les quelques semaines)."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Interface initiale intimidante (pente d'apprentissage).",
+      "Communauté plus petite que les DAW mainstream.",
+      "Documentation moins visuelle et didactique que concurrents."
+    ],
+    "use_cases": [
+      "Enregistrement et mixage audio multi-piste illimité.",
+      "Production musicale avec flexibilité maximale.",
+      "Édition et mastering audio post-production.",
+      "Workflows personnalisés avec scripts et automation."
+    ],
+    "relevant_for": ["Producteurs audio indépendants", "Studios de post-production", "Musiciens / compositeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a lightweight, reliable DAW at a bargain price.",
+        "You need unlimited tracks and complex routing.",
+        "You enjoy customizing interfaces and workflows."
+      ],
+      "avoidIf": [
+        "You need a large community and ready-made templates.",
+        "You prefer a modern, intuitive visual interface out of the box."
+      ],
+      "threshold": "REAPER excels for demanding audio pros on tight budgets; for beginners seeking quick help, mainstream DAWs offer gentler onboarding."
+    },
+    "pros": [
+      "Extremely affordable: perpetual license, no subscription.",
+      "Unlimited audio and MIDI tracks at no extra cost.",
+      "Advanced routing and automation, incredibly flexible.",
+      "Unlimited customization (Lua scripting, custom actions).",
+      "Very lightweight, runs on older hardware.",
+      "Frequent updates (every few weeks)."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Initial interface can be intimidating (learning curve).",
+      "Smaller community than mainstream DAWs.",
+      "Documentation less visual and tutorial-heavy than competitors."
+    ],
+    "use_cases": [
+      "Multi-track unlimited audio recording and mixing.",
+      "Music production with maximum flexibility.",
+      "Audio editing and mastering for post-production.",
+      "Custom workflows with scripting and automation."
+    ]
+  }
+}

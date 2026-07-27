@@ -1,0 +1,99 @@
+{
+  "slug": "juro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Juro — Plateforme de contrats intelligents (site officiel)", "url": "https://juro.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de cycle de vie des contrats (CLM) alimentée par l'IA, automatisant création, révision, négociation et approbation de contrats avec intégration CRM et assistant IA natif.",
+    "what_en": "AI-powered contract lifecycle management (CLM) platform automating contract creation, review, negotiation, and approval with native CRM integration and AI assistant (Operator).",
+    "pricing_model": "Abonnement par utilisateur avec plans personnalisés selon volume et fonctionnalités (e-signature premium optionnelle).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai sur demande. Montants sur la page officielle." },
+    "plans": [
+      { "name": "Starter", "price": "Estimé ~$25/utilisateur/mois ou à partir de ~10 000 $/an pour petites équipes" },
+      { "name": "Premium Signing (add-on)", "price": "~$10/utilisateur/mois (optionnel)" },
+      { "name": "Enterprise", "price": "Tarif sur demande — API, intégrations personnalisées, support dédié" }
+    ],
+    "key_features": [
+      "Modèles de contrats sans code avec approbation intelligente.",
+      "Assistant IA (Operator) pour rédaction, résumé et extraction de clauses.",
+      "Signature électronique incluse dans tous les tiers.",
+      "Analyse des contrats et alertes de risque.",
+      "Intégration Salesforce, HubSpot, Pipedrive.",
+      "Analytique de contrats et suivi des expirations.",
+      "Recherche sémantique et dépôt de contrats."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une équipe juridique ou commerciale cherchant à accélérer l'agrément.",
+        "Vous avez besoin d'IA pour rédaction, résumé et analyse de contrats.",
+        "Vous utilisez Salesforce, HubSpot ou Pipedrive."
+      ],
+      "avoidIf": [
+        "Vous gérez peu de contrats ou avez un budget très limité.",
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous avez besoin de workflows super complexes ou personnalisés."
+      ],
+      "threshold": "Juro convient aux équipes juridiques modernes cherchant automatisation IA et accélération ; les équipes sans contrats réguliers trouveront solutions plus légères."
+    },
+    "pros": [
+      "IA native pour génération, révision et analyse de contrats.",
+      "Assistant Operator pour requêtes en langage naturel.",
+      "Signature électronique incluse dans tous les plans.",
+      "Intégrations CRM seamless (Salesforce, HubSpot, Pipedrive).",
+      "Réduction notable du temps de signature selon l'éditeur."
+    ],
+    "cons": [
+      "Tarification non publique — contact commercial requis.",
+      "E-signature premium à coût supplémentaire.",
+      "Personnalisations avancées onéreuses.",
+      "Courbe d'apprentissage pour l'assistant IA."
+    ],
+    "use_cases": [
+      "Générer des contrats de vente instantanés à partir de modèles.",
+      "Automatiser révision et approbation de contrats entrants.",
+      "Analyser et extraire risques et clauses clés.",
+      "Piloter renouvellements et expirations de contrats.",
+      "Servir de 'membre d'équipe' juridique supplémentaire pour les start-ups."
+    ],
+    "relevant_for": ["Équipes juridiques", "Responsables contrats commerciaux", "Start-ups en scaling"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a legal or sales team seeking to accelerate contract approval.",
+        "You need AI for contract drafting, summarization, and risk analysis.",
+        "You use Salesforce, HubSpot, or Pipedrive."
+      ],
+      "avoidIf": [
+        "You manage few contracts or have tight budget constraints.",
+        "You need a fully free solution.",
+        "You require highly custom or complex workflows."
+      ],
+      "threshold": "Juro suits modern legal teams seeking AI automation and cycle-time reduction; teams with few contracts are better served by lighter solutions."
+    },
+    "pros": [
+      "Native AI for contract generation, review, and analysis.",
+      "Operator AI assistant for natural-language contract queries.",
+      "E-signature included in all plans.",
+      "Seamless CRM integrations (Salesforce, HubSpot, Pipedrive).",
+      "Notable reduction in time-to-sign reported by the vendor."
+    ],
+    "cons": [
+      "Pricing not public — sales engagement required.",
+      "Premium e-signature carries additional cost.",
+      "Advanced customizations are expensive.",
+      "Learning curve for AI assistant optimization."
+    ],
+    "use_cases": [
+      "Generate instant sales contracts from reusable templates.",
+      "Automate review and approval of incoming contracts.",
+      "Analyze and extract risks and key contract terms.",
+      "Drive contract renewals and expiration tracking.",
+      "Act as extra in-house legal team member for scaling startups."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "pigment",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pigment official website", "url": "https://www.gopigment.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de planification d'entreprise (IBP) native IA avec architecture intégrée, 30+ connecteurs natifs et modélisation multi-dimensionnelle pour budgeting, forecasting, planification ventes et scenariosing collaboratif.",
+    "what_en": "AI-native integrated business planning (IBP) platform with integrated architecture, 30+ native connectors, and multi-dimensional modeling for budgeting, forecasting, sales planning, and collaborative scenario building.",
+    "pricing_model": "Pricing personnalisé basé nombre utilisateurs (power user, contributor, viewer), taille totale déploiement, durée contrat et négociation. Pas de pricing public.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ni trial autonome. Pricing sur-mesure uniquement via démonstration et négociation commerciale." },
+    "plans": [
+      { "name": "Contrats personnalisés (estimé SMB)", "price": "Montants sur la page officielle (Pigment n'affiche pas pricing public)" }
+    ],
+    "key_features": [
+      "Plateforme IBP (Integrated Business Planning) AI-native",
+      "30+ connecteurs natifs ETL/API (Salesforce, SAP, Oracle, Snowflake, etc.)",
+      "Modélisation multi-dimensionnelle flexible",
+      "Agentss IA (Modeler Agent, assistants personnalisés)",
+      "Collaboration asynchrone et workflows d'approbation",
+      "Dashboards intuitifs et UX moderne",
+      "Maintenance données en sync temps réel",
+      "Audit trail complet et gouvernance"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME/ETI tech-forward avec budgets de planification.",
+        "Vous cherchez plateforme IBP moderne avec UX intuitive.",
+        "Vous avez besoin de 30+ intégrations natives (Salesforce, SAP, etc.)",
+        "Vous valorisez IA agentic pour automation planning."
+      ],
+      "avoidIf": [
+        "Vous avez très petit budget (< 10k€/an).",
+        "Vous préférez pricing transparent et public.",
+        "Vous avez besoin de solution hyper-configurable low-cost."
+      ],
+      "threshold": "Pigment excelle pour PME tech-forward cherchant IBP moderne avec UX supérieure ; contre Anaplan (complexe) et Planful (moins cher), Pigment offre positionnement mid-market avec IA native."
+    },
+    "pros": [
+      "UX moderne et intuitive, facile apprentissage vs Anaplan.",
+      "30+ connecteurs natifs : intégrations automtisées sans ETL custom.",
+      "IA agentic pour automations planification avancée.",
+      "Architecture intégrée : données sync temps réel entre modèles.",
+      "Collaboration intrinsèque avec approvals workflows.",
+      "Fondée 2019 : culture startup agile, innovation rapide."
+    ],
+    "cons": [
+      "Tarification non publique (démo et négociation requises), positionnée au-dessus de certains concurrents.",
+      "Moins de cas clients historiques vs Anaplan établie.",
+      "Encore en croissance : support/training peut être moins mature.",
+      "Lock-in data plus fort avec architecture propriétaire."
+    ],
+    "use_cases": [
+      "Planification intégrée finance/sales/supply pour PME tech.",
+      "Budgeting collaboratif avec cycles approvals asynchrone.",
+      "Forecasting IA et scenarios what-if pour stratégie.",
+      "Consolidation automtisée pour groupes PME."
+    ],
+    "relevant_for": ["PME / ETI tech-forward", "Startups avec scaling", "Groupes PME décentralisés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a tech-forward SMB/mid-market with planning budgets.",
+        "You want modern IBP with intuitive UX.",
+        "You need 30+ native integrations (Salesforce, SAP, etc.).",
+        "You value agentic AI for planning automation."
+      ],
+      "avoidIf": [
+        "You have a very tight budget.",
+        "You prefer transparent, public pricing.",
+        "You need a highly configurable, low-cost solution."
+      ],
+      "threshold": "Pigment excels for tech-forward SMBs seeking modern IBP with superior UX; vs. Anaplan (complex) and Planful (cheaper), Pigment offers mid-market positioning with native AI."
+    },
+    "pros": [
+      "Modern, intuitive UX; easier to learn than Anaplan.",
+      "30+ native connectors: automated integrations without custom ETL.",
+      "Agentic AI for advanced planning automation.",
+      "Integrated architecture: real-time data sync across models.",
+      "Collaboration built-in with approval workflows.",
+      "Founded 2019: agile startup culture, rapid innovation."
+    ],
+    "cons": [
+      "Non-public pricing (demo and negotiation required), positioned above some competitors.",
+      "Fewer historical customers vs. established Anaplan.",
+      "Still growing: support/training may be less mature.",
+      "Stronger data lock-in with proprietary architecture."
+    ],
+    "use_cases": [
+      "Integrated planning (finance/sales/supply) for tech SMBs.",
+      "Collaborative budgeting with asynchronous approval cycles.",
+      "AI-driven forecasting and what-if scenarios for strategy.",
+      "Automated consolidation for SMB groups."
+    ]
+  }
+}

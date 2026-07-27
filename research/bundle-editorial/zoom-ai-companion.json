@@ -1,0 +1,99 @@
+{
+  "slug": "zoom-ai-companion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zoom — ZoomMate (formerly AI Companion) announcement", "url": "https://www.zoom.com/en/blog/zoom-ai-companion-zoommate/" }
+  ],
+  "facts": {
+    "what": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.).",
+    "what_en": "Agentic AI assistant for Zoom Meetings rebranded as ZoomMate (June 2026) that captures meeting context, generates summaries, extracts action items, and automates follow-ups across connected systems (Salesforce, Jira, Slack, etc.).",
+    "pricing_model": "Inclus dans les plans payants Zoom Workplace ; ZoomMate standalone coûte 20 $ par utilisateur/mois en sus.",
+    "free_tier": { "exists": false, "detail": "ZoomMate nécessite un plan Zoom payant (Pro, Business, etc.) ou un add-on standalone à 20 $/user/mois. Pas de version gratuite autonome." },
+    "plans": [
+      { "name": "Zoom AI Companion / ZoomMate (avec plan Zoom payant)", "price": "Inclus (starter à partir de 14,16 $/user/mois)" },
+      { "name": "ZoomMate standalone add-on", "price": "20 $ par utilisateur/mois" },
+      { "name": "Custom AI add-on (workflows avancés)", "price": "12 $/user/mois supplémentaires" }
+    ],
+    "key_features": [
+      "Résumés et transcriptions automatiques des réunions",
+      "Extraction d'éléments d'action (action items)",
+      "Catch Me Up : résumés temps réel pour retardataires",
+      "Draft emails et compose chat messages IA",
+      "Intégration workflows : Salesforce, Jira, ServiceNow, Slack, Google Workspace, Microsoft 365",
+      "Multi-langue transcription et traduction (30+ langues)",
+      "Custom AI assistants et automatisation workflows"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez déjà Zoom pour réunions et collaborations.",
+        "Vous cherchez assistant IA pour résumés et suivi automatisé.",
+        "Vous intégrez Zoom avec Salesforce, Jira ou autres outils métier."
+      ],
+      "avoidIf": [
+        "Vous utilisez un autre outil de réunion (Teams, Google Meet).",
+        "Vous cherchez une solution IA totalement autonome hors Zoom.",
+        "Votre cas d'usage requiert contrôle très fin des workflows."
+      ],
+      "threshold": "ZoomMate excelle pour équipes Zoom établies cherchant automatisation réunions + suivi ; pour organisations multiplate-formes ou indépendantes d'outils, les solutions IA pures (Otter.ai, Fireflies) offrent plus de flexibilité."
+    },
+    "pros": [
+      "Natif Zoom : pas d'intégration à configurer pour bases.",
+      "Résumés et transcriptions fiables dans 30+ langues.",
+      "Multi-workflows : génère emails, met à jour Salesforce, etc.",
+      "Inclus dans plans Zoom payants (gain de valeur).",
+      "Catch Me Up unique pour latecomers."
+    ],
+    "cons": [
+      "Dépendant de Zoom (verrouillage écosystème).",
+      "L'add-on facturé séparément revient cher pris isolément.",
+      "Disponibilité limitée régionnale/industrie.",
+      "Niveau de contrôle workflows moins fine que solutions dédiées."
+    ],
+    "use_cases": [
+      "Génération automatique de résumés réunions clients.",
+      "Suivi d'actions items dans Jira ou Salesforce.",
+      "Assistance multilingue pour équipes internationales.",
+      "Génération emails post-réunion automatisée.",
+      "Transcription archivale de réunions importantes."
+    ],
+    "relevant_for": ["Équipes collaboratives Zoom", "Sales teams (CRM integration)", "Organisations distribuées internationales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already use Zoom for meetings and collaboration.",
+        "You want AI assistance for summaries and automated follow-ups.",
+        "You integrate Zoom with Salesforce, Jira, or other business tools."
+      ],
+      "avoidIf": [
+        "You use a different meeting platform (Teams, Google Meet).",
+        "You need a fully standalone AI solution outside Zoom.",
+        "Your use case requires very fine-grained workflow control."
+      ],
+      "threshold": "ZoomMate excels for established Zoom teams seeking meeting automation + follow-up; for multi-platform organizations or tool-agnostic needs, pure AI solutions (Otter.ai, Fireflies) offer more flexibility."
+    },
+    "pros": [
+      "Native to Zoom: no integration setup needed for basics.",
+      "Reliable summaries and transcription in 30+ languages.",
+      "Multi-workflow: generates emails, updates Salesforce, etc.",
+      "Included in paid Zoom plans (value addition).",
+      "Unique Catch Me Up for latecomers."
+    ],
+    "cons": [
+      "Zoom-dependent (ecosystem lock-in).",
+      "The standalone add-on is pricey on its own.",
+      "Limited regional/industry availability.",
+      "Workflow control less granular than dedicated solutions."
+    ],
+    "use_cases": [
+      "Automatic client meeting summary generation.",
+      "Action item tracking in Jira or Salesforce.",
+      "Multilingual assistance for international teams.",
+      "Automated post-meeting email generation.",
+      "Transcription archival for important meetings."
+    ]
+  }
+}

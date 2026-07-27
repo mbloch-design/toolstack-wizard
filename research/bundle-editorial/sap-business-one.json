@@ -1,0 +1,96 @@
+{
+  "slug": "sap-business-one",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SAP Business One — site officiel", "url": "https://www.sap.com/products/erp/business-one.html" }
+  ],
+  "facts": {
+    "what": "ERP abordable pour PME (10–500 salariés) intégrant comptabilité, ventes, achats, inventory, CRM et analytics en un seul système.",
+    "what_en": "Affordable ERP for SMEs (10–500 employees) integrating accounting, sales, purchasing, inventory, CRM, and analytics in a single system.",
+    "pricing_model": "Deux modèles : licence perpétuelle (one-time) + maintenance annuelle, ou abonnement cloud mensuel par utilisateur.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essais disponibles via partenaires SAP." },
+    "plans": [
+      { "name": "On-Premise License", "price": "1 350–3 500 $ par utilisateur + 18–20% maintenance/an" },
+      { "name": "Cloud Professional", "price": "91 €/mois (~100 $/mois) par utilisateur" },
+      { "name": "Cloud Limited", "price": "47 €/mois (~50 $/mois) par utilisateur" },
+      { "name": "Cloud Starter", "price": "38 €/mois (~40 $/mois) pour jusqu'à 5 utilisateurs" }
+    ],
+    "key_features": [
+      "Comptabilité générale intégrée",
+      "Gestion des ventes et CRM",
+      "Achats et gestion des stocks",
+      "Manufacturing et production",
+      "Business intelligence et reporting",
+      "Conformité locale et fiscale",
+      "Mobile et interfaces modernes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME de 20–200 personnes avec structure simple.",
+        "Vous voulez un ERP classique sans gadgets cloud-first.",
+        "Vous acceptez une dépense modérée (100–150k sur 3 ans)."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-structure (< 10 personnes).",
+        "Vous cherchez la modernité maximale (cloud, IA, no-code).",
+        "Vous avez une supply chain ultra-complexe (multinational)."
+      ],
+      "threshold": "Business One convient aux PME classiques françaises ; pour une startup cloud ou un grand groupe, ce n'est pas le bon choix."
+    },
+    "pros": [
+      "Coût de licence raisonnable (on-premise ou cloud).",
+      "Implémentation rapide (3–6 mois).",
+      "Interface simple et intuitive.",
+      "Scalabilité progressive (croître avec l'entreprise)."
+    ],
+    "cons": [
+      "Moins moderne que les challengers cloud (Odoo, Zoho).",
+      "IA et automations limités comparé à D365 Business Central.",
+      "Migration depuis/vers Business One coûteuse.",
+      "Pas de tarification transparente (devis nécessaire)."
+    ],
+    "use_cases": [
+      "Automatiser comptabilité, ventes et achats d'une PME.",
+      "Gérer l'inventaire et les commandes clients simplement.",
+      "Piloter les KPIs opérationnels et financiers.",
+      "Intégrer CRM et ERP pour une meilleure visibilité."
+    ],
+    "relevant_for": ["PME françaises traditionnelles", "Directeurs généraux", "Responsables administratifs et comptables"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an SME of 20–200 people with simple structure.",
+        "You want a classic ERP without cloud-first gadgets.",
+        "You accept moderate spending (100–150k over 3 years)."
+      ],
+      "avoidIf": [
+        "You are a micro-business (< 10 people).",
+        "You seek maximum modernity (cloud, AI, no-code).",
+        "You have ultra-complex supply chain (multinational)."
+      ],
+      "threshold": "Business One suits traditional SMEs; for a cloud startup or large enterprise, it is not the right choice."
+    },
+    "pros": [
+      "Reasonable license cost (on-premise or cloud).",
+      "Fast implementation (3–6 months).",
+      "Simple and intuitive interface.",
+      "Progressive scalability (grow with your business)."
+    ],
+    "cons": [
+      "Less modern than cloud challengers (Odoo, Zoho).",
+      "Limited AI and automations vs. D365 Business Central.",
+      "Migration from/to Business One is costly.",
+      "No transparent pricing (quote required)."
+    ],
+    "use_cases": [
+      "Automate accounting, sales, and purchasing for an SME.",
+      "Manage inventory and customer orders simply.",
+      "Drive operational and financial KPIs.",
+      "Integrate CRM and ERP for better visibility."
+    ]
+  }
+}

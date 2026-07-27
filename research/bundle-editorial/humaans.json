@@ -1,0 +1,93 @@
+{
+  "slug": "humaans",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Humaans — Pricing (site officiel)", "url": "https://humaans.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme HR moderne pour PME-ETI, offrant gestion employés, absences, onboarding, timesheets, analytics DE&I, et Athena (IA agentic pour automations RH).",
+    "what_en": "Modern HR platform for SMBs to mid-market, offering employee management, absences, onboarding, timesheets, DE&I analytics, and Athena (agentic AI for HR automation).",
+    "pricing_model": "Modèle par utilisateur par mois, montants sur la page officielle. Pricing personnalisé selon effectif et plan (Growth ou Enterprise).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Contact sales requis pour devis personnalisé." },
+    "plans": [
+      { "name": "Growth", "price": "Montants sur la page officielle — Core HR features + jusqu'à 2 custom roles" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle — Toutes features Growth + SSO, audit logs illimités, support dédié" },
+      { "name": "Athena (add-on)", "price": "IA agentic pour automations RH avancées" }
+    ],
+    "key_features": [
+      "Employee directory et document management",
+      "Absence tracking avec calendar intuitive",
+      "Onboarding automation workflows",
+      "Timesheets et time tracking",
+      "Analytics DE&I (gender pay, diversity, tenure)",
+      "Org charts et custom permission roles",
+      "Integrations (Okta, Entra ID, Google, Microsoft, Slack)",
+      "Athena : IA pour automations RH et self-service",
+      "Garantie 99.9% uptime (Enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes PME-ETI moderne cherchant solution HR complète.",
+        "Vous avez besoin d'analytics DE&I et diversity tracking.",
+        "Vous voulez automations RH via IA (Athena)."
+      ],
+      "avoidIf": [
+        "Vous êtes microentreprise ou startup pré-réche.",
+        "Vous avez paie complexe multi-pays.",
+        "Vous cherchez système très bon marché."
+      ],
+      "threshold": "Humaans excelle pour PME-ETI modernes ; pour paie complexe, autres solutions dédiées préférables."
+    },
+    "pros": [
+      "Interface moderne et intuitive.",
+      "Excellent analytics DE&I (rare sur marché).",
+      "IA Athena pour automations avancées.",
+      "Intégrations SSO et identity robustes (Enterprise)."
+    ],
+    "cons": [
+      "Tarif sur devis uniquement.",
+      "Pas de paie native — intégration requise.",
+      "Peut être cher pour effectifs <50."
+    ],
+    "use_cases": [
+      "Centraliser HR data et analytics DE&I.",
+      "Automatiser onboarding et absences.",
+      "Utiliser IA pour automations RH avancées (Athena)."
+    ],
+    "relevant_for": ["PME-ETI", "RH progressistes", "Startups croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a modern SMB to mid-market seeking complete HR solution.",
+        "You need DE&I analytics and diversity tracking.",
+        "You want HR automations via AI (Athena)."
+      ],
+      "avoidIf": [
+        "You're a microenterprise or pre-revenue startup.",
+        "You have complex multi-country payroll.",
+        "You're looking for a budget solution."
+      ],
+      "threshold": "Humaans excels for modern SMBs; for complex payroll, other dedicated solutions are preferable."
+    },
+    "pros": [
+      "Modern and intuitive interface.",
+      "Excellent DE&I analytics (rare on market).",
+      "Athena AI for advanced automations.",
+      "Robust SSO and identity integrations (Enterprise)."
+    ],
+    "cons": [
+      "Pricing on quote only.",
+      "No native payroll — integration required.",
+      "Can be expensive for <50 employees."
+    ],
+    "use_cases": [
+      "Centralize HR data and DE&I analytics.",
+      "Automate onboarding and absences.",
+      "Leverage AI for advanced HR automations (Athena)."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "ukg-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "UKG Pro (site officiel)", "url": "https://www.ukg.com/solutions/ukg-pro" }
+  ],
+  "facts": {
+    "what": "Suite HCM cloud d'UKG (ex-Kronos & Dayforce acquis par UKG) uniant paie, HR, temps, talents et scheduling avec IA et workforce insights.",
+    "what_en": "UKG's cloud HCM suite (formerly Kronos & Dayforce, now under UKG) unifying payroll, HR, time, talent, and scheduling with AI and workforce insights.",
+    "pricing_model": "Modèle par employé par mois (PEPM) + modules additionnels. Tarification personnalisée selon taille, modules et complexité (montants sur demande).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification sur devis après consultation sales." },
+    "plans": [
+      { "name": "Modular Pricing", "price": "Core HR + modules optionnels (Paie, Temps, Talents, Learning, Finance) — chacun tarifé selon usage" },
+      { "name": "Modules add-on", "price": "Performance Management, Learning Management (+5-15€/employé/mois estimé)" }
+    ],
+    "key_features": [
+      "Paie et compliance automatisés",
+      "HR core management",
+      "Time tracking et scheduling intelligent (IA-powered)",
+      "Benefits enrollment et admin",
+      "Talent acquisition et development",
+      "Workforce planning et forecasting",
+      "Employee self-service portal",
+      "Analytics et HR dashboards visuels",
+      "Integrations robustes",
+      "People-first AI pour insights"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes mid-market / grande entreprise (1000-10000 salariés).",
+        "Vous avez besoin paie + temps + talents intégrés.",
+        "Vous voulez scheduling intelligent (IA)."
+      ],
+      "avoidIf": [
+        "Vous êtes PME < 1000 salariés.",
+        "Vous cherchez tarification transparente.",
+        "Vous avez budget très limité."
+      ],
+      "threshold": "UKG Pro pour mid-market/enterprise ; pour PME, solutions cloud natives légères préférables."
+    },
+    "pros": [
+      "Suite complète intégrée (paie, HR, temps, talents).",
+      "Scheduling intelligent avec IA.",
+      "Leadership en time & attendance.",
+      "Scaling robuste pour grandes orga."
+    ],
+    "cons": [
+      "Tarif et implémentation élevés.",
+      "Aucune transparence tarifaire (sales-led).",
+      "Utilisateurs rapportent augmentations annuelles élevées.",
+      "Pas adapté PME."
+    ],
+    "use_cases": [
+      "Gérer paie et temps pour mid-market / enterprise.",
+      "Optimiser scheduling avec IA (retail, hospitality).",
+      "Unifier HR, paie et talents."
+    ],
+    "relevant_for": ["Mid-market / Grandes entreprises", "Retail / Hospitality", "HRBP enterprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're mid-market / large enterprise (1,000-10,000 employees).",
+        "You need integrated payroll + time + talent.",
+        "You want intelligent scheduling (AI)."
+      ],
+      "avoidIf": [
+        "You're an SMB <1,000 employees.",
+        "You need transparent pricing.",
+        "You have very limited budget."
+      ],
+      "threshold": "UKG Pro for mid-market/enterprise; for SMBs, lightweight cloud-native solutions preferable."
+    },
+    "pros": [
+      "Complete integrated suite (payroll, HR, time, talent).",
+      "Intelligent scheduling with AI.",
+      "Leadership in time & attendance.",
+      "Robust scaling for large organizations."
+    ],
+    "cons": [
+      "High cost and implementation.",
+      "No pricing transparency (sales-led).",
+      "Users report high annual increases.",
+      "Not suitable for SMBs."
+    ],
+    "use_cases": [
+      "Manage payroll and time for mid-market / enterprise.",
+      "Optimize scheduling with AI (retail, hospitality).",
+      "Unify HR, payroll, and talent."
+    ]
+  }
+}

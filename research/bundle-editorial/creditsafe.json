@@ -1,0 +1,110 @@
+{
+  "slug": "creditsafe",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Creditsafe — Business Intelligence & Credit Risk (site officiel)", "url": "https://www.creditsafe.com/us/en" }
+  ],
+  "facts": {
+    "what": "Plateforme d'intelligence commerciale fournissant rapports de crédit, scores de risque de crédit, et alertes en temps réel sur 430 millions d'entreprises mondiales pour évaluer partenaires, fournisseurs et prospects.",
+    "what_en": "Business intelligence platform providing credit reports, credit risk scores, and real-time alerts on 430+ million businesses worldwide to assess partners, suppliers, and prospects.",
+    "pricing_model": "Tarification personnalisée basée sur volume de rapports, couverture géographique et niveau de produit. Options abonnement (mensuel/annuel) ou par-rapport à la demande.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification sur demande basée sur utilisation." },
+    "plans": [
+      { "name": "Standard Plan", "price": "À partir de ~$149/mois" },
+      { "name": "Premium Plan", "price": "À partir de ~$249/mois" },
+      { "name": "Enterprise Custom", "price": "Tarif sur demande — API illimitée et intégrations"
+      }
+    ],
+    "key_features": [
+      "430+ millions de rapports d'entreprises mondiaux",
+      "Scores de crédit prédictifs et limites de crédit",
+      "Monitoring en temps réel et alertes de risque",
+      "Screening sanctions et PEPs (personnes exposées politiquement)",
+      "Vérifications KYC/KYB (Know Your Customer/Business)",
+      "Dépistage AML (Anti-Money Laundering)",
+      "Platform Check & Decide pour automatisation workflows",
+      "Intégrations CRM/ERP (Salesforce, Sage 50, etc.)",
+      "Livraison instantanée (99,9 % en temps réel)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez évaluer la solvabilité de clients, fournisseurs ou partenaires.",
+        "Vous avez obligations de conformité AML, sanctions ou KYC.",
+        "Vous gérez crédit clients ou chaîne d'approvisionnement.",
+        "Vous utilisez Salesforce ou système CRM moderne."
+      ],
+      "avoidIf": [
+        "Vous travaillez essentiellement en interne sans partenaires externes.",
+        "Vous avez budget très limité et peu de vérifications.",
+        "Vous ne servez que marché local/français."
+      ],
+      "threshold": "Creditsafe convient aux équipes crédit/risque, finance et achats cherchant intelligence commerciale temps-réel ; les indépendants isolés trouveront solutions allégées."
+    },
+    "pros": [
+      "Base de données de 430+ millions d'entreprises mondiales.",
+      "Scores de crédit prédictifs et evaluation automatique.",
+      "Monitoring temps-réel avec alertes instantanées.",
+      "Platform Check & Decide pour automatisation conformité.",
+      "Livraison des rapports quasi instantanée.",
+      "Numéro 1 pour crédit et collections sur G2.",
+      "Intégrations faciles CRM/ERP et API."
+    ],
+    "cons": [
+      "Tarification opaque, nécessite contact commercial.",
+      "Coûts peuvent escalader avec volume de rapports.",
+      "Données limitées pour petites entreprises/startups.",
+      "Orientation vers B2B grand compte."
+    ],
+    "use_cases": [
+      "Évaluer solvabilité avant accord commercial.",
+      "Monitorer risque crédit clients existants.",
+      "Automatiser vérifications de conformité AML/sanctions.",
+      "Dépister risques fournisseurs avant acquisition.",
+      "Automatiser checks KYC/KYB pour onboarding clients.",
+      "Reduire erreurs et temps de décision crédit."
+    ],
+    "relevant_for": ["Directeurs crédit", "Équipes conformité et risque", "Responsables achats", "Spécialistes AML"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You must assess creditworthiness of clients, suppliers, or partners.",
+        "You have AML, sanctions screening, or KYC compliance obligations.",
+        "You manage customer credit or supply chain risk.",
+        "You use Salesforce or modern CRM system."
+      ],
+      "avoidIf": [
+        "You work mostly in-house without external partners.",
+        "You have tight budget and few verification needs.",
+        "You serve only local/French market."
+      ],
+      "threshold": "Creditsafe suits credit/risk, finance, and procurement teams seeking real-time business intelligence; independent operators are better served by lighter solutions."
+    },
+    "pros": [
+      "Global database of 430+ million businesses.",
+      "Predictive credit scores and automatic evaluation.",
+      "Real-time monitoring with instant alerts.",
+      "Check & Decide platform for compliance automation.",
+      "Near-instant report delivery.",
+      "Ranked #1 for credit and collections on G2.",
+      "Easy CRM/ERP integrations and API."
+    ],
+    "cons": [
+      "Opaque pricing requiring sales engagement.",
+      "Costs can scale with report volume.",
+      "Limited data for small businesses/startups.",
+      "Oriented toward large B2B accounts."
+    ],
+    "use_cases": [
+      "Assess creditworthiness before commercial agreement.",
+      "Monitor customer credit risk continuously.",
+      "Automate AML/sanctions compliance checks.",
+      "Screen supplier risks before acquisition.",
+      "Automate KYC/KYB checks for client onboarding.",
+      "Reduce credit decision errors and time."
+    ]
+  }
+}

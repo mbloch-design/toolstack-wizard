@@ -1,0 +1,97 @@
+{
+  "slug": "workday-hr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Workday Human Capital Management (site officiel)", "url": "https://www.workday.com/en-us/products/human-capital-management/overview.html" }
+  ],
+  "facts": {
+    "what": "Suite cloud HCM complète de Workday (Enterprise) couvrant HR, paie globale, talents, scheduling, learning et analytics avec IA et unified data platform.",
+    "what_en": "Complete Workday cloud HCM suite (Enterprise) covering HR, global payroll, talent, scheduling, learning, and analytics with AI and unified data platform.",
+    "pricing_model": "Abonnement cloud personnalisé à devis (pas de tarif public). Pricing basé sur taille entreprise, modules sélectionnés et complexité globale.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification négocie avec sales team Workday (réputée opaque)." },
+    "plans": [
+      { "name": "Devis personnalisé", "price": "Montants sur la page officielle après négociation sales. Implémentation 50000-500000€+ selon scope." }
+    ],
+    "key_features": [
+      "Core HR et compliance management",
+      "Global payroll (multi-pays)",
+      "Talent acquisition et management",
+      "Succession planning",
+      "Learning & development",
+      "Workforce scheduling & time tracking",
+      "Employee experience personalization",
+      "Skills intelligence foundation",
+      "Contingent worker management",
+      "IA agents pour insights workforce",
+      "Unified data platform (HR + Finance + Operations)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes grand groupe / multinational.",
+        "Vous avez déjà Workday Finance et intégration.",
+        "Vous avez budget et équipe implémentation importants."
+      ],
+      "avoidIf": [
+        "Vous êtes PME ou startup.",
+        "Vous cherchez transparence tarifaire.",
+        "Vous avez budget limité (implémentation très coûteuse)."
+      ],
+      "threshold": "Workday HCM pour multinationales ; pour PME/ETI, solutions cloud natives plus adaptées et moins coûteuses."
+    },
+    "pros": [
+      "Suite HCM très complète de leader.",
+      "Intégration native avec Workday Finance.",
+      "IA agents avancés pour insights workforce.",
+      "Global payroll et talents robustes.",
+      "Unified data platform (HR + Finance)."
+    ],
+    "cons": [
+      "Tarif très élevé et opacité pricing.",
+      "Implémentation lourde et longue.",
+      "Présentéisme critiqué par utilisateurs.",
+      "Destiné multinationales seulement."
+    ],
+    "use_cases": [
+      "Suite complète HR/Finance pour multinational.",
+      "Analytics avancés et skills intelligence.",
+      "Unifier stratégie HR et données financières."
+    ],
+    "relevant_for": ["Multinationales", "Directeurs HR", "Grandes enterprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a large group / multinational.",
+        "You already have Workday Finance and integration.",
+        "You have substantial budget and implementation team."
+      ],
+      "avoidIf": [
+        "You're an SMB or startup.",
+        "You need pricing transparency.",
+        "You have limited budget (implementation very costly)."
+      ],
+      "threshold": "Workday HCM for multinationals; for SMBs/mid-market, native cloud solutions better suited and less expensive."
+    },
+    "pros": [
+      "Very complete HCM suite from leader.",
+      "Native integration with Workday Finance.",
+      "Advanced IA agents for workforce insights.",
+      "Robust global payroll and talent.",
+      "Unified data platform (HR + Finance)."
+    ],
+    "cons": [
+      "Very high cost and pricing opacity.",
+      "Heavy and long implementation.",
+      "User criticism of presenteeism.",
+      "Designed for multinationals only."
+    ],
+    "use_cases": [
+      "Complete HR/Finance suite for multinational.",
+      "Advanced analytics and skills intelligence.",
+      "Unify HR strategy and financial data."
+    ]
+  }
+}

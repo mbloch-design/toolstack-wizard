@@ -1,0 +1,88 @@
+{
+  "slug": "workday-financial-management",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Workday Financial Management (site officiel)", "url": "https://www.workday.com/en-us/products/financial-management/overview.html" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud de gestion financière d'entreprise, intégrée à la suite Workday, automatisant la comptabilité, la clôture, la gestion des revenus, et les dépenses avec IA (Sana AI) et analytics en temps réel.",
+    "what_en": "Cloud-based enterprise financial management platform, integrated within the Workday suite, automating accounting, close & consolidate, revenue management, and expenses with AI (Sana AI) and real-time analytics.",
+    "pricing_model": "Abonnement cloud à devis personnalisé (pas de tarif public). Modèle basé sur l'taille de l'entreprise, les modules sélectionnés, et les besoins de configuration.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès sur demande via le formulaire de contact Workday." },
+    "plans": [
+      { "name": "Devis personnalisé", "price": "Montants sur la page officielle (contact sales requis)" }
+    ],
+    "key_features": [
+      "Automatisation end-to-end (comptabilité, close, revenus, dépenses)",
+      "IA Sana pour insights décisionnels",
+      "Détection d'anomalies automatique",
+      "Conformité et audit globaux",
+      "Intégration avec HCM et systèmes tiers",
+      "Analytics et reporting financier avancé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous pilotez la finance d'une grande entreprise avec besoins complexes.",
+        "Vous avez déjà Workday HCM et cherchez une suite intégrée.",
+        "Vous voulez automatisation totale du close comptable."
+      ],
+      "avoidIf": [
+        "Vous êtes une PME cherchant une solution simple et abordable.",
+        "Vous avez besoin de transparence de prix avant contact commercial.",
+        "Vous préférez une plateforme indépendante de Workday."
+      ],
+      "threshold": "Workday Financial Management s'impose pour les multinationales ; pour les PME, solutions légères plus adaptées."
+    },
+    "pros": [
+      "Suite complète et intégrée (HR + Finance).",
+      "IA et automation très avancées.",
+      "Conformité et audit globaux inclus.",
+      "Scalabilité pour entreprises complexes."
+    ],
+    "cons": [
+      "Pas de tarif public — négociation nécessaire.",
+      "Implémentation lourde et coûteuse.",
+      "Destiné aux grandes entreprises seulement."
+    ],
+    "use_cases": [
+      "Automatiser le close comptable et la consolidation.",
+      "Piloter la finance avec IA et analytics en temps réel.",
+      "Gérer la comptabilité multi-pays et conformité."
+    ],
+    "relevant_for": ["Directeurs financiers", "Contrôleurs de gestion", "Grandes entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You drive finance for a large enterprise with complex needs.",
+        "You already use Workday HCM and want an integrated suite.",
+        "You need total automation of accounting close."
+      ],
+      "avoidIf": [
+        "You're an SMB seeking a simple, affordable solution.",
+        "You need price transparency before contacting sales.",
+        "You prefer a platform independent from Workday."
+      ],
+      "threshold": "Workday Financial Management wins for multinationals; for SMBs, lighter solutions are better suited."
+    },
+    "pros": [
+      "Complete and integrated suite (HR + Finance).",
+      "Advanced AI and automation.",
+      "Global compliance and audit included.",
+      "Scalability for complex enterprises."
+    ],
+    "cons": [
+      "No public pricing — negotiation required.",
+      "Heavy implementation and cost.",
+      "Designed for large enterprises only."
+    ],
+    "use_cases": [
+      "Automate accounting close and consolidation.",
+      "Drive finance with AI and real-time analytics.",
+      "Manage multi-country accounting and compliance."
+    ]
+  }
+}

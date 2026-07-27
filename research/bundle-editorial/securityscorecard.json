@@ -1,0 +1,113 @@
+{
+  "slug": "securityscorecard",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SecurityScorecard — Vendor Risk Management Platform (site officiel)", "url": "https://securityscorecard.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des risques tiers (TPRM) évaluant posture de sécurité des fournisseurs et tiers-parties avec ratings A-F, monitoring temps-réel, et intelligence des menaces pour identifier et réduire risques cyber dans l'écosystème.",
+    "what_en": "Third-party risk management (TPRM) platform assessing vendor security posture with A-F ratings, real-time monitoring, and threat intelligence to identify and mitigate cyber risks across extended supply chains.",
+    "pricing_model": "Plan gratuit disponible ; plans Business et Enterprise sur demande (custom).",
+    "free_tier": { "exists": true, "detail": "SecurityScorecard Free — Ratings et monitoring basiques pour un nombre limité de vendeurs. Essai gratuit 14 jours pour plans payants." },
+    "plans": [
+      { "name": "SecurityScorecard Free", "price": "Gratuit — Ratings de base et monitoring limité" },
+      { "name": "Business Plan", "price": "Tarif personnalisé (custom)" },
+      { "name": "Enterprise Plan", "price": "Tarif personnalisé (custom) — TITAN AI, automations avancées" }
+    ],
+    "key_features": [
+      "Ratings de sécurité A-F pour 10+ critères de risque",
+      "TITAN Watch — Monitoring continu des vendeurs",
+      "TITAN Assess — Automation des questionnaires (92 % réduction).",
+      "TITAN Secure — Gestion TPRM avec intelligence des menaces",
+      "TITAN AI Agents — Portfolio analysis et remediation planning",
+      "Rating 10+ millions d'entreprises mondialement",
+      "Live threat feeds et alertes en temps-réel",
+      "Compliance mapping (SOC 2, ISO 27001, etc.)",
+      "Proprietary threat intelligence (99 % owned)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez évaluer et monitorer sécurité de fournisseurs.",
+        "Vous avez écosystème complexe de tiers-parties.",
+        "Vous cherchez automatisation questionnaires de sécurité.",
+        "Vous devez démontrer due diligence sécurité cyber."
+      ],
+      "avoidIf": [
+        "Vous n'avez que quelques vendeurs et pas de compliance cyber.",
+        "Vous êtes micro-entreprise sans risques tiers.",
+        "Vous refusez contrat commercial pour TPRM."
+      ],
+      "threshold": "SecurityScorecard convient à grandes organisations avec écosystèmes tiers complexes ; les petites équipes peuvent utiliser le plan gratuit ou explorer alternatives légères."
+    },
+    "pros": [
+      "Plan gratuit disponible pour débuts.",
+      "Ratings A-F simples pour communication exécutive.",
+      "TITAN AI réduit fortement les questionnaires manuels.",
+      "10+ millions d'entreprises ratings dans base de données.",
+      "Renseignement sur les menaces propriétaire, quasi en temps réel.",
+      "Réduction des incidents sur l'écosystème rapportée par l'éditeur.",
+      "Compliance mapping (SOC 2, ISO 27001, etc.) intégré."
+    ],
+    "cons": [
+      "Plan gratuit très limité (quelques vendeurs seulement).",
+      "Plans payants sans pricing public (contact sales requis).",
+      "Focus sur cyber-sécurité, pas sur ESG/durabilité.",
+      "Automation d'assessment dépend de participation vendeurs.",
+      "Interface complexe pour gestionnaires non-IT."
+    ],
+    "use_cases": [
+      "Rating de posture sécurité rapide (notation A-F).",
+      "Monitoring continu d'écosystème tiers-parties.",
+      "Automatiser questionnaires de sécurité des fournisseurs.",
+      "Prioriser remédiation risques vendeurs critiques.",
+      "Compliance cyber et audit de fournisseurs.",
+      "M&A diligence cybersécurité accélérée.",
+      "Reporting board sur risques cyber tiers."
+    ],
+    "relevant_for": ["Responsables risque cyber", "Managers de conformité", "Responsables approvisionnement", "CISO et équipes sécurité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You must assess and monitor vendor security posture.",
+        "You have a complex third-party ecosystem.",
+        "You seek to automate security questionnaires.",
+        "You need to demonstrate cyber due diligence."
+      ],
+      "avoidIf": [
+        "You have only a few vendors and no cyber compliance.",
+        "You are a micro-business without third-party risk.",
+        "You resist vendor contracts for TPRM."
+      ],
+      "threshold": "SecurityScorecard suits large organizations with complex vendor ecosystems; small teams can start with the free plan or explore lighter alternatives."
+    },
+    "pros": [
+      "Free plan available for getting started.",
+      "A-F ratings are simple for executive communication.",
+      "TITAN AI sharply reduces manual questionnaires.",
+      "10+ million companies in ratings database.",
+      "Proprietary threat intelligence, near real-time.",
+      "Vendor-reported reduction in supply-chain breaches.",
+      "Built-in compliance mapping (SOC 2, ISO 27001, etc.)."
+    ],
+    "cons": [
+      "Free plan very limited (handful of vendors only).",
+      "Paid plans have no public pricing (sales required).",
+      "Focused on cyber-security, not ESG/sustainability.",
+      "Assessment automation depends on vendor participation.",
+      "Interface complex for non-IT managers."
+    ],
+    "use_cases": [
+      "Quick security posture rating (A-F grading).",
+      "Continuous monitoring of third-party ecosystem.",
+      "Automate vendor security questionnaires.",
+      "Prioritize vendor risk remediation.",
+      "Cyber compliance and supplier audits.",
+      "M&A cyber due diligence acceleration.",
+      "Board reporting on third-party cyber risk."
+    ]
+  }
+}
