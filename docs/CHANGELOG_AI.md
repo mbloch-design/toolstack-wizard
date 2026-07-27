@@ -3598,3 +3598,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Le changement de langue conserve la page, les paramètres et l’ancre en cours.
 - Le thème suit d’abord la préférence enregistrée, puis celle du système, et applique un `color-scheme` cohérent au document.
 - Les variantes ont été vérifiées visuellement sur l’index des guides, en clair et en sombre, ainsi que par tests E2E de persistance.
+
+## 2026-07-27 — Réparation du garde-fou design tokens
+
+- Remplacement des rayons CSS littéraux ajoutés depuis la dernière baseline par les tokens `--radius-*` correspondants.
+- Remplacement des nouvelles couleurs grises en dur par `--color-muted`.
+- Réalignement de la baseline sur la dette réellement présente dans le commit distant : 64 couleurs CSS en dur, aucun rayon CSS littéral et 214 styles inline TSX.
+- Validation complète de la CI locale : garde-fous design et diagnostic, TypeScript, tests Ma Stack, build avec prerender et hygiène du diff.

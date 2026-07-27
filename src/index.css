@@ -5213,7 +5213,7 @@
   }
 
   .editorial-panel .text-muted-foreground {
-    color: #5f5f59;
+    color: var(--color-muted);
   }
 
   .dark .editorial-panel {
@@ -6533,7 +6533,7 @@
     text-decoration: none;
   }
   .tce-logo {
-    border-radius: 50% !important;
+    border-radius: var(--radius-circle) !important;
     background: var(--color-surface) !important;
   }
   .tce-identity-copy {
@@ -6595,7 +6595,7 @@
     gap: 9px;
     padding: 8px 10px;
     border: 0;
-    border-radius: 8px;
+    border-radius: var(--radius);
     background: transparent;
     color: var(--color-text);
     font-family: var(--font-ui);
@@ -6994,7 +6994,7 @@
     padding: 0 14px;
     border-color: transparent;
     background: var(--color-surface-soft);
-    color: #5f5f59;
+    color: var(--color-muted);
   }
   .sp-tab:hover { color: var(--color-text); }
   .sp-tab.is-active { background: var(--color-text); color: var(--color-bg); }
@@ -7007,7 +7007,7 @@
     padding: 0 5px;
     border-radius: var(--radius-pill);
     background: var(--color-border);
-    color: #50504b;
+    color: var(--color-muted);
     font-size: 11px;
     font-weight: 700;
   }
@@ -7030,7 +7030,7 @@
     gap: 6px;
     margin-top: var(--space-md);
     padding: 0 16px;
-    border-radius: 10px;
+    border-radius: var(--radius);
     background: var(--color-text);
     color: var(--color-bg);
     font-size: 14px;
@@ -7055,7 +7055,7 @@
   }
   .sp-section-title { display: flex; min-width: 0; align-items: center; gap: var(--space-xs); color: var(--color-text); font-size: 14px; font-weight: 650; }
   .sp-section-title > span:first-child { display: inline-flex; color: var(--color-muted); }
-  .sp-section-count { padding: 3px 8px; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: #5f5f59; font-size: 11px; font-weight: 600; }
+  .sp-section-count { padding: 3px 8px; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-muted); font-size: 11px; font-weight: 600; }
   .sp-section-more {
     min-height: 40px;
     flex: 0 0 auto;
@@ -7204,7 +7204,7 @@
     transform: translateX(3px);
   }
   .tt-section-action:focus-visible {
-    border-radius: 2px;
+    border-radius: var(--radius-xs);
     outline: 2px solid currentColor;
     outline-offset: 4px;
   }
@@ -7546,7 +7546,7 @@
     bottom: -7px;
     left: 0;
     height: 2px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     background: currentColor;
   }
 
@@ -7902,7 +7902,7 @@
   .td-pricing-bundle-note {
     display: flex; align-items: flex-start; gap: 10px;
     padding: 14px 16px; border: 1px solid var(--color-border);
-    border-radius: 12px; background: var(--color-surface-soft);
+    border-radius: var(--radius-md); background: var(--color-surface-soft);
     font-family: var(--font-ui); font-size: 14px; font-weight: 500;
     line-height: 1.45; color: var(--color-text); text-decoration: none;
   }
@@ -7916,14 +7916,14 @@
   .td-bundle-tags li { display: inline-flex; }
   .td-bundle-tag {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 5px 14px 5px 6px; border-radius: 999px;
+    padding: 5px 14px 5px 6px; border-radius: var(--radius-pill);
     background: var(--color-surface-soft); border: 1px solid transparent;
     font-family: var(--font-ui); font-size: 14px; font-weight: 500; line-height: 1;
     color: var(--color-text); text-decoration: none; white-space: nowrap;
     transition: background .15s ease, border-color .15s ease;
   }
   a.td-bundle-tag:hover { background: var(--color-surface); border-color: var(--color-border-strong); }
-  .td-bundle-tag-logo { flex: 0 0 auto; border-radius: 7px; }
+  .td-bundle-tag-logo { flex: 0 0 auto; border-radius: var(--radius); }
   .td-bundle-tag--parent { background: var(--color-surface); border-color: var(--color-border-strong); font-weight: 600; }
   .td-bundle-tag--current { background: var(--color-surface); border: 1px dashed var(--color-border-strong); font-weight: 600; }
   .td-pricing-plans {
@@ -7954,7 +7954,7 @@
   .td-pricing-plan-summary { margin: 0; font-family: var(--font-ui); font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--color-text); }
   .td-pricing-plan-highlights { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
   .td-pricing-plan-highlights li { position: relative; padding-left: 13px; font-family: var(--font-ui); font-size: 12px; line-height: 1.4; color: var(--color-muted); }
-  .td-pricing-plan-highlights li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 4px; height: 4px; border-radius: 999px; background: var(--color-muted-light); }
+  .td-pricing-plan-highlights li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 4px; height: 4px; border-radius: var(--radius-pill); background: var(--color-muted-light); }
   .td-pricing-plan-meta { margin: 0; font-family: var(--font-ui); font-size: 12px; line-height: 1.45; color: var(--color-muted); }
   .td-pricing-plan-source { width: fit-content; font-family: var(--font-ui); font-size: 11px; color: var(--color-muted); text-underline-offset: 3px; }
   .td-pricing-evidence {
@@ -8666,7 +8666,7 @@
     width: 28px;
     height: 28px;
     place-items: center;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     background: var(--color-surface-soft);
     font-size: 17px;
     line-height: 1;
@@ -10089,7 +10089,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #5f5f59;
+    color: var(--color-muted);
     margin: 0 0 14px;
   }
   .sk-facet-group {
@@ -19850,7 +19850,7 @@ section[id] {
   min-height: 0;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
   background: var(--color-surface);
 }
 
@@ -19977,7 +19977,7 @@ section[id] {
   overflow: hidden;
   padding: 12px 10px 14px;
   background: var(--color-surface);
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
   transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -20860,7 +20860,7 @@ section[id] {
   min-width: 0;
 }
 .stack-page-toolbar-profile-copy small {
-  color: #5f5f59;
+  color: var(--color-muted);
   font-size: 0.6rem;
   font-weight: 720;
 }
@@ -20872,7 +20872,7 @@ section[id] {
   line-height: 1.05;
 }
 .stack-page-toolbar-profile-copy > span {
-  color: #5f5f59;
+  color: var(--color-muted);
   font-size: 0.66rem;
   font-weight: 680;
   line-height: 1.15;
