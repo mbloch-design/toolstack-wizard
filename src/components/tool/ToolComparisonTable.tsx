@@ -13,6 +13,7 @@ interface Props {
   prefix: string;
   lang: string;
   t: (fr: string, en: string) => string;
+  includeCurrent?: boolean;
 }
 
 function hasFreeplan(tool: any): boolean {
@@ -31,9 +32,10 @@ function Stars({ score }: { score: number }) {
   );
 }
 
-export default function ToolComparisonTable({ tool, alternatives, prefix, lang, t }: Props) {
-  // Take current tool + top 4 alternatives
-  const rows = [tool, ...alternatives.slice(0, 4)];
+export default function ToolComparisonTable({ tool, alternatives, prefix, lang, t, includeCurrent = true }: Props) {
+  // Product pages compare the current tool with alternatives. Editorial
+  // comparisons reuse the same module but only display the alternatives.
+  const rows = includeCurrent ? [tool, ...alternatives.slice(0, 4)] : alternatives.slice(0, 4);
   const railRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   if (rows.length < 2) return null;
@@ -98,7 +100,7 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
         }}
       >
         {rows.map((row, idx) => {
-              const isCurrentTool = idx === 0;
+              const isCurrentTool = includeCurrent && idx === 0;
               const ts = computeToolTrimScore(row);
               const free = hasFreeplan(row);
               const price = (row as any).pricing_v5?.compare_price_monthly_eur ?? row.defaultMonthlyPrice ?? 0;

@@ -39,9 +39,11 @@ export default function FaqBlock({
             {eyebrow}
           </p>
         )}
-        <h2 className="font-display text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
-          {title}
-        </h2>
+        {title && (
+          <h2 className="font-display text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+            {title}
+          </h2>
+        )}
         {description && (
           <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}>
             {description}
