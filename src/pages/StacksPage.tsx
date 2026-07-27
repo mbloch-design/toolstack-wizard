@@ -3,8 +3,8 @@ import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
 import { Search, X, SlidersHorizontal } from "lucide-react";
 import ToolLogoPile from "@/components/ToolLogoPile";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
@@ -404,52 +404,63 @@ interface StackSelectionCardProps {
 function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelectionCardProps) {
   const { stack, derived } = enriched;
   const title = lang === "fr" ? stack.title : stack.titleEn;
-  const verdict = lang === "fr" ? derived.verdict : derived.verdictEn;
   const primarySubProfile = stack.subProfiles[0];
   const budgetText = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
+  const visualTools = [...tools]
+    .sort((a, b) => Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl)))
+    .slice(0, 4);
+  const roles = stack.tools
+    .map((slot) => lang === "fr" ? slot.role : slot.roleEn)
+    .filter((role, index, all) => role && all.indexOf(role) === index);
 
   return (
     <Link to={`${prefix}/stacks/${stack.slug}`} className="sk-card">
-      <span className="sk-card-tag">
-        {personaLabel(stack.persona, lang)}
-        {primarySubProfile ? ` · ${subProfileLabel(primarySubProfile, lang)}` : ""}
-      </span>
-
-      <h2 className="sk-card-title">{title}</h2>
-      <p className="sk-card-verdict">{truncate(verdict, 96)}</p>
-
-      {/* Tools = the visual heart of a stack, shown as a clear row */}
-      <ToolLogoPile
-        tools={tools}
-        totalCount={stack.tools.length}
-        max={6}
-        ariaLabel={t("Outils de la stack", "Stack tools") as string}
-        moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
-        className="sk-card-tools"
-      />
-
-      <div className="sk-card-footer">
-        <div className="sk-card-stats">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span className="sk-card-stat sk-card-stat--strong">{budgetText}</span>
-            </TooltipTrigger>
-            <TooltipContent>{t("Budget mensuel cible", "Target monthly budget")}</TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span className="sk-card-stat">{derived.toolCount} {t("outils", "tools")}</span>
-            </TooltipTrigger>
-            <TooltipContent>{t("Nombre d'outils dans la stack", "Number of tools in the stack")}</TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span className="sk-card-stat">{optionLabel(LEVEL_OPTIONS, derived.level, lang)}</span>
-            </TooltipTrigger>
-            <TooltipContent>{t("Niveau d'expérience recommandé", "Recommended experience level")}</TooltipContent>
-          </Tooltip>
+      <div className="sk-card-header">
+        <div className="sk-card-heading">
+          <span className="sk-card-tag">
+            {personaLabel(stack.persona, lang)}
+            {primarySubProfile ? ` · ${subProfileLabel(primarySubProfile, lang)}` : ""}
+          </span>
+          <h2 className="sk-card-title">{title}</h2>
+          <div className="sk-card-facts">
+            <span className="sk-card-fact sk-card-fact--strong">{budgetText}</span>
+            <span className="sk-card-fact">{derived.toolCount} {t("outils", "tools")}</span>
+          </div>
         </div>
         <span className="sk-card-cta">{t("Voir la stack", "See stack")} <span aria-hidden>→</span></span>
+      </div>
+
+      <div className="sk-card-gallery" aria-label={t("Aperçus des outils de la stack", "Stack tool previews") as string}>
+        {visualTools.map((tool) => {
+          const slot = stack.tools.find((item) => item.slug === tool.slug || item.slug === tool.id);
+          return (
+            <div key={tool.id} className="sk-card-gallery-item">
+              <ToolCardImage tool={tool} logoSize={34} className="sk-card-tool-image" />
+              <span className="sk-card-gallery-caption">
+                <strong>{tool.name}</strong>
+                <small>{lang === "fr" ? slot?.role : slot?.roleEn}</small>
+              </span>
+            </div>
+          );
+        })}
+        {stack.tools.length > visualTools.length && (
+          <div className="sk-card-gallery-more">
+            <ToolLogoPile
+              tools={tools.slice(visualTools.length)}
+              totalCount={stack.tools.length - visualTools.length}
+              max={3}
+              ariaLabel={t("Autres outils de la stack", "Other stack tools") as string}
+              moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
+            />
+            <span>+{stack.tools.length - visualTools.length}</span>
+            <small>{t("autres outils", "more tools")}</small>
+          </div>
+        )}
+      </div>
+
+      <div className="sk-card-roles" aria-label={t("Rôles couverts", "Covered roles") as string}>
+        {roles.slice(0, 6).map((role) => <span key={role}>{role}</span>)}
+        {roles.length > 6 && <small>+{roles.length - 6}</small>}
       </div>
     </Link>
   );

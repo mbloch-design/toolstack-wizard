@@ -2,6 +2,17 @@
 
 ---
 
+## 2026-07-27 — Cards Stacks enrichies par les visuels OG
+
+- Les résultats de `/fr/stacks` passent d’une grille de petites cards textuelles à une liste de cards larges, plus éditoriales et plus faciles à parcourir.
+- Chaque card se limite à l’identité de la stack, son budget, son nombre d’outils et l’action d’ouverture ; le verdict, le niveau et les blocs de contexte sont réservés à la fiche détail.
+- Une galerie de quatre outils exploite en priorité leurs images OG, avec le fallback logo partagé du catalogue et un aperçu des outils restants.
+- Les rôles couverts ferment la card sous forme de tags compacts, à la manière des compétences de la référence visuelle.
+- Le responsive conserve deux visuels utiles sur mobile sans débordement horizontal.
+- Validation : build production, rendu desktop et viewport mobile 390 × 844.
+
+---
+
 ## 2026-07-27 — Barre sticky canonique des catalogues
 
 - Les catalogues Outils, Stacks, Guides, Catégories et Comparatifs partagent désormais le même hook de détection, la même hauteur de 68 px et le même traitement glass au scroll.
