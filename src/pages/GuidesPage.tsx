@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, type CSSProperties } from "react";
-import { Clock } from "lucide-react";
+import { Clock, Search, X } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
-import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
-import { scrollToTop } from "@/lib/scroll";
 import ToolLogoPile from "@/components/ToolLogoPile";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -47,7 +46,7 @@ const SORT_OPTIONS_EN = [
   { id: "short",     label: "Quick read" },
 ];
 
-const PAGE_SIZE = 11; /* + 1 featured = 12 total */
+const PAGE_SIZE = 9;
 
 /* ── Matching helpers ─────────────────────────────────────────────────────── */
 function matchesFilter(post: Post, filterId: string): boolean {
@@ -118,11 +117,12 @@ const GuidesPage = () => {
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
+  const [query, setQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   /* Reset pagination on filter/sort change */
-  useEffect(() => { setShowAll(false); }, [activeFilter, sortBy]);
+  useEffect(() => { setShowAll(false); }, [activeFilter, sortBy, query]);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -144,28 +144,20 @@ const GuidesPage = () => {
 
   /* ── Filtered + sorted posts ── */
   const filteredPosts = useMemo(() => {
-    const matched = posts.filter(p => matchesFilter(p, activeFilter));
+    const normalizedQuery = query.trim().toLowerCase();
+    const matched = posts.filter((post) => {
+      if (!matchesFilter(post, activeFilter)) return false;
+      if (!normalizedQuery) return true;
+      return `${post.title} ${post.excerpt} ${post.category} ${(post.tags || []).join(" ")}`
+        .toLowerCase()
+        .includes(normalizedQuery);
+    });
     return sortPosts(matched, sortBy);
-  }, [posts, activeFilter, sortBy]);
+  }, [posts, activeFilter, sortBy, query]);
 
   const listPosts   = filteredPosts;
   const visibleList = showAll ? listPosts : listPosts.slice(0, PAGE_SIZE);
   const hasMore     = !showAll && listPosts.length > PAGE_SIZE;
-
-  /* ── Theme columns ── */
-  const themeColumns = lang === "fr"
-    ? [
-        { label: "Choisir un outil",   items: ["Comparer deux solutions", "Comprendre les prix", "Éviter les abonnements inutiles", "Repérer les doublons"] },
-        { label: "Construire une stack", items: ["Stack freelance", "Stack designer", "Stack consultant", "Stack créateur", "Stack ops / COO"] },
-        { label: "IA & Productivité",   items: ["Compétences IA", "Automatisation", "Recherche augmentée", "Production de contenu"] },
-        { label: "Alternatives",        items: ["Alternatives gratuites", "Outils moins chers", "Remplacer un outil lourd", "Open-source"] },
-      ]
-    : [
-        { label: "Choosing a tool",   items: ["Comparing two solutions", "Understanding pricing", "Avoiding useless subscriptions", "Spotting duplicates"] },
-        { label: "Building a stack",  items: ["Freelance stack", "Designer stack", "Consultant stack", "Creator stack", "Ops / COO stack"] },
-        { label: "AI & Productivity", items: ["AI skills", "Automation", "Augmented research", "Content production"] },
-        { label: "Alternatives",      items: ["Free alternatives", "Cheaper tools", "Replace heavy tools", "Open-source"] },
-      ];
 
   return (
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#20E38C" } as CSSProperties}>
@@ -181,22 +173,48 @@ const GuidesPage = () => {
             <h1 className="tt-catalog-compact-title">
               {t("Mieux choisir ses outils.", "Choose tools with less noise.")}
             </h1>
+            <p className="gi-catalog-intro">
+              {t(
+                "Guides pratiques, comparatifs honnêtes et méthodes concrètes pour construire une stack plus légère.",
+                "Practical guides, honest comparisons and concrete methods for a leaner tool stack.",
+              )}
+            </p>
           </div>
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-          {/* Filter bar — same pilule+popover pattern as Outils/Comparatifs/Stacks */}
+          <div className="gi-topic-nav" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                type="button"
+                className={`gi-topic-tag${activeFilter === filter.id ? " gi-topic-tag--active" : ""}`}
+                aria-pressed={activeFilter === filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+
           <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-            <div className="tt-catalog-toolbar-filters">
-              <FilterDropdown
-                label={t("Filtrer par", "Filter by") as string}
-                allLabel={t("Tous", "All") as string}
-                options={filters.filter((f) => f.id !== "all").map((f) => ({ id: f.id, label: f.label }))}
-                value={activeFilter}
-                onChange={(id) => { setActiveFilter(id); setShowAll(false); }}
+            <div className="gi-search-field">
+              <Search size={17} aria-hidden />
+              <input
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={t("Rechercher un guide", "Search guides") as string}
+                aria-label={t("Rechercher un guide", "Search guides") as string}
               />
+              {query && (
+                <button type="button" onClick={() => setQuery("")} aria-label={t("Effacer la recherche", "Clear search") as string}>
+                  <X size={15} aria-hidden />
+                </button>
+              )}
             </div>
             <div className="tt-catalog-toolbar-meta">
+              <span>{filteredPosts.length} {t("guides", "guides")}</span>
               <select
                 className="tt-catalog-sort-select"
                 value={sortBy}
@@ -228,11 +246,16 @@ const GuidesPage = () => {
           )}
 
           {!loading && visibleList.length > 0 && (
-            <div className="sk-results-grid">
-              {visibleList.map((post) => (
-                <ArticleRow key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
-              ))}
-            </div>
+            <>
+              <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
+              {visibleList.length > 1 && (
+                <div className="gi-card-grid">
+                  {visibleList.slice(1).map((post) => (
+                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
+                  ))}
+                </div>
+              )}
+            </>
           )}
 
           {/* Load more */}
@@ -253,77 +276,52 @@ const GuidesPage = () => {
         </div>
       </div>
 
-      {/* ══ 5. Par thème ═════════════════════════════════════════════════════ */}
-      <div style={{ borderBottom: "1px solid var(--color-border)" }}>
-        <div className="gi-container" style={{ paddingTop: 72, paddingBottom: 72 }}>
-          <p className="gi-section-label">{t("Par thème", "By theme")}</p>
-          <div className="gi-theme-grid">
-            {themeColumns.map((col) => (
-              <div key={col.label}>
-                <p className="gi-theme-col-label">{col.label}</p>
-                {col.items.map((item) => (
-                  <a
-                    key={item}
-                    href={`${prefix}/guides`}
-                    className="gi-theme-link"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToTop("smooth");
-                    }}
-                  >
-                    {item}
-                  </a>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 };
 
-/* ── Article row (enhanced) ────────────────────────────────────────────────── */
-function ArticleRow({
-  post, prefix, lang, tools,
+function ArticleCard({
+  post, prefix, lang, tools, featured = false,
 }: {
-  post: Post; prefix: string; lang: string; tools: ToolSummary[];
+  post: Post; prefix: string; lang: string; tools: ToolSummary[]; featured?: boolean;
 }) {
   const mentionedTools = useArticleTools(post, tools);
   const type   = getPostType(post);
   const intent = getPostIntent(post);
+  const coverTool = mentionedTools.find((tool) => tool.ogImageUrl) || mentionedTools[0];
 
   return (
-    <Link to={`${prefix}/guide/${post.slug}`} className="sk-card">
-      <span className="sk-card-tag">{intent && intent !== type ? `${type} · ${intent}` : type}</span>
-
-      <h3 className="sk-card-title">{post.title}</h3>
-      {post.excerpt && <p className="sk-card-verdict">{post.excerpt}</p>}
-
-      {mentionedTools.length > 0 && (
-        <ToolLogoPile
-          tools={mentionedTools}
-          max={5}
-          ariaLabel={lang === "fr" ? "Outils cités" : "Tools cited"}
-          moreLabel={(count) => lang === "fr" ? `${count} outils supplémentaires` : `${count} more tools`}
-          className="sk-card-tools"
-        />
-      )}
-
-      <div className="sk-card-footer">
-        {post.readTime && (
-          <div className="sk-card-stats">
-            <span className="sk-card-stat" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-              <Clock style={{ width: 12, height: 12 }} aria-hidden />
+    <Link to={`${prefix}/guide/${post.slug}`} className={`gi-card${featured ? " gi-card--featured" : ""}`}>
+      <div className="gi-card-media">
+        {coverTool ? (
+          <ToolCardImage tool={coverTool} logoSize={featured ? 54 : 42} className="gi-card-cover" />
+        ) : (
+          <div className="gi-card-cover-fallback">{type}</div>
+        )}
+      </div>
+      <div className="gi-card-body">
+        <span className="gi-card-kicker">{intent && intent !== type ? `${type} · ${intent}` : type}</span>
+        <h3 className="gi-card-title">{post.title}</h3>
+        {post.excerpt && <p className="gi-card-excerpt">{post.excerpt}</p>}
+        <div className="gi-card-meta">
+          {mentionedTools.length > 0 && (
+            <ToolLogoPile
+              tools={mentionedTools}
+              max={4}
+              ariaLabel={lang === "fr" ? "Outils cités" : "Tools cited"}
+              moreLabel={(count) => lang === "fr" ? `${count} outils supplémentaires` : `${count} more tools`}
+            />
+          )}
+          {post.readTime && (
+            <span>
+              <Clock size={13} aria-hidden />
               {post.readTime}
             </span>
-          </div>
-        )}
-        <span className="sk-card-cta">
-          {lang === "fr" ? "Lire" : "Read"}
-          <span aria-hidden>→</span>
-        </span>
+          )}
+          <span className="gi-card-read">
+            {lang === "fr" ? "Lire le guide" : "Read guide"} <span aria-hidden>→</span>
+          </span>
+        </div>
       </div>
     </Link>
   );

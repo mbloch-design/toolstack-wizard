@@ -2,6 +2,18 @@
 
 ---
 
+## 2026-07-27 — Réparation et refonte de l’index Guides
+
+- `GuidesPage` ne réutilise plus les cards `sk-*` de Stacks, dont la nouvelle structure créait de grandes zones vides sur `/fr/guides`.
+- Le premier article reçoit une ouverture éditoriale large ; les suivants utilisent une grille `gi-card` dédiée, responsive de trois à une colonne.
+- Les cards de grille adoptent la logique ouverte ToolTrim : visuel autonome arrondi, aucun cadre autour du texte, 36 px entre colonnes et 64 px entre rangées ; la grille reste limitée à trois colonnes sur desktop.
+- Les visuels reprennent l’image OG d’un outil cité avec fallback logo, sans dépendre d’un champ image article absent du modèle courant.
+- Les thèmes deviennent des tags de filtrage visibles, une recherche plein texte est ajoutée et le compteur reflète les résultats.
+- La section « Par thème », dont les liens ne filtraient rien, est supprimée.
+- Validation : TypeScript, build production, recherche et rendu navigateur desktop/mobile.
+
+---
+
 ## 2026-07-27 — Cards Stacks enrichies par les visuels OG
 
 - Les résultats de `/fr/stacks` passent d’une grille de petites cards textuelles à une liste de cards larges, plus éditoriales et plus faciles à parcourir.
@@ -3661,3 +3673,12 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Remplacement des nouvelles couleurs grises en dur par `--color-muted`.
 - Réalignement de la baseline sur la dette réellement présente dans le commit distant : 64 couleurs CSS en dur, aucun rayon CSS littéral et 214 styles inline TSX.
 - Validation complète de la CI locale : garde-fous design et diagnostic, TypeScript, tests Ma Stack, build avec prerender et hygiène du diff.
+
+## 2026-07-27 — Nettoyage du template des fiches Stack
+
+- Le parcours éditorial des fiches Stack suit désormais un fil plus court : promesse, outils, budget, limites, alternatives proches et FAQ.
+- Le hero conserve uniquement quatre repères utiles — profil, budget, nombre d'outils et workflow — afin d'éviter l'effet tableau de bord.
+- La section Budget est ramenée à trois seuils lisibles et une règle de décision, sans principes ni avertissements répétés.
+- Les anciens blocs Risques et Calibrage sont fusionnés en trois points de vigilance directement actionnables.
+- Suppression du panneau latéral d'outil devenu inaccessible et de ses composants associés.
+- Les espacements, surfaces, cartes, FAQ et fiches proches sont alignés sur le rythme éditorial actuel des pages produit et comparatifs.
