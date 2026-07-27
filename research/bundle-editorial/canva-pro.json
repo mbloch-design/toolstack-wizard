@@ -1,6 +1,28 @@
 {
   "slug": "canva-pro",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Canva", "url": "https://www.canva.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Offre payante de Canva, l'outil de design en ligne grand public : accès complet aux fonctions IA (Magic Studio), kits de marque, suppression d'arrière-plan, redimensionnement automatique et bibliothèque premium d'assets.",
+    "what_en": "Canva's paid tier of its mainstream online design tool: full access to AI features (Magic Studio), brand kits, background remover, magic resize and a premium asset library.",
+    "pricing_model": "Palier gratuit permanent puis abonnement Pro (mensuel/annuel, annuel moins cher), offres Teams par utilisateur et Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Gratuit permanent : très large bibliothèque de modèles, 5 Go de stockage, collaboration, 1 kit de marque et un quota mensuel de crédits IA." },
+    "plans": [
+      { "name": "Free", "price": "0 $" },
+      { "name": "Pro", "price": "environ 12 $/mois en annuel, 18 $ en mensuel" },
+      { "name": "Teams", "price": "à partir d'environ 25 $/utilisateur/mois" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Kits de marque (couleurs, polices, logos)",
+      "Magic Studio : fonctions IA de génération et d'édition",
+      "Suppression d'arrière-plan et redimensionnement automatique",
+      "Bibliothèque premium de photos, vidéos et modèles"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [

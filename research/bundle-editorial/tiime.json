@@ -1,0 +1,87 @@
+{
+  "slug": "tiime",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Tiime", "url": "https://www.tiime.fr/tarifs" }
+  ],
+  "facts": {
+    "what": "Logiciel français de facturation et de gestion comptable pour indépendants et petites structures, couplé à un compte pro : devis, factures, suivi des dépenses et tenue comptable de base. Plateforme agréée pour la facturation électronique.",
+    "what_en": "French invoicing and accounting software for freelancers and small businesses, paired with a business account: quotes, invoices, expense tracking and basic bookkeeping. Approved platform for e-invoicing.",
+    "pricing_model": "Palier gratuit puis abonnements mensuels. La conformité à la facturation électronique (plateforme agréée) est incluse sans surcoût.",
+    "free_tier": { "exists": true, "detail": "Offre gratuite couvrant facturation, devis et compte pro, avec la facturation électronique incluse." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 €" },
+      { "name": "Offres payantes", "price": "d'environ 18 à 60 € HT/mois selon le périmètre (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Devis et factures conformes",
+      "Compte professionnel intégré",
+      "Suivi des dépenses et pré-comptabilité",
+      "Plateforme agréée pour la facturation électronique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes indépendant ou micro-entrepreneur en France.",
+        "Vous voulez facturation et compte pro au même endroit.",
+        "Vous préparez l'obligation de facturation électronique."
+      ],
+      "avoidIf": [
+        "Vous n'exercez pas en France (contexte réglementaire spécifique).",
+        "Vous avez déjà un expert-comptable avec son propre outil.",
+        "Vos besoins comptables sont complexes (société avec salariés)."
+      ],
+      "threshold": "Tiime s'impose pour un indépendant français qui veut facturer et suivre sa compta simplement, facturation électronique incluse ; pour une structure complexe ou hors de France, un outil comptable dédié convient mieux."
+    },
+    "pros": [
+      "Offre gratuite réellement utilisable.",
+      "Facturation électronique incluse sans surcoût.",
+      "Compte professionnel intégré.",
+      "Pensé pour le contexte réglementaire français."
+    ],
+    "cons": [
+      "Pertinent surtout en France.",
+      "Comptabilité avancée limitée pour les structures complexes.",
+      "Fonctions étendues réservées aux offres payantes."
+    ],
+    "use_cases": [
+      "Éditer devis et factures conformes.",
+      "Suivre ses dépenses et préparer sa comptabilité.",
+      "Se mettre en conformité avec la facturation électronique."
+    ],
+    "relevant_for": ["Indépendants", "Micro-entrepreneurs", "TPE françaises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer or micro-entrepreneur in France.",
+        "You want invoicing and a business account in one place.",
+        "You're preparing for the e-invoicing mandate."
+      ],
+      "avoidIf": [
+        "You don't operate in France (specific regulatory context).",
+        "You already have an accountant with their own tool.",
+        "Your accounting needs are complex (company with employees)."
+      ],
+      "threshold": "Tiime makes sense for a French freelancer who wants simple invoicing and bookkeeping with e-invoicing included; for a complex structure or outside France, a dedicated accounting tool fits better."
+    },
+    "pros": [
+      "Genuinely usable free tier.",
+      "E-invoicing included at no extra cost.",
+      "Built-in business account.",
+      "Designed for the French regulatory context."
+    ],
+    "cons": [
+      "Mostly relevant in France.",
+      "Limited advanced accounting for complex structures.",
+      "Extended features reserved for paid plans."
+    ],
+    "use_cases": [
+      "Issue compliant quotes and invoices.",
+      "Track expenses and prepare bookkeeping.",
+      "Comply with the e-invoicing mandate."
+    ]
+  }
+}
