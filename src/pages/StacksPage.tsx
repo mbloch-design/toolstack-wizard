@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
-import { Search, X, SlidersHorizontal } from "lucide-react";
+import { ArrowLeft, Search, X, SlidersHorizontal } from "lucide-react";
 import ToolLogoPile from "@/components/ToolLogoPile";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -120,6 +120,15 @@ const TOOL_COUNT_OPTIONS: Option<StackFacetToolCount>[] = [
 
 const OBJECTIVE_MULTI_OPTIONS = OBJECTIVE_OPTIONS.filter((option): option is Option<StackFacetObjectiveValue> => option.id !== "all");
 const TYPE_MULTI_OPTIONS = TYPE_OPTIONS.filter((option): option is Option<StackFacetTypeValue> => option.id !== "all");
+
+const OBJECTIVE_TAG_CLOUD: Record<StackFacetObjectiveValue, StackSubProfile[]> = {
+  content: ["copywriting", "newsletter", "social-content", "video", "podcast", "seo"],
+  sell: ["crm-sales", "sales-bd", "ecommerce", "pricing", "cro-conversion", "fundraising"],
+  clients: ["client-delivery", "crm-sales", "training", "coaching", "customer-ops", "generalist-consultant"],
+  automate: ["automation", "no-code", "ai-automation-consulting", "automation-ops", "ai-ops", "api-integration"],
+  produce: ["web", "ui-ux", "brand", "video", "product", "mobile-dev"],
+  organize: ["operations", "admin", "agency-ops", "finance-ops", "people-ops", "product-ops"],
+};
 
 const QUERY_KEYS = ["profile", "subProfile", "specialty", "objective", "budget", "level", "complexity", "type", "toolCount", "sort", "q"] as const;
 
@@ -417,14 +426,14 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelection
     <Link to={`${prefix}/stacks/${stack.slug}`} className="sk-card">
       <div className="sk-card-header">
         <div className="sk-card-heading">
-          <span className="sk-card-tag">
-            {personaLabel(stack.persona, lang)}
-            {primarySubProfile ? ` · ${subProfileLabel(primarySubProfile, lang)}` : ""}
-          </span>
-          <h2 className="sk-card-title">{title}</h2>
+          <div className="sk-card-identity">
+            <h2 className="sk-card-title">{title}</h2>
+            <span className="sk-card-tag">{personaLabel(stack.persona, lang)}</span>
+          </div>
           <div className="sk-card-facts">
             <span className="sk-card-fact sk-card-fact--strong">{budgetText}</span>
             <span className="sk-card-fact">{derived.toolCount} {t("outils", "tools")}</span>
+            {primarySubProfile && <span className="sk-card-fact">{subProfileLabel(primarySubProfile, lang)}</span>}
           </div>
         </div>
         <span className="sk-card-cta">{t("Voir la stack", "See stack")} <span aria-hidden>→</span></span>
@@ -510,10 +519,9 @@ const StacksPage = () => {
   const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: getStackDerivedFields(stack) })), []);
 
   const subProfileOptions = useMemo<Option<StackSubProfile>[]>(() => {
-    if (facetProfile === "all") return [];
-    const available = new Set(
-      STACKS.filter((stack) => stack.persona === facetProfile).flatMap((stack) => stack.subProfiles),
-    );
+    const available = new Set(facetProfile === "all"
+      ? STACKS.flatMap((stack) => stack.subProfiles)
+      : STACKS.filter((stack) => stack.persona === facetProfile).flatMap((stack) => stack.subProfiles));
     return STACK_SUB_PROFILES
       .filter((option): option is { value: StackSubProfile; label: string; labelEn: string; personas?: StackPersona[] } => option.value !== "all" && available.has(option.value))
       .map((option) => ({ id: option.value, label: option.label, labelEn: option.labelEn }));
@@ -547,6 +555,7 @@ const StacksPage = () => {
   const activeFilterCount = (facetProfile !== "all" ? 1 : 0) + facetSpecialties.length + facetObjectives.length
     + [facetBudget, facetLevel, facetComplexity, facetToolCount].filter((f) => f !== "all").length
     + facetTypes.length + (query.trim() ? 1 : 0);
+  const cloudObjective = facetObjectives.length === 1 ? facetObjectives[0] : null;
 
   useEffect(() => {
     const next = new URLSearchParams(searchParams);
@@ -740,6 +749,62 @@ const StacksPage = () => {
           <div className="tt-catalog-compact-header">
             <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
             <h1 className="tt-catalog-compact-title">{t("Trouver une stack claire.", "Find a clear stack.")}</h1>
+          </div>
+
+          <nav className="sk-tag-nav" aria-label={t("Naviguer par besoin", "Browse by need") as string}>
+            {cloudObjective ? (
+              <>
+                <button
+                  type="button"
+                  className="sk-tag-nav-back"
+                  onClick={() => {
+                    setFacetObjectives([]);
+                    setFacetSpecialties([]);
+                  }}
+                  aria-label={t("Revenir aux besoins", "Back to needs") as string}
+                >
+                  <ArrowLeft size={15} aria-hidden />
+                  {t("Retour", "Back")}
+                </button>
+                <span className="sk-tag-nav-label">{optionLabel(OBJECTIVE_OPTIONS, cloudObjective, lang)} :</span>
+                {OBJECTIVE_TAG_CLOUD[cloudObjective].map((specialty) => {
+                  const active = facetSpecialties.includes(specialty);
+                  return (
+                    <button
+                      key={specialty}
+                      type="button"
+                      className={`sk-tag-nav-item${active ? " sk-tag-nav-item--active" : ""}`}
+                      aria-pressed={active}
+                      onClick={() => setFacetSpecialties(active ? [] : [specialty])}
+                    >
+                      {subProfileLabel(specialty, lang)}
+                    </button>
+                  );
+                })}
+              </>
+            ) : (
+              <>
+                <span className="sk-tag-nav-label">{t("Explorer par besoin :", "Browse by need:")}</span>
+                {OBJECTIVE_MULTI_OPTIONS.map((objective) => (
+                  <button
+                    key={objective.id}
+                    type="button"
+                    className="sk-tag-nav-item"
+                    aria-pressed="false"
+                    onClick={() => {
+                      setFacetObjectives([objective.id]);
+                      setFacetSpecialties([]);
+                    }}
+                  >
+                    {optionLabel(OBJECTIVE_OPTIONS, objective.id, lang)}
+                  </button>
+                ))}
+              </>
+            )}
+          </nav>
+
+          <div className="sk-catalog-section-heading">
+            <h2>{t("Explorer les stacks", "Explore stacks")}</h2>
           </div>
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />

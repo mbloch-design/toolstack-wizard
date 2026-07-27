@@ -8,6 +8,9 @@
 - Chaque card se limite à l’identité de la stack, son budget, son nombre d’outils et l’action d’ouverture ; le verdict, le niveau et les blocs de contexte sont réservés à la fiche détail.
 - Une galerie de quatre outils exploite en priorité leurs images OG, avec le fallback logo partagé du catalogue et un aperçu des outils restants.
 - Les rôles couverts ferment la card sous forme de tags compacts, à la manière des compétences de la référence visuelle.
+- Un nuage de navigation propose six besoins généralistes sous le titre. Un clic remplace ce premier niveau par six spécialités contextualisées ; un bouton Retour restaure les besoins.
+- Les deux niveaux restent synchronisés avec les facettes Objectif et Spécialité ainsi qu’avec l’URL, et défilent horizontalement sur mobile.
+- Une séparation et le titre « Explorer les stacks » distinguent clairement la navigation éditoriale des filtres structurés.
 - Le responsive conserve deux visuels utiles sur mobile sans débordement horizontal.
 - Validation : build production, rendu desktop et viewport mobile 390 × 844.
 
