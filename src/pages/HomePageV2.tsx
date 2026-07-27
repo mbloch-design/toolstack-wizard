@@ -330,47 +330,46 @@ export default function HomePageV2() {
                + arrows with zero cards under it looked broken; hide the
                whole section instead of rendering it empty. */}
           {featured.length > 0 && (
-          <>
-          <FeaturedHead
-            label={t("Outils en vedette", "Featured tools")}
-            description={t("Une sélection courte d'outils solides pour commencer.", "A short selection of strong tools to start with.") as string}
-            to={`${prefix}/tools`}
-            linkLabel={t("Voir tout", "See all")}
-            page={featuredPage}
-            total={totalPages}
-            onPrev={prevPage}
-            onNext={nextPage}
-            previousLabel={t("Page précédente", "Previous page") as string}
-            nextLabel={t("Page suivante", "Next page") as string}
-          />
-          <SwipePager className="tc-grid" onPrevious={prevPage} onNext={nextPage}>
-            {visibleFeatured.map((tool) => {
-              const catName = stripLeadingEmoji(
-                lang === "en"
-                  ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                    || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                  : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-              );
-              return (
-                <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
-              );
-            })}
-          </SwipePager>
+            <section className="v2-catalog-section">
+              <FeaturedHead
+                label={t("Outils en vedette", "Featured tools")}
+                description={t("Une sélection courte d'outils solides pour commencer.", "A short selection of strong tools to start with.") as string}
+                to={`${prefix}/tools`}
+                linkLabel={t("Voir tout", "See all")}
+                page={featuredPage}
+                total={totalPages}
+                onPrev={prevPage}
+                onNext={nextPage}
+                previousLabel={t("Page précédente", "Previous page") as string}
+                nextLabel={t("Page suivante", "Next page") as string}
+              />
+              <SwipePager className="tc-grid" onPrevious={prevPage} onNext={nextPage}>
+                {visibleFeatured.map((tool) => {
+                  const catName = stripLeadingEmoji(
+                    lang === "en"
+                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                  );
+                  return (
+                    <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
+                  );
+                })}
+              </SwipePager>
 
-          {/* Page dots */}
-          <CarouselPagination
-            current={featuredPage}
-            total={totalPages}
-            onChange={setFeaturedPage}
-            label={t("Choisir une page d'outils", "Choose a tools page") as string}
-            pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
-          />
-          </>
+              <CarouselPagination
+                current={featuredPage}
+                total={totalPages}
+                onChange={setFeaturedPage}
+                label={t("Choisir une page d'outils", "Choose a tools page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
+              />
+            </section>
           )}
 
           {/* ══ 2. Outils IA — single row of 4 ══ */}
           {aiTools.length > 0 && (
-            <div style={{ marginTop: 56 }}>
+            <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Outils IA", "AI Design Tools")}
                 description={t("Les assistants et modèles à comparer selon ton usage réel.", "Assistants and models to compare for your actual use.") as string}
@@ -399,12 +398,12 @@ export default function HomePageV2() {
               <CarouselPagination current={aiPage} total={aiTotalPages} onChange={setAiPage}
                 label={t("Choisir une page d'outils IA", "Choose an AI tools page") as string}
                 pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
-            </div>
+            </section>
           )}
 
           {/* ══ 3. Nouveautés — logo list 3×4 ══ */}
           {latestTools.length > 0 && (
-            <div style={{ marginTop: 56 }}>
+            <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Nouveautés", "New Additions")}
                 description={t("Les ajouts récents au catalogue ToolTrim.", "Recent additions to the ToolTrim catalogue.") as string}
@@ -441,7 +440,7 @@ export default function HomePageV2() {
               <CarouselPagination current={newPage} total={newTotalPages} onChange={setNewPage}
                 label={t("Choisir une page de nouveautés", "Choose a new additions page") as string}
                 pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
-            </div>
+            </section>
           )}
 
           {/* ══ 4b. Category duo rows — two compact-list carousels sharing a row ══ */}
@@ -454,7 +453,7 @@ export default function HomePageV2() {
               .filter((p) => p.categoryTools.length > 0);
             if (panels.length === 0) return null;
             return (
-              <div key={rowIndex} className="v2-duo-row" style={{ marginTop: 56 }}>
+              <div key={rowIndex} className="v2-catalog-section v2-duo-row">
                 {panels.map(({ cat, categoryTools }) => (
                   <CategoryDuoPanel
                     key={cat.categoryId}
@@ -472,7 +471,7 @@ export default function HomePageV2() {
           })}
 
           {/* ══ 5. Stacks — carousel 1×3 ══ */}
-          <div style={{ marginTop: 56 }}>
+          <section className="v2-catalog-section">
             <FeaturedHead
               label={t("Stacks recommandées", "Recommended stacks")}
               description={t("Des combinaisons cohérentes selon le métier, le budget et le niveau.", "Coherent combinations by role, budget and experience.") as string}
@@ -514,11 +513,11 @@ export default function HomePageV2() {
             <CarouselPagination current={stackPage} total={stackTotalPages} onChange={setStackPage}
               label={t("Choisir une page de stacks", "Choose a stacks page") as string}
               pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
-          </div>
+          </section>
 
           {/* ══ 6. Guides — carousel 1×3, same shape as Stacks ══ */}
           {cappedPosts.length > 0 && (
-            <div style={{ marginTop: 56, paddingBottom: "clamp(64px,8vw,112px)" }}>
+            <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Articles du guide", "Guide articles")}
                 description={t("Des analyses pour décider sans empiler les outils.", "Analysis to help you decide without stacking tools.") as string}
@@ -567,7 +566,7 @@ export default function HomePageV2() {
               <CarouselPagination current={postPage} total={postTotalPages} onChange={setPostPage}
                 label={t("Choisir une page de guides", "Choose a guides page") as string}
                 pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
-            </div>
+            </section>
           )}
 
         </div>

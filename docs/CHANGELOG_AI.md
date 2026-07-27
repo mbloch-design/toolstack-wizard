@@ -2,6 +2,19 @@
 
 ---
 
+## 2026-07-27 — Barre sticky canonique des catalogues
+
+- Les catalogues Outils, Stacks, Guides, Catégories et Comparatifs partagent désormais le même hook de détection, la même hauteur de 68 px et le même traitement glass au scroll.
+- La page Stacks adopte aussi la composition interne canonique : groupe de filtres, recherche compacte avec effacement, compteur de résultats et tri dans une seule barre.
+- Le compteur et le tri spécifiques auparavant répétés sous le sticky Stacks sont supprimés.
+- Vérification navigateur comparative Outils / Stacks : padding, espacements, hauteur des contrôles, position sticky, fond translucide et flou sont identiques.
+- Le calque glass dépasse de 8 px au-dessus de la barre afin de masquer le fin gutter du workspace et empêcher le contenu défilant d’apparaître dans la jointure.
+- Au scroll, la recherche globale disparaît mais l’accès Ma stack reste visible dans la barre unique ; le contenu du sticky lui réserve sa place sans chevauchement.
+- Le passage à l’état sticky reçoit une micro-animation de 180 ms sur le glass, les contrôles et l’action Ma stack, neutralisée avec `prefers-reduced-motion`.
+- Les washes colorés pleine largeur sont retirés de tous les catalogues : les pages reviennent sur un fond neutre commun et leur accent n’apparaît plus que dans le petit repère du fil d’Ariane.
+
+---
+
 ## 2026-07-22 — Ouverture éditoriale du catalogue outils
 
 - La sélection recommandée est ramenée de huit à trois outils afin de jouer un rôle éditorial clair plutôt que de dupliquer une rangée du catalogue.
@@ -3598,6 +3611,35 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Le changement de langue conserve la page, les paramètres et l’ancre en cours.
 - Le thème suit d’abord la préférence enregistrée, puis celle du système, et applique un `color-scheme` cohérent au document.
 - Les variantes ont été vérifiées visuellement sur l’index des guides, en clair et en sombre, ainsi que par tests E2E de persistance.
+
+## 2026-07-27 — Rythme vertical de la homepage
+
+- Les sections du catalogue de la homepage partagent désormais une classe structurelle et un espacement vertical unique.
+- Suppression des marges inline répétées qui ajoutaient un vide artificiel lorsque la section « Outils en vedette » n'était pas rendue.
+- Le premier bloc commence plus près du hero ; les blocs suivants conservent une séparation régulière après leur pagination.
+- Le padding final du catalogue n'est plus doublé par celui de la dernière section.
+
+## 2026-07-27 — Finition visuelle de la sidebar
+
+- Les deux surfaces du shell adoptent un rayon extérieur plus contenu de 20 px et une gouttière légèrement plus fine.
+- Le fond du shell gagne en contraste tandis que la sidebar conserve une teinte presque blanche distincte de l'espace de travail.
+- Une bordure optique très légère précise les contours sans transformer les surfaces en cards.
+- Les icônes et libellés inactifs utilisent une tonalité secondaire ; l'état actif reste neutre, sans aplat noir ni accent bleu.
+- Le pictogramme compact ToolTrim est neutralisé afin de ne pas concurrencer les visuels éditoriaux.
+
+## 2026-07-27 — Toolbar catalogue flottante
+
+- L’aplat noir pleine largeur des filtres sticky est remplacé par une surface translucide contenue dans la colonne.
+- Le fond de secours reste suffisamment opaque pour préserver le contraste avant même l’application du flou d’arrière-plan.
+- Une bordure optique et une ombre douce détachent les filtres des résultats sans recréer une deuxième barre de navigation.
+- Les rayons, marges et décalages sont adaptés au mobile afin de conserver le même comportement flottant.
+- La page Stacks adopte le même état sticky que les catalogues Outils, Guides et Comparatifs.
+- La toolbar sticky remplace entièrement le header global pendant le scroll et conserve sa recherche contextuelle : une seule barre fonctionnelle reste visible.
+- L'état sticky forme un bandeau pleine largeur, collé en haut du workspace, sans rayon ni coque de card supplémentaire ; le verre reste limité au fond du bandeau.
+- Les popovers de filtre Outils, Stacks et Comparatifs partagent désormais une largeur de 280 px, le même rythme de 42 px, les mêmes rayons, ombres et états de focus neutres.
+- Les différences de sélection restent explicites : cases à cocher pour les catégories multiples, coche terminale pour les choix uniques.
+- Les cinq catalogues Outils, Catégorie, Guides, Comparatifs et Stacks utilisent désormais le même hook d’observation et les mêmes classes structurelles `tt-sticky-toolbar`.
+- Suppression des états sticky visuels propres aux pages : le fond glass, l’ancrage, la pleine largeur et le remplacement du header proviennent d’une seule règle partagée.
 
 ## 2026-07-27 — Réparation du garde-fou design tokens
 

@@ -8692,24 +8692,19 @@
     padding: 0 var(--layout-gutter);
   }
 
-  /* Catalog page top — full-bleed gradient WASH derived from the page's own
-     primary colour (--page-accent), strongest at the very top and fading down
-     into the page colour behind the compact header + filter bar. Each catalog
-     page therefore opens on its own acid tint, and the filter bar (transparent
-     at rest) picks that same colour up as a solid band when it pins. */
+  /* Catalogue pages stay neutral. The former full-bleed acid wash was too
+     dominant and made every route feel like a different product surface.
+     Page identity now lives in the tiny breadcrumb mark only. */
   .tt-catalog-page {
-    /* Opaque stops only (accent mixed into the page colour, no `transparent`
-       keyword) so the wash renders reliably: a strong acid tint at the very
-       top fading down to the page colour by ~300px. */
     background-color: var(--color-bg);
-    background-image: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--page-accent, #E8A66E) 62%, var(--color-bg)) 0%,
-      color-mix(in srgb, var(--page-accent, #E8A66E) 26%, var(--color-bg)) 58px,
-      var(--color-bg) 164px
+    background-image: none;
+  }
+  .tt-catalog-page .cp-breadcrumb::before {
+    background: color-mix(
+      in srgb,
+      var(--page-accent, var(--color-text-strong)) 28%,
+      var(--color-text-strong)
     );
-    background-repeat: no-repeat;
-    background-position: top center;
   }
 
   /* Hero metadata tags row — dot-separated plain text, no badge borders */
@@ -9672,10 +9667,9 @@
     transition: color 140ms;
   }
 
-  /* ── Filter bar row (quick pills + Filtres trigger + search) ────────── */
-  /* Sticky, same pattern as .tt-catalog-toolbar on ToolsPage: .asv2-content
-     is the real scroll container on desktop, so `top: 0` docks it right
-     under the app shell's own sticky topbar with no extra offset math. */
+  /* ── Stack filter contents ────────────────────────────────────────────
+     Sticky positioning and its stuck state are owned by the shared
+     .tt-sticky-toolbar contract further below. */
   .sk-mobile-trigger-row {
     display: flex;
     align-items: center;
@@ -9690,9 +9684,6 @@
     background: var(--color-bg);
     border-bottom: 1px solid transparent;
     transition: border-color 160ms ease-out;
-  }
-  .sk-mobile-trigger-row--stuck {
-    border-bottom-color: var(--color-border);
   }
   .sk-mobile-trigger {
     position: relative;
@@ -11775,26 +11766,56 @@
 ───────────────────────────────────────────── */
 @layer components {
 
-  /* ── Popular chips below the toolbar ─────────────────── */
+  .cix-hero {
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .cix-hero-title {
+    max-width: 780px;
+    margin: var(--space-lg) 0 0;
+    font-family: var(--font-brand);
+    font-size: var(--tt-size-page-title);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+    color: var(--color-text);
+  }
+  /* ── Compact discovery command bar ───────────────────── */
+  .cix-toolbar {
+    margin-bottom: var(--space-lg);
+  }
+  .cix-filter-group {
+    flex: 0 0 auto;
+  }
   .cix-popular {
     display: flex;
-    flex-wrap: wrap;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-xs);
     justify-content: flex-start;
-    margin-top: 0;
-    margin-bottom: 28px;
+    min-width: 0;
+    margin: 0;
+    padding-left: var(--space-md);
+    border-left: 1px solid var(--color-border-soft);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .cix-popular::-webkit-scrollbar {
+    display: none;
   }
   .cix-popular-label {
+    flex: 0 0 auto;
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-muted);
-    margin-right: 8px;
+    margin-right: var(--space-2xs);
   }
   .cix-suggestion-chip {
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     padding: 6px 12px;
@@ -11807,16 +11828,49 @@
     text-decoration: none;
     transition: border-color 140ms ease-out, color 140ms ease-out;
   }
+  .cix-suggestion-logos {
+    display: inline-flex;
+    align-items: center;
+    margin-right: var(--space-xs);
+  }
+  .cix-suggestion-logos > * {
+    border: 2px solid var(--color-surface);
+    border-radius: var(--radius-circle);
+  }
+  .cix-suggestion-logos > * + * {
+    margin-left: -6px;
+  }
   .cix-suggestion-chip:hover {
     border-color: var(--color-text-strong);
     color: var(--color-text-strong);
+  }
+  .cix-controls-count {
+    flex: 0 0 auto;
+    padding-left: var(--space-md);
+    border-left: 1px solid var(--color-border-soft);
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body);
+    font-weight: 600;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+  @media (max-width: 1400px) {
+    .cix-controls-count-label {
+      display: none;
+    }
+    .cix-suggestion-chip:nth-last-child(-n + 2) {
+      display: none;
+    }
   }
 
   /* ── Section / container shared ──────────────────────── */
   /* Top padding 40px to match the other catalog pages' hero offset
      (.tt-catalog-container / .cat-body / .sk-listing-section all = 40px);
      was 56px, which pushed the Comparatifs header lower than the rest. */
-  .cix-section { padding: 40px 0 56px; }
+  .cix-section {
+    padding: 0 0 var(--space-3xl);
+    background: var(--color-bg);
+  }
   .cix-container {
     max-width: var(--layout-content, 1280px);
     margin: 0 auto;
@@ -11830,7 +11884,7 @@
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin: var(--space-xl) 0 var(--space-md);
   }
   .cix-listing-title {
     font-family: var(--font-brand);
@@ -11843,81 +11897,128 @@
   }
 
 
-  /* ── Editorial list (replaces grid) ──────────────────── */
-  .cix-list {
+  /* ── Decision grid ───────────────────────────────────── */
+  .cix-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
     list-style: none;
     padding: 0;
     margin: 0;
-    border-top: 2px solid var(--color-border-strong);
   }
-  .cix-list-item {
-    border-bottom: 1px solid var(--color-border-soft);
+  .cix-grid-item {
+    min-width: 0;
   }
   .cix-card {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 16px;
-    margin: 0 -16px;
-    border-radius: var(--radius-xs);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--tt-surface-radius-info, 12px);
+    background: var(--color-surface);
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: border-color 180ms ease-out, background-color 180ms ease-out;
   }
   .cix-card:hover {
     background-color: var(--color-surface-soft);
+    border-color: var(--color-border-strong);
+  }
+  .cix-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding-bottom: var(--space-lg);
+  }
+  .cix-card-identity {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    min-width: 0;
   }
   .cix-card-logos {
     display: flex;
     align-items: center;
-    gap: 10px;
     flex-shrink: 0;
   }
   .cix-card-logo {
     display: inline-flex;
+    padding: 5px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
   }
-  .cix-card-vs {
+  .cix-card-logo--second {
+    margin-left: -10px;
+  }
+  .cix-card-eyebrow {
+    display: block;
+    margin-bottom: var(--space-2xs);
     font-family: var(--font-ui);
-    font-size: 10px;
+    font-size: var(--tt-size-kicker);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .cix-card-body {
+    flex: 1;
+  }
+  .cix-card-title {
+    margin: 0;
+    font-family: var(--font-brand);
+    font-size: var(--tt-size-section-intro);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--color-text-strong);
+  }
+  .cix-card-title span {
+    color: var(--color-muted-light);
+    font-weight: 500;
+  }
+  .cix-card-arrow {
+    flex: 0 0 auto;
+    color: var(--color-muted);
+    transition: transform 180ms ease-out, color 180ms ease-out;
+  }
+  .cix-card:hover .cix-card-arrow {
+    color: var(--color-text);
+    transform: translate(2px, -2px);
+  }
+  .cix-card-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border-soft);
+  }
+  .cix-card-choice {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2xs);
+    padding: var(--space-md) var(--space-md) 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body);
+    line-height: 1.45;
+    color: var(--color-muted);
+  }
+  .cix-card-choice + .cix-card-choice {
+    padding-right: 0;
+    padding-left: var(--space-md);
+    border-left: 1px solid var(--color-border-soft);
+  }
+  .cix-card-choice-label {
+    font-size: var(--tt-size-kicker);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-muted-light);
   }
-  .cix-card-body {
-    min-width: 0;
-  }
-  .cix-card-title {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-body-large);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    color: var(--color-text-strong);
-  }
-  /* Per-tool decision split: one line each, bold tool name + when to pick it.
-     Replaces the old question + "best for" pair that repeated the same data. */
-  .cix-card-split {
-    margin: 7px 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .cix-card-choice {
-    margin: 0;
-    display: flex;
-    gap: 8px;
-    align-items: baseline;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body);
-    line-height: 1.4;
-    color: var(--color-muted);
-  }
   .cix-card-choice-name {
-    flex-shrink: 0;
-    min-width: 96px;
     font-weight: 700;
     color: var(--color-text-strong);
   }
@@ -11928,16 +12029,20 @@
     text-transform: uppercase;
   }
   .cix-card-choice-fallback {
-    margin: 7px 0 0;
+    margin: 0;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-soft);
     font-family: var(--font-ui);
     font-size: var(--tt-size-body);
     line-height: 1.45;
     color: var(--color-text);
   }
   .cix-card-cat {
-    flex-shrink: 0;
-    align-self: start;
-    padding-top: 4px;
+    align-self: flex-start;
+    margin-top: var(--space-lg);
+    padding: 5px 9px;
+    border-radius: var(--radius-pill);
+    background: var(--color-bg);
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker);
     font-weight: 700;
@@ -11945,12 +12050,51 @@
     text-transform: uppercase;
     color: var(--color-muted-light);
   }
-  @media (max-width: 768px) {
-    .cix-card {
-      grid-template-columns: auto 1fr;
-      padding: 20px 16px;
+  @media (max-width: 980px) {
+    .cix-toolbar {
+      flex-wrap: wrap;
     }
-    .cix-card-cat { grid-column: 1 / -1; padding-top: 0; }
+    .cix-filter-group {
+      flex: 1 1 auto;
+    }
+    .cix-popular {
+      order: 3;
+      flex-basis: 100%;
+      padding: var(--space-sm) 0 0;
+      border-top: 1px solid var(--color-border-soft);
+      border-left: 0;
+    }
+    .cix-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .cix-hero {
+      padding: var(--space-lg) 0;
+    }
+    .cix-card {
+      padding: var(--space-md);
+    }
+    .cix-toolbar {
+      align-items: stretch;
+    }
+    .cix-filter-group,
+    .cix-filter-group .tt-catalog-toolbar-filters {
+      width: 100%;
+    }
+    .cix-controls-count {
+      padding-left: 0;
+      border-left: 0;
+      text-align: right;
+    }
+    .cix-card-identity { align-items: flex-start; }
+    .cix-card-logos { margin-top: 2px; }
+    .cix-card-split { grid-template-columns: 1fr; }
+    .cix-card-choice { padding-right: 0; }
+    .cix-card-choice + .cix-card-choice {
+      margin-top: var(--space-md);
+      padding: var(--space-md) 0 0;
+      border-top: 1px solid var(--color-border-soft);
+      border-left: 0;
+    }
   }
 
   /* ── Empty state ─────────────────────────────────────── */
@@ -17876,57 +18020,118 @@ section[id] {
   gap: 18px;
   min-height: 64px;
   margin-bottom: 28px;
-  padding: 12px 0;
-  border-bottom: 1px solid transparent;
-  background: var(--color-bg);
+  margin-inline: -12px;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  background: transparent;
   color: var(--color-text);
-  /* .asv2-content (not the window) is the actual scroll container on
-     desktop, so `top: 0` sticks it right under the app shell's own
-     sticky topbar rather than the viewport edge. */
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: border-color 160ms ease-out;
+  transition:
+    background-color 180ms ease-out,
+    border-color 180ms ease-out,
+    box-shadow 180ms ease-out,
+    backdrop-filter 180ms ease-out;
 }
-.tt-catalog-toolbar--stuck {
-  border-bottom-color: var(--color-border);
+.tt-sticky-toolbar--stuck {
+  border-color: transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-/* ── Catalog pages: sticky filter band, one accent colour per page ──────────
-   When the filter bar pins (--stuck), the zone simply takes on the page's
-   accent colour — no reveal/slide animation, it just becomes coloured. Each
-   page sets its own --page-accent (a soft, non-fluo tone) on its .tt-catalog-page
-   root. overflow-x: clip lets the band overshoot to -100vw and be trimmed to
-   the page's full content width (edge to edge); it pairs with overflow-y:
-   visible so the root doesn't become a scroll container and the toolbar keeps
-   sticking to .asv2-content. */
+/* ── Canonical catalogue sticky ────────────────────────────────────────────
+   Every catalogue page applies these two classes to its own command bar:
+   .tt-sticky-toolbar and .tt-sticky-toolbar--stuck. Page-specific classes
+   only control the contents inside the bar. */
 .tt-catalog-page { overflow-x: clip; }
-/* Stacks uses a bespoke filter row (.sk-mobile-trigger-row) instead of
-   .tt-catalog-toolbar, so it's listed alongside everywhere below to get the
-   exact same pinned accent band. */
-.tt-catalog-page .tt-catalog-toolbar,
-.tt-catalog-page .sk-mobile-trigger-row { isolation: isolate; background: transparent; }
-.tt-catalog-page .tt-catalog-toolbar::before,
-.tt-catalog-page .sk-mobile-trigger-row::before {
+.tt-catalog-page .tt-sticky-toolbar {
+  top: 0;
+  z-index: 20;
+  min-height: 68px;
+  isolation: isolate;
+  background: transparent;
+}
+.tt-catalog-page .tt-sticky-toolbar::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100vw;                 /* overshoot; clipped to the page root = full width */
-  right: -100vw;
   z-index: -1;
-  /* Neutral, high-contrast band (the page's ink colour) — dark on the light
-     theme, light on the dark theme — instead of the per-page acid accent.
-     The default light pills already pop on it, so no control overrides. */
-  background: var(--color-text);
-  border-bottom: 1px solid color-mix(in oklch, var(--color-text), #000 30%);
-  opacity: 0;                   /* the zone just gets its colour — no animation */
+  inset-block: 0;
+  left: -100vw;
+  right: -100vw;
+  border-bottom: 1px solid transparent;
+  background: transparent;
   pointer-events: none;
 }
-.tt-catalog-page .tt-catalog-toolbar--stuck,
-.tt-catalog-page .sk-mobile-trigger-row--stuck { border-bottom-color: transparent; }
-.tt-catalog-page .tt-catalog-toolbar--stuck::before,
-.tt-catalog-page .sk-mobile-trigger-row--stuck::before { opacity: 1; }
+.tt-catalog-page .tt-sticky-toolbar--stuck {
+  top: 0;
+  border-color: transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.tt-catalog-page .tt-sticky-toolbar--stuck::before {
+  /* The desktop workspace keeps a thin outer gutter around its content.
+     Extend the glass layer through that gutter so scrolling cards can never
+     appear in the seam above the sticky controls. */
+  inset-block-start: -8px;
+  border-bottom-color: color-mix(in srgb, var(--color-border) 76%, transparent);
+  background: color-mix(in srgb, var(--color-surface) 91%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-text) 7%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+  backdrop-filter: blur(18px) saturate(1.12);
+  animation: tt-sticky-glass-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.tt-catalog-page .tt-sticky-toolbar--stuck > * {
+  animation: tt-sticky-controls-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes tt-sticky-glass-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes tt-sticky-controls-in {
+  from {
+    opacity: 0.88;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes tt-sticky-utility-in {
+  from {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tt-catalog-page .tt-sticky-toolbar--stuck::before,
+  .tt-catalog-page .tt-sticky-toolbar--stuck > *,
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-right {
+    animation: none;
+  }
+}
+.tt-sticky-toolbar--stuck .tt-catalog-toolbar-meta {
+  color: color-mix(in srgb, var(--color-text) 72%, var(--color-muted));
+}
+@media (min-width: 901px) {
+  .tt-catalog-page .tt-sticky-toolbar {
+    height: 68px;
+  }
+}
 .tt-catalog-toolbar-filters {
   display: flex;
   flex: 1 1 auto;
@@ -18142,7 +18347,13 @@ section[id] {
 
 @media (max-width: 560px) {
   .tt-catalog-toolbar {
-    padding: 12px 0;
+    top: 0;
+    margin-inline: -10px;
+    padding: 10px;
+    border-radius: 0;
+  }
+  .tt-catalog-page .tt-sticky-toolbar--stuck {
+    top: 0;
     border-radius: 0;
   }
   .tt-catalog-toolbar .tf-dd-trigger,
@@ -19250,7 +19461,11 @@ section[id] {
 }
 
 .v2-catalog {
-  padding: clamp(48px, 6vw, 88px) 0 clamp(64px, 8vw, 112px);
+  padding: clamp(44px, 4vw, 64px) 0 clamp(64px, 6vw, 88px);
+}
+
+.v2-catalog-section + .v2-catalog-section {
+  margin-top: clamp(48px, 4vw, 64px);
 }
 
 /* Search bar */
@@ -19711,6 +19926,13 @@ section[id] {
   .v2-duo-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
+  .v2-catalog {
+    padding-top: 36px;
+    padding-bottom: 56px;
+  }
+  .v2-catalog-section + .v2-catalog-section {
+    margin-top: 44px;
+  }
   .v2-container { padding: 0 20px; }
   .v2-cat-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .v2-new-grid { grid-template-columns: repeat(1, 1fr); }
@@ -19836,14 +20058,15 @@ section[id] {
    ══════════════════════════════════════════════════════════════════════ */
 .asv2-root {
   display: flex;
-  gap: 8px;
+  gap: 7px;
   height: 100vh;
   overflow: hidden;
-  padding: 8px;
-  background: var(--color-surface-soft);
+  padding: 7px;
+  background: color-mix(in srgb, var(--color-surface-soft) 82%, var(--color-border));
 }
 
 .asv2-workspace {
+  position: relative;
   display: flex;
   flex: 1;
   min-width: 0;
@@ -19852,6 +20075,7 @@ section[id] {
   overflow: hidden;
   border-radius: var(--radius-xl);
   background: var(--color-surface);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border-soft) 58%, transparent);
 }
 
 .asv2-logo {
@@ -19870,6 +20094,7 @@ section[id] {
 .asv2-logo-mark {
   width: 32px;
   height: 32px;
+  filter: grayscale(1) contrast(1.6);
 }
 .asv2-logo-full {
   display: none !important;
@@ -19895,6 +20120,54 @@ section[id] {
   flex-shrink: 0;
   padding: 0 20px;
   background: var(--color-surface);
+}
+
+/* Sur les catalogues, le sticky remplace la recherche globale, mais conserve
+   l'accès Ma stack comme action utilitaire du shell. La topbar ne forme donc
+   jamais une deuxième rangée : seul son CTA reste superposé à droite. */
+@media (min-width: 641px) {
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar {
+    position: absolute;
+    inset: 0 0 auto auto;
+    width: auto;
+    padding-inline: 20px;
+    background: transparent;
+    pointer-events: none;
+    z-index: 40;
+  }
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-mobile-logo,
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-search {
+    display: none;
+  }
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar-right {
+    pointer-events: auto;
+    animation: tt-sticky-utility-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) .tt-sticky-toolbar--stuck {
+    padding-inline-end: 184px;
+  }
+}
+@media (min-width: 901px) and (max-width: 1400px) {
+  .tt-catalog-toolbar.sk-mobile-trigger-row {
+    flex-wrap: nowrap;
+  }
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) .tt-catalog-toolbar-meta > span {
+    display: none;
+  }
+}
+@media (min-width: 641px) and (max-width: 1100px) {
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-cta {
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    padding: 0;
+  }
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-cta span {
+    display: none;
+  }
+  .asv2-workspace:has(.tt-sticky-toolbar--stuck) .tt-sticky-toolbar--stuck {
+    padding-inline-end: 72px;
+  }
 }
 
 .asv2-mobile-logo {
@@ -19976,8 +20249,9 @@ section[id] {
   flex-shrink: 0;
   overflow: hidden;
   padding: 12px 10px 14px;
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 96%, var(--color-surface-soft));
   border-radius: var(--radius-xl);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border-soft) 58%, transparent);
   transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -20001,8 +20275,8 @@ section[id] {
   width: 100%;
   min-height: 44px;
   padding: 2px 5px;
-  border-radius: var(--radius);
-  color: var(--color-text);
+  border-radius: var(--radius-md);
+  color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted));
   text-decoration: none;
   transition: background 140ms ease-out;
 }
@@ -20014,19 +20288,20 @@ section[id] {
   width: 44px;
   height: 40px;
   flex: 0 0 44px;
-  border-radius: var(--radius);
-  color: var(--color-text);
+  border-radius: var(--radius-md);
+  color: var(--color-muted);
   transition: background 120ms ease-out, color 120ms ease-out;
 }
 .asv2-nav-item:hover .asv2-nav-icon {
-  background: var(--color-surface-soft);
+  background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-surface));
+  color: var(--color-text);
 }
 .asv2-nav-item--active .asv2-nav-icon {
-  background: var(--color-surface-soft);
+  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
   color: var(--color-text-strong);
 }
 .asv2-nav-item--active:hover .asv2-nav-icon {
-  background: var(--color-surface-soft);
+  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
 }
 
 .asv2-nav-label {
@@ -20038,18 +20313,19 @@ section[id] {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text);
+  color: color-mix(in srgb, var(--color-text) 82%, var(--color-muted));
   line-height: 1.2;
   text-align: left;
   transition: width 180ms ease-out, opacity 120ms ease-out;
 }
 .asv2-nav-item--active .asv2-nav-label {
   font-weight: 650;
+  color: var(--color-text-strong);
 }
 
 .asv2-root--sidebar-expanded .asv2-nav-item:hover,
 .asv2-root--sidebar-expanded .asv2-nav-item--active {
-  background: var(--color-surface-soft);
+  background: color-mix(in srgb, var(--color-surface-soft) 78%, var(--color-surface));
 }
 .asv2-root--sidebar-expanded .asv2-nav-item .asv2-nav-icon {
   background: transparent;
@@ -20092,9 +20368,9 @@ section[id] {
   min-height: 42px;
   padding: 1px 5px;
   border: 0;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background: transparent;
-  color: var(--color-text);
+  color: color-mix(in srgb, var(--color-text) 80%, var(--color-muted));
   font-family: var(--font-ui);
   font-size: 13px;
   text-align: left;
@@ -20103,7 +20379,8 @@ section[id] {
   transition: background 140ms ease-out;
 }
 .asv2-utility-item:hover {
-  background: var(--color-surface-soft);
+  background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-surface));
+  color: var(--color-text);
 }
 .asv2-utility-item:focus-visible {
   outline: 2px solid var(--color-text);
@@ -20150,13 +20427,16 @@ section[id] {
 .asv2-sidebar-toggle {
   margin-top: 4px;
   border-top: 1px solid var(--color-border-soft);
-  border-radius: 0 0 var(--radius) var(--radius);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
   padding-top: 5px;
   min-height: 46px;
 }
 
 .dark .asv2-logo img {
   filter: invert(1);
+}
+.dark .asv2-logo .asv2-logo-mark {
+  filter: grayscale(1) contrast(1.6) invert(1);
 }
 .dark .asv2-mobile-logo img {
   filter: invert(1);
@@ -20409,7 +20689,7 @@ section[id] {
 .tf-dd-trigger:hover { border-color: var(--color-text); }
 .tf-dd-trigger--open {
   border-color: var(--color-text);
-  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-text) 12%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-text) 9%, transparent);
 }
 .tf-dd-trigger--active { color: var(--color-text); font-weight: 600; }
 .tf-dd-count {
@@ -20436,24 +20716,33 @@ section[id] {
 
 .tf-dd-panel {
   z-index: 1000;
-  width: 260px;
+  width: 280px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  box-shadow: 0 12px 32px rgba(18, 18, 16, 0.12);
-  padding: 8px;
+  box-shadow:
+    0 18px 42px color-mix(in srgb, var(--color-text) 13%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 58%, transparent);
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 .tf-dd-search {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px;
+  min-height: 42px;
+  padding: 0 11px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  background: var(--color-surface);
   color: var(--color-muted);
+  transition: border-color 140ms ease-out, box-shadow 140ms ease-out;
+}
+.tf-dd-search:focus-within {
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-text) 8%, transparent);
 }
 .tf-dd-search input {
   flex: 1;
@@ -20468,6 +20757,7 @@ section[id] {
 .tf-dd-list {
   display: flex;
   flex-direction: column;
+  gap: 2px;
   max-height: 288px;
   overflow-y: auto;
 }
@@ -20476,18 +20766,25 @@ section[id] {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 8px 10px;
+  min-height: 42px;
+  padding: 0 11px;
   border: none;
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--color-text);
   font-family: var(--font-ui);
   font-size: 14px;
+  line-height: 1.3;
   letter-spacing: -0.01em;
   text-align: left;
   cursor: pointer;
 }
 .tf-dd-item:hover { background: var(--color-surface-soft); }
+.tf-dd-item:focus-visible {
+  outline: none;
+  background: var(--color-surface-soft);
+  box-shadow: inset 0 0 0 1.5px var(--color-text);
+}
 .tf-dd-item--active { font-weight: 600; }
 .tf-dd-item--active svg { color: var(--color-text); flex-shrink: 0; }
 .tf-dd-item--checkbox { justify-content: flex-start; }
@@ -22647,5 +22944,345 @@ section[id] {
   }
   .stack-board-editorial-title {
     font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ComparePage — canonical article layout
+   Keep page structure here; the earlier cp-* block only owns shared elements.
+═══════════════════════════════════════════════════════════════════════════ */
+.cp-page-light {
+  background: var(--color-bg);
+}
+
+.cp-hero {
+  padding: var(--space-xl) 0 0;
+  background: var(--color-bg);
+}
+.cp-hero-inner {
+  max-width: var(--layout-content, 1280px);
+}
+.cp-hero-meta {
+  margin-bottom: var(--space-xl);
+}
+.cp-hero-layout {
+  display: block;
+}
+.cp-hero-duel {
+  min-width: 0;
+}
+.cp-hero-title {
+  flex-wrap: nowrap;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(40px, 3.6vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+.cp-hero-title-tool {
+  gap: var(--space-sm);
+}
+.cp-hero-title-logo {
+  width: 40px;
+  height: 40px;
+}
+.cp-article-dek {
+  max-width: 62ch;
+  margin: var(--space-lg) 0 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-section-intro);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-muted);
+}
+
+.cp-product-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--layout-tool-sidebar, 360px);
+  gap: var(--space-2xl);
+  align-items: start;
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px);
+}
+.cp-product-main {
+  min-width: 0;
+}
+.cp-product-main .cp-section {
+  padding: var(--space-3xl) 0;
+  border: 0;
+  background: transparent;
+}
+.cp-product-main .cp-container {
+  display: block;
+  padding: 0;
+}
+.cp-product-main .cp-container > .cp-matrix-header {
+  position: static;
+  height: auto;
+  margin: 0 0 var(--space-xl);
+}
+.cp-product-main .cp-matrix-header .cp-eyebrow {
+  margin-bottom: var(--space-sm);
+}
+.cp-product-main .cp-title {
+  max-width: none;
+  margin: 0;
+  font-size: var(--tt-size-section-h);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.cp-fundamental-copy {
+  max-width: 62ch;
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+.cp-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2xl);
+}
+.cp-choose-grid h3 {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-section-intro);
+  line-height: 1.3;
+  color: var(--color-text);
+}
+.cp-choose-grid ul {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cp-choose-grid li {
+  position: relative;
+  padding-left: var(--space-md);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+.cp-choose-grid li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-circle);
+  background: var(--color-text);
+}
+
+.cp-decision-sidebar {
+  position: sticky;
+  top: calc(var(--navbar-h, 68px) + var(--space-lg));
+  height: fit-content;
+  margin-top: var(--space-3xl);
+  padding: var(--space-lg);
+  border-radius: var(--tt-surface-radius-panel, 24px);
+  background: var(--color-surface-soft);
+}
+.cp-decision-sidebar-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+}
+.cp-decision-sidebar-tools > span:not(.cp-decision-sidebar-vs) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-width: 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-title);
+  font-weight: 700;
+  color: var(--color-text);
+}
+.cp-decision-sidebar-vs {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  color: var(--color-muted);
+}
+.cp-decision-sidebar > .cp-eyebrow {
+  margin-bottom: var(--space-sm);
+}
+.cp-decision-sidebar-verdict {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+}
+.cp-decision-sidebar-choices {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+.cp-decision-sidebar-choices div {
+  display: grid;
+  gap: var(--space-2xs);
+}
+.cp-decision-sidebar-choices strong {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-title);
+  color: var(--color-text);
+}
+.cp-decision-sidebar-choices span {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  line-height: 1.42;
+  color: var(--color-muted);
+}
+.cp-decision-sidebar-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+}
+.cp-decision-sidebar-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 650;
+  color: var(--color-text);
+  text-align: center;
+  text-decoration: none;
+}
+
+.cp-product-main .cp-compare-table {
+  margin-top: 0;
+}
+.cp-product-main .cp-compare-header {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  padding: 0 0 var(--space-md);
+}
+.cp-product-main .cp-compare-header-label {
+  display: none;
+}
+.cp-product-main .cp-compare-header-tool {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0;
+}
+.cp-product-main .cp-compare-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  background: transparent;
+}
+.cp-product-main .cp-compare-row-label {
+  grid-column: 1 / -1;
+  padding: 0;
+}
+.cp-product-main .cp-compare-row-title {
+  margin-bottom: var(--space-2xs);
+  font-size: var(--tt-size-section-intro);
+}
+.cp-product-main .cp-compare-row-verdict {
+  max-width: 58ch;
+  line-height: 1.5;
+}
+.cp-product-main .cp-compare-row-tool {
+  padding: 0;
+  background: transparent;
+}
+.cp-product-main .cp-compare-row-tool-val,
+.cp-product-main .cp-compare-row-tool-note {
+  line-height: 1.5;
+}
+
+.cp-product-main .cp-sub-section {
+  margin-top: var(--space-2xl);
+  padding-top: 0;
+  border: 0;
+}
+.cp-product-main .cp-sub-section-eyebrow {
+  display: block;
+  margin-bottom: var(--space-xs);
+  padding-top: 0;
+  border: 0;
+}
+.cp-product-main .cp-sub-section-title {
+  margin: 0 0 var(--space-lg);
+  font-size: var(--tt-size-section-intro);
+  line-height: 1.3;
+}
+.cp-product-main .cp-faq-theme + .cp-faq-theme {
+  margin-top: var(--space-2xl);
+}
+.cp-product-main .cp-faq-theme-title {
+  margin-bottom: var(--space-md);
+  font-size: var(--tt-size-section-intro);
+}
+.cp-product-main .cp-limites-risk-fix,
+.cp-product-main .cp-alt-reason {
+  font-size: var(--tt-size-body);
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .cp-hero-title {
+    flex-wrap: wrap;
+  }
+  .cp-product-shell {
+    grid-template-columns: 1fr;
+  }
+  .cp-decision-sidebar {
+    position: static;
+    order: -1;
+    max-width: 680px;
+    margin-top: var(--space-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .cp-hero {
+    padding: var(--space-lg) 0 0;
+  }
+  .cp-hero-title {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+  .cp-hero-title-logo {
+    width: 36px;
+    height: 36px;
+  }
+  .cp-article-dek,
+  .cp-fundamental-copy {
+    font-size: var(--tt-size-body);
+  }
+  .cp-product-main .cp-section {
+    padding: var(--space-2xl) 0;
+  }
+  .cp-choose-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .cp-product-main .cp-compare-header,
+  .cp-product-main .cp-compare-row {
+    gap: var(--space-md);
+  }
+  .cp-decision-sidebar-choices {
+    display: none;
   }
 }

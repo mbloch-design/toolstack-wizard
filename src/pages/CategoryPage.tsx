@@ -10,6 +10,7 @@ import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getExplorerHref } from "@/lib/toolExploration";
+import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -66,20 +67,7 @@ const CategoryPage = () => {
   const [visibleCount, setVisibleCount]   = useState(PER_PAGE);
   const [isSearchOpen, setIsSearchOpen]   = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const [toolbarStuck, setToolbarStuck]   = useState(false);
-  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sentinel = toolbarSentinelRef.current;
-    if (!sentinel) return;
-    const scrollRoot = sentinel.closest(".asv2-content");
-    const observer = new IntersectionObserver(
-      ([entry]) => setToolbarStuck(!entry.isIntersecting),
-      { root: scrollRoot, threshold: 0 },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   const year = useMemo(() => new Date().getFullYear(), []);
 
@@ -220,7 +208,7 @@ const CategoryPage = () => {
         {/* ══════════════ FILTER BAR — same pilule+popover pattern as
             Outils/Comparatifs/Stacks/Guides, replacing the old permanent
             sidebar so every listing page on the site behaves the same way. ══ */}
-        <div className={`tt-catalog-toolbar${toolbarStuck ? " tt-catalog-toolbar--stuck" : ""}`}>
+        <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           <div className="tt-catalog-toolbar-filters">
             <FilterDropdown
               label={t("Profil", "Profile") as string}

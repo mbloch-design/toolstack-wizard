@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
-import { useState, useMemo, useEffect, useRef, type CSSProperties } from "react";
+import { useState, useMemo, useEffect, type CSSProperties } from "react";
 import { Clock } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -9,6 +9,7 @@ import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import { scrollToTop } from "@/lib/scroll";
 import ToolLogoPile from "@/components/ToolLogoPile";
+import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -118,26 +119,10 @@ const GuidesPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
   const [showAll, setShowAll] = useState(false);
-  const [toolbarStuck, setToolbarStuck] = useState(false);
-  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   /* Reset pagination on filter/sort change */
   useEffect(() => { setShowAll(false); }, [activeFilter, sortBy]);
-
-  // Toggle the sticky toolbar's "stuck" border once its sentinel (placed
-  // right above it) scrolls out of view — same pattern as ToolsPage/
-  // StacksPage. .asv2-content is the real scroll container on desktop.
-  useEffect(() => {
-    const sentinel = toolbarSentinelRef.current;
-    if (!sentinel) return;
-    const scrollRoot = sentinel.closest(".asv2-content");
-    const observer = new IntersectionObserver(
-      ([entry]) => setToolbarStuck(!entry.isIntersecting),
-      { root: scrollRoot, threshold: 0 },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -187,9 +172,7 @@ const GuidesPage = () => {
 
       {/* ══ Top — same compact header + grid as the Outils catalog page
           (breadcrumb + slim title, then the filter bar), so Guides shares
-          the exact spacing/rhythm of the other catalog pages. The warm
-          gradient wash lives on .gi-page behind it (Spotify-style), and the
-          filter bar picks that tone up as a band when it pins. ══ */}
+          the exact neutral spacing/rhythm of the other catalog pages. ══ */}
       <div id="guides">
         <div className="gi-container tt-catalog-container">
 
@@ -203,7 +186,7 @@ const GuidesPage = () => {
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
           {/* Filter bar — same pilule+popover pattern as Outils/Comparatifs/Stacks */}
-          <div className={`tt-catalog-toolbar${toolbarStuck ? " tt-catalog-toolbar--stuck" : ""}`}>
+          <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
             <div className="tt-catalog-toolbar-filters">
               <FilterDropdown
                 label={t("Filtrer par", "Filter by") as string}

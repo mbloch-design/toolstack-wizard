@@ -78,7 +78,7 @@ export default function FilterDropdown({
   useLayoutEffect(() => {
     if (!open || !triggerRef.current) return;
     const rect = triggerRef.current.getBoundingClientRect();
-    const panelWidth = 260;
+    const panelWidth = 280;
     let left = rect.left;
     if (left + panelWidth > window.innerWidth - 16) left = window.innerWidth - 16 - panelWidth;
     if (left < 16) left = 16;

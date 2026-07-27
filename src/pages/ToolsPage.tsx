@@ -10,6 +10,7 @@ import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { getExplorerHref } from "@/lib/toolExploration";
+import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 const TOOLS_PER_PAGE = 40;
 const EDITORIAL_SELECTION = ["framer", "notion", "figma"];
@@ -88,8 +89,7 @@ const ToolsPage = () => {
   const [visibleCount, setVisibleCount] = useState(TOOLS_PER_PAGE);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const [toolbarStuck, setToolbarStuck] = useState(false);
-  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   useEffect(() => {
     const title = lang === "fr"
@@ -191,23 +191,6 @@ const ToolsPage = () => {
     if (isSearchExpanded) searchInputRef.current?.focus();
   }, [isSearchExpanded]);
 
-  // Toggle the sticky toolbar's "stuck" border once its sentinel (placed
-  // right above it) scrolls out of view — .asv2-content is the real scroll
-  // container on desktop, not the window, so this must be the observer's
-  // root rather than assuming viewport-relative IntersectionObserver
-  // defaults still make sense.
-  useEffect(() => {
-    const sentinel = toolbarSentinelRef.current;
-    if (!sentinel) return;
-    const scrollRoot = sentinel.closest(".asv2-content");
-    const observer = new IntersectionObserver(
-      ([entry]) => setToolbarStuck(!entry.isIntersecting),
-      { root: scrollRoot, threshold: 0 },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
-
   function clearUrlParam(paramName: string) {
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete(paramName);
@@ -229,7 +212,7 @@ const ToolsPage = () => {
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
         {/* ── Filter bar: quick pills for the primary facets ── */}
-        <div className={`tt-catalog-toolbar${toolbarStuck ? " tt-catalog-toolbar--stuck" : ""}`}>
+        <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           <div className="tt-catalog-toolbar-filters">
             <FilterDropdown
               label={t("Catégorie", "Category") as string}

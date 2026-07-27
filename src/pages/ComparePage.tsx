@@ -4,7 +4,6 @@ import { useToolPair, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import SectionPillNav from "@/components/SectionPillNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
@@ -1974,18 +1973,11 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
   };
 }
 
-interface CompareNavSection {
-  id: string;
-  label: string;
-}
-
-
 /* ─── Main page ──────────────────────────────────────────────────────────── */
 const ComparePage = () => {
   const { slugPair } = useParams<{ slugPair: string }>();
   const { lang, t, prefix } = useLang();
   const [staleLoading, setStaleLoading] = useState(false);
-  const [activeProfile, setActiveProfile] = useState(-1);
 
   const parsedPair = useMemo(() => {
     if (!slugPair) return null;
@@ -2160,6 +2152,8 @@ const ComparePage = () => {
     : EDITORIAL_CONTENT[slugPair ?? ""] ?? buildFallbackContent(toolA, toolB, lang);
 
   const framing = lang === "fr" ? content.framing : content.framingEn;
+  const heroDek = content.aglanceHeroPromise || framing;
+  const showFundamental = heroDek.trim().toLocaleLowerCase() !== framing.trim().toLocaleLowerCase();
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
   /* Verdict 2-card layout */
   const verdictCardTitleA = lang === "fr" ? (content.verdictCardTitleA ?? "") : (content.verdictCardTitleAEn ?? "");
@@ -2175,6 +2169,14 @@ const ComparePage = () => {
     : (content.verdictWarningEn || content.quickVerdictAvoidEn);
   const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
   const decisionTableRows = getDecisionTableRows(content.tableRows);
+  const isRepeatedCriterion = (fr: string, en: string) =>
+    /co[uû]t|prix|usage principal/i.test(fr) || /cost|price|primary use/i.test(en);
+  const decisiveCriteriaForDisplay = content.decisiveCriteria.filter(
+    (criterion) => !isRepeatedCriterion(criterion.title, criterion.titleEn),
+  );
+  const decisionRowsForDisplay = decisionTableRows.filter(
+    (row) => !isRepeatedCriterion(row.criterion, row.criterionEn),
+  );
   const bestForA = content.aglanceBestForA || getToolBestFor(content, "A", lang);
   const bestForB = content.aglanceBestForB || getToolBestFor(content, "B", lang);
   const defaultChoice = content.aglanceDefaultLabel || getDefaultChoice(content, toolA, toolB, lang);
@@ -2182,11 +2184,9 @@ const ComparePage = () => {
   const levelSignal = content.aglanceLevel || getLearningCurve(learningCurveRow, lang);
   const riskSignal = content.aglanceRisk || getToolTrimRisk(content, lang);
   /* Hero duel — Sprint 62/66 */
-  const heroPromise = content.aglanceHeroPromise || framing;
   // Position labels (small uppercase, 10px) — only use explicit values, NOT bestForA fallback (too long)
   const heroPositionA = content.aglancePositionA ?? null;
   const heroPositionB = content.aglancePositionB ?? null;
-  const heroContract = content.aglanceContract || (lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn);
   const fallbackPitfalls = getPitfalls(content, toolA, toolB, lang);
 
   // Find alternative tools from the lightweight summaries index.
@@ -2196,17 +2196,8 @@ const ComparePage = () => {
     ...alt,
     tool: toolSummaries.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
-  const hasDecisionSection = (content.quickDecisionTree && content.quickDecisionTree.length > 0) || (content.profiles && content.profiles.length > 0);
-  const hasComparaisonSection = content.decisiveCriteria.length > 0 || decisionTableRows.length > 0;
+  const hasComparaisonSection = decisiveCriteriaForDisplay.length > 0 || decisionRowsForDisplay.length > 0;
   const hasDouteSection = content.faq.length > 0 || content.tooltrimRisks.length > 0 || altTools.length > 0;
-
-  const navSections: CompareNavSection[] = [
-    ...(hasDecisionSection ? [{ id: "decision", label: t("Ma situation", "My situation") }] : []),
-    { id: "seuil", label: t("Verdict", "Verdict") },
-    { id: "cout", label: t("Coût", "Cost") },
-    ...(hasComparaisonSection ? [{ id: "comparaison", label: t("Comparaison", "Comparison") }] : []),
-    ...(hasDouteSection ? [{ id: "doutes", label: "FAQ" }] : []),
-  ];
 
   return (
     <div className="min-h-screen cp-page-light">
@@ -2238,164 +2229,64 @@ const ComparePage = () => {
             })()}
           </div>
 
-          {/* Title with inline logos */}
-          <h1 className="cp-hero-title">
-            <span className="cp-hero-title-tool">
-              <ToolLogo tool={toolA} size={72} className="cp-hero-title-logo" aria-hidden="true" />
-              {toolA.name}
-            </span>
-            <span className="cp-hero-title-vs" aria-hidden="true">vs</span>
-            <span className="cp-hero-title-tool">
-              <ToolLogo tool={toolB} size={72} className="cp-hero-title-logo" aria-hidden="true" />
-              {toolB.name}<span aria-hidden="true">.</span>
-            </span>
-          </h1>
-
-          {/* Editorial promise — core difference in one line */}
-          <p className="cp-hero-promise">{heroPromise}</p>
-
-          {/* Intro — strategic recommendation, not a list */}
-          <p className="cp-hero-intro">{heroContract}</p>
-
-          <a href="#seuil" className="cp-hero-verdict-jump" onClick={(e) => { e.preventDefault(); document.getElementById("seuil")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>
-            {t("Lire le verdict →", "Read the verdict →")}
-          </a>
+          <div className="cp-hero-layout">
+            <div className="cp-hero-duel">
+              <h1 className="cp-hero-title">
+                <span className="cp-hero-title-tool">
+                  <ToolLogo tool={toolA} size={56} className="cp-hero-title-logo" aria-hidden="true" />
+                  {toolA.name}
+                </span>
+                <span className="cp-hero-title-vs" aria-hidden="true">vs</span>
+                <span className="cp-hero-title-tool">
+                  <ToolLogo tool={toolB} size={56} className="cp-hero-title-logo" aria-hidden="true" />
+                  {toolB.name}<span aria-hidden="true">.</span>
+                </span>
+              </h1>
+              <p className="cp-article-dek">{heroDek}</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <SectionPillNav
-        sections={navSections}
-        logoTo={`${prefix}/comparatifs`}
-        logoAriaLabel={t("Retour aux comparatifs", "Back to comparisons")}
-        ariaLabel={t("Navigation du comparatif", "Comparison navigation")}
-        heroSelector=".cp-hero"
-      />
+      <div className="cp-product-shell">
+        <main className="cp-product-main">
 
-      {/* ── 01 Ma situation — arbre de décision + profils ───────────────────── */}
-      {hasDecisionSection && (
-        <section id="decision" className="cp-section scroll-mt-20">
+      {showFundamental && (
+        <section className="cp-section cp-fundamental-section">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-eyebrow">{t("Ma situation", "My situation")}</span>
-              <h2 className="cp-title">
-                {content.quickDecisionTree && content.quickDecisionTree.length > 0
-                  ? t("Trouve ta réponse en 30 secondes.", "Find your answer in 30 seconds.")
-                  : t("Selon ton profil et ton usage.", "Based on your profile and workflow.")}
-              </h2>
+              <span className="cp-eyebrow">{t("En bref", "In short")}</span>
+              <h2 className="cp-title">{t("La différence fondamentale.", "The fundamental difference.")}</h2>
             </div>
-
-            {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (
-              <div className="cp-decision-list">
-                {content.quickDecisionTree.map((item, i) => (
-                  <div key={i} className="cp-decision-item">
-                    <p className="cp-decision-condition">{lang === "fr" ? item.condition : item.conditionEn}</p>
-                    <p className="cp-decision-answer">{lang === "fr" ? item.answer : item.answerEn}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {content.profiles && content.profiles.length > 0 && (
-              <div className="cp-sub-section">
-                <span className="cp-sub-section-eyebrow">{t("Selon ton profil", "By profile")}</span>
-                <h3 className="cp-sub-section-title">{t("Trouve ton cas.", "Find your case.")}</h3>
-                <div className="cp-profile-accordion" role="list">
-                  {content.profiles.slice(0, 6).map((profile, i) => {
-                    const isOpen = activeProfile === i;
-                    const personaName = lang === "fr" ? profile.persona : profile.personaEn;
-                    return (
-                      <div key={i} className={`cp-profile-row${isOpen ? " cp-profile-row--open" : ""}`} role="listitem">
-                        <button
-                          className="cp-profile-trigger"
-                          aria-expanded={isOpen}
-                          onClick={() => setActiveProfile(isOpen ? -1 : i)}
-                        >
-                          <span className="cp-profile-trigger-name">{personaName}</span>
-                          <span className="cp-profile-trigger-choice">→ {profile.choice}</span>
-                          <ChevronDown className="cp-profile-trigger-icon" aria-hidden="true" />
-                        </button>
-                        {isOpen && (
-                          <div className="cp-profile-detail" role="region" aria-label={personaName}>
-                            <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
-                            {(lang === "fr" ? profile.limit : profile.limitEn) && (
-                              <div className="cp-profile-limit">
-                                <span className="tt-fact-label">{t("Limite", "Limit")}</span>
-                                <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+            <p className="cp-fundamental-copy">{framing}</p>
           </div>
         </section>
       )}
 
-      {/* ── 02 Verdict — seuil de bascule ─────────────────────────────────── */}
-      <section id="seuil" className="cp-section scroll-mt-20">
+      <section id="decision" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
-            <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
-            <p className="cp-matrix-intro">
-              {content.tippingIntro
-                ? (lang === "fr" ? content.tippingIntro : content.tippingIntroEn)
-                : t(
-                    "Un seul critère suffit à faire basculer le choix. Voici la logique.",
-                    "One criterion is enough to tip the decision. Here's the logic.",
-                  )}
-            </p>
+            <span className="cp-eyebrow">{t("Selon ton usage", "By use case")}</span>
+            <h2 className="cp-title">{t("Quel outil choisir ?", "Which tool should you choose?")}</h2>
           </div>
-
-          {/* Verdict statement — front-loaded, authoritative. Trailing period
-              stripped so the CSS endmark sits cleanly at the end. */}
-          <div className="cp-verdict-statement">
-            <p>{verdictShort.trim().replace(/[.。]\s*$/, "")}</p>
-          </div>
-
-          {/* Directional flow card */}
-          <div className="cp-tipping-card">
-            <div className="cp-tipping-card-state">
-              <span className="tt-fact-label">{t("Par défaut", "Default")}</span>
-              <p className="cp-tipping-card-text">
-                {lang === "fr" ? content.tippingPoint.defaultChoice : content.tippingPoint.defaultChoiceEn}
-              </p>
+          <div className="cp-choose-grid">
+            <div>
+              <h3>{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</h3>
+              <ul>
+                {(lang === "fr" ? content.chooseAIfList : content.toolAUseCasesEn).slice(0, 5).map((item, i) => <li key={i}>{item}</li>)}
+              </ul>
             </div>
-            <div className="cp-tipping-card-arrow" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="cp-tipping-card-state cp-tipping-card-state--switch">
-              <span className="tt-fact-label">{t("Bascule si", "Switch when")}</span>
-              <p className="cp-tipping-card-text">
-                {lang === "fr" ? content.tippingPoint.switchWhen : content.tippingPoint.switchWhenEn}
-              </p>
+            <div>
+              <h3>{t("Choisis", "Choose")} {toolB.name} {t("si…", "if…")}</h3>
+              <ul>
+                {(lang === "fr" ? content.chooseBIfList : content.toolBUseCasesEn).slice(0, 5).map((item, i) => <li key={i}>{item}</li>)}
+              </ul>
             </div>
           </div>
-
-          {/* Numbered rules */}
-          {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).length > 0 && (
-            <div className="cp-tipping-rules">
-              <span className="tt-fact-label cp-tipping-rules-heading">{t("À retenir", "Key rules")}</span>
-              <ol className="cp-tipping-rules-list">
-                {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).slice(0, 3).map((signal, i) => (
-                  <li key={i} className="cp-tipping-rule">
-                    <p>{signal}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
-
         </div>
       </section>
 
-      {/* ── 03 Coût réel — matrice financière ────────────────────────────── */}
+      {/* ── Coût réel — matrice financière ───────────────────────────────── */}
       <section id="cout" className="cp-section cp-section--cost scroll-mt-20">
         <div className="cp-container">
 
@@ -2403,15 +2294,6 @@ const ComparePage = () => {
           <div className="cp-matrix-header">
             <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
             <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
-            <p className="cp-matrix-intro">
-              {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
-            </p>
-            <div className="cp-cost-reco">
-              <span className="tt-fact-label">
-                {t("Recommandation ToolTrim", "ToolTrim recommendation")}
-              </span>
-              <p className="tt-body-large">{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
-            </div>
           </div>
 
           {/* Grille 3 colonnes : critère | outil A | outil B */}
@@ -2450,16 +2332,8 @@ const ComparePage = () => {
         <section id="comparaison" className="cp-section scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-eyebrow">{t("Comparaison", "Comparison")}</span>
+              <span className="cp-eyebrow">{t("Comparer", "Compare")}</span>
               <h2 className="cp-title">{t("Les critères qui font la différence.", "The criteria that make the difference.")}</h2>
-              <p className="cp-matrix-intro">
-                {content.criteriaIntro
-                  ? (lang === "fr" ? content.criteriaIntro : content.criteriaIntroEn)
-                  : t(
-                      "Pas les features les plus visibles — les critères qui changent vraiment la décision.",
-                      "Not the most visible features — the criteria that actually change the decision.",
-                    )}
-              </p>
             </div>
 
             <div className="cp-compare-table" role="table" aria-label={t("Comparaison détaillée", "Detailed comparison")}>
@@ -2476,8 +2350,8 @@ const ComparePage = () => {
               </div>
 
               {/* Prefer decisiveCriteria (editorial, win/loss). Fallback to tableRows. */}
-              {content.decisiveCriteria.length > 0
-                ? content.decisiveCriteria.slice(0, 6).map((criterion, index) => {
+              {decisiveCriteriaForDisplay.length > 0
+                ? decisiveCriteriaForDisplay.slice(0, 5).map((criterion, index) => {
                     const levels = getCriterionLevels(criterion, toolA, toolB, lang);
                     return (
                       <div key={criterion.title} className="cp-compare-row" role="row">
@@ -2496,7 +2370,7 @@ const ComparePage = () => {
                       </div>
                     );
                   })
-                : decisionTableRows.map((row, index) => {
+                : decisionRowsForDisplay.slice(0, 5).map((row, index) => {
                     const aTitle = lang === "fr" ? row.toolA : row.toolAEn;
                     const aNote = lang === "fr" ? row.toolANote : row.toolANoteEn;
                     const bTitle = lang === "fr" ? row.toolB : row.toolBEn;
@@ -2533,17 +2407,12 @@ const ComparePage = () => {
         <section id="doutes" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-eyebrow">{t("Doutes", "Doubts")}</span>
+              <span className="cp-eyebrow">{t("À vérifier", "Check")}</span>
               <h2 className="cp-title">
                 {content.faq.length > 0
                   ? t("Questions fréquentes.", "Frequently asked questions.")
                   : t("Ce qui peut faire hésiter.", "What might give you pause.")}
               </h2>
-              {content.faq.length > 0 && content.faqIntro && (
-                <p className="cp-matrix-intro">
-                  {lang === "fr" ? content.faqIntro : content.faqIntroEn}
-                </p>
-              )}
             </div>
 
             {/* FAQ accordion — grouped by theme if items declare one, else flat */}
@@ -2678,6 +2547,33 @@ const ComparePage = () => {
           </div>
         </section>
       )}
+
+        </main>
+
+        <aside className="cp-decision-sidebar" aria-label={t("Décision ToolTrim", "ToolTrim decision") as string}>
+          <div className="cp-decision-sidebar-tools">
+            <span><ToolLogo tool={toolA} size={32} />{toolA.name}</span>
+            <span className="cp-decision-sidebar-vs">vs</span>
+            <span><ToolLogo tool={toolB} size={32} />{toolB.name}</span>
+          </div>
+          <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
+          <p className="cp-decision-sidebar-verdict">{verdictShort}</p>
+          <div className="cp-decision-sidebar-choices">
+            <div>
+              <strong>{t("Choix par défaut", "Default choice")}</strong>
+              <span>{lang === "fr" ? content.tippingPoint.defaultChoice : content.tippingPoint.defaultChoiceEn}</span>
+            </div>
+            <div>
+              <strong>{t("Changer si", "Switch when")}</strong>
+              <span>{lang === "fr" ? content.tippingPoint.switchWhen : content.tippingPoint.switchWhenEn}</span>
+            </div>
+          </div>
+          <div className="cp-decision-sidebar-links">
+            <Link to={`${prefix}/tool/${toolA.slug || toolA.id}`}>{t("Voir", "View")} {toolA.name}</Link>
+            <Link to={`${prefix}/tool/${toolB.slug || toolB.id}`}>{t("Voir", "View")} {toolB.name}</Link>
+          </div>
+        </aside>
+      </div>
 
       {/* ── Methodology footnote ───────────────────────────────────────────── */}
       <div className="cp-methodology-note">

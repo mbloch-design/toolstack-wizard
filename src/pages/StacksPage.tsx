@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
-import { X, SlidersHorizontal } from "lucide-react";
+import { Search, X, SlidersHorizontal } from "lucide-react";
 import ToolLogoPile from "@/components/ToolLogoPile";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
@@ -9,6 +9,7 @@ import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
+import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import {
   STACK_PERSONAS,
   STACK_SUB_PROFILES,
@@ -492,8 +493,7 @@ const StacksPage = () => {
   const panelRef = useRef<HTMLDivElement>(null);
   const filtersRef = useRef<HTMLButtonElement>(null);
   const [panelCoords, setPanelCoords] = useState({ top: 0, left: 0 });
-  const [toolbarStuck, setToolbarStuck] = useState(false);
-  const toolbarSentinelRef = useRef<HTMLDivElement>(null);
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: getStackDerivedFields(stack) })), []);
@@ -624,21 +624,6 @@ const StacksPage = () => {
     setPanelCoords({ top: rect.bottom + 8, left });
   }, [mobileOpen]);
 
-  // Toggle the sticky toolbar's "stuck" border once its sentinel (placed
-  // right above it) scrolls out of view — .asv2-content is the real scroll
-  // container on desktop, not the window, so it must be the observer's root.
-  useEffect(() => {
-    const sentinel = toolbarSentinelRef.current;
-    if (!sentinel) return;
-    const scrollRoot = sentinel.closest(".asv2-content");
-    const observer = new IntersectionObserver(
-      ([entry]) => setToolbarStuck(!entry.isIntersecting),
-      { root: scrollRoot, threshold: 0 },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
-
   const currentFilters = useMemo(() => ({
     profile: facetProfile,
     specialties: facetSpecialties,
@@ -753,25 +738,26 @@ const StacksPage = () => {
               a "Filtres" trigger for the long tail (Spécialité, Objectif,
               Niveau, Complexité, Type, Nb d'outils), reusing the same panel
               at every breakpoint instead of only on mobile. */}
-          <div className={`sk-mobile-trigger-row${toolbarStuck ? " sk-mobile-trigger-row--stuck" : ""}`}>
-            <FilterDropdown
-              label={t("Tous les profils", "All profiles") as string}
-              allLabel={t("Tous les profils", "All profiles") as string}
-              options={PROFILE_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(PROFILE_OPTIONS, opt.id, lang) }))}
-              value={facetProfile}
-              onChange={(id) => handleProfileChange(id as StackFacetProfile)}
-            />
-            <FilterDropdown
-              label={t("Tous les budgets", "All budgets") as string}
-              allLabel={t("Tous les budgets", "All budgets") as string}
-              options={BUDGET_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(BUDGET_OPTIONS, opt.id, lang) }))}
-              value={facetBudget}
-              onChange={(id) => setFacetBudget(id as StackFacetBudget)}
-            />
-            <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={mobileOpen ? t("Fermer les filtres", "Close filters") as string : t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen} aria-haspopup="dialog">
-              <SlidersHorizontal size={15} aria-hidden />
-              {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Plus de filtres", "More filters")}
-            </button>
+          <div className={`tt-catalog-toolbar sk-mobile-trigger-row tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
+            <div className="tt-catalog-toolbar-filters">
+              <FilterDropdown
+                label={t("Tous les profils", "All profiles") as string}
+                allLabel={t("Tous les profils", "All profiles") as string}
+                options={PROFILE_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(PROFILE_OPTIONS, opt.id, lang) }))}
+                value={facetProfile}
+                onChange={(id) => handleProfileChange(id as StackFacetProfile)}
+              />
+              <FilterDropdown
+                label={t("Tous les budgets", "All budgets") as string}
+                allLabel={t("Tous les budgets", "All budgets") as string}
+                options={BUDGET_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(BUDGET_OPTIONS, opt.id, lang) }))}
+                value={facetBudget}
+                onChange={(id) => setFacetBudget(id as StackFacetBudget)}
+              />
+              <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={mobileOpen ? t("Fermer les filtres", "Close filters") as string : t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen} aria-haspopup="dialog">
+                <SlidersHorizontal size={15} aria-hidden />
+                {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Plus de filtres", "More filters")}
+              </button>
             {mobileOpen && createPortal(
               <div className="sk-filters-panel" role="dialog" aria-modal="true" aria-labelledby="stack-filters-title" ref={panelRef} style={{ position: "fixed", top: panelCoords.top, left: panelCoords.left }}>
                 <div className="sk-mobile-panel-header">
@@ -810,29 +796,39 @@ const StacksPage = () => {
               </div>,
               document.body,
             )}
-            <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t("Rechercher…", "Search…") as string} className="sk-search-input" />
+              <div className="tt-catalog-inline-search tt-catalog-inline-search--open">
+                <div className="tt-catalog-inline-search-field">
+                  <Search size={17} aria-hidden />
+                  <input
+                    type="search"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder={t("Rechercher", "Search") as string}
+                    className="tt-catalog-inline-search-input"
+                  />
+                  {query && (
+                    <button type="button" className="tt-catalog-inline-search-clear" onClick={() => setQuery("")} aria-label={t("Effacer", "Clear") as string}>
+                      <X size={15} aria-hidden />
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="tt-catalog-toolbar-meta">
+              <span>
+                {filteredStacks.length}&nbsp;
+                {t(`stack${filteredStacks.length !== 1 ? "s" : ""}`, `stack${filteredStacks.length !== 1 ? "s" : ""}`)}
+              </span>
+              <select className="tt-catalog-sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value as StackSortId)} aria-label={t("Trier par", "Sort by") as string}>
+                <option value="recommended">{t("Recommandé", "Recommended")}</option>
+                <option value="budget">{t("Budget", "Budget")}</option>
+                <option value="tools">{t("Nombre d’outils", "Tool count")}</option>
+              </select>
+            </div>
           </div>
 
           <div className="sk-listing-layout">
             <div className="sk-results">
-              <div className="sk-results-header">
-                <div>
-                  <span className="sk-results-count">
-                    {filteredStacks.length}&nbsp;
-                    {t(`stack${filteredStacks.length !== 1 ? "s" : ""} trouvée${filteredStacks.length !== 1 ? "s" : ""}`, `stack${filteredStacks.length !== 1 ? "s" : ""} found`)}
-                  </span>
-                  {isFiltered && <p className="sk-results-context">{t("Sélection calibrée selon les critères actifs.", "Selection calibrated by active criteria.")}</p>}
-                </div>
-                <div className="sk-results-sort">
-                  <span className="gi-sort-label">{t("Trier par", "Sort by")}</span>
-                  <select className="gi-sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value as StackSortId)} aria-label={t("Trier par", "Sort by") as string}>
-                    <option value="recommended">{t("Recommandé", "Recommended")}</option>
-                    <option value="budget">{t("Budget", "Budget")}</option>
-                    <option value="tools">{t("Nombre d’outils", "Tool count")}</option>
-                  </select>
-                </div>
-              </div>
-
               {activeChips.length > 0 && (
                 <div className="sk-active-filters" aria-label={t("Filtres actifs", "Active filters") as string}>
                   {activeChips.map((chip) => (
