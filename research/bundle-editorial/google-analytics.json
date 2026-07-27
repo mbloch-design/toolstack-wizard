@@ -1,0 +1,87 @@
+{
+  "slug": "google-analytics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Analytics (site officiel)", "url": "https://marketingplatform.google.com/about/analytics/" }
+  ],
+  "facts": {
+    "what": "Solution d'analytics web et app de Google (GA4) : suivi événementiel, rapports temps réel, explorations (entonnoirs, chemins), audiences et intégration native Google Ads.",
+    "what_en": "Google's web and app analytics (GA4): event-based tracking, real-time reports, explorations (funnels, paths), audiences and native Google Ads integration.",
+    "pricing_model": "Gratuit pour la grande majorité des sites (GA4 standard). Version entreprise Analytics 360 sur devis (à partir de plusieurs dizaines de milliers de dollars/an).",
+    "free_tier": { "exists": true, "detail": "GA4 standard gratuit, avec des limites de données généreuses pour la plupart des sites." },
+    "plans": [
+      { "name": "GA4 standard", "price": "gratuit" },
+      { "name": "Analytics 360", "price": "sur devis (à partir d'environ 50 000 $/an, selon le volume)" }
+    ],
+    "key_features": [
+      "Suivi événementiel multi-plateformes (web + app)",
+      "Rapports temps réel et explorations (entonnoirs, chemins)",
+      "Audiences et intégration Google Ads",
+      "Insights et requêtes en langage naturel (Gemini)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez mesurer l'audience de votre site/app gratuitement.",
+        "Vous utilisez déjà l'écosystème Google (Ads, Search Console).",
+        "Vos besoins d'analyse restent standards."
+      ],
+      "avoidIf": [
+        "Vous voulez un analytics sans cookies, orienté vie privée (RGPD strict).",
+        "Vous avez besoin d'un support et d'une gouvernance entreprise (360, coûteux).",
+        "Vous voulez une prise en main très simple sans configuration."
+      ],
+      "threshold": "GA4 s'impose comme mesure d'audience gratuite et standard du web ; pour une approche privacy-first ou une gouvernance entreprise, une alternative (Plausible, Fathom) ou la version 360 sont à considérer."
+    },
+    "pros": [
+      "Gratuit pour la plupart des sites.",
+      "Standard de fait, très intégré à Google.",
+      "Explorations et audiences puissantes.",
+      "Insights assistés par IA."
+    ],
+    "cons": [
+      "Courbe d'apprentissage de GA4.",
+      "Questions de confidentialité et de conformité selon les usages.",
+      "Version entreprise (360) très coûteuse."
+    ],
+    "use_cases": [
+      "Mesurer le trafic et les conversions d'un site.",
+      "Analyser des parcours et des entonnoirs.",
+      "Relier l'audience aux campagnes Google Ads."
+    ],
+    "relevant_for": ["Marketeurs", "Propriétaires de sites", "Analystes web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to measure your site/app audience for free.",
+        "You already use the Google ecosystem (Ads, Search Console).",
+        "Your analysis needs stay standard."
+      ],
+      "avoidIf": [
+        "You want cookieless, privacy-first analytics (strict GDPR).",
+        "You need enterprise support and governance (360, costly).",
+        "You want a very simple setup with no configuration."
+      ],
+      "threshold": "GA4 is the free, de-facto standard for web audience measurement; for a privacy-first approach or enterprise governance, an alternative (Plausible, Fathom) or the 360 version is worth considering."
+    },
+    "pros": [
+      "Free for most sites.",
+      "De-facto standard, deeply integrated with Google.",
+      "Powerful explorations and audiences.",
+      "AI-assisted insights."
+    ],
+    "cons": [
+      "GA4 learning curve.",
+      "Privacy and compliance questions depending on usage.",
+      "Enterprise version (360) is very expensive."
+    ],
+    "use_cases": [
+      "Measure a site's traffic and conversions.",
+      "Analyse journeys and funnels.",
+      "Connect audience to Google Ads campaigns."
+    ]
+  }
+}

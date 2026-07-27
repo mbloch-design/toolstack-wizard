@@ -1,0 +1,89 @@
+{
+  "slug": "miro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Miro", "url": "https://miro.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Tableau blanc collaboratif en ligne (canvas infini) : brainstorming, diagrammes, user story mapping, sprint planning et ateliers de design thinking, en temps réel.",
+    "what_en": "Collaborative online whiteboard (infinite canvas): brainstorming, diagramming, user story mapping, sprint planning and design-thinking workshops, in real time.",
+    "pricing_model": "Palier gratuit permanent puis abonnements par membre (mensuel/annuel).",
+    "free_tier": { "exists": true, "detail": "Gratuit : membres illimités mais 3 tableaux éditables et 10 crédits IA partagés/mois." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (3 tableaux)" },
+      { "name": "Starter", "price": "8 $/membre/mois (annuel)" },
+      { "name": "Business", "price": "20 $/membre/mois (annuel)" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Canvas infini et collaboration temps réel",
+      "Modèles (brainstorming, mapping, sprint)",
+      "Diagrammes et post-its",
+      "Fonctions IA (crédits partagés)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous animez des ateliers collaboratifs à distance.",
+        "Vous cartographiez idées, parcours ou sprints en équipe.",
+        "Vous voulez un canvas partagé en temps réel."
+      ],
+      "avoidIf": [
+        "Un simple doc ou tableau suffit à votre équipe.",
+        "Vous ne collaborez pas en visuel.",
+        "Le gratuit (3 tableaux) est trop limité et vous n'avez pas de budget."
+      ],
+      "threshold": "Miro s'impose pour des ateliers visuels collaboratifs récurrents ; pour du texte ou des tableaux simples, un doc partagé suffit."
+    },
+    "pros": [
+      "Canvas infini et collaboration fluide.",
+      "Nombreux modèles prêts à l'emploi.",
+      "Palier gratuit permanent.",
+      "Fonctions IA intégrées."
+    ],
+    "cons": [
+      "Gratuit limité à 3 tableaux éditables.",
+      "Coût par membre qui monte en équipe.",
+      "Sur-dimensionné pour du non-visuel."
+    ],
+    "use_cases": [
+      "Animer un atelier de brainstorming à distance.",
+      "Faire du user story mapping ou du sprint planning.",
+      "Construire des diagrammes en équipe."
+    ],
+    "relevant_for": ["Équipes produit", "Designers/UX", "Facilitateurs d'ateliers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run collaborative workshops remotely.",
+        "You map ideas, journeys or sprints as a team.",
+        "You want a shared real-time canvas."
+      ],
+      "avoidIf": [
+        "A simple doc or table suffices for your team.",
+        "You don't collaborate visually.",
+        "The free tier (3 boards) is too limited and you have no budget."
+      ],
+      "threshold": "Miro makes sense for recurring collaborative visual workshops; for text or simple tables, a shared doc suffices."
+    },
+    "pros": [
+      "Infinite canvas and smooth collaboration.",
+      "Many ready-made templates.",
+      "Permanent free tier.",
+      "Built-in AI features."
+    ],
+    "cons": [
+      "Free limited to 3 editable boards.",
+      "Per-member cost adds up on a team.",
+      "Oversized for non-visual work."
+    ],
+    "use_cases": [
+      "Run a remote brainstorming workshop.",
+      "Do user story mapping or sprint planning.",
+      "Build diagrams collaboratively."
+    ]
+  }
+}

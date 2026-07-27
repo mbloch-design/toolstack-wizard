@@ -1,0 +1,89 @@
+{
+  "slug": "zoom",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Zoom", "url": "https://www.zoom.com/en/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de visioconférence de référence : réunions, chat d'équipe, webinaires, téléphonie et assistant IA (AI Companion) sous un même abonnement.",
+    "what_en": "Leading video conferencing platform: meetings, team chat, webinars, phone and an AI assistant (AI Companion) under one subscription.",
+    "pricing_model": "Palier gratuit puis abonnements par utilisateur (mensuel/annuel). Quatre plans : Basic, Pro, Business, Enterprise. AI Companion inclus sur les plans payants.",
+    "free_tier": { "exists": true, "detail": "Basic gratuit : réunions 1:1 illimitées, réunions de groupe limitées à 40 min, jusqu'à 100 participants." },
+    "plans": [
+      { "name": "Basic", "price": "0 $" },
+      { "name": "Pro", "price": "13,33 $/utilisateur/mois (annuel), 16,99 $ en mensuel" },
+      { "name": "Business", "price": "18,33 $/utilisateur/mois (annuel)" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Réunions vidéo (jusqu'à 100+ participants)",
+      "Chat d'équipe, webinaires et téléphonie",
+      "AI Companion (résumés, actions, aide à la rédaction)",
+      "Enregistrement et intégrations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une visio fiable et universelle.",
+        "Vous organisez des réunions de groupe au-delà de 40 min.",
+        "Vous voulez webinaires, téléphonie ou assistant IA intégrés."
+      ],
+      "avoidIf": [
+        "Vos réunions sont surtout en 1:1 ou très courtes (le gratuit suffit).",
+        "Votre suite (Google/Microsoft) inclut déjà une visio qui vous va.",
+        "Vous voulez éviter un abonnement par utilisateur."
+      ],
+      "threshold": "Zoom s'impose pour de la visio d'équipe régulière et des usages avancés (webinaires, téléphonie) ; pour du 1:1 ponctuel, le gratuit ou la visio de votre suite suffit."
+    },
+    "pros": [
+      "Visio fiable et largement adoptée.",
+      "Réunions, chat, webinaires et téléphonie réunis.",
+      "AI Companion inclus sur les plans payants.",
+      "Palier gratuit fonctionnel."
+    ],
+    "cons": [
+      "Limite de 40 min sur les réunions de groupe en gratuit.",
+      "Abonnement par utilisateur.",
+      "Redondant si votre suite inclut déjà une visio."
+    ],
+    "use_cases": [
+      "Animer des réunions d'équipe régulières.",
+      "Organiser des webinaires.",
+      "Centraliser visio, chat et téléphonie."
+    ],
+    "relevant_for": ["Équipes distribuées", "PME", "Formateurs et webinaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need reliable, universal video calls.",
+        "You run group meetings beyond 40 minutes.",
+        "You want built-in webinars, phone or an AI assistant."
+      ],
+      "avoidIf": [
+        "Your meetings are mostly 1:1 or very short (free tier suffices).",
+        "Your suite (Google/Microsoft) already includes video you like.",
+        "You want to avoid per-user subscriptions."
+      ],
+      "threshold": "Zoom makes sense for regular team video and advanced uses (webinars, phone); for occasional 1:1s, the free tier or your suite's video suffices."
+    },
+    "pros": [
+      "Reliable, widely adopted video.",
+      "Meetings, chat, webinars and phone combined.",
+      "AI Companion included on paid plans.",
+      "Functional free tier."
+    ],
+    "cons": [
+      "40-minute cap on group meetings on free.",
+      "Per-user subscription.",
+      "Redundant if your suite already includes video."
+    ],
+    "use_cases": [
+      "Run regular team meetings.",
+      "Host webinars.",
+      "Centralise video, chat and phone."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "jasper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Jasper", "url": "https://www.jasper.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'écriture assistée par IA pour le marketing : génération de contenus (articles, posts, campagnes), templates, chat et extension navigateur, avec voix de marque.",
+    "what_en": "AI writing platform for marketing: content generation (articles, posts, campaigns), templates, chat and browser extension, with brand voice.",
+    "pricing_model": "Abonnement par siège (mensuel/annuel), avec crédits de mots. Essai gratuit 7 jours.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 7 jours ; abonnement requis ensuite." },
+    "plans": [
+      { "name": "Creator", "price": "39 $/mois (annuel), 49 $ en mensuel — 1 siège" },
+      { "name": "Pro", "price": "paliers supérieurs (multi-sièges, fonctions équipe)" },
+      { "name": "Business", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Génération de contenu marketing (articles, posts, campagnes)",
+      "Templates et Jasper Chat",
+      "Voix de marque personnalisée",
+      "Extension navigateur (Gmail, Docs…)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez du contenu marketing à volume.",
+        "Vous voulez une voix de marque cohérente en IA.",
+        "Vous travaillez en équipe marketing."
+      ],
+      "avoidIf": [
+        "Un assistant IA généraliste (ChatGPT) vous suffit.",
+        "Vous écrivez trop peu pour justifier l'abonnement.",
+        "Vous cherchez un outil gratuit."
+      ],
+      "threshold": "Jasper s'impose pour des équipes marketing qui produisent du contenu à volume avec voix de marque ; pour un usage ponctuel, un assistant IA généraliste suffit."
+    },
+    "pros": [
+      "Pensé pour le contenu marketing.",
+      "Voix de marque et templates.",
+      "Chat et extension navigateur.",
+      "Fonctions collaboratives."
+    ],
+    "cons": [
+      "Pas de palier gratuit.",
+      "Plus cher qu'un assistant IA généraliste.",
+      "Fonctionnement à crédits de mots."
+    ],
+    "use_cases": [
+      "Rédiger des articles et posts à la chaîne.",
+      "Décliner une campagne sur plusieurs canaux.",
+      "Maintenir une voix de marque cohérente."
+    ],
+    "relevant_for": ["Équipes marketing", "Créateurs de contenu", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce marketing content at volume.",
+        "You want a consistent AI brand voice.",
+        "You work in a marketing team."
+      ],
+      "avoidIf": [
+        "A general AI assistant (ChatGPT) is enough for you.",
+        "You write too little to justify the subscription.",
+        "You want a free tool."
+      ],
+      "threshold": "Jasper makes sense for marketing teams producing content at volume with a brand voice; for occasional use, a general AI assistant suffices."
+    },
+    "pros": [
+      "Built for marketing content.",
+      "Brand voice and templates.",
+      "Chat and browser extension.",
+      "Collaborative features."
+    ],
+    "cons": [
+      "No free tier.",
+      "Pricier than a general AI assistant.",
+      "Word-credit based."
+    ],
+    "use_cases": [
+      "Write articles and posts at scale.",
+      "Adapt a campaign across channels.",
+      "Maintain a consistent brand voice."
+    ]
+  }
+}

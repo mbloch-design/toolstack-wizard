@@ -1,0 +1,90 @@
+{
+  "slug": "monday-com",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle monday.com", "url": "https://monday.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme visuelle de work management : tableaux personnalisables, automatisations, vues multiples (Gantt, calendrier, timeline) pour coordonner projets et process d'équipe.",
+    "what_en": "Visual work management platform: customisable boards, automations and multiple views (Gantt, calendar, timeline) to coordinate team projects and processes.",
+    "pricing_model": "Palier gratuit puis abonnements par siège (mensuel/annuel), minimum 3 sièges sur les plans payants.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit (petites équipes) ; les plans payants imposent un minimum de 3 sièges." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (jusqu'à 2 sièges)" },
+      { "name": "Basic", "price": "9 $/siège/mois (annuel), min. 3 sièges" },
+      { "name": "Standard", "price": "12 $/siège/mois (annuel) — automatisations, Gantt" },
+      { "name": "Pro", "price": "19 $/siège/mois (annuel) — automatisation avancée, time tracking" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Tableaux visuels personnalisables",
+      "Automatisations et intégrations",
+      "Vues Gantt, calendrier, timeline",
+      "Time tracking et tableaux de bord (paliers élevés)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous coordonnez projets et process d'équipe visuellement.",
+        "Vous voulez des automatisations et plusieurs vues.",
+        "Votre équipe fait au moins 3 personnes."
+      ],
+      "avoidIf": [
+        "Vous cherchez une simple to-do individuelle.",
+        "Le minimum de 3 sièges gonfle le coût pour un très petit besoin.",
+        "Vous voulez un outil de gestion de projet gratuit à l'échelle."
+      ],
+      "threshold": "monday.com s'impose pour coordonner des équipes avec automatisations et vues multiples ; pour un usage solo ou une simple liste, un outil plus léger suffit."
+    },
+    "pros": [
+      "Très visuel et personnalisable.",
+      "Automatisations et intégrations riches.",
+      "Vues multiples (Gantt, calendrier, timeline).",
+      "Adapté aux petites et moyennes équipes."
+    ],
+    "cons": [
+      "Minimum de 3 sièges sur les payants.",
+      "Fonctions clés réservées aux paliers élevés.",
+      "Peut devenir cher en montant en gamme."
+    ],
+    "use_cases": [
+      "Coordonner des projets d'équipe.",
+      "Automatiser des workflows récurrents.",
+      "Suivre l'avancement via tableaux de bord."
+    ],
+    "relevant_for": ["Petites et moyennes équipes", "Équipes marketing", "Chefs de projet"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You coordinate team projects and processes visually.",
+        "You want automations and multiple views.",
+        "Your team is at least 3 people."
+      ],
+      "avoidIf": [
+        "You want a simple personal to-do.",
+        "The 3-seat minimum inflates cost for a tiny need.",
+        "You want a free project tool at scale."
+      ],
+      "threshold": "monday.com makes sense to coordinate teams with automations and multiple views; for solo use or a simple list, a lighter tool suffices."
+    },
+    "pros": [
+      "Very visual and customisable.",
+      "Rich automations and integrations.",
+      "Multiple views (Gantt, calendar, timeline).",
+      "Suited to small and mid-size teams."
+    ],
+    "cons": [
+      "3-seat minimum on paid plans.",
+      "Key features reserved for higher tiers.",
+      "Can get expensive as you scale up."
+    ],
+    "use_cases": [
+      "Coordinate team projects.",
+      "Automate recurring workflows.",
+      "Track progress via dashboards."
+    ]
+  }
+}

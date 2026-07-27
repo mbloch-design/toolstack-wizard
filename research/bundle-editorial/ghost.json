@@ -1,0 +1,88 @@
+{
+  "slug": "ghost",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Page tarifaire officielle Ghost", "url": "https://ghost.org/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de publication open source : site, blog, newsletter et abonnements payants réunis, sans commission sur les revenus des créateurs. Auto-hébergeable ou en hébergement géré Ghost(Pro).",
+    "what_en": "Open-source publishing platform: website, blog, newsletter and paid memberships combined, with no cut of creators' revenue. Self-hostable or on managed Ghost(Pro) hosting.",
+    "pricing_model": "Open source auto-hébergeable (gratuit hors coûts serveur) ou Ghost(Pro) géré, par abonnement selon le nombre de membres.",
+    "free_tier": { "exists": true, "detail": "Auto-hébergement gratuit (coûts serveur/email à part) ; Ghost(Pro) géré est payant." },
+    "plans": [
+      { "name": "Auto-hébergé", "price": "gratuit (VPS + email à votre charge)" },
+      { "name": "Ghost(Pro) Starter", "price": "à partir de ~18 $/mois (annuel)" },
+      { "name": "Ghost(Pro) Publisher", "price": "à partir de ~29 $/mois (annuel)" }
+    ],
+    "key_features": [
+      "Site + blog + newsletter intégrés",
+      "Abonnements payants (memberships), sans commission Ghost",
+      "Open source et auto-hébergeable",
+      "Domaine personnalisé et thèmes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez du contenu et monétisez par abonnements.",
+        "Vous voulez garder vos revenus (pas de commission plateforme).",
+        "Vous voulez site, blog et newsletter au même endroit."
+      ],
+      "avoidIf": [
+        "Vous voulez le plus simple possible sans rien gérer (Substack).",
+        "Vous n'avez pas de contenu régulier à publier.",
+        "L'auto-hébergement vous rebute et le budget Ghost(Pro) est de trop."
+      ],
+      "threshold": "Ghost s'impose pour un créateur/média qui veut posséder sa plateforme et ses revenus ; pour un démarrage sans friction, une plateforme clé en main (Substack) est plus simple."
+    },
+    "pros": [
+      "Pas de commission sur les revenus.",
+      "Site, blog, newsletter et memberships réunis.",
+      "Open source et auto-hébergeable.",
+      "Contrôle total (domaine, thèmes, données)."
+    ],
+    "cons": [
+      "Auto-hébergement = maintenance technique.",
+      "Ghost(Pro) payant selon le nombre de membres.",
+      "Moins « plug-and-play » que Substack."
+    ],
+    "use_cases": [
+      "Lancer une newsletter payante sans commission.",
+      "Publier un blog/média indépendant.",
+      "Gérer site et abonnements au même endroit."
+    ],
+    "relevant_for": ["Créateurs indépendants", "Médias", "Auteurs de newsletters"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You publish content and monetise via memberships.",
+        "You want to keep your revenue (no platform cut).",
+        "You want website, blog and newsletter in one place."
+      ],
+      "avoidIf": [
+        "You want the simplest option with nothing to manage (Substack).",
+        "You have no regular content to publish.",
+        "Self-hosting puts you off and the Ghost(Pro) budget is too much."
+      ],
+      "threshold": "Ghost makes sense for a creator/media wanting to own their platform and revenue; for a frictionless start, a turnkey platform (Substack) is simpler."
+    },
+    "pros": [
+      "No cut of your revenue.",
+      "Website, blog, newsletter and memberships combined.",
+      "Open source and self-hostable.",
+      "Full control (domain, themes, data)."
+    ],
+    "cons": [
+      "Self-hosting means technical maintenance.",
+      "Ghost(Pro) paid by number of members.",
+      "Less plug-and-play than Substack."
+    ],
+    "use_cases": [
+      "Launch a paid newsletter with no commission.",
+      "Publish an independent blog/media.",
+      "Manage site and memberships in one place."
+    ]
+  }
+}
