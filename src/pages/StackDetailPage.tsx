@@ -724,7 +724,7 @@ const StackDetailPage = () => {
           </p>
           <p className="sd-tools-subtitle">
             {stack.slug === "developpeur-freelance-shipper"
-              ? t("Une stack ne se lit pas outil par outil. Elle se lit par blocs de travail : coder, montrer, documenter, encaisser.", "A stack is not read tool by tool. It is read as work blocks: code, show, document, get paid.")
+              ? t("Le socle est visible immédiatement ; déplie seulement les compléments utiles.", "The core is visible immediately; expand only the add-ons you need.")
               : t("Une stack ne se lit pas outil par outil. Elle se lit par blocs de travail : produire, valider, livrer, encaisser.", "A stack is not read tool by tool. It is read as work blocks: produce, validate, deliver, get paid.")}
           </p>
 
@@ -977,12 +977,6 @@ const StackDetailPage = () => {
             </div>
           )}
 
-          <p className="sd-budget-note">
-            {t(
-              "32€ est un plafond confortable, pas un coût minimum : commence gratuitement puis active un abonnement quand il fait gagner du temps chaque semaine.",
-              "€32 is a comfortable ceiling, not a minimum cost: start free, then activate a subscription when it saves time every week.",
-            )}
-          </p>
         </div>
       </section>
 
@@ -997,7 +991,10 @@ const StackDetailPage = () => {
               {t("À ne pas ajouter trop tôt.", "Do not add these too early.")}
             </p>
             <ul className="sd-watch-list">
-              {editorial.risks.slice(0, 3).map((risk, i) => (
+              {(stack.slug === "developpeur-freelance-shipper"
+                ? editorial.risks.slice(2, 5)
+                : editorial.risks.slice(0, 3)
+              ).map((risk, i) => (
                 <li key={i} className="sd-watch-row">
                   <span className="sd-watch-marker" aria-hidden="true" />
                   <h3>{t(risk.problem, risk.problemEn)}</h3>
@@ -1125,10 +1122,17 @@ const StackDetailPage = () => {
                 <span className="sd-decision-kicker">{t("DÉCISION TOOLTRIM", "TOOLTRIM DECISION")}</span>
                 <h2 className="sd-decision-title">
                   {stack.slug === "developpeur-freelance-shipper"
-                    ? t("Le socle avant les extensions.", "Core first, extensions later.")
+                    ? t("Quatre outils suffisent pour livrer.", "Four tools are enough to ship.")
                     : t("Une stack calibrée pour cet usage.", "A stack calibrated for this use case.")}
                 </h2>
-                <p className="sd-decision-copy">{t(editorial.overviewIntro, editorial.overviewIntroEn)}</p>
+                <p className="sd-decision-copy">
+                  {stack.slug === "developpeur-freelance-shipper"
+                    ? t(
+                        "GitHub, Vercel, Notion et Stripe forment le socle. ChatGPT reste optionnel.",
+                        "GitHub, Vercel, Notion, and Stripe form the core. ChatGPT remains optional.",
+                      )
+                    : t(editorial.overviewIntro, editorial.overviewIntroEn)}
+                </p>
 
                 <div className="sd-decision-facts">
                   {heroDecision.reperes

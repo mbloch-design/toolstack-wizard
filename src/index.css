@@ -10940,14 +10940,6 @@
     margin-bottom: 8px;
   }
 
-  .sd-budget-note {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--color-muted-light);
-    margin: 14px 0 0;
-  }
-
   .sd-budget-title {
     margin-bottom: 0;
   }
@@ -11215,7 +11207,6 @@
   .sd-related-grid {
     gap: 16px;
   }
-  .sd-budget-note,
   .sd-related-sub,
   .sd-related-budget,
   .sd-related-cta {
@@ -16347,16 +16338,6 @@ section[id] {
   line-height: 1.55;
   max-width: 760px;
   margin-top: 20px;
-}
-
-/* Note */
-.sd-budget-note {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--color-muted-light);
-  line-height: 1.55;
-  max-width: 720px;
-  margin-top: 36px;
 }
 
 /* Responsive */
@@ -23963,13 +23944,6 @@ section[id] {
 .sd-budget-threshold--active .sd-bt-label,
 .sd-budget-threshold--active .sd-bt-desc {
   color: var(--color-surface);
-}
-
-.sd-budget-note {
-  max-width: none;
-  margin: 20px 0 0;
-  font-size: 15px;
-  color: var(--color-muted);
 }
 
 .sd-budget-breakdown {
