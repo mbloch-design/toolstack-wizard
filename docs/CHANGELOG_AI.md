@@ -2,6 +2,28 @@
 
 ---
 
+## 2026-07-28 — Typographie des catalogues et des fiches harmonisée
+
+- Les index Outils, Stacks et Comparatifs utilisent désormais le même token de titre de page, la même famille Inter Tight et les mêmes paramètres de graisse, d’interlettrage et de hauteur de ligne.
+- La navigation, les commandes de filtre, la recherche et le tri partagent une échelle UI unique afin d’éviter les écarts subtils entre les trois routes.
+- Les cartes conservent leur densité propre, mais leurs rôles sont normalisés : titre décisionnel, libellé, métadonnée, résumé et CTA suivent chacun un token commun du design system.
+- Les styles calculés ont été contrôlés côte à côte dans le navigateur : H1 56/500, navigation 15/500–620, métadonnées 14/400, labels 11/700 et titres décisionnels fluides 25–32/600 sur desktop.
+- Les fiches Outil, Stack et Comparatif reprennent cette même hiérarchie : H1 56/500, chapô 19/400 et titres de section 31/620 sur le viewport de contrôle.
+- Les anciennes variantes de détail qui mélangeaient Inter Tight et Uncut Sans, un H1 Outil à 820 et des sections Stack à 51 px sont neutralisées par une couche canonique commune.
+- Contrôle navigateur effectué sur Notion, Stack dev freelance et ChatGPT vs Claude, puis build production et prérendu validés.
+
+## 2026-07-28 — Respiration supérieure des heroes catalogue
+
+- Les pages catalogue gagnent une marge haute plus éditoriale avant leur titre, alignée sur le rythme de la référence.
+- La distance entre le titre et la navigation reste compacte afin de ne pas recréer un hero surdimensionné.
+- Les valeurs tablette et mobile sont ajustées séparément pour conserver une entrée de page équilibrée.
+
+## 2026-07-28 — Chargement progressif des comparatifs
+
+- L’index Comparatifs monte désormais 12 cartes au premier affichage au lieu de toute la collection.
+- Un bouton charge les résultats suivants par lots de 12 et indique combien de comparatifs restent à découvrir.
+- Une recherche, un changement de catégorie ou de tri réinitialise automatiquement la liste à son format court.
+
 ## 2026-07-28 — Actions des catalogues harmonisées
 
 - Les commandes Filtrer, Rechercher et Trier utilisent désormais le même format circulaire 40 × 40 px, des icônes de 18 px et un espacement constant de 4 px.

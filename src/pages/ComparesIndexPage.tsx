@@ -41,6 +41,7 @@ function getComparisonSummary(
 /* ─── Category detection ─────────────────────────────────────────────────── */
 type CompareCategoryId = "all" | "ia" | "productivite" | "design" | "crm" | "automatisation";
 type CompareSortId = "featured" | "name";
+const COMPARISONS_BATCH_SIZE = 12;
 
 function getSlugCategory(slugPair: string): CompareCategoryId {
   if (
@@ -89,6 +90,7 @@ const ComparesIndexPage = () => {
     () => (isValidCat(searchParams.get("cat")) ? (searchParams.get("cat") as CompareCategoryId) : "all"),
   );
   const [sortBy, setSortBy] = useState<CompareSortId>("featured");
+  const [visibleCount, setVisibleCount] = useState(COMPARISONS_BATCH_SIZE);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const isSearchExpanded = isSearchOpen || query.length > 0;
@@ -138,6 +140,18 @@ const ComparesIndexPage = () => {
     }
     return result;
   }, [resolvedComparisons, query, categoryFilter, sortBy, lang]);
+
+  const visibleComparisons = useMemo(
+    () => filteredComparisons.slice(0, visibleCount),
+    [filteredComparisons, visibleCount],
+  );
+  const remainingComparisons = Math.max(filteredComparisons.length - visibleComparisons.length, 0);
+
+  /* A new search, category or order should always restart from the shortest,
+     most readable version of the listing. */
+  useEffect(() => {
+    setVisibleCount(COMPARISONS_BATCH_SIZE);
+  }, [query, categoryFilter, sortBy]);
 
   /* If query has no matches, surface a few related comparisons */
   const relatedComparisons = useMemo(() => {
@@ -286,44 +300,64 @@ const ComparesIndexPage = () => {
 
           {/* Decision grid — each card keeps the duel and its two choices together. */}
           {filteredComparisons.length > 0 ? (
-            <ul className="cix-grid" role="list">
-              {filteredComparisons.map((c) => {
-                const a = c.toolAData!;
-                const b = c.toolBData!;
-                const catId = getSlugCategory(c.slugPair);
-                const catLabel = COMPARE_CATEGORY_FILTERS.find((f) => f.id === catId);
-                return (
-                  <li key={c.slugPair} className="cix-grid-item">
-                    <Link
-                      to={`${prefix}/comparatif/${c.slugPair}`}
-                      className="cix-card"
-                      aria-label={t(`Lire le comparatif ${a.name} vs ${b.name}`, `Read the ${a.name} vs ${b.name} comparison`)}
-                    >
-                      <div className="cix-card-head">
-                        <div className="cix-card-identity">
-                          <div className="cix-card-logos" aria-hidden="true">
-                            <span className="cix-card-logo"><ToolLogo tool={a} size={40} /></span>
-                            <span className="cix-card-logo cix-card-logo--second"><ToolLogo tool={b} size={40} /></span>
+            <>
+              <ul className="cix-grid" role="list">
+                {visibleComparisons.map((c) => {
+                  const a = c.toolAData!;
+                  const b = c.toolBData!;
+                  const catId = getSlugCategory(c.slugPair);
+                  const catLabel = COMPARE_CATEGORY_FILTERS.find((f) => f.id === catId);
+                  return (
+                    <li key={c.slugPair} className="cix-grid-item">
+                      <Link
+                        to={`${prefix}/comparatif/${c.slugPair}`}
+                        className="cix-card"
+                        aria-label={t(`Lire le comparatif ${a.name} vs ${b.name}`, `Read the ${a.name} vs ${b.name} comparison`)}
+                      >
+                        <div className="cix-card-head">
+                          <div className="cix-card-identity">
+                            <div className="cix-card-logos" aria-hidden="true">
+                              <span className="cix-card-logo"><ToolLogo tool={a} size={40} /></span>
+                              <span className="cix-card-logo cix-card-logo--second"><ToolLogo tool={b} size={40} /></span>
+                            </div>
+                            <div>
+                              {catLabel && catLabel.id !== "all" && (
+                                <span className="cix-card-eyebrow">
+                                  {lang === "fr" ? catLabel.label : catLabel.labelEn}
+                                </span>
+                              )}
+                              <h2 className="cix-card-title">{a.name} <span>vs</span> {b.name}</h2>
+                              <p className="cix-card-summary">
+                                {getComparisonSummary(c, a, b, lang)}
+                              </p>
+                            </div>
                           </div>
-                          <div>
-                            {catLabel && catLabel.id !== "all" && (
-                              <span className="cix-card-eyebrow">
-                                {lang === "fr" ? catLabel.label : catLabel.labelEn}
-                              </span>
-                            )}
-                            <h2 className="cix-card-title">{a.name} <span>vs</span> {b.name}</h2>
-                            <p className="cix-card-summary">
-                              {getComparisonSummary(c, a, b, lang)}
-                            </p>
-                          </div>
+                          <ArrowUpRight className="cix-card-arrow" size={20} aria-hidden />
                         </div>
-                        <ArrowUpRight className="cix-card-arrow" size={20} aria-hidden />
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {remainingComparisons > 0 && (
+                <div className="cix-load-more">
+                  <button
+                    type="button"
+                    className="cix-load-more-button"
+                    onClick={() => setVisibleCount((count) => count + COMPARISONS_BATCH_SIZE)}
+                  >
+                    {t("Afficher plus de comparatifs", "Show more comparisons")}
+                  </button>
+                  <p className="cix-load-more-meta" aria-live="polite">
+                    {t(
+                      `${visibleComparisons.length} affichés · ${remainingComparisons} restants`,
+                      `${visibleComparisons.length} shown · ${remainingComparisons} remaining`,
+                    )}
+                  </p>
+                </div>
+              )}
+            </>
           ) : (
             <div className="cix-empty">
               <p className="cix-empty-title">
