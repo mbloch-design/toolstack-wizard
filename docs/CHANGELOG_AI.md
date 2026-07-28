@@ -3717,3 +3717,13 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les critères descriptifs sont finalement retirés de l’index : les cartes servent uniquement à identifier et ouvrir un duel, tandis que l’analyse reste dans la page Comparatif.
 - Le registre des comparatifs accepte désormais une accroche éditoriale FR/EN optionnelle ; Trello vs Linear inaugure ce format avec une synthèse courte sur leurs logiques respectives.
 - Toutes les cards affichent désormais cette synthèse : une accroche rédigée lorsqu’elle existe, sinon une composition courte issue du positionnement éditorial FR/EN de chaque outil.
+
+# 2026-07-28 — Architecture typographique de la page d'accueil
+
+- Alignement du hero, des titres de sections et des titres de cartes sur l’échelle éditoriale utilisée par les Guides.
+- Unification des graisses : hero `480`, sections et cartes `500`, corps `400`.
+- Remplacement des espacements locaux par les tokens globaux entre sections et entre en-têtes et contenus.
+- Suppression du style inline du conteneur du hero au profit du système CSS `hv2-*`.
+- Formalisation d’une grille spatiale inspirée d’OpenAI : gouttières `32px`, écart en-tête/contenu `32px`, grille `24px` et respiration inter-section `120px`, avec réductions dédiées tablette et mobile.
+- Recalage typographique sur les valeurs calculées de la référence : titres de section fluides `20–22px`, titres de cartes `17–18px`, métadonnées `14px`, graisse `500` et interlignages respectifs `1.252`, `1.31` et `1.4`.
+- Refonte des articles de l’accueil sur le modèle éditorial de la référence : grande miniature `16:10`, titre et métadonnées sous l’image, sans bordure, fond, pile de logos ni extrait concurrent.

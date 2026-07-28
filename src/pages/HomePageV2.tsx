@@ -314,7 +314,7 @@ export default function HomePageV2() {
   }, [tools]);
 
   return (
-    <div>
+    <div className="home-v2">
       <HeroSectionV2 />
 
       <div className="v2-catalog">
@@ -530,7 +530,7 @@ export default function HomePageV2() {
                 previousLabel={t("Page précédente", "Previous page") as string}
                 nextLabel={t("Page suivante", "Next page") as string}
               />
-              <SwipePager className="v2-stack-grid" onPrevious={prevPostPage} onNext={nextPostPage}>
+              <SwipePager className="v2-article-grid" onPrevious={prevPostPage} onNext={nextPostPage}>
                 {visiblePosts.map((post) => {
                   const dateLabel = post.date
                     ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { year: "numeric", month: "short", day: "numeric" })
@@ -539,25 +539,31 @@ export default function HomePageV2() {
                     .map((tag) => bySlug.get(tag))
                     .filter(Boolean)
                     .slice(0, 5);
+                  const coverTool = postTools.find((tool) => tool?.ogImageUrl);
+                  const coverSrc = post.thumbnail || coverTool?.ogImageUrl;
                   return (
-                    <Link key={post.slug} to={`${prefix}/guide/${post.slug}`} className="v2-stack-card">
-                      {postTools.length > 0 && (
-                        <div className="v2-stack-top">
-                          <ToolLogoPile
-                            tools={postTools as any[]}
-                            max={5}
-                            size="sm"
-                            ariaLabel={t("Outils cités", "Mentioned tools") as string}
-                            moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
-                            className="v2-stack-logos"
+                    <Link key={post.slug} to={`${prefix}/guide/${post.slug}`} className="v2-article-card">
+                      <div className="v2-article-media">
+                        {coverSrc ? (
+                          <img
+                            src={coverSrc}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                            className="v2-article-image"
                           />
+                        ) : (
+                          <span className="v2-article-fallback">
+                            {t("Guide ToolTrim", "ToolTrim guide")}
+                          </span>
+                        )}
+                      </div>
+                      <div className="v2-article-body">
+                        <h3 className="v2-article-title">{post.title}</h3>
+                        <div className="v2-article-meta">
+                          {dateLabel && <time dateTime={post.date}>{dateLabel}</time>}
+                          {post.readTime && <span>{post.readTime}</span>}
                         </div>
-                      )}
-                      <p className="v2-stack-title">{post.title}</p>
-                      {post.excerpt && <p className="v2-stack-sub">{post.excerpt}</p>}
-                      <div className="v2-stack-meta v2-post-meta">
-                        <span>{dateLabel}</span>
-                        {post.readTime && <span>{post.readTime}</span>}
                       </div>
                     </Link>
                   );

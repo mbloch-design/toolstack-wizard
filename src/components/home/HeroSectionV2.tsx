@@ -13,10 +13,7 @@ const HeroSectionV2 = () => {
 
   return (
     <section className="hv2-root">
-      <div
-        className="hv2-container"
-        style={{ maxWidth: "var(--layout-content, 1280px)", margin: "0 auto", padding: "0 var(--layout-gutter, 48px)" }}
-      >
+      <div className="hv2-container">
         <div className="hv2-band">
           <img src="/hero/hero-gradient.png" alt="" className="hv2-bg" aria-hidden="true" />
 
