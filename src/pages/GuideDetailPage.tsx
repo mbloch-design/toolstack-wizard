@@ -533,6 +533,14 @@ function markdownToHtml(
       ? '<figure class="ga-story-figure"><img src="$2" alt="$1" loading="lazy" /><figcaption>$1</figcaption></figure>'
       : '<img src="$2" alt="$1" loading="lazy" />',
   );
+  if (isStory) {
+    html = html
+      .replace(
+        /^\[\[story-gallery\]\]$/gm,
+        '<div class="ga-story-gallery" role="region" aria-label="Galerie photographique" tabindex="0">',
+      )
+      .replace(/^\[\[\/story-gallery\]\]$/gm, "</div>");
+  }
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_m, header, _s, body) => {
     const hs = header.split("|").filter((c: string) => c.trim());
@@ -587,6 +595,10 @@ function markdownToHtml(
   if (isStory) {
     html = html.replace(
       /(<\/blockquote>)\s*<p>(Anna Morel[^<]*)<\/p>/g,
+      '$1<p class="ga-quote-attribution">$2</p>',
+    );
+    html = html.replace(
+      /(<\/blockquote>)\s*<p>@\s*([^<]+)<\/p>/g,
       '$1<p class="ga-quote-attribution">$2</p>',
     );
   }
