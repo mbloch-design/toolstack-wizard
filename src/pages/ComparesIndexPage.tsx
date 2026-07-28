@@ -1,12 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowUpRight, Search, X } from "lucide-react";
+import { ArrowUpDown, ArrowUpRight, Search, X } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import ToolLogo from "@/components/ToolLogo";
-import Breadcrumb from "@/components/Breadcrumb";
-import FilterDropdown from "@/components/filters/FilterDropdown";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
@@ -42,6 +40,7 @@ function getComparisonSummary(
 
 /* ─── Category detection ─────────────────────────────────────────────────── */
 type CompareCategoryId = "all" | "ia" | "productivite" | "design" | "crm" | "automatisation";
+type CompareSortId = "featured" | "name";
 
 function getSlugCategory(slugPair: string): CompareCategoryId {
   if (
@@ -73,15 +72,6 @@ const COMPARE_CATEGORY_FILTERS: { id: CompareCategoryId; label: string; labelEn:
   { id: "crm",            label: "CRM / Ventes",  labelEn: "CRM / Sales" },
 ];
 
-/* ─── Popular suggestions ────────────────────────────────────────────────── */
-const POPULAR_SUGGESTIONS = [
-  { label: "Notion vs Airtable", slugPair: "notion-vs-airtable" },
-  { label: "ChatGPT vs Claude",  slugPair: "chatgpt-vs-claude" },
-  { label: "Zapier vs Make",     slugPair: "zapier-vs-make" },
-  { label: "Figma vs Canva",     slugPair: "figma-vs-canva" },
-  { label: "Linear vs Jira",     slugPair: "linear-vs-jira" },
-];
-
 /* (ToolInput + ToolInputProps removed — replaced by single search field) */
 
 /* ─── Main component ─────────────────────────────────────────────────────── */
@@ -98,6 +88,7 @@ const ComparesIndexPage = () => {
   const [categoryFilter, setCategoryFilter] = useState<CompareCategoryId>(
     () => (isValidCat(searchParams.get("cat")) ? (searchParams.get("cat") as CompareCategoryId) : "all"),
   );
+  const [sortBy, setSortBy] = useState<CompareSortId>("featured");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const isSearchExpanded = isSearchOpen || query.length > 0;
@@ -137,8 +128,16 @@ const ComparesIndexPage = () => {
     if (categoryFilter !== "all") {
       result = result.filter(c => getSlugCategory(c.slugPair) === categoryFilter);
     }
+    if (sortBy === "name") {
+      result = [...result].sort((a, b) =>
+        `${a.toolAData?.name ?? ""} ${a.toolBData?.name ?? ""}`.localeCompare(
+          `${b.toolAData?.name ?? ""} ${b.toolBData?.name ?? ""}`,
+          lang,
+        ),
+      );
+    }
     return result;
-  }, [resolvedComparisons, query, categoryFilter]);
+  }, [resolvedComparisons, query, categoryFilter, sortBy, lang]);
 
   /* If query has no matches, surface a few related comparisons */
   const relatedComparisons = useMemo(() => {
@@ -185,9 +184,8 @@ const ComparesIndexPage = () => {
       <section className="cix-section">
         <div className="cix-container">
 
-          <header className="cix-hero">
-            <Breadcrumb items={[{ label: t("Comparatifs", "Comparisons") }]} />
-            <h1 className="cix-hero-title">{t("Comparer sans empiler.", "Compare without stacking.")}</h1>
+          <header className="tt-catalog-compact-header cix-hero">
+            <h1 className="tt-catalog-compact-title cix-hero-title">{t("Comparatifs", "Comparisons")}</h1>
           </header>
 
           {/* Search-results feedback only — the default editorial title was a
@@ -206,16 +204,18 @@ const ComparesIndexPage = () => {
           <div className={`tt-catalog-toolbar cix-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
             <div className="cix-filter-group">
               <div className="tt-catalog-toolbar-filters">
-                <FilterDropdown
-                  label={t("Catégorie", "Category") as string}
-                  allLabel={t("Toutes les catégories", "All categories") as string}
-                  options={COMPARE_CATEGORY_FILTERS.filter((f) => f.id !== "all").map((f) => ({
-                    id: f.id,
-                    label: (lang === "fr" ? f.label : f.labelEn) as string,
-                  }))}
-                  value={categoryFilter}
-                  onChange={(id) => setCategoryFilter(id as CompareCategoryId)}
-                />
+                <nav className="tt-catalog-topic-nav" aria-label={t("Filtrer par catégorie", "Filter by category") as string}>
+                  {COMPARE_CATEGORY_FILTERS.map((filter) => (
+                    <button
+                      key={filter.id}
+                      type="button"
+                      className={`tt-catalog-topic${categoryFilter === filter.id ? " tt-catalog-topic--active" : ""}`}
+                      onClick={() => setCategoryFilter(filter.id)}
+                    >
+                      {lang === "fr" ? filter.label : filter.labelEn}
+                    </button>
+                  ))}
+                </nav>
 
                 <div className={`tt-catalog-inline-search${isSearchExpanded ? " tt-catalog-inline-search--open" : ""}`}>
                   {isSearchExpanded ? (
@@ -231,27 +231,28 @@ const ComparesIndexPage = () => {
                           if (!query) setIsSearchOpen(false);
                         }}
                         onKeyDown={(event) => {
-                          if (event.key === "Escape" && !query) setIsSearchOpen(false);
+                          if (event.key === "Escape") {
+                            setQuery("");
+                            setIsSearchOpen(false);
+                          }
                         }}
                         placeholder={t("Filtrer par outil, ex. Notion, Figma…", "Filter by tool, e.g. Notion, Figma…") as string}
                         className="tt-catalog-inline-search-input"
                         autoComplete="off"
                         aria-label={t("Filtrer les comparatifs", "Filter comparisons") as string}
                       />
-                      {query && (
-                        <button
-                          type="button"
-                          onMouseDown={(event) => event.preventDefault()}
-                          onClick={() => {
-                            setQuery("");
-                            setIsSearchOpen(false);
-                          }}
-                          className="tt-catalog-inline-search-clear"
-                          aria-label={t("Effacer", "Clear") as string}
-                        >
-                          <X size={15} aria-hidden />
-                        </button>
-                      )}
+                      <button
+                        type="button"
+                        onMouseDown={(event) => event.preventDefault()}
+                        onClick={() => {
+                          setQuery("");
+                          setIsSearchOpen(false);
+                        }}
+                        className="tt-catalog-inline-search-clear"
+                        aria-label={t("Fermer la recherche", "Close search") as string}
+                      >
+                        <X size={15} aria-hidden />
+                      </button>
                     </div>
                   ) : (
                     <button
@@ -267,39 +268,20 @@ const ComparesIndexPage = () => {
               </div>
             </div>
 
-            <div className="cix-popular">
-              <span className="cix-popular-label">{t("Populaires", "Popular")}</span>
-              {POPULAR_SUGGESTIONS.map((s) => {
-                const [toolAId, toolBId] = s.slugPair.split("-vs-");
-                const popularA = findTool(tools, toolAId);
-                const popularB = findTool(tools, toolBId);
-                return (
-                  <Link
-                    key={s.slugPair}
-                    to={`${prefix}/comparatif/${s.slugPair}`}
-                    className="cix-suggestion-chip"
-                  >
-                    {popularA && popularB && (
-                      <span className="cix-suggestion-logos" aria-hidden="true">
-                        <ToolLogo tool={popularA} size={20} />
-                        <ToolLogo tool={popularB} size={20} />
-                      </span>
-                    )}
-                    <span>{s.label}</span>
-                  </Link>
-                );
-              })}
+            <div className="tt-catalog-toolbar-meta">
+              <label className="tt-catalog-sort-control" title={t("Trier les comparatifs", "Sort comparisons") as string}>
+                <ArrowUpDown size={18} aria-hidden />
+                <select
+                  className="tt-catalog-sort-select"
+                  value={sortBy}
+                  onChange={(event) => setSortBy(event.target.value as CompareSortId)}
+                  aria-label={t("Trier par", "Sort by") as string}
+                >
+                  <option value="featured">{t("Sélection", "Featured")}</option>
+                  <option value="name">{t("A → Z", "A → Z")}</option>
+                </select>
+              </label>
             </div>
-
-            <span
-              className="tt-catalog-toolbar-meta cix-controls-count"
-              aria-label={t(
-                `${filteredComparisons.length} comparatifs`,
-                `${filteredComparisons.length} comparisons`,
-              ) as string}
-            >
-              {filteredComparisons.length}<span className="cix-controls-count-label">&nbsp;{t("comparatifs", "comparisons")}</span>
-            </span>
           </div>
 
           {/* Decision grid — each card keeps the duel and its two choices together. */}

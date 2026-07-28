@@ -2,13 +2,12 @@ import { useLocation, useParams, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { Search, ChevronDown, X } from "lucide-react";
+import { ArrowUpDown, Search, ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
-import Breadcrumb from "@/components/Breadcrumb";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
@@ -193,13 +192,8 @@ const CategoryPage = () => {
       {/* ── Body — same horizontal constraints used across the site
             (1280 max / 48px gutter). */}
       <div className="cat-body">
-        {/* ── Compact header: breadcrumb + title, no banner/stats — same
-            pattern as ToolsPage, replacing the old editorial cat-hero. ── */}
+        {/* ── Compact header: one title, then the catalogue controls. ── */}
         <div className="tt-catalog-compact-header">
-          <Breadcrumb items={[
-            { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-            { label: displayName },
-          ]} />
           <h1 className="tt-catalog-compact-title">{displayName}</h1>
         </div>
 
@@ -210,50 +204,63 @@ const CategoryPage = () => {
             sidebar so every listing page on the site behaves the same way. ══ */}
         <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           <div className="tt-catalog-toolbar-filters">
-            <FilterDropdown
-              label={t("Profil", "Profile") as string}
-              allLabel={t("Tous les profils", "All profiles") as string}
-              options={PROFILE_OPTIONS.map((p) => ({ id: p.key, label: lang === "fr" ? p.labelFr : p.labelEn }))}
-              value="all"
-              onChange={() => {}}
-              multi
-              values={profileFilter}
-              onChangeMulti={setProfileFilter}
-              clearLabel={t("Effacer la sélection", "Clear selections") as string}
-            />
-            <FilterDropdown
-              label={t("Type", "Type") as string}
-              allLabel={t("Tous les types", "All types") as string}
-              options={TYPE_OPTIONS.map((ty) => ({ id: ty.key, label: ty.short }))}
-              value="all"
-              onChange={() => {}}
-              multi
-              values={typeFilter}
-              onChangeMulti={setTypeFilter}
-              clearLabel={t("Effacer la sélection", "Clear selections") as string}
-            />
-            <FilterDropdown
-              label={t("Tarif", "Pricing") as string}
-              allLabel={t("Tous les tarifs", "All pricing") as string}
-              options={[
-                { id: "free", label: t("Gratuit", "Free") as string },
-                { id: "freemium", label: "Freemium" },
-                { id: "paid", label: t("Payant", "Paid") as string },
-              ]}
-              value={priceFilter}
-              onChange={(id) => setPriceFilter(id as PriceFilter)}
-            />
-            <FilterDropdown
-              label={t("Économies", "Savings") as string}
-              allLabel={t("Toutes", "All") as string}
-              options={SAVINGS_OPTIONS.map((s) => ({ id: s.key, label: lang === "fr" ? s.labelFr : s.labelEn }))}
-              value="all"
-              onChange={() => {}}
-              multi
-              values={savingsFilter}
-              onChangeMulti={setSavingsFilter}
-              clearLabel={t("Effacer la sélection", "Clear selections") as string}
-            />
+            <details className="tt-catalog-filter-menu">
+              <summary>
+                <SlidersHorizontal size={16} aria-hidden />
+                <span>{t("Filtrer", "Filter")}</span>
+                {hasActiveFilters && (
+                  <span className="tt-catalog-filter-count">
+                    {profileFilter.length + typeFilter.length + savingsFilter.length + (priceFilter !== "all" ? 1 : 0)}
+                  </span>
+                )}
+              </summary>
+              <div className="tt-catalog-filter-menu-panel">
+                <FilterDropdown
+                  label={t("Profil", "Profile") as string}
+                  allLabel={t("Tous les profils", "All profiles") as string}
+                  options={PROFILE_OPTIONS.map((p) => ({ id: p.key, label: lang === "fr" ? p.labelFr : p.labelEn }))}
+                  value="all"
+                  onChange={() => {}}
+                  multi
+                  values={profileFilter}
+                  onChangeMulti={setProfileFilter}
+                  clearLabel={t("Effacer la sélection", "Clear selections") as string}
+                />
+                <FilterDropdown
+                  label={t("Type", "Type") as string}
+                  allLabel={t("Tous les types", "All types") as string}
+                  options={TYPE_OPTIONS.map((ty) => ({ id: ty.key, label: ty.short }))}
+                  value="all"
+                  onChange={() => {}}
+                  multi
+                  values={typeFilter}
+                  onChangeMulti={setTypeFilter}
+                  clearLabel={t("Effacer la sélection", "Clear selections") as string}
+                />
+                <FilterDropdown
+                  label={t("Tarif", "Pricing") as string}
+                  allLabel={t("Tous les tarifs", "All pricing") as string}
+                  options={[
+                    { id: "free", label: t("Gratuit", "Free") as string },
+                    { id: "freemium", label: "Freemium" },
+                    { id: "paid", label: t("Payant", "Paid") as string },
+                  ]}
+                  value={priceFilter}
+                  onChange={(id) => setPriceFilter(id as PriceFilter)}
+                />
+                <FilterDropdown
+                  label={t("Économies", "Savings") as string}
+                  allLabel={t("Toutes", "All") as string}
+                  options={SAVINGS_OPTIONS.map((s) => ({ id: s.key, label: lang === "fr" ? s.labelFr : s.labelEn }))}
+                  value="all"
+                  onChange={() => {}}
+                  multi
+                  values={savingsFilter}
+                  onChangeMulti={setSavingsFilter}
+                  clearLabel={t("Effacer la sélection", "Clear selections") as string}
+                />
+              </div>
+            </details>
 
             <div className={`tt-catalog-inline-search${isSearchOpen || search ? " tt-catalog-inline-search--open" : ""}`}>
               {isSearchOpen || search ? (
@@ -267,22 +274,25 @@ const CategoryPage = () => {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     onBlur={() => { if (!search) setIsSearchOpen(false); }}
-                    onKeyDown={(event) => { if (event.key === "Escape" && !search) setIsSearchOpen(false); }}
+                    onKeyDown={(event) => {
+                      if (event.key === "Escape") {
+                        setSearch("");
+                        setIsSearchOpen(false);
+                      }
+                    }}
                     placeholder={t("Rechercher", "Search") as string}
                     className="tt-catalog-inline-search-input"
                     autoComplete="off"
                   />
-                  {search && (
-                    <button
-                      type="button"
-                      onMouseDown={(event) => event.preventDefault()}
-                      onClick={() => { setSearch(""); setIsSearchOpen(false); }}
-                      className="tt-catalog-inline-search-clear"
-                      aria-label={t("Effacer", "Clear") as string}
-                    >
-                      <X size={15} aria-hidden />
-                    </button>
-                  )}
+                  <button
+                    type="button"
+                    onMouseDown={(event) => event.preventDefault()}
+                    onClick={() => { setSearch(""); setIsSearchOpen(false); }}
+                    className="tt-catalog-inline-search-clear"
+                    aria-label={t("Fermer la recherche", "Close search") as string}
+                  >
+                    <X size={15} aria-hidden />
+                  </button>
                 </div>
               ) : (
                 <button type="button" className="tt-catalog-inline-search-button" onClick={() => setIsSearchOpen(true)}>
@@ -306,19 +316,21 @@ const CategoryPage = () => {
           </div>
 
           <div className="tt-catalog-toolbar-meta">
-            <span>{filtered.length} {t("résultats", "results")}</span>
-            <select
-              className="tt-catalog-sort-select"
-              value={sort}
-              onChange={(e) => setSort(e.target.value as SortKey)}
-              aria-label={t("Trier par", "Sort by") as string}
-            >
-              <option value="name">{t("A → Z", "A → Z")}</option>
-              <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
-              <option value="price-desc">{t("Prix décroissant", "Price: high to low")}</option>
-              <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
-              <option value="savings">{t("Économie max", "Max savings")}</option>
-            </select>
+            <label className="tt-catalog-sort-control" title={t("Trier les outils", "Sort tools") as string}>
+              <ArrowUpDown size={18} aria-hidden />
+              <select
+                className="tt-catalog-sort-select"
+                value={sort}
+                onChange={(e) => setSort(e.target.value as SortKey)}
+                aria-label={t("Trier par", "Sort by") as string}
+              >
+                <option value="name">{t("A → Z", "A → Z")}</option>
+                <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
+                <option value="price-desc">{t("Prix décroissant", "Price: high to low")}</option>
+                <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
+                <option value="savings">{t("Économie max", "Max savings")}</option>
+              </select>
+            </label>
           </div>
         </div>
 

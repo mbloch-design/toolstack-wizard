@@ -1,11 +1,9 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Search, X, SlidersHorizontal } from "lucide-react";
+import { ArrowLeft, ArrowUpDown, Search, X, SlidersHorizontal } from "lucide-react";
 import ToolLogoPile from "@/components/ToolLogoPile";
 import ToolCardImage from "@/components/tool/ToolCardImage";
-import Breadcrumb from "@/components/Breadcrumb";
-import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useLang } from "@/hooks/useLang";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
@@ -759,73 +757,15 @@ const StacksPage = () => {
       },
     });
     return () => cleanupSeo(["stacks-jsonld"]);
-  }, [lang, toolBySlug]);
+  }, [lang]);
 
   return (
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#00E572" } as CSSProperties}>
       <section id="stacks" className="sk-section sk-listing-section scroll-mt-20">
         <div className="sk-container">
-          {/* ── Compact header: breadcrumb + title, no banner artwork —
-              same pattern as ToolsPage, replacing the tall gradient hero. ── */}
+          {/* ── Compact header: one title, then the catalogue controls. ── */}
           <div className="tt-catalog-compact-header">
-            <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
-            <h1 className="tt-catalog-compact-title">{t("Trouver une stack claire.", "Find a clear stack.")}</h1>
-          </div>
-
-          <nav className="sk-tag-nav" aria-label={t("Naviguer par besoin", "Browse by need") as string}>
-            {cloudObjective ? (
-              <>
-                <button
-                  type="button"
-                  className="sk-tag-nav-back"
-                  onClick={() => {
-                    setFacetObjectives([]);
-                    setFacetSpecialties([]);
-                  }}
-                  aria-label={t("Revenir aux besoins", "Back to needs") as string}
-                >
-                  <ArrowLeft size={15} aria-hidden />
-                  {t("Retour", "Back")}
-                </button>
-                <span className="sk-tag-nav-label">{optionLabel(OBJECTIVE_OPTIONS, cloudObjective, lang)} :</span>
-                {OBJECTIVE_TAG_CLOUD[cloudObjective].map((specialty) => {
-                  const active = facetSpecialties.includes(specialty);
-                  return (
-                    <button
-                      key={specialty}
-                      type="button"
-                      className={`sk-tag-nav-item${active ? " sk-tag-nav-item--active" : ""}`}
-                      aria-pressed={active}
-                      onClick={() => setFacetSpecialties(active ? [] : [specialty])}
-                    >
-                      {subProfileLabel(specialty, lang)}
-                    </button>
-                  );
-                })}
-              </>
-            ) : (
-              <>
-                <span className="sk-tag-nav-label">{t("Explorer par besoin :", "Browse by need:")}</span>
-                {OBJECTIVE_MULTI_OPTIONS.map((objective) => (
-                  <button
-                    key={objective.id}
-                    type="button"
-                    className="sk-tag-nav-item"
-                    aria-pressed="false"
-                    onClick={() => {
-                      setFacetObjectives([objective.id]);
-                      setFacetSpecialties([]);
-                    }}
-                  >
-                    {optionLabel(OBJECTIVE_OPTIONS, objective.id, lang)}
-                  </button>
-                ))}
-              </>
-            )}
-          </nav>
-
-          <div className="sk-catalog-section-heading">
-            <h2>{t("Explorer les stacks", "Explore stacks")}</h2>
+            <h1 className="tt-catalog-compact-title">{t("Stacks", "Stacks")}</h1>
           </div>
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
@@ -837,23 +777,60 @@ const StacksPage = () => {
               at every breakpoint instead of only on mobile. */}
           <div className={`tt-catalog-toolbar sk-mobile-trigger-row tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
             <div className="tt-catalog-toolbar-filters">
-              <FilterDropdown
-                label={t("Tous les profils", "All profiles") as string}
-                allLabel={t("Tous les profils", "All profiles") as string}
-                options={PROFILE_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(PROFILE_OPTIONS, opt.id, lang) }))}
-                value={facetProfile}
-                onChange={(id) => handleProfileChange(id as StackFacetProfile)}
-              />
-              <FilterDropdown
-                label={t("Tous les budgets", "All budgets") as string}
-                allLabel={t("Tous les budgets", "All budgets") as string}
-                options={BUDGET_OPTIONS.filter((opt) => opt.id !== "all").map((opt) => ({ id: opt.id, label: optionLabel(BUDGET_OPTIONS, opt.id, lang) }))}
-                value={facetBudget}
-                onChange={(id) => setFacetBudget(id as StackFacetBudget)}
-              />
+              <nav className="tt-catalog-topic-nav" aria-label={t("Naviguer par besoin", "Browse by need") as string}>
+                {cloudObjective ? (
+                  <>
+                    <button
+                      type="button"
+                      className="tt-catalog-topic"
+                      onClick={() => {
+                        setFacetObjectives([]);
+                        setFacetSpecialties([]);
+                      }}
+                    >
+                      <ArrowLeft size={14} aria-hidden />
+                      {t("Tout", "All")}
+                    </button>
+                    {OBJECTIVE_TAG_CLOUD[cloudObjective].map((specialty) => {
+                      const active = facetSpecialties.includes(specialty);
+                      return (
+                        <button
+                          key={specialty}
+                          type="button"
+                          className={`tt-catalog-topic${active ? " tt-catalog-topic--active" : ""}`}
+                          aria-pressed={active}
+                          onClick={() => setFacetSpecialties(active ? [] : [specialty])}
+                        >
+                          {subProfileLabel(specialty, lang)}
+                        </button>
+                      );
+                    })}
+                  </>
+                ) : (
+                  <>
+                    <button type="button" className="tt-catalog-topic tt-catalog-topic--active" onClick={() => setFacetObjectives([])}>
+                      {t("Tout", "All")}
+                    </button>
+                    {OBJECTIVE_MULTI_OPTIONS.map((objective) => (
+                      <button
+                        key={objective.id}
+                        type="button"
+                        className="tt-catalog-topic"
+                        aria-pressed="false"
+                        onClick={() => {
+                          setFacetObjectives([objective.id]);
+                          setFacetSpecialties([]);
+                        }}
+                      >
+                        {optionLabel(OBJECTIVE_OPTIONS, objective.id, lang)}
+                      </button>
+                    ))}
+                  </>
+                )}
+              </nav>
               <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={mobileOpen ? t("Fermer les filtres", "Close filters") as string : t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen} aria-haspopup="dialog">
                 <SlidersHorizontal size={15} aria-hidden />
-                {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Plus de filtres", "More filters")}
+                <span>{activeFilterCount > 0 ? t(`Filtrer (${activeFilterCount})`, `Filter (${activeFilterCount})`) : t("Filtrer", "Filter")}</span>
               </button>
             {mobileOpen && createPortal(
               <div className="sk-filters-panel" role="dialog" aria-modal="true" aria-labelledby="stack-filters-title" ref={panelRef} style={{ position: "fixed", top: panelCoords.top, left: panelCoords.left }}>
@@ -893,34 +870,55 @@ const StacksPage = () => {
               </div>,
               document.body,
             )}
-              <div className="tt-catalog-inline-search tt-catalog-inline-search--open">
-                <div className="tt-catalog-inline-search-field">
-                  <Search size={17} aria-hidden />
-                  <input
-                    type="search"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder={t("Rechercher", "Search") as string}
-                    className="tt-catalog-inline-search-input"
-                  />
-                  {query && (
-                    <button type="button" className="tt-catalog-inline-search-clear" onClick={() => setQuery("")} aria-label={t("Effacer", "Clear") as string}>
+              <div className={`tt-catalog-inline-search${isSearchOpen || query ? " tt-catalog-inline-search--open" : ""}`}>
+                {isSearchOpen || query ? (
+                  <div className="tt-catalog-inline-search-field">
+                    <Search size={17} aria-hidden />
+                    <input
+                      ref={searchInputRef}
+                      type="search"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      onBlur={() => { if (!query) setIsSearchOpen(false); }}
+                      onKeyDown={(event) => {
+                        if (event.key === "Escape") {
+                          setQuery("");
+                          setIsSearchOpen(false);
+                        }
+                      }}
+                      placeholder={t("Rechercher", "Search") as string}
+                      className="tt-catalog-inline-search-input"
+                    />
+                    <button
+                      type="button"
+                      className="tt-catalog-inline-search-clear"
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => {
+                        setQuery("");
+                        setIsSearchOpen(false);
+                      }}
+                      aria-label={t("Fermer la recherche", "Close search") as string}
+                    >
                       <X size={15} aria-hidden />
                     </button>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <button type="button" className="tt-catalog-inline-search-button" onClick={() => setIsSearchOpen(true)} aria-label={t("Rechercher", "Search") as string}>
+                    <Search size={17} aria-hidden />
+                    <span>{t("Rechercher", "Search")}</span>
+                  </button>
+                )}
               </div>
             </div>
             <div className="tt-catalog-toolbar-meta">
-              <span>
-                {filteredStacks.length}&nbsp;
-                {t(`stack${filteredStacks.length !== 1 ? "s" : ""}`, `stack${filteredStacks.length !== 1 ? "s" : ""}`)}
-              </span>
-              <select className="tt-catalog-sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value as StackSortId)} aria-label={t("Trier par", "Sort by") as string}>
-                <option value="recommended">{t("Recommandé", "Recommended")}</option>
-                <option value="budget">{t("Budget", "Budget")}</option>
-                <option value="tools">{t("Nombre d’outils", "Tool count")}</option>
-              </select>
+              <label className="tt-catalog-sort-control" title={t("Trier les stacks", "Sort stacks") as string}>
+                <ArrowUpDown size={18} aria-hidden />
+                <select className="tt-catalog-sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value as StackSortId)} aria-label={t("Trier par", "Sort by") as string}>
+                  <option value="recommended">{t("Recommandé", "Recommended")}</option>
+                  <option value="budget">{t("Budget", "Budget")}</option>
+                  <option value="tools">{t("Nombre d’outils", "Tool count")}</option>
+                </select>
+              </label>
             </div>
           </div>
 
@@ -966,12 +964,6 @@ const StacksPage = () => {
                     >
                       {t("Voir plus de stacks", "Show more stacks")}
                     </button>
-                    <span className="sk-load-more-count">
-                      {t(
-                        `${Math.min(visibleCount, filteredStacks.length)} sur ${filteredStacks.length}`,
-                        `${Math.min(visibleCount, filteredStacks.length)} of ${filteredStacks.length}`,
-                      )}
-                    </span>
                   </div>
                 )}
                 </>

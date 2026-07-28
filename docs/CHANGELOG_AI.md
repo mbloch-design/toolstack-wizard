@@ -2,6 +2,28 @@
 
 ---
 
+## 2026-07-28 — Mode recherche stable dans les catalogues
+
+- Sur Outils, Catégories, Stacks, Comparatifs et Guides, l’ouverture de la recherche remplace désormais la navigation thématique au lieu de la compresser.
+- Les commandes Filtrer et Trier conservent leur position pendant la saisie, sans libellé tronqué ni débordement horizontal.
+- Une croix reste toujours disponible pour quitter le mode recherche ; la touche Échap ferme également le champ et réinitialise la requête.
+
+---
+
+## 2026-07-28 — En-têtes et filtres des catalogues simplifiés
+
+- Les index Outils, Catégories, Stacks, Comparatifs et Guides partagent désormais une même architecture d’en-tête : titre court, espace éditorial maîtrisé, navigation thématique et commandes sur une seule ligne.
+- Les filtres secondaires des catalogues sont regroupés derrière une action `Filtrer`, tandis que recherche, compteur et tri conservent une place stable et prévisible.
+- Les thèmes des Guides ont été intégrés à la ligne de commandes afin de supprimer la double barre.
+- Les suggestions populaires ont été retirées de l’en-tête Comparatifs et remplacées par un tri explicite `Sélection / A → Z`.
+- La recherche globale du shell s’efface sur les catalogues : il ne reste qu’une recherche contextuelle, au même niveau que les filtres et le tri.
+- Le sticky reste pleine largeur, léger et contrasté, sans coque supplémentaire ni double barre.
+- Les breadcrumbs ont été retirés du HTML de ces cinq index et les anciens `padding-top` des conteneurs neutralisés : le titre, la barre et la première rangée suivent désormais un rythme vertical unique, sans espace fantôme.
+- L’écart titre–commandes a été resserré et la barre Stacks ne repasse plus sur deux lignes aux grands écrans ; compteur, tri et accès Ma stack restent lisibles pendant le scroll.
+- Les séparateurs et compteurs de volume ont été retirés des barres de catalogue. Filtre, recherche et tri sont désormais des commandes iconiques alignées à droite, avec leurs libellés conservés pour l’accessibilité.
+
+---
+
 ## 2026-07-28 — Identité visuelle des collections de stacks
 
 - Les collections de la page d’accueil utilisent neuf palettes de dégradés granuleux inspirées des références fournies, sans dépendre d’images bitmap figées.
@@ -3755,3 +3777,16 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Chaque module associe une miniature produit, un outil mis en avant, trois outils secondaires et un accès à la catégorie.
 - La nouvelle composition casse la répétition des carrousels tout en conservant la grille, les tokens typographiques et les comportements responsive de ToolTrim.
 - Transformation des stacks recommandées en collections visuelles : cinq couvertures sur desktop, titre et nombre d’outils ouverts sous l’image, rail horizontal tactile sur tablette et mobile.
+
+# 2026-07-28 — Recherche de l’index Guides
+
+- L’icône de recherche est désormais un vrai bouton : elle ouvre le champ, lui donne immédiatement le focus et permet de saisir une requête.
+- La croix efface la recherche sans perdre le focus ; la touche Échap efface puis referme le champ.
+
+# 2026-07-28 — Navigation arborescente du catalogue Outils
+
+- La barre des univers devient une navigation à deux niveaux : sélectionner un univers remplace la racine par ses usages les plus représentés.
+- Le second niveau accepte plusieurs usages simultanément et conserve un bouton de retour explicite vers tous les univers.
+- Les sous-tags sont dérivés des besoins fonctionnels réels des outils de l’univers, puis ordonnés par représentativité.
+- Les variations de graisse sont réservées à l’état actif ; une réserve typographique invisible empêche désormais les libellés voisins de se déplacer.
+- Les listes trop longues deviennent des rails horizontaux : fondus latéraux, flèches contextuelles et défilement fluide n’apparaissent que lorsqu’un contenu reste hors champ.
