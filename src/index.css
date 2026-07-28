@@ -428,7 +428,7 @@
   }
 
   body .ga-body-outer--story .ga-content > :not(.ga-article-section) {
-    max-width: 596px;
+    max-width: min(60cqw, 1020px);
     margin-right: auto;
     margin-left: auto;
   }
@@ -441,9 +441,21 @@
 
   body .ga-body-outer--story .ga-section-heading,
   body .ga-body-outer--story .ga-section-copy {
-    max-width: 596px;
+    max-width: min(60cqw, 1020px);
     margin-right: auto;
     margin-left: auto;
+  }
+
+  body .ga-body-outer--story .ga-content > .ga-story-lead {
+    width: min(64cqw, 1230px);
+    max-width: none !important;
+    margin-top: clamp(112px, 11cqw, 168px);
+    margin-bottom: clamp(112px, 11cqw, 168px);
+    font-size: clamp(34px, 3cqw, 58px);
+    font-weight: 450;
+    line-height: 1.24;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
   }
 
   body .ga-body-outer--story .ga-content h2 {
@@ -746,6 +758,13 @@
 
     body .ga-body-grid--story {
       padding: 0 var(--layout-gutter-mobile);
+    }
+
+    body .ga-body-outer--story .ga-content > .ga-story-lead {
+      width: calc(100cqw - 2 * var(--layout-gutter-mobile));
+      margin-top: 80px;
+      margin-bottom: 80px;
+      font-size: clamp(32px, 9vw, 42px);
     }
 
     body .ga-body-outer--story .ga-content > blockquote,
