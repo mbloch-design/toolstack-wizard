@@ -2,6 +2,8 @@ export interface FeaturedComparison {
   slugPair: string;
   toolA: string;
   toolB: string;
+  summary?: string;
+  summaryEn?: string;
 }
 
 export const FEATURED_COMPARISONS: FeaturedComparison[] = [
@@ -26,7 +28,13 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "asana-vs-clickup", toolA: "asana", toolB: "clickup" },
   { slugPair: "clickup-vs-asana", toolA: "clickup", toolB: "asana" },
   { slugPair: "clickup-vs-trello", toolA: "clickup", toolB: "trello" },
-  { slugPair: "trello-vs-linear", toolA: "trello", toolB: "linear" },
+  {
+    slugPair: "trello-vs-linear",
+    toolA: "trello",
+    toolB: "linear",
+    summary: "Trello organise visuellement. Linear structure le shipping produit/dev.",
+    summaryEn: "Trello organizes visually. Linear structures product and development shipping.",
+  },
   { slugPair: "wrike-vs-asana", toolA: "wrike", toolB: "asana" },
   { slugPair: "basecamp-vs-asana", toolA: "basecamp", toolB: "asana" },
   { slugPair: "hive-vs-asana", toolA: "hive", toolB: "asana" },

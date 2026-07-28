@@ -12282,43 +12282,51 @@
   /* ── Decision grid ───────────────────────────────────── */
   .cix-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--space-md);
+    align-items: start;
     list-style: none;
     padding: 0;
     margin: 0;
   }
   .cix-grid-item {
     min-width: 0;
+    align-self: start;
   }
   .cix-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    padding: var(--space-lg);
+    overflow: hidden;
     border: 1px solid var(--color-border);
     border-radius: var(--tt-surface-radius-info, 12px);
     background: var(--color-surface);
     text-decoration: none;
     color: inherit;
-    transition: border-color 180ms ease-out, background-color 180ms ease-out;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--color-text) 4%, transparent);
+    transition:
+      transform 180ms ease-out,
+      border-color 180ms ease-out,
+      box-shadow 180ms ease-out;
   }
   .cix-card:hover {
-    background-color: var(--color-surface-soft);
     border-color: var(--color-border-strong);
+    box-shadow: 0 8px 22px color-mix(in srgb, var(--color-text) 8%, transparent);
+    transform: translateY(-2px);
   }
   .cix-card-head {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-md);
-    padding-bottom: var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-surface-soft);
   }
   .cix-card-identity {
     display: flex;
-    align-items: center;
-    gap: var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
     min-width: 0;
   }
   .cix-card-logos {
@@ -12328,8 +12336,8 @@
   }
   .cix-card-logo {
     display: inline-flex;
-    padding: 5px;
-    border: 1px solid var(--color-border-soft);
+    padding: 6px;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     background: var(--color-surface);
   }
@@ -12346,13 +12354,10 @@
     text-transform: uppercase;
     color: var(--color-muted);
   }
-  .cix-card-body {
-    flex: 1;
-  }
   .cix-card-title {
     margin: 0;
     font-family: var(--font-brand);
-    font-size: var(--tt-size-section-intro);
+    font-size: 19px;
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.15;
@@ -12361,6 +12366,18 @@
   .cix-card-title span {
     color: var(--color-muted-light);
     font-weight: 500;
+  }
+  .cix-card-summary {
+    display: -webkit-box;
+    margin: var(--space-sm) 0 0;
+    overflow: hidden;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 1.4;
+    color: var(--color-muted);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
   .cix-card-arrow {
     flex: 0 0 auto;
@@ -12371,68 +12388,7 @@
     color: var(--color-text);
     transform: translate(2px, -2px);
   }
-  .cix-card-split {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-top: 1px solid var(--color-border-soft);
-  }
-  .cix-card-choice {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2xs);
-    padding: var(--space-md) var(--space-md) 0 0;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body);
-    line-height: 1.45;
-    color: var(--color-muted);
-  }
-  .cix-card-choice + .cix-card-choice {
-    padding-right: 0;
-    padding-left: var(--space-md);
-    border-left: 1px solid var(--color-border-soft);
-  }
-  .cix-card-choice-label {
-    font-size: var(--tt-size-kicker);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-  }
-  .cix-card-choice-name {
-    font-weight: 700;
-    color: var(--color-text-strong);
-  }
-  .cix-card-choice-when {
-    min-width: 0;
-  }
-  .cix-card-choice-when::first-letter {
-    text-transform: uppercase;
-  }
-  .cix-card-choice-fallback {
-    margin: 0;
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--color-border-soft);
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-body);
-    line-height: 1.45;
-    color: var(--color-text);
-  }
-  .cix-card-cat {
-    align-self: flex-start;
-    margin-top: var(--space-lg);
-    padding: 5px 9px;
-    border-radius: var(--radius-pill);
-    background: var(--color-bg);
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-kicker);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-  }
-  @media (max-width: 980px) {
+  @media (max-width: 1100px) {
     .cix-toolbar {
       flex-wrap: wrap;
     }
@@ -12446,13 +12402,17 @@
       border-top: 1px solid var(--color-border-soft);
       border-left: 0;
     }
-    .cix-grid { grid-template-columns: 1fr; }
+    .cix-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 640px) {
+    .cix-grid { grid-template-columns: 1fr; }
     .cix-hero {
       padding: var(--space-lg) 0;
     }
     .cix-card {
+      border-radius: var(--radius-lg);
+    }
+    .cix-card-head {
       padding: var(--space-md);
     }
     .cix-toolbar {
@@ -12469,14 +12429,6 @@
     }
     .cix-card-identity { align-items: flex-start; }
     .cix-card-logos { margin-top: 2px; }
-    .cix-card-split { grid-template-columns: 1fr; }
-    .cix-card-choice { padding-right: 0; }
-    .cix-card-choice + .cix-card-choice {
-      margin-top: var(--space-md);
-      padding: var(--space-md) 0 0;
-      border-top: 1px solid var(--color-border-soft);
-      border-left: 0;
-    }
   }
 
   /* ── Empty state ─────────────────────────────────────── */

@@ -16,6 +16,30 @@ function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
   return tools.find(t => t.id === idOrSlug || t.slug === idOrSlug);
 }
 
+function compactToolPositioning(tool: Tool, lang: "fr" | "en"): string {
+  const raw = (lang === "fr" ? tool.shortDescription : tool.shortDescriptionEn)
+    || tool.shortDescription
+    || tool.name;
+  return raw
+    .trim()
+    .replace(/[.!?]+$/, "")
+    .replace(lang === "fr" ? /^(le|la|les|l’|l'|un|une)\s*/i : /^(the|a|an)\s*/i, "");
+}
+
+function getComparisonSummary(
+  comparison: (typeof FEATURED_COMPARISONS)[number],
+  a: Tool,
+  b: Tool,
+  lang: "fr" | "en",
+): string {
+  const authored = lang === "fr"
+    ? comparison.summary
+    : (comparison.summaryEn || comparison.summary);
+  if (authored) return authored;
+
+  return `${a.name} — ${compactToolPositioning(a, lang)}. ${b.name} — ${compactToolPositioning(b, lang)}.`;
+}
+
 /* ─── Category detection ─────────────────────────────────────────────────── */
 type CompareCategoryId = "all" | "ia" | "productivite" | "design" | "crm" | "automatisation";
 
@@ -57,23 +81,6 @@ const POPULAR_SUGGESTIONS = [
   { label: "Figma vs Canva",     slugPair: "figma-vs-canva" },
   { label: "Linear vs Jira",     slugPair: "linear-vs-jira" },
 ];
-
-/* The two tools' "choose this if…" conditions, shown one per tool on the card
-   as a clear side-by-side split — replaces the old question + "best for" pair
-   that repeated the exact same keepIf data twice. Returns null when a tool has
-   no keepIf, so the card can fall back to a generic prompt. */
-function getCardChoices(a: Tool, b: Tool, lang: "fr" | "en"): { a: string; b: string } | null {
-  const keepA = lang === "fr"
-    ? (a.verdict?.keepIf || [])[0]
-    : (a.verdictEn?.keepIf || a.verdict?.keepIf || [])[0];
-  const keepB = lang === "fr"
-    ? (b.verdict?.keepIf || [])[0]
-    : (b.verdictEn?.keepIf || b.verdict?.keepIf || [])[0];
-  if (keepA && keepB) return { a: keepA, b: keepB };
-  return null;
-}
-/* (getCardRisk removed — cards no longer surface "Risque" signals;
-   risk content lives inside the comparison page, not the listing card.) */
 
 /* (ToolInput + ToolInputProps removed — replaced by single search field) */
 
@@ -301,7 +308,6 @@ const ComparesIndexPage = () => {
               {filteredComparisons.map((c) => {
                 const a = c.toolAData!;
                 const b = c.toolBData!;
-                const choices = getCardChoices(a, b, lang);
                 const catId = getSlugCategory(c.slugPair);
                 const catLabel = COMPARE_CATEGORY_FILTERS.find((f) => f.id === catId);
                 return (
@@ -318,37 +324,19 @@ const ComparesIndexPage = () => {
                             <span className="cix-card-logo cix-card-logo--second"><ToolLogo tool={b} size={40} /></span>
                           </div>
                           <div>
-                            <span className="cix-card-eyebrow">{t("Comparatif", "Comparison")}</span>
+                            {catLabel && catLabel.id !== "all" && (
+                              <span className="cix-card-eyebrow">
+                                {lang === "fr" ? catLabel.label : catLabel.labelEn}
+                              </span>
+                            )}
                             <h2 className="cix-card-title">{a.name} <span>vs</span> {b.name}</h2>
+                            <p className="cix-card-summary">
+                              {getComparisonSummary(c, a, b, lang)}
+                            </p>
                           </div>
                         </div>
                         <ArrowUpRight className="cix-card-arrow" size={20} aria-hidden />
                       </div>
-                      <div className="cix-card-body">
-                        {choices ? (
-                          <div className="cix-card-split">
-                            <p className="cix-card-choice">
-                              <span className="cix-card-choice-label">{t("Choisir", "Choose")}</span>
-                              <span className="cix-card-choice-name">{a.name}</span>
-                              <span className="cix-card-choice-when">{choices.a.toLowerCase()}</span>
-                            </p>
-                            <p className="cix-card-choice">
-                              <span className="cix-card-choice-label">{t("Choisir", "Choose")}</span>
-                              <span className="cix-card-choice-name">{b.name}</span>
-                              <span className="cix-card-choice-when">{choices.b.toLowerCase()}</span>
-                            </p>
-                          </div>
-                        ) : (
-                          <p className="cix-card-choice-fallback">
-                            {t("Lequel colle le mieux à ton usage réel ?", "Which one fits your real use case?")}
-                          </p>
-                        )}
-                      </div>
-                      {catLabel && catLabel.id !== "all" && (
-                        <span className="cix-card-cat">
-                          {lang === "fr" ? catLabel.label : catLabel.labelEn}
-                        </span>
-                      )}
                     </Link>
                   </li>
                 );

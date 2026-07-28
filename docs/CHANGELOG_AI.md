@@ -3684,3 +3684,16 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les espacements, surfaces, cartes, FAQ et fiches proches sont alignés sur le rythme éditorial actuel des pages produit et comparatifs.
 - Le template utilise désormais la même grille article + sidebar que les fiches produit ; la carte de décision reste sticky et remplace la navigation flottante de bas de page.
 - Une passe anti-redondance attribue désormais un rôle clair à chaque zone : promesse dans le hero, décision dans la sidebar, composition dans les outils, coût dans le budget et risques spécifiques dans les limites.
+
+## 2026-07-28 — Présence visuelle des cartes Comparatifs
+
+- Les cartes de l’index Comparatifs séparent désormais clairement l’identité du duel et les deux critères de décision.
+- Le header utilise une surface secondaire, un badge de catégorie contrasté et des logos mieux cadrés.
+- Les cartes ne sont plus étirées artificiellement par leur ligne de grille ; leur hauteur suit le contenu réel.
+- Une ombre légère et un déplacement discret renforcent l’état interactif sans introduire de couleur d’accent.
+- Le badge de catégorie flottant en bas est supprimé au profit d’une information intégrée à la hiérarchie du titre.
+- La seconde passe retire les libellés « Choisir » et les noms d’outils répétés dans chaque colonne : le header porte l’identité du duel, les cellules ne conservent que le critère discriminant.
+- La grille desktop affiche quatre cartes par ligne ; les critères sont empilés dans chaque carte pour préserver la lisibilité, avec deux colonnes sur tablette et une sur mobile.
+- Les critères descriptifs sont finalement retirés de l’index : les cartes servent uniquement à identifier et ouvrir un duel, tandis que l’analyse reste dans la page Comparatif.
+- Le registre des comparatifs accepte désormais une accroche éditoriale FR/EN optionnelle ; Trello vs Linear inaugure ce format avec une synthèse courte sur leurs logiques respectives.
+- Toutes les cards affichent désormais cette synthèse : une accroche rédigée lorsqu’elle existe, sinon une composition courte issue du positionnement éditorial FR/EN de chaque outil.
