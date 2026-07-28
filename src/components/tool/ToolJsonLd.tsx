@@ -4,6 +4,7 @@ import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { buildToolFaqs } from "@/lib/toolFaq";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
+import { getToolTutorials } from "@/data/toolTutorials";
 
 interface Props {
   tool: Tool;
@@ -100,6 +101,29 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       },
     });
 
+    // VideoObject is emitted only when the curated video is visible on the
+    // overview page. The UI and structured data share the same metadata.
+    const tutorials = getToolTutorials(tool.slug || tool.id);
+    const isOverview = canonicalUrl === `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
+    if (isOverview && tutorials.length > 0) {
+      const videos = tutorials.map((tutorial) => ({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: lang === "en" ? tutorial.titleEn : tutorial.titleFr,
+        description: lang === "en"
+          ? `Official ${tool.name} tutorial published by ${tutorial.author}.`
+          : `Tutoriel officiel ${tool.name} publié par ${tutorial.author}.`,
+        thumbnailUrl: `https://i.ytimg.com/vi/${tutorial.videoId}/hqdefault.jpg`,
+        embedUrl: `https://www.youtube-nocookie.com/embed/${tutorial.videoId}`,
+        contentUrl: tutorial.sourceUrl,
+        uploadDate: tutorial.publishedOn,
+      }));
+      setJsonLd("tool-video-jsonld", videos.length === 1 ? videos[0] : {
+        "@context": "https://schema.org",
+        "@graph": videos,
+      });
+    }
+
     // 3. FAQPage — mirrors the on-page FAQ (ToolFAQSection) exactly: both
     // pull from buildToolFaqs, the single source of these questions/answers,
     // so they can never drift out of sync (required by Google's FAQPage policy).
@@ -180,7 +204,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       itemListElement: breadcrumbItems,
     });
 
-    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-faq-jsonld", "tool-breadcrumb-jsonld"]);
+    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-video-jsonld", "tool-faq-jsonld", "tool-breadcrumb-jsonld"]);
   }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq, pageCanonicalUrl]);
 
   return null;

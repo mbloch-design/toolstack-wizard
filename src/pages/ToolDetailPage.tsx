@@ -25,6 +25,8 @@ import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
+import ToolTutorialsSection from "@/components/tool/ToolTutorialsSection";
+import { getToolTutorials } from "@/data/toolTutorials";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
@@ -223,6 +225,7 @@ const ToolDetailPage = () => {
 
   /* ── Derived values ── */
   const category   = categories.find((c: any) => c.id === tool.categoryId);
+  const tutorials = getToolTutorials(tool.slug || tool.id);
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const sameCategoryAlts = tools
     .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id);
@@ -500,6 +503,15 @@ const ToolDetailPage = () => {
                   </div>
                 )}
               </section>
+            )}
+
+            {isPresentation && (
+              <ToolTutorialsSection
+                tutorials={tutorials}
+                toolName={tool.name}
+                lang={lang}
+                t={t}
+              />
             )}
 
             {/* Mobile completes the opening fiche with its decision card. */}
