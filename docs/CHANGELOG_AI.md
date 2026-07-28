@@ -2,6 +2,14 @@
 
 ---
 
+## 2026-07-28 — Actions des catalogues harmonisées
+
+- Les commandes Filtrer, Rechercher et Trier utilisent désormais le même format circulaire 40 × 40 px, des icônes de 18 px et un espacement constant de 4 px.
+- Les états de survol et de focus sont partagés sur Outils, Catégories, Stacks, Comparatifs et Guides.
+- La recherche fermée ne peut plus se compresser sous la commande de tri : le groupe reste aligné et sans chevauchement, quelle que soit la longueur de la navigation thématique.
+
+---
+
 ## 2026-07-28 — Mode recherche stable dans les catalogues
 
 - Sur Outils, Catégories, Stacks, Comparatifs et Guides, l’ouverture de la recherche remplace désormais la navigation thématique au lieu de la compresser.
