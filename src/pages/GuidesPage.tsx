@@ -287,7 +287,7 @@ const GuidesPage = () => {
           )}
 
           {!loading && storiesPosts.length > 0 && (
-            <StoriesRow story={storiesPosts[0]} prefix={prefix} lang={lang} />
+            <StoriesRow stories={storiesPosts.slice(0, 3)} prefix={prefix} lang={lang} />
           )}
 
         </div>
@@ -297,59 +297,31 @@ const GuidesPage = () => {
   );
 };
 
-const UPCOMING_STORIES = [
-  {
-    titleFr: "Remettre de la clarté dans une entreprise qui grandit trop vite",
-    titleEn: "Bringing clarity back to a business growing too fast",
-    profileFr: "Marc, consultant opérations",
-    profileEn: "Marc, operations consultant",
-    image: "/editorial/stories/previews/marc-operations.jpg",
-  },
-  {
-    titleFr: "Construire un produit numérique à partir du terrain",
-    titleEn: "Building a digital product from the field",
-    profileFr: "Nora, développeuse indépendante",
-    profileEn: "Nora, independent developer",
-    image: "/editorial/stories/previews/nora-sante.jpg",
-  },
-];
-
 function StoriesRow({
-  story, prefix, lang,
+  stories, prefix, lang,
 }: {
-  story: Post; prefix: string; lang: string;
+  stories: Post[]; prefix: string; lang: string;
 }) {
-  const firstStoryDate = formatPostDate(story.date, lang);
+  const firstStory = stories[0];
 
   return (
     <section className="gi-stories-row" aria-labelledby="guides-stories-title">
       <div className="gi-stories-row-header">
         <h2 id="guides-stories-title">{lang === "fr" ? "Stories" : "Stories"}</h2>
-        <Link to={`${prefix}/guide/${story.slug}`}>
+        <Link to={`${prefix}/guide/${firstStory.slug}`}>
           {lang === "fr" ? "Tout voir" : "View all"}
         </Link>
       </div>
 
       <div className="gi-stories-grid">
-        <Link to={`${prefix}/guide/${story.slug}`} className="gi-story-tile">
-          <div className="gi-story-tile-media">
-            <img src={story.thumbnail} alt="" loading="lazy" decoding="async" />
-          </div>
-          <h3>{story.title}</h3>
-          <p>{firstStoryDate}</p>
-        </Link>
-
-        {UPCOMING_STORIES.map((upcoming) => (
-          <article key={upcoming.image} className="gi-story-tile gi-story-tile--upcoming">
+        {stories.map((story) => (
+          <Link key={story.slug} to={`${prefix}/guide/${story.slug}`} className="gi-story-tile">
             <div className="gi-story-tile-media">
-              <img src={upcoming.image} alt="" loading="lazy" decoding="async" />
+              <img src={story.thumbnail} alt="" loading="lazy" decoding="async" />
             </div>
-            <h3>{lang === "fr" ? upcoming.titleFr : upcoming.titleEn}</h3>
-            <p>
-              {lang === "fr" ? upcoming.profileFr : upcoming.profileEn}
-              <span>{lang === "fr" ? "À venir" : "Coming soon"}</span>
-            </p>
-          </article>
+            <h3>{story.title}</h3>
+            <p>{formatPostDate(story.date, lang)}</p>
+          </Link>
         ))}
       </div>
     </section>
