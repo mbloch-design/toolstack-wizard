@@ -37,6 +37,8 @@
     }
   ],
   "redirects": [
+    { "source": "/:lang(fr|en)/stories", "destination": "/:lang/guides", "permanent": true },
+    { "source": "/:lang(fr|en)/story/:slug", "destination": "/:lang/guide/:slug", "permanent": true },
     { "source": "/fr/methodology", "destination": "/fr/transparency", "permanent": true },
     { "source": "/en/methodology", "destination": "/en/transparency", "permanent": true },
     {
