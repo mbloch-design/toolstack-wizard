@@ -435,7 +435,7 @@
 
   body .ga-body-outer--story .ga-article-section {
     max-width: none;
-    padding-top: clamp(96px, 10cqw, 128px);
+    padding-top: clamp(80px, 8cqw, 112px);
     border-top: 0;
   }
 
@@ -459,7 +459,7 @@
   }
 
   body .ga-body-outer--story .ga-content h2 {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     font-size: clamp(36px, 3.65vw, 48px);
     font-weight: 500;
     line-height: 1.13;
@@ -474,7 +474,11 @@
   }
 
   body .ga-body-outer--story .ga-content p {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
+  }
+
+  body .ga-body-outer--story .ga-section-copy > p:last-child {
+    margin-bottom: 0;
   }
 
   body .ga-body-outer--story .ga-content > blockquote,
@@ -518,6 +522,10 @@
     line-height: 1.4 !important;
     color: var(--color-muted);
     text-align: center;
+  }
+
+  body .ga-body-outer--story .ga-section-copy > .ga-quote-attribution:last-child {
+    margin-bottom: 0 !important;
   }
 
   body .ga-body-outer--story .ga-story-figure {
