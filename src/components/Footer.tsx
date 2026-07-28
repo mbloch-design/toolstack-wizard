@@ -49,6 +49,7 @@ const Footer = () => {
               <Link to={`${prefix}/tools`}>{t("Catalogue", "Catalog")}</Link>
               <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
               <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
+              <Link to={`${prefix}/stories`}>Stories</Link>
               <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
             </nav>
 

@@ -142,6 +142,7 @@ const GuidesPage = () => {
   const filteredPosts = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     const matched = posts.filter((post) => {
+      if (post.category === "Stories") return false;
       if (!matchesFilter(post, activeFilter)) return false;
       if (!normalizedQuery) return true;
       return `${post.title} ${post.excerpt} ${post.category} ${(post.tags || []).join(" ")}`

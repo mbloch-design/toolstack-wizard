@@ -46,10 +46,16 @@ const GuideDetailPage = () => {
     const seoTitle = post.seo?.metaTitle || `${post.title} | ToolTrim`;
     const rawDesc = post.seo?.metaDescription || post.excerpt || fallbackDesc;
     const seoDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trimEnd() + "…" : rawDesc;
-    const canonicalUrl = `https://tooltrim.com/${lang}/guide/${post.slug}`;
+    const routeKind = post.category === "Stories" ? "story" : "guide";
+    const canonicalUrl = `https://tooltrim.com/${lang}/${routeKind}/${post.slug}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, type: "article" });
-    setHreflang(`/${lang}/guide/${post.slug}`);
+    setHreflang(`/${lang}/${routeKind}/${post.slug}`);
+    if (post.thumbnail) {
+      const socialImage = new URL(post.thumbnail, "https://tooltrim.com").toString();
+      setMeta("og:image", socialImage);
+      setMeta("twitter:image", socialImage);
+    }
     setMeta("article:published_time", post.date || "");
 
     setJsonLd("article-jsonld", {
@@ -62,6 +68,9 @@ const GuideDetailPage = () => {
       author: { "@type": "Organization", name: "ToolTrim" },
       publisher: { "@type": "Organization", name: "ToolTrim" },
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+      ...(post.thumbnail
+        ? { image: new URL(post.thumbnail, "https://tooltrim.com").toString() }
+        : {}),
       ...(post.tags?.length ? { keywords: post.tags.join(", ") } : {}),
     });
 
@@ -204,6 +213,7 @@ const GuideDetailPage = () => {
   const formattedDate = post.date
     ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric" })
     : null;
+  const isStory = post.category === "Stories";
 
   return (
     <>
@@ -217,11 +227,14 @@ const GuideDetailPage = () => {
       </div>
 
       {/* ══ 1. Article Header ═══════════════════════════════════════════════ */}
-      <header className="ga-header">
+      <header className={`ga-header${isStory ? " ga-header--story" : ""}`}>
         <div className="ga-container">
           <div className="ga-hero-main">
             <Breadcrumb items={[
-              { label: t("Guides", "Guides"), href: `${prefix}/guides` },
+              {
+                label: isStory ? "Stories" : t("Guides", "Guides"),
+                href: isStory ? `${prefix}/stories` : `${prefix}/guides`,
+              },
               { label: post.title },
             ]} />
 
@@ -248,14 +261,14 @@ const GuideDetailPage = () => {
       </header>
 
       {/* ══ 2. Body: article + sticky TOC ═══════════════════════════════════ */}
-      <div className="ga-body-outer">
-        <div className="ga-body-grid">
+      <div className={`ga-body-outer${isStory ? " ga-body-outer--story" : ""}`}>
+        <div className={`ga-body-grid${isStory ? " ga-body-grid--story" : ""}`}>
 
           {/* ── Article column ── */}
           <article>
 
             {/* Mobile TOC */}
-            {h2Toc.length > 1 && (
+            {!isStory && h2Toc.length > 1 && (
               <div className="ga-mobile-toc">
                 <p className="ga-mobile-toc-label">{t("Sommaire", "Contents")}</p>
                 <nav className="ga-mobile-toc-list" aria-label={t("Sommaire de l’article", "Article contents")}>
@@ -334,7 +347,7 @@ const GuideDetailPage = () => {
             {/* Back link */}
             <div style={{ marginTop: 48, paddingTop: 28, borderTop: "1px solid var(--color-border)" }}>
               <Link
-                to={`${prefix}/guides`}
+                to={isStory ? `${prefix}/stories` : `${prefix}/guides`}
                 style={{
                   fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
                   color: "var(--color-muted)", textDecoration: "none",
@@ -343,13 +356,13 @@ const GuideDetailPage = () => {
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-muted)"; }}
               >
-                ← {t("Tous les guides", "All guides")}
+                ← {isStory ? t("Toutes les Stories", "All Stories") : t("Tous les guides", "All guides")}
               </Link>
             </div>
           </article>
 
           {/* ── TOC column (sticky) ── */}
-          <aside className="ga-toc-col">
+          {!isStory && <aside className="ga-toc-col">
             {h2Toc.length > 1 && (
               <div>
                 <p className="ga-toc-label">{t("Sommaire", "Contents")}</p>
@@ -383,7 +396,7 @@ const GuideDetailPage = () => {
                 {Math.round(readProgress)}%
               </p>
             </div>
-          </aside>
+          </aside>}
         </div>
       </div>
 

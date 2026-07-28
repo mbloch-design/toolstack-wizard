@@ -34,6 +34,7 @@ const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
+const StoriesPage = lazy(() => import("@/pages/StoriesPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
 const CartPage = lazy(() => import("@/pages/CartPage"));
 const ExplorerPage = lazy(() => import("@/pages/ExplorerPage"));
@@ -211,6 +212,7 @@ export const AppRoutes = () => (
       <Route path="category" element={<CategoriesIndexPage />} />
       <Route path="category/:slug" element={<CategoryPage />} />
       <Route path="guides" element={<GuidesPage />} />
+      <Route path="stories" element={<StoriesPage />} />
       <Route path="ma-stack" element={<CartPage />} />
       <Route path="explorer" element={<ExplorerPage />} />
       <Route path="my-stack" element={<CartPage />} />
@@ -231,6 +233,7 @@ export const AppRoutes = () => (
       <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
       <Route path="guide/outils-facturation-freelance-2026" element={<ArticleFacturation />} />
       <Route path="guide/:slug" element={<LocalizedGuidePage />} />
+      <Route path="story/:slug" element={<GuideDetailPage />} />
       <Route path="article/:slug" element={<RedirectArticleToGuide />} />
       <Route path="comparatifs" element={<ComparesIndexPage />} />
       <Route path="comparatif/:slugPair" element={<ComparePage />} />
