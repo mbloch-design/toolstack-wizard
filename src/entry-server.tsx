@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { renderToString } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StaticRouter } from "react-router-dom/server";
+import { Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,6 +14,7 @@ import { AppRoutes } from "@/App";
 import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, SsrPostContext, loadLocalPosts } from "@/hooks/useSupabaseData";
 import type { Post } from "@/hooks/useSupabaseData";
 import type { Tool } from "@/data/types";
+import StackDetailPage from "@/pages/StackDetailPage";
 
 export interface RenderedToolPage {
   html: string;
@@ -123,11 +125,10 @@ export async function renderComparePage(path: string, toolA: Tool, toolB: Tool):
   );
 }
 
-// Same idea as renderToolPage, for /stacks/:slug. StackDetailPage reads its
-// data from the STACKS static import (no client-only fetch), so no SSR
-// context provider is needed — just an eager import (see App.tsx) so
-// renderToString can resolve the route instead of rendering the Suspense
-// fallback.
+// Stack detail stays a lazy client route so the rich 1.6 MB stack catalogue
+// is not pulled into /stacks. For prerendering, render the detail component
+// directly inside the matching route: SSR remains complete without making
+// the component eager in the browser application.
 export async function renderStackPage(path: string): Promise<string> {
   const queryClient = new QueryClient();
 
@@ -142,7 +143,9 @@ export async function renderStackPage(path: string): Promise<string> {
             <DynamicCanonical />
             <ErrorBoundary>
               <Suspense fallback={null}>
-                <AppRoutes />
+                <Routes>
+                  <Route path="/:lang/stacks/:slug" element={<StackDetailPage />} />
+                </Routes>
               </Suspense>
             </ErrorBoundary>
           </StaticRouter>

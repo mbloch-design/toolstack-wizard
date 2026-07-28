@@ -54,6 +54,11 @@ function run(label, command, args) {
 }
 
 console.log("Tooltrim — build production reproductible");
+run(
+  "Index catalogue stacks",
+  process.platform === "win32" ? "node_modules\\.bin\\tsx.cmd" : "node_modules/.bin/tsx",
+  ["scripts/gen-stacks-catalog-index.ts"],
+);
 console.log("Mise à l'écart des anciens dossiers générés : dist, dist-ssr");
 archiveGeneratedDirs();
 

@@ -13,6 +13,17 @@
 
 ---
 
+## 2026-07-28 — Allègement prioritaire du catalogue Stacks
+
+- `/stacks` ne charge plus le catalogue riche `stacks.ts` : un index dédié conserve uniquement les 212 stacks, leurs facettes pré-calculées et les 395 outils nécessaires aux aperçus des cartes.
+- La recherche plein texte est préparée au build et les calculs de disponibilité des facettes sont différés jusqu’à l’ouverture du panneau de filtres.
+- La requête Supabase `tools` de `useToolSummaries()` est supprimée du chargement de cette page.
+- Le générateur de l’index catalogue est exécuté automatiquement avant chaque build production pour éviter toute dérive avec les fiches détail.
+- Poids dédié au catalogue de la route : environ 164 Ko gzip auparavant contre 107 Ko gzip après découpage, soit une réduction d’environ 35 %. Le bundle riche de 141 Ko gzip est désormais téléchargé uniquement à l’ouverture d’une fiche Stack.
+- Validation : TypeScript, build/prérendu de 424 pages stack, inventaire réseau de la liste et d’une fiche détail, recherche, filtres, 12 cartes progressives et rendu mobile 390 × 844 sans débordement.
+
+---
+
 ## 2026-07-28 — Tutoriels officiels sur les fiches outils prioritaires
 
 - Notion, Figma, Canva, Loom et Linear affichent une vidéo officielle vérifiée sur leur vue d’ensemble FR/EN.

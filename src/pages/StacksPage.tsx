@@ -7,24 +7,31 @@ import ToolCardImage from "@/components/tool/ToolCardImage";
 import Breadcrumb from "@/components/Breadcrumb";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { useLang } from "@/hooks/useLang";
-import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
-import {
-  STACK_PERSONAS,
-  STACK_SUB_PROFILES,
-  STACKS,
-  getStackDerivedFields,
-  type StackBudgetRange,
-  type StackComplexity,
-  type StackLevel,
-  type StackPersona,
-  type StackSubProfile,
-  type StackType,
-} from "@/data/stacks";
+import stackCatalog from "@/data/stacks-catalog-index.json";
 
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
-type StackListItem = (typeof STACKS)[number];
+type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
+type StackSubProfile = Exclude<(typeof stackCatalog.subProfiles)[number]["value"], "all">;
+type StackBudgetRange = "0-30" | "30-80" | "80-150" | "150+";
+type StackLevel = "debutant" | "installe" | "avance";
+type StackComplexity = "minimal" | "equilibre" | "premium";
+type StackType = "socle" | "specialiste" | "workflow" | "avancee";
+type StackCatalogTool = (typeof stackCatalog.tools)[number];
+type StackListItem = Omit<(typeof stackCatalog.stacks)[number], "persona" | "subProfiles" | "derived"> & {
+  persona: StackPersona;
+  subProfiles: StackSubProfile[];
+  derived: {
+    profile: StackPersona;
+    objectives: string[];
+    budgetRange: StackBudgetRange;
+    level: StackLevel;
+    complexity: StackComplexity;
+    stackType: StackType;
+    toolCount: number;
+  };
+};
 type StackFacetProfile = "all" | StackPersona;
 type StackFacetObjective = "all" | "content" | "sell" | "clients" | "automate" | "produce" | "organize";
 type StackFacetObjectiveValue = Exclude<StackFacetObjective, "all">;
@@ -44,8 +51,22 @@ interface Option<T extends string> {
 
 interface EnrichedStack {
   stack: StackListItem;
-  derived: ReturnType<typeof getStackDerivedFields>;
+  derived: StackListItem["derived"];
 }
+
+const STACKS = stackCatalog.stacks as StackListItem[];
+const STACK_PERSONAS = stackCatalog.personas as Array<{
+  value: StackPersona | "all";
+  label: string;
+  labelEn: string;
+}>;
+const STACK_SUB_PROFILES = stackCatalog.subProfiles as Array<{
+  value: StackSubProfile | "all";
+  label: string;
+  labelEn: string;
+  personas?: StackPersona[];
+}>;
+const STACK_TOOLS = stackCatalog.tools as StackCatalogTool[];
 
 /* ─── Constants ─────────────────────────────────────────────────────────────── */
 const FEATURED_STACK_SLUGS = [
@@ -188,7 +209,7 @@ function matchesStack(enriched: EnrichedStack, filters: {
   types: StackFacetTypeValue[];
   toolCount: StackFacetToolCount;
   query: string;
-}, toolNames: string[]): boolean {
+}): boolean {
   const { stack, derived } = enriched;
   if (filters.profile !== "all" && derived.profile !== filters.profile) return false;
   if (filters.specialties.length > 0 && !filters.specialties.some((specialty) => stack.subProfiles.includes(specialty))) return false;
@@ -201,24 +222,7 @@ function matchesStack(enriched: EnrichedStack, filters: {
 
   const q = filters.query.trim().toLowerCase();
   if (!q) return true;
-  const text = [
-    stack.title,
-    stack.titleEn,
-    stack.subtitle,
-    stack.subtitleEn,
-    stack.bestFor,
-    stack.bestForEn,
-    stack.avoidIf,
-    stack.avoidIfEn,
-    stack.risk,
-    stack.riskEn,
-    personaLabel(stack.persona, "fr"),
-    personaLabel(stack.persona, "en"),
-    ...stack.subProfiles.map((sub) => `${sub} ${subProfileLabel(sub, "fr")} ${subProfileLabel(sub, "en")}`),
-    ...derived.objectives,
-    ...stack.tools.map((slot, index) => `${slot.slug} ${slot.role} ${slot.roleEn} ${toolNames[index] || ""}`),
-  ].join(" ").toLowerCase();
-  return text.includes(q);
+  return stack.searchText.includes(q);
 }
 
 function truncate(text: string, max = 150) {
@@ -407,7 +411,7 @@ interface StackSelectionCardProps {
   prefix: string;
   lang: "fr" | "en";
   t: (fr: string, en: string) => string;
-  tools: NonNullable<ReturnType<typeof useToolSummaries>["tools"]>[number][];
+  tools: StackCatalogTool[];
 }
 
 function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelectionCardProps) {
@@ -478,7 +482,6 @@ function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelection
 /* ─── Main component ─────────────────────────────────────────────────────────── */
 const StacksPage = () => {
   const { t, lang, prefix } = useLang();
-  const { tools } = useToolSummaries();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [facetProfile, setFacetProfile] = useState<StackFacetProfile>(() => validParam(searchParams.get("profile"), PROFILE_OPTIONS, "all"));
@@ -504,6 +507,7 @@ const StacksPage = () => {
     { id: "tools", label: "", labelEn: "" },
   ], "recommended"));
   const [query, setQuery] = useState(() => searchParams.get("q") || "");
+  const [isSearchOpen, setIsSearchOpen] = useState(() => Boolean(searchParams.get("q")));
   const [mobileOpen, setMobileOpen] = useState(false);
   // Progressive rendering: the catalog has 200+ stacks; rendering them all at
   // once produced a ~116,000px page with 9k+ DOM nodes. Show a page at a time.
@@ -512,11 +516,16 @@ const StacksPage = () => {
 
   const panelRef = useRef<HTMLDivElement>(null);
   const filtersRef = useRef<HTMLButtonElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const [panelCoords, setPanelCoords] = useState({ top: 0, left: 0 });
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
-  const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
-  const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: getStackDerivedFields(stack) })), []);
+  useEffect(() => {
+    if (isSearchOpen) searchInputRef.current?.focus();
+  }, [isSearchOpen]);
+
+  const toolBySlug = useMemo(() => new Map(STACK_TOOLS.map((tool) => [tool.slug || tool.id, tool])), []);
+  const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: stack.derived })), []);
 
   const subProfileOptions = useMemo<Option<StackSubProfile>[]>(() => {
     const available = new Set(facetProfile === "all"
@@ -657,28 +666,40 @@ const StacksPage = () => {
   }), [facetProfile, facetSpecialties, facetObjectives, facetBudget, facetLevel, facetComplexity, facetTypes, facetToolCount, query]);
 
   const hasStackFor = useMemo(() => {
-    return (overrides: Partial<typeof currentFilters>) => enrichedStacks.some((enriched) => {
-      const toolNames = enriched.stack.tools.map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug);
-      return matchesStack(enriched, { ...currentFilters, ...overrides }, toolNames);
-    });
-  }, [currentFilters, enrichedStacks, toolBySlug]);
+    return (overrides: Partial<typeof currentFilters>) =>
+      enrichedStacks.some((enriched) => matchesStack(enriched, { ...currentFilters, ...overrides }));
+  }, [currentFilters, enrichedStacks]);
 
-  const disabledFacetIds = useMemo(() => ({
-    profiles: new Set(PROFILE_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ profile: option.id, specialties: [] })).map((option) => option.id)),
-    specialties: new Set(subProfileOptions.filter((option) => !facetSpecialties.includes(option.id) && !hasStackFor({ specialties: [option.id] })).map((option) => option.id)),
-    objectives: new Set(OBJECTIVE_MULTI_OPTIONS.filter((option) => !facetObjectives.includes(option.id) && !hasStackFor({ objectives: [option.id] })).map((option) => option.id)),
-    budgets: new Set(BUDGET_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ budget: option.id })).map((option) => option.id)),
-    levels: new Set(LEVEL_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ level: option.id })).map((option) => option.id)),
-    complexities: new Set(COMPLEXITY_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ complexity: option.id })).map((option) => option.id)),
-    types: new Set(TYPE_MULTI_OPTIONS.filter((option) => !facetTypes.includes(option.id) && !hasStackFor({ types: [option.id] })).map((option) => option.id)),
-    toolCounts: new Set(TOOL_COUNT_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ toolCount: option.id })).map((option) => option.id)),
-  }), [facetObjectives, facetSpecialties, facetTypes, hasStackFor, subProfileOptions]);
+  const disabledFacetIds = useMemo(() => {
+    // Availability checks scan the catalogue for every filter option. They are
+    // useful only while the filter panel is visible, so keep them off the
+    // critical rendering path.
+    if (!mobileOpen) {
+      return {
+        profiles: new Set<StackFacetProfile>(),
+        specialties: new Set<StackSubProfile>(),
+        objectives: new Set<StackFacetObjectiveValue>(),
+        budgets: new Set<StackFacetBudget>(),
+        levels: new Set<StackFacetLevel>(),
+        complexities: new Set<StackFacetComplexity>(),
+        types: new Set<StackFacetTypeValue>(),
+        toolCounts: new Set<StackFacetToolCount>(),
+      };
+    }
+    return {
+      profiles: new Set(PROFILE_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ profile: option.id, specialties: [] })).map((option) => option.id)),
+      specialties: new Set(subProfileOptions.filter((option) => !facetSpecialties.includes(option.id) && !hasStackFor({ specialties: [option.id] })).map((option) => option.id)),
+      objectives: new Set(OBJECTIVE_MULTI_OPTIONS.filter((option) => !facetObjectives.includes(option.id) && !hasStackFor({ objectives: [option.id] })).map((option) => option.id)),
+      budgets: new Set(BUDGET_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ budget: option.id })).map((option) => option.id)),
+      levels: new Set(LEVEL_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ level: option.id })).map((option) => option.id)),
+      complexities: new Set(COMPLEXITY_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ complexity: option.id })).map((option) => option.id)),
+      types: new Set(TYPE_MULTI_OPTIONS.filter((option) => !facetTypes.includes(option.id) && !hasStackFor({ types: [option.id] })).map((option) => option.id)),
+      toolCounts: new Set(TOOL_COUNT_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ toolCount: option.id })).map((option) => option.id)),
+    };
+  }, [facetObjectives, facetSpecialties, facetTypes, hasStackFor, mobileOpen, subProfileOptions]);
 
   const filteredStacks = useMemo(() => {
-    const filtered = enrichedStacks.filter((enriched) => {
-      const toolNames = enriched.stack.tools.map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug);
-      return matchesStack(enriched, currentFilters, toolNames);
-    });
+    const filtered = enrichedStacks.filter((enriched) => matchesStack(enriched, currentFilters));
 
     if (sortBy === "budget") return [...filtered].sort((a, b) => a.stack.monthlyBudget - b.stack.monthlyBudget);
     if (sortBy === "tools") return [...filtered].sort((a, b) => b.derived.toolCount - a.derived.toolCount);
