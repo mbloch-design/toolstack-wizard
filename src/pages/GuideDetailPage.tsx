@@ -302,7 +302,7 @@ const GuideDetailPage = () => {
             />
 
             {/* Share row */}
-            <div className="ga-share-row">
+            <div className={`ga-share-row${isStory ? " ga-share-row--story" : ""}`}>
               <span className="ga-share-label">
                 {t("Cet article vous a été utile ?", "Found this useful?")}
               </span>
@@ -330,7 +330,7 @@ const GuideDetailPage = () => {
             </div>
 
             {/* Mentioned tools — editorial rows */}
-            {mentionedTools.length > 0 && (
+            {!isStory && mentionedTools.length > 0 && (
               <div className="ga-tools-section">
                 <p className="ga-tools-section-label">{t("Outils mentionnés", "Tools mentioned")}</p>
                 {mentionedTools.slice(0, 6).map((tool) => (
@@ -340,7 +340,7 @@ const GuideDetailPage = () => {
             )}
 
             {/* Related guides */}
-            {relatedPosts.length > 0 && (
+            {!isStory && relatedPosts.length > 0 && (
               <div className="ga-related">
                 <p className="ga-related-label">{t("À lire ensuite", "Read next")}</p>
                 <div className="ga-related-grid">
@@ -352,7 +352,7 @@ const GuideDetailPage = () => {
             )}
 
             {/* Back link */}
-            <div style={{ marginTop: 48, paddingTop: 28, borderTop: "1px solid var(--color-border)" }}>
+            <div className={isStory ? "ga-story-back" : undefined} style={!isStory ? { marginTop: 48, paddingTop: 28, borderTop: "1px solid var(--color-border)" } : undefined}>
               <Link
                 to={`${prefix}/guides`}
                 style={{

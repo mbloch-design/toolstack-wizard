@@ -124,7 +124,8 @@ const LangLayout = () => {
   const isSelectorFamily = /^\/(fr|en)\/selector(\/.*)?$/.test(location.pathname);
   // Back-office (Codex-owned): same rule, legacy chrome only.
   const isBackOffice = /^\/(fr|en)\/back-office\/?$/.test(location.pathname);
-  const isLegacyChrome = (isSelectorFamily && !isDiagnosticFocusRoute) || isBackOffice;
+  const isEditorialStory = /^\/(fr|en)\/guide\/anna-morel-designer-studio-augmente\/?$/.test(location.pathname);
+  const isLegacyChrome = (isSelectorFamily && !isDiagnosticFocusRoute) || isBackOffice || isEditorialStory;
 
   // Suspense lives here (inside the shell) rather than only at the app root,
   // so a lazy page's chunk-load fallback only ever replaces the inner content

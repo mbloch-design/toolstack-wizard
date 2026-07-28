@@ -331,7 +331,7 @@
   body .ga-header--story {
     position: relative;
     display: flex;
-    min-height: min(760px, calc(100svh - var(--navbar-h)));
+    min-height: calc(100svh - var(--navbar-h));
     padding: 0;
     align-items: flex-end;
     overflow: hidden;
@@ -350,7 +350,7 @@
 
   body .ga-header--story .ga-container {
     width: 100%;
-    padding-bottom: clamp(52px, 7vw, 88px);
+    padding-bottom: clamp(58px, 8vh, 96px);
   }
 
   body .ga-header--story .ga-hero-main {
@@ -390,7 +390,7 @@
 
   body .ga-body-outer--story {
     border-top: 0;
-    padding-top: clamp(88px, 10vw, 136px);
+    padding-top: clamp(104px, 11vw, 152px);
   }
 
   body .ga-body-grid--story {
@@ -443,7 +443,7 @@
     left: 50%;
     width: min(770px, calc(100vw - 2 * var(--layout-gutter)));
     max-width: none !important;
-    margin: clamp(72px, 8vw, 108px) 0 var(--space-md);
+    margin: clamp(88px, 10vw, 136px) 0 var(--space-md);
     margin-right: 0 !important;
     margin-left: 0 !important;
     padding: 0;
@@ -459,7 +459,7 @@
     position: relative;
     left: 50%;
     width: min(770px, calc(100vw - 2 * var(--layout-gutter)));
-    margin: 0 0 clamp(72px, 8vw, 108px);
+    margin: 0 0 clamp(88px, 10vw, 136px);
     transform: translateX(-50%);
     font-size: 14px;
     font-weight: 500;
@@ -468,8 +468,8 @@
   }
 
   body .ga-body-outer--story .ga-story-figure {
-    width: min(980px, calc(100vw - 2 * var(--layout-gutter)));
-    margin: clamp(72px, 9vw, 120px) 50%;
+    width: min(1120px, calc(100vw - 2 * var(--layout-gutter)));
+    margin: clamp(88px, 10vw, 136px) 50%;
     transform: translateX(-50%);
   }
 
@@ -487,6 +487,19 @@
     font-size: 12px;
     line-height: 1.45;
     color: var(--color-muted);
+  }
+
+  body .ga-body-outer--story .ga-share-row--story {
+    width: min(1120px, calc(100vw - 2 * var(--layout-gutter)));
+    margin: clamp(112px, 12vw, 176px) auto 0;
+    padding: 28px 0;
+  }
+
+  body .ga-body-outer--story .ga-story-back {
+    width: min(1120px, calc(100vw - 2 * var(--layout-gutter)));
+    margin: 0 auto;
+    padding: 28px 0 clamp(80px, 10vw, 144px);
+    border-top: 1px solid var(--color-border);
   }
 
   @media (max-width: 700px) {
