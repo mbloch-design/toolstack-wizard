@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
-import { ArrowRight, Bookmark } from "lucide-react";
+import { ArrowRight, Code2, Layers3, MessagesSquare, WandSparkles } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
-import ToolLogoPile from "@/components/ToolLogoPile";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
 // Light index (first 12 stacks, ~3KB gzip) instead of the full 1.7MB stacks.ts:
 // HomePageV2 is an eager import, so pulling stacks.ts here modulepreloaded the
@@ -18,24 +18,18 @@ import STACKS from "@/data/stacks-index.json";
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
-const STACK_PAGE_SIZE = 3; // 1 row × 3 cols — stacks carousel
+const STACK_PAGE_SIZE = 5; // 1 row × 5 cols — curated collections carousel
 const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
 const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
 const POST_MAX_PAGES = 4; // cap carousel depth to 4 screens
 
-/* ── Category "duo rows" — two side-by-side compact-list carousels
-   sharing one row, picked for the biggest catalog sections not already
-   surfaced elsewhere on the homepage (Featured/AI/New are curated
-   cross-category picks, not per-category browsing). */
-const DUO_ROWS: { categoryId: string; label: string; labelEn: string }[][] = [
-  [
-    { categoryId: "creation", label: "Création de contenu", labelEn: "Content Creation" },
-    { categoryId: "nocode-web", label: "No-Code & Web", labelEn: "No-Code & Web" },
-  ],
-  [
-    { categoryId: "analytics", label: "Analytics", labelEn: "Analytics" },
-    { categoryId: "communication", label: "Communication", labelEn: "Communication" },
-  ],
+/* Three high-signal catalogue entries displayed as one editorial shelf.
+   The composition deliberately breaks the succession of homogeneous rails:
+   one visual lead and three compact tools per category. */
+const EDITORIAL_SHELF = [
+  { categoryId: "creation", label: "Création de contenu", labelEn: "Content Creation" },
+  { categoryId: "nocode-web", label: "No-Code & Web", labelEn: "No-Code & Web" },
+  { categoryId: "communication", label: "Communication", labelEn: "Communication" },
 ];
 
 /* Curated "new additions" — update this list as new tools are added to the catalogue */
@@ -81,6 +75,89 @@ function SwipePager({
   return (
     <div className={className} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       {children}
+    </div>
+  );
+}
+
+const STACK_VISUAL_LABELS = [
+  { fr: "Développer", en: "Build" },
+  { fr: "Créer", en: "Create" },
+  { fr: "Concevoir", en: "Design" },
+  { fr: "Mettre en scène", en: "Stage" },
+  { fr: "Déployer", en: "Deploy" },
+];
+
+function StackGlyph({ variant }: { variant: number }) {
+  const glyph = variant % 5;
+
+  if (glyph === 0) {
+    return (
+      <svg viewBox="0 0 160 160" aria-hidden="true">
+        <rect x="25" y="25" width="78" height="78" />
+        <rect x="57" y="57" width="78" height="78" />
+        <circle cx="80" cy="80" r="30" />
+      </svg>
+    );
+  }
+  if (glyph === 1) {
+    return (
+      <svg viewBox="0 0 160 160" aria-hidden="true">
+        <circle cx="58" cy="58" r="36" />
+        <path d="M58 58a36 36 0 0 1 36 36H58Z" />
+        <path d="M58 94a36 36 0 0 0 36 36V94Z" />
+      </svg>
+    );
+  }
+  if (glyph === 2) {
+    return (
+      <svg viewBox="0 0 160 160" aria-hidden="true">
+        <path d="M24 42h112v76H24z" />
+        <path d="M24 80h76v54H24z" />
+        <path d="M62 42v76M100 80v54" />
+      </svg>
+    );
+  }
+  if (glyph === 3) {
+    return (
+      <svg viewBox="0 0 160 160" aria-hidden="true">
+        <path d="M80 18 137 51v66L80 142 23 117V51Z" />
+        <path d="m80 32 42 76H38Z" />
+        <path d="m38 52 84 56M122 52l-84 56" />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 160 160" aria-hidden="true">
+      <path d="M24 80a56 56 0 0 1 56-56v56Z" />
+      <circle cx="54" cy="110" r="30" />
+      <path d="M80 80h56v56H80z" />
+      <path d="m80 80 28-28 28 28Z" />
+    </svg>
+  );
+}
+
+function StackCollectionVisual({
+  title,
+  variant,
+  lang,
+}: {
+  title: string;
+  variant: number;
+  lang: string;
+}) {
+  const label = STACK_VISUAL_LABELS[variant % STACK_VISUAL_LABELS.length];
+  const displayTitle = title.replace(/^Stack\s+/i, "");
+
+  return (
+    <div className="v2-stack-visual" data-variant={variant % 9}>
+      <div className="v2-stack-visual-topline">
+        <span>{lang === "en" ? label.en : label.fr}</span>
+        <Layers3 size={17} strokeWidth={1.7} aria-hidden="true" />
+      </div>
+      <div className="v2-stack-glyph">
+        <StackGlyph variant={variant} />
+      </div>
+      <h3>{displayTitle}</h3>
     </div>
   );
 }
@@ -142,56 +219,63 @@ function shortTagline(desc: string | undefined, max = 40): string {
   return `${lastSpace > 20 ? cut.slice(0, lastSpace) : cut}…`;
 }
 
-const DUO_PAGE_SIZE = 6; // 2 cols × 3 rows per panel
-
-/* ── One side of a two-up category row: compact icon+name+tagline list,
-   its own mini pagination (arrows either side of a "see all" link). ── */
-function CategoryDuoPanel({
-  title, tools, prefix, categoryHref, seeAllLabel, previousLabel, nextLabel,
+/* ── Editorial category shelf: visual lead + compact product rows. ── */
+function EditorialShelfPanel({
+  title, eyebrow, visualVariant, tools, prefix, categoryHref, seeAllLabel, toolsLabel,
 }: {
   title: string;
+  eyebrow: string;
+  visualVariant: number;
   tools: any[];
   prefix: string;
   categoryHref: string;
   seeAllLabel: string;
-  previousLabel: string;
-  nextLabel: string;
+  toolsLabel: string;
 }) {
-  const [page, setPage] = useState(0);
-  const totalPages = Math.max(1, Math.ceil(tools.length / DUO_PAGE_SIZE));
-  const visible = tools.slice(page * DUO_PAGE_SIZE, (page + 1) * DUO_PAGE_SIZE);
+  const visibleTools = tools.slice(0, 3);
+  const universeIcon = visualVariant === 0
+    ? <WandSparkles aria-hidden />
+    : visualVariant === 1
+      ? <Code2 aria-hidden />
+      : <MessagesSquare aria-hidden />;
 
   return (
-    <div className="v2-duo-panel">
-      <div className="v2-duo-panel-head">
-        <h3 className="v2-duo-panel-title">{title}</h3>
-        <div className="v2-duo-panel-nav">
-          <CarouselControls
-            onPrevious={() => setPage((p) => Math.max(0, p - 1))}
-            onNext={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-            previousDisabled={page === 0}
-            nextDisabled={page >= totalPages - 1}
-            previousLabel={previousLabel}
-            nextLabel={nextLabel}
-          />
-          <Link to={categoryHref} className="tt-section-action v2-duo-panel-link">
-            {seeAllLabel}
-            <ArrowRight aria-hidden />
-          </Link>
-        </div>
-      </div>
-      <div className="v2-duo-list">
-        {visible.map((tool) => (
-          <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-duo-item">
-            <div className="v2-duo-item-logo"><ToolLogo tool={tool} size={26} /></div>
-            <div className="v2-duo-item-text">
-              <span className="v2-duo-item-name">{tool.name}</span>
-              <span className="v2-duo-item-sub">{shortTagline(tool.shortDescription)}</span>
+    <article className="v2-shelf-panel">
+      <Link to={categoryHref} className="v2-shelf-lead">
+        <div className="v2-shelf-lead-media">
+          <div className="v2-universe-visual" data-variant={visualVariant}>
+            <div className="v2-universe-topline">
+              <span>{eyebrow}</span>
+              {universeIcon}
             </div>
+            <div className="v2-universe-glyph" aria-hidden>
+              <StackGlyph variant={visualVariant + 2} />
+            </div>
+            <h3>{title}</h3>
+          </div>
+        </div>
+        <div className="v2-shelf-lead-copy">
+          <p><strong>{tools.length}</strong> {toolsLabel}</p>
+        </div>
+      </Link>
+
+      <div className="v2-shelf-list">
+        {visibleTools.map((tool) => (
+          <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-item">
+            <span className="v2-shelf-item-logo"><ToolLogo tool={tool} size={42} /></span>
+            <span className="v2-shelf-item-copy">
+              <strong>{tool.name}</strong>
+              <small>{shortTagline(tool.shortDescription, 52)}</small>
+            </span>
           </Link>
         ))}
       </div>
-    </div>
+
+      <Link to={categoryHref} className="v2-shelf-more">
+        {seeAllLabel}
+        <ArrowRight aria-hidden />
+      </Link>
+    </article>
   );
 }
 
@@ -443,38 +527,40 @@ export default function HomePageV2() {
             </section>
           )}
 
-          {/* ══ 4b. Category duo rows — two compact-list carousels sharing a row ══ */}
-          {DUO_ROWS.map((row, rowIndex) => {
-            const panels = row
-              .map((cat) => ({
-                cat,
-                categoryTools: toolsByCategory.get(cat.categoryId) || [],
-              }))
-              .filter((p) => p.categoryTools.length > 0);
-            if (panels.length === 0) return null;
-            return (
-              <div key={rowIndex} className="v2-catalog-section v2-duo-row">
-                {panels.map(({ cat, categoryTools }) => (
-                  <CategoryDuoPanel
+          {/* ══ 4. Editorial shelf — three categories, one visual lead each ══ */}
+          <section className="v2-catalog-section v2-shelf-section">
+            <SectionHead
+              label={t("Explorer par univers", "Explore by category")}
+              description={t("Trois portes d’entrée pour trouver rapidement les bons outils.", "Three starting points to quickly find the right tools.") as string}
+              to={`${prefix}/tools`}
+              linkLabel={t("Tout le catalogue", "Full catalogue")}
+            />
+            <div className="v2-shelf-grid">
+              {EDITORIAL_SHELF.map((cat, categoryIndex) => {
+                const categoryTools = toolsByCategory.get(cat.categoryId) || [];
+                if (categoryTools.length === 0) return null;
+                return (
+                  <EditorialShelfPanel
                     key={cat.categoryId}
                     title={lang === "en" ? cat.labelEn : cat.label}
+                    eyebrow={t("Univers", "Universe") as string}
+                    visualVariant={categoryIndex}
                     tools={categoryTools}
                     prefix={prefix}
                     categoryHref={`${prefix}/category/${cat.categoryId}`}
-                    seeAllLabel={t("Voir tout", "See all") as string}
-                    previousLabel={t("Page précédente", "Previous page") as string}
-                    nextLabel={t("Page suivante", "Next page") as string}
+                    seeAllLabel={t("Voir plus", "See more") as string}
+                    toolsLabel={t("outils à explorer", "tools to explore") as string}
                   />
-                ))}
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          </section>
 
-          {/* ══ 5. Stacks — carousel 1×3 ══ */}
+          {/* ══ 5. Curated stack collections — visual rail 1×5 ══ */}
           <section className="v2-catalog-section">
             <FeaturedHead
-              label={t("Stacks recommandées", "Recommended stacks")}
-              description={t("Des combinaisons cohérentes selon le métier, le budget et le niveau.", "Coherent combinations by role, budget and experience.") as string}
+              label={t("Collections de stacks", "Curated stack collections")}
+              description={t("Des combinaisons éditoriales prêtes à explorer selon ton métier.", "Editorial combinations ready to explore for your role.") as string}
               to={`${prefix}/stacks`}
               linkLabel={t("Toutes les stacks", "All stacks")}
               page={stackPage}
@@ -484,27 +570,17 @@ export default function HomePageV2() {
               previousLabel={t("Page précédente", "Previous page") as string}
               nextLabel={t("Page suivante", "Next page") as string}
             />
-            <SwipePager className="v2-stack-grid" onPrevious={prevStackPage} onNext={nextStackPage}>
-              {visibleStacks.map((stack) => {
-                const stackTools = stack.tools.slice(0, 5).map((s) => bySlug.get(s.slug)).filter(Boolean);
+            <SwipePager className="v2-collection-grid" onPrevious={prevStackPage} onNext={nextStackPage}>
+              {visibleStacks.map((stack, stackIndex) => {
+                const visualIndex = stackPage * STACK_PAGE_SIZE + stackIndex;
+                const stackTitle = lang === "en" ? stack.titleEn : stack.title;
                 return (
-                  <Link key={stack.slug} to={`${prefix}/stacks/${stack.slug}`} className="v2-stack-card">
-                    <div className="v2-stack-top">
-                      <ToolLogoPile
-                        tools={stackTools as any[]}
-                        totalCount={stack.tools.length}
-                        max={5}
-                        size="sm"
-                        ariaLabel={t("Outils de la stack", "Stack tools") as string}
-                        moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
-                        className="v2-stack-logos"
-                      />
-                      <Bookmark className="v2-stack-bookmark" style={{ width: 16, height: 16 }} />
+                  <Link key={stack.slug} to={`${prefix}/stacks/${stack.slug}`} className="v2-collection-card">
+                    <div className="v2-collection-media">
+                      <StackCollectionVisual title={stackTitle} variant={visualIndex} lang={lang} />
                     </div>
-                    <p className="v2-stack-title">{lang === "en" ? stack.titleEn : stack.title}</p>
-                    <p className="v2-stack-sub">{lang === "en" ? stack.subtitleEn : stack.subtitle}</p>
-                    <div className="v2-stack-meta">
-                      <span>{stack.tools.length} {t("outils", "tools")}</span>
+                    <div className="v2-collection-copy">
+                      <p>ToolTrim · {stack.tools.length} {t("outils", "tools")}</p>
                     </div>
                   </Link>
                 );

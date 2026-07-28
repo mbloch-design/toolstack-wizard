@@ -2,6 +2,17 @@
 
 ---
 
+## 2026-07-28 — Identité visuelle des collections de stacks
+
+- Les collections de la page d’accueil utilisent neuf palettes de dégradés granuleux inspirées des références fournies, sans dépendre d’images bitmap figées.
+- Chaque stack possède un pictogramme géométrique, un verbe d’usage et son intitulé directement intégrés au visuel.
+- Les libellés restent du vrai contenu HTML, localisé et accessible ; les formes restent vectorielles et nettes à toutes les résolutions.
+- Les trois univers éditoriaux reprennent le système complet : dégradé granuleux, pictogramme métier, forme géométrique et nom de l’univers directement dans le visuel.
+- Le visuel d’univers ne privilégie plus artificiellement le premier outil : il ouvre la catégorie, et les trois premiers outils retrouvent tous le même traitement dans la liste.
+- La section Nouveautés abandonne ses éléments flottants au profit d’une seule surface éditoriale dense, structurée par des séparateurs internes discrets et adaptée de quatre à une colonne.
+
+---
+
 ## 2026-07-28 — Tutoriels officiels sur les fiches outils prioritaires
 
 - Notion, Figma, Canva, Loom et Linear affichent une vidéo officielle vérifiée sur leur vue d’ensemble FR/EN.
@@ -3727,3 +3738,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Formalisation d’une grille spatiale inspirée d’OpenAI : gouttières `32px`, écart en-tête/contenu `32px`, grille `24px` et respiration inter-section `120px`, avec réductions dédiées tablette et mobile.
 - Recalage typographique sur les valeurs calculées de la référence : titres de section fluides `20–22px`, titres de cartes `17–18px`, métadonnées `14px`, graisse `500` et interlignages respectifs `1.252`, `1.31` et `1.4`.
 - Refonte des articles de l’accueil sur le modèle éditorial de la référence : grande miniature `16:10`, titre et métadonnées sous l’image, sans bordure, fond, pile de logos ni extrait concurrent.
+# 2026-07-28 — Ligne éditoriale par univers sur l’accueil
+
+- Remplacement des anciens panneaux de catégories compacts par une seule rangée de trois modules éditoriaux.
+- Chaque module associe une miniature produit, un outil mis en avant, trois outils secondaires et un accès à la catégorie.
+- La nouvelle composition casse la répétition des carrousels tout en conservant la grille, les tokens typographiques et les comportements responsive de ToolTrim.
+- Transformation des stacks recommandées en collections visuelles : cinq couvertures sur desktop, titre et nombre d’outils ouverts sous l’image, rail horizontal tactile sur tablette et mobile.
