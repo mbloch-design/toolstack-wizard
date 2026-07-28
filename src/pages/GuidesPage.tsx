@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, type CSSProperties } from "react";
-import { Clock, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
-import ToolLogoPile from "@/components/ToolLogoPile";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
@@ -95,18 +94,15 @@ function getPostType(post: Post): string {
   return "GUIDE";
 }
 
-function getPostIntent(post: Post): string | null {
-  if (post.category === "Comparatifs") return "COMPARER";
-  const text = `${post.title ?? ""} ${post.excerpt ?? ""} ${(post.tags ?? []).join(" ")}`.toLowerCase();
-  if (text.includes("vs ") || text.includes("comparatif")) return "COMPARER";
-  if (text.includes("alternativ") || text.includes("remplacer")) return "REMPLACER";
-  if (text.includes("gratuit") || text.includes("économie") || text.includes("tarif") || text.includes("coût") || text.includes("réduire") || text.includes("payant") || text.includes("rentabl")) return "RÉDUIRE LES COÛTS";
-  // Was "STACK" — identical to getPostType's own "STACK" case, so any
-  // stack guide with no other angle showed a nonsensical "STACK · STACK"
-  // tag. "CONSTRUIRE" actually adds information (the reader's angle),
-  // distinct from the type badge.
-  if (text.includes("stack")) return "CONSTRUIRE";
-  return null;
+function formatPostDate(date: string | undefined, lang: string): string | null {
+  if (!date) return null;
+  const parsed = new Date(`${date}T12:00:00`);
+  if (Number.isNaN(parsed.getTime())) return null;
+  return new Intl.DateTimeFormat(lang === "fr" ? "fr-FR" : "en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(parsed);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -247,10 +243,19 @@ const GuidesPage = () => {
 
           {!loading && visibleList.length > 0 && (
             <>
-              <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
-              {visibleList.length > 1 && (
+              <div className="gi-lead-grid">
+                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
+                {visibleList.length > 1 && (
+                  <div className="gi-lead-side">
+                    {visibleList.slice(1, 3).map((post) => (
+                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} compact />
+                    ))}
+                  </div>
+                )}
+              </div>
+              {visibleList.length > 3 && (
                 <div className="gi-card-grid">
-                  {visibleList.slice(1).map((post) => (
+                  {visibleList.slice(3).map((post) => (
                     <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
                   ))}
                 </div>
@@ -281,47 +286,48 @@ const GuidesPage = () => {
 };
 
 function ArticleCard({
-  post, prefix, lang, tools, featured = false,
+  post, prefix, lang, tools, featured = false, compact = false,
 }: {
-  post: Post; prefix: string; lang: string; tools: ToolSummary[]; featured?: boolean;
+  post: Post; prefix: string; lang: string; tools: ToolSummary[]; featured?: boolean; compact?: boolean;
 }) {
   const mentionedTools = useArticleTools(post, tools);
   const type   = getPostType(post);
-  const intent = getPostIntent(post);
-  const coverTool = mentionedTools.find((tool) => tool.ogImageUrl) || mentionedTools[0];
+  const primaryTool = post.toolId
+    ? tools.find((tool) => tool.id === post.toolId || tool.slug === post.toolId)
+    : undefined;
+  const coverTool = (primaryTool?.ogImageUrl ? primaryTool : undefined)
+    || mentionedTools.find((tool) => tool.ogImageUrl)
+    || primaryTool
+    || mentionedTools[0];
+  const displayDate = formatPostDate(post.date, lang);
 
   return (
-    <Link to={`${prefix}/guide/${post.slug}`} className={`gi-card${featured ? " gi-card--featured" : ""}`}>
+    <Link
+      to={`${prefix}/guide/${post.slug}`}
+      className={`gi-card${featured ? " gi-card--featured" : ""}${compact ? " gi-card--compact" : ""}`}
+    >
       <div className="gi-card-media">
-        {coverTool ? (
-          <ToolCardImage tool={coverTool} logoSize={featured ? 54 : 42} className="gi-card-cover" />
+        {post.thumbnail ? (
+          <img
+            src={post.thumbnail}
+            alt={`${post.title} — illustration`}
+            className="gi-card-editorial-cover"
+            loading={featured ? "eager" : "lazy"}
+            decoding="async"
+          />
+        ) : coverTool ? (
+          <ToolCardImage tool={coverTool} logoSize={featured ? 54 : compact ? 34 : 42} className="gi-card-cover" />
         ) : (
           <div className="gi-card-cover-fallback">{type}</div>
         )}
       </div>
       <div className="gi-card-body">
-        <span className="gi-card-kicker">{intent && intent !== type ? `${type} · ${intent}` : type}</span>
         <h3 className="gi-card-title">{post.title}</h3>
-        {post.excerpt && <p className="gi-card-excerpt">{post.excerpt}</p>}
-        <div className="gi-card-meta">
-          {mentionedTools.length > 0 && (
-            <ToolLogoPile
-              tools={mentionedTools}
-              max={4}
-              ariaLabel={lang === "fr" ? "Outils cités" : "Tools cited"}
-              moreLabel={(count) => lang === "fr" ? `${count} outils supplémentaires` : `${count} more tools`}
-            />
-          )}
-          {post.readTime && (
-            <span>
-              <Clock size={13} aria-hidden />
-              {post.readTime}
-            </span>
-          )}
-          <span className="gi-card-read">
-            {lang === "fr" ? "Lire le guide" : "Read guide"} <span aria-hidden>→</span>
-          </span>
-        </div>
+        {displayDate && (
+          <div className="gi-card-meta">
+            <time dateTime={post.date}>{displayDate}</time>
+          </div>
+        )}
       </div>
     </Link>
   );

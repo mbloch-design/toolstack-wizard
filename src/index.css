@@ -8815,18 +8815,42 @@
     padding: 0 var(--layout-gutter);
   }
   .gi-catalog-intro {
-    max-width: 680px;
-    margin: 10px 0 0;
+    max-width: 44ch;
+    margin: 0;
     font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.48;
+    letter-spacing: -0.015em;
     color: var(--color-muted);
+  }
+  /* Guides is an editorial landing, not a dense data catalogue. Its opening
+     uses the same two-column reading rhythm as the reference pages: a clear
+     subject on the left and a short framing sentence on the right. */
+  .gi-container .tt-catalog-compact-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.65fr);
+    column-gap: clamp(48px, 8vw, 112px);
+    align-items: end;
+    margin-bottom: 36px;
+    padding: 18px 0 8px;
+  }
+  .gi-container .tt-catalog-compact-header .cp-breadcrumb {
+    grid-column: 1 / -1;
+    margin-bottom: 34px;
+  }
+  .gi-container .tt-catalog-compact-title {
+    max-width: 14ch;
+    font-size: clamp(36px, 4.1vw, 52px);
+    font-weight: 480;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
   }
   .gi-topic-nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: 0 0 18px;
+    margin: 0 0 24px;
     padding-bottom: 2px;
     overflow-x: auto;
     scrollbar-width: none;
@@ -8894,13 +8918,25 @@
   .gi-card-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 36px;
-    row-gap: 64px;
-    margin-top: 48px;
+    column-gap: clamp(24px, 2.8vw, 40px);
+    row-gap: clamp(64px, 7vw, 92px);
+    margin-top: clamp(64px, 7vw, 88px);
+  }
+  .gi-lead-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(230px, 1fr);
+    gap: clamp(24px, 2.4vw, 34px);
+    align-items: start;
+    margin-top: 10px;
+  }
+  .gi-lead-side {
+    display: grid;
+    gap: clamp(36px, 4vw, 52px);
+    min-width: 0;
   }
   .gi-card {
     display: grid;
-    grid-template-rows: 190px minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
     min-width: 0;
     overflow: visible;
     border: 0;
@@ -8912,16 +8948,25 @@
   }
   .gi-card:hover { opacity: 0.88; }
   .gi-card--featured {
-    grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.4fr);
-    grid-template-rows: minmax(310px, auto);
-    column-gap: 36px;
-    margin-bottom: 8px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    margin: 0;
+  }
+  .gi-card--compact {
+    grid-template-rows: auto auto;
   }
   .gi-card-media {
     min-width: 0;
     overflow: hidden;
+    aspect-ratio: 16 / 10;
     border-radius: var(--tt-surface-radius-info);
     background: var(--color-surface-soft);
+  }
+  .gi-card--featured .gi-card-media {
+    aspect-ratio: 16 / 9;
+  }
+  .gi-card--compact .gi-card-media {
+    aspect-ratio: 4 / 3;
   }
   .gi-card-media .tc-image.gi-card-cover {
     width: 100%;
@@ -8936,7 +8981,19 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .gi-card-editorial-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 280ms ease;
+  }
+  .gi-card:hover .gi-card-editorial-cover {
+    transform: scale(1.018);
   }
   /* Cached OG assets can be complete before ToolCardImage's lazy-load event
      reaches React. Guides still show the already-decoded image immediately. */
@@ -8959,79 +9016,108 @@
     display: flex;
     flex-direction: column;
     min-width: 0;
-    padding: 22px 4px 0;
+    padding: 20px 2px 0;
   }
   .gi-card--featured .gi-card-body {
-    justify-content: center;
-    padding: 24px 0;
+    justify-content: flex-start;
+    padding: 18px 2px 0;
   }
-  .gi-card-kicker {
-    display: block;
-    margin-bottom: 12px;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
+  .gi-card--compact .gi-card-body {
+    padding: 14px 1px 0;
   }
   .gi-card-title {
     margin: 0;
-    font-family: var(--font-brand);
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.035em;
-    color: var(--color-text);
-  }
-  .gi-card--featured .gi-card-title { font-size: clamp(1.75rem, 3vw, 2.55rem); }
-  .gi-card-excerpt {
-    display: -webkit-box;
-    margin: 16px 0 0;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
     font-family: var(--font-ui);
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--color-muted);
+    font-size: clamp(1.05rem, 1.2vw, 1.16rem);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+    color: var(--color-text);
+    text-wrap: pretty;
   }
-  .gi-card--featured .gi-card-excerpt { max-width: 620px; font-size: 15px; }
+  .gi-card--featured .gi-card-title {
+    max-width: 24ch;
+    font-size: clamp(2.15rem, 3.45vw, 2.85rem);
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.025em;
+  }
+  .gi-card--compact .gi-card-title {
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.31;
+    letter-spacing: -0.01em;
+  }
   .gi-card-meta {
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: auto;
-    padding-top: 28px;
+    gap: 0;
+    margin-top: 14px;
+    padding-top: 0;
     font-family: var(--font-ui);
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
     color: var(--color-muted);
   }
-  .gi-card-meta > span {
+  .gi-card-meta > time {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
   }
-  .gi-card-read {
-    margin-left: auto;
-    font-weight: 600;
-    color: var(--color-text);
+  .gi-card--compact .gi-card-meta {
+    margin-top: 10px;
+    padding-top: 0;
+    font-size: 13px;
   }
   @media (max-width: 900px) {
+    .gi-container .tt-catalog-compact-header {
+      grid-template-columns: 1fr;
+      row-gap: 18px;
+      padding-top: 8px;
+    }
+    .gi-container .tt-catalog-compact-header .cp-breadcrumb {
+      margin-bottom: 16px;
+    }
+    .gi-container .tt-catalog-compact-title {
+      max-width: 18ch;
+    }
+    .gi-catalog-intro {
+      max-width: 56ch;
+    }
+    .gi-lead-grid {
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+    .gi-lead-side {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
     .gi-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .gi-card--featured {
       grid-template-columns: 1fr;
-      grid-template-rows: 240px auto;
+      grid-template-rows: auto auto;
       row-gap: 0;
     }
     .gi-card--featured .gi-card-body { padding: 22px 2px 0; }
   }
   @media (max-width: 700px) {
+    .gi-container .tt-catalog-compact-header {
+      margin-bottom: 28px;
+      padding-top: 2px;
+    }
+    .gi-container .tt-catalog-compact-title {
+      font-size: clamp(32px, 10vw, 42px);
+    }
+    .gi-catalog-intro {
+      font-size: 16px;
+    }
     .gi-topic-nav { margin-inline: calc(-1 * var(--layout-gutter)); padding-inline: var(--layout-gutter); }
+    .gi-lead-side { grid-template-columns: 1fr; gap: 48px; }
     .gi-card-grid { grid-template-columns: 1fr; }
-    .gi-card { grid-template-rows: 170px auto; }
-    .gi-card--featured { grid-template-rows: 210px auto; }
+    .gi-card,
+    .gi-card--featured,
+    .gi-card--compact { grid-template-rows: auto auto; }
+    .gi-card--compact .gi-card-media { aspect-ratio: 16 / 10; }
     .gi-card--featured .gi-card-title { font-size: 1.65rem; }
     .gi-card--featured .gi-card-body,
     .gi-card-body { padding: 18px 2px 0; }
@@ -9409,22 +9495,30 @@
 /* ── Guide Article — ga-* system ──────────────────────────────────────────── */
 @layer components {
   .ga-container {
-    max-width: var(--layout-content);   /* 1280px */
+    max-width: var(--layout-max);
     margin: 0 auto;
     padding: 0 var(--layout-gutter);
   }
 
   /* Article header */
   .ga-header {
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    padding: var(--tt-hero-pt) 0 var(--tt-hero-pb);
+    background: var(--color-surface);
+    padding: var(--space-xl) 0 clamp(72px, 8vw, 120px);
+  }
+  .ga-hero-main {
+    min-width: 0;
+    max-width: 1120px;
+  }
+  .ga-header .cp-breadcrumb > span:nth-last-child(-n + 2) {
+    display: none;
   }
   .ga-eyebrow-row {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 24px;
-    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-lg);
+    margin-top: clamp(40px, 5vw, 64px);
   }
   /* Label tier — every uppercase micro-label in the guide (eyebrows, TOC
      labels, section labels, table headers, card categories) shares ONE spec:
@@ -9432,133 +9526,149 @@
      and 0.04–0.08em tracking with no rule. */
   .ga-eyebrow-item {
     font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 450;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    text-transform: none;
     color: var(--color-muted);
   }
-  .ga-eyebrow-sep {
-    width: 3px;
-    height: 3px;
-    border-radius: var(--radius-circle);
-    background: var(--color-muted-light);
-    flex-shrink: 0;
+  .ga-eyebrow-time {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+  .ga-eyebrow-time svg {
+    width: 12px;
+    height: 12px;
   }
   .ga-title {
-    font-family: var(--font-brand);
-    /* Sized to match the site's other guide template (outils-facturation-*,
-       text-3xl/md:text-5xl = 30px/48px): a guide title is a reading heading,
-       not a marketing hero — tt-size-hero (Compare/ToolDetail) was too big
-       here. tt-size-section-h is the closest canonical token to that 48px
-       reference. */
-    font-size: var(--tt-size-page-title);
-    font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.045em;
+    font-family: var(--font-ui);
+    font-size: clamp(2.75rem, 4.8vw, 4.25rem);
+    font-weight: 480;
+    line-height: 0.99;
+    letter-spacing: -0.055em;
     color: var(--color-text);
-    max-width: 780px;
+    max-width: 1080px;
+    margin-top: clamp(40px, 4vw, 56px);
     margin-bottom: 0;
+    text-wrap: balance;
   }
   .ga-standfirst {
     font-family: var(--font-ui);
-    font-size: 22px;
+    font-size: clamp(1.125rem, 1.45vw, 1.375rem);
+    font-weight: 400;
     line-height: 1.42;
-    color: var(--color-muted);
-    max-width: 780px;
-    margin-top: 28px;
-    letter-spacing: -0.01em;
-  }
-  @media (max-width: 768px) {
-    .ga-standfirst { font-size: 18px; }
-  }
-  .ga-header-tools {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 32px;
-    padding-top: 28px;
-    border-top: 1px solid var(--color-border);
-  }
-  .ga-header-tools-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    margin-right: 4px;
+    color: var(--color-text);
+    max-width: 720px;
+    margin-top: var(--space-xl);
+    letter-spacing: -0.018em;
   }
 
   /* Body layout */
   .ga-body-outer {
-    padding: 64px 0 96px;
+    border-top: 1px solid var(--color-border-soft);
+    padding: var(--space-4xl) 0 calc(var(--space-4xl) + var(--space-xl));
   }
   .ga-body-grid {
     display: grid;
-    grid-template-columns: minmax(0, 760px) 260px;
-    gap: 64px;
-    max-width: var(--layout-content);   /* 1280px — aligns with ga-container hero */
+    grid-template-columns: minmax(180px, 236px) minmax(0, 760px);
+    gap: clamp(48px, 6vw, 96px);
+    max-width: var(--layout-max);
     margin: 0 auto;
     padding: 0 var(--layout-gutter);
     align-items: start;
+  }
+  .ga-body-grid > article {
+    grid-column: 2;
+    min-width: 0;
   }
   @media (max-width: 1100px) {
     .ga-body-grid {
       grid-template-columns: 1fr;
       /* no max-width override — keeps same axis as ga-container header */
     }
+    .ga-body-grid > article { grid-column: 1; }
     .ga-toc-col { display: none; }
   }
   /* Sticky TOC */
   .ga-toc-col {
+    grid-column: 1;
+    grid-row: 1;
     position: sticky;
     top: calc(var(--navbar-h, 68px) + 24px);
+    padding-top: 2px;
   }
   .ga-toc-label {
     font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 450;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--color-muted);
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
   .ga-toc-nav {
-    border-left: 1px solid var(--color-border);
-    padding-left: 20px;
+    border-left: 0;
+    padding-left: 0;
   }
   .ga-toc-link {
     display: block;
     font-family: var(--font-ui);
-    font-size: 14px;
-    line-height: 1.35;
-    color: var(--color-muted);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--color-muted-light);
     text-decoration: none;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     transition: color 120ms ease-out;
   }
+  .ga-toc-link::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 12px;
+    border-radius: var(--radius-circle);
+    background: transparent;
+    vertical-align: 1px;
+  }
   .ga-toc-link:hover { color: var(--color-text); }
-  .ga-toc-link--active { color: var(--color-text); font-weight: 500; }
-  .ga-toc-tools {
-    margin-top: 32px;
-    padding-top: 24px;
-    border-top: 1px solid var(--color-border);
-  }
-  .ga-toc-tools-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    margin-bottom: 12px;
-  }
-
+  .ga-toc-link--active { color: var(--color-text); font-weight: 450; }
+  .ga-toc-link--active::before { background: var(--color-text); }
   /* Progress bar + mobile TOC */
   .ga-mobile-toc {
     display: none;
-    margin-bottom: 32px;
+    margin-bottom: var(--space-3xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+  .ga-mobile-toc-label {
+    margin-bottom: var(--space-md);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+  .ga-mobile-toc-list {
+    display: grid;
+    gap: 0;
+  }
+  .ga-mobile-toc-link {
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid var(--color-border-soft);
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .ga-mobile-toc-link::after {
+    content: "↘";
+    float: right;
+    margin-left: var(--space-md);
+    color: var(--color-muted-light);
   }
   @media (max-width: 1100px) {
     .ga-mobile-toc { display: block; }
@@ -9570,12 +9680,30 @@
     color: var(--color-text);
     min-width: 0;
   }
+  .ga-content > :not(.ga-article-section) {
+    margin-left: 0;
+    max-width: 700px;
+  }
+  .ga-article-section {
+    display: block;
+    max-width: 700px;
+    padding: clamp(64px, 7vw, 88px) 0 0;
+    border-top: 1px solid var(--color-border-soft);
+  }
+  .ga-article-section:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .ga-section-heading,
+  .ga-section-copy {
+    min-width: 0;
+  }
   .ga-content p {
-    font-size: 19px;
-    line-height: 1.65;
-    letter-spacing: -0.015em;
+    font-size: 17.5px;
+    line-height: 1.62;
+    letter-spacing: -0.008em;
     color: var(--color-text);
-    margin-bottom: 24px;
+    margin-bottom: 26px;
   }
   /* Heading ladder — one modular scale, perfect-fourth (~1.33) between steps,
      so each level steps down clearly from the last. All brand font / 600;
@@ -9589,58 +9717,55 @@
      Body is 19px, so H4 (20px) reads as a heading via the brand face +
      tighter tracking rather than sitting *below* body as it did at 17px. */
   .ga-content h2 {
-    font-family: var(--font-brand);
-    font-size: clamp(1.75rem, 3.6vw, 2.25rem);
-    font-weight: 600;
-    line-height: 1.15;
+    font-family: var(--font-ui);
+    font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+    font-weight: 500;
+    line-height: 1.08;
     letter-spacing: -0.035em;
     color: var(--color-text);
-    margin-top: 72px;
-    margin-bottom: 24px;
+    max-width: none;
+    margin: 0 0 var(--space-xl);
     scroll-margin-top: 96px;
+    text-wrap: balance;
   }
   .ga-content h3 {
-    font-family: var(--font-brand);
-    font-size: clamp(1.375rem, 2.4vw, 1.6875rem);
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
+    font-family: var(--font-ui);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 520;
+    line-height: 1.22;
+    letter-spacing: -0.022em;
     color: var(--color-text);
-    margin-top: 48px;
-    margin-bottom: 18px;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
     scroll-margin-top: 96px;
   }
   .ga-content h4 {
-    font-family: var(--font-brand);
-    font-size: 1.25rem;   /* 20px */
-    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 1.125rem;
+    font-weight: 550;
     line-height: 1.3;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.012em;
     color: var(--color-text);
-    margin-top: 32px;
+    margin-top: 28px;
     margin-bottom: 12px;
     scroll-margin-top: 96px;
   }
   /* Mobile: the clamps already floor sizes via their min values; only the
      top margins need tightening so headings don't push too much air. */
-  @media (max-width: 768px) {
-    .ga-content h2 { margin-top: 52px; }
-    .ga-content h3 { margin-top: 36px; }
-  }
   .ga-content h1 { display: none; } /* suppress duplicate H1 from MD */
   /* Lists share the body reading tier (19px / 1.65) — they were 18px/1.6,
      a size gap with no reason since a list item reads exactly like a
      paragraph. */
   .ga-content ul {
-    font-size: 19px;
-    line-height: 1.65;
+    font-size: 17.5px;
+    line-height: 1.62;
     padding-left: 22px;
     margin: 24px 0;
     list-style: disc;
   }
   .ga-content ol {
-    font-size: 19px;
-    line-height: 1.65;
+    font-size: 17.5px;
+    line-height: 1.62;
     padding-left: 22px;
     margin: 24px 0;
     list-style: decimal;
@@ -9657,23 +9782,26 @@
   }
   .ga-content a:hover { text-decoration-color: var(--color-text); opacity: 0.85; }
   .ga-content a.text-primary {
-    color: hsl(var(--primary));
-    text-decoration-color: hsl(var(--primary) / 0.3);
+    color: var(--color-text);
+    text-decoration-color: var(--color-border);
   }
-  .ga-content a.text-primary:hover { text-decoration-color: hsl(var(--primary)); opacity: 1; }
+  .ga-content a.text-primary:hover { text-decoration-color: var(--color-text); opacity: 1; }
   .ga-content blockquote {
-    border-left: 2px solid var(--color-border-strong);
-    padding: 0 0 0 24px;
-    margin: 48px 0;
-    font-size: 22px;
-    line-height: 1.3;
+    border: 0;
+    padding: var(--space-xl) 0;
+    margin: var(--space-2xl) 0;
+    font-family: var(--font-ui);
+    font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+    font-weight: 450;
+    line-height: 1.25;
     letter-spacing: -0.03em;
     color: var(--color-text);
     font-style: normal;
   }
   .ga-content blockquote p {
-    font-size: 22px;
-    line-height: 1.3;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
     margin: 0;
     color: var(--color-text);
   }
@@ -9688,6 +9816,29 @@
     padding: 2px 6px;
     border-radius: var(--radius-xs);
     font-family: monospace;
+  }
+  .ga-content .ga-code-block {
+    width: 100%;
+    margin: var(--space-lg) 0 var(--space-2xl);
+    padding: var(--space-lg);
+    overflow-x: auto;
+    border: 0;
+    border-radius: 0;
+    background: var(--color-surface-soft);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .ga-content .ga-code-block code {
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.012em;
   }
   .ga-content table {
     width: 100%;
@@ -9718,19 +9869,21 @@
   }
   .ga-content tr:last-child td { border-bottom: none; }
   .ga-content img {
-    border-radius: var(--radius);
+    display: block;
+    width: 100%;
+    border-radius: 0;
     max-width: 100%;
     height: auto;
-    margin: 32px 0;
+    margin: var(--space-2xl) 0 var(--space-3xl);
   }
 
   /* Module: Takeaway box (rendered from HTML comment or class) */
   .ga-takeaway {
     background: var(--color-surface-soft);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 24px 28px;
-    margin: 40px 0;
+    border: 0;
+    border-radius: var(--tt-surface-radius-info);
+    padding: var(--space-lg);
+    margin: var(--space-2xl) 0;
   }
   .ga-takeaway-label {
     font-family: var(--font-ui);
@@ -9742,7 +9895,7 @@
     margin-bottom: 12px;
   }
   .ga-takeaway p {
-    font-size: 18px !important;
+    font-size: 17px !important;
     line-height: 1.5 !important;
     color: var(--color-text) !important;
     margin: 0 !important;
@@ -9750,9 +9903,9 @@
 
   /* Article bottom sections */
   .ga-tools-section {
-    margin-top: 56px;
-    padding-top: 40px;
-    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border-soft);
   }
   .ga-tools-section-label {
     font-family: var(--font-ui);
@@ -9778,9 +9931,9 @@
 
   /* Related guides */
   .ga-related {
-    margin-top: 56px;
-    padding-top: 40px;
-    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border-soft);
   }
   .ga-related-label {
     font-family: var(--font-ui);
@@ -9919,6 +10072,59 @@
     transition: border-color 140ms, color 140ms;
   }
   .ga-share-btn:hover { border-color: var(--color-text); color: var(--color-text); }
+
+  @media (max-width: 900px) {
+    .ga-header {
+      padding: var(--space-lg) 0 var(--space-3xl);
+    }
+    .ga-eyebrow-row {
+      gap: var(--space-xs) var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+    .ga-body-outer {
+      padding-top: var(--space-3xl);
+    }
+    .ga-article-section {
+      padding: var(--space-3xl) 0 0;
+    }
+    .ga-content > :not(.ga-article-section) {
+      margin-left: 0;
+      max-width: 720px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .ga-header {
+      padding-bottom: var(--space-2xl);
+    }
+    .ga-title {
+      font-size: clamp(2.25rem, 10.5vw, 3rem);
+      line-height: 1.01;
+    }
+    .ga-standfirst {
+      font-size: 18px;
+    }
+    .ga-body-outer {
+      padding: var(--space-2xl) 0 var(--space-4xl);
+    }
+    .ga-article-section {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      padding: var(--space-3xl) 0;
+    }
+    .ga-content h2 {
+      max-width: none;
+    }
+    .ga-content p,
+    .ga-content ul,
+    .ga-content ol {
+      font-size: 17px;
+      line-height: 1.58;
+    }
+    .ga-related-grid {
+      gap: var(--space-lg);
+    }
+  }
 }
 
 /* ─────────────────────────────────────────────

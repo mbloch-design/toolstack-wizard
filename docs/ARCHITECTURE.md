@@ -171,8 +171,8 @@ Fermetures : Escape (global keydown listener) + clic extérieur (click-catcher `
 | ToolDetailPage hero + body | `td-container` | `var(--layout-max)` = 1440px |
 | GuidesPage hero | `eh-container` | `var(--layout-content)` = 1280px |
 | GuidesPage body | `gi-container` | `var(--layout-content)` = 1280px |
-| GuideDetailPage hero | `ga-container` | `var(--layout-content)` = 1280px |
-| GuideDetailPage body | `ga-body-grid` | `var(--layout-content)` = 1280px |
+| GuideDetailPage hero | `ga-container` | `var(--layout-max)` = 1440px |
+| GuideDetailPage body | `ga-body-grid` | `var(--layout-max)` = 1440px |
 | GuideDetailPage CTA band | `ga-cta-inner` | `var(--layout-content)` = 1280px |
 | Autres pages (home, tools…) | `max-w-7xl` (Tailwind) | 1280px |
 
@@ -203,6 +203,22 @@ Plage : 2.8 → 4.8. Utilisé dans StickyDecisionCard et section Avis.
 ---
 
 ## GuideDetailPage — composants et conventions (après Sprint 3)
+
+### Grille éditoriale des chapitres
+
+Le template repose sur une grille large adaptée au contenu de fond :
+
+- hero en deux colonnes : repères et métadonnées à gauche, titre et chapô à droite ;
+- corps en deux zones : article principal et sommaire sticky ;
+- chaque chapitre H2 devient un module `.ga-article-section` avec son titre dans
+  un rail de repère et son contenu dans une colonne de lecture de 720px maximum ;
+- les séparations reposent sur l'espace et une bordure douce unique, jamais sur
+  une succession de cards ;
+- sous 680px, le chapitre repasse sur une colonne, titre puis contenu.
+
+Le renderer Markdown construit automatiquement ces modules. Les auteurs
+continuent donc à écrire des H2 ordinaires et ne doivent pas ajouter de HTML de
+mise en page dans les articles.
 
 ### Encadrés "À retenir" (ga-takeaway)
 

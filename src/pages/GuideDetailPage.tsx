@@ -219,78 +219,31 @@ const GuideDetailPage = () => {
       {/* ══ 1. Article Header ═══════════════════════════════════════════════ */}
       <header className="ga-header">
         <div className="ga-container">
+          <div className="ga-hero-main">
+            <Breadcrumb items={[
+              { label: t("Guides", "Guides"), href: `${prefix}/guides` },
+              { label: post.title },
+            ]} />
 
-          <Breadcrumb items={[
-            { label: t("Guides", "Guides"), href: `${prefix}/guides` },
-            { label: post.title },
-          ]} />
-
-          {/* Eyebrow: category · date · read time */}
-          <div className="ga-eyebrow-row" style={{ marginTop: 28 }}>
-            {post.category && (
-              <span className="ga-eyebrow-item">{post.category}</span>
-            )}
-            {formattedDate && (
-              <>
-                <span className="ga-eyebrow-sep" />
+            <div className="ga-eyebrow-row">
+              {formattedDate && (
                 <span className="ga-eyebrow-item">
                   {lang === "fr" ? "Mis à jour le" : "Updated"} {formattedDate}
                 </span>
-              </>
-            )}
-            {post.readTime && (
-              <>
-                <span className="ga-eyebrow-sep" />
-                <span className="ga-eyebrow-item" style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                  <Clock style={{ width: 11, height: 11 }} />
+              )}
+              {post.category && <span className="ga-eyebrow-item">{post.category}</span>}
+              {post.readTime && (
+                <span className="ga-eyebrow-item ga-eyebrow-time">
+                  <Clock aria-hidden="true" />
                   {post.readTime}
                 </span>
-              </>
-            )}
-          </div>
-
-          {/* Large editorial title */}
-          <h1 className="ga-title">{post.title}</h1>
-
-          {/* Standfirst */}
-          {post.excerpt && (
-            <p className="ga-standfirst">{post.excerpt}</p>
-          )}
-
-          {/* Tools mentioned in this guide. flexWrap inline (not in
-              .ga-header-tools, which is Codex's CSS) so the chip row wraps to
-              multiple lines on narrow screens instead of overflowing the
-              viewport horizontally — a real mobile overflow the visual audit
-              caught (scrollWidth 601px on a 375px screen). */}
-          {mentionedTools.length > 0 && (
-            <div className="ga-header-tools" style={{ flexWrap: "wrap", rowGap: 10 }}>
-              <span className="ga-header-tools-label">{t("Dans ce guide", "In this guide")}</span>
-              {mentionedTools.slice(0, 6).map((tool) => (
-                <Link
-                  key={tool.id}
-                  to={`${prefix}/tool/${tool.slug || tool.id}`}
-                  style={{
-                    display: "inline-flex", alignItems: "center", gap: 6,
-                    height: 32, padding: "0 10px 0 6px",
-                    border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)",
-                    background: "var(--color-surface)", textDecoration: "none",
-                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
-                    transition: "border-color 140ms",
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
-                >
-                  <div style={{
-                    width: 20, height: 20, borderRadius: "var(--radius-xs)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    <ToolLogo tool={tool} size={16} />
-                  </div>
-                  {tool.name}
-                </Link>
-              ))}
+              )}
             </div>
-          )}
+
+            <h1 className="ga-title">{post.title}</h1>
+
+            {post.excerpt && <p className="ga-standfirst">{post.excerpt}</p>}
+          </div>
         </div>
       </header>
 
@@ -304,36 +257,18 @@ const GuideDetailPage = () => {
             {/* Mobile TOC */}
             {h2Toc.length > 1 && (
               <div className="ga-mobile-toc">
-                <p style={{
-                  fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-                  letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-                  marginBottom: 10,
-                }}>
-                  {t("Sommaire", "Contents")}
-                </p>
-                <div style={{
-                  display: "flex", flexWrap: "wrap", gap: 8,
-                  padding: "14px 16px",
-                  border: "1px solid var(--color-border)", borderRadius: "var(--radius)",
-                  background: "var(--color-bg)",
-                }}>
+                <p className="ga-mobile-toc-label">{t("Sommaire", "Contents")}</p>
+                <nav className="ga-mobile-toc-list" aria-label={t("Sommaire de l’article", "Article contents")}>
                   {h2Toc.map((item) => (
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      style={{
-                        fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)",
-                        textDecoration: "none", whiteSpace: "nowrap",
-                        padding: "3px 10px",
-                        border: "1px solid var(--color-border)", borderRadius: "var(--radius-xs)",
-                        background: "var(--color-surface)",
-                        transition: "color 120ms",
-                      }}
+                      className="ga-mobile-toc-link"
                     >
                       {item.text}
                     </a>
                   ))}
-                </div>
+                </nav>
               </div>
             )}
 
@@ -429,37 +364,6 @@ const GuideDetailPage = () => {
                     </a>
                   ))}
                 </nav>
-              </div>
-            )}
-
-            {mentionedTools.length > 0 && (
-              <div className="ga-toc-tools">
-                <p className="ga-toc-tools-label">{t("Dans ce guide", "In this guide")}</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  {mentionedTools.slice(0, 5).map((tool) => (
-                    <Link
-                      key={tool.id}
-                      to={`${prefix}/tool/${tool.slug || tool.id}`}
-                      style={{
-                        display: "flex", alignItems: "center", gap: 8,
-                        textDecoration: "none",
-                        fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)",
-                        transition: "color 140ms",
-                      }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-muted)"; }}
-                    >
-                      <div style={{
-                        width: 24, height: 24, borderRadius: "var(--radius-xs)",
-                        border: "1px solid var(--color-border)", background: "var(--color-bg)",
-                        display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      }}>
-                        <ToolLogo tool={tool} size={15} />
-                      </div>
-                      <span>{tool.name}</span>
-                    </Link>
-                  ))}
-                </div>
               </div>
             )}
 
@@ -580,6 +484,21 @@ function markdownToHtml(
 ): string {
   let html = md;
   let tocIndex = 0;
+  const codeBlocks: string[] = [];
+  const cleanHeading = (value: string) =>
+    value.replace(/^[\p{Extended_Pictographic}\uFE0F\u200D]+\s*/u, "");
+
+  // Protect fenced code before processing inline Markdown. Without this
+  // pass, the three backticks are interpreted as inline code delimiters and
+  // prompt examples spill into oversized, unstructured monospace fragments.
+  html = html.replace(/```[^\n]*\n([\s\S]*?)```/g, (_match, source: string) => {
+    const escaped = source
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    const index = codeBlocks.push(`<pre class="ga-code-block"><code>${escaped.trim()}</code></pre>`) - 1;
+    return `<div data-ga-code-block="${index}"></div>`;
+  });
 
   html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy" />');
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
@@ -592,9 +511,9 @@ function markdownToHtml(
     const level = h.length;
     const id = toc[tocIndex]?.id || `heading-${tocIndex}`;
     tocIndex++;
-    return `<h${level} id="${id}">${text}</h${level}>`;
+    return `<h${level} id="${id}">${cleanHeading(text)}</h${level}>`;
   });
-  html = html.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
+  html = html.replace(/^#### (.+)$/gm, (_match, text) => `<h4>${cleanHeading(text)}</h4>`);
   html = html.replace(/^# (.+)$/gm, (_m, text) => {
     if (text.trim().toLowerCase() === articleTitle.trim().toLowerCase()) return "";
     return `<h1>${text}</h1>`;
@@ -614,9 +533,12 @@ function markdownToHtml(
     }
     return `<blockquote><p>${text}</p></blockquote>`;
   });
+  html = html.replace(/(?:^\d+\. .+(?:\n|$))+/gm, (block) => {
+    const items = block.trim().split("\n").map((line) => line.replace(/^\d+\.\s+/, ""));
+    return `<ol>${items.map((item) => `<li>${item}</li>`).join("")}</ol>`;
+  });
   html = html.replace(/^- (.+)$/gm, "<li>$1</li>");
-  html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
-  html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
+  html = html.replace(/^((?:<li>.*<\/li>\n?)+)/gm, "<ul>$1</ul>");
   html = html.replace(/^---$/gm, "<hr />");
   // Wrap remaining lines in <p>. Skip only lines that already start with a
   // BLOCK-level tag (or a closing tag / blank line). A previous version
@@ -644,6 +566,22 @@ function markdownToHtml(
       }
     });
   }
+
+  html = html.replace(
+    /<div data-ga-code-block="(\d+)"><\/div>/g,
+    (_match, index) => codeBlocks[Number(index)] || "",
+  );
+
+  // Authored separators immediately before a chapter duplicate the chapter
+  // border and double the whitespace. The chapter module owns that rhythm.
+  html = html.replace(/<hr \/>\s*(?=<h2\b)/g, "");
+
+  // Group chapters so each H2 starts on a measured editorial rhythm while
+  // keeping the authored Markdown independent from the presentation layer.
+  html = html.replace(
+    /(<h2\b[^>]*>[\s\S]*?<\/h2>)([\s\S]*?)(?=<h2\b|$)/g,
+    '<section class="ga-article-section"><div class="ga-section-heading">$1</div><div class="ga-section-copy">$2</div></section>',
+  );
 
   return html;
 }

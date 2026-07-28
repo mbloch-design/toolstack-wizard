@@ -2,6 +2,26 @@
 
 ---
 
+## 2026-07-28 — Tutoriels officiels sur les fiches outils prioritaires
+
+- Notion, Figma, Canva, Loom et Linear affichent une vidéo officielle vérifiée sur leur vue d’ensemble FR/EN.
+- Le lecteur YouTube en mode confidentialité renforcée n’est créé qu’après un clic explicite ; la page charge d’abord une vignette légère et accessible.
+- Les métadonnées éditoriales (titre localisé, auteur, durée, dates et source) vivent dans un registre partagé, sans modifier les 1 126 fiches du catalogue.
+- Les pages concernées publient un balisage `VideoObject` issu de la même source que le contenu visible.
+- Validation : TypeScript, build production et prérendu, puis rendu navigateur desktop 1280 × 900 et mobile 390 × 844 sans débordement horizontal.
+
+---
+
+## 2026-07-28 — Guide « Visualiser sa stack SaaS »
+
+- Le brouillon initial est remanié dans le ton éditorial ToolTrim : angle direct, promesse resserrée, distinction entre inventaire financier et compréhension d’un workflow.
+- La promesse de « Board façon Pinterest », absente du produit actuel, est remplacée par une présentation fidèle de Ma stack et d’Explorer.
+- Trois photographies éditoriales locales donnent du rythme à l’article : surcharge numérique, cartographie du workflow et décision de simplification.
+- Le CTA final ouvre `/fr/ma-stack` et invite à commencer par les outils réellement utilisés cette semaine.
+- Le guide est ajouté aux sources française embarquée et publique, avec métadonnées SEO et date de publication.
+
+---
+
 ## 2026-07-27 — Réparation et refonte de l’index Guides
 
 - `GuidesPage` ne réutilise plus les cards `sk-*` de Stacks, dont la nouvelle structure créait de grandes zones vides sur `/fr/guides`.

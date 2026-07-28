@@ -220,15 +220,16 @@ function mergeById<T extends { id: string }>(localItems: T[], remoteItems: T[]):
 export interface Post {
   id: number; slug: string; lang: string; title: string; excerpt: string;
   date: string; category: string; toolId: string | null; content: string;
-  tags: string[]; readTime: string;
+  tags: string[]; readTime: string; thumbnail: string | null;
   seo: { metaTitle?: string; metaDescription?: string; keywords?: string } | null;
 }
 
 function mapPost(p: any): Post {
   return {
     id: p.id, slug: p.slug, lang: p.lang, title: p.title, excerpt: p.excerpt || "",
-    date: p.date, category: p.category || "", toolId: p.tool_id || null,
+    date: p.date, category: p.category || "", toolId: p.tool_id || p.toolId || null,
     content: p.content || "", tags: p.tags || [], readTime: p.read_time || p.readTime || "",
+    thumbnail: p.thumbnail || null,
     seo: p.seo || null,
   };
 }
