@@ -439,9 +439,13 @@
 
   body .ga-body-outer--story .ga-content > blockquote,
   body .ga-body-outer--story .ga-section-copy > blockquote {
+    position: relative;
+    left: 50%;
     width: min(770px, calc(100vw - 2 * var(--layout-gutter)));
-    max-width: none;
-    margin: clamp(72px, 8vw, 108px) 50% var(--space-md);
+    max-width: none !important;
+    margin: clamp(72px, 8vw, 108px) 0 var(--space-md);
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     padding: 0;
     transform: translateX(-50%);
     font-family: var(--font-ui);
@@ -452,8 +456,10 @@
   }
 
   body .ga-body-outer--story .ga-quote-attribution {
+    position: relative;
+    left: 50%;
     width: min(770px, calc(100vw - 2 * var(--layout-gutter)));
-    margin: 0 50% clamp(72px, 8vw, 108px);
+    margin: 0 0 clamp(72px, 8vw, 108px);
     transform: translateX(-50%);
     font-size: 14px;
     font-weight: 500;

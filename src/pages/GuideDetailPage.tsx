@@ -207,13 +207,19 @@ const GuideDetailPage = () => {
     );
   }
 
-  const htmlContent = markdownToHtml(post.content, toc, post.title, toolLinkMap);
+  const isStory = post.category === "Stories";
+  const htmlContent = markdownToHtml(
+    post.content,
+    toc,
+    post.title,
+    toolLinkMap,
+    isStory,
+    post.thumbnail,
+  );
 
   const formattedDate = post.date
     ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric" })
     : null;
-  const isStory = post.category === "Stories";
-
   return (
     <>
       {/* Reading progress bar */}
@@ -226,7 +232,12 @@ const GuideDetailPage = () => {
       </div>
 
       {/* ══ 1. Article Header ═══════════════════════════════════════════════ */}
-      <header className={`ga-header${isStory ? " ga-header--story" : ""}`}>
+      <header
+        className={`ga-header${isStory ? " ga-header--story" : ""}`}
+        style={isStory && post.thumbnail
+          ? { backgroundImage: `url("${post.thumbnail}")` }
+          : undefined}
+      >
         <div className="ga-container">
           <div className="ga-hero-main">
             <Breadcrumb items={[
@@ -490,12 +501,19 @@ function markdownToHtml(
   toc: { id: string; level: number; text: string }[],
   articleTitle: string,
   toolMap?: Map<string, string>,
+  isStory = false,
+  storyHero?: string,
 ): string {
   let html = md;
   let tocIndex = 0;
   const codeBlocks: string[] = [];
   const cleanHeading = (value: string) =>
     value.replace(/^[\p{Extended_Pictographic}\uFE0F\u200D]+\s*/u, "");
+
+  if (isStory && storyHero) {
+    const escapedHero = storyHero.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    html = html.replace(new RegExp(`!\\[[^\\]]*\\]\\(${escapedHero}\\)\\s*`), "");
+  }
 
   // Protect fenced code before processing inline Markdown. Without this
   // pass, the three backticks are interpreted as inline code delimiters and
@@ -509,7 +527,12 @@ function markdownToHtml(
     return `<div data-ga-code-block="${index}"></div>`;
   });
 
-  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy" />');
+  html = html.replace(
+    /!\[([^\]]*)\]\(([^)]+)\)/g,
+    isStory
+      ? '<figure class="ga-story-figure"><img src="$2" alt="$1" loading="lazy" /><figcaption>$1</figcaption></figure>'
+      : '<img src="$2" alt="$1" loading="lazy" />',
+  );
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_m, header, _s, body) => {
     const hs = header.split("|").filter((c: string) => c.trim());
@@ -556,10 +579,17 @@ function markdownToHtml(
   // "`code` …" — since those become <strong>/<a>/<em>/<code> before this
   // step and were left as loose 16px inline text instead of 19px body <p>.
   html = html.replace(
-    /^(?!<(?:h[1-6]|ul|ol|li|blockquote|table|thead|tbody|tr|td|th|div|hr|p|pre)\b|<\/|$)(.+)$/gm,
+    /^(?!<(?:h[1-6]|ul|ol|li|blockquote|table|thead|tbody|tr|td|th|div|figure|figcaption|hr|p|pre)\b|<\/|$)(.+)$/gm,
     "<p>$1</p>",
   );
   html = html.replace(/<p>\s*<\/p>/g, "");
+
+  if (isStory) {
+    html = html.replace(
+      /(<\/blockquote>)\s*<p>(Anna Morel[^<]*)<\/p>/g,
+      '$1<p class="ga-quote-attribution">$2</p>',
+    );
+  }
 
   // Auto-link tool names (first occurrence only)
   if (toolMap && toolMap.size > 0) {
