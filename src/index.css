@@ -469,7 +469,7 @@
   body .ga-body-outer--story .ga-section-copy > blockquote {
     position: relative;
     left: 50%;
-    width: min(770px, calc(100cqw - 2 * var(--layout-gutter)));
+    width: min(64cqw, 1230px);
     max-width: none !important;
     margin: clamp(80px, 8cqw, 104px) 0 16px;
     margin-right: 0 !important;
@@ -477,22 +477,35 @@
     padding: 0;
     transform: translateX(-50%);
     font-family: var(--font-ui);
-    font-size: clamp(27px, 2.6cqw, 34px);
+    font-size: clamp(34px, 2.35cqw, 46px);
     font-weight: 500;
-    line-height: 1.31;
+    line-height: 1.27;
     letter-spacing: -0.025em;
+    text-align: center;
+    text-wrap: balance;
   }
 
-  body .ga-body-outer--story .ga-quote-attribution {
+  body .ga-body-outer--story .ga-content > blockquote p,
+  body .ga-body-outer--story .ga-section-copy > blockquote p {
+    margin: 0;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+
+  body .ga-body-outer--story .ga-content > .ga-quote-attribution,
+  body .ga-body-outer--story .ga-section-copy > .ga-quote-attribution {
     position: relative;
     left: 50%;
-    width: min(770px, calc(100cqw - 2 * var(--layout-gutter)));
-    margin: 0 0 clamp(80px, 8cqw, 104px);
+    width: min(64cqw, 1230px);
+    max-width: none !important;
+    margin: 0 0 clamp(80px, 8cqw, 104px) !important;
     transform: translateX(-50%);
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.4 !important;
     color: var(--color-muted);
+    text-align: center;
   }
 
   body .ga-body-outer--story .ga-story-figure {
@@ -602,7 +615,8 @@
 
     body .ga-body-outer--story .ga-content > blockquote,
     body .ga-body-outer--story .ga-section-copy > blockquote,
-    body .ga-body-outer--story .ga-quote-attribution,
+    body .ga-body-outer--story .ga-content > .ga-quote-attribution,
+    body .ga-body-outer--story .ga-section-copy > .ga-quote-attribution,
     body .ga-body-outer--story .ga-story-figure {
       width: calc(100cqw - 2 * var(--layout-gutter-mobile));
     }
