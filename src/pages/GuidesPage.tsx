@@ -185,31 +185,6 @@ const GuidesPage = () => {
             </p>
           </div>
 
-          {!loading && storiesPosts.length > 0 && (
-            <section className="v2-catalog-section" aria-labelledby="guides-stories-title">
-              <div className="v2-section-header">
-                <div className="v2-section-heading-copy">
-                  <p className="st-kicker">ToolTrim Stories</p>
-                  <h2 id="guides-stories-title" className="v2-section-title">
-                    {t(
-                      "Les personnes qui inventent de nouvelles manières de travailler.",
-                      "The people inventing new ways to work.",
-                    )}
-                  </h2>
-                  <p className="v2-section-description">
-                    {t(
-                      "Des portraits sur les indépendants, leurs choix et les outils qui transforment leur métier.",
-                      "Portraits of independent workers, their choices, and the tools reshaping their craft.",
-                    )}
-                  </p>
-                </div>
-              </div>
-              <div className="gi-lead-grid">
-                <ArticleCard post={storiesPosts[0]} prefix={prefix} lang={lang} tools={tools} featured />
-              </div>
-            </section>
-          )}
-
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
           <div className="gi-topic-nav" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
@@ -311,12 +286,75 @@ const GuidesPage = () => {
             </div>
           )}
 
+          {!loading && storiesPosts.length > 0 && (
+            <StoriesRow story={storiesPosts[0]} prefix={prefix} lang={lang} />
+          )}
+
         </div>
       </div>
 
     </div>
   );
 };
+
+const UPCOMING_STORIES = [
+  {
+    titleFr: "Remettre de la clarté dans une entreprise qui grandit trop vite",
+    titleEn: "Bringing clarity back to a business growing too fast",
+    profileFr: "Marc, consultant opérations",
+    profileEn: "Marc, operations consultant",
+    image: "/editorial/stories/previews/marc-operations.jpg",
+  },
+  {
+    titleFr: "Construire un produit numérique à partir du terrain",
+    titleEn: "Building a digital product from the field",
+    profileFr: "Nora, développeuse indépendante",
+    profileEn: "Nora, independent developer",
+    image: "/editorial/stories/previews/nora-sante.jpg",
+  },
+];
+
+function StoriesRow({
+  story, prefix, lang,
+}: {
+  story: Post; prefix: string; lang: string;
+}) {
+  const firstStoryDate = formatPostDate(story.date, lang);
+
+  return (
+    <section className="gi-stories-row" aria-labelledby="guides-stories-title">
+      <div className="gi-stories-row-header">
+        <h2 id="guides-stories-title">{lang === "fr" ? "Stories" : "Stories"}</h2>
+        <Link to={`${prefix}/guide/${story.slug}`}>
+          {lang === "fr" ? "Tout voir" : "View all"}
+        </Link>
+      </div>
+
+      <div className="gi-stories-grid">
+        <Link to={`${prefix}/guide/${story.slug}`} className="gi-story-tile">
+          <div className="gi-story-tile-media">
+            <img src={story.thumbnail} alt="" loading="lazy" decoding="async" />
+          </div>
+          <h3>{story.title}</h3>
+          <p>{firstStoryDate}</p>
+        </Link>
+
+        {UPCOMING_STORIES.map((upcoming) => (
+          <article key={upcoming.image} className="gi-story-tile gi-story-tile--upcoming">
+            <div className="gi-story-tile-media">
+              <img src={upcoming.image} alt="" loading="lazy" decoding="async" />
+            </div>
+            <h3>{lang === "fr" ? upcoming.titleFr : upcoming.titleEn}</h3>
+            <p>
+              {lang === "fr" ? upcoming.profileFr : upcoming.profileEn}
+              <span>{lang === "fr" ? "À venir" : "Coming soon"}</span>
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function ArticleCard({
   post, prefix, lang, tools, featured = false, compact = false,
