@@ -84,16 +84,7 @@ export function setHreflang(path: string, base = SEO_BASE) {
 
 export function getAlternateLinks(path: string, base = SEO_BASE): [string, string][] {
   const cleanPath = path.replace(/^\/(fr|en)/, "");
-  const storyMatch = cleanPath.match(/^\/story\/([^/]+)$/);
   const guideMatch = cleanPath.match(/^\/guide\/([^/]+)$/);
-
-  if (storyMatch) {
-    const slug = storyMatch[1];
-    return [
-      ["fr", `${base}/fr/story/${slug}`],
-      ["x-default", `${base}/fr/story/${slug}`],
-    ];
-  }
 
   if (guideMatch) {
     const slug = guideMatch[1];

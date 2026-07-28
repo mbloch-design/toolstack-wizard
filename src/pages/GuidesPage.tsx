@@ -87,6 +87,7 @@ function sortPosts(posts: Post[], sortBy: string): Post[] {
 }
 
 function getPostType(post: Post): string {
+  if (post.category === "Stories") return "STORY";
   if (post.category === "Comparatifs") return "COMPARATIF";
   const text = `${post.title ?? ""} ${(post.tags ?? []).join(" ")} ${post.slug ?? ""}`.toLowerCase();
   if (text.includes("stack")) return "STACK";
@@ -137,6 +138,12 @@ const GuidesPage = () => {
 
   const filters = lang === "fr" ? FILTERS_FR : FILTERS_EN;
   const sortOptions = lang === "fr" ? SORT_OPTIONS_FR : SORT_OPTIONS_EN;
+  const storiesPosts = useMemo(
+    () => posts
+      .filter((post) => post.category === "Stories")
+      .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")),
+    [posts],
+  );
 
   /* ── Filtered + sorted posts ── */
   const filteredPosts = useMemo(() => {
@@ -177,6 +184,31 @@ const GuidesPage = () => {
               )}
             </p>
           </div>
+
+          {!loading && storiesPosts.length > 0 && (
+            <section className="v2-catalog-section" aria-labelledby="guides-stories-title">
+              <div className="v2-section-header">
+                <div className="v2-section-heading-copy">
+                  <p className="st-kicker">ToolTrim Stories</p>
+                  <h2 id="guides-stories-title" className="v2-section-title">
+                    {t(
+                      "Les personnes qui inventent de nouvelles manières de travailler.",
+                      "The people inventing new ways to work.",
+                    )}
+                  </h2>
+                  <p className="v2-section-description">
+                    {t(
+                      "Des portraits sur les indépendants, leurs choix et les outils qui transforment leur métier.",
+                      "Portraits of independent workers, their choices, and the tools reshaping their craft.",
+                    )}
+                  </p>
+                </div>
+              </div>
+              <div className="gi-lead-grid">
+                <ArticleCard post={storiesPosts[0]} prefix={prefix} lang={lang} tools={tools} featured />
+              </div>
+            </section>
+          )}
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 

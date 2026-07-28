@@ -10,7 +10,6 @@ import {
   Bookmark,
   Languages,
   Moon,
-  Newspaper,
   PanelLeftClose,
   PanelLeftOpen,
   Settings2,
@@ -40,7 +39,6 @@ const NAV_ITEMS: NavItem[] = [
   { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
   { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
-  { id: "stories",    labelFr: "Stories",     labelEn: "Stories",    Icon: Newspaper, to: "/stories",    match: ["/stories", "/story/"] },
 ];
 
 export default function AppShellV2({ children }: { children: ReactNode }) {

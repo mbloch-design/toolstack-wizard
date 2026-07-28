@@ -13,7 +13,7 @@ import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/li
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
-const STATIC_PAGES = ["", "tools", "category", "guides", "stories", "stacks", "about", "methodology", "transparency", "contact"];
+const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact"];
 const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
 // Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
 // dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
@@ -517,10 +517,6 @@ function sitemapPlugin(): Plugin {
 
         for (const post of postsFr) {
           if (contentArticleSlugs.has(post.slug)) continue;
-          if (post.category === "Stories") {
-            addSingle(`${BASE}/fr/story/${post.slug}`, "monthly", "0.8", post.date || buildDate);
-            continue;
-          }
           const enSlug = GUIDE_SLUG_ALTERNATES[post.slug] || post.slug;
           const enPost = enPostBySlug.get(enSlug);
           if (!GUIDE_FR_ONLY_SLUGS.has(post.slug) && enPost) {
@@ -1354,8 +1350,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 200+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
           { path: "/fr/guides",     lang: "fr", title: "Guides et comparatifs SaaS pour freelances | ToolTrim",   description: "Nos guides pratiques pour choisir les meilleurs outils SaaS : comparatifs, analyses de prix et recommandations par profil freelance." },
           { path: "/en/guides",     lang: "en", title: "SaaS guides and comparisons for freelancers | ToolTrim",  description: "Practical guides to choose the best SaaS tools: comparisons, pricing analyses and recommendations by freelance profile." },
-          { path: "/fr/stories",    lang: "fr", title: "ToolTrim Stories : nouvelles manières de travailler",      description: "Des portraits documentaires sur les indépendants, leurs outils, leurs choix et les idées qui transforment leur métier." },
-          { path: "/en/stories",    lang: "en", title: "ToolTrim Stories: new ways of working",                    description: "Documentary portraits about independent workers, their tools, their choices, and the ideas reshaping their craft." },
           { path: "/fr/stacks",     lang: "fr", title: "Stacks SaaS types pour freelances | ToolTrim",             description: "Stacks SaaS sobres par profil freelance, budget et niveau de maturité. Des combinaisons d'outils pensées pour vendre, livrer et payer moins." },
           { path: "/en/stacks",     lang: "en", title: "SaaS stack templates for freelancers | ToolTrim",          description: "Lean SaaS stack templates by freelance profile, budget, and maturity. Tool combinations designed to sell, deliver, and pay less." },
           { path: "/fr/comparatifs",lang: "fr", title: "Comparatifs d'outils SaaS 2026 | ToolTrim",              description: "Comparez les meilleurs outils SaaS face à face : fonctionnalités, prix réels et verdict pour chaque profil freelance." },
@@ -1627,13 +1621,11 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         for (const post of allPostsData) {
           const lang: string = post.lang;
           const slug: string = post.slug;
-          const routeKind = post.category === "Stories" ? "story" : "guide";
-          const url = `${BASE}/${lang}/${routeKind}/${slug}`;
+          const routeKind = "guide";
+          const url = `${BASE}/${lang}/guide/${slug}`;
           const frSlug = lang === "fr" ? slug : GUIDE_EN_TO_FR[slug] || slug;
           const enSlug = lang === "en" ? slug : GUIDE_SLUG_ALTERNATES[slug] || slug;
-          const frUrl = routeKind === "story"
-            ? `${BASE}/fr/story/${frSlug}`
-            : `${BASE}/fr/guide/${frSlug}`;
+          const frUrl = `${BASE}/fr/guide/${frSlug}`;
           const enUrl = `${BASE}/en/guide/${enSlug}`;
           const title = post.seo?.metaTitle || post.title || slug;
           const description = post.seo?.metaDescription || post.excerpt || "";
@@ -1643,7 +1635,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
-              { "@type": "ListItem", position: 2, name: routeKind === "story" ? "Stories" : "Guides", item: `${BASE}/${lang}/${routeKind === "story" ? "stories" : "guides"}` },
+              { "@type": "ListItem", position: 2, name: "Guides", item: `${BASE}/${lang}/guides` },
               { "@type": "ListItem", position: 3, name: post.title || slug, item: url },
             ],
           };
@@ -1687,7 +1679,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const postMetaTags = [
             `<link rel="canonical" href="${url}" />`,
             `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
-            ...(routeKind === "story" ? [] : [`<link rel="alternate" hreflang="en" href="${enUrl}" />`]),
+            ...(post.category === "Stories" ? [] : [`<link rel="alternate" hreflang="en" href="${enUrl}" />`]),
             `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
             `<title>${title.replace(/</g, "&lt;")}</title>`,
             `<meta name="description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,

@@ -46,11 +46,10 @@ const GuideDetailPage = () => {
     const seoTitle = post.seo?.metaTitle || `${post.title} | ToolTrim`;
     const rawDesc = post.seo?.metaDescription || post.excerpt || fallbackDesc;
     const seoDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trimEnd() + "…" : rawDesc;
-    const routeKind = post.category === "Stories" ? "story" : "guide";
-    const canonicalUrl = `https://tooltrim.com/${lang}/${routeKind}/${post.slug}`;
+    const canonicalUrl = `https://tooltrim.com/${lang}/guide/${post.slug}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, type: "article" });
-    setHreflang(`/${lang}/${routeKind}/${post.slug}`);
+    setHreflang(`/${lang}/guide/${post.slug}`);
     if (post.thumbnail) {
       const socialImage = new URL(post.thumbnail, "https://tooltrim.com").toString();
       setMeta("og:image", socialImage);
@@ -231,10 +230,7 @@ const GuideDetailPage = () => {
         <div className="ga-container">
           <div className="ga-hero-main">
             <Breadcrumb items={[
-              {
-                label: isStory ? "Stories" : t("Guides", "Guides"),
-                href: isStory ? `${prefix}/stories` : `${prefix}/guides`,
-              },
+              { label: t("Guides", "Guides"), href: `${prefix}/guides` },
               { label: post.title },
             ]} />
 
@@ -347,7 +343,7 @@ const GuideDetailPage = () => {
             {/* Back link */}
             <div style={{ marginTop: 48, paddingTop: 28, borderTop: "1px solid var(--color-border)" }}>
               <Link
-                to={isStory ? `${prefix}/stories` : `${prefix}/guides`}
+                to={`${prefix}/guides`}
                 style={{
                   fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
                   color: "var(--color-muted)", textDecoration: "none",
@@ -356,7 +352,7 @@ const GuideDetailPage = () => {
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-muted)"; }}
               >
-                ← {isStory ? t("Toutes les Stories", "All Stories") : t("Tous les guides", "All guides")}
+                ← {t("Tous les guides", "All guides")}
               </Link>
             </div>
           </article>
