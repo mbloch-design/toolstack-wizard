@@ -232,12 +232,7 @@ const GuideDetailPage = () => {
       </div>
 
       {/* ══ 1. Article Header ═══════════════════════════════════════════════ */}
-      <header
-        className={`ga-header${isStory ? " ga-header--story" : ""}`}
-        style={isStory && post.thumbnail
-          ? { backgroundImage: `url("${post.thumbnail}")` }
-          : undefined}
-      >
+      <header className={`ga-header${isStory ? " ga-header--story" : ""}`}>
         <div className="ga-container">
           <div className="ga-hero-main">
             <Breadcrumb items={[
@@ -248,7 +243,7 @@ const GuideDetailPage = () => {
             <div className="ga-eyebrow-row">
               {formattedDate && (
                 <span className="ga-eyebrow-item">
-                  {lang === "fr" ? "Mis à jour le" : "Updated"} {formattedDate}
+                  {isStory ? formattedDate : `${lang === "fr" ? "Mis à jour le" : "Updated"} ${formattedDate}`}
                 </span>
               )}
               {post.category && <span className="ga-eyebrow-item">{post.category}</span>}
@@ -266,6 +261,12 @@ const GuideDetailPage = () => {
           </div>
         </div>
       </header>
+
+      {isStory && post.thumbnail && (
+        <figure className="ga-story-hero-media">
+          <img src={post.thumbnail} alt="" />
+        </figure>
+      )}
 
       {/* ══ 2. Body: article + sticky TOC ═══════════════════════════════════ */}
       <div className={`ga-body-outer${isStory ? " ga-body-outer--story" : ""}`}>
