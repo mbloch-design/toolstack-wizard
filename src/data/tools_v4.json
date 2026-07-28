@@ -6096,7 +6096,8 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.png"
   },
   {
     "id": "aircall-inc",
