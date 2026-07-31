@@ -2,6 +2,16 @@
 
 ---
 
+## 2026-07-31 — Performance mobile de l’accueil
+
+- Le fond du hero est désormais servi en WebP responsive : 51 Ko sur mobile et 193 Ko sur grand écran, contre 1,3 Mo pour la PNG d’origine.
+- L’image LCP possède des dimensions intrinsèques et une priorité de téléchargement élevée ; le navigateur sélectionne la variante adaptée au viewport.
+- La section « Outils en vedette » réserve sa géométrie pendant le chargement Supabase afin que l’apparition des recommandations ne décale plus tout le catalogue.
+- Le skeleton reprend la grille responsive et les proportions finales des cartes, sans animation ni contenu annoncé aux technologies d’assistance.
+- Validation : build production et prérendu PASS, rendu Chrome contrôlé à 390 × 844 et 1440 × 1000, variante WebP correcte, aucune erreur d’overlay et CLS local mesuré à 0,00026.
+
+---
+
 ## 2026-07-28 — Typographie des catalogues et des fiches harmonisée
 
 - Les index Outils, Stacks et Comparatifs utilisent désormais le même token de titre de page, la même famille Inter Tight et les mêmes paramètres de graisse, d’interlettrage et de hauteur de ligne.

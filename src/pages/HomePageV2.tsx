@@ -208,6 +208,25 @@ function FeaturedHead({
   );
 }
 
+function FeaturedSkeletonGrid() {
+  return (
+    <div className="tc-grid v2-featured-skeleton-grid" aria-hidden="true">
+      {Array.from({ length: PAGE_SIZE }, (_, index) => (
+        <div className="v2-featured-skeleton" key={index}>
+          <span className="v2-featured-skeleton-media" />
+          <span className="v2-featured-skeleton-identity">
+            <span className="v2-featured-skeleton-logo" />
+            <span className="v2-featured-skeleton-copy">
+              <span />
+              <span />
+            </span>
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /* ── Compact tool tagline: trims a full shortDescription sentence down
    to a short row label, cutting at a word boundary. ── */
 function shortTagline(desc: string | undefined, max = 40): string {
@@ -281,7 +300,7 @@ function EditorialShelfPanel({
 
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
-  const { tools } = useToolSummaries();
+  const { tools, loading: toolsLoading } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
 
@@ -405,15 +424,11 @@ export default function HomePageV2() {
         <div className="v2-container">
 
           {/* ══ 1. Outils en vedette — carousel 2×4 ══
-               Gated on featured.length, same pattern as every other
-               conditional section below (Outils IA, Nouveautés...):
-               prescription_quality (what "featured" filters on) only
-               exists once the Supabase fetch resolves — the static/
-               offline fallback data doesn't carry it — so featured is
-               legitimately [] during that window. Showing the heading
-               + arrows with zero cards under it looked broken; hide the
-               whole section instead of rendering it empty. */}
-          {featured.length > 0 && (
+               The local summary snapshot does not carry prescription_quality,
+               so the remote catalogue can add this entire section after first
+               paint. Keep its final geometry reserved while that request is in
+               flight to prevent the catalogue below from shifting. */}
+          {(toolsLoading || featured.length > 0) && (
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Outils en vedette", "Featured tools")}
@@ -421,33 +436,39 @@ export default function HomePageV2() {
                 to={`${prefix}/tools`}
                 linkLabel={t("Voir tout", "See all")}
                 page={featuredPage}
-                total={totalPages}
+                total={Math.max(totalPages, 1)}
                 onPrev={prevPage}
                 onNext={nextPage}
                 previousLabel={t("Page précédente", "Previous page") as string}
                 nextLabel={t("Page suivante", "Next page") as string}
               />
-              <SwipePager className="tc-grid" onPrevious={prevPage} onNext={nextPage}>
-                {visibleFeatured.map((tool) => {
-                  const catName = stripLeadingEmoji(
-                    lang === "en"
-                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                  );
-                  return (
-                    <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
-                  );
-                })}
-              </SwipePager>
+              {toolsLoading && featured.length === 0 ? (
+                <FeaturedSkeletonGrid />
+              ) : (
+                <>
+                  <SwipePager className="tc-grid" onPrevious={prevPage} onNext={nextPage}>
+                    {visibleFeatured.map((tool) => {
+                      const catName = stripLeadingEmoji(
+                        lang === "en"
+                          ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                            || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                          : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                      );
+                      return (
+                        <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
+                      );
+                    })}
+                  </SwipePager>
 
-              <CarouselPagination
-                current={featuredPage}
-                total={totalPages}
-                onChange={setFeaturedPage}
-                label={t("Choisir une page d'outils", "Choose a tools page") as string}
-                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
-              />
+                  <CarouselPagination
+                    current={featuredPage}
+                    total={totalPages}
+                    onChange={setFeaturedPage}
+                    label={t("Choisir une page d'outils", "Choose a tools page") as string}
+                    pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
+                  />
+                </>
+              )}
             </section>
           )}
 

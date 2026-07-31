@@ -21870,6 +21870,52 @@ section[id] {
   row-gap: var(--v2-grid-gap);
 }
 
+.v2-featured-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.v2-featured-skeleton-media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--tt-surface-radius-media);
+  background: var(--color-surface-soft);
+}
+
+.v2-featured-skeleton-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 36px;
+}
+
+.v2-featured-skeleton-logo {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-soft);
+}
+
+.v2-featured-skeleton-copy {
+  display: grid;
+  gap: var(--space-2xs);
+  width: min(68%, 150px);
+}
+
+.v2-featured-skeleton-copy > span {
+  display: block;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-soft);
+}
+
+.v2-featured-skeleton-copy > span:last-child {
+  width: 64%;
+  height: 8px;
+}
+
 .v2-shelf-panel {
   display: flex;
   flex-direction: column;

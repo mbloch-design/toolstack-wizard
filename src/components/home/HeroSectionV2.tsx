@@ -15,7 +15,23 @@ const HeroSectionV2 = () => {
     <section className="hv2-root">
       <div className="hv2-container">
         <div className="hv2-band">
-          <img src="/hero/hero-gradient.png" alt="" className="hv2-bg" aria-hidden="true" />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/hero/hero-gradient-960.webp 960w, /hero/hero-gradient-1800.webp 1800w"
+              sizes="(max-width: 960px) 100vw, 1280px"
+            />
+            <img
+              src="/hero/hero-gradient-1800.webp"
+              alt=""
+              className="hv2-bg"
+              width="1800"
+              height="418"
+              fetchPriority="high"
+              decoding="async"
+              aria-hidden="true"
+            />
+          </picture>
 
           <div className="hv2-content">
             <span className="hv2-eyebrow">
