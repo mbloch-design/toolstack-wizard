@@ -1,0 +1,111 @@
+{
+  "slug": "finsweet",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Finsweet (site officiel)", "url": "https://finsweet.com" }
+  ],
+  "facts": {
+    "what": "Agence de développement Webflow spécialisée en sites B2B et entreprise, doublée d'une suite de produits (Consent Pro, Wized, Components, Attributes) pour étendre Webflow. Propose design, développement, SEO et intégrations custom.",
+    "what_en": "Webflow development agency specializing in B2B and enterprise websites, combined with a suite of products (Consent Pro, Wized, Components, Attributes) to extend Webflow. Offers design, development, SEO, and custom integrations.",
+    "pricing_model": "Produits à prix variables ; services sur devis. Consent Pro : abonnement mensuel. Finsweet+ membership optionnel.",
+    "free_tier": { "exists": false, "detail": "Pas de free tier. Consent Pro débute à 19 $/mois. Chrome Extension Client-First est gratuit." },
+    "plans": [
+      { "name": "Consent Pro", "price": "19 $ par mois — GDPR compliance tool pour Webflow" },
+      { "name": "Wized", "price": "Prix non spécifié — plateforme d'applications dynamiques Webflow" },
+      { "name": "Finsweet+", "price": "Prix non spécifié — membership pour accès aux outils Finsweet" }
+    ],
+    "key_features": [
+      "Consent Pro : gestion GDPR complète pour Webflow",
+      "Wized : builder d'applications dynamiques no-code",
+      "Components : éléments Webflow pré-construits",
+      "Attributes : système de codage personnalisé pour Webflow",
+      "Client-First : méthodologie de build system (gratuit, Chrome plugin)",
+      "CMS Bridge : connectivity pour données",
+      "Services d'agence : design, dev, SEO, maintenance"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Webflow pour un site client ou marque.",
+        "Vous avez besoin de conformité GDPR (Consent Pro).",
+        "Vous voulez des applications dynamiques dans Webflow (Wized).",
+        "Vous avez besoin de support ou services d'agence Webflow."
+      ],
+      "avoidIf": [
+        "Vous ne construisez pas sur Webflow.",
+        "Vous cherchez une plateforme no-code généraliste (pas Webflow-specific).",
+        "Votre budget est très limité.",
+        "Vous préférez DIY sans agence."
+      ],
+      "threshold": "Finsweet convient aux équipes Webflow professionnelles construisant des sites clients avec des besoins avancés ; pour un site personnel simple, les outils Webflow natifs suffisent."
+    },
+    "pros": [
+      "Suite d'outils très spécialisée pour Webflow.",
+      "Agence réputée avec clients de prestige (Dropbox, GitHub, etc.).",
+      "Équipe stable et expérimentée.",
+      "Conformité GDPR intégrée (Consent Pro).",
+      "Méthodologie Client-First bien documentée et gratuite.",
+      "Outils collaboratifs et pratiques.",
+      "Support dédié et services professionnels disponibles."
+    ],
+    "cons": [
+      "Uniquement pour utilisateurs Webflow.",
+      "Produits pricés individuellement (accumulation coûteuse).",
+      "Finsweet+ prix non public, nécessite de demander.",
+      "Moins de flexibilité qu'une stack de tech diversifiée.",
+      "Dépendant de Webflow (lock-in propriétaire).",
+      "Besoin de connaissances Webflow au minimum."
+    ],
+    "use_cases": [
+      "Implémenter la conformité GDPR sur un site Webflow client.",
+      "Construire une application dynamique dans Webflow avec Wized.",
+      "Vendre des sites Webflow à des clients avec design professionnel.",
+      "Organiser des composants Webflow réutilisables (Components).",
+      "Créer des workflows personnalisés avec Attributes."
+    ],
+    "relevant_for": ["Développeurs Webflow", "Agences web", "Freelances Webflow", "Entreprises B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build on Webflow for client or brand site.",
+        "You need GDPR compliance (Consent Pro).",
+        "You want dynamic apps inside Webflow (Wized).",
+        "You need agency support or services."
+      ],
+      "avoidIf": [
+        "You don't build on Webflow.",
+        "You want a general no-code platform (not Webflow-specific).",
+        "Your budget is very tight.",
+        "You prefer DIY without agency."
+      ],
+      "threshold": "Finsweet suits professional Webflow teams building client sites with advanced needs; for a simple personal site, native Webflow tools are enough."
+    },
+    "pros": [
+      "Highly specialized toolkit for Webflow.",
+      "Reputable agency with prestigious clients (Dropbox, GitHub, etc.).",
+      "Stable, experienced team.",
+      "GDPR compliance built-in (Consent Pro).",
+      "Client-First methodology well-documented and free.",
+      "Collaborative and practical tools.",
+      "Dedicated support and professional services available."
+    ],
+    "cons": [
+      "Only for Webflow users.",
+      "Products priced individually (accumulates expensively).",
+      "Finsweet+ pricing not public, requires asking.",
+      "Less flexibility than diverse tech stack.",
+      "Webflow-dependent (proprietary lock-in).",
+      "Requires Webflow knowledge at minimum."
+    ],
+    "use_cases": [
+      "Implement GDPR compliance on a Webflow client site.",
+      "Build a dynamic app inside Webflow with Wized.",
+      "Sell professional Webflow sites to clients.",
+      "Organize reusable Webflow components (Components).",
+      "Create custom workflows with Attributes."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "gelato",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gelato — Print on Demand (site officiel)", "url": "https://gelato.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de print-on-demand (POD) permettant de créer et vendre des produits personnalisés (t-shirts, tasses, posters, etc.) sans stock. Inclut intégration Shopify, gestion d'imprimantes partenaires globales et API pour automation.",
+    "what_en": "Print-on-demand (POD) platform for creating and selling personalized products (t-shirts, mugs, posters, etc.) without inventory. Includes Shopify integration, global partner printer management, and API for automation.",
+    "pricing_model": "Plan gratuit (paiement par commande) ; abonnements optionnels pour réductions et outils avancés",
+    "free_tier": { "exists": true, "detail": "Free plan : illimité, paiement par commande sans frais fixes, marque Gelato. Trial de 14 jours pour nouveaux comptes." },
+    "plans": [
+      { "name": "Free", "price": "0 € (paiement par commande, sans abonnement)" },
+      { "name": "Gelato+", "price": "23.99 $ (24 $/mois ou 19.99 $/an) — jusqu'à 25% de réduction produits" },
+      { "name": "Gold", "price": "129 $ (par mois) — jusqu'à 25% réduction + 30% branding" },
+      { "name": "Platinum", "price": "Support dédié et outils premium (prix non spécifié)" }
+    ],
+    "key_features": [
+      "Intégration native Shopify, WooCommerce, etsy, etc.",
+      "Réseau de fournisseurs d'impression global",
+      "Personnalisation complète des produits",
+      "Jusqu'à 25% de réduction sur les coûts produits (Gelato+)",
+      "Packaging personnalisé",
+      "API pour intégrations custom",
+      "Gestion de plusieurs boutiques"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des produits personnalisés (t-shirts, mugs, etc.).",
+        "Vous avez une boutique Shopify ou WooCommerce.",
+        "Vous voulez éviter de gérer du stock physique.",
+        "Vous avez un volume bas à moyen de commandes."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de volumes très élevés (envisagez un fournisseur direct).",
+        "Vous voulez des marges très élevées sur chaque produit.",
+        "Vos produits ne sont pas des objets « printables » standard.",
+        "Vous préférez une solution sans API ou automation."
+      ],
+      "threshold": "Gelato convient aux petits entrepreneurs et boutiques Shopify vendant des produits personnalisés ; pour des volumes très importants, des fournisseurs directs peuvent être plus avantageux."
+    },
+    "pros": [
+      "Totalement gratuit pour commencer (zéro frais fixes).",
+      "Réseau d'imprimantes global avec qualité garantie.",
+      "Intégration Shopify extrêmement simple.",
+      "Pas de stock à gérer ou à financer.",
+      "API pour automation complète.",
+      "Emballage blanc personnalisable (marque à soi)."
+    ],
+    "cons": [
+      "Marges faibles si pas de volume (les réductions commencent à Gelato+).",
+      "Abonnement Gelato+ nécessaire pour vraiment rentabiliser.",
+      "Temps de production et livraison importants.",
+      "Dépendant de la qualité des fournisseurs.",
+      "Pas d'accès direct aux imprimantes locales pour négocier prix."
+    ],
+    "use_cases": [
+      "Vendre des t-shirts ou sweats à l'effigie d'une marque ou communauté.",
+      "Créer une boutique de mugs, posters ou casquettes personnalisés.",
+      "Vendre du merchandise lié à un podcast, stream ou contenu.",
+      "Tester des idées de produits sans stock.",
+      "Automatiser la production avec des designs générés par IA ou users."
+    ],
+    "relevant_for": ["Entrepreneurs e-commerce", "Créateurs de contenu", "Marques petites/moyennes", "Agences print-to-order"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell personalized products (t-shirts, mugs, etc.).",
+        "You have a Shopify or WooCommerce store.",
+        "You want to avoid managing physical inventory.",
+        "You have low to medium order volume."
+      ],
+      "avoidIf": [
+        "You need very high volumes (consider direct suppliers).",
+        "You want very high margins per product.",
+        "Your products are not standard 'printable' items.",
+        "You prefer a solution without API or automation."
+      ],
+      "threshold": "Gelato suits small entrepreneurs and Shopify stores selling personalized products; for very high volumes, direct suppliers may be more advantageous."
+    },
+    "pros": [
+      "Completely free to start (zero fixed costs).",
+      "Global printer network with quality guaranteed.",
+      "Shopify integration extremely simple.",
+      "No inventory to manage or finance.",
+      "API for full automation.",
+      "White-label packaging (your branding)."
+    ],
+    "cons": [
+      "Low margins without volume (discounts start at Gelato+).",
+      "Gelato+ subscription needed to truly break even.",
+      "Production and shipping time significant.",
+      "Dependent on supplier quality.",
+      "No direct access to local printers for negotiation."
+    ],
+    "use_cases": [
+      "Sell branded t-shirts or hoodies.",
+      "Create a store for mugs, posters, or caps.",
+      "Sell merchandise tied to a podcast, stream, or content.",
+      "Test product ideas without stock.",
+      "Automate production with AI-generated or user designs."
+    ]
+  }
+}

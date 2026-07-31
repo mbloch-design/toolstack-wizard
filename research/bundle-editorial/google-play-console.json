@@ -1,0 +1,95 @@
+{
+  "slug": "google-play-console",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Play Console — site officiel", "url": "https://play.google.com/console" },
+    { "label": "Google Play Service Fees", "url": "https://support.google.com/googleplay/android-developer/answer/112622" }
+  ],
+  "facts": {
+    "what": "Plateforme Google pour publier, monétiser et gérer les applications Android sur Google Play. Offre testing, analytics, gestion des versions, pricing, et A/B testing.",
+    "what_en": "Google's platform for publishing, monetizing, and managing Android apps on Google Play. Offers testing, analytics, release management, pricing, and A/B testing.",
+    "pricing_model": "Plateforme gratuite. Commission sur les revenus (in-app purchases et abonnements).",
+    "free_tier": { "exists": true, "detail": "Plateforme de publication entièrement gratuite. Commission prélevée seulement sur les revenus." },
+    "plans": [
+      { "name": "Service Fee - Subscriptions", "price": "10% commission (dès juin 2026 aux US/UK/EEA) + 5% billing fee" },
+      { "name": "Service Fee - In-App Purchases", "price": "15% standard, variables par pays et devise locale" }
+    ],
+    "key_features": [
+      "Store listing et gestion des versions d'app",
+      "Internal, closed, and open testing",
+      "Pre-launch reports et app bundle explorer",
+      "Android vitals monitoring (performance et stabilité)",
+      "Regional pricing support (70+ devises locales)",
+      "Game Trials (essai limité avant achat)",
+      "Buy once play anywhere (mobile + PC)",
+      "Pricing A/B testing",
+      "Analytics d'acquisition et user reviews"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez une application Android commerciale.",
+        "Vous monetisez via in-app purchases ou abonnements.",
+        "Vous avez besoin d'analytics de marché détaillées."
+      ],
+      "avoidIf": [
+        "Vous ne publiez que sur stores alternatifs (sans Google Play).",
+        "Vous refusez toute commission sur revenus.",
+        "Vous supportez uniquement iOS ou web."
+      ],
+      "threshold": "Google Play Console est obligatoire pour toute app Android commerciale ; c'est l'unique accès au store Android de Google."
+    },
+    "pros": [
+      "Plateforme officielle et dominante pour Android (billions d'utilisateurs).",
+      "Commission compétitive pour abonnements depuis juin 2026.",
+      "Analytics détaillées et A/B testing natif.",
+      "Support de pricing régional avancé (70+ devises)."
+    ],
+    "cons": [
+      "Commission obligatoire sur tous les revenus.",
+      "Processus de review peut être lent.",
+      "Exigences de conformité strictes (malware, contenu).",
+      "Pas d'accès à alternative sans canaux de distribution."
+    ],
+    "use_cases": [
+      "Publier et monétiser une application Android de jeu.",
+      "Gérer un abonnement premium pour une app.",
+      "Tester pricing et offres A/B auprès des utilisateurs."
+    ],
+    "relevant_for": ["Développeurs Android", "Éditeurs de jeux mobiles", "Startups mobile"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You publish a commercial Android application.",
+        "You monetize via in-app purchases or subscriptions.",
+        "You need detailed market analytics."
+      ],
+      "avoidIf": [
+        "You publish only on alternative app stores.",
+        "You refuse any commission on revenue.",
+        "You support only iOS or web."
+      ],
+      "threshold": "Google Play Console is mandatory for any commercial Android app; it's the exclusive gateway to Google's Android store."
+    },
+    "pros": [
+      "Official and dominant platform for Android (billions of users).",
+      "Competitive commission for subscriptions since June 2026.",
+      "Detailed analytics and native A/B testing.",
+      "Advanced regional pricing support (70+ currencies)."
+    ],
+    "cons": [
+      "Mandatory commission on all revenue.",
+      "App review process can be slow.",
+      "Strict compliance requirements (malware, content).",
+      "No alternative without distribution channels."
+    ],
+    "use_cases": [
+      "Publish and monetize an Android gaming app.",
+      "Manage a premium subscription for an app.",
+      "A/B test pricing and offers with users."
+    ]
+  }
+}

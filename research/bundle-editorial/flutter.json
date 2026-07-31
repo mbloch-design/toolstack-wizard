@@ -1,0 +1,107 @@
+{
+  "slug": "flutter",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Flutter Documentation (site officiel)", "url": "https://flutter.dev" }
+  ],
+  "facts": {
+    "what": "Framework open-source de Google pour construire des applications mobiles, web et desktop compilées nativement à partir d'une seule base de code. Utilise Dart et offre Hot Reload pour un développement rapide avec contrôle pixel-perfect du design.",
+    "what_en": "Google's open-source framework for building natively compiled mobile, web, and desktop applications from a single codebase. Uses Dart and offers Hot Reload for rapid development with pixel-perfect design control.",
+    "pricing_model": "Gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Framework entièrement gratuit et open source. Aucune limite, aucun frais. Soutenu par Google et la communauté des développeurs." },
+    "plans": [],
+    "key_features": [
+      "Développement multi-plateforme (iOS, Android, Web, Desktop)",
+      "Hot Reload pour iteration rapide sans perdre l'état",
+      "Contrôle pixel-perfect des designs avec widgets",
+      "Compilation native pour haute performance",
+      "Langage Dart intégré (moderne et productif)",
+      "Large bibliothèque de widgets Material Design et Cupertino",
+      "Intégration native avec Firebase, Google Maps, Google Pay"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une seule base de code pour iOS et Android.",
+        "Vous recherchez du développement rapide avec Hot Reload.",
+        "Vous voulez des designs modernes et responsifs.",
+        "Vous êtes confortable avec Dart ou apprendre un nouveau langage."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une grande spécialisation iOS ou Android native.",
+        "Vous n'aimez pas apprendre un nouveau langage (Dart).",
+        "Vous voulez construire sans code du tout.",
+        "Vous ciblez exclusivement une plateforme (une stack native peut être plus simple)."
+      ],
+      "threshold": "Flutter est idéal pour les startups et équipes construisant des apps mobiles cross-platform rapidement ; pour une app très native ou spécialisée, une stack native (Swift/Kotlin) peut être mieux."
+    },
+    "pros": [
+      "Développement cross-platform de A à Z.",
+      "Hot Reload pour iteration extrêmement rapide.",
+      "Code partagé entre iOS et Android (une seule base).",
+      "Performance excellente (compilation native).",
+      "Widgets magnifiques built-in.",
+      "Très actif et souporté par Google.",
+      "Écosystème package mature.",
+      "Communauté grande et croissante."
+    ],
+    "cons": [
+      "Requiert apprentissage du langage Dart.",
+      "Taille d'app un peu plus grosse qu'en natif.",
+      "Moins de contrôle bas-niveau que natif pour features avancées.",
+      "Pas d'interface graphique ou no-code.",
+      "Courbe d'apprentissage pour les non-développeurs."
+    ],
+    "use_cases": [
+      "Développer une app iOS et Android à partir d'une base de code unique.",
+      "Construire un MVP mobile rapidement.",
+      "Créer une app avec designs modernes et animations fluides.",
+      "Intégrer Firebase pour backend temps réel.",
+      "Déployer une progressive web app (PWA) avec Flutter Web."
+    ],
+    "relevant_for": ["Développeurs mobiles", "Startups", "Agences app", "Équipes cross-platform"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want one codebase for iOS and Android.",
+        "You want rapid development with Hot Reload.",
+        "You want modern and responsive designs.",
+        "You're comfortable with Dart or learning a new language."
+      ],
+      "avoidIf": [
+        "You need heavy iOS or Android native specialization.",
+        "You dislike learning a new language (Dart).",
+        "You want to build without writing code.",
+        "You're only targeting one platform (native stack may be simpler)."
+      ],
+      "threshold": "Flutter is ideal for startups and teams building cross-platform mobile apps quickly; for heavily native or specialized apps, native stacks (Swift/Kotlin) may be better."
+    },
+    "pros": [
+      "Cross-platform development from one codebase.",
+      "Hot Reload for extremely rapid iteration.",
+      "Code sharing between iOS and Android.",
+      "Excellent performance (native compilation).",
+      "Beautiful widgets built-in.",
+      "Very active and supported by Google.",
+      "Mature package ecosystem.",
+      "Large and growing community."
+    ],
+    "cons": [
+      "Requires learning Dart language.",
+      "App size slightly larger than native.",
+      "Less low-level control than native for advanced features.",
+      "No graphical interface or no-code.",
+      "Learning curve for non-developers."
+    ],
+    "use_cases": [
+      "Develop iOS and Android app from a single codebase.",
+      "Build a mobile MVP quickly.",
+      "Create an app with modern designs and smooth animations.",
+      "Integrate Firebase for real-time backend.",
+      "Deploy a progressive web app (PWA) with Flutter Web."
+    ]
+  }
+}

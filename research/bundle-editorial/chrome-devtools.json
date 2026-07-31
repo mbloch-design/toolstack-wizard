@@ -1,0 +1,97 @@
+{
+  "slug": "chrome-devtools",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Chrome DevTools — Outils de développement navigateur (documentation Google)", "url": "https://developer.chrome.com/docs/devtools/" }
+  ],
+  "facts": {
+    "what": "Suite d'outils de développement intégrés dans Google Chrome. Permet d'inspecter et modifier les pages en temps réel, debugger JavaScript, analyser les performances et l'accessibilité.",
+    "what_en": "Suite of developer tools built directly into Google Chrome. Inspect and modify pages in real-time, debug JavaScript, analyze performance and accessibility.",
+    "pricing_model": "Entièrement gratuit, inclus dans Chrome. Aucun frais d'accès.",
+    "free_tier": { "exists": true, "detail": "Accès complet, inclus par défaut dans le navigateur Chrome" },
+    "plans": [
+      { "name": "Chrome DevTools (inclus dans Chrome)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "DOM et CSS inspection/édition en temps réel",
+      "JavaScript debugger (breakpoints, stack traces)",
+      "Network panel (requêtes, responses, waterfall)",
+      "Performance analysis et Core Web Vitals",
+      "Memory profiling et leak detection",
+      "Device sensor emulation et WebAuthn simulation",
+      "AI assistance (Gemini) pour suggestions de code",
+      "User flow recorder et replay",
+      "Accessibility et issues detection"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des sites web ou applications web.",
+        "Vous utilisez déjà Google Chrome (gratuit).",
+        "Vous avez besoin de debugging, performance et accessibilité."
+      ],
+      "avoidIf": [
+        "Vous utilisez exclusivement Firefox ou Safari (utilisez les DevTools natifs).",
+        "Vous cherchez des outils externes spécialisés (Lighthouse, WebPageTest)."
+      ],
+      "threshold": "Chrome DevTools s'impose comme outil quotidien pour tout développeur web modernes ; c'est le standard du marché."
+    },
+    "pros": [
+      "Entièrement gratuit et natif dans Chrome.",
+      "Inspection/édition DOM et CSS en direct.",
+      "Debugging JavaScript complet avec breakpoints.",
+      "Performance analysis real-time (Core Web Vitals).",
+      "IA native (Gemini) pour suggestions de code.",
+      "Aucune courbe d'apprentissage (outils intuitifs)."
+    ],
+    "cons": [
+      "Limité à développement dans Chrome (use Firefox/Safari DevTools ailleurs).",
+      "Interface peut être complexe pour débutants.",
+      "Pas de monitoring à long terme (session-based)."
+    ],
+    "use_cases": [
+      "Debugger des bugs JavaScript en temps réel.",
+      "Analyser les performances et latences réseau.",
+      "Auditer l'accessibilité (A11y) d'une page.",
+      "Inspecter et modifier le CSS à la volée.",
+      "Enregistrer et rejouer des flows utilisateur."
+    ],
+    "relevant_for": ["Développeurs frontend", "Développeurs full-stack", "QA / testeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop websites or web applications.",
+        "You already use Google Chrome (free).",
+        "You need debugging, performance, and accessibility tools."
+      ],
+      "avoidIf": [
+        "You exclusively use Firefox or Safari (use native DevTools instead).",
+        "You're looking for external specialized tools (Lighthouse, WebPageTest)."
+      ],
+      "threshold": "Chrome DevTools is the standard daily tool for modern web developers; it's the industry baseline."
+    },
+    "pros": [
+      "Completely free and native in Chrome.",
+      "DOM and CSS inspection/editing live.",
+      "Full JavaScript debugging with breakpoints.",
+      "Real-time performance analysis (Core Web Vitals).",
+      "Native AI (Gemini) for code suggestions.",
+      "No learning curve (intuitive tools)."
+    ],
+    "cons": [
+      "Limited to development in Chrome (use Firefox/Safari DevTools elsewhere).",
+      "Interface can be complex for beginners.",
+      "No long-term monitoring (session-based)."
+    ],
+    "use_cases": [
+      "Debug JavaScript bugs in real-time.",
+      "Analyze performance and network latency.",
+      "Audit page accessibility (A11y).",
+      "Inspect and modify CSS on-the-fly.",
+      "Record and replay user flows."
+    ]
+  }
+}

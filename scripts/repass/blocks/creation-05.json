@@ -1,52 +1,7 @@
 [
   {
-    "slug": "grammarly",
-    "name": "Grammarly",
-    "url": "https://grammarly.com"
-  },
-  {
-    "slug": "headliner",
-    "name": "Headliner",
-    "url": "https://headliner.app"
-  },
-  {
-    "slug": "houdini",
-    "name": "Houdini",
-    "url": "https://www.sidefx.com"
-  },
-  {
     "slug": "inbound",
     "name": "Inbound",
     "url": "https://inbound.so"
-  },
-  {
-    "slug": "insense",
-    "name": "Insense",
-    "url": "https://insense.pro"
-  },
-  {
-    "slug": "itch-io",
-    "name": "itch.io",
-    "url": "https://itch.io"
-  },
-  {
-    "slug": "judge-me",
-    "name": "Judge Me",
-    "url": "https://judgeme.com"
-  },
-  {
-    "slug": "keynote",
-    "name": "Keynote",
-    "url": "https://www.apple.com/keynote/"
-  },
-  {
-    "slug": "keyshot",
-    "name": "KeyShot",
-    "url": "https://www.keyshot.com"
-  },
-  {
-    "slug": "link-whisper",
-    "name": "Link Whisper",
-    "url": "https://linkwhisper.com"
   }
 ]

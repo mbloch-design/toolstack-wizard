@@ -1,0 +1,95 @@
+{
+  "slug": "fillout",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Fillout Pricing (site officiel)", "url": "https://fillout.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme tout-en-un pour créer des formulaires, quiz et sondages avec un éditeur drag-and-drop. Inclut le routage intelligent, le stockage sécurisé des réponses, la collaboration en temps réel et plus de 50 intégrations natives.",
+    "what_en": "All-in-one platform for creating forms, quizzes, and surveys with a drag-and-drop builder. Includes intelligent routing, secure response storage, real-time collaboration, and 50+ native integrations.",
+    "pricing_model": "Plan gratuit avec réponses limitées ; abonnements mensuels ou annuels",
+    "free_tier": { "exists": true, "detail": "Free plan : illimité de formulaires et d'utilisateurs, 1 000 réponses/mois, marque Fillout" },
+    "plans": [
+      { "name": "Free", "price": "0 € (1 000 réponses/mois, branding Fillout)" },
+      { "name": "Starter", "price": "15 $ (2 000 réponses/mois, sans branding optionnel)" },
+      { "name": "Pro", "price": "40 $ (5 000 réponses/mois, domaines personnalisés, CSS)" },
+      { "name": "Business", "price": "75 $ (réponses illimitées, analytiques, support prioritaire)" }
+    ],
+    "key_features": [
+      "Éditeur drag-and-drop intuitif",
+      "50+ types de champs natifs",
+      "Routage conditionnel avancé",
+      "Intégrationsatives (Notion, Airtable, Zapier, etc.)",
+      "Paiements intégrés et PDF",
+      "Domaines personnalisés et branding blanc"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez créer de nombreux formulaires ou quiz rapidement.",
+        "Vous avez besoin d'intégrations robustes (Notion, Airtable).",
+        "Vous voulez un plan gratuit généreux avec contrôle du branding."
+      ],
+      "avoidIf": [
+        "Vous avez très peu de formulaires à gérer.",
+        "Vous cherchez une solution ultra-basique sans fonctionnalités avancées.",
+        "Vous avez un très petit budget."
+      ],
+      "threshold": "Fillout convient aux équipes et freelances gérant plusieurs formulaires avec des besoins d'intégration ; pour un simple formulaire de contact, une solution minimaliste suffit."
+    },
+    "pros": [
+      "Plan gratuit très généreux avec 1 000 réponses.",
+      "Intégrations natives nombreuses et robustes.",
+      "Éditeur très intuitif et rapide.",
+      "Pas de limite sur le nombre de formulaires ou d'utilisateurs.",
+      "Support du domaine personnalisé dès le plan Pro."
+    ],
+    "cons": [
+      "Les plans payants ne sont pas très bon marché pour les petits volumes.",
+      "Pas de vrai système d'automation (Zapier requis pour plus).",
+      "Limite de réponses restrictive sur les plans bas.",
+      "Pas de vraie collaboration en temps réel côté réponses."
+    ],
+    "use_cases": [
+      "Créer et gérer des formulaires d'inscription ou de feedback.",
+      "Construire des quiz ou des sondages pour des clients.",
+      "Automatiser les collectes de données vers Airtable ou Notion."
+    ],
+    "relevant_for": ["Freelances", "Agences web", "Petites équipes marketing", "Éducateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to create many forms or quizzes quickly.",
+        "You need robust integrations (Notion, Airtable).",
+        "You want a generous free plan with branding control."
+      ],
+      "avoidIf": [
+        "You only have a few forms.",
+        "You need a super-basic solution without advanced features.",
+        "Your budget is very tight."
+      ],
+      "threshold": "Fillout suits teams and freelancers managing multiple forms with integration needs; for a simple contact form, a minimal solution works better."
+    },
+    "pros": [
+      "Generous free plan with 1,000 responses.",
+      "Many native integrations.",
+      "Intuitive and fast editor.",
+      "No limits on form or user count.",
+      "Custom domains from Pro plan up."
+    ],
+    "cons": [
+      "Paid plans are pricey for small volumes.",
+      "No true automation system (Zapier needed for more).",
+      "Response limits are restrictive on lower plans.",
+      "No real-time collaboration on responses."
+    ],
+    "use_cases": [
+      "Create and manage signup or feedback forms.",
+      "Build quizzes or surveys for clients.",
+      "Automate data collection to Airtable or Notion."
+    ]
+  }
+}

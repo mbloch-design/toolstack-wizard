@@ -1,0 +1,101 @@
+{
+  "slug": "codemagic",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Codemagic — Mobile CI/CD Platform (site officiel)", "url": "https://codemagic.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme CI/CD cloud spécialisée dans la build et deploy d'apps mobiles (iOS, Android, Flutter, React Native, etc). Automatise signing, versioning et déploiement sur stores.",
+    "what_en": "Cloud CI/CD platform specialized in building and deploying mobile apps (iOS, Android, Flutter, React Native, etc). Automates signing, versioning, and store deployment.",
+    "pricing_model": "Freemium : plan gratuit limité. Facturation à l'usage (pay-as-you-go) ou abonnement annuel. Options Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "500 minutes macOS M2/mois, max 1 build parallèle, support communauté" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (500 min/mois macOS)" },
+      { "name": "Pay-as-you-go", "price": "$0.045/min Linux ou Windows, $0.095/min macOS M2, $0.114/min M4" },
+      { "name": "M2 Fixed Annual", "price": "$3,990 / année (3 concurrences, unlimited minutes)" },
+      { "name": "M4 Fixed Annual", "price": "$5,400 / année (3 concurrences M4)" },
+      { "name": "M4 Max Fixed Annual", "price": "$9,000 / année (M4 Max machines)" },
+      { "name": "Enterprise", "price": "$12,000+ / année (SLA, SSO, support dédié)" }
+    ],
+    "key_features": [
+      "Multi-platform (iOS, Android, Flutter, React Native, Ionic, Unity, .NET MAUI)",
+      "Automated code signing et provisioning",
+      "Cron scheduling ou push-on-demand",
+      "Integration GitHub, GitLab, Bitbucket",
+      "Slack / Teams notifications",
+      "YAML config (codemagic.yaml) ou visual builder",
+      "3 concurrent builds min (plans fixes)",
+      "Cloud infrastructure (no local hardware needed)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des apps mobiles (iOS, Android).",
+        "Vous cherchez une CI/CD spécialisée mobile (pas générique).",
+        "Vous avez besoin d'automatisation signing/upload App Store."
+      ],
+      "avoidIf": [
+        "Vous ne buildez que du web (pas mobile).",
+        "Vous avez déjà GitHub Actions ou GitLab CI en place.",
+        "Vous cherchez du gratuit uniquement."
+      ],
+      "threshold": "Codemagic s'impose pour les équipes mobiles exigeant signing/store automation ; pour du web pur, GitHub Actions convient."
+    },
+    "pros": [
+      "Spécialisée mobile (iOS, Android signing natif).",
+      "Plan gratuit 500 min/mois accessible.",
+      "Configuration YAML ou visuelle (pas d'expertise requise).",
+      "Automation complète signing + store upload.",
+      "Support multi-framework (Flutter, React Native, Ionic)."
+    ],
+    "cons": [
+      "Coûteux à scale (macOS cher vs Linux).",
+      "Plans fixes annuels (engagement long terme).",
+      "Pay-as-you-go peut exploser vite.",
+      "Moins flexible que GitHub Actions pour le web."
+    ],
+    "use_cases": [
+      "Build et signer automatiquement une app iOS depuis GitHub.",
+      "Deploy une app Android vers Google Play Store.",
+      "Tester et build des Flutter apps en parallèle.",
+      "Automatiser versioning et changelog upload."
+    ],
+    "relevant_for": ["Développeurs mobiles", "Équipes Flutter/React Native", "Agences mobile"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop mobile apps (iOS, Android).",
+        "You need specialized mobile CI/CD (not generic).",
+        "You need automation for signing and store uploads."
+      ],
+      "avoidIf": [
+        "You only build web (no mobile).",
+        "You already use GitHub Actions or GitLab CI.",
+        "You need only free solutions."
+      ],
+      "threshold": "Codemagic makes sense for mobile teams needing signing/store automation; for pure web, GitHub Actions fits better."
+    },
+    "pros": [
+      "Specialized for mobile (native iOS, Android signing).",
+      "Free tier (500 min/month) accessible.",
+      "YAML or visual configuration (no expertise required).",
+      "Complete signing + store upload automation.",
+      "Multi-framework support (Flutter, React Native, Ionic)."
+    ],
+    "cons": [
+      "Expensive at scale (macOS pricey vs Linux).",
+      "Fixed annual plans (long-term commitment).",
+      "Pay-as-you-go can spike quickly.",
+      "Less flexible than GitHub Actions for web."
+    ],
+    "use_cases": [
+      "Auto-build and sign an iOS app from GitHub.",
+      "Deploy an Android app to Google Play Store.",
+      "Test and build Flutter apps in parallel.",
+      "Automate versioning and changelog uploads."
+    ]
+  }
+}

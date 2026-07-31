@@ -1,0 +1,104 @@
+{
+  "slug": "contentful",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Contentful — Composable Digital Experience Platform (site officiel)", "url": "https://www.contentful.com/pricing/" }
+  ],
+  "facts": {
+    "what": "CMS headless (sans frontend) pour gérer du contenu modular livré via API. Permet de séparer la gestion de contenu de la présentation (web, app, email, etc). Inclut AI pour personnalisation et generation de contenu.",
+    "what_en": "Headless CMS for managing modular content delivered via API. Decouples content management from presentation (web, app, email, etc). Includes AI for personalization and content generation.",
+    "pricing_model": "Freemium avec tiers: gratuit (limité), Lite payant, Enterprise custom. Facturation par users, API calls, CDN bandwidth et locales.",
+    "free_tier": { "exists": true, "detail": "1 Starter Space, 10 users, 100K API calls/mois, 50GB CDN, community support" },
+    "plans": [
+      { "name": "Free", "price": "€0 / mois (limité)" },
+      { "name": "Lite", "price": "€300 / mois (20 users, 1M API calls, 100GB CDN)" },
+      { "name": "Enterprise", "price": "Custom (unlimited users/calls, CSM dédié, 24/7 support, SLA)" }
+    ],
+    "key_features": [
+      "Modular content components (réutilisables)",
+      "API REST et GraphQL",
+      "Multi-locale et versioning",
+      "Scheduled publishing et task management",
+      "AI Actions (translation, rewriting, SEO suggestions)",
+      "Personalization engine (Enterprise)",
+      "Rich media management",
+      "Webhook integrations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous publiez du contenu sur multiples canaux (web, app, email).",
+        "Vous cherchez une vraie séparation content/présentation.",
+        "Vous avez besoin de API-first architecture."
+      ],
+      "avoidIf": [
+        "Vous cherchez un CMS gratuit simple (WordPress).",
+        "Vous avez un petit site statique sans besoins complex.",
+        "Vous avez un budget très limité (trop cher)."
+      ],
+      "threshold": "Contentful s'impose pour les équipes d'entreprise bâtissant des expériences omnicanal ; pour un petit blog, un CMS gratuit convient mieux."
+    },
+    "pros": [
+      "Vrai headless (séparation content/présentation).",
+      "API-first (REST et GraphQL).",
+      "Scalable (4.6B+ requests Black Friday 2025).",
+      "AI Actions natif (translation, SEO, content gen).",
+      "Multi-locale et versioning avancé.",
+      "Libre choix frontend (React, Next, Vue, etc)."
+    ],
+    "cons": [
+      "Coûteux pour les petits projets dès le premier palier payant.",
+      "Setup complexe (nécessite dev backend).",
+      "Courbe apprentissage raide.",
+      "Pas de UI frontend incluse (builder tiers payant).",
+      "Hidden costs : impl, training, add-ons."
+    ],
+    "use_cases": [
+      "Publier du contenu sur web, app et email depuis une seule source.",
+      "Bâtir un site Next.js avec contenu dynamic via API.",
+      "Gérer des traductions et localisations automatiques.",
+      "Créer des experiences personnalisées par audience.",
+      "Architekture omnicanal (PWA, mobile app, etc)."
+    ],
+    "relevant_for": ["Équipes enterprise", "Agences digital", "Brands multicanal"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You publish content across multiple channels (web, app, email).",
+        "You need true content/presentation separation.",
+        "You need an API-first architecture."
+      ],
+      "avoidIf": [
+        "You want a simple free CMS (WordPress).",
+        "You have a small static site without complex needs.",
+        "You have a very tight budget (too expensive)."
+      ],
+      "threshold": "Contentful makes sense for enterprise teams building omnichannel experiences; for a small blog, a free CMS fits better."
+    },
+    "pros": [
+      "True headless (content/presentation separation).",
+      "API-first (REST and GraphQL).",
+      "Scalable (4.6B+ requests Black Friday 2025).",
+      "Native AI Actions (translation, SEO, content gen).",
+      "Advanced multi-locale and versioning.",
+      "Freedom to choose frontend (React, Next, Vue, etc)."
+    ],
+    "cons": [
+      "Expensive for small projects from the first paid tier.",
+      "Complex setup (requires backend dev).",
+      "Steep learning curve.",
+      "No frontend UI included (builder is third-party paid).",
+      "Hidden costs: implementation, training, add-ons."
+    ],
+    "use_cases": [
+      "Publish content to web, app, and email from one source.",
+      "Build a Next.js site with dynamic content via API.",
+      "Manage translations and localizations automatically.",
+      "Create personalized experiences per audience.",
+      "Omnichannel architecture (PWA, mobile app, etc)."
+    ]
+  }
+}

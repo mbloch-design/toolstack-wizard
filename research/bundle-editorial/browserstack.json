@@ -1,0 +1,99 @@
+{
+  "slug": "browserstack",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BrowserStack Pricing (site officiel)", "url": "https://www.browserstack.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de test cloud offrant accès à 3500+ navigateurs/OS de bureau, 30000+ appareils iOS/Android réels, testing manual (Live) et automatisé (Automate), avec simulation réseau et géolocalisation.",
+    "what_en": "Cloud testing platform providing access to 3500+ desktop browsers/OS, 30,000+ real iOS/Android devices, manual testing (Live) and automated testing (Automate), with network simulation and geolocation.",
+    "pricing_model": "Plans mensuels/annuels par type de test (Live, Automate). Tarification séparée pour testing visuel, gestion de tests, et accessibilité. Remises annuelles possibles.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit : 30 minutes de Live testing et 100 minutes d'Automate. Sans carte de crédit." },
+    "plans": [
+      { "name": "Freelancer", "price": "12,50 $/mois" },
+      { "name": "Live Desktop", "price": "29 $/mois (29 $ facturé annuellement)" },
+      { "name": "Live Desktop & Mobile", "price": "39 $/mois (39 $ facturé annuellement)" },
+      { "name": "Automate Chrome", "price": "59 $/mois" },
+      { "name": "Automate Desktop & Mobile", "price": "175 $/mois" }
+    ],
+    "key_features": [
+      "3500+ combinaisons de navigateurs et OS",
+      "30000+ appareils réels iOS/Android",
+      "Live testing (manual) et Automate (automatisé)",
+      "Testing visuel, gestion de tests, accessibilité",
+      "Géolocalisation depuis 100+ pays",
+      "Simulation de conditions réseau (3G/4G)",
+      "Tunneling sécurisé pour environnements privés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez une web app sur de nombreux navigateurs.",
+        "Vous avez besoin d'appareils réels pour tester.",
+        "Vous pilotez l'assurance qualité d'une équipe."
+      ],
+      "avoidIf": [
+        "Vous testez uniquement sur Chrome/Firefox.",
+        "Vous avez un budget très limité.",
+        "Vous construisez un MVP sans exigence de compatibilité."
+      ],
+      "threshold": "BrowserStack s'impose pour tester la compatibilité ; pour équipes petites, les outils gratuits ou alternatives plus légères peuvent suffire."
+    },
+    "pros": [
+      "Accès à des milliers d'appareils réels.",
+      "Support du testing manuel et automatisé.",
+      "Géolocalisation et simulation réseau avancées.",
+      "Essai gratuit sans carte de crédit.",
+      "Support 24/7 par email.",
+      "Remises significatives sur l'engagement annuel."
+    ],
+    "cons": [
+      "Tarification complexe avec services séparés.",
+      "Coût peut exploser pour grandes équipes.",
+      "Pas d'offre freemium pour usage illimité.",
+      "Support gratuit limité."
+    ],
+    "use_cases": [
+      "Tester la compatibilité multi-navigateur d'une web app.",
+      "Automatiser les tests de régression sur nombreuses configurations.",
+      "Tester une app mobile sur appareils réels avant lancement."
+    ],
+    "relevant_for": ["QA engineers", "Équipes produit web", "Agences web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're testing a web app across many browsers.",
+        "You need real devices for testing.",
+        "You manage QA for a team."
+      ],
+      "avoidIf": [
+        "You only test on Chrome/Firefox.",
+        "You have a very limited budget.",
+        "You're building an MVP without compatibility requirements."
+      ],
+      "threshold": "BrowserStack is ideal for compatibility testing; for small teams, free or lighter tools may suffice."
+    },
+    "pros": [
+      "Access to thousands of real devices.",
+      "Support for manual and automated testing.",
+      "Advanced geolocation and network simulation.",
+      "Free trial without credit card.",
+      "24/7 email support.",
+      "Significant annual discounts."
+    ],
+    "cons": [
+      "Complex pricing with separate services.",
+      "Costs can spiral for large teams.",
+      "No freemium option for unlimited usage.",
+      "Limited free support."
+    ],
+    "use_cases": [
+      "Test multi-browser compatibility of a web app.",
+      "Automate regression tests across many configurations.",
+      "Test a mobile app on real devices before launch."
+    ]
+  }
+}

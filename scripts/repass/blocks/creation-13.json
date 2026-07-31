@@ -1,52 +1,7 @@
 [
   {
-    "slug": "taplio",
-    "name": "Taplio",
-    "url": "https://taplio.com"
-  },
-  {
-    "slug": "tella",
-    "name": "Tella",
-    "url": "https://www.tella.tv"
-  },
-  {
-    "slug": "tenor",
-    "name": "Tenor",
-    "url": "https://tenor.com"
-  },
-  {
-    "slug": "thirstyaffiliates",
-    "name": "Thirstyaffiliates",
-    "url": "https://thirstyaffiliates.com"
-  },
-  {
-    "slug": "three-js",
-    "name": "Three.js",
-    "url": "https://threejs.org"
-  },
-  {
-    "slug": "thrivecart",
-    "name": "Thrivecart",
-    "url": "https://thrivecart.com"
-  },
-  {
     "slug": "topaz-video",
     "name": "Topaz Video",
     "url": "https://www.topazlabs.com/topaz-video-ai"
-  },
-  {
-    "slug": "touchdesigner",
-    "name": "TouchDesigner",
-    "url": "https://derivative.ca"
-  },
-  {
-    "slug": "tradingview",
-    "name": "Tradingview",
-    "url": "https://tradingview.com"
-  },
-  {
-    "slug": "trainerize",
-    "name": "Trainerize",
-    "url": "https://trainerize.com"
   }
 ]

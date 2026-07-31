@@ -1,0 +1,98 @@
+{
+  "slug": "heroku",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Heroku — site officiel", "url": "https://heroku.com" },
+    { "label": "Heroku Pricing 2026", "url": "https://www.heroku.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de déploiement cloud (PaaS) pour applications web. Simplifie le déploiement (git push), scaling, et gestion avec dynos (conteneurs gérés). Note : tier gratuit supprimé novembre 2022.",
+    "what_en": "Cloud deployment platform (PaaS) for web applications. Simplifies deployment (git push), scaling, and management with dynos (managed containers). Note: free tier removed November 2022.",
+    "pricing_model": "Abonnement par dyno (conteneur compute). Eco, Basic, Standard, Performance.",
+    "free_tier": { "exists": false, "detail": "Tier gratuit supprimé en novembre 2022. Minimum : Eco 5 $/mois (dormir après 30min inactivité) ou Basic 7 $/mois (always-on)." },
+    "plans": [
+      { "name": "Eco", "price": "5 $/mois (512 MB RAM, dormancy après 30min, 1000 dyno-hours partagées)" },
+      { "name": "Basic", "price": "7 $/mois (512 MB RAM, always-on, single dyno)" },
+      { "name": "Standard-1X", "price": "25 $/mois (512 MB RAM)" },
+      { "name": "Standard-2X", "price": "50 $/mois (1 GB RAM)" },
+      { "name": "Performance-M", "price": "250 $/mois (2.5 GB RAM, dedicated)" },
+      { "name": "Performance-L", "price": "500 $/mois (14 GB RAM, 8x CPU)" }
+    ],
+    "key_features": [
+      "Déploiement simplifié : git push heroku main",
+      "Dynos (conteneurs gérés) Cedar et Fir (Kubernetes)",
+      "Scaling horizontal et vertical instantané",
+      "Database PostgreSQL et Redis add-ons",
+      "Custom domains et SSL automatique",
+      "App metrics et monitoring",
+      "Heroku Postgres (gestion DB transparente)",
+      "Heroku Connect (Salesforce sync)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez deploy web ultra-simplifié (startup ou POC).",
+        "Vous avez peu de ressources ops/infrastructure.",
+        "Vous préférez gestion complète plutôt que contrôle bas-niveau."
+      ],
+      "avoidIf": [
+        "Vous avez des besoins de coût ultra-optimisé.",
+        "Vous demandez contrôle détaillé de l'infrastructure.",
+        "Vous avez legacy ou dependencies très spécifiques."
+      ],
+      "threshold": "Heroku s'impose pour startups/MVP cherchant déploiement sans ops ; pour productions à volume élevé ou coût critique, AWS/GCP plus rentable."
+    },
+    "pros": [
+      "Déploiement ultra-simplifié et rapide.",
+      "Pas de gestion infrastructure (géré entièrement).",
+      "Scaling instantané et transparent.",
+      "Addon marketplace (DB, cache, monitoring)."
+    ],
+    "cons": [
+      "Coût par dyno plus élevé que VPS brut (Linode, AWS).",
+      "Pas de tier gratuit depuis 2022.",
+      "Moins de contrôle bas-niveau que VPS.",
+      "Dormancy (Eco) peut impacter production."
+    ],
+    "use_cases": [
+      "Lancer rapidement une API ou webapp (MVP/POC).",
+      "Scaling automatique pour trafic imprévisible.",
+      "Prototyper avant migration vers AWS/GCP."
+    ],
+    "relevant_for": ["Startups", "Developers solos", "Teams sans ops dédiquée"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want ultra-simplified web deployment (startup or POC).",
+        "You have limited ops/infrastructure resources.",
+        "You prefer full management over low-level control."
+      ],
+      "avoidIf": [
+        "You have cost-optimization needs.",
+        "You demand detailed infrastructure control.",
+        "You have legacy or very specific dependencies."
+      ],
+      "threshold": "Heroku suits startups/MVPs seeking deployment without ops; for high-volume production or cost-critical workloads, AWS/GCP more cost-effective."
+    },
+    "pros": [
+      "Ultra-simplified and fast deployment.",
+      "No infrastructure management (fully managed).",
+      "Instant and transparent scaling.",
+      "Add-on marketplace (DB, cache, monitoring)."
+    ],
+    "cons": [
+      "Higher per-dyno cost than raw VPS (Linode, AWS).",
+      "No free tier since 2022.",
+      "Less low-level control than VPS.",
+      "Dormancy (Eco) can impact production."
+    ],
+    "use_cases": [
+      "Rapidly launch an API or web app (MVP/POC).",
+      "Automatic scaling for unpredictable traffic.",
+      "Prototype before migration to AWS/GCP."
+    ]
+  }
+}

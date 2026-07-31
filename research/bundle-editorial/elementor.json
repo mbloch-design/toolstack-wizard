@@ -1,0 +1,97 @@
+{
+  "slug": "elementor",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Elementor Pricing (site officiel)", "url": "https://elementor.com/pricing" }
+  ],
+  "facts": {
+    "what": "Constructeur de pages WordPress drag-and-drop avec Theme Builder, Popup Builder, formulaires et 100+ widgets pro, permettant design de sites WordPress sans code.",
+    "what_en": "WordPress page builder with drag-and-drop interface, Theme Builder, Popup Builder, forms, and 100+ pro widgets for designing WordPress sites without code.",
+    "pricing_model": "Plugin gratuit avec fonctionnalités basiques. Plans payants annuels pour accès aux widgets pro, theme builder et outils avancés.",
+    "free_tier": { "exists": true, "detail": "Plugin gratuit : editor drag-and-drop basique, widgets limités, sans theme builder ni popups pro" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (plugin WordPress)" },
+      { "name": "Essential", "price": "$59/an pour 1 site" },
+      { "name": "Advanced Solo", "price": "$79/an pour 1 site" },
+      { "name": "Expert", "price": "$199/an pour 25 sites (freelances)" },
+      { "name": "Agency", "price": "$399/an pour 1000 sites" }
+    ],
+    "key_features": [
+      "Éditeur drag-and-drop WYSIWYG",
+      "Theme Builder pour personnaliser design global",
+      "Popup Builder pour modales et formulaires",
+      "100+ widgets professionnels",
+      "Dynamic Content et contenu personnalisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des sites WordPress sans code.",
+        "Vous voulez theme builder et popup builder pro.",
+        "Vous êtes freelance ou agence gérant plusieurs sites."
+      ],
+      "avoidIf": [
+        "Vous préférez coder le design en HTML/CSS.",
+        "Vous travaillez hors écosystème WordPress.",
+        "Vous ne pouvez pas vous engager sur facturation annuelle."
+      ],
+      "threshold": "Elementor domine pour constructeurs WordPress cherchant design visuel sans code ; moins pertinent pour développeurs full-code ou projets non-WordPress."
+    },
+    "pros": [
+      "Plugin gratuit fonctionnel pour débuter.",
+      "Theme Builder et Popup Builder puissants.",
+      "100+ widgets pro accessibles rapidement.",
+      "Tarifs progressifs pour freelances et agences.",
+      "Écosystème de templates et addons riche."
+    ],
+    "cons": [
+      "Fonctionnalités avancées réservées aux plans payants.",
+      "Facturation obligatoirement annuelle (pas mensuel).",
+      "Pas d'option lifetime, coûts récurrents.",
+      "Moins flexible que code personnalisé."
+    ],
+    "use_cases": [
+      "Construire site WordPress professionnel sans code.",
+      "Designer landing pages rapidement.",
+      "Gérer portfolio de sites comme freelance.",
+      "Customiser design d'agence pour clients."
+    ],
+    "relevant_for": ["Freelances WordPress", "Agences web", "Designers non-développeurs", "Entrepreneurs SMB"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building WordPress sites without code.",
+        "You want powerful theme and popup builders.",
+        "You're a freelancer or agency managing multiple sites."
+      ],
+      "avoidIf": [
+        "You prefer coding design in HTML/CSS.",
+        "You work outside WordPress ecosystem.",
+        "You can't commit to annual billing."
+      ],
+      "threshold": "Elementor dominates for code-free WordPress design; less relevant for full-code developers or non-WordPress projects."
+    },
+    "pros": [
+      "Free plugin functional to get started.",
+      "Powerful Theme and Popup Builders.",
+      "100+ pro widgets quickly accessible.",
+      "Progressive pricing for freelancers and agencies.",
+      "Rich ecosystem of templates and add-ons."
+    ],
+    "cons": [
+      "Advanced features locked behind paid plans.",
+      "Annual billing mandatory (no monthly option).",
+      "No lifetime option, recurring costs.",
+      "Less flexible than custom code."
+    ],
+    "use_cases": [
+      "Build professional WordPress site without code.",
+      "Design landing pages quickly.",
+      "Manage portfolio of sites as freelancer.",
+      "Customize agency design for clients."
+    ]
+  }
+}

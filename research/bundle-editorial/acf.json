@@ -1,0 +1,92 @@
+{
+  "slug": "acf",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Advanced Custom Fields Pro (site officiel)", "url": "https://www.advancedcustomfields.com/pro/" }
+  ],
+  "facts": {
+    "what": "Plugin WordPress premium permettant de gérer des champs personnalisés avancés (repeater fields, flexible content, gallery fields) avec interface admin intuitive et support natif Gutenberg.",
+    "what_en": "Premium WordPress plugin for managing advanced custom fields (repeater fields, flexible content, gallery fields) with intuitive admin interface and native Gutenberg support.",
+    "pricing_model": "Abonnement annuel par édition (Personal, Freelancer, Agence), sans frais par site supplémentaires.",
+    "free_tier": { "exists": true, "detail": "Version free sur WordPress.org avec fonctionnalités basiques ; versions pro requièrent abonnement annuel." },
+    "plans": [
+      { "name": "Personal", "price": "49 $/an pour 1 site" },
+      { "name": "Freelancer", "price": "149 $/an pour 10 sites" },
+      { "name": "Agence", "price": "249 $/an pour sites illimités" }
+    ],
+    "key_features": [
+      "Repeater Field pour données répétables",
+      "Flexible Content Field pour mise en page",
+      "Gallery Field pour collections d'images",
+      "Options Pages pour données globales",
+      "Clone Field pour réutilisation",
+      "Support natif Gutenberg"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez du contenu complexe sur WordPress.",
+        "Vous avez besoin de champs personnalisés répétables et flexibles.",
+        "Votre équipe utilise déjà WordPress et Gutenberg."
+      ],
+      "avoidIf": [
+        "Vous utilisez une plateforme autre que WordPress.",
+        "Vous n'avez besoin que de métadonnées simples.",
+        "Vous cherchez une solution complètement gratuite."
+      ],
+      "threshold": "ACF Pro s'impose pour les projets WordPress sophistiqués nécessitant une gestion de contenu flexible ; pour des besoins simples, la version free suffit."
+    },
+    "pros": [
+      "Interface admin claire et intuitive.",
+      "Répétabilité et flexibilité des champs.",
+      "Écosystème tiers très développé.",
+      "Support Gutenberg natif complet.",
+      "Documentation exhaustive et communauté active."
+    ],
+    "cons": [
+      "Abonnement annuel obligatoire pour les fonctionnalités avancées.",
+      "Limité à l'écosystème WordPress.",
+      "Courbe d'apprentissage pour configurations complexes."
+    ],
+    "use_cases": [
+      "Gérer des portefeuilles avec galeries et métadonnées.",
+      "Structurer du contenu client pour agences web.",
+      "Créer des champs de produit pour e-commerce."
+    ],
+    "relevant_for": ["Développeurs WordPress", "Agences web", "Gestionnaires de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex content in WordPress.",
+        "You need repeatable and flexible custom fields.",
+        "Your team already uses WordPress and Gutenberg."
+      ],
+      "avoidIf": [
+        "You're using a platform other than WordPress.",
+        "You only need simple metadata.",
+        "You're looking for a completely free solution."
+      ],
+      "threshold": "ACF Pro is essential for sophisticated WordPress projects requiring flexible content management; for simple needs, the free version suffices."
+    },
+    "pros": [
+      "Clean and intuitive admin interface.",
+      "Repeatable and flexible field management.",
+      "Extensive third-party ecosystem.",
+      "Native Gutenberg support.",
+      "Comprehensive documentation and active community."
+    ],
+    "cons": [
+      "Annual subscription required for advanced features.",
+      "Limited to WordPress ecosystem.",
+      "Learning curve for complex configurations."
+    ],
+    "use_cases": [
+      "Manage portfolios with galleries and metadata.",
+      "Structure client content for web agencies.",
+      "Build product fields for e-commerce sites."
+    ]
+  }
+}

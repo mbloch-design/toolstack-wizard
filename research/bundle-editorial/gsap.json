@@ -1,0 +1,93 @@
+{
+  "slug": "gsap",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GSAP — site officiel", "url": "https://gsap.com" },
+    { "label": "GSAP Pricing 2026", "url": "https://www.g2.com/products/greensock-animation-platform/pricing" }
+  ],
+  "facts": {
+    "what": "Libraire JavaScript d'animation haute-performance pour navigateur. Anime CSS, SVG, canvas, et objets JS avec optimisation GPU native. Depuis avril 2025 (acquisition Webflow), entièrement gratuite incluant tous les plugins.",
+    "what_en": "High-performance JavaScript animation library for browser. Animates CSS, SVG, canvas, and JS objects with native GPU optimization. Since April 2025 (Webflow acquisition), fully free including all plugins.",
+    "pricing_model": "Open-source gratuit (aucun coût)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et sans restriction depuis avril 2025. Tous les plugins inclus sans coût additionnel." },
+    "plans": [],
+    "key_features": [
+      "Animation de CSS, SVG, canvas, et objets JS",
+      "Timeline control et sequencing avancé",
+      "Motion-path et physics (inertia, momentum)",
+      "Text effects (split text, scramble, typing)",
+      "Scroll-driven animations",
+      "GPU-acceleration automatique des transforms",
+      "20x plus rapide que jQuery",
+      "Cross-browser compatible et production-ready",
+      "Plugins : SplitText (réécrit 2025, -50% file size)",
+      "Intégration native Webflow (été 2025)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez animations web complexes et fluides.",
+        "Vous avez besoin de haute-performance ( 60 fps+).",
+        "Vous voulez une libraire éprouvée en production."
+      ],
+      "avoidIf": [
+        "Vous faites seulement des animations CSS simples.",
+        "Vous refusez toute dépendance JavaScript.",
+        "Vous ciblez uniquement navigateurs modernes (sinon vérifier compat)."
+      ],
+      "threshold": "GSAP s'impose pour animations web professionnelles ; pour animations CSS simples ou transitions natives, les features CSS suffisent."
+    },
+    "pros": [
+      "Entièrement gratuit depuis avril 2025 (tous plugins).",
+      "Performance exceptionnelle (20x + rapide que jQuery).",
+      "Timeline et sequencing très puissants.",
+      "Documentation complète et écosystème actif."
+    ],
+    "cons": [
+      "Dépendance JavaScript supplémentaire.",
+      "Courbe apprentissage pour features avancées.",
+      "Peut être overkill pour animations simples.",
+      "Écosystème Webflow peut influencer roadmap."
+    ],
+    "use_cases": [
+      "Créer landing pages avec animations fluides et engageantes.",
+      "Animer SVG complexes ou graphiques interactifs.",
+      "Construire scroll-driven animations sur homepage."
+    ],
+    "relevant_for": ["Web designers", "Frontend developers", "Motion design specialists"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create complex, fluid web animations.",
+        "You need high performance (60 fps+).",
+        "You want a proven production-grade library."
+      ],
+      "avoidIf": [
+        "You only do simple CSS animations.",
+        "You refuse any JavaScript dependency.",
+        "You target only modern browsers (verify compat otherwise)."
+      ],
+      "threshold": "GSAP suits professional web animations; for simple CSS or native transitions, CSS features suffice."
+    },
+    "pros": [
+      "Fully free since April 2025 (all plugins included).",
+      "Exceptional performance (20x faster than jQuery).",
+      "Very powerful timeline and sequencing.",
+      "Complete documentation and active ecosystem."
+    ],
+    "cons": [
+      "Additional JavaScript dependency.",
+      "Learning curve for advanced features.",
+      "May be overkill for simple animations.",
+      "Webflow ecosystem may influence roadmap."
+    ],
+    "use_cases": [
+      "Create landing pages with fluid, engaging animations.",
+      "Animate complex SVG or interactive graphics.",
+      "Build scroll-driven animations on homepage."
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "gorgias",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gorgias — site officiel", "url": "https://gorgias.com" },
+    { "label": "Gorgias Pricing 2026", "url": "https://www.gorgias.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'assistance client omnichannel pour e-commerce Shopify. Centralise messages (email, chat, SMS, réseaux sociaux) dans une boîte de réception partagée, avec automation IA et routage intelligent.",
+    "what_en": "Omnichannel customer support platform for Shopify e-commerce. Centralizes messages (email, chat, SMS, social media) into shared inbox with AI automation and intelligent routing.",
+    "pricing_model": "Abonnement basé sur le nombre de tickets mensuels (pas de per-agent pricing)",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Pricing commence à 10 $/mois avec 50 tickets." },
+    "plans": [
+      { "name": "Starter", "price": "10 $/mois (50 tickets, surcharge 0,40 $/ticket au-delà)" },
+      { "name": "Basic", "price": "60 $/mois (300 tickets)" },
+      { "name": "Pro", "price": "360 $/mois (2 000 tickets)" },
+      { "name": "Advanced", "price": "900 $/mois (5 000 tickets)" }
+    ],
+    "key_features": [
+      "Boîte de réception omnichannel (email, chat, SMS, social)",
+      "Intégration native Shopify (données commandes, clients)",
+      "IA Agent (automate 60% du support, pré-entraîné sur 1B+ conversations)",
+      "300+ intégrations (Recharge, Klaviyo, Yotpo, etc.)",
+      "Routage intelligent et gestion des teams",
+      "Revenue attribution reporting",
+      "Coaching IA temps réel pour agents",
+      "Support phone (voix)",
+      "Pas de pricing par agent (invite illimitée de teammates)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un store e-commerce Shopify avec support client.",
+        "Vous voulez automatiser largement vos réponses support.",
+        "Vous recevez messages sur plusieurs canaux (email, chat, social)."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de store Shopify (intégration principale).",
+        "Votre volume de tickets est très faible.",
+        "Vous refusez l'IA pour customer support."
+      ],
+      "threshold": "Gorgias s'impose pour stores Shopify cherchant automation support ; pour petits volumes ou sans Shopify, une alternative simple suffit."
+    },
+    "pros": [
+      "IA Agent performante, pré-entraînée pour e-commerce.",
+      "Pas de pricing par agent (scaling équipe gratuit).",
+      "Intégration native Shopify et 300+ apps.",
+      "Revenue attribution et coaching IA temps réel."
+    ],
+    "cons": [
+      "Pricing basé tickets (surcharge rapide si volume augmente).",
+      "Pas de plan gratuit ou essai long.",
+      "Optimisée pour Shopify (moins flexible pour autres).",
+      "IA peut nécessiter fine-tuning pour contexte spécifique."
+    ],
+    "use_cases": [
+      "Centraliser support client multi-canal pour store Shopify.",
+      "Automatiser réponses FAQ et orders issues.",
+      "Analyser revenue impact du support (upsell, retention)."
+    ],
+    "relevant_for": ["E-commerce Shopify", "Customer support teams", "DTC brands"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a Shopify e-commerce store with customer support.",
+        "You want to automate support responses substantially.",
+        "You receive messages across multiple channels (email, chat, social)."
+      ],
+      "avoidIf": [
+        "You don't have a Shopify store (primary integration).",
+        "Your ticket volume is very low.",
+        "You refuse AI for customer support."
+      ],
+      "threshold": "Gorgias suits Shopify stores seeking support automation; for small volumes or non-Shopify, a simpler alternative suffices."
+    },
+    "pros": [
+      "Powerful AI Agent, pre-trained for e-commerce.",
+      "No per-agent pricing (free team scaling).",
+      "Native Shopify integration and 300+ apps.",
+      "Revenue attribution and real-time AI coaching."
+    ],
+    "cons": [
+      "Ticket-based pricing (costs rise quickly with volume).",
+      "No free plan or extended trial.",
+      "Optimized for Shopify (less flexible elsewhere).",
+      "AI may require fine-tuning for specific context."
+    ],
+    "use_cases": [
+      "Centralize multi-channel customer support for Shopify store.",
+      "Automate FAQ responses and order issues.",
+      "Analyze support's revenue impact (upsell, retention)."
+    ]
+  }
+}

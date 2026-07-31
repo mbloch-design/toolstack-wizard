@@ -1,0 +1,91 @@
+{
+  "slug": "gitlens",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GitLens — site officiel", "url": "https://www.gitkraken.com/gitlens" },
+    { "label": "GitLens Pricing 2026", "url": "https://www.softwaresuggest.com/gitlens/pricing" }
+  ],
+  "facts": {
+    "what": "Extension Visual Studio Code pour visualiser et naviguer l'historique Git. Affiche blame inline, commit graph interactif, historique de fichiers, et intègre l'IA pour explications de commits et PR.",
+    "what_en": "Visual Studio Code extension for Git history visualization and navigation. Shows inline blame, interactive commit graph, file history, and AI-assisted commit explanations and pull requests.",
+    "pricing_model": "Plan gratuit inclus. Plan Pro payant avec features avancées.",
+    "free_tier": { "exists": true, "detail": "Plan Community gratuit pour dépôts publics/locaux avec fonctionnalités Git essentielles." },
+    "plans": [
+      { "name": "Community", "price": "Gratuit (public/local repos)" },
+      { "name": "Pro", "price": "Montants sur la page officielle GitLens (achat annuel ou mensuel)" }
+    ],
+    "key_features": [
+      "Visualisation blame inline à chaque ligne de code",
+      "Commit Graph interactif (branches, commits, pull requests)",
+      "Historique de fichiers et de lignes",
+      "Gestion des worktrees multiples",
+      "Workflows IA : composition de commits, explications, PR",
+      "GitKraken MCP (intégration avec Copilot, Cursor)",
+      "Support GitHub, GitLab, Azure DevOps, Jira, Bitbucket"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Visual Studio Code quotidiennement.",
+        "Vous travaillez en équipe et consultez fréquemment l'historique Git.",
+        "Vous valorisez la visualisation interactive des branches et commits."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas VS Code.",
+        "Vous travaillez rarement avec Git ou sur dépôts privés.",
+        "Vous refusez tout plugin d'IDE tiers."
+      ],
+      "threshold": "GitLens s'impose pour développeurs VS Code valorisant l'exploration d'historique Git ; pour usage minimal ou hors VS Code, le plan Community gratuit ou absence de plugin suffit."
+    },
+    "pros": [
+      "Plan Community gratuit pour Git essentiels.",
+      "Visualisation très claire de blame et historique.",
+      "Commit Graph interactif puissant et rapide.",
+      "Intégration IA moderne pour explications."
+    ],
+    "cons": [
+      "Require VS Code (non disponible dans autres IDE).",
+      "Plan Pro nécessaire pour dépôts privés.",
+      "Surcharge cognitive initiale pour débutants."
+    ],
+    "use_cases": [
+      "Déboguer rapidement par examen du blame ligne par ligne.",
+      "Visualiser le graphe de commits d'une branche complexe.",
+      "Générer des explications IA pour des commits."
+    ],
+    "relevant_for": ["Développeurs VS Code", "Équipes Git collaboratives", "Code reviewers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Visual Studio Code daily.",
+        "You work in teams and frequently review Git history.",
+        "You value interactive branch and commit visualization."
+      ],
+      "avoidIf": [
+        "You don't use VS Code.",
+        "You rarely work with Git or private repositories.",
+        "You avoid third-party IDE plugins."
+      ],
+      "threshold": "GitLens suits VS Code developers prioritizing Git history exploration; for minimal Git work or non-VS Code environments, free Community plan or no plugin suffices."
+    },
+    "pros": [
+      "Free Community plan for essential Git features.",
+      "Clear blame and history visualization.",
+      "Powerful and fast interactive Commit Graph.",
+      "Modern AI integration for explanations."
+    ],
+    "cons": [
+      "Requires VS Code (unavailable in other IDEs).",
+      "Pro plan needed for private repositories.",
+      "Initial cognitive load for beginners."
+    ],
+    "use_cases": [
+      "Rapidly debug by examining blame line-by-line.",
+      "Visualize commit graph of complex branches.",
+      "Generate AI explanations for commits."
+    ]
+  }
+}

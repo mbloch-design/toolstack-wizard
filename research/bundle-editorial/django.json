@@ -1,0 +1,92 @@
+{
+  "slug": "django",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Django — The Web Framework for Perfectionists with Deadlines (site officiel)", "url": "https://www.djangoproject.com/" }
+  ],
+  "facts": {
+    "what": "Framework web Python de haut niveau conçu pour le développement rapide et pragmatique, avec sécurité intégrée et scalabilité éprouvée sur les plus grands sites web.",
+    "what_en": "High-level Python web framework for rapid, pragmatic development with built-in security and scalability proven on the world's largest websites.",
+    "pricing_model": "Entièrement gratuit et open-source, maintenu par la Django Software Foundation (association à but non lucratif).",
+    "free_tier": { "exists": true, "detail": "Django est entièrement gratuit, y compris pour usage commercial. Licence BSD permissive." },
+    "plans": [
+      { "name": "Framework (Open Source)", "price": "Gratuit" },
+      { "name": "Support/Sponsorship (optionnel)", "price": "Donations volontaires, support corporate disponible via partenaires" }
+    ],
+    "key_features": [
+      "ORM puissant avec support multi-bases de données",
+      "Admin panel auto-généré prêt pour la production",
+      "Authentification et permissions intégrées",
+      "Système de migrations de schéma automatisé",
+      "Templating moteur et URLrouting déclaratif"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en Python et cherchez un framework production-ready.",
+        "Vous avez besoin d'une admin panel auto-générée et d'une authentification robuste.",
+        "Vous voulez une communauté massive et une documentation exhaustive."
+      ],
+      "avoidIf": [
+        "Vous préférez un framework JavaScript ou TypeScript pour backend.",
+        "Vous avez besoin d'une API GraphQL native (possible mais addon).",
+        "Vous cherchez un framework ultra-minimaliste."
+      ],
+      "threshold": "Django est le choix incontournable pour les projets web Python exigeant rapidité de déploiement et robustesse ; moins indiqué si vous privilegiez légèreté maximale ou microservices."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source, zéro coût de licence.",
+      "Admin panel et authentification auto-générés et production-ready.",
+      "Sécurité intégrée contre CSRF, XSS, injection SQL.",
+      "Scalabilité éprouvée sur les plus gros sites web.",
+      "Communauté massive, documentation complète, écosystème riche."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour débuter.",
+      "Configuration initiale plus lourde qu'un micro-framework.",
+      "Moins adapté pour APIs ultra-légères ou temps réel (nécessite addons)."
+    ],
+    "use_cases": [
+      "Construire un site web traditionnel avec backend robuste.",
+      "Prototyper une startup SaaS rapidement.",
+      "Intégrer une admin panel et authentification sans effort.",
+      "Projet nécessitant sécurité et scalabilité éprouvées."
+    ],
+    "relevant_for": ["Développeurs Python", "Startups cherchant rapidité de déploiement", "Agences web", "Équipes DevOps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in Python and need a battle-tested production framework.",
+        "You want an auto-generated admin panel and robust authentication.",
+        "You value a massive community and exhaustive documentation."
+      ],
+      "avoidIf": [
+        "You prefer JavaScript or TypeScript for backend.",
+        "You need native GraphQL API support (possible but add-on).",
+        "You're seeking an ultra-minimal framework."
+      ],
+      "threshold": "Django is the go-to for Python web projects demanding rapid deployment and robustness; less ideal if you prioritize maximum lightness or heavy microservices."
+    },
+    "pros": [
+      "Completely free and open-source, zero licensing cost.",
+      "Auto-generated admin panel and authentication, production-ready.",
+      "Built-in security against CSRF, XSS, SQL injection.",
+      "Scalability proven on the world's largest websites.",
+      "Massive community, exhaustive docs, rich ecosystem."
+    ],
+    "cons": [
+      "Learning curve for beginners.",
+      "Initial setup heavier than micro-frameworks.",
+      "Less suited for ultra-lightweight APIs or real-time (requires add-ons)."
+    ],
+    "use_cases": [
+      "Build a traditional website with robust backend.",
+      "Quickly prototype a startup SaaS.",
+      "Integrate admin panel and authentication effortlessly.",
+      "Project requiring proven security and scalability."
+    ]
+  }
+}

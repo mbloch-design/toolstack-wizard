@@ -1,0 +1,91 @@
+{
+  "slug": "graphql",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GraphQL — site officiel", "url": "https://graphql.org" },
+    { "label": "What is GraphQL", "url": "https://www.ibm.com/think/topics/graphql" }
+  ],
+  "facts": {
+    "what": "Langage de requête open-source pour APIs, permettant aux clients de demander exactement les données dont ils ont besoin sous la forme voulue. Alternatif à REST avec schéma fortement typé et single endpoint.",
+    "what_en": "Open-source query language for APIs enabling clients to request exactly the data they need in the shape they want. Alternative to REST with strongly-typed schema and single endpoint.",
+    "pricing_model": "Open-source gratuit (aucun modèle commercial officiel)",
+    "free_tier": { "exists": true, "detail": "Entièrement open-source et gratuit. Serveurs GraphQL disponibles pour JavaScript, Python, Ruby, C#, Go, PHP et autres langues." },
+    "plans": [],
+    "key_features": [
+      "Langage de requête déclaratif (queries, mutations, subscriptions)",
+      "Schéma fortement typé et auto-documenté",
+      "Single endpoint API (vs REST multi-endpoints)",
+      "Zero over/under-fetching de données",
+      "Versioning API sans rupture (deprecation)",
+      "Subscriptions pour communication asynchrone temps réel",
+      "Support des fragments réutilisables",
+      "Storage-agnostic (databases, REST APIs, third-party services)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez APIs modernes hautement flexibles.",
+        "Vous avez besoin de queries déclaratives et performantes.",
+        "Votre équipe frontend est autonome sur data fetching."
+      ],
+      "avoidIf": [
+        "Vous commencez tout juste avec APIs (REST plus simple).",
+        "Votre use case est très simple (CRUD basique).",
+        "Vous refusez la courbe d'apprentissage initiale."
+      ],
+      "threshold": "GraphQL s'impose pour APIs scalables et flexibles ; pour projets simples ou REST suffit, l'overhead GraphQL peut être injustifié."
+    },
+    "pros": [
+      "Queries déclaratives et zéro over/under-fetching.",
+      "Schéma fortement typé et auto-documenté.",
+      "Versioning API sans rupture client.",
+      "Écosystème mature avec outils et frameworks."
+    ],
+    "cons": [
+      "Courbe d'apprentissage plus raide que REST.",
+      "Caching plus complexe (tout sur même endpoint).",
+      "N-plus-one queries possibles si mal optimisé.",
+      "Overhead pour très petits APIs."
+    ],
+    "use_cases": [
+      "Construire API backend pour multi-clients (web, mobile).",
+      "Permettre frontend autonome sur shape de données.",
+      "Intégrer plusieurs data sources via single gateway."
+    ],
+    "relevant_for": ["Ingénieurs backend", "Full-stack developers", "Équipes API-first"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build modern, highly flexible APIs.",
+        "You need declarative and performant queries.",
+        "Your frontend team is self-sufficient on data fetching."
+      ],
+      "avoidIf": [
+        "You're just starting with APIs (REST is simpler).",
+        "Your use case is very simple (basic CRUD).",
+        "You avoid initial learning curve."
+      ],
+      "threshold": "GraphQL suits scalable and flexible APIs; for simple projects where REST suffices, GraphQL overhead may be unjustified."
+    },
+    "pros": [
+      "Declarative queries and zero over/under-fetching.",
+      "Strongly-typed and self-documenting schema.",
+      "Seamless API versioning without client breaks.",
+      "Mature ecosystem with tools and frameworks."
+    ],
+    "cons": [
+      "Steeper learning curve than REST.",
+      "Caching more complex (single endpoint).",
+      "N-plus-one queries possible if poorly optimized.",
+      "Overhead for very small APIs."
+    ],
+    "use_cases": [
+      "Build backend API for multiple clients (web, mobile).",
+      "Enable frontend autonomy on data shape.",
+      "Integrate multiple data sources via single gateway."
+    ]
+  }
+}

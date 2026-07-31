@@ -1,0 +1,94 @@
+{
+  "slug": "bloc",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bloc State Management Library (site officiel)", "url": "https://bloclibrary.dev/" }
+  ],
+  "facts": {
+    "what": "Libraire open-source gratuite (licence MIT) pour la gestion d'état en Flutter et Dart, implémentant le pattern BLoC (Business Logic Component) avec séparation entre logique métier et présentation.",
+    "what_en": "Free open-source library (MIT license) for state management in Flutter and Dart, implementing the BLoC (Business Logic Component) pattern with separation between business logic and presentation.",
+    "pricing_model": "Gratuit et open-source. Aucun coût, aucune dépendance commerciale.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, open-source MIT license, maintenus par la communauté et mainteneurs. Aucun frais ni limitation." },
+    "plans": [
+      { "name": "Open source", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Pattern BLoC prévisible et testable",
+      "Séparation logique métier / présentation",
+      "Support Dart, Flutter, AngularDart",
+      "Widgets Flutter (BlocBuilder, BlocProvider, BlocListener)",
+      "Écosystème de packages complémentaires (flutter_bloc, hydrated_bloc)",
+      "Architecture réactive avec streams"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une app Flutter ou Dart.",
+        "Vous voulez une gestion d'état prévisible et testable.",
+        "Vous préférez une solution open-source sans coût."
+      ],
+      "avoidIf": [
+        "Vous ne développez pas en Flutter/Dart.",
+        "Vous voulez un support commercial garanti.",
+        "Vous cherchez une solution visuelle GUI pour la gestion d'état."
+      ],
+      "threshold": "Bloc est le choix idéal pour Flutter/Dart ; pour les autres écosystèmes, explorer les alternatives comme Redux, Provider, ou Riverpod."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Pattern prévisible et très testable.",
+      "Excellent support communautaire.",
+      "Écosystème de packages complémentaires.",
+      "Documentation exhaustive sur bloclibrary.dev.",
+      "Faible overhead de dépendances."
+    ],
+    "cons": [
+      "Courbe d'apprentissage sur le pattern BLoC.",
+      "Nécessite plus de boilerplate que Provider.",
+      "Pas de support commercial officiel.",
+      "Limité aux projets Flutter/Dart."
+    ],
+    "use_cases": [
+      "Construire une app mobile Flutter scalable.",
+      "Implémenter une gestion d'état testable.",
+      "Gérer des workflows complexes avec événements et états."
+    ],
+    "relevant_for": ["Développeurs Flutter", "Équipes Dart", "Startups mobiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing a Flutter or Dart app.",
+        "You want predictable and testable state management.",
+        "You prefer an open-source solution with no costs."
+      ],
+      "avoidIf": [
+        "You're not developing in Flutter/Dart.",
+        "You need guaranteed commercial support.",
+        "You're looking for a visual GUI state management tool."
+      ],
+      "threshold": "Bloc is the ideal choice for Flutter/Dart; for other ecosystems, explore alternatives like Redux, Provider, or Riverpod."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Predictable pattern and highly testable.",
+      "Excellent community support.",
+      "Ecosystem of complementary packages.",
+      "Exhaustive documentation on bloclibrary.dev.",
+      "Low dependency overhead."
+    ],
+    "cons": [
+      "Learning curve for the BLoC pattern.",
+      "Requires more boilerplate than Provider.",
+      "No official commercial support.",
+      "Limited to Flutter/Dart projects."
+    ],
+    "use_cases": [
+      "Build a scalable Flutter mobile app.",
+      "Implement testable state management.",
+      "Manage complex workflows with events and states."
+    ]
+  }
+}

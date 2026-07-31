@@ -1,0 +1,101 @@
+{
+  "slug": "flask",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Flask Documentation (site officiel)", "url": "https://flask.palletsprojects.com" }
+  ],
+  "facts": {
+    "what": "Micro-framework web Python léger et flexible pour construire des applications web. Minimaliste par défaut, permet d'ajouter des extensions selon les besoins (database ORM, authentification, formulaires, etc.).",
+    "what_en": "Lightweight and flexible Python micro-framework for building web applications. Minimalist by default, allows adding extensions as needed (database ORM, authentication, forms, etc.).",
+    "pricing_model": "Gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Framework entièrement gratuit et open source, sans limitations d'utilisation ou de déploiement" },
+    "plans": [],
+    "key_features": [
+      "Micro-framework simple et intuitif",
+      "Routage URL flexible",
+      "Moteur de templating Jinja2 intégré",
+      "Support des cookies et sessions",
+      "Écosystème d'extensions (SQLAlchemy, WTForms, etc.)",
+      "Debugging et développement ergonomiques",
+      "Déploiement simple (WSGI)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application web Python légère.",
+        "Vous préférez la simplicité et la flexibilité.",
+        "Vous voulez un petit projet ou prototype rapide.",
+        "Vous aimez ajouter uniquement les extensions nécessaires."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une structure opinionée complète (essayez Django).",
+        "Vous construisez une très grande application monolithe.",
+        "Vous préférez construire sans code du tout.",
+        "Vous avez besoin d'une interface d'administration built-in."
+      ],
+      "threshold": "Flask est idéal pour des APIs légères, des prototypes et des applications web petites/moyennes ; pour une application d'entreprise complexe, Django peut être plus approprié."
+    },
+    "pros": [
+      "Très simple et minimaliste.",
+      "Flexible — ajoutez ce que vous voulez.",
+      "Excellent pour les APIs REST légères.",
+      "Courbe d'apprentissage douce.",
+      "Documentation excellente.",
+      "Écosystème mature d'extensions."
+    ],
+    "cons": [
+      "Requiert des connaissances en Python et développement.",
+      "Moins de structure qu'un framework plus complet.",
+      "Pas d'interface d'administration built-in.",
+      "Nécessite du travail supplémentaire pour les fonctionnalités courantes.",
+      "Pas d'interface graphique ou no-code."
+    ],
+    "use_cases": [
+      "Créer une API REST légère pour une application mobile.",
+      "Développer un prototype ou MVP rapidement.",
+      "Construire un microservice simple.",
+      "Créer un dashboard ou admin panel personnalisé."
+    ],
+    "relevant_for": ["Développeurs Python", "Startups", "Architectes backend", "Freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a lightweight Python web application.",
+        "You prefer simplicity and flexibility.",
+        "You're building a small project or quick prototype.",
+        "You like adding only necessary extensions."
+      ],
+      "avoidIf": [
+        "You need a full opinionated structure (try Django).",
+        "You're building a very large monolithic application.",
+        "You want to build without writing code.",
+        "You need a built-in admin interface."
+      ],
+      "threshold": "Flask is ideal for lightweight APIs, prototypes, and small-to-medium web apps; for complex enterprise applications, Django may be more appropriate."
+    },
+    "pros": [
+      "Very simple and minimalist.",
+      "Flexible — add only what you need.",
+      "Great for lightweight REST APIs.",
+      "Gentle learning curve.",
+      "Excellent documentation.",
+      "Mature extension ecosystem."
+    ],
+    "cons": [
+      "Requires Python and development knowledge.",
+      "Less structure than more complete frameworks.",
+      "No built-in admin interface.",
+      "Extra work for common features.",
+      "No graphical interface or no-code."
+    ],
+    "use_cases": [
+      "Create a lightweight REST API for a mobile app.",
+      "Develop a prototype or MVP quickly.",
+      "Build a simple microservice.",
+      "Create a custom dashboard or admin panel."
+    ]
+  }
+}

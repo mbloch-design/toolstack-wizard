@@ -1,0 +1,98 @@
+{
+  "slug": "eslint",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ESLint — Find and fix problems in your JavaScript code (site officiel)", "url": "https://eslint.org" }
+  ],
+  "facts": {
+    "what": "Outil de linting enfichable pour JavaScript et TypeScript qui détecte et corrige automatiquement les problèmes de code, les erreurs de sécurité et applique les conventions d'équipe.",
+    "what_en": "Pluggable linting tool for JavaScript and TypeScript that automatically detects and fixes code problems, security errors, and enforces team conventions.",
+    "pricing_model": "Entièrement gratuit et open-source, maintenu par la communauté et la fondation OpenJS. Modèle de financement par donations volontaires.",
+    "free_tier": { "exists": true, "detail": "ESLint est entièrement gratuit, y compris pour usage commercial. Licence MIT open-source, 2900+ plugins communautaires disponibles." },
+    "plans": [
+      { "name": "Open Source (Core)", "price": "Gratuit" },
+      { "name": "Support/Sponsorship (optionnel)", "price": "Donations volontaires pour supporter développement" }
+    ],
+    "key_features": [
+      "Détection automatique de problèmes en temps réel",
+      "Correction automatique (--fix) pour nombreux problèmes",
+      "Configuration flexible avec parseurs et règles custom",
+      "Écosystème de 2900+ plugins (React, Vue, TypeScript, etc.)",
+      "Intégration dans éditeurs et CI/CD"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en JavaScript ou TypeScript.",
+        "Vous cherchez un linter flexible et communautaire.",
+        "Vous voulez appliquer des conventions d'équipe automatiquement."
+      ],
+      "avoidIf": [
+        "Vous ne codez pas en JavaScript/TypeScript.",
+        "Vous cherchez une analyse de code ultra-statique complète.",
+        "Vous n'avez pas d'équipe JavaScript à harmoniser."
+      ],
+      "threshold": "ESLint est incontournable pour tout projet JavaScript moderne ; moins pertinent hors écosystème JS/TS."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source, zéro coût.",
+      "Standard de facto pour l'écosystème JavaScript.",
+      "Écosystème massive de 2900+ plugins pour frameworks/libs.",
+      "Correction automatique pour la plupart des problèmes.",
+      "Intégration native dans éditeurs et CI/CD.",
+      "Communauté massive et documentation exhaustive."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour configuration initiale.",
+      "Configuration peut être complexe pour projets sophistiqués.",
+      "Nécessite npm/yarn, intégration dans toolchain.",
+      "Performance peut souffrir sur très gros codebases."
+    ],
+    "use_cases": [
+      "Linter défaut pour tout projet JavaScript/TypeScript.",
+      "Appliquer des conventions de code en équipe.",
+      "Détecter bugs et problèmes de sécurité courants.",
+      "Formater et nettoyer le code automatiquement.",
+      "Intégrer dans CI/CD pour quality gates."
+    ],
+    "relevant_for": ["Développeurs JavaScript", "Équipes frontend", "Agences web", "Startups JS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in JavaScript or TypeScript.",
+        "You want a flexible, community-driven linter.",
+        "You want to auto-enforce team conventions."
+      ],
+      "avoidIf": [
+        "You don't code in JavaScript/TypeScript.",
+        "You seek ultra-deep static code analysis.",
+        "You don't have a team to align conventions."
+      ],
+      "threshold": "ESLint is essential for any modern JavaScript project; less relevant outside JS/TS ecosystem."
+    },
+    "pros": [
+      "Completely free and open-source, zero cost.",
+      "De facto standard for JavaScript ecosystem.",
+      "Massive ecosystem of 2900+ plugins for frameworks/libs.",
+      "Auto-fix for most issues.",
+      "Native integration in editors and CI/CD.",
+      "Huge community and exhaustive docs."
+    ],
+    "cons": [
+      "Learning curve for initial config.",
+      "Setup can get complex for sophisticated projects.",
+      "Requires npm/yarn, integration into toolchain.",
+      "Performance can suffer on very large codebases."
+    ],
+    "use_cases": [
+      "Default linter for any JavaScript/TypeScript project.",
+      "Enforce code conventions across team.",
+      "Detect bugs and common security issues.",
+      "Format and clean code automatically.",
+      "Integrate into CI/CD for quality gates."
+    ]
+  }
+}

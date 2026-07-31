@@ -1,0 +1,95 @@
+{
+  "slug": "go",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Go — site officiel", "url": "https://go.dev" },
+    { "label": "The Future of Golang 2026", "url": "https://www.ksolves.com/blog/golang/trends-shaping-the-next-generation" }
+  ],
+  "facts": {
+    "what": "Langage de programmation open-source créé par Google, conçu pour la scalabilité et la simplicité. Excellente concurrence native (goroutines), compilation rapide vers binaire statique, et standard library robuste.",
+    "what_en": "Open-source programming language created by Google, designed for scalability and simplicity. Excellent native concurrency (goroutines), fast compilation to static binary, and robust standard library.",
+    "pricing_model": "Open-source gratuit",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open-source, sans restrictions commerciales." },
+    "plans": [],
+    "key_features": [
+      "Concurrence native via goroutines (presque gratuite)",
+      "Compilation rapide vers binaire statique unique",
+      "Garbage collection automatique",
+      "Standard library complète et bien conçue",
+      "Outils intégrés : test, benchmark, profiling, formatteur",
+      "Support pour cloud-native et microservices",
+      "Langage facile à apprendre (syntaxe épurée)",
+      "Version 1.26 (février 2026) avec cycle 6 mois"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des services cloud-native ou microservices.",
+        "Vous appréciez une syntaxe simple et un apprentissage rapide.",
+        "Vous avez besoin de haute concurrence avec faible overhead."
+      ],
+      "avoidIf": [
+        "Vous faites surtout de l'interface graphique desktop.",
+        "Vous préférez un langage plus expressif (Ruby, Python).",
+        "Votre équipe refuse absolument la compilation statique."
+      ],
+      "threshold": "Go s'impose pour infrastructure cloud et backend scalable ; pour frontend web ou desktop, un langage plus spécialisé est adapté."
+    },
+    "pros": [
+      "Compilation rapide et production de binaires statiques uniques.",
+      "Goroutines ultra-performantes pour la concurrence.",
+      "Langage simple avec peu de boilerplate.",
+      "Standard library complète et cross-platform robuste.",
+      "Largement utilisé dans Kubernetes, Docker, Terraform."
+    ],
+    "cons": [
+      "Pas de GUI native élégante (possibilité mais complexe).",
+      "Moins expressif que Python ou Ruby.",
+      "Écosystème package fragmenté vs Rust ou C++.",
+      "Courbe d'apprentissage pour concurrence avancée."
+    ],
+    "use_cases": [
+      "Développer un serveur web haute performance.",
+      "Écrire un outil CLI performant et portable.",
+      "Construire infrastructure cloud-native et orchestration.",
+      "Implémenter des workers concurrents."
+    ],
+    "relevant_for": ["Ingénieurs backend", "DevOps / SRE", "Développeurs cloud-native"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build cloud-native services or microservices.",
+        "You appreciate simple syntax and fast learning curve.",
+        "You need high concurrency with minimal overhead."
+      ],
+      "avoidIf": [
+        "You build primarily desktop GUI applications.",
+        "You prefer more expressive languages (Ruby, Python).",
+        "Your team refuses static binary compilation."
+      ],
+      "threshold": "Go excels for cloud infrastructure and scalable backend; for web frontend or desktop, a more specialized language is better suited."
+    },
+    "pros": [
+      "Fast compilation and single static binary production.",
+      "Ultra-performant goroutines for concurrency.",
+      "Simple language with minimal boilerplate.",
+      "Complete standard library and robust cross-platform.",
+      "Widely used in Kubernetes, Docker, Terraform."
+    ],
+    "cons": [
+      "No native elegant GUI (possible but complex).",
+      "Less expressive than Python or Ruby.",
+      "Fragmented package ecosystem vs Rust or C++.",
+      "Learning curve for advanced concurrency."
+    ],
+    "use_cases": [
+      "Develop high-performance web server.",
+      "Write performant and portable CLI tool.",
+      "Build cloud-native infrastructure and orchestration.",
+      "Implement concurrent workers."
+    ]
+  }
+}

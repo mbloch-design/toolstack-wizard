@@ -1,0 +1,96 @@
+{
+  "slug": "celery",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Celery — Distributed Task Queue (documentation officielle)", "url": "https://docs.celeryq.dev" }
+  ],
+  "facts": {
+    "what": "Librairie Python open source pour gérer des queues de tâches distribuées. Permet le traitement asynchrone et le scheduling de tâches via RabbitMQ, Redis ou autres brokers. Utilisée par Instagram, Mozilla et Robinhood.",
+    "what_en": "Open-source Python library for managing distributed task queues. Handles asynchronous and scheduled task processing via RabbitMQ, Redis, or other brokers. Used by Instagram, Mozilla, and Robinhood.",
+    "pricing_model": "Entièrement gratuit, licence BSD. Les coûts réels proviennent de l'infrastructure (Redis, RabbitMQ, serveurs workers).",
+    "free_tier": { "exists": true, "detail": "Licence BSD complète, sans limitations" },
+    "plans": [
+      { "name": "Open Source (BSD)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Support multi-broker (RabbitMQ, Redis, AWS SQS, Kafka)",
+      "Multi-worker modes (prefork, threads, eventlet, gevent)",
+      "Task scheduling et retries automatiques",
+      "Worker communication asynchrone via messages",
+      "Flower monitoring web UI (open source tiers)",
+      "Support multi-langage (protocol Celery dans Node, PHP, Go, Rust)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur Python travers des tâches asynchrones.",
+        "Vous cherchez une solution open source battle-tested en production.",
+        "Vous avez une équipe tech capable de maintenir l'infrastructure."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution complètement managée (pas d'ops).",
+        "Vous avez peu de connaissances en infrastructure distribuée.",
+        "Vous cherchez une UI prête à l'emploi pour du monitoring."
+      ],
+      "threshold": "Celery s'impose pour les backends Python complexes ; pour du managed ou du no-ops, des alternatives cloud (Inngest, Trigger.dev) conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source (BSD).",
+      "Prouvé en production (Instagram, Mozilla, Robinhood).",
+      "Flexible : choisir broker et worker modes.",
+      "Vaste écosystème (Flower, plugins, outils monitoring).",
+      "Scheduling, retries, dead-letter queues natifs."
+    ],
+    "cons": [
+      "Courbe d'apprentissage raide.",
+      "Nécessite infrastructure broker (Redis, RabbitMQ).",
+      "Ops à gérer (déploiement, monitoring, scaling workers).",
+      "Pas d'UI native (Flower c'est tiers).",
+      "Debugging distribué peut être complexe."
+    ],
+    "use_cases": [
+      "Traiter des photos/vidéos en background après upload.",
+      "Envoyer des emails de masse asynchrones.",
+      "Orchestrer des workflows complexes multi-services.",
+      "Scheduler des tâches récurrentes ou ponctuelles."
+    ],
+    "relevant_for": ["Développeurs Python", "Équipes avec DevOps", "Startups/scale-ups backend"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a Python developer handling asynchronous tasks.",
+        "You want a battle-tested open-source solution in production.",
+        "You have a technical team capable of maintaining infrastructure."
+      ],
+      "avoidIf": [
+        "You want a fully managed solution (no ops).",
+        "You have little knowledge of distributed infrastructure.",
+        "You're looking for a ready-made monitoring UI."
+      ],
+      "threshold": "Celery makes sense for complex Python backends; for managed or no-ops, cloud alternatives (Inngest, Trigger.dev) fit better."
+    },
+    "pros": [
+      "Completely free and open source (BSD).",
+      "Battle-tested in production (Instagram, Mozilla, Robinhood).",
+      "Flexible: choose broker and worker modes.",
+      "Rich ecosystem (Flower, plugins, monitoring tools).",
+      "Scheduling, retries, dead-letter queues native."
+    ],
+    "cons": [
+      "Steep learning curve.",
+      "Requires broker infrastructure (Redis, RabbitMQ).",
+      "Ops to manage (deployment, monitoring, scaling workers).",
+      "No native UI (Flower is third-party).",
+      "Distributed debugging can be complex."
+    ],
+    "use_cases": [
+      "Process photos/videos in background after upload.",
+      "Send bulk emails asynchronously.",
+      "Orchestrate complex multi-service workflows.",
+      "Schedule recurring or one-off tasks."
+    ]
+  }
+}

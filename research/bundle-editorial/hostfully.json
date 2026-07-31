@@ -1,0 +1,100 @@
+{
+  "slug": "hostfully",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hostfully — site officiel", "url": "https://hostfully.com" },
+    { "label": "Hostfully Pricing 2026", "url": "https://www.hostfully.com/pricing/property-management-software/" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion de propriétés (PMS) pour locations de vacances. Synchronise calendrier et réservations sur 60+ OTA (Airbnb, Booking, VRBO), centralise messagerie, et automatise tâches operationnelles.",
+    "what_en": "Property management software (PMS) for vacation rentals. Syncs calendar and bookings across 60+ OTAs (Airbnb, Booking, VRBO), centralizes messaging, and automates operational tasks.",
+    "pricing_model": "Abonnement par propriété (par mois ou annuel). Frais de plateforme additionnels.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Minimum : Growth 15 $/propriété/mois. Pas d'essai gratuit, mais démo gratuite disponible." },
+    "plans": [
+      { "name": "Growth", "price": "15 $/propriété/mois + platform fee (1-50 listings)" },
+      { "name": "Pro", "price": "25 $/propriété/mois + platform fee (1-199 listings)" },
+      { "name": "Enterprise", "price": "Custom pricing (200+ listings)"
+      }
+    ],
+    "key_features": [
+      "Channel Manager (sync 60+ OTA)",
+      "Central Calendar (gestion centralisée réservations)",
+      "Direct Booking Site builder",
+      "Unified Inbox avec InboxAI (messagerie guests)",
+      "Mobile app propriétaire",
+      "Multi-unit Management et Owner portal",
+      "Payment Processing (PayPal, Stripe, Vacation Rent)",
+      "Automation rules et Booking Pipeline",
+      "Screen & Protect (couverture dégâts, assurance)",
+      "Digital Guidebooks (premier gratuit)",
+      "Hostfully Devices (smart home integration)",
+      "Premier/Elite partner status Airbnb, Vrbo, Booking"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs propriétés vacances sur OTA.",
+        "Vous voulez éviter double-saisie (OTA sync).",
+        "Vous recherchez automation de tâches repetitives."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'une seule propriété (overhead coût).",
+        "Vous gérez uniquement votre site (pas d'OTA).",
+        "Votre budget de PMS est très serré."
+      ],
+      "threshold": "Hostfully s'impose pour gestionnaires multi-propriétés sur OTA ; pour une seule propriété ou gestion très simple, alternative plus légère suffit."
+    },
+    "pros": [
+      "Sync automatique 60+ OTA (élimine double-saisie).",
+      "IA pour messagerie guests (réponses proposées).",
+      "Portal propriétaire pour multi-propriétés.",
+      "Assurance dégâts (Screen & Protect) intégrée."
+    ],
+    "cons": [
+      "Pricing par propriété peut devenir cher (scaling).",
+      "Pas d'essai gratuit (démo seulement).",
+      "Interface peut être complexe pour débutants.",
+      "Frais additionnels via payment processing."
+    ],
+    "use_cases": [
+      "Synchroniser un portefeuille de 10+ propriétés sur OTA.",
+      "Centraliser messagerie guests sur une plateforme.",
+      "Automatiser check-in/check-out et communications."
+    ],
+    "relevant_for": ["Gestionnaires de locations vacances", "Propriétaires multi-unités", "Airbnb property managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple vacation rental properties on OTAs.",
+        "You want to avoid duplicate entry (OTA sync).",
+        "You seek automation of repetitive tasks."
+      ],
+      "avoidIf": [
+        "You have only one property (cost overhead).",
+        "You manage only your website (no OTAs).",
+        "Your PMS budget is very tight."
+      ],
+      "threshold": "Hostfully suits multi-property managers on OTAs; for single property or simple management, lighter alternative suffices."
+    },
+    "pros": [
+      "Automatic sync across 60+ OTAs (eliminates double-entry).",
+      "AI for guest messaging (suggested responses).",
+      "Owner portal for multi-property management.",
+      "Damage insurance (Screen & Protect) integrated."
+    ],
+    "cons": [
+      "Per-property pricing can become expensive (scaling).",
+      "No free trial (demo only).",
+      "Interface may be complex for beginners.",
+      "Additional fees via payment processing."
+    ],
+    "use_cases": [
+      "Sync a portfolio of 10+ properties across OTAs.",
+      "Centralize guest messaging on one platform.",
+      "Automate check-in/check-out and communications."
+    ]
+  }
+}

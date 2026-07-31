@@ -1,0 +1,109 @@
+{
+  "slug": "fly-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Fly.io Pricing (site officiel)", "url": "https://fly.io/docs/about/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de déploiement et d'hosting pour applications (Docker, Node.js, Python, etc.) avec gestion d'infrastructure simplifiée. Permet de déployer une application complète en minutes, avec scaling automatique, bases de données gérées et réseau global.",
+    "what_en": "Deployment and hosting platform for applications (Docker, Node.js, Python, etc.) with simplified infrastructure management. Deploy full applications in minutes with auto-scaling, managed databases, and global network.",
+    "pricing_model": "Pay-as-you-go basé sur l'utilisation des ressources",
+    "free_tier": { "exists": true, "detail": "Trial gratuit limité à 2 heures de VM ou 7 jours après création du compte, sans carte de crédit" },
+    "plans": [
+      { "name": "Trial", "price": "Gratuit (2h de VM ou 7 jours max)" },
+      { "name": "Shared CPU (started)", "price": "Montants sur la page officielle (à partir de ~2-89 $/mois selon région/CPU)" },
+      { "name": "Performance CPU (started)", "price": "Montants sur la page officielle (à partir de ~31-1577 $/mois selon région/performance)" },
+      { "name": "Machine Reservations", "price": "Montants sur la page officielle (36-3600 $/an pour Shared, crédits 5-500 $/mois)" }
+    ],
+    "key_features": [
+      "Déploiement d'applications Docker et multiples langages",
+      "Scaling automatique",
+      "Managed Postgres et Fly Volumes",
+      "Réseau global avec edge computing",
+      "SSL/HTTPS automatique",
+      "Monitoring et logs intégrés",
+      "IPv4 dédié et Static Egress IPs",
+      "Support premium optionnel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application backend ou full-stack moderne.",
+        "Vous voulez éviter la complexité des services cloud (AWS, GCP).",
+        "Vous avez besoin de déployer rapidement et facilement.",
+        "Vous préférez payer pour ce que vous utilisez réellement."
+      ],
+      "avoidIf": [
+        "Vous avez un très gros volume de trafic (vérifiez les coûts d'egress).",
+        "Vous avez besoin de services cloud très spécialisés (ML, BigData, etc.).",
+        "Vous voulez une solution sans code.",
+        "Vous préférez une architecture bare-metal."
+      ],
+      "threshold": "Fly.io convient aux développeurs et startups déployant des applications modernes rapidement ; pour des besoins cloud très complexes, AWS/GCP offrent plus de services."
+    },
+    "pros": [
+      "Déploiement extrêmement rapide et simple.",
+      "Pay-as-you-go sans engagements mensuels.",
+      "Scaling automatique intégré.",
+      "Bases de données gérées incluses.",
+      "Excellent support communautaire.",
+      "Réseau global inclus."
+    ],
+    "cons": [
+      "Coûts d'egress réseau peuvent être élevés pour gros volume.",
+      "Trial très court (2h ou 7 jours).",
+      "Moins d'options de customization qu'AWS/GCP.",
+      "Support premium facturé en supplément.",
+      "Petite équipe, moins de services que les hyperscalers."
+    ],
+    "use_cases": [
+      "Déployer une API Node.js ou Python rapidement.",
+      "Héberger un site statique ou application web.",
+      "Exécuter des jobs ou background tasks.",
+      "Héberger une base de données Postgres gérée.",
+      "Déployer une application full-stack en quelques minutes."
+    ],
+    "relevant_for": ["Développeurs individuels", "Startups", "Agences de développement", "Équipes DevOps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a modern backend or full-stack application.",
+        "You want to avoid cloud service complexity (AWS, GCP).",
+        "You need fast and easy deployment.",
+        "You prefer paying for what you actually use."
+      ],
+      "avoidIf": [
+        "You have very high traffic (check egress costs).",
+        "You need highly specialized cloud services (ML, BigData, etc.).",
+        "You want a no-code solution.",
+        "You prefer bare-metal infrastructure."
+      ],
+      "threshold": "Fly.io suits developers and startups deploying modern apps quickly; for complex cloud needs, AWS/GCP offer more services."
+    },
+    "pros": [
+      "Extremely fast and simple deployment.",
+      "Pay-as-you-go without monthly commitments.",
+      "Auto-scaling built in.",
+      "Managed databases included.",
+      "Excellent community support.",
+      "Global network included."
+    ],
+    "cons": [
+      "Network egress costs can be high for large volume.",
+      "Trial very short (2h or 7 days).",
+      "Fewer customization options than AWS/GCP.",
+      "Premium support billed as a costly add-on.",
+      "Small team, fewer services than hyperscalers."
+    ],
+    "use_cases": [
+      "Deploy a Node.js or Python API quickly.",
+      "Host a static site or web application.",
+      "Run jobs or background tasks.",
+      "Host a managed Postgres database.",
+      "Deploy a full-stack app in minutes."
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "gcp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Cloud Pricing (site officiel)", "url": "https://cloud.google.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud computing complète de Google offrant services de calcul, stockage, bases de données, machine learning, big data et bien d'autres. Utilisée par des startups à de grandes entreprises pour infrastructure scalable et flexible.",
+    "what_en": "Google's complete cloud computing platform offering compute, storage, databases, machine learning, big data, and more. Used by startups and enterprises for scalable and flexible infrastructure.",
+    "pricing_model": "Pay-as-you-go avec free tier permanent et essai gratuit de 90 jours",
+    "free_tier": { "exists": true, "detail": "Always Free tier : services permanents gratuits (Cloud Run 2M requests/mois, BigQuery 1 TiB/mois, e2-micro VM 24/7, etc.). Free Trial : 300 $ crédits pendant 90 jours (carte requise, pas d'auto-facturation)." },
+    "plans": [
+      { "name": "Free Tier (Always)", "price": "0 € (limites permanentes sur 30+ services)" },
+      { "name": "Free Trial", "price": "300 $ crédits (90 jours, carte requise)" },
+      { "name": "On-Demand", "price": "Montants sur la page officielle (e.g., e2-micro à ~6.12 $/mois, e2-standard-2 à ~48.92 $/mois)" },
+      { "name": "Committed Use Discounts", "price": "Jusqu'à 70% de réduction sur 1-3 ans" }
+    ],
+    "key_features": [
+      "Compute Engine : machines virtuelles",
+      "Cloud Run : déploiement serverless de conteneurs",
+      "Cloud App Engine : plateforme gérée pour apps",
+      "BigQuery : analytics et data warehouse",
+      "Cloud Firestore : base de données NoSQL",
+      "Cloud Storage : stockage objet illimité",
+      "Cloud SQL : bases de données gérées",
+      "AI & ML services : vision, NLP, recommandations",
+      "Sustained Use Discounts (20-30% automatiques)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application d'entreprise scalable.",
+        "Vous avez besoin de ML ou d'analytics avancés.",
+        "Vous voulez utiliser des services Google (Maps, Analytics, Ads).",
+        "Vous avez un volume moyen à élevé de trafic."
+      ],
+      "avoidIf": [
+        "Vous construisez un MVP très petit avec budget serré (utilisez Firebase).",
+        "Vous avez des besoins très simples (une VM basique suffit).",
+        "Vous préférez une interface très simple et no-code.",
+        "Vous avez peur du lock-in propriétaire."
+      ],
+      "threshold": "GCP convient aux équipes construisant des applications cloud complexes avec data/ML ; pour un simple MVP ou app legère, Firebase ou Fly.io peuvent être plus pertinents."
+    },
+    "pros": [
+      "Services cloud très variés et puissants.",
+      "Free tier permanent généreux (Always Free).",
+      "Crédit d'essai gratuit pour démarrer.",
+      "Excellente intégration avec écosystème Google.",
+      "Fortes remises avec les engagements d'usage.",
+      "Machine learning et big data de classe mondiale.",
+      "Scaling automatique intégré.",
+      "Très fiable et performant."
+    ],
+    "cons": [
+      "Courbe d'apprentissage raide (nombreux services).",
+      "Coûts complexes à estimer (fréquemment élevés).",
+      "Interface/dashboard peut être écrasante.",
+      "Lock-in propriétaire.",
+      "Support premium cher.",
+      "Moins simple que des alternatives (Heroku, Fly.io pour apps simples)."
+    ],
+    "use_cases": [
+      "Déployer une application d'entreprise à grande échelle.",
+      "Construire un pipeline big data et analytics.",
+      "Utiliser ML (vision, NLP) pour une application.",
+      "Héberger une base de données gérée (Cloud SQL, Firestore).",
+      "Déployer des conteneurs Docker avec Cloud Run.",
+      "Intégrer Google Analytics et Google Ads."
+    ],
+    "relevant_for": ["Entreprises", "Startups avec traction", "Équipes data/ML", "Agences Google"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a scalable enterprise application.",
+        "You need ML or advanced analytics.",
+        "You want to use Google services (Maps, Analytics, Ads).",
+        "You have medium to high traffic volume."
+      ],
+      "avoidIf": [
+        "You're building a very small MVP on tight budget (use Firebase).",
+        "You have very simple needs (a basic VM is enough).",
+        "You prefer a very simple no-code interface.",
+        "You fear proprietary lock-in."
+      ],
+      "threshold": "GCP suits teams building complex cloud applications with data/ML; for simple MVPs or lightweight apps, Firebase or Fly.io may be more appropriate."
+    },
+    "pros": [
+      "Vast and powerful cloud services.",
+      "Generous permanent free tier (Always Free).",
+      "Free trial credit to get started.",
+      "Excellent integration with Google ecosystem.",
+      "Steep discounts with committed-use contracts.",
+      "World-class machine learning and big data.",
+      "Auto-scaling built-in.",
+      "Very reliable and performant."
+    ],
+    "cons": [
+      "Steep learning curve (many services).",
+      "Complex cost estimation (often high).",
+      "Interface/dashboard can be overwhelming.",
+      "Proprietary lock-in.",
+      "Premium support expensive.",
+      "Less simple than alternatives (Heroku, Fly.io for simple apps)."
+    ],
+    "use_cases": [
+      "Deploy an enterprise application at scale.",
+      "Build a big data and analytics pipeline.",
+      "Use ML (vision, NLP) in an application.",
+      "Host a managed database (Cloud SQL, Firestore).",
+      "Deploy Docker containers with Cloud Run.",
+      "Integrate Google Analytics and Google Ads."
+    ]
+  }
+}

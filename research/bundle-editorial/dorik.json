@@ -1,0 +1,97 @@
+{
+  "slug": "dorik",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dorik Pricing (site officiel)", "url": "https://dorik.com/pricing" }
+  ],
+  "facts": {
+    "what": "Créateur de sites web no-code avec IA intégrée, CMS, blogging et formulaires, permettant de concevoir et publier des sites modernes sans code ni maintenance serveur.",
+    "what_en": "No-code AI website builder with built-in CMS, blogging, and forms, enabling design and publishing of modern websites without coding or server maintenance.",
+    "pricing_model": "Freemium avec plan gratuit complet, plans payants progressifs pour domaines personnalisés et collaborateurs, option lifetime pour propriétaires de sites.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : sites illimités, pages et articles illimités, 1 domaine personnalisé, storage et bandwidth illimités, branding 'Built with Dorik'" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Personal", "price": "$29/mois (mensuel) ou $10.38/mois (biennal)" },
+      { "name": "Business", "price": "$59/mois (mensuel) ou $20.75/mois (biennal)" },
+      { "name": "Lifetime Personal", "price": "$249 (paiement unique)" },
+      { "name": "Lifetime Business", "price": "$599 (paiement unique)" }
+    ],
+    "key_features": [
+      "Éditeur drag-and-drop sans code",
+      "Générateur de sites par IA",
+      "CMS et blogging intégrés",
+      "Formulaires et collecte de données",
+      "Domaines personnalisés illimités et SSL gratuit"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un site moderne sans code et sans maintenance serveur.",
+        "Vous cherchez IA pour générer le design rapidement.",
+        "Vous avez besoin de CMS et blogging intégrés et flexibles."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de fonctionnalités eCommerce avancées.",
+        "Vous cherchez performance ultra-optimisée pour très gros trafic.",
+        "Vous préférez maîtriser complètement le code source."
+      ],
+      "threshold": "Dorik excelle pour freelances et petites entreprises cherchant un site professionnel sans gestion technique ; moins indiqué pour eCommerce compliqué ou applications exigeantes."
+    },
+    "pros": [
+      "Plan gratuit complet et sans limites (branding seul).",
+      "IA pour génération rapide de designs et contenu.",
+      "Éditeur intuitif accessible aux non-développeurs.",
+      "CMS et blogging natifs, sans plugins externes.",
+      "Options lifetime pour rentabilité long-terme."
+    ],
+    "cons": [
+      "Branding 'Built with Dorik' sur plan gratuit.",
+      "Moins de flexibilité que code personnalisé.",
+      "eCommerce basique, pas idéal pour boutiques complexes.",
+      "Support limité en français."
+    ],
+    "use_cases": [
+      "Portfolio ou site vitrine pour freelance.",
+      "Blog ou publication éditoriale sans maintenance.",
+      "Petit eCommerce avec produits simples.",
+      "Landing page pour campagne marketing."
+    ],
+    "relevant_for": ["Freelances", "PME", "Créatifs sans code", "Petits éditeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a modern website without coding or server maintenance.",
+        "You want AI to generate designs quickly.",
+        "You need integrated, flexible CMS and blogging."
+      ],
+      "avoidIf": [
+        "You need advanced eCommerce features.",
+        "You target ultra-high-performance at scale.",
+        "You prefer full control over source code."
+      ],
+      "threshold": "Dorik excels for freelancers and small businesses seeking a professional site without technical overhead; less suited for complex eCommerce or demanding apps."
+    },
+    "pros": [
+      "Complete free plan, no usage limits (branding only).",
+      "AI for fast design and content generation.",
+      "Intuitive editor accessible to non-developers.",
+      "Native CMS and blogging, no plugins required.",
+      "Lifetime options for long-term ROI."
+    ],
+    "cons": [
+      "'Built with Dorik' branding on free tier.",
+      "Less flexible than custom code.",
+      "Basic eCommerce, not ideal for complex stores.",
+      "Limited English support."
+    ],
+    "use_cases": [
+      "Freelancer portfolio or business website.",
+      "Blog or publication without maintenance.",
+      "Small eCommerce with simple products.",
+      "Landing page for marketing campaign."
+    ]
+  }
+}

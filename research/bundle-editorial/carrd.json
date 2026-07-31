@@ -1,0 +1,99 @@
+{
+  "slug": "carrd",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Carrd — Micro Landing Page Builder (site officiel)", "url": "https://carrd.co" }
+  ],
+  "facts": {
+    "what": "Constructeur de pages de destination ultra-minimaliste. Création rapide de landing pages, micro-portfolios et sites d'une seule page, sans code. Cible les créateurs solo, freelances et micro-entreprises.",
+    "what_en": "Ultra-minimal landing page builder. Fast creation of single-page websites, micro-portfolios, and landing pages with no code. Targets solo creators, freelancers, and micro-businesses.",
+    "pricing_model": "Freemium : accès gratuit limité à 3 sites (sans domaine custom), plans payants annuels uniquement.",
+    "free_tier": { "exists": true, "detail": "3 sites, tous les templates, branding Carrd en pied" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (3 sites, branding Carrd)" },
+      { "name": "Pro Lite", "price": "$9 / année" },
+      { "name": "Pro Standard", "price": "$19 / année (domaine custom, formulaires, analytics)" },
+      { "name": "Pro Plus", "price": "$49 / année (toutes les fonctionnalités premium)" }
+    ],
+    "key_features": [
+      "Template library ou blank page",
+      "Responsive design tous appareils",
+      "Custom domain & SSL",
+      "Contact forms avec intégrations (Mailchimp, Stripe, PayPal)",
+      "Google Analytics, Plausible, Matomo integration",
+      "Custom code embed et third-party widgets"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous lancez une landing page ou micro-site rapidement.",
+        "Vous cherchez la solution la moins chère du marché.",
+        "Vous êtes freelance ou créateur solo sans besoins complexes."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un site multi-pages complexe.",
+        "Vous voulez du branding visuel avoué sans formulaires simples.",
+        "Vous exigez des templates premium ou design de haut niveau."
+      ],
+      "threshold": "Carrd excelle pour lancer une page simple et convertir au tarif imbattable ; pour un site multi-pages riche ou du design sur mesure, une autre solution convient."
+    },
+    "pros": [
+      "Tarif imbattable (19 euros/an pour le plan complet).",
+      "Création ultra-rapide (moins d'une heure).",
+      "Libre choix : templates fournis ou page vierge.",
+      "Intégrations natives (Stripe, Mailchimp, etc).",
+      "Responsive et mobile-friendly par défaut."
+    ],
+    "cons": [
+      "Limité à une seule page (pas de multi-pages).",
+      "Templates design basique.",
+      "Pas de builder visuel avancé (WYSIWYG).",
+      "Branding Carrd sur la version gratuite.",
+      "Facturation uniquement annuelle (pas mensuel)."
+    ],
+    "use_cases": [
+      "Créer une page à mon nom (portefeuille freelance).",
+      "Lancer une landing page pour tester une idée.",
+      "Publier un CV ou mini-portfolio en ligne.",
+      "Créer une page de capture email ou lead magnet."
+    ],
+    "relevant_for": ["Freelances", "Créateurs solo", "Entrepreneurs MVP", "Petits business en ligne"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're launching a landing page or micro-site quickly.",
+        "You want the cheapest solution on the market.",
+        "You're a freelancer or solo creator with no complex needs."
+      ],
+      "avoidIf": [
+        "You need a multi-page complex website.",
+        "You want premium template designs or custom design work.",
+        "You require advanced site architecture or dynamic content."
+      ],
+      "threshold": "Carrd shines for quick, cheap single-page launches; for multi-page or design-heavy sites, another builder fits better."
+    },
+    "pros": [
+      "Unbeatable pricing for a full-featured plan.",
+      "Ultra-fast creation (under one hour).",
+      "Choice: provided templates or blank canvas.",
+      "Native integrations (Stripe, Mailchimp, etc).",
+      "Responsive and mobile-friendly by default."
+    ],
+    "cons": [
+      "Limited to single page (no multi-page sites).",
+      "Basic template designs.",
+      "No advanced visual WYSIWYG builder.",
+      "Carrd branding on free version.",
+      "Annual billing only (no monthly option)."
+    ],
+    "use_cases": [
+      "Create a personal portfolio or freelance landing page.",
+      "Launch a landing page to test an idea.",
+      "Publish an online resume or mini-portfolio.",
+      "Build an email capture or lead magnet page."
+    ]
+  }
+}

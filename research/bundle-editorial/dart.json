@@ -1,0 +1,100 @@
+{
+  "slug": "dart",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dart Programming Language (site officiel)", "url": "https://dart.dev" }
+  ],
+  "facts": {
+    "what": "Langage de programmation open source créé par Google. Compile en code natif (mobile, desktop, serveur) ou JavaScript/WebAssembly (web). Connu pour développer des apps Flutter (iOS, Android, web).",
+    "what_en": "Open-source programming language created by Google. Compiles to native code (mobile, desktop, server) or JavaScript/WebAssembly (web). Known for developing Flutter apps (iOS, Android, web).",
+    "pricing_model": "Entièrement gratuit et open source. Aucun coûts de licence ou restriction.",
+    "free_tier": { "exists": true, "detail": "Langage complet gratuit, licence open source, toolchain libre" },
+    "plans": [
+      { "name": "Dart (open source)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Syntax C-like avec type système fort et null safety",
+      "Compilation native pour mobile/desktop/serveur",
+      "Transpilation vers JavaScript/WebAssembly (web)",
+      "Hot reload pour développement itératif rapide",
+      "Pattern matching et async-await modern",
+      "Standard library riche (dart:core, dart:async, etc)",
+      "DevTools natif pour debugging et profiling",
+      "Interop avec C (FFI) et JavaScript"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des apps Flutter (Dart est requuis).",
+        "Vous cherchez un langage modern, type-safe.",
+        "Vous voulez une seule langue pour web/mobile/serveur."
+      ],
+      "avoidIf": [
+        "Vous ne developpez pas d'apps Flutter.",
+        "Vous préférez JavaScript/TypeScript ou Python.",
+        "Vous cherchez un large écosystème de librairies (vs Dart plus niches)."
+      ],
+      "threshold": "Dart s'impose pour Flutter ; pour du web pur ou backend, JavaScript/Python/Go conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Requis pour Flutter (éco complet Dart+Flutter).",
+      "Type-safe et null-safe par défaut.",
+      "Hot reload (développement ultra-rapide).",
+      "Single language : mobile + web + serveur.",
+      "Performance native (compile, pas interpreted)."
+    ],
+    "cons": [
+      "Moins populaire que JavaScript/Python (moins de libs).",
+      "Courbe apprentissage pour non-C developers.",
+      "Écosystème plus petit (pub.dev vs npm).",
+      "Surtout connu pour Flutter (peu de backend servers)."
+    ],
+    "use_cases": [
+      "Développer une app Flutter iOS/Android complète.",
+      "Bâtir une web app Dart (AngularDart, autre).",
+      "Créer des CLI tools ou command-line apps.",
+      "Écrire du backend Dart (serveurs, APIs).",
+      "Partager code entre web et mobile (Dart everywhere)."
+    ],
+    "relevant_for": ["Développeurs Flutter", "Mobile engineers", "Full-stack Dart developers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop Flutter apps (Dart is required).",
+        "You want a modern, type-safe language.",
+        "You want one language for web/mobile/server."
+      ],
+      "avoidIf": [
+        "You don't develop Flutter apps.",
+        "You prefer JavaScript/TypeScript or Python.",
+        "You need a large ecosystem of libraries (Dart is more niche)."
+      ],
+      "threshold": "Dart makes sense for Flutter; for pure web or backend, JavaScript/Python/Go fit better."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Required for Flutter (complete Dart+Flutter ecosystem).",
+      "Type-safe and null-safe by default.",
+      "Hot reload (ultra-fast development).",
+      "Single language: mobile + web + server.",
+      "Native performance (compiles, not interpreted)."
+    ],
+    "cons": [
+      "Less popular than JavaScript/Python (fewer libraries).",
+      "Learning curve for non-C developers.",
+      "Smaller ecosystem (pub.dev vs npm).",
+      "Mostly known for Flutter (few backend servers)."
+    ],
+    "use_cases": [
+      "Develop a complete Flutter iOS/Android app.",
+      "Build a Dart web app (AngularDart, other).",
+      "Create CLI tools or command-line apps.",
+      "Write Dart backend (servers, APIs).",
+      "Share code between web and mobile (Dart everywhere)."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "bullmq",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BullMQ — Message Queue Library (site officiel)", "url": "https://bullmq.io" }
+  ],
+  "facts": {
+    "what": "Librairie de queue de messages open source pour Node.js, Python, Rust, Elixir et Bun. Permet de traiter des jobs asynchrones distribués avec priorités, retry automatique et scheduling par cron.",
+    "what_en": "Open-source message queue library for Node.js, Python, Rust, Elixir, and Bun. Handles asynchronous distributed job processing with priorities, automatic retries, and cron scheduling.",
+    "pricing_model": "Libre (MIT licence), sans limitations artificielles. Option Pro payante : $1,395/année par déploiement.",
+    "free_tier": { "exists": true, "detail": "MIT licencié complet sans limitations sur les workers ou la concurrence" },
+    "plans": [
+      { "name": "Open Source (MIT)", "price": "Gratuit, sans limitations" },
+      { "name": "BullMQ Pro", "price": "$1,395 / année par déploiement" }
+    ],
+    "key_features": [
+      "Processing 250,000+ jobs/second",
+      "Job priorities et scheduling par cron",
+      "Automatic retry avec exponential backoff",
+      "Job deduplication et rate limiting",
+      "Parent-child job relationships (flows)",
+      "Support multi-langage (Node, Python, Rust, etc)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de traiter des jobs asynchrones distribués.",
+        "Vous voulez une solution open source sans frais de licence.",
+        "Vous utilisez Node.js, Python, Rust ou d'autres langages supportés."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution manage (pas d'infrastructure à maintenir).",
+        "Vous avez besoin d'UI visuelle pour le monitoring (alternative : Flower).",
+        "Vous préférez une solution sans setup Redis."
+      ],
+      "threshold": "BullMQ s'impose pour les queues distribués gratuits et performants ; pour du monitoring visuel ou du managed, une solution cloud convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source (MIT).",
+      "Performance exceptionnelle (250k+ jobs/sec).",
+      "Support multi-langage (Node, Python, Rust, etc).",
+      "Scheduling, retry automatique, job priorities.",
+      "Communauté large et bien maintenu."
+    ],
+    "cons": [
+      "Nécessite Redis pour fonctionner.",
+      "Pas d'UI de monitoring native (Flower tiers).",
+      "Option Pro coûteux pour du full support."
+    ],
+    "use_cases": [
+      "Traiter des photos/vidéos en arrière-plan après upload.",
+      "Envoyer des emails de masse ou notifications asynchrones.",
+      "Orchestrer des workflows complexes entre microservices.",
+      "Scheduler des tâches récurrentes (cron)."
+    ],
+    "relevant_for": ["Développeurs backends", "DevOps / SREs", "Équipes avec infrastructure Redis"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to process asynchronous distributed jobs.",
+        "You want a free, open-source solution without licensing fees.",
+        "You use Node.js, Python, Rust, or another supported language."
+      ],
+      "avoidIf": [
+        "You're looking for a fully managed solution (no infrastructure).",
+        "You need a visual monitoring UI out of the box.",
+        "You prefer a solution without Redis dependency."
+      ],
+      "threshold": "BullMQ makes sense for free, high-performance distributed queues; for managed solutions or visual monitoring, cloud alternatives fit better."
+    },
+    "pros": [
+      "Completely free and open source (MIT).",
+      "Exceptional performance (250k+ jobs/sec).",
+      "Multi-language support (Node, Python, Rust, etc).",
+      "Scheduling, automatic retries, job priorities.",
+      "Large community and well-maintained."
+    ],
+    "cons": [
+      "Requires Redis to function.",
+      "No native monitoring UI (Flower is third-party).",
+      "Pro option is expensive for full support."
+    ],
+    "use_cases": [
+      "Process photos/videos in background after upload.",
+      "Send bulk emails or push notifications asynchronously.",
+      "Orchestrate complex workflows between microservices.",
+      "Schedule recurring tasks (cron jobs)."
+    ]
+  }
+}

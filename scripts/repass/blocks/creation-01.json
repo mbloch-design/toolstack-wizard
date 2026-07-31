@@ -1,52 +1,7 @@
 [
   {
-    "slug": "3ds-max",
-    "name": "3ds Max",
-    "url": "https://www.autodesk.com/products/3ds-max/overview"
-  },
-  {
     "slug": "adcreative",
     "name": "AdCreative.ai",
     "url": "https://free-trial.adcreative.ai/bl7nxarn1exp"
-  },
-  {
-    "slug": "adcreative-ai",
-    "name": "Adcreative AI",
-    "url": "https://adcreativeai.com"
-  },
-  {
-    "slug": "anchor-spotify",
-    "name": "Spotify for Podcasters",
-    "url": "https://podcasters.spotify.com"
-  },
-  {
-    "slug": "artstation",
-    "name": "ArtStation",
-    "url": "https://www.artstation.com"
-  },
-  {
-    "slug": "ausha",
-    "name": "Ausha",
-    "url": "https://www.ausha.co"
-  },
-  {
-    "slug": "authoredup",
-    "name": "Authoredup",
-    "url": "https://authoredup.com"
-  },
-  {
-    "slug": "babylon-js",
-    "name": "Babylon.js",
-    "url": "https://www.babylonjs.com"
-  },
-  {
-    "slug": "beautiful-ai",
-    "name": "Beautiful.ai",
-    "url": "https://www.beautiful.ai"
-  },
-  {
-    "slug": "billo",
-    "name": "Billo",
-    "url": "https://billo.app"
   }
 ]

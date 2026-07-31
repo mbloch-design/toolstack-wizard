@@ -1,0 +1,94 @@
+{
+  "slug": "directus",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Directus Pricing (site officiel)", "url": "https://directus.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme headless CMS collaborative avec assistant IA intégré, RBAC avancé et support multi-cloud pour construire des backends flexibles sans code vendor lock-in.",
+    "what_en": "Collaborative headless CMS platform with built-in AI assistant, advanced RBAC, and multi-cloud support to build flexible backends without vendor lock-in.",
+    "pricing_model": "Freemium avec option Core gratuite pour petits projets, plans Team et Enterprise pour production. Option Open Innovation Grant pour organisations qualifiées.",
+    "free_tier": { "exists": true, "detail": "Core plan gratuit : 3 sièges utilisateur, 25 Collections, 5 Flows, support communautaire" },
+    "plans": [
+      { "name": "Core", "price": "Gratuit" },
+      { "name": "Team", "price": "$499/mois (annuel) ou $599/mois (mensuel)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" },
+      { "name": "Open Innovation Grant", "price": "Gratuit en auto-hébergé pour orgs < 50 emp. et < 5M$ CA" }
+    ],
+    "key_features": [
+      "Assistant IA intégré pour génération de contenu",
+      "RBAC avancé et contrôle d'accès granulaire",
+      "Support multi-cloud et auto-hébergement",
+      "API REST et GraphQL natives",
+      "Workflows et automatisations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un backend flexible sans verrouillage propriétaire.",
+        "Vous voulez intégrer l'IA dans votre gestion de contenu.",
+        "Vous cherchez une solution headless scalable avec RBAC avancé."
+      ],
+      "avoidIf": [
+        "Vous préférez une solution tout-en-un avec interface visuelle complète.",
+        "Vous avez un budget très limité pour la production.",
+        "Vous avez besoin de support ultra-réactif en français."
+      ],
+      "threshold": "Directus excelle pour les équipes techniques voulant un CMS flexible et contrôlé ; moins adapté pour les non-développeurs cherchant du point-and-click simple."
+    },
+    "pros": [
+      "Interface collaborative et assistant IA pour les équipes.",
+      "RBAC granulaire et sécurité avancée.",
+      "Absence de verrouillage propriétaire, donnéesportables.",
+      "Open Innovation Grant pour petites orgs.",
+      "APIs REST et GraphQL complètes et natives."
+    ],
+    "cons": [
+      "Courbe d'apprentissage plus prononcée que les CMSsimplifiés.",
+      "Plan Team au tarif élevé pour débuter en production.",
+      "Nécessite des connaissances techniques pour tirer pleinement parti de la plateforme."
+    ],
+    "use_cases": [
+      "Construire un backend headless pour application mobile/web.",
+      "Créer un CMS centralisé pour multicanal (web, app, headless).",
+      "Automatiser workflows de contenu avec IA et connexions.",
+      "Projet SaaS nécessitant RBAC et isolation multi-tenant."
+    ],
+    "relevant_for": ["Développeurs fullstack", "Équipes produit de startups", "Architectes backend", "Agences headless"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a flexible, vendor-lock-free backend.",
+        "You want to embed AI into content management workflows.",
+        "You're building a headless solution with team collaboration."
+      ],
+      "avoidIf": [
+        "You prefer an all-in-one, fully visual CMS.",
+        "You have very tight budget constraints for production.",
+        "You need instant English-speaking support."
+      ],
+      "threshold": "Directus shines for technical teams wanting a controlled, flexible CMS; less suitable for non-developers seeking simple point-and-click building."
+    },
+    "pros": [
+      "Collaborative interface with built-in AI assistant.",
+      "Granular RBAC and advanced security controls.",
+      "No vendor lock-in, data fully portable.",
+      "Open Innovation Grant for qualifying small organizations.",
+      "Complete native REST and GraphQL APIs."
+    ],
+    "cons": [
+      "Steeper learning curve than simplified CMSs.",
+      "Team plan pricing is high for production onboarding.",
+      "Requires technical knowledge to maximize value."
+    ],
+    "use_cases": [
+      "Build a headless backend for mobile or web apps.",
+      "Create a unified CMS for omnichannel delivery.",
+      "Automate content workflows with AI and integrations.",
+      "Multi-tenant SaaS needing advanced RBAC."
+    ]
+  }
+}

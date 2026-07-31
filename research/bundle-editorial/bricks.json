@@ -1,0 +1,95 @@
+{
+  "slug": "bricks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bricks Builder Pricing (site officiel)", "url": "https://bricksbuilder.io/pricing/" }
+  ],
+  "facts": {
+    "what": "Constructeur WordPress premium (page builder visuel) offrant Query Loop Builder, WooCommerce Builder, Popup Builder, conditions dynamiques et interactions, avec support des templates communautaires.",
+    "what_en": "Premium WordPress page builder offering Query Loop Builder, WooCommerce Builder, Popup Builder, dynamic conditions, and interactions, with community template support.",
+    "pricing_model": "Abonnement annuel par nombre de sites, ou achat unique (Lifetime). Tous les plans incluent les mêmes fonctionnalités.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit en ligne via try.bricksbuilder.io. Pas de version gratuite permanente ; achat annuel ou lifetime requis pour usage complet." },
+    "plans": [
+      { "name": "Starter", "price": "79 $/an pour 1 site" },
+      { "name": "Business", "price": "149 $/an pour 3 sites" },
+      { "name": "Agency", "price": "249 $/an pour sites illimités" },
+      { "name": "Ultimate Lifetime", "price": "599 $ (paiement unique) pour sites illimités à perpétuité" }
+    ],
+    "key_features": [
+      "Query Loop Builder pour requêtes dynamiques",
+      "WooCommerce Builder intégré",
+      "Popup Builder natif",
+      "Conditions et interactions dynamiques",
+      "Plus de 110 éléments préconçus",
+      "Support des templates communautaires"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des sites WordPress performants.",
+        "Vous avez besoin d'un builder avec WooCommerce natif.",
+        "Vous êtes une agence avec plusieurs sites."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution gratuite.",
+        "Vous construisez du contenu uniquement avec Gutenberg.",
+        "Vous n'avez qu'un budget très limité."
+      ],
+      "threshold": "Bricks excelle pour les agences WordPress avec besoins e-commerce ; pour blogs simples, les options gratuites suffisent."
+    },
+    "pros": [
+      "Performance optimale vs Elementor/Divi.",
+      "WooCommerce Builder natif et puissant.",
+      "Prix transparent et uniforme entre éditions.",
+      "Garantie satisfait ou remboursé 60j.",
+      "Support email et forums communautaires."
+    ],
+    "cons": [
+      "Abonnement annuel obligatoire (sauf Lifetime).",
+      "Prix unitaire élevé pour un site isolé.",
+      "Pas de version gratuite permanente.",
+      "Support commercial limité en standard."
+    ],
+    "use_cases": [
+      "Créer un site e-commerce WordPress.",
+      "Construire un portfolio avec galeries dynamiques.",
+      "Gérer plusieurs sites clients comme agence."
+    ],
+    "relevant_for": ["Agences WordPress", "Développeurs web", "Freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building performant WordPress sites.",
+        "You need a builder with native WooCommerce.",
+        "You're an agency managing multiple sites."
+      ],
+      "avoidIf": [
+        "You want a free solution.",
+        "You're building content-only with Gutenberg.",
+        "You have a very limited budget."
+      ],
+      "threshold": "Bricks excels for WordPress agencies with e-commerce needs; for simple blogs, free options suffice."
+    },
+    "pros": [
+      "Better performance than Elementor/Divi.",
+      "Powerful native WooCommerce Builder.",
+      "Transparent and uniform pricing across editions.",
+      "60-day satisfaction guarantee.",
+      "Email and community forum support."
+    ],
+    "cons": [
+      "Annual subscription required (except Lifetime).",
+      "High per-site cost for single site.",
+      "No permanent free version.",
+      "Limited commercial support by default."
+    ],
+    "use_cases": [
+      "Create a WordPress e-commerce site.",
+      "Build a portfolio with dynamic galleries.",
+      "Manage multiple client sites as an agency."
+    ]
+  }
+}

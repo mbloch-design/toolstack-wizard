@@ -1,0 +1,105 @@
+{
+  "slug": "cypress",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cypress — Testing Framework & Cloud (site officiel)", "url": "https://www.cypress.io/pricing" }
+  ],
+  "facts": {
+    "what": "Framework de test end-to-end moderne pour navigateur. Écrit des tests fluides avec real-time debugging visuel. Cypress Cloud optionnel pour parallélisation et CI/CD.",
+    "what_en": "Modern end-to-end testing framework for browsers. Write fluent tests with real-time visual debugging. Optional Cypress Cloud for parallelization and CI/CD.",
+    "pricing_model": "Freemium : Cypress App open source gratuit. Cypress Cloud avec tiers payants pour test parallelization.",
+    "free_tier": { "exists": true, "detail": "Cypress App open source, Cypress Cloud Starter (500 test results/mois, 30-day retention)" },
+    "plans": [
+      { "name": "Cypress App (open source)", "price": "Gratuit" },
+      { "name": "Cypress Cloud Starter", "price": "Gratuit (500 test results/mois)" },
+      { "name": "Cypress Cloud Team", "price": "$799 / année ou $67 / mois (120K test results/an)" },
+      { "name": "Cypress Cloud Business", "price": "$3,199 / année ou $267 / mois (120K results, features premium)" },
+      { "name": "Cypress Cloud Enterprise", "price": "Custom (unlimited, support dédié)"
+      }
+    ],
+    "key_features": [
+      "Test écrivain en JavaScript/TypeScript",
+      "Real-time browser execution et visual debugging",
+      "API testing intégré (non-juste UI)",
+      "AI-powered test generation (Studio)",
+      "Flake resistance (deterministic)",
+      "Test parallelization (Cloud)",
+      "Test Replay pour CI failures (Cloud)",
+      "6M+ weekly downloads, 50K GitHub stars"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez des applications web complexes.",
+        "Vous préférez un experience débutant-friendly.",
+        "Vous cherchez de la parallelization CI/CD easy."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin d'e2e tests.",
+        "Vous préférez Selenium ou Playwright (alternatives).",
+        "Vous cherchez uniquement du unit testing (Jest)."
+      ],
+      "threshold": "Cypress s'impose pour l'e2e modern et fluide ; pour du Selenium legacy ou unit tests, d'autres solutions conviennent."
+    },
+    "pros": [
+      "Open source et gratuit (Cypress App).",
+      "Developer experience exceptionnelle (6M+ downloads).",
+      "Debugging visuel real-time dans le browser.",
+      "Configuration simple (pas de Selenium complexity).",
+      "Cloud CI/CD bien intégré (parallelization).",
+      "AI test generation (Cypress Studio)."
+    ],
+    "cons": [
+      "Limité à Chrome/Electron (pas Firefox natif jusqu'à peu).",
+      "Cypress Cloud payant à scale.",
+      "Pas idéal pour mobile native (web only).",
+      "Flakiness possibile (malgré « flake resistance »)."
+    ],
+    "use_cases": [
+      "Tester une SPA Vue/React/Angular complète.",
+      "E2E testing d'un flux utilisateur critique.",
+      "Tester des API + UI dans un même test.",
+      "Paralléliser les tests en CI/CD (Cloud).",
+      "Générer des tests automatiquement (Studio)."
+    ],
+    "relevant_for": ["Frontend engineers", "QA engineers", "Fullstack developers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You test complex web applications.",
+        "You prefer a beginner-friendly experience.",
+        "You want easy CI/CD parallelization."
+      ],
+      "avoidIf": [
+        "You don't need end-to-end tests.",
+        "You prefer Selenium or Playwright (alternatives).",
+        "You're looking for only unit testing (Jest)."
+      ],
+      "threshold": "Cypress shines for modern, fluent end-to-end testing; for legacy Selenium or unit tests, alternatives fit better."
+    },
+    "pros": [
+      "Open source and free (Cypress App).",
+      "Exceptional developer experience (6M+ downloads).",
+      "Real-time visual debugging in browser.",
+      "Simple configuration (no Selenium complexity).",
+      "Well-integrated Cloud CI/CD (parallelization).",
+      "AI test generation (Cypress Studio)."
+    ],
+    "cons": [
+      "Limited to Chrome/Electron (Firefox now supported, but recently).",
+      "Cypress Cloud paid at scale.",
+      "Not ideal for native mobile (web only).",
+      "Flakiness possible (despite 'flake resistance')."
+    ],
+    "use_cases": [
+      "Test a complete Vue/React/Angular SPA.",
+      "End-to-end testing of a critical user flow.",
+      "Test APIs + UI in one test.",
+      "Parallelize tests in CI/CD (Cloud).",
+      "Auto-generate tests (Studio)."
+    ]
+  }
+}

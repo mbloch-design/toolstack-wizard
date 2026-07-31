@@ -1,0 +1,98 @@
+{
+  "slug": "bubble",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bubble Pricing (site officiel)", "url": "https://bubble.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code visuelle pour créer des apps web sans coder, avec éditeur drag-and-drop, bases de données intégrées, workflows et plugins. Tarification basée sur workload units (traitement serveur).",
+    "what_en": "Visual no-code platform for building web apps without coding, with drag-and-drop editor, integrated databases, workflows, and plugins. Pricing based on workload units (server processing).",
+    "pricing_model": "Gratuit avec limitations (50K WUs, pas de déploiement). Abonnement mensuel/annuel avec workload units inclus. Rabais annuels (environ 20%).",
+    "free_tier": { "exists": true, "detail": "Gratuit avec 50K workload units/mois, pas de déploiement possible. Essai des plans payants disponible." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (50K WUs, sans déploiement)" },
+      { "name": "Starter", "price": "29 $/mois pour 175K WUs" },
+      { "name": "Growth", "price": "119 $/mois pour 350K WUs" },
+      { "name": "Team", "price": "349 $/mois pour 500K WUs" }
+    ],
+    "key_features": [
+      "Éditeur visuel drag-and-drop",
+      "Base de données intégrée",
+      "Workflows et automatisations",
+      "Plugins et intégrations tiers",
+      "Déploiement progressif",
+      "Responsif mobile natif",
+      "REST API native"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez une app métier sans équipe technique.",
+        "Vous prototypez rapidement une idée.",
+        "Vous avez une base utilisateurs modérée."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de coûts très prévisibles.",
+        "Votre app sera critique pour l'entreprise.",
+        "Vous avez un nombre d'utilisateurs très élevé."
+      ],
+      "threshold": "Bubble convient au prototypage et aux apps métier légères ; pour solutions critiques à haute charge, évaluer une approche plus technologique."
+    },
+    "pros": [
+      "Pas de codage requis.",
+      "Prototypage et itération rapides.",
+      "Déploiement immédiat sans infrastructure.",
+      "Ecosystème de plugins riche.",
+      "Support communautaire actif."
+    ],
+    "cons": [
+      "Tarification imprévisible basée sur utilisation.",
+      "WUs peuvent exploser à forte charge.",
+      "Vendor lock-in complet.",
+      "Performance inférieure aux apps traditionnelles.",
+      "Coûts de descente en charge difficiles à contrôler."
+    ],
+    "use_cases": [
+      "Créer une app interne de gestion sans développeur.",
+      "Prototyper une idée de startup.",
+      "Construire un SaaS léger avec marges saines."
+    ],
+    "relevant_for": ["Entrepreneurs", "Non-programmeurs", "Startups précoces"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a business app without technical team.",
+        "You're rapid prototyping an idea.",
+        "You have moderate user base."
+      ],
+      "avoidIf": [
+        "You need very predictable costs.",
+        "Your app is business-critical.",
+        "You have a very high user count."
+      ],
+      "threshold": "Bubble is ideal for prototyping and lightweight business apps; for mission-critical or high-load solutions, consider a more technical approach."
+    },
+    "pros": [
+      "No coding required.",
+      "Fast prototyping and iteration.",
+      "Immediate deployment without infrastructure.",
+      "Rich plugin ecosystem.",
+      "Active community support."
+    ],
+    "cons": [
+      "Unpredictable pricing based on usage.",
+      "WUs can spike at high load.",
+      "Complete vendor lock-in.",
+      "Performance inferior to traditional apps.",
+      "Scaling costs difficult to control."
+    ],
+    "use_cases": [
+      "Build an internal management app without developers.",
+      "Rapidly prototype a startup idea.",
+      "Create a lightweight SaaS with healthy margins."
+    ]
+  }
+}

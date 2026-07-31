@@ -1,0 +1,106 @@
+{
+  "slug": "digitalocean",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "DigitalOcean — Cloud Infrastructure Platform (site officiel)", "url": "https://digitalocean.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de cloud computing offrant serveurs virtuels (Droplets), bases de données managées, Kubernetes, App Platform et services AI. Cible les startups et développeurs pour simplicité et tarification prédictible.",
+    "what_en": "Cloud computing platform offering virtual servers (Droplets), managed databases, Kubernetes, App Platform, and AI services. Targets startups and developers for simplicity and predictable pricing.",
+    "pricing_model": "Paiement à l'usage, facturation à la seconde. Free tier pour certains produits (App Platform). Crédit gratuit pour nouveaux users ($200 / 60 jours).",
+    "free_tier": { "exists": true, "detail": "App Platform free tier (3 static sites, 1 GiB/mois outbound), crédit $200 nouveaux users" },
+    "plans": [
+      { "name": "Droplets (Basic)", "price": "$4 / mois (512MB RAM, 1 vCPU)" },
+      { "name": "Droplets (Premium AMD)", "price": "$7 / mois" },
+      { "name": "Droplets (Premium Intel)", "price": "$8 / mois" },
+      { "name": "App Platform", "price": "$0 gratuit (3 sites statiques), $5+ dymanic apps" },
+      { "name": "Kubernetes", "price": "$12 / mois (control plane gratuit, nodes à l'usage)" },
+      { "name": "Managed Postgres", "price": "$15 / mois (single node)" }
+    ],
+    "key_features": [
+      "Droplets (VPS) avec facturation à la seconde",
+      "Managed Databases (PostgreSQL, MySQL, Redis, etc)",
+      "Kubernetes cluster management (free control plane)",
+      "App Platform (PaaS, auto-scaling)",
+      "Object Storage (S3-compatible)",
+      "Firewall et Virtual Networks",
+      "Monitoring et alerting",
+      "API RESTful et CLI (doctl)",
+      "70+ AI models (Inference Engine, Managed Agents)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez du cloud simple et prédictible.",
+        "Vous êtes startup ou freelance (tarif accessible).",
+        "Vous avez besoin de Kubernetes ou App Platform managé."
+      ],
+      "avoidIf": [
+        "Vous voulez du free tier illimité (AWS est plus généreux).",
+        "Vous avez besoin de région ultra-loin de US/EU.",
+        "Vous exigez les services les plus cutting-edge (AWS + avantage)."
+      ],
+      "threshold": "DigitalOcean s'impose pour les petits/moyens projets avec tarif simple ; pour l'enterprise ou besoins ultra-poussés, AWS convient mieux."
+    },
+    "pros": [
+      "Tarification simple et prévisible dès l'entrée de gamme.",
+      "Facturation à la seconde (pas de rounding monthly).",
+      "Kubernetes managé avec control plane gratuit.",
+      "App Platform simple (Heroku-like).",
+      "Crédit offert aux nouveaux utilisateurs pour démarrer.",
+      "Documentation excellente et communauté active."
+    ],
+    "cons": [
+      "Moins de régions globales qu'AWS.",
+      "Petit nombre de services (AWS + complet).",
+      "Moins scalable que AWS à très grand scale.",
+      "AI/ML services moins matures qu'AWS."
+    ],
+    "use_cases": [
+      "Héberger une app Node/Python simple sur Droplet.",
+      "Deploy un cluster Kubernetes managé pour startup.",
+      "Database Postgres managée sans ops.",
+      "PaaS pour déployer sans serverless (App Platform).",
+      "Object Storage pour sauvegarder images/fichiers."
+    ],
+    "relevant_for": ["Startups", "Freelances", "Développeurs solo", "Petites/moyennes équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want simple, predictable cloud infrastructure.",
+        "You're a startup or freelancer (affordable pricing).",
+        "You need managed Kubernetes or App Platform."
+      ],
+      "avoidIf": [
+        "You want unlimited free tier (AWS is more generous).",
+        "You need regions far from US/EU.",
+        "You require cutting-edge services (AWS has an advantage)."
+      ],
+      "threshold": "DigitalOcean makes sense for small/medium projects with simple pricing; for enterprise or advanced needs, AWS fits better."
+    },
+    "pros": [
+      "Simple, predictable pricing from the entry tier.",
+      "Per-second billing (no monthly rounding).",
+      "Managed Kubernetes with free control plane.",
+      "Simple App Platform (Heroku-like).",
+      "Starter credit offered to new users.",
+      "Excellent documentation and active community."
+    ],
+    "cons": [
+      "Fewer global regions than AWS.",
+      "Smaller service portfolio (AWS more complete).",
+      "Less scalable than AWS at massive scale.",
+      "AI/ML services less mature than AWS."
+    ],
+    "use_cases": [
+      "Host a simple Node/Python app on a Droplet.",
+      "Deploy a managed Kubernetes cluster for a startup.",
+      "Managed Postgres database without ops.",
+      "PaaS for deployment without serverless (App Platform).",
+      "Object Storage for backing up images/files."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "firebase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Firebase Pricing (site officiel)", "url": "https://firebase.google.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme backend complète de Google pour construire des applications mobiles, web et desktop. Inclut authentification, base de données en temps réel (Firestore), stockage cloud, fonctions cloud, analytiques et bien d'autres services.",
+    "what_en": "Google's complete backend platform for building mobile, web, and desktop applications. Includes authentication, real-time database (Firestore), cloud storage, cloud functions, analytics, and more.",
+    "pricing_model": "Plan gratuit Spark (sans carte de crédit) ; plan Blaze pay-as-you-go",
+    "free_tier": { "exists": true, "detail": "Plan Spark : gratuit avec limites quotidiennes/mensuelles (50K Firestore reads/jour, 1 GB stockage, 2M Cloud Functions invocations/mois). Pas de dépassement possible sans upgrade." },
+    "plans": [
+      { "name": "Spark (Free)", "price": "0 € (pas de carte requise, limites généreuses)" },
+      { "name": "Blaze (Pay-as-you-go)", "price": "Montants sur la page officielle (Firestore : 0.06 $/100K reads, 0.18 $/100K writes, etc.)" }
+    ],
+    "key_features": [
+      "Authentification multi-méthode (email, Google, phone, SSO)",
+      "Firestore : base de données NoSQL temps réel",
+      "Cloud Storage pour fichiers",
+      "Cloud Functions pour backend sans serveur",
+      "Realtime Database (SQL-like alternative)",
+      "Analytics et A/B testing",
+      "Hosting inclus",
+      "Crashlytics pour monitoring d'erreurs",
+      "Intégration native avec Flutter"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application mobile ou web avec la pile Google.",
+        "Vous voulez éviter la gestion d'un serveur backend.",
+        "Vous avez besoin d'authentification robuste et temps réel.",
+        "Vous développez avec Flutter ou utiliserez des outils Google."
+      ],
+      "avoidIf": [
+        "Vous avez un très grand volume de trafic (coûts peuvent être élevés).",
+        "Vous avez besoin d'une base de données relationnelle complexe.",
+        "Vous préférez une architecture self-hosted.",
+        "Vous ne voulez pas dépendre d'une plateforme propriétaire."
+      ],
+      "threshold": "Firebase est idéal pour les startups et équipes petites/moyennes construisant des apps modernes sans backend ; pour une grande application d'entreprise, envisagez d'autres options."
+    },
+    "pros": [
+      "Totalement gratuit pour commencer (Spark plan sans limite de durée).",
+      "Authentification robuste et sécurisée par défaut.",
+      "Temps réel pour les données (Firestore, Realtime DB).",
+      "Scaling automatique sans configuration.",
+      "Intégration excellente avec écosystème Google.",
+      "Monitoring et analytiques inclus."
+    ],
+    "cons": [
+      "Coûts imprévisibles en Blaze si gros volume.",
+      "Lock-in propriétaire (difficile de migrer après).",
+      "Pas idéal pour requêtes SQL complexes.",
+      "Moins flexible que self-hosted pour la customization.",
+      "Phone authentication payant même sur plan gratuit (après seuil)."
+    ],
+    "use_cases": [
+      "Développer une application mobile iOS/Android avec backend temps réel.",
+      "Construire une progressive web app (PWA) sans serveur.",
+      "Implémenter authentification robuste rapidement.",
+      "Collecter et analyser des événements utilisateur.",
+      "Créer un chat ou une collaboration en temps réel."
+    ],
+    "relevant_for": ["Startups", "Développeurs indépendants", "Équipes mobiles", "Constructeurs de MVP"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a mobile or web app with Google's stack.",
+        "You want to avoid managing a backend server.",
+        "You need robust real-time authentication.",
+        "You develop with Flutter or use Google tools."
+      ],
+      "avoidIf": [
+        "You have very high traffic volume (costs can be high).",
+        "You need complex relational database queries.",
+        "You prefer self-hosted architecture.",
+        "You don't want to depend on a proprietary platform."
+      ],
+      "threshold": "Firebase is ideal for startups and small-to-medium teams building modern apps without a backend; for large enterprise apps, consider alternatives."
+    },
+    "pros": [
+      "Completely free to start (Spark plan with no time limit).",
+      "Robust and secure authentication by default.",
+      "Real-time data (Firestore, Realtime DB).",
+      "Automatic scaling with no configuration.",
+      "Great integration with Google ecosystem.",
+      "Monitoring and analytics included."
+    ],
+    "cons": [
+      "Unpredictable costs on Blaze with high volume.",
+      "Proprietary lock-in (hard to migrate after).",
+      "Not ideal for complex SQL queries.",
+      "Less flexible than self-hosted for customization.",
+      "Phone authentication paid even on free tier (after threshold)."
+    ],
+    "use_cases": [
+      "Develop an iOS/Android app with real-time backend.",
+      "Build a serverless progressive web app (PWA).",
+      "Implement robust authentication quickly.",
+      "Collect and analyze user events.",
+      "Create real-time chat or collaboration."
+    ]
+  }
+}

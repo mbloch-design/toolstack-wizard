@@ -1,0 +1,95 @@
+{
+  "slug": "eas-build",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "EAS — Expo Application Services (site officiel)", "url": "https://expo.dev/eas" }
+  ],
+  "facts": {
+    "what": "Service cloud de Expo pour compiler et signer applications React Native sur iOS et Android dans le cloud, sans nécessiter macOS ou certificats locaux.",
+    "what_en": "Cloud service by Expo to build and sign React Native apps for iOS and Android in the cloud, without requiring macOS or local certificates.",
+    "pricing_model": "Service cloud payant avec tiers gratuit limité (15 builds Android/iOS par mois), plans Starter et Production avec crédits de build mensuels.",
+    "free_tier": { "exists": true, "detail": "Free tier : 15 builds Android et 15 builds iOS par mois. Expo SDK et CLI gratuits à vie." },
+    "plans": [
+      { "name": "Free Tier", "price": "Gratuit (15 builds/mois par plateforme)" },
+      { "name": "Starter", "price": "$19/mois (montants sur page officielle)" },
+      { "name": "Production", "price": "$199/mois (avec crédits build mensuels)" }
+    ],
+    "key_features": [
+      "Compilation cloud pour iOS et Android",
+      "Signature automatique des builds",
+      "Pas besoin de Mac local pour iOS",
+      "Gestion des certificats et provisioning profiles",
+      "Docker Buildx pour images personnalisées"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en React Native avec Expo.",
+        "Vous voulez compiler iOS sans Mac local.",
+        "Vous cherchez CI/CD pour builds mobiles simplifié."
+      ],
+      "avoidIf": [
+        "Vous utilisiez React Native classique (pas Expo).",
+        "Vous avez déjà infrastructure CI/CD robuste.",
+        "Vous voulez maîtriser complètement votre chaîne de build."
+      ],
+      "threshold": "EAS Build est parfait pour équipes Expo voulant déléguer la complexité des builds mobiles ; moins pertinent hors écosystème Expo."
+    },
+    "pros": [
+      "Tiers gratuit suffisant pour prototypage.",
+      "Compilation iOS possible sans Mac local.",
+      "Gestion automatique des certificats et profiles.",
+      "Intégration native avec Expo SDK.",
+      "Logs détaillés et debugging facile."
+    ],
+    "cons": [
+      "Limité aux 15 builds/mois sur free tier.",
+      "Starter et Production au tarif prononcé pour usage régulier.",
+      "Surcouches de coût si nombreux builds hebdomadaires.",
+      "Dépendance au service cloud Expo."
+    ],
+    "use_cases": [
+      "Compiler une app React Native sans infrastructure locale.",
+      "CI/CD simplifié pour équipes petites/moyennes.",
+      "Déploiement fréquent d'actualisations sans gestion de certificats.",
+      "Développement multi-plateforme iOS/Android unifié."
+    ],
+    "relevant_for": ["Développeurs React Native avec Expo", "Startups mobiles", "Agences React Native", "Équipes sans DevOps dédié"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop with React Native + Expo.",
+        "You want to build iOS without a local Mac.",
+        "You want simplified CI/CD for mobile builds."
+      ],
+      "avoidIf": [
+        "You use classic React Native (not Expo).",
+        "You already have robust CI/CD infrastructure.",
+        "You want complete control over your build chain."
+      ],
+      "threshold": "EAS Build is perfect for Expo teams wanting to outsource mobile build complexity; less relevant outside the Expo ecosystem."
+    },
+    "pros": [
+      "Free tier sufficient for prototyping.",
+      "iOS builds possible without local Mac.",
+      "Auto certificate and provisioning profile management.",
+      "Native integration with Expo SDK.",
+      "Detailed logs and easy debugging."
+    ],
+    "cons": [
+      "Limited to 15 builds/month on free tier.",
+      "Starter and Production pricing steep for regular usage.",
+      "Extra costs if many builds per week.",
+      "Dependency on Expo cloud service."
+    ],
+    "use_cases": [
+      "Build React Native app without local infrastructure.",
+      "Simplified CI/CD for small/mid-sized teams.",
+      "Frequent deployment updates without certificate management.",
+      "Unified multi-platform iOS/Android development."
+    ]
+  }
+}

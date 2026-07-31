@@ -1,0 +1,96 @@
+{
+  "slug": "azure",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Azure Pricing (site officiel)", "url": "https://azure.microsoft.com/en-us/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud de Microsoft (Infrastructure as a Service) offrant 200+ services : calcul (VMs, App Service), bases de données (SQL, Cosmos, PostgreSQL), IA/ML (OpenAI, Azure ML), stockage et analytics.",
+    "what_en": "Microsoft's cloud platform (Infrastructure as a Service) offering 200+ services: compute (VMs, App Service), databases (SQL, Cosmos, PostgreSQL), AI/ML (OpenAI, Azure ML), storage, and analytics.",
+    "pricing_model": "Pay-as-you-go ou reserved instances. Free tier : crédit 200 USD (30j) + 12 mois services gratuits + offres permanentes gratuites.",
+    "free_tier": { "exists": true, "detail": "Crédit $200 pour 30 jours, 12 mois de services gratuits sélectionnés, offres gratuites permanentes (App Service, Storage, etc.). Calculateur de coûts disponible." },
+    "plans": [
+      { "name": "Pay-as-you-go", "price": "Montants sur la page officielle par service" },
+      { "name": "Reserved Instances", "price": "Rabais pour capacité réservée 1-3 ans" },
+      { "name": "Hybrid Benefit", "price": "Rabais 40-55% pour licences existantes" }
+    ],
+    "key_features": [
+      "Calcul flexible (VMs, App Service, Functions, Kubernetes)",
+      "Bases de données gérées (SQL, Cosmos, PostgreSQL, MySQL)",
+      "Services IA (Azure OpenAI, Machine Learning, AI Studio)",
+      "Stockage scalable (Blob, Data Lake, Files)",
+      "Analytics (Fabric, Synapse, Databricks)",
+      "Sécurité avancée (Defender, Sentinel)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre organisation utilise déjà l'écosystème Microsoft.",
+        "Vous avez besoin d'intégration avec Office 365 et SQL Server.",
+        "Vous migrez depuis on-premise avec Hybrid Benefit."
+      ],
+      "avoidIf": [
+        "Vous voulez éviter la complexité tarifaire.",
+        "Vous construisez une startup greenfield.",
+        "Vous n'avez pas de legacy Microsoft."
+      ],
+      "threshold": "Azure s'impose pour les organisations Microsoft ; pour les autres, AWS et GCP offrent parfois une meilleure valeur."
+    },
+    "pros": [
+      "Excellente intégration Microsoft (Office, SQL Server).",
+      "Remises Hybrid Benefit intéressantes pour les licences existantes.",
+      "Accès natif à OpenAI.",
+      "Load balancing et auto-scaling gratuits.",
+      "Support Microsoft direct disponible."
+    ],
+    "cons": [
+      "Tarification complexe et fragmentée.",
+      "Moins d'outils natifs vs AWS.",
+      "Écosystème tiers moins riche qu'AWS.",
+      "Courbe d'apprentissage variable par service.",
+      "Vendor lock-in avec Microsoft stack."
+    ],
+    "use_cases": [
+      "Migrer une infrastructure on-premise vers le cloud.",
+      "Intégrer une plateforme cloud avec Office 365.",
+      "Déployer des modèles IA avec Azure OpenAI."
+    ],
+    "relevant_for": ["Organisations Microsoft", "Architectes enterprise", "Équipes migration"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your organization already uses Microsoft stack.",
+        "You need integration with Office 365 and SQL Server.",
+        "You're migrating from on-premise with Hybrid Benefit."
+      ],
+      "avoidIf": [
+        "You want to avoid pricing complexity.",
+        "You're building a greenfield startup.",
+        "You have no Microsoft legacy."
+      ],
+      "threshold": "Azure is ideal for Microsoft-native organizations; others may find better value with AWS or GCP."
+    },
+    "pros": [
+      "Excellent Microsoft ecosystem integration (Office, SQL).",
+      "Attractive Hybrid Benefit discounts.",
+      "Native OpenAI access.",
+      "Free load balancing and auto-scaling.",
+      "Direct Microsoft support available."
+    ],
+    "cons": [
+      "Complex and fragmented pricing.",
+      "Fewer native tools than AWS.",
+      "Smaller third-party ecosystem than AWS.",
+      "Variable learning curve per service.",
+      "Vendor lock-in with Microsoft stack."
+    ],
+    "use_cases": [
+      "Migrate on-premise infrastructure to the cloud.",
+      "Integrate cloud platform with Office 365.",
+      "Deploy AI models with Azure OpenAI."
+    ]
+  }
+}

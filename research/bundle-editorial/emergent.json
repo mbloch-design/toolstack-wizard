@@ -1,0 +1,96 @@
+{
+  "slug": "emergent",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Emergent (site officiel)", "url": "https://emergent.sh" }
+  ],
+  "facts": {
+    "what": "Plateforme d'IA pour construire applications full-stack end-to-end à partir de prompts en langage naturel, avec design, code, déploiement et intégrations gérés automatiquement.",
+    "what_en": "AI platform to build end-to-end full-stack applications from natural-language prompts, with design, code, deployment, and integrations handled automatically.",
+    "pricing_model": "Freemium avec plan gratuit limité (10 crédits). Plans payants basés sur crédits consommés, avec réductions sur facturation annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 10 crédits mensuels, accès aux fonctionnalités essentielles, pas d'intégrations avancées" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (10 crédits/mois)" },
+      { "name": "Standard", "price": "$20/mois (100 crédits) ou $17/mois (annuel)" },
+      { "name": "Pro", "price": "$200/mois (750 crédits) ou $167/mois (annuel)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Génération d'applications IA de A à Z",
+      "Design, code et déploiement automatisés",
+      "Fenêtre de contexte 1M tokens (Pro+)",
+      "Agents IA personnalisés",
+      "Intégrations GitHub et outils externes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez prototyper une app rapidement sans code.",
+        "Vous aimez laisser l'IA générer design et backend.",
+        "Vous cherchez itération rapide et expérimentation."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de contrôle total sur l'architecture.",
+        "Vous travaillez sur une app très spécialisée.",
+        "Vous craignez la dépendance aux crédits IA et coûts imprévisibles."
+      ],
+      "threshold": "Emergent brille pour founders et non-devs prototypant rapidement ; moins adapté si vous maîtrisez le code ou avez besoin de spécialisation poussée."
+    },
+    "pros": [
+      "Plan gratuit pour tester et explorer.",
+      "Génération complète (design + code + déploiement).",
+      "Itération rapide, pas besoin de developer.",
+      "Agents IA personnalisés pour workflow custom.",
+      "Intégration GitHub native."
+    ],
+    "cons": [
+      "Coûts imprévisibles en crédits, peut escalader vite.",
+      "Moins de contrôle sur code généré.",
+      "Qualité inégale, peut nécessiter refinement manuel.",
+      "Dépendance plateforme pour déploiement."
+    ],
+    "use_cases": [
+      "Prototyper une MVP rapidement (< 1 semaine).",
+      "Génerer landing page ou app simple.",
+      "Explorer une idée sans développeur.",
+      "Créer workflows d'automatisation complexes."
+    ],
+    "relevant_for": ["Founders non-tech", "Product managers", "Consultants", "Startups avec peu de ressources dev"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to prototype an app quickly without code.",
+        "You're happy to let AI generate design and backend.",
+        "You seek rapid iteration and experimentation."
+      ],
+      "avoidIf": [
+        "You need total control over architecture.",
+        "You're working on a highly specialized app.",
+        "You fear unpredictable credit costs."
+      ],
+      "threshold": "Emergent shines for founders and non-devs prototyping fast; less suited if you code or need deep specialization."
+    },
+    "pros": [
+      "Free tier to test and explore.",
+      "Complete generation (design + code + deploy).",
+      "Rapid iteration, no developer needed.",
+      "Custom AI agents for specialized workflows.",
+      "Native GitHub integration."
+    ],
+    "cons": [
+      "Unpredictable credit costs, can scale quickly.",
+      "Less control over generated code.",
+      "Uneven quality, may need manual refinement.",
+      "Platform dependency for deployment."
+    ],
+    "use_cases": [
+      "Prototype an MVP quickly (< 1 week).",
+      "Generate landing page or simple app.",
+      "Explore an idea without a developer.",
+      "Create complex automation workflows."
+    ]
+  }
+}

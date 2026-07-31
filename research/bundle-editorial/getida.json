@@ -1,0 +1,90 @@
+{
+  "slug": "getida",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Getida — site officiel", "url": "https://getida.com" },
+    { "label": "Getida Pricing 2026", "url": "https://revenuegeeks.com/getida-pricing/" }
+  ],
+  "facts": {
+    "what": "Service automatisé de réclamation Amazon FBA qui retrouve et réclame les remboursements auprès d'Amazon pour les inventaires perdus, endommagés, ou les frais surfacturés. Modèle performance-based : Getida ne gagne que si vous êtes remboursé.",
+    "what_en": "Automated Amazon FBA claims service that finds and files refund claims for lost inventory, damaged goods, or overcharged fees. Performance-based model: Getida only earns when you get reimbursed.",
+    "pricing_model": "Performance-based commission (no fixed monthly fee)",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Pas de frais d'entrée. Commission prélevée uniquement sur les remboursements obtenus." },
+    "plans": [
+      { "name": "Starter", "price": "Commission 25% sur chaque remboursement réussi" },
+      { "name": "Pro", "price": "Commission 18% sur chaque remboursement réussi (volumes plus élevés)" }
+    ],
+    "key_features": [
+      "Audit automatisé des transactions Amazon FBA",
+      "Traitement des réclamations : inventaire perdu, endommagé, frais surfacturés",
+      "Taux d'approbation moyen 90% des réclamations",
+      "Dashboard temps réel de suivi des remboursements",
+      "Support pour US, UK, EU, Canada, Australie et autres",
+      "Intégrations Xero et QuickBooks Online (2026)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur Amazon FBA et soupçonnez des remboursements non demandés.",
+        "Vous gérez un volume important de SKU sur FBA.",
+        "Vous préférez un service sans frais d'entrée."
+      ],
+      "avoidIf": [
+        "Vous ne vendez pas sur Amazon ou hors FBA.",
+        "Votre volume de ventes FBA est très faible.",
+        "Vous refusez une rémunération basée sur la performance."
+      ],
+      "threshold": "Getida convient si vous cherchez un service automatisé de réclamation FBA sans engagement initial ; si vous ne vendez pas sur Amazon, ce service n'a aucune utilité."
+    },
+    "pros": [
+      "Aucun coût initial ni frais périodiques récurrents.",
+      "Commission partagée uniquement sur les remboursements réussis.",
+      "Taux d'approbation historiquement élevé pour les réclamations.",
+      "Suivi en temps réel et rapports détaillés."
+    ],
+    "cons": [
+      "Commission prélevée réduit le gain net par remboursement.",
+      "Limite d'usage à Amazon FBA uniquement.",
+      "Modèle de performance peut décourager les petits volumes."
+    ],
+    "use_cases": [
+      "Explorant toutes les opportunités de remboursement FBA oubliées.",
+      "Gérant plusieurs centaines de SKU sur FBA.",
+      "Automatisant l'audit des erreurs de facturation Amazon."
+    ],
+    "relevant_for": ["Vendeurs Amazon FBA", "Gestionnaires d'inventaire", "E-commerce B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on Amazon FBA and suspect unclaimed refunds.",
+        "You manage high-volume SKU listings on FBA.",
+        "You prefer a service with no upfront cost."
+      ],
+      "avoidIf": [
+        "You don't sell on Amazon or use FBA.",
+        "Your FBA sales volume is very low.",
+        "You avoid performance-based pricing models."
+      ],
+      "threshold": "Getida works for automated FBA claim recovery with no upfront commitment; without Amazon FBA, this service has no value."
+    },
+    "pros": [
+      "No upfront cost or recurring periodic fees.",
+      "Commission shared only on successful refunds.",
+      "Strong historical claim approval rates.",
+      "Real-time tracking and detailed reporting."
+    ],
+    "cons": [
+      "Commission reduces net gain per refund.",
+      "Limited to Amazon FBA only.",
+      "Performance-based model may discourage small volumes."
+    ],
+    "use_cases": [
+      "Recovering forgotten FBA refund opportunities.",
+      "Managing hundreds of SKUs on FBA.",
+      "Automating Amazon billing error audits."
+    ]
+  }
+}

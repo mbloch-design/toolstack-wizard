@@ -35,11 +35,6 @@
     "url": "https://remix.run"
   },
   {
-    "slug": "render",
-    "name": "Render",
-    "url": "https://render.com"
-  },
-  {
     "slug": "rest-client",
     "name": "REST Client",
     "url": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client"

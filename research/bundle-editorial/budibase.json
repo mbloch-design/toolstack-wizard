@@ -1,0 +1,101 @@
+{
+  "slug": "budibase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Budibase Pricing (site officiel)", "url": "https://budibase.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme low-code open-source pour créer des outils internes, combinant builders visuels, bases de données connectées, automations et agents. Auto-hébergeable ou cloud managé.",
+    "what_en": "Open-source low-code platform for building internal tools, combining visual builders, connected databases, automations, and agents. Self-hostable or managed cloud.",
+    "pricing_model": "Gratuit open-source auto-hébergé. Cloud payant : par nombre d'actions mensuelles. Créateurs supplémentaires facturés séparément.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit en open-source (MIT license), auto-hébergeable. Cloud gratuit limité ou trial ; crédit IA inclus." },
+    "plans": [
+      { "name": "Open Source", "price": "Gratuit (auto-hébergement)" },
+      { "name": "Pro", "price": "19 $/mois pour 5000 actions" },
+      { "name": "Premium", "price": "49 $/mois pour 20000 actions" },
+      { "name": "Business", "price": "299 $/mois pour 250000 actions" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Builders visuels (apps, tables, automations)",
+      "Connexion à 50+ intégrations (OpenAI, Slack, Jira, Salesforce)",
+      "Agents IA pour support client automatisé",
+      "Automations avec approvals et routage",
+      "Tables connectées à BD/spreadsheets/systèmes métier",
+      "Open-source et auto-hébergeable",
+      "ISO 27001 et GDPR compliant"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des outils internes pour équipe.",
+        "Vous préférez l'open-source et le contrôle des données.",
+        "Vous avez besoin de flexibilité avec intégrations multiples."
+      ],
+      "avoidIf": [
+        "Vous créez une app client-facing complexe.",
+        "Vous avez très peu d'usage (gratuit uniquement).",
+        "Vous ne voulez pas gérer l'infra."
+      ],
+      "threshold": "Budibase excelle pour outils internes lean ; le modèle prix par actions favorise les petits usages vs gros volumes."
+    },
+    "pros": [
+      "Open-source et auto-hébergeable.",
+      "Tarification par actions alignée à l'utilisation.",
+      "Support de 50+ intégrations natives.",
+      "Agents IA intégrés.",
+      "Conforme ISO 27001 et GDPR.",
+      "Gratuit pour auto-hébergement illimité."
+    ],
+    "cons": [
+      "Pas de free tier cloud limité en standard.",
+      "Actions peuvent exploser à forte automatisation.",
+      "Moins de plugins que Appsmith.",
+      "Documentation moins exhaustive que alternatives.",
+      "Support commercial limité en free tier."
+    ],
+    "use_cases": [
+      "Créer un dashboard RH pour gestion d'équipe.",
+      "Automatiser des processus métier avec bots IA.",
+      "Construire un outil d'intégration multi-données."
+    ],
+    "relevant_for": ["Équipes produit", "Administrateurs système", "Petites organisations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building internal tools for your team.",
+        "You prefer open-source and data control.",
+        "You need flexibility with multiple integrations."
+      ],
+      "avoidIf": [
+        "You're building a complex client-facing app.",
+        "You have very low usage (free only).",
+        "You don't want to manage infrastructure."
+      ],
+      "threshold": "Budibase excels for lean internal tools; action-based pricing favors small usage over high volume."
+    },
+    "pros": [
+      "Open-source and self-hostable.",
+      "Action-based pricing aligned to usage.",
+      "Support for 50+ native integrations.",
+      "Built-in AI agents.",
+      "ISO 27001 and GDPR compliant.",
+      "Free for unlimited self-hosting."
+    ],
+    "cons": [
+      "Limited free cloud tier by default.",
+      "Actions can spike with heavy automation.",
+      "Fewer plugins than Appsmith.",
+      "Documentation less comprehensive than alternatives.",
+      "Limited commercial support on free tier."
+    ],
+    "use_cases": [
+      "Create an HR dashboard for team management.",
+      "Automate business processes with AI bots.",
+      "Build a multi-data integration tool."
+    ]
+  }
+}

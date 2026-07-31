@@ -1,0 +1,89 @@
+{
+  "slug": "fastapi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FastAPI Documentation (site officiel)", "url": "https://fastapi.tiangolo.com" }
+  ],
+  "facts": {
+    "what": "Framework web Python moderne et performant pour construire des APIs avec des type hints. Combine Starlette pour le web et Pydantic pour la validation des données, avec documentation interactive automatique.",
+    "what_en": "Modern, high-performance Python web framework for building APIs with type hints. Combines Starlette for web parts and Pydantic for data validation, with automatic interactive documentation.",
+    "pricing_model": "Gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Framework entièrement gratuit et open source, sans limitations d'utilisation ou de déploiement" },
+    "plans": [],
+    "key_features": [
+      "Haute performance (comparable à Node.js et Go)",
+      "Documentation interactive automatique (Swagger UI et ReDoc)",
+      "Validation des données basée sur les type hints Python",
+      "Réduction des erreurs de développement d'environ 40%",
+      "Vitesse de développement multipliée par 200-300%"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des APIs en Python et recherchez un framework performant.",
+        "Vous voulez une documentation auto-générée pour vos endpoints.",
+        "Vous préférez les type hints Python pour la validation des données."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une interface d'administration no-code.",
+        "Vous préférez construire sans code du tout.",
+        "Vous voulez un framework pour les templates HTML côté serveur."
+      ],
+      "threshold": "FastAPI est idéal pour les développeurs Python construisant des APIs modernes ; pour les besoins sans code, préférez un outil no-code dédié."
+    },
+    "pros": [
+      "Très rapide et performant pour les APIs.",
+      "Documentation interactive automatique.",
+      "Type hints Python pour validation robuste.",
+      "Courbe d'apprentissage douce.",
+      "Écosystème mature et communauté active."
+    ],
+    "cons": [
+      "Requiert des connaissances en Python et développement.",
+      "Pas d'interface graphique ou no-code.",
+      "Moins adapté aux applications frontend-heavy.",
+      "Nécessite du déploiement manuel (choix d'hôte, configuration)."
+    ],
+    "use_cases": [
+      "Construire une API REST pour une application mobile ou web.",
+      "Créer un backend pour une application avec authentification.",
+      "Développer un microservice ou service interne."
+    ],
+    "relevant_for": ["Développeurs Python", "Architectes backend", "Équipes DevOps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build APIs in Python and want high performance.",
+        "You need auto-generated API documentation.",
+        "You prefer Python type hints for data validation."
+      ],
+      "avoidIf": [
+        "You need a no-code admin interface.",
+        "You want to build without writing code.",
+        "You're building HTML-heavy server-side templates."
+      ],
+      "threshold": "FastAPI is ideal for Python developers building modern APIs; for no-code needs, use a dedicated no-code tool instead."
+    },
+    "pros": [
+      "Fast and performant for APIs.",
+      "Automatic interactive documentation.",
+      "Python type hints for robust validation.",
+      "Easy learning curve.",
+      "Mature ecosystem and active community."
+    ],
+    "cons": [
+      "Requires Python and development knowledge.",
+      "No graphical interface or no-code features.",
+      "Less suitable for frontend-heavy applications.",
+      "Requires manual deployment and hosting configuration."
+    ],
+    "use_cases": [
+      "Build a REST API for a mobile or web application.",
+      "Create a backend for an authenticated application.",
+      "Develop a microservice or internal service."
+    ]
+  }
+}

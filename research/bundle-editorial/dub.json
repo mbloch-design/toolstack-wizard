@@ -1,0 +1,98 @@
+{
+  "slug": "dub",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dub (site officiel)", "url": "https://dub.co" },
+    { "label": "Dub Pricing (site officiel)", "url": "https://dub.co/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme moderne de gestion de liens avec analytics de conversion, ciblage géographique/appareil, tests A/B, codes QR et programmes d'affiliation intégrés.",
+    "what_en": "Modern link management platform with conversion analytics, geographic/device targeting, A/B testing, QR codes, and built-in affiliate programs.",
+    "pricing_model": "Freemium avec plan gratuit pour 25 liens et 1000 clics, plans payants pour usage croissant avec analytics avancées et programmes d'affiliation.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 25 liens, 1000 clics tracés, 3 domaines personnalisés, rétention analytics 30 jours, accès API" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Starter", "price": "À partir de $25/mois (montants sur page officielle)" },
+      { "name": "Business", "price": "À partir de $90/mois (pour programmes d'affiliation)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Création de liens courts avec domaines personnalisés",
+      "Analytics de conversion en temps réel",
+      "Ciblage géographique et par appareil",
+      "Tests A/B pour optimisation",
+      "Codes QR intégrés",
+      "Programmes d'affiliation gérés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de tracking de conversion au-delà du clic.",
+        "Vous gériez des programmes d'affiliation ou partenariat.",
+        "Vous voulez ciblage et tests A/B natifs sur liens."
+      ],
+      "avoidIf": [
+        "Vous avez juste besoin de raccourcissement basique.",
+        "Vous cherchez la solution la moins chère au clic.",
+        "Vous n'avez pas besoin de tracking avancé."
+      ],
+      "threshold": "Dub brille pour marketers et founders gérant acquisition avec attribution ; overkill pour simple raccourcissement de liens."
+    },
+    "pros": [
+      "Plan gratuit généreux : 25 liens, 3 domaines, API complète.",
+      "Analytics de conversion au-delà du premier clic.",
+      "Ciblage et tests A/B intégrés pour optimisation.",
+      "Programmes d'affiliation gérés nativement.",
+      "Codes QR et templates réutilisables."
+    ],
+    "cons": [
+      "Complexité au-delà d'un simple shortener.",
+      "Tarification croissante avec usage.",
+      "Plans Business surtout pour affiliation, pas pour liens génériques.",
+      "Meilleur pour acquisition/marketing, moins pour shortening simple."
+    ],
+    "use_cases": [
+      "Tracker conversion d'une campagne marketing.",
+      "Gérer programme d'affiliation avec partenaires.",
+      "Tester variantes de liens (A/B) pour optimiser CTR.",
+      "Créer liens profonds avec ciblage par device/géo."
+    ],
+    "relevant_for": ["Marketers", "Founders et growth", "Affiliation managers", "Agences marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need conversion tracking beyond first-click.",
+        "You manage affiliate programs or partnerships.",
+        "You want native targeting and A/B testing on links."
+      ],
+      "avoidIf": [
+        "You just need basic link shortening.",
+        "You're seeking the cheapest per-click solution.",
+        "You don't need advanced tracking."
+      ],
+      "threshold": "Dub shines for marketers and founders managing acquisition with attribution; overkill for simple link shortening."
+    },
+    "pros": [
+      "Generous free tier: 25 links, 3 domains, complete API.",
+      "Conversion analytics beyond first click.",
+      "Native targeting and A/B testing for optimization.",
+      "Affiliate programs managed natively.",
+      "QR codes and reusable templates."
+    ],
+    "cons": [
+      "Complexity beyond simple shortening.",
+      "Pricing scales with usage.",
+      "Business plans mainly for affiliation, not generic links.",
+      "Best for acquisition/marketing, less for simple shortening."
+    ],
+    "use_cases": [
+      "Track conversion of a marketing campaign.",
+      "Manage affiliate program with partners.",
+      "Test link variants (A/B) to optimize CTR.",
+      "Create deep links with device/geo targeting."
+    ]
+  }
+}

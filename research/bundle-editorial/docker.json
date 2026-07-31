@@ -1,0 +1,96 @@
+{
+  "slug": "docker",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Docker Pricing (site officiel)", "url": "https://www.docker.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de containerization et d'orchestration qui encapsule applications et dépendances dans des conteneurs légers, portables et reproductibles sur toute infrastructure.",
+    "what_en": "Containerization and orchestration platform that packages applications and dependencies into lightweight, portable, reproducible containers across any infrastructure.",
+    "pricing_model": "Freemium avec Docker Personal gratuit pour développeurs individuels. Plans payants (Pro, Team, Business) pour équipes et entreprises, avec options de build cloud.",
+    "free_tier": { "exists": true, "detail": "Docker Personal gratuit : Docker Desktop, Docker Engine, Docker Hub (1 repo privé), 100 pulls/heure, support communautaire" },
+    "plans": [
+      { "name": "Personal", "price": "Gratuit" },
+      { "name": "Pro", "price": "$11/mois (mensuel) ou $9/mois (annuel)" },
+      { "name": "Team", "price": "$16/mois (mensuel) ou $15/mois (annuel)" },
+      { "name": "Business", "price": "$24/mois" }
+    ],
+    "key_features": [
+      "Docker Desktop avec Kubernetes intégré",
+      "Docker Build Cloud pour compilation distribuée",
+      "Docker Scout pour analyse et vulnérabilités",
+      "Registries privés et publics",
+      "Testcontainers Cloud pour tests intégrés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en équipe et avez besoin de reproductibilité.",
+        "Vous déployez sur Kubernetes ou orchestration cloud.",
+        "Vous cherchez une solution standard pour containerization."
+      ],
+      "avoidIf": [
+        "Vous utilisez uniquement des binaires compilés statiques.",
+        "Vous travaillez sur des machines très limitées en ressources.",
+        "Vous n'avez pas besoin de portabilité cross-plateforme."
+      ],
+      "threshold": "Docker est indispensable pour toute équipe moderne cherchant reproductibilité et déploiement cloud ; moins nécessaire pour scripts ou outils monolithiques."
+    },
+    "pros": [
+      "Docker Personal entièrement gratuit pour développeurs solo.",
+      "Standard de facto pour containerization et orchrestration.",
+      "Énorme écosystème et support communautaire.",
+      "Reproduction garantie : « fonctionne sur ma machine » → « fonctionne partout ».",
+      "Options de build cloud et registries privés à bas coût."
+    ],
+    "cons": [
+      "Apprentissage initial : concepts nouveaux pour développeurs inexpérimentés.",
+      "Overhead léger en ressources par rapport à exécution native.",
+      "Complexité potentielle en orchestration à grande échelle.",
+      "Team plan obligatoire dès collaboration sérieuse."
+    ],
+    "use_cases": [
+      "Containeriser une application pour déploiement cloud.",
+      "Reproduire l'environnement de développement en équipe.",
+      "Orchestrer microservices avec Kubernetes.",
+      "Isoler services et éviter les conflits de dépendances."
+    ],
+    "relevant_for": ["Développeurs fullstack", "Équipes DevOps", "Startups cloud-first", "Agences déploiement"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing in a team and need reproducibility.",
+        "You deploy on Kubernetes or cloud orchestration.",
+        "You want the standard solution for containerization."
+      ],
+      "avoidIf": [
+        "You're working with statically compiled binaries only.",
+        "You're on heavily resource-constrained machines.",
+        "You don't need cross-platform portability."
+      ],
+      "threshold": "Docker is indispensable for any modern team seeking reproducibility and cloud deployment; less essential for scripts or monolithic tools."
+    },
+    "pros": [
+      "Docker Personal completely free for solo developers.",
+      "De facto standard for containerization and orchestration.",
+      "Massive ecosystem and community support.",
+      "Guaranteed reproducibility: 'works on my machine' → 'works everywhere'.",
+      "Affordable build cloud and private registries options."
+    ],
+    "cons": [
+      "Initial learning curve—new concepts for inexperienced developers.",
+      "Slight resource overhead versus native execution.",
+      "Potential complexity in large-scale orchestration.",
+      "Team plan required for serious collaboration."
+    ],
+    "use_cases": [
+      "Containerize an application for cloud deployment.",
+      "Reproduce development environment across team.",
+      "Orchestrate microservices with Kubernetes.",
+      "Isolate services and avoid dependency conflicts."
+    ]
+  }
+}

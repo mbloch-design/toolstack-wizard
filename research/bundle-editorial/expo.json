@@ -1,0 +1,101 @@
+{
+  "slug": "expo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Expo — The official React Native framework (site officiel)", "url": "https://expo.dev" }
+  ],
+  "facts": {
+    "what": "Framework officiel React Native recommandé par Meta, avec SDK gratuit couvrant 100+ modules prêts pour la production (caméra, notifications, navigation) et services cloud optionnels (EAS) pour build et déploiement.",
+    "what_en": "Official React Native framework recommended by Meta, with free SDK covering 100+ production-ready modules (camera, notifications, navigation) and optional cloud services (EAS) for building and deployment.",
+    "pricing_model": "Framework et SDK entièrement gratuits et open-source (MIT). Services cloud EAS optionnels avec tiers gratuit et plans payants basés sur utilisation.",
+    "free_tier": { "exists": true, "detail": "Expo SDK et CLI gratuits à vie. EAS Free tier : 1K MAUs, 15 builds Android/iOS par mois, 30 jours rétention updates" },
+    "plans": [
+      { "name": "SDK/Framework (Open Source)", "price": "Gratuit" },
+      { "name": "EAS Free Tier", "price": "Gratuit (1K MAUs, 15 builds/mois)" },
+      { "name": "EAS Starter", "price": "$19/mois" },
+      { "name": "EAS Production", "price": "$199/mois (avec crédits build)" }
+    ],
+    "key_features": [
+      "100+ modules prêts pour la production",
+      "Support iOS et Android de base natif",
+      "Deployment sur web, iOS et Android",
+      "EAS Build pour compilation cloud",
+      "EAS Update pour OTA updates",
+      "Expo Router pour navigation naturelle"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en React Native pour iOS et Android.",
+        "Vous voulez accès à 100+ modules prêts pour la prod.",
+        "Vous cherchez un framework avec ecosystème complet."
+      ],
+      "avoidIf": [
+        "Vous préférez React Native classique (bare workflow).",
+        "Vous avez besoin d'accès très bas niveau aux APIs natives.",
+        "Vous ne voulez aucune abstraction au-dessus de RN."
+      ],
+      "threshold": "Expo domine pour teams React voulant mobilité rapide sans gestion native complexe ; moins idéal si vous maîtrisez RN natif ou avez contraintes bas niveau."
+    },
+    "pros": [
+      "SDK et framework entièrement gratuits.",
+      "100+ modules prêts pour production inclus.",
+      "Déploiement cross-plateforme simplifié (web, iOS, Android).",
+      "Services cloud (EAS) intégrés pour build/update.",
+      "Écosystème complet : navigation, auth, storage, etc.",
+      "Très largement adopté dans l'écosystème React Native."
+    ],
+    "cons": [
+      "Moins de flexibilité que bare React Native.",
+      "Dépendance au runtime Expo.",
+      "Services cloud (EAS) requis pour builds sérieuses.",
+      "Moins adapté pour cas très spécialisés ou bas niveau."
+    ],
+    "use_cases": [
+      "Développer app mobile iOS/Android avec React.",
+      "Prototyper rapidement sans configuration native.",
+      "Déployer cross-plateforme (web + mobile).",
+      "Gérer OTA updates automatisées.",
+      "Intégrer avec firebase, auth0 ou autres services."
+    ],
+    "relevant_for": ["Développeurs React", "Startups mobiles", "Équipes cross-plateforme", "Agences React"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in React Native for iOS and Android.",
+        "You want access to 100+ production-ready modules.",
+        "You seek a framework with complete ecosystem."
+      ],
+      "avoidIf": [
+        "You prefer classic React Native (bare workflow).",
+        "You need very low-level native API access.",
+        "You want zero abstraction above RN."
+      ],
+      "threshold": "Expo dominates for React teams seeking rapid mobility without complex native management; less ideal if you master bare RN or have low-level constraints."
+    },
+    "pros": [
+      "SDK and framework completely free.",
+      "100+ production-ready modules included.",
+      "Simplified cross-platform deployment (web, iOS, Android).",
+      "Integrated cloud services (EAS) for build/update.",
+      "Complete ecosystem: navigation, auth, storage, etc.",
+      "Very widely adopted across the React Native ecosystem."
+    ],
+    "cons": [
+      "Less flexibility than bare React Native.",
+      "Dependency on Expo runtime.",
+      "Cloud services (EAS) needed for serious builds.",
+      "Less suited for highly specialized or low-level cases."
+    ],
+    "use_cases": [
+      "Develop iOS/Android app with React.",
+      "Prototype quickly without native config.",
+      "Deploy cross-platform (web + mobile).",
+      "Manage automated OTA updates.",
+      "Integrate with firebase, auth0, or external services."
+    ]
+  }
+}

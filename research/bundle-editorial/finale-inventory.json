@@ -1,0 +1,110 @@
+{
+  "slug": "finale-inventory",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Finale Inventory (site officiel)", "url": "https://finaleinventory.com" }
+  ],
+  "facts": {
+    "what": "Logiciel cloud de gestion d'inventaire pour marques e-commerce en croissance. Synchronise l'inventaire en temps réel sur 25+ canaux de vente (Shopify, Amazon FBA, Walmart, etc.), avec gestion d'entrepôt par code-barres et suivi des coûts landed.",
+    "what_en": "Cloud-based inventory management software for growing ecommerce brands. Syncs inventory in real-time across 25+ sales channels (Shopify, Amazon FBA, Walmart, etc.), with barcode warehouse management and landed cost tracking.",
+    "pricing_model": "Pricing custom sur demande (quote-based)",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Trial gratuit disponible (demander une démo). Pricing démarre autour de montants sur la page officielle." },
+    "plans": [
+      { "name": "Custom", "price": "À partir d'environ 500 $/mois (pricing sur demande, basé sur volume/fonctionnalités)" }
+    ],
+    "key_features": [
+      "Synchronisation multi-canal en temps réel (25+ intégrations)",
+      "Gestion d'entrepôt avec code-barres",
+      "Procurement et re-stockage automatisés",
+      "Suivi des coûts de revient landed cost",
+      "Intégrations QuickBooks Online et Xero",
+      "Prévention de la surcharge (overselling prevention)",
+      "Rapports et analytiques",
+      "Support dédié"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur plusieurs canaux (Shopify + Amazon + autres).",
+        "Vous gérez un entrepôt physique ou du stock important.",
+        "Vous avez besoin de synchronisation temps réel.",
+        "Votre volume justifie un investissement dédié (~500+$ /mois)."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un seul canal de vente.",
+        "Vous n'avez que peu de SKUs.",
+        "Votre budget est très limité (cherchez des alternatives moins chères).",
+        "Vous avez besoin d'une solution ultra-simple."
+      ],
+      "threshold": "Finale Inventory convient aux e-commerces multichannel de petite/moyenne taille gérant du stock sérieux ; pour un vendeur unique ou très petit volume, Shopify's own inventory suffît souvent."
+    },
+    "pros": [
+      "Synchronisation temps réel sur 25+ canaux.",
+      "Prévention de la surcharge très robuste.",
+      "Suivi des coûts de revient avancé.",
+      "Intégration comptabilité (QuickBooks, Xero).",
+      "Gestion d'entrepôt complète avec code-barres.",
+      "Support dédié fourni.",
+      "Très flexible pour les workflows complexes."
+    ],
+    "cons": [
+      "Pas de version gratuite ni freemium.",
+      "Tarification sur devis, avec un ticket d'entrée élevé.",
+      "Pas d'interface no-code.",
+      "Courbe d'apprentissage (beaucoup de fonctionnalités).",
+      "Nécessite des connaissances tech pour intégrations avancées.",
+      "Contrat long terme généralement requis."
+    ],
+    "use_cases": [
+      "Gérer l'inventaire pour 5-50 SKUs sur Shopify + Amazon FBA + autre.",
+      "Automatiser le re-stockage based sur velocity.",
+      "Suivre les coûts de revient par produit.",
+      "Synchroniser l'inventaire temps réel entre entrepôt et marketplaces.",
+      "Générer des rapports de profit par channel."
+    ],
+    "relevant_for": ["Entrepreneurs e-commerce", "Marques petite/moyenne", "Distributeurs", "Agences fulfillment"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on multiple channels (Shopify + Amazon + others).",
+        "You manage physical warehouse or significant stock.",
+        "You need real-time synchronization.",
+        "Your volume justifies the investment (~500+$ /month)."
+      ],
+      "avoidIf": [
+        "You only sell on one channel.",
+        "You have few SKUs.",
+        "Your budget is very tight (look for cheaper alternatives).",
+        "You need an ultra-simple solution."
+      ],
+      "threshold": "Finale Inventory suits small-to-medium multichannel e-commerce businesses managing serious stock; for single-channel or tiny volume sellers, Shopify's built-in inventory is often enough."
+    },
+    "pros": [
+      "Real-time sync across 25+ channels.",
+      "Very robust overselling prevention.",
+      "Advanced landed cost tracking.",
+      "Accounting integration (QuickBooks, Xero).",
+      "Complete warehouse management with barcodes.",
+      "Dedicated support provided.",
+      "Very flexible for complex workflows."
+    ],
+    "cons": [
+      "No free tier or freemium.",
+      "Custom pricing with a high entry ticket.",
+      "No no-code interface.",
+      "Learning curve (many features).",
+      "Requires tech knowledge for advanced integrations.",
+      "Long-term contract often required."
+    ],
+    "use_cases": [
+      "Manage inventory for 5-50 SKUs across Shopify + Amazon FBA + others.",
+      "Automate re-stocking based on velocity.",
+      "Track landed cost per product.",
+      "Sync inventory in real-time between warehouse and marketplaces.",
+      "Generate profit reports by channel."
+    ]
+  }
+}

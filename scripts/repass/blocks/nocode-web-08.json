@@ -1,10 +1,5 @@
 [
   {
-    "slug": "netlify",
-    "name": "Netlify",
-    "url": "https://netlify.com"
-  },
-  {
     "slug": "newman",
     "name": "Newman",
     "url": "https://github.com/postmanlabs/newman"

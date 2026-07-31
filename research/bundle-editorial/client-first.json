@@ -1,0 +1,99 @@
+{
+  "slug": "client-first",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Client-First — Style System for Webflow (Finsweet)", "url": "https://finsweet.com/client-first" }
+  ],
+  "facts": {
+    "what": "Système de design libre et open source pour Webflow. Convention de nommage CSS (class naming), architecture organisée, et guide typographie/spacing/couleurs pour bâtir des sites scalables et maintenables.",
+    "what_en": "Free and open-source design system for Webflow. CSS class naming convention, organized architecture, and typography/spacing/color guidelines for building scalable, maintainable websites.",
+    "pricing_model": "Entièrement gratuit. Option certification payante optionnelle (~116 euros avec réduction Finsweet).",
+    "free_tier": { "exists": true, "detail": "Système Client-First complet, documentation, cloneable Webflow starter, communauté" },
+    "plans": [
+      { "name": "Client-First (gratuit)", "price": "Gratuit" },
+      { "name": "Client-First Certification (optionnel)", "price": "~116€ avec discount (certification officielle Finsweet)" }
+    ],
+    "key_features": [
+      "Convention de nommage CSS intuitive et scalable",
+      "Architecture composant-based pour Webflow",
+      "Système typographie, spacing, couleurs uniformes",
+      "Responsive design patterns (mobile-first)",
+      "Folder organization multi-niveaux",
+      "Semantic HTML et accessibility guidelines",
+      "150K+ clones du starter Webflow",
+      "Disponible en 14+ langues"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des sites Webflow professionnels.",
+        "Vous travaillez en équipe (besoin de standardisation).",
+        "Vous voulez une convention fiable et gratuite."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Webflow.",
+        "Vous avez déjà votre propre system de design.",
+        "Vous travaillez solo sur des petits projets ponctuels."
+      ],
+      "threshold": "Client-First s'impose comme standard pour les agences Webflow et équipes ; pour des petits projets solo, un système maison peut suffire."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Standard de l'industrie Webflow (150K+ utilisateurs).",
+      "Convention claire et évolutive.",
+      "Documentation complète et multilingue.",
+      "Accélère onboarding équipe (tout le monde connaît la convention).",
+      "Facilite maintenance long terme."
+    ],
+    "cons": [
+      "Spécifique à Webflow (pas utilisable ailleurs).",
+      "Courbe d'apprentissage légère pour les débutants Webflow.",
+      "Certification optionnelle coûte extra."
+    ],
+    "use_cases": [
+      "Standardiser la nommage CSS dans une agence.",
+      "Construire un site Webflow scalable et maintenable.",
+      "Onboard des développeurs Webflow juniors.",
+      "Automatiser la typographie et spacing project-wide.",
+      "Créer un design system interne pour Webflow."
+    ],
+    "relevant_for": ["Agences Webflow", "Freelances Webflow", "Équipes de développement"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build professional Webflow sites.",
+        "You work in a team (need standardization).",
+        "You want a reliable, free convention."
+      ],
+      "avoidIf": [
+        "You don't use Webflow.",
+        "You already have your own design system.",
+        "You work solo on occasional small projects."
+      ],
+      "threshold": "Client-First is the industry standard for Webflow agencies and teams; for small solo projects, a homemade system may suffice."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Webflow industry standard (150K+ users).",
+      "Clear and scalable naming convention.",
+      "Complete, multilingual documentation.",
+      "Speeds up team onboarding (everyone knows the convention).",
+      "Simplifies long-term maintenance."
+    ],
+    "cons": [
+      "Specific to Webflow (not usable elsewhere).",
+      "Light learning curve for Webflow beginners.",
+      "Optional certification costs extra."
+    ],
+    "use_cases": [
+      "Standardize CSS naming across an agency.",
+      "Build a scalable, maintainable Webflow site.",
+      "Onboard junior Webflow developers.",
+      "Automate typography and spacing project-wide.",
+      "Create an internal Webflow design system."
+    ]
+  }
+}

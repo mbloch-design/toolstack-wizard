@@ -1,0 +1,93 @@
+{
+  "slug": "app-store-connect",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "App Store Connect (site officiel)", "url": "https://appstoreconnect.apple.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme officielle d'Apple pour soumettre et gérer des applications sur l'App Store (iOS, iPadOS, macOS). Inclut TestFlight pour bêta-testing, analytics, rapports commerciaux et TestFlight avec jusqu'à 10 000 testeurs externes.",
+    "what_en": "Apple's official platform for submitting and managing apps on the App Store (iOS, iPadOS, macOS). Includes TestFlight for beta testing, analytics, financial reports, and external testing with up to 10,000 testers.",
+    "pricing_model": "Accès gratuit via membership au Apple Developer Program ($99 USD/année). Commission 30% sur ventes et achats in-app (15% pour small business program).",
+    "free_tier": { "exists": true, "detail": "Gratuit pour développeurs ayant une membership au programme ($99/année). Pas de frais par app. Nonprofits éligibles obtiennent membership gratuit." },
+    "plans": [
+      { "name": "Apple Developer Program", "price": "99 $/an pour adhésion" },
+      { "name": "Commission apps payantes", "price": "30% sur ventes/IAP (15% pour small business)" }
+    ],
+    "key_features": [
+      "Soumission et gestion d'apps",
+      "TestFlight beta testing (10k testeurs externes)",
+      "Analytics et rapports détaillés",
+      "Gestion des contrats et informations fiscales",
+      "Distribution en 175+ pays",
+      "App Review process"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez pour l'écosystème Apple (iOS, macOS).",
+        "Vous voulez distribuer via l'App Store officiel.",
+        "Vous avez besoin de TestFlight pour bêta-testing."
+      ],
+      "avoidIf": [
+        "Vous ne développez pas pour Apple.",
+        "Vous voulez éviter la commission Apple.",
+        "Vous cherchez une alternative au modèle d'Apple."
+      ],
+      "threshold": "App Store Connect est obligatoire pour publier sur l'App Store Apple ; c'est le seul chemin officiel pour les développeurs iOS/macOS."
+    },
+    "pros": [
+      "Plateforme officielle et fiable d'Apple.",
+      "TestFlight natif pour distribution bêta.",
+      "Analytics détaillées et rapports commerciaux.",
+      "Accès à 175+ marchés.",
+      "Framework AppStoreConnect API pour automatisation."
+    ],
+    "cons": [
+      "Commission d'Apple prélevée sur les ventes et achats intégrés.",
+      "Processus de review strict et imprévisible.",
+      "Adhésion annuelle payante obligatoire.",
+      "Peu de flexibilité sur les conditions commerciales."
+    ],
+    "use_cases": [
+      "Publier une app iOS/macOS sur l'App Store officiel.",
+      "Recueillir les retours via TestFlight avant lancement.",
+      "Gérer les rapports commerciaux et analytiques."
+    ],
+    "relevant_for": ["Développeurs iOS", "Équipes macOS", "Éditeurs d'apps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop for Apple platforms (iOS, macOS).",
+        "You want to distribute via the official App Store.",
+        "You need TestFlight for beta testing."
+      ],
+      "avoidIf": [
+        "You don't develop for Apple.",
+        "You want to avoid Apple's commission.",
+        "You're looking for an alternative to Apple's model."
+      ],
+      "threshold": "App Store Connect is mandatory for publishing on Apple's App Store; it's the only official path for iOS/macOS developers."
+    },
+    "pros": [
+      "Apple's official and reliable platform.",
+      "Native TestFlight for beta distribution.",
+      "Detailed analytics and financial reports.",
+      "Access to 175+ markets.",
+      "AppStoreConnect API for automation."
+    ],
+    "cons": [
+      "Apple takes a commission on sales and in-app purchases.",
+      "Strict and unpredictable review process.",
+      "Annual membership required.",
+      "Limited flexibility on commercial terms."
+    ],
+    "use_cases": [
+      "Publish an iOS/macOS app on the official App Store.",
+      "Gather feedback via TestFlight before launch.",
+      "Manage financial reports and app analytics."
+    ]
+  }
+}

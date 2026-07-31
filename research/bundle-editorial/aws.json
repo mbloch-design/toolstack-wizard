@@ -1,0 +1,96 @@
+{
+  "slug": "aws",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "AWS Pricing (site officiel)", "url": "https://aws.amazon.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud complète (Infrastructure as a Service) offrant plus de 200 services : calcul (EC2), stockage (S3), bases de données (RDS), serverless (Lambda), conteneurs (ECS/EKS), IA/ML et networking.",
+    "what_en": "Comprehensive cloud platform (Infrastructure as a Service) offering 200+ services: compute (EC2), storage (S3), databases (RDS), serverless (Lambda), containers (ECS/EKS), AI/ML, and networking.",
+    "pricing_model": "Pay-as-you-go (paiement à l'usage). Options : forfaits fixes, Savings Plans (rabais sur 1-3 ans), tarification progressive selon volume.",
+    "free_tier": { "exists": true, "detail": "Gratuit pendant 12 mois pour services éligibles (1 an) ; crédit initial 200 USD. Toujours gratuit : 1 million requêtes Lambda/mois, 5 GB S3, etc." },
+    "plans": [
+      { "name": "Pay-as-you-go", "price": "Montants sur la page officielle par service" },
+      { "name": "Savings Plans", "price": "Rabais pour engagement 1-3 ans" },
+      { "name": "Reserved Instances", "price": "Rabais pour capacité réservée" }
+    ],
+    "key_features": [
+      "Plus de 200 services cloud",
+      "Calcul flexible (EC2, Lambda, Fargate)",
+      "Stockage scalable (S3, EBS, EFS)",
+      "Bases de données gérées (RDS, DynamoDB, Aurora)",
+      "Networking avancé (VPC, CDN CloudFront)",
+      "Services IA/ML et big data"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'infrastructure cloud scalable.",
+        "Vous construisez des solutions complexes multi-services.",
+        "Vous cherchez une plateforme établie avec écosystème riche."
+      ],
+      "avoidIf": [
+        "Vous voulez une facturation simple et prévisible.",
+        "Votre infrastructure est très simple.",
+        "Vous préférez un coût total maîtrisé facilement."
+      ],
+      "threshold": "AWS convient aux projets complexes et scalables ; pour des besoins simples, des alternatives plus transparentes peuvent être préférables."
+    },
+    "pros": [
+      "Écosystème le plus mature et riche.",
+      "Scalabilité quasi-illimitée.",
+      "Nombreux services intégrés (IA, ML, big data).",
+      "Marché de fournisseurs tiers important.",
+      "Support enterprise disponible."
+    ],
+    "cons": [
+      "Tarification complexe et difficile à prévoir.",
+      "Courbe d'apprentissage abrupte.",
+      "Facture peut exploser sans optimisation.",
+      "Vendor lock-in fort.",
+      "Support gratuit limité."
+    ],
+    "use_cases": [
+      "Héberger une application web scalable.",
+      "Construire un pipeline de données big data.",
+      "Déployer des services ML en production."
+    ],
+    "relevant_for": ["Architectes cloud", "DevOps engineers", "Startups en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need scalable cloud infrastructure.",
+        "You're building complex multi-service solutions.",
+        "You want an established platform with rich ecosystem."
+      ],
+      "avoidIf": [
+        "You want simple and predictable billing.",
+        "Your infrastructure is very simple.",
+        "You prefer to control total costs easily."
+      ],
+      "threshold": "AWS suits complex, scalable projects; for simple needs, more transparent alternatives may be preferable."
+    },
+    "pros": [
+      "Most mature and feature-rich ecosystem.",
+      "Nearly unlimited scalability.",
+      "Many integrated services (AI, ML, big data).",
+      "Large third-party marketplace.",
+      "Enterprise support available."
+    ],
+    "cons": [
+      "Pricing is complex and hard to predict.",
+      "Steep learning curve.",
+      "Bills can spiral without optimization.",
+      "Strong vendor lock-in.",
+      "Limited free support."
+    ],
+    "use_cases": [
+      "Host a scalable web application.",
+      "Build a big data processing pipeline.",
+      "Deploy ML services in production."
+    ]
+  }
+}

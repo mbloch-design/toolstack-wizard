@@ -1,0 +1,94 @@
+{
+  "slug": "appsmith",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Appsmith Pricing (site officiel)", "url": "https://www.appsmith.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme low-code open-source (Apache 2.0) pour créer des interfaces internes en connectant bases de données, APIs REST/GraphQL et LLMs avec widgets drag-and-drop et automatisation JavaScript.",
+    "what_en": "Open-source low-code platform (Apache 2.0) for building internal tools by connecting databases, REST/GraphQL APIs, and LLMs with drag-and-drop widgets and JavaScript automation.",
+    "pricing_model": "Gratuit jusqu'à 5 utilisateurs cloud. Abonnement Business par utilisateur. Plan Enterprise à forfait pour 100+ utilisateurs.",
+    "free_tier": { "exists": true, "detail": "5 utilisateurs sur le cloud, 3 dépôts Git, essai gratuit de 15 jours du plan Business inclus." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit jusqu'à 5 utilisateurs" },
+      { "name": "Business", "price": "15 $/mois par utilisateur (jusqu'à 99 utilisateurs)" },
+      { "name": "Enterprise", "price": "2 500 $/mois pour 100+ utilisateurs" }
+    ],
+    "key_features": [
+      "Widgets drag-and-drop",
+      "Connexion multi-source (bases de données, APIs, LLMs)",
+      "Contrôle de version Git",
+      "Workflows et packages réutilisables",
+      "SSO SAML/OIDC (Business+)",
+      "CI/CD et audit logging"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des outils internes pour votre équipe.",
+        "Vous préférez une plateforme open-source.",
+        "Vous avez besoin de flexibilité avec APIs et LLMs."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution client-facing complexe.",
+        "Vous avez un très petit budget.",
+        "Vous ne voulez pas gérer l'auto-hébergement."
+      ],
+      "threshold": "Appsmith convient parfaitement aux équipes internes ; pour des apps publiques critiques, évaluez les alternatives selon vos besoins de performance."
+    },
+    "pros": [
+      "Open-source et auto-hébergeable.",
+      "Tarification transparente et prévisible.",
+      "Flexibilité avec JavaScript et connexions multiples.",
+      "Essai gratuit du plan Business disponible.",
+      "Support des workflows complexes et automatisés."
+    ],
+    "cons": [
+      "Limite 5 utilisateurs sur le cloud en gratuit.",
+      "Pas de DAO présentable au client directement.",
+      "Documentation moins exhaustive que alternatives propriétaires.",
+      "Support communautaire limité en gratuit."
+    ],
+    "use_cases": [
+      "Créer un dashboard d'admin pour gestion interne.",
+      "Automatiser des workflows métier.",
+      "Construire des outils d'intégration entre systèmes."
+    ],
+    "relevant_for": ["Équipes produit", "Administrateurs système", "Développeurs internes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building internal tools for your team.",
+        "You prefer open-source platforms.",
+        "You need flexibility with APIs and LLMs."
+      ],
+      "avoidIf": [
+        "You're building complex client-facing apps.",
+        "You have a very small budget.",
+        "You don't want to manage self-hosting."
+      ],
+      "threshold": "Appsmith excels for internal tools; for critical public apps, evaluate alternatives based on performance and scalability needs."
+    },
+    "pros": [
+      "Open-source and self-hostable.",
+      "Transparent and predictable pricing.",
+      "Flexibility with JavaScript and multiple data sources.",
+      "Free trial of Business plan available.",
+      "Support for complex and automated workflows."
+    ],
+    "cons": [
+      "Limited to 5 cloud users on free tier.",
+      "Not presentable directly to end customers.",
+      "Documentation less comprehensive than proprietary alternatives.",
+      "Limited community support on free tier."
+    ],
+    "use_cases": [
+      "Create an admin dashboard for internal management.",
+      "Automate business workflows.",
+      "Build integration tools between systems."
+    ]
+  }
+}
