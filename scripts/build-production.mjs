@@ -59,6 +59,7 @@ run(
   process.platform === "win32" ? "node_modules\\.bin\\tsx.cmd" : "node_modules/.bin/tsx",
   ["scripts/gen-stacks-catalog-index.ts"],
 );
+run("Index léger des guides d’accueil", "node", ["scripts/gen-home-posts-index.mjs"]);
 console.log("Mise à l'écart des anciens dossiers générés : dist, dist-ssr");
 archiveGeneratedDirs();
 

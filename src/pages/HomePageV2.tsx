@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
 import { ArrowRight, Code2, Layers3, MessagesSquare, WandSparkles } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
-import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
@@ -14,6 +14,7 @@ import { CarouselControls, CarouselPagination } from "@/components/CarouselContr
 // HomePageV2 is an eager import, so pulling stacks.ts here modulepreloaded the
 // data-stacks chunk on every page. Regenerate with scripts/gen-stacks-index.ts.
 import STACKS from "@/data/stacks-index.json";
+import HOME_POSTS from "@/data/home-posts-index.json";
 
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
@@ -45,6 +46,35 @@ const AI_SLUGS = [
   "heygen","jasper","lovable","notion-ai","replit","stable-diffusion","suno","grok","windsurf",
 ];
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
+
+const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
+  "affinity-photo": { cover: null, logo: "/home-logos/affinity-photo.webp" },
+  box: { cover: "/home-cards/box.webp", logo: "/home-logos/box.webp" },
+  chatgpt: { cover: "/og-screenshots/chatgpt.png", logo: "/home-logos/chatgpt.webp" },
+  circle: { cover: "/home-cards/circle.webp", logo: "/home-logos/circle.webp" },
+  claude: { cover: "/home-cards/claude.webp" },
+  cursor: { cover: "/home-cards/cursor.webp", logo: "/home-logos/cursor.webp" },
+  deepseek: { cover: "/home-cards/deepseek.webp", logo: "/home-logos/deepseek.webp" },
+  descript: { cover: "/home-cards/descript.webp", logo: "/home-logos/descript.webp" },
+  dropbox: { cover: "/home-cards/dropbox.webp", logo: "/home-logos/dropbox.webp" },
+  gemini: { cover: "/home-cards/gemini.webp", logo: "/home-logos/gemini.webp" },
+  "github-copilot": { cover: "/home-cards/github-copilot.webp" },
+  grammarly: { cover: "/home-cards/grammarly.webp", logo: "/home-logos/grammarly.webp" },
+};
+
+function withHomeAssets<T extends { id: string; name: string; slug?: string; ogImageUrl?: string; logo?: string }>(tool: T): T {
+  const nameSlug = tool.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  const asset = [tool.slug, tool.id, nameSlug]
+    .map((key) => key && HOME_TOOL_ASSETS[key])
+    .find(Boolean);
+  if (!asset) return tool;
+
+  return {
+    ...tool,
+    ogImageUrl: asset.cover || undefined,
+    logo: asset.logo || tool.logo,
+  };
+}
 
 function SwipePager({
   className,
@@ -281,7 +311,7 @@ function EditorialShelfPanel({
       <div className="v2-shelf-list">
         {visibleTools.map((tool) => (
           <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-item">
-            <span className="v2-shelf-item-logo"><ToolLogo tool={tool} size={42} /></span>
+            <span className="v2-shelf-item-logo"><ToolLogo tool={withHomeAssets(tool)} size={42} /></span>
             <span className="v2-shelf-item-copy">
               <strong>{tool.name}</strong>
               <small>{shortTagline(tool.shortDescription, 52)}</small>
@@ -302,7 +332,7 @@ export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
   const { tools, loading: toolsLoading } = useToolSummaries();
   const { categories } = useCategories();
-  const { posts } = usePosts(lang);
+  const posts = HOME_POSTS[lang];
 
   const [featuredPage, setFeaturedPage] = useState(0);
   const [newPage, setNewPage] = useState(0);
@@ -455,7 +485,7 @@ export default function HomePageV2() {
                           : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
                       );
                       return (
-                        <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
+                        <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
                       );
                     })}
                   </SwipePager>
@@ -496,7 +526,7 @@ export default function HomePageV2() {
                       : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
                   );
                   return (
-                    <ToolCardEditorial key={tool.id} tool={tool as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
+                    <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
                   );
                 })}
               </SwipePager>
@@ -532,7 +562,7 @@ export default function HomePageV2() {
                   return (
                     <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-new-card">
                       <div className="v2-new-logo">
-                        <ToolLogo tool={tool as any} size={36} />
+                        <ToolLogo tool={withHomeAssets(tool) as any} size={36} />
                       </div>
                       <div className="v2-new-info">
                         <span className="v2-new-name">{tool.name}</span>

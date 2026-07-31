@@ -1159,6 +1159,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
             `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
             `<link rel="alternate" hreflang="x-default" href="${frCanonical}" />`,
+            `<link rel="preload" as="image" type="image/webp" href="/hero/hero-gradient-960.webp" imagesrcset="/hero/hero-gradient-960.webp 960w, /hero/hero-gradient-1800.webp 1800w" imagesizes="(max-width: 960px) 100vw, 1280px" fetchpriority="high" />`,
             `<title>${lp.title}</title>`,
             `<meta name="description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:title" content="${lp.title.replace(/"/g, "&quot;")}" />`,

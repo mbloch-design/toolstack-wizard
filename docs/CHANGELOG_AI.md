@@ -8,6 +8,9 @@
 - L’image LCP possède des dimensions intrinsèques et une priorité de téléchargement élevée ; le navigateur sélectionne la variante adaptée au viewport.
 - La section « Outils en vedette » réserve sa géométrie pendant le chargement Supabase afin que l’apparition des recommandations ne décale plus tout le catalogue.
 - Le skeleton reprend la grille responsive et les proportions finales des cartes, sans animation ni contenu annoncé aux technologies d’assistance.
+- Les couvertures et logos visibles sur l’accueil sont maintenant servis localement en WebP dimensionnés, ce qui supprime les téléchargements d’images OG tierces sur cette route.
+- L’accueil utilise un index éditorial de 12 guides par langue au lieu de charger les catalogues d’articles complets ; le générateur est intégré au build de production.
+- Le prérendu des trois routes d’accueil annonce l’image LCP dans le document initial avec un preload responsive, avant l’exécution de React.
 - Validation : build production et prérendu PASS, rendu Chrome contrôlé à 390 × 844 et 1440 × 1000, variante WebP correcte, aucune erreur d’overlay et CLS local mesuré à 0,00026.
 
 ---

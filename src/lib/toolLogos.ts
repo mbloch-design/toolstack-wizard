@@ -300,8 +300,10 @@ function simpleIconCandidateKeys(tool: LogoCandidateTool, domain: string) {
 export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 = 64): string[] {
   const sources: string[] = [];
 
-  // 1. Custom logo override (Clearbit URL stored in tool.logo)
-  if (tool.logo?.startsWith("http")) sources.push(tool.logo);
+  // 1. Custom logo override. Accept canonical remote URLs and local assets:
+  // homepage/card-specific local logos must win before CDN probing so they
+  // do not trigger avoidable SimpleIcons 404 → favicon fallback chains.
+  if (tool.logo?.startsWith("http") || tool.logo?.startsWith("/")) sources.push(tool.logo);
 
   const key = normalizeKey(tool.slug || tool.id || tool.name);
   const domain = getVerifiedDomain(tool);

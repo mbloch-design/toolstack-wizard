@@ -1,0 +1,345 @@
+{
+  "fr": [
+    {
+      "slug": "anna-morel-designer-studio-augmente",
+      "title": "Concevoir comme un studio quand on travaille seule",
+      "date": "2026-07-28",
+      "tags": [
+        "stories",
+        "designer freelance",
+        "intelligence artificielle",
+        "stack créative",
+        "futur du travail",
+        "workflow"
+      ],
+      "thumbnail": "/editorial/stories/anna-morel/hero.jpg"
+    },
+    {
+      "slug": "pourquoi-visualiser-stack-saas",
+      "title": "Pourquoi visualiser votre stack SaaS plutôt que la gérer dans Excel",
+      "date": "2026-07-28",
+      "tags": [
+        "stack saas",
+        "organisation",
+        "productivité",
+        "workflow",
+        "freelance",
+        "outils"
+      ],
+      "thumbnail": "/editorial/stack-visuale/hero-stack-visuelle.jpg"
+    },
+    {
+      "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+      "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
+      "date": "2026-07-27",
+      "tags": [
+        "stories",
+        "consultant opérations",
+        "petite entreprise",
+        "automatisation",
+        "workflow",
+        "croissance"
+      ],
+      "thumbnail": "/editorial/stories/marc-operations/hero.jpg"
+    },
+    {
+      "slug": "nora-bensaid-produit-sante-depuis-terrain",
+      "title": "Construire un produit numérique à partir du terrain",
+      "date": "2026-07-26",
+      "tags": [
+        "stories",
+        "développeuse freelance",
+        "produit numérique",
+        "santé",
+        "recherche utilisateur",
+        "workflow"
+      ],
+      "thumbnail": "/editorial/stories/nora-sante/hero.jpg"
+    },
+    {
+      "slug": "outils-facturation-freelance-2026",
+      "title": "Logiciel facturation freelance 2026 : le guide honnête (+ obligation e-invoicing)",
+      "date": "2026-05-08",
+      "tags": [
+        "facturation",
+        "compta",
+        "freelance",
+        "tpe",
+        "e-invoicing",
+        "pdp",
+        "shine",
+        "qonto",
+        "indy",
+        "pennylane",
+        "dougs"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "top-5-competences-ia-freelance-2026",
+      "title": "Top 5 des compétences IA freelance à apprendre en 2026 (compétences à haut revenu)",
+      "date": "2026-05-03",
+      "tags": [
+        "compétences ia",
+        "freelance 2026",
+        "ia generative",
+        "ai cro",
+        "ai web building",
+        "ugc ia",
+        "ai funnel",
+        "stack ia",
+        "haut revenu",
+        "marketing digital"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "conseils-ia-freelances-2026",
+      "title": "Conseils IA pour freelances en 2026 : construire une stack utile, sans payer deux fois",
+      "date": "2026-04-29",
+      "tags": [
+        "ia freelance",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "stack ia",
+        "productivité",
+        "anti-gaspillage",
+        "2026",
+        "prompts",
+        "workflows ia"
+      ],
+      "thumbnail": "/editorial/conseils-ia-freelances-2026/surcharge-outils-ia.jpg"
+    },
+    {
+      "slug": "loom-prix-alternatives",
+      "title": "Prix de Loom en 2026 : ça vaut le coup pour un freelance ?",
+      "date": "2026-04-27",
+      "tags": [
+        "loom",
+        "prix loom",
+        "alternatives loom",
+        "tella",
+        "claap",
+        "outils vidéo",
+        "saas freelance",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "stack-saas-minimaliste-freelance-2026-moins-50-euros",
+      "title": "Stack SaaS minimaliste pour freelance en 2026 — 5 outils, moins de 50€/mois",
+      "date": "2026-04-22",
+      "tags": [
+        "stack freelance",
+        "notion",
+        "freebe",
+        "make",
+        "fathom",
+        "proton mail",
+        "minimaliste",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+      "title": "Zapier vs Make vs n8n — lequel choisir pour automatiser ta stack en 2026 ?",
+      "date": "2026-04-22",
+      "tags": [
+        "zapier",
+        "make",
+        "n8n",
+        "automatisation",
+        "comparatif",
+        "freelance",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "agents-ia-freelances-2026-lesquels-valent-le-coup",
+      "title": "Agents IA pour freelances en 2026 : lesquels valent vraiment le coup ?",
+      "date": "2026-04-22",
+      "tags": [
+        "agents ia",
+        "freelance",
+        "claude code",
+        "zapier",
+        "make",
+        "notion ai",
+        "dust",
+        "2026"
+      ],
+      "thumbnail": "/editorial/agents-ia-freelances-2026/hero-agent.jpg"
+    },
+    {
+      "slug": "claude-vs-chatgpt-2026-lequel-choisir-business",
+      "title": "Claude ou ChatGPT en 2026 : lequel choisir pour votre activité ?",
+      "date": "2026-04-22",
+      "tags": [
+        "claude",
+        "chatgpt",
+        "comparatif",
+        "ia",
+        "2026",
+        "opus 4.7",
+        "gpt-5"
+      ],
+      "thumbnail": "/editorial/claude-vs-chatgpt-2026/hero-comparaison.jpg"
+    }
+  ],
+  "en": [
+    {
+      "slug": "ai-tips-freelancers-2026",
+      "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
+      "date": "2026-04-29",
+      "tags": [
+        "ai freelance",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "ai stack",
+        "productivity",
+        "anti-waste",
+        "2026",
+        "prompts",
+        "ai workflows"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "grammarly-vs-languagetool-comparison-2026",
+      "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+      "date": "2026-04-29",
+      "tags": [
+        "grammarly",
+        "languagetool",
+        "spell checker",
+        "grammar checker",
+        "freelance",
+        "productivity",
+        "savings",
+        "2026",
+        "comparison",
+        "writing tools",
+        "copywriting",
+        "free vs paid",
+        "roi"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "loom-pricing-alternatives",
+      "title": "Loom Pricing in 2026: Is It Worth It for Freelancers?",
+      "date": "2026-04-27",
+      "tags": [
+        "loom",
+        "loom pricing",
+        "loom alternatives",
+        "tella",
+        "claap",
+        "video tools",
+        "freelance saas",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "minimalist-saas-stack-freelancer-2026-under-50-euros",
+      "title": "Minimalist SaaS Stack for Freelancers in 2026 — 5 Tools, Under €50/month",
+      "date": "2026-04-22",
+      "tags": [
+        "freelance stack",
+        "notion",
+        "freebe",
+        "make",
+        "fathom",
+        "proton mail",
+        "minimalist",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "notion-free-or-paid",
+      "title": "Managing 3 clients simultaneously: Is Notion free really enough for you?",
+      "date": "2026-03-06",
+      "tags": [],
+      "thumbnail": null
+    },
+    {
+      "slug": "calendly-free-enough",
+      "title": "You just signed your 2nd client: do you need Calendly Pro?",
+      "date": "2026-03-06",
+      "tags": [],
+      "thumbnail": null
+    },
+    {
+      "slug": "chatgpt-plus-worth-it",
+      "title": "You spend 2h/day on repetitive tasks: does ChatGPT Plus really change anything?",
+      "date": "2026-03-06",
+      "tags": [],
+      "thumbnail": null
+    },
+    {
+      "slug": "grammarly-free-or-paid",
+      "title": "You got client feedback about a typo: is Grammarly Premium worth it?",
+      "date": "2026-03-06",
+      "tags": [],
+      "thumbnail": null
+    },
+    {
+      "slug": "stripe-vs-bank-transfer",
+      "title": "You just signed your 1st client: how should you get paid?",
+      "date": "2026-03-06",
+      "tags": [],
+      "thumbnail": null
+    },
+    {
+      "slug": "claude-vs-chatgpt-deepseek",
+      "title": "Looking for the most profitable AI for your tasks: ChatGPT, Claude or DeepSeek?",
+      "date": "2026-03-06",
+      "tags": [],
+      "thumbnail": null
+    },
+    {
+      "slug": "stack-freelance-writer",
+      "title": "You're a freelance writer: here's the minimal stack that's actually enough for you",
+      "date": "2026-03-06",
+      "tags": [
+        "tool stack",
+        "writer",
+        "freelance",
+        "savings",
+        "productivity",
+        "minimalism"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "toggl-track-free-or-paid",
+      "title": "Toggl Track: Free or Paid? The Complete Guide for Freelancers",
+      "date": "2026-03-01",
+      "tags": [
+        "toggl-track",
+        "time tracking",
+        "time tracking tool",
+        "freelance",
+        "productivity",
+        "billing",
+        "reports",
+        "free vs paid",
+        "roi",
+        "savings",
+        "essential tools",
+        "2026",
+        "alternatives",
+        "clockify",
+        "harvest"
+      ],
+      "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png"
+    }
+  ]
+}
