@@ -1,0 +1,100 @@
+{
+  "slug": "retool",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Retool — pricing (site officiel)", "url": "https://retool.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code pour construire des applications métier et des automations internes connectées à vos données, déployables dans votre infrastructure propre. Propose des environnements de staging, gestion des permissions avancée et options cloud/self-hosted.",
+    "what_en": "No-code platform for building business apps and internal automations connected to your own data, deployed in your own infrastructure. Offers staging environments, advanced permission controls, and cloud or self-hosted deployment options.",
+    "pricing_model": "Freemium avec 4 plans (Free, Team, Business, Enterprise). Facturation par builders/utilisateurs internes avec crédits mensuels pour les workflows.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Jusqu'à 5 utilisateurs, 500 exécutions workflow/mois, 5 Go de stockage, 250 crédits IA/mois, applications web et mobile illimitées."
+    },
+    "plans": [
+      { "name": "Free", "price": "€0/mois (jusqu'à 5 utilisateurs)" },
+      { "name": "Team", "price": "€9/mois par builder ; €5/mois par utilisateur interne" },
+      { "name": "Business", "price": "€46/mois par builder ; €14/mois par utilisateur interne" },
+      { "name": "Enterprise", "price": "Tarification sur mesure" }
+    ],
+    "key_features": [
+      "Constructeur no-code pour apps métier",
+      "Automations et workflows avec exécutions mensuelles",
+      "Intégrations natives avec bases de données et APIs",
+      "Déploiement cloud ou self-hosted",
+      "Outils IA intégrés (crédits mensuels)",
+      "Gestion des permissions et environnements staging"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des outils internes rapidement sans code.",
+        "Vos données doivent rester sous votre contrôle (self-hosted).",
+        "Vous avez besoin d'automations métier connectées à vos systèmes."
+      ],
+      "avoidIf": [
+        "Vous voulez une application client-facing simple (optez pour un CMS).",
+        "Votre équipe n'a pas de bases de données structurées à exposer.",
+        "Vous cherchez un outil entièrement gratuit."
+      ],
+      "threshold": "Retool s'impose pour les outils internes d'équipes techniques ; pour des apps simples client-facing ou sans données, un CMS ou constructeur frontend convient mieux."
+    },
+    "pros": [
+      "Formidable pour construire des tableaux de bord et outils internes rapidement.",
+      "Déploiement self-hosted pour garder le contrôle des données.",
+      "Intégrations larges avec bases de données et APIs.",
+      "Crédits IA et automations inclus.",
+      "Interface intuitive même pour les non-développeurs."
+    ],
+    "cons": [
+      "Pas idéal pour les apps grand public.",
+      "Tarification par utilisateur peut monter rapidement.",
+      "Courbe d'apprentissage pour les automations avancées.",
+      "Crédits mensuels qui ne se cumulent pas."
+    ],
+    "use_cases": [
+      "Construire un tableau de bord RH ou finance interne.",
+      "Automatiser des flux de travail métier manuels.",
+      "Exposer une base de données avec une interface sécurisée.",
+      "Créer une application d'administration personnalisée."
+    ],
+    "relevant_for": ["Équipes métier", "Administrateurs système", "DevOps engineers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build internal tools and dashboards quickly without code.",
+        "Your data must stay under your control (self-hosted).",
+        "You need business automations connected to your systems."
+      ],
+      "avoidIf": [
+        "You want a simple client-facing application (use a CMS instead).",
+        "Your team has no structured databases to expose.",
+        "You're looking for a fully free tool."
+      ],
+      "threshold": "Retool shines for internal team tools; for simple client-facing apps or data-light projects, a CMS or frontend builder is better."
+    },
+    "pros": [
+      "Excellent for building dashboards and internal tools fast.",
+      "Self-hosted deployment to keep data under your control.",
+      "Wide database and API integrations.",
+      "AI credits and automations included.",
+      "Intuitive interface even for non-technical users."
+    ],
+    "cons": [
+      "Not ideal for public-facing consumer apps.",
+      "Per-user pricing can scale up quickly.",
+      "Learning curve for advanced automations.",
+      "Monthly credits don't carry over."
+    ],
+    "use_cases": [
+      "Build an internal HR or finance dashboard.",
+      "Automate manual business workflows.",
+      "Expose a database with a secure interface.",
+      "Create a custom admin application."
+    ]
+  }
+}
