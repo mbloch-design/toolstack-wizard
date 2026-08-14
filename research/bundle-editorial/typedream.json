@@ -1,0 +1,92 @@
+{
+  "slug": "typedream",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Typedream — No-code website builder (site officiel)", "url": "https://typedream.com" },
+    { "label": "Typedream Pricing", "url": "https://typedream.com/pricing" }
+  ],
+  "facts": {
+    "what": "Constructeur de sites sans code utilisant une interface texte avec slash-commands permettant de créer facilement sites, landing pages, blogs, formulaires et boutiques digitales.",
+    "what_en": "No-code website builder using a text-based interface with slash-commands for easily creating sites, landing pages, blogs, forms, and digital stores.",
+    "pricing_model": "Freemium avec tier gratuit limité ; plans payants à partir de montants sur la page officielle",
+    "free_tier": { "exists": true, "detail": "Gratuit pour commencer ; limitations sur domaine personnalisé et analytics" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Launch", "price": "12 $ / mois (facturation annuelle) ou 15 $ / mois (mensuel)" },
+      { "name": "Business", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Interface texte avec slash-commands pour design rapide",
+      "Plus de 100 templates professionnels",
+      "Support des CMS items et formulaires",
+      "Domaine personnalisé avec SSL (plans payants)",
+      "Analytics intégrée",
+      "Vente de produits digitaux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez créer un site rapidement sans coder.",
+        "Vous aimez les interfaces textuelles avec slash-commands.",
+        "Vous avez besoin d'une boutique digitale simple."
+      ],
+      "avoidIf": [
+        "Vous construisez une application complexe multi-pages.",
+        "Vous voulez des outils de SEO avancés.",
+        "Vous cherchez un e-commerce complet type Shopify."
+      ],
+      "threshold": "Typedream excelle pour les créateurs solo et side projects ; pour une boutique sérieuse, Shopify reste plus complet."
+    },
+    "pros": [
+      "Interface unique et créative avec slash-commands.",
+      "Gratuit pour commencer.",
+      "Hosting et mise en ligne inclus.",
+      "Vente de produits digitaux incluse."
+    ],
+    "cons": [
+      "Moins complet qu'un CMS traditionnel pour du contenu éditorial lourd.",
+      "Options d'e-commerce limitées comparées à Shopify.",
+      "Écosystème et intégrations plus petit."
+    ],
+    "use_cases": [
+      "Créer un portfolio ou site personnel rapidement.",
+      "Lancer une landing page pour un side project.",
+      "Vendre des produits digitaux (ebooks, templates)."
+    ],
+    "relevant_for": ["Créateurs solo", "Side hustlers", "Petites équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to build a site quickly without coding.",
+        "You like text interfaces with slash-commands.",
+        "You need a simple digital product store."
+      ],
+      "avoidIf": [
+        "You're building a complex, multi-page application.",
+        "You need advanced SEO tools.",
+        "You want a full e-commerce like Shopify."
+      ],
+      "threshold": "Typedream excels for solo creators and side projects; for serious e-commerce, Shopify offers more."
+    },
+    "pros": [
+      "Unique, creative slash-command interface.",
+      "Free to start.",
+      "Hosting and publishing included.",
+      "Digital product sales included."
+    ],
+    "cons": [
+      "Less complete than traditional CMS for heavy editorial.",
+      "Limited e-commerce options vs Shopify.",
+      "Smaller ecosystem and integrations."
+    ],
+    "use_cases": [
+      "Create a portfolio or personal site quickly.",
+      "Launch a landing page for a side project.",
+      "Sell digital products (ebooks, templates)."
+    ]
+  }
+}

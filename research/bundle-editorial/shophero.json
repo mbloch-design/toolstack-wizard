@@ -1,0 +1,98 @@
+{
+  "slug": "shophero",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ShopHero — Plateforme de vente au détail (site officiel)", "url": "https://about.shophero.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de vente au détail complète pour épiceries indépendantes et restaurants, offrant boutique en ligne omnichannel, outils de marketing (email, réseaux sociaux, digital), et solutions de fulfillment (livraison, endless-aisle) avec support client intégré.",
+    "what_en": "Complete retail platform for independent grocery stores and restaurants, offering omnichannel online store, marketing tools (email, social, digital), and fulfillment solutions (delivery, endless-aisle) with integrated customer support.",
+    "pricing_model": "Modèle SaaS B2B avec tarification personnalisée selon les besoins du retailer",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; tarification personnalisée sur demande pour les retailers." },
+    "plans": [
+      { "name": "Plans personnalisés", "price": "Tarification sur devis selon les besoins du retailer" }
+    ],
+    "key_features": [
+      "Boutique en ligne omnichannel avec application mobile",
+      "Intégration SKU, imagerie et tarification en magasin",
+      "ShopHero Social — Automatisation de marketing social et email",
+      "ShopHero Prism — Marketing digital ciblé",
+      "Fulfillment flexible (livraison, endless-aisle)",
+      "Support client US 24/7 par téléphone et SMS",
+      "Marges bénéficiaires de 10-12% rapportées",
+      "Breakeven rapide (souvent après 2 commandes/jour)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez une épicerie indépendante.",
+        "Vous cherchez une solution omnichannel pour restaurant.",
+        "Vous préférez une plateforme spécialisée en retail alimentaire."
+      ],
+      "avoidIf": [
+        "Vous êtes une petite boutique avec budget très limité.",
+        "Vous cherchez une solution e-commerce généraliste."
+      ],
+      "threshold": "ShopHero s'impose pour les épiceries et restaurants indépendants cherchant une solution omnichannel intégrée ; pour e-commerce générique, explorez des alternatives plus accessibles."
+    },
+    "pros": [
+      "Solution complète et spécialisée pour épiceries/restaurants.",
+      "Omnichannel intégré (web, mobile, en magasin).",
+      "Outils de marketing automatisés et ciblés.",
+      "Marges bénéficiaires correctes rapportées par les utilisateurs.",
+      "Breakeven rapidement réalisable.",
+      "Support client US en direct.",
+      "Soutenu par Dot Foods depuis 2021."
+    ],
+    "cons": [
+      "Tarification non transparente (sur devis).",
+      "Pas de version gratuite ou d'essai public.",
+      "Spécialisé épiceries/restaurants (pas généraliste).",
+      "Peut être coûteux pour très petits retailers."
+    ],
+    "use_cases": [
+      "Lancer une boutique en ligne pour épicerie indépendante.",
+      "Implémenter une stratégie omnichannel pour restaurant.",
+      "Automatiser le marketing client pour retailer alimentaire.",
+      "Gérer le fulfillment (livraison, retrait)."
+    ],
+    "relevant_for": ["Épiceries indépendantes", "Restaurateurs", "Retailers alimentaires", "Petites chaînes de magasins"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run an independent grocery store.",
+        "You seek an omnichannel solution for a restaurant.",
+        "You prefer a specialized food retail platform."
+      ],
+      "avoidIf": [
+        "You are a small shop with a very tight budget.",
+        "You seek a generalist e-commerce solution."
+      ],
+      "threshold": "ShopHero is ideal for independent groceries and restaurants seeking an integrated omnichannel solution; for generic e-commerce, explore more accessible alternatives."
+    },
+    "pros": [
+      "Complete, specialized solution for groceries/restaurants.",
+      "Integrated omnichannel (web, mobile, in-store).",
+      "Automated and targeted marketing tools.",
+      "Decent profit margins reported by users.",
+      "Breakeven achieved quickly.",
+      "Direct US customer support.",
+      "Backed by Dot Foods since 2021."
+    ],
+    "cons": [
+      "Non-transparent pricing (custom quotes).",
+      "No free version or public trial.",
+      "Specialized for groceries/restaurants (not generalist).",
+      "May be costly for very small retailers."
+    ],
+    "use_cases": [
+      "Launch an online store for an independent grocery.",
+      "Implement omnichannel strategy for a restaurant.",
+      "Automate customer marketing for a food retailer.",
+      "Manage fulfillment (delivery, in-store pickup)."
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "supabase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Supabase — Backend Firebase alternative (site officiel)", "url": "https://supabase.com" },
+    { "label": "Supabase Pricing", "url": "https://supabase.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de backend open source construite sur PostgreSQL qui fournit une base de données SQL, authentification, stockage d'objets, fonctions serverless et synchronisation temps réel en alternative à Firebase.",
+    "what_en": "Open source backend platform built on PostgreSQL providing SQL database, authentication, object storage, serverless functions, and real-time sync as a Firebase alternative.",
+    "pricing_model": "Open source gratuit et auto-hébergeable ; Supabase Cloud avec tiers gratuit et plans payants usage-based",
+    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 50 000 utilisateurs mensuels, 500 MB stockage, limité à 2 projets actifs ; cloud gratuit pause les projets inactifs après 1 semaine" },
+    "plans": [
+      { "name": "Free", "price": "0 $ (limité à 50 000 MAU, 500 MB DB)" },
+      { "name": "Pro", "price": "25 $ / mois (100 000 MAU, 8 GB DB, credits calcul inclus)" },
+      { "name": "Team", "price": "599 $ / mois (certifications SOC2/ISO27001, support prioritaire)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée (support 24/7, SLA, BYO Cloud)" }
+    ],
+    "key_features": [
+      "Base de données PostgreSQL avec API REST et GraphQL générées automatiquement",
+      "Authentification intégrée avec social login",
+      "Stockage d'objets compatible S3 avec CDN",
+      "Fonctions serverless (Edge Functions)",
+      "Synchronisation temps réel avec Realtime",
+      "Outils d'IA et vecteurs pour recherche sémantique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une SaaS ou une application web avec besoins de données et authentification.",
+        "Vous préférez une base SQL à une NoSQL.",
+        "Vous voulez une alternative open source et moins chère que Firebase."
+      ],
+      "avoidIf": [
+        "Vous avez une application mobile offline-first très complexe.",
+        "Vous êtes déjà investi dans l'écosystème Google.",
+        "Vous avez besoin d'une infrastructure entièrement on-prem."
+      ],
+      "threshold": "Supabase prime pour les startups et projets web SQL-first qui veulent flexibilité et coûts prévisibles ; Firebase reste meilleur pour mobile-first avec offline sync complexe."
+    },
+    "pros": [
+      "Open source et déployable partout.",
+      "Pricing transparent et prévisible vs Firebase (3-5x moins cher pour gros volumes).",
+      "Base SQL PostgreSQL complète (moins de lock-in).",
+      "Ecosystem intégré : auth, storage, serverless dans une plateforme."
+    ],
+    "cons": [
+      "Moins mature en offline-sync mobile que Firebase.",
+      "Écosystème plus petit que Firebase/Google.",
+      "Migration depuis Firebase demande refonte de la logique auth/data."
+    ],
+    "use_cases": [
+      "Lancer une SaaS ou application web avec authentification user.",
+      "Créer un backend API pour une application web moderne.",
+      "Remplacer Firebase pour réduire les coûts de scaling."
+    ],
+    "relevant_for": ["Développeurs full-stack", "Startups SaaS", "Teams web modernes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a SaaS or web app with data and auth needs.",
+        "You prefer SQL to NoSQL.",
+        "You want an open source, cheaper alternative to Firebase."
+      ],
+      "avoidIf": [
+        "You have a complex, offline-first mobile app.",
+        "You're already invested in Google's ecosystem.",
+        "You need entirely on-prem infrastructure."
+      ],
+      "threshold": "Supabase wins for startups and SQL-first web projects seeking flexibility and predictable costs; Firebase still better for mobile-first with complex offline sync."
+    },
+    "pros": [
+      "Open source and deployable anywhere.",
+      "Transparent, predictable pricing vs Firebase (3-5x cheaper at scale).",
+      "Full PostgreSQL database (minimal lock-in).",
+      "Integrated ecosystem: auth, storage, serverless in one platform."
+    ],
+    "cons": [
+      "Less mature mobile offline-sync than Firebase.",
+      "Smaller ecosystem than Firebase/Google.",
+      "Migrating from Firebase requires rearchitecting auth/data logic."
+    ],
+    "use_cases": [
+      "Launch a SaaS or web app with user authentication.",
+      "Build a backend API for a modern web application.",
+      "Replace Firebase to reduce scaling costs."
+    ]
+  }
+}

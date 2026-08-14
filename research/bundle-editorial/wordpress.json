@@ -1,0 +1,90 @@
+{
+  "slug": "wordpress",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "WordPress — Site officiel", "url": "https://wordpress.org" }
+  ],
+  "facts": {
+    "what": "Système de gestion de contenu (CMS) open source gratuit qui alimente plus de 40% du web. Support blogs, sites corporate, portfolios, stores (via WooCommerce). Extensible via plugins et thèmes.",
+    "what_en": "Free, open-source content management system (CMS) powering over 40% of the web. Supports blogs, corporate sites, portfolios, stores (via WooCommerce). Extensible via plugins and themes.",
+    "pricing_model": "Logiciel core gratuit (GPL). Coûts additionnels : hébergement WordPress, domaine, thèmes/plugins premium, et services gérés optionnels.",
+    "free_tier": { "exists": true, "detail": "WordPress.org core gratuit et open source. Aucune limite d'usage. Hébergement auto-géré (coûts externes). Aussi WordPress.com offre plans allant de gratuit à payant (9-70 $/mois)." },
+    "plans": [],
+    "key_features": [
+      "Éditeur de contenu intuitif (block editor)",
+      "Gestion utilisateurs et rôles",
+      "Système de plugins (50K+) pour étendre fonctionnalités",
+      "Thèmes (10K+) pour personnaliser design",
+      "SEO intégré et optimisations",
+      "Multilingue et multi-site"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous lancez un blog, site corporate ou portfolio.",
+        "Vous voulez un CMS puissant sans coding.",
+        "Vous avez besoin de flexibilité et d'extensibilité via plugins."
+      ],
+      "avoidIf": [
+        "Vous construisez une SaaS ou app (WordPress n'est pas un app framework).",
+        "Vous ne voulez pas gérer infrastructure (considérez WordPress.com géré).",
+        "Vous avez des besoins très basiques (une simple landing page suffit)."
+      ],
+      "threshold": "WordPress s'impose pour les sites de contenu et petites organisations ; pour des apps complexes, un framework web (React, Next.js, etc.) est mieux adapté."
+    },
+    "pros": [
+      "Gratuit et open source (zéro coût software).",
+      "Écosystème massif de plugins/thèmes (50K+ d'extensions).",
+      "Pas de courbe d'apprentissage élevée pour contenu.",
+      "SEO-friendly et mature depuis 20+ ans."
+    ],
+    "cons": [
+      "Nécessite hébergement externe et maintenance.",
+      "Sécurité dépend de mises à jour + plugins fiables.",
+      "Performance peut souffrir avec trop de plugins.",
+      "Pas adapté pour les apps métier complexes."
+    ],
+    "use_cases": [
+      "Lancer un blog ou publication éditorial.",
+      "Créer un site corporate ou de PME.",
+      "Gérer portfolio créatif avec CMS intégré.",
+      "Vendre des produits (via WooCommerce plugin)."
+    ],
+    "relevant_for": ["Blogueurs", "PME", "Freelances", "Éditeurs de contenu", "Petites agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're launching a blog, corporate site, or portfolio.",
+        "You want a powerful CMS without coding.",
+        "You need flexibility and extensibility via plugins."
+      ],
+      "avoidIf": [
+        "You're building a SaaS or app (WordPress isn't an app framework).",
+        "You don't want to manage infrastructure (consider managed WordPress.com).",
+        "You have very basic needs (a simple landing page suffices)."
+      ],
+      "threshold": "WordPress is the go-to for content sites and small organizations; for complex apps, a web framework (React, Next.js, etc.) is better."
+    },
+    "pros": [
+      "Free and open source (zero software cost).",
+      "Massive plugin/theme ecosystem (50K+ extensions).",
+      "Low learning curve for content management.",
+      "SEO-friendly and mature (20+ years)."
+    ],
+    "cons": [
+      "Requires external hosting and maintenance.",
+      "Security depends on updates + reliable plugins.",
+      "Performance can suffer with many plugins.",
+      "Not suited for complex business apps."
+    ],
+    "use_cases": [
+      "Launch a blog or editorial publication.",
+      "Build a corporate or SMB website.",
+      "Manage a creative portfolio with integrated CMS.",
+      "Sell products (via WooCommerce plugin)."
+    ]
+  }
+}

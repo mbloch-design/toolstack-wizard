@@ -1,0 +1,88 @@
+{
+  "slug": "woocommerce",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "WooCommerce — Site officiel", "url": "https://woocommerce.com" }
+  ],
+  "facts": {
+    "what": "Plugin e-commerce open source gratuit pour WordPress. Permet vendre produits physiques/numériques, gérer panier et paiements. Flexible et hautement personnalisable avec extensions tiers.",
+    "what_en": "Free, open-source e-commerce plugin for WordPress. Sell physical/digital products, manage cart and payments. Highly flexible and customizable with third-party extensions.",
+    "pricing_model": "Gratuit (core plugin). Coûts additionnels : hébergement WordPress, domaine, extensions premium, et paiements.",
+    "free_tier": { "exists": true, "detail": "Plugin WooCommerce core gratuit et open source (GPL). Aucune limite de produits ou commandes. Extensions et services premium disponibles séparément." },
+    "plans": [],
+    "key_features": [
+      "Gestion produits (physiques et numériques)",
+      "Panier et checkout personnalisables",
+      "Multiples passerelles paiement (Stripe, PayPal, etc.)",
+      "Rapports et analytics intégrés",
+      "Gestion inventaire et commandes",
+      "Extensible via plugins (tiers ou custom)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez déjà un site WordPress et voulez ajouter e-commerce.",
+        "Vous avez besoin de flexibilité e-commerce sans dépendre d'une SaaS.",
+        "Vous avez les compétences DevOps (ou une agence) pour l'infrastructure."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution e-commerce au pain-and-butter (Shopify est plus simple).",
+        "Vous n'avez pas de budget hébergement/maintenance (WordPress a des coûts récurrents).",
+        "Vous démarrez totalement dans l'e-commerce (courbe d'apprentissage WordPress)."
+      ],
+      "threshold": "WooCommerce excelle pour les boutiques intégrées à WordPress ; Shopify ou un SaaS convient mieux si vous voulez du clé-en-main sans DevOps."
+    },
+    "pros": [
+      "Gratuit (core plugin open source).",
+      "Flexibilité totale (plugins, thèmes, code custom).",
+      "Intégration seamless avec WordPress CMS.",
+      "Pas de frais vendor (paiements seulement avec votre processeur)."
+    ],
+    "cons": [
+      "Nécessite hébergement WordPress fiable + maintenance.",
+      "Coût total (hébergement + plugins premium) peut grimper.",
+      "DevOps/support inclus pas garanti.",
+      "Performance dépend de la config d'hébergement."
+    ],
+    "use_cases": [
+      "Ajouter boutique à un site WordPress existant.",
+      "Vendre produits numériques (ebooks, templates, etc.).",
+      "E-commerce hautement customisé (design, fonctionnalités métier)."
+    ],
+    "relevant_for": ["Blogs WordPress existants", "Agences web", "E-commerce customisé", "PME techniquement autonomes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already run a WordPress site and want to add e-commerce.",
+        "You need e-commerce flexibility without platform lock-in.",
+        "You have DevOps skills (or an agency) for infrastructure."
+      ],
+      "avoidIf": [
+        "You want a turnkey e-commerce solution (Shopify is simpler).",
+        "You don't have a budget for hosting/maintenance (WordPress has ongoing costs).",
+        "You're brand new to e-commerce (WordPress has a learning curve)."
+      ],
+      "threshold": "WooCommerce excels for shops integrated with WordPress; Shopify or a SaaS is better if you want turnkey without DevOps."
+    },
+    "pros": [
+      "Free (open-source core plugin).",
+      "Total flexibility (plugins, themes, custom code).",
+      "Seamless WordPress CMS integration.",
+      "No vendor fees (only payment processor charges)."
+    ],
+    "cons": [
+      "Requires reliable WordPress hosting + maintenance.",
+      "Total cost (hosting + premium plugins) can escalate.",
+      "DevOps/support not guaranteed.",
+      "Performance depends on hosting setup."
+    ],
+    "use_cases": [
+      "Add a shop to an existing WordPress site.",
+      "Sell digital products (ebooks, templates, etc.).",
+      "Highly customized e-commerce (design, business logic)."
+    ]
+  }
+}

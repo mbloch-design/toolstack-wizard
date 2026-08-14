@@ -1,0 +1,84 @@
+{
+  "slug": "sqlalchemy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SQLAlchemy — Python SQL toolkit (site officiel)", "url": "https://www.sqlalchemy.org" }
+  ],
+  "facts": {
+    "what": "Bibliothèque Python de mapping objet-relationnel (ORM) et de toolkit SQL qui offre des patterns de persistance de niveau entreprise pour accéder aux bases de données avec flexibilité et performance.",
+    "what_en": "Python ORM library and SQL toolkit that provides enterprise-level persistence patterns for database access with full SQL flexibility and high performance.",
+    "pricing_model": "Gratuit et open source (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, licence MIT, sponsorship optionnel mais non obligatoire" },
+    "plans": [],
+    "key_features": [
+      "Object Relational Mapper (ORM) complet",
+      "SQL Expression Language pour requêtes de bas niveau",
+      "Support multi-base de données (PostgreSQL, MySQL, SQLite, etc.)",
+      "Système de typage fort avec support des types Python"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en Python et avez besoin d'interagir avec une base de données SQL.",
+        "Vous préférez une approche orientée objet pour gérer les données.",
+        "Vous cherchez une solution mature et très documentée."
+      ],
+      "avoidIf": [
+        "Vous cherchez une ORM pour un autre langage que Python.",
+        "Vous avez une base de données NoSQL.",
+        "Vous préférez des solutions plus légères ou minimalistes."
+      ],
+      "threshold": "SQLAlchemy s'impose pour les projets Python sérieux qui interagissent avec des bases SQL ; pour du prototypage ultra-rapide, des alternatives plus légères peuvent suffire."
+    },
+    "pros": [
+      "Très mature et largement adopté dans l'écosystème Python.",
+      "Entièrement gratuit et open source.",
+      "Support complet de SQL avec la possibilité de descendre bas niveau.",
+      "Excellente documentation et large communauté."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour les débutants.",
+      "Configuration initiale plus verbeux que certaines alternatives minimalistes.",
+      "Performance peut être limitée sur très gros volumes si mal configuré."
+    ],
+    "use_cases": [
+      "Développer une API REST avec FastAPI ou Django.",
+      "Gérer un modèle de données complexe multi-table.",
+      "Créer une application web Python avec persistance de données."
+    ],
+    "relevant_for": ["Développeurs Python", "Data engineers", "Architectes de systèmes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in Python and need to interact with SQL databases.",
+        "You prefer an object-oriented approach to data management.",
+        "You want a mature, well-documented solution."
+      ],
+      "avoidIf": [
+        "You're building with a non-Python language.",
+        "You have NoSQL data stores.",
+        "You need something lightweight and minimal."
+      ],
+      "threshold": "SQLAlchemy is essential for serious Python projects managing SQL databases; for rapid prototyping, lighter alternatives may suffice."
+    },
+    "pros": [
+      "Mature and widely adopted in Python ecosystem.",
+      "Completely free and open source.",
+      "Full SQL support with low-level access when needed.",
+      "Excellent documentation and large community."
+    ],
+    "cons": [
+      "Steep learning curve for beginners.",
+      "More verbose setup than some minimal alternatives.",
+      "Performance may suffer on huge volumes if misconfigured."
+    ],
+    "use_cases": [
+      "Build a REST API with FastAPI or Django.",
+      "Manage complex multi-table data models.",
+      "Create a Python web application with data persistence."
+    ]
+  }
+}

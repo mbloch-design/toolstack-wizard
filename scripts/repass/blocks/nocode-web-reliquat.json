@@ -1,0 +1,4 @@
+[
+  { "slug": "liquid", "name": "Liquid", "url": "https://shopify.github.io/liquid/" },
+  { "slug": "nestjs", "name": "NestJS", "url": "https://nestjs.com/" }
+]

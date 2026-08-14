@@ -1,0 +1,89 @@
+{
+  "slug": "strapi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Strapi — Headless CMS (site officiel)", "url": "https://strapi.io" }
+  ],
+  "facts": {
+    "what": "CMS headless open source basé sur Node.js et TypeScript qui génère automatiquement des API REST et GraphQL à partir de modèles de contenu, avec interface d'administration pour éditeurs.",
+    "what_en": "Open source headless CMS built on Node.js and TypeScript that automatically generates REST and GraphQL APIs from content models, with an admin interface for content editors.",
+    "pricing_model": "Gratuit et open source (licence MIT) ; Strapi Cloud avec plans payants à partir de montants sur la page officielle",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit en auto-hébergé ; Strapi Cloud propose une version gratuite limitée et des plans payants" },
+    "plans": [
+      { "name": "Self-Hosted (Free)", "price": "Gratuit" },
+      { "name": "Strapi Cloud - Free", "price": "Gratuit (limité)" },
+      { "name": "Strapi Cloud - Starter", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Content Type Builder sans code pour modéliser le contenu",
+      "Génération automatique d'API REST et GraphQL",
+      "Interface d'administration pour éditeurs",
+      "Support des composants réutilisables et zones dynamiques",
+      "Authentification et contrôle d'accès basés sur les rôles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un site ou une application multicanal (web, mobile, etc.).",
+        "Vous voulez séparer contenu et présentation (headless).",
+        "Vous préférez une solution open source avec flexibilité complète."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution clé en main avec hébergement et domaine inclus.",
+        "Vous n'avez aucune compétence technique.",
+        "Vous avez un budget très limité et ne pouvez pas auto-héberger."
+      ],
+      "threshold": "Strapi excelle pour les équipes tech qui maîtrisent Node.js/TypeScript et veulent découpler contenu et présentation ; sinon, un CMS traditionnel peut être plus simple."
+    },
+    "pros": [
+      "Entièrement open source et gratuit en auto-hébergé.",
+      "Génération d'API automatique pour REST et GraphQL.",
+      "Altamente customizable avec code Node.js.",
+      "Large écosystème de plugins et intégrations."
+    ],
+    "cons": [
+      "Requiert des compétences en déploiement et infrastructure.",
+      "Configuration initiale et maintenan plus exigeante qu'un CMS WYSIWYG.",
+      "Strapi Cloud payant pour une version gérée."
+    ],
+    "use_cases": [
+      "Alimenter un site statique (Next.js, Gatsby) avec du contenu.",
+      "Créer une API de contenu pour une application mobile.",
+      "Gérer du contenu éditorial distribuable sur plusieurs canaux."
+    ],
+    "relevant_for": ["Développeurs full-stack", "Agences web", "Éditeurs de contenu tech-aware"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build multi-channel sites or apps (web, mobile, etc.).",
+        "You want to separate content from presentation (headless).",
+        "You prefer an open source solution with full control."
+      ],
+      "avoidIf": [
+        "You need a turnkey solution with hosting and domain included.",
+        "You have no technical skills.",
+        "Your budget is tight and you can't self-host."
+      ],
+      "threshold": "Strapi shines for tech teams comfortable with Node.js/TypeScript who want to decouple content and presentation; otherwise, a traditional CMS may be simpler."
+    },
+    "pros": [
+      "Completely open source and free when self-hosted.",
+      "Automatic API generation for REST and GraphQL.",
+      "Highly customizable with Node.js code.",
+      "Large ecosystem of plugins and integrations."
+    ],
+    "cons": [
+      "Requires deployment and infrastructure skills.",
+      "More demanding initial setup and maintenance than WYSIWYG CMS.",
+      "Strapi Cloud paid for managed hosting."
+    ],
+    "use_cases": [
+      "Feed a static site (Next.js, Gatsby) with managed content.",
+      "Create a content API for a mobile application.",
+      "Manage editorial content distributable across channels."
+    ]
+  }
+}

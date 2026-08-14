@@ -1,0 +1,87 @@
+{
+  "slug": "vercel",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vercel — Pricing (site officiel)", "url": "https://vercel.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de déploiement cloud pour applications frontend et serverless, optimisée pour Next.js mais compatible avec n'importe quel framework. Offre un CDN global, edge functions, et intégration CI/CD.",
+    "what_en": "Cloud deployment platform for frontend and serverless applications, optimized for Next.js but compatible with any framework. Offers global CDN, edge functions, and CI/CD integration.",
+    "pricing_model": "Freemium avec plans gratuit, professionnel à usage fixes plus surcharge à l'utilisation, et enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Plan Hobby gratuit à vie pour projets non commerciaux. Inclut déploiements illimités, 100 GB transfert rapide/mois, 1M requêtes edge/mois, 4 h CPU actif/mois." },
+    "plans": [
+      { "name": "Hobby (Gratuit)", "price": "0 $ (gratuit, non commercial)" },
+      { "name": "Pro", "price": "20 $/utilisateur/mois + surcharge à l'utilisation" },
+      { "name": "Enterprise", "price": "Prix personnalisé (contact commercial)" }
+    ],
+    "key_features": [
+      "CDN global avec edge functions",
+      "Déploiements Git automatiques (CI/CD)",
+      "Prévisualisations en direct et rollbacks instantanés",
+      "Serverless functions et stockage",
+      "Observabilité et monitoring intégrés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une application frontend moderne (React, Vue, Svelte, etc.).",
+        "Vous voulez un déploiement simple sans infrastructure DevOps.",
+        "Vous avez besoin de scaling automatique et de haute disponibilité."
+      ],
+      "avoidIf": [
+        "Votre projet est complètement personnalisé ou nécessite un contrôle total du serveur.",
+        "Vous explorez juste sans besoin de mise en production rapide."
+      ],
+      "threshold": "Vercel excelle pour les équipes SaaS et les startups qui privilégient la rapidité de déploiement ; pour un backend legacy ou très custom, l'infrastructure traditionnelle convient mieux."
+    },
+    "pros": [
+      "Déploiement ultra-rapide et git-driven (quelques clics).",
+      "Excellente intégration Next.js et React.",
+      "Plan gratuit vraiment utilisable pour les prototypes.",
+      "Scalabilité automatique sans configuration DevOps."
+    ],
+    "cons": [
+      "Plan Hobby limité à l'usage non commercial.",
+      "Coût d'utilisation peut grimper vite sans monitoring.",
+      "Moins pertinent si vous avez un backend custom complexe."
+    ],
+    "use_cases": [
+      "Déployer rapidement une landing page ou un site statique.",
+      "Mettre en production une application Next.js/React avec peu de friction DevOps.",
+      "Créer un prototype de startup et le scaler quand le trafic augmente."
+    ],
+    "relevant_for": ["Startups", "Freelances front-end", "Équipes DevOps minimalistes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop modern frontend applications (React, Vue, Svelte, etc.).",
+        "You want simple deployments without managing infrastructure.",
+        "You need automatic scaling and high availability out of the box."
+      ],
+      "avoidIf": [
+        "Your project is heavily customized or requires full server control.",
+        "You're just exploring and don't need production deployments yet."
+      ],
+      "threshold": "Vercel shines for SaaS teams and startups prioritizing deployment speed; for legacy backends or highly custom infrastructure, traditional hosting fits better."
+    },
+    "pros": [
+      "Ultra-fast, git-driven deployments (just a few clicks).",
+      "Excellent Next.js and React integration.",
+      "Hobby plan is genuinely usable for prototypes.",
+      "Automatic scaling with no DevOps configuration."
+    ],
+    "cons": [
+      "Hobby plan limited to non-commercial use.",
+      "Usage costs can grow quickly without monitoring.",
+      "Less relevant if you have a complex custom backend."
+    ],
+    "use_cases": [
+      "Deploy a landing page or static site quickly.",
+      "Ship a Next.js/React app with minimal DevOps friction.",
+      "Build a startup MVP and scale when traffic grows."
+    ]
+  }
+}

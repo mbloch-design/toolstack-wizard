@@ -1,0 +1,91 @@
+{
+  "slug": "saleor",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Saleor — Plateforme e-commerce open source (site officiel)", "url": "https://saleor.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de commerce électronique composable, open source et headless, avec API GraphQL native et tableau de bord extensible pour construire des expériences e-commerce modernes et omnicanal.",
+    "what_en": "Composable, open-source, headless e-commerce platform with native GraphQL API and extensible dashboard to build modern, omnichannel commerce experiences.",
+    "pricing_model": "Open source gratuit (auto-hébergement) ou Saleor Cloud (SaaS managé payant)",
+    "free_tier": { "exists": true, "detail": "Version open source entièrement gratuite sur GitHub (23.2k stars) avec contrôle total. Saleor Cloud est un service SaaS payant optionnel." },
+    "plans": [
+      { "name": "Open Source", "price": "Gratuit" },
+      { "name": "Saleor Cloud", "price": "Montants sur la page officielle de tarification" }
+    ],
+    "key_features": [
+      "API GraphQL native pour intégrations sans restrictions",
+      "Dashboard puissant et extensible",
+      "Webhooks synchrones et modèles dynamiques",
+      "Commerce as Code avec CLI Configurator",
+      "45+ points de montage pour extensions",
+      "Traçage OpenTelemetry pour observabilité",
+      "Support omnichannel (web, mobile, retail, agents IA)",
+      "Conformité SOC 2, GDPR, PCI-DSS (Cloud)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une plateforme e-commerce flexible et composable.",
+        "Vous voulez une API GraphQL native pour intégrations.",
+        "Vous recherchez une solution open source auto-hébergée."
+      ],
+      "avoidIf": [
+        "Vous préférez une solution sans infrastructure technique.",
+        "Vous cherchez une plateforme clé en main hautement opérationnelle."
+      ],
+      "threshold": "Saleor s'impose pour les équipes techniques cherchant du contrôle et de la flexibilité ; pour une approche clé en main, explorez des alternatives plus opérationnelles."
+    },
+    "pros": [
+      "Entièrement open source avec contrôle total.",
+      "API GraphQL puissante et flexible.",
+      "Dashboard extensible avec 45+ points de montage.",
+      "Support omnichannel et Commerce as Code.",
+      "Excellent pour les équipes techniques."
+    ],
+    "cons": [
+      "Requiert expertise technique pour auto-hébergement.",
+      "Courbe d'apprentissage importante pour GraphQL.",
+      "Saleor Cloud payant si vous préférez le SaaS managé."
+    ],
+    "use_cases": [
+      "Construire une plateforme e-commerce complexe et extensible.",
+      "Intégrer des systèmes tiers via une API GraphQL puissante.",
+      "Implémenter une stratégie omnichannel avec agents IA."
+    ],
+    "relevant_for": ["Équipes e-commerce techniques", "Agences développement", "Entreprises avec besoins e-commerce avancés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a flexible and composable e-commerce platform.",
+        "You want a native GraphQL API for integrations.",
+        "You seek a self-hosted open-source solution."
+      ],
+      "avoidIf": [
+        "You prefer a solution without technical infrastructure.",
+        "You seek a fully managed, out-of-the-box platform."
+      ],
+      "threshold": "Saleor is ideal for technical teams seeking control and flexibility; for a turnkey approach, explore more operational alternatives."
+    },
+    "pros": [
+      "Fully open source with complete control.",
+      "Powerful and flexible GraphQL API.",
+      "Extensible dashboard with 45+ extension points.",
+      "Omnichannel and Commerce as Code support.",
+      "Excellent for technical teams."
+    ],
+    "cons": [
+      "Requires technical expertise for self-hosting.",
+      "Steep learning curve for GraphQL.",
+      "Saleor Cloud is paid if you prefer managed SaaS."
+    ],
+    "use_cases": [
+      "Build a complex and extensible e-commerce platform.",
+      "Integrate third-party systems via a powerful GraphQL API.",
+      "Implement omnichannel strategy with AI agents."
+    ]
+  }
+}

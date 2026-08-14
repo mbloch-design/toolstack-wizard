@@ -1,0 +1,88 @@
+{
+  "slug": "rork",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rork — Site officiel", "url": "https://rork.com" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code alimentée par l'IA pour créer des applications mobiles et web par conversation, publier sur l'App Store et générer des revenus sans compétences en programmation.",
+    "what_en": "AI-powered no-code platform to build mobile and web applications through conversation, publish to the App Store, and generate revenue without coding skills.",
+    "pricing_model": "Abonnement par paliers tarifaires, avec stockage de fichiers limité selon le plan",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; abonnement payant requis." },
+    "plans": [
+      { "name": "Plans échelonnés", "price": "Montants sur la page officielle de tarification" }
+    ],
+    "key_features": [
+      "Construction d'applications par conversation IA",
+      "Support des applications natives iOS via Rork Max",
+      "Création de jeux multijoueurs et jeux 3D",
+      "Stockage de fichiers extensible (10MB à 5GB selon plan)",
+      "Intégrations avec Lovable et GitHub",
+      "Rork Max App pour construire en déplacement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez créer une application sans coder.",
+        "Vous préférez converser avec l'IA pour développer.",
+        "Vous visez la publication sur l'App Store rapidement."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une application hautement personnalisée.",
+        "Vous recherchez une solution gratuite."
+      ],
+      "threshold": "Rork convient pour prototyper et lancer rapidement des applications simples avec l'IA ; pour des besoins complexes, explorez des solutions de développement plus flexibles."
+    },
+    "pros": [
+      "Interface conversationnelle intuitive avec l'IA.",
+      "Lancement rapide d'applications mobiles.",
+      "Support de la publication App Store intégrée.",
+      "Pas de compétences en programmation requises."
+    ],
+    "cons": [
+      "Fonctionnalités limitées par rapport au développement custom.",
+      "Dépendance à la qualité des requêtes IA.",
+      "Stockage de fichiers restreint selon le plan.",
+      "Modèle d'abonnement obligatoire (pas de gratuit)."
+    ],
+    "use_cases": [
+      "Prototyper une idée d'application en quelques minutes.",
+      "Créer des jeux mobiles simples.",
+      "Publier une application MVP sur l'App Store."
+    ],
+    "relevant_for": ["Entrepreneurs non-technique", "Créateurs d'applications mobiles", "Développeurs no-code"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to create an app without coding.",
+        "You prefer conversing with AI to develop.",
+        "You aim to publish on the App Store quickly."
+      ],
+      "avoidIf": [
+        "You need a highly customized application.",
+        "You seek a free solution."
+      ],
+      "threshold": "Rork is ideal for prototyping and quickly launching simple AI-assisted applications; for complex needs, explore more flexible development solutions."
+    },
+    "pros": [
+      "Intuitive conversational interface with AI.",
+      "Rapid mobile app launch.",
+      "App Store publishing built-in.",
+      "No programming skills required."
+    ],
+    "cons": [
+      "Limited features compared to custom development.",
+      "Dependent on AI request quality.",
+      "Restricted file storage per plan.",
+      "Mandatory subscription model (no free tier)."
+    ],
+    "use_cases": [
+      "Prototype an app idea in minutes.",
+      "Create simple mobile games.",
+      "Launch an MVP application on the App Store."
+    ]
+  }
+}

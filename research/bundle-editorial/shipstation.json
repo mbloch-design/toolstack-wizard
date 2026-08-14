@@ -1,0 +1,94 @@
+{
+  "slug": "shipstation",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ShipStation — Plateforme de gestion des expéditions (site officiel)", "url": "https://www.shipstation.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS complète de gestion des expéditions et de l'accomplissement des commandes pour l'e-commerce, avec comparaison de tarifs de transporteurs, impression d'étiquettes remisées, automatisation et intégrations avec 400+ plateformes.",
+    "what_en": "Complete SaaS shipping and order fulfillment platform for e-commerce, with carrier rate comparison, discounted label printing, automation, and integrations with 400+ platforms.",
+    "pricing_model": "Abonnement SaaS par volume d'expéditions, sans frais de configuration, essai gratuit 30 jours",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours sans carte de crédit. Plans payants échelonnés selon le volume d'expéditions." },
+    "plans": [
+      { "name": "Plans échelonnés par volume", "price": "Montants sur la page officielle de tarification" },
+      { "name": "Essai gratuit", "price": "30 jours sans engagement" }
+    ],
+    "key_features": [
+      "Comparaison automatique de tarifs auprès de 200+ transporteurs",
+      "Impression d'étiquettes avec réductions jusqu'à 90%",
+      "Automatisation complète des flux de travail",
+      "Gestion des inventaires et des retours",
+      "Intégrations avec 400+ plateformes (Shopify, Amazon, eBay, etc.)",
+      "APIs pour personnalisation avancée",
+      "Support omnichannel (petites entreprises, PME, Entreprises)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez de multiples canaux de vente (Shopify, Amazon, eBay, etc.).",
+        "Vous cherchez à optimiser les coûts d'expédition.",
+        "Vous avez besoin d'automatiser votre flux de fulfillment."
+      ],
+      "avoidIf": [
+        "Vous n'expédiez que rarement ou très peu.",
+        "Vous cherchez une solution uniquement pour une plateforme."
+      ],
+      "threshold": "ShipStation s'impose pour les e-commerçants omnichannel cherchant optimisation et automatisation d'expéditions ; pour des usages occasionnels, explorez des alternatives plus simples."
+    },
+    "pros": [
+      "Comparaison automatique de 200+ transporteurs.",
+      "Fortes remises négociées sur les étiquettes d'expédition.",
+      "Intégrations massives (400+ plateformes).",
+      "Automatisation complète du flux de travail.",
+      "Gestion efficace des retours et inventaires.",
+      "Essai gratuit 30 jours."
+    ],
+    "cons": [
+      "Coûts supplémentaires pour impressions d'étiquettes.",
+      "Peut être complexe pour débutants.",
+      "Abonnement mensuel obligatoire."
+    ],
+    "use_cases": [
+      "Gérer l'expédition pour un e-commerce multi-canaux.",
+      "Automatiser le fulfillment à grande échelle.",
+      "Optimiser les coûts de transport.",
+      "Gérer les retours et processus reverse logistics."
+    ],
+    "relevant_for": ["E-commerçants omnichannel", "Petites à moyennes entreprises", "Vendeurs Amazon/eBay", "Agences fulfillment"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple sales channels (Shopify, Amazon, eBay, etc.).",
+        "You seek to optimize shipping costs.",
+        "You need to automate your fulfillment workflow."
+      ],
+      "avoidIf": [
+        "You rarely or infrequently ship orders.",
+        "You only need a solution for a single platform."
+      ],
+      "threshold": "ShipStation is ideal for omnichannel e-commerce businesses seeking shipping optimization and automation; for occasional use, explore simpler alternatives."
+    },
+    "pros": [
+      "Automatic comparison of 200+ carriers.",
+      "Steep negotiated discounts on shipping labels.",
+      "Massive integrations (400+ platforms).",
+      "Complete workflow automation.",
+      "Efficient returns and inventory management.",
+      "30-day free trial."
+    ],
+    "cons": [
+      "Additional costs for label printing.",
+      "Can be complex for beginners.",
+      "Mandatory monthly subscription."
+    ],
+    "use_cases": [
+      "Manage shipping for multi-channel e-commerce.",
+      "Automate fulfillment at scale.",
+      "Optimize transportation costs.",
+      "Manage returns and reverse logistics."
+    ]
+  }
+}

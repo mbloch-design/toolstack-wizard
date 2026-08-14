@@ -1,0 +1,94 @@
+{
+  "slug": "wized",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Wized — Pricing (site officiel)", "url": "https://www.wized.com/pricing" }
+  ],
+  "facts": {
+    "what": "Framework JavaScript low-code pour construire des applications web dynamiques sur Webflow. Intégration API, gestion base de données, et logique métier sans code, directement dans Webflow projects.",
+    "what_en": "Low-code JavaScript framework for building dynamic web apps on Webflow. API integration, database management, and business logic without code, directly in Webflow projects.",
+    "pricing_model": "Freemium par domaine. Plans mensuels ou annuels avec quotas de page views et d'éléments interactifs.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : staging only (pas de production), unlimited page views et éléments en staging, 90 jours de backup." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (staging only)" },
+      { "name": "Lite", "price": "12 $/mois (100K page views, 20 éléments)" },
+      { "name": "Small", "price": "39 $/mois (100K page views, 100 éléments)" },
+      { "name": "Medium", "price": "69 $/mois (200K page views, 400 éléments)" },
+      { "name": "Large", "price": "169 $/mois (300K page views, éléments illimités)" }
+    ],
+    "key_features": [
+      "Éditeur JavaScript visuel (no-code logic).",
+      "Intégration 20+ APIs pre-built (Stripe, Airtable, etc.)",
+      "Gestion de base de données et requêtes",
+      "Support événements et webhooks",
+      "Déploiement multi-domaines (plans payants)",
+      "SLA 99.99% uptime (Enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Webflow et avez besoin d'une logique backend.",
+        "Vous voulez éviter d'apprendre JavaScript/Node mais intégrer des APIs.",
+        "Votre trafic est modéré (< 300K views/mois sans surcoûts importants)."
+      ],
+      "avoidIf": [
+        "Votre app a besoin d'un backend lourd (real-time, caching avancé, microservices).",
+        "Vous commencez sans Webflow (Wized dépend fortement de Webflow).",
+        "Votre trafic est très élevé (coûts de surcharge peuvent être importants)."
+      ],
+      "threshold": "Wized convient pour étendre Webflow de logique métier légère ; pour des backends complexes, un framework traditionnel (Node.js, Python, etc.) est plus judicieux."
+    },
+    "pros": [
+      "Intégration seamless avec Webflow (écosystème cohérent).",
+      "Pas besoin de coder du JavaScript (logique visuelle).",
+      "Pricing transparent par page views + éléments.",
+      "APIs pre-built simplifient les intégrations."
+    ],
+    "cons": [
+      "Dépendant de Webflow (lock-in double).",
+      "Paliers hauts coûteux pour beaucoup de startups.",
+      "Limité pour les vraies applications backend (pas de real-time natif).",
+      "Moins flexible qu'un framework Node/Python custom."
+    ],
+    "use_cases": [
+      "Ajouter un formulaire de contact intégré à Stripe sur un site Webflow.",
+      "Construire un petit SaaS avec CMS Webflow + Wized backend.",
+      "Créer un booking ou réservation system dans Webflow."
+    ],
+    "relevant_for": ["Utilisateurs Webflow avancés", "Freelances no-code/low-code", "Petites équipes SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Webflow and need backend logic.",
+        "You want to avoid learning JavaScript/Node but integrate APIs.",
+        "Your traffic is moderate (< 300K views/month without major overages)."
+      ],
+      "avoidIf": [
+        "Your app needs heavy backend (real-time, advanced caching, microservices).",
+        "You're starting without Webflow (Wized depends heavily on Webflow).",
+        "Your traffic is very high (overage costs can be substantial)."
+      ],
+      "threshold": "Wized suits extending Webflow with light business logic; for complex backends, a traditional framework (Node.js, Python, etc.) is more prudent."
+    },
+    "pros": [
+      "Seamless Webflow integration (cohesive ecosystem).",
+      "No JavaScript coding needed (visual logic).",
+      "Transparent pricing by page views + elements.",
+      "Pre-built APIs simplify integrations."
+    ],
+    "cons": [
+      "Webflow-dependent (double lock-in).",
+      "Higher tiers are steep for many startups.",
+      "Limited for true backends (no native real-time).",
+      "Less flexible than custom Node/Python framework."
+    ],
+    "use_cases": [
+      "Add a contact form integrated with Stripe on a Webflow site.",
+      "Build a small SaaS with Webflow CMS + Wized backend.",
+      "Create a booking or reservation system in Webflow."
+    ]
+  }
+}

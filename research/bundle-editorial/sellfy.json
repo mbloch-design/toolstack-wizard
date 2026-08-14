@@ -1,0 +1,95 @@
+{
+  "slug": "sellfy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sellfy — Plateforme e-commerce no-code (site officiel)", "url": "https://sellfy.com" }
+  ],
+  "facts": {
+    "what": "Plateforme e-commerce no-code pour créer une boutique en ligne sans codage, avec vente de produits numériques, physiques, d'abonnements et d'articles imprimés à la demande, plus marketing et paiements intégrés.",
+    "what_en": "No-code e-commerce platform to create an online store without coding, supporting digital products, physical goods, subscriptions, and print-on-demand items, with integrated marketing and payments.",
+    "pricing_model": "Abonnement mensuel ou annuel sans frais de transaction, réductions appliquées aux abonnements annuels",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; abonnement payant requis. Essai gratuit possible selon les conditions." },
+    "plans": [
+      { "name": "Starter", "price": "29 $ / mois (39 $ facturé mensuellement, 25% de réduction annuel)" },
+      { "name": "Business", "price": "Montants sur la page officielle de tarification" },
+      { "name": "Premium", "price": "Montants sur la page officielle de tarification (20GB par fichier numérique)" }
+    ],
+    "key_features": [
+      "Générateur drag-and-drop sans codage",
+      "Vente de produits numériques, physiques, abonnements et articles imprimés à la demande",
+      "Marketing automatisé (email, SEO, programmes d'affiliation)",
+      "Paiements via Stripe et PayPal intégrés",
+      "Support client 24/7",
+      "Aucun frais de transaction",
+      "Plus de 75 000 créateurs utilisant la plateforme"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez créer une boutique en ligne sans coder.",
+        "Vous préférez un modèle sans frais de transaction sur les ventes.",
+        "Vous vendez des produits numériques, physiques ou des abonnements."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une flexibilité technique avancée.",
+        "Vous recherchez une solution gratuite."
+      ],
+      "threshold": "Sellfy convient pour les créateurs et petits commerçants cherchant une boutique en ligne simple et sans frais de transaction ; pour des besoins complexes, explorez des plateformes plus flexibles."
+    },
+    "pros": [
+      "Aucun frais de transaction sur les ventes.",
+      "Générateur visuel drag-and-drop facile.",
+      "Support de multiples types de produits.",
+      "Marketing automatisé intégré.",
+      "Support client 24/7.",
+      "Plus de 75 000 créateurs actifs."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Limitations de personnalisation technique.",
+      "Frais d'abonnement mensuel/annuel obligatoires."
+    ],
+    "use_cases": [
+      "Lancer une boutique de produits numériques.",
+      "Vendre des produits physiques simples.",
+      "Créer une plateforme d'abonnements.",
+      "Mettre en place un système d'affiliation."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Petits commerçants", "Entrepreneurs sans codage", "Vendeurs de produits numériques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to create an online store without coding.",
+        "You prefer a no-transaction-fee model on sales.",
+        "You sell digital products, physical goods, or subscriptions."
+      ],
+      "avoidIf": [
+        "You need advanced technical flexibility.",
+        "You seek a free solution."
+      ],
+      "threshold": "Sellfy is ideal for creators and small merchants seeking a simple online store without transaction fees; for complex needs, explore more flexible platforms."
+    },
+    "pros": [
+      "No transaction fees on sales.",
+      "Easy drag-and-drop visual builder.",
+      "Support for multiple product types.",
+      "Built-in automated marketing.",
+      "24/7 customer support.",
+      "75,000+ active creators."
+    ],
+    "cons": [
+      "No free version.",
+      "Technical customization limitations.",
+      "Mandatory monthly/annual subscription fees."
+    ],
+    "use_cases": [
+      "Launch a digital product store.",
+      "Sell simple physical products.",
+      "Create a subscription platform.",
+      "Set up an affiliate system."
+    ]
+  }
+}

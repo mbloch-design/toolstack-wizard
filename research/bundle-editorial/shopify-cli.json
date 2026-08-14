@@ -1,0 +1,95 @@
+{
+  "slug": "shopify-cli",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Shopify CLI — Outil de développement open source (documentation officielle)", "url": "https://shopify.dev/docs/api/shopify-cli" }
+  ],
+  "facts": {
+    "what": "Outil en ligne de commande open source pour générer et gérer les applications Shopify, les thèmes et les vitrines personnalisées, avec automatisation des tâches de développement et support multi-plateforme.",
+    "what_en": "Open-source command-line tool for generating and managing Shopify applications, themes, and custom storefronts, with development automation and cross-platform support.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Aucune version payante. Entièrement gratuit et open source." },
+    "plans": [
+      { "name": "Unique plan", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Génération et gestion d'applications Shopify",
+      "Développement de thèmes Shopify",
+      "Création de vitrines personnalisées",
+      "Automatisation des tâches de développement",
+      "Configuration de proxy réseau",
+      "Gestion des mises à jour automatiques",
+      "Installation via npm, yarn, pnpm ou homebrew (macOS)",
+      "Rapports d'utilisation anonymes (désactivables)",
+      "Support multi-plateforme (macOS, Linux, Windows)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez pour la plateforme Shopify.",
+        "Vous cherchez un outil gratuit et open source.",
+        "Vous voulez automatiser vos tâches de développement Shopify."
+      ],
+      "avoidIf": [
+        "Vous développez pour une autre plateforme e-commerce.",
+        "Vous avez besoin d'une interface graphique pour développer."
+      ],
+      "threshold": "Shopify CLI s'impose pour les développeurs Shopify cherchant un outil gratuit et puissant ; pour d'autres plateformes, explorez des alternatives équivalentes."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Outil officiel de Shopify.",
+      "Automatisation complète des tâches de développement.",
+      "Support multi-plateforme.",
+      "Installation facile via npm/yarn/homebrew.",
+      "Gestion des mises à jour automatique."
+    ],
+    "cons": [
+      "Interface en ligne de commande (pas de GUI).",
+      "Limité à l'écosystème Shopify.",
+      "Requiert des connaissances en développement."
+    ],
+    "use_cases": [
+      "Initialiser une nouvelle application Shopify.",
+      "Développer et déployer des thèmes personnalisés.",
+      "Créer des vitrines personnalisées (headless).",
+      "Automatiser le cycle de développement Shopify."
+    ],
+    "relevant_for": ["Développeurs Shopify", "Agences Shopify", "Développeurs web spécialisés", "Architectes de solutions Shopify"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop for the Shopify platform.",
+        "You seek a free and open-source tool.",
+        "You want to automate your Shopify development tasks."
+      ],
+      "avoidIf": [
+        "You develop for another e-commerce platform.",
+        "You need a graphical interface for development."
+      ],
+      "threshold": "Shopify CLI is ideal for Shopify developers seeking a free and powerful tool; for other platforms, explore equivalent alternatives."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Official Shopify tool.",
+      "Complete automation of development tasks.",
+      "Cross-platform support.",
+      "Easy installation via npm/yarn/homebrew.",
+      "Automatic update management."
+    ],
+    "cons": [
+      "Command-line interface (no GUI).",
+      "Limited to the Shopify ecosystem.",
+      "Requires development knowledge."
+    ],
+    "use_cases": [
+      "Initialize a new Shopify application.",
+      "Develop and deploy custom themes.",
+      "Create custom storefronts (headless).",
+      "Automate the Shopify development cycle."
+    ]
+  }
+}

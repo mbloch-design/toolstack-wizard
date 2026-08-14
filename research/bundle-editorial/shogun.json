@@ -1,0 +1,96 @@
+{
+  "slug": "shogun",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Shogun — Plateforme d'optimisation e-commerce (site officiel)", "url": "https://getshogun.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS d'optimisation et de personnalisation pour l'e-commerce Shopify, offrant un page builder visuel, tests A/B et personnalisation du contenu par segment d'audience.",
+    "what_en": "SaaS optimization and personalization platform for Shopify e-commerce, offering visual page builder, A/B testing, and content personalization by audience segment.",
+    "pricing_model": "Abonnement SaaS intégré à Shopify, avec essai gratuit disponible",
+    "free_tier": { "exists": true, "detail": "Essai gratuit via l'app Shopify. Plans payants avec montants sur la page officielle de tarification." },
+    "plans": [
+      { "name": "Essai gratuit", "price": "Gratuit" },
+      { "name": "Plans payants", "price": "Montants sur la page officielle de tarification" }
+    ],
+    "key_features": [
+      "Page Builder visuel sans code",
+      "A/B Testing pour optimisation des éléments du site",
+      "Personnalisation par segment d'audience",
+      "Modèles prédéfinis pour lancement rapide",
+      "Intégration native Shopify",
+      "Bibliothèque de templates professionnels",
+      "Lancement de pages en quelques minutes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une boutique Shopify.",
+        "Vous cherchez à optimiser les taux de conversion.",
+        "Vous voulez créer des pages rapidement sans coder."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Shopify comme plateforme.",
+        "Vous avez besoin d'une flexibilité technique avancée."
+      ],
+      "threshold": "Shogun s'impose pour les marchands Shopify cherchant optimisation et personnalisation ; pour d'autres plateformes e-commerce, explorez des alternatives."
+    },
+    "pros": [
+      "Créateur de pages visuel et facile d'utilisation.",
+      "Tests A/B intégrés pour optimisation.",
+      "Personnalisation par audience.",
+      "Intégration native Shopify.",
+      "Modèles professionnels prêts à l'emploi.",
+      "Essai gratuit disponible.",
+      "Utilisé par 30 000+ marques."
+    ],
+    "cons": [
+      "Limité à Shopify (pas d'autres plateformes).",
+      "Tarification non indiquée sur le site.",
+      "Peut nécessiter tests pour optimisation complète."
+    ],
+    "use_cases": [
+      "Créer des landing pages haute-conversion sans code.",
+      "Tester différentes variantes de page pour optimisation.",
+      "Personnaliser le contenu par type de client.",
+      "Lancer rapidement des pages promotionnelles."
+    ],
+    "relevant_for": ["Commerçants Shopify", "Équipes marketing e-commerce", "Entrepreneurs sans codage", "Agences Shopify"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a Shopify store.",
+        "You seek to optimize conversion rates.",
+        "You want to create pages quickly without coding."
+      ],
+      "avoidIf": [
+        "You don't use Shopify as your platform.",
+        "You need advanced technical flexibility."
+      ],
+      "threshold": "Shogun is ideal for Shopify merchants seeking optimization and personalization; for other e-commerce platforms, explore alternatives."
+    },
+    "pros": [
+      "Visual page builder, easy to use.",
+      "Built-in A/B testing for optimization.",
+      "Audience-based personalization.",
+      "Native Shopify integration.",
+      "Professional ready-to-use templates.",
+      "Free trial available.",
+      "Used by 30,000+ brands."
+    ],
+    "cons": [
+      "Limited to Shopify (no other platforms).",
+      "Pricing not listed on the site.",
+      "May require testing for full optimization."
+    ],
+    "use_cases": [
+      "Create high-converting landing pages without code.",
+      "Test page variants for optimization.",
+      "Personalize content by customer type.",
+      "Rapidly launch promotional pages."
+    ]
+  }
+}

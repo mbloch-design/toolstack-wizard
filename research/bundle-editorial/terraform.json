@@ -1,0 +1,92 @@
+{
+  "slug": "terraform",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Terraform — Infrastructure as Code (site officiel)", "url": "https://www.terraform.io" }
+  ],
+  "facts": {
+    "what": "Outil d'infrastructure as code (IaC) open source créé par HashiCorp qui permet de définir, prévisualiser et déployer l'infrastructure cloud multi-fournisseurs de manière déclarative et versionnée.",
+    "what_en": "Open source infrastructure as code tool by HashiCorp that enables declaring, previewing, and deploying multi-cloud infrastructure declaratively with version control.",
+    "pricing_model": "Terraform gratuit et open source ; Terraform Cloud avec tiers gratuit et plans payants usage-based",
+    "free_tier": { "exists": true, "detail": "Terraform gratuit en local ; Terraform Cloud gratuit jusqu'à 500 ressources gérées et 1 run concurrent" },
+    "plans": [
+      { "name": "Free (Local)", "price": "Gratuit" },
+      { "name": "Terraform Cloud - Free", "price": "Gratuit (500 ressources gérées)" },
+      { "name": "Terraform Cloud - Essentials", "price": "0.10 $ par ressource-mois" },
+      { "name": "Terraform Cloud - Standard", "price": "0.47 $ par ressource-mois" },
+      { "name": "Terraform Cloud - Premium", "price": "0.99 $ par ressource-mois" }
+    ],
+    "key_features": [
+      "Langage HCL déclaratif pour définir l'infrastructure",
+      "Support multi-cloud (AWS, Azure, GCP, Oracle, Docker, etc.)",
+      "Plan et apply workflow avec preview des changements",
+      "État distant (remote state) avec gestion d'accès",
+      "Modules réutilisables pour standardiser les deployments",
+      "Run Tasks pour hooks custom (security scans, cost checks)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une infrastructure cloud complexe multi-fournisseur.",
+        "Vous voulez versionner et auditer les changements d'infrastructure.",
+        "Vous cherchez une solution multi-cloud sans lock-in fournisseur."
+      ],
+      "avoidIf": [
+        "Vous avez une infrastructure très simple (quelques VM).",
+        "Vous êtes exclusivement sur AWS et Kubernetes vous suffit.",
+        "Vous cherchez un outil sans courbe d'apprentissage."
+      ],
+      "threshold": "Terraform s'impose dès que l'infrastructure grandit ou devient multi-cloud ; pour du simple, les consoles cloud ou CDK suffisent."
+    },
+    "pros": [
+      "Gratuit et open source.",
+      "Support multi-cloud avec même langage.",
+      "Écosystème de providers/modules très riche.",
+      "Reproducibilité et traçabilité complète des changements."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour HCL et concepts d'état.",
+      "Gestion de l'état distant peut être complexe.",
+      "Debugging des erreurs d'application peut être verbeux."
+    ],
+    "use_cases": [
+      "Provisionner l'infrastructure d'une application cloud-native.",
+      "Gérer Kubernetes multi-cluster avec terraform.",
+      "Créer des environments dev/staging/prod reproductibles."
+    ],
+    "relevant_for": ["DevOps engineers", "Cloud architects", "Infrastructure teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex multi-cloud infrastructure.",
+        "You want to version and audit infrastructure changes.",
+        "You seek a multi-cloud solution without vendor lock-in."
+      ],
+      "avoidIf": [
+        "Your infrastructure is simple (a few VMs).",
+        "You're AWS-only and Kubernetes suffices.",
+        "You need a tool with minimal learning curve."
+      ],
+      "threshold": "Terraform becomes essential as infrastructure scales or spans clouds; for simple setups, cloud consoles or CDK suffice."
+    },
+    "pros": [
+      "Free and open source.",
+      "Multi-cloud support with consistent language.",
+      "Rich ecosystem of providers and modules.",
+      "Full reproducibility and audit trail of changes."
+    ],
+    "cons": [
+      "Learning curve for HCL and state concepts.",
+      "Remote state management can be complex.",
+      "Debugging errors can be verbose."
+    ],
+    "use_cases": [
+      "Provision cloud-native application infrastructure.",
+      "Manage multi-cluster Kubernetes with Terraform.",
+      "Create reproducible dev/staging/prod environments."
+    ]
+  }
+}

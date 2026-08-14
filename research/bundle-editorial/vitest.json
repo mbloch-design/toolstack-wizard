@@ -1,0 +1,83 @@
+{
+  "slug": "vitest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vitest — Site officiel", "url": "https://vitest.dev" }
+  ],
+  "facts": {
+    "what": "Framework de test unitaire open source et gratuit, construit sur Vite, compatible avec la syntaxe Jest. Offre watch mode instantané (style HMR), support ESM natif, et coverage TypeScript intégré.",
+    "what_en": "Free, open-source unit testing framework built on Vite, Jest-compatible syntax. Offers instant watch mode (HMR-style), native ESM support, and built-in TypeScript coverage.",
+    "pricing_model": "Libre et open source (MIT). Aucun coût, sponsoring optionnel.",
+    "free_tier": { "exists": true, "detail": "Gratuit à 100%. Logiciel open source sans restrictions d'usage ni limitations commerciales." },
+    "plans": [],
+    "key_features": [
+      "Configuration Vite réutilisée (consistency dev/test)",
+      "API compatible Jest pour migration simple",
+      "Watch mode intelligent (rerun seulement changements liés)",
+      "Support natif ESM, TypeScript, JSX via Oxc",
+      "Coverage reporting (v8/Istanbul)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Vite comme bundler (React, Vue, Svelte projects).",
+        "Vous venez de Jest et voulez une migration facile.",
+        "Vous aimez les outils rapides et modernes (ESM, TypeScript natif)."
+      ],
+      "avoidIf": [
+        "Vous testez un legacy non-ESM ou un monorepo très complexe.",
+        "Vous avez besoin d'un écosystème de plugins massif (Vitest est plus jeune)."
+      ],
+      "threshold": "Vitest s'impose pour les projets Vite modernes ; Jest reste pertinent si vous avez un écosystème lourd ou des besoins legacy."
+    },
+    "pros": [
+      "Gratuit et open source (zéro coût).",
+      "Configuration héritée de Vite (pas de doublons).",
+      "Watch mode ultra-rapide et intelligent.",
+      "Syntaxe Jest familière, pas de courbe d'apprentissage."
+    ],
+    "cons": [
+      "Moins de plugins tiers que Jest (écosystème plus jeune).",
+      "Documentation moins exhaustive que Jest.",
+      "Moins mature pour les cas très edge."
+    ],
+    "use_cases": [
+      "Tester une application React/Vue/Svelte avec Vite.",
+      "Tester du code Node.js ESM moderne.",
+      "Passer de Jest à un outil plus performant pour Vite."
+    ],
+    "relevant_for": ["Développeurs Vite", "Équipes modernes JavaScript/TypeScript"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Vite as your bundler (React, Vue, Svelte projects).",
+        "You're migrating from Jest and want an easy path.",
+        "You love fast, modern tooling (native ESM, TypeScript)."
+      ],
+      "avoidIf": [
+        "You're testing legacy non-ESM code or a very complex monorepo.",
+        "You need a massive plugin ecosystem (Vitest is newer)."
+      ],
+      "threshold": "Vitest is the go-to for modern Vite projects; Jest remains relevant for heavy ecosystems or legacy needs."
+    },
+    "pros": [
+      "Free and open source (zero cost).",
+      "Configuration inherited from Vite (no duplication).",
+      "Ultra-fast and smart watch mode.",
+      "Familiar Jest syntax, no learning curve."
+    ],
+    "cons": [
+      "Fewer third-party plugins than Jest (younger ecosystem).",
+      "Documentation less exhaustive than Jest.",
+      "Less mature for very edge cases."
+    ],
+    "use_cases": [
+      "Test a React/Vue/Svelte app with Vite.",
+      "Test modern ESM Node.js code.",
+      "Migrate from Jest to a faster Vite-first tool."
+    ]
+  }
+}

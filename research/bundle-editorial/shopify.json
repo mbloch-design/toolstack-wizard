@@ -1,0 +1,99 @@
+{
+  "slug": "shopify",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Shopify — Plateforme e-commerce tout-en-un (site officiel)", "url": "https://shopify.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de commerce tout-en-un pour vendre en ligne et en personne, avec générateur de site web, checkout optimisé, outils omnichannel (web, réseaux sociaux, POS) et écosystème d'applications (21 000+).",
+    "what_en": "All-in-one commerce platform to sell online and in person, with website builder, optimized checkout, omnichannel tools (web, social, POS), and application ecosystem (21,000+).",
+    "pricing_model": "Abonnement par paliers tarifaires, plus services complémentaires (paiements, capital, expédition)",
+    "free_tier": { "exists": true, "detail": "Démarrage gratuit avec essai possible. Plans payants échelonnés selon les besoins." },
+    "plans": [
+      { "name": "Plan gratuit", "price": "Gratuit pour démarrer" },
+      { "name": "Plans payants", "price": "Montants sur la page officielle de tarification" }
+    ],
+    "key_features": [
+      "Générateur de site web avec thèmes personnalisables",
+      "Checkout optimisé convertissant 50% plus haut avec Shop Pay",
+      "Sidekick — assistant IA pour détection d'opportunités de croissance",
+      "Vente omnichannel (en ligne, réseaux sociaux, POS)",
+      "Shopify Markets pour commerce international",
+      "Shopify Payments intégré",
+      "Shopify Capital pour financement jusqu'à 5 millions USD",
+      "21 000+ applications disponibles dans l'App Store"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une plateforme e-commerce complète et éprouvée.",
+        "Vous avez besoin de vendre sur plusieurs canaux.",
+        "Vous voulez une solution clé en main avec support."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous avez besoin d'une flexibilité technique maximale."
+      ],
+      "threshold": "Shopify s'impose pour les commerçants cherchant une plateforme complète et fiable ; pour des besoins techniques très spécifiques ou budget limité, explorez d'autres options."
+    },
+    "pros": [
+      "Plateforme complète et éprouvée (leader du marché).",
+      "Vente omnichannel (web, réseaux sociaux, POS).",
+      "Assistant IA Sidekick pour croissance.",
+      "Checkout optimisé avec Shop Pay, réputé très convertissant.",
+      "21 000+ applications intégrées.",
+      "Support client et documentation abondante.",
+      "Démarrage gratuit possible."
+    ],
+    "cons": [
+      "Frais de transaction sur les plans de base.",
+      "Personnalisation technique limitée sans développement.",
+      "Coûts supplémentaires pour applications premium.",
+      "Modèle SaaS (pas d'auto-hébergement)."
+    ],
+    "use_cases": [
+      "Lancer une boutique en ligne complète.",
+      "Gérer une stratégie de vente omnichannel.",
+      "Bénéficier d'un écosystème d'applications riche.",
+      "Accéder à un financement (Shopify Capital)."
+    ],
+    "relevant_for": ["E-commerçants de tous niveaux", "PME e-commerce", "Marchands omnichannel", "Entrepreneurs en phase de lancement"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a complete and proven e-commerce platform.",
+        "You need to sell across multiple channels.",
+        "You want a turnkey solution with support."
+      ],
+      "avoidIf": [
+        "You seek a completely free solution.",
+        "You need maximum technical flexibility."
+      ],
+      "threshold": "Shopify is ideal for merchants seeking a complete and reliable platform; for highly specific technical needs or tight budgets, explore other options."
+    },
+    "pros": [
+      "Complete and proven platform (market leader).",
+      "Omnichannel selling (web, social, POS).",
+      "Sidekick AI assistant for growth.",
+      "Optimized checkout with Shop Pay, known for strong conversion.",
+      "21,000+ integrated applications.",
+      "Excellent customer support and documentation.",
+      "Free trial to get started."
+    ],
+    "cons": [
+      "Transaction fees on basic plans.",
+      "Limited technical customization without development.",
+      "Additional costs for premium applications.",
+      "SaaS model (no self-hosting)."
+    ],
+    "use_cases": [
+      "Launch a complete online store.",
+      "Manage omnichannel selling strategy.",
+      "Benefit from a rich application ecosystem.",
+      "Access financing (Shopify Capital)."
+    ]
+  }
+}

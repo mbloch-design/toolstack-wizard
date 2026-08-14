@@ -1,0 +1,91 @@
+{
+  "slug": "nestjs",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "NestJS — Official Documentation", "url": "https://docs.nestjs.com/" },
+    { "label": "NestJS GitHub Repository", "url": "https://github.com/nestjs/nest" }
+  ],
+  "facts": {
+    "what": "Framework Node.js progressif pour construire des applications serveur scalables et maintenables. Combine les meilleures pratiques de l'industrie avec une architecture modulaire basée sur TypeScript.",
+    "what_en": "A progressive Node.js framework for building scalable and maintainable server-side applications. Combines industry best practices with a modular, TypeScript-based architecture.",
+    "pricing_model": "Open source, licence MIT. Gratuit pour tous les usages. Services d'entreprise (support, formation, consulting) disponibles optionnellement.",
+    "free_tier": { "exists": true, "detail": "Gratuit et open source sous licence MIT. Maintenance active par la communauté et Kamil Mysliwiec. Services optionnels payants disponibles pour support entreprise." },
+    "plans": [],
+    "key_features": [
+      "Architecture modulaire et organisée pour applications complexes",
+      "Injection de dépendances intégrée pour meilleure maintenabilité",
+      "Type-safety complet via TypeScript",
+      "Décorateurs TypeScript pour code plus lisible",
+      "Support natif des microservices",
+      "Utilisé par IBM, Adidas, Mercedes, BMW"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une API REST scalable et professionnelle.",
+        "Vous cherchez une structure de projet imposée pour éviter la fragmentation d'une grande équipe.",
+        "Vous envisagez une architecture microservices ou une application IoT Node.js."
+      ],
+      "avoidIf": [
+        "Vous débutez en Node.js et cherchez quelque chose de très simple.",
+        "Vous avez un projet très ponctuel et minimaliste (Express suffit).",
+        "Vous préférez une approche sans convention (framework agnostique)."
+      ],
+      "threshold": "NestJS s'impose pour les projets d'entreprise et les microservices ; pour un prototype ou une API simple, Express reste plus léger."
+    },
+    "pros": [
+      "Architecture modulaire impose une organisation claire et scalable.",
+      "Type-safety complet grâce à TypeScript, idéal pour les grandes équipes.",
+      "Injection de dépendances native rend le code plus testable et maintenable.",
+      "Microservices, WebSockets, GraphQL supportés nativement.",
+      "Courbe d'apprentissage douce pour développeurs connaissant Angular ou autres frameworks structurés."
+    ],
+    "cons": [
+      "Poids et complexité plus importants comparé à Express.",
+      "Courbe d'apprentissage plus raide pour les débutants Node.js.",
+      "Boilerplate plus important pour des projets très simples.",
+      "Écosystème plus petit que celui d'Express."
+    ],
+    "use_cases": [
+      "Construire une API REST d'entreprise avec plusieurs modules.",
+      "Mettre en place une architecture microservices en Node.js.",
+      "Développer une application IoT centralisée avec gestion d'état complexe."
+    ],
+    "relevant_for": ["Développeurs Node.js avancés", "Architectes backend", "Équipes travaillant sur des projets d'entreprise"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are building a scalable, production-grade REST API.",
+        "You need an opinionated structure to unify a large development team.",
+        "You are considering a microservices architecture or IoT applications."
+      ],
+      "avoidIf": [
+        "You are new to Node.js and want something lightweight.",
+        "You have a small, one-off project (Express is simpler).",
+        "You prefer a convention-less, framework-agnostic approach."
+      ],
+      "threshold": "NestJS is ideal for enterprise projects and microservices; for a prototype or simple API, Express remains lighter and more straightforward."
+    },
+    "pros": [
+      "Modular architecture enforces clear, scalable organization.",
+      "Complete type-safety with TypeScript, perfect for large teams.",
+      "Built-in dependency injection makes code testable and maintainable.",
+      "Native support for microservices, WebSockets, and GraphQL.",
+      "Gentle learning curve for developers familiar with Angular or similar frameworks."
+    ],
+    "cons": [
+      "Heavier and more complex than Express.",
+      "Steeper learning curve for Node.js beginners.",
+      "More boilerplate for very simple projects.",
+      "Smaller ecosystem compared to Express."
+    ],
+    "use_cases": [
+      "Build a modular, enterprise-grade REST API.",
+      "Implement a microservices architecture in Node.js.",
+      "Develop a centralized IoT application with complex state management."
+    ]
+  }
+}

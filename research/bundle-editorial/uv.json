@@ -1,0 +1,91 @@
+{
+  "slug": "uv",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "uv — Python package manager by Astral (GitHub)", "url": "https://github.com/astral-sh/uv" },
+    { "label": "uv Documentation", "url": "https://docs.astral.sh/uv/" }
+  ],
+  "facts": {
+    "what": "Gestionnaire de paquets Python ultra-rapide écrit en Rust par Astral qui remplace pip, poetry, pipenv, pyenv et virtualenv en une seule outils intégrée.",
+    "what_en": "Extremely fast Python package manager written in Rust by Astral that replaces pip, poetry, pipenv, pyenv, and virtualenv in a single integrated tool.",
+    "pricing_model": "Gratuit et open source (licence Apache 2.0 ou MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source, production-ready" },
+    "plans": [],
+    "key_features": [
+      "Installation de paquets 10-100x plus rapide que pip",
+      "Gestion d'environnements virtuels automatique",
+      "Téléchargement et gestion des versions Python",
+      "Lockfile universel avec hashes (uv.lock)",
+      "Exécution de scripts inline avec dépendances déclarées",
+      "Installation d'outils CLI isolés (remplace pipx)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en Python et cherchez une expérience plus rapide.",
+        "Vous gérez plusieurs projets Python avec des dépendances complexes.",
+        "Vous voulez unifier pip, poetry, pipenv et pyenv."
+      ],
+      "avoidIf": [
+        "Vous ne développez pas en Python.",
+        "Vous êtes très satisfait de votre setup pip/poetry actuel.",
+        "Vous cherchez une solution sans dépendances externes."
+      ],
+      "threshold": "uv devient très attrayant pour les projets Python modernes cherchant de la performance ; pip suffit pour les petits projets, mais uv gagne rapidement en temps sur gros projets."
+    },
+    "pros": [
+      "Extrêmement rapide (10-100x plus que pip).",
+      "Gratuit et open source.",
+      "Remplace plusieurs outils (pip, poetry, pyenv, etc.).",
+      "Lockfile reproductible et cross-platform.",
+      "Gestion automatique des environnements."
+    ],
+    "cons": [
+      "Moins mature que pip pour edge cases très obscurs.",
+      "Écosystème de plugins plus petit que poetry.",
+      "Migration depuis pip/poetry peut demander ajustements."
+    ],
+    "use_cases": [
+      "Développer une application Python moderne.",
+      "Gérer un monorepo Python complexe.",
+      "Scripter en Python avec dépendances incluses.",
+      "Automatiser l'installation de outils Python en CI/CD."
+    ],
+    "relevant_for": ["Développeurs Python", "Data scientists", "DevOps engineers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in Python and want faster package management.",
+        "You manage multiple Python projects with complex dependencies.",
+        "You want to unify pip, poetry, pipenv, and pyenv."
+      ],
+      "avoidIf": [
+        "You don't develop in Python.",
+        "You're very satisfied with your current pip/poetry setup.",
+        "You want a tool with zero external dependencies."
+      ],
+      "threshold": "uv becomes very attractive for modern Python projects seeking performance; pip suffices for small projects, but uv wins quickly on large codebases."
+    },
+    "pros": [
+      "Extremely fast (10-100x faster than pip).",
+      "Free and open source.",
+      "Replaces multiple tools (pip, poetry, pyenv, etc.).",
+      "Reproducible cross-platform lockfile.",
+      "Automatic environment management."
+    ],
+    "cons": [
+      "Less mature than pip for obscure edge cases.",
+      "Smaller plugin ecosystem than poetry.",
+      "Migration from pip/poetry may require adjustments."
+    ],
+    "use_cases": [
+      "Develop a modern Python application.",
+      "Manage a complex Python monorepo.",
+      "Script in Python with inline dependencies.",
+      "Automate Python tool installation in CI/CD."
+    ]
+  }
+}

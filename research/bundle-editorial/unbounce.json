@@ -1,0 +1,91 @@
+{
+  "slug": "unbounce",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Unbounce — Landing page platform (site officiel)", "url": "https://unbounce.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de création de landing pages sans code avec IA, permettant de concevoir, tester et optimiser des pages de conversion sans développeur via un éditeur drag-and-drop et du traffic routed par IA.",
+    "what_en": "No-code landing page platform with AI, enabling design, testing, and optimization of high-converting pages without developers via drag-and-drop editor and AI traffic routing.",
+    "pricing_model": "Plans payants avec modèle d'abonnement ; pas de tier gratuit",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 14 jours ; pas de plan gratuit permanent" },
+    "plans": [
+      { "name": "Build", "price": "99 $ / mois (64 $ / mois annuel, jusqu'à 20 000 visiteurs/mois)" },
+      { "name": "Experiment", "price": "149 $ / mois (focal sur A/B testing)" },
+      { "name": "Optimize", "price": "249 $ / mois (161 $ / mois annuel, inclut Smart Traffic IA)" },
+      { "name": "Concierge", "price": "Tarification personnalisée (support complet et onboarding)"  }
+    ],
+    "key_features": [
+      "Éditeur drag-and-drop sans code",
+      "Pages landing, popups et sticky bars illimités",
+      "Smart Traffic : routage IA automatique vers page gagnante",
+      "Copywriting IA intégré",
+      "A/B testing et multivariate testing",
+      "Intégrations (Google Analytics, HubSpot, Mailchimp, Zapier)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes marketeur et besoin de créer des landing pages de haute conversion.",
+        "Vous avez un budget dédié à l'optimisation marketing.",
+        "Vous voulez du Smart Traffic pour router les visiteurs automatiquement."
+      ],
+      "avoidIf": [
+        "Vous avez un budget très limité.",
+        "Vous avez besoin d'une entière boutique e-commerce.",
+        "Vous voulez du landing page gratuit (utiliser Leadpages ou Carrd)."
+      ],
+      "threshold": "Unbounce prime pour les équipes marketing sérieuses optimisant des campagnes ; pour du side project, alternatives moins chères existent."
+    },
+    "pros": [
+      "Smart Traffic réputée pour augmenter les conversions.",
+      "Très facile à utiliser sans développeur.",
+      "Nombreuses intégrations avec outils marketing populaires.",
+      "Support et onboarding dédiés sur plans hauts."
+    ],
+    "cons": [
+      "Plans payants sans tier gratuit.",
+      "Cher pour petites équipes ou side projects.",
+      "Moins flexible que coder une page custom."
+    ],
+    "use_cases": [
+      "Créer une landing page pour une campagne publicitaire.",
+      "Optimiser des pages de conversion avec A/B testing.",
+      "Tester plusieurs variantes avec Smart Traffic."
+    ],
+    "relevant_for": ["Marketeurs", "Growth marketers", "Agences marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a marketer needing high-converting landing pages.",
+        "You have a dedicated budget for marketing optimization.",
+        "You want Smart Traffic to auto-route visitors."
+      ],
+      "avoidIf": [
+        "You have a tight budget.",
+        "You need a full e-commerce store.",
+        "You want free landing pages (use Leadpages or Carrd)."
+      ],
+      "threshold": "Unbounce is ideal for serious marketing teams optimizing campaigns; for side projects, cheaper alternatives exist."
+    },
+    "pros": [
+      "Smart Traffic known for boosting conversions.",
+      "Very easy to use without developers.",
+      "Integrations with popular marketing tools.",
+      "Dedicated support and onboarding on higher plans."
+    ],
+    "cons": [
+      "Paid plans only, no free tier.",
+      "Expensive for small teams or side projects.",
+      "Less flexible than custom-coded pages."
+    ],
+    "use_cases": [
+      "Create a landing page for an ad campaign.",
+      "Optimize conversion pages with A/B testing.",
+      "Test multiple variants with Smart Traffic."
+    ]
+  }
+}

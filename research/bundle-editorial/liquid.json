@@ -1,0 +1,86 @@
+{
+  "slug": "liquid",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Shopify Liquid — Documentation officielle", "url": "https://shopify.github.io/liquid/" },
+    { "label": "Liquid GitHub Repository", "url": "https://github.com/Shopify/liquid" }
+  ],
+  "facts": {
+    "what": "Langage de templating simple et sécurisé créé par Shopify pour charger du contenu dynamique. Utilisé comme fondation des thèmes Shopify et intégré dans d'autres applications web et générateurs de sites statiques.",
+    "what_en": "A simple, safe template language created by Shopify for loading dynamic content. Serves as the backbone of Shopify themes and is integrated into other web applications and static site generators.",
+    "pricing_model": "Open source, licence MIT. Gratuit et accessible pour tous.",
+    "free_tier": { "exists": true, "detail": "Gratuit et open source depuis 2006. Code source complet disponible sur GitHub. Licence MIT permissive." },
+    "plans": [],
+    "key_features": [
+      "Langage de templating simple et lisible sans dépendances externes",
+      "Plus de 50 filtres pour manipulation de texte, opérations mathématiques et transformation de données",
+      "Système complet de tags pour contrôle de flux et itération",
+      "Sécurité intégrée pour environnements client-facing",
+      "Utilisé par Jekyll, Zendesk, Desk.com et 500px"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous customisez des thèmes Shopify pour des boutiques en ligne.",
+        "Vous intégrez un langage de templating simple et sûr dans une application web.",
+        "Vous travaillez avec Jekyll ou d'autres générateurs de sites statiques."
+      ],
+      "avoidIf": [
+        "Vous cherchez un langage de templating avec des fonctionnalités très avancées de programmation.",
+        "Vous avez besoin d'une documentation complète en français (la communauté est anglophone).",
+        "Vous travaillez dans un écosystème fermé sans support aux dépendances externes."
+      ],
+      "threshold": "Liquid s'impose pour les thèmes Shopify ; pour la plupart des frameworks web modernes (Django, Rails, Laravel), un moteur de templates natif convient mieux."
+    },
+    "pros": [
+      "Syntaxe intuitive, facile à apprendre pour les non-développeurs.",
+      "Sécurité : pas d'exécution de code arbitraire, safe par défaut.",
+      "Intégration directe dans les thèmes Shopify sans configuration.",
+      "Adoption large : documentation riche et communauté active."
+    ],
+    "cons": [
+      "Moins flexible pour la logique métier complexe.",
+      "Documentation francophone limitée.",
+      "Écosystème moins étendu que des moteurs de templates dans des frameworks majeurs."
+    ],
+    "use_cases": [
+      "Personnaliser le design et la mise en page d'une boutique Shopify.",
+      "Charger du contenu dynamique dans des thèmes e-commerce.",
+      "Générer des pages statiques avec Jekyll avec contenu variable."
+    ],
+    "relevant_for": ["Développeurs Shopify", "Designers de thèmes e-commerce", "Ingénieurs site statique"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You customize Shopify themes for online stores.",
+        "You need a simple, safe template language for web applications.",
+        "You work with Jekyll or other static site generators."
+      ],
+      "avoidIf": [
+        "You need a template language with advanced programming features.",
+        "You require comprehensive documentation in non-English languages.",
+        "You work in a closed ecosystem without external dependency support."
+      ],
+      "threshold": "Liquid is essential for Shopify theme development; for most modern web frameworks (Django, Rails, Laravel), a native template engine is more suitable."
+    },
+    "pros": [
+      "Intuitive syntax, easy to learn even for non-developers.",
+      "Safe by default: no arbitrary code execution.",
+      "Direct integration into Shopify themes without additional setup.",
+      "Wide adoption with extensive documentation and active community."
+    ],
+    "cons": [
+      "Less flexible for complex business logic.",
+      "Limited documentation resources compared to major frameworks.",
+      "Smaller ecosystem than template engines built into popular frameworks."
+    ],
+    "use_cases": [
+      "Customize the design and layout of a Shopify store.",
+      "Load dynamic content in e-commerce themes.",
+      "Generate static pages with Jekyll with variable content."
+    ]
+  }
+}

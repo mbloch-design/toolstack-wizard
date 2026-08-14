@@ -1,0 +1,87 @@
+{
+  "slug": "riverpod",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Riverpod — Documentation officielle (site officiel)", "url": "https://riverpod.dev" }
+  ],
+  "facts": {
+    "what": "Framework de gestion d'état réactive pour les applications Dart et Flutter, offrant une gestion automatique du cache, la programmation déclarative et une sécurité de compilation.",
+    "what_en": "Reactive state management framework for Dart and Flutter applications, providing automatic cache management, declarative programming, and compile-time safety.",
+    "pricing_model": "Entièrement gratuit, financé par la communauté et les sponsors",
+    "free_tier": { "exists": true, "detail": "Aucune version payante. Logiciel libre avec code source public." },
+    "plans": [
+      { "name": "Unique plan", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Programmation déclarative pour la logique métier",
+      "Gestion automatique du réseau et des états (loading/error)",
+      "Sécurité de compilation",
+      "Outils de développement intégrés (lint, refactorisations, DevTools)",
+      "Composition facile des états avec families",
+      "Support pull-to-refresh et WebSocket",
+      "Hot-reload et logging natifs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des applications Flutter ou Dart.",
+        "Vous avez besoin d'une gestion d'état réactive et testable.",
+        "Vous préférez les solutions gratuites et open source."
+      ],
+      "avoidIf": [
+        "Vous développez pour d'autres langages ou frameworks.",
+        "Vous cherchez une solution payante avec support dédié premium."
+      ],
+      "threshold": "Riverpod s'impose pour la gestion d'état réactive en Flutter/Dart ; pour d'autres écosystèmes, explorez des alternatives spécialisées."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Gestion d'état reactive et moderne pour Flutter/Dart.",
+      "Excellente testabilité et sécurité de compilation.",
+      "Outils de développement avancés intégrés."
+    ],
+    "cons": [
+      "Limité à l'écosystème Dart/Flutter.",
+      "Courbe d'apprentissage modérée.",
+      "Communauté plus petite qu'autres frameworks populaires."
+    ],
+    "use_cases": [
+      "Gérer l'état d'une application Flutter complexe.",
+      "Automatiser la gestion du cache et des requêtes réseau.",
+      "Concevoir une architecture testable et maintenable."
+    ],
+    "relevant_for": ["Développeurs Flutter", "Développeurs Dart", "Architectes d'applications mobiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build Flutter or Dart applications.",
+        "You need reactive and testable state management.",
+        "You prefer free and open-source solutions."
+      ],
+      "avoidIf": [
+        "You develop for other languages or frameworks.",
+        "You seek a paid solution with premium dedicated support."
+      ],
+      "threshold": "Riverpod is ideal for reactive state management in Flutter/Dart; for other ecosystems, explore specialized alternatives."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Modern reactive state management for Flutter/Dart.",
+      "Excellent testability and compile-time safety.",
+      "Advanced development tools built-in."
+    ],
+    "cons": [
+      "Limited to the Dart/Flutter ecosystem.",
+      "Moderate learning curve.",
+      "Smaller community than popular frameworks."
+    ],
+    "use_cases": [
+      "Manage state in a complex Flutter application.",
+      "Automate cache and network request management.",
+      "Design a testable and maintainable architecture."
+    ]
+  }
+}

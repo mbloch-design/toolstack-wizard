@@ -1,0 +1,87 @@
+{
+  "slug": "timber",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Timber — Python logging (PyPI)", "url": "https://pypi.org/project/timber" },
+    { "label": "Timber Documentation", "url": "https://timber.github.io/docs/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque Python de logging structuré qui enrichit les logs avec contexte automatique, permettant des requêtes complexes et un suivi temps réel des événements applicatifs.",
+    "what_en": "Python structured logging library that automatically enriches logs with context, enabling complex queries and real-time tailing of application events.",
+    "pricing_model": "Gratuit et open source avec services de logging SaaS optionnels payants",
+    "free_tier": { "exists": true, "detail": "Bibliothèque gratuite open source ; service cloud Timber.io proposé avec tiers gratuit et plans payants" },
+    "plans": [],
+    "key_features": [
+      "Intégration avec le module logging standard Python",
+      "Logging structuré et événementiel automatique",
+      "Capture de contexte en app (variables, stack traces)",
+      "Buffering et flush optimisés pour la performance",
+      "Outils de requête et tailing temps réel",
+      "Retry avec backoff exponentiel pour fiabilité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous loggez en Python et voulez passer à du structured logging.",
+        "Vous cherchez une solution légère et performante.",
+        "Vous avez besoin de contexte automatique dans les logs."
+      ],
+      "avoidIf": [
+        "Vous développez dans un autre langage.",
+        "Vous utilisez déjà un système de logging complexe établi.",
+        "Vous cherchez une solution sans aucune dépendance externe."
+      ],
+      "threshold": "Timber est idéale pour les projets Python qui veulent passer à du structured logging ; pour du simple print() ou logging basique, c'est overkill."
+    },
+    "pros": [
+      "Gratuit et open source.",
+      "Structured logging automatique avec contexte.",
+      "Intégration seamless avec logging Python standard.",
+      "Performance optimisée avec buffering."
+    ],
+    "cons": [
+      "Service cloud optionnel est payant.",
+      "Apprentissage du structured logging pour débutants.",
+      "Overhead minimal mais non-nul par rapport à print()."
+    ],
+    "use_cases": [
+      "Logger une application Python en production.",
+      "Débugguer un problème complexe avec context logs.",
+      "Monitorer et analyser les événements d'une application."
+    ],
+    "relevant_for": ["Développeurs Python", "DevOps engineers", "SREs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You log in Python and want to move to structured logging.",
+        "You seek a lightweight, performant solution.",
+        "You need automatic context in logs."
+      ],
+      "avoidIf": [
+        "You develop in another language.",
+        "You already use an established, complex logging system.",
+        "You want zero external dependencies."
+      ],
+      "threshold": "Timber is ideal for Python projects transitioning to structured logging; for simple print() or basic logging, it's overkill."
+    },
+    "pros": [
+      "Free and open source.",
+      "Automatic structured logging with context.",
+      "Seamless integration with Python logging standard.",
+      "Performance optimized with buffering."
+    ],
+    "cons": [
+      "Optional cloud service is paid.",
+      "Learning curve for structured logging beginners.",
+      "Minimal but non-zero overhead vs print()."
+    ],
+    "use_cases": [
+      "Log a Python application in production.",
+      "Debug a complex issue with context logs.",
+      "Monitor and analyze application events."
+    ]
+  }
+}

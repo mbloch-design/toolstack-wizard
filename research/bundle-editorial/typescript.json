@@ -1,0 +1,85 @@
+{
+  "slug": "typescript",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TypeScript — Official website", "url": "https://www.typescriptlang.org" }
+  ],
+  "facts": {
+    "what": "Langage de programmation open source créé par Microsoft qui ajoute le typage statique optionnel à JavaScript, permettant une détection d'erreurs en éditeur et une meilleure refactorisation pour les gros projets.",
+    "what_en": "Open source programming language created by Microsoft that adds optional static typing to JavaScript, enabling editor-based error detection and better refactoring for large projects.",
+    "pricing_model": "Gratuit et open source (licence Apache 2.0 / MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source" },
+    "plans": [],
+    "key_features": [
+      "Typage statique optionnel avec type inference",
+      "Support des interfaces et generics",
+      "Décorateurs et métadonnées pour frameworks",
+      "Enums et tuples typés",
+      "Compilation ultra-rapide (version 6.0 : 40-60% plus rapide)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en JavaScript sur un projet de taille moyen/grand.",
+        "Vous voulez attraper les erreurs en éditeur plutôt qu'en runtime.",
+        "Vous collaborez en équipe et besoin de documenter le code via types."
+      ],
+      "avoidIf": [
+        "Vous faites du pur JavaScript simple.",
+        "Vous avez un script unique de quelques lignes.",
+        "Vous préférez la flexibilité maximale de JavaScript non typé."
+      ],
+      "threshold": "TypeScript devient rentable dès qu'un projet JavaScript grandit ou qu'une équipe collabore ; pour du script simple, JavaScript suffit."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Détection d'erreurs en éditeur (excellent DX).",
+      "Refactorisation plus sûre grâce aux types.",
+      "Large adoption et écosystème mature."
+    ],
+    "cons": [
+      "Courbe d'apprentissage initiale.",
+      "Étape de compilation avant exécution.",
+      "Overhead pour très petits projets."
+    ],
+    "use_cases": [
+      "Développer une application web React ou Vue typée.",
+      "Créer une API Node.js avec validation de types.",
+      "Refactoriser un grand projet JavaScript existant."
+    ],
+    "relevant_for": ["Développeurs JavaScript", "Full-stack engineers", "Équipes web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in JavaScript on medium to large projects.",
+        "You want to catch errors in the editor, not at runtime.",
+        "You collaborate in teams and need code documentation via types."
+      ],
+      "avoidIf": [
+        "You write simple, pure JavaScript.",
+        "You have a single script of a few lines.",
+        "You prefer maximum JavaScript flexibility without types."
+      ],
+      "threshold": "TypeScript becomes worthwhile as JavaScript projects grow or teams collaborate; for simple scripts, plain JavaScript suffices."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Error detection in editor (excellent DX).",
+      "Safer refactoring thanks to types.",
+      "Large adoption and mature ecosystem."
+    ],
+    "cons": [
+      "Initial learning curve.",
+      "Compilation step before execution.",
+      "Overhead for very small projects."
+    ],
+    "use_cases": [
+      "Develop a typed React or Vue web application.",
+      "Create a Node.js API with type validation.",
+      "Refactor a large existing JavaScript project."
+    ]
+  }
+}

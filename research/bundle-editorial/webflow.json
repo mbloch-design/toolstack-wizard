@@ -1,0 +1,91 @@
+{
+  "slug": "webflow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Webflow — Pricing (site officiel)", "url": "https://webflow.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code de création de sites web avec CMS intégré, hébergement géré et CDN global. Designer visuel avec contrôle CSS complet, animations, et exports responsives mobiles/desktop.",
+    "what_en": "No-code website builder with integrated CMS, managed hosting, and global CDN. Visual designer with full CSS control, animations, and responsive mobile/desktop exports.",
+    "pricing_model": "Freemium avec site plan (hébergement par site) et workspace plan (éditeurs). Tarification par site + par utilisateurs éditoriaux.",
+    "free_tier": { "exists": true, "detail": "Plan Starter gratuit : sous-domaine webflow.io, 2 pages, 20 CMS Collections, 50 items CMS, 1 GB bande passante, 50 form submissions. Inclut Webflow AI." },
+    "plans": [
+      { "name": "Starter (Site plan gratuit)", "price": "0 $ (gratuit, webflow.io subdomain)" },
+      { "name": "Basic (Site plan)", "price": "15 $/mois annuel (25 $/mois mensuel)" },
+      { "name": "Premium (Site plan)", "price": "25 $/mois annuel (39 $/mois mensuel)" },
+      { "name": "Team (annuel)", "price": "2 500 $/mois avec contrat annuel" }
+    ],
+    "key_features": [
+      "Designer visuel avec CSS control",
+      "CMS dynamique et collections de contenu",
+      "Hébergement géré et CDN global (99.99% uptime)",
+      "Webflow AI pour génération de contenu",
+      "A/B testing et analytics intégrés",
+      "Animations et interactivité avancées"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez créer un site marketing ou portfolio sans coder.",
+        "Vous avez besoin d'un CMS pour gérer du contenu dynamique.",
+        "Vous privilégiez le design visuel et les animations sophistiquées."
+      ],
+      "avoidIf": [
+        "Vous avez un budget très serré et acceptez un design basique.",
+        "Vous avez besoin d'une intégration backend complexe (API custom profonde).",
+        "Vous lancez une plateforme SaaS (Webflow n'est pas conçu pour ça)."
+      ],
+      "threshold": "Webflow excelle pour les sites éditoriaux et portfolios design-first ; pour du SaaS ou un backend compliqué, un framework code convient mieux."
+    },
+    "pros": [
+      "Designer visuel puissant et responsive.",
+      "CMS et hébergement inclus (pas d'infra DevOps).",
+      "Excellent pour le SEO et AEO (AI).",
+      "Plan gratuit vraiment utilisable pour commencer."
+    ],
+    "cons": [
+      "Coût escalade avec CMS complexe et équipes multiples.",
+      "Intégrations backend limitées (pas de logic métier profonde).",
+      "Lock-in : sortir du code Webflow est difficile."
+    ],
+    "use_cases": [
+      "Créer un site corporate/agency marketing.",
+      "Lancer un portfolio ou blog avec design sophistiqué.",
+      "Gérer un petit e-commerce avec CMS natif."
+    ],
+    "relevant_for": ["Designers no-code", "Freelances créatifs", "Petites agences", "Entrepreneurs solo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to build a marketing or portfolio site without coding.",
+        "You need a CMS for managing dynamic content.",
+        "You value visual design and sophisticated animations."
+      ],
+      "avoidIf": [
+        "You have a tight budget and accept basic design.",
+        "You need deep backend integration (custom API logic).",
+        "You're building a SaaS platform (Webflow isn't for that)."
+      ],
+      "threshold": "Webflow excels for editorial and design-first portfolios; for SaaS or complex backends, a code framework fits better."
+    },
+    "pros": [
+      "Powerful and responsive visual designer.",
+      "CMS and hosting included (no DevOps).",
+      "Excellent for SEO and AEO (AI).",
+      "Genuinely usable free tier to get started."
+    ],
+    "cons": [
+      "Cost escalates with complex CMS and multiple teams.",
+      "Limited backend integrations (no deep business logic).",
+      "Lock-in: exporting Webflow code is difficult."
+    ],
+    "use_cases": [
+      "Build a corporate or agency marketing site.",
+      "Launch a portfolio or blog with sophisticated design.",
+      "Manage a small e-commerce store with native CMS."
+    ]
+  }
+}

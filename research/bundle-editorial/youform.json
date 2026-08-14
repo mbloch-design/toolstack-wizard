@@ -1,0 +1,95 @@
+{
+  "slug": "youform",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Youform — Pricing (site officiel)", "url": "https://youform.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Constructeur de formulaires no-code avec plan gratuit illimité. Drag-and-drop pour formulaires/sondages/quiz, logique conditionnelle, signatures, intégrations 6000+ (Zapier, Slack, Notion, Stripe, Google Sheets).",
+    "what_en": "No-code form builder with unlimited free plan. Drag-and-drop forms, surveys, quizzes with conditional logic, signatures, 6000+ integrations (Zapier, Slack, Notion, Stripe, Google Sheets).",
+    "pricing_model": "Freemium. Plan gratuit complet et illimité. Pro (29 $/mois) pour domaines custom et branding. Business (89 $/mois) pour vérification email/SMS et équipes.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité : formulaires illimités, soumissions illimités, 500+ templates, 30+ block types, logique conditionnelle, vérification, exports, analytics. Aucun crédit requis." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (illimité)" },
+      { "name": "Pro", "price": "29 $/mois" },
+      { "name": "Business", "price": "89 $/mois" }
+    ],
+    "key_features": [
+      "Drag-and-drop builder (30+ block types)",
+      "Logique conditionnelle et answer piping",
+      "IA pour générer formulaires (from text)",
+      "Signatures électroniques et vérification",
+      "6000+ intégrations (Zapier, Zapier, Google Sheets, Stripe, Webhooks)",
+      "Analytics et suivi drop-off",
+      "Partage multiple (liens, QR code, embed, email)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un formulaire de contact simple (gratuit suffit).",
+        "Vous voulez des sondages ou quiz intégrés avec analytics.",
+        "Vous aimez les intégrations Zapier pour automations workflow."
+      ],
+      "avoidIf": [
+        "Vous ayez besoin d'authentification SSO (non offert à tout prix).",
+        "Votre budget est très limité et vous refusez même un payant minimal.",
+        "Vous faites du form-building très avancé (Youform reste simple par design)."
+      ],
+      "threshold": "Youform convient pour les formulaires simples à modérés avec un généreux plan gratuit ; pour des flows complexes d'authentification, des solutions enterprise sont plus judicieuses."
+    },
+    "pros": [
+      "Plan gratuit illimité (vraiment sans limite).",
+      "AI pour générer formulaires depuis texte.",
+      "Intégrations massives (6000+, Zapier native).",
+      "Responsive et mobile-friendly par défaut."
+    ],
+    "cons": [
+      "Moins de fonctionnalités avancées (authentification profonde).",
+      "Prix Pro/Business peut surprendre pour petites équipes.",
+      "Interface peut être déroutante au démarrage.",
+      "Moins de templates pré-faits que certains concurrents."
+    ],
+    "use_cases": [
+      "Formulaire de contact simple sur un site.",
+      "Sondage ou quiz intégré (avec logique branching).",
+      "Lead capture avec intégration Zapier/Google Sheets.",
+      "Formulaire multi-étapes conversationnel."
+    ],
+    "relevant_for": ["Startups lean", "Freelances", "Équipes marketing", "Petites agences", "Entrepreneurs solo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a simple contact form (free tier is enough).",
+        "You want surveys or quizzes with built-in analytics.",
+        "You love Zapier integrations for workflow automations."
+      ],
+      "avoidIf": [
+        "You need SSO authentication (not offered at any tier).",
+        "Your budget is ultra-tight and you reject even minimal paid tiers.",
+        "You're doing very advanced form-building (Youform is intentionally simple)."
+      ],
+      "threshold": "Youform suits simple to moderate forms with a generous free plan; for complex auth flows, enterprise solutions are wiser."
+    },
+    "pros": [
+      "Unlimited free plan (truly no limits).",
+      "AI to generate forms from text.",
+      "Massive integrations (6000+, native Zapier).",
+      "Responsive and mobile-friendly by default."
+    ],
+    "cons": [
+      "Fewer advanced features (deep authentication).",
+      "Pro/Business pricing can surprise small teams.",
+      "Interface can be daunting at first.",
+      "Fewer pre-built templates than some competitors."
+    ],
+    "use_cases": [
+      "Simple contact form on a website.",
+      "Survey or quiz with branching logic.",
+      "Lead capture with Zapier/Google Sheets integration.",
+      "Multi-step conversational form."
+    ]
+  }
+}

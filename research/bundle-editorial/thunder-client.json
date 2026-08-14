@@ -1,0 +1,92 @@
+{
+  "slug": "thunder-client",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Thunder Client — REST API Client (site officiel)", "url": "https://www.thunderclient.com" },
+    { "label": "Thunder Client Pricing", "url": "https://www.thunderclient.com/pricing" }
+  ],
+  "facts": {
+    "what": "Client REST API léger pour VS Code et IDEs JetBrains permettant de tester et déboguer les API directement dans l'éditeur sans changer de contexte.",
+    "what_en": "Lightweight REST API client for VS Code and JetBrains IDEs enabling API testing and debugging directly in the editor without context switching.",
+    "pricing_model": "Freemium : version gratuite disponible avec limitations ; plans payants par utilisateur",
+    "free_tier": { "exists": true, "detail": "Gratuit pour usage personnel ; limité à 25 requêtes par collection ; version gratuite non commerciale" },
+    "plans": [
+      { "name": "Free", "price": "0 $ (limitations)" },
+      { "name": "Starter", "price": "3 $ / utilisateur / mois (facturation annuelle)" },
+      { "name": "Business", "price": "7 $ / utilisateur / mois (facturation annuelle)" },
+      { "name": "Enterprise", "price": "16 $ / utilisateur / mois (facturation annuelle)" }
+    ],
+    "key_features": [
+      "Interface légère intégrée dans VS Code et JetBrains",
+      "Support REST, WebSocket, SSE, et gRPC",
+      "Collections et environnements pour organiser les requêtes",
+      "CLI et intégration CI/CD",
+      "A/B testing et monitoring",
+      "Synchronisation en équipe et gestion des secrets"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez régulièrement des APIs REST.",
+        "Vous préférez travailler dans votre IDE sans ouvrir une autre application.",
+        "Vous cherchez une alternative légère à Postman."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de GraphQL ou des cas très complexes.",
+        "Vous voulez une interface graphique élaborée.",
+        "Vous utilisez Postman dans une organisation entière (migration coûteuse)."
+      ],
+      "threshold": "Thunder Client excelle pour les développeurs solo ou petites équipes qui testent des APIs REST simples ; pour du GraphQL ou très complexe, Postman reste plus complet."
+    },
+    "pros": [
+      "Gratuit pour usage personnel.",
+      "Très léger et rapide, pas de context-switch de l'IDE.",
+      "Intégration native VS Code et JetBrains.",
+      "Pricing transparent et raisonnable pour équipes."
+    ],
+    "cons": [
+      "Limité à 25 requêtes par collection en version gratuite.",
+      "Moins de fonctionnalités que Postman pour cas très complexes.",
+      "Écosystème plus petit que Postman."
+    ],
+    "use_cases": [
+      "Tester une API REST locale pendant le développement.",
+      "Déboguer une intégration API en équipe restreinte.",
+      "Automatiser les tests d'API en CI/CD."
+    ],
+    "relevant_for": ["Développeurs REST API", "DevOps engineers", "QA automatiqueers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly test REST APIs.",
+        "You prefer working in your IDE without switching apps.",
+        "You want a lightweight Postman alternative."
+      ],
+      "avoidIf": [
+        "You need GraphQL or complex cases.",
+        "You want a rich graphical interface.",
+        "You use Postman across a large organization (migration costly)."
+      ],
+      "threshold": "Thunder Client shines for solo developers or small teams testing simple REST APIs; for GraphQL or complex scenarios, Postman offers more."
+    },
+    "pros": [
+      "Free for personal use.",
+      "Very lightweight and fast, no IDE context-switch.",
+      "Native VS Code and JetBrains integration.",
+      "Transparent, reasonable pricing for teams."
+    ],
+    "cons": [
+      "Limited to 25 requests per collection in free version.",
+      "Fewer features than Postman for complex cases.",
+      "Smaller ecosystem than Postman."
+    ],
+    "use_cases": [
+      "Test a local REST API during development.",
+      "Debug API integration in a small team.",
+      "Automate API tests in CI/CD."
+    ]
+  }
+}

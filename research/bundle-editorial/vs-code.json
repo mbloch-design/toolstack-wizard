@@ -1,0 +1,86 @@
+{
+  "slug": "vs-code",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Visual Studio Code — Site officiel", "url": "https://code.visualstudio.com" }
+  ],
+  "facts": {
+    "what": "Éditeur de code open source gratuit, créé par Microsoft. Support complet de JavaScript, TypeScript, Python, etc. avec IntelliSense, debugging intégré, contrôle Git et 80K+ extensions.",
+    "what_en": "Free, open-source code editor by Microsoft. Full JavaScript, TypeScript, Python support with IntelliSense, integrated debugging, Git control, and 80K+ extensions.",
+    "pricing_model": "Gratuit et open source (MIT). Aucun coût, financement par Microsoft.",
+    "free_tier": { "exists": true, "detail": "Gratuit à 100%. Logiciel open source sans restrictions d'usage commerciaux ni limitations." },
+    "plans": [],
+    "key_features": [
+      "IntelliSense (auto-complétion intelligent)",
+      "Debugging intégré et terminal multi-shell",
+      "Contrôle Git et GitHub intégré",
+      "Extensions marketplace (80K+)",
+      "Support multi-langage (JavaScript, Python, C++, Go, Rust, etc.)",
+      "Remote development (SSH, WSL, Dev Container, Codespaces)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en JavaScript, TypeScript, Python ou multilingue.",
+        "Vous voulez un éditeur moderne sans coût ni abonnement.",
+        "Vous aimez personnaliser via extensions (ou thèmes)."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un IDE complet avec refactoring avancé (considérez IntelliJ).",
+        "Vous ciblez un legacy très spécialisé (ex: Cobol, Fortran)."
+      ],
+      "threshold": "VS Code s'impose pour la très grande majorité des développeurs modernes ; les IDEs lourds (IntelliJ, Visual Studio Enterprise) conviennent mieux pour les projets très complexes ou legacy."
+    },
+    "pros": [
+      "Gratuit et open source (zéro coût).",
+      "Léger et ultra-rapide pour une grande variété de langages.",
+      "Écosystème d'extensions massive et actif.",
+      "Excellent support Git/GitHub natif."
+    ],
+    "cons": [
+      "Moins de refactoring intégré qu'IntelliJ (mais couvrir par extensions).",
+      "Remote setup peut être complexe au premier abord.",
+      "Debugging moins intuitif que certains IDEs lourds."
+    ],
+    "use_cases": [
+      "Coder en JavaScript/TypeScript pour web.",
+      "Développer en Python (data science, automation).",
+      "Gérer du code multilingue avec une seule interface.",
+      "Travailler en remote avec Dev Containers ou SSH."
+    ],
+    "relevant_for": ["Freelances développeurs", "Startups", "Équipes polyglotes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in JavaScript, TypeScript, Python, or multiple languages.",
+        "You want a modern editor with zero cost or subscription.",
+        "You like customizing via extensions or themes."
+      ],
+      "avoidIf": [
+        "You need a full IDE with advanced refactoring (consider IntelliJ).",
+        "You're targeting very specialized legacy (e.g., Cobol, Fortran)."
+      ],
+      "threshold": "VS Code is the go-to for the vast majority of modern developers; heavy IDEs (IntelliJ, Visual Studio Enterprise) suit very complex or legacy projects better."
+    },
+    "pros": [
+      "Free and open source (zero cost).",
+      "Lightweight and fast for many languages.",
+      "Massive, active extension ecosystem.",
+      "Excellent native Git/GitHub support."
+    ],
+    "cons": [
+      "Less integrated refactoring than IntelliJ (but extensions help).",
+      "Remote setup can be complex initially.",
+      "Debugging less intuitive than heavy IDEs."
+    ],
+    "use_cases": [
+      "Code JavaScript/TypeScript for the web.",
+      "Develop in Python (data science, automation).",
+      "Manage polyglot code with a single interface.",
+      "Work remote with Dev Containers or SSH."
+    ]
+  }
+}
