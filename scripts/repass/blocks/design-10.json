@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "shadcn-ui",
+    "name": "shadcn UI",
+    "url": "https://ui.shadcn.com"
+  },
+  {
+    "slug": "skatter",
+    "name": "Skatter",
+    "url": "https://getskatter.com"
+  },
+  {
+    "slug": "sketch",
+    "name": "Sketch",
+    "url": "https://sketch.com"
+  },
+  {
+    "slug": "snapseed",
+    "name": "Snapseed",
+    "url": "https://snapseed.online"
+  },
+  {
+    "slug": "solid-inspector2",
+    "name": "Solid Inspector²",
+    "url": "https://extensions.sketchup.com"
+  },
+  {
+    "slug": "solidworks",
+    "name": "SolidWorks",
+    "url": "https://www.solidworks.com"
+  },
+  {
+    "slug": "specify",
+    "name": "Specify",
+    "url": "https://specifyapp.com"
+  },
+  {
+    "slug": "spline",
+    "name": "Spline",
+    "url": "https://spline.design"
+  },
+  {
+    "slug": "stark",
+    "name": "Stark standalone",
+    "url": "https://www.getstark.co"
+  },
+  {
+    "slug": "storybook",
+    "name": "Storybook",
+    "url": "https://storybook.js.org"
+  }
+]

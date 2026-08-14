@@ -1,0 +1,95 @@
+{
+  "slug": "envato-elements",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Envato Elements official site", "url": "https://elements.envato.com" }
+  ],
+  "facts": {
+    "what": "Abonnement aux assets créatifs illimités incluant photos, vidéos, musique, sons, graphiques, fonts, templates 3D et outils IA (génération vidéo, image, audio).",
+    "what_en": "Subscription to unlimited creative assets including photos, videos, music, sound effects, graphics, fonts, 3D templates, and AI tools (video, image, audio generation).",
+    "pricing_model": "Abonnement mensuel, annuel ou par équipe avec tiers multiples incluant outils IA.",
+    "free_tier": { "exists": false, "detail": "Aucun tier gratuit ; abonnement payant uniquement. Montants sur la page officielle pour plans spécifiques." },
+    "plans": [
+      { "name": "Envato Elements (monthly)", "price": "À partir de 14,50 €/mois" },
+      { "name": "Envato Elements (annual)", "price": "Réduction à l'année (montants sur site officiel)" },
+      { "name": "Envato Elements Teams", "price": "Plans d'équipe disponibles (montants sur site officiel)" }
+    ],
+    "key_features": [
+      "29+ millions d'assets : 16,3M photos, 340k vidéo, 940k sons, 81k fonts, 380k assets 3D",
+      "Outils IA : VideoGen, ImageGen, ImageEdit, VoiceGen, MusicGen, GraphicsGen, MockUpGen, SoundGen",
+      "Licence commerciale illimitée pour tous les téléchargements et contenu IA généré",
+      "Accès cours/tutoriels Envato Tuts+",
+      "Plans d'équipe pour collaboration."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de nombreux assets créatifs régulièrement (photos, videos, musique).",
+        "Vous voulez accès à des outils IA pour générer contenu (vidéos, images, audio).",
+        "Vous travaillez en équipe et avez besoin de collaboration et d'une source unique."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un ou deux assets pour un projet ponctuel (payer à l'unité sur Envato Market).",
+        "Vous cherchez une solution gratuite.",
+        "Vous avez des besoins très spécialisés sans assets génériques."
+      ],
+      "threshold": "Envato Elements s'impose pour les créatifs/agences avec usage régulier ; pour achat ponctuel, Envato Market suffit."
+    },
+    "pros": [
+      "Accès illimité à 29+ millions d'assets premium de qualité.",
+      "Suite IA puissante pour génération de contenu (vidéo, image, audio).",
+      "Licence commerciale : utilisez tous les assets/contenu IA pour clients.",
+      "Abonnement économique vs achat à l'unité pour volume élevé.",
+      "Plans d'équipe avec gestion de rôles et partage."
+    ],
+    "cons": [
+      "Abonnement récurrent (pas achat unique).",
+      "Coûts cumulés sur longue durée.",
+      "Outils IA à crédits limités par tier (authentifier sur site officiel)."
+    ],
+    "use_cases": [
+      "Créer du contenu vidéo marketing avec VideoGen et stock footage.",
+      "Générer des images et graphiques pour réseaux sociaux.",
+      "Composer de la musique ou sound design pour projets visuels.",
+      "Sourcer photos et video authentiques pour sites web et campagnes.",
+      "Équipes produisant contenus multiples par semaine."
+    ],
+    "relevant_for": ["Agences créatives", "Producteurs vidéo", "Graphistes", "Marketers digitaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need many creative assets regularly (photos, videos, music).",
+        "You want access to AI tools to generate content (videos, images, audio).",
+        "You work in a team and need collaboration and a single source."
+      ],
+      "avoidIf": [
+        "You only need one or two assets for a one-off project (pay-per-item on Envato Market).",
+        "You seek a free solution.",
+        "You have highly specialized needs without generic assets."
+      ],
+      "threshold": "Envato Elements is ideal for creatives/agencies with regular usage; for one-off purchase, Envato Market suffices."
+    },
+    "pros": [
+      "Unlimited access to 29+ million premium quality assets.",
+      "Powerful AI suite for content generation (video, image, audio).",
+      "Commercial license: use all assets/AI-generated content for clients.",
+      "Economical subscription vs. individual purchases for high volume.",
+      "Team plans with role management and sharing."
+    ],
+    "cons": [
+      "Recurring subscription (not one-time purchase).",
+      "Cumulative costs over time.",
+      "AI tools credit-limited per tier (verify on official site)."
+    ],
+    "use_cases": [
+      "Create marketing video content with VideoGen and stock footage.",
+      "Generate images and graphics for social media.",
+      "Compose music or sound design for visual projects.",
+      "Source authentic photos and video for websites and campaigns.",
+      "Teams producing multiple pieces of content weekly."
+    ]
+  }
+}

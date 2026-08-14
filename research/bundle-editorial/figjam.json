@@ -1,0 +1,91 @@
+{
+  "slug": "figjam",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FigJam (site officiel)", "url": "https://www.figma.com/figjam/" }
+  ],
+  "facts": {
+    "what": "Tableau blanc collaboratif par Figma pour le brainstorming, la réflexion d'équipe et la planification. Inclus gratuitement dans tous les plans Figma, sans frais supplémentaires.",
+    "what_en": "Collaborative digital whiteboard by Figma for brainstorming, team alignment, and planning. Included free with all Figma plans, no additional cost.",
+    "pricing_model": "Inclus avec tous les plans Figma (gratuit pour Figma Free, inclus dans les plans Pro/Org/Entreprise).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit Figma inclut FigJam : tableaux illimités personnels et 3 fichiers FigJam partagés." },
+    "plans": [
+      { "name": "FigJam (avec Figma Free)", "price": "Gratuit (3 fichiers FigJam partagés inclus)" },
+      { "name": "FigJam (avec Figma Pro+)", "price": "Inclus (15 € / mois Figma Pro, 45 € / mois Org)" }
+    ],
+    "key_features": [
+      "Tableau blanc infini avec modèles (300+)",
+      "Audio et chat temps réel",
+      "Fonction Spotlight et réactions expressives",
+      "Résumé automatique des actions et suggestions IA",
+      "Intégration avec Asana, Jira, GitHub",
+      "Fonction iPad avec stylus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez déjà Figma en équipe.",
+        "Vous avez besoin d'un tableau blanc avec beaucoup de modèles prêts à l'emploi.",
+        "Vous voulez intégrer votre brainstorming avec vos designs Figma."
+      ],
+      "avoidIf": [
+        "Vous cherchez un tableau blanc autonome gratuit (préférez Excalidraw).",
+        "Vous n'avez pas besoin d'intégration Figma/Asana/Jira.",
+        "Vous avez un petit budget et le libre-service suffit."
+      ],
+      "threshold": "FigJam s'impose si vous êtes déjà sur Figma. Sinon, Excalidraw gratuit peut suffire."
+    },
+    "pros": [
+      "Inclus sans frais supplémentaires dans Figma.",
+      "Intégration seamless avec les designs Figma et vos outils (Asana, Jira).",
+      "Modèles riches et IA pour générer des diagrammes.",
+      "Collaboration audio native et réactions expressives."
+    ],
+    "cons": [
+      "Nécessite un compte Figma pour utiliser pleinement.",
+      "Moins de flexibilité dans le style de dessin que Excalidraw.",
+      "Coûte via abonnement Figma Pro ou Org."
+    ],
+    "use_cases": [
+      "Brainstorming avant de démarrer une conception Figma.",
+      "Rétrospectives et planifications agiles.",
+      "Facilitation de réunions stratégiques.",
+      "Mind maps et wireframes rapides."
+    ],
+    "relevant_for": ["Design teams", "Product managers", "Agile teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're already using Figma as a team.",
+        "You want a whiteboard with rich templates and AI features.",
+        "You want to connect brainstorming directly to your Figma designs."
+      ],
+      "avoidIf": [
+        "You're looking for a standalone free whiteboard (use Excalidraw).",
+        "You don't need Figma/Asana/Jira integration.",
+        "Budget is tight and a simple free tool suffices."
+      ],
+      "threshold": "FigJam dominates if you're on Figma already. Otherwise, free Excalidraw may suffice."
+    },
+    "pros": [
+      "Included at no extra cost with Figma.",
+      "Seamless integration with Figma designs and tools (Asana, Jira).",
+      "Rich templates and AI to auto-generate diagrams.",
+      "Native audio collaboration and expressive reactions."
+    ],
+    "cons": [
+      "Requires a Figma account for full access.",
+      "Less freedom in drawing style than Excalidraw.",
+      "Costs through Figma Pro or Org subscription."
+    ],
+    "use_cases": [
+      "Brainstorm before starting a Figma design.",
+      "Retros and agile planning.",
+      "Facilitate strategy meetings.",
+      "Quick mind maps and wireframes."
+    ]
+  }
+}

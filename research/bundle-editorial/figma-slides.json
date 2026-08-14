@@ -1,0 +1,95 @@
+{
+  "slug": "figma-slides",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Figma Slides (site officiel)", "url": "https://www.figma.com/slides/" }
+  ],
+  "facts": {
+    "what": "Outil de présentation natif Figma pour créer des slides avec tous les outils de design Figma (Auto Layout, composants, design systems). Inclus gratuitement dans tous les plans Figma.",
+    "what_en": "Native Figma presentation tool to create slides with full Figma design capabilities (Auto Layout, components, design systems). Included free with all Figma plans.",
+    "pricing_model": "Inclus dans tous les plans Figma (gratuit pour Figma Free, inclus dans Pro/Org/Enterprise).",
+    "free_tier": { "exists": true, "detail": "Figma Slides gratuit avec le plan Figma Free ; accès complet à la création et édition." },
+    "plans": [
+      { "name": "Figma Slides (avec Figma Free)", "price": "Gratuit" },
+      { "name": "Figma Slides (avec Figma Pro+)", "price": "Inclus (15 € / mois Figma Pro minimum)" }
+    ],
+    "key_features": [
+      "Création de slides avec outils Figma complets (Auto Layout, composants)",
+      "Collaboration temps réel avec chat et audio",
+      "Prototypes interactifs et objets live",
+      "Modèles de présentation communautaires",
+      "Import PowerPoint (.pptx)",
+      "IA pour générer notes de présentateur",
+      "Fonctions polling et vote intégré",
+      "Éditeur vidéo (overlay, opacité, arrondi)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes sur Figma et avez besoin de présenter vos designs.",
+        "Vous voulez garder designs et présentations au même endroit.",
+        "Vous collaborez et présentez en live avec votre équipe."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de transitions et animations très complexes.",
+        "Vous préférez un outil de présentation spécialisé type Keynote/PowerPoint.",
+        "Vous ne travaillez pas dans Figma."
+      ],
+      "threshold": "Figma Slides s'impose si vous êtes dans Figma et présentez directement depuis vos designs. Pour des besoins avancés, préférez une solution dédiée."
+    },
+    "pros": [
+      "Inclus gratuit avec Figma Free et tous les plans.",
+      "Accès complet à Auto Layout, composants et design systems.",
+      "Présentation live directe depuis Figma.",
+      "Collaboration en temps réel avec audio et chat.",
+      "Import et édition PowerPoint."
+    ],
+    "cons": [
+      "Moins d'options d'animation que les outils dédiés.",
+      "Nécessite d'être dans Figma (pas d'export natif).",
+      "Moins mature que Keynote ou PowerPoint."
+    ],
+    "use_cases": [
+      "Présenter des designs et décisions de UX directement.",
+      "Créer des pitch decks alignés avec votre design system.",
+      "Collaborer sur des présentations avec des designers.",
+      "Conduire des user testings intégrés avec prototypes."
+    ],
+    "relevant_for": ["Design teams", "Product teams", "Presenters"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're on Figma and need to present your designs.",
+        "You want to keep designs and presentations in the same place.",
+        "You collaborate and present live with your team."
+      ],
+      "avoidIf": [
+        "You need complex transitions and animations.",
+        "You prefer a dedicated presentation tool like Keynote/PowerPoint.",
+        "You don't work in Figma."
+      ],
+      "threshold": "Figma Slides wins if you're in Figma and presenting directly from designs. For advanced needs, use a dedicated solution."
+    },
+    "pros": [
+      "Included free with Figma Free and all plans.",
+      "Full access to Auto Layout, components, and design systems.",
+      "Live presentation directly from Figma.",
+      "Real-time collaboration with audio and chat.",
+      "PowerPoint import and editing."
+    ],
+    "cons": [
+      "Fewer animation options than dedicated tools.",
+      "Requires being in Figma (no native export).",
+      "Less mature than Keynote or PowerPoint."
+    ],
+    "use_cases": [
+      "Present UX designs and decisions directly.",
+      "Create pitch decks aligned with your design system.",
+      "Collaborate on presentations with designers.",
+      "Conduct user testing with embedded prototypes."
+    ]
+  }
+}

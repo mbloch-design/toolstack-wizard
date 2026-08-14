@@ -1,0 +1,94 @@
+{
+  "slug": "brandmark",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Brandmark — site officiel", "url": "https://brandmark.io/" }
+  ],
+  "facts": {
+    "what": "Outil de création de logos alimenté par IA. Génère automatiquement plusieurs concepts de logo basés sur votre description, puis permet la customisation et le téléchargement de fichiers vecteur, PNG et brand guidelines.",
+    "what_en": "AI-powered logo creation tool. Automatically generates multiple logo concepts based on your description, then allows customization and download of vector, PNG files, and brand guidelines.",
+    "pricing_model": "Paiement unique par package (pas d'abonnement). Générer et prévisualiser des logos est gratuit.",
+    "free_tier": { "exists": true, "detail": "Génération et prévisualisation des logos gratuite. Téléchargement des fichiers et brand kit nécessite un achat unique." },
+    "plans": [
+      { "name": "Basic", "price": "35 $ (fichiers logo PNG et vecteur)" },
+      { "name": "Designer", "price": "95 $ (fichiers source + brand guidelines + designs web/cartes/social)" },
+      { "name": "Enterprise", "price": "195 $ (tout Designer + jusqu'à 10 concepts hand-crafted + téléchargement polices)" }
+    ],
+    "key_features": [
+      "Génération AI de concepts de logos",
+      "Customization couleurs et polices",
+      "Révisions illimitées",
+      "Brand guidelines et design assets (Designer+)",
+      "Droits commerciaux et personnels complets",
+      "Fichiers vecteur et raster"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un logo rapide et abordable.",
+        "Vous aimez l'idée que l'IA vous propose plusieurs concepts.",
+        "Vous avez un budget petit à moyen pour le branding."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un logo réellement unique et sur-mesure.",
+        "Vous exigez une direction créative très spécifique.",
+        "Vous voulez des révisions illimitées avec un designer humain."
+      ],
+      "threshold": "Brandmark excelle pour un logo rapide, original et bon marché ; pour une identité visuelle très forte, un designer humain reste préférable."
+    },
+    "pros": [
+      "Paiement unique, pas d'abonnement.",
+      "IA propose plusieurs concepts originaux.",
+      "Résultats généralement modernes et épurés.",
+      "Process très rapide (minutes).",
+      "Excellente valeur rapport qualité/prix."
+    ],
+    "cons": [
+      "IA ne comprend pas toujours votre vision unique.",
+      "Concepts générés peuvent sembler parfois génériques.",
+      "Pas de révisions humaines incluses (sauf Enterprise).",
+      "Difficile de pivoter radicalement après génération."
+    ],
+    "use_cases": [
+      "Générer un logo de démarrage rapidement.",
+      "Explorer plusieurs directions visuelles.",
+      "Créer une identité visuelle pour un projet secondaire."
+    ],
+    "relevant_for": ["Startups", "Side projects", "Indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a quick and affordable logo.",
+        "You like the idea of AI generating multiple concepts.",
+        "You have a small to medium branding budget."
+      ],
+      "avoidIf": [
+        "You need a truly unique, bespoke logo.",
+        "You require very specific creative direction.",
+        "You want unlimited revisions with a human designer."
+      ],
+      "threshold": "Brandmark excels at a fast, original, and affordable logo; for very strong visual identity, a human designer is preferable."
+    },
+    "pros": [
+      "One-time payment, no subscription.",
+      "AI proposes multiple original concepts.",
+      "Results generally modern and clean.",
+      "Very fast process (minutes).",
+      "Excellent value for money."
+    ],
+    "cons": [
+      "AI doesn't always understand your unique vision.",
+      "Generated concepts can feel generic sometimes.",
+      "No human revisions included (except Enterprise).",
+      "Hard to pivot radically after generation."
+    ],
+    "use_cases": [
+      "Quickly generate a startup logo.",
+      "Explore multiple visual directions.",
+      "Create visual identity for a side project."
+    ]
+  }
+}

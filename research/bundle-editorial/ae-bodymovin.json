@@ -1,0 +1,93 @@
+{
+  "slug": "ae-bodymovin",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bodymovin / Lottie - aescripts.com", "url": "https://aescripts.com/bodymovin" },
+    { "label": "GitHub - Lottie Web (airbnb/lottie-web)", "url": "https://github.com/airbnb/lottie-web" },
+    { "label": "LottieFiles for After Effects (aescripts.com)", "url": "https://aescripts.com/lottiefiles/" }
+  ],
+  "facts": {
+    "what": "Extension After Effects créée par Hernan Torrisi (hébergée sur GitHub) qui exporte les animations en JSON au format Lottie. Permet de traduire des animations After Effects (shape layers) en fichiers JSON pour les lire nativement sur web (via Lottie JS), iOS et Android via des bibliothèques mobiles.",
+    "what_en": "After Effects extension created by Hernan Torrisi that exports animations to Lottie JSON format. Translates After Effects animations (shape layers) to JSON files playable natively on web (via Lottie JS), iOS, and Android via mobile libraries.",
+    "pricing_model": "Entièrement gratuit et open source. Disponible sur GitHub et via Adobe Exchange.",
+    "free_tier": { "exists": true, "detail": "Produit entièrement gratuit. Open source hébergé sur GitHub (RxLaboratory). Zéro coût, zéro restriction." },
+    "plans": [],
+    "key_features": [
+      "Export d'animations After Effects en JSON Lottie",
+      "Support des shape layers, text, and animated properties",
+      "Export SVG, Canvas, HTML + JS ou Lottie JSON",
+      "Compatible iOS (via Lottie mobile library) et Android",
+      "Intégration directe After Effects (ZXP extension ou Adobe Exchange)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous exportez des animations After Effects pour le web ou mobile.",
+        "Vous travaillez avec des shape layers et animations vectorielles.",
+        "Vous préférez une solution gratuite et open source sans limitation."
+      ],
+      "avoidIf": [
+        "Vous animez principalement avec des calques vidéo ou images raster (moins adapté).",
+        "Vous cherchez un outil propriétaire avec support commercial garanti.",
+        "Vous avez besoin de formats d'export autres (XML, etc.)."
+      ],
+      "threshold": "Bodymovin est essentiel pour les motion designers exportant vers le web/mobile ; c'est l'outil standard gratuit de la communauté."
+    },
+    "pros": [
+      "Totalement gratuit et open source.",
+      "Standard de l'industrie pour animation web/mobile (Lottie).",
+      "Support natif iOS et Android via bibliothèques mobiles.",
+      "Pas de limitation ou paywalls cachés.",
+      "Communauté active et bien documentée."
+    ],
+    "cons": [
+      "Support limité aux shape layers (pas idéal pour raster/vidéo).",
+      "Certaines propriétés After Effects ne sont pas exportables.",
+      "Interface simple mais apprentissage des limites requiert expérience.",
+      "Support communautaire principalement (pas de support commercial)."
+    ],
+    "use_cases": [
+      "Exporter une animation After Effects pour afficher sur un site web.",
+      "Créer une animation vectorielle réutilisable pour une app iOS/Android.",
+      "Exporter des icônes animées au format Lottie pour un site React.",
+      "Partager des animations animées légères sans vidéo MP4."
+    ],
+    "relevant_for": ["Développeurs web", "Motion designers", "Développeurs mobile", "Animateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You export After Effects animations for web or mobile.",
+        "You work with shape layers and vector animations.",
+        "You prefer a free, open-source solution with no restrictions."
+      ],
+      "avoidIf": [
+        "You mainly animate raster/video layers (not well-suited).",
+        "You need a proprietary tool with guaranteed commercial support.",
+        "You need other export formats (XML, etc.)."
+      ],
+      "threshold": "Bodymovin is essential for motion designers exporting to web/mobile; it's the industry-standard free tool of choice."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Industry standard for web/mobile animation (Lottie).",
+      "Native iOS and Android support via mobile libraries.",
+      "No hidden paywalls or limitations.",
+      "Active, well-documented community."
+    ],
+    "cons": [
+      "Limited to shape layers (not ideal for raster/video).",
+      "Some After Effects properties don't export.",
+      "Simple interface but learning export limitations takes experience.",
+      "Community support mainly (no commercial support)."
+    ],
+    "use_cases": [
+      "Export an After Effects animation to display on a website.",
+      "Create a reusable vector animation for an iOS/Android app.",
+      "Export animated icons in Lottie format for a React site.",
+      "Share lightweight animated visuals without MP4 video."
+    ]
+  }
+}

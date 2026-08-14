@@ -1,0 +1,90 @@
+{
+  "slug": "davinci-resolve",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "DaVinci Resolve official site (Blackmagic Design)", "url": "https://blackmagicdesign.com/products/davinciresolve" }
+  ],
+  "facts": {
+    "what": "Logiciel de montage vidéo, correction colorimétrique et effects visuels professionnel avec version gratuite complète et version Studio payante pour workflows avancés.",
+    "what_en": "Professional video editing, color grading, and visual effects software with a full-featured free version and a paid Studio edition for advanced workflows.",
+    "pricing_model": "Freemium : version gratuite complète, Studio edition en achat unique.",
+    "free_tier": { "exists": true, "detail": "Version gratuite complète sans limitation de durée, support du 8-bit jusqu'à 60fps en Ultra HD 4K." },
+    "plans": [
+      { "name": "DaVinci Resolve (Free)", "price": "Gratuit" },
+      { "name": "DaVinci Resolve Studio", "price": "295 $ (achat unique, mises à jour gratuites)" }
+    ],
+    "key_features": [
+      "Montage vidéo multi-pistes avec timeline collaborative",
+      "Correction colorimétrique et grading avancés",
+      "Effets visuels et motion graphics (Studio : 100+ plugins Resolve FX)",
+      "Édition basée sur le texte et masquage avancé (Studio)",
+      "Support du 10-bit et 120fps (Studio)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous montez et gradez de la vidéo à titre professionnel ou semi-professionnel.",
+        "Vous voulez une version gratuite très puissante pour débuter.",
+        "Vous travaillez avec des formats haute gamme (8K+) ou haute fréquence d'images."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que de montage léger et basique.",
+        "Vous cherchez un logiciel avec une interface ultra-simple pour débutants.",
+        "Vous avez un budget très serré et refusez une version gratuite limitée."
+      ],
+      "threshold": "DaVinci Resolve s'impose pour la correction colorimétrique et les effets visuels ; la version gratuite suffit pour la plupart des montages courants."
+    },
+    "pros": [
+      "Version gratuite extrêmement puissante et sans limitation de durée.",
+      "Suite complète : montage, color, VFX, audio en un seul logiciel.",
+      "Interface moderne et intuitive.",
+      "AI Neural Engine (Studio) pour effects automatisés."
+    ],
+    "cons": [
+      "Courbe d'apprentissage moyenne pour débuter.",
+      "Version Studio payante, pour un delta de fonctions limité.",
+      "Performance CPU/GPU variable selon la config matérielle."
+    ],
+    "use_cases": [
+      "Produire et monter un film ou un documentaire.",
+      "Corriger la couleur et grader une séquence.",
+      "Créer des effets visuels et motion design.",
+      "Traiter le son en post-production."
+    ],
+    "relevant_for": ["Vidéastes", "Colorists", "Producteurs vidéo", "Étudiants en cinéma"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You edit and grade video professionally or semi-professionally.",
+        "You want a powerful free version to get started.",
+        "You work with high-end formats (8K+) or high frame rates."
+      ],
+      "avoidIf": [
+        "You only need light, basic editing.",
+        "You seek an ultra-simple interface for beginners.",
+        "Your budget is tight and you refuse any limited free version."
+      ],
+      "threshold": "DaVinci Resolve excels at color grading and visual effects; the free version suffices for most common editing tasks."
+    },
+    "pros": [
+      "Extremely powerful free version with no time limits.",
+      "Complete suite: editing, color, VFX, audio in one application.",
+      "Modern, intuitive interface.",
+      "AI Neural Engine (Studio) for automated effects."
+    ],
+    "cons": [
+      "Moderate learning curve for beginners.",
+      "Studio version pricey (295 USD) for a few features.",
+      "Performance varies based on hardware configuration."
+    ],
+    "use_cases": [
+      "Produce and edit a film or documentary.",
+      "Color-correct and grade a sequence.",
+      "Create visual effects and motion design.",
+      "Handle audio post-production."
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "figma-tokens",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tokens Studio (site officiel)", "url": "https://tokens.studio" },
+    { "label": "Tokens Studio Pricing", "url": "https://tokens.studio/pricing" }
+  ],
+  "facts": {
+    "what": "Plugin Figma pour gérer les design tokens (couleurs, typographie, espacements) et les synchroniser avec le code. Open source et extensible, avec intégration Git et multi-fichiers.",
+    "what_en": "Figma plugin for managing design tokens (colors, typography, spacing) and syncing them to code. Open-source and extensible, with Git integration and multi-file support.",
+    "pricing_model": "Plugin Figma gratuit (39 €) ; plateforme Tokens Studio avec plans d'équipe progressifs (SaaS).",
+    "free_tier": { "exists": true, "detail": "Plugin Figma gratuit pour utiliser les variables Figma ; plateforme studio en essai gratuit 14 jours." },
+    "plans": [
+      { "name": "Plugin Figma", "price": "39 € achat unique (ou gratuit en version open source)" },
+      { "name": "Studio Starter Plus", "price": "17 € / mois (1 éditeur, jusqu'à 5 projets)" },
+      { "name": "Studio Essential", "price": "169 € / mois (1 éditeur, versioning, branches)" },
+      { "name": "Studio Organization", "price": "499 € / mois (5 éditeurs, asset management, docs)" },
+      { "name": "Enterprise", "price": "Prix sur demande"
+      }
+    ],
+    "key_features": [
+      "Gestion des design tokens (couleurs, typo, spacing)",
+      "Synchronisation Figma ↔ Code (CSS, JSON)",
+      "Intégration GitHub et Git pour versioning",
+      "Support Figma, Penpot, Framer, VS Code",
+      "Sync multi-fichiers et variables Figma",
+      "CLI et SDK pour automatisation",
+      "Théming multi-marques",
+      "Open source et extensible"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un design system en équipe.",
+        "Vous synchronisez régulièrement design et code.",
+        "Vous avez besoin de versioning et branches de tokens."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un projet simple.",
+        "Vous gérez les tokens entièrement en code (sans Figma).",
+        "Vous avez un petit budget et pas d'équipe."
+      ],
+      "threshold": "Tokens Studio s'impose pour les design systems d'équipe. Pour les projets solo simples, les variables Figma natives peuvent suffire."
+    },
+    "pros": [
+      "Source unique de vérité pour design et code.",
+      "Sync Git native et versioning.",
+      "Support multi-outils (Figma, Penpot, VS Code).",
+      "Open source et extensible (CLI/SDK).",
+      "Theming multi-marques."
+    ],
+    "cons": [
+      "Pricing peut être élevé pour petites équipes.",
+      "Courbe d'apprentissage pour setup complet.",
+      "Nécessite une discipline d'équipe pour fonctionner."
+    ],
+    "use_cases": [
+      "Centraliser les tokens couleur, typo, spacing.",
+      "Exporter les tokens vers variables CSS pour le web.",
+      "Synchroniser les changements design-développement.",
+      "Gérer des variantes de marque (theming).",
+      "Versionner et brancher les tokens."
+    ],
+    "relevant_for": ["Design systems teams", "Product designers", "Frontend developers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a design system as a team.",
+        "You regularly sync design and code.",
+        "You need token versioning and branching."
+      ],
+      "avoidIf": [
+        "You have only a simple project.",
+        "You manage tokens entirely in code (without Figma).",
+        "You have a small budget and no team."
+      ],
+      "threshold": "Tokens Studio wins for team design systems. For simple solo projects, native Figma variables may suffice."
+    },
+    "pros": [
+      "Single source of truth for design and code.",
+      "Native Git sync and versioning.",
+      "Multi-tool support (Figma, Penpot, VS Code).",
+      "Open source and extensible (CLI/SDK).",
+      "Multi-brand theming."
+    ],
+    "cons": [
+      "Pricing can be high for small teams.",
+      "Learning curve for full setup.",
+      "Requires team discipline to work well."
+    ],
+    "use_cases": [
+      "Centralize color, typography, and spacing tokens.",
+      "Export tokens to CSS variables for web.",
+      "Sync design and development changes.",
+      "Manage brand variants (theming).",
+      "Version and branch tokens."
+    ]
+  }
+}

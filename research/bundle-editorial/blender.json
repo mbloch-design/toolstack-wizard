@@ -1,0 +1,94 @@
+{
+  "slug": "blender",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Blender — site officiel", "url": "https://www.blender.org/" }
+  ],
+  "facts": {
+    "what": "Suite de création 3D libre et open-source complète : modélisation, sculpture, animation, simulation (fluides, fumée, particules), rendu, compositing, tracking vidéo et montage. Standard gratuit pour hobbyistes et studios professionnels.",
+    "what_en": "Complete free and open-source 3D creation suite: modeling, sculpting, animation, simulation (fluids, smoke, particles), rendering, compositing, video tracking, and editing. Gratis standard for hobbyists and professional studios.",
+    "pricing_model": "Libre et open-source, gratuit à jamais.",
+    "free_tier": { "exists": true, "detail": "Blender est entièrement gratuit. Aucun coût d'utilisation, aucune limite, aucune abonnement." },
+    "plans": [],
+    "key_features": [
+      "Modélisation 3D et sculpting avancé",
+      "Animation et rigging",
+      "Moteur de rendu Cycles (CPU/GPU)",
+      "Simulation physique (fluides, fumée, particules, tissu, cheveux)",
+      "Compositing et video editing intégrés",
+      "Scripting Python pour automatisation",
+      "Grease Pencil pour animation 2D",
+      "Geometry Nodes pour paramétrisation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une solution 3D complète sans frais.",
+        "Vous faites de l'animation, du VFX ou du design 3D.",
+        "Vous êtes à l'aise avec les logiciels complexes et la communauté open-source."
+      ],
+      "avoidIf": [
+        "Vous cherchez un logiciel très simple et guidé.",
+        "Vous avez besoin d'un support commercial 24/7.",
+        "Vous ne tolérez pas les bugs ou lenteurs occasionnels."
+      ],
+      "threshold": "Blender est l'incontournable gratuit pour la 3D professionnelle ; pour un apprentissage ultra-débutant ou un workflow commercial ultra-rigide, des alternatives payantes existent."
+    },
+    "pros": [
+      "Totalement gratuit, aucune limite d'utilisation.",
+      "Communauté active et ressources pédagogiques massives.",
+      "Suite très complète (modéling, animation, rendu, compositing en un seul logiciel).",
+      "Open-source, code accessible et extensible.",
+      "Moteur de rendu Cycles haute qualité inclus."
+    ],
+    "cons": [
+      "Interface complexe, courbe d'apprentissage raide.",
+      "Support commercial inexistant (communauté seulement).",
+      "Performances variables selon le matériel.",
+      "Workflow différent des logiciels propriétaires (ex. Maya, 3ds Max)."
+    ],
+    "use_cases": [
+      "Créer des modèles 3D et animations",
+      "Produire du contenu VFX et compositing vidéo.",
+      "Prototyper rapidement en 3D.",
+      "Apprendre la 3D sans budget."
+    ],
+    "relevant_for": ["Animateurs 3D", "Designers 3D", "Artistes VFX", "Étudiants en 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a complete 3D solution at no cost.",
+        "You do animation, VFX, or 3D design.",
+        "You're comfortable with complex software and open-source communities."
+      ],
+      "avoidIf": [
+        "You want very simple, guided software.",
+        "You need 24/7 commercial support.",
+        "You can't tolerate occasional bugs or slowdowns."
+      ],
+      "threshold": "Blender is the must-have free tool for professional 3D; for ultra-beginner learning or ultra-rigid commercial workflows, paid alternatives exist."
+    },
+    "pros": [
+      "Completely free, no usage limits.",
+      "Active community and massive educational resources.",
+      "Very complete suite (modeling, animation, rendering, compositing in one app).",
+      "Open-source, code accessible and extensible.",
+      "High-quality Cycles rendering engine included."
+    ],
+    "cons": [
+      "Complex interface, steep learning curve.",
+      "No commercial support (community only).",
+      "Variable performance depending on hardware.",
+      "Workflow different from proprietary software (ex. Maya, 3ds Max)."
+    ],
+    "use_cases": [
+      "Create 3D models and animations.",
+      "Produce VFX and video compositing content.",
+      "Rapidly prototype in 3D.",
+      "Learn 3D without budget."
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "1001bit-tools",
+    "name": "1001bit Tools",
+    "url": "https://www.1001bit.com"
+  },
+  {
+    "slug": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud All Apps",
+    "url": "https://www.adobe.com/creativecloud/plans.html"
+  },
+  {
+    "slug": "ae-animation-composer",
+    "name": "Animation Composer 3",
+    "url": "https://misterhorse.com/animation-composer"
+  },
+  {
+    "slug": "ae-bao-boa",
+    "name": "BAO Boa",
+    "url": "https://aescripts.com/boa"
+  },
+  {
+    "slug": "ae-bodymovin",
+    "name": "Bodymovin / Lottie",
+    "url": "https://aescripts.com/bodymovin"
+  },
+  {
+    "slug": "ae-duik",
+    "name": "Duik Ángela",
+    "url": "https://rxlaboratoire.com/duik"
+  },
+  {
+    "slug": "ae-gifgun",
+    "name": "GifGun",
+    "url": "https://aescripts.com/gifgun"
+  },
+  {
+    "slug": "ae-newton3",
+    "name": "Newton 3",
+    "url": "https://aescripts.com/newton"
+  },
+  {
+    "slug": "ae-overlord",
+    "name": "Overlord",
+    "url": "https://battleaxe.co/overlord"
+  },
+  {
+    "slug": "ae-red-giant",
+    "name": "Red Giant",
+    "url": "https://maxon.net/red-giant"
+  }
+]

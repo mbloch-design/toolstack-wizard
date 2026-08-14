@@ -1,0 +1,107 @@
+{
+  "slug": "arena",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Are.na — Official Site",
+      "url": "https://www.are.na"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.",
+    "what_en": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations.",
+    "pricing_model": "Modèle d'adhésion avec plan Premium. Plate-forme indépendante soutenue par ses membres.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées."
+    },
+    "plans": [
+      {
+        "name": "Are.na Premium",
+        "price": "Montants sur la page officielle"
+      }
+    ],
+    "key_features": [
+      "Création de canaux pour organiser le contenu par thème",
+      "Import de photos, notes, fichiers et liens web",
+      "Partage et collaboration sur les canaux",
+      "Réseau de 20.000+ contributeurs Premium actifs",
+      "Pas de recommandation algorithme (curation humaine)",
+      "Support de l'IA pour aide au workflow",
+      "Téléchargement et export du contenu",
+      "App mobile (iOS)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous archivez du contenu créatif ou de recherche de façon régulière.",
+        "Vous collaborez avec d'autres sur des mood boards ou collections.",
+        "Vous préférez une curation humaine à un algorithme de recommandation."
+      ],
+      "avoidIf": [
+        "Vous cherchez surtout un outil de partage social (Instagram, Pinterest).",
+        "Vous avez un budget très serré et rechignez à payer un abonnement.",
+        "Vous avez besoin d'intégrations d'entreprise complexes ou SSO."
+      ],
+      "threshold": "Are.na s'impose pour les chercheurs et créatifs collectionnant du contenu collaboratif ; pour le partage social léger ou archivage solo, d'autres outils peuvent convenir."
+    },
+    "pros": [
+      "Plateforme indépendante, pas d'algorithme de recommandation.",
+      "Curation humaine dans un écosystème respectueux.",
+      "Espace de travail pour recherche collaborative.",
+      "Import facile de tout type de contenu.",
+      "Support et équipe réactive."
+    ],
+    "cons": [
+      "Petite communauté comparée à Pinterest ou Instagram.",
+      "Modèle d'adhésion obligatoire pour accès complet.",
+      "Pas de native integration avec outils de design populaires.",
+      "Fonctionnalités avancées réservées au Premium."
+    ],
+    "use_cases": [
+      "Créer un mood board collaboratif pour un projet créatif.",
+      "Archiver des références d'inspiration organisées par thème.",
+      "Partager et discuter de sources de recherche avec une équipe créative."
+    ],
+    "relevant_for": [
+      "Designers",
+      "Chercheurs créatifs",
+      "Artistes collectionnant des références"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly archive creative or research content.",
+        "You collaborate with others on mood boards or collections.",
+        "You prefer human curation over algorithmic recommendations."
+      ],
+      "avoidIf": [
+        "You mainly want social sharing (Instagram, Pinterest).",
+        "You have a tight budget and resist paying for subscriptions.",
+        "You need complex enterprise integrations or SSO."
+      ],
+      "threshold": "Are.na makes sense for researchers and creatives collecting collaborative content; for light social sharing or solo archiving, other tools may fit better."
+    },
+    "pros": [
+      "Independent platform, no algorithmic recommendations.",
+      "Human curation in a respectful ecosystem.",
+      "Workspace for collaborative research.",
+      "Easy content import from any source.",
+      "Responsive support and team."
+    ],
+    "cons": [
+      "Small community compared to Pinterest or Instagram.",
+      "Membership model required for full access.",
+      "No native integration with popular design tools.",
+      "Advanced features reserved for Premium."
+    ],
+    "use_cases": [
+      "Create a collaborative mood board for a creative project.",
+      "Archive inspiration references organized by theme.",
+      "Share and discuss research sources with a creative team."
+    ]
+  }
+}

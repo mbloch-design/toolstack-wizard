@@ -1,0 +1,91 @@
+{
+  "slug": "chakra-ui",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Chakra UI — site officiel", "url": "https://chakra-ui.com/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de composants React accessible et composable pour construire des interfaces web modernes. Inclus dark mode, theme customization, accessibilité WCAG, responsive design.",
+    "what_en": "Accessible and composable React component library for building modern web interfaces. Includes dark mode, theme customization, WCAG accessibility, responsive design.",
+    "pricing_model": "Libre et open-source (MIT license). Gratuit à jamais.",
+    "free_tier": { "exists": true, "detail": "Chakra UI core est entièrement gratuit open-source. Chakra UI Pro optionnel : templates et composants pré-construits payants." },
+    "plans": [],
+    "key_features": [
+      "Composants React accessibles (WAI-ARIA)",
+      "Système de design avec design tokens",
+      "Dark mode natif",
+      "Personnalisation thème complet",
+      "Responsive design intégré",
+      "Documentation exhaustive et exemples",
+      "Communauté active (40K+ stars GitHub, 7.2M downloads npm)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une app React moderne.",
+        "L'accessibilité est une priorité pour vous.",
+        "Vous voulez accélérer le dev sans dépendre d'un design system propriétaire."
+      ],
+      "avoidIf": [
+        "Vous utilisez Vue, Angular ou un autre framework JS.",
+        "Vous avez un design system très custom et figé.",
+        "Vous préférez écrire vos styles from scratch."
+      ],
+      "threshold": "Chakra UI est idéal pour les apps React modernes avec accessibilité ; pour Vue/Angular, cherchez des équivalents."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Accessibilité WCAG de base incluse.",
+      "Très bon dark mode et theming.",
+      "Composants composables et flexibles.",
+      "Communauté grande et ressources pédagogiques abondantes."
+    ],
+    "cons": [
+      "React uniquement (pas Vue, Angular, Svelte).",
+      "Courbe apprentissage modérée pour débutants.",
+      "Customisation poussée peut requérir CSS/Emotion (moins simple qu'on croit).",
+      "Performance bundle légèrement plus lourd que alternatives minimalistes."
+    ],
+    "use_cases": [
+      "Construire rapidement une app SaaS/admin accessible.",
+      "Prototyper une interface web avec design system moderne.",
+      "Apprendre React et l'accessibilité web ensemble."
+    ],
+    "relevant_for": ["Développeurs React", "Startups web", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a modern React app.",
+        "Accessibility is a priority for you.",
+        "You want to speed up dev without a rigid proprietary design system."
+      ],
+      "avoidIf": [
+        "You use Vue, Angular, or another JS framework.",
+        "You have a very custom and rigid design system.",
+        "You prefer writing styles from scratch."
+      ],
+      "threshold": "Chakra UI is ideal for modern React apps with accessibility; for Vue/Angular, seek equivalent libraries."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Basic WCAG accessibility included.",
+      "Very good dark mode and theming.",
+      "Composable and flexible components.",
+      "Large community and abundant learning resources."
+    ],
+    "cons": [
+      "React-only (no Vue, Angular, Svelte).",
+      "Moderate learning curve for beginners.",
+      "Advanced customization may require CSS/Emotion (less straightforward than expected).",
+      "Bundle size slightly heavier than minimal alternatives."
+    ],
+    "use_cases": [
+      "Quickly build an accessible SaaS/admin app.",
+      "Prototype a web interface with modern design system.",
+      "Learn React and web accessibility together."
+    ]
+  }
+}

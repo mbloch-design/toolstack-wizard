@@ -1,0 +1,94 @@
+{
+  "slug": "enscape",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Enscape official site (Chaos)", "url": "https://www.chaos.com/enscape" }
+  ],
+  "facts": {
+    "what": "Plugin de visualisation 3D en temps réel et rendu pour Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, avec IA intégrée (Veras) pour génération de design et analyse de durabilité.",
+    "what_en": "Real-time 3D visualization and rendering plugin for Revit, SketchUp, Rhino, ArchiCAD, and Vectorworks, with integrated AI (Veras) for design generation and sustainability analysis.",
+    "pricing_model": "Abonnement mensuel ou annuel avec trois tiers commerciaux ; essai gratuit 14 jours.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours avec accès complet ; pas de version gratuite permanente après essai." },
+    "plans": [
+      { "name": "Enscape Solo", "price": "45 €/mois (100 AI credits/mois)" },
+      { "name": "Enscape Premium", "price": "72 €/mois (500 AI credits/mois, 10k assets)" },
+      { "name": "Enscape Collection", "price": "191 €/mois (1500 AI credits/mois, 18.5k+ assets, animation)" }
+    ],
+    "key_features": [
+      "Visualisation en temps réel bidirectionnelle avec le modèle CAO",
+      "AI-powered design generation via Veras AI",
+      "Environnement avec contexte du site et intégration paysager",
+      "Analyse de durabilité (Enscape Impact) pour confort thermique",
+      "Collaboration cloud (Chaos Cloud) et animations",
+      "6700 assets (Solo) à 18500+ assets (Collection)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes architecte ou designer travaillant avec Revit, SketchUp ou Rhino.",
+        "Vous voulez explorer des designs en temps réel sans calculs de rendu longs.",
+        "Vous avez besoin de présenter des visualisations convaincantes aux clients rapidement."
+      ],
+      "avoidIf": [
+        "Vous utilisez un logiciel CAO non supporté (AutoCAD seul n'est pas supporté).",
+        "Vous cherchez une solution gratuite permanente.",
+        "Vous avez un budget très serré et un essai gratuit suffit."
+      ],
+      "threshold": "Enscape s'impose pour les architectes qui itèrent rapidement sur des designs ; sinon un rendu classique ou screenshots suffisent."
+    },
+    "pros": [
+      "Visualisation en direct syncronisée avec votre modèle CAO.",
+      "Interface simple, pas besoin d'expertise en rendu.",
+      "IA pour génération automatique de design et analyse durabilité.",
+      "Essai gratuit 14 jours complet sans restriction.",
+      "Collaboration cloud et animations natives."
+    ],
+    "cons": [
+      "Abonnement récurrent, avec un ticket d'entrée notable.",
+      "Limité aux logiciels supportés (Revit, SketchUp, Rhino, ArchiCAD, Vectorworks).",
+      "Coûts cumulés si utilisé longtemps (sans licence perpétuelle)."
+    ],
+    "use_cases": [
+      "Visualiser un projet en temps réel pendant présentation client.",
+      "Itérer rapidement sur variantes de design et éclairage.",
+      "Générer des images/vidéos marketing photorealistic.",
+      "Analyser la performance énergétique et le confort."
+    ],
+    "relevant_for": ["Architectes", "Designers d'intérieur", "Designers paysagiste", "Bureaux d'études"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an architect or designer using Revit, SketchUp, or Rhino.",
+        "You want to explore designs in real-time without long render calculations.",
+        "You need to present convincing visualizations to clients quickly."
+      ],
+      "avoidIf": [
+        "You use unsupported CAD software (AutoCAD alone is not supported).",
+        "You seek a permanently free solution.",
+        "Your budget is tight and a free trial suffices."
+      ],
+      "threshold": "Enscape is ideal for architects rapidly iterating on designs; otherwise classic rendering or screenshots suffice."
+    },
+    "pros": [
+      "Live visualization synchronized with your CAD model.",
+      "Simple interface, no rendering expertise needed.",
+      "AI for automatic design generation and sustainability analysis.",
+      "Full 14-day free trial without restrictions.",
+      "Native cloud collaboration and animations."
+    ],
+    "cons": [
+      "Recurring subscription (45-191 EUR/month minimum).",
+      "Limited to supported software (Revit, SketchUp, Rhino, ArchiCAD, Vectorworks).",
+      "Cumulative costs over time (no perpetual license)."
+    ],
+    "use_cases": [
+      "Visualize a project in real-time during client presentation.",
+      "Rapidly iterate on design and lighting variations.",
+      "Generate photorealistic marketing images/videos.",
+      "Analyze energy performance and comfort."
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "ae-duik",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Duik Ángela Documentation (duik.rxlab.guide)", "url": "https://duik.rxlab.guide/Angela/getting-started/install.html" },
+    { "label": "GitHub - RxLaboratory/Duik (source open source)", "url": "https://github.com/RxLaboratory/Duik" },
+    { "label": "Free Resource: DUIK Ángela (Adobe Community)", "url": "https://community.adobe.com/announcements-527/free-resource-duik-angela-the-industry-standard-for-rigging-and-animation-in-after-effects-1627639" }
+  ],
+  "facts": {
+    "what": "Duik Ángela (v17) est une boîte à outils complète et gratuite de rigging et animation pour After Effects, développée par Nicolas Dufresne et RxLaboratory. Elle fournit des squelettes inverse (IK), des contrôles de rigging avancés, et des outils d'animation standardisés dans l'industrie.",
+    "what_en": "Duik Ángela (v17) is a free, comprehensive rigging and animation toolkit for After Effects developed by Nicolas Dufresne and RxLaboratory. Provides inverse kinematics (IK), advanced rigging controls, and industry-standard animation tools.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucune licence commerciale requise. Hébergé sur GitHub avec documentation complète.",
+    "free_tier": { "exists": true, "detail": "Produit entièrement gratuit et open source. Aucune restriction, version payante, ou limite d'utilisation." },
+    "plans": [],
+    "key_features": [
+      "Inverse Kinematics (IK) pour chaînes osseuses et articulations",
+      "Rigging avancé avec contrôles d'animateurs",
+      "Outils de morphing et déformation",
+      "Pinning et contraintes de calques",
+      "Automation et outils de timing",
+      "Export et intégration Lottie (via extension compagnon)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de l'animation de personnages ou de créatures avec rigging avancé.",
+        "Vous appréciez un outil gratuit, mature et respecté par l'industrie.",
+        "Vous cherchez des fonctionnalités professionnelles sans dépenser."
+      ],
+      "avoidIf": [
+        "Vous faites surtout du motion design graphique simple (rigging inutile).",
+        "Vous préférez une interface très intuitive (Duik a une courbe d'apprentissage).",
+        "Vous avez besoin de support commercial (Duik est supporté par communauté)."
+      ],
+      "threshold": "Duik Ángela est indispensable pour l'animation de personnages ; c'est le standard gratuit de référence. Pour motion design graphique, c'est overkill."
+    },
+    "pros": [
+      "Totalement gratuit et open source (15 ans de développement).",
+      "Inverse Kinematics professionnel et flexible.",
+      "Standard de l'industrie pour rigging After Effects.",
+      "Communauté active et bien documentée.",
+      "Zéro limitation : utilisation commerciale autorisée."
+    ],
+    "cons": [
+      "Courbe d'apprentissage importante (UI complexe, beaucoup de contrôles).",
+      "Pas d'interface ultra intuitive (conçu pour animateurs expérimentés).",
+      "Support communautaire seulement (pas de support commercial).",
+      "Documentation en anglais principalement."
+    ],
+    "use_cases": [
+      "Rigger et animer un personnage 2D ou mascotte.",
+      "Créer une chaîne IK réaliste pour un bras ou jambe.",
+      "Animer une créature ou objet articulé.",
+      "Projet character animation qui nécessite rigging professionnel."
+    ],
+    "relevant_for": ["Animateurs 2D/personnages", "Motion designers avancés", "Artistes VFX", "Studios d'animation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do character or creature animation with advanced rigging.",
+        "You appreciate a free, mature tool respected by the industry.",
+        "You want professional features without cost."
+      ],
+      "avoidIf": [
+        "You mostly do simple graphic motion design (rigging unnecessary).",
+        "You prefer a very intuitive interface (Duik has a learning curve).",
+        "You need commercial support (Duik is community-supported)."
+      ],
+      "threshold": "Duik Ángela is essential for character animation; it's the industry-standard free tool. For graphic motion design, it's overkill."
+    },
+    "pros": [
+      "Completely free and open source (15 years of development).",
+      "Professional inverse kinematics, flexible control.",
+      "Industry standard for After Effects rigging.",
+      "Active, well-documented community.",
+      "Zero restrictions: commercial use allowed."
+    ],
+    "cons": [
+      "Steep learning curve (complex UI, many controls).",
+      "Not ultra-intuitive interface (designed for experienced animators).",
+      "Community support only (no commercial support).",
+      "Documentation mainly in English."
+    ],
+    "use_cases": [
+      "Rig and animate a 2D character or mascot.",
+      "Create realistic IK chains for arms or legs.",
+      "Animate a creature or articulated object.",
+      "Character animation project requiring professional rigging."
+    ]
+  }
+}

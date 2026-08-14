@@ -1,0 +1,98 @@
+{
+  "slug": "figma-stark",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Stark (site officiel)", "url": "https://stark.so" },
+    { "label": "Stark Plugin Figma", "url": "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-ai-checker" }
+  ],
+  "facts": {
+    "what": "Plugin Figma pour tester l'accessibilité et les contrastes de couleurs. Vérifie les ratios de contraste WCAG, simule la daltonisme, gère l'ordre de focus et teste les cibles tactiles.",
+    "what_en": "Figma plugin for accessibility and color contrast testing. Verifies WCAG contrast ratios, simulates color blindness, manages focus order, and checks touch targets.",
+    "pricing_model": "Freemium : plan gratuit pour contraste et daltonisme ; plan Pro payant pour fonctionnalités avancées.",
+    "free_tier": { "exists": true, "detail": "Gratuit — contraste checker et simulateur daltonisme pour 5 projets sans limite. Tous les basics de l'accessibilité." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (contraste + daltonisme sur 5 projets)" },
+      { "name": "Pro", "price": "99 $ / an par utilisateur (focus order, alt text, touch targets, rapports)" },
+      { "name": "Business", "price": "30 $ / éditeur / mois (collaboration, SSO)" },
+      { "name": "Enterprise", "price": "Prix sur demande (SSO, bulk licensing)" }
+    ],
+    "key_features": [
+      "Vérificateur de contraste WCAG AA/AAA",
+      "Simulateur de daltonisme et déficience visuelle",
+      "Gestion de l'ordre de focus",
+      "Suggestions d'alt text pour images",
+      "Analyse de la typographie",
+      "Test des cibles tactiles (touch targets)",
+      "Rapports d'accessibilité automatisés",
+      "Prévisualisation en navigateur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des interfaces et devez respecter les normes WCAG.",
+        "Vous travaillez dans Figma.",
+        "L'accessibilité est centrale pour votre produit."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de contrainte d'accessibilité légale.",
+        "Vous cherchez un audit d'accessibilité complet post-projet.",
+        "Vous n'utilisez pas Figma."
+      ],
+      "threshold": "Stark s'impose pour intégrer l'accessibilité dès la conception Figma. Pour un audit complet post-lancement, combiné avec des tests utilisateurs."
+    },
+    "pros": [
+      "Plan gratuit robuste pour vérifier les contrastes.",
+      "Simulateur daltonisme très utile.",
+      "Rapports WCAG automaisés (Pro).",
+      "Checklist complète pour l'a11y.",
+      "Intégration directe dans Figma."
+    ],
+    "cons": [
+      "Fonctionnalités avancées (focus, alt text) payantes.",
+      "Pricing Pro peut être élevé pour solo designers.",
+      "Pas de substitut à des tests utilisateurs réels."
+    ],
+    "use_cases": [
+      "Vérifier rapidement les ratios de contraste pendant la conception.",
+      "Simuler la perception pour daltoniens.",
+      "Générer des rapports WCAG avant le développement.",
+      "Former l'équipe aux standards d'accessibilité."
+    ],
+    "relevant_for": ["Product designers", "Accessibility specialists", "Design systems teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design interfaces and must meet WCAG standards.",
+        "You work in Figma.",
+        "Accessibility is central to your product."
+      ],
+      "avoidIf": [
+        "You have no legal accessibility requirements.",
+        "You're looking for a full accessibility audit post-project.",
+        "You don't use Figma."
+      ],
+      "threshold": "Stark wins for embedding accessibility into Figma design. For full post-launch audits, pair with user testing."
+    },
+    "pros": [
+      "Robust free plan to check contrast ratios.",
+      "Color blindness simulator very useful.",
+      "Automated WCAG reports (Pro).",
+      "Complete a11y checklist.",
+      "Direct Figma integration."
+    ],
+    "cons": [
+      "Advanced features (focus, alt text) are paid.",
+      "Pro pricing can be steep for solo designers.",
+      "Not a substitute for real user testing."
+    ],
+    "use_cases": [
+      "Quickly check contrast ratios during design.",
+      "Simulate perception for colorblind users.",
+      "Generate WCAG reports before development.",
+      "Train teams on accessibility standards."
+    ]
+  }
+}

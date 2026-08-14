@@ -1,0 +1,86 @@
+{
+  "slug": "eneroth-face-creator",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Eneroth Face Creator extension (SketchUp Extension Warehouse)", "url": "https://extensions.sketchup.com" }
+  ],
+  "facts": {
+    "what": "Extension gratuite SketchUp créée par Christina Eneroth qui génère automatiquement toutes les faces possibles à partir d'une sélection d'arêtes.",
+    "what_en": "Free SketchUp extension by Christina Eneroth that automatically generates all possible faces from a selection of edges.",
+    "pricing_model": "Entièrement gratuit.",
+    "free_tier": { "exists": true, "detail": "Gratuit, extension officielle du SketchUp Extension Warehouse, aucun frais ou limitation." },
+    "plans": [
+      { "name": "Eneroth Face Creator", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Création automatique de faces à partir d'une sélection d'arêtes",
+      "Idéal pour fichiers importés (DWG, DWF) affichant uniquement des lignes",
+      "Traitement rapide de géométries complexes",
+      "Installation simple via SketchUp Extension Warehouse"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous importez régulièrement des fichiers DWG/DWF ou wireframe en SketchUp.",
+        "Vous travaillez avec des géométries complexes et tracer les faces manuellement prend du temps.",
+        "Vous utilisez SketchUp comme logiciel principal."
+      ],
+      "avoidIf": [
+        "Vous ne travaillez jamais avec des fichiers wireframe.",
+        "Vos projets SketchUp n'ont pas de géométries complexes multi-faces.",
+        "Vous utilisez rarement SketchUp (extension niche)."
+      ],
+      "threshold": "Eneroth Face Creator est indispensable pour les architectes/modéliseurs important des plans CAO ; sinon utile occasionnellement."
+    },
+    "pros": [
+      "Entièrement gratuit, aucun frais.",
+      "Économise énormément de temps sur traçage manuel de faces.",
+      "Extension officielle stable du SketchUp Extension Warehouse.",
+      "Interface simple : sélectionner + clique."
+    ],
+    "cons": [
+      "Utile uniquement si vous importez des fichiers wireframe CAO.",
+      "Automatisation basique : génère toutes les faces, pas de sélectif.",
+      "Dépend de SketchUp (pas standalone)."
+    ],
+    "use_cases": [
+      "Importer et convertir un plan CAO en modèle surfacique SketchUp.",
+      "Traiter rapidement les géométries wireframe complexes.",
+      "Préparation de modèles avant export ou visualisation."
+    ],
+    "relevant_for": ["Architectes", "Modéliseurs 3D", "Ingénieurs utilisant SketchUp"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly import DWG/DWF files or wireframe into SketchUp.",
+        "You work with complex geometries and manual face tracing is time-consuming.",
+        "SketchUp is your primary modeling tool."
+      ],
+      "avoidIf": [
+        "You never work with wireframe files.",
+        "Your SketchUp projects lack complex multi-face geometries.",
+        "You rarely use SketchUp (niche extension)."
+      ],
+      "threshold": "Eneroth Face Creator is essential for architects/modelers importing CAD plans; otherwise useful occasionally."
+    },
+    "pros": [
+      "Entirely free, no cost.",
+      "Saves enormous time on manual face tracing.",
+      "Official stable extension from SketchUp Extension Warehouse.",
+      "Simple interface: select and click."
+    ],
+    "cons": [
+      "Useful only if you import wireframe CAD files.",
+      "Basic automation: generates all faces, no selectivity.",
+      "Depends on SketchUp (not standalone)."
+    ],
+    "use_cases": [
+      "Import and convert a CAD plan into a SketchUp surface model.",
+      "Quickly handle complex wireframe geometries.",
+      "Model preparation before export or visualization."
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "excalidraw",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Excalidraw (site officiel)", "url": "https://excalidraw.com" },
+    { "label": "Excalidraw+ Pricing (site officiel)", "url": "https://plus.excalidraw.com/pricing" }
+  ],
+  "facts": {
+    "what": "Tableau blanc numérique open source et gratuit pour dessiner, esquisser et collaborer en temps réel. Interface intuitive, export en SVG/PNG, et chiffrement end-to-end.",
+    "what_en": "Open-source, free digital whiteboard for drawing, sketching, and real-time collaboration. Intuitive interface, export to SVG/PNG, and end-to-end encryption.",
+    "pricing_model": "Gratuit (open source et auto-hébergeable). Version Excalidraw+ avec stockage cloud et fonctionnalités d'équipe payante.",
+    "free_tier": { "exists": true, "detail": "Gratuit sans limite — tous les outils de base, une scène infinie, collaborateurs illimités, export PNG/SVG/JSON, chiffrement E2E." },
+    "plans": [
+      { "name": "Excalidraw (gratuit)", "price": "Gratuit" },
+      { "name": "Excalidraw+ Pro", "price": "6 € / mois par utilisateur (14 jours gratuit)" }
+    ],
+    "key_features": [
+      "Tableau blanc infini et collaboration temps réel",
+      "Export SVG, PNG, JSON",
+      "Chiffrement end-to-end",
+      "Stockage cloud illimité (Plus)",
+      "Hangouts vocaux et partage d'écran (Plus)",
+      "Open source et auto-hébergeable"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un outil d'esquisse collaboratif simple et gratuit.",
+        "Vous avez besoin de chiffrement et de confidentialité (E2E).",
+        "Vous voulez exporter en SVG pour vos flux de conception."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une fidelity très élevée ou de prototypage avancé.",
+        "Vous cherchez un outil premium avec beaucoup de templates intégrés.",
+        "Vous préférez une UI très moderne et polished."
+      ],
+      "threshold": "Excalidraw s'impose pour l'esquisse collaborative simple et gratuite. Pour du prototypage riche ou des presentations, préférez FigJam ou Figma."
+    },
+    "pros": [
+      "Entièrement gratuit avec tous les outils essentiels.",
+      "Chiffrement E2E natif pour la confidentialité.",
+      "Exportable en SVG vectoriel pour réutiliser ailleurs.",
+      "Open source et auto-hébergeable.",
+      "Pas de signup obligatoire (fonctionne en local)."
+    ],
+    "cons": [
+      "Interface minimaliste (pas de templates préconstruits).",
+      "Fonctionnalités collaboratives moins riches que FigJam.",
+      "Pas d'intégration Figma native."
+    ],
+    "use_cases": [
+      "Esquisser rapidement une architecture ou un wireframe.",
+      "Brainstorming visuel avec une petite équipe.",
+      "Exporter des croquis en SVG pour des assets de design.",
+      "Collaboration confidentielle sans signup."
+    ],
+    "relevant_for": ["Designers", "Architects", "Product teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a free, open-source collaborative sketching tool.",
+        "Privacy and end-to-end encryption matter to your workflow.",
+        "You want to export sketches as SVG vectors."
+      ],
+      "avoidIf": [
+        "You need high-fidelity prototyping or advanced interactions.",
+        "You want a polished, design-system-heavy UI.",
+        "You require extensive collaboration templates."
+      ],
+      "threshold": "Excalidraw wins for free, E2E-encrypted sketching. For rich prototyping or presentations, use FigJam or Figma instead."
+    },
+    "pros": [
+      "Fully free with all essential sketching tools.",
+      "Native E2E encryption for privacy.",
+      "Export as SVG vectors for reuse elsewhere.",
+      "Open source and self-hostable.",
+      "Works offline; no signup required."
+    ],
+    "cons": [
+      "Minimal interface with no built-in templates.",
+      "Less rich collaboration features than FigJam.",
+      "No native Figma integration."
+    ],
+    "use_cases": [
+      "Quickly sketch an architecture or wireframe.",
+      "Visual brainstorming with a small team.",
+      "Export sketches as SVG for design assets.",
+      "Confidential collaboration without signup."
+    ]
+  }
+}

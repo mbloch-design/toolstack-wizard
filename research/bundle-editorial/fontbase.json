@@ -1,0 +1,101 @@
+{
+  "slug": "fontbase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FontBase (site officiel)", "url": "https://fontba.se" }
+  ],
+  "facts": {
+    "what": "Font manager gratuit multiplateforme (Mac, Windows, Linux) pour organiser, activer et prévisualiser les polices. Inclut Google Fonts, collections, dossiers surveillés et recherche avancée.",
+    "what_en": "Free cross-platform font manager (Mac, Windows, Linux) to organize, activate, and preview fonts. Includes Google Fonts, collections, watched folders, and advanced search.",
+    "pricing_model": "Entièrement gratuit pour les fonctionnalités core. Abonnement 'Awesome' optionnel pour collaboration et features avancées.",
+    "free_tier": { "exists": true, "detail": "Gratuit sans limite — organisation, activation, Google Fonts, recherche, specimen pages, styling playground." },
+    "plans": [
+      { "name": "FontBase (core)", "price": "Gratuit" },
+      { "name": "Awesome Monthly", "price": "3 $ / mois (collaboration, gestion équipe)" },
+      { "name": "Awesome Lifetime", "price": "180 $ achat unique (valeur long terme exceptionnelle)" }
+    ],
+    "key_features": [
+      "Organisation par collections et dossiers surveillés",
+      "Activation sans installation (Windows, Mac, Linux)",
+      "Support OpenType complet",
+      "Recherche instantanée et filtrage",
+      "Playground CSS pour tester les polices",
+      "Google Fonts intégré et accès gratuit",
+      "Glyph viewer et copie directe",
+      "Specimen pages avec données de police",
+      "Sync cloud (Awesome) et gestion d'équipe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une large collection de polices à organiser.",
+        "Vous utilisez des polices sur Mac, Windows ET Linux.",
+        "Vous voulez un outil gratuit sans engagement."
+      ],
+      "avoidIf": [
+        "Vous avez très peu de polices (le finder suffit).",
+        "Vous voulez des fonctionnalités d'édition de polices (préférez FontLab).",
+        "Vous avez besoin de collaboration (payant sur Awesome)."
+      ],
+      "threshold": "FontBase domine pour la gestion gratuite de polices sur tous les OS. Pour collaboration d'équipe, envisagez Awesome."
+    },
+    "pros": [
+      "Entièrement gratuit pour les besoins core.",
+      "Fonctionne identiquement sur Mac, Windows, Linux.",
+      "Google Fonts intégré et gratuit.",
+      "Activation sans installation polices système.",
+      "Playground CSS pour prévisualiser avant utilisation.",
+      "Interface rapide et intuitive."
+    ],
+    "cons": [
+      "Pas d'édition de polices (organisateur seulement).",
+      "Fonctionnalités d'équipe payantes (Awesome).",
+      "Moins de features avancées que FontLab ou Glyphs."
+    ],
+    "use_cases": [
+      "Organiser une grande collection de polices par projet.",
+      "Prévisualiser les polices avant activation.",
+      "Accéder à Google Fonts sans téléchargement manuel.",
+      "Synchroniser les polices d'équipe (Awesome).",
+      "Chercher rapidement parmi centaines de polices."
+    ],
+    "relevant_for": ["Designers", "Typographers", "Design teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a large font collection to organize.",
+        "You use fonts on Mac, Windows, AND Linux.",
+        "You want a free tool with no lock-in."
+      ],
+      "avoidIf": [
+        "You have very few fonts (system finder suffices).",
+        "You need font editing features (use FontLab).",
+        "You need team collaboration (Awesome is paid)."
+      ],
+      "threshold": "FontBase dominates for free font management across all OS. For team collaboration, consider Awesome."
+    },
+    "pros": [
+      "Completely free for core needs.",
+      "Works identically on Mac, Windows, and Linux.",
+      "Google Fonts integrated and free.",
+      "Activate without system font installation.",
+      "CSS playground to preview before use.",
+      "Fast and intuitive interface."
+    ],
+    "cons": [
+      "No font editing (organizer only).",
+      "Team features are paid (Awesome).",
+      "Fewer advanced features than FontLab or Glyphs."
+    ],
+    "use_cases": [
+      "Organize a large font collection by project.",
+      "Preview fonts before activation.",
+      "Access Google Fonts without manual download.",
+      "Sync team fonts (Awesome).",
+      "Search quickly among hundreds of fonts."
+    ]
+  }
+}

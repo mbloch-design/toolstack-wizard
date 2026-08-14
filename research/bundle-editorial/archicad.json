@@ -1,0 +1,94 @@
+{
+  "slug": "archicad",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Graphisoft — Archicad BIM Platform", "url": "https://graphisoft.com/solutions/archicad" }
+  ],
+  "facts": {
+    "what": "Plateforme BIM (Building Information Modeling) pour architectes, designers et ingénieurs. Permet de concevoir, modéliser, visualiser et documenter des projets de toutes tailles du concept à la construction. Travail collaboratif via BIMcloud, interopérabilité OpenBIM (IFC, BCF).",
+    "what_en": "BIM (Building Information Modeling) platform for architects, designers, and engineers. Design, model, visualize, document, and collaborate on projects of any size from concept through construction. Collaborative via BIMcloud, OpenBIM interoperability (IFC, BCF).",
+    "pricing_model": "Abonnement mensuel ou annuel. Deux formules principales : Archicad Studio et Archicad Collaborate. Essai gratuit de 30 jours.",
+    "free_tier": { "exists": true, "detail": "Licences éducatives gratuites pour étudiants et enseignants. Essai gratuit de 30 jours pour tous." },
+    "plans": [
+      { "name": "Archicad Studio", "price": "À partir de 203 EUR/mois (2.440 EUR/an)" },
+      { "name": "Archicad Collaborate", "price": "À partir de 239 EUR/mois (2.870 EUR/an)" }
+    ],
+    "key_features": [
+      "Éléments de construction paramétriques (murs, dalles, toits)",
+      "Objets intelligents (portes, fenêtres, escaliers)",
+      "Dessins générés automatiquement depuis le 3D avec annotations",
+      "BIMcloud pour collaboration temps réel",
+      "Interopérabilité OpenBIM (IFC, BCF)",
+      "AI Assistant pour optimiser le workflow",
+      "AI Visualizer pour rendus photorréalistes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes architecte ou designer AEC cherchant un BIM professionnel.",
+        "Vous travaillez en équipe et avez besoin de collaboration temps réel.",
+        "Vous collaborez avec d'autres disciplines (MEP, ingénieurs) via IFC."
+      ],
+      "avoidIf": [
+        "Vous débutez en architecture et cherchez un outil gratuit.",
+        "Vous faites principalement du rendu 3D sans planification BIM.",
+        "Vous avez un budget très serré ou travaillez seul ponctuellement."
+      ],
+      "threshold": "Archicad s'impose pour les agences professionnelles et équipes pluridisciplinaires ; pour l'architecture solo, l'édition gratuite ou le rendu pur, d'autres outils peuvent convenir."
+    },
+    "pros": [
+      "BIM complet et mature, standard de l'industrie.",
+      "Collaboration temps réel via BIMcloud.",
+      "Interopérabilité OpenBIM (IFC) pour équipes mixtes.",
+      "AI Visualizer intégré pour rendus professionnels.",
+      "Travail sur Mac et Windows."
+    ],
+    "cons": [
+      "Coût d'abonnement mensuel (pas d'achat perpétuel).",
+      "Courbe d'apprentissage BIM assez raide.",
+      "Edition Collaborate significativement plus chère pour MEP.",
+      "Moins d'accès aux plugins tiers comparé à Revit."
+    ],
+    "use_cases": [
+      "Modéliser un bâtiment avec documentation automatisée pour permis de construire.",
+      "Coordonner architecture, MEP et structure via IFC pour détection de conflits.",
+      "Créer des visualisations photorréalistes du projet pour présentation client."
+    ],
+    "relevant_for": ["Architectes professionnels", "Designers AEC", "Équipes pluridisciplinaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an architect or AEC designer looking for professional BIM.",
+        "You work in a team and need real-time collaboration.",
+        "You collaborate cross-discipline (MEP, engineers) via IFC."
+      ],
+      "avoidIf": [
+        "You're new to architecture and want free software.",
+        "You focus mainly on 3D rendering without BIM planning.",
+        "You have a tight budget or work solo occasionally."
+      ],
+      "threshold": "Archicad makes sense for professional agencies and multidisciplinary teams; for solo architecture, free editions, or pure rendering, other tools may fit better."
+    },
+    "pros": [
+      "Complete, mature BIM—industry standard.",
+      "Real-time collaboration via BIMcloud.",
+      "OpenBIM interoperability (IFC) for mixed teams.",
+      "Built-in AI Visualizer for professional renders.",
+      "Runs on Mac and Windows."
+    ],
+    "cons": [
+      "Monthly subscription cost (no perpetual purchase).",
+      "Steep learning curve for BIM.",
+      "Collaborate edition significantly more expensive for MEP.",
+      "Fewer third-party plugins compared to Revit."
+    ],
+    "use_cases": [
+      "Model a building with automated documentation for building permits.",
+      "Coordinate architecture, MEP, and structure via IFC for conflict detection.",
+      "Create photorealistic project visualizations for client presentations."
+    ]
+  }
+}

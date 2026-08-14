@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "topaz-gigapixel",
+    "name": "Topaz Gigapixel AI",
+    "url": "https://topazlabs.com/gigapixel"
+  },
+  {
+    "slug": "transmutr",
+    "name": "Transmutr",
+    "url": "https://transmutr.com"
+  },
+  {
+    "slug": "trapcode",
+    "name": "Trapcode",
+    "url": "https://www.maxon.net/red-giant/trapcode"
+  },
+  {
+    "slug": "twinmotion",
+    "name": "Twinmotion",
+    "url": "https://www.twinmotion.com"
+  },
+  {
+    "slug": "v-ray",
+    "name": "V-Ray",
+    "url": "https://www.chaos.com/vray"
+  },
+  {
+    "slug": "v0-vercel",
+    "name": "v0 by Vercel",
+    "url": "https://v0.dev"
+  },
+  {
+    "slug": "vectorworks",
+    "name": "Vectorworks",
+    "url": "https://www.vectorworks.net"
+  },
+  {
+    "slug": "vfx-suite",
+    "name": "VFX Suite",
+    "url": "https://www.maxon.net/red-giant/vfx-suite"
+  },
+  {
+    "slug": "whimsical",
+    "name": "Whimsical",
+    "url": "https://whimsical.com"
+  },
+  {
+    "slug": "x-particles",
+    "name": "X-Particles",
+    "url": "https://insydium.ltd/products/x-particles/"
+  }
+]

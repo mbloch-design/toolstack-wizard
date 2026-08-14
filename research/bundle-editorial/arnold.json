@@ -1,0 +1,95 @@
+{
+  "slug": "arnold",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autodesk Arnold — Official Product Page", "url": "https://www.autodesk.com/products/arnold/overview" },
+    { "label": "Autodesk Arnold — Free Trial & Licensing", "url": "https://www.autodesk.com/products/arnold/free-trial" }
+  ],
+  "facts": {
+    "what": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.",
+    "what_en": "Advanced Monte Carlo ray tracing renderer developed by Autodesk for film, TV, games, and design visualization. Predictable results, scalable for production pipelines. Compatible with Maya, 3ds Max, Houdini, Blender, and others.",
+    "pricing_model": "Abonnement mensuel, annuel ou 3 ans. Tokens Flex pour usage ponctuels. Essai gratuit.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit ; version complète accessible via abonnement Autodesk ou plan Flex." },
+    "plans": [
+      { "name": "Arnold Single-User Monthly/Annual", "price": "Montants sur page Autodesk officielle" },
+      { "name": "Arnold Flex Tokens", "price": "Paiement à l'usage (pay-as-you-go)" }
+    ],
+    "key_features": [
+      "Moteur ray tracing Monte Carlo avancé",
+      "Résultats de rendu prévisibles et reproductibles",
+      "Scalabilité pour pipelines de production",
+      "Support multi-application (Maya, 3ds Max, Houdini, Blender, etc.)",
+      "Denoising intégré (réduction de bruit)",
+      "Shader network système et scripting",
+      "GPU rendering (RTX) en sus du CPU"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous rendez des scènes complexes pour cinéma, TV ou jeux.",
+        "Vous utilisez déjà Maya, 3ds Max ou Houdini en production.",
+        "Vous avez besoin de résultats prévisibles et d'une scalabilité en ferme de rendu."
+      ],
+      "avoidIf": [
+        "Vous débutez en 3D et cherchez un rendu simple et gratuit.",
+        "Vous travaillez exclusivement hors écosystème Autodesk.",
+        "Vous rendez ponctuellement et ne justifiez pas un abonnement."
+      ],
+      "threshold": "Arnold s'impose pour les studios de production cinéma/TV ; pour 3D solo, débutant ou ponctuel, Cycles (Blender) ou d'autres renderers gratuits conviendraient."
+    },
+    "pros": [
+      "Rendu professionnel et prévisible pour cinéma/TV.",
+      "Intégration forte avec Maya/3ds Max/Houdini.",
+      "Scalabilité en ferme de rendu pour gros projets.",
+      "Denoising intégré et GPU rendering.",
+      "Support industriel de Autodesk."
+    ],
+    "cons": [
+      "Coût d'abonnement régulier (pas d'accès perpétuel).",
+      "Courbe d'apprentissage pour shaders et réglages avancés.",
+      "Peut être overkill pour projet simple ou artistique.",
+      "Versions open-source moins matures que V-Ray."
+    ],
+    "use_cases": [
+      "Rendre une scène cinématique haute résolution pour court-métrage.",
+      "Produire une visualisation d'architecture avec matériaux photoréalistes.",
+      "Rendre des assets en ferme pour pipeline de jeu vidéo."
+    ],
+    "relevant_for": ["Artistes 3D professionnels", "Studios d'animation", "Architectes visualisant en haute qualité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You render complex scenes for film, TV, or games.",
+        "You already use Maya, 3ds Max, or Houdini in production.",
+        "You need predictable results and render farm scalability."
+      ],
+      "avoidIf": [
+        "You're new to 3D and want simple, free rendering.",
+        "You work exclusively outside the Autodesk ecosystem.",
+        "You render occasionally and don't justify a subscription."
+      ],
+      "threshold": "Arnold makes sense for film/TV production studios; for solo 3D, beginners, or occasional rendering, Cycles (Blender) or other free renderers work well."
+    },
+    "pros": [
+      "Professional, predictable rendering for film/TV.",
+      "Strong integration with Maya/3ds Max/Houdini.",
+      "Render farm scalability for large projects.",
+      "Built-in denoising and GPU rendering.",
+      "Autodesk's industry support."
+    ],
+    "cons": [
+      "Regular subscription cost (no perpetual access).",
+      "Learning curve for shaders and advanced settings.",
+      "May be overkill for simple or artistic projects.",
+      "Open-source versions less mature than V-Ray."
+    ],
+    "use_cases": [
+      "Render a high-res cinematic scene for a short film.",
+      "Produce photorealistic architecture visualization.",
+      "Render assets on a render farm for game pipeline."
+    ]
+  }
+}

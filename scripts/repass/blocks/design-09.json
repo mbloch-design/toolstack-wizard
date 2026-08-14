@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "profile-builder-3",
+    "name": "Profile Builder 3",
+    "url": "https://profilebuilder4sketchup.com"
+  },
+  {
+    "slug": "protopie",
+    "name": "ProtoPie",
+    "url": "https://protopie.io"
+  },
+  {
+    "slug": "pure-ref",
+    "name": "PureRef",
+    "url": "https://www.pureref.com"
+  },
+  {
+    "slug": "recharts",
+    "name": "Recharts",
+    "url": "https://recharts.org"
+  },
+  {
+    "slug": "red-giant-universe",
+    "name": "Red Giant Universe",
+    "url": "https://www.maxon.net/red-giant/universe"
+  },
+  {
+    "slug": "renderman",
+    "name": "RenderMan",
+    "url": "https://renderman.pixar.com"
+  },
+  {
+    "slug": "revit",
+    "name": "Revit",
+    "url": "https://autodesk.com/products/revit"
+  },
+  {
+    "slug": "rhino",
+    "name": "Rhino",
+    "url": "https://www.rhino3d.com"
+  },
+  {
+    "slug": "rightfont",
+    "name": "RightFont",
+    "url": "https://rightfontapp.com"
+  },
+  {
+    "slug": "rive",
+    "name": "Rive",
+    "url": "https://rive.app"
+  }
+]

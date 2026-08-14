@@ -1,0 +1,91 @@
+{
+  "slug": "ant-design",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ant Design — Official GitHub & Site", "url": "https://ant.design" }
+  ],
+  "facts": {
+    "what": "Librairie de composants React d'entreprise pour construire des interfaces modernes et délicieuses. Système de design avec thématisation flexible, algorithmes de style ouverts et support multi-framework (React, Angular, Vue). Développée par Alibaba, utilisée à grande échelle.",
+    "what_en": "Enterprise-grade React component library for building modern, delightful user interfaces. Design system with flexible theming, open style algorithms, and multi-framework support (React, Angular, Vue). Developed by Alibaba, used at scale.",
+    "pricing_model": "Gratuit et open source (MIT License).",
+    "free_tier": { "exists": true, "detail": "Librairie entièrement gratuite, sans limitations. Composants prêts à l'emploi, documentation complète, communauté active." },
+    "plans": [
+      { "name": "Ant Design Core", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Composants de haute qualité (50+ composants)",
+      "Thématisation flexible avec algorithmes de style ouverts",
+      "Support multi-framework (React, Angular, Vue)",
+      "Palette de couleurs sémantiques et prédéfinies",
+      "Documentation complète et exemples interactifs",
+      "Support TypeScript intégré",
+      "Écosystème étendu (charts, tables, forms)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application React d'entreprise.",
+        "Vous cherchez un système de design complet et cohérent.",
+        "Vous travaillez sur plusieurs projets et cherchez une librairie standardisée."
+      ],
+      "avoidIf": [
+        "Vous débutez en React et cherchez quelque chose de plus léger.",
+        "Vous avez des besoins de design très spécifiques ou artistiques.",
+        "Vous travaillez exclusivement en Vue ou Angular (bien que des versions existent)."
+      ],
+      "threshold": "Ant Design s'impose pour les applications d'entreprise React cherchant structure et cohérence ; pour prototypes simples ou design très artistique, une librairie légère peut convenir."
+    },
+    "pros": [
+      "Gratuit et open source.",
+      "Librairie très complète et mature.",
+      "Documentation excellente et exemples abondants.",
+      "Thématisation et personnalisation flexibles.",
+      "Utilisé à grande échelle (Alibaba, etc.)."
+    ],
+    "cons": [
+      "Peut sembler lourd ou opinionné pour des cas d'usage simples.",
+      "Courbe d'apprentissage pour maîtriser les thèmes et configurations.",
+      "Moins artistique que des librairies très minimalistes."
+    ],
+    "use_cases": [
+      "Construire une application d'administration professionnelle.",
+      "Standardiser le design à travers plusieurs projets React.",
+      "Créer un tableau de bord avec tables, charts et formulaires complexes."
+    ],
+    "relevant_for": ["Développeurs React", "Équipes SaaS", "Entreprises cherchant un design system complèt"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building an enterprise React application.",
+        "You need a complete, cohesive design system.",
+        "You work on multiple projects and want standardization."
+      ],
+      "avoidIf": [
+        "You're new to React and want something lighter.",
+        "You have very specific or artistic design needs.",
+        "You work exclusively in Vue or Angular (though versions exist)."
+      ],
+      "threshold": "Ant Design makes sense for enterprise React apps seeking structure and consistency; for simple prototypes or artistic design, a lighter library may fit better."
+    },
+    "pros": [
+      "Free and open source.",
+      "Very complete and mature library.",
+      "Excellent documentation and abundant examples.",
+      "Flexible theming and customization.",
+      "Used at scale (Alibaba, etc.)."
+    ],
+    "cons": [
+      "May feel heavy or opinionated for simple use cases.",
+      "Learning curve for mastering themes and configuration.",
+      "Less artistic than minimal libraries."
+    ],
+    "use_cases": [
+      "Build a professional admin application.",
+      "Standardize design across multiple React projects.",
+      "Create a dashboard with complex tables, charts, and forms."
+    ]
+  }
+}

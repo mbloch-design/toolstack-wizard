@@ -1,0 +1,96 @@
+{
+  "slug": "figma-iconify",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Iconify (site officiel)", "url": "https://iconify.design" },
+    { "label": "Iconify for Figma (plugin Figma)", "url": "https://www.figma.com/community/plugin/735098390272716381/iconify" },
+    { "label": "Iconify pour Figma sur GitHub", "url": "https://github.com/iconify/iconify-figma" }
+  ],
+  "facts": {
+    "what": "Plugin Figma gratuit et open source pour importer plus de 300 000 icônes vectorielles depuis 100+ collections open source (Material Icons, Font Awesome, Phosphor, Heroicons, Tabler, etc.).",
+    "what_en": "Free, open-source Figma plugin to import 300,000+ vector icons from 100+ open-source collections (Material Icons, Font Awesome, Phosphor, Heroicons, Tabler, etc.)",
+    "pricing_model": "Entièrement gratuit. Plugin open source, maintenu par la communauté Iconify.",
+    "free_tier": { "exists": true, "detail": "Gratuit sans limite — accès à toutes les collections d'icônes open source et toutes les fonctionnalités." },
+    "plans": [
+      { "name": "Iconify for Figma", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Accès à 300 000+ icônes vectorielles",
+      "Plus de 100 collections open source agrégées",
+      "Recherche et filtrage par catégorie",
+      "Sélection multiple et drag-and-drop",
+      "Intégration avec les color styles Figma",
+      "Mode compact pour petits écrans",
+      "Historique et favoris",
+      "Souvenir de la dernière page visitée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'icônes gratuites et open source.",
+        "Vous travaillez déjà dans Figma.",
+        "Vous voulez importer des icônes vectorielles directement."
+      ],
+      "avoidIf": [
+        "Vous cherchez des icônes premium ou très spécialisées.",
+        "Vous préférez des collections iconographiques fermées.",
+        "Vous n'utilisez pas Figma."
+      ],
+      "threshold": "Iconify for Figma gagne pour l'accès gratuit à des dizaines de milliers d'icônes open source. Pour des styles premium, explorez d'autres sources."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Accès à 300 000+ icônes de 100+ collections.",
+      "Import direct en SVG vectoriel dans Figma.",
+      "Recherche puissante et rapide.",
+      "Aucune dépendance commerciale ou licence restrictive."
+    ],
+    "cons": [
+      "Limité aux collections open source.",
+      "Pas d'icônes custom premium ou très niche.",
+      "Interface minimaliste."
+    ],
+    "use_cases": [
+      "Remplir rapidement un projet Figma avec des icônes gratuites.",
+      "Importer les mêmes icônes dans design systems.",
+      "Exporter des icônes SVG pour le web.",
+      "Chercher des icônes par catégorie (UI, e-commerce, etc.)."
+    ],
+    "relevant_for": ["Designers", "Frontend developers", "Design systems"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need free, open-source icons.",
+        "You already work in Figma.",
+        "You want to import vector icons directly."
+      ],
+      "avoidIf": [
+        "You need premium or highly specialized icons.",
+        "You prefer closed, curated icon collections.",
+        "You don't use Figma."
+      ],
+      "threshold": "Iconify for Figma wins for free access to tens of thousands of open-source icons. For premium styles, explore other sources."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Access to 300,000+ icons from 100+ collections.",
+      "Direct SVG import into Figma.",
+      "Powerful and fast search.",
+      "No commercial lock-in or licensing restrictions."
+    ],
+    "cons": [
+      "Limited to open-source collections.",
+      "No custom or premium niche icons.",
+      "Minimal interface."
+    ],
+    "use_cases": [
+      "Quickly populate a Figma project with free icons.",
+      "Import the same icons into design systems.",
+      "Export SVG icons for web.",
+      "Search for icons by category (UI, e-commerce, etc.)."
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "flextools",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FlexTools (site officiel)", "url": "https://flextools.cc" }
+  ],
+  "facts": {
+    "what": "Extension SketchUp pour architectes et designers. Crée des éléments architecturaux (portes, fenêtres, escaliers) paramétriques et réactifs. Inclut WallCutter pour découper automatiquement les ouvertures dans les murs superposés.",
+    "what_en": "SketchUp extension for architects and designers. Creates parametric, responsive architectural elements (doors, windows, stairs). Includes WallCutter for automatic opening creation in layered walls.",
+    "pricing_model": "Licence annuelle par ordinateur (jusqu'à 2 machines). Tarif académique réduit disponible.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours avec garantie de remboursement. Aucun crédit bancaire requis." },
+    "plans": [
+      { "name": "FlexTools Pro", "price": "99 € / an (tous les composants, support, mises à jour)" },
+      { "name": "Academic License", "price": "19 € / an (pour étudiants vérifiés)" }
+    ],
+    "key_features": [
+      "Composants architecturaux paramétriques (portes, fenêtres, escaliers)",
+      "Passage à l'échelle avec maintien des proportions",
+      "WallCutter pour découper automatiquement les murs",
+      "Component Finder pour gérer les composants sauvegardés",
+      "Plans et élévations instantanés",
+      "Compatible SketchUp 2017-2026 (Windows et macOS)",
+      "Support et mises à jour inclus",
+      "Garantie remboursement 30 jours"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes architecte ou designer utilisant SketchUp.",
+        "Vous créez des éléments architecturaux répétés (portes, fenêtres).",
+        "Vous voulez automatiser la création de plans et coupes."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas SketchUp.",
+        "Vous travaillez principalement en 2D ou wireframes.",
+        "Vous utilisez un autre logiciel 3D (Revit, ArchiCAD)."
+      ],
+      "threshold": "FlexTools s'impose pour les architectes SketchUp qui créent des projets architecturaux répétitifs. Pour un usage ponctuel, l'essai suffit."
+    },
+    "pros": [
+      "Composants paramétriques réactifs (maintiennent proportions).",
+      "WallCutter automatise la découpe de murs.",
+      "Abonnement annuel abordable.",
+      "Licence académique fortement réduite.",
+      "Support et mises à jour incluses.",
+      "Essai gratuit 30 jours sans risque."
+    ],
+    "cons": [
+      "Limité à SketchUp (pas d'autres logiciels 3D).",
+      "Nécessite une connexion internet occasionnelle.",
+      "Courbe d'apprentissage pour maîtriser les composants."
+    ],
+    "use_cases": [
+      "Créer rapidement des portes, fenêtres et escaliers paramétriques.",
+      "Générer des plans et coupes automatiquement.",
+      "Découper automatiquement des ouvertures dans les murs.",
+      "Gérer et organiser une bibliothèque de composants."
+    ],
+    "relevant_for": ["Architects", "Interior designers", "SketchUp users"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an architect or designer using SketchUp.",
+        "You create repetitive architectural elements (doors, windows).",
+        "You want to automate floor plans and elevations."
+      ],
+      "avoidIf": [
+        "You don't use SketchUp.",
+        "You work primarily in 2D or wireframes.",
+        "You use another 3D software (Revit, ArchiCAD)."
+      ],
+      "threshold": "FlexTools makes sense for SketchUp architects working on repetitive projects. For occasional use, the free trial suffices."
+    },
+    "pros": [
+      "Responsive parametric components (maintain proportions).",
+      "WallCutter automates wall cutting.",
+      "Affordable annual subscription.",
+      "Steep academic discount available.",
+      "Support and updates included.",
+      "Risk-free 30-day trial."
+    ],
+    "cons": [
+      "Limited to SketchUp (not other 3D software).",
+      "Requires occasional internet connection.",
+      "Learning curve to master components."
+    ],
+    "use_cases": [
+      "Quickly create parametric doors, windows, and stairs.",
+      "Auto-generate floor plans and elevations.",
+      "Automatically cut openings in layered walls.",
+      "Manage and organize a component library."
+    ]
+  }
+}

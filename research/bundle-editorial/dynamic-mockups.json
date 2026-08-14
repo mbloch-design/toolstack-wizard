@@ -1,0 +1,90 @@
+{
+  "slug": "dynamic-mockups",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dynamic Mockups official site", "url": "https://dynamicmockups.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de génération de mockups produit à grande échelle, supportant les fichiers PSD personnalisés et intégrations e-commerce (Shopify, Etsy, WooCommerce).",
+    "what_en": "Platform for generating product mockups at scale, supporting custom PSD files and e-commerce integrations (Shopify, Etsy, WooCommerce).",
+    "pricing_model": "Freemium basé sur crédits : accès gratuit aux templates avec crédits limités, plans payants pour volume élevé.",
+    "free_tier": { "exists": true, "detail": "50 crédits gratuits pour générer les premiers mockups, sans carte bancaire requise." },
+    "plans": [
+      { "name": "Free Tier", "price": "50 crédits gratuits" },
+      { "name": "Paid plans", "price": "Montants sur la page officielle, basés sur crédits supplémentaires" }
+    ],
+    "key_features": [
+      "Génération 100 mockups en 100 secondes",
+      "Support des fichiers PSD personnalisés avec smart objects",
+      "Mockups par IA (lifestyle mockups et vidéos sociales)",
+      "Intégrations e-commerce (Shopify, Etsy, WooCommerce, API)",
+      "Export haute résolution sans watermark, sans compression"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des produits sur e-commerce et avez besoin de mockups rapides.",
+        "Vous voulez générer des centaines de variations produit en minutes.",
+        "Vous disposez d'un fichier PSD avec smart objects à réutiliser."
+      ],
+      "avoidIf": [
+        "Vous faites du design de mockup hautement personnalisé ou unique.",
+        "Vous n'avez pas de shop e-commerce ou de volume de mockups justifiant l'outil.",
+        "Vous cherchez un logiciel desktop (cloud-based uniquement)."
+      ],
+      "threshold": "Dynamic Mockups s'impose pour les e-commerçants produisant beaucoup de variantes produit ; sinon un editeur classique suffit."
+    },
+    "pros": [
+      "Génération ultra-rapide de centaines de mockups.",
+      "API et intégrations directes aux plateformes populaires.",
+      "Support des PSD personnalisés, pas limité aux templates intégrés.",
+      "Sortie haute résolution sans watermark ni compression.",
+      "Tier gratuit généreux pour tester."
+    ],
+    "cons": [
+      "Limité à la génération de mockups (pas d'édition fine).",
+      "Modèle à crédits peut devenir couteux à fort volume.",
+      "Interface web uniquement (pas de version desktop)."
+    ],
+    "use_cases": [
+      "Générer des mockups pour des listes de produits Shopify.",
+      "Créer des variations de couleur et d'emballage en lot.",
+      "Produire des vidéos mockups pour réseaux sociaux."
+    ],
+    "relevant_for": ["E-commerçants", "Product managers", "Agences marketing e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell products on e-commerce and need mockups quickly.",
+        "You want to generate hundreds of product variations in minutes.",
+        "You have a PSD file with smart objects ready to reuse."
+      ],
+      "avoidIf": [
+        "You need highly custom or unique mockup design.",
+        "You don't have an e-commerce shop or high mockup volume.",
+        "You prefer desktop software (cloud-based only)."
+      ],
+      "threshold": "Dynamic Mockups is ideal for e-commerce sellers generating many product variants; otherwise a classic editor suffices."
+    },
+    "pros": [
+      "Ultra-fast generation of hundreds of mockups.",
+      "API and direct integrations with popular platforms.",
+      "Support for custom PSDs, not limited to built-in templates.",
+      "High-resolution output without watermark or compression.",
+      "Generous free tier to test."
+    ],
+    "cons": [
+      "Limited to mockup generation (no fine-tuned editing).",
+      "Credit-based model can become expensive at high volume.",
+      "Web interface only (no desktop version)."
+    ],
+    "use_cases": [
+      "Generate mockups for Shopify product listings.",
+      "Create color and packaging variations in bulk.",
+      "Produce mockup videos for social media."
+    ]
+  }
+}

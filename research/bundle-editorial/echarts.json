@@ -1,0 +1,89 @@
+{
+  "slug": "echarts",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Apache ECharts official site", "url": "https://echarts.apache.org" }
+  ],
+  "facts": {
+    "what": "Librairie JavaScript open-source (Apache License V2) pour la visualisation de données interactives, avec plus de 20 types de graphiques et support Canvas/SVG.",
+    "what_en": "Open-source JavaScript library (Apache License V2) for interactive data visualization, featuring over 20 chart types and Canvas/SVG support.",
+    "pricing_model": "Entièrement gratuit et open-source sous licence Apache 2.0.",
+    "free_tier": { "exists": true, "detail": "Gratuit et open-source, code source accessible sur GitHub, communauté active." },
+    "plans": [
+      { "name": "Apache ECharts", "price": "Gratuit, open-source" }
+    ],
+    "key_features": [
+      "20+ types de graphiques (courbes, barres, nuages de points, camemberts, heatmaps, etc.)",
+      "Rendu Canvas et SVG interchangeables",
+      "Rendu progressif pour millions de points de données",
+      "Transformations de dataset (filtrage, clustering, régression)",
+      "Accessibilité : descriptions automatiques et motifs de texture pour mal-voyants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une application web nécessitant des graphiques interactifs.",
+        "Vous valorisez la liberté d'une librairie open-source sans coûts.",
+        "Vous avez des volumes de données massifs (millions de points)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil graphique sans codage (pour utilisateurs non-dev).",
+        "Vous avez besoin d'une interface d'édition visuelle drag-and-drop.",
+        "Vous préférez un support commercial formel."
+      ],
+      "threshold": "ECharts s'impose pour les développeurs web créant des dashboards ; sinon un outil visual convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source, pas de surcoûts.",
+      "Riche palette de graphiques pour couvrir tous les besoins.",
+      "Performance exceptionnelle sur gros volumes de données.",
+      "Communauté active et extensions tierces nombreuses.",
+      "Utilisée par Baidu, Alibaba, Amazon, GitLab, Intel, Tencent."
+    ],
+    "cons": [
+      "Requiert des compétences en JavaScript/TypeScript pour l'intégration.",
+      "Pas d'interface de design visuelle (code uniquement).",
+      "Pas de support commercial formel (communauté seulement)."
+    ],
+    "use_cases": [
+      "Créer un dashboard d'analytics personnalisé.",
+      "Visualiser des données métier en temps réel.",
+      "Intégrer des graphiques dans une application web React/Vue/Angular."
+    ],
+    "relevant_for": ["Développeurs frontend", "Data engineers", "Business analysts tech"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing a web app requiring interactive charts.",
+        "You value the freedom of an open-source library with no costs.",
+        "You have massive data volumes (millions of points)."
+      ],
+      "avoidIf": [
+        "You seek a no-code charting tool (for non-developers).",
+        "You need a visual editor with drag-and-drop.",
+        "You prefer formal commercial support."
+      ],
+      "threshold": "ECharts is ideal for web developers building dashboards; otherwise a visual tool fits better."
+    },
+    "pros": [
+      "Entirely free and open-source, no hidden costs.",
+      "Rich chart palette covering all needs.",
+      "Exceptional performance on large data volumes.",
+      "Active community and many third-party extensions.",
+      "Used by Baidu, Alibaba, Amazon, GitLab, Intel, Tencent."
+    ],
+    "cons": [
+      "Requires JavaScript/TypeScript skills for integration.",
+      "No visual design interface (code only).",
+      "No formal commercial support (community only)."
+    ],
+    "use_cases": [
+      "Create a custom analytics dashboard.",
+      "Visualize business data in real-time.",
+      "Embed charts in a React/Vue/Angular web app."
+    ]
+  }
+}

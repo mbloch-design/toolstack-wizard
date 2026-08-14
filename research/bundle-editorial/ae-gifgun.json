@@ -1,0 +1,96 @@
+{
+  "slug": "ae-gifgun",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GifGun 2 - aescripts.com", "url": "https://aescripts.com/gifgun/" },
+    { "label": "GifGun 2 — Official Site", "url": "https://www.gifgun.io/" }
+  ],
+  "facts": {
+    "what": "GifGun 2 est un plugin After Effects et un outil de bureau qui exporte les compositions After Effects en formats multiples : GIF, WEBP, WEBM, et MP4. Réputé pour son interface simple et ses optimisations de compression (réduction de taille jusqu'à 15% avec qualité améliorée).",
+    "what_en": "GifGun 2 is an After Effects plugin and desktop tool that exports compositions to multiple formats: GIF, WEBP, WEBM, and MP4. Known for simple interface and compression optimization (up to 15% size reduction with improved quality).",
+    "pricing_model": "Licence perpétuelle d'achat unique. Un seul paiement donne accès à vie à la version 2 du plugin et à l'application de bureau (Windows et macOS).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite, pas d'essai gratuit visible. Achat unique requis pour accéder au plugin et à l'application." },
+    "plans": [
+      { "name": "GifGun 2 (Single Purchase)", "price": "39,99 USD (licence perpétuelle pour v2, accès plugin + app desktop)" },
+      { "name": "Upgrade de v1 à v2", "price": "Tarifs réduits selon date d'achat de v1" }
+    ],
+    "key_features": [
+      "Export multi-format (GIF, WEBP, WEBM, MP4) depuis After Effects",
+      "Compression optimisée avec réduction jusqu'à 15% de taille",
+      "Rendu par lot (batch export) de plusieurs compositions",
+      "Limitation automatique de taille de fichier",
+      "Application de bureau autonome (sans After Effects)",
+      "Présets exportables et partageables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous exportez souvent des animations After Effects en GIF ou WEBP.",
+        "Vous travaillez sur des visuels pour les réseaux sociaux (format léger).",
+        "Vous appréciez un outil simple et spécialisé plutôt que multi-usage."
+      ],
+      "avoidIf": [
+        "Vous n'exportez qu'occasionnellement quelques GIF.",
+        "Vous avez accès à des outils gratuits (FFmpeg en ligne de commande convient).",
+        "Vous travaillez surtout en MP4 ou formats vidéo lourds."
+      ],
+      "threshold": "GifGun justifie son prix si vous exportez régulièrement en GIF/WEBP depuis After Effects ; pour un usage occasion, des alternatives libres (FFmpeg) suffisent."
+    },
+    "pros": [
+      "Interface très simple et intuitive pour l'export.",
+      "Compression optimisée (fichiers plus légers à qualité égale).",
+      "Licence perpétuelle (pas d'abonnement récurrent).",
+      "Application de bureau autonome (fonctionne sans After Effects).",
+      "Export par lot pratique pour production en masse."
+    ],
+    "cons": [
+      "Prix pour une fonction spécialisée (export seulement).",
+      "Pas de version gratuite pour tester.",
+      "Alternatives gratuites (FFmpeg) existent mais demandent ligne de commande.",
+      "Pas de mise à jour majeure fréquente après v2."
+    ],
+    "use_cases": [
+      "Exporter un GIF animé à partir d'une composition After Effects pour site web.",
+      "Créer des visuels optimisés pour réseaux sociaux (Twitter, Discord).",
+      "Batch export de plusieurs animations en WEBP pour économiser bande passante.",
+      "Convertir rapidement une animation After Effects en MP4 ou WEBM."
+    ],
+    "relevant_for": ["Motion designers", "Créateurs de contenu web", "Community managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You frequently export After Effects animations to GIF or WEBP.",
+        "You work on social media visuals (lightweight format).",
+        "You like a simple, specialized tool over a swiss-army knife."
+      ],
+      "avoidIf": [
+        "You only occasionally export a few GIFs.",
+        "You have access to free tools (FFmpeg CLI works).",
+        "You mostly work in MP4 or heavy video formats."
+      ],
+      "threshold": "GifGun pays for itself if you regularly export to GIF/WEBP from After Effects; for occasional use, free alternatives (FFmpeg) work fine."
+    },
+    "pros": [
+      "Very simple, intuitive export interface.",
+      "Optimized compression (lighter files at equal quality).",
+      "Perpetual license (no recurring subscription).",
+      "Standalone desktop app (works without After Effects).",
+      "Batch export convenient for large production runs."
+    ],
+    "cons": [
+      "Price for a specialized function (export only).",
+      "No free version to test.",
+      "Free alternatives (FFmpeg) exist but require command line.",
+      "No major updates post-v2."
+    ],
+    "use_cases": [
+      "Export an animated GIF from After Effects composition to a website.",
+      "Create optimized visuals for social media (Twitter, Discord).",
+      "Batch export multiple animations to WEBP to save bandwidth.",
+      "Quickly convert After Effects animation to MP4 or WEBM."
+    ]
+  }
+}

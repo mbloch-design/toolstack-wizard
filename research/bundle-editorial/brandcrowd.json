@@ -1,0 +1,93 @@
+{
+  "slug": "brandcrowd",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BrandCrowd — site officiel", "url": "https://www.brandcrowd.com" }
+  ],
+  "facts": {
+    "what": "Plateforme en ligne de création de branding et design : logos, cartes de visite, contenus réseaux sociaux, affiches, flyers, signatures email. Mix de templates prédéfinis customisables et marketplace de designs professionnels.",
+    "what_en": "Online platform for branding and design creation: logos, business cards, social media content, posters, flyers, email signatures. Mix of customizable pre-designed templates and a marketplace of professional designs.",
+    "pricing_model": "Modèle freemium : plan gratuit limité + abonnements payants à la carte.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit aux templates et créateur de logos ; versions téléchargeables limitées. Montants sur la page officielle pour les plans premium." },
+    "plans": [
+      { "name": "Starter", "price": "15 $/mois (fichiers logo + 50+ outils design)" },
+      { "name": "Value", "price": "24 $/mois (site web + outils Starter)" },
+      { "name": "Premium", "price": "29 $/mois (bio-link, cartes visite digitales)" }
+    ],
+    "key_features": [
+      "Creator de logos, cartes visite, affiches avec templates",
+      "Marketplace de designs à l'achat (30$ à 500$+)",
+      "Personnalisation couleurs, polices, layout",
+      "Téléchargement multi-format (Web, print, social)",
+      "Outils de branding et design complets"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un logo ou branding rapide sans designer.",
+        "Vous n'avez pas de budget important pour du design custom.",
+        "Vous voulez tester un concept visuel vite fait."
+      ],
+      "avoidIf": [
+        "Vous recherchez un résultat unique et très professionnel.",
+        "Vous avez besoin d'une logo réellement distinctive.",
+        "Vous préférez traiter avec un designer humain."
+      ],
+      "threshold": "BrandCrowd convient pour un branding léger ou prototypage ; pour une identité visuelle forte et mémorable, un designer professionnel offre plus de valeur."
+    },
+    "pros": [
+      "Accès gratuit pour explorer les templates.",
+      "Création rapide de multiples concepts.",
+      "Marketplace pour engager des designers si souhaité.",
+      "Prix abordable pour les petites équipes.",
+      "Aucune compétence en design requise."
+    ],
+    "cons": [
+      "Résultats souvent génériques (templates réutilisés).",
+      "Peu de liberté créative par rapport au design custom.",
+      "La qualité dépend fortement du template choisi.",
+      "Abonnement récurrent pour les meilleures features."
+    ],
+    "use_cases": [
+      "Créer rapidement un logo de démarrage.",
+      "Designer des matériaux marketing basiques (flyers, posters).",
+      "Prototyper une identité visuelle avant engagement professionnel."
+    ],
+    "relevant_for": ["Startups", "Petites entreprises", "Freelances"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a quick logo or branding without a designer.",
+        "You don't have a large budget for custom design.",
+        "You want to test a visual concept quickly."
+      ],
+      "avoidIf": [
+        "You're seeking a truly unique and professional result.",
+        "You need a really distinctive, memorable logo.",
+        "You prefer working with a human designer."
+      ],
+      "threshold": "BrandCrowd is good for light branding or prototyping; for strong and memorable visual identity, a professional designer delivers more value."
+    },
+    "pros": [
+      "Free access to explore templates.",
+      "Quick creation of multiple concepts.",
+      "Marketplace to engage designers if desired.",
+      "Affordable pricing for small teams.",
+      "No design skills required."
+    ],
+    "cons": [
+      "Results often feel generic (reused templates).",
+      "Limited creative freedom vs. custom design.",
+      "Quality heavily depends on chosen template.",
+      "Recurring subscription for best features."
+    ],
+    "use_cases": [
+      "Quickly create a startup logo.",
+      "Design basic marketing materials (flyers, posters).",
+      "Prototype a visual identity before professional engagement."
+    ]
+  }
+}

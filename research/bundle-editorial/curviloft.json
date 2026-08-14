@@ -1,0 +1,92 @@
+{
+  "slug": "curviloft",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Curviloft — SketchUcation Plugin Store", "url": "https://sketchucation.com/plugin/1175-curviloft" }
+  ],
+  "facts": {
+    "what": "Plugin SketchUp pour créer des surfaces lissées et des « skins » 3D en reliant des contours. Inclus : Loft by Spline, Loft along Path, Skinning. Utile pour modélisation organique, surfaces courbes complexes, design de produit.",
+    "what_en": "SketchUp plugin to create smooth surfaces and 3D 'skins' by connecting contours. Includes: Loft by Spline, Loft along Path, Skinning. Useful for organic modeling, complex curved surfaces, product design.",
+    "pricing_model": "Ancien : gratuit (versions plus anciennes) ; Nouveau : payant via Fredo6 (plugin créateur Fredo6 payant, versions récentes).",
+    "free_tier": { "exists": true, "detail": "Versions anciennes (antérieures à 2.0) gratuites et légales. Versions récentes (2.0+) payantes via Fredo6 ou trial 30 jours SketchUcation." },
+    "plans": [
+      { "name": "Curviloft (versions anciennes)", "price": "Gratuit" },
+      { "name": "Curviloft (v2.0+ avec Fredo6)", "price": "Montants sur le site Fredo6 ou SketchUcation" }
+    ],
+    "key_features": [
+      "Loft by Spline : relier des contours avec splines lisses",
+      "Loft along Path : créer des surfaces en suivant une courbe",
+      "Skinning : générer des surfaces bornées par 3-4 contours contigus",
+      "Support des contours ouverts et fermés",
+      "Intégration LibFredo6 requise"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous modélisez des surfaces courbes complexes en SketchUp.",
+        "Vous faites du design produit ou architecture organique.",
+        "Vous importez des contours et avez besoin de les « lofter »."
+      ],
+      "avoidIf": [
+        "Vous utilisez un autre logiciel 3D (Rhino, Fusion, Blender).",
+        "Vous faites surtout de la modélisation angulaire (box modeling).",
+        "Vous ne voulez pas payer pour les versions récentes."
+      ],
+      "threshold": "Curviloft est excellent pour les surfaces courbes organiques en SketchUp ; pour la modélisation paramétrée lourde, Rhino ou Fusion offrent plus."
+    },
+    "pros": [
+      "Versions anciennes entièrement gratuites.",
+      "Très efficace pour créer des surfaces lisses.",
+      "Interface SketchUp native, intégration étroite.",
+      "Résultats visuellement très bons.",
+      "Alternative (gratuite) aux outils surfaciques professionnels."
+    ],
+    "cons": [
+      "Versions récentes payantes (via Fredo6 Creator).",
+      "Requiert LibFredo6 installée.",
+      "Pas le meilleur pour la modélisation paramétrique rigide.",
+      "Courbe apprentissage modérée."
+    ],
+    "use_cases": [
+      "Créer des surfaces lissées et organiques.",
+      "Modeliser des fuselages, carrosseries, meubles courbes.",
+      "Générer des skins entre des profils/contours."
+    ],
+    "relevant_for": ["Modélisateurs SketchUp", "Designers produit", "Architectes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You model complex curved surfaces in SketchUp.",
+        "You do product design or organic architecture.",
+        "You import contours and need to 'loft' them."
+      ],
+      "avoidIf": [
+        "You use different 3D software (Rhino, Fusion, Blender).",
+        "You mostly do angular modeling (box modeling).",
+        "You don't want to pay for recent versions."
+      ],
+      "threshold": "Curviloft excels at organic curved surfaces in SketchUp; for heavy parametric modeling, Rhino or Fusion offer more."
+    },
+    "pros": [
+      "Older versions completely free.",
+      "Very effective at creating smooth surfaces.",
+      "Native SketchUp interface, tight integration.",
+      "Visually very good results.",
+      "Free alternative to professional surfacing tools."
+    ],
+    "cons": [
+      "Recent versions paid (via Fredo6 Creator).",
+      "Requires LibFredo6 installed.",
+      "Not best for rigid parametric modeling.",
+      "Moderate learning curve."
+    ],
+    "use_cases": [
+      "Create smooth and organic surfaces.",
+      "Model fuselages, car bodies, curved furniture.",
+      "Generate skins between profiles/contours."
+    ]
+  }
+}

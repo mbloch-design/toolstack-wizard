@@ -1,0 +1,94 @@
+{
+  "slug": "auto-rig-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Superhive — Auto-Rig Pro Addon", "url": "https://superhivemarket.com/products/auto-rig-pro" }
+  ],
+  "facts": {
+    "what": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.",
+    "what_en": "Blender addon for automatic humanoid character rigging. Quickly generates articulated skeleton, deformation weights, and animation controls. Includes export presets for Unity and Unreal Engine. Built for small to medium studios.",
+    "pricing_model": "Achat unique (Lite ou Full) avec renouvellement optionnel annuel pour mises à jour (25% du prix initial).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Deux tiers payants : Lite ($25) et Full ($50)." },
+    "plans": [
+      { "name": "Auto-Rig Pro Lite", "price": "25 USD" },
+      { "name": "Auto-Rig Pro Full", "price": "50 USD" }
+    ],
+    "key_features": [
+      "Rigging automatique humanoïde avec détection de géométrie",
+      "Génération squelette et hiérarchie IK/FK automatique",
+      "Weights de déformation auto-calculés",
+      "Presets d'export pour Unity et Unreal Engine (Full version)",
+      "Contrôles d'animation intuitifs et paramétrables",
+      "Support multi-squelettes et fusion",
+      "Renouvellement optionnel pour mises à jour"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous riggez régulièrement des personnages humanoïdes dans Blender.",
+        "Vous travaillez en studio ou pipeline de jeu vidéo.",
+        "Vous cherchez à accélérer le processus de rigging standard."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de rigging très spécialisé ou non-humanoïde.",
+        "Vous débutez en 3D et cherchez à apprendre le rigging manuellement.",
+        "Vous utilisez Blender très ponctuellement."
+      ],
+      "threshold": "Auto-Rig Pro s'impose pour les studios Blender produisant régulièrement des personnages ; pour rigging spécialisé ou usage très ponctuel, le rigging manuel ou Rigify suffisent."
+    },
+    "pros": [
+      "Rigging très rapide pour humanoïdes standards.",
+      "Prix imbattable pour un studio (licence unique).",
+      "Presets d'export pour jeux (Unity, Unreal).",
+      "Automation intelligente des poids de déformation.",
+      "Licence perpétuelle avec mises à jour optionnelles."
+    ],
+    "cons": [
+      "Limité aux personnages humanoïdes standards.",
+      "Peut nécessiter ajustements manuels pour géométries complexes.",
+      "Rigify (gratuit) offre contrôle plus fin pour les experts.",
+      "Support/documentation moins étoffée que plugins commerciaux."
+    ],
+    "use_cases": [
+      "Riger rapidement un modèle de personnage pour jeu vidéo.",
+      "Générer un squelette de base pour export vers Unity/Unreal.",
+      "Accélérer la préparation de modèles d'animation pour réseaux sociaux."
+    ],
+    "relevant_for": ["Animateurs 3D", "Développeurs de jeux", "Studios de petit/moyen effectif"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly rig humanoid characters in Blender.",
+        "You work in a studio or game development pipeline.",
+        "You want to speed up standard rigging process."
+      ],
+      "avoidIf": [
+        "You need highly specialized or non-humanoid rigging.",
+        "You're new to 3D and want to learn manual rigging.",
+        "You use Blender very occasionally."
+      ],
+      "threshold": "Auto-Rig Pro makes sense for Blender studios regularly producing characters; for specialized rigging or very occasional use, manual rigging or Rigify suffice."
+    },
+    "pros": [
+      "Very fast rigging for standard humanoids.",
+      "Unbeatable pricing for a studio (one-off license).",
+      "Export presets for games (Unity, Unreal).",
+      "Intelligent deformation weight automation.",
+      "Perpetual license with optional updates."
+    ],
+    "cons": [
+      "Limited to standard humanoid characters.",
+      "May require manual adjustments for complex geometry.",
+      "Rigify (free) offers more control for experts.",
+      "Support/documentation less comprehensive than commercial plugins."
+    ],
+    "use_cases": [
+      "Quickly rig a character model for video game.",
+      "Generate a base skeleton for export to Unity/Unreal.",
+      "Speed up model preparation for social media animation."
+    ]
+  }
+}

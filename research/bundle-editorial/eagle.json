@@ -1,0 +1,89 @@
+{
+  "slug": "eagle",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Eagle official site", "url": "https://eagle.cool" }
+  ],
+  "facts": {
+    "what": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).",
+    "what_en": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs).",
+    "pricing_model": "Achat unique avec licence perpétuelle ; pas d'abonnement. Essai gratuit limité à 30 jours.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer." },
+    "plans": [
+      { "name": "Eagle (license)", "price": "Achat unique, prix sur la page officielle" }
+    ],
+    "key_features": [
+      "Collection : extension navigateur et import par drag-drop",
+      "Organisation : tags hiérarchiques, smart folders, auto-tagging par IA",
+      "Recherche : visuelle, sémantique, par couleur",
+      "Support 90+ formats : images, vidéos, GIFs, audio, fonts, PDFs",
+      "Plugins extensibles pour traitement d'image (suppression fond, upscale)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous collectez et organisez des centaines ou des milliers d'assets d'inspiration.",
+        "Vous cherchez une solution qui comprend visuellement vos fichiers (recherche par couleur, forme).",
+        "Vous aimez une interface desktop sans cloud obligatoire."
+      ],
+      "avoidIf": [
+        "Vous avez un petit volume d'assets et un gestionnaire de dossiers suffit.",
+        "Vous cherchez un outil gratuit permanent.",
+        "Vous préférez une solution cloud collaborative (Eagle est principalement local)."
+      ],
+      "threshold": "Eagle s'impose pour les designers avec une grosse bibliothèque personnelle ; sinon un dossier structuré suffit."
+    },
+    "pros": [
+      "Interface fluide et rapide pour parcourir des milliers d'assets.",
+      "Recherche visuelle et sémantique très intuitive.",
+      "Achat unique, pas d'abonnement récurrent.",
+      "Essai gratuit 30 jours sans risque.",
+      "Support de 90+ formats."
+    ],
+    "cons": [
+      "Coût d'entrée (achat unique, prix non divulgué).",
+      "Pas de collaboration en temps réel ou partage d'equipe.",
+      "Pas de version gratuite permanente après essai."
+    ],
+    "use_cases": [
+      "Centraliser et retrouver rapidement des images d'inspiration.",
+      "Organiser une banque de ressources visuelles personnelle.",
+      "Classer par couleur ou tag pour étudier les palettes design."
+    ],
+    "relevant_for": ["Designers graphiques", "UX/UI designers", "Directeurs artistiques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You collect and organize hundreds or thousands of inspiration assets.",
+        "You want a tool that understands your files visually (color, shape search).",
+        "You prefer a desktop solution without mandatory cloud."
+      ],
+      "avoidIf": [
+        "You have a small volume of assets and a folder manager suffices.",
+        "You seek a permanently free tool.",
+        "You prefer cloud collaboration (Eagle is primarily local)."
+      ],
+      "threshold": "Eagle is ideal for designers with a large personal library; otherwise a structured folder system suffices."
+    },
+    "pros": [
+      "Smooth, fast interface for browsing thousands of assets.",
+      "Visual and semantic search very intuitive.",
+      "One-time purchase, no recurring subscription.",
+      "30-day free trial risk-free.",
+      "Support for 90+ formats."
+    ],
+    "cons": [
+      "Entry cost (one-time purchase, exact price undisclosed).",
+      "No real-time collaboration or team sharing.",
+      "No permanent free version after trial."
+    ],
+    "use_cases": [
+      "Centralize and quickly retrieve inspiration images.",
+      "Organize a personal resource visual bank.",
+      "Sort by color or tag to study design palettes."
+    ]
+  }
+}

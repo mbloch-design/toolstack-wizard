@@ -1,0 +1,91 @@
+{
+  "slug": "autocad",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autodesk AutoCAD — site officiel", "url": "https://www.autodesk.com/products/autocad/overview" }
+  ],
+  "facts": {
+    "what": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.",
+    "what_en": "Professional computer-aided design (CAD) software for modeling, technical 2D and 3D drawing. Widely used by architects, engineers, and designers for plans, schematics, and complex mockups.",
+    "pricing_model": "Abonnement annuel (pas de licence perpétuelle). Tarification par édition ou collections thématiques.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 30 jours ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "AutoCAD (abonnement individuel)", "price": "235 $/mois ou 1 865 $/an" },
+      { "name": "AutoCAD LT (version 2D simplifiée)", "price": "500 $/an" },
+      { "name": "Architecture, Engineering & Construction Collection", "price": "3 795 $/siège/an (inclut Revit, Civil 3D, etc.)" }
+    ],
+    "key_features": [
+      "Dessin technique 2D et modélisation 3D",
+      "Outils de conception paramétriques",
+      "Compatibilité DWG/DXF",
+      "Bibliothèques de symboles et motifs",
+      "Collaboration en temps réel sur cloud (AutoCAD Web + Mobile)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la conception technique ou architecturale professionnelle.",
+        "Vous travaillez en équipe et avez besoin de partage de fichiers fiables.",
+        "La compatibilité DWG avec vos clients est critique."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite ou peu coûteuse.",
+        "Vous faites uniquement de la mise en page graphique (non technique).",
+        "Vous n'avez besoin que de la CAO 2D simple."
+      ],
+      "threshold": "AutoCAD s'impose pour la conception technique professionnelle ; pour une introduction ou un usage léger, des alternatives gratuites ou moins chères suffisent."
+    },
+    "pros": [
+      "Standard de facto pour la CAO technique.",
+      "Très riche ensemble d'outils de modélisation.",
+      "Écosystème de plugins et extensions mature.",
+      "Support professionnel et formations abondantes."
+    ],
+    "cons": [
+      "Abonnement annuel obligatoire (coût récurrent).",
+      "Courbe d'apprentissage abrupte.",
+      "Ressources system importantes (RAM, processeur).",
+      "Prix très élevé pour les petites équipes."
+    ],
+    "use_cases": [
+      "Concevoir des plans architecturaux ou de génie civil.",
+      "Créer des schémas techniques et définitions de produit.",
+      "Collaborer en équipe sur de gros projets CAO."
+    ],
+    "relevant_for": ["Architectes", "Ingénieurs", "Designers industriels", "Équipes CAO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do professional technical or architectural design.",
+        "You work in teams and need reliable file sharing.",
+        "DWG compatibility with clients is critical."
+      ],
+      "avoidIf": [
+        "You're looking for a free or low-cost solution.",
+        "You only do graphic layout (non-technical work).",
+        "You only need simple 2D CAD."
+      ],
+      "threshold": "AutoCAD is essential for professional technical design; for getting started or light use, free or cheaper alternatives work fine."
+    },
+    "pros": [
+      "De facto standard for technical CAD.",
+      "Very rich modeling toolset.",
+      "Mature plugin and extension ecosystem.",
+      "Professional support and abundant training."
+    ],
+    "cons": [
+      "Mandatory annual subscription (recurring cost).",
+      "Steep learning curve.",
+      "Significant system resources (RAM, CPU).",
+      "Very high price for small teams."
+    ],
+    "use_cases": [
+      "Design architectural or civil engineering plans.",
+      "Create technical schematics and product definitions.",
+      "Collaborate as a team on large CAD projects."
+    ]
+  }
+}

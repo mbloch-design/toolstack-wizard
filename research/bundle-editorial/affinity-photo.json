@@ -1,0 +1,88 @@
+{
+  "slug": "affinity-photo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Affinity Photo — Official Site (Serif)", "url": "https://www.affinity.studio/photo-editing-software" }
+  ],
+  "facts": {
+    "what": "Éditeur photo professionnel offrant des fonctionnalités RAW, fusion HDR, panorama, séparation fréquentielle et compatibilité avec les plugins Adobe. Édition photo couche, masques, courbes et commandes non destructives. Disponible pour Mac et Windows.",
+    "what_en": "Professional photo editor with RAW editing, HDR merging, panorama stitching, frequency separation, and Adobe plugin compatibility. Layer-based editing with masks, curves, and non-destructive commands. Available for Mac and Windows.",
+    "pricing_model": "Accès gratuit aux fonctionnalités de base (depuis 2025). Offre payante optionnelle pour fonctionnalités avancées.",
+    "free_tier": { "exists": true, "detail": "Version de base entièrement gratuite avec capacités professionnelles ; options payantes pour cas d'usage avancés." },
+    "plans": [
+      { "name": "Affinity Photo (version standard)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Édition RAW native",
+      "Fusion HDR et stitching de panorama",
+      "Séparation fréquentielle pour retouche avancée",
+      "Correction de lentille et réduction du bruit",
+      "Masquage non destructif et courbes",
+      "Compatibilité plugins Adobe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une alternative à Photoshop sans abonnement.",
+        "Vous faites de la retouche photo RAW ou HDR régulièrement.",
+        "Vous travaillez sur Mac ou Windows et cherchez un outil polyvalent."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de l'écosystème Adobe complet (Lightroom, Bridge, Sync, etc.).",
+        "Vous débutez en retouche photo et cherchez quelque chose de simple.",
+        "Vous vendez vos outils ou services via Creative Cloud."
+      ],
+      "threshold": "Affinity Photo s'impose pour les retoucheurs photo cherchant une alternative gratuite et robuste à Photoshop ; pour l'écosystème complet Adobe ou montage simple, un autre outil peut convenir."
+    },
+    "pros": [
+      "Entièrement gratuit pour fonctionnalités professionnelles.",
+      "Interface comparable à Photoshop, transition facile.",
+      "Pas d'abonnement, licence perpétuelle.",
+      "Excellentes capacités RAW, HDR et séparation fréquentielle."
+    ],
+    "cons": [
+      "Écosystème moins riche qu'Adobe (pas de Lightroom intégré).",
+      "Support des plugins tiers plus limité que Photoshop.",
+      "Communauté moins grande et ressources didactiques moins nombreuses."
+    ],
+    "use_cases": [
+      "Retoucher une galerie de photos RAW de A à Z.",
+      "Créer une image HDR fusionnée à partir de plusieurs expositions.",
+      "Appliquer une séparation fréquentielle pour la retouche de peau avancée."
+    ],
+    "relevant_for": ["Photographes professionnels", "Retoucheurs photo", "Designers graphiques cherchant une alternative à Photoshop"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a Photoshop alternative without subscription.",
+        "You do RAW or HDR photo retouching regularly.",
+        "You work on Mac or Windows and need a versatile tool."
+      ],
+      "avoidIf": [
+        "You need the full Adobe ecosystem (Lightroom, Bridge, Sync, etc.).",
+        "You're new to photo retouching and want something simple.",
+        "You sell tools or services through Creative Cloud."
+      ],
+      "threshold": "Affinity Photo makes sense for photo retouchers seeking a free, robust Photoshop alternative; for the full Adobe ecosystem or simple editing, another tool may fit better."
+    },
+    "pros": [
+      "Entirely free for professional features.",
+      "Interface comparable to Photoshop—easy transition.",
+      "No subscription; perpetual license.",
+      "Excellent RAW, HDR, and frequency separation capabilities."
+    ],
+    "cons": [
+      "Less rich ecosystem than Adobe (no integrated Lightroom).",
+      "Third-party plugin support more limited than Photoshop.",
+      "Smaller community and fewer learning resources."
+    ],
+    "use_cases": [
+      "Retouch a RAW photo gallery end to end.",
+      "Create an HDR merged image from multiple exposures.",
+      "Apply frequency separation for advanced skin retouching."
+    ]
+  }
+}

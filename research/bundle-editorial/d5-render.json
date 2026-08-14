@@ -1,0 +1,88 @@
+{
+  "slug": "d5-render",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "D5 Render official site", "url": "https://www.d5render.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.",
+    "what_en": "Real-time 3D rendering software for architects and designers, featuring instant ray tracing and integration with SketchUp, Revit, and 3ds Max.",
+    "pricing_model": "Freemium avec abonnement mensuel ou annuel pour plans Pro et Teams.",
+    "free_tier": { "exists": true, "detail": "Community tier gratuit ; plans Pro et Teams payants." },
+    "plans": [
+      { "name": "Community", "price": "Gratuit" },
+      { "name": "Pro", "price": "38 $/mois ou 360 $/an (20% de réduction annuelle)" },
+      { "name": "Teams", "price": "75 $/siège/mois ou 708 $/siège/an (21% de réduction annuelle)" }
+    ],
+    "key_features": [
+      "Real-time path tracing avec ombres et reflets instantanés",
+      "AI Enhancer, AI Atmosphere Match, AI Ultra HD Texture",
+      "Bibliotèque d'assets intégrée (arbres, personnes, véhicules, matériaux)",
+      "Rendu 16K (Pro), Panoramas, tours VR et Showreel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes architecte ou designer visualisant des projets en temps réel.",
+        "Vous travaillez avec SketchUp, Revit ou 3ds Max et voulez itérer rapidement.",
+        "Vous avez besoin de rendus photoréalistes sans attendre d'interminables calculs."
+      ],
+      "avoidIf": [
+        "Vous utilisez macOS ou Linux (Windows uniquement).",
+        "Vous n'avez pas de GPU dédié compatible DirectX 12.",
+        "Vous cherchez une solution entièrement gratuite sans limitations."
+      ],
+      "threshold": "D5 Render s'impose pour les architectes qui veulent explorer les designs en direct ; sinon un logiciel plus généraliste convient."
+    },
+    "pros": [
+      "Rendu en temps réel avec IA pour amélioration instantanée.",
+      "Intégration seamless avec les outils CAO courants.",
+      "Tier Community gratuit pour débuter.",
+      "Génération rapide de visuels professionnels sans expertise en rendu."
+    ],
+    "cons": [
+      "Windows uniquement ; pas de macOS/Linux.",
+      "Nécessite un GPU dédié performant.",
+      "Tier Community limité en résolutions et exports."
+    ],
+    "use_cases": [
+      "Visualiser un projet architectural en direct avec clients.",
+      "Itérer rapidement sur des concepts d'aménagement.",
+      "Générer des rendus 360° et tours VR pour présentation."
+    ],
+    "relevant_for": ["Architectes", "Designers d'intérieur", "Visualisateurs 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an architect or designer visualizing projects in real-time.",
+        "You use SketchUp, Revit, or 3ds Max and need rapid iteration.",
+        "You want photorealistic renders without waiting for long render calculations."
+      ],
+      "avoidIf": [
+        "You work on macOS or Linux (Windows only).",
+        "You lack a DirectX 12–capable dedicated GPU.",
+        "You seek an entirely free solution with no limitations."
+      ],
+      "threshold": "D5 Render is ideal for architects exploring designs live; otherwise a more general-purpose tool suits you."
+    },
+    "pros": [
+      "Real-time rendering with AI for instant enhancement.",
+      "Seamless integration with popular CAD tools.",
+      "Free Community tier to get started.",
+      "Rapid generation of professional visuals without rendering expertise."
+    ],
+    "cons": [
+      "Windows only; no macOS or Linux support.",
+      "Requires a capable dedicated GPU.",
+      "Community tier limited in resolution and exports."
+    ],
+    "use_cases": [
+      "Visualize an architectural project live with clients.",
+      "Rapidly iterate on space planning concepts.",
+      "Generate 360° renders and VR tours for presentations."
+    ]
+  }
+}

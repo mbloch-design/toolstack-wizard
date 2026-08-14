@@ -1,0 +1,95 @@
+{
+  "slug": "brandpad",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Brandpad — site officiel et tarifs", "url": "https://brandpad.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de marque (brand guidelines) pour centraliser et partager les règles visuelles, logo, typographies, couleurs avec l'équipe ou les partenaires. Permet la collaboration et la validation des assets.",
+    "what_en": "Brand management platform (brand guidelines) to centralize and share visual rules, logos, typography, colors with team or partners. Enables collaboration and asset validation.",
+    "pricing_model": "Abonnement annuel par plan (Starter gratuit, Brand et Portfolio payants). Essai gratuit 3 semaines.",
+    "free_tier": { "exists": true, "detail": "Plan Starter gratuit avec accès complet à tous les outils Brandpad. Révisions illimitées et collaborateurs additionnels payants sur les plans supérieurs." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit (accès complet aux outils Brandpad)" },
+      { "name": "Brand", "price": "500 $/an" },
+      { "name": "Portfolio", "price": "1 250 $/an" },
+      { "name": "Bespoke", "price": "Tarification personnalisée (entreprises)" }
+    ],
+    "key_features": [
+      "Centralisation des brand guidelines (logos, couleurs, typographies)",
+      "Gestion des versions et contrôle de change",
+      "Partage sécurisé avec équipe et partenaires",
+      "Library d'assets centralisée",
+      "Approbation et validation des designs",
+      "Intégration avec outils design (Figma, Adobe, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une marque complexe avec multiples guideline.",
+        "Vous avez besoin de centraliser et partager les assets visuels.",
+        "Votre équipe a besoin d'approuver les utilisations de la marque."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de création de logos ou design (Brandpad ne crée pas, organise).",
+        "Votre budget est très limité et les guidelines sont simples.",
+        "Vous travaillez seul sans équipe."
+      ],
+      "threshold": "Brandpad excelle pour les grandes marques ou équipes ayant besoin de contrôle strict ; pour une petite marque simple, une simple documentation suffit."
+    },
+    "pros": [
+      "Plan Starter gratuit très complet.",
+      "Parfait pour les grands comptes et agences.",
+      "Centralisation et versioning des assets brand.",
+      "Collaboration et approbation workflow intégrés.",
+      "Essai gratuit 3 semaines sans carte bancaire."
+    ],
+    "cons": [
+      "Pas de création de design intégrée (organise seulement).",
+      "Plan payant peut être cher pour petites équipes.",
+      "Courbe d'apprentissage modérée.",
+      "Overkill si les guidelines sont très simples."
+    ],
+    "use_cases": [
+      "Centraliser et versionner les assets d'une marque.",
+      "Partager les guidelines avec une équipe ou agence partenaire.",
+      "Approuver les utilisations de la marque avant publication."
+    ],
+    "relevant_for": ["Grandes marques", "Agences créatives", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a complex brand with multiple guidelines.",
+        "You need to centralize and share visual assets.",
+        "Your team needs to approve brand usage."
+      ],
+      "avoidIf": [
+        "You're looking for a logo or design creation tool (Brandpad organizes, doesn't create).",
+        "Your budget is tight and guidelines are simple.",
+        "You work alone without a team."
+      ],
+      "threshold": "Brandpad excels for large brands or teams needing strict control; for a small simple brand, simple documentation suffices."
+    },
+    "pros": [
+      "Very complete free Starter plan.",
+      "Perfect for large accounts and agencies.",
+      "Centralization and versioning of brand assets.",
+      "Integrated collaboration and approval workflow.",
+      "3-week free trial, no credit card required."
+    ],
+    "cons": [
+      "No integrated design creation (organizes only).",
+      "Paid plan can be pricey for small teams.",
+      "Moderate learning curve.",
+      "Overkill if guidelines are very simple."
+    ],
+    "use_cases": [
+      "Centralize and version a brand's assets.",
+      "Share guidelines with a team or partner agency.",
+      "Approve brand usage before publishing."
+    ]
+  }
+}

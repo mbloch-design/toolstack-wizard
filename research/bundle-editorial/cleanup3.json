@@ -1,0 +1,88 @@
+{
+  "slug": "cleanup3",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CleanUp³ — SketchUp Extension Warehouse", "url": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3" }
+  ],
+  "facts": {
+    "what": "Extension gratuite pour SketchUp qui nettoie et optimise les modèles 3D en supprimant la géométrie inutile, faces dupliquées, arrêtes égarées, matériaux mal assignés. Développée par ThomThom.",
+    "what_en": "Free SketchUp extension that cleans and optimizes 3D models by removing unnecessary geometry, duplicate faces, stray edges, and misassigned materials. Developed by ThomThom.",
+    "pricing_model": "Gratuit (plugin SketchUp open-source).",
+    "free_tier": { "exists": true, "detail": "CleanUp³ est entièrement gratuit et open-source. Aucune limite d'utilisation, pas d'abonnement." },
+    "plans": [],
+    "key_features": [
+      "Suppression de la géométrie inutile et cachée",
+      "Nettoyage des faces dupliquées",
+      "Suppression des arrêtes orphelines",
+      "Purge des matériaux inutilisés",
+      "Fusion des faces co-planaires connectées",
+      "Correction des noms de composants dupliqués"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez régulièrement avec SketchUp.",
+        "Vous importez des modèles 3D externes (CAO, mobilier, etc.).",
+        "Vos fichiers SketchUp sont lourds et lents."
+      ],
+      "avoidIf": [
+        "Vous utilisez un autre logiciel 3D (pas SketchUp).",
+        "Vous construisez tous vos modèles from scratch et propres.",
+        "Vous n'avez pas besoin d'optimisation."
+      ],
+      "threshold": "CleanUp³ est indispensable pour quiconque utilise SketchUp avec des modèles importés ou complexes ; gratuit et très efficace."
+    },
+    "pros": [
+      "Gratuit et open-source.",
+      "Très efficace pour alléger les modèles lourds.",
+      "Installation et utilisation simples.",
+      "Gère automatiquement les tâches répétitives de nettoyage.",
+      "Soutenu par la communauté SketchUp."
+    ],
+    "cons": [
+      "Plugin SketchUp uniquement (dépendance logiciel).",
+      "Ne peut pas récupérer une géométrie supprimée accidentellement.",
+      "Interface minimaliste, peu d'options avancées."
+    ],
+    "use_cases": [
+      "Nettoyer un modèle CAO importé lourd.",
+      "Optimiser des fichiers d'architecture ou intérieur.",
+      "Alléger des bibliothèques 3D avant usage en production."
+    ],
+    "relevant_for": ["Utilisateurs SketchUp", "Architectes", "Designers 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work regularly with SketchUp.",
+        "You import external 3D models (CAD, furniture, etc.).",
+        "Your SketchUp files are heavy and slow."
+      ],
+      "avoidIf": [
+        "You use a different 3D software (not SketchUp).",
+        "You build all models from scratch and clean.",
+        "You don't need optimization."
+      ],
+      "threshold": "CleanUp³ is essential for anyone using SketchUp with imported or complex models; free and very effective."
+    },
+    "pros": [
+      "Free and open-source.",
+      "Very effective at lightening heavy models.",
+      "Simple installation and use.",
+      "Automates repetitive cleanup tasks.",
+      "Supported by the SketchUp community."
+    ],
+    "cons": [
+      "SketchUp plugin only (software dependency).",
+      "Cannot recover accidentally deleted geometry.",
+      "Minimalist interface, few advanced options."
+    ],
+    "use_cases": [
+      "Clean up a heavy imported CAD model.",
+      "Optimize architecture or interior design files.",
+      "Lighten 3D libraries before production use."
+    ]
+  }
+}

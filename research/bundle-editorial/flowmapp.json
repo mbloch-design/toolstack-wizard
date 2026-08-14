@@ -1,0 +1,100 @@
+{
+  "slug": "flowmapp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FlowMapp (site officiel)", "url": "https://www.flowmapp.com" }
+  ],
+  "facts": {
+    "what": "Plateforme visuelle pour planifier les sites web et les UX. Crée des sitemaps, user flows, wireframes, plans de contenu et propositions de projet dans un espace de travail unique et connecté.",
+    "what_en": "Visual platform for website planning and UX design. Create sitemaps, user flows, wireframes, content plans, and project proposals in one connected workspace.",
+    "pricing_model": "Freemium : 1 projet gratuit permanent ; plans payants à partir de montants sur la page officielle.",
+    "free_tier": { "exists": true, "detail": "1 projet toujours gratuit ; éditeur interactif des pages, pas de limite de temps." },
+    "plans": [
+      { "name": "Free (1 projet)", "price": "Gratuit" },
+      { "name": "Paid Plans", "price": "À partir de montants sur la page officielle (jusqu'à 99 $ / mois)" }
+    ],
+    "key_features": [
+      "Création de sitemaps avec éditeur visuel interactif",
+      "User flows pour mapper les parcours utilisateurs",
+      "Wireframes haute fidélité avec modèles prêts",
+      "Gestion de contenu (éditeur type Notion)",
+      "Estimation et facturation de projets",
+      "Générateur IA pour sitemaps et wireframes",
+      "Export vers Figma, PDF, PNG, XML, CSV",
+      "Sticky notes et commentaires d'équipe",
+      "Utilisé par Intel, IBM, Electronic Arts"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous planifiez un site web ou un projet UX.",
+        "Vous avez besoin de sitemaps et user flows visuels.",
+        "Vous travaillez en équipe avec des clients."
+      ],
+      "avoidIf": [
+        "Vous faites du prototypage haute fidélité (préférez Figma).",
+        "Vous n'avez besoin que de wireframes rapides.",
+        "Vous avez un très petit projet."
+      ],
+      "threshold": "FlowMapp excelle pour la planification UX pré-design. Pour le prototypage, Figma. Pour l'estimation, combinez FlowMapp avec d'autres outils."
+    },
+    "pros": [
+      "1 projet gratuit permanent, sans limite de temps.",
+      "Sitemaps, flows et wireframes en un endroit.",
+      "IA pour générer automatiquement des diagrammes.",
+      "Export vers Figma direct pour continue le design.",
+      "Outils d'estimation et facturation inclus.",
+      "Collaborative avec comments et sticky notes."
+    ],
+    "cons": [
+      "Peut être limité pour le prototypage haute fidélité.",
+      "Moins intégré qu'un suite complète (Figma + XD).",
+      "Pricing peut être élevé pour petites agences."
+    ],
+    "use_cases": [
+      "Planifier la structure d'un site web avant le design.",
+      "Mapper les user flows pour une app mobile.",
+      "Créer des wireframes pour présenter aux clients.",
+      "Estimer le coût et le scope d'un projet digital.",
+      "Exporter des wireframes vers Figma pour itération."
+    ],
+    "relevant_for": ["UX designers", "Product managers", "Agencies", "Freelancers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're planning a website or UX project.",
+        "You need visual sitemaps and user flows.",
+        "You work with teams and clients."
+      ],
+      "avoidIf": [
+        "You're doing high-fidelity prototyping (use Figma).",
+        "You only need quick wireframes.",
+        "You have a very small project."
+      ],
+      "threshold": "FlowMapp excels for pre-design UX planning. For prototyping, use Figma. For estimation, pair FlowMapp with other tools."
+    },
+    "pros": [
+      "1 free project forever, no time limit.",
+      "Sitemaps, flows, and wireframes in one place.",
+      "AI to auto-generate diagrams.",
+      "Direct Figma export to continue design.",
+      "Built-in estimation and invoicing tools.",
+      "Collaborative with comments and sticky notes."
+    ],
+    "cons": [
+      "Limited for high-fidelity prototyping.",
+      "Less integrated than a full suite (Figma + XD).",
+      "Pricing can be steep for small agencies."
+    ],
+    "use_cases": [
+      "Plan website structure before design.",
+      "Map user flows for a mobile app.",
+      "Create wireframes to present to clients.",
+      "Estimate cost and scope of digital projects.",
+      "Export wireframes to Figma for iteration."
+    ]
+  }
+}

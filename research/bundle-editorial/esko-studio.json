@@ -1,0 +1,94 @@
+{
+  "slug": "esko-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Esko Studio official site", "url": "https://www.esko.com/en/products/studio" }
+  ],
+  "facts": {
+    "what": "Suite logicielle d'emballage 3D pour designers, utilisant le plugin Adobe Illustrator pour concevoir et visualiser des boîtes, étiquettes et emballages souples avec rendu photorealist.",
+    "what_en": "3D packaging design software suite for designers, using Adobe Illustrator plugin to design and visualize boxes, labels, and flexible packaging with photorealistic rendering.",
+    "pricing_model": "Logiciel commercial avec essai gratuit ; prix sur devis selon éditions et besoins.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible ; pas de version gratuite permanente. Achat ou abonnement requis pour usage professionnel." },
+    "plans": [
+      { "name": "Esko Studio", "price": "Montants sur demande (editions et plans disponibles)" }
+    ],
+    "key_features": [
+      "Plugin Adobe Illustrator pour conception d'emballage 3D",
+      "Technologie de modélisation d'impression pour ajustage parfait sur structures",
+      "Rendu photorealist via ray tracing",
+      "Toolkit shrink-sleeve pour simulation thermique",
+      "Export multi-format : PDF, vidéo, packshots, étagères virtuelles",
+      "Réduction de prototypes physiques jusqu'à 80% productivité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes designer d'emballage pour marques ou fabricants.",
+        "Vous voulez éliminer les prototypes physiques coûteux et longs.",
+        "Vous travaillez avec Adobe Illustrator et avez besoin de 3D photorealistic directement dedans."
+      ],
+      "avoidIf": [
+        "Vous faites du design graphique général (non-emballage).",
+        "Vous cherchez un outil 3D généraliste (trop spécialisé).",
+        "Vous n'utilisez pas Adobe Illustrator."
+      ],
+      "threshold": "Esko Studio s'impose pour designers d'emballage professionnel ; sinon un logiciel 3D généraliste convient mieux."
+    },
+    "pros": [
+      "Intégration seamless dans Adobe Illustrator (workflow familier).",
+      "Technologie print-modeling unique pour ajustage structural parfait.",
+      "Rendus photorealistic rapides sans prototype physique.",
+      "Gains de productivité importants et moins de shootings photo nécessaires.",
+      "Collaboration packaging-marketing unifiée."
+    ],
+    "cons": [
+      "Très spécialisé : utile uniquement pour design d'emballage.",
+      "Dépend d'Adobe Illustrator (pas standalone).",
+      "Coûts d'achat/abonnement non divulgués (sur devis).",
+      "Apprentissage spécifique au domaine de l'emballage requis."
+    ],
+    "use_cases": [
+      "Concevoir l'emballage d'un nouveau produit consumer.",
+      "Créer des visuels de présentation packaging pour clients/marketing.",
+      "Tester variantes de design (couleurs, étiquettes, shrink) sans prototype.",
+      "Intégrer prototypage digital dans le workflow de production."
+    ],
+    "relevant_for": ["Designers d'emballage", "Marques consumer goods", "Converters packaging", "Agencies spécialisées emballage"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a packaging designer for brands or manufacturers.",
+        "You want to eliminate costly and time-consuming physical prototypes.",
+        "You work with Adobe Illustrator and need photorealistic 3D inside it."
+      ],
+      "avoidIf": [
+        "You do general graphic design (non-packaging).",
+        "You seek a general-purpose 3D tool (too specialized).",
+        "You don't use Adobe Illustrator."
+      ],
+      "threshold": "Esko Studio is ideal for professional packaging designers; otherwise a general-purpose 3D tool fits better."
+    },
+    "pros": [
+      "Seamless integration in Adobe Illustrator (familiar workflow).",
+      "Unique print-modeling technology for perfect structural fit.",
+      "Fast photorealistic renders without physical prototype.",
+      "Major productivity gains and fewer photoshoots needed.",
+      "Unified packaging-marketing collaboration."
+    ],
+    "cons": [
+      "Highly specialized: useful only for packaging design.",
+      "Depends on Adobe Illustrator (not standalone).",
+      "Purchase/subscription costs undisclosed (on quote).",
+      "Packaging-domain-specific learning curve required."
+    ],
+    "use_cases": [
+      "Design a new product's packaging.",
+      "Create packaging presentation visuals for clients/marketing.",
+      "Test design variants (colors, labels, shrink) without prototype.",
+      "Integrate digital prototyping into production workflow."
+    ]
+  }
+}

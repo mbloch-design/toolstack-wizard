@@ -1,0 +1,93 @@
+{
+  "slug": "adobe-creative-cloud",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Adobe Creative Cloud All Apps — Plans & Pricing (site officiel)", "url": "https://www.adobe.com/creativecloud/plans.html" }
+  ],
+  "facts": {
+    "what": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.",
+    "what_en": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription.",
+    "pricing_model": "Abonnement mensuel ou annuel (facturation annuelle possible). Plusieurs niveaux : Single App, Creative Cloud Standard (accès web/mobile limité), Creative Cloud Pro (accès complet).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions." },
+    "plans": [
+      { "name": "Single App (ex. Photoshop)", "price": "22,99 $ USD/mois (facturation mensuelle)" },
+      { "name": "Photography", "price": "19,99 $ USD/mois (Photoshop + Lightroom)" },
+      { "name": "Creative Cloud Standard", "price": "54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois)" },
+      { "name": "Creative Cloud Pro", "price": "69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly)" },
+      { "name": "Teams Plans", "price": "84,99 $ USD+/mois (gestion admin, cloud storage augmenté)" }
+    ],
+    "key_features": [
+      "Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom et plus",
+      "Synchronisation cloud des fichiers et paramètres",
+      "Accès à des bibilothèques d'assets Adobe Stock (inclus dans Standard/Pro)",
+      "Firefly (AI générative) intégrée dans les apps (crédits variables par plan)",
+      "Mises à jour automatiques et support prioritaire"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en production audiovisuelle ou design graphique professionnel.",
+        "Vous avez besoin de plusieurs applications Adobe intégrées et synchronisées.",
+        "Vous valorisez les mises à jour régulières et l'accès à des outils IA (Firefly)."
+      ],
+      "avoidIf": [
+        "Vous cherchez une suite gratuite (GIMP, Inkscape, Blender conviendront mieux).",
+        "Vous n'utilisez qu'une seule application de manière très occasionnelle.",
+        "Vous débutez : les alternatives libres offrent aussi une bonne pédagogie."
+      ],
+      "threshold": "Adobe Creative Cloud s'impose pour les professionnels en création vidéo, photo ou design ; pour un usage ponctuel ou débutant, les alternatives libres sont pertinentes."
+    },
+    "pros": [
+      "Intégration parfaite entre les applications (Photoshop ↔ Illustrator ↔ InDesign, etc.).",
+      "Mises à jour fréquentes avec nouvelles fonctionnalités (Firefly, IA).",
+      "Cloud sync pour travailler sur plusieurs machines.",
+      "Large écosystème de ressources (tutorials, assets Adobe Stock)."
+    ],
+    "cons": [
+      "Coût cumulatif d'un abonnement sans fin (pas d'achat perpétuel).",
+      "Plan Standard limite l'accès mobile/web et les crédits Firefly.",
+      "Courbe d'apprentissage importante pour les débutants.",
+      "Dépendance à internet pour certaines fonctionnalités (cloud)."
+    ],
+    "use_cases": [
+      "Produire une vidéo de bout en bout avec Premiere Pro + After Effects + Photoshop.",
+      "Concevoir une identité visuelle (logos, charte graphique) via Illustrator et Photoshop.",
+      "Gérer un workflow d'agence créative avec synchronisation de projet."
+    ],
+    "relevant_for": ["Producteurs vidéo", "Graphistes/designers", "Photographes", "Agences créatives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in professional video production, photo editing, or graphic design.",
+        "You need multiple Adobe apps integrated and synced together.",
+        "You value regular updates and access to AI tools like Firefly."
+      ],
+      "avoidIf": [
+        "You're looking for free alternatives (GIMP, Inkscape, Blender are good options).",
+        "You use only one app very occasionally.",
+        "You're a beginner: free alternatives offer solid learning resources too."
+      ],
+      "threshold": "Adobe Creative Cloud is essential for professional creators in video, photo, or design; for occasional or beginner use, free alternatives work well."
+    },
+    "pros": [
+      "Seamless integration across apps (Photoshop ↔ Illustrator ↔ InDesign, etc.).",
+      "Frequent updates with new features (Firefly, AI).",
+      "Cloud sync to work on multiple machines.",
+      "Vast ecosystem of resources (tutorials, Adobe Stock assets)."
+    ],
+    "cons": [
+      "Recurring subscription cost with no perpetual purchase option.",
+      "Standard plan limits mobile/web access and Firefly credits.",
+      "Steep learning curve for beginners.",
+      "Internet dependency for some features (cloud sync)."
+    ],
+    "use_cases": [
+      "Produce a complete video using Premiere Pro + After Effects + Photoshop.",
+      "Design a visual identity (logos, brand guidelines) via Illustrator and Photoshop.",
+      "Manage a creative agency workflow with project synchronization."
+    ]
+  }
+}

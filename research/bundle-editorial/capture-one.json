@@ -1,0 +1,95 @@
+{
+  "slug": "capture-one",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Capture One — site officiel", "url": "https://captureone.com" }
+  ],
+  "facts": {
+    "what": "Logiciel professionnel d'édition et de gestion de photos pour photographes. Offre contrôle avancé couleur/détail, tethering en temps réel, gestion d'assets, collaboration. Utilisé en studio par photographes de mode, produit, mariage, paysage.",
+    "what_en": "Professional photo editing and management software for photographers. Offers advanced color/detail control, real-time tethering, asset management, collaboration. Used in studios by fashion, product, wedding, and landscape photographers.",
+    "pricing_model": "Abonnement mensuel ou annuel. Options : Pro individuel, Studio pour équipes, All-in-One avec mobile. Licence perpétuelle desktop optionnelle (~317 $).",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours complet. Essai gratuit 7 jours sur iOS/iPad inclus." },
+    "plans": [
+      { "name": "Capture One Pro", "price": "17 $/mois (annuel) ou 26 $/mois (mensuel)" },
+      { "name": "Capture One All-in-One", "price": "23,25 $/mois (annuel) ou 36 $/mois (mensuel, avec iPad/mobile/cloud)" },
+      { "name": "Capture One Studio", "price": "45,75 $/mois (annuel) ou 59 $/mois (mensuel, équipes/volumes)" },
+      { "name": "Licence perpétuelle desktop", "price": "~317 $ (sans mises à jour features incluses)" }
+    ],
+    "key_features": [
+      "Édition couleur et détail avancée",
+      "Tethering en temps réel (capture directement dans le logiciel)",
+      "Gestion d'assets et workflow de studio",
+      "Presets professionnels et looks",
+      "Collaboration équipe et Live for Studio",
+      "Support multi-caméras et profiles couleur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe professionnel ou studio photo.",
+        "Vous avez besoin de contrôle couleur poussé et tethering.",
+        "Vous éditez des dizaines de photos par jour (workflow de volume)."
+      ],
+      "avoidIf": [
+        "Vous êtes photographe amateur ou hobbyiste occasionnel.",
+        "Vous cherchez un logiciel gratuit ou très bon marché.",
+        "Vous retouchez rarement (1-2 photos par semaine)."
+      ],
+      "threshold": "Capture One s'impose pour les studios photos professionnels ; pour l'amateur, Lightroom ou Darktable suffisent."
+    },
+    "pros": [
+      "Meilleur contrôle couleur de sa catégorie.",
+      "Tethering temps réel très performant (studio).",
+      "Workflow de studio professionnel intégré.",
+      "Presets et looks haut de gamme.",
+      "Support et formation professionnels."
+    ],
+    "cons": [
+      "Abonnement mensuel coûteux pour usage léger.",
+      "Courbe apprentissage importante.",
+      "Pas gratuit ni open-source.",
+      "Moins d'outils 'fun' que Lightroom pour retouche créative."
+    ],
+    "use_cases": [
+      "Gérer le workflow d'un studio photo professionnel.",
+      "Éditer en masse des séries photo avec cohérence couleur.",
+      "Capturer et éditer en temps réel pendant une séance."
+    ],
+    "relevant_for": ["Photographes pro", "Studios photo", "Retoucheurs couleur"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a professional photographer or photo studio.",
+        "You need advanced color control and tethering.",
+        "You edit dozens of photos per day (volume workflow)."
+      ],
+      "avoidIf": [
+        "You're an amateur or casual hobbyist photographer.",
+        "You're looking for free or very cheap software.",
+        "You rarely retouch (1-2 photos per week)."
+      ],
+      "threshold": "Capture One is essential for professional photo studios; for hobbyists, Lightroom or Darktable suffice."
+    },
+    "pros": [
+      "Best-in-class color control.",
+      "Real-time tethering highly performant (studio).",
+      "Integrated professional studio workflow.",
+      "High-end presets and looks.",
+      "Professional support and training."
+    ],
+    "cons": [
+      "Monthly subscription expensive for light use.",
+      "Significant learning curve.",
+      "Not free or open-source.",
+      "Fewer 'fun' creative retouching tools than Lightroom."
+    ],
+    "use_cases": [
+      "Manage a professional photo studio workflow.",
+      "Bulk-edit photo series with consistent color.",
+      "Capture and edit in real-time during a shoot."
+    ]
+  }
+}

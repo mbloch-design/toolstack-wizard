@@ -1,0 +1,93 @@
+{
+  "slug": "ae-bao-boa",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BAO Boa - aescripts.com (distributeur officiel)", "url": "https://aescripts.com/bao-boa" },
+    { "label": "BAO Plugins - BAO Studio (page d'accueil)", "url": "https://www.toolfarm.com/buy/bao_boa/" }
+  ],
+  "facts": {
+    "what": "Plugin After Effects qui permet de déformer les couches le long de courbes de masque. BAO Boa crée des distorsions fluides et organiques en suivant précisément les formes définies par des masques, utile pour l'animation de texte, formes et éléments complexes.",
+    "what_en": "After Effects plugin that distorts layers along mask paths. BAO Boa creates smooth, organic distortions by following mask shapes precisely, useful for animating text, shapes, and complex elements.",
+    "pricing_model": "Licence perpétuelle d'achat unique. Options multiples : licence utilisateur unique, licence réseau (serveur flottant), licence de rendu. Tous au même prix.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Aucun essai gratuit visible sur le site officiel." },
+    "plans": [
+      { "name": "BAO Boa (Single User License)", "price": "99,99 USD" },
+      { "name": "BAO Boa (Floating License Server)", "price": "99,99 USD" }
+    ],
+    "key_features": [
+      "Déformation fluide le long de chemins de masque",
+      "Contrôle avancé de la distorsion (amplitude, atténuation, angle)",
+      "Animations de texte courbes et ondulantes",
+      "Compatible avec les formes, couches de texte et éléments complexes",
+      "Options de licence flexible (utilisateur unique, réseau, rendu)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement du texte ou des formes courbes et ondulantes.",
+        "Vous avez besoin de distorsions organiques qui suivent des courbes précises.",
+        "Vous travaillez en équipe (options licence réseau disponibles)."
+      ],
+      "avoidIf": [
+        "Vous êtes débutant et voulez tester avant d'acheter (pas de démo gratuite).",
+        "Vous faites peu d'animations complexes.",
+        "Vous préférez des effets de base natifs After Effects."
+      ],
+      "threshold": "BAO Boa s'impose pour les animateurs spécialisés dans le texte courbe et les déformations organiques ; pour un usage occasionnel, After Effects natif suffit."
+    },
+    "pros": [
+      "Déformations fluides et contrôlables avec grande précision.",
+      "Licence perpétuelle (pas d'abonnement).",
+      "Options de licence flexible pour équipes et rendus.",
+      "Animations de texte courbes professionnelles."
+    ],
+    "cons": [
+      "Pas de version d'essai gratuite.",
+      "Prix fixe unique sans réduction étudiants visible.",
+      "Courbe d'apprentissage pour maîtriser les animations complexes.",
+      "Niche : utile surtout pour animations texte/courbes spécifiques."
+    ],
+    "use_cases": [
+      "Animer du texte qui suit une courbe de rivière ou route.",
+      "Déformer une forme selon une trajectoire de masque.",
+      "Créer des ondulations organiques sur des éléments graphiques.",
+      "Titre génériques avec texte courbe et fluide."
+    ],
+    "relevant_for": ["Motion designers", "Animateurs After Effects", "Producteurs vidéo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create curved or wavy text and shapes.",
+        "You need organic distortions that follow precise curves.",
+        "You work in a team (network license options available)."
+      ],
+      "avoidIf": [
+        "You're new to After Effects and want to test first (no free demo).",
+        "You do little complex animation.",
+        "You prefer After Effects' built-in distortion effects."
+      ],
+      "threshold": "BAO Boa is essential for animators doing curved text and organic deformations; for occasional use, After Effects built-in effects are enough."
+    },
+    "pros": [
+      "Smooth, precise distortions along mask paths.",
+      "Perpetual license (no subscription).",
+      "Flexible licensing for teams and render nodes.",
+      "Professional curved text animations."
+    ],
+    "cons": [
+      "No free trial version.",
+      "Fixed price with no visible student discount.",
+      "Learning curve for complex animations.",
+      "Niche use case: mainly for curved text and organic deformations."
+    ],
+    "use_cases": [
+      "Animate text following a river or road curve.",
+      "Distort a shape along a mask trajectory.",
+      "Create organic waves on graphic elements.",
+      "Generic titles with fluid, curved text."
+    ]
+  }
+}

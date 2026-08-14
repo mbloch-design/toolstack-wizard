@@ -1,0 +1,96 @@
+{
+  "slug": "ae-overlord",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Overlord - Battle Axe (site officiel)", "url": "https://battleaxe.co/overlord" },
+    { "label": "Getting started | Battle Axe", "url": "https://help.battleaxe.co/overlord/" }
+  ],
+  "facts": {
+    "what": "Overlord est un plugin After Effects et Illustrator créé par Battle Axe qui facilitant le transfert de couches depuis Figma, Photoshop et Illustrator vers After Effects en préservant les propriétés (masques, gradients, styles, noms). Rend les échanges créatifs cross-app rapides et non destructifs.",
+    "what_en": "Overlord is an After Effects and Illustrator plugin by Battle Axe enabling layer transfer from Figma, Photoshop, and Illustrator to After Effects while preserving properties (masks, gradients, styles, names). Makes creative cross-app workflows fast and non-destructive.",
+    "pricing_model": "Licence perpétuelle d'achat unique. Un achat donne accès à 1 an de mises à jour de fonctionnalités. Après 1 an, renouvellement optionnel pour nouvelles fonctionnalités (pas obligatoire pour continuer utilisation).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Pas d'essai gratuit visible. Achat unique requis." },
+    "plans": [
+      { "name": "Overlord (Single User)", "price": "75 USD USD (1 an de mises à jour incluses, utilisation jusqu'à 2 ordinateurs)" }
+    ],
+    "key_features": [
+      "Import de calques depuis Figma, Photoshop, Illustrator vers After Effects",
+      "Préservation des masques, gradients, styles, et noms",
+      "Texte éditable avec formatage caractère",
+      "Gradients linéaires et radiaux éditables",
+      "Nouvelle connexion Illustrator ↔ Figma",
+      "Export de séquences d'images depuis Photoshop",
+      "Licence double-machine (jusqu'à 2 ordinateurs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en équipe designers-animateurs (Figma/Illustrator → After Effects).",
+        "Vous cherchez à accélérer le workflow d'import de design sans recréer à la main.",
+        "Vous appréciez une licence perpétuelle sans abonnement mensuel."
+      ],
+      "avoidIf": [
+        "Vous travaillez seul et créez toujours vos designs directement After Effects.",
+        "Vous recréez rarement vos designs (imports occasionnels suffisent).",
+        "Vous ne voulez pas d'outil payant (c'est un investissement)."
+      ],
+      "threshold": "Overlord s'impose pour des workflows collaboratifs design-animation fréquents ; pour travail solo occasionnel, ce n'est pas justifié."
+    },
+    "pros": [
+      "Transfert non destructif préservant les propriétés (masques, gradients, styles).",
+      "Accélère le workflow collaborative designer-animateur.",
+      "Licence perpétuelle avec 1 an updates incluses.",
+      "Double-machine (2 ordinateurs par utilisateur).",
+      "Support de multiples apps source (Figma, Photoshop, Illustrator)."
+    ],
+    "cons": [
+      "Prix unique, pas gratuit, pas d'essai visible.",
+      "Utile surtout pour workflows collaboratifs (moins pertinent solo).",
+      "Renouvellement payant pour accéder aux nouvelles fonctionnalités (optionnel).",
+      "Niche : utile surtout avec Figma/Illustrator (pas pour Illustrator seul)."
+    ],
+    "use_cases": [
+      "Importer un design Figma complet vers After Effects sans tout recréer.",
+      "Transférer des composants Illustrator vers After Effects avec styles intacts.",
+      "Workflow agence : designer Figma → animateur After Effects.",
+      "Export de séquences Photoshop directement en couches AE."
+    ],
+    "relevant_for": ["Motion designers", "Agences créatives", "Équipes design-animation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in designer-animator teams (Figma/Illustrator → After Effects).",
+        "You want to speed up design import workflows without rebuilding by hand.",
+        "You like perpetual licenses without monthly subscriptions."
+      ],
+      "avoidIf": [
+        "You work alone and always create designs directly in After Effects.",
+        "You rarely import designs (occasional imports are fine).",
+        "You don't want paid tools (it's an investment)."
+      ],
+      "threshold": "Overlord is essential for frequent collaborative design-animation workflows; for solo occasional work, not justified."
+    },
+    "pros": [
+      "Non-destructive transfer preserving properties (masks, gradients, styles).",
+      "Speeds up designer-animator collaborative workflow.",
+      "Perpetual license with 1 year of updates included.",
+      "Dual-machine (2 computers per user).",
+      "Support for multiple source apps (Figma, Photoshop, Illustrator)."
+    ],
+    "cons": [
+      "Paid, no free version, no visible trial.",
+      "Useful mainly for collaborative workflows (less relevant solo).",
+      "Renewal cost for new features (optional).",
+      "Niche: useful mainly with Figma/Illustrator (not Illustrator-only)."
+    ],
+    "use_cases": [
+      "Import a complete Figma design to After Effects without rebuilding.",
+      "Transfer Illustrator components to After Effects with styles intact.",
+      "Agency workflow: Figma designer → After Effects animator.",
+      "Export Photoshop sequences directly as AE layers."
+    ]
+  }
+}

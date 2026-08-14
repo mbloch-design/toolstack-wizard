@@ -1,0 +1,95 @@
+{
+  "slug": "figma-anima",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Anima (site officiel)", "url": "https://animaapp.com" }
+  ],
+  "facts": {
+    "what": "Plugin Figma avec IA pour convertir des designs en code fonctionnel (React, HTML, Vue, Tailwind CSS). Inclut un AI Playground pour prototyper des apps entières via prompts naturels.",
+    "what_en": "AI-powered Figma plugin that converts designs to production code (React, HTML, Vue, Tailwind CSS). Includes an AI Playground to prototype full apps using natural language prompts.",
+    "pricing_model": "Modèle freemium : essai gratuit, puis plans payants par volume de code ou par siège.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans limite de temps avec accès au plugin et à l'AI Playground." },
+    "plans": [
+      { "name": "Free Trial", "price": "Gratuit (accès complet temporaire)" },
+      { "name": "Pro", "price": "À partir de 24 $ / mois (montants sur la page officielle)" },
+      { "name": "Business", "price": "À partir de 150 $ / mois (montants sur la page officielle)" }
+    ],
+    "key_features": [
+      "Figma to Code export (React, HTML, Vue, Tailwind CSS, email HTML)",
+      "AI Playground pour construire des apps sans code",
+      "Clonage de sites web multi-pages",
+      "Gestion base de données et authentification",
+      "Version history et restore instantané",
+      "Intégration Claude et autres agents IA",
+      "Anima MCP pour connecter d'autres outils"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez générer du code depuis vos designs Figma automatiquement.",
+        "Vous utilisez React, HTML ou Tailwind CSS.",
+        "Vous explorez le prototypage IA sans écrire du code."
+      ],
+      "avoidIf": [
+        "Vous avez surtout besoin d'un outil d'interaction/animation Figma (préférez Framer).",
+        "Votre stack n'est pas JavaScript/web.",
+        "Vous voulez un outil gratuit à 100 pourcent."
+      ],
+      "threshold": "Anima brille pour design-to-code React/HTML. Pour du prototypage riche ou 100 pourcent gratuit, explorez d'autres solutions."
+    },
+    "pros": [
+      "Conversion design-to-code très fonctionnelle et prête pour la production.",
+      "AI Playground pour construire des apps entières sans coder.",
+      "Essai gratuit illimité dans le temps.",
+      "Support multi-stack (React, Vue, HTML, Tailwind).",
+      "Intégration IA (Claude, agents)."
+    ],
+    "cons": [
+      "Code généré nécessite souvent des retouches.",
+      "Pricing peut être élevé pour les petits projets.",
+      "Courbe d'apprentissage pour optimiser le code exporté."
+    ],
+    "use_cases": [
+      "Exporter rapidement des maquettes Figma en code React/HTML.",
+      "Prototyper une app avec prompts naturels dans l'AI Playground.",
+      "Cloner et réadapter un site existant.",
+      "Itérer design-développement en tandem."
+    ],
+    "relevant_for": ["Design teams", "Developers", "Product teams", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to generate code from Figma designs automatically.",
+        "You use React, HTML, or Tailwind CSS.",
+        "You want to explore no-code AI prototyping."
+      ],
+      "avoidIf": [
+        "You mainly need Figma interactions/animations (use Framer).",
+        "Your stack isn't JavaScript/web.",
+        "You need a fully free tool."
+      ],
+      "threshold": "Anima excels at design-to-code React/HTML. For rich prototyping or fully free, explore alternatives."
+    },
+    "pros": [
+      "Effective design-to-code conversion ready for production.",
+      "AI Playground to build full apps without coding.",
+      "Unlimited free trial.",
+      "Multi-stack support (React, Vue, HTML, Tailwind).",
+      "Built-in AI integration (Claude, agents)."
+    ],
+    "cons": [
+      "Generated code often needs tweaks.",
+      "Pricing can be steep for small projects.",
+      "Learning curve to optimize exported code."
+    ],
+    "use_cases": [
+      "Quickly export Figma mockups to production React/HTML.",
+      "Prototype an app with natural language in AI Playground.",
+      "Clone and adapt an existing site.",
+      "Iterate design and development in tandem."
+    ]
+  }
+}

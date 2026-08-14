@@ -1,0 +1,94 @@
+{
+  "slug": "astute-graphics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Astute Graphics — Official Site", "url": "https://astutegraphics.com" }
+  ],
+  "facts": {
+    "what": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.",
+    "what_en": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
+    "pricing_model": "Abonnement annuel avec mises à jour mensuelles. Essai gratuit de 7 jours. Accès à 4 plugins gratuits après annulation.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy)." },
+    "plans": [
+      { "name": "Astute Graphics Annual Bundle", "price": "149 USD/an" }
+    ],
+    "key_features": [
+      "Vector First Aid — nettoyage de formes complexes",
+      "DynamicSketch — dessin vectoriel intuitif",
+      "InkFlow — gestion des traits et tracés",
+      "Phantasm — effets vectoriels",
+      "ColliderScribe et SubScribe — géométrie avancée",
+      "Randomino, Stipplism, Texturino — effets de texture",
+      "WidthScribe — gestion des épaisseurs de trait",
+      "FindReplace, Reform — modulation des formes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez quotidiennement en Illustrator et créez du contenu vectoriel complexe.",
+        "Vous passez beaucoup de temps à nettoyer des données vectorielles mal structurées.",
+        "Vous créez des logos, illustrations ou design graphique professionnel."
+      ],
+      "avoidIf": [
+        "Vous utilisez Illustrator occasionnellement ou pour des projets simples.",
+        "Vous cherchez principalement du web design ou UI/UX.",
+        "Vous avez un budget serré et les plugins gratuits suffisent."
+      ],
+      "threshold": "Astute Graphics s'impose pour les illustrateurs et designers vectoriels professionnels ; pour usage occasionnel ou budget limité, Illustrator natif + plugins gratuits peut suffire."
+    },
+    "pros": [
+      "Accélère le workflow Illustrator de façon significative.",
+      "Plugins très utiles pour nettoyage et effets vectoriels.",
+      "Essai gratuit 7 jours avant engagement.",
+      "4 plugins gratuits retenus après annulation.",
+      "Mise à jour mensuelles incluses."
+    ],
+    "cons": [
+      "Abonnement annuel (no perpetual license).",
+      "Dépend entièrement d'Illustrator (n'est qu'une extension).",
+      "Courbe d'apprentissage pour débloquer l'efficacité.",
+      "Certains plugins moins utiles selon le type de travail."
+    ],
+    "use_cases": [
+      "Nettoyer une illustration complexe importée d'une numérisation.",
+      "Créer rapidement des motifs texturés et effets de stippling.",
+      "Concevoir un logo ou identité visuelle avec contrôle géométrique avancé."
+    ],
+    "relevant_for": ["Illustrateurs numériques", "Designers graphiques vectoriels", "Studios de design"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work daily in Illustrator and create complex vector content.",
+        "You spend significant time cleaning poorly structured vector data.",
+        "You create logos, illustrations, or professional graphic design."
+      ],
+      "avoidIf": [
+        "You use Illustrator occasionally or for simple projects.",
+        "You focus mainly on web design or UI/UX.",
+        "You have a tight budget and free plugins suffice."
+      ],
+      "threshold": "Astute Graphics makes sense for professional vector designers and illustrators; for occasional use or tight budgets, native Illustrator + free plugins may suffice."
+    },
+    "pros": [
+      "Significantly accelerates Illustrator workflow.",
+      "Very useful plugins for cleanup and vector effects.",
+      "Free 7-day trial before commitment.",
+      "4 free plugins retained after cancellation.",
+      "Monthly updates included."
+    ],
+    "cons": [
+      "Annual subscription (no perpetual license).",
+      "Depends entirely on Illustrator (it's just an extension).",
+      "Learning curve to unlock efficiency.",
+      "Some plugins less useful depending on work type."
+    ],
+    "use_cases": [
+      "Clean a complex illustration scanned from a drawing.",
+      "Quickly create textured patterns and stipple effects.",
+      "Design a logo or visual identity with advanced geometric control."
+    ]
+  }
+}

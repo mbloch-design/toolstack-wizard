@@ -1,0 +1,92 @@
+{
+  "slug": "envato",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Envato official site", "url": "https://www.envato.com" }
+  ],
+  "facts": {
+    "what": "Marketplace créatif global avec plusieurs plateformes thématiques (ThemeForest, CodeCanyon, VideoHive, AudioJungle, GraphicRiver) pour acheter/vendre templates, scripts, musique, vidéo et assets graphiques à l'unité.",
+    "what_en": "Global creative marketplace with multiple themed platforms (ThemeForest, CodeCanyon, VideoHive, AudioJungle, GraphicRiver) for buying/selling templates, scripts, music, video, and graphic assets individually.",
+    "pricing_model": "Pay-per-item marketplace ; chaque asset a son propre prix (vendeurs fixent les prix).",
+    "free_tier": { "exists": false, "detail": "Aucune offre gratuite ; tous les items sont payants. Modèle d'achat à l'unité uniquement." },
+    "plans": [
+      { "name": "Envato Market (pay-per-item)", "price": "Prix variables par item (vendeur détermine le prix)" }
+    ],
+    "key_features": [
+      "ThemeForest : templates WordPress et Webflow",
+      "CodeCanyon : scripts PHP, plugins, extensions",
+      "VideoHive : stock footage, effets vidéo, transitions",
+      "AudioJungle : musique royalty-free, audio",
+      "GraphicRiver : logos, fonts, assets graphiques",
+      "Millions d'assets disponibles, qualité vérifiée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un asset ou template spécifique et payez uniquement ce dont vous avez besoin.",
+        "Vous avez besoin d'une musique, video ou graphique pour un projet ponctuel.",
+        "Vous aimez l'idée d'un marché décentralisé avec des milliers de créateurs."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de très nombreux assets régulièrement (utiliser Envato Elements).",
+        "Vous cherchez du contenu gratuit ou open-source.",
+        "Vous avez un très petit budget (les assets s'achètent à l'unité)."
+      ],
+      "threshold": "Envato Market est idéal pour un achat unique ponctuel ; pour utilisation régulière et intensive, préférer Envato Elements (abonnement)."
+    },
+    "pros": [
+      "Marché décentralisé avec millions d'assets de qualité vérifiée.",
+      "Payez uniquement ce dont vous avez besoin, pas d'abonnement.",
+      "Prix justes pour créateurs, large choix de budget.",
+      "Support des vendeurs et système d'avis fiable.",
+      "Palettes d'assets diverses : templates, code, musique, vidéo, graphiques."
+    ],
+    "cons": [
+      "Chaque achat est une transaction séparate (lourd pour multi-achats).",
+      "Prix plus chers qu'Envato Elements à long terme pour volume élevé.",
+      "Pas de licence d'équipe ou entreprise au-delà de l'usage personnel."
+    ],
+    "use_cases": [
+      "Acheter un template WordPress pour un client.",
+      "Trouver une musique ou effet sonore spécifique pour un projet.",
+      "Acquérir des fonts ou graphiques pour un design ponctuel.",
+      "Télécharger des scripts ou plugins pour un site."
+    ],
+    "relevant_for": ["Freelances", "Petites agences", "Développeurs web", "Designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're looking for a specific asset or template and pay only for what you need.",
+        "You need music, video, or graphics for a one-off project.",
+        "You like the idea of a decentralized marketplace with thousands of creators."
+      ],
+      "avoidIf": [
+        "You need many assets regularly (use Envato Elements).",
+        "You seek free or open-source content.",
+        "Your budget is very tight (assets typically cost 5-100 USD each)."
+      ],
+      "threshold": "Envato Market is ideal for one-off purchases; for regular and intensive use, prefer Envato Elements (subscription)."
+    },
+    "pros": [
+      "Decentralized marketplace with millions of quality-verified assets.",
+      "Pay only for what you need, no subscription.",
+      "Fair pricing for creators, wide budget range.",
+      "Seller support and reliable review system.",
+      "Diverse asset palettes: templates, code, music, video, graphics."
+    ],
+    "cons": [
+      "Each purchase is a separate transaction (cumbersome for bulk).",
+      "Prices more expensive than Envato Elements long-term for high volume.",
+      "No team or enterprise license beyond personal use."
+    ],
+    "use_cases": [
+      "Buy a WordPress template for a client.",
+      "Find a specific music or sound effect for a project.",
+      "Acquire fonts or graphics for a one-off design.",
+      "Download scripts or plugins for a website."
+    ]
+  }
+}

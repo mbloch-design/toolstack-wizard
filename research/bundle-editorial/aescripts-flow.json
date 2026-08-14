@@ -1,0 +1,87 @@
+{
+  "slug": "aescripts-flow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "AEScripts — Flow (site officiel)", "url": "https://aescripts.com/flow" }
+  ],
+  "facts": {
+    "what": "Éditeur de courbes d'interpolation (easing) pour After Effects remplaçant le Graph Editor natif par une interface moderne et normalisée. Inclut une librairie de presets d'easing réutilisables et partageables.",
+    "what_en": "After Effects easing curve editor replacing the native Graph Editor with a modern, normalized interface. Includes a preset library for shareable, reusable easing animations.",
+    "pricing_model": "Licence unique (achat direct ou pay-what-you-want).",
+    "free_tier": { "exists": true, "detail": "Version d'essai gratuit avec fonctionnalités limitées ; version complète payante." },
+    "plans": [
+      { "name": "Flow (complet)", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Graph Editor moderne pour éditer les courbes d'interpolation",
+      "Preset library pour sauvegarder et réutiliser les easing curves",
+      "Interface normalisée et snappier que AE natif",
+      "Collaboration de Zack Lovatt et renderTom",
+      "Support de courbes d'easing personnalisées"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous passez beaucoup de temps à affiner les animations et les easing curves en After Effects.",
+        "Vous avez besoin de réutiliser des style d'animation cohérents entre projets.",
+        "Vous faites du motion design professionnel avec des animations précises."
+      ],
+      "avoidIf": [
+        "Vous débutez en animation et les easing curves sont peu pertinentes pour vous.",
+        "Vous cherchez un outil gratuit pour After Effects.",
+        "Vous n'animez que rarement ou ne maîtrisez pas encore les interpolations."
+      ],
+      "threshold": "Flow s'impose pour les animateurs qui affinent constamment les easing curves ; pour les débutants ou animation ponctuelle, l'outil natif d'AE peut suffire."
+    },
+    "pros": [
+      "Interface bien plus intuitive que le Graph Editor d'After Effects.",
+      "Preset library pour standards d'animation maison.",
+      "Accélère le workflow d'animation professionnelle.",
+      "Collaboration de créateurs très réputés."
+    ],
+    "cons": [
+      "Nécessite une compréhension des easing curves pour être utile.",
+      "Payant (à moins de préférer le Graph Editor natif).",
+      "Limité aux courbes d'interpolation (pas d'autre contrôle d'animation)."
+    ],
+    "use_cases": [
+      "Affiner précisément l'easing et le timing d'une animation complexe.",
+      "Maintenir une librairie de presets d'easing cohérents pour une équipe.",
+      "Accélérer l'export de courbes entre plusieurs projets similaires."
+    ],
+    "relevant_for": ["Animateurs 2D professionnels", "Motion designers", "Équipes de production vidéo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You spend significant time refining animations and easing curves in After Effects.",
+        "You need consistent animation styles reused across projects.",
+        "You produce professional motion design with precise animations."
+      ],
+      "avoidIf": [
+        "You're new to animation and easing curves aren't relevant yet.",
+        "You want free After Effects tools.",
+        "You animate rarely or haven't mastered interpolations."
+      ],
+      "threshold": "Flow makes sense for animators constantly refining easing curves; for beginners or occasional animation, AE's native tool may suffice."
+    },
+    "pros": [
+      "Interface far more intuitive than After Effects' native Graph Editor.",
+      "Preset library for in-house animation standards.",
+      "Accelerates professional animation workflow.",
+      "Collaboration from highly respected creators."
+    ],
+    "cons": [
+      "Requires understanding of easing curves to be useful.",
+      "Paid (unless you prefer AE's native Graph Editor).",
+      "Limited to interpolation curves only (no other animation controls)."
+    ],
+    "use_cases": [
+      "Precisely refine timing and easing of complex animations.",
+      "Maintain a consistent easing preset library for a team.",
+      "Speed up curve export across multiple similar projects."
+    ]
+  }
+}
