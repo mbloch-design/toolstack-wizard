@@ -1,0 +1,91 @@
+{
+  "slug": "railway",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Railway — pricing & plans (site officiel)", "url": "https://railway.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de déploiement et d'hébergement d'applications cloud avec facturation à la seconde. Supporte le déploiement de serveurs web, APIs, bases de données et services à l'aide de la CLI ou du dashboard web.",
+    "what_en": "Cloud deployment platform and application hosting with per-second billing. Supports deploying web servers, APIs, databases, and services via CLI or web dashboard.",
+    "pricing_model": "Abonnements (Free, Hobby, Pro) complétés par une facturation à l'usage (CPU, mémoire, stockage, bande passante). Chaque plan inclut des crédits de ressources.",
+    "free_tier": { "exists": true, "detail": "Free : $0/mois avec $1 de crédits usage. Hobby : $5/mois avec $5 de crédits inclus." },
+    "plans": [
+      { "name": "Free Trial", "price": "$5 de crédits (30 jours, pas de CB requise)" },
+      { "name": "Free", "price": "$0/mois + usage" },
+      { "name": "Hobby", "price": "$5/mois (inclut $5 de crédits)" },
+      { "name": "Pro", "price": "$20/mois (inclut $20 de crédits, illimité par workspace)" },
+      { "name": "Enterprise", "price": "Tarif personnalisé (SLA contractuel, SSO, support dédié)" }
+    ],
+    "key_features": [
+      "Déploiement par CLI ou dashboard",
+      "Support multi-runtime (Node.js, Python, Go, Docker, etc.)",
+      "Bases de données intégrées (PostgreSQL, MongoDB, Redis)",
+      "Per-second billing sans surcoût d'inactivité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous déployez des applications modernes ou APIs.",
+        "Vous préférez une facturation fine (paiement à l'usage).",
+        "Vous cherchez un alternative plus simple à AWS/GCP."
+      ],
+      "avoidIf": [
+        "Vous ne déployez jamais ou très occasionnellement.",
+        "Vous voulez un hébergement entièrement gratuit en production.",
+        "Vous avez besoin d'SLA strict (utilisez Enterprise)."
+      ],
+      "threshold": "Railway s'impose pour les devs modernes voulant déployer rapidement sans infra complexe ; pour un hébergement statique ou très simple, une alternative légère convient mieux."
+    },
+    "pros": [
+      "Interface intuitive et CLI simple.",
+      "Facturation granulaire (pas d'inactivité payante).",
+      "Déploiement depuis git automatisé.",
+      "Bases de données intégrées directement."
+    ],
+    "cons": [
+      "Coûts imprévisibles si ressources mal dimensionnées.",
+      "Moins de services que AWS/GCP.",
+      "Free plan limité."
+    ],
+    "use_cases": [
+      "Déployer une API REST ou serveur web.",
+      "Héberger une base de données PostgreSQL.",
+      "Prototyper rapidement sans configuration infra."
+    ],
+    "relevant_for": ["Développeurs", "Startups", "Equipes d'ingénierie"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're deploying modern applications or APIs.",
+        "You prefer fine-grained billing (pay-for-use).",
+        "You want a simpler alternative to AWS/GCP."
+      ],
+      "avoidIf": [
+        "You rarely or never deploy.",
+        "You need fully free production hosting.",
+        "You need strict SLA (use Enterprise)."
+      ],
+      "threshold": "Railway makes sense for modern devs wanting to deploy quickly without complex infrastructure; for static or very simple hosting, a lighter alternative fits better."
+    },
+    "pros": [
+      "Intuitive interface and simple CLI.",
+      "Granular billing (no idle costs).",
+      "Automated git-based deployments.",
+      "Integrated databases out of the box."
+    ],
+    "cons": [
+      "Unpredictable costs if resources are poorly sized.",
+      "Fewer services than AWS/GCP.",
+      "Limited free plan."
+    ],
+    "use_cases": [
+      "Deploy a REST API or web server.",
+      "Host a PostgreSQL database.",
+      "Quickly prototype without infrastructure setup."
+    ],
+    "relevant_for": ["Developers", "Startups", "Engineering teams"]
+  }
+}

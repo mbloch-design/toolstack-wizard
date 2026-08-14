@@ -1,0 +1,93 @@
+{
+  "slug": "insomnia",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Insomnia API Client (site officiel)", "url": "https://insomnia.rest" }
+  ],
+  "facts": {
+    "what": "Client API de bureau et navigateur pour tester, déboguer et explorer les APIs REST, GraphQL, gRPC et WebSocket. Interface intuitive avec support des variables d'environnement, des mocks et de la collaboration d'équipe.",
+    "what_en": "Desktop and web API client for testing, debugging, and exploring REST, GraphQL, gRPC, and WebSocket APIs. Intuitive interface with environment variables, mock servers, and team collaboration features.",
+    "pricing_model": "Freemium avec plan gratuit Essentials et plans payants Pro et Enterprise. Tarification par utilisateur avec facturation mensuelle ou annuelle (rabais annuel disponible).",
+    "free_tier": { "exists": true, "detail": "Plan Essentials gratuit inclus storage local/git/cloud, runs illimités, et jusqu'à 3 utilisateurs." },
+    "plans": [
+      { "name": "Essentials (gratuit)", "price": "Gratuit (storage local/git/cloud, runs illimités)" },
+      { "name": "Pro", "price": "À partir de 12 $/mois par utilisateur (RBAC, 10 000 mock requests)" },
+      { "name": "Enterprise", "price": "À partir de 45 $/mois par utilisateur (usage illimité, support prioritaire)" }
+    ],
+    "key_features": [
+      "Support REST, GraphQL, gRPC, WebSocket et autres protocoles",
+      "Gestion des environnements et variables dynamiques",
+      "Serveurs mock intégrés",
+      "Historique et versioning des requêtes",
+      "Tests et automations",
+      "Collaboration d'équipe et partage de collections",
+      "Génération de documentation de l'API"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez ou consommez des APIs (REST, GraphQL, gRPC).",
+        "Vous cherchez un client API simple et gratuit pour débuter.",
+        "Votre équipe doit collaborer sur les tests d'API."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de tester des APIs.",
+        "Vous préférez les outils en ligne de commande (cURL, httpie).",
+        "Vous ne testez que des APIs très simples."
+      ],
+      "threshold": "Insomnia convient aux développeurs testant des APIs ; pour des besoins ultra-simples ou une préférence CLI, des outils en ligne de commande suffisent."
+    },
+    "pros": [
+      "Plan gratuit puissant et sans limitations critiques.",
+      "Interface graphique intuitive comparée à cURL/Postman.",
+      "Support de multiples protocoles (REST, GraphQL, gRPC).",
+      "Collaboration d'équipe intégrée dès le plan gratuit."
+    ],
+    "cons": [
+      "Plans payants relativement chers pour les petites équipes.",
+      "Moins de intégrations que Postman.",
+      "Ressources de documentation parfois limitées."
+    ],
+    "use_cases": [
+      "Tester et déboguer des APIs REST ou GraphQL.",
+      "Collaborer en équipe sur l'exploration d'une API.",
+      "Générer une documentation partager depuis les tests.",
+      "Automatiser des workflows de test d'API."
+    ],
+    "relevant_for": ["Développeurs backend", "QA engineers", "Intégrateurs API", "Équipes DevOps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop or consume APIs (REST, GraphQL, gRPC).",
+        "You want a simple, free API client to start.",
+        "Your team needs to collaborate on API testing."
+      ],
+      "avoidIf": [
+        "You don't need to test APIs.",
+        "You prefer CLI tools (cURL, httpie).",
+        "You're testing only very simple APIs."
+      ],
+      "threshold": "Insomnia suits developers testing APIs; for ultra-simple needs or CLI preference, command-line tools suffice."
+    },
+    "pros": [
+      "Powerful free tier without critical limits.",
+      "Intuitive GUI compared to cURL/Postman.",
+      "Multi-protocol support (REST, GraphQL, gRPC).",
+      "Team collaboration built in from the free tier."
+    ],
+    "cons": [
+      "Paid plans relatively expensive for small teams.",
+      "Fewer integrations than Postman.",
+      "Documentation resources sometimes limited."
+    ],
+    "use_cases": [
+      "Test and debug REST or GraphQL APIs.",
+      "Collaborate with team on API exploration.",
+      "Generate and share API documentation from tests.",
+      "Automate API testing workflows."
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "leadpages",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "Leadpages — Pricing officiel", "url": "https://www.leadpages.com" }
+  ],
+  "facts": {
+    "what": "Constructeur de pages de destination (landing pages) avec IA intégrée, permettant de créer, tester et optimiser des pages en quelques minutes. Inclut des formulaires, suivi des conversions et intégrations aux outils marketing.",
+    "what_en": "AI-powered landing page builder enabling creation, A/B testing, and conversion tracking in minutes. Includes forms, heatmaps, analytics, and integrations with over 200 marketing tools.",
+    "pricing_model": "Abonnement mensuel avec trois niveaux (Grow, Optimize, Scale). Réductions annuelles disponibles.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours sur tous les plans. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Grow", "price": "49 $/mois (ou 37 $/mois annuel)" },
+      { "name": "Optimize", "price": "99 $/mois (ou 74 $/mois annuel)" },
+      { "name": "Scale", "price": "399 $/mois (plan entreprise)" }
+    ],
+    "key_features": [
+      "Création de pages assistée par IA (60 secondes)",
+      "Tests A/B intégrés",
+      "Heatmaps et analytics",
+      "200+ intégrations (Google Ads, HubSpot, Shopify, Stripe)",
+      "Optimisation dynamique des pages",
+      "Smart Traffic (routage intelligent)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez lancer rapidement des pages de capture de leads ou de vente.",
+        "Vous testez plusieurs variantes pour optimiser vos conversions.",
+        "Vous cherchez un outil sans codage avec IA intégrée."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un site web complet et complexe.",
+        "Vous préférez coder vous-même vos landing pages.",
+        "Un budget très limité ne permet qu'une solution gratuite."
+      ],
+      "threshold": "Leadpages convient aux marketeurs et freelances ayant besoin de pages de conversion rapides et testables ; pour un site web généraliste ou une présence en ligne complète, une solution plus large s'impose."
+    },
+    "pros": [
+      "Interface intuitive, peu ou pas de courbe d'apprentissage.",
+      "Création assistée par IA très rapide.",
+      "Tests A/B natifs sans outils tiers.",
+      "Analytique et suivi des conversions intégrés.",
+      "Vaste écosystème d'intégrations."
+    ],
+    "cons": [
+      "Essentiellement limité aux pages de capture de leads.",
+      "Coûts additionnels pour les crédits IA au-delà du forfait.",
+      "Plan Scale élevé pour les petites équipes.",
+      "Fonctionnalités avancées concentrées sur les plans supérieurs."
+    ],
+    "use_cases": [
+      "Créer une landing page pour une campagne publicitaire.",
+      "Lancer une page de pré-inscription ou webinaire.",
+      "Tester des offres et optimiser les taux de conversion.",
+      "Capturer des contacts rapidement sans infrastructure complexe."
+    ],
+    "relevant_for": [
+      "Marketeurs numériques",
+      "Propriétaires de petites entreprises",
+      "Agences marketing",
+      "Producteurs de contenu vendant des services"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to launch lead capture or sales pages quickly.",
+        "You want built-in A/B testing without external tools.",
+        "You value AI-assisted design and rapid iteration."
+      ],
+      "avoidIf": [
+        "You're building a complex, multi-page website.",
+        "You prefer hand-coding your pages.",
+        "Your budget requires a free solution."
+      ],
+      "threshold": "Leadpages is ideal for marketers and freelancers needing fast, conversion-focused pages; for a comprehensive website presence, a broader platform fits better."
+    },
+    "pros": [
+      "Intuitive, low learning curve.",
+      "AI-powered design cuts creation time dramatically.",
+      "Native A/B testing.",
+      "Built-in heatmaps and conversion analytics.",
+      "Extensive integration ecosystem."
+    ],
+    "cons": [
+      "Focused narrowly on lead capture pages.",
+      "Additional AI credits beyond plan allocation.",
+      "Scale plan expensive for small teams.",
+      "Advanced features locked to higher tiers."
+    ],
+    "use_cases": [
+      "Create a landing page for an ad campaign.",
+      "Launch a webinar or pre-launch signup page.",
+      "Test offers and optimize conversion rates.",
+      "Capture contacts quickly without infrastructure."
+    ]
+  }
+}

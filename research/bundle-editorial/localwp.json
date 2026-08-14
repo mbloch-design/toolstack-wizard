@@ -1,0 +1,98 @@
+{
+  "slug": "localwp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "LocalWP — Site officiel", "url": "https://localwp.com" }
+  ],
+  "facts": {
+    "what": "Outil de développement WordPress local gratuit permettant de créer, tester et prévisualiser des sites WordPress sur son ordinateur avant déploiement. Inclut liens en direct, sauvegardes cloud et optimisation d'images.",
+    "what_en": "Free local WordPress development environment for Mac, Windows, and Linux. Create, test, and preview WordPress sites locally before deployment. Includes Live Links, cloud backups, and image optimization.",
+    "pricing_model": "Gratuit, entièrement libre d'utilisation. Développé et maintenu par WP Engine.",
+    "free_tier": { "exists": true, "detail": "Tous les outils et fonctionnalités, y compris ceux anciennement en Local Pro, sont maintenant gratuits pour tous." },
+    "plans": [
+      { "name": "LocalWP (Gratuit)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Environnement WordPress local complet",
+      "Live Links pour partager des sites en ligne",
+      "Sauvegardes automatiques dans le cloud",
+      "Optimiseur d'images intégré",
+      "Connecteur pour intégration aux hébergeurs",
+      "Support des extensions (add-ons)",
+      "Documentation et communauté active"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des sites WordPress et voulez tester localement.",
+        "Vous cherchez une solution gratuite et sans complications.",
+        "Vous avez besoin de partager des aperçus avec des clients."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de développement WordPress.",
+        "Vous préférez un environnement entièrement en ligne.",
+        "Vous cherchez un outil de gestion de sites en production."
+      ],
+      "threshold": "LocalWP s'impose pour tout développeur WordPress cherchant un environnement local gratuit et fiable ; inutile pour qui ne travaille pas avec WordPress."
+    },
+    "pros": [
+      "Complètement gratuit.",
+      "Interface intuitive et facile d'accès.",
+      "Toutes les fonctionnalités anciennement payantes sont libérées.",
+      "Live Links pour la collaboration client.",
+      "Léger et rapide sur tous les systèmes d'exploitation."
+    ],
+    "cons": [
+      "Limité au développement local, pas de production en ligne.",
+      "Inutile si vous ne travaillez pas avec WordPress.",
+      "Requiert une connexion internet pour certaines fonctionnalités."
+    ],
+    "use_cases": [
+      "Développer un site WordPress avant mise en ligne.",
+      "Tester des thèmes et extensions localement.",
+      "Partager un prévisualisation avec un client via Live Links.",
+      "Apprendre et expérimenter WordPress sans coûts d'hébergement."
+    ],
+    "relevant_for": [
+      "Développeurs WordPress",
+      "Freelances web",
+      "Agences WordPress",
+      "Propriétaires de sites WordPress cherchant un espace de test"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop WordPress sites and need a local testing environment.",
+        "You want a free, no-nonsense tool.",
+        "You need to share previews with clients."
+      ],
+      "avoidIf": [
+        "You don't work with WordPress.",
+        "You prefer entirely online development.",
+        "You need production site management."
+      ],
+      "threshold": "LocalWP is essential for any WordPress developer seeking a free, reliable local environment; unnecessary for non-WordPress work."
+    },
+    "pros": [
+      "Completely free.",
+      "Simple, intuitive interface.",
+      "All previously paid features are now free.",
+      "Live Links for client collaboration.",
+      "Lightweight and fast across all operating systems."
+    ],
+    "cons": [
+      "Limited to local development, not production.",
+      "Useless if you don't work with WordPress.",
+      "Requires internet connection for some features."
+    ],
+    "use_cases": [
+      "Develop a WordPress site before going live.",
+      "Test themes and plugins locally.",
+      "Share a preview with a client via Live Links.",
+      "Learn and experiment with WordPress cost-free."
+    ]
+  }
+}

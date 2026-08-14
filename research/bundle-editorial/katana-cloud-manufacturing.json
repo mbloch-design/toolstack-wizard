@@ -1,0 +1,95 @@
+{
+  "slug": "katana-cloud-manufacturing",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Katana — Cloud MRP Software (site officiel)", "url": "https://katanamrp.com" }
+  ],
+  "facts": {
+    "what": "Logiciel MRP cloud pour la gestion d'inventaire et de production des petites entreprises manufacturières. Synchronise automatiquement les commandes multi-canaux (Shopify, Amazon, WooCommerce), gère les stocks, les ordres de fabrication, les prévisions de demande et la traçabilité des lots.",
+    "what_en": "Cloud MRP software for inventory and production management in small manufacturing businesses. Auto-syncs orders from multiple channels (Shopify, Amazon, WooCommerce), manages inventory, work orders, demand forecasting, and lot traceability.",
+    "pricing_model": "Freemium avec plan gratuit limité et deux plans payants. Tarification mensuelle avec usage-based adjustment.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : jusqu'à 30 SKUs sur 3 localisations, accès complet pendant 15 jours, utilisateurs illimités, API incluse. Pas de carte de crédit requise." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit (30 SKUs, 3 localisations, 15 jours d'accès complet)" },
+      { "name": "Core", "price": "À partir de 299 $/mois (SKUs illimités, utilisateurs illimités, intégrations, support 24/7)" },
+      { "name": "Advantage", "price": "Tarification personnalisée (ingénieur dédié, intégrations custom, SLA garantie)"  }
+    ],
+    "key_features": [
+      "Suivi d'inventaire en temps réel sur plusieurs localisations et canaux",
+      "Synchronisation multi-canaux automatique (Shopify, Amazon, WooCommerce)",
+      "Gestion des ordres de fabrication et workflows",
+      "Prévisions de demande et planification",
+      "Traçabilité des lots et numéros de série",
+      "Workflows avec codes-barres et gestion d'entrepôt",
+      "API accès inclus dans tous les plans"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous fabriquez et vendez des produits sur plusieurs canaux (Shopify, Amazon, etc.).",
+        "Vous avez besoin d'une synchronisation d'inventaire automatique entre canaux.",
+        "Vous gérez des ordres de fabrication et une chaîne d'approvisionnement."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite permanente avec tous les features.",
+        "Vous avez besoin d'un ERP enterprise très complexe.",
+        "Votre gestion d'inventaire est très simple ou manuelle."
+      ],
+      "threshold": "Katana convient aux PME manufacturières vendant multi-canaux ; pour un ERP complexe ou une gestion très simple, d'autres solutions conviennent mieux."
+    },
+    "pros": [
+      "Plan gratuit puissant pour essayer sans engagement.",
+      "Synchronisation multi-canaux automatique et temps réel.",
+      "Interface intuitive et accessible, pas de configuration complexe.",
+      "API incluse dans tous les plans.",
+      "Support réactif inclus."
+    ],
+    "cons": [
+      "Plan gratuit limité à 30 SKUs et 15 jours.",
+      "Plan Core peut être cher pour très petites opérations.",
+      "Intégrations tierces peuvent nécessiter du travail personnalisé."
+    ],
+    "use_cases": [
+      "Gérer une petite fabrication vendant sur Shopify et Amazon simultanément.",
+      "Synchroniser automatiquement les ordres entre canaux de vente.",
+      "Planifier la production en fonction de la demande prévue.",
+      "Tracker les lots et la traçabilité des produits."
+    ],
+    "relevant_for": ["PME manufacturières", "E-commerce de produits", "Petits ateliers", "Distributeurs multi-canaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manufacture and sell products across multiple channels (Shopify, Amazon, etc.).",
+        "You need automatic inventory sync between sales channels.",
+        "You manage production orders and supply chain."
+      ],
+      "avoidIf": [
+        "You need a permanent free solution with all features.",
+        "You need a complex enterprise ERP system.",
+        "Your inventory management is very simple or manual."
+      ],
+      "threshold": "Katana suits small manufacturers selling multi-channel; for complex ERP or simple management, other solutions fit better."
+    },
+    "pros": [
+      "Powerful free tier to try without commitment.",
+      "Automatic real-time multi-channel inventory sync.",
+      "Intuitive interface, no complex configuration.",
+      "API included in all plans.",
+      "Responsive support included."
+    ],
+    "cons": [
+      "Free plan limited to 30 SKUs and 15 days.",
+      "Core plan can be pricey for very small operations.",
+      "Third-party integrations may need custom work."
+    ],
+    "use_cases": [
+      "Manage small manufacturing selling on Shopify and Amazon simultaneously.",
+      "Automatically sync orders across sales channels.",
+      "Plan production based on demand forecasting.",
+      "Track lot numbers and product traceability."
+    ]
+  }
+}

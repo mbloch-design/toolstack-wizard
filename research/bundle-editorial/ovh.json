@@ -1,0 +1,106 @@
+{
+  "slug": "ovh",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OVHcloud — Hébergement web et cloud (site officiel)", "url": "https://www.ovhcloud.com" }
+  ],
+  "facts": {
+    "what": "Hébergeur et fournisseur cloud européen proposant hébergement web mutualisé, serveurs VPS, serveurs dédiés, stockage et services cloud à bas coût.",
+    "what_en": "European hosting and cloud provider offering shared web hosting, VPS servers, dedicated servers, storage, and cloud services at competitive prices.",
+    "pricing_model": "Abonnement mensuel ou annuel. Hébergement mutualisé à partir de prix très bas, VPS à partir de quelques euros/mois, serveurs dédiés haut de gamme.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite. Essai ou période d'argent retour sur certains produits selon les conditions." },
+    "plans": [
+      { "name": "Web Hosting Starter", "price": "À partir de 0,97 €/mois (env. 1,04 $/mois)" },
+      { "name": "Web Hosting Personal", "price": "À partir de 4,39 $/mois" },
+      { "name": "VPS (entrée)", "price": "À partir de 4,54 $/mois (2 vCores, 4 GB RAM)" },
+      { "name": "VPS (haut de gamme)", "price": "À partir de 45,39 $/mois (8 vCores, 24 GB RAM, NVMe)" }
+    ],
+    "key_features": [
+      "Sauvegarde quotidienne hors site (jusqu'à 30 jours)",
+      "Trafic illimité ou très généreux sur tous les plans",
+      "Installation une seule fois de CMS populaires (WordPress, etc.)",
+      "Support des bases de données (MySQL, PostgreSQL, etc.)",
+      "Comptes email inclus selon le plan",
+      "Protection SSL intégrée",
+      "Serveurs localisés en Europe",
+      "Infrastructure redondante et 24/7 support"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes en Europe et avez besoin d'un hébergeur RGPD.",
+        "Vous cherchez un très bon rapport prix/performance.",
+        "Vous avez besoin d'infrastructure scalable (web → VPS → dédié).",
+        "Vous voulez éviter les solutions cloud US (AWS, Azure)."
+      ],
+      "avoidIf": [
+        "Vous êtes hors d'Europe ou en zones couvertes par d'autres providers.",
+        "Vous avez besoin de support réactif en français (vérifier selon région).",
+        "Vous cherchez un platform-as-a-service simplifié (comme Vercel, Netlify)."
+      ],
+      "threshold": "OVHcloud excelle pour l'infrastructure auto-hébergée en Europe à bas coût ; pour un PaaS clé en main ou hors Europe, AWS/Azure/Vercel conviennent mieux."
+    },
+    "pros": [
+      "Prix extrêmement compétitifs, surtout pour le VPS.",
+      "Hébergeur européen avec conformité RGPD natif.",
+      "Évolutivité facile (mutualisé → VPS → dédié).",
+      "Sauvegarde quotidienne et redondance incluses.",
+      "Trafic illimité ou très généreux.",
+      "Une seule interface pour gérer tous les services."
+    ],
+    "cons": [
+      "Support client inégal selon la langue et la région.",
+      "Interface de contrôle moins intuitive que HostGator/Bluehost.",
+      "Pas d'offre gratuite pour débuter.",
+      "Performances réseau variables selon le datacentre."
+    ],
+    "use_cases": [
+      "Héberger un site WordPress ou Drupal à bas coût.",
+      "Exécuter une application web légère sur un VPS.",
+      "Stocker et servir des fichiers/assets statiques.",
+      "Déployer une infrastructure critique avec sauvegarde régulière.",
+      "Conformité RGPD pour données sensibles."
+    ],
+    "relevant_for": ["Freelances web", "PME / petites agences", "Startups lean européennes", "Développeurs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're based in Europe and need GDPR-compliant hosting.",
+        "You want excellent price-to-performance ratio.",
+        "You need scalable infrastructure (shared → VPS → dedicated).",
+        "You want to avoid US cloud providers (AWS, Azure)."
+      ],
+      "avoidIf": [
+        "You're outside Europe or in regions covered by other providers.",
+        "You need responsive support in your native language.",
+        "You seek simplified platform-as-a-service (like Vercel, Netlify)."
+      ],
+      "threshold": "OVHcloud excels for self-hosted infrastructure in Europe at low cost; for managed PaaS or outside Europe, AWS/Azure/Vercel fit better."
+    },
+    "pros": [
+      "Extremely competitive pricing, especially for VPS.",
+      "European hoster with native GDPR compliance.",
+      "Easy scalability (shared → VPS → dedicated).",
+      "Daily backup and redundancy included.",
+      "Unlimited or very generous traffic.",
+      "Single dashboard to manage all services."
+    ],
+    "cons": [
+      "Customer support quality varies by language and region.",
+      "Control panel less intuitive than HostGator/Bluehost.",
+      "No free tier to get started.",
+      "Network performance varies by datacenter."
+    ],
+    "use_cases": [
+      "Host a WordPress or Drupal site on a budget.",
+      "Run lightweight web apps on a VPS.",
+      "Store and serve static files/assets.",
+      "Deploy business-critical infrastructure with regular backups.",
+      "GDPR compliance for sensitive data."
+    ],
+    "relevant_for": ["Web freelancers", "SMBs / small agencies", "Lean European startups", "Independent developers"]
+  }
+}

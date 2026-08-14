@@ -1,0 +1,90 @@
+{
+  "slug": "inflow-inventory",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "inFlow Inventory Software Pricing (site officiel)", "url": "https://www.inflowinventory.com/software-pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion d'inventaire cloud conçu pour les petites et moyennes entreprises. Permet de suivre le stock, gérer les commandes, synchroniser plusieurs canaux de vente (Shopify, Amazon, WooCommerce), et planifier la production.",
+    "what_en": "Cloud inventory management software designed for small and mid-size product businesses. Track stock across multiple locations, sync orders from multiple sales channels (Shopify, Amazon, WooCommerce), manage production, and forecast demand.",
+    "pricing_model": "Abonnement mensuel avec trois plans basés sur le nombre de commandes et d'utilisateurs.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; pas de plan gratuit permanent. Abonnement payant requis." },
+    "plans": [
+      { "name": "Entrepreneur", "price": "186 $/mois (2 utilisateurs, 100 commandes/mois, 1 intégration, 1 localisation)" },
+      { "name": "Small Business", "price": "436 $/mois (5 utilisateurs, 1000 commandes/mois, 2 intégrations, localisations illimitées)" },
+      { "name": "Mid-Size", "price": "999 $/mois (10 utilisateurs, 5000 commandes/mois, 3 intégrations, accès utilisateur avancé)" }
+    ],
+    "key_features": [
+      "Suivi d'inventaire en temps réel sur plusieurs localisations",
+      "Synchronisation multi-canaux (Shopify, Amazon, WooCommerce)",
+      "Gestion des commandes et workflows de production",
+      "Traçabilité des numéros de lot et de série",
+      "Workflows optimisés par codes-barres",
+      "Prévisions de demande"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur plusieurs canaux (Shopify, Amazon, WooCommerce).",
+        "Vous avez besoin de synchronisation d'inventaire automatique.",
+        "Vous gérez une production ou un assemblage de produits."
+      ],
+      "avoidIf": [
+        "Votre gestion d'inventaire est très simple ou manuelle.",
+        "Vous ne vendez que sur un seul canal.",
+        "Vous cherchez une solution gratuite ou très bon marché."
+      ],
+      "threshold": "inFlow s'impose pour les entreprises multi-canaux avec une production complexe ; pour une gestion simple ou un budget réduit, un tableur ou un système gratuit peut suffire."
+    },
+    "pros": [
+      "Synchronisation multi-canaux automatique.",
+      "Interface intuitive avec gestion par codes-barres.",
+      "Plans évolutifs adaptés à la croissance.",
+      "Essai gratuit sans engagement."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Tarification peut être élevée pour petits volumes.",
+      "Support client variable selon les rapports."
+    ],
+    "use_cases": [
+      "Gérer l'inventaire pour une boutique Shopify, Amazon et WooCommerce simultanément.",
+      "Planifier et suivi une production manufacturée.",
+      "Automatiser la synchronisation des commandes entre canaux."
+    ],
+    "relevant_for": ["E-commerce multi-canal", "PME manufacturières", "Distributeurs", "Revendeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on multiple channels (Shopify, Amazon, WooCommerce).",
+        "You need automatic inventory sync across platforms.",
+        "You manage product manufacturing or assembly."
+      ],
+      "avoidIf": [
+        "Your inventory is simple or mostly manual.",
+        "You only sell on one platform.",
+        "You're looking for a free or ultra-low-cost solution."
+      ],
+      "threshold": "inFlow makes sense for multi-channel businesses with complex production; for simple management or tight budgets, spreadsheets or free systems suffice."
+    },
+    "pros": [
+      "Automatic multi-channel inventory sync.",
+      "Intuitive interface with barcode workflows.",
+      "Scalable plans growing with your business.",
+      "Free trial, no credit card required."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Pricing scales quickly with order volume.",
+      "Variable customer support reputation."
+    ],
+    "use_cases": [
+      "Manage inventory across Shopify, Amazon, and WooCommerce simultaneously.",
+      "Plan and track manufactured product inventory.",
+      "Automate order sync across multiple channels."
+    ]
+  }
+}

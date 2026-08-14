@@ -1,0 +1,85 @@
+{
+  "slug": "react-native",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "React Native — documentation officielle", "url": "https://reactnative.dev" }
+  ],
+  "facts": {
+    "what": "Framework open-source pour construire des applications mobiles natives sur iOS et Android en JavaScript/React. Un seul code source déploie sur plusieurs plateformes (iOS, Android, Web, Windows, macOS).",
+    "what_en": "Open-source framework for building native mobile applications on iOS and Android using JavaScript/React. Single codebase deploys across multiple platforms (iOS, Android, Web, Windows, macOS).",
+    "pricing_model": "Gratuit et open-source. Licence MIT. Pas de coût de licence, hosting ou déploiement inclus.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, MIT license." },
+    "plans": [],
+    "key_features": [
+      "Code partagé entre iOS et Android",
+      "Accès aux APIs natives du téléphone",
+      "Rechargement à chaud (live reloading)",
+      "Riche écosystème de bibliothèques (Expo, React Navigation, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des apps mobiles iOS et Android.",
+        "Vous maîtrisez JavaScript/React.",
+        "Vous préférez un code source unique pour plusieurs plateformes."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de performance ultra-optimisée sur mobile.",
+        "Vous n'êtes pas familier avec JavaScript.",
+        "Vous ciblez une seule plateforme (Swift pour iOS, Kotlin pour Android peut suffire)."
+      ],
+      "threshold": "React Native excelle pour développer rapidement des apps multiplateformes avec une équipe JavaScript/React ; pour une single-platform ou du gaming haute performance, un SDK natif convient mieux."
+    },
+    "pros": [
+      "Code partagé, développement multiplateformes rapide.",
+      "Forte communauté et écosystème riche.",
+      "Gratuit et open-source.",
+      "Accès complet aux APIs natives du téléphone."
+    ],
+    "cons": [
+      "Performance parfois en retrait par rapport au code natif.",
+      "Courbe d'apprentissage (JavaScript + concepts mobiles).",
+      "Dépendance à l'écosystème tiers pour certaines APIs."
+    ],
+    "use_cases": [
+      "Développer une app iPhone et Android en parallèle.",
+      "Prototype ou MVP rapide pour une startup mobile.",
+      "App avec logique métier complex (pas gaming)."
+    ],
+    "relevant_for": ["Développeurs JavaScript/React", "Startups", "Équipes agiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing iOS and Android apps.",
+        "You're proficient in JavaScript/React.",
+        "You prefer a single codebase across platforms."
+      ],
+      "avoidIf": [
+        "You need ultra-optimized mobile performance.",
+        "You're not familiar with JavaScript.",
+        "You're targeting a single platform (Swift for iOS, Kotlin for Android may suffice)."
+      ],
+      "threshold": "React Native excels for rapid cross-platform development with a JavaScript/React team; for single-platform or high-performance gaming, native SDKs fit better."
+    },
+    "pros": [
+      "Shared code, rapid cross-platform development.",
+      "Strong community and rich ecosystem.",
+      "Free and open-source.",
+      "Full access to native phone APIs."
+    ],
+    "cons": [
+      "Performance sometimes lags native code.",
+      "Learning curve (JavaScript + mobile concepts).",
+      "Dependency on third-party ecosystem for certain APIs."
+    ],
+    "use_cases": [
+      "Develop an iPhone and Android app in parallel.",
+      "Quick prototype or MVP for mobile startup.",
+      "App with complex business logic (not gaming)."
+    ],
+    "relevant_for": ["JavaScript/React developers", "Startups", "Agile teams"]
+  }
+}

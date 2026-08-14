@@ -1,0 +1,99 @@
+{
+  "slug": "python",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Python — Site officiel", "url": "https://www.python.org" }
+  ],
+  "facts": {
+    "what": "Langage de programmation interprété, haut niveau, libre et open source avec syntax simple et puissant. Utilisé en développement web, data science, machine learning, scripting et automation.",
+    "what_en": "Interpreted, high-level, free and open-source programming language with simple yet powerful syntax. Used for web development, data science, machine learning, scripting, and automation.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucun abonnement. Multiplateforme : Linux, macOS, Windows.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Langage open source sans limitation de fonctionnalités ni tier payant." },
+    "plans": [
+      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+    ],
+    "key_features": [
+      "Syntax simple et lisible (apprendre Python est rapide)",
+      "Interprété (développement itératif rapide)",
+      "Batteries included : stdlib complète et riche",
+      "Gestionnaire de packages pip et PyPI (4+ millions de paquets)",
+      "Typing optionnel pour type safety",
+      "Multiplateforme : Windows, macOS, Linux",
+      "Performance améliorer avec Cython, Numba ou C extensions"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en data science ou ML.",
+        "Vous êtes débutant et voulez un langage accessible.",
+        "Vous avez besoin d'un langage polyvalent (web, scripting, data).",
+        "Vous voullez éviter les frais de licence."
+      ],
+      "avoidIf": [
+        "Vous développez des applications extrêmement performance-critical (compilé préféré).",
+        "Vous avez besoin d'une compilation stricte pour safety."
+      ],
+      "threshold": "Python s'impose comme le langage de référence pour data science, ML et scripting ; adoptable par les débutants, scalable en production."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Syntax très accessible aux débutants.",
+      "Écosystème data science/ML quasi sans rival (NumPy, Pandas, TensorFlow).",
+      "Stdlib complète et bien documentée.",
+      "Performance améliorer possible avec C extensions.",
+      "Communauté massive et très accueillante."
+    ],
+    "cons": [
+      "Performance brute inférieure à langages compilés.",
+      "Thread management complexe (GIL).",
+      "Package management fragmenté (pip, poetry, conda).",
+      "Type system optionnel (bugs peuvent survenir)."
+    ],
+    "use_cases": [
+      "Développer une web app avec Django, FastAPI.",
+      "Analyser des données avec Pandas, Jupyter.",
+      "Entraîner un modèle ML avec TensorFlow, PyTorch.",
+      "Scripter et automatiser des tâches.",
+      "Prototyper rapidement une idée."
+    ],
+    "relevant_for": ["Débutants en programmation", "Data scientists", "Machine learning engineers", "DevOps/SRE"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing in data science or ML.",
+        "You're a beginner and want an accessible language.",
+        "You need a versatile language (web, scripting, data).",
+        "You want to avoid license costs."
+      ],
+      "avoidIf": [
+        "You're building extremely performance-critical apps (compiled preferred).",
+        "You need strict compilation for safety guarantees."
+      ],
+      "threshold": "Python is the reference language for data science, ML, and scripting; accessible to beginners, scalable to production."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Very accessible syntax for beginners.",
+      "Data science/ML ecosystem nearly unrivaled (NumPy, Pandas, TensorFlow).",
+      "Complete and well-documented stdlib.",
+      "Performance improvable with C extensions.",
+      "Massive and very welcoming community."
+    ],
+    "cons": [
+      "Raw performance inferior to compiled languages.",
+      "Complex thread management (GIL).",
+      "Fragmented package management (pip, poetry, conda).",
+      "Optional type system (bugs can slip through)."
+    ],
+    "use_cases": [
+      "Develop a web app with Django, FastAPI.",
+      "Analyze data with Pandas, Jupyter.",
+      "Train an ML model with TensorFlow, PyTorch.",
+      "Script and automate tasks.",
+      "Rapidly prototype an idea."
+    ]
+  }
+}

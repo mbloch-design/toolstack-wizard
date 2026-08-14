@@ -1,0 +1,87 @@
+{
+  "slug": "playwright",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Playwright — Documentation (site officiel)", "url": "https://playwright.dev" }
+  ],
+  "facts": {
+    "what": "Framework de test de navigateur multi-navigateur (chromium, firefox, webkit) maintenu par Microsoft, avec support du sharding et de l'exécution parallèle.",
+    "what_en": "Multi-browser test automation framework (Chromium, Firefox, WebKit) maintained by Microsoft, with built-in sharding and parallel execution capabilities.",
+    "pricing_model": "Entièrement gratuit et open source. Framework gratuit ; coûts additionnels possibles pour infrastructure CI/CD ou services gérés comme Azure App Testing.",
+    "free_tier": { "exists": true, "detail": "Framework entièrement gratuit sous licence MIT. Azure App Testing offre essai gratuit puis $0.01/minute Linux, $0.02/minute Windows." },
+    "plans": [
+      { "name": "Framework (libre)", "price": "Gratuit — pas de licence requise" },
+      { "name": "Azure App Testing (optionnel)", "price": "$0.01/minute Linux, $0.02/minute Windows après essai" }
+    ],
+    "key_features": [
+      "Support multi-navigateur (Chromium, Firefox, WebKit)",
+      "Exécution parallèle et sharding natifs",
+      "Locators auto-attendus",
+      "Network interception et mocking",
+      "Enregistrement vidéo et traces de débogage",
+      "Support cross-platform (Windows, macOS, Linux)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez une application web moderne.",
+        "Vous voulez un framework gratuit et puissant.",
+        "Vous besoin de tests cross-navigateur automatisés."
+      ],
+      "avoidIf": [
+        "Vous avez des besoins de test très légers."
+      ],
+      "threshold": "Playwright s'impose pour les équipes de QA modernes cherchant un framework complet et gratuit ; aucune friction pour adopter."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Framework moderne avec excellente DX.",
+      "Support multi-navigateur natif.",
+      "Sharding parallèle très efficace.",
+      "Maintenu par Microsoft, communauté active."
+    ],
+    "cons": [
+      "Coûts d'infrastructure CI/CD à prévoir.",
+      "Moins de plugins et d'intégrations que Cypress.",
+      "Syntaxe TypeScript peut être plus verbeuse."
+    ],
+    "use_cases": [
+      "Tester une application web en production.",
+      "Validation cross-navigateur automatisée.",
+      "Tests d'intégration et de bout en bout."
+    ],
+    "relevant_for": ["Équipes QA", "Développeurs", "Testeurs automatisés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're testing a modern web application.",
+        "You want a powerful, free framework.",
+        "You need cross-browser automated tests."
+      ],
+      "avoidIf": [
+        "You have very light testing needs."
+      ],
+      "threshold": "Playwright is the go-to for modern QA teams seeking a complete, free framework; no adoption friction."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Modern framework with excellent DX.",
+      "Native multi-browser support.",
+      "Efficient parallel sharding.",
+      "Maintained by Microsoft, active community."
+    ],
+    "cons": [
+      "CI/CD infrastructure costs to factor in.",
+      "Fewer plugins and integrations than Cypress.",
+      "TypeScript syntax can be more verbose."
+    ],
+    "use_cases": [
+      "Test a production web application.",
+      "Automated cross-browser validation.",
+      "End-to-end and integration testing."
+    ]
+  }
+}

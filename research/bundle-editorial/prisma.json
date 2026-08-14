@@ -1,0 +1,93 @@
+{
+  "slug": "prisma",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Prisma — Documentation ORM (site officiel)", "url": "https://www.prisma.io" }
+  ],
+  "facts": {
+    "what": "ORM type-safe pour Node.js et TypeScript, générant automatiquement un client de requête basé sur un schéma déclaratif. Support PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, CockroachDB.",
+    "what_en": "Type-safe ORM for Node.js and TypeScript with auto-generated query client based on declarative schema. Supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, CockroachDB.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucun abonnement.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Outil open source sans limitation de fonctionnalités ni tier payant." },
+    "plans": [
+      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+    ],
+    "key_features": [
+      "Schema déclaratif simple (schema.prisma)",
+      "Client auto-généré avec auto-complétion TypeScript",
+      "Prisma Migrate pour les migrations de schéma",
+      "Prisma Studio : GUI pour explorer/éditer les données",
+      "Support multi-DB (PostgreSQL, MySQL, SQLite, MongoDB)",
+      "Relations typées (1-to-many, many-to-many)",
+      "Transactions et upserts natifs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en Node.js/TypeScript.",
+        "Vous voulez type-safety pour votre base de données.",
+        "Vous avez plusieurs bases de données à supporter."
+      ],
+      "avoidIf": [
+        "Vous développez en Python ou autre langage.",
+        "Vous préférez du SQL brut (utilisez query builders comme Knex)."
+      ],
+      "threshold": "Prisma s'impose comme l'ORM de référence pour Node.js/TS ; expérience développeur supérieure avec auto-génération."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Type-safety complet pour requêtes DB.",
+      "Auto-génération du client simplifie la DX.",
+      "Migrations gérées sans friction.",
+      "Prisma Studio pour debugging/inspection.",
+      "Support multi-DB unique."
+    ],
+    "cons": [
+      "Overhead de compilation/génération.",
+      "Queries complexes peuvent être limitées par l'abstraction.",
+      "Écosystème plugin plus petit qu'alternatives."
+    ],
+    "use_cases": [
+      "Développer un backend API avec type-safety.",
+      "Gérer des migrations de schéma en équipe.",
+      "Supporter plusieurs bases de données.",
+      "Projets full-stack TypeScript (Next.js, etc.)."
+    ],
+    "relevant_for": ["Développeurs TypeScript/Node.js", "Full-stack engineers", "Architects"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing in Node.js/TypeScript.",
+        "You want type-safety for your database.",
+        "You need to support multiple databases."
+      ],
+      "avoidIf": [
+        "You're developing in Python or another language.",
+        "You prefer raw SQL (use query builders like Knex)."
+      ],
+      "threshold": "Prisma is the reference ORM for Node.js/TS; superior developer experience with auto-generation."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Complete type-safety for DB queries.",
+      "Auto-generated client simplifies DX.",
+      "Migrations managed without friction.",
+      "Prisma Studio for debugging/inspection.",
+      "Unique multi-DB support."
+    ],
+    "cons": [
+      "Overhead from compilation/generation.",
+      "Complex queries may be limited by abstraction.",
+      "Smaller plugin ecosystem than alternatives."
+    ],
+    "use_cases": [
+      "Develop a backend API with type-safety.",
+      "Manage schema migrations in a team.",
+      "Support multiple databases.",
+      "Full-stack TypeScript projects (Next.js, etc.)."
+    ]
+  }
+}

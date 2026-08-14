@@ -1,0 +1,91 @@
+{
+  "slug": "pytest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pytest — Documentation (site officiel)", "url": "https://docs.pytest.org" }
+  ],
+  "facts": {
+    "what": "Framework de test Python simplifié avec auto-découverte de tests, fixtures modulaires et plus de 850 plugins de communauté. Supporte tests unitaires, intégration et fonctionnels.",
+    "what_en": "Simplified Python testing framework with auto-discovery, modular fixtures, and 850+ community plugins. Supports unit, integration, and functional testing.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucun abonnement.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit sous licence MIT. Outil open source sans limitation de fonctionnalités." },
+    "plans": [
+      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+    ],
+    "key_features": [
+      "Auto-découverte de modules et fonctions de test",
+      "Fixtures modulaires pour test resources",
+      "Assertions simples et messages d'erreur détaillés",
+      "Plugins communauté (850+) : parallelization, reporting, mocking",
+      "Parameterized tests pour tests multiples",
+      "Markers pour organiser et filtrer les tests",
+      "Intégration CI/CD native"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en Python et testez régulièrement.",
+        "Vous voulez un framework simple et puissant.",
+        "Votre équipe collabore sur des tests."
+      ],
+      "avoidIf": [
+        "Vous utilisez unittest de la stdlib (pytest compatible, mais migration optionnelle)."
+      ],
+      "threshold": "Pytest s'impose comme le standard pour les tests Python modernes ; adoption quasi-universelle."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Framework simple avec assertions naturelles.",
+      "Auto-découverte = moins de boilerplate.",
+      "Fixtures réutilisables et modulaires.",
+      "Écosystème plugin très riche (850+).",
+      "Messages d'erreur exceptionnellement détaillés."
+    ],
+    "cons": [
+      "Courbe d'apprentissage initialement pour fixtures.",
+      "Plugins peuvent créer confusion si mal documentés.",
+      "Écosystème fragmenté avec trop de choix."
+    ],
+    "use_cases": [
+      "Tester une application Django/FastAPI.",
+      "Tester une libraire Python publique.",
+      "Tests de données pour data science projects.",
+      "Integration et tests de bout en bout."
+    ],
+    "relevant_for": ["Développeurs Python", "Data scientists", "Équipes QA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing in Python and test regularly.",
+        "You want a simple and powerful framework.",
+        "Your team collaborates on tests."
+      ],
+      "avoidIf": [
+        "You're using unittest from stdlib (pytest compatible, but migration optional)."
+      ],
+      "threshold": "Pytest is the standard for modern Python testing; near-universal adoption."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Simple framework with natural assertions.",
+      "Auto-discovery = less boilerplate.",
+      "Reusable and modular fixtures.",
+      "Very rich plugin ecosystem (850+).",
+      "Exceptionally detailed error messages."
+    ],
+    "cons": [
+      "Initial learning curve for fixtures.",
+      "Plugins can create confusion if poorly documented.",
+      "Fragmented ecosystem with too many choices."
+    ],
+    "use_cases": [
+      "Test a Django/FastAPI application.",
+      "Test a public Python library.",
+      "Data tests for data science projects.",
+      "Integration and end-to-end testing."
+    ]
+  }
+}

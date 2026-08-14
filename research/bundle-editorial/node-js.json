@@ -1,0 +1,98 @@
+{
+  "slug": "node-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Node.js — Runtime JavaScript officiel", "url": "https://nodejs.org" }
+  ],
+  "facts": {
+    "what": "Runtime JavaScript côté serveur, open source et gratuit, permettant d'exécuter du code JavaScript en dehors du navigateur pour construire serveurs, CLI, scripts et applications.",
+    "what_en": "Free, open-source server-side JavaScript runtime enabling code execution outside the browser for building servers, CLI tools, scripts, and applications.",
+    "pricing_model": "Gratuit, open source (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, aucun frais d'utilisation. Maintenu par la OpenJS Foundation." },
+    "plans": [],
+    "key_features": [
+      "Exécution JavaScript côté serveur et CLI",
+      "Architecture événementielle asynchrone et non-bloquante",
+      "Modules natifs intégrés (HTTP, file system, crypto, streams, threading)",
+      "Gestion efficace des threads de travail (worker threads)",
+      "Excellente performance pour les applications réseau I/O",
+      "Support multiplateforme (Windows, macOS, Linux)",
+      "Versions LTS (Long Term Support) et latest",
+      "Écosystème NPM massif (millions de paquets)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un backend web ou une API.",
+        "Vous voulez utiliser JavaScript partout (front + back).",
+        "Vous avez besoin d'une solution I/O asynchrone performante.",
+        "Vous développez des outils CLI ou des scripts."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de calculs intensifs en CPU (Node.js n'est pas optimal).",
+        "Vous préférez un langage statiquement typé ou compilé.",
+        "Votre équipe n'a aucune expérience JavaScript."
+      ],
+      "threshold": "Node.js domine le backend JavaScript moderne ; pour du calcul pur CPU ou sans JavaScript, Python ou Go conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Permet de partager du code front/back en JavaScript.",
+      "Excellentes performances réseau et I/O asynchrone.",
+      "Écosystème NPM très riche et actif.",
+      "Courbe d'apprentissage faible pour les développeurs JavaScript.",
+      "Multiplateforme et facile à déployer."
+    ],
+    "cons": [
+      "Moins performant pour les calculs CPU intensifs.",
+      "Typage faible (JavaScript) sans TypeScript.",
+      "Gestion de la mémoire moins prévisible que les langages compilés.",
+      "Écosystème NPM peut être fragile (dépendances innombrables)."
+    ],
+    "use_cases": [
+      "Construire une API REST ou GraphQL.",
+      "Créer un serveur web ou un microservice.",
+      "Développer des outils CLI ou des scripts d'automatisation.",
+      "Construire une application temps réel (WebSockets)."
+    ],
+    "relevant_for": ["Développeurs JavaScript fullstack", "Startups web", "Développeurs backend JavaScript", "DevOps / SRE"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a web backend or API.",
+        "You want to use JavaScript everywhere (front + back).",
+        "You need performant async I/O handling.",
+        "You develop CLI tools or scripts."
+      ],
+      "avoidIf": [
+        "You need intensive CPU calculations (Node.js isn't optimal).",
+        "You prefer statically typed or compiled languages.",
+        "Your team has no JavaScript experience."
+      ],
+      "threshold": "Node.js dominates modern JavaScript backends; for CPU-intensive work or non-JavaScript stacks, Python or Go fit better."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Enables code sharing between front and back in JavaScript.",
+      "Excellent async I/O performance and network handling.",
+      "Very rich and active NPM ecosystem.",
+      "Low learning curve for JavaScript developers.",
+      "Cross-platform and easy to deploy."
+    ],
+    "cons": [
+      "Less performant for CPU-intensive calculations.",
+      "Weak typing (JavaScript) without TypeScript.",
+      "Memory management less predictable than compiled languages.",
+      "NPM ecosystem can be fragile (countless dependencies)."
+    ],
+    "use_cases": [
+      "Build a REST or GraphQL API.",
+      "Create a web server or microservice.",
+      "Develop CLI tools or automation scripts.",
+      "Build real-time applications (WebSockets)."
+    ]
+  }
+}

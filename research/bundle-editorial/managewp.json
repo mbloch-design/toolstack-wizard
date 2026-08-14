@@ -1,0 +1,104 @@
+{
+  "slug": "managewp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "ManageWP — Site officiel", "url": "https://managewp.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de gestion WordPress permettant de surveiller et maintenir des sites à partir d'un tableau de bord unique. Offre des mises à jour groupées, sauvegardes, monitoring de sécurité et automatisation des flux de travail pour les agences.",
+    "what_en": "SaaS WordPress management platform enabling monitoring and maintenance of multiple sites from a unified dashboard. Includes bulk updates, backups, security checks, and workflow automation for agencies.",
+    "pricing_model": "Freemium : fonctionnalités de base gratuites pour tous les sites. Modules premium facturés mensuellement par site ou par bundle forfaitaire pour agences.",
+    "free_tier": { "exists": true, "detail": "Chaque site peut utiliser les fonctionnalités essentielles gratuitement. Les modules premium (add-ons) sont facturés à l'usage ou par forfait." },
+    "plans": [
+      { "name": "Core (Gratuit)", "price": "Gratuit" },
+      { "name": "Bundle Agence (Premium)", "price": "150 $/mois (jusqu'à 100 sites avec tous les modules)" }
+    ],
+    "key_features": [
+      "Tableau de bord centralisé pour tous les sites",
+      "Mises à jour groupées de plugins, thèmes et noyau",
+      "Sauvegardes quotidiennes et restauration",
+      "Monitoring de sécurité et vulnérabilités",
+      "Optimisation des performances",
+      "Rapports blancs personnalisables",
+      "Automatisation des flux de travail",
+      "Supports 2+ millions de sites gérés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs sites WordPress clients.",
+        "Vous voulez une solution SaaS clés en main sans auto-hébergement.",
+        "Vous avez besoin d'automatisation et de rapports pour les clients.",
+        "Vous cherchez une approche payante à l'usage plutôt qu'un abonnement fixe."
+      ],
+      "avoidIf": [
+        "Vous préférez rester entièrement auto-hébergé.",
+        "Vous ne gérez qu'un seul site WordPress.",
+        "Vous avez un budget très limité pour tous les modules premium."
+      ],
+      "threshold": "ManageWP convient aux agences cherchant une solution SaaS complète et flexible ; pour l'auto-hébergement ou la gestion minimaliste, MainWP ou un autre outil local peut suffire."
+    },
+    "pros": [
+      "Solution SaaS complète, aucun auto-hébergement requis.",
+      "Modèle freemium flexible — payez uniquement pour les modules utilisés.",
+      "Sauvegardes automatiques et monitoring continu.",
+      "Bundle agence abordable pour 100 sites.",
+      "Rapports blancs pour marquer votre agence."
+    ],
+    "cons": [
+      "Coûts additionnels rapides avec modules premium.",
+      "L'interface peut être complexe pour les débutants.",
+      "Moins de contrôle qu'une solution auto-hébergée.",
+      "Support limité sur le plan gratuit."
+    ],
+    "use_cases": [
+      "Gérer un portefeuille client WordPress via une interface SaaS.",
+      "Automatiser les sauvegardes et les mises à jour de sécurité.",
+      "Générer des rapports de performances pour les clients.",
+      "Surveiller la sécurité et les vulnérabilités en temps réel."
+    ],
+    "relevant_for": [
+      "Agences WordPress",
+      "Freelances gérant plusieurs sites",
+      "Propriétaires de sites WordPress cherchant un monitoring centralisé",
+      "Consultants proposant du hosting managé"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple WordPress client sites.",
+        "You want a turnkey SaaS solution without self-hosting.",
+        "You need automation and client-facing reports.",
+        "You prefer pay-as-you-go over flat-rate subscriptions."
+      ],
+      "avoidIf": [
+        "You prefer full self-hosted control.",
+        "You manage only one WordPress site.",
+        "You have a tight budget for premium modules."
+      ],
+      "threshold": "ManageWP suits agencies seeking a complete, flexible SaaS solution; for self-hosting or minimal management, MainWP or another tool may suffice."
+    },
+    "pros": [
+      "Complete SaaS solution—no self-hosting required.",
+      "Flexible freemium model—pay only for modules used.",
+      "Automated backups and continuous monitoring.",
+      "Affordable agency bundle for 100 sites.",
+      "White-label reports to brand your agency."
+    ],
+    "cons": [
+      "Premium module costs add up quickly.",
+      "Interface can be complex for beginners.",
+      "Less control than self-hosted solutions.",
+      "Limited support on free tier."
+    ],
+    "use_cases": [
+      "Manage a WordPress client portfolio via SaaS.",
+      "Automate backups and security updates.",
+      "Generate performance reports for clients.",
+      "Monitor security and vulnerabilities in real time."
+    ]
+  }
+}

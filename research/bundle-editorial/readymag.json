@@ -1,0 +1,90 @@
+{
+  "slug": "readymag",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Readymag — design tool (site officiel)", "url": "https://readymag.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de design freeform no-code pour créer des sites web, portfolios, présentations interactives et publications numériques. Focus sur la typographie avancée, animations natives et interactions complexes sans code.",
+    "what_en": "No-code freeform design tool for creating web sites, portfolios, interactive presentations and digital publications. Focus on advanced typography, native animations and complex interactions without code.",
+    "pricing_model": "Gratuit (avec branding Readymag et limitations), puis abonnements mensuels/annuels (annuel avec réduction).",
+    "free_tier": { "exists": true, "detail": "Gratuit : création et publication illimitée, mais branding Readymag, domaine personnalisé non inclus." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Personal", "price": "14 $/mois (environ 168 $ annuels)" },
+      { "name": "Freelancer", "price": "22 $/mois (environ 264 $ annuels)" },
+      { "name": "Advanced", "price": "58.50 $/mois (environ 702 $ annuels)" }
+    ],
+    "key_features": [
+      "Canevas de design freeform",
+      "Animations et interactions natives",
+      "Typographie avancée et contrôles de mise en page",
+      "Intégrations (Stripe, Shopify, Google Analytics, MetaPixel)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes designer et cherchez un contrôle créatif total.",
+        "Vous créez des sites très personnalisés ou des publications.",
+        "Vous voulez une alternative aux builders visuels classiques (Webflow, Figma)."
+      ],
+      "avoidIf": [
+        "Vous voulez un site clé en main avec templates.",
+        "Vous cherchez une plateforme très facile pour débutants.",
+        "Vous avez besoin de e-commerce avancé ou SEO intensif."
+      ],
+      "threshold": "Readymag s'impose pour les designers pros cherchant du contrôle créatif et des animations ; pour un site vitrine simple ou e-shop, un builder classique convient mieux."
+    },
+    "pros": [
+      "Contrôle créatif total, design freeform.",
+      "Animations et interactions natives, sans code.",
+      "Typographie et mise en page avancée.",
+      "Gratuit pour débuter."
+    ],
+    "cons": [
+      "Courbe d'apprentissage (unique UI).",
+      "Features e-commerce et SEO basiques.",
+      "Branding Readymag au gratuit."
+    ],
+    "use_cases": [
+      "Créer un portfolio ou site de designer.",
+      "Concevoir une landing page très personnalisée.",
+      "Publier une présentation interactive ou zine."
+    ],
+    "relevant_for": ["Designers", "Créatifs", "Freelancers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a designer seeking full creative control.",
+        "You're creating highly customized sites or publications.",
+        "You want an alternative to classic visual builders (Webflow, Figma)."
+      ],
+      "avoidIf": [
+        "You want a ready-made site with templates.",
+        "You're looking for a very beginner-friendly platform.",
+        "You need advanced e-commerce or intensive SEO."
+      ],
+      "threshold": "Readymag excels for pro designers seeking creative control and animations; for a simple brochure site or shop, a classic builder fits better."
+    },
+    "pros": [
+      "Full creative control, freeform design.",
+      "Native animations and interactions, code-free.",
+      "Advanced typography and layout.",
+      "Free to start."
+    ],
+    "cons": [
+      "Learning curve (unique UI).",
+      "Basic e-commerce and SEO features.",
+      "Readymag branding on free tier."
+    ],
+    "use_cases": [
+      "Build a design portfolio or designer website.",
+      "Design a highly customized landing page.",
+      "Publish an interactive presentation or zine."
+    ],
+    "relevant_for": ["Designers", "Creatives", "Freelancers"]
+  }
+}

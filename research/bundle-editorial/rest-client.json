@@ -1,0 +1,88 @@
+{
+  "slug": "rest-client",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "REST Client — VS Code extension (marketplace officiel)", "url": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client" }
+  ],
+  "facts": {
+    "what": "Extension VS Code gratuite pour tester des APIs REST directement depuis l'éditeur. Envoie des requêtes HTTP, affiche les réponses, gère les variables d'environnement et les authentifications (Basic, OAuth, AWS Sig) sans quitter VS Code.",
+    "what_en": "Free VS Code extension to test REST APIs directly from the editor. Send HTTP requests, display responses, manage environment variables and authentications (Basic, OAuth, AWS Sig) without leaving VS Code.",
+    "pricing_model": "Entièrement gratuit. Pas de plan payant, pas d'abonnement.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit (7.4M+ installs, rating 5★)." },
+    "plans": [],
+    "key_features": [
+      "Envoyer/annuler/relancer des requêtes HTTP depuis l'éditeur",
+      "Support GraphQL et cURL",
+      "Historique et ré-exécution des requêtes",
+      "Variables d'environnement et cookies",
+      "Authentifications : Basic, Digest, OAuth, AWS Sig v4"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez régulièrement des APIs REST/GraphQL.",
+        "Vous voulez rester dans VS Code sans ouvrir Postman/Insomnia.",
+        "Vous gérez plusieurs environnements (dev, staging, prod) avec des variables."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une interface graphique très visuelle (Postman/Insomnia mieux).",
+        "Vous testez beaucoup d'APIs simultanément (collection management avancé).",
+        "Vous êtes hors VS Code (autre IDE ou éditeur)."
+      ],
+      "threshold": "REST Client excelle pour les devs VS Code testant des APIs rapidement ; pour des besoins avancés (mocking, automation, teams), Postman/Insomnia offrent plus."
+    },
+    "pros": [
+      "Entièrement gratuit et intégré VS Code.",
+      "Fichiers .http/.rest versionnables en git.",
+      "Support variables d'environnement et authentifications.",
+      "Interface légère et rapide.",
+      "Génération de snippets de code."
+    ],
+    "cons": [
+      "Pas de GUI visuelle (fichiers texte .http).",
+      "Menos de features que Postman/Insomnia.",
+      "Limité à VS Code."
+    ],
+    "use_cases": [
+      "Tester une API REST pendant le développement.",
+      "Créer des scripts de test d'API versionnés.",
+      "Documenter les endpoints avec des requêtes exécutables."
+    ],
+    "relevant_for": ["Développeurs backend", "Full-stack developers", "QA engineers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly test REST/GraphQL APIs.",
+        "You want to stay in VS Code without opening Postman/Insomnia.",
+        "You manage multiple environments (dev, staging, prod) with variables."
+      ],
+      "avoidIf": [
+        "You need a very visual GUI (Postman/Insomnia better).",
+        "You test many APIs simultaneously (advanced collection management).",
+        "You're outside VS Code (another IDE or editor)."
+      ],
+      "threshold": "REST Client excels for VS Code devs testing APIs quickly; for advanced needs (mocking, automation, teams), Postman/Insomnia offer more."
+    },
+    "pros": [
+      "Completely free and integrated in VS Code.",
+      ".http/.rest files versionable in git.",
+      "Environment variables and authentication support.",
+      "Lightweight and fast interface.",
+      "Code snippet generation."
+    ],
+    "cons": [
+      "No visual GUI (text-based .http files).",
+      "Fewer features than Postman/Insomnia.",
+      "Limited to VS Code."
+    ],
+    "use_cases": [
+      "Test a REST API during development.",
+      "Create versioned API test scripts.",
+      "Document endpoints with executable requests."
+    ],
+    "relevant_for": ["Backend developers", "Full-stack developers", "QA engineers"]
+  }
+}

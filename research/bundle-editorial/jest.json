@@ -1,0 +1,95 @@
+{
+  "slug": "jest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Jest — JavaScript Testing Framework (site officiel)", "url": "https://jestjs.io" }
+  ],
+  "facts": {
+    "what": "Framework de test JavaScript moderne, conçu pour être approachable et facile à configurer. Fournit tout ce qu'il faut (assertions, mocks, snapshots, coverage) dans un package unifié, zéro configuration sur la plupart des projets.",
+    "what_en": "Modern JavaScript testing framework designed to be approachable and easy to set up. Provides everything in one package (assertions, mocks, snapshots, coverage)—zero config on most projects.",
+    "pricing_model": "Gratuit et open source, maintenu par la OpenJS Foundation. Pas de version payante ou enterprise spéciale.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Framework open source géré par 600+ contributeurs et supporté par l'OpenJS Foundation." },
+    "plans": [
+      { "name": "Framework complet", "price": "Gratuit (open source, licence MIT)" }
+    ],
+    "key_features": [
+      "Configuration zéro (zero-config) sur Babel, TypeScript, React, Angular, Vue",
+      "Snapshots pour tracker les objets de grande taille",
+      "Tests isolés et parallélisés (chaque test dans son process)",
+      "Coverage intégré avec --coverage flag",
+      "Mocks faciles et Mock Functions riche",
+      "Messages d'erreur détaillés et contextualisés",
+      "Support Node.js, Browser (jsdom), TypeScript"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en JavaScript/TypeScript et besoin de tests unitaires.",
+        "Vous cherchez un framework de test moderne et sans configuration compliquée.",
+        "Vous testez des applications React, Angular, Vue ou Node.js."
+      ],
+      "avoidIf": [
+        "Vous testez surtout des interfaces utilisateur complexes (préférez Playwright, Cypress).",
+        "Vous n'avez pas besoin de tests automatisés.",
+        "Vous préférez un framework très léger ou minimaliste."
+      ],
+      "threshold": "Jest s'impose comme standard pour les tests unitaires et snapshots JavaScript ; pour des tests e2e complexes ou très légers, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Gratuit et open source, aucun coût caché.",
+      "Zéro configuration sur la plupart des projets.",
+      "Snapshots et mocks puissants intégrés.",
+      "Coverage de code et rapports détaillés.",
+      "Très large communauté et documentation.",
+      "Parallélisation automatique des tests."
+    ],
+    "cons": [
+      "Peut être lourd pour des tests très simples.",
+      "Configuration personnalisée peut devenir complexe.",
+      "Moins adapté pour des tests e2e de navigateur complets."
+    ],
+    "use_cases": [
+      "Écrire des tests unitaires pour une librairie JavaScript.",
+      "Tester les composants React avec snapshots.",
+      "Générer des rapports de couverture de code.",
+      "Configurer une suite de tests CI/CD."
+    ],
+    "relevant_for": ["Développeurs JavaScript/TypeScript", "Équipes frontend React", "Mainteneurs de librairies", "QA engineers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in JavaScript/TypeScript and need unit tests.",
+        "You want a modern, zero-config testing framework.",
+        "You're testing React, Angular, Vue, or Node.js apps."
+      ],
+      "avoidIf": [
+        "You're mostly testing complex UI flows (try Playwright, Cypress).",
+        "You don't need automated tests.",
+        "You prefer very lightweight or minimal frameworks."
+      ],
+      "threshold": "Jest is the standard for JavaScript unit and snapshot testing; for complex e2e or ultra-minimal needs, other tools fit better."
+    },
+    "pros": [
+      "Free and open source, zero cost.",
+      "Zero config on most projects.",
+      "Built-in snapshots and powerful mocks.",
+      "Code coverage and detailed reports.",
+      "Huge community and documentation.",
+      "Automatic test parallelization."
+    ],
+    "cons": [
+      "Can be heavy for very simple tests.",
+      "Custom configuration can become complex.",
+      "Less suited for full browser e2e testing."
+    ],
+    "use_cases": [
+      "Write unit tests for a JavaScript library.",
+      "Test React components with snapshots.",
+      "Generate code coverage reports.",
+      "Set up a CI/CD test suite."
+    ]
+  }
+}

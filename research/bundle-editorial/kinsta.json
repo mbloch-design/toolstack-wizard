@@ -1,0 +1,98 @@
+{
+  "slug": "kinsta",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kinsta — Managed WordPress Hosting (site officiel)", "url": "https://kinsta.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'hébergement WordPress managé pour agences et entreprises. Offre containers isolés, CDN global via 30+ data centers, performance optimisée, infrastructure sécurisée (WAF entreprise, protection DDoS, malware removal), support expert 24/7 en 8 langues.",
+    "what_en": "Managed WordPress hosting platform for agencies and enterprises. Isolated containers, global CDN via 30+ data centers, optimized performance, enterprise-grade security (WAF, DDoS protection, malware removal), 24/7 expert support in 8 languages.",
+    "pricing_model": "Abonnement cloud managé. Tarification non affichée publiquement sur la page d'accueil ; contacter pour devis. Tous les plans incluent valeur dépassant les montants sur la page officielle.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Essai ou devis personnalisé requis. Satisfait ou remboursé implicite selon politique standard." },
+    "plans": [
+      { "name": "Plans variables", "price": "Tarification personnalisée (contact pour devis, tous les plans incluent 300+ $ de valeur en outils inclus)" }
+    ],
+    "key_features": [
+      "Containers isolés pour chaque site (sécurité et performance)",
+      "CDN global via 30+ data centers",
+      "Uptime SLA jusqu'à 99,99%",
+      "WAF entreprise avec protection DDoS",
+      "Malware removal gratuit inclus",
+      "Alertes de vulnérabilité et sauvegardes",
+      "Migrations gratuites de site",
+      "Environnements staging et outils développement",
+      "Support expert 24/7 en 8 langues",
+      "Monitoring toutes les 3 minutes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous hébergez un site WordPress important (agence, e-commerce, média).",
+        "Vous prioritisez la performance et la sécurité.",
+        "Vous avez besoin d'un support expert et de uptime garanti."
+      ],
+      "avoidIf": [
+        "Vous cherchez l'hébergement le moins cher du marché.",
+        "Vous n'avez pas besoin de WordPress (c'est une plateforme WordPress-only).",
+        "Vous géreriez tout vous-même (vous préférez un VPS classique)."
+      ],
+      "threshold": "Kinsta convient aux agences et aux sites importants prioritarisant perf/sécu ; pour un budget très réduit ou un non-WordPress, des mutualisés classiques ou VPS conviennent mieux."
+    },
+    "pros": [
+      "Infrastructure isolée, performance optimale.",
+      "Support expert réactif 24/7 en français.",
+      "Sécurité entreprise (WAF, DDoS, malware removal).",
+      "Migration gratuite depuis un ancien hébergement.",
+      "Uptime SLA garanti et monitoring continu."
+    ],
+    "cons": [
+      "Tarification non publique, peut être chère.",
+      "WordPress only (pas d'autres CMS ou applications).",
+      "Overkill pour un petit blog personnel.",
+      "Contrat minimum ou engagement probable."
+    ],
+    "use_cases": [
+      "Héberger un site d'agence web WordPress haute performance.",
+      "Gérer une boutique e-commerce WordPress avec trafic élevé.",
+      "Monter un site média ou publication avec besoin de fiabilité.",
+      "Migrer depuis un hébergement peu fiable vers performant."
+    ],
+    "relevant_for": ["Agences web", "Sites d'entreprise", "E-commerce WordPress", "Éditeurs/médias"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You host an important WordPress site (agency, e-commerce, media).",
+        "You prioritize performance and security.",
+        "You need expert support and guaranteed uptime."
+      ],
+      "avoidIf": [
+        "You need the cheapest hosting on the market.",
+        "You're not running WordPress (WordPress-only platform).",
+        "You'd manage everything yourself (prefer traditional VPS)."
+      ],
+      "threshold": "Kinsta suits agencies and important sites prioritizing perf/security; for tight budget or non-WordPress, shared hosting or VPS work better."
+    },
+    "pros": [
+      "Isolated infrastructure, optimal performance.",
+      "Responsive 24/7 expert support in multiple languages.",
+      "Enterprise-grade security (WAF, DDoS, malware removal).",
+      "Free migrations from your old host.",
+      "Guaranteed SLA uptime and continuous monitoring."
+    ],
+    "cons": [
+      "Pricing not public, potentially expensive.",
+      "WordPress only (no other CMS or apps).",
+      "Overkill for a small personal blog.",
+      "Likely minimum contract or commitment."
+    ],
+    "use_cases": [
+      "Host a high-performance WordPress agency site.",
+      "Run a WordPress e-commerce store with high traffic.",
+      "Build a media site or publication needing reliability.",
+      "Migrate from unreliable hosting to performance-focused."
+    ]
+  }
+}

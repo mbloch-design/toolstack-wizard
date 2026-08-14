@@ -1,0 +1,92 @@
+{
+  "slug": "postgresql",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PostgreSQL — Site officiel", "url": "https://www.postgresql.org" }
+  ],
+  "facts": {
+    "what": "Base de données relationnelle open source avancée avec 35+ ans de développement, offrant conformité SQL, extensibilité, support JSON/JSONB et performance en production.",
+    "what_en": "Advanced open-source relational database with 35+ years of active development, featuring SQL compliance, extensibility, JSON support, and proven production performance.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun frais de licence. Coûts optionnels pour hébergement cloud (AWS, Heroku, Aiven, etc.).",
+    "free_tier": { "exists": true, "detail": "Le moteur PostgreSQL est gratuit. Hébergement : options gratuites disponibles (Aiven 1 GB free, Render 1 GB free)." },
+    "plans": [
+      { "name": "PostgreSQL (gratuit)", "price": "Gratuit — logiciel open source" },
+      { "name": "Hébergement cloud (optionnel)", "price": "Montants sur la page officielle du provider" }
+    ],
+    "key_features": [
+      "Conformité ACID complète",
+      "Support JSON et JSONB pour données semi-structurées",
+      "Extensibilité : custom types, opérateurs, fonctions",
+      "Full-text search et recherche avancée",
+      "Réplication et haute disponibilité",
+      "Window functions et CTEs",
+      "Partitionnement de tables natif"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une base de données SQL robuste et fiable.",
+        "Vous voulez éviter les frais de licence propriétaires.",
+        "Vous avez des données complexes ou semi-structurées (JSON)."
+      ],
+      "avoidIf": [
+        "Vous cherchez une base de données très simple (SQLite suffit).",
+        "Vous avez besoin de propriétaire commercial pour support officiel."
+      ],
+      "threshold": "PostgreSQL s'impose pour toute application sérieuse nécessitant une BD relationnelle ; standard industrie reconnu."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Moteur très stable avec 35+ ans de développement.",
+      "Conformité SQL excellente.",
+      "Support JSON/JSONB pour flexibilité.",
+      "Extensibilité et customisation native.",
+      "Communauté mondiale très active."
+    ],
+    "cons": [
+      "Configuration initiale peut être complexe pour débutants.",
+      "Auto-hébergement demande maintenance.",
+      "Documentation moins accessible que certains DB commerciaux."
+    ],
+    "use_cases": [
+      "Backend d'une application SaaS ou web.",
+      "Entreposage de données structurées et semi-structurées.",
+      "Systèmes avec exigences élevées de conformité ACID."
+    ],
+    "relevant_for": ["Développeurs full-stack", "Architectes données", "Startups SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a robust and reliable SQL database.",
+        "You want to avoid proprietary license costs.",
+        "You have complex or semi-structured data (JSON)."
+      ],
+      "avoidIf": [
+        "You're building something very simple (SQLite is enough).",
+        "You need a commercial vendor for official support."
+      ],
+      "threshold": "PostgreSQL is the standard for any serious application needing a relational database; proven industry standard."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Very stable engine with 35+ years of development.",
+      "Excellent SQL compliance.",
+      "JSON/JSONB support for flexibility.",
+      "Native extensibility and customization.",
+      "Highly active global community."
+    ],
+    "cons": [
+      "Initial setup can be complex for beginners.",
+      "Self-hosting requires maintenance.",
+      "Documentation sometimes less accessible than commercial DBs."
+    ],
+    "use_cases": [
+      "Backend for a SaaS or web application.",
+      "Storage of structured and semi-structured data.",
+      "Systems with high ACID compliance requirements."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "prettier",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Prettier — Documentation officielle", "url": "https://prettier.io" }
+  ],
+  "facts": {
+    "what": "Formateur de code opinionné qui applique un style cohérent en parsant le code et le ré-imprimant selon ses propres règles. Supporte JavaScript, TypeScript, JSON, CSS, HTML, Markdown et plus via plugins.",
+    "what_en": "Opinionated code formatter that enforces consistent style by parsing code and reprinting it with its own rules. Supports JavaScript, TypeScript, JSON, CSS, HTML, Markdown, and more via plugins.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucun abonnement.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Outil open source sans limitation de fonctionnalités ni tier payant." },
+    "plans": [
+      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+    ],
+    "key_features": [
+      "Formatage opinionné pour cohérence uniformisée",
+      "Support multi-langages : JS, TS, JSON, CSS, HTML, Markdown, YAML",
+      "Plugins de la communauté pour GraphQL, SQL, Vue, etc.",
+      "Intégration IDE (VS Code, Vim, Atom)",
+      "CLI et pre-commit hooks",
+      "Online formatter web sans installation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe discute du formatage de code.",
+        "Vous voulez une seule et unique règle de style appliquée automatiquement.",
+        "Vous travaillez sur JavaScript/TypeScript en équipe."
+      ],
+      "avoidIf": [
+        "Vous préférez personnaliser entièrement votre style (utilisez ESLint).",
+        "Vous n'avez pas besoin d'automatisation du formatage."
+      ],
+      "threshold": "Prettier élimine les débats de formatage ; adopter Prettier est la décision la plus efficace pour une équipe moderne."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Élimine les débats de style en équipe.",
+      "Intégration facile en pre-commit et CI/CD.",
+      "Support multi-langages complet.",
+      "Formatage opinionné = moins de configuration."
+    ],
+    "cons": [
+      "Peu flexible si vous avez des préférences de style fortes.",
+      "Peut reformatter du code existant de façon inattendue.",
+      "Nécessite une discipline d'équipe pour l'adopter."
+    ],
+    "use_cases": [
+      "Uniformiser le style d'une base de code JavaScript/TypeScript.",
+      "Automatiser le formatage en pre-commit.",
+      "Formatter du JSON, CSS, Markdown en équipe."
+    ],
+    "relevant_for": ["Équipes de développement", "Développeurs full-stack", "Projets open source"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team argues about code formatting.",
+        "You want a single style rule applied automatically.",
+        "You work on JavaScript/TypeScript in a team."
+      ],
+      "avoidIf": [
+        "You prefer to fully customize your style (use ESLint).",
+        "You don't need formatting automation."
+      ],
+      "threshold": "Prettier eliminates formatting debates; adopting Prettier is the most effective decision for a modern team."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Eliminates style debates in a team.",
+      "Easy integration in pre-commit and CI/CD.",
+      "Full multi-language support.",
+      "Opinionated formatting = less configuration."
+    ],
+    "cons": [
+      "Little flexibility if you have strong style preferences.",
+      "Can reformat existing code unexpectedly.",
+      "Requires team discipline to adopt."
+    ],
+    "use_cases": [
+      "Standardize the style of a JavaScript/TypeScript codebase.",
+      "Automate formatting in pre-commit.",
+      "Format JSON, CSS, Markdown as a team."
+    ]
+  }
+}

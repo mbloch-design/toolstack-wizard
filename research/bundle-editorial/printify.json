@@ -1,0 +1,95 @@
+{
+  "slug": "printify",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Printify — Pricing (site officiel)", "url": "https://printify.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'impression à la demande (print-on-demand) connectée à plusieurs fournisseurs de production, permettant de vendre des produits personnalisés directement via Shopify, Etsy, eBay.",
+    "what_en": "Print-on-demand platform connected to multiple production vendors, enabling direct sales of personalized products via Shopify, Etsy, and eBay.",
+    "pricing_model": "Free plan avec montants sur page officielle pour Premium. Revenu via marges de fabrication, pas de frais initiaux. Tiering par features (nombre de boutiques, réductions).",
+    "free_tier": { "exists": true, "detail": "Free : $0/mois avec 5 boutiques, designs illimités, pas de réductions produit ; montants sur la page officielle pour Premium." },
+    "plans": [
+      { "name": "Free", "price": "$0/month (5 stores, no discounts)" },
+      { "name": "Premium", "price": "$24.99/month annual ($39/month monthly) — up to 33% product discounts" },
+      { "name": "Enterprise", "price": "Custom pricing (unlimited stores, larger discounts)" }
+    ],
+    "key_features": [
+      "Intégration avec Shopify, Etsy, eBay, TikTok Shop",
+      "Catalogue de produits vaste (t-shirts, mugs, posters, etc.)",
+      "Réductions produits aux plans payants",
+      "AI Mockups pour preview des designs",
+      "Mentorship 1:1 (Premium, Sellers Club PRO)",
+      "Gestion des commandes unifiée (Printify Connect)",
+      "Support client 24/7"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des produits personnalisés ou branded.",
+        "Vous avez plusieurs boutiques en ligne à gérer.",
+        "Vous voulez un modèle sans stock initial."
+      ],
+      "avoidIf": [
+        "Vous vendez peu de produits et un tier gratuit suffit.",
+        "Vous avez besoin de marges très élevées (POD limite naturellement les marges)."
+      ],
+      "threshold": "Printify s'impose pour les vendeurs multi-canaux cherchant la scalabilité POD ; Free tier testé puis Premium pour croissance."
+    },
+    "pros": [
+      "Entièrement gratuit pour commencer (5 boutiques).",
+      "Sans stock : lancer sans investissement capital.",
+      "Intégration multi-canaux (Shopify, Etsy, eBay, TikTok).",
+      "Catalogue produits très varié.",
+      "Support client 24/7 de qualité."
+    ],
+    "cons": [
+      "Marges réduites par rapport à production interne.",
+      "Qualité et délai dépendent du fournisseur.",
+      "Premium offre peu d'ajout pour le prix.",
+      "Concurrence POD élevée."
+    ],
+    "use_cases": [
+      "Lancer une marque de vêtements sans stock initial.",
+      "Vendre des produits branded via plusieurs canaux.",
+      "Tester un design sur un petit volume avant production.",
+      "Business accessoires : mugs, posters, hoodies."
+    ],
+    "relevant_for": ["E-entrepreneurs", "Créateurs de contenu", "Petites marques de mode"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell personalized or branded products.",
+        "You manage multiple online stores.",
+        "You want a model with no initial stock."
+      ],
+      "avoidIf": [
+        "You sell few products and free tier is enough.",
+        "You need very high margins (POD naturally limits them)."
+      ],
+      "threshold": "Printify works for multi-channel sellers seeking POD scalability; test free tier then upgrade to Premium for growth."
+    },
+    "pros": [
+      "Completely free to start (5 stores).",
+      "No inventory: launch without capital investment.",
+      "Multi-channel integration (Shopify, Etsy, eBay, TikTok).",
+      "Very diverse product catalog.",
+      "Quality 24/7 customer support."
+    ],
+    "cons": [
+      "Margins reduced compared to in-house production.",
+      "Quality and turnaround depend on vendors.",
+      "Premium offers minimal added value for cost.",
+      "High POD competition."
+    ],
+    "use_cases": [
+      "Launch a clothing brand without initial inventory.",
+      "Sell branded products across multiple channels.",
+      "Test a design on small volume before bulk production.",
+      "Business accessories: mugs, posters, hoodies."
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "packhelp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Packhelp — Emballage personnalisé (site officiel)", "url": "https://packhelp.com" }
+  ],
+  "facts": {
+    "what": "Plateforme en ligne pour concevoir et commander du packaging personnalisé en petites ou grandes quantités, avec éditeur visuel 3D, stockage en entrepôt et options de logistique.",
+    "what_en": "Online platform for designing and ordering custom packaging in small or large quantities, with 3D visual editor, warehouse storage, and logistics options.",
+    "pricing_model": "Pay-per-use : tarification à la pièce selon la conception, quantité et matériau. Remises progressives en fonction du volume. Minimum de commande : 30 pièces.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite. Échantillons disponibles (jusqu'à 8 pour 5 €). Tarification personnalisée selon le projet." },
+    "plans": [],
+    "key_features": [
+      "Éditeur d'emballage 3D en temps réel",
+      "200+ templates de design pré-conçus",
+      "Support des formats professionnels (.AI, .PDF)",
+      "Stockage en entrepôt climatisé avec tracking",
+      "Minimum de commande très bas (30 pièces)",
+      "Délai d'expédition rapide (à partir de 3 semaines)",
+      "Remises pour commandes volumineuses et options B2B",
+      "Programmes de cashback et fidélité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de packaging personnalisé pour e-commerce ou PME.",
+        "Vous cherchez un service complet (design + impression + logistique).",
+        "Vous avez des volumes petits à moyens (30+ pièces).",
+        "Vous êtes basé en Europe (meilleur service et délai)."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'impression de 5-10 pièces seulement.",
+        "Votre packaging doit être extrêmement spécialisé ou breveté.",
+        "Vous cherchez du sourcing asiatique ultra-bon marché.",
+        "Vous n'avez aucune idée de design et besoin d'assistance créative."
+      ],
+      "threshold": "Packhelp excelle pour les PME/e-commerce en Europe ; pour les micro-volumes ou l'ultra-spécialisé, d'autres services conviennent mieux."
+    },
+    "pros": [
+      "Service complet en une plateforme (design + impression + logistique).",
+      "Minimum de commande très bas (30 pièces).",
+      "Qualité et délai de livraison reconnus.",
+      "Support client très apprécié.",
+      "Flexibilité de design avec éditeur visuel et aide professionnelle.",
+      "Options de stockage en entrepôt et fulfillment."
+    ],
+    "cons": [
+      "Tarification à la pièce peut être coûteuse pour très petits volumes.",
+      "Moins compétitif que les sourçeurs asiatiques en coût unitaire.",
+      "Délai minimum (3 semaines) trop long pour urgent.",
+      "Nécessite une vision claire du design dès le départ."
+    ],
+    "use_cases": [
+      "Concevoir et imprimer des boîtes personnalisées pour e-commerce.",
+      "Créer du packaging de marque pour petite PME.",
+      "Imprimer des enveloppes, étuis ou accessoires spécialisés.",
+      "Tester un design avec petits volumes avant scaling."
+    ],
+    "relevant_for": ["E-commerçants", "Petites marques / startups produit", "Freelances créatifs", "Agences de marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need custom packaging for e-commerce or SMBs.",
+        "You want an all-in-one service (design + printing + logistics).",
+        "You have small to medium volumes (30+ pieces).",
+        "You're based in Europe (better service and timelines)."
+      ],
+      "avoidIf": [
+        "You need printing for just 5–10 pieces.",
+        "Your packaging must be extremely specialized or proprietary.",
+        "You seek ultra-cheap Asian sourcing.",
+        "You have no design vision and need extensive creative assistance."
+      ],
+      "threshold": "Packhelp excels for European SMBs/e-commerce; for micro-volumes or highly specialized work, other services fit better."
+    },
+    "pros": [
+      "All-in-one platform (design + printing + logistics).",
+      "Very low minimum order (30 pieces).",
+      "Recognized quality and delivery times.",
+      "Highly praised customer support.",
+      "Design flexibility with visual editor and pro assistance.",
+      "Warehouse storage and fulfillment options."
+    ],
+    "cons": [
+      "Per-piece pricing can be costly for very small volumes.",
+      "Less competitive than Asian sourcing on unit cost.",
+      "Minimum timeline (3 weeks) too long for urgent orders.",
+      "Requires clear design vision from the start."
+    ],
+    "use_cases": [
+      "Design and print custom boxes for e-commerce.",
+      "Create branded packaging for a small brand.",
+      "Print envelopes, cases, or specialized packaging.",
+      "Test a design with small volumes before scaling."
+    ],
+    "relevant_for": ["E-commerce founders", "Small brands / product startups", "Creative freelancers", "Marketing agencies"]
+  }
+}

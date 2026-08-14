@@ -1,0 +1,94 @@
+{
+  "slug": "postman",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Postman — Plans & Pricing (site officiel)", "url": "https://www.postman.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de test et documentation API avec client HTTP, automatisation des tests, monitoring d'API et collaboration en équipe. Facturation par utilisateur avec tiers gratuit limité.",
+    "what_en": "API testing and documentation platform featuring HTTP client, test automation, API monitoring, and team collaboration. Per-user billing with limited free tier.",
+    "pricing_model": "Abonnement par utilisateur par mois. Free tier limité à 1 utilisateur. Plans équipe à partir de $19/utilisateur/mois (facturation annuelle).",
+    "free_tier": { "exists": true, "detail": "Free : $0/mois pour 1 utilisateur avec API client, specs, mock servers, Git natif, 50 crédits AI/mois." },
+    "plans": [
+      { "name": "Free", "price": "$0/month (1 user)" },
+      { "name": "Solo", "price": "$9/month billed annually (1 user, 400 AI credits)" },
+      { "name": "Team", "price": "$19/user/month billed annually (équipe, RBAC, collaboration)" },
+      { "name": "Enterprise", "price": "$49/user/month billed annually (SSO, API Network, audit logs)" }
+    ],
+    "key_features": [
+      "Client HTTP et API testing complet",
+      "Automatisation et runner de collections",
+      "Documentation mock servers auto-générée",
+      "Git natif intégré pour le versioning",
+      "Monitoring d'API continu",
+      "Crédits AI pour génération de tests",
+      "Workspaces privés et collaboration"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez et documentez des APIs régulièrement.",
+        "Votre équipe collabore sur des spécifications API.",
+        "Vous voulez un seul outil pour toute la boucle API."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de collaboration d'équipe (scriptez avec curl/httpie).",
+        "Vous cherchez un outil entièrement gratuit pour équipe."
+      ],
+      "threshold": "Postman est incontournable pour les équipes de développement API ; Free tier suffisant pour usage solo."
+    },
+    "pros": [
+      "Client HTTP très ergonomique.",
+      "Collaboration équipe simple et efficace.",
+      "Spécifications et mock servers intégrés.",
+      "Monitoring d'API continu sans installer d'agent.",
+      "Tier gratuit utilisable pour solo."
+    ],
+    "cons": [
+      "Free tier limité à 1 utilisateur.",
+      "Plans équipe deviennent chers rapidement.",
+      "Interface riche mais heavy pour cas simples."
+    ],
+    "use_cases": [
+      "Tester une API REST en développement.",
+      "Documenter les endpoints d'une API.",
+      "Automatiser des tests de régression API.",
+      "Collaborer en équipe sur des spécifications."
+    ],
+    "relevant_for": ["Développeurs API", "Équipes backend", "QA automation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly test and document APIs.",
+        "Your team collaborates on API specifications.",
+        "You want a single tool for the entire API lifecycle."
+      ],
+      "avoidIf": [
+        "You don't need team collaboration (just use curl/httpie).",
+        "You're looking for a fully free tool for a team."
+      ],
+      "threshold": "Postman is indispensable for API development teams; free tier is usable for solo use."
+    },
+    "pros": [
+      "Very ergonomic HTTP client.",
+      "Simple and effective team collaboration.",
+      "Integrated specs and mock servers.",
+      "Continuous API monitoring without agent installation.",
+      "Free tier usable for solo work."
+    ],
+    "cons": [
+      "Free tier limited to 1 user.",
+      "Team plans become expensive quickly.",
+      "Rich interface but heavy for simple cases."
+    ],
+    "use_cases": [
+      "Test a REST API in development.",
+      "Document the endpoints of an API.",
+      "Automate API regression testing.",
+      "Collaborate in a team on specifications."
+    ]
+  }
+}

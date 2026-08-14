@@ -1,0 +1,100 @@
+{
+  "slug": "kubernetes",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kubernetes — Open Source Container Orchestration (site officiel)", "url": "https://kubernetes.io" }
+  ],
+  "facts": {
+    "what": "Système open source d'orchestration de conteneurs pour automatiser le déploiement, la mise à l'échelle et la gestion d'applications conteneurisées. Groupe les conteneurs en unités logiques et gère la découverte de services, l'équilibrage de charge, les mises à jour automatiques et la récupération automatique en cas de défaillance.",
+    "what_en": "Open source container orchestration system for automating deployment, scaling, and management of containerized applications. Groups containers into logical units and manages service discovery, load balancing, automated rollouts/rollbacks, and self-healing.",
+    "pricing_model": "Gratuit et open source. Maintenu par le Cloud Native Computing Foundation (CNCF). Les coûts varient selon l'infrastructure (on-premises, cloud public, services managés tiers).",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source (licence Apache 2.0). Coûts d'infrastructure (serveurs, cloud) sont séparés." },
+    "plans": [
+      { "name": "Framework open source", "price": "Gratuit (Apache 2.0 licence, CNCF graduated project)" }
+    ],
+    "key_features": [
+      "Orchestration et scheduling de conteneurs automatisés",
+      "Service discovery et load balancing",
+      "Storage orchestration et gestion de volumes persistants",
+      "Déploiements et rollbacks automatisés",
+      "Self-healing (redémarrage, remplacement de conteneurs défaillants)",
+      "Secret management et configuration management",
+      "Batch execution et gestion des workloads",
+      "Scaling horizontal automatique",
+      "Networking multi-conteneur intégré",
+      "Support d'une vaste écosystème (Helm, Operators, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs conteneurs Docker en production.",
+        "Vous avez besoin d'auto-scaling, d'orchestration et de self-healing.",
+        "Votre équipe a l'expertise DevOps pour gérer Kubernetes."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un ou deux conteneurs simples.",
+        "Votre équipe n'a pas d'expertise conteneurs/DevOps.",
+        "Vous cherchez une solution simpler et managée (utilisez Heroku, Platform.sh, etc.)."
+      ],
+      "threshold": "Kubernetes s'impose pour orchestrer des applications conteneurisées complexes à grande échelle ; pour petites déploiements ou pas d'infrastructure conteneurs, une solution plus simple convient."
+    },
+    "pros": [
+      "Gratuit et open source, aucun coût de licence.",
+      "Standard de facto pour l'orchestration de conteneurs.",
+      "Écosystème riche et mature (Helm, Operators, distributions).",
+      "Fortement utilisé par Google, AWS, Azure, majorité des grandes orgas.",
+      "Portabilité entre clouds (on-prem, AWS, GCP, Azure, etc.)."
+    ],
+    "cons": [
+      "Courbe d'apprentissage abrupte pour débutants.",
+      "Configuration et gestion complexes (API verbeux).",
+      "Nécessite expertise DevOps pour bien l'utiliser.",
+      "Coûts d'infrastructure (serveurs, cloud) séparés et potentiellement élevés.",
+      "Overkill pour petites applications simples."
+    ],
+    "use_cases": [
+      "Orchestrer une application multi-conteneurs en production.",
+      "Automatiser le déploiement et la mise à l'échelle de microservices.",
+      "Gérer un cluster multi-nœud avec auto-scaling.",
+      "Intégrer dans un pipeline CI/CD complèt."
+    ],
+    "relevant_for": ["Équipes DevOps", "Architectes infrastructure", "Startups scale-up", "Entreprises", "Cloud-native teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple Docker containers in production.",
+        "You need auto-scaling, orchestration, and self-healing.",
+        "Your team has DevOps expertise to manage Kubernetes."
+      ],
+      "avoidIf": [
+        "You only have one or two simple containers.",
+        "Your team lacks container/DevOps experience.",
+        "You want a simpler, managed solution (use Heroku, Platform.sh, etc.)."
+      ],
+      "threshold": "Kubernetes excels at orchestrating complex containerized apps at scale; for small deployments or no-container setups, simpler solutions fit better."
+    },
+    "pros": [
+      "Free and open source, zero license cost.",
+      "De facto standard for container orchestration.",
+      "Rich, mature ecosystem (Helm, Operators, distributions).",
+      "Widely used by Google, AWS, Azure, most enterprises.",
+      "Portable across clouds (on-prem, AWS, GCP, Azure, etc.)."
+    ],
+    "cons": [
+      "Steep learning curve for beginners.",
+      "Complex configuration and management (verbose API).",
+      "Requires DevOps expertise to use effectively.",
+      "Infrastructure costs (servers, cloud) separate and potentially high.",
+      "Overkill for small, simple applications."
+    ],
+    "use_cases": [
+      "Orchestrate a multi-container app in production.",
+      "Automate microservices deployment and scaling.",
+      "Manage a multi-node cluster with auto-scaling.",
+      "Integrate into a complete CI/CD pipeline."
+    ]
+  }
+}

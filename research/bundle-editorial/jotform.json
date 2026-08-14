@@ -1,0 +1,99 @@
+{
+  "slug": "jotform",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Jotform — Online Form Builder (site officiel)", "url": "https://www.jotform.com" }
+  ],
+  "facts": {
+    "what": "Constructeur de formulaires en ligne sans code avec interface glisser-déposer. Permet de créer des formulaires professionnels avec logique conditionnelle, paiements, rapports automatisés et intégrations vers 150+ services (CRM, email marketing, cloud storage).",
+    "what_en": "No-code online form builder with drag-and-drop interface. Create professional forms with conditional logic, payment processing, automated reports, and 150+ integrations (CRM, email marketing, cloud storage).",
+    "pricing_model": "Freemium avec plan gratuit limité et quatre plans payants. Facturation mensuelle ou annuelle. Rabais pour organisations à but non lucratif et institutions éducatives.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 5 formulaires, 100 soumissions/mois, branding Jotform." },
+    "plans": [
+      { "name": "Gratuit (Starter)", "price": "Gratuit (5 formulaires, 100 soumissions/mois)" },
+      { "name": "Bronze", "price": "34 $/mois annuel / 39 $/mois (1000 soumissions/mois)" },
+      { "name": "Silver", "price": "39 $/mois annuel / 49 $/mois (2500 soumissions/mois)" },
+      { "name": "Gold", "price": "99 $/mois annuel / 129 $/mois (10 000 soumissions/mois, HIPAA)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée (usage illimité, accès multi-utilisateurs)"  }
+    ],
+    "key_features": [
+      "Interface glisser-déposer, aucun code requis",
+      "Logique conditionnelle pour formulaires dynamiques",
+      "Paiements intégrés et traitement des paiements",
+      "Formulaires mobiles responsifs",
+      "Intégrations vers 150+ services (Salesforce, Slack, Zapier, etc.)",
+      "Rapports et analyses automatisés",
+      "Compliance HIPAA et sécurité entreprise"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de collecter rapidement des données par formulaires.",
+        "Vous cherchez une solution sans code, sans développeur requis.",
+        "Vous devez intégrer les données avec vos outils existants (CRM, email, etc.)."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite permanente et complète.",
+        "Vous avez besoin de contrôle ultra-personnalisé ou de features avancées non standard.",
+        "Votre cas d'usage est ultra-spécifique et nécessite du sur-mesure."
+      ],
+      "threshold": "Jotform convient aux équipes recueillant des formulaires simples à modérés ; pour des formes ultra-complexes ou complètement sur-mesure, un développeur custom convient mieux."
+    },
+    "pros": [
+      "Plan gratuit fonctionnel pour débuter.",
+      "Interface intuitive, aucun code requis.",
+      "150+ intégrations préconstruites.",
+      "Rapports et analyses inclus.",
+      "Compliance HIPAA dans les tiers payants."
+    ],
+    "cons": [
+      "Plan gratuit limité à 100 soumissions/mois.",
+      "Tarification peut devenir chère selon le volume.",
+      "Personnalisation avancée requiert parfois du CSS/JavaScript.",
+      "Concurrence de Typeform, Fillout et autres alternatives."
+    ],
+    "use_cases": [
+      "Créer des formulaires de contact et leads simples.",
+      "Collecter des feedback ou des sondages.",
+      "Traiter des paiements par formulaire (abonnements, tickets).",
+      "Automatiser des workflows entre formulaires et CRM."
+    ],
+    "relevant_for": ["PME", "Equipes marketing", "Support client", "Événementiel", "Éducation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to quickly collect data via forms.",
+        "You want a no-code solution that requires no developer.",
+        "You need to integrate form data with existing tools (CRM, email, etc.)."
+      ],
+      "avoidIf": [
+        "You need a permanent free solution with full features.",
+        "You need ultra-custom controls or advanced features.",
+        "Your use case is highly specialized and needs custom development."
+      ],
+      "threshold": "Jotform suits teams collecting simple-to-moderate forms; for ultra-complex or fully custom forms, custom development is better."
+    },
+    "pros": [
+      "Functional free tier to get started.",
+      "Intuitive interface, no code required.",
+      "150+ pre-built integrations.",
+      "Reports and analytics included.",
+      "HIPAA compliance on paid tiers."
+    ],
+    "cons": [
+      "Free plan limited to 100 submissions/month.",
+      "Pricing can get expensive at scale.",
+      "Advanced customization sometimes requires CSS/JavaScript.",
+      "Competition from Typeform, Fillout, and others."
+    ],
+    "use_cases": [
+      "Create simple contact and lead forms.",
+      "Collect feedback or run surveys.",
+      "Process payments via forms (subscriptions, tickets).",
+      "Automate workflows between forms and CRM."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "openapi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OpenAPI Initiative — Spécification officielle", "url": "https://www.openapis.org" }
+  ],
+  "facts": {
+    "what": "Spécification standardisée, vendor-agnostique et open source pour décrire les API HTTP, permettant la documentation, la génération de code client, les tests et l'application de standards.",
+    "what_en": "Standardized, vendor-neutral, open-source specification for describing HTTP APIs, enabling documentation, client code generation, testing, and design standards.",
+    "pricing_model": "Gratuit, open source (Linux Foundation Collaborative Project)",
+    "free_tier": { "exists": true, "detail": "Spécification entièrement libre et open source. Nombreux outils gratuits et open source pour la travailler (Redoc, SwaggerUI, Spectral, Prism, etc.)." },
+    "plans": [],
+    "key_features": [
+      "Norme standardisée pour décrire les API REST et HTTP",
+      "Interopérabilité vendor-agnostique (aucun verrouillage)",
+      "Génération automatique de documentation (Redoc, SwaggerUI, etc.)",
+      "Support de la génération de code client dans plusieurs langages",
+      "Validation et testabilité des API (Spectral, Prism)",
+      "Serveurs mock automatiques pour le prototypage",
+      "Versionnement et compatibilité des schémas",
+      "Intégration avec les outils d'API design (Stoplight, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous documentez ou concevez des API REST.",
+        "Vous avez besoin d'une interface commune entre équipes (front/back).",
+        "Vous voulez générer automatiquement du code client.",
+        "Vous développez un écosystème d'API ou une plateforme."
+      ],
+      "avoidIf": [
+        "Vous construisez une API très simple ou interne sans partage externe.",
+        "Vous préférez la documentation manuelle ou informelle.",
+        "Votre équipe n'a aucune familiarité avec le format."
+      ],
+      "threshold": "OpenAPI s'impose pour toute API moderne et professionnelle ; pour une API interne minimaliste, elle peut être overkill."
+    },
+    "pros": [
+      "Standard ouvert et vendor-agnostique (aucun verrouillage).",
+      "Entièrement gratuit avec un riche écosystème d'outils open source.",
+      "Documentation et code client générés automatiquement.",
+      "Compris et reconnu par toute l'industrie web.",
+      "Facilite la collaboration entre équipes et entreprises.",
+      "Support natif pour le versioning et la compatibilité."
+    ],
+    "cons": [
+      "Courbe d'apprentissage du format (JSON/YAML).",
+      "Peut être verbeux pour des API très simples.",
+      "Nécessite une maintenance régulière pour rester synchronisée.",
+      "Outils tiers variables en qualité et support."
+    ],
+    "use_cases": [
+      "Documenter une API publique (SaaS, plateforme).",
+      "Générer un SDK client automatiquement.",
+      "Valider la conformité d'une API avec un standard.",
+      "Créer un serveur mock pour le développement frontend.",
+      "Partager une spécification d'API entre équipes."
+    ],
+    "relevant_for": ["Architectes API", "Développeurs backend", "Équipes DevRel / tech evangelism", "Plateforme / écosystème API"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You document or design REST APIs.",
+        "You need a common interface between teams (front/back).",
+        "You want to auto-generate client code.",
+        "You develop an API ecosystem or platform."
+      ],
+      "avoidIf": [
+        "Your API is very simple or internal without external sharing.",
+        "You prefer manual or informal documentation.",
+        "Your team has no familiarity with the format."
+      ],
+      "threshold": "OpenAPI is essential for any modern, professional API; for minimal internal APIs, it may be overkill."
+    },
+    "pros": [
+      "Open, vendor-agnostic standard (no lock-in).",
+      "Completely free with a rich open-source tool ecosystem.",
+      "Auto-generated documentation and client code.",
+      "Recognized industry-wide across the web.",
+      "Facilitates collaboration between teams and companies.",
+      "Native support for versioning and compatibility."
+    ],
+    "cons": [
+      "Learning curve for the format (JSON/YAML).",
+      "Can be verbose for very simple APIs.",
+      "Requires regular maintenance to stay synced.",
+      "Variable quality and support of third-party tools."
+    ],
+    "use_cases": [
+      "Document a public API (SaaS, platform).",
+      "Auto-generate an SDK client.",
+      "Validate API conformance to a standard.",
+      "Create a mock server for frontend development.",
+      "Share an API spec between teams."
+    ]
+  }
+}

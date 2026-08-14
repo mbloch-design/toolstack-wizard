@@ -1,0 +1,91 @@
+{
+  "slug": "planetscale",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PlanetScale — Pricing (site officiel)", "url": "https://planetscale.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de base de données MySQL et PostgreSQL hébergée, bâtie sur Vitess, avec support du branching de schéma et des changements non bloquants pour la production.",
+    "what_en": "Hosted MySQL and PostgreSQL database platform built on Vitess, featuring schema branching and non-blocking schema changes for production use.",
+    "pricing_model": "Abonnement mensuel par cluster et configuration. Aucun tier gratuit ; modèle pay-as-you-go avec configurations prédéfinies.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit permanent. Les clusters HA Postgres commencent à montants sur la page officielle." },
+    "plans": [
+      { "name": "EBS non-HA (Postgres)", "price": "À partir de $5/month (PS-5, 512 MiB)" },
+      { "name": "EBS HA (Postgres)", "price": "À partir de $15/month (PS-5, 3-node cluster)" },
+      { "name": "Metal (Postgres)", "price": "À partir de $50/month (avec stockage inclus)" },
+      { "name": "Enterprise", "price": "Montants sur demande pour configurations très grandes" }
+    ],
+    "key_features": [
+      "Branching de schéma pour environnements isolés",
+      "Changements de schéma non bloquants en production",
+      "Support PostgreSQL et MySQL (Vitess)",
+      "Sharding automatique avec Vitess",
+      "Connection pooling intégré",
+      "Régions multi-cloud (AWS, GCP)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une base de données MySQL/PostgreSQL scalable et gérée.",
+        "Vous voulez faire des changements de schéma sans downtime.",
+        "Vous préparez une croissance significative de trafic."
+      ],
+      "avoidIf": [
+        "Vous cherchez une option entièrement gratuite.",
+        "Vous avez des besoins très simples ou une startup sans budget.",
+        "Vous préférez auto-héberger votre base de données."
+      ],
+      "threshold": "PlanetScale convient aux équipes ayant besoin de scalabilité de production et de flexibilité de schéma ; pour un MVP gratuit, considérez PostgreSQL auto-hébergé."
+    },
+    "pros": [
+      "Branching de schéma unique pour tester les migrations.",
+      "Changements de schéma sans downtime en production.",
+      "Scalabilité horizontale native via Vitess.",
+      "Support excellente et console intuitive."
+    ],
+    "cons": [
+      "Pas de tier gratuit ; coûts minimums dès le début.",
+      "Configuration pour débutants peut être complexe.",
+      "Tier gratuit anciennement disponible a été supprimé."
+    ],
+    "use_cases": [
+      "Déployer une application SaaS scalable.",
+      "Tester des migrations de schéma sans risque.",
+      "Croissance rapide avec accès à plusieurs zones."
+    ],
+    "relevant_for": ["Startups SaaS", "Équipes DevOps", "Architectes bases de données"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a scalable, managed MySQL/PostgreSQL database.",
+        "You want schema changes without downtime.",
+        "You're preparing for significant traffic growth."
+      ],
+      "avoidIf": [
+        "You're looking for a completely free option.",
+        "You have simple needs or a budget-constrained startup.",
+        "You prefer self-hosting your database."
+      ],
+      "threshold": "PlanetScale works for teams needing production scalability and schema flexibility; for a free MVP, self-hosted PostgreSQL is a better fit."
+    },
+    "pros": [
+      "Unique schema branching for testing migrations.",
+      "Zero-downtime schema changes in production.",
+      "Native horizontal scalability via Vitess.",
+      "Excellent support and intuitive console."
+    ],
+    "cons": [
+      "No free tier ; minimum costs from the start.",
+      "Configuration for beginners can be complex.",
+      "Previously free tier was discontinued."
+    ],
+    "use_cases": [
+      "Deploy a scalable SaaS application.",
+      "Test schema migrations risk-free.",
+      "Rapid growth with multi-zone access."
+    ]
+  }
+}

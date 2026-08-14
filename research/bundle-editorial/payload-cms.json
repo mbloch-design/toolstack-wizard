@@ -1,0 +1,103 @@
+{
+  "slug": "payload-cms",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Payload CMS — Headless CMS & Backend (site officiel)", "url": "https://payloadcms.com" }
+  ],
+  "facts": {
+    "what": "CMS headless open source basé sur Next.js, conçu pour les développeurs, s'installe directement dans une application React avec schéma défini en code (code-first).",
+    "what_en": "Open-source headless CMS built on Next.js, designed for developers, installs directly into React apps with code-first schema definition.",
+    "pricing_model": "Gratuit pour auto-hébergement (MIT licence). Option Enterprise avec SSO et workflows avancés, prix sur demande.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source pour auto-hébergement. Aucune limite d'API calls, sièges ou quotas. Option cloud payante possible à l'avenir." },
+    "plans": [],
+    "key_features": [
+      "Backend intégré directement à Next.js (même repo, même déploiement)",
+      "Schéma CMS défini en TypeScript (code-first, sans UI confus)",
+      "Composants React réutilisables et extensibles",
+      "Localization profonde avec support multi-locale",
+      "Workflows d'approbation et versioning du contenu",
+      "AI toolset (traductions, génération d'images, assistant rédaction)",
+      "RAG + Vector Embedding pour applications IA",
+      "Access control granulaire et authentification"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un site Next.js et avez besoin d'un CMS.",
+        "Vous préférez un backend déverrouillé et entièrement customisable.",
+        "Vous utilisez TypeScript et React dans votre stack.",
+        "Vous voulez éviter les CMS SaaS et leurs limitations."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas familier avec React ou TypeScript.",
+        "Vous cherchez un CMS point-and-click sans code (Webflow, etc.).",
+        "Vous préférez un service complètement managé et sans ops.",
+        "Votre projet est très simple et n'a pas besoin de CMS."
+      ],
+      "threshold": "Payload CMS s'impose pour les équipes React/Next.js ; pour les non-devs ou sans React, un CMS SaaS convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source (MIT).",
+      "Intégration transparente avec Next.js (même repo).",
+      "Schéma défini en code = moins d'erreurs et meilleure version control.",
+      "Extrêmement customisable sans dépendre de l'éditeur.",
+      "Aucune limite d'API calls ou de sièges utilisateur.",
+      "Outils IA intégrés (traductions, générateur d'images).",
+      "Excellente documentation et communauté en croissance."
+    ],
+    "cons": [
+      "Nécessite connaissances React/TypeScript.",
+      "Self-hosting signifie gérer l'infrastructure (ops responsabilité).",
+      "Pas d'interface no-code ; les non-devs ne peuvent pas y accéder.",
+      "Écosystème d'outils moins riche qu'un CMS SaaS mature (Contentful, Strapi Cloud)."
+    ],
+    "use_cases": [
+      "Construire un site Next.js avec gestion de contenu flexible.",
+      "Créer un backend API pour une application mobile.",
+      "Implémenter un CMS multilingue avec workflows d'approbation.",
+      "Construire une plateforme de contenu avec features custom."
+    ],
+    "relevant_for": ["Développeurs Next.js / React", "Agences web tech", "Équipes fullstack", "Startups produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a Next.js site and need a CMS.",
+        "You prefer an unlocked, fully customizable backend.",
+        "You use TypeScript and React in your stack.",
+        "You want to avoid SaaS CMS limitations."
+      ],
+      "avoidIf": [
+        "You're unfamiliar with React or TypeScript.",
+        "You seek a point-and-click no-code CMS (Webflow, etc.).",
+        "You prefer a fully managed, ops-free service.",
+        "Your project is simple and doesn't need a CMS."
+      ],
+      "threshold": "Payload CMS is essential for React/Next.js teams; for non-devs or without React, a SaaS CMS fits better."
+    },
+    "pros": [
+      "Completely free and open source (MIT).",
+      "Seamless integration with Next.js (same repo).",
+      "Schema defined in code = fewer errors and better version control.",
+      "Extremely customizable without vendor lock-in.",
+      "No limits on API calls or user seats.",
+      "Built-in AI tools (translations, image generation).",
+      "Excellent documentation and growing community."
+    ],
+    "cons": [
+      "Requires React/TypeScript knowledge.",
+      "Self-hosting means managing infrastructure (ops responsibility).",
+      "No no-code interface; non-devs can't access it.",
+      "Tool ecosystem less rich than mature SaaS CMS (Contentful, Strapi Cloud)."
+    ],
+    "use_cases": [
+      "Build a Next.js site with flexible content management.",
+      "Create a backend API for a mobile app.",
+      "Implement a multilingual CMS with approval workflows.",
+      "Build a content platform with custom features."
+    ],
+    "relevant_for": ["Next.js / React developers", "Tech-forward agencies", "Fullstack teams", "Product startups"]
+  }
+}

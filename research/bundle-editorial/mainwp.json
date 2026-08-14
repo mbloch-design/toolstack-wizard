@@ -1,0 +1,106 @@
+{
+  "slug": "mainwp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "MainWP — Site officiel", "url": "https://mainwp.com" }
+  ],
+  "facts": {
+    "what": "Gestionnaire WordPress auto-hébergé permettant de gérer des dizaines ou centaines de sites clients à partir d'un tableau de bord centralisé. Déploiement auto-hébergé, mises à jour groupées, sauvegardes et monitoring de sécurité.",
+    "what_en": "Self-hosted WordPress management platform for agencies to manage unlimited client sites from one dashboard. Centralized updates, backups, security monitoring, and reporting. Open-source core with premium extensions.",
+    "pricing_model": "Plugin gratuit en version de base. Extensions premium avec trois options tarifaires : abonnement mensuel, annuel ou licence perpétuelle.",
+    "free_tier": { "exists": true, "detail": "Plugin core gratuit et permanent. Les extensions premium ajoutent des fonctionnalités avancées avec tarification flexible." },
+    "plans": [
+      { "name": "Free Core", "price": "Gratuit" },
+      { "name": "Monthly Pro", "price": "29 $/mois" },
+      { "name": "Yearly Pro", "price": "199 $/an" },
+      { "name": "Lifetime License", "price": "599 $ une fois (note: mention de 499 $ aussi, tarif ajusté)" }
+    ],
+    "key_features": [
+      "Gestion d'un nombre illimité de sites",
+      "Mises à jour groupées de plugins, thèmes et noyau",
+      "Sauvegardes automatiques et restauration",
+      "Monitoring d'uptime, SSL et vulnérabilités",
+      "Rapports blancs personnalisables",
+      "Contrôle d'accès basé sur les rôles",
+      "API REST et support CLI",
+      "Chiffrement et sécurité OpenSSL"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une agence ou freelance gérant plusieurs sites clients WordPress.",
+        "Vous voulez automatiser les mises à jour et sauvegardes.",
+        "Vous préférez une solution auto-hébergée pour garder le contrôle.",
+        "Vous avez besoin de rapports blancs personnalisés."
+      ],
+      "avoidIf": [
+        "Vous ne gérez qu'un ou deux sites WordPress.",
+        "Vous cherchez une solution entièrement en mode SaaS.",
+        "Vous avez peu de connaissances techniques pour l'auto-hébergement."
+      ],
+      "threshold": "MainWP s'impose pour les agences WordPress cherchant un contrôle centralisé sans abonnement SaaS limité ; pour un seul site ou une gestion basique, d'autres outils suffisent."
+    },
+    "pros": [
+      "Core gratuit et auto-hébergé, contrôle total.",
+      "Gestion d'un nombre illimité de sites sans surcoûts.",
+      "Mises à jour en masse et sauvegardes automatisées.",
+      "Rapports blancs pour démarquer votre agence.",
+      "Très utilisé par les agences WordPress (20 000+ utilisateurs)."
+    ],
+    "cons": [
+      "Auto-hébergement nécessite des compétences techniques.",
+      "Coûts additionnels pour les extensions premium.",
+      "Peu de support inclus dans l'offre gratuite.",
+      "Courbe d'apprentissage initiale pour la configuration."
+    ],
+    "use_cases": [
+      "Gérer un portefeuille de 50+ sites clients depuis un seul dashboard.",
+      "Automatiser les mises à jour mensuelles sur des dizaines de sites.",
+      "Générer des rapports blancs pour vos clients.",
+      "Centraliser la surveillance de sécurité et d'uptime."
+    ],
+    "relevant_for": [
+      "Agences WordPress",
+      "Freelances gérant plusieurs sites",
+      "Développeurs WordPress souhaitant un contrôle centralisé",
+      "Consultants WordPress offrant des services gérés"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an agency or freelancer managing multiple WordPress client sites.",
+        "You want to automate updates and backups across sites.",
+        "You prefer self-hosted for full control.",
+        "You need white-label reporting for clients."
+      ],
+      "avoidIf": [
+        "You manage only one or two WordPress sites.",
+        "You seek a fully managed SaaS solution.",
+        "You lack technical expertise for self-hosting."
+      ],
+      "threshold": "MainWP is essential for WordPress agencies seeking centralized control without SaaS limitations; for single sites or basic management, other tools suffice."
+    },
+    "pros": [
+      "Free core and self-hosted—full control.",
+      "Unlimited sites without per-site fees.",
+      "Bulk updates and automated backups.",
+      "White-label reporting for client-facing dashboards.",
+      "Trusted by 20,000+ agency users managing 700,000+ sites."
+    ],
+    "cons": [
+      "Self-hosting requires technical expertise.",
+      "Additional costs for premium extensions.",
+      "Limited support in free tier.",
+      "Initial setup and configuration learning curve."
+    ],
+    "use_cases": [
+      "Manage a portfolio of 50+ client sites from one dashboard.",
+      "Automate monthly updates across dozens of sites.",
+      "Generate white-label reports for clients.",
+      "Centralize security and uptime monitoring."
+    ]
+  }
+}

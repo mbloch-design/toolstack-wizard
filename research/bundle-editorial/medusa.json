@@ -1,0 +1,107 @@
+{
+  "slug": "medusa",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "Medusa — Site officiel", "url": "https://medusajs.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'ecommerce headless open-source construite avec Node.js permettant aux développeurs de créer des expériences de commerce personnalisées. Zéro frais de transaction ; tarification uniquement sur l'infrastructure cloud optionnelle.",
+    "what_en": "Open-source headless commerce platform built with Node.js for developers to build custom digital commerce experiences. Zero transaction fees. Optional managed infrastructure pricing starts at $29/month.",
+    "pricing_model": "Cœur open-source gratuit (licence MIT). Infrastructure cloud managée optionnelle : plans payants à partir de $29/mois pour cloud, auto-hébergement possible gratuitement.",
+    "free_tier": { "exists": true, "detail": "Le framework open-source est entièrement gratuit. Vous payez seulement pour l'infrastructure cloud managée si vous la choisissez." },
+    "plans": [
+      { "name": "Open-Source (Auto-hébergé)", "price": "Gratuit" },
+      { "name": "Medusa Cloud Starter", "price": "29 $/mois" },
+      { "name": "Medusa Cloud Launch", "price": "99 $/mois (autoscaling, sauvegardes automatiques)" }
+    ],
+    "key_features": [
+      "Gestion avancée des produits avec éditeur en masse",
+      "Support multichannel (multi-magasin, PDV, apps)",
+      "Gestion d'inventaire et entrepôts multiples",
+      "Tarification B2B et listes de prix personnalisées",
+      "Moteur de promotions avancé",
+      "Multi-régions et multi-devises",
+      "Zero frais de transaction (sauf paiement tiers)",
+      "Dashboard admin personnalisable"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur et voulez un contrôle total sur votre stack ecommerce.",
+        "Vous cherchez une solution sans frais de transaction ou GMV.",
+        "Vous avez besoin de multicanal (PDV, apps, etc.).",
+        "Vous envisagez du B2B avec tarification personnalisée."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas d'équipe développement capable de déployer l'infrastructure.",
+        "Vous cherchez une solution sans-code clés en main.",
+        "Vous avez un budget limité pour le développement initial."
+      ],
+      "threshold": "Medusa s'impose pour les équipes techniques construisant des expériences ecommerce complexes et personnalisées ; pour une boutique simple ou sans-code, Shopify convient davantage."
+    },
+    "pros": [
+      "Open-source et gratuit pour le cœur.",
+      "Zéro frais de transaction sur vos ventes.",
+      "Flexibilité maximale avec architecture headless.",
+      "Support multichannel natif.",
+      "Aucun frais GMV (croissance sans surcoûts).",
+      "Infrastructure cloud managée optionnelle."
+    ],
+    "cons": [
+      "Nécessite une équipe développement expérimentée.",
+      "Coûts de développement initial élevés (intégration sur mesure).",
+      "Pas de solution sans-code clés en main.",
+      "Courbe d'apprentissage significative."
+    ],
+    "use_cases": [
+      "Créer une boutique ecommerce B2B avec tarification avancée.",
+      "Lancer un multichannel (web, PDV, app mobile) unifié.",
+      "Développer une expérience ecommerce hautement personnalisée.",
+      "Réduire les frais de transaction comparé aux plateformes SaaS."
+    ],
+    "relevant_for": [
+      "Équipes de développement ecommerce",
+      "Entreprises B2B cherchant une tarification flexible",
+      "Marques souhaitant un contrôle total",
+      "Agences web construisant des solutions ecommerce complexes"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a development team and want full control of your ecommerce stack.",
+        "You want zero transaction fees or GMV charges.",
+        "You need multichannel (retail, apps, etc.).",
+        "You're building B2B with custom pricing."
+      ],
+      "avoidIf": [
+        "You lack in-house development capacity.",
+        "You need a no-code, turnkey solution.",
+        "Your budget doesn't allow for significant development costs."
+      ],
+      "threshold": "Medusa fits technical teams building complex, custom ecommerce experiences; for simple stores or no-code needs, Shopify is more suitable."
+    },
+    "pros": [
+      "Open-source core is free.",
+      "Zero transaction fees on sales.",
+      "Maximum flexibility with headless architecture.",
+      "Native multichannel support.",
+      "No GMV fees—scale without surprise costs.",
+      "Optional managed cloud infrastructure."
+    ],
+    "cons": [
+      "Requires experienced development team.",
+      "High upfront development costs (custom integration).",
+      "No turnkey no-code solution.",
+      "Steep learning curve."
+    ],
+    "use_cases": [
+      "Build a B2B ecommerce store with advanced pricing.",
+      "Launch a unified multichannel experience (web, retail, mobile app).",
+      "Create a highly personalized ecommerce experience.",
+      "Reduce transaction fees compared to SaaS platforms."
+    ]
+  }
+}

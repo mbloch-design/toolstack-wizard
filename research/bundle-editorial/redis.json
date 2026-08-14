@@ -1,0 +1,91 @@
+{
+  "slug": "redis",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Redis — real-time data platform (site officiel)", "url": "https://redis.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de données en temps réel (base de données in-memory) pour la mise en cache, le stockage de sessions, la recherche vectorielle, le streaming et les agents IA. Accessible via Redis Open Source (gratuit), Redis Cloud (managed SaaS), ou Redis Software (on-premise).",
+    "what_en": "Real-time data platform (in-memory database) for caching, session storage, vector search, streaming and AI agents. Available via Redis Open Source (free), Redis Cloud (managed SaaS), or Redis Software (on-premise).",
+    "pricing_model": "Gratuit (open source), SaaS managed (Redis Cloud, tarification à l'usage), licences software on-premise.",
+    "free_tier": { "exists": true, "detail": "Redis Open Source (v8.8+) gratuit et open-source. Redis Cloud offre un tier free limité." },
+    "plans": [
+      { "name": "Redis Open Source", "price": "Gratuit (MIT license)" },
+      { "name": "Redis Cloud", "price": "Tarification à l'usage (essai gratuit inclus)" },
+      { "name": "Redis Software", "price": "Licence on-premise (tarification sur demande)" }
+    ],
+    "key_features": [
+      "Caching sub-milliseconde et stockage de sessions",
+      "Recherche vectorielle pour IA/ML",
+      "Streaming événementiel et pipelines",
+      "Leaderboards et systèmes de scoring"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de caching ou stockage de sessions haute performance.",
+        "Vous travaillez sur des projets IA/ML avec recherche vectorielle.",
+        "Vous construisez des applications temps réel (streaming, leaderboards)."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'une base de données classique (PostgreSQL suffit).",
+        "Vous cherchez une solution entièrement gratuite en production (l'auto-hébergement reste complexe).",
+        "Votre application ne demande pas de performance ultra-bas-latence."
+      ],
+      "threshold": "Redis s'impose pour les besoins temps réel, caching haute performance et projets IA ; pour une app CRUD classique, une base de données traditionnelle convient mieux."
+    },
+    "pros": [
+      "Performance extrêmement rapide (sub-milliseconde).",
+      "Open-source gratuit et production-ready.",
+      "Riche écosystème (caching, sessions, search, streaming).",
+      "Options deployment flexibles (managed, on-premise, open-source)."
+    ],
+    "cons": [
+      "In-memory (données volatiles sans persistance).",
+      "Courbe d'apprentissage (data structures spécifiques).",
+      "Redis Cloud peut être coûteux à forte consommation."
+    ],
+    "use_cases": [
+      "Cacher les résultats de requêtes fréquentes.",
+      "Stocker les sessions utilisateur et tokens.",
+      "Ajouter la recherche vectorielle à une app IA.",
+      "Implémenter un système de leaderboard/scoring."
+    ],
+    "relevant_for": ["Développeurs backend", "Équipes IA/ML", "Startups web/mobile"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need high-performance caching or session storage.",
+        "You're working on AI/ML projects with vector search.",
+        "You're building real-time applications (streaming, leaderboards)."
+      ],
+      "avoidIf": [
+        "You only need a classic database (PostgreSQL suffices).",
+        "You're looking for a fully free production solution (self-hosted is complex).",
+        "Your app doesn't require ultra-low-latency performance."
+      ],
+      "threshold": "Redis makes sense for real-time, high-performance caching and AI projects; for a classic CRUD app, a traditional database fits better."
+    },
+    "pros": [
+      "Extremely fast performance (sub-millisecond).",
+      "Free open-source and production-ready.",
+      "Rich ecosystem (caching, sessions, search, streaming).",
+      "Flexible deployment options (managed, on-premise, open-source)."
+    ],
+    "cons": [
+      "In-memory (volatile data without persistence).",
+      "Learning curve (specific data structures).",
+      "Redis Cloud can be costly at high consumption."
+    ],
+    "use_cases": [
+      "Cache frequent query results.",
+      "Store user sessions and tokens.",
+      "Add vector search to an AI app.",
+      "Implement a leaderboard/scoring system."
+    ],
+    "relevant_for": ["Backend developers", "AI/ML teams", "Web/mobile startups"]
+  }
+}

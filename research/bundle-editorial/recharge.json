@@ -1,0 +1,89 @@
+{
+  "slug": "recharge",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Recharge — subscription management (site officiel)", "url": "https://getrecharge.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des abonnements pour les marchands Shopify. Permet la création et gestion des subscriptions, programmes de fidélité, prévention du churn et analyse de la rétention des clients.",
+    "what_en": "Subscription management platform for Shopify merchants. Enables creation and management of subscriptions, loyalty programs, churn prevention and customer retention analytics.",
+    "pricing_model": "Abonnements mensuels avec frais de transaction supplémentaires par vente. Plus performant avec volume élevé.",
+    "free_tier": { "exists": true, "detail": "Trial gratuit 60 jours (pas de frais de transaction). Pas de plan freemium après expiration." },
+    "plans": [
+      { "name": "Starter", "price": "99 $/mois + 1.49% + 19¢ par transaction" },
+      { "name": "Plus", "price": "499 $/mois + 1.34% + 19¢ par transaction" },
+      { "name": "Custom", "price": "Tarif volume-based (sur demande)" }
+    ],
+    "key_features": [
+      "Widgets et portail client pour subscriptions",
+      "Prévention du churn et récupération des paiements échoués",
+      "Programmes de fidélité et de parrainage",
+      "Analytics et benchmarks sectoriels"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des produits d'abonnement sur Shopify.",
+        "Vous avez un volume de transactions régulier.",
+        "Vous voulez optimiser la rétention et réduire le churn."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas sur Shopify.",
+        "Vous ne proposez pas d'abonnements.",
+        "Vous commencez à peine (coûts trop élevés pour peu de volume)."
+      ],
+      "threshold": "Recharge s'impose pour les e-commerçants Shopify avec un modèle d'abonnement établi ; pour les débutants ou sans subscription, les solutions plus simples conviennent mieux."
+    },
+    "pros": [
+      "Intégration native Shopify.",
+      "Outils avancés de prévention du churn.",
+      "Programmes de fidélité natifs.",
+      "Support prioritaire selon le plan."
+    ],
+    "cons": [
+      "Coûts élevés (frais d'abonnement + transaction).",
+      "Pas adapté aux petits volumes.",
+      "Gratuit seulement 60 jours (trial)."
+    ],
+    "use_cases": [
+      "Lancer un modèle d'abonnement produit (box, service).",
+      "Optimiser la rétention clients et réduire le churn.",
+      "Créer des programmes de loyalty intégrés."
+    ],
+    "relevant_for": ["E-commerçants Shopify", "Marques d'abonnement", "Équipes growth"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell subscription products on Shopify.",
+        "You have regular transaction volume.",
+        "You want to optimize retention and reduce churn."
+      ],
+      "avoidIf": [
+        "You're not on Shopify.",
+        "You don't offer subscriptions.",
+        "You're just starting (costs too high for low volume)."
+      ],
+      "threshold": "Recharge makes sense for Shopify e-commerce businesses with an established subscription model; for beginners or non-subscription models, simpler solutions fit better."
+    },
+    "pros": [
+      "Native Shopify integration.",
+      "Advanced churn prevention tools.",
+      "Native loyalty programs.",
+      "Priority support per plan."
+    ],
+    "cons": [
+      "High costs (subscription + transaction fees).",
+      "Not suited for small volumes.",
+      "Free only for 60-day trial."
+    ],
+    "use_cases": [
+      "Launch a subscription product model (box, service).",
+      "Optimize customer retention and reduce churn.",
+      "Create integrated loyalty programs."
+    ],
+    "relevant_for": ["Shopify e-commerce stores", "Subscription brands", "Growth teams"]
+  }
+}

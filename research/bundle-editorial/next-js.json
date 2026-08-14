@@ -1,0 +1,96 @@
+{
+  "slug": "next-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Next.js — Framework React officiel", "url": "https://nextjs.org" }
+  ],
+  "facts": {
+    "what": "Framework React créé par Vercel pour construire des applications web modernes, avec rendu serveur, optimisations intégrées et routage par système de fichiers.",
+    "what_en": "React framework created by Vercel for building modern web applications, with server-side rendering, built-in optimizations, and file-system-based routing.",
+    "pricing_model": "Gratuit, open source. Vercel (plateforme de déploiement associée) propose des plans payants optionnels.",
+    "free_tier": { "exists": true, "detail": "Framework entièrement gratuit et open source (GitHub). Hébergement gratuit sur Vercel (plan Hobby) ou autres plateformes." },
+    "plans": [],
+    "key_features": [
+      "React Server Components et rendu côté serveur (SSR)",
+      "Routage par système de fichiers avec layouts imbriqués",
+      "Récupération de données avec async/await",
+      "Server Actions pour exécuter du code serveur directement",
+      "Optimisations automatiques (images, polices, scripts)",
+      "Support CSS Modules et Tailwind CSS",
+      "Route Handlers pour créer des endpoints API",
+      "Streaming HTML dynamique avec React Suspense"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application React production.",
+        "Vous avez besoin de rendu serveur ou d'optimisations SEO.",
+        "Vous voulez une structure de projet opinée et moderne."
+      ],
+      "avoidIf": [
+        "Vous préférez une totale liberté de configuration.",
+        "Vous n'utilisez pas React dans votre stack.",
+        "Votre projet est très minimaliste ou expérimental."
+      ],
+      "threshold": "Next.js est le standard pour les applications React modernes ; pour un petit projet ou sans React, un framework léger ou vanilla JS convient mieux."
+    },
+    "pros": [
+      "Framework React mature et très adopté.",
+      "Optimisations automatiques intégrées (images, SEO, performances).",
+      "Routage intuitif basé sur le système de fichiers.",
+      "Entièrement gratuit et open source.",
+      "Déploiement simplifié sur Vercel (créateurs du framework).",
+      "Excellente documentation et communauté."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour les débutants React.",
+      "Configuration opinée (moins de flexibilité qu'un setup personnalisé).",
+      "Poids de la dépendance peut impacter les petits projets.",
+      "Migration difficile d'un autre framework."
+    ],
+    "use_cases": [
+      "Construire un site e-commerce avec rendu serveur.",
+      "Créer une application SaaS optimisée SEO.",
+      "Développer un tableau de bord avec Server Actions.",
+      "Prototyper rapidement une idée de produit web."
+    ],
+    "relevant_for": ["Développeurs React", "Startups SaaS", "Agences web", "Producteurs de contenu web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a production React application.",
+        "You need server-side rendering or SEO optimizations.",
+        "You want an opinionated, modern project structure."
+      ],
+      "avoidIf": [
+        "You prefer total configuration freedom.",
+        "React is not part of your tech stack.",
+        "Your project is very minimal or experimental."
+      ],
+      "threshold": "Next.js is the standard for modern React applications; for small projects or non-React stacks, a lighter framework or vanilla JS fits better."
+    },
+    "pros": [
+      "Mature, widely-adopted React framework.",
+      "Built-in optimizations (images, SEO, performance).",
+      "Intuitive file-system-based routing.",
+      "Completely free and open source.",
+      "Simplified deployment on Vercel.",
+      "Excellent documentation and community."
+    ],
+    "cons": [
+      "Learning curve for React beginners.",
+      "Opinionated structure (less flexible than custom setup).",
+      "Bundle size may impact small projects.",
+      "Difficult migration from other frameworks."
+    ],
+    "use_cases": [
+      "Build an e-commerce site with server rendering.",
+      "Create a SEO-optimized SaaS application.",
+      "Develop a dashboard with Server Actions.",
+      "Rapidly prototype a web product idea."
+    ]
+  }
+}

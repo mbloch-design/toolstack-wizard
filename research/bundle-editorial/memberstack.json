@@ -1,0 +1,110 @@
+{
+  "slug": "memberstack",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "Memberstack — Pricing officiel", "url": "https://www.memberstack.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'adhésion et d'authentification sans code pour Webflow permettant de gérer des utilisateurs, des contenus protégés et des abonnements récurrents. Intégration native Stripe, prise en charge de niveaux d'adhésion multiples.",
+    "what_en": "No-code membership and authentication platform for Webflow. Manage users, gate content, and handle recurring subscriptions with Stripe integration. Free until launch, then pay based on member count.",
+    "pricing_model": "Gratuit pendant le développement (essai illimité). Après lancement, tarification par nombre de membres (100, 500, 1000 membres, etc.) avec frais de transaction optionnels.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit et illimité avec accès à toutes les fonctionnalités. Vous ne payez que lorsque vous lancez et acceptez des adhésions en direct." },
+    "plans": [
+      { "name": "Basic (100 members)", "price": "29 $/mois" },
+      { "name": "Professional (500 members)", "price": "49 $/mois" },
+      { "name": "Business (1000+ members)", "price": "99 $/mois" },
+      { "name": "Established (10000+ members)", "price": "399 $/mois avec zéro frais de transaction" }
+    ],
+    "key_features": [
+      "Authentification (email, code de connexion ponctuel, médias sociaux)",
+      "Protection de contenu par niveaux d'adhésion",
+      "Abonnements et paiements uniques via Stripe",
+      "Niveaux d'adhésion gratuits, payants et premium",
+      "Champs personnalisés et gestion de profils",
+      "Campagnes email intégrées",
+      "Tables de données personnalisées",
+      "Traitement de plus de 200 millions de transactions annuelles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un site Webflow et voulez ajouter une adhésion.",
+        "Vous cherchez une solution sans-code rapide à mettre en place.",
+        "Vous gérez des niveaux d'adhésion multiples avec paiements.",
+        "Vous préférez une intégration native plutôt qu'un tiers externe."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Webflow comme plateforme principale.",
+        "Vous avez besoin de fonctionnalités CRM avancées ou d'automatisation complexe.",
+        "Votre projet ne nécessite pas vraiment d'authentification utilisateur.",
+        "Vous cherchez une solution traditionnelle de logiciel LMS."
+      ],
+      "threshold": "Memberstack s'impose pour les créateurs Webflow monétisant du contenu ; pour un site non-Webflow ou des besoins complexes, d'autres plateformes d'adhésion générales conviennent mieux."
+    },
+    "pros": [
+      "Installation en 5 minutes, lancement en 30 minutes.",
+      "Complètement gratuit pendant la phase de développement.",
+      "Intégration Stripe native et simple.",
+      "Pas de codage requis.",
+      "Gère 50 000+ sites lancés et 10 millions+ de comptes membres.",
+      "Modèle de tarification transparent et basé sur le nombre de membres."
+    ],
+    "cons": [
+      "Étroitement intégré à Webflow ; utilisation limitée ailleurs.",
+      "Fonctionnalités CRM ou marketing automation limitées.",
+      "Pas d'outils de gestion de contenu autres que Webflow.",
+      "Coûts additionnels pour les tables de données."
+    ],
+    "use_cases": [
+      "Créer un site d'adhésion sur Webflow avec contenus protégés.",
+      "Monétiser des tutoriels, cours ou ressources via abonnement.",
+      "Gérer un club privé ou une communauté avec accès payant.",
+      "Lancer des memberships à plusieurs niveaux (gratuit, premium, VIP)."
+    ],
+    "relevant_for": [
+      "Créateurs et producteurs de contenu",
+      "Propriétaires de sites Webflow",
+      "Consultants offrant des contenus premium",
+      "Agences créant des sites d'adhésion pour leurs clients"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a Webflow site and want to add membership features.",
+        "You need a no-code solution that's fast to deploy.",
+        "You manage multiple membership tiers with payments.",
+        "You prefer native integration over third-party tools."
+      ],
+      "avoidIf": [
+        "You don't use Webflow as your primary platform.",
+        "You need advanced CRM or complex automation.",
+        "Your project doesn't really need user authentication.",
+        "You're looking for a traditional LMS or learning platform."
+      ],
+      "threshold": "Memberstack is ideal for Webflow creators monetizing content; for non-Webflow sites or complex needs, other general membership platforms are better."
+    },
+    "pros": [
+      "Setup in 5 minutes, launch in 30.",
+      "Completely free while developing.",
+      "Native Stripe integration.",
+      "No coding required.",
+      "Powers 50K+ launched sites and 10M+ member accounts.",
+      "Transparent, member-count-based pricing."
+    ],
+    "cons": [
+      "Tightly coupled to Webflow; limited use elsewhere.",
+      "Limited CRM or marketing automation features.",
+      "No content management tools outside Webflow.",
+      "Additional costs for custom data tables."
+    ],
+    "use_cases": [
+      "Create a Webflow membership site with gated content.",
+      "Monetize tutorials, courses, or resources via subscription.",
+      "Manage a private club or community with paid access.",
+      "Launch tiered memberships (free, premium, VIP)."
+    ]
+  }
+}

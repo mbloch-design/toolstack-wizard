@@ -1,0 +1,104 @@
+{
+  "slug": "php",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PHP — Langage de programmation (site officiel)", "url": "https://www.php.net" }
+  ],
+  "facts": {
+    "what": "Langage de programmation open source et gratuit, côté serveur, particulièrement adapté au développement web et intégrable directement en HTML.",
+    "what_en": "Open-source, free server-side programming language especially suited to web development and embeddable directly in HTML.",
+    "pricing_model": "Gratuit, open source (sans frais d'utilisation ni licence)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Code source ouvert, accessible à tous pour utilisation, modification et extension." },
+    "plans": [],
+    "key_features": [
+      "Exécution côté serveur de code web dynamique",
+      "Intégration directe en HTML (tag <?php ...>)",
+      "Support de la programmation procédurale et orientée objet (POO)",
+      "Extensions massives pour bases de données (MySQL, PostgreSQL, etc.)",
+      "Gestion des sessions, cookies et authentification HTTP",
+      "Upload et traitement de fichiers",
+      "Cryptographie et compression intégrées",
+      "Puissant traitement d'images et d'XML",
+      "Déploiement ultra-simple sur tous les hébergeurs web"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un site web dynamique ou une webapp traditionnelle.",
+        "Vous avez accès à un hébergement web classique (mutualisé ou VPS).",
+        "Vous travaillez avec WordPress, Drupal, Laravel ou une autre plateforme PHP.",
+        "Vous n'avez pas d'infrastructure NodeJS/Python existante."
+      ],
+      "avoidIf": [
+        "Vous développez une API moderne (préférer Node.js, Python, Go).",
+        "Vous cherchez un langage compilé ou avec typage fort natif.",
+        "Votre équipe n'a aucune expérience PHP."
+      ],
+      "threshold": "PHP domine le web traditionnel et les grandes plateformes de contenu ; pour une API moderne ou sans héritage, Node.js/Python conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source, aucun frais.",
+      "Disponible sur pratiquement tous les hébergeurs web (mutualisé, VPS, etc.).",
+      "Très facile à apprendre pour les débutants en web.",
+      "Écosystème massif (WordPress, Drupal, Laravel, Symfony, etc.).",
+      "Exécution rapide pour les opérations web classiques.",
+      "Excellente documentation et communauté en ligne.",
+      "Déploiement ultra-simple : upload FTP + go."
+    ],
+    "cons": [
+      "Typage faible, tendance aux bugs (amélioration en PHP 8+).",
+      "Moins adapté pour les API modernes (Node.js/Python mieux).",
+      "Performances inférieures aux langages compilés pour CPU intensif.",
+      "Code legacy peut être mal structuré ou difficile à maintenir."
+    ],
+    "use_cases": [
+      "Construire un site traditionnel dynamique (CMS, blog, commerce).",
+      "Créer un formulaire web avec traitement backend.",
+      "Étendre ou maintenir une plateforme existante (WordPress, Drupal).",
+      "Prototyper rapidement une idée web.",
+      "Automatiser des tâches serveur (cron jobs, traitement fichiers)."
+    ],
+    "relevant_for": ["Développeurs web freelances", "Agences web classiques", "Mainteneurs WordPress/Drupal", "Développeurs fullstack polyvalents"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a dynamic website or traditional web app.",
+        "You have access to standard web hosting (shared or VPS).",
+        "You work with WordPress, Drupal, Laravel, or other PHP platforms.",
+        "You don't have existing NodeJS/Python infrastructure."
+      ],
+      "avoidIf": [
+        "You're developing a modern API (prefer Node.js, Python, Go).",
+        "You want a compiled language or strong native typing.",
+        "Your team has zero PHP experience."
+      ],
+      "threshold": "PHP dominates traditional web and major content platforms; for modern APIs or greenfield projects, Node.js/Python fit better."
+    },
+    "pros": [
+      "Completely free and open source, no fees.",
+      "Available on nearly all web hosts (shared, VPS, etc.).",
+      "Very easy to learn for web beginners.",
+      "Massive ecosystem (WordPress, Drupal, Laravel, Symfony, etc.).",
+      "Fast execution for traditional web operations.",
+      "Excellent documentation and online community.",
+      "Ultra-simple deployment: FTP upload + go."
+    ],
+    "cons": [
+      "Weak typing, prone to bugs (improving in PHP 8+).",
+      "Less suited for modern APIs (Node.js/Python better).",
+      "Lower performance than compiled languages for CPU work.",
+      "Legacy code can be poorly structured or hard to maintain."
+    ],
+    "use_cases": [
+      "Build a traditional dynamic website (CMS, blog, e-commerce).",
+      "Create a web form with backend processing.",
+      "Extend or maintain an existing platform (WordPress, Drupal).",
+      "Rapidly prototype a web idea.",
+      "Automate server tasks (cron jobs, file processing)."
+    ],
+    "relevant_for": ["Freelance web developers", "Traditional web agencies", "WordPress / Drupal maintainers", "Versatile fullstack developers"]
+  }
+}

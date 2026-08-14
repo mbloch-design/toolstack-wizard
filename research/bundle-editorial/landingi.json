@@ -1,0 +1,100 @@
+{
+  "slug": "landingi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Landingi — Landing Page Builder (site officiel)", "url": "https://try.landingi.com" }
+  ],
+  "facts": {
+    "what": "Constructeur de pages de destination sans code avec éditeur glisser-déposer et IA intégrée (Solis AI). Permet de créer rapidement des landing pages optimisées, avec tests A/B, sections intelligentes, insights IA, et intégrations vers outils marketing et analyse.",
+    "what_en": "No-code landing page builder with drag-and-drop editor and built-in AI (Solis AI). Create high-converting landing pages fast with A/B testing, smart sections, AI insights, and integrations with marketing and analytics tools.",
+    "pricing_model": "Abonnement mensuel ou annuel (avec rabais annuel). Quatre plans payants, plus essai 14 jours. Pas de plan gratuit permanent.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours sans carte de crédit. Pas de plan gratuit permanent après la période d'essai." },
+    "plans": [
+      { "name": "Build", "price": "29 $/mois annuel / 24 $/mois (10 pages, 2000 visites/mois, 1 domaine custom)" },
+      { "name": "Optimize", "price": "149 $/mois annuel / 119 $/mois (100 pages, 30 000 visites/mois, A/B testing, smart sections)" },
+      { "name": "Scale", "price": "299 $/mois annuel / 229 $/mois (pages illimitées, 500 000 visites/mois, pages programmatiques)" },
+      { "name": "Enterprise", "price": "À partir de 1499 $/mois annuel / 1199 $/mois (SSO, domain whitelisting, SLA custom, 1M+ visites)" }
+    ],
+    "key_features": [
+      "Éditeur glisser-déposer sans code",
+      "IA Solis intégrée (copywriting, insights)",
+      "Sections intelligentes et templates prêts",
+      "Tests A/B et optimisation de conversion",
+      "Formulaires et CTAs intégrés",
+      "Intégrations marketing (email, CRM, analytics)",
+      "Analytics natif et tracking de conversion",
+      "Responsive et mobile-first",
+      "Domaines custom et SSL inclus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de lancer rapidement des landing pages pour campagnes marketing.",
+        "Vous cherchez une solution sans code avec IA de copywriting.",
+        "Vous testez différentes variantes (A/B testing) et optimisez la conversion."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite permanente.",
+        "Vous avez besoin de très haute personnalisation ou cas très spécifique.",
+        "Vos pages sont très simples (un landing page static suffirait)."
+      ],
+      "threshold": "Landingi convient aux équipes marketing créant des landing pages rapides et testées ; pour ultra-personnalisé ou gratuit permanent, d'autres outils ou développeur custom convient mieux."
+    },
+    "pros": [
+      "IA Solis pour copywriting et insights automatiques.",
+      "Essai gratuit 14 jours, pas de carte de crédit.",
+      "Interface facile, production très rapide.",
+      "A/B testing et analytics inclus.",
+      "Tarification compétitive, rabais annuels significatifs."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent après essai.",
+      "Tarification peut augmenter rapidement avec le trafic.",
+      "Personnalisation avancée limitée comparée à d'autres builders.",
+      "Moins de templates que Leadpages ou Unbounce."
+    ],
+    "use_cases": [
+      "Créer une landing page pour une campagne Facebook Ads.",
+      "Lancer rapidement une page de lead capture ou webinaire.",
+      "Tester différentes variantes (A/B) d'une page.",
+      "Construire des funnels de conversion simples."
+    ],
+    "relevant_for": ["Équipes marketing", "PME e-commerce", "Agences digitales", "Startups", "Consultants indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to launch landing pages quickly for marketing campaigns.",
+        "You want a no-code solution with AI copywriting.",
+        "You test variants (A/B) and optimize conversion rates."
+      ],
+      "avoidIf": [
+        "You need a permanent free solution.",
+        "You need extreme customization or highly specialized use cases.",
+        "Your pages are very simple (static landing page would suffice)."
+      ],
+      "threshold": "Landingi suits marketing teams building fast, tested landing pages; for ultra-custom or permanent-free needs, other tools or custom dev fit better."
+    },
+    "pros": [
+      "Solis AI for auto copywriting and insights.",
+      "Free 14-day trial, no credit card.",
+      "Easy interface, very fast production.",
+      "A/B testing and analytics built in.",
+      "Competitive pricing, significant annual discounts."
+    ],
+    "cons": [
+      "No permanent free tier after trial.",
+      "Pricing can climb quickly with traffic.",
+      "Advanced customization limited vs. other builders.",
+      "Fewer templates than Leadpages or Unbounce."
+    ],
+    "use_cases": [
+      "Create a landing page for a Facebook Ads campaign.",
+      "Launch a quick lead capture or webinar page.",
+      "Test different page variants (A/B testing).",
+      "Build simple conversion funnels."
+    ]
+  }
+}

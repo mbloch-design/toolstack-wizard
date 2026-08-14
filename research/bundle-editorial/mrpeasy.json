@@ -1,0 +1,112 @@
+{
+  "slug": "mrpeasy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-31",
+  "sources": [
+    { "label": "MRPeasy — Pricing officiel", "url": "https://mrpeasy.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Logiciel MRP (planification des besoins en matières premières) assisté par IA pour les petits fabricants (10-200 salariés). Gestion de la production, des stocks, des ventes et de la chaîne d'approvisionnement intégrées.",
+    "what_en": "AI-powered MRP (Material Resource Planning) software for small manufacturers (10-200 employees). Integrated production planning, inventory management, sales, and procurement in one platform.",
+    "pricing_model": "Tarification par utilisateur avec quatre niveaux (Starter, Professional, Enterprise, Unlimited). Réductions pour packs de 10 utilisateurs additionnels.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 30 jours pour tous les plans. Pas de version gratuite permanente, mais pas de contrats ni de frais cachés." },
+    "plans": [
+      { "name": "Starter", "price": "49 $/utilisateur/mois (planning et gestion des stocks de base)" },
+      { "name": "Professional", "price": "69 $/utilisateur/mois (portail B2B et configurateur produit)" },
+      { "name": "Enterprise", "price": "99 $/utilisateur/mois (système de codes-barres et MPS)" },
+      { "name": "Unlimited", "price": "149 $/utilisateur/mois (API, webhooks et accès complet)" }
+    ],
+    "key_features": [
+      "Planification de la production et reschedulage drag-and-drop",
+      "Gestion d'inventaire avec traçabilité par lot/numéro de série",
+      "Gestion des ventes et routage automatique des commandes",
+      "Gestion de la chaîne d'approvisionnement et prévisions d'achat",
+      "Système de codes-barres avec impression et scan",
+      "Gestion de la main-d'œuvre et suivi de l'utilisation",
+      "Planification principale de la production (MPS)",
+      "Intégrations (Shopify, QuickBooks, Xero, Salesforce)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un petit fabricant (10-200 personnes) avec des besoins de planification.",
+        "Vous gérez des stocks complexes, des nomenclatures et des approvisionnements.",
+        "Vous cherchez un outil accessible (pas d'ERP coûteux de grande entreprise).",
+        "Vous voulez une solution tout-en-un plutôt que des outils séparés."
+      ],
+      "avoidIf": [
+        "Vous travaillez principalement en mode projet ou service (pas de fabrication continue).",
+        "Vous avez un très petit atelier (moins de 10 personnes).",
+        "Vous préférez une solution gratuite ou open-source.",
+        "Vous avez déjà un ERP établi en production."
+      ],
+      "threshold": "MRPeasy convient aux petits fabricants et PME en croissance cherchant une gestion MRP accessible et intégrée ; pour l'artisanat simple ou les géantes entreprises, d'autres solutions s'imposent."
+    },
+    "pros": [
+      "Interface intuitive, facile à prendre en main.",
+      "Assistance IA pour la planification et optimisation.",
+      "Tout-en-un : production, stocks, ventes, achats.",
+      "Intégrations variées (Shopify, QuickBooks, etc.).",
+      "Tarification par utilisateur (pas de frais cachés).",
+      "Support inclus et absence d'engagements à long terme."
+    ],
+    "cons": [
+      "Coûts croissants rapidement avec plus d'utilisateurs.",
+      "Modules moins avancés que les grands ERP traditionnels.",
+      "Pas de version gratuite permanente.",
+      "Peut nécessiter un apprentissage initial pour la configuration."
+    ],
+    "use_cases": [
+      "Planifier la production mensuelle et gérer le reschedulage.",
+      "Synchroniser stocks et commandes clients automatiquement.",
+      "Générer des prévisions d'achat basées sur la demande.",
+      "Tracker la production par lot avec codes-barres.",
+      "Gérer plusieurs sites de production avec un seul système."
+    ],
+    "relevant_for": [
+      "Petits fabricants et PME",
+      "Entreprises de production sur mesure",
+      "Fabricants e-commerce intégrés",
+      "Consultants spécialisés en fabrication"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a small manufacturer (10-200 staff) needing planning and inventory management.",
+        "You manage complex BOMs, multiple suppliers, and supply chain coordination.",
+        "You want an accessible tool without enterprise ERP costs.",
+        "You prefer one integrated platform over multiple separate tools."
+      ],
+      "avoidIf": [
+        "You work primarily in project or service mode (not continuous manufacturing).",
+        "You have a very small shop (under 10 people).",
+        "You prefer free or open-source solutions.",
+        "You already have an established ERP in production."
+      ],
+      "threshold": "MRPeasy fits growing SME manufacturers seeking accessible, integrated MRP; for small artisan shops or enterprises, other solutions are better."
+    },
+    "pros": [
+      "Intuitive interface, easy to learn.",
+      "AI-assisted planning and optimization.",
+      "All-in-one platform: production, inventory, sales, procurement.",
+      "Multiple integrations (Shopify, QuickBooks, etc.).",
+      "Per-user pricing with no hidden fees.",
+      "Included support, no long-term contracts."
+    ],
+    "cons": [
+      "Costs grow quickly with more users.",
+      "Advanced features less robust than large ERPs.",
+      "No permanent free version.",
+      "Initial setup and configuration learning curve."
+    ],
+    "use_cases": [
+      "Plan monthly production and reschedule on the fly.",
+      "Sync inventory and customer orders automatically.",
+      "Generate purchase forecasts based on demand.",
+      "Track production by lot with barcode scanning.",
+      "Manage multiple production sites in one system."
+    ]
+  }
+}

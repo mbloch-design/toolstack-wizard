@@ -1,0 +1,91 @@
+{
+  "slug": "newman",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Newman CLI — GitHub (site officiel)", "url": "https://github.com/postmanlabs/newman" }
+  ],
+  "facts": {
+    "what": "Exécuteur de collections Postman en ligne de commande, conçu pour intégrer le test d'API directement dans les pipelines CI/CD sans interface graphique.",
+    "what_en": "Command-line collection runner for Postman, designed to integrate API testing directly into CI/CD pipelines without GUI.",
+    "pricing_model": "Gratuit, open source (licence Apache 2.0)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source. Installable via NPM ou Homebrew." },
+    "plans": [],
+    "key_features": [
+      "Exécution de collections Postman depuis le terminal",
+      "Support des fichiers de données et itérations multiples",
+      "Générateurs de rapports (CLI, JSON, JUnit, HTML)",
+      "Intégration native avec CI/CD et systèmes de build",
+      "Gestion des cookies, timeouts et proxy"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous automatisez le test d'API dans une pipeline CI/CD.",
+        "Vous utilisez déjà Postman et voulez des tests en CLI.",
+        "Vous avez besoin d'intégration sans interface graphique."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Postman ou une autre source API.",
+        "Vous cherchez une UI pour exécuter les tests manuellement.",
+        "Vous ne maintenez pas de pipelines de test."
+      ],
+      "threshold": "Newman s'impose pour automatiser les tests Postman en CI/CD ; sans pipeline ou sans collections Postman, l'outil n'a pas de pertinence."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Intégration transparente avec Postman.",
+      "Excellente compatibilité CI/CD (Jenkins, GitHub Actions, etc.).",
+      "Rapports générés automatiquement dans plusieurs formats.",
+      "Pas de limite de collections ou d'exécutions."
+    ],
+    "cons": [
+      "Nécessite Postman ou un fichier de collection existant.",
+      "Interface en ligne de commande uniquement.",
+      "Pas de monitoring ou de gestion d'alertes intégrée.",
+      "Documentation moins détaillée que Postman."
+    ],
+    "use_cases": [
+      "Automatiser les tests d'API dans une pipeline CI/CD.",
+      "Valider les collections Postman avant déploiement.",
+      "Générer des rapports de santé des API.",
+      "Intégrer les tests d'API à un workflow de développement."
+    ],
+    "relevant_for": ["Développeurs backend", "QA / testeurs API", "DevOps / SRE"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You automate API testing in a CI/CD pipeline.",
+        "You already use Postman and want CLI-based tests.",
+        "You need testing without a graphical interface."
+      ],
+      "avoidIf": [
+        "You don't use Postman or have no API collections.",
+        "You need a UI to run tests manually.",
+        "You don't maintain test pipelines."
+      ],
+      "threshold": "Newman is essential for automating Postman tests in CI/CD; without a pipeline or Postman collections, the tool has no use."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Seamless integration with Postman.",
+      "Excellent CI/CD compatibility (Jenkins, GitHub Actions, etc.).",
+      "Automatically generated reports in multiple formats.",
+      "No limits on collections or executions."
+    ],
+    "cons": [
+      "Requires Postman or an existing collection file.",
+      "Command-line interface only.",
+      "No built-in monitoring or alerting.",
+      "Documentation less detailed than Postman."
+    ],
+    "use_cases": [
+      "Automate API testing in CI/CD pipelines.",
+      "Validate Postman collections before deployment.",
+      "Generate API health reports.",
+      "Integrate API tests into development workflows."
+    ]
+  }
+}

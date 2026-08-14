@@ -1,0 +1,87 @@
+{
+  "slug": "remix",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Remix — web framework (site officiel)", "url": "https://remix.run" }
+  ],
+  "facts": {
+    "what": "Framework full-stack pour construire des applications web modernes, résilientes et rapides. Combine frontend React et backend Node.js/serveur dans une seule dépendance. Acquis par Shopify en 2022, open-source MIT.",
+    "what_en": "Full-stack framework for building modern, resilient and fast web applications. Combines frontend React and backend Node.js/server in a single dependency. Acquired by Shopify in 2022, MIT open-source.",
+    "pricing_model": "Gratuit et open-source. MIT license. Pas de coût de licence. Hosting et deployment dépendent de la plateforme cible (Vercel, Netlify, on-premise, etc.).",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open-source, MIT license." },
+    "plans": [],
+    "key_features": [
+      "Full-stack JavaScript (React + Node.js)",
+      "Server-side rendering (SSR) natif",
+      "Data loading et form handling intégrés",
+      "Compatible avec serverless (Cloudflare Workers, AWS Lambda) et Node.js traditionnel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des applications web modernes et complexes.",
+        "Vous maîtrisez JavaScript/React et voulez un framework full-stack.",
+        "Vous cherchez une alternative à Next.js ou une solution plus intégrée."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas familier avec React ou JavaScript.",
+        "Vous cherchez un framework ultra-simplifié pour débutants.",
+        "Vous faites un site statique ou contenu-first (Next.js Content Collections peut suffire)."
+      ],
+      "threshold": "Remix s'impose pour les devs React cherchant une solution full-stack opinionée ; pour un site marketing simple ou API-first, un framework léger convient mieux."
+    },
+    "pros": [
+      "Framework full-stack intégré et opinionné.",
+      "Gestion native du SSR, data loading, forms.",
+      "Supporté par Shopify, communauté active.",
+      "Gratuit et open-source MIT.",
+      "Compatible serverless (Cloudflare Workers, etc.)."
+    ],
+    "cons": [
+      "Courbe d'apprentissage (paradigme full-stack).",
+      "Moins de resources tierces que Next.js.",
+      "Choix opinionné (moins de flexibilité)."
+    ],
+    "use_cases": [
+      "Construire une application web avec authentification et données.",
+      "Créer un e-commerce ou plateforme SaaS.",
+      "Prototyper rapidement un MVP full-stack."
+    ],
+    "relevant_for": ["Développeurs React", "Startups web", "Agences fullstack"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing modern, complex web applications.",
+        "You're proficient in JavaScript/React and want a full-stack framework.",
+        "You're looking for an alternative to Next.js or a more integrated solution."
+      ],
+      "avoidIf": [
+        "You're not familiar with React or JavaScript.",
+        "You're looking for an ultra-simplified beginner framework.",
+        "You're building a static or content-first site (Next.js Content Collections may suffice)."
+      ],
+      "threshold": "Remix makes sense for React devs seeking an opinionated full-stack solution; for a simple marketing site or API-first project, a lighter framework fits better."
+    },
+    "pros": [
+      "Integrated, opinionated full-stack framework.",
+      "Native SSR, data loading, forms handling.",
+      "Backed by Shopify, active community.",
+      "Free and open-source MIT.",
+      "Serverless compatible (Cloudflare Workers, etc.)."
+    ],
+    "cons": [
+      "Learning curve (full-stack paradigm).",
+      "Fewer third-party resources than Next.js.",
+      "Opinionated choices (less flexibility)."
+    ],
+    "use_cases": [
+      "Build a web app with authentication and data.",
+      "Create an e-commerce or SaaS platform.",
+      "Quickly prototype a full-stack MVP."
+    ],
+    "relevant_for": ["React developers", "Web startups", "Fullstack agencies"]
+  }
+}

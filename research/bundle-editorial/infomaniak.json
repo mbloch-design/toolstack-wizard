@@ -1,0 +1,95 @@
+{
+  "slug": "infomaniak",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Infomaniak — Hébergement web, cloud et services (site officiel)", "url": "https://www.infomaniak.com" }
+  ],
+  "facts": {
+    "what": "Fournisseur suisse d'hébergement web, cloud et services numériques incluant hébergement partagé, hébergement WordPress, cloud public, stockage cloud (kDrive), noms de domaines et messagerie. Basé en Suisse, engagé dans la souveraineté numérique et l'écologie.",
+    "what_en": "Swiss provider of web hosting, cloud services, and digital tools including shared hosting, WordPress hosting, public cloud, cloud storage (kDrive), domain names, and email. Based in Switzerland, committed to digital sovereignty and green infrastructure.",
+    "pricing_model": "Services multiples avec tarification progressive. Hébergement web partagé à partir de 5,75 €/mois. Cloud public et services à tarification en fonction de l'usage. Rabais annuels disponibles (1-2 mois offerts).",
+    "free_tier": { "exists": false, "detail": "Aucun plan gratuit. Essai ou période satisfait ou remboursé de 30 jours pour les nouveaux clients." },
+    "plans": [
+      { "name": "Web Hosting partagé", "price": "À partir de 5,75 €/mois" },
+      { "name": "Cloud public", "price": "À partir de 5,75 €/mois (tarification à l'usage)" },
+      { "name": "kDrive (stockage cloud)", "price": "À partir de 5,54 CHF/mois (jusqu'à 2 TB)" }
+    ],
+    "key_features": [
+      "Tous les serveurs basés en Suisse",
+      "Infrastructure écologique et verte",
+      "Support pour WordPress, PHP, Node.js",
+      "SSL certifiés inclus",
+      "Sauvegardes automatiques",
+      "Outils de gestion en français",
+      "Intégration messagerie et noms de domaines"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous privilégiez la souveraineté de données et l'infrastructure suisse.",
+        "Vous avez besoin d'hébergement écologique certifié.",
+        "Vous gérez un site web, blog WordPress ou application web."
+      ],
+      "avoidIf": [
+        "Vous cherchez le prix le moins cher du marché.",
+        "Vous avez besoin d'une infrastructure globale à très haute latence.",
+        "Vous préférez un gros fournisseur multinational reconnu."
+      ],
+      "threshold": "Infomaniak convient aux organisations privilégiant l'éthique, la suveraineté et la performance locale suisse ; pour un budget ultra-réduit ou une couverture mondiale extrême, de grands fournisseurs classiques conviennent mieux."
+    },
+    "pros": [
+      "Infrastructure suisse, données souveraines.",
+      "Hébergement écologique et certifié vert.",
+      "Support client réactif en français.",
+      "Interface utilisateur intuitive.",
+      "Tarifs compétitifs pour le positionnement éthique."
+    ],
+    "cons": [
+      "Infrastructure limitée à la Suisse (latence hors Europe).",
+      "Moins connu que les géants du marché.",
+      "Services peuvent être plus chers que les concurrents mondiaux."
+    ],
+    "use_cases": [
+      "Héberger un site web ou blog WordPress en Suisse.",
+      "Stocker des données sensibles avec garantie suisse.",
+      "Construire une infrastructure écologique et souveraine.",
+      "Gérer un projet web avec support français."
+    ],
+    "relevant_for": ["Entreprises suisses", "Organisations éthiques", "PME réglementées", "Projets éco-responsables"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prioritize data sovereignty and Swiss infrastructure.",
+        "You need green, eco-certified hosting.",
+        "You run a website, WordPress blog, or web application."
+      ],
+      "avoidIf": [
+        "You need the absolute cheapest hosting available.",
+        "You require ultra-low latency globally.",
+        "You prefer to work with large multinational providers."
+      ],
+      "threshold": "Infomaniak suits organizations prioritizing ethics and Swiss sovereignty; for ultra-low cost or global coverage, mainstream providers work better."
+    },
+    "pros": [
+      "Swiss infrastructure, data sovereignty guaranteed.",
+      "Eco-friendly, certified green hosting.",
+      "Responsive French-speaking support.",
+      "Intuitive user dashboard.",
+      "Competitive pricing for ethical positioning."
+    ],
+    "cons": [
+      "Infrastructure limited to Switzerland (latency outside Europe).",
+      "Less known than major global providers.",
+      "May be pricier than global competitors."
+    ],
+    "use_cases": [
+      "Host a website or WordPress blog in Switzerland.",
+      "Store sensitive data with Swiss data protection.",
+      "Build eco-friendly and sovereign digital infrastructure.",
+      "Manage a web project with French-language support."
+    ]
+  }
+}

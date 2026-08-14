@@ -1,0 +1,88 @@
+{
+  "slug": "poetry",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Poetry — Documentation (site officiel)", "url": "https://python-poetry.org" }
+  ],
+  "facts": {
+    "what": "Gestionnaire de dépendances et d'empaquetage pour Python remplaçant setup.py, requirements.txt et Pipfile par un format pyproject.toml unifié avec résolution intelligente et verrouillage de versions.",
+    "what_en": "Python dependency and package manager replacing setup.py, requirements.txt, and Pipfile with a unified pyproject.toml format, featuring intelligent resolution and version locking.",
+    "pricing_model": "Entièrement gratuit et open source. Aucun abonnement ou tier payant.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Outil open source sans limitation de fonctionnalités." },
+    "plans": [
+      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+    ],
+    "key_features": [
+      "Gestion déterministe des dépendances avec lock file",
+      "Gestion automatique des environnements virtuels",
+      "Déclaration unifiée dans pyproject.toml",
+      "Groupes de dépendances (dev, test, etc.)",
+      "Publication simplifiée de packages PyPI",
+      "Résolution de conflits de dépendances"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en Python et cherchez un workflow moderne.",
+        "Vous voulez éviter les fichiers requirements.txt en désordre.",
+        "Vous travaillez en équipe et besoin de reproductibilité."
+      ],
+      "avoidIf": [
+        "Vous avez des projets Python très anciens utilisant pip.",
+        "Vous n'avez pas Python 3.10 ou plus disponible."
+      ],
+      "threshold": "Poetry s'impose comme le standard moderne pour la gestion des dépendances Python ; adoption rapide en équipe."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Workflow unifié et moderne.",
+      "Lock file garantit la reproductibilité.",
+      "Gestion automatique des environnements virtuels.",
+      "Résolution intelligente de conflits de dépendances."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour utilisateurs de pip/venv.",
+      "Temps de résolution initial peut être lent.",
+      "Écosystème d'intégrations encore en développement."
+    ],
+    "use_cases": [
+      "Gérer les dépendances d'une application web Django/FastAPI.",
+      "Publier un package Python sur PyPI.",
+      "Partager un projet en équipe avec reproductibilité garantie."
+    ],
+    "relevant_for": ["Développeurs Python", "DevOps", "Équipes data science"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing in Python and want a modern workflow.",
+        "You want to avoid messy requirements.txt files.",
+        "You work in a team and need reproducibility."
+      ],
+      "avoidIf": [
+        "You have very old Python projects using pip.",
+        "You don't have Python 3.10+ available."
+      ],
+      "threshold": "Poetry has become the modern standard for Python dependency management; rapid team adoption."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Unified and modern workflow.",
+      "Lock file ensures reproducibility.",
+      "Automatic virtual environment management.",
+      "Intelligent dependency conflict resolution."
+    ],
+    "cons": [
+      "Learning curve for pip/venv users.",
+      "Initial resolution time can be slow.",
+      "Integration ecosystem still developing."
+    ],
+    "use_cases": [
+      "Manage dependencies for a Django/FastAPI web app.",
+      "Publish a Python package to PyPI.",
+      "Share a project with guaranteed reproducibility."
+    ]
+  }
+}

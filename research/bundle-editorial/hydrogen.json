@@ -1,0 +1,88 @@
+{
+  "slug": "hydrogen",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hydrogen — Shopify's Headless Commerce Framework (site officiel)", "url": "https://hydrogen.shopify.dev" }
+  ],
+  "facts": {
+    "what": "Framework headless open source construit sur Remix pour créer des vitrines de commerce personnalisées sur Shopify. Fournit des composants pré-construits optimisés pour l'e-commerce et l'intégration native aux services Shopify (Shop Pay, Analytics, recherche).",
+    "what_en": "Open source headless commerce framework built on Remix for creating custom Shopify storefronts. Provides pre-built commerce components optimized for e-commerce and native integration with Shopify services (Shop Pay, Analytics, Search).",
+    "pricing_model": "Gratuit et open source. Hébergement sur Oxygen inclus gratuitement sur tous les plans Shopify payants (à partir de Basic).",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Framework open source, hébergement Oxygen inclus, pas de limite d'usage." },
+    "plans": [
+      { "name": "Framework + Oxygen", "price": "Gratuit (inclus avec tous les plans Shopify payants, pas disponible sur Starter)" }
+    ],
+    "key_features": [
+      "Composants e-commerce pré-construits (panier, pages produit, checkout)",
+      "Rendu côté serveur pour performance et moins de JavaScript",
+      "Intégrations Shopify natives : Shop Pay, Analytics, comptes clients, marchés, recherche",
+      "Support multi-marchés sans modification de code",
+      "Hébergement global via Oxygen avec 300+ points de présence",
+      "Compatible avec APIs tiers (Sanity, Algolia, Yotpo)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une boutique Shopify personnalisée et performante.",
+        "Vous voulez un framework moderne avec architecture headless.",
+        "Vous préférez une solution intégrée aux outils Shopify."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une solution sans code pour démarrer rapidement.",
+        "Vous ne possédez pas un plan Shopify payant.",
+        "Votre équipe n'a pas d'expertise en développement React/Remix."
+      ],
+      "threshold": "Hydrogen convient aux agences et développeurs construisant des storefronts Shopify modernes ; pour un démarrage sans code ou un budget réduit, des page builders no-code conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit, aucun coût de framework ou hébergement.",
+      "Hébergement global rapide inclus avec 300+ points de présence.",
+      "Intégrations Shopify natives prêtes à l'emploi.",
+      "Architecture moderne et flexible avec Remix."
+    ],
+    "cons": [
+      "Requiert une expertise React/TypeScript, pas de solution no-code.",
+      "Disponible uniquement sur plans Shopify payants.",
+      "Temps de mise en marché plus long que les page builders."
+    ],
+    "use_cases": [
+      "Construire une boutique e-commerce hautement personnalisée pour Shopify.",
+      "Implémenter une architecture headless pour Shopify.",
+      "Créer une expérience de storefront unique et performante."
+    ],
+    "relevant_for": ["Développeurs React/TypeScript", "Agences web", "Entreprises Shopify", "E-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a custom, high-performance Shopify storefront.",
+        "You want a modern headless framework with native Shopify integrations.",
+        "Your team has React/Remix development experience."
+      ],
+      "avoidIf": [
+        "You need a no-code solution for quick setup.",
+        "You don't have a paid Shopify plan.",
+        "Your team lacks JavaScript/React expertise."
+      ],
+      "threshold": "Hydrogen suits agencies and developers building modern Shopify storefronts; for no-code or tight budgets, landing page builders are a better fit."
+    },
+    "pros": [
+      "Completely free—no framework or hosting costs.",
+      "Fast global hosting included with 300+ edge locations.",
+      "Native Shopify integrations ready to use.",
+      "Modern, flexible architecture with Remix."
+    ],
+    "cons": [
+      "Requires React/TypeScript expertise, no no-code option.",
+      "Only available on paid Shopify plans.",
+      "Longer time-to-market than page builders."
+    ],
+    "use_cases": [
+      "Build a highly customized e-commerce storefront for Shopify.",
+      "Implement a headless architecture for Shopify.",
+      "Create a unique, performant storefront experience."
+    ]
+  }
+}
