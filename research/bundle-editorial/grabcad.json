@@ -1,0 +1,86 @@
+{
+  "slug": "grabcad",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GrabCAD Community — bibliothèque de modèles CAO (site officiel)", "url": "https://grabcad.com/library" }
+  ],
+  "facts": {
+    "what": "Communauté en ligne de concepteurs et ingénieurs (Stratasys) avec une très large bibliothèque de modèles CAO libres à télécharger et à partager. Le module de collaboration Workbench a été arrêté en juin 2023 ; la bibliothèque communautaire reste active.",
+    "what_en": "Online community of designers and engineers (Stratasys) with a very large library of free CAD models to download and share. The Workbench collaboration module was discontinued in June 2023; the community library remains active.",
+    "pricing_model": "Accès gratuit à la bibliothèque communautaire (compte requis). Le module Workbench, autrefois payant, n'est plus proposé.",
+    "free_tier": { "exists": true, "detail": "Bibliothèque communautaire gratuite : téléchargement et partage de modèles CAO avec un compte." },
+    "plans": [
+      { "name": "Communauté", "price": "gratuit" }
+    ],
+    "key_features": [
+      "Très large bibliothèque de modèles CAO gratuits",
+      "Partage et publication de ses propres modèles",
+      "Communauté de concepteurs et d'ingénieurs",
+      "Formats CAO variés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez des modèles CAO prêts à l'emploi.",
+        "Vous voulez partager vos modèles avec une communauté.",
+        "Vous prototypez et gagnez du temps avec des pièces existantes."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de collaboration CAO (Workbench n'existe plus).",
+        "Vous avez besoin de modèles certifiés avec garantie industrielle.",
+        "Vous ne travaillez pas avec des fichiers CAO."
+      ],
+      "threshold": "GrabCAD s'impose comme source gratuite de modèles CAO ; pour de la gestion de données ou de la collaboration d'équipe, il faut désormais un autre outil."
+    },
+    "pros": [
+      "Bibliothèque très fournie et gratuite.",
+      "Communauté active de professionnels.",
+      "Gain de temps réel en prototypage.",
+      "Formats CAO variés."
+    ],
+    "cons": [
+      "Le module de collaboration Workbench a été arrêté.",
+      "Qualité des modèles variable (contributions communautaires).",
+      "Pas de garantie industrielle sur les fichiers."
+    ],
+    "use_cases": [
+      "Trouver un modèle CAO existant pour un projet.",
+      "Partager ses propres pièces avec la communauté.",
+      "Accélérer un prototypage."
+    ],
+    "relevant_for": ["Ingénieurs mécaniques", "Makers", "Concepteurs produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're looking for ready-made CAD models.",
+        "You want to share your models with a community.",
+        "You prototype and save time reusing existing parts."
+      ],
+      "avoidIf": [
+        "You want a CAD collaboration tool (Workbench is gone).",
+        "You need certified models with industrial guarantees.",
+        "You don't work with CAD files."
+      ],
+      "threshold": "GrabCAD makes sense as a free source of CAD models; for data management or team collaboration, you now need another tool."
+    },
+    "pros": [
+      "Very rich, free library.",
+      "Active community of professionals.",
+      "Real time savings in prototyping.",
+      "Varied CAD formats."
+    ],
+    "cons": [
+      "The Workbench collaboration module was discontinued.",
+      "Model quality varies (community contributions).",
+      "No industrial guarantee on files."
+    ],
+    "use_cases": [
+      "Find an existing CAD model for a project.",
+      "Share your own parts with the community.",
+      "Speed up prototyping."
+    ]
+  }
+}

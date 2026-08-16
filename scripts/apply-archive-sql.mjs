@@ -30,6 +30,7 @@ const files = [
   "scripts/sql/archive-repass-flags-3.sql",
   "scripts/sql/archive-repass-flags-4.sql",
   "scripts/sql/archive-repass-flags-5.sql",
+  "scripts/sql/archive-invision-discontinued.sql",
 ];
 
 let totalArchived = 0;

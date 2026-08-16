@@ -1,0 +1,7436 @@
+[
+  {
+    "slug": "adobe-fresco",
+    "name": "Adobe Fresco",
+    "website_url": "https://www.adobe.com/products/fresco.html",
+    "category": "—",
+    "done": true
+  },
+  {
+    "slug": "adobe-stock",
+    "name": "Adobe Stock",
+    "website_url": "https://stock.adobe.com/",
+    "category": "—",
+    "done": true
+  },
+  {
+    "slug": "affinity-designer",
+    "name": "Affinity Designer",
+    "website_url": "https://affinity.serif.com/designer/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "affinity-publisher",
+    "name": "Affinity Publisher",
+    "website_url": "https://affinity.serif.com/publisher/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "alpinejs",
+    "name": "Alpine.js",
+    "website_url": "https://alpinejs.dev",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "angular-material",
+    "name": "Angular Material",
+    "website_url": "https://material.angular.io",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "angular-universal",
+    "name": "Angular Universal",
+    "website_url": "https://angular.io/guide/universal",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "apexcharts",
+    "name": "ApexCharts",
+    "website_url": "https://apexcharts.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "avocode",
+    "name": "Avocode",
+    "website_url": "https://avocode.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "balsamiq",
+    "name": "Balsamiq",
+    "website_url": "https://balsamiq.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "chartjs",
+    "name": "Chart.js",
+    "website_url": "https://www.chartjs.org",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "chromatic",
+    "name": "Chromatic",
+    "website_url": "https://www.chromatic.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "cision",
+    "name": "Cision",
+    "website_url": "https://cision.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "clip-studio-paint",
+    "name": "Clip Studio Paint",
+    "website_url": "https://www.clipstudio.net/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "coreldraw",
+    "name": "CorelDRAW",
+    "website_url": "https://www.coreldraw.com/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "create-react-app",
+    "name": "Create React App",
+    "website_url": "https://create-react-app.dev",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "cycles",
+    "name": "Cycles",
+    "website_url": "https://www.blender.org/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "d3js",
+    "name": "D3.js",
+    "website_url": "https://d3js.org",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "darktable",
+    "name": "darktable",
+    "website_url": "https://www.darktable.org/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "dxo-photolab",
+    "name": "DxO PhotoLab",
+    "website_url": "https://www.dxo.com/dxo-photolab/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "emotion",
+    "name": "Emotion",
+    "website_url": "https://emotion.sh",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "formik",
+    "name": "Formik",
+    "website_url": "https://formik.org",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "framer-motion",
+    "name": "Framer Motion",
+    "website_url": "https://www.framer.com/motion/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "fusion",
+    "name": "Blackmagic Fusion",
+    "website_url": "https://www.blackmagicdesign.com/products/fusion",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "greensock",
+    "name": "GreenSock (GSAP)",
+    "website_url": "https://gsap.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "headless-ui",
+    "name": "Headless UI",
+    "website_url": "https://headlessui.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "highcharts",
+    "name": "Highcharts",
+    "website_url": "https://www.highcharts.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "jquery",
+    "name": "jQuery",
+    "website_url": "https://jquery.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "website_url": "https://www.klaviyo.com/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "knockout",
+    "name": "Knockout",
+    "website_url": "https://knockoutjs.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "krita",
+    "name": "Krita",
+    "website_url": "https://krita.org/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "lottie",
+    "name": "Lottie",
+    "website_url": "https://lottiefiles.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "mantine",
+    "name": "Mantine",
+    "website_url": "https://mantine.dev",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "material-swift",
+    "name": "Material (Swift)",
+    "website_url": "https://github.com/material-components/material-components-ios",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "meltwater",
+    "name": "Meltwater",
+    "website_url": "https://meltwater.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "origami",
+    "name": "Origami",
+    "website_url": "https://origami.design",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "percy",
+    "name": "Percy",
+    "website_url": "https://percy.io",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "photopea",
+    "name": "Photopea",
+    "website_url": "https://www.photopea.com/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "pixelmator-pro",
+    "name": "Pixelmator Pro",
+    "website_url": "https://www.pixelmator.com/pro/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "preact",
+    "name": "Preact",
+    "website_url": "https://preactjs.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "prowly",
+    "name": "Prowly",
+    "website_url": "https://prowly.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "pterocos",
+    "name": "Pterocos",
+    "website_url": "https://pterocos.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "quarkxpress",
+    "name": "QuarkXPress",
+    "website_url": "https://www.quark.com/products/quarkxpress",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "radix-primitives",
+    "name": "Radix Primitives",
+    "website_url": "https://www.radix-ui.com/primitives",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "radix-ui",
+    "name": "Radix UI",
+    "website_url": "https://www.radix-ui.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "react",
+    "name": "React",
+    "website_url": "https://react.dev",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "react-hook-form",
+    "name": "React Hook Form",
+    "website_url": "https://react-hook-form.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "react-query",
+    "name": "React Query",
+    "website_url": "https://tanstack.com/query",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "react-router",
+    "name": "React Router",
+    "website_url": "https://reactrouter.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "reaper",
+    "name": "REAPER",
+    "website_url": "https://www.reaper.fm/",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "relay",
+    "name": "Relay",
+    "website_url": "https://relay.dev",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "solid-js",
+    "name": "Solid.js",
+    "website_url": "https://www.solidjs.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "styled-components",
+    "name": "styled-components",
+    "website_url": "https://styled-components.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "svelte",
+    "name": "Svelte",
+    "website_url": "https://svelte.dev",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "tailwind-css",
+    "name": "Tailwind CSS",
+    "website_url": "https://tailwindcss.com",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "tanstack-router",
+    "name": "TanStack Router",
+    "website_url": "https://tanstack.com/router",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "topaz-photo-ai",
+    "name": "Topaz Photo AI",
+    "website_url": "https://www.topazlabs.com/topaz-photo-ai",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "tremor",
+    "name": "Tremor",
+    "website_url": "https://www.tremor.so",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "visily",
+    "name": "Visily",
+    "website_url": "https://www.visily.ai",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "vue-cli",
+    "name": "Vue CLI",
+    "website_url": "https://cli.vuejs.org",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "vue-router",
+    "name": "Vue Router",
+    "website_url": "https://router.vuejs.org",
+    "category": "—",
+    "done": false
+  },
+  {
+    "slug": "adobe-enhance-speech",
+    "name": "Adobe Enhance Speech",
+    "website_url": "https://podcast.adobe.com/enhance",
+    "category": "ai-general",
+    "done": true
+  },
+  {
+    "slug": "adobe-podcast-ai",
+    "name": "Adobe Podcast AI",
+    "website_url": "https://podcast.adobe.com",
+    "category": "ai-general",
+    "done": true
+  },
+  {
+    "slug": "anthropic",
+    "name": "Anthropic API",
+    "website_url": "https://www.anthropic.com/api",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "autodesk-flow-studio",
+    "name": "Autodesk Flow Studio",
+    "website_url": "https://wonderdynamics.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "bolt-new",
+    "name": "Bolt.new",
+    "website_url": "https://bolt.new",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "canva-ai",
+    "name": "Canva AI",
+    "website_url": "https://www.canva.com/ai/",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "website_url": "https://chat.openai.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "claude",
+    "name": "Claude",
+    "website_url": "https://anthropic.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "cursor",
+    "name": "Cursor",
+    "website_url": "https://cursor.sh",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "deepseek",
+    "name": "DeepSeek",
+    "website_url": "https://www.deepseek.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "descript",
+    "name": "Descript",
+    "website_url": "https://descript.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "website_url": "https://elevenlabs.io",
+    "category": "ai-general",
+    "done": true
+  },
+  {
+    "slug": "fathom",
+    "name": "Fathom",
+    "website_url": "https://www.fathom.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "fellow",
+    "name": "Fellow",
+    "website_url": "https://fellow.app",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "figma-weave",
+    "name": "Figma Weave",
+    "website_url": "https://weave.figma.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "firefly",
+    "name": "Adobe Firefly",
+    "website_url": "https://firefly.adobe.com",
+    "category": "ai-general",
+    "done": true
+  },
+  {
+    "slug": "flux",
+    "name": "Flux (Black Forest Labs)",
+    "website_url": "https://blackforestlabs.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "gemini",
+    "name": "Gemini",
+    "website_url": "https://gemini.google.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "github-copilot",
+    "name": "GitHub Copilot",
+    "website_url": "https://github.com/features/copilot",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "google-ai-studio",
+    "name": "Google AI Studio",
+    "website_url": "https://aistudio.google.com",
+    "category": "ai-general",
+    "done": true
+  },
+  {
+    "slug": "granola",
+    "name": "Granola",
+    "website_url": "https://www.granola.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "grok",
+    "name": "Grok",
+    "website_url": "https://grok.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "guideless",
+    "name": "Guideless",
+    "website_url": "https://guideless.app",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "helicone",
+    "name": "Helicone",
+    "website_url": "https://www.helicone.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "heygen",
+    "name": "HeyGen",
+    "website_url": "https://heygen.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "hume-ai",
+    "name": "Hume AI",
+    "website_url": "https://www.hume.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "ideogram",
+    "name": "Ideogram",
+    "website_url": "https://ideogram.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "jasper",
+    "name": "Jasper",
+    "website_url": "https://jasper.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "kling-ai",
+    "name": "Kling AI",
+    "website_url": "https://klingai.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "krea-ai",
+    "name": "Krea AI",
+    "website_url": "https://krea.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "langchain",
+    "name": "LangChain",
+    "website_url": "https://www.langchain.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "langsmith",
+    "name": "LangSmith",
+    "website_url": "https://www.langchain.com/langsmith",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "leonardo-ai",
+    "name": "Leonardo AI",
+    "website_url": "https://leonardo.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "llamaindex",
+    "name": "LlamaIndex",
+    "website_url": "https://www.llamaindex.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "lovable",
+    "name": "Lovable",
+    "website_url": "https://lovable.dev",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "magnific-ai",
+    "name": "Magnific AI",
+    "website_url": "https://magnific.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "manifest-ai",
+    "name": "Manifest AI",
+    "website_url": "https://manifestai.io",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "mem-ai",
+    "name": "Mem AI",
+    "website_url": "https://mem.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "meshy",
+    "name": "Meshy",
+    "website_url": "https://www.meshy.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "microsoft-365-copilot",
+    "name": "Microsoft 365 Copilot",
+    "website_url": "https://www.microsoft.com/microsoft-365/copilot",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "move-ai",
+    "name": "Move AI",
+    "website_url": "https://www.move.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "notion-ai",
+    "name": "Notion AI",
+    "website_url": "https://notion.so/product/ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "openai-api",
+    "name": "OpenAI API",
+    "website_url": "https://platform.openai.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "otter",
+    "name": "Otter",
+    "website_url": "https://otter.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "otter-ai",
+    "name": "Otter.ai",
+    "website_url": "https://otter.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "website_url": "https://perplexity.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "pgvector",
+    "name": "pgvector",
+    "website_url": "https://github.com/pgvector/pgvector",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "pika-labs",
+    "name": "Pika Labs",
+    "website_url": "https://pika.art",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "pinecone",
+    "name": "Pinecone",
+    "website_url": "https://www.pinecone.io",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "qdrant",
+    "name": "Qdrant",
+    "website_url": "https://qdrant.tech",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "replit",
+    "name": "Replit",
+    "website_url": "https://replit.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "runway",
+    "name": "Runway",
+    "website_url": "https://runwayml.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "website_url": "https://stability.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "suno",
+    "name": "Suno",
+    "website_url": "https://suno.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "tabnine",
+    "name": "Tabnine",
+    "website_url": "https://tabnine.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "topaz-video-ai",
+    "name": "Topaz Video AI",
+    "website_url": "https://topazlabs.com/topaz-video-ai",
+    "category": "ai-general",
+    "done": true
+  },
+  {
+    "slug": "tripo",
+    "name": "Tripo",
+    "website_url": "https://www.tripo3d.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "typotab",
+    "name": "TypoTab",
+    "website_url": "https://typotab.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "udio",
+    "name": "Udio",
+    "website_url": "https://udio.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "vercel-ai-sdk",
+    "name": "Vercel AI SDK",
+    "website_url": "https://sdk.vercel.ai",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "voicetypr",
+    "name": "VoiceTypr",
+    "website_url": "https://voicetypr.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "whisper",
+    "name": "Whisper (OpenAI)",
+    "website_url": "https://openai.com/research/whisper",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "windsurf",
+    "name": "Windsurf",
+    "website_url": "https://windsurf.com",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "zoom-ai-companion",
+    "name": "Zoom AI Companion",
+    "website_url": "https://zoom.us/ai-assistant",
+    "category": "ai-general",
+    "done": false
+  },
+  {
+    "slug": "ahrefs",
+    "name": "Ahrefs",
+    "website_url": "https://ahrefs.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "airbyte",
+    "name": "Airbyte",
+    "website_url": "https://airbyte.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "algolia",
+    "name": "Algolia",
+    "website_url": "https://www.algolia.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "amplitude",
+    "name": "Amplitude",
+    "website_url": "https://amplitude.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "arcgis",
+    "name": "ArcGIS",
+    "website_url": "https://www.arcgis.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "auvik",
+    "name": "Auvik",
+    "website_url": "https://auvik.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "beehiiv-analytics",
+    "name": "Beehiiv Analytics",
+    "website_url": "",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "better-stack",
+    "name": "Better Stack",
+    "website_url": "https://betterstack.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "bigquery",
+    "name": "BigQuery",
+    "website_url": "https://cloud.google.com/bigquery",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "brand24",
+    "name": "Brand24",
+    "website_url": "https://brand24.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "callrail",
+    "name": "CallRail",
+    "website_url": "https://www.callrail.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "causal",
+    "name": "Causal",
+    "website_url": "https://causal.app",
+    "category": "analytics",
+    "done": true
+  },
+  {
+    "slug": "chartmogul",
+    "name": "Chartmogul",
+    "website_url": "https://chartmogul.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "convertkit-analytics",
+    "name": "ConvertKit Analytics",
+    "website_url": "",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "coupler-io",
+    "name": "Coupler Io",
+    "website_url": "https://coupler.io",
+    "category": "analytics",
+    "done": true
+  },
+  {
+    "slug": "datadog",
+    "name": "Datadog",
+    "website_url": "https://datadoghq.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "datawrapper",
+    "name": "Datawrapper",
+    "website_url": "https://www.datawrapper.de",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "dbt",
+    "name": "dbt",
+    "website_url": "https://www.getdbt.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "dovetail",
+    "name": "Dovetail",
+    "website_url": "https://dovetail.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "excel",
+    "name": "Microsoft Excel",
+    "website_url": "https://www.microsoft.com/microsoft-365/excel",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "fathom-analytics",
+    "name": "Fathom Analytics",
+    "website_url": "https://usefathom.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "flourish",
+    "name": "Flourish",
+    "website_url": "https://flourish.studio",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "frase",
+    "name": "Frase",
+    "website_url": "https://www.frase.io",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "ga4",
+    "name": "Google Analytics 4",
+    "website_url": "https://analytics.google.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "google-analytics",
+    "name": "Google Analytics",
+    "website_url": "https://analytics.google.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "google-search-console",
+    "name": "Google Search Console",
+    "website_url": "https://search.google.com/search-console/about",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "google-tag-manager",
+    "name": "Google Tag Manager",
+    "website_url": "https://tagmanager.google.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "grafana",
+    "name": "Grafana",
+    "website_url": "https://grafana.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "hex",
+    "name": "Hex",
+    "website_url": "https://hex.tech",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "hotjar",
+    "name": "Hotjar",
+    "website_url": "https://hotjar.com",
+    "category": "analytics",
+    "done": true
+  },
+  {
+    "slug": "jupyter",
+    "name": "Jupyter",
+    "website_url": "https://jupyter.org",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "keeptruckin",
+    "name": "KeepTruckin",
+    "website_url": "https://keeptruckin.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "lighthouse",
+    "name": "Lighthouse",
+    "website_url": "https://developer.chrome.com/docs/lighthouse",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "logtail",
+    "name": "Logtail",
+    "website_url": "https://betterstack.com/logtail",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "lookback",
+    "name": "Lookback",
+    "website_url": "https://www.lookback.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "looker-studio",
+    "name": "Looker Studio",
+    "website_url": "https://lookerstudio.google.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "lucidchart",
+    "name": "Lucidchart",
+    "website_url": "https://lucidchart.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "mapbox",
+    "name": "Mapbox",
+    "website_url": "https://www.mapbox.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "meta-ads",
+    "name": "Meta Ads",
+    "website_url": "https://facebook.com/business/ads",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "metabase",
+    "name": "Metabase",
+    "website_url": "https://metabase.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "metricool",
+    "name": "Metricool",
+    "website_url": "https://metricool.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "microsoft-clarity",
+    "name": "Microsoft Clarity",
+    "website_url": "https://clarity.microsoft.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "mixpanel",
+    "name": "Mixpanel",
+    "website_url": "https://mixpanel.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "notionlytics",
+    "name": "Notionlytics",
+    "website_url": "",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "optimizely",
+    "name": "Optimizely",
+    "website_url": "https://optimizely.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "pagerduty",
+    "name": "PagerDuty",
+    "website_url": "https://pagerduty.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "pagespeed-insights",
+    "name": "PageSpeed Insights",
+    "website_url": "https://pagespeed.web.dev",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "pandas",
+    "name": "Pandas",
+    "website_url": "https://pandas.pydata.org",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "partytown",
+    "name": "Partytown",
+    "website_url": "https://partytown.builder.io",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "plausible",
+    "name": "Plausible Analytics",
+    "website_url": "https://plausible.io",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "posthog",
+    "name": "PostHog",
+    "website_url": "https://posthog.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "power-bi",
+    "name": "Power BI",
+    "website_url": "https://powerbi.microsoft.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "profitwell",
+    "name": "Profitwell",
+    "website_url": "https://profitwell.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "prometheus",
+    "name": "Prometheus",
+    "website_url": "https://prometheus.io",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "publer",
+    "name": "Publer",
+    "website_url": "https://publer.io",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "qgis",
+    "name": "QGIS",
+    "website_url": "https://qgis.org",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "rank-math",
+    "name": "Rank Math",
+    "website_url": "https://rankmath.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "redirect-path",
+    "name": "Redirect Path",
+    "website_url": "https://www.ayima.com/redirect-path",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "screaming-frog",
+    "name": "Screaming Frog",
+    "website_url": "https://www.screamingfrog.co.uk/seo-spider/",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "segment",
+    "name": "Segment",
+    "website_url": "https://segment.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "sentry",
+    "name": "Sentry",
+    "website_url": "https://sentry.io",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "seo-meta-in-1-click",
+    "name": "SEO Meta in 1 Click",
+    "website_url": "https://www.seo-extension.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "seo-mode",
+    "name": "SEO Mode",
+    "website_url": "https://seomode.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "shield-app",
+    "name": "Shield App",
+    "website_url": "",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "simple-analytics",
+    "name": "Simple Analytics",
+    "website_url": "https://simpleanalytics.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "snowflake",
+    "name": "Snowflake",
+    "website_url": "https://www.snowflake.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "sql",
+    "name": "SQL",
+    "website_url": "https://en.wikipedia.org/wiki/SQL",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "supermetrics",
+    "name": "Supermetrics",
+    "website_url": "https://supermetrics.com",
+    "category": "analytics",
+    "done": true
+  },
+  {
+    "slug": "surferseo",
+    "name": "Surfer SEO",
+    "website_url": "https://surferseo.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "switch-monster",
+    "name": "switch.monster",
+    "website_url": "https://switch.monster/",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "tableau",
+    "name": "Tableau",
+    "website_url": "https://www.tableau.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "tiktok-ads",
+    "name": "Tiktok Ads",
+    "website_url": "https://ads.tiktok.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "triple-whale",
+    "name": "Triple Whale",
+    "website_url": "https://triplewhale.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "tubebuddy",
+    "name": "Tubebuddy",
+    "website_url": "https://tubebuddy.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "uptimerobot",
+    "name": "UptimeRobot",
+    "website_url": "https://uptimerobot.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "usertesting",
+    "name": "Usertesting",
+    "website_url": "https://usertesting.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "vercel-analytics",
+    "name": "Vercel Analytics",
+    "website_url": "https://vercel.com/analytics",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "vwo",
+    "name": "Vwo",
+    "website_url": "https://vwo.com",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "webpagetest",
+    "name": "WebPageTest",
+    "website_url": "https://www.webpagetest.org",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "wp-rocket",
+    "name": "WP Rocket",
+    "website_url": "https://wp-rocket.me",
+    "category": "analytics",
+    "done": false
+  },
+  {
+    "slug": "activepieces",
+    "name": "Activepieces",
+    "website_url": "",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "albato",
+    "name": "Albato",
+    "website_url": "https://albato.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "base44",
+    "name": "Base44",
+    "website_url": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "draftbit",
+    "name": "Draftbit",
+    "website_url": "https://draftbit.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "easydmarc",
+    "name": "EasyDMARC",
+    "website_url": "https://easydmarc.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "firecrawl",
+    "name": "Firecrawl",
+    "website_url": "https://firecrawl.dev",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "glide",
+    "name": "Glide",
+    "website_url": "https://glideapps.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "gumloop",
+    "name": "Gumloop",
+    "website_url": "https://www.gumloop.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "hyperbrowser",
+    "name": "Hyperbrowser",
+    "website_url": "https://www.hyperbrowser.ai",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "integrately",
+    "name": "Integrately",
+    "website_url": "",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "la-growth-machine",
+    "name": "La Growth Machine",
+    "website_url": "",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "lindy",
+    "name": "Lindy",
+    "website_url": "https://lindy.ai",
+    "category": "automation",
+    "done": true
+  },
+  {
+    "slug": "make",
+    "name": "Make",
+    "website_url": "https://make.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "n8n",
+    "name": "n8n",
+    "website_url": "https://n8n.io",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "pabbly-connect",
+    "name": "Pabbly Connect",
+    "website_url": "",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "pagecloud",
+    "name": "Pagecloud",
+    "website_url": "https://pagecloud.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "phantombuster",
+    "name": "PhantomBuster",
+    "website_url": "",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "quick-base",
+    "name": "Quick Base",
+    "website_url": "https://quickbase.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "relevance-ai",
+    "name": "Relevance AI",
+    "website_url": "https://relevanceai.com",
+    "category": "automation",
+    "done": true
+  },
+  {
+    "slug": "simvoly",
+    "name": "Simvoly",
+    "website_url": "https://simvoly.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "softr",
+    "name": "Softr",
+    "website_url": "https://softr.io",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "squarespace",
+    "name": "Squarespace",
+    "website_url": "https://squarespace.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "turbotic",
+    "name": "Turbotic",
+    "website_url": "https://try.turbotic.com/0ijk0lvs0etc",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "waalaxy",
+    "name": "Waalaxy",
+    "website_url": "",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "whalesync",
+    "name": "Whalesync",
+    "website_url": "https://www.whalesync.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "wix",
+    "name": "Wix",
+    "website_url": "https://wix.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "wordpress-com",
+    "name": "WordPress.com",
+    "website_url": "https://wordpress.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "zapier",
+    "name": "Zapier",
+    "website_url": "https://zapier.com",
+    "category": "automation",
+    "done": false
+  },
+  {
+    "slug": "anaplan",
+    "name": "Anaplan",
+    "website_url": "https://www.anaplan.com",
+    "category": "budgeting-fpa",
+    "done": false
+  },
+  {
+    "slug": "pigment",
+    "name": "Pigment",
+    "website_url": "https://www.gopigment.com",
+    "category": "budgeting-fpa",
+    "done": false
+  },
+  {
+    "slug": "aircall",
+    "name": "Aircall",
+    "website_url": "https://aircall.io",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "aloware",
+    "name": "Aloware",
+    "website_url": "https://aloware.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "apollo-io",
+    "name": "Apollo.io",
+    "website_url": "https://www.apollo.io",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "around",
+    "name": "Around",
+    "website_url": "https://around.co",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "boompop",
+    "name": "BoomPop",
+    "website_url": "https://boompop.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "cal-com",
+    "name": "Cal.com",
+    "website_url": "https://cal.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "calendly",
+    "name": "Calendly",
+    "website_url": "https://calendly.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "callhippo",
+    "name": "CallHippo",
+    "website_url": "https://callhippo.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "calltrackingmetrics",
+    "name": "CallTrackingMetrics",
+    "website_url": "https://calltrackingmetrics.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "capsule",
+    "name": "Capsule",
+    "website_url": "https://capsulecrm.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "chatbase",
+    "name": "Chatbase",
+    "website_url": "https://www.chatbase.co",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "close",
+    "name": "Close",
+    "website_url": "https://close.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "cloudtask-marketplace",
+    "name": "CloudTask Marketplace",
+    "website_url": "https://cloudtask.com/marketplace",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "cognism",
+    "name": "Cognism",
+    "website_url": "https://cognism.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "cossistant",
+    "name": "Cossistant",
+    "website_url": "https://cossistant.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "crisp",
+    "name": "Crisp",
+    "website_url": "https://crisp.chat",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "discord",
+    "name": "Discord",
+    "website_url": "https://discord.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "elgato-stream-deck",
+    "name": "Elgato Stream Deck",
+    "website_url": "https://elgatostreamdeck.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "eventbrite",
+    "name": "Eventbrite",
+    "website_url": "https://www.eventbrite.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "frame-io",
+    "name": "Frame.io",
+    "website_url": "https://frame.io",
+    "category": "communication",
+    "done": true
+  },
+  {
+    "slug": "gmail",
+    "name": "Gmail",
+    "website_url": "https://gmail.com",
+    "category": "communication",
+    "done": true
+  },
+  {
+    "slug": "google-meet",
+    "name": "Google Meet",
+    "website_url": "https://googlemeet.com",
+    "category": "communication",
+    "done": true
+  },
+  {
+    "slug": "helpscout",
+    "name": "Helpscout",
+    "website_url": "https://helpscout.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "insightly",
+    "name": "Insightly",
+    "website_url": "https://insightly.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "instagram",
+    "name": "Instagram",
+    "website_url": "https://www.instagram.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "intercom",
+    "name": "Intercom",
+    "website_url": "https://intercom.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "kavkom",
+    "name": "Kavkom",
+    "website_url": "https://kavkom.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "kixie",
+    "name": "Kixie",
+    "website_url": "https://kixie.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "krispcall",
+    "name": "KrispCall",
+    "website_url": "https://krispcall.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "leadsquared",
+    "name": "LeadSquared",
+    "website_url": "https://leadsquared.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "liinks",
+    "name": "Liinks",
+    "website_url": "https://liinks.co",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "linkedin",
+    "name": "Linkedin",
+    "website_url": "https://linkedin.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "loom",
+    "name": "Loom",
+    "website_url": "https://loom.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "openphone",
+    "name": "OpenPhone",
+    "website_url": "https://openphone.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "pipedrive",
+    "name": "Pipedrive",
+    "website_url": "https://pipedrive.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "pipelinepro",
+    "name": "PipelinePRO",
+    "website_url": "https://pipelinepro.io",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "product-hunt",
+    "name": "Product Hunt",
+    "website_url": "https://producthunt.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "responsetap",
+    "name": "ResponseTap",
+    "website_url": "https://responsetap.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "riverside",
+    "name": "Riverside",
+    "website_url": "https://riverside.fm",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "ruby",
+    "name": "Ruby",
+    "website_url": "https://ruby.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "salesflare",
+    "name": "Salesflare",
+    "website_url": "https://salesflare.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "website_url": "https://salesforce.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "slido",
+    "name": "Slido",
+    "website_url": "https://www.slido.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "snov-io",
+    "name": "Snov.io",
+    "website_url": " campagnes).",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "streamelements",
+    "name": "Streamelements",
+    "website_url": "https://streamelements.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "streamlabs",
+    "name": "Streamlabs",
+    "website_url": "https://streamlabs.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "superhuman",
+    "name": "Superhuman",
+    "website_url": "https://superhuman.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "tally",
+    "name": "Tally",
+    "website_url": "https://tally.so",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "tidio",
+    "name": "Tidio",
+    "website_url": "https://tidio.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "tiktok",
+    "name": "Tiktok",
+    "website_url": "https://tiktok.com",
+    "category": "communication",
+    "done": true
+  },
+  {
+    "slug": "tiktok-studio",
+    "name": "Tiktok Studio",
+    "website_url": "https://tiktok.com/tiktok-studio",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "twitch",
+    "name": "Twitch",
+    "website_url": "https://twitch.tv",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "twitch-studio",
+    "name": "Twitch Studio",
+    "website_url": "https://twitch.tv",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "upwork",
+    "name": "Upwork",
+    "website_url": "https://upwork.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "vcita",
+    "name": "vcita",
+    "website_url": " paiements).",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "youtube-studio",
+    "name": "Youtube Studio",
+    "website_url": "https://studio.youtube.com",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "zcal",
+    "name": "zcal",
+    "website_url": "https://zcal.co",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "zoom",
+    "name": "Zoom",
+    "website_url": "https://zoom.us",
+    "category": "communication",
+    "done": false
+  },
+  {
+    "slug": "zoom-pro",
+    "name": "Zoom Pro",
+    "website_url": "https://zoom.us/pricing",
+    "category": "communication",
+    "done": true
+  },
+  {
+    "slug": "google-chat",
+    "name": "Google Chat",
+    "website_url": "https://chat.google.com",
+    "category": "communication-team",
+    "done": true
+  },
+  {
+    "slug": "microsoft-teams",
+    "name": "Microsoft Teams",
+    "website_url": "https://www.microsoft.com/teams",
+    "category": "communication-team",
+    "done": false
+  },
+  {
+    "slug": "slack",
+    "name": "Slack",
+    "website_url": "https://slack.com",
+    "category": "communication-team",
+    "done": false
+  },
+  {
+    "slug": "3ds-max",
+    "name": "3ds Max",
+    "website_url": "https://www.autodesk.com/products/3ds-max/overview",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "ableton-live",
+    "name": "Ableton Live",
+    "website_url": "https://www.ableton.com/live/",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "acast",
+    "name": "Acast",
+    "website_url": "https://acast.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "adcreative",
+    "name": "AdCreative.ai",
+    "website_url": "https://free-trial.adcreative.ai/bl7nxarn1exp",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "adcreative-ai",
+    "name": "Adcreative AI",
+    "website_url": "https://adcreativeai.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "adobe-audition",
+    "name": "Adobe Audition",
+    "website_url": "https://www.adobe.com/products/audition.html",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "adobe-express",
+    "name": "Adobe Express",
+    "website_url": "https://www.adobe.com/express/",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "adobe-substance-3d",
+    "name": "Adobe Substance 3D",
+    "website_url": "https://www.adobe.com/products/substance3d.html",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "anchor-spotify",
+    "name": "Spotify for Podcasters",
+    "website_url": "https://podcasters.spotify.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "artlist",
+    "name": "Artlist",
+    "website_url": "https://artlist.io",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "artstation",
+    "name": "ArtStation",
+    "website_url": "https://www.artstation.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "audacity",
+    "name": "Audacity",
+    "website_url": "https://audacityteam.org",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "auphonic",
+    "name": "Auphonic",
+    "website_url": "https://auphonic.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "ausha",
+    "name": "Ausha",
+    "website_url": "https://www.ausha.co",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "authoredup",
+    "name": "Authoredup",
+    "website_url": "https://authoredup.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "babylon-js",
+    "name": "Babylon.js",
+    "website_url": "https://www.babylonjs.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "website_url": "https://www.beautiful.ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "billo",
+    "name": "Billo",
+    "website_url": "https://billo.app",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "brand-kits",
+    "name": "Brand Kits",
+    "website_url": "https://brandkits.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "browzwear",
+    "name": "Browzwear",
+    "website_url": "https://browzwear.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "buffer",
+    "name": "Buffer",
+    "website_url": "https://buffer.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "buzzsprout",
+    "name": "Buzzsprout",
+    "website_url": "https://buzzsprout.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "canva",
+    "name": "Canva",
+    "website_url": "https://canva.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "canva-pro",
+    "name": "Canva Pro",
+    "website_url": "https://www.canva.com/pro/",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "capcut",
+    "name": "CapCut",
+    "website_url": "https://capcut.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "captions",
+    "name": "Captions",
+    "website_url": "https://captions.ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "castmagic",
+    "name": "Castmagic",
+    "website_url": "https://castmagic.io",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "cavalry",
+    "name": "Cavalry",
+    "website_url": "https://cavalry.scenegroup.co",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "cinema-4d",
+    "name": "Cinema 4D",
+    "website_url": "https://www.maxon.net/cinema-4d",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "cleanvoice",
+    "name": "Cleanvoice",
+    "website_url": "",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "clipwing",
+    "name": "Clipwing",
+    "website_url": "https://clipwing.pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "clo-3d",
+    "name": "CLO 3D",
+    "website_url": "https://www.clo3d.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "corona-renderer",
+    "name": "Corona Renderer",
+    "website_url": "https://www.chaos.com/corona",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "crawlbase",
+    "name": "Crawlbase",
+    "website_url": "https://crawlbase.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "crayo-ai",
+    "name": "Crayo AI",
+    "website_url": "https://crayo.ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "creatoriq",
+    "name": "Creatoriq",
+    "website_url": "https://creatoriq.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "descript-ai",
+    "name": "Descript AI",
+    "website_url": "https://descriptai.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "elgato",
+    "name": "Elgato",
+    "website_url": "https://elgato.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "embergen",
+    "name": "EmberGen",
+    "website_url": "https://jangafx.com/software/embergen",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "epidemic-sound",
+    "name": "Epidemic Sound",
+    "website_url": "https://www.epidemicsound.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "extensis",
+    "name": "Extensis",
+    "website_url": "https://extensis.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "final-cut-pro",
+    "name": "Final Cut Pro",
+    "website_url": "https://apple.com/final-cut-pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "fiverr",
+    "name": "Fiverr",
+    "website_url": "https://fiverr.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "flexiquiz",
+    "name": "FlexiQuiz",
+    "website_url": "https://flexiquiz.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "flux-ai",
+    "name": "FLUX AI",
+    "website_url": "https://blackforestlabs.ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "fmod",
+    "name": "FMOD",
+    "website_url": "https://www.fmod.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "format",
+    "name": "Format",
+    "website_url": "https://format.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "gaea",
+    "name": "Gaea",
+    "website_url": "https://quadspinner.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "gamma",
+    "name": "Gamma",
+    "website_url": "https://gamma.app",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "gempages",
+    "name": "Gempages",
+    "website_url": "https://gempages.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "giphy",
+    "name": "Giphy",
+    "website_url": "https://giphy.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "godot",
+    "name": "Godot",
+    "website_url": "https://godotengine.org",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "google-earth-studio",
+    "name": "Google Earth Studio",
+    "website_url": "https://www.google.com/earth/studio/",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "google-maps",
+    "name": "Google Maps",
+    "website_url": "https://googlemaps.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "google-slides",
+    "name": "Google Slides",
+    "website_url": "https://docs.google.com/presentation",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "grammarly",
+    "name": "Grammarly",
+    "website_url": "https://grammarly.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "headliner",
+    "name": "Headliner",
+    "website_url": "https://headliner.app",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "houdini",
+    "name": "Houdini",
+    "website_url": "https://www.sidefx.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "inbound",
+    "name": "Inbound",
+    "website_url": "https://inbound.so",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "insense",
+    "name": "Insense",
+    "website_url": "https://insense.pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "itch-io",
+    "name": "itch.io",
+    "website_url": "https://itch.io",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "judge-me",
+    "name": "Judge Me",
+    "website_url": "https://judgeme.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "keynote",
+    "name": "Keynote",
+    "website_url": "https://www.apple.com/keynote/",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "keyshot",
+    "name": "KeyShot",
+    "website_url": "https://www.keyshot.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "kling",
+    "name": "Kling",
+    "website_url": "https://kling.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "lightroom-mobile",
+    "name": "Lightroom Mobile",
+    "website_url": "https://lightroommobile.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "link-whisper",
+    "name": "Link Whisper",
+    "website_url": "https://linkwhisper.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "linktree",
+    "name": "Linktree",
+    "website_url": "https://linktr.ee",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "logic-pro",
+    "name": "Logic Pro",
+    "website_url": "https://www.apple.com/logic-pro/",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "looka",
+    "name": "Looka",
+    "website_url": "https://looka.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "loox",
+    "name": "Loox",
+    "website_url": "https://loox.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "ltk",
+    "name": "Ltk",
+    "website_url": "https://ltk.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "lucid-software",
+    "name": "Lucid Software",
+    "website_url": "https://lucid.co",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "madmapper",
+    "name": "MadMapper",
+    "website_url": "https://madmapper.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "magicbrief",
+    "name": "Magicbrief",
+    "website_url": "https://magicbrief.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "magnific",
+    "name": "Magnific",
+    "website_url": "https://magnific.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "mari",
+    "name": "Mari",
+    "website_url": "https://www.foundry.com/products/mari",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "marmoset-toolbag",
+    "name": "Marmoset Toolbag",
+    "website_url": "https://marmoset.co/toolbag/",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "marvelous-designer",
+    "name": "Marvelous Designer",
+    "website_url": "https://www.marvelousdesigner.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "masv",
+    "name": "MASV",
+    "website_url": "https://massive.io",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "maven",
+    "name": "Maven",
+    "website_url": "https://maven.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "maxon-one",
+    "name": "Maxon One",
+    "website_url": "https://www.maxon.net/maxon-one",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "maya",
+    "name": "Maya",
+    "website_url": "https://www.autodesk.com/products/maya/overview",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "memberful",
+    "name": "Memberful",
+    "website_url": "https://memberful.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "meta-quest-developer-tools",
+    "name": "Meta Quest Developer Tools",
+    "website_url": "https://developer.oculus.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "website_url": "https://midjourney.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "modo",
+    "name": "Modo",
+    "website_url": "https://www.foundry.com/products/modo",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "mojo",
+    "name": "Mojo",
+    "website_url": "https://mojo.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "moobot",
+    "name": "Moobot",
+    "website_url": "https://moobot.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "motion",
+    "name": "Motion",
+    "website_url": "https://motion.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "motion-array",
+    "name": "Motion Array",
+    "website_url": "https://motionarray.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "murf",
+    "name": "Murf",
+    "website_url": "https://murf.ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "nightbot",
+    "name": "Nightbot",
+    "website_url": "https://nightbot.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "nomad-sculpt",
+    "name": "Nomad Sculpt",
+    "website_url": "https://nomadsculpt.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "notch",
+    "name": "Notch",
+    "website_url": "https://www.notch.one",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "nuke",
+    "name": "Nuke",
+    "website_url": "https://www.foundry.com/products/nuke-family",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "obs",
+    "name": "OBS",
+    "website_url": "https://obsproject.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "octane-render",
+    "name": "Octane Render",
+    "website_url": "https://home.otoy.com/render/octane-render/",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "opus-clip",
+    "name": "Opus Clip",
+    "website_url": "https://www.opus.pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "opusclip",
+    "name": "Opusclip",
+    "website_url": "https://opus.pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "p5-js",
+    "name": "p5.js",
+    "website_url": "https://p5js.org",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "pagefly",
+    "name": "Pagefly",
+    "website_url": "https://pagefly.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "pinterest",
+    "name": "Pinterest",
+    "website_url": "https://www.pinterest.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "pixco",
+    "name": "Pixco",
+    "website_url": "https://pixco.io",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "pixieset",
+    "name": "Pixieset",
+    "website_url": "https://pixieset.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "planoly",
+    "name": "Planoly",
+    "website_url": "https://planoly.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "podbean",
+    "name": "Podbean",
+    "website_url": "https://podbean.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "podcastle",
+    "name": "Podcastle",
+    "website_url": "",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "postsyncer",
+    "name": "PostSyncer",
+    "website_url": "https://postsyncer.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "power-user",
+    "name": "Power User",
+    "website_url": "https://poweruser.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "powerpoint",
+    "name": "Microsoft PowerPoint",
+    "website_url": "https://www.microsoft.com/microsoft-365/powerpoint",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "premiere-rush",
+    "name": "Premiere Rush",
+    "website_url": "https://premiererush.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "pretty-links",
+    "name": "Pretty Links",
+    "website_url": "https://prettylinks.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "prezi",
+    "name": "Prezi",
+    "website_url": "https://try.prezi.com/6op8bpbxu641",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "pro-tools",
+    "name": "Pro Tools",
+    "website_url": "https://www.avid.com/pro-tools",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "processing",
+    "name": "Processing",
+    "website_url": "https://processing.org",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "procreate",
+    "name": "Procreate",
+    "website_url": "https://procreate.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "productioncrate",
+    "name": "ProductionCrate",
+    "website_url": "https://productioncrate.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "promo-com",
+    "name": "Promo.com",
+    "website_url": "https://promo.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "prowritingaid",
+    "name": "ProWritingAid",
+    "website_url": " grammaire et clarté.",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "quixel-megascans",
+    "name": "Quixel Megascans",
+    "website_url": "https://quixel.com/megascans",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "rankmath",
+    "name": "Rankmath",
+    "website_url": "https://rankmath.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "redshift",
+    "name": "Redshift",
+    "website_url": "https://www.maxon.net/redshift",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "remove-bg",
+    "name": "Remove.bg",
+    "website_url": "https://www.remove.bg/",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "repurpose-io",
+    "name": "Repurpose Io",
+    "website_url": "https://repurposeio.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "resolume",
+    "name": "Resolume",
+    "website_url": "https://resolume.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "restream",
+    "name": "Restream",
+    "website_url": "https://restream.io",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "rev",
+    "name": "Rev",
+    "website_url": "https://rev.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "screen-studio",
+    "name": "Screen Studio",
+    "website_url": "https://screen.studio",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "screensage-pro",
+    "name": "ScreenSage Pro",
+    "website_url": "https://screensage.pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "shopmy",
+    "name": "Shopmy",
+    "website_url": "https://shopmy.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "shortpixel",
+    "name": "Shortpixel",
+    "website_url": "https://shortpixel.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "shotdeck",
+    "name": "ShotDeck",
+    "website_url": "https://shotdeck.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "sparkloop",
+    "name": "Sparkloop",
+    "website_url": "https://sparkloop.app",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "spotify-for-podcasters",
+    "name": "Spotify for Podcasters",
+    "website_url": "https://podcasters.spotify.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "sprout-social",
+    "name": "Sprout Social",
+    "website_url": "https://sproutsocial.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "steamworks",
+    "name": "Steamworks",
+    "website_url": "https://partner.steamgames.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "storyblocks",
+    "name": "Storyblocks",
+    "website_url": "https://storyblocks.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "storyluxe",
+    "name": "Storyluxe",
+    "website_url": "https://storyluxe.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "submagic",
+    "name": "Submagic",
+    "website_url": "https://submagic.co",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "substance-3d-designer",
+    "name": "Substance 3D Designer",
+    "website_url": "https://www.adobe.com/products/substance3d/apps/designer.html",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "substance-3d-painter",
+    "name": "Substance 3D Painter",
+    "website_url": "https://www.adobe.com/products/substance3d-painter.html",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "superdev-pro",
+    "name": "SuperDev Pro",
+    "website_url": "https://superdev.pro",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "surfer-ai",
+    "name": "Surfer AI",
+    "website_url": "https://surferai.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "systeme-io",
+    "name": "Systeme Io",
+    "website_url": "https://systeme.io",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "tablepress",
+    "name": "Tablepress",
+    "website_url": "https://tablepress.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "taplio",
+    "name": "Taplio",
+    "website_url": "https://taplio.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "teleprompter",
+    "name": "Teleprompter",
+    "website_url": "https://teleprompter.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "tella",
+    "name": "Tella",
+    "website_url": "https://www.tella.tv",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "tenor",
+    "name": "Tenor",
+    "website_url": "https://tenor.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "tezza",
+    "name": "Tezza",
+    "website_url": "https://tezza.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "thirstyaffiliates",
+    "name": "Thirstyaffiliates",
+    "website_url": "https://thirstyaffiliates.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "three-js",
+    "name": "Three.js",
+    "website_url": "https://threejs.org",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "thrivecart",
+    "name": "Thrivecart",
+    "website_url": "https://thrivecart.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "topaz",
+    "name": "Topaz",
+    "website_url": "https://topaz.com",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "topaz-video",
+    "name": "Topaz Video",
+    "website_url": "https://www.topazlabs.com/topaz-video-ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "touchdesigner",
+    "name": "TouchDesigner",
+    "website_url": "https://derivative.ca",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "tradingview",
+    "name": "Tradingview",
+    "website_url": "https://tradingview.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "trainerize",
+    "name": "Trainerize",
+    "website_url": "https://trainerize.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "truecoach",
+    "name": "Truecoach",
+    "website_url": "https://truecoach.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "tubebody",
+    "name": "TubeBuddy",
+    "website_url": "https://tubebuddy.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "typefully",
+    "name": "Typefully",
+    "website_url": "https://typefully.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "unfold",
+    "name": "Unfold",
+    "website_url": "https://unfold.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "unity",
+    "name": "Unity",
+    "website_url": "https://unity.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "unreal-engine",
+    "name": "Unreal Engine",
+    "website_url": "https://www.unrealengine.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "vidiq",
+    "name": "VidIQ",
+    "website_url": "https://vidiq.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "vidyard",
+    "name": "Vidyard",
+    "website_url": "https://vidyard.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "vimeo",
+    "name": "Vimeo",
+    "website_url": "https://vimeo.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "visme",
+    "name": "Visme",
+    "website_url": " infographies).",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "vmake",
+    "name": "Vmake",
+    "website_url": "https://vmake.ai",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "webxr",
+    "name": "WebXR",
+    "website_url": "https://immersiveweb.dev",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "wistia",
+    "name": "Wistia",
+    "website_url": "https://wistia.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "wwise",
+    "name": "Wwise",
+    "website_url": "https://www.audiokinetic.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "x",
+    "name": "X",
+    "website_url": "https://x.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "yoast",
+    "name": "Yoast",
+    "website_url": "https://yoast.com",
+    "category": "creation",
+    "done": false
+  },
+  {
+    "slug": "zbrush",
+    "name": "ZBrush",
+    "website_url": "https://www.maxon.net/zbrush",
+    "category": "creation",
+    "done": true
+  },
+  {
+    "slug": "1001bit-tools",
+    "name": "1001bit Tools",
+    "website_url": "https://www.1001bit.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "adobe-after-effects",
+    "name": "Adobe After Effects",
+    "website_url": "https://adobe.com/products/aftereffects",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud All Apps",
+    "website_url": "https://www.adobe.com/creativecloud/plans.html",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "adobe-illustrator",
+    "name": "Adobe Illustrator",
+    "website_url": "https://adobe.com/products/illustrator",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "adobe-lightroom",
+    "name": "Adobe Lightroom",
+    "website_url": "https://adobe.com/products/lightroom",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "adobe-photoshop",
+    "name": "Adobe Photoshop",
+    "website_url": "https://adobe.com/products/photoshop",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "adobe-premiere-pro",
+    "name": "Adobe Premiere Pro",
+    "website_url": "https://adobe.com/products/premiere",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "adobe-xd",
+    "name": "Adobe XD",
+    "website_url": "https://adobe.com/products/xd",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "ae-animation-composer",
+    "name": "Animation Composer 3",
+    "website_url": "https://misterhorse.com/animation-composer",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-bao-boa",
+    "name": "BAO Boa",
+    "website_url": "https://aescripts.com/boa",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-bodymovin",
+    "name": "Bodymovin / Lottie",
+    "website_url": "https://aescripts.com/bodymovin",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-duik",
+    "name": "Duik Ángela",
+    "website_url": "https://rxlaboratoire.com/duik",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-gifgun",
+    "name": "GifGun",
+    "website_url": "https://aescripts.com/gifgun",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-newton3",
+    "name": "Newton 3",
+    "website_url": "https://aescripts.com/newton",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-overlord",
+    "name": "Overlord",
+    "website_url": "https://battleaxe.co/overlord",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-red-giant",
+    "name": "Red Giant",
+    "website_url": "https://maxon.net/red-giant",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ae-rubberhose",
+    "name": "RubberHose 2",
+    "website_url": "https://aescripts.com/rubberhose",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "aescripts-flow",
+    "name": "Flow (aescripts)",
+    "website_url": "https://aescripts.com/flow",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "affinity-photo",
+    "name": "Affinity Photo",
+    "website_url": "https://affinity.serif.com/photo",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "ant-design",
+    "name": "Ant Design",
+    "website_url": "https://ant.design",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "archicad",
+    "name": "Archicad",
+    "website_url": "https://graphisoft.com/solutions/archicad",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "are-na",
+    "name": "Are Na",
+    "website_url": "https://arena.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "arena",
+    "name": "Are.na",
+    "website_url": "https://www.are.na",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "arnold",
+    "name": "Arnold",
+    "website_url": "https://www.autodesk.com/products/arnold/overview",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "astute-graphics",
+    "name": "Astute Graphics",
+    "website_url": "https://astutegraphics.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "auto-rig-pro",
+    "name": "Auto-Rig Pro",
+    "website_url": "https://superhivemarket.com/products/auto-rig-pro",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "autocad",
+    "name": "AutoCAD",
+    "website_url": "https://autodesk.com/products/autocad",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "autocad-lt",
+    "name": "AutoCAD LT",
+    "website_url": "https://www.autodesk.com/products/autocad-lt/overview",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "blender",
+    "name": "Blender",
+    "website_url": "https://blender.org",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "brandcrowd",
+    "name": "BrandCrowd",
+    "website_url": "https://www.brandcrowd.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "brandmark",
+    "name": "Brandmark",
+    "website_url": "https://brandmark.io",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "brandpad",
+    "name": "Brandpad",
+    "website_url": "https://brandpad.io",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "capture-one",
+    "name": "Capture One",
+    "website_url": "https://captureone.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "chakra-ui",
+    "name": "Chakra UI",
+    "website_url": "https://chakra-ui.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "cleanup3",
+    "name": "CleanUp³",
+    "website_url": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "curviloft",
+    "name": "Curviloft",
+    "website_url": "https://sketchucation.com/pluginstore",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "d5-render",
+    "name": "D5 Render",
+    "website_url": "https://www.d5render.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "davinci-resolve",
+    "name": "DaVinci Resolve",
+    "website_url": "https://blackmagicdesign.com/products/davinciresolve",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "dynamic-mockups",
+    "name": "Dynamic Mockups",
+    "website_url": "https://dynamicmockups.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "eagle",
+    "name": "Eagle",
+    "website_url": "https://eagle.cool",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "echarts",
+    "name": "ECharts",
+    "website_url": "https://echarts.apache.org",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "eneroth-face-creator",
+    "name": "Eneroth Face Creator",
+    "website_url": "https://extensions.sketchup.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "enscape",
+    "name": "Enscape",
+    "website_url": "https://enscape3d.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "envato",
+    "name": "Envato",
+    "website_url": "https://envato.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "envato-elements",
+    "name": "Envato Elements",
+    "website_url": "https://elements.envato.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "esko-studio",
+    "name": "Esko Studio",
+    "website_url": "https://www.esko.com/en/products/studio",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "excalidraw",
+    "name": "Excalidraw",
+    "website_url": "https://excalidraw.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "figjam",
+    "name": "FigJam",
+    "website_url": "https://www.figma.com/figjam/",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "figma",
+    "name": "Figma",
+    "website_url": "https://figma.com",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "figma-anima",
+    "name": "Anima",
+    "website_url": "https://animaapp.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "figma-iconify",
+    "name": "Iconify for Figma",
+    "website_url": "https://iconify.design",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "figma-slides",
+    "name": "Figma Slides",
+    "website_url": "https://www.figma.com/slides/",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "figma-stark",
+    "name": "Stark",
+    "website_url": "https://stark.so",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "figma-tokens",
+    "name": "Figma Tokens (Tokens Studio)",
+    "website_url": "https://tokens.studio",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "flextools",
+    "name": "FlexTools",
+    "website_url": "https://flextools.cc",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "flowmapp",
+    "name": "FlowMapp",
+    "website_url": "https://www.flowmapp.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "fontbase",
+    "name": "FontBase",
+    "website_url": "https://fontba.se",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "framer",
+    "name": "Framer",
+    "website_url": "https://framer.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "fredo6-bundle",
+    "name": "Fredo6 Bundle",
+    "website_url": "https://sketchucation.com/pluginstore",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "fredocorner",
+    "name": "FredoCorner",
+    "website_url": "https://sketchucation.com/pluginstore",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "fusion-360",
+    "name": "Fusion 360",
+    "website_url": "https://www.autodesk.com/products/fusion-360/overview",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "grabcad",
+    "name": "GrabCAD",
+    "website_url": "https://grabcad.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "hard-ops-boxcutter",
+    "name": "Hard Ops / Boxcutter",
+    "website_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "hugeicons",
+    "name": "Hugeicons",
+    "website_url": "https://hugeicons.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "icons8",
+    "name": "Icons8",
+    "website_url": "https://icons8.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "indesign",
+    "name": "Adobe InDesign",
+    "website_url": "https://adobe.com/products/indesign",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "invision",
+    "name": "InVision",
+    "website_url": "https://www.invisionapp.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "joint-push-pull",
+    "name": "Joint Push Pull",
+    "website_url": "https://sketchucation.com/pluginstore",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "layout-sketchup",
+    "name": "LayOut",
+    "website_url": "https://www.sketchup.com/products/layout",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "logomeai",
+    "name": "Logome.ai",
+    "website_url": "https://logomeai.partnerlinks.io/qixva38jv07p",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "lottiefiles",
+    "name": "LottieFiles",
+    "website_url": "https://lottiefiles.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "luminar-neo",
+    "name": "Luminar Neo",
+    "website_url": "https://skylum.com/luminar-neo",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "lumion",
+    "name": "Lumion",
+    "website_url": "https://lumion.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "magic-bullet",
+    "name": "Magic Bullet",
+    "website_url": "https://www.maxon.net/red-giant/magic-bullet",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "magic-patterns",
+    "name": "Magic Patterns",
+    "website_url": "https://www.magicpatterns.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "material-ui",
+    "name": "Material-UI",
+    "website_url": "https://mui.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "maze",
+    "name": "Maze",
+    "website_url": "https://maze.co",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "milanote",
+    "name": "Milanote",
+    "website_url": "https://milanote.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "miro",
+    "name": "Miro",
+    "website_url": "https://miro.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "motion-bro",
+    "name": "Motion Bro",
+    "website_url": "https://motionbro.net",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "nik-collection",
+    "name": "Nik Collection",
+    "website_url": "https://nikcollection.dxo.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "noun-project",
+    "name": "Noun Project",
+    "website_url": "https://nounproject.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "open-cut-list",
+    "name": "OpenCutList",
+    "website_url": "https://www.opencutlist.org",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "pacdora",
+    "name": "Pacdora",
+    "website_url": "https://www.pacdora.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "penpot",
+    "name": "Penpot",
+    "website_url": "https://penpot.app",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "pikkovia",
+    "name": "Pikkovia",
+    "website_url": "https://pikkovia.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "pitch",
+    "name": "Pitch",
+    "website_url": "https://pitch.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "plasticity",
+    "name": "Plasticity",
+    "website_url": "https://www.plasticity.xyz",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "pluraleyes",
+    "name": "PluralEyes",
+    "website_url": "https://www.maxon.net/red-giant/pluraleyes",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "profile-builder-3",
+    "name": "Profile Builder 3",
+    "website_url": "https://profilebuilder4sketchup.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "protopie",
+    "name": "ProtoPie",
+    "website_url": "https://protopie.io",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "pure-ref",
+    "name": "PureRef",
+    "website_url": "https://www.pureref.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "recharts",
+    "name": "Recharts",
+    "website_url": "https://recharts.org",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "red-giant-universe",
+    "name": "Red Giant Universe",
+    "website_url": "https://www.maxon.net/red-giant/universe",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "renderman",
+    "name": "RenderMan",
+    "website_url": "https://renderman.pixar.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "revit",
+    "name": "Revit",
+    "website_url": "https://autodesk.com/products/revit",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "rhino",
+    "name": "Rhino",
+    "website_url": "https://www.rhino3d.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "rightfont",
+    "name": "RightFont",
+    "website_url": "https://rightfontapp.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "rive",
+    "name": "Rive",
+    "website_url": "https://rive.app",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "shadcn-ui",
+    "name": "shadcn UI",
+    "website_url": "https://ui.shadcn.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "skatter",
+    "name": "Skatter",
+    "website_url": "https://getskatter.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "sketch",
+    "name": "Sketch",
+    "website_url": "https://sketch.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "sketchup-pro",
+    "name": "SketchUp Pro",
+    "website_url": "https://sketchup.com",
+    "category": "design-tools",
+    "done": true
+  },
+  {
+    "slug": "snapseed",
+    "name": "Snapseed",
+    "website_url": "https://snapseed.online",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "solid-inspector2",
+    "name": "Solid Inspector²",
+    "website_url": "https://extensions.sketchup.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "solidworks",
+    "name": "SolidWorks",
+    "website_url": "https://www.solidworks.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "specify",
+    "name": "Specify",
+    "website_url": "https://specifyapp.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "spline",
+    "name": "Spline",
+    "website_url": "https://spline.design",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "stark",
+    "name": "Stark standalone",
+    "website_url": "https://www.getstark.co",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "storybook",
+    "name": "Storybook",
+    "website_url": "https://storybook.js.org",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "topaz-gigapixel",
+    "name": "Topaz Gigapixel AI",
+    "website_url": "https://topazlabs.com/gigapixel",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "transmutr",
+    "name": "Transmutr",
+    "website_url": "https://transmutr.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "trapcode",
+    "name": "Trapcode",
+    "website_url": "https://www.maxon.net/red-giant/trapcode",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "twinmotion",
+    "name": "Twinmotion",
+    "website_url": "https://www.twinmotion.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "v-ray",
+    "name": "V-Ray",
+    "website_url": "https://www.chaos.com/vray",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "v0-vercel",
+    "name": "v0 by Vercel",
+    "website_url": "https://v0.dev",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "vectorworks",
+    "name": "Vectorworks",
+    "website_url": "https://www.vectorworks.net",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "vfx-suite",
+    "name": "VFX Suite",
+    "website_url": "https://www.maxon.net/red-giant/vfx-suite",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "whimsical",
+    "name": "Whimsical",
+    "website_url": "https://whimsical.com",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "x-particles",
+    "name": "X-Particles",
+    "website_url": "https://insydium.ltd/products/x-particles/",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "zeplin",
+    "name": "Zeplin",
+    "website_url": "https://zeplin.io",
+    "category": "design-tools",
+    "done": false
+  },
+  {
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "website_url": "https://www.activecampaign.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "amplemarket",
+    "name": "Amplemarket",
+    "website_url": "https://www.amplemarket.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "arounddeal",
+    "name": "AroundDeal",
+    "website_url": "https://arounddeal.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "autonix",
+    "name": "Autonix",
+    "website_url": "https://autonix.io",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "aweber",
+    "name": "AWeber",
+    "website_url": "https://aweber.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "beehiiv",
+    "name": "Beehiiv",
+    "website_url": "https://beehiiv.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "brevo",
+    "name": "Brevo",
+    "website_url": "https://www.brevo.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "campaigner",
+    "name": "Campaigner",
+    "website_url": "https://campaigner.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "clay",
+    "name": "Clay",
+    "website_url": "https://clay.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "clearbit",
+    "name": "Clearbit",
+    "website_url": "https://clearbit.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "crowdfire-inc",
+    "name": "Crowdfire Inc",
+    "website_url": "https://crowdfireapp.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "elfsight",
+    "name": "Elfsight",
+    "website_url": " formulaires…).",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "getresponse",
+    "name": "GetResponse",
+    "website_url": "https://www.getresponse.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "hootsuite",
+    "name": "Hootsuite",
+    "website_url": "https://hootsuite.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "icontact",
+    "name": "iContact",
+    "website_url": "https://icontact.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "inboxally",
+    "name": "InboxAlly",
+    "website_url": "https://inboxally.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "instapage",
+    "name": "Instapage",
+    "website_url": "https://instapage.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "kissmetrics",
+    "name": "Kissmetrics",
+    "website_url": "https://kissmetrics.io",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "kit",
+    "name": "Kit",
+    "website_url": "https://kit.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "landbot",
+    "name": "Landbot",
+    "website_url": "https://landbot.io",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "later",
+    "name": "Later",
+    "website_url": "https://later.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "leadflow",
+    "name": "Leadflow",
+    "website_url": "https://leadflow.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "lemlist",
+    "name": "Lemlist",
+    "website_url": "https://www.lemlist.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "loops",
+    "name": "Loops",
+    "website_url": "https://loops.so",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "lusha",
+    "name": "Lusha",
+    "website_url": "https://www.lusha.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "website_url": "https://mailchimp.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "mailerlite",
+    "name": "Mailerlite",
+    "website_url": "https://mailerlite.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "mailgun",
+    "name": "Mailgun",
+    "website_url": "https://mailgun.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "moosend",
+    "name": "Moosend",
+    "website_url": "https://moosend.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "nearst",
+    "name": "NearSt",
+    "website_url": "https://near.st",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "omniconvert-explore",
+    "name": "Omniconvert Explore",
+    "website_url": "https://omniconvert.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "pushowl-web-push-notifications",
+    "name": "PushOwl Web Push Notifications",
+    "website_url": "https://pushowl.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "quartile",
+    "name": "Quartile",
+    "website_url": "https://quartile.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "replyio",
+    "name": "Reply.io",
+    "website_url": "https://get.reply.io/nnswatq9mgm4-p7peoq",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "resend",
+    "name": "Resend",
+    "website_url": "https://resend.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "respond-io",
+    "name": "respond.io",
+    "website_url": "https://respond.io",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "rocketlink",
+    "name": "RocketLink",
+    "website_url": "https://rocketlink.io",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "sanebox",
+    "name": "SaneBox",
+    "website_url": "https://www.sanebox.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "seamless-ai",
+    "name": "Seamless.AI",
+    "website_url": "https://seamless.ai",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "semrush",
+    "name": "SEMrush",
+    "website_url": "https://semrush.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "sendible",
+    "name": "Sendible",
+    "website_url": " rapports).",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "sendinblue",
+    "name": "Sendinblue",
+    "website_url": "https://sendinblue.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "similarweb",
+    "name": "Similarweb",
+    "website_url": "https://similarweb.com",
+    "category": "email-productivity",
+    "done": true
+  },
+  {
+    "slug": "simpletexting",
+    "name": "SimpleTexting",
+    "website_url": "https://simpletexting.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "smtp-com",
+    "name": "SMTP.com",
+    "website_url": "https://smtp.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "socialbee",
+    "name": "SocialBee",
+    "website_url": "https://socialbee.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "substack",
+    "name": "Substack",
+    "website_url": "https://substack.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "surveysparrow",
+    "name": "SurveySparrow",
+    "website_url": "https://surveysparrow.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "trustpilot",
+    "name": "Trustpilot",
+    "website_url": "https://trustpilot.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "typeform",
+    "name": "Typeform",
+    "website_url": "https://typeform.com",
+    "category": "email-productivity",
+    "done": false
+  },
+  {
+    "slug": "datev",
+    "name": "Datev",
+    "website_url": "https://www.datev.com",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "microsoft-dynamics-365-finance-operations",
+    "name": "Microsoft Dynamics 365 Finance and Operations",
+    "website_url": "https://dynamics.microsoft.com/finance",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "microsoft-dynamics-business-central",
+    "name": "Microsoft Dynamics Business Central",
+    "website_url": "https://dynamics.microsoft.com/business-central",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "netsuite",
+    "name": "NetSuite",
+    "website_url": "https://www.netsuite.com",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "oracle-fusion-cloud",
+    "name": "Oracle Fusion Cloud",
+    "website_url": "https://www.oracle.com/cloud",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "priority",
+    "name": "Priority",
+    "website_url": "https://www.priority-software.com",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "sage",
+    "name": "Sage",
+    "website_url": "https://www.sage.com",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "sage-intacct",
+    "name": "Sage Intacct",
+    "website_url": "https://www.sage.com/en-us/products/sage-intacct",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "sap-business-bydesign",
+    "name": "SAP Business ByDesign",
+    "website_url": "https://www.sap.com/products/erp/business-bydesign.html",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "sap-business-one",
+    "name": "SAP Business One",
+    "website_url": "https://www.sap.com/products/erp/business-one.html",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "sap-s4hana",
+    "name": "SAP S/4HANA",
+    "website_url": "https://www.sap.com/products/erp/s4hana.html",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "unit4",
+    "name": "Unit4",
+    "website_url": "https://www.unit4.com",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "workday-financial-management",
+    "name": "Workday Financial Management",
+    "website_url": "https://www.workday.com/en-us/products/financial-management/overview.html",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "zoho",
+    "name": "Zoho",
+    "website_url": "https://zoho.com",
+    "category": "erp",
+    "done": false
+  },
+  {
+    "slug": "8fig",
+    "name": "8fig",
+    "website_url": "https://8fig.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "agicap",
+    "name": "Agicap",
+    "website_url": "https://agicap.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "axonaut",
+    "name": "Axonaut",
+    "website_url": "https://axonaut.com",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "boast",
+    "name": "Boast",
+    "website_url": "https://boast.ai",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "bolt-business",
+    "name": "Bolt Business",
+    "website_url": "https://bolt.eu/business",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "coast",
+    "name": "Coast",
+    "website_url": "https://coastpay.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "coupa",
+    "name": "Coupa",
+    "website_url": "https://coupa.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "dext",
+    "name": "Dext",
+    "website_url": "https://dext.com",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "docyt",
+    "name": "Docyt",
+    "website_url": "https://docyt.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "doola",
+    "name": "doola",
+    "website_url": "https://doola.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "freshbooks",
+    "name": "FreshBooks",
+    "website_url": "https://freshbooks.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "gocardless",
+    "name": "Gocardless",
+    "website_url": "https://gocardless.com",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "greenly",
+    "name": "Greenly",
+    "website_url": "https://greenly.earth",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "gumroad",
+    "name": "Gumroad",
+    "website_url": "https://gumroad.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "gusto",
+    "name": "Gusto",
+    "website_url": "https://gusto.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "ignition",
+    "name": "Ignition",
+    "website_url": "https://get.practiceignition.com/e261f8d417a0",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "impact",
+    "name": "Impact",
+    "website_url": "https://impact.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "indy",
+    "name": "Indy",
+    "website_url": "https://indy.fr",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "invoicely",
+    "name": "Invoicely",
+    "website_url": "https://invoicely.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "kelio",
+    "name": "Kelio",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "lemon-squeezy",
+    "name": "Lemon Squeezy",
+    "website_url": "https://www.lemonsqueezy.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "lemonsqueezy",
+    "name": "Lemon Squeezy",
+    "website_url": "https://lemonsqueezy.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "lendio",
+    "name": "Lendio",
+    "website_url": "https://lendio.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "megahr",
+    "name": "Mega HR",
+    "website_url": "https://try.megahr.com/j41a7b17mmfs",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "moss",
+    "name": "Moss",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "navan",
+    "name": "Navan",
+    "website_url": "https://navan.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "onramp-funds",
+    "name": "Onramp Funds",
+    "website_url": "https://onrampfunds.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "ownr",
+    "name": "Ownr",
+    "website_url": "https://ownr.co",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "paddle",
+    "name": "Paddle",
+    "website_url": "https://www.paddle.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "partnerstack",
+    "name": "Partnerstack",
+    "website_url": "https://partnerstack.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "patreon",
+    "name": "Patreon",
+    "website_url": "https://patreon.com",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "payhawk",
+    "name": "Payhawk",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "payoneer",
+    "name": "Payoneer",
+    "website_url": "https://payoneer.com",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "paypal",
+    "name": "PayPal",
+    "website_url": "https://paypal.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "pennylane",
+    "name": "Pennylane",
+    "website_url": "https://pennylane.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "qonto",
+    "name": "Qonto",
+    "website_url": "https://qonto.com/fr",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "quadient",
+    "name": "Quadient",
+    "website_url": "https://quadient.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "quickbooks",
+    "name": "QuickBooks",
+    "website_url": "https://quickbooks.intuit.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "quickbooks-online",
+    "name": "QuickBooks Online",
+    "website_url": "https://quickbooks.intuit.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "razorpay",
+    "name": "Razorpay",
+    "website_url": "https://razorpay.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "revenuecat",
+    "name": "RevenueCat",
+    "website_url": "https://www.revenuecat.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "rewardful",
+    "name": "Rewardful",
+    "website_url": "https://rewardful.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "rydoo",
+    "name": "Rydoo",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "sage-paie",
+    "name": "Sage Paie",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "samcart",
+    "name": "SamCart",
+    "website_url": "https://www.samcart.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "sami",
+    "name": "Sami",
+    "website_url": "https://sami.eco",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "sellersfi",
+    "name": "SellersFi",
+    "website_url": "https://sellersfi.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "sellsy",
+    "name": "Sellsy",
+    "website_url": "https://go.sellsy.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "shine",
+    "name": "Shine",
+    "website_url": "https://www.shine.fr",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "shopify-payments",
+    "name": "Shopify Payments",
+    "website_url": "https://www.shopify.com/payments",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "silae",
+    "name": "Silae",
+    "website_url": "",
+    "category": "finance",
+    "done": true
+  },
+  {
+    "slug": "soldo",
+    "name": "Soldo",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "spendesk",
+    "name": "Spendesk",
+    "website_url": "https://spendesk.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "stan-store",
+    "name": "Stan Store",
+    "website_url": "https://stan.store",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "website_url": "https://stripe.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "sweep",
+    "name": "Sweep",
+    "website_url": "https://sweep.net",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "tiime",
+    "name": "Tiime",
+    "website_url": "https://tiime.fr",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "wave",
+    "name": "Wave",
+    "website_url": "https://waveapps.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "workday",
+    "name": "Workday",
+    "website_url": "",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "xero",
+    "name": "Xero",
+    "website_url": "https://xero.com",
+    "category": "finance",
+    "done": false
+  },
+  {
+    "slug": "articulate",
+    "name": "Articulate 360",
+    "website_url": "https://www.articulate.com/360/",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "circle",
+    "name": "Circle",
+    "website_url": "https://circle.so",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "genially",
+    "name": "Genially",
+    "website_url": "https://genially.com",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "kajabi",
+    "name": "Kajabi",
+    "website_url": "https://kajabi.com",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "learnworlds",
+    "name": "LearnWorlds",
+    "website_url": "https://get.learnworlds.com/7gzw9pjf9sz6",
+    "category": "formation-education",
+    "done": true
+  },
+  {
+    "slug": "moodle",
+    "name": "Moodle",
+    "website_url": "https://moodle.org",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "podia",
+    "name": "Podia",
+    "website_url": "https://podia.com",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "thinkific",
+    "name": "Thinkific",
+    "website_url": "https://thinkific.com",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "trainual",
+    "name": "Trainual",
+    "website_url": "https://trainual.com",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "zotero",
+    "name": "Zotero",
+    "website_url": "https://zotero.com",
+    "category": "formation-education",
+    "done": false
+  },
+  {
+    "slug": "adp-workforce",
+    "name": "ADP Workforce",
+    "website_url": "https://www.adp.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "allstate",
+    "name": "Allstate",
+    "website_url": "https://allstate.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "ashby",
+    "name": "Ashby",
+    "website_url": "https://ashbyhq.com",
+    "category": "hris-payroll",
+    "done": true
+  },
+  {
+    "slug": "bamboohr",
+    "name": "BambooHR",
+    "website_url": "https://bamboohr.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "dayforce",
+    "name": "Dayforce",
+    "website_url": "https://www.dayforce.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "deel",
+    "name": "Deel",
+    "website_url": "https://www.deel.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "factorial",
+    "name": "Factorial",
+    "website_url": "https://factorialhr.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "google-workspace",
+    "name": "Google Workspace",
+    "website_url": "https://workspace.google.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "greenhouse",
+    "name": "Greenhouse",
+    "website_url": "https://greenhouse.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "hibob",
+    "name": "HiBob",
+    "website_url": "https://www.hibob.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "humaans",
+    "name": "Humaans",
+    "website_url": "https://humaans.io",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "justworks",
+    "name": "Justworks",
+    "website_url": "https://www.justworks.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "lano",
+    "name": "Lano",
+    "website_url": "https://lano.io",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "linkedin-recruiter",
+    "name": "Linkedin Recruiter",
+    "website_url": "https://business.linkedin.com/talent-solutions/recruiter",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "lucca",
+    "name": "Lucca",
+    "website_url": "https://www.lucca.fr",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "namely",
+    "name": "Namely",
+    "website_url": "https://www.namely.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "netchex",
+    "name": "Netchex",
+    "website_url": "https://netchex.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "oyster",
+    "name": "Oyster®",
+    "website_url": "https://oysterhr.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "payfit",
+    "name": "Payfit",
+    "website_url": "https://payfit.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "personio",
+    "name": "Personio",
+    "website_url": "https://personio.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "rippling",
+    "name": "Rippling",
+    "website_url": "https://rippling.com",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "sap-successfactors",
+    "name": "SAP SuccessFactors",
+    "website_url": "https://www.sap.com/products/hcm.html",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "ukg-pro",
+    "name": "UKG Pro",
+    "website_url": "https://www.ukg.com/solutions/ukg-pro",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "workday-hr",
+    "name": "Workday HR",
+    "website_url": "https://www.workday.com/en-us/products/human-capital-management/overview.html",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "zelt",
+    "name": "Zelt",
+    "website_url": "https://zelt.app",
+    "category": "hris-payroll",
+    "done": false
+  },
+  {
+    "slug": "adobe-acrobat-sign",
+    "name": "Adobe Acrobat Sign",
+    "website_url": "https://www.adobe.com/sign.html",
+    "category": "legal-contracts",
+    "done": true
+  },
+  {
+    "slug": "axeptio",
+    "name": "Axeptio",
+    "website_url": "https://axeptio.eu",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "captain-contrat",
+    "name": "Captain Contrat",
+    "website_url": "https://captaincontrat.com",
+    "category": "legal-contracts",
+    "done": true
+  },
+  {
+    "slug": "captaindoc",
+    "name": "Captaindoc",
+    "website_url": "",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "conga",
+    "name": "Conga",
+    "website_url": "https://conga.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "connective",
+    "name": "Connective",
+    "website_url": "",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "didomi",
+    "name": "Didomi",
+    "website_url": "https://didomi.io",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "docusign",
+    "name": "DocuSign",
+    "website_url": "https://www.docusign.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "google-docs",
+    "name": "Google Docs",
+    "website_url": "https://www.google.com/docs/about",
+    "category": "legal-contracts",
+    "done": true
+  },
+  {
+    "slug": "ironclad",
+    "name": "Ironclad",
+    "website_url": "https://ironcladapp.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "juro",
+    "name": "Juro",
+    "website_url": "https://juro.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "legalplace",
+    "name": "Legalplace",
+    "website_url": "https://legalplace.fr",
+    "category": "legal-contracts",
+    "done": true
+  },
+  {
+    "slug": "legalstart",
+    "name": "Legalstart",
+    "website_url": "",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "legifrance-pro",
+    "name": "Legifrance Pro",
+    "website_url": "",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "mycase",
+    "name": "MyCase",
+    "website_url": "https://mycase.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "pandadoc",
+    "name": "Pandadoc",
+    "website_url": "https://pandadoc.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "rocket-lawyer",
+    "name": "Rocket Lawyer",
+    "website_url": "https://www.rocketlawyer.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "tomorro",
+    "name": "Tomorro",
+    "website_url": "https://www.tomorro.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "wolters-kluwer",
+    "name": "Wolters Kluwer",
+    "website_url": "",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "yousign",
+    "name": "Yousign",
+    "website_url": "https://yousign.com",
+    "category": "legal-contracts",
+    "done": false
+  },
+  {
+    "slug": "acf",
+    "name": "Advanced Custom Fields",
+    "website_url": "https://www.advancedcustomfields.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "app-store-connect",
+    "name": "App Store Connect",
+    "website_url": "https://appstoreconnect.apple.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "appsmith",
+    "name": "Appsmith",
+    "website_url": "https://www.appsmith.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "aws",
+    "name": "AWS",
+    "website_url": "https://aws.amazon.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "azure",
+    "name": "Microsoft Azure",
+    "website_url": "https://azure.microsoft.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "bloc",
+    "name": "Bloc",
+    "website_url": "https://bloclibrary.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "bricks",
+    "name": "Bricks",
+    "website_url": "https://bricksbuilder.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "browserstack",
+    "name": "BrowserStack",
+    "website_url": "https://www.browserstack.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "bubble",
+    "name": "Bubble",
+    "website_url": "https://bubble.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "budibase",
+    "name": "Budibase",
+    "website_url": "https://budibase.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "bullmq",
+    "name": "BullMQ",
+    "website_url": "https://bullmq.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "cargo-site",
+    "name": "Cargo Site",
+    "website_url": "",
+    "category": "nocode-web",
+    "done": true
+  },
+  {
+    "slug": "carrd",
+    "name": "Carrd",
+    "website_url": "https://carrd.co",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "celery",
+    "name": "Celery",
+    "website_url": "https://docs.celeryq.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "chrome-devtools",
+    "name": "Chrome DevTools",
+    "website_url": "https://developer.chrome.com/docs/devtools",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "client-first",
+    "name": "Client-First",
+    "website_url": "https://finsweet.com/client-first",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "codemagic",
+    "name": "Codemagic",
+    "website_url": "https://codemagic.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "contentful",
+    "name": "Contentful",
+    "website_url": "https://www.contentful.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "cypress",
+    "name": "Cypress",
+    "website_url": "https://www.cypress.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "dart",
+    "name": "Dart",
+    "website_url": "https://dart.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "digitalocean",
+    "name": "DigitalOcean",
+    "website_url": "https://digitalocean.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "directus",
+    "name": "Directus",
+    "website_url": "https://directus.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "django",
+    "name": "Django",
+    "website_url": "https://www.djangoproject.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "docker",
+    "name": "Docker",
+    "website_url": "https://www.docker.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "dorik",
+    "name": "Dorik",
+    "website_url": "https://dorik.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "dub",
+    "name": "Dub",
+    "website_url": "https://dub.co",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "eas-build",
+    "name": "EAS Build",
+    "website_url": "https://expo.dev/eas",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "elementor",
+    "name": "Elementor",
+    "website_url": "https://elementor.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "emergent",
+    "name": "Emergent",
+    "website_url": "https://emergent.sh",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "eslint",
+    "name": "ESLint",
+    "website_url": "https://eslint.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "expo",
+    "name": "Expo",
+    "website_url": "https://expo.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "fastapi",
+    "name": "FastAPI",
+    "website_url": "https://fastapi.tiangolo.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "fillout",
+    "name": "Fillout",
+    "website_url": "https://fillout.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "finale-inventory",
+    "name": "Finale Inventory",
+    "website_url": "https://finaleinventory.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "finsweet",
+    "name": "Finsweet",
+    "website_url": "https://finsweet.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "firebase",
+    "name": "Firebase",
+    "website_url": "https://firebase.google.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "flask",
+    "name": "Flask",
+    "website_url": "https://flask.palletsprojects.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "flutter",
+    "name": "Flutter",
+    "website_url": "https://flutter.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "fly-io",
+    "name": "Fly.io",
+    "website_url": "https://fly.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "gcp",
+    "name": "Google Cloud",
+    "website_url": "https://cloud.google.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "gelato",
+    "name": "Gelato",
+    "website_url": "https://gelato.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "getida",
+    "name": "Getida",
+    "website_url": "https://getida.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "ghost",
+    "name": "Ghost",
+    "website_url": "https://ghost.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "gitlens",
+    "name": "GitLens",
+    "website_url": "https://www.gitkraken.com/gitlens",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "go",
+    "name": "Go",
+    "website_url": "https://go.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "google-play-console",
+    "name": "Google Play Console",
+    "website_url": "https://play.google.com/console",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "gorgias",
+    "name": "Gorgias",
+    "website_url": "https://gorgias.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "graphql",
+    "name": "GraphQL",
+    "website_url": "https://graphql.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "gsap",
+    "name": "GSAP",
+    "website_url": "https://gsap.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "heroku",
+    "name": "Heroku",
+    "website_url": "https://heroku.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "hostfully",
+    "name": "Hostfully",
+    "website_url": "https://hostfully.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "hydrogen",
+    "name": "Hydrogen",
+    "website_url": "https://hydrogen.shopify.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "inflow-inventory",
+    "name": "inFlow Inventory",
+    "website_url": "https://inflowinventory.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "infomaniak",
+    "name": "Infomaniak",
+    "website_url": "https://www.infomaniak.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "insomnia",
+    "name": "Insomnia",
+    "website_url": "https://insomnia.rest",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "jest",
+    "name": "Jest",
+    "website_url": "https://jestjs.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "jotform",
+    "name": "Jotform",
+    "website_url": "https://www.jotform.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "katana-cloud-manufacturing",
+    "name": "Katana Cloud Manufacturing",
+    "website_url": "https://katanamrp.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "kinsta",
+    "name": "Kinsta",
+    "website_url": "https://kinsta.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "kubernetes",
+    "name": "Kubernetes",
+    "website_url": "https://kubernetes.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "landingi",
+    "name": "Landingi",
+    "website_url": "https://try.landingi.com/8he4kr5kasjb",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "leadpages",
+    "name": "Leadpages",
+    "website_url": "https://www.leadpages.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "liquid",
+    "name": "Liquid",
+    "website_url": "https://shopify.github.io/liquid/",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "liquid-web-partner-program",
+    "name": "Liquid Web Partner+ Program",
+    "website_url": "https://liquidweb.com/partner-program",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "localwp",
+    "name": "LocalWP",
+    "website_url": "https://localwp.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "mainwp",
+    "name": "MainWP",
+    "website_url": "https://mainwp.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "managewp",
+    "name": "ManageWP",
+    "website_url": "https://managewp.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "medusa",
+    "name": "Medusa",
+    "website_url": "https://medusajs.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "memberstack",
+    "name": "Memberstack",
+    "website_url": "https://www.memberstack.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "mongodb-atlas",
+    "name": "MongoDB Atlas",
+    "website_url": "https://mongodb.com/atlas",
+    "category": "nocode-web",
+    "done": true
+  },
+  {
+    "slug": "mrpeasy",
+    "name": "MRPeasy",
+    "website_url": "https://mrpeasy.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "neon",
+    "name": "Neon",
+    "website_url": "https://neon.tech",
+    "category": "nocode-web",
+    "done": true
+  },
+  {
+    "slug": "nestjs",
+    "name": "NestJS",
+    "website_url": "https://nestjs.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "netlify",
+    "name": "Netlify",
+    "website_url": "https://netlify.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "newman",
+    "name": "Newman",
+    "website_url": "https://github.com/postmanlabs/newman",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "next-js",
+    "name": "Next.js",
+    "website_url": "https://nextjs.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "node-js",
+    "name": "Node.js",
+    "website_url": "https://nodejs.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "openapi",
+    "name": "OpenAPI",
+    "website_url": "https://www.openapis.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "ovh",
+    "name": "OVHcloud",
+    "website_url": "https://www.ovhcloud.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "packhelp",
+    "name": "Packhelp",
+    "website_url": "https://packhelp.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "pageai",
+    "name": "PageAI",
+    "website_url": "https://pageai.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "payload-cms",
+    "name": "Payload CMS",
+    "website_url": "https://payloadcms.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "php",
+    "name": "PHP",
+    "website_url": "https://www.php.net",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "planetscale",
+    "name": "PlanetScale",
+    "website_url": "https://planetscale.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "playwright",
+    "name": "Playwright",
+    "website_url": "https://playwright.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "poetry",
+    "name": "Poetry",
+    "website_url": "https://python-poetry.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "postgresql",
+    "name": "PostgreSQL",
+    "website_url": "https://www.postgresql.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "postman",
+    "name": "Postman",
+    "website_url": "https://www.postman.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "prettier",
+    "name": "Prettier",
+    "website_url": "https://prettier.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "printify",
+    "name": "Printify",
+    "website_url": "https://printify.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "prisma",
+    "name": "Prisma",
+    "website_url": "https://www.prisma.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "pytest",
+    "name": "Pytest",
+    "website_url": "https://pytest.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "python",
+    "name": "Python",
+    "website_url": "https://www.python.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "railway",
+    "name": "Railway",
+    "website_url": "https://railway.app",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "react-native",
+    "name": "React Native",
+    "website_url": "https://reactnative.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "readymag",
+    "name": "Readymag",
+    "website_url": "",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "recharge",
+    "name": "Recharge",
+    "website_url": "https://getrecharge.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "redis",
+    "name": "Redis",
+    "website_url": "https://redis.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "relume",
+    "name": "Relume",
+    "website_url": "https://www.relume.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "remix",
+    "name": "Remix",
+    "website_url": "https://remix.run",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "render",
+    "name": "Render",
+    "website_url": "https://render.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "rest-client",
+    "name": "REST Client",
+    "website_url": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "retool",
+    "name": "Retool",
+    "website_url": "https://retool.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "riverpod",
+    "name": "Riverpod",
+    "website_url": "https://riverpod.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "rork",
+    "name": "Rork",
+    "website_url": "https://rork.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "saleor",
+    "name": "Saleor",
+    "website_url": "https://saleor.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "sanity",
+    "name": "Sanity",
+    "website_url": "https://www.sanity.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "sellfy",
+    "name": "Sellfy",
+    "website_url": "https://sellfy.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "shipstation",
+    "name": "ShipStation",
+    "website_url": "https://www.shipstation.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "shogun",
+    "name": "Shogun",
+    "website_url": "https://getshogun.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "shophero",
+    "name": "ShopHero",
+    "website_url": "https://shophero.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "shopify",
+    "name": "Shopify",
+    "website_url": "https://shopify.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "shopify-cli",
+    "name": "Shopify CLI",
+    "website_url": "https://shopify.dev/docs/api/shopify-cli",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "sqlalchemy",
+    "name": "SQLAlchemy",
+    "website_url": "https://www.sqlalchemy.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "strapi",
+    "name": "Strapi",
+    "website_url": "https://strapi.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "supabase",
+    "name": "Supabase",
+    "website_url": "https://supabase.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "teachable",
+    "name": "Teachable",
+    "website_url": "https://teachable.com",
+    "category": "nocode-web",
+    "done": true
+  },
+  {
+    "slug": "terraform",
+    "name": "Terraform",
+    "website_url": "https://www.terraform.io",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "thunder-client",
+    "name": "Thunder Client",
+    "website_url": "https://www.thunderclient.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "timber",
+    "name": "Timber",
+    "website_url": "https://timber.github.io/docs/",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "typedream",
+    "name": "Typedream",
+    "website_url": "https://typedream.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "typescript",
+    "name": "TypeScript",
+    "website_url": "https://www.typescriptlang.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "unbounce",
+    "name": "Unbounce",
+    "website_url": "https://unbounce.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "uv",
+    "name": "uv",
+    "website_url": "https://github.com/astral-sh/uv",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "website_url": "https://vercel.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "vitest",
+    "name": "Vitest",
+    "website_url": "https://vitest.dev",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "vs-code",
+    "name": "VS Code",
+    "website_url": "https://code.visualstudio.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "website_url": "https://webflow.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "wized",
+    "name": "Wized",
+    "website_url": "https://www.wized.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "woocommerce",
+    "name": "WooCommerce",
+    "website_url": "https://woocommerce.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "wordpress",
+    "name": "WordPress",
+    "website_url": "https://wordpress.org",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "youform",
+    "name": "Youform",
+    "website_url": "https://youform.com",
+    "category": "nocode-web",
+    "done": false
+  },
+  {
+    "slug": "17hats",
+    "name": "17hats",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "airslate",
+    "name": "airSlate",
+    "website_url": "https://airslate.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo",
+    "website_url": "https://apollo.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "asana",
+    "name": "Asana",
+    "website_url": "https://asana.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "basecamp",
+    "name": "Basecamp",
+    "website_url": "https://basecamp.com",
+    "category": "organization",
+    "done": true
+  },
+  {
+    "slug": "better-proposals",
+    "name": "Better Proposals",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "bloom-crm",
+    "name": "Bloom",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "blueink-esignatures",
+    "name": "Blueink eSignatures",
+    "website_url": "https://blueink.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "box",
+    "name": "Box",
+    "website_url": "https://box.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "breezy-hr",
+    "name": "Breezy HR",
+    "website_url": "https://breezy.hr",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "bugherd",
+    "name": "BugHerd",
+    "website_url": "https://bugherd.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "clockify",
+    "name": "Clockify",
+    "website_url": "https://clockify.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "clockshark",
+    "name": "ClockShark",
+    "website_url": "https://clockshark.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "condeco",
+    "name": "Condeco",
+    "website_url": "https://condecosoftware.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "confluence",
+    "name": "Confluence",
+    "website_url": "https://atlassian.com/software/confluence",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "connecteam",
+    "name": "Connecteam",
+    "website_url": "https://connecteam.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "deputy",
+    "name": "Deputy",
+    "website_url": "https://deputy.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "deskpro",
+    "name": "Deskpro",
+    "website_url": "https://deskpro.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "website_url": "https://dropbox.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "dubsado",
+    "name": "Dubsado",
+    "website_url": " planning).",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "folk",
+    "name": "Folk",
+    "website_url": "https://folk.app",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "freshservice",
+    "name": "Freshservice",
+    "website_url": "https://freshworks.com/freshservice",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "front",
+    "name": "Front",
+    "website_url": "https://front.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "google-sheets",
+    "name": "Google Sheets",
+    "website_url": "https://www.google.com/sheets/about",
+    "category": "organization",
+    "done": true
+  },
+  {
+    "slug": "heptabase",
+    "name": "Heptabase",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "hive",
+    "name": "Hive",
+    "website_url": "https://hive.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "honeybook",
+    "name": "HoneyBook",
+    "website_url": " facturation).",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "hubspot",
+    "name": "HubSpot",
+    "website_url": "https://hubspot.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "jobber",
+    "name": "Jobber",
+    "website_url": "https://getjobber.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "lever",
+    "name": "Lever",
+    "website_url": "https://lever.co",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "linear",
+    "name": "Linear",
+    "website_url": "https://linear.app",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "logseq",
+    "name": "Logseq",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "loopio",
+    "name": "Loopio",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "motion-app",
+    "name": "Motion",
+    "website_url": "https://www.usemotion.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "website_url": "https://notion.so",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "nusii",
+    "name": "Nusii",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "obsidian",
+    "name": "Obsidian",
+    "website_url": "https://obsidian.md",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "plutio",
+    "name": "Plutio",
+    "website_url": " finances).",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "process-street",
+    "name": "Process Street",
+    "website_url": "https://process.st",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "proposify",
+    "name": "Proposify",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "reflect-notes",
+    "name": "Reflect",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "roam-research",
+    "name": "Roam Research",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "safetyculture",
+    "name": "Safetyculture",
+    "website_url": "https://safetyculture.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "scribe",
+    "name": "Scribe",
+    "website_url": "https://scribehow.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "signrequest",
+    "name": "SignRequest",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "skribble",
+    "name": "Skribble",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "smartsheet",
+    "name": "Smartsheet",
+    "website_url": "https://smartsheet.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "smartsuite",
+    "name": "SmartSuite",
+    "website_url": "https://smartsuite.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "snipe-it",
+    "name": "Snipe IT",
+    "website_url": "https://snipeitapp.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "spaceiq",
+    "name": "SpaceIQ",
+    "website_url": "https://spaceiq.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "suitedash",
+    "name": "SuiteDash",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "superlist",
+    "name": "Superlist",
+    "website_url": "https://www.superlist.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "sysaid",
+    "name": "SysAid",
+    "website_url": "https://sysaid.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "tave",
+    "name": "Táve",
+    "website_url": "",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "teamwork",
+    "name": "Teamwork",
+    "website_url": "https://teamwork.com",
+    "category": "organization",
+    "done": true
+  },
+  {
+    "slug": "time-doctor",
+    "name": "Time Doctor",
+    "website_url": "https://timedoctor.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "timecamp",
+    "name": "TimeCamp",
+    "website_url": "https://timecamp.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "todoist",
+    "name": "Todoist",
+    "website_url": "https://todoist.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "workable",
+    "name": "Workable",
+    "website_url": "https://workable.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "wrike",
+    "name": "Wrike",
+    "website_url": "https://wrike.com",
+    "category": "organization",
+    "done": true
+  },
+  {
+    "slug": "wunderlist",
+    "name": "Wunderlist",
+    "website_url": "https://wunderlist.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "website_url": "https://zendesk.com",
+    "category": "organization",
+    "done": false
+  },
+  {
+    "slug": "adobe-acrobat",
+    "name": "Adobe Acrobat Pro",
+    "website_url": "https://www.adobe.com/acrobat.html",
+    "category": "productivity-tracking",
+    "done": true
+  },
+  {
+    "slug": "antidote",
+    "name": "Antidote",
+    "website_url": "https://www.antidote.info",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "arc-browser",
+    "name": "Arc Browser",
+    "website_url": "",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "buddy-punch",
+    "name": "Buddy Punch",
+    "website_url": "https://buddypunch.com",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "fig-terminal",
+    "name": "Fig",
+    "website_url": "",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "harvest",
+    "name": "Harvest",
+    "website_url": "https://www.getharvest.com",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "languagetool",
+    "name": "LanguageTool",
+    "website_url": "https://languagetool.org",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "microsoft-365",
+    "name": "Microsoft 365",
+    "website_url": "https://www.microsoft.com/microsoft-365",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "perforce",
+    "name": "Perforce",
+    "website_url": "https://www.perforce.com",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "raycast",
+    "name": "Raycast",
+    "website_url": "https://raycast.com",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "reclaim",
+    "name": "Reclaim.ai",
+    "website_url": "https://reclaim.ai",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "reclaim-ai",
+    "name": "Reclaim AI",
+    "website_url": "https://reclaim.ai",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "superwhisper",
+    "name": "Superwhisper",
+    "website_url": "https://superwhisper.com",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "toggl",
+    "name": "Toggl Track",
+    "website_url": "https://toggl.com",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "warp",
+    "name": "Warp",
+    "website_url": "",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "zed",
+    "name": "Zed",
+    "website_url": "",
+    "category": "productivity-tracking",
+    "done": false
+  },
+  {
+    "slug": "airtable",
+    "name": "Airtable",
+    "website_url": "https://airtable.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "attio",
+    "name": "Attio",
+    "website_url": "https://attio.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "canny",
+    "name": "Canny",
+    "website_url": "https://canny.io",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "clickup",
+    "name": "ClickUp",
+    "website_url": "https://clickup.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "coda",
+    "name": "Coda",
+    "website_url": "",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "contra",
+    "name": "Contra",
+    "website_url": "https://contra.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "customer-io",
+    "name": "Customer Io",
+    "website_url": "https://customer.io",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "dovetail-ai",
+    "name": "Dovetail AI",
+    "website_url": "https://dovetailai.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "feedly",
+    "name": "Feedly",
+    "website_url": "https://feedly.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "float",
+    "name": "Float",
+    "website_url": "https://float.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "gamma-ai",
+    "name": "Gamma AI",
+    "website_url": "https://gammaai.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "github",
+    "name": "GitHub",
+    "website_url": "https://github.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "github-actions",
+    "name": "GitHub Actions",
+    "website_url": "https://github.com/features/actions",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "gong",
+    "name": "Gong",
+    "website_url": "https://gong.io",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "houzz-pro",
+    "name": "Houzz Pro",
+    "website_url": "https://houzz.com/pro",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "instantly",
+    "name": "Instantly",
+    "website_url": "https://instantly.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "itsdart",
+    "name": "Dart (PM)",
+    "website_url": "https://www.itsdart.com/",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "jira",
+    "name": "Jira",
+    "website_url": "https://atlassian.com/software/jira",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "microsoft-project",
+    "name": "Microsoft Project",
+    "website_url": "",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "monday",
+    "name": "Monday.com",
+    "website_url": "https://monday.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "monday-com",
+    "name": "Monday.com",
+    "website_url": "https://monday.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "openai",
+    "name": "Openai",
+    "website_url": "https://openai.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "plane",
+    "name": "Plane",
+    "website_url": "https://plane.so",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "productboard",
+    "name": "Productboard",
+    "website_url": "https://productboard.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "productive-io",
+    "name": "Productive Io",
+    "website_url": "https://productive.io",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "programa",
+    "name": "Programa",
+    "website_url": "https://programa.design",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "proofhub",
+    "name": "ProofHub",
+    "website_url": "https://www.proofhub.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "readwise",
+    "name": "Readwise",
+    "website_url": "https://readwise.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "relume-ai",
+    "name": "Relume AI",
+    "website_url": "https://relumeai.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "taskade",
+    "name": "Taskade",
+    "website_url": "https://taskade.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "techpacker",
+    "name": "Techpacker",
+    "website_url": "https://techpacker.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "trello",
+    "name": "Trello",
+    "website_url": "https://trello.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "weezevent",
+    "name": "Weezevent",
+    "website_url": "https://weezevent.com",
+    "category": "project-management",
+    "done": true
+  },
+  {
+    "slug": "whatsapp-business",
+    "name": "Whatsapp Business",
+    "website_url": "https://whatsappbusiness.com",
+    "category": "project-management",
+    "done": false
+  },
+  {
+    "slug": "1password",
+    "name": "1Password",
+    "website_url": "https://1password.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "auth-js",
+    "name": "Auth.js",
+    "website_url": "https://authjs.dev",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "axe-devtools",
+    "name": "Axe DevTools",
+    "website_url": "https://www.deque.com/axe/devtools/",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "bitwarden",
+    "name": "Bitwarden",
+    "website_url": "https://bitwarden.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "burp-suite",
+    "name": "Burp Suite",
+    "website_url": "https://portswigger.net/burp",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "clerk",
+    "name": "Clerk",
+    "website_url": "https://clerk.com",
+    "category": "security",
+    "done": true
+  },
+  {
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "website_url": "https://www.cloudflare.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "crowdstrike",
+    "name": "Crowdstrike",
+    "website_url": "https://crowdstrike.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "dashlane",
+    "name": "Dashlane",
+    "website_url": "https://dashlane.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "dependabot",
+    "name": "Dependabot",
+    "website_url": "https://github.com/dependabot",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "desktopready",
+    "name": "DesktopReady",
+    "website_url": "https://desktopready.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "doppler",
+    "name": "Doppler",
+    "website_url": "",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "dotenv-vault",
+    "name": "Dotenv Vault",
+    "website_url": "",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "drata",
+    "name": "Drata",
+    "website_url": "https://drata.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "github-advanced-security",
+    "name": "GitHub Advanced Security",
+    "website_url": "https://github.com/security/advanced-security",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "infisical",
+    "name": "Infisical",
+    "website_url": "",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "lastpass",
+    "name": "LastPass",
+    "website_url": "https://lastpass.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "maced-ai",
+    "name": "Maced AI",
+    "website_url": "https://maced.ai",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "microsoft-defender",
+    "name": "Microsoft Defender",
+    "website_url": "https://microsoft.com/security/business/microsoft-defender",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "microsoft-entra-id",
+    "name": "Microsoft Entra ID",
+    "website_url": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "nordpass",
+    "name": "NordPass",
+    "website_url": "https://nordpass.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "nvda",
+    "name": "NVDA",
+    "website_url": "https://www.nvaccess.org",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "okta",
+    "name": "Okta",
+    "website_url": "https://www.okta.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "onelogin",
+    "name": "OneLogin",
+    "website_url": "https://www.onelogin.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "onetrust",
+    "name": "OneTrust",
+    "website_url": "https://www.onetrust.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "owasp-zap",
+    "name": "OWASP ZAP",
+    "website_url": "https://www.zaproxy.org",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "semgrep",
+    "name": "Semgrep",
+    "website_url": "https://semgrep.dev",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "snyk",
+    "name": "Snyk",
+    "website_url": "https://snyk.io",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "vanta",
+    "name": "Vanta",
+    "website_url": "https://www.vanta.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "vault",
+    "name": "HashiCorp Vault",
+    "website_url": "",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "voiceover",
+    "name": "VoiceOver",
+    "website_url": "https://support.apple.com/guide/voiceover/welcome/mac",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "wordfence",
+    "name": "Wordfence",
+    "website_url": "https://www.wordfence.com",
+    "category": "security",
+    "done": false
+  },
+  {
+    "slug": "bynder",
+    "name": "Bynder",
+    "website_url": "https://www.bynder.com",
+    "category": "storage",
+    "done": false
+  },
+  {
+    "slug": "cloudinary",
+    "name": "Cloudinary",
+    "website_url": "https://cloudinary.com",
+    "category": "storage",
+    "done": false
+  },
+  {
+    "slug": "google-drive",
+    "name": "Google Drive",
+    "website_url": "https://google.com/drive",
+    "category": "storage",
+    "done": true
+  },
+  {
+    "slug": "namecheap",
+    "name": "Namecheap",
+    "website_url": "https://www.namecheap.com",
+    "category": "storage",
+    "done": false
+  },
+  {
+    "slug": "onedrive",
+    "name": "OneDrive",
+    "website_url": "https://onedrive.com",
+    "category": "storage",
+    "done": false
+  },
+  {
+    "slug": "pics-io",
+    "name": "Pics.io",
+    "website_url": "https://pics.io",
+    "category": "storage",
+    "done": false
+  },
+  {
+    "slug": "sharepoint",
+    "name": "SharePoint",
+    "website_url": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration",
+    "category": "storage",
+    "done": false
+  },
+  {
+    "slug": "wetransfer",
+    "name": "WeTransfer",
+    "website_url": "https://wetransfer.com",
+    "category": "storage",
+    "done": true
+  },
+  {
+    "slug": "creditsafe",
+    "name": "Creditsafe",
+    "website_url": "https://www.creditsafe.com",
+    "category": "vendor-risk-data",
+    "done": false
+  },
+  {
+    "slug": "dun-bradstreet",
+    "name": "Dun & Bradstreet",
+    "website_url": "https://www.dnb.com",
+    "category": "vendor-risk-data",
+    "done": false
+  },
+  {
+    "slug": "ecovadis",
+    "name": "EcoVadis",
+    "website_url": "https://ecovadis.com",
+    "category": "vendor-risk-data",
+    "done": false
+  },
+  {
+    "slug": "securityscorecard",
+    "name": "SecurityScorecard",
+    "website_url": "https://securityscorecard.com",
+    "category": "vendor-risk-data",
+    "done": false
+  },
+  {
+    "slug": "thordata",
+    "name": "ThorData",
+    "website_url": "https://www.thordata.com",
+    "category": "vendor-risk-data",
+    "done": false
+  }
+]

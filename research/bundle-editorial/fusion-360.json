@@ -1,0 +1,88 @@
+{
+  "slug": "fusion-360",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autodesk Fusion — page produit et tarifs (site officiel)", "url": "https://www.autodesk.com/products/fusion-360/overview" }
+  ],
+  "facts": {
+    "what": "Plateforme de conception et fabrication d'Autodesk réunissant CAO, FAO (CAM), simulation (CAE) et électronique (PCB) dans un seul outil, avec gestion des données intégrée.",
+    "what_en": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management.",
+    "pricing_model": "Abonnement par utilisateur (mensuel, annuel ou pluriannuel). Licence gratuite pour usage personnel non commercial ; offre startup dédiée.",
+    "free_tier": { "exists": true, "detail": "Fusion pour usage personnel : gratuit pour les projets non commerciaux (fonctions réduites). Pas de plan gratuit commercial." },
+    "plans": [
+      { "name": "Usage personnel", "price": "gratuit (non commercial)" },
+      { "name": "Abonnement standard", "price": "85 $/utilisateur/mois ou 680 $/utilisateur/an" },
+      { "name": "Startup", "price": "150 $/utilisateur pour un terme de 3 ans (programme sur conditions)" }
+    ],
+    "key_features": [
+      "CAO 3D paramétrique",
+      "FAO / usinage (CAM) intégré",
+      "Simulation et analyse (CAE)",
+      "Conception électronique (PCB) et gestion des données"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des pièces et voulez CAO et usinage réunis.",
+        "Vous travaillez en petite structure ou en indépendant sur du produit.",
+        "Vous voulez simulation et électronique dans le même outil."
+      ],
+      "avoidIf": [
+        "Vous faites de l'architecture ou du BIM (outil dédié plus adapté).",
+        "Votre usage est strictement personnel et occasionnel (la version gratuite suffit).",
+        "Vous avez besoin d'un CAO de très haut de gamme pour de gros assemblages."
+      ],
+      "threshold": "Fusion s'impose pour la conception produit qui va jusqu'à la fabrication ; pour de l'architecture ou de très gros assemblages industriels, un outil spécialisé convient mieux."
+    },
+    "pros": [
+      "CAO, FAO, simulation et PCB dans un seul outil.",
+      "Gratuit pour l'usage personnel non commercial.",
+      "Gestion des données et collaboration intégrées.",
+      "Écosystème Autodesk et large communauté."
+    ],
+    "cons": [
+      "Abonnement obligatoire pour l'usage commercial.",
+      "Moins adapté à l'architecture/BIM.",
+      "Peut montrer ses limites sur de très gros assemblages."
+    ],
+    "use_cases": [
+      "Concevoir une pièce mécanique de A à Z.",
+      "Générer des parcours d'usinage pour une machine CNC.",
+      "Simuler des contraintes avant fabrication."
+    ],
+    "relevant_for": ["Concepteurs produit", "Makers et ateliers", "Ingénieurs mécaniques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design parts and want CAD and machining together.",
+        "You work solo or in a small product team.",
+        "You want simulation and electronics in the same tool."
+      ],
+      "avoidIf": [
+        "You do architecture or BIM (a dedicated tool fits better).",
+        "Your use is strictly personal and occasional (the free version suffices).",
+        "You need very high-end CAD for large assemblies."
+      ],
+      "threshold": "Fusion makes sense for product design that goes through to manufacturing; for architecture or very large industrial assemblies, a specialised tool fits better."
+    },
+    "pros": [
+      "CAD, CAM, simulation and PCB in one tool.",
+      "Free for non-commercial personal use.",
+      "Built-in data management and collaboration.",
+      "Autodesk ecosystem and large community."
+    ],
+    "cons": [
+      "Subscription required for commercial use.",
+      "Less suited to architecture/BIM.",
+      "Can strain on very large assemblies."
+    ],
+    "use_cases": [
+      "Design a mechanical part end to end.",
+      "Generate toolpaths for a CNC machine.",
+      "Simulate stresses before manufacturing."
+    ]
+  }
+}

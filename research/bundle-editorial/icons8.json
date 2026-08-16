@@ -1,0 +1,88 @@
+{
+  "slug": "icons8",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Icons8 — tarifs (site officiel)", "url": "https://icons8.com/pricing" }
+  ],
+  "facts": {
+    "what": "Bibliothèque d'assets pour designers et développeurs : icônes cohérentes, illustrations vectorielles, photos et outils IA, avec des plugins pour Figma, Canva, Illustrator et Photoshop.",
+    "what_en": "Asset library for designers and developers: consistent icon sets, vector illustrations, photos and AI tools, with plugins for Figma, Canva, Illustrator and Photoshop.",
+    "pricing_model": "Palier gratuit (avec attribution) puis abonnements par type d'asset (icônes, illustrations, photos) ou packs. Achat à l'unité possible sur certains assets.",
+    "free_tier": { "exists": true, "detail": "Gratuit avec lien d'attribution vers Icons8 ; large catalogue accessible et quota quotidien de fonctions IA." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 $ (avec attribution obligatoire)" },
+      { "name": "Icônes + Illustrations", "price": "environ 21 $/mois pour 1 utilisateur" },
+      { "name": "Achat à l'unité", "price": "photos à partir de ~0,25 $, illustrations à partir de ~0,50 $" }
+    ],
+    "key_features": [
+      "Icônes cohérentes en nombreux styles",
+      "Illustrations vectorielles et photos",
+      "Plugins Figma, Canva, Illustrator, Photoshop",
+      "Outils IA (génération, retouche)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'icônes cohérentes pour vos interfaces.",
+        "Vous voulez illustrations et photos au même endroit.",
+        "Vous travaillez dans Figma ou Canva (plugins intégrés)."
+      ],
+      "avoidIf": [
+        "Vous acceptez l'attribution et le gratuit vous suffit.",
+        "Vous préférez une bibliothèque d'icônes open source.",
+        "Vous n'avez besoin que d'une poignée d'icônes."
+      ],
+      "threshold": "Icons8 s'impose pour qui a besoin d'un stock cohérent d'icônes et d'illustrations sans attribution ; pour quelques icônes, une bibliothèque open source suffit."
+    },
+    "pros": [
+      "Très large catalogue d'assets cohérents.",
+      "Plugins pour les outils de design courants.",
+      "Palier gratuit exploitable (avec attribution).",
+      "Achat à l'unité possible."
+    ],
+    "cons": [
+      "Attribution obligatoire sur le gratuit.",
+      "Abonnements segmentés par type d'asset.",
+      "Alternatives open source gratuites pour les icônes simples."
+    ],
+    "use_cases": [
+      "Habiller une interface avec un jeu d'icônes cohérent.",
+      "Illustrer une présentation ou un site.",
+      "Piocher des photos et illustrations sous licence."
+    ],
+    "relevant_for": ["Designers UI", "Développeurs front", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need consistent icons for your interfaces.",
+        "You want illustrations and photos in one place.",
+        "You work in Figma or Canva (built-in plugins)."
+      ],
+      "avoidIf": [
+        "You accept attribution and the free tier is enough.",
+        "You prefer an open-source icon library.",
+        "You only need a handful of icons."
+      ],
+      "threshold": "Icons8 makes sense when you need a consistent stock of icons and illustrations without attribution; for a few icons, an open-source library suffices."
+    },
+    "pros": [
+      "Very large catalogue of consistent assets.",
+      "Plugins for common design tools.",
+      "Usable free tier (with attribution).",
+      "Per-asset purchase available."
+    ],
+    "cons": [
+      "Attribution required on the free tier.",
+      "Subscriptions split by asset type.",
+      "Free open-source alternatives exist for simple icons."
+    ],
+    "use_cases": [
+      "Dress an interface with a consistent icon set.",
+      "Illustrate a presentation or website.",
+      "Source licensed photos and illustrations."
+    ]
+  }
+}
