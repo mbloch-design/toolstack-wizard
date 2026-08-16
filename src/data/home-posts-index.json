@@ -1,6 +1,22 @@
 {
   "fr": [
     {
+      "slug": "auditer-stack-saas-45-minutes",
+      "title": "Auditer sa stack SaaS en 45 minutes : supprimer les doublons sans casser son travail",
+      "date": "2026-08-16",
+      "tags": [
+        "audit de stack",
+        "construire une stack",
+        "réduire les coûts",
+        "abonnements SaaS",
+        "doublons outils",
+        "migration SaaS",
+        "freelance",
+        "organisation"
+      ],
+      "thumbnail": "/editorial/stack-visuale/franken-stack-photo.jpg"
+    },
+    {
       "slug": "anna-morel-designer-studio-augmente",
       "title": "Concevoir comme un studio quand on travaille seule",
       "date": "2026-07-28",
@@ -173,21 +189,6 @@
         "2026"
       ],
       "thumbnail": "/editorial/agents-ia-freelances-2026/hero-agent.jpg"
-    },
-    {
-      "slug": "claude-vs-chatgpt-2026-lequel-choisir-business",
-      "title": "Claude ou ChatGPT en 2026 : lequel choisir pour votre activité ?",
-      "date": "2026-04-22",
-      "tags": [
-        "claude",
-        "chatgpt",
-        "comparatif",
-        "ia",
-        "2026",
-        "opus 4.7",
-        "gpt-5"
-      ],
-      "thumbnail": "/editorial/claude-vs-chatgpt-2026/hero-comparaison.jpg"
     }
   ],
   "en": [

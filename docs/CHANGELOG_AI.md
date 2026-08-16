@@ -3833,3 +3833,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les sous-tags sont dérivés des besoins fonctionnels réels des outils de l’univers, puis ordonnés par représentativité.
 - Les variations de graisse sont réservées à l’état actif ; une réserve typographique invisible empêche désormais les libellés voisins de se déplacer.
 - Les listes trop longues deviennent des rails horizontaux : fondus latéraux, flèches contextuelles et défilement fluide n’apparaissent que lorsqu’un contenu reste hors champ.
+
+# 2026-08-16 — Guide d’audit de stack SaaS
+
+- Publication d’un guide opérationnel pour auditer une stack en 45 minutes sans déclencher de migration improvisée.
+- La méthode distingue inventaire, rôles, sources de vérité, usage réel, dépendances et coût de sortie avant toute décision.
+- Ajout d’une matrice claire « garder / challenger / remplacer / supprimer », d’un exemple pédagogique explicitement non tarifaire et de garde-fous sur les données, paiements et accès partagés.
+- Ajout des métadonnées SEO, des FAQ structurées, des liens vers Ma Stack et Comparatifs, ainsi que de trois visuels éditoriaux existants avec textes alternatifs.
+- Synchronisation des sources `src` et `public`, régénération de l’index d’accueil, prerender Article + FAQ et validation complète du build de production.
