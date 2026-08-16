@@ -89,6 +89,8 @@
     { "source": "/:lang(fr|en)/tool/topaz-video/:path*", "destination": "/:lang/tool/topaz-video-ai/:path*", "permanent": true },
     { "source": "/:lang(fr|en)/tool/relume-ai", "destination": "/:lang/tool/relume", "permanent": true },
     { "source": "/:lang(fr|en)/tool/relume-ai/:path*", "destination": "/:lang/tool/relume/:path*", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/are-na", "destination": "/:lang/tool/arena", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/are-na/:path*", "destination": "/:lang/tool/arena/:path*", "permanent": true },
     { "source": "/en/guide/loom-prix-alternatives", "destination": "/en/guide/loom-pricing-alternatives", "permanent": true },
     { "source": "/fr/guide/loom-pricing-alternatives", "destination": "/fr/guide/loom-prix-alternatives", "permanent": true },
     { "source": "/en/guide/conseils-ia-freelances-2026", "destination": "/en/guide/ai-tips-freelancers-2026", "permanent": true },
