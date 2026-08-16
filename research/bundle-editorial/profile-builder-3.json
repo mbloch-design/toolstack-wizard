@@ -1,0 +1,92 @@
+{
+  "slug": "profile-builder-3",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Profile Builder 4 for SketchUp (site officiel)", "url": "https://profilebuilder4sketchup.com" }
+  ],
+  "facts": {
+    "what": "Extension SketchUp pour la création d'objets paramétriques intelligents et réutilisables. Les profils et assemblages s'adaptent automatiquement aux changements de conception, éliminant la remodélisation manuelle.",
+    "what_en": "SketchUp extension for creating smart, parametric, reusable objects. Profiles and assemblies automatically adapt to design changes, eliminating manual re-modeling.",
+    "pricing_model": "Licence perpétuelle unique pour la version Pro. Essai gratuit de 30 jours entièrement fonctionnel. Réduction pour étudiants et éducateurs.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 30 jours avec toutes les fonctionnalités" },
+    "plans": [
+      { "name": "Trial", "price": "Gratuit (30 jours)" },
+      { "name": "Pro License", "price": "USD 119 (perpétuel)" },
+      { "name": "Student/Educator", "price": "USD 30 (75% de réduction avec preuve de statut)" }
+    ],
+    "key_features": [
+      "Profils et assemblages paramétriques réutilisables",
+      "Édition non-destructive",
+      "Création et édition intelligentes de trous",
+      "Bibliothèques libres de profils et assemblages",
+      "Compatibilité PC et Mac",
+      "Intégration avec Quantifier Pro"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez avec SketchUp Pro et créez des composants réutilisables (escaliers, rampes, moulures).",
+        "Vous avez besoin d'adapter rapidement les modèles aux changements de conception.",
+        "Vous travaillez dans l'architecture ou la conception de bâtiments."
+      ],
+      "avoidIf": [
+        "Vous utilisez une version gratuite de SketchUp (incompatible).",
+        "Vous n'avez pas besoin de profils paramétriques réutilisables.",
+        "Vous faites de la modélisation simple sans adaptation de design."
+      ],
+      "threshold": "Profile Builder 3 s'impose pour les flux de travail architecturaux paramétriques sous SketchUp ; inutile pour la modélisation simple ponctuelle."
+    },
+    "pros": [
+      "Automatise la création de composants réutilisables.",
+      "Les changements de conception se propagent automatiquement.",
+      "Gain de temps considérable sur les projets itératifs.",
+      "Bibliothèques gratuites de profils fournis.",
+      "Licence perpétuelle unique (pas d'abonnement)."
+    ],
+    "cons": [
+      "Requiert SketchUp Pro (SketchUp Desktop 2017+).",
+      "Courbe d'apprentissage pour les débutants.",
+      "Pas de version gratuite permanente."
+    ],
+    "use_cases": [
+      "Modéliser une structure avec escaliers et rampes paramétriques.",
+      "Concevoir des systèmes de murs réutilisables pour plusieurs projets.",
+      "Créer des mobiliers et équipements adaptatifs aux dimensions du projet."
+    ],
+    "relevant_for": ["Architectes", "Designers d'intérieur", "Ingénieurs de construction"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design with SketchUp Pro and create reusable components (stairs, railings, moulding).",
+        "You need to quickly adapt models to design changes.",
+        "You work in architecture or building design."
+      ],
+      "avoidIf": [
+        "You use a free version of SketchUp (incompatible).",
+        "You don't need parametric reusable profiles.",
+        "You do simple modeling without design iteration."
+      ],
+      "threshold": "Profile Builder 3 is essential for parametric architectural workflows in SketchUp; unnecessary for simple one-off modeling."
+    },
+    "pros": [
+      "Automates creation of reusable components.",
+      "Design changes propagate automatically.",
+      "Significant time savings on iterative projects.",
+      "Free profile libraries included.",
+      "One-time perpetual license (no subscription)."
+    ],
+    "cons": [
+      "Requires SketchUp Pro (SketchUp Desktop 2017+).",
+      "Learning curve for beginners.",
+      "No permanent free version."
+    ],
+    "use_cases": [
+      "Model a structure with parametric stairs and railings.",
+      "Design reusable wall systems for multiple projects.",
+      "Create adaptive furniture and equipment for project dimensions."
+    ]
+  }
+}

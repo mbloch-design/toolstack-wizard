@@ -1,0 +1,112 @@
+{
+  "slug": "penpot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Penpot — Open-Source Design Platform (site officiel)", "url": "https://penpot.app/" }
+  ],
+  "facts": {
+    "what": "Plateforme de design open-source collaborative pour UI, design systems et prototypage, avec intégration IA et support du code (CSS/HTML/SVG).",
+    "what_en": "Open-source collaborative design platform for UI, design systems, and prototyping, with AI workflows and code-to-design/design-to-code integration.",
+    "pricing_model": "Freemium avec plans payants. Plan gratuit complet incluant core features. Plans payants par utilisateur/mois (SaaS) ou déploiement privé.",
+    "free_tier": { "exists": true, "detail": "Plan Professional gratuit : 8 membres d'équipe (viewers illimités), 10 GB stockage, 7 jours historique, édition multiplayer, bibliothèques, plugins illimités." },
+    "plans": [
+      { "name": "Professional (Free)", "price": "Gratuit / $0 par utilisateur/mois" },
+      { "name": "Unlimited", "price": "$7/user/month (25 GB, 30-day history, max $175/month cap)" },
+      { "name": "Enterprise", "price": "$25/user/month (storage illimité, 90-day history, SSO, min $950/month)" },
+      { "name": "Private Server", "price": "$50,000/year (infrastructure dédiée, custom regions, IP whitelist)" }
+    ],
+    "key_features": [
+      "Edition collaborative multiplayer en temps réel",
+      "Design systems avec composants et tokens",
+      "Workflows IA pour agent/LLM et code-to-design",
+      "Inspection de code et export CSS/HTML/SVG",
+      "Prototypage et wireframing natifs",
+      "Self-hosting possible (open-source)",
+      "Format ouvert (pas de vendor lock-in)",
+      "Plugins et intégrations API",
+      "Réductions pour non-profits/éducation/open-source"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez alternative gratuite à Figma ou Adobe XD.",
+        "Vous aimez l'open-source et n'avez pas peur du self-hosting.",
+        "Vous faites de la collaboration d'équipe en design (multiplayer natif).",
+        "Vous intégrez designers et développeurs via code inspection."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de la stabilité/support commercial de Figma.",
+        "Votre équipe utilise beaucoup de plugins Figma payants (écosystème moins riche).",
+        "Vous n'avez pas de budget IT pour infrastructure si self-hosted."
+      ],
+      "threshold": "Penpot s'impose pour équipes open-source ou tech-savvy ; gratuit, collaboratif, développeur-friendly — déjà prêt pour production."
+    },
+    "pros": [
+      "Plan gratuit complet sans limite fonctionnelle (pas de freemium crippled).",
+      "Édition collaborative multiplayer native (meilleur que certains payants).",
+      "Open-source et auto-héberable (propriété des données).",
+      "Pas de vendor lock-in, format fichier ouvert.",
+      "Inspection de code et export CSS/HTML/SVG natif.",
+      "Workflows IA pour developers et agents.",
+      "Plugins et API pour extensions.",
+      "Réductions ONG/éducation/open-source."
+    ],
+    "cons": [
+      "Écosystème de plugins moins riche que Figma.",
+      "Communauté plus petite (moins de templates publics).",
+      "Support commercial moins rodé (meilleur pour tech-savvy).",
+      "Self-hosting demande compétence DevOps.",
+      "Stabilité/performance légèrement derrière leaders (Figma)."
+    ],
+    "use_cases": [
+      "Concevoir interfaces et wireframes en équipe (multiplayer).",
+      "Construire design systems avec tokens et composants.",
+      "Partager designs avec developers pour inspection code/handoff.",
+      "Générer prototypes interactifs et flows utilisateur.",
+      "Héberger Penpot privé pour données sensibles."
+    ],
+    "relevant_for": ["Designers UX/UI", "Design systems managers", "Startups tech", "Équipes open-source", "Développeurs designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a free Figma or Adobe XD alternative.",
+        "You embrace open-source and self-hosting options.",
+        "You need team collaboration with native multiplayer.",
+        "You bridge designers and developers via code inspection."
+      ],
+      "avoidIf": [
+        "You need Figma's commercial stability and support.",
+        "Your team relies heavily on paid Figma plugins (thinner ecosystem).",
+        "You lack IT budget for private infrastructure."
+      ],
+      "threshold": "Penpot wins for open-source or tech-savvy teams; free, collaborative, developer-first—production-ready now."
+    },
+    "pros": [
+      "Fully featured free tier (no neutered freemium).",
+      "Native multiplayer collaboration (better than some paywalls).",
+      "Open-source and self-hostable (data ownership).",
+      "No vendor lock-in, open file formats.",
+      "Code inspection and CSS/HTML/SVG export built-in.",
+      "AI workflows for developers and agents.",
+      "Plugins and APIs for extensibility.",
+      "Discounts for nonprofits, education, open-source."
+    ],
+    "cons": [
+      "Thinner plugin ecosystem vs Figma.",
+      "Smaller community (fewer public templates).",
+      "Commercial support less polished (better for tech-savvy).",
+      "Self-hosting requires DevOps expertise.",
+      "Stability/performance slightly behind market leaders."
+    ],
+    "use_cases": [
+      "Design interfaces and wireframes as a team (multiplayer).",
+      "Build design systems with tokens and components.",
+      "Share designs with developers for code inspection and handoff.",
+      "Create interactive prototypes and user flows.",
+      "Self-host Penpot for sensitive data privacy."
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "protopie",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ProtoPie (site officiel)", "url": "https://protopie.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de prototypage alimentée par l'IA pour créer des interactions complexes et tester les prototypes sur des appareils réels (mobile, web, automotive, IoT, jeux).",
+    "what_en": "AI-driven prototyping platform for creating complex interactions and testing prototypes on real devices (mobile, web, automotive, IoT, gaming).",
+    "pricing_model": "Tier gratuit avec fonctionnalités limitées. Plans payants à partir de montants sur la page officielle. Options Enterprise avec licences personnalisées.",
+    "free_tier": { "exists": true, "detail": "Enregistrement gratuit avec enregistrement d'interactions et liens partageables" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Starter", "price": "À partir de USD 11/mois" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Animations basées sur la logique avec variables et formules",
+      "Interactions multi-appareils et cross-device",
+      "Capteurs natifs des appareils (accéléromètre, géolocalisation)",
+      "Interactions vocales",
+      "Intégrations flexibles et données réelles",
+      "ProtoPie Cloud pour le partage et la collaboration"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des prototypes interactifs complexes avec des gestes tactiles et des capteurs.",
+        "Vous avez besoin de tester sur des appareils réels pendant le prototypage.",
+        "Vous travaillez dans plusieurs domaines (mobile, web, IoT, automotive).",
+        "Vous collaborez en temps réel avec des équipes."
+      ],
+      "avoidIf": [
+        "Vous prototypez des interfaces simples et linéaires.",
+        "Vous avez un budget serré sans besoins de test multi-appareils.",
+        "Vous préférez un outil plus léger et intégré à Figma."
+      ],
+      "threshold": "ProtoPie s'impose pour les prototypes haute-fidélité avec interactions complexes ; pour des wireframes et prototypes simples, Figma ou Adobe XD suffisent."
+    },
+    "pros": [
+      "Simulation d'interactions complexes sans code.",
+      "Test sur appareils réels inclus.",
+      "Support multi-domaine (mobile, web, IoT, automotive).",
+      "Collaboration en temps réel avec ProtoPie Cloud.",
+      "Tier gratuit accessible."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour les interactions avancées.",
+      "Plans payants nécessaires pour les prototypes sérieux.",
+      "Intégration limitée directement dans les outils de design (vs. Figma natif)."
+    ],
+    "use_cases": [
+      "Prototyper une application mobile avec gestes et capteurs complexes.",
+      "Tester une expérience automotive ou IoT avant développement.",
+      "Valider une micro-interaction impliquant variables et conditions."
+    ],
+    "relevant_for": ["Designers UX/UI", "Product managers", "Interaction designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create complex interactive prototypes with gestures and sensors.",
+        "You need to test on real devices during prototyping.",
+        "You work across multiple domains (mobile, web, IoT, automotive).",
+        "You collaborate in real-time with teams."
+      ],
+      "avoidIf": [
+        "You prototype simple, linear interfaces.",
+        "You have a tight budget without multi-device testing needs.",
+        "You prefer a lighter tool integrated in Figma."
+      ],
+      "threshold": "ProtoPie is essential for high-fidelity prototypes with complex interactions; for wireframes and simple prototypes, Figma or Adobe XD suffice."
+    },
+    "pros": [
+      "Complex interaction simulation without code.",
+      "Real device testing included.",
+      "Multi-domain support (mobile, web, IoT, automotive).",
+      "Real-time collaboration with ProtoPie Cloud.",
+      "Free tier available."
+    ],
+    "cons": [
+      "Learning curve for advanced interactions.",
+      "Paid plans needed for serious prototyping.",
+      "Limited native integration in design tools (vs. Figma)."
+    ],
+    "use_cases": [
+      "Prototype a mobile app with complex gestures and sensors.",
+      "Test an automotive or IoT experience before development.",
+      "Validate a micro-interaction involving variables and conditions."
+    ]
+  }
+}

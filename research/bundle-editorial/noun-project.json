@@ -1,0 +1,99 @@
+{
+  "slug": "noun-project",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Noun Project — Bibliothèque d'icônes et photos (site officiel)", "url": "https://thenounproject.com/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque numérique de près de 10 millions d'icônes vecteur et photos haute résolution, accessibles gratuitement avec licences royalty-free.",
+    "what_en": "Digital library of nearly 10 million free vector icons and high-resolution photos, accessible with royalty-free licenses.",
+    "pricing_model": "Freemium. Tous les assets téléchargeables gratuitement. Support des artistes et achat premium optionnels pour financer la plateforme.",
+    "free_tier": { "exists": true, "detail": "Accès complet et gratuit à la collection entière. Téléchargement illimité en SVG et PNG avec licences royalty-free, usage personnel et commercial autorisé." },
+    "plans": [
+      { "name": "Accès gratuit", "price": "Entièrement gratuit — tous les assets téléchargeables" },
+      { "name": "Soutien artiste (optionnel)", "price": "Montants sur la page officielle pour financer les créateurs" }
+    ],
+    "key_features": [
+      "Près de 10 millions d'icônes et photos vecteur",
+      "Moteur de recherche amélioré par IA",
+      "Personnalisation des icônes (recoloration, rotation, effets)",
+      "Formats SVG et PNG",
+      "Plugins pour PowerPoint, Figma, Illustrator et Mac",
+      "Licences royalty-free pour usage personnel et commercial",
+      "API disponible pour développeurs",
+      "Représentation diverse et éthique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez des icônes et illustrations pour tout type de projet.",
+        "Vous privilégiez des licences sans restrictions d'usage (personnel, commercial, resharing).",
+        "Vous aimez découvrir des créateurs humains plutôt que des banques génériques."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de photos d'actualité très fraîches (collection moins actualisée que Reuters/Getty).",
+        "Vous cherchez des illustrations 3D (hors scope, préférer Pikkovia ou Pacdora)."
+      ],
+      "threshold": "Noun Project excelle comme source unique d'icônes et photos de qualité, gratuit sans piège : licence claire, usage illimité, communauté active."
+    },
+    "pros": [
+      "Entièrement gratuit sans limite de téléchargement.",
+      "Licences royalty-free claires pour usage personnel et commercial.",
+      "Moteur de recherche IA pour trouver rapidement l'asset parfait.",
+      "Formats SVG (redimensionnable infiniment) et PNG.",
+      "Plugins natifs pour logiciels populaires (Figma, Illustrator).",
+      "Soutien direct aux artistes : modèle éthique et inclusif.",
+      "API pour développeurs et intégrations."
+    ],
+    "cons": [
+      "Collection moins actualisée que des services premium (Getty, Shutterstock).",
+      "Pas de gestion d'équipe ou de workspace collaboratif en natif.",
+      "Qualité inégale entre contributeurs (valider chaque asset avant usage)."
+    ],
+    "use_cases": [
+      "Constituer un système d'icônes pour site ou application.",
+      "Enrichir slides de présentation en quelques secondes.",
+      "Créer wireframes ou maquettes rapidement.",
+      "Illustrer articles de blog ou content marketing.",
+      "Construire une library d'assets pour équipe (via API)."
+    ],
+    "relevant_for": ["Designers UX/UI", "Créateurs de contenu", "Développeurs web", "Agences créatives", "Entrepreneurs sans budget"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need icons and illustrations for any project type.",
+        "You value unrestricted licenses (personal, commercial, resharing).",
+        "You prefer discovering human creators over generic stock banks."
+      ],
+      "avoidIf": [
+        "You need cutting-edge news photography (less current than Reuters/Getty).",
+        "You're seeking 3D illustrations (use Pikkovia or Pacdora instead)."
+      ],
+      "threshold": "Noun Project excels as a single source for quality icons and photos—free, no strings attached, clear licensing, unlimited use."
+    },
+    "pros": [
+      "Completely free with unlimited downloads.",
+      "Royalty-free licenses clearly stated—personal and commercial use allowed.",
+      "AI-powered search to find the perfect asset fast.",
+      "SVG (infinitely scalable) and PNG formats.",
+      "Native plugins for Figma, Illustrator, and others.",
+      "Direct creator support—ethical, inclusive model.",
+      "API for developers and integrations."
+    ],
+    "cons": [
+      "Collection less current than premium services (Getty, Shutterstock).",
+      "No team workspace or native collaboration features.",
+      "Uneven quality across contributors—vet each asset before use."
+    ],
+    "use_cases": [
+      "Build an icon system for a site or app.",
+      "Enrich presentation slides in seconds.",
+      "Create wireframes or mockups quickly.",
+      "Illustrate blog posts or content marketing.",
+      "Assemble an asset library for your team (via API)."
+    ]
+  }
+}

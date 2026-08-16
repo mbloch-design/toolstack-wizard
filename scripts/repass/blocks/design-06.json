@@ -10,16 +10,6 @@
     "url": "https://sketchucation.com/pluginstore"
   },
   {
-    "slug": "fusion-360",
-    "name": "Fusion 360",
-    "url": "https://www.autodesk.com/products/fusion-360/overview"
-  },
-  {
-    "slug": "grabcad",
-    "name": "GrabCAD",
-    "url": "https://grabcad.com"
-  },
-  {
     "slug": "hard-ops-boxcutter",
     "name": "Hard Ops / Boxcutter",
     "url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
@@ -28,16 +18,6 @@
     "slug": "hugeicons",
     "name": "Hugeicons",
     "url": "https://hugeicons.com"
-  },
-  {
-    "slug": "icons8",
-    "name": "Icons8",
-    "url": "https://icons8.com"
-  },
-  {
-    "slug": "invision",
-    "name": "InVision",
-    "url": "https://www.invisionapp.com"
   },
   {
     "slug": "joint-push-pull",

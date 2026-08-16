@@ -166,7 +166,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "gamma-ai", "adcreative", "inbound",
   "magicbrief", "modo", "opusclip",
   "webxr", "topaz-video",
-  "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision",
+  "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision", "specify",
 ]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({

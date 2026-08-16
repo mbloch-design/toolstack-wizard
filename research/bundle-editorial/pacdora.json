@@ -1,0 +1,106 @@
+{
+  "slug": "pacdora",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pacdora — Mockup, Dieline & 3D Packaging Platform (site officiel)", "url": "https://www.pacdora.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme en ligne pour designers d'emballage, offrant générateur de mockups 3D, templates dieline personnalisables et logiciel de modélisation 3D sans expérience requise.",
+    "what_en": "Online packaging design platform providing 3D mockup generator, customizable dieline templates, and 3D modeling tools—no design experience required.",
+    "pricing_model": "Abonnement mensuel par palier (Lite, Pro, Business) ou plan gratuit limité. Paiement par carte ou PayPal/PayerMax.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit incluant 5 000+ mockups, uploads illimités, 50 crédits IA/mois, support basique, génération vidéo IA 480p, arrière-plan IA 1K." },
+    "plans": [
+      { "name": "Lite", "price": "$9/month billed annually" },
+      { "name": "Pro", "price": "$17/user/month billed annually" },
+      { "name": "Business", "price": "$59/user/month billed annually" }
+    ],
+    "key_features": [
+      "5 000+ templates mockup (boxes, bottles, pouches, cans, labels)",
+      "3 000+ dieline templates personnalisables",
+      "Générateur d'arrière-plan IA pour photos produit",
+      "Modélisation 3D pour placement produit en scènes réalistes",
+      "Support fichiers multiples compatibles logiciels design",
+      "Visualisation 3D partageable avec clients",
+      "Retrait de watermark (Pro/Business)",
+      "Crédits IA variables selon plan (50 à 10 000/mois)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez emballages et avez besoin de mockups 3D rapidement.",
+        "Vous travaillez avec clients et voulez partager visualisations 3D sans logiciel.",
+        "Vous êtes freelance ou PME : le gratuit suffit pour débuter, payant pour scaler."
+      ],
+      "avoidIf": [
+        "Vous cherchez CAD/modélisation 3D industrielle (préférer Plasticity ou Rhino).",
+        "Vous refusez tout abonnement récurrent.",
+        "Vous avez besoin de nesting optimisé (OpenCutList ou Cut Optima mieux)."
+      ],
+      "threshold": "Pacdora excelle pour designers emballage ne voulant pas apprendre 3D complexe ; mélange mockup, dieline et IA intelligemment."
+    },
+    "pros": [
+      "Accès gratuit à 5 000+ mockups et templates dieline.",
+      "Générateur IA pour arrière-plans produit professionnels.",
+      "Visualisation 3D partageable avec clients sans logiciel.",
+      "Interface intuitive, pas d'apprentissage 3D requis.",
+      "Paliers d'entrée abordables.",
+      "Crédits IA variables pour montée en charge.",
+      "Paiement flexible (PayPal, PayerMax, carte)."
+    ],
+    "cons": [
+      "Abonnement récurrent (mensuel, à renouveler).",
+      "Usage commercial limité aux plans Pro/Business.",
+      "Exports 4K/8K et features hautes résos payantes.",
+      "Stockage et version illimités plus chers (Business).",
+      "Modélisation 3D bridée vs logiciels dédiés (Blender, Maya)."
+    ],
+    "use_cases": [
+      "Créer mockups 3D pour présenter emballage client.",
+      "Générer dielines print-ready à partir de mesures customs.",
+      "Produire visuels produit avec arrière-plans IA.",
+      "Concevoir packaging sans formation 3D poussée.",
+      "Partager previews produit pour validation client avant production."
+    ],
+    "relevant_for": ["Designers d'emballage", "PME e-commerce", "Freelances packaging", "Agences créatives", "Marques de petit volume"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design packaging and need fast 3D mockups.",
+        "You work with clients and want to share 3D visuals without software.",
+        "You're freelance or small team: free tier to start, paid to scale."
+      ],
+      "avoidIf": [
+        "You need industrial CAD/3D (prefer Plasticity or Rhino).",
+        "You refuse recurring subscriptions.",
+        "You need optimized nesting (OpenCutList or Cut Optima better)."
+      ],
+      "threshold": "Pacdora excels for packaging designers who don't want to learn complex 3D; smartly blends mockup, dieline, and AI."
+    },
+    "pros": [
+      "Free access to 5,000+ mockups and dieline templates.",
+      "AI background generator for professional product visuals.",
+      "Shareable 3D mockups with clients—no software needed.",
+      "Intuitive UI, no 3D learning curve.",
+      "Affordable entry tiers.",
+      "Scaled AI credits per plan.",
+      "Flexible payment (PayPal, PayerMax, card)."
+    ],
+    "cons": [
+      "Recurring monthly subscription (must renew).",
+      "Commercial use limited to Pro/Business tiers.",
+      "4K/8K exports and high-res features cost extra.",
+      "Unlimited storage and versions higher tier only.",
+      "3D modeling constrained vs dedicated software (Blender, Maya)."
+    ],
+    "use_cases": [
+      "Create 3D mockups to pitch packaging designs to clients.",
+      "Generate print-ready dielines from custom measurements.",
+      "Produce product visuals with AI backgrounds.",
+      "Design packaging without advanced 3D training.",
+      "Share product previews for client sign-off before production."
+    ]
+  }
+}

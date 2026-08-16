@@ -1,0 +1,96 @@
+{
+  "slug": "stark",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Stark (site officiel)", "url": "https://www.getstark.co" }
+  ],
+  "facts": {
+    "what": "Suite intégrée d'outils d'accessibilité pour détecter et corriger les problèmes d'accessibilité. Plugins pour Figma, Sketch, Adobe XD ; extensions navigateur ; scanning de dépôts code. Inclut vérification de contraste, analyse WCAG et rapports temps réel.",
+    "what_en": "Integrated accessibility compliance suite to detect and fix accessibility issues. Plugins for Figma, Sketch, Adobe XD; browser extension; code repository scanning. Includes contrast checking, WCAG analysis, real-time reporting.",
+    "pricing_model": "Freemium : tier gratuit + plans payants",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec contrast checker et color blindness simulator." },
+    "plans": [
+      { "name": "Free", "price": "€0" },
+      { "name": "Pro", "price": "$99/an" },
+      { "name": "Team/Organization", "price": "$6000/an (minimum pour CI/CD)" },
+      { "name": "Enterprise", "price": "montants sur devis (SSO, bulk licensing)" }
+    ],
+    "key_features": [
+      "Vérification de contraste et simulateur daltonisme",
+      "Analyse de focus order et alt text",
+      "Vérification des touch targets",
+      "Scanning de dépôts code (CI/CD)",
+      "Extension navigateur pour audit de sites live",
+      "Rapports détaillés avec explications de fix",
+      "Intégration Figma, Sketch, Adobe XD"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de l'UX/UI et voulez intégrer l'accessibilité dès la conception.",
+        "Vous avez un produit live et voulez auditer régulièrement l'accessibilité.",
+        "Vous travaillez en équipe et avez besoin de reporting centralisé."
+      ],
+      "avoidIf": [
+        "Vous êtes développeur solo et avez un budget très réduit.",
+        "Vous n'utilisez pas les outils de design/dev courants (Figma, Sketch, etc.)",
+        "L'accessibilité n'est pas une priorité pour votre produit."
+      ],
+      "threshold": "Stark s'impose pour les équipes produit qui font de l'accessibilité à l'échelle ; pour un audit ponctuel, un outil gratuit comme axe DevTools peut suffire."
+    },
+    "pros": [
+      "Tier gratuit très utilisable (contrast + daltonisme).",
+      "Détection automatisée rapide des problèmes.",
+      "Intégration design et code excellente.",
+      "Rapports détaillés avec guidance de fix."
+    ],
+    "cons": [
+      "Plan Team/Org très cher pour lancer CI/CD.",
+      "Limité aux outils de design supportés (Figma, Sketch).",
+      "Pas de solution low-cost pour équipes solo.",
+      "Certains problèmes d'accessibilité requièrent tests manuels."
+    ],
+    "use_cases": [
+      "Vérifier le contraste des couleurs dans une maquette Figma.",
+      "Auditer un site live avec l'extension navigateur.",
+      "Mettre en place un scanning d'accessibilité en CI/CD.",
+      "Former une équipe aux normes WCAG."
+    ],
+    "relevant_for": ["Designers UX/UI", "Équipes produit digital", "Développeurs accessibilité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do UX/UI and want to embed accessibility from design.",
+        "You have a live product and want regular accessibility audits.",
+        "You work in a team and need centralized reporting."
+      ],
+      "avoidIf": [
+        "You're a solo developer with a tight budget.",
+        "You don't use mainstream design/dev tools (Figma, Sketch, etc.)",
+        "Accessibility is not a priority for your product."
+      ],
+      "threshold": "Stark works for product teams doing accessibility at scale; for one-off audits, free tools like axe DevTools suffice."
+    },
+    "pros": [
+      "Very usable free tier (contrast + color blindness).",
+      "Fast automated issue detection.",
+      "Excellent design and code integration.",
+      "Detailed reports with fix guidance."
+    ],
+    "cons": [
+      "Team/Org plan is pricey for launching CI/CD.",
+      "Limited to supported design tools (Figma, Sketch).",
+      "No low-cost solution for solo teams.",
+      "Some accessibility issues still require manual testing."
+    ],
+    "use_cases": [
+      "Check color contrast in a Figma mockup.",
+      "Audit a live site with the browser extension.",
+      "Set up accessibility scanning in CI/CD.",
+      "Train a team on WCAG standards."
+    ]
+  }
+}

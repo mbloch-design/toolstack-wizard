@@ -1,0 +1,105 @@
+{
+  "slug": "material-ui",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "MUI — bibliothèque de composants React", "url": "https://mui.com" }
+  ],
+  "facts": {
+    "what": "Suite complète et gratuite d'outils UI pour accélérer le développement React, incluant Material UI (composants Material Design), Base UI (composants sans styling), et MUI X (outils complexes avancés).",
+    "what_en": "Comprehensive free UI toolkit for accelerating React development, including Material UI (Material Design components), Base UI (unstyled components), and MUI X (advanced complex tools).",
+    "pricing_model": "Gratuit et open source pour MUI Core et Base UI. MUI X offre des options premium (payantes) pour use cases complexes. Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "MUI Core et Base UI entièrement gratuits et open source. Fonctionnalités suffisantes pour la plupart des projets sans coût." },
+    "plans": [
+      { "name": "Free (MUI Core & Base UI)", "price": "Gratuit (open source MIT)" },
+      { "name": "MUI X Premium", "price": "Premium payant pour composants avancés (Data Grid, Autocomplete avancé, etc.)" },
+      { "name": "Enterprise", "price": "Solutions sur mesure (contacter MUI)" }
+    ],
+    "key_features": [
+      "2000+ composants documentés avec Material Design",
+      "Composants Material Design customisables",
+      "Base UI pour unstyled components (headless)",
+      "Material Icons intégrées",
+      "Système de thème flexible pour customisation de marque",
+      "Accessibilité (a11y) prioritaire dans chaque release",
+      "Écosystème MUI X pour Data Grid, Date Pickers, Tree View"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez en React et voulez des composants professionnels sans réinventer la roue.",
+        "Vous cherchez une bibliothèque UI gratuite et mature avec large adoption.",
+        "Vous aimez Material Design ou cherchez customisation maximale."
+      ],
+      "avoidIf": [
+        "Vous préférez des frameworks UI minimalistes ou headless (Tailwind, Headless UI).",
+        "Vous avez besoin de très peu de composants et un bundle size minimal.",
+        "Vous bâtissez un design system propriétaire et voulez partir from scratch."
+      ],
+      "threshold": "MUI s'impose pour les équipes React cherchant une bibliothèque UI robuste et gratuite ; pour minimalisme ou design system très custom, d'autres choix conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source (MIT).",
+      "2000+ composants documentés et maintenus activement.",
+      "Très grande adoption (5.8M downloads npm hebdomadaires).",
+      "Accessibilité intégrée dans chaque release.",
+      "Système de thème puissant pour customisation de marque.",
+      "Très grande communauté (93.9k GitHub stars, 3000+ contributeurs).",
+      "Utilisé par Spotify, Amazon, Netflix, Unity."
+    ],
+    "cons": [
+      "Bundle size potentiellement plus grand que des alternatives minimalistes.",
+      "Material Design par défaut (requiert customisation pour autre branding).",
+      "MUI X (composants avancés) demande souvent une licence premium.",
+      "Dépendance Emotion CSS-in-JS pour styling.",
+      "Courbe d'apprentissage pour usage avancé du thème."
+    ],
+    "use_cases": [
+      "Développer un dashboard ou admin panel avec composants Material Design.",
+      "Bâtir rapidement une app React avec composants UI professionnels.",
+      "Customiser Material UI pour respect du branding produit.",
+      "Utiliser Data Grid MUI X pour tableaux de données complexes.",
+      "Construire un design system interne basé sur MUI Core."
+    ],
+    "relevant_for": ["Développeurs React", "Équipes produit", "Startups et scale-ups", "Agences web", "Interne tools/admin panels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop in React and want professional components without reinventing the wheel.",
+        "You're looking for a free, mature UI library with broad adoption.",
+        "You like Material Design or want maximum customization."
+      ],
+      "avoidIf": [
+        "You prefer minimal or headless UI frameworks (Tailwind, Headless UI).",
+        "You need very few components and minimal bundle size.",
+        "You're building a proprietary design system from scratch."
+      ],
+      "threshold": "MUI makes sense for React teams wanting a robust, free UI library; for minimalism or very custom design systems, other choices fit better."
+    },
+    "pros": [
+      "Completely free and open source (MIT).",
+      "2000+ documented and actively maintained components.",
+      "Very broad adoption (5.8M npm downloads weekly).",
+      "Accessibility built into every release.",
+      "Powerful theming system for brand customization.",
+      "Large community (93.9k GitHub stars, 3000+ contributors).",
+      "Used by Spotify, Amazon, Netflix, Unity."
+    ],
+    "cons": [
+      "Potentially larger bundle size than minimal alternatives.",
+      "Material Design by default (requires customization for other branding).",
+      "MUI X (advanced components) often requires premium license.",
+      "Emotion CSS-in-JS dependency for styling.",
+      "Learning curve for advanced theming."
+    ],
+    "use_cases": [
+      "Build a dashboard or admin panel with Material Design components.",
+      "Rapidly develop a React app with professional UI components.",
+      "Customize Material UI to match product branding.",
+      "Use MUI X Data Grid for complex data tables.",
+      "Build an internal design system based on MUI Core."
+    ]
+  }
+}

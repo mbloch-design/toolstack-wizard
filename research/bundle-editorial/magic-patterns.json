@@ -1,0 +1,103 @@
+{
+  "slug": "magic-patterns",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Magic Patterns — outil de design IA collaboratif", "url": "https://www.magicpatterns.com" }
+  ],
+  "facts": {
+    "what": "Outil de design IA qui transforme rapidement des idées et des spécifications en prototypes UI haute fidélité, avec intégration système de design et collaboration temps réel entre designers et ingénieurs.",
+    "what_en": "AI design tool that rapidly transforms ideas and specs into high-fidelity UI prototypes, with design system integration and real-time team collaboration between designers and engineers.",
+    "pricing_model": "Freemium avec plans par siège utilisateur. Tier gratuit avec fonctionnalités limitées, plans payants Starter et Business, Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit limité à la génération UI et aux outils basiques de prototypage sans restrictions de durée." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (fonctionnalités limitées)" },
+      { "name": "Starter", "price": "20 $/siège/mois" },
+      { "name": "Business", "price": "100 $/siège/mois" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Génération UI alimentée par l'IA à partir de prompts et spécifications",
+      "Intégration système de design pour cohérence de style",
+      "Collaboration temps réel multiplayer et édition multijoueur",
+      "Sécurité et conformité de grade entreprise",
+      "Prototypage rapide pour tests clients",
+      "Export pour Figma et développement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe crée régulièrement des prototypes UI et cherche à accélérer l'itération.",
+        "Vous avez besoin de cohérence système de design dans les prototypes IA.",
+        "Vous travaillez en collaboration design-engineering rapide."
+      ],
+      "avoidIf": [
+        "Vous cherchez surtout de l'édition Figma avancée (Magic Patterns est des prototypes rapides).",
+        "Vous avez besoin d'une solution entièrement gratuite sans fonctionnalités premium.",
+        "Vous travaillez sur des designs très custom ou expérimentaux."
+      ],
+      "threshold": "Magic Patterns convient aux équipes produit cherchant du prototypage IA rapide ; pour de l'édition design pointue ou gratuite, d'autres outils s'imposent."
+    },
+    "pros": [
+      "Génération de prototypes UI très rapide à partir d'idées.",
+      "IA adaptée aux workflows design-engineering collaboratif.",
+      "Intégration système de design pour cohérence visuelle.",
+      "Collaboration temps réel d'équipe sans latence.",
+      "Tier gratuit robuste pour tester avant paiement.",
+      "Utilisé par équipes de renommée (Vanta, Ramp, DoorDash)."
+    ],
+    "cons": [
+      "Plans payants requis pour fonctionnalités avancées.",
+      "Qualité variable des résultats IA selon les spécifications.",
+      "Pas de substitut à un design UX réfléchi et usability testing.",
+      "Intégration limitée à Figma (pas d'autres outils de design).",
+      "Courbe d'apprentissage pour prompt engineering efficace."
+    ],
+    "use_cases": [
+      "Générer des wireframes et prototypes haute fidélité rapidement.",
+      "Itérer sur des variations de design avec l'IA.",
+      "Aligner conception et développement sur prototypes partagés.",
+      "Produire des rough designs pour feedback clients avant investir.",
+      "Accélérer le cycle de conception d'une à deux semaines par feature (Vanta case study)."
+    ],
+    "relevant_for": ["Product managers", "Designers UI/UX", "Équipes produit agile", "Startups", "Agences digital"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team regularly creates UI prototypes and wants to speed up iteration.",
+        "You need design system consistency in AI prototypes.",
+        "You work on fast design-engineering collaboration."
+      ],
+      "avoidIf": [
+        "You're mainly looking for advanced Figma editing (Magic Patterns is rapid prototyping).",
+        "You need a fully free solution without premium features.",
+        "You work on very custom or experimental designs."
+      ],
+      "threshold": "Magic Patterns makes sense for product teams wanting fast AI prototyping; for advanced design editing or free options, other tools fit better."
+    },
+    "pros": [
+      "Very fast UI prototype generation from ideas.",
+      "AI tailored for collaborative design-engineering workflows.",
+      "Design system integration for visual consistency.",
+      "Real-time team collaboration without lag.",
+      "Robust free tier for testing before paying.",
+      "Used by renowned teams (Vanta, Ramp, DoorDash)."
+    ],
+    "cons": [
+      "Paid plans required for advanced features.",
+      "Variable AI result quality depending on specs.",
+      "No substitute for thoughtful UX design and usability testing.",
+      "Limited Figma integration (no other design tools).",
+      "Learning curve for effective prompt engineering."
+    ],
+    "use_cases": [
+      "Generate wireframes and high-fidelity prototypes quickly.",
+      "Iterate on design variations with AI.",
+      "Align design and development on shared prototypes.",
+      "Produce rough designs for client feedback before heavy investment.",
+      "Save one to two weeks per feature in design cycle (Vanta case study)."
+    ]
+  }
+}

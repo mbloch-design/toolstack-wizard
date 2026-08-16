@@ -1,0 +1,99 @@
+{
+  "slug": "twinmotion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Twinmotion (site officiel)", "url": "https://www.twinmotion.com" },
+    { "label": "Epic Games - Twinmotion Licensing Update", "url": "https://resources.imaginit.com/building-solutions-blog/update-on-twinmotion-pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.",
+    "what_en": "Real-time 3D visualization software by Epic Games that converts 3D models (SketchUp, Revit, 3ds Max, Blender, Rhino) into photorealistic images and videos. Editor for real estate, architecture, product design, and VFX previz.",
+    "pricing_model": "Freemium : gratuit pour les freelances/petites entreprises (<1M$ CA annuel), étudiants et hobbyistes. Licence commerciale : abonnement annuel pour les entreprises >1M$ CA.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour les entreprises avec CA <1M$ annuel, pour les étudiants, éducateurs et hobbyistes. Accès complet au logiciel sans limitations de rendu ou d'export." },
+    "plans": [
+      { "name": "Free (revenu <$1M/an)", "price": "Gratuit" },
+      { "name": "Commercial (revenu >$1M/an)", "price": "$445/an par siège" },
+      { "name": "Unreal Engine Suite (revenu >$1M/an)", "price": "$1,850/an par siège (inclut Twinmotion + autres tools)" }
+    ],
+    "key_features": [
+      "Import de modèles 3D depuis les outils courants (SketchUp, Revit, Blender, etc.)",
+      "Rendu temps réel photogrammetrique",
+      "Éclairage et matériaux avancés",
+      "Animation et navigation interactive",
+      "Export d'images et vidéos haute résolution",
+      "Bibliothèque d'objets et de matériaux étendus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous présentiez des projets architecturaux ou de design au clients.",
+        "Vous êtes freelance ou petite équipe avec CA <1M$/an.",
+        "Vous avez besoin d'un rendu temps réel photogrammetrique.",
+        "Vous intégrez SketchUp, Revit ou d'autres CAO courants."
+      ],
+      "avoidIf": [
+        "Vous êtes une grande entreprise et voulez maitriser les coûts.",
+        "Vous cherchez une alternative complètement gratuite sans restrictions de revenu.",
+        "Vous préférez des rendus très hauts de gamme (V-Ray, Arnold)."
+      ],
+      "threshold": "Twinmotion est gratuit et excellent pour les petites équipes ; pour les studios, les coûts commerciaux s'accumulent vite."
+    },
+    "pros": [
+      "Entièrement gratuit pour les équipes avec CA <1M$/an et les étudiants.",
+      "Interface intuitive et courbe d'apprentissage douce.",
+      "Rendu temps réel photogrammetrique haute qualité.",
+      "Intégration directe aux outils CAO populaires (SketchUp, Revit).",
+      "Export d'images et vidéos rapide et flexible."
+    ],
+    "cons": [
+      "Modèle tarifaire commercial assez élevé.",
+      "Moins de contrôle avancé sur les matériaux que V-Ray ou Arnold.",
+      "Apprentissage de l'écosystème Epic Games.",
+      "Performance dépendante des capacités GPU."
+    ],
+    "use_cases": [
+      "Créer des visuels marketing d'un projet architectural ou immobilier.",
+      "Présenter un concept de design de produit aux stakeholders.",
+      "Générer des images pour un portfolio ou une proposition commerciale.",
+      "Préparer de la vidéo de previz pour une production VFX."
+    ],
+    "relevant_for": ["Architectes et bureaux d'études", "Designers d'intérieur", "Designers de produit", "Agences immobilières", "Producteurs VFX"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You present architectural or design projects to clients.",
+        "You're a freelancer or small team under the free-use revenue threshold.",
+        "You need photorealistic real-time rendering.",
+        "You integrate SketchUp, Revit, or other common CAD tools."
+      ],
+      "avoidIf": [
+        "You're a large studio and want to control costs.",
+        "You seek a completely free solution without revenue restrictions.",
+        "You prefer premium renderers (V-Ray, Arnold)."
+      ],
+      "threshold": "Twinmotion is free and excellent for small teams; for studios, commercial costs add up quickly."
+    },
+    "pros": [
+      "Free for teams under the revenue threshold and for students.",
+      "Intuitive interface and gentle learning curve.",
+      "Photorealistic real-time rendering quality.",
+      "Direct integration with popular CAD tools (SketchUp, Revit).",
+      "Fast and flexible image and video export."
+    ],
+    "cons": [
+      "Commercial licensing pricing is fairly high.",
+      "Less advanced material control than V-Ray or Arnold.",
+      "Learning curve for Epic Games ecosystem.",
+      "Performance depends on GPU capabilities."
+    ],
+    "use_cases": [
+      "Create marketing visuals for architectural or real estate projects.",
+      "Present a product design concept to stakeholders.",
+      "Generate images for a portfolio or sales proposal.",
+      "Prepare previz video for a VFX production."
+    ]
+  }
+}

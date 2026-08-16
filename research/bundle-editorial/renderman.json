@@ -1,0 +1,101 @@
+{
+  "slug": "renderman",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "RenderMan by Pixar (site officiel)", "url": "https://renderman.pixar.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.",
+    "what_en": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use.",
+    "pricing_model": "Gratuit pour usage non-commercial. Licence commerciale unique avec maintenance annuelle optionnelle.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour tous les usages non-commerciaux" },
+    "plans": [
+      { "name": "Non-Commercial", "price": "Gratuit" },
+      { "name": "Professional License", "price": "USD 595 par licence (perpetual)" },
+      { "name": "Annual Maintenance", "price": "USD 250/an (support et upgrades)" }
+    ],
+    "key_features": [
+      "Rendu pathtracing haute-fidélité pour qualité cinématographique",
+      "Support de géométries NURBS, meshes, subdivision surfaces, point clouds",
+      "Contrôle flexible de la lumière et matériaux PxrSurface",
+      "Intégration avec Maya, Houdini, Katana, Blender",
+      "Tractor (job scheduler) inclus",
+      "Licensing flexible (floating ou node-locked)",
+      "Support d'équipe dédiée et community forums"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez du contenu cinema-quality (films, VFX, animation).",
+        "Vous avez besoin d'un rendu pathtracing haute-fidélité.",
+        "Vous travaillez avec Maya, Houdini, Katana, ou Blender.",
+        "Vous préférez une solution professionnelle éprouvée par l'industrie."
+      ],
+      "avoidIf": [
+        "Vous faites du rendu temps-réel ou des visualisations architecturales simples.",
+        "Vous avez un budget limité pour un freelance solo.",
+        "Vous cherchez une solution rapide et plug-and-play.",
+        "Vous n'avez que des projets non-commerciaux."
+      ],
+      "threshold": "RenderMan s'impose pour la production cinématographique de haut niveau ; V-Ray ou Corona conviendront pour l'architecture/produit à budget serré."
+    },
+    "pros": [
+      "Gratuit pour usage non-commercial (excellent pour apprendre).",
+      "Qualité cinématographique reconnue par l'industrie.",
+      "Licensing flexible et scalable pour équipes.",
+      "Intégration native avec tous les 3D majeurs.",
+      "Support d'équipe dédiée Pixar.",
+      "Licence perpétuelle unique."
+    ],
+    "cons": [
+      "Coût initial significatif pour un usage commercial.",
+      "Apprentissage technique poussé requis.",
+      "Maintenance annuelle facturée en supplément.",
+      "Plus lent que les renducteurs temps-réel modernes."
+    ],
+    "use_cases": [
+      "Produire un court-métrage d'animation avec qualité studio.",
+      "Rendre une séquence VFX photo-réaliste pour un film.",
+      "Concevoir des rendus architecturaux cinématographiques haute-fidélité."
+    ],
+    "relevant_for": ["Studios d'animation", "VFX artists", "Directeurs de photographie numériques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce cinema-quality content (films, VFX, animation).",
+        "You need high-fidelity pathtracing rendering.",
+        "You work with Maya, Houdini, Katana, or Blender.",
+        "You prefer a professional solution proven by the industry."
+      ],
+      "avoidIf": [
+        "You do real-time or simple architectural rendering.",
+        "You have limited budget as a solo freelancer.",
+        "You want a quick, plug-and-play solution.",
+        "You only have non-commercial projects."
+      ],
+      "threshold": "RenderMan is essential for high-end film production; V-Ray or Corona suit architecture/product at tight budgets."
+    },
+    "pros": [
+      "Free for non-commercial use (great for learning).",
+      "Industry-recognized cinema quality.",
+      "Flexible, scalable licensing for teams.",
+      "Native integration with all major 3D software.",
+      "Dedicated Pixar support team.",
+      "One-time perpetual license."
+    ],
+    "cons": [
+      "Significant upfront cost for commercial use.",
+      "Steep technical learning curve.",
+      "Optional annual maintenance billed separately.",
+      "Slower than modern real-time renderers."
+    ],
+    "use_cases": [
+      "Produce an animated short at studio quality.",
+      "Render a photo-realistic VFX sequence for a film.",
+      "Design high-fidelity cinematic architectural renders."
+    ]
+  }
+}

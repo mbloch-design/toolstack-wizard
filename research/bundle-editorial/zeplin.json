@@ -1,0 +1,105 @@
+{
+  "slug": "zeplin",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zeplin — Pricing (site officiel)", "url": "https://zeplin.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de livraison de design pour teams produits. Zeplin documente les designs, mappe les user flows, suit les versions, et génère du code. Inclut AI Design Review pour scanner les couleurs off-system, inconsistances d'espacement, typos, et issues d'accessibilité.",
+    "what_en": "Design delivery platform for product teams. Zeplin documents designs, maps user flows, tracks versions, and generates code. Includes AI Design Review to scan off-system colors, spacing inconsistencies, typos, and accessibility issues.",
+    "pricing_model": "Freemium avec tiers gratuit limité, abonnement par projet ou par siège avec plans annuels moins chers.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 1 projet, 100 screens, utilisateurs illimités, annotations, flows, approvals, 30 jours d'historique de versions." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Basic", "price": "13,75 $ à 118,25 $/mois (selon nombre de projets 1-12)" },
+      { "name": "Advanced", "price": "12 $ par siège/mois (abonnement annuel)" },
+      { "name": "Enterprise", "price": "Tarification sur demande (contact sales)" }
+    ],
+    "key_features": [
+      "Design documentation centralisée",
+      "Git-like version control for designs",
+      "AI Design Review (screen scans, accessibilité)",
+      "User flow mapping et journey boards",
+      "Component versioning et design systems",
+      "Code generation et design-to-dev integrations",
+      "Intégrations Figma, Storybook, Jira",
+      "Annotations et approvals workflows",
+      "Advanced user permissions (Advanced+)",
+      "SSO/MFA (Enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous coordonnez des designs avec des développeurs et des product managers.",
+        "Vous avez besoin d'une source unique de vérité pour la documentation design.",
+        "Vous voulez un audit automatisé des designs (AI Review) pour qualité et accessibilité."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous travaillez seul et n'avez pas besoin de collaboration.",
+        "Votre team est très petite ou informelle."
+      ],
+      "threshold": "Zeplin s'impose pour les teams produit structurées cherchant une source unique ; pour solo designers ou très petites équipes, le tier gratuit ou une alternative suffit."
+    },
+    "pros": [
+      "Plateforme complète de hand-off design-dev.",
+      "AI Review automatisée très utile (accessibilité, spacing).",
+      "Tier gratuit généreux pour débuter.",
+      "Version control inspiré de Git (très naturel pour devs).",
+      "Intégrations natives avec les outils standard (Figma, Jira, Storybook).",
+      "Support de design systems et composants versionnés."
+    ],
+    "cons": [
+      "Prix dépend du nombre de projets (peut être cher pour multi-projects).",
+      "Le palier Advanced reste un investissement pour une équipe.",
+      "Entreprise tarifée sur demande (moins transparent).",
+      "Curbe d'apprentissage pour intégrer à un workflow existant."
+    ],
+    "use_cases": [
+      "Documenter et livrer designs d'une app web SaaS.",
+      "Créer un audit AI de designs avant hand-off aux devs.",
+      "Mapper les user flows et journeys produit.",
+      "Centraliser les design systems et composants réutilisables.",
+      "Tracker les versions et historique de designs (Git-like)."
+    ],
+    "relevant_for": ["Product Design teams", "Design Operations (DesignOps)", "Product Managers", "Developer/Designer collaboration teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You coordinate designs with developers and product managers.",
+        "You need a single source of truth for design documentation.",
+        "You want automated design audits (AI Review) for quality and accessibility."
+      ],
+      "avoidIf": [
+        "You want a completely free solution.",
+        "You work solo and don't need collaboration.",
+        "Your team is very small or informal."
+      ],
+      "threshold": "Zeplin makes sense for structured product teams seeking a single source of truth; for solo designers or very small teams, the free tier or an alternative suffices."
+    },
+    "pros": [
+      "Complete design-dev handoff platform.",
+      "Automated AI Review very useful (accessibility, spacing).",
+      "Generous free tier to get started.",
+      "Git-inspired version control (very natural for devs).",
+      "Native integrations with standard tools (Figma, Jira, Storybook).",
+      "Design systems and component versioning support."
+    ],
+    "cons": [
+      "Pricing depends on number of projects (can be expensive for multi-project teams).",
+      "The Advanced tier remains an investment for teams.",
+      "Enterprise tarifed on request (less transparent).",
+      "Learning curve to integrate into existing workflows."
+    ],
+    "use_cases": [
+      "Document and deliver designs for a SaaS web app.",
+      "Create AI audit of designs before dev handoff.",
+      "Map user flows and product journeys.",
+      "Centralize design systems and reusable components.",
+      "Track design versions and history (Git-like)."
+    ]
+  }
+}

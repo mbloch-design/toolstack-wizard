@@ -44,7 +44,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "magicbrief", "modo", "opusclip",
   // Repasse creation vague 3 : webxr (standard W3C, pas un produit), topaz-video→topaz-video-ai (doublon).
   "webxr", "topaz-video",
-  "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision",
+  "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision", "specify",
 ]);
 
 // SEO landing + persona pillar pages (localized slugs)

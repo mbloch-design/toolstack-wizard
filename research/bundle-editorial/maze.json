@@ -1,0 +1,107 @@
+{
+  "slug": "maze",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Maze — plateforme de recherche utilisateur", "url": "https://maze.co" }
+  ],
+  "facts": {
+    "what": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.",
+    "what_en": "Integrated user research platform combining recruitment, prototype testing, moderated interviews, surveys, and analysis to help teams make data-driven product decisions.",
+    "pricing_model": "Freemium avec plans par abonnement. Tier gratuit limité, plans Standard et Enterprise avec tarification progressive.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit et tier limité disponible. Accès à certains outils de recherche de base avec restrictions de participants ou de nombre d'études." },
+    "plans": [
+      { "name": "Free Trial / Limited Free", "price": "Gratuit" },
+      { "name": "Standard", "price": "Montants sur la page officielle (plans échelonnés)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Modérateur IA pour automatiser les entretiens",
+      "Tests de prototypes avec utilisateurs réels",
+      "Entretiens modérés one-to-one",
+      "Tests live de sites web",
+      "Tests mobile pour applications",
+      "Rapports automatisés avec analyse IA",
+      "Accès à un panel de 6+ millions de participants",
+      "Intégrations MCP pour outils tiers",
+      "Card sorting et tree testing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez régulièrement des prototypes ou des features avec des utilisateurs réels.",
+        "Vous cherchez une plateforme all-in-one recrutement + test + analyse.",
+        "Vous avez besoin d'insights qualitatifs et quantitatifs rapides sur les produits."
+      ],
+      "avoidIf": [
+        "Vous faites surtout de l'analytics quantitatif (Google Analytics suffit).",
+        "Vous avez déjà un pipeline de recrutement interne établi.",
+        "Vous cherchez une recherche UX très pointue ou ethnographique."
+      ],
+      "threshold": "Maze convient aux product teams cherchant du user testing rapide et accessible ; pour analytics purs ou recherche qualitative profonde, d'autres outils s'imposent."
+    },
+    "pros": [
+      "Plateforme all-in-one : recrutement + test + analyse intégrés.",
+      "Modérateur IA pour automatiser les entretiens et gagner du temps.",
+      "Rapports d'analyse automatisés avec insights IA.",
+      "Accès à large panel de participants (6+ millions).",
+      "Tests multiples (prototypes, live sites, mobile, surveys).",
+      "Interface conviviale sans expertise en recherche requise.",
+      "Essai gratuit disponible pour tester."
+    ],
+    "cons": [
+      "Plans payants pour accès complet et participants illimités.",
+      "Qualité variable des réponses selon le panel.",
+      "Pas de substitut à une recherche qualitative très approfondie.",
+      "Tarification peut augmenter avec nombre de participants.",
+      "Fonctionnalités Enterprise nécessaires pour équipes très grandes."
+    ],
+    "use_cases": [
+      "Tester rapidement un prototype avec 20-50 utilisateurs de votre cible.",
+      "Valider une feature avant développement complet.",
+      "Conduire une étude de satisfaction utilisateur post-launch.",
+      "Analyser l'expérience utilisateur d'un site concurrent.",
+      "Recruter et interviewer directement sans agence de recrutement."
+    ],
+    "relevant_for": ["Product managers", "UX researchers", "Équipes design", "Startups cherchant validation", "Agences digital"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly test prototypes or features with real users.",
+        "You're looking for an all-in-one platform: recruitment + testing + analysis.",
+        "You need fast qualitative and quantitative product insights."
+      ],
+      "avoidIf": [
+        "You're mostly doing quantitative analytics (Google Analytics is enough).",
+        "You have an established internal recruitment pipeline.",
+        "You need very deep or ethnographic UX research."
+      ],
+      "threshold": "Maze makes sense for product teams wanting fast, accessible user testing; for pure analytics or deep qualitative research, other tools fit better."
+    },
+    "pros": [
+      "All-in-one platform: recruitment + testing + analysis integrated.",
+      "AI moderator to automate interviews and save time.",
+      "Automated analysis reports with AI insights.",
+      "Access to large participant panel (6+ million).",
+      "Multiple test types (prototypes, live sites, mobile, surveys).",
+      "User-friendly interface, no research expertise required.",
+      "Free trial available to test."
+    ],
+    "cons": [
+      "Paid plans for full access and unlimited participants.",
+      "Variable response quality depending on panel.",
+      "Not a substitute for deep qualitative research.",
+      "Pricing can scale with number of participants.",
+      "Enterprise features needed for very large teams."
+    ],
+    "use_cases": [
+      "Rapidly test a prototype with 20-50 target users.",
+      "Validate a feature before full development.",
+      "Conduct post-launch user satisfaction study.",
+      "Analyze a competitor's user experience.",
+      "Recruit and interview directly without a recruitment agency."
+    ]
+  }
+}

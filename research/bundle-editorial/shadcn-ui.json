@@ -1,0 +1,89 @@
+{
+  "slug": "shadcn-ui",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "shadcn/ui (site officiel)", "url": "https://ui.shadcn.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de composants React personnalisables et extensibles, construite sur Radix UI et Tailwind CSS. Offre une fondation design system prête à l'emploi et modifiable.",
+    "what_en": "Customizable and extensible React component library built on Radix UI and Tailwind CSS. Provides a ready-to-use, adaptable design system foundation.",
+    "pricing_model": "Gratuit et open-source",
+    "free_tier": { "exists": true, "detail": "Bibliothèque complète gratuite, source code public sur GitHub." },
+    "plans": [],
+    "key_features": [
+      "Composants React personnalisables (boutons, badges, dialogs, etc.)",
+      "Design system extensible",
+      "Intégration Radix UI et Tailwind CSS",
+      "Démonstrations d'applications (dashboards, chat, apps financières)",
+      "Source code entièrement accessible"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une app React et voulez partir d'un système de composants solide.",
+        "Vous cherchez une solution open-source sans coût.",
+        "Vous avez besoin d'une flexibilité maximale pour adapter les composants à votre marque."
+      ],
+      "avoidIf": [
+        "Vous travaillez avec d'autres frameworks (Vue, Angular, Svelte).",
+        "Vous voulez des composants pré-construits sans personnalisation.",
+        "Vous avez besoin d'un support commercial dédié."
+      ],
+      "threshold": "shadcn/ui s'impose pour les équipes React qui ont besoin de liberté et de contrôle ; pour un framework différent ou un composant drag-and-drop sans code, cherchez ailleurs."
+    },
+    "pros": [
+      "Complètement gratuit et open-source.",
+      "Hautement personnalisable, chaque composant peut être modifié.",
+      "Basé sur les standards Radix UI et Tailwind CSS.",
+      "Communauté active et nombreuses ressources."
+    ],
+    "cons": [
+      "Requiert React et TypeScript.",
+      "Pas de support commercial ou SLA.",
+      "Nécessite de la maintenance quand les dépendances se mettent à jour.",
+      "Pas d'interface de gestion drag-and-drop."
+    ],
+    "use_cases": [
+      "Construire une application React de A à Z.",
+      "Créer une design system interne d'une équipe.",
+      "Prototyper rapidement une interface web.",
+      "Fournir une fondation à un projet open-source."
+    ],
+    "relevant_for": ["Développeurs React", "Startups tech", "Équipes design + dev"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a React app and need a solid component foundation.",
+        "You want an open-source solution with zero cost.",
+        "You need maximum flexibility to adapt components to your brand."
+      ],
+      "avoidIf": [
+        "You're using a different framework (Vue, Angular, Svelte).",
+        "You want pre-built components without customization.",
+        "You need commercial support or an SLA."
+      ],
+      "threshold": "shadcn/ui wins for React teams needing freedom and control; for a different framework or no-code components, look elsewhere."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Highly customizable; every component can be modified.",
+      "Built on Radix UI and Tailwind CSS standards.",
+      "Active community and plentiful resources."
+    ],
+    "cons": [
+      "Requires React and TypeScript.",
+      "No commercial support or SLA.",
+      "Requires maintenance as dependencies update.",
+      "No drag-and-drop visual editor."
+    ],
+    "use_cases": [
+      "Build a React application from scratch.",
+      "Create an internal team design system.",
+      "Prototype a web interface quickly.",
+      "Provide a foundation for an open-source project."
+    ]
+  }
+}

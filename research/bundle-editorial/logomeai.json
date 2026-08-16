@@ -1,0 +1,96 @@
+{
+  "slug": "logomeai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Logome.ai — site officiel", "url": "https://logomeai.com" }
+  ],
+  "facts": {
+    "what": "Générateur de logos alimenté par l'IA qui crée des logos uniques et des kits de marque en quelques minutes, avec un éditeur intégré pour personnaliser polices, couleurs et icônes.",
+    "what_en": "AI-powered logo generator that creates unique logos and brand kits within minutes, featuring an integrated editor to customize fonts, colors, and icons.",
+    "pricing_model": "Freemium avec plans payants. Accès gratuit au générateur et à l'éditeur sans inscription ni carte bancaire requises.",
+    "free_tier": { "exists": true, "detail": "Accès complet au générateur de logos IA et à l'éditeur sans paiement. Pas de téléchargement ni d'exportation sans plan payant." },
+    "plans": [
+      { "name": "Basic Logo Pack", "price": "19 € ou USD (forfait unique, un fichier logo)" },
+      { "name": "Premium Logo Pack", "price": "49 $/mois ou 24 $/mois (facturation annuelle)" },
+      { "name": "Logo + Brand Kit", "price": "99 $/mois ou 57 $/mois (facturation annuelle)" }
+    ],
+    "key_features": [
+      "Générateur de logos IA sans expérience de design requise",
+      "Plus de 100 polices personnalisables",
+      "Schémas de couleurs solides et dégradés",
+      "Bibliothèque de symboles et icônes",
+      "Création de kits de marque (templates site, signatures email, cartes de visite)",
+      "Support technique à vie"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un logo rapidement sans budget designer.",
+        "Vous voulez construire une identité de marque complète (logo + kit).",
+        "Vous préférez un générateur IA avec édition manuelle."
+      ],
+      "avoidIf": [
+        "Vous cherchez uniquement une création gratuite sans fonction de téléchargement.",
+        "Vous avez besoin d'un designer humain pour une création sur mesure.",
+        "L'achat régulier de générations de logos n'est pas justifié pour vous."
+      ],
+      "threshold": "Logome.ai convient aux freelances et petites équipes qui veulent un logo professionnel rapidement ; pour une création vraiment personnalisée ou entièrement gratuite, d'autres solutions s'imposent."
+    },
+    "pros": [
+      "Générateur IA très accessible sans compétences de design.",
+      "Création rapide de logos professionnels.",
+      "Éditeur intégré pour la personnalisation fine.",
+      "Plans pour la création complète de kits de marque.",
+      "Accès gratuit au générateur pour tester."
+    ],
+    "cons": [
+      "Qualité variable des résultats IA selon le secteur.",
+      "Plans payants nécessaires pour télécharger les fichiers.",
+      "Pas de révisions humaines ou feedback personnalisé.",
+      "Rapports utilisateurs de facturation automatique à surveiller."
+    ],
+    "use_cases": [
+      "Créer un premier logo pour un freelance en phase de lancement.",
+      "Générer rapidement plusieurs variations de logos pour tester.",
+      "Construire un kit de marque (logo + templates) en one shot.",
+      "Produire des logos pour plusieurs petits projets clients."
+    ],
+    "relevant_for": ["Freelances", "Startups", "Petites équipes créatives", "Entrepreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a logo quickly without a design budget.",
+        "You want to build a complete brand identity (logo + kit).",
+        "You prefer AI generation with manual editing."
+      ],
+      "avoidIf": [
+        "You're looking for free creation with no download limitations.",
+        "You need a human designer for true custom work.",
+        "Ongoing logo generation purchases don't make sense for you."
+      ],
+      "threshold": "Logome.ai works for freelancers and small teams wanting a professional logo fast; for truly custom work or fully free options, other solutions fit better."
+    },
+    "pros": [
+      "AI-powered logo generation very accessible to non-designers.",
+      "Rapid professional logo creation.",
+      "Integrated editor for fine-tuning.",
+      "Plans for complete brand kit creation.",
+      "Free access to the generator for testing."
+    ],
+    "cons": [
+      "Variable quality of AI results depending on industry.",
+      "Paid plans required to download files.",
+      "No human reviews or personalized feedback.",
+      "User reports of automatic billing—verify cancellation process."
+    ],
+    "use_cases": [
+      "Create a first logo for a freelancer launching a business.",
+      "Rapidly generate multiple logo variations for testing.",
+      "Build a complete brand kit (logo + templates) in one go.",
+      "Produce logos for multiple small client projects."
+    ]
+  }
+}

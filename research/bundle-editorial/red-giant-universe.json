@@ -1,0 +1,96 @@
+{
+  "slug": "red-giant-universe",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Red Giant Universe (site officiel Maxon)", "url": "https://www.maxon.net/red-giant/universe" }
+  ],
+  "facts": {
+    "what": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.",
+    "what_en": "Suite of GPU-accelerated effects plugins for After Effects, Premiere Pro, Final Cut Pro, and Motion. Provides transitions, motion effects, text animation, and stylization tools for video and motion design.",
+    "pricing_model": "Abonnement mensuel ou annuel. Universe seul ou bundle complet Red Giant (incluant Universe).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 14 jours ; Maxon One offre également un essai de 14 jours" },
+    "plans": [
+      { "name": "Universe Individual (Monthly)", "price": "USD 32/mois" },
+      { "name": "Universe Individual (Annual)", "price": "USD 214/an" },
+      { "name": "Red Giant Suite (Monthly)", "price": "USD 85/mois" },
+      { "name": "Red Giant Suite (Annual)", "price": "USD 639/an" }
+    ],
+    "key_features": [
+      "Transitions 3D (bokeh, secousse de caméra, glitch)",
+      "Animation dynamique de texte pour titres et crédits",
+      "Filtres de stylisation (rétro, moderne) pour transformation d'image",
+      "Motion graphics (backgrounds animés, formes, barres de progression)",
+      "Suite de color grading complète et outils de film emulation",
+      "Effets de flou et de glow GPU-accélérés",
+      "Aperçu en temps réel avec rendu rapide"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous éditez ou faites du motion design dans After Effects, Premiere Pro ou Final Cut Pro.",
+        "Vous avez besoin d'une large bibliothèque d'effets et transitions rapides.",
+        "Vous produisez du contenu vidéo professionnel avec besoins de stylisation.",
+        "Vous appréciez l'accélération GPU pour un rendu en temps réel."
+      ],
+      "avoidIf": [
+        "Vous vous servez rarement d'effets avancés ou transition complexes.",
+        "Vous avez un budget tight et pouvez utiliser les effets natifs du logiciel.",
+        "Vous ne travaillez pas avec les logiciels vidéo supportés."
+      ],
+      "threshold": "Red Giant Universe s'impose pour les professionnels de la vidéo/motion design ; les éditeurs occasionnels se contenteront des effets natifs."
+    },
+    "pros": [
+      "Vaste bibliothèque d'effets et transitions prêts à l'emploi.",
+      "GPU-accéléré pour rendu en temps réel rapide.",
+      "Compatible avec After Effects, Premiere Pro, Final Cut Pro, Motion.",
+      "Abonnement flexible (mensuel ou annuel).",
+      "Accès à ProtoPie et autres outils Maxon en bundle."
+    ],
+    "cons": [
+      "Abonnement obligatoire (pas de licence perpétuelle).",
+      "Coûts récurrents significatifs sur plusieurs années.",
+      "Nécessite un GPU puissant pour vraiment bénéficier de l'accélération."
+    ],
+    "use_cases": [
+      "Créer une vidéo promotionnelle avec transitions dynamiques et text animation.",
+      "Habiller un cut de film avec color grading et effets de bokeh.",
+      "Réaliser un générique de film ou série avec animations et effets cinéma."
+    ],
+    "relevant_for": ["Motion designers", "Éditeurs vidéo professionnels", "Producteurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You edit or do motion design in After Effects, Premiere Pro, or Final Cut Pro.",
+        "You need a wide library of fast effects and transitions.",
+        "You produce professional video content with styling needs.",
+        "You value GPU acceleration for real-time rendering."
+      ],
+      "avoidIf": [
+        "You rarely use advanced effects or complex transitions.",
+        "You have a tight budget and can use native software effects.",
+        "You don't work with supported video software."
+      ],
+      "threshold": "Red Giant Universe is essential for video/motion design professionals; casual editors can rely on native effects."
+    },
+    "pros": [
+      "Vast library of ready-to-use effects and transitions.",
+      "GPU-accelerated for fast real-time rendering.",
+      "Compatible with After Effects, Premiere Pro, Final Cut Pro, Motion.",
+      "Flexible subscription (monthly or annual).",
+      "Access to ProtoPie and other Maxon tools in bundles."
+    ],
+    "cons": [
+      "Subscription required (no perpetual license).",
+      "Significant recurring costs over years.",
+      "Requires powerful GPU to truly benefit from acceleration."
+    ],
+    "use_cases": [
+      "Create a promotional video with dynamic transitions and text animation.",
+      "Grade a film cut with bokeh and cinema effects.",
+      "Produce a film or series opener with animations and cinema effects."
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "lottiefiles",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LottieFiles — plateforme d'animations officielles", "url": "https://lottiefiles.com" }
+  ],
+  "facts": {
+    "what": "Plateforme centralisée pour créer, éditer et partager des animations Lottie JSON pour le web, iOS et Android, avec une bibliothèque de plus de 400 000 animations réutilisables.",
+    "what_en": "Centralized platform for creating, editing, and sharing Lottie JSON animations for web, iOS, and Android, with a library of over 400,000 reusable animations.",
+    "pricing_model": "Freemium. Tier gratuit avec fonctionnalités de base, plans payants pour fonctionnalités avancées et accès complet à la bibliothèque.",
+    "free_tier": { "exists": true, "detail": "Aperçu illimité, test et partage. Accès à une bibliothèque gratuite et aux éditions basiques. Réduction de taille de fichier limitée." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Individual", "price": "19,99 $/mois ou montants sur la page officielle" },
+      { "name": "Team", "price": "24,99 $/mois par utilisateur ou montants sur la page officielle" },
+      { "name": "Enterprise", "price": "119,99 $/mois par utilisateur ou montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Accès à plus de 250 000 animations premium Lottie JSON",
+      "Éditeur intégré pour créer et éditer des animations",
+      "Intégrations (Figma, Framer, Webflow, Canva)",
+      "CDN dédié pour l'hébergement et la distribution",
+      "Réduction optimisée de la taille des fichiers",
+      "Bibliothèques pour web, iOS, Android",
+      "Partage et collaboration d'équipe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement des animations Lottie dans vos projets web/mobile.",
+        "Vous cherchez une source centralisée d'animations préfaites de qualité.",
+        "Vous travaillez avec Figma, Framer ou d'autres outils intégrés."
+      ],
+      "avoidIf": [
+        "Vous créez très rarement des animations interactives.",
+        "Vous préférez des outils d'animation traditionnels (After Effects, Blender).",
+        "Vous avez besoin d'une solution entièrement gratuite sans restrictions."
+      ],
+      "threshold": "LottieFiles s'impose pour les développeurs et designers qui intègrent régulièrement des animations JSON ; pour une utilisation ponctuelle ou d'autres types d'animation, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Bibliothèque massive d'animations prêtes à l'emploi.",
+      "Éditeur intégré pour la personnalisation rapide.",
+      "Intégrations directes avec outils de design populaires.",
+      "Format Lottie optimisé pour web et mobile.",
+      "Accès gratuit basique sans limite de temps."
+    ],
+    "cons": [
+      "Interface peut être chargée pour les débutants.",
+      "Plans payants nécessaires pour accès complet à la bibliothèque premium.",
+      "Courbe d'apprentissage pour créer des animations complexes.",
+      "Dépend de la qualité des animations de la communauté."
+    ],
+    "use_cases": [
+      "Intégrer des animations Lottie dans une application React/Vue.",
+      "Trouver des animations préfaites pour des microinteractions.",
+      "Éditer et personnaliser des animations pour votre marque.",
+      "Créer des animations pour iOS et Android à partir d'une source unique."
+    ],
+    "relevant_for": ["Développeurs web", "Designers d'interaction", "Développeurs mobile", "Équipes front-end"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly use Lottie animations in web/mobile projects.",
+        "You're looking for a central source of quality pre-made animations.",
+        "You work with Figma, Framer, or other integrated tools."
+      ],
+      "avoidIf": [
+        "You rarely create interactive animations.",
+        "You prefer traditional animation tools (After Effects, Blender).",
+        "You need a fully free solution without restrictions."
+      ],
+      "threshold": "LottieFiles makes sense for developers and designers regularly embedding JSON animations; for occasional use or other animation types, other tools fit better."
+    },
+    "pros": [
+      "Massive library of ready-to-use animations.",
+      "Built-in editor for quick customization.",
+      "Direct integrations with popular design tools.",
+      "Lottie format optimized for web and mobile.",
+      "Free basic access with no time limits."
+    ],
+    "cons": [
+      "Interface can feel cluttered for beginners.",
+      "Paid plans needed for full premium library access.",
+      "Learning curve for complex custom animations.",
+      "Depends on quality of community animations."
+    ],
+    "use_cases": [
+      "Embed Lottie animations in a React/Vue app.",
+      "Find pre-made animations for microinteractions.",
+      "Edit and customize animations for your brand.",
+      "Create animations for iOS and Android from one source."
+    ]
+  }
+}

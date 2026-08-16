@@ -1,0 +1,93 @@
+{
+  "slug": "snapseed",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Snapseed — Google Play Store", "url": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed" }
+  ],
+  "facts": {
+    "what": "Application de retouche photo gratuite développée par Google, disponible sur iOS, Android et navigateur (Chrome). Offre des outils professionnels incluant le support RAW, 29 filtres, édition sélective et outils de guérison.",
+    "what_en": "Free photo editing app by Google available on iOS, Android, and browser (Chrome). Offers professional tools including RAW support, 29+ filters, selective editing, and healing brush.",
+    "pricing_model": "Gratuit",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, pas de plan payant ou premium." },
+    "plans": [],
+    "key_features": [
+      "Support RAW pour formats majorité (DNG, ARW, NEF, CR3, RAF, ORF, PEF)",
+      "29+ filtres et simulations film authentiques",
+      "Édition sélective (masking) et healing brush",
+      "Batch editing (édition par lot)",
+      "Application mobile iOS/Android et extension navigateur Chrome",
+      "Undo/redo intégré",
+      "Traitement local (aucun fichier uploadé)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous retouchez des photos facilement et gratuitement sur téléphone ou navigateur.",
+        "Vous travaillez avec des fichiers RAW et voulez des outils pro sans payer.",
+        "Vous cherchez une alternative légère à Lightroom ou Photoshop."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un workflow studio complet avec catalogage et gestion de bibliothèque.",
+        "Vous faites de la photo commerciale avec des normes d'export très strictes.",
+        "Vous voulez une interface de bureau puissante (Windows/Mac)."
+      ],
+      "threshold": "Snapseed s'impose pour la retouche mobile/web légère et le RAW simple ; pour un workflow studio professionnel, Lightroom ou Capture One sont meilleurs."
+    },
+    "pros": [
+      "Complètement gratuit, pas de limite.",
+      "Outil professionnel (support RAW, healing, masking).",
+      "Disponible mobile ET navigateur.",
+      "Interface intuitive et touches one-tap.",
+      "Traitement local, pas d'upload."
+    ],
+    "cons": [
+      "Pas de gestion de bibliothèque ou catalogage.",
+      "Fonctionnalités basiques comparé à Lightroom.",
+      "Pas de synchronisation cloud entre appareils.",
+      "Moins d'options de personnalisation avancée."
+    ],
+    "use_cases": [
+      "Retoucher des photos de réseaux sociaux rapidement.",
+      "Éditer des fichiers RAW en déplacement.",
+      "Appliquer des filtres et ajustements basiques.",
+      "Utiliser les outils de sélective/masking pour des retouches précises."
+    ],
+    "relevant_for": ["Photographes mobile-first", "Créateurs de contenu social", "Utilisateurs casuel/semi-pro"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want easy, free photo editing on mobile or browser.",
+        "You work with RAW files and want pro tools without paying.",
+        "You're looking for a lightweight alternative to Lightroom or Photoshop."
+      ],
+      "avoidIf": [
+        "You need a complete studio workflow with library management.",
+        "You do commercial photography with strict export standards.",
+        "You want a powerful desktop interface (Windows/Mac)."
+      ],
+      "threshold": "Snapseed works for light mobile/web retouching and simple RAW; for professional studio workflow, Lightroom or Capture One are better."
+    },
+    "pros": [
+      "Completely free, no limits.",
+      "Professional-grade tools (RAW support, healing, selective edit).",
+      "Available on mobile and browser.",
+      "Intuitive interface with one-tap touches.",
+      "Local processing, no upload."
+    ],
+    "cons": [
+      "No library management or cataloging.",
+      "Basic features compared to Lightroom.",
+      "No cloud sync across devices.",
+      "Fewer advanced customization options."
+    ],
+    "use_cases": [
+      "Quickly retouch photos for social media.",
+      "Edit RAW files on the go.",
+      "Apply filters and basic adjustments.",
+      "Use selective/masking tools for precise retouching."
+    ]
+  }
+}

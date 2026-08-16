@@ -1,0 +1,100 @@
+{
+  "slug": "v0-vercel",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "v0 by Vercel (site officiel)", "url": "https://v0.dev" }
+  ],
+  "facts": {
+    "what": "Plateforme IA pour générer des applications web complètes à partir de prompts texte. Produit des interfaces UI, du code full-stack, et publie automatiquement sur Vercel. Permet aussi le design visuel, la création de composants réutilisables et l'intégration GitHub.",
+    "what_en": "AI-powered platform for generating complete web applications from text prompts. Produces UI interfaces, full-stack code, and auto-publishes to Vercel. Also enables visual design, reusable component creation, and GitHub integration.",
+    "pricing_model": "Modèle freemium avec tiers gratuit et payant (v0 Max). Offre aussi des plans entreprise et des remises étudiants.",
+    "free_tier": { "exists": true, "detail": "Version gratuite disponible avec limitations fonctionnelles. Accès aux templates, génération basique, publication sur Vercel limitée." },
+    "plans": [
+      { "name": "v0 Free", "price": "Gratuit" },
+      { "name": "v0 Max", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Devis personnalisé" }
+    ],
+    "key_features": [
+      "Génération IA d'applications web complètes",
+      "Mode design visuel avec aperçu en temps réel",
+      "Bibliothèque de templates (apps, jeux, landing pages, tableaux de bord)",
+      "Intégration GitHub et déploiement Vercel en un clic",
+      "Création de systèmes de design réutilisables",
+      "Support mobile (iOS) et architecture agentic"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez prototyper rapidement une application web.",
+        "Vous êtes développeur solo ou startup avec peu de ressources.",
+        "Vous cherchez à automatiser la génération de code et de UI.",
+        "Vous utilisez déjà l'écosystème Vercel/Next.js."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un contrôle total sur le code et l'architecture.",
+        "Vous travaillez sur des applications complexes et hautement personnalisées.",
+        "Vous préférez le tooling traditionnel sans IA.",
+        "Vos besoins dépassent largement les capacités de génération IA actuelles."
+      ],
+      "threshold": "v0 excelle pour le prototypage rapide et les MVPs ; pour les projets complexes, un développement traditionnel reste nécessaire."
+    },
+    "pros": [
+      "Génération IA ultra-rapide d'applications UI/UX.",
+      "Version gratuite fonctionnelle pour débuter.",
+      "Intégration transparente à Vercel et GitHub.",
+      "Interface visuelle intuitive et accessible aux non-développeurs.",
+      "Templates riches et bien conçus."
+    ],
+    "cons": [
+      "Génération IA peut produire du code imparfait ou dénormalisé.",
+      "Contrôle limité sur l'architecture et les détails techniques.",
+      "Dépend de l'API Vercel et des capacités IA (peuvent changer).",
+      "Pricing du tier Max non transparent (montants sur la page officielle)."
+    ],
+    "use_cases": [
+      "Prototyper rapidement une landing page ou un MVP web.",
+      "Générer du code UI/UX pour un projet plus large.",
+      "Créer des composants réutilisables et des systèmes de design.",
+      "Lancer un MVP startup en quelques heures."
+    ],
+    "relevant_for": ["Développeurs web et frontend", "Startups et entrepreneurs", "Product managers", "Designers qui codent", "Développeurs solo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to prototype a web app quickly.",
+        "You're a solo developer or startup with limited resources.",
+        "You want to automate code and UI generation.",
+        "You already use the Vercel/Next.js ecosystem."
+      ],
+      "avoidIf": [
+        "You need total control over code and architecture.",
+        "You're building complex, highly customized applications.",
+        "You prefer traditional tooling without AI.",
+        "Your needs exceed current AI generation capabilities."
+      ],
+      "threshold": "v0 excels at rapid prototyping and MVPs; for complex projects, traditional development remains necessary."
+    },
+    "pros": [
+      "Ultra-fast AI generation of UI/UX applications.",
+      "Free tier is functional for getting started.",
+      "Seamless Vercel and GitHub integration.",
+      "Intuitive visual interface accessible to non-developers.",
+      "Rich and well-designed templates."
+    ],
+    "cons": [
+      "AI generation can produce imperfect or unnormalized code.",
+      "Limited control over architecture and technical details.",
+      "Depends on Vercel API and AI capabilities (can change).",
+      "Max tier pricing not transparent (details on official page)."
+    ],
+    "use_cases": [
+      "Quickly prototype a landing page or web MVP.",
+      "Generate UI/UX code for a larger project.",
+      "Create reusable components and design systems.",
+      "Launch a startup MVP in hours."
+    ]
+  }
+}

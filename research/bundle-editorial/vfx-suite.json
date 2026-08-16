@@ -1,0 +1,100 @@
+{
+  "slug": "vfx-suite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Red Giant VFX Suite / Maxon (site officiel)", "url": "https://www.maxon.net/en/red-giant" }
+  ],
+  "facts": {
+    "what": "Suite de plugins VFX pour After Effects et Premiere Pro, développée par Red Giant (groupe Maxon). Comprend Trapcode Suite, Magic Bullet Suite, Universe et autres effets avancés pour le motion design et la post-production vidéo.",
+    "what_en": "Suite of VFX plugins for After Effects and Premiere Pro, developed by Red Giant (Maxon group). Includes Trapcode Suite, Magic Bullet Suite, Universe, and other advanced effects for motion design and video post-production.",
+    "pricing_model": "Abonnement obligatoire. Disponible uniquement via Red Giant Complete ou Maxon One subscription. Les licences perpétuelles ne sont plus vendues.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement par abonnement Red Giant Complete ou Maxon One." },
+    "plans": [
+      { "name": "Red Giant Complete (mensuel)", "price": "$85/mois" },
+      { "name": "Red Giant Complete (annuel)", "price": "$639/an" },
+      { "name": "Maxon One (ensemble complet)", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Suite Trapcode complète (particules, effets 3D)",
+      "Magic Bullet Suite (correction couleur, grading)",
+      "Universe de plugins d'effets spécialisés",
+      "Intégration After Effects et Premiere Pro",
+      "Mises à jour continue et support actif",
+      "Accès à la communauté Red Giant"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du motion design ou de la post-production vidéo professionnelle.",
+        "Vous avez besoin d'une suite complète d'effets et de grading.",
+        "Vous travaillez en After Effects ou Premiere régulièrement.",
+        "Vous cherchez une alternative à Fusion ou Nuke pour certains effets."
+      ],
+      "avoidIf": [
+        "Vous éditez des vidéos ponctuellement sans besoins avancés.",
+        "Vous préférez des solutions gratuites ou open source.",
+        "Votre budget ne permet pas un abonnement SaaS.",
+        "Vous utilisez principalement DaVinci Resolve ou d'autres alternatives."
+      ],
+      "threshold": "VFX Suite est essentiel pour les studios motion design ; pour l'édition vidéo basique, les outils natifs d'After Effects suffisent."
+    },
+    "pros": [
+      "Suite complète intégrée pour motion design et VFX.",
+      "Magic Bullet Studio pour le grading professionnel.",
+      "Trapcode pour les particules et effets 3D avancés.",
+      "Support et mises à jour continus de l'équipe Red Giant/Maxon.",
+      "Disponible pour After Effects et Premiere Pro."
+    ],
+    "cons": [
+      "Abonnement obligatoire (pas d'achat unique).",
+      "Coût annuel élevé pour indépendants ou petites équipes.",
+      "Requiert After Effects ou Premiere (pas de version standalone).",
+      "Courbe d'apprentissage importante pour maîtriser tous les plugins."
+    ],
+    "use_cases": [
+      "Produire des animations de titres et génériques pour film/série.",
+      "Étalonnage professionnel et grading couleur de vidéos.",
+      "Créer des effets VFX complexes (particules, destruction, etc.).",
+      "Développer du contenu motion design pour marketing ou branding."
+    ],
+    "relevant_for": ["Motion designers", "Coloristes / Etaloneurs", "VFX artists", "Producteurs vidéo", "Studios d'animation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do professional motion design or video post-production.",
+        "You need a complete suite of effects and grading tools.",
+        "You work in After Effects or Premiere regularly.",
+        "You want an alternative to Fusion or Nuke for certain effects."
+      ],
+      "avoidIf": [
+        "You edit videos occasionally without advanced needs.",
+        "You prefer free or open-source solutions.",
+        "Your budget doesn't allow for SaaS subscriptions.",
+        "You primarily use DaVinci Resolve or other alternatives."
+      ],
+      "threshold": "VFX Suite is essential for motion design studios; for basic video editing, After Effects native tools suffice."
+    },
+    "pros": [
+      "Complete integrated suite for motion design and VFX.",
+      "Magic Bullet Studio for professional color grading.",
+      "Trapcode for advanced particles and 3D effects.",
+      "Continuous support and updates from Red Giant/Maxon.",
+      "Available for both After Effects and Premiere Pro."
+    ],
+    "cons": [
+      "Subscription mandatory (no one-time purchase).",
+      "High annual cost for freelancers or small teams.",
+      "Requires After Effects or Premiere (no standalone version).",
+      "Steep learning curve to master all plugins."
+    ],
+    "use_cases": [
+      "Produce title and opening animations for film/TV.",
+      "Professional color correction and grading for video.",
+      "Create complex VFX effects (particles, destruction, etc.).",
+      "Develop motion design content for marketing and branding."
+    ]
+  }
+}

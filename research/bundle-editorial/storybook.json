@@ -1,0 +1,94 @@
+{
+  "slug": "storybook",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Storybook (site officiel)", "url": "https://storybook.js.org" }
+  ],
+  "facts": {
+    "what": "Atelier frontend open-source gratuit pour construire et documenter les composants UI en isolation. Supporte React, Vue, Angular, Svelte et autres frameworks. Utilisé par 83+ millions de téléchargements mensuels.",
+    "what_en": "Free open-source frontend workshop for building and documenting UI components in isolation. Supports React, Vue, Angular, Svelte, and other frameworks. Used by 83+ million monthly installs.",
+    "pricing_model": "Gratuit et open-source (base) ; services complémentaires payants optionnels",
+    "free_tier": { "exists": true, "detail": "Storybook complet gratuit et open-source. Hosting et services payants optionnels (Chromatic)." },
+    "plans": [
+      { "name": "Storybook (core)", "price": "€0" },
+      { "name": "Chromatic (hosting + visual tests)", "price": "$149/mois (service optionnel)" }
+    ],
+    "key_features": [
+      "Isolation des composants pour développement et test",
+      "Interaction testing et story documentation",
+      "Support multi-framework (React, Vue, Angular, Svelte, etc.)",
+      "Add-ons extensibles (accessibility, docs, design tokens, etc.)",
+      "Génération de documentation automatique",
+      "Export d'assets",
+      "Over 2,200 contributeurs et 83+ millions installs/mois"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une librairie de composants et voulez la documenter.",
+        "Vous faites du test des composants en isolation.",
+        "Vous voulez une source de vérité pour les UI entre designs et code."
+      ],
+      "avoidIf": [
+        "Vous faites une app simple sans besoin de librairie de composants.",
+        "Vous cherchez une solution UI builder drag-and-drop.",
+        "Vous n'utilisez pas un framework JS supporté."
+      ],
+      "threshold": "Storybook s'impose pour les équipes produit construisant des design systems ; pour une app simple, ce n'est pas nécessaire."
+    },
+    "pros": [
+      "Complètement gratuit et open-source.",
+      "Communauté très active et ecosystem d'add-ons.",
+      "Déve et test des composants très productif.",
+      "Génération de documentation facile."
+    ],
+    "cons": [
+      "Courbe d'apprentissage initiale.",
+      "Nécessite un framework JS (React, Vue, etc.).",
+      "Chromatic (service cloud) est payant et optionnel.",
+      "Pas d'UI builder visuel natif (il existe des contournements)."
+    ],
+    "use_cases": [
+      "Documenter une librairie de composants partagée.",
+      "Faire du test interactif des UI components.",
+      "Maintenir une single source of truth design + code.",
+      "Automatiser des visual regression tests avec Chromatic."
+    ],
+    "relevant_for": ["Équipes frontend", "Design system teams", "Libs de composants open-source"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a component library and need to document it.",
+        "You do component testing in isolation.",
+        "You want a single source of truth for UI between designs and code."
+      ],
+      "avoidIf": [
+        "You're building a simple app without component library needs.",
+        "You want a drag-and-drop UI builder.",
+        "You don't use a supported JS framework."
+      ],
+      "threshold": "Storybook works for product teams building design systems; for a simple app, it's not necessary."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Very active community and add-on ecosystem.",
+      "Productive component development and testing.",
+      "Easy documentation generation."
+    ],
+    "cons": [
+      "Initial learning curve.",
+      "Requires a JS framework (React, Vue, etc.).",
+      "Chromatic (cloud service) is paid and optional.",
+      "No native visual UI builder (workarounds exist)."
+    ],
+    "use_cases": [
+      "Document a shared component library.",
+      "Do interactive testing of UI components.",
+      "Maintain a single source of truth for design + code.",
+      "Automate visual regression tests with Chromatic."
+    ]
+  }
+}

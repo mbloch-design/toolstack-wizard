@@ -1,0 +1,102 @@
+{
+  "slug": "x-particles",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "X-Particles by Insydium (site officiel)", "url": "https://insydium.ltd/products/x-particles/" }
+  ],
+  "facts": {
+    "what": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.",
+    "what_en": "Advanced particle and VFX plugin for Cinema 4D based on a rules system (Questions and Actions). Enables control over particle simulations, smoke/fire, fluids, cloth, and destruction effects. Now included in Insydium's Fused subscription.",
+    "pricing_model": "Abonnement Fused annuel (inclut X-Particles, NeXus, Taiao, TerraformFX, MeshTools, Jidou et actifs). Licence monosiège utilisable sur deux machines.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement par abonnement Fused. Cinema 4D inclut maintenant nativement des outils GPU modernes (particules, fluides, cloth)." },
+    "plans": [
+      { "name": "Fused Annual Subscription", "price": "$565.50/an (€540 approx.)" },
+      { "name": "Fused Monthly", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Système de particules règle-basé (Questions & Actions)",
+      "Smoke & Fire avec export VDB",
+      "Fluides, grains et simulations large-scale",
+      "Cloth simulation avec déchirure avancée",
+      "Dynamics et destruction effects",
+      "Multi-engine rendering (Arnold, Octane, Redshift, C4D native)",
+      "xpScatter, xpCache, support OpenVDB"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez du VFX ou motion graphics complexe avec Cinema 4D.",
+        "Vous avez besoin de simulations de particules/fluides controllées par règles.",
+        "Vous travaillez sur des effets destruction, explosions ou cloth.",
+        "Vous utilisez Cinema 4D en production professionnelle."
+      ],
+      "avoidIf": [
+        "Vous utilisez les outils GPU natifs de Cinema 4D (suffisants pour beaucoup de cas).",
+        "Vous avez un budget serré.",
+        "Vous ne travaillez que ponctuellement sur des effets VFX.",
+        "Vous préférez Houdini pour les simulations avancées."
+      ],
+      "threshold": "X-Particles était incontournable en 2024 ; en 2026, Cinema 4D native offre des alternatives GPU comparables pour la plupart des projets."
+    },
+    "pros": [
+      "Système règle-basé très flexible et puissant.",
+      "Intégration native Cinema 4D complète.",
+      "Multi-engine rendering support avancé.",
+      "Simulation smoke/fire très réaliste avec VDB export.",
+      "Fused bundle offre plusieurs outils complémentaires."
+    ],
+    "cons": [
+      "Coût annuel significatif pour un plugin spécialisé.",
+      "Cinema 4D a ajouté des outils GPU natifs, réduisant la différenciation.",
+      "Courbe d'apprentissage importante (système Questions/Actions).",
+      "Licensing online requiert une connexion internet.",
+      "Houdini ou Blender peuvent être de meilleures alternatives pour les effets très avancés."
+    ],
+    "use_cases": [
+      "Créer des animations de particules complexes et controllées par règles.",
+      "Simuler des explosions, destruction ou effets fire/smoke réalistes.",
+      "Concevoir du cloth simulation et effets de textile.",
+      "Produire du contenu VFX pour film, publicité ou TV."
+    ],
+    "relevant_for": ["Artistes VFX", "Motion designers Cinema 4D", "Producteurs 3D", "Studios d'animation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce complex VFX or motion graphics in Cinema 4D.",
+        "You need rule-based particle/fluid simulations.",
+        "You work on destruction, explosions, or cloth effects.",
+        "You use Cinema 4D in professional production."
+      ],
+      "avoidIf": [
+        "Cinema 4D's native GPU tools are sufficient for your work.",
+        "You have a tight budget.",
+        "You only occasionally work on VFX effects.",
+        "You prefer Houdini for advanced simulations."
+      ],
+      "threshold": "X-Particles was essential in 2024; by 2026, Cinema 4D's native GPU tools offer comparable alternatives for most projects."
+    },
+    "pros": [
+      "Very flexible and powerful rules-based system.",
+      "Complete native Cinema 4D integration.",
+      "Advanced multi-engine rendering support.",
+      "Highly realistic smoke/fire simulation with VDB export.",
+      "Fused bundle includes complementary tools."
+    ],
+    "cons": [
+      "Significant annual cost for a specialized plugin.",
+      "Cinema 4D added native GPU tools, reducing differentiation.",
+      "Steep learning curve (Questions/Actions system).",
+      "Online licensing requires internet connection.",
+      "Houdini or Blender may be better for very advanced effects."
+    ],
+    "use_cases": [
+      "Create complex rule-controlled particle animations.",
+      "Simulate realistic explosions, destruction, or fire/smoke effects.",
+      "Design cloth simulation and textile effects.",
+      "Produce VFX content for film, advertising, or TV."
+    ]
+  }
+}

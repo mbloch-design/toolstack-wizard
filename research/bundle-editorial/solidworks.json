@@ -1,0 +1,95 @@
+{
+  "slug": "solidworks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SolidWorks 2026 Pricing (site officiel)", "url": "https://www.solidworks.com" }
+  ],
+  "facts": {
+    "what": "Logiciel CAO 3D (Conception Assistée par Ordinateur) professionnel de Dassault Systèmes pour la modélisation de pièces, assemblages et mises en plan. Inclut des outils de simulation, visualisation photorealiste et gestion de données.",
+    "what_en": "Professional 3D CAD software by Dassault Systèmes for part modeling, assemblies, and drawings. Includes simulation tools, photorealistic rendering, and data management.",
+    "pricing_model": "Licence perpétuelle avec frais annuels ou abonnement, plusieurs éditions",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai disponible sur demande." },
+    "plans": [
+      { "name": "Standard (perpetual license)", "price": "montants sur la page officielle" },
+      { "name": "Professional (perpetual license)", "price": "environ €346-458/mois en abonnement annuel ou équivalent USD" },
+      { "name": "Premium (perpetual license)", "price": "environ €458/mois en abonnement annuel ou équivalent USD" },
+      { "name": "Ultimate (2026 new)", "price": "montants sur la page officielle (contact expert)" }
+    ],
+    "key_features": [
+      "Modélisation 3D de pièces et assemblages complexes",
+      "Mise en plan automatisée",
+      "Simulation et analyse (stress, flux, etc.)",
+      "Rendu photorealiste",
+      "Gestion de données PDM intégrée",
+      "Export CAO vers multiples formats"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de l'ingénierie produit et avez besoin d'un standard industrie.",
+        "Vous travaillez avec des simulations complexes (stress, dynamique, CFD).",
+        "Vous collaborez avec des équipes qui utilisent déjà SolidWorks."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite ou low-cost.",
+        "Vous faites surtout du design/UI et pas de mécanique.",
+        "Vous êtes budget très serré pour une startup."
+      ],
+      "threshold": "SolidWorks gagne pour l'ingénierie mécanique professionnelle et les simulations ; pour le design produit léger, FreeCAD ou Fusion 360 peuvent suffire."
+    },
+    "pros": [
+      "Standard industrie reconnu universellement.",
+      "Simulation robuste et validation d'idées.",
+      "Support technique important.",
+      "Intégration PDM et gestion de projet."
+    ],
+    "cons": [
+      "Investissement très important.",
+      "Frais annuels même avec licence perpétuelle.",
+      "Courbe d'apprentissage abrupte.",
+      "Pas accessible aux petites équipes sans budget."
+    ],
+    "use_cases": [
+      "Modéliser un assemblage mécanique complexe.",
+      "Faire une analyse de stress ou simulation CFD.",
+      "Créer des plans d'usinage et mises en plan.",
+      "Gérer une documentation technique en équipe."
+    ],
+    "relevant_for": ["Ingénieurs mécaniques", "Équipes R&D industrielles", "Bureaux d'études"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do product engineering and need an industry standard.",
+        "You need complex simulations (stress, dynamics, CFD).",
+        "Your team already uses SolidWorks."
+      ],
+      "avoidIf": [
+        "You're looking for a free or low-cost solution.",
+        "You mostly do design/UI, not mechanics.",
+        "You have a tight budget as a startup."
+      ],
+      "threshold": "SolidWorks wins for professional mechanical engineering and simulations; for lighter product design, FreeCAD or Fusion 360 may suffice."
+    },
+    "pros": [
+      "Universally recognized industry standard.",
+      "Robust simulation and idea validation.",
+      "Strong technical support.",
+      "PDM integration and project management."
+    ],
+    "cons": [
+      "Very high upfront investment.",
+      "Annual fees even with perpetual license.",
+      "Steep learning curve.",
+      "Not accessible to small teams on tight budgets."
+    ],
+    "use_cases": [
+      "Model a complex mechanical assembly.",
+      "Run stress analysis or CFD simulation.",
+      "Create machining plans and technical drawings.",
+      "Manage technical documentation as a team."
+    ]
+  }
+}

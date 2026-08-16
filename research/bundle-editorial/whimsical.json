@@ -1,0 +1,103 @@
+{
+  "slug": "whimsical",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Whimsical (site officiel)", "url": "https://whimsical.com" },
+    { "label": "Whimsical Pricing", "url": "https://whimsical.com/pricing" }
+  ],
+  "facts": {
+    "what": "Tableau blanc collaboratif pour les product builders. Permet de créer des diagrammes, flowcharts, mind maps et wireframes avec support IA. Plateforme cloud avec édition temps réel, version history et collaboration d'équipe intégrée.",
+    "what_en": "Collaborative whiteboard platform for product builders. Create diagrams, flowcharts, mind maps, and wireframes with AI support. Cloud-based with real-time editing, version history, and built-in team collaboration.",
+    "pricing_model": "Freemium avec tiers gratuit et payants (Pro, Business, Enterprise). Facturation mensuelle ou annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 3 team boards, 100 tâches, 3 équipes, 10 guests, 100 AI actions par éditeur, 7 jours d'historique de version." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "$10/mois par éditeur (annuel) ou $12/mois (mensuel)" },
+      { "name": "Business", "price": "$15/mois par éditeur (annuel) ou $18/mois (mensuel)" },
+      { "name": "Enterprise", "price": "Devis personnalisé" }
+    ],
+    "key_features": [
+      "Tableaux blancs illimités et collaboration temps réel",
+      "Diagrammes, flowcharts, mind maps, wireframes",
+      "Génération IA de contenu (flowcharts, mind maps, wireframes)",
+      "Version history et commentaires",
+      "Intégrations tierces (Slack, Figma, Notion, etc.)",
+      "Apps desktop macOS et Windows",
+      "Support académique gratuit pour étudiants/enseignants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du diagramming ou wireframing collaboratif.",
+        "Vous cherchez une alternative légère à Figma pour les mockups.",
+        "Vous travaillez en équipe avec besoin de collaboration temps réel.",
+        "Vous utilisez l'IA pour accélérer la génération de contenus."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'outils de design graphique haute fidélité (Figma).",
+        "Vous avez un budget zéro pour les outils SaaS.",
+        "Vous travaillez seul sans besoin de collaboration.",
+        "Vous préférez des solutions open source ou auto-hébergées."
+      ],
+      "threshold": "Whimsical excelle pour le diagramming et wireframing rapide en équipe ; pour du design haute fidélité, Figma est plus complet."
+    },
+    "pros": [
+      "Plan gratuit fonctionnel et généreux pour les indépendants.",
+      "Collaboration temps réel très réactive et intuitive.",
+      "Génération IA native pour diagrams et wireframes.",
+      "Applications desktop performantes (macOS/Windows).",
+      "Prix abordable par rapport à Figma pour petites équipes."
+    ],
+    "cons": [
+      "Moins de fonctionnalités de design que Figma.",
+      "Spécialisé diagramming/wireframing (pas d'outils graphiques avancés).",
+      "Plans Pro/Business par éditeur (peut coûter cher avec grande équipe).",
+      "Moins de templates et d'intégrations que Figma."
+    ],
+    "use_cases": [
+      "Concevoir des wireframes rapidement pour valider une UX.",
+      "Créer des flowcharts et diagrammes de processus métier.",
+      "Brainstorm et mind mapping collaboratif avec l'équipe.",
+      "Documenter l'architecture produit et les user flows."
+    ],
+    "relevant_for": ["Product managers", "UX designers", "Équipes produit", "Startups", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do collaborative diagramming or wireframing.",
+        "You need a lightweight Figma alternative for mockups.",
+        "You work in teams needing real-time collaboration.",
+        "You use AI to speed up content generation."
+      ],
+      "avoidIf": [
+        "You need high-fidelity graphic design tools (Figma).",
+        "Your budget is zero for SaaS tools.",
+        "You work solo without collaboration needs.",
+        "You prefer open-source or self-hosted solutions."
+      ],
+      "threshold": "Whimsical excels at rapid diagramming and wireframing in teams; for high-fidelity design, Figma is more complete."
+    },
+    "pros": [
+      "Generous free plan for freelancers.",
+      "Highly responsive and intuitive real-time collaboration.",
+      "Native AI generation for diagrams and wireframes.",
+      "Performant desktop apps (macOS/Windows).",
+      "Affordable pricing compared to Figma for small teams."
+    ],
+    "cons": [
+      "Fewer design features than Figma.",
+      "Specialized for diagramming/wireframing (no advanced graphics).",
+      "Pro/Business plans per editor (expensive with large teams).",
+      "Fewer templates and integrations than Figma."
+    ],
+    "use_cases": [
+      "Design wireframes quickly to validate UX.",
+      "Create flowcharts and business process diagrams.",
+      "Collaborative brainstorming and mind mapping with teams.",
+      "Document product architecture and user flows."
+    ]
+  }
+}

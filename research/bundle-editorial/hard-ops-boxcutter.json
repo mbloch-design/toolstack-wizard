@@ -1,0 +1,94 @@
+{
+  "slug": "hard-ops-boxcutter",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SuperHive Market — Hard Ops / Boxcutter Ultimate Bundle (site officiel)", "url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle" }
+  ],
+  "facts": {
+    "what": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.",
+    "what_en": "Suite of Blender add-ons for non-destructive hard-surface modeling. Combines Hard Ops (boolean manager) and Boxcutter (interactive cutting tool). Optimized workflow for concept artists, weapon/prop designers, and industrial design artists.",
+    "pricing_model": "Achat unique avec licence perpétuelle. Pas d'abonnement, pas de renouvellement.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Les deux add-ons ne sont disponibles que via achat." },
+    "plans": [
+      { "name": "Hard Ops / Boxcutter Ultimate Bundle", "price": "38 $ (achat unique, licence perpétuelle)" }
+    ],
+    "key_features": [
+      "Hard Ops : gestionnaire de booléens et opérateurs non-destructifs",
+      "Boxcutter : outil de découpe interactive directement dans le viewport",
+      "Assistants et helpers pour un workflow optimal",
+      "Intégration Sculpt et Grease Pencil",
+      "Communauté massive de tutoriels et d'assets",
+      "Workflow orienté speed et non-destructivité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous modélisez du hard-surface (mécanique, sci-fi, objets géométriques).",
+        "Vous voulez un workflow non-destructif et itératif rapide.",
+        "Vous préparez du concept art ou du design de props."
+      ],
+      "avoidIf": [
+        "Vous faites surtout du sculpting organique ou du modeling fluide.",
+        "Vous cherchez une solution gratuite pour Blender.",
+        "Le hard-surface n'est pas votre domaine principal."
+      ],
+      "threshold": "Hard Ops + Boxcutter est la référence incontournable du hard-surface Blender ; pour le soft modeling et le sculpting, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Workflow révolutionnaire pour le hard-surface.",
+      "Interface ultra-rapide et intuitive.",
+      "Licence perpétuelle (pas d'abonnement).",
+      "Communauté énorme avec des millions de tutoriels.",
+      "Régulièrement mis à jour et amélioré."
+    ],
+    "cons": [
+      "Spécialisé uniquement dans le hard-surface.",
+      "Curve de apprentissage raide au départ.",
+      "Peut sembler cher pour les hobbyistes.",
+      "Pas de support direct ; communauté-driven."
+    ],
+    "use_cases": [
+      "Concevoir des armes, des véhicules, des robots.",
+      "Créer du concept art hard-surface rapide.",
+      "Modeliser des accessoires et du design industriel.",
+      "Itérer rapidement sur la géométrie sans dépendances booléennes figées."
+    ],
+    "relevant_for": ["Concept artists Blender", "Designers 3D hard-surface", "Modélisateurs de props/armes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You model hard-surface (mechanical, sci-fi, geometric objects).",
+        "You want a non-destructive and fast iterative workflow.",
+        "You prepare concept art or prop design."
+      ],
+      "avoidIf": [
+        "You mainly do organic sculpting or fluid modeling.",
+        "You want a free Blender solution.",
+        "Hard-surface is not your main focus."
+      ],
+      "threshold": "Hard Ops + Boxcutter is the hard-surface Blender gold standard; for soft modeling and sculpting, other tools fit better."
+    },
+    "pros": [
+      "Revolutionary workflow for hard-surface modeling.",
+      "Ultra-fast and intuitive interface.",
+      "Perpetual license (no subscription).",
+      "Massive community with millions of tutorials.",
+      "Regularly updated and improved."
+    ],
+    "cons": [
+      "Specialized only in hard-surface.",
+      "Steep learning curve initially.",
+      "May seem expensive for hobbyists.",
+      "No direct support; community-driven."
+    ],
+    "use_cases": [
+      "Design weapons, vehicles, robots.",
+      "Create fast hard-surface concept art.",
+      "Model props and industrial design.",
+      "Iterate rapidly on geometry without locked boolean dependencies."
+    ]
+  }
+}

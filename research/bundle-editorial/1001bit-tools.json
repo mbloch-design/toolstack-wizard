@@ -1,0 +1,98 @@
+{
+  "slug": "1001bit-tools",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "1001bit — Architectural Tools for SketchUp (site officiel)", "url": "https://www.1001bit.com" }
+  ],
+  "facts": {
+    "what": "Suite d'outils paramétriques SketchUp pour la génération rapide d'éléments architecturaux. 1001bit crée des escaliers, escalators, murs, portes, fenêtres, toitures et autres composants avec un simple input de dimensions. Idéal pour les architects et les modélisateurs produisant rapidement du contenu.",
+    "what_en": "Suite of parametric SketchUp tools for rapid generation of architectural elements. 1001bit creates staircases, escalators, walls, doors, windows, roofs, and other components from simple dimension inputs. Ideal for architects and modelers producing content quickly.",
+    "pricing_model": "Freemium : version gratuite avec fonctions de base, version Pro payante avec fonctions avancées.",
+    "free_tier": { "exists": true, "detail": "1001bit Freeware : version gratuite avec outils essentiels pour escaliers, portes, fenêtres de base." },
+    "plans": [
+      { "name": "1001bit Freeware", "price": "Gratuit" },
+      { "name": "1001bit Pro", "price": "48 $ (prix indicatif selon les sources)" }
+    ],
+    "key_features": [
+      "Générateur d'escaliers paramétrique",
+      "Générateur d'escalators",
+      "Outils murs et divisions de space",
+      "Générateur de portes et fenêtres",
+      "Générateur de toitures avec calcul auto des chevrons",
+      "Outil 1001shadows pour l'analyse d'ombrage",
+      "Base de données .txt pour profils personnalisés",
+      "Support multi-langues",
+      "Compatible SketchUp 2017+"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes architect ou designer et produisez beaucoup de modèles 3D.",
+        "Vous générez souvent des escaliers, des portes, des fenêtres paramétrisés.",
+        "Vous voulez accélérer votre production d'éléments standards."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous dessinez surtout en 2D et rarement en 3D.",
+        "Vous avez besoin de beaucoup de customisation au-delà de l'outil."
+      ],
+      "threshold": "1001bit Pro s'impose pour les architectes qui génèrent beaucoup d'éléments standards ; le Freeware suffit pour un usage occasionnel."
+    },
+    "pros": [
+      "Gain de temps spectaculaire sur la génération d'escaliers et portes.",
+      "Outils très paramétriques et flexibles.",
+      "Version gratuite généreuse et fonctionnelle.",
+      "Intégration serrée avec SketchUp.",
+      "Banque personnalisée de profils via fichiers .txt."
+    ],
+    "cons": [
+      "Interface peut être dense et complexe pour débutants.",
+      "Customisation très spécialisée (pas pour du modeling libre).",
+      "Pas de support direct en français sur le site.",
+      "La version Pro s'amortit surtout en usage professionnel fréquent."
+    ],
+    "use_cases": [
+      "Concevoir rapidement un immeuble avec escaliers standards.",
+      "Générer des portes et fenêtres multiples en lot.",
+      "Analyser les ombres d'une façade avec 1001shadows.",
+      "Créer des profils de toitures complexes automatiquement."
+    ],
+    "relevant_for": ["Architectes SketchUp", "Designers architecturaux", "Bureaux d'études BIM"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an architect or designer producing many 3D models.",
+        "You frequently generate parametric staircases, doors, and windows.",
+        "You want to accelerate production of standard elements."
+      ],
+      "avoidIf": [
+        "You want a completely free solution.",
+        "You mainly draw in 2D and rarely in 3D.",
+        "You need extensive customization beyond the tool."
+      ],
+      "threshold": "1001bit Pro makes sense for architects generating many standard elements; the Freeware suffices for occasional use."
+    },
+    "pros": [
+      "Spectacular time savings on staircases and door generation.",
+      "Highly parametric and flexible tools.",
+      "Generous and functional free version.",
+      "Tight SketchUp integration.",
+      "Custom profile library via .txt files."
+    ],
+    "cons": [
+      "Interface can be dense and complex for beginners.",
+      "Customization is specialized (not for free-form modeling).",
+      "No direct English support on the site.",
+      "The Pro version pays off mainly with frequent professional use."
+    ],
+    "use_cases": [
+      "Quickly design a building with standard staircases.",
+      "Batch-generate multiple doors and windows.",
+      "Analyze shadows of a facade with 1001shadows.",
+      "Automatically create complex roof profiles."
+    ]
+  }
+}

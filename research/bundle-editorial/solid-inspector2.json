@@ -1,0 +1,92 @@
+{
+  "slug": "solid-inspector2",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Solid Inspector² — SketchUp Extension Warehouse", "url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector" }
+  ],
+  "facts": {
+    "what": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.",
+    "what_en": "Free and open-source SketchUp extension that inspects and repairs solid groups and components. Detects common geometry errors (holes, stray edges, inverted faces) and offers automatic fixes.",
+    "pricing_model": "Gratuit et open-source",
+    "free_tier": { "exists": true, "detail": "Extension complètement gratuite. Source code disponible sur GitHub." },
+    "plans": [],
+    "key_features": [
+      "Détection des erreurs : trous, arêtes parasites, faces inversées, arêtes masquées",
+      "Affichage organisé des problèmes détectés",
+      "Réparation automatique de la plupart des erreurs",
+      "Compatible SketchUp 2014 et versions ultérieures",
+      "Open-source et disponible sur GitHub",
+      "Support Windows et macOS"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez avec des solides SketchUp et avez des problèmes de géométrie.",
+        "Vous préparez un modèle pour l'impression 3D ou l'export CAO.",
+        "Vous cherchez une solution gratuite pour nettoyer les modèles."
+      ],
+      "avoidIf": [
+        "Vous faites surtout de la modélisation non-solide (surfaces, wireframes).",
+        "Vous n'utilisez pas SketchUp.",
+        "Vous avez déjà un workflow de vérification de géométrie dans votre pipeline."
+      ],
+      "threshold": "Solid Inspector² s'impose pour les modélisateurs SketchUp travaillant avec des solides ; pour les surfaces ou modèles simples, ce n'est pas nécessaire."
+    },
+    "pros": [
+      "Complètement gratuit.",
+      "Open-source, transparent et auditable.",
+      "Détection robuste des erreurs courantes.",
+      "Réparation automatique de la plupart des problèmes.",
+      "Essentiel pour la préparation 3D print."
+    ],
+    "cons": [
+      "Limité à SketchUp.",
+      "Pas d'interface graphique avancée.",
+      "Peut ne pas corriger les problèmes complexes.",
+      "Pas de support commercial."
+    ],
+    "use_cases": [
+      "Vérifier et réparer les modèles avant export CAO.",
+      "Préparer un modèle SketchUp pour l'impression 3D.",
+      "Nettoyer les artefacts de géométrie après édition.",
+      "Valider la solidité d'une pièce avant simulation."
+    ],
+    "relevant_for": ["Modélisateurs SketchUp", "Ingénieurs produit", "Designers impression 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work with SketchUp solids and have geometry issues.",
+        "You're preparing a model for 3D print or CAD export.",
+        "You want a free solution to clean up models."
+      ],
+      "avoidIf": [
+        "You mostly work with non-solid geometry (surfaces, wireframes).",
+        "You don't use SketchUp.",
+        "You already have a geometry validation workflow in your pipeline."
+      ],
+      "threshold": "Solid Inspector² works for SketchUp modelers working with solids; for surfaces or simple models, it's not necessary."
+    },
+    "pros": [
+      "Completely free.",
+      "Open-source, transparent, and auditable.",
+      "Robust detection of common errors.",
+      "Automatic repair for most issues.",
+      "Essential for 3D print preparation."
+    ],
+    "cons": [
+      "Limited to SketchUp.",
+      "No advanced GUI.",
+      "May not fix complex issues.",
+      "No commercial support."
+    ],
+    "use_cases": [
+      "Verify and repair models before CAD export.",
+      "Prepare a SketchUp model for 3D printing.",
+      "Clean up geometry artifacts after editing.",
+      "Validate solid integrity before simulation."
+    ]
+  }
+}

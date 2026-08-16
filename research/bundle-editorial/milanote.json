@@ -1,0 +1,105 @@
+{
+  "slug": "milanote",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Milanote — outil de brainstorming visuel collaboratif", "url": "https://milanote.com" }
+  ],
+  "facts": {
+    "what": "Outil de brainstorming et d'organisation visuel conçu pour les créatifs qui associent notes, images, vidéos, esquisses et plus dans des boards collaboratifs multiplateformes (desktop, web, mobile).",
+    "what_en": "Visual brainstorming and organization tool for creatives that combines notes, images, videos, sketches, and more in collaborative multi-platform boards (desktop, web, mobile).",
+    "pricing_model": "Freemium avec tier gratuit limité et plans par utilisateur ou équipe. Tarification progressive selon taille équipe.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permanent : 100 cartes (notes, images, liens) avec 10 uploads max. Tableaux illimités mais total limité à 100 cartes." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (100 cartes, 10 uploads)" },
+      { "name": "Individual per-person", "price": "12,50 $/mois ou 9,99 $/mois (facturation annuelle)" },
+      { "name": "Team", "price": "49 $/mois (tarifs personnalisés pour équipes plus grandes)" }
+    ],
+    "key_features": [
+      "Tableaux visuels et collaboratifs pour brainstorming",
+      "Support notes, images, vidéos, esquisses, liens",
+      "Web clipper pour capturer du contenu",
+      "Collaboration temps réel avec clients et équipes",
+      "Applications mobiles et desktop synchronisées",
+      "Intégrations avec Slack et autres outils",
+      "Modèles prédéfinis pour différents workflows créatifs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en équipe créative (design, marketing, UX) et cherchez un espace de brainstorming visuel partagé.",
+        "Vous collectez régulièrement inspiration et références multimédias.",
+        "Vous aimez travailler avec des vues visuelles plutôt que listes texte."
+      ],
+      "avoidIf": [
+        "Vous avez besoin surtout de gestion de projet (Notion, Asana conviennent mieux).",
+        "Vous cherchez entièrement gratuit et illimité.",
+        "Vous travaillez seul sans besoin collaboration ou inspiration."
+      ],
+      "threshold": "Milanote s'impose pour les équipes créatives cherchant un brainstorming visuel collaboratif ; pour gestion projet complète ou gratuit illimité, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Interface visuelle intuitive et inspirante.",
+      "Plan gratuit robuste pour débuter.",
+      "Collaboration temps réel avec clients et équipes.",
+      "Web clipper pour capturer inspiration rapidement.",
+      "Apps mobiles et desktop synchronisées.",
+      "Utilisé par Nike, IDEO, Netflix, Google, Dropbox.",
+      "Support créatifs multiples (design, film, marketing, architecture)."
+    ],
+    "cons": [
+      "Limite 100 cartes sur tier gratuit peut être restrictive.",
+      "Surtout pour brainstorming (pas complet pour gestion projet fine).",
+      "Courbe d'apprentissage sur l'organisation des tableaux.",
+      "Plans payants nécessaires pour équipes au-delà du tier limité.",
+      "Pas d'intégrations aussi complètes que Notion."
+    ],
+    "use_cases": [
+      "Créer un tableau inspiration pour un projet créatif avec l'équipe.",
+      "Organiser branding/design system assets en un seul endroit.",
+      "Brainstorm client avec board partagé et accès temps réel.",
+      "Collectionner et trier références vidéo pour un projet film.",
+      "Planifier contenu visuel pour campagne marketing collaborativement."
+    ],
+    "relevant_for": ["Designers graphiques", "Équipes UX/UI", "Producteurs vidéo", "Marketers créatifs", "Directeurs artistiques", "Photographes", "Architectes d'intérieur"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in a creative team (design, marketing, UX) and want a shared visual brainstorming space.",
+        "You regularly collect multimedia inspiration and references.",
+        "You prefer working with visual layouts rather than text lists."
+      ],
+      "avoidIf": [
+        "You primarily need project management (Notion, Asana fit better).",
+        "You're looking for fully free and unlimited.",
+        "You work solo with no need for collaboration or inspiration."
+      ],
+      "threshold": "Milanote makes sense for creative teams wanting collaborative visual brainstorming; for full project management or unlimited free, other tools fit better."
+    },
+    "pros": [
+      "Intuitive and inspiring visual interface.",
+      "Robust free plan to get started.",
+      "Real-time collaboration with clients and teams.",
+      "Web clipper to quickly capture inspiration.",
+      "Synchronized mobile and desktop apps.",
+      "Used by Nike, IDEO, Netflix, Google, Dropbox.",
+      "Supports multiple creative fields (design, film, marketing, architecture)."
+    ],
+    "cons": [
+      "100-card limit on free tier can feel restrictive.",
+      "Primarily for brainstorming (not a full project management tool).",
+      "Learning curve on organizing boards effectively.",
+      "Paid plans needed for teams beyond limited tier.",
+      "Not as integrated as Notion for full workflows."
+    ],
+    "use_cases": [
+      "Create an inspiration board for a creative project with your team.",
+      "Organize branding/design system assets in one place.",
+      "Brainstorm with a client on a shared board in real time.",
+      "Collect and sort video references for a film project.",
+      "Plan visual content for a marketing campaign collaboratively."
+    ]
+  }
+}

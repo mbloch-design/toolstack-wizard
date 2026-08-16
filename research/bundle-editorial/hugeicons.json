@@ -1,0 +1,99 @@
+{
+  "slug": "hugeicons",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hugeicons — Pricing (site officiel)", "url": "https://hugeicons.com/pricing" }
+  ],
+  "facts": {
+    "what": "Bibliothèque massive d'icônes vectorielles pour designers et développeurs. 59 000+ icônes dans 10 styles différents, téléchargeables en SVG, fonts, et formats web (React, Vue, Angular, etc.). Inclut plugins Figma et designs system intégrés.",
+    "what_en": "Massive icon library for designers and developers. 59,000+ icons across 10 different styles, downloadable as SVG, fonts, and web formats (React, Vue, Angular, etc.). Includes Figma plugins and integrated design systems.",
+    "pricing_model": "Freemium : tier gratuit avec accès limité, plans payants par siège avec abonnement annuel ou achat unique.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit à 5 900+ icônes stroke rounded, web app, plugins dev, accès Academy." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "99 $ par an par siège" },
+      { "name": "Pro Plus", "price": "1 197 $ achat unique par siège (accès illimité)" }
+    ],
+    "key_features": [
+      "59 000+ icônes dans 10 styles (Stroke, Solid, Duotone, etc.)",
+      "Exports : SVG, Web Fonts, Desktop Fonts, React, Vue, Angular, CDN",
+      "Figma et Sketch plugins inclus",
+      "AI-powered icon search",
+      "Custom icon uploads (Pro+)",
+      "Huge Academy avec formations",
+      "Priority support (Pro+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous concevez des interfaces web ou mobile et avez besoin d'icônes cohérentes.",
+        "Vous travaillez en équipe avec des designers et des développeurs.",
+        "Vous avez besoin d'une source unique d'icônes pour vos projets."
+      ],
+      "avoidIf": [
+        "Vous avez déjà une banque d'icônes personnalisée suffisante.",
+        "Vous cherchez une solution entièrement gratuite avec toutes les icônes.",
+        "Vous faites surtout du design imprimé (pas web/mobile)."
+      ],
+      "threshold": "Hugeicons s'impose pour les équipes de design-dev cherchant une source centralisée ; pour un usage personnel léger, le tier gratuit suffit."
+    },
+    "pros": [
+      "Gigantesque banque d'icônes (59 000+) très variées.",
+      "Tier gratuit très généreux (5 900+ icônes).",
+      "Exports multiples (SVG, fonts, React, etc.).",
+      "Intégration Figma + Sketch natives.",
+      "Communauté active et academy de formation.",
+      "Recherche par IA très performante."
+    ],
+    "cons": [
+      "Plans payants relativement chers pour les petits budgets.",
+      "Le palier Pro Plus reste un investissement significatif.",
+      "Customisation limitée si vous n'achetez que le tier Free.",
+      "Apprentissage de l'interface pour les débutants."
+    ],
+    "use_cases": [
+      "Concevoir des interfaces SaaS avec icônes cohérentes.",
+      "Créer une design system avec banque d'icônes centralisée.",
+      "Exporter des icônes pour React, Vue ou Angular.",
+      "Collaborer entre designers Figma et développeurs web."
+    ],
+    "relevant_for": ["Designers UI/UX", "Développeurs frontend", "Design teams", "Design system managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You design web or mobile interfaces and need consistent icons.",
+        "You work in a team with designers and developers.",
+        "You need a single source of icons for your projects."
+      ],
+      "avoidIf": [
+        "You already have a sufficient custom icon library.",
+        "You want a fully free solution with all icons.",
+        "You mainly do print design (not web/mobile)."
+      ],
+      "threshold": "Hugeicons makes sense for design-dev teams seeking a centralized source; for light personal use, the free tier suffices."
+    },
+    "pros": [
+      "Massive icon bank (59,000+) very varied.",
+      "Very generous free tier (5,900+ icons).",
+      "Multiple exports (SVG, fonts, React, etc.).",
+      "Native Figma + Sketch integration.",
+      "Active community and training academy.",
+      "AI-powered search is very performant."
+    ],
+    "cons": [
+      "Paid plans are relatively expensive for small budgets.",
+      "The Pro Plus tier remains a significant investment.",
+      "Limited customization if you only buy the Free tier.",
+      "Learning curve for the interface."
+    ],
+    "use_cases": [
+      "Design SaaS interfaces with consistent icons.",
+      "Build a design system with centralized icon library.",
+      "Export icons for React, Vue, or Angular.",
+      "Collaborate between Figma designers and web developers."
+    ]
+  }
+}

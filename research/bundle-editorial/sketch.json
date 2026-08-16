@@ -1,0 +1,95 @@
+{
+  "slug": "sketch",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sketch Pricing (site officiel)", "url": "https://sketch.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Logiciel de design vectoriel natif macOS conçu pour la conception d'interfaces, le prototypage interactif et la collaboration en temps réel. Incluait l'édition vectorielle, les animations, le handoff développeur et les composants réutilisables.",
+    "what_en": "Native macOS vector design tool for interface design, interactive prototyping, and real-time collaboration. Includes vector editing, animations, developer handoff, and reusable components.",
+    "pricing_model": "Abonnement par éditeur (facturation annuelle ou mensuelle), ou licence Mac-only perpétuelle",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai disponible." },
+    "plans": [
+      { "name": "Standard", "price": "$12/mois par éditeur (facturation annuelle) ou $14/mois (mensuelle)" },
+      { "name": "Professional", "price": "$24/mois par éditeur (facturation annuelle)" },
+      { "name": "Enterprise", "price": "$44/mois par éditeur (facturation annuelle)" },
+      { "name": "Mac-only license", "price": "$120 (achat unique, pas de collaboration web)" }
+    ],
+    "key_features": [
+      "Édition vectorielle avec stack layouts et frames imbriqués",
+      "Prototypage interactif avec animations et overlays",
+      "Collaboration temps réel et co-édition",
+      "100s de templates gratuits et librairies de composants",
+      "Handoff développeur avec inspection d'assets",
+      "Offline-first et privacy-focused"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes designer macOS et faites de la conception d'UI/UX pour le web ou le mobile.",
+        "Vous travaillez en équipe et avez besoin de collaboration temps réel.",
+        "Vous voulez un outil natif, performant et orienté privacy."
+      ],
+      "avoidIf": [
+        "Vous travaillez principalement sur Windows ou Linux.",
+        "Vous cherchez un outil gratuit.",
+        "Vous avez besoin d'une installation sur navigateur ou cloud pure."
+      ],
+      "threshold": "Sketch gagne pour les designers macOS cherchant une alternative légère et collaborative ; pour Windows/Linux ou budget très réduit, Figma ou Penpot conviendraient mieux."
+    },
+    "pros": [
+      "Application native macOS très performante.",
+      "Collaboration temps réel et intuitive.",
+      "Handoff développeur excellent.",
+      "Design system par composants robuste."
+    ],
+    "cons": [
+      "Limité à macOS (pas de Windows/Linux).",
+      "Abonnement obligatoire (sauf pour Mac-only localement).",
+      "Moins de plugins/intégrations que Figma.",
+      "Courbe d'apprentissage pour les utilisateurs de Figma."
+    ],
+    "use_cases": [
+      "Concevoir une interface web ou mobile.",
+      "Créer un design system avec composants réutilisables.",
+      "Collaborer en temps réel avec une équipe design.",
+      "Faire le handoff avec les développeurs."
+    ],
+    "relevant_for": ["Designers macOS", "Équipes UX/UI", "Startups de produit digital"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a macOS designer doing UI/UX for web or mobile.",
+        "You work in a team and need real-time collaboration.",
+        "You want a native, performant, and privacy-focused tool."
+      ],
+      "avoidIf": [
+        "You primarily work on Windows or Linux.",
+        "You're looking for a free tool.",
+        "You need pure browser or cloud-native deployment."
+      ],
+      "threshold": "Sketch wins for macOS designers seeking a lightweight, collaborative alternative; for Windows/Linux or tight budget, Figma or Penpot might fit better."
+    },
+    "pros": [
+      "High-performance native macOS app.",
+      "Intuitive real-time collaboration.",
+      "Excellent developer handoff.",
+      "Robust component-based design systems."
+    ],
+    "cons": [
+      "macOS only (no Windows/Linux).",
+      "Subscription required (except local Mac-only license).",
+      "Fewer plugins/integrations than Figma.",
+      "Learning curve for Figma users."
+    ],
+    "use_cases": [
+      "Design a web or mobile interface.",
+      "Create a design system with reusable components.",
+      "Collaborate in real-time with a design team.",
+      "Handoff designs to developers."
+    ]
+  }
+}

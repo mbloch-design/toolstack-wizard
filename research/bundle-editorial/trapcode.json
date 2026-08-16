@@ -1,0 +1,94 @@
+{
+  "slug": "trapcode",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Trapcode by Red Giant / Maxon (site officiel)", "url": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular" }
+  ],
+  "facts": {
+    "what": "Suite de plugins de particules et d'effets 3D pour After Effects et Premiere Pro, développée par Red Giant (groupe Maxon). Comprend Trapcode Particular (système de particules 3D), Trapcode Form, Trapcode Shine et autres effets avancés.",
+    "what_en": "Suite of particle and 3D effects plugins for After Effects and Premiere Pro, developed by Red Giant (Maxon group). Includes Trapcode Particular (3D particle system), Trapcode Form, Trapcode Shine, and other advanced effects.",
+    "pricing_model": "Abonnement obligatoire (subscription-based). Les licences perpétuelles ne sont plus disponibles. Inclus dans Red Giant Complete ou Maxon One.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement par abonnement Red Giant Complete ou Maxon One." },
+    "plans": [
+      { "name": "Red Giant Complete (abonnement mensuel)", "price": "$85/mois" },
+      { "name": "Red Giant Complete (abonnement annuel)", "price": "$639/an" },
+      { "name": "Universe seul (abonnement mensuel)", "price": "$32/mois" },
+      { "name": "Universe seul (abonnement annuel)", "price": "$214/an" }
+    ],
+    "key_features": [
+      "Système de particules 3D avancé (Particular)",
+      "Effets de reflet et lumière (Shine, Glow)",
+      "Distorsion et effets de terrain (Form)",
+      "Plugin Magic Bullet Suite inclus (Red Giant Complete)",
+      "Mise à jour continue et support actif"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des animations de particules complexes dans After Effects.",
+        "Vous travaillez en motion design ou VFX professionnel.",
+        "Vous avez besoin d'effets 3D intégrés au workflow AE."
+      ],
+      "avoidIf": [
+        "Vous faites de l'édition vidéo ponctuelle sans besoin VFX.",
+        "Vous cherchez une solution gratuite pour les effets de base.",
+        "Vous préférez des outils standalone plutôt que des plugins."
+      ],
+      "threshold": "Trapcode s'impose pour le motion design professionnel et le VFX ; pour des effets simples, After Effects natif suffit."
+    },
+    "pros": [
+      "Système de particules 3D très puissant et flexible.",
+      "Intégration profonde à After Effects (workflow natif).",
+      "Red Giant Complete offre une suite complète d'effets + Magic Bullet.",
+      "Support actif et mises à jour régulières."
+    ],
+    "cons": [
+      "Abonnement obligatoire (pas de licence unique).",
+      "Coût annuel significatif pour une suite de plugins.",
+      "Courbe d'apprentissage importante.",
+      "Requires After Effects (pas de version standalone)."
+    ],
+    "use_cases": [
+      "Créer des animations de particules 3D pour les génériques ou transitions vidéo.",
+      "Produire des effets VFX pour la cinématographie et la production vidéo.",
+      "Concevoir des éléments d'interface et de UI animation.",
+      "Générer des textures dynamiques et effets de lumière avancés."
+    ],
+    "relevant_for": ["Motion designers", "VFX artists", "Producteurs vidéo", "Animateurs 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create complex particle animations in After Effects.",
+        "You work in professional motion design or VFX.",
+        "You need 3D effects integrated into AE workflows."
+      ],
+      "avoidIf": [
+        "You do occasional video editing without VFX needs.",
+        "You prefer free solutions for basic effects.",
+        "You'd rather use standalone tools than plugins."
+      ],
+      "threshold": "Trapcode is essential for professional motion design and VFX; for simple effects, After Effects alone suffices."
+    },
+    "pros": [
+      "Powerful and flexible 3D particle system.",
+      "Deep After Effects integration (native workflow).",
+      "Red Giant Complete includes a full effects suite plus Magic Bullet.",
+      "Active support and regular updates."
+    ],
+    "cons": [
+      "Subscription mandatory (no one-time license).",
+      "Significant annual cost for a plugin suite.",
+      "Steep learning curve.",
+      "Requires After Effects (no standalone version)."
+    ],
+    "use_cases": [
+      "Create 3D particle animations for video titles or transitions.",
+      "Produce VFX for film and video production.",
+      "Design UI animation and interface elements.",
+      "Generate dynamic textures and advanced lighting effects."
+    ]
+  }
+}

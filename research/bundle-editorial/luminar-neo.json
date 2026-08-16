@@ -1,0 +1,97 @@
+{
+  "slug": "luminar-neo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Luminar Neo — éditeur photo IA officiel", "url": "https://skylum.com/luminar-neo" }
+  ],
+  "facts": {
+    "what": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.",
+    "what_en": "AI-powered desktop photo editor with 24+ AI tools and 100+ features to enhance portraits, landscapes, and photography styles on Mac and Windows platforms.",
+    "pricing_model": "Achat unique avec licence perpétuelle ou abonnement annuel optionnel pour accès à des fonctionnalités premium et à une bibliothèque de ressources.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit disponible avec garantie de remboursement 30 jours sur les plans payants." },
+    "plans": [
+      { "name": "Desktop Only License", "price": "Achat unique (licence perpétuelle, accès 2 appareils)" },
+      { "name": "All Platforms License", "price": "Achat unique (inclut accès mobile et web — disponible automne 2026)" },
+      { "name": "Max License", "price": "Abonnement annuel (montants sur la page officielle, accès nouvelles fonctionnalités et bibliothèque de ressources)" }
+    ],
+    "key_features": [
+      "24+ outils IA (SkinAI, SkyAI, EnhanceAI, GenErase, GenSwap, GenExpand)",
+      "Édition non-destructive avec calques et masques",
+      "Amélioration assistée par IA pour retouche rapide",
+      "Support brut pour 1000+ caméras",
+      "Redimensionnement, suppression du bruit, fusion HDR",
+      "Intégrations plugins Lightroom Classic et Photoshop",
+      "Édition multi-appareils (desktop, mobile, web)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous éditez régulièrement des photos et appréciez les outils IA pour accélérer le workflow.",
+        "Vous cherchez une alternative plus accessible à Lightroom ou Photoshop.",
+        "Vous travaillez surtout sur Mac ou Windows avec des fichiers bruts."
+      ],
+      "avoidIf": [
+        "Vous avez un workflow Lightroom/Photoshop bien établi et coûteux à migrer.",
+        "Vous avez besoin d'une solution gratuite.",
+        "Vous cherchez un éditeur web léger uniquement."
+      ],
+      "threshold": "Luminar Neo convient aux photographes cherchant des outils IA rapides et accessibles ; pour un workflow professionnel lourd ou gratuit, d'autres solutions s'imposent."
+    },
+    "pros": [
+      "Suite complète d'outils IA pour retouche rapide.",
+      "Interface intuitive et accessible aux débutants.",
+      "Licence perpétuelle disponible (pas d'abonnement obligatoire).",
+      "Édition non-destructive avec calques.",
+      "Intégrations Lightroom et Photoshop pour hybridation."
+    ],
+    "cons": [
+      "Coût initial de l'achat (pas de version gratuite).",
+      "Accès mobile/web réservé au plan Max (abonnement).",
+      "Moins de fonctionnalités pointues que Lightroom pour workflows pro.",
+      "Qualité variable des résultats IA selon le type de photo."
+    ],
+    "use_cases": [
+      "Éditer rapidement un portfolio de photos avec retouche IA.",
+      "Retoucher des portraits sans expertise manuelle avancée.",
+      "Améliorer des paysages avec outils d'amélioration du ciel.",
+      "Composer une pile de photos (HDR, panorama) avec outils IA."
+    ],
+    "relevant_for": ["Photographes amateurs à semi-pro", "Créateurs de contenu", "Retoucheurs IA-first", "Petites agences photo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly edit photos and appreciate AI tools to speed up your workflow.",
+        "You're looking for an accessible alternative to Lightroom or Photoshop.",
+        "You work primarily on Mac or Windows with raw files."
+      ],
+      "avoidIf": [
+        "You have an established Lightroom/Photoshop workflow that would be costly to migrate.",
+        "You need a free solution.",
+        "You're looking for a lightweight web-only editor."
+      ],
+      "threshold": "Luminar Neo makes sense for photographers wanting fast AI-powered tools; for heavy professional workflows or free options, other tools fit better."
+    },
+    "pros": [
+      "Complete AI tool suite for quick retouching.",
+      "Intuitive interface, beginner-friendly.",
+      "Perpetual license available (no mandatory subscription).",
+      "Non-destructive editing with layers.",
+      "Lightroom and Photoshop integrations for hybrid workflows."
+    ],
+    "cons": [
+      "Upfront purchase cost (no free version).",
+      "Mobile/web access limited to Max plan (subscription).",
+      "Fewer advanced features than Lightroom for pro workflows.",
+      "Variable AI results depending on photo type."
+    ],
+    "use_cases": [
+      "Quickly edit a photo portfolio with AI retouching.",
+      "Retouch portraits without advanced manual skills.",
+      "Enhance landscapes with sky-improvement tools.",
+      "Stack photos (HDR, panorama) with AI tools."
+    ]
+  }
+}

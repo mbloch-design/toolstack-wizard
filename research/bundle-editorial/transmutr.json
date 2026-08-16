@@ -1,0 +1,92 @@
+{
+  "slug": "transmutr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Transmutr Help & Docs (site officiel)", "url": "https://help.transmutr.com/" },
+    { "label": "Transmutr Shop (Lindalë)", "url": "https://lindale.io/transmutr" }
+  ],
+  "facts": {
+    "what": "Plugin SketchUp pour la conversion et transformation d'actifs 3D. Permet de modifier la géométrie, les matériaux et les textures des modèles importés ou internes à SketchUp. Actif en développement, dernière version 2.0.0 (août 2026).",
+    "what_en": "SketchUp plugin for 3D asset conversion and transformation. Enables modification of geometry, materials, and textures for imported or native SketchUp models. Actively developed with version 2.0.0 released August 2026.",
+    "pricing_model": "Licence d'achat unique ou abonnement. Montants disponibles sur la page officielle et les distributeurs.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Achat de licence ou abonnement requis via les canaux officiels." },
+    "plans": [
+      { "name": "Transmutr 2", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Conversion d'actifs 3D depuis/vers SketchUp",
+      "Modification de géométrie, matériaux et textures",
+      "Support SketchUp 2025 et V-Ray 7",
+      "Intégration native à l'écosystème SketchUp",
+      "Développement actif avec mises à jour régulières"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez régulièrement avec des modèles 3D dans SketchUp.",
+        "Vous avez besoin de convertir ou transformer des actifs extérieurs.",
+        "Vous intégrez SketchUp avec d'autres outils 3D (Blender, 3ds Max, etc.)."
+      ],
+      "avoidIf": [
+        "SketchUp n'est pas votre outil principal.",
+        "Vous cherchez un outil standalone de conversion 3D.",
+        "Vous n'avez pas besoin de transformation avancée d'actifs."
+      ],
+      "threshold": "Transmutr s'impose pour les workflows SketchUp intensifs ; pour une utilisation ponctuelle, les exportateurs natifs suffisent."
+    },
+    "pros": [
+      "Conversion bidirectionnelle d'actifs 3D directement dans SketchUp.",
+      "Maintenance active (version 2.0 récente, support des versions SketchUp actuelles).",
+      "Intégration transparente au workflow SketchUp.",
+      "Support des normes 3D modernes (V-Ray 7)."
+    ],
+    "cons": [
+      "Pas de version d'essai gratuite généreuse.",
+      "Limité à SketchUp (ne fonctionne pas standalone).",
+      "Nécessite une courbe d'apprentissage pour les utilisateurs novices.",
+      "Pricing exact non transparent sur la homepage."
+    ],
+    "use_cases": [
+      "Importer des modèles 3D externes (Blender, 3ds Max) dans SketchUp.",
+      "Exporter et convertir des projets SketchUp pour d'autres engines 3D.",
+      "Modifier les matériaux et textures d'actifs importés.",
+      "Préparer des modèles SketchUp pour le rendu haute fidélité."
+    ],
+    "relevant_for": ["Modélisateurs 3D", "Architectes digitaux", "Designers de produit", "Artistes 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work regularly with 3D models in SketchUp.",
+        "You need to convert or transform external 3D assets.",
+        "You integrate SketchUp with other 3D tools (Blender, 3ds Max, etc.)."
+      ],
+      "avoidIf": [
+        "SketchUp is not your primary tool.",
+        "You need a standalone 3D conversion tool.",
+        "You don't require advanced asset transformation."
+      ],
+      "threshold": "Transmutr is essential for intensive SketchUp workflows; for occasional use, native exporters suffice."
+    },
+    "pros": [
+      "Bidirectional 3D asset conversion directly in SketchUp.",
+      "Active maintenance (recent v2.0, current SketchUp support).",
+      "Seamless SketchUp workflow integration.",
+      "Support for modern 3D standards (V-Ray 7)."
+    ],
+    "cons": [
+      "No generous free trial available.",
+      "Limited to SketchUp (cannot work standalone).",
+      "Requires learning curve for novice users.",
+      "Exact pricing not transparent on homepage."
+    ],
+    "use_cases": [
+      "Import external 3D models (Blender, 3ds Max) into SketchUp.",
+      "Export and convert SketchUp projects for other 3D engines.",
+      "Modify materials and textures on imported assets.",
+      "Prepare SketchUp models for high-fidelity rendering."
+    ]
+  }
+}

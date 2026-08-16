@@ -1,0 +1,104 @@
+{
+  "slug": "open-cut-list",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OpenCutList — Documentation officielle", "url": "https://docs.opencutlist.org/" }
+  ],
+  "facts": {
+    "what": "Extension SketchUp gratuite et open-source pour générer automatiquement listes de découpe, diagrammes de nesting et rapports de coût et poids pour projets d'ébénisterie.",
+    "what_en": "Free, open-source SketchUp extension that automates generation of cut lists, cutting diagrams, nesting layouts, and cost/weight reports for woodworking projects.",
+    "pricing_model": "Entièrement gratuit et open-source. Aucun frais, abonnement ou modèle commercial.",
+    "free_tier": { "exists": true, "detail": "Le logiciel entier est gratuit. Ouvert à tous les utilisateurs SketchUp sans restriction." },
+    "plans": [
+      { "name": "OpenCutList", "price": "Gratuit (open-source)" }
+    ],
+    "key_features": [
+      "Extraction automatique de pièces à partir de composants SketchUp",
+      "Génération de listes de découpe optimisées",
+      "Nesting basique pour minimiser les chutes",
+      "Diagrammes de découpe imprimables",
+      "Rapports de coût et poids",
+      "Export CSV pour intégration à d'autres outils",
+      "Gestion des panneaux et de l'optimisation de matière",
+      "Développement actif par la communauté open-source"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez avec SketchUp (desktop) et faites de l'ébénisterie ou menuiserie.",
+        "Vous cherchez un outil gratuit pour optimiser vos découpes et matière.",
+        "Vous aimez l'open-source et les logiciels sans frais cachés."
+      ],
+      "avoidIf": [
+        "Vous utilisez exclusivement SketchUp web (version cloud) — OpenCutList ne fonctionne qu'en desktop.",
+        "Vous avez besoin de nesting hyper-avancé (préférer Opticut ou Cut Wize pour industriel).",
+        "Vous évitez les extensions open-source."
+      ],
+      "threshold": "OpenCutList domine pour menuisiers freelance ou petits ateliers SketchUp ; gratuit, fiable, soutenu par la communauté."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source — aucun frais.",
+      "Intégration native dans SketchUp (extension officielle).",
+      "Génération automatique de listes de découpe et diagrammes.",
+      "Optimisation basique pour minimiser les chutes.",
+      "Rapports en PDF/CSV pour imprimer ou partager.",
+      "Communauté active et développement continu.",
+      "Pas de paywalls ni limites d'utilisation."
+    ],
+    "cons": [
+      "Compatible desktop SketchUp uniquement (pas SketchUp web/cloud).",
+      "Nesting limité vs solutions commerciales (Cut Optima, Opticut).",
+      "Require SketchUp pour fonctionner (ne fonctionne pas seul).",
+      "Interface peu traduite hors anglais/français.",
+      "Support communautaire, pas d'assistance dédiée."
+    ],
+    "use_cases": [
+      "Générer listes de découpe pour projet d'ébénisterie from SketchUp.",
+      "Optimiser matière et réduire chutes de bois/panneaux.",
+      "Produire diagrammes imprimables pour atelier.",
+      "Estimer coût et poids total d'un projet.",
+      "Partager cut lists en CSV avec fournisseurs ou ouvriers."
+    ],
+    "relevant_for": ["Menuisiers", "Ébénistes", "Charpentiers", "Designers de mobilier", "Petits ateliers artisanaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use SketchUp (desktop) and do woodworking or carpentry.",
+        "You want a free tool to optimize cuts and material waste.",
+        "You embrace open-source and software with no hidden fees."
+      ],
+      "avoidIf": [
+        "You only use SketchUp web (cloud)—OpenCutList is desktop-only.",
+        "You need industrial-strength nesting (use Cut Optima or Cut Wize).",
+        "You avoid open-source extensions."
+      ],
+      "threshold": "OpenCutList dominates for freelance woodworkers and small SketchUp shops—free, reliable, backed by active community."
+    },
+    "pros": [
+      "Completely free and open-source—no fees.",
+      "Native SketchUp extension integration.",
+      "Automatic cut list and diagram generation.",
+      "Basic nesting to minimize waste.",
+      "PDF/CSV reports for printing or sharing.",
+      "Active community and ongoing development.",
+      "No paywalls or usage limits."
+    ],
+    "cons": [
+      "Desktop SketchUp only (not web/cloud versions).",
+      "Nesting limited vs commercial tools (Cut Optima, Opticut).",
+      "Requires SketchUp to run (not standalone).",
+      "Limited non-English/French localization.",
+      "Community support, no dedicated assistance."
+    ],
+    "use_cases": [
+      "Generate cut lists for a woodworking project in SketchUp.",
+      "Optimize material and reduce wood/panel waste.",
+      "Create printable cutting diagrams for the shop.",
+      "Estimate total project cost and weight.",
+      "Share cut lists in CSV with suppliers or crew."
+    ]
+  }
+}

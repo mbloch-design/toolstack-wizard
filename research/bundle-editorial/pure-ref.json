@@ -1,0 +1,93 @@
+{
+  "slug": "pure-ref",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PureRef (site officiel)", "url": "https://www.pureref.com" }
+  ],
+  "facts": {
+    "what": "Gestionnaire autonome d'images de référence. Consolide plusieurs images d'inspiration dans une fenêtre unique, stay-on-top, pour accélérer le processus créatif.",
+    "what_en": "Standalone reference image organizer. Consolidates multiple inspiration images in a single, stay-on-top window to speed up creative processes.",
+    "pricing_model": "Modèle pay-what-you-want pour usage personnel (USD 15 suggéré). Licence commerciale USD 49 pour petits groupes (version 2.x). Gratuit pour version 1.x usage commercial.",
+    "free_tier": { "exists": true, "detail": "Paiement à votre gré (version personnelle) ; version d'essai disponible" },
+    "plans": [
+      { "name": "Personal (Pay-What-You-Want)", "price": "USD 15 suggéré" },
+      { "name": "Small Business License", "price": "USD 49 (licence perpétuelle)" },
+      { "name": "Enterprise", "price": "Tarification par siège" }
+    ],
+    "key_features": [
+      "Chargement des images par glisser-déposer (ordinateur, navigateur, presse-papiers)",
+      "Fenêtre stay-on-top pour accès constant",
+      "Interface minimaliste et redimensionnable",
+      "Outils de manipulation d'images (annotations, désaturation, alignement)",
+      "Compatibilité cross-plateforme (Windows, Mac, Linux)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez avec beaucoup d'images de référence pendant vos créations.",
+        "Vous avez besoin d'une fenêtre toujours visible sur votre écran de travail.",
+        "Vous gérez des références pour des usage personnel ou petite équipe.",
+        "Vous dessinez, concevez ou modelisez 3D."
+      ],
+      "avoidIf": [
+        "Vous faites peu ou pas d'usage de références visuelles.",
+        "Vous utilisez déjà une grande plateforme (Pinterest, Moodboards).",
+        "Vous avez besoin d'une base collaborative en ligne."
+      ],
+      "threshold": "PureRef est indispensable pour les créatifs travaillant avec références ; alternatives numériques en ligne (Miro, Pinterest) conviendraient pour collaboration."
+    },
+    "pros": [
+      "Paiement à votre gré pour usage personnel (très accessible).",
+      "Fenêtre always-on-top idéale pour le flux de travail.",
+      "Interface légère et intuitive.",
+      "Licence perpétuelle unique (pas d'abonnement).",
+      "Disponible sur Windows, Mac et Linux."
+    ],
+    "cons": [
+      "Pas de collaboration en temps réel.",
+      "Pas de synchronisation cloud.",
+      "UI minimale peut sembler basique pour certains."
+    ],
+    "use_cases": [
+      "Créer un moodboard visuel pour un projet d'illustration.",
+      "Collecter des références architecturales pour un design intérieur.",
+      "Organiser des palettes de couleurs et textures pour la modélisation 3D."
+    ],
+    "relevant_for": ["Illustrateurs", "Designers 3D", "Artistes numériques", "Designers d'intérieur"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work with many reference images during creative sessions.",
+        "You need a window always visible on your workspace.",
+        "You manage references for personal or small-team use.",
+        "You draw, design, or model 3D."
+      ],
+      "avoidIf": [
+        "You use few or no visual references.",
+        "You already use a large platform (Pinterest, Moodboards).",
+        "You need collaborative online sharing."
+      ],
+      "threshold": "PureRef is essential for creatives working with references; online alternatives (Miro, Pinterest) suit collaboration better."
+    },
+    "pros": [
+      "Pay-what-you-want for personal use (very accessible).",
+      "Always-on-top window ideal for workflow.",
+      "Lightweight and intuitive interface.",
+      "One-time perpetual license (no subscription).",
+      "Available on Windows, Mac, and Linux."
+    ],
+    "cons": [
+      "No real-time collaboration.",
+      "No cloud synchronization.",
+      "Minimal UI may seem basic to some."
+    ],
+    "use_cases": [
+      "Create a visual moodboard for an illustration project.",
+      "Collect architectural references for interior design.",
+      "Organize color palettes and textures for 3D modeling."
+    ]
+  }
+}

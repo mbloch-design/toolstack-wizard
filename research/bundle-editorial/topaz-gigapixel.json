@@ -1,0 +1,94 @@
+{
+  "slug": "topaz-gigapixel",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Topaz Gigapixel AI (site officiel)", "url": "https://topazlabs.com/gigapixel" }
+  ],
+  "facts": {
+    "what": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.",
+    "what_en": "AI-powered desktop image upscaling software that enlarges images up to 16x while maintaining detail and quality. Available for Windows and macOS with Adobe Photoshop and Lightroom Classic plugin integration.",
+    "pricing_model": "Abonnement par niveau (Personal, Pro, Studio Bundle) avec facturation mensuelle ou annuelle.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès par abonnement uniquement." },
+    "plans": [
+      { "name": "Personal (mensuel)", "price": "$29/mois" },
+      { "name": "Personal (annuel)", "price": "$149/an ($12.42/mois)" },
+      { "name": "Pro (mensuel)", "price": "$54/mois" },
+      { "name": "Pro (annuel)", "price": "$499/an ($41.58/mois)" },
+      { "name": "Topaz Studio Bundle", "price": "$69/mois ou $399/an" }
+    ],
+    "key_features": [
+      "9 modèles IA d'agrandissement (Wonder 2 & 3, Standard, High Fidelity, Recover, Face Recovery, etc.)",
+      "Rendu illimité en local (GPU) et cloud",
+      "Intégration plugin Photoshop et Lightroom Classic",
+      "Recuperation de détails, restauration, enhancement de qualité artistique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous agrandissez régulièrement des photos de faible résolution pour l'impression.",
+        "Vous restaurez des archives ou travaillez sur des images dégradées.",
+        "Vous cherchez une solution rapide et automatisée d'upscaling."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un outil d'édition généraliste.",
+        "Vous préférez une solution gratuite ou ponctuelle.",
+        "Vous cherchez un contrôle manuel total sur chaque paramètre."
+      ],
+      "threshold": "Gigapixel excelle pour agrandir sans perte perceptible de qualité ; pour un usage très occasionnel, les solutions gratuites suffisent."
+    },
+    "pros": [
+      "Technologie IA très efficace pour l'agrandissement sans dégradation visible.",
+      "Intégration transparente aux workflows Photoshop/Lightroom.",
+      "Multiples modèles spécialisés (texte, art, visages, etc.).",
+      "Rendu cloud et local inclus."
+    ],
+    "cons": [
+      "Pas de version gratuite ou d'essai gratuit illimité.",
+      "Abonnement obligatoire (pas d'achat unique).",
+      "Le plan Personal a des limitations commerciales.",
+      "Coût annuel élevé pour un usage occasionnel."
+    ],
+    "use_cases": [
+      "Agrandir une photo de faible résolution pour une impression grand format.",
+      "Restaurer des archives photographiques anciennes ou dégradées.",
+      "Préparer des visuels pour un site e-commerce.",
+      "Améliorer la résolution d'une capture d'écran ou d'un artwork."
+    ],
+    "relevant_for": ["Photographes professionnels", "Designers graphiques", "Archivistes numériques", "Éditeurs photo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly upscale low-resolution photos for printing.",
+        "You're restoring archives or working with degraded images.",
+        "You need fast, automated upscaling without manual tweaking."
+      ],
+      "avoidIf": [
+        "You need a general-purpose editing tool.",
+        "You prefer free or one-time solutions.",
+        "You want complete manual control over every parameter."
+      ],
+      "threshold": "Gigapixel excels at upscaling with minimal quality loss; for occasional use, free alternatives suffice."
+    },
+    "pros": [
+      "Highly effective AI technology for upscaling without visible degradation.",
+      "Seamless Photoshop and Lightroom integration.",
+      "Multiple specialized models (text, art, faces, etc.).",
+      "Cloud and local rendering included."
+    ],
+    "cons": [
+      "No free version or unlimited trial.",
+      "Subscription required (no one-time purchase).",
+      "Personal plan has commercial use limitations.",
+      "High annual cost for occasional use."
+    ],
+    "use_cases": [
+      "Upscale a low-resolution photo for large-format printing.",
+      "Restore old or degraded photographs and archives.",
+      "Prepare product visuals for e-commerce.",
+      "Improve the resolution of a screenshot or artwork."
+    ]
+  }
+}

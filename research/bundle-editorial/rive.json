@@ -1,0 +1,107 @@
+{
+  "slug": "rive",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rive (site officiel)", "url": "https://rive.app" }
+  ],
+  "facts": {
+    "what": "Plateforme de design et animation interactive. Unifies design, animation, et codage dans un seul éditeur. Déploiement natif sur iOS, Android, web (React, Flutter), Unreal, Unity sans mockups ni prototypes intermédiaires.",
+    "what_en": "Interactive design and animation platform. Unifies design, animation, and coding in one editor. Native deployment to iOS, Android, web (React, Flutter), Unreal, Unity without mockups or intermediate prototypes.",
+    "pricing_model": "Tier freemium avec plans payants. Free plan inclus 3 fichiers collaboratifs. Escalade à Cadet, Voyager, Enterprise.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec 3 fichiers collaboratifs et accès limité aux agents IA" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Cadet", "price": "USD 9/mois par siège (jusqu'à 3 sièges)" },
+      { "name": "Voyager", "price": "USD 32/mois par siège" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Éditeur collaboratif temps-réel pour design et animation",
+      "State machine pour la gestion d'interactions complexes",
+      "GPU-accelerated rendering (120fps) via Rive Renderer",
+      "Scripting en direct pour automation et logique",
+      "Deployment multi-plateforme natif (iOS, Android, web, Flutter, Unity, Unreal)",
+      "AI-assisted authoring avec crédits IA inclus",
+      "Intégrations natives (Webflow, Framer, Wix Studio)",
+      "Compliance et security (SOC 2 Type II, SSO, custom S3 sur Enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des animations et interactions complexes pour apps et web.",
+        "Vous travaillez dans une équipe multidisciplinaire (designers + développeurs).",
+        "Vous avez besoin de déploiement multi-plateforme natif (iOS, Android, web).",
+        "Vous appréciez l'unification design-animation-code en un seul workflow."
+      ],
+      "avoidIf": [
+        "Vous prototypez des interfaces statiques ou wireframes simples.",
+        "Vous travaillez uniquement en web (Webflow ou Framer suffisent).",
+        "Vous avez un budget très limité (utilisez le free plan).",
+        "Vous avez besoin d'outils très spécialisés (motion capture, 3D avancée)."
+      ],
+      "threshold": "Rive s'impose pour animations interactives cross-plateforme production-ready ; pour prototypes simples, Figma ou Adobe XD suffisent."
+    },
+    "pros": [
+      "Unification complète design-animation-développement.",
+      "Deployment multi-plateforme natif sans code duplication.",
+      "State machine pour interactions complexes bien gérées.",
+      "Collaboration temps-réel puissante.",
+      "Free plan accessible avec 3 fichiers.",
+      "Intégrations natives avec Webflow, Framer, Wix.",
+      "Fichiers nettement plus légers que les alternatives."
+    ],
+    "cons": [
+      "Courbe d'apprentissage (state machine, scripting).",
+      "Community plus petite que Figma ou Lottie.",
+      "Plans payants montant rapidement pour équipes.",
+      "Moins d'intégrations que Lottie ou Figma."
+    ],
+    "use_cases": [
+      "Créer une mascotte animée interactive pour une app mobile.",
+      "Concevoir une interface d'onboarding avec animations et micro-interactions.",
+      "Prototyper un gameplay ou UI interactif pour un jeu web.",
+      "Produire des graphiques de données animés pour dashboard."
+    ],
+    "relevant_for": ["Interaction designers", "Animateurs numériques", "Product designers", "Game designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create complex animations and interactions for apps and web.",
+        "You work in a multidisciplinary team (designers + developers).",
+        "You need native multi-platform deployment (iOS, Android, web).",
+        "You value unified design-animation-code workflow."
+      ],
+      "avoidIf": [
+        "You prototype static interfaces or simple wireframes.",
+        "You work only on web (Webflow or Framer suffice).",
+        "You have a very tight budget (use the free plan).",
+        "You need highly specialized tools (motion capture, advanced 3D)."
+      ],
+      "threshold": "Rive is essential for cross-platform interactive animations production-ready; for simple prototypes, Figma or Adobe XD suffice."
+    },
+    "pros": [
+      "Complete unification of design-animation-development.",
+      "Native multi-platform deployment without code duplication.",
+      "State machine for well-managed complex interactions.",
+      "Powerful real-time collaboration.",
+      "Accessible free plan with 3 files.",
+      "Native integrations with Webflow, Framer, Wix.",
+      "Markedly lighter files than alternatives."
+    ],
+    "cons": [
+      "Learning curve (state machine, scripting).",
+      "Smaller community than Figma or Lottie.",
+      "Paid plans escalate quickly for teams.",
+      "Fewer integrations than Lottie or Figma."
+    ],
+    "use_cases": [
+      "Create an interactive animated mascot for a mobile app.",
+      "Design an onboarding interface with animations and micro-interactions.",
+      "Prototype gameplay or interactive UI for a web game.",
+      "Produce animated data graphics for a dashboard."
+    ]
+  }
+}

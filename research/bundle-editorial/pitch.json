@@ -1,0 +1,112 @@
+{
+  "slug": "pitch",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pitch — AI Presentation Workspace (site officiel)", "url": "https://pitch.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud de présentation collaborative avec généra­tion IA de slides, analytics, et intégrations (Slack, Notion, Figma, HubSpot).",
+    "what_en": "Cloud-based collaborative presentation platform with AI-powered slide generation, viewer analytics, and integrations with Slack, Notion, Figma, and HubSpot.",
+    "pricing_model": "Freemium par utilisateur/mois avec facturation annuelle. Plan gratuit pour démarrer ; plans payants (Plus, Team, Business, Enterprise).",
+    "free_tier": { "exists": true, "detail": "100 crédits IA (une seule fois), présentations illimites, templates custom, partage avec 2 guests externes, 10 GB stockage." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (100 AI credits, 10GB, 2 external guests)" },
+      { "name": "Plus", "price": "€10/month (500 monthly AI credits, custom fonts, video uploads, 5 external guests)" },
+      { "name": "Team", "price": "€15/month (up to 25 seats, 3 teamspaces, advanced analytics)" },
+      { "name": "Business", "price": "€20/month (up to 200 seats, unlimited features)" },
+      { "name": "Enterprise", "price": "Custom pricing (30+ seats, SSO SAML, dedicated support)" }
+    ],
+    "key_features": [
+      "Génération de slides IA à partir de prompts texte",
+      "Édition collaborative temps réel (multiple users)",
+      "150+ templates conçus par experts",
+      "Analytics des visualisations et engagement",
+      "Branding library pour consistence visuelle",
+      "Pitch rooms personnalisées pour clients",
+      "Support vidéo et animation native",
+      "Intégrations Slack, Notion, HubSpot, Figma, Calendly",
+      "Exports sans marque (Plus+)",
+      "~4 millions d'équipes utilisatrices"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites des présentations B2B ou pitches pour clients régulièrement.",
+        "Vous aimez l'IA pour générer slides (gain de temps).",
+        "Vous avez besoin de collaboration en temps réel et analytics."
+      ],
+      "avoidIf": [
+        "Vous créez un seul deck par an (Google Slides gratuit suffit).",
+        "Vous refusez cloud (self-hosting uniquement).",
+        "Vous avez besoin de design très poussé (PowerPoint/Keynote mieux)."
+      ],
+      "threshold": "Pitch excelle pour commerciaux et managers partageant présens fréquemment ; IA + analytics transforment la routine en avantage compétitif."
+    },
+    "pros": [
+      "Génération IA de slides fait gagner heures de design.",
+      "Collaboration temps réel et smoothe.",
+      "Analytics pour voir qui a ouvert et lu quoi (avantage commercial).",
+      "Intégrations Slack/HubSpot/Figma intéressantes pour workflows.",
+      "Branding library pour garder cohérence visuelle.",
+      "Palier Plus abordable.",
+      "~4 millions d'équipes utilisatrices (traction).",
+      "Plan gratuit assez complet pour débuter."
+    ],
+    "cons": [
+      "Crédits IA limités, surtout sur le palier gratuit.",
+      "Export sans marque seulement en payant (Plus+).",
+      "Cloud uniquement (pas de self-hosting).",
+      "Design moins sophistiqué qu'Adobe Express ou Canva.",
+      "Dépendance à l'IA peut générer outputs génériques."
+    ],
+    "use_cases": [
+      "Générer deck de pitch investisseurs en 30 min (IA).",
+      "Créer présentations commerciales polies pour clients.",
+      "Suivre engagement prospects via analytics de partage.",
+      "Collaborer en équipe sur plusieurs slides simultanément.",
+      "Synchroniser branding d'entreprise across présentations."
+    ],
+    "relevant_for": ["Commerciaux", "Directeurs commerciaux", "Startups fundraising", "Agences créatives", "Équipes de vente"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create B2B presentations or pitches regularly.",
+        "You want AI to generate slides quickly.",
+        "You need real-time collaboration and viewer analytics."
+      ],
+      "avoidIf": [
+        "You create one deck per year (free Google Slides enough).",
+        "You refuse cloud (self-hosting only).",
+        "You need highly polished design (PowerPoint/Keynote better)."
+      ],
+      "threshold": "Pitch wins for sales reps and managers sharing presentations frequently; AI + analytics turn routine into competitive edge."
+    },
+    "pros": [
+      "AI slide generation saves hours of design work.",
+      "Smooth real-time collaboration.",
+      "Analytics show who opened and engaged (sales advantage).",
+      "Slack/HubSpot/Figma integrations valuable for workflows.",
+      "Branding library keeps visual consistency.",
+      "Affordable Plus tier.",
+      "~4 million team users (strong traction).",
+      "Free tier complete enough to get started."
+    ],
+    "cons": [
+      "AI credits limited (100 one-time free, 500/month Plus).",
+      "Unbranded export only in paid tiers (Plus+).",
+      "Cloud-only (no self-hosting).",
+      "Design less sophisticated than Adobe Express or Canva.",
+      "AI dependency can generate generic outputs."
+    ],
+    "use_cases": [
+      "Generate investor pitch deck in 30 minutes (AI).",
+      "Create polished sales presentations for clients.",
+      "Track prospect engagement via sharing analytics.",
+      "Collaborate with team on multiple slides simultaneously.",
+      "Sync company branding across presentations."
+    ]
+  }
+}

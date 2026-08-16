@@ -1,0 +1,93 @@
+{
+  "slug": "fredo6-bundle",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SketchUcation PluginStore — Fredo6 (site officiel)", "url": "https://sketchucation.com/pluginstore?pauthor=fredo6" }
+  ],
+  "facts": {
+    "what": "Suite de plugins SketchUp spécialisés dans la modélisation avancée. Le bundle Fredo6 regroupe des outils comme FredoCorner (coins arrondis), FredoScale (transformations), FredoBend (déformation de géométrie), et autres extensions pour optimiser les workflows de conception architecturale et paramétrique.",
+    "what_en": "Suite of specialized SketchUp plugins for advanced modeling. The Fredo6 Bundle groups together tools like FredoCorner (rounded corners), FredoScale (geometric transformations), FredoBend (geometry deformation), and other extensions to optimize architectural and parametric design workflows.",
+    "pricing_model": "Licence payante par plugin ou bundle groupé. Accès pérenne après achat.",
+    "free_tier": { "exists": false, "detail": "Certains plugins Fredo6 (comme LibFredo6, Joint Push Pull) restent gratuits ; le bundle payant comprend les extensions avancées." },
+    "plans": [
+      { "name": "Bundle Fredo6", "price": "Montants sur la page officielle SketchUcation" },
+      { "name": "Plugin individual", "price": "Montants sur la page officielle SketchUcation" }
+    ],
+    "key_features": [
+      "FredoCorner — arrondissement des coins et bords",
+      "FredoScale — transformations géométriques (mise à l'échelle, effilement)",
+      "FredoBend — déformation de géométrie confinée",
+      "Curviloft — génération de surfaces à partir de contours",
+      "Joint Push Pull — extrusion de faces avec plusieurs méthodes",
+      "Compatibilité SketchUp 2017+"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en architecture et avez besoin d'outils de modélisation paramétriques.",
+        "Vous arrondissez régulièrement des coins et edges.",
+        "Vous manipulez des géométries complexes et non linéaires."
+      ],
+      "avoidIf": [
+        "Vous recherchez une solution gratuite complète.",
+        "Vous faites surtout de la modélisation simple et linéaire.",
+        "SketchUp n'est pas votre CAO principal."
+      ],
+      "threshold": "Le bundle Fredo6 s'impose pour les architects et modélisateurs SketchUp sérieux ; pour un usage occasionnel, les plugins gratuits suffisent."
+    },
+    "pros": [
+      "Outils de modélisation avancée et très spécialisés.",
+      "Banque massive de plugins couvrant de nombreux cas d'usage.",
+      "Intégration serrée avec SketchUp.",
+      "Communauté large et bien documentée."
+    ],
+    "cons": [
+      "Passé d'une économie gratuite à un modèle payant partiellement.",
+      "Nombreuses dépendances entre plugins (nécessite LibFredo6).",
+      "Tarification non transparente sur la page officielle.",
+      "Apprentissage de chaque outil peut être long."
+    ],
+    "use_cases": [
+      "Concevoir des escaliers et éléments architecturaux paramétriques.",
+      "Arrondir massivement des coins et des bords en un clic.",
+      "Générer des surfaces complexes à partir de contours.",
+      "Exécuter des modélisations booléennes avancées."
+    ],
+    "relevant_for": ["Architectes SketchUp", "Modélisateurs 3D", "Designers produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a SketchUp architect needing parametric modeling tools.",
+        "You frequently round edges and corners.",
+        "You handle complex, non-linear geometries."
+      ],
+      "avoidIf": [
+        "You want a completely free solution.",
+        "You mainly do simple, linear modeling.",
+        "SketchUp is not your primary CAD tool."
+      ],
+      "threshold": "The Fredo6 Bundle makes sense for serious SketchUp architects and modelers; for occasional use, free plugins suffice."
+    },
+    "pros": [
+      "Advanced and highly specialized modeling tools.",
+      "Massive collection of plugins covering many use cases.",
+      "Tight integration with SketchUp.",
+      "Large and well-documented community."
+    ],
+    "cons": [
+      "Transitioned from free to partially paid model.",
+      "Many inter-plugin dependencies (requires LibFredo6).",
+      "Pricing is not transparent on the official page.",
+      "Learning each tool takes time."
+    ],
+    "use_cases": [
+      "Design parametric staircases and architectural elements.",
+      "Batch-round corners and edges.",
+      "Generate complex surfaces from contours.",
+      "Execute advanced boolean modeling operations."
+    ]
+  }
+}

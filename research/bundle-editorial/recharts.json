@@ -1,0 +1,94 @@
+{
+  "slug": "recharts",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Recharts (site officiel)", "url": "https://recharts.org" }
+  ],
+  "facts": {
+    "what": "Bibliothèque MIT composable pour créer des graphiques dans React. Combine la nature déclarative de React avec les capacités de D3, avec support SVG natif et dépendances minimales.",
+    "what_en": "MIT-licensed composable charting library for React. Combines React's declarative nature with D3's charting power, native SVG support, and minimal dependencies.",
+    "pricing_model": "Gratuit, open source. Licence MIT. Aucun coût pour usage personnel ou commercial.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source sous licence MIT" },
+    "plans": [
+      { "name": "Open Source (MIT)", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Composants React déclaratifs (LineChart, BarChart, AreaChart, etc.)",
+      "Support SVG natif et léger",
+      "Composants partagés (XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer)",
+      "Excellente accessibilité et performance",
+      "Documentation interactive avec exemples Storybook",
+      "Compatible avec React, Next.js, et autres frameworks React"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez avec React (incluant Next.js).",
+        "Vous avez besoin de graphiques accessibles et performants.",
+        "Vous préférez une approche déclarative et composable.",
+        "Vous cherchez une solution gratuite sans coûts de licence."
+      ],
+      "avoidIf": [
+        "Vous travaillez avec Vue, Angular, ou autres frameworks (Recharts est React-only).",
+        "Vous avez besoin de graphiques exotiques hautement personnalisés.",
+        "Vous préférez une UI graphique plutôt que du code."
+      ],
+      "threshold": "Recharts s'impose pour les projets React modernes avec graphiques ; pour Vue/Angular, Chart.js ou Plotly sont plus appropriés."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Excellente accessibilité et performance.",
+      "Approche déclarative et composable, native à React.",
+      "Documentation complète et exemples interactifs.",
+      "Dépendances minimales.",
+      "Communauté active et support GitHub."
+    ],
+    "cons": [
+      "React uniquement (pas de support Vue/Angular).",
+      "Personnalisation avancée peut être complexe.",
+      "Moins d'effets 3D ou animations que certaines alternatives commerciales."
+    ],
+    "use_cases": [
+      "Construire un tableau de bord analytique dans Next.js.",
+      "Visualiser des données de performance en temps réel.",
+      "Créer des graphiques accessibles pour un produit web."
+    ],
+    "relevant_for": ["Développeurs React", "Data analysts (code-first)", "Product teams avec stack React"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop with React (including Next.js).",
+        "You need accessible, performant charts.",
+        "You prefer a declarative, composable approach.",
+        "You seek a free solution with no licensing costs."
+      ],
+      "avoidIf": [
+        "You work with Vue, Angular, or other frameworks (Recharts is React-only).",
+        "You need exotic, heavily customized charts.",
+        "You prefer a graphical UI over code."
+      ],
+      "threshold": "Recharts is essential for modern React projects with charts; for Vue/Angular, Chart.js or Plotly fit better."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Excellent accessibility and performance.",
+      "Declarative, composable approach native to React.",
+      "Comprehensive documentation and interactive examples.",
+      "Minimal dependencies.",
+      "Active community and GitHub support."
+    ],
+    "cons": [
+      "React only (no Vue/Angular support).",
+      "Advanced customization can be complex.",
+      "Fewer 3D effects or animations than some commercial alternatives."
+    ],
+    "use_cases": [
+      "Build an analytics dashboard in Next.js.",
+      "Visualize real-time performance data.",
+      "Create accessible charts for a web product."
+    ]
+  }
+}

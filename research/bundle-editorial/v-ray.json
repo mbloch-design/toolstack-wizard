@@ -1,0 +1,101 @@
+{
+  "slug": "v-ray",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "V-Ray by Chaos (site officiel)", "url": "https://www.chaos.com/vray" }
+  ],
+  "facts": {
+    "what": "Moteur de rendu photogrammetrique récipiendaire d'Emmy et d'Academy Awards, développé par Chaos. Utilisé pour l'architecture, le design de produit, le VFX et les studios de cinéma. Disponible pour Revit, SketchUp, Rhino, 3ds Max, Cinema 4D et Blender.",
+    "what_en": "Emmy and Academy Award-winning photorealistic rendering engine developed by Chaos. Used for architecture, product design, VFX, and film studios. Available for Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, and Blender.",
+    "pricing_model": "Abonnement mensuel ou annuel par plan (Solo, Premium, Collection). Facturation en EUR. Inclus : support, ressources pédagogiques, garantie 14 jours, mises à jour continues.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement par abonnement au plan choisi." },
+    "plans": [
+      { "name": "Solo (mensuel)", "price": "€39.50/mois" },
+      { "name": "Solo (annuel)", "price": "€474/an" },
+      { "name": "Premium (mensuel)", "price": "€119/mois" },
+      { "name": "Premium (annuel)", "price": "€706.80/an" },
+      { "name": "Collection (mensuel)", "price": "€213/mois" },
+      { "name": "Collection (annuel)", "price": "€1,138.80/an" }
+    ],
+    "key_features": [
+      "Technologie de rendu photogrammetrique basée sur la physique",
+      "Rendu temps réel en ray tracing (100% ray tracing final frame)",
+      "Veras AI pour l'idéation et la génération de matériaux",
+      "15,000 à 22,000+ actifs et matériaux 3D de haute qualité selon le plan",
+      "Rendu CPU, GPU ou hybrid",
+      "Vantage rendering en temps réel (Collection)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez des rendus photogrammetriques pour des présentations pro.",
+        "Vous travaillez en architecture, design de produit ou VFX.",
+        "Vous avez besoin d'une solution reconnue à l'industrie.",
+        "Vous intégrez des outils populaires (Revit, 3ds Max, Blender, etc.)."
+      ],
+      "avoidIf": [
+        "Vous avez un budget serré et cherchez une solution gratuite.",
+        "Vous faites du rendu occasionnel ou de test.",
+        "Vous préférez un modèle de licence unique à l'abonnement."
+      ],
+      "threshold": "V-Ray est incontournable pour le rendu pro haut de gamme ; pour des besoins occasionnels, des alternatives plus abordables existent."
+    },
+    "pros": [
+      "Technologie photogrammetrique de renommée mondiale (Emmy/Academy).",
+      "Multi-plateforme (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).",
+      "IA intégrée pour l'idéation et la génération de matériaux (Veras).",
+      "Support et mises à jour continues.",
+      "Bibliothèque de matériaux très complète selon le plan."
+    ],
+    "cons": [
+      "Abonnement obligatoire (pas de licence unique).",
+      "Coût significatif, surtout pour les plans hauts (Collection).",
+      "Courbe d'apprentissage importante.",
+      "Requiert des ressources GPU/CPU conséquentes."
+    ],
+    "use_cases": [
+      "Créer des rendus photogrammetriques pour présenter une maison ou bâtiment.",
+      "Produire des images marketing pour un nouveau produit.",
+      "Concevoir des effets VFX pour une production cinéma ou série.",
+      "Générer du contenu 3D haute résolution pour un catalogue ou portfolio."
+    ],
+    "relevant_for": ["Architectes et bureaux d'études", "Designers de produit", "VFX artists", "Studios d'animation", "Agences visuelles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce photorealistic renders for professional presentations.",
+        "You work in architecture, product design, or VFX.",
+        "You need an industry-recognized solution.",
+        "You integrate popular tools (Revit, 3ds Max, Blender, etc.)."
+      ],
+      "avoidIf": [
+        "You have a tight budget and need a free solution.",
+        "You do occasional or experimental rendering.",
+        "You prefer one-time license models over subscriptions."
+      ],
+      "threshold": "V-Ray is essential for high-end professional rendering; for occasional needs, more affordable alternatives exist."
+    },
+    "pros": [
+      "World-renowned photorealistic technology (Emmy/Academy winner).",
+      "Multi-platform (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).",
+      "Built-in AI for ideation and material generation (Veras).",
+      "Support and continuous updates.",
+      "Comprehensive material library depending on plan."
+    ],
+    "cons": [
+      "Subscription mandatory (no one-time license).",
+      "Significant cost, especially for higher tiers (Collection).",
+      "Steep learning curve.",
+      "Requires substantial GPU/CPU resources."
+    ],
+    "use_cases": [
+      "Create photorealistic renders for presenting a house or building.",
+      "Produce marketing images for a new product launch.",
+      "Design VFX effects for a film or TV production.",
+      "Generate high-resolution 3D content for a catalog or portfolio."
+    ]
+  }
+}

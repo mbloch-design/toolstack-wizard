@@ -1,0 +1,105 @@
+{
+  "slug": "rightfont",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "RightFont (site officiel)", "url": "https://rightfontapp.com" }
+  ],
+  "facts": {
+    "what": "Gestionnaire de polices natif et puissant pour macOS. Consolide polices locales, bibliothèques d'équipe et Google Fonts. Intégration automatique avec Photoshop, Illustrator, Sketch, Figma et 20+ outils de design.",
+    "what_en": "Powerful native font manager for macOS. Consolidates local fonts, team libraries, and Google Fonts. Automatic integration with Photoshop, Illustrator, Sketch, Figma, and 20+ design tools.",
+    "pricing_model": "Licence unique (pas d'abonnement). Prix sur la page officielle. Discount disponible pour licences d'équipe.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai de 15 jours disponible" },
+    "plans": [
+      { "name": "Individual License", "price": "Montants sur la page officielle" },
+      { "name": "Team License", "price": "À partir de montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Gestion centralisée des polices locales (milliers de polices supportées)",
+      "Synchronisation Google Fonts native",
+      "Recherche avancée, tags personnalisés, filtres intelligents",
+      "Aperçu des polices avec comparaison flexible",
+      "Activation automatique des polices manquantes dans les applications de design",
+      "Intégration native avec Photoshop, Illustrator, Sketch, Figma, Webflow, Framer, Wix",
+      "Dark mode natif et support Apple Silicon",
+      "Browsing des glyphes et features OpenType"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes designer sur macOS avec des centaines de polices.",
+        "Vous collaborez en équipe et avez besoin de partage de polices.",
+        "Vous utilisez plusieurs outils de design (Figma, Photoshop, Sketch, etc.).",
+        "Vous appréciez l'activation automatique des polices manquantes."
+      ],
+      "avoidIf": [
+        "Vous utilisez Windows (RightFont est Mac-only).",
+        "Vous avez peu de polices et travaillez uniquement avec Google Fonts.",
+        "Vous cherchez une solution gratuite.",
+        "Vous n'utilisez qu'un seul outil de design."
+      ],
+      "threshold": "RightFont s'impose pour designers Mac avec large bibliothèque de polices ; pour usage Windows ou minimal, des solutions gratuites suffisent."
+    },
+    "pros": [
+      "Gestion centralisée de milliers de polices.",
+      "Activation automatique des polices manquantes dans les apps de design.",
+      "Intégration native avec Figma, Photoshop, Illustrator, Sketch, etc.",
+      "Synchronisation Google Fonts incluse.",
+      "Interface native macOS avec Dark Mode.",
+      "Support complet Apple Silicon.",
+      "Licence unique (pas d'abonnement)."
+    ],
+    "cons": [
+      "macOS uniquement (pas de Windows).",
+      "Prix de licence initial non affiché sur la page (vérification requise).",
+      "Moins connu que les alternatives (certains designers préfèrent Font File ou autres).",
+      "Essai limité à 15 jours."
+    ],
+    "use_cases": [
+      "Gérer une bibliothèque de 500+ polices pour équipe de design.",
+      "Activer automatiquement les polices manquantes dans un Figma file.",
+      "Organiser et chercher des polices via tags et filtres personnalisés.",
+      "Synchroniser Google Fonts avec une bibliothèque locale d'équipe."
+    ],
+    "relevant_for": ["Designers UI/UX sur Mac", "Design teams", "Équipes créatives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a designer on macOS with hundreds of fonts.",
+        "You collaborate in a team and need font sharing.",
+        "You use multiple design tools (Figma, Photoshop, Sketch, etc.).",
+        "You appreciate automatic activation of missing fonts."
+      ],
+      "avoidIf": [
+        "You use Windows (RightFont is Mac-only).",
+        "You have few fonts and work only with Google Fonts.",
+        "You seek a free solution.",
+        "You use only one design tool."
+      ],
+      "threshold": "RightFont is essential for Mac designers with large font libraries; for Windows or minimal use, free solutions suffice."
+    },
+    "pros": [
+      "Centralized management of thousands of fonts.",
+      "Automatic activation of missing fonts in design apps.",
+      "Native integration with Figma, Photoshop, Illustrator, Sketch, etc.",
+      "Google Fonts sync included.",
+      "Native macOS interface with Dark Mode.",
+      "Full Apple Silicon support.",
+      "One-time license (no subscription)."
+    ],
+    "cons": [
+      "macOS only (no Windows).",
+      "License price not displayed on website (verification needed).",
+      "Less well-known than alternatives (some designers prefer Font File or others).",
+      "Limited to 15-day trial."
+    ],
+    "use_cases": [
+      "Manage a library of 500+ fonts for a design team.",
+      "Automatically activate missing fonts in a Figma file.",
+      "Organize and search fonts via custom tags and filters.",
+      "Sync Google Fonts with a team's local library."
+    ]
+  }
+}

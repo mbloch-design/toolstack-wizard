@@ -1,0 +1,91 @@
+{
+  "slug": "fredocorner",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SketchUcation PluginStore — FredoCorner (site officiel)", "url": "https://sketchucation.com/plugin/2120-fredocorner" }
+  ],
+  "facts": {
+    "what": "Plugin SketchUp spécialisé dans l'arrondissement des coins et des bords. FredoCorner arrondit les arêtes vives d'une sélection avec un contrôle fin du rayon et des angles.",
+    "what_en": "Specialized SketchUp plugin for rounding corners and edges. FredoCorner smooths sharp edges of a selection with fine control over radius and corner angles.",
+    "pricing_model": "Licence payante. Extension devenue payante après 10+ ans de distribution gratuite.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours ; après, achat de licence requis via SketchUcation." },
+    "plans": [
+      { "name": "FredoCorner", "price": "Montants sur la page officielle SketchUcation" }
+    ],
+    "key_features": [
+      "Arrondissement des coins et des bords par rayon",
+      "Contrôle granulaire des angles d'arrondi",
+      "Application batch sur sélection multiple",
+      "Géométrie non-destructive (modifiable après)",
+      "Compatibilité SketchUp 2017+"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous arrondissez régulièrement des arêtes dans vos modèles.",
+        "Vous travaillez en design produit ou architecture avec des coins lisses.",
+        "Vous avez besoin d'un contrôle fin du rayon d'arrondi."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit pour les coins arrondis.",
+        "Vous arrondissez très rarement.",
+        "Les raccourcis SketchUp natifs vous suffisent."
+      ],
+      "threshold": "FredoCorner s'impose si vous arrondissez systématiquement des coins ; sinon, les outils gratuits SketchUp suffisent."
+    },
+    "pros": [
+      "Outil extrêmement spécialisé et rapide.",
+      "Contrôle précis du rayon et des paramètres.",
+      "Interface simple et intuitive.",
+      "Très utilisé dans la communauté SketchUp."
+    ],
+    "cons": [
+      "Outil à usage très spécifique (arrondissement seulement).",
+      "Passé du gratuit au payant récemment.",
+      "Nécessite LibFredo6 comme dépendance.",
+      "Prix non affiché publiquement."
+    ],
+    "use_cases": [
+      "Arrondir les coins d'une pièce de mobilier.",
+      "Lisser les arêtes d'un boîtier produit.",
+      "Traiter des coins multiples en batch.",
+      "Concevoir des profils avec arêtes biseautées."
+    ],
+    "relevant_for": ["Designers produit SketchUp", "Architectes d'intérieur", "Modélisateurs 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly round edges in your models.",
+        "You work in product design or architecture with smooth corners.",
+        "You need fine-grained control over rounding radius."
+      ],
+      "avoidIf": [
+        "You want a free corner-rounding tool.",
+        "You rarely round edges.",
+        "SketchUp's built-in tools suffice."
+      ],
+      "threshold": "FredoCorner makes sense if you systematically round corners; otherwise, free SketchUp tools are enough."
+    },
+    "pros": [
+      "Highly specialized and fast tool.",
+      "Precise control over radius and parameters.",
+      "Simple and intuitive interface.",
+      "Very popular in the SketchUp community."
+    ],
+    "cons": [
+      "Tool for a very specific use case (rounding only).",
+      "Recently transitioned from free to paid.",
+      "Requires LibFredo6 as a dependency.",
+      "Pricing not publicly displayed."
+    ],
+    "use_cases": [
+      "Round the corners of a furniture piece.",
+      "Smooth the edges of a product enclosure.",
+      "Batch-process multiple corners.",
+      "Design profiles with beveled edges."
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "plasticity",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Plasticity — 3D CAD Modeling (site officiel)", "url": "https://www.plasticity.xyz/" }
+  ],
+  "facts": {
+    "what": "Modeleur 3D NURBS basé sur les kernels Parasolid et xNURBS, conçu pour surfacing CAD et design concept sans historique de modélisation.",
+    "what_en": "NURBS-based 3D modeler using Parasolid and xNURBS kernels, designed for CAD surfacing and concept design without constraint-laden history workflows.",
+    "pricing_model": "Licence perpétuelle unique (pas abonnement). Paiement unique Indie ou Studio tier, versions de perpétuelle jusqu'à 30 jours d'essai gratuit.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit complet et sans limitation pour 30 jours (fonctionnalités identiques à version payante)." },
+    "plans": [
+      { "name": "Indie or Studio (one-time)", "price": "$149 (one-time purchase, perpetual license)" }
+    ],
+    "key_features": [
+      "Surfacing NURBS avancé pour design concept et produit",
+      "Outils de filets (fillets) sophistiqués",
+      "Édition directe et modification d'historique réduite",
+      "Kernels Parasolid et xNURBS pour précision extrême",
+      "Support design industriel, design véhicules, game art",
+      "Interfaces artist-friendly sans contraintes d'historique",
+      "Prise en charge complète de la géométrie complexe",
+      "Essai gratuit 30 jours sans limitation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du design industriel, produit ou concept 3D avec surface complexity.",
+        "Vous cherchez alternative légère à Rhino ou Fusion 360 sans abonnement mensuel.",
+        "Vous aimez workflows directs (édition directe sans arborescence d'historique).",
+        "Vous êtes artist/designer plutôt qu'ingénieur CAO classique."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de CAO mécanique industrielle poussée (Fusion 360, Creo mieux).",
+        "Vous refusez tout achat, même unique.",
+        "Vous faites de la modélisation paramétrique complexe (historique important)."
+      ],
+      "threshold": "Plasticity excelle pour designers concept et artistes 3D ; performance CAO precision sans les shackles d'un historique lourd — meilleure valeur vs abonnements."
+    },
+    "pros": [
+      "Licence perpétuelle en achat unique — pas d'abonnement récurrent.",
+      "Excellent rapport qualité-prix face à Rhino, Fusion 360 ou Maya.",
+      "Surfacing NURBS de pointe avec kernels Parasolid/xNURBS.",
+      "Workflows directs (édition directe) sans frustration d'arborescence.",
+      "Interface orientée artist — courbe d'apprentissage douce.",
+      "Essai gratuit 30 jours complet (tester vraiment avant achat).",
+      "Parfait pour design concept, vehicule, game art."
+    ],
+    "cons": [
+      "Moins d'outils CAO mécanique que Fusion 360 ou Rhino.",
+      "Communauté et ressources moins développées (Rhino/Fusion + grandes).",
+      "Pas de simulation FEA ou CFD (dédiée au design, pas ingénierie).",
+      "Actuellement macOS only ou limitations Windows vs alternatives.",
+      "Apprentissage NURBS reste non-trivial même pour artists."
+    ],
+    "use_cases": [
+      "Designer un boîtier produit avec surfaces courbes polies.",
+      "Concevoir design véhicule ou mobilier de forme complexe.",
+      "Créer assets 3D game art avec surfaces organiques.",
+      "Modéliser prototypes rapidement sans contraintes d'historique.",
+      "Retoucher formes et surfaces pour itération rapide client."
+    ],
+    "relevant_for": ["Designers industriels", "Designers produit", "Game artists", "Concept designers", "Designers de mobilier"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do industrial, product, or 3D concept design with surface complexity.",
+        "You want a lightweight alternative to Rhino or Fusion 360 without monthly subscriptions.",
+        "You prefer direct workflows (direct edit without history trees).",
+        "You're an artist/designer rather than a traditional mechanical CAD engineer."
+      ],
+      "avoidIf": [
+        "You need heavy mechanical CAD (Fusion 360, Creo better).",
+        "You refuse any purchase, even one-time.",
+        "You do complex parametric modeling (history critical)."
+      ],
+      "threshold": "Plasticity wins for concept designers and 3D artists; CAD precision without heavy-history shackles—best value vs subscriptions."
+    },
+    "pros": [
+      "Perpetual one-time license—no recurring subscription.",
+      "Excellent value against Rhino, Fusion 360 or Maya.",
+      "Top-tier NURBS surfacing with Parasolid/xNURBS kernels.",
+      "Direct workflows (direct edit) without history-tree frustration.",
+      "Artist-oriented interface—gentle learning curve.",
+      "Full 30-day free trial (really test before buying).",
+      "Perfect for concept design, vehicle, game art."
+    ],
+    "cons": [
+      "Fewer mechanical CAD tools than Fusion 360 or Rhino.",
+      "Smaller community and fewer resources (Rhino/Fusion bigger).",
+      "No FEA simulation or CFD (design-focused, not engineering).",
+      "Currently macOS-first or Windows limitations vs alternatives.",
+      "NURBS learning still non-trivial even for artists."
+    ],
+    "use_cases": [
+      "Design a product enclosure with polished curved surfaces.",
+      "Conceive vehicle or furniture design with complex form.",
+      "Create game art 3D assets with organic surfaces.",
+      "Model prototypes rapidly without history constraints.",
+      "Refine shapes and surfaces for quick client iteration."
+    ]
+  }
+}

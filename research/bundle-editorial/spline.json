@@ -1,0 +1,98 @@
+{
+  "slug": "spline",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Spline (site officiel)", "url": "https://spline.design" }
+  ],
+  "facts": {
+    "what": "Plateforme web de design 3D et 2D collaboratif en temps réel avec canvas infini. Permet de créer des expériences interactives production-ready : sites web 3D, animations, prototypes interactifs, exports multi-plateformes (web, iOS, Android).",
+    "what_en": "Web-based collaborative 3D and 2D design platform with real-time rendering and infinite canvas. Build production-ready interactive experiences: 3D websites, animations, prototypes, multi-platform exports.",
+    "pricing_model": "Freemium : tier gratuit + abonnements payants",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec canvas illimité et exports watermarked." },
+    "plans": [
+      { "name": "Free", "price": "€0" },
+      { "name": "Starter", "price": "$12/mois" },
+      { "name": "Professional", "price": "$20/mois" },
+      { "name": "AI features add-on", "price": "$5/mois par siège (2000 crédits AI/mois)" }
+    ],
+    "key_features": [
+      "Modélisation 3D avec primitives et matériaux personnalisés",
+      "Animation et interactivité (états, événements, timeline)",
+      "Physics et particules",
+      "Variables et intégration données (APIs, webhooks)",
+      "Collaboration temps réel avec commentaires",
+      "Exports web, iOS, Android",
+      "Bibliothèque de composants et templates communautaires"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des sites web ou expériences 3D interactives.",
+        "Vous cherchez un outil 3D low-barrier pour designers (pas de programmation)",
+        "Vous voulez explorer le 3D sans investissement initial."
+      ],
+      "avoidIf": [
+        "Vous faites de la modélisation 3D profesionnelle haute-fidélité.",
+        "Vous avez besoin de precision engineering (CAO).",
+        "Vous cherchez un outil desktop natif."
+      ],
+      "threshold": "Spline gagne pour la création web 3D et les expériences interactives ; pour la modélisation professionnelle ou CAO, Blender/SolidWorks conviendraient mieux."
+    },
+    "pros": [
+      "Tier gratuit puissant (canvas illimité, exports watermarked).",
+      "Interface intuitive, pas besoin de coder.",
+      "Collaboration temps réel excellente.",
+      "Exports multi-plateforme (web, iOS, Android).",
+      "Intégration APIs et webhooks facile."
+    ],
+    "cons": [
+      "Limité au navigateur (pas d'app desktop).",
+      "Exports gratuits watermarked.",
+      "Moins puissant que Blender pour la modélisation complexe.",
+      "Pas d'outils de rendu photorealiste avancés."
+    ],
+    "use_cases": [
+      "Créer un portfolio 3D interactif.",
+      "Concevoir un hero 3D pour une landing page.",
+      "Animer un produit en 3D pour la démo.",
+      "Prototyper une expérience web immersive."
+    ],
+    "relevant_for": ["Designers web", "Créateurs de contenu 3D", "UX/UI designers ambitieux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create interactive web experiences or 3D content.",
+        "You want a low-barrier 3D tool for designers (no coding).",
+        "You want to explore 3D without upfront investment."
+      ],
+      "avoidIf": [
+        "You do professional high-fidelity 3D modeling.",
+        "You need precision engineering (CAD).",
+        "You want a native desktop app."
+      ],
+      "threshold": "Spline works for web 3D and interactive experiences; for professional modeling or CAD, Blender/SolidWorks fit better."
+    },
+    "pros": [
+      "Powerful free tier (unlimited canvas, watermarked exports).",
+      "Intuitive UI, no coding required.",
+      "Excellent real-time collaboration.",
+      "Multi-platform exports (web, iOS, Android).",
+      "Easy APIs and webhooks integration."
+    ],
+    "cons": [
+      "Browser-only (no desktop app).",
+      "Free exports are watermarked.",
+      "Less powerful than Blender for complex modeling.",
+      "No advanced photorealistic rendering tools."
+    ],
+    "use_cases": [
+      "Build an interactive 3D portfolio.",
+      "Design a 3D hero for a landing page.",
+      "Animate a product in 3D for demo.",
+      "Prototype an immersive web experience."
+    ]
+  }
+}
