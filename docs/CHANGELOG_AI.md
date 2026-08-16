@@ -3292,3 +3292,11 @@ Labels : Coup d'œil, Verdict, Critères, Coût, Features, Seuil, Attention, Alt
 - Coût réel précède les features pour ancrer la réalité budgétaire
 - Le seuil de bascule clôt la partie décisionnelle avant les erreurs
 - Build : ✅ 0 erreur, 156 warnings pré-existants
+
+# 2026-08-16 — Guide d’audit de stack SaaS
+
+- Publication d’un guide opérationnel pour auditer une stack en 45 minutes sans déclencher de migration improvisée.
+- La méthode distingue inventaire, rôles, sources de vérité, usage réel, dépendances et coût de sortie avant toute décision.
+- Ajout d’une matrice claire « garder / challenger / remplacer / supprimer », d’un exemple pédagogique explicitement non tarifaire et de garde-fous sur les données, paiements et accès partagés.
+- Ajout des métadonnées SEO, des FAQ structurées, des liens vers Ma Stack et Comparatifs, ainsi que de trois visuels éditoriaux avec textes alternatifs.
+- Synchronisation des sources `src` et `public` et validation du rendu prerender Article + FAQ sur la base actuelle de `main`.
