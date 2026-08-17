@@ -1,0 +1,97 @@
+{
+  "slug": "signrequest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SignRequest — E-signatures (site officiel)", "url": "https://signrequest.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de signatures électroniques simples et légales : signe des PDF, documents Word, Excel et Google avec 100% légalement contraignant et sans impression/scan.",
+    "what_en": "Simple and legal e-signature platform: sign PDFs, Word, Excel and Google docs with full legal binding, no printing/scanning.",
+    "pricing_model": "Abonnement par formule avec tarification flexible. Essai gratuit 14 jours.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit 14 jours sans carte bancaire requise." },
+    "plans": [
+      { "name": "Plans tiered", "price": "Montants sur la page officielle (par utilisation ou abonnement)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Signatures électroniques 100% légalement contraignantes",
+      "Support PDF, Word, Excel, Google Docs, Google Sheets",
+      "Certificat ISO 27001",
+      "SSL 256-bit chiffrement (endpoints sécurisés)",
+      "Intégrations : Microsoft Flow, Dropbox, M-Files, Formdesk, TOPdesk",
+      "Compliance international (eIDAS, conforme légalité)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous signez régulièrement contrats ou documents légaux.",
+        "Vous voulez éviter imprimante/scanner/envoi papier.",
+        "Vous travaillez avec clients internationaux."
+      ],
+      "avoidIf": [
+        "Vous signerez très rarement (une fois par an).",
+        "Budget à zéro.",
+        "Vous préférez signature papier."
+      ],
+      "threshold": "SignRequest pour organisations signant régulièrement ; pour occasionnel, imprimer/scanner suffit."
+    },
+    "pros": [
+      "Légalement contraignant internationalement.",
+      "100% certifié ISO 27001.",
+      "Signe n'importe quel format (PDF, Office, Google).",
+      "Essai 14 jours gratuit.",
+      "Intégrations robustes (M-Files, Dropbox, Flow)."
+    ],
+    "cons": [
+      "Tarification personnalisée (contact ventes).",
+      "Pas de version gratuite permanente.",
+      "Nécessite adoption utilisateur."
+    ],
+    "use_cases": [
+      "Signature de contrats et accords légaux.",
+      "Signatures de documents administratifs.",
+      "Onboarding et acceptance documents.",
+      "NDA et contrats d'emploi numériques."
+    ],
+    "relevant_for": [
+      "Juristes et departments légal",
+      "RH et onboarding",
+      "Gestionnaires de contrats"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sign contracts or legal documents regularly.",
+        "You want to avoid printer/scanner/paper mailing.",
+        "You work with international clients."
+      ],
+      "avoidIf": [
+        "You sign very rarely (once a year).",
+        "Budget is zero.",
+        "You prefer paper signature."
+      ],
+      "threshold": "SignRequest for organizations signing regularly; for occasional use, print/scan suffices."
+    },
+    "pros": [
+      "Legally binding internationally.",
+      "100% ISO 27001 certified.",
+      "Signs any format (PDF, Office, Google).",
+      "14-day free trial.",
+      "Robust integrations (M-Files, Dropbox, Flow)."
+    ],
+    "cons": [
+      "Personalized pricing (contact sales).",
+      "No permanent free version.",
+      "Requires user adoption."
+    ],
+    "use_cases": [
+      "Sign legal contracts and agreements.",
+      "Administrative document signatures.",
+      "Onboarding and acceptance documents.",
+      "Digital NDAs and employment contracts."
+    ]
+  }
+}

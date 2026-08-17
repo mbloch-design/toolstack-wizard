@@ -1,0 +1,101 @@
+{
+  "slug": "obsidian",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Obsidian — Prise de notes privée (site officiel)", "url": "https://obsidian.md" }
+  ],
+  "facts": {
+    "what": "Application de prise de notes locale et privée : stocke fichiers Markdown sur votre appareil, crée des wikis personnels avec liaisons bidirectionnelles et graphe de connexions visuelles.",
+    "what_en": "Local and private note-taking app: stores Markdown files on your device, creates personal wikis with backlinks and visual connection graphs.",
+    "pricing_model": "Freemium : application gratuite avec services optionnels payants (Sync, Publish).",
+    "free_tier": { "exists": true, "detail": "Gratuit sans limitations pour la prise de notes locale. Services additionnels (Sync, Publish) sont payants." },
+    "plans": [
+      { "name": "Base (gratuit)", "price": "0 $ (app et prise de notes illimitée)" },
+      { "name": "Sync", "price": "Montants sur la page officielle (synchronisation cryptée inter-appareils)" },
+      { "name": "Publish", "price": "Montants sur la page officielle (publication en wiki en ligne)" }
+    ],
+    "key_features": [
+      "Prise de notes locale (pas de cloud forçé)",
+      "Liaisons bidirectionnelles et graphe de pensées",
+      "Canvas infini pour brainstorming",
+      "Cryptage de bout en bout pour sync",
+      "Milliers de plugins et thèmes community",
+      "Historique de versions et vaults partagés",
+      "Propriété totale des fichiers (format ouvert Markdown)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez la propriété totale de vos notes (zéro lock-in).",
+        "Vous appréciez une prise de notes hors-ligne et privée.",
+        "Vous construisez un deuxième cerveau (wikis personnels)."
+      ],
+      "avoidIf": [
+        "Vous cherchez collaboration temps réel avec équipe.",
+        "Vous voulez une solution zéro-friction (Obsidian demande config).",
+        "Vous refusez tout logiciel à installer."
+      ],
+      "threshold": "Obsidian prime pour les chercheurs et penseurs solo ; pour équipes collaboratives ou cloud-first, un espace collaboratif convient mieux."
+    },
+    "pros": [
+      "Totalement gratuit et hors-ligne pour usage basique.",
+      "Propriété complète et formats ouverts (Markdown).",
+      "Écosystème plugins massif (1000+).",
+      "Sécurité et confidentialité absolues.",
+      "Sync optionnel avec chiffrement E2E."
+    ],
+    "cons": [
+      "Courbe apprentissage (syntaxe Markdown, config plugins).",
+      "Pas de collaboration temps réel native.",
+      "Services additionnels (Sync/Publish) sont payants.",
+      "Faible discoverabilité pour les nouveaux venus."
+    ],
+    "use_cases": [
+      "Construire un deuxième cerveau (PKM — Personal Knowledge Management).",
+      "Prendre des notes de recherche hors-ligne.",
+      "Créer un wiki personnel ou jardin numérique.",
+      "Gérer des pensées connectées (philosophie, idées)."
+    ],
+    "relevant_for": [
+      "Chercheurs, étudiants et académiques",
+      "Écrivains et penseurs indépendants",
+      "Professionnels en gestion de connaissance (Knowledge workers)"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want full ownership of your notes (zero lock-in).",
+        "You value offline and private note-taking.",
+        "You build a second brain (personal wikis)."
+      ],
+      "avoidIf": [
+        "You need real-time team collaboration.",
+        "You want zero-friction, no-setup solution.",
+        "You refuse any desktop software installation."
+      ],
+      "threshold": "Obsidian excels for solo thinkers and researchers; for collaborative teams or cloud-first workflows, a collaborative space works better."
+    },
+    "pros": [
+      "Completely free and offline for basic use.",
+      "Full ownership and open formats (Markdown).",
+      "Massive plugin ecosystem (1000+).",
+      "Absolute security and privacy.",
+      "Optional sync with E2E encryption."
+    ],
+    "cons": [
+      "Learning curve (Markdown syntax, plugin config).",
+      "No native real-time collaboration.",
+      "Additional services (Sync/Publish) are paid.",
+      "Low discoverability for newcomers."
+    ],
+    "use_cases": [
+      "Build a second brain (PKM — Personal Knowledge Management).",
+      "Take research notes offline.",
+      "Create a personal wiki or digital garden.",
+      "Manage connected thoughts (philosophy, ideas)."
+    ]
+  }
+}

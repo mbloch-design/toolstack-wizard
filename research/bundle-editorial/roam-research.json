@@ -1,0 +1,100 @@
+{
+  "slug": "roam-research",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Roam Research — Graph-based thinking (site officiel)", "url": "https://roamresearch.com" }
+  ],
+  "facts": {
+    "what": "Application de prise de notes basée sur graphe pour pensée exploratoire : relie les notes de manière bidirectionnelle et visualise les connexions conceptuelles.",
+    "what_en": "Graph-based note-taking app for exploratory thinking: links notes bidirectionally and visualizes conceptual connections.",
+    "pricing_model": "Abonnement mensuel ou annuel avec deux tiers principaux (Pro, Believer).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit 31 jours." },
+    "plans": [
+      { "name": "Pro", "price": "15 $/mois ou 165 $/an" },
+      { "name": "Believer", "price": "500 $ pour 5 ans (plan long terme)" }
+    ],
+    "key_features": [
+      "Prise de notes basée graphe (networked thought)",
+      "Liaisons bidirectionnelles et visualisation de graphes",
+      "Blocs et pages interconnectées",
+      "Recherche et navigation par graphe",
+      "Workflows d'organisation non-linéaires",
+      "API et intégrations développeur",
+      "Sync multi-appareils"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous pensez en réseau (concepte connectés, non linéaire).",
+        "Vous recherchez un outil unique spécialisé pensée profonde.",
+        "Vous acceptez une courbe apprentissage raide."
+      ],
+      "avoidIf": [
+        "Vous voulez une app simple et intuitive.",
+        "Budget très serré (prix élevé).",
+        "Vous avez besoin de collaboration d'équipe."
+      ],
+      "threshold": "Roam Research pour chercheurs et penseurs spécialisés en pensée en réseau ; pour usage général ou équipe, une alternative plus accessible convient."
+    },
+    "pros": [
+      "Concept puissant : pensée en graphe et en réseau.",
+      "Communauté engagée et resources d'apprentissage.",
+      "Flexibilité extrême pour workflows non-linéaires.",
+      "Plan Believer intéressant (5 ans à 500$)."
+    ],
+    "cons": [
+      "Tarification élevée (15 $/mois).",
+      "Courbe apprentissage très importante.",
+      "Pas de version gratuite ni freemium.",
+      "Pas de collaboration native d'équipe.",
+      "Moins intéressant pour usage simple prise de notes."
+    ],
+    "use_cases": [
+      "Chercheurs explorant des domaines complexes.",
+      "Écrivains organisant idées interconnectées.",
+      "Étudiants en thèse construisant argument conceptuel.",
+      "Penseurs intéressés par PKM avancé."
+    ],
+    "relevant_for": [
+      "Chercheurs et académiques",
+      "Écrivains et penseurs spécialisés",
+      "Étudiants en master/doctorat"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You think in networks (connected concepts, non-linear).",
+        "You seek a tool specialized for deep networked thinking.",
+        "You accept a steep learning curve."
+      ],
+      "avoidIf": [
+        "You want a simple and intuitive app.",
+        "Budget is tight (high price).",
+        "You need native team collaboration."
+      ],
+      "threshold": "Roam Research for researchers and specialists in networked thinking; for general use or teams, a more accessible alternative fits better."
+    },
+    "pros": [
+      "Powerful concept: graph and networked thinking.",
+      "Engaged community and learning resources.",
+      "Extreme flexibility for non-linear workflows.",
+      "Believer plan interesting (5 years for $500)."
+    ],
+    "cons": [
+      "High pricing ($15/month).",
+      "Very steep learning curve.",
+      "No free or freemium option.",
+      "No native team collaboration.",
+      "Less suited for basic note-taking use cases."
+    ],
+    "use_cases": [
+      "Researchers exploring complex domains.",
+      "Writers organizing interconnected ideas.",
+      "Graduate students building conceptual arguments.",
+      "Thinkers interested in advanced PKM."
+    ]
+  }
+}

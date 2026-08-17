@@ -1,0 +1,99 @@
+{
+  "slug": "process-street",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Process Street — Compliance Operations (site officiel)", "url": "https://process.st" }
+  ],
+  "facts": {
+    "what": "Plateforme d'opérations de conformité : gère les politiques, automatise les workflows avec IA, centralise les preuves d'audit et surveille les risques de conformité en temps réel.",
+    "what_en": "Compliance operations platform: manages policies, automates workflows with AI, centralizes audit evidence and monitors compliance risks in real-time.",
+    "pricing_model": "Abonnement avec tarification par niveau (contact commercial pour détails). Offre d'essai et démo enterprise.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit ou démo commercial disponibles." },
+    "plans": [
+      { "name": "Plans tiered", "price": "Montants sur la page officielle (à partir du niveau Starter)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Gestion centralisée des politiques (Docs)",
+      "Workflows IA-pilotés (Ops)",
+      "Agent de conformité IA 24/7 (Cora) : monitore régulations, automatise tâches, signale risques",
+      "Visibility opérationnelle temps réel",
+      "Conformité audit-ready (ISO 9001, SOC 2, SOX, FDA)",
+      "Searchable policies et SOPs",
+      "Intégrations outils business existants",
+      "Analytics et insights"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez équipes et devez faire preuve de conformité régulière.",
+        "Vous avez des obligations audit (ISO, SOC 2, FDA, etc.).",
+        "Vous cherchez automation pour réduire tâches manuelles."
+      ],
+      "avoidIf": [
+        "Budget très serré (plateforme enterprise).",
+        "Vous n'avez quasi aucune obligation de conformité.",
+        "Vous préférez gérer manuellement les politiques."
+      ],
+      "threshold": "Process Street s'impose pour organisations avec conformité stricte ; pour petite équipe sans audits, une doc simple suffit."
+    },
+    "pros": [
+      "Spécialisée conformité : couvre ISO, SOC 2, SOX, FDA.",
+      "Agent IA Cora : surveille réglementations et crée alertes 24/7.",
+      "Workflows IA : réduit travail manuel pour tâches répétitives.",
+      "Preuves audit centralisées (papier blanc gratuit).",
+      "3000+ entreprises utilisent la plateforme."
+    ],
+    "cons": [
+      "Tarification d'entreprise (pas accessible petites structures).",
+      "Onboarding complexe (beaucoup de configurations).",
+      "Nécessite buy-in équipe pour succès."
+    ],
+    "use_cases": [
+      "Maintenir conformité ISO 9001 ou SOC 2 certifiée.",
+      "Automatiser audits internes et tâches de compliance.",
+      "Centraliser et déployer politiques multi-site.",
+      "Répondre à des demandes d'audit fournisseurs/clients."
+    ],
+    "relevant_for": [
+      "Organisations avec obligations audit strictes",
+      "Équipes compliance et qualité",
+      "Managers opérationnels et directeurs qualité"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage teams and must demonstrate regular compliance.",
+        "You have audit obligations (ISO, SOC 2, FDA, etc.).",
+        "You seek automation to reduce manual compliance tasks."
+      ],
+      "avoidIf": [
+        "Budget is very tight (enterprise platform).",
+        "You have almost no compliance requirements.",
+        "You prefer to manage policies manually."
+      ],
+      "threshold": "Process Street works for organizations with strict compliance; for small teams without audits, simple documentation suffices."
+    },
+    "pros": [
+      "Compliance-specialized: covers ISO, SOC 2, SOX, FDA.",
+      "AI agent Cora: monitors regulations and creates alerts 24/7.",
+      "AI workflows: reduce manual work for repetitive tasks.",
+      "Centralized audit evidence (white paper included).",
+      "3000+ companies use the platform."
+    ],
+    "cons": [
+      "Enterprise-tier pricing (not accessible to small orgs).",
+      "Complex onboarding (many configurations).",
+      "Requires team buy-in for success."
+    ],
+    "use_cases": [
+      "Maintain ISO 9001 or SOC 2 certified compliance.",
+      "Automate internal audits and compliance tasks.",
+      "Centralize and deploy policies across multiple sites.",
+      "Respond to supplier/customer audit requests."
+    ]
+  }
+}

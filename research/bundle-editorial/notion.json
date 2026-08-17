@@ -1,0 +1,103 @@
+{
+  "slug": "notion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Notion — Workspace IA (site officiel)", "url": "https://www.notion.com" }
+  ],
+  "facts": {
+    "what": "Workspace IA centralisé pour capturer et organiser la connaissance d'équipe : documents, projets, base de données, calendrier et IA intégrée pour recherche et automatisation.",
+    "what_en": "Centralized AI workspace for capturing and organizing team knowledge: docs, projects, databases, calendar and integrated AI for search and automation.",
+    "pricing_model": "Abonnement par utilisateur avec options gratuit, Plus, Business et Enterprise.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec limitations : historique 7 jours, fichiers jusqu'à 5 MB, 10 invités externes, blocs collaboratifs limités." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (version gratuite limitée)" },
+      { "name": "Plus", "price": "10 $/membre/mois (facturation annuelle) ou 12 $/mois (mensuel)" },
+      { "name": "Business", "price": "20 $/membre/mois (facturation annuelle, inclut IA)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Saisie centralisée des connaissances (tout en un seul système)",
+      "Réponses instantanées avec IA Notion (avec citations)",
+      "Agents personnalisés IA",
+      "Notes de réunion IA",
+      "Moteur de recherche enterprise",
+      "Bases de données relationnelles",
+      "Projets et kanban intégrés",
+      "Calendrier collaboratif"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous centralisez documentation et projets d'équipe.",
+        "Vous avez besoin d'IA pour chercher infos rapidement.",
+        "Vous gérez des bases de données et workflows complexes."
+      ],
+      "avoidIf": [
+        "Vous voulez un outil 100% gratuit pour toujours.",
+        "Vous avez seulement besoin de prise de notes simple.",
+        "Vous refusez les frais par personne dans l'équipe."
+      ],
+      "threshold": "Notion s'impose pour les équipes centralisant connaissance et projets ; pour des notes seules ou budget zéro, d'autres solutions existent."
+    },
+    "pros": [
+      "Flexibilité extrême : database, docs, wikis, projets en un seul espace.",
+      "IA intégrée pour recherche et automation.",
+      "Free tier solide pour débuter.",
+      "Très populaire : grand marché de templates.",
+      "Estimé par 98% des Forbes Cloud 100 (OpenAI, Figma, Vercel, Discord)."
+    ],
+    "cons": [
+      "Tarification par personne (coûteux grande équipe).",
+      "Courbe apprentissage : beaucoup de configurations possibles.",
+      "Nécessite Business plan pour les features IA avancées.",
+      "Performance peut ralentir sur bases de données très grandes."
+    ],
+    "use_cases": [
+      "Wiki d'entreprise centralisé (base de connaissances).",
+      "Gestion de projets avec listes de tâches interconnectées.",
+      "CRM ou gestion de leads (avec database relationnelle).",
+      "Documentation de produit ou SOPs d'équipe."
+    ],
+    "relevant_for": [
+      "Petites équipes et startups",
+      "Équipes produit et engineering",
+      "Gestionnaires de projets et PM"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You centralize team documentation and projects.",
+        "You need AI to search info quickly.",
+        "You manage complex databases and workflows."
+      ],
+      "avoidIf": [
+        "You want a permanently free tool.",
+        "You only need simple note-taking.",
+        "You refuse per-person team costs."
+      ],
+      "threshold": "Notion works for teams centralizing knowledge and projects; for basic notes or zero budget, other solutions exist."
+    },
+    "pros": [
+      "Extreme flexibility: databases, docs, wikis, projects in one space.",
+      "Built-in AI for search and automation.",
+      "Solid free tier to start.",
+      "Very popular with large template marketplace.",
+      "Trusted by 98% of Forbes Cloud 100 (OpenAI, Figma, Vercel, Discord)."
+    ],
+    "cons": [
+      "Per-person pricing (expensive for larger teams).",
+      "Learning curve: many configuration options.",
+      "Requires Business plan for advanced AI features.",
+      "Performance can slow on very large databases."
+    ],
+    "use_cases": [
+      "Centralized company wiki (knowledge base).",
+      "Project management with interconnected task lists.",
+      "CRM or lead management (via relational database).",
+      "Product documentation or team SOPs."
+    ]
+  }
+}

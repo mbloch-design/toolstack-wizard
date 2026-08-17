@@ -1,0 +1,100 @@
+{
+  "slug": "reflect-notes",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Reflect — Note-taking avec IA (site officiel)", "url": "https://reflect.app" }
+  ],
+  "facts": {
+    "what": "Application de prise de notes avec graphe de pensées et IA : relie les notes avec backlinks, syncs sur appareils, offre transcription vocale et assistants IA basés sur GPT-4.",
+    "what_en": "Note-taking app with thought graphs and AI: links notes with backlinks, syncs across devices, offers voice transcription and AI assistants based on GPT-4.",
+    "pricing_model": "Abonnement mensuel unique (une seule formule). Aucun étagement tarifaire.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès complet inclus dans l'abonnement mensuel unique." },
+    "plans": [
+      { "name": "Reflect Premium", "price": "10 $/mois (facturation annuelle)" }
+    ],
+    "key_features": [
+      "Notes liées en graphe (backlinks, forward links)",
+      "Sync cross-device (iOS, macOS, web)",
+      "Chiffrement de bout en bout",
+      "Assistants IA avec GPT-4 et Whisper",
+      "Transcription vocale intégrée",
+      "Clippeur web et sync Kindle",
+      "Intégration calendrier (agenda, réunions)",
+      "Publication d'une note en un clic"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prenez notes et construisez un deuxième cerveau interconnecté.",
+        "Vous apprécier l'IA intégrée (transcription, récriture).",
+        "Vous travaillez multi-appareil (ordi + mobile)."
+      ],
+      "avoidIf": [
+        "Vous voulez une collaboration d'équipe native.",
+        "Vous refusez tout frais d'abonnement (cherchez gratuit).",
+        "Vous préférez une interface plus simple/minimaliste."
+      ],
+      "threshold": "Reflect brille pour penseurs solo avec IA ; pour équipes collaboratives, une app partagée convient mieux."
+    },
+    "pros": [
+      "Tarification unique et simple : 10 $/mois.",
+      "IA intégrée GPT-4 : transcription, amélioration texte, pensée.",
+      "Chiffrement E2E pour confidentialité.",
+      "Sync instantané multi-appareil.",
+      "Graphe de pensées : voir connexions entre notes."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Pas de collaboration temps réel avec équipe.",
+      "Peut être perçu comme basique vs outils plus riches.",
+      "Dépendant des services OpenAI (GPT-4 / Whisper)."
+    ],
+    "use_cases": [
+      "Chercheurs et académiques prenant notes connectées.",
+      "Écrivains capturant et organisant idées.",
+      "Freelances et consultants avec notes clients.",
+      "Individus construisant un PKM avec IA."
+    ],
+    "relevant_for": [
+      "Penseurs indépendants et chercheurs",
+      "Écrivains et journalistes",
+      "Professionnels en gestion de connaissances"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You take notes and build an interconnected second brain.",
+        "You appreciate integrated AI (transcription, rewriting).",
+        "You work across devices (computer + mobile)."
+      ],
+      "avoidIf": [
+        "You need native team collaboration.",
+        "You refuse any subscription fees (seek free).",
+        "You prefer a simpler or more minimal interface."
+      ],
+      "threshold": "Reflect shines for solo thinkers with AI; for collaborative teams, a shared app works better."
+    },
+    "pros": [
+      "Simple single pricing: $10/month.",
+      "Integrated AI GPT-4: transcription, text improvement, thinking.",
+      "E2E encryption for privacy.",
+      "Instant cross-device sync.",
+      "Thought graphs: see connections between notes."
+    ],
+    "cons": [
+      "No free version.",
+      "No real-time team collaboration.",
+      "May feel basic compared to richer tools.",
+      "Depends on OpenAI services (GPT-4/Whisper)."
+    ],
+    "use_cases": [
+      "Researchers and academics taking connected notes.",
+      "Writers capturing and organizing ideas.",
+      "Freelancers and consultants with client notes.",
+      "Individuals building a PKM with AI."
+    ]
+  }
+}

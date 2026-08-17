@@ -1,0 +1,89 @@
+{
+  "slug": "sysaid",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SysAid — ITSM platform (site officiel)", "url": "https://sysaid.com" },
+    { "label": "SysAid — Pricing (site officiel)", "url": "https://www.sysaid.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme ITSM (IT Service Management) intégrant ticketing, gestion d'incidents et d'actifs informatiques, enrichie par des agents IA pour automatiser jusqu'à 60 % des incidents sans intervention humaine.",
+    "what_en": "ITSM (IT Service Management) platform combining help desk, incident management and IT asset tracking with AI agents to automate up to 60% of incidents without human intervention.",
+    "pricing_model": "Abonnement mensuel par agent/utilisateur. Deux tiers : Professional et Enterprise.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans carte de crédit requis. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Professional", "price": "89 $ par agent/mois (avec IA illimitée, pas de caps d'utilisation)" },
+      { "name": "Enterprise", "price": "Tarif personnalisé à partir de 20 agents (inclut tout + sandbox, IA sur mesure, support 1h)" }
+    ],
+    "key_features": [
+      "Gestion d'incidents, requêtes, changements et problèmes (ITSM classique)",
+      "Agents IA avec builder sans code pour workflows personnalisés",
+      "Asset management et gestion de base de données de configuration (CMDB)",
+      "Copilot IA pour résumés de tickets et assistance des agents",
+      "1000+ intégrations (collaboration, RH, finance, outils IT)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une équipe IT cherchant à automatiser la gestion des tickets.",
+        "Vous voulez réduire le temps de résolution des incidents par l'automatisation.",
+        "Vous avez besoin d'une base de données d'actifs IT centralisée."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit.",
+        "Vous êtes une très petite équipe (1–2 personnes) sans besoin ITSM complet.",
+        "Vous préférez une solution clé en main sans configuration."
+      ],
+      "threshold": "SysAid s'impose pour les équipes IT voulant automatiser massivement ; pour un petit support ponctuel, des outils plus légers conviennent mieux."
+    },
+    "pros": [
+      "IA native sans caps d'utilisation (Professional).",
+      "Automatisation poussée du traitement des incidents.",
+      "Vaste écosystème d'intégrations.",
+      "No-code AI Agent Builder pour workflows personnalisés."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Prix Professional relativement élevé par agent.",
+      "Courbe d'apprentissage pour configurations avancées."
+    ],
+    "use_cases": [
+      "Automatiser le support IT et réduire le backlog de tickets.",
+      "Gérer et suivre les actifs informatiques d'une organisation.",
+      "Créer des workflows IA personnalisés pour métier spécifique."
+    ],
+    "relevant_for": ["Équipes IT", "Support technique", "Entreprises petites à moyennes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an IT team looking to automate ticket management.",
+        "You want to reduce incident resolution time with AI automation.",
+        "You need centralized IT asset tracking and CMDB."
+      ],
+      "avoidIf": [
+        "You want a free solution.",
+        "You're a very small team (1–2 people) without complex ITSM needs.",
+        "You prefer fully managed, zero-configuration tools."
+      ],
+      "threshold": "SysAid is ideal for IT teams wanting massive automation; for small support needs, lighter alternatives work better."
+    },
+    "pros": [
+      "Native AI with no usage caps (Professional).",
+      "Strong incident automation.",
+      "Vast integration ecosystem.",
+      "No-code AI Agent Builder for custom workflows."
+    ],
+    "cons": [
+      "No free tier.",
+      "Professional pricing is steep per agent.",
+      "Learning curve for advanced configurations."
+    ],
+    "use_cases": [
+      "Automate IT support and reduce ticket backlog.",
+      "Track and manage your organization's IT assets.",
+      "Build custom AI workflows for specific use cases."
+    ]
+  }
+}

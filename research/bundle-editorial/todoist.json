@@ -1,0 +1,95 @@
+{
+  "slug": "todoist",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Todoist — Task management app (site officiel)", "url": "https://todoist.com" }
+  ],
+  "facts": {
+    "what": "Application de gestion de tâches et de projets personnels/collectifs (todo-list) avec IA (Todoist Assist), récurrences, et collaboration en temps réel.",
+    "what_en": "Personal and team task management app with AI assistance, recurring tasks, project templates, and real-time collaboration for work and life.",
+    "pricing_model": "Freemium : plan gratuit (Beginner) limité + 2 tiers payants (Pro, Business) par abonnement. Facturation mensuelle ou annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan Beginner gratuit sans limite de durée : 5 projets perso, 5 collaborateurs par projet, 5 affichages filtrés, 5 MB fichiers, 1 semaine d'historique." },
+    "plans": [
+      { "name": "Beginner", "price": "Gratuit — 5 projets max, 5 collaborateurs/projet, features limitées" },
+      { "name": "Pro", "price": "5 $ par mois (annuel) ou 7 $ (mensuel) — projets illimités, Todoist Assist IA, filtres illimités, 1 an historique, backups auto" },
+      { "name": "Business", "price": "8 $ par utilisateur/mois (annuel) ou 10 $ (mensuel) — workspace collectif, jusqu'à 500 projets, roles/permissions, logs auditables" }
+    ],
+    "key_features": [
+      "Capture de tâches en langage naturel avec priorités",
+      "Filtres et affichages personnalisés (Today, Upcoming)",
+      "Tâches récurrentes et calendrier",
+      "Todoist Assist (IA pour transformer tâches en plans)",
+      "Partage de projets et collaboration temps réel",
+      "50+ templates prêts à l'emploi",
+      "Intégration Google Calendar, email"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une todo-list simple et efficace.",
+        "Vous collaborez avec une petite équipe sur des tâches.",
+        "Vous voulez IA pour organiser vos tâches disséminées."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de gestion de projet lourd (Gantt, ressources).",
+        "Le plan Beginner gratuit (5 projets) vous suffit.",
+        "Vous avez besoin de features très avancées (automatisations)."
+      ],
+      "threshold": "Todoist s'impose pour perso et petits teams de tâches ; pour projets complexes/Gantt, un vrai PM tool s'impose."
+    },
+    "pros": [
+      "Plan gratuit vraiment utilisable (5 projets).",
+      "Todoist Assist IA intégré (Pro+).",
+      "Ultra simple et rapide (pas de courbe apprentissage).",
+      "Multi-plateforme (web, mobile, desktop).",
+      "Collaboration fluide et temps réel."
+    ],
+    "cons": [
+      "Plan gratuit très limité (5 projets seulement).",
+      "Pas de Gantt chart ou planning visuel.",
+      "Business plan par siège (coûteux pour team important).",
+      "Fonctionnalités automations limitées."
+    ],
+    "use_cases": [
+      "Gérer une todo-list perso et synchroniser multi-devices.",
+      "Organiser tâches dispersées en un plan d'action cohérent (IA).",
+      "Collaborer avec une petite équipe sur un projet donné."
+    ],
+    "relevant_for": ["Travailleurs indépendants", "Petites équipes projet", "Gestionnaires de projets simples"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a simple, fast task management app.",
+        "You collaborate with a small team.",
+        "You want AI to organize scattered tasks."
+      ],
+      "avoidIf": [
+        "You need heavy project management (Gantt, resource allocation).",
+        "Free plan with 5 projects is enough for you.",
+        "You need advanced automation or custom workflows."
+      ],
+      "threshold": "Todoist works for personal and small-team task management; for complex projects, a full PM tool is better."
+    },
+    "pros": [
+      "Generous free plan (5 projects really usable).",
+      "Todoist Assist AI included (Pro+).",
+      "Ultra-simple, zero learning curve.",
+      "Multi-platform (web, mobile, desktop).",
+      "Smooth real-time collaboration."
+    ],
+    "cons": [
+      "Free plan is restrictive (only 5 projects).",
+      "No Gantt chart or visual planning.",
+      "Business plan per-seat (pricey for large teams).",
+      "Limited automation capabilities."
+    ],
+    "use_cases": [
+      "Manage personal tasks across all devices.",
+      "Turn scattered tasks into a cohesive action plan (AI).",
+      "Collaborate with a small team on a project."
+    ]
+  }
+}

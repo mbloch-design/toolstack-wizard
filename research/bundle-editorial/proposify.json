@@ -1,0 +1,101 @@
+{
+  "slug": "proposify",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Proposify — Proposal Software (site officiel)", "url": "https://www.proposify.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion de propositions avec suivi en temps réel : crée des propositions professionnelles et marquées, suit l'engagement client par section, inclut signatures électroniques.",
+    "what_en": "Proposal management software with real-time tracking: create professional branded proposals, track client engagement by section, includes e-signatures.",
+    "pricing_model": "Abonnement par utilisateur avec trois niveaux (Basic, Team, Business) et tarification flexible selon cycle de facturation.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit sans limite d'utilisation ; contact ventes pour Business plan." },
+    "plans": [
+      { "name": "Basic", "price": "19 $/utilisateur/mois (facturation annuelle) ou 29 $/mois (mensuel)" },
+      { "name": "Team", "price": "41 $/utilisateur/mois (facturation annuelle) ou 49 $/mois (mensuel)" },
+      { "name": "Business", "price": "À partir de 65 $/utilisateur/mois (10 utilisateurs minimum)" }
+    ],
+    "key_features": [
+      "Éditeur drag-and-drop de propositions",
+      "Templates personnalisables avec marque",
+      "Contenu réutilisable et variables dynamiques",
+      "Vidéos et images intégrables",
+      "Notifications temps réel (ouverture, section vue)",
+      "Analytique détaillée par proposition",
+      "Workflows d'approbation",
+      "Signatures électroniques",
+      "Intégrations HubSpot, Salesforce, Zoho, Pipedrive, Stripe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement des propositions et voulez les suivre.",
+        "Vous avez besoin de signatures électroniques légales.",
+        "Vous intégrez déjà un CRM (HubSpot, Salesforce)."
+      ],
+      "avoidIf": [
+        "Vous envoyez très peu de propositions par an.",
+        "Budget très serré.",
+        "Vous avez juste besoin d'un simple PDF ou template Word."
+      ],
+      "threshold": "Proposify prime pour équipes ventes régulières ; pour sporadic ou minimaliste, un template et PDF suffisent."
+    },
+    "pros": [
+      "Spécialisée propositions commerciales.",
+      "Analytics précises : temps par section, engagement global.",
+      "Signatures électroniques intégrées et légales.",
+      "Templates professionnels réutilisables.",
+      "Intégrations CRM matures."
+    ],
+    "cons": [
+      "Tarification par utilisateur (multiple rapide grande équipe).",
+      "Frais d'entrée significatifs (Basic ~228 $/an/user).",
+      "Pas d'IA generative native mentionnée."
+    ],
+    "use_cases": [
+      "Équipes ventes créant plusieurs propositions chaque mois.",
+      "Agences de services (consulting, digital).",
+      "Commerciaux tracking taux de fermeture vs temps engagement.",
+      "Organisations avec processus approbation multi-niveaux."
+    ],
+    "relevant_for": [
+      "Équipes ventes et commerciales",
+      "Agences de services",
+      "Directeurs commerciaux et VP Sales"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create proposals and want to track them.",
+        "You need legal e-signatures.",
+        "You already integrate a CRM (HubSpot, Salesforce)."
+      ],
+      "avoidIf": [
+        "You send very few proposals annually.",
+        "Budget is very tight.",
+        "You only need a simple PDF or Word template."
+      ],
+      "threshold": "Proposify excels for regular sales teams; for sporadic or minimal use, a template and PDF suffice."
+    },
+    "pros": [
+      "Proposal-focused software.",
+      "Precise analytics: time per section, overall engagement.",
+      "Integrated legal e-signatures.",
+      "Reusable professional templates.",
+      "Mature CRM integrations."
+    ],
+    "cons": [
+      "Per-user pricing (scales quickly with large teams).",
+      "Significant entry cost (Basic ~228$/year/user).",
+      "No native generative AI mentioned."
+    ],
+    "use_cases": [
+      "Sales teams creating multiple proposals each month.",
+      "Service agencies (consulting, digital).",
+      "Salespeople tracking close rate vs. engagement time.",
+      "Organizations with multi-level approval processes."
+    ]
+  }
+}

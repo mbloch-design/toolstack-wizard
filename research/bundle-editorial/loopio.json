@@ -1,0 +1,95 @@
+{
+  "slug": "loopio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Loopio — plateforme RFP AI (site officiel)", "url": "https://loopio.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation des RFP et questionnaires de due diligence, propulsée par l'IA (Response Intelligence) : agrège les réponses des équipes et accélère les soumissions.",
+    "what_en": "AI-powered RFP and due diligence questionnaire automation platform that aggregates team responses and accelerates submission workflows with Response Intelligence.",
+    "pricing_model": "Abonnement par palier (Foundations, Enhanced, Enterprise) avec tarification personnalisée selon le nombre de sièges.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Démarrage sur le palier Foundations avec 10 sièges." },
+    "plans": [
+      { "name": "Foundations", "price": "À partir de 20 000 $ annuels (10 sièges)" },
+      { "name": "Enhanced", "price": "Tarifs personnalisés selon l'équipe" },
+      { "name": "Enterprise", "price": "Sur devis" }
+    ],
+    "key_features": [
+      "Agrégation de contenu depuis SharePoint, Google Drive, sites web",
+      "Importation automatique des questions RFP depuis les portails",
+      "Intégrations Salesforce, Slack, Microsoft Copilot",
+      "Analytics et insights sur la préparation des propositions",
+      "80+ intégrations enterprise"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe commerciale traite régulièrement des RFP et questionnaires longs.",
+        "Vous gérez plusieurs propositions simultanément et voulez gagner du temps.",
+        "Vous recherchez une centralisation des réponses avec IA pour cohérence."
+      ],
+      "avoidIf": [
+        "Votre budget est très serré (tarif d'entreprise).",
+        "Vous faites peu de RFP par an.",
+        "Vous préférez un outil généraliste sans spécialisation RFP."
+      ],
+      "threshold": "Loopio brille pour les équipes ventes ou bid management gérées au volume ; pour du one-off ou budget limité, d'autres outils suffisent."
+    },
+    "pros": [
+      "Spécialisation RFP : indexe et réutilise les bonnes réponses.",
+      "IA propriétaire entraînée sur des milliers de projets.",
+      "Intégrations robustes avec l'écosystème enterprise (Salesforce, etc.).",
+      "ROI rapide : 415% rapporté par les clients, 50% d'économie temps."
+    ],
+    "cons": [
+      "Tarification élevée (entrée d'entreprise).",
+      "Complexité de mise en place et d'onboarding.",
+      "Surcoûts possibles si beaucoup d'utilisateurs."
+    ],
+    "use_cases": [
+      "Répondre à des appels d'offres publics ou privés.",
+      "Remplir des questionnaires de due diligence (M&A, compliance).",
+      "Centraliser les réponses commerciales par domaine.",
+      "Auditer la couverture et la qualité des réponses avant envoi."
+    ],
+    "relevant_for": [
+      "Équipes commerciales (ventes complexes, B2B)",
+      "Consultants et cabinets de conseil",
+      "Gestionnaires de soumissions (Bid Managers)"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your sales team handles RFPs and lengthy questionnaires regularly.",
+        "You manage multiple proposals simultaneously and want to save time.",
+        "You need centralized response management with AI-powered consistency."
+      ],
+      "avoidIf": [
+        "Budget is tight (enterprise-tier pricing).",
+        "You handle only occasional RFPs per year.",
+        "You prefer a general-purpose tool without RFP specialization."
+      ],
+      "threshold": "Loopio excels for high-volume sales or bid teams; for occasional or tight-budget use, other tools work fine."
+    },
+    "pros": [
+      "RFP specialization: indexes and reuses quality responses.",
+      "Proprietary AI trained on thousands of proposals.",
+      "Robust integrations with enterprise ecosystem (Salesforce, etc.).",
+      "Fast ROI: 415% reported by customers, 50% time savings."
+    ],
+    "cons": [
+      "High pricing (enterprise entry point).",
+      "Setup and onboarding complexity.",
+      "Potential cost overruns with many users."
+    ],
+    "use_cases": [
+      "Respond to public or private bid requests.",
+      "Fill due diligence questionnaires (M&A, compliance).",
+      "Centralize sales responses by domain.",
+      "Audit coverage and response quality before submission."
+    ]
+  }
+}

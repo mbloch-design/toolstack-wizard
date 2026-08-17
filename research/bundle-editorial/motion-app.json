@@ -1,0 +1,96 @@
+{
+  "slug": "motion-app",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Motion — Super App IA (site officiel)", "url": "https://www.usemotion.com" }
+  ],
+  "facts": {
+    "what": "SuperApp IA pour la productivité : fusionne gestion de tâches, calendrier intelligent, gestion de réunions et documentation avec assistants IA pour automatiser la planification et priorisation.",
+    "what_en": "AI-powered productivity SuperApp combining task management, smart scheduling, meeting management and documentation with AI assistants for automatic planning and prioritization.",
+    "pricing_model": "Abonnement par siège (tarification équipe). Modèle freemium avec essai gratuit de 7 jours.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 7 jours sans carte bancaire requise. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Pro AI", "price": "19 $/mois/siège (12,73 $/mois en facturation annuelle)" },
+      { "name": "Business AI", "price": "29 $/mois/siège (19,43 $/mois en facturation annuelle)" }
+    ],
+    "key_features": [
+      "Gestionnaire de tâches IA (création et priorisation auto)",
+      "Planificateur de projet IA (génération en secondes)",
+      "Asistant calendrier IA (planification de jour smart)",
+      "Prenneur de notes de réunion IA",
+      "Assistants de docs et workflows IA",
+      "Chat et recherche IA instantanée",
+      "Tableaux de bord de suivi projet"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez beaucoup de tâches et voulez une priorisation intelligente.",
+        "Votre calendrier est complexe et vous appréciez l'automation.",
+        "Vous cherchez un outil central pour remplacer plusieurs SaaS."
+      ],
+      "avoidIf": [
+        "Vous voulez un outil entièrement gratuit.",
+        "Vous travaillez avec une équipe très petite (solo).",
+        "Vous n'utilisez pas d'IA ou préférez une approche manuelle."
+      ],
+      "threshold": "Motion convient aux équipes cherchant à automatiser planning et tâches ; pour une gestion simple ou budget très serré, un outil plus basique suffit."
+    },
+    "pros": [
+      "Intégration complète : tâches, calendrier, réunions, docs.",
+      "IA dédiée à la priorisation et planification.",
+      "Moins cher que d'acheter plusieurs outils (claim 10x moins cher).",
+      "Annulation facile (1 clic)."
+    ],
+    "cons": [
+      "Pas de version gratuite (essai court 7 jours).",
+      "Coût par siège (explose avec grande équipe).",
+      "Apprentissage et onboarding pour intégrer tous les modules."
+    ],
+    "use_cases": [
+      "Planifier une journée de travail avec réunions et tâches optimisées.",
+      "Automatiser la gestion de projets et statuts.",
+      "Centraliser notes de réunion, tâches et calendrier.",
+      "Équipes cherchant une pile de productivité unifiée."
+    ],
+    "relevant_for": [
+      "Managers et lead de projet",
+      "Équipes ventes (suivi pipeline + calendrier)",
+      "Consultants indépendants (freelances)"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage many tasks and want smart prioritization.",
+        "Your calendar is complex and you appreciate automation.",
+        "You seek a central tool to replace multiple SaaS."
+      ],
+      "avoidIf": [
+        "You want a completely free tool.",
+        "You work solo or with a tiny team.",
+        "You don't use AI or prefer manual management."
+      ],
+      "threshold": "Motion works for teams automating scheduling and task management; for simple tracking or tight budgets, a basic tool suffices."
+    },
+    "pros": [
+      "Complete integration: tasks, calendar, meetings, docs.",
+      "Dedicated AI for prioritization and scheduling.",
+      "Cheaper than buying multiple tools (claims 10x less).",
+      "Easy to cancel (one click)."
+    ],
+    "cons": [
+      "No free version (short 7-day trial).",
+      "Per-seat cost (grows with larger teams).",
+      "Learning curve to integrate all modules."
+    ],
+    "use_cases": [
+      "Plan a workday with optimized meetings and tasks.",
+      "Automate project management and status updates.",
+      "Centralize meeting notes, tasks and calendar.",
+      "Teams seeking a unified productivity stack."
+    ]
+  }
+}

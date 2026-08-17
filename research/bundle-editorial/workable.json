@@ -1,0 +1,95 @@
+{
+  "slug": "workable",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Workable — HR platform (site officiel)", "url": "https://workable.com" },
+    { "label": "Workable — Pricing (site officiel)", "url": "https://www.workable.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme RH complète pour recrutement et gestion du personnel : sourcing IA, applicant tracking, onboarding, performance reviews, et portefeuille candidats (Talent CRM).",
+    "what_en": "All-in-one HR platform combining AI-powered recruiting (ATS), sourcing from 400M+ candidates, onboarding, performance management, and employee portal.",
+    "pricing_model": "Abonnement mensuel avec facturation annuelle (réduction 20 %). Trois tiers (Standard, Premier, Enterprise). AI credits supplémentaires disponibles.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 15 jours sans carte de crédit, accès complet. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Standard", "price": "299 $ par mois (3 588 $/an avec 20 % réduction) — sourcing, ATS, onboarding, time off management" },
+      { "name": "Premier", "price": "599 $ par mois (7 188 $/an) — Standard + texting, video interviews, assessments, performance reviews" },
+      { "name": "Enterprise", "price": "719 $ par mois (8 628 $/an) — Premier + support prioritaire, SSO, features sur mesure" }
+    ],
+    "key_features": [
+      "AI Agent pour sourcing (400M+ profiles) et screening candidats",
+      "Post jobs sur 200+ job boards",
+      "Applicant Tracking System (ATS) complet",
+      "Entretiens vidéo et assessments",
+      "Onboarding automation et workflows personnalisés",
+      "Performance reviews et engagement tracking",
+      "Talent CRM pour gestion base candidats",
+      "270+ intégrations (Slack, Zapier, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recruitez régulièrement (plus de quelques postes/an).",
+        "Vous voulez sourcing IA et screening automatisés.",
+        "Vous avez besoin d'onboarding et gestion performance intégrés."
+      ],
+      "avoidIf": [
+        "Vous recrutez rarement (< 2–3 postes/an).",
+        "Vous cherchez un outil gratuit ou très bon marché.",
+        "Vous avez besoin seulement d'un ATS basique sans recrutement actif."
+      ],
+      "threshold": "Workable s'impose pour recrutement actif & continu ; pour recrutement ponctuel, outils allégés (Lever, Greenhouse) suffisent."
+    },
+    "pros": [
+      "AI Agent pour sourcing massif (400M+ profils).",
+      "ATS complet + onboarding dans une plateforme.",
+      "2–3 AI credits gratuits par plan (sourcing et screening).",
+      "270+ intégrations incluant Slack.",
+      "Essai gratuit 15 jours accès complet."
+    ],
+    "cons": [
+      "Pas de version gratuite à long terme.",
+      "Standard plan relativement cher pour petite équipe.",
+      "Les crédits IA supplémentaires sont facturés en sus."
+    ],
+    "use_cases": [
+      "Recruter et gérer le pipeline de candidats avec IA sourcing.",
+      "Onboard et tracker performance de nouvelles embauches.",
+      "Centraliser recrutement, onboarding et reviews en un système."
+    ],
+    "relevant_for": ["Équipes RH", "Managers de recrutement", "PME avec recrutement régulier"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You recruit regularly (more than a few roles per year).",
+        "You want AI sourcing and automatic candidate screening.",
+        "You need integrated onboarding and performance management."
+      ],
+      "avoidIf": [
+        "You recruit rarely (< 2–3 roles/year).",
+        "You need a free or ultra-cheap tool.",
+        "You only want a basic ATS for occasional hiring."
+      ],
+      "threshold": "Workable suits active, continuous recruiting; for occasional hiring, lighter ATS options (Lever, Greenhouse) work."
+    },
+    "pros": [
+      "AI Agent for massive sourcing (400M+ profiles).",
+      "Complete ATS + onboarding + performance in one platform.",
+      "2–3 free AI credits per plan (sourcing, screening).",
+      "270+ integrations including Slack.",
+      "15-day full-access free trial."
+    ],
+    "cons": [
+      "No free version long-term.",
+      "Standard plan pricey for small teams.",
+      "Extra AI credits are billed separately."
+    ],
+    "use_cases": [
+      "Recruit and manage candidate pipeline with AI sourcing.",
+      "Onboard and track performance of new hires.",
+      "Centralize recruiting, onboarding, and reviews."
+    ]
+  }
+}

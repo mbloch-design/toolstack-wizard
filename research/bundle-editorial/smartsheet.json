@@ -1,0 +1,102 @@
+{
+  "slug": "smartsheet",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Smartsheet — Intelligent Work Management (site officiel)", "url": "https://smartsheet.com" }
+  ],
+  "facts": {
+    "what": "Plateforme intelligente de gestion de travail : automatise workflows, offre visibilité temps réel sur projets, gère portefeuilles avec IA et connecte 100+ outils d'entreprise.",
+    "what_en": "Intelligent work management platform: automates workflows, offers real-time project visibility, manages portfolios with AI and connects 100+ enterprise tools.",
+    "pricing_model": "Abonnement par formule avec essai gratuit. Tarification tiered et options enterprise.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible. Pas de version gratuite permanente ; plans payants commencent après l'essai." },
+    "plans": [
+      { "name": "Plans tiered", "price": "Montants sur la page officielle (Starter à Enterprise)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "IA pour insights personnalisés et analysis profonde",
+      "Gestion de projets et portefeuilles",
+      "Workflows d'automatisation intelligents",
+      "Collaboration d'équipe connectée",
+      "Tableaux de bord temps réel",
+      "Gestion des ressources cross-team",
+      "Intégrations 100+ outils (Adobe, AWS, Google, Microsoft, Salesforce, Slack)",
+      "Digital asset management",
+      "Resource planning avancé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs projets complexes et portefeuille.",
+        "Vous voulez automatiser les workflows et reporting.",
+        "Vous avez un stack tool complexe (Salesforce, Slack, etc.)."
+      ],
+      "avoidIf": [
+        "Vous gérez un seul projet simple.",
+        "Budget très serré.",
+        "Vous préférez une app légère et minimaliste."
+      ],
+      "threshold": "Smartsheet pour organisations gérant portefeuille multiprojet ; pour simple tracking ou solo, un outil plus léger suffit."
+    },
+    "pros": [
+      "IA intégrée pour insights et analysis.",
+      "Gestion de portefeuille complète (ressources, planning).",
+      "Intégrations massives (100+ outils).",
+      "Workflows automatisés et triggers.",
+      "Dashboards temps réel avec reporting."
+    ],
+    "cons": [
+      "Tarification enterprise (pas petit budget).",
+      "Complexité de mise en place et onboarding.",
+      "Courbe apprentissage raide (beaucoup de features).",
+      "Peut être overkill pour simple gestion de tâches."
+    ],
+    "use_cases": [
+      "Gestion de portefeuille multiprojet et PMO.",
+      "Automation workflows et tâches répétitives.",
+      "Planning des ressources cross-teams.",
+      "Reporting et dashboards executifs."
+    ],
+    "relevant_for": [
+      "Project/Portfolio managers (PMO)",
+      "Directeurs opérationnels et VP Operations",
+      "Grandes équipes de travail coordonnées"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple complex projects and portfolio.",
+        "You want to automate workflows and reporting.",
+        "You have a complex tool stack (Salesforce, Slack, etc.)."
+      ],
+      "avoidIf": [
+        "You manage a single simple project.",
+        "Budget is very tight.",
+        "You prefer a light and minimal app."
+      ],
+      "threshold": "Smartsheet for organizations managing multiproject portfolios; for simple tracking or solo, a lighter tool suffices."
+    },
+    "pros": [
+      "Integrated AI for insights and analysis.",
+      "Complete portfolio management (resources, planning).",
+      "Massive integrations (100+ tools).",
+      "Automated workflows and triggers.",
+      "Real-time dashboards with reporting."
+    ],
+    "cons": [
+      "Enterprise pricing (not small budget friendly).",
+      "Implementation and onboarding complexity.",
+      "Steep learning curve (many features).",
+      "May be overkill for simple task management."
+    ],
+    "use_cases": [
+      "Multi-project portfolio and PMO management.",
+      "Workflow automation and repetitive tasks.",
+      "Cross-team resource planning.",
+      "Executive reporting and dashboards."
+    ]
+  }
+}

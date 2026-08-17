@@ -1,0 +1,102 @@
+{
+  "slug": "smartsuite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SmartSuite — Work OS (site officiel)", "url": "https://smartsuite.com" }
+  ],
+  "facts": {
+    "what": "Work Operating System (OS) enterprise : fusion données, processus et IA en une plateforme pour gouvernance, IT, projets et opérations métier avec automation sans-code.",
+    "what_en": "Enterprise Work Operating System: unifies data, processes and AI in one platform for governance, IT, projects and business operations with no-code automation.",
+    "pricing_model": "Abonnement flexible avec modèle basé sur adoption progressive. Tarification adaptée selon équipe ou use case.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Modèle de tarification flexible et adoption-driven ; contact sales pour pricing." },
+    "plans": [
+      { "name": "Plans flexibles", "price": "Montants sur la page officielle (scaling par adoption)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Plateforme sécurisée no-code (SOC 2 Type II, ISO 27001, GDPR, HIPAA)",
+      "Agents IA autonomes pour monitoring et actions",
+      "Gouvernance et contrôles d'accès",
+      "Reporting et dashboards temps réel",
+      "Domaines : GRC & Resilience, ITSM, Project & Portfolio, Business Operations",
+      "Connecteurs multiples et integrations",
+      "Traçabilité audit complète",
+      "Workflows visuels et automatisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une plateforme unifiée multidomaine (IT, projets, ops).",
+        "Vous cherchez no-code avec gouvernance stricte.",
+        "Vous devez se conformer HIPAA, SOC 2, GDPR."
+      ],
+      "avoidIf": [
+        "Vous avez un besoin narrow (juste tâches).",
+        "Budget très serré.",
+        "Vous préférez des outils spécialisés point."
+      ],
+      "threshold": "SmartSuite pour grandes organisations ayant besoin gouvernance/securité unifiée ; pour besoins simples, des outils légers suffisent."
+    },
+    "pros": [
+      "No-code workflow automation puissante.",
+      "Agents IA autonomes pour tâches continues.",
+      "Conformité enterprise : SOC 2 Type II, ISO 27001, HIPAA.",
+      "Multi-domaine intégrée (GRC, IT, projets, ops).",
+      "Scalabilité par adoption progressive."
+    ],
+    "cons": [
+      "Tarification personnalisée (contact ventes).",
+      "Peut être overkill pour petites équipes.",
+      "Courbe apprentissage (plateforme complexe).",
+      "Nécessite buy-in et gouvernance."
+    ],
+    "use_cases": [
+      "Plateforme unifiée GRC (governance, risk, compliance).",
+      "ITSM et gestion IT complète.",
+      "Project & Portfolio Management.",
+      "Processus métier et automation operational."
+    ],
+    "relevant_for": [
+      "Directeurs IT et responsables IT",
+      "Responsables GRC et compliance",
+      "Gestionnaires de portefeuille et PMO",
+      "Grandes organisations multi-domaine"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a unified multi-domain platform (IT, projects, ops).",
+        "You seek no-code with strict governance.",
+        "You must comply with HIPAA, SOC 2, GDPR."
+      ],
+      "avoidIf": [
+        "You have a narrow need (just tasks).",
+        "Budget is very tight.",
+        "You prefer specialized point tools."
+      ],
+      "threshold": "SmartSuite for large organizations needing unified governance/security; for simple needs, lightweight tools suffice."
+    },
+    "pros": [
+      "Powerful no-code workflow automation.",
+      "Autonomous AI agents for continuous tasks.",
+      "Enterprise compliance: SOC 2 Type II, ISO 27001, HIPAA.",
+      "Multi-domain integrated (GRC, IT, projects, ops).",
+      "Scalability via progressive adoption."
+    ],
+    "cons": [
+      "Personalized pricing (contact sales).",
+      "May be overkill for small teams.",
+      "Learning curve (complex platform).",
+      "Requires governance and buy-in."
+    ],
+    "use_cases": [
+      "Unified GRC platform (governance, risk, compliance).",
+      "Complete IT service management.",
+      "Project & Portfolio Management.",
+      "Business process and operational automation."
+    ]
+  }
+}

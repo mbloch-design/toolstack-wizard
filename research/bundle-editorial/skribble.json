@@ -1,0 +1,99 @@
+{
+  "slug": "skribble",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Skribble — Signatures numériques (site officiel)", "url": "https://www.skribble.com" }
+  ],
+  "facts": {
+    "what": "Plateforme européenne de signatures numériques : offre signatures électroniques qualifiées (QES) légalement contraignantes selon régulations eIDAS de l'UE, avec chiffrement et support local suisse/allemand.",
+    "what_en": "European digital signature platform: offers qualified electronic signatures (QES) legally binding under EU eIDAS regulations, with encryption and Swiss/German local support.",
+    "pricing_model": "Abonnement par formule avec tarification flexible. Essai gratuit 14 jours sans carte bancaire.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit 14 jours sans carte bancaire requise." },
+    "plans": [
+      { "name": "Plans tiered", "price": "Montants sur la page officielle (Preise)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Signatures électroniques qualifiées (QES) — légalement équivalente signature manuscrite",
+      "Conformité eIDAS EU et droit suisse",
+      "ISO 9001 et ISO 27001 certifiés",
+      "Données hébergées en Allemagne (GDPR compliant)",
+      "Support 2FA par SMS/authenticateur mobile",
+      "Intégrations Microsoft 365, Google Drive, SAP",
+      "Pas installation logiciel — accès web direct",
+      "Support local suisse et allemand"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous signez des documents en UE/Suisse/Allemagne.",
+        "Vous voulez QES (qualification élevée EU).",
+        "Vous préférez support local DACH et hébergement UE."
+      ],
+      "avoidIf": [
+        "Vous êtes hors DACH/EU (autre régulation).",
+        "Vous voulez solution mondiale générique.",
+        "Budget zéro (cherchez gratuit)."
+      ],
+      "threshold": "Skribble pour organisations DACH cherchant QES compliant ; pour EU-large ou autre région, alternatives mondiales existent."
+    },
+    "pros": [
+      "QES : légalement équivalent signature manuscrite (EU).",
+      "Support DACH : allemand, suisse (local expertise).",
+      "ISO 9001, ISO 27001 certifiés.",
+      "Hébergement EU/Allemagne (GDPR native).",
+      "Essai 14 jours gratuit (37% signés en 10 min)."
+    ],
+    "cons": [
+      "Tarification personnalisée (contact ventes).",
+      "Spécialisée DACH (moins utile hors région).",
+      "Pas de version gratuite permanente."
+    ],
+    "use_cases": [
+      "Contrats légalement qualifiés (QES) en UE.",
+      "Signatures de documents administratifs DACH.",
+      "Agreements avec autorités/gouvernement.",
+      "Conformité réglementation eIDAS stricte."
+    ],
+    "relevant_for": [
+      "Entreprises DACH/UE",
+      "Juristes et departments légal",
+      "Gestionnaires conformité réglementaire"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sign documents in EU/Switzerland/Germany.",
+        "You want QES (high-level EU qualification).",
+        "You prefer DACH local support and EU hosting."
+      ],
+      "avoidIf": [
+        "You are outside DACH/EU (different regulation).",
+        "You want generic global solution.",
+        "Budget is zero (seek free)."
+      ],
+      "threshold": "Skribble for DACH organizations seeking QES compliance; for EU-wide or other regions, global alternatives exist."
+    },
+    "pros": [
+      "QES: legally equivalent to handwritten signature (EU).",
+      "DACH support: German, Swiss (local expertise).",
+      "ISO 9001, ISO 27001 certified.",
+      "EU/Germany hosting (GDPR native).",
+      "14-day free trial (37% signed within 10 min)."
+    ],
+    "cons": [
+      "Personalized pricing (contact sales).",
+      "DACH-specialized (less useful outside region).",
+      "No permanent free version."
+    ],
+    "use_cases": [
+      "Legally qualified contracts (QES) in EU.",
+      "Administrative document signatures DACH.",
+      "Agreements with authorities/government.",
+      "Strict eIDAS regulatory compliance."
+    ]
+  }
+}

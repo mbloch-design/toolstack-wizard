@@ -1,0 +1,87 @@
+{
+  "slug": "tave",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "VSCO Workspace (successeur de Táve Studio Manager) — site officiel", "url": "https://www.vsco.co/workspace" },
+    { "label": "Annonce officielle : Táve's Studio Manager rejoint VSCO", "url": "https://help.workspace.vsco.co/en/articles/11748490-tave-s-studio-manager-is-joining-vsco" }
+  ],
+  "facts": {
+    "what": "CRM et gestion de studio pour photographes professionnels, désormais commercialisé sous le nom VSCO Workspace : Táve a été racheté par VSCO en mai 2025 et relancé sous cette marque en août 2025. Devis, contrats, facturation, workflows et automatisations restent au cœur du produit.",
+    "what_en": "CRM and studio management for professional photographers, now sold as VSCO Workspace: Táve was acquired by VSCO in May 2025 and relaunched under that brand in August 2025. Quotes, contracts, invoicing, workflows and automations remain the core of the product.",
+    "pricing_model": "Abonnement (montants sur la page officielle VSCO Workspace). Les clients historiques Táve ont été migrés sans hausse tarifaire annoncée pour 2025-2026.",
+    "free_tier": { "exists": false, "detail": "Produit par abonnement ; essai possible. Voir la page officielle VSCO Workspace." },
+    "plans": [
+      { "name": "VSCO Workspace", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "CRM photographe (prospects, clients, projets)",
+      "Devis, contrats et facturation",
+      "Workflows et automatisations de studio",
+      "Intégré à l'écosystème VSCO"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe professionnel et gérez des clients au long cours.",
+        "Vous voulez devis, contrats et facturation dans un même outil.",
+        "Vous automatisez vos relances et vos workflows de studio."
+      ],
+      "avoidIf": [
+        "Vous cherchez toujours « Táve » comme produit indépendant : la marque n'existe plus.",
+        "Vous êtes photographe amateur ou occasionnel.",
+        "Vous préférez un CRM généraliste hors écosystème VSCO."
+      ],
+      "threshold": "VSCO Workspace (ex-Táve) s'impose pour un studio photo qui pilote clients, contrats et facturation au même endroit ; pour un usage occasionnel, un outil plus léger suffit."
+    },
+    "pros": [
+      "CRM pensé pour les studios photo.",
+      "Devis, contrats et facturation intégrés.",
+      "Automatisations de workflow éprouvées.",
+      "Continuité assurée pour les clients historiques Táve."
+    ],
+    "cons": [
+      "La marque Táve a disparu au profit de VSCO Workspace.",
+      "Transition rapportée comme inégale par certains utilisateurs.",
+      "Surdimensionné hors activité photo professionnelle."
+    ],
+    "use_cases": [
+      "Gérer les clients et projets d'un studio photo.",
+      "Envoyer devis et contrats, suivre les paiements.",
+      "Automatiser relances et étapes de production."
+    ],
+    "relevant_for": ["Photographes professionnels", "Studios photo", "Vidéastes de mariage"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a professional photographer managing long-running clients.",
+        "You want quotes, contracts and invoicing in one tool.",
+        "You automate follow-ups and studio workflows."
+      ],
+      "avoidIf": [
+        "You're still looking for 'Táve' as a standalone product: the brand no longer exists.",
+        "You're an amateur or occasional photographer.",
+        "You prefer a general CRM outside the VSCO ecosystem."
+      ],
+      "threshold": "VSCO Workspace (formerly Táve) makes sense for a photo studio running clients, contracts and invoicing in one place; for occasional use, a lighter tool suffices."
+    },
+    "pros": [
+      "CRM built for photo studios.",
+      "Integrated quotes, contracts and invoicing.",
+      "Proven workflow automations.",
+      "Continuity guaranteed for legacy Táve customers."
+    ],
+    "cons": [
+      "The Táve brand is gone, replaced by VSCO Workspace.",
+      "Transition reported as uneven by some users.",
+      "Oversized outside professional photography."
+    ],
+    "use_cases": [
+      "Manage a photo studio's clients and projects.",
+      "Send quotes and contracts, track payments.",
+      "Automate follow-ups and production steps."
+    ]
+  }
+}

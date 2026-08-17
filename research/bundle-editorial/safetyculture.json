@@ -1,0 +1,101 @@
+{
+  "slug": "safetyculture",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SafetyCulture (Mitti) — Workplace Operations (site officiel)", "url": "https://mitti.com" }
+  ],
+  "facts": {
+    "what": "Système d'opérations sur le terrain (Mitti by SafetyCulture) : centralise inspections, formation, gestion d'actifs, signalement d'incidents et conformité pour équipes terrains (80 000 organisations, 2M+ utilisateurs).",
+    "what_en": "Field operations system (Mitti by SafetyCulture): centralizes inspections, training, asset management, incident reporting and compliance for frontline teams (80,000+ organizations, 2M+ users).",
+    "pricing_model": "Abonnement par module et usage. Tarification flexible à contacter directement.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification personnalisée selon modules et nombre d'utilisateurs." },
+    "plans": [
+      { "name": "Modules à la carte", "price": "Montants sur la page officielle (Inspections, Formation, Gestion d'actifs, etc.)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Inspections et checklists connectées",
+      "Création IA de checklists et formations",
+      "Capture IA d'incidents (photos, notes vocales)",
+      "Gestion des tâches et signalement",
+      "Gestion et maintenance des actifs",
+      "Surveillance des travailleurs isolés",
+      "Gestion des prestataires",
+      "Investigations et analyses de cause première",
+      "Intégrations IoT et capteurs",
+      "Analytics de performance"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des équipes sur le terrain (chantiers, usines, magasins).",
+        "Vous avez des obligations inspections et conformité.",
+        "Vous voulez centraliser incidents et données opérationnelles."
+      ],
+      "avoidIf": [
+        "Vous travaillez 100% bureau sans terrain.",
+        "Budget très serré.",
+        "Vous avez peu de besoin d'inspections formelles."
+      ],
+      "threshold": "Mitti/SafetyCulture s'impose pour operations terrain régulées ; pour bureaux purs, une app légère suffit."
+    },
+    "pros": [
+      "Spécialisée terrain (inspections, incidents, actifs).",
+      "Très grande base utilisateurs (80 000 orgs, 2M+ users).",
+      "IA pour création checklists et analyase d'incidents.",
+      "Capture hors-ligne possible (mode avion).",
+      "Benchmark comparatif entre sites (5 Star Benchmarking)."
+    ],
+    "cons": [
+      "Tarification par modules (coûts additionnels).",
+      "Nécessite acheminement/déploiement terrain.",
+      "Complexité intégration avec systèmes legacy."
+    ],
+    "use_cases": [
+      "Centraliser inspections (construction, manufacturing, retail).",
+      "Gérer incidents et audits de sécurité.",
+      "Former et onboarder équipes terrain.",
+      "Tracker maintenance actifs et équipements."
+    ],
+    "relevant_for": [
+      "Gestionnaires opérationnels terrain",
+      "Responsables sécurité et conformité",
+      "Entreprises multi-sites ou distribution"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage field teams (construction, manufacturing, retail).",
+        "You have inspection and compliance obligations.",
+        "You want to centralize incidents and operational data."
+      ],
+      "avoidIf": [
+        "You work 100% office without field teams.",
+        "Budget is very tight.",
+        "You have minimal formal inspection needs."
+      ],
+      "threshold": "Mitti/SafetyCulture works for regulated field operations; for pure office work, a lighter app suffices."
+    },
+    "pros": [
+      "Field-specialized (inspections, incidents, assets).",
+      "Very large user base (80,000+ orgs, 2M+ users).",
+      "AI for checklist creation and incident analysis.",
+      "Offline capture possible (airplane mode).",
+      "Comparative benchmarking across sites (5 Star Benchmarking)."
+    ],
+    "cons": [
+      "Per-module pricing (additional costs).",
+      "Requires field deployment and rollout.",
+      "Complexity integrating with legacy systems."
+    ],
+    "use_cases": [
+      "Centralize inspections (construction, manufacturing, retail).",
+      "Manage incidents and safety audits.",
+      "Train and onboard field teams.",
+      "Track asset and equipment maintenance."
+    ]
+  }
+}

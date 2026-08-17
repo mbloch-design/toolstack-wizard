@@ -1,0 +1,103 @@
+{
+  "slug": "snipe-it",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Snipe-IT — Asset Management (site officiel)", "url": "https://snipeitapp.com" }
+  ],
+  "facts": {
+    "what": "Système de gestion des actifs IT open-source et gratuit : remplace les tableurs de suivi d'équipements, centralise inventaire matériel et données utilisateurs avec API REST et scan codes-barres.",
+    "what_en": "Open-source and free IT asset management system: replaces equipment tracking spreadsheets, centralizes hardware inventory and user data with REST API and barcode scanning.",
+    "pricing_model": "Freemium : gratuit en auto-hébergé, ou abonnement cloud optionnel avec SLA.",
+    "free_tier": { "exists": true, "detail": "Gratuit entièrement si auto-hébergé (open-source). Hosting cloud payant avec SLA 99.99%." },
+    "plans": [
+      { "name": "Self-Hosted (gratuit)", "price": "0 $ (open-source, hébergé soi-même)" },
+      { "name": "Cloud Hosting", "price": "Montants sur la page officielle (SLA 99.99%, multi-région AWS)" }
+    ],
+    "key_features": [
+      "Gestion inventaire matériel complet",
+      "Tracking multi-régions (12+ serveurs AWS mondiaux)",
+      "Scan codes-barres pour inventory rapide",
+      "REST API pour integrations et automation",
+      "Sécurité best practices : bcrypt, 2FA, brute-force prevention",
+      "Mises à jour régulières (tous les quelques semaines)",
+      "Supprime lock-in vendor (code transparent)",
+      "Support 24/7 en-house (équipe dédiée)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous trackez matériel et équipements IT.",
+        "Vous utilisez actuellement des tableurs Excel.",
+        "Vous avez une petite à moyenne équipe d'IT."
+      ],
+      "avoidIf": [
+        "Vous n'avez quasi aucun matériel à tracker.",
+        "Vous préférez cloud sans maintenance.",
+        "Budget zéro (bien que gratuit auto-hébergé existe)."
+      ],
+      "threshold": "Snipe-IT pour IT teams trackant matériel ; pour usage minimal ou cloud-only, alternatives payantes plus faciles."
+    },
+    "pros": [
+      "Entièrement gratuit en auto-hébergement (open-source).",
+      "Transparence code (pas de vendor lock-in).",
+      "REST API complète pour automation.",
+      "13 ans d'histoire, 5960+ clients, 21M+ assets managed.",
+      "Cloud optionnel avec SLA 99.99%.",
+      "Support en-house 24/7 (pas offshore)."
+    ],
+    "cons": [
+      "Auto-hébergement demande compétences IT.",
+      "Intégrations limitées comparé solutions cloud.",
+      "Pas de fancy UI moderne (fonctionnel mais classique).",
+      "Cloud est payant (pas de cloud gratuit)."
+    ],
+    "use_cases": [
+      "Inventory matériel IT (ordinateurs, serveurs, périphériques).",
+      "Tracking checkout/checkin équipement par utilisateur.",
+      "Maintenance et depreciation d'actifs.",
+      "Reports d'inventaire et audits."
+    ],
+    "relevant_for": [
+      "Administrateurs IT et techniciens",
+      "Responsables logistique/inventaire",
+      "Petites à moyennes organisations IT"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You track hardware and IT equipment.",
+        "You currently use Excel spreadsheets.",
+        "You have a small to medium IT team."
+      ],
+      "avoidIf": [
+        "You have virtually no equipment to track.",
+        "You prefer cloud without maintenance.",
+        "Budget is zero (though free self-hosted exists)."
+      ],
+      "threshold": "Snipe-IT for IT teams tracking hardware; for minimal use or cloud-only preference, paid alternatives are easier."
+    },
+    "pros": [
+      "Completely free self-hosted (open-source).",
+      "Code transparency (no vendor lock-in).",
+      "Complete REST API for automation.",
+      "13 years history, 5960+ customers, 21M+ assets managed.",
+      "Optional cloud with 99.99% SLA.",
+      "In-house 24/7 support (not offshore)."
+    ],
+    "cons": [
+      "Self-hosting requires IT skills.",
+      "Limited integrations vs. cloud solutions.",
+      "No fancy modern UI (functional but classic).",
+      "Cloud is paid (no free cloud option)."
+    ],
+    "use_cases": [
+      "IT hardware inventory (computers, servers, peripherals).",
+      "Tracking equipment checkout/checkin by user.",
+      "Asset maintenance and depreciation.",
+      "Inventory reports and audits."
+    ]
+  }
+}

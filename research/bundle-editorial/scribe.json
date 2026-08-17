@@ -1,0 +1,99 @@
+{
+  "slug": "scribe",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Scribe — Workflow Documentation & AI (site officiel)", "url": "https://scribe.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de documentation de workflows et d'IA : capture automatiquement comment le travail se déroule, génère guides étape par étape, analyse processus et entraîne les agents IA avec contexte métier.",
+    "what_en": "Workflow documentation and AI platform: automatically captures how work gets done, generates step-by-step guides, analyzes processes and trains AI agents with business context.",
+    "pricing_model": "Abonnement par formule (Free, Pro, Enterprise) avec tarification par siège ou usage.",
+    "free_tier": { "exists": true, "detail": "Version gratuite disponible (Free tier) ; Pro et Enterprise sur devis." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (version gratuite limitée)" },
+      { "name": "Pro Team", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Sur devis (contact sales)" }
+    ],
+    "key_features": [
+      "Capture automatique de workflows (sans effort manuel)",
+      "Génération de guides étape par étape",
+      "Masquage automatique de données sensibles",
+      "Analyse IA de workflows (goulots, inefficacités)",
+      "Intégration agents IA (APIs, MCP)",
+      "Formation d'agents IA sur processus métier (71% meilleure performance)",
+      "Entraînement des employés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous documentez beaucoup de processus manuels (entraînement, onboarding).",
+        "Vous voulez former vos agents IA sur le contexte métier réel.",
+        "Vous cherchez bottlenecks opérationnels avec données."
+      ],
+      "avoidIf": [
+        "Vous avez peu de processus ou documentation minimale.",
+        "Budget très serré.",
+        "Vous préférez documentation manuelle."
+      ],
+      "threshold": "Scribe brille pour orgs avec beaucoup de processus manuels et formation IA ; pour simple doc, un wiki suffit."
+    },
+    "pros": [
+      "Capture automatique : aucune rédaction manuelle.",
+      "Formation d'agents IA : 71% meilleure performance rapportée.",
+      "Analyse processus : identifie redondances et drains de temps.",
+      "Conforme 94% des Fortune 500.",
+      "Free tier disponible."
+    ],
+    "cons": [
+      "Tarification Pro/Enterprise personnalisée.",
+      "Dépendant de contexte IA pour ROI.",
+      "Nécessite adoption d'équipe."
+    ],
+    "use_cases": [
+      "Onboarding et formation d'employés (12x plus rapide).",
+      "Documentation processus opérationnel.",
+      "Réduction du temps manuel (35h/personne/mois).",
+      "Amélioration performance agents IA via contexte métier."
+    ],
+    "relevant_for": [
+      "Gestionnaires opérationnels et processus",
+      "Équipes IT et Automation",
+      "Responsables formation et RH"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You document many manual processes (training, onboarding).",
+        "You want to train your AI agents on real business context.",
+        "You seek operational bottlenecks with data."
+      ],
+      "avoidIf": [
+        "You have few processes or minimal documentation.",
+        "Budget is very tight.",
+        "You prefer manual documentation."
+      ],
+      "threshold": "Scribe shines for orgs with many manual processes and AI training; for simple docs, a wiki suffices."
+    },
+    "pros": [
+      "Automatic capture: no manual writing.",
+      "AI agent training: 71% better performance reported.",
+      "Process analysis: identifies redundancies and time drains.",
+      "Trusted by 94% of Fortune 500.",
+      "Free tier available."
+    ],
+    "cons": [
+      "Pro/Enterprise pricing personalized.",
+      "Depends on AI context for ROI.",
+      "Requires team adoption."
+    ],
+    "use_cases": [
+      "Employee onboarding and training (12x faster).",
+      "Operational process documentation.",
+      "Manual time reduction (35 hours/person/month).",
+      "Improve AI agent performance via business context."
+    ]
+  }
+}

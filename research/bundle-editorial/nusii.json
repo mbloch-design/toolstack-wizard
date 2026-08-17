@@ -1,0 +1,99 @@
+{
+  "slug": "nusii",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Nusii — Logiciel de propositions (site officiel)", "url": "https://nusii.com" }
+  ],
+  "facts": {
+    "what": "Logiciel en ligne de propositions commerciales avec signatures numériques : crée des propositions professionnelles, suit l'engagement client, acceptations et signatures.",
+    "what_en": "Online proposal software with digital signatures: create professional proposals, track client engagement, acceptances and e-signatures.",
+    "pricing_model": "Abonnement mensuel avec tarification tiered. Essai gratuit 14 jours avec garantie remboursement 60 jours.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai 14 jours sans carte bancaire, avec garantie remboursement 60 jours." },
+    "plans": [
+      { "name": "Agency", "price": "49 $/mois (3 sièges utilisateur, intégrations CRM, domaine custom)" },
+      { "name": "Plans supplémentaires", "price": "Tarifs à consulter sur le site (ajustables par use case)" }
+    ],
+    "key_features": [
+      "Signatures numériques légalement contraignantes",
+      "Notifications intelligentes (ouverture, acceptation, signature)",
+      "Suivi analytique des performances de propositions",
+      "Bibliothèque de templates réutilisables",
+      "Support multilingue 35 langues",
+      "Intégrations CRM (HubSpot, Pipedrive, Zapier, Slack)",
+      "Accès API pour workflows personnalisés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez beaucoup de propositions commerciales.",
+        "Vous voulez suivre quand les clients lisent/acceptent.",
+        "Vous travaillez avec clients internationaux (35 langues)."
+      ],
+      "avoidIf": [
+        "Vous avez très peu de propositions par an.",
+        "Budget très serré (cherchez gratuit).",
+        "Vous avez besoin que d'un simple générateur PDF."
+      ],
+      "threshold": "Nusii vaut pour agences ou équipes ventes régulières ; pour du one-off ou volume très bas, une alternative simple suffit."
+    },
+    "pros": [
+      "Spécialisé propositions : sigles, suivis et analytics intégrés.",
+      "Taux d'acceptation excellent : 45% (vs 21% industrie).",
+      "Multilingue 35 langues (idéal équipes globales).",
+      "Essai 14 jours sans risque avec remboursement 60 jours.",
+      "Intégrations CRM matures."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Tarification de base peut être élevée pour micro-équipe.",
+      "Pas de mention d'AI intégrée (vs concurrents modernes)."
+    ],
+    "use_cases": [
+      "Agences créatives envoyant devis et contrats régulièrement.",
+      "Équipes ventes commerciales (B2B).",
+      "Sociétés de conseil proposant des missions.",
+      "Freelances avec plusieurs clients et propositions."
+    ],
+    "relevant_for": [
+      "Agences créatives et digitales",
+      "Équipes ventes commerciales",
+      "Consultants et freelances",
+      "Petites entreprises de services"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create many sales proposals regularly.",
+        "You want to track when clients open/accept.",
+        "You work with international clients (35 languages)."
+      ],
+      "avoidIf": [
+        "You send very few proposals annually.",
+        "Budget is very tight (seeking free).",
+        "You only need a simple PDF generator."
+      ],
+      "threshold": "Nusii works for agencies or regular sales teams; for occasional or low-volume use, a simpler alternative suffices."
+    },
+    "pros": [
+      "Proposal-focused: signatures, tracking and analytics integrated.",
+      "Excellent acceptance rate: 45% (vs 21% industry).",
+      "Multilingual 35 languages (ideal for global teams).",
+      "14-day trial risk-free with 60-day refund guarantee.",
+      "Mature CRM integrations."
+    ],
+    "cons": [
+      "No free version.",
+      "Base pricing can be steep for micro-teams.",
+      "No mention of integrated AI (vs modern competitors)."
+    ],
+    "use_cases": [
+      "Creative agencies sending quotes and contracts regularly.",
+      "B2B sales teams.",
+      "Consulting firms proposing engagements.",
+      "Freelancers with multiple clients and proposals."
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "time-doctor",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Time Doctor — Employee monitoring & time tracking (site officiel)", "url": "https://timedoctor.com" },
+    { "label": "Time Doctor — Pricing (site officiel)", "url": "https://www.timedoctor.com/pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de suivi du temps et monitoring des employés (screenshots, rapports activité, tracking temps réel) pour équipes distantes ou hybrides.",
+    "what_en": "Employee time tracking and monitoring software with automatic time capture, screenshots, activity reports, and real-time visibility for remote and hybrid teams.",
+    "pricing_model": "Abonnement mensuel par utilisateur. Trois tiers (Basic, Standard, Premium) + Enterprise personnalisé. Réductions annuelles.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 14 jours accédant à toutes fonctionnalités Premium. Pas de plan gratuit permanent." },
+    "plans": [
+      { "name": "Basic", "price": "6,67 $ par utilisateur/mois (annuel) ou 8 $ par utilisateur/mois (mensuel) — tracking temps, screenshots" },
+      { "name": "Standard", "price": "11,67 $ par utilisateur/mois (annuel) ou 14 $ (mensuel) — + rapports usage web/app, scheduling, timesheet approvals, 60+ intégrations" },
+      { "name": "Premium", "price": "16,70 $ par utilisateur/mois (annuel) ou 20 $ (mensuel) — tout inclus, alertes distraction, customization avancée" }
+    ],
+    "key_features": [
+      "Suivi automatique du temps avec capture de screenshots",
+      "Rapports détaillés d'activité et productivité (web, apps, bureaux vs. remote)",
+      "Gestion de l'assiduité, congés et pauses",
+      "Payroll integration et time approvals",
+      "Planification de shifts et détection d'activités inhabituelles",
+      "60+ intégrations (Jira, Asana, Salesforce…)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe distante et voulez visibilité sur le temps travaillé.",
+        "Vous cherchez une alternative au contrôle humain.",
+        "Vos besoins payroll/assiduité sont importants."
+      ],
+      "avoidIf": [
+        "Vous travaillez en bureau sans télétravail.",
+        "Vous recherchez un outil gratuit.",
+        "Votre équipe a peu d'objectifs mesurables par le temps."
+      ],
+      "threshold": "Time Doctor convient aux managers de teams distantes cherchant productivité ; pour du bureau, un simple timesheet suffit."
+    },
+    "pros": [
+      "Suivi automatique sans intervention utilisateur.",
+      "Screenshots et rapports détaillés d'activité.",
+      "Intégrations payroll et gestion d'assiduité.",
+      "Essai gratuit 14 jours accès complet."
+    ],
+    "cons": [
+      "Surveillance de screenshots : enjeu de vie privée/culture.",
+      "Pas de plan gratuit à long terme.",
+      "Premium pricing pour accès à toutes fonctionnalités."
+    ],
+    "use_cases": [
+      "Manager une équipe distante et tracker productivité.",
+      "Générer rapports pour facturation/payroll client.",
+      "Détecter patterns d'inactivité ou heures anormales."
+    ],
+    "relevant_for": ["Managers d'équipes distantes", "Agences de prestation", "Freelancers avec clients contractuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a remote team and need time/activity visibility.",
+        "You want automated productivity tracking.",
+        "Payroll and attendance management are critical."
+      ],
+      "avoidIf": [
+        "You work in a traditional office.",
+        "You want a free tool.",
+        "Your team rarely measures work by hours."
+      ],
+      "threshold": "Time Doctor works for remote team managers needing detailed tracking; for office-based work, simpler tools suffice."
+    },
+    "pros": [
+      "Automatic time capture with screenshots.",
+      "Detailed activity and productivity reports.",
+      "Payroll and attendance features.",
+      "Full-featured 14-day free trial."
+    ],
+    "cons": [
+      "Screenshots raise privacy and culture concerns.",
+      "No permanent free plan.",
+      "Premium features cost extra."
+    ],
+    "use_cases": [
+      "Manage remote teams and track productivity.",
+      "Generate reports for client billing or payroll.",
+      "Monitor unusual activity and downtime."
+    ]
+  }
+}

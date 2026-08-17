@@ -1,0 +1,99 @@
+{
+  "slug": "plutio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Plutio — One app to run your business (site officiel)", "url": "https://www.plutio.com" }
+  ],
+  "facts": {
+    "what": "Plateforme tout-en-un pour petites équipes et freelances : combine gestion de projets, suivi de temps, facturation, propositions, contrats et communication client en un seul endroit.",
+    "what_en": "All-in-one platform for small teams and freelancers: combines project management, time tracking, invoicing, proposals, contracts and client communication in one place.",
+    "pricing_model": "Abonnement mensuel flat (non par siège). Tarification simple et transparente.",
+    "free_tier": { "exists": true, "detail": "Version gratuite sans limite de temps. Pas de carte bancaire requise pour débuter." },
+    "plans": [
+      { "name": "Freemium", "price": "0 $ (features de base, illimité)" },
+      { "name": "Paid plans", "price": "À partir de 19 $/mois (pas par siège, tout utilisateur inclus)" }
+    ],
+    "key_features": [
+      "Gestion de projets (tableaux, listes, calendrier)",
+      "Suivi de temps intégré",
+      "Facturation et propositions",
+      "Contrats numériques",
+      "Portail client personnalisé",
+      "Automations intelligentes (travail → temps → facture)",
+      "IA (Plutio Pal) pour actions autonomes",
+      "Support 25+ langues"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelance ou petite agence avec projets + facturation.",
+        "Vous en avez marre de jongler entre 5-6 outils.",
+        "Vous voulez une tarification flat (pas par siège)."
+      ],
+      "avoidIf": [
+        "Vous avez une grande équipe (coût devient lourd).",
+        "Vous avez besoin d'intégrations très spécialisées.",
+        "Vous préférez des outils meilleurs en un domaine (profondeur)."
+      ],
+      "threshold": "Plutio brille pour solo/petites équipes cherchant commodité et tarification simple ; pour teams complexes, des suites spécialisées valent mieux."
+    },
+    "pros": [
+      "Tarification flat : pas de coûts cachés par siège.",
+      "Essai gratuit sans limite ni carte bancaire.",
+      "Workflow complet : projet → temps → facture (automatisé).",
+      "IA pour actions autonomes (Plutio Pal).",
+      "Notes excellentes (4.4-4.6/5 étoiles)."
+    ],
+    "cons": [
+      "Fonctionnalités moins profondes que outils spécialisés.",
+      "Moins de templates et d'intégrations que concurrents majeurs.",
+      "Apprentissage nécessaire pour optimiser tous les modules."
+    ],
+    "use_cases": [
+      "Gérer projets freelances de A à Z avec facturation.",
+      "Petites agences digitalles (design, dev, marketing).",
+      "Cabinets de conseil ou prestataires de services.",
+      "Équipes comptables ou administratives."
+    ],
+    "relevant_for": [
+      "Freelances et travailleurs indépendants",
+      "Petites agences (3-15 personnes)",
+      "Professionnels des services"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a freelancer or small agency with projects and invoicing.",
+        "You are tired of juggling 5-6 different tools.",
+        "You want flat pricing (no per-seat costs)."
+      ],
+      "avoidIf": [
+        "You have a large team (cost becomes heavy).",
+        "You need highly specialized integrations.",
+        "You prefer tools that excel in one domain (depth)."
+      ],
+      "threshold": "Plutio shines for solos/small teams seeking convenience and simple pricing; for complex teams, specialized suites work better."
+    },
+    "pros": [
+      "Flat pricing: no hidden per-seat costs.",
+      "Free trial with no time limit or credit card.",
+      "Complete workflow: project → time → invoice (automated).",
+      "AI for autonomous actions (Plutio Pal).",
+      "Excellent ratings (4.4-4.6 out of 5 stars)."
+    ],
+    "cons": [
+      "Features less deep than specialized tools.",
+      "Fewer templates and integrations than major competitors.",
+      "Learning needed to optimize all modules."
+    ],
+    "use_cases": [
+      "Manage freelance projects end to end with invoicing.",
+      "Small digital agencies (design, dev, marketing).",
+      "Consulting firms or service providers.",
+      "Accounting or administrative teams."
+    ]
+  }
+}

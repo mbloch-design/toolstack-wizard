@@ -1,0 +1,93 @@
+{
+  "slug": "timecamp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TimeCamp — Time tracking software (site officiel)", "url": "https://timecamp.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de suivi du temps et gestion de projets avec IA (time tracking automatisé, timesheet, budgets de projets et facturation).",
+    "what_en": "AI-powered time tracking and project management software with automated time capture, timesheets, project budgeting, and billing features.",
+    "pricing_model": "Freemium avec plan gratuit illimité + 3 tiers payants (Starter, Premium, Ultimate) + Enterprise. Facturation mensuelle ou annuelle.",
+    "free_tier": { "exists": true, "detail": "Plan Free illimité avec utilisateurs illimités, tracking basique, timesheets. Pas de limite de durée." },
+    "plans": [
+      { "name": "Free", "price": "0 $ — unlimited users & projects, basic time tracking, timesheets" },
+      { "name": "Starter", "price": "3,99 $ par utilisateur/mois (annuel) ou 5,49 $ (mensuel) — AI Time Tracker, facturation, calendar assiduité" },
+      { "name": "Premium", "price": "6,99 $ par utilisateur/mois (annuel) ou 9,99 $ (mensuel) — resource planner, billable time tracking, budget alerts" },
+      { "name": "Ultimate", "price": "9,99 $ par utilisateur/mois (annuel) ou 13,99 $ (mensuel) — export données, détection remote, timesheet approvals, expenses" }
+    ],
+    "key_features": [
+      "AI Time Tracker (automatic time logging via activity monitoring)",
+      "Timesheets avec approval workflows",
+      "Project budgeting et profitabilité",
+      "Reporting & analytics (dashboards temps réel)",
+      "50+ intégrations (Jira, Asana, Monday…)",
+      "Compliance : GDPR, SOC2, HIPAA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un suivi temps gratuit sans limites d'utilisateurs.",
+        "Vous faites du tracking de temps facturable par projet.",
+        "Vous voulez automatisation IA du time tracking sans intervention."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que du time tracking très basique.",
+        "Votre équipe ne facture pas par heure.",
+        "Vous avez peu de projets à tracker."
+      ],
+      "threshold": "TimeCamp s'impose pour les agences et freelancers facturant à l'heure ; plan gratuit solo suffit pour usage perso."
+    },
+    "pros": [
+      "Plan Free vraiment illimité (utilisateurs, projets, durée).",
+      "AI tracking automatisé sans manuel.",
+      "Reporting de facturation et profitabilité par projet.",
+      "50+ intégrations avec outils populaires.",
+      "Tarifs payants très compétitifs."
+    ],
+    "cons": [
+      "Feature parity : features avancées en plans payants.",
+      "Détection IA/monitoring : enjeu de vie privée comme Time Doctor.",
+      "Essai sans plan grandiose."
+    ],
+    "use_cases": [
+      "Tracker temps billable et générer factures client.",
+      "Analyser profitabilité par projet.",
+      "Automatiser timesheet avec IA sans saisie manuelle."
+    ],
+    "relevant_for": ["Agences prestation", "Freelancers consultants", "Petites équipes projets"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need unlimited time tracking without user limits.",
+        "You bill clients by the hour or track billable time.",
+        "You want AI-powered automatic time logging."
+      ],
+      "avoidIf": [
+        "You need only basic time tracking.",
+        "Your team doesn't bill by the hour.",
+        "You have very few projects."
+      ],
+      "threshold": "TimeCamp works for billing-by-hour agencies; free plan alone is plenty for personal use."
+    },
+    "pros": [
+      "Truly unlimited free plan (users, projects, forever).",
+      "AI-powered automatic time tracking.",
+      "Project profitability and billing reports.",
+      "50+ integrations with popular tools.",
+      "Paid tiers very affordable."
+    ],
+    "cons": [
+      "Advanced features locked to paid plans.",
+      "AI monitoring raises privacy concerns.",
+      "Limited trial options."
+    ],
+    "use_cases": [
+      "Track billable time and generate invoices.",
+      "Analyze project profitability.",
+      "Automate timesheets with AI, zero manual entry."
+    ]
+  }
+}

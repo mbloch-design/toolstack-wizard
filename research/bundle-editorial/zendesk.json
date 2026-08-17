@@ -1,0 +1,97 @@
+{
+  "slug": "zendesk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zendesk — Customer service platform (site officiel)", "url": "https://zendesk.com" },
+    { "label": "Zendesk — Pricing (site officiel)", "url": "https://www.zendesk.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme omnicanale de support client (email, chat, voice, messaging) avec ticketing, help center et IA Agents pour automatiser résolutions client.",
+    "what_en": "Omnichannel customer support platform with ticketing, live chat, knowledge base, and AI Agents for automated customer resolution across email, messaging, and voice.",
+    "pricing_model": "Abonnement mensuel par agent, avec tiers Support (email uniquement) ou Suite (multi-canal). Prix en escalier par agent. Facturation annuelle avec remise.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai disponible sur demande. Aucun plan freemium." },
+    "plans": [
+      { "name": "Support Team", "price": "19 $ par agent/mois (annuel) ou 25 $/mois (mensuel) — ticketing, email uniquement, pas de chat/voice/IA" },
+      { "name": "Suite Team", "price": "55 $ par agent/mois (annuel) — Support + messaging, help center, bots de base" },
+      { "name": "Suite Professional", "price": "115 $ par agent/mois (annuel) — Suite Team + AI Copilot, Quality Assurance, Workforce Management" }
+    ],
+    "key_features": [
+      "Ticketing et routing automatique des demandes",
+      "Multi-canal : email, chat live, voice, messaging",
+      "Help Center (knowledge base) et bots",
+      "AI Agents pour résolutions automatisées (outcome-based pricing)",
+      "AI Copilot pour résumés et suggestions agents",
+      "Quality Assurance et analytics",
+      "1000+ intégrations (Salesforce, Slack, HubSpot…)",
+      "SOC2 Type II certified"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un volume important de tickets support.",
+        "Vous voulez multi-canal (email + chat + voice).",
+        "Vous cherchez IA agents pour résolutions automatisées."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit.",
+        "Votre volume est très faible (< 1–2 agents).",
+        "Vous avez besoin seulement d'email support ponctuel."
+      ],
+      "threshold": "Zendesk s'impose pour support client multi-canal ; pour email basique et petit volume, outils allégés (Help Scout, Freshdesk) suffisent."
+    },
+    "pros": [
+      "Omnicanal : email, chat, voice, messaging en un platform.",
+      "AI Agents natifs pour résolutions sans intervention humaine.",
+      "Analytics et reporting détaillés.",
+      "Vaste écosystème d'intégrations (1000+).",
+      "Scalable pour petites à très grandes équipes."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Support Team très basique (email uniquement).",
+      "Pricing escaladet par agent : peut devenir coûteux rapidement.",
+      "AI add-ons (Copilot) en sus du prix de base."
+    ],
+    "use_cases": [
+      "Gérer support multi-canal (email, chat, phone) centralisé.",
+      "Automatiser résolutions simples avec IA Agents.",
+      "Analyser satisfaction client et tracer tendances support."
+    ],
+    "relevant_for": ["Équipes support client", "SaaS et entreprises en ligne", "Services clients multi-canaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have significant support ticket volume.",
+        "You need multi-channel support (email, chat, voice).",
+        "You want AI agents for automated resolutions."
+      ],
+      "avoidIf": [
+        "You want a free tool.",
+        "Your volume is very low (< 1–2 agents).",
+        "You only need basic email support occasionally."
+      ],
+      "threshold": "Zendesk is ideal for multi-channel customer support at scale; for email-only and low volume, lighter tools (Help Scout, Freshdesk) fit better."
+    },
+    "pros": [
+      "True omnichannel: email, chat, voice, messaging unified.",
+      "Native AI Agents for automated customer resolution.",
+      "Detailed analytics and reporting.",
+      "Vast integration ecosystem (1000+).",
+      "Scales from small to very large teams."
+    ],
+    "cons": [
+      "No free tier.",
+      "Support Team very limited (email-only).",
+      "Per-agent pricing scales quickly with team size.",
+      "AI add-ons (Copilot) cost extra on top of base price."
+    ],
+    "use_cases": [
+      "Manage multi-channel support (email, chat, voice) in one place.",
+      "Automate simple resolutions with AI Agents.",
+      "Track customer satisfaction and support trends."
+    ]
+  }
+}
