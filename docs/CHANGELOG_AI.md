@@ -3841,3 +3841,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Ajout d’une matrice claire « garder / challenger / remplacer / supprimer », d’un exemple pédagogique explicitement non tarifaire et de garde-fous sur les données, paiements et accès partagés.
 - Ajout des métadonnées SEO, des FAQ structurées, des liens vers Ma Stack et Comparatifs, ainsi que de trois visuels éditoriaux existants avec textes alternatifs.
 - Synchronisation des sources `src` et `public`, régénération de l’index d’accueil, prerender Article + FAQ et validation complète du build de production.
+
+# 2026-08-17 — Nettoyage des comparatifs au prerender
+
+- Alignement des références Adobe Firefly et ConvertKit sur leurs slugs canoniques actuels (`firefly` et `kit`).
+- Retrait de Canva vs Photoshop Elements du registre publié, Photoshop Elements n’ayant plus de fiche catalogue exploitable.
+- Suppression des quatre avertissements de comparatifs introuvables pendant le build, sans modifier le fallback temporaire de la projection Supabase.

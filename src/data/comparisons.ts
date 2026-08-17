@@ -15,7 +15,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "deepseek-vs-chatgpt", toolA: "deepseek", toolB: "chatgpt" },
   { slugPair: "grammarly-vs-claude", toolA: "grammarly", toolB: "claude" },
   { slugPair: "grammarly-vs-prowritingaid", toolA: "grammarly", toolB: "prowritingaid" },
-  { slugPair: "midjourney-vs-firefly", toolA: "midjourney", toolB: "adobe-firefly" },
+  { slugPair: "midjourney-vs-firefly", toolA: "midjourney", toolB: "firefly" },
   { slugPair: "github-copilot-vs-cursor", toolA: "github-copilot", toolB: "cursor" },
 
   // Productivity / Project Management
@@ -49,7 +49,6 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
 
   // Design
   { slugPair: "figma-vs-canva", toolA: "figma", toolB: "canva" },
-  { slugPair: "canva-vs-photoshop-elements", toolA: "canva", toolB: "photoshop-elements" },
   { slugPair: "visme-vs-canva", toolA: "visme", toolB: "canva" },
   { slugPair: "prezi-vs-pitch", toolA: "prezi", toolB: "pitch" },
 
@@ -61,8 +60,8 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   // Email Marketing
   { slugPair: "mailchimp-vs-sendinblue", toolA: "mailchimp", toolB: "sendinblue" },
   { slugPair: "mailchimp-vs-getresponse", toolA: "mailchimp", toolB: "getresponse" },
-  { slugPair: "mailchimp-vs-convertkit", toolA: "mailchimp", toolB: "convertkit" },
-  { slugPair: "convertkit-vs-getresponse", toolA: "convertkit", toolB: "getresponse" },
+  { slugPair: "mailchimp-vs-convertkit", toolA: "mailchimp", toolB: "kit" },
+  { slugPair: "convertkit-vs-getresponse", toolA: "kit", toolB: "getresponse" },
   { slugPair: "moosend-vs-mailchimp", toolA: "moosend", toolB: "mailchimp" },
 
   // CRM / Sales
