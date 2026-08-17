@@ -2,6 +2,14 @@
 
 ---
 
+## 2026-08-17 — Visuel ChatGPT ressourcé
+
+- La couverture ChatGPT utilise désormais une capture publique et actuelle de la page produit officielle française.
+- La capture exclut toute session et donnée personnelle, tout en conservant le format historique 1200 × 630 utilisé par les cartes et les métadonnées sociales.
+- Source : https://chatgpt.com/fr-FR/overview/ (consultée le 17 août 2026).
+
+---
+
 ## 2026-07-31 — Performance mobile de l’accueil
 
 - Le fond du hero est désormais servi en WebP responsive : 51 Ko sur mobile et 193 Ko sur grand écran, contre 1,3 Mo pour la PNG d’origine.
