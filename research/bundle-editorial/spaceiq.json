@@ -1,0 +1,99 @@
+{
+  "slug": "spaceiq",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SpaceIQ (Eptura) — Workplace Management (site officiel)", "url": "https://eptura.com/spaceiq" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de l'espace de travail (SpaceIQ, now Eptura) : planifie espaces physiques, réserve places et bureaux, gère mouvements d'office et utilisation des locaux hybrides.",
+    "what_en": "Workplace space management platform (SpaceIQ, now Eptura): plans physical space, reserves desks and offices, manages office moves and hybrid workplace utilization.",
+    "pricing_model": "Tarification par module (space planning, real estate management, employee experience). Contact commercial pour détails.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification personnalisée selon modules et nombre de sites." },
+    "plans": [
+      { "name": "Modules à la carte", "price": "Montants sur la page officielle (Space Planning, Real Estate, Workplace Experience)" },
+      { "name": "Enterprise", "price": "Tarifs personnalisés sur devis" }
+    ],
+    "key_features": [
+      "Planification d'espaces : consolidation, seating alternatives, analyse mouvements",
+      "Gestion portefeuille immobilier : cartes globales, badging, rapports de présence",
+      "Prédiction headcount et planning par département/bâtiment",
+      "Gestion leases et coûts immobiliers",
+      "Hot desking et hoteling (réservation de bureau)",
+      "Intégration calendrier pour meeting rooms",
+      "Wayfinding numérique et support mobile",
+      "Reporting et analytics d'utilisation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs sites ou bureaux.",
+        "Vous avez transition hybride (hot desking, hoteling).",
+        "Vous voulez optimiser coûts immobiliers et utilisation espace."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un seul petit bureau.",
+        "Budget très serré.",
+        "Vous avez peu de besoin de gestion espace."
+      ],
+      "threshold": "SpaceIQ/Eptura pour organisations multi-sites gérant transitions hybrides ; pour simple bureau unique, un tableur suffit."
+    },
+    "pros": [
+      "Spécialisée gestion espace hybride et multi-sites.",
+      "Prédiction headcount et planning futur.",
+      "Intégrations calendrier pour meeting rooms.",
+      "Analytics utilisation : bench comparatif immobilier.",
+      "Support de badging et présence."
+    ],
+    "cons": [
+      "Tarification personnalisée (contact ventes).",
+      "Complexité mise en place et intégration.",
+      "Dépendance à données qualité (headcount, mouvements)."
+    ],
+    "use_cases": [
+      "Optimisation espaces hybrides (hot desk, hoteling).",
+      "Consolidation/réduction immobilière post-COVID.",
+      "Gestion déménagements et réorganisations office.",
+      "Planning futur de présence par site."
+    ],
+    "relevant_for": [
+      "Real Estate et Facilities managers",
+      "CRE (Corporate Real Estate) teams",
+      "Directeurs Opérationnels pour espaces hybrides"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple sites or offices.",
+        "You have hybrid workplace transition (hot desking, hoteling).",
+        "You want to optimize real estate costs and space utilization."
+      ],
+      "avoidIf": [
+        "You have only a single small office.",
+        "Budget is very tight.",
+        "You have minimal space management needs."
+      ],
+      "threshold": "SpaceIQ/Eptura for multi-site organizations managing hybrid transitions; for single office, a spreadsheet suffices."
+    },
+    "pros": [
+      "Specialized in hybrid and multi-site space management.",
+      "Headcount prediction and future planning.",
+      "Calendar integrations for meeting room booking.",
+      "Utilization analytics and real estate benchmarking.",
+      "Badging and presence support."
+    ],
+    "cons": [
+      "Personalized pricing (contact sales).",
+      "Complex implementation and integration.",
+      "Dependence on quality data (headcount, movements)."
+    ],
+    "use_cases": [
+      "Optimize hybrid spaces (hot desking, hoteling).",
+      "Real estate consolidation/reduction post-COVID.",
+      "Manage office moves and reorganizations.",
+      "Future presence planning by site."
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "superlist",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Superlist — Task Management (site officiel)", "url": "https://www.superlist.com" }
+  ],
+  "facts": {
+    "what": "Application de gestion de tâches créée par les fondateurs de Wunderlist : fusionne to-do lists et notes, inclut IA pour voix-vers-tâche et résumés réunions, avec collaboration temps réel.",
+    "what_en": "Task management app by Wunderlist founders: merges to-do lists and notes, includes AI for voice-to-task and meeting summaries, with real-time collaboration.",
+    "pricing_model": "Freemium : version gratuite avec abonnement optionnel pour features avancées.",
+    "free_tier": { "exists": true, "detail": "Version gratuite disponible pour débuter. Plans payants pour features avancées et collaboration." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (version gratuite, features de base)" },
+      { "name": "Premium plans", "price": "Montants sur la page officielle (collaboration avancée, features IA)" }
+    ],
+    "key_features": [
+      "Fusion tâches et notes dans un espace",
+      "Listes imbriquées et sous-tâches",
+      "Assistance IA : conversion voix-vers-action",
+      "Résumés IA de notes de réunion",
+      "Organisation intelligente de tâches",
+      "Tâches récurrentes pour habitudes",
+      "Collaboration temps réel d'équipe",
+      "Cross-platform : macOS, Web, iOS, Android",
+      "Support hors-ligne"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une app simple et élégante pour tâches/notes.",
+        "Vous appréciez l'intégration IA (voix, résumés).",
+        "Vous travaillez seul ou en petit groupe collaboratif."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une gestion de projets complète.",
+        "Vous voulez des centaines de features (analyse, reporting).",
+        "Vous préférez un outil très gratuit sans options payantes."
+      ],
+      "threshold": "Superlist pour gestion tâches simple + IA ; pour projets complexes, une suite complète convient mieux."
+    },
+    "pros": [
+      "App simple et élégante (fondateurs de Wunderlist).",
+      "Fusion notes + tâches (pas jongler deux apps).",
+      "IA intégrée : voix-vers-action, résumés réunion.",
+      "Free tier solide pour débuter.",
+      "Cross-platform complet (ordi + mobile + web).",
+      "Collaborative en temps réel."
+    ],
+    "cons": [
+      "Moins riche que solutions projet (kanban, gantt, reporting).",
+      "Tarification payante pour features avancées.",
+      "Peut être perçu comme minimaliste.",
+      "Pas de client lourd Windows mentionné."
+    ],
+    "use_cases": [
+      "Gestion tâches personnelles avec notes intégrées.",
+      "Petite équipe collaborant sur listes partagées.",
+      "Capture rapide tâches par voix (meetings, marche).",
+      "Organisation guillets/projets simples."
+    ],
+    "relevant_for": [
+      "Travailleurs indépendants et freelances",
+      "Petites équipes agiles",
+      "Individus cherchant app élégante et simple"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a simple and elegant app for tasks and notes.",
+        "You appreciate integrated AI (voice, summaries).",
+        "You work solo or in small collaborative groups."
+      ],
+      "avoidIf": [
+        "You need complete project management.",
+        "You want hundreds of features (analysis, reporting).",
+        "You prefer a very free tool without paid options."
+      ],
+      "threshold": "Superlist for simple task management and AI; for complex projects, a full suite works better."
+    },
+    "pros": [
+      "Simple and elegant app (Wunderlist founders).",
+      "Merged notes and tasks (no app juggling).",
+      "Integrated AI: voice-to-action, meeting summaries.",
+      "Solid free tier to start.",
+      "Complete cross-platform (desktop + mobile + web).",
+      "Real-time collaboration."
+    ],
+    "cons": [
+      "Less rich than project management solutions (kanban, gantt, reporting).",
+      "Paid pricing for advanced features.",
+      "May feel minimal.",
+      "No Windows desktop client mentioned."
+    ],
+    "use_cases": [
+      "Personal task management with integrated notes.",
+      "Small team collaborating on shared lists.",
+      "Quick task capture via voice (meetings, walks).",
+      "Simple list and project organization."
+    ]
+  }
+}

@@ -35,7 +35,7 @@
         "Vous voulez centraliser incidents et données opérationnelles."
       ],
       "avoidIf": [
-        "Vous travaillez 100% bureau sans terrain.",
+        "Vous travaillez entièrement au bureau, sans équipes terrain.",
         "Budget très serré.",
         "Vous avez peu de besoin d'inspections formelles."
       ],
@@ -73,7 +73,7 @@
         "You want to centralize incidents and operational data."
       ],
       "avoidIf": [
-        "You work 100% office without field teams.",
+        "You work entirely from the office, with no field teams.",
         "Budget is very tight.",
         "You have minimal formal inspection needs."
       ],

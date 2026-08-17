@@ -50,7 +50,7 @@
     ],
     "cons": [
       "Tarification par utilisateur (multiple rapide grande équipe).",
-      "Frais d'entrée significatifs (Basic ~228 $/an/user).",
+      "Ticket d'entrée significatif par utilisateur.",
       "Pas d'IA generative native mentionnée."
     ],
     "use_cases": [
@@ -88,7 +88,7 @@
     ],
     "cons": [
       "Per-user pricing (scales quickly with large teams).",
-      "Significant entry cost (Basic ~228$/year/user).",
+      "Significant per-user entry cost.",
       "No native generative AI mentioned."
     ],
     "use_cases": [

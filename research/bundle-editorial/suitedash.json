@@ -1,0 +1,106 @@
+{
+  "slug": "suitedash",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SuiteDash — All-in-One Business Platform (site officiel)", "url": "https://suitedash.com" }
+  ],
+  "facts": {
+    "what": "Plateforme tout-en-un pour petites/moyennes équipes : consolide CRM, gestion de projets, facturation, portail client blanc, signatures, email marketing et support en un seul système.",
+    "what_en": "All-in-one platform for small/medium teams: consolidates CRM, project management, invoicing, white-label client portal, signatures, email marketing and support in one system.",
+    "pricing_model": "Tarification plate unique : montant fixe mensuel incluant utilisateurs et clients illimités (pas par siège).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification plate unique 99 $/mois pour tous les utilisateurs et clients illimités." },
+    "plans": [
+      { "name": "All-in-One", "price": "99 $/mois (illimité utilisateurs, clients, projets)" }
+    ],
+    "key_features": [
+      "CRM et automation workflows",
+      "Portail client blanc et app mobile",
+      "Onboarding automatisé",
+      "Facturation et abonnements",
+      "Gestion de projets avec templates",
+      "Partage de fichiers sécurisé",
+      "E-signatures et contrats",
+      "Système de gestion d'apprentissage (LMS)",
+      "Email marketing et drip automation",
+      "Tickets support",
+      "Messagerie sécurisée (HIPAA compliant)",
+      "Forums et espaces communauté"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes petite agence (3-50 personnes) avec clients multiples.",
+        "Vous jongiez 5-7 outils avant (CRM, projet, facture, etc.).",
+        "Vous voulez tarification plate sans coûts cachés par siège."
+      ],
+      "avoidIf": [
+        "Vous êtes solo très minimaliste.",
+        "Vous avez besoins hyperspecialisés (beaucoup d'intégrations custom).",
+        "Budget mensuel zéro (cherchez gratuit)."
+      ],
+      "threshold": "SuiteDash pour petites agences/services cherchant consolidation ; pour solo minimaliste ou besoins ultra-spécialisés, alternatives meilleures."
+    },
+    "pros": [
+      "Tarification forfaitaire tout compris, sans surcoût par utilisateur.",
+      "Illimité : utilisateurs, clients, projets (véritablement illimité).",
+      "16 outils consolidés en un.",
+      "Portail client blanc (marque personnalisée).",
+      "Automation workflows entre modules.",
+      "Notes excellentes (4+ sur Capterra/G2)."
+    ],
+    "cons": [
+      "Ticket d'entrée élevé pour un usage strictement solo.",
+      "Moins profond que outils spécialisés dans chaque domaine.",
+      "Interface riche/complexe (courbe apprentissage).",
+      "Moins d'intégrations tierces vs solutions cloud majeures."
+    ],
+    "use_cases": [
+      "Petites agences digitales (design, dev, marketing).",
+      "Cabinets conseils et services professionnels.",
+      "Équipes de vente avec clients nombreux.",
+      "Prestataires de services avec projet + facturation."
+    ],
+    "relevant_for": [
+      "Petites agences (3-50 personnes)",
+      "Consultants et prestataires",
+      "Directeurs opérationnels et propriétaires de petite business"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a small agency (3-50 people) with multiple clients.",
+        "You juggled 5-7 tools before (CRM, projects, invoicing, etc.).",
+        "You want flat pricing without hidden per-seat costs."
+      ],
+      "avoidIf": [
+        "You are very minimalist solo.",
+        "You have hyperspecialized needs (many custom integrations).",
+        "Monthly budget is zero (seek free)."
+      ],
+      "threshold": "SuiteDash for small agencies/service firms seeking consolidation; for minimalist solo or ultra-specialized needs, better alternatives exist."
+    },
+    "pros": [
+      "Flat all-inclusive pricing, no per-user surprises.",
+      "Unlimited: users, clients, projects (truly unlimited).",
+      "16 tools consolidated in one.",
+      "White-label client portal (custom branding).",
+      "Workflow automation across modules.",
+      "Excellent ratings (4+ on Capterra/G2)."
+    ],
+    "cons": [
+      "High entry ticket for strictly solo use.",
+      "Less deep than specialized tools in each domain.",
+      "Rich/complex interface (learning curve).",
+      "Fewer third-party integrations vs. major cloud solutions."
+    ],
+    "use_cases": [
+      "Small digital agencies (design, dev, marketing).",
+      "Consulting and professional services firms.",
+      "Sales teams with many clients.",
+      "Service providers with projects and invoicing."
+    ]
+  }
+}
