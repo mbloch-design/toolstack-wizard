@@ -1,0 +1,111 @@
+{
+  "slug": "claude",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Anthropic API — pricing et modèles (site officiel)",
+      "url": "https://claude.com/platform/api"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+    "what_en": "API platform for accessing Claude models (Opus, Sonnet, Haiku, Fable) with prompt caching, batch processing, and web search capabilities for production integration.",
+    "pricing_model": "Facturation à l'usage par token (input/output), réductions pour batch processing et prompt caching.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas d'offre gratuite ; accès via API avec facturation au token."
+    },
+    "plans": [
+      {
+        "name": "Claude Haiku 4.5",
+        "price": "1 $/M input, 5 $/M output"
+      },
+      {
+        "name": "Claude Sonnet 5",
+        "price": "2 $/M input, 10 $/M output"
+      },
+      {
+        "name": "Claude Opus 5",
+        "price": "5 $/M input, 25 $/M output"
+      },
+      {
+        "name": "Claude Fable 5",
+        "price": "10 $/M input, 50 $/M output"
+      }
+    ],
+    "key_features": [
+      "Modèles multilingues haute performance",
+      "Prompt caching (90 % de réduction sur input)",
+      "Batch processing (50 % moins cher)",
+      "Web search et code execution",
+      "Context window jusqu'à 1M tokens",
+      "Agents gérés (Managed Agents)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des agents ou applications IA autonomes.",
+        "Vous voulez une API hautement fiable pour la production.",
+        "Votre cas nécessite un très long contexte (RAG, archives)."
+      ],
+      "avoidIf": [
+        "Vous cherchez une UI conversationnelle simple (préférez claude.com/chat).",
+        "Vous ne voulez pas de frais API."
+      ],
+      "threshold": "Anthropic API s'adresse aux développeurs intégrant Claude en production ; pour discuter simplement avec Claude, utilisez l'interface web gratuite."
+    },
+    "pros": [
+      "Modèles très performants et précis.",
+      "Support d'un très long contexte (1M tokens).",
+      "Traitement par lots pour réduire fortement les coûts.",
+      "Prompt caching (économie majeure sur contexte répétitif)."
+    ],
+    "cons": [
+      "Pas d'offre gratuite pour les développeurs.",
+      "Coûts élevés sur gros volumes.",
+      "Courbe d'apprentissage API (vs interface web)."
+    ],
+    "use_cases": [
+      "Déployer un chatbot en production.",
+      "Analyser de grandes archives (milliers de documents).",
+      "Orchestrer des agents autonomes complexes."
+    ],
+    "relevant_for": [
+      "Développeurs",
+      "Startups AI",
+      "Équipes ML/Data"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building autonomous AI agents or production apps.",
+        "You need high reliability and long context windows.",
+        "You're willing to pay for top-tier model quality."
+      ],
+      "avoidIf": [
+        "You just want to chat with an AI (use claude.com/chat).",
+        "You need free API access."
+      ],
+      "threshold": "Anthropic API is for developers shipping Claude to production; for casual chat, use the free web interface."
+    },
+    "pros": [
+      "Best-in-class model quality and reasoning.",
+      "Up to 1M token context window.",
+      "Batch processing sharply cuts costs.",
+      "Prompt caching for repeated-context scenarios."
+    ],
+    "cons": [
+      "No free tier for developers.",
+      "High costs at scale.",
+      "API integration required (not web-based)."
+    ],
+    "use_cases": [
+      "Deploy a production chatbot.",
+      "Process thousands of archived documents.",
+      "Run complex autonomous agents."
+    ]
+  }
+}

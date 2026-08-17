@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "ideogram",
+    "name": "Ideogram",
+    "url": "https://ideogram.ai"
+  },
+  {
+    "slug": "kling-ai",
+    "name": "Kling AI",
+    "url": "https://klingai.com"
+  },
+  {
+    "slug": "krea-ai",
+    "name": "Krea AI",
+    "url": "https://krea.ai"
+  },
+  {
+    "slug": "langchain",
+    "name": "LangChain",
+    "url": "https://www.langchain.com"
+  },
+  {
+    "slug": "langsmith",
+    "name": "LangSmith",
+    "url": "https://www.langchain.com/langsmith"
+  },
+  {
+    "slug": "leonardo-ai",
+    "name": "Leonardo AI",
+    "url": "https://leonardo.ai"
+  },
+  {
+    "slug": "llamaindex",
+    "name": "LlamaIndex",
+    "url": "https://www.llamaindex.ai"
+  },
+  {
+    "slug": "lovable",
+    "name": "Lovable",
+    "url": "https://lovable.dev"
+  },
+  {
+    "slug": "magnific-ai",
+    "name": "Magnific AI",
+    "url": "https://magnific.ai"
+  },
+  {
+    "slug": "manifest-ai",
+    "name": "Manifest AI",
+    "url": "https://manifestai.io"
+  }
+]

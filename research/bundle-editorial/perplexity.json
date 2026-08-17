@@ -1,0 +1,94 @@
+{
+  "slug": "perplexity",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Perplexity AI (site officiel)", "url": "https://perplexity.ai" }
+  ],
+  "facts": {
+    "what": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.",
+    "what_en": "AI search engine with real-time answers, numbered citations, and advanced features like custom Spaces, academic search, and access to multiple frontier models.",
+    "pricing_model": "Freemium avec tiers payants",
+    "free_tier": { "exists": true, "detail": "Gratuit avec recherches illimitées, 6 modes Focus, Collections, Spaces avec limite de fichiers" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (recherches illimitées)" },
+      { "name": "Pro", "price": "20 $/mois ou 200 $/an (200 $/an = 16,67 $/mois)" },
+      { "name": "Education Pro", "price": "10 $/mois pour étudiants/professeurs vérifiés" },
+      { "name": "Max", "price": "200 $/mois (pas de limites, Model Council)" },
+      { "name": "Enterprise Pro", "price": "40 $/utilisateur/mois (400 $/an)" }
+    ],
+    "key_features": [
+      "Recherche web en temps réel avec citations numérotées",
+      "6 modes Focus (Web, Académique, Reddit, YouTube, News, Wolfram Alpha)",
+      "Spaces personnalisés jusqu'à 50 fichiers (Pro) ou 5000 (Max)",
+      "Model Council (Max) : requête simultanée sur Claude Opus 4.6, GPT-5.2, Gemini 3 Pro",
+      "Crédits Perplexity Computer pour divers outils",
+      "Recherche multi-appareils synchronisée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la recherche régulière sur des sujets d'actualité.",
+        "Vous voulez des réponses récentes avec sources vérifiables.",
+        "Vous appréciez les fonctionnalités de recherche spécialisées (académique, Reddit, etc)."
+      ],
+      "avoidIf": [
+        "Vous avez besoin surtout d'un chatbot de productivité.",
+        "Votre budget est très serré.",
+        "Vous préférez un seul modèle IA plutôt que plusieurs."
+      ],
+      "threshold": "Perplexity excelle pour la recherche IA ; pour la productivité bureautique, un assistant dédié conviendrait mieux."
+    },
+    "pros": [
+      "Recherche en temps réel avec sources fiables.",
+      "Multiples modes Focus pour ciblage du contexte.",
+      "Accès à plusieurs modèles frontier (Max).",
+      "Spaces personnalisés pour projets de recherche.",
+      "Version gratuite complète et compétente."
+    ],
+    "cons": [
+      "Moins axé sur la productivité que le chat classique.",
+      "Max tier très coûteux pour usage occasionnel.",
+      "Apprentissage des modes Focus peut être nécessaire."
+    ],
+    "use_cases": [
+      "Faire des recherches avec sources citées pour articles ou rapports.",
+      "Explorer des sujets d'actualité avec contexte récent.",
+      "Comparer plusieurs modèles IA sur même requête (Max)."
+    ],
+    "relevant_for": ["Chercheurs", "Journalistes", "Professionnels en veille"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do regular research on current topics.",
+        "You want recent answers with verifiable sources.",
+        "You appreciate specialized search features (academic, Reddit, etc)."
+      ],
+      "avoidIf": [
+        "You primarily need an office productivity chatbot.",
+        "Your budget is very tight.",
+        "You prefer a single AI model over multiple."
+      ],
+      "threshold": "Perplexity excels at AI search; for office productivity, a dedicated assistant is better suited."
+    },
+    "pros": [
+      "Real-time search with reliable sources.",
+      "Multiple Focus modes for context targeting.",
+      "Access to multiple frontier models (Max).",
+      "Custom Spaces for research projects.",
+      "Capable and free tier."
+    ],
+    "cons": [
+      "Less focused on productivity than standard chat.",
+      "Max tier expensive for occasional use.",
+      "Learning Focus modes may be needed."
+    ],
+    "use_cases": [
+      "Research with cited sources for articles or reports.",
+      "Explore current topics with recent context.",
+      "Compare multiple AI models on same query (Max)."
+    ]
+  }
+}

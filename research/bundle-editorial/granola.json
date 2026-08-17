@@ -1,0 +1,87 @@
+{
+  "slug": "granola",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Granola — meeting notes et pricing (site officiel)", "url": "https://www.granola.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Assistant IA pour notes réunion : capture audio du device, transcription IA, résumés structurés, action items, intégration Notion/HubSpot/Slack. Gratuit avec 30 jours historique.",
+    "what_en": "AI meeting notes assistant: device audio capture, AI transcription, structured summaries, action items, and Notion/HubSpot/Slack integration. Free with 30-day history.",
+    "pricing_model": "Tier gratuit avec accès core, Business (14 $/user/mois) avec historique illimité et intégrations, Enterprise (35 $/user/mois).",
+    "free_tier": { "exists": true, "detail": "Gratuit : notes IA pour réunions illimitées, max 30 jours d'historique." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (30 jours historique)" },
+      { "name": "Business", "price": "14 $/user/mois (historique illimité, intégrations)" },
+      { "name": "Enterprise", "price": "35 $/user/mois (SSO, API accès)" }
+    ],
+    "key_features": [
+      "Capture audio device (pas serveur)",
+      "Transcription IA haute qualité",
+      "Résumés structurés et action items",
+      "Intégration Notion, HubSpot, Slack, Zapier",
+      "Historique illimité (Business+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une solution IA notes gratuite.",
+        "Vous aimez device audio (privacy).",
+        "Votre équipe utilise Notion/HubSpot."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'historique illimité gratuitement.",
+        "Vous utilisiez Fathom (CRM deep)."
+      ],
+      "threshold": "Granola excelle pour équipes Notion ; pour Salesforce/équipes sales, Fathom est mieux."
+    },
+    "pros": [
+      "Gratuit généreux et sans limite réunions.",
+      "Audio device (pas données vers le cloud).",
+      "Pricing transparent et juste.",
+      "Intégration Notion/Slack fluide."
+    ],
+    "cons": [
+      "Historique limité à 30j gratuit.",
+      "Pas d'intégration CRM native (HubSpot ok).",
+      "Support moins mature que Fathom."
+    ],
+    "use_cases": [
+      "Enregistrer réunions sans payer.",
+      "Créer base de savoir (notes historisées).",
+      "Lier action items à tâches Notion."
+    ],
+    "relevant_for": ["Teams Notion", "Startups budgétées", "Équipes produit/dev"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want free AI meeting notes.",
+        "You like device audio (privacy).",
+        "Your team uses Notion/HubSpot."
+      ],
+      "avoidIf": [
+        "You need unlimited history for free.",
+        "You used Fathom (CRM-deep)."
+      ],
+      "threshold": "Granola excels for Notion teams; for Salesforce/sales teams, Fathom is better."
+    },
+    "pros": [
+      "Generous free tier, unlimited meetings.",
+      "Device audio (no cloud data privacy).",
+      "Transparent, fair pricing.",
+      "Seamless Notion/Slack integration."
+    ],
+    "cons": [
+      "Free history capped at 30 days.",
+      "No native CRM integration (HubSpot ok).",
+      "Less mature support than Fathom."
+    ],
+    "use_cases": [
+      "Record meetings for free.",
+      "Build knowledge base (historicized notes).",
+      "Link action items to Notion tasks."
+    ]
+  }
+}

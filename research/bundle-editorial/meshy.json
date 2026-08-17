@@ -1,0 +1,90 @@
+{
+  "slug": "meshy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Meshy — AI 3D Model Generator (site officiel)", "url": "https://www.meshy.ai" }
+  ],
+  "facts": {
+    "what": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.",
+    "what_en": "AI-powered 3D model generator that converts text descriptions or images into ready-to-use 3D models for games and 3D printing.",
+    "pricing_model": "Freemium avec plans payants optionnels",
+    "free_tier": { "exists": true, "detail": "Accès gratuit sans carte bancaire requise" },
+    "plans": [
+      { "name": "Free Tier", "price": "Gratuit (accès de base)" }
+    ],
+    "key_features": [
+      "Génération texte-vers-3D et image-vers-3D",
+      "Texturage automatique basé sur PBR",
+      "Rigging et animation automatiques (600+ preset de mouvements)",
+      "Agent 3D pour affiner les modèles par conversation",
+      "Optimisation pour l'impression 3D (manifold, étanche)",
+      "Support multi-moteur (Unity, Unreal Engine, Godot, Blender)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des contenus 3D pour des jeux vidéo.",
+        "Vous avez besoin de modèles imprimables rapidement.",
+        "Vous préférez une solution sans abonnement coûteux."
+      ],
+      "avoidIf": [
+        "Vous nécessitez un contrôle total sur la géométrie.",
+        "Vous travaillez sur des scènes complexes multi-objets.",
+        "Vous avez besoin de compatibilité avec des formats très spécialisés."
+      ],
+      "threshold": "Meshy convient aux créateurs 3D cherchant rapidité et accessibilité ; pour des projets exigeant un contrôle méticuleux, un outil traditionnel demeure préférable."
+    },
+    "pros": [
+      "Génération rapide (moins d'une minute).",
+      "Aucun abonnement obligatoire pour démarrer.",
+      "Optimisation automatique pour l'impression 3D.",
+      "Support de multiples formats et moteurs.",
+      "Texturage et rigging automatiques."
+    ],
+    "cons": [
+      "Qualité variable selon la complexité du modèle.",
+      "Contrôle limité sur les détails fins.",
+      "Performance dépendante du prompt texte."
+    ],
+    "use_cases": [
+      "Générer rapidement des modèles de jeux inédits.",
+      "Préparer des objets pour l'impression 3D.",
+      "Créer des prototypes 3D à partir de descriptions."
+    ],
+    "relevant_for": ["Game developers", "3D artists", "Makers / Entrepreneurs impression 3D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create 3D content for games.",
+        "You need printable models quickly.",
+        "You prefer a solution without expensive subscriptions."
+      ],
+      "avoidIf": [
+        "You require complete control over geometry.",
+        "You work on complex multi-object scenes.",
+        "You need compatibility with very specialized formats."
+      ],
+      "threshold": "Meshy suits creators seeking speed and accessibility; for projects demanding meticulous control, traditional tools are preferable."
+    },
+    "pros": [
+      "Fast generation (under a minute).",
+      "No mandatory subscription to start.",
+      "Automatic optimization for 3D printing.",
+      "Multi-format and multi-engine support.",
+      "Automatic texturing and rigging."
+    ],
+    "cons": [
+      "Quality varies with model complexity.",
+      "Limited control over fine details.",
+      "Performance depends on text prompt quality."
+    ],
+    "use_cases": [
+      "Quickly generate game models.",
+      "Prepare objects for 3D printing.",
+      "Create 3D prototypes from text descriptions."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "pika-labs",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pika Labs — AI Video & Agents (site officiel)", "url": "https://pika.art" }
+  ],
+  "facts": {
+    "what": "Plateforme créative IA permettant de générer des vidéos, d'automatiser des workflows avec des agents IA, et d'appliquer des effets d'édition vidéo powered par IA.",
+    "what_en": "Creative AI platform enabling video generation, workflow automation with AI agents, and AI-powered video editing effects.",
+    "pricing_model": "Plan gratuit avec options premium (details sur pricing page)",
+    "free_tier": { "exists": true, "detail": "Accès gratuit disponible sans carte bancaire" },
+    "plans": [
+      { "name": "Pika Free", "price": "Gratuit (accès de base)" },
+      { "name": "Pika Premium", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Pika Agent : partenaire créatif IA pour collaboration",
+      "Pika MCP : intégration d'agents existants à des modèles créatifs",
+      "Pika Video App (Pikaffects) : création vidéo basée sur effets",
+      "AI Trendmaker : génération vidéo basée sur trends depuis selfies",
+      "Pika API Club : accès à des modèles de médias génératives"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez du contenu vidéo régulièrement.",
+        "Vous voulez automatiser des workflows créatifs.",
+        "Vous avez besoin d'effets vidéo rapides sans montage manuel."
+      ],
+      "avoidIf": [
+        "Vous faites du montage très professionnel ou complexe.",
+        "Vous avez besoin de contrôle pixel-perfect.",
+        "Votre budget est extrêmement serré."
+      ],
+      "threshold": "Pika convient aux créateurs cherchant rapidité et accessibilité ; pour du cinéma professionnel, un suite de montage traditionnelle demeure préférable."
+    },
+    "pros": [
+      "Interface intuitive pour créateurs sans expérience.",
+      "Agents IA pour automatiser tâches répétitives.",
+      "Génération vidéo rapide et accessible.",
+      "Plan gratuit généreux pour débuter."
+    ],
+    "cons": [
+      "Qualité variable selon les prompts et paramètres.",
+      "Moins de contrôle fin qu'un outil traditionnel.",
+      "Modèles créatifs limités à ce que propose Pika."
+    ],
+    "use_cases": [
+      "Générer des contenus vidéo pour réseaux sociaux rapidement.",
+      "Créer des vidéos de démonstration produit.",
+      "Automatiser la création de variations sur un thème."
+    ],
+    "relevant_for": ["Content creators", "Marketeurs digitaux", "Créateurs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create video content regularly.",
+        "You want to automate creative workflows.",
+        "You need fast video effects without manual editing."
+      ],
+      "avoidIf": [
+        "You do professional or complex editing.",
+        "You need pixel-perfect control.",
+        "Your budget is extremely tight."
+      ],
+      "threshold": "Pika suits creators seeking speed and accessibility; for professional filmmaking, traditional editing software is preferable."
+    },
+    "pros": [
+      "Intuitive interface for non-experts.",
+      "AI agents to automate repetitive tasks.",
+      "Fast and accessible video generation.",
+      "Generous free tier for getting started."
+    ],
+    "cons": [
+      "Variable quality based on prompts and settings.",
+      "Less fine control than traditional tools.",
+      "Creative models limited to Pika's offerings."
+    ],
+    "use_cases": [
+      "Generate social media video content quickly.",
+      "Create product demo videos.",
+      "Automate creation of variations on a theme."
+    ]
+  }
+}

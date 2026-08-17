@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "mem-ai",
+    "name": "Mem AI",
+    "url": "https://mem.ai"
+  },
+  {
+    "slug": "meshy",
+    "name": "Meshy",
+    "url": "https://www.meshy.ai"
+  },
+  {
+    "slug": "microsoft-365-copilot",
+    "name": "Microsoft 365 Copilot",
+    "url": "https://www.microsoft.com/microsoft-365/copilot"
+  },
+  {
+    "slug": "move-ai",
+    "name": "Move AI",
+    "url": "https://www.move.ai"
+  },
+  {
+    "slug": "notion-ai",
+    "name": "Notion AI",
+    "url": "https://notion.so/product/ai"
+  },
+  {
+    "slug": "openai-api",
+    "name": "OpenAI API",
+    "url": "https://platform.openai.com"
+  },
+  {
+    "slug": "otter",
+    "name": "Otter",
+    "url": "https://otter.com"
+  },
+  {
+    "slug": "otter-ai",
+    "name": "Otter.ai",
+    "url": "https://otter.ai"
+  },
+  {
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "url": "https://perplexity.ai"
+  },
+  {
+    "slug": "pgvector",
+    "name": "pgvector",
+    "url": "https://github.com/pgvector/pgvector"
+  }
+]

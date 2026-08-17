@@ -1,0 +1,88 @@
+{
+  "slug": "langsmith",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LangSmith — LLM observability et pricing (site officiel)", "url": "https://www.langchain.com/langsmith" }
+  ],
+  "facts": {
+    "what": "Plateforme observabilité et evaluation pour apps LLM : logging traces, versioning prompts, datasets d'évaluation, monitoring performance, et debugging agents. Complément LangChain.",
+    "what_en": "Observability and evaluation platform for LLM apps: trace logging, prompt versioning, evaluation datasets, performance monitoring, and agent debugging. LangChain complement.",
+    "pricing_model": "Developer gratuit (5K traces/mois), Plus (39 $/seat/mois), Enterprise custom. Overage : 2,50-5 $/1K traces selon retention.",
+    "free_tier": { "exists": true, "detail": "Developer : 5K traces/mois, 1 user, 14-day retention. Suffisant local dev." },
+    "plans": [
+      { "name": "Developer", "price": "0 $ (5K traces/mois)" },
+      { "name": "Plus", "price": "39 $/seat/mois (100K traces, 400-day retention)" },
+      { "name": "Enterprise", "price": "Custom (self-hosting, SLA)" },
+      { "name": "Overage", "price": "2,50-5 $/1K traces (retention dépend)" }
+    ],
+    "key_features": [
+      "Trace logging automatisé",
+      "Versioning et A/B test prompts",
+      "Datasets d'évaluation LLM",
+      "Monitoring latence/costs",
+      "Debugging agents interactif"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous deployez une app LLM production.",
+        "Vous debuggez agents ou chains complexes.",
+        "Votre LLM spend est > 1K $/mois (ROI obvie)."
+      ],
+      "avoidIf": [
+        "Vous prototypez en local (Developer suffisant).",
+        "Votre app LLM est stateless simple."
+      ],
+      "threshold": "LangSmith se rentabilise dès que l'observabilité réduit sensiblement les coûts d'API ; pour du prototypage, le palier Developer gratuit suffit."
+    },
+    "pros": [
+      "Observabilité complète pour LLM apps.",
+      "Debugging agents est très efficace.",
+      "Datasets d'évaluation bâtis automatiquement.",
+      "Developer free tier assez généreux."
+    ],
+    "cons": [
+      "Le palier Plus revient vite cher en équipe.",
+      "Overage pricing peut surprendre.",
+      "Courbe apprentissage UI."
+    ],
+    "use_cases": [
+      "Monitorer performance chatbot production.",
+      "Optimiser prompts via versioning A/B.",
+      "Debugger agents complexes interactively."
+    ],
+    "relevant_for": ["Équipes AI production", "Ingénieros LLM", "Data/ML teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're deploying an LLM app to production.",
+        "You debug complex agents/chains.",
+        "Your LLM spend is > 1K $/month (ROI obvious)."
+      ],
+      "avoidIf": [
+        "You prototype locally (free Developer ok).",
+        "Your LLM app is stateless simple."
+      ],
+      "threshold": "LangSmith pays for itself once observability meaningfully cuts API costs; for prototyping, the free Developer tier suffices."
+    },
+    "pros": [
+      "Complete observability for LLM apps.",
+      "Agent debugging very efficient.",
+      "Evaluation datasets built automatically.",
+      "Developer free tier reasonably generous."
+    ],
+    "cons": [
+      "The Plus tier adds up fast across a team.",
+      "Overage pricing can surprise.",
+      "UI learning curve."
+    ],
+    "use_cases": [
+      "Monitor production chatbot performance.",
+      "Optimize prompts via A/B versioning.",
+      "Debug complex agents interactively."
+    ]
+  }
+}

@@ -34,6 +34,7 @@ const files = [
   "scripts/sql/archive-specify-discontinued.sql",
   "scripts/sql/archive-repass-flags-6.sql",
   "scripts/sql/archive-wunderlist.sql",
+  "scripts/sql/archive-repass-flags-7.sql",
 ];
 
 let totalArchived = 0;

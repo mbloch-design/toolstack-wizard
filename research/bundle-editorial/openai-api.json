@@ -1,0 +1,87 @@
+{
+  "slug": "openai-api",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OpenAI API Platform (site officiel)", "url": "https://platform.openai.com" }
+  ],
+  "facts": {
+    "what": "Plateforme API pour accéder aux modèles de langage d'OpenAI (GPT-5.6, GPT-5.5, etc.) via une interface REST, dédiée aux développeurs intégrant l'IA dans leurs applications.",
+    "what_en": "API platform providing access to OpenAI's language models (GPT-5.6, GPT-5.5, etc.) via REST interface for developers integrating AI into applications.",
+    "pricing_model": "Paiement à l'usage (tokens d'entrée et sortie)",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 3 mois avec 5 $ de crédits" },
+    "plans": [
+      { "name": "Pay-as-you-go", "price": "GPT-5.6 Sol : 5 $/1M tokens d'entrée, 30 $/1M output ; réductions via Batch API et prompt caching" }
+    ],
+    "key_features": [
+      "Accès à plusieurs modèles (GPT-5.6 Sol/Terra/Luna, GPT-5.5, GPT-5.4, o4-mini)",
+      "Batch API pour réduire les coûts de 50 %",
+      "Prompt caching : 10 % du tarif pour prefixes répétés",
+      "Fine-tuning disponible sur modèles sélectionnés",
+      "Vision multimodale (texte, image, audio)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous intégrez l'IA dans une application ou service.",
+        "Vous avez besoin d'une API fiable et bien documentée.",
+        "Vous voulez accéder aux derniers modèles GPT."
+      ],
+      "avoidIf": [
+        "Vous cherchez une interface conviviale sans code.",
+        "Vous ne disposez pas des ressources techniques pour l'intégration.",
+        "Votre budget est très serré (frais de tokens potentiellement élevés)."
+      ],
+      "threshold": "L'API OpenAI s'impose pour les développeurs ; pour un usage non-technique, un chatbot grand public sera plus approprié."
+    },
+    "pros": [
+      "Modèles les plus avancés du marché.",
+      "API bien documentée et largement adoptée.",
+      "Multiples options d'optimisation (Batch, caching, fine-tuning).",
+      "Support pour cas d'usage complexes (vision, audio)."
+    ],
+    "cons": [
+      "Facturation à l'usage potentiellement imprévisible.",
+      "Nécessite des compétences de développement.",
+      "Coûts peuvent s'accumuler rapidement avec fort volume."
+    ],
+    "use_cases": [
+      "Intégrer un chatbot IA dans une application web.",
+      "Traiter des textes et images en masse via API.",
+      "Fine-tuner un modèle sur des données propriétaires."
+    ],
+    "relevant_for": ["Développeurs", "Équipes techniques", "Entreprises SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're integrating AI into an app or service.",
+        "You need a reliable, well-documented API.",
+        "You want access to the latest GPT models."
+      ],
+      "avoidIf": [
+        "You're looking for a no-code user interface.",
+        "You lack technical resources for integration.",
+        "Your budget is very tight (potential high token costs)."
+      ],
+      "threshold": "OpenAI API suits developers; for non-technical use, a consumer chatbot is more appropriate."
+    },
+    "pros": [
+      "Most advanced models on the market.",
+      "Well-documented and widely adopted API.",
+      "Multiple optimization options (Batch, caching, fine-tuning).",
+      "Support for complex use cases (vision, audio)."
+    ],
+    "cons": [
+      "Usage-based pricing can be unpredictable.",
+      "Requires software development skills.",
+      "Costs can accumulate quickly with high volume."
+    ],
+    "use_cases": [
+      "Integrate an AI chatbot into a web app.",
+      "Process texts and images at scale via API.",
+      "Fine-tune a model on proprietary data."
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "udio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Udio — AI Music Generator (site officiel)", "url": "https://udio.com" }
+  ],
+  "facts": {
+    "what": "Générateur de musique IA permettant créer des chansons complètes (avec voix et production) à partir de descriptions texte, avec support des droits commerciaux sur forfaits payants.",
+    "what_en": "AI music generator creating complete songs (with vocals and production) from text descriptions, with commercial rights support on paid plans.",
+    "pricing_model": "Freemium avec crédits mensuels",
+    "free_tier": { "exists": true, "detail": "100 crédits/mois gratuits (environ 1-3 chansons quotidiennement)" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (100 crédits/mois)" },
+      { "name": "Standard", "price": "10 $/mois (2400 crédits) ou 8 $/mois annuel" },
+      { "name": "Pro", "price": "30 $/mois (6000 crédits) ou 24 $/mois annuel" }
+    ],
+    "key_features": [
+      "Génération de chansons complètes en moins d'une minute",
+      "Création multi-genres (tous genres supportés)",
+      "Droits commerciaux sur forfaits payants (pas sur free tier)",
+      "HD audio downloads sur Pro",
+      "Accès aux vocal models et profils mixing premium",
+      "Création illimitée sur Pro (pas de cap quotidien)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de musique avec droits commerciaux.",
+        "Vous générez du contenu audio régulièrement.",
+        "Vous appréciez la création musicale accessible."
+      ],
+      "avoidIf": [
+        "Vous faites une musicologie très complexe.",
+        "Vous n'avez aucun budget d'IA.",
+        "Vous avez besoin de monophonies ultra-précises."
+      ],
+      "threshold": "Udio s'impose pour créateurs souhaitant musique IA avec droits ; pour usage gratuit sans droits, le free tier suffit."
+    },
+    "pros": [
+      "Génération ultra-rapide de musique complète.",
+      "Plan gratuit généreux (100 crédits/mois).",
+      "Droits commerciaux clairs sur forfaits payants.",
+      "HD audio downloads sur Pro.",
+      "Vocal models et profiles mixing premium."
+    ],
+    "cons": [
+      "Pas de droits commerciaux sur free tier.",
+      "Qualité musicale variable/aléatoire.",
+      "Moins de contrôle fin que DAW traditionnel.",
+      "Crédits partagés entre plusieurs utilisations."
+    ],
+    "use_cases": [
+      "Générer des fonds musicaux pour vidéos/podcasts.",
+      "Créer des bandes sonores avec droits commerciaux.",
+      "Produire rapidement des variations musicales.",
+      "Accompagner des contenus audiovisuels commerciaux."
+    ],
+    "relevant_for": ["Content creators", "Producteurs vidéo", "Musiciens amateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need music with commercial rights.",
+        "You generate audio content regularly.",
+        "You appreciate accessible music creation."
+      ],
+      "avoidIf": [
+        "You do complex music theory.",
+        "You have zero AI budget.",
+        "You need ultra-precise monophonies."
+      ],
+      "threshold": "Udio suits creators wanting AI music with rights; for free use without rights, free tier suffices."
+    },
+    "pros": [
+      "Ultra-fast complete music generation.",
+      "Generous free tier (100 credits/month).",
+      "Clear commercial rights on paid plans.",
+      "HD audio downloads on Pro.",
+      "Premium vocal models and mixing profiles."
+    ],
+    "cons": [
+      "No commercial rights on free tier.",
+      "Music quality variable/random.",
+      "Less fine control than traditional DAW.",
+      "Credits shared across multiple uses."
+    ],
+    "use_cases": [
+      "Generate musical backgrounds for videos/podcasts.",
+      "Create soundtracks with commercial rights.",
+      "Rapidly produce musical variations.",
+      "Accompany commercial audiovisual content."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "grok",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Grok — chatbot et API d'xAI (site officiel)", "url": "https://grok.com" }
+  ],
+  "facts": {
+    "what": "Chatbot IA conversationnel d'xAI intégré à X (Twitter) : accès temps réel aux données X trending, search et discussions. Web search, code execution, collections search. API pour développeurs (Grok 4.6).",
+    "what_en": "Conversational AI chatbot from xAI integrated into X (Twitter): real-time access to X trending data, search, and discussions. Web search, code execution, collections search. Developer API (Grok 4.6).",
+    "pricing_model": "Gratuit limité sur X, SuperGrok (30 $/mois) pour usage avancé et modèles latest. API au token avec call-based tools ($5/1K calls).",
+    "free_tier": { "exists": true, "detail": "Gratuit sur X : usage limité, moins d'accès web ; SuperGrok débloque advanced features." },
+    "plans": [
+      { "name": "Free (X)", "price": "0 $ (limité)" },
+      { "name": "SuperGrok", "price": "30 $/mois (limites avancées)" },
+      { "name": "SuperGrok Heavy", "price": "300 $/mois (Grok 4 Heavy)" },
+      { "name": "API (Grok 4.6)", "price": "2 $/M input, 6 $/M output" }
+    ],
+    "key_features": [
+      "Intégration X natif (trending, search)",
+      "Web Search et X Search natifs",
+      "Code Execution",
+      "Collections Search (5 $/1K calls)",
+      "Multi-agent tier (Heavy)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous analysez X/données trending en temps réel.",
+        "Vous voulez une IA avec vue sur le social live.",
+        "Vous avez besoin de web search natif."
+      ],
+      "avoidIf": [
+        "Vous cherchez une IA de raisonnement profond.",
+        "Vous avez besoin de support entreprise."
+      ],
+      "threshold": "Grok shines pour analyse X/social; pour logique complexe, Claude/Gemini sont mieux."
+    },
+    "pros": [
+      "Accès temps réel X sans limite.",
+      "Web search nativement intégré.",
+      "SuperGrok à prix raisonnable.",
+      "Déjà sur X (pas d'app supplémentaire)."
+    ],
+    "cons": [
+      "Moins mature pour raisonnement profond.",
+      "Support minimiste vs. OpenAI/Anthropic.",
+      "Modèles moins éprouvés."
+    ],
+    "use_cases": [
+      "Analyser trends X ou sentiment réseau.",
+      "Surveiller mentions de marque social live.",
+      "Générer contenu réactif sur trends."
+    ],
+    "relevant_for": ["Gestionnaires réseaux sociaux", "Analystes social", "Traders sentiment"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You analyze X/trending data real-time.",
+        "You want AI with live social view.",
+        "You need native web search."
+      ],
+      "avoidIf": [
+        "You seek deep reasoning AI.",
+        "You need enterprise support."
+      ],
+      "threshold": "Grok shines for X/social analysis; for complex logic, Claude/Gemini are better."
+    },
+    "pros": [
+      "Real-time X access without limits.",
+      "Web search natively integrated.",
+      "SuperGrok at reasonable price.",
+      "Already on X (no separate app)."
+    ],
+    "cons": [
+      "Less mature for deep reasoning.",
+      "Minimal support vs. OpenAI/Anthropic.",
+      "Less battle-tested models."
+    ],
+    "use_cases": [
+      "Analyze X trends or network sentiment.",
+      "Monitor brand mentions live.",
+      "Generate reactive content on trends."
+    ]
+  }
+}

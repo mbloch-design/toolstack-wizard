@@ -1,0 +1,87 @@
+{
+  "slug": "notion-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Notion AI (site officiel)", "url": "https://www.notion.com/product/ai" }
+  ],
+  "facts": {
+    "what": "Suite de fonctionnalités IA intégrées à Notion, incluant génération de texte, agents personnalisés pour automatiser les tâches, recherche d'entreprise, et résumés de réunions.",
+    "what_en": "Suite of AI features built into Notion, including text generation, custom agents for task automation, enterprise search, and meeting summaries.",
+    "pricing_model": "Crédits IA optionnels avec plan Business",
+    "free_tier": { "exists": true, "detail": "Essai gratuit avec accès limité aux fonctionnalités IA" },
+    "plans": [
+      { "name": "Business Plan", "price": "Inclut Notion AI ; crédits agents 10 $/1000 à partir du 4 mai 2026" }
+    ],
+    "key_features": [
+      "Agent Notion pour automatisation multi-étapes",
+      "Agents personnalisés pour workflows récurrents 24/7",
+      "Recherche d'entreprise multi-source (Slack, Google Drive, GitHub)",
+      "Résumés et notes de réunion avec transcription",
+      "Remplissage de base de données et génération de formules"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez déjà Notion pour votre gestion de projet.",
+        "Vous avez besoin d'automatiser des tâches répétitives.",
+        "Vous travaillez au sein d'une équipe avec données dispersées."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Notion actuellement.",
+        "Vous avez un budget très limité pour l'IA.",
+        "Vous nécessitez une solution IA découplée de votre wiki."
+      ],
+      "threshold": "Notion AI convient aux organisations Notion cherchant l'automatisation ; pour débuter sans Notion, un assistant IA généraliste peut être plus approprié."
+    },
+    "pros": [
+      "Intégration seamless à Notion.",
+      "Agents personnalisés pour workflows uniques.",
+      "Recherche intelligente inter-applications.",
+      "Résumés et transcriptions de réunions automatiques."
+    ],
+    "cons": [
+      "Coût des crédits agents après période gratuite.",
+      "Nécessite déjà un abonnement Notion.",
+      "Configuration des agents peut être complexe."
+    ],
+    "use_cases": [
+      "Générer des résumés depuis des documents Notion.",
+      "Automatiser le remplissage de bases de données.",
+      "Créer des agents récurrents pour tâches quotidiennes."
+    ],
+    "relevant_for": ["Équipes Notion", "Gestionnaires de projet", "Organisations en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already use Notion for project management.",
+        "You need to automate repetitive tasks.",
+        "You work in a team with scattered data."
+      ],
+      "avoidIf": [
+        "You don't currently use Notion.",
+        "You have a very limited AI budget.",
+        "You need AI separate from your wiki platform."
+      ],
+      "threshold": "Notion AI suits Notion-based organizations seeking automation; for non-Notion teams, a standalone AI assistant may be more appropriate."
+    },
+    "pros": [
+      "Seamless Notion integration.",
+      "Custom agents for unique workflows.",
+      "Smart cross-app search.",
+      "Automatic meeting summaries and transcriptions."
+    ],
+    "cons": [
+      "Credit costs after free period.",
+      "Requires existing Notion subscription.",
+      "Agent setup can be complex."
+    ],
+    "use_cases": [
+      "Generate summaries from Notion documents.",
+      "Automate database population.",
+      "Create recurring agents for daily tasks."
+    ]
+  }
+}

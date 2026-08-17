@@ -1,0 +1,86 @@
+{
+  "slug": "bolt-new",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bolt.new — web app builder avec IA (site officiel)", "url": "https://bolt.new" }
+  ],
+  "facts": {
+    "what": "Générateur d'applications web full-stack par IA (frontend React, backend Node.js) : décrivez l'app en langage naturel, Bolt génère code exécutable et dépliable dans le navigateur sans configuration locale.",
+    "what_en": "AI-powered full-stack web app generator (React frontend, Node.js backend): describe your app in natural language, Bolt generates executable, deployable code in the browser with zero local setup.",
+    "pricing_model": "Modèle gratuit avec chat en temps limité (utilise les crédits tokens Claude), plans payants non documentés publiquement.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit limité par crédits Claude API ; StackBlitz (parent) facture les accès avancés." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (limité par crédit)" },
+      { "name": "Premium / Pro", "price": "montants sur la page officielle ou StackBlitz" }
+    ],
+    "key_features": [
+      "Génération texte-vers-app complète",
+      "Exécution live dans le navigateur (WebContainers)",
+      "Édition code et UI en temps réel",
+      "Export code / déploiement direct",
+      "Choix d'IA : Claude ou agent v1"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prototypez rapidement une MVP.",
+        "Vous n'avez pas d'expérience React/Node.js.",
+        "Vous voulez créer une app sans terminal local."
+      ],
+      "avoidIf": [
+        "Vous construisez une app complexe ou architekturée.",
+        "Vous avez besoin de contrôle fin du code."
+      ],
+      "threshold": "Bolt.new excelle pour les prototypes et MVPs ; pour des apps métier complexes, écrivez le code directement."
+    },
+    "pros": [
+      "Création app ultra-rapide (minutes).",
+      "Accès gratuit généreux.",
+      "Pas de setup local, tout dans le navigateur.",
+      "Code sortant est réutilisable."
+    ],
+    "cons": [
+      "Qualité code générée inégale.",
+      "Limité à React + Node.js.",
+      "Pas idéal pour projets avancés."
+    ],
+    "use_cases": [
+      "Prototyper une idée de produit en 1h.",
+      "Créer un dashboard ou outil interne.",
+      "Démontrer un concept client rapidement."
+    ],
+    "relevant_for": ["Makers", "Entrepreneurs", "Freelances", "Étudiants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to prototype quickly.",
+        "You lack React/Node.js experience.",
+        "You prefer browser-based development over local setup."
+      ],
+      "avoidIf": [
+        "You're building a complex production app.",
+        "You need fine-grained control over code."
+      ],
+      "threshold": "Bolt.new is best for prototypes and MVPs; for complex business apps, code manually."
+    },
+    "pros": [
+      "Ultra-fast app creation (minutes).",
+      "Generous free tier.",
+      "No local setup; everything in browser.",
+      "Generated code is reusable."
+    ],
+    "cons": [
+      "Generated code quality is uneven.",
+      "Limited to React + Node.js.",
+      "Not ideal for advanced projects."
+    ],
+    "use_cases": [
+      "Prototype a product idea in 1 hour.",
+      "Build a dashboard or internal tool.",
+      "Demo a concept to clients quickly."
+    ]
+  }
+}

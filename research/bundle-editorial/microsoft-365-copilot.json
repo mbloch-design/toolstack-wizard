@@ -1,0 +1,87 @@
+{
+  "slug": "microsoft-365-copilot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft 365 Copilot (site officiel)", "url": "https://www.microsoft.com/microsoft-365/copilot" }
+  ],
+  "facts": {
+    "what": "Assistant IA intégré aux applications Microsoft 365 (Word, Excel, Outlook, Teams, PowerPoint) qui génère du contenu, résume des documents, crée des présentations et facilite la collaboration.",
+    "what_en": "AI assistant built into Microsoft 365 apps (Word, Excel, Outlook, Teams, PowerPoint) that generates content, summarizes documents, creates presentations, and enables workplace collaboration.",
+    "pricing_model": "Abonnement par utilisateur (ajout à Microsoft 365)",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; fonctionnalités intégrées à Microsoft 365 existant" },
+    "plans": [
+      { "name": "Copilot Pro", "price": "Montants sur la page officielle (abonnement annuel ou mensuel)" }
+    ],
+    "key_features": [
+      "Chat + Cowork pour conversations complexes multi-projets",
+      "Recherche IA d'entreprise au-delà de mots-clés",
+      "Agents pré-construits et personnalisables via Copilot Studio",
+      "Notebooks centralisées avec résumés de réunions",
+      "Génération de contenus (designs, vidéos, sondages)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez déjà Microsoft 365 quotidiennement.",
+        "Vous avez besoin d'une IA intégrée à Word, Excel, et Teams.",
+        "Vous travaillez en équipe et cherchez des outils collaboratifs d'IA."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas utilisateur Microsoft 365.",
+        "Vous préférez des outils d'IA généralistes découplés.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Microsoft 365 Copilot s'impose pour les organisations déjà ancrées dans l'écosystème Microsoft ; pour d'autres, des assistants IA indépendants peuvent être plus flexibles."
+    },
+    "pros": [
+      "Intégration profonde aux outils Microsoft 365.",
+      "Collaboration facilitée au sein des équipes.",
+      "Agents IA personnalisables pour workflows spécifiques.",
+      "Sécurité et respect des données d'entreprise."
+    ],
+    "cons": [
+      "Coût additionnel par utilisateur.",
+      "Dépendance à l'écosystème Microsoft.",
+      "Configuration initiale complexe pour les agents."
+    ],
+    "use_cases": [
+      "Générer des rapports et résumés dans Excel et Word.",
+      "Faciliter les réunions et la prise de notes dans Teams.",
+      "Créer des présentations PowerPoint par IA."
+    ],
+    "relevant_for": ["Organisations Microsoft", "Équipes corporatives", "Knowledge workers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Microsoft 365 daily.",
+        "You need AI integrated into Word, Excel, and Teams.",
+        "You work in teams and seek collaborative AI tools."
+      ],
+      "avoidIf": [
+        "You're not a Microsoft 365 user.",
+        "You prefer standalone generalist AI tools.",
+        "You're looking for entirely free solutions."
+      ],
+      "threshold": "Microsoft 365 Copilot suits organizations already embedded in Microsoft ecosystem; for others, standalone AI assistants may be more flexible."
+    },
+    "pros": [
+      "Deep integration with Microsoft 365 tools.",
+      "Simplified team collaboration.",
+      "Customizable AI agents for specific workflows.",
+      "Enterprise data security and compliance."
+    ],
+    "cons": [
+      "Additional cost per user.",
+      "Dependency on Microsoft ecosystem.",
+      "Complex agent setup for advanced use."
+    ],
+    "use_cases": [
+      "Generate reports and summaries in Excel and Word.",
+      "Facilitate meetings and note-taking in Teams.",
+      "Create PowerPoint presentations via AI."
+    ]
+  }
+}

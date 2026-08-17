@@ -1,0 +1,88 @@
+{
+  "slug": "langchain",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LangChain — framework et docs (site officiel)", "url": "https://www.langchain.com" }
+  ],
+  "facts": {
+    "what": "Framework open-source MIT pour construire apps LLM : abstractions Python/JavaScript, intégrations 100+ LLMs/outils, RAG, agents autonomes, et LangGraph pour orchestration agents.",
+    "what_en": "MIT open-source framework for building LLM apps: Python/JavaScript abstractions, 100+ LLM/tool integrations, RAG, autonomous agents, and LangGraph for agent orchestration.",
+    "pricing_model": "LangChain framework : gratuit (MIT). LangSmith (platform observabilité) : Developer gratuit, Plus 39 $/seat/mois. LangGraph Platform : 35 $/mois+.",
+    "free_tier": { "exists": true, "detail": "LangChain OSS gratuit; LangSmith Developer free (5K traces/mois)." },
+    "plans": [
+      { "name": "LangChain (OSS)", "price": "Gratuit (MIT license)" },
+      { "name": "LangSmith Developer", "price": "0 $ (5K traces/mois)" },
+      { "name": "LangSmith Plus", "price": "39 $/seat/mois (100K traces)" },
+      { "name": "LangGraph Platform", "price": "35 $/mois+ (deployment)" }
+    ],
+    "key_features": [
+      "Abstractions LLM standardisées",
+      "100+ intégrations LLM/tools",
+      "RAG chains et agents autonomes",
+      "LangGraph pour orchestration",
+      "LangSmith pour observabilité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une app LLM en Python/JS.",
+        "Vous avez des besoin RAG ou agents.",
+        "Vous utilisez multi-LLMs (abstraction)."
+      ],
+      "avoidIf": [
+        "Vous ne codez pas (utilisez UI builder).",
+        "Votre stack est très spécialiste (pas besoin abstraction)."
+      ],
+      "threshold": "LangChain s'impose pour dev LLM ; pour UI/no-code, essayez des builders."
+    },
+    "pros": [
+      "Framework open-source, stable et mature.",
+      "Large écosystème + intégrations.",
+      "RAG et agents « out of box ».",
+      "Gratuit pour prototyping."
+    ],
+    "cons": [
+      "Courbe apprentissage pour débutants.",
+      "Ecosystem vaste → choix paralysant.",
+      "LangSmith coûts peuvent escalader vite."
+    ],
+    "use_cases": [
+      "Construire un chatbot RAG custom.",
+      "Créer agents autonomes multi-étapes.",
+      "Abstraire multi-LLM backends."
+    ],
+    "relevant_for": ["Développeurs Python/JS", "Startups AI", "Équipes ML/data"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building an LLM app in Python/JS.",
+        "You have RAG or agent needs.",
+        "You use multiple LLMs (abstraction)."
+      ],
+      "avoidIf": [
+        "You don't code (use UI builder).",
+        "Your stack is very specialist (no abstraction needed)."
+      ],
+      "threshold": "LangChain is standard for LLM dev; for UI/no-code, try builders."
+    },
+    "pros": [
+      "Open-source, stable, mature framework.",
+      "Large ecosystem + integrations.",
+      "RAG and agents \"out of box\".",
+      "Free for prototyping."
+    ],
+    "cons": [
+      "Learning curve for beginners.",
+      "Vast ecosystem → choice paralysis.",
+      "LangSmith costs can escalate fast."
+    ],
+    "use_cases": [
+      "Build a custom RAG chatbot.",
+      "Create multi-step autonomous agents.",
+      "Abstract multi-LLM backends."
+    ]
+  }
+}

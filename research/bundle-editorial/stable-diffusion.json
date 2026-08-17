@@ -1,0 +1,91 @@
+{
+  "slug": "stable-diffusion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Stability AI — Stable Diffusion (site officiel)", "url": "https://stability.ai" }
+  ],
+  "facts": {
+    "what": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.",
+    "what_en": "Open-source image generation AI model freely available via cloud API (Stability.ai) or self-hosted, creating images from text descriptions.",
+    "pricing_model": "API payante (usage-based) + auto-hébergement gratuit",
+    "free_tier": { "exists": false, "detail": "API cloud payante ; modèle open-source auto-hébergeable gratuitement" },
+    "plans": [
+      { "name": "Platform API", "price": "Montants sur la page officielle (pay-per-use)" },
+      { "name": "Brand Studio", "price": "Montants sur la page officielle (plans tiérés)" },
+      { "name": "Self-Hosted License", "price": "Gratuit (modèle open-source)" }
+    ],
+    "key_features": [
+      "Génération d'images haute qualité depuis texte",
+      "Modèles entraînés sur données complètement licenciées",
+      "Déploiements flexibles : API cloud, auto-hébergement, cloud partners",
+      "Brand Studio : plateforme de production créative managée",
+      "Prêt pour production et déploiement à grande échelle"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous générez des images régulièrement pour contenu.",
+        "Vous voulez flexibilité de déploiement (cloud ou on-premise).",
+        "Vous avez un budget pour API usage ou infrastructure."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'une image occasionnelle.",
+        "Vous voulez une interface web gratuite sans compte.",
+        "Vous avez des contraintes légales strictes sur données."
+      ],
+      "threshold": "Stable Diffusion s'impose pour génération d'images en production ; pour usage léger, des services freemium conviendraient mieux."
+    },
+    "pros": [
+      "Open-source et auto-hébergeable sans coûts.",
+      "Modèles entraînés sur données licenciées légalement.",
+      "Déploiements flexibles (cloud, on-premise, partners).",
+      "Très performant et prêt pour production.",
+      "Large écosystème de community tools et intégrations."
+    ],
+    "cons": [
+      "API cloud payante par usage (coûts variables).",
+      "Nécessite compétences techniques pour auto-hébergement.",
+      "Qualité d'image variable selon prompts."
+    ],
+    "use_cases": [
+      "Générer des images pour marketing/contenu en masse.",
+      "Créer une galerie 3D de produits via images IA.",
+      "Prototyper des designs visuels rapidement."
+    ],
+    "relevant_for": ["Developers", "Content creators", "Entreprises SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You generate images regularly for content.",
+        "You want deployment flexibility (cloud or on-premise).",
+        "You have budget for API usage or infrastructure."
+      ],
+      "avoidIf": [
+        "You only need occasional images.",
+        "You want a free web interface without account.",
+        "You have strict legal constraints on data."
+      ],
+      "threshold": "Stable Diffusion suits production image generation; for light use, freemium services would be more appropriate."
+    },
+    "pros": [
+      "Open-source and self-hostable at no cost.",
+      "Models trained on legally licensed data.",
+      "Flexible deployments (cloud, on-premise, partners).",
+      "Very performant and production-ready.",
+      "Large ecosystem of community tools and integrations."
+    ],
+    "cons": [
+      "Cloud API payable by usage (variable costs).",
+      "Requires technical skills for self-hosting.",
+      "Image quality variable based on prompts."
+    ],
+    "use_cases": [
+      "Generate images for marketing/content at scale.",
+      "Create 3D product gallery via AI images.",
+      "Quickly prototype visual designs."
+    ]
+  }
+}

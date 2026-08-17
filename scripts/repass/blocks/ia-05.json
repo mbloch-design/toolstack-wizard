@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "pika-labs",
+    "name": "Pika Labs",
+    "url": "https://pika.art"
+  },
+  {
+    "slug": "pinecone",
+    "name": "Pinecone",
+    "url": "https://www.pinecone.io"
+  },
+  {
+    "slug": "qdrant",
+    "name": "Qdrant",
+    "url": "https://qdrant.tech"
+  },
+  {
+    "slug": "replit",
+    "name": "Replit",
+    "url": "https://replit.com"
+  },
+  {
+    "slug": "runway",
+    "name": "Runway",
+    "url": "https://runwayml.com"
+  },
+  {
+    "slug": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "url": "https://stability.ai"
+  },
+  {
+    "slug": "suno",
+    "name": "Suno",
+    "url": "https://suno.com"
+  },
+  {
+    "slug": "tabnine",
+    "name": "Tabnine",
+    "url": "https://tabnine.com"
+  },
+  {
+    "slug": "tripo",
+    "name": "Tripo",
+    "url": "https://www.tripo3d.ai"
+  },
+  {
+    "slug": "typotab",
+    "name": "TypoTab",
+    "url": "https://typotab.com"
+  }
+]

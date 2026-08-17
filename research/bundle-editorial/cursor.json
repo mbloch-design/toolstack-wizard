@@ -1,0 +1,88 @@
+{
+  "slug": "cursor",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cursor — AI code editor pricing (site officiel)", "url": "https://cursor.sh" }
+  ],
+  "facts": {
+    "what": "Éditeur de code IA natif (basé VS Code) avec Composer (multi-fichiers), Agent mode, indexation codebase, accès aux modèles Claude/GPT-4o/Gemini et MCP intégré.",
+    "what_en": "AI-native code editor (VS Code-based) with Composer for multi-file edits, Agent mode, codebase indexing, access to Claude/GPT-4o/Gemini models, and native MCP support.",
+    "pricing_model": "Tier gratuit, Pro 20 $/mois, Pro+ 60 $/mois, Ultra 200 $/mois avec allotments de crédit d'usage.",
+    "free_tier": { "exists": true, "detail": "Gratuit sans limite de temps ; crédits limités par rapport aux plans payants." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (crédits limités)" },
+      { "name": "Pro", "price": "20 $/mois (15 $ crédits)" },
+      { "name": "Pro+", "price": "60 $/mois (70 $ crédits)" },
+      { "name": "Ultra", "price": "200 $/mois (200 $ crédits)" }
+    ],
+    "key_features": [
+      "Édition multi-fichiers (Composer)",
+      "Agent mode autonome (background tasks)",
+      "Indexation et compréhension codebase",
+      "Choix de modèles IA (Claude, GPT-4o, Gemini, o1)",
+      "MCP natif pour outils externes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous codez en équipe ou solo, besoin d'IA cotidienne.",
+        "Vous aimez VS Code mais voulez puissance IA.",
+        "Vous avez un budget pour Pro ou Ultra."
+      ],
+      "avoidIf": [
+        "Vous utilisez vim ou Neovim (pas natif).",
+        "Vous voulez une solution IA gratuite."
+      ],
+      "threshold": "Cursor s'impose pour développeurs VS Code qui veulent une IA intégrée ; pour un usage ponctuel, les extensions VS Code IA suffisent."
+    },
+    "pros": [
+      "Éditeur IA le plus complet du marché.",
+      "Tous les modèles frontière dans un seul outil.",
+      "Composer pour refactoring multi-fichier puissant.",
+      "Free tier généreux pour commencer."
+    ],
+    "cons": [
+      "Plus cher que les extensions VS Code.",
+      "Courbe apprentissage (Agent mode).",
+      "Dépend des crédits limités."
+    ],
+    "use_cases": [
+      "Développer une app ou microservice solo rapidement.",
+      "Refactoriser un legacy codebase massif.",
+      "Pair-programming avec IA (Agent mode)."
+    ],
+    "relevant_for": ["Développeurs solo", "Teams agiles", "Freelances développeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You code daily and want integrated AI.",
+        "You love VS Code and want AI power.",
+        "You have budget for Pro/Ultra."
+      ],
+      "avoidIf": [
+        "You use vim or Neovim.",
+        "You want a fully free solution."
+      ],
+      "threshold": "Cursor is the standard for VS Code developers who want integrated AI; for occasional use, VS Code AI extensions suffice."
+    },
+    "pros": [
+      "Most complete AI editor on the market.",
+      "All frontier models in one tool.",
+      "Composer for powerful multi-file refactoring.",
+      "Generous free tier to start."
+    ],
+    "cons": [
+      "More expensive than VS Code extensions.",
+      "Learning curve for Agent mode.",
+      "Dependent on credit limits."
+    ],
+    "use_cases": [
+      "Build an app or microservice solo quickly.",
+      "Refactor a massive legacy codebase.",
+      "Pair-program with AI (Agent mode)."
+    ]
+  }
+}

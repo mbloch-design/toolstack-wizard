@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "anthropic",
+    "name": "Anthropic API",
+    "url": "https://www.anthropic.com/api"
+  },
+  {
+    "slug": "autodesk-flow-studio",
+    "name": "Autodesk Flow Studio",
+    "url": "https://wonderdynamics.com"
+  },
+  {
+    "slug": "bolt-new",
+    "name": "Bolt.new",
+    "url": "https://bolt.new"
+  },
+  {
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "url": "https://chat.openai.com"
+  },
+  {
+    "slug": "claude",
+    "name": "Claude",
+    "url": "https://anthropic.com"
+  },
+  {
+    "slug": "cursor",
+    "name": "Cursor",
+    "url": "https://cursor.sh"
+  },
+  {
+    "slug": "deepseek",
+    "name": "DeepSeek",
+    "url": "https://www.deepseek.com"
+  },
+  {
+    "slug": "descript",
+    "name": "Descript",
+    "url": "https://descript.com"
+  },
+  {
+    "slug": "fathom",
+    "name": "Fathom",
+    "url": "https://www.fathom.ai"
+  },
+  {
+    "slug": "fellow",
+    "name": "Fellow",
+    "url": "https://fellow.app"
+  }
+]

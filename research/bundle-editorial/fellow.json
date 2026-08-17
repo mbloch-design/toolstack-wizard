@@ -1,0 +1,88 @@
+{
+  "slug": "fellow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Fellow — meeting notes et pricing (site officiel)", "url": "https://fellow.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de notes IA pour réunions : enregistrement, transcription IA, résumés, action items, et intégration project management (Notion, Confluence, Jira). Freemium jusqu'à 10 utilisateurs.",
+    "what_en": "AI meeting notes tool: recording, AI transcription, summaries, action items, and project management integration (Notion, Confluence, Jira). Freemium up to 10 users.",
+    "pricing_model": "Tier gratuit pour équipes jusqu'à 10 personnes, puis Team et Business par utilisateur (min. 3 utilisateurs).",
+    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 10 utilisateurs avec notes core, AI transcription, résumés et action items." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (jusqu'à 10 users)" },
+      { "name": "Team", "price": "7 $/user/mois (min. 3 users, annuel) ou 11 $/user/mois" },
+      { "name": "Business", "price": "15 $/user/mois (annuel) ou 23 $/user/mois" },
+      { "name": "Enterprise", "price": "25 $/user/mois (annuel)" }
+    ],
+    "key_features": [
+      "Enregistrement et transcription IA",
+      "Notes structurées + action items",
+      "Intégration Notion, Confluence, Jira",
+      "Meeting automations",
+      "Modèles d'équipe org-wide"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe est petite (< 10 personnes).",
+        "Vous utilisez Notion ou Confluence.",
+        "Vous voulez une solution gratuite généreuse."
+      ],
+      "avoidIf": [
+        "Votre équipe est grande (coûts escaladent).",
+        "Vous avez besoin d'intégration CRM."
+      ],
+      "threshold": "Fellow s'impose pour petites équipes produit/dev ; pour équipes sales, Fathom (CRM) est mieux."
+    },
+    "pros": [
+      "Gratuit jusqu'à 10 utilisateurs.",
+      "Intégrations project management solides.",
+      "Bonne qualité transcription.",
+      "Actions items auto-liés aux tâches."
+    ],
+    "cons": [
+      "Pas d'intégration CRM native.",
+      "Coûts escaladent vite au-delà de 10.",
+      "Free tier ne sync pas à project tools."
+    ],
+    "use_cases": [
+      "Documenter réunions équipe produit.",
+      "Lier automatiquement action items à Notion.",
+      "Rester sur même page côté align."
+    ],
+    "relevant_for": ["Teams produit", "Équipes dev", "Équipes ops"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team is small (< 10 people).",
+        "You use Notion or Confluence.",
+        "You want a generous free tier."
+      ],
+      "avoidIf": [
+        "Your team is large (costs escalate fast).",
+        "You need CRM integration."
+      ],
+      "threshold": "Fellow is best for small product/dev teams; for sales teams, Fathom (CRM) is better."
+    },
+    "pros": [
+      "Free for up to 10 users.",
+      "Strong project management integrations.",
+      "Good transcription quality.",
+      "Action items auto-linked to tasks."
+    ],
+    "cons": [
+      "No native CRM integration.",
+      "Costs escalate fast beyond 10 users.",
+      "Free tier doesn't sync to project tools."
+    ],
+    "use_cases": [
+      "Document product team meetings.",
+      "Auto-link action items to Notion.",
+      "Keep team alignment on page."
+    ]
+  }
+}

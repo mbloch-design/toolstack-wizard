@@ -1,0 +1,88 @@
+{
+  "slug": "fathom",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Fathom — pricing et plans (site officiel)", "url": "https://www.fathom.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Assistant IA pour réunions : enregistrement vidéo/audio, transcription IA, résumés automatiques, génération action items, et intégration CRM (Salesforce, HubSpot). Gratuit avec résumés limités à 5/mois.",
+    "what_en": "AI meeting assistant: video/audio recording, AI transcription, automated summaries, action item generation, and CRM integration (Salesforce, HubSpot). Free with 5 monthly summaries limit.",
+    "pricing_model": "Tier gratuit avec limite résumés, puis abonnements à la place (Premium, Team, Business).",
+    "free_tier": { "exists": true, "detail": "Gratuit : enregistrements/transcription illimités, mais max 5 résumés IA/mois." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (5 résumés/mois)" },
+      { "name": "Premium", "price": "20 $/mois (résumés illimités)" },
+      { "name": "Team", "price": "18-19 $/user/mois (min. 2)" },
+      { "name": "Business", "price": "25-34 $/user/mois (min. 2)" }
+    ],
+    "key_features": [
+      "Enregistrement vidéo/audio illimité",
+      "Transcription IA et résumés",
+      "Génération action items et notes",
+      "Intégration CRM (Salesforce, HubSpot)",
+      "90-jours money-back guarantee"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous animez beaucoup de réunions client.",
+        "Vous voulez capturer les décisions/action items.",
+        "Votre équipe utilise Salesforce ou HubSpot."
+      ],
+      "avoidIf": [
+        "Vous n'avez que quelques réunions/mois.",
+        "Vous utilisez un CRM non supporté."
+      ],
+      "threshold": "Fathom s'impose pour équipes sales/support ; pour usage ponctuel, Granola gratuit suffit."
+    },
+    "pros": [
+      "Gratuit généreux avec limite résumés.",
+      "Intégration CRM profonde.",
+      "90-jours money-back sur payants.",
+      "Convivialité excellente."
+    ],
+    "cons": [
+      "Free tier : 5 résumés seulement.",
+      "Prix Premium monte vite en équipe.",
+      "Pas d'API public (intégration limité)."
+    ],
+    "use_cases": [
+      "Enregistrer et résumer appels client auto.",
+      "Créer action items CRM automatiquement.",
+      "Coacher équipe sur interactions clients."
+    ],
+    "relevant_for": ["Teams sales", "Support client", "Account managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run many client meetings.",
+        "You want to capture decisions and action items.",
+        "Your team uses Salesforce or HubSpot."
+      ],
+      "avoidIf": [
+        "You have only a few meetings per month.",
+        "You use an unsupported CRM."
+      ],
+      "threshold": "Fathom is standard for sales/support teams; for light use, free Granola suffices."
+    },
+    "pros": [
+      "Generous free tier with summary limit.",
+      "Deep CRM integration.",
+      "90-day money-back on paid plans.",
+      "Excellent UX."
+    ],
+    "cons": [
+      "Free tier: only 5 summaries max.",
+      "Premium pricing climbs fast per user.",
+      "No public API (limited integrations)."
+    ],
+    "use_cases": [
+      "Auto-record and summarize client calls.",
+      "Auto-create CRM action items.",
+      "Coach team on client interactions."
+    ]
+  }
+}

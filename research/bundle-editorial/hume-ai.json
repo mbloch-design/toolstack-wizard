@@ -1,0 +1,89 @@
+{
+  "slug": "hume-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hume AI — empathic voice et APIs (site officiel)", "url": "https://www.hume.ai" }
+  ],
+  "facts": {
+    "what": "Plateforme IA empathique vocale : EVI (Empathic Voice Interface) et Octave (TTS empathique). Détecte émotions vocales, répond naturellement. APIs pour expression measurement, EVI, et produits connectés.",
+    "what_en": "Empathic voice AI platform: EVI (Empathic Voice Interface) and Octave (empathic TTS). Detects vocal emotions, responds naturally. APIs for expression measurement, EVI, and connected products.",
+    "pricing_model": "Tier gratuit (5 EVI min/mois, 10K TTS chars), Creator (14 $/mois), + custom services (onboarding, data storage, support, advanced features).",
+    "free_tier": { "exists": true, "detail": "Gratuit : 5 EVI minutes, 10K TTS characters (0,15 $/1K overage)." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (5 min EVI, 10K chars)" },
+      { "name": "Creator", "price": "14 $/mois (140K chars TTS, unlimited voice clone)" },
+      { "name": "Implementation", "price": "1-5K $ (onboarding, setup)" },
+      { "name": "Data storage", "price": "100-1K $/mois (audio/video processing)" },
+      { "name": "Advanced features", "price": "500-3,5K $/an" }
+    ],
+    "key_features": [
+      "EVI (Empathic Voice Interface) temps réel",
+      "Octave (TTS empathique)",
+      "Détection émotions vocales",
+      "Expression Measurement API",
+      "Voice cloning illimité (Creator+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une app IA conversationnelle empathique.",
+        "Vous voulez détecter émotion vocale client.",
+        "Votre use-case : customer support, mental health."
+      ],
+      "avoidIf": [
+        "Vous besoin de TTS simple (utilisez autre).",
+        "Votre budget est très limité."
+      ],
+      "threshold": "Hume excels pour applications empathie vocale ; pour TTS standard, utilisez une solution plus simple/moins chère."
+    },
+    "pros": [
+      "Unique détection émotion vocale.",
+      "Réponses vocales naturelles et empathiques.",
+      "Free tier incluant Creator accessible.",
+      "Voice cloning illimité (Creator)."
+    ],
+    "cons": [
+      "Coûts service additionnel importants.",
+      "Free tier vraiment limité (5 min).",
+      "Courbe apprentissage API."
+    ],
+    "use_cases": [
+      "Customer support chatbot empathique.",
+      "Mental health / wellness app vocale.",
+      "Connected device voice interface."
+    ],
+    "relevant_for": ["Startups deep tech", "Équipes mental health", "Developers conversational AI"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building an empathic conversational AI app.",
+        "You want to detect customer vocal emotion.",
+        "Your use case: customer support, mental health."
+      ],
+      "avoidIf": [
+        "You just need simple TTS.",
+        "Your budget is very limited."
+      ],
+      "threshold": "Hume excels for empathic voice apps; for standard TTS, use a simpler/cheaper solution."
+    },
+    "pros": [
+      "Unique vocal emotion detection.",
+      "Natural, empathic voice responses.",
+      "Free tier including Creator accessible.",
+      "Unlimited voice cloning (Creator)."
+    ],
+    "cons": [
+      "Additional service costs substantial.",
+      "Free tier really limited (5 minutes).",
+      "API learning curve."
+    ],
+    "use_cases": [
+      "Empathic customer support chatbot.",
+      "Mental health / wellness voice app.",
+      "Connected device voice interface."
+    ]
+  }
+}

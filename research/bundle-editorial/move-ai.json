@@ -1,0 +1,87 @@
+{
+  "slug": "move-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Move AI — Markerless Motion Capture (site officiel)", "url": "https://www.move.ai" }
+  ],
+  "facts": {
+    "what": "Système de capture de mouvement sans marqueurs utilisant l'IA et plusieurs caméras pour capturer les mouvements humains sans tenues ni marqueurs physiques, destiné à la VFX, l'animation et les jeux vidéo.",
+    "what_en": "Markerless motion capture system using AI and multi-camera setup to capture human movement without physical suits or markers, designed for VFX, animation, and gaming.",
+    "pricing_model": "Sur devis (modèle d'entreprise)",
+    "free_tier": { "exists": false, "detail": "Accès via démo ; tarifs sur demande" },
+    "plans": [
+      { "name": "Enterprise", "price": "Montants sur la page officielle (devis personnalisé)" }
+    ],
+    "key_features": [
+      "Capture sans marqueurs ni tenues (IA + multi-caméra)",
+      "Qualité comparable aux systèmes optiques traditionnels",
+      "Réduction des durées et coûts de tournage",
+      "Volumes de capture adaptables",
+      "Utilisation par studios majeurs (Ubisoft, Disney, Sony, Paramount)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez du contenu VFX ou animation haut de gamme.",
+        "Vous cherchez à réduire les coûts et délais de capture.",
+        "Vous travaillez avec des studios ou des équipes importantes."
+      ],
+      "avoidIf": [
+        "Vous avez un budget production limité.",
+        "Vous cherchez une solution plug-and-play simple.",
+        "Vous ne faites que de l'animation 2D ou légère."
+      ],
+      "threshold": "Move AI s'adresse aux studios professionnels ; pour des productions légères, les solutions traditionnelles ou logicielles peuvent suffire."
+    },
+    "pros": [
+      "Capteur de mouvement haute qualité sans équipement lourd.",
+      "Réduction significative des coûts comparé aux systèmes optiques.",
+      "Flexible et adaptable à différentes échelles de production.",
+      "Utilisé par les plus grands studios du secteur."
+    ],
+    "cons": [
+      "Accès sur devis (coût d'entreprise important).",
+      "Nécessite une configuration d'espace de capture.",
+      "Pas de tarifs publics affichés."
+    ],
+    "use_cases": [
+      "Capturer des mouvements d'acteurs pour films d'animation.",
+      "Produire des cinématiques de jeux vidéo.",
+      "Créer des contenus VFX à haut budget."
+    ],
+    "relevant_for": ["Studios VFX", "Producteurs animation", "Équipes jeux AAA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce high-end VFX or animation.",
+        "You want to reduce capture costs and timelines.",
+        "You work with large studios or teams."
+      ],
+      "avoidIf": [
+        "You have a limited production budget.",
+        "You want a simple plug-and-play solution.",
+        "You only create light 2D or simple animation."
+      ],
+      "threshold": "Move AI targets professional studios; for lighter productions, traditional or software solutions may suffice."
+    },
+    "pros": [
+      "High-quality motion capture without heavy equipment.",
+      "Significant cost reduction vs. optical systems.",
+      "Flexible and scalable across production sizes.",
+      "Used by major studios globally."
+    ],
+    "cons": [
+      "Custom pricing model (significant enterprise cost).",
+      "Requires capture space setup.",
+      "No public pricing available."
+    ],
+    "use_cases": [
+      "Capture actor motion for animated films.",
+      "Produce video game cinematics.",
+      "Create high-budget VFX content."
+    ]
+  }
+}

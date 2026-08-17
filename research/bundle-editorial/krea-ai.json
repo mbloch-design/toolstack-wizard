@@ -1,0 +1,88 @@
+{
+  "slug": "krea-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Krea AI — image et video generation (site officiel)", "url": "https://krea.ai" }
+  ],
+  "facts": {
+    "what": "Agrégateur de 64+ modèles d'IA image et vidéo (Flux, Runway, Veo 3, Krea propriétaire) dans une plateforme unifiée avec compute units et tarification à l'usage. Real-time art generation.",
+    "what_en": "Aggregator of 64+ AI image and video models (Flux, Runway, Veo 3, proprietary Krea) in a unified platform with compute units and usage-based pricing. Real-time art generation.",
+    "pricing_model": "Tier gratuit (100 daily compute units), Basic (10 $/mois), Pro (35 $/mois), Max (60 $/mois). 20 % réduction annuelle.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 100 compute units/jour (limité générations selon qualité/modèle)." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (100 daily units)" },
+      { "name": "Basic", "price": "10 $/mois (image + video generation)" },
+      { "name": "Pro", "price": "35 $/mois (plus video)" },
+      { "name": "Max", "price": "60 $/mois (3x Pro generation)" }
+    ],
+    "key_features": [
+      "64+ modèles agrégés (Flux, Runway, Veo 3)",
+      "Real-time generation sur canvas",
+      "Compute units (cost depends on model/quality)",
+      "Video generation (veo 3, runway)",
+      "Early access features"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez tester tous les modèles image/video.",
+        "Vous faites du create art multimodal.",
+        "Vous avez besoin de flexibilité modèle."
+      ],
+      "avoidIf": [
+        "Vous voulez un workflow stable (un outil).",
+        "Votre budget API est très serré."
+      ],
+      "threshold": "Krea shines pour explorateurs ; pour production, choisissez un modèle et utilisez directement."
+    },
+    "pros": [
+      "Accès à 64+ modèles en un endroit.",
+      "Real-time generation sur canvas.",
+      "Free tier généreux (100 units/jour).",
+      "Early access à features nouvelles."
+    ],
+    "cons": [
+      "Compute units confusion (prix vary par modèle).",
+      "Coûts réels hard à prédire.",
+      "Less mature que outils monofocal."
+    ],
+    "use_cases": [
+      "Tester et comparer tous les modèles.",
+      "Crée multimodal art (image + video).",
+      "Prototype créatif rapide (art, design)."
+    ],
+    "relevant_for": ["Créateurs multidisciplinaires", "Chercheurs IA", "Explorateurs art IA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to test all image/video models.",
+        "You do multimodal art creation.",
+        "You need model flexibility."
+      ],
+      "avoidIf": [
+        "You want stable workflow (one tool).",
+        "Your API budget is very tight."
+      ],
+      "threshold": "Krea shines for explorers; for production, choose one model and use it directly."
+    },
+    "pros": [
+      "Access 64+ models in one place.",
+      "Real-time generation on canvas.",
+      "Generous free tier (100 units/day).",
+      "Early access to new features."
+    ],
+    "cons": [
+      "Compute units confusing (pricing varies by model).",
+      "Real costs hard to predict.",
+      "Less mature than single-focus tools."
+    ],
+    "use_cases": [
+      "Test and compare all models.",
+      "Create multimodal art (image + video).",
+      "Rapid creative prototype (art, design)."
+    ]
+  }
+}

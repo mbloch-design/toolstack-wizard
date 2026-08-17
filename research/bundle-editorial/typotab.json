@@ -1,0 +1,92 @@
+{
+  "slug": "typotab",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TypoTab — AI Writing Assistant (site officiel)", "url": "https://typotab.com" }
+  ],
+  "facts": {
+    "what": "Assistant IA d'écriture pour macOS en menu bar qui aide à rédiger, corriger, affiner et générer du texte dans n'importe quelle application, sans quitter l'app en cours d'utilisation.",
+    "what_en": "macOS menu bar AI writing assistant helping draft, fix, refine, and generate text in any application without switching apps.",
+    "pricing_model": "Abonnement SaaS (mensuel ou annuel)",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; 2 tiers payants" },
+    "plans": [
+      { "name": "Monthly", "price": "6 £/mois (illimité, 1 appareil)" },
+      { "name": "Yearly", "price": "4 £/mois facturé annuellement (33% rabais, support 24/7)" }
+    ],
+    "key_features": [
+      "Correc grammaire et affinage de texte",
+      "Génération de contenu et reformulation",
+      "Raccourcissement de texte et rédaction d'essais",
+      "Assistance coding et composition d'emails de prospection",
+      "Organisation des notes d'étude",
+      "Fonctionne seamlessly dans toutes les apps via raccourcis clavier",
+      "Positionnement : \"IA illimitée au prix d'un café\""
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez beaucoup et utilisez macOS.",
+        "Vous voulez de l'aide IA sans changer d'app.",
+        "Vous avez un budget serré mais stable."
+      ],
+      "avoidIf": [
+        "Vous utilisez principalement Windows.",
+        "Vous avez besoin d'IA généraliste pas juste écriture.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "TypoTab s'impose pour writers sur macOS ; pour écriture ponctuellement ou Windows, d'autres solutions conviendraient."
+    },
+    "pros": [
+      "Intégration seamless à toutes les apps macOS.",
+      "Tarif très accessible.",
+      "Interface menu bar discrète et rapide.",
+      "Support et priorité avec forfait annuel."
+    ],
+    "cons": [
+      "macOS uniquement (pas Windows/Linux).",
+      "Pas de version gratuite.",
+      "Limité à assistance écriture (pas multi-domaines)."
+    ],
+    "use_cases": [
+      "Rédiger des emails et messages rapidement.",
+      "Corriger et affiner des articles ou rapports.",
+      "Générer du contenu marketing ou technique.",
+      "Organiser et reformuler des notes de réunion."
+    ],
+    "relevant_for": ["Writers professionnels", "Marketeurs", "Étudiants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You write extensively and use macOS.",
+        "You want AI help without app switching.",
+        "You have a tight but stable budget."
+      ],
+      "avoidIf": [
+        "You primarily use Windows.",
+        "You need generalist AI, not just writing.",
+        "You're looking for entirely free solutions."
+      ],
+      "threshold": "TypoTab suits writers on macOS; for occasional writing or Windows, other solutions work better."
+    },
+    "pros": [
+      "Seamless integration with all macOS apps.",
+      "Very affordable pricing.",
+      "Discreet and fast menu bar interface.",
+      "Support and priority with yearly plan."
+    ],
+    "cons": [
+      "macOS only (no Windows/Linux).",
+      "No free version.",
+      "Limited to writing assistance (not multi-domain)."
+    ],
+    "use_cases": [
+      "Draft emails and messages quickly.",
+      "Refine and correct articles or reports.",
+      "Generate marketing or technical content.",
+      "Organize and rephrase meeting notes."
+    ]
+  }
+}

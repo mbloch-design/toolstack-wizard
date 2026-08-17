@@ -1,27 +1,49 @@
 {
-  "slug": "openai",
+  "slug": "chatgpt",
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "OpenAI — ChatGPT et tarifs (site officiel)", "url": "https://openai.com/chatgpt/pricing/" }
+    {
+      "label": "OpenAI — ChatGPT et tarifs (site officiel)",
+      "url": "https://openai.com/chatgpt/pricing/"
+    }
   ],
   "facts": {
     "what": "Éditeur de ChatGPT et des modèles GPT : assistant IA conversationnel (web, apps, API) pour rédaction, code, analyse et automatisation, avec une gamme de modèles et une API développeur.",
     "pricing_model": "Palier gratuit puis abonnements individuels (Go, Plus, Pro), offres Team/Business par siège et Enterprise sur devis. API facturée au token (input/output).",
-    "free_tier": { "exists": true, "detail": "ChatGPT gratuit avec accès à un modèle de base ; le modèle phare est réservé aux paliers payants." },
+    "free_tier": {
+      "exists": true,
+      "detail": "ChatGPT gratuit avec accès à un modèle de base ; le modèle phare est réservé aux paliers payants."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $" },
-      { "name": "Go", "price": "8 $/mois" },
-      { "name": "Plus", "price": "20 $/mois" },
-      { "name": "Pro", "price": "100 $ et 200 $/mois (deux paliers)" },
-      { "name": "Business", "price": "20 $/siège/mois (annuel) ; Enterprise sur devis" }
+      {
+        "name": "Free",
+        "price": "0 $"
+      },
+      {
+        "name": "Go",
+        "price": "8 $/mois"
+      },
+      {
+        "name": "Plus",
+        "price": "20 $/mois"
+      },
+      {
+        "name": "Pro",
+        "price": "100 $ et 200 $/mois (deux paliers)"
+      },
+      {
+        "name": "Business",
+        "price": "20 $/siège/mois (annuel) ; Enterprise sur devis"
+      }
     ],
     "key_features": [
       "Assistant conversationnel (rédaction, code, analyse)",
       "Gamme de modèles (du rapide au modèle phare)",
       "API développeur facturée au token",
       "Apps web, mobile et desktop"
-    ]
+    ],
+    "what_en": "Maker of ChatGPT and the GPT models: a conversational AI assistant (web, apps, API) for writing, code, analysis and automation, with a range of models and a developer API."
   },
   "fr": {
     "verdict": {
@@ -53,7 +75,11 @@
       "Assister au code et au débogage.",
       "Automatiser des tâches via l'API."
     ],
-    "relevant_for": ["Freelances", "Équipes tech", "Toute personne utilisant l'IA au quotidien"]
+    "relevant_for": [
+      "Freelances",
+      "Équipes tech",
+      "Toute personne utilisant l'IA au quotidien"
+    ]
   },
   "en": {
     "verdict": {

@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "udio",
+    "name": "Udio",
+    "url": "https://udio.com"
+  },
+  {
+    "slug": "vercel-ai-sdk",
+    "name": "Vercel AI SDK",
+    "url": "https://sdk.vercel.ai"
+  },
+  {
+    "slug": "voicetypr",
+    "name": "VoiceTypr",
+    "url": "https://voicetypr.com"
+  },
+  {
+    "slug": "whisper",
+    "name": "Whisper (OpenAI)",
+    "url": "https://openai.com/research/whisper"
+  },
+  {
+    "slug": "windsurf",
+    "name": "Windsurf",
+    "url": "https://windsurf.com"
+  }
+]

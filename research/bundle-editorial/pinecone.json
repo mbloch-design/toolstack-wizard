@@ -1,0 +1,93 @@
+{
+  "slug": "pinecone",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pinecone — Vector Database (site officiel)", "url": "https://www.pinecone.io" }
+  ],
+  "facts": {
+    "what": "Base de données vectorielle cloud pour construire des applications IA avec recherche sémantique, permettant de récupérer rapidement des informations pertinentes à partir de volumes de données massifs.",
+    "what_en": "Cloud vector database for building AI applications with semantic search, enabling rapid retrieval of relevant information from massive datasets.",
+    "pricing_model": "Plans par tier (Starter, Standard, Enterprise)",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; tarifs publiés par tier" },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Standard", "price": "Montants sur la page officielle" },
+      { "name": "Builder", "price": "Montants sur la page officielle (entre prototype et scale)" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Recherche vectorielle haute performance à l'échelle de la production",
+      "Embedding models intégrés pour conversion texte-vecteur",
+      "Reranking tools pour affiner les résultats",
+      "Architecture cloud-native (séparation stockage/compute)",
+      "Implémentations Rust propriétaires pour faible latence",
+      "Utilisé par plus de 9000 clients mondiaux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous intégrez la recherche sémantique dans une application.",
+        "Vous avez besoin d'une scalabilité à millions de vecteurs.",
+        "Vous travaillez sur des agents IA ou systèmes de recommandation."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de recherche vectorielle.",
+        "Votre volume de données est très réduit.",
+        "Vous préférez une infrastructure auto-gérée."
+      ],
+      "threshold": "Pinecone s'impose pour la recherche sémantique en production ; pour prototypes petits, pgvector suffira."
+    },
+    "pros": [
+      "Performance très haute en production.",
+      "Scalabilité à millions de vecteurs.",
+      "Séparation flexible du stockage et compute.",
+      "Embeddings et reranking intégrés.",
+      "Clientèle large de startups IA et entreprises."
+    ],
+    "cons": [
+      "Pas de tier gratuit permanent (essai uniquement).",
+      "Tarification peut devenir coûteuse à forte échelle.",
+      "Lié au provider cloud (pas d'auto-hébergement)."
+    ],
+    "use_cases": [
+      "Construire un système de recherche sémantique pour docs.",
+      "Alimenter un agent IA avec recherche RAG.",
+      "Créer un système de recommandations produits."
+    ],
+    "relevant_for": ["Développeurs IA", "Startups IA", "Entreprises SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're integrating semantic search into an app.",
+        "You need scalability to millions of vectors.",
+        "You work on AI agents or recommendation systems."
+      ],
+      "avoidIf": [
+        "You don't need vector search.",
+        "Your data volume is minimal.",
+        "You prefer self-managed infrastructure."
+      ],
+      "threshold": "Pinecone suits production semantic search; for small prototypes, pgvector suffices."
+    },
+    "pros": [
+      "Very high production performance.",
+      "Scalability to millions of vectors.",
+      "Flexible storage/compute separation.",
+      "Built-in embeddings and reranking.",
+      "Large user base of AI startups and enterprises."
+    ],
+    "cons": [
+      "No permanent free tier (trial only).",
+      "Pricing can become expensive at scale.",
+      "Cloud-tied (no self-hosting option)."
+    ],
+    "use_cases": [
+      "Build semantic search for documents.",
+      "Power AI agents with RAG search.",
+      "Create product recommendation systems."
+    ]
+  }
+}

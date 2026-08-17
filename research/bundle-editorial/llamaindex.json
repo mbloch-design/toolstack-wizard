@@ -1,0 +1,88 @@
+{
+  "slug": "llamaindex",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LlamaIndex — framework et LlamaCloud (site officiel)", "url": "https://www.llamaindex.ai" }
+  ],
+  "facts": {
+    "what": "Framework open-source Python/TypeScript pour RAG et data indexing : abstractions indexing, querying, agent integration. LlamaCloud : hosting managé avec parsing/orchestration cloud. Crédits system.",
+    "what_en": "Open-source Python/TypeScript framework for RAG and data indexing: indexing abstractions, querying, agent integration. LlamaCloud: managed hosting with cloud parsing/orchestration. Credit system.",
+    "pricing_model": "LlamaIndex OSS : gratuit (MIT). LlamaCloud : Free, Starter, Pro (500 $/mois max), avec system crédit (1K crédit = 1 $).",
+    "free_tier": { "exists": true, "detail": "LlamaIndex OSS gratuit ; LlamaCloud Free tier avec allotment crédit limité." },
+    "plans": [
+      { "name": "LlamaIndex (OSS)", "price": "Gratuit (MIT license)" },
+      { "name": "LlamaCloud Free", "price": "0 $ (crédit limité par mois)" },
+      { "name": "LlamaCloud Starter", "price": "Montants sur page officielle" },
+      { "name": "LlamaCloud Pro", "price": "500 $/mois (region default)" }
+    ],
+    "key_features": [
+      "Data connectors (100+)",
+      "Indexing et querying abstractions",
+      "Agent integration seamless",
+      "LlamaCloud parsing managé",
+      "Document processing (PDF, Word, etc)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un RAG app.",
+        "Vous indexez multi-source (connecteurs).",
+        "Vous avez des documents complexes (PDF, Word)."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution sans dev.",
+        "Votre cas est très simple (1 doc)."
+      ],
+      "threshold": "LlamaIndex is standard pour RAG dev ; pour simple search, outils plus basic suffisent."
+    },
+    "pros": [
+      "Framework OSS mature et stable.",
+      "100+ connecteurs data intégrés.",
+      "Abstractions RAG claires.",
+      "Gratuit pour prototyping."
+    ],
+    "cons": [
+      "Courbe apprentissage Python/Node.",
+      "Coûts LlamaCloud pour production.",
+      "Ecosystem vaste → choix paralysant."
+    ],
+    "use_cases": [
+      "Construire un RAG chatbot docs company.",
+      "Indexer PDF/Word massifs en chunks.",
+      "Agent interrogeant sources multiples."
+    ],
+    "relevant_for": ["Développeurs Python/TS", "Equipes IA/ML", "Startups RAG"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a RAG app.",
+        "You index multi-source (connectors).",
+        "You have complex documents (PDF, Word)."
+      ],
+      "avoidIf": [
+        "You want a no-dev solution.",
+        "Your use case is simple (1 doc)."
+      ],
+      "threshold": "LlamaIndex is standard for RAG dev; for simple search, basic tools suffice."
+    },
+    "pros": [
+      "Mature, stable OSS framework.",
+      "100+ data connectors built-in.",
+      "Clear RAG abstractions.",
+      "Free for prototyping."
+    ],
+    "cons": [
+      "Learning curve Python/Node.",
+      "LlamaCloud costs for production.",
+      "Vast ecosystem → choice paralysis."
+    ],
+    "use_cases": [
+      "Build a RAG chatbot for company docs.",
+      "Index massive PDFs/Word by chunks.",
+      "Agent querying multiple sources."
+    ]
+  }
+}

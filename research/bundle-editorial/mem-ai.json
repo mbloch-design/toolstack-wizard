@@ -1,0 +1,87 @@
+{
+  "slug": "mem-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mem AI — Personal Knowledge Management (site officiel)", "url": "https://mem.ai" }
+  ],
+  "facts": {
+    "what": "Application de gestion des connaissances personnelles basée sur l'IA, qui organise automatiquement les notes via un assistant conversationnel et propose une recherche intelligente parmi vos contenus.",
+    "what_en": "AI-powered personal knowledge management app that automatically organizes notes via conversational assistant and offers intelligent search across your content.",
+    "pricing_model": "Freemium avec version Pro payante",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec 25 notes par mois" },
+    "plans": [
+      { "name": "Mem Free", "price": "Gratuit (25 notes/mois)" },
+      { "name": "Mem Pro", "price": "12 $/mois (notes illimitées)" }
+    ],
+    "key_features": [
+      "Organisation automatique des notes sans dossiers",
+      "Mem Chat pour interroger vos notes en conversation",
+      "Mode Voice pour capture mains-libres",
+      "Heads Up pour lier automatiquement les idées connexes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un volume élevé d'informations quotidiennes.",
+        "Vous préférez une approche conversationnelle pour retrouver vos notes.",
+        "Vous voulez que l'IA organise vos contenus sans effort manuel."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une organisation stricte par dossiers.",
+        "Vous n'utilisez les notes que ponctuellement.",
+        "Vous préférez une approche entièrement gratuite."
+      ],
+      "threshold": "Mem AI s'impose pour les professionnels gérant des contenus volumineux au quotidien ; pour une utilisation légère ou une organisation rigide, un éditeur de notes classique convient mieux."
+    },
+    "pros": [
+      "Organisation automatique sans effort manuel.",
+      "Recherche conversationnelle intuitive.",
+      "Capture vocale et synchronisation multi-appareils.",
+      "Recommandations intelligentes de contenus connexes."
+    ],
+    "cons": [
+      "Limite stricte sur la version gratuite.",
+      "Moins de contrôle sur l'architecture des données.",
+      "Prix récurrent pour la version complète."
+    ],
+    "use_cases": [
+      "Centraliser des notes de recherche et de projets.",
+      "Retrouver rapidement des idées passées via conversation.",
+      "Construire une base de connaissance personnelle."
+    ],
+    "relevant_for": ["Chercheurs", "Consultants", "Managers de projet"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage high information volumes daily.",
+        "You prefer conversational search for your notes.",
+        "You want AI to organize content without manual effort."
+      ],
+      "avoidIf": [
+        "You need strict folder-based organization.",
+        "You use notes only occasionally.",
+        "You prefer entirely free solutions."
+      ],
+      "threshold": "Mem AI suits professionals handling large content daily; for light use or rigid organization, a traditional note editor is better."
+    },
+    "pros": [
+      "Automatic organization without manual effort.",
+      "Intuitive conversational search.",
+      "Voice capture and cross-device sync.",
+      "Smart recommendations for related content."
+    ],
+    "cons": [
+      "Strict free tier limits.",
+      "Less control over data architecture.",
+      "Recurring subscription for full features."
+    ],
+    "use_cases": [
+      "Centralize research and project notes.",
+      "Quickly retrieve past ideas via conversation.",
+      "Build a personal knowledge base."
+    ]
+  }
+}

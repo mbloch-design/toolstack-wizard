@@ -1,0 +1,92 @@
+{
+  "slug": "tripo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tripo — AI 3D Model Generator (site officiel)", "url": "https://www.tripo3d.ai" }
+  ],
+  "facts": {
+    "what": "Générateur de modèles 3D basé sur l'IA transformant des descriptions texte ou images en modèles 3D haute qualité ou optimisés pour jeux, avec texturage et rigging automatiques.",
+    "what_en": "AI 3D model generator converting text descriptions or images into high-quality or game-optimized 3D models with automatic texturing and rigging.",
+    "pricing_model": "Freemium avec accès studio gratuit",
+    "free_tier": { "exists": true, "detail": "Tripo Studio gratuit (studio.tripo3d.ai) avec accès de base" },
+    "plans": [
+      { "name": "Tripo Studio Free", "price": "Gratuit" },
+      { "name": "Premium Plans", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Génération texte-vers-3D et image-vers-3D instantanée",
+      "High Detail Model : jusqu'à 2M polygones pour rendering/VFX/impression 3D",
+      "Smart Mesh : mesh quad optimisés (500-50K polygones) pour jeux/VR/AR",
+      "Texturage IA et segmentation automatique",
+      "Rigging et stylisation de modèles",
+      "Utilisé par 20M+ créatifs, 200M+ modèles générés",
+      "Partenaires : Sony, NetEase Games, ByteDance, HTC"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez du contenu 3D pour jeux ou VR.",
+        "Vous avez besoin de modèles optimisés pour gaming.",
+        "Vous voulez accès gratuit sans abonnement immédiat."
+      ],
+      "avoidIf": [
+        "Vous créez des sculptures 3D ultra-complexes.",
+        "Vous avez besoin de contrôle architectural au pixel.",
+        "Vous travaillez uniquement en impression 3D fine-art."
+      ],
+      "threshold": "Tripo convient aux game devs et créateurs 3D rapides ; pour arts plastiques complexes, Blender/Maya demeurent référence."
+    },
+    "pros": [
+      "Génération instantanée depuis texte ou image.",
+      "Deux modes de sortie (haute détail vs optimisé gaming).",
+      "Texturage et rigging automatiques.",
+      "Studio gratuit sans limite claire.",
+      "Utilisé par studios majeurs."
+    ],
+    "cons": [
+      "Qualité variable selon complexité de la description.",
+      "Moins de contrôle fin que sculpture traditionnelle.",
+      "Tarifs premium non publiés (sur demande)."
+    ],
+    "use_cases": [
+      "Générer des modèles 3D pour jeux rapidement.",
+      "Créer des assets optimisés pour VR/AR.",
+      "Produire des modèles pour impression 3D."
+    ],
+    "relevant_for": ["Game developers", "3D artists", "VR/AR creators"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create 3D content for games or VR.",
+        "You need game-optimized models.",
+        "You want free access without immediate subscription."
+      ],
+      "avoidIf": [
+        "You create ultra-complex 3D sculptures.",
+        "You need pixel-level architectural control.",
+        "You work only in fine-art 3D printing."
+      ],
+      "threshold": "Tripo suits game devs and fast 3D creators; for complex art, Blender/Maya remain reference."
+    },
+    "pros": [
+      "Instant generation from text or image.",
+      "Two output modes (high-detail vs game-optimized).",
+      "Automatic texturing and rigging.",
+      "Free studio without clear usage limits.",
+      "Used by major studios."
+    ],
+    "cons": [
+      "Quality variable based on description complexity.",
+      "Less fine control than traditional sculpting.",
+      "Premium pricing not published (on request)."
+    ],
+    "use_cases": [
+      "Generate 3D models for games quickly.",
+      "Create optimized assets for VR/AR.",
+      "Produce models for 3D printing."
+    ]
+  }
+}

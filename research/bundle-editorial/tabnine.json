@@ -1,0 +1,96 @@
+{
+  "slug": "tabnine",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tabnine — AI Coding Assistant (site officiel)", "url": "https://tabnine.com" }
+  ],
+  "facts": {
+    "what": "Assistant IA pour la programmation offrant auto-complétion intelligente de code, chat IA pour workflows dev, et agents pour exécution de tâches, adapté à l'architecture et standards d'une organisation.",
+    "what_en": "AI coding assistant offering intelligent code completion, AI chat for dev workflows, and agents for task execution, adapted to organization's architecture and standards.",
+    "pricing_model": "Plan gratuit + tiers payants",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec auto-complétion de base" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (auto-complétion simple)" },
+      { "name": "Pro", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Auto-complétion contextuelle single-token ou multi-ligne",
+      "IA chat pour tout le cycle de vie du dev",
+      "Enterprise Context Engine pour intelligence organisationnelle",
+      "Support multi-LLM (choix du modèle préféré)",
+      "Zero data retention optionnel pour confidentialité",
+      "CLI integration pour workflows en terminal",
+      "IP protection et scanning conformité licenses",
+      "Visionnaire dans Gartner Magic Quadrant Sept 2025"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous programmez quotidiennement (Python, JavaScript, etc).",
+        "Vous voulez accélérer l'écriture de code.",
+        "Vous appréciez une IA adaptée aux standards de votre équipe."
+      ],
+      "avoidIf": [
+        "Vous programmez très occasionnellement.",
+        "Vous avez des exigences de confidentialité strictes.",
+        "Vous préférez un seul outil IA généraliste."
+      ],
+      "threshold": "Tabnine s'impose pour développeurs ; pour usage ponctuel ou non-dev, un assistant textuel généraliste suffira."
+    },
+    "pros": [
+      "Auto-complétion très rapide et contextuelle.",
+      "Multi-LLM pour flexibilité.",
+      "Enterprise Context Engine pour standardisation.",
+      "Zero data retention optionnel.",
+      "Reconnaissance par Gartner 2025.",
+      "CLI et IDE integrations complètes."
+    ],
+    "cons": [
+      "Tarification détails non publiés (sur demande).",
+      "Courbe d'apprentissage pour features avancées.",
+      "Nécessite configuration d'équipe pour full value."
+    ],
+    "use_cases": [
+      "Accélérer l'écriture de code quotidienne.",
+      "Générer du code standardisé conforme aux patterns d'équipe.",
+      "Réduire le temps sur tâches répétitives de code."
+    ],
+    "relevant_for": ["Développeurs", "Équipes tech", "Entreprises SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You code daily (Python, JavaScript, etc).",
+        "You want to accelerate code writing.",
+        "You appreciate AI adapted to team standards."
+      ],
+      "avoidIf": [
+        "You code very occasionally.",
+        "You have strict confidentiality requirements.",
+        "You prefer a single generalist AI tool."
+      ],
+      "threshold": "Tabnine suits developers; for occasional use or non-dev, a generalist text assistant suffices."
+    },
+    "pros": [
+      "Fast and contextual code completion.",
+      "Multi-LLM for flexibility.",
+      "Enterprise Context Engine for standardization.",
+      "Optional zero data retention.",
+      "Gartner recognition 2025.",
+      "Complete CLI and IDE integrations."
+    ],
+    "cons": [
+      "Pricing details not published (on request).",
+      "Learning curve for advanced features.",
+      "Requires team setup for full value."
+    ],
+    "use_cases": [
+      "Accelerate daily code writing.",
+      "Generate standardized code compliant with team patterns.",
+      "Reduce time on repetitive coding tasks."
+    ]
+  }
+}

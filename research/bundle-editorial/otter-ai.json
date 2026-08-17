@@ -1,0 +1,92 @@
+{
+  "slug": "otter-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Otter.ai — Meeting Transcription (site officiel)", "url": "https://otter.ai" }
+  ],
+  "facts": {
+    "what": "Plateforme IA de transcription et résumés de réunions qui enregistre, transcrit et résume automatiquement les discussions, avec intégration à Zoom, Google Meet, Slack et autres outils collaboratifs.",
+    "what_en": "AI meeting transcription platform that records, transcribes, and summarizes conversations automatically with integration to Zoom, Google Meet, Slack, and other collaboration tools.",
+    "pricing_model": "Freemium avec plans payants",
+    "free_tier": { "exists": true, "detail": "Basic gratuit : 300 minutes/mois de transcription, intégrations de base" },
+    "plans": [
+      { "name": "Basic", "price": "Gratuit (300 min/mois)" },
+      { "name": "Business", "price": "19,99 $/utilisateur/mois (1200 min/mois)" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle (tarif personnalisé)" }
+    ],
+    "key_features": [
+      "Transcription temps réel en plusieurs langues avec reconnaissance du locuteur",
+      "Résumés automatiques et identification des points d'action",
+      "Otter Chat pour rechercher dans les réunions et applis connectées",
+      "App de bureau sans bot tiers pour Mac et Windows",
+      "Intégrations 30+ apps (Zoom, Meet, Slack, Notion, HubSpot, Salesforce)",
+      "Canaux organisés par équipe ou projet"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous participez à de nombreuses réunions à transcrire.",
+        "Vous voulez retrouver rapidement les points clés et décisions.",
+        "Vous travaillez avec Zoom, Google Meet ou Slack."
+      ],
+      "avoidIf": [
+        "Vous n'avez que quelques réunions par mois.",
+        "Votre équipe n'utilise pas les outils supportés.",
+        "Vous avez besoin d'une analyse très poussée des sentiments."
+      ],
+      "threshold": "Otter.ai s'impose pour les équipes distantes ou hybrides ; pour un usage ponctuel, la version gratuite suffit."
+    },
+    "pros": [
+      "Transcription très précise et multi-langue.",
+      "Résumés et points d'action générés automatiquement.",
+      "Intégration profonde aux outils collaboratifs populaires.",
+      "Version gratuite complète pour 300 min/mois.",
+      "Recherche conversationnelle intuitive."
+    ],
+    "cons": [
+      "Limite stricte sur la version gratuite (300 min/mois).",
+      "Prix par utilisateur peut s'accumuler en équipe.",
+      "Qualité variable en environnements bruyants."
+    ],
+    "use_cases": [
+      "Enregistrer et résumer toutes ses réunions automatiquement.",
+      "Retrouver rapidement une décision ou info mentionnée en réunion.",
+      "Organiser les transcriptions par projet ou client."
+    ],
+    "relevant_for": ["Équipes distantes", "Consultants", "Managers de projet"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You attend many meetings to transcribe.",
+        "You want to quickly find key points and decisions.",
+        "You work with Zoom, Google Meet, or Slack."
+      ],
+      "avoidIf": [
+        "You only have a few meetings per month.",
+        "Your team doesn't use supported tools.",
+        "You need advanced sentiment analysis."
+      ],
+      "threshold": "Otter.ai suits remote or hybrid teams; for occasional use, the free tier is sufficient."
+    },
+    "pros": [
+      "Highly accurate transcription and multi-language support.",
+      "Automatic summaries and action items.",
+      "Deep integration with popular collaboration tools.",
+      "Generous free tier (300 min/month).",
+      "Intuitive conversational search."
+    ],
+    "cons": [
+      "Strict free tier limits (300 min/month).",
+      "Per-user pricing can accumulate in teams.",
+      "Variable quality in noisy environments."
+    ],
+    "use_cases": [
+      "Record and auto-summarize all meetings.",
+      "Quickly find decisions or info mentioned in calls.",
+      "Organize transcripts by project or client."
+    ]
+  }
+}

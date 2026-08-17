@@ -1,0 +1,89 @@
+{
+  "slug": "gemini",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Gemini — plans et pricing (site officiel)", "url": "https://gemini.google.com/pricing" }
+  ],
+  "facts": {
+    "what": "Assistant IA grand public et API développeur de Google : modèles Gemini 2.5, Gemini 3.7 Flash avec long contexte, accès web temps réel, et intégration Google Workspace.",
+    "what_en": "Google's consumer AI assistant and developer API: Gemini 2.5, Gemini 3.7 Flash models with long context, real-time web access, and Google Workspace integration.",
+    "pricing_model": "Tier gratuit, plus plans AI Plus (4,99 $/mois), AI Pro (19,99 $/mois), AI Ultra (99,99 ou 199,99 $/mois). API : usage-based par 1M tokens.",
+    "free_tier": { "exists": true, "detail": "Gratuit : accès Gemini classique, Google AI Studio pour dev (avec limites rate)." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (avec limites)" },
+      { "name": "AI Plus", "price": "4,99 $/mois (ancien 7,99 $)" },
+      { "name": "AI Pro", "price": "19,99 $/mois" },
+      { "name": "AI Ultra", "price": "99,99 $/mois (5x Pro) ou 199,99 $ (20x Pro)" },
+      { "name": "API", "price": "0,10-2,00 $/M tokens selon modèle" }
+    ],
+    "key_features": [
+      "Modèles multilingues haute performance",
+      "Accès web temps réel",
+      "Intégration Google Workspace incluse",
+      "Google AI Studio libre pour prototyper",
+      "Gemini 2.5 Advanced pour raisonnement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Google Workspace (Gmail, Docs).",
+        "Vous voulez une IA grand public sans frais.",
+        "Vous intégrez IA via API Google."
+      ],
+      "avoidIf": [
+        "Vous préférez Anthropic ou OpenAI.",
+        "Vous avez besoin de très long contexte en prod."
+      ],
+      "threshold": "Gemini vaut pour équipes Google ; pour autres stacks, Anthropic/OpenAI sont plus standards."
+    },
+    "pros": [
+      "Gratuit sans limite de temps.",
+      "Intégration Workspace seamless.",
+      "Performance solide, prix API compétitif.",
+      "Accès web temps réel natif."
+    ],
+    "cons": [
+      "Moins mature qu'OpenAI/Anthropic pour dev.",
+      "API moins stable historiquement.",
+      "Tiercing Google Workspace requis pour full value."
+    ],
+    "use_cases": [
+      "Assister tâches quotidiennes (Gmail, Docs).",
+      "Prototyper IA avec Google AI Studio gratuit.",
+      "Intégrer IA dans Google Workspace workflows."
+    ],
+    "relevant_for": ["Teams Google", "Utilisateurs Workspace", "Développeurs Google"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Google Workspace (Gmail, Docs).",
+        "You want free consumer AI.",
+        "You're integrating AI via Google API."
+      ],
+      "avoidIf": [
+        "You prefer Anthropic or OpenAI.",
+        "You need very long context in production."
+      ],
+      "threshold": "Gemini is worth it for Google-native teams; for other stacks, Anthropic/OpenAI are more standard."
+    },
+    "pros": [
+      "Free with no time limit.",
+      "Seamless Workspace integration.",
+      "Solid performance, competitive API pricing.",
+      "Real-time web access built-in."
+    ],
+    "cons": [
+      "Less mature than OpenAI/Anthropic for dev.",
+      "API historically less stable.",
+      "Google Workspace required for full value."
+    ],
+    "use_cases": [
+      "Assist daily tasks (Gmail, Docs, Sheets).",
+      "Prototype AI with free Google AI Studio.",
+      "Integrate AI into Google Workspace workflows."
+    ]
+  }
+}

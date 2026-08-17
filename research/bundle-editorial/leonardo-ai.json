@@ -1,0 +1,91 @@
+{
+  "slug": "leonardo-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Leonardo AI — image generation et pricing (site officiel)", "url": "https://leonardo.ai" }
+  ],
+  "facts": {
+    "what": "Générateur d'images IA avec modèles propriétaires (Leonardo) et tiers : haute qualité, édition, upscaling, photo-to-painting. Crédits system ; usage commercial dès Free.",
+    "what_en": "AI image generator with proprietary and third-party models: high quality, editing, upscaling, photo-to-painting. Credit system; commercial use from Free tier.",
+    "pricing_model": "Free (150 tokens/jour, usage non-commercial), Apprentice (12 $/mois, 8.5K crédits), Artisan (30 $/mois, 25K crédits), Ultimate (60 $/mois, 60K crédits). Remise sur l'engagement annuel.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 150 tokens/jour (~30-50 images) avec watermark ; usage non-commercial uniquement." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (150 tokens/jour, non-commercial)" },
+      { "name": "Apprentice", "price": "12 $/mois (8.5K crédits, commercial ok)" },
+      { "name": "Artisan", "price": "30 $/mois (25K crédits)" },
+      { "name": "Ultimate", "price": "60 $/mois (60K crédits)" },
+      { "name": "Enterprise", "price": "2.5K crédits à 89 $/mois" }
+    ],
+    "key_features": [
+      "Modèles propriétaires high quality",
+      "Édition et inpainting",
+      "Upscaling jusqu'à 8×",
+      "Photo-to-painting",
+      "Tokens system, usage commercial dès Apprentice"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez haute qualité image avec usage commercial.",
+        "Vous aimez le freedom des tokens vs abonnement.",
+        "Vous avez un budget mensuel modéré."
+      ],
+      "avoidIf": [
+        "Vous faites surtout du texte-en-image (try Ideogram).",
+        "Vous voulez totalement gratuit sans limite."
+      ],
+      "threshold": "Leonardo excels pour qualité + commercial dès entrée ; pour designs texte, Ideogram meilleur."
+    },
+    "pros": [
+      "Commercial use dès Free.",
+      "Tokens system flexible.",
+      "Édition et upscaling bons.",
+      "Remise sur l'engagement annuel."
+    ],
+    "cons": [
+      "Free non-commercial (limitation).",
+      "Moins optimisé pour texte dans images.",
+      "Plus cher à volume que autres."
+    ],
+    "use_cases": [
+      "Générer portraits et photo-réaliste.",
+      "Éditer images et inpainting.",
+      "Upscale images existing.",
+      "Créer assets commercial vite."
+    ],
+    "relevant_for": ["Photographes IA", "Designers", "Content creators comerciales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want high-quality images with commercial use.",
+        "You like token flexibility over subscriptions.",
+        "You have a moderate monthly budget."
+      ],
+      "avoidIf": [
+        "You mostly do text-in-image (try Ideogram).",
+        "You want completely free unlimited."
+      ],
+      "threshold": "Leonardo excels for quality + commercial from entry; for text designs, Ideogram better."
+    },
+    "pros": [
+      "Commercial use from Free.",
+      "Token system is flexible.",
+      "Good editing and upscaling.",
+      "Discount on annual commitment."
+    ],
+    "cons": [
+      "Free tier is non-commercial (limiting).",
+      "Less optimized for text in images.",
+      "More expensive at volume than others."
+    ],
+    "use_cases": [
+      "Generate portraits and photorealistic images.",
+      "Edit images and inpainting.",
+      "Upscale existing images.",
+      "Create commercial assets fast."
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "voicetypr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Voicetypr — Offline Voice-to-Text (site officiel)", "url": "https://voicetypr.com" }
+  ],
+  "facts": {
+    "what": "Application de dictée vocale offline-first pour Mac et Windows permettant écrire par la voix dans n'importe quelle app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) en utilisant des modèles IA locaux.",
+    "what_en": "Offline-first voice-to-text app for Mac and Windows enabling voice dictation in any app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) using local AI models.",
+    "pricing_model": "Achat unique perpétuel (pas d'abonnement)",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 3 jours, pas de carte bancaire requise" },
+    "plans": [
+      { "name": "Pro", "price": "39 $ (1 appareil, licence perpétuelle)" },
+      { "name": "Plus", "price": "69 $ (2 appareils, licence perpétuelle)" },
+      { "name": "Max", "price": "99 $ (4 appareils, licence perpétuelle)" }
+    ],
+    "key_features": [
+      "Dictée offline par défaut avec modèles IA locaux",
+      "Fonctionne mondialement dans n'importe quelle app avec curseur texte",
+      "Support 99 langues avec détection automatique",
+      "Nettoyage IA optionnel (API OpenAI, Anthropic, ou Gemini)",
+      "Modes push-to-talk et hands-free",
+      "Transcription fichiers audio/vidéo",
+      "CLI et Agent API pour automation",
+      "Historique transcriptions perchable",
+      "Vocabulaire personnalisé et règles formatting par-app"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous tapez beaucoup et préférez la dictée.",
+        "Vous avez besoin de confidentialité (offline par défaut).",
+        "Vous êtes sur macOS ou Windows."
+      ],
+      "avoidIf": [
+        "Vous utilisez Linux ou autre OS.",
+        "Vous n'aimez pas parler à un ordinateur.",
+        "Vous cherchez une solution gratuite permanente."
+      ],
+      "threshold": "Voicetypr s'impose pour writers dictant régulièrement ; pour usage léger, un assistant textuel traditionnel suffira."
+    },
+    "pros": [
+      "Offline par défaut (confidentialité garantie).",
+      "Support 99 langues avec détection auto.",
+      "Achat unique sans abonnement perpétuel.",
+      "Fonctionne dans toutes les apps.",
+      "Nettoyage IA optionnel flexible.",
+      "Vitesse environ 3x plus rapide que typing."
+    ],
+    "cons": [
+      "macOS/Windows uniquement.",
+      "Pas gratuit permanent (essai 3 jours).",
+      "Nettoyage IA optionnel coûte crédits API.",
+      "Qualité dépend du bruit ambiant."
+    ],
+    "use_cases": [
+      "Rédiger rapidement des documents et emails.",
+      "Transcriber des notes et brainstormings.",
+      "Dicter du code avec nettoyage IA.",
+      "Capturer des idées mains-libres en mobilité."
+    ],
+    "relevant_for": ["Founders", "Writers", "Builders / Créateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You type extensively and prefer dictation.",
+        "You need privacy (offline by default).",
+        "You use macOS or Windows."
+      ],
+      "avoidIf": [
+        "You use Linux or other OS.",
+        "You dislike speaking to a computer.",
+        "You're seeking a permanently free solution."
+      ],
+      "threshold": "Voicetypr suits regular dictation users; for light use, traditional text assistant suffices."
+    },
+    "pros": [
+      "Offline by default (guaranteed privacy).",
+      "99-language support with auto-detection.",
+      "One-time purchase without perpetual subscription.",
+      "Works in all apps.",
+      "Flexible optional AI cleanup.",
+      "Speed approximately 3x faster than typing."
+    ],
+    "cons": [
+      "macOS/Windows only.",
+      "Not permanently free (3-day trial).",
+      "Optional AI cleanup costs API credits.",
+      "Quality depends on ambient noise."
+    ],
+    "use_cases": [
+      "Quickly draft documents and emails.",
+      "Transcribe notes and brainstorms.",
+      "Dictate code with AI cleanup.",
+      "Capture ideas hands-free on the go."
+    ]
+  }
+}

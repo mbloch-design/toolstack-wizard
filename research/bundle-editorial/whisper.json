@@ -1,0 +1,97 @@
+{
+  "slug": "whisper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "OpenAI Whisper API (site officiel)", "url": "https://openai.com/research/whisper" }
+  ],
+  "facts": {
+    "what": "Modèle de transcription audio IA d'OpenAI offrant conversion speech-to-text précise multilingue via API payante, avec plusieurs tiers de performance et coût.",
+    "what_en": "OpenAI's AI audio transcription model providing accurate multilingual speech-to-text conversion via paid API with multiple performance and cost tiers.",
+    "pricing_model": "API payante (tarification par minute audio)",
+    "free_tier": { "exists": false, "detail": "API payante uniquement ; modèle open-source disponible" },
+    "plans": [
+      { "name": "Whisper 1", "price": "0,006 $/minute audio (standard)" },
+      { "name": "GPT-4o Mini Transcribe", "price": "0,003 $/minute (économique)" },
+      { "name": "GPT-4o Transcribe", "price": "0,006 $/minute" },
+      { "name": "GPT-realtime Whisper", "price": "0,017 $/minute (temps réel)" }
+    ],
+    "key_features": [
+      "Transcription multilingue précise",
+      "Modèle open-source (whisper) librement téléchargeable",
+      "API commerciale pour intégration dans applications",
+      "Choix multiples de modèles (Whisper 1, GPT-4o Mini, GPT-realtime)",
+      "Facturation à la seconde près",
+      "Pas de réductions de volume publiées (tarif unique)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous transcrivez régulièrement de l'audio pour contenu.",
+        "Vous avez besoin d'API integrable dans une app.",
+        "Vous tolérez une facturation à l'usage."
+      ],
+      "avoidIf": [
+        "Vous transcrivez très occasionnellement.",
+        "Vous avez absolument besoin de gratuit.",
+        "Vous voulez une interface graphique directe."
+      ],
+      "threshold": "Whisper API s'impose pour transcription en production ; pour usage léger, des services comme Otter.ai conviendront mieux."
+    },
+    "pros": [
+      "Modèle open-source gratuit disponible (auto-hébergement).",
+      "Transcription multilingue très précise.",
+      "Plusieurs tiers de coûts adaptés au besoin.",
+      "Intégrable facilement dans applications.",
+      "Facturation granulaire au second près."
+    ],
+    "cons": [
+      "API payante (pas gratuit commercial).",
+      "Pas de réduction de volume.",
+      "Auto-hébergement nécessite compétences techniques.",
+      "Coûts peuvent s'accumuler avec fort volume."
+    ],
+    "use_cases": [
+      "Transcrire des appels/réunions commerciaux.",
+      "Intégrer transcription dans une app SaaS.",
+      "Transcrire des vidéos/podcasts en masse.",
+      "Créer un service de transcription facturé au client."
+    ],
+    "relevant_for": ["Développeurs", "Équipes tech", "Plateformes SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly transcribe audio for content.",
+        "You need an API integrable into an app.",
+        "You tolerate usage-based billing."
+      ],
+      "avoidIf": [
+        "You transcribe very occasionally.",
+        "You absolutely need free access.",
+        "You want a direct graphical interface."
+      ],
+      "threshold": "Whisper API suits production transcription; for light use, services like Otter.ai work better."
+    },
+    "pros": [
+      "Open-source model freely available (self-host).",
+      "Highly accurate multilingual transcription.",
+      "Multiple cost tiers suited to need.",
+      "Easily integrable into applications.",
+      "Granular billing to the second."
+    ],
+    "cons": [
+      "Paid API (not free for commercial use).",
+      "No volume discounts.",
+      "Self-hosting requires technical skills.",
+      "Costs can accumulate with high volume."
+    ],
+    "use_cases": [
+      "Transcribe business calls/meetings.",
+      "Integrate transcription into a SaaS app.",
+      "Transcribe videos/podcasts at scale.",
+      "Create a customer-billed transcription service."
+    ]
+  }
+}

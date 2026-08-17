@@ -1,0 +1,93 @@
+{
+  "slug": "qdrant",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Qdrant — Vector Search Engine (site officiel)", "url": "https://qdrant.tech" }
+  ],
+  "facts": {
+    "what": "Moteur de recherche vectorielle open-source et cloud pour applications IA, offrant recherche hybride, indexation temps réel, et déploiements flexibles (cloud, on-premise, edge).",
+    "what_en": "Open-source and cloud vector search engine for AI applications, offering hybrid search, real-time indexing, and flexible deployments (cloud, on-premise, edge).",
+    "pricing_model": "Freemium cloud + auto-hébergement gratuit",
+    "free_tier": { "exists": true, "detail": "Essai gratuit Qdrant Cloud ; version open-source auto-hébergée gratuite" },
+    "plans": [
+      { "name": "Qdrant Cloud Free", "price": "Gratuit (essai)" },
+      { "name": "Qdrant Cloud Paid", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Recherche hybride native (vecteurs denses + sparse)",
+      "Support multivecteur pour retrieval expressif",
+      "Filtrage de métadonnées avancé avec support JSON",
+      "Codification efficace réduisant la mémoire jusqu'à 64x",
+      "APIs REST et gRPC avec clients officiels",
+      "Réindexation temps réel sans reconstruction",
+      "Inférence cloud native intégrée pour embeddings",
+      "Options de déploiement : Cloud, Kubernetes, Edge"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application IA avec recherche vectorielle.",
+        "Vous avez besoin de flexibilité de déploiement (cloud ou on-premise).",
+        "Vous voulez une solution open-source avec support commercial."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'une recherche textuelle classique.",
+        "Vous voulez une interface graphique très conviviale.",
+        "Vous avez besoin d'une support 24/7 garanti."
+      ],
+      "threshold": "Qdrant convient aux équipes techniques cherchant flexibilité ; pour débutants sans ops, un service cloud managé peut être plus simple."
+    },
+    "pros": [
+      "Open-source et auto-hébergeable gratuitement.",
+      "Recherche hybride très performante.",
+      "Support multi-déploiement (cloud, k8s, edge).",
+      "Excellent rapport performance/coût.",
+      "Communauté active et documentation solide."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour déploiement on-premise.",
+      "Moins d'interface graphique que concurrents cloud-first.",
+      "Support commercial optionnel (pas d'inclusion par défaut)."
+    ],
+    "use_cases": [
+      "Déployer une recherche vectorielle en on-premise sécurisé.",
+      "Construire une recherche hybride (dense + sparse).",
+      "Créer une application edge avec IA locale."
+    ],
+    "relevant_for": ["Équipes techniques", "Entreprises sécurité-first", "Startups IA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building an AI app with vector search.",
+        "You need deployment flexibility (cloud or on-premise).",
+        "You want an open-source solution with commercial support."
+      ],
+      "avoidIf": [
+        "You only need classic text search.",
+        "You want a very user-friendly GUI.",
+        "You need guaranteed 24/7 support."
+      ],
+      "threshold": "Qdrant suits technical teams seeking flexibility; for beginners without ops, a managed cloud service may be simpler."
+    },
+    "pros": [
+      "Open-source and self-hostable for free.",
+      "High-performance hybrid search.",
+      "Multi-deployment support (cloud, k8s, edge).",
+      "Excellent performance-to-cost ratio.",
+      "Active community and solid documentation."
+    ],
+    "cons": [
+      "Learning curve for on-premise deployment.",
+      "Fewer GUI features than cloud-first competitors.",
+      "Commercial support optional (not included by default)."
+    ],
+    "use_cases": [
+      "Deploy secure on-premise vector search.",
+      "Build hybrid search (dense + sparse).",
+      "Create edge AI applications locally."
+    ]
+  }
+}

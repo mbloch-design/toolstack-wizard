@@ -1,0 +1,88 @@
+{
+  "slug": "helicone",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Helicone — LLM observability (site officiel)", "url": "https://www.helicone.ai" }
+  ],
+  "facts": {
+    "what": "Plateforme d'observabilité LLM : logging, coûts, latence, prompt/completion analysis, evaluations, caching. Gateway proxy ou intégration native. Open-source et cloud gérée. Depuis mars 2026 : maintenance-mode (racheté par Mintlify).",
+    "what_en": "LLM observability platform: logging, costs, latency, prompt/completion analysis, evaluations, caching. Proxy gateway or native integration. Open-source and managed cloud. Since March 2026: maintenance mode (acquired by Mintlify).",
+    "pricing_model": "Cloud managée : tier gratuit (50K obs), Core plan et pay-as-you-go. Frais 5,5 % sur pass-through pricing. Open-source self-hosted gratuit.",
+    "free_tier": { "exists": true, "detail": "Gratuit cloud : 50K observations/mois ; self-hosted open-source gratuit." },
+    "plans": [
+      { "name": "Hobby (Free)", "price": "0 $ (50K observations)" },
+      { "name": "Core / Pro", "price": "79 $/mois (1M observations) ou custom" },
+      { "name": "Self-hosted (OSS)", "price": "Gratuit (MIT license)" },
+      { "name": "Frais platform", "price": "5,5 % sur pass-through pricing" }
+    ],
+    "key_features": [
+      "Gateway proxy pass-through (300+ modèles)",
+      "Cost tracking et analytics",
+      "Prompt/completion logging",
+      "Caching et rate-limiting",
+      "Evaluations et A/B testing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous déployez des apps LLM en production.",
+        "Vous voulez tracer coûts et performance.",
+        "Vous préférez les solutions open-source."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas d'app LLM deployée.",
+        "Le projet Helicone est en maintenance (depuis mars 2026)."
+      ],
+      "threshold": "Helicone était standard pour observabilité LLM ; depuis acquisition par Mintlify (mars 2026), préférez alternatives actives."
+    },
+    "pros": [
+      "Open-source (MIT) pour self-hosted.",
+      "Gateway pass-through (300+ modèles).",
+      "Cost tracking détaillé.",
+      "Caching et optimisations."
+    ],
+    "cons": [
+      "Projet en maintenance-mode depuis mars 2026.",
+      "Équipe réduite post-acquisition.",
+      "Alternatives plus actives émergentes."
+    ],
+    "use_cases": [
+      "Tracer coûts API LLM en prod.",
+      "Monitorer latence et erreurs.",
+      "A/B test modèles et prompts."
+    ],
+    "relevant_for": ["Ingénieros LLM", "Startups AI", "Équipes ML ops"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You deploy LLM apps to production.",
+        "You want to track costs and performance.",
+        "You prefer open-source solutions."
+      ],
+      "avoidIf": [
+        "You don't have an LLM app deployed.",
+        "The Helicone project is in maintenance (since March 2026)."
+      ],
+      "threshold": "Helicone was standard for LLM observability; since Mintlify acquisition (March 2026), prefer active alternatives."
+    },
+    "pros": [
+      "Open-source (MIT) for self-hosting.",
+      "Gateway pass-through (300+ models).",
+      "Detailed cost tracking.",
+      "Caching and optimizations."
+    ],
+    "cons": [
+      "Project in maintenance mode since March 2026.",
+      "Reduced team post-acquisition.",
+      "More active alternatives emerging."
+    ],
+    "use_cases": [
+      "Track LLM API costs in production.",
+      "Monitor latency and errors.",
+      "A/B test models and prompts."
+    ]
+  }
+}

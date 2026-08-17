@@ -1,0 +1,87 @@
+{
+  "slug": "deepseek",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "DeepSeek — modèles et pricing API (site officiel)", "url": "https://www.deepseek.com" }
+  ],
+  "facts": {
+    "what": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+    "what_en": "Chinese AI API provider: V4 Flash and V4 Pro models with ultra-competitive pricing, prompt caching, and 5M free tokens at signup (no credit card required).",
+    "pricing_model": "Tarification au token (input/output) avec cache-hit discount, off-peak et peak rates, 5M crédits gratuits pour nouveaux utilisateurs.",
+    "free_tier": { "exists": true, "detail": "5M tokens gratuits au signup sans CB ; valables sur tous les modèles." },
+    "plans": [
+      { "name": "V4 Flash (off-peak)", "price": "0,14 $/M input, 0,28 $/M output" },
+      { "name": "V4 Pro (off-peak)", "price": "0,435 $/M input, 0,87 $/M output" },
+      { "name": "Cache-hit (Flash)", "price": "0,003 $/M (réduction 95 %)" }
+    ],
+    "key_features": [
+      "Tarification très compétitive vs OpenAI/Anthropic",
+      "Prompt caching (réduction 95 %)",
+      "Off-peak et peak rates",
+      "5M tokens gratuits (signup)",
+      "API RESTful standard"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez le meilleur rapport prix/perfo.",
+        "Votre budget API est serré.",
+        "Vous avez beaucoup de contexte répété (cache)."
+      ],
+      "avoidIf": [
+        "Vous ne voulez pas de fournisseur chinois.",
+        "Vous avez besoin d'une relation directe support."
+      ],
+      "threshold": "DeepSeek offre le meilleur pricing du marché pour développeurs budgétés ; pour priorité support/entreprise, préférez Anthropic."
+    },
+    "pros": [
+      "Tarification extrêmement compétitive.",
+      "Mise en cache des prompts très avantageuse.",
+      "5M tokens gratuits, pas de CB.",
+      "Performance solide pour les coûts."
+    ],
+    "cons": [
+      "Fournisseur chinois (données sensibles).",
+      "Support communautaire vs. professionnel.",
+      "Plus jeune que OpenAI/Anthropic."
+    ],
+    "use_cases": [
+      "Prototyper une app IA avec budget zéro.",
+      "Traiter gros volumes texte avec RAG.",
+      "A/B tester avec budgets API minimaux."
+    ],
+    "relevant_for": ["Startups bootstrappées", "Chercheurs", "Développeurs solo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want best-in-class price-to-performance.",
+        "Your API budget is tight.",
+        "You have repeated context (caching benefit)."
+      ],
+      "avoidIf": [
+        "You don't want a Chinese provider.",
+        "You need direct enterprise support."
+      ],
+      "threshold": "DeepSeek offers the best pricing on the market for budget-conscious developers; for priority support/enterprise, choose Anthropic."
+    },
+    "pros": [
+      "Extremely competitive pricing.",
+      "Highly advantageous prompt caching.",
+      "5M free tokens, no credit card.",
+      "Solid performance for the cost."
+    ],
+    "cons": [
+      "Chinese provider (data sensitivity).",
+      "Community support vs. enterprise.",
+      "Younger than OpenAI/Anthropic."
+    ],
+    "use_cases": [
+      "Prototype an AI app with zero budget.",
+      "Process large text volumes with RAG.",
+      "A/B test with minimal API budgets."
+    ]
+  }
+}

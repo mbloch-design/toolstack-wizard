@@ -1,0 +1,101 @@
+{
+  "slug": "suno",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Suno — AI Music Generator (site officiel)", "url": "https://suno.com" }
+  ],
+  "facts": {
+    "what": "Générateur de musique IA qui crée des chansons complètes (paroles, voix, production) à partir de descriptions textuelles en moins d'une minute, avec support multi-genres et droits commerciaux.",
+    "what_en": "AI music generator creating complete songs (lyrics, vocals, production) from text descriptions in under a minute, with multi-genre support and commercial rights.",
+    "pricing_model": "Freemium avec tiers payants",
+    "free_tier": { "exists": true, "detail": "10 chansons quotidiennes gratuites, pas de carte bancaire requise" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (10 chansons/jour)" },
+      { "name": "Pro", "price": "20% rabais annuel (500 chansons/mois, droits commerciaux)" },
+      { "name": "Premier", "price": "20% rabais annuel (2000 chansons/mois, Suno Studio, MIDI export)" }
+    ],
+    "key_features": [
+      "Génération de chansons complètes en moins d'une minute",
+      "Support tous genres (rock, pop, hip-hop, classique, EDM, etc)",
+      "Contrôles granulaires : voix, style, sliders créatifs",
+      "Séparation de stems (export WAV alignés pour DAW)",
+      "Droits commerciaux pour utilisateurs payants",
+      "Suno Studio : workstation générative audio avec éditeur multitrack",
+      "Import audio jusqu'à 8 minutes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de musique rapidement pour contenu.",
+        "Vous voulez des droits commerciaux sur votre musique.",
+        "Vous appréciez la création musicale sans expérience.",
+        "Vous avez besoin de multiples variations musicales."
+      ],
+      "avoidIf": [
+        "Vous créez de la musique professionnelle complexe.",
+        "Vous avez besoin de contrôle précis note-par-note.",
+        "Votre budget est extrêmement limité."
+      ],
+      "threshold": "Suno s'impose pour contenu créatif rapide ; pour production musicale professionnelle, un DAW traditionnel + musicien conviendrait mieux."
+    },
+    "pros": [
+      "Génération ultra-rapide de musique complète.",
+      "Plan gratuit généreux (10 chansons/jour).",
+      "Droits commerciaux sur forfaits payants.",
+      "Stem separation pour flexibility post-production.",
+      "Suno Studio avec fonctionnalités DAW.",
+      "Top 10 iOS et Android (4.8+ stars)."
+    ],
+    "cons": [
+      "Qualité musicale parfois aléatoire/inégale.",
+      "Moins de contrôle fin que production traditionnelle.",
+      "Droits commerciaux uniquement en forfait payant.",
+      "Pas d'édition note-par-note granulaire."
+    ],
+    "use_cases": [
+      "Générer des jingles ou bandes sonores pour vidéos.",
+      "Créer de la musique de fond pour podcasts/streams.",
+      "Produire des variations musicales rapidement.",
+      "Accompagner des contenus créatifs audiovisuels."
+    ],
+    "relevant_for": ["Content creators", "Producteurs vidéo", "Musiciens amateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need music quickly for content.",
+        "You want commercial rights on your music.",
+        "You enjoy music creation without experience.",
+        "You need multiple musical variations."
+      ],
+      "avoidIf": [
+        "You create complex professional music.",
+        "You need precise note-by-note control.",
+        "Your budget is extremely tight."
+      ],
+      "threshold": "Suno suits quick creative content; for professional music production, traditional DAW + musician is better."
+    },
+    "pros": [
+      "Ultra-fast complete music generation.",
+      "Generous free tier (10 songs/day).",
+      "Commercial rights on paid plans.",
+      "Stem separation for post-production flexibility.",
+      "Suno Studio with DAW features.",
+      "Top 10 iOS and Android (4.8+ stars)."
+    ],
+    "cons": [
+      "Music quality sometimes random/uneven.",
+      "Less fine control than traditional production.",
+      "Commercial rights only on paid plans.",
+      "No granular note-by-note editing."
+    ],
+    "use_cases": [
+      "Generate jingles or soundtracks for videos.",
+      "Create background music for podcasts/streams.",
+      "Produce musical variations quickly.",
+      "Accompany audiovisual creative content."
+    ]
+  }
+}

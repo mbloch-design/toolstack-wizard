@@ -1,0 +1,88 @@
+{
+  "slug": "autodesk-flow-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autodesk Flow Studio — plans et tarifs (site officiel)", "url": "https://www.autodesk.com/products/flow-studio/buy" }
+  ],
+  "facts": {
+    "what": "Suite VFX et animation par IA d'Autodesk (anciennement Wonder Studio) : capture de mouvement sans matériel, animation de personnages CG, édition 3D avec contrôle créatif, et intégration vidéo temps réel.",
+    "what_en": "Autodesk's AI-powered VFX and animation suite (formerly Wonder Studio): hardware-free motion capture, CG character animation, 3D editing with creative control, and real-time video integration.",
+    "pricing_model": "Abonnements mensuels ou annuels avec niveaux gratuit, Lite, Standard, Pro et Enterprise.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit inclus : accès aux outils core comme AI Mocap et Live Action." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (outils core)" },
+      { "name": "Lite", "price": "10 $/mois (réduit de 20 $ avant août 2026)" },
+      { "name": "Standard", "price": "45 $/mois ou 360 $/an (6 000 crédits/mois)" },
+      { "name": "Pro & Enterprise", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "AI Motion Capture sans caméras",
+      "Édition VFX automatisée (tracking, caméra)",
+      "Character rigging et animation par IA",
+      "3D Editor + Canvas (contrôle créatif)",
+      "Export vers Maya, Blender, Unreal"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez des vidéos ou films VFX intensifs.",
+        "Vous voulez automatiser le motion capture sans studio.",
+        "Vous intégrez CG dans des tournages live-action."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'outils traditionnels.",
+        "Votre budget VFX est très serré."
+      ],
+      "threshold": "Flow Studio accélère la post-production VFX pour studios et creators ; pour des projets simples, les outils traditionnels suffisent."
+    },
+    "pros": [
+      "Automatise tâches VFX complexes et longues.",
+      "Pas besoin de studio motion capture onéreux.",
+      "Intégration fluide au pipeline 3D.",
+      "Free tier généreux pour débuter."
+    ],
+    "cons": [
+      "Passage payant nécessaire au-delà du palier d'essai.",
+      "Courbe d'apprentissage pour workflow VFX.",
+      "Nécessite compétences en compositing/3D."
+    ],
+    "use_cases": [
+      "Produire des vidéos marketing avec CG.",
+      "Postuler pour des projets VFX clients.",
+      "Créer des animations de personnages rapidement."
+    ],
+    "relevant_for": ["Créateurs vidéo", "Studios VFX", "Producteurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce video or film content with VFX.",
+        "You want motion capture without an expensive studio.",
+        "You integrate CG into live-action footage."
+      ],
+      "avoidIf": [
+        "You only use traditional editing tools.",
+        "Your VFX budget is minimal."
+      ],
+      "threshold": "Flow Studio speeds up VFX post-production for studios and creators; for simple projects, traditional tools suffice."
+    },
+    "pros": [
+      "Automates complex, time-consuming VFX tasks.",
+      "No need for expensive motion capture studio.",
+      "Seamless 3D pipeline integration.",
+      "Generous free tier to start."
+    ],
+    "cons": [
+      "A paid plan is needed beyond the entry tier.",
+      "Learning curve for VFX workflows.",
+      "Requires 3D and compositing skills."
+    ],
+    "use_cases": [
+      "Produce marketing videos with CG.",
+      "Bid on client VFX projects.",
+      "Create character animations quickly."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "replit",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Replit — AI App Builder (site officiel)", "url": "https://replit.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'application IA permettant aux utilisateurs de créer des apps, sites, jeux et données-vizes en décrivant leurs idées en langage naturel, sans codage requis.",
+    "what_en": "AI app platform enabling users to create apps, websites, games, and data visualizations by describing ideas in natural language, no coding required.",
+    "pricing_model": "Plan gratuit avec crédits + abonnement payant",
+    "free_tier": { "exists": true, "detail": "Starter gratuit avec crédits quotidiens et 1 projet" },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit (crédits quotidiens, 1 projet)" },
+      { "name": "Core", "price": "20 $/mois (25 $ crédits/mois, 5 collaborateurs)" },
+      { "name": "Pro", "price": "95 $/mois facturation annuelle (100 $ crédits, 15 collaborateurs, 10 agents parallèles)" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle (pricing personnalisé)" }
+    ],
+    "key_features": [
+      "Agent 4 : assistant IA écrivant du code production prêt",
+      "Support multi-format : sites web, apps mobiles, designs, jeux, docs, spreadsheets, data-vizes",
+      "Agents parallèles pour exécution simultanée",
+      "Infra intégrée : authentification, base de données, hosting, monitoring",
+      "100+ intégrations (OpenAI, Stripe, Google Workspace, etc)",
+      "Sécurité entreprise : SSO/SAML, SOC 2, contrôles admin"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une idée d'app mais pas de compétence dev.",
+        "Vous voulez aller du concept au MVP très rapidement.",
+        "Vous préférez une interface visuelle sans code."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de contrôle architectural très fin.",
+        "Vous faites de l'optimisation performance critique.",
+        "Votre stack technologique est très spécialisée/vintage."
+      ],
+      "threshold": "Replit s'impose pour entrepreneurs sans dev ; pour applications complexes, développement traditionnel reste indispensable."
+    },
+    "pros": [
+      "Création d'apps sans codage (prompt texte).",
+      "Infrastructure incluse (db, auth, hosting).",
+      "De l'idée au MVP en heures plutôt que semaines.",
+      "Plan gratuit généreux pour débuter.",
+      "Agents parallèles pour tâches concurrentes."
+    ],
+    "cons": [
+      "Moins de contrôle fin que développement manuel.",
+      "Limité aux templates et capacités de l'Agent.",
+      "Coûts en crédits peuvent s'accumuler.",
+      "Moins adapté pour équipes dev traditionnelles."
+    ],
+    "use_cases": [
+      "Créer un MVP rapidement sans dev.",
+      "Générer des outils internes pour un besoin spécifique.",
+      "Prototyper une idée avant investissement dev."
+    ],
+    "relevant_for": ["Non-devs entrepreneurs", "Petites équipes", "Rapid prototyping"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have an app idea but no dev skills.",
+        "You want to go from concept to MVP very fast.",
+        "You prefer visual interface over coding."
+      ],
+      "avoidIf": [
+        "You need fine architectural control.",
+        "You're doing critical performance optimization.",
+        "Your tech stack is highly specialized or legacy."
+      ],
+      "threshold": "Replit suits non-technical founders; for complex apps, traditional development remains necessary."
+    },
+    "pros": [
+      "Create apps without coding (text prompt).",
+      "Included infrastructure (db, auth, hosting).",
+      "Idea to MVP in hours not weeks.",
+      "Generous free tier.",
+      "Parallel agents for concurrent tasks."
+    ],
+    "cons": [
+      "Less fine control than manual development.",
+      "Limited to templates and Agent capabilities.",
+      "Credit costs can accumulate.",
+      "Less suited for traditional dev teams."
+    ],
+    "use_cases": [
+      "Create MVP quickly without developers.",
+      "Generate internal tools for specific needs.",
+      "Prototype an idea before dev investment."
+    ]
+  }
+}

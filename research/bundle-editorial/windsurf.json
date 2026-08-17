@@ -1,0 +1,100 @@
+{
+  "slug": "windsurf",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Windsurf — AI IDE (site officiel)", "url": "https://windsurf.com" }
+  ],
+  "facts": {
+    "what": "IDE IA agentic pour développeurs offrant auto-complétion de code (Tab) et agent autonome (Cascade) pour exécuter des tâches de development complexes avec plusieurs modèles IA.",
+    "what_en": "Agentic AI IDE for developers offering code autocomplete (Tab) and autonomous agent (Cascade) for executing complex development tasks with multiple AI models.",
+    "pricing_model": "Plan gratuit + tiers payants",
+    "free_tier": { "exists": true, "detail": "Gratuit avec quota quotidien/hebdomadaire limité" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (Tab illimité, quotas agents limités)" },
+      { "name": "Pro", "price": "20 $/mois (quotas agents augmentés)" },
+      { "name": "Student", "price": "~10 $/mois (50% rabais avec .edu)" },
+      { "name": "Max", "price": "200 $/mois (pas de limites agents)" },
+      { "name": "Teams", "price": "40 $/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Tab (auto-complétion inline) : illimité tous tiers",
+      "Cascade (agent autonome) : consomme quota (quotidien/hebdomadaire)",
+      "Claude Sonnet 4.6, GPT-5.4, SWE-1.5, SWE-1 disponibles",
+      "Cloud sessions pour développement en arrière-plan",
+      "Acquisition par Cognition AI en 2025 (Devin aussi disponible)",
+      "Restructuration tarification mars 2026 (quota-based au lieu de crédit)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous programmez quotidiennement.",
+        "Vous voulez un agent IA autonome pour code.",
+        "Vous acceptez des quotas sur l'usage des agents."
+      ],
+      "avoidIf": [
+        "Vous programmez très ocasionnellement.",
+        "Vous avez besoin d'une auto-complétion gratuite illimitée.",
+        "Vous préférez un IDE traditionnel."
+      ],
+      "threshold": "Windsurf s'impose pour devs cherchant agents autonomes ; pour auto-complétion seule gratuit, tabbing illimité suffit."
+    },
+    "pros": [
+      "Tab (auto-complétion) illimité même en gratuit.",
+      "Agents autonomes très puissants (Cascade).",
+      "Multiples modèles IA (Claude, GPT, SWE-1.5).",
+      "Sessions cloud pour background dev.",
+      "Intégration Cognition AI (Devin).",
+      "Plan étudiant abordable."
+    ],
+    "cons": [
+      "Cascade (agent) consomme quotas rapidement.",
+      "Max tier très cher pour usage occasionnel.",
+      "Tarification complexe post-mars 2026.",
+      "Moins d'ecosystem que VSCode + extensions."
+    ],
+    "use_cases": [
+      "Développer des features complexes plus rapidement.",
+      "Générer du code boilerplate automatiquement.",
+      "Refactoring et maintenance assistés par agent.",
+      "Prototyper rapidement des idées de code."
+    ],
+    "relevant_for": ["Développeurs", "Équipes tech", "Startups IA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You code daily.",
+        "You want an AI autonomous agent for code.",
+        "You accept quotas on agent usage."
+      ],
+      "avoidIf": [
+        "You code very occasionally.",
+        "You need unlimited free autocomplete.",
+        "You prefer a traditional IDE."
+      ],
+      "threshold": "Windsurf suits devs seeking autonomous agents; for autocomplete alone, free Tab suffices."
+    },
+    "pros": [
+      "Tab (autocomplete) unlimited even on free.",
+      "Powerful autonomous agents (Cascade).",
+      "Multiple AI models (Claude, GPT, SWE-1.5).",
+      "Cloud sessions for background development.",
+      "Cognition AI integration (Devin).",
+      "Affordable student plan."
+    ],
+    "cons": [
+      "Cascade (agent) consumes quotas quickly.",
+      "Max tier pricey for occasional use.",
+      "Complex pricing post-March 2026.",
+      "Smaller ecosystem than VSCode + extensions."
+    ],
+    "use_cases": [
+      "Develop complex features faster.",
+      "Auto-generate boilerplate code.",
+      "Agent-assisted refactoring and maintenance.",
+      "Rapidly prototype code ideas."
+    ]
+  }
+}

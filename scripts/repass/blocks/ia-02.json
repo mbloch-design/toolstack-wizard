@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "figma-weave",
+    "name": "Figma Weave",
+    "url": "https://weave.figma.com"
+  },
+  {
+    "slug": "flux",
+    "name": "Flux (Black Forest Labs)",
+    "url": "https://blackforestlabs.ai"
+  },
+  {
+    "slug": "gemini",
+    "name": "Gemini",
+    "url": "https://gemini.google.com"
+  },
+  {
+    "slug": "github-copilot",
+    "name": "GitHub Copilot",
+    "url": "https://github.com/features/copilot"
+  },
+  {
+    "slug": "granola",
+    "name": "Granola",
+    "url": "https://www.granola.ai"
+  },
+  {
+    "slug": "grok",
+    "name": "Grok",
+    "url": "https://grok.com"
+  },
+  {
+    "slug": "guideless",
+    "name": "Guideless",
+    "url": "https://guideless.app"
+  },
+  {
+    "slug": "helicone",
+    "name": "Helicone",
+    "url": "https://www.helicone.ai"
+  },
+  {
+    "slug": "heygen",
+    "name": "HeyGen",
+    "url": "https://heygen.com"
+  },
+  {
+    "slug": "hume-ai",
+    "name": "Hume AI",
+    "url": "https://www.hume.ai"
+  }
+]

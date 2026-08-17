@@ -1,0 +1,90 @@
+{
+  "slug": "runway",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Runway — AI Creative Platform (site officiel)", "url": "https://runway.com" }
+  ],
+  "facts": {
+    "what": "Plateforme créative cloud proposant génération et édition vidéo/image/audio alimentées par IA, avec outils pour développeurs (Runway Dev) et simulation robotique (Runway Robotics).",
+    "what_en": "Cloud-based creative platform offering AI-powered video, image, and audio generation and editing, with developer tools (Runway Dev) and robotic simulation (Runway Robotics).",
+    "pricing_model": "Plan gratuit avec crédits + abonnements payants",
+    "free_tier": { "exists": true, "detail": "Essai gratuit ; tarifs sur la page officielle" },
+    "plans": [
+      { "name": "Free Trial", "price": "Gratuit, annulable à tout moment" },
+      { "name": "Runway Creative Paid", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Runway Creative : plateforme cloud all-in-one pour vidéo/image/audio",
+      "Runway Dev : plateforme IA pour développeurs avec pipelines personnalisés",
+      "Runway Robotics : simulation photorealiste pour inférence de politiques",
+      "Utilisé par 60M+ créatifs mondialement",
+      "Génération de contenu multimédia haute qualité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez du contenu vidéo, image ou audio régulièrement.",
+        "Vous voulez une interface cloud sans installation locale.",
+        "Vous avez un budget pour outils créatifs premium."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de contrôle très fin sur chaque pixel.",
+        "Votre budget est très serré (accès gratuit seulement).",
+        "Vous utilisez un logiciel de montage professionnel déjà."
+      ],
+      "threshold": "Runway s'impose pour créatifs cherchant rapidité et IA ; pour montage professionnel classique, Adobe ou Final Cut sont plus appropriés."
+    },
+    "pros": [
+      "Interface cloud intuitive et accessible.",
+      "Génération multimédia haute qualité.",
+      "Utilisé par millions de créatifs.",
+      "Essai gratuit sans carte bancaire.",
+      "Pipelines personnalisés pour développeurs."
+    ],
+    "cons": [
+      "Modèles créatifs limités à ce que propose Runway.",
+      "Moins de contrôle fin qu'outils traditionnels.",
+      "Pricing détails varient selon usage."
+    ],
+    "use_cases": [
+      "Générer des vidéos marketing IA en minutes.",
+      "Éditer des vidéos avec outils d'IA intégrés.",
+      "Créer du contenu multimédia pour réseaux sociaux."
+    ],
+    "relevant_for": ["Content creators", "Producteurs vidéo", "Marketeurs numériques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create video, image, or audio content regularly.",
+        "You want a cloud interface without local installation.",
+        "You have budget for premium creative tools."
+      ],
+      "avoidIf": [
+        "You need very fine pixel-level control.",
+        "Your budget is very tight (free access only).",
+        "You already use professional editing software."
+      ],
+      "threshold": "Runway suits creators seeking speed and AI; for professional editing, Adobe or Final Cut are more appropriate."
+    },
+    "pros": [
+      "Intuitive and accessible cloud interface.",
+      "High-quality multimedia generation.",
+      "Used by millions of creators.",
+      "Free trial without credit card.",
+      "Custom pipelines for developers."
+    ],
+    "cons": [
+      "Creative models limited to Runway's offerings.",
+      "Less fine control than traditional tools.",
+      "Pricing details vary by usage."
+    ],
+    "use_cases": [
+      "Generate AI marketing videos in minutes.",
+      "Edit videos with integrated AI tools.",
+      "Create multimedia content for social media."
+    ]
+  }
+}
