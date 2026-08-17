@@ -1,0 +1,95 @@
+{
+  "slug": "linear",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Linear — Product Development System (site officiel)", "url": "https://linear.app" }
+  ],
+  "facts": {
+    "what": "Système de gestion de développement logiciel conçu pour équipes modernes, combinant suivi d'issues, planification de produits et workflows IA pour construction et livraison.",
+    "what_en": "Software development management system designed for modern teams, combining issue tracking, product planning, and AI workflows for building and shipping.",
+    "pricing_model": "Abonnement par utilisateur ; plans gratuit, Pro, Scale, Enterprise.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit pour petites équipes ; fonctionnalités limitées mais essentielles incluses." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "Montants sur la page officielle" },
+      { "name": "Scale", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Suivi d'issues et gestion de projets",
+      "Agents IA collaboratifs pour tâches",
+      "Roadmaps visuelles et planification",
+      "Document PRD intégrés",
+      "Code review structuré et diffs",
+      "Analytics de cycle de développement",
+      "Intégrations GitHub, Slack, etc."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes équipe développement/produit.",
+        "Vous gérez sprints et backlog complexes.",
+        "Vous voulez IA pour automatisation tâches."
+      ],
+      "avoidIf": [
+        "Vous cherchez outil general project management.",
+        "Vous n'avez pas besoin suivi issues détaillé.",
+        "Vous préférez interface ultra-simple."
+      ],
+      "threshold": "Linear excelle pour équipes tech modernes ; pour gestion projet générique, Asana ou autres conviennent."
+    },
+    "pros": [
+      "Pensé pour workflows dev modernes.",
+      "IA agents intégrés pour collaboration.",
+      "Interfaces et workflows très rapides.",
+      "Gratuit pour petites équipes.",
+      "Intégrations dev natives (GitHub, etc)."
+    ],
+    "cons": [
+      "Moins de features reporting que Jira pour BI.",
+      "Peut être less suitable pour non-tech teams.",
+      "Setup initial pour Github intégrations complexe."
+    ],
+    "use_cases": [
+      "Gérer backlog et sprints d'équipe dev.",
+      "Collaborer en temps réel sur issues complexes.",
+      "Suivre cycle complet : dev → review → ship."
+    ],
+    "relevant_for": ["Équipes développement", "Équipes produit", "Startups tech"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a development/product team.",
+        "You manage complex sprints and backlogs.",
+        "You want AI for task automation."
+      ],
+      "avoidIf": [
+        "You're looking for general project management tool.",
+        "You don't need detailed issue tracking.",
+        "You prefer ultra-simple interface."
+      ],
+      "threshold": "Linear excels for modern tech teams; for generic project management, Asana or others work well."
+    },
+    "pros": [
+      "Built for modern dev workflows.",
+      "Integrated AI agents for collaboration.",
+      "Very fast interfaces and workflows.",
+      "Free for small teams.",
+      "Native dev integrations (GitHub, etc)."
+    ],
+    "cons": [
+      "Fewer reporting features than Jira for BI.",
+      "May be less suitable for non-tech teams.",
+      "Setup for Github integrations can be complex."
+    ],
+    "use_cases": [
+      "Manage dev team backlog and sprints.",
+      "Collaborate in real-time on complex issues.",
+      "Track full cycle: dev → review → ship."
+    ],
+    "relevant_for": ["Development teams", "Product teams", "Tech startups"]
+  }
+}

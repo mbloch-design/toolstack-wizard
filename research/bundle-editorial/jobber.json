@@ -1,0 +1,94 @@
+{
+  "slug": "jobber",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Jobber — Field Service Management (site officiel)", "url": "https://getjobber.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des services aux clients pour artisans et prestataires de services, automatisant devis, planification, facturation et paiements sur mobile.",
+    "what_en": "Customer service management platform for trades and service providers, automating estimates, scheduling, invoicing, and payments on mobile.",
+    "pricing_model": "Abonnement avec tier gratuit ; plans payants pour équipes et fonctionnalités avancées.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans carte de crédit requise ; tarification commence après." },
+    "plans": [
+      { "name": "Free Trial", "price": "Gratuit" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Génération de devis et contrats",
+      "Planification et calendrier mobile",
+      "Facturation et paiement en ligne",
+      "Jobber AI pour tarification et suggestions",
+      "Suivi financier et rapports",
+      "Marketing tools pour attirer clients",
+      "Serve 400000+ professionnels"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes artisan ou prestataire de services.",
+        "Vous gérez appels de service sur le terrain.",
+        "Vous cherchez outil mobile-first pour votre équipe."
+      ],
+      "avoidIf": [
+        "Vous faites surtout du travail bureau.",
+        "Vous cherchez juste logiciel comptable.",
+        "Vous avez équipe très grande (> 50)."
+      ],
+      "threshold": "Jobber excelle pour petits prestataires de services sur le terrain ; pour équipe bureautique ou grande entreprise, d'autres solutions conviennent."
+    },
+    "pros": [
+      "Vraiment pensé pour métiers du terrain.",
+      "Mobile-first avec app excellente.",
+      "Joberr AI pour estimation intelligente.",
+      "Paiement clients direct depuis devis.",
+      "Simple à mettre en place, peu de formation."
+    ],
+    "cons": [
+      "Moins de features que Asana pour projets complexes.",
+      "Peut être cher pour équipe très petite.",
+      "Intégrations limitées à certains domaines."
+    ],
+    "use_cases": [
+      "Créer devis clients en site et envoyer depuis mobile.",
+      "Planifier tournée équipe et dispatcher à la volée.",
+      "Accepter paiements clients directement sur app."
+    ],
+    "relevant_for": ["Plombiers", "Électriciens", "Nettoyage", "Paysagisme", "Services"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a tradesperson or service provider.",
+        "You manage field service calls.",
+        "You want a mobile-first tool for your team."
+      ],
+      "avoidIf": [
+        "You mostly do office-based work.",
+        "You're just looking for accounting software.",
+        "You have a very large team (> 50)."
+      ],
+      "threshold": "Jobber excels for small field service providers; for office teams or large enterprises, other solutions are better."
+    },
+    "pros": [
+      "Truly designed for field trades.",
+      "Mobile-first with excellent app.",
+      "Jobber AI for intelligent estimates.",
+      "Client payment directly from quote.",
+      "Simple to set up, minimal training needed."
+    ],
+    "cons": [
+      "Fewer features than Asana for complex projects.",
+      "Can be expensive for very small teams.",
+      "Integrations limited to certain domains."
+    ],
+    "use_cases": [
+      "Create client estimates on-site and send from mobile.",
+      "Schedule team routes and dispatch on the fly.",
+      "Accept client payments directly on app."
+    ],
+    "relevant_for": ["Plumbers", "Electricians", "Cleaning", "Landscaping", "Services"]
+  }
+}

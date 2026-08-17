@@ -1,0 +1,94 @@
+{
+  "slug": "dubsado",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dubsado — Client Management Software (site officiel)", "url": "https://dubsado.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion client et d'automatisation d'affaires pour freelancers et petites équipes, centralisant leads, propositions, contrats, facturation et paiements.",
+    "what_en": "Client management and business automation software for freelancers and small teams, centralizing leads, proposals, contracts, invoicing, and payments.",
+    "pricing_model": "Abonnement mensuel ou annuel ; plans Starter et Premier avec fonctionnalités progressives.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec fonctionnalités limitées ; essai gratuit des plans payants." },
+    "plans": [
+      { "name": "Starter", "price": "$20/mois" },
+      { "name": "Premier", "price": "$40/mois" },
+      { "name": "Free", "price": "Gratuit avec limites" }
+    ],
+    "key_features": [
+      "Gestion des leads et capture via formulaires",
+      "Propositions et contrats personnalisables",
+      "Portails clients sécurisés",
+      "Facturation et paiement intégrés",
+      "Questionnaires et sondages clients",
+      "Automatisation des workflows",
+      "Templates réutilisables (contrats, propositions)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelancer avec plusieurs clients.",
+        "Vous envoyez régulièrement propositions et contrats.",
+        "Vous cherchez budget abordable et interface intuitive."
+      ],
+      "avoidIf": [
+        "Vous cherchez suite CRM complète pour équipe de vente.",
+        "Vous avez besoin d'analytics avancées.",
+        "Vous préférez une solution open-source."
+      ],
+      "threshold": "Dubsado convient parfaitement aux freelancers gérant clients en parallèle ; pour équipe de vente ou analytics avancés, d'autres outils s'imposent."
+    },
+    "pros": [
+      "Solution complète pour freelancers à budget réduit.",
+      "Interface intuitive, peu de courbe d'apprentissage.",
+      "Version gratuite permettant de tester.",
+      "Templates personnalisables très flexibles.",
+      "Support et documentation bons pour prix."
+    ],
+    "cons": [
+      "Interface peut sembler un peu datée.",
+      "Setup initial prend du temps pour nouveau workflow.",
+      "Moins d'intégrations que concurrents plus grands."
+    ],
+    "use_cases": [
+      "Créer et envoyer propositions clients en quelques minutes.",
+      "Automatiser suivi des leads et relances.",
+      "Gérer cycle complet : devis → contrat → facturation."
+    ],
+    "relevant_for": ["Consultants", "Designers", "Développeurs freelance", "Petites agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer managing multiple clients.",
+        "You regularly send proposals and contracts.",
+        "You want affordable budget and intuitive interface."
+      ],
+      "avoidIf": [
+        "You need a complete CRM suite for sales team.",
+        "You need advanced analytics.",
+        "You prefer an open-source solution."
+      ],
+      "threshold": "Dubsado fits freelancers managing parallel clients perfectly; for sales teams or advanced analytics, other tools are better."
+    },
+    "pros": [
+      "Complete solution for freelancers on tight budget.",
+      "Intuitive interface, low learning curve.",
+      "Free version allows testing.",
+      "Highly flexible customizable templates.",
+      "Good support and documentation for price."
+    ],
+    "cons": [
+      "Interface can feel slightly dated.",
+      "Initial setup takes time for new workflows.",
+      "Fewer integrations than larger competitors."
+    ],
+    "use_cases": [
+      "Create and send client proposals in minutes.",
+      "Automate lead follow-up and reminders.",
+      "Manage full cycle: quote → contract → invoicing."
+    ],
+    "relevant_for": ["Consultants", "Designers", "Freelance developers", "Small agencies"]
+  }
+}

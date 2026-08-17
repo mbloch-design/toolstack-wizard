@@ -1,0 +1,95 @@
+{
+  "slug": "hubspot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "HubSpot — Customer Platform (site officiel)", "url": "https://hubspot.com" }
+  ],
+  "facts": {
+    "what": "Plateforme client tout-en-un unifiant CRM, marketing, ventes et service client avec IA intégrée pour automatiser workflows et accélérer croissance.",
+    "what_en": "All-in-one customer platform unifying CRM, marketing, sales, and customer service with built-in AI to automate workflows and accelerate growth.",
+    "pricing_model": "Abonnement par produit ; plans gratuit, Starter, Professional, Enterprise pour chaque Hub.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit généreux pour chaque Hub (CRM, Marketing, Sales, Service) ; accès complet aux fonctionnalités essentielles." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "CRM unifié source unique de données clients",
+      "Marketing Hub pour campaigns et automatisation",
+      "Sales Hub pour pipeline et deal management",
+      "Service Hub pour support client",
+      "Agents IA 24/7 pour support",
+      "Content Hub pour gestion web et contenu",
+      "300000+ clients à travers 135+ pays"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez plateforme CRM complète pour croissance.",
+        "Vous voulez intégration marketing, vente et support.",
+        "Vous appréciez outils IA pour automatisation."
+      ],
+      "avoidIf": [
+        "Vous voulez juste CRM avec rien d'autre.",
+        "Vous avez équipe < 5 personnes.",
+        "Vous ne faites que B2C simple."
+      ],
+      "threshold": "HubSpot excelle pour PME et startups en croissance ; pour équipe purement sales, un CRM pointu peut être mieux adapté."
+    },
+    "pros": [
+      "Vraiment tout-en-un : CRM, marketing, vente, support.",
+      "Free tier très généreux pour démarrer.",
+      "IA intégrée pour automations et insights.",
+      "Écosystème massif et communauté.",
+      "Scalable de startups à entreprises."
+    ],
+    "cons": [
+      "Coûts augmentent rapidement avec scale.",
+      "Peut être complexe pour très petite équipe.",
+      "Certaines features avancées nécessitent plans payants."
+    ],
+    "use_cases": [
+      "Centraliser toutes données clients en un CRM.",
+      "Automatiser campaigns marketing et lead nurture.",
+      "Gérer pipeline de vente complète."
+    ],
+    "relevant_for": ["Startups", "PME en croissance", "Agences", "Petites entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're looking for a complete CRM platform for growth.",
+        "You want marketing, sales, and support integration.",
+        "You appreciate AI tools for automation."
+      ],
+      "avoidIf": [
+        "You just want CRM with nothing else.",
+        "You have a team < 5 people.",
+        "You only do simple B2C."
+      ],
+      "threshold": "HubSpot excels for SMEs and growing startups; for pure sales teams, a specialized CRM may be better."
+    },
+    "pros": [
+      "Truly all-in-one: CRM, marketing, sales, support.",
+      "Very generous free tier to start.",
+      "Built-in AI for automations and insights.",
+      "Massive ecosystem and community.",
+      "Scalable from startups to enterprises."
+    ],
+    "cons": [
+      "Costs increase quickly with scale.",
+      "Can be complex for very small teams.",
+      "Some advanced features require paid plans."
+    ],
+    "use_cases": [
+      "Centralize all customer data in one CRM.",
+      "Automate marketing campaigns and lead nurture.",
+      "Manage complete sales pipeline."
+    ],
+    "relevant_for": ["Startups", "Growing SMEs", "Agencies", "Small businesses"]
+  }
+}

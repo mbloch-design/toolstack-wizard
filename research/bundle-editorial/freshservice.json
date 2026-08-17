@@ -1,0 +1,94 @@
+{
+  "slug": "freshservice",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Freshservice — IT Service Management (site officiel)", "url": "https://freshworks.com/freshservice" }
+  ],
+  "facts": {
+    "what": "Plateforme ITSM (IT Service Management) unifiée basée sur les meilleures pratiques ITIL, combinant gestion d'incidents, d'assets et de services avec IA (Freddy AI Copilot).",
+    "what_en": "Unified ITSM (IT Service Management) platform based on ITIL best practices, combining incident management, asset management, and services with AI (Freddy AI Copilot).",
+    "pricing_model": "Abonnement par utilisateur ; plans Starter, Professional, Enterprise avec tarification progressive.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit ou démo sur demande ; pricing commence après essai." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Freddy AI Copilot pour résolution instantanée",
+      "Gestion unifiée incidents et on-call",
+      "Configuration Management Database (CMDB)",
+      "Employee Service Management (ESM)",
+      "Orchestration workflows low-code",
+      "Portails self-service intelligents",
+      "Découverte assets continue"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes équipe IT/DevOps avec besoin ITSM complet.",
+        "Vous voulez conformité ITIL et gestion incidents.",
+        "Vous appréciez les assistants IA pour résolution rapide."
+      ],
+      "avoidIf": [
+        "Vous avez juste besoin d'un simple ticketing.",
+        "Vous cherchez solution entièrement gratuite.",
+        "Votre équipe IT est très petite (< 5 personnes)."
+      ],
+      "threshold": "Freshservice convient aux équipes IT de taille moyenne/grande ; pour petite équipe ou juste tickets simples, des outils plus légers suffisent."
+    },
+    "pros": [
+      "ITSM complet basé sur meilleures pratiques ITIL.",
+      "Freddy AI exceptionnelle pour résolution rapide.",
+      "Gestion incidents, assets et employés en un endroit.",
+      "Leader reconnu (Gartner Magic Quadrant 2026).",
+      "Mise en live rapide (90 jours)."
+    ],
+    "cons": [
+      "Coûteux pour très petite équipe IT.",
+      "Configuration initiale importante.",
+      "Interface complexe pour débutants IT."
+    ],
+    "use_cases": [
+      "Gérer incidents IT avec résolution IA automatique.",
+      "Centraliser assets IT et leur cycle de vie.",
+      "Offrir portail employés self-service pour demandes IT."
+    ],
+    "relevant_for": ["Équipes IT", "DevOps", "Grandes entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an IT/DevOps team with complete ITSM needs.",
+        "You want ITIL compliance and incident management.",
+        "You appreciate AI assistants for rapid resolution."
+      ],
+      "avoidIf": [
+        "You just need simple ticketing.",
+        "You're looking for a completely free solution.",
+        "Your IT team is very small (< 5 people)."
+      ],
+      "threshold": "Freshservice suits mid-to-large IT teams; for small teams or simple tickets, lighter tools suffice."
+    },
+    "pros": [
+      "Complete ITSM based on ITIL best practices.",
+      "Exceptional Freddy AI for rapid resolution.",
+      "Incident, asset, and employee management in one place.",
+      "Recognized leader (Gartner Magic Quadrant 2026).",
+      "Fast go-live (90 days)."
+    ],
+    "cons": [
+      "Expensive for very small IT team.",
+      "Significant initial configuration.",
+      "Complex interface for IT beginners."
+    ],
+    "use_cases": [
+      "Manage IT incidents with automatic AI resolution.",
+      "Centralize IT assets and their lifecycle.",
+      "Offer employee self-service portal for IT requests."
+    ],
+    "relevant_for": ["IT teams", "DevOps", "Large enterprises"]
+  }
+}

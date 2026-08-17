@@ -1,0 +1,94 @@
+{
+  "slug": "deskpro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Deskpro — AI Help Desk Platform (site officiel)", "url": "https://deskpro.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de support client omnicanal centralisant communications multi-canaux (email, chat, SMS, réseaux sociaux) avec IA pour chatbots et automatisations de workflows.",
+    "what_en": "Omnichannel customer support platform centralizing multi-channel communications (email, chat, SMS, social media) with AI for chatbots and workflow automations.",
+    "pricing_model": "Abonnement avec déploiement flexible ; options cloud, cloud privé, self-hosted, on-premise.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; démos et essais sur demande." },
+    "plans": [
+      { "name": "Cloud", "price": "Montants sur la page officielle" },
+      { "name": "Private Cloud", "price": "Tarification personnalisée sur demande" },
+      { "name": "Self-Hosted", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Support omnicanal (email, chat, SMS, Facebook, Instagram)",
+      "Chatbots IA et agent assist",
+      "Workflows automatisés personnalisables",
+      "Extrême customization (white-label, triggers)",
+      "Conformité SOC II, ISO 27001, HIPAA, GDPR",
+      "Déploiement multi-régional (EU, UK, US)",
+      "Intégrations Slack, MS Teams, WhatsApp"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez du support multi-canaux complexe.",
+        "Vous avez besoin de conformité stricte (HIPAA, GDPR).",
+        "Vous voulez customisation extrême et white-label."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'email support.",
+        "Vous cherchez une solution très simple et cheap.",
+        "Vous n'avez pas besoin de déploiement on-premise."
+      ],
+      "threshold": "Deskpro convient aux entreprises et gouvernements avec besoins support complexes et conformité stricte ; pour PME simple, Zendesk ou Freshdesk suffisent."
+    },
+    "pros": [
+      "Omnicanal vrai avec tous les canaux supportés.",
+      "Extrême customization et options de déploiement.",
+      "Conformité strikte pour santé et gouvernement.",
+      "IA performante pour chatbots et routing.",
+      "Support multi-régional en EU, UK, US."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Setup complexe pour utilisateurs non-techniques.",
+      "Coûts élevés pour organisations petites."
+    ],
+    "use_cases": [
+      "Centraliser support email, chat, SMS en un seul inbox.",
+      "Déployer chatbot IA pour FAQ communes.",
+      "Gérer support gouvernement/santé avec conformité stricte."
+    ],
+    "relevant_for": ["Gouvernement", "Secteur santé", "Finance", "Grandes entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex multi-channel support.",
+        "You need strict compliance (HIPAA, GDPR).",
+        "You want extreme customization and white-label."
+      ],
+      "avoidIf": [
+        "You only need email support.",
+        "You're looking for a very simple, cheap solution.",
+        "You don't need on-premise deployment."
+      ],
+      "threshold": "Deskpro suits enterprises and governments with complex support needs and strict compliance; for simple SMEs, Zendesk or Freshdesk suffice."
+    },
+    "pros": [
+      "True omnichannel with all channels supported.",
+      "Extreme customization and deployment options.",
+      "Strict compliance for healthcare and government.",
+      "Performant AI for chatbots and routing.",
+      "Multi-regional support in EU, UK, US."
+    ],
+    "cons": [
+      "No free version.",
+      "Complex setup for non-technical users.",
+      "High costs for small organizations."
+    ],
+    "use_cases": [
+      "Centralize email, chat, SMS support in one inbox.",
+      "Deploy AI chatbot for common FAQs.",
+      "Manage government/healthcare support with strict compliance."
+    ],
+    "relevant_for": ["Government", "Healthcare", "Finance", "Large enterprises"]
+  }
+}

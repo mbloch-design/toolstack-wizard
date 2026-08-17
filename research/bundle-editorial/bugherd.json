@@ -1,0 +1,94 @@
+{
+  "slug": "bugherd",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BugHerd — Website Feedback Platform (site officiel)", "url": "https://bugherd.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de collecte de feedback client permettant de commenter directement sur une page web, convertissant les remarques en tâches traçables avec contexte automatique (screenshot, info navigateur).",
+    "what_en": "Client feedback collection platform allowing direct page comments, converting remarks into trackable tasks with automatic context (screenshot, browser info).",
+    "pricing_model": "Abonnement mensuel ; plans débutent à partir de montants sur la page officielle avec accès illimité aux projets et invités.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours sans carte de crédit requise." },
+    "plans": [
+      { "name": "Starter", "price": "$42/mois" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Commentaires in-context directement sur pages web",
+      "Capture automatique screenshot et infos techniques",
+      "Suggestions de modification de texte",
+      "Tableau Kanban pour gérer les tâches",
+      "20+ intégrations (Jira, Asana, Slack, etc.)",
+      "API MCP et features IA",
+      "Sharing sans login client"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez souvent besoin de feedback clients sur votre site/app.",
+        "Vous préférez in-context feedback plutôt que formulaires texte.",
+        "Vous intégrez à Jira, Asana ou d'autres outils."
+      ],
+      "avoidIf": [
+        "Vous ne testez que ponctuellement avec peu de retours.",
+        "Vous cherchez un outil gratuit sans limite.",
+        "Votre cas d'usage est très spécialisé (QA interne only)."
+      ],
+      "threshold": "BugHerd excelle pour PME et agences web qui collectent du feedback client régulièrement ; pour QA interne ou petit volume, un outil gratuit peut suffire."
+    },
+    "pros": [
+      "Feedback in-context sur live site, très intuitif pour clients.",
+      "Capture automatique du contexte technique et screenshot.",
+      "Conversion automatique en tâches traçables.",
+      "Intégrations nombreuses à outils populaires.",
+      "Taux de satisfaction utilisateur très élevé (4.8/5)."
+    ],
+    "cons": [
+      "Pas d'app mobile native pour feedback (web only).",
+      "Peut être overkill pour très petit volume.",
+      "Tarification basée sur nombre de projets peut augmenter avec scale."
+    ],
+    "use_cases": [
+      "Faire tester un prototype par clients et collecter feedback.",
+      "Gérer les retours de correctifs après livraison site.",
+      "Centraliser tous les commentaires clients en un seul endroit."
+    ],
+    "relevant_for": ["Agences web", "Équipes produit", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You frequently need client feedback on your site/app.",
+        "You prefer in-context feedback over text forms.",
+        "You integrate with Jira, Asana, or other tools."
+      ],
+      "avoidIf": [
+        "You only test occasionally with little feedback.",
+        "You're looking for a free tool with no limits.",
+        "Your use case is very specialized (internal QA only)."
+      ],
+      "threshold": "BugHerd excels for SMEs and web agencies regularly collecting client feedback; for internal QA or small volume, a free tool may suffice."
+    },
+    "pros": [
+      "In-context feedback on live site, very intuitive for clients.",
+      "Automatic technical context and screenshot capture.",
+      "Automatic conversion to trackable tasks.",
+      "Many integrations with popular tools.",
+      "Very high user satisfaction rating (4.8/5)."
+    ],
+    "cons": [
+      "No native mobile app for feedback (web only).",
+      "May be overkill for very small feedback volume.",
+      "Pricing based on number of projects can increase with scale."
+    ],
+    "use_cases": [
+      "Have clients test a prototype and collect feedback.",
+      "Manage post-launch site fixes and feedback.",
+      "Centralize all customer comments in one place."
+    ],
+    "relevant_for": ["Web agencies", "Product teams", "Startups"]
+  }
+}

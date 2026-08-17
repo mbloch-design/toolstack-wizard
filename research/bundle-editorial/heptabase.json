@@ -1,0 +1,93 @@
+{
+  "slug": "heptabase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Heptabase — Visual Note-Taking (site officiel)", "url": "https://heptabase.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de prise de notes visuelle pour apprentissage et recherche complexe, combinant tableaux blancs, cartes mentales et fiches pour développer compréhension profonde.",
+    "what_en": "Visual note-taking software for learning and complex research, combining whiteboards, mind maps, and cards to develop deep understanding.",
+    "pricing_model": "Abonnement avec plan gratuit limité ; tarification annuelle et mensuelle pour plan Pro.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec fonctionnalités limitées ; plan Pro à $8.99/mois annuel." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec limites" },
+      { "name": "Pro", "price": "$8.99/mois annuel" }
+    ],
+    "key_features": [
+      "Tableaux blancs visuels pour notes",
+      "Cartes mentales et mindmaps",
+      "Synchronisation mobile et desktop",
+      "Recherche ultra-rapide (10000+ notes < 1s)",
+      "Collaboration en temps réel",
+      "Accès offline sur appareils illimités",
+      "100 crédits IA/mois (plan Pro)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes doctorant, académique ou chercheur.",
+        "Vous aimez apprendre par visualisation.",
+        "Vous gérez de la recherche complexe multi-source."
+      ],
+      "avoidIf": [
+        "Vous cherchez note-taking ultra-simple (Notion suffit).",
+        "Vous n'aimez pas les interfaces visuelles.",
+        "Vous avez peu de notes (< 100)."
+      ],
+      "threshold": "Heptabase excelle pour chercheurs et académiques ; pour simples notes du quotidien, Notion ou Apple Notes suffisent."
+    },
+    "pros": [
+      "Visualisation unique pour compréhension profonde.",
+      "Très performant même 10000+ notes.",
+      "Sync offline partout, pas de limite appareils.",
+      "Collaboration en temps réel intégrée.",
+      "Plan Pro très abordable."
+    ],
+    "cons": [
+      "Courbe d'apprentissage : besoin temps pour workflow.",
+      "Pas ideal pour prise de notes rapide/informelle.",
+      "Moins d'intégrations que Notion."
+    ],
+    "use_cases": [
+      "Organiser recherche académique par thèmes interconnectés.",
+      "Apprendre sujets complexes par cartes mentales.",
+      "Construire second cerveau pour livres/articles lus."
+    ],
+    "relevant_for": ["Doctorants", "Académiques", "Chercheurs", "Écrivains"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a PhD student, academic, or researcher.",
+        "You like learning through visualization.",
+        "You manage complex multi-source research."
+      ],
+      "avoidIf": [
+        "You want ultra-simple note-taking (Notion is fine).",
+        "You don't like visual interfaces.",
+        "You have few notes (< 100)."
+      ],
+      "threshold": "Heptabase excels for researchers and academics; for simple daily notes, Notion or Apple Notes suffice."
+    },
+    "pros": [
+      "Unique visualization for deep understanding.",
+      "Very performant even with 10,000+ notes.",
+      "Sync offline everywhere, unlimited devices.",
+      "Built-in real-time collaboration.",
+      "Pro plan very affordable."
+    ],
+    "cons": [
+      "Learning curve: need time to develop workflow.",
+      "Not ideal for rapid/casual note-taking.",
+      "Fewer integrations than Notion."
+    ],
+    "use_cases": [
+      "Organize academic research by interconnected themes.",
+      "Learn complex subjects through mind maps.",
+      "Build second brain for books/articles read."
+    ],
+    "relevant_for": ["PhD students", "Academics", "Researchers", "Writers"]
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "safetyculture",
+    "name": "Safetyculture",
+    "url": "https://safetyculture.com"
+  },
+  {
+    "slug": "scribe",
+    "name": "Scribe",
+    "url": "https://scribehow.com"
+  },
+  {
+    "slug": "signrequest",
+    "name": "SignRequest",
+    "url": ""
+  },
+  {
+    "slug": "skribble",
+    "name": "Skribble",
+    "url": ""
+  },
+  {
+    "slug": "smartsheet",
+    "name": "Smartsheet",
+    "url": "https://smartsheet.com"
+  },
+  {
+    "slug": "smartsuite",
+    "name": "SmartSuite",
+    "url": "https://smartsuite.com"
+  },
+  {
+    "slug": "snipe-it",
+    "name": "Snipe IT",
+    "url": "https://snipeitapp.com"
+  },
+  {
+    "slug": "spaceiq",
+    "name": "SpaceIQ",
+    "url": "https://spaceiq.com"
+  },
+  {
+    "slug": "suitedash",
+    "name": "SuiteDash",
+    "url": ""
+  },
+  {
+    "slug": "superlist",
+    "name": "Superlist",
+    "url": "https://www.superlist.com"
+  }
+]

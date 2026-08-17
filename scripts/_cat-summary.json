@@ -1,11 +1,5 @@
 [
   {
-    "category": "analytics",
-    "done": 7,
-    "todo": 73,
-    "total": 80
-  },
-  {
     "category": "organization",
     "done": 4,
     "todo": 58,
@@ -55,9 +49,9 @@
   },
   {
     "category": "project-management",
-    "done": 14,
+    "done": 13,
     "todo": 18,
-    "total": 32
+    "total": 31
   },
   {
     "category": "hris-payroll",
@@ -112,6 +106,12 @@
     "done": 4,
     "todo": 1,
     "total": 5
+  },
+  {
+    "category": "analytics",
+    "done": 76,
+    "todo": 0,
+    "total": 76
   },
   {
     "category": "budgeting-fpa",

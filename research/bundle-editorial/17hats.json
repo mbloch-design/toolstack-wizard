@@ -1,0 +1,91 @@
+{
+  "slug": "17hats",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "17hats — Pricing & Plans (site officiel)", "url": "https://17hats.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion d'affaires tout-en-un pour entrepreneurs et petites entreprises de services, centralisant devis, contrats, facturation, planification et flux de travail client en un seul endroit.",
+    "what_en": "All-in-one business management platform for service entrepreneurs and small businesses, centralizing quotes, contracts, invoicing, scheduling, and client workflows in a single space.",
+    "pricing_model": "Abonnement mensuel ou annuel avec plan unique ; add-ons optionnels pour suivi du temps et connexions bancaires.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours avec accès complet aux fonctionnalités." },
+    "plans": [
+      { "name": "Core Plan (mensuel)", "price": "$60/mois" },
+      { "name": "Core Plan (annuel)", "price": "$600/an" },
+      { "name": "Core Plan (bisannuel)", "price": "$800/2 ans" }
+    ],
+    "key_features": [
+      "Devis et contrats personnalisés",
+      "Planification et calendrier client",
+      "Facturation et paiement en ligne",
+      "Portails clients sécurisés",
+      "Flux de travail automatisés",
+      "Gestion de leads et CRM"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelance ou petite agence de services.",
+        "Vous voulez centraliser tous vos outils client en un seul endroit.",
+        "Vous avez besoin de l'automatisation pour réduire les tâches répétitives."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous avez une équipe très importante avec des besoins complexes.",
+        "Vous préférez les outils spécialisés plutôt qu'une solution généraliste."
+      ],
+      "threshold": "17hats convient aux freelancers et petites agences qui veulent unifier leur gestion client ; pour une équipe large ou des besoins hyper-spécialisés, d'autres outils peuvent être mieux adaptés."
+    },
+    "pros": [
+      "Solution tout-en-un : devis, contrats, facturation, planification en un endroit.",
+      "Portails clients intégrés pour une communication centralisée.",
+      "Flux de travail personnalisables pour automatiser les tâches répétitives.",
+      "Tarification simple et transparente avec tous les utilisateurs inclus."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente (essai seulement).",
+      "Interface moins moderne comparée aux outils plus récents.",
+      "Les add-ons (suivi du temps, connexions bancaires) ont un coût supplémentaire."
+    ],
+    "use_cases": [
+      "Créer des devis et contrats clients en quelques minutes.",
+      "Organiser l'emploi du temps et les rendez-vous clients.",
+      "Automatiser la facturation et les relances de paiement."
+    ],
+    "relevant_for": ["Freelancers", "Petites agences de services", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer or small service agency.",
+        "You want to centralize all your client-facing tools in one place.",
+        "You need workflow automation to reduce repetitive tasks."
+      ],
+      "avoidIf": [
+        "You're looking for a completely free solution.",
+        "You have a large team with complex requirements.",
+        "You prefer specialized tools over an all-in-one generalist solution."
+      ],
+      "threshold": "17hats works well for freelancers and small agencies seeking unified client management; for large teams or highly specialized needs, other tools may be better suited."
+    },
+    "pros": [
+      "All-in-one solution: quotes, contracts, invoicing, scheduling in one place.",
+      "Integrated client portals for centralized communication.",
+      "Customizable workflows to automate repetitive tasks.",
+      "Simple, transparent pricing with all users included."
+    ],
+    "cons": [
+      "No permanent free version (trial only).",
+      "Interface less modern compared to newer tools.",
+      "Add-ons (time tracking, bank connections) have additional costs."
+    ],
+    "use_cases": [
+      "Create client quotes and contracts in minutes.",
+      "Organize schedules and client appointments.",
+      "Automate invoicing and payment reminders."
+    ],
+    "relevant_for": ["Freelancers", "Small service agencies", "Consultants"]
+  }
+}

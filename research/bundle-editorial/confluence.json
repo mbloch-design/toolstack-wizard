@@ -1,0 +1,95 @@
+{
+  "slug": "confluence",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Confluence — AI Workspace (site officiel)", "url": "https://atlassian.com/software/confluence" }
+  ],
+  "facts": {
+    "what": "Espace collaboratif pour documentation, gestion de connaissances et collaboration en équipe, combinant pages, tableaux blancs, bases de données avec assistants IA (Rovo).",
+    "what_en": "Collaborative workspace for documentation, knowledge management, and team collaboration, combining pages, whiteboards, databases with AI assistants (Rovo).",
+    "pricing_model": "Abonnement par utilisateur ou par équipe ; plans Free, Standard, Premium, Enterprise avec tarification progressive.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec fonctionnalités essentielles pour petites équipes jusqu'à 10 utilisateurs." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit jusqu'à 10 utilisateurs" },
+      { "name": "Standard", "price": "Montants sur la page officielle" },
+      { "name": "Premium", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Pages, whiteboards, bases de données",
+      "Assistants IA (Rovo) pour recherche et automatisation",
+      "Intégration Jira, GitHub, Figma",
+      "Résumés et briefings audio automatiques",
+      "Recherche cross-tool",
+      "Wikis et gestion de connaissances",
+      "Collaboration temps réel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez déjà Jira et l'écosystème Atlassian.",
+        "Vous avez besoin d'une source unique de documentation.",
+        "Vous appréciez les outils IA pour la productivité."
+      ],
+      "avoidIf": [
+        "Vous cherchez une alternative simple et légère à Notion.",
+        "Votre équipe préfère les wikis ultra-simples.",
+        "Vous ne voulez pas dépendre de l'écosystème Atlassian."
+      ],
+      "threshold": "Confluence excelle en écosystème Atlassian pour documentation technique ; pour documentation générique ou notes, Notion peut être plus simple."
+    },
+    "pros": [
+      "Intégration parfaite avec Jira et outils Atlassian.",
+      "Assistants IA performants pour recherche et résumés.",
+      "Flexible : pages, whiteboards, bases de données.",
+      "Free tier généreux pour petites équipes.",
+      "Source unique de documentation pour équipes techniques."
+    ],
+    "cons": [
+      "Interface peut être complexe pour débutants.",
+      "Coûts augmentent rapidement avec nombre d'utilisateurs.",
+      "Moins agile que Notion pour documentation légère."
+    ],
+    "use_cases": [
+      "Créer et maintenir documentation technique d'équipe.",
+      "Centraliser toutes les runbooks et procédures.",
+      "Utiliser IA pour générer résumés automatiques de réunions."
+    ],
+    "relevant_for": ["Équipes techniques", "Équipes produit", "Équipes DevOps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already use Jira and Atlassian ecosystem.",
+        "You need a single source of documentation.",
+        "You appreciate AI tools for productivity."
+      ],
+      "avoidIf": [
+        "You're looking for a simple, lightweight alternative to Notion.",
+        "Your team prefers ultra-simple wikis.",
+        "You don't want to depend on Atlassian ecosystem."
+      ],
+      "threshold": "Confluence excels in Atlassian ecosystem for technical documentation; for generic documentation or notes, Notion may be simpler."
+    },
+    "pros": [
+      "Perfect integration with Jira and Atlassian tools.",
+      "Powerful AI assistants for search and summaries.",
+      "Flexible: pages, whiteboards, databases.",
+      "Generous free tier for small teams.",
+      "Single source of documentation for technical teams."
+    ],
+    "cons": [
+      "Interface can be complex for beginners.",
+      "Costs increase quickly with user count.",
+      "Less agile than Notion for lightweight documentation."
+    ],
+    "use_cases": [
+      "Create and maintain team technical documentation.",
+      "Centralize all runbooks and procedures.",
+      "Use AI to auto-generate meeting summaries."
+    ],
+    "relevant_for": ["Technical teams", "Product teams", "DevOps teams"]
+  }
+}

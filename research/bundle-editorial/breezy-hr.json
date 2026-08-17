@@ -1,0 +1,94 @@
+{
+  "slug": "breezy-hr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Breezy HR — Hiring & Performance Platform (site officiel)", "url": "https://breezy.hr" }
+  ],
+  "facts": {
+    "what": "Plateforme ATS (Applicant Tracking System) et gestion des performances pour les entreprises, automatisant le recrutement (publication d'annonces, présélection, entretiens) et gestion des employés.",
+    "what_en": "ATS (Applicant Tracking System) and performance management platform for businesses, automating recruitment (job postings, screening, interviews) and employee management.",
+    "pricing_model": "Tarification flexible basée sur la taille et les besoins ; plans pour petites, moyennes et grandes entreprises.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; tarification flexible sur demande." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Publication d'annonces sur 50+ job boards",
+      "Présélection automatisée et qualification",
+      "Planification des entretiens",
+      "Gestion des offres et onboarding",
+      "Évaluations de performances et feedback",
+      "800+ templates HR et recrutement",
+      "Intégrations HRIS et background checks"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recruitez régulièrement et voulez automatiser le processus.",
+        "Vous gérez des équipes distribuées avec besoin de performance management.",
+        "Vous cherchez un ATS à budget raisonnable."
+      ],
+      "avoidIf": [
+        "Vous ne recrulez qu'occasionnellement.",
+        "Vous avez besoin d'une solution purement gratuite.",
+        "Vous avez des processus de recrutement très complexes et hyper-spécialisés."
+      ],
+      "threshold": "Breezy HR convient aux PME et entreprises en croissance qui cherchent un ATS + HRMS complet ; pour très petite structure, un outil gratuit peut suffire."
+    },
+    "pros": [
+      "Publication simultanée sur 50+ job boards.",
+      "Automatisation complète du workflow de recrutement.",
+      "Module de gestion des performances intégré.",
+      "800+ templates pré-construits.",
+      "Interface facile à utiliser, peu d'entraînement requis."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Peut être un peu lent pour très gros volume.",
+      "Reporting peut être amélioré."
+    ],
+    "use_cases": [
+      "Publier une offre d'emploi et la recevoir sur tous les job boards.",
+      "Présélectionner automatiquement les candidats non pertinents.",
+      "Gérer les performances et objectifs des employés en équipe."
+    ],
+    "relevant_for": ["PME", "Sociétés en croissance", "Équipes RH"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You recruit regularly and want to automate the process.",
+        "You manage distributed teams needing performance management.",
+        "You're looking for an ATS on a reasonable budget."
+      ],
+      "avoidIf": [
+        "You only recruit occasionally.",
+        "You need a purely free solution.",
+        "You have very complex, highly specialized recruitment processes."
+      ],
+      "threshold": "Breezy HR suits SMEs and growing companies seeking a complete ATS + HRMS; for very small structures, a free tool may suffice."
+    },
+    "pros": [
+      "Post simultaneously to 50+ job boards.",
+      "Complete recruitment workflow automation.",
+      "Integrated performance management module.",
+      "800+ pre-built templates.",
+      "Easy-to-use interface, little training needed."
+    ],
+    "cons": [
+      "No free version.",
+      "Can be slow for very large volumes.",
+      "Reporting could be improved."
+    ],
+    "use_cases": [
+      "Post a job opening and have it appear on all job boards.",
+      "Automatically screen out non-relevant candidates.",
+      "Manage team performance and objectives."
+    ],
+    "relevant_for": ["SMEs", "Growing companies", "HR teams"]
+  }
+}

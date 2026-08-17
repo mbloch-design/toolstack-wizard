@@ -1,0 +1,95 @@
+{
+  "slug": "hive",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hive — AI Work Management (site officiel)", "url": "https://hive.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion du travail assistée par IA combinant gestion de projets, collaboration d'équipes et automatisation, avec plusieurs vues (Kanban, Gantt, Calendrier, Timeline).",
+    "what_en": "AI-powered work management platform combining project management, team collaboration, and automation, with multiple views (Kanban, Gantt, Calendar, Timeline).",
+    "pricing_model": "Abonnement avec tier gratuit ; plans Starter, Teams, Enterprise avec tarification progressive.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec fonctionnalités essentielles ; pas de carte de crédit requise." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec limites" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Teams", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Multiples vues de projet (Kanban, Gantt, Calendrier, Timeline)",
+      "Assistant IA Buzz pour analyse et tâches",
+      "Chat intégré et notes collaboratives",
+      "Workflows et automatisations custom",
+      "Proofing et outils feedback",
+      "CRM et gestion finances",
+      "Dashboards analytiques"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez projets multiples en parallèle.",
+        "Vous voulez flexibilité vues (Gantt, Kanban, etc).",
+        "Vous appréciez IA pour suivi et automations."
+      ],
+      "avoidIf": [
+        "Vous cherchez outil hyper-simple et léger.",
+        "Vous avez équipe très petite (< 3).",
+        "Vous n'aimez pas outils avec beaucoup de features."
+      ],
+      "threshold": "Hive convient aux équipes gérant multiple projets ; pour projet unique simple, des outils plus légers suffisent."
+    },
+    "pros": [
+      "Multiples vues flexibles pour différents workflows.",
+      "IA performante pour suivi et automations.",
+      "Free tier généreux sans limite fonctionnalités.",
+      "Chat et notes intégrés pour collaboration.",
+      "Proofing pour équipes créatives."
+    ],
+    "cons": [
+      "Peut être complexe pour débutants.",
+      "Beaucoup de features = beaucoup d'options.",
+      "Setup initial peut prendre temps."
+    ],
+    "use_cases": [
+      "Gérer portefeuille de projets avec vue d'ensemble.",
+      "Automatiser tâches répétitives via workflows.",
+      "Collaborer sur projets créatifs avec proofing."
+    ],
+    "relevant_for": ["Équipes marketing", "Équipes créatives", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple projects in parallel.",
+        "You want flexible views (Gantt, Kanban, etc).",
+        "You appreciate AI for tracking and automations."
+      ],
+      "avoidIf": [
+        "You're looking for a hyper-simple, lightweight tool.",
+        "You have a very small team (< 3).",
+        "You don't like feature-rich tools."
+      ],
+      "threshold": "Hive suits teams managing multiple projects; for a single simple project, lighter tools suffice."
+    },
+    "pros": [
+      "Multiple flexible views for different workflows.",
+      "Powerful AI for tracking and automations.",
+      "Generous free tier without feature limits.",
+      "Integrated chat and notes for collaboration.",
+      "Proofing for creative teams."
+    ],
+    "cons": [
+      "Can be complex for beginners.",
+      "Many features = many options.",
+      "Initial setup can take time."
+    ],
+    "use_cases": [
+      "Manage project portfolio with overview.",
+      "Automate repetitive tasks via workflows.",
+      "Collaborate on creative projects with proofing."
+    ],
+    "relevant_for": ["Marketing teams", "Creative teams", "SMEs"]
+  }
+}

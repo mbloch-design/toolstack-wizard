@@ -1,0 +1,96 @@
+{
+  "slug": "logseq",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Logseq — Open-Source Note-Taking (site officiel)", "url": "https://logseq.com" }
+  ],
+  "facts": {
+    "what": "Application open-source gratuite de gestion de connaissances et prise de notes en bloc-lien, stockant les notes en fichiers texte locaux pour propriété et confidentialité totales.",
+    "what_en": "Free open-source knowledge management and note-taking app using block-level linking, storing notes in local plain-text files for complete ownership and privacy.",
+    "pricing_model": "Application gratuite open-source ; option Logseq Sync payante pour synchronisation chiffrée cross-device.",
+    "free_tier": { "exists": true, "detail": "Application complètement gratuite sans limites ; sync gratuit via fichiers locaux." },
+    "plans": [
+      { "name": "Free (local)", "price": "Gratuit sans limites" },
+      { "name": "Logseq Sync", "price": "$5/mois" }
+    ],
+    "key_features": [
+      "Notes en bloc-lien bidirectionnels",
+      "Base de connaissances interconnectée",
+      "Daily notes et pages templates",
+      "Whiteboards collaboratifs",
+      "Plugins extensibles (communauté)",
+      "Stockage local plain-text",
+      "Flashcards et spaced repetition",
+      "Queries et database-like capabilities"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gerez beaucoup de notes interconnectées.",
+        "Vous valorisez la propriété des données et privacy.",
+        "Vous aimez open-source sans vendor lock-in."
+      ],
+      "avoidIf": [
+        "Vous cherchez outil très simple et léger.",
+        "Vous avez besoin de collaboration temps réel.",
+        "Vous ne voulez pas de courbe d'apprentissage."
+      ],
+      "threshold": "Logseq excelle pour knowledge workers et chercheurs ; pour prise de notes simple, Apple Notes ou Notion suffisent."
+    },
+    "pros": [
+      "Entièrement gratuit, open-source, pas de vendor lock-in.",
+      "Bloc-lien powerful pour interconnecter notes.",
+      "Stockage local = propriété complète des données.",
+      "Extensible via plugins communauté.",
+      "Excellent pour knowledge management."
+    ],
+    "cons": [
+      "Pas de mobile app native (web only).",
+      "Pas de collaboration temps réel.",
+      "Courbe d'apprentissage : bloc-lien pas intuitif.",
+      "Synchronisation multi-appareils payante."
+    ],
+    "use_cases": [
+      "Construire knowledge base interconnectée personnelle.",
+      "Organiser recherche et ideas par bloc-lien.",
+      "Stocker toutes notes en fichiers contrôlés localement."
+    ],
+    "relevant_for": ["Knowledge workers", "Chercheurs", "Écrivains", "Passionnés privacy"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage lots of interconnected notes.",
+        "You value data ownership and privacy.",
+        "You like open-source without vendor lock-in."
+      ],
+      "avoidIf": [
+        "You're looking for a very simple, lightweight tool.",
+        "You need real-time collaboration.",
+        "You don't want a learning curve."
+      ],
+      "threshold": "Logseq excels for knowledge workers and researchers; for simple note-taking, Apple Notes or Notion suffice."
+    },
+    "pros": [
+      "Completely free, open-source, no vendor lock-in.",
+      "Powerful block-level linking for interconnecting notes.",
+      "Local storage = complete data ownership.",
+      "Extensible via community plugins.",
+      "Excellent for knowledge management."
+    ],
+    "cons": [
+      "No native mobile app (web only).",
+      "No real-time collaboration.",
+      "Learning curve: block-linking not intuitive.",
+      "Multi-device sync is a paid add-on."
+    ],
+    "use_cases": [
+      "Build personal interconnected knowledge base.",
+      "Organize research and ideas via block-linking.",
+      "Store all notes in locally controlled files."
+    ],
+    "relevant_for": ["Knowledge workers", "Researchers", "Writers", "Privacy enthusiasts"]
+  }
+}

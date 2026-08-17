@@ -1,0 +1,92 @@
+{
+  "slug": "bloom-crm",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bloom — All-in-One CRM (site officiel)", "url": "https://bloom.io" }
+  ],
+  "facts": {
+    "what": "CRM tout-en-un pour freelancers et créatifs, consolidant gestion des leads, communication client, facturation, paiements, planification et portails clients.",
+    "what_en": "All-in-one CRM for freelancers and creatives, consolidating lead management, client communication, invoicing, payments, scheduling, and client portals.",
+    "pricing_model": "Abonnement mensuel ou annuel avec plans échelonnés ; essai gratuit de 7 jours avec extension possible à 22 jours.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours ; extension possible de 15 jours additionnels au moment de l'annulation." },
+    "plans": [
+      { "name": "Plan Starter", "price": "$17/mois" },
+      { "name": "Mid-tier plans", "price": "Tarification progressive" },
+      { "name": "Plan Premium", "price": "$197/mois" }
+    ],
+    "key_features": [
+      "Gestion des leads et contacts",
+      "Propositions et contrats personnalisables",
+      "Facturation et paiements intégrés",
+      "Planification et rendez-vous clients",
+      "Portails clients sécurisés",
+      "Automatisation des workflows",
+      "Galeries et portfolios intégrés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelancer ou petit prestataire de services.",
+        "Vous gérez plusieurs clients et projets en parallèle.",
+        "Vous voulez une interface intuitive et complète."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'analytics avancées ou BI.",
+        "Votre équipe est très grande (centaines d'utilisateurs).",
+        "Vous avez des intégrations métier très spécifiques."
+      ],
+      "threshold": "Bloom est parfait pour les freelancers qui veulent un CRM simple, complet et abordable ; pour une grande entreprise ou des besoins BI avancés, un autre outil convient mieux."
+    },
+    "pros": [
+      "Vraiment tout-en-un : plus besoin de 5-6 outils différents.",
+      "Interface intuitive et facile à apprendre.",
+      "Tarification abordable, surtout pour petite équipe.",
+      "Portails clients et galeries intégrés."
+    ],
+    "cons": [
+      "Moins de fonctionnalités avancées que les grands CRM.",
+      "Reporting limité comparé à HubSpot ou Salesforce.",
+      "Customisation limitée pour besoins très spécifiques."
+    ],
+    "use_cases": [
+      "Gérer son pipeline complet : leads, propositions, contrats, facturation.",
+      "Créer des portails clients pour consultation de factures et documents.",
+      "Mettre en place des workflows automatisés pour leads."
+    ],
+    "relevant_for": ["Photographes", "Designers", "Consultants", "Freelancers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer or small service provider.",
+        "You manage multiple clients and projects in parallel.",
+        "You want an intuitive and complete interface."
+      ],
+      "avoidIf": [
+        "You need advanced analytics or BI.",
+        "Your team is very large (hundreds of users).",
+        "You have very specific industry integrations."
+      ],
+      "threshold": "Bloom is perfect for freelancers wanting a simple, complete, and affordable CRM; for large enterprises or advanced BI needs, another tool is better."
+    },
+    "pros": [
+      "Truly all-in-one: no need for 5-6 different tools.",
+      "Intuitive interface, easy to learn.",
+      "Affordable pricing, especially for small teams.",
+      "Integrated client portals and galleries."
+    ],
+    "cons": [
+      "Fewer advanced features than large CRMs.",
+      "Limited reporting compared to HubSpot or Salesforce.",
+      "Limited customization for very specific needs."
+    ],
+    "use_cases": [
+      "Manage complete pipeline: leads, proposals, contracts, invoicing.",
+      "Create client portals for viewing invoices and documents.",
+      "Set up automated workflows for leads."
+    ],
+    "relevant_for": ["Photographers", "Designers", "Consultants", "Freelancers"]
+  }
+}

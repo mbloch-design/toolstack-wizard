@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "17hats",
+    "name": "17hats",
+    "url": ""
+  },
+  {
+    "slug": "airslate",
+    "name": "airSlate",
+    "url": "https://airslate.com"
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo",
+    "url": "https://apollo.com"
+  },
+  {
+    "slug": "asana",
+    "name": "Asana",
+    "url": "https://asana.com"
+  },
+  {
+    "slug": "better-proposals",
+    "name": "Better Proposals",
+    "url": ""
+  },
+  {
+    "slug": "bloom-crm",
+    "name": "Bloom",
+    "url": ""
+  },
+  {
+    "slug": "blueink-esignatures",
+    "name": "Blueink eSignatures",
+    "url": "https://blueink.com"
+  },
+  {
+    "slug": "box",
+    "name": "Box",
+    "url": "https://box.com"
+  },
+  {
+    "slug": "breezy-hr",
+    "name": "Breezy HR",
+    "url": "https://breezy.hr"
+  },
+  {
+    "slug": "bugherd",
+    "name": "BugHerd",
+    "url": "https://bugherd.com"
+  }
+]

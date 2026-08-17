@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "clockify",
+    "name": "Clockify",
+    "url": "https://clockify.com"
+  },
+  {
+    "slug": "clockshark",
+    "name": "ClockShark",
+    "url": "https://clockshark.com"
+  },
+  {
+    "slug": "condeco",
+    "name": "Condeco",
+    "url": "https://condecosoftware.com"
+  },
+  {
+    "slug": "confluence",
+    "name": "Confluence",
+    "url": "https://atlassian.com/software/confluence"
+  },
+  {
+    "slug": "connecteam",
+    "name": "Connecteam",
+    "url": "https://connecteam.com"
+  },
+  {
+    "slug": "deputy",
+    "name": "Deputy",
+    "url": "https://deputy.com"
+  },
+  {
+    "slug": "deskpro",
+    "name": "Deskpro",
+    "url": "https://deskpro.com"
+  },
+  {
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "url": "https://dropbox.com"
+  },
+  {
+    "slug": "dubsado",
+    "name": "Dubsado",
+    "url": " planning)."
+  },
+  {
+    "slug": "folk",
+    "name": "Folk",
+    "url": "https://folk.app"
+  }
+]

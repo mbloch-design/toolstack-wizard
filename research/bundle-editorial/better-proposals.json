@@ -1,0 +1,91 @@
+{
+  "slug": "better-proposals",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Better Proposals — Proposal Software (site officiel)", "url": "https://www.betterproposals.io" }
+  ],
+  "facts": {
+    "what": "Logiciel de génération de propositions commerciales conçu pour PME et freelancers, offrant des templates professionnels personnalisables, signatures électroniques et suivi des performances des propositions.",
+    "what_en": "Proposal software designed for small businesses and freelancers, offering customizable professional templates, e-signatures, and proposal performance tracking.",
+    "pricing_model": "Abonnement mensuel avec plans basés sur les besoins d'utilisation ; intégrations Stripe et PayPal pour paiements directs.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit disponible." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Agency", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "250+ templates professionnels personnalisables",
+      "Propositions web adaptées mobiles",
+      "Signatures électroniques intégrées",
+      "Paiement direct depuis la proposition",
+      "Suivi des taux d'ouverture et signatures",
+      "50+ intégrations (HubSpot, Salesforce, PayPal)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez régulièrement des propositions à des clients.",
+        "Vous voulez une interface visuelle et branded.",
+        "Vous préférez une solution simple et rapide à mettre en place."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de CRM complet et gestion d'affaires.",
+        "Vous cherchez l'outil le moins cher du marché.",
+        "Vous avez des besoins très personnalisés de reporting."
+      ],
+      "threshold": "Better Proposals est idéal pour PME et freelancers qui veulent expédier des propositions rapidement et professionnellement ; pour une suite complète CRM, un autre outil s'impose."
+    },
+    "pros": [
+      "Templates visuels professionnels et attrayants.",
+      "Signatures électroniques et paiement intégrés.",
+      "Analytics intégrées pour suivre l'engagement.",
+      "Interface conviviale sans configuration complexe."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Customisation limitée pour certaines entreprises.",
+      "Interface peut sembler un peu datée pour édition avancée."
+    ],
+    "use_cases": [
+      "Envoyer des propositions client professionnelles en quelques minutes.",
+      "Suivre qui a ouvert et signé votre proposition.",
+      "Accepter les paiements directement depuis une proposition."
+    ],
+    "relevant_for": ["Freelancers", "PME", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You send proposals to clients regularly.",
+        "You want a visual, branded interface.",
+        "You prefer a simple solution that's quick to set up."
+      ],
+      "avoidIf": [
+        "You need a complete CRM and business management suite.",
+        "You're looking for the cheapest tool on the market.",
+        "You have very custom reporting requirements."
+      ],
+      "threshold": "Better Proposals is ideal for SMEs and freelancers wanting to send proposals quickly and professionally; for a complete CRM suite, another tool is better."
+    },
+    "pros": [
+      "Professional, visually attractive templates.",
+      "Integrated e-signatures and payment.",
+      "Built-in analytics to track engagement.",
+      "User-friendly interface with no complex setup."
+    ],
+    "cons": [
+      "No free version.",
+      "Limited customization for some businesses.",
+      "Interface can feel slightly dated for advanced editing."
+    ],
+    "use_cases": [
+      "Send professional client proposals in minutes.",
+      "Track who opened and signed your proposal.",
+      "Accept payments directly from a proposal."
+    ],
+    "relevant_for": ["Freelancers", "SMEs", "Agencies"]
+  }
+}

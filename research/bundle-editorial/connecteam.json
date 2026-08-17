@@ -1,0 +1,94 @@
+{
+  "slug": "connecteam",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Connecteam — Workforce Management (site officiel)", "url": "https://connecteam.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de la main-d'œuvre tout-en-un pour équipes horaires et frontline, centralisant planification, pointage, communication, RH et paie en une seule application.",
+    "what_en": "All-in-one workforce management platform for hourly and frontline teams, centralizing scheduling, timekeeping, communication, HR, and payroll in a single app.",
+    "pricing_model": "Tarification flexible avec tier gratuit illimité ; plans payants pour équipes plus grandes avec options d'échelle.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit complet jusqu'à 10 employés ; accès illimité aux fonctionnalités pour petites équipes." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit jusqu'à 10 employés" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Planification et pointage avec vérification géolocalisation",
+      "Chat d'équipe et mise à jour entreprise",
+      "Formulaires numériques et gestion de tâches",
+      "Gestion du congé et demandes d'absence",
+      "Onboarding et formation des employés",
+      "Support live 24/7",
+      "Intégrations avec systèmes paie"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe horaire (retail, restauration, santé).",
+        "Vous cherchez une solution vraiment tout-en-un.",
+        "Vous avez moins de 100 employés et budget serré."
+      ],
+      "avoidIf": [
+        "Vous êtes une équipe de bureau entièrement sédentaire.",
+        "Vous avez besoin de reporting hyper-avancé.",
+        "Vous êtes une très grande entreprise avec structures complexes."
+      ],
+      "threshold": "Connecteam excelle pour PME avec équipes horaires ; pour équipes purement bureautiques ou très grandes structures, d'autres solutions conviennent mieux."
+    },
+    "pros": [
+      "Vraiment gratuit jusqu'à 10 employés sans limites.",
+      "Solution complète : planification, paie, communication.",
+      "Très facile à mettre en place, aucun IT requis.",
+      "Mobile-first pour équipes de terrain.",
+      "Support live 24/7 exceptionnel."
+    ],
+    "cons": [
+      "Analytics et reporting moins avancés que Workday.",
+      "Peut être limité pour organisations matricielles complexes.",
+      "Intégrations payroll limitées à certains pays."
+    ],
+    "use_cases": [
+      "Gérer planification et pointage de personnel de restaurant.",
+      "Automatiser les demandes de congé et approbations.",
+      "Diffuser annonces et mises à jour urgentes à toute l'équipe."
+    ],
+    "relevant_for": ["Restaurants", "Retail", "Santé", "PME horaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have an hourly team (retail, hospitality, healthcare).",
+        "You're looking for a truly all-in-one solution.",
+        "You have under 100 employees and tight budget."
+      ],
+      "avoidIf": [
+        "You're an entirely desk-based office team.",
+        "You need hyper-advanced reporting.",
+        "You're a very large enterprise with complex structures."
+      ],
+      "threshold": "Connecteam excels for SMEs with hourly teams; for purely desk-based or very large structures, other solutions are better."
+    },
+    "pros": [
+      "Truly free up to 10 employees with no limits.",
+      "Complete solution: scheduling, payroll, communication.",
+      "Very easy to set up, no IT required.",
+      "Mobile-first for field teams.",
+      "Exceptional 24/7 live support."
+    ],
+    "cons": [
+      "Analytics and reporting less advanced than Workday.",
+      "May be limited for complex matrix organizations.",
+      "Payroll integrations limited to certain countries."
+    ],
+    "use_cases": [
+      "Manage scheduling and timekeeping for restaurant staff.",
+      "Automate time-off requests and approvals.",
+      "Broadcast announcements and urgent updates to all teams."
+    ],
+    "relevant_for": ["Restaurants", "Retail", "Healthcare", "Hourly SMEs"]
+  }
+}

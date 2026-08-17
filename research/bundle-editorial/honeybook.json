@@ -1,0 +1,93 @@
+{
+  "slug": "honeybook",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "HoneyBook — Business Management (site officiel)", "url": "https://honeybook.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion d'affaires pour freelancers et petits prestataires, centralisant communication client, gestion de projets, contrats, facturation et paiements.",
+    "what_en": "Business management platform for freelancers and small service providers, centralizing client communication, project management, contracts, invoicing, and payments.",
+    "pricing_model": "Abonnement mensuel ou annuel ; plan unique avec même prix pour tous.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai gratuit avant engagement." },
+    "plans": [
+      { "name": "Plan mensuel", "price": "$39/mois" },
+      { "name": "Plan annuel", "price": "$390/an (économies annuelles)" }
+    ],
+    "key_features": [
+      "Communication client centralisée",
+      "Gestion de projets et timeline",
+      "Contrats et devis personnalisables",
+      "Facturation et paiement intégrés",
+      "Planification et calendrier",
+      "Portail client pour collaboration",
+      "Intégrations Google Calendar, QuickBooks"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes photographe, designer, ou consultant.",
+        "Vous gérez plusieurs clients en parallèle.",
+        "Vous cherchez solution simple et complète."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de gestion CRM très avancée.",
+        "Votre équipe est très grande (> 50).",
+        "Vous cherchez outil gratuit."
+      ],
+      "threshold": "HoneyBook convient parfaitement aux freelancers créatifs ; pour grandes équipes, d'autres plateformes comme HubSpot sont mieux adaptées."
+    },
+    "pros": [
+      "Solution complète : tous les outils en un.",
+      "Interface intuitive, facile à apprendre.",
+      "Tarification unique, pas de surprises.",
+      "Portals clients pour meilleure collaboration.",
+      "Bien-pensé pour freelancers."
+    ],
+    "cons": [
+      "Pas assez robuste pour grandes équipes.",
+      "Automations limitées pour workflows complexes.",
+      "Peut sembler limité si vous Scale rapidement."
+    ],
+    "use_cases": [
+      "Gérer projets photographe du premier contact à paiement.",
+      "Créer contrats personnalisés pour chaque client.",
+      "Offrir portail client pour visualiser projet en cours."
+    ],
+    "relevant_for": ["Photographes", "Designers", "Event planners", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a photographer, designer, or consultant.",
+        "You manage multiple clients in parallel.",
+        "You want a simple, complete solution."
+      ],
+      "avoidIf": [
+        "You need very advanced CRM management.",
+        "Your team is very large (> 50).",
+        "You're looking for a free tool."
+      ],
+      "threshold": "HoneyBook is perfect for creative freelancers; for large teams, platforms like HubSpot are better suited."
+    },
+    "pros": [
+      "Complete solution: all tools in one.",
+      "Intuitive interface, easy to learn.",
+      "Unique pricing, no surprises.",
+      "Client portals for better collaboration.",
+      "Well-thought-out for freelancers."
+    ],
+    "cons": [
+      "Not robust enough for large teams.",
+      "Limited automations for complex workflows.",
+      "May feel limited if you scale quickly."
+    ],
+    "use_cases": [
+      "Manage photographer projects from first contact to payment.",
+      "Create personalized contracts for each client.",
+      "Offer client portal to view project progress."
+    ],
+    "relevant_for": ["Photographers", "Designers", "Event planners", "Consultants"]
+  }
+}

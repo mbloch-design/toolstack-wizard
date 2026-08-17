@@ -1,0 +1,94 @@
+{
+  "slug": "blueink-esignatures",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Blueink — Electronic Signature (site officiel)", "url": "https://blueink.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de signature électronique sécurisée positionnée comme alternative moins coûteuse à DocuSign, offrant SMS delivery (94% d'ouverture en 9 min), templates réutilisables et suivi en temps réel.",
+    "what_en": "Secure electronic signature platform positioned as a cheaper alternative to DocuSign, offering SMS delivery (94% open rate within 9 minutes), reusable templates, and real-time tracking.",
+    "pricing_model": "Tarification par utilisation avec tiers de plans ; affiche 50% moins cher que DocuSign sans frais supplémentaires cachés.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 14 jours sans carte de crédit requise." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Signatures électroniques sécurisées et légalement valides",
+      "SMS delivery avec taux d'ouverture élevé",
+      "Templates de documents réutilisables",
+      "Signature en personne sur appareils mobiles",
+      "Suivi en temps réel des signatures",
+      "API pour intégration personnalisée",
+      "Conformité HIPAA, GDPR, SOC 2"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez régulièrement des documents à signer à des clients.",
+        "Vous cherchez une alternative moins chère à DocuSign.",
+        "Vous avez besoin de SMS comme canal de livraison."
+      ],
+      "avoidIf": [
+        "Vous avez un très petit volume de signatures par mois.",
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous avez besoin de fonctionnalités très avancées de gestion de contrats."
+      ],
+      "threshold": "Blueink est idéal pour les PME et agences qui signent beaucoup de documents ; pour DocuSign uniquement, les besoins d'entreprise large, Blueink offre un bon rapport qualité-prix."
+    },
+    "pros": [
+      "Nettement moins cher que DocuSign.",
+      "Envoi par SMS avec un très bon taux d'ouverture.",
+      "Pas de frais cachés ou dépassements.",
+      "Signatures en personne sur mobiles.",
+      "Conforme aux normes de sécurité strictes (HIPAA, GDPR)."
+    ],
+    "cons": [
+      "Interface moins riche que DocuSign.",
+      "Fonctionnalités de gestion de contrats limitées.",
+      "Support client peut être lent selon utilisateurs."
+    ],
+    "use_cases": [
+      "Faire signer des contrats clients rapidement par SMS.",
+      "Remplacer DocuSign pour réduire les coûts.",
+      "Obtenir signatures en personne sur chantier ou rendez-vous."
+    ],
+    "relevant_for": ["PME", "Agences", "Secteur santé", "Services juridiques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You send documents for signature to clients regularly.",
+        "You're looking for a cheaper alternative to DocuSign.",
+        "You need SMS as a delivery channel."
+      ],
+      "avoidIf": [
+        "You have a very small monthly signature volume.",
+        "You're looking for a completely free solution.",
+        "You need advanced contract management features."
+      ],
+      "threshold": "Blueink is ideal for SMEs and agencies that sign many documents; for enterprise-wide DocuSign needs, Blueink offers good value; for simple needs, consider lighter options."
+    },
+    "pros": [
+      "Markedly cheaper than DocuSign.",
+      "SMS delivery with a strong open rate.",
+      "No hidden fees or overages.",
+      "In-person signing on mobile devices.",
+      "Compliant with strict security standards (HIPAA, GDPR)."
+    ],
+    "cons": [
+      "Less rich interface than DocuSign.",
+      "Limited contract management features.",
+      "Customer support can be slow per user feedback."
+    ],
+    "use_cases": [
+      "Have clients sign contracts quickly via SMS.",
+      "Replace DocuSign to reduce costs.",
+      "Get in-person signatures on job sites or meetings."
+    ],
+    "relevant_for": ["SMEs", "Agencies", "Healthcare sector", "Legal services"]
+  }
+}

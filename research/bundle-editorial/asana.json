@@ -1,0 +1,91 @@
+{
+  "slug": "asana",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Asana — Work Management Platform (site officiel)", "url": "https://asana.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion du travail combinant gestion de projets, planification des ressources et automatisation alimentée par l'IA pour coordonner le travail entre équipes.",
+    "what_en": "Work management platform combining project management, resource planning, and AI-powered automation to coordinate work across teams.",
+    "pricing_model": "Abonnement avec tiers freemium ; plans Starter, Advanced, et Enterprise avec tarification par utilisateur.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec fonctionnalités de base pour petites équipes ; essai gratuit sans carte de crédit." },
+    "plans": [
+      { "name": "Starter", "price": "Plans payants à partir de montants sur la page officielle" },
+      { "name": "Advanced", "price": "Plans payants à partir de montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Gestion de tâches et projets multi-vues",
+      "Planification des ressources et portfolio",
+      "Agents IA (Launch Planner, Workflow Optimizer, Status Reporter)",
+      "Suivi des objectifs et planification organisationnelle",
+      "Intégrations 200+",
+      "Collaboration en temps réel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des projets multi-équipes complexes.",
+        "Vous voulez une vue unifiée de l'avancement organisationnel.",
+        "Vous appréciez les outils modernes avec IA intégrée."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un outil très simple pour une petite équipe.",
+        "Vous préférez la saisie manuelle sans automatisation.",
+        "Votre équipe utilise surtout Gantt et planification en cascade."
+      ],
+      "threshold": "Asana excelle pour les organisations cross-fonctionnelles et les projets multiples ; pour une seule équipe simple, un outil plus léger suffit."
+    },
+    "pros": [
+      "Vue unique du travail pour toute l'organisation.",
+      "Agents IA pour automatiser la planification et rapports.",
+      "Flexible avec plusieurs vues (liste, tableau, calendrier, timeline).",
+      "Large écosystème d'intégrations."
+    ],
+    "cons": [
+      "Peut être complexe à configurer pour petite équipe.",
+      "Courbe d'apprentissage modérée.",
+      "Tarification peut devenir élevée avec grand nombre d'utilisateurs."
+    ],
+    "use_cases": [
+      "Coordonner une campagne marketing multi-équipes.",
+      "Suivre un portefeuille de projets en paralèle.",
+      "Automatiser les mises à jour d'état de projet."
+    ],
+    "relevant_for": ["Équipes marketing", "Équipes produit", "PME et Entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex multi-team projects.",
+        "You need unified organizational progress visibility.",
+        "You appreciate modern AI-integrated tools."
+      ],
+      "avoidIf": [
+        "You need a very simple tool for a small team.",
+        "You prefer manual entry without automation.",
+        "Your team primarily works with Gantt and waterfall planning."
+      ],
+      "threshold": "Asana excels for cross-functional organizations and multiple projects; for a single simple team, a lighter tool suffices."
+    },
+    "pros": [
+      "Single view of work across the entire organization.",
+      "AI agents for automating planning and reporting.",
+      "Flexible with multiple views (list, board, calendar, timeline).",
+      "Large integration ecosystem."
+    ],
+    "cons": [
+      "Can be complex to set up for a small team.",
+      "Moderate learning curve.",
+      "Pricing can become high with large user count."
+    ],
+    "use_cases": [
+      "Coordinate multi-team marketing campaigns.",
+      "Track portfolio of parallel projects.",
+      "Automate project status updates."
+    ],
+    "relevant_for": ["Marketing teams", "Product teams", "SMEs and Enterprises"]
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "sysaid",
+    "name": "SysAid",
+    "url": "https://sysaid.com"
+  },
+  {
+    "slug": "tave",
+    "name": "Táve",
+    "url": ""
+  },
+  {
+    "slug": "time-doctor",
+    "name": "Time Doctor",
+    "url": "https://timedoctor.com"
+  },
+  {
+    "slug": "timecamp",
+    "name": "TimeCamp",
+    "url": "https://timecamp.com"
+  },
+  {
+    "slug": "todoist",
+    "name": "Todoist",
+    "url": "https://todoist.com"
+  },
+  {
+    "slug": "workable",
+    "name": "Workable",
+    "url": "https://workable.com"
+  },
+  {
+    "slug": "wunderlist",
+    "name": "Wunderlist",
+    "url": "https://wunderlist.com"
+  },
+  {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "url": "https://zendesk.com"
+  }
+]

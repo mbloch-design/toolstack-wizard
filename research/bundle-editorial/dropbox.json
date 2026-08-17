@@ -1,0 +1,96 @@
+{
+  "slug": "dropbox",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dropbox — Cloud Storage & Collaboration (site officiel)", "url": "https://dropbox.com" }
+  ],
+  "facts": {
+    "what": "Service de stockage cloud et collaboration permettant de stocker, partager et accéder à des fichiers sur tous les appareils, avec synchronisation automatique et gestion des versions.",
+    "what_en": "Cloud storage and collaboration service enabling file storage, sharing, and access across devices, with automatic syncing and version management.",
+    "pricing_model": "Abonnement par utilisateur ; plans gratuit, Plus, Professional, Business, Enterprise avec tarification progressive.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec stockage limité ; essai gratuit pour plans payants." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec espace limité" },
+      { "name": "Plus", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Business", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Synchronisation fichiers cross-device",
+      "Partage sécurisé avec permissions granulaires",
+      "Historique version et récupération",
+      "Intégrations AI avec OpenAI, Anthropic, Google",
+      "Dropbox Sign (signatures électroniques)",
+      "Replay (review vidéo)",
+      "Support 175+ types fichiers"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez stockage cloud simple et fiable.",
+        "Vous collaborez sur fichiers avec clients/partenaires.",
+        "Vous voulez synchronisation automatique transparent."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de gestion de projets/tâches complexe.",
+        "Vous cherchez solution entièrement gratuite illimitée.",
+        "Vous privilégiez self-hosted ou open-source."
+      ],
+      "threshold": "Dropbox excelle pour stockage et partage ; pour collaboration documentaire avancée ou gestion de projets, d'autres outils sont mieux adaptés."
+    },
+    "pros": [
+      "Stockage cloud simple, fiable et transparent.",
+      "Synchronisation automatique sur tous les appareils.",
+      "Partage sécurisé avec contrôles granulaires.",
+      "Plan gratuit généreux pour usage personnel.",
+      "Intégrations AI modernes pour productivité."
+    ],
+    "cons": [
+      "Moins de fonctionnalités collaboratives que Google Drive.",
+      "Tarification peut être chère pour gros volumes.",
+      "Pas de suite complète gestion de projets."
+    ],
+    "use_cases": [
+      "Synchroniser documents de travail entre ordinateur et mobile.",
+      "Partager des fichiers clients avec permissions contrôlées.",
+      "Accéder rapidement à l'historique d'une version antérieure."
+    ],
+    "relevant_for": ["Freelancers", "PME", "Équipes créatives", "Professionnels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're looking for simple, reliable cloud storage.",
+        "You collaborate on files with clients/partners.",
+        "You want transparent automatic syncing."
+      ],
+      "avoidIf": [
+        "You need complex project management/task features.",
+        "You're looking for completely free unlimited storage.",
+        "You prioritize self-hosted or open-source."
+      ],
+      "threshold": "Dropbox excels for storage and sharing; for advanced document collaboration or project management, other tools are better suited."
+    },
+    "pros": [
+      "Simple, reliable, transparent cloud storage.",
+      "Automatic syncing across all devices.",
+      "Secure sharing with granular controls.",
+      "Generous free plan for personal use.",
+      "Modern AI integrations for productivity."
+    ],
+    "cons": [
+      "Fewer collaborative features than Google Drive.",
+      "Pricing can be expensive for large volumes.",
+      "No complete project management suite."
+    ],
+    "use_cases": [
+      "Sync work documents between computer and mobile.",
+      "Share client files with controlled permissions.",
+      "Quick access to an older version of a file."
+    ],
+    "relevant_for": ["Freelancers", "SMEs", "Creative teams", "Professionals"]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "box",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Box — Intelligent Content Management (site officiel)", "url": "https://box.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de contenu cloud combinant stockage sécurisé, collaboration documentaire et automatisation de workflows, avec capacités IA pour extraire et analyser des données non structurées.",
+    "what_en": "Cloud content management platform combining secure storage, document collaboration, and workflow automation, with AI capabilities for extracting and analyzing unstructured data.",
+    "pricing_model": "Abonnement par utilisateur avec plusieurs tiers ; plans Starter, Professional, Business, et Enterprise.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit ou démo sur demande." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Business", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Stockage cloud sécurisé et collaboratif",
+      "Extraction de données IA (Box Extract)",
+      "Automatisation de workflows par drag-drop",
+      "Signatures électroniques illimitées",
+      "Intégrations 1500+",
+      "Conformité GDPR, HIPAA, FINRA",
+      "Modération de contenu IA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une gestion de contenu sécurisée pour toute l'entreprise.",
+        "Vous gérez beaucoup de contrats et documents structurés.",
+        "Vous voulez automatiser les workflows documentaires complexes."
+      ],
+      "avoidIf": [
+        "Vous cherchez juste un stockage cloud simple (Dropbox suffit).",
+        "Vous avez un très petit budget pour collaboration.",
+        "Vos besoins sont basiques sans automatisation."
+      ],
+      "threshold": "Box est idéal pour les entreprises avec flux de travail documentaires complexes ; pour simple stockage/partage, Dropbox ou OneDrive suffisent."
+    },
+    "pros": [
+      "Gestion sécurisée et conforme pour documents sensibles.",
+      "Automatisation puissante des workflows.",
+      "IA intégrée pour extraction de données et analyse.",
+      "1500+ intégrations avec outils métier.",
+      "Signatures électroniques illimitées."
+    ],
+    "cons": [
+      "Coûteux pour petite équipe.",
+      "Complexité de configuration importante.",
+      "Interface peut être intimidante pour utilisateurs novices."
+    ],
+    "use_cases": [
+      "Automatiser le traitement de contrats et documents juridiques.",
+      "Extraire données structurées d'invoices ou documents financiers.",
+      "Centraliser la gestion de contenu pour équipes distribuées."
+    ],
+    "relevant_for": ["Grandes entreprises", "Services financiers", "Secteur juridique"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need secure content management across the entire enterprise.",
+        "You manage many contracts and structured documents.",
+        "You want to automate complex document workflows."
+      ],
+      "avoidIf": [
+        "You're just looking for simple cloud storage (Dropbox is fine).",
+        "You have a very small budget for collaboration.",
+        "Your needs are basic without automation."
+      ],
+      "threshold": "Box is ideal for enterprises with complex document workflows; for simple storage/sharing, Dropbox or OneDrive suffice."
+    },
+    "pros": [
+      "Secure, compliant management for sensitive documents.",
+      "Powerful workflow automation.",
+      "Built-in AI for data extraction and analysis.",
+      "1500+ integrations with business tools.",
+      "Unlimited e-signatures."
+    ],
+    "cons": [
+      "Expensive for small teams.",
+      "Significant configuration complexity.",
+      "Interface can be intimidating for novice users."
+    ],
+    "use_cases": [
+      "Automate contract and legal document processing.",
+      "Extract structured data from invoices or financial documents.",
+      "Centralize content management for distributed teams."
+    ],
+    "relevant_for": ["Large enterprises", "Financial services", "Legal sector"]
+  }
+}

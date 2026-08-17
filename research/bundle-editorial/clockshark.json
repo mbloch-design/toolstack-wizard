@@ -1,0 +1,93 @@
+{
+  "slug": "clockshark",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ClockShark — Time Tracking & Payroll (site officiel)", "url": "https://clockshark.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de suivi du temps et des heures pour équipes de terrain (construction, HVAC), combinant pointage mobile, géolocalisation et intégration paie.",
+    "what_en": "Time tracking and hours software for field teams (construction, HVAC), combining mobile clock in/out, GPS tracking, and payroll integration.",
+    "pricing_model": "Abonnement mensuel par compte ; plans Standard et Pro avec tarification transparent.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans condition ; tarification claire sans frais cachés." },
+    "plans": [
+      { "name": "Standard", "price": "$40/mois" },
+      { "name": "Pro", "price": "$60/mois" }
+    ],
+    "key_features": [
+      "Pointage mobile avec géolocalisation GPS",
+      "Géofencing pour zones de travail",
+      "Gestion de feuilles de temps",
+      "Intégration paie et QuickBooks",
+      "Rapports temps réel par travailleur",
+      "Suivi des coûts de travail",
+      "App mobile pour field crews"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des équipes de terrain (construction, services).",
+        "Vous avez besoin de géolocalisation pour vérifier la présence.",
+        "Vous intégrez à QuickBooks ou un logiciel paie."
+      ],
+      "avoidIf": [
+        "Votre équipe travaille entièrement en bureau.",
+        "Vous cherchez un outil timesheet uniquement.",
+        "Vous avez besoin de fonctionnalités gestion de projets avancées."
+      ],
+      "threshold": "ClockShark est idéal pour entreprises de services avec équipes mobiles ; pour bureau seul ou timesheet simple, d'autres outils suffisent."
+    },
+    "pros": [
+      "Géolocalisation fiable et géofencing précis.",
+      "Facile à mettre en place et utiliser pour équipes de terrain.",
+      "Tarification transparente et abordable.",
+      "Intégration paie QuickBooks native.",
+      "Ratings élevées (4.7/5 sur 1822 avis)."
+    ],
+    "cons": [
+      "Certains utilisateurs signalent imprécisions GPS.",
+      "Glitches occasionnels sur app mobile.",
+      "Moins de fonctionnalités que Clockify pour reporting avancé."
+    ],
+    "use_cases": [
+      "Tracker le temps réel d'équipes sur chantiers.",
+      "Facturer clients au-delà d'un nombre d'heures.",
+      "Gérer la paie et exporter directement dans QuickBooks."
+    ],
+    "relevant_for": ["Construction", "HVAC", "Services de terrain", "Paysagisme"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage field teams (construction, services).",
+        "You need GPS location tracking to verify presence.",
+        "You integrate with QuickBooks or payroll software."
+      ],
+      "avoidIf": [
+        "Your team works entirely from office.",
+        "You're looking for timesheet-only tool.",
+        "You need advanced project management features."
+      ],
+      "threshold": "ClockShark is ideal for service companies with mobile teams; for office-only or simple timesheet, other tools suffice."
+    },
+    "pros": [
+      "Reliable GPS geolocation and precise geofencing.",
+      "Easy to set up and use for field teams.",
+      "Transparent, affordable pricing.",
+      "Native QuickBooks payroll integration.",
+      "High ratings (4.7/5 from 1822 reviews)."
+    ],
+    "cons": [
+      "Some users report GPS inaccuracies.",
+      "Occasional mobile app glitches.",
+      "Fewer features than Clockify for advanced reporting."
+    ],
+    "use_cases": [
+      "Track real-time hours of teams on job sites.",
+      "Bill clients beyond set hourly amounts.",
+      "Manage payroll and export directly to QuickBooks."
+    ],
+    "relevant_for": ["Construction", "HVAC", "Field services", "Landscaping"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "lever",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lever — Modern ATS/CRM (site officiel)", "url": "https://lever.co" }
+  ],
+  "facts": {
+    "what": "Système de suivi des candidatures (ATS) moderne combiné avec gestion de relations candidats (CRM), automatisant recrutement de la sourcing à l'offre d'embauche.",
+    "what_en": "Modern applicant tracking system (ATS) combined with candidate relationship management (CRM), automating recruitment from sourcing through offer.",
+    "pricing_model": "Tarification personnalisée basée sur taille et volume de recrutement de l'entreprise.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; démo et essai sur demande avec devis personnalisé." },
+    "plans": [
+      { "name": "Startup", "price": "Tarification sur demande" },
+      { "name": "Mid-Market", "price": "Tarification sur demande" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Sourcing et candidatures intégrés",
+      "Présélection et qualification IA",
+      "Planification des entretiens automatisée",
+      "Génération de lettres d'offre",
+      "Détection fraude candidats",
+      "Intégrations HRIS et background checks",
+      "Analytics recrutement avancées"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recruitez activement et régulièrement.",
+        "Vous voulez ATS moderne avec IA.",
+        "Vous avez équipe recrutement dédiée."
+      ],
+      "avoidIf": [
+        "Vous recruitez très occasionnellement.",
+        "Vous cherchez outil gratuit.",
+        "Vous avez équipe < 3 personnes RH."
+      ],
+      "threshold": "Lever convient aux PME et grandes organisations qui recrutent activement ; pour recrutement très occasionnel, des outils plus légers suffisent."
+    },
+    "pros": [
+      "Interface moderne et intuitive.",
+      "IA pour sourcing et qualification de top candidats.",
+      "Automatisation complète du workflow recrutement.",
+      "Détection fraude candidate pour sécurité.",
+      "Intégrations HRIS natives nombreuses."
+    ],
+    "cons": [
+      "Tarification personnalisée (pas de prix transparent).",
+      "Pas de version gratuite.",
+      "Setup initial peut être complexe."
+    ],
+    "use_cases": [
+      "Sourcer automatiquement top candidats avec IA.",
+      "Automatiser planification entretiens et offres.",
+      "Centraliser pipeline recrutement multi-équipes."
+    ],
+    "relevant_for": ["RH", "Recruteurs", "Startups en croissance", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You recruit actively and regularly.",
+        "You want a modern ATS with AI.",
+        "You have a dedicated recruiting team."
+      ],
+      "avoidIf": [
+        "You recruit very occasionally.",
+        "You're looking for a free tool.",
+        "You have a very small HR team (< 3)."
+      ],
+      "threshold": "Lever suits SMEs and large organizations that recruit actively; for very occasional hiring, lighter tools suffice."
+    },
+    "pros": [
+      "Modern, intuitive interface.",
+      "AI for sourcing and screening top candidates.",
+      "Complete recruitment workflow automation.",
+      "Candidate fraud detection for security.",
+      "Many native HRIS integrations."
+    ],
+    "cons": [
+      "Custom pricing (no transparent pricing).",
+      "No free version.",
+      "Initial setup can be complex."
+    ],
+    "use_cases": [
+      "Auto-source top candidates with AI.",
+      "Automate interview scheduling and offers.",
+      "Centralize multi-team recruiting pipeline."
+    ],
+    "relevant_for": ["HR", "Recruiters", "Growing startups", "SMEs"]
+  }
+}

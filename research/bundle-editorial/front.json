@@ -1,0 +1,94 @@
+{
+  "slug": "front",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Front — AI Customer Operations (site officiel)", "url": "https://front.com" }
+  ],
+  "facts": {
+    "what": "Plateforme omnicanale pour opérations clients coordonnant conversations complexes multi-équipes (support, ventes, success) avec IA pour automatisations et routing intelligent.",
+    "what_en": "Omnichannel customer operations platform coordinating complex multi-team conversations (support, sales, success) with AI for automations and intelligent routing.",
+    "pricing_model": "Abonnement par utilisateur ; plans basés sur fonctionnalités et volume de conversations.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit sur demande." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Inbox partagée omnicanale (email, chat, SMS)",
+      "Autopilot (workflow automation)",
+      "Copilot (IA assistant pour requêtes complexes)",
+      "Smart QA (quality assurance automatisée)",
+      "Smart CSAT (satisfaction scoring IA)",
+      "Knowledge base intégrée",
+      "160+ intégrations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez support client sur plusieurs canaux.",
+        "Vous avez besoin de coordination multi-équipes.",
+        "Vous cherchez plateforme moderne avec IA intégrée."
+      ],
+      "avoidIf": [
+        "Vous avez besoin que d'email support simple.",
+        "Vous cherchez solution entièrement gratuite.",
+        "Votre équipe support est très petite (< 3)."
+      ],
+      "threshold": "Front excelle pour équipes support complexes multi-canaux ; pour simple email support, Zendesk ou alternatives plus légères suffisent."
+    },
+    "pros": [
+      "Vraiment omnicanal avec contexte partagé.",
+      "IA performante pour routing et automations.",
+      "Coordination multi-équipes (support, ventes, success).",
+      "Interface moderne et intuitive.",
+      "Serve 9300+ organisations."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Coûteux pour très petite équipe.",
+      "Setup peut nécessiter personnalisation."
+    ],
+    "use_cases": [
+      "Centraliser support email, chat, SMS en inbox commune.",
+      "Router automatiquement requêtes vers équipe appropriée.",
+      "Générer satisfaction score automatiquement par IA."
+    ],
+    "relevant_for": ["Équipes support", "Customer success", "Ventes", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage customer support across multiple channels.",
+        "You need multi-team coordination.",
+        "You're looking for a modern platform with built-in AI."
+      ],
+      "avoidIf": [
+        "You only need simple email support.",
+        "You're looking for a completely free solution.",
+        "Your support team is very small (< 3)."
+      ],
+      "threshold": "Front excels for complex multi-channel support teams; for simple email support, Zendesk or lighter alternatives suffice."
+    },
+    "pros": [
+      "Truly omnichannel with shared context.",
+      "Powerful AI for routing and automations.",
+      "Multi-team coordination (support, sales, success).",
+      "Modern, intuitive interface.",
+      "Serves 9,300+ organizations."
+    ],
+    "cons": [
+      "No free version.",
+      "Expensive for very small teams.",
+      "Setup may require customization."
+    ],
+    "use_cases": [
+      "Centralize email, chat, SMS support in shared inbox.",
+      "Auto-route requests to appropriate team.",
+      "Auto-generate satisfaction score via AI."
+    ],
+    "relevant_for": ["Support teams", "Customer success", "Sales", "SMEs"]
+  }
+}

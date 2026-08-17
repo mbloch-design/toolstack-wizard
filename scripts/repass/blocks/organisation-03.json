@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "freshservice",
+    "name": "Freshservice",
+    "url": "https://freshworks.com/freshservice"
+  },
+  {
+    "slug": "front",
+    "name": "Front",
+    "url": "https://front.com"
+  },
+  {
+    "slug": "heptabase",
+    "name": "Heptabase",
+    "url": ""
+  },
+  {
+    "slug": "hive",
+    "name": "Hive",
+    "url": "https://hive.com"
+  },
+  {
+    "slug": "honeybook",
+    "name": "HoneyBook",
+    "url": " facturation)."
+  },
+  {
+    "slug": "hubspot",
+    "name": "HubSpot",
+    "url": "https://hubspot.com"
+  },
+  {
+    "slug": "jobber",
+    "name": "Jobber",
+    "url": "https://getjobber.com"
+  },
+  {
+    "slug": "lever",
+    "name": "Lever",
+    "url": "https://lever.co"
+  },
+  {
+    "slug": "linear",
+    "name": "Linear",
+    "url": "https://linear.app"
+  },
+  {
+    "slug": "logseq",
+    "name": "Logseq",
+    "url": ""
+  }
+]

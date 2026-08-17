@@ -1,0 +1,90 @@
+{
+  "slug": "airslate",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "airSlate — Automation Platform (site officiel)", "url": "https://airslate.com" }
+  ],
+  "facts": {
+    "what": "Suite d'outils d'automatisation de documents pour les flux de travail numériques, incluant signature électronique (SignNow), édition PDF (pdfFiller), automatisation documentaire (altaFlow) et landing pages (Instapage).",
+    "what_en": "Suite of document automation tools for digital workflows, including e-signature (SignNow), PDF editing (pdfFiller), document automation (altaFlow), and landing page builder (Instapage).",
+    "pricing_model": "Modèle d'abonnement par produit ; tarification flexible selon les besoins (plans spécifiques à chaque produit).",
+    "free_tier": { "exists": true, "detail": "Essais gratuits disponibles pour plusieurs produits ; versions gratuites limitées selon le produit." },
+    "plans": [
+      { "name": "SignNow", "price": "Plans à partir de montants sur la page officielle" },
+      { "name": "pdfFiller", "price": "Plans à partir de montants sur la page officielle" },
+      { "name": "Instapage", "price": "Plans à partir de montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Signatures électroniques sécurisées (SignNow)",
+      "Édition et collaboration sur PDF (pdfFiller)",
+      "Automatisation des flux de travail documentaires",
+      "Landing pages optimisées pour conversion",
+      "Intégrations avec nombreux outils métier"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'automatiser les processus documentaires complexes.",
+        "Vos flux de travail impliquent beaucoup de signatures numériques.",
+        "Vous voulez une suite complète plutôt que des outils isolés."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil simple pour un seul besoin (ex. signature seulement).",
+        "Vous préférez des solutions open-source.",
+        "Vous avez un budget très limité."
+      ],
+      "threshold": "airSlate convient aux organisations avec des flux de travail documentaires complexes ; pour des besoins simples, une solution pointue plus légère suffit."
+    },
+    "pros": [
+      "Suite complète d'outils documentaires intégrés.",
+      "Automatisation avancée des flux de travail.",
+      "Signatures électroniques sécurisées et conformes.",
+      "Large écosystème d'intégrations."
+    ],
+    "cons": [
+      "Tarification fragmentée (un prix par produit).",
+      "Courbe d'apprentissage importante pour exploiter toutes les fonctionnalités.",
+      "Interface moins intuitive que certains concurrents."
+    ],
+    "use_cases": [
+      "Automatiser la signature de contrats clients.",
+      "Créer des landing pages de capture de leads.",
+      "Gérer les processus de relecture documentaire en équipe."
+    ],
+    "relevant_for": ["PME", "Équipes opérationnelles", "Sociétés de services"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to automate complex document workflows.",
+        "Your processes involve many digital signatures.",
+        "You want a complete suite rather than isolated tools."
+      ],
+      "avoidIf": [
+        "You're looking for a simple single-purpose tool.",
+        "You prefer open-source solutions.",
+        "You have a very tight budget."
+      ],
+      "threshold": "airSlate is suitable for organizations with complex document workflows; for simple needs, a lighter, single-purpose solution may suffice."
+    },
+    "pros": [
+      "Complete integrated document tools suite.",
+      "Advanced workflow automation.",
+      "Secure, compliant digital signatures.",
+      "Broad integration ecosystem."
+    ],
+    "cons": [
+      "Fragmented pricing (one price per product).",
+      "Steep learning curve to leverage all features.",
+      "Less intuitive interface than some competitors."
+    ],
+    "use_cases": [
+      "Automate client contract signing.",
+      "Create lead capture landing pages.",
+      "Manage team document review processes."
+    ],
+    "relevant_for": ["SMEs", "Operations teams", "Service companies"]
+  }
+}

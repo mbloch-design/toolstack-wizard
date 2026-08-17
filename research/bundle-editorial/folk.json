@@ -1,0 +1,95 @@
+{
+  "slug": "folk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Folk — CRM Platform (site officiel)", "url": "https://folk.app" }
+  ],
+  "facts": {
+    "what": "CRM conçu pour capturer données relationnelles multi-canaux et automatiser workflows de vente, consolidant emails, LinkedIn, WhatsApp, calendriers et 6000+ intégrations.",
+    "what_en": "CRM designed to capture multi-channel relationship data and automate sales workflows, consolidating emails, LinkedIn, WhatsApp, calendars, and 6,000+ integrations.",
+    "pricing_model": "Abonnement par utilisateur ; plans basés sur les fonctionnalités et nombre d'utilisateurs.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec fonctionnalités essentielles ; essai payant pour plans complets." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec fonctionnalités de base" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification personnalisée sur demande" }
+    ],
+    "key_features": [
+      "Extension folkX pour LinkedIn intégration 7+ canaux",
+      "Enrichissement 1-click de données contacts",
+      "Campagnes email et séquences programmées",
+      "Pipeline management collaboratif",
+      "4 assistants IA (Follow-up, Recap, Research, Workflow)",
+      "Dashboard analytiques",
+      "Whatsapp et intégrations messages"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prospectiez beaucoup sur LinkedIn.",
+        "Vous gérez pipeline de vente complexe.",
+        "Vous voulez IA pour automatiser suivis et recherche."
+      ],
+      "avoidIf": [
+        "Vous ne faites pas de vente complexe B2B.",
+        "Vous cherchez solution entièrement gratuite.",
+        "Vos besoins sont très basiques CRM."
+      ],
+      "threshold": "Folk excelle pour équipes de vente B2B prospectant activement ; pour simple gestion de contacts, d'autres outils suffisent."
+    },
+    "pros": [
+      "Intégration LinkedIn exceptionnelle pour prospection.",
+      "IA performante pour suivis automatisés et enrichissement.",
+      "Capture multi-canaux (email, LinkedIn, WhatsApp).",
+      "Pipeline collaboratif facile à utiliser.",
+      "Gratuit pour petite équipe."
+    ],
+    "cons": [
+      "Setup initial complexe pour configurar tous les canaux.",
+      "Interface peut être dense pour débutants.",
+      "Fonctionnalités avancées nécessitent plans payants."
+    ],
+    "use_cases": [
+      "Enricherir automatiquement données leads depuis LinkedIn.",
+      "Automatiser suivi emails et séquences nurture.",
+      "Centraliser toutes conversations (email, LinkedIn, messages)."
+    ],
+    "relevant_for": ["Équipes vente B2B", "Agences", "Venture Capital", "Partenariats"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do heavy LinkedIn prospecting.",
+        "You manage complex sales pipelines.",
+        "You want AI to automate follow-ups and research."
+      ],
+      "avoidIf": [
+        "You don't do complex B2B selling.",
+        "You're looking for a completely free solution.",
+        "Your CRM needs are very basic."
+      ],
+      "threshold": "Folk excels for B2B sales teams actively prospecting; for simple contact management, other tools suffice."
+    },
+    "pros": [
+      "Exceptional LinkedIn integration for prospecting.",
+      "Powerful AI for automated follow-ups and enrichment.",
+      "Multi-channel capture (email, LinkedIn, WhatsApp).",
+      "Easy-to-use collaborative pipeline.",
+      "Free for small teams."
+    ],
+    "cons": [
+      "Complex initial setup to configure all channels.",
+      "Interface can be dense for beginners.",
+      "Advanced features require paid plans."
+    ],
+    "use_cases": [
+      "Auto-enrich lead data from LinkedIn.",
+      "Automate email follow-ups and nurture sequences.",
+      "Centralize all conversations (email, LinkedIn, messages)."
+    ],
+    "relevant_for": ["B2B sales teams", "Agencies", "Venture Capital", "Partnerships"]
+  }
+}
