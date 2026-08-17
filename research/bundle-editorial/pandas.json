@@ -1,0 +1,95 @@
+{
+  "slug": "pandas",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pandas — Python Data Analysis Library (site officiel)", "url": "https://pandas.pydata.org" }
+  ],
+  "facts": {
+    "what": "Bibliothèque Python open source pour l'analyse et la manipulation de données tabulaires, offrant des structures de données (Series, DataFrame) et des outils pour nettoyage, agrégation, et reshaping de données.",
+    "what_en": "Open source Python library for data analysis and manipulation, providing data structures (Series, DataFrame) and tools for cleaning, aggregation, and reshaping tabular data.",
+    "pricing_model": "Gratuit, open source.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source (licence BSD)." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "DataFrame et Series pour données tabulaires et séries temporelles",
+      "Agrégation, pivot, et merge de données",
+      "Nettoyage et transformation de données manquantes",
+      "Chargement depuis CSV, Excel, SQL, JSON",
+      "Indexation et slicing flexible"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez avec Python et avez besoin de manipuler des données tabulaires.",
+        "Vous faites de l'analyse exploratoire ou du nettoyage de données.",
+        "Vous voulez une solution gratuite et mature sans dépendre d'un fournisseur."
+      ],
+      "avoidIf": [
+        "Vous cherchez une interface graphique sans code.",
+        "Vous travaillez principalement en Excel ou SQL.",
+        "Vos données sont uniquement en format streaming (Pandas charge en mémoire)."
+      ],
+      "threshold": "Pandas s'impose pour toute analyse de données en Python ; pour un no-code ou un pipeline pur SQL, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Écosystème Python complet et très documenté.",
+      "Gratuit et sans limite d'utilisation.",
+      "Structures de données puissantes et flexibles.",
+      "Intégration native avec NumPy, SciPy, Matplotlib.",
+      "Communauté très active et nombreux tutoriels."
+    ],
+    "cons": [
+      "Charge les données en mémoire (limite sur données très volumineuses).",
+      "Courbe d'apprentissage pour débuter.",
+      "Pas d'interface graphique (code uniquement).",
+      "Performance inférieure à des solutions spécialisées (ex: SQL pour gros volumes)."
+    ],
+    "use_cases": [
+      "Charger et explorer un CSV ou une table SQL.",
+      "Nettoyer un dataset avant modélisation ML.",
+      "Créer un pivot ou une agrégation complexe.",
+      "Fusionner plusieurs sources de données.",
+      "Faire de l'analyse exploratoire rapide de données."
+    ],
+    "relevant_for": ["Data analysts", "Data scientists", "Développeurs Python", "Chercheurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work with Python and need to manipulate tabular data.",
+        "You do exploratory analysis or data cleaning.",
+        "You want a free, vendor-neutral, mature solution."
+      ],
+      "avoidIf": [
+        "You're looking for a no-code interface.",
+        "You work primarily in Excel or pure SQL.",
+        "Your data is purely streaming (Pandas loads to memory)."
+      ],
+      "threshold": "Pandas is essential for any Python-based data work; for no-code or pure SQL pipelines, other tools are better."
+    },
+    "pros": [
+      "Complete Python ecosystem with excellent documentation.",
+      "Free and unlimited use.",
+      "Powerful and flexible data structures.",
+      "Native integration with NumPy, SciPy, Matplotlib.",
+      "Very active community with abundant tutorials."
+    ],
+    "cons": [
+      "Loads data into memory (bottleneck for very large datasets).",
+      "Learning curve for beginners.",
+      "No graphical interface (code-only).",
+      "Performance lower than specialized tools (e.g., SQL for large volumes)."
+    ],
+    "use_cases": [
+      "Load and explore a CSV or SQL table.",
+      "Clean a dataset before ML modeling.",
+      "Create a complex pivot or aggregation.",
+      "Merge multiple data sources.",
+      "Perform quick exploratory data analysis."
+    ]
+  }
+}

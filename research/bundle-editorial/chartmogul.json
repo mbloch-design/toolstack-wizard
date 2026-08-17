@@ -1,0 +1,93 @@
+{
+  "slug": "chartmogul",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ChartMogul — Pricing (site officiel)", "url": "https://chartmogul.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analytics SaaS spécialisée dans les métriques d'abonnement : MRR, ARR, churn, rétention. Unifie les données facturables provenant de multiples sources pour une vue unique de la santé commerciale.",
+    "what_en": "Subscription analytics platform focused on MRR, ARR, churn, and retention metrics. Unifies billing data from multiple sources for a single source of truth on business health.",
+    "pricing_model": "Abonnement mensuel avec modèle de tarification progressive basé sur le volume de revenus récurrents (ARR).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit jusqu'à $10k MRR avec métriques core et segmentation." },
+    "plans": [
+      { "name": "Free", "price": "$0/mois (jusqu'à $10k MRR)" },
+      { "name": "Starter", "price": "à partir de $59/mois (tarif escaladé selon ARR)" },
+      { "name": "Pro", "price": "à partir de $99/mois (illimité, jusqu'à 5 connexions facturaires)" },
+      { "name": "Enterprise", "price": "à partir de $19,900/an (sociétés $10M+ ARR)" }
+    ],
+    "key_features": [
+      "Calculs MRR/ARR en temps réel",
+      "Analyse du churn et de la rétention",
+      "Segmentation des clients",
+      "Prévisions de revenus",
+      "Synchronisation CRM bidirectionnelle (Pro+)",
+      "IA ChartMogul Analyst (détection d'anomalies)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une entreprise SaaS ou d'abonnement.",
+        "Vous avez besoin d'une vue consolidée de votre MRR et churn.",
+        "Vous utilisez plusieurs systèmes de facturation."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un modèle de revenus simple.",
+        "Votre plateforme de facturation a déjà un bon reporting.",
+        "Vous cherchez un outil d'analytics web généraliste."
+      ],
+      "threshold": "ChartMogul s'impose pour les entreprises SaaS qui ont besoin de métriques fiables d'abonnement ; pour un seul produit avec facturation simple, Stripe Reporting peut suffire."
+    },
+    "pros": [
+      "Spécialisée en métriques SaaS (MRR, ARR, churn).",
+      "Consolide plusieurs sources facturaires.",
+      "Prévisions fiables et benchmarks sectoriels.",
+      "Intégrations CRM solides (Salesforce, HubSpot).",
+      "IA analytique pour détecter anomalies."
+    ],
+    "cons": [
+      "Tarification progressive peut devenir chère pour les grosses ARR.",
+      "Courbe d'apprentissage pour les nouveaux utilisateurs.",
+      "Pas d'analyse comportementale détaillée (plutôt financière)."
+    ],
+    "use_cases": [
+      "Surveiller et optimiser MRR, ARR, et churn.",
+      "Consolider données facturables de plusieurs sources.",
+      "Prévoir revenus et analyser santé de l'abonnement."
+    ],
+    "relevant_for": ["Fondateurs SaaS", "CFO et contrôleurs de gestion", "Analystes financiers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a SaaS or subscription business.",
+        "You need a consolidated view of MRR and churn.",
+        "You use multiple billing systems."
+      ],
+      "avoidIf": [
+        "You have a simple revenue model.",
+        "Your billing platform has solid built-in reporting.",
+        "You're looking for a general-purpose web analytics tool."
+      ],
+      "threshold": "ChartMogul is essential for SaaS companies that need reliable subscription metrics; for a single product with simple billing, Stripe Reporting may suffice."
+    },
+    "pros": [
+      "Specialized in SaaS metrics (MRR, ARR, churn).",
+      "Consolidates multiple billing sources.",
+      "Reliable forecasting and industry benchmarks.",
+      "Strong CRM integrations (Salesforce, HubSpot).",
+      "AI analytics to flag anomalies."
+    ],
+    "cons": [
+      "Progressive pricing can get steep for high ARR.",
+      "Learning curve for new users.",
+      "No detailed behavioral analysis (mainly financial)."
+    ],
+    "use_cases": [
+      "Monitor and optimize MRR, ARR, and churn.",
+      "Consolidate billing data across multiple sources.",
+      "Forecast revenue and analyze subscription health."
+    ]
+  }
+}

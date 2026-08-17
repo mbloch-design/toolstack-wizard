@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "sql",
+    "name": "SQL",
+    "url": "https://en.wikipedia.org/wiki/SQL"
+  },
+  {
+    "slug": "surferseo",
+    "name": "Surfer SEO",
+    "url": "https://surferseo.com"
+  },
+  {
+    "slug": "switch-monster",
+    "name": "switch.monster",
+    "url": "https://switch.monster/"
+  },
+  {
+    "slug": "tableau",
+    "name": "Tableau",
+    "url": "https://www.tableau.com"
+  },
+  {
+    "slug": "tiktok-ads",
+    "name": "Tiktok Ads",
+    "url": "https://ads.tiktok.com"
+  },
+  {
+    "slug": "triple-whale",
+    "name": "Triple Whale",
+    "url": "https://triplewhale.com"
+  },
+  {
+    "slug": "tubebuddy",
+    "name": "Tubebuddy",
+    "url": "https://tubebuddy.com"
+  },
+  {
+    "slug": "uptimerobot",
+    "name": "UptimeRobot",
+    "url": "https://uptimerobot.com"
+  },
+  {
+    "slug": "usertesting",
+    "name": "Usertesting",
+    "url": "https://usertesting.com"
+  },
+  {
+    "slug": "vercel-analytics",
+    "name": "Vercel Analytics",
+    "url": "https://vercel.com/analytics"
+  }
+]

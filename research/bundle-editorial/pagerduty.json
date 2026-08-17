@@ -1,0 +1,92 @@
+{
+  "slug": "pagerduty",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PagerDuty Pricing (site officiel)", "url": "https://pagerduty.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des incidents pour les équipes de support et d'opérations, offrant alertes, escalade automatique, coordination d'équipe et intégrations avec plus de 750 outils.",
+    "what_en": "Incident management platform for support and operations teams, providing alerts, automated escalation, team coordination, and integrations with over 750 tools.",
+    "pricing_model": "Abonnement avec modèle freemium. Quatre plans : Free (gratuit), Professional, Business, et Enterprise (sur mesure).",
+    "free_tier": { "exists": true, "detail": "Free plan : jusqu'à 5 utilisateurs, 100 notifications téléphoniques/SMS par mois, 1 calendrier et 1 politique d'escalade." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (jusqu'à 5 utilisateurs)" },
+      { "name": "Professional", "price": "25 $ par utilisateur/mois (21 $ annuel)" },
+      { "name": "Business", "price": "49 $ par utilisateur/mois (41 $ annuel)" },
+      { "name": "Enterprise", "price": "Tarification sur mesure" }
+    ],
+    "key_features": [
+      "Alertes et gestion des incidents en temps réel",
+      "Escalade automatique configurable",
+      "Intégrations avec 750+ outils (Slack, Teams, etc.)",
+      "Calendriers de garde et politiques d'escalade",
+      "PagerDuty Advance pour automatisation par IA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe de support ou d'opérations devant gérer des incidents 24/7.",
+        "Vous utilisez plusieurs outils que vous voulez centraliser (Slack, monitoring, ticketing).",
+        "Vous avez besoin d'escalade automatique et de notifications fiables."
+      ],
+      "avoidIf": [
+        "Vous gérez peu d'incidents et le Free plan suffit.",
+        "Vous voulez une solution d'alerte ultra-basique sans coordination d'équipe.",
+        "Le coût par utilisateur est un facteur bloquant pour une grande équipe."
+      ],
+      "threshold": "PagerDuty s'impose pour les équipes Ops professionnelles avec incidents fréquents ; pour un usage light, le Free plan ou un outil plus simple convient mieux."
+    },
+    "pros": [
+      "Écosystème d'intégrations très complet et mature.",
+      "Free plan généreux pour débuter.",
+      "Escalade automatique et workflows d'incident puissants.",
+      "Support des notifications par SMS et téléphone (incluses dans Free)."
+    ],
+    "cons": [
+      "Tarification par utilisateur (coûteux pour grandes équipes).",
+      "Interface complexe, courbe d'apprentissage importante.",
+      "Features avancées comme l'IA (Advance) facturées en supplément."
+    ],
+    "use_cases": [
+      "Centraliser les alertes de monitoring, ticketing et Slack.",
+      "Assurer l'escalade automatique en cas d'incident critique.",
+      "Coordonner une équipe on-call 24/7.",
+      "Automatiser les réponses aux incidents courants."
+    ],
+    "relevant_for": ["Équipes DevOps/SRE", "Support client 24/7", "Équipes de plateforme", "Operateurs cloud"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a support or ops team managing incidents around the clock.",
+        "You use multiple tools you want to centralize (Slack, monitoring, ticketing).",
+        "You need reliable escalation and cross-tool coordination."
+      ],
+      "avoidIf": [
+        "You handle few incidents and the Free plan is enough.",
+        "You need a simple alerting tool without team coordination.",
+        "Per-user pricing is a blocker for a large team."
+      ],
+      "threshold": "PagerDuty makes sense for professional Ops teams with frequent incidents; for light use, the Free plan or a simpler tool fits better."
+    },
+    "pros": [
+      "Comprehensive and mature integration ecosystem.",
+      "Generous free plan to get started.",
+      "Powerful incident workflows and automatic escalation.",
+      "SMS and phone notifications included in Free tier."
+    ],
+    "cons": [
+      "Per-user pricing (expensive for large teams).",
+      "Complex interface with a steep learning curve.",
+      "Advanced features like AI (Advance) billed separately."
+    ],
+    "use_cases": [
+      "Centralize alerts from monitoring, ticketing, and Slack.",
+      "Ensure automatic escalation for critical incidents.",
+      "Coordinate an on-call team working 24/7.",
+      "Automate responses to common incidents."
+    ]
+  }
+}

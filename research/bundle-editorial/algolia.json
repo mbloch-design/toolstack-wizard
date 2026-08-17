@@ -1,0 +1,99 @@
+{
+  "slug": "algolia",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Algolia - AI Search & Retrieval Platform (site officiel)", "url": "https://www.algolia.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de recherche et découverte IA permettant recherche en langage naturel, RAG (Retrieval-Augmented Generation), et expériences de commerce agentic, avec ranking IA, neural search et personnalisation.",
+    "what_en": "AI-powered search and discovery platform enabling natural language search, RAG capabilities, agentic commerce experiences, with AI ranking, neural search, and personalization.",
+    "pricing_model": "Usage-based : freemium avec plan Build gratuit, plans Grow et Grow Plus avec tarification par requête et par enregistrement, tiers Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Plan Build gratuit : 10 000 requêtes/mois et 1 million d'enregistrements. Suite complète de features incluse pour testing." },
+    "plans": [
+      { "name": "Build", "price": "Gratuit (10k requêtes, 1M enregistrements/mois)" },
+      { "name": "Grow", "price": "0,50 $ par 1 000 requêtes, 0,40 $ par 1 000 enregistrements (pas de frais fixes)" },
+      { "name": "Grow Plus", "price": "0,75 $ par 1 000 requêtes supplémentaires" },
+      { "name": "Premium", "price": "Sur devis (Enterprise)" },
+      { "name": "Elevate", "price": "Sur devis (Enterprise premium)" }
+    ],
+    "key_features": [
+      "Recherche AI en langage naturel.",
+      "RAG et Retrieval pour réponses IA fiables.",
+      "Ranking IA et neural search.",
+      "Commerce agentic et expériences conversationnelles.",
+      "Personnalisation et merchandising digital.",
+      "Support de 150+ pays, 18k+ clients."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une recherche AI performante pour votre site.",
+        "Vous avez besoin d'une solution de découverte produits intelligent.",
+        "Vous voulez grounded AI responses avec RAG."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution exclusivement gratuite.",
+        "Votre trafic de recherche est minime.",
+        "Vous avez besoin d'une search très basique."
+      ],
+      "threshold": "Algolia excelle pour e-commerce et UX de recherche avancée ; pour une search basique ou très faible volume, des solutions plus simples suffisent."
+    },
+    "pros": [
+      "Recherche IA intelligente et rapide.",
+      "Plan gratuit généreux pour tester.",
+      "Excellente pour e-commerce et découverte produits.",
+      "Personnalisation sans limites incluse."
+    ],
+    "cons": [
+      "Prix monte rapidement avec la croissance du trafic.",
+      "Pricing usage-based peut être imprévisible.",
+      "Alternatives open-source moins chères pour cas simples."
+    ],
+    "use_cases": [
+      "Améliorer la découverte produits sur e-commerce.",
+      "Implémenter shopping conversationnel avec agents IA.",
+      "Recherche de contenu intelligent sur plateforme média.",
+      "RAG pour réponses IA fiables et sourced."
+    ],
+    "relevant_for": [
+      "E-commerce et marketplaces",
+      "Équipes produit search-first",
+      "Startups de contenu",
+      "Équipes IA/ML cherchant RAG"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need powerful AI search for your site.",
+        "You want intelligent product discovery.",
+        "You need grounded AI responses via RAG."
+      ],
+      "avoidIf": [
+        "You're looking for an exclusively free solution.",
+        "Your search traffic is minimal.",
+        "A basic keyword search is sufficient."
+      ],
+      "threshold": "Algolia shines for e-commerce and advanced search UX; for basic search or minimal volume, simpler solutions suffice."
+    },
+    "pros": [
+      "Intelligent and fast AI search.",
+      "Generous free tier for testing.",
+      "Excellent for e-commerce and product discovery.",
+      "Personalization and merchandising included."
+    ],
+    "cons": [
+      "Costs scale quickly with traffic growth.",
+      "Usage-based pricing can be unpredictable.",
+      "Open-source alternatives cheaper for simple cases."
+    ],
+    "use_cases": [
+      "Improve product discovery on e-commerce.",
+      "Implement conversational shopping with AI agents.",
+      "Smart content search on media platforms.",
+      "RAG for reliable and sourced AI responses."
+    ]
+  }
+}

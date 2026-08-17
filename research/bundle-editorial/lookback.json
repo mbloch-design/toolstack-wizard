@@ -1,0 +1,91 @@
+{
+  "slug": "lookback",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lookback — Pricing (site officiel)", "url": "https://www.lookback.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de recherche utilisateur qualitative à distance combinant entretiens modérés, études non modérées et analyse de patterns avec IA. Capture de notes, transcription et suivi des parties prenantes en temps réel.",
+    "what_en": "Remote qualitative user research platform combining moderated interviews, unmoderated studies, and AI-powered pattern analysis with real-time note capture, transcription, and stakeholder viewing.",
+    "pricing_model": "Abonnement annuel par palier (Freelance, Team, Insights Hub) ou Enterprise sur devis. Achat de sessions supplémentaires à la demande.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit : 5 sessions, 60 jours d'accès, toutes les fonctionnalités de base sauf les exports." },
+    "plans": [
+      { "name": "Freelance", "price": "299 $/an (10 sessions, 1 participant)" },
+      { "name": "Team", "price": "1 782 $/an (100 sessions, 10 participants, 10 collaborateurs)" },
+      { "name": "Insights Hub", "price": "4 122 $/an (300 sessions, 30 participants, 30 collaborateurs)" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle (sessions illimitées, participants/collaborateurs sur devis)" }
+    ],
+    "key_features": [
+      "Entretiens modérés avec capture de notes à un clic",
+      "Études non modérées avec suivi d'IA et résumés",
+      "Analyse de patterns et intégration de modèles d'IA personnalisés",
+      "Sécurité grade entreprise (SSO, SAML, audit)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous menez des études utilisateur qualitatives régulières et à l'échelle.",
+        "Vous avez besoin de transcrire, résumer et analyser automatiquement les sessions.",
+        "Vous collaborez en temps réel avec des parties prenantes distantes."
+      ],
+      "avoidIf": [
+        "Vous testez ponctuellement sans études récurrentes.",
+        "Vous cherchez une solution gratuite pour la recherche utilisateur.",
+        "Votre budget annuel est très limité."
+      ],
+      "threshold": "Lookback s'impose pour les équipes produit/UX exigeantes sur la recherche qualitative ; pour un usage occasionnel ou un budget minimal, explorer des alternatives plus légères."
+    },
+    "pros": [
+      "Capture et transcription automatisées avec IA.",
+      "Modérés et non-modérés : flexibilité du design d'étude.",
+      "Intégrations et custom models (IA personnalisé).",
+      "Essai gratuit sans carte bleue."
+    ],
+    "cons": [
+      "Engagement annuel obligatoire.",
+      "Sessions supplémentaires payantes au-delà du palier.",
+      "Tarif Insights Hub élevé pour les petites équipes.",
+      "Participants inclus limités (achat supplémentaire nécessaire)."
+    ],
+    "use_cases": [
+      "Tester un prototype avec utilisateurs réels et en capturer les réactions.",
+      "Analyser en masse des réponses qualitatives avec IA.",
+      "Documenter la recherche pour les parties prenantes distantes."
+    ],
+    "relevant_for": ["Product managers", "UX researchers", "Design teams", "Éditorial product"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You conduct regular qualitative user studies at scale.",
+        "You need automatic transcription and AI-powered analysis.",
+        "You collaborate with stakeholders across teams and timezones."
+      ],
+      "avoidIf": [
+        "You run occasional one-off tests.",
+        "You need a free research tool.",
+        "Annual commitment feels too rigid for your workflow."
+      ],
+      "threshold": "Lookback makes sense for product teams doing serious qualitative research; for ad-hoc testing or tight budgets, look for lighter alternatives."
+    },
+    "pros": [
+      "Automated transcription and AI summaries.",
+      "Moderated and unmoderated research modes.",
+      "Real-time stakeholder viewing and collaboration.",
+      "Free trial without credit card."
+    ],
+    "cons": [
+      "Annual commitment required.",
+      "Additional sessions sold separately.",
+      "Pricing tier jump for mid-market teams.",
+      "Participant allocations need top-ups."
+    ],
+    "use_cases": [
+      "Conduct moderated user interviews and capture feedback at scale.",
+      "Run unmoderated studies with automated follow-ups.",
+      "Analyze patterns across dozens of sessions with AI."
+    ]
+  }
+}

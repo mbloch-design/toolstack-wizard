@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "pagerduty",
+    "name": "PagerDuty",
+    "url": "https://pagerduty.com"
+  },
+  {
+    "slug": "pagespeed-insights",
+    "name": "PageSpeed Insights",
+    "url": "https://pagespeed.web.dev"
+  },
+  {
+    "slug": "pandas",
+    "name": "Pandas",
+    "url": "https://pandas.pydata.org"
+  },
+  {
+    "slug": "partytown",
+    "name": "Partytown",
+    "url": "https://partytown.builder.io"
+  },
+  {
+    "slug": "plausible",
+    "name": "Plausible Analytics",
+    "url": "https://plausible.io"
+  },
+  {
+    "slug": "posthog",
+    "name": "PostHog",
+    "url": "https://posthog.com"
+  },
+  {
+    "slug": "power-bi",
+    "name": "Power BI",
+    "url": "https://powerbi.microsoft.com"
+  },
+  {
+    "slug": "profitwell",
+    "name": "Profitwell",
+    "url": "https://profitwell.com"
+  },
+  {
+    "slug": "prometheus",
+    "name": "Prometheus",
+    "url": "https://prometheus.io"
+  },
+  {
+    "slug": "qgis",
+    "name": "QGIS",
+    "url": "https://qgis.org"
+  }
+]

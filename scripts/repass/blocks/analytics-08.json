@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "vwo",
+    "name": "Vwo",
+    "url": "https://vwo.com"
+  },
+  {
+    "slug": "webpagetest",
+    "name": "WebPageTest",
+    "url": "https://www.webpagetest.org"
+  },
+  {
+    "slug": "wp-rocket",
+    "name": "WP Rocket",
+    "url": "https://wp-rocket.me"
+  }
+]

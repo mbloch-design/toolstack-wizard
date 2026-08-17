@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "frase",
+    "name": "Frase",
+    "url": "https://www.frase.io"
+  },
+  {
+    "slug": "ga4",
+    "name": "Google Analytics 4",
+    "url": "https://analytics.google.com"
+  },
+  {
+    "slug": "google-search-console",
+    "name": "Google Search Console",
+    "url": "https://search.google.com/search-console/about"
+  },
+  {
+    "slug": "google-tag-manager",
+    "name": "Google Tag Manager",
+    "url": "https://tagmanager.google.com"
+  },
+  {
+    "slug": "grafana",
+    "name": "Grafana",
+    "url": "https://grafana.com"
+  },
+  {
+    "slug": "hex",
+    "name": "Hex",
+    "url": "https://hex.tech"
+  },
+  {
+    "slug": "jupyter",
+    "name": "Jupyter",
+    "url": "https://jupyter.org"
+  },
+  {
+    "slug": "keeptruckin",
+    "name": "KeepTruckin",
+    "url": "https://keeptruckin.com"
+  },
+  {
+    "slug": "lighthouse",
+    "name": "Lighthouse",
+    "url": "https://developer.chrome.com/docs/lighthouse"
+  },
+  {
+    "slug": "logtail",
+    "name": "Logtail",
+    "url": "https://betterstack.com/logtail"
+  }
+]

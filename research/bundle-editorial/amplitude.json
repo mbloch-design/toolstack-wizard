@@ -1,0 +1,98 @@
+{
+  "slug": "amplitude",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Amplitude - Product Analytics Platform (site officiel)", "url": "https://amplitude.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analyse produit IA permettant comprendre le comportement utilisateur, tester des features avec A/B testing, session replay, et agents IA autonomes pour optimisation continue du produit.",
+    "what_en": "AI-powered product analytics platform for understanding user behavior, feature experimentation, session replay, and autonomous AI agents for continuous product optimization.",
+    "pricing_model": "Freemium : free tier avec événements illimités, plans Plus, Growth et Enterprise payants. Tarification annuelle avec réduction possible.",
+    "free_tier": { "exists": true, "detail": "Free tier : 2 millions d'événements/mois illimitéement, sièges illimités, analytics produit basique. Pas de limite de durée." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (2M événements/mois)" },
+      { "name": "Plus", "price": "À partir de 49 $/mois (billed annuel, scaling avec MTUs)" },
+      { "name": "Growth", "price": "Tarification personnalisée (growth stage)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée (Enterprise)" }
+    ],
+    "key_features": [
+      "Product Analytics : journeys et comportements utilisateurs.",
+      "Session Replay & Heatmaps : visualisation interactions.",
+      "Feature Experimentation : A/B testing et personnalisation.",
+      "AI Agents : automation et décisions autonomes.",
+      "AI Feedback : processing retours clients multi-canaux.",
+      "Intégration MCP : Claude, Cursor et tools IA."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous optimisez activement un produit digital.",
+        "Vous testez régulièrement des features.",
+        "Vous avez une équipe produit data-driven."
+      ],
+      "avoidIf": [
+        "Vous cherchez juste de l'analytics basique.",
+        "Vous n'avez pas besoin d'expérimentation.",
+        "Votre budget analytics est très limité."
+      ],
+      "threshold": "Amplitude s'impose pour product teams sérieuses en SaaS ; pour analytics simple ou sites statiques, des outils plus légers suffisent."
+    },
+    "pros": [
+      "Free tier très généreux avec 2M événements illimités.",
+      "Analytics produit puissante et intuitive.",
+      "Agents IA pour automation des décisions.",
+      "Intégration avec Claude et ecosystème IA."
+    ],
+    "cons": [
+      "Prix monte vite avec croissance événements.",
+      "Courbe d'apprentissage pour features avancées.",
+      "Alternatives plus simples et moins chères pour MVPs."
+    ],
+    "use_cases": [
+      "Analyser l'adoption d'une nouvelle feature.",
+      "Tester variantes de UX avec A/B testing.",
+      "Identifier friction et points d'abandon.",
+      "Automatiser décisions produit avec agents IA."
+    ],
+    "relevant_for": [
+      "Product managers",
+      "Équipes produit SaaS",
+      "Équipes growth / data analytics",
+      "Startups cherchant data-driven growth"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You actively optimize a digital product.",
+        "You regularly test features.",
+        "You have a data-driven product team."
+      ],
+      "avoidIf": [
+        "You only need basic analytics.",
+        "You don't need experimentation.",
+        "Your analytics budget is very tight."
+      ],
+      "threshold": "Amplitude is essential for serious SaaS product teams; for basic analytics or static sites, lighter tools suffice."
+    },
+    "pros": [
+      "Very generous free tier with unlimited 2M events.",
+      "Powerful and intuitive product analytics.",
+      "AI agents for decision automation.",
+      "Integration with Claude and AI ecosystem."
+    ],
+    "cons": [
+      "Pricing scales quickly with event growth.",
+      "Learning curve for advanced features.",
+      "Simpler, cheaper alternatives for MVPs."
+    ],
+    "use_cases": [
+      "Analyze adoption of new features.",
+      "Test UX variants with A/B testing.",
+      "Identify friction and drop-off points.",
+      "Automate product decisions with AI agents."
+    ]
+  }
+}

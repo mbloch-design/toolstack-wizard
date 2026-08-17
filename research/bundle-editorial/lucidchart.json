@@ -1,0 +1,94 @@
+{
+  "slug": "lucidchart",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lucidchart — Diagramming Platform (site officiel)", "url": "https://lucidchart.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de diagrammation collaborative (AI-assistée) pour créer des diagrammes, organigrammes, schémas ERD, UML et processus. Support des données en direct (Google Sheets, Excel, CSV) et 100+ intégrations métier.",
+    "what_en": "AI-assisted collaborative diagramming platform for creating flowcharts, org charts, ERD, UML, and process diagrams. Live data linking (Google Sheets, Excel, CSV) and 100+ business app integrations.",
+    "pricing_model": "Freemium : accès gratuit limité, abonnements payants par équipe. Tarification par siège/utilisateur.",
+    "free_tier": { "exists": true, "detail": "3 documents, 60 formes, accès de base. Inscription gratuite sans carte bleue." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit, 3 documents max" },
+      { "name": "Individual", "price": "9 $/mois (documents illimités, données en direct)" },
+      { "name": "Team", "price": "10 $/utilisateur/mois (collaboration avancée, permissioning)" },
+      { "name": "Enterprise", "price": "Montants sur la page officielle (SSO, support dédié)" }
+    ],
+    "key_features": [
+      "Diagrammes IA-assistés (Lucid AI)",
+      "Collaboration temps réel avec commentaires",
+      "Données en direct (Google Sheets, Excel, CSV)",
+      "Support ERD, UML, flowcharts, org charts",
+      "100+ intégrations (Jira, Slack, Confluence, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe crée des diagrammes techniques, processus ou architectures.",
+        "Vous avez besoin de collaboration temps réel sur la visualisation.",
+        "Vous gérez des données en direct (feuilles, bases de données)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit permanent et sans limite.",
+        "Vous ne faites que du diagramme ponctuel.",
+        "Vous travaillez seul sans besoin de partage."
+      ],
+      "threshold": "Lucidchart s'impose pour les équipes créant des diagrammes récurrents et collaboratifs ; pour un usage très léger, l'édition gratuite suffit ou opter pour un outil plus basique."
+    },
+    "pros": [
+      "Édition gratuite entièrement fonctionnelle pour débuter.",
+      "Collaboration temps réel et commentaires.",
+      "IA pour auto-générer des diagrammes.",
+      "Données en direct (Sheets, CSV).",
+      "Nombreuses intégrations professionnelles."
+    ],
+    "cons": [
+      "Tier gratuit limité à 3 documents.",
+      "Tarif élevé pour les équipes nombreuses.",
+      "Courbe d'apprentissage sur les templates avancés.",
+      "Achat par utilisateur (impact sur coûts)."
+    ],
+    "use_cases": [
+      "Créer et maintenir un diagramme d'architecture système.",
+      "Dessiner un organigramme ou processus métier.",
+      "Générer des ERD/schémas depuis des données live."
+    ],
+    "relevant_for": ["Technical teams", "Product managers", "Business analysts", "IT operations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team creates technical, process, or architecture diagrams.",
+        "You need real-time collaboration on diagramming.",
+        "You work with live data from sheets and databases."
+      ],
+      "avoidIf": [
+        "You need a permanently free tool without limits.",
+        "You only diagram occasionally.",
+        "You work solo without sharing needs."
+      ],
+      "threshold": "Lucidchart makes sense for teams creating recurring, collaborative diagrams; for very light use, the free tier or a simpler tool works fine."
+    },
+    "pros": [
+      "Free tier is fully functional for getting started.",
+      "Real-time collaboration and commenting.",
+      "AI to auto-generate diagrams.",
+      "Live data linking (Sheets, CSV).",
+      "Rich integration ecosystem."
+    ],
+    "cons": [
+      "Free tier limited to 3 documents.",
+      "Cost scales with team size.",
+      "Learning curve for advanced templates.",
+      "Per-seat pricing impacts budgets."
+    ],
+    "use_cases": [
+      "Design and maintain a system architecture diagram.",
+      "Visualize an org chart or business process.",
+      "Generate ERD from live database data."
+    ]
+  }
+}

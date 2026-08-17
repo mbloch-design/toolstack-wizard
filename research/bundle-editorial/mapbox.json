@@ -1,0 +1,92 @@
+{
+  "slug": "mapbox",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mapbox — Pricing (site officiel)", "url": "https://www.mapbox.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de cartographie et services géospatiales (APIs, SDKs) pour créer des expériences de carte sur web et mobile. Navigation, recherche, geocoding, tilesets personnalisés, réalité augmentée.",
+    "what_en": "Mapping platform providing APIs and SDKs for building map experiences on web and mobile. Navigation, search, geocoding, custom tilesets, AR, and location-based analytics.",
+    "pricing_model": "Modèle usage-based sans abonnement fixe. Chaque API/service a un quota gratuit mensuel; les dépassements sont facturés à l'usage. Réductions volume et engagements annuels.",
+    "free_tier": { "exists": true, "detail": "Quotas mensuels gratuits : 50k chargements de carte, 100k demandes de directions, 50k images statiques, 50k recherches géocodage. Par-dessus ces limites, tarification usage." },
+    "plans": [
+      { "name": "Pay-as-you-go", "price": "Montants sur la page officielle (coûts par 1000 requêtes, par MAU, par requête API)" },
+      { "name": "Annual commitment", "price": "Réductions volume pour engagements annuels (montants sur devis)" }
+    ],
+    "key_features": [
+      "Navigation SDK (1000 trajets/mois gratuit)",
+      "Maps SDKs (25k MAU gratuit)",
+      "Geocoding et search API",
+      "Custom tilesets et hosting de données",
+      "Session replay et AI insights"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous intégrez des cartes dans une application ou site.",
+        "Vous avez besoin de navigation et routing d'API.",
+        "Vous recherchez une plateforme flexible, payante à l'usage."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution de cartographie très bon marché.",
+        "Votre volume d'usage est très élevé (coûts peuvent exploser).",
+        "Vous avez besoin d'une solution on-premise."
+      ],
+      "threshold": "Mapbox s'impose pour les applications modernes avec géolocalisation avancée ; vérifier les coûts à volume élevé ou explorer des alternatives si le trafic est massif."
+    },
+    "pros": [
+      "APIs modernes et SDKs pour web/mobile.",
+      "Quotas gratuits généreux pour débuter.",
+      "Geocoding, search, navigation bien intégrés.",
+      "Tilesets personnalisés pour données spéciales.",
+      "Support réalité augmentée."
+    ],
+    "cons": [
+      "Coûts usage-based peuvent monter rapidement.",
+      "Nécessite Commercial Application License pour l'analytique de production.",
+      "Facturation complexe par service.",
+      "Apprentissage de l'API requise."
+    ],
+    "use_cases": [
+      "Créer une app de navigation ou delivery.",
+      "Afficher des points d'intérêt sur une carte interactive.",
+      "Geocoder des adresses clients en masse."
+    ],
+    "relevant_for": ["Mobile app developers", "Logistics apps", "Location-based services", "Geo-analytics teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a map experience in an app or website.",
+        "You need navigation, routing, or advanced geo APIs.",
+        "You prefer flexible pay-as-you-go pricing."
+      ],
+      "avoidIf": [
+        "You're looking for ultra-cheap mapping.",
+        "Your usage volume is very high (costs can spike).",
+        "You need on-premise deployment."
+      ],
+      "threshold": "Mapbox is ideal for modern apps with advanced geolocation; monitor costs at scale or explore alternatives if traffic is massive."
+    },
+    "pros": [
+      "Modern APIs and SDKs for web/mobile.",
+      "Generous free quotas to start.",
+      "Geocoding, search, and navigation well integrated.",
+      "Custom tilesets for specialized data.",
+      "Augmented reality support."
+    ],
+    "cons": [
+      "Usage-based costs can scale quickly.",
+      "Commercial Application License required for production analytics.",
+      "Billing complexity across services.",
+      "API learning curve."
+    ],
+    "use_cases": [
+      "Build a delivery or navigation app.",
+      "Display points of interest on an interactive map.",
+      "Bulk geocode customer addresses."
+    ]
+  }
+}

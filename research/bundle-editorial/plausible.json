@@ -1,0 +1,98 @@
+{
+  "slug": "plausible",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Plausible Analytics — Pricing (site officiel)", "url": "https://plausible.io/pricing" }
+  ],
+  "facts": {
+    "what": "Outil d'analytics web respectueux de la vie privée (sans cookies, GDPR-friendly) qui fournit des métriques de trafic essentielles (visites, pages vues, conversion) sans tracker utilisateurs individuels.",
+    "what_en": "Privacy-respecting web analytics tool (cookieless, GDPR-friendly) that provides essential traffic metrics (visits, pageviews, conversions) without tracking individual users.",
+    "pricing_model": "Abonnement avec modèle freemium. Plans à partir de 9 $/mois (facturation annuelle).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente, mais essai gratuit de 30 jours. Version open source auto-hébergée gratuite disponible (Community Edition)." },
+    "plans": [
+      { "name": "Starter", "price": "9 $ par mois (jusqu'à 10k pageviews/mois)" },
+      { "name": "Growth", "price": "14 $ par mois" },
+      { "name": "Business", "price": "19 $ par mois" },
+      { "name": "Enterprise", "price": "Tarification sur mesure" }
+    ],
+    "key_features": [
+      "Analytics GDPR-compliant sans cookies",
+      "Pas de consentement cookie requis (dans la plupart des juridictions)",
+      "Données serveurs EU uniquement (aucun tracking cross-device)",
+      "Real-time analytics et rapports",
+      "Intégration avec outils marketing (Google Search Console, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez des analytics privées sans consentement cookie.",
+        "Vous êtes en Europe et cherchez une solution GDPR-native.",
+        "Vous préférez l'éthique et la transparence à la traçabilité détaillée.",
+        "Votre site a jusqu'à 100k pageviews/mois (dans les limites tarifaires)."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une traçabilité utilisateur très granulaire (funnels individuels).",
+        "Vous voulez une solution gratuite permanente (essai 30j uniquement).",
+        "Votre site dépasse les limites du plan tarifaire le plus élevé."
+      ],
+      "threshold": "Plausible s'impose pour les sites soucieux de la vie privée et en Europe ; pour une traçabilité détaillée ou un site très gros volume, Google Analytics ou Segment convient mieux."
+    },
+    "pros": [
+      "Respect absolu de la vie privée, pas de cookies ni de tracking cross-site.",
+      "GDPR-natif : pas de cookie banner nécessaire (légalement).",
+      "Interface épurée et métriques claires.",
+      "Données serveurs EU uniquement.",
+      "Essai gratuit 30j sans carte de crédit."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente (GA4 est gratuit).",
+      "Métriques moins granulaires que Google Analytics.",
+      "Pas de tracking utilisateur individuel (par design).",
+      "Audience limite (sites < 1M pageviews/mois rentables)."
+    ],
+    "use_cases": [
+      "Analytics éthiques pour blog personnel ou petit site.",
+      "Satisfaire les exigences GDPR sans complexité.",
+      "Éviter la concurrence publicitaire (pas de targeting).",
+      "Rapport simple de trafic et sources."
+    ],
+    "relevant_for": ["Blogueurs", "Petits éditeurs", "Agences soucieuses de la vie privée", "Sites EU"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want privacy-respecting analytics without cookie consent.",
+        "You're in Europe and need GDPR-native compliance.",
+        "You prefer ethics and transparency over granular tracking.",
+        "Your site has up to 100k pageviews/month (within pricing limits)."
+      ],
+      "avoidIf": [
+        "You need very granular user-level tracking (individual funnels).",
+        "You want a permanent free tier (trial is 30 days only).",
+        "Your site exceeds the highest plan's pageview limit."
+      ],
+      "threshold": "Plausible makes sense for privacy-conscious sites and in Europe; for granular tracking or high-volume sites, Google Analytics or Segment fits better."
+    },
+    "pros": [
+      "Complete privacy respect—no cookies or cross-site tracking.",
+      "GDPR-native: no cookie banner legally required.",
+      "Clean interface and clear metrics.",
+      "Data stored on EU servers only.",
+      "Free 30-day trial without credit card."
+    ],
+    "cons": [
+      "No permanent free tier (GA4 is free).",
+      "Metrics less granular than Google Analytics.",
+      "No individual user tracking (by design).",
+      "Limited for very high-traffic sites."
+    ],
+    "use_cases": [
+      "Ethical analytics for personal blog or small site.",
+      "Meet GDPR requirements without complexity.",
+      "Avoid advertising competition (no targeting).",
+      "Simple traffic and source reporting."
+    ]
+  }
+}

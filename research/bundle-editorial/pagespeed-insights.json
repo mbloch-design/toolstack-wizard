@@ -1,0 +1,93 @@
+{
+  "slug": "pagespeed-insights",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PageSpeed Insights (site officiel)", "url": "https://pagespeed.web.dev" }
+  ],
+  "facts": {
+    "what": "Outil d'analyse de performance web gratuit de Google qui évalue la vitesse et l'expérience utilisateur (Core Web Vitals) en combinant données de laboratoire (Lighthouse) et données réelles (Chrome User Experience Report).",
+    "what_en": "Free web performance analysis tool by Google that assesses page speed and user experience using both lab data (Lighthouse) and real-world metrics (Chrome User Experience Report).",
+    "pricing_model": "Gratuit, sans compte requis.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit ; aucune limite d'utilisation publiquement documentée." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Analyse de performance desktop et mobile",
+      "Scores Core Web Vitals (LCP, CLS, INP)",
+      "Diagnostic Lighthouse détaillé",
+      "Données réelles du Chrome User Experience Report",
+      "Recommandations d'optimisation actionnables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez auditer rapidement la performance de votre site.",
+        "Vous avez besoin d'une baseline sur vos Core Web Vitals.",
+        "Vous cherchez des recommandations d'optimisation gratuites."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un suivi continu (PageSpeed Insights est basé requête).",
+        "Vous cherchez un monitoring synthétique intégré avec alertes.",
+        "Vous avez besoin de données de performance très détaillées par session."
+      ],
+      "threshold": "PageSpeed Insights excelle pour un audit rapide et gratuit ; pour un suivi continu et des alertes, un tool comme Datadog ou New Relic s'impose."
+    },
+    "pros": [
+      "Entièrement gratuit et sans inscription.",
+      "Combine données réelles et de laboratoire.",
+      "Intégration native avec les Core Web Vitals Google.",
+      "Recommandations précises et compréhensibles.",
+      "API disponible pour intégration automatisée."
+    ],
+    "cons": [
+      "Pas de suivi historique ou tendances à long terme.",
+      "Pas d'alertes ou de monitoring continu.",
+      "Pas de rapports détaillés par session ou utilisateur.",
+      "Basé sur une seule requête (pas de variation sur le temps)."
+    ],
+    "use_cases": [
+      "Auditer la performance d'un site avant optimisation.",
+      "Valider l'impact d'une refonte en termes de Core Web Vitals.",
+      "Vérifier la performance d'une URL concurrente.",
+      "Établir une baseline de performance pour débuter."
+    ],
+    "relevant_for": ["Agences web", "Éditeurs/bloggers", "E-commerce", "Développeurs frontend"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to quickly audit your site's performance.",
+        "You need a baseline on your Core Web Vitals.",
+        "You're looking for free, actionable optimization advice."
+      ],
+      "avoidIf": [
+        "You need continuous tracking (PSI is single-request).",
+        "You want integrated synthetic monitoring with alerts.",
+        "You need detailed performance data broken down by session."
+      ],
+      "threshold": "PageSpeed Insights excels for a quick, free audit; for continuous tracking and alerts, a tool like Datadog or New Relic is better."
+    },
+    "pros": [
+      "Completely free and no signup required.",
+      "Combines real-world and lab data.",
+      "Native Core Web Vitals integration with Google.",
+      "Clear and actionable recommendations.",
+      "API available for automated integration."
+    ],
+    "cons": [
+      "No historical tracking or trend analysis.",
+      "No alerts or continuous monitoring.",
+      "No detailed per-session or per-user reports.",
+      "Based on a single page load (no variation over time)."
+    ],
+    "use_cases": [
+      "Audit a site's performance before optimization work.",
+      "Validate the impact of a redesign on Core Web Vitals.",
+      "Check a competitor's site performance.",
+      "Establish a baseline to begin performance tuning."
+    ]
+  }
+}

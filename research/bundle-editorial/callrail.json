@@ -1,0 +1,90 @@
+{
+  "slug": "callrail",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CallRail — Pricing (site officiel)", "url": "https://www.callrail.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de suivi des appels et des textes conçue pour les petites entreprises et agences. Enregistre, transcrit et analyse les conversations téléphoniques avec intelligence artificielle pour la conversion.",
+    "what_en": "Call and text tracking platform designed for small businesses and agencies. Records, transcribes, and analyzes phone conversations with AI-powered insights for lead conversion.",
+    "pricing_model": "Abonnement mensuel, quatre paliers de fonctionnalités. Frais d'utilisation supplémentaires (minutes, numéros, textes).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit 14 jours ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Lead Tracking", "price": "$50/mois" },
+      { "name": "Lead Tracking Complete", "price": "$95/mois" },
+      { "name": "Lead Conversion", "price": "$150/mois" },
+      { "name": "Lead Conversion Complete", "price": "$195/mois" }
+    ],
+    "key_features": [
+      "Enregistrement et transcription d'appels",
+      "Attribution multi-canal (appels, textes, formulaires)",
+      "Analyse des conversations par IA",
+      "Intégrations HubSpot, Salesforce, Google Ads",
+      "Tableaux de bord de tendances"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de suivre les appels entrants pour attrribuer les leads.",
+        "Vous faites du marketing entrant ou du service client multi-canal.",
+        "Vous voulez transcription et analyse IA des conversations."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de suivi d'appels.",
+        "Votre budget est très serré (frais d'utilisation substantiels).",
+        "Vous préférez un outil plus simple."
+      ],
+      "threshold": "CallRail convient aux agences et PME qui financent la prospection par appels et veulent en mesurer l'efficacité ; pour la plupart des autres, un outil d'analytics web suffit."
+    },
+    "pros": [
+      "Transcription et analyse IA robustes des appels.",
+      "Attribution multi-canal intégrée.",
+      "Intégrations CRM natives (HubSpot, Salesforce).",
+      "Tableaux de bord de tendances conversationnelles."
+    ],
+    "cons": [
+      "Frais d'utilisation substantiels en plus de l'abonnement.",
+      "Les paliers supérieurs sont nécessaires pour l'IA.",
+      "Coûts totaux souvent 1,5x à 3x le tarif affiché."
+    ],
+    "use_cases": [
+      "Suivre et optimiser les appels entrants pour une agence marketing.",
+      "Analyser les tendances des conversations clients.",
+      "Attribuer les leads issus d'appels téléphoniques."
+    ],
+    "relevant_for": ["Agences marketing", "PME en prospection", "Centres de contacts"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to track inbound calls and attribute leads.",
+        "You do inbound marketing or omnichannel customer service.",
+        "You want AI-driven transcription and conversation analysis."
+      ],
+      "avoidIf": [
+        "You don't rely on phone calls for lead generation.",
+        "Your budget is very tight (usage fees add up).",
+        "You prefer a simpler tool."
+      ],
+      "threshold": "CallRail suits agencies and SMBs that fund prospecting by phone and want to measure ROI; for most others, web analytics suffice."
+    },
+    "pros": [
+      "Robust AI transcription and analysis of calls.",
+      "Built-in omnichannel attribution.",
+      "Native CRM integrations (HubSpot, Salesforce).",
+      "Conversation trend dashboards."
+    ],
+    "cons": [
+      "Usage fees add up significantly on top of subscription.",
+      "AI features require higher-tier plans.",
+      "Total costs often run 1.5x to 3x the advertised price."
+    ],
+    "use_cases": [
+      "Track and optimize inbound calls for a marketing agency.",
+      "Analyze customer conversation trends.",
+      "Attribute phone-sourced leads to campaigns."
+    ]
+  }
+}

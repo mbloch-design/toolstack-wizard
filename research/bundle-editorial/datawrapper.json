@@ -1,0 +1,97 @@
+{
+  "slug": "datawrapper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Datawrapper — Pricing (site officiel)", "url": "https://www.datawrapper.de/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de visualisation de données conçu pour les journalistes, éditeurs et équipes d'analytics. Créez, publiez et intégrez des graphiques, cartes et tableaux accessibles, sans code, avec un design épuré.",
+    "what_en": "Data visualization tool designed for journalists, publishers, and analytics teams. Create, publish, and embed charts, maps, and tables without code, with clean, accessible design.",
+    "pricing_model": "Freemium : version gratuite permanente avec export PNG, plans Pro et Business avec PDF/SVG et fonctionnalités d'équipe.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité : créez, publiez et exportez en PNG sans limite." },
+    "plans": [
+      { "name": "Free", "price": "$0/mois" },
+      { "name": "Pro", "price": "$21/utilisateur/mois (HT)" },
+      { "name": "Business", "price": "$39/utilisateur/mois (HT)" },
+      { "name": "Custom Theme Add-on", "price": "$499/mois (ou $299/mois par thème additionnel)" },
+      { "name": "API Usage (à partir du 1er septembre 2026)", "price": "Tarification à l'usage : $0.04 création, $0.02 publication, $0.01 export" }
+    ],
+    "key_features": [
+      "Graphiques, cartes et tableaux responsifs",
+      "Édition visuelle (pas de code)",
+      "Export PNG/PDF/SVG",
+      "Historique d'édition (90 jours Pro, 1 an Business)",
+      "Intégration Google Sheets et CSV temps réel (Business)",
+      "Suppression de logo Datawrapper (Pro+)",
+      "Permissions d'équipe granulaires (Business)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement des visualisations pour articles ou rapports.",
+        "Vous voulez une solution sans code et accessible.",
+        "Vous avez besoin d'intégrations Google Sheets temps réel."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de dashboards temps réel complexes.",
+        "Vous créez rarement des graphiques.",
+        "Vous avez besoin de personnalisation très avancée."
+      ],
+      "threshold": "Datawrapper excelle pour les rédactions et équipes d'analytics qui publient des infographies régulières ; pour des tableaux de bord temps réel complexes, préférez Tableau ou Looker."
+    },
+    "pros": [
+      "Interface intuitive, pas de code requis.",
+      "Design épuré et accessible par défaut.",
+      "Export PNG gratuit sur le plan Free.",
+      "Intégrations Google Sheets en temps réel (Business).",
+      "Parfait pour les articles et rapports éditoriaux."
+    ],
+    "cons": [
+      "Fonctionnalités de dashboard temps réel limitées.",
+      "Les features avancées sont onéreuses (thèmes custom).",
+      "API nouvelle (facturation à compter sept. 2026).",
+      "Pas idéal pour les dashboards internes complexes."
+    ],
+    "use_cases": [
+      "Créer des infographies pour articles de presse.",
+      "Publier des visualisations interactives sur un site.",
+      "Générer des rapports avec graphiques automatisés (Sheets)."
+    ],
+    "relevant_for": ["Journalistes et rédactions", "Équipes de contenu", "Analystes de données éditoriaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly create visualizations for articles or reports.",
+        "You want a no-code, accessible solution.",
+        "You need real-time Google Sheets integration."
+      ],
+      "avoidIf": [
+        "You need complex, real-time dashboards.",
+        "You rarely create charts.",
+        "You require advanced customization."
+      ],
+      "threshold": "Datawrapper shines for newsrooms and analytics teams publishing infographics regularly; for complex real-time dashboards, use Tableau or Looker instead."
+    },
+    "pros": [
+      "Intuitive, no-code interface.",
+      "Clean, accessible design by default.",
+      "Free PNG export on the Free plan.",
+      "Real-time Google Sheets integration (Business).",
+      "Perfect for editorial articles and reports."
+    ],
+    "cons": [
+      "Real-time dashboard features are limited.",
+      "Advanced features are costly (custom themes).",
+      "API new (billing starts Sept 2026).",
+      "Not ideal for complex internal dashboards."
+    ],
+    "use_cases": [
+      "Create infographics for news articles.",
+      "Publish interactive visualizations on a website.",
+      "Generate automated reports with charts (Sheets)."
+    ]
+  }
+}

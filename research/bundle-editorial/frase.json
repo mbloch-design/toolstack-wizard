@@ -1,0 +1,91 @@
+{
+  "slug": "frase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Frase — plateforme de contenu SEO et IA (site officiel)", "url": "https://www.frase.io" }
+  ],
+  "facts": {
+    "what": "Plateforme opérationnelle de contenu conçue pour rechercher, rédiger, optimiser et publier du contenu qui se classe sur Google et se fait citer par les moteurs de recherche IA (ChatGPT, Perplexity, Claude, Gemini).",
+    "what_en": "Content operating system designed to research, write, optimize and publish content that ranks on Google and gets cited by AI search engines (ChatGPT, Perplexity, Claude, Gemini).",
+    "pricing_model": "Abonnement mensuel avec réduction annuelle (20% pour paiement annuel). Trois plans d'expiration.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours, sans carte bancaire requise." },
+    "plans": [
+      { "name": "Starter", "price": "39 $/mois (facturé annuellement) ou 49 $/mois (mensuel)" },
+      { "name": "Professional", "price": "103 $/mois (facturé annuellement) ou 129 $/mois (mensuel)" },
+      { "name": "Scale", "price": "239 $/mois (facturé annuellement) ou 299 $/mois (mensuel)" }
+    ],
+    "key_features": [
+      "Agent IA rédacteur de contenu dans votre style de marque",
+      "Scoring SEO et optimisation pour moteurs IA (GEO)",
+      "Intégrations WordPress, Webflow, Sanity, Wix",
+      "Suivi quotidien des classements et citations IA",
+      "Content Guard détecte la décadence de classement et ébauche des correctifs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une approche intégrée (recherche, rédaction, optimisation, publication) pour vos contenus.",
+        "Vous optimisez pour Google AND pour les moteurs de recherche IA (ChatGPT, Perplexity, etc.).",
+        "Vous gérez plusieurs sites ou domaines et voulez automatiser le cycle complet."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'audits SEO ponctuels.",
+        "Votre budget ne supporte pas un abonnement mensuel.",
+        "Vous préférez gérer la rédaction manuellement plutôt que d'utiliser des agents IA."
+      ],
+      "threshold": "Frase convient si vous cherchez une plateforme tout-en-un pour le contenu moderne, intégrant l'optimisation IA ; pour des besoins ponctuels ou un budget très serré, des outils gratuits ou moins chers suffisent."
+    },
+    "pros": [
+      "Cycle de vie complet du contenu automatisé (recherche, rédaction, optimisation, publication).",
+      "Optimisation pour les moteurs IA, au-delà de la simple optimisation Google SEO.",
+      "Intégrations directes avec les CMS populaires (WordPress, Webflow, etc.).",
+      "Suivi quotidien des classements et des citations dans les systèmes IA."
+    ],
+    "cons": [
+      "Tarification mensuelle devient significative sur l'année.",
+      "Agent IA autonome limité aux plans Professional et Scale.",
+      "Requiert une courbe d'apprentissage pour tirer pleinement parti de la plateforme."
+    ],
+    "use_cases": [
+      "Produire du contenu blog régulier optimisé pour Google et les IA.",
+      "Gérer plusieurs sites clients (agences digitales).",
+      "Monitorer et maintenir les classements contre la décadence.",
+      "Créer du contenu multilingue à l'échelle (70+ langues supportées)."
+    ],
+    "relevant_for": ["Équipes SEO et contenu", "Agences digitales", "Éditeurs et blogueurs", "Spécialistes du marketing numérique"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need an integrated content workflow (research, writing, optimization, publishing).",
+        "You're optimizing for both Google and AI search engines (ChatGPT, Perplexity, etc.).",
+        "You manage multiple sites and want to automate the full content cycle."
+      ],
+      "avoidIf": [
+        "You only need occasional SEO audits.",
+        "Your budget doesn't support a monthly subscription.",
+        "You prefer manual content creation over AI agents."
+      ],
+      "threshold": "Frase fits if you want an all-in-one platform for modern content, including AI search optimization; for occasional needs or tight budgets, free or cheaper tools suffice."
+    },
+    "pros": [
+      "Complete content lifecycle automation (research, writing, optimization, publishing).",
+      "Optimization for AI search engines, beyond traditional SEO.",
+      "Direct integrations with popular CMS platforms (WordPress, Webflow, etc.).",
+      "Daily ranking and AI citation tracking across multiple systems."
+    ],
+    "cons": [
+      "Monthly subscription costs add up annually.",
+      "Autonomous AI agent limited to Professional and Scale tiers.",
+      "Learning curve required to maximize platform benefits."
+    ],
+    "use_cases": [
+      "Produce regular blog content optimized for Google and AI engines.",
+      "Manage multiple client sites (digital agencies).",
+      "Monitor and maintain rankings against decay.",
+      "Create multilingual content at scale (70+ languages supported)."
+    ]
+  }
+}

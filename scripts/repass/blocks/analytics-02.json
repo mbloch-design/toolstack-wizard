@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "callrail",
+    "name": "CallRail",
+    "url": "https://www.callrail.com"
+  },
+  {
+    "slug": "chartmogul",
+    "name": "Chartmogul",
+    "url": "https://chartmogul.com"
+  },
+  {
+    "slug": "convertkit-analytics",
+    "name": "ConvertKit Analytics",
+    "url": ""
+  },
+  {
+    "slug": "datadog",
+    "name": "Datadog",
+    "url": "https://datadoghq.com"
+  },
+  {
+    "slug": "datawrapper",
+    "name": "Datawrapper",
+    "url": "https://www.datawrapper.de"
+  },
+  {
+    "slug": "dbt",
+    "name": "dbt",
+    "url": "https://www.getdbt.com"
+  },
+  {
+    "slug": "dovetail",
+    "name": "Dovetail",
+    "url": "https://dovetail.com"
+  },
+  {
+    "slug": "excel",
+    "name": "Microsoft Excel",
+    "url": "https://www.microsoft.com/microsoft-365/excel"
+  },
+  {
+    "slug": "fathom-analytics",
+    "name": "Fathom Analytics",
+    "url": "https://usefathom.com"
+  },
+  {
+    "slug": "flourish",
+    "name": "Flourish",
+    "url": "https://flourish.studio"
+  }
+]

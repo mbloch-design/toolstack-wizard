@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "rank-math",
+    "name": "Rank Math",
+    "url": "https://rankmath.com"
+  },
+  {
+    "slug": "redirect-path",
+    "name": "Redirect Path",
+    "url": "https://www.ayima.com/redirect-path"
+  },
+  {
+    "slug": "screaming-frog",
+    "name": "Screaming Frog",
+    "url": "https://www.screamingfrog.co.uk/seo-spider/"
+  },
+  {
+    "slug": "segment",
+    "name": "Segment",
+    "url": "https://segment.com"
+  },
+  {
+    "slug": "sentry",
+    "name": "Sentry",
+    "url": "https://sentry.io"
+  },
+  {
+    "slug": "seo-meta-in-1-click",
+    "name": "SEO Meta in 1 Click",
+    "url": "https://www.seo-extension.com"
+  },
+  {
+    "slug": "seo-mode",
+    "name": "SEO Mode",
+    "url": "https://seomode.com"
+  },
+  {
+    "slug": "shield-app",
+    "name": "Shield App",
+    "url": ""
+  },
+  {
+    "slug": "simple-analytics",
+    "name": "Simple Analytics",
+    "url": "https://simpleanalytics.com"
+  },
+  {
+    "slug": "snowflake",
+    "name": "Snowflake",
+    "url": "https://www.snowflake.com"
+  }
+]

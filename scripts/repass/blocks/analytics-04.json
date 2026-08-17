@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "lookback",
+    "name": "Lookback",
+    "url": "https://www.lookback.com"
+  },
+  {
+    "slug": "looker-studio",
+    "name": "Looker Studio",
+    "url": "https://lookerstudio.google.com"
+  },
+  {
+    "slug": "lucidchart",
+    "name": "Lucidchart",
+    "url": "https://lucidchart.com"
+  },
+  {
+    "slug": "mapbox",
+    "name": "Mapbox",
+    "url": "https://www.mapbox.com"
+  },
+  {
+    "slug": "meta-ads",
+    "name": "Meta Ads",
+    "url": "https://facebook.com/business/ads"
+  },
+  {
+    "slug": "metabase",
+    "name": "Metabase",
+    "url": "https://metabase.com"
+  },
+  {
+    "slug": "microsoft-clarity",
+    "name": "Microsoft Clarity",
+    "url": "https://clarity.microsoft.com"
+  },
+  {
+    "slug": "mixpanel",
+    "name": "Mixpanel",
+    "url": "https://mixpanel.com"
+  },
+  {
+    "slug": "notionlytics",
+    "name": "Notionlytics",
+    "url": ""
+  },
+  {
+    "slug": "optimizely",
+    "name": "Optimizely",
+    "url": "https://optimizely.com"
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "slug": "dbt",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "dbt — Pricing (site officiel)", "url": "https://www.getdbt.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de transformation de données qui orchestre les pipelines ELT avec SQL. dbt Core est gratuit et open source ; dbt Cloud offre une plateforme SaaS avec orchestration, scheduler et collaboration.",
+    "what_en": "Data transformation platform that orchestrates ELT pipelines using SQL. dbt Core is free and open source; dbt Cloud provides a SaaS platform with orchestration, scheduling, and collaboration.",
+    "pricing_model": "Gratuit (dbt Core open source) ou abonnement SaaS (dbt Cloud) avec tarification par siège et tier de fonctionnalités.",
+    "free_tier": { "exists": true, "detail": "dbt Core est entièrement gratuit et open source sous Apache 2.0. dbt Cloud Developer plan gratuit pour 1 développeur." },
+    "plans": [
+      { "name": "dbt Core", "price": "Gratuit (open source)" },
+      { "name": "dbt Cloud Developer", "price": "Gratuit (1 siège développeur, 3,000 builds/mois)" },
+      { "name": "dbt Cloud Starter", "price": "$100/siège/mois (5 sièges, 15,000 builds/mois)" },
+      { "name": "dbt Cloud Enterprise", "price": "Tarification personnalisée (sièges illimités, 100,000+ builds/mois)" }
+    ],
+    "key_features": [
+      "Orchestration de transformations SQL",
+      "Semantic Layer pour modèles unifiés",
+      "dbt Copilot (génération de code assistée)",
+      "Data Lineage et impact analysis",
+      "Discovery catalog et documentation auto",
+      "Intégrations warehouse (Snowflake, BigQuery, Redshift, Postgres)",
+      "API et webhooks pour orchestration externe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe données est à l'aise avec SQL.",
+        "Vous gérez des pipelines ELT complexes.",
+        "Vous voulez version control et CI/CD pour données."
+      ],
+      "avoidIf": [
+        "Vous préférez un outil low-code/no-code.",
+        "Votre pipeline est très simple.",
+        "Vous travaillez surtout en Excel/Sheets."
+      ],
+      "threshold": "dbt est indispensable pour les équipes analytics/data qui veulent professionnaliser transformations et collaboration ; pour petit volume et SQL basique, les transformations warehouse suffisent."
+    },
+    "pros": [
+      "Open source et gratuit (dbt Core).",
+      "Excellente pour collaborer sur transformations SQL.",
+      "Semantic Layer et découvrabilité de données.",
+      "Intégrations warehouse natives et matures.",
+      "Documentation automatisée et lineage."
+    ],
+    "cons": [
+      "Courbe d'apprentissage SQL requise.",
+      "Orchestration cloud payante (dbt Cloud).",
+      "Pas idéal pour utilisateurs non-techniques.",
+      "Sièges Enterprise coûtent cher."
+    ],
+    "use_cases": [
+      "Orchestrer et version-contrôler transformations données.",
+      "Créer une couche sémantique unifiée.",
+      "Documenter et tracer dépendances entre modèles."
+    ],
+    "relevant_for": ["Analystes de données SQL", "Ingénieurs data", "Équipes analytics"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your data team is SQL-comfortable.",
+        "You manage complex ELT pipelines.",
+        "You want version control and CI/CD for data."
+      ],
+      "avoidIf": [
+        "You prefer a low-code/no-code tool.",
+        "Your pipeline is very simple.",
+        "You mostly work in Excel/Sheets."
+      ],
+      "threshold": "dbt is essential for analytics/data teams that want to professionalize transformations and collaboration; for small volumes and basic SQL, warehouse transformations suffice."
+    },
+    "pros": [
+      "Open source and free (dbt Core).",
+      "Excellent for collaborating on SQL transformations.",
+      "Semantic Layer and data discoverability.",
+      "Native, mature warehouse integrations.",
+      "Automated documentation and lineage."
+    ],
+    "cons": [
+      "Steep SQL learning curve.",
+      "Cloud orchestration is paid (dbt Cloud).",
+      "Not ideal for non-technical users.",
+      "Enterprise seats are expensive."
+    ],
+    "use_cases": [
+      "Orchestrate and version-control data transformations.",
+      "Build a unified semantic layer.",
+      "Document and trace model dependencies."
+    ]
+  }
+}

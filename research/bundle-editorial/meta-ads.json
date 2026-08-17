@@ -1,0 +1,92 @@
+{
+  "slug": "meta-ads",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Meta Ads Manager (site officiel)", "url": "https://facebook.com/business/ads" }
+  ],
+  "facts": {
+    "what": "Plate-forme d'annonces natives de Meta pour créer, gérer et analyser des campagnes publicitaires sur Facebook, Instagram, Messenger et Audience Network. Ciblage, budgétisation, analytics en temps réel.",
+    "what_en": "Meta's native ad platform to create, manage, and analyze advertising campaigns across Facebook, Instagram, Messenger, and Audience Network. Targeting, budgeting, and real-time analytics.",
+    "pricing_model": "Meta Ads Manager lui-même est gratuit. Vous payez uniquement pour votre budget publicitaire (coûts d'annonces). Les outils tiers de gestion des annonces Meta sont payants en sus.",
+    "free_tier": { "exists": true, "detail": "Meta Ads Manager natif entièrement gratuit. Pas d'abonnement. Vous payez uniquement le budget des annonces elles-mêmes." },
+    "plans": [
+      { "name": "Meta Ads Manager (natif)", "price": "Gratuit (vous payez seulement votre budget d'annonces)" },
+      { "name": "Outils tiers de gestion", "price": "Montants sur la page officielle (optionnels, 30 $/mois à 3000 $/mois environ)" }
+    ],
+    "key_features": [
+      "Créateur de campagnes avec IA (Meta Advantage+)",
+      "Ciblage par audience, lieu, comportement, intérêts",
+      "Split testing A/B automatisé",
+      "Analytics temps réel et rapports détaillés",
+      "Intégration Pixel Facebook et conversions"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de publicité Facebook/Instagram natives.",
+        "Vous voulez une solution gratuite pour débuter.",
+        "Vous préférez gérer vos campagnes vous-même."
+      ],
+      "avoidIf": [
+        "Vous exigez une gestion complète multi-canaux (Google, TikTok, etc.).",
+        "Vous avez d'énormes budgets et besoin d'optimisation avancée.",
+        "Vous préférez une agence ou outil tiers de gestion."
+      ],
+      "threshold": "Meta Ads Manager natif suffit pour débuter ; pour une gestion multi-annonceurs, budgets élevés ou optimisation IA avancée, explorer les outils tiers de gestion des annonces Meta."
+    },
+    "pros": [
+      "Plate-forme native Meta entièrement gratuite.",
+      "IA Meta Advantage+ pour optimisation de campagne.",
+      "Ciblage granulaire et audiences personnalisées.",
+      "Analytics intégré en temps réel.",
+      "Intégration directe des conversions et e-commerce."
+    ],
+    "cons": [
+      "Outils tiers de gestion coûtent supplémentaire.",
+      "Interface peut être dense pour les débutants.",
+      "Limité à l'écosystème Meta (pas Google, TikTok).",
+      "Politique de ciblage restrictive (RGPD, iOS 14+)."
+    ],
+    "use_cases": [
+      "Créer votre première campagne Facebook/Instagram.",
+      "Tester une audience et produit à petit budget.",
+      "Orchestrer des campagnes de remarketing sérieuses."
+    ],
+    "relevant_for": ["E-commerce businesses", "App marketers", "Agency account managers", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Facebook/Instagram advertising.",
+        "You want a free, native solution to get started.",
+        "You prefer managing campaigns in-house."
+      ],
+      "avoidIf": [
+        "You need omnichannel management (Google, TikTok, etc.).",
+        "You have massive budgets and need advanced optimization.",
+        "You prefer agency or third-party ad management tools."
+      ],
+      "threshold": "Meta Ads Manager's free native platform is great for starting out; for multi-account management, large budgets, or advanced AI optimization, explore third-party ad management tools."
+    },
+    "pros": [
+      "Meta's native platform is completely free.",
+      "Meta Advantage+ AI for automated campaign optimization.",
+      "Granular targeting and custom audiences.",
+      "Real-time analytics built-in.",
+      "Direct conversion and e-commerce integration."
+    ],
+    "cons": [
+      "Third-party management tools cost extra.",
+      "Interface can be dense for beginners.",
+      "Limited to Meta ecosystem (no Google, TikTok).",
+      "Targeting restrictions (GDPR, iOS 14+)."
+    ],
+    "use_cases": [
+      "Launch your first Facebook/Instagram campaign.",
+      "Test audience and product at small budget.",
+      "Run serious remarketing and retargeting campaigns."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "partytown",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Partytown (site officiel)", "url": "https://partytown.builder.io" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript open source de Builder.io qui exécute les scripts tiers (Google Analytics, Hotjar, etc.) dans un Web Worker pour délester le thread principal et améliorer les Core Web Vitals.",
+    "what_en": "Open source JavaScript library by Builder.io that executes third-party scripts (Google Analytics, Hotjar, etc.) in a Web Worker to offload the main thread and improve Core Web Vitals.",
+    "pricing_model": "Gratuit, open source.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source (MIT)." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Exécution de scripts tiers en Web Worker",
+      "Accès synchrone au DOM depuis le Web Worker",
+      "Configuration simple avec type='text/partytown'",
+      "Compatible avec Google Analytics, Hotjar, Segment, etc.",
+      "Améliore LCP, FID et autres Core Web Vitals"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous chargez plusieurs scripts tiers (analytics, publicités, widgets) qui ralentissent la page.",
+        "Vous optimisez pour les Core Web Vitals et avez du budget limité.",
+        "Vous voulez une solution simple sans infrastructure supplémentaire."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de scripts tiers ou juste un (l'impact sera minimal).",
+        "Vos scripts tiers doivent absolument s'exécuter sur le thread principal.",
+        "Vous préférez une solution avec support commercial et garantie."
+      ],
+      "threshold": "Partytown excelle pour délester les scripts tiers d'un site riche en outils ; pour un site simple ou peu chargé, l'impact est négligeable."
+    },
+    "pros": [
+      "Gratuit et très simple à installer (une ligne).",
+      "Amélioration notable des Core Web Vitals mesurables.",
+      "Compatible avec la plupart des scripts tiers courants.",
+      "Accès DOM synchrone depuis le Web Worker (rare feature).",
+      "Actif et maintenu par la communauté."
+    ],
+    "cons": [
+      "En Beta, API peut évoluer.",
+      "Support communautaire uniquement (pas d'SLA).",
+      "Nécessite JavaScript activé et support Web Worker (compatible moderne).",
+      "Ne résout pas les problèmes de configuration du script tiers lui-même."
+    ],
+    "use_cases": [
+      "Délester Google Analytics du thread principal.",
+      "Améliorer LCP d'un site chargé de scripts (analytics, pub).",
+      "Garder les outils tiers sans sacrifier la performance.",
+      "Validation rapide de l'impact avant optimisation plus lourde."
+    ],
+    "relevant_for": ["Développeurs web", "Agences performance", "Éditeurs de contenu", "E-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You load multiple third-party scripts (analytics, ads, widgets) that slow down your page.",
+        "You're optimizing for Core Web Vitals with limited budget.",
+        "You want a simple solution without additional infrastructure."
+      ],
+      "avoidIf": [
+        "You have no third-party scripts or just one (impact will be minimal).",
+        "Your third-party scripts must run on the main thread.",
+        "You prefer a solution with commercial support and guarantees."
+      ],
+      "threshold": "Partytown excels at offloading third-party scripts on feature-rich sites; for simple or light-loaded sites, the impact is negligible."
+    },
+    "pros": [
+      "Free and very simple to install (one line).",
+      "Measurable improvement in Core Web Vitals.",
+      "Compatible with most common third-party scripts.",
+      "Synchronous DOM access from Web Worker (rare feature).",
+      "Active and maintained by the community."
+    ],
+    "cons": [
+      "In Beta, API can evolve.",
+      "Community support only (no SLA).",
+      "Requires JavaScript enabled and Web Worker support (modern browsers).",
+      "Doesn't solve configuration issues within the third-party script itself."
+    ],
+    "use_cases": [
+      "Offload Google Analytics from the main thread.",
+      "Improve LCP of a script-heavy site (analytics, ads).",
+      "Keep third-party tools without sacrificing performance.",
+      "Quick validation of impact before heavier optimization."
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "posthog",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PostHog — Pricing (site officiel)", "url": "https://posthog.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme open source d'analytics produit qui combine product analytics, session replay, feature flags, surveys, et error tracking — déployable en cloud ou self-hosted.",
+    "what_en": "Open source product analytics platform combining product analytics, session replay, feature flags, surveys, and error tracking—deployable on cloud or self-hosted.",
+    "pricing_model": "Freemium avec modèle pay-as-you-go. Cloud gratuit jusqu'aux limites mensuelles, puis facturation à l'usage. Self-hosted gratuit.",
+    "free_tier": { "exists": true, "detail": "Cloud gratuit : 1M événements + 5K enregistrements + 1M flags + 1.5K sondages par mois. Self-hosted entièrement gratuit." },
+    "plans": [
+      { "name": "Cloud Gratuit", "price": "Gratuit (1M événements/mois)" },
+      { "name": "Product Analytics", "price": "À partir de 0.00005 $ par événement (tarif dégressif)" },
+      { "name": "Session Replay", "price": "À partir de 0.005 $ par enregistrement" },
+      { "name": "Feature Flags", "price": "À partir de 0.0001 $ par requête" }
+    ],
+    "key_features": [
+      "Product Analytics avec événements et funnels",
+      "Session Replay et heatmaps",
+      "Feature flags pour déploiement progressif",
+      "Surveys in-app intégrés",
+      "Error tracking et performance monitoring",
+      "Open source (MIT) et self-hosting possible"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une alternative open source à Mixpanel ou Amplitude.",
+        "Vous voulez combiner product analytics + session replay + flags dans un outil.",
+        "Vous avez besoin de self-hosting pour des raisons de conformité/données.",
+        "Votre trafic est assez important (bénéfice des tarifs dégressifs)."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution ultra-simple sans configuration.",
+        "Vous cherchez un support SLA ou un account manager dédié.",
+        "Votre usage mensuel est inférieur à 100K événements (cloud gratuit suffit alors)."
+      ],
+      "threshold": "PostHog s'impose pour les startups/scale-ups qui veulent combinatoire complète (analytics+flags+replay) et liberté self-hosted ; pour un besoin single-purpose ou ultra-lean, une solution allégée convient."
+    },
+    "pros": [
+      "Open source (MIT) et self-hosting possible.",
+      "Combinatoire complète : analytics + replay + flags + surveys.",
+      "Cloud gratuit généreux (1M événements) pour débuter.",
+      "Tarification transparente et prévisible (pay-as-you-go).",
+      "Pas de limites arbitraires sur les dimensions custom."
+    ],
+    "cons": [
+      "Interface et onboarding complexes comparé aux alternatives lean.",
+      "Self-hosting demande expertise DevOps/Kubernetes.",
+      "Coûts peuvent escalader rapidement avec le volume.",
+      "Support communautaire en gratuit (pas d'SLA)."
+    ],
+    "use_cases": [
+      "Combiner analytics produit avec session replay pour debug UX.",
+      "Feature flags et progressifs rollout intégrés.",
+      "Self-hosting pour conformité données (GDPR, données sensibles).",
+      "Événements custom complexes sans limites de propriétés."
+    ],
+    "relevant_for": ["SaaS startups", "Product teams", "Entreprises conformité élevée", "Développeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're looking for an open source alternative to Mixpanel or Amplitude.",
+        "You want to combine product analytics + session replay + flags in one tool.",
+        "You need self-hosting for compliance or data residency.",
+        "Your traffic is substantial (benefit from tiered pricing)."
+      ],
+      "avoidIf": [
+        "You want an ultra-simple, low-touch solution.",
+        "You need SLA support or a dedicated account manager.",
+        "Your monthly usage is under 100K events (free tier is enough)."
+      ],
+      "threshold": "PostHog makes sense for startups/scale-ups wanting a complete toolkit (analytics+flags+replay) and self-hosting freedom; for single-purpose or very lean needs, a lighter solution fits better."
+    },
+    "pros": [
+      "Open source (MIT) and self-hosting possible.",
+      "Complete toolkit: analytics + replay + flags + surveys.",
+      "Generous free cloud tier (1M events) to start.",
+      "Transparent and predictable pricing (pay-as-you-go).",
+      "No arbitrary limits on custom dimensions."
+    ],
+    "cons": [
+      "Complex interface and onboarding compared to lightweight alternatives.",
+      "Self-hosting requires DevOps/Kubernetes expertise.",
+      "Costs can escalate quickly with volume.",
+      "Community support only (no SLA)."
+    ],
+    "use_cases": [
+      "Combine product analytics with session replay for UX debugging.",
+      "Integrated feature flags and progressive rollouts.",
+      "Self-hosting for compliance (GDPR, sensitive data).",
+      "Complex custom events without property limits."
+    ]
+  }
+}

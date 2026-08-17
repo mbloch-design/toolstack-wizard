@@ -1,0 +1,89 @@
+{
+  "slug": "rank-math",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rank Math — Pricing (site officiel)", "url": "https://rankmath.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plugin SEO WordPress surnommé le « couteau suisse du SEO WordPress », offrant optimisation de contenu, suivi de classements, génération de schémas et analyse par IA pour des millions de sites WordPress.",
+    "what_en": "WordPress SEO plugin called the 'Swiss Army Knife of WordPress SEO', providing content optimization, rank tracking, schema generation, and AI-powered analysis for millions of WordPress sites.",
+    "pricing_model": "Abonnement annuel avec trois tiers (Pro, Business, Agency)",
+    "free_tier": { "exists": false, "detail": "Essai gratuit inclus. Pas de version gratuite permanente. Achat par abonnement annuel." },
+    "plans": [
+      { "name": "Pro", "price": "€7.99/mois (abonnement annuel, 11% de réduction)" },
+      { "name": "Business", "price": "€24.99/mois (abonnement annuel, 10% de réduction)" },
+      { "name": "Agency", "price": "€54.99/mois (abonnement annuel, 15% de réduction)" }
+    ],
+    "key_features": [
+      "Suivi de classements illimité",
+      "Générateur de schémas puissant",
+      "Suivi de mots-clés (500 à 50 000 selon le plan)",
+      "Analyse de contenu par IA",
+      "Vérificateur de liens cassés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous maintenez un blog ou un site WordPress multi-pages.",
+        "Vous avez besoin de suivi de classements et d'optimisation SEO en continu.",
+        "Vous voulez des outils SEO intégrés sans quitter WordPress."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas WordPress ou un site statique uniquement.",
+        "Vous cherchez un outil SEO gratuit complet.",
+        "Vous avez un usage très ponctuel d'audit SEO."
+      ],
+      "threshold": "Rank Math excelle pour les éditeurs WordPress cherchant une suite SEO complète ; pour un audit ponctuel ou hors-WordPress, un SaaS dédié convient mieux."
+    },
+    "pros": [
+      "Suite complète d'outils SEO intégrés dans WordPress.",
+      "Suivi de classements selon le plan choisi.",
+      "Générateur de schémas automatisé et fiable.",
+      "IA intégrée pour suggestions de contenu."
+    ],
+    "cons": [
+      "Abonnement annuel uniquement.",
+      "Les plans supérieurs coûtent rapidement cher pour les petits sites.",
+      "Nécessite WordPress ; incompatible avec d'autres plateformes."
+    ],
+    "use_cases": [
+      "Optimiser un blog multi-articles pour Google.",
+      "Gérer le SEO de plusieurs sites clients en tant que freelance.",
+      "Mettre en place des schémas et rich snippets automatiquement."
+    ],
+    "relevant_for": ["Blogueurs", "Freelances SEO", "Agences WordPress"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You maintain a multi-page WordPress site or blog.",
+        "You need ongoing rank tracking and SEO optimization.",
+        "You want integrated SEO tools without leaving WordPress."
+      ],
+      "avoidIf": [
+        "You don't use WordPress or have a static site.",
+        "You're looking for a completely free SEO tool suite.",
+        "You need only occasional SEO audits."
+      ],
+      "threshold": "Rank Math excels for WordPress publishers seeking a complete SEO suite; for occasional audits or non-WordPress sites, a dedicated SaaS tool works better."
+    },
+    "pros": [
+      "Complete integrated SEO toolkit within WordPress.",
+      "Rank tracking depending on your plan.",
+      "Automated and reliable schema markup generation.",
+      "Built-in AI for content suggestions."
+    ],
+    "cons": [
+      "Annual billing only.",
+      "Higher tiers become expensive quickly for small sites.",
+      "WordPress-only; incompatible with other platforms."
+    ],
+    "use_cases": [
+      "Optimize a multi-article blog for Google.",
+      "Manage SEO for multiple client sites as a freelancer.",
+      "Set up schemas and rich snippets automatically."
+    ]
+  }
+}

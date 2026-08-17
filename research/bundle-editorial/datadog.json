@@ -1,0 +1,98 @@
+{
+  "slug": "datadog",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Datadog — Pricing (site officiel)", "url": "https://www.datadoghq.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'observabilité modulaire qui surveille l'infrastructure, l'application, les logs, la sécurité, et l'expérience utilisateur. Tarification à la consommation : vous payez séparément pour chaque produit (monitoring, APM, log management, etc.).",
+    "what_en": "Modular observability platform for infrastructure, application, logs, security, and user experience monitoring. Consumption-based pricing: pay separately for each product (Infrastructure Monitoring, APM, Log Management, etc.).",
+    "pricing_model": "Abonnement à la consommation, modèle modulaire. Vous payez chaque produit séparément selon l'utilisation réelle.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité avec 5 hosts/hosts essentiels pour débuter; essai gratuit pour produits payants." },
+    "plans": [
+      { "name": "Infrastructure Monitoring (Pro)", "price": "$15/host/mois (annuel)" },
+      { "name": "Infrastructure Monitoring (Enterprise)", "price": "$23/host/mois (annuel)" },
+      { "name": "APM", "price": "de $31/host/mois à $40/host/mois" },
+      { "name": "Log Management", "price": "$0.10/GB ingéré + $1.70 par million d'événements" },
+      { "name": "Real User Monitoring", "price": "de $1.50 à $1.80 par 1,000 sessions (annuel)" },
+      { "name": "Synthetic Monitoring", "price": "$5 par 10,000 tests API; $12 par 1,000 tests navigateur" }
+    ],
+    "key_features": [
+      "Monitoring infrastructure en temps réel",
+      "Performance des applications (APM)",
+      "Gestion centralisée des logs",
+      "Real User Monitoring et Session Replay",
+      "Synthetic testing et Alerting",
+      "Security Monitoring et Cloud SIEM",
+      "Intégrations 500+ services"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une infrastructure cloud complexe.",
+        "Vous avez besoin d'observabilité profonde (logs, APM, RUM).",
+        "Votre équipe peut gérer une plate-forme sophistiquée."
+      ],
+      "avoidIf": [
+        "Vous avez une infrastructure simple.",
+        "Votre équipe est très réduite.",
+        "Les coûts de consommation imprédictibles vous préoccupent."
+      ],
+      "threshold": "Datadog domine pour les équipes SaaS et cloud natives qui demandent une observabilité complète ; pour une startup précoce ou une infrastructure simple, Prometheus + Grafana gratuits suffisent."
+    },
+    "pros": [
+      "Observabilité complète en un seul endroit.",
+      "Couverture logs, APM, monitoring, sécurité.",
+      "Intégrations très nombreuses et matures.",
+      "Interface moderne et alertes fines.",
+      "Service Management inclus (incidents, workflows)."
+    ],
+    "cons": [
+      "Tarification à la consommation difficile à prévoir.",
+      "Coûts totaux peuvent exploser rapidement.",
+      "Apprentissage et configuration importants.",
+      "Cher pour les petites équipes/startups."
+    ],
+    "use_cases": [
+      "Surveiller une infrastructure multi-cloud complexe.",
+      "Diagnostiquer les problèmes de performance applicatif.",
+      "Centraliser logs et incidents dans une dashboard unifiée."
+    ],
+    "relevant_for": ["Équipes DevOps/SRE", "Startups SaaS scale-up", "Entreprises cloud natives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex cloud infrastructure.",
+        "You need deep observability (logs, APM, RUM).",
+        "Your team can handle a sophisticated platform."
+      ],
+      "avoidIf": [
+        "You have simple infrastructure.",
+        "Your team is very small.",
+        "Unpredictable consumption costs concern you."
+      ],
+      "threshold": "Datadog dominates for SaaS and cloud-native teams needing complete observability; for an early-stage startup or simple infrastructure, free Prometheus + Grafana suffice."
+    },
+    "pros": [
+      "Complete observability in one place.",
+      "Covers logs, APM, monitoring, security.",
+      "Extensive and mature integrations.",
+      "Modern UI and fine-grained alerts.",
+      "Service Management included (incidents, workflows)."
+    ],
+    "cons": [
+      "Consumption-based pricing hard to predict.",
+      "Total costs can spiral quickly.",
+      "Steep learning curve and configuration.",
+      "Expensive for small teams/startups."
+    ],
+    "use_cases": [
+      "Monitor complex multi-cloud infrastructure.",
+      "Diagnose application performance issues.",
+      "Centralize logs and incidents in a unified dashboard."
+    ]
+  }
+}

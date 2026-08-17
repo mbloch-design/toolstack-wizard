@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "ahrefs",
+    "name": "Ahrefs",
+    "url": "https://ahrefs.com"
+  },
+  {
+    "slug": "airbyte",
+    "name": "Airbyte",
+    "url": "https://airbyte.com"
+  },
+  {
+    "slug": "algolia",
+    "name": "Algolia",
+    "url": "https://www.algolia.com"
+  },
+  {
+    "slug": "amplitude",
+    "name": "Amplitude",
+    "url": "https://amplitude.com"
+  },
+  {
+    "slug": "arcgis",
+    "name": "ArcGIS",
+    "url": "https://www.arcgis.com"
+  },
+  {
+    "slug": "auvik",
+    "name": "Auvik",
+    "url": "https://auvik.com"
+  },
+  {
+    "slug": "beehiiv-analytics",
+    "name": "Beehiiv Analytics",
+    "url": ""
+  },
+  {
+    "slug": "better-stack",
+    "name": "Better Stack",
+    "url": "https://betterstack.com"
+  },
+  {
+    "slug": "bigquery",
+    "name": "BigQuery",
+    "url": "https://cloud.google.com/bigquery"
+  },
+  {
+    "slug": "brand24",
+    "name": "Brand24",
+    "url": "https://brand24.com"
+  }
+]
