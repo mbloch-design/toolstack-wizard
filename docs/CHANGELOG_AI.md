@@ -3847,3 +3847,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Alignement des références Adobe Firefly et ConvertKit sur leurs slugs canoniques actuels (`firefly` et `kit`).
 - Retrait de Canva vs Photoshop Elements du registre publié, Photoshop Elements n’ayant plus de fiche catalogue exploitable.
 - Suppression des quatre avertissements de comparatifs introuvables pendant le build, sans modifier le fallback temporaire de la projection Supabase.
+
+# 2026-08-17 — Fallback hybride des fiches catalogue
+
+- Le prerender conserve désormais chaque fiche bilingue disponible dans la projection publique Supabase au lieu d'abandonner toute la projection lorsque sa couverture est partielle.
+- Les outils encore absents de la projection utilisent individuellement la source JSON historique, sans interrompre ni dégrader les fiches déjà canoniques.
+- Une vraie erreur réseau, HTTP ou une perte d'outil dans les deux sources reste bloquante et déclenche le fallback global de sécurité.
+- Le journal de build résume explicitement le nombre de fiches projetées et de fallbacks JSON, sans stack trace trompeuse pour une migration progressive attendue.

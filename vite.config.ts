@@ -378,19 +378,39 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
     byTool.set(row.tool_id || row.id, localized);
   }
 
-  const tools = [...byTool.values()]
-    .map(catalogProjectionRowsToTool)
-    .filter((tool): tool is NonNullable<typeof tool> => tool != null);
+  const catalogById = new Map(catalogTools.map((tool) => [tool.id, tool]));
+  let projectedCount = 0;
+  const tools = toolIds.map((toolId) => {
+    const localized = byTool.get(toolId) || [];
+    const hasCompleteLocalization =
+      localized.some((row) => row.lang === "fr") &&
+      localized.some((row) => row.lang === "en");
+    const projectedTool = hasCompleteLocalization
+      ? catalogProjectionRowsToTool(localized)
+      : null;
 
-  const incompleteLocalization = [...byTool.values()].some((localized) =>
-    localized.length !== 2 || !localized.some((row) => row.lang === "fr") || !localized.some((row) => row.lang === "en")
-  );
-  if (tools.length !== toolIds.length || rows.length !== toolIds.length * 2 || incompleteLocalization) {
-    throw new Error(`projection catalogue incomplète: ${rows.length} lignes pour ${tools.length} outils`);
+    if (projectedTool) {
+      projectedCount += 1;
+      return projectedTool;
+    }
+
+    // The canonical projection is populated progressively. Keep every valid
+    // projected fiche and fall back only for the missing tool instead of
+    // discarding the complete projection whenever coverage is below 100%.
+    return catalogById.get(toolId);
+  }).filter((tool): tool is NonNullable<typeof tool> => tool != null);
+
+  if (tools.length !== toolIds.length) {
+    throw new Error(`catalogue hybride incomplet: ${tools.length}/${toolIds.length} outils`);
   }
 
+  const fallbackCount = tools.length - projectedCount;
   _catalogProjectionToolsCache = tools as unknown as Record<string, any>[];
-  console.log(`✓ Fiche + SSR source: catalog_api (${rows.length} lignes, ${tools.length} outils)`);
+  console.log(
+    fallbackCount > 0
+      ? `✓ Fiche + SSR source: catalog_api hybride (${projectedCount} projetées, ${fallbackCount} fallback JSON)`
+      : `✓ Fiche + SSR source: catalog_api (${rows.length} lignes, ${projectedCount} outils)`,
+  );
   return _catalogProjectionToolsCache;
 }
 
